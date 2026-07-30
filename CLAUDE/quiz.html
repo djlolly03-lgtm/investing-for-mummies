@@ -31,7 +31,8 @@ button{font-family:'Nunito';font-weight:800;cursor:pointer;border:none}
 .btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .brand{display:flex;align-items:center;justify-content:center;gap:11px;margin-bottom:2px}
 .brand img{width:44px;height:44px;border-radius:50%;box-shadow:var(--shadow)}
-body.host-bg .host-play{margin-top:2px}
+/* +6px keeps the panel tops clear of the fixed scan-to-join badge (it overlapped by 5px). */
+body.host-bg .host-play{margin-top:8px}
 .sub{text-align:center;color:var(--teal-d);font-weight:800;letter-spacing:.5px;text-transform:uppercase;font-size:.85rem}
 .title{text-align:center;font-size:2.5rem;font-weight:800;letter-spacing:-.5px;margin:2px 0 0;color:var(--navy)}
 .card{background:#fff;border-radius:22px;box-shadow:var(--shadow);padding:22px}
@@ -123,7 +124,7 @@ body.host-bg .win-line{color:#eef7f4}
    1366 (410px at 1920). Widen the host shell and spend ALL of it on the two side panels —
    the centre column keeps its exact 612px, so question legibility is untouched. */
 body.host-bg .wrap{max-width:1300px}
-.host-play{display:grid;grid-template-columns:333px 1fr 291px;gap:14px;align-items:start;margin-top:6px}
+.host-play{display:grid;grid-template-columns:298px 1fr 326px;gap:14px;align-items:start;margin-top:6px}
 @media(max-width:1040px){.host-play{grid-template-columns:1fr}}
 .center-col{min-width:0}
 /* pin the primary action button to the same spot on question + reveal so it never jumps */
@@ -320,7 +321,7 @@ body.host-bg .qr-hint{color:#8fb0aa}
 /* hard-reset button (host) */
 .host-reset{position:fixed;top:12px;left:14px;z-index:90;background:rgba(255,255,255,.13);color:#fff;border:1px solid rgba(255,255,255,.28);padding:8px 15px;border-radius:30px;font-size:.82rem;font-weight:800;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 6px 18px rgba(0,0,0,.32);transition:.15s}
 /* persistent corner join/rejoin QR (all play screens) */
-.join-corner{position:fixed;top:8px;right:10px;z-index:95;display:flex;align-items:center;gap:9px;padding:6px 12px 6px 6px;border-radius:14px;cursor:zoom-in;background:linear-gradient(165deg,rgba(26,56,70,.9),rgba(10,26,34,.94));border:1px solid rgba(255,255,255,.15);box-shadow:0 10px 26px rgba(0,0,0,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:.15s}
+.join-corner{position:fixed;top:6px;right:10px;z-index:95;display:flex;align-items:center;gap:9px;padding:3px 12px 3px 6px;border-radius:14px;cursor:zoom-in;background:linear-gradient(165deg,rgba(26,56,70,.9),rgba(10,26,34,.94));border:1px solid rgba(255,255,255,.15);box-shadow:0 10px 26px rgba(0,0,0,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:.15s}
 .join-corner:hover{transform:scale(1.04)}
 .join-corner .jc-qr{width:48px;height:48px;background:#fff;border-radius:7px;padding:2px;display:grid;place-items:center;flex:0 0 auto}
 .join-corner .jc-txt{text-align:left;line-height:1.2}
@@ -386,9 +387,9 @@ input[type=range]{width:100%;accent-color:var(--teal);height:30px}
 .av-row .av-fill{border-radius:10px}
 .av-row .av-pc{width:52px;font-size:1.12rem}
 /* right: prize ladder */
-.rung{padding:5px 12px;font-size:1.02rem;border-radius:11px;gap:10px}
-.rung .rno{width:40px;font-size:.86rem}
-.rung .rsafe{font-size:.92rem}
+.rung{padding:5px 13px;font-size:1.24rem;border-radius:11px;gap:10px}
+.rung .rno{width:46px;font-size:.98rem}
+.rung .rsafe{font-size:1rem}
 .ladder{gap:3px}
 
 /* 720p projectors: the enlarged panels + a full 16-question log are the tallest things on
@@ -400,8 +401,11 @@ input[type=range]{width:100%;accent-color:var(--teal);height:30px}
   .av-big{margin:0 0 8px}
   .av-list{max-height:42vh;gap:6px}
   .av-row .av-track{height:14px}
-  .rung{padding:3px 10px;font-size:.9rem}
+  .rung{padding:2px 11px;font-size:.98rem}
+  .rung .rno{width:38px;font-size:.82rem}
   .ladder{gap:2px}
+  /* the badge is already tightened; reclaim the top offset on 720p projectors */
+  body.host-bg .host-play{margin-top:2px}
 }
 
 /* ── 🔥 streak: chip on the leaderboard row, beats on the reveal, tease on the live question ── */
