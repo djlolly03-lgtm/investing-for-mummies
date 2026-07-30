@@ -1141,7 +1141,7 @@ function timeLeft(){ if(!state.qStartTs)return 0; return Math.max(0,state.timeLi
    else did. So instead of revealing straight away we open a short window for them: the host and
    every phone count it down, a change during it still counts, and Space reveals early when the
    room is visibly ready. `graceUntil` lives in state so the phones can show the same clock. */
-const GRACE_SECS=5;
+const GRACE_SECS=3;
 let _graceTimer=null;
 function maybeAutoReveal(){
   if(!isHost||state.phase!=='question')return;
