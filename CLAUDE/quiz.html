@@ -413,6 +413,20 @@ input[type=range]{width:100%;accent-color:var(--teal);height:30px}
   .av-big{margin:0 0 8px}
   .av-list{max-height:42vh;gap:6px}
   .av-row .av-track{height:14px}
+  /* the Round-4 intro carries the safety-net banner too — pull the briefing back so neither
+     the rules nor the banner get clipped on a 720p projector */
+  /* NB: the base .round-intro rules are declared LATER in this stylesheet, so these must
+     out-specify them (.stage.round-intro / descendant selectors) or they lose the cascade. */
+  .stage.round-intro{height:calc(100vh - 80px);max-height:calc(100vh - 80px)}
+  .stage.round-intro .intro-banner{max-height:10vh;margin-bottom:4px}
+  .stage.round-intro .ri-pill{font-size:.95rem;padding:5px 18px}
+  .stage.round-intro .ri-sub{font-size:clamp(1.4rem,2.4vw,1.8rem);margin:5px 0 7px}
+  .stage.round-intro .ri-rules{font-size:clamp(1rem,1.75vw,1.3rem);line-height:1.3}
+  .stage.round-intro .ri-btn{font-size:1.1rem;padding:10px 24px;margin-top:5px}
+  .stage.round-intro .floor-ups{padding:6px 11px;margin-top:6px}
+  .stage.round-intro .fu-head{font-size:.88rem}
+  .stage.round-intro .fu-chip{font-size:.8rem;padding:3px 9px 3px 3px}
+  .stage.round-intro .fu-chip .av{width:19px;height:19px;font-size:.72rem}
   .rung{padding:2px 11px;font-size:.98rem;gap:6px}
   .rung .rno{width:36px;font-size:.82rem}
   .rung .ramt{font-size:1.24rem}
@@ -420,6 +434,16 @@ input[type=range]{width:100%;accent-color:var(--teal);height:30px}
   /* the badge is already tightened; reclaim the top offset on 720p projectors */
   body.host-bg .host-play{margin-top:2px}
 }
+
+/* ── 🛡️ safety net: who the finale floor caught, shown on the Round 4 intro ── */
+.floor-ups{margin:10px auto 0;max-width:760px;padding:10px 14px;border-radius:16px;
+  background:linear-gradient(135deg,rgba(45,212,191,.16),rgba(45,212,191,.04));border:1px solid rgba(45,212,191,.45)}
+.fu-head{font-family:'Poppins';font-weight:800;font-size:1.02rem;color:#0e7a6e}
+body.host-bg .fu-head{color:#8fe6d8}
+.fu-chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:7px 0 4px}
+.fu-chip{display:inline-flex;align-items:center;gap:6px;padding:4px 11px 4px 4px;border-radius:20px;
+  font-weight:800;font-size:.92rem;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18)}
+.fu-chip .av{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.8rem}
 
 /* ── 🔥 streak: chip on the leaderboard row, beats on the reveal, tease on the live question ── */
 .streak-chip{flex:0 0 auto;font-size:.78rem;font-weight:900;padding:3px 9px;border-radius:20px;letter-spacing:.3px;
@@ -548,8 +572,18 @@ body.host-bg .pod .nm{color:#eaf6f3;text-shadow:0 2px 10px rgba(0,0,0,.6)}
 .rung .rno{width:28px;font-size:.62rem}
 
 /* ── bigger round-intro briefing (full-screen) ── */
-.round-intro{max-width:900px;margin:4px auto 0}
-.round-intro .intro-banner{max-height:18vh}
+/* Bounded flex column with the CTA pinned: the Round-4 safety-net banner is variable height
+   (it names everyone it caught), and body is overflow:hidden — an unpinned button walked
+   off a 720p projector and left the teacher unable to start the round. */
+.round-intro{max-width:900px;margin:4px auto 0;display:flex;flex-direction:column;
+  height:calc(100vh - 96px);max-height:calc(100vh - 96px)}
+.round-intro .intro-banner{max-height:18vh;flex:0 0 auto}
+.round-intro .ri-pill,.round-intro .ri-sub{flex:0 0 auto}
+/* The briefing must never be half a sentence on a projector, so it does not shrink or scroll —
+   the safety-net chip list is the flexible part instead. */
+.round-intro .ri-rules{flex:0 0 auto}
+.round-intro .floor-ups{flex:0 1 auto;min-height:0;overflow-y:auto}
+.round-intro .host-controls{flex:0 0 auto;margin-top:auto;padding-top:8px}
 .ri-pill{font-size:1.2rem;padding:9px 26px;margin-bottom:2px}
 .ri-sub{font-family:'Poppins';font-size:clamp(2rem,3.6vw,2.8rem);font-weight:800;margin:12px 0 14px;color:var(--navy);line-height:1.1}
 .ri-rules{font-size:clamp(1.5rem,2.6vw,2.05rem);line-height:1.45;font-weight:700;color:var(--muted);max-width:800px;margin:0 auto}
@@ -628,6 +662,13 @@ const WAGER_SECS=15; // seconds to lock a wager in the Risk & Reward round
    all) still gets a ₹10,000 starter stake to play with. Losing it can't take them below zero
    — scores are clamped at 0 — so the floor is a way back in, never a hole to dig out of. */
 const MIN_STAKE=10000;
+/* Nobody enters the finale unable to compete. Stepping into Round 4, anyone below the Q5
+   safety rung is lifted to it — which is what the 🛡️ on the ladder has always implied.
+   Deliberately applied BETWEEN rounds, never as a live floor: a floor inside the investing
+   round would make the bet down to it risk-free (hold ₹12L, guaranteed ₹10L, and staking the
+   lot risks ₹2L to win ₹12L), undoing the wager cap. Round 4 has no wagers, so a top-up here
+   can't be gamed — and at ₹97.5L it is 61% of the ladder, so the finale is a real contest. */
+const FINALE_FLOOR=200000, FINALE_ROUND=4;
 /* 🔥 Streak: from 3 correct in a row you earn a bonus on top of that question's prize —
    3→+25%, 4→+50%, 5→+75%, 6 and beyond→+100% (capped). A wrong or unanswered question
    resets you to zero. The cap is load-bearing: uncapped escalation on this back-loaded
@@ -804,7 +845,7 @@ function initialAudience(){
 function freshState(){
   return {phase:'lobby',round:0,qIndex:0,qStartTs:null,timeLimit:60,
     publicQ:null, answeredCount:0, totalPlayers:0, audience:initialAudience(),
-    reveal:null, choices:null, answerLog:[], wagerPhase:false, qNonce:0, roundQs:[], players:{}, hostId:MY_ID, updatedAt:Date.now()};
+    reveal:null, choices:null, answerLog:[], wagerPhase:false, qNonce:0, roundQs:[], floorUps:[], players:{}, hostId:MY_ID, updatedAt:Date.now()};
 }
 
 /* ── DB ───────────────────────────────────────────────────────── */
@@ -1124,8 +1165,21 @@ function hostNext(){
 function hostAfterStandings(){ pushHistory(); state.qIndex++; _skipPush=true; hostShowQuestion(); }
 function hostNextRound(){
   pushHistory();
-  if(state.round < ROUND_DEFS.length){ state.round++; state.qIndex=0; state.phase='round_intro'; resetAnswered(); saveNow(); renderHost(); }
+  if(state.round < ROUND_DEFS.length){ state.round++; state.qIndex=0; state.phase='round_intro'; resetAnswered();
+    if(state.round===FINALE_ROUND) applyFinaleFloor();
+    saveNow(); renderHost(); }
   else { state.phase='ended'; saveNow(); renderHost(); }
+}
+// Lift anyone below the safety rung as the finale opens. Idempotent (it sets a floor rather
+// than adding), so stepping back and forward over the round break can't pay out twice.
+function applyFinaleFloor(){
+  const ups=[];
+  for(const id in state.players){
+    const p=state.players[id];
+    if((p.score||0) < FINALE_FLOOR){ ups.push({id,name:p.name,av:p.av,color:p.color,from:p.score||0}); p.score=FINALE_FLOOR; }
+  }
+  state.floorUps=ups;
+  return ups;
 }
 
 /* host rendering */
@@ -1302,7 +1356,18 @@ function tplRoundIntro(){ const r=curRound();
     <div class="round-pill ri-pill">${r.name}</div>
     <h2 class="ri-sub">${r.sub}</h2>
     <p class="ri-rules">${roundRules(r)}</p>
+    ${tplFloorUps()}
     <div class="host-controls"><button class="btn primary ri-btn" onclick="hostShowQuestion()">${r.mode==='wager'?'Start investing':'Start the round'} →</button></div>
+  </div>`;
+}
+// The safety net is a moment for the room, not a silent number change — name everyone it caught.
+function tplFloorUps(){
+  const ups=(state&&state.floorUps)||[];
+  if(state.round!==FINALE_ROUND || !ups.length) return '';
+  // One line, not two: the card is height-bounded and a second line was the first thing clipped.
+  return `<div class="floor-ups">
+    <div class="fu-head">🛡️ Safety net — back to ${fmt(FINALE_FLOOR)} · ${fmt(LADDER[12]+LADDER[13]+LADDER[14]+LADDER[15])} still on the table</div>
+    <div class="fu-chips">${ups.map(u=>`<span class="fu-chip"><span class="av" style="background:${u.color}">${u.av}</span>${escapeHtml(u.name)}</span>`).join('')}</div>
   </div>`;
 }
 function roundRules(r){
@@ -1609,7 +1674,13 @@ function renderPlayer(){
 
   let inner='';
   if(state.phase==='lobby') inner=`<div class="p-center"><div class="p-status">You're in! 🎉</div><p>Hi <b>${escapeHtml(p.name)}</b> — look at the big screen.</p><p>Waiting for the host to start…</p></div>`;
-  else if(state.phase==='round_intro') inner=`<div class="p-center"><div class="round-pill">${state.publicQ?'':''}Get ready</div><div class="p-status">${curRoundNamePlayer()}</div><p>Eyes on the screen — first question coming up.</p>${pScoreLine(p)}</div>`;
+  else if(state.phase==='round_intro'){
+    const caught=((state.floorUps)||[]).some(u=>u.id===p.id);
+    inner=`<div class="p-center"><div class="round-pill">${state.publicQ?'':''}Get ready</div><div class="p-status">${curRoundNamePlayer()}</div>`
+      +(caught?`<p style="color:#8fe6d8;font-weight:800;max-width:300px">🛡️ The safety net caught you — you start the finale on <b>${fmt(FINALE_FLOOR)}</b>. Four questions left and they’re the biggest of the day. 💪</p>`
+              :`<p>Eyes on the screen — first question coming up.</p>`)
+      +`${pScoreLine(p)}</div>`;
+  }
   else if(state.phase==='wager'){
     // Render the wager UI ONCE per question. Re-renders triggered by OTHER players
     // submitting wagers must NOT clobber this player's in-progress slider or their
