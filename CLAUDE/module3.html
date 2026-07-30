@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Module 3 — Asset Classes Decoded</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --g1:#5a3a0a;--g2:#8a6010;--g3:#c9a84c;--g4:#f0d080;
+  --navy:#1a3a5c;--ink:#1a3a5c;--teal:#2a9d8f;--cream:#faf8f2;--white:#fff;
+  --mint:#f0e8c0;--mint-lt:#faf4e0;--muted:#6a5a3a;
+  --warn:#f59e0b;--danger:#e74c3c;--gold:#c9a84c;
+  --m1:#5a3a0a;--m2:#8a6010;--m3:#c9a84c;
+}
+html,body{font-size:15px;height:auto;overflow-y:visible;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);padding-bottom:48px;}
+.hidden{display:none!important;}
+
+.hdr{background:linear-gradient(135deg,var(--g1),var(--g2));padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.2);}
+.hdr-logo{font-family:'Lora',serif;color:#fff;font-size:0.88rem;font-weight:700;line-height:1.2;}
+.hdr-logo span{display:block;font-size:0.6rem;color:rgba(255,255,255,0.65);font-family:'Nunito',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+.hdr-right{display:flex;align-items:center;gap:10px;}
+.coins-badge{background:rgba(255,255,255,0.15);border-radius:20px;padding:4px 10px;font-size:0.72rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:4px;}
+.back-btn{background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.3);border-radius:10px;padding:5px 12px;color:#fff;font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:800;cursor:pointer;transition:all .2s;}
+.back-btn:hover{background:rgba(255,255,255,0.2);}
+
+#s-map{padding:16px;}
+.map-hero{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:16px;padding:18px 20px 18px 160px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden;}
+.map-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,0.08) 0%,transparent 60%);pointer-events:none;}
+.map-tag{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.2);border-radius:10px;padding:2px 10px;display:inline-block;margin-bottom:8px;}
+.map-hero h1{font-family:'Lora',serif;font-size:1.35rem;line-height:1.25;margin-bottom:6px;}
+.map-hero p{font-size:0.8rem;color:rgba(255,255,255,0.85);line-height:1.6;max-width:340px;}
+.hero-logo-wide{position:absolute;top:50%;left:12px;transform:translateY(-50%);height:62px;width:auto;max-width:140px;object-fit:contain;border-radius:8px;z-index:2;}
+@media(max-width:540px){.hero-logo-wide{height:44px;max-width:96px;left:8px;}.map-hero{padding-left:112px!important;}}
+.map-stats{display:flex;gap:12px;margin-top:14px;}
+.map-stat{background:rgba(255,255,255,0.12);border-radius:10px;padding:7px 12px;text-align:center;}
+.map-stat-val{font-size:1rem;font-weight:900;color:#fff;}
+.map-stat-lbl{font-size:0.55rem;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.5px;}
+.overall-prog{background:rgba(255,255,255,0.15);border-radius:6px;height:6px;margin-top:14px;overflow:hidden;}
+.overall-prog-fill{height:100%;background:linear-gradient(90deg,var(--g4),var(--g3));border-radius:6px;transition:width .6s ease;}
+.sec-title{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin:18px 0 10px;display:flex;align-items:center;gap:6px;}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--mint);margin-left:4px;}
+
+.lesson-card{border-radius:14px;padding:16px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:transform .15s,box-shadow .15s,border-color .2s;position:relative;overflow:hidden;display:flex;align-items:center;gap:12px;}
+.lesson-card.unlocked{background:var(--white);box-shadow:0 2px 12px rgba(26,58,92,0.06);}
+.lesson-card.unlocked:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,58,92,0.12);}
+.lesson-card.locked{background:#f0f0f0;cursor:not-allowed;}
+.lesson-card.done{border-color:var(--g3)!important;}
+.lc-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+.lc-body{flex:1;}
+.lc-num{font-size:0.55rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.lc-name{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.lc-meta{font-size:0.65rem;color:var(--muted);}
+.lc-status{font-size:1rem;flex-shrink:0;}
+.lc-prog{height:3px;background:#e8f0f8;border-radius:2px;margin-top:8px;overflow:hidden;}
+.lc-prog-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--g3),var(--g2));}
+.lc-tag{position:absolute;top:8px;right:8px;font-size:0.52rem;font-weight:900;text-transform:uppercase;letter-spacing:0.8px;padding:2px 7px;border-radius:8px;}
+
+#s-lesson{min-height:100vh;}
+.lesson-hdr{padding:12px 16px 10px;background:linear-gradient(135deg,var(--g1),var(--g2));}
+.lesson-title{font-family:'Lora',serif;color:#fff;font-size:0.95rem;font-weight:700;margin-bottom:10px;}
+.step-dots{display:flex;gap:4px;}
+.step-dot{flex:1;height:4px;border-radius:3px;background:rgba(255,255,255,0.2);transition:background .3s;}
+.step-dot.done{background:#fff;}
+.step-dot.active{background:rgba(255,255,255,0.7);}
+
+.slide{padding:16px;animation:slideIn .3s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.slide-tag{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--g3);margin-bottom:8px;}
+.slide-icon{font-size:2.4rem;margin-bottom:10px;display:block;line-height:1;}
+.slide-title{font-family:'Lora',serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:10px;line-height:1.35;}
+.slide-body{font-size:0.82rem;line-height:1.8;color:var(--ink);}
+.slide-body p{margin-bottom:10px;}
+.insight{background:linear-gradient(135deg,#faf4e0,#f0e8c0);border-left:4px solid var(--g3);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#3a2a00;}
+.insight strong{color:var(--g1);}
+.warn-box{background:linear-gradient(135deg,#fff8e6,#ffefc0);border-left:4px solid var(--warn);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#7a4a00;}
+.danger-box{background:linear-gradient(135deg,#fce8e8,#f8d0d0);border-left:4px solid var(--danger);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#7a1a1a;}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;}
+.stat-box{background:#f0f4fa;border-radius:12px;padding:12px;text-align:center;}
+.stat-box.g{background:linear-gradient(135deg,#faf4e0,#f0e8c0);}
+.stat-val{font-family:'Lora',serif;font-size:1.3rem;font-weight:700;color:var(--navy);}
+.stat-lbl{font-size:0.6rem;color:var(--muted);margin-top:3px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+
+.btn-next{display:block;width:100%;padding:13px;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:800;cursor:pointer;margin-top:18px;transition:all .2s;box-shadow:0 4px 16px rgba(26,58,92,0.2);}
+.btn-next:hover{opacity:0.9;transform:translateY(-1px);}
+.btn-next:disabled{opacity:0.3;cursor:not-allowed;transform:none;}
+
+/* AGE SLIDER */
+.age-slider-wrap{margin:16px 0;}
+.age-display{text-align:center;margin-bottom:16px;}
+.age-num{font-family:'Lora',serif;font-size:3rem;font-weight:700;color:var(--g2);}
+.age-lbl{font-size:0.65rem;font-weight:700;text-transform:uppercase;color:var(--muted);}
+input[type=range].age-range{width:100%;height:6px;border-radius:6px;outline:none;cursor:pointer;-webkit-appearance:none;background:linear-gradient(90deg,var(--g3),var(--g4));}
+input[type=range].age-range::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:#fff;border:3px solid var(--g2);box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+.alloc-bars{display:flex;flex-direction:column;gap:10px;margin:16px 0;}
+.alloc-bar-row{display:flex;align-items:center;gap:10px;}
+.alloc-bar-label{font-size:0.72rem;font-weight:800;width:70px;color:var(--navy);}
+.alloc-bar-track{flex:1;height:16px;border-radius:8px;background:#e8e0d0;overflow:hidden;}
+.alloc-bar-fill{height:100%;border-radius:8px;transition:width .5s ease;}
+.alloc-bar-pct{font-size:0.72rem;font-weight:900;width:38px;text-align:right;color:var(--navy);}
+
+/* FLIP CARDS */
+.flip-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+.flip-card-wrap{perspective:600px;height:120px;cursor:pointer;}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;}
+.flip-card-wrap.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-card-front,.flip-card-back{position:absolute;inset:0;border-radius:14px;padding:12px;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;}
+.flip-card-front{background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;text-align:center;}
+.flip-card-back{background:linear-gradient(135deg,#faf4e0,#f0e8c0);transform:rotateY(180deg);border:2px solid var(--g3);}
+.fc-front-icon{font-size:1.6rem;margin-bottom:6px;}
+.fc-front-text{font-family:'Lora',serif;font-size:0.75rem;font-weight:700;line-height:1.3;}
+.fc-back-label{font-size:0.55rem;font-weight:900;text-transform:uppercase;color:var(--muted);letter-spacing:1px;margin-bottom:4px;}
+.fc-back-text{font-size:0.72rem;font-weight:700;color:var(--navy);line-height:1.4;}
+.fc-tap-hint{font-size:0.58rem;color:rgba(255,255,255,0.6);margin-top:4px;}
+
+/* PORTFOLIO SLIDERS */
+.portfolio-sliders{display:flex;flex-direction:column;gap:14px;margin:12px 0;}
+.port-row{background:var(--white);border-radius:12px;padding:12px;box-shadow:0 2px 8px rgba(26,58,92,0.06);}
+.port-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.port-name{font-weight:800;font-size:0.8rem;color:var(--navy);}
+.port-pct{font-family:'Lora',serif;font-size:1.1rem;font-weight:700;color:var(--g2);}
+input[type=range].port-range{width:100%;height:6px;border-radius:6px;outline:none;cursor:pointer;-webkit-appearance:none;}
+input[type=range].port-range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--g2);box-shadow:0 2px 6px rgba(0,0,0,0.15);}
+.portfolio-summary{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:14px;padding:14px;color:#fff;text-align:center;margin-top:12px;}
+.port-risk{font-family:'Lora',serif;font-size:1.2rem;font-weight:700;margin-bottom:4px;}
+.port-return{font-size:0.75rem;color:rgba(255,255,255,0.8);}
+.port-total{font-size:0.65rem;font-weight:800;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-top:6px;}
+.port-bar-wrap{display:flex;height:12px;border-radius:6px;overflow:hidden;margin:10px 0 4px;}
+
+/* MATCH GAME */
+.match-q{background:var(--white);border-radius:12px;padding:12px 14px;margin-bottom:14px;box-shadow:0 2px 8px rgba(26,58,92,0.06);border:2px solid var(--g3);}
+.mq-title{font-weight:800;font-size:0.88rem;color:var(--g1);}
+.mq-sub{font-size:0.68rem;color:var(--muted);margin-top:2px;}
+.match-opts{display:flex;flex-direction:column;gap:8px;}
+.mopt{background:#f8f4ec;border-radius:10px;padding:10px 12px;cursor:pointer;font-size:0.76rem;font-weight:700;color:var(--navy);border:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:8px;}
+.mopt:hover{border-color:var(--g3);background:var(--mint-lt);}
+.mopt.correct{border-color:#22c55e;background:linear-gradient(135deg,#f0faf4,#d4eddf);}
+.mopt.wrong{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+
+/* BOND CALC */
+.bond-calc{background:var(--white);border-radius:16px;padding:16px;box-shadow:0 2px 12px rgba(26,58,92,0.07);margin-bottom:14px;}
+.bond-inp-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+.bond-inp-wrap{display:flex;flex-direction:column;gap:4px;}
+.bond-inp-label{font-size:0.65rem;font-weight:800;color:var(--muted);text-transform:uppercase;}
+.bond-inp{border:2px solid var(--g3);border-radius:10px;padding:8px 12px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:700;color:var(--navy);background:#faf4e0;outline:none;width:100%;}
+.bond-result{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:12px;padding:14px;text-align:center;color:#fff;}
+.bond-yield{font-family:'Lora',serif;font-size:2rem;font-weight:700;}
+.bond-yield-lbl{font-size:0.65rem;color:rgba(255,255,255,0.7);text-transform:uppercase;font-weight:700;}
+.bond-insight{font-size:0.72rem;color:rgba(255,255,255,0.85);margin-top:8px;line-height:1.5;}
+
+/* DECISION TREE */
+.dt-question{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:14px;padding:14px 16px;color:#fff;margin-bottom:12px;}
+.dt-q-num{font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.6);margin-bottom:4px;}
+.dt-q-text{font-family:'Lora',serif;font-size:0.95rem;font-weight:700;}
+.dt-opts{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+.dt-opt{background:var(--white);border-radius:12px;padding:10px 14px;cursor:pointer;font-size:0.78rem;font-weight:700;color:var(--navy);border:2px solid transparent;transition:all .2s;box-shadow:0 2px 8px rgba(26,58,92,0.06);}
+.dt-opt:hover{border-color:var(--g3);background:var(--mint-lt);}
+.dt-opt.sel{border-color:var(--g3);background:var(--mint-lt);}
+.dt-result{background:linear-gradient(135deg,#faf4e0,#f0e8c0);border-left:4px solid var(--g3);border-radius:0 14px 14px 0;padding:14px 16px;display:none;}
+.dt-rec-label{font-size:0.6rem;font-weight:900;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.dt-rec{font-family:'Lora',serif;font-size:1rem;font-weight:700;color:var(--g1);margin-bottom:6px;}
+.dt-rec-explain{font-size:0.76rem;color:var(--navy);line-height:1.6;}
+
+/* BOSS / SCENARIO */
+.scenario-card-outer{background:var(--white);border-radius:18px;box-shadow:0 4px 20px rgba(26,58,92,0.1);overflow:hidden;margin-bottom:14px;}
+.sc-header{padding:14px 16px 10px;background:linear-gradient(135deg,var(--g1),var(--g2));}
+.sc-round{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:4px;}
+.sc-name{font-family:'Lora',serif;color:#fff;font-size:0.95rem;font-weight:700;}
+.sc-body{padding:14px 16px;}
+.sc-story{font-size:0.8rem;line-height:1.7;color:var(--navy);margin-bottom:14px;}
+.sc-q{font-weight:800;font-size:0.8rem;color:var(--navy);margin-bottom:10px;}
+.sc-choices{display:flex;flex-direction:column;gap:8px;}
+.sc-choice{background:#f8f4ec;border-radius:12px;padding:10px 12px;cursor:pointer;border:2px solid transparent;transition:all .2s;font-size:0.78rem;font-weight:700;color:var(--navy);display:flex;align-items:flex-start;gap:8px;}
+.sc-choice:hover{border-color:var(--g3);background:var(--mint-lt);}
+.sc-choice.correct-choice{border-color:var(--g3);background:linear-gradient(135deg,#faf4e0,#f0e8c0);}
+.sc-choice.wrong-choice{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+.sc-choice-letter{font-size:0.7rem;font-weight:900;width:20px;height:20px;border-radius:6px;background:rgba(26,58,92,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.sc-consequence{border-radius:12px;padding:12px;margin-top:10px;font-size:0.76rem;line-height:1.6;display:none;}
+.sc-consequence.good{background:linear-gradient(135deg,#faf4e0,#f0e8c0);border-left:4px solid var(--g3);color:#3a2a00;}
+.sc-consequence.bad{background:linear-gradient(135deg,#fce8e8,#f8d0d0);border-left:4px solid var(--danger);color:#7a1a1a;}
+.sc-consequence.ok{background:linear-gradient(135deg,#fff8e6,#fdefc8);border-left:4px solid var(--warn);color:#7a4a00;}
+
+.myth-modal-overlay{position:fixed;inset:0;height:100vh;background:rgba(10,30,50,0.65);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto;animation:fadeIn .2s ease;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.myth-modal{background:#fff;border-radius:16px;max-width:400px;width:100%;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);overflow:hidden;animation:popIn .25s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes popIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
+.myth-modal-hdr{padding:20px 22px 14px;text-align:center;}
+.myth-modal-hdr.correct{background:linear-gradient(135deg,#faf4e0,#f0e8c0);}
+.myth-modal-hdr.wrong{background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+.myth-modal-emoji{font-size:2.8rem;line-height:1;margin-bottom:6px;}
+.myth-modal-verdict{font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900;margin-bottom:2px;}
+.myth-modal-verdict.correct{color:#5a3a0a;}
+.myth-modal-verdict.wrong{color:#b91c1c;}
+.myth-modal-body{padding:16px 22px 20px;}
+.myth-modal-label{font-family:'Nunito',sans-serif;font-size:0.62rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px;}
+.myth-modal-explain{font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.7;color:var(--ink);font-weight:600;}
+.myth-modal-btn{display:block;width:100%;margin-top:16px;padding:13px;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:900;cursor:pointer;}
+
+.completion-card{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:20px;padding:24px 20px;text-align:center;color:#fff;margin:16px;}
+.comp-emoji{font-size:3rem;margin-bottom:10px;}
+.comp-title{font-family:'Lora',serif;font-size:1.25rem;font-weight:700;margin-bottom:6px;}
+.comp-sub{font-size:0.78rem;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:16px;}
+.comp-stars{font-size:1.4rem;letter-spacing:4px;margin-bottom:14px;}
+.coins-earned{background:rgba(255,255,255,0.15);border-radius:12px;padding:10px 20px;display:inline-block;font-size:0.85rem;font-weight:800;margin-bottom:14px;}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img src="/IFM round logo for watermark.png" style="height:44px;width:auto;flex-shrink:0;" alt="IFM">
+    <div class="hdr-logo">Investing for Mummies<span>Module 3 — Asset Classes</span></div>
+  </div>
+  <div class="hdr-right">
+    <div class="coins-badge">🪙 <span id="coinDisplay">0</span></div>
+    <button class="back-btn hidden" id="backBtn" onclick="showMap()">← Map</button>
+  </div>
+</div>
+
+<div id="s-map">
+  <div style="padding:16px;">
+    <div class="map-hero">
+      <img src="/IFM logo white background.png" class="hero-logo-wide" alt="IFM">
+      <div class="map-tag">Section 3 · Asset Classes</div>
+      <h1>Asset Classes Decoded 🏆</h1>
+      <p>Real Estate, Gold, Silver & Fixed Income. Understand every asset class and how to combine them for maximum wealth.</p>
+      <div class="map-stats">
+        <div class="map-stat"><div class="map-stat-val" id="mapDone">0</div><div class="map-stat-lbl">Done</div></div>
+        <div class="map-stat"><div class="map-stat-val">6</div><div class="map-stat-lbl">Lessons</div></div>
+        <div class="map-stat"><div class="map-stat-val">~50</div><div class="map-stat-lbl">Minutes</div></div>
+      </div>
+      <div class="overall-prog"><div class="overall-prog-fill" id="overallFill" style="width:0%"></div></div>
+    </div>
+
+    <div class="sec-title">📚 Lessons</div>
+
+    <div class="lesson-card unlocked" id="lcard-0" onclick="startLesson(0)">
+      <div class="lc-icon" style="background:#faf4e0;">🧩</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#5a3a0a;">Lesson 1</div>
+        <div class="lc-name">Asset Allocation Basics</div>
+        <div class="lc-meta">Age slider · Equity/debt/gold split</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-0" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-0">▶</div>
+      <div class="lc-tag" style="background:#faf4e0;color:#5a3a0a;">Slider</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-1" onclick="startLesson(1)">
+      <div class="lc-icon" style="background:#e8f4f0;">🏠</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#0e5a3a;">Lesson 2</div>
+        <div class="lc-name">Real Estate & REITs</div>
+        <div class="lc-meta">6 flip cards · Myth vs reality</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-1" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-1">🔒</div>
+      <div class="lc-tag" style="background:#e8f4f0;color:#0e5a3a;">Flip</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-2" onclick="startLesson(2)">
+      <div class="lc-icon" style="background:#faf4e0;">🥇</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#5a3a0a;">Lesson 3</div>
+        <div class="lc-name">Gold & Silver</div>
+        <div class="lc-meta">Portfolio builder · Sliders</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-2" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-2">🔒</div>
+      <div class="lc-tag" style="background:#faf4e0;color:#5a3a0a;">Build</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-3" onclick="startLesson(3)">
+      <div class="lc-icon" style="background:#e8f0f8;">🏦</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#1a3a5c;">Lesson 4</div>
+        <div class="lc-name">Fixed Deposits & Gov Schemes</div>
+        <div class="lc-meta">6 cards · Match the feature</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-3" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-3">🔒</div>
+      <div class="lc-tag" style="background:#e8f0f8;color:#1a3a5c;">Match</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-4" onclick="startLesson(4)">
+      <div class="lc-icon" style="background:#faf4e0;">📜</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#5a3a0a;">Lesson 5</div>
+        <div class="lc-name">Bonds Explained</div>
+        <div class="lc-meta">Bond yield calculator</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-4" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-4">🔒</div>
+      <div class="lc-tag" style="background:#faf4e0;color:#5a3a0a;">Calc</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-5" onclick="startLesson(5)">
+      <div class="lc-icon" style="background:#faf4e0;">⚖️</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#5a3a0a;">Lesson 6</div>
+        <div class="lc-name">Choosing the Right Debt Investment</div>
+        <div class="lc-meta">Decision tree · 3 questions</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-5" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-5">🔒</div>
+      <div class="lc-tag" style="background:#faf4e0;color:#5a3a0a;">Tree</div>
+    </div>
+
+    <div class="sec-title" style="margin-top:22px;">🎯 Boss Challenge</div>
+
+    <div class="lesson-card locked" id="lcard-boss" onclick="startLesson('boss')">
+      <div class="lc-icon" style="background:linear-gradient(135deg,var(--g1),var(--g2));">⚔️</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:var(--g1);">Boss Level</div>
+        <div class="lc-name" style="color:var(--g1);">The Asset Mixer</div>
+        <div class="lc-meta">Priya's ₹5 lakh · 3 goals to allocate</div>
+      </div>
+      <div class="lc-status" id="lstat-boss">🔒</div>
+      <div class="lc-tag" style="background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;">Boss</div>
+    </div>
+  </div>
+</div>
+
+<div id="s-lesson" class="hidden">
+  <div class="lesson-hdr" id="lessonHdr">
+    <div class="lesson-title" id="lessonTitle"></div>
+    <div class="step-dots" id="stepDots"></div>
+  </div>
+  <div id="lessonContent"></div>
+</div>
+
+<script>
+var state={coins:0,completed:{},progress:{}};
+(function(){try{var s=JSON.parse(localStorage.getItem('ifm_m3')||'{}');if(s.coins)state.coins=s.coins;if(s.completed)state.completed=s.completed;if(s.progress)state.progress=s.progress;}catch(e){}})();
+function save(){try{localStorage.setItem('ifm_m3',JSON.stringify(state));}catch(e){}}
+function addCoins(n){state.coins+=n;save();document.getElementById('coinDisplay').textContent=state.coins;}
+
+var LESSONS=[
+  {id:0,name:'🧩 Asset Allocation Basics'},{id:1,name:'🏠 Real Estate & REITs'},
+  {id:2,name:'🥇 Gold & Silver'},{id:3,name:'🏦 Fixed Deposits & Gov Schemes'},
+  {id:4,name:'📜 Bonds Explained'},{id:5,name:'⚖️ Choosing the Right Debt Investment'},
+  {id:'boss',name:'⚔️ The Asset Mixer'}
+];
+
+function showMap(){
+  document.getElementById('s-map').classList.remove('hidden');
+  document.getElementById('s-lesson').classList.add('hidden');
+  document.getElementById('backBtn').classList.add('hidden');
+  refreshMap();
+}
+function refreshMap(){
+  document.getElementById('coinDisplay').textContent=state.coins;
+  var done=Object.keys(state.completed).filter(function(k){return k!=='boss';}).length;
+  document.getElementById('mapDone').textContent=done;
+  document.getElementById('overallFill').style.width=(done/6*100)+'%';
+  LESSONS.forEach(function(l){
+    var id=l.id;
+    var card=document.getElementById('lcard-'+id);
+    var stat=document.getElementById('lstat-'+id);
+    var prog=document.getElementById('lprog-'+id);
+    if(!card)return;
+    var isUnlocked=isLessonUnlocked(id);
+    var isDone=!!state.completed[id];
+    card.className='lesson-card '+(isUnlocked?'unlocked':'locked')+(isDone?' done':'');
+    if(stat)stat.textContent=isDone?'✓':isUnlocked?'▶':'🔒';
+    if(prog)prog.style.width=isDone?'100%':'0%';
+  });
+}
+function isLessonUnlocked(id){
+  if(id===0)return true;
+  if(id==='boss')return Object.keys(state.completed).filter(function(k){return k!=='boss';}).length>=6;
+  return !!state.completed[id-1];
+}
+
+var currentLesson=null,currentStep=0,lessonSteps=[];
+function startLesson(id){
+  if(!isLessonUnlocked(id))return;
+  currentLesson=id;currentStep=0;
+  lessonSteps=buildSteps(id);
+  document.getElementById('s-map').classList.add('hidden');
+  document.getElementById('s-lesson').classList.remove('hidden');
+  document.getElementById('backBtn').classList.remove('hidden');
+  var l=LESSONS.find(function(x){return x.id===id;});
+  document.getElementById('lessonTitle').textContent=l?l.name:'Lesson';
+  renderStepDots();renderStep();
+}
+function nextStep(){
+  currentStep++;
+  if(currentStep>=lessonSteps.length){completeLesson();}
+  else{renderStepDots();renderStep();}
+}
+function renderStepDots(){
+  var dots=document.getElementById('stepDots');dots.innerHTML='';
+  lessonSteps.forEach(function(_,i){
+    var d=document.createElement('div');
+    d.className='step-dot'+(i<currentStep?' done':i===currentStep?' active':'');
+    dots.appendChild(d);
+  });
+}
+function renderStep(){
+  var step=lessonSteps[currentStep];
+  document.getElementById('lessonContent').innerHTML='';
+  step.render(document.getElementById('lessonContent'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function completeLesson(){
+  state.completed[currentLesson]=true;save();
+  var coins=currentLesson==='boss'?150:50;addCoins(coins);
+  var div=document.createElement('div');
+  div.innerHTML='<div class="completion-card"><div class="comp-emoji">'+(currentLesson==='boss'?'🏆':'⭐')+'</div><div class="comp-title">'+(currentLesson==='boss'?'Module 3 Complete!':'Lesson Complete!')+'</div><div class="comp-stars">'+(currentLesson==='boss'?'⭐⭐⭐':'⭐⭐')+'</div><div class="comp-sub">'+(currentLesson==='boss'?'You\'ve decoded all asset classes! A true asset allocation expert.':'Great work! Next lesson unlocked.')+'</div><div class="coins-earned">🪙 +'+coins+' coins earned</div><button class="btn-next" onclick="showMap()" style="max-width:240px;margin:0 auto;">Back to Map</button></div>';
+  document.getElementById('lessonContent').innerHTML='';
+  document.getElementById('lessonContent').appendChild(div);
+  renderStepDots();
+}
+
+function buildSteps(id){
+  if(id===0)return buildAssetAllocLesson();
+  if(id===1)return buildRealEstateLesson();
+  if(id===2)return buildGoldLesson();
+  if(id===3)return buildFDLesson();
+  if(id===4)return buildBondsLesson();
+  if(id===5)return buildDebtDecisionLesson();
+  if(id==='boss')return buildBossLesson();
+  return [];
+}
+
+// LESSON 0: ASSET ALLOCATION
+function buildAssetAllocLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 1 · Asset Allocation</div><span class="slide-icon">🧩</span><div class="slide-title">What goes where — and why it matters</div><div class="slide-body"><p>Asset allocation is deciding <strong>what percentage of your money</strong> to put in equity, debt, gold, and other assets.</p><p>It\'s the most important investing decision you\'ll make — more than which specific fund or stock you pick.</p></div><div class="insight"><strong>The "100 minus age" rule:</strong> Subtract your age from 100 to get your rough equity allocation. At 30 → 70% equity. At 50 → 50% equity. The older you are, the more stability you need.</div><div class="warn-box">This rule is a <em>starting point</em>, not gospel. Risk appetite, income stability, and goals all matter too.</div><button class="btn-next" onclick="nextStep()">Try the age calculator →</button></div>';
+    }},
+    {render:function(c){renderAgeCalc(c);}},
+  ];
+}
+
+function renderAgeCalc(container){
+  var age=30;
+  function getAlloc(a){
+    var eq=Math.max(20,Math.min(80,100-a));
+    var gold=10;
+    var debt=100-eq-gold;
+    return {eq:eq,debt:debt,gold:gold};
+  }
+  function fmt(){
+    var alloc=getAlloc(age);
+    var examples=[25,35,45,55].map(function(a){
+      var al=getAlloc(a);
+      return '<div class="stat-box '+(a===age?'g':'')+'"><div class="stat-val" style="font-size:0.9rem;">'+al.eq+'%/'+al.debt+'%/'+al.gold+'%</div><div class="stat-lbl">Age '+a+'</div></div>';
+    }).join('');
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 1 · Age Calculator</div><div class="slide-title">Drag to see your allocation</div><div class="age-slider-wrap"><div class="age-display"><div class="age-num">'+age+'</div><div class="age-lbl">Years Old</div></div><input type="range" class="age-range" min="20" max="70" value="'+age+'" id="age-slider"></div><div class="alloc-bars"><div class="alloc-bar-row"><div class="alloc-bar-label">📈 Equity</div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width:'+alloc.eq+'%;background:linear-gradient(90deg,#5a3a0a,#c9a84c);"></div></div><div class="alloc-bar-pct">'+alloc.eq+'%</div></div><div class="alloc-bar-row"><div class="alloc-bar-label">🏦 Debt</div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width:'+alloc.debt+'%;background:linear-gradient(90deg,#1a3a5c,#4a6adf);"></div></div><div class="alloc-bar-pct">'+alloc.debt+'%</div></div><div class="alloc-bar-row"><div class="alloc-bar-label">🥇 Gold</div><div class="alloc-bar-track"><div class="alloc-bar-fill" style="width:'+alloc.gold+'%;background:linear-gradient(90deg,#c9a84c,#f0d080);"></div></div><div class="alloc-bar-pct">'+alloc.gold+'%</div></div></div><div class="stat-row">'+examples+'</div><button class="btn-next" onclick="nextStep()" style="margin-top:10px;">Next Lesson →</button></div>';
+    document.getElementById('age-slider').oninput=function(){age=parseInt(this.value);addCoins(1);fmt();};
+  }
+  fmt();
+}
+
+// LESSON 1: REAL ESTATE & REITs
+var RE_CARDS=[
+  {front:'Real estate always gives the best returns',back:'Reality: Real estate gave ~8-10% CAGR over 20 years in India. The same money in a Nifty 50 index fund gave ~14-15%. Plus, you can\'t invest ₹5,000 in real estate!'},
+  {front:'REITs let you invest in real estate with ₹100',back:'True! Real Estate Investment Trusts trade on stock exchanges like shares. You can buy units from ₹300–₹500. They distribute 90% of income as dividends.'},
+  {front:'Real estate is a liquid investment',back:'Reality: Real estate is highly ILLIQUID. Selling a property takes months to years. You can\'t sell "half a flat" if you need cash urgently. REITs solve this problem.'},
+  {front:'Location is the only thing that matters in real estate',back:'Reality: Location matters, but so do: builder reputation, construction quality, legal clearances, rental yield (typically 2-4%), and hidden maintenance costs.'},
+  {front:'Home loans are cheap money for investing',back:'Caution: A ₹50L home loan at 9% for 20 years costs ₹90L in interest! Real estate must appreciate >9% annually just to break even. Rent vs. buy analysis is crucial.'},
+  {front:'REITs in India pay regular income like rent',back:'True! REIT distributions (like rent) are paid quarterly. Embassy REIT and Mindspace REIT have historically distributed 5-7% annually on invested capital.'},
+];
+
+function buildRealEstateLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 2 · Real Estate</div><span class="slide-icon">🏠</span><div class="slide-title">Real estate: the big asset class decoded</div><div class="slide-body"><p>Indians have always loved real estate — and for good reason. But the market has changed. Let\'s separate myth from reality.</p></div><div class="insight"><strong>REIT = Mutual fund for real estate.</strong> Instead of buying one flat, a REIT owns 20+ office buildings. You own a slice of all of them. Liquidity + diversification + regular income.</div><div class="stat-row"><div class="stat-box g"><div class="stat-val">3</div><div class="stat-lbl">Listed REITs in India</div></div><div class="stat-box" style="background:#e8f0f8;"><div class="stat-val">2-4%</div><div class="stat-lbl">Typical Rental Yield</div></div></div><button class="btn-next" onclick="nextStep()">Flip the cards →</button></div>';
+    }},
+    {render:function(c){renderFlipCards(c);}},
+  ];
+}
+
+function renderFlipCards(container){
+  var flipped=[];
+  function fmt(){
+    var cardsHtml=RE_CARDS.map(function(card,i){
+      var isFlipped=flipped.indexOf(i)>=0;
+      return '<div class="flip-card-wrap'+(isFlipped?' flipped':'')+'" onclick="flipCard('+i+')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-front-icon">🏠</div><div class="fc-front-text">'+card.front+'</div><div class="fc-tap-hint">Tap to reveal reality</div></div><div class="flip-card-back"><div class="fc-back-label">The Reality</div><div class="fc-back-text">'+card.back+'</div></div></div></div>';
+    }).join('');
+    var allFlipped=flipped.length===RE_CARDS.length;
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 2 · Flip Cards</div><div class="slide-title">Tap each card to reveal the truth</div><div style="font-size:0.75rem;color:var(--muted);margin-bottom:12px;">Flipped: '+flipped.length+'/'+RE_CARDS.length+'</div><div class="flip-grid">'+cardsHtml+'</div>'+(allFlipped?'<button class="btn-next" onclick="nextStep()" style="margin-top:4px;">Continue →</button>':'')+'</div>';
+  }
+  window.flipCard=function(i){if(flipped.indexOf(i)<0){flipped.push(i);addCoins(4);}fmt();};
+  fmt();
+}
+
+// LESSON 2: GOLD & SILVER
+function buildGoldLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 3 · Gold & Silver</div><span class="slide-icon">🥇</span><div class="slide-title">The oldest wealth preserver</div><div class="slide-body"><p>Gold has preserved wealth for 5,000 years. In times of inflation, currency crises, or stock market crashes, gold tends to hold or increase in value.</p></div><div class="stat-row"><div class="stat-box g"><div class="stat-val">~10%</div><div class="stat-lbl">Gold CAGR (10yr)</div></div><div class="stat-box" style="background:#f0e8c0;"><div class="stat-val">5-10%</div><div class="stat-lbl">Recommended Allocation</div></div></div><div class="insight"><strong>Best ways to invest in gold:</strong><br>• Sovereign Gold Bonds (SGB) — government-backed, 2.5% interest + price gain<br>• Gold ETF — buy/sell like shares<br>• Physical gold — jewellery has 10-20% making charges — poor investment<br><br><strong>Silver:</strong> Industrial use + store of value. More volatile than gold. Keep silver allocation small (2-3%).</div><button class="btn-next" onclick="nextStep()">Build a portfolio →</button></div>';
+    }},
+    {render:function(c){renderPortfolioBuilder(c);}},
+  ];
+}
+
+function renderPortfolioBuilder(container){
+  var alloc={gold:10,silver:3,equity:72,debt:15};
+
+  function getRisk(e){
+    if(e>=70)return{label:'Aggressive Growth 🚀',color:'#c0392b',ret:'12–15% projected'};
+    if(e>=50)return{label:'Balanced 📊',color:'#8a6010',ret:'10–12% projected'};
+    return{label:'Conservative ⚖️',color:'#1a3a5c',ret:'8–10% projected'};
+  }
+
+  function clamp(){
+    var tot=alloc.gold+alloc.silver+alloc.equity+alloc.debt;
+    // Don't let total exceed 100 by adjusting debt
+    alloc.debt=Math.max(0,100-alloc.gold-alloc.silver-alloc.equity);
+  }
+
+  function fmt(){
+    clamp();
+    var risk=getRisk(alloc.equity);
+    var total=alloc.gold+alloc.silver+alloc.equity+alloc.debt;
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 3 · Portfolio Builder</div><div class="slide-title">Allocate ₹1 lakh across assets</div><div style="font-size:0.75rem;color:var(--muted);margin-bottom:12px;">Adjust sliders — Debt auto-adjusts to keep total at 100%</div><div class="portfolio-sliders"><div class="port-row"><div class="port-label"><span class="port-name">🥇 Gold</span><span class="port-pct">'+alloc.gold+'%</span></div><input type="range" class="port-range" min="0" max="20" value="'+alloc.gold+'" id="p-gold" style="background:linear-gradient(90deg,#c9a84c,#f0d080);"></div><div class="port-row"><div class="port-label"><span class="port-name">⚪ Silver</span><span class="port-pct">'+alloc.silver+'%</span></div><input type="range" class="port-range" min="0" max="10" value="'+alloc.silver+'" id="p-silver" style="background:linear-gradient(90deg,#9a9a9a,#d0d0d0);"></div><div class="port-row"><div class="port-label"><span class="port-name">📈 Equity</span><span class="port-pct">'+alloc.equity+'%</span></div><input type="range" class="port-range" min="0" max="90" value="'+alloc.equity+'" id="p-equity" style="background:linear-gradient(90deg,#5a3a0a,#c9a84c);"></div><div class="port-row" style="opacity:0.7;"><div class="port-label"><span class="port-name">🏦 Debt (auto)</span><span class="port-pct">'+alloc.debt+'%</span></div><div style="height:6px;border-radius:6px;background:linear-gradient(90deg,#1a3a5c,#4a6adf);width:'+alloc.debt+'%;min-width:4px;"></div></div></div><div class="portfolio-summary"><div class="port-risk" style="color:#fff;">'+risk.label+'</div><div class="port-return">'+risk.ret+' per year</div><div class="port-bar-wrap"><div style="flex:'+alloc.equity+';background:#c9a84c;"></div><div style="flex:'+alloc.debt+';background:#4a6adf;"></div><div style="flex:'+alloc.gold+';background:#f0d080;"></div><div style="flex:'+alloc.silver+';background:#d0d0d0;"></div></div><div class="port-total">Total: '+total+'% allocated</div></div><button class="btn-next" onclick="nextStep()" style="margin-top:14px;">Next Lesson →</button></div>';
+    document.getElementById('p-gold').oninput=function(){alloc.gold=parseInt(this.value);addCoins(1);fmt();};
+    document.getElementById('p-silver').oninput=function(){alloc.silver=parseInt(this.value);addCoins(1);fmt();};
+    document.getElementById('p-equity').oninput=function(){alloc.equity=parseInt(this.value);addCoins(1);fmt();};
+  }
+  fmt();
+}
+
+// LESSON 3: FDs & GOV SCHEMES
+var FD_ITEMS=[
+  {name:'PPF',sub:'Public Provident Fund',correct:1,options:['Returns linked to stock market','Tax-free returns, 15-year lock-in, ₹1.5L annual limit','Available only for government employees']},
+  {name:'EPF',sub:'Employees Provident Fund',correct:2,options:['No employer contribution','Available to self-employed people','8.15% interest, employer matches contribution, tax-free on exit']},
+  {name:'SSY',sub:'Sukanya Samriddhi Yojana',correct:0,options:['For girl children only, 21-year maturity, highest government interest','For all children under 18','Monthly income scheme for senior citizens']},
+  {name:'G-Secs',sub:'Government Securities',correct:1,options:['Corporate bonds with high risk','Sovereign bonds, zero default risk, 6.5-7.5% yield','Only for institutional investors']},
+  {name:'FD (Bank)',correct:2,options:['Government guarantee on full amount','Lock-in for minimum 10 years','DICGC insurance up to ₹5L, penalty for early withdrawal']},
+  {name:'NCD',sub:'Non-Convertible Debentures',correct:0,options:['Higher yield than FD, corporate bond, listed on exchange','Government-backed, risk-free','Only NRIs can invest']},
+];
+
+function buildFDLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 4 · Fixed Income</div><span class="slide-icon">🏦</span><div class="slide-title">Fixed income: know your options</div><div class="slide-body"><p>Fixed income instruments offer <strong>predictable returns</strong> — you know roughly what you\'ll earn. They range from bank FDs to government bonds to corporate NCDs.</p></div><div class="stat-row"><div class="stat-box g"><div class="stat-val">6–9%</div><div class="stat-lbl">Typical Yield Range</div></div><div class="stat-box" style="background:#e8f0f8;"><div class="stat-val">1–21yr</div><div class="stat-lbl">Lock-in Range</div></div></div><div class="insight"><strong>Golden rule:</strong> The higher the promised return, the higher the risk. Government schemes are safest. Corporate NCDs offer more yield but carry credit risk.</div><button class="btn-next" onclick="nextStep()">Match the features →</button></div>';
+    }},
+    {render:function(c){renderFDMatch(c);}},
+  ];
+}
+
+function renderFDMatch(container){
+  var current=0,score=0;
+  function showQ(){
+    if(current>=FD_ITEMS.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">Fixed Income · Complete!</div><span class="slide-icon">🎉</span><div class="slide-title">You matched '+score+'/'+FD_ITEMS.length+'!</div><div class="insight"><strong>Key takeaway:</strong> Each instrument has a unique purpose. PPF for tax saving. EPF for retirement. G-Secs for safety. NCDs for yield hunters.</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      return;
+    }
+    var item=FD_ITEMS[current];
+    var optsHtml=item.options.map(function(o,i){
+      return '<div class="mopt" onclick="fdAnswer('+i+')"><span style="width:20px;height:20px;background:rgba(90,58,10,0.1);border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:0.68rem;font-weight:900;flex-shrink:0;">'+String.fromCharCode(65+i)+'</span> '+o+'</div>';
+    }).join('');
+    container.innerHTML='<div class="slide"><div class="slide-tag">Fixed Income Match · '+(current+1)+'/'+FD_ITEMS.length+'</div><div class="slide-title">What is the key feature?</div><div class="match-q"><div class="mq-title">'+item.name+'</div>'+(item.sub?'<div class="mq-sub">'+item.sub+'</div>':'')+'</div><div class="match-opts">'+optsHtml+'</div><div style="font-size:0.65rem;color:var(--muted);margin-top:8px;">Score: '+score+'/'+current+'</div></div>';
+    window.fdAnswer=function(i){
+      var correct=i===item.correct;
+      if(correct){score++;addCoins(7);}
+      var overlay=document.createElement('div');
+      overlay.className='myth-modal-overlay';
+      overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'🎯':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Correct!':'Not quite...')+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">Answer</div><div class="myth-modal-explain"><strong>'+item.name+'</strong>: '+item.options[item.correct]+'</div><button class="myth-modal-btn" id="fd-ok">Next →</button></div></div>';
+      document.body.appendChild(overlay);
+      overlay.querySelector('#fd-ok').onclick=function(){overlay.remove();current++;showQ();};
+    };
+  }
+  showQ();
+}
+
+// LESSON 4: BONDS
+function buildBondsLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 5 · Bonds</div><span class="slide-icon">📜</span><div class="slide-title">Bonds: lending money to earn interest</div><div class="slide-body"><p>When you buy a bond, you\'re <strong>lending money</strong> to a government or company. They pay you interest (coupon) and return your principal at maturity.</p></div><div class="stat-row"><div class="stat-box g"><div class="stat-val">Face Value</div><div class="stat-lbl">Principal you lend (e.g. ₹1,000)</div></div><div class="stat-box" style="background:#f0e8c0;"><div class="stat-val">Coupon</div><div class="stat-lbl">Fixed interest rate</div></div></div><div class="insight"><strong>Price vs Yield (inverse):</strong> When bond prices go UP, yields go DOWN — and vice versa. If you buy a ₹1,000 bond at ₹900, your effective yield is HIGHER than the coupon rate.</div><div class="warn-box"><strong>Bond Yield Formula:</strong> Annual Income ÷ Current Price × 100</div><button class="btn-next" onclick="nextStep()">Try the calculator →</button></div>';
+    }},
+    {render:function(c){renderBondCalc(c);}},
+  ];
+}
+
+function renderBondCalc(container){
+  var fv=1000,coupon=7,price=950;
+  function fmt(){
+    var annual=fv*coupon/100;
+    var yield_=Math.round(annual/price*1000)/10;
+    var rel=price<fv?'Trading at DISCOUNT — yield HIGHER than coupon':'Trading at PREMIUM — yield LOWER than coupon';
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 5 · Bond Calculator</div><div class="slide-title">Calculate the real yield</div><div class="bond-calc"><div class="bond-inp-row"><div class="bond-inp-wrap"><div class="bond-inp-label">Face Value (₹)</div><input class="bond-inp" type="number" id="b-fv" value="'+fv+'"></div><div class="bond-inp-wrap"><div class="bond-inp-label">Coupon Rate (%)</div><input class="bond-inp" type="number" id="b-cp" value="'+coupon+'"></div></div><div class="bond-inp-wrap" style="margin-bottom:12px;"><div class="bond-inp-label">Current Market Price (₹)</div><input class="bond-inp" type="number" id="b-pr" value="'+price+'"></div><div class="bond-result"><div class="bond-yield">'+yield_+'%</div><div class="bond-yield-lbl">Current Yield</div><div class="bond-insight">Annual income: ₹'+annual+' | '+rel+'</div></div></div><div class="insight" style="margin-top:12px;"><strong>Remember:</strong> If interest rates in the economy go up, existing bond prices fall (so their yields match new rates). This is the "interest rate risk" in bonds.</div><button class="btn-next" onclick="nextStep()" style="margin-top:14px;">Next Lesson →</button></div>';
+    document.getElementById('b-fv').oninput=function(){fv=parseInt(this.value)||1000;fmt();};
+    document.getElementById('b-cp').oninput=function(){coupon=parseFloat(this.value)||7;fmt();};
+    document.getElementById('b-pr').oninput=function(){price=parseInt(this.value)||950;addCoins(2);fmt();};
+  }
+  fmt();
+}
+
+// LESSON 5: DEBT DECISION TREE
+function buildDebtDecisionLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 6 · Decision Tree</div><span class="slide-icon">⚖️</span><div class="slide-title">When to use which debt instrument</div><div class="slide-body"><p>Choosing the right debt investment depends on three factors: <strong>how long</strong> you can wait, <strong>your tax bracket</strong>, and <strong>how quickly</strong> you might need the money.</p></div><div class="insight"><strong>Quick guide:</strong><br>• Need money in &lt;1 year → Liquid MF or FD<br>• Tax saver + 15 years → PPF<br>• Regular income + safety → G-Secs<br>• Higher yield, some risk → Debt MF / NCD</div><button class="btn-next" onclick="nextStep()">Try the decision tree →</button></div>';
+    }},
+    {render:function(c){renderDecisionTree(c);}},
+  ];
+}
+
+function renderDecisionTree(container){
+  var answers={};
+  var questions=[
+    {q:'What is your time horizon?',opts:['Less than 1 year','1–5 years','5–15 years','15+ years']},
+    {q:'What is your income tax bracket?',opts:['5% or no tax','20% tax bracket','30% tax bracket']},
+    {q:'How important is instant liquidity?',opts:['Very important — I may need it anytime','Somewhat — can wait a few days','Not important — I won\'t touch it for years']},
+  ];
+  var recommendations=[
+    {label:'Liquid Mutual Fund',explain:'Short horizon + any bracket + high liquidity = Liquid MF. Redeemable in 1 business day, better tax than savings account after 3 years.'},
+    {label:'Fixed Deposit',explain:'Short–medium horizon with moderate liquidity need. DICGC-insured up to ₹5L. TDS applicable — factor in your tax bracket.'},
+    {label:'PPF (Public Provident Fund)',explain:'Long horizon + high tax bracket + willing to lock in = PPF. Tax-free returns, Section 80C benefit, 15-year lock-in with partial withdrawal from year 7.'},
+    {label:'Debt Mutual Fund',explain:'Medium-term, any liquidity need. Tax efficient after 3 years (indexed). Great for 30% bracket investors. Choose short/medium duration based on rate outlook.'},
+    {label:'Government Securities',explain:'Sovereign bonds for safety seekers. Zero default risk, tradeable on exchanges. 6.5-7.5% yield. Good for retired investors wanting regular income.'},
+  ];
+
+  function getRec(){
+    var h=answers[0],t=answers[1],l=answers[2];
+    if(h===undefined||t===undefined||l===undefined)return null;
+    if(h===0)return 0; // Liquid MF
+    if(h===3&&t===2)return 2; // PPF
+    if(h===1&&l===2)return 1; // FD
+    if(h===1||h===2)return 3; // Debt MF
+    return 4; // G-Secs
+  }
+
+  function fmt(){
+    var qHtml=questions.map(function(q,qi){
+      var optsHtml=q.opts.map(function(o,oi){
+        var sel=answers[qi]===oi;
+        return '<div class="dt-opt'+(sel?' sel':'')+'" onclick="dtAnswer('+qi+','+oi+')">'+o+'</div>';
+      }).join('');
+      return '<div class="dt-question"><div class="dt-q-num">Question '+(qi+1)+'</div><div class="dt-q-text">'+q.q+'</div></div><div class="dt-opts">'+optsHtml+'</div>';
+    }).join('');
+
+    var recIdx=getRec();
+    var recHtml='';
+    if(recIdx!==null){
+      var rec=recommendations[recIdx];
+      recHtml='<div class="dt-result" style="display:block;"><div class="dt-rec-label">Our Recommendation</div><div class="dt-rec">'+rec.label+'</div><div class="dt-rec-explain">'+rec.explain+'</div><button class="btn-next" onclick="nextStep()" style="margin-top:12px;">Complete Module →</button></div>';
+    }else{
+      recHtml='<button class="btn-next" disabled>Answer all 3 questions</button>';
+    }
+
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 6 · Decision Tree</div><div class="slide-title">Answer 3 questions to find your instrument</div>'+qHtml+recHtml+'</div>';
+    addCoins(2);
+  }
+  window.dtAnswer=function(qi,oi){answers[qi]=oi;fmt();};
+  fmt();
+}
+
+// BOSS: ASSET MIXER
+var BOSS_SCENARIOS=[
+  {round:'Goal 1 of 3',name:'Emergency Reserve',story:"Priya is 30, has ₹5 lakh to invest. Her first goal: secure a liquid emergency fund of ₹1.2 lakh (3 months of expenses).",q:"Where should this ₹1.2 lakh go?",choices:['A) Nifty 50 index fund — good returns','B) Liquid mutual fund or savings account — instant access','C) 15-year PPF — tax-free and safe'],correct:1,explain:["Index funds can lose 30-40% in a crash. Emergency funds cannot be in volatile assets.","Correct! Emergency funds need instant access. Liquid MF or savings account is the only right answer.","PPF has a 15-year lock-in. You can't access this money in an emergency."]},
+  {round:'Goal 2 of 3',name:'Retirement Corpus',story:"₹2.5 lakh of Priya's ₹5L is for her retirement — 25 years away. She's in the 20% tax bracket.",q:"Best allocation for this retirement money?",choices:['A) All in FD — safe and guaranteed','B) 80% equity index fund + 20% PPF','C) Gold and silver only — stores value'],correct:1,explain:["FD at 7% over 25 years gives ₹13.5L. Index fund at 12% gives ₹42L on same amount. Inflation eats FD returns.","Correct! Long horizon + young age = maximum equity allocation. PPF adds tax-free debt component. Ideal combination.","Gold alone is too concentrated and doesn't beat equity over 25 years consistently."]},
+  {round:'Goal 3 of 3',name:'Holiday Fund',story:"Priya wants ₹1.3 lakh for a Europe trip in exactly 2 years. She cannot risk losing this money.",q:"Where should this 2-year holiday fund go?",choices:['A) Small cap mutual fund — can grow fast','B) Short-term debt fund or FD — safe, predictable','C) 50% equity, 50% debt — balanced approach'],correct:1,explain:["Small caps can fall 50%+ in 2 years. This is money with a fixed deadline — it cannot be in volatile assets.","Correct! 2-year horizon with a fixed goal = no equity risk. Debt fund or FD preserves capital and adds modest growth.","Even 50% equity is too risky for a 2-year fixed deadline. Markets could be down right when she needs the money."]},
+];
+
+function buildBossLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Boss Challenge</div><span class="slide-icon">⚔️</span><div class="slide-title">The Asset Mixer</div><div class="slide-body"><p>Priya has ₹5 lakh to invest across 3 different financial goals. Each goal needs a different asset class — make the right allocation for each!</p></div><div class="insight">Apply the 3-bucket strategy + asset allocation knowledge from this module. Match the TIME HORIZON and RISK LEVEL to the right instrument.</div><button class="btn-next" onclick="nextStep()">Start Challenge →</button></div>';
+    }},
+    {render:function(c){renderBoss(c,0);}},
+    {render:function(c){renderBoss(c,1);}},
+    {render:function(c){renderBoss(c,2);}},
+  ];
+}
+
+function renderBoss(container,idx){
+  var sc=BOSS_SCENARIOS[idx];
+  var choicesHtml=sc.choices.map(function(ch,i){
+    return '<div class="sc-choice" id="sc-c-'+i+'" onclick="bossAns('+idx+','+i+')"><div class="sc-choice-letter">'+String.fromCharCode(65+i)+'</div><div>'+ch.substring(3)+'</div></div>';
+  }).join('');
+  container.innerHTML='<div class="slide"><div class="slide-tag">Boss · '+sc.round+'</div><div class="scenario-card-outer"><div class="sc-header"><div class="sc-round">'+sc.round+'</div><div class="sc-name">'+sc.name+'</div></div><div class="sc-body"><div class="sc-story">'+sc.story+'</div><div class="sc-q">'+sc.q+'</div><div class="sc-choices">'+choicesHtml+'</div><div class="sc-consequence" id="sc-con"></div></div></div></div>';
+  window.bossAns=function(sIdx,chosen){
+    var s=BOSS_SCENARIOS[sIdx];
+    var correct=chosen===s.correct;
+    if(correct)addCoins(20);
+    document.querySelectorAll('.sc-choice').forEach(function(el,i){
+      el.style.pointerEvents='none';
+      if(i===s.correct)el.classList.add('correct-choice');
+      else if(i===chosen&&!correct)el.classList.add('wrong-choice');
+    });
+    var con=document.getElementById('sc-con');
+    con.style.display='block';
+    con.className='sc-consequence '+(correct?'good':'bad');
+    con.innerHTML='<strong>'+(correct?'✅ Perfect allocation!':'❌ Not ideal')+'</strong> '+s.explain[chosen]+'<button class="btn-next" onclick="nextStep()" style="margin-top:12px;">'+(sIdx<2?'Next Goal →':'Finish Challenge →')+'</button>';
+  };
+}
+
+refreshMap();
+document.getElementById('coinDisplay').textContent=state.coins;
+</script>
+</body>
+</html>

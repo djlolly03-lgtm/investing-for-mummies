@@ -1,0 +1,3 @@
+# Approved URLs for simplification (one per line)
+# Lines starting with # are ignored
+# Run: python simplify.py

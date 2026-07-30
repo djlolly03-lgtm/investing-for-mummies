@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>IFM — June batch paste helper</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Lora:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2a9d8f;--navy:#1a3a5c;--muted:#5a7d8a;--cream:#f7faf9;--mint:#bde9e4;--mint-lt:#e0f3f0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);padding:28px 16px 70px}
+.wrap{max-width:760px;margin:0 auto}
+h1{font-family:'Lora',serif;font-style:italic;font-weight:600;font-size:1.5rem;margin-bottom:6px}
+.sub{color:var(--muted);font-weight:600;font-size:.9rem;margin-bottom:24px}
+.step{background:#fff;border-radius:16px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 5px rgba(26,58,92,.1)}
+.step h2{font-size:1.05rem;font-weight:900;margin-bottom:8px}
+.step p{font-size:.9rem;color:var(--muted);line-height:1.55;margin-bottom:12px}
+.step p strong{color:var(--navy)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button{font-family:'Nunito',sans-serif;font-weight:900;font-size:.92rem;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:11px 22px;cursor:pointer}
+button.done{background:var(--navy)}
+a.lnk{color:var(--teal);font-weight:800;font-size:.88rem}
+.ok{font-weight:800;color:var(--teal);font-size:.85rem}
+.note{background:var(--mint-lt);border-radius:12px;padding:12px 14px;font-size:.82rem;color:var(--navy);line-height:1.5;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>June batch — 2 pastes and you're done</h1>
+<div class="sub">Aakara's 18 June deliverables, already analysed and keyworded by Claude.</div>
+
+<div class="step">
+  <h2>1 · Creator Tracker — 24 rows (June deliverables vs contract)</h2>
+  <p>Click copy, open the tracker, click cell <strong>A2</strong>, then <strong>Cmd+V</strong>.
+  Pasting at A2 automatically replaces the 3 placeholder/example rows.</p>
+  <div class="row">
+    <button id="b1" onclick="copy(TRACKER,'b1')">Copy tracker rows</button>
+    <a class="lnk" href="https://docs.google.com/spreadsheets/d/117Ht7okUaGlF_XrbrOeTc2gha2WHa80Hz0DIeamihAM/edit" target="_blank" rel="noopener">Open Creator Tracker →</a>
+  </div>
+</div>
+
+<div class="step">
+  <h2>2 · Content Catalogue — 20 new assets (IFM-016 → 035)</h2>
+  <p>Click copy, open the catalogue, click cell <strong>A17</strong> (first empty row), then <strong>Cmd+V</strong>.
+  Finally type <strong>Thumbnail</strong> into cell <strong>S1</strong> so the dashboard shows previews.</p>
+  <div class="row">
+    <button id="b2" onclick="copy(CATALOGUE,'b2')">Copy catalogue rows</button>
+    <a class="lnk" href="https://docs.google.com/spreadsheets/d/1VzLzQzTS_-2w7jxkufJUXMF3r0EeOy0le19ZRUy8e-0/edit" target="_blank" rel="noopener">Open Content Catalogue →</a>
+  </div>
+  <div class="note">One manual cell: set <strong>F6 to Published</strong> (the SpaceX "Buzz" carousel IFM-005 — it's on the IG grid). Statuses for the other published posts are already in the paste. To chase with Aakara: <strong>S3 story missing</strong>, <strong>S2 is .psd only</strong>, <strong>only 1 of 5 contracted reels delivered</strong>, and <strong>2 published posts have no source files in Drive</strong> (Faaast! + workshop promo).</div>
+</div>
+
+<div class="step">
+  <h2>3 · Video rows upgrade — real thumbnails + direct descriptions (IFM-006 → 015)</h2>
+  <p>Click copy, then in the catalogue click cell <strong>A7</strong> and <strong>Cmd+V</strong>.
+  This overwrites the 10 Wealth Conversation rows in place with proper video descriptions and poster-frame thumbnails.</p>
+  <div class="row">
+    <button id="b3" onclick="copy(WEALTH,'b3')">Copy video rows</button>
+    <a class="lnk" href="https://docs.google.com/spreadsheets/d/1VzLzQzTS_-2w7jxkufJUXMF3r0EeOy0le19ZRUy8e-0/edit" target="_blank" rel="noopener">Open Content Catalogue →</a>
+  </div>
+</div>
+
+<div class="step">
+  <h2>4 · Check the dashboard</h2>
+  <p>Refresh <a class="lnk" href="https://ifm-deploy.vercel.app/content/" target="_blank" rel="noopener">ifm-deploy.vercel.app/content/</a> — all 32 assets with thumbnails, searchable by the new keywords.</p>
+</div>
+
+<script>
+const T='June 2026', C='Aakara Design Studios';
+const D='https://drive.google.com/drive/folders/', F='https://drive.google.com/file/d/';
+const TRACKER=[
+[T,C,'Join IFM now','Carousel','','Delivered',D+'1eVutEOYaeP5f1oxyIQsmxwmxBNs-mrx3','4 slides'],
+[T,C,'Learning with IFM','Carousel','','Delivered',D+'1KAI5PADUhgopnqiaQTlFOtDczT9loXbl','4 slides'],
+[T,C,'Power of Compounding','Carousel','','Delivered',D+'1a17dQ-OiJ479dcYTNbyLQm7JYPWSCpn5','5 slides'],
+[T,C,'Right time to learn','Carousel','','Delivered',D+'1YuNP75eJAwlot448jHgzS8XS5NmJV3V0','1 file only — confirm full set'],
+[T,C,'Savings vs Investing','Carousel','','Delivered',D+'1uMZq13u1Hf_nvMX6WMqPcAs2fjII7mB9','5 slides'],
+[T,C,'School','Carousel','','Delivered',D+'1iThpvYEB0Y59ziS3YTOpM5jbV5oI1tt1','5 slides'],
+[T,C,'Space x (IPO)','Carousel','','Published',D+'1oAeY4FH9IjpuddkfzKwdNU5i1XO_VXN0','On IG grid (both covers); catalogue IFM-005 + IFM-033'],
+[T,C,'What IFM is Not','Carousel','','Published',D+'1amkwMb8xJ15ucjtkq6AqDLiqX6NB4vuv','On IG grid; 6 files incl. .psd source'],
+[T,C,'Why IFM Exists','Carousel','','Published',D+'1L9ushgmQ3pmO3JF5yL-UdtwQT3xCli8-','On IG grid; 7 slides'],
+[T,C,'Why Women Feel Left Out','Carousel','','Published',D+'1UsqgAdCafw_Qu0HIPNi_JmzIctr-qNN-','On IG grid; 5 slides'],
+[T,C,'Inflation','Reel','','Published',D+'17EErsy4pp7huiMwSLU8lGcWr2OQxifvE','On IG grid; 1 file (500 rupee shrinks)'],
+[T,C,'Hiral intro','Story','','Delivered',D+'1YuwVgssHrbwh6eyLtgiBYtbWqOkP9lQS','4 artboards'],
+[T,C,'S1 Finance was not made easy','Story','','Delivered',D+'12OeXN5iJf2glhfZounnSTWvqemZcnEOb','6 files'],
+[T,C,'S2 Words people secretly Google','Story','','Delivered',D+'17U-InCX9Lwgf-PYS7lSsDA6HGB-_Ayzp','.psd source only — ask for exports'],
+[T,C,'S4 Finance Myths','Story','','Delivered',D+'1Zs1ITTOI-euFdNcuTpXaW7FZ9qZB-r9W','6 artboards — S3 appears missing from batch'],
+[T,C,'S5 finance word game','Story','','Delivered',D+'1MG3bdcOqnbOENYgv9CfI1Ij3X_dd9ZWX','6 artboards'],
+[T,C,'S6 saving investing','Story','','Delivered',D+'1l7miwiXG526HdJae1KxIylCVP_3BG7A1','5 artboards'],
+[T,C,'Website game','Story','','Delivered',D+'1SDPRVmszXMKjkqkpPhuAoKSHEJxihmIM','3 artboards'],
+[T,C,'Your future is getting expensive Faaast!','Carousel','','Published','','On IG grid but NOT in the Drive June folder — ask Aakara to upload source files'],
+[T,C,'Investing feels intimidating — workshop promo','Static Post','','Published','','On IG grid but NOT in the Drive June folder — ask Aakara to upload source files'],
+[T,C,'Motion/Reel video — contract slot 2 of 5','Reel','','Planned','','Contract: 5 motion/reel videos per month — only 1 in the June folder so far'],
+[T,C,'Motion/Reel video — contract slot 3 of 5','Reel','','Planned','',''],
+[T,C,'Motion/Reel video — contract slot 4 of 5','Reel','','Planned','',''],
+[T,C,'Motion/Reel video — contract slot 5 of 5','Reel','','Planned','','']
+];
+// Catalogue columns: ID Title Type Source Venue Status Keywords Description DriveLink Created Published IG Reach Likes Comments Saves Shares Notes Thumbnail
+const r=(id,title,type,status,kw,desc,fold,notes,thumb)=>[id,title,type,'Aakara','',status,kw,desc,fold?D+fold:'','2026-06-11','','','','','','','',notes,thumb?F+thumb+'/view':''];
+const CATALOGUE=[
+r('IFM-016','Join IFM now','Carousel','Ready','join ifm, call to action, sign up, community, teal background, typography slide, playful copy, brand awareness, carousel cover','Minimal type-only slide on a light teal pixel-grid background with the playful headline "JOIN Investing for Mummies NOWWWWWWWW" in mixed serif/sans navy type, IFM wordmark top right.','1eVutEOYaeP5f1oxyIQsmxwmxBNs-mrx3','4 slides','1CA4EDlq30rZdbQG7o7QnpyWouUwTTIFL'),
+r('IFM-017','Learning with IFM','Carousel','Ready','financial jargon, nifty, sensex, pe ratios, learning, beginner investing, candlestick chart, relatable hook, cream palette','Cream slide asking "Do words like Nifty, Sensex, PE Ratios make your brain instantly switch off?" with jargon terms in navy pill badges and a navy/gold candlestick chart along the bottom.','1KAI5PADUhgopnqiaQTlFOtDczT9loXbl','4 slides','1oZrolT3pbultqWA0QKKab5GEORwJsgE2'),
+r('IFM-018','Power of Compounding','Carousel','Ready','compounding, compound interest, wealth building, start early, rupee notes, hook question, mint green, photo collage','Mint-green slide with headline "Wanna end up RICHER than someone investing WAAAAAYYYYY more money than you?" above a photo of a hand clutching crumpled rupee notes.','1a17dQ-OiJ479dcYTNbyLQm7JYPWSCpn5','5 slides','1Puj7Y132n3xSWCq2lkugo6HS2HOEFFLw'),
+r('IFM-019','Right time to learn','Carousel','Ready','right time, start now, clock, timing, learn investing, motivation, cream palette, serif typography','Cream slide with serif headline "IT\'S ALWAYS THE RIGHT TIME to start learning about investing!" above a minimalist clock-face illustration, faded rupee coins behind.','1YuNP75eJAwlot448jHgzS8XS5NmJV3V0','1 file only — confirm full set with Aakara','1hC8CQqbrHXfYSlR51XqRaUxCTAsbnIR3'),
+r('IFM-020','Savings vs Investing','Carousel','Ready','savings vs investing, piggy bank, money basics, explainer, comparison, beige texture, photo illustration, beginner','Textured beige cover titled "What is Savings Vs Investments" with a hand dropping a banknote into a pink piggy bank.','1uMZq13u1Hf_nvMX6WMqPcAs2fjII7mB9','5 slides','1beMRzu_2WSKGlk-tePBPmrGOCLQ8NwYG'),
+r('IFM-021','School','Carousel','Ready','financial education, school, trigonometry, taxes, credit cards, notebook flat lay, relatable meme, education gap','Flat-lay of a spiral notebook, pencil and calculator with the line "Crazy that school taught us trigonometry but not about taxes, investing or credit cards."','1iThpvYEB0Y59ziS3YTOpM5jbV5oI1tt1','5 slides','1WhekkiO_J7bWqxkUX193PwJ7YG-WNt8L'),
+r('IFM-022','What IFM is Not','Carousel','Published','no stock tips, myth busting, brand positioning, safe learning, jargon free, cream palette, illustration, trust','Five-slide cream carousel opening "Don\'t buy that stock.. just because someone said so." — disclaims tip-giving and promises jargon-free, safe, empowering learning.','1amkwMb8xJ15ucjtkq6AqDLiqX6NB4vuv','6 files incl. .psd source','1RfXMm0eGx-Cfsc3pzpaVL8RqzrRZGi62'),
+r('IFM-023','Why IFM Exists','Carousel','Published','women and money, intimidation, money anxiety, brand purpose, empowerment, capable women, photo portrait, cream palette','Cream slide asking "Why do so many capable women still feel intimidated by money?" above a photo of a stressed woman holding her temples, faded gold coins behind.','1L9ushgmQ3pmO3JF5yL-UdtwQT3xCli8-','7 slides','1HARgVxzV2Wlopg61fvgqRmS0nEQaVfXH'),
+r('IFM-024','Why Women Feel Left Out','Carousel','Published','women left out, where to start, financial independence, retro collage, newspaper, money management, hook question, indian women','Slide asking "If you suddenly had to manage all your finances today, would you know WHERE TO START?" with a retro-styled woman reading a newspaper beside a money-bag illustration.','1UsqgAdCafw_Qu0HIPNi_JmzIctr-qNN-','5 slides','1K3b4LyH-h1I9dEoMrw7uelCycm3D2Ext'),
+r('IFM-025','Inflation — ₹500 is shrinking','Reel','Published','inflation, 500 rupee note, purchasing power, reel cover, presenter, shrinking money, vertical video, hook text','Vertical reel cover of a smiling woman in a red dress holding a ₹500 note, with stacked text "Your 500 rupee note is SHRINKING SHRINKING SHRINKING every year!"','17EErsy4pp7huiMwSLU8lGcWr2OQxifvE','Single file','1UszHqrlPDzf1wwUm64G80R8H9pq6XeLm'),
+r('IFM-026','Story — Hiral intro','Story','Ready','founder intro, hiral goel, business journalist, credibility, about us, story format, mint green, credentials, personal brand','Mint story introducing the founder: "Hi, I\'m Hiral Goel." with photo and credential pills — business journalist 10+ years at Business India, led Businessman of the Year, mother of 2.','1YuwVgssHrbwh6eyLtgiBYtbWqOkP9lQS','4 artboards','1M6IgJJ2x1iv9rJkmoBLjD_X8ZnJVjciE'),
+r('IFM-027','Story S1 — Finance was not made easy','Story','Ready','finance jargon, mutual funds, sips, inflation, compounding, story format, pill badges, relatable, financial literacy','Cream story with scattered teal pill badges of jargon words (Compounding, Investing, Inflation, SIPs, Mutual Funds) held up by two hands: "Finance was never made easy for most of us."','12OeXN5iJf2glhfZounnSTWvqemZcnEOb','6 files','1UrPna49MRlsnTYujimN8CPYKjpSpOl0F'),
+r('IFM-028','Story S2 — Words people secretly Google','Story','In Production','finance terms, secretly google, jargon, glossary, story format, curiosity, financial literacy','(Not yet analysed — only a .psd source file delivered.)','17U-InCX9Lwgf-PYS7lSsDA6HGB-_Ayzp','PSD source only — ask Aakara for PNG exports',''),
+r('IFM-029','Story S4 — Finance Myths','Story','Ready','finance myths, myth busting, delete key, misconceptions, story format, aqua background, 3d graphic, debunk','Aqua story with headline "Finance Myths people still believe" around a 3D keyboard Delete key — myths to be deleted.','1Zs1ITTOI-euFdNcuTpXaW7FZ9qZB-r9W','6 artboards — S3 appears missing from batch','1NHl3v1bKWnnC2Wz99otzL5ux0QVWLfHY'),
+r('IFM-030','Story S5 — Finance word game','Story','Ready','word game, guess the term, quiz, interactive story, gold coins, teal background, engagement, gamification','Teal story titled "Guess the Finance Term" with falling gold coins: "Ready? Tap to test your finance knowledge!"','1MG3bdcOqnbOENYgv9CfI1Ij3X_dd9ZWX','6 artboards','1IKLwwP5IbUIUByAtvVrbzQijuQCXyXae'),
+r('IFM-031','Story S6 — Saving vs investing','Story','Ready','saving vs investing, mattress money, money plant, growth, comparison, cartoon illustration, story format, explainer','Split story: "Saving means your money is just lying under the mattress" (cash-stuffed mattress with padlock) vs "Investing means your money is slowly trying to grow" (man watering a money plant).','1l7miwiXG526HdJae1KxIylCVP_3BG7A1','5 artboards','12N869LMW16BYLbI9jn-zmi8JHyfh_x3t'),
+r('IFM-032','Story — Website game (10 years from today)','Story','Ready','website game, life goals, poll options, dream home, early retirement, interactive story, 10 year vision, lilac, engagement','Dreamy lilac story asking "Imagine it\'s 10 years from today... What does your life look like?" with tappable poll pills: Dream home, Family Vacation, Early Retirement, Start a business.','1SDPRVmszXMKjkqkpPhuAoKSHEJxihmIM','3 artboards — drives traffic to website game','1T2_qFUlM4lR_H5Q98Mkb_wGj19zwy1SN'),
+r('IFM-033','SpaceX IPO — Rocket or Rollercoaster? (IPO Series)','Carousel','Published','spacex, ipo, ipo series, rocket or rollercoaster, risks, opportunity, stock market, light blue, emoji collage','Second SpaceX cover variant: "SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let\'s talk about the risks." — rocket launching against light-blue sky with satellite, moon and emoji accents.','117PQmNIpH-dDe_KBtS6EQO1YtFTdmIcY','On IG grid alongside the "Buzz" variant (IFM-005)','1SErSdBCe378Ju1ohxZIj0ZAZXDK7qN14'),
+r('IFM-034','Your future is getting expensive Faaast!','Carousel','Published','inflation, rising costs, future expenses, rupee notes, hands exchanging money, mint palette, hook, urgency','Mint-green cover with hands exchanging a fan of ₹500 notes and falling currency: "Your future is getting expensive Faaast!"','','On IG grid but source files NOT in the Drive June folder — ask Aakara to upload',''),
+r('IFM-035','Investing feels intimidating? — Workshop promo','Static Post','Published','workshop, promo, investing intimidating, you are not alone, bonds, stocks, etfs, mutual funds, jargon, swipe cta','Light-blue promo: "INVESTING FEELS INTIMIDATING? You\'re not alone" — woman thinking surrounded by BONDS / STOCKS / ETFS / MUTUAL FUNDS pills; "If finance jargon and market conversations feel overwhelming… THIS WORKSHOP IS FOR YOU", swipe arrow.','','On IG grid but source files NOT in the Drive June folder — ask Aakara to upload','')
+];
+const V='https://ifm-deploy.vercel.app/wealth-conversation-videos/';
+const w=(n,slug,file,title,status,kw,desc,notes)=>['IFM-'+String(n+5).padStart(3,'0'),title,n===2?'Carousel':'AI Video','In-house','',status,kw,desc,V+slug+'/'+file,'2026-06-11','','','','','','','',notes,V+'thumbs/chap'+n+'.png'];
+const WEALTH=[
+w(1,'chapter1-why-saving-isnt-enough','chap1hero.mp4','Wealth Conversation Ch.1 — Why Saving Isn\'t Enough','Ready','coin jar, money tree, golden coins, split screen, savings vs investing, growth, glowing tree, wooden table, dust','Split-screen of two coin jars on a wooden table: the left jar gathers dust and smoke while the right sprouts a glowing sapling that blooms into a golden money tree dripping coins. Saving stagnates; investing grows.',''),
+w(2,'chapter2-inflation-carousel','chap2test2.mp4','Wealth Conversation Ch.2 — Inflation','In Production','seedling, coin sprout, gold coin tree, growth, test render, inflation chapter, money plant','A single coin sprouts a green seedling that grows into a gold-coin tree (test render). NOTE: the other file in this folder, chap2test1, is byte-identical to Ch.1\'s video — final Ch.2 hero still pending.','chap2test1 = duplicate of Ch.1; hero pending'),
+w(3,'chapter3-purchasing-power','chap3hero.mp4','Wealth Conversation Ch.3 — Purchasing Power','Ready','shopping basket, groceries, kitchen, purchasing power, inflation, petrol, medicine, school, glowing items, essentials','A wire shopping basket on a kitchen counter holds glowing everyday essentials — groceries, schoolbook, toy plane, medicine, petrol pump, toy house — whose golden glow fades as prices bite. The same basket buys less every year.',''),
+w(4,'chapter4-magic-of-compounding','chap4hero.mp4','Wealth Conversation Ch.4 — Magic of Compounding','Ready','compounding, cash stack, calendar, 10000 rupees, 12 percent, 96463, money tower, skyscraper, 20 years','Cash bundles rain down beside a desk calendar and a sign "₹10,000 invested at 12% per year", stacking into a tower labelled "20 yrs ₹96,463" that morphs into a Burj Khalifa-style skyscraper. One sum compounds into a monument.',''),
+w(5,'chapter5-small-amounts-matter','chap5hero.mp4','Wealth Conversation Ch.5 — Small Amounts Matter','Ready','sip, 5000 rupees monthly, 12 percent, calendar, cash bundles, gold coin mountain, rocket, small amounts','A sign reads "₹5,000 per month at 12% per year" beside a flip calendar; note stacks rocket upward in a blur of light and settle as a mountain of gold coins behind the gold IFM medallion. Small monthly SIPs build a fortune.',''),
+w(6,'chapter6-growing-with-income','chap6hero.mp4','Wealth Conversation Ch.6 — Growing With Income','Ready','cash stacks, money tower, banknote bundles, income growth, comparison, gold coin, step up sip, wealth','Two banded cash stacks sit side by side on dark wood; one grows into a towering skyscraper of note bundles, closing on the gold IFM coin leaning against the piles. Step up investing as income steps up.',''),
+w(7,'chapter7-cost-of-waiting','chap7hero.mp4','Wealth Conversation Ch.7 — Cost of Waiting','Ready','cost of waiting, three towers, falling coins, start early, age 22 27 32, tanya kabil rojan, glowing bars, crores','Coins rain into three piggy boxes labelled Tanya (22), Kabil (27) and Rojan (32), growing into glowing coin towers — the 22-year-old\'s tower ends tallest by far (₹2.87cr vs ₹1.64cr). Every year you wait costs crores.',''),
+w(8,'chapter8-hidden-treasures','chap8hero.mp4','Wealth Conversation Ch.8 — Hidden Treasures','Ready','hidden treasures, nail polish, lipstick, scooter, movies, shopping, gold coin pile, small spends, latte factor','Small lifestyle spends — nail polish, lipstick, a scooter, shopping bag, teacup, movie clapperboard — float up and dissolve one by one into a swelling heap of gold coins under the IFM logo. Everyday spends are hidden treasure.',''),
+w(9,'chapter9-goals-first','chap9hero.mp4','Wealth Conversation Ch.9 — Goals First','Ready','crossroads, signposts, confused coin, stocks fds gold, desert, goals first, destination, home sign, cartoon','A worried cartoon gold-coin sits at a desert crossroads crowded with signposts shouting Stocks, FDs and Gold — "choosing investments before you choose your destination" — until a glowing Home signpost points the way. Goal first, product after.',''),
+w(10,'chapter10-three-buckets','chap10hero.mp4','Wealth Conversation Ch.10 — Three Buckets','Ready','three buckets, neon icons, shield house rocket, financial goals, glowing canisters, coins, safety growth dreams','Neon goal icons (plane, house, graduation cap, medical cross, palm tree) float on black — "We don\'t have just one financial goal" — then three glowing buckets (red shield, blue house, green rocket) line up: "Different goals need different kinds of money."','')
+];
+function copy(rows,btn){
+  const tsv=rows.map(x=>x.join('\t')).join('\n');
+  navigator.clipboard.writeText(tsv).then(()=>{
+    const b=document.getElementById(btn); b.textContent='Copied ✓ now paste in the sheet'; b.classList.add('done');
+  });
+}
+</script>
+</body>
+</html>

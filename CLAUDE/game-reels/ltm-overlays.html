@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --pink:#ff5b8a; --purple:#a06bff; --teal:#34c6b3; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Space Grotesk',sans-serif}
+  .ov{width:1080px;height:1920px;position:relative;background:transparent;color:#fff;overflow:hidden}
+  /* readability scrim top+bottom */
+  .scrim-top{position:absolute;top:0;left:0;right:0;height:620px;background:linear-gradient(180deg,rgba(8,10,24,.82),rgba(8,10,24,0))}
+  .scrim-bot{position:absolute;bottom:0;left:0;right:0;height:640px;background:linear-gradient(0deg,rgba(8,10,24,.88),rgba(8,10,24,0))}
+  .wm{position:absolute;top:54px;right:54px;width:118px;height:118px;z-index:9;filter:drop-shadow(0 6px 18px rgba(0,0,0,.5))}
+  .kicker{position:absolute;left:70px;font-size:34px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--teal)}
+  .big{position:absolute;left:70px;right:70px;font-weight:700;line-height:.98;letter-spacing:-2px;
+    text-shadow:0 6px 30px rgba(0,0,0,.55)}
+  .grad{background:linear-gradient(100deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{position:absolute;left:70px;right:70px;font-size:46px;font-weight:500;color:rgba(255,255,255,.9);line-height:1.25;text-shadow:0 4px 18px rgba(0,0,0,.6)}
+
+  /* HOOK — top weighted */
+  #o_hook .kicker{top:150px}
+  #o_hook .big{top:210px;font-size:128px}
+  #o_hook .sub{top:560px;font-size:50px}
+
+  /* BEAT 2 — bottom */
+  #o_b2 .kicker{bottom:430px}
+  #o_b2 .big{bottom:250px;font-size:104px}
+  #o_b2 .sub{bottom:170px}
+
+  /* BEAT 3 — bottom (keep the ₹ number visible up top) */
+  #o_b3 .kicker{bottom:430px}
+  #o_b3 .big{bottom:228px;font-size:100px}
+  #o_b3 .sub{bottom:168px}
+
+  /* BEAT 4 — bottom */
+  #o_b4 .kicker{bottom:420px}
+  #o_b4 .big{bottom:235px;font-size:100px}
+  #o_b4 .sub{bottom:168px}
+
+  /* END CARD — full bg */
+  #o_end{background:radial-gradient(120% 80% at 50% 0%, #1b1640 0%, #0e0b24 60%, #08060f 100%)}
+  #o_end .wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 90px}
+  #o_end .logo{width:280px;height:280px;margin-bottom:56px;filter:drop-shadow(0 12px 50px rgba(0,0,0,.5))}
+  #o_end .title{font-size:104px;font-weight:700;letter-spacing:-2px;line-height:1;margin-bottom:30px}
+  #o_end .cta{font-size:50px;font-weight:600;margin-bottom:14px}
+  #o_end .sub2{font-size:38px;font-weight:500;color:rgba(255,255,255,.72)}
+  #o_end .url{margin-top:64px;font-size:46px;font-weight:700;color:#fff}
+</style></head>
+<body>
+
+<div class="ov" id="o_hook">
+  <div class="scrim-top"></div>
+  <img class="wm" src="../ifm-round-t.png">
+  <div class="kicker">A classroom money game</div>
+  <div class="big">Can you afford<br><span class="grad">your future?</span></div>
+  <div class="sub">Build your dream life today…</div>
+</div>
+
+<div class="ov" id="o_b2">
+  <div class="scrim-bot"></div>
+  <img class="wm" src="../ifm-round-t.png">
+  <div class="kicker">Round 1 · The Dream</div>
+  <div class="big">Pick your <span class="grad">dream life</span></div>
+  <div class="sub">₹25,00,000 to spend. Spend it all?</div>
+</div>
+
+<div class="ov" id="o_b3">
+  <div class="scrim-bot"></div>
+  <img class="wm" src="../ifm-round-t.png">
+  <div class="kicker">Round 2 · 5 years later</div>
+  <div class="big">Same dreams.<br><span class="grad">Lakhs more.</span></div>
+  <div class="sub">Prices rise. Your budget doesn't.</div>
+</div>
+
+<div class="ov" id="o_b4">
+  <div class="scrim-bot"></div>
+  <img class="wm" src="../ifm-round-t.png">
+  <div class="kicker">The Lifestyle Time Machine</div>
+  <div class="big">Played <span class="grad">live</span> in class</div>
+  <div class="sub">Real mums. Real money lessons.</div>
+</div>
+
+<div class="ov" id="o_end">
+  <div class="wrap">
+    <img class="logo" src="../ifm-round-t.png">
+    <div class="title">Lifestyle<br>Time Machine</div>
+    <div class="cta grad">Play it free</div>
+    <div class="sub2">One of 11 money games by IFM</div>
+    <div class="url">investingformummies.com</div>
+  </div>
+</div>
+
+</body></html>

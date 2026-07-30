@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Rice & The Chessboard — Power of Compounding</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #2a9d8f;
+  --navy: #1a3a5c;
+  --muted: #5a7d8a;
+  --cream: #f7faf9;
+  --mint: #bde9e4;
+  --mint-lt: #e0f3f0;
+  --gold: #f6c842;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(160deg, #0d2238 0%, #1a3a5c 100%);
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 48px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+  max-width: 620px;
+}
+.header h1 {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.header p {
+  font-size: 0.9rem;
+  color: var(--mint);
+  opacity: 0.75;
+}
+
+.layout {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 920px;
+}
+
+/* ── Board ── */
+.board-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  border: 3px solid var(--mint);
+  border-radius: 6px;
+  overflow: hidden;
+  width: min(440px, 90vw);
+  height: min(440px, 90vw);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.sq {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.35s ease;
+  overflow: hidden;
+}
+.sq.light { background: #f0d9b5; }
+.sq.dark  { background: #b58863; }
+
+.sq.revealed.light { background: linear-gradient(135deg, #ffd700, #f6a800); }
+.sq.revealed.dark  { background: linear-gradient(135deg, #e8a800, #c88000); }
+
+.sq.current {
+  outline: 3px solid #fff;
+  outline-offset: -3px;
+  z-index: 2;
+  animation: sqPulse 0.9s ease-in-out infinite alternate;
+}
+@keyframes sqPulse {
+  from { box-shadow: inset 0 0 0 0 rgba(255,255,255,0); }
+  to   { box-shadow: inset 0 0 12px 3px rgba(255,255,255,0.45); }
+}
+
+.sq-num {
+  position: absolute;
+  top: 2px; left: 3px;
+  font-size: clamp(0.3rem, 0.8vw, 0.45rem);
+  font-weight: 800;
+  color: rgba(26,58,92,0.45);
+  pointer-events: none;
+  line-height: 1;
+}
+.sq-val {
+  font-size: clamp(0.38rem, 1.1vw, 0.56rem);
+  font-weight: 900;
+  color: var(--navy);
+  text-align: center;
+  line-height: 1.15;
+  padding: 0 2px;
+}
+
+.col-labels {
+  display: flex;
+  width: min(440px, 90vw);
+  justify-content: space-around;
+  font-size: 0.58rem;
+  color: var(--mint);
+  opacity: 0.35;
+  letter-spacing: 0.12em;
+  margin-top: 2px;
+}
+
+/* ── Panel ── */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 220px;
+  max-width: 290px;
+  flex: 1;
+}
+
+.sq-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--mint);
+  opacity: 0.8;
+  text-align: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(189,233,228,0.22);
+  border-radius: 16px;
+  padding: 16px 20px;
+}
+.card-lbl {
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mint);
+  opacity: 0.55;
+  margin-bottom: 4px;
+}
+.card-val {
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1.1;
+  word-break: break-word;
+}
+.card-val.sm { font-size: 1.15rem; }
+.card-sub {
+  font-size: 0.68rem;
+  color: var(--mint);
+  opacity: 0.55;
+  margin-top: 3px;
+}
+
+/* Progress */
+.prog-wrap { display: flex; flex-direction: column; gap: 5px; }
+.prog-meta { display: flex; justify-content: space-between; font-size: 0.62rem; color: var(--mint); opacity: 0.45; }
+.prog-bar { height: 6px; background: rgba(255,255,255,0.1); border-radius: 99px; overflow: hidden; }
+.prog-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  border-radius: 99px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+/* Milestone */
+.milestone {
+  background: rgba(42,157,143,0.14);
+  border: 1px solid var(--teal);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--mint);
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  line-height: 1.45;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+.milestone.gold {
+  background: rgba(246,200,66,0.1);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Controls */
+.controls { display: flex; flex-direction: column; gap: 8px; }
+
+.btn {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.18s;
+  text-align: center;
+}
+.btn-teal { background: var(--teal); color: #fff; }
+.btn-teal:hover:not(:disabled) { background: #23867a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(42,157,143,0.4); }
+.btn-teal:disabled { opacity: 0.38; cursor: not-allowed; transform: none; }
+.btn-out { background: transparent; color: var(--mint); border: 2px solid rgba(189,233,228,0.35); }
+.btn-out:hover { background: rgba(189,233,228,0.09); border-color: var(--mint); }
+.btn-out.active { border-color: var(--gold); color: var(--gold); }
+
+.speed-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  color: var(--mint);
+  opacity: 0.65;
+  padding: 0 4px;
+}
+.speed-row input[type=range] { flex: 1; accent-color: var(--teal); }
+
+/* ── End overlay ── */
+.end-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8,18,35,0.97);
+  z-index: 100;
+  overflow-y: auto;
+  padding: 32px 16px 56px;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  animation: fadeIn 0.5s ease;
+}
+.end-overlay.show { display: flex; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.end-title {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
+  color: var(--gold);
+  text-align: center;
+}
+.end-num {
+  font-size: clamp(0.95rem, 2.5vw, 1.4rem);
+  font-weight: 900;
+  color: #fff;
+  word-break: break-all;
+  text-align: center;
+}
+.end-word { font-size: 0.85rem; color: var(--mint); opacity: 0.72; margin-top: 4px; text-align: center; }
+
+.comp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 580px;
+}
+.comp-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(189,233,228,0.14);
+  border-radius: 14px;
+  padding: 16px 14px;
+  text-align: center;
+}
+.comp-icon { font-size: 1.7rem; margin-bottom: 6px; }
+.comp-head { font-size: 0.84rem; font-weight: 800; color: var(--gold); line-height: 1.3; }
+.comp-desc { font-size: 0.71rem; color: var(--mint); opacity: 0.65; margin-top: 6px; line-height: 1.45; }
+
+.insight {
+  background: linear-gradient(135deg, rgba(42,157,143,0.28), rgba(42,157,143,0.1));
+  border: 1px solid var(--teal);
+  border-radius: 18px;
+  padding: 24px 26px;
+  max-width: 580px;
+  width: 100%;
+}
+.insight h3 {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.insight p { font-size: 0.84rem; color: rgba(255,255,255,0.82); line-height: 1.65; }
+
+/* Grain canvas */
+.grain-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin-top: 10px;
+  background: rgba(0,0,0,0.25);
+}
+.grain-phase-label {
+  font-size: 0.6rem;
+  color: var(--mint);
+  opacity: 0.4;
+  text-align: right;
+  margin-top: 3px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🌾 The Rice &amp; The Chessboard</h1>
+  <p>Click through all 64 squares and discover what the king promised away.</p>
+</div>
+
+<div class="layout">
+
+  <div class="board-wrap">
+    <div class="board" id="board"></div>
+    <div class="col-labels">
+      <span>a</span><span>b</span><span>c</span><span>d</span>
+      <span>e</span><span>f</span><span>g</span><span>h</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="sq-label" id="sqLabel">Square — of 64</div>
+
+    <div class="card">
+      <div class="card-lbl">Grains on this square</div>
+      <div class="card-val" id="thisVal">—</div>
+      <canvas id="grainViz" class="grain-canvas" width="500" height="340"></canvas>
+      <div class="grain-phase-label" id="grainPhaseLabel"></div>
+    </div>
+
+    <div class="prog-wrap">
+      <div class="prog-meta">
+        <span>Progress</span>
+        <span id="progMeta">0 / 64</span>
+      </div>
+      <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+    </div>
+
+    <div class="milestone" id="milestone">
+      Press <strong>Next Square</strong> to begin.
+    </div>
+
+    <div class="controls">
+      <button class="btn btn-teal" id="btnNext" onclick="nextSq()">▶&nbsp; Next Square</button>
+      <button class="btn btn-out"  id="btnAuto" onclick="toggleAuto()">⚡&nbsp; Auto-play</button>
+      <div class="speed-row">
+        Slow <input type="range" id="speed" min="1" max="10" value="5"> Fast
+      </div>
+      <button class="btn btn-out" onclick="reset()">↺&nbsp; Reset</button>
+    </div>
+  </div>
+</div>
+
+<!-- End screen -->
+<div class="end-overlay" id="endOverlay">
+  <div class="end-title">👑 The King Ran Out of Rice.</div>
+  <div>
+    <div style="font-size:0.78rem;color:var(--mint);opacity:0.65;text-align:center;margin-bottom:6px;">Total grains across all 64 squares:</div>
+    <div class="end-num">18,446,744,073,709,551,615</div>
+    <div class="end-word">That's 18.4 <em>quintillion</em> grains — a number the king never imagined.</div>
+  </div>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="comp-icon">🌍</div>
+      <div class="comp-head">920 years of world rice production</div>
+      <div class="comp-desc">The whole world grows ~500 million tonnes a year. You'd need 920 of those years to pay up.</div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-icon">🌾</div>
+      <div class="comp-head">3,800 years of India's harvest</div>
+      <div class="comp-desc">India grows ~120 million tonnes a year. The wise man's rice would take 3,800 harvests.</div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-icon">⚖️</div>
+      <div class="comp-head">460 billion tonnes</div>
+      <div class="comp-desc">That's more than the combined weight of every mountain range in India, many times over.</div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-icon">👨‍👩‍👧‍👦</div>
+      <div class="comp-head">Feed Earth for 2,000 years</div>
+      <div class="comp-desc">8 billion people eating 200g of rice a day — this much rice lasts over 2,000 years.</div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <h3>So what does this mean for your money?</h3>
+    <p>
+      The chessboard doubles every square — 100% growth per step. The stock market doesn't do that, but good Indian index funds have averaged <strong>12–15% a year</strong> for decades.<br><br>
+      At 12% a year, money doubles roughly every <strong>6 years</strong>. Put away ₹10,000 today and leave it — after 42 years (7 doublings) it becomes ₹12,80,000. Without adding another rupee.<br><br>
+      <strong>The chessboard's secret isn't the doubling. It's the time. Start early.</strong>
+    </p>
+  </div>
+
+  <button class="btn btn-out" onclick="closeEnd()" style="max-width:200px;">↺&nbsp; Play Again</button>
+</div>
+
+<script>
+const ML = {
+   1: { t: '"That\'s all?" The king laughed. Just 1 grain of rice.', g: false },
+   5: { t: '16 grains — barely a pinch between your fingers. Still nothing.', g: false },
+  10: { t: '512 grains — a small handful. Looks harmless… or is it?', g: false },
+  15: { t: '16,384 grains — about 400g. A small cup of rice. The king is still calm.', g: false },
+  20: { t: '5,24,288 grains — about 13 kg! A full sack of rice. 🎒 The king\'s smile fades.', g: true },
+  25: { t: '1.68 crore grains — about 420 kg. You\'d need a car to carry this. 🚗', g: true },
+  30: { t: '53.7 crore grains — about 13 tonnes. Time to call a truck! 🚛', g: true },
+  35: { t: '1,718 crore grains — 430 tonnes. This fills an entire warehouse. 🏭', g: true },
+  40: { t: '55,000 crore grains — 14,000 tonnes. The royal treasury is gone. 💸', g: true },
+  45: { t: '1.76 lakh crore grains — 4.4 lakh tonnes. More than a whole district grows in a year.', g: true },
+  50: { t: '56 lakh crore grains — 1.4 crore tonnes. About a month of India\'s entire rice harvest. 😰', g: true },
+  55: { t: '45 crore tonnes on this ONE square alone — nearly a full year of WORLD rice production! 🌏', g: true },
+  60: { t: '1,440 crore tonnes on just this square — 29 years of world rice output. There\'s no rice left on Earth. 🌍', g: true },
+  64: { t: 'Square 64 alone needs 462 years of world rice production. 👑 The wise man wins. The kingdom has nothing.', g: true },
+};
+
+let cur = 0, isAuto = false, timer = null;
+
+function fmt(n) {
+  if (n === 0n) return '—';
+  const s = n.toString();
+  const len = s.length;
+  if (len <= 3) return s;
+  const TIERS = [
+    [19, 'Quintillion', 18],
+    [16, 'Quadrillion', 15],
+    [13, 'Trillion',    12],
+    [10, 'Billion',      9],
+    [ 7, 'Million',      6],
+    [ 4, 'Thousand',     3],
+  ];
+  for (const [minLen, label, exp] of TIERS) {
+    if (len >= minLen) {
+      const iD  = len - exp;
+      const v   = parseFloat(s.slice(0, iD) + '.' + s.slice(iD, iD + 2).padEnd(2, '0'));
+      const num = v >= 100 ? v.toFixed(0) : v >= 10 ? v.toFixed(1) : v.toFixed(2);
+      return num + ' ' + label;
+    }
+  }
+  return s;
+}
+
+function shortLbl(n) {
+  if (n === 0n) return '';
+  if (n < 1000n) return n.toString();
+  if (n < 1000000n) return Math.round(Number(n)/1000) + 'K';
+  if (n < 1000000000n) return (Number(n)/1e6).toFixed(0) + 'M';
+  if (n < 1000000000000n) return (Number(n)/1e9).toFixed(0) + 'B';
+  if (n < 1000000000000000n) return (Number(n)/1e12).toFixed(0) + 'T';
+  const s = n.toString();
+  return '10^' + (s.length - 1);
+}
+
+function buildBoard() {
+  const b = document.getElementById('board');
+  b.innerHTML = '';
+  for (let i = 0; i < 64; i++) {
+    const isLight = (Math.floor(i/8) + i%8) % 2 === 0;
+    const d = document.createElement('div');
+    d.className = 'sq ' + (isLight ? 'light' : 'dark');
+    d.id = 'sq' + i;
+    d.innerHTML = `<span class="sq-num">${i+1}</span><span class="sq-val" id="v${i}"></span>`;
+    b.appendChild(d);
+  }
+}
+
+function nextSq() {
+  if (cur >= 64) return;
+
+  if (cur > 0) document.getElementById('sq'+(cur-1))?.classList.remove('current');
+
+  cur++;
+  const idx  = cur - 1;
+  const g = 1n << BigInt(idx);
+
+  const sq = document.getElementById('sq'+idx);
+  sq.classList.add('revealed');
+  document.getElementById('v'+idx).textContent = shortLbl(g);
+  if (cur < 64) document.getElementById('sq'+cur)?.classList.add('current');
+
+  document.getElementById('sqLabel').textContent  = `Square ${cur} of 64`;
+  document.getElementById('thisVal').textContent  = fmt(g);
+  document.getElementById('progMeta').textContent = `${cur} / 64`;
+  document.getElementById('progFill').style.width = (cur/64*100)+'%';
+
+  drawGrains(g, cur);
+
+  // Milestone
+  const mc = document.getElementById('milestone');
+  if (ML[cur]) {
+    mc.textContent = ML[cur].t;
+    mc.className   = 'milestone' + (ML[cur].g ? ' gold' : '');
+  } else {
+    mc.textContent = `Square ${cur}: ${fmt(g)} grains on this square alone.`;
+    mc.className   = 'milestone';
+  }
+
+  if (cur >= 64) {
+    document.getElementById('btnNext').disabled = true;
+    if (isAuto) stopAuto();
+    setTimeout(showEnd, 1600);
+  }
+}
+
+
+function toggleAuto() {
+  isAuto ? stopAuto() : startAuto();
+}
+function startAuto() {
+  isAuto = true;
+  const btn = document.getElementById('btnAuto');
+  btn.textContent = '⏸  Pause';
+  btn.classList.add('active');
+  tick();
+}
+function stopAuto() {
+  isAuto = false;
+  clearTimeout(timer);
+  const btn = document.getElementById('btnAuto');
+  btn.textContent = '⚡  Auto-play';
+  btn.classList.remove('active');
+}
+function tick() {
+  if (!isAuto || cur >= 64) return;
+  nextSq();
+  const spd = parseInt(document.getElementById('speed').value);
+  timer = setTimeout(tick, Math.max(60, 1350 - spd*125));
+}
+
+function showEnd() {
+  document.getElementById('endOverlay').classList.add('show');
+}
+function closeEnd() {
+  document.getElementById('endOverlay').classList.remove('show');
+  reset();
+}
+function reset() {
+  stopAuto();
+  cur = 0;
+  buildBoard();
+  document.getElementById('sqLabel').textContent = 'Square — of 64';
+  document.getElementById('thisVal').textContent  = '—';
+  document.getElementById('progMeta').textContent = '0 / 64';
+  document.getElementById('progFill').style.width = '0%';
+  document.getElementById('grainPhaseLabel').textContent = '';
+  const canvas = document.getElementById('grainViz');
+  canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+  const mc = document.getElementById('milestone');
+  mc.textContent = 'Press Next Square to begin.';
+  mc.className   = 'milestone';
+  document.getElementById('btnNext').disabled = false;
+}
+
+function log2BigInt(n) {
+  const s = n.toString();
+  const lead = parseFloat(s.slice(0, 7)) / Math.pow(10, Math.min(s.length, 7) - 1);
+  return Math.log2(lead) + (s.length - 1) * Math.LOG2E * Math.LN10;
+}
+
+function makeRng(seed) {
+  let s = seed >>> 0;
+  return () => {
+    s = (Math.imul(s, 1664525) + 1013904223) >>> 0;
+    return s / 0xffffffff;
+  };
+}
+
+function drawGrains(n, sqIdx) {
+  const canvas = document.getElementById('grainViz');
+  const ctx    = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+
+  // Layout
+  const PAD_T = 24, PAD_B = 16, PAD_L = 130, PAD_R = 30;
+  const barW   = 90;
+  const barX   = (W - PAD_L - PAD_R - barW) / 2 + PAD_L;
+  const trackH = H - PAD_T - PAD_B;
+  const trackY = PAD_T;
+
+  // Log scale: square 1 → 0%, square 64 → 100%
+  const pct   = sqIdx === 0 ? 0 : (sqIdx - 1) / 63;
+  const fillH = Math.round(trackH * pct);
+  const fillY = trackY + trackH - fillH;
+
+  // ── Track (empty container) ──
+  ctx.fillStyle = 'rgba(255,255,255,0.05)';
+  ctx.strokeStyle = 'rgba(189,233,228,0.25)';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.roundRect(barX, trackY, barW, trackH, 6);
+  ctx.fill();
+  ctx.stroke();
+
+  // ── Filled portion ──
+  if (fillH > 2) {
+    const grad = ctx.createLinearGradient(0, fillY, 0, trackY + trackH);
+    grad.addColorStop(0,   pct > 0.75 ? '#ff6b35' : pct > 0.45 ? '#f6c842' : '#2a9d8f');
+    grad.addColorStop(0.6, '#2a9d8f');
+    grad.addColorStop(1,   '#1a6e65');
+    ctx.save();
+    ctx.beginPath();
+    ctx.roundRect(barX, trackY, barW, trackH, 6);
+    ctx.clip();
+    ctx.fillStyle = grad;
+    ctx.fillRect(barX, fillY, barW, fillH);
+    // top highlight stripe
+    ctx.fillStyle = 'rgba(255,255,255,0.18)';
+    ctx.fillRect(barX, fillY, barW, 4);
+    ctx.restore();
+  }
+
+  // ── Milestone markers ──
+  const marks = [
+    { sq: 10, label: 'handful' },
+    { sq: 20, label: 'sack (13 kg)' },
+    { sq: 30, label: 'truck (13 t)' },
+    { sq: 40, label: 'warehouse' },
+    { sq: 50, label: "India's month" },
+    { sq: 55, label: "world's year" },
+    { sq: 63, label: 'beyond Earth' },
+  ];
+
+  ctx.font = '20px Nunito, sans-serif';
+  ctx.lineWidth = 1;
+
+  for (const m of marks) {
+    const my      = trackY + trackH - trackH * (m.sq - 1) / 63;
+    const reached = sqIdx >= m.sq;
+    ctx.setLineDash([5, 5]);
+    ctx.strokeStyle = reached ? 'rgba(246,200,66,0.55)' : 'rgba(255,255,255,0.12)';
+    ctx.beginPath();
+    ctx.moveTo(barX - 6, my);
+    ctx.lineTo(barX + barW + 6, my);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.textAlign = 'right';
+    ctx.fillStyle = reached ? 'rgba(246,200,66,0.9)' : 'rgba(255,255,255,0.22)';
+    ctx.fillText(m.label, barX - 12, my + 7);
+  }
+
+  // ── Pct label inside bar ──
+  if (pct > 0) {
+    const label = (pct * 100).toFixed(pct < 0.02 ? 1 : 0) + '%';
+    ctx.font      = 'bold 26px Nunito, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = pct > 0.12 ? 'rgba(0,0,0,0.55)' : 'rgba(255,255,255,0.7)';
+    ctx.fillText(label, barX + barW / 2, Math.min(fillY + 32, trackY + trackH - 8));
+  }
+
+  document.getElementById('grainPhaseLabel').textContent = 'log scale — sq 64 = top';
+}
+
+buildBoard();
+</script>
+</body>
+</html>

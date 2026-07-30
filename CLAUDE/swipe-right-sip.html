@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>Swipe Right on SIP — IFM Gen Next</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1e3a27;
+  --forest-2:#16301f;
+  --forest-3:#0f2415;
+  --lime:#c9f24e;
+  --lime-dk:#a8d433;
+  --cream:#ece6d7;
+  --amber:#e9b63c;
+  --rust:#e8714a;
+  --line:rgba(201,242,78,0.14);
+  --line-soft:rgba(236,230,215,0.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;}
+body{
+  background:var(--forest);
+  color:var(--cream);
+  font-family:'Space Grotesk',sans-serif;
+  overflow-x:hidden;
+  background-image:
+    linear-gradient(var(--line-soft) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+  background-size:260px 260px;
+  background-position:center top;
+}
+.wrap{max-width:440px;margin:0 auto;min-height:100vh;position:relative;padding:0 16px;}
+.mono{font-family:'Space Mono',monospace;letter-spacing:0.18em;text-transform:uppercase;}
+.anton{font-family:'Anton',sans-serif;text-transform:uppercase;font-weight:400;}
+
+/* ── screens ── */
+.scr{display:none;padding-bottom:40px;animation:fadeIn .35s ease;}
+.scr.on{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ── top strip ── */
+.strip{display:flex;justify-content:space-between;align-items:center;padding:18px 2px 0;font-size:0.62rem;color:var(--lime);}
+
+/* ── INTRO ── */
+.kicker{color:var(--amber);font-size:0.66rem;margin:34px 2px 6px;}
+.title-1{font-size:clamp(64px,21vw,92px);line-height:0.88;color:var(--cream);letter-spacing:0.01em;}
+.title-2{font-size:clamp(64px,21vw,92px);line-height:0.88;color:var(--lime);margin-top:-10px;letter-spacing:0.01em;}
+.subtitle{color:var(--amber);font-size:clamp(22px,7vw,30px);margin:14px 0 12px;letter-spacing:0.04em;}
+.lede{color:rgba(236,230,215,0.85);font-size:0.95rem;line-height:1.5;max-width:360px;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:22px 0 16px;}
+.stat{border:1px solid var(--line);border-radius:12px;background:rgba(15,36,21,0.55);padding:12px 4px 9px;text-align:center;}
+.stat .n{font-family:'Anton',sans-serif;font-size:1.5rem;color:var(--lime);line-height:1;}
+.stat .l{font-size:0.5rem;color:rgba(236,230,215,0.65);margin-top:5px;}
+.venue{display:flex;border-radius:14px;overflow:hidden;margin:6px 0 22px;}
+.venue .v1{flex:1.6;background:var(--lime);color:var(--forest-3);padding:13px 14px;}
+.venue .v1 .l{font-size:0.52rem;opacity:0.7;}
+.venue .v1 .t{font-family:'Anton',sans-serif;font-size:1.15rem;line-height:1.1;margin-top:3px;}
+.venue .v2{flex:1;background:var(--amber);color:var(--forest-3);padding:13px 14px;}
+.venue .v2 .l{font-size:0.52rem;opacity:0.7;}
+.venue .v2 .t{font-family:'Anton',sans-serif;font-size:1.5rem;line-height:1;margin-top:2px;}
+.sect{color:var(--amber);font-size:0.62rem;margin:0 2px 10px;}
+.rule-row{display:flex;align-items:center;background:var(--forest-3);border-radius:14px;padding:15px 16px;margin-bottom:9px;position:relative;overflow:hidden;}
+.rule-row .num{font-family:'Anton',sans-serif;font-size:1.3rem;color:rgba(236,230,215,0.28);width:42px;flex:none;}
+.rule-row .name{font-family:'Anton',sans-serif;font-size:1.25rem;color:var(--cream);letter-spacing:0.03em;flex:1;}
+.rule-row .note{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--lime);text-align:right;line-height:1.6;width:92px;flex:none;margin-right:26px;}
+.rule-row .blob{position:absolute;top:-16px;right:-16px;width:42px;height:42px;border-radius:50%;opacity:0.9;}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 26px;}
+.pill{border:1px solid rgba(236,230,215,0.35);border-radius:30px;padding:8px 16px;font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream);}
+.cta{display:block;width:100%;background:var(--lime);color:var(--forest-3);border:none;border-radius:16px;padding:20px;font-family:'Anton',sans-serif;font-size:1.35rem;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:transform .15s, box-shadow .15s;}
+.cta:active{transform:scale(0.98);}
+.cta.ghost{background:transparent;color:var(--cream);border:1px solid rgba(236,230,215,0.4);font-size:1rem;padding:15px;margin-top:10px;}
+
+/* ── SWIPE SCREEN ── */
+.hud{display:flex;gap:8px;margin:16px 0 14px;}
+.hud .box{flex:1;border:1px solid var(--line);border-radius:12px;background:rgba(15,36,21,0.6);padding:9px 6px 7px;text-align:center;}
+.hud .box .n{font-family:'Anton',sans-serif;font-size:1.05rem;color:var(--lime);line-height:1;}
+.hud .box .n.amber{color:var(--amber);}
+.hud .box .l{font-size:0.48rem;color:rgba(236,230,215,0.6);margin-top:4px;font-family:'Space Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;}
+.prog{display:flex;gap:4px;margin-bottom:14px;}
+.prog i{flex:1;height:4px;border-radius:2px;background:rgba(236,230,215,0.15);}
+.prog i.done{background:var(--lime);}
+.stack{position:relative;height:430px;}
+.post{
+  position:absolute;inset:0;
+  background:var(--forest-3);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:20px 18px 18px;
+  display:flex;flex-direction:column;
+  touch-action:none;user-select:none;-webkit-user-select:none;
+  will-change:transform;
+  box-shadow:0 18px 50px rgba(0,0,0,0.4);
+}
+.post.behind{transform:scale(0.95) translateY(14px);filter:brightness(0.7);pointer-events:none;}
+.post.behind2{transform:scale(0.9) translateY(28px);filter:brightness(0.5);pointer-events:none;}
+.post .phead{display:flex;align-items:center;gap:11px;margin-bottom:14px;}
+.post .av{width:46px;height:46px;border-radius:50%;background:var(--forest-2);border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex:none;}
+.post .who{flex:1;min-width:0;}
+.post .handle{font-weight:700;font-size:0.95rem;color:var(--cream);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.post .meta{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(236,230,215,0.5);margin-top:2px;}
+.post .likes{font-family:'Anton',sans-serif;color:var(--amber);font-size:1.05rem;text-align:right;line-height:1;flex:none;}
+.post .likes .l{display:block;font-family:'Space Mono',monospace;font-size:0.45rem;letter-spacing:0.12em;color:rgba(236,230,215,0.5);margin-top:3px;}
+.post .pitch{flex:1;font-size:1.22rem;line-height:1.5;font-weight:500;color:var(--cream);display:flex;align-items:center;}
+.post .pitch p{width:100%;}
+.chip{border-bottom:2px dotted var(--lime);color:var(--lime);cursor:pointer;font-weight:600;}
+.post .pfoot{font-family:'Space Mono',monospace;font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(236,230,215,0.4);display:flex;justify-content:space-between;border-top:1px solid var(--line-soft);padding-top:12px;}
+.stamp{position:absolute;top:26px;font-family:'Anton',sans-serif;font-size:2rem;letter-spacing:0.05em;padding:6px 16px;border-radius:10px;border:3.5px solid;opacity:0;transform:rotate(-12deg);pointer-events:none;}
+.stamp.yes{left:18px;color:var(--lime);border-color:var(--lime);}
+.stamp.no{right:18px;color:var(--rust);border-color:var(--rust);transform:rotate(12deg);}
+.acts{display:flex;gap:12px;margin-top:18px;}
+.act{flex:1;border-radius:16px;padding:17px 8px;font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;border:none;transition:transform .12s;}
+.act:active{transform:scale(0.96);}
+.act.skip{background:transparent;color:var(--cream);border:1.5px solid rgba(236,230,215,0.4);}
+.act.invest{background:var(--lime);color:var(--forest-3);}
+.act.invest[disabled]{background:rgba(201,242,78,0.25);color:rgba(15,36,21,0.6);cursor:not-allowed;}
+.hint{text-align:center;font-family:'Space Mono',monospace;font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(236,230,215,0.45);margin-top:12px;}
+
+/* ── JUMP ── */
+#scr-jump{text-align:center;padding-top:24vh;}
+.jump-big{font-size:clamp(56px,17vw,80px);line-height:0.92;color:var(--lime);}
+.jump-sub{color:var(--cream);margin-top:16px;font-size:0.95rem;opacity:0.8;}
+.spinner{margin:34px auto 0;width:46px;height:46px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--lime);animation:spin 0.9s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── REVEAL ── */
+.rev-card{background:var(--forest-3);border:1px solid var(--line);border-radius:20px;padding:20px 18px;margin-top:14px;animation:fadeIn .3s ease;}
+.rev-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.rev-top .av{width:38px;height:38px;border-radius:50%;background:var(--forest-2);border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex:none;}
+.rev-top .h{font-weight:700;font-size:0.88rem;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tagchip{font-family:'Space Mono',monospace;font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;padding:5px 10px;border-radius:20px;border:1px solid;flex:none;}
+.tagchip.inv{color:var(--lime);border-color:var(--lime);}
+.tagchip.skp{color:rgba(236,230,215,0.6);border-color:rgba(236,230,215,0.35);}
+.verdict{font-family:'Anton',sans-serif;font-size:1.7rem;letter-spacing:0.03em;margin:6px 0 2px;}
+.verdict.good{color:var(--lime);}
+.verdict.bad{color:var(--rust);}
+.verdict.meh{color:var(--amber);}
+.flagline{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:12px;}
+.money{font-family:'Anton',sans-serif;font-size:1.6rem;color:var(--cream);background:var(--forest-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:12px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+.money .arrow{color:var(--amber);font-size:1.1rem;}
+.money .out.up{color:var(--lime);}
+.money .out.dn{color:var(--rust);}
+.money .ghost-l{font-family:'Space Mono',monospace;font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(236,230,215,0.5);width:100%;}
+.rev-why{font-size:0.93rem;line-height:1.55;color:rgba(236,230,215,0.9);}
+.ticker{display:flex;justify-content:space-between;align-items:center;margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:11px 14px;background:rgba(15,36,21,0.6);}
+.ticker .l{font-family:'Space Mono',monospace;font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(236,230,215,0.55);}
+.ticker .v{font-family:'Anton',sans-serif;font-size:1.15rem;color:var(--lime);}
+.rev-count{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber);margin-top:20px;}
+
+/* ── RESULTS ── */
+.res-grade{font-size:clamp(48px,14vw,64px);line-height:0.95;color:var(--lime);margin-top:8px;}
+.res-msg{color:rgba(236,230,215,0.85);font-size:0.95rem;line-height:1.5;margin:12px 0 20px;}
+.res-corpus{background:var(--lime);color:var(--forest-3);border-radius:16px;padding:18px;margin-bottom:10px;}
+.res-corpus .l{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;opacity:0.7;}
+.res-corpus .v{font-family:'Anton',sans-serif;font-size:2.6rem;line-height:1.05;margin-top:4px;}
+.bench{margin:18px 0 6px;}
+.bench-row{margin-bottom:13px;}
+.bench-row .bl{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(236,230,215,0.7);margin-bottom:5px;}
+.bench-row .bar{height:14px;border-radius:7px;background:rgba(236,230,215,0.12);overflow:hidden;}
+.bench-row .fill{height:100%;border-radius:7px;width:0;transition:width 1s ease;}
+.bench-row.you .fill{background:var(--lime);}
+.bench-row.victim .fill{background:var(--rust);}
+.bench-row.genius .fill{background:var(--amber);}
+.radar{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:16px;background:var(--forest-3);padding:16px;margin:14px 0;}
+.radar .big{font-family:'Anton',sans-serif;font-size:2.2rem;color:var(--amber);line-height:1;flex:none;}
+.radar .t{font-size:0.85rem;line-height:1.45;color:rgba(236,230,215,0.85);}
+.lesson{border-left:3px solid var(--lime);padding:4px 0 4px 14px;font-size:0.9rem;line-height:1.55;color:rgba(236,230,215,0.9);margin:18px 0 22px;}
+
+/* ── bottom sheet / toast ── */
+#sheetbg{position:fixed;inset:0;background:rgba(0,0,0,0.55);display:none;z-index:40;}
+#sheet{position:fixed;left:0;right:0;bottom:-100%;z-index:41;transition:bottom .28s ease;max-width:440px;margin:0 auto;background:var(--forest-2);border:1px solid var(--line);border-bottom:none;border-radius:20px 20px 0 0;padding:22px 20px 34px;}
+#sheet.on{bottom:0;}
+#sheet .term{font-family:'Anton',sans-serif;font-size:1.4rem;color:var(--lime);text-transform:uppercase;margin-bottom:8px;}
+#sheet .def{font-size:0.95rem;line-height:1.55;color:var(--cream);}
+#sheet .close{margin-top:18px;width:100%;background:transparent;border:1px solid rgba(236,230,215,0.4);color:var(--cream);border-radius:12px;padding:12px;font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;}
+#toast{position:fixed;top:18px;left:50%;transform:translateX(-50%) translateY(-80px);z-index:50;background:var(--amber);color:var(--forest-3);font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;padding:12px 20px;border-radius:30px;transition:transform .25s ease;white-space:nowrap;}
+#toast.on{transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ════ INTRO ════ -->
+  <div class="scr on" id="scr-intro">
+    <div class="strip mono"><span>IFM · GEN NEXT</span><span>MF · 101</span></div>
+    <div class="kicker mono">FIRST SALARY EDITION</div>
+    <div class="anton title-1">SWIPE</div>
+    <div class="anton title-2">RIGHT<span style="color:var(--cream);"> ON</span> SIP</div>
+    <div class="anton subtitle">YOUR FEED VS YOUR FUTURE</div>
+    <p class="lede">Your first salary just dropped. So has everyone's "investment advice." Ten posts. Five picks. Swipe right on the keepers — dodge the red flags.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="n">₹10K</div><div class="l mono">SALARY</div></div>
+      <div class="stat"><div class="n">10</div><div class="l mono">POSTS</div></div>
+      <div class="stat"><div class="n">5</div><div class="l mono">PICKS</div></div>
+      <div class="stat"><div class="n">5</div><div class="l mono">YEARS</div></div>
+    </div>
+
+    <div class="venue">
+      <div class="v1"><div class="l mono">VENUE</div><div class="t">YOUR FEED, 9:02 AM</div></div>
+      <div class="v2"><div class="l mono">STAKE</div><div class="t">₹2K</div></div>
+    </div>
+
+    <div class="sect mono">/ HOW TO PLAY</div>
+    <div class="rule-row"><div class="blob" style="background:var(--lime);"></div><div class="num">01</div><div class="name">SWIPE RIGHT</div><div class="note">invest ₹2,000</div></div>
+    <div class="rule-row"><div class="blob" style="background:var(--amber);"></div><div class="num">02</div><div class="name">SWIPE LEFT</div><div class="note">skip the post</div></div>
+    <div class="rule-row"><div class="blob" style="background:var(--cream);"></div><div class="num">03</div><div class="name">FIVE PICKS MAX</div><div class="note">choose wisely</div></div>
+
+    <div class="pills">
+      <span class="pill">SPOT RED FLAGS</span><span class="pill">DODGE SCAMS</span><span class="pill">2 MIN</span><span class="pill">NO REAL FUNDS</span><span class="pill">TAP <span style="color:var(--lime);border-bottom:2px dotted var(--lime);">DOTTED WORDS</span></span>
+    </div>
+
+    <button class="cta" onclick="startRun()">OPEN YOUR FEED</button>
+    <a href="swipe-right-sip-live.html" style="display:block;text-align:center;margin-top:14px;font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);text-decoration:none;">📽️ Teacher? Run it LIVE for your class →</a>
+  </div>
+
+  <!-- ════ SWIPE ════ -->
+  <div class="scr" id="scr-swipe">
+    <div class="strip mono"><span>IFM · GEN NEXT</span><span id="hud-day">POST 1 · 10</span></div>
+    <div class="hud">
+      <div class="box"><div class="n" id="hud-cash">₹10,000</div><div class="l">CASH LEFT</div></div>
+      <div class="box"><div class="n amber" id="hud-picks">0 / 5</div><div class="l">INVESTED</div></div>
+      <div class="box"><div class="n" id="hud-flags">0</div><div class="l">FLAGS DODGED</div></div>
+    </div>
+    <div class="prog" id="prog"></div>
+    <div class="stack" id="stack"></div>
+    <div class="acts">
+      <button class="act skip" onclick="actSwipe(-1)">✕ SKIP</button>
+      <button class="act invest" id="btn-invest" onclick="actSwipe(1)">💚 INVEST ₹2K</button>
+    </div>
+    <div class="hint mono">DRAG THE CARD OR USE THE BUTTONS</div>
+  </div>
+
+  <!-- ════ TIME JUMP ════ -->
+  <div class="scr" id="scr-jump">
+    <div class="anton jump-big">5 YEARS<br>LATER…</div>
+    <div class="jump-sub">Rent went up. Your hairline survived.<br>Let's see how your swipes did.</div>
+    <div class="spinner"></div>
+  </div>
+
+  <!-- ════ REVEAL ════ -->
+  <div class="scr" id="scr-reveal">
+    <div class="strip mono"><span>THE RECEIPTS</span><span id="rev-idx">1 · 10</span></div>
+    <div id="rev-host"></div>
+    <button class="cta" style="margin-top:16px;" id="rev-next" onclick="nextReveal()">NEXT ›</button>
+  </div>
+
+  <!-- ════ RESULTS ════ -->
+  <div class="scr" id="scr-results">
+    <div class="strip mono"><span>FINAL SCORE</span><span>5 YRS · DONE</span></div>
+    <div class="kicker mono" style="margin-top:26px;">THE VERDICT IS IN</div>
+    <div class="anton res-grade" id="res-grade">BORING GENIUS</div>
+    <div class="res-msg" id="res-msg"></div>
+
+    <div class="res-corpus">
+      <div class="l mono">YOUR ₹10,000 BECAME</div>
+      <div class="v" id="res-corpus">₹0</div>
+    </div>
+
+    <div class="bench">
+      <div class="bench-row you"><div class="bl"><span>YOU</span><span id="b-you-v"></span></div><div class="bar"><div class="fill" id="b-you"></div></div></div>
+      <div class="bench-row genius"><div class="bl"><span>BORING GENIUS (BEST PICKS)</span><span id="b-gen-v"></span></div><div class="bar"><div class="fill" id="b-gen"></div></div></div>
+      <div class="bench-row victim"><div class="bl"><span>HYPE VICTIM (MOST-LIKED PICKS)</span><span id="b-vic-v"></span></div><div class="bar"><div class="fill" id="b-vic"></div></div></div>
+    </div>
+
+    <div class="radar">
+      <div class="big" id="res-radar">0/0</div>
+      <div class="t"><strong>Red Flag Radar.</strong> <span id="res-radar-t"></span></div>
+    </div>
+
+    <div class="lesson" id="res-lesson"></div>
+
+    <button class="cta" onclick="shareResult()" id="btn-share">SHARE YOUR SCORE</button>
+    <button class="cta ghost" onclick="startRun()">RUN IT BACK ↻</button>
+  </div>
+
+</div>
+
+<!-- bottom sheet + toast -->
+<div id="sheetbg" onclick="closeSheet()"></div>
+<div id="sheet">
+  <div class="term" id="sheet-term"></div>
+  <div class="def" id="sheet-def"></div>
+  <button class="close mono" onclick="closeSheet()">GOT IT</button>
+</div>
+<div id="toast"></div>
+
+<script>
+/* ═══════════ JARGON DICTIONARY ═══════════ */
+var DEFS = {
+  mf:["Mutual fund","A big shared pot of money from many people, invested for everyone by a professional fund company."],
+  nfo:["NFO","New Fund Offer — a brand-new fund being launched. New means no track record yet. It does NOT mean cheap."],
+  units:["Units","The 'slices' of a fund you own. The price per slice says nothing about how good the fund is."],
+  smallcap:["Small-cap","A fund that buys small companies. Can grow fast, can fall hard."],
+  midcap:["Mid-cap","Medium-sized companies. Somewhere between steady and wild."],
+  largecap:["Large-cap","The biggest, steadiest companies on the market."],
+  flexicap:["Flexi-cap","A fund that's free to pick big, medium or small companies — whatever looks best."],
+  index:["Index fund","A fund that simply copies the market's official top-companies list (like the Nifty 50). No star manager, very low fees."],
+  direct:["Direct plan","Buying a fund straight from the fund company — no agent taking a yearly cut from your money."],
+  elss:["ELSS","A tax-saver fund. Invests in shares, cuts your tax bill, and is locked for 3 years."],
+  sip:["SIP","Auto-investing a fixed amount every month. Small, regular, automatic."],
+  hybrid:["Hybrid fund","Part shares, part bonds. A smoother ride than pure shares."],
+  liquid:["Liquid fund","A parking spot for money you might need soon. Safe, low growth, withdraw anytime."],
+  momentum:["Momentum fund","A fund that buys whatever has been rising lately. Rides waves up — and down."],
+  exitload:["Exit load","A small penalty for pulling money out of a fund too soon."],
+  lockin:["Lock-in","A period when you can't take your money out. Annoying — but it stops panic-selling."]
+};
+
+/* ═══════════ THE DECK ═══════════
+   type: r = red flag, g = green flag, y = judgment call
+   val  = what ₹2,000 became after 5 years                    */
+var DECK = [
+{h:"@WolfOfWadala",a:"🐺",likes:"84.2K",ln:84200,type:"r",tag:"NFO bait",
+ p:"Bhai, [[nfo|NFO]] dropping Monday! [[units|Units]] at ₹10 ONLY. The old fund from the same company costs ₹847. Which one's the bargain? 🧮💰 #groundfloor",
+ val:2750,why:"₹10 isn't cheap — it's just new. The \"expensive\" ₹847 fund would've made ₹3,750. A fund's unit price doesn't tell you if it's good."},
+{h:"@MoneyBhaiOfficial",a:"💰",likes:"52K",ln:52000,type:"r",tag:"No track record",
+ p:"New fund = fresh energy! Old [[mf|mutual funds]] are tired, bro. This one's HUNGRY 🔥 #newfund",
+ val:2600,why:"New isn't better — new just means there's no report card to check. Old funds show you ten years of results before you give them a rupee."},
+{h:"@LakhpatiLifestyle",a:"🤳",likes:"38K",ln:38000,type:"r",tag:"Fake urgency",
+ p:"I put my OWN money in this new fund (screenshot 📸). Window closes FRIDAY. Don't miss it!",
+ val:2800,why:"The \"closing Friday\" thing is a sales trick — the fund reopened the next week. Real investing has no deadline panic."},
+{h:"@ReturnsRani",a:"👑",likes:"91K",ln:91000,type:"r",tag:"Chasing last year's winner",
+ p:"This [[smallcap|small-cap]] fund gave 82% LAST YEAR 🤯 Imagine 5 more years of this!! #rocket",
+ val:2200,why:"It dropped to ₹1,400 in year one, then slowly crawled back. Last year's superstar is usually at its most expensive. You bought the party ticket after the party."},
+{h:"@ChartChacha",a:"📊",likes:"67K",ln:67000,type:"r",tag:"Star-rating trap",
+ p:"5-star rating! Number 1 in its category! The graph only goes UP 📈 #provenwinner",
+ val:2900,why:"Stars and rankings grade the past, not the future. The #1 fund from five years ago is almost never #1 today."},
+{h:"@VibesVijay",a:"😎",likes:"73K",ln:73000,type:"r",tag:"Vibes investing",
+ p:"I made 3x in crypto. Now I'm ALL IN on this hot [[momentum|momentum fund]]. Trust the vibes 🚀",
+ val:1900,why:"Vibes aren't a plan. Funds that ride whatever's hot fall just as fast when it cools."},
+{h:"@SIPnSlay",a:"💅",likes:"61.7K",ln:61700,type:"r",tag:"Hot theme + hidden commission",
+ p:"Defence stocks went UP 140% so there's a new Defence Fund 🪖 Use my link, I'll do ALL the paperwork, totally FREE babes 💅",
+ val:2100,why:"Double trouble: you bought after the big rise was already over, and \"free\" wasn't free — she earns a cut from your money every single year."},
+{h:"@DostInvestments",a:"🤝",likes:"44K",ln:44000,type:"r",tag:"Hidden commission",
+ p:"DM me and I'll set up your fund account FREE. Zero charges, pinky promise 🤙",
+ val:3250,why:"Decent fund, actually! But he quietly earns from your money every year. The exact same fund bought as a [[direct|direct plan]] would've given you ₹3,600."},
+{h:"@GuaranteedGuruji",a:"🧘",likes:"120K",ln:120000,type:"r",tag:"Guaranteed-returns scam",
+ p:"24% returns EVERY MONTH. Guaranteed 🙏 My students never lose. Ever. #blessed",
+ val:0,why:"The app vanished in month four. Real [[mf|mutual funds]] are never allowed to guarantee returns — anyone who promises is selling a scam."},
+{h:"@ForexFatima",a:"💸",likes:"98K",ln:98000,type:"r",tag:"UPI scam",
+ p:"Double your money in 6 months. Send to my UPI, I'll add you to the fund pool 💸 #VIPonly",
+ val:0,why:"Real funds NEVER ask you to send money to a person's UPI. Your money should only ever go to the fund company itself."},
+{h:"@SecretTipsBhau",a:"🤫",likes:"105K",ln:105000,type:"r",tag:"Paid tips trap",
+ p:"Join my VIP group, only ₹999 🤫 Daily sure-shot fund picks. Screenshots in bio!",
+ val:1600,why:"After his fee and his \"sure-shot\" switching, you lost money. If someone really had sure-shot picks, they wouldn't sell them for ₹999."},
+{h:"@TrendTaai",a:"⚡",likes:"58K",ln:58000,type:"r",tag:"Theme FOMO",
+ p:"EV is the FUTURE 🔋 EV stocks already tripled and a new EV Fund just dropped. LAST CHANCE.",
+ val:2050,why:"EVs might be the future, but the prices had already tripled before you arrived. Buying the future after everyone agrees on it is expensive."},
+{h:"@AIPaisaPro",a:"🤖",likes:"88K",ln:88000,type:"r",tag:"Theme FOMO",
+ p:"AI will eat the world 🤖 This AI fund is your ticket. Don't be the friend who missed it.",
+ val:2400,why:"The theme was real — but a fund betting on ONE idea swings hard. It crashed 35% in year two before recovering. Could you have held on?"},
+{h:"@PharmaDidi",a:"💊",likes:"41K",ln:41000,type:"r",tag:"Theme FOMO",
+ p:"The pandemic proved it: pharma is the ONLY safe bet. Health is wealth, literally 💊",
+ val:2300,why:"You bought right after pharma's big spike — then it went quiet for three years. One-industry funds run hot and cold."},
+{h:"@SwitchKing",a:"🏄",likes:"49K",ln:49000,type:"r",tag:"Churning",
+ p:"My rotation system 🏄 New winner fund every month. This month's pick is LIVE. Follow along!",
+ val:2400,why:"Every switch cost you a fee ([[exitload|exit load]]) and tax — and you kept arriving at each fund just after its best month. Paying tolls to go nowhere."},
+{h:"@TimingTina",a:"⏰",likes:"55K",ln:55000,type:"r",tag:"Market timing",
+ p:"Buy this fund TODAY. I'll tell you exactly when to exit 😎 We only catch the ups.",
+ val:2500,why:"Tina called one exit right and missed two re-entries. The market's best days come without warning — miss a few and you miss most of the growth."},
+{h:"@LoanLekeLakhpati",a:"🤑",likes:"33K",ln:33000,type:"r",tag:"Borrowing to invest",
+ p:"Genius hack 🤑 Personal loan at 14%, this fund does 20%. That's FREE 6% bro!",
+ val:1500,why:"The fund grew your money by ₹900 — but the loan cost ₹1,400 in interest. You paid ₹500 to lose money. Loan EMIs are guaranteed; fund returns never are."},
+
+{h:"@boring_paisa",a:"😴",likes:"47",ln:47,type:"g",tag:"Index fund",
+ p:"[[index|Index fund]]. Low fees. That's it. That's the post.",
+ val:3600,why:"Only 47 likes, best result in your feed. Good investing is usually too boring to go viral."},
+{h:"@SlowMoneySneha",a:"🐢",likes:"112",ln:112,type:"g",tag:"Flexi-cap, direct",
+ p:"[[flexicap|Flexi-cap]] fund, [[direct|direct plan]], 10-year track record. Boring? Yes. Working? Also yes.",
+ val:3500,why:"A fund free to pick big and small companies, no middleman cut, and a decade of proof. The checklist works."},
+{h:"@TaxSaverTara",a:"🧾",likes:"89",ln:89,type:"g",tag:"ELSS tax saver",
+ p:"[[elss|ELSS]] = invests in shares AND cuts your tax bill. [[lockin|Locked for 3 years]] — honestly, that's a feature.",
+ val:3400,why:"It also trimmed your tax bill. And the 3-year lock stopped you from panic-selling in the year-two dip. Sometimes handcuffs help."},
+{h:"@DalalStreetDadi",a:"👵",likes:"203",ln:203,type:"g",tag:"Large-cap",
+ p:"[[largecap|Large-company fund]], beta. Big steady businesses. You'll sleep well 😴",
+ val:3200,why:"Not the flashiest grower, but it barely flinched in the crash. Dadi knows: steady is a strategy."},
+{h:"@HalfHalfHarsh",a:"⚖️",likes:"64",ln:64,type:"g",tag:"Hybrid",
+ p:"[[hybrid|Hybrid fund]]: part shares, part bonds. Less rollercoaster, still grows.",
+ val:3000,why:"When the market dropped 30%, this dropped 12%. You stayed calm and stayed invested — which is the whole game."},
+{h:"@NiftyNiece",a:"🌱",likes:"31",ln:31,type:"g",tag:"Index (Next 50)",
+ p:"Nifty Next 50 [[index|index fund]]. Tomorrow's giant companies, tiny fee, no fund-manager drama.",
+ val:3650,why:"A bumpier ride than the regular index fund — but those \"next\" companies grew up. Lowest likes in your feed, highest result."},
+{h:"@SIPSimran",a:"📅",likes:"156",ln:156,type:"g",tag:"SIP habit",
+ p:"₹500 a month [[sip|SIP]] into one diversified fund. Started at 19. Future me already says thanks.",
+ val:3450,why:"The habit matters more than the amount. Small, automatic, every month. That's the cheat code hiding in plain sight."},
+{h:"@ParkItPriya",a:"🅿️",likes:"78",ln:78,type:"g",tag:"Liquid fund",
+ p:"Step zero: 3 months of expenses in a [[liquid|liquid fund]]. The boring superhero of your money.",
+ val:2650,why:"Lowest growth of the good ones — but when your laptop died in year 3, THIS money saved you from breaking your other funds. Growth isn't money's only job."},
+
+{h:"@MidCapManish",a:"🎢",likes:"8.2K",ln:8200,type:"y",tag:"Honest mid-cap",
+ p:"[[midcap|Mid-size company]] fund. Solid 7-year record. Fair warning: the ride gets bumpy. Only come if you can handle drops.",
+ val:3300,why:"It fell to ₹1,500 in year two before climbing. He warned you — honesty about risk is itself a green flag."},
+{h:"@GoldGudiya",a:"✨",likes:"12K",ln:12000,type:"y",tag:"Gold slice",
+ p:"Gold fund ✨ Won't grow fast. But when markets cry, gold shines.",
+ val:2900,why:"Fine as a small slice of your money, weak as your whole plan. The pitch was honest — that's rarer than gold."}
+];
+
+var STAKE = 2000, MAX_PICKS = 5, SAVINGS_VAL = 2150;
+
+/* ═══════════ STATE ═══════════ */
+var run = [], idx = 0, picks = [], revIdx = 0, finalStats = null;
+
+function fmt(n){
+  n = Math.round(n);
+  var s = String(Math.abs(n)), out = "";
+  if (s.length > 3){
+    out = "," + s.slice(-3); s = s.slice(0,-3);
+    while (s.length > 2){ out = "," + s.slice(-2) + out; s = s.slice(0,-2); }
+    out = s + out;
+  } else out = s;
+  return (n < 0 ? "-₹" : "₹") + out;
+}
+function shuffle(a){ for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t; } return a; }
+function show(id){ document.querySelectorAll('.scr').forEach(function(s){s.classList.remove('on');}); document.getElementById(id).classList.add('on'); window.scrollTo(0,0); }
+function toast(msg){ var t=document.getElementById('toast'); t.textContent=msg; t.classList.add('on'); clearTimeout(t._tm); t._tm=setTimeout(function(){t.classList.remove('on');},1900); }
+
+/* ═══════════ JARGON CHIPS ═══════════ */
+function chipify(p){
+  return p.replace(/\[\[(\w+)\|([^\]]+)\]\]/g, function(m,k,txt){
+    return DEFS[k] ? '<span class="chip" data-k="'+k+'">'+txt+'</span>' : txt;
+  });
+}
+function openSheet(k){
+  document.getElementById('sheet-term').textContent = DEFS[k][0];
+  document.getElementById('sheet-def').textContent = DEFS[k][1];
+  document.getElementById('sheetbg').style.display='block';
+  document.getElementById('sheet').classList.add('on');
+}
+function closeSheet(){
+  document.getElementById('sheetbg').style.display='none';
+  document.getElementById('sheet').classList.remove('on');
+}
+document.addEventListener('click', function(e){
+  var c = e.target.closest('.chip');
+  if (c && c.dataset.k) openSheet(c.dataset.k);
+});
+
+/* ═══════════ RUN SETUP ═══════════ */
+function startRun(){
+  var reds = shuffle(DECK.filter(function(c){return c.type==='r';}).slice());
+  var greens = shuffle(DECK.filter(function(c){return c.type==='g';}).slice());
+  var yellows = shuffle(DECK.filter(function(c){return c.type==='y';}).slice());
+  var nRed = 5 + Math.floor(Math.random()*2);          // 5 or 6
+  run = shuffle(reds.slice(0,nRed).concat(greens.slice(0,10-nRed-1), yellows.slice(0,1)));
+  idx = 0; picks = []; revIdx = 0;
+  var prog = document.getElementById('prog'); prog.innerHTML='';
+  for (var i=0;i<10;i++) prog.appendChild(document.createElement('i'));
+  updateHud(); renderStack(); show('scr-swipe');
+}
+
+function updateHud(){
+  var spent = picks.filter(function(p){return p.invested;}).length;
+  document.getElementById('hud-cash').textContent = fmt(10000 - spent*STAKE);
+  document.getElementById('hud-picks').textContent = spent + ' / ' + MAX_PICKS;
+  document.getElementById('hud-flags').textContent = '?';
+  document.getElementById('hud-day').textContent = 'POST ' + Math.min(idx+1,10) + ' · 10';
+  document.getElementById('btn-invest').disabled = (spent >= MAX_PICKS);
+  var pips = document.querySelectorAll('#prog i');
+  pips.forEach(function(p,i){ p.className = i < idx ? 'done' : ''; });
+}
+
+/* ═══════════ CARD STACK + SWIPE ═══════════ */
+function renderStack(){
+  var stack = document.getElementById('stack'); stack.innerHTML='';
+  for (var d=Math.min(idx+2, run.length-1); d>=idx; d--){
+    if (d >= run.length) continue;
+    var c = run[d];
+    var el = document.createElement('div');
+    el.className = 'post' + (d===idx?'':(d===idx+1?' behind':' behind2'));
+    el.innerHTML =
+      '<div class="phead">'+
+        '<div class="av">'+c.a+'</div>'+
+        '<div class="who"><div class="handle">'+c.h+'</div><div class="meta">sponsored · finance</div></div>'+
+        '<div class="likes">'+c.likes+'<span class="l">LIKES</span></div>'+
+      '</div>'+
+      '<div class="pitch"><p>'+chipify(c.p)+'</p></div>'+
+      '<div class="pfoot"><span>YOUR FEED</span><span>POST '+(d+1)+'/10</span></div>'+
+      '<div class="stamp yes">INVEST 💚</div>'+
+      '<div class="stamp no">SKIP ✕</div>';
+    stack.appendChild(el);
+    if (d === idx) bindDrag(el);
+  }
+}
+
+function bindDrag(el){
+  var sx=0, sy=0, dx=0, dragging=false, moved=false;
+  function pt(e){ return e.touches ? e.touches[0] : e; }
+  function down(e){
+    if (e.target.closest('.chip')) return;
+    dragging=true; moved=false; var p=pt(e); sx=p.clientX; sy=p.clientY; dx=0;
+    el.style.transition='none';
+  }
+  function move(e){
+    if(!dragging) return;
+    var p=pt(e); dx=p.clientX-sx; var dy=p.clientY-sy;
+    if (Math.abs(dx)>6) moved=true;
+    if (moved && e.cancelable) e.preventDefault();
+    el.style.transform='translateX('+dx+'px) translateY('+(dy*0.15)+'px) rotate('+(dx/14)+'deg)';
+    var y=el.querySelector('.stamp.yes'), n=el.querySelector('.stamp.no');
+    y.style.opacity = dx>0 ? Math.min(dx/90,1) : 0;
+    n.style.opacity = dx<0 ? Math.min(-dx/90,1) : 0;
+  }
+  function up(){
+    if(!dragging) return; dragging=false;
+    if (dx > 85){ tryResolve(1, el, dx); }
+    else if (dx < -85){ resolve(-1, el, dx); }
+    else { el.style.transition='transform .25s ease'; el.style.transform=''; var y=el.querySelector('.stamp.yes'),n=el.querySelector('.stamp.no'); y.style.opacity=0; n.style.opacity=0; }
+  }
+  el.addEventListener('mousedown',down); el.addEventListener('touchstart',down,{passive:true});
+  window.addEventListener('mousemove',move,{passive:false}); window.addEventListener('touchmove',move,{passive:false});
+  window.addEventListener('mouseup',up); window.addEventListener('touchend',up);
+}
+
+function tryResolve(dir, el, dx){
+  var spent = picks.filter(function(p){return p.invested;}).length;
+  if (dir===1 && spent >= MAX_PICKS){
+    toast('NO CASH LEFT — SKIP THE REST!');
+    el.style.transition='transform .25s ease'; el.style.transform='';
+    var y=el.querySelector('.stamp.yes'); if(y) y.style.opacity=0;
+    return;
+  }
+  resolve(dir, el, dx);
+}
+
+function resolve(dir, el, dx){
+  var c = run[idx];
+  picks.push({card:c, invested:dir===1});
+  el.style.transition='transform .35s ease, opacity .35s ease';
+  el.style.transform='translateX('+(dir*560)+'px) rotate('+(dir*24)+'deg)';
+  el.style.opacity='0';
+  idx++;
+  setTimeout(function(){
+    if (idx >= run.length){ updateHud(); timeJump(); }
+    else { renderStack(); updateHud(); }
+  }, 280);
+}
+
+function actSwipe(dir){
+  var stack=document.getElementById('stack');
+  var top=stack.querySelector('.post:not(.behind):not(.behind2)');
+  if(!top) return;
+  if (dir===1){ tryResolve(1, top, 0); } else { resolve(-1, top, 0); }
+}
+
+/* ═══════════ TIME JUMP → REVEAL ═══════════ */
+function timeJump(){
+  show('scr-jump');
+  setTimeout(function(){ computeStats(); revIdx=0; renderReveal(); show('scr-reveal'); }, 2200);
+}
+
+function verdictFor(p){
+  var t=p.card.type;
+  if (p.invested){
+    if (t==='r') return ['OUCH.','bad'];
+    if (t==='g') return ["IT'S A MATCH 💚",'good'];
+    return ['FAIR PLAY 👍','good'];
+  } else {
+    if (t==='r') return ['DODGED 🚩','good'];
+    if (t==='g') return ['SCROLLED PAST 💔','meh'];
+    return ['FAIR CALL','meh'];
+  }
+}
+
+function renderReveal(){
+  var p = picks[revIdx], c = p.card;
+  var v = verdictFor(p);
+  document.getElementById('rev-idx').textContent = (revIdx+1)+' · '+picks.length;
+  var moneyHtml;
+  if (p.invested){
+    moneyHtml = '<div class="money">'+fmt(STAKE)+' <span class="arrow">→</span> <span class="out '+(c.val>=STAKE?'up':'dn')+'">'+fmt(c.val)+'</span></div>';
+  } else {
+    moneyHtml = '<div class="money"><span class="ghost-l">IF YOU HAD INVESTED</span>'+fmt(STAKE)+' <span class="arrow">→</span> <span class="out '+(c.val>=STAKE?'up':'dn')+'">'+fmt(c.val)+'</span></div>';
+  }
+  var runTotal = runningTotal(revIdx);
+  document.getElementById('rev-host').innerHTML =
+    '<div class="rev-card">'+
+      '<div class="rev-top"><div class="av">'+c.a+'</div><div class="h">'+c.h+'</div>'+
+      '<span class="tagchip '+(p.invested?'inv':'skp')+'">'+(p.invested?'INVESTED':'SKIPPED')+'</span></div>'+
+      '<div class="verdict anton '+v[1]+'">'+v[0]+'</div>'+
+      '<div class="flagline">'+(c.type==='r'?'🚩 ':'')+c.tag+'</div>'+
+      moneyHtml+
+      '<div class="rev-why">'+chipify(c.why)+'</div>'+
+      '<div class="ticker"><span class="l">YOUR MONEY SO FAR</span><span class="v">'+fmt(runTotal)+'</span></div>'+
+    '</div>';
+  document.getElementById('rev-next').textContent = (revIdx === picks.length-1) ? 'SEE FINAL SCORE ›' : 'NEXT ›';
+}
+
+function runningTotal(upto){
+  var total=0, investedCount=0;
+  for (var i=0;i<=upto;i++){ if (picks[i].invested){ total+=picks[i].card.val; investedCount++; } }
+  // remaining cash (not yet resolved slots) at face value
+  var spentAll = picks.filter(function(p){return p.invested;}).length;
+  total += (10000 - spentAll*STAKE);
+  // subtract already counted? simpler: cash that was never invested stays as-is until results
+  return total;
+}
+
+function nextReveal(){
+  revIdx++;
+  if (revIdx >= picks.length){ renderResults(); show('scr-results'); }
+  else renderReveal();
+}
+
+/* ═══════════ RESULTS ═══════════ */
+function computeStats(){
+  var invested = picks.filter(function(p){return p.invested;});
+  var corpus = invested.reduce(function(s,p){return s+p.card.val;},0);
+  var freeSlots = MAX_PICKS - invested.length;
+  corpus += freeSlots * SAVINGS_VAL;                      // idle cash earned savings interest
+
+  var byLikes = run.slice().sort(function(a,b){return b.ln-a.ln;}).slice(0,5);
+  var victim = byLikes.reduce(function(s,c){return s+c.val;},0);
+  var byVal = run.slice().sort(function(a,b){return b.val-a.val;}).slice(0,5);
+  var genius = byVal.reduce(function(s,c){return s+c.val;},0);
+
+  var reds = run.filter(function(c){return c.type==='r';}).length;
+  var dodged = picks.filter(function(p){return !p.invested && p.card.type==='r';}).length;
+
+  var skill = genius>victim ? Math.max(0,Math.min(1,(corpus-victim)/(genius-victim))) : 0.5;
+  var radar = reds>0 ? dodged/reds : 1;
+  var combined = 0.6*skill + 0.4*radar;
+  var grade, msg;
+  if (combined >= 0.85){ grade='BORING GENIUS'; msg='You read the feed like a pro. Low likes, long track records, no drama — you picked substance over noise. Genuinely elite behaviour.'; }
+  else if (combined >= 0.6){ grade='STEADY HAND'; msg='Solid swiping. A couple of shiny posts got past you, but your instincts are good — boring funds, big results.'; }
+  else if (combined >= 0.35){ grade='HYPE CURIOUS'; msg='The feed got you a few times. Remember: the louder the post, the harder you should look at it. Run it back.'; }
+  else { grade='HYPE VICTIM'; msg='The algorithm won this round. Every trap you tapped looked exciting — that\'s exactly how they work. Now you know the red flags. Run it back.'; }
+
+  finalStats = {corpus:corpus, victim:victim+0, genius:genius, reds:reds, dodged:dodged, grade:grade, msg:msg};
+}
+
+function renderResults(){
+  var s = finalStats;
+  document.getElementById('res-grade').textContent = s.grade;
+  document.getElementById('res-msg').textContent = s.msg;
+  document.getElementById('res-corpus').textContent = fmt(s.corpus);
+  document.getElementById('b-you-v').textContent = fmt(s.corpus);
+  document.getElementById('b-gen-v').textContent = fmt(s.genius);
+  document.getElementById('b-vic-v').textContent = fmt(s.victim);
+  document.getElementById('res-radar').textContent = s.dodged+'/'+s.reds;
+  document.getElementById('res-radar-t').textContent = 'You dodged '+s.dodged+' of the '+s.reds+' red flags in your feed.'+(s.dodged===s.reds?' Perfect radar — nothing got past you.':' Each one you missed has a tell. You\'ll spot it next time.');
+  document.getElementById('res-lesson').textContent = 'The lesson: good funds are boring. Long track record, low fees, no promises, no countdown timers. If a post is shouting, check why.';
+  var maxV = Math.max(s.corpus, s.genius, s.victim, 1);
+  setTimeout(function(){
+    document.getElementById('b-you').style.width = (s.corpus/maxV*100)+'%';
+    document.getElementById('b-gen').style.width = (s.genius/maxV*100)+'%';
+    document.getElementById('b-vic').style.width = (s.victim/maxV*100)+'%';
+  }, 120);
+}
+
+function shareResult(){
+  var s = finalStats;
+  var txt = 'I just played Swipe Right on SIP 💚 My ₹10,000 became '+fmt(s.corpus)+' and I dodged '+s.dodged+'/'+s.reds+' red flags. Grade: '+s.grade+'. Can you beat my radar? 🚩 investingformummies.com';
+  if (navigator.share){ navigator.share({text:txt}).catch(function(){}); }
+  else if (navigator.clipboard){ navigator.clipboard.writeText(txt).then(function(){ toast('COPIED — PASTE IT ANYWHERE'); }); }
+  else toast('SCREENSHOT IT & SHARE!');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IFM News Review</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #f7faf9; color: #1a3a5c; padding: 24px 24px 120px; max-width: 680px; margin: 0 auto; }
+  h1 { font-size: 1.4rem; color: #1a3a5c; margin-bottom: 4px; }
+  h2 { font-size: 1rem; color: #1a3a5c; margin: 28px 0 10px; }
+  .sub { color: #5a7d8a; font-size: 0.85rem; margin-bottom: 24px; }
+  .card { background: white; border-radius: 12px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); padding: 18px 20px; transition: box-shadow 0.2s; }
+  .card.rejected { opacity: 0.5; border: 2px solid #f4c2c2; }
+  .card.approved { border: 2px solid #2a9d8f; }
+  .card-meta { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+  .source { font-size: 0.72rem; color: #5a7d8a; font-weight: 700; text-transform: uppercase; }
+  .date { font-size: 0.72rem; color: #aaa; }
+  .score { font-size: 0.7rem; font-weight: 700; color: white; padding: 2px 8px; border-radius: 20px; }
+  .title { font-size: 0.97rem; font-weight: 700; color: #1a3a5c; text-decoration: none; display: block; margin-bottom: 5px; line-height: 1.4; }
+  .title:hover { color: #2a9d8f; }
+  .reason { font-size: 0.78rem; color: #2a9d8f; margin-bottom: 5px; }
+  .summary { font-size: 0.82rem; color: #5a7d8a; line-height: 1.5; margin-bottom: 12px; }
+  .card-actions { display: flex; gap: 10px; align-items: center; }
+  .approve-label { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 700; color: #2a9d8f; cursor: pointer; padding: 6px 12px; border: 2px solid #2a9d8f; border-radius: 8px; }
+  .approve-label input { accent-color: #2a9d8f; width: 16px; height: 16px; }
+  .reject-btn { background: none; border: 2px solid #e0e0e0; color: #aaa; font-size: 0.82rem; font-weight: 700; border-radius: 8px; padding: 6px 12px; cursor: pointer; transition: all .15s; }
+  .reject-btn:hover, .reject-btn.active { border-color: #e57373; color: #e57373; background: #fff5f5; }
+  .reject-box { margin-top: 10px; }
+  .reason-input { width: 100%; padding: 8px 12px; border: 2px solid #f4c2c2; border-radius: 8px; font-size: 0.82rem; font-family: 'Segoe UI', sans-serif; color: #1a3a5c; outline: none; }
+  .reason-input:focus { border-color: #e57373; }
+  .manual-section { background: white; border-radius: 12px; padding: 18px 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); margin-bottom: 14px; }
+  .manual-section p { font-size: 0.82rem; color: #5a7d8a; margin-bottom: 10px; }
+  .manual-textarea { width: 100%; min-height: 90px; padding: 10px 12px; border: 2px solid #e0f3f0; border-radius: 8px; font-size: 0.82rem; font-family: 'Segoe UI', sans-serif; color: #1a3a5c; resize: vertical; outline: none; }
+  .manual-textarea:focus { border-color: #2a9d8f; }
+  .sticky { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 2px solid #e0f3f0; padding: 14px 24px; display: flex; align-items: center; gap: 14px; box-shadow: 0 -2px 12px rgba(0,0,0,0.08); z-index: 99; }
+  .btn { background: #2a9d8f; color: white; border: none; padding: 11px 26px; border-radius: 8px; font-size: 0.92rem; font-weight: 700; cursor: pointer; }
+  .btn:hover { background: #1a7a6e; }
+  .btn:disabled { background: #ccc; cursor: not-allowed; }
+  .count { color: #5a7d8a; font-size: 0.85rem; flex: 1; }
+  .done-msg { background: #e0f3f0; border-radius: 10px; padding: 18px 20px; text-align: center; display: none; margin-bottom: 14px; }
+  .done-msg h3 { color: #2a9d8f; margin-bottom: 6px; }
+  .done-msg p { font-size: 0.85rem; color: #5a7d8a; }
+  .empty { text-align: center; padding: 50px 20px; color: #5a7d8a; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<h1>📰 IFM News Review</h1>
+<p class="sub">Generated Monday, 04 May 2026 at 15:31 · Approve or reject each article, then click Save Decisions</p>
+
+
+        <div class="card" id="card-0" data-index="0">
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="source">Mint — Money</span>
+              <span class="date">2026-05-04</span>
+              <span class="score" style="background:#e9c46a">7/10</span>
+            </div>
+            <a href="https://www.livemint.com/money/personal-finance/lost-or-stolen-credit-card-here-are-6-steps-to-follow-to-avoid-financial-loss-11777882967999.html" target="_blank" class="title">Lost or stolen credit card? Here are 6 steps to follow to avoid financial loss</a>
+            <p class="reason">💡 Relevant to managing debt and credit for beginners; practical steps for credit card security and fraud prevention are important personal finance knowledge for Indian women building financial independence</p>
+            <p class="summary">A lost or stolen credit card requires immediate action, including blocking the card, checking transactions, reporting to the bank, disputing fraud, securing accounts, and requesting a replacement to prevent financial los...</p>
+            <div class="card-actions">
+              <label class="approve-label">
+                <input type="checkbox" class="article-cb" value="https://www.livemint.com/money/personal-finance/lost-or-stolen-credit-card-here-are-6-steps-to-follow-to-avoid-financial-loss-11777882967999.html" onchange="updateCount()"> Approve
+              </label>
+              <button class="reject-btn" id="rbtn-0" onclick="toggleReject(0)">✗ Reject</button>
+            </div>
+            <div class="reject-box" id="rbox-0" style="display:none;">
+              <input type="text" class="reason-input" id="reason-0" placeholder="Why reject? e.g. too advanced, wrong topic, not India-relevant…">
+            </div>
+          </div>
+        </div>
+
+<h2>➕ Add articles manually</h2>
+<div class="manual-section">
+  <p>Paste article URLs here (one per line) — these will be added to the simplify queue automatically.</p>
+  <textarea class="manual-textarea" id="manual-urls" placeholder="https://...&#10;https://..."></textarea>
+</div>
+
+<div class="done-msg" id="done-msg">
+  <h3>✅ decisions.json saved!</h3>
+  <p>Move it to the <strong>news-agent</strong> folder, then run: <strong>python simplify.py</strong></p>
+</div>
+
+<div class="sticky">
+  <button class="btn" id="save-btn" onclick="saveDecisions()">Save Decisions</button>
+  <span class="count" id="count-label">0 approved · 0 rejected</span>
+</div>
+
+<script>
+  const ARTICLES = [{"title": "Lost or stolen credit card? Here are 6 steps to follow to avoid financial loss", "url": "https://www.livemint.com/money/personal-finance/lost-or-stolen-credit-card-here-are-6-steps-to-follow-to-avoid-financial-loss-11777882967999.html", "source": "Mint — Money", "published": "2026-05-04"}];
+
+  function toggleReject(i) {
+    const box = document.getElementById('rbox-' + i);
+    const btn = document.getElementById('rbtn-' + i);
+    const cb = document.querySelector('#card-' + i + ' .article-cb');
+    const card = document.getElementById('card-' + i);
+    const isActive = btn.classList.toggle('active');
+    box.style.display = isActive ? 'block' : 'none';
+    if (isActive) { cb.checked = false; card.classList.add('rejected'); card.classList.remove('approved'); }
+    else { card.classList.remove('rejected'); }
+    updateCount();
+  }
+
+  document.querySelectorAll('.article-cb').forEach(cb => {
+    cb.addEventListener('change', function() {
+      const i = this.closest('.card').dataset.index;
+      const btn = document.getElementById('rbtn-' + i);
+      const card = document.getElementById('card-' + i);
+      if (this.checked) {
+        btn.classList.remove('active');
+        document.getElementById('rbox-' + i).style.display = 'none';
+        card.classList.add('approved'); card.classList.remove('rejected');
+      } else { card.classList.remove('approved'); }
+      updateCount();
+    });
+  });
+
+  function updateCount() {
+    const approved = document.querySelectorAll('.article-cb:checked').length;
+    const rejected = document.querySelectorAll('.reject-btn.active').length;
+    document.getElementById('count-label').textContent = approved + ' approved · ' + rejected + ' rejected';
+    document.getElementById('save-btn').disabled = (approved + rejected === 0);
+  }
+
+  function saveDecisions() {
+    const approved = [...document.querySelectorAll('.article-cb:checked')].map(cb => cb.value);
+    const rejected = [];
+    document.querySelectorAll('.reject-btn.active').forEach(btn => {
+      const i = btn.id.replace('rbtn-', '');
+      const a = ARTICLES[parseInt(i)] || {};
+      const reason = document.getElementById('reason-' + i).value.trim() || 'not suitable';
+      rejected.push({ title: a.title || '', url: a.url || '', source: a.source || '', reason, date: new Date().toISOString().split('T')[0] });
+    });
+    const manualRaw = document.getElementById('manual-urls').value.trim();
+    const manual = manualRaw.split('\n').map(u => u.trim()).filter(u => u.startsWith('http'));
+    const decisions = { approved: [...approved, ...manual], rejected };
+    const blob = new Blob([JSON.stringify(decisions, null, 2)], {type: 'application/json'});
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'decisions.json'; a.click();
+    document.getElementById('done-msg').style.display = 'block';
+    document.getElementById('save-btn').disabled = true;
+    document.getElementById('count-label').textContent = approved.length + manual.length + ' approved · ' + rejected.length + ' rejected — check Downloads';
+  }
+
+  updateCount();
+</script>
+</body>
+</html>

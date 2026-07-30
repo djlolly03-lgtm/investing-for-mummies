@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Module 5 — Stocks & The Market</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --g1:#4a1a6a;--g2:#6a2a9a;--g3:#9a4adf;--g4:#c88af8;
+  --navy:#1a3a5c;--ink:#1a3a5c;--teal:#2a9d8f;--cream:#f7f4fb;--white:#fff;
+  --mint:#e8d8f8;--mint-lt:#f3eafc;--muted:#6a5a7a;
+  --warn:#f59e0b;--danger:#e74c3c;--gold:#c9a84c;
+  --m1:#4a1a6a;--m2:#6a2a9a;--m3:#9a4adf;
+}
+html,body{font-size:15px;height:auto;overflow-y:visible;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);padding-bottom:48px;}
+.hidden{display:none!important;}
+
+.hdr{background:linear-gradient(135deg,var(--g1),var(--g2));padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.2);}
+.hdr-logo{font-family:'Lora',serif;color:#fff;font-size:0.88rem;font-weight:700;line-height:1.2;}
+.hdr-logo span{display:block;font-size:0.6rem;color:rgba(255,255,255,0.65);font-family:'Nunito',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+.hdr-right{display:flex;align-items:center;gap:10px;}
+.coins-badge{background:rgba(255,255,255,0.15);border-radius:20px;padding:4px 10px;font-size:0.72rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:4px;}
+.back-btn{background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.3);border-radius:10px;padding:5px 12px;color:#fff;font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:800;cursor:pointer;transition:all .2s;}
+.back-btn:hover{background:rgba(255,255,255,0.2);}
+
+#s-map{padding:16px;}
+.map-hero{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:16px;padding:18px 20px 18px 160px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden;}
+.map-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,0.08) 0%,transparent 60%);pointer-events:none;}
+.map-tag{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.2);border-radius:10px;padding:2px 10px;display:inline-block;margin-bottom:8px;}
+.map-hero h1{font-family:'Lora',serif;font-size:1.35rem;line-height:1.25;margin-bottom:6px;}
+.map-hero p{font-size:0.8rem;color:rgba(255,255,255,0.85);line-height:1.6;max-width:340px;}
+.hero-logo-wide{position:absolute;top:50%;left:12px;transform:translateY(-50%);height:62px;width:auto;max-width:140px;object-fit:contain;border-radius:8px;z-index:2;}
+@media(max-width:540px){.hero-logo-wide{height:44px;max-width:96px;left:8px;}.map-hero{padding-left:112px!important;}}
+.map-stats{display:flex;gap:12px;margin-top:14px;}
+.map-stat{background:rgba(255,255,255,0.12);border-radius:10px;padding:7px 12px;text-align:center;}
+.map-stat-val{font-size:1rem;font-weight:900;color:#fff;}
+.map-stat-lbl{font-size:0.55rem;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.5px;}
+.overall-prog{background:rgba(255,255,255,0.15);border-radius:6px;height:6px;margin-top:14px;overflow:hidden;}
+.overall-prog-fill{height:100%;background:linear-gradient(90deg,var(--g4),var(--g3));border-radius:6px;transition:width .6s ease;}
+.sec-title{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin:18px 0 10px;display:flex;align-items:center;gap:6px;}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--mint);margin-left:4px;}
+
+.lesson-card{border-radius:14px;padding:16px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:transform .15s,box-shadow .15s,border-color .2s;position:relative;overflow:hidden;display:flex;align-items:center;gap:12px;}
+.lesson-card.unlocked{background:var(--white);box-shadow:0 2px 12px rgba(26,58,92,0.06);}
+.lesson-card.unlocked:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,58,92,0.12);}
+.lesson-card.locked{background:#f0f0f0;cursor:not-allowed;}
+.lesson-card.done{border-color:var(--g3)!important;}
+.lc-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+.lc-body{flex:1;}
+.lc-num{font-size:0.55rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.lc-name{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.lc-meta{font-size:0.65rem;color:var(--muted);}
+.lc-status{font-size:1rem;flex-shrink:0;}
+.lc-prog{height:3px;background:#e8f0f8;border-radius:2px;margin-top:8px;overflow:hidden;}
+.lc-prog-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--g3),var(--g4));}
+.lc-tag{position:absolute;top:8px;right:8px;font-size:0.52rem;font-weight:900;text-transform:uppercase;letter-spacing:0.8px;padding:2px 7px;border-radius:8px;}
+
+#s-lesson{min-height:100vh;}
+.lesson-hdr{padding:12px 16px 10px;background:linear-gradient(135deg,var(--g1),var(--g2));}
+.lesson-title{font-family:'Lora',serif;color:#fff;font-size:0.95rem;font-weight:700;margin-bottom:10px;}
+.step-dots{display:flex;gap:4px;}
+.step-dot{flex:1;height:4px;border-radius:3px;background:rgba(255,255,255,0.2);transition:background .3s;}
+.step-dot.done{background:#fff;}
+.step-dot.active{background:rgba(255,255,255,0.7);}
+
+.slide{padding:16px;animation:slideIn .3s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.slide-tag{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--g3);margin-bottom:8px;}
+.slide-icon{font-size:2.4rem;margin-bottom:10px;display:block;line-height:1;}
+.slide-title{font-family:'Lora',serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:10px;line-height:1.35;}
+.slide-body{font-size:0.82rem;line-height:1.8;color:var(--ink);}
+.slide-body p{margin-bottom:10px;}
+.insight{background:linear-gradient(135deg,#f0eafc,#e0d0f8);border-left:4px solid var(--g3);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#2a1a4a;}
+.insight strong{color:var(--g1);}
+.warn-box{background:linear-gradient(135deg,#fff8e6,#ffefc0);border-left:4px solid var(--warn);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#7a4a00;}
+.danger-box{background:linear-gradient(135deg,#fce8e8,#f8d0d0);border-left:4px solid var(--danger);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#7a1a1a;}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;}
+.stat-box{background:#f0f4fa;border-radius:12px;padding:12px;text-align:center;}
+.stat-box.g{background:linear-gradient(135deg,#f0eafc,#e0d0f8);}
+.stat-val{font-family:'Lora',serif;font-size:1.3rem;font-weight:700;color:var(--navy);}
+.stat-lbl{font-size:0.6rem;color:var(--muted);margin-top:3px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+
+.btn-next{display:block;width:100%;padding:13px;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:800;cursor:pointer;margin-top:18px;transition:all .2s;box-shadow:0 4px 16px rgba(26,58,92,0.2);}
+.btn-next:hover{opacity:0.9;transform:translateY(-1px);}
+.btn-next:disabled{opacity:0.3;cursor:not-allowed;transform:none;}
+
+/* IPO TIMELINE */
+.timeline-steps{display:flex;flex-direction:column;gap:0;margin:12px 0;}
+.tl-step{display:flex;gap:12px;position:relative;}
+.tl-step::before{content:'';position:absolute;left:18px;top:36px;bottom:-4px;width:2px;background:var(--mint);}
+.tl-step:last-child::before{display:none;}
+.tl-num{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:900;flex-shrink:0;color:#fff;margin-top:2px;}
+.tl-body{flex:1;padding-bottom:16px;}
+.tl-title{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.tl-desc{font-size:0.72rem;color:var(--muted);line-height:1.5;}
+.tl-step.active .tl-num{background:var(--g2);}
+.tl-step.pending .tl-num{background:#e0d0f8;color:var(--g2);}
+.tl-step.done .tl-num{background:var(--g3);}
+
+/* PARTICIPANT MATCH */
+.part-card{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:12px;padding:12px 14px;margin-bottom:8px;color:#fff;cursor:pointer;border:2px solid transparent;transition:all .2s;}
+.part-card.selected{border-color:var(--g4);background:linear-gradient(135deg,var(--g2),var(--g3));}
+.part-card.done-card{opacity:0.6;cursor:default;}
+.part-name{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;margin-bottom:2px;}
+.part-sub{font-size:0.65rem;color:rgba(255,255,255,0.6);}
+.role-opts{display:flex;flex-direction:column;gap:6px;margin:8px 0 14px;}
+.role-opt{background:#f0eafc;border-radius:10px;padding:9px 12px;cursor:pointer;font-size:0.76rem;font-weight:700;color:var(--navy);border:2px solid transparent;transition:all .2s;}
+.role-opt:hover{border-color:var(--g3);background:var(--mint-lt);}
+
+/* ORDER SIMULATOR */
+.order-book{background:var(--white);border-radius:14px;overflow:hidden;margin:12px 0;box-shadow:0 2px 12px rgba(26,58,92,0.07);}
+.ob-header{background:linear-gradient(135deg,var(--g1),var(--g2));padding:10px 14px;display:flex;justify-content:space-between;}
+.ob-col{font-size:0.65rem;font-weight:900;text-transform:uppercase;color:rgba(255,255,255,0.7);}
+.ob-row{display:flex;justify-content:space-between;padding:8px 14px;border-bottom:1px solid #f0eafc;}
+.ob-price{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;}
+.ob-price.buy{color:#22c55e;}
+.ob-price.sell{color:#e74c3c;}
+.ob-qty{font-size:0.78rem;color:var(--muted);font-weight:700;}
+.order-opts{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+.order-opt{background:#f0eafc;border-radius:12px;padding:10px 14px;cursor:pointer;font-size:0.78rem;font-weight:700;color:var(--navy);border:2px solid transparent;transition:all .2s;}
+.order-opt:hover{border-color:var(--g3);}
+.order-opt.correct{border-color:var(--g3);background:linear-gradient(135deg,#f0eafc,#e0d0f8);}
+.order-opt.wrong{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+
+/* RETURNS CALC */
+.ret-calc{background:var(--white);border-radius:16px;padding:16px;box-shadow:0 2px 12px rgba(26,58,92,0.07);margin-bottom:12px;}
+.ret-inp-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;}
+.ret-inp-wrap{display:flex;flex-direction:column;gap:4px;}
+.ret-inp-label{font-size:0.6rem;font-weight:800;color:var(--muted);text-transform:uppercase;}
+.ret-inp{border:2px solid var(--g3);border-radius:10px;padding:8px 10px;font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:700;color:var(--navy);background:var(--mint-lt);outline:none;width:100%;}
+.ret-result{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:12px;padding:14px;color:#fff;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;}
+.ret-num{font-family:'Lora',serif;font-size:1.2rem;font-weight:700;}
+.ret-lbl{font-size:0.55rem;color:rgba(255,255,255,0.65);text-transform:uppercase;margin-top:2px;}
+
+/* PE GAME */
+.pe-card{background:var(--white);border-radius:14px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(26,58,92,0.06);}
+.pe-company{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.pe-icon{font-size:1.6rem;}
+.pe-name{font-family:'Lora',serif;font-size:0.95rem;font-weight:700;color:var(--navy);}
+.pe-sector{font-size:0.65rem;color:var(--muted);}
+.pe-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;}
+.pe-stat{background:#f4f0fc;border-radius:10px;padding:8px;text-align:center;}
+.pe-stat-val{font-family:'Lora',serif;font-size:1rem;font-weight:700;color:var(--g2);}
+.pe-stat-lbl{font-size:0.55rem;color:var(--muted);text-transform:uppercase;}
+.pe-verdict-opts{display:flex;gap:8px;}
+.pe-verdict-opt{flex:1;padding:9px 6px;border-radius:10px;border:none;font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:900;cursor:pointer;transition:all .15s;}
+.pe-verdict-opt.over{background:#fce8e8;color:#c0392b;}
+.pe-verdict-opt.fair{background:#e8eff8;color:#1a2a6a;}
+.pe-verdict-opt.under{background:#e8f5ef;color:#1a4a2a;}
+
+/* HEADLINE SORTER */
+.headline-list{display:flex;flex-direction:column;gap:8px;margin:12px 0;}
+.headline-item{background:var(--white);border-radius:12px;padding:10px 14px;box-shadow:0 2px 8px rgba(26,58,92,0.06);cursor:pointer;border:2px solid transparent;transition:all .2s;}
+.headline-item.selected{border-color:var(--g3);background:var(--mint-lt);}
+.headline-item.placed{cursor:default;}
+.hl-text{font-size:0.8rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.hl-sort-btns{display:flex;gap:6px;margin-top:6px;}
+.hl-sort-btn{flex:1;padding:6px;border-radius:8px;border:none;font-family:'Nunito',sans-serif;font-size:0.65rem;font-weight:900;cursor:pointer;}
+.hl-sort-btn.good{background:#d4eddf;color:#1a4a2a;}
+.hl-sort-btn.bad{background:#fce8e8;color:#7a1a1a;}
+.hl-sort-btn.neutral{background:#e8eff8;color:#1a2a6a;}
+.hl-result{font-size:0.65rem;font-weight:800;padding:3px 10px;border-radius:8px;display:inline-block;margin-top:4px;}
+.hl-result.correct{background:#d4eddf;color:#1a4a2a;}
+.hl-result.wrong{background:#fce8e8;color:#7a1a1a;}
+
+/* MODAL */
+.myth-modal-overlay{position:fixed;inset:0;height:100vh;background:rgba(10,30,50,0.65);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto;animation:fadeIn .2s ease;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.myth-modal{background:#fff;border-radius:16px;max-width:400px;width:100%;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);overflow:hidden;animation:popIn .25s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes popIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
+.myth-modal-hdr{padding:20px 22px 14px;text-align:center;}
+.myth-modal-hdr.correct{background:linear-gradient(135deg,#f0eafc,#e0d0f8);}
+.myth-modal-hdr.wrong{background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+.myth-modal-emoji{font-size:2.8rem;line-height:1;margin-bottom:6px;}
+.myth-modal-verdict{font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900;margin-bottom:2px;}
+.myth-modal-verdict.correct{color:#4a1a6a;}
+.myth-modal-verdict.wrong{color:#b91c1c;}
+.myth-modal-body{padding:16px 22px 20px;}
+.myth-modal-label{font-family:'Nunito',sans-serif;font-size:0.62rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px;}
+.myth-modal-explain{font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.7;color:var(--ink);font-weight:600;}
+.myth-modal-btn{display:block;width:100%;margin-top:16px;padding:13px;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:900;cursor:pointer;}
+
+.scenario-card-outer{background:var(--white);border-radius:18px;box-shadow:0 4px 20px rgba(26,58,92,0.1);overflow:hidden;margin-bottom:14px;}
+.sc-header{padding:14px 16px 10px;background:linear-gradient(135deg,var(--g1),var(--g2));}
+.sc-round{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:4px;}
+.sc-name{font-family:'Lora',serif;color:#fff;font-size:0.95rem;font-weight:700;}
+.sc-body{padding:14px 16px;}
+.sc-story{font-size:0.8rem;line-height:1.7;color:var(--navy);margin-bottom:14px;}
+.sc-q{font-weight:800;font-size:0.8rem;color:var(--navy);margin-bottom:10px;}
+.sc-choices{display:flex;flex-direction:column;gap:8px;}
+.sc-choice{background:#f4f0fc;border-radius:12px;padding:10px 12px;cursor:pointer;border:2px solid transparent;transition:all .2s;font-size:0.78rem;font-weight:700;color:var(--navy);display:flex;align-items:flex-start;gap:8px;}
+.sc-choice:hover{border-color:var(--g3);background:var(--mint-lt);}
+.sc-choice.correct-choice{border-color:var(--g3);background:linear-gradient(135deg,#f0eafc,#e0d0f8);}
+.sc-choice.wrong-choice{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+.sc-choice-letter{font-size:0.7rem;font-weight:900;width:20px;height:20px;border-radius:6px;background:rgba(26,58,92,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.sc-consequence{border-radius:12px;padding:12px;margin-top:10px;font-size:0.76rem;line-height:1.6;display:none;}
+.sc-consequence.good{background:linear-gradient(135deg,#f0eafc,#e0d0f8);border-left:4px solid var(--g3);color:#2a1a4a;}
+.sc-consequence.bad{background:linear-gradient(135deg,#fce8e8,#f8d0d0);border-left:4px solid var(--danger);color:#7a1a1a;}
+.sc-consequence.ok{background:linear-gradient(135deg,#fff8e6,#fdefc8);border-left:4px solid var(--warn);color:#7a4a00;}
+
+.completion-card{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:20px;padding:24px 20px;text-align:center;color:#fff;margin:16px;}
+.comp-emoji{font-size:3rem;margin-bottom:10px;}
+.comp-title{font-family:'Lora',serif;font-size:1.25rem;font-weight:700;margin-bottom:6px;}
+.comp-sub{font-size:0.78rem;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:16px;}
+.comp-stars{font-size:1.4rem;letter-spacing:4px;margin-bottom:14px;}
+.coins-earned{background:rgba(255,255,255,0.15);border-radius:12px;padding:10px 20px;display:inline-block;font-size:0.85rem;font-weight:800;margin-bottom:14px;}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img src="/IFM round logo for watermark.png" style="height:44px;width:auto;flex-shrink:0;" alt="IFM">
+    <div class="hdr-logo">Investing for Mummies<span>Module 5 — Stocks & Markets</span></div>
+  </div>
+  <div class="hdr-right">
+    <div class="coins-badge">🪙 <span id="coinDisplay">0</span></div>
+    <button class="back-btn hidden" id="backBtn" onclick="showMap()">← Map</button>
+  </div>
+</div>
+
+<div id="s-map">
+  <div style="padding:16px;">
+    <div class="map-hero">
+      <img src="/IFM logo white background.png" class="hero-logo-wide" alt="IFM">
+      <div class="map-tag">Section 5 · Stocks & Markets</div>
+      <h1>Stocks & The Market 📈</h1>
+      <p>From IPOs to valuations. Understand how stock markets work, how to read stock prices, and how to think like an analyst.</p>
+      <div class="map-stats">
+        <div class="map-stat"><div class="map-stat-val" id="mapDone">0</div><div class="map-stat-lbl">Done</div></div>
+        <div class="map-stat"><div class="map-stat-val">6</div><div class="map-stat-lbl">Lessons</div></div>
+        <div class="map-stat"><div class="map-stat-val">~55</div><div class="map-stat-lbl">Minutes</div></div>
+      </div>
+      <div class="overall-prog"><div class="overall-prog-fill" id="overallFill" style="width:0%"></div></div>
+    </div>
+
+    <div class="sec-title">📚 Lessons</div>
+
+    <div class="lesson-card unlocked" id="lcard-0" onclick="startLesson(0)">
+      <div class="lc-icon" style="background:#f0eafc;">🏭</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#4a1a6a;">Lesson 1</div>
+        <div class="lc-name">Why Companies Need Money</div>
+        <div class="lc-meta">IPO journey · 6-step timeline</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-0" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-0">▶</div>
+      <div class="lc-tag" style="background:#f0eafc;color:#4a1a6a;">Timeline</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-1" onclick="startLesson(1)">
+      <div class="lc-icon" style="background:#f0eafc;">🏛️</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#4a1a6a;">Lesson 2</div>
+        <div class="lc-name">How Stock Markets Work</div>
+        <div class="lc-meta">5 participants · Role matching</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-1" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-1">🔒</div>
+      <div class="lc-tag" style="background:#f0eafc;color:#4a1a6a;">Match</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-2" onclick="startLesson(2)">
+      <div class="lc-icon" style="background:#f0eafc;">💹</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#4a1a6a;">Lesson 3</div>
+        <div class="lc-name">Stock Prices & Orders</div>
+        <div class="lc-meta">Order simulator · 3 scenarios</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-2" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-2">🔒</div>
+      <div class="lc-tag" style="background:#f0eafc;color:#4a1a6a;">Simulate</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-3" onclick="startLesson(3)">
+      <div class="lc-icon" style="background:#f0eafc;">💰</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#4a1a6a;">Lesson 4</div>
+        <div class="lc-name">Returns from Stocks</div>
+        <div class="lc-meta">Returns calculator · Fill in blanks</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-3" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-3">🔒</div>
+      <div class="lc-tag" style="background:#f0eafc;color:#4a1a6a;">Calc</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-4" onclick="startLesson(4)">
+      <div class="lc-icon" style="background:#f0eafc;">📈</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#4a1a6a;">Lesson 5</div>
+        <div class="lc-name">Stock Valuation Basics</div>
+        <div class="lc-meta">P/E ratio game · 4 companies</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-4" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-4">🔒</div>
+      <div class="lc-tag" style="background:#f0eafc;color:#4a1a6a;">Rate</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-5" onclick="startLesson(5)">
+      <div class="lc-icon" style="background:#f0eafc;">🏔️</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#4a1a6a;">Lesson 6</div>
+        <div class="lc-name">Market Behaviour</div>
+        <div class="lc-meta">6 headlines · Bull/bear sorter</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-5" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-5">🔒</div>
+      <div class="lc-tag" style="background:#f0eafc;color:#4a1a6a;">Sort</div>
+    </div>
+
+    <div class="sec-title" style="margin-top:22px;">🎯 Boss Challenge</div>
+
+    <div class="lesson-card locked" id="lcard-boss" onclick="startLesson('boss')">
+      <div class="lc-icon" style="background:linear-gradient(135deg,var(--g1),var(--g2));">⚔️</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:var(--g1);">Boss Level</div>
+        <div class="lc-name" style="color:var(--g1);">The Stock Analyst</div>
+        <div class="lc-meta">3 stocks · EPS, P/E, ROE analysis</div>
+      </div>
+      <div class="lc-status" id="lstat-boss">🔒</div>
+      <div class="lc-tag" style="background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;">Boss</div>
+    </div>
+  </div>
+</div>
+
+<div id="s-lesson" class="hidden">
+  <div class="lesson-hdr">
+    <div class="lesson-title" id="lessonTitle"></div>
+    <div class="step-dots" id="stepDots"></div>
+  </div>
+  <div id="lessonContent"></div>
+</div>
+
+<script>
+var state={coins:0,completed:{},progress:{}};
+(function(){try{var s=JSON.parse(localStorage.getItem('ifm_m5')||'{}');if(s.coins)state.coins=s.coins;if(s.completed)state.completed=s.completed;if(s.progress)state.progress=s.progress;}catch(e){}})();
+function save(){try{localStorage.setItem('ifm_m5',JSON.stringify(state));}catch(e){}}
+function addCoins(n){state.coins+=n;save();document.getElementById('coinDisplay').textContent=state.coins;}
+
+var LESSONS=[
+  {id:0,name:'🏭 Why Companies Need Money'},{id:1,name:'🏛️ How Stock Markets Work'},
+  {id:2,name:'💹 Stock Prices & Orders'},{id:3,name:'💰 Returns from Stocks'},
+  {id:4,name:'📈 Stock Valuation Basics'},{id:5,name:'🏔️ Market Behaviour'},
+  {id:'boss',name:'⚔️ The Stock Analyst'}
+];
+
+function showMap(){
+  document.getElementById('s-map').classList.remove('hidden');
+  document.getElementById('s-lesson').classList.add('hidden');
+  document.getElementById('backBtn').classList.add('hidden');
+  refreshMap();
+}
+function refreshMap(){
+  document.getElementById('coinDisplay').textContent=state.coins;
+  var done=Object.keys(state.completed).filter(function(k){return k!=='boss';}).length;
+  document.getElementById('mapDone').textContent=done;
+  document.getElementById('overallFill').style.width=(done/6*100)+'%';
+  LESSONS.forEach(function(l){
+    var id=l.id;
+    var card=document.getElementById('lcard-'+id);
+    var stat=document.getElementById('lstat-'+id);
+    var prog=document.getElementById('lprog-'+id);
+    if(!card)return;
+    var isUnlocked=isLessonUnlocked(id);
+    var isDone=!!state.completed[id];
+    card.className='lesson-card '+(isUnlocked?'unlocked':'locked')+(isDone?' done':'');
+    if(stat)stat.textContent=isDone?'✓':isUnlocked?'▶':'🔒';
+    if(prog)prog.style.width=isDone?'100%':'0%';
+  });
+}
+function isLessonUnlocked(id){
+  if(id===0)return true;
+  if(id==='boss')return Object.keys(state.completed).filter(function(k){return k!=='boss';}).length>=6;
+  return !!state.completed[id-1];
+}
+
+var currentLesson=null,currentStep=0,lessonSteps=[];
+function startLesson(id){
+  if(!isLessonUnlocked(id))return;
+  currentLesson=id;currentStep=0;
+  lessonSteps=buildSteps(id);
+  document.getElementById('s-map').classList.add('hidden');
+  document.getElementById('s-lesson').classList.remove('hidden');
+  document.getElementById('backBtn').classList.remove('hidden');
+  var l=LESSONS.find(function(x){return x.id===id;});
+  document.getElementById('lessonTitle').textContent=l?l.name:'Lesson';
+  renderStepDots();renderStep();
+}
+function nextStep(){
+  currentStep++;
+  if(currentStep>=lessonSteps.length){completeLesson();}
+  else{renderStepDots();renderStep();}
+}
+function renderStepDots(){
+  var dots=document.getElementById('stepDots');dots.innerHTML='';
+  lessonSteps.forEach(function(_,i){
+    var d=document.createElement('div');
+    d.className='step-dot'+(i<currentStep?' done':i===currentStep?' active':'');
+    dots.appendChild(d);
+  });
+}
+function renderStep(){
+  var step=lessonSteps[currentStep];
+  document.getElementById('lessonContent').innerHTML='';
+  step.render(document.getElementById('lessonContent'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function completeLesson(){
+  state.completed[currentLesson]=true;save();
+  var coins=currentLesson==='boss'?150:50;addCoins(coins);
+  var div=document.createElement('div');
+  div.innerHTML='<div class="completion-card"><div class="comp-emoji">'+(currentLesson==='boss'?'🏆':'⭐')+'</div><div class="comp-title">'+(currentLesson==='boss'?'Module 5 Complete!':'Lesson Complete!')+'</div><div class="comp-stars">'+(currentLesson==='boss'?'⭐⭐⭐':'⭐⭐')+'</div><div class="comp-sub">'+(currentLesson==='boss'?'You think like a stock analyst now! Markets hold no more mysteries.':'Great work! Next lesson unlocked.')+'</div><div class="coins-earned">🪙 +'+coins+' coins earned</div><button class="btn-next" onclick="showMap()" style="max-width:240px;margin:0 auto;">Back to Map</button></div>';
+  document.getElementById('lessonContent').innerHTML='';
+  document.getElementById('lessonContent').appendChild(div);
+  renderStepDots();
+}
+
+function buildSteps(id){
+  if(id===0)return buildIPOLesson();
+  if(id===1)return buildMarketsLesson();
+  if(id===2)return buildOrdersLesson();
+  if(id===3)return buildReturnsLesson();
+  if(id===4)return buildValuationLesson();
+  if(id===5)return buildMarketBehaviourLesson();
+  if(id==='boss')return buildBossLesson();
+  return [];
+}
+
+// LESSON 0: IPO JOURNEY
+var IPO_STEPS=[
+  {num:1,title:'Private Company',desc:'Company starts with founders + angel/VC investors. Shares not publicly traded yet.',color:'#4a1a6a'},
+  {num:2,title:'DRHP Filing',desc:'Draft Red Herring Prospectus filed with SEBI. Full disclosure of financials, risks, and use of IPO proceeds.',color:'#6a2a9a'},
+  {num:3,title:'Book Building',desc:'Investment banks determine IPO price range through investor demand. Price band set (e.g. ₹450–₹480 per share).',color:'#7a3abf'},
+  {num:4,title:'IPO Opens',desc:'Public can apply for shares. Apply via UPI, net banking, or broker platform. 3-day window to apply.',color:'#8a44cf'},
+  {num:5,title:'Allotment & Listing',desc:'Shares allotted (often by lottery if oversubscribed). Stock listed on NSE/BSE. Trading begins.',color:'#9a4adf'},
+  {num:6,title:'Secondary Market Trading',desc:'After listing, anyone can buy/sell shares on exchanges. Price fluctuates with supply and demand.',color:'#c88af8'},
+];
+
+function buildIPOLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 1 · IPO Journey</div><span class="slide-icon">🏭</span><div class="slide-title">From private company to stock market</div><div class="slide-body"><p>Why do companies go public? They need <strong>large amounts of capital</strong> to expand — build factories, hire staff, enter new markets.</p><p>Instead of taking a loan, they sell a piece of ownership (shares) to the public through an <strong>Initial Public Offering (IPO)</strong>.</p></div><div class="insight"><strong>Stock vs Share:</strong> Both mean the same thing — a tiny piece of ownership in a company. Own 1 share of Reliance → you\'re a part-owner of Reliance Industries!</div><button class="btn-next" onclick="nextStep()">See the IPO journey →</button></div>';
+    }},
+    {render:function(c){
+      var stepsHtml=IPO_STEPS.map(function(s){
+        return '<div class="tl-step done"><div class="tl-num" style="background:'+s.color+';">'+s.num+'</div><div class="tl-body"><div class="tl-title">'+s.title+'</div><div class="tl-desc">'+s.desc+'</div></div></div>';
+      }).join('');
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 1 · IPO Steps</div><div class="slide-title">The 6-step journey to the stock market</div><div class="timeline-steps">'+stepsHtml+'</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      addCoins(10);
+    }},
+  ];
+}
+
+// LESSON 1: HOW MARKETS WORK
+var PARTICIPANTS=[
+  {name:'SEBI',sub:'Securities & Exchange Board of India',correct:'Regulates markets, protects investors, sets rules for all participants',opts:['Regulates markets, protects investors, sets rules for all participants','Executes buy/sell orders on behalf of investors','Holds electronic records of your shares']},
+  {name:'Stock Broker',sub:'e.g. Zerodha, ICICI Direct',correct:'Executes buy/sell orders and provides trading platform to investors',opts:['Guarantees profits on trades','Executes buy/sell orders and provides trading platform to investors','Issues new shares to the public']},
+  {name:'Depository',sub:'NSDL / CDSL',correct:'Holds your shares electronically in a Demat account',opts:['Holds your shares electronically in a Demat account','Decides stock prices every day','Collects taxes on gains']},
+  {name:'Clearing Corp',sub:'NSCCL / ICCL',correct:'Guarantees trade settlement — ensures buyer receives shares and seller receives money',opts:['Provides loans to buy shares','Guarantees trade settlement — ensures buyer receives shares and seller receives money','Calculates company dividends']},
+  {name:'RTA',sub:'Registrar & Transfer Agent',correct:'Maintains records of shareholders and processes corporate actions like dividends and bonuses',opts:['Provides insurance on your portfolio','Decides which shares to include in Nifty 50','Maintains records of shareholders and processes corporate actions like dividends and bonuses']},
+];
+
+function buildMarketsLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 2 · Market Structure</div><span class="slide-icon">🏛️</span><div class="slide-title">Who does what in the stock market?</div><div class="slide-body"><p>The Indian stock market is a complex ecosystem with multiple participants. <strong>BSE</strong> (Bombay Stock Exchange, est. 1875) and <strong>NSE</strong> (National Stock Exchange) are the two main exchanges.</p><p><strong>Primary Market:</strong> Companies issue new shares (IPOs). <strong>Secondary Market:</strong> Investors trade existing shares with each other.</p></div><div class="insight"><strong>SEBI</strong> is the regulator — think of it as the market police. Every participant must be SEBI-registered and follow its rules.</div><button class="btn-next" onclick="nextStep()">Match the participants →</button></div>';
+    }},
+    {render:function(c){renderParticipantMatch(c);}},
+  ];
+}
+
+function renderParticipantMatch(container){
+  var current=0,score=0;
+
+  function showQ(){
+    if(current>=PARTICIPANTS.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">Market Participants · Done!</div><span class="slide-icon">🎉</span><div class="slide-title">You matched '+score+'/'+PARTICIPANTS.length+'!</div><div class="insight"><strong>Key takeaway:</strong> Every trade you make passes through all these participants seamlessly. When you tap "Buy" on Zerodha, the broker, exchange, clearing corp, and depository all spring into action — in T+1 day!</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      return;
+    }
+    var p=PARTICIPANTS[current];
+    var optsHtml=p.opts.map(function(o){
+      return '<div class="role-opt" onclick="pmAns(\''+o.replace(/'/g,"\\'")+'\')">' + o + '</div>';
+    }).join('');
+    container.innerHTML='<div class="slide"><div class="slide-tag">Market Participants · '+(current+1)+'/'+PARTICIPANTS.length+'</div><div class="slide-title">What is this participant\'s role?</div><div class="part-card selected"><div class="part-name">'+p.name+'</div><div class="part-sub">'+p.sub+'</div></div><div class="role-opts">'+optsHtml+'</div><div style="font-size:0.65rem;color:var(--muted);">Score: '+score+'/'+current+'</div></div>';
+    window.pmAns=function(chosen){
+      var correct=chosen===p.correct;
+      if(correct){score++;addCoins(7);}
+      var overlay=document.createElement('div');
+      overlay.className='myth-modal-overlay';
+      overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'🎯':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Correct!':'Not quite!')+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">Role of '+p.name+'</div><div class="myth-modal-explain">'+p.correct+'</div><button class="myth-modal-btn" id="pm-ok">Next →</button></div></div>';
+      document.body.appendChild(overlay);
+      overlay.querySelector('#pm-ok').onclick=function(){overlay.remove();current++;showQ();};
+    };
+  }
+  showQ();
+}
+
+// LESSON 2: STOCK PRICES & ORDERS
+var ORDER_SCENARIOS=[
+  {story:'Priya wants to buy TCS shares. Current market price is ₹3,750. She is okay buying at the current price immediately — speed matters to her.',q:'What order type should Priya use?',correct:0,opts:['Market Order — buy immediately at best available price','Limit Order — set a specific maximum price to buy','Stop Loss — sell if price falls below a level'],explain:['Market Order executes immediately at the best available ask price. Priya gets her shares instantly — no waiting.','Limit order requires a specific price. If current price is ₹3,750 and she sets ₹3,740, she might never get the shares today.','Stop Loss is used to EXIT a position if it falls, not to enter a new buy.']},
+  {story:'Rahul wants to buy Infosys but only at ₹1,200 or lower. Current price is ₹1,260. He is patient and willing to wait for a dip.',q:'Which order type should Rahul use?',correct:1,opts:['Market Order — buy now at ₹1,260','Limit Order — buy only if price reaches ₹1,200','Stop Loss Order — triggers if falls below ₹1,200'],explain:['Market order would buy at ₹1,260 — 5% above his target. He would pay more than he wanted.','Correct! Limit order lets Rahul specify ₹1,200 as the maximum price. His order executes only if price drops to that level.','Stop Loss is a protective order, not an entry order. This would sell (not buy) if price falls below ₹1,200.']},
+  {story:'Anita bought HDFC Bank at ₹1,500. It is now at ₹1,700. She is worried about a sudden fall and wants to protect her profit if it drops below ₹1,600.',q:'What order should Anita place?',correct:2,opts:['Market Order — sell everything now','Limit Order — sell at exactly ₹1,700','Stop Loss at ₹1,600 — auto-sell if price falls there'],explain:['Selling at market now means she exits at ₹1,700. She protects profit but misses any future upside if stock keeps rising.','Limit sell at ₹1,700 only sells at that exact price or above. If stock falls suddenly to ₹1,550, order won\'t trigger until ₹1,700 — but by then stock may have fallen much further.','Correct! Stop Loss at ₹1,600 means: if HDFC Bank falls to ₹1,600, automatically sell. She keeps ₹100/share profit while protecting against a larger fall.']},
+];
+
+function buildOrdersLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 3 · Orders</div><span class="slide-icon">💹</span><div class="slide-title">The 3 order types every investor must know</div><div class="slide-body"><p>Stock prices change every second during market hours. <strong>Order types</strong> let you control exactly how and when your trades execute.</p></div><div class="order-book"><div class="ob-header"><span class="ob-col">Sell (Ask)</span><span class="ob-col">Price</span><span class="ob-col">Buy (Bid)</span></div><div class="ob-row"><span class="ob-qty">200</span><span class="ob-price sell">₹105.50</span><span class="ob-qty">—</span></div><div class="ob-row"><span class="ob-qty">500</span><span class="ob-price sell">₹105.20</span><span class="ob-qty">—</span></div><div class="ob-row" style="background:#f4f0fc;"><span class="ob-qty">—</span><span class="ob-price" style="color:#4a1a6a;font-weight:900;">Last: ₹105.00</span><span class="ob-qty">—</span></div><div class="ob-row"><span class="ob-qty">—</span><span class="ob-price buy">₹104.80</span><span class="ob-qty">300</span></div><div class="ob-row"><span class="ob-qty">—</span><span class="ob-price buy">₹104.50</span><span class="ob-qty">700</span></div></div><div class="insight"><strong>Market Order:</strong> Buys/sells immediately at best price.<br><strong>Limit Order:</strong> Executes only at your specified price or better.<br><strong>Stop Loss:</strong> Auto-sells if price drops to protect profit.</div><button class="btn-next" onclick="nextStep()">Practice scenarios →</button></div>';
+    }},
+    {render:function(c){renderOrderSim(c,0,0);}},
+    {render:function(c){renderOrderSim(c,1,0);}},
+    {render:function(c){renderOrderSim(c,2,0);}},
+  ];
+}
+
+function renderOrderSim(container,idx,score){
+  var sc=ORDER_SCENARIOS[idx];
+  var optsHtml=sc.opts.map(function(o,i){
+    return '<div class="order-opt" onclick="orderAns('+idx+','+i+')">'+o+'</div>';
+  }).join('');
+  container.innerHTML='<div class="slide"><div class="slide-tag">Order Types · Scenario '+(idx+1)+'/'+ORDER_SCENARIOS.length+'</div><div style="background:var(--white);border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 2px 8px rgba(26,58,92,0.06);"><div style="font-size:0.78rem;line-height:1.7;color:var(--navy);">'+sc.story+'</div></div><div style="font-weight:800;font-size:0.82rem;color:var(--navy);margin-bottom:10px;">'+sc.q+'</div><div class="order-opts">'+optsHtml+'</div></div>';
+  window.orderAns=function(sIdx,chosen){
+    var s=ORDER_SCENARIOS[sIdx];
+    var correct=chosen===s.correct;
+    if(correct)addCoins(10);
+    document.querySelectorAll('.order-opt').forEach(function(el,i){
+      el.style.pointerEvents='none';
+      if(i===s.correct)el.classList.add('correct');
+      else if(i===chosen&&!correct)el.classList.add('wrong');
+    });
+    var expDiv=document.createElement('div');
+    expDiv.className='insight';expDiv.style.marginTop='12px';
+    expDiv.innerHTML='<strong>'+(correct?'✅ Correct!':'💡 Explanation:')+'</strong> '+s.explain[chosen];
+    var nextBtn=document.createElement('button');
+    nextBtn.className='btn-next';nextBtn.textContent=sIdx<ORDER_SCENARIOS.length-1?'Next Scenario →':'Finish Lesson →';
+    nextBtn.onclick=function(){nextStep();};
+    expDiv.appendChild(nextBtn);
+    document.getElementById('lessonContent').querySelector('.slide').appendChild(expDiv);
+  };
+}
+
+// LESSON 3: RETURNS FROM STOCKS
+function buildReturnsLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 4 · Stock Returns</div><span class="slide-icon">💰</span><div class="slide-title">3 ways stocks make you money</div><div class="slide-body"><p>Unlike FDs (interest only), stocks can reward you in multiple ways:</p></div><div class="stat-row"><div class="stat-box g"><div class="stat-val">📈</div><div class="stat-lbl">Capital Gain (price up)</div></div><div class="stat-box" style="background:#f0f4fa;"><div class="stat-val">💸</div><div class="stat-lbl">Dividend (cash payout)</div></div></div><div class="stat-row"><div class="stat-box" style="background:#f0eafc;grid-column:span 2;"><div class="stat-val">🎁</div><div class="stat-lbl">Bonus Shares / Stock Split</div></div></div><div class="insight"><strong>Total Return = Capital Gain % + Dividend Yield %</strong><br><br>Example: Buy at ₹100, now ₹120, got ₹3 dividend:<br>Capital gain = 20%, Dividend yield = 3%, Total return = 23%!</div><div class="warn-box"><strong>Tax:</strong> STCG (held &lt;1 yr) = 20% tax. LTCG (held &gt;1 yr) = 12.5% on gains above ₹1.25 lakh. Dividends taxed at your slab rate.</div><button class="btn-next" onclick="nextStep()">Calculate returns →</button></div>';
+    }},
+    {render:function(c){renderReturnsCalc(c);}},
+  ];
+}
+
+function renderReturnsCalc(container){
+  var examples=[
+    {name:'Reliance Industries',buy:2200,curr:2800,div:60},
+    {name:'Infosys',buy:1400,curr:1750,div:35},
+    {name:'HDFC Bank',buy:1600,curr:1500,div:19},
+  ];
+  var idx=0;
+
+  function showEx(){
+    if(idx>=examples.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">Returns Calculator · Done!</div><span class="slide-icon">🎉</span><div class="slide-title">Returns mastered!</div><div class="insight"><strong>Remember:</strong> Always calculate TOTAL return (capital gain + dividend). And factor in tax — LTCG is friendlier than STCG. Hold longer, pay less tax!</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      return;
+    }
+    var ex=examples[idx];
+    var cgPct=Math.round((ex.curr-ex.buy)/ex.buy*1000)/10;
+    var divYield=Math.round(ex.div/ex.buy*1000)/10;
+    var total=Math.round((cgPct+divYield)*10)/10;
+    container.innerHTML='<div class="slide"><div class="slide-tag">Returns · Example '+(idx+1)+'/'+examples.length+'</div><div class="slide-title">Calculate the total return</div><div class="ret-calc"><div style="font-size:0.82rem;font-weight:700;color:var(--g2);margin-bottom:10px;">'+ex.name+'</div><div class="ret-inp-row"><div class="ret-inp-wrap"><div class="ret-inp-label">Buy Price</div><input class="ret-inp" readonly value="₹'+ex.buy+'"></div><div class="ret-inp-wrap"><div class="ret-inp-label">Current Price</div><input class="ret-inp" readonly value="₹'+ex.curr+'"></div><div class="ret-inp-wrap"><div class="ret-inp-label">Dividend Paid</div><input class="ret-inp" readonly value="₹'+ex.div+'"></div></div><div class="ret-result"><div><div class="ret-num">'+(cgPct>=0?'+':'')+cgPct+'%</div><div class="ret-lbl">Capital Gain</div></div><div><div class="ret-num">+'+divYield+'%</div><div class="ret-lbl">Dividend Yield</div></div><div><div class="ret-num" style="color:'+(total>=0?'#a8e8b8':'#f87171')+';">'+(total>=0?'+':'')+total+'%</div><div class="ret-lbl">Total Return</div></div></div></div><button class="btn-next" onclick="rcNext()" style="margin-top:12px;">'+(idx<examples.length-1?'Next Example →':'See Results →')+'</button></div>';
+    addCoins(8);
+    window.rcNext=function(){idx++;showEx();};
+  }
+  showEx();
+}
+
+// LESSON 4: VALUATION
+var PE_COMPANIES=[
+  {icon:'🏦',name:'FinBank Ltd',sector:'Banking Sector',pe:12,eps:25,roe:16,sectorPE:14,correct:'under',explain:'P/E of 12 vs sector average of 14 = trading at a discount. ROE of 16% is decent. This stock appears underpriced relative to peers.'},
+  {icon:'💊',name:'PharmaCure Ltd',sector:'Pharma Sector',pe:38,eps:8,roe:12,sectorPE:25,correct:'over',explain:'P/E of 38 vs sector average of 25 = significantly overvalued. Low ROE of 12% doesn\'t justify the premium. This stock looks expensive.'},
+  {icon:'🏭',name:'SteelCo Ltd',sector:'Steel Sector',pe:8,eps:45,roe:18,sectorPE:10,correct:'fair',explain:'P/E of 8 vs sector average of 10 — slightly below sector. High EPS and ROE of 18% show strong profitability. Fairly valued, possibly slightly cheap.'},
+  {icon:'💻',name:'TechStar Ltd',sector:'IT Sector',pe:30,eps:18,roe:25,sectorPE:28,correct:'fair',explain:'P/E of 30 vs sector average of 28 — roughly in line. Excellent ROE of 25% justifies the premium valuation. This is a fairly priced quality company.'},
+];
+
+function buildValuationLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 5 · Valuation</div><span class="slide-icon">📈</span><div class="slide-title">Is this stock cheap or expensive?</div><div class="slide-body"><p>Valuation is about determining if a stock\'s price is <strong>justified by its fundamentals</strong>. The most common metric is the P/E ratio.</p></div><div class="stat-row"><div class="stat-box g"><div class="stat-val">P/E</div><div class="stat-lbl">Price ÷ Earnings Per Share</div></div><div class="stat-box" style="background:#f0eafc;"><div class="stat-val">ROE</div><div class="stat-lbl">Return on Equity (%)</div></div></div><div class="insight"><strong>How to use P/E:</strong> Compare to sector average. P/E below sector = potentially undervalued. Above sector = either overvalued or high-growth expectations.<br><br><strong>EPS</strong> (Earnings Per Share) = Net profit ÷ Number of shares. Higher EPS = more profitable.<br><strong>ROE</strong> = How efficiently company uses shareholders\' money. 15%+ is generally good.</div><button class="btn-next" onclick="nextStep()">Rate these stocks →</button></div>';
+    }},
+    {render:function(c){renderPEGame(c);}},
+  ];
+}
+
+function renderPEGame(container){
+  var current=0,score=0;
+
+  function showQ(){
+    if(current>=PE_COMPANIES.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">P/E Game · Complete!</div><span class="slide-icon">🎉</span><div class="slide-title">You rated '+score+'/'+PE_COMPANIES.length+' correctly!</div><div class="insight"><strong>Key lesson:</strong> Never look at P/E in isolation. Always compare to the sector average. A P/E of 15 is cheap for IT but expensive for FMCG. Context is everything!</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      return;
+    }
+    var co=PE_COMPANIES[current];
+    container.innerHTML='<div class="slide"><div class="slide-tag">Valuation · '+(current+1)+'/'+PE_COMPANIES.length+'</div><div class="slide-title">Is this stock Overpriced, Fair, or Underpriced?</div><div class="pe-card"><div class="pe-company"><div class="pe-icon">'+co.icon+'</div><div><div class="pe-name">'+co.name+'</div><div class="pe-sector">'+co.sector+' | Sector avg P/E: '+co.sectorPE+'</div></div></div><div class="pe-stats"><div class="pe-stat"><div class="pe-stat-val">'+co.pe+'</div><div class="pe-stat-lbl">P/E Ratio</div></div><div class="pe-stat"><div class="pe-stat-val">₹'+co.eps+'</div><div class="pe-stat-lbl">EPS</div></div><div class="pe-stat"><div class="pe-stat-val">'+co.roe+'%</div><div class="pe-stat-lbl">ROE</div></div></div><div class="pe-verdict-opts"><button class="pe-verdict-opt over" onclick="peAns(\'over\')">Overpriced</button><button class="pe-verdict-opt fair" onclick="peAns(\'fair\')">Fair Value</button><button class="pe-verdict-opt under" onclick="peAns(\'under\')">Underpriced</button></div></div><div style="font-size:0.65rem;color:var(--muted);">Score: '+score+'/'+current+'</div></div>';
+    window.peAns=function(verdict){
+      var correct=verdict===co.correct;
+      if(correct){score++;addCoins(8);}
+      var overlay=document.createElement('div');
+      overlay.className='myth-modal-overlay';
+      overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'🎯':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Good analysis!':'The answer: '+co.correct)+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">Analysis</div><div class="myth-modal-explain">'+co.explain+'</div><button class="myth-modal-btn" id="pe-ok">Next →</button></div></div>';
+      document.body.appendChild(overlay);
+      overlay.querySelector('#pe-ok').onclick=function(){overlay.remove();current++;showQ();};
+    };
+  }
+  showQ();
+}
+
+// LESSON 5: MARKET BEHAVIOUR
+var HEADLINES=[
+  {text:'"RBI cuts interest rates by 0.5% — lowest in 10 years"',correct:'good',explain:'Lower rates → cheaper borrowing → companies invest more → higher profits → stocks rise. Also, bonds become less attractive, so money flows to stocks.'},
+  {text:'"India GDP growth accelerates to 8.2% — fastest in 5 years"',correct:'good',explain:'Higher GDP = more economic activity = higher corporate earnings = higher stock prices. Bull market signal!'},
+  {text:'"Inflation rises to 8% — RBI may hike rates to control"',correct:'bad',explain:'High inflation → RBI raises rates → expensive loans → companies earn less → stocks fall. Also, purchasing power decreases.'},
+  {text:'"Major geopolitical crisis — oil prices spike 30%"',correct:'bad',explain:'Oil price spike → higher input costs for manufacturing, transport → lower profits → stocks fall. India imports 85% of its oil needs.'},
+  {text:'"India-Pakistan cricket match today"',correct:'neutral',explain:'Sports events don\'t directly impact corporate earnings or economic fundamentals. This is neutral for the stock market.'},
+  {text:'"Government increases infrastructure spending by ₹2 lakh crore"',correct:'good',explain:'Government spending → more contracts for companies → higher revenues → better profits → stocks of infra, cement, steel sectors rise.'},
+];
+
+function buildMarketBehaviourLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 6 · Market Behaviour</div><span class="slide-icon">🏔️</span><div class="slide-title">What moves markets up and down?</div><div class="slide-body"><p>Stock markets react to news that affects <strong>corporate earnings and the broader economy</strong>. Not all news matters — learn to filter signal from noise.</p></div><div class="stat-row"><div class="stat-box g"><div class="stat-val">🐂</div><div class="stat-lbl">Bull Market (Rising prices)</div></div><div class="stat-box" style="background:#fce8e8;"><div class="stat-val">🐻</div><div class="stat-lbl">Bear Market (Falling 20%+)</div></div></div><div class="insight"><strong>Key market movers:</strong> RBI interest rates, GDP growth, inflation, global oil prices, government policy, corporate earnings seasons, FII/DII flows, global markets.</div><div class="warn-box"><strong>Remember:</strong> Markets are forward-looking. By the time news is published, the price may already reflect it. "Buy the rumour, sell the news."</div><button class="btn-next" onclick="nextStep()">Sort the headlines →</button></div>';
+    }},
+    {render:function(c){renderHeadlineSorter(c);}},
+  ];
+}
+
+function renderHeadlineSorter(container){
+  var results={};
+
+  function fmt(){
+    var done=Object.keys(results).length;
+    var correct=Object.values(results).filter(function(r){return r.correct;}).length;
+    var hlHtml=HEADLINES.map(function(h,i){
+      var res=results[i];
+      if(res){
+        var cls=res.correct?'correct':'wrong';
+        return '<div class="headline-item placed" style="opacity:0.7;border-color:'+(res.correct?'#22c55e':'var(--danger)')+'"><div class="hl-text">'+h.text+'</div><div class="hl-result '+cls+'">'+(res.correct?'✓ Correct':'✗ ')+' '+h.correct.toUpperCase()+'</div></div>';
+      }
+      return '<div class="headline-item"><div class="hl-text">'+h.text+'</div><div class="hl-sort-btns"><button class="hl-sort-btn good" onclick="sortHl('+i+',\'good\')">📈 Good</button><button class="hl-sort-btn bad" onclick="sortHl('+i+',\'bad\')">📉 Bad</button><button class="hl-sort-btn neutral" onclick="sortHl('+i+',\'neutral\')">➡️ Neutral</button></div></div>';
+    }).join('');
+
+    var allDone=done===HEADLINES.length;
+    container.innerHTML='<div class="slide"><div class="slide-tag">Market Behaviour · Headlines</div><div class="slide-title">Good for market, bad, or neutral?</div><div style="font-size:0.72rem;color:var(--muted);margin-bottom:10px;">Sorted: '+done+'/'+HEADLINES.length+(allDone?' — '+correct+' correct!':'')+'</div><div class="headline-list">'+hlHtml+'</div>'+(allDone?'<button class="btn-next" onclick="nextStep()">Continue →</button>':'')+'</div>';
+  }
+
+  window.sortHl=function(i,verdict){
+    var h=HEADLINES[i];
+    var correct=verdict===h.correct;
+    if(correct)addCoins(6);
+    results[i]={verdict:verdict,correct:correct};
+    var overlay=document.createElement('div');
+    overlay.className='myth-modal-overlay';
+    overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'📊':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Correct!':'Answer: '+h.correct.toUpperCase())+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">Market impact</div><div class="myth-modal-explain">'+h.explain+'</div><button class="myth-modal-btn" id="hl-ok">Got it →</button></div></div>';
+    document.body.appendChild(overlay);
+    overlay.querySelector('#hl-ok').onclick=function(){overlay.remove();fmt();};
+    fmt();
+  };
+  fmt();
+}
+
+// BOSS: THE STOCK ANALYST
+var BOSS_SCENARIOS=[
+  {round:'Analysis 1 of 3',name:'Which stock to buy?',story:'You are comparing two IT companies. TechA: P/E 22, EPS ₹40, ROE 28%, Revenue growth 18% YoY. TechB: P/E 35, EPS ₹12, ROE 10%, Revenue growth 3% YoY. IT sector average P/E is 25.',q:'Based on fundamentals, which stock is the better buy?',choices:['A) TechA — lower P/E, high ROE, strong growth','B) TechB — higher P/E signals market confidence','C) Neither — both look risky'],correct:0,explain:["Correct! TechA trades below sector average P/E (22 vs 25), has 3.3× better EPS, excellent ROE (28% vs 10%), and growing 6× faster. By every metric, TechA is the clear winner.","High P/E with low ROE and near-zero growth is a red flag, not a sign of confidence. The market may be wrong, or there's news not reflected in fundamentals.","TechA has all the hallmarks of a quality investment. Avoiding it would mean missing a clearly superior fundamental story."]},
+  {round:'Analysis 2 of 3',name:'Reading market signals',story:'Nifty 50 has fallen 22% in 3 months. Earnings season shows 70% of Nifty companies beat estimates. FIIs are selling. RBI kept rates unchanged.',q:'What is the most likely situation?',choices:['A) Bear market driven by panic/FII outflows, fundamentals remain strong','B) Stocks are falling because companies are doing badly','C) This is the right time to sell all holdings'],correct:0,explain:["Correct! FII selling creates short-term price falls even when underlying businesses are strong. 70% earnings beat confirms fundamentals are intact. This may be a buying opportunity, not a selling one.","70% of companies beating estimates proves businesses are doing well. The fall is price-driven (FII selling, global risk-off), not fundamental-driven.","Selling in a 22% correction locks in losses. Historically, markets recover from corrections. Patient investors who held through 2020's 38% crash saw 100%+ returns in the next 18 months."]},
+  {round:'Analysis 3 of 3',name:'The right response',story:'Meera bought Infosys at ₹1,300. It\'s now at ₹1,000 (–23%) after a weak quarterly result. She is panicking and considering selling everything.',q:'What is the most rational course of action for Meera?',choices:['A) Sell immediately to stop further losses','B) Review the quarter result — if one-time issue, hold or buy more; if structural decline, exit','C) Immediately invest more to average down without reviewing'],correct:1,explain:["Panic selling at -23% locks in losses permanently. If the fundamental thesis is intact, this could be a buying opportunity — not a selling one.","Correct! Smart investors analyze before acting. Is the revenue fall one-time (restructuring, seasonality)? Or is it losing market share? The answer determines whether to hold, add, or exit.","Averaging down without understanding WHY the stock fell is gambling. You could be catching a falling knife if the business has structural problems."]},
+];
+
+function buildBossLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Boss Challenge</div><span class="slide-icon">⚔️</span><div class="slide-title">The Stock Analyst</div><div class="slide-body"><p>3 real-world stock market scenarios. Apply your knowledge of P/E ratios, EPS, ROE, market behaviour, and investor psychology to make the right call.</p></div><div class="insight">Good analysts don\'t just look at numbers — they understand context, compare peers, and separate short-term noise from long-term business quality.</div><button class="btn-next" onclick="nextStep()">Start Analysis →</button></div>';
+    }},
+    {render:function(c){renderBoss(c,0);}},
+    {render:function(c){renderBoss(c,1);}},
+    {render:function(c){renderBoss(c,2);}},
+  ];
+}
+
+function renderBoss(container,idx){
+  var sc=BOSS_SCENARIOS[idx];
+  var choicesHtml=sc.choices.map(function(ch,i){
+    return '<div class="sc-choice" id="sc-c-'+i+'" onclick="bossAns('+idx+','+i+')"><div class="sc-choice-letter">'+String.fromCharCode(65+i)+'</div><div>'+ch.substring(3)+'</div></div>';
+  }).join('');
+  container.innerHTML='<div class="slide"><div class="slide-tag">Boss · '+sc.round+'</div><div class="scenario-card-outer"><div class="sc-header"><div class="sc-round">'+sc.round+'</div><div class="sc-name">'+sc.name+'</div></div><div class="sc-body"><div class="sc-story">'+sc.story+'</div><div class="sc-q">'+sc.q+'</div><div class="sc-choices">'+choicesHtml+'</div><div class="sc-consequence" id="sc-con"></div></div></div></div>';
+  window.bossAns=function(sIdx,chosen){
+    var s=BOSS_SCENARIOS[sIdx];
+    var correct=chosen===s.correct;
+    if(correct)addCoins(20);
+    document.querySelectorAll('.sc-choice').forEach(function(el,i){
+      el.style.pointerEvents='none';
+      if(i===s.correct)el.classList.add('correct-choice');
+      else if(i===chosen&&!correct)el.classList.add('wrong-choice');
+    });
+    var con=document.getElementById('sc-con');
+    con.style.display='block';
+    con.className='sc-consequence '+(correct?'good':'bad');
+    con.innerHTML='<strong>'+(correct?'✅ Sharp analysis!':'❌ Reconsider')+'</strong> '+s.explain[chosen]+'<button class="btn-next" onclick="nextStep()" style="margin-top:12px;">'+(sIdx<2?'Next Scenario →':'Finish Challenge →')+'</button>';
+  };
+}
+
+refreshMap();
+document.getElementById('coinDisplay').textContent=state.coins;
+</script>
+</body>
+</html>

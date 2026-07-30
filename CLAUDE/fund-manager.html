@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Mutual Fund Manager LIVE — Investing for Mummies</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+   MUTUAL FUND MANAGER LIVE — IFM flagship classroom simulation
+   Teacher = Fund Manager (host / projector).  Students = Investors (phones).
+   Reuses the Stock Rush Supabase project (games table) — NO new setup.
+   Room codes:  MF#### (e.g. MF7421) — distinct from Stock Rush (letters) and
+   the KBC quiz (4-digit numeric) so they can never collide in the shared table.
+
+   ── ASSET PLACEHOLDER MANIFEST (numbered chronologically by screen) ──────────
+   Drop rich images / video later by filling the MEDIA map (search "const MEDIA").
+   See fund-manager-ASSETS.md for the full spec.
+     ASSET-01  S1 Lobby/launch hero banner            host    16:9
+     ASSET-02  Equity fund crest                      both    1:1
+     ASSET-03  Debt fund crest                        both    1:1
+     ASSET-04  Hybrid fund crest                      both    1:1
+     ASSET-05  S2 "Your money at work" art            player  4:3
+     ASSET-06  S4 Equity Rally event art              host    16:9
+     ASSET-07  S4 Market Crash event art              host    16:9
+     ASSET-08  S4 IT Stocks Boom event art            host    16:9
+     ASSET-09  S4 Bonds Rise event art                host    16:9
+     ASSET-10  S5 NAV Discovery backdrop              host    16:9
+   (Phase 2 continues the sequence: Feezilla, STP water-flow, SWP tank, etc.)
+   ════════════════════════════════════════════════════════════════════════════ -->
+<style>
+:root{
+  --ink:#0a1422;--ink-2:#0f2036;--ink-3:#14304f;
+  --panel:rgba(255,255,255,.055);--panel-2:rgba(255,255,255,.09);--line:rgba(255,255,255,.12);
+  --grow:#34d399;--grow-d:#0e9f6e;--gold:#f5c451;--gold-d:#d9a017;--crash:#ef5a4c;--accent:#4ea8ff;--accent-d:#2b6fd6;
+  --tx:#eaf2fb;--tx-2:#9fb2c8;--tx-3:#6d829c;
+  --shadow:0 18px 50px rgba(0,0,0,.45);--shadow-sm:0 8px 24px rgba(0,0,0,.35);
+  --r:20px;
+  --stage-h:clamp(540px,calc(100vh - 152px),800px); /* one standard height for every teaching stage */
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;min-height:100%}
+body{font-family:'Inter',sans-serif;color:var(--tx);
+  background:
+   radial-gradient(120% 90% at 15% -10%,#13304f 0%,transparent 55%),
+   radial-gradient(120% 90% at 100% 0%,#10283f 0%,transparent 50%),
+   linear-gradient(180deg,#0a1422 0%,#070f1a 100%);
+  background-attachment:fixed;min-height:100vh;overflow-x:hidden}
+h1,h2,h3,.disp{font-family:'Sora',sans-serif;letter-spacing:-.01em}
+.hide{display:none!important}
+.wrap{max-width:1240px;margin:0 auto;padding:12px 18px}
+.num{font-family:'Sora',sans-serif;font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+
+/* ── buttons ─────────────────────────────────────────── */
+button{font-family:'Inter';font-weight:800;cursor:pointer;border:none}
+.btn{padding:14px 24px;border-radius:14px;font-size:1.02rem;color:#06121f;
+  background:linear-gradient(135deg,var(--grow),var(--grow-d));box-shadow:var(--shadow-sm);transition:.14s;letter-spacing:.01em}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(0) scale(.99)}
+.btn.gold{background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#2a1c00}
+.btn.blue{background:linear-gradient(135deg,var(--accent),var(--accent-d));color:#04101f}
+.btn.ghost{background:var(--panel-2);color:var(--tx);border:1px solid var(--line)}
+.btn.dark{background:#0c1d31;color:var(--tx);border:1px solid var(--line)}
+.btn:disabled{opacity:.38;cursor:not-allowed;transform:none;box-shadow:none}
+.btn.lg{font-size:1.18rem;padding:17px 30px;border-radius:16px}
+
+/* ── glass cards ─────────────────────────────────────── */
+.glass{background:var(--panel);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.glass.pad{padding:17px}
+.eyebrow{font-family:'Sora';text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:700;color:var(--accent)}
+.muted{color:var(--tx-2)}.tiny{font-size:.78rem}
+
+/* ── brand bar ───────────────────────────────────────── */
+.brandbar{display:flex;align-items:center;gap:14px;justify-content:space-between;margin-bottom:9px;flex-wrap:wrap}
+.brandbar .l{display:flex;align-items:center;gap:13px}
+.brandbar img{width:48px;height:48px;border-radius:50%;box-shadow:var(--shadow-sm);background:#fff}
+.brandbar .nm{font-family:'Sora';font-weight:800;font-size:1.18rem;line-height:1.05}
+.brandbar .sub{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.livedot{display:inline-flex;align-items:center;gap:7px;background:rgba(239,90,76,.14);color:#ff8e82;
+  border:1px solid rgba(239,90,76,.4);padding:6px 13px;border-radius:30px;font-weight:800;font-size:.78rem;letter-spacing:.08em}
+.livedot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--crash);animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.25}}
+.roomtag{font-family:'Sora';font-weight:700;color:var(--tx-2);font-size:.82rem}
+.fundchip{display:inline-flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 8px 7px 16px;box-shadow:var(--shadow-sm)}
+.fundchip .fc-k{font-size:.58rem;letter-spacing:.16em;color:var(--tx-3);font-weight:800}
+.fundchip .fc-n{font-family:'Sora';font-weight:800;font-size:1.02rem;color:var(--tx);line-height:1}
+.fundchip .fc-t{font-size:.62rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.mini-qr{display:flex;align-items:center;gap:8px;background:#fff;border-radius:11px;padding:4px 11px 4px 4px;cursor:pointer;box-shadow:var(--shadow-sm);transition:.12s}
+.mini-qr:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.mini-qr img{width:40px;height:40px;display:block;border-radius:7px}
+.mini-qr span{font-size:.66rem;font-weight:800;color:#0a1422;line-height:1.05;letter-spacing:.02em;text-transform:uppercase}
+
+/* ── ASSET placeholder slot ──────────────────────────── */
+.slot{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;
+  border:2px dashed rgba(120,170,255,.35);border-radius:16px;color:var(--tx-3);
+  background:linear-gradient(135deg,rgba(78,168,255,.05),rgba(52,211,153,.05));overflow:hidden}
+.slot img{width:100%;height:100%;object-fit:cover;display:block}
+.slot .slot-lbl{padding:14px}
+.slot .slot-id{font-family:'Sora';font-weight:800;color:var(--accent);font-size:.82rem;letter-spacing:.1em}
+.slot .slot-desc{font-size:.78rem;margin-top:4px;color:var(--tx-2)}
+.slot .slot-ar{font-size:.68rem;margin-top:3px;opacity:.7}
+.slot.r169{aspect-ratio:16/9}.slot.r43{aspect-ratio:4/3}.slot.r11{aspect-ratio:1/1}
+
+/* ══════════ HOST · Fund Control Room ══════════ */
+.host-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:stretch;height:var(--stage-h)}
+@media(max-width:900px){.host-grid{grid-template-columns:1fr;height:auto}}
+/* ── standard stage: every teaching screen is the SAME fixed height, and the Next-button bar is
+   pinned to the bottom (sticky) so it never jumps when a Reveal opens and always lands in the same
+   place. If a screen's content is taller than the stage, that panel scrolls internally. ── */
+#host>.glass.pad{height:var(--stage-h)}
+#host>.glass.pad,#host .host-grid>.glass.pad{display:flex;flex-direction:column;overflow-y:auto}
+#host>.glass.pad>.controls:last-child,#host .host-grid>.glass.pad>.controls:last-child{
+  position:sticky;bottom:0;margin-top:auto;padding:12px 0 2px;
+  background:linear-gradient(180deg,rgba(11,19,31,0),rgba(11,19,31,.97) 42%)}
+@media(max-width:900px){#host>.glass.pad{height:auto}}
+
+/* lobby */
+.lobby-hero{position:relative;border-radius:var(--r);overflow:hidden;margin-bottom:18px}
+.lobby-hero .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:26px;background:linear-gradient(0deg,rgba(7,15,26,.92),rgba(7,15,26,.25) 55%,transparent)}
+.lobby-hero h1{font-size:2.7rem;margin:2px 0 0;font-weight:800}
+.lobby-cols{display:grid;grid-template-columns:330px 1fr;gap:18px;align-items:start}
+@media(max-width:820px){.lobby-cols{grid-template-columns:1fr}}
+.lobby-right{display:flex;flex-direction:column;gap:18px;min-width:0}
+.invpanel{padding-top:12px!important;padding-bottom:12px!important}
+.invpanel-grid{max-height:132px;overflow-y:auto;align-content:flex-start}
+.join-card{text-align:center}
+#qrbox{display:flex;justify-content:center;margin:14px 0}
+#qrbox img,#qrbox canvas{border-radius:14px;border:7px solid #fff;box-shadow:var(--shadow)}
+.pin-label{color:var(--tx-3);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem}
+.pin{font-family:'Sora';font-size:2.9rem;font-weight:800;letter-spacing:.4rem;color:#fff;line-height:1}
+.joinurl{font-size:.74rem;color:var(--tx-3);word-break:break-all;font-weight:600;margin-top:6px}
+
+/* fund builder */
+.type-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
+.type-btn{border:1.5px solid var(--line);background:var(--panel);border-radius:16px;padding:11px 10px;text-align:center;
+  color:var(--tx);transition:.14s;cursor:pointer}
+.type-btn:hover{border-color:var(--accent);transform:translateY(-2px)}
+.type-btn.sel{border-color:var(--grow);background:rgba(52,211,153,.12);box-shadow:0 0 0 3px rgba(52,211,153,.16)}
+.type-btn .ic{font-size:1.7rem}
+.type-btn .tn{font-family:'Sora';font-weight:700;margin-top:5px;font-size:.98rem}
+.type-btn .td{font-size:.72rem;color:var(--tx-2);margin-top:2px}
+.fund-name-in{width:100%;background:#091a2b;border:1.5px solid var(--line);border-radius:13px;color:#fff;
+  font-family:'Sora';font-weight:700;font-size:1.25rem;padding:13px 16px;outline:none}
+.fund-name-in:focus{border-color:var(--accent)}
+.pool{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
+.asset-pill{display:inline-flex;align-items:center;gap:7px;background:var(--panel-2);border:1px solid var(--line);
+  border-radius:30px;padding:8px 14px;font-weight:700;font-size:.9rem;cursor:pointer;transition:.12s;color:var(--tx)}
+.asset-pill:hover{border-color:var(--accent);transform:translateY(-1px)}
+.asset-pill .dot{width:9px;height:9px;border-radius:50%}
+.asset-pill.added{opacity:.4;pointer-events:none}
+.basket{min-height:54px;display:flex;flex-wrap:wrap;gap:9px;margin-top:10px;padding:12px;border-radius:14px;
+  background:rgba(52,211,153,.06);border:1px dashed rgba(52,211,153,.3)}
+.basket .asset-pill{background:rgba(52,211,153,.14);border-color:rgba(52,211,153,.4)}
+.basket .x{margin-left:2px;opacity:.6;font-weight:900}
+.empty-basket{color:var(--tx-3);font-size:.86rem;font-weight:600;align-self:center}
+
+/* AUM gauge */
+.gauge-wrap{text-align:center;padding:8px 0 2px}
+.gauge{position:relative;width:100%;max-width:330px;margin:0 auto}
+.gauge svg{width:100%;display:block;overflow:visible}
+.g-track{fill:none;stroke:rgba(255,255,255,.09);stroke-width:16;stroke-linecap:round}
+.g-fill{fill:none;stroke:url(#aumgrad);stroke-width:16;stroke-linecap:round;
+  filter:drop-shadow(0 0 10px rgba(52,211,153,.55));transition:stroke-dasharray .9s cubic-bezier(.2,.8,.2,1)}
+.gauge .g-center{position:absolute;left:0;right:0;bottom:6px;text-align:center}
+.aum-big{font-family:'Sora';font-weight:800;font-size:2.4rem;line-height:1;
+  background:linear-gradient(135deg,#7df3c4,#34d399);-webkit-background-clip:text;background-clip:text;color:transparent}
+.aum-lbl{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tx-2);font-weight:800;margin-top:4px}
+.gauge-scale{display:flex;justify-content:space-between;max-width:420px;margin:2px auto 0;color:var(--tx-3);font-size:.7rem;font-weight:700}
+
+/* stat tiles */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px 12px;text-align:center}
+.stat .v{font-family:'Sora';font-weight:800;font-size:1.5rem;color:#fff}
+.stat .k{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-2);font-weight:800;margin-top:3px}
+.stat .v.grow{color:var(--grow)}.stat .v.gold{color:var(--gold)}.stat .v.blue{color:var(--accent)}
+
+/* investor chips on host */
+.inv-head{display:flex;align-items:center;justify-content:space-between;margin:2px 0 10px}
+.inv-grid{display:flex;flex-wrap:wrap;gap:9px}
+.ichip{display:flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--line);
+  border-radius:30px;padding:7px 14px 7px 7px;font-weight:700;animation:pop .3s;font-size:.9rem}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+.av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:1rem;color:#06121f;font-weight:900;flex:0 0 auto}
+.av-mini{width:26px;height:26px;font-size:.9rem;margin-left:-5px;border:2px solid #0e1a2b;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.pickers{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;padding-left:5px}
+.ichip .amt{font-family:'Sora';color:var(--grow);font-weight:800;margin-left:2px}
+.ichip.pending .amt{color:var(--tx-3)}
+.waiting{color:var(--tx-3);font-weight:600}
+
+/* reveal card */
+.reveal{margin-top:13px;border-radius:18px;padding:15px 18px;border:1px solid rgba(245,196,81,.4);
+  background:linear-gradient(135deg,rgba(245,196,81,.14),rgba(245,196,81,.05));animation:rin .5s}
+@keyframes rin{from{transform:translateY(10px);opacity:0}to{transform:none;opacity:1}}
+.reveal .acr{font-family:'Sora';font-size:2.2rem;font-weight:800;color:var(--gold)}
+.reveal .full{font-weight:800;font-size:1.05rem;margin:2px 0 8px}
+.reveal p{margin:0;color:var(--tx)}
+
+/* market event card */
+.event-card{text-align:center;border-radius:18px;padding:13px 18px;margin-top:6px;animation:rin .45s;border:1px solid var(--line)}
+.event-card.up{background:linear-gradient(135deg,rgba(52,211,153,.18),rgba(52,211,153,.04));border-color:rgba(52,211,153,.45)}
+.event-card.down{background:linear-gradient(135deg,rgba(239,90,76,.18),rgba(239,90,76,.04));border-color:rgba(239,90,76,.45)}
+.event-card .em{font-size:2.1rem;line-height:1.1}
+.event-card .ev-nm{font-family:'Sora';font-size:1.6rem;font-weight:800;margin:4px 0}
+.event-card .ev-pct{font-family:'Sora';font-size:2.6rem;font-weight:800}
+.event-card.up .ev-pct{color:var(--grow)}.event-card.down .ev-pct{color:var(--crash)}
+.event-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.event-grid.one{grid-template-columns:1fr}
+.hold-impact{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.hi-row{display:flex;align-items:center;justify-content:space-between;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:8px 13px;font-weight:700;font-size:.92rem}
+.hi-nm{color:var(--tx)}
+.hi-sec{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--tx-3);background:rgba(255,255,255,.06);padding:2px 7px;border-radius:20px;margin-left:6px}
+.hi-chg.up{color:var(--grow)}.hi-chg.down{color:var(--crash)}
+.hi-total{background:rgba(78,168,255,.1);border-color:rgba(78,168,255,.35)}
+.hi-total .hi-nm{font-family:'Sora';font-weight:800}
+/* factsheet */
+.fsheet{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03))}
+.fs-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.fs-nav{text-align:right}.fs-nav .num{font-family:'Sora';font-weight:800;font-size:2rem;color:var(--gold);line-height:1}
+.fs-nav .k,.fs-cell .k{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--tx-2);font-weight:800;margin-top:2px}
+.fs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.fs-cell{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:11px;text-align:center}
+.fs-cell .v{font-family:'Sora';font-weight:800;font-size:1.3rem;color:#fff}
+.fs-sec-h{font-family:'Sora';font-weight:700;font-size:.95rem;color:var(--tx)}
+.fs-holds{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.fs-hold{display:flex;align-items:center;justify-content:space-between;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:8px 13px;font-weight:700}
+.fs-hold b{font-family:'Sora';color:var(--accent)}
+.fs-legend{display:flex;flex-direction:column;gap:9px;margin-top:8px;color:var(--tx-2);font-weight:600;line-height:1.4}
+.fs-legend b{color:var(--tx);font-family:'Sora'}
+.fs-gl{padding:8px 0;border-bottom:1px solid var(--line)}
+.fs-gl:last-child{border-bottom:none}.fs-gl b{color:var(--gold)}
+.event-pick{display:flex;align-items:center;gap:10px;text-align:left;background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;padding:12px 14px;cursor:pointer;color:var(--tx);transition:.12s}
+.event-pick:hover{border-color:var(--accent);transform:translateY(-2px)}
+.event-pick .em{font-size:1.5rem}
+.event-pick .ev-nm2{font-weight:800;font-size:.95rem}
+.event-pick .pc{margin-left:auto;font-family:'Sora';font-weight:800}
+.pc.up{color:var(--grow)}.pc.down{color:var(--crash)}
+
+/* NAV sparkline + ticker */
+.nav-ticker{display:flex;align-items:baseline;gap:10px;justify-content:center;margin:2px 0}
+.nav-ticker .nv{font-family:'Sora';font-weight:800;font-size:2.4rem;color:#fff}
+.nav-ticker .chg{font-family:'Sora';font-weight:800;font-size:1.05rem;padding:3px 10px;border-radius:20px}
+.chg.up{color:var(--grow);background:rgba(52,211,153,.14)}.chg.down{color:var(--crash);background:rgba(239,90,76,.14)}
+.spark{width:100%;height:70px;display:block;margin-top:4px}
+
+/* yesterday/today compare */
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin-top:6px}
+.cmp-col{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+.cmp-col.today{border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.07)}
+.cmp-col .ct{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-2);font-weight:800}
+.cmp-row{display:flex;justify-content:space-between;margin-top:9px;font-weight:700}
+.cmp-row b{font-family:'Sora'}
+.cmp-arrow{font-size:1.8rem;color:var(--accent)}
+@media(max-width:620px){.compare{grid-template-columns:1fr;}.cmp-arrow{transform:rotate(90deg)}}
+
+/* host controls bar */
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center}
+.controls .btn.lg{margin-left:auto}
+.controls .spacer{flex:1}
+.phase-tag{font-family:'Sora';font-weight:700;font-size:.8rem;color:var(--tx-2);background:var(--panel);
+  border:1px solid var(--line);padding:6px 13px;border-radius:30px}
+/* the 3 things that matter — AUM · NAV · UNITS */
+.metrics3{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:10px 0}
+.m3{background:var(--panel);border:1.5px solid var(--line);border-radius:16px;padding:14px 10px;text-align:center;position:relative;overflow:hidden}
+.m3.aum{border-color:rgba(52,211,153,.45)}.m3.nav{border-color:rgba(245,196,81,.45)}.m3.units{border-color:rgba(78,168,255,.45)}
+.m3-v{font-family:'Sora';font-weight:800;font-size:2.05rem;line-height:1}
+.m3.aum .m3-v{color:var(--grow)}.m3.nav .m3-v{color:var(--gold)}.m3.units .m3-v{color:var(--accent)}
+.m3-t{font-family:'Sora';font-weight:800;font-size:.9rem;letter-spacing:.06em;margin-top:7px}
+.m3-k{font-size:.68rem;color:var(--tx-2);font-weight:600;margin-top:2px;line-height:1.25}
+.m3-d{font-size:.72rem;font-weight:800;margin-top:4px}.m3-d.up{color:var(--grow)}.m3-d.down{color:var(--crash)}.m3-d.same{color:var(--accent)}
+.m3-was{font-size:.74rem;color:var(--tx-3);font-weight:700;margin-top:5px}
+.m3-badge{margin-top:8px;display:inline-block;font-family:'Sora';font-weight:800;font-size:.86rem;padding:5px 13px;border-radius:20px;letter-spacing:.02em}
+.m3-badge.up{background:rgba(52,211,153,.2);color:#7df3c4}
+.m3-badge.down{background:rgba(239,90,76,.2);color:#ff8e82}
+.m3-badge.same{background:rgba(78,168,255,.22);color:#bfe0ff}
+.m3.ch-up{border-color:var(--grow);box-shadow:0 0 0 2px rgba(52,211,153,.28),0 10px 28px rgba(52,211,153,.2);animation:m3pop .45s ease-out}
+.m3.ch-down{border-color:var(--crash);box-shadow:0 0 0 2px rgba(239,90,76,.28),0 10px 28px rgba(239,90,76,.2);animation:m3pop .45s ease-out}
+.m3.ch-same{border-color:var(--accent);animation:m3same 1.3s ease-in-out infinite}
+@keyframes m3pop{0%{transform:scale(.88);opacity:.35}62%{transform:scale(1.05)}100%{transform:scale(1)}}
+@keyframes m3same{0%,100%{box-shadow:0 0 0 2px rgba(78,168,255,.3),0 8px 24px rgba(78,168,255,.14)}50%{box-shadow:0 0 0 3px rgba(78,168,255,.6),0 10px 30px rgba(78,168,255,.4)}}
+.sc-note{margin-top:10px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 14px;font-size:.9rem;font-weight:600;color:var(--tx);line-height:1.45}
+.sc-note.flow{border-color:rgba(78,168,255,.45);background:rgba(78,168,255,.08)}
+.scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:8px 0}
+.scenario-btn{display:flex;flex-direction:column;align-items:flex-start;gap:0;text-align:left;background:var(--panel);border:1.5px solid var(--line);border-radius:14px;padding:10px 13px;color:#fff;transition:.12s}
+.scenario-btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.scenario-btn .em{font-size:1.5rem;line-height:1.2}
+.scenario-btn .snm{font-family:'Sora';font-weight:800;font-size:1rem}
+.scenario-btn .ssub{font-size:.72rem;color:var(--tx-2);font-weight:600}
+.scenario-btn.s-up.sel,.scenario-btn.s-in.sel{border-color:var(--grow);background:rgba(52,211,153,.12);box-shadow:0 0 0 3px rgba(52,211,153,.16)}
+.scenario-btn.s-down.sel,.scenario-btn.s-out.sel{border-color:var(--crash);background:rgba(239,90,76,.12);box-shadow:0 0 0 3px rgba(239,90,76,.16)}
+.sc-rows{display:flex;flex-direction:column;gap:4px;font-weight:700;font-size:.92rem}
+.sc-rows>div{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.sc-rows .sc-k{color:var(--tx-2);text-transform:uppercase;font-size:.68rem;letter-spacing:.06em;font-weight:800;min-width:44px}
+.rule-table{display:flex;flex-direction:column;gap:6px}
+.rule-row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 13px;font-weight:800;font-size:.95rem;transition:.15s}
+.rule-row.head{background:none;border:none;padding:0 13px 2px;font-size:.68rem;color:var(--tx-3);text-transform:uppercase;letter-spacing:.06em}
+.rule-row.lit{border-color:var(--gold);background:rgba(245,196,81,.1);box-shadow:0 0 0 2px rgba(245,196,81,.22)}
+.rule-row .up{color:var(--grow)}.rule-row .down{color:var(--crash)}.rule-row .same{color:var(--accent)}
+.done-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Sora';font-weight:800;font-size:1rem;color:#0c1d16;
+  background:linear-gradient(135deg,#7df3c4,#34d399);border:1px solid rgba(52,211,153,.6);padding:11px 20px;border-radius:14px;box-shadow:0 0 0 3px rgba(52,211,153,.15)}
+.host-reset{position:fixed;top:14px;right:14px;z-index:50;background:#0c1d31;color:var(--tx);border:1px solid var(--line);
+  padding:9px 15px;border-radius:30px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-sm)}
+
+/* the steps stepper */
+.steps{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.step{font-size:.72rem;font-weight:800;color:var(--tx-3);background:var(--panel);border:1px solid var(--line);
+  padding:6px 11px;border-radius:30px;letter-spacing:.02em}
+.step.on{color:#06121f;background:linear-gradient(135deg,var(--gold),var(--gold-d));border-color:transparent}
+.step.done{color:var(--grow);border-color:rgba(52,211,153,.4)}
+
+/* ══════════ PLAYER · investor phone ══════════ */
+.player-scr{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding:16px}
+.p-top{display:flex;align-items:center;justify-content:space-between;padding:10px 4px;margin-bottom:6px}
+.p-top .who{display:flex;align-items:center;gap:9px;font-weight:800}
+.p-top .cash{font-family:'Sora';font-weight:800;color:var(--gold);font-size:1.05rem}
+.p-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:14px 6px}
+.p-input{width:100%;background:#091a2b;border:1.5px solid var(--line);border-radius:14px;color:#fff;
+  font-size:1.1rem;padding:15px 16px;outline:none;font-weight:700;text-align:center}
+.p-input:focus{border-color:var(--accent)}
+.p-status{font-family:'Sora';font-weight:800;font-size:1.5rem}
+.p-sub{color:var(--tx-2);font-weight:600}
+.cash-banner{background:linear-gradient(135deg,rgba(245,196,81,.16),rgba(245,196,81,.05));border:1px solid rgba(245,196,81,.35);
+  border-radius:16px;padding:14px;width:100%}
+.cash-banner .cb-v{font-family:'Sora';font-weight:800;font-size:1.9rem;color:var(--gold)}
+.cash-banner .cb-k{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-2);font-weight:800}
+.amt-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;width:100%}
+.invest-hero{width:calc(100% + 32px);margin:-6px -16px 2px}
+.invest-hero .slot{border-radius:0;border-left:none;border-right:none}
+.cash-pill{background:rgba(245,196,81,.13);border:1px solid rgba(245,196,81,.32);border-radius:18px;padding:9px 16px;font-weight:700;color:var(--tx-2);text-align:center;line-height:1.35}
+.cash-pill b{font-family:'Sora';color:var(--gold);font-size:1.05rem}
+.amt-btn{background:var(--panel);border:1.5px solid var(--line);border-radius:16px;padding:14px;color:#fff;
+  font-family:'Sora';font-weight:800;font-size:1.25rem;transition:.12s}
+.amt-btn:hover{border-color:var(--grow);transform:translateY(-2px)}
+.amt-btn:disabled{opacity:.3}
+.slider{width:100%;-webkit-appearance:none;appearance:none;height:9px;border-radius:20px;background:linear-gradient(90deg,var(--accent),var(--grow));outline:none;margin:6px 0}
+.slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;border:4px solid var(--grow);cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.45)}
+.slider::-moz-range-thumb{width:30px;height:30px;border-radius:50%;background:#fff;border:4px solid var(--grow);cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.45)}
+.slider-ends{display:flex;justify-content:space-between;font-size:.72rem;font-weight:800;color:var(--tx-3)}
+.mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}
+.mode-tab{background:var(--panel);border:1.5px solid var(--line);border-radius:16px;padding:14px 10px;color:#fff;font-family:'Sora';font-weight:800;font-size:1.05rem;transition:.12s}
+.mode-tab .sub{display:block;font-family:'Inter';font-size:.72rem;color:var(--tx-2);font-weight:700;margin-top:3px}
+.mode-tab.sel{border-color:var(--grow);background:rgba(52,211,153,.12);box-shadow:0 0 0 3px rgba(52,211,153,.16)}
+.date-chips{display:flex;gap:8px;width:100%}
+.date-chip{flex:1;background:var(--panel);border:1.5px solid var(--line);border-radius:12px;padding:11px 6px;color:#fff;font-family:'Sora';font-weight:800;font-size:1.05rem;transition:.12s}
+.date-chip:hover{border-color:var(--grow)}
+.date-chip.sel{border-color:var(--grow);background:rgba(52,211,153,.16);box-shadow:0 0 0 3px rgba(52,211,153,.18)}
+.tip-nudge{margin-top:12px;background:linear-gradient(135deg,rgba(245,196,81,.14),rgba(245,196,81,.05));border:1px solid rgba(245,196,81,.4);border-radius:12px;padding:11px 14px;font-size:.86rem;font-weight:600;color:var(--tx);line-height:1.45}
+.amt-btn .sub{display:block;font-family:'Inter';font-size:.7rem;color:var(--tx-2);font-weight:700;margin-top:3px}
+.custom-row{display:flex;gap:9px;width:100%}
+.custom-row input{flex:1;background:#091a2b;border:1.5px solid var(--line);border-radius:14px;color:#fff;
+  font-family:'Sora';font-weight:800;font-size:1.1rem;padding:13px 15px;outline:none;text-align:center}
+.custom-row input:focus{border-color:var(--accent)}
+
+/* portfolio card */
+.pf-card{width:100%;border-radius:20px;padding:20px;border:1px solid var(--line);
+  background:linear-gradient(160deg,rgba(78,168,255,.12),rgba(52,211,153,.06));box-shadow:var(--shadow)}
+.pf-val{font-family:'Sora';font-weight:800;font-size:2.6rem;line-height:1;color:#fff}
+.pf-val-k{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-2);font-weight:800}
+.pf-gain{font-family:'Sora';font-weight:800;font-size:1.05rem;margin-top:6px;display:inline-block;padding:4px 12px;border-radius:20px}
+.pf-gain.up{color:var(--grow);background:rgba(52,211,153,.14)}.pf-gain.down{color:var(--crash);background:rgba(239,90,76,.14)}
+.pf-gain.flat{color:var(--tx-2);background:var(--panel)}
+.pf-rows{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:16px}
+.pf-cell{background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:13px;padding:12px;text-align:center}
+.pf-cell .v{font-family:'Sora';font-weight:800;font-size:1.25rem;color:#fff}
+.pf-cell .k{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tx-2);font-weight:800;margin-top:3px}
+/* unit jar */
+.jar{width:100%;height:14px;border-radius:20px;background:rgba(0,0,0,.25);overflow:hidden;margin-top:14px;border:1px solid var(--line)}
+.jar .fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--grow));border-radius:20px;transition:width .7s}
+.invest-again{margin-top:14px;width:100%}
+.tag-assets{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:4px}
+.tag-assets .t{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:5px 11px;font-size:.78rem;font-weight:700}
+
+body.host-bg{}
+body.player-bg{background:
+   radial-gradient(120% 70% at 50% -10%,#163a5e 0%,transparent 60%),
+   linear-gradient(180deg,#0a1422 0%,#070f1a 100%)}
+.connecting{text-align:center;padding:40px;color:var(--tx-2);font-weight:700}
+
+/* ── Phase 2 ── */
+.vote2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+.fundcard{border:1px solid var(--line);border-radius:18px;padding:12px 14px;text-align:center;background:var(--panel)}
+.fundcard.A{border-color:rgba(78,168,255,.4)}.fundcard.B{border-color:rgba(245,196,81,.4)}
+.fc-tag{font-family:'Sora';font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.78rem;color:var(--tx-2)}
+.fc-nav{font-family:'Sora';font-weight:800;font-size:2.6rem;color:#fff;line-height:1.15}
+.fc-k{font-size:.74rem;color:var(--tx-2);font-weight:700}
+.votebar{height:12px;border-radius:20px;background:rgba(0,0,0,.28);overflow:hidden;margin:10px 0 4px;border:1px solid var(--line)}
+.votebar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--grow));transition:width .5s}
+.fc-res{margin-top:10px;font-size:1rem;color:var(--tx-2)}.fc-res b{font-family:'Sora';font-size:1.35rem;color:#fff}
+.fc-gain{display:inline-block;margin-top:8px;color:var(--grow);background:rgba(52,211,153,.14);font-family:'Sora';font-weight:800;padding:4px 14px;border-radius:20px}
+.stmt{background:#0c1726;border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:6px}
+.stmt-top{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:9px}
+.stmt-title{font-family:'Sora';font-weight:800;font-size:1.05rem;color:#fff}
+.stmt-sub{color:var(--tx-2);font-size:.72rem;font-weight:600}
+.stmt-amc{font-family:'Sora';font-weight:700;color:var(--accent);font-size:.85rem}
+.stmt-meta{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px}
+.stmt-meta>div{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:8px;padding:6px 10px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.stmt-meta span{color:var(--tx-3);font-size:.72rem;font-weight:700}
+.stmt-meta b{font-family:'Sora';color:var(--tx);font-size:.82rem}
+.stmt-tbl{width:100%;border-collapse:collapse;font-size:.84rem}
+.stmt-tbl th{color:var(--tx-3);font-size:.64rem;text-transform:uppercase;letter-spacing:.04em;font-weight:800;padding:6px 8px;text-align:right;border-bottom:1px solid var(--line)}
+.stmt-tbl th:first-child,.stmt-tbl th:nth-child(2){text-align:left}
+.stmt-tbl td{padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.05);text-align:right;color:var(--tx)}
+.stmt-tbl td:first-child,.stmt-tbl td:nth-child(2){text-align:left;color:var(--tx-2)}
+.stmt-tbl .num{font-family:'Sora'}
+.stmt-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.stmt-summary>div{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.stmt-summary span{display:block;color:var(--tx-3);font-size:.62rem;text-transform:uppercase;letter-spacing:.04em;font-weight:800}
+.stmt-summary b{font-family:'Sora';font-size:1rem;color:#fff}
+/* real paper-look mutual fund account statement (white document inside the dark app) */
+.mfs{background:#fbfbf6;color:#1c2733;border-radius:6px;border:1px solid #cfd2c8;box-shadow:0 12px 32px rgba(0,0,0,.4);font-family:'Inter',Arial,sans-serif;padding:12px 15px;font-size:.78rem;line-height:1.32}
+.mfs-head{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #0e2c52;padding-bottom:8px;gap:12px}
+.mfs-amc{font-weight:900;font-size:1.02rem;color:#0e2c52;letter-spacing:-.01em}
+.mfs-amc small{display:block;font-weight:600;font-size:.6rem;color:#6a7280;letter-spacing:.03em;text-transform:uppercase;margin-top:1px}
+.mfs-ttl{text-align:right}.mfs-ttl b{font-size:.84rem;color:#1c2733}.mfs-ttl span{display:block;font-size:.64rem;color:#6a7280;margin-top:1px}
+.mfs-info{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;margin:9px 0}
+.mfs-info div{display:flex;gap:6px;padding:3px 2px;border-bottom:1px dotted #d9d9cd;font-size:.75rem}
+.mfs-info .lbl{color:#7a828c;min-width:74px;font-weight:600}
+.mfs-info .val{color:#1c2733;font-weight:700}
+.mfs-scheme{background:#e9efe6;border:1px solid #cfd7c8;border-radius:4px;padding:7px 10px;margin:7px 0 4px;font-weight:800;color:#0e2c52;font-size:.82rem}
+.mfs-scheme small{display:block;font-weight:600;color:#6a7280;font-size:.64rem;margin-top:2px;letter-spacing:.02em}
+.mfs-tbl{width:100%;border-collapse:collapse;font-size:.75rem;margin-top:4px}
+.mfs-tbl th{background:#0e2c52;color:#fff;font-weight:700;padding:5px 7px;text-align:right;font-size:.64rem;text-transform:uppercase;letter-spacing:.02em}
+.mfs-tbl th:first-child,.mfs-tbl th:nth-child(2){text-align:left}
+.mfs-tbl td{padding:2.5px 7px;text-align:right;border-bottom:1px solid #e7e7dc;color:#1c2733;font-variant-numeric:tabular-nums}
+.mfs-tbl td:first-child,.mfs-tbl td:nth-child(2){text-align:left}
+.mfs-tbl tr.open td,.mfs-tbl tr.close td{background:#eef1e6;font-weight:800;color:#0e2c52}
+.mfs-foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:9px;padding-top:8px;border-top:2px solid #0e2c52;font-weight:800;font-size:.82rem}
+.mfs-foot b{color:#0e2c52}.mfs-foot .mv b{color:#0e7a3e}
+.mfs-fine{font-size:.58rem;color:#9aa0a8;margin-top:9px;line-height:1.35}
+.mfs-hl{outline:2.5px solid #e0a400!important;outline-offset:1px;background:#fff2b8!important;border-radius:3px}
+.mfs-col{background:#fff6cf!important}
+/* spotlight: during the tour, blur/dim everything except the highlighted field/column so it POPS */
+.mfs.spot .mfs-head,.mfs.spot .mfs-info>div:not(.mfs-hl),.mfs.spot .mfs-scheme:not(.mfs-hl),.mfs.spot .mfs-tbl th:not(.mfs-hl),.mfs.spot .mfs-tbl td:not(.mfs-col),.mfs.spot .mfs-foot>span:not(.mfs-hl),.mfs.spot .mfs-fine{opacity:.24;filter:blur(1.4px);transition:opacity .25s,filter .25s}
+.mfs.spot .mfs-hl,.mfs.spot .mfs-col{opacity:1;filter:none}
+.mfs.spot .mfs-hl{box-shadow:0 0 0 3px rgba(224,164,0,.4),0 8px 22px rgba(0,0,0,.22)}
+.tour-hl{outline:2.5px solid var(--gold)!important;outline-offset:1px;background:rgba(245,196,81,.18)!important;border-radius:6px;box-shadow:0 0 0 5px rgba(245,196,81,.1)}
+.tour-col{background:rgba(245,196,81,.13)!important}
+.tour-step{background:rgba(245,196,81,.08);border:1px solid rgba(245,196,81,.35);border-radius:14px;padding:14px;margin:8px 0}
+.tour-t{font-family:'Sora';font-weight:800;font-size:1.2rem;color:var(--gold)}
+.tour-d{margin-top:5px;color:var(--tx);font-weight:500;line-height:1.45}
+.tour-dots{display:flex;gap:5px;flex-wrap:wrap;margin:10px 0}
+.tour-dots span{width:9px;height:9px;border-radius:50%;background:var(--line);transition:.2s}
+.tour-dots span.on{background:var(--gold);transform:scale(1.3)}
+.tour-dots span.done{background:var(--grow)}
+.div-choices{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.div-chip{display:flex;align-items:center;justify-content:space-between;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 14px;font-weight:700}
+.div-chip.fund{border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.08)}
+.div-chip b{font-family:'Sora';color:var(--accent);font-size:1.1rem}
+.div-shock{text-align:center;background:rgba(239,90,76,.12);border:1px solid rgba(239,90,76,.4);border-radius:14px;padding:12px;font-weight:700;color:var(--tx)}
+.comp-bars{display:flex;flex-direction:column;gap:12px;margin:14px 0}
+.comp-row{display:flex;align-items:center;gap:12px}
+.comp-lbl{width:130px;flex:0 0 auto;font-weight:700;font-size:.92rem;line-height:1.25}
+.comp-bar{flex:1;height:26px;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.comp-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--grow));border-radius:8px;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.comp-val{font-family:'Sora';font-weight:800;color:var(--grow);min-width:96px;text-align:right}
+.myth-x{text-align:center;margin:10px 0 2px;padding:9px;border-radius:12px;background:var(--panel);border:1px solid var(--line);color:var(--tx-2);font-weight:700}
+.myth-x b{color:var(--tx)}
+.myth-x.right{background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.45);color:var(--grow)}
+.myth-x.right b{color:var(--grow)}
+.fc-steps{text-align:left;margin:10px 0 2px;font-size:.92rem;line-height:1.5;color:var(--tx-2)}
+.fc-steps b{color:#fff;font-family:'Sora'}
+.fc-steps div{padding:6px 0;border-bottom:1px solid var(--line)}
+.fc-steps div:last-child{border-bottom:none}
+.er-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+.er-btn{border:1.5px solid var(--line);background:var(--panel);border-radius:14px;padding:14px;text-align:center;color:var(--tx);cursor:pointer;transition:.12s}
+.er-btn:hover{border-color:var(--accent);transform:translateY(-2px)}.er-btn.sel{border-color:var(--gold);background:rgba(245,196,81,.12);box-shadow:0 0 0 3px rgba(245,196,81,.14)}
+.er-btn .v{font-family:'Sora';font-weight:800;font-size:1.5rem}.er-btn .k{font-size:.7rem;color:var(--tx-2);font-weight:700}
+.chart-box{background:rgba(0,0,0,.18);border:1px solid var(--line);border-radius:14px;padding:8px 10px;margin-top:6px}
+.sip-compare{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:10px}
+.sip-compare .sc{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:9px 18px;min-width:130px}
+.sip-compare .sc.win{border-color:rgba(52,211,153,.55);background:rgba(52,211,153,.1)}
+.sip-compare .scv{font-family:'Sora';font-weight:800;font-size:1.7rem;color:var(--tx-2)}
+.sip-compare .sc.win .scv{color:var(--grow)}
+.sip-compare .sck{font-size:.64rem;text-transform:uppercase;letter-spacing:.05em;color:var(--tx-2);font-weight:800;margin-top:2px}
+.sip-compare .sc-vs{font-family:'Sora';font-weight:800;color:var(--grow);font-size:1.6rem}
+.legend{display:flex;gap:18px;justify-content:center;font-size:.78rem;font-weight:700;margin-top:6px;color:var(--tx-2)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:middle}
+.tanks{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:end;margin:10px 0}
+.tank{position:relative;height:150px;border:2px solid var(--line);border-radius:14px;overflow:hidden;background:rgba(0,0,0,.28)}
+.tank .liq{position:absolute;left:0;right:0;bottom:0;transition:height .7s cubic-bezier(.2,.8,.2,1);background:linear-gradient(180deg,rgba(78,168,255,.75),rgba(78,168,255,.35))}
+.tank.eq .liq{background:linear-gradient(180deg,rgba(52,211,153,.8),rgba(52,211,153,.35))}
+.tank-lbl{text-align:center;font-weight:800;font-size:.82rem;margin-top:7px}
+.tank-v{font-family:'Sora';font-weight:800;text-align:center;color:#fff}
+.flow-arrow{font-size:1.7rem;color:var(--accent);padding-bottom:62px}
+.siptbl{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px}
+.siptbl th,.siptbl td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--line)}
+.siptbl th:first-child,.siptbl td:first-child{text-align:left}
+.siptbl th{color:var(--tx-2);font-weight:700;text-transform:uppercase;font-size:.64rem;letter-spacing:.08em}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+.split .col{border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--panel)}
+.split .col h4{margin:0 0 8px;font-family:'Sora';font-size:1rem}
+.split .col.mgr{border-color:rgba(78,168,255,.4)}.split .col.inv{border-color:rgba(52,211,153,.4)}
+.split ul{margin:0;padding-left:18px;color:var(--tx-2);font-weight:600;line-height:1.7}
+.role-chip{display:inline-block;font-family:'Sora';font-weight:800;font-size:.85rem;padding:5px 13px;border-radius:20px;margin-bottom:9px}
+.role-chip.mgr{background:rgba(78,168,255,.16);color:#9fd0ff}.role-chip.inv{background:rgba(52,211,153,.16);color:#86f0c4}
+.scr-bar{display:flex;gap:5px;margin-bottom:11px}
+.scr-bar span{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.most-pow{text-align:center;margin-top:22px}
+.most-pow h3{margin:4px 0 0;font-size:1.5rem}
+.report-hero{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0}
+.recap-hero{text-align:center;padding:4px 0 2px}
+.recap-hero .big{font-family:'Sora';font-weight:800;font-size:clamp(1.8rem,4vw,3rem);background:linear-gradient(135deg,#7df3c4,#f5c451);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.06}
+.podium{display:flex;justify-content:center;align-items:flex-end;gap:12px;margin:10px auto 4px;max-width:640px}
+.pod{flex:1;max-width:200px;text-align:center;border-radius:16px 16px 0 0;padding:12px 10px 14px;border:1px solid var(--line);border-bottom:none;background:var(--panel)}
+.pod .medal{font-size:1.7rem;line-height:1}
+.pod .av{margin:4px auto;width:34px;height:34px}
+.pod .pnm{font-family:'Sora';font-weight:800;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:.95rem}
+.pod .pv{font-family:'Sora';font-weight:800;font-size:1.35rem;color:var(--grow);margin-top:2px}
+.pod .pg{font-size:.7rem;font-weight:800;color:var(--tx-2);margin-top:2px}
+.pod.p1{background:linear-gradient(180deg,rgba(245,196,81,.28),rgba(245,196,81,.05));border-color:rgba(245,196,81,.55);padding-top:20px;padding-bottom:24px}
+.pod.p2{background:linear-gradient(180deg,rgba(159,178,200,.2),transparent);padding-bottom:18px}
+.pod.p3{background:linear-gradient(180deg,rgba(224,160,110,.2),transparent)}
+.mastered{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0 2px}
+.mastered span{background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.4);color:#86f0c4;font-weight:800;font-size:.82rem;padding:6px 13px;border-radius:30px}
+.big-payoff{text-align:center;margin:14px 0 6px;padding:14px;border-radius:16px;background:linear-gradient(135deg,rgba(245,196,81,.14),rgba(52,211,153,.08));border:1px solid rgba(245,196,81,.35);font-family:'Sora';font-weight:800;font-size:1.15rem;line-height:1.4}
+@media(max-width:560px){.report-hero{grid-template-columns:1fr 1fr}}
+.step.click{cursor:pointer}
+.step.click:hover{border-color:var(--accent);color:var(--tx)}
+.formula{font-family:'Sora';font-weight:700;font-size:1.15rem;color:var(--tx);background:rgba(78,168,255,.1);border:1px solid rgba(78,168,255,.32);border-radius:14px;padding:13px 16px;text-align:center}
+.formula b{color:var(--accent)}
+.unit-examples{margin-top:12px;display:flex;flex-direction:column;gap:9px}
+.uex{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.uex-nm{font-weight:800;min-width:64px}
+.uex-calc{margin-left:auto;color:var(--tx-2)}.uex-calc b{color:#fff;font-family:'Sora'}
+.ownership{display:flex;height:30px;border-radius:10px;overflow:hidden;margin:10px 0;border:1px solid var(--line);background:rgba(0,0,0,.25)}
+.own-seg{height:100%;min-width:2px;transition:width .6s}
+.own-legend{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.own-row{font-weight:700;font-size:.88rem;color:var(--tx-2)}
+.own-row b{color:#fff;font-family:'Sora'}
+.own-dot{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:middle}
+/* compact lobby hero so fund name + build panel sit above the fold */
+.lobby-hero{height:clamp(130px,17vh,200px);margin-bottom:14px}
+.lobby-hero .slot{height:100%}
+.lobby-hero .overlay{padding:16px 22px}
+.lobby-hero h1{font-size:clamp(1.5rem,3.4vw,2.3rem)}
+#lobbyBg{position:fixed;inset:0;z-index:0;background-size:cover;background-position:center;background-repeat:no-repeat;display:none}
+#host{position:relative;z-index:1}
+.lobby-head{padding:2px 4px 12px}
+.lobby-title{font-family:'Sora';font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:800;margin:2px 0;color:#fff;letter-spacing:-.01em;text-shadow:0 2px 24px rgba(0,0,0,.55)}
+.nav-big-wrap{text-align:center;margin:10px 0 6px}
+.nav-big{font-family:'Sora';font-weight:800;font-size:3.6rem;line-height:1;background:linear-gradient(135deg,#ffe6a0,#f5c451);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* expandable QR */
+#qrbox{cursor:zoom-in}
+.qr-hint{font-size:.7rem;color:var(--tx-3);font-weight:800;letter-spacing:.04em;margin-top:2px;text-transform:uppercase}
+#qrModal{position:fixed;inset:0;z-index:200;background:#050a12;display:none;align-items:center;justify-content:center;flex-direction:column;gap:18px;cursor:zoom-out}
+#qrModal.show{display:flex;animation:rin .2s}
+#qrModal .qm-box{background:#fff;padding:24px;border-radius:22px;box-shadow:var(--shadow);line-height:0}
+#qrModal .qm-pin{font-family:'Sora';font-size:clamp(2rem,7vw,3.2rem);font-weight:800;letter-spacing:.5rem;color:#fff}
+#qrModal .qm-pin small{display:block;font-size:.8rem;letter-spacing:.16em;color:var(--tx-2);text-transform:uppercase;text-align:center;margin-bottom:4px}
+#qrModal .qm-hint{color:var(--tx-2);font-weight:700}
+/* invest-screen "money flowing in" contribution bars */
+.contrib-list{display:flex;flex-direction:column;gap:12px;margin-top:10px}
+.contrib-row{display:flex;align-items:center;gap:11px}
+.contrib-main{flex:1;min-width:0}
+.contrib-top{display:flex;justify-content:space-between;align-items:baseline;font-weight:800;font-size:.94rem;margin-bottom:5px;gap:8px}
+.contrib-top .cname{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.contrib-top .camt{font-family:'Sora';color:var(--grow);flex:0 0 auto}
+.contrib-top .camt.pend{color:var(--tx-3);font-family:'Inter';font-weight:700;font-size:.8rem}
+.contrib-bar{height:11px;border-radius:20px;background:rgba(0,0,0,.3);overflow:hidden;border:1px solid var(--line)}
+.contrib-bar span{display:block;height:100%;border-radius:20px;box-shadow:0 0 10px rgba(52,211,153,.4);transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.rep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-top:4px;width:100%}
+@media(max-width:620px){.vote2,.split{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="host" class="wrap hide"></div>
+<div id="player" class="hide"></div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   MUTUAL FUND MANAGER LIVE
+   Reuses the Stock Rush Supabase project (games table). Host = projector
+   (?role=host, default). Players = phones (?role=player&room=MF####).
+   Host is the single authoritative writer; players send intents via broadcast.
+   ═══════════════════════════════════════════════════════════════════════ */
+const SUPABASE_URL='https://gkfldkytzfngwnkrwrga.supabase.co';
+const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrZmxka3l0emZuZ3dua3J3cmdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5MzI4NDksImV4cCI6MjA5NDUwODg0OX0.wwyFY0bhbGhCKCpAjgZ0oCS8gda21FHcvDdvlg9xCmU';
+const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+
+const LOGO='https://ifm-deploy.vercel.app/IFM%20round%20logo%20for%20watermark.png';
+
+/* ── ASSET media map — fill these URLs later to swap placeholders for art ── */
+const ART='https://ifm-deploy.vercel.app/art/';
+const MEDIA={
+  'ASSET-01':ART+'asset-01.jpg', // S1 lobby/launch hero (16:9, host) — IFM tree command room
+  'ASSET-02':ART+'asset-02.jpg', // Equity crest (1:1)
+  'ASSET-03':ART+'asset-03.jpg', // Debt crest (1:1)
+  'ASSET-04':ART+'asset-04.jpg', // Hybrid crest (1:1)
+  'ASSET-05':ART+'asset-05.jpg', // S2 "your money at work" (4:3, player)
+  'ASSET-06':ART+'asset-06.jpg', // Equity Rally art (16:9)
+  'ASSET-07':ART+'asset-07.jpg', // Market Crash art (16:9)
+  'ASSET-08':ART+'asset-08.jpg', // IT Boom art (16:9)
+  'ASSET-09':ART+'asset-09.jpg', // Bonds Rise art (16:9)
+  'ASSET-10':ART+'asset-10.jpg', // S5 NAV discovery backdrop (16:9)
+  'ASSET-11':ART+'asset-11.jpg', // S7 Feezilla expense-ratio monster (1:1)
+  'ASSET-12':ART+'asset-12.jpg', // S9 STP liquid→equity water-flow (16:9)
+  'ASSET-13':ART+'asset-13.jpg', // S10 SWP retirement draining tank (16:9)
+};
+const SLOT_DESC={
+  'ASSET-01':['Fund-launch hero banner','16:9'],'ASSET-02':['Equity fund crest','1:1'],
+  'ASSET-03':['Debt fund crest','1:1'],'ASSET-04':['Hybrid fund crest','1:1'],
+  'ASSET-05':['Your money at work','4:3'],'ASSET-06':['Equity Rally','16:9'],
+  'ASSET-07':['Market Crash','16:9'],'ASSET-08':['IT Stocks Boom','16:9'],
+  'ASSET-09':['Bonds Rise','16:9'],'ASSET-10':['NAV Discovery backdrop','16:9'],
+  'ASSET-11':['Feezilla — expense-ratio monster','1:1'],'ASSET-12':['STP liquid→equity flow','16:9'],'ASSET-13':['SWP retirement tank','16:9'],
+};
+function slot(id,ratio){
+  const r=ratio||(SLOT_DESC[id]?SLOT_DESC[id][1]:'16:9');
+  const cls=r==='1:1'?'r11':r==='4:3'?'r43':'r169';
+  if(MEDIA[id]) return `<div class="slot ${cls}"><img src="${MEDIA[id]}" alt=""></div>`;
+  const d=SLOT_DESC[id]?SLOT_DESC[id][0]:'';
+  return `<div class="slot ${cls}"><div class="slot-lbl"><div class="slot-id">▦ ${id}</div><div class="slot-desc">${d}</div><div class="slot-ar">${r} · add media later</div></div></div>`;
+}
+
+/* ── formatting (Indian ₹) ──────────────────────────── */
+const fmt=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+function fmtMoney(n){ const s=n<0?'-':''; n=Math.abs(Math.round(n));
+  if(n>=10000000){const v=n/10000000;return s+'₹'+(v%1?v.toFixed(2):v)+' Cr';}
+  if(n>=100000){const v=n/100000;return s+'₹'+(v%1?v.toFixed(2):v)+' L';}
+  if(n>=1000){const v=n/1000;return s+'₹'+(v%1?v.toFixed(1):v)+'k';}
+  return s+'₹'+n;
+}
+const fmtUnits=n=>Math.round(n).toLocaleString('en-IN');
+const AV_EMOJI=['🦊','🐯','🦄','🐼','🦁','🐨','🐸','🦋','🐝','🦉','🐙','🦖','🌸','🍀','⭐','🚀','💎','🎯','🍰','🦚'];
+const AV_COLOR=['#f5c451','#4ea8ff','#34d399','#ef8f6c','#c08cff','#e0699a','#5ad1c4','#f0a04b','#9fb2c8','#7c9cff'];
+
+/* ── fund types & asset pools ───────────────────────── */
+const FUND_TYPES={
+  equity:{ic:'🔵',name:'Equity Fund',desc:'Company shares · higher growth',color:'#4ea8ff',crest:'ASSET-02',
+    pool:['Reliance','HDFC Bank','Infosys','TCS','ITC','Asian Paints']},
+  debt:{ic:'🟢',name:'Debt Fund',desc:'Bonds · steady & safer',color:'#34d399',crest:'ASSET-03',
+    pool:['Government Bonds','Corporate Bonds','Treasury Bills','State Dev Loans']},
+  hybrid:{ic:'🟡',name:'Hybrid Fund',desc:'60% Equity · 40% Debt',color:'#f5c451',crest:'ASSET-04',
+    pool:['Reliance','HDFC Bank','Infosys','Government Bonds','Corporate Bonds','Treasury Bills']},
+};
+/* each asset belongs to a sector — this is how events connect to YOUR holdings */
+const SECTORS={
+  'Reliance':'Energy','HDFC Bank':'Banking','Infosys':'IT','TCS':'IT','ITC':'FMCG','Asian Paints':'Consumer',
+  'Government Bonds':'Debt','Corporate Bonds':'Debt','Treasury Bills':'Debt','State Dev Loans':'Debt'
+};
+function assetSector(a){ return SECTORS[a]||'Equity'; }
+/* market events — each moves SECTORS differently. Your NAV change = how YOUR holdings react. */
+/* MONTHLY moves — small & realistic so 12 months compound to about +10–14% a year
+   (a real equity fund does ~1%/month on average, with the odd down month). */
+const EVENTS=[
+  {key:'rally', em:'📈', name:'Strong month', art:'ASSET-06', head:'markets broadly rise',
+    sect:{IT:2.9,Banking:2.7,Energy:2.4,FMCG:2,Consumer:2.1,Equity:2.5,Debt:0.4}},
+  {key:'steady',em:'😌', name:'Quiet month',  art:'ASSET-09', head:'a calm, slightly-up month',
+    sect:{IT:0.7,Banking:0.6,Energy:0.5,FMCG:0.5,Consumer:0.5,Equity:0.6,Debt:0.4}},
+  {key:'itboom',em:'💻', name:'Tech surge',   art:'ASSET-08', head:'IT stocks lead the way',
+    sect:{IT:6,Banking:1.2,Energy:1,FMCG:1,Consumer:1,Equity:1.4,Debt:0.3}},
+  {key:'bonds', em:'🏦', name:'Rate cut',     art:'ASSET-09', head:'rates fall · steady names gain',
+    sect:{IT:0.9,Banking:1.3,Energy:0.7,FMCG:0.9,Consumer:0.8,Equity:0.9,Debt:1.2}},
+  {key:'dip',   em:'📉', name:'Pullback',     art:'ASSET-07', head:'a normal market dip',
+    sect:{IT:-3.6,Banking:-3.2,Energy:-2.8,FMCG:-1.6,Consumer:-2.2,Equity:-3.2,Debt:0.3}},
+];
+/* the heart of it: an event hits each holding by its sector; the fund's NAV moves by the average */
+function eventImpact(ev){
+  const assets=(state.fund&&state.fund.assets)||[];
+  if(!assets.length) return {pct:0, rows:[]};
+  const rows=assets.map(a=>{ const s=assetSector(a); const chg=(ev.sect[s]!=null?ev.sect[s]:5); return {asset:a,sector:s,chg}; });
+  const pct=rows.reduce((x,r)=>x+r.chg,0)/rows.length;
+  return {pct:Math.round(pct*10)/10, rows};
+}
+/* Random market day is WEIGHTED so the fund trends UP over time (markets reward patience):
+   mostly good days with the occasional dip — never a crash on day 1 or two crashes in a row.
+   (The teacher can still hand-pick a crash to teach about dips.) */
+const EVENT_WEIGHT={rally:26,steady:22,itboom:15,bonds:12,dip:25};
+function randomEvent(){
+  const lastDip=state.market.lastEvent&&state.market.lastEvent.key==='dip';  // no two dips back-to-back
+  const pool=[];
+  EVENTS.forEach(e=>{ let w=EVENT_WEIGHT[e.key]||20; if(e.key==='dip'&&lastDip)w=0; for(let i=0;i<w;i++)pool.push(e); });
+  return pool[Math.floor(Math.random()*pool.length)];
+}
+
+/* ── role / room ────────────────────────────────────── */
+const params=new URLSearchParams(location.search);
+let ROLE=params.get('role')||'host';
+let ROOM=params.get('room')||null;
+const MY_ID=(function(){let id=localStorage.getItem('mfm_pid');if(!id){id=crypto.randomUUID();localStorage.setItem('mfm_pid',id);}return id;})();
+let isHost=(ROLE==='host');
+let state=null;
+let _saveTimer=null;
+
+const NAV0=10; // launch NAV
+/* everyone invests the SAME ₹1.2L — the only choice is TIMING (all at once vs spread) */
+const SIP_MONTHS=12, START_CASH=200000;                 // ₹2L pot to invest
+const LUMP_MAX=200000, SIP_MIN=500, SIP_MAX=20000;      // slider ranges (lumpsum 0–2L · SIP ₹500–20k/mo)
+const REINVEST_MAX=100000, WITHDRAW_NAV=22;             // bonus ₹1L to reinvest · NAV after the 4-year fast-forward
+const VD_LUMP=120000, VD_SIP=10000;                     // Verdict's clean equal-money illustration
+/* a realistic BUMPY year (dips, then recovers to +15%). SIP's steady buying beats the lumpsum here —
+   the whole point: in a normal up-and-down year, SIP wins & is the smart default. */
+const VD_PATH=[10,9,8,7.5,8,8.5,9,9.5,10,10.5,11,11.5];
+
+/* ── derived economy helpers ────────────────────────── */
+function invList(){return state&&state.investors?Object.values(state.investors):[];}
+function totalUnits(){return invList().reduce((s,p)=>s+(p.units||0),0);}
+function totalInvested(){return invList().reduce((s,p)=>s+(p.invested||0),0);}
+function AUM(){return totalUnits()*state.nav;}          // assets under management
+function investorValue(p){return (p.units||0)*state.nav;}
+
+/* ── fresh state ────────────────────────────────────── */
+function freshState(){
+  return {phase:'lobby',
+    fund:{name:'IFM Growth Fund',type:null,assets:[]},
+    nav:NAV0, navHistory:[{label:'Launch',nav:NAV0,aum:0}],
+    expenseRatio:1,
+    market:{month:0,max:12,lastEvent:null,flowUnits:0,lastScenario:null},
+    withdraw:{ff:false},
+    navMyth:{run:false}, diversify:{shocked:null}, compound:{run:false},
+    fees:{er:2},
+    sim:{kind:null,month:0,max:0,navPath:[],started:false},
+    investors:{},
+    reveals:{aum:false,units:false,nav:false,market:false,navmyth:false,fees:false,sip:false,stp:false,swp:false,diversify:false,compound:false},
+    hostId:MY_ID, updatedAt:Date.now()};
+}
+
+/* ── DB ─────────────────────────────────────────────── */
+async function save(){ state.updatedAt=Date.now();
+  clearTimeout(_saveTimer);
+  _saveTimer=setTimeout(saveNow,55);
+}
+async function saveNow(){ state.updatedAt=Date.now();
+  try{await db.from('games').upsert({room_code:ROOM,state,host_id:MY_ID,updated_at:new Date().toISOString()});}
+  catch(e){console.warn('save failed',e);}
+}
+
+/* ── realtime ───────────────────────────────────────── */
+let channel=null;
+function joinChannel(){
+  channel=db.channel('room:'+ROOM);
+  channel.on('postgres_changes',{event:'*',schema:'public',table:'games',filter:'room_code=eq.'+ROOM},
+    (p)=>{const s=p.new&&p.new.state; if(s&&!isHost){state=s; renderPlayer();}})
+    .on('broadcast',{event:'action'},({payload})=>{ if(isHost) hostHandleAction(payload); })
+    .subscribe();
+}
+function sendAction(payload){ channel.send({type:'broadcast',event:'action',payload}); }
+
+/* ═══════════════════════ HOST ═══════════════════════ */
+async function initHost(){
+  document.getElementById('host').classList.remove('hide');
+  document.body.classList.add('host-bg');
+  if(!ROOM){ ROOM='MF'+(1000+Math.floor(Math.random()*9000));
+    const p=new URLSearchParams(location.search);p.set('role','host');p.set('room',ROOM);history.replaceState(null,'','?'+p.toString()); }
+  const bg=document.createElement('div');bg.id='lobbyBg';document.body.appendChild(bg);
+  const rb=document.createElement('button');rb.className='host-reset';rb.textContent='↺ New game';rb.onclick=hostReset;document.body.appendChild(rb);
+  buildMiniQR();
+  state=freshState();
+  joinChannel();
+  await saveNow();
+  renderHost();
+}
+let MINI_QR_SRC='';
+function buildMiniQR(){
+  try{ const tmp=document.createElement('div'); new QRCode(tmp,{text:playerUrl(),width:140,height:140,colorDark:'#0a1422',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});
+    const c=tmp.querySelector('canvas'); MINI_QR_SRC=c?c.toDataURL():(tmp.querySelector('img')?tmp.querySelector('img').src:''); }
+  catch(e){ MINI_QR_SRC=''; }
+}
+
+function hostHandleAction(a){
+  if(!a||!a.type)return;
+  if(a.type==='join'){
+    if(!state.investors[a.id]){
+      const n=Object.keys(state.investors).length;
+      state.investors[a.id]={id:a.id,name:(a.name||'Investor').slice(0,16),
+        av:AV_EMOJI[n%AV_EMOJI.length],color:AV_COLOR[n%AV_COLOR.length],
+        cash:START_CASH,invested:0,units:0,mode:null};
+    }else{ state.investors[a.id].name=(a.name||'').slice(0,16)||state.investors[a.id].name; }
+    save(); if(state.phase==='lobby') renderHost();
+  }
+  else if(a.type==='investmode'){
+    const p=state.investors[a.id]; if(!p||state.phase!=='invest'||p.mode)return;
+    if(a.mode==='lump'){ let amt=Math.round(+a.amount||0); amt=Math.max(0,Math.min(LUMP_MAX,amt)); if(amt<=0)return;
+      p.mode='lump'; p.invested=amt; p.units=amt/state.nav; p.cash=START_CASH-amt; }
+    else { let amt=Math.round(+a.amount||0); amt=Math.max(SIP_MIN,Math.min(SIP_MAX,amt));
+      p.mode='sip'; p.sipAmt=amt; p.sipDate=[1,5,10,25].includes(+a.sipDate)?+a.sipDate:5; p.sipBought=[];
+      const u=amt/state.nav;              // first month goes in NOW, at launch NAV ₹10 — right alongside lumpsum
+      p.units=u; p.invested=amt; p.sipBought.push({m:1,nav:state.nav,units:u}); p.sipLeft=SIP_MONTHS-1; }
+    save(); renderHostInvestLive();
+  }
+  else if(a.type==='vote'){ const p=state.investors[a.id]; if(!p||state.phase!=='navmyth'||state.navMyth.run)return;
+    p.vote=(a.choice==='B'?'B':a.choice==='X'?'X':'A'); save(); renderHost(); }
+  else if(a.type==='sipplan'){ const p=state.investors[a.id]; if(!p||state.phase!=='sip'||state.sim.month>0)return;
+    p.sip={amt:Math.max(0,Math.round(+a.amt||0)),bought:[],invested:0,units:0}; save(); renderHost(); }
+  else if(a.type==='stpchoice'){ const p=state.investors[a.id]; if(!p||state.phase!=='stp'||state.sim.month>0)return;
+    const nav0=state.sim.navPath[0];
+    if(a.mode==='lump') p.stp={mode:'lump',liquid:0,equityUnits:100000/nav0,equityInvested:100000,hist:[]};
+    else p.stp={mode:'stp',liquid:100000,equityUnits:0,equityInvested:0,hist:[]};
+    save(); renderHost(); }
+  else if(a.type==='swpplan'){ const p=state.investors[a.id]; if(!p||state.phase!=='swp'||state.sim.month>0)return;
+    p.swp={nav:SWP_NAV0,units:SWP_START/SWP_NAV0,withdrawn:0,amt:Math.max(0,Math.round(+a.amt||0)),hist:[]}; save(); renderHost(); }
+  else if(a.type==='divchoice'){ const p=state.investors[a.id]; if(!p||state.phase!=='diversify'||(state.diversify&&state.diversify.shocked))return; p.div=a.choice; save(); renderHost(); }
+  else if(a.type==='compstart'){ const p=state.investors[a.id]; if(!p||state.phase!=='compound'||(state.compound&&state.compound.run))return; p.comp=a.age; save(); renderHost(); }
+  else if(a.type==='fsanswer'){ const p=state.investors[a.id]; if(!p||state.phase!=='factsheet'||state.fsShow)return; p.fs=p.fs||{}; p.fs[a.k]=a.choice; save(); renderHost(); }
+  else if(a.type==='reinvest'){ const p=state.investors[a.id]; if(!p||state.phase!=='reinvest'||p.reinvested!=null)return;
+    let amt=Math.max(0,Math.min(REINVEST_MAX,Math.round(+a.amount||0)));
+    p.reinvested=amt; if(amt>0){ p.units+=amt/state.nav; p.invested+=amt; } save(); renderHost(); }
+  else if(a.type==='withdraw'){ const p=state.investors[a.id]; if(!p||state.phase!=='withdraw'||!state.withdraw.ff||p.withdrawn!=null)return;
+    let amt=Math.max(0,Math.min(Math.round(investorValue(p)),Math.round(+a.amount||0)));
+    p.withdrawn=amt; if(amt>0){ p.units=Math.max(0,p.units-amt/state.nav); } save(); renderHost(); }
+}
+
+/* ── host flow ──────────────────────────────────────── */
+function setFundName(v){ state.fund.name=v.slice(0,40); save(); }
+function pickType(t){
+  state.fund.type=t;
+  // start with a sensible default basket = full pool, teacher can trim
+  state.fund.assets=FUND_TYPES[t].pool.slice(0,4);
+  save(); renderHost();
+}
+function addAsset(name){ if(!state.fund.assets.includes(name)){state.fund.assets.push(name);} save(); renderHost(); }
+function removeAsset(name){ state.fund.assets=state.fund.assets.filter(a=>a!==name); save(); renderHost(); }
+function hostOpenInvest(){
+  if(!state.fund.type||!state.fund.assets.length){alert('Pick a fund type and add at least one asset first.');return;}
+  state.phase='invest'; state.navHistory=[{label:'Launch',nav:NAV0,aum:0}]; saveNow(); renderHost();
+}
+function hostToggleReveal(k){ state.reveals[k]=!state.reveals[k]; saveNow(); renderHost(); }
+function revealBtn(k,label){ return `<button class="btn ${state.reveals[k]?'ghost':'gold'}" onclick="hostToggleReveal('${k}')">${state.reveals[k]?'Hide explanation':label}</button>`; }
+function hostRevealAUM(){ hostToggleReveal('aum'); }
+/* expandable QR — tap to enlarge fullscreen, tap anywhere to close */
+function openQR(){
+  let m=document.getElementById('qrModal');
+  if(!m){ m=document.createElement('div'); m.id='qrModal'; m.onclick=closeQR; document.body.appendChild(m); }
+  const sz=Math.round(Math.min(window.innerWidth,window.innerHeight)*0.66);
+  m.innerHTML=`<div class="qm-box" id="qmBox"></div><div class="qm-pin"><small>Game PIN · scan to join</small>${ROOM}</div><div class="qm-hint">Tap anywhere to close</div>`;
+  try{ const qb=document.getElementById('qmBox'); new QRCode(qb,{text:playerUrl(),width:sz,height:sz,colorDark:'#0a1422',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H}); addQrLogo(qb,0.18); }
+  catch(e){ document.getElementById('qmBox').textContent=playerUrl(); }
+  m.classList.add('show');
+}
+function closeQR(){ const m=document.getElementById('qrModal'); if(m)m.classList.remove('show'); }
+function hostToMarket(){ state.phase='market'; saveNow(); renderHost(); }
+/* One month: the market moves the holdings → new NAV; SIP investors add ₹10k at that NAV. */
+function marketStep(){
+  const mk=state.market; if(mk.month>=mk.max)return;
+  const ev=randomEvent();
+  const imp=eventImpact(ev);
+  const before=state.nav;
+  state.nav=Math.round(before*(1+imp.pct/100)*100)/100;
+  let sipIn=0;  // fresh SIP money that flows into the AUM this month
+  for(const id in state.investors){ const p=state.investors[id];
+    if(p.mode==='sip'&&p.sipLeft>0){ const amt=p.sipAmt;   // SIP = fresh money from each month's income
+      const u=amt/state.nav; p.units+=u; p.invested+=amt; p.sipLeft--; sipIn+=amt;
+      p.sipBought=p.sipBought||[]; p.sipBought.push({m:p.sipBought.length+1,nav:state.nav,units:u}); } }
+  mk.month++;
+  mk.lastEvent={...ev,pct:imp.pct,rows:imp.rows,before,after:state.nav,sipIn};
+  state.navHistory.push({label:ev.name,nav:state.nav,aum:AUM(),month:mk.month,sipIn});
+  state.reveals.market=false;
+}
+function hostMonthNext(){ marketStep(); saveNow(); renderHost(); }
+function hostMonthAll(){ while(state.market.month<state.market.max)marketStep(); saveNow(); renderHost(); }
+function hostToNav(){ state.phase='nav'; saveNow(); renderHost(); }
+function hostRevealNAV(){ state.reveals.nav=true; saveNow(); renderHost(); }
+function hostBack(to){ state.phase=to; saveNow(); renderHost(); }
+function hostReset(){
+  if(!confirm('Start a brand-new fund?\n\nThis clears ALL investors and sends every phone back to the join screen.'))return;
+  state=freshState(); saveNow(); renderHost();
+}
+
+/* ── host render ────────────────────────────────────── */
+function brandBar(right,showFund){
+  const f=state&&state.fund, fname=f&&f.name?f.name:'';
+  const tcol={equity:'52,211,153',debt:'78,168,255',hybrid:'245,196,81'}[f&&f.type]||'';
+  const tlabel={equity:'Equity',debt:'Debt',hybrid:'Hybrid'}[f&&f.type]||'';
+  const chip = (showFund&&fname)?`<div class="fundchip"><span class="fc-k">FUND</span><span class="fc-n">${escapeHtml(fname)}</span>${tlabel?`<span class="fc-t" style="color:rgb(${tcol});background:rgba(${tcol},.14);border:1px solid rgba(${tcol},.32)">${tlabel}</span>`:''}</div>`:'';
+  return `<div class="brandbar"><div class="l">
+     <img src="${LOGO}" onerror="this.style.display='none'">
+     <div><div class="sub">Investing for Mummies</div><div class="nm">Mutual Fund Manager <span style="color:var(--grow)">LIVE</span></div></div>
+   </div>${chip}<div style="display:flex;align-items:center;gap:10px">
+     <div class="mini-qr" onclick="openQR()" title="Students scan to join — tap to enlarge">${MINI_QR_SRC?`<img src="${MINI_QR_SRC}">`:''}<span>Scan<br>to join</span></div>
+     ${right||''}<span class="livedot">LIVE</span></div></div>`;
+}
+const PHASE_ORDER=['lobby','invest','aum','units','nav','market','reinvest','withdraw','statement','report'];
+function stepper(active){
+  const steps=[['lobby','1 · Launch'],['invest','2 · Invest'],['aum','3 · AUM'],['units','4 · Units'],['nav','5 · NAV'],['market','6 · Market'],
+    ['reinvest','7 · Reinvest'],['withdraw','8 · Withdraw'],['statement','🧾 Statement'],['report','🏁 Recap']];
+  const ai=PHASE_ORDER.indexOf(active);
+  return `<div class="steps">${steps.map(s=>{
+    const si=PHASE_ORDER.indexOf(s[0]);
+    const c=si<ai?'done':(s[0]===active?'on':'');
+    return `<span class="step click ${c}" onclick="goPhase('${s[0]}')">${s[1]}</span>`;}).join('')}</div>`;
+}
+function renderHost(){
+  const el=document.getElementById('host');
+  const ph=state.phase;
+  const bg=document.getElementById('lobbyBg');
+  if(bg){
+    let img='', scrim='rgba(7,15,26,.62),rgba(7,15,26,.9)';
+    if(ph==='lobby') img=MEDIA['ASSET-01'];
+    else if(ph==='market'){ const ev=state.market.lastEvent; img=(ev&&MEDIA[ev.art])||MEDIA['ASSET-06']; scrim='rgba(7,15,26,.62),rgba(7,15,26,.88)'; }
+    if(img){ bg.style.backgroundImage=`linear-gradient(${scrim}), url('${img}')`; bg.style.display='block'; }
+    else bg.style.display='none';
+  }
+  if(ph==='lobby'){ el.innerHTML=brandBar(`<span class="roomtag">PIN ${ROOM}</span>`)+hostLobby(); drawQR(); return; }
+  el.innerHTML=brandBar(`<span class="roomtag">PIN ${ROOM}</span>`,true)+stepper(ph)+
+    (ph==='units'?hostUnits():ph==='nav'?hostNav():ph==='aum'?hostAum():ph==='invest'?hostInvest():ph==='market'?hostMarket():
+     ph==='reinvest'?hostReinvest():ph==='withdraw'?hostWithdraw():
+     ph==='statement'?hostStatement():ph==='report'?hostReport():'');
+}
+
+/* S1 — Launch the Fund + lobby join */
+function hostLobby(){
+  const ft=state.fund.type;
+  const pool=ft?FUND_TYPES[ft].pool:[];
+  const invs=invList();
+  return `
+   <div class="lobby-head">
+     <div class="eyebrow">Screen 1 · Launch the Fund</div>
+     <h1 class="lobby-title">${escapeHtml(state.fund.name)}</h1>
+     <p style="margin:4px 0 0;color:#cfe0f2;font-weight:600">You are the Fund Manager. Build the fund, then open it to your investors.</p>
+   </div>
+   <div class="lobby-cols">
+     <div class="glass pad join-card">
+       <div class="eyebrow">Students join here</div>
+       <div id="qrbox" onclick="openQR()"></div>
+       <div class="qr-hint">🔍 tap the QR to enlarge</div>
+       <div class="pin-label" style="margin-top:8px">Game PIN</div><div class="pin">${ROOM}</div>
+       <div class="joinurl">${playerUrl()}</div>
+     </div>
+     <div class="lobby-right">
+       <div class="glass pad invpanel">
+         <div class="inv-head" style="margin:0 0 8px"><div class="eyebrow" style="color:var(--grow)">🪑 Investors joining in</div><span class="num" style="color:var(--grow);font-size:1.5rem">${invs.length}</span></div>
+         <div class="inv-grid invpanel-grid">${invs.map(ichip).join('')||'<span class="waiting tiny">Waiting for students to scan in…</span>'}</div>
+       </div>
+       <div class="glass pad">
+       <div class="eyebrow">Build your fund</div>
+       <div style="margin:8px 0 4px" class="tiny muted">Name the fund</div>
+       <input class="fund-name-in" value="${escapeHtml(state.fund.name)}" oninput="setFundName(this.value)" maxlength="40">
+       <div style="margin:10px 0 4px" class="tiny muted">Choose a fund type</div>
+       <div class="type-row">${Object.entries(FUND_TYPES).map(([k,v])=>
+         `<div class="type-btn ${ft===k?'sel':''}" onclick="pickType('${k}')"><div class="ic">${v.ic}</div><div class="tn">${v.name}</div><div class="td">${v.desc}</div></div>`).join('')}</div>
+       ${ft?`
+       <div style="display:flex;align-items:center;gap:12px;margin:10px 0 2px">
+         <div style="width:54px;flex:0 0 auto">${slot(FUND_TYPES[ft].crest,'1:1')}</div>
+         <div class="tiny muted">Tap assets to add / remove — your money will be invested in these</div></div>
+       <div class="basket">${state.fund.assets.length?state.fund.assets.map(a=>
+          `<span class="asset-pill" onclick="removeAsset('${a}')"><span class="dot" style="background:${FUND_TYPES[ft].color}"></span>${a}<span class="x">×</span></span>`).join(''):'<span class="empty-basket">Add at least one asset…</span>'}</div>
+       <div class="pool">${pool.map(a=>
+          `<span class="asset-pill ${state.fund.assets.includes(a)?'added':''}" onclick="addAsset('${a}')"><span class="dot" style="background:${FUND_TYPES[ft].color}"></span>${a} +</span>`).join('')}</div>
+       <div class="controls"><div class="spacer"></div>
+         <button class="btn lg" onclick="hostOpenInvest()" ${state.fund.assets.length&&invs.length?'':'disabled'}>Start: how a fund works →</button></div>
+       ${invs.length?'':'<div class="tiny muted" style="text-align:right;margin-top:6px">Waiting for at least one investor to join…</div>'}
+       `:'<div class="tiny muted">Pick a fund type to choose its assets.</div>'}
+     </div>
+     </div>
+   </div>`;
+}
+
+/* AUM radial gauge */
+function gaugeSvg(aum){
+  const max=niceMax(aum);
+  const frac=Math.max(0,Math.min(1,max?aum/max:0));
+  return `<div class="gauge">
+    <svg viewBox="0 0 220 130">
+      <defs><linearGradient id="aumgrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#4ea8ff"/><stop offset="1" stop-color="#34d399"/></linearGradient></defs>
+      <path class="g-track" d="M16,118 A94,94 0 0 1 204,118" pathLength="100"/>
+      <path class="g-fill"  d="M16,118 A94,94 0 0 1 204,118" pathLength="100" style="stroke-dasharray:${(frac*100).toFixed(2)} 100"/>
+    </svg>
+    <div class="g-center"><div class="aum-big num">${fmtMoney(aum)}</div><div class="aum-lbl">Assets Under Management</div></div>
+  </div>
+  <div class="gauge-scale"><span>₹0</span><span>${fmtMoney(max/2)}</span><span>${fmtMoney(max)}</span></div>`;
+}
+function niceMax(v){ if(v<=0)return 500000; const e=Math.pow(10,Math.floor(Math.log10(v))); const m=v/e;
+  const step=m<=1?1:m<=2?2:m<=5?5:10; return step*e*1.15>v?step*e:Math.ceil(v/(step*e))* (step*e); }
+
+/* S2/S3 — Invest + AUM meter + units */
+function hostInvest(){
+  const invs=invList();
+  const chose=invs.filter(p=>p.mode).length, lump=invs.filter(p=>p.mode==='lump').length, sip=invs.filter(p=>p.mode==='sip').length;
+  return `<div class="host-grid">
+    <div class="glass pad">
+      <div class="eyebrow">Screen 2 · Become an Investor · ₹2L each</div>
+      <h2 style="margin:4px 0 2px">Lumpsum or SIP — and <span style="color:var(--gold)">how much?</span></h2>
+      <p class="muted tiny" style="margin:2px 0">Each investor has ₹2,00,000. On their phone they choose a style, then slide to their own amount (Lumpsum up to ₹2L · SIP ₹500–20k/month).</p>
+      <div class="vote2" style="margin-top:10px">
+        <div class="fundcard" style="border-color:rgba(78,168,255,.4)"><div class="fc-tag" style="color:#9fd0ff">💰 Lumpsum</div><div class="fc-nav num" style="color:var(--accent)">${lump}</div><div class="fc-k">a one-time amount</div></div>
+        <div class="fundcard" style="border-color:rgba(52,211,153,.4)"><div class="fc-tag" style="color:#86f0c4">📅 SIP</div><div class="fc-nav num" style="color:var(--grow)">${sip}</div><div class="fc-k">₹/month × 12</div></div>
+      </div>
+      <div class="gauge-wrap" style="margin-top:10px">${gaugeSvg(AUM())}</div>
+      <div class="stat-row">
+        <div class="stat"><div class="v gold num">₹${state.nav.toFixed(2)}</div><div class="k">NAV (unit price)</div></div>
+        <div class="stat"><div class="v grow num">${chose}/${invs.length}</div><div class="k">Locked in</div></div>
+        <div class="stat"><div class="v blue num">${fmtMoney(AUM())}</div><div class="k">Money in so far</div></div>
+      </div>
+      ${sip?`<div class="tip-nudge">💡 <b>Talk about the SIP date:</b> ask your ${sip} SIP investor${sip>1?'s':''} what date they picked. The trick — set it a day or two <b>after payday</b> so the money's always there. ${(function(){const ds=invs.filter(p=>p.mode==='sip'&&p.sipDate).map(p=>p.sipDate); if(!ds.length)return''; return '<br><span style="color:var(--tx-2)">Picked: '+ds.sort((a,b)=>a-b).map(d=>d+(d===1?'st':'th')).join(', ')+'</span>';})()}</div>`:''}
+      <div class="controls" style="margin-top:14px">
+        <div class="spacer"></div>
+        <button class="btn lg" onclick="goPhase('aum')">Next: The fund's size →</button>
+      </div>
+    </div>
+    <div class="glass pad">
+      <div class="inv-head"><div class="eyebrow">🔒 Locked in</div><span class="num" style="color:var(--grow);font-size:1.25rem">${chose}/${invs.length}</span></div>
+      <div class="inv-grid">${chose?invs.filter(p=>p.mode).map(p=>{
+        const tag=p.mode==='lump'?'💰 '+fmtMoney(p.invested):'📅 '+fmtMoney(p.sipAmt)+'/mo';
+        const col=p.mode==='lump'?'var(--accent)':'var(--grow)';
+        return `<div class="ichip" style="border-color:rgba(52,211,153,.45);background:rgba(52,211,153,.08)"><span class="av" style="background:${p.color}">${p.av}</span>${escapeHtml(p.name)} <b style="color:${col};font-family:Sora;margin-left:2px">${tag}</b> ✓</div>`;
+      }).join(''):'<span class="waiting tiny">Nobody has locked in yet…</span>'}</div>
+      ${(function(){const pend=invs.filter(p=>!p.mode); return pend.length?
+        `<div class="inv-head" style="margin-top:14px"><div class="eyebrow" style="color:var(--tx-3)">⏳ Still deciding</div><span class="num" style="color:var(--tx-3);font-size:1.1rem">${pend.length}</span></div>
+         <div class="inv-grid">${pend.map(p=>`<div class="ichip pending" style="opacity:.55"><span class="av" style="background:${p.color}">${p.av}</span>${escapeHtml(p.name)} <span style="color:var(--tx-3);font-weight:700;margin-left:2px">waiting…</span></div>`).join('')}</div>`
+        :(invs.length?`<div style="margin-top:12px;text-align:center;color:var(--grow);font-weight:800;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.4);border-radius:12px;padding:9px">✓ Everyone's locked in — ready to go!</div>`:'');})()}</div>
+    </div>
+  </div>`;
+}
+function renderHostInvestLive(){ if(state.phase==='invest') renderHost(); }
+
+/* S3 — Units (explicit teaching screen) */
+function hostRevealUnits(){ state.reveals.units=true; saveNow(); renderHost(); }
+function hostUnits(){
+  return `<div class="host-grid">
+   <div class="glass pad">
+     <div class="eyebrow">Screen 4 · Units — your share of the fund</div>
+     <h2 style="margin:6px 0 2px">You just invested — your money bought <span style="color:var(--accent)">UNITS</span>.</h2>
+     <p class="muted tiny" style="margin:2px 0 8px">You don't buy "a bit of Reliance" directly — you buy <b>units</b> of the whole fund at ₹10 each. (SIP investors' units build up month by month once the market opens.)</p>
+     <div class="formula">units = your money ÷ NAV (₹10)</div>
+     <div class="unit-examples">
+       <div class="uex"><span class="uex-nm">₹2,00,000</span><span class="uex-calc num">÷ ₹10 = <b style="color:var(--accent)">20,000 units</b></span></div>
+       <div class="uex"><span class="uex-nm">₹1,00,000</span><span class="uex-calc num">÷ ₹10 = <b style="color:var(--accent)">10,000 units</b></span></div>
+       <div class="uex"><span class="uex-nm">₹25,000</span><span class="uex-calc num">÷ ₹10 = <b style="color:var(--accent)">2,500 units</b></span></div>
+     </div>
+     ${state.reveals.units?`<div class="reveal"><div class="acr" style="font-size:1.2rem">A unit = your slice of the fund</div>
+        <p style="margin-top:4px">More money in → more units → a bigger slice of the same pie. Your number of units only changes when you <b>buy or sell</b>. What changes day to day is what each unit is <b>worth</b> — that price is the NAV, next.</p></div>`:''}
+     <div class="controls">
+       <button class="btn dark" onclick="goPhase('aum')">← AUM</button>
+       ${revealBtn('units','Reveal: what is a unit?')}
+       <button class="btn lg" onclick="goPhase('nav')">Next: What's a unit worth? →</button></div>
+   </div>
+   <div class="glass pad">
+     <div class="eyebrow">Every fund launches at ₹10</div>
+     <p class="muted tiny" style="margin:6px 0 8px">A brand-new fund prices each unit at a round <b style="color:var(--tx)">₹10</b>. So on day one the maths is easy — just divide your money by 10.</p>
+     <div class="nav-big-wrap"><div class="nav-big num">₹10</div><div class="aum-lbl">Launch price of one unit</div></div>
+     <p class="muted tiny" style="text-align:center;margin-top:12px">A ₹2,00,000 investment becomes <b style="color:var(--accent)">20,000 units</b> at launch.</p>
+   </div>
+  </div>`;
+}
+
+/* S6 — Market: 4 interactive scenarios teaching what moves the NAV (and what doesn't) */
+const MKT_RISE=6, MKT_FALL=5, FLOW_AMT=50000;
+function dispUnits(){ return totalUnits()+(state.market.flowUnits||0); }   // includes demo money-in/out units
+function dispAUM(){ return dispUnits()*state.nav; }
+function sipBuyRound(){ for(const id in state.investors){ const p=state.investors[id];
+  if(p.mode==='sip'&&p.sipLeft>0){ const un=p.sipAmt/state.nav; p.units+=un; p.invested+=p.sipAmt; p.sipLeft--;
+    p.sipBought=p.sipBought||[]; p.sipBought.push({m:p.sipBought.length+1,nav:state.nav,units:un}); } } }
+function mktScenario(type){
+  // Pure teaching demo — each scenario moves exactly ONE driver so the 3 cards read cleanly.
+  // Market up/down = NAV only (units never change). Money in/out = units only (NAV never changes).
+  const before={aum:dispAUM(),nav:state.nav,units:dispUnits()};
+  if(type==='up') state.nav=Math.round(state.nav*(1+MKT_RISE/100)*100)/100;
+  else if(type==='down') state.nav=Math.round(state.nav*(1-MKT_FALL/100)*100)/100;
+  else if(type==='in') state.market.flowUnits=(state.market.flowUnits||0)+FLOW_AMT/state.nav;
+  else if(type==='out') state.market.flowUnits=Math.max(0,(state.market.flowUnits||0)-FLOW_AMT/state.nav);
+  state.market.lastScenario={type,before,after:{aum:dispAUM(),nav:state.nav,units:dispUnits()}};
+  saveNow(); renderHost();
+}
+function mktReset(){
+  state.nav=NAV0; state.market.flowUnits=0; state.market.lastScenario=null;
+  state.navHistory=[{label:'Launch',nav:NAV0,aum:0}];
+  for(const id in state.investors){ const p=state.investors[id]; if(p.mode==='sip'){ const f=p.sipBought&&p.sipBought[0];
+    p.units=f?f.units:p.sipAmt/NAV0; p.invested=p.sipAmt; p.sipBought=f?[f]:[{m:1,nav:NAV0,units:p.sipAmt/NAV0}]; p.sipLeft=SIP_MONTHS-1; } }
+  saveNow(); renderHost();
+}
+function mktFinishAndGo(){   // the market screen was a sandbox — reset the fund to a clean state, complete SIPs at ₹10, then Reinvest
+  state.nav=NAV0; state.market.flowUnits=0; state.market.lastScenario=null;  // clear the teaching demo
+  state.navHistory=[{label:'Launch',nav:NAV0,aum:0}];
+  for(const id in state.investors){ const p=state.investors[id]; let g=0;
+    while(p.mode==='sip'&&p.sipLeft>0&&g++<50){ const un=p.sipAmt/NAV0; p.units+=un; p.invested+=p.sipAmt; p.sipLeft--; p.sipBought=p.sipBought||[]; p.sipBought.push({m:p.sipBought.length+1,nav:NAV0,units:un}); } }
+  goPhase('reinvest');
+}
+function scenarioResult(sc){
+  const b=sc.before,a=sc.after, flow=(sc.type==='in'||sc.type==='out'), navSame=Math.abs(a.nav-b.nav)<0.005;
+  const ttl={up:'📈 The market rose — the holdings gained value',down:'📉 The market fell — the holdings lost value',in:'💰 A new investor put in ₹50,000',out:'🏧 An investor withdrew ₹50,000'}[sc.type];
+  const chip=(x,y,cls)=>`${x} → <b>${y}</b> ${cls}`;
+  return `<div class="event-card ${a.aum>=b.aum?'up':'down'}" style="margin-top:9px;text-align:left">
+    <div style="font-family:Sora;font-weight:800;font-size:1rem;margin-bottom:7px">${ttl}</div>
+    <div class="sc-rows">
+      <div><span class="sc-k">AUM</span><span>${fmtMoney(b.aum)} → <b>${fmtMoney(a.aum)}</b> ${a.aum>=b.aum?'<b style="color:var(--grow)">▲</b>':'<b style="color:var(--crash)">▼</b>'}</span></div>
+      <div><span class="sc-k">Units</span><span>${fmtUnits(b.units)} → <b>${fmtUnits(a.units)}</b></span></div>
+      <div><span class="sc-k">NAV</span><span>₹${b.nav.toFixed(2)} → <b>₹${a.nav.toFixed(2)}</b> ${navSame?'<b style="color:var(--accent)">unchanged!</b>':(a.nav>=b.nav?'<b style="color:var(--grow)">▲</b>':'<b style="color:var(--crash)">▼</b>')}</span></div>
+    </div>
+    <div class="tiny" style="margin-top:7px;color:var(--tx-2)">${flow?`Money flow ${sc.type==='in'?'created new':'removed'} units at today's ₹${a.nav.toFixed(2)} — so AUM changed but the <b style="color:var(--tx)">NAV stayed exactly the same</b>. Existing investors aren't affected.`:`The holdings changed value → the AUM moved → the NAV moved with it. Everyone's units are now worth ${a.nav>=b.nav?'more':'less'}.`}</div>
+  </div>`;
+}
+/* AUM · NAV · UNITS — the three things every screen comes back to.
+   opts.sc = a scenario {before,after} → each card lights up ▲/▼/= vs its before value.
+   opts.badges = static {aum,nav,units:{cls,txt}} indicators. */
+function metrics3(opts){
+  opts=opts||{};
+  const aum=dispAUM(), nav=state.nav, u=dispUnits();
+  const b=opts.sc?opts.sc.before:null, sb=opts.badges||{};
+  function card(key,cls,label,cur,curStr,sub){
+    let foot=`<div class="m3-k">${sub}</div>`, badge='';
+    if(b){ const prev=b[key], eps=(key==='nav'?0.005:1);
+      const same=Math.abs(cur-prev)<eps, up=cur>prev, dc=same?'same':up?'up':'down';
+      const prevStr=key==='aum'?fmtMoney(prev):key==='nav'?'₹'+prev.toFixed(2):fmtUnits(prev);
+      badge=`<div class="m3-badge ${dc}">${same?'= NO CHANGE':up?'▲ UP':'▼ DOWN'}</div>`;
+      foot=`<div class="m3-was">was ${prevStr}</div>`;
+      cls+=' ch-'+dc;
+    } else if(sb[key]){ badge=`<div class="m3-badge ${sb[key].cls}">${sb[key].txt}</div>`; cls+=' ch-'+sb[key].cls; }
+    return `<div class="m3 ${cls}"><div class="m3-t">${label}</div><div class="m3-v">${curStr}</div>${foot}${badge}</div>`;
+  }
+  return `<div class="metrics3">
+    ${card('aum','aum','AUM',aum,fmtMoney(aum),'money in the fund')}
+    ${card('nav','nav','NAV',nav,'₹'+nav.toFixed(2),'price of one unit')}
+    ${card('units','units','UNITS',u,fmtUnits(u),'shares held')}
+  </div>`;
+}
+function scenarioNote(sc){
+  const flow=(sc.type==='in'||sc.type==='out');
+  const ttl={up:'📈 The market rose',down:'📉 The market fell',in:'💰 A new investor put in ₹50,000',out:'🏧 An investor withdrew ₹50,000'}[sc.type];
+  const note=flow?`New units ${sc.type==='in'?'created':'removed'} at today's price → the <b>AUM moved but the NAV stayed exactly the same</b>. Existing investors aren't affected.`:`The fund's holdings changed value → the <b>AUM and NAV both moved</b> together.`;
+  return `<div class="sc-note ${flow?'flow':''}"><b>${ttl}.</b> ${note}</div>`;
+}
+function hostMarket(){
+  const u=dispUnits(), aum=dispAUM(), sc=state.market.lastScenario;
+  const SC=[
+    {t:'up',em:'📈',name:'Market rises',sub:'the stocks gain value'},
+    {t:'down',em:'📉',name:'Market falls',sub:'the stocks lose value'},
+    {t:'in',em:'💰',name:'New money in',sub:'a new investor joins'},
+    {t:'out',em:'🏧',name:'Money out',sub:'someone cashes out'},
+  ];
+  return `<div class="host-grid">
+   <div class="glass pad">
+     <div class="eyebrow">Screen 6 · Market — what moves these 3?</div>
+     ${metrics3({sc:sc})}
+     <p class="muted tiny" style="text-align:center;margin:2px 0">Tap a scenario — watch the 3 cards react. Only the <b>market</b> moves the NAV.</p>
+     <div class="scenario-grid">
+       ${SC.map(s=>`<button class="scenario-btn s-${s.t} ${sc&&sc.type===s.t?'sel':''}" onclick="mktScenario('${s.t}')"><span class="em">${s.em}</span><span class="snm">${s.name}</span><span class="ssub">${s.sub}</span></button>`).join('')}
+     </div>
+     ${sc?scenarioNote(sc):'<p class="muted tiny" style="text-align:center;margin-top:8px">👆 Try “New money in” — watch the AUM jump but the NAV stay put.</p>'}
+     <div class="controls">
+       <button class="btn dark" onclick="mktReset()">↺ Reset scenarios</button>
+       <div class="spacer"></div>
+       <button class="btn lg" onclick="mktFinishAndGo()">Next: Reinvest →</button>
+     </div>
+   </div>
+   <div class="glass pad">
+     <div class="eyebrow">The rule — what moves each one?</div>
+     <div class="rule-table" style="margin-top:8px">
+       <div class="rule-row head"><span></span><span>AUM</span><span>NAV</span><span>UNITS</span></div>
+       <div class="rule-row ${sc&&sc.type==='up'?'lit':''}"><span>📈 Market up</span><span class="up">▲ up</span><span class="up">▲ up</span><span class="same">= same</span></div>
+       <div class="rule-row ${sc&&sc.type==='down'?'lit':''}"><span>📉 Market down</span><span class="down">▼ down</span><span class="down">▼ down</span><span class="same">= same</span></div>
+       <div class="rule-row ${sc&&sc.type==='in'?'lit':''}"><span>💰 Money in</span><span class="up">▲ up</span><span class="same">= same</span><span class="up">▲ up</span></div>
+       <div class="rule-row ${sc&&sc.type==='out'?'lit':''}"><span>🏧 Money out</span><span class="down">▼ down</span><span class="same">= same</span><span class="down">▼ down</span></div>
+     </div>
+     ${bigIdea(sc)}
+   </div>
+  </div>`;
+}
+function bigIdea(sc){
+  const map={
+    up:{c:'52,211,153',t:'📈 A rising market',d:'The fund\'s holdings are worth more, so <b>NAV and AUM climb together</b>. But you still own the <b>exact same units</b> — you didn\'t get extra shares, each one just got pricier.'},
+    down:{c:'239,90,76',t:'📉 A falling market',d:'Holdings are worth less, so <b>NAV and AUM both drop</b>. Your units don\'t disappear — only the price per unit fell. Nothing is really lost until you actually sell.'},
+    in:{c:'78,168,255',t:'💰 New money coming in',d:'Fresh money mints <b>new units at today\'s price</b>, so AUM grows but the <b>NAV doesn\'t budge</b>. Every existing investor is completely undiluted — that\'s the quiet magic of a mutual fund.'},
+    out:{c:'245,196,81',t:'🏧 Money going out',d:'Withdrawing just <b>sells units back at today\'s price</b>, so AUM shrinks but the <b>NAV stays put</b>. One person cashing out never changes the price for everyone still in.'},
+  };
+  const d = sc&&map[sc.type] ? map[sc.type] : {c:'78,168,255',t:'The big idea 💡',d:'Tap the four scenarios and watch closely: <b>only the market moves the NAV</b>. Money coming in or going out never does — it only mints or cancels units at today\'s price. That\'s what keeps every investor fair.'};
+  return `<div class="reveal" style="margin-top:14px;border-color:rgba(${d.c},.5);background:linear-gradient(135deg,rgba(${d.c},.14),rgba(${d.c},.04))">
+       <div class="full" style="color:rgb(${d.c})">${d.t}</div>
+       <p style="margin-top:4px">${d.d}</p>
+     </div>`;
+}
+function navChart(){
+  const h=state.navHistory, vals=h.map(x=>x.nav), n=vals.length;
+  const w=460,H=200,padL=44,padR=18,padT=16,padB=26;
+  const lo=Math.min(NAV0,...vals)-0.3, hi=Math.max(NAV0,...vals)+0.3, rng=(hi-lo)||1;
+  const iw=w-padL-padR, ih=H-padT-padB, baseY=padT+ih;
+  const X=i=>padL+(n>1?i*(iw/(n-1)):iw/2), Y=v=>padT+ih*(1-(v-lo)/rng);
+  const up=vals[n-1]>=NAV0, col=up?'#34d399':'#ef5a4c';
+  const line=vals.map((v,i)=>X(i).toFixed(1)+','+Y(v).toFixed(1)).join(' ');
+  const area=`${X(0).toFixed(1)},${baseY.toFixed(1)} ${line} ${X(n-1).toFixed(1)},${baseY.toFixed(1)}`;
+  const grid=[lo,(lo+hi)/2,hi].map(v=>{const y=Y(Math.round(v*10)/10);return `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${(w-padR).toFixed(1)}" y2="${y.toFixed(1)}" stroke="rgba(255,255,255,.06)"/><text x="${(padL-8).toFixed(1)}" y="${(y+4).toFixed(1)}" fill="#6d829c" font-size="11" text-anchor="end" font-family="Sora">₹${(Math.round(v*10)/10).toFixed(1)}</text>`;}).join('');
+  const launch=`<line x1="${padL}" y1="${Y(NAV0).toFixed(1)}" x2="${(w-padR).toFixed(1)}" y2="${Y(NAV0).toFixed(1)}" stroke="rgba(245,196,81,.55)" stroke-dasharray="5 4"/>`;
+  const every=n>9?2:1;
+  const xl=h.map((e,i)=>(i===0||(i%every!==0&&i!==n-1))?'':`<text x="${X(i).toFixed(1)}" y="${(H-7).toFixed(1)}" fill="#6d829c" font-size="10" text-anchor="middle">M${e.month||i}</text>`).join('');
+  const lx=X(n-1), ly=Y(vals[n-1]);
+  return `<svg viewBox="0 0 ${w} ${H}" style="width:100%;height:auto;display:block">
+    <defs><linearGradient id="navfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".3"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
+    ${grid}${launch}
+    ${n>1?`<polygon points="${area}" fill="url(#navfill)"/>
+    <polyline fill="none" stroke="${col}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="${line}" style="filter:drop-shadow(0 0 5px ${col}66)"/>`:''}
+    ${vals.map((v,i)=>`<circle cx="${X(i).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="${i===n-1?4.6:2.4}" fill="${col}"/>`).join('')}
+    ${n>1?`<text x="${(lx-6).toFixed(1)}" y="${(ly<padT+16?ly+16:ly-9).toFixed(1)}" fill="#fff" font-size="13" font-weight="800" text-anchor="end" font-family="Sora">₹${vals[n-1].toFixed(2)}</text>`:''}
+    ${xl}
+  </svg>`;
+}
+function navPanel(){
+  const h=state.navHistory, last=h[h.length-1];
+  const chgL=((last.nav-NAV0)/NAV0*100);
+  return `<div class="eyebrow">NAV journey</div>
+    <div class="nav-ticker"><span class="nv num">₹${last.nav.toFixed(2)}</span>
+      <span class="chg ${chgL>=0?'up':'down'} num">${chgL>=0?'▲':'▼'} ${Math.abs(chgL).toFixed(0)}% since launch</span></div>
+    ${navChart()}
+    <div class="tiny muted" style="text-align:center;margin-top:4px">Dashed line = launch price (₹${NAV0.toFixed(0)}) · each dot is one month</div>`;
+}
+function sparkline(vals){
+  if(vals.length<2)vals=[vals[0]||10,vals[0]||10];
+  const w=300,h=64,pad=6;
+  const mn=Math.min(...vals),mx=Math.max(...vals),rng=(mx-mn)||1;
+  const pts=vals.map((v,i)=>{const x=pad+i*((w-2*pad)/(vals.length-1));const y=h-pad-((v-mn)/rng)*(h-2*pad);return `${x.toFixed(1)},${y.toFixed(1)}`;});
+  const up=vals[vals.length-1]>=vals[0];
+  const col=up?'#34d399':'#ef5a4c';
+  return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+    <polyline fill="none" stroke="${col}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="${pts.join(' ')}"
+      style="filter:drop-shadow(0 0 6px ${col}88)"/>
+    ${pts.map(p=>{const[x,y]=p.split(',');return `<circle cx="${x}" cy="${y}" r="3" fill="${col}"/>`}).join('')}
+  </svg>`;
+}
+
+/* S4 — NAV (definition: the price of one unit, before anything moves) */
+function hostNav(){
+  return `<div class="host-grid">
+    <div class="glass pad">
+      <div class="eyebrow">Screen 5 · NAV — the price of one unit</div>
+      <h2 style="margin:6px 0">What is one unit worth? That price is the <span style="color:var(--gold)">NAV</span>.</h2>
+      <div class="nav-big-wrap"><div class="nav-big num">₹10.00</div><div class="aum-lbl">NAV · the price of ONE unit at launch</div></div>
+      <div class="formula" style="font-size:1rem">NAV = Fund Value ÷ Total Units</div>
+      <p class="muted tiny" style="text-align:center;margin-top:8px">At launch every unit costs ₹10 — the same price for everyone, whether you buy 500 units or 50,000. Nothing has moved yet; that happens on Market Day.</p>
+      ${state.reveals.nav?`<div class="reveal"><div class="acr">NAV</div><div class="full">Net Asset Value — the price of one unit</div><p style="margin-top:4px">NAV = the fund's total value ÷ the number of units. When the fund's holdings gain or lose value, the NAV moves — and so does what your units are worth.</p></div>`:''}
+      <div class="controls"><div class="spacer"></div>
+        <button class="btn dark" onclick="goPhase('units')">← Units</button>
+        ${revealBtn('nav','Reveal: what is NAV?')}
+        <button class="btn lg" onclick="goPhase('market')">Next: Market Day →</button></div>
+    </div>
+    <div class="glass pad">
+      <div class="eyebrow">Same price for everyone</div>
+      <p class="muted tiny" style="margin:6px 0 10px">The NAV is just the sticker price of one unit. At launch it's <b style="color:var(--tx)">₹10</b> — no matter how much you invest.</p>
+      <div class="unit-examples">
+        <div class="uex"><span class="uex-nm">Big investor</span><span class="uex-calc num">₹1.2L → 12,000 units @ <b>₹10</b></span></div>
+        <div class="uex"><span class="uex-nm">Small investor</span><span class="uex-calc num">₹10k → 1,000 units @ <b>₹10</b></span></div>
+      </div>
+      <p class="muted tiny" style="margin-top:12px">Both pay ₹10 a unit today. What each unit is <b style="color:var(--tx)">worth</b> starts to change once the market opens.</p>
+    </div>
+  </div>`;
+}
+/* Screen 4 — AUM (concept, before anyone invests) */
+function hostAum(){
+  const aum=AUM(), u=totalUnits();
+  return `<div class="host-grid">
+    <div class="glass pad">
+      <div class="eyebrow">Screen 3 · AUM — all the money pooled</div>
+      <h2 style="margin:6px 0">Add up everyone's money and you get the <span style="color:var(--grow)">AUM</span>.</h2>
+      <div class="gauge-wrap">${gaugeSvg(aum)}</div>
+      <div class="formula" style="font-size:1rem">${u?`AUM ${fmtMoney(aum)} = ${fmtUnits(u)} units × ₹10`:'AUM = Total Units × NAV = everyone\'s money pooled'}</div>
+      <p class="muted tiny" style="text-align:center;margin-top:8px">${aum>0?`Your investors have pooled <b style="color:var(--grow)">${fmtMoney(aum)}</b> so far — that's the AUM (lumpsums in full, plus each SIP's first month). SIP investors add more every month as the market runs.`:`When money goes in, it pools here. SIP investors' money will build the AUM up month by month.`}</p>
+      ${state.reveals.aum?`<div class="reveal"><div class="acr">AUM</div><div class="full">Assets Under Management</div><p style="margin-top:4px">The total money the fund looks after. It grows two ways — <b>new money coming in</b>, and the <b>holdings gaining value</b>. And AUM ÷ units is what sets the NAV. You'll watch all of this happen live on Market Day.</p></div>`:''}
+      <div class="controls"><div class="spacer"></div>
+        <button class="btn dark" onclick="goPhase('invest')">← Invest</button>
+        ${revealBtn('aum','Reveal: what is AUM?')}
+        <button class="btn lg" onclick="goPhase('units')">Next: Your units →</button></div>
+    </div>
+    <div class="glass pad">
+      <div class="eyebrow">The three words, together</div>
+      <div class="fc-steps" style="margin-top:8px">
+        <div>🧩 <b>Units</b> — your share of the fund (money ÷ NAV)</div>
+        <div>🏷️ <b>NAV</b> — the price of one unit (₹10 at launch)</div>
+        <div>🏦 <b>AUM</b> — everyone's money added up (units × NAV)</div>
+      </div>
+      <p class="muted tiny" style="margin-top:12px">That big pot is the AUM. Next we'll split it into your <b>units</b>, then price one unit (the <b>NAV</b>).</p>
+    </div>
+  </div>`;
+}
+
+/* host investor chip (lobby) */
+function ichip(p){return `<div class="ichip"><span class="av" style="background:${p.color}">${p.av}</span>${escapeHtml(p.name)}</div>`;}
+
+/* QR */
+function playerUrl(){return location.origin+location.pathname+'?role=player&room='+ROOM;}
+let _qrFor=null;
+function addQrLogo(box,frac){
+  const lg=document.createElement('img'); lg.src=LOGO; lg.className='qr-logo';
+  lg.style.cssText=`position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:${(frac*100).toFixed(0)}%;height:auto;border-radius:50%;border:3px solid #fff;background:#fff;box-shadow:0 1px 8px rgba(0,0,0,.3);z-index:3`;
+  lg.onerror=()=>lg.remove();
+  box.style.position='relative'; box.appendChild(lg);
+}
+function drawQR(){const box=document.getElementById('qrbox');if(!box)return;
+  if(_qrFor===ROOM&&box.hasChildNodes())return; box.innerHTML='';
+  try{new QRCode(box,{text:playerUrl(),width:190,height:190,colorDark:'#0a1422',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});_qrFor=ROOM; addQrLogo(box,0.20);}
+  catch(e){box.innerHTML='<div class="tiny">'+playerUrl()+'</div>';}}
+
+/* ═══════════════════════ PLAYER ═══════════════════════ */
+let myName=localStorage.getItem('mfm_name')||'';
+let joinSent=false, wasJoined=false, customOpen=false;
+async function initPlayer(){
+  document.getElementById('player').classList.remove('hide');
+  document.body.classList.add('player-bg');
+  if(!ROOM){document.getElementById('player').innerHTML='<div class="player-scr"><div class="p-center"><h2>Scan the QR on the screen</h2><p class="p-sub">or open the link with a game PIN.</p></div></div>';return;}
+  joinChannel();
+  try{const {data}=await db.from('games').select('state').eq('room_code',ROOM).maybeSingle(); if(data&&data.state)state=data.state;}catch(e){}
+  renderPlayer();
+  // self-heal poll — recover any dropped realtime event within ~2.5s
+  setInterval(async()=>{ if(!me())return;
+    try{const {data}=await db.from('games').select('state').eq('room_code',ROOM).maybeSingle();
+      if(data&&data.state&&data.state.updatedAt!==state.updatedAt){state=data.state;renderPlayer();}}catch(e){}
+  },2500);
+}
+function me(){return state&&state.investors?state.investors[MY_ID]:null;}
+function doJoin(){
+  const inp=document.getElementById('nameInput'); const n=(inp.value||'').trim();
+  if(!n){inp.focus();return;}
+  myName=n; localStorage.setItem('mfm_name',n); joinSent=true;
+  sendAction({type:'join',id:MY_ID,name:n});
+  renderPlayerWaiting();
+}
+
+function renderPlayer(){
+  const el=document.getElementById('player');
+  if(!state){el.innerHTML='<div class="player-scr"><div class="connecting">Connecting…</div></div>';return;}
+  const p=me();
+  if(!p){
+    if(wasJoined){wasJoined=false;joinSent=false;}
+    if(joinSent){renderPlayerWaiting();return;}
+    renderJoinForm(el);return;
+  }
+  wasJoined=true;
+  const ph=state.phase;
+  let inner='';
+  if(ph==='lobby') inner=`<div class="p-center">
+     <div class="p-status">You're in! 🎉</div>
+     <p class="p-sub">Hi <b style="color:var(--tx)">${escapeHtml(p.name)}</b> — look at the big screen while the fund manager sets up.</p>
+     ${cashBanner(p)}
+     <p class="p-sub">You'll decide how much to invest in a moment.</p></div>`;
+  else if(ph==='units') inner=pUnits(p);
+  else if(ph==='nav') inner=pNav(p);
+  else if(ph==='aum') inner=pAum(p);
+  else if(ph==='invest') inner=investScreen(p);
+  else if(ph==='market') inner=pMarket(p);
+  else if(ph==='reinvest') inner=pReinvest(p);
+  else if(ph==='withdraw') inner=pWithdraw(p);
+  else if(ph==='statement') inner=pStatement(p);
+  else if(ph==='report') inner=pReport(p);
+  else inner=portfolioScreen(p,ph);
+  el.innerHTML=`<div class="player-scr">${pTop(p)}${inner}</div>`;
+}
+function pTop(p){
+  const right=p.mode==='sip'?`📅 ₹${(p.sipAmt||0).toLocaleString('en-IN')}/mo`
+    :p.mode==='lump'?`💰 ${fmtMoney(p.invested)} in`
+    :`${fmtMoney(p.cash)} to invest`;
+  return `<div class="p-top"><div class="who"><span class="av" style="background:${p.color}">${p.av}</span>${escapeHtml(p.name)}</div>
+  <div class="cash num">${right}</div></div>`;}
+function cashBanner(p){return `<div class="cash-banner"><div class="cb-v num">${fmt(p.cash)}</div><div class="cb-k">Virtual money to invest</div></div>`;}
+
+/* pending-invest UI state (survives re-renders so the slider keeps its spot) */
+let invMode=null, invLump=100000, invSip=5000, invSipDate=5;
+const SIP_DATES=[1,5,10,25];
+function pSetMode(m){ invMode=m; renderPlayer(); }
+function pSetSipDate(d){ invSipDate=d; renderPlayer(); }
+function pLumpInput(v){ invLump=Math.round(+v/5000)*5000; const r=document.getElementById('lumpRead'); if(r)r.textContent=fmt(invLump); const u=document.getElementById('lumpUnits'); if(u)u.textContent=fmtUnits(invLump/NAV0)+' units @ ₹10'; }
+function pSipInput(v){ invSip=Math.round(+v/500)*500; const r=document.getElementById('sipRead'); if(r)r.textContent=fmt(invSip)+' /mo'; const t=document.getElementById('sipTot'); if(t)t.textContent='₹'+ (invSip*12).toLocaleString('en-IN')+' over 12 months'; }
+function pConfirmInvest(){ const m=me(); if(!m||m.mode||!invMode)return;
+  if(invMode==='lump'){ if(invLump<=0)return; sendAction({type:'investmode',id:MY_ID,mode:'lump',amount:invLump}); }
+  else sendAction({type:'investmode',id:MY_ID,mode:'sip',amount:invSip,sipDate:invSipDate}); }
+function investScreen(p){
+  if(p.mode){
+    const isSip=p.mode==='sip';
+    return `<div class="p-center" style="gap:12px;justify-content:flex-start;padding-top:8px">
+      <div class="p-status" style="font-size:1.25rem">🔒 Locked in ✓ · ${isSip?'📅 SIP':'💰 Lumpsum'}</div>
+      <div class="pf-card">
+        <div class="pf-val-k">${isSip?'Your monthly SIP':'You invested'}</div>
+        <div class="pf-val num">${isSip?fmtMoney(p.sipAmt)+' /mo':fmt(p.invested)}</div>
+        ${isSip
+          ? `<div class="pf-gain flat num">₹${p.sipAmt.toLocaleString('en-IN')} on the ${p.sipDate||5}${(p.sipDate||5)===1?'st':'th'} · every month</div>
+             <p class="p-sub" style="margin-top:12px">Your first month is in. The rest auto-debit on the ${p.sipDate||5}${(p.sipDate||5)===1?'st':'th'} — watch the big screen.</p>`
+          : `<div class="pf-rows"><div class="pf-cell"><div class="v num">${fmtUnits(p.units)}</div><div class="k">Units bought</div></div>
+             <div class="pf-cell"><div class="v num">₹${state.nav.toFixed(2)}</div><div class="k">at NAV</div></div></div>
+             <p class="p-sub" style="margin-top:12px">All in on day one. Now watch the market move it.</p>`}
+      </div></div>`;
+  }
+  if(!invMode){
+    return `<div class="p-center" style="gap:12px;justify-content:flex-start;padding-top:2px">
+      <div class="invest-hero">${slot('ASSET-05','4:3')}</div>
+      <div class="p-status" style="font-size:1.3rem">You have ₹2,00,000 to invest</div>
+      <div class="cash-pill">How do you want to put it in? Pick a style, then choose your amount.</div>
+      <div class="mode-tabs">
+        <button class="mode-tab" onclick="pSetMode('lump')">💰 Lumpsum<span class="sub">a one-time amount, today</span></button>
+        <button class="mode-tab" onclick="pSetMode('sip')">📅 SIP<span class="sub">a bit every month</span></button>
+      </div></div>`;
+  }
+  if(invMode==='lump'){
+    if(invLump<0||invLump>LUMP_MAX) invLump=100000;
+    return `<div class="p-center" style="gap:10px;justify-content:flex-start;padding-top:6px">
+      <button class="mode-tab sel" style="width:100%" onclick="pSetMode('lump')">💰 Lumpsum<span class="sub">tap the other option below to switch</span></button>
+      <div class="p-status" style="font-size:1.15rem">How much, all at once?</div>
+      <div class="cash-banner" style="width:100%"><div class="cb-v num" id="lumpRead">${fmt(invLump)}</div><div class="cb-k" id="lumpUnits">${fmtUnits(invLump/NAV0)} units @ ₹10</div></div>
+      <input class="slider" type="range" min="0" max="${LUMP_MAX}" step="5000" value="${invLump}" oninput="pLumpInput(this.value)">
+      <div class="slider-ends" style="width:100%"><span>₹0</span><span>₹2,00,000</span></div>
+      <button class="btn lg" style="width:100%" onclick="pConfirmInvest()">🔒 Lock in my investment</button>
+      <button class="btn ghost" style="width:100%" onclick="pSetMode('sip')">Actually, do a monthly SIP instead</button>
+    </div>`;
+  }
+  return `<div class="p-center" style="gap:10px;justify-content:flex-start;padding-top:6px">
+    <button class="mode-tab sel" style="width:100%" onclick="pSetMode('sip')">📅 SIP<span class="sub">a fixed amount every month</span></button>
+    <div class="p-status" style="font-size:1.15rem">How much each month?</div>
+    <div class="cash-banner" style="width:100%"><div class="cb-v num" id="sipRead">${fmt(invSip)} /mo</div><div class="cb-k" id="sipTot">₹${(invSip*12).toLocaleString('en-IN')} over 12 months</div></div>
+    <input class="slider" type="range" min="${SIP_MIN}" max="${SIP_MAX}" step="500" value="${invSip}" oninput="pSipInput(this.value)">
+    <div class="slider-ends" style="width:100%"><span>₹500</span><span>₹20,000</span></div>
+    <div class="p-sub" style="margin:6px 0 0;font-weight:700;color:var(--tx)">📅 Pick your SIP date <span style="color:var(--tx-2);font-weight:600">(when it auto-debits each month)</span></div>
+    <div class="date-chips">${SIP_DATES.map(d=>`<button class="date-chip ${invSipDate===d?'sel':''}" onclick="pSetSipDate(${d})">${d}${d===1?'st':'th'}</button>`).join('')}</div>
+    <p class="p-sub" style="font-size:.78rem;opacity:.8;margin:0">💡 Set it a day or two after your salary lands, so the money's there.</p>
+    <button class="btn lg" style="width:100%" onclick="pConfirmInvest()">🔒 Lock in my SIP</button>
+    <button class="btn ghost" style="width:100%" onclick="pSetMode('lump')">Actually, invest a lumpsum instead</button>
+  </div>`;
+}
+
+function pMarket(p){
+  // The 4 scenarios are a teacher demo of HOW a fund reacts — the student's own value
+  // shouldn't flicker with each tap, so we show a calm "watch the projector" card with
+  // only their stable numbers (units & money in), never a live net-worth figure.
+  const isSip=p.mode==='sip';
+  return `<div class="p-center" style="justify-content:flex-start;padding-top:12px;gap:15px">
+    <div class="p-status" style="font-size:1.22rem">📊 Look at the big screen</div>
+    <div class="pf-card">
+      <div class="pf-val-k">Your fund manager is showing how a fund reacts</div>
+      <p class="p-sub" style="margin:9px 0 0;text-align:left">Four things can move a fund — 📈 market up, 📉 market down, 💰 money in, 🏧 money out. Watch what each one does to <b style="color:var(--tx)">AUM, NAV &amp; units</b> up on the projector.</p>
+      <div class="pf-rows" style="margin-top:15px">
+        <div class="pf-cell"><div class="v num">${fmtUnits(p.units)}</div><div class="k">${isSip?'Units so far':'Units you own'}</div></div>
+        <div class="pf-cell"><div class="v num">${fmt(p.invested)}</div><div class="k">You put in</div></div>
+      </div>
+    </div>
+    <p class="p-sub" style="font-size:.82rem;opacity:.85;text-align:center">This part's just a demo — your own money moves later, when you reinvest and withdraw.</p>
+  </div>`;
+}
+function portfolioScreen(p,ph,canAddMore){
+  const val=investorValue(p), gain=val-p.invested;
+  const gpct=p.invested?gain/p.invested*100:0;
+  const gcls=gain>0?'up':gain<0?'down':'flat';
+  const maxU=Math.max(1,...invList().map(x=>x.units||0));
+  const head = ph==='invest'?"You're invested 🎉":ph==='market'?(state.market.lastEvent?'The market moved!':'Market day'):ph==='nav'?'Net Asset Value':'Your portfolio';
+  return `<div class="p-center" style="justify-content:flex-start;padding-top:8px">
+    <div class="p-status" style="font-size:1.2rem">${head}</div>
+    <div class="pf-card">
+      <div class="pf-val-k">Current value</div>
+      <div class="pf-val num">${fmt(val)}</div>
+      <div class="pf-gain ${gcls} num">${gain>=0?'▲ +':'▼ '}${fmtMoney(Math.abs(gain))} ${p.invested?`(${gain>=0?'+':''}${gpct.toFixed(1)}%)`:''}</div>
+      <div class="pf-rows">
+        <div class="pf-cell"><div class="v num">${fmt(p.invested)}</div><div class="k">Money invested</div></div>
+        <div class="pf-cell"><div class="v num">${fmtUnits(p.units)}</div><div class="k">Units owned</div></div>
+      </div>
+      <div class="jar"><div class="fill" style="width:${Math.min(100,(p.units/maxU)*100).toFixed(0)}%"></div></div>
+      <div class="tiny muted" style="margin-top:8px;text-align:center">NAV (price per unit): <b style="color:var(--tx)">₹${state.nav.toFixed(2)}</b></div>
+    </div>
+    ${ph==='nav'?`<p class="p-sub">Your units didn't change — but their <b style="color:var(--tx)">value</b> did, because the NAV moved.</p>`:''}
+    ${ph==='market'&&state.navHistory&&state.navHistory.length>1?marketDaysTable(p):(ph==='market'?`<p class="p-sub">Watch the big screen — the fund manager is about to move the market.</p>`:'')}
+  </div>`;
+}
+/* units a player held at navHistory index i (SIP accumulates; lumpsum is constant) */
+function unitsHeldAt(p,i){
+  if(p.mode==='sip') return (p.sipBought||[]).filter(x=>x.m<=i).reduce((s,x)=>s+x.units,0);
+  return p.units||0;
+}
+function marketDaysTable(p){
+  const h=state.navHistory, isSip=p.mode==='sip';
+  return `<div style="width:100%">
+    <div class="eyebrow" style="margin:2px 0 4px">📅 Every month — track the price</div>
+    <table class="siptbl" style="width:100%"><thead><tr><th>Mo</th><th>What happened</th><th>NAV</th><th>You have</th></tr></thead><tbody>
+    ${h.map((e,i)=>{ const chg=i>0?((e.nav-h[i-1].nav)/h[i-1].nav*100):0; const val=unitsHeldAt(p,i)*e.nav;
+      return `<tr><td>${i===0?'Start':'Mo '+(e.month||i)}</td><td style="text-align:left">${i===0?'Launch':escapeHtml(e.label)} ${i>0?`<b style="color:var(--${chg>=0?'grow':'crash'})">${chg>=0?'+':''}${chg.toFixed(1)}%</b>`:''}</td><td class="num">₹${e.nav.toFixed(2)}</td><td class="num">${fmt(val)}</td></tr>`;
+    }).join('')}
+    </tbody></table>
+    <p class="p-sub" style="font-size:.84rem;margin-top:8px">${isSip?`Each month the NAV moves <b style="color:var(--tx)">and</b> your ₹10k buys more units — the cheap months buy the most.`:`Each month the fund's stocks move, so the NAV changes. Your <b style="color:var(--tx)">units stay the same</b> (${fmtUnits(p.units)}); only their price moves.`}</p>
+  </div>`;
+}
+
+function pConcept(emoji,title,body,foot){
+  return `<div class="p-center" style="gap:14px">
+    <div style="font-size:2.4rem">${emoji}</div>
+    <div class="p-status" style="font-size:1.35rem">${title}</div>
+    <div class="cash-banner" style="background:var(--panel);border-color:var(--line)"><p style="margin:0;color:var(--tx);font-weight:600;line-height:1.5">${body}</p></div>
+    <p class="p-sub" style="opacity:.75">${foot||'👀 Follow along on the big screen.'}</p></div>`;
+}
+function pUnits(p){
+  if(p.mode==='lump')
+    return pConcept('🧩','Your units',`Your <b style="color:var(--tx)">${fmt(p.invested)}</b> bought <b style="color:var(--accent)">${fmtUnits(p.units)} units</b> — all at ₹10 each. <br><b style="color:var(--accent)">units = your money ÷ NAV</b>.`, '👀 Follow along on the big screen.');
+  if(p.mode==='sip'){ const firstU=(p.sipBought&&p.sipBought[0])?p.sipBought[0].units:(p.sipAmt/NAV0);
+    return pConcept('🧩','Your units — building up',`You picked a <b style="color:var(--tx)">SIP</b>, so you buy units <b>every month</b>, not all at once. Your <b>first month</b> is already in — that's <b style="color:var(--accent)">${fmtUnits(firstU)} units</b> at ₹10. You'll add <b style="color:var(--tx)">${fmtMoney(p.sipAmt)}</b> more each month as the market runs (units = money ÷ NAV).`, '📅 Your units grow month by month — watch the big screen.'); }
+  return pConcept('🧩','Units',`Your money buys <b style="color:var(--tx)">units</b> of the whole fund. <br><b style="color:var(--accent)">units = your money ÷ NAV</b>. At launch each unit is ₹10.`, '👀 Follow along on the big screen.');
+}
+function pNav(p){ return pConcept('🏷️','NAV','The <b style="color:var(--tx)">NAV</b> is the price of ONE unit. Every fund launches at <b style="color:var(--gold)">₹10</b> — the same price for everyone.'); }
+function pAum(p){ return pConcept('🏦','AUM','<b style="color:var(--tx)">AUM</b> is everyone’s money pooled together = total units × NAV. It’s the whole pot the fund manager invests.'); }
+function renderJoinForm(el){
+  el.innerHTML=`<div class="player-scr"><div class="p-center">
+    <img src="${LOGO}" style="width:72px;border-radius:50%;background:#fff" onerror="this.style.display='none'">
+    <div class="eyebrow">Investing for Mummies</div>
+    <h1 style="font-size:1.7rem;margin:0">Mutual Fund Manager <span style="color:var(--grow)">LIVE</span></h1>
+    <p class="p-sub">Room ${ROOM} · become an investor</p>
+    <input id="nameInput" class="p-input" placeholder="Your name" maxlength="16" value="${escapeHtml(myName)}">
+    <button class="btn lg" style="width:100%" onclick="doJoin()">Take my seat →</button>
+  </div></div>`;
+  setTimeout(()=>{const i=document.getElementById('nameInput');if(i)i.focus();},100);
+}
+function renderPlayerWaiting(){
+  document.getElementById('player').innerHTML=`<div class="player-scr"><div class="p-center">
+    <div class="p-status">You're in! 🎉</div><p class="p-sub">Hi <b style="color:var(--tx)">${escapeHtml(myName)}</b></p>
+    <p class="p-sub">Waiting for the fund manager to start…</p></div></div>`;
+}
+
+/* ═══════════════════ PHASE 2 · SIP · STP · SWP · fees · myth · report ═══════════════════ */
+const SIP_PATH=[10,8,6,9,14,18];                       // 6 months — dip then recover
+const STP_PATH=[10,9,7,6,6,7,8,10,12,13];              // 10 months — dips so STP buys cheap & wins
+const SWP_NAV0=10, SWP_START=5000000, SWP_GROW=1.008, SWP_MONTHS=12;
+function fv(P,rate,yrs){return P*Math.pow(1+rate,yrs);}
+
+/* hostGo = the "Next →" buttons: advance and START the target screen fresh */
+function hostGo(ph){ state.phase=ph;
+  if(ph==='verdict'){ state.reveals.sip=false; }
+  if(ph==='statement'){ state.stmtStep=0; }
+  saveNow(); renderHost();
+}
+/* goPhase = the clickable stepper: jump to any screen, keeping its state (lossless). */
+function goPhase(ph){ if(ph===state.phase) return; state.phase=ph; saveNow(); renderHost(); }
+
+/* ── S6 · The NAV Myth ── */
+function hostRunMyth(){ state.navMyth.run=true; saveNow(); renderHost(); }
+function hostRevealMyth(){ state.reveals.navmyth=true; saveNow(); renderHost(); }
+function hostNavMyth(){
+  const invs=invList(); const a=invs.filter(p=>p.vote==='A').length, b=invs.filter(p=>p.vote==='B').length, x=invs.filter(p=>p.vote==='X').length, voted=a+b+x;
+  const run=state.navMyth.run, navA=run?12:10, navB=run?600:500;
+  return `<div class="glass pad">
+    <div class="eyebrow">Screen 8 · The NAV Myth</div>
+    <h2 style="margin:6px 0 2px">Two funds. The same ₹6,000 invested. Which would you buy?</h2>
+    <div class="vote2">
+      <div class="fundcard A"><div class="fc-tag">Fund A · NAV ₹10</div>
+        ${run?`<div class="fc-steps"><div>① ₹6,000 ÷ ₹10 = <b>600 units</b></div><div>② grows +20% → NAV <b>₹10 → ₹12</b></div><div>③ 600 × ₹12 = <b style="color:var(--grow)">₹7,200</b></div></div><div class="fc-gain">+₹1,200 · +20%</div>`
+          :`<div class="fc-nav num">₹10</div><div class="votebar"><span style="width:${voted?(a/voted*100).toFixed(0):0}%"></span></div><div class="fc-k">${a} chose this</div>`}</div>
+      <div class="fundcard B"><div class="fc-tag">Fund B · NAV ₹500</div>
+        ${run?`<div class="fc-steps"><div>① ₹6,000 ÷ ₹500 = <b>12 units</b></div><div>② grows +20% → NAV <b>₹500 → ₹600</b></div><div>③ 12 × ₹600 = <b style="color:var(--grow)">₹7,200</b></div></div><div class="fc-gain">+₹1,200 · +20%</div>`
+          :`<div class="fc-nav num">₹500</div><div class="votebar"><span style="width:${voted?(b/voted*100).toFixed(0):0}%"></span></div><div class="fc-k">${b} chose this</div>`}</div>
+    </div>
+    <div class="myth-x ${x&&run&&state.reveals.navmyth?'right':''}">🤔 <b>${x}</b> said <b>"it doesn't matter which"</b>${run&&state.reveals.navmyth?' — and they were exactly right! 🎯':''}</div>
+    ${state.reveals.navmyth?`<div class="reveal"><div class="acr" style="font-size:1.4rem">NAV is just the price of one unit</div><p>Both funds grew <b>20%</b>; both investors made the same <b>₹1,200</b>. A ₹500 NAV isn't "expensive" and a ₹10 NAV isn't "cheap" — <b>it doesn't matter which you pick</b>; what matters is <b>how much the NAV grows.</b></p></div>`:''}
+    <div class="controls"><span class="phase-tag">${voted}/${invs.length} voted${voted?'':' · you can run it anyway'}</span><div class="spacer"></div>
+      ${!run?`<button class="btn blue" onclick="hostRunMyth()">Run the market · +20% both →</button>`
+        :`${revealBtn('navmyth','Reveal the myth')} <button class="btn lg" onclick="hostGo('fees')">Next: Feezilla →</button>`}
+    </div></div>`;
+}
+function pNavMyth(p){
+  if(state.navMyth.run) return `<div class="p-center"><div class="p-status">Both grew +20% 🎉</div>
+    <p class="p-sub">${p.vote==='X'?`You said <b style="color:var(--grow)">it doesn't matter which</b> — spot on! 🎯`:`You picked <b style="color:var(--tx)">Fund ${p.vote||'—'}</b>. Whichever you chose, you'd have made the same <b style="color:var(--tx)">+₹1,200</b>.`}</p>
+    <div class="pf-gain up" style="font-size:1.15rem">NAV is just a sticker price</div></div>`;
+  if(p.vote) return `<div class="p-center"><div class="p-status">${p.vote==='X'?"You said: it doesn't matter 🤔":'Locked in: Fund '+p.vote}</div><p class="p-sub">Watch the big screen…</p></div>`;
+  return `<div class="p-center"><div class="p-status">Which fund would you buy?</div>
+    <div class="amt-grid"><button class="amt-btn" onclick="pVote('A')">Fund A<span class="sub">NAV ₹10</span></button>
+      <button class="amt-btn" onclick="pVote('B')">Fund B<span class="sub">NAV ₹500</span></button></div>
+    <button class="btn ghost" style="width:100%" onclick="pVote('X')">🤔 It doesn't matter which</button></div>`;
+}
+function pVote(c){ const p=me(); if(!p||p.vote)return; sendAction({type:'vote',id:MY_ID,choice:c}); }
+
+/* ── S7 · Expense-Ratio Monster (Feezilla) ── */
+function hostSetER(er){ state.fees.er=er; saveNow(); renderHost(); }
+function hostRevealFees(){ state.reveals.fees=true; saveNow(); renderHost(); }
+function lineChart(series,marker,labelEvery){
+  const w=420,h=140,pad=10, n=series[0].vals.length;
+  const all=series.flatMap(s=>s.vals), mx=Math.max(...all), mn=Math.min(...all,0), rng=(mx-mn)||1;
+  const X=i=>pad+i*((w-2*pad)/(n-1)), Y=v=>h-pad-((v-mn)/rng)*(h-2*pad);
+  let mk='';
+  if(typeof marker==='number'&&marker>0){ const xi=X(Math.min(marker-1,n-1)); mk=`<line x1="${xi.toFixed(1)}" y1="${pad}" x2="${xi.toFixed(1)}" y2="${h-pad}" stroke="rgba(255,255,255,.22)" stroke-dasharray="4 4"/>`; }
+  const single=series.length===1;
+  return `<svg viewBox="0 0 ${w} ${h}" style="width:100%;height:auto;display:block">${mk}
+    ${series.map(s=>`<polyline fill="none" stroke="${s.color}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="${s.vals.map((v,i)=>X(i).toFixed(1)+','+Y(v).toFixed(1)).join(' ')}" style="filter:drop-shadow(0 0 5px ${s.color}77)"/>`).join('')}
+    ${single?series[0].vals.map((v,i)=>{const on=marker==null||i<marker;return `<circle cx="${X(i).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="3.6" fill="${on?series[0].color:'rgba(255,255,255,.28)'}"/>${labelEvery?`<text x="${X(i).toFixed(1)}" y="${(Y(v)-9).toFixed(1)}" fill="#cfe0f2" font-size="11" font-weight="700" text-anchor="middle" font-family="Sora">₹${v}</text>`:''}`;}).join(''):''}
+  </svg>`;
+}
+/* fee chart with real ₹ axis + year axis + shaded "eaten" gap + end values */
+function feeChart(Lo,Hi){
+  const w=470,h=216,padL=46,padR=62,padT=14,padB=24;
+  const mx=Math.max(...Lo), iw=w-padL-padR, ih=h-padT-padB;
+  const X=y=>padL+(y/15)*iw, Y=v=>padT+ih-(v/mx)*ih;
+  const pLo=Lo.map((v,y)=>X(y).toFixed(1)+','+Y(v).toFixed(1));
+  const pHi=Hi.map((v,y)=>X(y).toFixed(1)+','+Y(v).toFixed(1));
+  const gap=pLo.join(' ')+' '+pHi.slice().reverse().join(' ');
+  let grid=''; for(let v=100000; v<=mx+1; v+=100000){ grid+=`<line x1="${padL}" y1="${Y(v).toFixed(1)}" x2="${(w-padR).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="rgba(255,255,255,.07)"/><text x="${padL-6}" y="${(Y(v)+4).toFixed(1)}" fill="#9fb2c8" font-size="11" text-anchor="end" font-family="Sora">${fmtMoney(v)}</text>`; }
+  const xl=[0,5,10,15].map(y=>`<text x="${X(y).toFixed(1)}" y="${(h-6).toFixed(1)}" fill="#9fb2c8" font-size="11" text-anchor="middle">${y} yr</text>`).join('');
+  return `<svg viewBox="0 0 ${w} ${h}" style="width:100%;height:auto;display:block">${grid}${xl}
+    <polygon points="${gap}" fill="rgba(239,90,76,.16)"/>
+    <polyline fill="none" stroke="#34d399" stroke-width="3" points="${pLo.join(' ')}" style="filter:drop-shadow(0 0 4px #34d39977)"/>
+    <polyline fill="none" stroke="#ef5a4c" stroke-width="3" points="${pHi.join(' ')}"/>
+    <circle cx="${X(15).toFixed(1)}" cy="${Y(Lo[15]).toFixed(1)}" r="4" fill="#34d399"/><text x="${(w-padR+6)}" y="${(Y(Lo[15])+4).toFixed(1)}" fill="#7df3c4" font-size="13" font-weight="800" font-family="Sora">${fmtMoney(Lo[15])}</text>
+    <circle cx="${X(15).toFixed(1)}" cy="${Y(Hi[15]).toFixed(1)}" r="4" fill="#ef5a4c"/><text x="${(w-padR+6)}" y="${(Y(Hi[15])+4).toFixed(1)}" fill="#ff8e82" font-size="13" font-weight="800" font-family="Sora">${fmtMoney(Hi[15])}</text>
+  </svg>`;
+}
+/* SIP bars — units bought each month (tall when NAV is cheap), NAV labelled below */
+function sipChart(path,m){
+  const w=470,h=208,padL=14,padR=14,padT=22,padB=34;
+  const units=path.map(nv=>1000/nv), uMax=Math.max(...units), n=path.length;
+  const iw=w-padL-padR, ih=h-padT-padB, bw=Math.min(48,iw/n*0.62), baseY=padT+ih;
+  const X=i=>padL+(i+0.5)*(iw/n);
+  return `<svg viewBox="0 0 ${w} ${h}" style="width:100%;height:auto;display:block">
+    <text x="${padL}" y="13" fill="#9fb2c8" font-size="11" font-weight="700">Units your ₹1,000 bought ↓</text>
+    <line x1="${padL}" y1="${baseY.toFixed(1)}" x2="${(w-padR).toFixed(1)}" y2="${baseY.toFixed(1)}" stroke="rgba(255,255,255,.12)"/>
+    ${path.map((nv,i)=>{const done=i<m,u=units[i],x=X(i);
+      if(done){ const bh=Math.max(2,(u/uMax)*ih), y=baseY-bh;
+        return `<rect x="${(x-bw/2).toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}" rx="5" fill="#f5c451"/>
+          <text x="${x.toFixed(1)}" y="${(y-5).toFixed(1)}" fill="#fff" font-size="12" font-weight="800" text-anchor="middle" font-family="Sora">${Math.round(u)}</text>
+          <text x="${x.toFixed(1)}" y="${(h-16).toFixed(1)}" fill="#cfe0f2" font-size="12" font-weight="700" text-anchor="middle" font-family="Sora">₹${nv}</text>
+          <text x="${x.toFixed(1)}" y="${(h-3).toFixed(1)}" fill="#6d829c" font-size="9" text-anchor="middle">Mo ${i+1}</text>`;
+      }
+      // future month — hidden until it happens
+      return `<rect x="${(x-bw/2).toFixed(1)}" y="${(baseY-14).toFixed(1)}" width="${bw.toFixed(1)}" height="14" rx="5" fill="rgba(245,196,81,.06)" stroke="rgba(245,196,81,.2)" stroke-dasharray="3 3"/>
+        <text x="${x.toFixed(1)}" y="${(h-16).toFixed(1)}" fill="#5a6f88" font-size="13" font-weight="800" text-anchor="middle" font-family="Sora">?</text>
+        <text x="${x.toFixed(1)}" y="${(h-3).toFixed(1)}" fill="#4a5d75" font-size="9" text-anchor="middle">Mo ${i+1}</text>`;
+    }).join('')}
+  </svg>`;
+}
+const FEE_LO=0.5;
+function hostFees(){
+  const erHi=state.fees.er, P=100000, yrs=15, g=0.12;
+  const netLo=g-FEE_LO/100, netHi=g-erHi/100;
+  const Lo=[],Hi=[]; for(let y=0;y<=yrs;y++){Lo.push(fv(P,netLo,y));Hi.push(fv(P,netHi,y));}
+  const flo=Lo[yrs], fhi=Hi[yrs], eaten=flo-fhi;
+  return `<div class="host-grid">
+   <div class="glass pad">
+    <div class="eyebrow">Screen 9 · The Expense-Ratio Monster</div>
+    <h2 style="margin:4px 0 2px">👹 A "tiny" yearly fee is actually huge.</h2>
+    <p class="muted tiny" style="margin:2px 0">₹1,00,000 invested · both earn the same <b>12% a year</b> for 15 years. One charges a low <b>0.5%</b> fee — you pick the other's.</p>
+    <div class="er-row" style="margin:8px 0 6px">${[1,2,3].map(e=>`<div class="er-btn ${erHi===e?'sel':''}" onclick="hostSetER(${e})"><div class="v num">${e}%</div><div class="k">greedy fee</div></div>`).join('')}</div>
+    <div class="chart-box">${feeChart(Lo,Hi)}
+      <div class="legend"><span><i style="background:#34d399"></i>Low fee 0.5%</span><span><i style="background:#ef5a4c"></i>Greedy ${erHi}%</span><span><i style="background:rgba(239,90,76,.45)"></i>👹 eaten</span></div></div>
+    ${state.reveals.fees?`<div class="reveal"><div class="full">👹 Feezilla ate ${fmtMoney(eaten)} over 15 years.</div><p style="margin-top:4px">Both funds earned the exact same 12%. The <b>only</b> difference: the low-fee fund kept <b>${(12-FEE_LO).toFixed(1)}%</b>/yr, the greedy one only <b>${(12-erHi)}%</b>/yr. That ${(erHi-FEE_LO).toFixed(1)}% gap, compounded for 15 years, is <b>${fmtMoney(eaten)}</b> — gone to fees.</p></div>`:''}
+    <div class="controls">
+      ${revealBtn('fees','Reveal what Feezilla ate')}
+      <button class="btn lg" onclick="hostGo('statement')">Next: Read a Statement →</button></div>
+   </div>
+   <div class="glass pad">
+     <div class="eyebrow">Your ₹1L after 15 years</div>
+     <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+       <div class="fundcard" style="border-color:rgba(52,211,153,.4)"><div class="fc-tag" style="color:#86f0c4">🟢 Low fee · 0.5%</div><div class="fc-nav num" style="color:var(--grow);font-size:1.8rem">${fmtMoney(flo)}</div><div class="fc-k">12% − 0.5% = <b>${(12-FEE_LO).toFixed(1)}%</b>/yr</div></div>
+       <div class="fundcard" style="border-color:rgba(239,90,76,.4)"><div class="fc-tag" style="color:#ff8e82">🔴 Greedy · ${erHi}%</div><div class="fc-nav num" style="color:var(--crash);font-size:1.8rem">${fmtMoney(fhi)}</div><div class="fc-k">12% − ${erHi}% = <b>${12-erHi}%</b>/yr</div></div>
+     </div>
+     <div style="max-width:230px;margin:10px auto 0">${slot('ASSET-11','1:1')}</div>
+   </div>
+  </div>`;
+}
+function pFees(p){
+  const erHi=state.fees.er, P=100000, flo=fv(P,0.12-FEE_LO/100,15), fhi=fv(P,0.12-erHi/100,15);
+  return `<div class="p-center"><div class="p-status">👹 Feezilla</div>
+   <p class="p-sub">₹1,00,000 · grows 12%/yr · 15 years</p>
+   <div class="pf-card"><div class="pf-val-k">🟢 Low fee · 0.5%</div><div class="pf-val num" style="font-size:2rem;color:var(--grow)">${fmt(Math.round(flo))}</div>
+     <div class="pf-rows"><div class="pf-cell"><div class="v num" style="color:var(--crash)">${fmtMoney(fhi)}</div><div class="k">🔴 at ${erHi}% fee</div></div>
+       <div class="pf-cell"><div class="v num" style="color:var(--crash)">${fmtMoney(flo-fhi)}</div><div class="k">👹 fees ate</div></div></div></div>
+   <p class="p-sub">A tiny yearly fee becomes a huge gap. Always check the expense ratio.</p></div>`;
+}
+
+/* ══════════ REINVEST · put fresh money in (AUM up, NAV flat) ══════════ */
+let invReinvest=50000;
+function pReinvestInput(v){ invReinvest=Math.round(+v/5000)*5000; const r=document.getElementById('reinvRead'); if(r)r.textContent=fmt(invReinvest); const un=document.getElementById('reinvUnits'); if(un)un.textContent='+'+fmtUnits(invReinvest/state.nav)+' new units'; }
+function pReinvestConfirm(){ const m=me(); if(!m||m.reinvested!=null)return; sendAction({type:'reinvest',id:MY_ID,amount:invReinvest}); }
+function hostReinvest(){
+  const invs=invList(), done=invs.filter(p=>p.reinvested!=null), waiting=invs.filter(p=>p.reinvested==null);
+  const totalReinv=invs.reduce((s,p)=>s+(p.reinvested||0),0);
+  return `<div class="host-grid">
+   <div class="glass pad">
+    <div class="eyebrow">Screen 7 · Reinvest — put in fresh money</div>
+    <h2 style="margin:4px 0 2px">Surprise — everyone gets a bonus <span style="color:var(--gold)">₹1,00,000</span>! Add it to the fund.</h2>
+    <p class="muted tiny">Watch closely: fresh money creates <b>new units</b> at today's price. The <b style="color:var(--grow)">AUM grows</b> — but the <b style="color:var(--gold)">NAV doesn't budge</b>.</p>
+    ${metrics3({badges:{units:{cls:'up',txt:'▲ new units'},aum:{cls:'up',txt:'▲ growing'},nav:{cls:'same',txt:'= NO CHANGE'}}})}
+    <div class="tiny" style="text-align:center;color:var(--tx-2);margin-top:2px">💰 <b style="color:var(--grow)">${fmtMoney(totalReinv)}</b> of fresh money added · <b>${done.length}/${invs.length}</b> have reinvested</div>
+    ${state.reveals.reinvest?`<div class="reveal"><div class="acr" style="font-size:1.25rem">More money in, same price</div><p style="margin-top:4px">Every ₹ of fresh money buys new units at the current NAV, so it lands as <b>extra units</b> — the AUM climbs but the price of a unit (NAV) is untouched. Nobody who was already in gets diluted. That's exactly how a real fund handles new investments (and your own SIP top-ups).</p></div>`:''}
+    <div class="controls">${revealBtn('reinvest','Reveal: why NAV held steady')}<button class="btn lg" onclick="goPhase('withdraw')">Next: Withdraw →</button></div>
+   </div>
+   <div class="glass pad">
+     <div class="inv-head"><div class="eyebrow">💰 Reinvested</div><span class="num" style="color:var(--grow);font-size:1.25rem">${done.length}/${invs.length}</span></div>
+     <div class="inv-grid">${done.length?done.map(p=>`<div class="ichip" style="border-color:rgba(52,211,153,.45);background:rgba(52,211,153,.08)"><span class="av" style="background:${p.color}">${p.av}</span>${escapeHtml(p.name)} <b style="color:var(--grow);font-family:Sora;margin-left:2px">${p.reinvested>0?'+'+fmtMoney(p.reinvested):'skipped'}</b></div>`).join(''):'<span class="waiting tiny">Waiting for students to add money…</span>'}</div>
+     ${waiting.length?`<div class="inv-head" style="margin-top:12px"><div class="eyebrow" style="color:var(--tx-3)">⏳ Still deciding</div><span class="num" style="color:var(--tx-3);font-size:1.1rem">${waiting.length}</span></div>
+       <div class="inv-grid">${waiting.map(p=>`<div class="ichip pending" style="opacity:.55"><span class="av" style="background:${p.color}">${p.av}</span>${escapeHtml(p.name)}</div>`).join('')}</div>`:''}
+   </div>
+  </div>`;
+}
+function pReinvest(p){
+  const val=investorValue(p);
+  if(p.reinvested!=null){
+    const newU=p.reinvested/state.nav;
+    return `<div class="p-center"><div style="font-size:2.4rem">${p.reinvested>0?'💰':'🙂'}</div>
+      <div class="p-status" style="font-size:1.2rem">${p.reinvested>0?'You added '+fmtMoney(p.reinvested):'You skipped the bonus'}</div>
+      <div class="pf-card"><div class="pf-val-k">You now own</div><div class="pf-val num" style="color:var(--accent)">${fmtUnits(p.units)} units</div>
+        <div class="pf-rows"><div class="pf-cell"><div class="v num">${fmt(p.invested)}</div><div class="k">Total put in</div></div>
+          <div class="pf-cell"><div class="v num" style="color:var(--grow)">${fmt(val)}</div><div class="k">Worth today</div></div></div></div>
+      <p class="p-sub">${p.reinvested>0?`Your fresh ₹${p.reinvested.toLocaleString('en-IN')} became <b style="color:var(--accent)">${fmtUnits(newU)} new units</b> — all at ₹${state.nav.toFixed(2)}. The <b style="color:var(--tx)">price didn't change</b>; you simply own more.`:'No problem — watch the big screen.'}</p></div>`;
+  }
+  if(invReinvest<0||invReinvest>REINVEST_MAX) invReinvest=50000;
+  return `<div class="p-center" style="gap:11px;justify-content:flex-start;padding-top:8px">
+    <div style="font-size:2rem">🎁</div>
+    <div class="p-status" style="font-size:1.25rem">You got a ₹1,00,000 bonus!</div>
+    <p class="p-sub">You already own <b style="color:var(--tx)">${fmtUnits(p.units)} units</b>. Add some of the bonus and you'll get <b>more units at today's price</b> (₹${state.nav.toFixed(2)}) — the price won't change.</p>
+    <div class="cash-banner" style="width:100%;border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.06)"><div class="cb-v num" id="reinvRead" style="color:var(--grow)">${fmt(invReinvest)}</div><div class="cb-k" id="reinvUnits">buys +${fmtUnits(invReinvest/state.nav)} units @ ₹${state.nav.toFixed(2)}</div></div>
+    <input class="slider" type="range" min="0" max="${REINVEST_MAX}" step="5000" value="${invReinvest}" oninput="pReinvestInput(this.value)">
+    <div class="slider-ends" style="width:100%"><span>₹0 · skip</span><span>₹1,00,000</span></div>
+    <button class="btn lg" style="width:100%" onclick="pReinvestConfirm()">🔒 Add this money in</button></div>`;
+}
+
+/* ══════════ WITHDRAW · 4 years later, cash out (AUM falls, NAV flat) ══════════ */
+let invWithdraw=0, invWithdrawU=0, wdMode='inr';
+function withdrawFF(){ state.nav=WITHDRAW_NAV; state.withdraw={ff:true}; state.navHistory.push({label:'4 years later',nav:WITHDRAW_NAV,aum:AUM()}); saveNow(); renderHost(); }
+function pSetWdMode(m){ wdMode=m; renderPlayer(); }
+function pWithdrawInput(v){ const m=me(); if(!m)return; const nav=state.nav, val=investorValue(m), units=m.units;
+  const rd=document.getElementById('wdRead'), sb=document.getElementById('wdSub');
+  if(wdMode==='inr'){ invWithdraw=Math.min(val,Math.round(+v/5000)*5000); if(rd)rd.textContent=fmt(invWithdraw);
+    if(sb)sb.textContent=invWithdraw>0?('= '+fmtUnits(invWithdraw/nav)+' units sold · '+fmtUnits(units-invWithdraw/nav)+' units left'):'take nothing — let it grow'; }
+  else { invWithdrawU=Math.min(units,Math.round(+v/100)*100); if(rd)rd.textContent=fmtUnits(invWithdrawU)+' units';
+    if(sb)sb.textContent=invWithdrawU>0?('= '+fmt(invWithdrawU*nav)+' cash · '+fmtUnits(units-invWithdrawU)+' units left'):'take nothing — let it grow'; }
+}
+function pWithdrawConfirm(){ const m=me(); if(!m||m.withdrawn!=null)return; const amt=wdMode==='inr'?invWithdraw:Math.round(invWithdrawU*state.nav); sendAction({type:'withdraw',id:MY_ID,amount:amt}); }
+function hostWithdraw(){
+  const ff=state.withdraw&&state.withdraw.ff, invs=invList();
+  const totalInvested=invs.reduce((s,p)=>s+(p.invested||0),0);
+  const totalWithdrawn=invs.reduce((s,p)=>s+(p.withdrawn||0),0);
+  const netWorth=invs.reduce((s,p)=>s+investorValue(p),0);
+  const done=invs.filter(p=>p.withdrawn!=null);
+  if(!ff){
+    return `<div class="glass pad">
+      <div class="eyebrow">Screen 8 · Withdraw — cash out your gains</div>
+      <h2 style="margin:6px 0">Now… let's jump ahead <span style="color:var(--grow)">4 years</span> ⏩</h2>
+      <p class="muted tiny">Your fund kept working. Ready to see where it landed?</p>
+      ${metrics3()}
+      <p class="muted" style="text-align:center;margin-top:10px">Press the button — 4 years pass, and the NAV grows from ₹${state.nav.toFixed(2)} to <b style="color:var(--grow)">₹22</b>.</p>
+      <div class="controls"><button class="btn gold lg" onclick="withdrawFF()">⏩ Fast-forward 4 years →</button></div>
+    </div>`;
+  }
+  return `<div class="host-grid">
+   <div class="glass pad">
+    <div class="eyebrow">Screen 8 · Withdraw · 4 years later</div>
+    <h2 style="margin:4px 0 2px">The NAV is now <span style="color:var(--grow)">₹${state.nav.toFixed(2)}</span> 🚀 — time to cash out.</h2>
+    <p class="muted tiny">Students choose how much to withdraw. Selling units drops the <b style="color:var(--crash)">AUM</b> and the <b style="color:var(--accent)">unit count</b> — but the <b style="color:var(--gold)">NAV stays ₹${state.nav.toFixed(2)}</b>.</p>
+    ${metrics3({badges:{aum:{cls:'down',txt:'▼ falling'},units:{cls:'down',txt:'▼ redeemed'},nav:{cls:'same',txt:'= NO CHANGE'}}})}
+    ${state.reveals.withdraw?`<div class="reveal"><div class="acr" style="font-size:1.25rem">Selling doesn't move the price</div><p style="margin-top:4px">A withdrawal just sells your units back at today's NAV. Fewer units, smaller AUM — but the <b>price per unit is unchanged</b>, so everyone still in is unaffected. Money in or out never moves the NAV; only the market does.</p></div>`:''}
+    <div class="controls">${revealBtn('withdraw','Reveal: why NAV stays put')}<button class="btn lg" onclick="goPhase('statement')">Next: Read a Statement →</button></div>
+   </div>
+   <div class="glass pad">
+     <div class="eyebrow">The group, so far</div>
+     <div class="stat-row" style="margin-top:8px">
+       <div class="stat"><div class="v gold num">${fmtMoney(totalInvested)}</div><div class="k">Total put in</div></div>
+       <div class="stat"><div class="v num" style="color:var(--crash)">${fmtMoney(totalWithdrawn)}</div><div class="k">Cashed out</div></div>
+       <div class="stat"><div class="v grow num">${fmtMoney(netWorth)}</div><div class="k">Still invested</div></div>
+     </div>
+     <div class="inv-head" style="margin-top:14px"><div class="eyebrow">🏧 Withdrawn</div><span class="num" style="color:var(--grow);font-size:1.2rem">${done.length}/${invs.length}</span></div>
+     <div class="inv-grid">${done.length?done.map(p=>`<div class="ichip"><span class="av" style="background:${p.color}">${p.av}</span>${escapeHtml(p.name)} <b style="color:var(--crash);font-family:Sora;margin-left:2px">${p.withdrawn>0?'−'+fmtMoney(p.withdrawn):'kept it in'}</b></div>`).join(''):'<span class="waiting tiny">Waiting for withdrawals…</span>'}</div>
+   </div>
+  </div>`;
+}
+function pWithdraw(p){
+  if(!(state.withdraw&&state.withdraw.ff)) return `<div class="p-center"><div style="font-size:2.2rem">⏳</div><div class="p-status">4 years passing…</div><p class="p-sub">Watch the big screen — your money's about to be worth a lot more.</p></div>`;
+  const val=investorValue(p), nav=state.nav, units=p.units;
+  if(p.withdrawn!=null){
+    return `<div class="p-center"><div style="font-size:2.2rem">🏧</div>
+      <div class="p-status" style="font-size:1.2rem">${p.withdrawn>0?'You took out ₹'+p.withdrawn.toLocaleString('en-IN'):'You kept it all invested'}</div>
+      <div class="pf-card"><div class="pf-val-k">Total net worth today</div><div class="pf-val num" style="color:var(--gold)">${fmt(p.withdrawn+val)}</div>
+        <div class="pf-rows"><div class="pf-cell"><div class="v num">${fmt(p.invested)}</div><div class="k">Total invested</div></div>
+          <div class="pf-cell"><div class="v num" style="color:var(--crash)">${fmt(p.withdrawn)}</div><div class="k">Money out</div></div></div>
+        <div class="pf-rows" style="margin-top:11px"><div class="pf-cell"><div class="v num" style="color:var(--grow)">${fmt(val)}</div><div class="k">Still invested</div></div>
+          <div class="pf-cell"><div class="v num" style="color:var(--accent)">${fmtUnits(units)}</div><div class="k">Units left</div></div></div>
+      </div>
+      <p class="p-sub">You put in ${fmtMoney(p.invested)} → it's worth <b style="color:var(--grow)">${fmtMoney(p.withdrawn+val)}</b> today. 🎉</p></div>`;
+  }
+  if(invWithdraw>val) invWithdraw=0; if(invWithdrawU>units) invWithdrawU=0;
+  const isU=wdMode==='units';
+  const readMain=isU?(fmtUnits(invWithdrawU)+' units'):fmt(invWithdraw);
+  const readSub=isU?(invWithdrawU>0?('= '+fmt(invWithdrawU*nav)+' cash · '+fmtUnits(units-invWithdrawU)+' units left'):'take nothing — let it grow')
+    :(invWithdraw>0?('= '+fmtUnits(invWithdraw/nav)+' units sold · '+fmtUnits(units-invWithdraw/nav)+' units left'):'take nothing — let it grow');
+  return `<div class="p-center" style="gap:9px;justify-content:flex-start;padding-top:8px">
+    <div class="p-status" style="font-size:1.2rem">Your money is now <span style="color:var(--grow)">${fmt(val)}</span> 🚀</div>
+    <div class="cash-pill" style="width:100%">You hold <b>${fmtUnits(units)} units</b> at ₹${nav.toFixed(2)}. Withdraw by:</div>
+    <div class="mode-tabs">
+      <button class="mode-tab ${!isU?'sel':''}" onclick="pSetWdMode('inr')">₹ Rupees</button>
+      <button class="mode-tab ${isU?'sel':''}" onclick="pSetWdMode('units')">🧩 Units</button>
+    </div>
+    <div class="cash-banner" style="width:100%"><div class="cb-v num" id="wdRead">${readMain}</div><div class="cb-k" id="wdSub">${readSub}</div></div>
+    <input class="slider" type="range" min="0" max="${isU?Math.round(units):Math.round(val)}" step="${isU?100:5000}" value="${isU?invWithdrawU:invWithdraw}" oninput="pWithdrawInput(this.value)">
+    <div class="slider-ends" style="width:100%"><span>0</span><span>${isU?fmtUnits(units)+' units':fmtMoney(val)}</span></div>
+    <button class="btn lg" style="width:100%" onclick="pWithdrawConfirm()">🔒 Withdraw this</button></div>`;
+}
+
+/* ── Verdict · (legacy, no longer in the flow) ── */
+function hostVerdict(){
+  const navs=VD_PATH, finalNav=VD_PATH[VD_PATH.length-1];
+  const lumpUnits=VD_LUMP/NAV0, lumpVal=lumpUnits*finalNav;
+  let sipUnits=0; navs.forEach(nv=>sipUnits+=VD_SIP/nv); const sipVal=sipUnits*finalNav, sipAvg=sipUnits?VD_LUMP/sipUnits:0;
+  const simpleAvg=navs.reduce((a,b)=>a+b,0)/navs.length;
+  const invs=invList(), nLump=invs.filter(p=>p.mode==='lump').length, nSip=invs.filter(p=>p.mode==='sip').length;
+  const ranked=invs.filter(p=>p.mode).sort((a,b)=>investorValue(b)-investorValue(a));
+  return `<div class="host-grid">
+   <div class="glass pad">
+    <div class="eyebrow">Screen 7 · Lumpsum vs SIP — the verdict</div>
+    <h2 style="margin:4px 0 2px">Two ways to invest the <span style="color:var(--gold)">same ₹1,20,000</span> — which ends up bigger?</h2>
+    <p class="muted tiny" style="margin:2px 0">A real year is bumpy. Here the unit price dipped to <b style="color:var(--tx)">₹7.50</b>, then recovered to <b style="color:var(--tx)">₹11.50</b>. Same money in each way — let's see the result.</p>
+    <div class="vote2" style="margin-top:10px">
+      <div class="fundcard" style="border-color:rgba(78,168,255,.45)"><div class="fc-tag" style="color:#9fd0ff">💰 Lumpsum — all on day 1</div><div class="fc-nav num" style="color:var(--accent);font-size:2rem">${fmtMoney(lumpVal)}</div><div class="fc-k">bought <b>${fmtUnits(lumpUnits)}</b> units, all at ₹10.00</div></div>
+      <div class="fundcard" style="border-color:var(--grow);box-shadow:0 0 0 2px rgba(52,211,153,.25)"><div class="fc-tag" style="color:#86f0c4">📅 SIP — ₹10k every month 🏆</div><div class="fc-nav num" style="color:var(--grow);font-size:2rem">${fmtMoney(sipVal)}</div><div class="fc-k">bought <b>${fmtUnits(sipUnits)}</b> units, avg ₹${sipAvg.toFixed(2)} each</div></div>
+    </div>
+    <div class="myth-x right" style="margin-top:12px;text-align:left;line-height:1.5">📅 <b>SIP ended ${fmtMoney(sipVal-lumpVal)} ahead.</b> Because it kept buying <b>through the dip</b>, it grabbed <b>${Math.round(sipUnits-lumpUnits).toLocaleString('en-IN')} more units</b> at a cheaper average price — <b>₹${sipAvg.toFixed(2)}</b> a unit vs the lumpsum's <b>₹10.00</b>. More units → more money.</div>
+    ${state.reveals.sip?`<div class="reveal"><div class="acr" style="font-size:1.3rem">SIP wins — and it's the smart default 📅</div>
+      <p>When the market dipped, SIP's fixed ₹10k <b>bought extra units cheap</b>, pulling its average cost to <b style="color:var(--grow)">₹${sipAvg.toFixed(2)}</b> — below the ₹10 the lumpsum paid. So SIP ended ahead by <b style="color:var(--grow)">${fmtMoney(sipVal-lumpVal)}</b>. And SIP wins on everything else too: you <b>don't need a lump</b> (invest from your salary), it's <b>automatic &amp; disciplined</b>, and it <b>protects you from bad timing</b>. Lumpsum only wins if you have a big sum AND markets rise from day one — a gamble. <b>For almost everyone, a SIP is the way.</b></p></div>`:''}
+    <div class="controls">${revealBtn('sip','Reveal: which is better?')}<button class="btn lg" onclick="hostGo('statement')">Next: Read a Statement →</button></div>
+   </div>
+   <div class="glass pad">
+     <div class="eyebrow">🏆 Live leaderboard — your investors</div>
+     <p class="muted tiny" style="margin:6px 0 8px">Ranked by what each ₹ has become in YOUR real fund.</p>
+     ${ranked.length?`<table class="siptbl"><thead><tr><th>#</th><th>Investor</th><th>In</th><th>Now</th><th>Ret</th></tr></thead><tbody>
+       ${ranked.map((p,i)=>{ const v=investorValue(p), gp=p.invested?(v-p.invested)/p.invested*100:0;
+         return `<tr><td>${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</td><td><span class="av" style="background:${p.color};width:22px;height:22px;font-size:.75rem;display:inline-grid;vertical-align:middle;margin-right:6px">${p.av}</span>${escapeHtml(p.name)} <span class="hi-sec">${p.mode==='sip'?'SIP':'Lump'}</span></td><td class="num">${fmtMoney(p.mode==='sip'?p.sipAmt*SIP_MONTHS:p.invested)}</td><td class="num">${fmtMoney(v)}</td><td class="num" style="color:var(--${v>=p.invested?'grow':'crash'})">${gp>=0?'+':''}${gp.toFixed(0)}%</td></tr>`;}).join('')}
+     </tbody></table>`:'<p class="waiting">No investors have locked in yet.</p>'}
+   </div>
+  </div>`;
+}
+function pVerdict(p){
+  const finalNav=state.nav;
+  if(!p.mode) return `<div class="p-center"><div class="p-status">Lumpsum vs SIP</div><p class="p-sub">You didn't invest this round — watch the big screen for the verdict.</p></div>`;
+  const val=investorValue(p), gain=val-p.invested, isSip=p.mode==='sip';
+  const avg=(isSip&&p.units)?p.invested/p.units:NAV0;
+  return `<div class="p-center" style="justify-content:flex-start;padding-top:8px">
+    <div class="p-status" style="font-size:1.2rem">${isSip?'📅 You chose SIP':'💰 You chose Lumpsum'}</div>
+    <div class="pf-card"><div class="pf-val-k">Your ₹1.2L is now</div><div class="pf-val num" style="color:var(--grow)">${fmt(val)}</div>
+      <div class="pf-gain ${gain>=0?'up':'down'} num">${gain>=0?'▲ +':'▼ '}${fmtMoney(Math.abs(gain))} (${gain>=0?'+':''}${p.invested?(gain/p.invested*100).toFixed(1):0}%)</div>
+      <div class="pf-rows"><div class="pf-cell"><div class="v num">${fmtUnits(p.units)}</div><div class="k">Units owned</div></div>
+        <div class="pf-cell"><div class="v num">₹${avg.toFixed(2)}</div><div class="k">Avg cost / unit</div></div></div></div>
+    <p class="p-sub">${isSip?`Smart — a SIP invests from your income and buys more when prices dip (avg cost ₹${avg.toFixed(2)}). It's the habit that builds wealth.`:'Going all-in only pays off with a big lump AND good timing. For most people, a monthly SIP is the safer, smarter habit.'}</p></div>`;
+}
+
+/* ── S8 · SIP (legacy, no longer in the flow — kept for reference) ── */
+function sipStep(){ const s=state.sim, nav=s.navPath[s.month]; s.started=true;
+  for(const id in state.investors){ const p=state.investors[id]; if(!p.sip||!p.sip.amt)continue;
+    const u=p.sip.amt/nav; p.sip.bought.push({m:s.month+1,nav,units:u}); p.sip.invested+=p.sip.amt; p.sip.units+=u; }
+  s.month++; }
+function hostSipNext(){ const s=state.sim; if(s.kind!=='sip'||s.month>=s.max)return; sipStep(); saveNow(); renderHost(); }
+function hostSipAll(){ const s=state.sim; while(s.kind==='sip'&&s.month<s.max)sipStep(); saveNow(); renderHost(); }
+function hostRevealSip(){ state.reveals.sip=true; saveNow(); renderHost(); }
+function hostSip(){
+  const s=state.sim, m=s.month, navNow=s.navPath[Math.min(m,s.max-1)], elapsed=s.navPath.slice(0,m);
+  let refU=0; elapsed.forEach(nv=>refU+=1000/nv);
+  const refInv=1000*m, refAvg=refU?refInv/refU:0, simpleAvg=elapsed.length?elapsed.reduce((a,b)=>a+b,0)/elapsed.length:0;
+  const setCount=invList().filter(p=>p.sip&&p.sip.amt).length;
+  return `<div class="host-grid">
+   <div class="glass pad">
+     <div class="eyebrow">Screen 8 · SIP — same amount, every month</div>
+     <h2 style="margin:4px 0 2px">₹1,000 every month — through the ups and downs.</h2>
+     <p class="muted tiny" style="margin:2px 0">Month ${Math.min(m,s.max)} of ${s.max} · this month's NAV ₹${navNow.toFixed(2)}. The cheaper the month, the <b>more units</b> your ₹1,000 buys.</p>
+     <div class="chart-box">${sipChart(s.navPath,m)}</div>
+     ${m>0?`<div class="stat-row">
+        <div class="stat"><div class="v gold num">${fmt(refInv)}</div><div class="k">Invested</div></div>
+        <div class="stat"><div class="v blue num">${fmtUnits(refU)}</div><div class="k">Total units</div></div>
+        <div class="stat"><div class="v num">₹${navNow.toFixed(2)}</div><div class="k">NAV now</div></div>
+      </div>`:'<p class="muted" style="text-align:center;margin:8px 0">Students pick a monthly SIP on their phones, then step through the months.</p>'}
+     ${state.reveals.sip?`<div class="reveal"><div class="full" style="text-align:center">You paid LESS than the average price 🎉</div>
+        <div class="sip-compare"><div class="sc"><div class="scv num">₹${simpleAvg.toFixed(2)}</div><div class="sck">average market price</div></div><div class="sc-vs">›</div><div class="sc win"><div class="scv num">₹${refAvg.toFixed(2)}</div><div class="sck">YOUR avg cost ✓</div></div></div>
+        <p style="text-align:center;margin-top:8px">Fixed ₹1,000 grabbed more units in the cheap months — pulling your average buying price <b>below</b> the average. That's rupee-cost averaging.</p></div>`
+        :(m>=s.max?'<p class="muted tiny" style="text-align:center;margin-top:8px">All ${s.max} months done — now reveal the magic 👇</p>':'')}
+     <div class="controls"><span class="phase-tag">${setCount} set a SIP</span><div class="spacer"></div>
+       ${m<s.max?`<button class="btn blue" onclick="hostSipNext()">Next month →</button> <button class="btn dark" onclick="hostSipAll()">Run all ${s.max} ⏩</button>`
+         :`${revealBtn('sip','Reveal the SIP magic')} <button class="btn lg" onclick="hostGo('diversify')">Next: Spread the risk →</button>`}
+     </div>
+   </div>
+   <div class="glass pad"><div class="eyebrow">Live SIP ledger · ₹1,000/mo</div>
+     <table class="siptbl"><thead><tr><th>Mo</th><th>NAV</th><th>Units bought</th></tr></thead><tbody>
+       ${s.navPath.map((nv,i)=>`<tr style="${i<m?'':'opacity:.4'}"><td>${i+1}</td><td class="num">${i<m?'₹'+nv.toFixed(2):'—'}</td><td class="num">${i<m?fmtUnits(1000/nv):'—'}</td></tr>`).join('')}
+     </tbody></table>
+     ${m>=s.max&&!state.reveals.sip?`<p class="muted tiny" style="text-align:center;margin-top:10px">All ${s.max} months done — hit <b>Reveal the SIP magic</b> 👇</p>`:''}
+   </div>
+  </div>`;
+}
+function pSip(p){
+  const s=state.sim, started=s.month>0;
+  if(!p.sip||!p.sip.amt){
+    if(started) return `<div class="p-center"><div class="p-status">SIP in progress</div><p class="p-sub">You didn't set a SIP this round — watch the big screen to see how it works.</p></div>`;
+    return `<div class="p-center"><div class="p-status">Start a monthly SIP</div>
+      <p class="p-sub">Invest the same amount every month, automatically.</p>
+      <div class="amt-grid">${[500,1000,5000].map(a=>`<button class="amt-btn" onclick="pSipSet(${a})">${fmtMoney(a)}<span class="sub">per month</span></button>`).join('')}</div>
+      ${customOpen?`<div class="custom-row"><input id="sipAmt" type="number" inputmode="numeric" placeholder="₹ / month"><button class="btn" onclick="pSipSetCustom()">Set</button></div>`:`<button class="btn ghost" style="width:100%" onclick="customOpen=true;renderPlayer()">Custom…</button>`}</div>`;
+  }
+  const val=p.sip.units*s.navPath[Math.min(s.month,s.max-1)], avg=p.sip.units?p.sip.invested/p.sip.units:0;
+  return `<div class="p-center" style="justify-content:flex-start;padding-top:8px">
+    <div class="p-status" style="font-size:1.2rem">Your SIP · ${fmtMoney(p.sip.amt)}/mo</div>
+    <div class="pf-card"><div class="pf-val-k">Current value</div><div class="pf-val num">${fmt(val)}</div>
+      <div class="pf-rows"><div class="pf-cell"><div class="v num">${fmt(p.sip.invested)}</div><div class="k">Invested</div></div>
+        <div class="pf-cell"><div class="v num">${fmtUnits(p.sip.units)}</div><div class="k">Units</div></div></div>
+      <div class="tiny muted" style="margin-top:10px;text-align:center">Avg cost <b style="color:var(--tx)">₹${avg.toFixed(2)}</b> / unit</div></div>
+    <table class="siptbl" style="width:100%"><thead><tr><th>Mo</th><th>NAV</th><th>Units</th></tr></thead><tbody>
+      ${p.sip.bought.map(b=>`<tr><td>${b.m}</td><td class="num">₹${b.nav.toFixed(2)}</td><td class="num">${fmtUnits(b.units)}</td></tr>`).join('')||'<tr><td colspan="3" class="muted">Waiting for month 1…</td></tr>'}
+    </tbody></table></div>`;
+}
+function pSipSet(a){ const m=me(); if(!m)return; sendAction({type:'sipplan',id:MY_ID,amt:a}); customOpen=false; }
+function pSipSetCustom(){ const el=document.getElementById('sipAmt'); if(el)pSipSet(el.value); }
+
+/* ── S9 · STP ── */
+function stpStep(){ const s=state.sim, nav=s.navPath[s.month]; s.started=true;
+  for(const id in state.investors){ const t=state.investors[id].stp; if(!t)continue;
+    if(t.mode==='stp'&&t.liquid>0){ const amt=Math.min(10000,t.liquid); const u=amt/nav; t.equityUnits+=u; t.equityInvested+=amt; t.liquid-=amt;
+      (t.hist=t.hist||[]).push({mo:s.month+1,nav,units:u}); } }
+  s.month++; }
+function hostStpNext(){ const s=state.sim; if(s.kind!=='stp'||s.month>=s.max)return; stpStep(); saveNow(); renderHost(); }
+function hostStpAll(){ const s=state.sim; while(s.kind==='stp'&&s.month<s.max)stpStep(); saveNow(); renderHost(); }
+function hostRevealStp(){ state.reveals.stp=true; saveNow(); renderHost(); }
+function hostStp(){
+  const s=state.sim, m=s.month, navNow=s.navPath[Math.min(m,s.max-1)], nav0=s.navPath[0];
+  const lumpU=100000/nav0, lumpVal=lumpU*navNow;
+  let stpU=0, stpLiq=100000, rows=[];
+  for(let i=0;i<s.max;i++){ const nv=s.navPath[i], done=i<m; let buy=0,u=0;
+    if(done && stpLiq>0){ buy=Math.min(10000,stpLiq); u=buy/nv; stpU+=u; stpLiq-=buy; }
+    rows.push({mo:i+1,nav:nv,done,u}); }
+  const stpVal=stpU*navNow+stpLiq;
+  const stpInvested=100000-stpLiq, stpAvg=stpU?stpInvested/stpU:0;
+  const setLump=invList().filter(p=>p.stp&&p.stp.mode==='lump').length, setStp=invList().filter(p=>p.stp&&p.stp.mode==='stp').length;
+  const winner = m>=s.max ? (stpVal>lumpVal?'stp':'lump') : null;
+  return `<div class="host-grid">
+   <div class="glass pad">
+    <div class="eyebrow">Screen 9 · STP — easing into the market</div>
+    <h2 style="margin:6px 0">₹1,00,000 bonus · Month ${Math.min(m,s.max)} of ${s.max}</h2>
+    <p class="muted tiny">Invest it all today, OR move <b>₹10,000 a month</b> from a safe Liquid Fund into Equity. The market moves the NAV every month — so each ₹10k buys a different number of units.</p>
+    <div class="chart-box" style="margin-top:8px">${lineChart([{vals:s.navPath,color:'#4ea8ff'}],m,true)}<div class="legend"><span><i style="background:#4ea8ff"></i>NAV each month (the dashed line = now)</span></div></div>
+    <div class="vote2" style="margin-top:12px">
+      <div class="fundcard" style="border-color:${winner==='lump'?'var(--grow)':'rgba(78,168,255,.4)'}"><div class="fc-tag" style="color:#9fd0ff">💧 Invest all today</div><div class="fc-nav num" style="color:var(--accent);font-size:1.9rem">${fmtMoney(lumpVal)}</div><div class="fc-k">${fmtUnits(lumpU)} units, all @ ₹${nav0}</div></div>
+      <div class="fundcard" style="border-color:${winner==='stp'?'var(--grow)':'rgba(52,211,153,.4)'}"><div class="fc-tag" style="color:#86f0c4">🌊 STP ₹10k/month</div><div class="fc-nav num" style="color:var(--grow);font-size:1.9rem">${fmtMoney(stpVal)}</div><div class="fc-k">${fmtUnits(stpU)} units${stpLiq>0?` · ${fmtMoney(stpLiq)} still safe`:` · avg ₹${stpAvg.toFixed(2)}`}</div></div>
+    </div>
+    ${state.reveals.stp?`<div class="reveal"><div class="acr" style="font-size:1.35rem">STP = Systematic Transfer Plan</div>
+       <p style="margin-top:4px">Because the NAV <b>dipped</b>, the STP's ₹10k bought <b>more units when prices were low</b> (avg cost <b style="color:var(--grow)">₹${stpAvg.toFixed(2)}</b> vs the lump's ₹${nav0}). So STP collected more units and <b>${stpVal>lumpVal?'won':'kept pace'}</b>. <b>But if the market had only risen</b>, investing all at once would win — you'd catch the lowest price on day one. STP swaps a little upside for far less timing risk.</p></div>`:''}
+    <div class="controls"><span class="phase-tag">💧 ${setLump} lump · 🌊 ${setStp} STP</span><div class="spacer"></div>
+      ${m<s.max?`<button class="btn blue" onclick="hostStpNext()">Next month →</button> <button class="btn dark" onclick="hostStpAll()">Run all ${s.max} ⏩</button>`
+        :`${revealBtn('stp','Reveal: lump vs STP')} <button class="btn lg" onclick="hostGo('swp')">Next: Retirement (SWP) →</button>`}
+    </div>
+   </div>
+   <div class="glass pad"><div class="eyebrow">STP ledger · ₹10,000 / month</div>
+     <table class="siptbl"><thead><tr><th>Mo</th><th>NAV</th><th>₹10k buys</th></tr></thead><tbody>
+       ${rows.map(r=>`<tr style="${r.done?'':'opacity:.35'}"><td>${r.mo}</td><td class="num">₹${r.nav.toFixed(2)}</td><td class="num">${r.done?fmtUnits(r.u)+' u':'—'}</td></tr>`).join('')}
+     </tbody></table>
+     <div class="tiny muted" style="margin:8px 0 6px;text-align:center">Low NAV months → more units 👀</div>
+     ${slot('ASSET-12','16:9')}
+   </div>
+  </div>`;
+}
+function pStp(p){
+  const s=state.sim, started=s.month>0, navNow=s.navPath[Math.min(s.month,s.max-1)];
+  if(!p.stp){
+    if(started) return `<div class="p-center"><div class="p-status">STP running</div><p class="p-sub">You sat this one out — watch the screen.</p></div>`;
+    return `<div class="p-center"><div class="p-status">You get a ₹1,00,000 bonus 🎁</div>
+      <p class="p-sub">Put it to work — how?</p>
+      <div class="amt-grid" style="grid-template-columns:1fr">
+        <button class="amt-btn" onclick="pStpChoose('lump')">Invest all today<span class="sub">all ₹1,00,000 into equity now</span></button>
+        <button class="amt-btn" onclick="pStpChoose('stp')">STP ₹10,000 / month<span class="sub">drip from a liquid fund</span></button>
+      </div></div>`;
+  }
+  const eqVal=p.stp.equityUnits*navNow, total=eqVal+p.stp.liquid;
+  const isStp=p.stp.mode==='stp';
+  return `<div class="p-center" style="justify-content:flex-start;padding-top:8px">
+    <div class="p-status" style="font-size:1.2rem">${isStp?'🌊 STP · ₹10k/month':'💧 Invested it all'}</div>
+    <div class="pf-card"><div class="pf-val-k">Total value</div><div class="pf-val num">${fmt(total)}</div>
+      <div class="pf-rows"><div class="pf-cell"><div class="v num">${fmt(eqVal)}</div><div class="k">In equity</div></div>
+        <div class="pf-cell"><div class="v num">${fmt(p.stp.liquid)}</div><div class="k">Still safe (liquid)</div></div></div>
+      <div class="tiny muted" style="margin-top:10px;text-align:center">${fmtUnits(p.stp.equityUnits)} equity units · NAV ₹${navNow.toFixed(2)}</div></div>
+    ${isStp&&p.stp.hist&&p.stp.hist.length?`<table class="siptbl" style="width:100%"><thead><tr><th>Mo</th><th>NAV</th><th>₹10k bought</th></tr></thead><tbody>
+      ${p.stp.hist.map(h=>`<tr><td>${h.mo}</td><td class="num">₹${h.nav.toFixed(2)}</td><td class="num">${fmtUnits(h.units)} u</td></tr>`).join('')}
+    </tbody></table><p class="p-sub" style="font-size:.84rem">See it? The cheap months bought you more units.</p>`
+    :isStp?`<p class="p-sub">Each month ₹10k moves from your safe fund into equity. Watch the units add up.</p>`
+    :`<p class="p-sub">You put all ₹1,00,000 in on day one at NAV ₹${state.sim.navPath[0]}.</p>`}</div>`;
+}
+function pStpChoose(mode){ const m=me(); if(!m||m.stp)return; sendAction({type:'stpchoice',id:MY_ID,mode}); }
+
+/* ── S10 · SWP (retirement) ── */
+function swpStep(){ const s=state.sim; s.started=true;
+  for(const id in state.investors){ const w=state.investors[id].swp; if(!w)continue;
+    const before=w.units*w.nav; w.nav*=SWP_GROW; const grew=w.units*w.nav-before;
+    const red=Math.min(w.amt, w.units*w.nav); w.units-=red/w.nav; w.withdrawn+=red;
+    (w.hist=w.hist||[]).push({mo:s.month+1,grew,paid:red,corpus:w.units*w.nav}); }
+  s.month++; }
+function hostSwpNext(){ const s=state.sim; if(s.kind!=='swp'||s.month>=s.max)return; swpStep(); saveNow(); renderHost(); }
+function hostSwpAll(){ const s=state.sim; while(s.kind==='swp'&&s.month<s.max)swpStep(); saveNow(); renderHost(); }
+function hostRevealSwp(){ state.reveals.swp=true; saveNow(); renderHost(); }
+function hostSwp(){
+  const s=state.sim, m=s.month, draw=25000;
+  let nav=SWP_NAV0, units=SWP_START/SWP_NAV0, withdrawn=0, rows=[];
+  for(let i=0;i<s.max;i++){ const done=i<m; let grew=0,paid=0;
+    if(done){ const before=units*nav; nav*=SWP_GROW; grew=units*nav-before; paid=Math.min(draw,units*nav); units-=paid/nav; withdrawn+=paid; }
+    rows.push({mo:i+1,done,grew,paid,corpus:units*nav}); }
+  const value=units*nav, fillPct=Math.min(100,value/SWP_START*100), setCount=invList().filter(p=>p.swp).length;
+  const monthlyGrow=SWP_START*(SWP_GROW-1);
+  return `<div class="host-grid">
+   <div class="glass pad">
+    <div class="eyebrow">Screen 10 · Retirement — SWP</div>
+    <h2 style="margin:6px 0">You're 60 · ₹50,00,000 saved · Month ${Math.min(m,s.max)} of ${s.max}</h2>
+    <p class="muted tiny">Your money stays invested and grows about <b>0.8% a month (≈₹${Math.round(monthlyGrow/1000)}k)</b>. Each month you sell <b>just enough units</b> to draw a ₹25,000 income — the rest keeps compounding.</p>
+    <div class="tanks" style="grid-template-columns:1fr;margin-top:8px">
+      <div><div class="tank eq" style="height:120px"><div class="liq" style="height:${fillPct.toFixed(0)}%"></div></div>
+        <div class="tank-lbl">Corpus still invested</div><div class="tank-v num" style="font-size:1.5rem">${fmtMoney(value)}</div></div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="v gold num">${fmtMoney(withdrawn)}</div><div class="k">Income drawn (${m} mo)</div></div>
+      <div class="stat"><div class="v ${value>=SWP_START?'grow':''} num">${fmtMoney(value)}</div><div class="k">Corpus now</div></div>
+      <div class="stat"><div class="v blue num">${fmtUnits(units)}</div><div class="k">Units left</div></div>
+    </div>
+    ${state.reveals.swp?`<div class="reveal"><div class="acr" style="font-size:1.35rem">SWP = Systematic Withdrawal Plan</div>
+       <p style="margin-top:4px">Growth on ₹50L is about <b style="color:var(--grow)">₹${Math.round(monthlyGrow/1000)}k a month</b> — more than the <b>₹25k</b> you draw. So even while paying you an income, the corpus ${value>=SWP_START?`<b>grew</b> to ${fmtMoney(value)}`:'barely shrank'}. You sell a few units; the rest keeps compounding — that's how a SWP can pay you for decades.</p></div>`:''}
+    <div class="controls"><span class="phase-tag">${setCount} set an income · demo ₹25k/mo</span><div class="spacer"></div>
+      ${m<s.max?`<button class="btn blue" onclick="hostSwpNext()">Next month →</button> <button class="btn dark" onclick="hostSwpAll()">Run the year ⏩</button>`
+        :`${revealBtn('swp','Reveal: why it lasts')} <button class="btn lg" onclick="hostGo('diversify')">Next: Spread the risk →</button>`}
+    </div>
+   </div>
+   <div class="glass pad"><div class="eyebrow">Monthly breakdown</div>
+     <table class="siptbl"><thead><tr><th>Mo</th><th>Grew</th><th>Income</th><th>Corpus</th></tr></thead><tbody>
+       ${rows.map(r=>`<tr style="${r.done?'':'opacity:.35'}"><td>${r.mo}</td><td class="num" style="color:var(--grow)">${r.done?'+'+fmtMoney(r.grew):'—'}</td><td class="num" style="color:var(--gold)">${r.done?'−₹25k':'—'}</td><td class="num">${r.done?fmtMoney(r.corpus):'—'}</td></tr>`).join('')}
+     </tbody></table>
+     <div class="tiny muted" style="margin:8px 0 6px;text-align:center">Grew more than you drew → corpus holds 💪</div>
+     ${slot('ASSET-13','16:9')}
+   </div>
+  </div>`;
+}
+function pSwp(p){
+  const s=state.sim, started=s.month>0;
+  if(!p.swp){
+    if(started) return `<div class="p-center"><div class="p-status">SWP running</div><p class="p-sub">Watch the screen.</p></div>`;
+    return `<div class="p-center"><div class="p-status">You're retired 🌴</div><p class="p-sub">₹50,00,000 saved. How much monthly income do you want?</p>
+      <div class="amt-grid">${[10000,25000,50000].map(a=>`<button class="amt-btn" onclick="pSwpSet(${a})">${fmtMoney(a)}<span class="sub">per month</span></button>`).join('')}</div>
+      ${customOpen?`<div class="custom-row"><input id="swpAmt" type="number" inputmode="numeric" placeholder="₹ / month"><button class="btn" onclick="pSwpSetCustom()">Set</button></div>`:`<button class="btn ghost" style="width:100%" onclick="customOpen=true;renderPlayer()">Custom…</button>`}</div>`;
+  }
+  const val=p.swp.units*p.swp.nav, hist=p.swp.hist||[];
+  return `<div class="p-center" style="justify-content:flex-start;padding-top:8px">
+    <div class="p-status" style="font-size:1.2rem">🌴 Income ${fmtMoney(p.swp.amt)}/mo</div>
+    <div class="pf-card"><div class="pf-val-k">Corpus still invested</div><div class="pf-val num">${fmt(val)}</div>
+      <div class="pf-rows"><div class="pf-cell"><div class="v num">${fmt(p.swp.withdrawn)}</div><div class="k">Income drawn so far</div></div>
+        <div class="pf-cell"><div class="v num">${fmtUnits(p.swp.units)}</div><div class="k">Units left</div></div></div>
+      <div class="tiny muted" style="margin-top:10px;text-align:center">${val>=SWP_START?'📈 Still bigger than you started with!':'Drawing down gently'}</div></div>
+    ${hist.length?`<table class="siptbl" style="width:100%"><thead><tr><th>Mo</th><th>Grew</th><th>You drew</th><th>Left</th></tr></thead><tbody>
+      ${hist.map(h=>`<tr><td>${h.mo}</td><td class="num" style="color:var(--grow)">+${fmtMoney(h.grew)}</td><td class="num" style="color:var(--gold)">−${fmtMoney(h.paid)}</td><td class="num">${fmtMoney(h.corpus)}</td></tr>`).join('')}
+    </tbody></table><p class="p-sub" style="font-size:.84rem">Each month it grew more than you drew — so it kept paying you.</p>`
+    :`<p class="p-sub">Each month your money grows, then you sell just enough units to take ${fmtMoney(p.swp.amt)}. Watch the corpus hold.</p>`}</div>`;
+}
+function pSwpSet(a){ const m=me(); if(!m)return; sendAction({type:'swpplan',id:MY_ID,amt:a}); customOpen=false; }
+function pSwpSetCustom(){ const el=document.getElementById('swpAmt'); if(el)pSwpSet(el.value); }
+
+/* ── Final · Report Card + split screen ── */
+function hostReport(){
+  const invs=invList();
+  const totalIn=invs.reduce((s,p)=>s+(p.invested||0),0);
+  const totalOut=invs.reduce((s,p)=>s+(p.withdrawn||0),0);
+  const netWorth=invs.reduce((s,p)=>s+investorValue(p),0);
+  const totalValue=totalOut+netWorth;
+  const navG=((state.nav-NAV0)/NAV0*100);
+  return `<div class="glass pad">
+    <div class="recap-hero">
+      <div class="eyebrow" style="color:var(--gold)">🏁 That's a wrap — as a group</div>
+      <div class="big">Together, you started &amp; ran a real mutual fund.</div>
+      <p class="muted" style="margin:4px 0 0">${escapeHtml(state.fund.name)} · ${invs.length} investor${invs.length===1?'':'s'}</p>
+    </div>
+    <div class="report-hero" style="grid-template-columns:repeat(4,1fr)">
+      <div class="stat"><div class="v gold num">${fmtMoney(totalIn)}</div><div class="k">Total money put in</div></div>
+      <div class="stat"><div class="v grow num">${fmtMoney(AUM())}</div><div class="k">Fund is worth (AUM)</div></div>
+      <div class="stat"><div class="v gold num">₹10 → ₹${state.nav.toFixed(0)}</div><div class="k">NAV grew ${navG>=0?'+':''}${navG.toFixed(0)}%</div></div>
+      <div class="stat"><div class="v num" style="color:var(--crash)">${fmtMoney(totalOut)}</div><div class="k">Total withdrawn</div></div>
+    </div>
+    <div class="big-payoff">As a group you put in <b style="color:var(--gold)">${fmtMoney(totalIn)}</b> → it became <b style="color:var(--grow)">${fmtMoney(totalValue)}</b><br><span style="font-size:.9rem;color:var(--tx-2);font-weight:600">${fmtMoney(netWorth)} still invested + ${fmtMoney(totalOut)} already cashed out</span></div>
+    <div class="mastered"><span>🏦 AUM</span><span>🏷️ NAV</span><span>🧩 UNITS</span><span>💰 Lumpsum &amp; SIP</span><span>📈 Reinvesting</span><span>🏧 Withdrawing</span></div>
+    <p style="text-align:center;margin-top:8px;color:var(--tx-2);font-weight:600">Your students didn't just hear about mutual funds — <b style="color:var(--tx)">they started one, grew it, and cashed out.</b></p>
+    <div class="controls"><div class="spacer"></div><button class="btn dark" onclick="goPhase('statement')">← Statement</button><button class="btn gold" onclick="hostReset()">↺ New fund</button></div>
+  </div>`;
+}
+function pReport(p){
+  const val=investorValue(p), out=p.withdrawn||0, net=val+out;
+  const modeLabel=p.mode==='sip'?'📅 SIP':p.mode==='lump'?'💰 Lumpsum':'—';
+  return `<div class="p-center" style="justify-content:flex-start;padding-top:8px">
+    <div style="font-size:2.6rem">🎓</div>
+    <div class="p-status" style="font-size:1.3rem">Your mutual fund journey</div>
+    <div class="pf-card">
+      <div class="pf-val-k">You put in → it's worth</div><div class="pf-val num" style="color:var(--grow)">${fmt(net)}</div>
+      <div class="pf-gain ${net>=p.invested?'up':'down'} num">${net>=p.invested?'▲ +':'▼ '}${fmtMoney(Math.abs(net-p.invested))} on ${fmtMoney(p.invested)} in</div>
+      <div class="pf-rows">
+        <div class="pf-cell"><div class="v num">${fmt(p.invested)}</div><div class="k">Total invested</div></div>
+        <div class="pf-cell"><div class="v num">${fmtUnits(p.units)}</div><div class="k">Units held</div></div>
+      </div>
+      <div class="pf-rows" style="margin-top:11px">
+        <div class="pf-cell"><div class="v num" style="color:var(--crash)">${fmt(out)}</div><div class="k">Cashed out</div></div>
+        <div class="pf-cell"><div class="v num" style="color:var(--grow)">${fmt(val)}</div><div class="k">Still invested</div></div>
+      </div>
+    </div>
+    <p class="p-sub">You started a ${modeLabel}, watched the NAV grow, reinvested, and cashed out — <b style="color:var(--tx)">you lived inside a mutual fund.</b> 🎉</p></div>`;
+}
+
+/* ── Diversification · one stock vs the whole basket ── */
+function hostDivShock(){
+  const assets=state.fund.assets||[]; if(!assets.length)return;
+  const shocked=assets[Math.floor(Math.random()*assets.length)];
+  const moves={}; assets.forEach(a=>moves[a]=a===shocked?-40:2);
+  state.diversify={shocked,moves}; state.reveals.diversify=false; saveNow(); renderHost();
+}
+function hostDiversify(){
+  const invs=invList(), assets=(state.fund.assets||[]), base=50000;
+  const d=state.diversify||{}, shocked=d.shocked, moves=d.moves;
+  const fundMove=moves?assets.reduce((s,a)=>s+moves[a],0)/assets.length:0;
+  const cnt=a=>invs.filter(p=>p.div===a).length, fundCnt=invs.filter(p=>p.div==='fund').length, chosen=invs.filter(p=>p.div).length;
+  return `<div class="glass pad">
+    <div class="eyebrow">Diversification · one stock, or the whole basket?</div>
+    <h2 style="margin:4px 0 2px">Put ₹50,000 in <span style="color:var(--accent)">ONE stock</span> — or spread it across the fund?</h2>
+    <p class="muted tiny" style="margin:2px 0">A mutual fund holds many stocks at once. Does that actually protect you? Let's see what happens when bad news hits one company.</p>
+    ${!shocked?`
+      <div class="div-choices">
+        ${assets.map(a=>`<div class="div-chip"><span class="hi-nm">${a} <span class="hi-sec">${assetSector(a)}</span></span><b>${cnt(a)}</b></div>`).join('')}
+        <div class="div-chip fund"><span class="hi-nm">🧺 The whole fund — all ${assets.length} stocks</span><b>${fundCnt}</b></div>
+      </div>
+      <div class="controls"><span class="phase-tag">${chosen}/${invs.length} chose</span>
+        <button class="btn lg" onclick="hostDivShock()">💥 Bad news strikes →</button></div>
+    `:`
+      <div class="div-shock">📉 <b>${shocked}</b> just crashed <b style="color:var(--crash)">−40%</b> — a scandal! The other stocks barely moved.</div>
+      <div class="vote2" style="margin-top:10px">
+        <div class="fundcard" style="border-color:rgba(239,90,76,.45)"><div class="fc-tag" style="color:#ff8e82">😱 All-in on ${shocked}</div><div class="fc-nav num" style="color:var(--crash);font-size:1.9rem">${fmt(base*0.6)}</div><div class="fc-k">−40% · lost ${fmtMoney(base*0.4)}</div></div>
+        <div class="fundcard" style="border-color:rgba(52,211,153,.45)"><div class="fc-tag" style="color:#86f0c4">🧺 Spread across the fund</div><div class="fc-nav num" style="color:var(--grow);font-size:1.9rem">${fmt(Math.round(base*(1+fundMove/100)))}</div><div class="fc-k">${fundMove>=0?'+':''}${fundMove.toFixed(1)}% · only ${fmtMoney(base-base*(1+fundMove/100))} dip</div></div>
+      </div>
+      ${state.reveals.diversify?`<div class="reveal"><div class="acr" style="font-size:1.3rem">Don't put all your eggs in one basket</div><p>The all-in investor lost <b>${fmtMoney(base*0.4)}</b>. The fund investor barely felt it — ${shocked} is just 1 of ${assets.length} holdings, so one crash gets averaged away. You can't know <i>which</i> stock will tank; a fund means you're never all-in on the loser. <b>That's the whole point of a mutual fund.</b></p></div>`:''}
+      <div class="controls">${revealBtn('diversify','Reveal: why the fund held up')}<button class="btn lg" onclick="hostGo('compound')">Next: Compounding →</button></div>
+    `}
+  </div>`;
+}
+function pDiv(c){ const m=me(); if(!m||m.div)return; sendAction({type:'divchoice',choice:c,id:MY_ID}); }
+function pDiversify(p){
+  const d=state.diversify||{}, assets=(state.fund.assets||[]), base=50000;
+  if(d.shocked){
+    const myMove=p.div==='fund'?(assets.reduce((s,a)=>s+d.moves[a],0)/assets.length):(p.div&&d.moves[p.div]!=null?d.moves[p.div]:0);
+    const val=base*(1+myMove/100), ok=p.div==='fund';
+    return `<div class="p-center"><div class="p-status">${ok?'🧺 You spread it out':p.div?('😬 All-in on '+p.div):'You sat this one out'}</div>
+      <div class="pf-card"><div class="pf-val-k">Your ₹50,000 is now</div><div class="pf-val num" style="color:${myMove<0?'var(--crash)':'var(--grow)'}">${fmt(Math.round(val))}</div>
+        <div class="pf-gain ${myMove<0?'down':'up'} num">${myMove>=0?'▲ +':'▼ '}${fmtMoney(Math.abs(base-val))} (${myMove>=0?'+':''}${myMove.toFixed(1)}%)</div></div>
+      <p class="p-sub">${ok?'The fund spread your risk — one crash barely dented you.':p.div?'All your eggs were in one basket. A fund would have softened the blow.':'Watch the big screen.'}</p></div>`;
+  }
+  if(p.div) return `<div class="p-center"><div class="p-status">Locked in: ${p.div==='fund'?'the whole fund 🧺':p.div}</div><p class="p-sub">Watch the big screen…</p></div>`;
+  return `<div class="p-center"><div class="p-status">Where will your ₹50,000 go?</div>
+    <div class="amt-grid">${assets.map(a=>`<button class="amt-btn" onclick="pDiv('${a}')">${a}<span class="sub">${assetSector(a)}</span></button>`).join('')}</div>
+    <button class="btn lg" style="width:100%;margin-left:0" onclick="pDiv('fund')">🧺 Spread across the whole fund</button></div>`;
+}
+
+/* ── Compounding · time is your superpower (mirrors the Wealth Conversation recap) ── */
+const COMP_CHARS=[
+  {age:22,emoji:'👩',name:'Tanya',invested:2280000,corpus:49900000},
+  {age:27,emoji:'👨',name:'Kabir',invested:1980000,corpus:28700000},
+  {age:32,emoji:'👨',name:'Rohan',invested:1680000,corpus:16400000},
+];
+const compChar=age=>COMP_CHARS.find(c=>c.age===age);
+function hostCompRun(){ state.compound={run:true}; state.reveals.compound=false; saveNow(); renderHost(); }
+function hostCompound(){
+  const invs=invList(), run=state.compound&&state.compound.run, maxC=COMP_CHARS[0].corpus;
+  const cnt=a=>invs.filter(p=>p.comp===a).length, chosen=invs.filter(p=>p.comp).length;
+  return `<div class="glass pad">
+    <div class="eyebrow">Compounding · time is your superpower</div>
+    <h2 style="margin:4px 0 2px">Same ₹5,000 a month — but <span style="color:var(--grow)">WHEN</span> you start changes everything.</h2>
+    <p class="muted tiny" style="margin:2px 0">Tanya, Kabir &amp; Rohan each invest ₹5,000/month in the same fund until they turn 60. Who ends up with the most?</p>
+    ${!run?`
+      <div class="div-choices">${COMP_CHARS.map(c=>`<div class="div-chip"><span class="hi-nm">${c.emoji} ${c.name} · starts at ${c.age} <span class="hi-sec">${60-c.age} yrs to grow</span></span><b>${cnt(c.age)}</b></div>`).join('')}</div>
+      <div class="controls"><span class="phase-tag">${chosen}/${invs.length} chose</span><button class="btn lg" onclick="hostCompRun()">⏩ Fast-forward to age 60 →</button></div>
+    `:`
+      <div class="comp-bars">${COMP_CHARS.map(c=>`<div class="comp-row"><div class="comp-lbl">${c.emoji} <b>${c.name}</b> · from ${c.age}<br><span class="muted tiny">put in ${fmtMoney(c.invested)}</span></div><div class="comp-bar"><span style="width:${(c.corpus/maxC*100).toFixed(0)}%"></span></div><div class="comp-val num">${fmtMoney(c.corpus)}</div></div>`).join('')}</div>
+      ${state.reveals.compound?`<div class="reveal"><div class="acr" style="font-size:1.3rem">Time beats timing — and beats amount</div><p>Tanya put in only <b>₹6L more</b> than Rohan — yet ended up with <b style="color:var(--grow)">₹3.35 Cr more</b>, just by starting <b>10 years earlier</b>. The most expensive words in investing are <b>"I'll start later."</b> Time compounds — so does delay.</p></div>`:''}
+      <div class="controls">${revealBtn('compound','Reveal the magic of time')}<button class="btn lg" onclick="goPhase('factsheet')">Next: Read a Factsheet →</button></div>
+    `}
+  </div>`;
+}
+function pComp(a){ const m=me(); if(!m||m.comp)return; sendAction({type:'compstart',age:a,id:MY_ID}); }
+function pCompound(p){
+  const run=state.compound&&state.compound.run;
+  if(run&&p.comp){ const c=compChar(p.comp); if(!c) return '';
+    return `<div class="p-center"><div class="p-status">You started like ${c.name} ${c.emoji} at ${c.age}</div>
+      <div class="pf-card"><div class="pf-val-k">Your money at 60</div><div class="pf-val num" style="color:var(--grow)">${fmt(c.corpus)}</div>
+        <div class="pf-rows"><div class="pf-cell"><div class="v num">${fmtMoney(c.invested)}</div><div class="k">You put in</div></div><div class="pf-cell"><div class="v num" style="color:var(--grow)">${fmtMoney(c.corpus-c.invested)}</div><div class="k">Compounding added</div></div></div></div>
+      <p class="p-sub">${p.comp===22?'Starting earliest = the most money for the least effort. 🚀':'Imagine if you had started at 22…'}</p></div>`;
+  }
+  if(p.comp){ const c=compChar(p.comp); return `<div class="p-center"><div class="p-status">You're ${c?c.name:''} ${c?c.emoji:''}, starting at ${p.comp}</div><p class="p-sub">Watch the big screen…</p></div>`; }
+  return `<div class="p-center"><div class="p-status">Who will you be?</div><p class="p-sub">All three invest ₹5,000/month until age 60</p>
+    <div class="amt-grid">${COMP_CHARS.map(c=>`<button class="amt-btn" onclick="pComp(${c.age})">${c.emoji} ${c.name}<span class="sub">starts at ${c.age} · ${60-c.age} yrs</span></button>`).join('')}</div></div>`;
+}
+
+/* ── Statement · guided tour over a REAL investor's account statement ── */
+const STMT_TOUR=[
+  {k:'name', t:'Account holder', d:'This statement belongs to one investor — a real player from today’s game. Every figure below is theirs.'},
+  {k:'folio', t:'Folio Number', d:'Their unique account number with the fund house — like a bank account number, but for this fund.'},
+  {k:'pan', t:'PAN', d:'The investor’s tax ID, linked to every fund they own — it’s how the fund and the taxman recognise them (shown part-masked for privacy).'},
+  {k:'scheme', t:'Scheme · Plan · Option', d:'The exact fund owned. “Direct Plan” = bought straight from the AMC (no distributor cut). “Growth” = profits stay invested and compound.'},
+  {k:'advisor', t:'Advisor / ARN', d:'“DIRECT” means no distributor and no commission — the low-cost way to invest. A Regular plan would show a broker’s ARN code here.'},
+  {k:'col-txn', t:'Transaction type', d:'Every row is one action — a lump-sum Purchase, or a monthly SIP instalment.'},
+  {k:'col-amt', t:'Amount', d:'The money that went in on that date. A lumpsum is one big row; a SIP is many equal rows.'},
+  {k:'col-nav', t:'NAV / Price', d:'The price of one unit on the transaction date — it changes every day with the market.'},
+  {k:'col-units', t:'Units allotted', d:'Units = Amount ÷ NAV. The cheaper the NAV that month, the MORE units the same money bought — that’s rupee-cost averaging.'},
+  {k:'col-bal', t:'Unit balance', d:'The running total of units after each transaction — it only climbs as you keep investing.'},
+  {k:'cur-val', t:'Market value', d:'Units held × today’s NAV = what the investment is worth right now.'},
+  {k:'gain', t:'The gain', d:'Market value − total invested = the profit (or loss). These are this player’s real numbers from today’s game.'},
+];
+const STMT_MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function stmtDate(i,day){ const d=(''+((day||5))).padStart(2,'0'); return d+'-'+STMT_MON[i%12]+'-2025'; }  // SIP debit date, each month
+function stmtNext(){ state.stmtStep=Math.min((state.stmtStep||0)+1, STMT_TOUR.length-1); saveNow(); renderHost(); }
+function stmtPrev(){ state.stmtStep=Math.max((state.stmtStep||0)-1, 0); saveNow(); renderHost(); }
+function pickStmtInvestor(id){ state.stmtInvestor=id; state.stmtStep=0; saveNow(); renderHost(); }
+function stmtPick(){
+  const invs=invList();
+  let sel=state.stmtInvestor&&state.investors[state.stmtInvestor]?state.investors[state.stmtInvestor]:null;
+  if(!sel) sel=invs.find(p=>p.mode)||invs[0]||null;
+  return sel;
+}
+/* build the real transaction rows for one investor */
+function stmtTxns(p){
+  if(!p) return [];
+  if(p.mode==='lump') return [{lbl:'Launch',txn:'Purchase',amt:p.invested,nav:NAV0,units:p.units}];
+  if(p.mode==='sip') return (p.sipBought||[]).map(b=>({lbl:'Month '+b.m,txn:'SIP',amt:p.sipAmt,nav:b.nav,units:b.units}));
+  return [];
+}
+function hostStatement(){
+  const invs=invList();
+  if(!invs.length) return `<div class="glass pad"><div class="eyebrow">🧾 Read a Statement</div><h2 style="margin:6px 0">No investors yet</h2><p class="muted">Once students have joined and invested, pick one here to read their real statement.</p><div class="controls"><button class="btn dark" onclick="goPhase('withdraw')">← Withdraw</button><div class="spacer"></div><button class="btn lg" onclick="goPhase('report')">Skip →</button></div></div>`;
+  const step=state.stmtStep||0, cur=STMT_TOUR[step], hk=cur.k;
+  const hl=k=>k===hk?'mfs-hl':''; const col=k=>k===hk?'mfs-col':'';
+  const sel=stmtPick();
+  let bal=0; const rows=stmtTxns(sel).map((t,i)=>{ bal+=t.units; return {...t,bal,date:sel.mode==='lump'?'02-Jan-2025':stmtDate(i,sel.sipDate)}; });
+  const curNav=state.nav, totalInv=sel.invested||0, units=sel.units||0, curVal=units*curNav, gain=curVal-totalInv;
+  const fund=(state.fund&&state.fund.name)||'IFM Growth Fund';
+  const tn=state.fund&&state.fund.type?FUND_TYPES[state.fund.type].name:'Mutual Fund';
+  const folio=(sel.id.replace(/[^0-9]/g,'')+'914072').slice(0,8).replace(/(\d{4})(\d{4})/,'$1$2')||'19140728';
+  const money=n=>Number(n).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const picker=`<span style="font-family:Inter;text-transform:none;letter-spacing:0;font-weight:700;color:var(--tx-2);font-size:.82rem">Whose statement?
+    <select onchange="pickStmtInvestor(this.value)" style="background:#0c1d31;color:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 9px;font-weight:800;font-family:Inter;margin-left:4px">
+      ${invs.map(p=>`<option value="${p.id}" ${p.id===sel.id?'selected':''}>${escapeHtml(p.name)}${p.mode?' · '+(p.mode==='sip'?'SIP':'Lumpsum'):' · —'}</option>`).join('')}
+    </select></span>`;
+  return `<div class="host-grid">
+    <div class="glass pad">
+      <div class="eyebrow" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">🧾 Read a Mutual Fund Statement ${picker}</div>
+      ${sel.mode?`<div class="mfs">
+        <div class="mfs-head">
+          <div class="mfs-amc">IFM Mutual Fund<small>Asset Management Ltd · An Investing for Mummies company</small></div>
+          <div class="mfs-ttl"><b>Account Statement</b><span>01-Jan-2025 to 31-Dec-2025</span></div>
+        </div>
+        <div class="mfs-info">
+          <div class="${hl('name')}"><span class="lbl">Name</span><span class="val">${escapeHtml(sel.name.toUpperCase())}</span></div>
+          <div class="${hl('folio')}"><span class="lbl">Folio No.</span><span class="val">${folio} / 21</span></div>
+          <div class="${hl('pan')}"><span class="lbl">PAN</span><span class="val">ABCDE****F</span></div>
+          <div><span class="lbl">KYC</span><span class="val" style="color:#0e7a3e">OK · Verified</span></div>
+          <div><span class="lbl">Registrar</span><span class="val">CAMS</span></div>
+          <div class="${hl('advisor')}"><span class="lbl">Advisor</span><span class="val">DIRECT</span></div>
+        </div>
+        <div class="mfs-scheme ${hl('scheme')}">${escapeHtml(fund)} — Direct Plan · Growth Option<small>ISIN: INF200K01AB7 · Open-ended ${tn} Scheme · Registrar Folio</small></div>
+        <table class="mfs-tbl"><thead><tr>
+          <th>Date</th><th class="${hl('col-txn')}">Transaction</th><th class="${hl('col-amt')}">Amount (₹)</th><th class="${hl('col-nav')}">NAV (₹)</th><th class="${hl('col-units')}">Units</th><th class="${hl('col-bal')}">Unit Balance</th>
+        </tr></thead><tbody>
+          <tr class="open"><td>${rows[0]?rows[0].date:'01-Jan-2025'}</td><td>Opening Balance</td><td>—</td><td>—</td><td>—</td><td>0.000</td></tr>
+          ${rows.map(r=>`<tr><td>${r.date}</td><td class="${col('col-txn')}">${r.txn==='SIP'?'SIP Purchase':'Purchase'}</td><td class="${col('col-amt')}">${money(r.amt)}</td><td class="${col('col-nav')}">${r.nav.toFixed(4)}</td><td class="${col('col-units')}">${r.units.toFixed(3)}</td><td class="${col('col-bal')}">${r.bal.toFixed(3)}</td></tr>`).join('')}
+          <tr class="close"><td>31-Dec-2025</td><td>Closing Balance</td><td>—</td><td>${curNav.toFixed(4)}</td><td>—</td><td>${units.toFixed(3)}</td></tr>
+        </tbody></table>
+        <div class="mfs-foot">
+          <span class="mv ${hl('cur-val')}">Market Value (31-Dec-2025 · NAV ₹${curNav.toFixed(2)}): <b>₹${money(curVal)}</b></span>
+          <span class="${hl('gain')}">Total Invested ₹${money(totalInv)} · Gain: <b style="color:${gain>=0?'#0e7a3e':'#c0392b'}">${gain>=0?'+':'−'}₹${money(Math.abs(gain))}</b></span>
+        </div>
+        <div class="mfs-fine">This is a computer-generated statement and does not require a signature. Mutual fund investments are subject to market risks; read all scheme-related documents carefully. Units are allotted at the NAV of the transaction date after realisation of funds.</div>
+      </div>`:`<p class="muted" style="padding:24px 0">${escapeHtml(sel.name)} didn’t invest this game. Pick another investor above ☝️</p>`}
+    </div>
+    <div class="glass pad">
+      <div class="eyebrow">📖 Guided tour · step ${step+1} of ${STMT_TOUR.length}</div>
+      <div class="tour-step"><div class="tour-t">${cur.t}</div><div class="tour-d">${cur.d}</div></div>
+      <div class="tour-dots">${STMT_TOUR.map((s,i)=>`<span class="${i===step?'on':i<step?'done':''}"></span>`).join('')}</div>
+      <div class="controls">
+        <button class="btn dark" onclick="stmtPrev()" ${step>0?'':'disabled'}>← Back</button>
+        <button class="btn ghost" onclick="goPhase('report')">Skip to Recap ⏭</button>
+        <div class="spacer"></div>
+        ${step<STMT_TOUR.length-1?`<button class="btn lg" onclick="stmtNext()">Next →</button>`:`<button class="btn lg" onclick="goPhase('report')">Next: Recap →</button>`}
+      </div>
+    </div>
+  </div>`;
+}
+function pStatement(p){
+  const step=state.stmtStep||0, cur=STMT_TOUR[step]||STMT_TOUR[0];
+  const sel=stmtPick(), mine=sel&&sel.id===MY_ID;
+  const who=mine?'YOUR statement 📢':(sel?escapeHtml(sel.name)+'’s statement':'a statement');
+  return `<div class="p-center" style="gap:12px"><div style="font-size:1.9rem">🧾</div><div class="p-status" style="font-size:1.2rem">Reading ${who}</div>
+    <div class="pf-card" style="text-align:left"><div class="pf-val-k" style="color:var(--gold)">${cur.t}</div><p style="margin-top:7px;font-weight:600;color:var(--tx);line-height:1.45">${cur.d}</p></div>
+    <p class="p-sub">Follow the highlight on the big screen 👀 · step ${step+1} of ${STMT_TOUR.length}</p></div>`;
+}
+
+/* ── Factsheet · a live multiple-choice class on reading a real fund report ── */
+function fsQuiz(){
+  const f=state.fund||{};
+  const rc=f.type==='equity'?0:f.type==='hybrid'?1:2;   // correct risk index by fund type
+  return [
+    {k:'nav',   q:'The NAV — what does that number tell you?', opts:['The price of ONE unit today','The total money in the whole fund','The yearly fee the fund charges'], correct:0},
+    {k:'aum',   q:'What does AUM stand for?', opts:['Assets Under Management — all the money pooled','Average Units per Member','Annual Upfront Money'], correct:0},
+    {k:'ret',   q:'The return figure on a factsheet is…', opts:['Past growth over a period — never a guarantee','A bonus the fund pays you','Money you owe the fund'], correct:0},
+    {k:'risk',  q:`How risky is this ${f.type?FUND_TYPES[f.type].name:'fund'}?`, opts:['High — lots of ups & downs','Moderate — a balanced mix','Low — steady & safer'], correct:rc},
+    {k:'holds', q:'"Top holdings" on a factsheet are…', opts:['The actual stocks the fund owns','The richest investors','The manager’s salary'], correct:0},
+    {k:'sip',   q:'A SIP lets you…', opts:['Invest a fixed amount every month','Withdraw everything instantly','Remove all risk'], correct:0},
+  ];
+}
+function fsReveal(){ state.fsShow=true; saveNow(); renderHost(); }
+function fsNext(){ const n=fsQuiz().length; state.fsStep=Math.min((state.fsStep||0)+1,n-1); state.fsShow=false; saveNow(); renderHost(); }
+function fsPrev(){ state.fsStep=Math.max((state.fsStep||0)-1,0); state.fsShow=false; saveNow(); renderHost(); }
+function pFsAnswer(k,choice){ const m=me(); if(!m||state.fsShow)return; sendAction({type:'fsanswer',k,choice,id:MY_ID}); }
+function hostFactsheet(){
+  const f=state.fund, aum=AUM(), assets=(f.assets&&f.assets.length)?f.assets:['—'], w=100/assets.length;
+  const risk={equity:'High',debt:'Low',hybrid:'Moderate'}[f.type]||'—';
+  const ret1=(state.nav-NAV0)/NAV0*100;
+  const step=state.fsStep||0, quiz=fsQuiz(), cur=quiz[step], show=state.fsShow, hk=cur.k;
+  const hl=k=>k===hk?'tour-hl':'';
+  const invs=invList(), answered=invs.filter(p=>p.fs&&p.fs[cur.k]!=null).length;
+  const tally=cur.opts.map((o,i)=>invs.filter(p=>p.fs&&p.fs[cur.k]===i).length);
+  return `<div class="host-grid">
+    <div class="glass pad fsheet">
+      <div class="fs-head">
+        <div><div class="eyebrow">Fund Factsheet</div><h2 style="margin:2px 0">${escapeHtml(f.name)}</h2>
+          <div class="muted tiny">${f.type?FUND_TYPES[f.type].name:'Mutual Fund'} · open-ended</div></div>
+        <div class="fs-nav ${hl('nav')}"><div class="num">₹${state.nav.toFixed(2)}</div><div class="k">NAV</div></div>
+      </div>
+      <div class="fs-grid">
+        <div class="fs-cell ${hl('aum')}"><div class="v num">${fmtMoney(aum)}</div><div class="k">AUM</div></div>
+        <div class="fs-cell ${hl('ret')}"><div class="v num" style="color:var(--${ret1>=0?'grow':'crash'})">${ret1>=0?'+':''}${ret1.toFixed(1)}%</div><div class="k">1-yr return</div></div>
+        <div class="fs-cell ${hl('risk')}"><div class="v num">${risk}</div><div class="k">Risk</div></div>
+        <div class="fs-cell ${hl('sip')}"><div class="v num">₹10,000</div><div class="k">Min SIP / mo</div></div>
+      </div>
+      <div class="fs-sec-h ${hl('holds')}" style="margin-top:12px;padding:4px 6px;border-radius:8px">Top holdings — where your money actually is · ${invs.length} investors</div>
+      <div class="fs-holds">${assets.map(a=>`<div class="fs-hold"><span class="hi-nm">${a} <span class="hi-sec">${assetSector(a)}</span></span><b class="num">${w.toFixed(0)}%</b></div>`).join('')}</div>
+    </div>
+    <div class="glass pad">
+      <div class="eyebrow">🎯 Quiz · question ${step+1} of ${quiz.length}</div>
+      <div class="tour-step"><div class="tour-t" style="font-size:1.1rem">${cur.q}</div></div>
+      <div class="div-choices">${cur.opts.map((o,i)=>{
+        const isC=i===cur.correct;
+        const pickers=invs.filter(p=>p.fs&&p.fs[cur.k]===i), shown=pickers.slice(0,7);
+        const st=show?(isC?'border-color:var(--grow);background:rgba(52,211,153,.16)':'opacity:.5'):'';
+        return `<div class="div-chip" style="align-items:center;gap:8px;${st}">
+          <span class="hi-nm" style="flex:1">${String.fromCharCode(65+i)}. ${o}${show&&isC?' <b style="color:var(--grow)">✓ correct</b>':''}</span>
+          <span class="pickers">${shown.map(p=>`<span class="av av-mini" style="background:${p.color}" title="${escapeHtml(p.name)}">${p.av}</span>`).join('')}${pickers.length>7?`<span class="tiny" style="color:var(--tx-2);margin-left:4px">+${pickers.length-7}</span>`:''}${pickers.length?'':'<span class="tiny" style="color:var(--tx-3)">—</span>'}</span></div>`;
+      }).join('')}</div>
+      <div class="controls"><span class="phase-tag">${answered}/${invs.length} answered</span>
+        ${!show?`<button class="btn gold" onclick="fsReveal()">Reveal answer</button>`:''}
+        <div class="spacer"></div>
+        <button class="btn dark" onclick="fsPrev()" ${step>0?'':'disabled'}>←</button>
+        ${step<quiz.length-1?`<button class="btn lg" onclick="fsNext()">Next question →</button>`:`<button class="btn gold lg" onclick="goPhase('report')">Done · Recap →</button>`}
+      </div>
+    </div>
+  </div>`;
+}
+function pFactsheet(p){
+  const step=state.fsStep||0, quiz=fsQuiz(), cur=quiz[step], show=state.fsShow;
+  const my=(p.fs&&p.fs[cur.k]!=null)?p.fs[cur.k]:null;
+  if(show){
+    const right=my===cur.correct;
+    return `<div class="p-center" style="gap:12px"><div style="font-size:2.2rem">${my==null?'🤔':right?'✅':'❌'}</div>
+      <div class="p-status" style="font-size:1.2rem">${my==null?'No answer':right?'Correct! 🎉':'Not quite'}</div>
+      <div class="pf-card" style="text-align:left"><div class="pf-val-k" style="color:var(--gold)">Q${step+1} · ${cur.q}</div>
+        <p style="margin-top:8px;color:var(--grow);font-weight:800">✓ ${cur.opts[cur.correct]}</p>
+        ${my!=null&&!right?`<p style="margin-top:4px;color:var(--tx-2);font-weight:600">You picked: ${cur.opts[my]}</p>`:''}</div>
+      <p class="p-sub">Watch the big screen for the next question 👀</p></div>`;
+  }
+  return `<div class="p-center" style="gap:12px;justify-content:flex-start;padding-top:8px">
+    <div class="p-status" style="font-size:1.15rem">🎯 Question ${step+1} of ${quiz.length}</div>
+    <p class="p-sub" style="font-weight:800;color:var(--tx);font-size:1rem">${cur.q}</p>
+    <div class="amt-grid" style="grid-template-columns:1fr;gap:9px">${cur.opts.map((o,i)=>`<button onclick="pFsAnswer('${cur.k}',${i})" style="text-align:left;background:var(--panel);border:1.5px solid ${my===i?'var(--grow)':'var(--line)'};${my===i?'background:rgba(52,211,153,.12);':''}border-radius:14px;padding:13px 15px;color:#fff;font-family:Inter;font-weight:700;font-size:.95rem">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div>
+    <p class="p-sub">${my!=null?`Locked in ${String.fromCharCode(65+my)} · tap another to change until reveal`:'Tap your answer'}</p></div>`;
+}
+
+/* ── utils ──────────────────────────────────────────── */
+function escapeHtml(s){return (s+'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+/* ── boot ───────────────────────────────────────────── */
+if(isHost) initHost(); else initPlayer();
+</script>
+</body>
+</html>

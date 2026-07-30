@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="bg-e" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#00102a"/>
+      <stop offset="100%" stop-color="#00060f"/>
+    </radialGradient>
+    <filter id="glow-e" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bolt-e" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="clip-e"><circle cx="100" cy="100" r="97"/></clipPath>
+  </defs>
+
+  <circle cx="100" cy="100" r="100" fill="#00060f"/>
+  <circle cx="100" cy="100" r="97" fill="url(#bg-e)"/>
+
+  <!-- Lightning background -->
+  <g clip-path="url(#clip-e)" filter="url(#bolt-e)" opacity="0.25">
+    <polyline points="40,20 32,55 42,50 30,90" stroke="#60a5fa" stroke-width="2" fill="none"/>
+    <polyline points="160,20 168,55 158,50 170,90" stroke="#60a5fa" stroke-width="2" fill="none"/>
+    <polyline points="25,110 38,120 26,130" stroke="#3b82f6" stroke-width="1.5" fill="none"/>
+    <polyline points="175,110 162,120 174,130" stroke="#3b82f6" stroke-width="1.5" fill="none"/>
+  </g>
+
+  <!-- Wings (spread) -->
+  <path d="M100 105 Q60 90 18 115 Q35 95 65 100 Q50 85 28 80 Q55 78 80 98Z" fill="#1e3a5f" clip-path="url(#clip-e)"/>
+  <path d="M100 105 Q140 90 182 115 Q165 95 135 100 Q150 85 172 80 Q145 78 120 98Z" fill="#1e3a5f" clip-path="url(#clip-e)"/>
+  <!-- Wing highlights -->
+  <path d="M100 105 Q65 92 25 108" stroke="#3b82f6" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M100 105 Q135 92 175 108" stroke="#3b82f6" stroke-width="1.5" fill="none" opacity="0.4"/>
+
+  <!-- Body -->
+  <ellipse cx="100" cy="135" rx="28" ry="32" fill="#1e3a8a"/>
+  <ellipse cx="100" cy="130" rx="22" ry="26" fill="#1d4ed8"/>
+  <!-- White chest -->
+  <ellipse cx="100" cy="132" rx="12" ry="16" fill="#dbeafe" opacity="0.25"/>
+
+  <!-- Neck -->
+  <ellipse cx="100" cy="105" rx="22" ry="20" fill="#1d4ed8"/>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="88" rx="34" ry="36" fill="#1e3a8a"/>
+  <ellipse cx="100" cy="86" rx="30" ry="32" fill="#1d4ed8"/>
+  <!-- White head plumage -->
+  <ellipse cx="100" cy="82" rx="24" ry="26" fill="#dbeafe" opacity="0.2"/>
+
+  <!-- Head white feathers -->
+  <ellipse cx="100" cy="80" rx="20" ry="22" fill="#eff6ff" opacity="0.15"/>
+
+  <!-- Fierce brow plates -->
+  <polygon points="72,80 84,72 90,82" fill="#1e3a8a"/>
+  <polygon points="128,80 116,72 110,82" fill="#1e3a8a"/>
+  <path d="M72 80 Q82 73 92 80" stroke="#60a5fa" stroke-width="2.5" fill="none" filter="url(#glow-e)"/>
+  <path d="M128 80 Q118 73 108 80" stroke="#60a5fa" stroke-width="2.5" fill="none" filter="url(#glow-e)"/>
+
+  <!-- Eyes -->
+  <ellipse cx="83" cy="88" rx="11" ry="10" fill="#0a0f1e"/>
+  <ellipse cx="117" cy="88" rx="11" ry="10" fill="#0a0f1e"/>
+  <ellipse cx="83" cy="88" rx="8" ry="7.5" fill="#2563eb" filter="url(#glow-e)"/>
+  <ellipse cx="117" cy="88" rx="8" ry="7.5" fill="#2563eb" filter="url(#glow-e)"/>
+  <ellipse cx="83" cy="88" rx="5" ry="6.5" fill="#0a0f1e"/>
+  <ellipse cx="117" cy="88" rx="5" ry="6.5" fill="#0a0f1e"/>
+  <circle cx="81" cy="86" r="1.5" fill="white" opacity="0.9"/>
+  <circle cx="115" cy="86" r="1.5" fill="white" opacity="0.9"/>
+
+  <!-- Beak -->
+  <polygon points="96,98 104,98 100,112" fill="#f59e0b"/>
+  <polygon points="97,98 103,98 100,104" fill="#fbbf24"/>
+  <line x1="96" y1="102" x2="104" y2="102" stroke="#92400e" stroke-width="1.5"/>
+
+  <!-- Crest/crown feathers -->
+  <polygon points="100,54 96,68 100,64 104,68" fill="#3b82f6" filter="url(#glow-e)"/>
+  <polygon points="88,58 85,72 88,68 91,72" fill="#1d4ed8" opacity="0.8"/>
+  <polygon points="112,58 115,72 112,68 109,72" fill="#1d4ed8" opacity="0.8"/>
+
+  <!-- Lightning from eyes -->
+  <g filter="url(#bolt-e)" opacity="0.6">
+    <polyline points="94,88 88,88 82,94" stroke="#93c5fd" stroke-width="1.5" fill="none"/>
+    <polyline points="106,88 112,88 118,94" stroke="#93c5fd" stroke-width="1.5" fill="none"/>
+  </g>
+
+  <!-- Chest circuit lines -->
+  <g stroke="#3b82f6" stroke-width="1" opacity="0.35" fill="none">
+    <path d="M90 120 L90 132 L96 132 L96 138"/>
+    <path d="M110 120 L110 132 L104 132 L104 138"/>
+    <line x1="86" y1="128" x2="94" y2="128"/>
+    <line x1="106" y1="128" x2="114" y2="128"/>
+  </g>
+
+  <!-- Crown ring -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#1d4ed8" stroke-width="3" filter="url(#glow-e)" opacity="0.95"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>
+
+  <!-- Corner ticks -->
+  <g stroke="#1d4ed8" stroke-width="1.5" opacity="0.6">
+    <line x1="20" y1="55" x2="28" y2="55"/><line x1="20" y1="55" x2="20" y2="63"/>
+    <line x1="180" y1="55" x2="172" y2="55"/><line x1="180" y1="55" x2="180" y2="63"/>
+    <line x1="20" y1="145" x2="28" y2="145"/><line x1="20" y1="145" x2="20" y2="137"/>
+    <line x1="180" y1="145" x2="172" y2="145"/><line x1="180" y1="145" x2="180" y2="137"/>
+  </g>
+</svg>

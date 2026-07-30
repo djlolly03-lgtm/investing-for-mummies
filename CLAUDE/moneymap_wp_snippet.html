@@ -1,0 +1,707 @@
+<!-- Money Map Budget Tracker — Investing for Mummies -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+    html,body{background:#0d0d14!important;font-family:'Space Grotesk',sans-serif;color:#fff;-webkit-font-smoothing:antialiased;padding-bottom:40px}
+
+    /* ── BALANCE HERO ── */
+    .hero{
+      background:linear-gradient(135deg,#1a0533 0%,#2d1b69 50%,#1a0533 100%);
+      padding:16px 12px 14px;
+      position:relative;overflow:hidden;
+    }
+    .hero::after{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(108,92,231,0.2);pointer-events:none}
+    .hero-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2px}
+    .hero-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45)}
+    .hero-month{font-size:10px;font-weight:600;color:rgba(255,255,255,0.35)}
+    .hero-amount{font-size:3.8rem;font-weight:700;letter-spacing:-3px;line-height:1;color:#fff;margin-bottom:4px;transition:color .25s}
+    .hero-amount.negative{color:#ff3d57}
+    .vibe{font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:12px}
+    .bar-track{height:6px;background:rgba(255,255,255,0.12);border-radius:20px;overflow:hidden;margin-bottom:12px}
+    .bar-fill{height:100%;border-radius:20px;background:#00e676;transition:width .4s ease,background .4s;width:0%}
+    .bar-fill.warn{background:#ffe600}
+    .bar-fill.danger{background:#ff3d57}
+    .stats{display:flex;gap:6px}
+    .stat{flex:1;background:rgba(255,255,255,0.07);border-radius:10px;padding:8px 4px;text-align:center;border:1px solid rgba(255,255,255,0.1)}
+    .stat-lbl{font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.4);display:block}
+    .stat-val{font-size:13px;font-weight:700;color:#fff;display:block;margin-top:1px}
+    .bal-card{} /* alias kept for JS */
+
+    @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+    .broke{animation:shake .4s ease}
+    @keyframes cap-flash{0%{box-shadow:inset 0 0 0 3px #ff3d57}100%{box-shadow:none}}
+    .cap-hit{animation:cap-flash .5s ease forwards}
+
+    /* ── INCOME TILES ── */
+    .bc-inc-allowance{background:linear-gradient(145deg,#f7971e,#ffd200)}
+    .bc-inc-parents  {background:linear-gradient(145deg,#f953c6,#b91d73)}
+    .bc-inc-job      {background:linear-gradient(145deg,#4776e6,#8e54e9)}
+    /* allowance is light — dark text */
+    .bc-inc-allowance .cat-tile-name{color:rgba(0,0,0,0.75)}
+    .bc-inc-allowance .cat-tile-inp{color:#1a1a1a;background:rgba(0,0,0,0.12)}
+    .bc-inc-allowance .cat-tile-inp::placeholder{color:rgba(0,0,0,0.3)}
+
+    /* ── SECTION LABEL ── */
+    .slabel{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:14px 8px 6px;padding-left:2px}
+
+    /* ── HORIZONTAL CATEGORY SCROLL ── */
+    .cat-scroll{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:8px;
+      padding:0 8px 6px;
+    }
+
+    .cat-tile{
+      border-radius:16px;padding:10px 8px 10px;
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+    }
+    .cat-tile-emoji{font-size:38px;line-height:1;margin-bottom:5px;display:block}
+    .cat-tile-name{font-size:11px;font-weight:700;margin-bottom:7px;line-height:1.2;color:rgba(255,255,255,0.9)}
+    .cat-tile-inp{
+      width:100%;border:none;
+      background:rgba(0,0,0,0.22);border-radius:8px;
+      padding:7px 4px;font-family:'Space Grotesk',sans-serif;
+      font-size:14px;font-weight:700;color:#fff;
+      text-align:center;outline:none;-webkit-appearance:none;
+    }
+    .cat-tile-inp::placeholder{color:rgba(255,255,255,0.28)}
+    .cat-tile-inp:focus{background:rgba(0,0,0,0.38)}
+
+    /* tile colour themes */
+    .bc-savings  {background:linear-gradient(145deg,#004d2a,#00b894)}
+    .bc-food     {background:linear-gradient(145deg,#ff3d57,#ff6b35)}
+    .bc-drip     {background:linear-gradient(145deg,#6c5ce7,#a29bfe)}
+    .bc-gaming   {background:linear-gradient(145deg,#0984e3,#00cec9)}
+    .bc-fun      {background:linear-gradient(145deg,#e84393,#fd79a8)}
+    .bc-transport{background:linear-gradient(145deg,#f9ca24,#f0932b)}
+    .bc-study    {background:linear-gradient(145deg,#00b894,#55efc4)}
+    .bc-random    {background:linear-gradient(145deg,#636e72,#b2bec3)}
+    .bc-concerts  {background:linear-gradient(145deg,#8e2de2,#f64f59)}
+
+    /* light tiles: dark text */
+    .bc-transport .cat-tile-name,.bc-study .cat-tile-name{color:rgba(0,0,0,0.75)}
+    .bc-transport .cat-tile-inp,.bc-study .cat-tile-inp{color:#1a1a1a;background:rgba(0,0,0,0.12)}
+    .bc-transport .cat-tile-inp::placeholder,.bc-study .cat-tile-inp::placeholder{color:rgba(0,0,0,0.3)}
+
+    /* ── SUMMARY ── */
+    .summary-wrap{margin:8px 8px 0;background:#161622;border-radius:18px;border:1px solid rgba(255,255,255,0.08);padding:14px}
+    .empty-hint{text-align:center;padding:16px 0 4px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.3)}
+
+    /* ── PROPORTIONAL BAR VIZ ── */
+    .viz-row{display:flex;height:120px;border-radius:12px;overflow:hidden;gap:2px;}
+    .viz-seg{
+      display:flex;align-items:center;justify-content:center;
+      position:relative;overflow:hidden;min-width:0;
+      transition:flex .45s ease;
+    }
+    .viz-emoji{font-size:72px;line-height:1;pointer-events:none;user-select:none;z-index:1}
+    .viz-amt{
+      position:absolute;right:0;top:0;bottom:0;width:26px;
+      display:flex;align-items:center;justify-content:center;
+      writing-mode:vertical-rl;
+      font-size:10px;font-weight:700;letter-spacing:.5px;
+      color:rgba(255,255,255,0.92);white-space:nowrap;
+      background:rgba(0,0,0,0.2);
+    }
+    .viz-seg.dark-txt .viz-amt{color:rgba(0,0,0,0.65);background:rgba(0,0,0,0.1)}
+
+    /* insight cards */
+    .insights{display:flex;flex-direction:column;gap:8px}
+    .ins-card{border-radius:12px;padding:11px 13px;background:rgba(255,255,255,0.04);border-left:4px solid var(--accent-c,#6c5ce7);border:1px solid rgba(255,255,255,0.07);border-left:4px solid var(--accent-c,#6c5ce7)}
+    .ins-top{display:flex;align-items:center;gap:6px;margin-bottom:3px}
+    .ins-icon{font-size:16px;flex-shrink:0}
+    .ins-label{font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+    .ins-headline{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px}
+    .ins-body{font-size:11px;font-weight:500;color:rgba(255,255,255,0.55);line-height:1.6}
+    .ins-body strong{color:#fff;font-weight:700}
+
+    /* ── ACTIONS ── */
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 8px 0}
+    .act-btn{
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      padding:14px 8px;border-radius:14px;border:none;cursor:pointer;
+      font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;
+      transition:transform .1s,filter .1s;-webkit-appearance:none;
+    }
+    .act-btn:active{transform:scale(.95);filter:brightness(.9)}
+    .act-wa{background:#25d366;color:#fff}
+    .act-dl{background:#fff;color:#0d0d14}
+    .act-btn svg{flex-shrink:0}
+
+    .reset{
+      display:block;width:calc(100% - 16px);margin:8px 8px 0;padding:12px;
+      background:transparent;border:1.5px dashed rgba(255,255,255,0.12);border-radius:14px;
+      font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;
+      color:rgba(255,255,255,0.25);cursor:pointer;
+    }
+    .reset:active{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5)}
+
+    /* ── INLINE NAME BAR ── */
+    .name-bar{
+      display:none;align-items:center;gap:8px;
+      margin:8px 8px 0;padding:10px 12px;
+      background:#161622;border-radius:14px;
+      border:1.5px solid rgba(108,92,231,0.5);
+    }
+    .name-bar.open{display:flex;animation:slideDown .18s ease}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+    .name-bar-lbl{font-size:13px;font-weight:700;color:rgba(255,255,255,0.45);white-space:nowrap;flex-shrink:0}
+    .name-bar-inp{
+      flex:1;min-width:0;border:none;
+      background:rgba(255,255,255,0.09);border-radius:10px;
+      padding:9px 12px;font-family:'Space Grotesk',sans-serif;
+      font-size:14px;font-weight:700;color:#fff;outline:none;-webkit-appearance:none;
+    }
+    .name-bar-inp:focus{background:rgba(108,92,231,0.25)}
+    .name-bar-inp::placeholder{color:rgba(255,255,255,0.22);font-weight:500}
+    .name-bar-go{
+      flex-shrink:0;border:none;border-radius:10px;
+      background:linear-gradient(135deg,#6c5ce7,#e84393);
+      padding:9px 16px;font-family:'Space Grotesk',sans-serif;
+      font-size:13px;font-weight:700;color:#fff;cursor:pointer;white-space:nowrap;
+    }
+    .name-bar-go:active{filter:brightness(.88)}
+  
+    body{background:#0d0d14!important;}
+    .wp-block-post-title, h1.entry-title, .page-title{display:none!important;}
+    .wp-site-blocks, .is-layout-constrained, .entry-content, .wp-block-group{background:#0d0d14!important;padding:0!important;max-width:100%!important;}
+</style>
+<div id="moneymap-wrapper">
+<!-- BALANCE HERO -->
+  <div class="hero" id="bal-card">
+    <div class="hero-top">
+      <div class="hero-label">Remaining</div>
+      <div class="hero-month" id="month-lbl"></div>
+    </div>
+    <div class="hero-amount bal-amount" id="bal-amt">₹0</div>
+    <div class="vibe" id="vibe">Add your money below 👇</div>
+    <div class="bar-track"><div class="bar-fill" id="bar-fill"></div></div>
+    <div class="stats">
+      <div class="stat"><span class="stat-lbl">Income</span><span class="stat-val" id="s-income">₹0</span></div>
+      <div class="stat"><span class="stat-lbl">Spent</span><span class="stat-val" id="s-spent">₹0</span></div>
+      <div class="stat"><span class="stat-lbl">Saved</span><span class="stat-val" id="s-saved">₹0</span></div>
+    </div>
+  </div>
+
+  <!-- INCOME -->
+  <div class="slabel">💸 Money in</div>
+  <div class="cat-scroll">
+    <div class="cat-tile bc-inc-allowance">
+      <span class="cat-tile-emoji">💵</span>
+      <span class="cat-tile-name">Allowance</span>
+      <input class="cat-tile-inp" id="inc-allowance" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+    <div class="cat-tile bc-inc-parents">
+      <span class="cat-tile-emoji">🎁</span>
+      <span class="cat-tile-name">Parents gave extra</span>
+      <input class="cat-tile-inp" id="inc-parents" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+    <div class="cat-tile bc-inc-job">
+      <span class="cat-tile-emoji">💼</span>
+      <span class="cat-tile-name">Part-time job</span>
+      <input class="cat-tile-inp" id="inc-job" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+  </div>
+
+  <!-- CATEGORY SCROLL ROW -->
+  <div class="slabel">💰 Save & Spend</div>
+  <div class="cat-scroll">
+
+    <div class="cat-tile bc-savings">
+      <span class="cat-tile-emoji">🫙</span>
+      <span class="cat-tile-name">Savings Jar</span>
+      <input class="cat-tile-inp" id="cat-savings" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+
+    <div class="cat-tile bc-food">
+      <span class="cat-tile-emoji">🍕</span>
+      <span class="cat-tile-name">Food & Drinks</span>
+      <input class="cat-tile-inp" id="cat-food" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+
+    <div class="cat-tile bc-drip">
+      <span class="cat-tile-emoji">👕</span>
+      <span class="cat-tile-name">Drip & Clothes</span>
+      <input class="cat-tile-inp" id="cat-drip" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+
+    <div class="cat-tile bc-gaming">
+      <span class="cat-tile-emoji">🎮</span>
+      <span class="cat-tile-name">Gaming & Apps</span>
+      <input class="cat-tile-inp" id="cat-gaming" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+
+    <div class="cat-tile bc-fun">
+      <span class="cat-tile-emoji">🎬</span>
+      <span class="cat-tile-name">Hangouts & Fun</span>
+      <input class="cat-tile-inp" id="cat-fun" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+
+    <div class="cat-tile bc-transport">
+      <span class="cat-tile-emoji">🚌</span>
+      <span class="cat-tile-name">Getting Around</span>
+      <input class="cat-tile-inp" id="cat-transport" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+
+    <div class="cat-tile bc-study">
+      <span class="cat-tile-emoji">📚</span>
+      <span class="cat-tile-name">Study Stuff</span>
+      <input class="cat-tile-inp" id="cat-study" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+
+    <div class="cat-tile bc-random">
+      <span class="cat-tile-emoji">🛍️</span>
+      <span class="cat-tile-name">Random Stuff</span>
+      <input class="cat-tile-inp" id="cat-random" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+
+    <div class="cat-tile bc-concerts">
+      <span class="cat-tile-emoji">🎤</span>
+      <span class="cat-tile-name">Concerts</span>
+      <input class="cat-tile-inp" id="cat-concerts" type="text" inputmode="decimal" placeholder="₹0" oninput="recalculate()">
+    </div>
+
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="slabel">📊 Where it all went</div>
+  <div class="summary-wrap">
+    <div class="viz-row" id="viz-row"></div>
+    <div id="empty-hint" class="empty-hint">Fill in your expenses above 👆</div>
+    <div class="insights" id="insights"></div>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="actions">
+    <button class="act-btn act-wa" onclick="shareWA()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.528 5.847L.057 23.535a.75.75 0 0 0 .916.932l5.824-1.527A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.703 9.703 0 0 1-4.92-1.337l-.353-.21-3.655.958.975-3.563-.23-.366A9.712 9.712 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+      Share with friends
+    </button>
+    <button class="act-btn act-dl" onclick="downloadTracker()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Save my budget
+    </button>
+  </div>
+
+  <!-- INLINE NAME BAR -->
+  <div class="name-bar" id="name-bar">
+    <span class="name-bar-lbl">✍️ Your name:</span>
+    <input class="name-bar-inp" id="name-bar-inp" type="text" placeholder="e.g. Priya" maxlength="40" autocomplete="given-name">
+    <button class="name-bar-go" onclick="doSavePDF()">Save PDF →</button>
+  </div>
+
+  <button class="reset" onclick="resetAll()">🔄 Reset everything</button>
+
+  <script>
+    const CATS = [
+      { id:'savings',   emoji:'🫙', name:'Savings Jar',    color:'#00b894', isSavings:true  },
+      { id:'food',      emoji:'🍕', name:'Food & Drinks',  color:'#ff3d57', isSavings:false },
+      { id:'drip',      emoji:'👕', name:'Drip & Clothes', color:'#6c5ce7', isSavings:false },
+      { id:'gaming',    emoji:'🎮', name:'Gaming & Apps',  color:'#0984e3', isSavings:false },
+      { id:'fun',       emoji:'🎬', name:'Hangouts & Fun', color:'#e84393', isSavings:false },
+      { id:'transport', emoji:'🚌', name:'Getting Around', color:'#f9ca24', isSavings:false },
+      { id:'study',     emoji:'📚', name:'Study Stuff',    color:'#00b894', isSavings:false },
+      { id:'random',    emoji:'🛍️', name:'Random Stuff',   color:'#636e72', isSavings:false },
+      { id:'concerts',  emoji:'🎤', name:'Concerts',        color:'#e040fb', isSavings:false },
+    ];
+
+    function parseVal(v){return parseFloat(String(v).replace(/[^0-9.]/g,''))||0}
+
+    function fmt(n){
+      const neg=n<0,abs=Math.round(Math.abs(n)),s=String(abs);
+      let r='';
+      if(s.length<=3){r=s}else{
+        r=s.slice(-3);let rest=s.slice(0,-3);
+        while(rest.length>2){r=rest.slice(-2)+','+r;rest=rest.slice(0,-2)}
+        if(rest)r=rest+','+r;
+      }
+      return(neg?'−₹':'₹')+r;
+    }
+
+    function getIncome(){let t=0;document.querySelectorAll('#inc-rows .inc-input').forEach(i=>{t+=parseVal(i.value)});return t}
+
+    function step(id,delta){
+      const el=document.getElementById('cat-'+id);
+      const next=Math.max(0,parseVal(el.value)+delta);
+      el.value=next===0?'':next;
+      recalculate();
+    }
+
+function recalculate(){
+      let income=0;
+      ['inc-allowance','inc-parents','inc-job'].forEach(id=>{income+=parseVal(document.getElementById(id).value)});
+
+      const savings=parseVal(document.getElementById('cat-savings').value);
+      const budget=Math.max(0,income-savings);
+      let spent=0,saved=savings;
+      const vals={savings};
+      let anyCapped=false;
+
+      CATS.filter(c=>!c.isSavings).forEach(cat=>{
+        const el=document.getElementById('cat-'+cat.id);
+        const raw=parseVal(el.value);
+        const maxHere=Math.max(0,budget-spent);
+        const v=Math.min(raw,maxHere);
+        if(v!==raw){el.value=v===0?'':String(v);anyCapped=true}
+        vals[cat.id]=v;spent+=v;
+      });
+
+      if(anyCapped){
+        const c=document.getElementById('bal-card');
+        c.classList.remove('cap-hit');void c.offsetWidth;c.classList.add('cap-hit');
+        setTimeout(()=>c.classList.remove('cap-hit'),500);
+      }
+
+      const remaining=income-spent-saved;
+      const pct=income>0?Math.max(0,(remaining/income)*100):0;
+
+      const amtEl=document.getElementById('bal-amt');
+      amtEl.textContent=fmt(remaining);
+      amtEl.classList.toggle('negative',remaining<0);
+
+      const card=document.getElementById('bal-card');
+      if(remaining<0&&!card.classList.contains('broke')){
+        card.classList.add('broke');setTimeout(()=>card.classList.remove('broke'),500);
+      }
+
+      const vibeEl=document.getElementById('vibe');
+      if(income===0)             vibeEl.textContent='Add your money below 👇';
+      else if(remaining<0)       vibeEl.textContent='BROKE 🚨 — overspent!';
+      else if(pct>=100)          vibeEl.textContent="Haven't spent anything yet 👀";
+      else if(pct>=80)           vibeEl.textContent='Looking solid 💪';
+      else if(pct>=60)           vibeEl.textContent='Spending a bit 😌';
+      else if(pct>=40)           vibeEl.textContent='Halfway gone 😬';
+      else if(pct>=20)           vibeEl.textContent='Getting tight ⚠️';
+      else                       vibeEl.textContent='Almost broke 💀';
+
+      const fill=document.getElementById('bar-fill');
+      fill.style.width=Math.min(100,pct)+'%';
+      fill.className='bar-fill'+(pct>=60?'':pct>=30?' warn':' danger');
+
+      document.getElementById('s-income').textContent=fmt(income);
+      document.getElementById('s-spent').textContent=fmt(spent);
+      document.getElementById('s-saved').textContent=fmt(saved);
+
+      const vizRow=document.getElementById('viz-row');
+      const hint=document.getElementById('empty-hint');
+      vizRow.innerHTML='';
+      const totalOut=spent+saved;
+      const lightColors=new Set(['#f9ca24','#00b894']);
+
+      if(totalOut>0){
+        hint.style.display='none';
+        CATS.forEach(cat=>{
+          const v=vals[cat.id];if(!v)return;
+          const share=v/totalOut;
+          const isNarrow=share<0.08;
+          const seg=document.createElement('div');
+          seg.className='viz-seg'+(lightColors.has(cat.color)?' dark-txt':'');
+          seg.style.cssText='flex:'+share+';background:'+cat.color+';';
+          seg.innerHTML='<span class="viz-emoji">'+cat.emoji+'</span>'+
+            (isNarrow?'':'<span class="viz-amt">'+fmt(v)+'</span>');
+          vizRow.appendChild(seg);
+        });
+      }else{hint.style.display=''}
+
+      const insightsEl=document.getElementById('insights');
+      insightsEl.innerHTML='';
+      if(income===0)return;
+
+      const savePct=Math.round((saved/income)*100);
+      const spendPct=Math.round((spent/income)*100);
+      const leftPct=Math.round((remaining/income)*100);
+      let topCat=null,topVal=0;
+      CATS.filter(c=>!c.isSavings).forEach(cat=>{if(vals[cat.id]>topVal){topVal=vals[cat.id];topCat=cat}});
+      const topPct=income>0&&topVal>0?Math.round((topVal/income)*100):0;
+
+      function insCard(icon,label,headline,body,color){
+        const d=document.createElement('div');
+        d.className='ins-card';d.style.setProperty('--accent-c',color);
+        d.innerHTML='<div class="ins-top"><span class="ins-icon">'+icon+'</span><span class="ins-label">'+label+'</span></div>'+
+          '<div class="ins-headline">'+headline+'</div><div class="ins-body">'+body+'</div>';
+        insightsEl.appendChild(d);
+      }
+
+      insCard('📊','Your money split',
+        spendPct+'% spent · '+savePct+'% saved · '+Math.max(0,leftPct)+'% left',
+        'You spent <strong>'+spendPct+'%</strong> of your income, saved <strong>'+savePct+'%</strong>, and have <strong>'+Math.max(0,leftPct)+'%</strong> left. The <strong>50/30/20 rule</strong> says 50% needs, 30% wants, 20% saved. Even hitting <strong>10–15%</strong> saved consistently is a great start.',
+        '#6c5ce7');
+
+      if(topCat&&topVal>0){
+        const tips={
+          food:'Food adds up fast — daily chai, boba, Zomato runs quietly drain your wallet. Track just 1 week honestly and you\'ll be surprised.',
+          drip:'Clothes lose value the moment you buy them. Try the 48-hour rule — still want it after 2 days? Then buy. Forgot about it? Saved.',
+          gaming:'In-app purchases are designed to feel tiny. Add up your monthly gaming spend — the total usually shocks people.',
+          fun:'Fun is important! But cheap options exist — parks, house hangouts, free events. Swap one expensive outing a month and watch the savings grow.',
+          transport:'Check if monthly passes beat daily fares for you. Sharing rides also cuts costs quickly.',
+          study:'Spending on education pays back for years. Just make sure you\'re actually using what you buy.',
+          random:'"Random stuff" is almost always impulse buys. Pause 30 days before buying. Most of the time you forget why you wanted it.',
+          concerts:'Live music hits different — but tickets add up fast. Set a concerts budget at the start of the year so you don\'t have to choose between your fave artist and eating.',
+        };
+        insCard(topCat.emoji,'Your biggest spend',
+          topCat.name+' — '+fmt(topVal)+' ('+topPct+'% of income)',
+          tips[topCat.id]||'Every rupee you understand is a rupee you control.',
+          topCat.color);
+      }
+
+      if(saved>0){
+        const yearly=saved*12;
+        let body='Save <strong>'+fmt(saved)+'</strong>/month = <strong>'+fmt(yearly)+'</strong> in a year. ';
+        if(savePct>=20)body+='Saving '+savePct+'% is seriously impressive. Most adults can\'t hit 10%. You\'re ahead of the game.';
+        else if(savePct>=10)body+='Solid start at '+savePct+'%. Nudge it up 5% next month — future you will thank you.';
+        else body+='Even small savings beat zero. The habit matters more than the amount right now.';
+        insCard('🫙','12-month projection','You\'d have '+fmt(yearly)+' by next year',body,'#00b894');
+      }else{
+        insCard('🫙','Savings tip','You haven\'t saved anything yet',
+          'Save <strong>before</strong> you spend, not after. Try putting <strong>₹'+Math.round(income*0.1)+'</strong> (10%) in the jar first, then spend what\'s left. This is called "pay yourself first" — the most powerful money habit you can build.',
+          '#00b894');
+      }
+
+      reportHeight();
+    }
+
+    function shareWA(){
+      const url='https://www.investingformummies.com/moneymap/';
+      const text=encodeURIComponent('Hey! 👀 Check out this free teen budget tracker — track your money, savings & spending 💸🫙\n'+url);
+      window.open('https://wa.me/?text='+text,'_blank');
+    }
+
+    function downloadTracker(){
+      const bar=document.getElementById('name-bar');
+      bar.classList.toggle('open');
+      if(bar.classList.contains('open')){
+        setTimeout(()=>document.getElementById('name-bar-inp').focus(),50);
+      }
+    }
+    function doSavePDF(){
+      // Direct button click → window.open always allowed, no popup blocker
+      const name=document.getElementById('name-bar-inp').value.trim()||'Student';
+      const win=window.open('','_blank');
+      document.getElementById('name-bar').classList.remove('open');
+      document.getElementById('name-bar-inp').value='';
+      generateReport(name,win);
+    }
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Enter'&&document.getElementById('name-bar').classList.contains('open'))doSavePDF();
+    });
+
+    function generateReport(studentName,win){
+      // Collect state
+      let income=0;
+      const incomeSources=[];
+      [{id:'inc-allowance',emoji:'💵',label:'Allowance'},
+       {id:'inc-parents',emoji:'🎁',label:'Parents gave extra'},
+       {id:'inc-job',emoji:'💼',label:'Part-time job'}].forEach(s=>{
+        const v=parseVal(document.getElementById(s.id).value);
+        if(v>0){incomeSources.push({emoji:s.emoji,label:s.label,v});income+=v;}
+      });
+
+      const savings=parseVal(document.getElementById('cat-savings').value);
+      let spent=0;
+      const spendRows=[];
+      const budget=Math.max(0,income-savings);
+      let runningSpent=0;
+      CATS.filter(c=>!c.isSavings).forEach(cat=>{
+        const raw=parseVal(document.getElementById('cat-'+cat.id).value);
+        const v=Math.min(raw,Math.max(0,budget-runningSpent));
+        runningSpent+=v;spent+=v;
+        if(v>0)spendRows.push({id:cat.id,emoji:cat.emoji,name:cat.name,color:cat.color,v});
+      });
+
+      const remaining=income-spent-savings;
+      const savePct=income>0?Math.round((savings/income)*100):0;
+      const spendPct=income>0?Math.round((spent/income)*100):0;
+      const month=document.getElementById('month-lbl').textContent;
+
+      // 12-month projection
+      const yearly=savings*12;
+
+      // Motivational line
+      let heroMsg='',heroEmoji='';
+      if(income===0){heroMsg='No income entered yet.';heroEmoji='👀';}
+      else if(savePct>=20){heroMsg='You saved '+savePct+'% of your income. Most adults never manage this. You\'re already winning.';heroEmoji='🔥';}
+      else if(savePct>=10){heroMsg='You saved '+savePct+'% this month — a solid habit is forming. Keep nudging it up.';heroEmoji='💪';}
+      else if(savings>0){heroMsg='Every rupee saved is future you, sorted. Even small amounts compound over time.';heroEmoji='🫙';}
+      else{heroMsg='Try saving even 10% next month — that\'s ₹'+Math.round(income*0.1)+'. Future you will be grateful.';heroEmoji='✨';}
+
+      // ── GRADIENTS matching tracker CSS ──
+      const GRADS={
+        savings:'linear-gradient(145deg,#004d2a,#00b894)',
+        food:'linear-gradient(145deg,#ff3d57,#ff6b35)',
+        drip:'linear-gradient(145deg,#6c5ce7,#a29bfe)',
+        gaming:'linear-gradient(145deg,#0984e3,#00cec9)',
+        fun:'linear-gradient(145deg,#e84393,#fd79a8)',
+        transport:'linear-gradient(145deg,#f9ca24,#f0932b)',
+        study:'linear-gradient(145deg,#00b894,#55efc4)',
+        random:'linear-gradient(145deg,#636e72,#b2bec3)',
+        concerts:'linear-gradient(145deg,#8e2de2,#f64f59)',
+      };
+      const LIGHT_IDS=new Set(['transport','study']);
+      const LIGHT_COLORS=new Set(['#f9ca24','#00b894']);
+      const totalOut=spent+savings;
+
+      // ── PROPORTIONAL VIZ BAR ──
+      let vizHtml='';
+      if(totalOut>0){
+        const vizCats=[];
+        if(savings>0)vizCats.push({id:'savings',emoji:'🫙',color:'#00b894',v:savings});
+        spendRows.forEach(r=>vizCats.push(r));
+        vizCats.forEach(r=>{
+          const share=r.v/totalOut;
+          const isNarrow=share<0.08;
+          const amtStrip=isNarrow?'':`<div style="position:absolute;right:0;top:0;bottom:0;width:26px;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;font-size:10px;font-weight:700;color:${LIGHT_COLORS.has(r.color)?'rgba(0,0,0,0.65)':'rgba(255,255,255,0.92)'};background:rgba(0,0,0,0.2);white-space:nowrap;">${fmt(r.v)}</div>`;
+          vizHtml+=`<div style="flex:${share};background:${r.color};position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-width:0;">`
+            +`<span style="font-size:60px;line-height:1;z-index:1;user-select:none;">${r.emoji}</span>`
+            +amtStrip+`</div>`;
+        });
+      }
+
+      // ── SPEND CATEGORY TILES (savings excluded — has own row) ──
+      let catTilesHtml='';
+      spendRows.forEach(r=>{
+        const dark=LIGHT_IDS.has(r.id);
+        catTilesHtml+=`<div style="border-radius:14px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;text-align:center;background:${GRADS[r.id]||r.color};">
+          <span style="font-size:36px;line-height:1;margin-bottom:5px;">${r.emoji}</span>
+          <span style="font-size:10px;font-weight:700;color:${dark?'rgba(0,0,0,0.75)':'rgba(255,255,255,0.9)'};margin-bottom:6px;line-height:1.2;">${r.name}</span>
+          <span style="font-size:14px;font-weight:700;color:${dark?'#1a1a1a':'#fff'};">${fmt(r.v)}</span>
+        </div>`;
+      });
+
+      // ── SAVINGS JAR CARD (standalone, highlighted if zero) ──
+      const savingsCardHtml = savings>0
+        ? `<div style="border-radius:14px;padding:14px 16px;background:${GRADS.savings};display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+            <span style="font-size:52px;line-height:1;">🫙</span>
+            <div>
+              <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px;">Savings Jar</div>
+              <div style="font-size:28px;font-weight:700;letter-spacing:-1px;color:#fff;">${fmt(savings)}</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-top:2px;">${savePct}% of income saved 🔥</div>
+            </div>
+          </div>`
+        : `<div style="border-radius:14px;padding:14px 16px;background:#161622;border:2px dashed rgba(255,61,87,0.6);display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+            <span style="font-size:52px;line-height:1;">🫙</span>
+            <div>
+              <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#ff3d57;margin-bottom:4px;">Savings Jar</div>
+              <div style="font-size:24px;font-weight:700;color:#ff3d57;">Empty 🚨</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;">Try saving 10% next month — even small amounts count!</div>
+            </div>
+          </div>`;
+
+      // ── INCOME TILES (3-col) ──
+      const INC_STYLES=[
+        {grad:'linear-gradient(145deg,#f7971e,#ffd200)',dark:true},
+        {grad:'linear-gradient(145deg,#f953c6,#b91d73)',dark:false},
+        {grad:'linear-gradient(145deg,#4776e6,#8e54e9)',dark:false},
+      ];
+      let incomeTilesHtml='';
+      incomeSources.forEach((s,i)=>{
+        const st=INC_STYLES[i]||INC_STYLES[2];
+        incomeTilesHtml+=`<div style="border-radius:14px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;text-align:center;background:${st.grad};">
+          <span style="font-size:36px;line-height:1;margin-bottom:5px;">${s.emoji}</span>
+          <span style="font-size:10px;font-weight:700;color:${st.dark?'rgba(0,0,0,0.75)':'rgba(255,255,255,0.9)'};margin-bottom:6px;line-height:1.2;">${s.label}</span>
+          <span style="font-size:14px;font-weight:700;color:${st.dark?'#1a1a1a':'#fff'};">${fmt(s.v)}</span>
+        </div>`;
+      });
+      if(!incomeTilesHtml)incomeTilesHtml='<div style="grid-column:span 3;color:rgba(255,255,255,0.3);font-size:13px;text-align:center;padding:10px 0;">No income entered</div>';
+
+      const reportHtml=`<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>${studentName} Budget Tracker - Investing for Mummies</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#0d0d14!important;font-family:'Space Grotesk',sans-serif;color:#fff;-webkit-font-smoothing:antialiased}
+  .no-print{display:block}
+  @media print{
+    .no-print{display:none!important}
+    @page{margin:6mm;size:A4}
+    html{zoom:0.72}
+  }
+
+    body{background:#0d0d14!important;}
+    .wp-block-post-title, h1.entry-title, .page-title{display:none!important;}
+    .wp-site-blocks, .is-layout-constrained, .entry-content, .wp-block-group{background:#0d0d14!important;padding:0!important;max-width:100%!important;}
+</style>
+</head>
+<body>
+<div style="max-width:480px;margin:0 auto;padding:16px 12px 32px;">
+
+  <!-- SAVE BUTTON -->
+  <div class="no-print" style="text-align:center;margin-bottom:14px;">
+    <button onclick="window.print()" style="background:linear-gradient(135deg,#6c5ce7,#e84393);color:#fff;border:none;border-radius:14px;padding:13px 32px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;">📄 Save as PDF</button>
+    <p style="font-size:11px;color:rgba(255,255,255,0.3);margin-top:6px;">iOS: Share → Print &nbsp;·&nbsp; Android: Menu → Print</p>
+  </div>
+
+  <!-- HEADER with logo -->
+  <div style="background:linear-gradient(135deg,#1a0533 0%,#2d1b69 50%,#1a0533 100%);border-radius:20px;padding:18px 20px;margin-bottom:10px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:rgba(108,92,231,0.2);"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);">Investing for Mummies</div>
+      <img src="https://ifm-deploy.vercel.app/ifm-round.png" style="width:44px;height:44px;border-radius:50%;flex-shrink:0;" alt="IFM">
+    </div>
+    <div style="font-size:26px;font-weight:700;letter-spacing:-1px;margin-bottom:2px;">${studentName}'s Money Map 💸</div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.45);">${month}</div>
+  </div>
+
+  <!-- INCOME / SPENT / SAVED BOXES -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px;">
+    <div style="background:linear-gradient(145deg,#1a1a3e,#2d2d6e);border-radius:14px;padding:14px 10px;text-align:center;border:1px solid rgba(255,255,255,0.1);">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;">💸 Allowance</div>
+      <div style="font-size:22px;font-weight:700;letter-spacing:-1px;color:#fff;">${fmt(income)}</div>
+    </div>
+    <div style="background:linear-gradient(145deg,#3d1a1a,#6e2d2d);border-radius:14px;padding:14px 10px;text-align:center;border:1px solid rgba(255,61,87,0.25);">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,61,87,0.7);margin-bottom:6px;">💸 Spent</div>
+      <div style="font-size:22px;font-weight:700;letter-spacing:-1px;color:#ff3d57;">${fmt(spent)}</div>
+    </div>
+    <div style="background:linear-gradient(145deg,#004d2a,#00b894);border-radius:14px;padding:14px 10px;text-align:center;border:1px solid rgba(0,184,148,0.3);">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:6px;">🫙 Saved</div>
+      <div style="font-size:22px;font-weight:700;letter-spacing:-1px;color:#fff;">${fmt(savings)}</div>
+    </div>
+  </div>
+
+  <!-- 💸 MONEY IN -->
+  <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:10px 2px 5px;">💸 Money in</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px;">${incomeTilesHtml}</div>
+
+  <!-- 🫙 SAVINGS JAR -->
+  <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:10px 2px 5px;">🫙 Savings Jar</div>
+  ${savingsCardHtml}
+
+  <!-- 💰 SPENDING -->
+  ${catTilesHtml?`<div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:10px 2px 5px;">💰 Spending</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px;">${catTilesHtml}</div>`:''}
+
+  <!-- 12-MONTH PROJECTION -->
+  ${yearly>0?`<div style="background:linear-gradient(135deg,#1a0533,#2d1b69);border-radius:14px;padding:14px 16px;margin-bottom:10px;border:1px solid rgba(108,92,231,0.3);display:flex;align-items:center;gap:14px;">
+    <span style="font-size:36px;line-height:1;">🚀</span>
+    <div>
+      <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:4px;">If I keep this up...</div>
+      <div style="font-size:22px;font-weight:700;letter-spacing:-1px;">${fmt(yearly)} in 12 months</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.45);">${fmt(savings)}/month × 12 — future you says thanks 🙏</div>
+    </div>
+  </div>`:''}
+
+  <!-- MOTIVATIONAL -->
+  <div style="background:#161622;border-radius:14px;padding:16px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;gap:14px;">
+    <span style="font-size:44px;line-height:1;flex-shrink:0;">${heroEmoji}</span>
+    <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.5;">${heroMsg}</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06);">
+    <div>
+      <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);">Investing for Mummies</div>
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.5);">investingformummies.com</div>
+    </div>
+    <img src="https://ifm-deploy.vercel.app/ifm-round.png" style="width:36px;height:36px;border-radius:50%;opacity:0.7;" alt="IFM">
+  </div>
+
+</div>
+<script>window.onload=function(){window.print();}</script>
+</div>

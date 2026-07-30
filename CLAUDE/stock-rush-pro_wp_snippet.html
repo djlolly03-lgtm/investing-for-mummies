@@ -1,0 +1,63 @@
+<!-- Stock Rush Pro — Investing for Mummies -->
+<style>
+body{background:#0d0720!important;}
+.wp-block-post-title, h1.entry-title, .page-title{display:none!important;}
+.wp-site-blocks, .is-layout-constrained, .entry-content, .wp-block-group{background:#0d0720!important;padding:0!important;max-width:100%!important;}
+footer.wp-block-template-part{display:none!important;}
+/* Hide the floating "Chat with us" (Kiwi) widget while the game is on screen */
+#kiwi-big-iframe-wrapper{display:none!important;}
+/* Force header to scroll — override theme sticky JS */
+header, header.wp-block-template-part, #masthead, .site-header,
+[class*="sticky"], [class*="fixed"], [id*="sticky"], [id*="fixed"] {
+  position:relative!important;
+  top:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  will-change:auto!important;
+}
+html,body{margin:0!important;padding:0!important;}
+#game-wrap{width:100%;background:#0d0720;}
+#game-wrap iframe{width:100%;height:100vh;display:block;border:none;}
+</style>
+<div id="game-wrap">
+  <iframe id="game-iframe"
+    src="https://ifm-deploy.vercel.app/stock-rush-pro/"
+    title="Stock Rush Pro — Full Market Experience"
+    allowfullscreen loading="eager">
+  </iframe>
+</div>
+<script>
+(function(){
+  var iframe = document.getElementById("game-iframe");
+
+  // Un-stick the header — override any theme JS that re-applies sticky/fixed
+  function unstickHeader(){
+    var hdr = document.querySelector("header.wp-block-template-part") ||
+              document.querySelector("#masthead") ||
+              document.querySelector(".site-header");
+    if(!hdr) return;
+    hdr.style.setProperty("position","relative","important");
+    hdr.style.setProperty("top","auto","important");
+    hdr.style.setProperty("transform","none","important");
+    return hdr;
+  }
+  var hdr = unstickHeader();
+  // Watch for the theme trying to re-fix it
+  if(hdr){
+    new MutationObserver(unstickHeader).observe(hdr, {attributes:true, attributeFilter:["style","class"]});
+  }
+
+  // Scroll past the header so the game fills the full screen
+  function scrollToGame(){
+    if(iframe) iframe.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  window.addEventListener("load", function(){ unstickHeader(); setTimeout(scrollToGame, 500); });
+  if(document.readyState === "complete"){ unstickHeader(); setTimeout(scrollToGame, 500); }
+
+  // Listen for round-change from the game iframe
+  window.addEventListener("message", function(e){
+    if(e.data && e.data.type === "stock-rush-round"){ scrollToGame(); }
+  });
+})();
+</script>

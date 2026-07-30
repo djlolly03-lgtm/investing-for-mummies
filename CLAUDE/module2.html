@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Module 2 — 3 Bucket Strategy</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --g1:#0a4a5a;--g2:#0e6a7a;--g3:#16a0b0;--g4:#4adee8;
+  --navy:#1a3a5c;--ink:#1a3a5c;--teal:#2a9d8f;--cream:#f5fafa;--white:#fff;
+  --mint:#bde9e4;--mint-lt:#e0f3f0;--muted:#5a7d8a;
+  --warn:#f59e0b;--danger:#e74c3c;--gold:#c9a84c;
+  --m1:#0a4a5a;--m2:#0e6a7a;--m3:#16a0b0;
+}
+html,body{font-size:15px;height:auto;overflow-y:visible;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);padding-bottom:48px;}
+.hidden{display:none!important;}
+
+/* HEADER */
+.hdr{background:linear-gradient(135deg,var(--g1),var(--g2));padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.2);}
+.hdr-logo{font-family:'Lora',serif;color:#fff;font-size:0.88rem;font-weight:700;line-height:1.2;}
+.hdr-logo span{display:block;font-size:0.6rem;color:rgba(255,255,255,0.65);font-family:'Nunito',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+.hdr-right{display:flex;align-items:center;gap:10px;}
+.coins-badge{background:rgba(255,255,255,0.15);border-radius:20px;padding:4px 10px;font-size:0.72rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:4px;}
+.back-btn{background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.3);border-radius:10px;padding:5px 12px;color:#fff;font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:800;cursor:pointer;transition:all .2s;}
+.back-btn:hover{background:rgba(255,255,255,0.2);}
+
+/* MAP SCREEN */
+#s-map{padding:16px;}
+.map-hero{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:16px;padding:18px 20px 18px 160px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden;}
+.map-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,0.08) 0%,transparent 60%);pointer-events:none;}
+.map-tag{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.2);border-radius:10px;padding:2px 10px;display:inline-block;margin-bottom:8px;}
+.map-hero h1{font-family:'Lora',serif;font-size:1.35rem;line-height:1.25;margin-bottom:6px;}
+.map-hero p{font-size:0.8rem;color:rgba(255,255,255,0.85);line-height:1.6;max-width:340px;}
+.hero-logo-wide{position:absolute;top:50%;left:12px;transform:translateY(-50%);height:62px;width:auto;max-width:140px;object-fit:contain;border-radius:8px;z-index:2;}
+@media(max-width:540px){.hero-logo-wide{height:44px;max-width:96px;left:8px;}.map-hero{padding-left:112px!important;}}
+.map-stats{display:flex;gap:12px;margin-top:14px;}
+.map-stat{background:rgba(255,255,255,0.12);border-radius:10px;padding:7px 12px;text-align:center;}
+.map-stat-val{font-size:1rem;font-weight:900;color:#fff;}
+.map-stat-lbl{font-size:0.55rem;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.5px;}
+.overall-prog{background:rgba(255,255,255,0.15);border-radius:6px;height:6px;margin-top:14px;overflow:hidden;}
+.overall-prog-fill{height:100%;background:linear-gradient(90deg,var(--g4),var(--g3));border-radius:6px;transition:width .6s ease;}
+.sec-title{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin:18px 0 10px;display:flex;align-items:center;gap:6px;}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--mint);margin-left:4px;}
+
+/* LESSON CARDS */
+.lesson-card{border-radius:14px;padding:16px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:transform .15s,box-shadow .15s,border-color .2s;position:relative;overflow:hidden;display:flex;align-items:center;gap:12px;}
+.lesson-card.unlocked{background:var(--white);box-shadow:0 2px 12px rgba(26,58,92,0.06);}
+.lesson-card.unlocked:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,58,92,0.12);}
+.lesson-card.locked{background:#f0f0f0;cursor:not-allowed;}
+.lesson-card.done{border-color:var(--g3)!important;}
+.lc-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+.lc-body{flex:1;}
+.lc-num{font-size:0.55rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.lc-name{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.lc-meta{font-size:0.65rem;color:var(--muted);}
+.lc-status{font-size:1rem;flex-shrink:0;}
+.lc-prog{height:3px;background:#e8f0f8;border-radius:2px;margin-top:8px;overflow:hidden;}
+.lc-prog-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--g3),var(--teal));}
+.lc-tag{position:absolute;top:8px;right:8px;font-size:0.52rem;font-weight:900;text-transform:uppercase;letter-spacing:0.8px;padding:2px 7px;border-radius:8px;}
+
+/* LESSON SCREEN */
+#s-lesson{min-height:100vh;}
+.lesson-hdr{padding:12px 16px 10px;background:linear-gradient(135deg,var(--g1),var(--g2));}
+.lesson-title{font-family:'Lora',serif;color:#fff;font-size:0.95rem;font-weight:700;margin-bottom:10px;}
+.step-dots{display:flex;gap:4px;}
+.step-dot{flex:1;height:4px;border-radius:3px;background:rgba(255,255,255,0.2);transition:background .3s;}
+.step-dot.done{background:#fff;}
+.step-dot.active{background:rgba(255,255,255,0.7);}
+
+/* SLIDES */
+.slide{padding:16px;animation:slideIn .3s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.slide-tag{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--g3);margin-bottom:8px;}
+.slide-icon{font-size:2.4rem;margin-bottom:10px;display:block;line-height:1;}
+.slide-title{font-family:'Lora',serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:10px;line-height:1.35;}
+.slide-body{font-size:0.82rem;line-height:1.8;color:var(--ink);}
+.slide-body p{margin-bottom:10px;}
+.insight{background:linear-gradient(135deg,#e0f6fa,#c8eef5);border-left:4px solid var(--g3);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#0a3a44;}
+.insight strong{color:var(--g1);}
+.warn-box{background:linear-gradient(135deg,#fff8e6,#ffefc0);border-left:4px solid var(--warn);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#7a4a00;}
+.danger-box{background:linear-gradient(135deg,#fce8e8,#f8d0d0);border-left:4px solid var(--danger);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#7a1a1a;}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;}
+.stat-box{background:#f0f4fa;border-radius:12px;padding:12px;text-align:center;}
+.stat-box.g{background:linear-gradient(135deg,#e0f6fa,#c8eef5);}
+.stat-val{font-family:'Lora',serif;font-size:1.3rem;font-weight:700;color:var(--navy);}
+.stat-lbl{font-size:0.6rem;color:var(--muted);margin-top:3px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+
+/* NEXT BUTTON */
+.btn-next{display:block;width:100%;padding:13px;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:800;cursor:pointer;margin-top:18px;transition:all .2s;box-shadow:0 4px 16px rgba(26,58,92,0.2);}
+.btn-next:hover{opacity:0.9;transform:translateY(-1px);}
+.btn-next:disabled{opacity:0.3;cursor:not-allowed;transform:none;}
+
+/* BUCKET SORTER */
+.bucket-items-wrap{margin-bottom:12px;}
+.bucket-item-chip{background:var(--white);border-radius:12px;padding:10px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(26,58,92,0.06);cursor:pointer;border:2px solid transparent;transition:all .2s;}
+.bucket-item-chip.selected{border-color:var(--g3);background:var(--mint-lt);}
+.bucket-item-chip.placed{opacity:0.55;cursor:default;}
+.bic-icon{font-size:1.2rem;flex-shrink:0;}
+.bic-name{flex:1;font-weight:700;font-size:0.8rem;color:var(--navy);}
+.bic-btns{display:flex;gap:5px;margin-top:8px;}
+.bic-btn{flex:1;padding:6px 4px;border-radius:8px;border:none;font-family:'Nunito',sans-serif;font-size:0.65rem;font-weight:800;cursor:pointer;transition:all .15s;}
+.bic-btn.e{background:#e0f3f0;color:#0a4a5a;}
+.bic-btn.s{background:#fff8e6;color:#7a4a00;}
+.bic-btn.g{background:#f0eafa;color:#4a1a7a;}
+.bucket-zones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;}
+.bucket-zone{border-radius:14px;padding:10px 8px;min-height:70px;border:2px dashed;text-align:center;transition:all .2s;}
+.bucket-zone.e{border-color:var(--g3);background:#e0f6fa;}
+.bucket-zone.s{border-color:var(--warn);background:#fff8e6;}
+.bucket-zone.g{border-color:#9a4adf;background:#f0eafa;}
+.bz-title{font-weight:900;font-size:0.65rem;margin-bottom:3px;}
+.bucket-zone.e .bz-title{color:#0a4a5a;}
+.bucket-zone.s .bz-title{color:#7a4a00;}
+.bucket-zone.g .bz-title{color:#4a1a7a;}
+.bz-count{font-size:0.6rem;color:var(--muted);}
+.bucket-result{border-radius:14px;padding:14px;margin-top:10px;display:none;text-align:center;}
+.bucket-result.great{background:linear-gradient(135deg,#e0f6fa,#c8eef5);}
+
+/* EF CALCULATOR */
+.ef-calc{background:var(--white);border-radius:16px;padding:16px;box-shadow:0 2px 12px rgba(26,58,92,0.07);}
+.ef-inp-wrap{display:flex;align-items:center;border:2px solid var(--g3);border-radius:12px;padding:0 12px;margin:8px 0 16px;background:#f0fafc;}
+.ef-inp-pre{font-size:1rem;font-weight:800;color:var(--g3);margin-right:6px;}
+.ef-inp{flex:1;border:none;background:transparent;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);padding:10px 0;outline:none;}
+.ef-targets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.ef-target{border-radius:12px;padding:12px;text-align:center;}
+.ef-target.t3{background:linear-gradient(135deg,#fff8e6,#fdefc8);}
+.ef-target.t6{background:linear-gradient(135deg,#e0f6fa,#c8eef5);}
+.ef-t-val{font-family:'Lora',serif;font-size:1.1rem;font-weight:700;color:var(--navy);}
+.ef-t-lbl{font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px;color:var(--muted);}
+.ef-prog-wrap{margin:10px 0;}
+.ef-prog-bar{height:10px;border-radius:6px;background:#e0e8f0;overflow:hidden;}
+.ef-prog-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--g3),var(--g4));transition:width .6s ease;}
+.ef-prog-lbl{font-size:0.68rem;color:var(--muted);margin-top:4px;font-weight:700;}
+
+/* MATCHING GAME */
+.match-instructions{font-size:0.75rem;color:var(--muted);margin-bottom:12px;line-height:1.5;}
+.match-items{margin-bottom:14px;}
+.match-item{background:var(--white);border-radius:12px;padding:10px 12px;margin-bottom:8px;box-shadow:0 2px 8px rgba(26,58,92,0.06);cursor:pointer;border:2px solid transparent;transition:all .2s;}
+.match-item.selected{border-color:var(--g3);background:var(--mint-lt);}
+.match-item.correct{border-color:#22c55e;background:linear-gradient(135deg,#e0f6fa,#c8eef5);}
+.match-item.wrong{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+.mi-name{font-weight:800;font-size:0.82rem;color:var(--navy);}
+.mi-desc{font-size:0.68rem;color:var(--muted);margin-top:3px;}
+.match-options{display:flex;flex-direction:column;gap:7px;margin-top:10px;}
+.match-opt{background:#f0f4fa;border-radius:10px;padding:9px 12px;cursor:pointer;font-size:0.76rem;font-weight:700;color:var(--navy);border:2px solid transparent;transition:all .2s;}
+.match-opt:hover{border-color:var(--g3);background:var(--mint-lt);}
+.match-opt.sel-opt{border-color:var(--g3);background:var(--mint-lt);}
+
+/* RULE OF 72 */
+.r72-calc{background:var(--white);border-radius:16px;padding:16px;box-shadow:0 2px 12px rgba(26,58,92,0.07);margin-bottom:14px;}
+.r72-inp-wrap{display:flex;align-items:center;border:2px solid var(--g3);border-radius:12px;padding:0 12px;margin:8px 0 16px;background:#f0fafc;}
+.r72-inp{flex:1;border:none;background:transparent;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);padding:10px 0;outline:none;}
+.r72-suffix{font-size:0.85rem;font-weight:700;color:var(--muted);}
+.r72-result{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:14px;padding:14px;text-align:center;color:#fff;margin-bottom:14px;}
+.r72-years{font-family:'Lora',serif;font-size:2.4rem;font-weight:700;line-height:1;}
+.r72-lbl{font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.7);}
+.r72-timeline{display:flex;gap:6px;margin-top:14px;overflow-x:auto;padding-bottom:6px;}
+.r72-marker{min-width:52px;text-align:center;}
+.r72-dot{width:36px;height:36px;border-radius:50%;margin:0 auto 5px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;}
+.r72-yr{font-size:0.55rem;color:var(--muted);font-weight:700;}
+
+/* TRUE/FALSE MYTH STYLE */
+.tf-stack{position:relative;height:260px;margin:12px 0;}
+.tf-card{position:absolute;inset:0;background:var(--white);border-radius:14px;padding:0;box-shadow:0 4px 20px rgba(26,58,92,0.1);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .35s cubic-bezier(0.34,1.56,0.64,1),opacity .3s;overflow:hidden;}
+.tf-card.back1{transform:translateY(10px) scale(0.96);z-index:1;}
+.tf-card.back2{transform:translateY(20px) scale(0.92);z-index:0;}
+.tf-card.front{z-index:3;}
+.tf-card.fly-left{transform:translateX(-140%) rotate(-15deg);opacity:0;transition:transform .4s ease,opacity .3s;}
+.tf-card.fly-right{transform:translateX(140%) rotate(15deg);opacity:0;transition:transform .4s ease,opacity .3s;}
+.tf-card-top{width:100%;padding:14px 20px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.tf-card-icon{font-size:2rem;line-height:1;}
+.tf-card-tag{font-family:'Nunito',sans-serif;font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:#fff;border-radius:20px;padding:3px 11px;}
+.tf-q{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);line-height:1.55;padding:10px 18px 4px;flex:1;}
+.tf-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;}
+.tf-btn{padding:12px 8px;border-radius:12px;border:none;font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:900;cursor:pointer;transition:all .15s;box-shadow:0 3px 10px rgba(0,0,0,0.12);}
+.tf-btn.false{background:linear-gradient(135deg,#e74c3c,#c0392b);color:#fff;}
+.tf-btn.true-btn{background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;}
+.tf-progress{display:flex;gap:6px;margin-bottom:10px;justify-content:center;}
+.tf-pip{width:10px;height:10px;border-radius:50%;background:#e0e8f0;transition:all .3s;}
+.tf-pip.correct{background:var(--g3);}
+.tf-pip.wrong{background:var(--danger);}
+.tf-pip.active{background:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,0.3);}
+
+/* MODAL */
+.myth-modal-overlay{position:fixed;inset:0;height:100vh;background:rgba(10,30,50,0.65);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto;animation:fadeIn .2s ease;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.myth-modal{background:#fff;border-radius:16px;max-width:400px;width:100%;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);overflow:hidden;animation:popIn .25s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes popIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
+.myth-modal-hdr{padding:20px 22px 14px;text-align:center;}
+.myth-modal-hdr.correct{background:linear-gradient(135deg,#e0f6fa,#c8eef5);}
+.myth-modal-hdr.wrong{background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+.myth-modal-emoji{font-size:2.8rem;line-height:1;margin-bottom:6px;}
+.myth-modal-verdict{font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900;margin-bottom:2px;}
+.myth-modal-verdict.correct{color:#0a4a5a;}
+.myth-modal-verdict.wrong{color:#b91c1c;}
+.myth-modal-body{padding:16px 22px 20px;}
+.myth-modal-label{font-family:'Nunito',sans-serif;font-size:0.62rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px;}
+.myth-modal-explain{font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.7;color:var(--ink);font-weight:600;}
+.myth-modal-btn{display:block;width:100%;margin-top:16px;padding:13px;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:900;cursor:pointer;transition:opacity .15s;box-shadow:0 4px 16px rgba(26,58,92,0.2);}
+.myth-modal-btn:hover{opacity:0.9;}
+
+/* HEALTH CHECK / PILLAR */
+.health-meter{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:16px;padding:16px;margin-bottom:14px;text-align:center;color:#fff;}
+.health-score{font-family:'Lora',serif;font-size:2.4rem;font-weight:700;line-height:1;}
+.health-lbl{font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-top:4px;color:rgba(255,255,255,0.7);}
+.health-bar{height:8px;background:rgba(255,255,255,0.2);border-radius:6px;margin:10px 0 4px;overflow:hidden;}
+.health-bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--g4),var(--g3));transition:width .6s ease;}
+.health-grade{font-size:0.78rem;font-weight:800;color:rgba(255,255,255,0.85);}
+.pillar-card{background:var(--white);border-radius:14px;padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:12px;box-shadow:0 1px 8px rgba(26,58,92,0.06);cursor:pointer;transition:all .2s;border:2px solid transparent;}
+.pillar-card.checked{border-color:var(--g3);background:linear-gradient(135deg,#e0f6fa,#c8eef5);}
+.pillar-card.unchecked{border-color:#e74c3c;background:linear-gradient(135deg,#fff5f5,#fce8e8);}
+.pillar-toggle{width:28px;height:28px;border-radius:8px;border:2px solid #d0dce8;display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0;transition:all .2s;}
+.pillar-card.checked .pillar-toggle{background:var(--g3);border-color:var(--g3);color:#fff;}
+.pillar-card.unchecked .pillar-toggle{background:#e74c3c;border-color:#e74c3c;color:#fff;}
+.pillar-info{flex:1;}
+.pillar-name{font-weight:800;font-size:0.82rem;color:var(--navy);}
+.pillar-desc{font-size:0.68rem;color:var(--muted);margin-top:2px;line-height:1.4;}
+
+/* BOSS / SCENARIO */
+.scenario-wrap{margin:0 0 16px;}
+.scenario-card-outer{background:var(--white);border-radius:18px;box-shadow:0 4px 20px rgba(26,58,92,0.1);overflow:hidden;margin-bottom:14px;}
+.sc-header{padding:14px 16px 10px;background:linear-gradient(135deg,var(--g1),var(--g2));}
+.sc-round{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:4px;}
+.sc-name{font-family:'Lora',serif;color:#fff;font-size:0.95rem;font-weight:700;}
+.sc-body{padding:14px 16px;}
+.sc-story{font-size:0.8rem;line-height:1.7;color:var(--navy);margin-bottom:14px;}
+.sc-q{font-weight:800;font-size:0.8rem;color:var(--navy);margin-bottom:10px;}
+.sc-choices{display:flex;flex-direction:column;gap:8px;}
+.sc-choice{background:#f0f4fa;border-radius:12px;padding:10px 12px;cursor:pointer;border:2px solid transparent;transition:all .2s;font-size:0.78rem;font-weight:700;color:var(--navy);display:flex;align-items:flex-start;gap:8px;}
+.sc-choice:hover{border-color:var(--g3);background:var(--mint-lt);}
+.sc-choice.correct-choice{border-color:var(--g3);background:linear-gradient(135deg,#e0f6fa,#c8eef5);}
+.sc-choice.wrong-choice{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+.sc-choice-letter{font-size:0.7rem;font-weight:900;width:20px;height:20px;border-radius:6px;background:rgba(26,58,92,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.sc-consequence{border-radius:12px;padding:12px;margin-top:10px;font-size:0.76rem;line-height:1.6;display:none;}
+.sc-consequence.good{background:linear-gradient(135deg,#e0f6fa,#c8eef5);border-left:4px solid var(--g3);color:#0a3a44;}
+.sc-consequence.bad{background:linear-gradient(135deg,#fce8e8,#f8d0d0);border-left:4px solid var(--danger);color:#7a1a1a;}
+.sc-consequence.ok{background:linear-gradient(135deg,#fff8e6,#fdefc8);border-left:4px solid var(--warn);color:#7a4a00;}
+
+/* COMPLETION */
+.completion-card{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:20px;padding:24px 20px;text-align:center;color:#fff;margin:16px;}
+.comp-emoji{font-size:3rem;margin-bottom:10px;}
+.comp-title{font-family:'Lora',serif;font-size:1.25rem;font-weight:700;margin-bottom:6px;}
+.comp-sub{font-size:0.78rem;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:16px;}
+.comp-stars{font-size:1.4rem;letter-spacing:4px;margin-bottom:14px;}
+.coins-earned{background:rgba(255,255,255,0.15);border-radius:12px;padding:10px 20px;display:inline-block;font-size:0.85rem;font-weight:800;margin-bottom:14px;}
+
+@media(max-width:360px){
+  .bucket-zones{grid-template-columns:1fr;}
+  .stat-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img src="/IFM round logo for watermark.png" style="height:44px;width:auto;flex-shrink:0;" alt="IFM">
+    <div class="hdr-logo">Investing for Mummies<span>Module 2 — 3 Bucket Strategy</span></div>
+  </div>
+  <div class="hdr-right">
+    <div class="coins-badge">🪙 <span id="coinDisplay">0</span></div>
+    <button class="back-btn hidden" id="backBtn" onclick="showMap()">← Map</button>
+  </div>
+</div>
+
+<!-- SCREEN: MAP -->
+<div id="s-map">
+  <div style="padding:16px;">
+    <div class="map-hero">
+      <img src="/IFM logo white background.png" class="hero-logo-wide" alt="IFM">
+      <div class="map-tag">Section 2 · Protection & Strategy</div>
+      <h1>The 3 Bucket Strategy 🪣</h1>
+      <p>Protect, Stabilise & Grow your wealth. Master the 3-bucket framework and build an unshakeable financial structure.</p>
+      <div class="map-stats">
+        <div class="map-stat"><div class="map-stat-val" id="mapDone">0</div><div class="map-stat-lbl">Done</div></div>
+        <div class="map-stat"><div class="map-stat-val">6</div><div class="map-stat-lbl">Lessons</div></div>
+        <div class="map-stat"><div class="map-stat-val">~45</div><div class="map-stat-lbl">Minutes</div></div>
+      </div>
+      <div class="overall-prog"><div class="overall-prog-fill" id="overallFill" style="width:0%"></div></div>
+    </div>
+
+    <div class="sec-title">📚 Lessons</div>
+
+    <div class="lesson-card unlocked" id="lcard-0" onclick="startLesson(0)">
+      <div class="lc-icon" style="background:#e0f6fa;">🪣</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#0a4a5a;">Lesson 1</div>
+        <div class="lc-name">The 3 Bucket Framework</div>
+        <div class="lc-meta">8 items · Sort into buckets</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-0" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-0">▶</div>
+      <div class="lc-tag" style="background:#e0f6fa;color:#0a4a5a;">Sort</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-1" onclick="startLesson(1)">
+      <div class="lc-icon" style="background:#e0f6fa;">🏥</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#0a4a5a;">Lesson 2</div>
+        <div class="lc-name">Emergency Bucket Deep Dive</div>
+        <div class="lc-meta">Calculator · Target range</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-1" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-1">🔒</div>
+      <div class="lc-tag" style="background:#e0f6fa;color:#0a4a5a;">Calc</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-2" onclick="startLesson(2)">
+      <div class="lc-icon" style="background:#fff8e6;">📊</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#7a4a00;">Lesson 3</div>
+        <div class="lc-name">Stability Bucket</div>
+        <div class="lc-meta">6 cards · Matching game</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-2" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-2">🔒</div>
+      <div class="lc-tag" style="background:#fff8e6;color:#7a4a00;">Match</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-3" onclick="startLesson(3)">
+      <div class="lc-icon" style="background:#f0eafa;">🌱</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#4a1a7a;">Lesson 4</div>
+        <div class="lc-name">Growth Bucket & Compounding</div>
+        <div class="lc-meta">Rule of 72 calculator</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-3" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-3">🔒</div>
+      <div class="lc-tag" style="background:#f0eafa;color:#4a1a7a;">Calc</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-4" onclick="startLesson(4)">
+      <div class="lc-icon" style="background:#fce8e8;">🛡️</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#c0392b;">Lesson 5</div>
+        <div class="lc-name">Insurance: Your Safety Net</div>
+        <div class="lc-meta">5 statements · True or false</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-4" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-4">🔒</div>
+      <div class="lc-tag" style="background:#fce8e8;color:#c0392b;">T/F</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-5" onclick="startLesson(5)">
+      <div class="lc-icon" style="background:#e0f6fa;">📋</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#0a4a5a;">Lesson 6</div>
+        <div class="lc-name">Your Protection Checklist</div>
+        <div class="lc-meta">6 pillars · Self-assessment</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-5" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-5">🔒</div>
+      <div class="lc-tag" style="background:#e0f6fa;color:#0a4a5a;">Check</div>
+    </div>
+
+    <div class="sec-title" style="margin-top:22px;">🎯 Boss Challenge</div>
+
+    <div class="lesson-card locked" id="lcard-boss" onclick="startLesson('boss')">
+      <div class="lc-icon" style="background:linear-gradient(135deg,var(--g1),var(--g2));">⚔️</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:var(--g1);">Boss Level</div>
+        <div class="lc-name" style="color:var(--g1);">Priya's Crossroads</div>
+        <div class="lc-meta">3 real scenarios · Make the right call</div>
+      </div>
+      <div class="lc-status" id="lstat-boss">🔒</div>
+      <div class="lc-tag" style="background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;">Boss</div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN: LESSON -->
+<div id="s-lesson" class="hidden">
+  <div class="lesson-hdr" id="lessonHdr">
+    <div class="lesson-title" id="lessonTitle"></div>
+    <div class="step-dots" id="stepDots"></div>
+  </div>
+  <div id="lessonContent"></div>
+</div>
+
+<script>
+// STATE
+var state={coins:0,completed:{},progress:{}};
+(function(){try{var s=JSON.parse(localStorage.getItem('ifm_m2')||'{}');if(s.coins)state.coins=s.coins;if(s.completed)state.completed=s.completed;if(s.progress)state.progress=s.progress;}catch(e){}})();
+function save(){try{localStorage.setItem('ifm_m2',JSON.stringify(state));}catch(e){}}
+function addCoins(n){state.coins+=n;save();document.getElementById('coinDisplay').textContent=state.coins;}
+
+var LESSONS=[
+  {id:0,name:'🪣 The 3 Bucket Framework',color:'#0a4a5a',bg:'#e0f6fa'},
+  {id:1,name:'🏥 Emergency Bucket Deep Dive',color:'#0a4a5a',bg:'#e0f6fa'},
+  {id:2,name:'📊 Stability Bucket',color:'#7a4a00',bg:'#fff8e6'},
+  {id:3,name:'🌱 Growth Bucket & Compounding',color:'#4a1a7a',bg:'#f0eafa'},
+  {id:4,name:'🛡️ Insurance: Your Safety Net',color:'#c0392b',bg:'#fce8e8'},
+  {id:5,name:'📋 Your Protection Checklist',color:'#0a4a5a',bg:'#e0f6fa'},
+  {id:'boss',name:"⚔️ Priya's Crossroads",color:'#0a4a5a',bg:'#e0f6fa'}
+];
+
+function showMap(){
+  document.getElementById('s-map').classList.remove('hidden');
+  document.getElementById('s-lesson').classList.add('hidden');
+  document.getElementById('backBtn').classList.add('hidden');
+  refreshMap();
+}
+function refreshMap(){
+  document.getElementById('coinDisplay').textContent=state.coins;
+  var done=Object.keys(state.completed).filter(function(k){return k!=='boss';}).length;
+  document.getElementById('mapDone').textContent=done;
+  document.getElementById('overallFill').style.width=(done/6*100)+'%';
+  LESSONS.forEach(function(l){
+    var id=l.id;
+    var card=document.getElementById('lcard-'+id);
+    var stat=document.getElementById('lstat-'+id);
+    var prog=document.getElementById('lprog-'+id);
+    if(!card)return;
+    var isUnlocked=isLessonUnlocked(id);
+    var isDone=!!state.completed[id];
+    card.className='lesson-card '+(isUnlocked?'unlocked':'locked')+(isDone?' done':'');
+    if(stat)stat.textContent=isDone?'✓':isUnlocked?'▶':'🔒';
+    if(prog)prog.style.width=isDone?'100%':'0%';
+  });
+}
+function isLessonUnlocked(id){
+  if(id===0)return true;
+  if(id==='boss')return Object.keys(state.completed).filter(function(k){return k!=='boss';}).length>=6;
+  return !!state.completed[id-1];
+}
+
+var currentLesson=null,currentStep=0,lessonSteps=[];
+
+function startLesson(id){
+  if(!isLessonUnlocked(id))return;
+  currentLesson=id;currentStep=0;
+  lessonSteps=buildSteps(id);
+  document.getElementById('s-map').classList.add('hidden');
+  document.getElementById('s-lesson').classList.remove('hidden');
+  document.getElementById('backBtn').classList.remove('hidden');
+  var l=LESSONS.find(function(x){return x.id===id;});
+  document.getElementById('lessonTitle').textContent=l?l.name:'Lesson';
+  renderStepDots();renderStep();
+}
+function nextStep(){
+  currentStep++;
+  if(currentStep>=lessonSteps.length){completeLesson();}
+  else{renderStepDots();renderStep();}
+}
+function renderStepDots(){
+  var dots=document.getElementById('stepDots');dots.innerHTML='';
+  lessonSteps.forEach(function(_,i){
+    var d=document.createElement('div');
+    d.className='step-dot'+(i<currentStep?' done':i===currentStep?' active':'');
+    dots.appendChild(d);
+  });
+}
+function renderStep(){
+  var step=lessonSteps[currentStep];
+  document.getElementById('lessonContent').innerHTML='';
+  step.render(document.getElementById('lessonContent'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function completeLesson(){
+  state.completed[currentLesson]=true;save();
+  var coins=currentLesson==='boss'?150:50;addCoins(coins);
+  var div=document.createElement('div');
+  div.innerHTML='<div class="completion-card"><div class="comp-emoji">'+(currentLesson==='boss'?'🏆':'⭐')+'</div><div class="comp-title">'+(currentLesson==='boss'?'Module 2 Complete!':'Lesson Complete!')+'</div><div class="comp-stars">'+(currentLesson==='boss'?'⭐⭐⭐':'⭐⭐')+'</div><div class="comp-sub">'+(currentLesson==='boss'?'You\'ve mastered the 3 Bucket Strategy! Your financial structure is solid.':'Great work! You\'ve unlocked the next lesson.')+'</div><div class="coins-earned">🪙 +'+coins+' coins earned</div><button class="btn-next" onclick="showMap()" style="max-width:240px;margin:0 auto;">Back to Map</button></div>';
+  document.getElementById('lessonContent').innerHTML='';
+  document.getElementById('lessonContent').appendChild(div);
+  renderStepDots();
+}
+
+function buildSteps(id){
+  if(id===0)return buildBucketFrameworkLesson();
+  if(id===1)return buildEmergencyLesson();
+  if(id===2)return buildStabilityLesson();
+  if(id===3)return buildGrowthLesson();
+  if(id===4)return buildInsuranceLesson();
+  if(id===5)return buildChecklistLesson();
+  if(id==='boss')return buildBossLesson();
+  return [];
+}
+
+// LESSON 0: 3 BUCKET FRAMEWORK
+var BUCKET_ITEMS=[
+  {icon:'💰',name:'Savings Account',correct:'e',hint:'Liquid, safe — perfect for your emergency cushion.'},
+  {icon:'📈',name:'Nifty 50 Index Fund',correct:'g',hint:'Long-term market growth — classic Growth bucket.'},
+  {icon:'🏦',name:'Fixed Deposit (FD)',correct:'s',hint:'Steady, low-risk returns — Stability bucket material.'},
+  {icon:'💼',name:'Equity Mutual Fund',correct:'g',hint:'Long horizon wealth builder — Growth bucket.'},
+  {icon:'💵',name:'Emergency Cash (at home)',correct:'e',hint:'Instantly accessible — belongs in Emergency bucket.'},
+  {icon:'🥇',name:'Gold (SGB)',correct:'g',hint:'Inflation hedge, long-term — Growth bucket.'},
+  {icon:'📋',name:'PPF Account',correct:'s',hint:'15-year lock-in, tax-free — Stability bucket.'},
+  {icon:'🌊',name:'Liquid Mutual Fund',correct:'e',hint:'Almost instant redemption — Emergency bucket.'},
+];
+
+function buildBucketFrameworkLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 1 · Introduction</div><span class="slide-icon">🪣</span><div class="slide-title">Think of your money as 3 buckets</div><div class="slide-body"><p>Instead of lumping all your money together, the 3-bucket strategy separates your wealth by <strong>purpose and time horizon</strong>.</p></div><div class="stat-row"><div class="stat-box g"><div class="stat-val">🚰</div><div class="stat-lbl">Emergency Bucket</div></div><div class="stat-box" style="background:linear-gradient(135deg,#fff8e6,#fdefc8);"><div class="stat-val">⚖️</div><div class="stat-lbl">Stability Bucket</div></div></div><div class="stat-row"><div class="stat-box" style="background:linear-gradient(135deg,#f0eafa,#ddd0f0);grid-column:span 2;"><div class="stat-val">🚀</div><div class="stat-lbl">Growth Bucket</div></div></div><div class="insight"><strong>Emergency Bucket:</strong> 3–6 months expenses, liquid, never invested.<br><strong>Stability Bucket:</strong> Low-risk, steady returns (FDs, PPF, debt funds).<br><strong>Growth Bucket:</strong> Long-term wealth (equity MFs, index funds, gold).</div><button class="btn-next" onclick="nextStep()">Got it, let\'s sort! →</button></div>';
+    }},
+    {render:function(c){renderBucketSorter(c);}},
+  ];
+}
+
+function renderBucketSorter(container){
+  var placed={},score=0,selectedItem=null;
+  var counts={e:0,s:0,g:0};
+
+  function fmt(){
+    var items=BUCKET_ITEMS.map(function(item,i){
+      if(placed[i]!==undefined){
+        return '<div class="bucket-item-chip placed"><div class="bic-icon">'+item.icon+'</div><div class="bic-name">'+item.name+'</div><div style="font-size:0.65rem;color:var(--muted);">✓ Placed</div></div>';
+      }
+      var sel=selectedItem===i;
+      var html='<div class="bucket-item-chip'+(sel?' selected':'')+'" onclick="selectBucketItem('+i+')"><div class="bic-icon">'+item.icon+'</div><div class="bic-name">'+item.name+'</div></div>';
+      if(sel){
+        html='<div class="bucket-item-chip selected" onclick="selectBucketItem('+i+')"><div class="bic-icon">'+item.icon+'</div><div class="bic-name">'+item.name+'</div><div class="bic-btns"><button class="bic-btn e" onclick="placeBucketItem('+i+',\'e\')">🚰 Emergency</button><button class="bic-btn s" onclick="placeBucketItem('+i+',\'s\')">⚖️ Stability</button><button class="bic-btn g" onclick="placeBucketItem('+i+',\'g\')">🚀 Growth</button></div></div>';
+      }
+      return html;
+    }).join('');
+
+    var total=Object.keys(placed).length;
+    var resultHtml='';
+    if(total===BUCKET_ITEMS.length){
+      resultHtml='<div class="bucket-result great" style="display:block;"><div style="font-size:1.5rem;">🎉</div><div style="font-family:\'Lora\',serif;font-size:1rem;font-weight:700;color:var(--navy);margin:6px 0;">'+score+'/'+BUCKET_ITEMS.length+' correct!</div><div style="font-size:0.78rem;color:var(--muted);">Great sorting! Understanding buckets is the foundation of organised investing.</div><button class="btn-next" onclick="nextStep()" style="margin-top:12px;">Continue →</button></div>';
+    }
+
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 1 · Bucket Sorter</div><div class="slide-title">Sort each item into its bucket</div><div style="font-size:0.75rem;color:var(--muted);margin-bottom:12px;">Tap an item, then choose the right bucket.</div><div class="bucket-zones"><div class="bucket-zone e"><div class="bz-title">🚰 Emergency</div><div class="bz-count">'+counts.e+' items</div></div><div class="bucket-zone s"><div class="bz-title">⚖️ Stability</div><div class="bz-count">'+counts.s+' items</div></div><div class="bucket-zone g"><div class="bz-title">🚀 Growth</div><div class="bz-count">'+counts.g+' items</div></div></div><div class="bucket-items-wrap">'+items+'</div>'+resultHtml+'</div>';
+  }
+
+  window.selectBucketItem=function(i){
+    selectedItem=(selectedItem===i)?null:i;fmt();
+  };
+  window.placeBucketItem=function(i,bucket){
+    var item=BUCKET_ITEMS[i];
+    var correct=item.correct===bucket;
+    if(correct){score++;addCoins(6);}
+    placed[i]=bucket;counts[bucket]++;selectedItem=null;
+    // Show modal
+    var overlay=document.createElement('div');
+    overlay.className='myth-modal-overlay';
+    overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'✅':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Correct!':'Not quite...')+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">Why?</div><div class="myth-modal-explain">'+item.hint+'</div><button class="myth-modal-btn" id="bk-ok">Got it →</button></div></div>';
+    document.body.appendChild(overlay);
+    overlay.querySelector('#bk-ok').onclick=function(){overlay.remove();fmt();};
+    fmt();
+  };
+  fmt();
+}
+
+// LESSON 1: EMERGENCY BUCKET
+function buildEmergencyLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 2 · Emergency Bucket</div><span class="slide-icon">🏥</span><div class="slide-title">Your liquid safety net</div><div class="slide-body"><p>The Emergency Bucket is your <strong>financial immune system</strong>. It protects you so your investments can keep growing without interruption.</p><p>Target: <strong>3–6 months of total monthly expenses</strong>, kept in liquid accounts.</p></div><div class="insight"><strong>Where to keep it:</strong><br>• Savings Account (instant access)<br>• Liquid Mutual Fund (T+1 redemption)<br>• Sweep-in FD (auto-liquidates when needed)</div><div class="warn-box"><strong>Never invest this money!</strong> Your emergency fund is not an investment — it\'s insurance against life\'s surprises: job loss, medical bills, car repairs.</div><button class="btn-next" onclick="nextStep()">Calculate mine →</button></div>';
+    }},
+    {render:function(c){renderEFCalc(c);}},
+  ];
+}
+
+function renderEFCalc(container){
+  var expenses=0,savings=0;
+  function fmt(){
+    var t3=expenses*3,t6=expenses*6;
+    var pct=savings>0&&t6>0?Math.min(100,Math.round(savings/t6*100)):0;
+    var t3fmt=t3>0?'₹'+t3.toLocaleString('en-IN'):'₹—';
+    var t6fmt=t6>0?'₹'+t6.toLocaleString('en-IN'):'₹—';
+    var msg=savings===0?'Enter your current savings below':pct>=100?'🎉 Your emergency fund is fully funded!':pct>=50?'Halfway there! Keep building.':'Time to build your safety net.';
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 2 · Calculator</div><div class="slide-title">How much do you need?</div><div class="ef-calc"><div style="font-size:0.75rem;font-weight:700;color:var(--muted);margin-bottom:4px;">Monthly Expenses (₹)</div><div class="ef-inp-wrap"><span class="ef-inp-pre">₹</span><input class="ef-inp" type="number" placeholder="e.g. 40000" id="ef-exp" value="'+(expenses||'')+'"></div><div class="ef-targets"><div class="ef-target t3"><div class="ef-t-val">'+t3fmt+'</div><div class="ef-t-lbl">3-Month Target</div></div><div class="ef-target t6"><div class="ef-t-val">'+t6fmt+'</div><div class="ef-t-lbl">6-Month Target</div></div></div><div style="font-size:0.75rem;font-weight:700;color:var(--muted);margin-bottom:4px;">Current Savings (₹)</div><div class="ef-inp-wrap"><span class="ef-inp-pre">₹</span><input class="ef-inp" type="number" placeholder="e.g. 50000" id="ef-sav" value="'+(savings||'')+'"></div><div class="ef-prog-wrap"><div class="ef-prog-bar"><div class="ef-prog-fill" style="width:'+pct+'%"></div></div><div class="ef-prog-lbl">'+pct+'% funded — '+msg+'</div></div></div><div class="insight" style="margin-top:14px;"><strong>Tip:</strong> Start with a 1-month target, then build to 3 months, then 6. Even ₹500/month adds up!</div><button class="btn-next" onclick="nextStep()" style="margin-top:14px;">Next Lesson →</button></div>';
+    document.getElementById('ef-exp').oninput=function(){expenses=parseInt(this.value)||0;fmt();};
+    document.getElementById('ef-sav').oninput=function(){savings=parseInt(this.value)||0;fmt();};
+    addCoins(5);
+  }
+  fmt();
+}
+
+// LESSON 2: STABILITY BUCKET
+var STABILITY_ITEMS=[
+  {name:'PPF',desc:'Public Provident Fund',correct:0,options:['Tax-free, 15-year lock-in','Short-term, instant access','High risk, high return']},
+  {name:'Arbitrage Fund',desc:'Equity MF category',correct:1,options:['Locks money for 5 years','Low risk, better tax treatment than FD','High volatility fund']},
+  {name:'Debt Mutual Fund',desc:'Invests in bonds',correct:2,options:['Stock market investments','Only for senior citizens','Stable returns, higher liquidity than FD']},
+  {name:'Fixed Deposit',desc:'Bank FD',correct:0,options:['Guaranteed returns, penalty for early exit','Zero tax on interest earned','No lock-in period']},
+  {name:'EPF',desc:'Employees Provident Fund',correct:1,options:['Available for self-employed people','Employer + employee contribution, tax-free','Riskier than mutual funds']},
+  {name:'Hybrid Fund',desc:'Mix of equity + debt',correct:2,options:['100% invested in stocks','Government guarantee on returns','Balances growth and stability in one fund']},
+];
+
+function buildStabilityLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 3 · Stability Bucket</div><span class="slide-icon">📊</span><div class="slide-title">Low risk, steady growth</div><div class="slide-body"><p>The Stability Bucket earns more than a savings account but takes less risk than equities. It\'s your <strong>middle layer</strong> — working steadily.</p></div><div class="stat-row"><div class="stat-box g"><div class="stat-val">6–9%</div><div class="stat-lbl">Typical Return Range</div></div><div class="stat-box" style="background:linear-gradient(135deg,#fff8e6,#fdefc8);"><div class="stat-val">1–15yr</div><div class="stat-lbl">Time Horizons</div></div></div><div class="insight"><strong>Good picks:</strong> FDs, PPF, EPF, debt mutual funds, arbitrage funds, hybrid funds. Match the instrument to your <em>time horizon and tax bracket</em>.</div><button class="btn-next" onclick="nextStep()">Play matching game →</button></div>';
+    }},
+    {render:function(c){renderStabilityMatch(c);}},
+  ];
+}
+
+function renderStabilityMatch(container){
+  var current=0,score=0,answered=[];
+
+  function showQ(){
+    if(current>=STABILITY_ITEMS.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">Stability Bucket · Complete!</div><span class="slide-icon">🎉</span><div class="slide-title">You got '+score+'/'+STABILITY_ITEMS.length+' correct!</div><div class="insight"><strong>Key insight:</strong> Different stability instruments suit different situations. PPF for tax savings, arbitrage for low-tax returns, debt MFs for liquidity.</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      return;
+    }
+    var item=STABILITY_ITEMS[current];
+    var optsHtml=item.options.map(function(o,i){
+      return '<div class="match-opt" onclick="stabAnswer('+i+')">'+o+'</div>';
+    }).join('');
+    container.innerHTML='<div class="slide"><div class="slide-tag">Stability Match · '+(current+1)+'/'+STABILITY_ITEMS.length+'</div><div class="slide-title">Match the investment to its key property</div><div class="match-item selected"><div class="mi-name">'+item.name+'</div><div class="mi-desc">'+item.desc+'</div></div><div class="match-options">'+optsHtml+'</div><div style="font-size:0.65rem;color:var(--muted);margin-top:8px;">Score: '+score+'/'+current+'</div></div>';
+  }
+
+  window.stabAnswer=function(i){
+    var item=STABILITY_ITEMS[current];
+    var correct=i===item.correct;
+    if(correct){score++;addCoins(7);}
+    var overlay=document.createElement('div');
+    overlay.className='myth-modal-overlay';
+    overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'🎯':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Correct!':'Not quite...')+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">Answer</div><div class="myth-modal-explain"><strong>'+item.name+'</strong> → '+item.options[item.correct]+'</div><button class="myth-modal-btn" id="stab-ok">Next →</button></div></div>';
+    document.body.appendChild(overlay);
+    overlay.querySelector('#stab-ok').onclick=function(){overlay.remove();current++;showQ();};
+  };
+  showQ();
+}
+
+// LESSON 3: GROWTH BUCKET & COMPOUNDING
+function buildGrowthLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 4 · Growth Bucket</div><span class="slide-icon">🌱</span><div class="slide-title">Where your wealth really multiplies</div><div class="slide-body"><p>The Growth Bucket is for money you won\'t need for <strong>5+ years</strong>. This is where compounding works its magic — and where inflation gets beaten.</p><p>Inflation runs at ~6% in India. If your money earns only 4% in a savings account, you\'re <em>losing</em> purchasing power every year.</p></div><div class="insight"><strong>The Rule of 72:</strong> Divide 72 by your expected return rate. That\'s how many years it takes for your money to DOUBLE. At 12% → 72÷12 = 6 years to double!</div><div class="warn-box"><strong>Coffee Example:</strong> Skipping ₹150/day coffee = ₹54,750/year. Invested at 12% for 10 years → ₹9.6 lakh! ☕→💰</div><button class="btn-next" onclick="nextStep()">Try the calculator →</button></div>';
+    }},
+    {render:function(c){renderRule72(c);}},
+  ];
+}
+
+function renderRule72(container){
+  var rate=12;
+  function fmt(){
+    var years=Math.round(72/rate*10)/10;
+    var markers=[];
+    var amt=100000;
+    for(var i=0;i<=5;i++){
+      markers.push({year:Math.round(years*i),val:Math.round(amt*Math.pow(2,i))});
+    }
+    var markerHtml=markers.map(function(m,i){
+      var colors=['#e0f6fa','#c8eef5','#b0e6f0','#16a0b0','#0e6a7a','#0a4a5a'];
+      var textColors=['#0a4a5a','#0a4a5a','#0a4a5a','#fff','#fff','#fff'];
+      return '<div class="r72-marker"><div class="r72-dot" style="background:'+colors[i]+';color:'+textColors[i]+';font-size:0.6rem;">'+formatLakh(m.val)+'</div><div class="r72-yr">Yr '+m.year+'</div></div>';
+    }).join('');
+
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 4 · Rule of 72</div><div class="slide-title">How fast does ₹1 lakh double?</div><div class="r72-calc"><div style="font-size:0.75rem;font-weight:700;color:var(--muted);margin-bottom:4px;">Annual Return Rate (%)</div><div class="r72-inp-wrap"><input class="r72-inp" type="number" min="1" max="30" value="'+rate+'" id="r72-rate"><span class="r72-suffix">% per year</span></div><div class="r72-result"><div class="r72-years">'+years+'</div><div class="r72-lbl">Years to double at '+rate+'%</div></div><div style="font-size:0.72rem;font-weight:700;color:var(--navy);margin-bottom:6px;">₹1 lakh journey (starting investment):</div><div class="r72-timeline">'+markerHtml+'</div></div><div class="insight" style="margin-top:12px;"><strong>Key insight:</strong> At 6% (savings account), money doubles in 12 years. At 12% (index fund), it doubles in 6 years. Same money, double the speed!</div><button class="btn-next" onclick="nextStep()" style="margin-top:14px;">Next Lesson →</button></div>';
+    document.getElementById('r72-rate').oninput=function(){rate=Math.max(1,Math.min(30,parseInt(this.value)||1));addCoins(2);fmt();};
+  }
+  function formatLakh(n){if(n>=100000)return '₹'+(n/100000).toFixed(1)+'L';return '₹'+(n/1000).toFixed(0)+'K';}
+  fmt();
+}
+
+// LESSON 4: INSURANCE
+var INSURANCE_STATEMENTS=[
+  {icon:'💼',color:'#c0392b',bg:'linear-gradient(135deg,#fce8e8,#f8d0d0)',tag:'ULIPs',q:'"ULIP is better than Term Insurance + Mutual Funds combined."',answer:'false',explain:'ULIPs mix insurance and investment — and do both poorly. Term insurance gives 10× the coverage for a fraction of the cost. A separate SIP in equity MFs will outperform the ULIP\'s investment portion almost always. Keep insurance and investing separate.'},
+  {icon:'🏢',color:'#d97706',bg:'linear-gradient(135deg,#fff8e6,#fdefc8)',tag:'Corporate Cover',q:'"My employer\'s group health insurance is enough for my family."',answer:'false',explain:'Corporate health insurance ceases when you leave the job, often mid-treatment! It also has low cover limits (usually ₹3–5L), excludes pre-existing conditions, and doesn\'t cover your parents adequately. You NEED a personal health policy.'},
+  {icon:'🌟',color:'#0a4a5a',bg:'linear-gradient(135deg,#e0f6fa,#c8eef5)',tag:'Age Myth',q:'"I\'m young and healthy — I don\'t need term insurance yet."',answer:'false',explain:'The best time to buy term insurance is when you\'re young and healthy — premiums are lowest! A ₹1 crore policy at age 25 costs ~₹600/month. At 40? Same policy costs ₹2,000+/month. Plus, waiting risks being denied if you develop a health condition.'},
+  {icon:'💸',color:'#7a4a00',bg:'linear-gradient(135deg,#fff8e6,#fdefc8)',tag:'Premium Myth',q:'"A higher premium always means better insurance policy."',answer:'false',explain:'Premium is NOT a quality signal. It\'s affected by your age, health, habits, and policy features. Compare policies by claim settlement ratio, coverage amount, exclusions, and insurer solvency — not premium amount. IRDA regulates all insurers equally.'},
+  {icon:'🛡️',color:'#0a4a5a',bg:'linear-gradient(135deg,#e0f6fa,#c8eef5)',tag:'Priority Rule',q:'"The only insurance you NEED before investing is Term + Health."',answer:'true',explain:'Absolutely correct! Term insurance protects your family\'s income if you die. Health insurance protects your savings from medical catastrophe. Together, they form the foundation. Everything else (vehicle, home, etc.) is secondary. Get these two sorted first, then invest!'},
+];
+
+function buildInsuranceLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 5 · Insurance</div><span class="slide-icon">🛡️</span><div class="slide-title">Insurance: protect before you grow</div><div class="slide-body"><p>Insurance isn\'t an investment — it\'s a <strong>shield</strong> that prevents financial disasters from wiping out everything you\'ve built.</p><p>Without insurance, one medical emergency or accident can undo years of savings. With it, you can invest confidently.</p></div><div class="insight"><strong>The rule:</strong> Sort insurance BEFORE starting SIPs. Term + Health first. Then invest every rupee you can.</div><button class="btn-next" onclick="nextStep()">True or False game →</button></div>';
+    }},
+    {render:function(c){renderInsuranceTF(c);}},
+  ];
+}
+
+function renderInsuranceTF(container){
+  var idx=0,score=0,results=[];
+
+  function showModal(correct,stmt,onDone){
+    var overlay=document.createElement('div');
+    overlay.className='myth-modal-overlay';
+    overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'🎯':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Correct!':'Not quite...')+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">The truth</div><div class="myth-modal-explain">'+stmt.explain+'</div><button class="myth-modal-btn" id="tf-ok">Got it →</button></div></div>';
+    document.body.appendChild(overlay);
+    overlay.querySelector('#tf-ok').onclick=function(){overlay.remove();onDone();};
+  }
+
+  function render(){
+    var pipsHtml=INSURANCE_STATEMENTS.map(function(_,i){
+      var cls='tf-pip'+(i<idx?(results[i]==='correct'?' correct':' wrong'):i===idx?' active':'');
+      return '<div class="'+cls+'"></div>';
+    }).join('');
+
+    container.innerHTML='<div class="slide"><div class="slide-tag">Insurance T/F · '+(idx+1)+'/'+INSURANCE_STATEMENTS.length+'</div><div class="tf-progress">'+pipsHtml+'</div><div class="tf-stack" id="tf-stack"></div><div class="tf-btns"><button class="tf-btn false" onclick="tfAnswer(\'false\')">❌ FALSE</button><button class="tf-btn true-btn" onclick="tfAnswer(\'true\')">✅ TRUE</button></div></div>';
+
+    var stack=document.getElementById('tf-stack');
+    for(var i=Math.min(idx+2,INSURANCE_STATEMENTS.length-1);i>=idx;i--){
+      var s=INSURANCE_STATEMENTS[i];
+      var diff=i-idx;
+      var card=document.createElement('div');
+      card.className='tf-card'+(diff===0?' front':diff===1?' back1':' back2');
+      card.innerHTML='<div class="tf-card-top" style="background:'+s.bg+';"><div class="tf-card-icon">'+s.icon+'</div><div class="tf-card-tag" style="background:'+s.color+';">'+s.tag+'</div></div><div class="tf-q">'+s.q+'</div>';
+      stack.appendChild(card);
+    }
+
+    window.tfAnswer=function(ans){
+      var s=INSURANCE_STATEMENTS[idx];
+      var correct=ans===s.answer;
+      if(correct){score++;results.push('correct');addCoins(8);}else{results.push('wrong');}
+      var card=document.getElementById('tf-stack').querySelector('.front');
+      if(card)card.classList.add(ans==='false'?'fly-left':'fly-right');
+      showModal(correct,s,function(){
+        idx++;
+        if(idx>=INSURANCE_STATEMENTS.length){
+          container.innerHTML='<div class="slide"><div class="slide-tag">Insurance T/F · Complete!</div><span class="slide-icon">🎉</span><div class="slide-title">You got '+score+'/'+INSURANCE_STATEMENTS.length+' correct!</div><div class="insight"><strong>Remember:</strong> Term insurance + health insurance = the only insurance you need BEFORE investing. Keep it simple, keep it separate from investments.</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+        }else{render();}
+      });
+    };
+  }
+  render();
+}
+
+// LESSON 5: PROTECTION CHECKLIST
+var PILLARS2=[
+  {icon:'🏦',name:'Emergency Fund Built',desc:'I have 3–6 months of expenses in liquid accounts.',yes:'Your emergency bucket is ready — investments are protected!',no:'Priority #1. Build this before starting any SIPs.'},
+  {icon:'🛡️',name:'Term Insurance in Place',desc:'I have adequate term life insurance (10–15× annual income).',yes:'Your family is protected. Well done!',no:'Get a term policy before investing — it\'s non-negotiable.'},
+  {icon:'🏥',name:'Health Insurance Sorted',desc:'I have personal health insurance (not just employer cover).',yes:'Medical emergencies won\'t derail your investments.',no:'Employer cover disappears when you change jobs. Get personal cover.'},
+  {icon:'💳',name:'Credit Card Debt Zero',desc:'I pay my full credit card bill every month.',yes:'No 36% interest drain — every rupee works for you!',no:'Clear CC debt before any investment. It\'s an instant 36% return.'},
+  {icon:'📊',name:'Budget Tracked',desc:'I track my income and expenses every month.',yes:'Awareness is the first step to wealth. Keep it up!',no:'You can\'t grow what you can\'t measure. Start a simple spreadsheet.'},
+  {icon:'🎯',name:'Financial Goals Set',desc:'I have clear written financial goals with timelines.',yes:'Goals-based investing is the most powerful approach.',no:'Write down 3 goals with amounts and timelines. Do it today!'},
+];
+
+function buildChecklistLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 6 · Protection Checklist</div><span class="slide-icon">📋</span><div class="slide-title">Rate your financial protection</div><div class="slide-body"><p>Before we invest a single rupee, we need to make sure the <strong>foundations are solid</strong>. Tap each pillar to mark if you have it in place.</p></div><div class="insight">This is a self-assessment — be honest. Red = needs work. Green = sorted. Your score shows your readiness to invest confidently.</div><button class="btn-next" onclick="nextStep()">Start checklist →</button></div>';
+    }},
+    {render:function(c){renderChecklist(c);}},
+  ];
+}
+
+function renderChecklist(container){
+  var states={};
+  PILLARS2.forEach(function(_,i){states[i]=null;});
+
+  function grade(score){
+    if(score===6)return'You\'re investment-ready! 🚀';
+    if(score>=4)return'Almost there — sort the red ones!';
+    if(score>=2)return'Good start — keep building.';
+    return'Foundations first, then invest.';
+  }
+
+  function fmt(){
+    var checked=Object.values(states).filter(function(v){return v===true;}).length;
+    var pct=Math.round(checked/PILLARS2.length*100);
+    var pillarsHtml=PILLARS2.map(function(p,i){
+      var s=states[i];
+      var cls='pillar-card'+(s===true?' checked':s===false?' unchecked':'');
+      return '<div class="'+cls+'" onclick="togglePillar('+i+')"><div class="pillar-toggle">'+(s===true?'✓':s===false?'✗':'?')+'</div><div class="pillar-info"><div class="pillar-name">'+p.icon+' '+p.name+'</div><div class="pillar-desc">'+p.desc+'</div><div class="pillar-desc" style="margin-top:3px;color:'+(s===true?'var(--g2)':'var(--danger)')+';">'+(s===true?p.yes:s===false?p.no:'')+'</div></div></div>';
+    }).join('');
+
+    var allAnswered=Object.values(states).every(function(v){return v!==null;});
+    var nextBtn=allAnswered?'<button class="btn-next" onclick="nextStep()">Finish Module 2 →</button>':'<button class="btn-next" disabled>Answer all '+PILLARS2.length+' pillars to continue</button>';
+
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 6 · Checklist</div><div class="health-meter"><div class="health-score">'+checked+'/'+PILLARS2.length+'</div><div class="health-lbl">Protection Score</div><div class="health-bar"><div class="health-bar-fill" style="width:'+pct+'%"></div></div><div class="health-grade">'+grade(checked)+'</div></div>'+pillarsHtml+nextBtn+'</div>';
+  }
+
+  window.togglePillar=function(i){
+    var cur=states[i];
+    if(cur===null)states[i]=true;
+    else if(cur===true)states[i]=false;
+    else states[i]=null;
+    addCoins(1);fmt();
+  };
+  fmt();
+}
+
+// BOSS: PRIYA'S CROSSROADS
+var BOSS_SCENARIOS=[
+  {round:'Scenario 1 of 3',name:"Priya's Emergency",story:"Priya earns ₹60,000/month. She has ₹2 lakh in savings and no health insurance. Her friend tells her to start a SIP immediately since the market is doing well.",q:"What should Priya do FIRST?",choices:['A) Start a ₹10,000/month SIP right away','B) Buy personal health insurance first, then start SIP','C) Put all ₹2 lakh in an index fund for better returns'],correct:1,type:['bad','good','bad'],explain:["Starting investments without health cover is risky. One hospitalisation could wipe out ₹2 lakh and force her to sell the investment at a loss.","Correct! Health insurance protects the ₹2 lakh savings. Once that's sorted, she can start investing with confidence.","Without health insurance, all ₹2 lakh is exposed to medical risk. This is too aggressive."]},
+  {round:'Scenario 2 of 3',name:"Priya's Emergency Fund",story:"Priya now has health insurance. Her monthly expenses are ₹40,000. She has ₹80,000 in savings. She's eager to start a ₹15,000/month SIP.",q:"Is Priya ready to start the SIP?",choices:['A) Yes — she should start investing immediately','B) No — she should build emergency fund to ₹1.2L first, then start SIP','C) No — she should wait until she has ₹2.4L saved (6 months)'],correct:1,type:['ok','good','ok'],explain:["She only has 2 months of expenses saved. If she loses her job, she\'ll need to redeem the SIP early, possibly at a loss.","Smart! Reaching the 3-month minimum (₹1.2L) before starting SIPs is the balanced approach. She can start SIPs while topping up the emergency fund.","6 months is the ideal target, but waiting to start investing isn't necessary. 3 months is the minimum to begin SIPs."]},
+  {round:'Scenario 3 of 3',name:"Priya's Bucket Decision",story:"Priya is 30 years old. She has ₹5 lakh to invest across the 3 buckets. Emergency fund is fully built. She needs this money split wisely.",q:"Which allocation is most sensible for Priya?",choices:['A) 100% Growth Bucket — she\'s young, risk is fine','B) 60% Growth, 30% Stability, 10% Emergency top-up','C) Equal split: 33% each bucket'],correct:1,type:['ok','good','ok'],explain:["100% equity is too extreme even for young investors. Life events happen — illness, wedding, job loss — requiring some stable, accessible money.","Correct! At 30, the focus should be on growth with a stability buffer. This allocation reflects her long horizon while keeping some safety cushion.","Equal split is too conservative for 30. The Stability bucket would be over-funded at the cost of long-term growth."]},
+];
+
+function buildBossLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Boss Challenge</div><span class="slide-icon">⚔️</span><div class="slide-title">Priya\'s Crossroads</div><div class="slide-body"><p>Priya is a 30-year-old marketing professional who is confused about where to start. You\'re her financial advisor. Make the right calls!</p><p>3 real-world scenarios. No second chances — choose wisely.</p></div><div class="insight">Apply everything from Module 2: bucket strategy, emergency fund sizing, insurance priority, and bucket allocation.</div><button class="btn-next" onclick="nextStep()">Start Challenge →</button></div>';
+    }},
+    {render:function(c){renderBossScenario(c,0,0);}},
+    {render:function(c){renderBossScenario(c,1,0);}},
+    {render:function(c){renderBossScenario(c,2,0);}},
+  ];
+}
+
+function renderBossScenario(container,idx,score){
+  var sc=BOSS_SCENARIOS[idx];
+  var choicesHtml=sc.choices.map(function(ch,i){
+    return '<div class="sc-choice" id="sc-choice-'+i+'" onclick="bossChoose('+idx+','+i+')"><div class="sc-choice-letter">'+String.fromCharCode(65+i)+'</div><div>'+ch.substring(3)+'</div></div>';
+  }).join('');
+
+  container.innerHTML='<div class="slide"><div class="slide-tag">Boss Challenge · '+sc.round+'</div><div class="scenario-card-outer"><div class="sc-header"><div class="sc-round">'+sc.round+'</div><div class="sc-name">'+sc.name+'</div></div><div class="sc-body"><div class="sc-story">'+sc.story+'</div><div class="sc-q">'+sc.q+'</div><div class="sc-choices">'+choicesHtml+'</div><div class="sc-consequence" id="sc-con"></div></div></div></div>';
+
+  window.bossChoose=function(sIdx,chosen){
+    var s=BOSS_SCENARIOS[sIdx];
+    var correct=chosen===s.correct;
+    if(correct)addCoins(20);
+    document.querySelectorAll('.sc-choice').forEach(function(el,i){
+      el.style.pointerEvents='none';
+      if(i===s.correct)el.classList.add('correct-choice');
+      else if(i===chosen&&!correct)el.classList.add('wrong-choice');
+    });
+    var con=document.getElementById('sc-con');
+    con.style.display='block';
+    con.className='sc-consequence '+(correct?'good':s.type[chosen]==='ok'?'ok':'bad');
+    con.innerHTML='<strong>'+(correct?'✅ Great call!':s.type[chosen]==='ok'?'⚠️ Not ideal...':'❌ Not the best move')+'</strong> '+s.explain[chosen];
+    var nextLabel=sIdx<BOSS_SCENARIOS.length-1?'Next Scenario →':'Complete Boss Challenge →';
+    con.innerHTML+='<button class="btn-next" onclick="nextStep()" style="margin-top:12px;">'+nextLabel+'</button>';
+  };
+}
+
+// INIT
+refreshMap();
+document.getElementById('coinDisplay').textContent=state.coins;
+</script>
+</body>
+</html>

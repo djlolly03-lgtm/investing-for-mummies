@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>Swipe Right on SIP — Live Classroom</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<meta name="theme-color" content="#1e3a27">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<style>
+:root{
+  --forest:#1e3a27; --forest-2:#16301f; --forest-3:#0f2415;
+  --lime:#c9f24e; --cream:#ece6d7; --amber:#e9b63c; --rust:#e8714a;
+  --line:rgba(201,242,78,0.14); --line-soft:rgba(236,230,215,0.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{min-height:100%;}
+body{
+  background:var(--forest); color:var(--cream); font-family:'Space Grotesk',sans-serif;
+  overflow-x:hidden;
+  background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+  background-size:260px 260px; background-position:center top;
+}
+.mono{font-family:'Space Mono',monospace;letter-spacing:0.18em;text-transform:uppercase;}
+.anton{font-family:'Anton',sans-serif;text-transform:uppercase;font-weight:400;}
+#root{min-height:100vh;}
+.fade{animation:fadeIn .35s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.35}}
+
+/* layout shells */
+.pwrap{max-width:440px;margin:0 auto;min-height:100vh;padding:0 16px 40px;}
+.hwrap{max-width:1180px;margin:0 auto;min-height:100vh;padding:0 32px 48px;}
+.strip{display:flex;justify-content:space-between;align-items:center;padding:18px 2px 0;font-size:0.62rem;color:var(--lime);}
+.kicker{color:var(--amber);font-size:0.66rem;margin:26px 2px 6px;}
+
+/* buttons */
+.cta{display:block;width:100%;background:var(--lime);color:var(--forest-3);border:none;border-radius:16px;padding:18px;font-family:'Anton',sans-serif;font-size:1.25rem;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:transform .15s;}
+.cta:active{transform:scale(0.98);}
+.cta[disabled]{background:rgba(201,242,78,0.25);color:rgba(15,36,21,0.55);cursor:not-allowed;}
+.cta.ghost{background:transparent;color:var(--cream);border:1px solid rgba(236,230,215,0.4);font-size:0.95rem;padding:13px;}
+.cta.amber{background:var(--amber);}
+
+/* landing */
+.role-grid{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px;}
+.role-btn{flex:1;min-width:240px;background:var(--forest-3);border:1px solid var(--line);border-radius:20px;padding:30px 22px;text-align:center;cursor:pointer;transition:transform .15s,border-color .15s;color:var(--cream);}
+.role-btn:hover{transform:translateY(-3px);border-color:var(--lime);}
+.role-btn .big{font-size:2.4rem;margin-bottom:10px;}
+.role-btn .rl{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;}
+.role-btn .rn{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:0.04em;text-transform:uppercase;}
+.role-btn .rd{font-size:0.8rem;color:rgba(236,230,215,0.65);margin-top:8px;line-height:1.4;}
+
+/* host lobby */
+.lob{display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;margin-top:28px;}
+.qrcard{background:var(--cream);border-radius:20px;padding:26px 26px 20px;text-align:center;flex:0 0 auto;}
+.qrcard .ql{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:#5a6b4f;margin-bottom:14px;}
+.qrcard .qurl{font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.04em;color:var(--forest-3);margin-top:14px;font-weight:700;word-break:break-all;max-width:300px;}
+.qrcard .qroom{font-family:'Anton',sans-serif;font-size:1.6rem;color:var(--forest-3);margin-top:6px;letter-spacing:0.12em;}
+.lob-right{flex:1 1 380px;min-width:300px;}
+.count-row{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;}
+.count-row .n{font-family:'Anton',sans-serif;font-size:3.4rem;color:var(--lime);line-height:1;}
+.count-row .t{font-size:1.05rem;color:rgba(236,230,215,0.8);}
+.count-row .live{margin-left:auto;font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);animation:pulse 1.6s infinite;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px;max-height:300px;overflow-y:auto;}
+.pchip{display:inline-flex;align-items:center;gap:7px;background:var(--forest-3);border:1px solid var(--line);border-radius:30px;padding:8px 15px;font-size:0.85rem;font-weight:600;animation:fadeIn .3s ease;}
+.pchip .e{font-size:1rem;}
+.pchip.dim{opacity:0.38;}
+.pchip.lit{border-color:var(--lime);}
+.pchip.lit .nm{color:var(--lime);}
+
+/* host fund stage */
+.stage{display:flex;gap:36px;align-items:stretch;flex-wrap:wrap;margin-top:20px;}
+.bigpost{flex:1 1 520px;background:var(--forest-3);border:1px solid var(--line);border-radius:24px;padding:34px 32px;display:flex;flex-direction:column;min-height:380px;box-shadow:0 18px 50px rgba(0,0,0,0.4);}
+.bigpost .phead{display:flex;align-items:center;gap:16px;margin-bottom:22px;}
+.bigpost .av{width:64px;height:64px;border-radius:50%;background:var(--forest-2);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:2rem;flex:none;}
+.bigpost .handle{font-weight:700;font-size:1.5rem;}
+.bigpost .meta{font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(236,230,215,0.5);margin-top:4px;}
+.bigpost .likes{margin-left:auto;font-family:'Anton',sans-serif;color:var(--amber);font-size:1.9rem;text-align:right;line-height:1;}
+.bigpost .likes .l{display:block;font-family:'Space Mono',monospace;font-size:0.5rem;letter-spacing:0.14em;color:rgba(236,230,215,0.5);margin-top:4px;}
+.bigpost .pitch{flex:1;font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.5;font-weight:500;display:flex;align-items:center;}
+.chip{border-bottom:3px dotted var(--lime);color:var(--lime);cursor:pointer;font-weight:600;}
+.side{flex:0 1 320px;min-width:260px;display:flex;flex-direction:column;gap:14px;}
+.tallybox{background:var(--forest-3);border:1px solid var(--line);border-radius:18px;padding:20px;text-align:center;}
+.tallybox .n{font-family:'Anton',sans-serif;font-size:2.6rem;color:var(--lime);line-height:1;}
+.tallybox .l{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(236,230,215,0.6);margin-top:6px;}
+
+/* host reveal */
+.rev-flag{font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin-top:6px;}
+.verdict-big{font-family:'Anton',sans-serif;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1;}
+.verdict-big.good{color:var(--lime);} .verdict-big.bad{color:var(--rust);} .verdict-big.meh{color:var(--amber);}
+.moneyline{font-family:'Anton',sans-serif;font-size:clamp(1.6rem,3.4vw,2.4rem);background:var(--forest-2);border:1px solid var(--line);border-radius:14px;padding:14px 20px;display:inline-flex;gap:14px;align-items:baseline;margin:14px 0;}
+.moneyline .a{color:var(--amber);font-size:0.7em;}
+.moneyline .up{color:var(--lime);} .moneyline .dn{color:var(--rust);}
+.whytext{font-size:clamp(0.95rem,1.7vw,1.2rem);line-height:1.6;color:rgba(236,230,215,0.92);max-width:760px;}
+.splitcols{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;}
+.splitcol{flex:1 1 280px;background:var(--forest-3);border:1px solid var(--line);border-radius:18px;padding:18px;}
+.splitcol.inv{border-color:rgba(201,242,78,0.5);}
+.splitcol .sh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;}
+.splitcol .st{font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:0.05em;}
+.splitcol.inv .st{color:var(--lime);}
+.splitcol.skp .st{color:rgba(236,230,215,0.75);}
+.splitcol .sn{font-family:'Anton',sans-serif;font-size:1.4rem;color:var(--amber);}
+.namechips{display:flex;flex-wrap:wrap;gap:7px;}
+.nchip{display:inline-flex;align-items:center;gap:6px;background:var(--forest-2);border:1px solid var(--line);border-radius:24px;padding:6px 12px;font-size:0.8rem;font-weight:600;}
+.nchip.ghost{opacity:0.4;}
+.nonechip{font-size:0.8rem;color:rgba(236,230,215,0.45);font-style:italic;}
+
+/* host controls */
+.ctrl{position:fixed;left:0;right:0;bottom:0;background:rgba(15,36,21,0.92);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:14px 28px;display:flex;gap:14px;align-items:center;z-index:30;}
+.ctrl .sp{flex:1;}
+.cbtn{border:none;border-radius:14px;padding:14px 28px;font-family:'Anton',sans-serif;font-size:1.05rem;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:transform .12s;}
+.cbtn:active{transform:scale(0.97);}
+.cbtn.go{background:var(--lime);color:var(--forest-3);}
+.cbtn.go[disabled]{background:rgba(201,242,78,0.25);color:rgba(15,36,21,0.55);cursor:not-allowed;}
+.cbtn.dim{background:transparent;color:rgba(236,230,215,0.6);border:1px solid rgba(236,230,215,0.3);font-size:0.8rem;padding:12px 18px;}
+.ctrl-note{font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(236,230,215,0.5);}
+.hpad{padding-bottom:110px;}
+
+/* finale board */
+.board{margin-top:24px;display:flex;flex-direction:column;gap:10px;max-width:860px;}
+.brow{display:flex;align-items:center;gap:16px;background:var(--forest-3);border:1px solid var(--line);border-radius:16px;padding:14px 20px;animation:fadeIn .3s ease;}
+.brow.top1{border-color:var(--lime);background:linear-gradient(135deg,rgba(201,242,78,0.13),var(--forest-3));}
+.brow.top2{border-color:rgba(233,182,60,0.6);}
+.brow.top3{border-color:rgba(236,230,215,0.4);}
+.brow .rk{font-family:'Anton',sans-serif;font-size:1.5rem;color:rgba(236,230,215,0.4);width:46px;flex:none;}
+.brow.top1 .rk{color:var(--lime);}
+.brow .pe{font-size:1.5rem;flex:none;}
+.brow .pn{font-weight:700;font-size:1.1rem;flex:1;min-width:110px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.brow .pc{font-family:'Anton',sans-serif;font-size:1.4rem;color:var(--lime);flex:none;}
+.brow .pd{font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--amber);flex:none;width:96px;text-align:right;}
+.brow .pg{font-family:'Space Mono',monospace;font-size:0.52rem;letter-spacing:0.08em;text-transform:uppercase;border:1px solid;border-radius:20px;padding:5px 11px;flex:none;}
+.pg.g1{color:var(--lime);border-color:var(--lime);} .pg.g2{color:var(--cream);border-color:rgba(236,230,215,0.5);}
+.pg.g3{color:var(--amber);border-color:var(--amber);} .pg.g4{color:var(--rust);border-color:var(--rust);}
+.classstats{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;max-width:860px;}
+.cstat{flex:1 1 250px;background:var(--forest-3);border:1px solid var(--line);border-radius:16px;padding:18px;}
+.cstat .cl{font-family:'Space Mono',monospace;font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;}
+.cstat .cv{font-size:0.95rem;line-height:1.5;}
+
+/* player */
+.hud{display:flex;gap:8px;margin:14px 0;}
+.hud .box{flex:1;border:1px solid var(--line);border-radius:12px;background:rgba(15,36,21,0.6);padding:9px 6px 7px;text-align:center;}
+.hud .box .n{font-family:'Anton',sans-serif;font-size:1.05rem;color:var(--lime);line-height:1;}
+.hud .box .n.amber{color:var(--amber);}
+.hud .box .l{font-size:0.48rem;color:rgba(236,230,215,0.6);margin-top:4px;font-family:'Space Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;}
+.ppost{background:var(--forest-3);border:1px solid var(--line);border-radius:20px;padding:20px 18px;box-shadow:0 18px 50px rgba(0,0,0,0.4);position:relative;touch-action:pan-y;user-select:none;-webkit-user-select:none;will-change:transform;}
+.stamp{position:absolute;top:18px;font-family:'Anton',sans-serif;font-size:1.6rem;letter-spacing:0.05em;padding:5px 14px;border-radius:10px;border:3px solid;opacity:0;transform:rotate(-12deg);pointer-events:none;z-index:2;}
+.stamp.yes{left:14px;color:var(--lime);border-color:var(--lime);}
+.stamp.no{right:14px;color:var(--rust);border-color:var(--rust);transform:rotate(12deg);}
+.ppost .phead{display:flex;align-items:center;gap:11px;margin-bottom:14px;}
+.ppost .av{width:46px;height:46px;border-radius:50%;background:var(--forest-2);border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex:none;}
+.ppost .who{flex:1;min-width:0;}
+.ppost .handle{font-weight:700;font-size:0.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ppost .meta{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(236,230,215,0.5);margin-top:2px;}
+.ppost .likes{font-family:'Anton',sans-serif;color:var(--amber);font-size:1.05rem;text-align:right;line-height:1;flex:none;}
+.ppost .likes .l{display:block;font-family:'Space Mono',monospace;font-size:0.45rem;letter-spacing:0.12em;color:rgba(236,230,215,0.5);margin-top:3px;}
+.ppost .pitch{font-size:1.15rem;line-height:1.5;font-weight:500;min-height:130px;display:flex;align-items:center;}
+.acts{display:flex;gap:12px;margin-top:16px;}
+.act{flex:1;border-radius:16px;padding:17px 8px;font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;border:none;transition:transform .12s;}
+.act:active{transform:scale(0.96);}
+.act.skip{background:transparent;color:var(--cream);border:1.5px solid rgba(236,230,215,0.4);}
+.act.invest{background:var(--lime);color:var(--forest-3);}
+.act[disabled]{opacity:0.35;cursor:not-allowed;}
+.locked{margin-top:22px;text-align:center;border:1px solid var(--line);border-radius:18px;background:var(--forest-3);padding:26px 18px;}
+.locked .lk{font-family:'Anton',sans-serif;font-size:1.6rem;letter-spacing:0.04em;}
+.locked .lk.inv{color:var(--lime);} .locked .lk.skp{color:var(--cream);}
+.locked .ls{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(236,230,215,0.55);margin-top:10px;animation:pulse 1.8s infinite;}
+.waitcard{text-align:center;margin-top:18vh;}
+.waitcard .we{font-size:3rem;}
+.waitcard .wt{font-family:'Anton',sans-serif;font-size:1.8rem;text-transform:uppercase;color:var(--lime);margin-top:14px;}
+.waitcard .ws{color:rgba(236,230,215,0.75);margin-top:10px;font-size:0.92rem;line-height:1.5;}
+.joinform{margin-top:26px;}
+.joinform label{display:block;font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin:18px 0 8px;}
+.joinform input{width:100%;background:var(--forest-3);border:1px solid var(--line);border-radius:14px;padding:16px;color:var(--cream);font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;outline:none;}
+.joinform input:focus{border-color:var(--lime);}
+.emoji-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
+.eopt{font-size:1.5rem;background:var(--forest-3);border:1px solid var(--line);border-radius:12px;padding:10px 0;text-align:center;cursor:pointer;}
+.eopt.sel{border-color:var(--lime);background:rgba(201,242,78,0.12);}
+.prev-card{background:var(--forest-2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:8px;}
+.prev-card .vh{display:flex;justify-content:space-between;align-items:baseline;}
+.prev-card .vt{font-family:'Anton',sans-serif;font-size:1.15rem;}
+.prev-card .vt.good{color:var(--lime);} .prev-card .vt.bad{color:var(--rust);} .prev-card .vt.meh{color:var(--amber);}
+.prev-card .vm{font-family:'Anton',sans-serif;font-size:1rem;color:var(--cream);}
+.prev-card .vw{font-size:0.85rem;line-height:1.5;color:rgba(236,230,215,0.85);margin-top:8px;}
+
+/* results player card */
+.mycard{background:var(--lime);color:var(--forest-3);border-radius:18px;padding:20px;margin-top:18px;}
+.mycard .l{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;opacity:0.7;}
+.mycard .v{font-family:'Anton',sans-serif;font-size:2.4rem;line-height:1.05;margin-top:4px;}
+.mycard .sub{font-weight:700;margin-top:8px;font-size:0.9rem;}
+
+/* sheet + toast */
+#sheetbg{position:fixed;inset:0;background:rgba(0,0,0,0.55);display:none;z-index:40;}
+#sheet{position:fixed;left:0;right:0;bottom:-110%;z-index:41;transition:bottom .28s ease;max-width:520px;margin:0 auto;background:var(--forest-2);border:1px solid var(--line);border-bottom:none;border-radius:20px 20px 0 0;padding:22px 20px 34px;}
+#sheet.on{bottom:0;}
+#sheet .term{font-family:'Anton',sans-serif;font-size:1.4rem;color:var(--lime);text-transform:uppercase;margin-bottom:8px;}
+#sheet .def{font-size:0.98rem;line-height:1.55;}
+#sheet .close{margin-top:18px;width:100%;background:transparent;border:1px solid rgba(236,230,215,0.4);color:var(--cream);border-radius:12px;padding:12px;font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;}
+#toast{position:fixed;top:18px;left:50%;transform:translateX(-50%) translateY(-90px);z-index:50;background:var(--amber);color:var(--forest-3);font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;padding:12px 20px;border-radius:30px;transition:transform .25s ease;white-space:nowrap;}
+#toast.on{transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<div id="sheetbg" onclick="closeSheet()"></div>
+<div id="sheet"><div class="term" id="sheet-term"></div><div class="def" id="sheet-def"></div><button class="close mono" onclick="closeSheet()">GOT IT</button></div>
+<div id="toast"></div>
+
+<script>
+/* ═══════════ CONFIG ═══════════ */
+var SUPABASE_URL = 'https://gkfldkytzfngwnkrwrga.supabase.co';
+var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrZmxka3l0emZuZ3dua3J3cmdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5MzI4NDksImV4cCI6MjA5NDUwODg0OX0.wwyFY0bhbGhCKCpAjgZ0oCS8gda21FHcvDdvlg9xCmU';
+
+var PARAMS = new URLSearchParams(location.search);
+var ROLE = PARAMS.get('role');                       // host | player | null (landing)
+var ROOM = (PARAMS.get('room') || 'MF101').toUpperCase();
+var GAME_KEY = 'swipesip-' + ROOM;
+var STAKE = 2000, MAX_PICKS = 5, SAVINGS_VAL = 2150, NUM_FUNDS = 10;
+
+/* ═══════════ JARGON ═══════════ */
+var DEFS = {
+  mf:["Mutual fund","A big shared pot of money from many people, invested for everyone by a professional fund company."],
+  nfo:["NFO","New Fund Offer — a brand-new fund being launched. New means no track record yet. It does NOT mean cheap."],
+  units:["Units","The 'slices' of a fund you own. The price per slice says nothing about how good the fund is."],
+  smallcap:["Small-cap","A fund that buys small companies. Can grow fast, can fall hard."],
+  midcap:["Mid-cap","Medium-sized companies. Somewhere between steady and wild."],
+  largecap:["Large-cap","The biggest, steadiest companies on the market."],
+  flexicap:["Flexi-cap","A fund that's free to pick big, medium or small companies — whatever looks best."],
+  index:["Index fund","A fund that simply copies the market's official top-companies list (like the Nifty 50). No star manager, very low fees."],
+  direct:["Direct plan","Buying a fund straight from the fund company — no agent taking a yearly cut from your money."],
+  elss:["ELSS","A tax-saver fund. Invests in shares, cuts your tax bill, and is locked for 3 years."],
+  sip:["SIP","Auto-investing a fixed amount every month. Small, regular, automatic."],
+  hybrid:["Hybrid fund","Part shares, part bonds. A smoother ride than pure shares."],
+  liquid:["Liquid fund","A parking spot for money you might need soon. Safe, low growth, withdraw anytime."],
+  momentum:["Momentum fund","A fund that buys whatever has been rising lately. Rides waves up — and down."],
+  exitload:["Exit load","A small penalty for pulling money out of a fund too soon."],
+  lockin:["Lock-in","A period when you can't take your money out. Annoying — but it stops panic-selling."]
+};
+
+/* ═══════════ DECK (same 27 cards as solo) ═══════════ */
+var DECK = [
+{h:"@WolfOfWadala",a:"🐺",likes:"84.2K",ln:84200,type:"r",tag:"NFO bait",
+ p:"Bhai, [[nfo|NFO]] dropping Monday! [[units|Units]] at ₹10 ONLY. The old fund from the same company costs ₹847. Which one's the bargain? 🧮💰 #groundfloor",
+ val:2750,why:"₹10 isn't cheap — it's just new. The \"expensive\" ₹847 fund would've made ₹3,750. A fund's unit price doesn't tell you if it's good."},
+{h:"@MoneyBhaiOfficial",a:"💰",likes:"52K",ln:52000,type:"r",tag:"No track record",
+ p:"New fund = fresh energy! Old [[mf|mutual funds]] are tired, bro. This one's HUNGRY 🔥 #newfund",
+ val:2600,why:"New isn't better — new just means there's no report card to check. Old funds show you ten years of results before you give them a rupee."},
+{h:"@LakhpatiLifestyle",a:"🤳",likes:"38K",ln:38000,type:"r",tag:"Fake urgency",
+ p:"I put my OWN money in this new fund (screenshot 📸). Window closes FRIDAY. Don't miss it!",
+ val:2800,why:"The \"closing Friday\" thing is a sales trick — the fund reopened the next week. Real investing has no deadline panic."},
+{h:"@ReturnsRani",a:"👑",likes:"91K",ln:91000,type:"r",tag:"Chasing last year's winner",
+ p:"This [[smallcap|small-cap]] fund gave 82% LAST YEAR 🤯 Imagine 5 more years of this!! #rocket",
+ val:2200,why:"It dropped to ₹1,400 in year one, then slowly crawled back. Last year's superstar is usually at its most expensive. You bought the party ticket after the party."},
+{h:"@ChartChacha",a:"📊",likes:"67K",ln:67000,type:"r",tag:"Star-rating trap",
+ p:"5-star rating! Number 1 in its category! The graph only goes UP 📈 #provenwinner",
+ val:2900,why:"Stars and rankings grade the past, not the future. The #1 fund from five years ago is almost never #1 today."},
+{h:"@VibesVijay",a:"😎",likes:"73K",ln:73000,type:"r",tag:"Vibes investing",
+ p:"I made 3x in crypto. Now I'm ALL IN on this hot [[momentum|momentum fund]]. Trust the vibes 🚀",
+ val:1900,why:"Vibes aren't a plan. Funds that ride whatever's hot fall just as fast when it cools."},
+{h:"@SIPnSlay",a:"💅",likes:"61.7K",ln:61700,type:"r",tag:"Hot theme + hidden commission",
+ p:"Defence stocks went UP 140% so there's a new Defence Fund 🪖 Use my link, I'll do ALL the paperwork, totally FREE babes 💅",
+ val:2100,why:"Double trouble: you bought after the big rise was already over, and \"free\" wasn't free — she earns a cut from your money every single year."},
+{h:"@DostInvestments",a:"🤝",likes:"44K",ln:44000,type:"r",tag:"Hidden commission",
+ p:"DM me and I'll set up your fund account FREE. Zero charges, pinky promise 🤙",
+ val:3250,why:"Decent fund, actually! But he quietly earns from your money every year. The exact same fund bought as a [[direct|direct plan]] would've given you ₹3,600."},
+{h:"@GuaranteedGuruji",a:"🧘",likes:"120K",ln:120000,type:"r",tag:"Guaranteed-returns scam",
+ p:"24% returns EVERY MONTH. Guaranteed 🙏 My students never lose. Ever. #blessed",
+ val:0,why:"The app vanished in month four. Real [[mf|mutual funds]] are never allowed to guarantee returns — anyone who promises is selling a scam."},
+{h:"@ForexFatima",a:"💸",likes:"98K",ln:98000,type:"r",tag:"UPI scam",
+ p:"Double your money in 6 months. Send to my UPI, I'll add you to the fund pool 💸 #VIPonly",
+ val:0,why:"Real funds NEVER ask you to send money to a person's UPI. Your money should only ever go to the fund company itself."},
+{h:"@SecretTipsBhau",a:"🤫",likes:"105K",ln:105000,type:"r",tag:"Paid tips trap",
+ p:"Join my VIP group, only ₹999 🤫 Daily sure-shot fund picks. Screenshots in bio!",
+ val:1600,why:"After his fee and his \"sure-shot\" switching, you lost money. If someone really had sure-shot picks, they wouldn't sell them for ₹999."},
+{h:"@TrendTaai",a:"⚡",likes:"58K",ln:58000,type:"r",tag:"Theme FOMO",
+ p:"EV is the FUTURE 🔋 EV stocks already tripled and a new EV Fund just dropped. LAST CHANCE.",
+ val:2050,why:"EVs might be the future, but the prices had already tripled before you arrived. Buying the future after everyone agrees on it is expensive."},
+{h:"@AIPaisaPro",a:"🤖",likes:"88K",ln:88000,type:"r",tag:"Theme FOMO",
+ p:"AI will eat the world 🤖 This AI fund is your ticket. Don't be the friend who missed it.",
+ val:2400,why:"The theme was real — but a fund betting on ONE idea swings hard. It crashed 35% in year two before recovering. Could you have held on?"},
+{h:"@PharmaDidi",a:"💊",likes:"41K",ln:41000,type:"r",tag:"Theme FOMO",
+ p:"The pandemic proved it: pharma is the ONLY safe bet. Health is wealth, literally 💊",
+ val:2300,why:"You bought right after pharma's big spike — then it went quiet for three years. One-industry funds run hot and cold."},
+{h:"@SwitchKing",a:"🏄",likes:"49K",ln:49000,type:"r",tag:"Churning",
+ p:"My rotation system 🏄 New winner fund every month. This month's pick is LIVE. Follow along!",
+ val:2400,why:"Every switch cost you a fee ([[exitload|exit load]]) and tax — and you kept arriving at each fund just after its best month. Paying tolls to go nowhere."},
+{h:"@TimingTina",a:"⏰",likes:"55K",ln:55000,type:"r",tag:"Market timing",
+ p:"Buy this fund TODAY. I'll tell you exactly when to exit 😎 We only catch the ups.",
+ val:2500,why:"Tina called one exit right and missed two re-entries. The market's best days come without warning — miss a few and you miss most of the growth."},
+{h:"@LoanLekeLakhpati",a:"🤑",likes:"33K",ln:33000,type:"r",tag:"Borrowing to invest",
+ p:"Genius hack 🤑 Personal loan at 14%, this fund does 20%. That's FREE 6% bro!",
+ val:1500,why:"The fund grew your money by ₹900 — but the loan cost ₹1,400 in interest. You paid ₹500 to lose money. Loan EMIs are guaranteed; fund returns never are."},
+{h:"@boring_paisa",a:"😴",likes:"47",ln:47,type:"g",tag:"Index fund",
+ p:"[[index|Index fund]]. Low fees. That's it. That's the post.",
+ val:3600,why:"Only 47 likes, best result in your feed. Good investing is usually too boring to go viral."},
+{h:"@SlowMoneySneha",a:"🐢",likes:"112",ln:112,type:"g",tag:"Flexi-cap, direct",
+ p:"[[flexicap|Flexi-cap]] fund, [[direct|direct plan]], 10-year track record. Boring? Yes. Working? Also yes.",
+ val:3500,why:"A fund free to pick big and small companies, no middleman cut, and a decade of proof. The checklist works."},
+{h:"@TaxSaverTara",a:"🧾",likes:"89",ln:89,type:"g",tag:"ELSS tax saver",
+ p:"[[elss|ELSS]] = invests in shares AND cuts your tax bill. [[lockin|Locked for 3 years]] — honestly, that's a feature.",
+ val:3400,why:"It also trimmed your tax bill. And the 3-year lock stopped you from panic-selling in the year-two dip. Sometimes handcuffs help."},
+{h:"@DalalStreetDadi",a:"👵",likes:"203",ln:203,type:"g",tag:"Large-cap",
+ p:"[[largecap|Large-company fund]], beta. Big steady businesses. You'll sleep well 😴",
+ val:3200,why:"Not the flashiest grower, but it barely flinched in the crash. Dadi knows: steady is a strategy."},
+{h:"@HalfHalfHarsh",a:"⚖️",likes:"64",ln:64,type:"g",tag:"Hybrid",
+ p:"[[hybrid|Hybrid fund]]: part shares, part bonds. Less rollercoaster, still grows.",
+ val:3000,why:"When the market dropped 30%, this dropped 12%. You stayed calm and stayed invested — which is the whole game."},
+{h:"@NiftyNiece",a:"🌱",likes:"31",ln:31,type:"g",tag:"Index (Next 50)",
+ p:"Nifty Next 50 [[index|index fund]]. Tomorrow's giant companies, tiny fee, no fund-manager drama.",
+ val:3650,why:"A bumpier ride than the regular index fund — but those \"next\" companies grew up. Lowest likes in your feed, highest result."},
+{h:"@SIPSimran",a:"📅",likes:"156",ln:156,type:"g",tag:"SIP habit",
+ p:"₹500 a month [[sip|SIP]] into one diversified fund. Started at 19. Future me already says thanks.",
+ val:3450,why:"The habit matters more than the amount. Small, automatic, every month. That's the cheat code hiding in plain sight."},
+{h:"@ParkItPriya",a:"🅿️",likes:"78",ln:78,type:"g",tag:"Liquid fund",
+ p:"Step zero: 3 months of expenses in a [[liquid|liquid fund]]. The boring superhero of your money.",
+ val:2650,why:"Lowest growth of the good ones — but when your laptop died in year 3, THIS money saved you from breaking your other funds. Growth isn't money's only job."},
+{h:"@MidCapManish",a:"🎢",likes:"8.2K",ln:8200,type:"y",tag:"Honest mid-cap",
+ p:"[[midcap|Mid-size company]] fund. Solid 7-year record. Fair warning: the ride gets bumpy. Only come if you can handle drops.",
+ val:3300,why:"It fell to ₹1,500 in year two before climbing. He warned you — honesty about risk is itself a green flag."},
+{h:"@GoldGudiya",a:"✨",likes:"12K",ln:12000,type:"y",tag:"Gold slice",
+ p:"Gold fund ✨ Won't grow fast. But when markets cry, gold shines.",
+ val:2900,why:"Fine as a small slice of your money, weak as your whole plan. The pitch was honest — that's rarer than gold."}
+];
+
+/* ═══════════ ENGINE (Swayamvar pattern: save+broadcast, verify-retry) ═══════════ */
+var db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+var _ID_KEY = 'ss-myid-' + ROOM;
+var MY_ID;
+try {
+  MY_ID = localStorage.getItem(_ID_KEY);
+  if (!MY_ID) { MY_ID = crypto.randomUUID(); localStorage.setItem(_ID_KEY, MY_ID); }
+} catch(e){ MY_ID = 'p' + Math.random().toString(36).slice(2); }
+
+var listeners = new Set();
+var currentState = freshState();
+var _channel = null;
+
+function freshState(){
+  return {
+    sessionId: (crypto.randomUUID ? crypto.randomUUID() : String(Date.now())+Math.random()),
+    phase: 'lobby',                 // lobby | swiping | jump | receipts | finale
+    fundIndex: 0,                   // which fund is being swiped (0..9)
+    revealIndex: 0,                 // which receipt is on screen (0..9)
+    run: [],                        // 10 deck indices, drawn at startGame
+    players: {},                    // { id: {id,name,emoji} }
+    swipes: {}                      // { [fundIndex]: { [playerId]: 1|-1 } }
+  };
+}
+function notify(){ var snap = JSON.parse(JSON.stringify(currentState)); listeners.forEach(function(fn){ fn(snap); }); }
+async function save(state){ await db.from('games').upsert({ room_code: GAME_KEY, state: state, updated_at: new Date().toISOString() }); }
+async function load(){ var r = await db.from('games').select('state').eq('room_code', GAME_KEY).single(); return (r.data && r.data.state) || null; }
+async function setupRealtime(){
+  if (_channel) db.removeChannel(_channel);
+  _channel = db.channel('room:' + GAME_KEY)
+    .on('broadcast', { event: 'state' }, function(msg){
+      if (!msg.payload || !msg.payload.state) return;
+      currentState = msg.payload.state;
+      notify();
+    })
+    .subscribe();
+}
+async function broadcast(state){ if (_channel) await _channel.send({ type:'broadcast', event:'state', payload:{ state: state } }); }
+async function push(state){ currentState = state; notify(); await Promise.all([save(state), broadcast(state)]); }
+
+var readyPromise = (async function(){
+  await setupRealtime();
+  var saved = await load();
+  if (saved){ currentState = saved; notify(); }
+})();
+
+var Live = {
+  ready: readyPromise,
+  getState: function(){ return JSON.parse(JSON.stringify(currentState)); },
+  subscribe: function(fn){ listeners.add(fn); return function(){ listeners.delete(fn); }; },
+  myId: function(){ return MY_ID; },
+
+  /* host */
+  startGame: async function(){
+    var s = JSON.parse(JSON.stringify(currentState));
+    s.run = drawRun();
+    s.phase = 'swiping';
+    s.fundIndex = 0;
+    s.swipes = {};
+    await push(s);
+  },
+  nextFund: async function(){
+    var s = JSON.parse(JSON.stringify(currentState));
+    if (s.fundIndex + 1 >= NUM_FUNDS){ s.phase = 'jump'; }
+    else { s.fundIndex += 1; }
+    await push(s);
+  },
+  showReceipts: async function(){
+    var s = JSON.parse(JSON.stringify(currentState));
+    s.phase = 'receipts';
+    s.revealIndex = 0;
+    await push(s);
+  },
+  nextReceipt: async function(){
+    var s = JSON.parse(JSON.stringify(currentState));
+    if (s.revealIndex + 1 >= NUM_FUNDS){ s.phase = 'finale'; }
+    else { s.revealIndex += 1; }
+    await push(s);
+  },
+  resetToLobby: async function(){ await push(freshState()); },
+
+  /* player — write→verify→retry (Swayamvar concurrency fix) */
+  join: async function(name, emoji){
+    var player = { id: MY_ID, name: name, emoji: emoji };
+    for (var attempt = 0; attempt < 5; attempt++){
+      if (attempt > 0) await new Promise(function(r){ setTimeout(r, 150 + Math.random()*250); });
+      var fresh = await load();
+      if (fresh) currentState = fresh;
+      var s = JSON.parse(JSON.stringify(currentState));
+      s.players[MY_ID] = player;
+      await save(s);
+      await new Promise(function(r){ setTimeout(r, 200); });
+      var verified = await load();
+      if (verified && verified.players && verified.players[MY_ID]){
+        currentState = verified; notify(); await broadcast(verified);
+        return verified.sessionId;
+      }
+    }
+    return currentState.sessionId;
+  },
+  castSwipe: async function(fundIdx, dir){
+    for (var attempt = 0; attempt < 5; attempt++){
+      if (attempt > 0) await new Promise(function(r){ setTimeout(r, 120 + Math.random()*220); });
+      var fresh = await load();
+      if (fresh) currentState = fresh;
+      var s = JSON.parse(JSON.stringify(currentState));
+      if (!s.swipes[fundIdx]) s.swipes[fundIdx] = {};
+      s.swipes[fundIdx][MY_ID] = dir;
+      currentState = s; notify();          // optimistic — lock UI immediately
+      await save(s);
+      await new Promise(function(r){ setTimeout(r, 180); });
+      var verified = await load();
+      if (verified && verified.swipes && verified.swipes[fundIdx] && verified.swipes[fundIdx][MY_ID] === dir){
+        currentState = verified; notify(); await broadcast(verified);
+        return;
+      }
+    }
+  }
+};
+
+/* ═══════════ SHARED HELPERS ═══════════ */
+function drawRun(){
+  function shuffled(arr){ var a = arr.slice(); for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t; } return a; }
+  var idxOf = function(t){ return DECK.map(function(c,i){ return c.type===t ? i : -1; }).filter(function(i){ return i>=0; }); };
+  var reds = shuffled(idxOf('r')), greens = shuffled(idxOf('g')), yellows = shuffled(idxOf('y'));
+  var nRed = 5 + Math.floor(Math.random()*2);
+  return shuffled(reds.slice(0,nRed).concat(greens.slice(0,NUM_FUNDS-nRed-1), yellows.slice(0,1)));
+}
+function fmt(n){
+  n = Math.round(n);
+  var s = String(Math.abs(n)), out = "";
+  if (s.length > 3){ out = "," + s.slice(-3); s = s.slice(0,-3);
+    while (s.length > 2){ out = "," + s.slice(-2) + out; s = s.slice(0,-2); } out = s + out; }
+  else out = s;
+  return (n < 0 ? "-₹" : "₹") + out;
+}
+function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function chipify(p){
+  return p.replace(/\[\[(\w+)\|([^\]]+)\]\]/g, function(m,k,txt){
+    return DEFS[k] ? '<span class="chip" data-k="'+k+'">'+txt+'</span>' : txt;
+  });
+}
+function openSheet(k){
+  document.getElementById('sheet-term').textContent = DEFS[k][0];
+  document.getElementById('sheet-def').textContent = DEFS[k][1];
+  document.getElementById('sheetbg').style.display = 'block';
+  document.getElementById('sheet').classList.add('on');
+}
+function closeSheet(){
+  document.getElementById('sheetbg').style.display = 'none';
+  document.getElementById('sheet').classList.remove('on');
+}
+document.addEventListener('click', function(e){
+  var c = e.target.closest('.chip');
+  if (c && c.dataset.k) openSheet(c.dataset.k);
+});
+function toast(msg){
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('on');
+  clearTimeout(t._tm); t._tm = setTimeout(function(){ t.classList.remove('on'); }, 1900);
+}
+
+/* verdict for a player's action on a card */
+function verdictFor(card, dir){
+  if (dir === 1){
+    if (card.type==='r') return ['OUCH.','bad'];
+    if (card.type==='g') return ["IT'S A MATCH 💚",'good'];
+    return ['FAIR PLAY 👍','good'];
+  }
+  if (card.type==='r') return ['DODGED 🚩','good'];
+  if (card.type==='g') return ['SCROLLED PAST 💔','meh'];
+  return ['FAIR CALL','meh'];
+}
+
+/* per-player stats over revealed funds (non-vote = skip) */
+function playerStats(state, pid, upTo){
+  var invested = 0, corpus = 0, dodged = 0, reds = 0;
+  var last = (upTo === undefined) ? NUM_FUNDS - 1 : upTo;
+  for (var i = 0; i <= last && i < (state.run||[]).length; i++){
+    var card = DECK[state.run[i]];
+    var dir = (state.swipes[i] || {})[pid] || -1;
+    if (card.type === 'r') reds++;
+    if (dir === 1 && invested < MAX_PICKS){ invested++; corpus += card.val; }
+    else if (card.type === 'r') dodged++;
+  }
+  corpus += (MAX_PICKS - invested) * SAVINGS_VAL;
+  return { invested: invested, corpus: corpus, dodged: dodged, reds: reds };
+}
+function gradeFor(state, st){
+  var cards = (state.run||[]).map(function(i){ return DECK[i]; });
+  var victim = cards.slice().sort(function(a,b){ return b.ln-a.ln; }).slice(0,5).reduce(function(s,c){ return s+c.val; },0);
+  var genius = cards.slice().sort(function(a,b){ return b.val-a.val; }).slice(0,5).reduce(function(s,c){ return s+c.val; },0);
+  var skill = genius > victim ? Math.max(0, Math.min(1, (st.corpus - victim) / (genius - victim))) : 0.5;
+  var radar = st.reds > 0 ? st.dodged / st.reds : 1;
+  var combined = 0.6*skill + 0.4*radar;
+  if (combined >= 0.85) return ['BORING GENIUS','g1'];
+  if (combined >= 0.6)  return ['STEADY HAND','g2'];
+  if (combined >= 0.35) return ['HYPE CURIOUS','g3'];
+  return ['HYPE VICTIM','g4'];
+}
+
+/* ═══════════ RENDER ═══════════ */
+var root = document.getElementById('root');
+var _lastKey = null;
+function setHTML(key, html){
+  if (key === _lastKey) return false;
+  _lastKey = key; root.innerHTML = html;
+  return true;
+}
+
+/* ── LANDING (no role) ── */
+function renderLanding(){
+  setHTML('landing',
+    '<div class="hwrap" style="max-width:760px;">'+
+      '<div class="strip mono"><span>IFM · GEN NEXT</span><span>LIVE · CLASSROOM</span></div>'+
+      '<div class="kicker mono" style="margin-top:60px;">FIRST SALARY EDITION — LIVE</div>'+
+      '<div class="anton" style="font-size:clamp(52px,10vw,84px);line-height:0.9;color:var(--cream);">SWIPE RIGHT</div>'+
+      '<div class="anton" style="font-size:clamp(52px,10vw,84px);line-height:0.9;color:var(--lime);">ON SIP <span style="color:var(--amber);font-size:0.55em;">LIVE</span></div>'+
+      '<p style="margin-top:16px;color:rgba(236,230,215,0.85);max-width:480px;line-height:1.5;">One feed on the big screen. Everyone swipes on their phone. Five-year receipts after every fund.</p>'+
+      '<div class="role-grid">'+
+        '<div class="role-btn" onclick="pickRole(\'host\')"><div class="big">📽️</div><div class="rl">TEACHER / PROJECTOR</div><div class="rn">I\'M THE HOST</div><div class="rd">Show the feed on the big screen, control the rounds</div></div>'+
+        '<div class="role-btn" onclick="pickRole(\'player\')"><div class="big">📱</div><div class="rl">STUDENT / PHONE</div><div class="rn">I\'M PLAYING</div><div class="rd">Join with the room code and swipe on your phone</div></div>'+
+      '</div>'+
+    '</div>');
+}
+function pickRole(r){
+  var p = new URLSearchParams(location.search);
+  p.set('role', r); p.set('room', ROOM);
+  location.search = '?' + p.toString();
+}
+
+/* ── HOST ── */
+function playerUrl(){
+  return location.origin + location.pathname + '?role=player&room=' + ROOM;
+}
+function renderHost(s){
+  if (s.phase === 'lobby') return renderHostLobby(s);
+  if (s.phase === 'swiping') return renderHostSwiping(s);
+  if (s.phase === 'jump') return renderHostJump(s);
+  if (s.phase === 'receipts') return renderHostReceipt(s);
+  if (s.phase === 'finale') return renderHostFinale(s);
+}
+
+function renderHostLobby(s){
+  var players = Object.values(s.players || {});
+  var key = 'hlobby:' + players.length + ':' + s.sessionId;
+  var chips = players.map(function(p){
+    return '<span class="pchip"><span class="e">'+esc(p.emoji)+'</span><span class="nm">'+esc(p.name)+'</span></span>';
+  }).join('') || '<span class="nonechip">Waiting for the first phone…</span>';
+  var changed = setHTML(key,
+    '<div class="hwrap hpad">'+
+      '<div class="strip mono"><span>IFM · GEN NEXT · LIVE</span><span>ROOM ' + esc(ROOM) + '</span></div>'+
+      '<div class="kicker mono">FIRST SALARY EDITION — LIVE</div>'+
+      '<div class="anton" style="font-size:clamp(48px,7vw,76px);line-height:0.9;color:var(--cream);">SWIPE RIGHT <span style="color:var(--lime);">ON SIP</span></div>'+
+      '<div class="anton" style="font-size:clamp(20px,3vw,30px);color:var(--amber);margin-top:8px;">SCAN. JOIN. DON\'T GET FOOLED.</div>'+
+      '<div class="lob">'+
+        '<div class="qrcard"><div class="ql">SCAN TO JOIN ON YOUR PHONE</div><div id="qr" style="display:inline-block;line-height:0;"></div>'+
+          '<div class="qurl">'+esc(playerUrl())+'</div><div class="qroom">ROOM ' + esc(ROOM) + '</div></div>'+
+        '<div class="lob-right">'+
+          '<div class="count-row"><span class="n">'+players.length+'</span><span class="t">'+(players.length===1?'player':'players')+' in the feed</span><span class="live">● LIVE</span></div>'+
+          '<div class="chips">'+chips+'</div>'+
+          '<div class="mono" style="font-size:0.55rem;color:rgba(236,230,215,0.5);line-height:2;">EVERYONE GETS ₹10,000 · 10 FUNDS · MAX 5 INVESTMENTS<br>SWIPE RIGHT = INVEST ₹2,000 · SWIPE LEFT = SKIP</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="ctrl"><span class="ctrl-note">ROOM '+esc(ROOM)+' · '+players.length+' JOINED</span><span class="sp"></span>'+
+        '<button class="cbtn dim" onclick="hostReset()">RESET</button>'+
+        '<button class="cbtn go" '+(players.length===0?'disabled':'')+' onclick="Live.startGame()">OPEN THE FEED ▶</button></div>'+
+    '</div>');
+  if (changed){
+    var qel = document.getElementById('qr');
+    if (qel && window.QRCode){
+      new QRCode(qel, { text: playerUrl(), width: 270, height: 270, colorDark: '#0f2415', colorLight: '#ece6d7', correctLevel: QRCode.CorrectLevel.M });
+    }
+  }
+}
+
+function renderHostSwiping(s){
+  var card = DECK[s.run[s.fundIndex]];
+  var players = Object.values(s.players || {});
+  var votes = s.swipes[s.fundIndex] || {};
+  var nVoted = Object.keys(votes).filter(function(id){ return s.players[id]; }).length;
+  var key = 'hswipe:' + s.fundIndex + ':' + nVoted + ':' + players.length;
+  var chips = players.map(function(p){
+    var did = votes[p.id] !== undefined;
+    return '<span class="pchip '+(did?'lit':'dim')+'"><span class="e">'+esc(p.emoji)+'</span><span class="nm">'+esc(p.name)+'</span></span>';
+  }).join('');
+  setHTML(key,
+    '<div class="hwrap hpad">'+
+      '<div class="strip mono"><span>FUND '+(s.fundIndex+1)+' OF '+NUM_FUNDS+'</span><span>ROOM '+esc(ROOM)+'</span></div>'+
+      '<div class="stage">'+
+        '<div class="bigpost">'+
+          '<div class="phead"><div class="av">'+card.a+'</div>'+
+            '<div><div class="handle">'+esc(card.h)+'</div><div class="meta">SPONSORED · FINANCE</div></div>'+
+            '<div class="likes">'+card.likes+'<span class="l">LIKES</span></div></div>'+
+          '<div class="pitch"><p>'+chipify(card.p)+'</p></div>'+
+        '</div>'+
+        '<div class="side">'+
+          '<div class="tallybox"><div class="n">'+nVoted+' / '+players.length+'</div><div class="l">SWIPES LOCKED IN</div></div>'+
+          '<div class="chips" style="margin:0;">'+chips+'</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="ctrl"><span class="ctrl-note">SWIPE ON YOUR PHONES — RIGHT TO INVEST ₹2,000, LEFT TO SKIP · NO RESULTS UNTIL THE END 🤫</span><span class="sp"></span>'+
+        '<button class="cbtn dim" onclick="hostReset()">RESET</button>'+
+        '<button class="cbtn go" onclick="Live.nextFund()">'+(s.fundIndex+1>=NUM_FUNDS?'TIME JUMP — 5 YEARS ▶':'NEXT FUND ▶')+'</button></div>'+
+    '</div>');
+}
+
+function renderHostJump(s){
+  setHTML('hjump:' + s.sessionId,
+    '<div class="hwrap hpad">'+
+      '<div class="strip mono"><span>ALL PICKS LOCKED</span><span>ROOM '+esc(ROOM)+'</span></div>'+
+      '<div style="text-align:center;padding-top:18vh;">'+
+        '<div class="anton" style="font-size:clamp(64px,11vw,120px);line-height:0.92;color:var(--lime);">5 YEARS<br>LATER…</div>'+
+        '<div style="color:rgba(236,230,215,0.8);margin-top:20px;font-size:1.1rem;">Ten funds. All your swipes are locked in.<br>Time to find out who read the feed — and who got read.</div>'+
+        '<div class="mono" style="margin-top:26px;font-size:0.6rem;color:var(--amber);animation:pulse 1.6s infinite;">● THE RECEIPTS ARE PRINTING</div>'+
+      '</div>'+
+      '<div class="ctrl"><span class="ctrl-note">DRUM ROLL 🥁</span><span class="sp"></span>'+
+        '<button class="cbtn dim" onclick="hostReset()">RESET</button>'+
+        '<button class="cbtn go" onclick="Live.showReceipts()">SHOW THE RECEIPTS ▶</button></div>'+
+    '</div>');
+}
+
+function renderHostReceipt(s){
+  var card = DECK[s.run[s.revealIndex]];
+  var players = Object.values(s.players || {});
+  var votes = s.swipes[s.revealIndex] || {};
+  var inv = players.filter(function(p){ return votes[p.id] === 1; });
+  var skp = players.filter(function(p){ return votes[p.id] !== 1; });
+  var key = 'hreceipt:' + s.revealIndex + ':' + inv.length + ':' + players.length;
+  var headline = card.type==='r' ? ['🚩 RED FLAG','bad'] : (card.type==='g' ? ['💚 GREEN FLAG','good'] : ['🟡 JUDGMENT CALL','meh']);
+  var isLast = s.revealIndex + 1 >= NUM_FUNDS;
+  setHTML(key,
+    '<div class="hwrap hpad">'+
+      '<div class="strip mono"><span>THE RECEIPTS · '+(s.revealIndex+1)+' OF '+NUM_FUNDS+'</span><span>5 YEARS LATER…</span></div>'+
+      '<div style="margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">'+
+        '<div style="width:56px;height:56px;border-radius:50%;background:var(--forest-3);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.7rem;">'+card.a+'</div>'+
+        '<div><div style="font-weight:700;font-size:1.3rem;">'+esc(card.h)+'</div><div class="rev-flag">'+esc(card.tag)+'</div></div>'+
+      '</div>'+
+      '<div class="verdict-big anton '+headline[1]+'" style="margin-top:16px;">'+headline[0]+'</div>'+
+      '<div class="moneyline">'+fmt(STAKE)+' <span class="a">→</span> <span class="'+(card.val>=STAKE?'up':'dn')+'">'+fmt(card.val)+'</span> <span style="font-family:\'Space Mono\',monospace;font-size:0.45em;letter-spacing:0.1em;color:rgba(236,230,215,0.5);">IN 5 YEARS</span></div>'+
+      '<div class="whytext">'+chipify(card.why)+'</div>'+
+      '<div class="splitcols">'+
+        '<div class="splitcol inv"><div class="sh"><span class="st anton">INVESTED 💚</span><span class="sn">'+inv.length+'</span></div>'+
+          '<div class="namechips">'+(inv.map(function(p){ return '<span class="nchip"><span>'+esc(p.emoji)+'</span>'+esc(p.name)+'</span>'; }).join('') || '<span class="nonechip">Nobody took the bait'+(card.type!=='r'?'… or the gem':'')+'</span>')+'</div></div>'+
+        '<div class="splitcol skp"><div class="sh"><span class="st anton">SKIPPED ✕</span><span class="sn">'+skp.length+'</span></div>'+
+          '<div class="namechips">'+(skp.map(function(p){ var noVote = votes[p.id] === undefined; return '<span class="nchip'+(noVote?' ghost':'')+'"><span>'+esc(p.emoji)+'</span>'+esc(p.name)+'</span>'; }).join('') || '<span class="nonechip">Everyone went in!</span>')+'</div></div>'+
+      '</div>'+
+      '<div class="ctrl"><span class="ctrl-note">'+(card.type==='r'?'TEACHING MOMENT: WHAT WAS THE TELL?':'WHY DID THIS ONE WORK?')+'</span><span class="sp"></span>'+
+        '<button class="cbtn dim" onclick="hostReset()">RESET</button>'+
+        '<button class="cbtn go" onclick="Live.nextReceipt()">'+(isLast?'FINAL SCORES ▶':'NEXT RECEIPT ▶')+'</button></div>'+
+    '</div>');
+}
+
+function renderHostFinale(s){
+  var players = Object.values(s.players || {});
+  var ranked = players.map(function(p){
+    var st = playerStats(s, p.id);
+    var g = gradeFor(s, st);
+    return { p: p, st: st, grade: g };
+  }).sort(function(a,b){ return b.st.corpus - a.st.corpus || b.st.dodged - a.st.dodged; });
+  var key = 'hfinale:' + s.sessionId + ':' + players.length;
+
+  /* class stats */
+  var cards = (s.run||[]).map(function(i){ return DECK[i]; });
+  var worstTrap = null, bestDodge = null;
+  cards.forEach(function(c, i){
+    if (c.type !== 'r') return;
+    var votes = s.swipes[i] || {};
+    var nInv = players.filter(function(p){ return votes[p.id] === 1; }).length;
+    if (!worstTrap || nInv > worstTrap.n) worstTrap = { c: c, n: nInv };
+    var nDodge = players.length - nInv;
+    if (!bestDodge || nDodge > bestDodge.n) bestDodge = { c: c, n: nDodge };
+  });
+
+  var rows = ranked.map(function(r, i){
+    return '<div class="brow '+(i===0?'top1':i===1?'top2':i===2?'top3':'')+'">'+
+      '<span class="rk">'+(i===0?'🏆':('#'+(i+1)))+'</span>'+
+      '<span class="pe">'+esc(r.p.emoji)+'</span>'+
+      '<span class="pn">'+esc(r.p.name)+'</span>'+
+      '<span class="pd">'+r.st.dodged+'/'+r.st.reds+' FLAGS</span>'+
+      '<span class="pg '+r.grade[1]+'">'+r.grade[0]+'</span>'+
+      '<span class="pc">'+fmt(r.st.corpus)+'</span>'+
+    '</div>';
+  }).join('') || '<div class="nonechip">No players this round.</div>';
+
+  setHTML(key,
+    '<div class="hwrap hpad">'+
+      '<div class="strip mono"><span>FINAL SCORES</span><span>ROOM '+esc(ROOM)+'</span></div>'+
+      '<div class="kicker mono">THE VERDICT IS IN</div>'+
+      '<div class="anton" style="font-size:clamp(44px,6.5vw,72px);line-height:0.92;color:var(--lime);">WHO READ THE FEED<br><span style="color:var(--cream);">BEST?</span></div>'+
+      '<div class="board">'+rows+'</div>'+
+      '<div class="classstats">'+
+        (worstTrap ? '<div class="cstat"><div class="cl">THE CLASS FELL HARDEST FOR</div><div class="cv">'+worstTrap.c.a+' <strong>'+esc(worstTrap.c.h)+'</strong> — '+worstTrap.n+' invested. '+esc(worstTrap.c.tag)+'.</div></div>' : '')+
+        (bestDodge ? '<div class="cstat"><div class="cl">BEST-DODGED TRAP</div><div class="cv">'+bestDodge.c.a+' <strong>'+esc(bestDodge.c.h)+'</strong> — '+bestDodge.n+' swiped left. Radar on point.</div></div>' : '')+
+        '<div class="cstat"><div class="cl">THE LESSON</div><div class="cv">Good funds are boring: long track record, low fees, no promises, no countdowns. If a post is shouting, check why.</div></div>'+
+      '</div>'+
+      '<div class="ctrl"><span class="ctrl-note">SCREENSHOT THE BOARD 📸</span><span class="sp"></span>'+
+        '<button class="cbtn go" onclick="hostReset()">RUN IT BACK ↻</button></div>'+
+    '</div>');
+}
+
+function hostReset(){
+  if (confirm('Reset the game? All players will return to the join screen.')) Live.resetToLobby();
+}
+
+/* ── PLAYER ── */
+var _joinedSession = null;
+try { _joinedSession = localStorage.getItem('ss-joined-' + ROOM); } catch(e){}
+
+function renderPlayer(s){
+  var me = (s.players || {})[MY_ID];
+  var joined = me && _joinedSession === s.sessionId;
+  if (!joined) return renderJoin(s);
+  if (s.phase === 'lobby') return renderPlayerLobby(s, me);
+  if (s.phase === 'swiping') return renderPlayerSwiping(s, me);
+  if (s.phase === 'jump') return renderPlayerJump(s, me);
+  if (s.phase === 'receipts') return renderPlayerReceipt(s, me);
+  if (s.phase === 'finale') return renderPlayerFinale(s, me);
+}
+
+var EMOJIS = ['😎','🦁','🐯','🦊','🐼','🦄','🐸','🦅','🐙','🦋','🌟','🔥','💎','🚀','🎯','🍕'];
+var _selEmoji = EMOJIS[Math.floor(Math.random()*EMOJIS.length)];
+
+function renderJoin(s){
+  var changed = setHTML('join:' + s.sessionId,
+    '<div class="pwrap fade">'+
+      '<div class="strip mono"><span>IFM · LIVE</span><span>ROOM '+esc(ROOM)+'</span></div>'+
+      '<div class="kicker mono">FIRST SALARY EDITION — LIVE</div>'+
+      '<div class="anton" style="font-size:clamp(44px,13vw,60px);line-height:0.9;color:var(--cream);">SWIPE RIGHT</div>'+
+      '<div class="anton" style="font-size:clamp(44px,13vw,60px);line-height:0.9;color:var(--lime);">ON SIP</div>'+
+      '<div class="joinform">'+
+        '<label>YOUR NAME</label>'+
+        '<input id="jname" maxlength="14" placeholder="e.g. Priya" autocomplete="off">'+
+        '<label>PICK YOUR AVATAR</label>'+
+        '<div class="emoji-grid" id="egrid">'+EMOJIS.map(function(e){ return '<div class="eopt'+(e===_selEmoji?' sel':'')+'" data-e="'+e+'">'+e+'</div>'; }).join('')+'</div>'+
+        '<button class="cta" style="margin-top:24px;" id="jbtn">JOIN THE FEED 💚</button>'+
+      '</div>'+
+    '</div>');
+  if (changed){
+    document.getElementById('egrid').addEventListener('click', function(e){
+      var o = e.target.closest('.eopt'); if (!o) return;
+      _selEmoji = o.dataset.e;
+      document.querySelectorAll('.eopt').forEach(function(x){ x.classList.toggle('sel', x.dataset.e === _selEmoji); });
+    });
+    document.getElementById('jbtn').addEventListener('click', async function(){
+      var name = (document.getElementById('jname').value || '').trim();
+      if (!name){ toast('TYPE YOUR NAME FIRST!'); return; }
+      this.disabled = true; this.textContent = 'JOINING…';
+      var sid = await Live.join(name, _selEmoji);
+      _joinedSession = sid;
+      try { localStorage.setItem('ss-joined-' + ROOM, sid); } catch(e){}
+      _lastKey = null;
+      render(Live.getState());
+    });
+  }
+}
+
+function renderPlayerLobby(s, me){
+  setHTML('plobby:' + Object.keys(s.players).length,
+    '<div class="pwrap fade"><div class="strip mono"><span>IFM · LIVE</span><span>ROOM '+esc(ROOM)+'</span></div>'+
+      '<div class="waitcard">'+
+        '<div class="we">'+esc(me.emoji)+'</div>'+
+        '<div class="wt">YOU\'RE IN, '+esc(me.name).toUpperCase()+'!</div>'+
+        '<div class="ws">'+Object.keys(s.players).length+' in the room. Eyes on the big screen —<br>the feed opens when your teacher starts.</div>'+
+        '<div class="mono" style="margin-top:22px;font-size:0.52rem;color:rgba(236,230,215,0.5);line-height:2;">YOU GET ₹10,000 · 10 FUNDS · MAX 5 INVESTMENTS<br>SWIPE RIGHT = INVEST ₹2,000 · LEFT = SKIP</div>'+
+      '</div></div>');
+}
+
+function renderPlayerSwiping(s, me){
+  var card = DECK[s.run[s.fundIndex]];
+  var myVote = (s.swipes[s.fundIndex] || {})[MY_ID];
+  var st = playerStats(s, MY_ID, s.fundIndex);   // includes current fund if voted
+  var used = 0;
+  for (var i = 0; i < s.fundIndex; i++){ if ((s.swipes[i]||{})[MY_ID] === 1) used++; }
+  var votedThis = myVote !== undefined;
+  if (votedThis && myVote === 1) used++;
+  var canInvest = used < MAX_PICKS;
+  var key = 'pswipe:' + s.fundIndex + ':' + String(myVote);
+  setHTML(key,
+    '<div class="pwrap fade">'+
+      '<div class="strip mono"><span>FUND '+(s.fundIndex+1)+' / '+NUM_FUNDS+'</span><span>'+esc(me.emoji)+' '+esc(me.name)+'</span></div>'+
+      '<div class="hud">'+
+        '<div class="box"><div class="n">'+fmt(10000 - used*STAKE)+'</div><div class="l">CASH LEFT</div></div>'+
+        '<div class="box"><div class="n amber">'+used+' / '+MAX_PICKS+'</div><div class="l">INVESTED</div></div>'+
+      '</div>'+
+      '<div class="ppost" id="ppost">'+
+        '<div class="phead"><div class="av">'+card.a+'</div>'+
+          '<div class="who"><div class="handle">'+esc(card.h)+'</div><div class="meta">sponsored · finance</div></div>'+
+          '<div class="likes">'+card.likes+'<span class="l">LIKES</span></div></div>'+
+        '<div class="pitch"><p>'+chipify(card.p)+'</p></div>'+
+        '<div class="stamp yes">INVEST 💚</div>'+
+        '<div class="stamp no">SKIP ✕</div>'+
+      '</div>'+
+      (votedThis
+        ? '<div class="locked"><div class="lk '+(myVote===1?'inv':'skp')+'">'+(myVote===1?'INVESTED ₹2,000 💚':'SKIPPED ✕')+'</div><div class="ls">LOCKED IN — WATCH THE BIG SCREEN</div></div>'
+        : '<div class="acts">'+
+            '<button class="act skip" onclick="doSwipe(-1)">✕ SKIP</button>'+
+            '<button class="act invest" '+(canInvest?'':'disabled')+' onclick="doSwipe(1)">💚 INVEST ₹2K</button>'+
+          '</div>'+(canInvest?'':'<div class="mono" style="text-align:center;font-size:0.52rem;color:var(--amber);margin-top:10px;">NO CASH LEFT — SKIP THE REST</div>')+
+          '<div class="mono" style="text-align:center;font-size:0.5rem;color:rgba(236,230,215,0.45);margin-top:12px;">SWIPE THE CARD OR TAP A BUTTON</div>')+
+    '</div>');
+  if (!votedThis){
+    var el = document.getElementById('ppost');
+    if (el) bindPlayerDrag(el, canInvest);
+  }
+}
+
+/* drag-to-swipe on the student card (mirrors the solo game) */
+function bindPlayerDrag(el, canInvest){
+  var sx=0, sy=0, dx=0, dragging=false, moved=false, done=false;
+  function pt(e){ return e.touches ? e.touches[0] : e; }
+  function down(e){
+    if (done || e.target.closest('.chip')) return;
+    dragging = true; moved = false;
+    var p = pt(e); sx = p.clientX; sy = p.clientY; dx = 0;
+    el.style.transition = 'none';
+  }
+  function move(e){
+    if (!dragging || done) return;
+    var p = pt(e); dx = p.clientX - sx; var dy = p.clientY - sy;
+    if (Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy)) moved = true;
+    if (moved && e.cancelable) e.preventDefault();
+    if (!moved) return;
+    el.style.transform = 'translateX('+dx+'px) translateY('+(dy*0.12)+'px) rotate('+(dx/14)+'deg)';
+    var y = el.querySelector('.stamp.yes'), n = el.querySelector('.stamp.no');
+    if (y) y.style.opacity = dx > 0 ? Math.min(dx/90, 1) : 0;
+    if (n) n.style.opacity = dx < 0 ? Math.min(-dx/90, 1) : 0;
+  }
+  function snapBack(){
+    el.style.transition = 'transform .25s ease';
+    el.style.transform = '';
+    var y = el.querySelector('.stamp.yes'), n = el.querySelector('.stamp.no');
+    if (y) y.style.opacity = 0;
+    if (n) n.style.opacity = 0;
+  }
+  function up(){
+    if (!dragging || done) return;
+    dragging = false;
+    if (dx > 85){
+      if (!canInvest){ toast('NO CASH LEFT — SKIP THE REST!'); snapBack(); return; }
+      flyOut(1);
+    } else if (dx < -85){
+      flyOut(-1);
+    } else snapBack();
+  }
+  function flyOut(dir){
+    done = true;
+    el.style.transition = 'transform .3s ease, opacity .3s ease';
+    el.style.transform = 'translateX('+(dir*520)+'px) rotate('+(dir*22)+'deg)';
+    el.style.opacity = '0';
+    setTimeout(function(){ doSwipe(dir); }, 200);
+  }
+  el.addEventListener('mousedown', down);
+  el.addEventListener('touchstart', down, {passive:true});
+  window.addEventListener('mousemove', move, {passive:false});
+  window.addEventListener('touchmove', move, {passive:false});
+  window.addEventListener('mouseup', up);
+  window.addEventListener('touchend', up);
+}
+
+function doSwipe(dir){
+  var s = Live.getState();
+  Live.castSwipe(s.fundIndex, dir);
+}
+
+function renderPlayerJump(s, me){
+  var used = 0;
+  for (var i = 0; i < NUM_FUNDS; i++){ if ((s.swipes[i]||{})[MY_ID] === 1) used++; }
+  setHTML('pjump:' + s.sessionId,
+    '<div class="pwrap fade"><div class="strip mono"><span>PICKS LOCKED</span><span>'+esc(me.emoji)+' '+esc(me.name)+'</span></div>'+
+      '<div class="waitcard">'+
+        '<div class="we">⏳</div>'+
+        '<div class="wt">5 YEARS LATER…</div>'+
+        '<div class="ws">You invested in <strong>'+used+' of 10</strong> funds.<br>No takebacks. The receipts are printing —<br>eyes on the big screen.</div>'+
+        '<div class="mono" style="margin-top:22px;font-size:0.52rem;color:var(--amber);animation:pulse 1.6s infinite;">● TIME TRAVELLING</div>'+
+      '</div></div>');
+}
+
+function renderPlayerReceipt(s, me){
+  var card = DECK[s.run[s.revealIndex]];
+  var myVote = (s.swipes[s.revealIndex] || {})[MY_ID];
+  var dir = myVote === 1 ? 1 : -1;
+  var v = verdictFor(card, dir);
+  setHTML('preceipt:' + s.revealIndex,
+    '<div class="pwrap fade">'+
+      '<div class="strip mono"><span>THE RECEIPTS</span><span>'+(s.revealIndex+1)+' / '+NUM_FUNDS+'</span></div>'+
+      '<div class="prev-card" style="margin-top:20px;">'+
+        '<div class="vh"><span class="vt '+v[1]+'">'+v[0]+'</span><span class="vm">'+(dir===1?fmt(STAKE)+' → '+fmt(card.val):'')+'</span></div>'+
+        '<div class="mono" style="font-size:0.5rem;color:var(--amber);margin-top:6px;">'+(card.type==='r'?'🚩 ':'')+esc(card.tag)+' · '+esc(card.h)+'</div>'+
+        '<div class="vw">'+(dir===1 ? chipify(card.why) : (card.type==='r' ? 'Dodged — investors\' '+fmt(STAKE)+' became '+fmt(card.val)+'.' : 'You scrolled past. '+fmt(STAKE)+' here would\'ve become '+fmt(card.val)+'.'))+'</div>'+
+      '</div>'+
+      '<div class="mono" style="text-align:center;font-size:0.52rem;color:rgba(236,230,215,0.5);margin-top:18px;animation:pulse 1.8s infinite;">WATCH THE BIG SCREEN FOR THE CLASS SPLIT</div>'+
+    '</div>');
+}
+
+function renderPlayerFinale(s, me){
+  var ranked = Object.values(s.players).map(function(p){
+    var st = playerStats(s, p.id);
+    return { p: p, st: st };
+  }).sort(function(a,b){ return b.st.corpus - a.st.corpus || b.st.dodged - a.st.dodged; });
+  var myRank = ranked.findIndex(function(r){ return r.p.id === MY_ID; }) + 1;
+  var myStats = playerStats(s, MY_ID);
+  var g = gradeFor(s, myStats);
+  setHTML('pfinale:' + s.sessionId,
+    '<div class="pwrap fade">'+
+      '<div class="strip mono"><span>FINAL SCORE</span><span>'+esc(me.emoji)+' '+esc(me.name)+'</span></div>'+
+      '<div class="kicker mono" style="margin-top:30px;">YOUR VERDICT</div>'+
+      '<div class="anton" style="font-size:clamp(40px,12vw,56px);line-height:0.95;color:var(--lime);">'+g[0]+'</div>'+
+      '<div class="mycard">'+
+        '<div class="l">YOUR ₹10,000 BECAME</div>'+
+        '<div class="v">'+fmt(myStats.corpus)+'</div>'+
+        '<div class="sub">RANK #'+myRank+' OF '+ranked.length+' · DODGED '+myStats.dodged+'/'+myStats.reds+' RED FLAGS</div>'+
+      '</div>'+
+      '<div style="margin-top:18px;border-left:3px solid var(--lime);padding-left:14px;font-size:0.9rem;line-height:1.55;color:rgba(236,230,215,0.9);">Good funds are boring. Long track record, low fees, no promises, no countdown timers. If a post is shouting, check why.</div>'+
+      '<div class="mono" style="text-align:center;font-size:0.52rem;color:rgba(236,230,215,0.5);margin-top:24px;">LEADERBOARD ON THE BIG SCREEN 🏆</div>'+
+    '</div>');
+}
+
+/* ── DISPATCH ── */
+function render(s){
+  if (!ROLE){ renderLanding(); return; }
+  if (ROLE === 'host') renderHost(s);
+  else renderPlayer(s);
+}
+
+(async function(){
+  if (!ROLE){ renderLanding(); return; }
+  root.innerHTML = '<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;" class="mono">CONNECTING…</div>';
+  await Live.ready;
+  /* player eviction: if teacher reset (new sessionId), drop back to join */
+  Live.subscribe(function(s){
+    if (ROLE === 'player' && _joinedSession && s.sessionId !== _joinedSession){
+      _joinedSession = null;
+      try { localStorage.removeItem('ss-joined-' + ROOM); } catch(e){}
+    }
+    render(s);
+  });
+  render(Live.getState());
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <!-- Ensures relative asset paths (CSS, JS, SVGs) resolve correctly whether
+       the page is loaded with or without a trailing slash on /stock-rush-pro -->
+  <base href="/stock-rush-pro/" />
+  <title>Stock Rush Pro — Investing for Mummies</title>
+  <link rel="icon" type="image/png" href="/ifm-round.png">
+  <meta name="description" content="A 6-round real-money classroom game. IPOs, dividends, stock splits, buybacks, rights issues." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css?v=20260730-rrandom" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Libraries (loaded synchronously — order matters) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"    crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+
+  <!-- Game data & engine (vanilla JS — no JSX) -->
+  <script src="game-data.js?v=20260730-rrandom"></script>
+  <script src="engine.js?v=20260730-rrandom"></script>
+
+  <!-- Shared UI primitives (JSX) -->
+  <script type="text/babel" src="ui-common.jsx?v=20260730-rrandom"></script>
+
+  <!-- Role-specific views (JSX) -->
+  <script type="text/babel" src="host-view.jsx?v=20260730-rrandom"></script>
+  <script type="text/babel" src="player-view.jsx?v=20260730-rrandom"></script>
+
+  <!-- App shell -->
+  <script type="text/babel">
+    // ── Landing page ────────────────────────────────────────────────────────────
+
+    function Landing({ onRole }) {
+      return (
+        <div className="landing">
+          <div className="landing-card">
+            <div className="landing-mark">SR<sup style={{ fontSize: 10 }}>PRO</sup></div>
+            <div className="landing-title">Stock Rush<br />Pro</div>
+            <div className="landing-sub">
+              A 6-round classroom journey through twelve years of Indian markets.
+              Trade real historical stocks — then experience dividends, IPOs,
+              stock splits, buybacks and rights issues firsthand.
+            </div>
+
+            <div className="role-row">
+              <button className="role-card" onClick={() => onRole('host')}>
+                <div className="role-eyebrow">FOR TEACHERS</div>
+                <div className="role-title">Host Session</div>
+                <div className="role-desc">
+                  Project the leaderboard. Control the pace.
+                  Watch students discover how markets really work.
+                </div>
+                <div className="role-cta">Open host view →</div>
+              </button>
+
+              <button className="role-card" onClick={() => onRole('player')}>
+                <div className="role-eyebrow">FOR STUDENTS</div>
+                <div className="role-title">Join Game</div>
+                <div className="role-desc">
+                  Enter the room code from your teacher's screen.
+                  Trade ₹2L of virtual money across six historic eras.
+                </div>
+                <div className="role-cta">Join as player →</div>
+              </button>
+            </div>
+
+            <div className="landing-foot">
+              <b>6 rounds</b> · 2014 → 2026 · Historical prices ·
+              <b> 6 corporate action types</b> · ₹2L starting cash ·
+              Real-time multiplayer via Supabase
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // ── App root ────────────────────────────────────────────────────────────────
+    // engine.js initialises immediately on script load, reads ?role= and ?room=
+    // from the URL, then claims host or joins as non-host. React just renders on top.
+
+    function App() {
+      const params  = new URLSearchParams(window.location.search);
+      const role    = params.get('role');
+      // Default to Host. Players come in via QR with ?role=player&room=XXXX.
+      if (role === 'player') return <PlayerView />;
+      return <HostView />;
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

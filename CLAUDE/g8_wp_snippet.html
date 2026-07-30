@@ -1,0 +1,46 @@
+<!-- 3 Buckets — Investing for Mummies -->
+<style>
+body{background:#f7faf9!important;}
+.wp-block-post-title, h1.entry-title, .page-title{display:none!important;}
+.wp-site-blocks, .is-layout-constrained, .entry-content,
+.wp-block-group{background:#f7faf9!important;padding:0!important;max-width:100%!important;}
+footer.wp-block-template-part{display:none!important;}
+/* Header scrolls away naturally (not sticky) so the game can own the screen */
+header.wp-block-template-part{position:relative!important;top:auto!important;}
+html,body{margin:0!important;padding:0!important;}
+#game-wrap{width:100%;background:#f7faf9;}
+#game-wrap iframe{width:100%;display:block;border:none;}
+</style>
+
+<div id="game-wrap">
+  <iframe id="game-iframe"
+    src="https://ifm-deploy.vercel.app/3-buckets.html"
+    title="3 Buckets" allowfullscreen loading="eager">
+  </iframe>
+</div>
+
+<script>
+(function(){
+  // Game fills the FULL viewport height (only subtract the WP admin bar for
+  // logged-in editors). The site header sits above and scrolls away.
+  function sizeIframe(){
+    var adminBar = document.getElementById("wpadminbar");
+    var used = adminBar ? adminBar.offsetHeight : 0;
+    var iframe = document.getElementById("game-iframe");
+    if(iframe) iframe.style.height = (window.innerHeight - used) + "px";
+  }
+  // Scroll the site header out of view so the game is in focus on landing.
+  function focusGame(){
+    var wrap = document.getElementById("game-wrap");
+    var adminBar = document.getElementById("wpadminbar");
+    var offset = adminBar ? adminBar.offsetHeight : 0;
+    if(wrap){
+      var top = wrap.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: top, behavior: "smooth" });
+    }
+  }
+  sizeIframe();
+  window.addEventListener("resize", sizeIframe);
+  window.addEventListener("load", function(){ sizeIframe(); setTimeout(focusGame, 400); });
+})();
+</script>

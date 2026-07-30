@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Module 4 — Mutual Funds & SIPs</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --g1:#1a2a6a;--g2:#1a3a9a;--g3:#4a6adf;--g4:#8aaff0;
+  --navy:#1a3a5c;--ink:#1a3a5c;--teal:#2a9d8f;--cream:#f4f6fb;--white:#fff;
+  --mint:#c8d8f8;--mint-lt:#e8eff8;--muted:#5a6a8a;
+  --warn:#f59e0b;--danger:#e74c3c;--gold:#c9a84c;
+  --m1:#1a2a6a;--m2:#1a3a9a;--m3:#4a6adf;
+}
+html,body{font-size:15px;height:auto;overflow-y:visible;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);padding-bottom:48px;}
+.hidden{display:none!important;}
+
+.hdr{background:linear-gradient(135deg,var(--g1),var(--g2));padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.2);}
+.hdr-logo{font-family:'Lora',serif;color:#fff;font-size:0.88rem;font-weight:700;line-height:1.2;}
+.hdr-logo span{display:block;font-size:0.6rem;color:rgba(255,255,255,0.65);font-family:'Nunito',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+.hdr-right{display:flex;align-items:center;gap:10px;}
+.coins-badge{background:rgba(255,255,255,0.15);border-radius:20px;padding:4px 10px;font-size:0.72rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:4px;}
+.back-btn{background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.3);border-radius:10px;padding:5px 12px;color:#fff;font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:800;cursor:pointer;transition:all .2s;}
+.back-btn:hover{background:rgba(255,255,255,0.2);}
+
+#s-map{padding:16px;}
+.map-hero{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:16px;padding:18px 20px 18px 160px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden;}
+.map-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,0.08) 0%,transparent 60%);pointer-events:none;}
+.map-tag{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.2);border-radius:10px;padding:2px 10px;display:inline-block;margin-bottom:8px;}
+.map-hero h1{font-family:'Lora',serif;font-size:1.35rem;line-height:1.25;margin-bottom:6px;}
+.map-hero p{font-size:0.8rem;color:rgba(255,255,255,0.85);line-height:1.6;max-width:340px;}
+.hero-logo-wide{position:absolute;top:50%;left:12px;transform:translateY(-50%);height:62px;width:auto;max-width:140px;object-fit:contain;border-radius:8px;z-index:2;}
+@media(max-width:540px){.hero-logo-wide{height:44px;max-width:96px;left:8px;}.map-hero{padding-left:112px!important;}}
+.map-stats{display:flex;gap:12px;margin-top:14px;}
+.map-stat{background:rgba(255,255,255,0.12);border-radius:10px;padding:7px 12px;text-align:center;}
+.map-stat-val{font-size:1rem;font-weight:900;color:#fff;}
+.map-stat-lbl{font-size:0.55rem;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.5px;}
+.overall-prog{background:rgba(255,255,255,0.15);border-radius:6px;height:6px;margin-top:14px;overflow:hidden;}
+.overall-prog-fill{height:100%;background:linear-gradient(90deg,var(--g4),var(--g3));border-radius:6px;transition:width .6s ease;}
+.sec-title{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin:18px 0 10px;display:flex;align-items:center;gap:6px;}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--mint);margin-left:4px;}
+
+.lesson-card{border-radius:14px;padding:16px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:transform .15s,box-shadow .15s,border-color .2s;position:relative;overflow:hidden;display:flex;align-items:center;gap:12px;}
+.lesson-card.unlocked{background:var(--white);box-shadow:0 2px 12px rgba(26,58,92,0.06);}
+.lesson-card.unlocked:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,58,92,0.12);}
+.lesson-card.locked{background:#f0f0f0;cursor:not-allowed;}
+.lesson-card.done{border-color:var(--g3)!important;}
+.lc-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+.lc-body{flex:1;}
+.lc-num{font-size:0.55rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.lc-name{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.lc-meta{font-size:0.65rem;color:var(--muted);}
+.lc-status{font-size:1rem;flex-shrink:0;}
+.lc-prog{height:3px;background:#e8f0f8;border-radius:2px;margin-top:8px;overflow:hidden;}
+.lc-prog-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--g3),var(--g4));}
+.lc-tag{position:absolute;top:8px;right:8px;font-size:0.52rem;font-weight:900;text-transform:uppercase;letter-spacing:0.8px;padding:2px 7px;border-radius:8px;}
+
+#s-lesson{min-height:100vh;}
+.lesson-hdr{padding:12px 16px 10px;background:linear-gradient(135deg,var(--g1),var(--g2));}
+.lesson-title{font-family:'Lora',serif;color:#fff;font-size:0.95rem;font-weight:700;margin-bottom:10px;}
+.step-dots{display:flex;gap:4px;}
+.step-dot{flex:1;height:4px;border-radius:3px;background:rgba(255,255,255,0.2);transition:background .3s;}
+.step-dot.done{background:#fff;}
+.step-dot.active{background:rgba(255,255,255,0.7);}
+
+.slide{padding:16px;animation:slideIn .3s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.slide-tag{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--g3);margin-bottom:8px;}
+.slide-icon{font-size:2.4rem;margin-bottom:10px;display:block;line-height:1;}
+.slide-title{font-family:'Lora',serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:10px;line-height:1.35;}
+.slide-body{font-size:0.82rem;line-height:1.8;color:var(--ink);}
+.slide-body p{margin-bottom:10px;}
+.insight{background:linear-gradient(135deg,#e8eff8,#d4e3f7);border-left:4px solid var(--g3);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#1a2a5a;}
+.insight strong{color:var(--g1);}
+.warn-box{background:linear-gradient(135deg,#fff8e6,#ffefc0);border-left:4px solid var(--warn);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#7a4a00;}
+.danger-box{background:linear-gradient(135deg,#fce8e8,#f8d0d0);border-left:4px solid var(--danger);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#7a1a1a;}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;}
+.stat-box{background:#f0f4fa;border-radius:12px;padding:12px;text-align:center;}
+.stat-box.g{background:linear-gradient(135deg,#e8eff8,#d4e3f7);}
+.stat-val{font-family:'Lora',serif;font-size:1.3rem;font-weight:700;color:var(--navy);}
+.stat-lbl{font-size:0.6rem;color:var(--muted);margin-top:3px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+
+.btn-next{display:block;width:100%;padding:13px;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:800;cursor:pointer;margin-top:18px;transition:all .2s;box-shadow:0 4px 16px rgba(26,58,92,0.2);}
+.btn-next:hover{opacity:0.9;transform:translateY(-1px);}
+.btn-next:disabled{opacity:0.3;cursor:not-allowed;transform:none;}
+
+/* BAKERY MATCHING */
+.bakery-pairs{display:flex;flex-direction:column;gap:10px;margin:12px 0;}
+.bakery-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.bakery-term{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:12px;padding:10px 12px;color:#fff;text-align:center;cursor:default;}
+.bakery-term-name{font-family:'Lora',serif;font-size:0.82rem;font-weight:700;}
+.bakery-term-icon{font-size:1.2rem;margin-bottom:4px;}
+.bakery-match-opt{background:#f0f4fa;border-radius:12px;padding:10px 12px;text-align:center;cursor:pointer;border:2px solid transparent;transition:all .2s;font-size:0.72rem;font-weight:700;}
+.bakery-match-opt:hover{border-color:var(--g3);background:var(--mint-lt);}
+.bakery-match-opt.sel{border-color:var(--g3);background:var(--mint-lt);}
+.bakery-match-opt.correct{border-color:#22c55e;background:linear-gradient(135deg,#e8f5ef,#d4eddf);}
+.bakery-match-opt.wrong{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+
+/* FILL IN THE BLANK */
+.fitb-card{background:var(--white);border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 2px 8px rgba(26,58,92,0.06);}
+.fitb-sentence{font-size:0.88rem;line-height:1.8;color:var(--navy);font-weight:600;margin-bottom:10px;}
+.fitb-blank{background:#e8eff8;border:2px dashed var(--g3);border-radius:8px;padding:2px 12px;display:inline-block;min-width:80px;text-align:center;font-weight:800;color:var(--g1);}
+.fitb-blank.filled{background:var(--g1);color:#fff;border-style:solid;}
+.fitb-options{display:flex;gap:6px;flex-wrap:wrap;}
+.fitb-opt{background:#f0f4fa;border-radius:8px;padding:6px 12px;cursor:pointer;font-size:0.72rem;font-weight:800;border:2px solid transparent;transition:all .2s;}
+.fitb-opt:hover{border-color:var(--g3);background:var(--mint-lt);}
+.fitb-opt.correct{border-color:#22c55e;background:linear-gradient(135deg,#e8f5ef,#d4eddf);color:#1a4a2a;}
+.fitb-opt.wrong{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);color:#7a1a1a;}
+
+/* INVESTOR PROFILES */
+.profile-card{background:var(--white);border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 2px 8px rgba(26,58,92,0.06);}
+.profile-pic{font-size:1.4rem;margin-bottom:6px;}
+.profile-name{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.profile-desc{font-size:0.75rem;color:var(--muted);line-height:1.5;margin-bottom:10px;}
+.profile-opts{display:flex;flex-direction:column;gap:7px;}
+.profile-opt{background:#f0f4fa;border-radius:10px;padding:9px 12px;cursor:pointer;font-size:0.76rem;font-weight:700;color:var(--navy);border:2px solid transparent;transition:all .2s;}
+.profile-opt:hover{border-color:var(--g3);background:var(--mint-lt);}
+.profile-opt.correct{border-color:var(--g3);background:linear-gradient(135deg,#e8eff8,#d4e3f7);}
+.profile-opt.wrong{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+
+/* SIP CALCULATOR */
+.sip-calc{background:var(--white);border-radius:16px;padding:16px;box-shadow:0 2px 12px rgba(26,58,92,0.07);margin-bottom:14px;}
+.sip-inp-wrap{margin-bottom:16px;}
+.sip-inp-label{font-size:0.72rem;font-weight:800;color:var(--muted);text-transform:uppercase;margin-bottom:6px;}
+.sip-val-display{font-family:'Lora',serif;font-size:1.8rem;font-weight:700;color:var(--g2);margin-bottom:6px;}
+input[type=range].sip-range{width:100%;height:6px;border-radius:6px;outline:none;cursor:pointer;-webkit-appearance:none;background:linear-gradient(90deg,var(--g2),var(--g3));}
+input[type=range].sip-range::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--g2);box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+.sip-results{display:flex;flex-direction:column;gap:8px;margin-top:14px;}
+.sip-result-row{display:flex;align-items:center;gap:10px;background:#f0f4fa;border-radius:12px;padding:10px 12px;}
+.sip-result-rate{font-size:0.72rem;font-weight:900;width:70px;color:var(--navy);}
+.sip-result-bar-wrap{flex:1;height:10px;border-radius:6px;background:#e0e8f4;overflow:hidden;}
+.sip-result-bar{height:100%;border-radius:6px;transition:width .6s ease;}
+.sip-result-val{font-family:'Lora',serif;font-size:0.82rem;font-weight:700;color:var(--navy);min-width:55px;text-align:right;}
+
+/* EXPENSE RATIO IMPACT */
+.er-calc{background:var(--white);border-radius:16px;padding:16px;box-shadow:0 2px 12px rgba(26,58,92,0.07);margin-bottom:14px;}
+.er-bars{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
+.er-bar-row{background:#f0f4fa;border-radius:12px;padding:10px 12px;}
+.er-bar-label{display:flex;justify-content:space-between;margin-bottom:5px;}
+.er-bar-name{font-size:0.72rem;font-weight:800;color:var(--navy);}
+.er-bar-val{font-family:'Lora',serif;font-size:0.9rem;font-weight:700;color:var(--g2);}
+.er-bar-track{height:10px;border-radius:6px;background:#e0e8f4;overflow:hidden;}
+.er-bar-fill{height:100%;border-radius:6px;transition:width .6s ease;}
+
+/* FUND NAME DECODER */
+.fund-name-card{background:var(--white);border-radius:14px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 12px rgba(26,58,92,0.07);}
+.fund-name-banner{background:linear-gradient(135deg,var(--g1),var(--g2));padding:12px 16px;}
+.fund-name-text{font-family:'Lora',serif;color:#fff;font-size:0.95rem;font-weight:700;}
+.fund-components{display:flex;flex-direction:column;gap:8px;padding:12px;}
+.fund-comp-row{display:flex;align-items:center;gap:10px;}
+.fund-comp-label{font-size:0.65rem;font-weight:900;text-transform:uppercase;color:var(--muted);width:90px;flex-shrink:0;}
+.fund-comp-opts{display:flex;gap:6px;flex-wrap:wrap;}
+.fund-comp-opt{background:#f0f4fa;border-radius:8px;padding:5px 10px;cursor:pointer;font-size:0.7rem;font-weight:800;border:2px solid transparent;transition:all .2s;}
+.fund-comp-opt:hover{border-color:var(--g3);}
+.fund-comp-opt.correct{border-color:var(--g3);background:var(--mint-lt);color:var(--g1);}
+.fund-comp-opt.wrong{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);color:#7a1a1a;}
+
+/* MODAL */
+.myth-modal-overlay{position:fixed;inset:0;height:100vh;background:rgba(10,30,50,0.65);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto;animation:fadeIn .2s ease;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.myth-modal{background:#fff;border-radius:16px;max-width:400px;width:100%;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);overflow:hidden;animation:popIn .25s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes popIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
+.myth-modal-hdr{padding:20px 22px 14px;text-align:center;}
+.myth-modal-hdr.correct{background:linear-gradient(135deg,#e8eff8,#d4e3f7);}
+.myth-modal-hdr.wrong{background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+.myth-modal-emoji{font-size:2.8rem;line-height:1;margin-bottom:6px;}
+.myth-modal-verdict{font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900;margin-bottom:2px;}
+.myth-modal-verdict.correct{color:#1a2a6a;}
+.myth-modal-verdict.wrong{color:#b91c1c;}
+.myth-modal-body{padding:16px 22px 20px;}
+.myth-modal-label{font-family:'Nunito',sans-serif;font-size:0.62rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px;}
+.myth-modal-explain{font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.7;color:var(--ink);font-weight:600;}
+.myth-modal-btn{display:block;width:100%;margin-top:16px;padding:13px;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:900;cursor:pointer;}
+
+.sc-header{padding:14px 16px 10px;background:linear-gradient(135deg,var(--g1),var(--g2));}
+.sc-round{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:4px;}
+.sc-name{font-family:'Lora',serif;color:#fff;font-size:0.95rem;font-weight:700;}
+.sc-body{padding:14px 16px;}
+.sc-story{font-size:0.8rem;line-height:1.7;color:var(--navy);margin-bottom:14px;}
+.sc-q{font-weight:800;font-size:0.8rem;color:var(--navy);margin-bottom:10px;}
+.sc-choices{display:flex;flex-direction:column;gap:8px;}
+.sc-choice{background:#f0f4fa;border-radius:12px;padding:10px 12px;cursor:pointer;border:2px solid transparent;transition:all .2s;font-size:0.78rem;font-weight:700;color:var(--navy);display:flex;align-items:flex-start;gap:8px;}
+.sc-choice:hover{border-color:var(--g3);background:var(--mint-lt);}
+.sc-choice.correct-choice{border-color:var(--g3);background:linear-gradient(135deg,#e8eff8,#d4e3f7);}
+.sc-choice.wrong-choice{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+.sc-choice-letter{font-size:0.7rem;font-weight:900;width:20px;height:20px;border-radius:6px;background:rgba(26,58,92,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.sc-consequence{border-radius:12px;padding:12px;margin-top:10px;font-size:0.76rem;line-height:1.6;display:none;}
+.sc-consequence.good{background:linear-gradient(135deg,#e8eff8,#d4e3f7);border-left:4px solid var(--g3);color:#1a2a5a;}
+.sc-consequence.bad{background:linear-gradient(135deg,#fce8e8,#f8d0d0);border-left:4px solid var(--danger);color:#7a1a1a;}
+.sc-consequence.ok{background:linear-gradient(135deg,#fff8e6,#fdefc8);border-left:4px solid var(--warn);color:#7a4a00;}
+.scenario-card-outer{background:var(--white);border-radius:18px;box-shadow:0 4px 20px rgba(26,58,92,0.1);overflow:hidden;margin-bottom:14px;}
+
+.completion-card{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:20px;padding:24px 20px;text-align:center;color:#fff;margin:16px;}
+.comp-emoji{font-size:3rem;margin-bottom:10px;}
+.comp-title{font-family:'Lora',serif;font-size:1.25rem;font-weight:700;margin-bottom:6px;}
+.comp-sub{font-size:0.78rem;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:16px;}
+.comp-stars{font-size:1.4rem;letter-spacing:4px;margin-bottom:14px;}
+.coins-earned{background:rgba(255,255,255,0.15);border-radius:12px;padding:10px 20px;display:inline-block;font-size:0.85rem;font-weight:800;margin-bottom:14px;}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img src="/IFM round logo for watermark.png" style="height:44px;width:auto;flex-shrink:0;" alt="IFM">
+    <div class="hdr-logo">Investing for Mummies<span>Module 4 — Mutual Funds</span></div>
+  </div>
+  <div class="hdr-right">
+    <div class="coins-badge">🪙 <span id="coinDisplay">0</span></div>
+    <button class="back-btn hidden" id="backBtn" onclick="showMap()">← Map</button>
+  </div>
+</div>
+
+<div id="s-map">
+  <div style="padding:16px;">
+    <div class="map-hero">
+      <img src="/IFM logo white background.png" class="hero-logo-wide" alt="IFM">
+      <div class="map-tag">Section 4 · Mutual Funds</div>
+      <h1>Mutual Funds & SIPs 🏦</h1>
+      <p>Smart, professional investing for everyone. From bakery analogies to SIP calculators — master mutual funds.</p>
+      <div class="map-stats">
+        <div class="map-stat"><div class="map-stat-val" id="mapDone">0</div><div class="map-stat-lbl">Done</div></div>
+        <div class="map-stat"><div class="map-stat-val">6</div><div class="map-stat-lbl">Lessons</div></div>
+        <div class="map-stat"><div class="map-stat-val">~50</div><div class="map-stat-lbl">Minutes</div></div>
+      </div>
+      <div class="overall-prog"><div class="overall-prog-fill" id="overallFill" style="width:0%"></div></div>
+    </div>
+
+    <div class="sec-title">📚 Lessons</div>
+
+    <div class="lesson-card unlocked" id="lcard-0" onclick="startLesson(0)">
+      <div class="lc-icon" style="background:#e8eff8;">🏦</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#1a2a6a;">Lesson 1</div>
+        <div class="lc-name">What Are Mutual Funds?</div>
+        <div class="lc-meta">Bakery analogy · 5 matching pairs</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-0" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-0">▶</div>
+      <div class="lc-tag" style="background:#e8eff8;color:#1a2a6a;">Match</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-1" onclick="startLesson(1)">
+      <div class="lc-icon" style="background:#e8eff8;">📊</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#1a2a6a;">Lesson 2</div>
+        <div class="lc-name">Key MF Terms</div>
+        <div class="lc-meta">5 fill-in-the-blank questions</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-1" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-1">🔒</div>
+      <div class="lc-tag" style="background:#e8eff8;color:#1a2a6a;">Fill</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-2" onclick="startLesson(2)">
+      <div class="lc-icon" style="background:#e8eff8;">🗂️</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#1a2a6a;">Lesson 3</div>
+        <div class="lc-name">Types of Mutual Funds</div>
+        <div class="lc-meta">6 investor profiles · Fund picker</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-2" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-2">🔒</div>
+      <div class="lc-tag" style="background:#e8eff8;color:#1a2a6a;">Pick</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-3" onclick="startLesson(3)">
+      <div class="lc-icon" style="background:#e8eff8;">📅</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#1a2a6a;">Lesson 4</div>
+        <div class="lc-name">SIP — The Smart Way to Invest</div>
+        <div class="lc-meta">SIP power calculator · Visual bars</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-3" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-3">🔒</div>
+      <div class="lc-tag" style="background:#e8eff8;color:#1a2a6a;">Calc</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-4" onclick="startLesson(4)">
+      <div class="lc-icon" style="background:#fce8e8;">⚖️</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#c0392b;">Lesson 5</div>
+        <div class="lc-name">Direct vs Regular, Active vs Passive</div>
+        <div class="lc-meta">Expense ratio impact calculator</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-4" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-4">🔒</div>
+      <div class="lc-tag" style="background:#fce8e8;color:#c0392b;">Cost</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-5" onclick="startLesson(5)">
+      <div class="lc-icon" style="background:#e8eff8;">🔍</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#1a2a6a;">Lesson 6</div>
+        <div class="lc-name">Reading a Mutual Fund Name</div>
+        <div class="lc-meta">4 fund names · Decode the parts</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-5" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-5">🔒</div>
+      <div class="lc-tag" style="background:#e8eff8;color:#1a2a6a;">Decode</div>
+    </div>
+
+    <div class="sec-title" style="margin-top:22px;">🎯 Boss Challenge</div>
+
+    <div class="lesson-card locked" id="lcard-boss" onclick="startLesson('boss')">
+      <div class="lc-icon" style="background:linear-gradient(135deg,var(--g1),var(--g2));">⚔️</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:var(--g1);">Boss Level</div>
+        <div class="lc-name" style="color:var(--g1);">Fund Selection Challenge</div>
+        <div class="lc-meta">4 investor profiles · Best fund pick</div>
+      </div>
+      <div class="lc-status" id="lstat-boss">🔒</div>
+      <div class="lc-tag" style="background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;">Boss</div>
+    </div>
+  </div>
+</div>
+
+<div id="s-lesson" class="hidden">
+  <div class="lesson-hdr">
+    <div class="lesson-title" id="lessonTitle"></div>
+    <div class="step-dots" id="stepDots"></div>
+  </div>
+  <div id="lessonContent"></div>
+</div>
+
+<script>
+var state={coins:0,completed:{},progress:{}};
+(function(){try{var s=JSON.parse(localStorage.getItem('ifm_m4')||'{}');if(s.coins)state.coins=s.coins;if(s.completed)state.completed=s.completed;if(s.progress)state.progress=s.progress;}catch(e){}})();
+function save(){try{localStorage.setItem('ifm_m4',JSON.stringify(state));}catch(e){}}
+function addCoins(n){state.coins+=n;save();document.getElementById('coinDisplay').textContent=state.coins;}
+
+var LESSONS=[
+  {id:0,name:'🏦 What Are Mutual Funds?'},{id:1,name:'📊 Key MF Terms'},
+  {id:2,name:'🗂️ Types of Mutual Funds'},{id:3,name:'📅 SIP — The Smart Way to Invest'},
+  {id:4,name:'⚖️ Direct vs Regular, Active vs Passive'},{id:5,name:'🔍 Reading a Mutual Fund Name'},
+  {id:'boss',name:'⚔️ Fund Selection Challenge'}
+];
+
+function showMap(){
+  document.getElementById('s-map').classList.remove('hidden');
+  document.getElementById('s-lesson').classList.add('hidden');
+  document.getElementById('backBtn').classList.add('hidden');
+  refreshMap();
+}
+function refreshMap(){
+  document.getElementById('coinDisplay').textContent=state.coins;
+  var done=Object.keys(state.completed).filter(function(k){return k!=='boss';}).length;
+  document.getElementById('mapDone').textContent=done;
+  document.getElementById('overallFill').style.width=(done/6*100)+'%';
+  LESSONS.forEach(function(l){
+    var id=l.id;
+    var card=document.getElementById('lcard-'+id);
+    var stat=document.getElementById('lstat-'+id);
+    var prog=document.getElementById('lprog-'+id);
+    if(!card)return;
+    var isUnlocked=isLessonUnlocked(id);
+    var isDone=!!state.completed[id];
+    card.className='lesson-card '+(isUnlocked?'unlocked':'locked')+(isDone?' done':'');
+    if(stat)stat.textContent=isDone?'✓':isUnlocked?'▶':'🔒';
+    if(prog)prog.style.width=isDone?'100%':'0%';
+  });
+}
+function isLessonUnlocked(id){
+  if(id===0)return true;
+  if(id==='boss')return Object.keys(state.completed).filter(function(k){return k!=='boss';}).length>=6;
+  return !!state.completed[id-1];
+}
+
+var currentLesson=null,currentStep=0,lessonSteps=[];
+function startLesson(id){
+  if(!isLessonUnlocked(id))return;
+  currentLesson=id;currentStep=0;
+  lessonSteps=buildSteps(id);
+  document.getElementById('s-map').classList.add('hidden');
+  document.getElementById('s-lesson').classList.remove('hidden');
+  document.getElementById('backBtn').classList.remove('hidden');
+  var l=LESSONS.find(function(x){return x.id===id;});
+  document.getElementById('lessonTitle').textContent=l?l.name:'Lesson';
+  renderStepDots();renderStep();
+}
+function nextStep(){
+  currentStep++;
+  if(currentStep>=lessonSteps.length){completeLesson();}
+  else{renderStepDots();renderStep();}
+}
+function renderStepDots(){
+  var dots=document.getElementById('stepDots');dots.innerHTML='';
+  lessonSteps.forEach(function(_,i){
+    var d=document.createElement('div');
+    d.className='step-dot'+(i<currentStep?' done':i===currentStep?' active':'');
+    dots.appendChild(d);
+  });
+}
+function renderStep(){
+  var step=lessonSteps[currentStep];
+  document.getElementById('lessonContent').innerHTML='';
+  step.render(document.getElementById('lessonContent'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function completeLesson(){
+  state.completed[currentLesson]=true;save();
+  var coins=currentLesson==='boss'?150:50;addCoins(coins);
+  var div=document.createElement('div');
+  div.innerHTML='<div class="completion-card"><div class="comp-emoji">'+(currentLesson==='boss'?'🏆':'⭐')+'</div><div class="comp-title">'+(currentLesson==='boss'?'Module 4 Complete!':'Lesson Complete!')+'</div><div class="comp-stars">'+(currentLesson==='boss'?'⭐⭐⭐':'⭐⭐')+'</div><div class="comp-sub">'+(currentLesson==='boss'?'You\'re a mutual fund master! Time to start your SIP journey.':'Great work! Next lesson unlocked.')+'</div><div class="coins-earned">🪙 +'+coins+' coins earned</div><button class="btn-next" onclick="showMap()" style="max-width:240px;margin:0 auto;">Back to Map</button></div>';
+  document.getElementById('lessonContent').innerHTML='';
+  document.getElementById('lessonContent').appendChild(div);
+  renderStepDots();
+}
+
+function buildSteps(id){
+  if(id===0)return buildBakeryLesson();
+  if(id===1)return buildTermsLesson();
+  if(id===2)return buildTypesLesson();
+  if(id===3)return buildSIPLesson();
+  if(id===4)return buildCostLesson();
+  if(id===5)return buildNameLesson();
+  if(id==='boss')return buildBossLesson();
+  return [];
+}
+
+// LESSON 0: BAKERY ANALOGY
+var BAKERY_PAIRS=[
+  {term:'NAV',termIcon:'💰',match:'Price per slice of bread',wrong:['The baker\'s salary','Total weight of the loaf']},
+  {term:'Fund Manager',termIcon:'👨‍🍳',match:'The expert baker',wrong:['The price list','The store location']},
+  {term:'Units',termIcon:'🍞',match:'Individual slices you own',wrong:['The bakery brand','Your taste preference']},
+  {term:'Exit Load',termIcon:'📦',match:'Packaging fee for early exit',wrong:['Discount for loyalty','Free delivery charge']},
+  {term:'AUM',termIcon:'🏭',match:'Total dough in the bakery',wrong:['Number of customers','Types of bread made']},
+];
+
+function buildBakeryLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 1 · Introduction</div><span class="slide-icon">🏦</span><div class="slide-title">A mutual fund is like a bakery</div><div class="slide-body"><p>Imagine a bakery (the AMC) where a master baker (fund manager) makes bread using pooled ingredients from 10,000 customers. Each customer gets slices (units) proportional to what they contributed.</p><p>The price of each slice changes daily — that\'s the <strong>NAV</strong> (Net Asset Value).</p></div><div class="insight"><strong>How it works:</strong> You invest ₹5,000 → buy X units at current NAV → your money pools with others → fund manager invests the total pool → NAV changes daily based on performance.</div><button class="btn-next" onclick="nextStep()">Match the bakery terms →</button></div>';
+    }},
+    {render:function(c){renderBakeryMatch(c);}},
+  ];
+}
+
+function renderBakeryMatch(container){
+  var current=0,score=0;
+
+  function showQ(){
+    if(current>=BAKERY_PAIRS.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">Bakery Match · Complete!</div><span class="slide-icon">🎉</span><div class="slide-title">You matched '+score+'/'+BAKERY_PAIRS.length+'!</div><div class="insight"><strong>Remember:</strong> NAV = price per unit (not the quality indicator). AUM = total fund size. Units = your ownership slice. Exit load = penalty for leaving early.</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      return;
+    }
+    var pair=BAKERY_PAIRS[current];
+    var allOpts=[pair.match].concat(pair.wrong).sort(function(){return Math.random()-0.5;});
+    var optsHtml=allOpts.map(function(o){
+      return '<div class="bakery-match-opt" onclick="bakeryAns(\''+o.replace(/'/g,"\\'")+'\')">' + o + '</div>';
+    }).join('');
+    container.innerHTML='<div class="slide"><div class="slide-tag">Bakery Match · '+(current+1)+'/'+BAKERY_PAIRS.length+'</div><div class="slide-title">Match the MF term to its bakery equivalent</div><div class="bakery-pairs"><div class="bakery-row"><div class="bakery-term"><div class="bakery-term-icon">'+pair.termIcon+'</div><div class="bakery-term-name">'+pair.term+'</div></div></div></div><div style="font-size:0.75rem;color:var(--muted);margin-bottom:10px;">Which bakery equivalent matches <strong>'+pair.term+'</strong>?</div><div class="bakery-pairs">'+optsHtml+'</div><div style="font-size:0.65rem;color:var(--muted);margin-top:8px;">Score: '+score+'/'+current+'</div></div>';
+    window.bakeryAns=function(chosen){
+      var correct=chosen===pair.match;
+      if(correct){score++;addCoins(8);}
+      var overlay=document.createElement('div');
+      overlay.className='myth-modal-overlay';
+      overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'🎯':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Correct!':'Not quite!')+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">The match</div><div class="myth-modal-explain"><strong>'+pair.term+'</strong> = '+pair.match+'</div><button class="myth-modal-btn" id="bk-ok">Next →</button></div></div>';
+      document.body.appendChild(overlay);
+      overlay.querySelector('#bk-ok').onclick=function(){overlay.remove();current++;showQ();};
+    };
+  }
+  showQ();
+}
+
+// LESSON 1: KEY MF TERMS
+var FITB_QUESTIONS=[
+  {sentence:'The daily price of one unit of a mutual fund is called the ___.',blank:'NAV',options:['NAV','AUM','Expense Ratio'],explain:'NAV (Net Asset Value) is calculated after market close every day. It reflects the per-unit market value of all securities in the fund.'},
+  {sentence:'The annual fee charged by a mutual fund for managing your money is the ___.',blank:'Expense Ratio',options:['Exit Load','Expense Ratio','Benchmark'],explain:'SEBI caps expense ratio at 0.02%–2.25% depending on fund type and size. Lower expense ratio = more money stays with you!'},
+  {sentence:'A penalty charged when you redeem units before a specified time period is called ___.',blank:'Exit Load',options:['Entry Load','Exit Load','TER'],explain:'Exit load is typically 1% if redeemed within 1 year. After 1 year, most equity funds have zero exit load.'},
+  {sentence:'The index against which a fund\'s performance is measured is called its ___.',blank:'Benchmark',options:['NAV','Benchmark','AUM'],explain:'Every fund has a benchmark index (e.g. Nifty 50 for large cap funds). A good fund consistently beats its benchmark after expenses.'},
+  {sentence:'The total market value of all investments managed by a mutual fund is called ___.',blank:'AUM',options:['AUM','Corpus','TER'],explain:'AUM (Assets Under Management) shows fund popularity. Larger AUM can sometimes mean lower expense ratio (economies of scale), but very large funds may struggle to outperform.'},
+];
+
+function buildTermsLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 2 · MF Terms</div><span class="slide-icon">📊</span><div class="slide-title">5 terms every MF investor must know</div><div class="slide-body"><p>Before picking a mutual fund, you need to understand the language. These 5 terms appear in every fund fact sheet, app, and newspaper.</p></div><div class="stat-row"><div class="stat-box g"><div class="stat-val">NAV</div><div class="stat-lbl">Daily unit price</div></div><div class="stat-box" style="background:#f0f4fa;"><div class="stat-val">0.02-2.25%</div><div class="stat-lbl">SEBI expense ratio cap</div></div></div><div class="insight"><strong>Rule of thumb:</strong> Lower expense ratio = better for you over time. A 1% difference on a ₹10L investment over 20 years = ~₹20L less in your pocket!</div><button class="btn-next" onclick="nextStep()">Fill in the blanks →</button></div>';
+    }},
+    {render:function(c){renderFITB(c);}},
+  ];
+}
+
+function renderFITB(container){
+  var current=0,score=0;
+
+  function showQ(){
+    if(current>=FITB_QUESTIONS.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">MF Terms · Complete!</div><span class="slide-icon">🎉</span><div class="slide-title">You got '+score+'/'+FITB_QUESTIONS.length+' correct!</div><div class="insight"><strong>Pro tip:</strong> When evaluating a mutual fund, always check: Expense Ratio (lower better), Benchmark performance, AUM size, and Exit Load period.</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      return;
+    }
+    var q=FITB_QUESTIONS[current];
+    var optsHtml=q.options.map(function(o){
+      return '<div class="fitb-opt" onclick="fitbAns(\''+o+'\')">' + o + '</div>';
+    }).join('');
+    var displaySentence=q.sentence.replace('___','<span class="fitb-blank">___</span>');
+    container.innerHTML='<div class="slide"><div class="slide-tag">MF Terms · '+(current+1)+'/'+FITB_QUESTIONS.length+'</div><div class="slide-title">Fill in the blank</div><div class="fitb-card"><div class="fitb-sentence">'+displaySentence+'</div><div class="fitb-options">'+optsHtml+'</div></div><div style="font-size:0.65rem;color:var(--muted);margin-top:6px;">Score: '+score+'/'+current+'</div></div>';
+    window.fitbAns=function(ans){
+      var correct=ans===q.blank;
+      if(correct){score++;addCoins(7);}
+      var overlay=document.createElement('div');
+      overlay.className='myth-modal-overlay';
+      overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'✅':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Correct!':'The answer is: '+q.blank)+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">Explanation</div><div class="myth-modal-explain">'+q.explain+'</div><button class="myth-modal-btn" id="fitb-ok">Next →</button></div></div>';
+      document.body.appendChild(overlay);
+      overlay.querySelector('#fitb-ok').onclick=function(){overlay.remove();current++;showQ();};
+    };
+  }
+  showQ();
+}
+
+// LESSON 2: TYPES OF MF
+var INVESTOR_PROFILES=[
+  {pic:'👩',name:'Riya, 28',desc:'Wants to save tax + has a 3-year investment horizon. She is in the 30% tax bracket.',correct:0,options:['ELSS Fund (Equity Linked Savings Scheme)','Liquid Fund','G-Sec Fund'],explain:'ELSS saves ₹46,800 in tax (30% of ₹1.5L), has just a 3-year lock-in, and provides equity growth. Perfect for Riya!'},
+  {pic:'👨',name:'Anil, 55',desc:'Retiring in 5 years. Needs stable income. Cannot afford to lose capital.',correct:2,options:['Small Cap Fund','Mid Cap Fund','Short Duration Debt Fund'],explain:'Near retirement = capital preservation. Short duration debt fund provides predictable returns with low volatility. Small/mid cap are too risky.'},
+  {pic:'👩',name:'Priya, 32',desc:'Monthly SIP, 15-year horizon, wants broad market exposure with lowest cost.',correct:1,options:['Actively Managed Large Cap Fund','Nifty 50 Index Fund','Sectoral Technology Fund'],explain:'15-year horizon + cost focus = index fund wins. Nifty 50 index fund has 0.1-0.2% expense ratio vs 1.5%+ for active large cap. 85% of active large cap funds underperform over 15 years.'},
+  {pic:'🧓',name:'Ramesh, 60',desc:'Has ₹20 lakh lump sum. Wants monthly income like a pension for 20 years.',correct:2,options:['Aggressive Hybrid Fund','Small Cap Fund','SWP from Balanced Advantage Fund'],explain:'SWP (Systematic Withdrawal Plan) from a Balanced Advantage Fund creates regular income while capital continues to grow. Perfect pension alternative.'},
+  {pic:'👦',name:'Arjun, 24',desc:'First job, ₹2,000/month to invest, 25-year horizon, high risk appetite.',correct:0,options:['Small Cap/Flexi Cap Fund','FD + Liquid Fund','Conservative Hybrid Fund'],explain:'Young + long horizon + high risk = equity. Small cap or flexi cap captures maximum growth potential over 25 years. Short-term volatility is acceptable.'},
+  {pic:'👩',name:'Meera, 40',desc:'Invests ₹50,000 lump sum. Needs money in exactly 8 months for a down payment.',correct:1,options:['Equity Hybrid Fund','Liquid or Ultra Short Duration Fund','ELSS Fund'],explain:'Fixed 8-month deadline = no equity risk. Liquid or ultra-short duration fund returns 6-7% without market risk. ELSS has a 3-year lock-in — completely wrong here.'},
+];
+
+function buildTypesLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 3 · Fund Types</div><span class="slide-icon">🗂️</span><div class="slide-title">The right fund for the right purpose</div><div class="slide-body"><p>There are 40+ categories of mutual funds in India. The key is matching the fund type to the <strong>investor\'s goal, horizon, and risk tolerance</strong>.</p></div><div class="stat-row"><div class="stat-box g"><div class="stat-val">Equity</div><div class="stat-lbl">Long term (5yr+)</div></div><div class="stat-box" style="background:#f0f4fa;"><div class="stat-val">Debt</div><div class="stat-lbl">Short-medium term</div></div></div><div class="stat-row"><div class="stat-box" style="background:linear-gradient(135deg,#faf4e0,#f0e8c0);"><div class="stat-val">Hybrid</div><div class="stat-lbl">Balance of both</div></div><div class="stat-box" style="background:#f0f4fa;"><div class="stat-val">Index</div><div class="stat-lbl">Low cost market return</div></div></div><div class="insight"><strong>The Rule of 7531:</strong> For 7+ years → 100% equity. 5 years → 70% equity. 3 years → 30% equity. 1 year → 0% equity.</div><button class="btn-next" onclick="nextStep()">Fund picker game →</button></div>';
+    }},
+    {render:function(c){renderFundPicker(c);}},
+  ];
+}
+
+function renderFundPicker(container){
+  var current=0,score=0;
+
+  function showQ(){
+    if(current>=INVESTOR_PROFILES.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">Fund Picker · Complete!</div><span class="slide-icon">🎉</span><div class="slide-title">You picked '+score+'/'+INVESTOR_PROFILES.length+' correctly!</div><div class="insight"><strong>The golden rule:</strong> Match time horizon first, then risk appetite, then tax efficiency. Never put short-term money in equity funds.</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      return;
+    }
+    var p=INVESTOR_PROFILES[current];
+    var optsHtml=p.options.map(function(o,i){
+      return '<div class="profile-opt" onclick="fpAns('+i+')">'+o+'</div>';
+    }).join('');
+    container.innerHTML='<div class="slide"><div class="slide-tag">Fund Picker · '+(current+1)+'/'+INVESTOR_PROFILES.length+'</div><div class="slide-title">Which fund type fits this investor?</div><div class="profile-card"><div class="profile-pic">'+p.pic+'</div><div class="profile-name">'+p.name+'</div><div class="profile-desc">'+p.desc+'</div><div class="profile-opts">'+optsHtml+'</div></div><div style="font-size:0.65rem;color:var(--muted);">Score: '+score+'/'+current+'</div></div>';
+    window.fpAns=function(i){
+      var correct=i===p.correct;
+      if(correct){score++;addCoins(8);}
+      var overlay=document.createElement('div');
+      overlay.className='myth-modal-overlay';
+      overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'🎯':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Great pick!':'Best pick is: '+p.options[p.correct])+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">Why?</div><div class="myth-modal-explain">'+p.explain+'</div><button class="myth-modal-btn" id="fp-ok">Next →</button></div></div>';
+      document.body.appendChild(overlay);
+      overlay.querySelector('#fp-ok').onclick=function(){overlay.remove();current++;showQ();};
+    };
+  }
+  showQ();
+}
+
+// LESSON 3: SIP CALCULATOR
+function buildSIPLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 4 · SIP</div><span class="slide-icon">📅</span><div class="slide-title">SIP: the smartest investing habit</div><div class="slide-body"><p>A SIP (Systematic Investment Plan) invests a fixed amount every month automatically. You don\'t need to time the market — you buy units at whatever price they are.</p><p><strong>Rupee Cost Averaging:</strong> When markets fall, your ₹5,000 buys MORE units. When markets rise, your units are worth more. You always benefit!</p></div><div class="insight"><strong>☕ Coffee Test:</strong> Skip ₹150/day coffee → ₹4,500/month SIP. In 25 years at 12% → ₹80+ lakhs! From coffee to crorepati.</div><div class="warn-box"><strong>STP:</strong> Instead of lump sum → park in liquid fund → STP (Systematic Transfer Plan) to equity monthly. Smoother entry into market.</div><button class="btn-next" onclick="nextStep()">Calculate SIP power →</button></div>';
+    }},
+    {render:function(c){renderSIPCalc(c);}},
+  ];
+}
+
+function renderSIPCalc(container){
+  var monthly=5000,years=15;
+
+  function calc(m,y,r){
+    var n=y*12;
+    var mr=r/100/12;
+    return Math.round(m*(Math.pow(1+mr,n)-1)/mr*(1+mr));
+  }
+  function fmt(n){
+    if(n>=10000000)return'₹'+(n/10000000).toFixed(1)+'Cr';
+    if(n>=100000)return'₹'+(n/100000).toFixed(1)+'L';
+    return'₹'+(n/1000).toFixed(0)+'K';
+  }
+
+  function render(){
+    var r10=calc(monthly,years,10),r12=calc(monthly,years,12),r15=calc(monthly,years,15);
+    var maxVal=r15;
+    var invested=monthly*years*12;
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 4 · SIP Calculator</div><div class="slide-title">Watch your SIP grow</div><div class="sip-calc"><div class="sip-inp-wrap"><div class="sip-inp-label">Monthly SIP Amount</div><div class="sip-val-display">'+fmt(monthly)+'/mo</div><input type="range" class="sip-range" min="500" max="50000" step="500" value="'+monthly+'" id="sip-amt"></div><div class="sip-inp-wrap" style="margin-top:14px;"><div class="sip-inp-label">Investment Period</div><div class="sip-val-display">'+years+' years</div><input type="range" class="sip-range" min="5" max="30" step="1" value="'+years+'" id="sip-yrs"></div><div style="margin-top:14px;padding-top:14px;border-top:1px solid #e8eff8;"><div style="font-size:0.72rem;font-weight:800;color:var(--muted);margin-bottom:8px;">Amount invested: '+fmt(invested)+'</div><div class="sip-results"><div class="sip-result-row"><div class="sip-result-rate">10% return</div><div class="sip-result-bar-wrap"><div class="sip-result-bar" style="width:'+(r10/maxVal*100)+'%;background:linear-gradient(90deg,#4a6adf,#8aaff0);"></div></div><div class="sip-result-val">'+fmt(r10)+'</div></div><div class="sip-result-row" style="background:#e8eff8;"><div class="sip-result-rate">12% return</div><div class="sip-result-bar-wrap"><div class="sip-result-bar" style="width:'+(r12/maxVal*100)+'%;background:linear-gradient(90deg,#1a3a9a,#4a6adf);"></div></div><div class="sip-result-val">'+fmt(r12)+'</div></div><div class="sip-result-row"><div class="sip-result-rate">15% return</div><div class="sip-result-bar-wrap"><div class="sip-result-bar" style="width:100%;background:linear-gradient(90deg,#1a2a6a,#1a3a9a);"></div></div><div class="sip-result-val">'+fmt(r15)+'</div></div></div></div></div><button class="btn-next" onclick="nextStep()" style="margin-top:14px;">Next Lesson →</button></div>';
+    document.getElementById('sip-amt').oninput=function(){monthly=parseInt(this.value);addCoins(1);render();};
+    document.getElementById('sip-yrs').oninput=function(){years=parseInt(this.value);addCoins(1);render();};
+  }
+  render();
+}
+
+// LESSON 4: DIRECT vs REGULAR, EXPENSE RATIO
+function buildCostLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 5 · Cost of Investing</div><span class="slide-icon">⚖️</span><div class="slide-title">The 1% that steals 20% of your wealth</div><div class="slide-body"><p><strong>Regular Plans:</strong> Bought through a distributor (bank, agent). They earn 0.5–1.5% commission from your returns every year.</p><p><strong>Direct Plans:</strong> Bought directly from AMC website, Groww, Zerodha Coin. No distributor — the full return stays with you.</p></div><div class="insight"><strong>Active vs Passive:</strong> Active funds (fund manager picks stocks) have higher expense ratios (1–2.5%). Index funds passively track an index — expense ratio as low as 0.05%.<br><br>Data shows: 85% of active large cap funds fail to beat their index over 10 years!</div><div class="warn-box">The difference of 1% per year on a ₹10,000/month SIP over 20 years = ₹20–25 lakh less in your final corpus. Always check if a Direct Plan is available!</div><button class="btn-next" onclick="nextStep()">See the impact →</button></div>';
+    }},
+    {render:function(c){renderERCalc(c);}},
+  ];
+}
+
+function renderERCalc(container){
+  function calc(m,y,r){
+    var n=y*12;var mr=r/100/12;
+    return Math.round(m*(Math.pow(1+mr,n)-1)/mr*(1+mr));
+  }
+  function fmt(n){
+    if(n>=10000000)return'₹'+(n/10000000).toFixed(2)+'Cr';
+    if(n>=100000)return'₹'+(n/100000).toFixed(1)+'L';
+    return'₹'+(n/1000).toFixed(0)+'K';
+  }
+  var monthly=10000,years=20,baseReturn=12;
+  var c0=calc(monthly,years,baseReturn);
+  var c1=calc(monthly,years,baseReturn-1);
+  var c2=calc(monthly,years,baseReturn-2);
+  container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 5 · Expense Ratio Impact</div><div class="slide-title">₹10,000/month SIP × 20 years</div><div class="er-calc"><div style="font-size:0.75rem;color:var(--muted);margin-bottom:12px;">At 12% gross return, see what different expense ratios cost you:</div><div class="er-bars"><div class="er-bar-row"><div class="er-bar-label"><span class="er-bar-name">0% ER (Index Fund)</span><span class="er-bar-val">'+fmt(c0)+'</span></div><div class="er-bar-track"><div class="er-bar-fill" style="width:100%;background:linear-gradient(90deg,#1a2a6a,#4a6adf);"></div></div></div><div class="er-bar-row"><div class="er-bar-label"><span class="er-bar-name">1% ER (Regular Active)</span><span class="er-bar-val" style="color:#d97706;">'+fmt(c1)+'</span></div><div class="er-bar-track"><div class="er-bar-fill" style="width:'+(c1/c0*100)+'%;background:linear-gradient(90deg,#d97706,#f59e0b);"></div></div></div><div class="er-bar-row"><div class="er-bar-label"><span class="er-bar-name">2% ER (High cost fund)</span><span class="er-bar-val" style="color:#e74c3c;">'+fmt(c2)+'</span></div><div class="er-bar-track"><div class="er-bar-fill" style="width:'+(c2/c0*100)+'%;background:linear-gradient(90deg,#e74c3c,#f87171);"></div></div></div></div><div style="margin-top:14px;padding:12px;background:linear-gradient(135deg,#fce8e8,#f8d0d0);border-radius:12px;"><div style="font-size:0.78rem;font-weight:800;color:#7a1a1a;">💸 2% ER vs 0% ER difference: '+fmt(c0-c2)+'</div><div style="font-size:0.72rem;color:#7a1a1a;margin-top:4px;">That\'s '+(Math.round((1-c2/c0)*100))+'% of your total corpus lost to fees!</div></div></div><button class="btn-next" onclick="nextStep()" style="margin-top:14px;">Next Lesson →</button></div>';
+}
+
+// LESSON 5: FUND NAME DECODER
+var FUND_NAMES=[
+  {name:'SBI Small Cap Fund Direct IDCW',amc:{q:'Who is the AMC?',correct:'SBI Mutual Fund',opts:['SBI Mutual Fund','Small Cap','HDFC MF']},type:{q:'What type of fund?',correct:'Small Cap Equity',opts:['Debt Fund','Small Cap Equity','Balanced Hybrid']},plan:{q:'Which plan?',correct:'Direct Plan',opts:['Regular Plan','Direct Plan','Both']},option:{q:'Which option?',correct:'IDCW (Dividend)',opts:['Growth','IDCW (Dividend)','Bonus']}},
+  {name:'HDFC Liquid Fund Regular Growth',amc:{q:'Who is the AMC?',correct:'HDFC Mutual Fund',opts:['HDFC Mutual Fund','Liquid Bank','Kotak MF']},type:{q:'What type of fund?',correct:'Liquid Fund (Debt)',opts:['Liquid Fund (Debt)','Large Cap Equity','Gold ETF']},plan:{q:'Which plan?',correct:'Regular Plan',opts:['Direct Plan','Regular Plan','NRI Plan']},option:{q:'Which option?',correct:'Growth',opts:['Growth','IDCW','SWP']}},
+];
+
+function buildNameLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 6 · Fund Names</div><span class="slide-icon">🔍</span><div class="slide-title">Every fund name tells you everything</div><div class="slide-body"><p>Indian mutual fund names follow a standard format: <strong>[AMC Name] + [Fund Category] + [Plan] + [Option]</strong></p><p>Once you know this structure, you can decode any fund name in seconds.</p></div><div class="insight"><strong>Example:</strong> "Mirae Asset Large Cap Fund Direct Growth"<br>→ AMC: Mirae Asset<br>→ Category: Large Cap Equity<br>→ Plan: Direct (lower cost)<br>→ Option: Growth (reinvest returns, better for long-term)</div><div class="warn-box"><strong>Always prefer:</strong> Direct Plan + Growth option for long-term wealth building. IDCW (dividend) distributes returns, reducing compounding effect.</div><button class="btn-next" onclick="nextStep()">Decode fund names →</button></div>';
+    }},
+    {render:function(c){renderFundDecoder(c);}},
+  ];
+}
+
+function renderFundDecoder(container){
+  var fundIdx=0,score=0,totalQ=0;
+
+  function showFund(){
+    if(fundIdx>=FUND_NAMES.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">Fund Decoder · Complete!</div><span class="slide-icon">🎉</span><div class="slide-title">Decoded '+score+'/'+totalQ+' components!</div><div class="insight"><strong>Pro skill:</strong> You can now read any mutual fund name, identify its AMC, category, plan type, and payout option — faster than most investors!</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      return;
+    }
+    var fund=FUND_NAMES[fundIdx];
+    var comps=[fund.amc,fund.type,fund.plan,fund.option];
+    var labels=['AMC','Fund Type','Plan','Option'];
+    var answered={};
+
+    function renderFundQ(){
+      var rows=comps.map(function(comp,ci){
+        var ans=answered[ci];
+        var optsHtml=comp.opts.map(function(o){
+          var cls='fund-comp-opt';
+          if(ans!==undefined){
+            if(o===comp.correct)cls+=' correct';
+            else if(o===ans&&o!==comp.correct)cls+=' wrong';
+          }
+          return '<div class="'+cls+'" onclick="fdAns('+ci+',\''+o.replace(/'/g,"\\'")+'\')">'+o+'</div>';
+        }).join('');
+        return '<div class="fund-comp-row"><div class="fund-comp-label">'+labels[ci]+'</div><div class="fund-comp-opts">'+optsHtml+'</div></div>';
+      }).join('');
+
+      var allDone=comps.every(function(_,ci){return answered[ci]!==undefined;});
+      container.innerHTML='<div class="slide"><div class="slide-tag">Fund Decoder · '+(fundIdx+1)+'/'+FUND_NAMES.length+'</div><div class="slide-title">Decode this fund name</div><div class="fund-name-card"><div class="fund-name-banner"><div class="fund-name-text">'+fund.name+'</div></div><div class="fund-components">'+rows+'</div></div>'+(allDone?'<button class="btn-next" onclick="fdNext()" style="margin-top:8px;">Next Fund →</button>':'')+'</div>';
+    }
+
+    window.fdAns=function(ci,chosen){
+      if(answered[ci]!==undefined)return;
+      totalQ++;
+      if(chosen===comps[ci].correct){score++;addCoins(5);}
+      answered[ci]=chosen;
+      renderFundQ();
+    };
+    window.fdNext=function(){fundIdx++;showFund();};
+    renderFundQ();
+  }
+  showFund();
+}
+
+// BOSS: FUND SELECTION CHALLENGE
+var BOSS_SCENARIOS=[
+  {round:'Profile 1 of 4',name:'The Tax Saver',story:'Kavita, 35, is in the 30% tax bracket. She wants to save ₹1.5 lakh in Section 80C AND grow her money over 5 years.',q:'What is the best fund for Kavita?',choices:['A) PPF — safe, tax-free','B) ELSS Fund (Direct Growth)','C) Liquid Fund'],correct:1,explain:["PPF locks money for 15 years and returns only 7.1%. Kavita wants growth AND flexibility after 3 years.","Correct! ELSS gives 80C benefit, 3-year lock-in (shortest among all 80C options), equity growth potential 12-14%, and tax-efficient. Perfect.","Liquid funds don't qualify for 80C tax deduction. Wrong tool for this goal."]},
+  {round:'Profile 2 of 4',name:'The First-Timer',story:'Rohit, 25, just got his first job. He wants to invest ₹3,000/month for 30 years with minimal effort and lowest cost.',q:'What is the best approach for Rohit?',choices:['A) Monthly SIP in Nifty 50 Index Fund (Direct)','B) Actively managed flexi cap with a top fund manager','C) Bank FD — safe for beginners'],correct:0,explain:["Perfect! Index fund = lowest cost (0.05–0.1% ER) + automatic diversification across India's top 50 companies + no fund manager risk. 30-year horizon maximises compounding.","Active funds cost 1-2% more per year. Over 30 years, that's a massive corpus difference. Only ~15% of active funds beat index consistently.","FD at 7% over 30 years means his ₹10.8L invested becomes ~₹31L. Index fund at 12% makes it ~₹90L. FD is 3× worse!"]},
+  {round:'Profile 3 of 4',name:'The Conservative Investor',story:'Suresh, 58, has ₹15 lakh lump sum. He wants monthly income and cannot afford to lose principal. Retiring in 2 years.',q:'Which fund approach is best?',choices:['A) Small cap fund — high returns','B) SWP from a Conservative Hybrid Fund','C) Balanced Advantage Fund — high equity'],correct:1,explain:["Small cap funds can fall 50%+ in a bad year. This is completely wrong for Suresh's situation.","Correct! Conservative Hybrid (20-30% equity, 70-80% debt) provides stability. SWP creates regular monthly income. Risk-adjusted return beats FD while protecting capital.","Balanced Advantage can hold 70-80% equity — too volatile for someone retiring in 2 years with no other income source."]},
+  {round:'Profile 4 of 4',name:'The Goal Investor',story:'Divya, 30, wants to save ₹20 lakh for her daughter\'s education in exactly 10 years. She invests ₹8,000/month.',q:'Which fund combination is most appropriate?',choices:['A) 100% small cap fund SIP','B) Flexi Cap + Short Duration Debt (70:30)','C) 100% liquid fund to be safe'],correct:1,explain:["100% small cap over 10 years is risky — could be down significantly right when she needs the money for fees.","Correct! 10-year horizon allows meaningful equity (flexi cap). Adding 30% debt reduces volatility. As the goal approaches, she should gradually shift more to debt.","Liquid fund returns 6-7%. On ₹8,000/month for 10 years, she'd get ~₹13L. She needs ₹20L. Not enough growth!"]},
+];
+
+function buildBossLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Boss Challenge</div><span class="slide-icon">⚔️</span><div class="slide-title">Fund Selection Challenge</div><div class="slide-body"><p>4 investors, 4 very different situations. Apply everything you\'ve learned to recommend the right mutual fund approach for each.</p></div><div class="insight">Remember: Match fund type to time horizon. Check direct vs regular. Consider tax bracket. Goals first, then instruments.</div><button class="btn-next" onclick="nextStep()">Start Challenge →</button></div>';
+    }},
+    {render:function(c){renderBoss(c,0);}},
+    {render:function(c){renderBoss(c,1);}},
+    {render:function(c){renderBoss(c,2);}},
+    {render:function(c){renderBoss(c,3);}},
+  ];
+}
+
+function renderBoss(container,idx){
+  var sc=BOSS_SCENARIOS[idx];
+  var choicesHtml=sc.choices.map(function(ch,i){
+    return '<div class="sc-choice" id="sc-c-'+i+'" onclick="bossAns('+idx+','+i+')"><div class="sc-choice-letter">'+String.fromCharCode(65+i)+'</div><div>'+ch.substring(3)+'</div></div>';
+  }).join('');
+  container.innerHTML='<div class="slide"><div class="slide-tag">Boss · '+sc.round+'</div><div class="scenario-card-outer"><div class="sc-header"><div class="sc-round">'+sc.round+'</div><div class="sc-name">'+sc.name+'</div></div><div class="sc-body"><div class="sc-story">'+sc.story+'</div><div class="sc-q">'+sc.q+'</div><div class="sc-choices">'+choicesHtml+'</div><div class="sc-consequence" id="sc-con"></div></div></div></div>';
+  window.bossAns=function(sIdx,chosen){
+    var s=BOSS_SCENARIOS[sIdx];
+    var correct=chosen===s.correct;
+    if(correct)addCoins(20);
+    document.querySelectorAll('.sc-choice').forEach(function(el,i){
+      el.style.pointerEvents='none';
+      if(i===s.correct)el.classList.add('correct-choice');
+      else if(i===chosen&&!correct)el.classList.add('wrong-choice');
+    });
+    var con=document.getElementById('sc-con');
+    con.style.display='block';
+    con.className='sc-consequence '+(correct?'good':'bad');
+    con.innerHTML='<strong>'+(correct?'✅ Excellent pick!':'❌ Not ideal')+'</strong> '+s.explain[chosen]+'<button class="btn-next" onclick="nextStep()" style="margin-top:12px;">'+(sIdx<3?'Next Profile →':'Finish Challenge →')+'</button>';
+  };
+}
+
+refreshMap();
+document.getElementById('coinDisplay').textContent=state.coins;
+</script>
+</body>
+</html>

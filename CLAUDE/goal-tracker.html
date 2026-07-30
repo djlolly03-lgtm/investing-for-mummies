@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Financial Goal Tracker — Investing for Mummies</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function() {
+  var _wm = new Image();
+  _wm.src = 'https://ifm-deploy.vercel.app/IFM%20round%20logo%20for%20watermark.png';
+  window.LOGO_SRC = _wm.src;
+})();
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --teal:#2a9d8f;
+  --navy:#1a3a5c;
+  --muted:#5a7d8a;
+  --cream:#f7faf9;
+  --mint:#bde9e4;
+  --mint-lt:#e0f3f0;
+  --gold:#c9a84c;
+  --gold-lt:#fdf3dc;
+  --ink:#1a3a5c;
+  --white:#ffffff;
+  --aqua-lt:#e0f3f0;
+  --danger:#e74c3c;
+  --success:#27ae60;
+}
+body{
+  font-family:'Nunito',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  padding:20px 16px 48px;
+  max-width:880px;
+  margin:0 auto;
+}
+
+/* ── WATERMARK ── */
+.watermark{
+  position:fixed;top:12px;right:12px;z-index:9;
+  width:36px;height:36px;border-radius:50%;
+  background:#fff;overflow:hidden;
+  box-shadow:0 1px 6px rgba(0,0,0,0.15);pointer-events:none;opacity:0.85;
+}
+.watermark img{width:100%;height:100%;object-fit:contain;}
+
+/* ── PAGE HEADER ── */
+.plan-header{text-align:center;margin-bottom:28px;}
+.plan-header h1{
+  font-family:'Lora',serif;
+  font-size:1.6rem;font-weight:600;color:var(--navy);
+  font-style:italic;margin-bottom:6px;
+}
+.plan-header p{font-size:0.88rem;color:var(--muted);line-height:1.5;}
+
+/* ── CATEGORY CARDS ── */
+.cat-card{
+  background:var(--white);
+  border-radius:18px;
+  padding:20px 20px 16px;
+  box-shadow:0 3px 18px rgba(26,58,92,0.08);
+  margin-bottom:20px;
+  border-top:3px solid var(--teal);
+}
+.cat-card.gold-top{border-top-color:var(--gold);}
+.cat-card.navy-top{border-top-color:var(--navy);}
+
+/* ── CATEGORY HEADER ── */
+.cat-head{
+  display:flex;align-items:center;
+  gap:12px;margin-bottom:14px;flex-wrap:wrap;
+}
+.cat-icon{font-size:1.6rem;flex-shrink:0;}
+.cat-title-group{flex:1;min-width:0;}
+.cat-title-group h2{
+  font-family:'Lora',serif;
+  font-size:1.0rem;font-weight:600;color:var(--navy);
+}
+.cat-sub{
+  font-size:0.68rem;color:var(--muted);font-weight:800;
+  text-transform:uppercase;letter-spacing:0.6px;
+}
+.cat-mini{
+  display:flex;gap:14px;flex-wrap:wrap;margin-left:auto;flex-shrink:0;
+}
+.cmi{text-align:center;}
+.cmi-lbl{display:block;font-size:0.62rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
+.cmi-val{font-size:0.88rem;font-weight:900;color:var(--navy);}
+
+/* ── TABLE HEADER ── */
+.goals-thead{
+  display:flex;align-items:center;gap:6px;
+  padding:0 6px 7px;
+  border-bottom:1.5px solid var(--mint);
+  font-size:0.63rem;font-weight:800;color:var(--muted);
+  text-transform:uppercase;letter-spacing:0.6px;
+}
+@media(max-width:680px){.goals-thead{display:none;}}
+
+/* ── COLUMN WIDTHS ── */
+.col-name{flex:1;min-width:100px;}
+.col-yrs{width:56px;text-align:center;flex-shrink:0;}
+.col-corpus{width:148px;flex-shrink:0;}
+.col-funded{width:148px;flex-shrink:0;}
+.col-pct{width:84px;text-align:center;flex-shrink:0;}
+.col-gap{width:76px;text-align:right;flex-shrink:0;}
+.col-del{width:24px;flex-shrink:0;}
+
+/* ── GOAL ROW ── */
+.goal-row{
+  display:flex;align-items:center;gap:6px;
+  padding:7px 4px;
+  border-bottom:1px solid #f0f4f3;
+}
+.goal-row:last-of-type{border-bottom:none;}
+
+/* Name input */
+.name-inp{
+  flex:1;min-width:100px;
+  border:1.5px solid transparent;border-radius:8px;
+  padding:7px 8px;
+  font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:700;
+  color:var(--navy);background:transparent;
+  outline:none;transition:border-color 0.2s,background 0.2s;
+}
+.name-inp:hover,.name-inp:focus{border-color:var(--mint);background:var(--cream);}
+.name-inp::placeholder{color:#b0bec5;font-weight:600;}
+
+/* Years input */
+.yrs-inp{
+  width:56px;flex-shrink:0;
+  border:1.5px solid #D5E6E2;border-radius:8px;
+  padding:7px 4px;
+  font-family:'Nunito',sans-serif;font-size:0.82rem;font-weight:800;
+  color:var(--navy);background:var(--cream);
+  outline:none;text-align:center;
+  transition:border-color 0.2s,background 0.2s;
+}
+.yrs-inp:focus{border-color:var(--teal);background:#fff;}
+
+/* Money inputs */
+.inp-wrap{position:relative;flex-shrink:0;}
+.inp-wrap.w148{width:148px;}
+.inp-sym{
+  position:absolute;left:9px;top:50%;
+  transform:translateY(-50%);
+  color:var(--muted);font-size:0.82rem;pointer-events:none;
+}
+.inp-wrap input{
+  width:100%;padding:7px 8px 7px 22px;
+  border:1.5px solid #D5E6E2;border-radius:8px;
+  font-family:'Nunito',sans-serif;font-size:0.85rem;
+  color:var(--ink);background:var(--cream);
+  outline:none;transition:border-color 0.2s,background 0.2s;
+}
+.inp-wrap input:focus{border-color:var(--teal);background:#fff;}
+.sh-badge{
+  position:absolute;bottom:2px;right:4px;
+  font-size:0.57rem;font-weight:800;color:var(--teal);
+  background:#e8f5f2;padding:1px 4px;border-radius:3px;
+  letter-spacing:0.3px;white-space:nowrap;pointer-events:none;
+  display:none;
+}
+
+/* Progress cell */
+.pct-cell{width:84px;flex-shrink:0;}
+.pct-bar-wrap{height:6px;border-radius:3px;background:#dde8e6;overflow:hidden;margin-bottom:3px;}
+.pct-bar{height:100%;border-radius:3px;background:var(--teal);transition:width 0.35s;}
+.pct-bar.good{background:var(--success);}
+.pct-bar.mid{background:var(--gold);}
+.pct-bar.low{background:var(--danger);}
+.pct-lbl{font-size:0.72rem;font-weight:900;color:var(--navy);text-align:center;}
+
+/* Gap cell */
+.gap-cell{width:76px;text-align:right;flex-shrink:0;}
+.gap-val{font-size:0.8rem;font-weight:800;color:var(--danger);}
+.gap-val.done{color:var(--success);}
+.gap-val.empty{color:var(--muted);}
+
+/* Delete btn */
+.btn-del{
+  width:24px;flex-shrink:0;
+  background:none;border:none;
+  color:var(--danger);cursor:pointer;font-size:0.95rem;
+  opacity:0;transition:opacity 0.2s;padding:0;line-height:1;
+}
+.goal-row:hover .btn-del{opacity:1;}
+
+/* ── ADD GOAL BUTTON ── */
+.btn-add{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:10px;
+  padding:8px 16px;
+  background:var(--aqua-lt);color:var(--teal);
+  border:1.5px dashed var(--teal);border-radius:10px;
+  font-family:'Nunito',sans-serif;font-size:0.82rem;font-weight:800;
+  cursor:pointer;transition:background 0.2s;
+}
+.btn-add:hover{background:var(--mint);}
+
+/* ── SUMMARY CARD ── */
+.summary-card{
+  background:var(--white);
+  border-radius:18px;padding:24px;
+  box-shadow:0 3px 18px rgba(26,58,92,0.08);
+  margin-bottom:20px;
+  border-top:3px solid var(--navy);
+}
+.sum-title{
+  font-family:'Lora',serif;
+  font-size:1.0rem;font-weight:600;color:var(--navy);
+  margin-bottom:18px;display:flex;align-items:center;gap:8px;
+}
+.sum-tiles{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px;
+}
+@media(max-width:560px){.sum-tiles{grid-template-columns:repeat(2,1fr);}}
+.sum-tile{background:var(--cream);border-radius:12px;padding:14px 10px;text-align:center;}
+.st-lbl{display:block;font-size:0.62rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;}
+.st-val{font-size:1.05rem;font-weight:900;color:var(--navy);}
+.st-sub{font-size:0.68rem;font-weight:700;color:var(--teal);margin-top:2px;}
+
+/* ── DONUT ── */
+.donut-wrap{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;}
+.donut-canvas-wrap{position:relative;width:160px;height:160px;flex-shrink:0;}
+.donut-center{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.dc-pct{font-size:1.55rem;font-weight:900;color:var(--navy);}
+.dc-lbl{font-size:0.63rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
+.donut-legend{display:flex;flex-direction:column;gap:12px;}
+.dl-item{display:flex;align-items:center;gap:10px;}
+.dl-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.dl-label{font-size:0.8rem;color:var(--muted);font-weight:600;flex:1;}
+.dl-val{font-size:0.9rem;font-weight:900;color:var(--navy);}
+
+/* ── INSIGHT ── */
+.insight-box{
+  background:linear-gradient(135deg,var(--navy),#0e4a5c);
+  border-radius:16px;padding:22px 20px;color:#fff;margin-bottom:20px;
+}
+.insight-box h3{font-family:'Lora',serif;font-size:1rem;font-weight:600;margin-bottom:10px;}
+.insight-box p{font-size:0.85rem;line-height:1.65;opacity:0.9;}
+.insight-box .quote{
+  margin-top:12px;padding:10px 14px;
+  background:rgba(255,255,255,0.08);
+  border-radius:10px;border:1px solid rgba(255,255,255,0.15);
+}
+.insight-box .quote p{font-size:0.82rem;font-style:italic;color:#fff;opacity:1;}
+.insight-box .quote cite{font-size:0.72rem;color:var(--gold);font-weight:700;margin-top:4px;display:block;}
+
+/* ── ACTION BUTTONS ── */
+.action-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:4px;}
+.btn-dl{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 26px;
+  background:linear-gradient(135deg,#c9a84c,#e6c86a);
+  color:var(--navy);border:none;border-radius:12px;
+  font-family:'Nunito',sans-serif;font-weight:900;font-size:0.9rem;
+  cursor:pointer;box-shadow:0 4px 18px rgba(201,168,76,0.3);
+}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 26px;
+  background:#25D366;color:#fff;border:none;border-radius:12px;
+  font-family:'Nunito',sans-serif;font-weight:900;font-size:0.9rem;
+  cursor:pointer;box-shadow:0 4px 18px rgba(37,211,102,0.3);
+}
+
+/* ── MOBILE ── */
+@media(max-width:680px){
+  .col-corpus,.col-funded{width:118px;}
+  .col-pct{width:70px;}
+  .col-gap{width:60px;}
+  .cat-mini{display:none;}
+}
+@media(max-width:480px){
+  .col-funded{display:none;}
+  .col-gap{display:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="watermark"><img id="wm_img" src="" alt=""/></div>
+
+<div class="plan-header">
+  <h1>Financial Goal Tracker</h1>
+  <p>Organise your goals by timeline — and track exactly how funded each one is</p>
+</div>
+
+<!-- ── SHORT TERM ── -->
+<div class="cat-card" id="cat_short">
+  <div class="cat-head">
+    <span class="cat-icon">⚡</span>
+    <div class="cat-title-group">
+      <h2>Short Term Goals</h2>
+      <span class="cat-sub">Under 1 Year</span>
+    </div>
+    <div class="cat-mini">
+      <div class="cmi"><span class="cmi-lbl">Goals</span><span class="cmi-val" id="short_count">0</span></div>
+      <div class="cmi"><span class="cmi-lbl">Required</span><span class="cmi-val" id="short_req">—</span></div>
+      <div class="cmi"><span class="cmi-lbl">Funded</span><span class="cmi-val" id="short_fund">—</span></div>
+    </div>
+  </div>
+  <div class="goals-thead">
+    <div class="col-name">Goal</div>
+    <div class="col-yrs">Yrs</div>
+    <div class="col-corpus">Target Corpus</div>
+    <div class="col-funded">Funded So Far</div>
+    <div class="col-pct">Progress</div>
+    <div class="col-gap">Gap</div>
+    <div class="col-del"></div>
+  </div>
+  <div id="short_rows"></div>
+  <button class="btn-add" onclick="addGoal('short')">＋ Add Short-Term Goal</button>
+</div>
+
+<!-- ── MEDIUM TERM ── -->
+<div class="cat-card gold-top" id="cat_medium">
+  <div class="cat-head">
+    <span class="cat-icon">🎯</span>
+    <div class="cat-title-group">
+      <h2>Medium Term Goals</h2>
+      <span class="cat-sub">1 – 4 Years</span>
+    </div>
+    <div class="cat-mini">
+      <div class="cmi"><span class="cmi-lbl">Goals</span><span class="cmi-val" id="medium_count">0</span></div>
+      <div class="cmi"><span class="cmi-lbl">Required</span><span class="cmi-val" id="medium_req">—</span></div>
+      <div class="cmi"><span class="cmi-lbl">Funded</span><span class="cmi-val" id="medium_fund">—</span></div>
+    </div>
+  </div>
+  <div class="goals-thead">
+    <div class="col-name">Goal</div>
+    <div class="col-yrs">Yrs</div>
+    <div class="col-corpus">Target Corpus</div>
+    <div class="col-funded">Funded So Far</div>
+    <div class="col-pct">Progress</div>
+    <div class="col-gap">Gap</div>
+    <div class="col-del"></div>
+  </div>
+  <div id="medium_rows"></div>
+  <button class="btn-add" onclick="addGoal('medium')">＋ Add Medium-Term Goal</button>
+</div>
+
+<!-- ── LONG TERM ── -->
+<div class="cat-card navy-top" id="cat_long">
+  <div class="cat-head">
+    <span class="cat-icon">🌟</span>
+    <div class="cat-title-group">
+      <h2>Long Term Goals</h2>
+      <span class="cat-sub">5+ Years</span>
+    </div>
+    <div class="cat-mini">
+      <div class="cmi"><span class="cmi-lbl">Goals</span><span class="cmi-val" id="long_count">0</span></div>
+      <div class="cmi"><span class="cmi-lbl">Required</span><span class="cmi-val" id="long_req">—</span></div>
+      <div class="cmi"><span class="cmi-lbl">Funded</span><span class="cmi-val" id="long_fund">—</span></div>
+    </div>
+  </div>
+  <div class="goals-thead">
+    <div class="col-name">Goal</div>
+    <div class="col-yrs">Yrs</div>
+    <div class="col-corpus">Target Corpus</div>
+    <div class="col-funded">Funded So Far</div>
+    <div class="col-pct">Progress</div>
+    <div class="col-gap">Gap</div>
+    <div class="col-del"></div>
+  </div>
+  <div id="long_rows"></div>
+  <button class="btn-add" onclick="addGoal('long')">＋ Add Long-Term Goal</button>
+</div>
+
+<!-- ── SUMMARY ── -->
+<div class="summary-card" id="summary_sec" style="display:none;">
+  <div class="sum-title">📊 Overall Summary</div>
+  <div class="sum-tiles">
+    <div class="sum-tile">
+      <span class="st-lbl">Total Goals</span>
+      <div class="st-val" id="sum_goals">0</div>
+    </div>
+    <div class="sum-tile">
+      <span class="st-lbl">Total Required</span>
+      <div class="st-val" id="sum_req">₹0</div>
+      <div class="st-sub" id="sum_req_sh"></div>
+    </div>
+    <div class="sum-tile">
+      <span class="st-lbl">Total Funded</span>
+      <div class="st-val" id="sum_funded">₹0</div>
+      <div class="st-sub" id="sum_funded_sh"></div>
+    </div>
+    <div class="sum-tile">
+      <span class="st-lbl">Overall Funded</span>
+      <div class="st-val" id="sum_pct">0%</div>
+      <div class="st-sub" id="sum_gap_lbl">Gap: ₹0</div>
+    </div>
+  </div>
+  <div class="donut-wrap">
+    <div class="donut-canvas-wrap">
+      <canvas id="goalDonut"></canvas>
+      <div class="donut-center">
+        <div class="dc-pct" id="donut_pct">0%</div>
+        <div class="dc-lbl">Funded</div>
+      </div>
+    </div>
+    <div class="donut-legend">
+      <div class="dl-item">
+        <div class="dl-dot" style="background:var(--success);"></div>
+        <span class="dl-label">Funded</span>
+        <span class="dl-val" id="leg_funded">₹0</span>
+      </div>
+      <div class="dl-item">
+        <div class="dl-dot" style="background:var(--danger);"></div>
+        <span class="dl-label">Gap</span>
+        <span class="dl-val" id="leg_gap">₹0</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── INSIGHT ── -->
+<div class="insight-box">
+  <h3>🌟 Why Track Your Goals?</h3>
+  <p>Research shows that people who write down their goals with a <strong>specific number and a deadline</strong> are 42% more likely to achieve them. A goal without a corpus is just a wish.</p>
+  <div class="quote">
+    <p>"A goal is a dream with a deadline — and a corpus."</p>
+    <cite>— Investing for Mummies</cite>
+  </div>
+</div>
+
+<!-- ── ACTIONS ── -->
+<div class="action-row">
+  <button class="btn-dl" onclick="downloadPlan()">📄 Download My Plan</button>
+  <button class="btn-wa" onclick="sharePlan()">💬 Share via WhatsApp</button>
+</div>
+
+<script>
+// ── WATERMARK ──
+(function(){
+  var img = document.getElementById('wm_img');
+  if(img && window.LOGO_SRC) img.src = window.LOGO_SRC;
+})();
+
+// ── NUMBER UTILS ──
+function indianFormat(n) {
+  if(!n && n !== 0) return '';
+  n = Math.round(n);
+  if(n === 0) return '0';
+  var neg = n < 0; if(neg) n = -n;
+  var s = String(n);
+  var last3 = s.slice(-3);
+  var rest = s.slice(0, -3);
+  if(rest) last3 = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + last3;
+  return (neg ? '-' : '') + last3;
+}
+
+function shorthand(n) {
+  if(!n || n === 0) return '';
+  var abs = Math.abs(n);
+  if(abs >= 1e7) return (n/1e7).toFixed(abs % 1e7 === 0 ? 0 : 1) + 'Cr';
+  if(abs >= 1e5) return (n/1e5).toFixed(abs % 1e5 === 0 ? 0 : 1) + 'L';
+  if(abs >= 1e3) return (n/1e3).toFixed(abs % 1e3 === 0 ? 0 : 1) + 'K';
+  return String(n);
+}
+
+function parseVal(str) {
+  if(!str) return 0;
+  str = String(str).replace(/,/g,'').trim();
+  var m = str.match(/^([\d.]+)\s*(cr|crore|l|lakh|lac|k|thousand)?$/i);
+  if(!m) return parseFloat(str) || 0;
+  var v = parseFloat(m[1]);
+  var u = (m[2]||'').toLowerCase();
+  if(u==='cr'||u==='crore') return Math.round(v*1e7);
+  if(u==='l'||u==='lakh'||u==='lac') return Math.round(v*1e5);
+  if(u==='k'||u==='thousand') return Math.round(v*1e3);
+  return Math.round(v);
+}
+
+function fmtDisp(n) {
+  if(!n) return '₹0';
+  if(n >= 1e7) return '₹' + (n/1e7).toFixed(1) + ' Cr';
+  if(n >= 1e5) return '₹' + (n/1e5).toFixed(1) + ' L';
+  if(n >= 1e3) return '₹' + (n/1e3).toFixed(1) + 'K';
+  return '₹' + indianFormat(n);
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
+}
+
+// ── GOALS DATA ──
+var goals = { short:[], medium:[], long:[] };
+var rowCtr = 0;
+
+// ── ADD GOAL ──
+function addGoal(cat) {
+  var id = 'g' + (++rowCtr);
+  goals[cat].push({ id:id, name:'', years:'', corpus:0, funded:0 });
+  renderRows(cat);
+  setTimeout(function(){
+    var inp = document.querySelector('#row_'+id+' .name-inp');
+    if(inp) inp.focus();
+  }, 40);
+}
+
+function removeGoal(cat, id) {
+  goals[cat] = goals[cat].filter(function(g){ return g.id !== id; });
+  renderRows(cat);
+  updateSummary();
+}
+
+function renderRows(cat) {
+  var container = document.getElementById(cat+'_rows');
+  container.innerHTML = '';
+  goals[cat].forEach(function(g) {
+    var div = document.createElement('div');
+    div.className = 'goal-row';
+    div.id = 'row_' + g.id;
+    var cv = g.corpus > 0 ? indianFormat(g.corpus) : '';
+    var fv = g.funded  > 0 ? indianFormat(g.funded)  : '';
+    div.innerHTML =
+      '<input class="name-inp col-name" type="text" placeholder="e.g. Emergency Fund" value="'+escHtml(g.name)+'" oninput="setName(\''+cat+'\',\''+g.id+'\',this.value)"/>'+
+      '<input class="yrs-inp col-yrs" type="text" inputmode="decimal" placeholder="Yrs" value="'+escHtml(g.years)+'" oninput="setYears(\''+cat+'\',\''+g.id+'\',this.value)"/>'+
+      '<div class="inp-wrap w148 col-corpus"><span class="inp-sym">₹</span><input type="text" inputmode="numeric" value="'+escHtml(cv)+'" placeholder="0" oninput="handleMoney(\''+cat+'\',\''+g.id+'\',\'corpus\',this)"/><span class="sh-badge" id="sc_'+g.id+'"></span></div>'+
+      '<div class="inp-wrap w148 col-funded"><span class="inp-sym">₹</span><input type="text" inputmode="numeric" value="'+escHtml(fv)+'" placeholder="0" oninput="handleMoney(\''+cat+'\',\''+g.id+'\',\'funded\',this)"/><span class="sh-badge" id="sf_'+g.id+'"></span></div>'+
+      '<div class="pct-cell col-pct" id="pc_'+g.id+'"><div class="pct-bar-wrap"><div class="pct-bar" id="pb_'+g.id+'" style="width:0%"></div></div><div class="pct-lbl" id="pl_'+g.id+'">—</div></div>'+
+      '<div class="gap-cell col-gap"><span class="gap-val empty" id="gv_'+g.id+'">—</span></div>'+
+      '<button class="btn-del col-del" onclick="removeGoal(\''+cat+'\',\''+g.id+'\')" title="Remove">✕</button>';
+    container.appendChild(div);
+    setBadge('sc_'+g.id, g.corpus);
+    setBadge('sf_'+g.id, g.funded);
+    calcRow(g.id, g.corpus, g.funded);
+  });
+  updateCatSummary(cat);
+  updateSummary();
+}
+
+function setName(cat, id, val) {
+  var g = findG(cat, id); if(g) g.name = val;
+}
+function setYears(cat, id, val) {
+  var g = findG(cat, id); if(g) g.years = val;
+}
+
+function handleMoney(cat, id, field, inp) {
+  var raw = inp.value.replace(/,/g,'');
+  var num = parseFloat(raw) || 0;
+  if(num > 0) {
+    var pos = inp.selectionStart;
+    var formatted = indianFormat(num);
+    var diff = formatted.length - raw.length;
+    inp.value = formatted;
+    try { inp.setSelectionRange(pos + diff, pos + diff); } catch(e){}
+  }
+  var val = parseVal(inp.value);
+  var g = findG(cat, id);
+  if(!g) return;
+  g[field] = val;
+  setBadge(field==='corpus' ? 'sc_'+id : 'sf_'+id, val);
+  calcRow(id, field==='corpus' ? val : g.corpus, field==='funded' ? val : g.funded);
+  updateCatSummary(cat);
+  updateSummary();
+}
+
+function findG(cat, id) {
+  return goals[cat].find(function(g){ return g.id===id; });
+}
+
+function setBadge(elId, num) {
+  var el = document.getElementById(elId);
+  if(!el) return;
+  var sh = shorthand(num);
+  el.textContent = sh;
+  el.style.display = sh ? 'block' : 'none';
+}
+
+function calcRow(id, corpus, funded) {
+  var pct = corpus > 0 ? Math.min(100, (funded/corpus)*100) : 0;
+  var gap = corpus > 0 ? Math.max(0, corpus - funded) : 0;
+  var bar = document.getElementById('pb_'+id);
+  var lbl = document.getElementById('pl_'+id);
+  var gv  = document.getElementById('gv_'+id);
+  if(bar) {
+    bar.style.width = pct.toFixed(1)+'%';
+    bar.className = 'pct-bar ' + (pct >= 75 ? 'good' : pct >= 40 ? 'mid' : (corpus > 0 ? 'low' : ''));
+  }
+  if(lbl) lbl.textContent = corpus > 0 ? pct.toFixed(0)+'%' : '—';
+  if(gv) {
+    if(corpus === 0) {
+      gv.textContent = '—'; gv.className = 'gap-val empty';
+    } else if(gap === 0) {
+      gv.textContent = '✓ Done'; gv.className = 'gap-val done';
+    } else {
+      gv.textContent = shorthand(gap); gv.className = 'gap-val';
+    }
+  }
+}
+
+function updateCatSummary(cat) {
+  var list = goals[cat];
+  var n = list.length, req = 0, fund = 0;
+  list.forEach(function(g){ req += g.corpus; fund += g.funded; });
+  var cEl = document.getElementById(cat+'_count');
+  var rEl = document.getElementById(cat+'_req');
+  var fEl = document.getElementById(cat+'_fund');
+  if(cEl) cEl.textContent = n;
+  if(rEl) rEl.textContent = n > 0 ? fmtDisp(req) : '—';
+  if(fEl) fEl.textContent = n > 0 ? fmtDisp(fund) : '—';
+}
+
+// ── DONUT CHART ──
+var donutChart = null;
+
+function updateSummary() {
+  var all = [].concat(goals.short, goals.medium, goals.long);
+  var n = all.length, req = 0, fund = 0;
+  all.forEach(function(g){ req += g.corpus; fund += g.funded; });
+  var gap = Math.max(0, req - fund);
+  var pct = req > 0 ? Math.min(100, (fund/req)*100) : 0;
+
+  var sec = document.getElementById('summary_sec');
+  if(!n) {
+    sec.style.display = 'none';
+    if(donutChart){ donutChart.destroy(); donutChart = null; }
+    return;
+  }
+  sec.style.display = 'block';
+
+  document.getElementById('sum_goals').textContent = n;
+  document.getElementById('sum_req').textContent   = fmtDisp(req);
+  document.getElementById('sum_funded').textContent = fmtDisp(fund);
+  document.getElementById('sum_pct').textContent   = pct.toFixed(0)+'%';
+  document.getElementById('sum_gap_lbl').textContent = 'Gap: '+fmtDisp(gap);
+  document.getElementById('sum_req_sh').textContent  = shorthand(req) ? '= '+shorthand(req) : '';
+  document.getElementById('sum_funded_sh').textContent = shorthand(fund) ? '= '+shorthand(fund) : '';
+  document.getElementById('donut_pct').textContent  = pct.toFixed(0)+'%';
+  document.getElementById('leg_funded').textContent = fmtDisp(fund);
+  document.getElementById('leg_gap').textContent    = fmtDisp(gap);
+
+  var fundColor = pct >= 75 ? '#27ae60' : pct >= 40 ? '#c9a84c' : '#2a9d8f';
+  var data = req > 0 ? [fund, gap] : [0, 1];
+
+  if(donutChart) {
+    donutChart.data.datasets[0].data = data;
+    donutChart.data.datasets[0].backgroundColor = [fundColor, '#e74c3c'];
+    donutChart.update();
+  } else {
+    var ctx = document.getElementById('goalDonut').getContext('2d');
+    donutChart = new Chart(ctx, {
+      type:'doughnut',
+      data:{
+        datasets:[{
+          data: data,
+          backgroundColor:[fundColor,'#e74c3c'],
+          borderWidth:2,borderColor:'#fff',hoverOffset:4
+        }]
+      },
+      options:{
+        cutout:'70%',animation:{duration:400},
+        plugins:{legend:{display:false},tooltip:{enabled:false}}
+      }
+    });
+  }
+}
+
+// ── DOWNLOAD ──
+function downloadPlan() {
+  var lines = [
+    'FINANCIAL GOAL TRACKER — Investing for Mummies',
+    '='.repeat(52), ''
+  ];
+  var cats = [
+    {key:'short',  label:'SHORT TERM  (Under 1 Year)'},
+    {key:'medium', label:'MEDIUM TERM (1 – 4 Years)'},
+    {key:'long',   label:'LONG TERM   (5+ Years)'}
+  ];
+  cats.forEach(function(c){
+    lines.push(c.label);
+    lines.push('-'.repeat(40));
+    if(!goals[c.key].length){ lines.push('  No goals added.'); }
+    else goals[c.key].forEach(function(g, i){
+      var pct = g.corpus > 0 ? Math.min(100,(g.funded/g.corpus)*100) : 0;
+      var gap = Math.max(0, g.corpus - g.funded);
+      lines.push('  '+(i+1)+'. '+(g.name||'Unnamed Goal'));
+      if(g.years) lines.push('     Years Required : '+g.years);
+      lines.push('     Target Corpus  : ₹'+indianFormat(g.corpus));
+      lines.push('     Funded So Far  : ₹'+indianFormat(g.funded));
+      lines.push('     % Funded       : '+pct.toFixed(0)+'%');
+      lines.push('     Gap            : ₹'+indianFormat(gap));
+    });
+    lines.push('');
+  });
+  var all = [].concat(goals.short, goals.medium, goals.long);
+  var req = 0, fund = 0;
+  all.forEach(function(g){ req += g.corpus; fund += g.funded; });
+  var pct = req > 0 ? ((fund/req)*100).toFixed(0) : 0;
+  lines.push('='.repeat(52));
+  lines.push('OVERALL');
+  lines.push('Total Goals    : '+all.length);
+  lines.push('Total Required : ₹'+indianFormat(req));
+  lines.push('Total Funded   : ₹'+indianFormat(fund));
+  lines.push('Overall Funded : '+pct+'%');
+  lines.push('Gap            : ₹'+indianFormat(Math.max(0,req-fund)));
+  lines.push('');
+  lines.push('Generated by Investing for Mummies — ifm-deploy.vercel.app');
+  var blob = new Blob([lines.join('\n')], {type:'text/plain'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'Financial-Goal-Tracker.txt';
+  a.click();
+}
+
+// ── SHARE ──
+function sharePlan() {
+  var all = [].concat(goals.short, goals.medium, goals.long);
+  var req = 0, fund = 0;
+  all.forEach(function(g){ req += g.corpus; fund += g.funded; });
+  var pct = req > 0 ? ((fund/req)*100).toFixed(0) : 0;
+  var msg = 'I just tracked my financial goals on Investing for Mummies 🎯\n'
+    + '📊 '+all.length+' goals | '+fmtDisp(req)+' target | '+pct+'% funded\n'
+    + '🔗 ifm-deploy.vercel.app';
+  window.open('https://wa.me/?text='+encodeURIComponent(msg), '_blank');
+}
+
+// ── SEED EXAMPLES ──
+(function(){
+  var s = goals.short; rowCtr++;
+  s.push({id:'g'+rowCtr, name:'Emergency Fund', years:'0.5', corpus:300000, funded:150000});
+
+  var m = goals.medium; rowCtr++;
+  m.push({id:'g'+rowCtr, name:'Home Down Payment', years:'3', corpus:2000000, funded:500000});
+
+  var l = goals.long; rowCtr++;
+  l.push({id:'g'+rowCtr, name:'Retirement Corpus', years:'20', corpus:50000000, funded:2000000});
+
+  renderRows('short');
+  renderRows('medium');
+  renderRows('long');
+})();
+</script>
+</body>
+</html>

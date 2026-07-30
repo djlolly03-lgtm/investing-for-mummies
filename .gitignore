@@ -1,0 +1,47 @@
+# ── IFM version control ────────────────────────────────────────────────────
+# Purpose: track the CODE (games, scripts, docs) so any bad edit can be rolled
+# back with one command. Heavy media is deliberately excluded — it doesn't change
+# during a build, it already exists on disk and on Vercel, and including it would
+# bloat the repo by ~1.9 GB.
+
+# Video / audio
+*.mp4
+*.mov
+*.avi
+*.webm
+*.mkv
+*.mp3
+*.wav
+*.m4a
+
+# Documents (the handbook PDF alone is 742 MB)
+*.pdf
+*.ppsx
+*.pptx
+*.xlsx
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.ico
+*.heic
+
+# Archives
+*.zip
+*.tar
+*.gz
+
+# Tooling / OS
+node_modules/
+.DS_Store
+**/.DS_Store
+.vercel
+.venv/
+venv/
+__pycache__/
+*.pyc
+.gstack/
+**/.gstack/

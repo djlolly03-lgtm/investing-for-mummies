@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="bg-l" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1a1200"/>
+      <stop offset="100%" stop-color="#0a0800"/>
+    </radialGradient>
+    <filter id="glow-l" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="eye-l" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="clip-l"><circle cx="100" cy="100" r="97"/></clipPath>
+  </defs>
+
+  <!-- Base -->
+  <circle cx="100" cy="100" r="100" fill="#0a0800"/>
+  <circle cx="100" cy="100" r="97" fill="url(#bg-l)"/>
+
+  <!-- Mane rays -->
+  <g clip-path="url(#clip-l)" filter="url(#glow-l)" opacity="0.7">
+    <polygon points="100,12 106,42 100,38 94,42" fill="#d97706"/>
+    <polygon points="128,18 126,48 121,44 120,50" fill="#b45309"/>
+    <polygon points="152,36 142,62 138,57 140,63" fill="#b45309"/>
+    <polygon points="168,62 150,80 148,74 152,80" fill="#b45309"/>
+    <polygon points="72,18 74,48 79,44 80,50" fill="#b45309"/>
+    <polygon points="48,36 58,62 62,57 60,63" fill="#b45309"/>
+    <polygon points="32,62 50,80 52,74 48,80" fill="#b45309"/>
+  </g>
+
+  <!-- Mane body -->
+  <ellipse cx="100" cy="115" rx="58" ry="62" fill="#92400e"/>
+  <ellipse cx="100" cy="112" rx="50" ry="56" fill="#b45309"/>
+  <ellipse cx="100" cy="110" rx="42" ry="50" fill="#d97706" opacity="0.6"/>
+
+  <!-- Face -->
+  <ellipse cx="100" cy="105" rx="38" ry="42" fill="#f5c842"/>
+  <ellipse cx="100" cy="108" rx="34" ry="38" fill="#fde68a"/>
+
+  <!-- Ears -->
+  <polygon points="70,72 62,50 82,68" fill="#f5c842"/>
+  <polygon points="130,72 138,50 118,68" fill="#f5c842"/>
+  <polygon points="73,70 67,54 80,68" fill="#c2410c" opacity="0.6"/>
+  <polygon points="127,70 133,54 120,68" fill="#c2410c" opacity="0.6"/>
+
+  <!-- Forehead markings -->
+  <path d="M100 78 L96 86 L100 84 L104 86 Z" fill="#d97706" opacity="0.8"/>
+  <path d="M88 80 L84 88" stroke="#d97706" stroke-width="1.5" opacity="0.5"/>
+  <path d="M112 80 L116 88" stroke="#d97706" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Eyes -->
+  <ellipse cx="86" cy="100" rx="8" ry="7" fill="#1a0a00"/>
+  <ellipse cx="114" cy="100" rx="8" ry="7" fill="#1a0a00"/>
+  <ellipse cx="86" cy="100" rx="6" ry="5.5" fill="#f59e0b" filter="url(#eye-l)"/>
+  <ellipse cx="114" cy="100" rx="6" ry="5.5" fill="#f59e0b" filter="url(#eye-l)"/>
+  <ellipse cx="86" cy="100" rx="3.5" ry="5" fill="#0a0400"/>
+  <ellipse cx="114" cy="100" rx="3.5" ry="5" fill="#0a0400"/>
+  <circle cx="84" cy="98.5" r="1.2" fill="white" opacity="0.9"/>
+  <circle cx="112" cy="98.5" r="1.2" fill="white" opacity="0.9"/>
+
+  <!-- Nose -->
+  <ellipse cx="100" cy="112" rx="5" ry="3.5" fill="#c2410c"/>
+  <ellipse cx="100" cy="111" rx="3.5" ry="2" fill="#ef4444"/>
+
+  <!-- Muzzle -->
+  <ellipse cx="100" cy="116" rx="14" ry="9" fill="#fef3c7" opacity="0.6"/>
+  <path d="M100 115 L100 122" stroke="#c2410c" stroke-width="1.5"/>
+  <path d="M100 122 Q92 127 88 124" stroke="#c2410c" stroke-width="1.5" fill="none"/>
+  <path d="M100 122 Q108 127 112 124" stroke="#c2410c" stroke-width="1.5" fill="none"/>
+
+  <!-- Whisker dots -->
+  <circle cx="84" cy="118" r="1.5" fill="#d97706" opacity="0.7"/>
+  <circle cx="78" cy="120" r="1.5" fill="#d97706" opacity="0.7"/>
+  <circle cx="72" cy="119" r="1.5" fill="#d97706" opacity="0.7"/>
+  <circle cx="116" cy="118" r="1.5" fill="#d97706" opacity="0.7"/>
+  <circle cx="122" cy="120" r="1.5" fill="#d97706" opacity="0.7"/>
+  <circle cx="128" cy="119" r="1.5" fill="#d97706" opacity="0.7"/>
+
+  <!-- Mech details — temple plates -->
+  <rect x="62" y="95" width="12" height="18" rx="3" fill="#78350f" opacity="0.7"/>
+  <rect x="126" y="95" width="12" height="18" rx="3" fill="#78350f" opacity="0.7"/>
+  <rect x="64" y="98" width="8" height="3" rx="1" fill="#d97706" opacity="0.8"/>
+  <rect x="128" y="98" width="8" height="3" rx="1" fill="#d97706" opacity="0.8"/>
+  <rect x="64" y="103" width="8" height="3" rx="1" fill="#d97706" opacity="0.8"/>
+  <rect x="128" y="103" width="8" height="3" rx="1" fill="#d97706" opacity="0.8"/>
+
+  <!-- Crown ring -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#d97706" stroke-width="3" filter="url(#glow-l)" opacity="0.95"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+
+  <!-- Corner hex ticks -->
+  <g stroke="#d97706" stroke-width="1.5" opacity="0.6">
+    <line x1="20" y1="55" x2="28" y2="55"/><line x1="20" y1="55" x2="20" y2="63"/>
+    <line x1="180" y1="55" x2="172" y2="55"/><line x1="180" y1="55" x2="180" y2="63"/>
+    <line x1="20" y1="145" x2="28" y2="145"/><line x1="20" y1="145" x2="20" y2="137"/>
+    <line x1="180" y1="145" x2="172" y2="145"/><line x1="180" y1="145" x2="180" y2="137"/>
+  </g>
+</svg>

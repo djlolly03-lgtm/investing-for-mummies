@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>The Wealth Conversation — Investing for Mummies</title>
+  <link rel="icon" type="image/png" href="/ifm-round.png">
+  <meta name="description" content="An interactive journey to understand investing, inflation and the power of compounding." />
+  <meta name="theme-color" content="#1a3a5c" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind config BEFORE cdn script -->
+  <script>
+    window.tailwind = window.tailwind || {};
+    window.tailwindConfig = {
+      theme: {
+        extend: {
+          colors: {
+            navy:   '#1a3a5c',
+            teal:   '#2a9d8f',
+            mint:   '#bde9e4',
+            mintlt: '#e0f3f0',
+            cream:  '#f7faf9',
+            gold:   '#c9a84c',
+          },
+          fontFamily: {
+            serif: ['Lora', 'Georgia', 'serif'],
+            sans:  ['Nunito', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = window.tailwindConfig;</script>
+
+  <script>
+    /* QA aid: with ?qa-raf, drive animations via timers so they complete in hidden/headless tabs */
+    if (location.search.indexOf('qa-raf') !== -1) {
+      window.requestAnimationFrame = function(cb){ return setTimeout(function(){ cb(performance.now()); }, 50); };
+      window.cancelAnimationFrame = clearTimeout;
+    }
+  </script>
+  <style>
+    /* Readability: scale all rem-based type & spacing up ~12% (Tailwind classes are rem-based) */
+    html { font-size: 18px; }
+    body {
+      background: #ffffff;
+      font-family: 'Nunito', sans-serif;
+      margin: 0; padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    #root { min-height: 100vh; }
+    .loading-screen {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: #f7faf9;
+      color: #1a3a5c; font-family: 'Nunito', sans-serif; font-weight: 800;
+      font-size: 1rem; letter-spacing: 0.05em;
+    }
+    /* perspective for calendar flip */
+    .calendar-wrap { perspective: 600px; }
+    .calendar-inner { transform-style: preserve-3d; }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="loading-screen">Loading The Wealth Conversation…</div>
+  </div>
+  <script src="app.js?v=1"></script>
+</body>
+</html>

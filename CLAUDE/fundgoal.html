@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fund YOUR Goal — Investing for Mummies</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet"/>
+<style>
+:root{--aqua:#bde9e4;--aqua-lt:#daf4f1;--teal:#2a9d8f;--navy:#1a3a5c;--navy-lt:#2a5580;--gold:#c9a84c;--gold-lt:#F5E0B8;--cream:#F7FAF9;--white:#FFFFFF;--ink:#1a3a5c;--muted:#5a7d8a;--mint:#bde9e4;--mint-lt:#e0f3f0;--danger:#C0392B;--success:#27AE60;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;}
+header{background:linear-gradient(135deg,var(--navy),var(--navy-lt));padding:0;}
+.header-inner{max-width:860px;margin:0 auto;padding:18px 32px;text-align:center;}
+.header-text h1{font-family:'Lora',serif;font-size:clamp(1.3rem,3vw,1.8rem);color:var(--aqua-lt);font-style:italic;line-height:1.3;margin-bottom:5px;}
+.header-text h1 strong{font-style:normal;color:#fff;font-weight:800;}
+.header-text p{color:rgba(255,255,255,0.65);font-size:0.9rem;}
+.container{max-width:860px;margin:0 auto;padding:30px 20px 80px;}
+.section-title{font-family:'Lora',serif;font-size:1.2rem;color:var(--navy);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.section-title::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,var(--aqua),transparent);border-radius:2px;}
+/* GOAL CARD */
+.goal-card{background:var(--white);border-radius:16px;padding:20px 20px 18px;box-shadow:0 3px 14px rgba(26,58,92,0.08);border-top:3px solid var(--teal);margin-bottom:16px;position:relative;}
+.goal-card-head{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.goal-num{font-size:0.72rem;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;padding:3px 10px;border-radius:99px;background:var(--mint-lt);color:var(--teal);flex-shrink:0;}
+.goal-name-inp{flex:1;font-family:'Lora',serif;font-size:1rem;font-weight:600;color:var(--navy);border:none;border-bottom:2px dashed var(--mint);background:transparent;outline:none;padding:3px 6px;transition:border-color 0.2s;}
+.goal-name-inp:focus{border-color:var(--teal);}
+.goal-name-inp::placeholder{color:#b0c4cc;font-style:italic;}
+.btn-remove{border:none;background:none;color:#c0392b;cursor:pointer;font-size:1.1rem;font-weight:700;padding:0 4px;line-height:1;flex-shrink:0;opacity:0.35;transition:opacity 0.2s;}
+.goal-card:hover .btn-remove{opacity:1;}
+.fields-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;}
+@media(max-width:560px){.fields-grid{grid-template-columns:1fr;}}
+.field{display:flex;flex-direction:column;gap:5px;}
+.field label{font-size:0.78rem;font-weight:700;color:var(--muted);letter-spacing:0.2px;}
+.inp-wrap{position:relative;}
+.inp-wrap .sym{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:0.82rem;pointer-events:none;}
+.inp-wrap .suffix{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:0.8rem;pointer-events:none;}
+.inp-wrap input{width:100%;padding:9px 32px 9px 26px;border:1.5px solid #D5E6E2;border-radius:9px;font-family:'Nunito',sans-serif;font-size:0.88rem;color:var(--ink);background:var(--cream);outline:none;transition:border-color 0.2s,background 0.2s;}
+.inp-wrap.no-sym input{padding-left:12px;}
+.inp-wrap input:focus{border-color:var(--teal);background:#fff;}
+.sh-badge{position:absolute;bottom:2px;right:4px;font-size:0.57rem;font-weight:800;color:var(--teal);background:#e8f5f2;padding:1px 4px;border-radius:3px;letter-spacing:0.3px;white-space:nowrap;pointer-events:none;}
+/* RESULT TILES */
+.goal-result{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+@media(max-width:560px){.goal-result{grid-template-columns:1fr;}}
+.gr-tile{border-radius:10px;padding:10px 12px;text-align:center;}
+.gr-tile.corpus{background:#dde8f5;}
+.gr-tile.sip{background:var(--mint-lt);}
+.gr-tile.lump{background:var(--gold-lt);}
+.gr-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);margin-bottom:4px;}
+.gr-val{font-family:'Lora',serif;font-size:1.05rem;font-weight:600;}
+.gr-tile.corpus .gr-val{color:var(--navy);}
+.gr-tile.sip .gr-val{color:var(--teal);}
+.gr-tile.lump .gr-val{color:#8a6e20;}
+.gr-sub{font-size:0.67rem;color:var(--muted);margin-top:2px;}
+/* DELAY TOGGLE BUTTON */
+.btn-delay-toggle{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:14px;padding:9px 16px;background:linear-gradient(135deg,#fff3e0,#ffe0b2);border:2px solid #f0a500;border-radius:10px;font-family:'Nunito',sans-serif;font-size:0.82rem;font-weight:800;color:#8a5c00;cursor:pointer;transition:all 0.2s;letter-spacing:0.2px;}
+.btn-delay-toggle:hover{background:linear-gradient(135deg,#ffe0b2,#ffc947);border-color:#e09000;}
+.btn-delay-toggle .toggle-arrow{font-size:0.75rem;transition:transform 0.25s;}
+.btn-delay-toggle.open .toggle-arrow{transform:rotate(180deg);}
+/* DELAY SECTION */
+.delay-section{display:none;margin-top:14px;}
+/* DELAY CARDS GRID */
+.action-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0 8px;}
+.btn-dl{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;background:linear-gradient(135deg,#c9a84c,#e6c86a);color:var(--navy);border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:900;font-size:0.9rem;cursor:pointer;box-shadow:0 4px 18px rgba(201,168,76,0.3);}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;background:#25D366;color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:900;font-size:0.9rem;cursor:pointer;box-shadow:0 4px 18px rgba(37,211,102,0.3);}
+.btn-dl:hover{filter:brightness(1.06);}.btn-wa:hover{filter:brightness(1.06);}
+.delay-scenario{margin-bottom:18px;}
+.delay-scenario .ds-header{font-size:1rem;font-weight:900;color:var(--navy);letter-spacing:0.04em;margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.delay-scenario .ds-tiles{display:flex;gap:10px;}
+.delay-scenario .gr-tile{flex:1;border-radius:12px;padding:14px 10px;text-align:center;}
+.dr-w1 .gr-tile{background:#FFE4DC;}
+.dr-w2 .gr-tile{background:#FFCAB8;}
+.dr-wc .gr-tile{background:#FFB09A;}
+.ds-custom-inp{width:44px;padding:3px 6px;border:2px solid rgba(26,58,92,0.3);border-radius:7px;font-family:'Nunito',sans-serif;font-size:0.95rem;font-weight:900;color:var(--navy);background:rgba(255,255,255,0.7);text-align:center;outline:none;}
+.ds-custom-inp:focus{border-color:var(--navy);background:#fff;}
+@media(max-width:520px){.delay-scenario .ds-tiles{flex-wrap:wrap;}.delay-scenario .gr-tile{min-width:calc(50% - 5px);}}
+
+/* START TODAY BANNER */
+.start-today-banner{margin-top:12px;background:linear-gradient(135deg,var(--navy),var(--navy-lt));border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:10px;color:#fff;}
+.stb-icon{font-size:1.3rem;flex-shrink:0;}
+.stb-text{font-size:0.78rem;font-weight:700;line-height:1.5;flex:1;}
+.stb-text span{color:var(--aqua-lt);font-weight:900;}
+/* ADD GOAL BUTTON */
+.btn-add-goal{display:flex;align-items:center;gap:8px;padding:11px 22px;background:transparent;border:2px dashed var(--teal);border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:800;color:var(--teal);cursor:pointer;transition:all 0.2s;width:100%;justify-content:center;margin-bottom:28px;}
+.btn-add-goal:hover{background:var(--mint-lt);border-style:solid;}
+/* CONSOLIDATED SUMMARY */
+.summary-section{display:none;margin-top:8px;}
+.summary-table{width:100%;border-collapse:collapse;font-size:0.85rem;background:var(--white);border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(26,58,92,0.08);margin-bottom:18px;}
+.summary-table th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;}
+.summary-table td{padding:10px 14px;border-bottom:1px solid var(--mint-lt);font-size:0.84rem;}
+.summary-table tr:last-child td{border-bottom:none;}
+.summary-table td.goal-name-cell{font-weight:700;color:var(--navy);}
+.summary-table td.num-cell{font-weight:700;text-align:right;}
+.summary-table tr:nth-child(even) td{background:#f8fcfb;}
+.total-row td{background:var(--navy)!important;color:#fff!important;font-weight:900!important;font-size:0.9rem!important;}
+.total-row td.num-cell{color:var(--aqua-lt)!important;}
+.consol-tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;}
+@media(max-width:560px){.consol-tiles{grid-template-columns:1fr;}}
+.consol-tile{border-radius:16px;padding:20px 22px;text-align:center;}
+.consol-tile.sip-tile{background:linear-gradient(135deg,var(--teal),#1a8a7d);color:#fff;}
+.consol-tile.lump-tile{background:linear-gradient(135deg,var(--gold),#e6b84e);color:var(--navy);}
+.ct-label{font-size:0.72rem;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;opacity:0.8;margin-bottom:8px;}
+.ct-val{font-family:'Lora',serif;font-size:1.7rem;font-weight:600;line-height:1.2;}
+.ct-sub{font-size:0.72rem;margin-top:5px;opacity:0.75;}
+.disclaimer{font-size:0.72rem;color:var(--muted);text-align:center;line-height:1.6;padding:0 12px;margin-top:10px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div style="display:flex;align-items:center;justify-content:center;gap:16px;">
+      <img src="https://ifm-deploy.vercel.app/IFM%20round%20logo%20for%20watermark.png" style="width:64px;height:64px;border-radius:50%;object-fit:contain;background:rgba(255,255,255,0.15);padding:4px;flex-shrink:0;" alt="IFM Logo"/>
+      <div class="header-text">
+      <h1><strong>FUND YOUR GOAL</strong> — make every dream a plan</h1>
+      <p>Enter any goal, add inflation &amp; return rate — get your exact SIP &amp; lump sum in seconds ✨</p>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="section-title">&#x1F3AF; Your Goals</div>
+  <div id="goal_list"></div>
+  <button class="btn-add-goal" onclick="addGoal()">&#xFF0B; Add Another Goal</button>
+  <div class="summary-section" id="summary_section">
+    <div class="section-title">&#x1F4CA; Your Full Picture</div>
+    <table class="summary-table">
+      <thead><tr><th>Goal</th><th style="text-align:right;">Corpus Needed</th><th style="text-align:right;">Monthly SIP</th><th style="text-align:right;">Lump Sum Today</th></tr></thead>
+      <tbody id="summary_tbody"></tbody>
+    </table>
+    <div class="consol-tiles">
+      <div class="consol-tile sip-tile"><div class="ct-label">Total Monthly SIP</div><div class="ct-val" id="total_sip">--</div><div class="ct-sub">combined across all goals</div></div>
+      <div class="consol-tile lump-tile"><div class="ct-label">Total Lump Sum Today</div><div class="ct-val" id="total_lump">--</div><div class="ct-sub">to fund all goals right now</div></div>
+    </div>
+    <p class="disclaimer">&#x26A0;&#xFE0F; <em>All figures are theoretical estimates for educational purposes only. This is not financial advice. Please consult a qualified financial advisor before making any investment decisions.</em></p>
+  </div>
+</div>
+<div class="action-row" id="action_row" style="display:none;">
+  <button class="btn-dl" onclick="downloadGoals()">📄 Download PDF</button>
+  <button class="btn-wa" onclick="shareGoalsWA()">💬 Share on WhatsApp</button>
+</div>
+<script>
+function indianFmt(n){if(isNaN(n)||n===''||n===null)return '';return Math.round(Number(n)).toLocaleString('en-IN');}
+function fmtC(n){if(isNaN(n)||n<0||n===null)return '--';if(n>=10000000)return String.fromCharCode(8377)+(n/10000000).toFixed(2)+' Cr';if(n>=100000)return String.fromCharCode(8377)+(n/100000).toFixed(2)+' L';return String.fromCharCode(8377)+Math.round(n).toLocaleString('en-IN');}
+function shorthand(n){if(!n||isNaN(n)||n<=0)return '';if(n>=10000000)return (n/10000000).toFixed(2)+' Cr';if(n>=100000)return (n/100000).toFixed(2)+' L';if(n>=1000)return (n/1000).toFixed(1)+' K';return '';}
+function parseVal(s){return parseFloat(String(s).replace(/,/g,''))||0;}
+function escH(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+var goalCount=0;
+function calcSc(corpus,ret,yLeft){
+  if(yLeft<=0)return null;
+  var sip,lump;
+  if(ret>0){var r=Math.pow(1+ret/100,1/12)-1;var n=yLeft*12;sip=corpus*r/(Math.pow(1+r,n)-1);lump=corpus/Math.pow(1+ret/100,yLeft);}
+  else{sip=corpus/(yLeft*12);lump=corpus;}
+  return {sip:sip,lump:lump};
+}
+function toggleDelay(id){
+  var sec=document.getElementById('gdelay_'+id);
+  var btn=document.getElementById('gdt_btn_'+id);
+  var open=sec.style.display==='block';
+  sec.style.display=open?'none':'block';
+  btn.classList.toggle('open',!open);
+  btn.querySelector('.toggle-arrow').innerHTML=open?'&#9660;':'&#9650;';
+}
+function addGoal(name,cost,infl,yrs,ret){
+  goalCount++;
+  var id=goalCount;
+  var gname=name||'';
+  var gcost=cost||'';
+  var ginfl=infl!=null?infl:6;
+  var gyrs=yrs!=null?yrs:10;
+  var gret=ret!=null?ret:12;
+  var card=document.createElement('div');
+  card.className='goal-card';
+  card.id='goal_card_'+id;
+  var h='';
+  h+='<div class="goal-card-head">';
+  h+='<span class="goal-num">Goal '+id+'</span>';
+  h+='<input type="text" class="goal-name-inp" id="gname_'+id+'" placeholder="e.g. Child\'s Education, Dream Home..." value="'+escH(gname)+'" oninput="recalcGoal('+id+')">';
+  h+='<button class="btn-remove" onclick="removeGoal('+id+')" title="Remove">&#x2715;</button>';
+  h+='</div>';
+  h+='<div class="fields-grid">';
+  h+='<div class="field"><label>Today\'s Cost</label><div class="inp-wrap" id="cw_'+id+'"><span class="sym">&#x20B9;</span><input type="text" inputmode="numeric" id="gcost_'+id+'" value="'+(gcost?indianFmt(gcost):'')+'" placeholder="0" oninput="handleCI(this,'+id+')"><span class="sh-badge" id="cb_'+id+'" style="display:none;"></span></div></div>';
+  h+='<div class="field"><label>Inflation (% p.a.)</label><div class="inp-wrap"><input type="text" inputmode="numeric" id="ginfl_'+id+'" value="'+ginfl+'" style="padding-left:12px;" oninput="recalcGoal('+id+')"><span class="suffix">%</span></div></div>';
+  h+='<div class="field"><label>Years to Goal</label><div class="inp-wrap no-sym"><input type="text" inputmode="numeric" id="gyrs_'+id+'" value="'+gyrs+'" style="padding-left:12px;" oninput="recalcGoal('+id+')"><span class="suffix">yrs</span></div></div>';
+  h+='<div class="field"><label>Expected Return (% p.a.)</label><div class="inp-wrap"><input type="text" inputmode="numeric" id="gret_'+id+'" value="'+gret+'" style="padding-left:12px;" oninput="recalcGoal('+id+')"><span class="suffix">%</span></div></div>';
+  h+='</div>';
+  h+='<div class="goal-result">';
+  h+='<div class="gr-tile corpus"><div class="gr-label">Corpus Needed</div><div class="gr-val" id="gcorpus_'+id+'">--</div><div class="gr-sub">inflation-adjusted</div></div>';
+  h+='<div class="gr-tile sip"><div class="gr-label">Monthly SIP</div><div class="gr-val" id="gsip_'+id+'">--</div><div class="gr-sub">start investing today</div></div>';
+  h+='<div class="gr-tile lump"><div class="gr-label">Lump Sum Today</div><div class="gr-val" id="glump_'+id+'">--</div><div class="gr-sub">one-time investment</div></div>';
+  h+='</div>';
+  h+='<button class="btn-delay-toggle" id="gdt_btn_'+id+'" onclick="toggleDelay('+id+')" style="display:none;">&#x23F3; See Cost of Delay <span class="toggle-arrow">&#9660;</span></button>';
+  h+='<div class="delay-section" id="gdelay_'+id+'">';
+  h+='<div id="gdc_'+id+'"></div>';
+  h+='<div class="start-today-banner" id="gstb_'+id+'" style="display:none;">';
+  h+='<span class="stb-icon">&#x1F4A1;</span>';
+  h+='<div class="stb-text" id="gstb_txt_'+id+'"></div>';
+  h+='</div>';
+  h+='</div>';
+  card.innerHTML=h;
+  document.getElementById('goal_list').appendChild(card);
+  if(gcost)recalcGoal(id);
+}
+function removeGoal(id){var c=document.getElementById('goal_card_'+id);if(c)c.remove();recalcSummary();}
+function handleCI(el,id){
+  var raw=el.value.replace(/,/g,'');
+  var num=parseFloat(raw)||0;
+  if(raw!==''&&!isNaN(parseFloat(raw))){
+    var intP=parseInt(raw.split('.')[0],10);
+    if(!isNaN(intP)){var cur=el.selectionStart;var ol=el.value.length;el.value=intP.toLocaleString('en-IN');var diff=el.value.length-ol;el.setSelectionRange(cur+diff,cur+diff);}
+  }
+  var badge=document.getElementById('cb_'+id);
+  var sh=shorthand(num);
+  if(sh&&num>0){badge.textContent=sh;badge.style.display='';}else{badge.style.display='none';}
+  recalcGoal(id);
+}
+function recalcGoal(id){
+  var cost=parseVal(document.getElementById('gcost_'+id).value);
+  var infl=parseFloat(document.getElementById('ginfl_'+id).value)||0;
+  var yrs=parseFloat(document.getElementById('gyrs_'+id).value)||0;
+  var ret=parseFloat(document.getElementById('gret_'+id).value)||0;
+  var ce=document.getElementById('gcorpus_'+id);
+  var se=document.getElementById('gsip_'+id);
+  var le=document.getElementById('glump_'+id);
+  var btn=document.getElementById('gdt_btn_'+id);
+  var ds=document.getElementById('gdelay_'+id);
+  if(cost<=0||yrs<=0){
+    ce.textContent='--';se.textContent='--';le.textContent='--';
+    btn.style.display='none';
+    ds.style.display='none';
+    btn.classList.remove('open');
+    recalcSummary();return;
+  }
+  var corpus=cost*Math.pow(1+infl/100,yrs);
+  var base=calcSc(corpus,ret,yrs);
+  ce.textContent=fmtC(corpus);
+  se.textContent=base?fmtC(base.sip):'--';
+  le.textContent=base?fmtC(base.lump):'--';
+  btn.style.display='flex';
+  // Build delay tiles — same structure as top 3 result tiles
+  var _cwEl=document.getElementById('gd_yrs_'+id);var cw=_cwEl?(parseFloat(_cwEl.value)||3):3;
+  var scenarios=[
+    {label:'Wait 1 Year',wait:1,cls:'w1',custom:false},
+    {label:'Wait 2 Years',wait:2,cls:'w2',custom:false},
+    {label:'custom',wait:cw,cls:'wc',custom:true}
+  ];
+  var seen={};var rows='';
+  var maxExtra=0;
+  for(var i=0;i<scenarios.length;i++){
+    var sc=scenarios[i];
+    if(!sc.custom && seen[sc.wait])continue;
+    seen[sc.wait]=1;
+    var yl=yrs-sc.wait;
+    rows+='<div class="delay-scenario dr-'+sc.cls+'">';
+    if(sc.custom){
+      rows+='<div class="ds-header">&#x23F3; Wait <input class="ds-custom-inp" type="number" id="gd_yrs_'+id+'" min="3" max="50" step="1" value="'+cw+'" onchange="recalcGoal('+id+')"> Yrs</div>';
+    } else {
+      rows+='<div class="ds-header">&#x23F3; '+sc.label+'</div>';
+    }
+    rows+='<div class="ds-tiles">';
+    if(yl<=0){
+      rows+='<div class="gr-tile"><div class="gr-label">Extra/Month</div><div class="gr-val" style="font-size:1rem;">—</div><div class="gr-sub">goal already passed</div></div>';
+      rows+='<div class="gr-tile"><div class="gr-label">Monthly SIP</div><div class="gr-val" style="font-size:1rem;">—</div><div class="gr-sub">N/A</div></div>';
+      rows+='<div class="gr-tile"><div class="gr-label">Lump Sum</div><div class="gr-val" style="font-size:1rem;">—</div><div class="gr-sub">N/A</div></div>';
+    } else {
+      var s=calcSc(corpus,ret,yl);
+      var extraSip=s.sip-base.sip;
+      if(extraSip>maxExtra)maxExtra=extraSip;
+      rows+='<div class="gr-tile"><div class="gr-label">Extra / Month</div><div class="gr-val">+'+fmtC(extraSip)+'</div><div class="gr-sub">vs starting today</div></div>';
+      rows+='<div class="gr-tile"><div class="gr-label">Monthly SIP</div><div class="gr-val">'+fmtC(s.sip)+'</div><div class="gr-sub">per month</div></div>';
+      rows+='<div class="gr-tile"><div class="gr-label">Lump Sum</div><div class="gr-val">'+fmtC(s.lump)+'</div><div class="gr-sub">one-time</div></div>';
+    }
+    rows+='</div></div>';
+  }
+  document.getElementById('gdc_'+id).innerHTML=rows;
+  // Start Today banner
+  var banner=document.getElementById('gstb_'+id);
+  var bannerTxt=document.getElementById('gstb_txt_'+id);
+  if(maxExtra>0){
+    banner.style.display='flex';
+    bannerTxt.innerHTML='Every year you delay costs you an extra <span>'+fmtC(base.sip*(Math.pow(1+ret/100,1)-1))+'</span> — actually, waiting even 1 year means paying <span>'+fmtC(calcSc(corpus,ret,yrs-1)?calcSc(corpus,ret,yrs-1).sip-base.sip:0)+'</span> more every month, forever. <strong>Start today.</strong>';
+  } else {
+    banner.style.display='none';
+  }
+  recalcSummary();
+}
+function pFC(s){
+  if(!s||s=='--')return 0;
+  var m=s.match(/[\d,.]+\s*(Cr|L|K)?/);
+  if(!m)return 0;
+  var num=parseFloat(m[0].replace(/,/g,''));
+  var u=m[1];
+  if(u==='Cr')return num*10000000;
+  if(u==='L')return num*100000;
+  if(u==='K')return num*1000;
+  return num;
+}
+function recalcSummary(){
+  var cards=document.querySelectorAll('.goal-card');
+  var tbody=document.getElementById('summary_tbody');
+  var ss=document.getElementById('summary_section');
+  if(cards.length===0){ss.style.display='none';return;}
+  var tSip=0,tLump=0,hasAny=false;
+  tbody.innerHTML='';
+  for(var i=0;i<cards.length;i++){
+    var id=cards[i].id.replace('goal_card_','');
+    var ne=document.getElementById('gname_'+id);
+    var name=(ne&&ne.value.trim())||('Goal '+id);
+    var corpus=document.getElementById('gcorpus_'+id).textContent;
+    var sip=document.getElementById('gsip_'+id).textContent;
+    var lump=document.getElementById('glump_'+id).textContent;
+    var sn=pFC(sip);var ln=pFC(lump);
+    if(sn>0||ln>0){hasAny=true;tSip+=sn;tLump+=ln;}
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td class="goal-name-cell">'+escH(name)+'</td><td class="num-cell">'+corpus+'</td><td class="num-cell">'+sip+'</td><td class="num-cell">'+lump+'</td>';
+    tbody.appendChild(tr);
+  }
+  if(hasAny&&cards.length>1){
+    var tr2=document.createElement('tr');
+    tr2.className='total-row';
+    tr2.innerHTML='<td class="goal-name-cell">ALL GOALS COMBINED</td><td class="num-cell">&#x2014;</td><td class="num-cell">'+fmtC(tSip)+'</td><td class="num-cell">'+fmtC(tLump)+'</td>';
+    tbody.appendChild(tr2);
+  }
+  document.getElementById('total_sip').textContent=hasAny?fmtC(tSip):'--';
+  document.getElementById('total_lump').textContent=hasAny?fmtC(tLump):'--';
+  ss.style.display=cards.length>0?'block':'none';
+  // show/hide action buttons
+  var ar=document.getElementById('action_row');
+  if(ar)ar.style.display=cards.length>0?'flex':'none';
+}
+addGoal();
+
+function downloadGoals(){
+  var cards=document.querySelectorAll('.goal-card');
+  if(!cards.length){alert('Add at least one goal first!');return;}
+  var logoSrc='https://ifm-deploy.vercel.app/IFM%20round%20logo%20for%20watermark.png';
+  try{logoSrc=window.parent.LOGO_SRC||window.top.LOGO_SRC||logoSrc;}catch(e){}
+  var goalRows='';
+  var tSipEl=document.getElementById('total_sip');
+  var tLumpEl=document.getElementById('total_lump');
+  var tSip=tSipEl?tSipEl.textContent:'--';
+  var tLump=tLumpEl?tLumpEl.textContent:'--';
+  cards.forEach(function(card){
+    var id=card.id.replace('goal_card_','');
+    var nameEl=document.getElementById('gname_'+id);
+    var corpusEl=document.getElementById('gcorpus_'+id);
+    var sipEl=document.getElementById('gsip_'+id);
+    var lumpEl=document.getElementById('glump_'+id);
+    if(!corpusEl||corpusEl.textContent==='--')return;
+    var gname=(nameEl&&nameEl.value)?nameEl.value:'Goal '+id;
+    var corpus=corpusEl.textContent;
+    var sip=sipEl?sipEl.textContent:'--';
+    var lump=lumpEl?lumpEl.textContent:'--';
+    goalRows+='<tr class="goal-hdr-row"><td colspan="4" style="padding:10px 14px 4px;font-family:Lora,serif;font-style:italic;font-size:1rem;font-weight:600;color:#1a3a5c;border-top:2px solid #bde9e4;">'+gname+'</td></tr>';
+    goalRows+='<tr style="background:#f7faf9;"><td style="padding:8px 14px;color:#5a7d8a;font-size:0.8rem;">Main Results</td>';
+    goalRows+='<td style="padding:8px 14px;text-align:right;">'+corpus+'</td>';
+    goalRows+='<td style="padding:8px 14px;text-align:right;font-weight:800;color:#2a9d8f;">'+sip+'</td>';
+    goalRows+='<td style="padding:8px 14px;text-align:right;">'+lump+'</td></tr>';
+    // Read Cost of Delay rows from DOM
+    var gdc=document.getElementById('gdc_'+id);
+    if(gdc){
+      var delayRows=gdc.querySelectorAll('.delay-scenario');
+      if(delayRows.length){
+        goalRows+='<tr><td colspan="4" style="padding:6px 14px 2px;font-size:0.65rem;font-weight:900;text-transform:uppercase;letter-spacing:0.06em;color:#5a7d8a;">Cost of Delay</td></tr>';
+        delayRows.forEach(function(dr){
+          var hdr=dr.querySelector('.ds-header');
+          var tiles=dr.querySelectorAll('.gr-tile');
+          if(!hdr||!tiles.length)return;
+          var label=hdr.innerText||hdr.textContent;
+          var inp=hdr.querySelector('input');
+          if(inp)label='Wait '+inp.value+' Yrs';
+          label=label.replace(/^\s*[⏳✅]\s*/,'').trim();
+          var extra=tiles[0]?tiles[0].querySelector('.gr-val').textContent:'--';
+          var dSip=tiles[1]?tiles[1].querySelector('.gr-val').textContent:'--';
+          var dLump=tiles[2]?tiles[2].querySelector('.gr-val').textContent:'--';
+          var bg=dr.classList.contains('dr-w1')?'#fff5f2':dr.classList.contains('dr-w2')?'#fff0ec':'#ffe8e2';
+          goalRows+='<tr style="background:'+bg+';font-size:0.82rem;">';
+          goalRows+='<td style="padding:6px 14px;color:#8a5a52;">'+label+'<br><span style="font-size:0.7rem;color:#b07068;">Extra: '+extra+'/mo</span></td>';
+          goalRows+='<td style="padding:6px 14px;text-align:right;color:#5a7d8a;font-size:0.75rem;"></td>';
+          goalRows+='<td style="padding:6px 14px;text-align:right;font-weight:700;color:#c05000;">'+dSip+'</td>';
+          goalRows+='<td style="padding:6px 14px;text-align:right;color:#5a7d8a;">'+dLump+'</td>';
+          goalRows+='</tr>';
+        });
+      }
+    }
+  });
+  var today=new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'});
+  var logoHtml=logoSrc?'<img src="'+logoSrc+'" style="width:52px;height:52px;border-radius:50%;object-fit:contain;" alt="IFM">':'<div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a3a5c,#2a9d8f);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:0.75rem;text-align:center;line-height:1.2;">IFM</div>';
+  var w=window.open('','_blank');
+  w.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Fund YOUR Goal &#x2014; IFM</title>');
+  w.document.write('<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">');
+  w.document.write('<style>');
+  w.document.write('*{margin:0;padding:0;box-sizing:border-box;}body{font-family:Nunito,sans-serif;background:#f7faf9;color:#1a3a5c;padding:32px;max-width:800px;margin:0 auto;}');
+  w.document.write('.brand-bar{display:flex;align-items:center;gap:16px;padding:18px 22px;background:linear-gradient(135deg,#1a3a5c 0%,#2a9d8f 100%);border-radius:14px;margin-bottom:22px;color:#fff;}');
+  w.document.write('.brand-title{font-family:Lora,serif;font-style:italic;font-size:1.5rem;font-weight:600;}');
+  w.document.write('.brand-sub{font-size:0.75rem;opacity:0.85;margin-top:2px;}');
+  w.document.write('.brand-tagline{margin-left:auto;font-size:0.72rem;opacity:0.8;text-align:right;}');
+  w.document.write('.section-lbl{font-size:0.65rem;font-weight:900;text-transform:uppercase;letter-spacing:0.06em;color:#5a7d8a;margin:18px 0 8px;}');
+  w.document.write('table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(26,58,92,0.08);}');
+  w.document.write('thead tr{background:linear-gradient(135deg,#1a3a5c,#2a9d8f);}');
+  w.document.write('th{color:#fff;padding:11px 14px;text-align:left;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;}');
+  w.document.write('th:not(:first-child){text-align:right;}');
+  w.document.write('.totals{display:flex;gap:14px;margin-top:18px;}');
+  w.document.write('.tot-tile{flex:1;border-radius:12px;padding:16px 14px;text-align:center;}');
+  w.document.write('.tot-tile.sip{background:#D8F0EC;}.tot-tile.lump{background:#F5E0B8;}');
+  w.document.write('.tot-lbl{font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:0.06em;color:#5a7d8a;margin-bottom:5px;}');
+  w.document.write('.tot-val{font-family:Lora,serif;font-style:italic;font-size:1.4rem;font-weight:600;color:#1a3a5c;}');
+  w.document.write('.footer{margin-top:24px;text-align:center;font-size:0.68rem;color:#8a9fb0;padding-top:12px;border-top:1px solid #e0f3f0;}');
+  w.document.write('.no-print{text-align:center;margin-bottom:20px;}');
+  w.document.write('.print-btn{padding:11px 28px;background:linear-gradient(135deg,#c9a84c,#e6c86a);color:#1a3a5c;border:none;border-radius:10px;font-family:Nunito,sans-serif;font-weight:900;font-size:0.9rem;cursor:pointer;box-shadow:0 4px 14px rgba(201,168,76,0.3);}');
+  w.document.write('@media print{.no-print{display:none!important;}body{background:#fff;padding:16px;}@page{margin:0.8cm;size:A4;}}');
+  w.document.write('</style></head><body>');
+  w.document.write('<div class="no-print"><button class="print-btn" onclick="window.print()">&#x1F5A8;&#xFE0F; Save as PDF</button></div>');
+  w.document.write('<div class="brand-bar">'+logoHtml+'<div><div class="brand-title">Fund YOUR Goal Plan</div><div class="brand-sub">Generated '+today+'</div></div><div class="brand-tagline">Investing for Mummies<br>ifm-deploy.vercel.app</div></div>');
+  w.document.write('<div class="section-lbl">&#x1F4CB; Goal-by-Goal Breakdown</div>');
+  w.document.write('<table><thead><tr><th>Goal / Scenario</th><th>Corpus Needed</th><th>Monthly SIP</th><th>Lump Sum Today</th></tr></thead>');
+  w.document.write('<tbody>'+goalRows+'</tbody></table>');
+  w.document.write('<div class="totals">');
+  w.document.write('<div class="tot-tile sip"><div class="tot-lbl">Total Monthly SIP</div><div class="tot-val">'+tSip+'</div></div>');
+  w.document.write('<div class="tot-tile lump"><div class="tot-lbl">Total Lump Sum</div><div class="tot-val">'+tLump+'</div></div>');
+  w.document.write('</div>');
+  w.document.write('<div class="footer">&#x26A0;&#xFE0F; For educational purposes only. Consult a qualified financial advisor before investing. | Investing for Mummies</div>');
+  w.document.write('</body></html>');
+  w.document.close();
+}
+
+function shareGoalsWA(){
+  var cards=document.querySelectorAll('.goal-card');
+  if(!cards.length){alert('Add at least one goal first!');return;}
+  var msg='\u{1F3AF} My Goal Plan \u2014 Investing for Mummies\n';
+  msg+='\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n';
+  var count=0;
+  cards.forEach(function(card){
+    var id=card.id.replace('goal_card_','');
+    var name=document.getElementById('gname_'+id);
+    var sip=document.getElementById('gsip_'+id);
+    var lump=document.getElementById('glump_'+id);
+    var corpus=document.getElementById('gcorpus_'+id);
+    if(!corpus||corpus.textContent==='--')return;
+    count++;
+    msg+='\n'+(name&&name.value?name.value:'Goal '+id)+'\n';
+    msg+='  Corpus: '+corpus.textContent+'\n';
+    msg+='  Monthly SIP: '+sip.textContent+'\n';
+    msg+='  Lump Sum: '+lump.textContent+'\n';
+  });
+  var tSipEl=document.getElementById('total_sip');
+  var tLumpEl=document.getElementById('total_lump');
+  if(count>1){
+    msg+='\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n';
+    msg+='Total SIP needed: '+(tSipEl?tSipEl.textContent:'--')+'\n';
+    msg+='Total Lump Sum: '+(tLumpEl?tLumpEl.textContent:'--')+'\n';
+  }
+  msg+='\n\u{1F449} Plan yours free: ifm-deploy.vercel.app';
+  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>

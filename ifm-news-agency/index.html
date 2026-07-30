@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>IFM News Agency</title>
+<style>
+  :root{
+    --navy:#1a3a5c; --teal:#2a9d8f; --teal-dk:#1a7a6e;
+    --mint:#bde9e4; --mint-lt:#eef8f7; --muted:#6b7c8c; --bg:#f7f9fa;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--navy);
+    font-family:'Nunito','Avenir Next',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 16px 64px}
+  header{
+    background:linear-gradient(135deg,#1a3a5c 0%,#0e5a4e 60%,#2a9d8f 100%);
+    color:#fff;padding:34px 16px 30px;text-align:center;margin-bottom:22px;
+  }
+  header .tag{
+    display:inline-block;background:rgba(255,255,255,.16);border-radius:20px;
+    padding:4px 14px;font-size:.7rem;font-weight:800;letter-spacing:.08em;
+    text-transform:uppercase;margin-bottom:10px;
+  }
+  header h1{font-family:Georgia,'Lora',serif;font-size:1.9rem;margin:0 0 6px;font-weight:700}
+  header h1 span{color:#bde9e4}
+  header p{margin:0;font-size:.88rem;opacity:.9;max-width:460px;margin:0 auto}
+
+  .card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(26,58,92,.07);padding:18px 20px;margin-bottom:16px}
+  .card h2{font-family:Georgia,'Lora',serif;font-size:1rem;margin:0 0 4px}
+  .row{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .status{font-size:.78rem;color:var(--muted);margin-top:4px}
+
+  button{
+    background:var(--teal);color:#fff;border:none;padding:10px 22px;border-radius:10px;
+    font-family:inherit;font-size:.85rem;font-weight:800;cursor:pointer;
+    white-space:nowrap;transition:background .2s;
+  }
+  button:hover:not(:disabled){background:var(--teal-dk)}
+  button:disabled{background:#aaa;cursor:default}
+  button.wide{width:100%;padding:12px}
+
+  label.cand{
+    display:flex;gap:10px;align-items:flex-start;background:#fff;border:2px solid #eee;
+    border-radius:12px;padding:12px 14px;margin-bottom:10px;cursor:pointer;
+  }
+  label.cand.on{border-color:var(--mint)}
+  label.cand .t{font-size:.9rem;font-weight:700}
+  label.cand .m{display:block;font-size:.72rem;color:var(--muted);margin-top:4px}
+  input[type=checkbox]{margin-top:4px;width:16px;height:16px;accent-color:var(--teal)}
+
+  #log{font-size:.78rem;color:var(--muted);margin-top:10px}
+  #log a{color:var(--teal);font-weight:700}
+  #log div{margin-top:4px}
+
+  .art{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(26,58,92,.07);
+       margin-bottom:14px;padding:16px 18px;border:2px solid transparent}
+  .art:hover{border-color:var(--mint)}
+  .art .meta{font-size:.7rem;color:var(--muted);text-transform:uppercase;
+             letter-spacing:.05em;font-weight:800;margin-bottom:6px}
+  .art .h{font-family:Georgia,'Lora',serif;font-size:1rem;font-weight:700;line-height:1.4;margin-bottom:8px}
+  .art .links{display:flex;gap:14px;flex-wrap:wrap;font-size:.75rem;font-weight:700}
+  .art .links a{color:var(--teal);text-decoration:none}
+  .art .links a:hover{text-decoration:underline}
+  .toggle{background:none;border:2px solid var(--mint);color:var(--teal);
+          font-size:.75rem;padding:5px 12px;margin-top:10px}
+  .toggle:hover{background:var(--mint-lt)}
+  .body{display:none;margin-top:12px;padding:14px;background:var(--mint-lt);
+        border-radius:10px;font-size:.85rem;line-height:1.7}
+  .body.open{display:block}
+  .empty{text-align:center;padding:40px 20px;color:var(--muted);font-size:.9rem}
+  h3.sec{font-family:Georgia,'Lora',serif;font-size:1rem;margin:26px 0 12px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">📰 Daily Digest</div>
+  <h1>IFM <span>News Agency</span></h1>
+  <p>Hand-picked financial news, simplified for beginners — no jargon, just what matters to you.</p>
+</header>
+
+<div class="wrap">
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h2>Get fresh articles</h2>
+        <div class="status" id="status">Checking…</div>
+      </div>
+      <button id="scan" onclick="onScan()">🔄 Scan for news</button>
+    </div>
+    <div id="review" style="display:none;margin-top:16px"></div>
+  </div>
+
+  <h3 class="sec">Published</h3>
+  <div id="articles"><div class="empty">Loading…</div></div>
+
+</div>
+
+<script>
+(function(){
+  var API = '/api/news';
+  var TOKEN_KEY = 'ifmAdminToken';
+  var candidates = [];
+
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  function token(){ try { return localStorage.getItem(TOKEN_KEY) || ''; } catch(e){ return ''; } }
+  function headers(){ return { 'Content-Type':'application/json', 'x-ifm-admin-token': token() }; }
+
+  function setStatus(html){ $('status').innerHTML = html; }
+  function setBtn(label, enabled){
+    var b = $('scan'); b.textContent = label; b.disabled = !enabled;
+  }
+
+  function checkStatus(){
+    if (!token()){
+      setBtn('🔑 Enter admin key', true);
+      setStatus('Scanning is admin-only. Tap to enter your key.');
+      return;
+    }
+    setStatus('Checking the scanner…');
+    fetch(API + '?action=status', { headers: headers() })
+      .then(function(r){ if (r.status === 401) throw new Error('unauthorised'); return r.json(); })
+      .then(function(d){
+        if (d.ready){
+          setBtn('🔄 Scan for news', true);
+          setStatus('Ready to scan for fresh articles.');
+        } else if (d.missing && d.missing.length){
+          setBtn('🔄 Scan for news', false);
+          setStatus('Not configured yet — missing in Vercel: <b>' + esc(d.missing.join(', ')) + '</b>');
+        } else {
+          setBtn('↻ Retry', true);
+          setStatus('Google connection failed: ' + esc(d.error || 'unknown error'));
+        }
+      })
+      .catch(function(err){
+        if (String(err.message) === 'unauthorised'){
+          setBtn('🔑 Enter admin key', true);
+          setStatus('That admin key was rejected. Tap to re-enter it.');
+        } else {
+          setBtn('↻ Retry', true);
+          setStatus('Could not reach the scanner. Tap to retry.');
+        }
+      });
+  }
+
+  window.onScan = function(){
+    var b = $('scan');
+    if (/admin key|Retry/.test(b.textContent)){
+      var t = window.prompt('Enter the IFM admin key (IFM_ADMIN_TOKEN in Vercel):', '');
+      if (t !== null){ try { localStorage.setItem(TOKEN_KEY, t.trim()); } catch(e){} }
+      checkStatus();
+      return;
+    }
+
+    setBtn('⏳ Scanning…', false);
+    setStatus('Reading the news feeds and scoring articles — this takes up to a minute.');
+    $('review').style.display = 'none';
+
+    fetch(API, { method:'POST', headers: headers(), body: JSON.stringify({ action:'scan' }) })
+      .then(function(r){ return r.json().then(function(d){ return { ok:r.ok, d:d }; }); })
+      .then(function(res){
+        setBtn('🔄 Scan for news', true);
+        if (!res.ok){ setStatus('Scan failed: ' + esc(res.d.error || 'unknown error')); return; }
+        candidates = (res.d.candidates || []).map(function(c){ c.on = true; return c; });
+        setStatus(esc(res.d.message || ''));
+        renderReview();
+      })
+      .catch(function(){
+        setBtn('↻ Retry', true);
+        setStatus('Scan request failed — check your connection and try again.');
+      });
+  };
+
+  function renderReview(){
+    var box = $('review');
+    if (!candidates.length){ box.style.display = 'none'; return; }
+    box.style.display = 'block';
+    box.innerHTML =
+      '<div style="font-family:Georgia,serif;font-size:.95rem;font-weight:700;margin-bottom:10px">'
+      + "Review — untick anything you don't want</div>"
+      + candidates.map(function(c, i){
+          return '<label class="cand' + (c.on ? ' on' : '') + '">'
+            + '<input type="checkbox" ' + (c.on ? 'checked' : '') + ' onchange="toggleCand(' + i + ')">'
+            + '<span><span class="t">' + esc(c.title) + '</span>'
+            + '<span class="m">' + esc(c.source) + ' · scored ' + esc(c.relevance_score)
+            + '/10 — ' + esc(c.relevance_reason) + '</span></span></label>';
+        }).join('')
+      + '<button class="wide" id="pub" onclick="publish()">✨ Mummify &amp; publish selected</button>'
+      + '<div id="log"></div>';
+  }
+
+  window.toggleCand = function(i){ candidates[i].on = !candidates[i].on; renderReview(); };
+
+  // One article per request: each needs a page fetch, a Claude rewrite and two
+  // Drive writes, which would overrun the function timeout as a batch.
+  window.publish = function(){
+    var queue = candidates.filter(function(c){ return c.on; });
+    var log = $('log'), btn = $('pub');
+    if (!queue.length){ log.textContent = 'Nothing selected.'; return; }
+
+    btn.disabled = true;
+    var done = 0, failed = 0, total = queue.length;
+
+    (function step(){
+      if (!queue.length){
+        log.innerHTML += '<div><b>Finished.</b> ' + done + ' published to Google Drive'
+          + (failed ? ', ' + failed + ' failed' : '') + '.</div>';
+        btn.textContent = '✅ Done';
+        candidates = [];
+        loadArticles();
+        return;
+      }
+      var item = queue.shift();
+      btn.textContent = '✨ Mummifying ' + (done + failed + 1) + ' of ' + total + '…';
+      fetch(API, { method:'POST', headers: headers(),
+                   body: JSON.stringify({ action:'publish', article:item }) })
+        .then(function(r){ return r.json().then(function(d){ return { ok:r.ok, d:d }; }); })
+        .then(function(res){
+          if (res.ok){
+            done++;
+            log.innerHTML += '<div>✅ ' + esc(res.d.title || item.title)
+              + ' — <a href="' + esc(res.d.doc_url) + '" target="_blank" rel="noopener">open in Drive ↗</a></div>';
+          } else {
+            failed++;
+            log.innerHTML += '<div>⚠️ ' + esc(item.title) + ' — ' + esc(res.d.error || 'failed') + '</div>';
+          }
+          step();
+        })
+        .catch(function(){
+          failed++;
+          log.innerHTML += '<div>⚠️ ' + esc(item.title) + ' — request failed</div>';
+          step();
+        });
+    })();
+  };
+
+  function loadArticles(){
+    fetch(API, { cache:'no-store' })
+      .then(function(r){ return r.ok ? r.json() : []; })
+      .then(render)
+      .catch(function(){ render([]); });
+  }
+
+  function render(list){
+    var c = $('articles');
+    if (!list || !list.length){
+      c.innerHTML = '<div class="empty"><div style="font-size:2.2rem">📭</div>'
+        + 'Nothing published yet — run a scan to get today\'s picks.</div>';
+      return;
+    }
+    c.innerHTML = list.map(function(a, i){
+      var body = esc(a.simplified || '')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>');
+      return '<div class="art">'
+        + '<div class="meta">' + esc(a.source || '') + (a.source ? ' · ' : '') + esc(a.date || '') + '</div>'
+        + '<div class="h">' + esc(a.title || '') + '</div>'
+        + '<div class="links">'
+        + (a.url ? '<a href="' + esc(a.url) + '" target="_blank" rel="noopener">Original article ↗</a>' : '')
+        + (a.doc_url ? '<a href="' + esc(a.doc_url) + '" target="_blank" rel="noopener">Google Doc ↗</a>' : '')
+        + '</div>'
+        + (body.trim()
+            ? '<button class="toggle" onclick="toggleBody(' + i + ',this)">✨ Read simplified version</button>'
+              + '<div class="body" id="b' + i + '">' + body + '</div>'
+            : '')
+        + '</div>';
+    }).join('');
+  }
+
+  window.toggleBody = function(i, btn){
+    var el = $('b' + i);
+    var open = el.classList.toggle('open');
+    btn.textContent = open ? '✨ Hide simplified version' : '✨ Read simplified version';
+  };
+
+  checkStatus();
+  loadArticles();
+})();
+</script>
+</body>
+</html>

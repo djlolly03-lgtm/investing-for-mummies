@@ -1,0 +1,11 @@
+{
+  "name": "wealth-conversation",
+  "rewrites": [
+    { "source": "/(.*\\.mp4)", "destination": "/$1" },
+    { "source": "/(.*\\.png)", "destination": "/$1" },
+    { "source": "/(.*\\.jpg)", "destination": "/$1" },
+    { "source": "/(.*\\.js)",  "destination": "/$1" },
+    { "source": "/(.*\\.css)", "destination": "/$1" },
+    { "source": "/(.*)",       "destination": "/index.html" }
+  ]
+}

@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="bg-i" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#0e0018"/>
+      <stop offset="100%" stop-color="#06000e"/>
+    </radialGradient>
+    <filter id="glow-i" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="pixel-i" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="clip-i"><circle cx="100" cy="100" r="97"/></clipPath>
+  </defs>
+
+  <circle cx="100" cy="100" r="100" fill="#06000e"/>
+  <circle cx="100" cy="100" r="97" fill="url(#bg-i)"/>
+
+  <!-- Star field -->
+  <g fill="white" clip-path="url(#clip-i)">
+    <circle cx="25" cy="30" r="1" opacity="0.6"/><circle cx="48" cy="18" r="1.2" opacity="0.5"/>
+    <circle cx="72" cy="24" r="0.8" opacity="0.7"/><circle cx="130" cy="20" r="1" opacity="0.5"/>
+    <circle cx="158" cy="28" r="1.2" opacity="0.6"/><circle cx="174" cy="16" r="0.8" opacity="0.5"/>
+    <circle cx="22" cy="68" r="0.8" opacity="0.5"/><circle cx="176" cy="72" r="1" opacity="0.6"/>
+    <circle cx="30" cy="155" r="0.9" opacity="0.5"/><circle cx="172" cy="150" r="1" opacity="0.5"/>
+    <circle cx="50" cy="175" r="0.8" opacity="0.4"/><circle cx="148" cy="178" r="1" opacity="0.4"/>
+  </g>
+
+  <!-- Pixel grid decorations -->
+  <g fill="#7c3aed" opacity="0.15" clip-path="url(#clip-i)">
+    <rect x="20" y="50" width="8" height="8"/><rect x="30" y="50" width="8" height="8"/>
+    <rect x="20" y="60" width="8" height="8"/>
+    <rect x="162" y="50" width="8" height="8"/><rect x="172" y="50" width="8" height="8"/>
+    <rect x="172" y="60" width="8" height="8"/>
+    <rect x="20" y="140" width="8" height="8"/><rect x="20" y="150" width="8" height="8"/>
+    <rect x="30" y="150" width="8" height="8"/>
+    <rect x="162" y="140" width="8" height="8"/><rect x="172" y="150" width="8" height="8"/>
+    <rect x="162" y="150" width="8" height="8"/>
+  </g>
+
+  <!-- SPACE INVADER PIXEL ART — centred, pink/magenta, classic 11x8 grid
+       Each pixel = 10x10. Grid starts x=45, y=50 -->
+  <!-- Using pixel size 10px, offset (45,50). Classic invader pattern row by row. -->
+
+  <g filter="url(#pixel-i)" fill="#ec4899">
+    <!-- Row 1: _XX_____XX_ -->
+    <rect x="55" y="50" width="10" height="10"/>
+    <rect x="65" y="50" width="10" height="10"/>
+    <rect x="85" y="50" width="10" height="10"/>
+    <rect x="95" y="50" width="10" height="10"/>
+
+    <!-- Row 2: _XXXXXXXXX_ (body top) -->
+    <rect x="55" y="60" width="100" height="10"/>
+
+    <!-- Row 3: XXXXXXXXXXX (full width) -->
+    <rect x="45" y="70" width="120" height="10"/>
+
+    <!-- Row 4: XX_XX_XX_XX (eyes/face pattern) -->
+    <rect x="45" y="80" width="20" height="10"/>
+    <rect x="75" y="80" width="20" height="10"/>
+    <rect x="105" y="80" width="10" height="10"/>
+    <rect x="125" y="80" width="30" height="10"/>
+
+    <!-- Row 5: XXXXXXXXXXX -->
+    <rect x="45" y="90" width="120" height="10"/>
+
+    <!-- Row 6: _X_XXXXX_X_ (middle) -->
+    <rect x="45" y="100" width="10" height="10"/>
+    <rect x="65" y="100" width="80" height="10"/>
+    <rect x="155" y="100" width="10" height="10"/>
+
+    <!-- Row 7 (eye cutouts — darker) -->
+    <!-- (done by overlay below) -->
+
+    <!-- Row 8: X__XXXXX__X (base) -->
+    <rect x="45" y="110" width="10" height="10"/>
+    <rect x="65" y="110" width="80" height="10"/>
+    <rect x="155" y="110" width="10" height="10"/>
+
+    <!-- Row 9: _X_______X_ (feet) -->
+    <rect x="55" y="120" width="10" height="10"/>
+    <rect x="145" y="120" width="10" height="10"/>
+
+    <!-- Row 10: X_________X (far feet) -->
+    <rect x="45" y="130" width="10" height="10"/>
+    <rect x="155" y="130" width="10" height="10"/>
+  </g>
+
+  <!-- Eye holes (cut out in darker colour) -->
+  <g fill="#06000e">
+    <rect x="65" y="80" width="10" height="10"/>
+    <rect x="95" y="80" width="10" height="10"/>
+    <rect x="115" y="80" width="10" height="10"/>
+  </g>
+
+  <!-- Mouth pixels -->
+  <g fill="#f0abfc" opacity="0.9">
+    <rect x="65" y="105" width="10" height="5"/>
+    <rect x="85" y="105" width="10" height="5"/>
+    <rect x="105" y="105" width="10" height="5"/>
+    <rect x="125" y="105" width="10" height="5"/>
+    <rect x="75" y="110" width="50" height="5"/>
+  </g>
+
+  <!-- Glow overlay on the whole invader -->
+  <g filter="url(#glow-i)" opacity="0.35" fill="#c026d3">
+    <rect x="45" y="50" width="120" height="90"/>
+  </g>
+
+  <!-- Score text in classic arcade style -->
+  <g clip-path="url(#clip-i)" filter="url(#pixel-i)" opacity="0.5">
+    <text x="50" y="170" font-size="12" font-family="monospace" fill="#a855f7" font-weight="bold">SCORE 10</text>
+  </g>
+
+  <!-- Crown ring -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#7c3aed" stroke-width="3" filter="url(#glow-i)" opacity="0.95"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#c084fc" stroke-width="1" opacity="0.4"/>
+
+  <!-- Corner ticks -->
+  <g stroke="#7c3aed" stroke-width="1.5" opacity="0.6">
+    <line x1="20" y1="55" x2="28" y2="55"/><line x1="20" y1="55" x2="20" y2="63"/>
+    <line x1="180" y1="55" x2="172" y2="55"/><line x1="180" y1="55" x2="180" y2="63"/>
+    <line x1="20" y1="145" x2="28" y2="145"/><line x1="20" y1="145" x2="20" y2="137"/>
+    <line x1="180" y1="145" x2="172" y2="145"/><line x1="180" y1="145" x2="180" y2="137"/>
+  </g>
+</svg>

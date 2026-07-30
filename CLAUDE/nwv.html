@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Need · Want · Value</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+    html,body{
+      background:#080810;
+      font-family:'Space Grotesk',sans-serif;
+      color:#fff;
+      height:100%;
+      min-height:100svh;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+
+    /* ── LAYOUT ── */
+    .screen{
+      display:none;
+      flex-direction:column;
+      align-items:center;
+      min-height:100svh;
+    }
+    .screen.active{display:flex}
+
+    /* ── SPLASH ── */
+    #splash{
+      justify-content:center;
+      background:radial-gradient(ellipse at 30% 20%, #1a0533 0%, #080810 60%);
+      padding:14px 20px 20px;
+      text-align:center;
+      height:100svh;
+      overflow:hidden;
+    }
+    .splash-pill{
+      display:inline-block;
+      background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:999px;
+      padding:5px 14px;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.45);
+      margin-bottom:10px;
+    }
+    .splash-title{
+      font-size:clamp(3.64rem,14.0vw,5.6rem);
+      font-weight:800;
+      line-height:1.05;
+      margin-bottom:6px;
+      background:linear-gradient(135deg,#fff 30%,#a78bfa 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    .splash-sub{
+      font-size:21px;
+      color:rgba(255,255,255,0.5);
+      line-height:1.4;
+      max-width:340px;
+      margin:0 auto 12px;
+    }
+
+    /* category legend pills */
+    .legend{display:flex;flex-direction:row;gap:8px;margin:0 auto 14px;width:100%;max-width:420px}
+    .leg{
+      display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;
+      background:rgba(255,255,255,0.05);
+      border-radius:14px;padding:10px 8px;
+      border:1px solid rgba(255,255,255,0.08);
+      text-align:center;
+    }
+    .leg-icon{font-size:31px;flex-shrink:0}
+    .leg-label{font-size:18px;font-weight:700;margin-bottom:0}
+    .leg-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.25}
+    .leg-n .leg-label{color:#34d399}
+    .leg-w .leg-label{color:#f472b6}
+    .leg-v .leg-label{color:#818cf8}
+
+    .btn-start{
+      background:linear-gradient(135deg,#7c3aed,#a78bfa);
+      border:none;border-radius:16px;padding:16px 40px;
+      font-family:'Space Grotesk',sans-serif;
+      font-size:22px;font-weight:700;color:#fff;cursor:pointer;
+      box-shadow:0 8px 32px rgba(124,58,237,0.4);
+      transition:transform .15s,box-shadow .15s;
+    }
+    .btn-start:active{transform:scale(0.96);box-shadow:0 4px 16px rgba(124,58,237,0.3)}
+
+    /* ── GAME SCREEN ── */
+    #game{
+      background:#080810;
+      padding:0;
+      width:100%;
+    }
+
+    /* progress bar */
+    .prog-bar{
+      width:100%;height:3px;
+      background:rgba(255,255,255,0.07);
+      position:sticky;top:0;z-index:10;
+    }
+    .prog-fill{
+      height:100%;
+      background:linear-gradient(90deg,#7c3aed,#a78bfa);
+      transition:width .4s ease;
+      border-radius:0 999px 999px 0;
+    }
+
+    /* top row */
+    .game-top{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:14px 18px 0;
+    }
+    .item-counter{
+      font-size:15px;font-weight:700;
+      letter-spacing:1.5px;text-transform:uppercase;
+      color:rgba(255,255,255,0.3);
+    }
+    .score-pill{
+      background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:999px;padding:4px 12px;
+      font-size:15px;font-weight:700;color:rgba(255,255,255,0.5);
+    }
+    .score-pill span{color:#a78bfa}
+
+    /* item card */
+    .item-card{
+      margin:16px 16px 0;
+      background:linear-gradient(145deg,#12122a,#1a1a36);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:28px 20px 24px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .item-card::before{
+      content:'';position:absolute;top:-40px;right:-40px;
+      width:120px;height:120px;border-radius:50%;
+      background:rgba(124,58,237,0.12);pointer-events:none;
+    }
+    .item-emoji{font-size:101px;line-height:1;margin-bottom:12px;display:block}
+    .item-name{
+      font-size:clamp(1.96rem,8.4vw,2.8rem);
+      font-weight:800;line-height:1.1;margin-bottom:8px;
+    }
+    .item-hint{
+      font-size:17px;color:rgba(255,255,255,0.3);
+      font-style:italic;min-height:18px;
+    }
+
+    /* category buttons */
+    .cat-buttons{
+      display:grid;grid-template-columns:1fr 1fr 1fr;
+      gap:10px;padding:16px 16px 0;
+    }
+    .cat-btn{
+      border:none;border-radius:18px;padding:16px 8px 14px;
+      cursor:pointer;font-family:'Space Grotesk',sans-serif;
+      display:flex;flex-direction:column;align-items:center;gap:4px;
+      transition:transform .15s,box-shadow .15s;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .cat-btn:active{transform:scale(0.93)}
+    .cat-btn-icon{font-size:36px;line-height:1}
+    .cat-btn-label{font-size:15px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.9)}
+    .cat-btn-sub{font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);line-height:1.2;text-align:center}
+
+    .btn-need{background:linear-gradient(145deg,#064e3b,#059669);box-shadow:0 4px 16px rgba(5,150,105,0.25)}
+    .btn-want{background:linear-gradient(145deg,#831843,#db2777);box-shadow:0 4px 16px rgba(219,39,119,0.25)}
+    .btn-value{background:linear-gradient(145deg,#312e81,#6366f1);box-shadow:0 4px 16px rgba(99,102,241,0.25)}
+
+    /* ── REVEAL PANEL ── */
+    .reveal-panel{
+      margin:14px 16px 0;
+      border-radius:20px;
+      padding:18px 16px 16px;
+      display:none;
+      border-top:4px solid transparent;
+      transition:background .2s,border-color .2s;
+    }
+    .reveal-panel.show{display:block}
+    .reveal-panel.reveal-correct{
+      background:rgba(34,197,94,0.12);
+      border:1px solid rgba(34,197,94,0.35);
+      border-top:4px solid #22c55e;
+    }
+    .reveal-panel.reveal-wrong{
+      background:rgba(239,68,68,0.10);
+      border:1px solid rgba(239,68,68,0.35);
+      border-top:4px solid #ef4444;
+    }
+
+    .reveal-verdict{
+      font-size:18px;font-weight:700;text-align:center;
+      margin-bottom:14px;
+      color:rgba(255,255,255,0.6);
+    }
+    .reveal-verdict strong{color:#fff;font-size:21px}
+    .reveal-correct .reveal-verdict strong{color:#4ade80}
+    .reveal-wrong .reveal-verdict strong{color:#f87171}
+
+    /* correct / off tags */
+    .tag-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:14px}
+    .tag{
+      padding:5px 13px;border-radius:999px;
+      font-size:15px;font-weight:700;letter-spacing:0.5px;
+    }
+    .tag-n{background:rgba(52,211,153,0.15);border:1px solid #34d399;color:#34d399}
+    .tag-w{background:rgba(244,114,182,0.15);border:1px solid #f472b6;color:#f472b6}
+    .tag-v{background:rgba(129,140,248,0.15);border:1px solid #818cf8;color:#818cf8}
+    .tag-picked{filter:brightness(1.3);box-shadow:0 0 12px currentColor}
+
+    .reveal-why{
+      font-size:17px;line-height:1.55;
+      color:rgba(255,255,255,0.55);
+      background:rgba(255,255,255,0.04);
+      border-radius:12px;padding:12px 14px;
+      margin-bottom:14px;
+    }
+
+    .discuss-chip{
+      display:inline-flex;align-items:center;gap:6px;
+      background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.3);
+      border-radius:12px;padding:10px 14px;
+      font-size:17px;color:#fbbf24;line-height:1.4;width:100%;
+    }
+    .discuss-chip-icon{font-size:25px;flex-shrink:0}
+
+    .btn-next{
+      display:block;width:100%;
+      background:linear-gradient(135deg,#7c3aed,#a78bfa);
+      border:none;border-radius:16px;padding:15px;
+      font-family:'Space Grotesk',sans-serif;
+      font-size:21px;font-weight:700;color:#fff;cursor:pointer;
+      margin-top:14px;
+      box-shadow:0 6px 24px rgba(124,58,237,0.35);
+      transition:transform .15s;
+    }
+    .btn-next:active{transform:scale(0.97)}
+
+    .all-done-nudge{
+      margin:14px 16px 0;
+      text-align:center;
+      font-size:15px;color:rgba(255,255,255,0.2);
+      font-style:italic;
+    }
+
+    /* ambiguity bar */
+    .ambig-bar{
+      display:flex;gap:4px;align-items:center;justify-content:center;
+      margin-bottom:12px;
+      font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+      color:rgba(255,255,255,0.3);
+    }
+    .ambig-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15)}
+    .ambig-dot.on{background:#fbbf24}
+
+    /* ── RESULTS SCREEN ── */
+    #results{
+      justify-content:center;
+      background:radial-gradient(ellipse at 70% 80%, #1a0533 0%, #080810 60%);
+      padding:32px 20px 48px;
+      text-align:center;
+    }
+    .result-emoji{font-size:101px;margin-bottom:16px}
+    .result-title{
+      font-size:2.8rem;font-weight:800;margin-bottom:8px;
+      background:linear-gradient(135deg,#fff 30%,#a78bfa 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    .result-score{
+      font-size:4.9rem;font-weight:800;margin:12px 0 4px;
+      background:linear-gradient(135deg,#34d399,#a78bfa);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    .result-label{font-size:18px;color:rgba(255,255,255,0.35);margin-bottom:28px}
+    .result-msg{
+      font-size:20px;line-height:1.6;color:rgba(255,255,255,0.55);
+      max-width:300px;margin:0 auto 32px;
+    }
+    .btn-replay{
+      background:linear-gradient(135deg,#7c3aed,#a78bfa);
+      border:none;border-radius:16px;padding:15px 40px;
+      font-family:'Space Grotesk',sans-serif;
+      font-size:21px;font-weight:700;color:#fff;cursor:pointer;
+      box-shadow:0 8px 32px rgba(124,58,237,0.4);
+    }
+
+    /* ── RECAP LIST ── */
+    .recap{
+      width:100%;max-width:380px;margin:24px auto 28px;
+      display:flex;flex-direction:column;gap:8px;
+    }
+    .recap-row{
+      display:flex;align-items:center;gap:12px;
+      border-radius:14px;padding:12px 14px;
+      font-size:17px;
+    }
+    .recap-row.ok{background:rgba(34,197,94,0.10);border:1px solid rgba(34,197,94,0.25)}
+    .recap-row.miss{background:rgba(239,68,68,0.09);border:1px solid rgba(239,68,68,0.22)}
+    .recap-icon{font-size:25px;flex-shrink:0}
+    .recap-name{flex:1;font-weight:600;color:#fff;font-size:17px}
+    .recap-badge{
+      font-size:13px;font-weight:700;letter-spacing:0.5px;
+      padding:3px 10px;border-radius:999px;flex-shrink:0;
+    }
+    .recap-row.ok  .recap-badge{background:rgba(34,197,94,0.2);color:#4ade80}
+    .recap-row.miss .recap-badge{background:rgba(239,68,68,0.2);color:#f87171}
+    .recap-correct-lbl{font-size:13px;color:rgba(255,255,255,0.4);flex-shrink:0}
+
+    /* ── BOTTOM SPACER ── */
+    .spacer{height:32px;flex-shrink:0}
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     SPLASH SCREEN
+══════════════════════════════════════════ -->
+<div class="screen active" id="splash">
+  <div class="splash-pill">💸 Money Mindset Game</div>
+  <div class="splash-title">Need.<br>Want.<br>Value.</div>
+  <p class="splash-sub">Sort real-life spending into three buckets — then debate the messy ones.</p>
+
+  <div class="legend">
+    <div class="leg leg-n">
+      <div class="leg-icon">🛡️</div>
+      <div>
+        <div class="leg-label">NEED</div>
+        <div class="leg-desc">Important / basic things you must have</div>
+      </div>
+    </div>
+    <div class="leg leg-w">
+      <div class="leg-icon">✨</div>
+      <div>
+        <div class="leg-label">WANT</div>
+        <div class="leg-desc">Fun / lifestyle spending — nice to have</div>
+      </div>
+    </div>
+    <div class="leg leg-v">
+      <div class="leg-icon">📈</div>
+      <div>
+        <div class="leg-label">VALUE</div>
+        <div class="leg-desc">Spending that invests in future-you</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:17px;color:rgba(255,255,255,0.25);margin-bottom:20px;">Some items fit more than one bucket — that's the point 👀</p>
+  <button class="btn-start" onclick="startGame()">Let's go →</button>
+</div>
+
+<!-- ══════════════════════════════════════════
+     GAME SCREEN
+══════════════════════════════════════════ -->
+<div class="screen" id="game">
+  <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+
+  <div class="game-top">
+    <div class="item-counter" id="itemCounter">Item 1 of 11</div>
+    <div class="score-pill">Score <span id="scoreDisplay">0</span></div>
+  </div>
+
+  <!-- Item card -->
+  <div class="item-card">
+    <span class="item-emoji" id="itemEmoji">🎮</span>
+    <div class="item-name" id="itemName">Loading…</div>
+    <div class="item-hint" id="itemHint"></div>
+  </div>
+
+  <!-- Category buttons -->
+  <div class="cat-buttons" id="catButtons">
+    <button class="cat-btn btn-need" onclick="pick('N')">
+      <span class="cat-btn-icon">🛡️</span>
+      <span class="cat-btn-label">Need</span>
+      <span class="cat-btn-sub">Must have</span>
+    </button>
+    <button class="cat-btn btn-want" onclick="pick('W')">
+      <span class="cat-btn-icon">✨</span>
+      <span class="cat-btn-label">Want</span>
+      <span class="cat-btn-sub">Nice to have</span>
+    </button>
+    <button class="cat-btn btn-value" onclick="pick('V')">
+      <span class="cat-btn-icon">📈</span>
+      <span class="cat-btn-label">Value</span>
+      <span class="cat-btn-sub">Future-you</span>
+    </button>
+  </div>
+
+  <!-- Reveal panel (hidden until pick) -->
+  <div class="reveal-panel" id="revealPanel">
+    <div class="reveal-verdict" id="revealVerdict"></div>
+
+    <div class="ambig-bar" id="ambigBar"></div>
+
+    <div class="tag-row" id="tagRow"></div>
+
+    <div class="reveal-why" id="revealWhy"></div>
+
+    <div class="discuss-chip" id="discussChip">
+      <span class="discuss-chip-icon">💬</span>
+      <span id="discussText"></span>
+    </div>
+
+    <button class="btn-next" id="btnNext" onclick="nextItem()">Next item →</button>
+  </div>
+
+  <div class="all-done-nudge" id="allDoneNudge"></div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     RESULTS SCREEN
+══════════════════════════════════════════ -->
+<div class="screen" id="results">
+  <div class="result-emoji" id="resultEmoji">🔥</div>
+  <div class="result-title">Done!</div>
+  <div class="result-score" id="resultScore">0</div>
+  <div class="result-label" id="resultLabel">out of 11 correct</div>
+  <div class="result-msg" id="resultMsg"></div>
+  <div class="recap" id="recap"></div>
+  <button class="btn-replay" onclick="replay()">Play again</button>
+</div>
+
+<script>
+// ── DATA ────────────────────────────────────────────────────────────────────
+const ITEMS = [
+  {
+    emoji:'💻', name:'Laptop',
+    cats:['N','V'],
+    why:'A laptop is a basic tool for school or work (NEED), but it also builds skills and opens opportunities — making it an investment in future-you (VALUE).',
+    discuss:'Is a ₹1,20,000 gaming laptop still a NEED — or does it cross into WANT?'
+  },
+  {
+    emoji:'📚', name:'Study Course',
+    cats:['V'],
+    why:'Learning a new skill pays you back over time — that\'s pure VALUE. It\'s not a daily necessity, but it compounds like interest.',
+    discuss:'Would you pick a free YouTube course or pay for a structured one? Does the price change the category?'
+  },
+  {
+    emoji:'🏋️', name:'Gym Membership',
+    cats:['V','W'],
+    why:'Investing in your health is VALUE — but if you mostly go for the vibe and selfies, it might just be a WANT. Honest check: how often do you actually go?',
+    discuss:'At what point does a wellness spend become a luxury?'
+  },
+  {
+    emoji:'🎮', name:'PS5',
+    cats:['W'],
+    why:'Pure joy — and there\'s nothing wrong with that! But a PS5 is a WANT. It doesn\'t cover a basic need or grow your future prospects.',
+    discuss:'Can gaming ever be VALUE? Think: esports, coding, content creation…'
+  },
+  {
+    emoji:'👟', name:'Sneakers',
+    cats:['W'],
+    why:'Footwear is a NEED — but a ₹15,000 limited drop is a WANT. The basic version of something can be a need while the premium version is a want.',
+    discuss:'Where\'s the line between "enough shoes" and "sneaker habit"?'
+  },
+  {
+    emoji:'🥗', name:'Healthy Food',
+    cats:['N','V'],
+    why:'Food is always a NEED — your body literally requires it. But consistently choosing nutritious food is also investing in your long-term health (VALUE).',
+    discuss:'Is a ₹600 açaí bowl a NEED, a WANT, or a VALUE spend?'
+  },
+  {
+    emoji:'📖', name:'Books',
+    cats:['V'],
+    why:'Books — especially non-fiction, skill-building, or career-relevant ones — are classic VALUE purchases. They expand your mind and your options.',
+    discuss:'Does it change if the book is just a novel? Entertainment vs. growth?'
+  },
+  {
+    emoji:'🛍️', name:'Shopping Spree',
+    cats:['W'],
+    why:'A shopping spree is the definition of a WANT. Emotion-driven, instant-gratification spending. No shame — just be intentional about it.',
+    discuss:'How do you tell the difference between retail therapy and a genuine NEED?'
+  },
+  {
+    emoji:'🧠', name:'Therapy',
+    cats:['V','N'],
+    why:'Mental health is health — this is genuinely VALUE and can even be a NEED. Investing in your mind pays dividends across every area of life.',
+    discuss:'Why do people treat therapy as optional but the gym as essential?'
+  },
+  {
+    emoji:'📺', name:'Netflix',
+    cats:['W'],
+    why:'Streaming is a WANT — entertainment, relaxation, fun. Completely valid! But it\'s not building your future or covering a basic need.',
+    discuss:'Could sharing an account count as "smart spending"? At what point is a subscription just wasted money?'
+  },
+  {
+    emoji:'🎓', name:'Tuition / Uni',
+    cats:['V'],
+    why:'Education is the ultimate VALUE investment — it upgrades your earning potential, network, and options for decades.',
+    discuss:'Is uni always worth it? What about a trade qualification vs. a degree?'
+  },
+];
+
+// ── STATE ───────────────────────────────────────────────────────────────────
+let order = [], current = 0, score = 0, answered = false, answers = [];
+
+const LABELS = {N:'NEED', W:'WANT', V:'VALUE'};
+const TAG_CLASS = {N:'tag-n', W:'tag-w', V:'tag-value tag-v'};
+const CAT_EMOJI = {N:'🛡️', W:'✨', V:'📈'};
+
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+
+function startGame(){
+  order = shuffle(ITEMS.map((_,i)=>i));
+  current = 0; score = 0; answered = false; answers = [];
+  show('game');
+  loadItem();
+}
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function loadItem(){
+  answered = false;
+  const item = ITEMS[order[current]];
+  const total = ITEMS.length;
+
+  // progress
+  document.getElementById('progFill').style.width = (current/total*100)+'%';
+  document.getElementById('itemCounter').textContent = 'Item '+(current+1)+' of '+total;
+  document.getElementById('scoreDisplay').textContent = score;
+
+  // card
+  document.getElementById('itemEmoji').textContent = item.emoji;
+  document.getElementById('itemName').textContent = item.name;
+  document.getElementById('itemHint').textContent = '';
+
+  // buttons enabled
+  document.querySelectorAll('.cat-btn').forEach(b=>{b.disabled=false;b.style.opacity='1';b.style.transform='';});
+
+  // hide reveal
+  const rp = document.getElementById('revealPanel');
+  rp.classList.remove('show');
+  rp.style.background='';
+
+  document.getElementById('allDoneNudge').textContent='';
+}
+
+function pick(choice){
+  if(answered) return;
+  answered = true;
+  const item = ITEMS[order[current]];
+  const correct = item.cats.includes(choice);
+  if(correct) score++;
+
+  // dim buttons
+  document.querySelectorAll('.cat-btn').forEach(b=>{b.disabled=true;b.style.opacity='0.4';});
+
+  // verdict text
+  const verdict = document.getElementById('revealVerdict');
+  if(correct){
+    verdict.innerHTML = correct && item.cats.length > 1
+      ? `<strong>✅ Valid pick!</strong> — but there's more to unpack…`
+      : `<strong>✅ Nailed it!</strong>`;
+  } else {
+    verdict.innerHTML = `<strong>🤔 Not quite</strong> — here's why it's trickier than it looks`;
+  }
+
+  // ambiguity dots
+  const ambigBar = document.getElementById('ambigBar');
+  if(item.cats.length > 1){
+    let dots = item.cats.map(c=>`<span class="ambig-dot on"></span><span style="font-size:14px;color:rgba(255,255,255,0.4)">${LABELS[c]}</span>`).join(' · ');
+    ambigBar.innerHTML = dots;
+    ambigBar.style.display='flex';
+  } else {
+    ambigBar.style.display='none';
+  }
+
+  // tags
+  const tagRow = document.getElementById('tagRow');
+  tagRow.innerHTML = item.cats.map(c=>{
+    const picked = c === choice;
+    return `<span class="tag ${TAG_CLASS[c]}${picked?' tag-picked':''}">${CAT_EMOJI[c]} ${LABELS[c]}${picked?' ← you':''}</span>`;
+  }).join('');
+
+  // why
+  document.getElementById('revealWhy').textContent = item.why;
+
+  // discuss
+  document.getElementById('discussText').textContent = '💡 ' + item.discuss;
+
+  // record answer
+  answers.push({item, choice, correct});
+
+  // panel bg
+  const rp = document.getElementById('revealPanel');
+  rp.classList.remove('reveal-correct','reveal-wrong');
+  rp.classList.add(correct ? 'reveal-correct' : 'reveal-wrong');
+
+  // next button label
+  const isLast = current >= ITEMS.length - 1;
+  document.getElementById('btnNext').textContent = isLast ? 'See results →' : 'Next item →';
+
+  rp.classList.add('show');
+}
+
+function nextItem(){
+  current++;
+  if(current >= ITEMS.length){
+    showResults();
+  } else {
+    loadItem();
+    // scroll to top of game screen
+    document.getElementById('game').scrollTo({top:0,behavior:'smooth'});
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+}
+
+function showResults(){
+  document.getElementById('progFill').style.width='100%';
+  const total = ITEMS.length;
+  const pct = Math.round(score/total*100);
+  document.getElementById('resultScore').textContent = score + '/' + total;
+  document.getElementById('resultLabel').textContent = 'answered correctly';
+
+  let emoji, msg;
+  if(pct >= 90){
+    emoji='🔥'; msg='You\'re a money mindset legend. You understand that spending has layers — keep questioning your choices like this.';
+  } else if(pct >= 70){
+    emoji='💜'; msg='Solid financial thinking! The ambiguous ones trip everyone up — that\'s literally the point.';
+  } else if(pct >= 50){
+    emoji='💡'; msg='Good start. The tricky items are tricky on purpose — revisit the ones that surprised you.';
+  } else {
+    emoji='🌱'; msg='Every expert started here. The fact that you played means you\'re already thinking about money differently.';
+  }
+
+  document.getElementById('resultEmoji').textContent = emoji;
+  document.getElementById('resultMsg').textContent = msg;
+
+  // build recap
+  const recap = document.getElementById('recap');
+  recap.innerHTML = answers.map(({item, choice, correct}) => {
+    const pickedLabel = LABELS[choice];
+    const correctLabels = item.cats.map(c => LABELS[c]).join(' / ');
+    return `<div class="recap-row ${correct?'ok':'miss'}">
+      <span class="recap-icon">${item.emoji}</span>
+      <span class="recap-name">${item.name}</span>
+      ${correct
+        ? `<span class="recap-badge">✓ ${pickedLabel}</span>`
+        : `<span class="recap-correct-lbl">${correctLabels}</span><span class="recap-badge">✗ ${pickedLabel}</span>`
+      }
+    </div>`;
+  }).join('');
+
+  show('results');
+}
+
+function replay(){
+  startGame();
+}
+</script>
+</body>
+</html>

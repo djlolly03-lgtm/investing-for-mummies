@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<title>Market Madness 2</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --teal:#2a9d8f; --navy:#1a3a5c; --muted:#5a7d8a;
+  --cream:#f7faf9; --mint:#bde9e4; --mint-lt:#e0f3f0;
+  --gold:#c9a84c; --red:#dc2626; --green:#0e8a7a; --purple:#6c3fa0;
+  --soft:#f0f6fc;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:auto;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);padding:14px 12px 40px;min-height:100vh;line-height:1.4;}
+h1,h2,h3{font-family:'Lora',serif;}
+.m2-wrap{max-width:540px;margin:0 auto;}
+.m2-screen{display:none;animation:m2Fade .35s ease;}
+.m2-screen.active{display:block;}
+@keyframes m2Fade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+@keyframes m2Flash{0%{background:var(--red);}100%{background:#fff;}}
+@keyframes m2Glow{0%{background:var(--green);}100%{background:#fff;}}
+.m2-card{background:#fff;border-radius:16px;padding:14px 15px;box-shadow:0 2px 12px rgba(26,58,92,0.07);margin-bottom:12px;}
+.m2-card.flash-red{animation:m2Flash .7s ease;}
+.m2-card.flash-green{animation:m2Glow .7s ease;}
+
+.m2-btn{display:inline-block;padding:11px 20px;border-radius:12px;background:var(--teal);color:#fff;font-weight:800;font-size:0.88rem;border:none;cursor:pointer;transition:all .15s;font-family:'Nunito',sans-serif;box-shadow:0 2px 6px rgba(42,157,143,0.3);}
+.m2-btn:hover:not(:disabled){background:var(--green);transform:translateY(-1px);}
+.m2-btn:disabled{background:#b0c0c8;cursor:not-allowed;box-shadow:none;}
+.m2-btn.big{font-size:1.0rem;padding:14px 28px;width:100%;}
+.m2-btn.ghost{background:#fff;color:var(--navy);border:2px solid var(--navy);box-shadow:none;}
+.m2-btn.ghost:hover:not(:disabled){background:var(--soft);}
+.m2-btn.gold{background:var(--gold);box-shadow:0 2px 6px rgba(201,168,76,0.4);}
+.m2-btn.gold:hover:not(:disabled){background:#b89638;}
+
+/* INTRO */
+.m2-intro-hero{text-align:center;padding:8px 0 16px;}
+.m2-intro-icon{font-size:3rem;margin-bottom:4px;}
+.m2-intro-hero h1{font-size:1.35rem;font-weight:700;line-height:1.3;margin-bottom:6px;color:var(--navy);}
+.m2-intro-sub{font-size:0.85rem;color:var(--muted);max-width:420px;margin:0 auto;}
+.m2-intro-block{margin-bottom:14px;}
+.m2-intro-block:last-of-type{margin-bottom:8px;}
+.m2-intro-title{font-family:'Lora',serif;font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.m2-intro-li{font-size:0.85rem;color:#3a556a;padding:4px 0;}
+.m2-intro-li .emoji{display:inline-block;width:24px;text-align:center;}
+
+/* PROGRESS + EVENT */
+.m2-progress{display:flex;align-items:center;gap:6px;margin-bottom:10px;padding:0 2px;}
+.m2-pip{flex:1;height:6px;border-radius:3px;background:#dde6ee;transition:background .3s;}
+.m2-pip.done{background:var(--green);}
+.m2-pip.active{background:var(--gold);}
+.m2-round-label{font-size:0.7rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;white-space:nowrap;}
+
+.m2-event{background:linear-gradient(135deg,#f0f6fc,#e5eef8);border:2px solid rgba(26,58,92,0.12);border-radius:14px;padding:14px 15px;margin-bottom:12px;}
+.m2-event.bull{background:linear-gradient(135deg,#e8f5f0,#d4efe2);border-color:#0e8a7a;}
+.m2-event.bear{background:linear-gradient(135deg,#fde8e8,#f8d0d0);border-color:#dc2626;}
+.m2-event.recovery{background:linear-gradient(135deg,#fff5e0,#fbe8be);border-color:#c9a84c;}
+.m2-event.mixed{background:linear-gradient(135deg,#f0e8fc,#ddd0f3);border-color:#6c3fa0;}
+.m2-event-tag{font-size:0.64rem;font-weight:900;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin-bottom:4px;}
+.m2-event-title{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.3;}
+.m2-event-story{font-size:0.82rem;color:#3a556a;line-height:1.5;}
+
+/* PORTFOLIO STRIP */
+.m2-port{background:linear-gradient(135deg,var(--navy),#264d78);color:#fff;border-radius:14px;padding:12px 14px;margin-bottom:12px;text-align:center;}
+.m2-port-label{font-size:0.64rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.7);margin-bottom:2px;}
+.m2-port-value{font-family:'Lora',serif;font-size:1.8rem;font-weight:700;line-height:1.1;margin-bottom:4px;}
+.m2-port-sub{font-size:0.72rem;color:rgba(255,255,255,0.85);}
+.m2-port-sub .pos{color:#8ae5c0;}
+.m2-port-sub .neg{color:#ffb0b0;}
+
+/* INVESTOR STRIP */
+.m2-inv-strip{display:flex;gap:7px;margin-bottom:12px;}
+.m2-inv{flex:1;background:#fff;border-radius:12px;padding:8px 6px 9px;text-align:center;box-shadow:0 2px 8px rgba(26,58,92,0.06);border:2px solid transparent;}
+.m2-inv.you{border-color:var(--teal);background:var(--mint-lt);}
+.m2-inv-emoji{font-size:1.3rem;line-height:1;}
+.m2-inv-name{font-size:0.62rem;font-weight:800;color:var(--navy);margin:3px 0 1px;letter-spacing:0.2px;}
+.m2-inv-val{font-size:0.72rem;font-weight:800;color:var(--navy);font-family:'Lora',serif;}
+.m2-inv-pct{font-size:0.6rem;font-weight:700;}
+.m2-inv-pct.pos{color:var(--green);}
+.m2-inv-pct.neg{color:var(--red);}
+
+/* STOCKS */
+.m2-group{margin-bottom:8px;}
+.m2-group-label{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted);display:flex;align-items:center;gap:6px;margin:10px 2px 6px;}
+.m2-dot{width:8px;height:8px;border-radius:50%;}
+.m2-dot.green{background:#0e8a7a;}
+.m2-dot.amber{background:#c9a84c;}
+.m2-dot.red{background:#dc2626;}
+.m2-info{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#dde6ee;color:var(--navy);font-size:0.62rem;font-weight:800;cursor:pointer;margin-left:auto;user-select:none;}
+.m2-info:hover{background:var(--mint);}
+
+.m2-stock{display:flex;align-items:center;background:#fff;border-radius:12px;padding:10px 12px;margin-bottom:6px;box-shadow:0 1px 6px rgba(26,58,92,0.05);cursor:pointer;transition:all .15s;border:2px solid transparent;}
+.m2-stock:hover{border-color:var(--mint);}
+.m2-stock.selected{border-color:var(--teal);background:var(--mint-lt);}
+.m2-stock-left{flex:1;min-width:0;}
+.m2-stock-name{font-size:0.85rem;font-weight:800;color:var(--navy);line-height:1.1;margin-bottom:2px;}
+.m2-stock-held{font-size:0.64rem;color:var(--muted);font-weight:700;}
+.m2-stock-right{text-align:right;min-width:90px;}
+.m2-stock-price{font-size:0.95rem;font-weight:900;color:var(--navy);font-family:'Lora',serif;line-height:1;}
+.m2-stock-chg{font-size:0.7rem;font-weight:800;margin-top:2px;}
+.m2-stock-chg.pos{color:var(--green);}
+.m2-stock-chg.neg{color:var(--red);}
+.m2-stock-chg.flat{color:var(--muted);}
+
+/* CHART */
+.m2-chart-card{background:linear-gradient(135deg,#0d1a2e,#1a3a5c);color:#fff;border-radius:14px;padding:14px 14px 10px;margin-bottom:12px;}
+.m2-chart-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
+.m2-chart-name{font-size:0.9rem;font-weight:900;}
+.m2-chart-price{font-family:'Lora',serif;font-size:1.3rem;font-weight:700;text-align:right;line-height:1;}
+.m2-chart-chg{font-size:0.74rem;font-weight:800;text-align:right;}
+.m2-chart-chg.pos{color:#8ae5c0;}
+.m2-chart-chg.neg{color:#ffb0b0;}
+.m2-spark{width:100%;height:70px;display:block;margin-top:4px;}
+.m2-bidask{display:flex;gap:8px;margin-top:8px;}
+.m2-bidask-box{flex:1;background:rgba(255,255,255,0.08);border-radius:8px;padding:6px 8px;}
+.m2-bidask-label{font-size:0.6rem;font-weight:800;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:0.8px;}
+.m2-bidask-val{font-size:0.8rem;font-weight:800;font-family:'Lora',serif;color:#fff;}
+.m2-bidask-sub{font-size:0.56rem;color:rgba(255,255,255,0.55);margin-top:1px;}
+
+/* ACTION */
+.m2-act-row{display:flex;gap:8px;margin-bottom:10px;}
+.m2-act{flex:1;padding:13px 10px;border-radius:12px;border:2px solid transparent;background:#fff;color:var(--navy);font-weight:900;font-size:0.85rem;cursor:pointer;transition:all .15s;font-family:'Nunito',sans-serif;box-shadow:0 1px 6px rgba(26,58,92,0.06);}
+.m2-act.buy{background:#e8f5f0;color:var(--green);border-color:#8ed6c4;}
+.m2-act.sell{background:#fde8e8;color:var(--red);border-color:#e8a0a0;}
+.m2-act.hold{background:#f0f6fc;color:var(--navy);border-color:#b8d4e8;}
+.m2-act:hover{transform:translateY(-1px);}
+.m2-act.active{outline:3px solid var(--gold);}
+.m2-act:disabled{opacity:0.4;cursor:not-allowed;transform:none;}
+
+/* MODAL */
+.m2-modal-bg{display:none;position:fixed;inset:0;background:rgba(13,26,46,0.55);z-index:50;align-items:flex-end;justify-content:center;}
+.m2-modal-bg.active{display:flex;}
+.m2-modal{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:540px;padding:16px 16px 20px;max-height:85vh;overflow-y:auto;}
+.m2-modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.m2-modal-title{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--navy);}
+.m2-modal-close{background:none;border:none;font-size:1.3rem;color:var(--muted);cursor:pointer;line-height:1;padding:4px 6px;}
+.m2-modal-help{font-size:0.76rem;color:var(--muted);margin-bottom:10px;line-height:1.5;}
+.m2-modal-stock{display:flex;align-items:center;padding:9px 11px;border-radius:10px;border:2px solid #dde6ee;background:#fff;margin-bottom:6px;cursor:pointer;transition:all .15s;}
+.m2-modal-stock:hover{border-color:var(--teal);}
+.m2-modal-stock.selected{border-color:var(--teal);background:var(--mint-lt);}
+.m2-modal-stock .m2-stock-name{font-size:0.82rem;}
+.m2-modal-stock .m2-stock-price{font-size:0.85rem;}
+.m2-amount-row{display:flex;gap:6px;margin-top:10px;margin-bottom:8px;}
+.m2-amt{flex:1;padding:10px 6px;border-radius:10px;background:#f0f6fc;border:2px solid transparent;font-weight:800;font-size:0.82rem;color:var(--navy);cursor:pointer;font-family:'Nunito',sans-serif;}
+.m2-amt:hover{border-color:var(--teal);}
+.m2-amt.selected{background:var(--mint-lt);border-color:var(--teal);color:var(--green);}
+.m2-amt-info{font-size:0.72rem;color:var(--muted);text-align:center;margin-bottom:8px;}
+
+/* ORDER TYPE TABS */
+.m2-otype{display:flex;gap:4px;margin:8px 0 10px;background:#f0f6fc;border-radius:10px;padding:3px;}
+.m2-otype-tab{flex:1;padding:7px 4px;border-radius:8px;font-size:0.68rem;font-weight:800;color:var(--muted);cursor:pointer;text-align:center;text-transform:uppercase;letter-spacing:0.3px;transition:all .15s;}
+.m2-otype-tab.active{background:#fff;color:var(--navy);box-shadow:0 1px 4px rgba(26,58,92,0.1);}
+.m2-otype-desc{background:#f7fafc;border-radius:8px;padding:7px 10px;font-size:0.72rem;color:var(--muted);line-height:1.45;margin-bottom:10px;}
+
+/* SUMMARY */
+.m2-sum-section{margin-bottom:12px;}
+.m2-sum-tag{font-size:0.66rem;font-weight:900;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.m2-sum-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
+.m2-sum-text{font-size:0.88rem;color:var(--navy);line-height:1.55;}
+.m2-sum-inv{display:flex;align-items:flex-start;gap:10px;padding:9px 11px;border-radius:10px;background:#f7fafc;margin-bottom:5px;}
+.m2-sum-inv-emoji{font-size:1.2rem;line-height:1.1;}
+.m2-sum-inv-body{flex:1;font-size:0.78rem;color:var(--navy);line-height:1.4;}
+.m2-sum-inv-body b{font-weight:900;}
+.m2-sum-inv-pct{font-size:0.8rem;font-weight:900;font-family:'Lora',serif;}
+.m2-sum-inv-pct.pos{color:var(--green);}
+.m2-sum-inv-pct.neg{color:var(--red);}
+.m2-sum-prompt{background:linear-gradient(135deg,#fff5e0,#fbe8be);border:1.5px solid var(--gold);border-radius:12px;padding:11px 13px;font-size:0.85rem;font-style:italic;color:#6a4f0e;line-height:1.5;}
+.m2-sum-prompt:before{content:'"';font-size:1.8rem;line-height:0.3;vertical-align:-10px;color:var(--gold);font-family:'Lora',serif;margin-right:2px;}
+.m2-sum-learn{background:linear-gradient(135deg,#e8f5f0,#d4efe2);border:1.5px solid #0e8a7a;border-radius:12px;padding:12px 14px;}
+.m2-sum-learn-head{font-family:'Lora',serif;font-size:0.95rem;font-weight:700;color:#0a5a50;margin-bottom:4px;}
+.m2-sum-learn-body{font-size:0.82rem;color:#0a5a50;line-height:1.5;}
+
+/* FINAL */
+.m2-final-hero{text-align:center;padding:10px 0 14px;}
+.m2-final-hero .emoji{font-size:2.5rem;}
+.m2-final-hero h1{font-size:1.25rem;font-weight:700;margin:6px 0 2px;color:var(--navy);}
+.m2-final-hero p{font-size:0.82rem;color:var(--muted);}
+.m2-final-row{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:#fff;margin-bottom:7px;box-shadow:0 2px 8px rgba(26,58,92,0.06);}
+.m2-final-row.winner{background:linear-gradient(135deg,#fff5e0,#fbe8be);border:2px solid var(--gold);}
+.m2-final-row.you{border:2px solid var(--teal);}
+.m2-final-emoji{font-size:1.5rem;}
+.m2-final-body{flex:1;min-width:0;}
+.m2-final-name{font-size:0.85rem;font-weight:900;color:var(--navy);}
+.m2-final-desc{font-size:0.68rem;color:var(--muted);line-height:1.3;}
+.m2-final-val{text-align:right;}
+.m2-final-money{font-family:'Lora',serif;font-size:1.0rem;font-weight:700;color:var(--navy);line-height:1.1;}
+.m2-final-pct{font-size:0.74rem;font-weight:800;}
+.m2-final-pct.pos{color:var(--green);}
+.m2-final-pct.neg{color:var(--red);}
+.m2-insight{background:linear-gradient(135deg,var(--navy),#264d78);color:#fff;border-radius:16px;padding:16px 18px;margin:14px 0 10px;text-align:center;}
+.m2-insight-tag{font-size:0.62rem;font-weight:900;text-transform:uppercase;letter-spacing:1.4px;color:rgba(255,255,255,0.7);margin-bottom:6px;}
+.m2-insight-title{font-family:'Lora',serif;font-size:1.1rem;font-weight:700;line-height:1.35;margin-bottom:6px;}
+.m2-insight-body{font-size:0.82rem;color:rgba(255,255,255,0.9);line-height:1.5;}
+
+.m2-teach{background:#fff;border-radius:14px;padding:14px 16px;margin-bottom:12px;}
+.m2-teach-title{font-family:'Lora',serif;font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.m2-teach-li{display:flex;gap:9px;padding:5px 0;font-size:0.82rem;color:#3a556a;line-height:1.5;}
+.m2-teach-li .bullet{color:var(--teal);font-weight:900;}
+
+/* INFO POPOVER */
+.m2-info-pop{background:#f0f6fc;border-left:3px solid var(--teal);border-radius:0 8px 8px 0;padding:10px 12px;font-size:0.76rem;color:var(--navy);line-height:1.5;margin:6px 0 8px;display:none;}
+.m2-info-pop.open{display:block;animation:m2Fade .3s ease;}
+.m2-info-pop b{font-weight:900;color:var(--green);}
+</style>
+</head>
+<body>
+<div class="m2-wrap" id="m2-root"></div>
+
+<script>
+(function(){
+"use strict";
+
+// ──────────────────────────────────────────────────────────────
+// DATA
+// ──────────────────────────────────────────────────────────────
+var START_CASH = 1000000;
+
+var STOCKS = [
+  {id:'REL',  name:'Reliance Industries', group:'large',  base:2800, info:'Huge, diversified Indian giant. Energy, retail & telecom.'},
+  {id:'HDFC', name:'HDFC Bank',           group:'large',  base:1650, info:'One of India\u2019s most trusted banks.'},
+  {id:'TATA', name:'Tata Power',          group:'medium', base:400,  info:'Power utility in transition to renewables.'},
+  {id:'ZOM',  name:'Zomato',              group:'medium', base:210,  info:'New-age food delivery & quick commerce.'},
+  {id:'SUZ',  name:'Suzlon Energy',       group:'small',  base:60,   info:'Wind energy turnaround story. High volatility.'},
+  {id:'YES',  name:'Yes Bank',            group:'small',  base:22,   info:'A bank that ran into trouble. Still recovering.'}
+];
+
+// Percentage moves per round, per stock (in %). Applied as multipliers.
+var ROUND_MOVES = [
+  {REL: 7, HDFC: 6, TATA: 14, ZOM: 22,  SUZ: 28,  YES: 18},
+  {REL:-9, HDFC:-8, TATA:-18, ZOM:-26, SUZ:-35, YES:-30},
+  {REL:10, HDFC: 9, TATA: 16, ZOM: 24,  SUZ: 30,  YES: 22},
+  {REL: 4, HDFC: 5, TATA:  8, ZOM: -4, SUZ:-10, YES: -6},
+  {REL: 3, HDFC:-2, TATA:  6, ZOM: 12, SUZ: -5, YES: -8},
+  {REL: 8, HDFC:10, TATA:  7, ZOM:  6, SUZ:  4, YES:  2}
+];
+
+var EVENTS = [
+  {kind:'bull',     tag:'Round 1 · Bull Run',        title:'Markets are going up',       story:'Good earnings everywhere. Headlines are cheerful. People are feeling rich \u2014 some are even borrowing to buy.',   mood:'Greed is in the air.'},
+  {kind:'bear',     tag:'Round 2 · Panic',           title:'Bad global news',            story:'A sudden global shock triggers panic. Prices crash. Social media is full of doom. WhatsApp aunties are selling.',   mood:'Fear is at its peak.'},
+  {kind:'recovery', tag:'Round 3 · Recovery',        title:'Markets bounce back',        story:'Economic data surprises positively. Prices recover quickly. Everyone who sold is now regretting it.',               mood:'Regret & confusion.'},
+  {kind:'mixed',    tag:'Round 4 · Divergence',      title:'Some rise, some fall',       story:'Not all stocks move together any more. Company-specific news drives the day. Winners and losers diverge.',              mood:'Confusion \u2014 no clear direction.'},
+  {kind:'mixed',    tag:'Round 5 · Rotation',        title:'Money shifts sectors',       story:'Investors rotate out of last year\u2019s winners into new themes. Small caps cool off. Large caps stay steady.',       mood:'Doubt & chasing.'},
+  {kind:'bull',     tag:'Round 6 · The Long View',   title:'Markets grow steadily',      story:'The dust settles. The economy grows. Over the full cycle, most stocks end up higher than where they started.',         mood:'Calm returns.'}
+];
+
+var LEARNINGS = [
+  {head:'Greed feels rational in a bull run',          body:'When everything is going up, buying anything feels smart. It is not. Prices already reflect today\u2019s optimism.'},
+  {head:'Selling after a fall locks in your loss',     body:'A paper loss is not a real loss \u2014 until you sell. Panic selling at the bottom is the single most expensive move an investor can make.'},
+  {head:'Markets recover faster than we expect',       body:'Those who sold at the low miss the rebound. Simply staying invested would have captured most of the recovery with zero effort.'},
+  {head:'Not all stocks behave the same',              body:'Big, stable companies hold up better than small, volatile ones during uncertainty. That is the whole point of the size distinction.'},
+  {head:'Chasing hot sectors usually burns',           body:'By the time something is all over the news, much of the move has already happened. The people buying late are funding the exit of people who got in early.'},
+  {head:'Time is the real edge',                       body:'Zoom out. Short-term noise fades. The underlying trend for a diversified portfolio has historically been up \u2014 if you simply stay.'}
+];
+
+var INVESTORS = {
+  you:      {emoji:'\uD83D\uDC64', name:'You',           short:'You',      desc:'You decide what to do'},
+  reactive: {emoji:'\uD83D\uDE1F', name:'Reactive',      short:'Reactive', desc:'Gets nervous on falls. Enters late on rises.'},
+  smart:    {emoji:'\uD83E\uDDE0', name:'Stock Picker',  short:'Picker',   desc:'Picks a few stocks and believes in them.'},
+  safe:     {emoji:'\uD83D\uDE0C', name:'Safe',          short:'Safe',     desc:'Invests in the whole market. Stays calm.'}
+};
+
+// ──────────────────────────────────────────────────────────────
+// PRICE ENGINE
+// ──────────────────────────────────────────────────────────────
+function computePriceHistory(){
+  // Returns array of length 7: prices at t=0 (start) and end of each of 6 rounds.
+  var history = [];
+  var current = {};
+  STOCKS.forEach(function(s){ current[s.id] = s.base; });
+  history.push(Object.assign({}, current));
+  for (var r=0; r<ROUND_MOVES.length; r++){
+    var move = ROUND_MOVES[r];
+    var next = {};
+    STOCKS.forEach(function(s){
+      next[s.id] = +(current[s.id] * (1 + move[s.id]/100)).toFixed(2);
+    });
+    current = next;
+    history.push(Object.assign({}, current));
+  }
+  return history;
+}
+
+var PRICES = computePriceHistory();
+
+// ──────────────────────────────────────────────────────────────
+// AI INVESTOR BEHAVIOURS
+// ──────────────────────────────────────────────────────────────
+// Each function receives (state, priceAtRoundStart, round) and returns {cash, holdings}.
+// Decisions happen at start of round r, using prices from end of round r-1 (= PRICES[r]).
+function simulateInvestors(){
+  // Returns: {reactive: [val_t0, val_t1, ... val_t6], smart: [...], safe: [...]}
+  var R = {cash: START_CASH, holdings:{}};
+  var SM = {cash: START_CASH, holdings:{}};
+  var SF = {cash: START_CASH, holdings:{}};
+
+  var reactHist = [START_CASH];
+  var smartHist = [START_CASH];
+  var safeHist  = [START_CASH];
+
+  function valueAt(p, pricesSet){
+    var v = p.cash;
+    for (var id in p.holdings){ v += p.holdings[id] * pricesSet[id]; }
+    return v;
+  }
+  function buyAll(p, mix, prices){
+    // mix: {stockId: fraction of total cash to allocate}
+    var cashToSpend = p.cash;
+    p.holdings = {};
+    for (var id in mix){
+      var amt = cashToSpend * mix[id];
+      p.holdings[id] = amt / prices[id];
+    }
+    p.cash = 0;
+  }
+  function sellAll(p, prices){
+    for (var id in p.holdings){
+      p.cash += p.holdings[id] * prices[id];
+    }
+    p.holdings = {};
+  }
+
+  // At start of Round 1 (t=0, using PRICES[0] = base):
+  // Smart Picker: 60% REL + 40% HDFC
+  buyAll(SM, {REL:0.6, HDFC:0.4}, PRICES[0]);
+  // Safe Investor: equal weight across all 6 stocks
+  var eqMix = {}; STOCKS.forEach(function(s){ eqMix[s.id] = 1/STOCKS.length; });
+  buyAll(SF, eqMix, PRICES[0]);
+  // Reactive: sits in cash, watching
+
+  // Simulate each round
+  for (var r=0; r<6; r++){
+    // Record values at end of round (PRICES[r+1])
+    var endPrices = PRICES[r+1];
+
+    // During the round, apply moves implicitly (holdings keep same share counts)
+    // Now perform end-of-round reactions to set up for NEXT round:
+
+    if (r === 0) {
+      // Reactive sees gains, jumps in late: 70% TATA + 30% ZOM
+      buyAll(R, {TATA:0.7, ZOM:0.3}, endPrices);
+    } else if (r === 1) {
+      // Reactive panics: sells everything
+      sellAll(R, endPrices);
+    } else if (r === 2) {
+      // Reactive FOMO: buys the rebound darling, all in SUZ
+      buyAll(R, {SUZ:1.0}, endPrices);
+    } else if (r === 3) {
+      // Reactive cuts the loser, rotates to ZOM
+      sellAll(R, endPrices);
+      buyAll(R, {ZOM:1.0}, endPrices);
+    } else if (r === 4) {
+      // Reactive holds ZOM
+    } else if (r === 5) {
+      // Final round end \u2014 no action
+    }
+
+    // Smart Picker & Safe: hold through. No action.
+
+    reactHist.push(valueAt(R, endPrices));
+    smartHist.push(valueAt(SM, endPrices));
+    safeHist.push(valueAt(SF, endPrices));
+  }
+
+  return {reactive: reactHist, smart: smartHist, safe: safeHist};
+}
+
+var AI_HIST = simulateInvestors();
+
+// ──────────────────────────────────────────────────────────────
+// FORMATTERS
+// ──────────────────────────────────────────────────────────────
+function fmtINR(n){
+  if (n == null) return '\u20B9\u20140';
+  var sign = n < 0 ? '-' : '';
+  n = Math.abs(Math.round(n));
+  var s = n.toString();
+  var last3 = s.slice(-3);
+  var rest = s.slice(0, -3);
+  if (rest) last3 = ',' + last3;
+  rest = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',');
+  return sign + '\u20B9' + rest + last3;
+}
+function fmtLakh(n){
+  var lakh = n/100000;
+  if (lakh >= 100) return '\u20B9' + (lakh/100).toFixed(2) + 'Cr';
+  return '\u20B9' + lakh.toFixed(2) + 'L';
+}
+function fmtPct(p){
+  var sign = p >= 0 ? '+' : '';
+  return sign + p.toFixed(1) + '%';
+}
+function stockPrice(id, round){
+  // Price at end of given round (0 = start)
+  return PRICES[round][id];
+}
+
+// ──────────────────────────────────────────────────────────────
+// STATE
+// ──────────────────────────────────────────────────────────────
+var state;
+function resetState(){
+  state = {
+    screen: 'intro',          // intro | dashboard | summary | final
+    round: 0,                 // 0..6. 0 = before R1. 6 = after final round.
+    cash: START_CASH,
+    holdings: {},             // stockId -> shares (user)
+    selectedStock: 'REL',
+    pendingAction: null,      // {type:'buy'|'sell'|'hold', stockId, amount}
+    history: [START_CASH],    // user portfolio value per round end
+    modalOpen: false,
+    modalKind: null,          // 'buy' | 'sell'
+    modalStock: null,
+    modalAmtIdx: 1,           // 0..3 amount preset index
+    orderType: 'market',      // market | limit | stoploss (educational)
+    infoOpen: {large:false, medium:false, small:false, bidask:false}
+  };
+}
+resetState();
+
+function currentPrices(){ return PRICES[state.round]; }
+
+function userPortfolioValue(round){
+  var p = round == null ? state.round : round;
+  var prices = PRICES[p];
+  var v = state.cash;
+  for (var id in state.holdings){
+    v += state.holdings[id] * prices[id];
+  }
+  return v;
+}
+
+// ──────────────────────────────────────────────────────────────
+// RENDER
+// ──────────────────────────────────────────────────────────────
+var root;
+
+function render(){
+  root = document.getElementById('m2-root');
+  if (!root) return;
+  if (state.screen === 'intro') renderIntro();
+  else if (state.screen === 'dashboard') renderDashboard();
+  else if (state.screen === 'summary') renderSummary();
+  else if (state.screen === 'final') renderFinal();
+  postHeight();
+}
+
+function postHeight(){
+  setTimeout(function(){
+    try {
+      var h = document.body.scrollHeight;
+      parent.postMessage({type:'mm2_height', h:h}, '*');
+    } catch(e){}
+  }, 50);
+}
+
+// INTRO ─────────────────────────────────────────────────────
+function renderIntro(){
+  var html =
+    '<div class="m2-screen active">' +
+      '<div class="m2-intro-hero">' +
+        '<div class="m2-intro-icon">\uD83C\uDF93</div>' +
+        '<h1>Let\u2019s learn investing by <i>playing</i></h1>' +
+        '<div class="m2-intro-sub">No jargon. No pressure. Just a safe way to feel what the stock market is really like.</div>' +
+      '</div>' +
+      '<div class="m2-card">' +
+        '<div class="m2-intro-block">' +
+          '<div class="m2-intro-title">In this experience, you will\u2026</div>' +
+          '<div class="m2-intro-li"><span class="emoji">\uD83D\uDCC8</span> Buy and sell real-feeling stocks</div>' +
+          '<div class="m2-intro-li"><span class="emoji">\uD83D\uDCB9</span> See how prices change, round by round</div>' +
+          '<div class="m2-intro-li"><span class="emoji">\uD83C\uDFAD</span> Feel how people react when markets move</div>' +
+        '</div>' +
+        '<div class="m2-intro-block">' +
+          '<div class="m2-intro-title">You\u2019ll meet 3 other investors\u2026</div>' +
+          '<div class="m2-intro-li"><span class="emoji">\uD83D\uDE1F</span> One who reacts emotionally</div>' +
+          '<div class="m2-intro-li"><span class="emoji">\uD83E\uDDE0</span> One who picks stocks confidently</div>' +
+          '<div class="m2-intro-li"><span class="emoji">\uD83D\uDE0C</span> One who simply stays invested</div>' +
+        '</div>' +
+        '<div class="m2-intro-block">' +
+          '<div class="m2-intro-title">By the end, you\u2019ll understand\u2026</div>' +
+          '<div class="m2-intro-li"><span class="emoji">\u2022</span> Why markets go up and down</div>' +
+          '<div class="m2-intro-li"><span class="emoji">\u2022</span> Why people lose money</div>' +
+          '<div class="m2-intro-li"><span class="emoji">\u2022</span> What actually works</div>' +
+        '</div>' +
+        '<button class="m2-btn big" id="m2-start">Start Learning \u2192</button>' +
+      '</div>' +
+    '</div>';
+  root.innerHTML = html;
+  document.getElementById('m2-start').onclick = function(){
+    state.screen = 'dashboard';
+    render();
+  };
+}
+
+// DASHBOARD ─────────────────────────────────────────────────
+function renderDashboard(){
+  var r = state.round;            // the round that is ABOUT to play
+  var prices = PRICES[r];
+  var event = EVENTS[r];
+
+  // PROGRESS
+  var pipsHtml = '';
+  for (var i=0; i<6; i++){
+    var cls = i < r ? 'done' : (i === r ? 'active' : '');
+    pipsHtml += '<div class="m2-pip ' + cls + '"></div>';
+  }
+
+  // PORTFOLIO
+  var portVal = userPortfolioValue(r);
+  var portRet = ((portVal - START_CASH) / START_CASH) * 100;
+  var retCls = portRet > 0.05 ? 'pos' : (portRet < -0.05 ? 'neg' : '');
+  var retTxt = fmtPct(portRet);
+  var heldCount = 0; for (var hid in state.holdings){ if (state.holdings[hid] > 0) heldCount++; }
+
+  // INVESTOR STRIP
+  var youHist = state.history[state.history.length - 1];
+  var invHtml = '';
+  var youPct = ((portVal - START_CASH)/START_CASH)*100;
+  var reactV = AI_HIST.reactive[r]; var reactPct = ((reactV - START_CASH)/START_CASH)*100;
+  var smartV = AI_HIST.smart[r];    var smartPct = ((smartV - START_CASH)/START_CASH)*100;
+  var safeV  = AI_HIST.safe[r];     var safePct  = ((safeV  - START_CASH)/START_CASH)*100;
+  invHtml +=
+    '<div class="m2-inv you">' +
+      '<div class="m2-inv-emoji">\uD83D\uDC64</div>' +
+      '<div class="m2-inv-name">You</div>' +
+      '<div class="m2-inv-val">' + fmtLakh(portVal) + '</div>' +
+      '<div class="m2-inv-pct ' + (youPct>=0?'pos':'neg') + '">' + fmtPct(youPct) + '</div>' +
+    '</div>';
+  invHtml +=
+    '<div class="m2-inv" title="Gets nervous on falls. Enters late on rises.">' +
+      '<div class="m2-inv-emoji">\uD83D\uDE1F</div>' +
+      '<div class="m2-inv-name">Reactive</div>' +
+      '<div class="m2-inv-val">' + fmtLakh(reactV) + '</div>' +
+      '<div class="m2-inv-pct ' + (reactPct>=0?'pos':'neg') + '">' + fmtPct(reactPct) + '</div>' +
+    '</div>';
+  invHtml +=
+    '<div class="m2-inv" title="Picks a few stocks and believes in them.">' +
+      '<div class="m2-inv-emoji">\uD83E\uDDE0</div>' +
+      '<div class="m2-inv-name">Picker</div>' +
+      '<div class="m2-inv-val">' + fmtLakh(smartV) + '</div>' +
+      '<div class="m2-inv-pct ' + (smartPct>=0?'pos':'neg') + '">' + fmtPct(smartPct) + '</div>' +
+    '</div>';
+  invHtml +=
+    '<div class="m2-inv" title="Invests in the whole market. Stays calm.">' +
+      '<div class="m2-inv-emoji">\uD83D\uDE0C</div>' +
+      '<div class="m2-inv-name">Safe</div>' +
+      '<div class="m2-inv-val">' + fmtLakh(safeV) + '</div>' +
+      '<div class="m2-inv-pct ' + (safePct>=0?'pos':'neg') + '">' + fmtPct(safePct) + '</div>' +
+    '</div>';
+
+  // STOCK LIST grouped
+  function stockRow(s){
+    var price = prices[s.id];
+    var prev = r > 0 ? PRICES[r-1][s.id] : s.base;
+    var chg = ((price - prev)/prev)*100;
+    var chgCls = r === 0 ? 'flat' : (chg>=0.05?'pos':(chg<=-0.05?'neg':'flat'));
+    var chgTxt = r === 0 ? 'Starting price' : fmtPct(chg);
+    var selCls = state.selectedStock === s.id ? 'selected' : '';
+    var held = (state.holdings[s.id] || 0);
+    var heldTxt = held > 0 ? 'You hold ' + Math.floor(held) + ' sh \u00B7 ' + fmtINR(held*price) : '';
+    return '<div class="m2-stock ' + selCls + '" data-id="' + s.id + '">' +
+      '<div class="m2-stock-left">' +
+        '<div class="m2-stock-name">' + s.name + '</div>' +
+        (heldTxt ? '<div class="m2-stock-held">' + heldTxt + '</div>' : '<div class="m2-stock-held" style="color:#a8b5c0">No position</div>') +
+      '</div>' +
+      '<div class="m2-stock-right">' +
+        '<div class="m2-stock-price">' + fmtINR(price) + '</div>' +
+        '<div class="m2-stock-chg ' + chgCls + '">' + chgTxt + '</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  var large  = STOCKS.filter(function(s){return s.group==='large';}).map(stockRow).join('');
+  var medium = STOCKS.filter(function(s){return s.group==='medium';}).map(stockRow).join('');
+  var small  = STOCKS.filter(function(s){return s.group==='small';}).map(stockRow).join('');
+
+  // SELECTED STOCK CHART
+  var sel = STOCKS.find(function(s){return s.id === state.selectedStock;});
+  var chartHtml = renderChartCard(sel, r);
+
+  // BUY/SELL/HOLD BUTTONS
+  var hasHoldings = false;
+  for (var hhid in state.holdings){ if (state.holdings[hhid] > 0){ hasHoldings = true; break; } }
+  var pa = state.pendingAction;
+  var actBuyCls  = pa && pa.type === 'buy'  ? 'active' : '';
+  var actSellCls = pa && pa.type === 'sell' ? 'active' : '';
+  var actHoldCls = pa && pa.type === 'hold' ? 'active' : '';
+
+  // DECISION SUMMARY (after action picked)
+  var decisionHtml = '';
+  if (pa){
+    if (pa.type === 'hold'){
+      decisionHtml = '<div style="background:#f0f6fc;border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:0.82rem;color:var(--navy);"><b>Your move:</b> Hold \u2014 no trade this round.</div>';
+    } else if (pa.type === 'buy'){
+      var bstock = STOCKS.find(function(s){return s.id===pa.stockId;});
+      var bsh = Math.floor(pa.amount / prices[pa.stockId]);
+      decisionHtml = '<div style="background:#e8f5f0;border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:0.82rem;color:#0a5a50;"><b>Your move:</b> Buy ' + bsh + ' sh of ' + bstock.name + ' (\u2248' + fmtINR(pa.amount) + ')</div>';
+    } else if (pa.type === 'sell'){
+      var sstock = STOCKS.find(function(s){return s.id===pa.stockId;});
+      decisionHtml = '<div style="background:#fde8e8;border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:0.82rem;color:#8b2020;"><b>Your move:</b> Sell ' + pa.pct + '% of ' + sstock.name + '</div>';
+    }
+  }
+
+  var html =
+    '<div class="m2-screen active">' +
+      '<div class="m2-progress">' + pipsHtml + '<div class="m2-round-label">R' + (r+1) + ' / 6</div></div>' +
+      '<div class="m2-event ' + event.kind + '">' +
+        '<div class="m2-event-tag">' + event.tag + '</div>' +
+        '<div class="m2-event-title">' + event.title + '</div>' +
+        '<div class="m2-event-story">' + event.story + '</div>' +
+      '</div>' +
+      '<div class="m2-port">' +
+        '<div class="m2-port-label">Your Portfolio</div>' +
+        '<div class="m2-port-value" id="m2-port-val">' + fmtINR(portVal) + '</div>' +
+        '<div class="m2-port-sub">Cash ' + fmtINR(state.cash) + ' \u00B7 ' +
+          (heldCount ? heldCount + ' stock' + (heldCount>1?'s':'') + ' held' : 'no stocks yet') +
+          ' \u00B7 <span class="' + retCls + '">' + retTxt + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="m2-inv-strip">' + invHtml + '</div>' +
+
+      '<div class="m2-card">' +
+        '<div class="m2-group-label"><span class="m2-dot green"></span>Large companies <span style="color:#8a98a4;font-weight:700;text-transform:none;letter-spacing:0;font-size:0.66rem;">(more stable)</span><span class="m2-info" data-info="large">i</span></div>' +
+        '<div class="m2-info-pop ' + (state.infoOpen.large?'open':'') + '" data-info-body="large"><b>Large companies</b> are big, established businesses. Their prices tend to move less \u2014 smaller gains, but also smaller falls.</div>' +
+        large +
+        '<div class="m2-group-label"><span class="m2-dot amber"></span>Medium companies <span style="color:#8a98a4;font-weight:700;text-transform:none;letter-spacing:0;font-size:0.66rem;">(moderate)</span><span class="m2-info" data-info="medium">i</span></div>' +
+        '<div class="m2-info-pop ' + (state.infoOpen.medium?'open':'') + '" data-info-body="medium"><b>Medium companies</b> move more than large ones. More upside in good times \u2014 but they also fall harder.</div>' +
+        medium +
+        '<div class="m2-group-label"><span class="m2-dot red"></span>Small companies <span style="color:#8a98a4;font-weight:700;text-transform:none;letter-spacing:0;font-size:0.66rem;">(high risk)</span><span class="m2-info" data-info="small">i</span></div>' +
+        '<div class="m2-info-pop ' + (state.infoOpen.small?'open':'') + '" data-info-body="small"><b>Small companies</b> can double quickly \u2014 and halve quickly too. Highest risk, highest reward.</div>' +
+        small +
+      '</div>' +
+
+      chartHtml +
+
+      decisionHtml +
+
+      '<div class="m2-act-row">' +
+        '<button class="m2-act buy ' + actBuyCls + '" id="m2-buy">\uD83D\uDCC8 BUY</button>' +
+        '<button class="m2-act sell ' + actSellCls + '" id="m2-sell"' + (hasHoldings?'':' disabled') + '>\uD83D\uDCC9 SELL</button>' +
+        '<button class="m2-act hold ' + actHoldCls + '" id="m2-hold">\u23F8 HOLD</button>' +
+      '</div>' +
+
+      '<button class="m2-btn big" id="m2-play"' + (pa?'':' disabled') + '>' + (pa?'Play Round ' + (r+1) + ' \u25B6':'Pick an action to continue') + '</button>' +
+
+      '<div class="m2-modal-bg" id="m2-modal-bg"></div>' +
+    '</div>';
+
+  root.innerHTML = html;
+
+  // Stock row click
+  root.querySelectorAll('.m2-stock').forEach(function(el){
+    el.onclick = function(){
+      state.selectedStock = el.getAttribute('data-id');
+      render();
+    };
+  });
+  // Info toggles
+  root.querySelectorAll('.m2-info').forEach(function(el){
+    el.onclick = function(e){
+      e.stopPropagation();
+      var key = el.getAttribute('data-info');
+      state.infoOpen[key] = !state.infoOpen[key];
+      render();
+    };
+  });
+  // Actions
+  document.getElementById('m2-buy').onclick  = function(){ openModal('buy'); };
+  var sellBtn = document.getElementById('m2-sell');
+  if (sellBtn && !sellBtn.disabled) sellBtn.onclick = function(){ openModal('sell'); };
+  document.getElementById('m2-hold').onclick = function(){
+    state.pendingAction = {type:'hold'};
+    render();
+  };
+  document.getElementById('m2-play').onclick = function(){
+    if (state.pendingAction) playRound();
+  };
+}
+
+function renderChartCard(s, r){
+  var current = PRICES[r][s.id];
+  var prev = r > 0 ? PRICES[r-1][s.id] : s.base;
+  var chg = r > 0 ? ((current - prev)/prev)*100 : 0;
+  var chgCls = chg >= 0 ? 'pos' : 'neg';
+  var chgTxt = r === 0 ? 'Starting price' : fmtPct(chg);
+
+  // Sparkline: from t=0 to t=r
+  var pts = [];
+  for (var i=0; i<=r; i++) pts.push(PRICES[i][s.id]);
+  if (pts.length < 2) pts = [s.base, s.base]; // force 2 points for flat line on R1
+  var minV = Math.min.apply(null, pts), maxV = Math.max.apply(null, pts);
+  var pad = (maxV - minV) * 0.15 || maxV * 0.05;
+  minV -= pad; maxV += pad;
+  var w = 500, h = 60;
+  var stepX = w / (pts.length - 1);
+  var d = '';
+  pts.forEach(function(v, i){
+    var x = i * stepX;
+    var y = h - ((v - minV) / (maxV - minV)) * h;
+    d += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1) + ' ';
+  });
+  var lastX = (pts.length-1) * stepX;
+  var lastY = h - ((pts[pts.length-1] - minV) / (maxV - minV)) * h;
+  var strokeCol = chg >= 0 ? '#8ae5c0' : '#ffb0b0';
+  if (r === 0) strokeCol = '#bde9e4';
+
+  // Bid/Ask simulated (spread ~0.15% for large, 0.4% for medium, 1% for small)
+  var spreadPct = s.group === 'large' ? 0.0015 : (s.group === 'medium' ? 0.004 : 0.01);
+  var bid = (current * (1 - spreadPct)).toFixed(2);
+  var ask = (current * (1 + spreadPct)).toFixed(2);
+
+  return '<div class="m2-chart-card">' +
+    '<div class="m2-chart-head">' +
+      '<div>' +
+        '<div class="m2-chart-name">' + s.name + '</div>' +
+        '<div style="font-size:0.68rem;color:rgba(255,255,255,0.6);margin-top:2px;">' + s.info + '</div>' +
+      '</div>' +
+      '<div>' +
+        '<div class="m2-chart-price">' + fmtINR(current) + '</div>' +
+        '<div class="m2-chart-chg ' + chgCls + '">' + chgTxt + '</div>' +
+      '</div>' +
+    '</div>' +
+    '<svg class="m2-spark" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none">' +
+      '<path d="' + d + '" fill="none" stroke="' + strokeCol + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<circle cx="' + lastX.toFixed(1) + '" cy="' + lastY.toFixed(1) + '" r="3" fill="' + strokeCol + '"/>' +
+    '</svg>' +
+    '<div class="m2-bidask">' +
+      '<div class="m2-bidask-box"><div class="m2-bidask-label">Bid</div><div class="m2-bidask-val">\u20B9' + bid + '</div><div class="m2-bidask-sub">what buyers offer</div></div>' +
+      '<div class="m2-bidask-box"><div class="m2-bidask-label">Ask</div><div class="m2-bidask-val">\u20B9' + ask + '</div><div class="m2-bidask-sub">what sellers want</div></div>' +
+    '</div>' +
+  '</div>';
+}
+
+// MODAL ─────────────────────────────────────────────────────
+function openModal(kind){
+  state.modalOpen = true;
+  state.modalKind = kind;
+  if (kind === 'buy'){
+    state.modalStock = state.selectedStock;
+    state.modalAmtIdx = 1; // default 25% of cash
+  } else {
+    // pick first held stock
+    var first = null;
+    for (var id in state.holdings){ if (state.holdings[id] > 0){ first = id; break; } }
+    state.modalStock = first;
+    state.modalAmtIdx = 3; // default 100%
+  }
+  state.orderType = 'market';
+  renderModal();
+}
+function closeModal(){
+  state.modalOpen = false;
+  renderModal();
+}
+function renderModal(){
+  var bg = document.getElementById('m2-modal-bg');
+  if (!bg) return;
+  if (!state.modalOpen){
+    bg.classList.remove('active');
+    bg.innerHTML = '';
+    postHeight();
+    return;
+  }
+  bg.classList.add('active');
+  var kind = state.modalKind;
+  var prices = currentPrices();
+
+  // Order type tabs
+  var otTabs =
+    '<div class="m2-otype">' +
+      '<div class="m2-otype-tab ' + (state.orderType==='market'?'active':'') + '" data-ot="market">Market</div>' +
+      '<div class="m2-otype-tab ' + (state.orderType==='limit'?'active':'') + '" data-ot="limit">Limit</div>' +
+      '<div class="m2-otype-tab ' + (state.orderType==='stoploss'?'active':'') + '" data-ot="stoploss">Stop Loss</div>' +
+    '</div>';
+  var otDesc = '';
+  if (state.orderType === 'market') otDesc = '<b>Market order:</b> Buy or sell right away, at whatever the price is. Simple and fast.';
+  else if (state.orderType === 'limit') otDesc = '<b>Limit order:</b> You pick the price you\u2019re willing to pay. It only fills if the market reaches that price.';
+  else otDesc = '<b>Stop loss:</b> Automatically sells if the price falls to a level you set \u2014 a safety net to limit losses.';
+  var otHtml = otTabs + '<div class="m2-otype-desc">' + otDesc + '</div>';
+
+  var stocksHtml = '';
+  var sub;
+  if (kind === 'buy'){
+    STOCKS.forEach(function(s){
+      var price = prices[s.id];
+      var sel = state.modalStock === s.id ? 'selected' : '';
+      stocksHtml += '<div class="m2-modal-stock ' + sel + '" data-sid="' + s.id + '">' +
+        '<div class="m2-stock-left"><div class="m2-stock-name">' + s.name + '</div><div class="m2-stock-held" style="color:#8a98a4">' + s.group + ' cap</div></div>' +
+        '<div class="m2-stock-right"><div class="m2-stock-price">' + fmtINR(price) + '</div></div>' +
+      '</div>';
+    });
+    // Amount presets: 25/50/75/100% of cash
+    var presets = [0.1, 0.25, 0.5, 1.0];
+    var labels  = ['10%', '25%', '50%', 'All'];
+    var amtRow = '<div class="m2-amount-row">';
+    presets.forEach(function(p, i){
+      var amt = state.cash * p;
+      var selCls = state.modalAmtIdx === i ? 'selected' : '';
+      amtRow += '<button class="m2-amt ' + selCls + '" data-ai="' + i + '">' + labels[i] + '<br><span style="font-size:0.7rem;opacity:0.75;">' + fmtLakh(amt) + '</span></button>';
+    });
+    amtRow += '</div>';
+    var chosenPct = presets[state.modalAmtIdx];
+    var chosenAmt = state.cash * chosenPct;
+    var shAt = state.modalStock ? Math.floor(chosenAmt / prices[state.modalStock]) : 0;
+    var stockName = state.modalStock ? STOCKS.find(function(s){return s.id===state.modalStock;}).name : '\u2014';
+    sub = '<div class="m2-amt-info">You\u2019ll buy \u2248 <b>' + shAt + '</b> shares of ' + stockName + ' (' + fmtINR(chosenAmt) + ')</div>';
+
+    var disableConfirm = !state.modalStock || state.cash < 1 || shAt < 1;
+    var bodyHtml =
+      '<div class="m2-modal-head"><div class="m2-modal-title">\uD83D\uDCC8 Buy Stocks</div><button class="m2-modal-close" id="m2-mclose">\u2715</button></div>' +
+      '<div class="m2-modal-help">Cash available: <b>' + fmtINR(state.cash) + '</b>. Tap a stock, then pick how much of your cash to invest.</div>' +
+      otHtml +
+      stocksHtml +
+      '<div style="font-size:0.72rem;font-weight:800;color:var(--muted);margin:10px 2px 4px;text-transform:uppercase;letter-spacing:0.5px;">Amount</div>' +
+      amtRow +
+      sub +
+      '<button class="m2-btn big" id="m2-confirm"' + (disableConfirm?' disabled':'') + '>Confirm Buy</button>';
+    bg.innerHTML = '<div class="m2-modal">' + bodyHtml + '</div>';
+
+  } else {
+    // SELL
+    var held = [];
+    for (var id in state.holdings){ if (state.holdings[id] > 0) held.push(id); }
+    if (held.length === 0){
+      bg.innerHTML = '<div class="m2-modal"><div class="m2-modal-head"><div class="m2-modal-title">Sell</div><button class="m2-modal-close" id="m2-mclose">\u2715</button></div><div style="padding:14px 2px;color:var(--muted);">You have no stocks to sell yet.</div></div>';
+    } else {
+      held.forEach(function(sid){
+        var s = STOCKS.find(function(x){return x.id===sid;});
+        var price = prices[sid];
+        var shares = state.holdings[sid];
+        var val = shares * price;
+        var sel = state.modalStock === sid ? 'selected' : '';
+        stocksHtml += '<div class="m2-modal-stock ' + sel + '" data-sid="' + sid + '">' +
+          '<div class="m2-stock-left"><div class="m2-stock-name">' + s.name + '</div><div class="m2-stock-held">' + Math.floor(shares) + ' sh \u00B7 ' + fmtINR(val) + '</div></div>' +
+          '<div class="m2-stock-right"><div class="m2-stock-price">' + fmtINR(price) + '</div></div>' +
+        '</div>';
+      });
+      var presetsS = [0.25, 0.5, 0.75, 1.0];
+      var labelsS  = ['25%', '50%', '75%', 'All'];
+      var amtRowS = '<div class="m2-amount-row">';
+      presetsS.forEach(function(p, i){
+        var selCls = state.modalAmtIdx === i ? 'selected' : '';
+        amtRowS += '<button class="m2-amt ' + selCls + '" data-ai="' + i + '">' + labelsS[i] + '</button>';
+      });
+      amtRowS += '</div>';
+      var sellPct = presetsS[state.modalAmtIdx];
+      var sshares = state.modalStock ? Math.floor(state.holdings[state.modalStock] * sellPct) : 0;
+      var sval = state.modalStock ? sshares * prices[state.modalStock] : 0;
+      var subS = '<div class="m2-amt-info">You\u2019ll sell <b>' + sshares + '</b> shares (\u2248 ' + fmtINR(sval) + ')</div>';
+
+      var bodyHtmlS =
+        '<div class="m2-modal-head"><div class="m2-modal-title">\uD83D\uDCC9 Sell Stocks</div><button class="m2-modal-close" id="m2-mclose">\u2715</button></div>' +
+        '<div class="m2-modal-help">Pick a stock you hold, then pick how much to sell.</div>' +
+        otHtml +
+        stocksHtml +
+        '<div style="font-size:0.72rem;font-weight:800;color:var(--muted);margin:10px 2px 4px;text-transform:uppercase;letter-spacing:0.5px;">Amount</div>' +
+        amtRowS + subS +
+        '<button class="m2-btn big" id="m2-confirm"' + (sshares<1?' disabled':'') + '>Confirm Sell</button>';
+      bg.innerHTML = '<div class="m2-modal">' + bodyHtmlS + '</div>';
+    }
+  }
+
+  // Wire handlers
+  var closeBtn = document.getElementById('m2-mclose');
+  if (closeBtn) closeBtn.onclick = closeModal;
+  bg.onclick = function(e){ if (e.target === bg) closeModal(); };
+  bg.querySelectorAll('.m2-modal-stock').forEach(function(el){
+    el.onclick = function(){
+      state.modalStock = el.getAttribute('data-sid');
+      renderModal();
+    };
+  });
+  bg.querySelectorAll('.m2-amt').forEach(function(el){
+    el.onclick = function(){
+      state.modalAmtIdx = parseInt(el.getAttribute('data-ai'), 10);
+      renderModal();
+    };
+  });
+  bg.querySelectorAll('.m2-otype-tab').forEach(function(el){
+    el.onclick = function(){
+      state.orderType = el.getAttribute('data-ot');
+      renderModal();
+    };
+  });
+  var conf = document.getElementById('m2-confirm');
+  if (conf) conf.onclick = function(){
+    confirmModal();
+  };
+  postHeight();
+}
+
+function confirmModal(){
+  var prices = currentPrices();
+  if (state.modalKind === 'buy'){
+    var presets = [0.1, 0.25, 0.5, 1.0];
+    var pct = presets[state.modalAmtIdx];
+    var amt = state.cash * pct;
+    if (amt < 1 || !state.modalStock) { closeModal(); return; }
+    state.pendingAction = {type:'buy', stockId:state.modalStock, amount:amt};
+  } else {
+    var presetsS = [0.25, 0.5, 0.75, 1.0];
+    var p = presetsS[state.modalAmtIdx];
+    if (!state.modalStock || !(state.holdings[state.modalStock] > 0)) { closeModal(); return; }
+    state.pendingAction = {type:'sell', stockId:state.modalStock, pct: Math.round(p*100)};
+  }
+  closeModal();
+  render();
+}
+
+// PLAY ROUND ───────────────────────────────────────────────
+function playRound(){
+  // 1. Apply the pending user action at CURRENT prices (end of round r prices = PRICES[r])
+  var r = state.round;
+  var prices = PRICES[r];
+  var pa = state.pendingAction;
+  if (pa){
+    if (pa.type === 'buy'){
+      var sh = pa.amount / prices[pa.stockId];
+      state.holdings[pa.stockId] = (state.holdings[pa.stockId] || 0) + sh;
+      state.cash -= pa.amount;
+      if (state.cash < 0) state.cash = 0;
+    } else if (pa.type === 'sell'){
+      var held = state.holdings[pa.stockId] || 0;
+      var sellSh = held * (pa.pct/100);
+      var proceeds = sellSh * prices[pa.stockId];
+      state.holdings[pa.stockId] = held - sellSh;
+      if (state.holdings[pa.stockId] < 0.0001) delete state.holdings[pa.stockId];
+      state.cash += proceeds;
+    }
+    // hold: no-op
+  }
+  // 2. Advance round (prices now move to PRICES[r+1])
+  state.round = r + 1;
+  var newVal = userPortfolioValue(state.round);
+  state.history.push(newVal);
+  state.pendingAction = null;
+
+  // 3. Show summary
+  state.screen = 'summary';
+  state.lastPlayedRound = r;
+  render();
+}
+
+// SUMMARY ─────────────────────────────────────────────────
+function renderSummary(){
+  var r = state.lastPlayedRound;
+  var event = EVENTS[r];
+  var learning = LEARNINGS[r];
+
+  // What happened: show biggest mover
+  var moves = ROUND_MOVES[r];
+  var biggestUp = null, biggestDown = null;
+  STOCKS.forEach(function(s){
+    var m = moves[s.id];
+    if (biggestUp === null || m > moves[biggestUp.id]) biggestUp = s;
+    if (biggestDown === null || m < moves[biggestDown.id]) biggestDown = s;
+  });
+
+  var whatHtml =
+    event.story + '<br><br>' +
+    '<b>' + biggestUp.name + '</b> was the biggest ' + (moves[biggestUp.id]>=0?'gainer':'least bad') + ' at <span style="color:var(--green);font-weight:900;">' + fmtPct(moves[biggestUp.id]) + '</span>. ' +
+    '<b>' + biggestDown.name + '</b> was the worst at <span style="color:var(--red);font-weight:900;">' + fmtPct(moves[biggestDown.id]) + '</span>.';
+
+  // Investor moves per round
+  var reactiveSummary = [
+    'Waited on the sidelines. Cash stayed safe.',
+    'Greed kicked in. Bought small & mid caps near the top.',
+    'Panicked after the crash. Sold everything for a loss.',
+    'Saw the rebound, FOMO\u2019d in. Bought Suzlon near the new high.',
+    'Couldn\u2019t take the loss. Rotated into Zomato.',
+    'Sat tight with Zomato.'
+  ];
+  var pickerSummary = [
+    'Bought 60% Reliance, 40% HDFC Bank on day 1. Conviction bet on large, quality names.',
+    'Held through the bull run. Gains felt modest next to the small caps.',
+    'Stayed put in the crash. Paper loss, but didn\u2019t sell.',
+    'Kept holding \u2014 the rebound repaired most of the damage.',
+    'Held. Diverging stock moves didn\u2019t hurt the portfolio much.',
+    'Held through the rotation. Large caps are doing fine.',
+    'Held to the end. A calm, steady run.'
+  ];
+  var safeSummary = [
+    'Bought an equal basket of all 6 stocks on day 1 \u2014 a simple \u201Cbuy the market\u201D approach.',
+    'Rode the wave up. Small caps pulled the basket up fast.',
+    'Took the crash on the chin. The basket fell hard but stayed intact.',
+    'Rebound lifted the whole basket back up.',
+    'Basket held steady \u2014 winners and losers cancel out.',
+    'Rotation shuffled things but the basket kept ticking.',
+    'Finished ahead. Boring and effective.'
+  ];
+
+  var emotionalPrompts = [
+    'Did you feel the urge to buy something \u2014 anything \u2014 just to not miss out?',
+    'Did your stomach drop when you saw prices in red? Would you have sold?',
+    'How did it feel to see the market bounce back? Relief? Regret?',
+    'Confusing, right? When stocks don\u2019t move together, what do you lean on?',
+    'Were you tempted to chase what was rising?',
+    'Looking back across the 6 rounds \u2014 what would you do differently?'
+  ];
+
+  // Portfolio delta this round
+  var valBefore = state.history[state.history.length - 2];
+  var valAfter  = state.history[state.history.length - 1];
+  var delta = valAfter - valBefore;
+  var deltaPct = (delta / valBefore) * 100;
+
+  var nextLabel = (state.round < 6) ? 'Continue to Round ' + (state.round + 1) + ' \u2192' : 'See Final Results \u2192';
+
+  var html =
+    '<div class="m2-screen active">' +
+      '<div class="m2-progress">' +
+        (function(){var s=''; for (var i=0;i<6;i++){s+='<div class="m2-pip ' + (i<=r?'done':'') + '"></div>';} return s;})() +
+        '<div class="m2-round-label">R' + (r+1) + ' complete</div>' +
+      '</div>' +
+
+      '<div class="m2-card ' + (delta>=0?'flash-green':'flash-red') + '">' +
+        '<div class="m2-sum-tag"><span class="dot"></span>Your portfolio this round</div>' +
+        '<div style="font-family:\'Lora\',serif;font-size:1.4rem;font-weight:700;color:' + (delta>=0?'var(--green)':'var(--red)') + ';">' +
+          (delta>=0?'+':'') + fmtINR(delta) + ' &nbsp;<span style="font-size:0.9rem;">(' + fmtPct(deltaPct) + ')</span>' +
+        '</div>' +
+        '<div style="font-size:0.75rem;color:var(--muted);margin-top:3px;">Now worth ' + fmtINR(valAfter) + '</div>' +
+      '</div>' +
+
+      '<div class="m2-card">' +
+        '<div class="m2-sum-section">' +
+          '<div class="m2-sum-tag"><span class="dot"></span>What happened</div>' +
+          '<div class="m2-sum-text">' + whatHtml + '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="m2-card">' +
+        '<div class="m2-sum-section">' +
+          '<div class="m2-sum-tag"><span class="dot"></span>What each investor did</div>' +
+          renderInvestorSummaryRow('reactive', reactiveSummary[r], r) +
+          renderInvestorSummaryRow('smart',    pickerSummary[r],    r) +
+          renderInvestorSummaryRow('safe',     safeSummary[r],      r) +
+        '</div>' +
+      '</div>' +
+
+      '<div class="m2-card">' +
+        '<div class="m2-sum-section">' +
+          '<div class="m2-sum-tag"><span class="dot"></span>How did this feel?</div>' +
+          '<div class="m2-sum-prompt">' + emotionalPrompts[r] + '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="m2-sum-learn">' +
+        '<div class="m2-sum-learn-head">\uD83D\uDCA1 ' + learning.head + '</div>' +
+        '<div class="m2-sum-learn-body">' + learning.body + '</div>' +
+      '</div>' +
+
+      '<div style="margin-top:14px;">' +
+        '<button class="m2-btn big" id="m2-continue">' + nextLabel + '</button>' +
+      '</div>' +
+    '</div>';
+
+  root.innerHTML = html;
+  document.getElementById('m2-continue').onclick = function(){
+    if (state.round >= 6){
+      state.screen = 'final';
+    } else {
+      state.screen = 'dashboard';
+    }
+    render();
+  };
+}
+
+function renderInvestorSummaryRow(key, text, round){
+  var inv = INVESTORS[key];
+  var v = AI_HIST[key][round+1];
+  var pct = ((v - START_CASH)/START_CASH)*100;
+  var pctCls = pct >= 0 ? 'pos' : 'neg';
+  return '<div class="m2-sum-inv">' +
+    '<div class="m2-sum-inv-emoji">' + inv.emoji + '</div>' +
+    '<div class="m2-sum-inv-body"><b>' + inv.name + '</b> \u2014 ' + text + '</div>' +
+    '<div class="m2-sum-inv-pct ' + pctCls + '">' + fmtPct(pct) + '</div>' +
+  '</div>';
+}
+
+// FINAL ──────────────────────────────────────────────────
+function renderFinal(){
+  var youVal = state.history[state.history.length - 1];
+  var results = [
+    {key:'you',      name:'You',              desc:'Your decisions',                    val:youVal,           emoji:'\uD83D\uDC64'},
+    {key:'reactive', name:'Reactive Investor',desc:'Chased gains. Panicked on falls.',   val:AI_HIST.reactive[6], emoji:'\uD83D\uDE1F'},
+    {key:'smart',    name:'Stock Picker',     desc:'Backed 2 large caps. Held through.', val:AI_HIST.smart[6],    emoji:'\uD83E\uDDE0'},
+    {key:'safe',     name:'Safe Investor',    desc:'Bought the whole basket. Did nothing.', val:AI_HIST.safe[6], emoji:'\uD83D\uDE0C'}
+  ];
+  results.sort(function(a,b){return b.val - a.val;});
+  var winner = results[0];
+
+  // Pick insight based on winner
+  var bigInsight;
+  if (winner.key === 'safe' || winner.key === 'smart'){
+    bigInsight = {
+      title:'The investor who stayed calm did the best.',
+      body:'No panic. No chasing. Just showed up and stayed. That\u2019s the whole game.'
+    };
+  } else if (winner.key === 'you'){
+    bigInsight = {
+      title:'You beat all three AI investors. Nicely played.',
+      body:'Now try again \u2014 see if it was skill, or if the market just went your way.'
+    };
+  } else {
+    bigInsight = {
+      title:'The investor who stayed calm did the best.',
+      body:'Reacting to every headline usually costs more than it earns. Time and patience are the real edge.'
+    };
+  }
+
+  var rowsHtml = results.map(function(it, i){
+    var pct = ((it.val - START_CASH)/START_CASH)*100;
+    var pctCls = pct >= 0 ? 'pos' : 'neg';
+    var cls = '';
+    if (i === 0) cls = 'winner';
+    if (it.key === 'you') cls += ' you';
+    var rank = ['\uD83E\uDD47','\uD83E\uDD48','\uD83E\uDD49',''][i];
+    return '<div class="m2-final-row ' + cls + '">' +
+      '<div class="m2-final-emoji">' + it.emoji + '</div>' +
+      '<div class="m2-final-body">' +
+        '<div class="m2-final-name">' + (rank?rank+' ':'') + it.name + '</div>' +
+        '<div class="m2-final-desc">' + it.desc + '</div>' +
+      '</div>' +
+      '<div class="m2-final-val">' +
+        '<div class="m2-final-money">' + fmtINR(it.val) + '</div>' +
+        '<div class="m2-final-pct ' + pctCls + '">' + fmtPct(pct) + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  var html =
+    '<div class="m2-screen active">' +
+      '<div class="m2-final-hero">' +
+        '<div class="emoji">\uD83C\uDFC1</div>' +
+        '<h1>6 rounds done</h1>' +
+        '<p>Here\u2019s how everyone finished after starting with \u20B910,00,000.</p>' +
+      '</div>' +
+
+      rowsHtml +
+
+      '<div class="m2-insight">' +
+        '<div class="m2-insight-tag">\uD83D\uDCA1 The big idea</div>' +
+        '<div class="m2-insight-title">' + bigInsight.title + '</div>' +
+        '<div class="m2-insight-body">' + bigInsight.body + '</div>' +
+      '</div>' +
+
+      '<div class="m2-teach">' +
+        '<div class="m2-teach-title">\uD83D\uDCDA In the stock market\u2026</div>' +
+        '<div class="m2-teach-li"><span class="bullet">\u25CF</span>Prices go up and down \u2014 always have, always will.</div>' +
+        '<div class="m2-teach-li"><span class="bullet">\u25CF</span>People react emotionally. Most of the time, that\u2019s what hurts them.</div>' +
+        '<div class="m2-teach-li"><span class="bullet">\u25CF</span>Time and patience matter more than being \u201Csmart.\u201D</div>' +
+        '<div class="m2-teach-li"><span class="bullet">\u25CF</span>A simple, diversified approach usually beats clever trading.</div>' +
+      '</div>' +
+
+      '<button class="m2-btn big gold" id="m2-replay">\uD83D\uDD04 Try Again</button>' +
+    '</div>';
+
+  root.innerHTML = html;
+  document.getElementById('m2-replay').onclick = function(){
+    resetState();
+    render();
+  };
+}
+
+// KICK OFF ──────────────────────────────────────────────
+if (document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', render);
+} else {
+  render();
+}
+window.addEventListener('resize', postHeight);
+
+})();
+</script>
+</body>
+</html>

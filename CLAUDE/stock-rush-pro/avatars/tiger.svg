@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="bg-t" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1a0800"/>
+      <stop offset="100%" stop-color="#0a0400"/>
+    </radialGradient>
+    <filter id="glow-t" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="eye-t" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="clip-t"><circle cx="100" cy="100" r="97"/></clipPath>
+  </defs>
+
+  <circle cx="100" cy="100" r="100" fill="#0a0400"/>
+  <circle cx="100" cy="100" r="97" fill="url(#bg-t)"/>
+
+  <!-- Body/neck -->
+  <ellipse cx="100" cy="148" rx="45" ry="32" fill="#9a3412"/>
+  <ellipse cx="100" cy="145" rx="40" ry="28" fill="#c2410c"/>
+
+  <!-- Chest white -->
+  <ellipse cx="100" cy="148" rx="20" ry="18" fill="#fff7ed" opacity="0.3"/>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="100" rx="48" ry="52" fill="#9a3412"/>
+  <ellipse cx="100" cy="98" rx="44" ry="48" fill="#c2410c"/>
+  <ellipse cx="100" cy="96" rx="40" ry="44" fill="#ea580c"/>
+
+  <!-- Ears -->
+  <polygon points="68,62 56,36 80,58" fill="#c2410c"/>
+  <polygon points="132,62 144,36 120,58" fill="#c2410c"/>
+  <polygon points="70,62 61,40 78,58" fill="#7c2d12" opacity="0.5"/>
+  <polygon points="130,62 139,40 122,58" fill="#7c2d12" opacity="0.5"/>
+  <!-- Ear inner -->
+  <polygon points="70,63 62,43 76,60" fill="#dc2626" opacity="0.5"/>
+  <polygon points="130,63 138,43 124,60" fill="#dc2626" opacity="0.5"/>
+
+  <!-- Tiger stripes -->
+  <g fill="#431407" opacity="0.85">
+    <!-- Forehead stripes -->
+    <path d="M100 56 Q96 64 92 60 Q96 52 100 56Z"/>
+    <path d="M100 56 Q104 64 108 60 Q104 52 100 56Z"/>
+    <path d="M86 60 Q82 70 79 66 Q82 57 86 60Z"/>
+    <path d="M114 60 Q118 70 121 66 Q118 57 114 60Z"/>
+    <!-- Cheek stripes -->
+    <path d="M68 88 Q62 96 60 104 Q64 98 70 92Z"/>
+    <path d="M72 82 Q66 90 65 98 Q69 90 74 84Z"/>
+    <path d="M132 88 Q138 96 140 104 Q136 98 130 92Z"/>
+    <path d="M128 82 Q134 90 135 98 Q131 90 126 84Z"/>
+  </g>
+
+  <!-- Brow armour plates -->
+  <path d="M72 84 Q82 78 92 83" fill="none" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M128 84 Q118 78 108 83" fill="none" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+  <rect x="62" y="80" width="20" height="8" rx="4" fill="#7c2d12" opacity="0.8"/>
+  <rect x="118" y="80" width="20" height="8" rx="4" fill="#7c2d12" opacity="0.8"/>
+  <rect x="64" y="82" width="16" height="4" rx="2" fill="#f97316" opacity="0.6"/>
+  <rect x="120" y="82" width="16" height="4" rx="2" fill="#f97316" opacity="0.6"/>
+
+  <!-- Eyes -->
+  <ellipse cx="82" cy="96" rx="12" ry="11" fill="#1c0a00"/>
+  <ellipse cx="118" cy="96" rx="12" ry="11" fill="#1c0a00"/>
+  <ellipse cx="82" cy="96" rx="9" ry="8.5" fill="#f97316" filter="url(#eye-t)"/>
+  <ellipse cx="118" cy="96" rx="9" ry="8.5" fill="#f97316" filter="url(#eye-t)"/>
+  <ellipse cx="82" cy="96" rx="5" ry="7.5" fill="#1c0a00"/>
+  <ellipse cx="118" cy="96" rx="5" ry="7.5" fill="#1c0a00"/>
+  <circle cx="80" cy="94" r="1.5" fill="white" opacity="0.9"/>
+  <circle cx="116" cy="94" r="1.5" fill="white" opacity="0.9"/>
+
+  <!-- Nose -->
+  <ellipse cx="100" cy="112" rx="6" ry="4.5" fill="#7c2d12"/>
+  <ellipse cx="100" cy="111" rx="4.5" ry="3" fill="#dc2626"/>
+
+  <!-- Muzzle area -->
+  <ellipse cx="88" cy="118" rx="10" ry="8" fill="#fed7aa" opacity="0.3"/>
+  <ellipse cx="112" cy="118" rx="10" ry="8" fill="#fed7aa" opacity="0.3"/>
+  <path d="M100 115 L100 122" stroke="#7c2d12" stroke-width="1.5"/>
+  <path d="M100 122 Q91 128 87 125" stroke="#7c2d12" stroke-width="1.5" fill="none"/>
+  <path d="M100 122 Q109 128 113 125" stroke="#7c2d12" stroke-width="1.5" fill="none"/>
+
+  <!-- Whisker dots -->
+  <g fill="#f97316" opacity="0.6">
+    <circle cx="82" cy="119" r="1.5"/><circle cx="76" cy="121" r="1.5"/><circle cx="70" cy="119" r="1.5"/>
+    <circle cx="118" cy="119" r="1.5"/><circle cx="124" cy="121" r="1.5"/><circle cx="130" cy="119" r="1.5"/>
+  </g>
+
+  <!-- Chin stripes -->
+  <path d="M92 126 Q96 134 98 132" stroke="#431407" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M108 126 Q104 134 102 132" stroke="#431407" stroke-width="2" fill="none" opacity="0.7"/>
+
+  <!-- Crown ring -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#c2410c" stroke-width="3" filter="url(#glow-t)" opacity="0.95"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#f97316" stroke-width="1" opacity="0.4"/>
+
+  <!-- Corner ticks -->
+  <g stroke="#c2410c" stroke-width="1.5" opacity="0.6">
+    <line x1="20" y1="55" x2="28" y2="55"/><line x1="20" y1="55" x2="20" y2="63"/>
+    <line x1="180" y1="55" x2="172" y2="55"/><line x1="180" y1="55" x2="180" y2="63"/>
+    <line x1="20" y1="145" x2="28" y2="145"/><line x1="20" y1="145" x2="20" y2="137"/>
+    <line x1="180" y1="145" x2="172" y2="145"/><line x1="180" y1="145" x2="180" y2="137"/>
+  </g>
+</svg>

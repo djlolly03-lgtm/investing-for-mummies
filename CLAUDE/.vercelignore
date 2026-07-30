@@ -1,0 +1,6 @@
+*.pdf
+*.mp4
+*.mov
+*.avi
+api/
+requirements.txt

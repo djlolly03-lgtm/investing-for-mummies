@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Module 6 — Measuring Your Returns</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --g1:#5a1a0a;--g2:#8a2a0a;--g3:#df6a3a;--g4:#f0a070;
+  --navy:#1a3a5c;--ink:#1a3a5c;--teal:#2a9d8f;--cream:#faf7f4;--white:#fff;
+  --mint:#fad8c8;--mint-lt:#fdf0e8;--muted:#7a5a4a;
+  --warn:#f59e0b;--danger:#e74c3c;--gold:#c9a84c;
+  --m1:#5a1a0a;--m2:#8a2a0a;--m3:#df6a3a;
+}
+html,body{font-size:15px;height:auto;overflow-y:visible;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);padding-bottom:48px;}
+.hidden{display:none!important;}
+
+.hdr{background:linear-gradient(135deg,var(--g1),var(--g2));padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.2);}
+.hdr-logo{font-family:'Lora',serif;color:#fff;font-size:0.88rem;font-weight:700;line-height:1.2;}
+.hdr-logo span{display:block;font-size:0.6rem;color:rgba(255,255,255,0.65);font-family:'Nunito',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+.hdr-right{display:flex;align-items:center;gap:10px;}
+.coins-badge{background:rgba(255,255,255,0.15);border-radius:20px;padding:4px 10px;font-size:0.72rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:4px;}
+.back-btn{background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.3);border-radius:10px;padding:5px 12px;color:#fff;font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:800;cursor:pointer;transition:all .2s;}
+.back-btn:hover{background:rgba(255,255,255,0.2);}
+
+#s-map{padding:16px;}
+.map-hero{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:16px;padding:18px 20px 18px 160px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden;}
+.map-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,0.08) 0%,transparent 60%);pointer-events:none;}
+.map-tag{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.2);border-radius:10px;padding:2px 10px;display:inline-block;margin-bottom:8px;}
+.map-hero h1{font-family:'Lora',serif;font-size:1.35rem;line-height:1.25;margin-bottom:6px;}
+.map-hero p{font-size:0.8rem;color:rgba(255,255,255,0.85);line-height:1.6;max-width:340px;}
+.hero-logo-wide{position:absolute;top:50%;left:12px;transform:translateY(-50%);height:62px;width:auto;max-width:140px;object-fit:contain;border-radius:8px;z-index:2;}
+@media(max-width:540px){.hero-logo-wide{height:44px;max-width:96px;left:8px;}.map-hero{padding-left:112px!important;}}
+.map-stats{display:flex;gap:12px;margin-top:14px;}
+.map-stat{background:rgba(255,255,255,0.12);border-radius:10px;padding:7px 12px;text-align:center;}
+.map-stat-val{font-size:1rem;font-weight:900;color:#fff;}
+.map-stat-lbl{font-size:0.55rem;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.5px;}
+.overall-prog{background:rgba(255,255,255,0.15);border-radius:6px;height:6px;margin-top:14px;overflow:hidden;}
+.overall-prog-fill{height:100%;background:linear-gradient(90deg,var(--g4),var(--g3));border-radius:6px;transition:width .6s ease;}
+.sec-title{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin:18px 0 10px;display:flex;align-items:center;gap:6px;}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--mint);margin-left:4px;}
+
+.lesson-card{border-radius:14px;padding:16px;margin-bottom:10px;cursor:pointer;border:2px solid transparent;transition:transform .15s,box-shadow .15s,border-color .2s;position:relative;overflow:hidden;display:flex;align-items:center;gap:12px;}
+.lesson-card.unlocked{background:var(--white);box-shadow:0 2px 12px rgba(26,58,92,0.06);}
+.lesson-card.unlocked:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,58,92,0.12);}
+.lesson-card.locked{background:#f0f0f0;cursor:not-allowed;}
+.lesson-card.done{border-color:var(--g3)!important;}
+.lc-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+.lc-body{flex:1;}
+.lc-num{font-size:0.55rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.lc-name{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.lc-meta{font-size:0.65rem;color:var(--muted);}
+.lc-status{font-size:1rem;flex-shrink:0;}
+.lc-prog{height:3px;background:#e8f0f8;border-radius:2px;margin-top:8px;overflow:hidden;}
+.lc-prog-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--g3),var(--g4));}
+.lc-tag{position:absolute;top:8px;right:8px;font-size:0.52rem;font-weight:900;text-transform:uppercase;letter-spacing:0.8px;padding:2px 7px;border-radius:8px;}
+
+#s-lesson{min-height:100vh;}
+.lesson-hdr{padding:12px 16px 10px;background:linear-gradient(135deg,var(--g1),var(--g2));}
+.lesson-title{font-family:'Lora',serif;color:#fff;font-size:0.95rem;font-weight:700;margin-bottom:10px;}
+.step-dots{display:flex;gap:4px;}
+.step-dot{flex:1;height:4px;border-radius:3px;background:rgba(255,255,255,0.2);transition:background .3s;}
+.step-dot.done{background:#fff;}
+.step-dot.active{background:rgba(255,255,255,0.7);}
+
+.slide{padding:16px;animation:slideIn .3s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.slide-tag{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--g3);margin-bottom:8px;}
+.slide-icon{font-size:2.4rem;margin-bottom:10px;display:block;line-height:1;}
+.slide-title{font-family:'Lora',serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:10px;line-height:1.35;}
+.slide-body{font-size:0.82rem;line-height:1.8;color:var(--ink);}
+.slide-body p{margin-bottom:10px;}
+.insight{background:linear-gradient(135deg,#fdf0e8,#fad8c8);border-left:4px solid var(--g3);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#3a1a0a;}
+.insight strong{color:var(--g1);}
+.warn-box{background:linear-gradient(135deg,#fff8e6,#ffefc0);border-left:4px solid var(--warn);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#7a4a00;}
+.danger-box{background:linear-gradient(135deg,#fce8e8,#f8d0d0);border-left:4px solid var(--danger);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:0.78rem;line-height:1.7;color:#7a1a1a;}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;}
+.stat-box{background:#f4f0ec;border-radius:12px;padding:12px;text-align:center;}
+.stat-box.g{background:linear-gradient(135deg,#fdf0e8,#fad8c8);}
+.stat-val{font-family:'Lora',serif;font-size:1.3rem;font-weight:700;color:var(--navy);}
+.stat-lbl{font-size:0.6rem;color:var(--muted);margin-top:3px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+
+.btn-next{display:block;width:100%;padding:13px;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:800;cursor:pointer;margin-top:18px;transition:all .2s;box-shadow:0 4px 16px rgba(26,58,92,0.2);}
+.btn-next:hover{opacity:0.9;transform:translateY(-1px);}
+.btn-next:disabled{opacity:0.3;cursor:not-allowed;transform:none;}
+
+/* RETURN COMPARISON */
+.ret-example{background:var(--white);border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 2px 8px rgba(26,58,92,0.06);}
+.ret-ex-title{font-family:'Lora',serif;font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:10px;}
+.ret-ex-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f4f0ec;font-size:0.78rem;}
+.ret-ex-row:last-child{border-bottom:none;}
+.ret-ex-label{color:var(--muted);font-weight:700;}
+.ret-ex-val{font-weight:800;color:var(--navy);}
+.ret-ex-val.highlight{color:var(--g3);font-family:'Lora',serif;font-size:0.95rem;}
+.ret-badge{display:inline-block;padding:3px 10px;border-radius:10px;font-size:0.65rem;font-weight:900;text-transform:uppercase;}
+.ret-badge.good{background:#d4eddf;color:#1a4a2a;}
+.ret-badge.ok{background:#fff8e6;color:#7a4a00;}
+.ret-badge.bad{background:#fce8e8;color:#7a1a1a;}
+
+/* CAGR CALCULATOR */
+.cagr-calc{background:var(--white);border-radius:16px;padding:16px;box-shadow:0 2px 12px rgba(26,58,92,0.07);margin-bottom:14px;}
+.cagr-inp-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;}
+.cagr-inp-wrap{display:flex;flex-direction:column;gap:4px;}
+.cagr-inp-label{font-size:0.6rem;font-weight:800;color:var(--muted);text-transform:uppercase;}
+.cagr-inp{border:2px solid var(--g3);border-radius:10px;padding:8px 10px;font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:700;color:var(--navy);background:var(--mint-lt);outline:none;width:100%;}
+.cagr-result{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:12px;padding:14px;text-align:center;color:#fff;}
+.cagr-pct{font-family:'Lora',serif;font-size:2.4rem;font-weight:700;line-height:1;}
+.cagr-lbl{font-size:0.65rem;color:rgba(255,255,255,0.7);text-transform:uppercase;font-weight:700;margin-top:4px;}
+.cagr-sub{font-size:0.72rem;color:rgba(255,255,255,0.8);margin-top:8px;}
+.cagr-compare{display:flex;flex-direction:column;gap:8px;margin-top:14px;}
+.cagr-comp-row{display:flex;align-items:center;gap:10px;background:#f4f0ec;border-radius:12px;padding:10px 12px;}
+.cagr-comp-label{font-size:0.7rem;font-weight:800;color:var(--navy);width:130px;flex-shrink:0;}
+.cagr-comp-bar-wrap{flex:1;height:10px;border-radius:6px;background:#e8d8c8;overflow:hidden;}
+.cagr-comp-bar{height:100%;border-radius:6px;transition:width .6s ease;}
+.cagr-comp-val{font-family:'Lora',serif;font-size:0.85rem;font-weight:700;color:var(--navy);min-width:44px;text-align:right;}
+
+/* XIRR EXPLANATION */
+.sip-journey{display:flex;flex-direction:column;gap:0;margin:12px 0;}
+.sip-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid #f4f0ec;}
+.sip-row:last-child{border-bottom:none;font-weight:800;}
+.sip-month{font-size:0.68rem;color:var(--muted);width:70px;flex-shrink:0;}
+.sip-invested{font-size:0.75rem;font-weight:700;color:#c0392b;width:70px;}
+.sip-arrow{font-size:0.7rem;color:var(--muted);}
+.sip-current{font-size:0.75rem;font-weight:700;color:#22c55e;flex:1;}
+.xirr-mcq{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+.xirr-opt{background:var(--white);border-radius:12px;padding:10px 14px;cursor:pointer;font-size:0.78rem;font-weight:700;color:var(--navy);border:2px solid transparent;transition:all .2s;box-shadow:0 2px 6px rgba(26,58,92,0.06);}
+.xirr-opt:hover{border-color:var(--g3);}
+.xirr-opt.correct{border-color:var(--g3);background:linear-gradient(135deg,#fdf0e8,#fad8c8);}
+.xirr-opt.wrong{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+
+/* ROLLING RETURNS */
+.fund-comparison{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+.fund-card{background:var(--white);border-radius:14px;padding:12px;box-shadow:0 2px 8px rgba(26,58,92,0.06);text-align:center;}
+.fund-card-name{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:10px;}
+.fund-range-bar{height:28px;border-radius:8px;margin:6px 0;position:relative;display:flex;align-items:center;justify-content:center;}
+.fund-range-text{font-size:0.65rem;font-weight:900;color:#fff;position:relative;z-index:1;}
+.fund-avg{font-size:0.72rem;font-weight:800;margin-top:4px;}
+.rr-quiz-opts{display:flex;flex-direction:column;gap:8px;margin-top:14px;}
+.rr-opt{background:var(--white);border-radius:12px;padding:10px 14px;cursor:pointer;font-size:0.78rem;font-weight:700;color:var(--navy);border:2px solid transparent;transition:all .2s;box-shadow:0 2px 6px rgba(26,58,92,0.06);}
+.rr-opt:hover{border-color:var(--g3);}
+.rr-opt.correct{border-color:var(--g3);background:linear-gradient(135deg,#fdf0e8,#fad8c8);}
+.rr-opt.wrong{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+
+/* METRIC PICKER */
+.scenario-chip{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:12px;padding:12px 14px;margin-bottom:10px;color:#fff;}
+.sc-chip-num{font-size:0.58rem;font-weight:900;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px;}
+.sc-chip-text{font-size:0.88rem;font-weight:700;line-height:1.4;}
+.metric-opts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.metric-opt{flex:1;min-width:80px;padding:10px 6px;border-radius:10px;border:none;font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:900;cursor:pointer;text-align:center;transition:all .2s;}
+.metric-opt.cagr{background:#fdf0e8;color:#5a1a0a;}
+.metric-opt.xirr{background:#e8eff8;color:#1a2a6a;}
+.metric-opt.rolling{background:#f0eafc;color:#4a1a6a;}
+.metric-opt.absolute{background:#f0f4ec;color:#1a4a1a;}
+.metric-opt.correct{border:2px solid #22c55e;outline:2px solid #22c55e;}
+.metric-opt.wrong{border:2px solid var(--danger);opacity:0.6;}
+
+/* MODAL */
+.myth-modal-overlay{position:fixed;inset:0;height:100vh;background:rgba(10,30,50,0.65);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto;animation:fadeIn .2s ease;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.myth-modal{background:#fff;border-radius:16px;max-width:400px;width:100%;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);overflow:hidden;animation:popIn .25s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes popIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
+.myth-modal-hdr{padding:20px 22px 14px;text-align:center;}
+.myth-modal-hdr.correct{background:linear-gradient(135deg,#fdf0e8,#fad8c8);}
+.myth-modal-hdr.wrong{background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+.myth-modal-emoji{font-size:2.8rem;line-height:1;margin-bottom:6px;}
+.myth-modal-verdict{font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900;margin-bottom:2px;}
+.myth-modal-verdict.correct{color:#5a1a0a;}
+.myth-modal-verdict.wrong{color:#b91c1c;}
+.myth-modal-body{padding:16px 22px 20px;}
+.myth-modal-label{font-family:'Nunito',sans-serif;font-size:0.62rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px;}
+.myth-modal-explain{font-family:'Nunito',sans-serif;font-size:0.88rem;line-height:1.7;color:var(--ink);font-weight:600;}
+.myth-modal-btn{display:block;width:100%;margin-top:16px;padding:13px;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:900;cursor:pointer;}
+
+.sc-header{padding:14px 16px 10px;background:linear-gradient(135deg,var(--g1),var(--g2));}
+.sc-round{font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:4px;}
+.sc-name{font-family:'Lora',serif;color:#fff;font-size:0.95rem;font-weight:700;}
+.sc-body{padding:14px 16px;}
+.sc-story{font-size:0.8rem;line-height:1.7;color:var(--navy);margin-bottom:14px;}
+.sc-q{font-weight:800;font-size:0.8rem;color:var(--navy);margin-bottom:10px;}
+.sc-choices{display:flex;flex-direction:column;gap:8px;}
+.sc-choice{background:var(--mint-lt);border-radius:12px;padding:10px 12px;cursor:pointer;border:2px solid transparent;transition:all .2s;font-size:0.78rem;font-weight:700;color:var(--navy);display:flex;align-items:flex-start;gap:8px;}
+.sc-choice:hover{border-color:var(--g3);}
+.sc-choice.correct-choice{border-color:var(--g3);background:linear-gradient(135deg,#fdf0e8,#fad8c8);}
+.sc-choice.wrong-choice{border-color:var(--danger);background:linear-gradient(135deg,#fce8e8,#f8d0d0);}
+.sc-choice-letter{font-size:0.7rem;font-weight:900;width:20px;height:20px;border-radius:6px;background:rgba(26,58,92,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.sc-consequence{border-radius:12px;padding:12px;margin-top:10px;font-size:0.76rem;line-height:1.6;display:none;}
+.sc-consequence.good{background:linear-gradient(135deg,#fdf0e8,#fad8c8);border-left:4px solid var(--g3);color:#3a1a0a;}
+.sc-consequence.bad{background:linear-gradient(135deg,#fce8e8,#f8d0d0);border-left:4px solid var(--danger);color:#7a1a1a;}
+.sc-consequence.ok{background:linear-gradient(135deg,#fff8e6,#fdefc8);border-left:4px solid var(--warn);color:#7a4a00;}
+.scenario-card-outer{background:var(--white);border-radius:18px;box-shadow:0 4px 20px rgba(26,58,92,0.1);overflow:hidden;margin-bottom:14px;}
+
+.completion-card{background:linear-gradient(135deg,var(--g1),var(--g2));border-radius:20px;padding:24px 20px;text-align:center;color:#fff;margin:16px;}
+.comp-emoji{font-size:3rem;margin-bottom:10px;}
+.comp-title{font-family:'Lora',serif;font-size:1.25rem;font-weight:700;margin-bottom:6px;}
+.comp-sub{font-size:0.78rem;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:16px;}
+.comp-stars{font-size:1.4rem;letter-spacing:4px;margin-bottom:14px;}
+.coins-earned{background:rgba(255,255,255,0.15);border-radius:12px;padding:10px 20px;display:inline-block;font-size:0.85rem;font-weight:800;margin-bottom:14px;}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img src="/IFM round logo for watermark.png" style="height:44px;width:auto;flex-shrink:0;" alt="IFM">
+    <div class="hdr-logo">Investing for Mummies<span>Module 6 — Measuring Returns</span></div>
+  </div>
+  <div class="hdr-right">
+    <div class="coins-badge">🪙 <span id="coinDisplay">0</span></div>
+    <button class="back-btn hidden" id="backBtn" onclick="showMap()">← Map</button>
+  </div>
+</div>
+
+<div id="s-map">
+  <div style="padding:16px;">
+    <div class="map-hero">
+      <img src="/IFM logo white background.png" class="hero-logo-wide" alt="IFM">
+      <div class="map-tag">Section 6 · Measuring Returns</div>
+      <h1>Measuring Your Returns 📊</h1>
+      <p>CAGR, XIRR, and what actually matters. Stop being misled by misleading return figures — learn to read the real numbers.</p>
+      <div class="map-stats">
+        <div class="map-stat"><div class="map-stat-val" id="mapDone">0</div><div class="map-stat-lbl">Done</div></div>
+        <div class="map-stat"><div class="map-stat-val">5</div><div class="map-stat-lbl">Lessons</div></div>
+        <div class="map-stat"><div class="map-stat-val">~40</div><div class="map-stat-lbl">Minutes</div></div>
+      </div>
+      <div class="overall-prog"><div class="overall-prog-fill" id="overallFill" style="width:0%"></div></div>
+    </div>
+
+    <div class="sec-title">📚 Lessons</div>
+
+    <div class="lesson-card unlocked" id="lcard-0" onclick="startLesson(0)">
+      <div class="lc-icon" style="background:#fdf0e8;">📊</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#5a1a0a;">Lesson 1</div>
+        <div class="lc-name">Absolute vs Annualised Returns</div>
+        <div class="lc-meta">3 examples · Compare return types</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-0" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-0">▶</div>
+      <div class="lc-tag" style="background:#fdf0e8;color:#5a1a0a;">Calc</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-1" onclick="startLesson(1)">
+      <div class="lc-icon" style="background:#fdf0e8;">📈</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#5a1a0a;">Lesson 2</div>
+        <div class="lc-name">CAGR: How Money Really Multiplies</div>
+        <div class="lc-meta">CAGR calculator · Compare 3 investments</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-1" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-1">🔒</div>
+      <div class="lc-tag" style="background:#fdf0e8;color:#5a1a0a;">Calc</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-2" onclick="startLesson(2)">
+      <div class="lc-icon" style="background:#fdf0e8;">🔀</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#5a1a0a;">Lesson 3</div>
+        <div class="lc-name">XIRR: Returns with Irregular Cash Flows</div>
+        <div class="lc-meta">SIP journey · XIRR concept quiz</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-2" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-2">🔒</div>
+      <div class="lc-tag" style="background:#fdf0e8;color:#5a1a0a;">Quiz</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-3" onclick="startLesson(3)">
+      <div class="lc-icon" style="background:#fdf0e8;">🔄</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#5a1a0a;">Lesson 4</div>
+        <div class="lc-name">Rolling Returns: The Reliability Scorecard</div>
+        <div class="lc-meta">2 funds · Consistency analysis</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-3" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-3">🔒</div>
+      <div class="lc-tag" style="background:#fdf0e8;color:#5a1a0a;">Analyse</div>
+    </div>
+
+    <div class="lesson-card locked" id="lcard-4" onclick="startLesson(4)">
+      <div class="lc-icon" style="background:#fdf0e8;">🏆</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:#5a1a0a;">Lesson 5</div>
+        <div class="lc-name">The Ultimate Returns Comparison</div>
+        <div class="lc-meta">5 scenarios · Pick the right metric</div>
+        <div class="lc-prog"><div class="lc-prog-fill" id="lprog-4" style="width:0%"></div></div>
+      </div>
+      <div class="lc-status" id="lstat-4">🔒</div>
+      <div class="lc-tag" style="background:#fdf0e8;color:#5a1a0a;">Pick</div>
+    </div>
+
+    <div class="sec-title" style="margin-top:22px;">🎯 Boss Challenge</div>
+
+    <div class="lesson-card locked" id="lcard-boss" onclick="startLesson('boss')">
+      <div class="lc-icon" style="background:linear-gradient(135deg,var(--g1),var(--g2));">⚔️</div>
+      <div class="lc-body">
+        <div class="lc-num" style="color:var(--g1);">Boss Level</div>
+        <div class="lc-name" style="color:var(--g1);">Radha's Return Report</div>
+        <div class="lc-meta">4 investments · Rank best to worst</div>
+      </div>
+      <div class="lc-status" id="lstat-boss">🔒</div>
+      <div class="lc-tag" style="background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;">Boss</div>
+    </div>
+  </div>
+</div>
+
+<div id="s-lesson" class="hidden">
+  <div class="lesson-hdr">
+    <div class="lesson-title" id="lessonTitle"></div>
+    <div class="step-dots" id="stepDots"></div>
+  </div>
+  <div id="lessonContent"></div>
+</div>
+
+<script>
+var state={coins:0,completed:{},progress:{}};
+(function(){try{var s=JSON.parse(localStorage.getItem('ifm_m6')||'{}');if(s.coins)state.coins=s.coins;if(s.completed)state.completed=s.completed;if(s.progress)state.progress=s.progress;}catch(e){}})();
+function save(){try{localStorage.setItem('ifm_m6',JSON.stringify(state));}catch(e){}}
+function addCoins(n){state.coins+=n;save();document.getElementById('coinDisplay').textContent=state.coins;}
+
+var LESSONS=[
+  {id:0,name:'📊 Absolute vs Annualised Returns'},{id:1,name:'📈 CAGR: How Money Really Multiplies'},
+  {id:2,name:'🔀 XIRR: Returns with Irregular Cash Flows'},{id:3,name:'🔄 Rolling Returns: The Reliability Scorecard'},
+  {id:4,name:'🏆 The Ultimate Returns Comparison'},{id:'boss',name:"⚔️ Radha's Return Report"}
+];
+
+function showMap(){
+  document.getElementById('s-map').classList.remove('hidden');
+  document.getElementById('s-lesson').classList.add('hidden');
+  document.getElementById('backBtn').classList.add('hidden');
+  refreshMap();
+}
+function refreshMap(){
+  document.getElementById('coinDisplay').textContent=state.coins;
+  var done=Object.keys(state.completed).filter(function(k){return k!=='boss';}).length;
+  document.getElementById('mapDone').textContent=done;
+  document.getElementById('overallFill').style.width=(done/5*100)+'%';
+  LESSONS.forEach(function(l){
+    var id=l.id;
+    var card=document.getElementById('lcard-'+id);
+    var stat=document.getElementById('lstat-'+id);
+    var prog=document.getElementById('lprog-'+id);
+    if(!card)return;
+    var isUnlocked=isLessonUnlocked(id);
+    var isDone=!!state.completed[id];
+    card.className='lesson-card '+(isUnlocked?'unlocked':'locked')+(isDone?' done':'');
+    if(stat)stat.textContent=isDone?'✓':isUnlocked?'▶':'🔒';
+    if(prog)prog.style.width=isDone?'100%':'0%';
+  });
+}
+function isLessonUnlocked(id){
+  if(id===0)return true;
+  if(id==='boss')return Object.keys(state.completed).filter(function(k){return k!=='boss';}).length>=5;
+  return !!state.completed[id-1];
+}
+
+var currentLesson=null,currentStep=0,lessonSteps=[];
+function startLesson(id){
+  if(!isLessonUnlocked(id))return;
+  currentLesson=id;currentStep=0;
+  lessonSteps=buildSteps(id);
+  document.getElementById('s-map').classList.add('hidden');
+  document.getElementById('s-lesson').classList.remove('hidden');
+  document.getElementById('backBtn').classList.remove('hidden');
+  var l=LESSONS.find(function(x){return x.id===id;});
+  document.getElementById('lessonTitle').textContent=l?l.name:'Lesson';
+  renderStepDots();renderStep();
+}
+function nextStep(){
+  currentStep++;
+  if(currentStep>=lessonSteps.length){completeLesson();}
+  else{renderStepDots();renderStep();}
+}
+function renderStepDots(){
+  var dots=document.getElementById('stepDots');dots.innerHTML='';
+  lessonSteps.forEach(function(_,i){
+    var d=document.createElement('div');
+    d.className='step-dot'+(i<currentStep?' done':i===currentStep?' active':'');
+    dots.appendChild(d);
+  });
+}
+function renderStep(){
+  var step=lessonSteps[currentStep];
+  document.getElementById('lessonContent').innerHTML='';
+  step.render(document.getElementById('lessonContent'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function completeLesson(){
+  state.completed[currentLesson]=true;save();
+  var coins=currentLesson==='boss'?150:50;addCoins(coins);
+  var div=document.createElement('div');
+  div.innerHTML='<div class="completion-card"><div class="comp-emoji">'+(currentLesson==='boss'?'🏆':'⭐')+'</div><div class="comp-title">'+(currentLesson==='boss'?'Module 6 Complete!':'Lesson Complete!')+'</div><div class="comp-stars">'+(currentLesson==='boss'?'⭐⭐⭐':'⭐⭐')+'</div><div class="comp-sub">'+(currentLesson==='boss'?'You\'ve mastered return metrics! CAGR, XIRR, rolling returns — you know it all.':'Great work! Next lesson unlocked.')+'</div><div class="coins-earned">🪙 +'+coins+' coins earned</div><button class="btn-next" onclick="showMap()" style="max-width:240px;margin:0 auto;">Back to Map</button></div>';
+  document.getElementById('lessonContent').innerHTML='';
+  document.getElementById('lessonContent').appendChild(div);
+  renderStepDots();
+}
+
+function buildSteps(id){
+  if(id===0)return buildAbsoluteLesson();
+  if(id===1)return buildCAGRLesson();
+  if(id===2)return buildXIRRLesson();
+  if(id===3)return buildRollingLesson();
+  if(id===4)return buildMetricLesson();
+  if(id==='boss')return buildBossLesson();
+  return [];
+}
+
+// LESSON 0: ABSOLUTE vs ANNUALISED
+var RET_EXAMPLES=[
+  {name:'Investment A — Quick Win',invested:100000,current:150000,years:3,label:'FD-like return'},
+  {name:'Investment B — Long Hold',invested:100000,current:200000,years:8,label:'Equity fund'},
+  {name:'Investment C — Recent Crash',invested:100000,current:120000,years:1,label:'Short-term stock'},
+];
+
+function buildAbsoluteLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 1 · Return Types</div><span class="slide-icon">📊</span><div class="slide-title">Two numbers, two very different stories</div><div class="slide-body"><p><strong>Absolute Return:</strong> "How much did I gain in total?" Simple percentage gain from start to end.</p><p><strong>Annualised Return:</strong> "How much did I gain per year?" Also called CAGR — puts investments on a comparable scale regardless of time held.</p></div><div class="insight"><strong>The trap:</strong> "I made 80% return!" sounds amazing. But if it took 10 years, the annualised return is only ~6.1% — worse than an FD!<br><br><strong>Formula:</strong><br>Absolute = (Current – Invested) ÷ Invested × 100<br>Annualised = (Current ÷ Invested)^(1/years) – 1</div><button class="btn-next" onclick="nextStep()">See examples →</button></div>';
+    }},
+    {render:function(c){renderReturnExamples(c);}},
+  ];
+}
+
+function renderReturnExamples(container){
+  var idx=0;
+
+  function showEx(){
+    if(idx>=RET_EXAMPLES.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">Return Types · Done!</div><span class="slide-icon">🎉</span><div class="slide-title">Returns decoded!</div><div class="insight"><strong>Key takeaway:</strong> Always ask for ANNUALISED return (CAGR) when comparing investments. Two investments both showing "50% absolute return" can have dramatically different annualised returns if the holding periods differ.</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      return;
+    }
+    var ex=RET_EXAMPLES[idx];
+    var absRet=Math.round((ex.current-ex.invested)/ex.invested*1000)/10;
+    var annRet=Math.round((Math.pow(ex.current/ex.invested,1/ex.years)-1)*1000)/10;
+    var grade=annRet>=12?'good':annRet>=7?'ok':'bad';
+    var gradeText=annRet>=12?'Excellent':annRet>=7?'Decent':'Underwhelming';
+
+    container.innerHTML='<div class="slide"><div class="slide-tag">Return Types · Example '+(idx+1)+'/'+RET_EXAMPLES.length+'</div><div class="slide-title">Calculate both return types</div><div class="ret-example"><div class="ret-ex-title">'+ex.name+'<span class="ret-badge" style="margin-left:8px;background:#fdf0e8;color:#5a1a0a;">'+ex.label+'</span></div><div class="ret-ex-row"><span class="ret-ex-label">Amount Invested</span><span class="ret-ex-val">₹'+ex.invested.toLocaleString('en-IN')+'</span></div><div class="ret-ex-row"><span class="ret-ex-label">Current Value</span><span class="ret-ex-val">₹'+ex.current.toLocaleString('en-IN')+'</span></div><div class="ret-ex-row"><span class="ret-ex-label">Holding Period</span><span class="ret-ex-val">'+ex.years+' years</span></div><div class="ret-ex-row"><span class="ret-ex-label">Absolute Return</span><span class="ret-ex-val highlight">+'+absRet+'%</span></div><div class="ret-ex-row"><span class="ret-ex-label">Annualised (CAGR)</span><span class="ret-ex-val highlight">+'+annRet+'% per year <span class="ret-badge '+grade+'">'+gradeText+'</span></span></div></div><button class="btn-next" onclick="retNext()" style="margin-top:10px;">'+(idx<RET_EXAMPLES.length-1?'Next Example →':'See Summary →')+'</button></div>';
+    addCoins(8);
+    window.retNext=function(){idx++;showEx();};
+  }
+  showEx();
+}
+
+// LESSON 1: CAGR CALCULATOR
+function buildCAGRLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 2 · CAGR</div><span class="slide-icon">📈</span><div class="slide-title">CAGR: the honest return metric</div><div class="slide-body"><p>CAGR (Compound Annual Growth Rate) shows the <strong>smoothed annual return</strong> that would take your investment from start to end value.</p><p>It removes year-to-year volatility and shows a single consistent rate — perfect for comparing investments across different time periods.</p></div><div class="insight"><strong>Formula:</strong> CAGR = (Final Value ÷ Initial Value)^(1 ÷ Years) – 1<br><br><strong>Why it beats "average":</strong> If a fund gains 50% then loses 33%, simple average shows +8.5%. But your money is EXACTLY back to start. CAGR correctly shows 0%.</div><div class="warn-box"><strong>Limitation:</strong> CAGR assumes one lump-sum investment. For SIPs (monthly investments), CAGR is misleading — use XIRR instead (next lesson).</div><button class="btn-next" onclick="nextStep()">Calculate CAGR →</button></div>';
+    }},
+    {render:function(c){renderCAGRCalc(c);}},
+  ];
+}
+
+function renderCAGRCalc(container){
+  var init=100000,final_=200000,years=8;
+
+  var COMPARE=[
+    {label:'Nifty 50 (10yr)',init:100000,final_:348000,years:10},
+    {label:'Real Estate (10yr)',init:100000,final_:220000,years:10},
+    {label:'Gold (10yr)',init:100000,final_:260000,years:10},
+  ];
+
+  function calcCAGR(i,f,y){return Math.round((Math.pow(f/i,1/y)-1)*1000)/10;}
+
+  function fmt(){
+    var cagr=calcCAGR(init,final_,years);
+    var maxCAGR=Math.max.apply(null,COMPARE.map(function(c){return calcCAGR(c.init,c.final_,c.years);}));
+    var compareHtml=COMPARE.map(function(c){
+      var cv=calcCAGR(c.init,c.final_,c.years);
+      return '<div class="cagr-comp-row"><div class="cagr-comp-label">'+c.label+'</div><div class="cagr-comp-bar-wrap"><div class="cagr-comp-bar" style="width:'+(cv/maxCAGR*100)+'%;background:linear-gradient(90deg,var(--g1),var(--g3));"></div></div><div class="cagr-comp-val">'+cv+'%</div></div>';
+    }).join('');
+
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 2 · CAGR Calculator</div><div class="slide-title">What was your actual yearly return?</div><div class="cagr-calc"><div class="cagr-inp-row"><div class="cagr-inp-wrap"><div class="cagr-inp-label">Initial (₹)</div><input class="cagr-inp" type="number" id="ci" value="'+init+'"></div><div class="cagr-inp-wrap"><div class="cagr-inp-label">Final Value (₹)</div><input class="cagr-inp" type="number" id="cf" value="'+final_+'"></div><div class="cagr-inp-wrap"><div class="cagr-inp-label">Years</div><input class="cagr-inp" type="number" id="cy" value="'+years+'"></div></div><div class="cagr-result"><div class="cagr-pct">'+cagr+'%</div><div class="cagr-lbl">CAGR per year</div><div class="cagr-sub">₹'+init.toLocaleString('en-IN')+' grew to ₹'+final_.toLocaleString('en-IN')+' in '+years+' years</div></div></div><div style="margin-top:14px;"><div style="font-size:0.75rem;font-weight:800;color:var(--navy);margin-bottom:8px;">How do Indian assets compare? (last 10 years)</div><div class="cagr-compare">'+compareHtml+'</div></div><button class="btn-next" onclick="nextStep()" style="margin-top:14px;">Next Lesson →</button></div>';
+    document.getElementById('ci').oninput=function(){init=parseInt(this.value)||100000;fmt();};
+    document.getElementById('cf').oninput=function(){final_=parseInt(this.value)||200000;addCoins(2);fmt();};
+    document.getElementById('cy').oninput=function(){years=Math.max(1,parseInt(this.value)||8);fmt();};
+  }
+  fmt();
+}
+
+// LESSON 2: XIRR
+var XIRR_QUIZ=[
+  {q:'Priya invested ₹5,000/month for 12 months. Total invested = ₹60,000. Final value = ₹68,400. Her XIRR is approximately 14%. Is this better or worse than a simple CAGR of 14% on a lump sum?',correct:0,opts:['Better — her first SIP had the longest to grow, showing XIRR accounts for timing of each investment','Same — XIRR and CAGR always give the same answer','Worse — SIP returns are always lower than lump sum returns'],explain:'XIRR accounts for the fact that the first ₹5,000 was invested for 12 months, the last ₹5,000 for only 1 month. A 14% XIRR on a SIP is a strong result — it\'s directly comparable to a 14% CAGR on a lump sum!'},
+  {q:'You made a single lump-sum investment of ₹1 lakh in 2020. It is now ₹1.85 lakh in 2025 (5 years). Which metric should you use to calculate your return?',correct:1,opts:['XIRR — it works for all investments','CAGR — single investment, single time period','Rolling Returns — shows consistency'],explain:'CAGR is perfect for a single lump-sum investment over a defined period. The formula: (1.85/1)^(1/5) – 1 = 13.1% CAGR. Use XIRR only when there are multiple cash flows at different times.'},
+  {q:'A mutual fund advertisement says "28% returns in 1 year!" Why is this potentially misleading?',correct:2,opts:['Mutual funds are always wrong about returns','They should have shown XIRR instead of point-to-point','1-year returns are highly volatile and don\'t represent long-term performance. Rolling returns over 5+ years is a more reliable indicator.'],explain:'A fund can show 28% in one lucky year and then -20% the next. Point-to-point 1-year returns are easily cherry-picked. Always ask: "What are the 5-year rolling returns?" — that shows consistent performance.'},
+];
+
+function buildXIRRLesson(){
+  return [
+    {render:function(c){
+      var rows=[
+        {m:'Month 1',inv:'–₹5,000',curr:'₹5,700'},
+        {m:'Month 6',inv:'–₹5,000',curr:'₹5,350'},
+        {m:'Month 12',inv:'–₹5,000',curr:'₹5,100'},
+        {m:'Total Invested',inv:'₹60,000',curr:'Value: ₹68,400'},
+      ];
+      var rowsHtml=rows.map(function(r){
+        return '<div class="sip-row"><div class="sip-month">'+r.m+'</div><div class="sip-invested">'+r.inv+'</div><div class="sip-arrow">→</div><div class="sip-current">'+r.curr+'</div></div>';
+      }).join('');
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 3 · XIRR</div><span class="slide-icon">🔀</span><div class="slide-title">Why SIPs need a special return metric</div><div class="slide-body"><p>CAGR assumes one investment at one time. But SIPs make investments at different times — each rupee has a different "time in market".</p><p><strong>XIRR</strong> (Extended Internal Rate of Return) handles this complexity. It\'s the right metric for SIPs, multiple investments, and irregular withdrawals.</p></div><div style="background:var(--white);border-radius:14px;padding:12px;box-shadow:0 2px 8px rgba(26,58,92,0.06);margin-bottom:12px;"><div style="font-size:0.72rem;font-weight:900;color:var(--muted);text-transform:uppercase;margin-bottom:8px;">SIP Journey (₹5,000/month for 12 months)</div><div class="sip-journey">'+rowsHtml+'</div></div><div class="insight"><strong>XIRR = 14% in this example.</strong> This means: given the timing of each investment, the effective annual return is 14%. Each month\'s ₹5,000 earned different returns based on how long it was invested.</div><button class="btn-next" onclick="nextStep()">Test your understanding →</button></div>';
+    }},
+    {render:function(c){renderXIRRQuiz(c);}},
+  ];
+}
+
+function renderXIRRQuiz(container){
+  var current=0,score=0;
+
+  function showQ(){
+    if(current>=XIRR_QUIZ.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">XIRR Quiz · Done!</div><span class="slide-icon">🎉</span><div class="slide-title">You scored '+score+'/'+XIRR_QUIZ.length+'!</div><div class="insight"><strong>XIRR cheat sheet:</strong><br>• Single lump sum → CAGR<br>• SIP / multiple investments → XIRR<br>• Checking consistency → Rolling Returns<br>• App-reported MF returns are XIRR by default</div><button class="btn-next" onclick="nextStep()">Continue →</button></div>';
+      return;
+    }
+    var q=XIRR_QUIZ[current];
+    var optsHtml=q.opts.map(function(o,i){
+      return '<div class="xirr-opt" onclick="xirrAns('+i+')">'+o+'</div>';
+    }).join('');
+    container.innerHTML='<div class="slide"><div class="slide-tag">XIRR Quiz · '+(current+1)+'/'+XIRR_QUIZ.length+'</div><div class="slide-title">XIRR knowledge check</div><div style="background:var(--white);border-radius:12px;padding:12px;margin-bottom:12px;box-shadow:0 2px 8px rgba(26,58,92,0.06);font-size:0.8rem;line-height:1.7;color:var(--navy);">'+q.q+'</div><div class="xirr-mcq">'+optsHtml+'</div><div style="font-size:0.65rem;color:var(--muted);margin-top:8px;">Score: '+score+'/'+current+'</div></div>';
+    window.xirrAns=function(i){
+      var correct=i===q.correct;
+      if(correct){score++;addCoins(8);}
+      var overlay=document.createElement('div');
+      overlay.className='myth-modal-overlay';
+      overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'✅':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Correct!':'Not quite...')+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">Explanation</div><div class="myth-modal-explain">'+q.explain+'</div><button class="myth-modal-btn" id="xi-ok">Next →</button></div></div>';
+      document.body.appendChild(overlay);
+      overlay.querySelector('#xi-ok').onclick=function(){overlay.remove();current++;showQ();};
+    };
+  }
+  showQ();
+}
+
+// LESSON 3: ROLLING RETURNS
+function buildRollingLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 4 · Rolling Returns</div><span class="slide-icon">🔄</span><div class="slide-title">The metric that reveals consistency</div><div class="slide-body"><p>A fund can show a <strong>spectacular single-year return</strong> just because the market happened to peak during that window. Rolling returns remove this luck factor.</p><p><strong>5-year rolling returns</strong> calculate the CAGR for every possible 5-year window in the fund\'s history — showing not just the average but the <em>range of outcomes</em> investors actually experienced.</p></div><div class="insight"><strong>What to look for:</strong><br>• Narrow range = consistent = reliable<br>• Wide range = volatile = unpredictable<br>• High floor (minimum return) = investor protection<br><br>A fund with 15% average but ranging 5–35% is riskier than one averaging 13% ranging 10–18%.</div><button class="btn-next" onclick="nextStep()">Compare two funds →</button></div>';
+    }},
+    {render:function(c){renderRollingComparison(c);}},
+  ];
+}
+
+function renderRollingComparison(container){
+  var answered=false;
+
+  function fmt(selectedAns){
+    var q1Html=!answered?'<div class="rr-quiz-opts"><div class="rr-opt" onclick="rrAns(\'A\')">A) Fund A — higher potential returns of 22%</div><div class="rr-opt" onclick="rrAns(\'B\')">B) Fund B — more consistent, narrower range</div><div class="rr-opt" onclick="rrAns(\'either\')">C) Either — same average means same investment quality</div></div>':'';
+
+    container.innerHTML='<div class="slide"><div class="slide-tag">Lesson 4 · Fund Comparison</div><div class="slide-title">Which fund is more reliable?</div><div style="font-size:0.75rem;color:var(--muted);margin-bottom:12px;">Both funds have the same 15% average 5-year rolling return. But look at the range...</div><div class="fund-comparison"><div class="fund-card"><div class="fund-card-name">Fund A</div><div class="fund-range-bar" style="background:linear-gradient(90deg,#e74c3c,#c9a84c,#22c55e);"><div class="fund-range-text">8% → 22%</div></div><div class="fund-avg" style="color:var(--g3);">Avg: 15% | Range: 14 pts</div><div style="font-size:0.65rem;color:var(--muted);margin-top:6px;">High upside, but also had years near 8%. Volatile ride.</div></div><div class="fund-card"><div class="fund-card-name">Fund B</div><div class="fund-range-bar" style="background:linear-gradient(90deg,#22c55e,#22c55e);"><div class="fund-range-text">14% → 16%</div></div><div class="fund-avg" style="color:#22c55e;">Avg: 15% | Range: 2 pts</div><div style="font-size:0.65rem;color:var(--muted);margin-top:6px;">Extremely consistent. Investors always got ~15%.</div></div></div><div style="font-weight:800;font-size:0.82rem;color:var(--navy);margin-bottom:8px;">For a long-term SIP investor, which fund is better?</div>'+q1Html+(answered?'<div class="insight"><strong>Fund B is superior for SIP investors.</strong> With SIP, you don\'t try to time entry for peak years. You need consistency. Fund B delivered near-15% in every window — no matter when you started your SIP. Fund A could give you 8% if you were unlucky with your start date.</div><button class="btn-next" onclick="nextStep()">Continue →</button>':'')+'</div>';
+  }
+
+  window.rrAns=function(ans){
+    var correct=ans==='B';
+    if(correct)addCoins(10);
+    answered=true;
+    var overlay=document.createElement('div');
+    overlay.className='myth-modal-overlay';
+    overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'🎯':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Correct!':'Fund B is the answer')+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">Why Fund B?</div><div class="myth-modal-explain">Same average, but Fund B is dramatically more predictable. For SIP investors who don\'t choose their entry window, consistency beats occasional high peaks every time.</div><button class="myth-modal-btn" id="rr-ok">Got it →</button></div></div>';
+    document.body.appendChild(overlay);
+    overlay.querySelector('#rr-ok').onclick=function(){overlay.remove();fmt(ans);};
+  };
+  fmt(null);
+}
+
+// LESSON 4: PICK THE RIGHT METRIC
+var METRIC_SCENARIOS=[
+  {num:1,text:'"I invested ₹2 lakh as a lump sum in an index fund in 2018. It\'s now ₹4.2 lakh in 2025 (7 years). What metric do I use?"',correct:'CAGR',explain:'Single investment, known start and end dates, lump sum → CAGR. CAGR = (4.2/2)^(1/7) – 1 = 11.2% per year.'},
+  {num:2,text:'"I\'ve been doing a ₹5,000/month SIP in a mutual fund for 3 years. The app shows my return. What metric is the app showing?"',correct:'XIRR',explain:'Multiple investments at different dates (monthly) → XIRR. All apps automatically show XIRR for SIP returns. It\'s the correct measure for recurring investments.'},
+  {num:3,text:'"I want to pick between two mutual funds with the same 10-year average return. How do I check which one is more reliable?"',correct:'Rolling Returns',explain:'To compare consistency, rolling returns are the gold standard. Look at 5-year rolling returns — narrow range = consistent = better for long-term SIPs.'},
+  {num:4,text:'"My stock went from ₹100 to ₹160 in 2 years. What is the simple total gain without any annualisation?"',correct:'Absolute',explain:'Quick, unnannualised total gain → Absolute Return. (160–100)/100 × 100 = 60%. Simple, direct, no time adjustment needed.'},
+  {num:5,text:'"A friend claims her fund gave \'50% return\'. Before being impressed, what should you ask?"',correct:'CAGR',explain:'Always ask for CAGR (or the time period). 50% in 2 years is great (22% CAGR). 50% in 10 years is poor (4.1% CAGR). Never be impressed by absolute returns without knowing the time period.'},
+];
+
+function buildMetricLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Lesson 5 · Right Metric</div><span class="slide-icon">🏆</span><div class="slide-title">The golden rule: match metric to situation</div><div class="slide-body"><p>Using the wrong return metric leads to wrong decisions. Here\'s the simple guide:</p></div><div class="stat-row"><div class="stat-box g"><div class="stat-val">CAGR</div><div class="stat-lbl">Single lump sum investment</div></div><div class="stat-box" style="background:#e8eff8;"><div class="stat-val">XIRR</div><div class="stat-lbl">SIP / multiple cash flows</div></div></div><div class="stat-row"><div class="stat-box" style="background:#f0eafc;"><div class="stat-val">Rolling</div><div class="stat-lbl">Comparing fund consistency</div></div><div class="stat-box" style="background:#f0f4f0;"><div class="stat-val">Absolute</div><div class="stat-lbl">Quick raw gain/loss %</div></div></div><button class="btn-next" onclick="nextStep()">Pick the right metric →</button></div>';
+    }},
+    {render:function(c){renderMetricPicker(c);}},
+  ];
+}
+
+function renderMetricPicker(container){
+  var current=0,score=0;
+
+  function showQ(){
+    if(current>=METRIC_SCENARIOS.length){
+      container.innerHTML='<div class="slide"><div class="slide-tag">Metric Picker · Done!</div><span class="slide-icon">🎉</span><div class="slide-title">You got '+score+'/'+METRIC_SCENARIOS.length+'!</div><div class="insight"><strong>The master rule:</strong> Lump sum → CAGR. SIP → XIRR. Comparing funds → Rolling Returns. Never be fooled by absolute return figures without asking "over how many years?"</div><button class="btn-next" onclick="nextStep()">Final Boss →</button></div>';
+      return;
+    }
+    var sc=METRIC_SCENARIOS[current];
+    container.innerHTML='<div class="slide"><div class="slide-tag">Metric Picker · '+(current+1)+'/'+METRIC_SCENARIOS.length+'</div><div class="slide-title">Which return metric applies here?</div><div class="scenario-chip"><div class="sc-chip-num">Scenario '+sc.num+'</div><div class="sc-chip-text">'+sc.text+'</div></div><div class="metric-opts"><button class="metric-opt cagr" onclick="metricAns(\'CAGR\')">CAGR</button><button class="metric-opt xirr" onclick="metricAns(\'XIRR\')">XIRR</button><button class="metric-opt rolling" onclick="metricAns(\'Rolling Returns\')">Rolling Returns</button><button class="metric-opt absolute" onclick="metricAns(\'Absolute\')">Absolute Return</button></div><div style="font-size:0.65rem;color:var(--muted);margin-top:8px;">Score: '+score+'/'+current+'</div></div>';
+    window.metricAns=function(ans){
+      var correct=ans===sc.correct;
+      if(correct){score++;addCoins(8);}
+      var overlay=document.createElement('div');
+      overlay.className='myth-modal-overlay';
+      overlay.innerHTML='<div class="myth-modal"><div class="myth-modal-hdr '+(correct?'correct':'wrong')+'"><div class="myth-modal-emoji">'+(correct?'✅':'💡')+'</div><div class="myth-modal-verdict '+(correct?'correct':'wrong')+'">'+(correct?'Correct: '+sc.correct:'Use '+sc.correct+' here')+'</div></div><div class="myth-modal-body"><div class="myth-modal-label">Why?</div><div class="myth-modal-explain">'+sc.explain+'</div><button class="myth-modal-btn" id="mp-ok">Next →</button></div></div>';
+      document.body.appendChild(overlay);
+      overlay.querySelector('#mp-ok').onclick=function(){overlay.remove();current++;showQ();};
+    };
+  }
+  showQ();
+}
+
+// BOSS: RADHA'S RETURN REPORT
+var BOSS_SCENARIOS=[
+  {round:'Analysis 1 of 3',name:"Radha's 4 Investments",story:"Radha has 4 investments:\n• Investment A: ₹50,000 lump sum, grew to ₹1.1 lakh in 8 years\n• Investment B: ₹5,000/month SIP, invested for 5 years, total ₹3L invested, current value ₹5.2L\n• Investment C: ₹20,000 grew to ₹28,000 in 2 years\n• Investment D: ₹1 lakh grew to ₹1.32 lakh in 3 years\nCalculated: A=CAGR 10.3%, B=XIRR 18%, C=CAGR 18.3%, D=CAGR 9.7%",q:"Ranked from BEST to WORST performance, the correct order is:",choices:['A) C, B, A, D — ranked by rate','B) B, C, D, A — SIP always wins','C) A, B, C, D — largest absolute gain wins'],correct:0,explain:["Correct! C=18.3% CAGR (best single investment rate), B=18% XIRR (excellent SIP), A=10.3% CAGR, D=9.7% CAGR. Always compare using annualised rates — never absolute values!","XIRR and CAGR are comparable on the same percentage basis. B (18% XIRR) is excellent, but C (18.3% CAGR) is marginally higher. The SIP nature of B doesn't change its ranking — rates compare directly.","Absolute gain comparison is completely wrong. Investment A gained ₹60,000 but took 8 years and delivered only 10.3% annually. Investment C gained ₹8,000 but in just 2 years at 18.3% CAGR."]},
+  {round:'Analysis 2 of 3',name:'The Fund Comparison Trap',story:"Radha is choosing between two mutual funds. Fund X: 3-year return 45%. Fund Y: 3-year CAGR 15%. Her advisor says 'Fund X clearly outperformed — pick that one!'",q:"Is the advisor's comparison correct?",choices:['A) Yes — 45% beats 15% clearly','B) No — 45% over 3 years is CAGR 13.2%, which is actually LOWER than Fund Y\'s 15% CAGR','C) Both are equally good — they are the same type of fund'],correct:1,explain:["The advisor is comparing absolute (45%) vs annualised (15%) returns. This is an unfair comparison that misleads investors — often deliberately.","Correct! 45% absolute over 3 years = CAGR of (1.45)^(1/3)–1 = 13.2% per year. Fund Y at 15% CAGR actually outperformed Fund X! The advisor was either confused or being misleading. Always demand CAGR for all comparison periods.","They are clearly different — Fund Y outperformed. The advisor's framing was designed to make Fund X look better using a different metric."]},
+  {round:'Analysis 3 of 3',name:'The SIP Decision',story:"Radha's SIP in Fund P shows 22% XIRR over 5 years. Her friend's lump sum in Fund Q shows 20% CAGR over 5 years. Her friend says she's doing better because lump sum beats SIP.",q:"Who actually performed better?",choices:['A) Radha — 22% XIRR is higher than 20% CAGR','B) Friend — lump sum always beats SIP in returns','C) Impossible to compare XIRR and CAGR directly'],correct:0,explain:["Correct! XIRR and CAGR are both annualised rates expressed as percentages — they are directly comparable! Radha's 22% XIRR means her effective annual return was 22%, which beats the friend's 20% CAGR. SIP vs lump sum doesn't matter when comparing using proper metrics.","False! Whether you use SIP or lump sum doesn't determine which returns more — the fund quality and timing do. XIRR for SIPs and CAGR for lump sums are both honest annualised metrics.","XIRR and CAGR are both annual rate metrics. They ARE directly comparable. A 22% XIRR means effective 22% per year — same unit as a 20% CAGR."]},
+];
+
+function buildBossLesson(){
+  return [
+    {render:function(c){
+      c.innerHTML='<div class="slide"><div class="slide-tag">Boss Challenge</div><span class="slide-icon">⚔️</span><div class="slide-title">Radha\'s Return Report</div><div class="slide-body"><p>Radha is analysing her portfolio and needs your help. 3 return analysis challenges using CAGR, XIRR, and rolling returns.</p><p>This is the ultimate test of whether you can see through misleading return figures.</p></div><div class="insight">You now have every tool: Absolute, CAGR, XIRR, Rolling Returns. Use the right one for the right situation, and never be fooled by cherry-picked numbers again.</div><button class="btn-next" onclick="nextStep()">Analyse Radha\'s Portfolio →</button></div>';
+    }},
+    {render:function(c){renderBoss(c,0);}},
+    {render:function(c){renderBoss(c,1);}},
+    {render:function(c){renderBoss(c,2);}},
+  ];
+}
+
+function renderBoss(container,idx){
+  var sc=BOSS_SCENARIOS[idx];
+  var storyHtml=sc.story.replace(/\n/g,'<br>');
+  var choicesHtml=sc.choices.map(function(ch,i){
+    return '<div class="sc-choice" id="sc-c-'+i+'" onclick="bossAns('+idx+','+i+')"><div class="sc-choice-letter">'+String.fromCharCode(65+i)+'</div><div>'+ch.substring(3)+'</div></div>';
+  }).join('');
+  container.innerHTML='<div class="slide"><div class="slide-tag">Boss · '+sc.round+'</div><div class="scenario-card-outer"><div class="sc-header"><div class="sc-round">'+sc.round+'</div><div class="sc-name">'+sc.name+'</div></div><div class="sc-body"><div class="sc-story">'+storyHtml+'</div><div class="sc-q">'+sc.q+'</div><div class="sc-choices">'+choicesHtml+'</div><div class="sc-consequence" id="sc-con"></div></div></div></div>';
+  window.bossAns=function(sIdx,chosen){
+    var s=BOSS_SCENARIOS[sIdx];
+    var correct=chosen===s.correct;
+    if(correct)addCoins(20);
+    document.querySelectorAll('.sc-choice').forEach(function(el,i){
+      el.style.pointerEvents='none';
+      if(i===s.correct)el.classList.add('correct-choice');
+      else if(i===chosen&&!correct)el.classList.add('wrong-choice');
+    });
+    var con=document.getElementById('sc-con');
+    con.style.display='block';
+    con.className='sc-consequence '+(correct?'good':'bad');
+    con.innerHTML='<strong>'+(correct?'✅ Sharp analysis!':'❌ Think again')+'</strong> '+s.explain[chosen]+'<button class="btn-next" onclick="nextStep()" style="margin-top:12px;">'+(sIdx<2?'Next Analysis →':'Complete Module 6 →')+'</button>';
+  };
+}
+
+refreshMap();
+document.getElementById('coinDisplay').textContent=state.coins;
+</script>
+</body>
+</html>

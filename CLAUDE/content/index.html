@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>IFM Content Hub</title>
+<link rel="icon" href="../ifm-round.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#2a9d8f; --navy:#1a3a5c; --muted:#5a7d8a; --cream:#f7faf9;
+  --mint:#bde9e4; --mint-lt:#e0f3f0;
+  --amber:#e9c46a; --coral:#e76f51;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);min-height:100vh}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
+
+header.hub{display:flex;align-items:center;gap:14px;padding:10px 0 18px}
+header.hub img{width:52px;height:52px;border-radius:50%;box-shadow:0 2px 8px rgba(26,58,92,.15)}
+header.hub h1{font-family:'Lora',serif;font-style:italic;font-weight:600;font-size:1.55rem;color:var(--navy)}
+header.hub .sub{font-size:.85rem;color:var(--muted);font-weight:600}
+
+.statbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:18px}
+.stat{background:#fff;border-radius:14px;padding:12px 14px;box-shadow:0 1px 4px rgba(26,58,92,.08)}
+.stat .num{font-size:1.5rem;font-weight:900;color:var(--teal)}
+.stat .lbl{font-size:.72rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{border:none;background:#fff;color:var(--muted);font-family:'Nunito',sans-serif;font-weight:800;font-size:.9rem;
+  padding:9px 18px;border-radius:999px;cursor:pointer;box-shadow:0 1px 4px rgba(26,58,92,.08)}
+.tab.active{background:var(--teal);color:#fff}
+
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.controls input[type=search]{flex:1;min-width:200px;padding:10px 14px;border:1.5px solid var(--mint);border-radius:12px;
+  font-family:'Nunito',sans-serif;font-size:.95rem;color:var(--navy);background:#fff;outline:none}
+.controls input[type=search]:focus{border-color:var(--teal)}
+.controls select{padding:10px 12px;border:1.5px solid var(--mint);border-radius:12px;font-family:'Nunito',sans-serif;
+  font-weight:700;font-size:.85rem;color:var(--navy);background:#fff;cursor:pointer}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 5px rgba(26,58,92,.1);display:flex;flex-direction:column}
+.thumb{height:230px;background:var(--mint-lt);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.thumb img,.thumb video.vid{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.thumb video.vid{z-index:1}
+.thumb img{object-position:top center}
+.thumb .ph{font-size:2.4rem}
+.thumb .perf{position:absolute;top:8px;right:8px;z-index:2;background:#fff;border-radius:999px;padding:3px 10px;font-size:.7rem;font-weight:900;box-shadow:0 1px 4px rgba(26,58,92,.2)}
+.typebadge{position:absolute;top:8px;left:8px;z-index:2;background:rgba(26,58,92,.82);color:#fff;border-radius:999px;padding:4px 10px;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;display:flex;align-items:center;gap:4px}
+.playbadge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:54px;height:54px;border-radius:50%;background:rgba(0,0,0,.42);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;pointer-events:none;transition:opacity .2s;padding-left:4px}
+.card.has-video{cursor:pointer}
+.card.has-video:hover .playbadge{opacity:0}
+.cbody{padding:11px 14px 13px;display:flex;flex-direction:column;gap:6px;flex:1}
+.ctitle{font-weight:800;font-size:.92rem;line-height:1.25}
+.details-toggle{background:none;border:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:.72rem;color:var(--teal);cursor:pointer;padding:3px 0;display:flex;align-items:center;gap:4px;text-align:left;white-space:nowrap}
+.details-toggle .chev{transition:transform .2s;font-size:.7rem}
+.details-toggle.open .chev{transform:rotate(180deg)}
+.details{display:flex;flex-direction:column;gap:7px;padding-top:2px}
+.details.hidden{display:none}
+.cbar{display:flex;align-items:center;justify-content:flex-start;gap:9px;flex-wrap:wrap;row-gap:4px}
+.cact{display:flex;align-items:center;gap:9px}
+.dl-mini{font-size:.72rem;font-weight:800;color:var(--teal);text-decoration:none;white-space:nowrap;cursor:pointer;padding:3px 0}
+.dl-mini:hover{text-decoration:underline}
+.dl-mini.off{color:var(--muted);font-weight:700;cursor:default}
+.chips{display:flex;gap:5px;flex-wrap:wrap}
+.chip{font-size:.66rem;font-weight:800;padding:3px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.03em;background:#eef2f6;color:var(--muted)}
+.chip.type{background:var(--mint-lt);color:var(--teal)}
+.chip.src{background:#eef2f6;color:var(--muted)}
+.chip.st-published{background:var(--teal);color:#fff}
+.chip.st-ready{background:var(--amber);color:var(--navy)}
+.chip.st-scheduled{background:var(--mint);color:var(--navy)}
+.chip.st-inproduction,.chip.st-idea{background:#eef2f6;color:var(--muted)}
+.chip.st-onhold,.chip.st-retired{background:#f3e8e5;color:var(--coral)}
+.cdesc{font-size:.8rem;color:var(--muted);line-height:1.4}
+.ckeys{font-size:.72rem;color:var(--teal);font-weight:700;line-height:1.5}
+.metrics{display:flex;gap:10px;font-size:.74rem;font-weight:800;color:var(--navy);border-top:1px solid var(--mint-lt);padding-top:8px;margin-top:auto;flex-wrap:wrap}
+.clinks{display:flex;gap:10px;font-size:.76rem;font-weight:800}
+.clinks a{color:var(--teal);text-decoration:none}
+.clinks a:hover{text-decoration:underline}
+
+table.tracker{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 5px rgba(26,58,92,.1);font-size:.85rem}
+table.tracker th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em}
+table.tracker td{padding:10px 12px;border-bottom:1px solid var(--mint-lt);vertical-align:top}
+table.tracker tr:nth-child(even) td{background:#f6faf8}
+.pill{display:inline-block;font-size:.68rem;font-weight:900;padding:3px 10px;border-radius:999px}
+.pill.planned,.pill.awaitingdelivery{background:#eef2f6;color:var(--muted)}
+.pill.delivered{background:var(--amber);color:var(--navy)}
+.pill.approved{background:var(--mint);color:var(--navy)}
+.pill.published{background:var(--teal);color:#fff}
+.pill.late{background:var(--coral);color:#fff}
+.tracker-summary{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+/* Competitor cards */
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;align-items:start}
+.ccard{background:#fff;border-radius:14px;box-shadow:0 1px 5px rgba(26,58,92,.1);padding:14px 15px;display:flex;flex-direction:column;gap:10px}
+.ccard-head{display:flex;gap:11px;align-items:center}
+.ccard-handle{font-size:.76rem;font-weight:800;color:var(--teal);text-decoration:none}
+.ccard-av{position:relative;width:48px;height:48px;border-radius:50%;flex-shrink:0;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.15rem;overflow:hidden;font-family:'Nunito',sans-serif;box-shadow:0 1px 4px rgba(26,58,92,.18)}
+.ccard-av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.ccard-name{font-family:'Lora',serif;font-weight:600;font-size:1.18rem;color:var(--navy);line-height:1.2}
+.ccard-name a{font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:800;color:var(--teal);text-decoration:none;margin-left:3px;white-space:nowrap}
+.ccard-pos{font-size:.8rem;color:var(--muted);line-height:1.4;margin-top:4px}
+.ccard-tags{display:flex;flex-direction:column;gap:4px;align-items:flex-end;flex-shrink:0}
+.ccard-tag{font-size:.6rem;font-weight:800;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+.ccard-stats{display:flex;gap:16px;flex-wrap:wrap;padding:11px 2px;border-top:1px solid #eef2f6;border-bottom:1px solid #eef2f6}
+.ccard-stats .s b{display:block;font-size:1.3rem;font-weight:900;color:var(--teal);line-height:1.05}
+.ccard-stats .s b a{color:var(--teal);text-decoration:none}
+.ccard-stats .s span{font-size:.64rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.ccard-block h5{margin:0 0 3px;font-size:.64rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:800}
+.ccard-block p{margin:0;font-size:.83rem;line-height:1.46;color:var(--navy)}
+.ccard-block.hot{background:#fff8f0;border-radius:8px;padding:9px 11px;margin:0 -2px}
+.ccard-more{background:none;border:none;color:var(--teal);font-family:'Nunito',sans-serif;font-weight:800;font-size:.78rem;cursor:pointer;padding:3px 0;text-align:left;align-self:flex-start}
+.ccard-detail{display:flex;flex-direction:column;gap:10px;border-top:1px dashed #dbe6ea;padding-top:11px}
+.ccard-action{background:#e7f4f1;border-left:4px solid var(--teal);border-radius:8px;padding:10px 12px}
+.ccard-posts{display:flex;gap:6px;overflow-x:auto;padding-bottom:3px;-webkit-overflow-scrolling:touch}
+.ccard-posts a{position:relative;flex:0 0 auto;width:62px;height:62px;border-radius:9px;overflow:hidden;display:block;background:#eef2f6}
+.ccard-posts img{width:100%;height:100%;object-fit:cover;display:block}
+.ccard-posts .rl{position:absolute;top:3px;right:4px;font-size:.62rem;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.7))}
+.ccard-posts .lk{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:.58rem;font-weight:800;padding:9px 3px 3px;text-align:center;letter-spacing:.02em}
+/* Competitor LIST view */
+.comp-list{display:flex;flex-direction:column;gap:8px}
+.crow{display:flex;align-items:center;gap:11px;background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(26,58,92,.08);padding:9px 12px;transition:box-shadow .15s,transform .05s}
+.crow:hover{box-shadow:0 2px 12px rgba(26,58,92,.14)}
+.crow.dragging{opacity:.4}
+.crow.dragover{outline:2px dashed var(--teal);outline-offset:-3px}
+.crow .chandle{cursor:grab;color:#c2ced3;font-size:1.15rem;flex:0 0 auto;user-select:none;line-height:1}
+.crow .cav{position:relative;width:42px;height:42px;border-radius:50%;flex:0 0 auto;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;overflow:hidden}
+.crow .cav img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.crow-main{flex:1 1 auto;min-width:0;cursor:pointer}
+.crow-name{font-weight:800;font-size:.98rem;color:var(--navy);line-height:1.2;display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.crow-name .rk{background:#eef2f6;color:var(--muted);font-size:.6rem;font-weight:800;padding:1px 6px;border-radius:999px}
+.crow-name a{font-size:.73rem;font-weight:800;color:var(--teal);text-decoration:none}
+.crow-sub{font-size:.73rem;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.crow-nums{display:flex;gap:16px;flex:0 0 auto;text-align:center}
+.crow-nums div b{display:block;font-size:.95rem;font-weight:900;color:var(--teal);line-height:1.1}
+.crow-nums div span{font-size:.57rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.crow-thumbs{display:flex;gap:3px;flex:0 0 auto}
+.crow-thumbs a{position:relative;width:38px;height:38px;border-radius:6px;overflow:hidden;display:block;background:#eef2f6}
+.crow-thumbs img{width:100%;height:100%;object-fit:cover}
+.crow-thumbs .rl2{position:absolute;top:0;right:2px;font-size:.5rem;color:#fff;filter:drop-shadow(0 1px 1px rgba(0,0,0,.85))}
+.crow .cdel2{background:none;border:none;color:#c06;font-size:1rem;cursor:pointer;flex:0 0 auto;padding:2px 4px;line-height:1}
+@media(max-width:760px){.crow-thumbs{display:none}.crow-nums div:nth-child(n+3){display:none}}
+#comp-modal{position:fixed;inset:0;z-index:900;background:rgba(20,40,60,.5);display:flex;align-items:center;justify-content:center;padding:18px}
+#comp-modal.hidden{display:none}
+.cm-panel{background:#fff;border-radius:16px;max-width:640px;width:100%;max-height:88vh;overflow-y:auto;padding:20px 22px 26px;box-shadow:0 12px 48px rgba(26,58,92,.3)}
+.cm-close{float:right;background:none;border:none;font-size:1.3rem;color:var(--muted);cursor:pointer;line-height:1}
+/* Published (live on IG) grid */
+.pub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:14px}
+.pub-growth-card{background:#fff;border:1px solid #e4edf0;border-radius:14px;padding:14px 16px;margin:12px 0 6px;box-shadow:0 1px 4px rgba(26,58,92,.08)}
+.pg-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.pg-now{font-size:1.6rem;font-weight:800;color:var(--navy)}
+.pg-lbl{color:var(--muted);font-size:.8rem;margin-left:6px;font-weight:700}
+.pg-delta{font-size:.9rem;font-weight:800}
+.pg-delta.good{color:#1a8f74}.pg-delta.bad{color:var(--coral)}.pg-delta.flat{color:var(--muted)}
+.pg-foot{color:var(--muted);font-size:.72rem;margin-top:6px;font-weight:700}
+.pg-single{color:var(--muted);font-size:.85rem;padding:14px 4px;text-align:center;background:var(--mint-lt);border-radius:10px}
+.pub-growth-card svg{width:100%;height:auto;display:block}
+.pg-line{fill:none;stroke:var(--teal);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.pg-area{fill:var(--teal);opacity:.12}
+.pg-dot{fill:var(--navy);stroke:#fff;stroke-width:2}
+.pg-base{stroke:#e4edf0;stroke-width:1}
+.pg-ax{fill:var(--muted);font-size:11px;font-family:'Nunito',sans-serif;font-weight:700}
+.pg-val{fill:var(--navy);font-size:13px;font-weight:800;font-family:'Nunito',sans-serif}
+.pub-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 5px rgba(26,58,92,.1);display:flex;flex-direction:column}
+.pub-thumb{position:relative;aspect-ratio:1;background:#eef2f6}
+.pub-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.pub-thumb .rl{position:absolute;top:6px;right:8px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.75))}
+.pub-badge{position:absolute;top:7px;left:7px;z-index:2;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:3px 8px;border-radius:999px;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.pub-badge.hit{background:#1f7a6d}
+.pub-badge.low{background:#c0392b}
+.pub-badge.ok{background:rgba(26,58,92,.66)}
+.pub-er{font-weight:800}
+.pub-er.hit{color:#1f7a6d}.pub-er.low{color:#c0392b}
+.pub-eng{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:.74rem;font-weight:800;padding:16px 9px 6px;display:flex;gap:12px}
+.pub-body{padding:9px 11px 11px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pub-cap{font-size:.78rem;line-height:1.42;color:var(--navy);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pub-meta{margin-top:auto;font-size:.7rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.pub-meta a{color:var(--teal);font-weight:800;text-decoration:none}
+/* Published — "what's working" insights */
+.pub-ins{background:#fff;border-radius:14px;box-shadow:0 1px 5px rgba(26,58,92,.1);padding:16px 18px;margin-bottom:16px;border-left:4px solid var(--teal)}
+.pub-ins h4{margin:0 0 12px;font-size:.95rem;font-weight:800;color:var(--navy)}
+.pub-ins-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.pub-ins-stat{background:var(--cream);border-radius:10px;padding:9px 14px;flex:1;min-width:110px}
+.pub-ins-stat b{display:block;font-size:1.4rem;font-weight:900;color:var(--teal);line-height:1.1}
+.pub-ins-stat span{font-size:.66rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.pub-ins-take{font-size:.85rem;line-height:1.55;color:var(--navy)}
+.pub-ins-take .good{color:#1f7a6d;font-weight:800}
+.pub-ins-take .bad{color:#c0392b;font-weight:800}
+/* Creator Tracker — status board */
+.trk-group{margin-bottom:24px}
+.trk-ghead{display:flex;align-items:center;gap:9px;font-weight:800;font-size:.92rem;color:var(--navy);margin-bottom:11px;flex-wrap:wrap}
+.trk-ghead .cnt{background:#eef2f6;color:var(--muted);font-size:.7rem;font-weight:800;padding:2px 9px;border-radius:999px}
+.trk-ghead .hint{font-weight:600;color:var(--muted);font-size:.76rem}
+.trk-group.accent .trk-ghead{color:#b9770e}
+.trk-group.accent{background:#fffaf0;border:1px solid #f4e3c2;border-radius:14px;padding:14px 14px 4px}
+.trk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+.trk-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 5px rgba(26,58,92,.1);display:flex;flex-direction:column}
+.trk-thumb{aspect-ratio:1;background:#eef2f6;position:relative}
+.trk-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.trk-thumb .ph{display:flex;align-items:center;justify-content:center;height:100%;font-size:1.9rem}
+.trk-thumb .tt{position:absolute;top:7px;left:7px;background:rgba(26,58,92,.82);color:#fff;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:3px 8px;border-radius:999px}
+.trk-body{padding:9px 11px 11px;display:flex;flex-direction:column;gap:4px;flex:1}
+.trk-name{font-weight:800;font-size:.84rem;color:var(--navy);line-height:1.3}
+.trk-note{font-size:.7rem;color:var(--muted);line-height:1.38;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.trk-links{margin-top:auto;display:flex;gap:12px;font-size:.72rem;font-weight:800;padding-top:4px}
+.trk-links a{color:var(--teal);text-decoration:none}
+
+.empty{background:#fff;border-radius:16px;padding:34px 26px;text-align:center;box-shadow:0 1px 5px rgba(26,58,92,.1)}
+.empty h2{font-family:'Lora',serif;font-style:italic;font-weight:600;font-size:1.15rem;margin-bottom:10px}
+.empty p{font-size:.88rem;color:var(--muted);max-width:520px;margin:0 auto 6px;line-height:1.5}
+.empty a{color:var(--teal);font-weight:800}
+.hidden{display:none}
+#gate{position:fixed;inset:0;z-index:1000;background:var(--cream);display:flex;align-items:center;justify-content:center;padding:24px}
+#gate.hidden{display:none}
+.gate-card{background:#fff;border-radius:20px;box-shadow:0 4px 24px rgba(26,58,92,.14);padding:34px 30px;max-width:370px;width:100%;text-align:center}
+.gate-card img{width:62px;height:62px;border-radius:50%;margin-bottom:14px;box-shadow:0 2px 8px rgba(26,58,92,.15)}
+.gate-card h1{font-family:'Lora',serif;font-style:italic;font-weight:600;font-size:1.4rem;color:var(--navy);margin-bottom:6px}
+.gate-card p{font-size:.84rem;color:var(--muted);margin-bottom:18px}
+.gate-card input{width:100%;padding:12px 14px;border:1.5px solid var(--mint);border-radius:12px;font-family:'Nunito',sans-serif;font-size:1rem;color:var(--navy);text-align:center;outline:none;margin-bottom:12px}
+.gate-card input:focus{border-color:var(--teal)}
+.gate-card button{width:100%;background:var(--teal);color:#fff;border:none;border-radius:12px;padding:12px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.95rem;cursor:pointer}
+.gate-err{color:var(--coral);font-size:.82rem;font-weight:700;margin-top:10px;min-height:1.1em}
+body.locked{overflow:hidden}
+footer{margin-top:34px;font-size:.74rem;color:var(--muted);text-align:center;line-height:1.6}
+footer a{color:var(--teal)}
+@media(max-width:560px){
+  .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+  .thumb{height:110px}
+  table.tracker{font-size:.74rem}
+  table.tracker th,table.tracker td{padding:7px 8px}
+}
+</style>
+</head>
+<body>
+<div id="gate">
+  <div class="gate-card">
+    <img src="../ifm-round.png" alt="IFM">
+    <h1>Content Hub</h1>
+    <p>Enter the team password to continue.</p>
+    <input id="gate-pw" type="password" placeholder="Password" autocomplete="current-password">
+    <button id="gate-go" type="button">Unlock</button>
+    <div class="gate-err" id="gate-err"></div>
+  </div>
+</div>
+<div class="wrap">
+  <header class="hub">
+    <img src="../ifm-round.png" alt="IFM">
+    <div>
+      <h1>Content Hub</h1>
+      <div class="sub">Catalogue &middot; Creator tracker &middot; Performance</div>
+    </div>
+  </header>
+
+  <div class="statbar" id="statbar"></div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="library">📚 Library</button>
+    <button class="tab" data-tab="tracker">🎨 Creator Tracker</button>
+    <button class="tab" data-tab="certs">🏅 Certificates</button>
+    <button class="tab" data-tab="competitors">📊 Competitors</button>
+    <button class="tab" data-tab="published">📲 Published</button>
+    <button id="catalogue-now" class="tab" style="display:none;margin-left:auto;background:#1d56a0;color:#fff;border-color:#1d56a0;font-weight:800">⚡ Catalogue now</button>
+  </div>
+
+  <!-- LIBRARY -->
+  <section id="tab-library">
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search keywords, titles, descriptions…">
+      <select id="f-type"><option value="">All types</option></select>
+      <select id="f-status"><option value="">All statuses</option></select>
+      <select id="f-source"><option value="">All sources</option></select>
+      <select id="f-sort">
+        <option value="newest">Newest first</option>
+        <option value="performance">Best performing</option>
+        <option value="title">A–Z</option>
+      </select>
+      <label style="display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:var(--muted);cursor:pointer;white-space:nowrap"><input type="checkbox" id="f-showhidden"> Show raw/archived <span id="hidden-count"></span></label>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="empty hidden" id="lib-empty"></div>
+  </section>
+
+  <!-- TRACKER -->
+  <section id="tab-tracker" class="hidden">
+    <div class="tracker-summary" id="tracker-summary"></div>
+    <div id="tracker-ctx" style="font-size:.78rem;color:var(--muted);margin-bottom:14px"></div>
+    <div id="tracker-board"></div>
+    <div class="empty hidden" id="trk-empty"></div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="tab-certs" class="hidden">
+    <div class="tracker-summary" id="certs-summary"></div>
+    <div style="overflow-x:auto">
+      <table class="tracker">
+        <thead><tr><th>Photo</th><th>Name</th><th>Student handle</th><th>Workshop</th><th>Posted?</th><th>Posted on</th><th>Caption / notes</th></tr></thead>
+        <tbody id="certs-body"></tbody>
+      </table>
+    </div>
+    <div class="empty hidden" id="certs-empty"></div>
+  </section>
+
+  <!-- COMPETITORS -->
+  <section id="tab-competitors" class="hidden">
+    <div class="tracker-summary" id="comp-summary"></div>
+    <div id="comp-admin" class="hidden" style="background:#f6f8fb;border:1px solid #e2e8f0;border-radius:10px;padding:14px;margin-bottom:14px">
+      <div style="font-weight:800;margin-bottom:8px">➕ Add a competitor <span style="font-weight:400;color:var(--muted);font-size:.8rem">(admin view — adds a row to the live sheet)</span></div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+        <input id="ca-name" placeholder="Name *">
+        <input id="ca-instagram" placeholder="Instagram handle e.g. @lxmeofficial">
+        <select id="ca-kind"><option>Direct</option><option>Content</option><option>Platform</option><option>Benchmark</option></select>
+        <select id="ca-threat"><option>High</option><option>Medium</option><option>Watch</option></select>
+        <input id="ca-positioning" placeholder="Positioning — who they are" style="grid-column:1/3">
+        <input id="ca-content" placeholder="What they make" style="grid-column:1/3">
+        <input id="ca-learn" placeholder="What IFM can learn" style="grid-column:1/3">
+        <input id="ca-followers" placeholder="Followers (optional — or ask Claude to pull)">
+        <input id="ca-website" placeholder="Website (optional)">
+      </div>
+      <div style="margin-top:10px;display:flex;gap:10px;align-items:center">
+        <button id="ca-add" style="background:#0e7a6e;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-weight:800;cursor:pointer">Add to roster</button>
+        <span id="ca-status" style="font-size:.85rem;color:var(--muted)"></span>
+      </div>
+    </div>
+    <div id="comp-hint" class="hidden" style="font-size:.76rem;color:var(--muted);margin-bottom:8px">Drag <b>⠿</b> to rank by relevance · click a row for full intel</div>
+    <div id="comp-list" class="comp-list"></div>
+    <div class="empty hidden" id="comp-empty"></div>
+  </section>
+
+  <!-- PUBLISHED (live on Instagram) -->
+  <section id="tab-published" class="hidden">
+    <div class="tracker-summary" id="pub-summary"></div>
+    <div id="pub-growth"></div>
+    <div style="font-size:.79rem;color:var(--muted);margin-bottom:12px">What's actually live on <b>@investingformummies</b> — real posts &amp; engagement pulled from Instagram. (Only <b id="pub-live-n">22</b> of your <b id="pub-cat-n">228</b> catalogued pieces are published.)</div>
+    <div id="pub-insights"></div>
+    <div class="pub-grid" id="pub-grid"></div>
+    <div class="empty hidden" id="pub-empty"></div>
+  </section>
+
+  <!-- Competitor detail modal -->
+  <div id="comp-modal" class="hidden" aria-modal="true">
+    <div class="cm-panel" id="cm-panel"></div>
+  </div>
+
+  <footer>
+    Data lives in the <a id="lnk-cat" href="#" target="_blank" rel="noopener">Content Catalogue sheet</a> and the
+    <a id="lnk-trk" href="#" target="_blank" rel="noopener">Creator Tracker sheet</a> — edit there, refresh here.<br>
+    Performance badges compare engagement (likes + comments + saves + shares) per reach across all published posts:
+    🔥 top quartile &middot; 👍 middle &middot; 🌱 bottom quartile.
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+const CONFIG = {
+  catalogueSheetId: "1VzLzQzTS_-2w7jxkufJUXMF3r0EeOy0le19ZRUy8e-0",
+  trackerSheetId: "117Ht7okUaGlF_XrbrOeTc2gha2WHa80Hz0DIeamihAM",
+  certSheetId: "12s0Vz5WmnfweUlA_vNsMMHE0oou9klXWWkSSs_pb4Bk",
+  competitorSheetId: "1K1g47i9eyqFeXh9vOInhB0Dcjo_h_Jf2dAFZGLEYMeE",
+};
+const ADMIN = /[?&]admin=1/.test(location.search);
+const COMP_KEY = 'ifm-comp-7Q2x9m'; // must match KEY in competitors-webapp.gs
+const csvUrl = id => `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&_=${Date.now()}`;
+const sheetUrl = id => `https://docs.google.com/spreadsheets/d/${id}/edit`;
+document.getElementById('lnk-cat').href = sheetUrl(CONFIG.catalogueSheetId);
+document.getElementById('lnk-trk').href = sheetUrl(CONFIG.trackerSheetId);
+
+const TYPE_ICON = {carousel:'🖼️','reel':'🎬','ai video':'🤖',testimonial:'💬','session photo':'📸','session video':'🎥','quote/static':'✒️',story:'📱',certificate:'🏅'};
+
+// --- tiny CSV parser (handles quoted fields with commas/newlines) ---
+function parseCSV(text){
+  const rows=[];let row=[],cur='',inQ=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(inQ){
+      if(c==='"'){ if(text[i+1]==='"'){cur+='"';i++;} else inQ=false; }
+      else cur+=c;
+    }else{
+      if(c==='"')inQ=true;
+      else if(c===','){row.push(cur);cur='';}
+      else if(c==='\n'){row.push(cur);cur='';if(row.some(x=>x.trim()!==''))rows.push(row);row=[];}
+      else if(c!=='\r')cur+=c;
+    }
+  }
+  if(cur!==''||row.length){row.push(cur);if(row.some(x=>x.trim()!==''))rows.push(row);}
+  return rows;
+}
+function toObjects(rows){
+  if(!rows.length)return[];
+  const head=rows[0].map(h=>h.trim().toLowerCase());
+  return rows.slice(1).map(r=>{const o={};head.forEach((h,i)=>o[h]=(r[i]||'').trim());return o;});
+}
+const num = v => { const n=parseFloat(String(v).replace(/[, ]/g,'')); return isNaN(n)?0:n; };
+const driveId = link => { const m=String(link).match(/[-\w]{25,}/); return m?m[0]:null; };
+
+let items=[], trackerRows=[], certRows=[], competitorRows=[], compPosts={};
+// Declutter: Raw + Archived items are hidden from the Library by default. "Archive" is a per-browser hide (localStorage).
+let showHidden=false;
+let archived=new Set(JSON.parse(localStorage.getItem('ifm-archived')||'[]'));
+const saveArchived=()=>localStorage.setItem('ifm-archived',JSON.stringify([...archived]));
+const HIDDEN_STATUSES=['raw','archived'];
+const isHidden=it=>archived.has(it.id)||HIDDEN_STATUSES.includes((it.status||'').toLowerCase());
+// Competitor manual ranking (per-browser) + lookup for the detail modal
+let compOrder=JSON.parse(localStorage.getItem('ifm-comp-order')||'[]');
+let compByKey={};
+
+function engagement(it){ return num(it.likes)+num(it.comments)+num(it.saves)+num(it.shares); }
+function engRate(it){ const r=num(it.reach); return r>0 ? engagement(it)/r : null; }
+
+function ratePublished(list){
+  const pub=list.filter(it=>(it.status||'').toLowerCase()==='published' && engRate(it)!==null);
+  const rates=pub.map(engRate).sort((a,b)=>a-b);
+  if(rates.length<3){ pub.forEach(it=>it._perf=null); return; }
+  const q=p=>rates[Math.floor(p*(rates.length-1))];
+  const lo=q(.25), hi=q(.75);
+  pub.forEach(it=>{ const r=engRate(it); it._perf = r>=hi?'🔥':(r<=lo?'🌱':'👍'); });
+}
+
+function fillSelect(id,values){
+  const sel=document.getElementById(id);
+  [...new Set(values.filter(Boolean))].sort().forEach(v=>{
+    const o=document.createElement('option');o.value=v;o.textContent=v;sel.appendChild(o);
+  });
+}
+
+function renderStats(){
+  const pub=items.filter(i=>(i.status||'').toLowerCase()==='published');
+  const ready=items.filter(i=>['ready','scheduled'].includes((i.status||'').toLowerCase()));
+  const totalReach=pub.reduce((s,i)=>s+num(i.reach),0);
+  const due=trackerRows.filter(r=>!['published','approved'].includes((r.status||'').toLowerCase())).length;
+  document.getElementById('statbar').innerHTML = `
+    <div class="stat"><div class="num">${items.filter(i=>!isHidden(i)).length}</div><div class="lbl">Usable assets</div></div>
+    <div class="stat"><div class="num">${pub.length}</div><div class="lbl">Published</div></div>
+    <div class="stat"><div class="num">${ready.length}</div><div class="lbl">Ready to post</div></div>
+    <div class="stat"><div class="num">${totalReach?totalReach.toLocaleString('en-IN'):'—'}</div><div class="lbl">Total reach</div></div>
+    <div class="stat"><div class="num">${due}</div><div class="lbl">Creator items open</div></div>`;
+}
+
+// Work out the best "download the FULL file" action for an asset.
+const _slug=t=>String(t||'ifm').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,48);
+function downloadInfo(it){
+  // Explicit full-bundle download (e.g. a zip of all carousel slides) wins.
+  const bundle=it['download url']||'';
+  if(bundle){
+    const ext=(bundle.match(/\.([a-z0-9]+)(\?|$)/i)||[,'zip'])[1];
+    const same=/^https?:\/\/ifm-deploy\.vercel\.app\//.test(bundle);
+    const isZip=ext==='zip';
+    return {href:bundle, download:same?(it.id?it.id+'-':'')+_slug(it.title)+'.'+ext:undefined,
+            label:'Download', sub:isZip?'all slides (.zip)':'full file', blank:!same};
+  }
+  const dl=it['drive link']||'';
+  if(!dl) return null;
+  // Self-hosted on our own site → true one-click save of the full file
+  if(/^https?:\/\/ifm-deploy\.vercel\.app\//.test(dl) && /\.(mp4|mov|webm|png|jpe?g|webp|gif|pdf)(\?|$)/i.test(dl)){
+    const ext=(dl.match(/\.([a-z0-9]+)(\?|$)/i)||[,'file'])[1];
+    const name=(it.id?it.id+'-':'')+_slug(it.title)+'.'+ext;
+    return {href:dl, download:name, label:'Download', sub:'full file'};
+  }
+  // Single Google Drive file → force download of the original (not the preview)
+  let mm=dl.match(/\/file\/d\/([-\w]{20,})/);
+  if(mm) return {href:`https://drive.google.com/uc?export=download&id=${mm[1]}`, label:'Download', sub:'original file', blank:true};
+  // Google Drive folder = a collection/set → open it; Drive zips it on Download
+  mm=dl.match(/\/folders\/([-\w]{20,})/);
+  if(mm) return {href:dl, label:'Download', sub:'all slides — opens Drive → click Download', blank:true};
+  if(/^https?:\/\//.test(dl)) return {href:dl, label:'Open', sub:'', blank:true};
+  return null;
+}
+
+function card(it){
+  const icon=TYPE_ICON[(it.type||'').toLowerCase()]||'📄';
+  const tsrc=it.thumbnail||it['drive link']||'';
+  const fid=/drive\.google\.com\/(file|thumbnail)/.test(tsrc)?driveId(tsrc):null;
+  const imgSrc=fid?`https://drive.google.com/thumbnail?id=${fid}&sz=w480`:(/\.(png|jpe?g|webp|gif)(\?|$)/i.test(tsrc)?tsrc:null);
+  const dl=it['drive link']||'';
+  // it.video = a self-hosted, web-playable preview (for Drive-hosted clips that can't stream). Used for hover-play + Open.
+  const videoUrl=it.video||(/\.(mp4|mov|webm)(\?|$)/i.test(dl)&&!/drive\.google\.com/.test(dl)?dl:'');
+  const posterImg=imgSrc?`<img class="poster" loading="lazy" src="${esc(imgSrc)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'${icon}'}))">`:`<div class="ph">${icon}</div>`;
+  const thumbInner=videoUrl
+    ? `<video class="vid hidden" muted loop playsinline preload="none" src="${esc(videoUrl)}"${imgSrc?` poster="${esc(imgSrc)}"`:''}></video>${posterImg}<span class="playbadge">▶</span>`
+    : posterImg;
+  const stClass='st-'+(it.status||'idea').toLowerCase().replace(/[^a-z]/g,'');
+  const m=(it.status||'').toLowerCase()==='published' && num(it.reach)>0 ? `
+    <div class="metrics">
+      <span>👁 ${num(it.reach).toLocaleString('en-IN')}</span><span>❤️ ${num(it.likes).toLocaleString('en-IN')}</span>
+      <span>💬 ${num(it.comments)}</span><span>🔖 ${num(it.saves)}</span><span>↗️ ${num(it.shares)}</span>
+    </div>`:'';
+  return `<div class="card${videoUrl?' has-video':''}">
+    <div class="thumb">
+      <span class="typebadge">${icon}${it.type?' '+esc(it.type):''}</span>
+      ${thumbInner}${it._perf?`<div class="perf">${it._perf}</div>`:''}
+    </div>
+    <div class="cbody">
+      <div class="ctitle">${esc(it.title)||'Untitled'}</div>
+      <div class="cbar">
+        <button class="details-toggle" type="button">Details <span class="chev">▾</span></button>
+        <span class="cact">
+          ${(it.video||it['drive link'])?`<a class="dl-mini" href="${esc(it.video||it['drive link'])}" target="_blank" rel="noopener" title="${it.video?'Play preview':'Open the source'}">Open</a>`:''}
+          ${(dlinfo=>dlinfo
+            ? `<a class="dl-mini" href="${esc(dlinfo.href)}"${dlinfo.download?` download="${esc(dlinfo.download)}"`:''}${dlinfo.blank?' target="_blank" rel="noopener"':''} title="${esc(dlinfo.sub||'')}">⤓ ${esc(dlinfo.label)}</a>`
+            : `<span class="dl-mini off" title="No file uploaded to Drive yet">no file</span>`
+          )(downloadInfo(it))}
+          ${ADMIN?`<button class="dl-mini arch-btn" data-arch="${esc(it.id)}" title="${archived.has(it.id)?'Restore to library':'Hide from library'}" style="background:none;border:none;color:${archived.has(it.id)?'var(--teal)':'#c06'}">${archived.has(it.id)?'♻ Restore':'✕ Archive'}</button>`:''}
+        </span>
+      </div>
+      <div class="details hidden">
+        <div class="chips">
+          ${it.status?`<span class="chip ${stClass}">${esc(it.status)}</span>`:''}
+          ${it.source?`<span class="chip src">${esc(it.source)}</span>`:''}
+        </div>
+        ${it.description?`<div class="cdesc">${esc(it.description)}</div>`:''}
+        ${it.keywords?`<div class="ckeys">${esc(it.keywords)}</div>`:''}
+        ${m}
+        <div class="clinks">
+          ${it['ig link']?`<a href="${esc(it['ig link'])}" target="_blank" rel="noopener">View on Instagram</a>`:''}
+        </div>
+      </div>
+    </div></div>`;
+}
+const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function renderGrid(){
+  const q=document.getElementById('q').value.toLowerCase();
+  const ft=document.getElementById('f-type').value, fs=document.getElementById('f-status').value, fo=document.getElementById('f-source').value;
+  const sort=document.getElementById('f-sort').value;
+  let list=items.filter(it=>{
+    if(ft&&it.type!==ft)return false;
+    if(fs&&it.status!==fs)return false;
+    if(fo&&it.source!==fo)return false;
+    // hide Raw + Archived by default (unless "Show raw/archived" is on, or the user explicitly filtered to that status)
+    if(!showHidden && isHidden(it) && (it.status||'').toLowerCase()!==(fs||'').toLowerCase())return false;
+    if(q){const hay=[it.title,it.keywords,it.description,it.type,it.source,it.venue,it.status].join(' ').toLowerCase();if(!hay.includes(q))return false;}
+    return true;
+  });
+  const hc=document.getElementById('hidden-count'); if(hc){const n=items.filter(isHidden).length;hc.textContent=n?`(${n})`:'';}
+  if(sort==='title')list.sort((a,b)=>String(a.title).localeCompare(b.title));
+  else if(sort==='performance')list.sort((a,b)=>(engRate(b)||-1)-(engRate(a)||-1));
+  else list.sort((a,b)=>String(b['date created']||b['published date']||'').localeCompare(String(a['date created']||a['published date']||'')));
+  document.getElementById('grid').innerHTML=list.map(card).join('');
+  const e=document.getElementById('lib-empty');
+  if(!list.length){e.classList.remove('hidden');e.innerHTML='<h2>Nothing matches</h2><p>Try clearing the search or filters.</p>';}
+  else e.classList.add('hidden');
+}
+
+function renderTracker(){
+  const board=document.getElementById('tracker-board'); if(!board)return;
+  const cat=(window.IFM_DATA&&IFM_DATA.catalogue)||[];
+  const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+  const byTitle={}; cat.forEach(c=>{if(c.title)byTitle[norm(c.title)]=c;});
+  const findCat=item=>{const n=norm(item); if(!n)return null; if(byTitle[n])return byTitle[n]; for(const t in byTitle){ if(n.length>5&&(t.includes(n)||n.includes(t)))return byTitle[t]; } return null;};
+  const thumbOf=c=>{ if(!c)return ''; const ts=c.thumbnail||c['drive link']||''; const fid=/drive\.google\.com\/(file|thumbnail)/.test(ts)?driveId(ts):null; return fid?`https://drive.google.com/thumbnail?id=${fid}&sz=w480`:(/\.(png|jpe?g|webp|gif)(\?|$)/i.test(ts)?ts:''); };
+  const GROUPS=[
+    {label:'🟡 Delivered — ready, not yet posted', hint:'sitting unused; post these', accent:true, m:s=>['delivered','approved','ready'].includes(s)},
+    {label:'🟢 Published — live on Instagram', hint:'', m:s=>s==='published'},
+    {label:'🔵 In production / planned', hint:'coming up', m:s=>['planned','in production','idea','scheduled'].includes(s)},
+  ];
+  const card=r=>{
+    const c=findCat(r.item); const img=thumbOf(c);
+    const icon=TYPE_ICON[(r.type||'').toLowerCase()]||'📄';
+    const dl=r['drive link']||(c&&c['drive link'])||'';
+    const ig=(c&&c['ig link'])||'';
+    return `<div class="trk-card">
+      <div class="trk-thumb">${r.type?`<span class="tt">${esc(r.type)}</span>`:''}${img?`<img loading="lazy" src="${esc(img)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'${icon}'}))">`:`<div class="ph">${icon}</div>`}</div>
+      <div class="trk-body">
+        <div class="trk-name">${esc(r.item)||'Untitled'}</div>
+        ${r.notes?`<div class="trk-note">${esc(r.notes)}</div>`:''}
+        ${(dl||ig)?`<div class="trk-links">${dl?`<a href="${esc(dl)}" target="_blank" rel="noopener">Open</a>`:''}${ig?`<a href="${esc(ig)}" target="_blank" rel="noopener">On IG ↗</a>`:''}</div>`:''}
+      </div></div>`;
+  };
+  const used=new Set();
+  let html=GROUPS.map(g=>{
+    const rows=trackerRows.filter(r=>g.m((r.status||'').toLowerCase()));
+    rows.forEach(r=>used.add(r));
+    if(!rows.length)return '';
+    return `<div class="trk-group${g.accent?' accent':''}"><div class="trk-ghead">${g.label} <span class="cnt">${rows.length}</span>${g.hint?`<span class="hint">— ${g.hint}</span>`:''}</div><div class="trk-grid">${rows.map(card).join('')}</div></div>`;
+  }).join('');
+  const rest=trackerRows.filter(r=>!used.has(r));
+  if(rest.length)html+=`<div class="trk-group"><div class="trk-ghead">⚪ Other <span class="cnt">${rest.length}</span></div><div class="trk-grid">${rest.map(card).join('')}</div></div>`;
+  board.innerHTML=html;
+  const months=[...new Set(trackerRows.map(r=>r.month).filter(Boolean))];
+  const creators=[...new Set(trackerRows.map(r=>r.creator).filter(Boolean))];
+  const ctx=document.getElementById('tracker-ctx'); if(ctx)ctx.innerHTML=`${esc(months.join(', '))} &middot; <b>${esc(creators.join(', '))}</b>`;
+  const byMonth={};
+  trackerRows.forEach(r=>{const k=`${r.month} — ${r.creator}`;byMonth[k]=byMonth[k]||{c:0,d:0,p:0};byMonth[k].c++;const s=(r.status||'').toLowerCase();if(['delivered','approved','published'].includes(s))byMonth[k].d++;if(s==='published')byMonth[k].p++;});
+  document.getElementById('tracker-summary').innerHTML=Object.entries(byMonth).map(([k,v])=>`<div class="stat"><div class="num">${v.d}/${v.c}</div><div class="lbl">${esc(k)} delivered &middot; ${v.p} published</div></div>`).join('');
+  const e=document.getElementById('trk-empty'); if(e){if(!trackerRows.length){e.classList.remove('hidden');e.innerHTML='<h2>No deliverables yet</h2>';}else e.classList.add('hidden');}
+}
+
+function renderCompetitors(){
+  // Sheet is the source of truth for the roster (add/delete/edit); else fall back to baked-in list.
+  const baseComps=competitorRows.length?competitorRows:((window.IFM_DATA&&IFM_DATA.competitors)||[]);
+  // Deep intelligence lives in data.js and is merged onto each row by name/handle (sheet rows win if they carry their own intel).
+  const dj=(window.IFM_DATA&&IFM_DATA.competitors)||[];
+  const cnorm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+  const INTEL_KEYS=['pillars','formats','hook_style','cadence','top_content','whats_working','ifm_action'];
+  const intelMap={},metaMap={};
+  const put=(map,x,rec)=>{if(Object.keys(rec).length){const n=cnorm(x.name);if(n)map['n:'+n]=rec;const h=cnorm((x.instagram||'').replace(/^@/,''));if(h)map['h:'+h]=rec;}};
+  dj.forEach(x=>{
+    const rec={};INTEL_KEYS.forEach(k=>{if((x[k]||'').trim())rec[k]=x[k];});put(intelMap,x,rec);
+    const meta={};['posts','following'].forEach(k=>{if((x[k]||'').toString().trim())meta[k]=x[k];});put(metaMap,x,meta);
+  });
+  const lookup=(map,c)=>map['n:'+cnorm(c.name)]||map['h:'+cnorm((c.instagram||'').replace(/^@/,''))];
+  const comps=baseComps.map(c=>{
+    let out=c;
+    if(!(c.posts||'').toString().trim()){const m=lookup(metaMap,c);if(m)out=Object.assign({},out,m);} // fill stats from data.js
+    if(!INTEL_KEYS.some(k=>(out[k]||'').toString().trim())){const rec=lookup(intelMap,out);if(rec)out=Object.assign({},out,rec);} // fill intel from data.js
+    return out;
+  });
+  const cont=document.getElementById('comp-list');
+  const ckey=c=>cnorm((c.instagram||'').replace(/^@/,''))||cnorm(c.name);
+  const kindOrder={'Direct':0,'Content':1,'Platform':2,'Benchmark':3};
+  // Shared ranking from the sheet's "order" column (team-wide) takes precedence; else this browser's saved order.
+  const sheetHasOrder=comps.some(c=>String(c.order??'').trim()!=='' && !isNaN(Number(c.order)));
+  const oIdx=new Map(compOrder.map((k,i)=>[k,i]));
+  const posOf=c=>{ if(sheetHasOrder){const v=Number(c.order);return isNaN(v)?Infinity:v;} return oIdx.has(ckey(c))?oIdx.get(ckey(c)):Infinity; };
+  const list=[...comps].sort((a,b)=>{
+    const ia=posOf(a),ib=posOf(b);
+    if(ia!==ib)return ia-ib;
+    return (kindOrder[a.kind]??9)-(kindOrder[b.kind]??9);
+  });
+  compByKey={}; list.forEach(c=>compByKey[ckey(c)]=c);
+  cont.innerHTML=list.map((c,i)=>{
+    const handle=(c.instagram||'').trim(); const h=handle.replace(/^@/,'');
+    const igUrl=c.ig_url||(h?('https://www.instagram.com/'+h+'/'):'');
+    const fol=c.followers?String(c.followers).trim().split(' ')[0]:'—';
+    const initial=esc(((c.name||'?').trim()[0]||'?').toUpperCase());
+    const meta=(compPosts._meta&&compPosts._meta[h])||null;
+    const thumbs=(compPosts[h]||[]).slice(0,4);
+    return `<div class="crow" draggable="true" data-key="${esc(ckey(c))}">
+      <span class="chandle" title="drag to rank">⠿</span>
+      <span class="cav">${initial}${h?`<img src="comp-thumbs/${esc(h)}.jpg" alt="" loading="lazy" onerror="this.remove()">`:''}</span>
+      <div class="crow-main">
+        <div class="crow-name"><span class="rk">#${i+1}</span>${esc(c.name)}${igUrl?` <a href="${esc(igUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(handle||'IG ↗')}</a>`:''}</div>
+        <div class="crow-sub">${esc(c.kind||'')}${c.positioning?' · '+esc(c.positioning):''}</div>
+      </div>
+      <div class="crow-nums">
+        <div><b>${esc(fol)}</b><span>followers</span></div>
+        ${meta?`<div><b>♥ ${esc(meta.avg_likes_str)}</b><span>avg likes</span></div>`:`<div><b>${esc(c.posts||'—')}</b><span>posts</span></div>`}
+      </div>
+      <div class="crow-thumbs">${thumbs.map(p=>`<a href="${esc(p.u)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="${p.likes_str?esc(p.likes_str)+' likes':'open on Instagram'}"><img src="${esc(p.t)}" loading="lazy" alt="">${p.type==='reel'?'<span class="rl2">▶</span>':''}</a>`).join('')}</div>
+      ${ADMIN?`<button class="cdel2" data-del="${esc(c.name)}" data-ig="${esc(handle)}" title="remove">✕</button>`:''}
+    </div>`;
+  }).join('');
+  const n=k=>list.filter(c=>c.kind===k).length;
+  document.getElementById('comp-summary').innerHTML=
+    `<div class="stat"><div class="num">${list.length}</div><div class="lbl">Tracked accounts</div></div>`+
+    `<div class="stat"><div class="num">${n('Direct')}</div><div class="lbl">Direct rivals</div></div>`+
+    `<div class="stat"><div class="num">${n('Content')}</div><div class="lbl">Content creators</div></div>`+
+    `<div class="stat"><div class="num">${n('Benchmark')}</div><div class="lbl">Benchmarks</div></div>`;
+  const hint=document.getElementById('comp-hint'); if(hint)hint.classList.toggle('hidden',!list.length);
+  const e=document.getElementById('comp-empty');
+  if(!list.length){e.classList.remove('hidden');e.innerHTML='<h2>No competitors tracked yet</h2><p>Ask Claude to add accounts to the roster.</p>';}
+  else e.classList.add('hidden');
+}
+
+function openCompModal(k){
+  const c=compByKey[k]; if(!c)return;
+  const handle=(c.instagram||'').trim(); const h=handle.replace(/^@/,'');
+  const igUrl=c.ig_url||(h?('https://www.instagram.com/'+h+'/'):'');
+  const fol=c.followers?String(c.followers).trim().split(' ')[0]:'—';
+  const meta=(compPosts._meta&&compPosts._meta[h])||null;
+  const posts=(compPosts[h]||[]);
+  const blk=(label,val,cls)=>val&&String(val).trim()?`<div class="ccard-block${cls?' '+cls:''}"><h5>${label}</h5><p>${esc(val)}</p></div>`:'';
+  document.getElementById('cm-panel').innerHTML=`<button class="cm-close" title="close">✕</button>
+    <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px">
+      <span class="ccard-av" style="width:52px;height:52px">${esc(((c.name||'?').trim()[0]||'?').toUpperCase())}${h?`<img src="comp-thumbs/${esc(h)}.jpg" alt="" onerror="this.remove()">`:''}</span>
+      <div><div style="font-family:'Lora',serif;font-weight:600;font-size:1.3rem;color:var(--navy);line-height:1.15">${esc(c.name)}</div>${igUrl?`<a href="${esc(igUrl)}" target="_blank" rel="noopener" style="color:var(--teal);font-weight:800;font-size:.8rem;text-decoration:none">${esc(handle||'IG ↗')}</a>`:''} <span style="color:var(--muted);font-size:.78rem">· ${esc(c.kind||'')}</span></div>
+    </div>
+    <div class="ccard-stats" style="margin-bottom:10px">
+      <div class="s"><b>${esc(fol)}</b><span>followers</span></div>
+      <div class="s"><b>${esc(c.posts||'—')}</b><span>posts</span></div>
+      ${meta?`<div class="s"><b>♥ ${esc(meta.avg_likes_str)}</b><span>avg likes</span></div>`:''}
+      ${c.website?`<div class="s"><b><a href="${esc(c.website)}" target="_blank" rel="noopener">Site ↗</a></b><span>site</span></div>`:''}
+      ${c.youtube?`<div class="s"><b><a href="${esc(c.youtube)}" target="_blank" rel="noopener">▶ YT</a></b><span>youtube</span></div>`:''}
+    </div>
+    ${c.positioning?`<p style="margin:0 0 10px;font-size:.85rem;line-height:1.5;color:var(--muted)">${esc(c.positioning)}</p>`:''}
+    ${posts.length?`<div class="ccard-block"><h5>🎬 Latest posts</h5><div class="ccard-posts">${posts.map(pp=>`<a href="${esc(pp.u)}" target="_blank" rel="noopener" title="${pp.likes_str?esc(pp.likes_str)+' likes':'open on Instagram'}"><img src="${esc(pp.t)}" loading="lazy" alt="">${pp.type==='reel'?'<span class="rl">▶</span>':''}${pp.likes_str?`<span class="lk">♥ ${esc(pp.likes_str)}</span>`:''}</a>`).join('')}</div></div>`:''}
+    ${blk('Content pillars',c.pillars||c.content)}
+    ${blk('🔥 Top / most-engaging content',c.top_content,'hot')}
+    ${blk('Winning formats',c.formats)}${blk('Signature hook',c.hook_style)}${blk('Posting cadence',c.cadence)}${blk('💡 Why it works',c.whats_working)}
+    ${c.ifm_action&&String(c.ifm_action).trim()?`<div class="ccard-action"><h5 style="margin:0 0 3px;font-size:.64rem;text-transform:uppercase;letter-spacing:.04em;color:#0e7a6e;font-weight:800">▶ IFM action</h5><p style="margin:0;font-size:.86rem;line-height:1.5;font-weight:600;color:var(--navy)">${esc(c.ifm_action)}</p></div>`:''}
+    ${(!INTEL_KEYS_G.some(kk=>(c[kk]||'').toString().trim())&&c.learn)?blk('What IFM can learn',c.learn):''}`;
+  document.getElementById('comp-modal').classList.remove('hidden');
+}
+const INTEL_KEYS_G=['pillars','formats','hook_style','cadence','top_content','whats_working','ifm_action'];
+
+let ifmPub={}, ifmFollowers={};
+function fmtDM(s){const p=(s||'').split('-');return p.length===3?p[2]+'/'+p[1]:s;}
+function growthCard(hist){
+  if(!hist||!hist.length)return '';
+  const n=hist.length, latest=hist[n-1].followers, delta=latest-hist[0].followers;
+  const dCls=delta>0?'good':(delta<0?'bad':'flat'), dArrow=delta>0?'▲':(delta<0?'▼':'■');
+  const dTxt=`${dArrow} ${delta>0?'+':''}${delta} since ${fmtDM(hist[0].date)}`;
+  let chart;
+  if(n<2){
+    chart=`<div class="pg-single">Logging daily at 8pm — the growth line fills in over the next few days.</div>`;
+  }else{
+    const ys=hist.map(d=>+d.followers), W=600,H=150,pl=46,pr=14,pt=14,pb=24,iw=W-pl-pr,ih=H-pt-pb;
+    let mn=Math.min(...ys),mx=Math.max(...ys); if(mn===mx){mn-=2;mx+=2;}
+    const rng=mx-mn; mn=Math.floor(mn-rng*0.15); mx=Math.ceil(mx+rng*0.15);
+    const X=i=>pl+iw*i/(n-1), Y=v=>pt+ih*(1-(v-mn)/(mx-mn));
+    const pts=hist.map((d,i)=>[X(i),Y(+d.followers)]);
+    const path=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+    const area=`M${pts[0][0].toFixed(1)} ${(pt+ih).toFixed(1)} `+pts.map(p=>'L'+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ')+` L${pts[n-1][0].toFixed(1)} ${(pt+ih).toFixed(1)} Z`;
+    const lp=pts[n-1];
+    chart=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="IFM follower growth">
+      <text x="4" y="${pt+5}" class="pg-ax">${mx}</text>
+      <text x="4" y="${pt+ih}" class="pg-ax">${mn}</text>
+      <line x1="${pl}" y1="${pt+ih}" x2="${W-pr}" y2="${pt+ih}" class="pg-base"/>
+      <path d="${area}" class="pg-area"/>
+      <path d="${path}" class="pg-line"/>
+      <circle cx="${lp[0].toFixed(1)}" cy="${lp[1].toFixed(1)}" r="4" class="pg-dot"/>
+      <text x="${(lp[0]-7).toFixed(0)}" y="${(lp[1]-9).toFixed(0)}" text-anchor="end" class="pg-val">${latest}</text>
+      <text x="${pl}" y="${H-6}" class="pg-ax">${fmtDM(hist[0].date)}</text>
+      <text x="${W-pr}" y="${H-6}" text-anchor="end" class="pg-ax">${fmtDM(hist[n-1].date)}</text>
+    </svg>`;
+  }
+  return `<div class="pub-growth-card">
+    <div class="pg-head"><div><span class="pg-now">${latest}</span><span class="pg-lbl">followers today</span></div>
+      <div class="pg-delta ${dCls}">${dTxt}</div></div>
+    ${chart}
+    <div class="pg-foot">📈 Daily follower log · ${n} day${n===1?'':'s'} tracked · auto-updates 8pm</div>
+  </div>`;
+}
+function renderPublished(){
+  const posts=(ifmPub.posts||[]), meta=(ifmPub.meta||{});
+  const fHist=(ifmFollowers.history||[]);
+  const latestFol=fHist.length?fHist[fHist.length-1].followers:(meta.followers??null);
+  const pg=document.getElementById('pub-growth'); if(pg)pg.innerHTML=growthCard(fHist);
+  const s=document.getElementById('pub-summary'); if(!s)return;
+  s.innerHTML=`<div class="stat"><div class="num">${meta.total_posts||posts.length}</div><div class="lbl">Live on Instagram</div></div>`+
+    `<div class="stat"><div class="num">${latestFol??'—'}</div><div class="lbl">Followers</div></div>`+
+    `<div class="stat"><div class="num">♥ ${meta.avg_likes??'—'}</div><div class="lbl">Avg likes / post</div></div>`+
+    `<div class="stat"><div class="num">${posts.length}</div><div class="lbl">Shown (recent)</div></div>`;
+  const cn=document.getElementById('pub-cat-n'); if(cn)cn.textContent=items.length||228;
+  const ln=document.getElementById('pub-live-n'); if(ln)ln.textContent=meta.total_posts||posts.length;
+  // "What's working" — computed live from the posts (auto-updates when the weekly refresh reloads this file)
+  const ins=document.getElementById('pub-insights');
+  if(ins){
+    const wl=posts.filter(p=>p.likes!=null);
+    const reels=wl.filter(p=>p.type==='reel'), stat=wl.filter(p=>p.type!=='reel');
+    const avg=a=>a.length?Math.round(a.reduce((s,p)=>s+p.likes,0)/a.length):0;
+    const rAvg=avg(reels), sAvg=avg(stat);
+    if(wl.length>=4 && reels.length && stat.length){
+      const mult=sAvg?(rAvg/sAvg).toFixed(1):null;
+      const top=[...wl].sort((a,b)=>((b.likes+(b.comments||0))-(a.likes+(a.comments||0))))[0];
+      const reelsWin=rAvg>sAvg;
+      const cap=(top.caption||'').replace(/\s+/g,' ').trim().slice(0,58);
+      ins.innerHTML=`<div class="pub-ins"><h4>📊 What's working <span style="font-weight:600;color:var(--muted);font-size:.72rem">— auto-updated weekly from your live posts</span></h4>
+        <div class="pub-ins-row">
+          <div class="pub-ins-stat"><b>♥ ${rAvg}</b><span>Reels avg (${reels.length})</span></div>
+          <div class="pub-ins-stat"><b>♥ ${sAvg}</b><span>Carousels avg (${stat.length})</span></div>
+          ${mult&&reelsWin?`<div class="pub-ins-stat" style="background:#e7f4f1"><b>${mult}×</b><span>reels win by</span></div>`:''}
+        </div>
+        <div class="pub-ins-take">${reelsWin&&rAvg>=sAvg*1.5
+          ? `<span class="good">🎬 Reels are your winner — ${mult}× the engagement of carousels.</span> Top post: “${esc(cap)}…” (♥${top.likes}${top.comments?` · ${top.comments} comments`:''}). <b>Lean into video</b> — workshop clips + founder on camera. <span class="bad">Generic educational carousels average just ♥${sAvg}</span> — skip evergreen tip-decks unless they decode something timely.`
+          : `Top post: “${esc(cap)}…” (♥${top.likes}). Reels avg ♥${rAvg} vs carousels ♥${sAvg} — keep testing formats.`}</div>
+      </div>`;
+    } else ins.innerHTML='';
+  }
+  const g=document.getElementById('pub-grid'); if(!g)return;
+  // verdict tiers: rank posts with engagement, top third = worked, bottom third = flopped
+  const scored=posts.map(p=>({p,s:(p.likes||0)+(p.comments||0),has:p.likes!=null}));
+  const ranked=scored.filter(x=>x.has).sort((a,b)=>b.s-a.s);
+  const nn=ranked.length, cut=Math.max(1,Math.ceil(nn/3));
+  ranked.forEach((x,i)=>{x.p._tier=(i<cut)?'hit':((i>=nn-cut)?'low':'ok');});
+  const fol=latestFol||meta.followers||0;
+  // grid ordered best → worst (posts without engagement go last)
+  const ordered=[...scored].sort((a,b)=>(b.has-a.has)||(b.s-a.s)).map(x=>x.p);
+  const BADGE={hit:'<span class="pub-badge hit">🔥 Worked</span>',low:'<span class="pub-badge low">Low reach</span>',ok:'<span class="pub-badge ok">OK</span>'};
+  g.innerHTML=ordered.map(p=>{
+    const tier=p._tier||'', er=(fol&&p.likes!=null)?Math.round(100*(p.likes+(p.comments||0))/fol):null;
+    return `<div class="pub-card">
+    <div class="pub-thumb">${BADGE[tier]||''}${p.t?`<img src="${esc(p.t)}" loading="lazy" alt="">`:'<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:1.6rem">📲</div>'}${p.type==='reel'?'<span class="rl">▶</span>':''}
+      <div class="pub-eng"><span>♥ ${p.likes??'—'}</span><span>💬 ${p.comments??'—'}</span>${er!=null?`<span style="margin-left:auto" class="pub-er ${tier}">${er}%</span>`:''}</div></div>
+    <div class="pub-body"><div class="pub-cap">${esc(p.caption||'')}</div>
+      <div class="pub-meta"><span>${esc(p.date||'')} · ${esc(p.type||'')}</span><a href="${esc(p.u)}" target="_blank" rel="noopener">Open ↗</a></div></div>
+  </div>`;}).join('');
+  const e=document.getElementById('pub-empty');
+  if(!posts.length){e.classList.remove('hidden');e.innerHTML='<h2>No published posts loaded yet</h2><p>Ask Claude to scan the Instagram grid.</p>';}else e.classList.add('hidden');
+}
+
+function renderCerts(){
+  const tb=document.getElementById('certs-body');
+  const col=(r,k)=>{const key=Object.keys(r).find(x=>x.replace(/[^a-z]/g,'').includes(k));return key?r[key]:'';};
+  const rows=certRows.filter(r=>(col(r,'name')||'').trim() && !/^example/i.test(col(r,'name')));
+  tb.innerHTML=rows.map(r=>{
+    const link=col(r,'certificatephoto')||col(r,'photo')||col(r,'drivelink')||'';
+    const fid=driveId(link);
+    const thumb=fid?`<a href="${esc(link)}" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=${fid}&sz=w120" style="width:54px;height:54px;object-fit:cover;border-radius:8px;display:block" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'🏅',style:'font-size:1.4rem'}))"></a>`:'<span style="color:var(--muted)">no photo</span>';
+    const handle=(col(r,'instagram')||'').trim();
+    const hURL=handle?`https://instagram.com/${handle.replace(/^@/,'')}`:'';
+    const posted=(col(r,'posted')||'').trim();
+    const done=/^y/i.test(posted);
+    return `<tr>
+      <td>${thumb}</td>
+      <td><strong>${esc(col(r,'name'))}</strong></td>
+      <td>${handle?`<a href="${esc(hURL)}" target="_blank" rel="noopener" style="color:var(--teal);font-weight:800">${esc(handle)}</a>`:'<span style="color:var(--coral);font-weight:700">add handle</span>'}</td>
+      <td style="font-size:.8rem">${esc(col(r,'workshop')||col(r,'batch'))}</td>
+      <td><span class="pill ${done?'published':'planned'}">${done?'Posted':'To post'}</span></td>
+      <td>${esc(col(r,'postdate'))}</td>
+      <td style="color:var(--muted);font-size:.78rem">${esc(col(r,'caption')||col(r,'notes'))}</td></tr>`;
+  }).join('');
+  const total=rows.length, posted=rows.filter(r=>/^y/i.test((col(r,'posted')||''))).length, noH=rows.filter(r=>!(col(r,'instagram')||'').trim()).length;
+  document.getElementById('certs-summary').innerHTML=
+    `<div class="stat"><div class="num">${total}</div><div class="lbl">Certificates</div></div>`+
+    `<div class="stat"><div class="num">${posted}/${total||0}</div><div class="lbl">Posted</div></div>`+
+    (noH?`<div class="stat"><div class="num">${noH}</div><div class="lbl">Need a handle</div></div>`:'');
+  const e=document.getElementById('certs-empty');
+  if(!total){e.classList.remove('hidden');e.innerHTML='<h2>No certificates yet</h2><p>Add people in the <a href="'+sheetUrl(CONFIG.certSheetId)+'" target="_blank" rel="noopener">Certificates sheet</a> — name, Instagram handle and a Drive link to each photo. They appear here automatically.</p>';}
+  else e.classList.add('hidden');
+}
+
+function sheetError(elId, name, id){
+  const e=document.getElementById(elId);
+  e.classList.remove('hidden');
+  e.innerHTML=`<h2>Can't reach the ${name} sheet yet</h2>
+    <p>Open the <a href="${sheetUrl(id)}" target="_blank" rel="noopener">${name} sheet</a>, click <strong>Share</strong>, and set
+    <strong>“Anyone with the link” → Viewer</strong>. Then refresh this page.</p>`;
+}
+
+// Built-in data (data.js) is machine-maintained; the sheet carries human edits.
+// Sheet wins on these fields — except a built-in "Published" never downgrades.
+const HUMAN_FIELDS=['status','published date','ig link','reach','likes','comments','saves','shares','notes','venue'];
+function mergeRow(o,rw){
+  HUMAN_FIELDS.forEach(k=>{
+    const v=rw[k]; if(v===undefined||String(v).trim()==='')return;
+    if(k==='status'&&o.status==='Published'&&v!=='Published')return;
+    o[k]=v;
+  });
+}
+async function load(){
+  items=(window.IFM_DATA&&IFM_DATA.catalogue||[]).map(o=>({...o}));
+  try{
+    const t=await fetch(csvUrl(CONFIG.catalogueSheetId)).then(r=>{if(!r.ok)throw 0;return r.text();});
+    const byId=new Map(items.map((o,i)=>[o.id,i]));
+    toObjects(parseCSV(t)).forEach(rw=>{
+      if(!rw.id)return;
+      if(byId.has(rw.id))mergeRow(items[byId.get(rw.id)],rw);
+      else items.push(rw);
+    });
+  }catch(e){ if(!items.length)sheetError('lib-empty','Content Catalogue',CONFIG.catalogueSheetId); }
+  ratePublished(items);
+  fillSelect('f-type',items.map(i=>i.type));
+  fillSelect('f-status',items.map(i=>i.status));
+  fillSelect('f-source',items.map(i=>i.source));
+  renderGrid();
+  trackerRows=(window.IFM_DATA&&IFM_DATA.tracker||[]).map(o=>({...o}));
+  try{
+    const t=await fetch(csvUrl(CONFIG.trackerSheetId)).then(r=>{if(!r.ok)throw 0;return r.text();});
+    const key=r=>((r.month||'')+'|'+(r.item||'')).toLowerCase().trim();
+    const byKey=new Map(trackerRows.map((o,i)=>[key(o),i]));
+    toObjects(parseCSV(t)).forEach(rw=>{
+      if(!rw.item||/^example/i.test(rw.item)||rw.item==='June social media batch')return;
+      if(byKey.has(key(rw)))mergeRow(trackerRows[byKey.get(key(rw))],rw);
+      else trackerRows.push(rw);
+    });
+  }catch(e){ if(!trackerRows.length)sheetError('trk-empty','Creator Tracker',CONFIG.trackerSheetId); }
+  renderTracker();
+  // Certificates sheet (optional — only errors visibly inside its own tab)
+  try{
+    const t=await fetch(csvUrl(CONFIG.certSheetId)).then(r=>{if(!r.ok)throw 0;return r.text();});
+    certRows=toObjects(parseCSV(t));
+  }catch(e){}
+  renderCerts();
+  // Competitors sheet (optional — falls back to baked-in roster if unshared/empty)
+  try{
+    const t=await fetch(csvUrl(CONFIG.competitorSheetId)).then(r=>{if(!r.ok)throw 0;return r.text();});
+    competitorRows=toObjects(parseCSV(t)).filter(r=>(r.name||'').trim());
+  }catch(e){}
+  try{ const r=await fetch('comp-posts.json?_='+Date.now()); if(r.ok)compPosts=await r.json(); }catch(e){}
+  renderCompetitors();
+  try{ const r=await fetch('ifm-published.json?_='+Date.now()); if(r.ok)ifmPub=await r.json(); }catch(e){}
+  try{ const r=await fetch('ifm-followers.json?_='+Date.now()); if(r.ok)ifmFollowers=await r.json(); }catch(e){}
+  renderPublished();
+  renderStats();
+}
+
+document.querySelectorAll('.tab[data-tab]').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tab[data-tab]').forEach(x=>x.classList.toggle('active',x===b));
+  ['library','tracker','certs','competitors','published'].forEach(t=>document.getElementById('tab-'+t).classList.toggle('hidden',b.dataset.tab!==t));
+}));
+['q','f-type','f-status','f-source','f-sort'].forEach(id=>document.getElementById(id).addEventListener('input',renderGrid));
+document.getElementById('f-showhidden').addEventListener('change',e=>{showHidden=e.target.checked;renderGrid();renderStats();});
+
+// Card interactions (delegated once — survives re-renders)
+const gridEl=document.getElementById('grid');
+gridEl.addEventListener('click',e=>{
+  const arch=e.target.closest('.arch-btn');
+  if(arch){const id=arch.dataset.arch; archived.has(id)?archived.delete(id):archived.add(id); saveArchived(); renderGrid(); renderStats(); return;}
+  const t=e.target.closest('.details-toggle'); if(!t)return;
+  const body=t.closest('.cbody'); const d=body&&body.querySelector('.details');
+  if(d){ t.classList.toggle('open'); d.classList.toggle('hidden'); }
+});
+gridEl.addEventListener('mouseover',e=>{
+  const c=e.target.closest('.card.has-video'); if(!c||c._playing)return;
+  c._playing=true;
+  const v=c.querySelector('video.vid'), img=c.querySelector('.poster');
+  if(v){ v.classList.remove('hidden'); if(img)img.style.visibility='hidden'; const p=v.play(); if(p&&p.catch)p.catch(()=>{}); }
+});
+gridEl.addEventListener('mouseout',e=>{
+  const c=e.target.closest('.card.has-video'); if(!c)return;
+  if(e.relatedTarget&&c.contains(e.relatedTarget))return;
+  c._playing=false;
+  const v=c.querySelector('video.vid'), img=c.querySelector('.poster');
+  if(v){ try{v.pause();v.currentTime=0;}catch(_){} v.classList.add('hidden'); if(img)img.style.visibility=''; }
+});
+
+// Password gate (soft lock — keeps the dashboard private to the team).
+// Plaintext password is never stored here; we compare a SHA-256 hash.
+const PW_HASH='70ad2d849dfacbc2e8ec722f9e72f1fc337742409c99a70c1cf5b8027d332374';
+const gateEl=document.getElementById('gate');
+let _loaded=false;
+async function sha256hex(s){
+  const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
+  return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');
+}
+function unlock(){
+  gateEl.classList.add('hidden');
+  document.body.classList.remove('locked');
+  if(!_loaded){_loaded=true;load();}
+}
+async function tryPw(){
+  const err=document.getElementById('gate-err');
+  try{
+    if(await sha256hex(document.getElementById('gate-pw').value)===PW_HASH){
+      try{sessionStorage.setItem('ifm-content-auth','1');}catch(_){}
+      unlock();
+    }else{
+      err.textContent='Wrong password — try again.';
+      document.getElementById('gate-pw').select();
+    }
+  }catch(_){ err.textContent='This page needs a secure (https) connection.'; }
+}
+document.getElementById('gate-go').addEventListener('click',tryPw);
+document.getElementById('gate-pw').addEventListener('keydown',e=>{if(e.key==='Enter')tryPw();});
+let _authed=false; try{_authed=sessionStorage.getItem('ifm-content-auth')==='1';}catch(_){}
+if(_authed){ unlock(); }
+else { document.body.classList.add('locked'); document.getElementById('gate-pw').focus(); }
+
+// Admin-only "Catalogue now" button — visible at /content/?admin=1. Calls the Apps Script web app.
+(function(){
+  if(!/[?&]admin=1/.test(location.search))return;
+  const btn=document.getElementById('catalogue-now');
+  btn.style.display='';
+  btn.addEventListener('click',()=>{
+    let u=localStorage.getItem('ifm_webapp_url');
+    if(!u){
+      u=prompt('Paste your Apps Script Web App URL (Deploy → Web app → ends in /exec):');
+      if(!u)return; u=u.trim(); localStorage.setItem('ifm_webapp_url',u);
+    }
+    // Fire the catalogue in a hidden iframe (no new tab), then refresh the grid.
+    const src=u+(u.indexOf('?')>=0?'&':'?')+'key=ifm-hub-7Q2x9m';
+    const f=document.createElement('iframe'); f.style.display='none'; f.src=src; document.body.appendChild(f);
+    const orig=btn.textContent; btn.disabled=true; btn.textContent='⏳ Cataloguing…';
+    setTimeout(()=>{
+      btn.textContent='🔄 Refreshing…';
+      Promise.resolve(load()).then(()=>{
+        btn.textContent='✅ Updated'; f.remove();
+        setTimeout(()=>{btn.textContent=orig;btn.disabled=false;},2500);
+      }).catch(()=>{btn.textContent=orig;btn.disabled=false;f.remove();});
+    },25000);
+  });
+})();
+
+// --- Competitors add/delete (admin view at ?admin=1) → writes to the sheet via Apps Script web app ---
+function compWebapp(){
+  // Baked-in web-app URL so the add/delete buttons work with no setup. localStorage can override.
+  return localStorage.getItem('ifm_comp_webapp_url') || 'https://script.google.com/macros/s/AKfycbwGJWEmqhFlD_mO1fSRmlTDf12UsdPktNoSwP5TF2ConrDf8XGSPv0qB3VbFDwSxiZP1A/exec';
+}
+function postComp(params){
+  const u=compWebapp(); if(!u)return Promise.reject('no-url');
+  const body=new URLSearchParams(Object.assign({key:COMP_KEY},params));
+  return fetch(u,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body})
+    .then(()=>new Promise(r=>setTimeout(r,4500)))   // let the sheet write + gviz cache settle
+    .then(()=>load());
+}
+function addComp(){
+  const g=id=>document.getElementById('ca-'+id).value.trim();
+  const name=g('name'); const st=document.getElementById('ca-status');
+  if(!name){alert('Name is required');return;}
+  const handle=g('instagram').replace(/^@/,'');
+  const params={action:'add',name,kind:g('kind'),threat:g('threat'),
+    instagram:handle?('@'+handle):'',ig_url:handle?('https://www.instagram.com/'+handle+'/'):'',
+    positioning:g('positioning'),content:g('content'),learn:g('learn'),
+    followers:g('followers'),website:g('website')};
+  st.textContent='Saving…';
+  postComp(params).then(()=>{
+    st.textContent='✅ Added — refreshed';
+    ['name','instagram','positioning','content','learn','followers','website'].forEach(k=>document.getElementById('ca-'+k).value='');
+    setTimeout(()=>st.textContent='',3000);
+  }).catch(()=>{ st.textContent='⚠️ No web-app URL set — Add/Delete needs the Apps Script deployed first'; });
+}
+function delComp(name,ig){
+  if(!confirm('Remove '+name+' from the roster?'))return;
+  postComp({action:'del',name:name||'',instagram:ig||''}).catch(()=>{});
+}
+(function(){
+  if(ADMIN){
+    const panel=document.getElementById('comp-admin'); if(panel)panel.classList.remove('hidden');
+    const addBtn=document.getElementById('ca-add'); if(addBtn)addBtn.addEventListener('click',addComp);
+  }
+  const listEl=document.getElementById('comp-list'); if(!listEl)return;
+  // Click a row → open detail modal (links, drag handle, delete are excluded)
+  listEl.addEventListener('click',e=>{
+    const del=e.target.closest('.cdel2'); if(del){delComp(del.dataset.del,del.dataset.ig);return;}
+    if(e.target.closest('a')||e.target.closest('.chandle'))return;
+    const row=e.target.closest('.crow'); if(row)openCompModal(row.dataset.key);
+  });
+  // Drag to reorder (persists in this browser)
+  let dragKey=null;
+  listEl.addEventListener('dragstart',e=>{const row=e.target.closest('.crow');if(!row)return;dragKey=row.dataset.key;row.classList.add('dragging');try{e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',dragKey);}catch(_){}});
+  listEl.addEventListener('dragend',e=>{const row=e.target.closest('.crow');if(row)row.classList.remove('dragging');listEl.querySelectorAll('.dragover').forEach(r=>r.classList.remove('dragover'));dragKey=null;});
+  listEl.addEventListener('dragover',e=>{e.preventDefault();const row=e.target.closest('.crow');if(!row||row.dataset.key===dragKey)return;listEl.querySelectorAll('.dragover').forEach(r=>r.classList.remove('dragover'));row.classList.add('dragover');});
+  listEl.addEventListener('drop',e=>{
+    e.preventDefault();
+    const target=e.target.closest('.crow'); if(!target||!dragKey||target.dataset.key===dragKey)return;
+    let keys=[...listEl.querySelectorAll('.crow')].map(r=>r.dataset.key).filter(k=>k!==dragKey);
+    keys.splice(keys.indexOf(target.dataset.key),0,dragKey); // drop before target
+    compOrder=keys; localStorage.setItem('ifm-comp-order',JSON.stringify(compOrder));
+    // write the shared ranking to the sheet (team-wide) — fire-and-forget
+    try{const u=compWebapp();if(u){const b=new URLSearchParams({key:COMP_KEY,action:'setorder',order:keys.join(',')});fetch(u,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:b});}}catch(_){}
+    renderCompetitors();
+  });
+  // Modal close
+  const modal=document.getElementById('comp-modal');
+  if(modal){
+    modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('.cm-close'))modal.classList.add('hidden');});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.add('hidden');});
+  }
+})();
+</script>
+</body>
+</html>

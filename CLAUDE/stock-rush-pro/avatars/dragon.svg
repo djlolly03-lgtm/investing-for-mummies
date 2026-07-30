@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="bg-d" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#001a08"/>
+      <stop offset="100%" stop-color="#000e04"/>
+    </radialGradient>
+    <filter id="glow-d" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fire-d" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="clip-d"><circle cx="100" cy="100" r="97"/></clipPath>
+  </defs>
+
+  <circle cx="100" cy="100" r="100" fill="#000e04"/>
+  <circle cx="100" cy="100" r="97" fill="url(#bg-d)"/>
+
+  <!-- Back spines -->
+  <g clip-path="url(#clip-d)">
+    <polygon points="100,10 108,35 100,30 92,35" fill="#16a34a" filter="url(#glow-d)"/>
+    <polygon points="118,15 124,38 117,35 113,40" fill="#15803d" opacity="0.8"/>
+    <polygon points="82,15 76,38 83,35 87,40" fill="#15803d" opacity="0.8"/>
+    <polygon points="135,24 136,46 129,44 128,50" fill="#166534" opacity="0.7"/>
+    <polygon points="65,24 64,46 71,44 72,50" fill="#166534" opacity="0.7"/>
+  </g>
+
+  <!-- Dragon neck/body -->
+  <ellipse cx="100" cy="145" rx="35" ry="28" fill="#166534"/>
+  <path d="M70 130 Q100 155 130 130 Q130 165 100 170 Q70 165 70 130Z" fill="#14532d"/>
+
+  <!-- Scales on neck -->
+  <g opacity="0.5" clip-path="url(#clip-d)">
+    <ellipse cx="85" cy="148" rx="7" ry="5" fill="#16a34a"/>
+    <ellipse cx="100" cy="155" rx="7" ry="5" fill="#16a34a"/>
+    <ellipse cx="115" cy="148" rx="7" ry="5" fill="#16a34a"/>
+    <ellipse cx="90" cy="160" rx="6" ry="4" fill="#16a34a"/>
+    <ellipse cx="110" cy="160" rx="6" ry="4" fill="#16a34a"/>
+  </g>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="95" rx="44" ry="50" fill="#15803d"/>
+  <ellipse cx="100" cy="95" rx="40" ry="46" fill="#16a34a"/>
+
+  <!-- Horn left -->
+  <polygon points="70,62 58,32 74,55" fill="#4ade80" filter="url(#glow-d)"/>
+  <polygon points="72,62 61,34 75,56" fill="#86efac" opacity="0.5"/>
+  <!-- Horn right -->
+  <polygon points="130,62 142,32 126,55" fill="#4ade80" filter="url(#glow-d)"/>
+  <polygon points="128,62 139,34 125,56" fill="#86efac" opacity="0.5"/>
+
+  <!-- Ridge spines on head -->
+  <polygon points="100,48 96,60 100,56 104,60" fill="#4ade80" opacity="0.9"/>
+  <polygon points="88,52 85,63 88,60 91,63" fill="#4ade80" opacity="0.7"/>
+  <polygon points="112,52 115,63 112,60 109,63" fill="#4ade80" opacity="0.7"/>
+
+  <!-- Brow ridges -->
+  <path d="M72 88 Q82 82 92 86" stroke="#4ade80" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M128 88 Q118 82 108 86" stroke="#4ade80" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Eyes -->
+  <ellipse cx="83" cy="95" rx="10" ry="9" fill="#052e16"/>
+  <ellipse cx="117" cy="95" rx="10" ry="9" fill="#052e16"/>
+  <ellipse cx="83" cy="95" rx="7.5" ry="7" fill="#4ade80" filter="url(#glow-d)"/>
+  <ellipse cx="117" cy="95" rx="7.5" ry="7" fill="#4ade80" filter="url(#glow-d)"/>
+  <ellipse cx="83" cy="95" rx="4" ry="6" fill="#052e16"/>
+  <ellipse cx="117" cy="95" rx="4" ry="6" fill="#052e16"/>
+  <circle cx="81" cy="93" r="1.5" fill="white" opacity="0.9"/>
+  <circle cx="115" cy="93" r="1.5" fill="white" opacity="0.9"/>
+
+  <!-- Snout -->
+  <ellipse cx="100" cy="116" rx="22" ry="14" fill="#14532d"/>
+  <ellipse cx="100" cy="114" rx="18" ry="10" fill="#166534"/>
+  <!-- Nostrils -->
+  <ellipse cx="93" cy="113" rx="3" ry="2" fill="#052e16"/>
+  <ellipse cx="107" cy="113" rx="3" ry="2" fill="#052e16"/>
+
+  <!-- Fire breath -->
+  <g filter="url(#fire-d)" clip-path="url(#clip-d)">
+    <path d="M88 124 Q100 140 78 155 Q95 145 85 162 Q105 148 100 165 Q115 148 115 162 Q105 145 122 155 Q100 140 112 124" fill="#f59e0b" opacity="0.85"/>
+    <path d="M92 124 Q100 136 85 148 Q100 140 95 155 Q103 142 108 148 Q100 136 108 124" fill="#fde047" opacity="0.7"/>
+  </g>
+
+  <!-- Teeth hint -->
+  <path d="M87 121 L90 130 L93 121" fill="#d1fae5" opacity="0.6"/>
+  <path d="M107 121 L110 130 L113 121" fill="#d1fae5" opacity="0.6"/>
+
+  <!-- Chin spikes -->
+  <polygon points="96,126 94,140 98,135" fill="#4ade80" opacity="0.6"/>
+  <polygon points="104,126 106,140 102,135" fill="#4ade80" opacity="0.6"/>
+
+  <!-- Crown ring -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#16a34a" stroke-width="3" filter="url(#glow-d)" opacity="0.95"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#4ade80" stroke-width="1" opacity="0.4"/>
+
+  <!-- Corner ticks -->
+  <g stroke="#16a34a" stroke-width="1.5" opacity="0.6">
+    <line x1="20" y1="55" x2="28" y2="55"/><line x1="20" y1="55" x2="20" y2="63"/>
+    <line x1="180" y1="55" x2="172" y2="55"/><line x1="180" y1="55" x2="180" y2="63"/>
+    <line x1="20" y1="145" x2="28" y2="145"/><line x1="20" y1="145" x2="20" y2="137"/>
+    <line x1="180" y1="145" x2="172" y2="145"/><line x1="180" y1="145" x2="180" y2="137"/>
+  </g>
+</svg>

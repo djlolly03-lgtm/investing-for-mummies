@@ -1,0 +1,166 @@
+{
+  "rewrites": [
+    {
+      "source": "/hidden-fortunes",
+      "destination": "/hidden-fortunes-2.html"
+    },
+    {
+      "source": "/money-map",
+      "destination": "/teen-budget.html"
+    },
+    {
+      "source": "/lifestyle-time-machine",
+      "destination": "/lifestyle-time-machine.html"
+    },
+    {
+      "source": "/need-want-value",
+      "destination": "/nwv.html"
+    },
+    {
+      "source": "/swipe-right-sip",
+      "destination": "/swipe-right-sip.html"
+    },
+    {
+      "source": "/swipe-right-live",
+      "destination": "/swipe-right-sip-live.html"
+    },
+    {
+      "source": "/broke-by-friday",
+      "destination": "/broke-by-friday-live.html"
+    },
+    {
+      "source": "/3-buckets",
+      "destination": "/3-buckets.html"
+    },
+    {
+      "source": "/quiz",
+      "destination": "/quiz.html"
+    },
+    {
+      "source": "/crorepati-lane",
+      "destination": "/crorepati-lane.html"
+    },
+    {
+      "source": "/rice-and-chessboard",
+      "destination": "/chess-compounding.html"
+    },
+    {
+      "source": "/short-squeeze",
+      "destination": "/short-squeeze-sim.html"
+    },
+    {
+      "source": "/mutual-fund-manager",
+      "destination": "/fund-manager.html"
+    },
+    {
+      "source": "/market-madness-2",
+      "destination": "/mm2_content.html"
+    },
+    {
+      "source": "/module-1",
+      "destination": "/module1.html"
+    },
+    {
+      "source": "/module-2",
+      "destination": "/module2.html"
+    },
+    {
+      "source": "/module-3",
+      "destination": "/module3.html"
+    },
+    {
+      "source": "/module-4",
+      "destination": "/module4.html"
+    },
+    {
+      "source": "/module-5",
+      "destination": "/module5.html"
+    },
+    {
+      "source": "/module-6",
+      "destination": "/module6.html"
+    },
+    {
+      "source": "/nav-pizza",
+      "destination": "/nav-pizza.html"
+    },
+    {
+      "source": "/one-crore-ladder",
+      "destination": "/one-crore-ladder.html"
+    },
+    {
+      "source": "/radhas-mission",
+      "destination": "/radhas-mission.html"
+    },
+    {
+      "source": "/three-investors",
+      "destination": "/three-investors.html"
+    },
+    {
+      "source": "/wheel-of-gold",
+      "destination": "/wheel-of-gold.html"
+    },
+    {
+      "source": "/wheel-of-silver",
+      "destination": "/wheel-of-silver.html"
+    },
+    {
+      "source": "/reit-or-real",
+      "destination": "/reit-or-real.html"
+    },
+    {
+      "source": "/debt-detective",
+      "destination": "/debt-detective.html"
+    },
+    {
+      "source": "/debt-boss",
+      "destination": "/debt-boss.html"
+    },
+    {
+      "source": "/cap-climber",
+      "destination": "/cap-climber.html"
+    },
+    {
+      "source": "/double-or-nothing",
+      "destination": "/double-or-nothing.html"
+    },
+    {
+      "source": "/market-pulse",
+      "destination": "/market-pulse.html"
+    },
+    {
+      "source": "/ipo-bonanza",
+      "destination": "/ipo-bonanza.html"
+    },
+    {
+      "source": "/my-first-trade",
+      "destination": "/my-first-trade.html"
+    },
+    {
+      "source": "/asset-boss",
+      "destination": "/asset-boss.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/stock-rush",
+      "destination": "/stock-rush/",
+      "permanent": false
+    },
+    {
+      "source": "/stock-rush-pro",
+      "destination": "/stock-rush-pro/",
+      "permanent": false
+    },
+    {
+      "source": "/swayamvar",
+      "destination": "/swayamvar/",
+      "permanent": false
+    },
+    {
+      "source": "/wealth-conversation",
+      "destination": "/wealth-conversation/",
+      "permanent": false
+    }
+  ]
+}

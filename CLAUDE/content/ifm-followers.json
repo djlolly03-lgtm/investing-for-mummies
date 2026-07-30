@@ -1,0 +1,8 @@
+{
+  "handle": "@investingformummies",
+  "note": "Daily follower-count log for IFM. Captured ~8pm local via the GStack logged-in browser (browse binary). Append-only, one row per day. Used to graph follower growth over time.",
+  "started": "2026-07-30",
+  "history": [
+    { "date": "2026-07-30", "followers": 309, "following": 129, "posts": 37 }
+  ]
+}

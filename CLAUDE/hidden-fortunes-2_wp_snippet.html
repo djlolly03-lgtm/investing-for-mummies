@@ -1,0 +1,32 @@
+<!-- Hidden Fortunes 2.0 — Investing for Mummies -->
+<style>
+body{background:#ffffff!important;}
+.wp-block-post-title, h1.entry-title, .page-title{display:none!important;}
+.wp-site-blocks, .is-layout-constrained, .entry-content, .wp-block-group{background:#ffffff!important;padding:0!important;max-width:100%!important;}
+footer.wp-block-template-part{display:none!important;}
+header.wp-block-template-part{position:relative!important;top:auto!important;}
+html,body{margin:0!important;padding:0!important;}
+#game-wrap{width:100%;background:#ffffff;}
+#game-wrap iframe{width:100%;display:block;border:none;}
+</style>
+<div id="game-wrap">
+  <iframe id="game-iframe"
+    src="https://ifm-deploy.vercel.app/hidden-fortunes-2.html"
+    title="Hidden Fortunes 2.0 — Investing for Mummies"
+    allowfullscreen loading="eager">
+  </iframe>
+</div>
+<script>
+(function(){
+  function sizeIframe(){
+    var header = document.querySelector("header.wp-block-template-part");
+    var adminBar = document.getElementById("wpadminbar");
+    var used = (header ? header.offsetHeight : 0) + (adminBar ? adminBar.offsetHeight : 0);
+    var iframe = document.getElementById("game-iframe");
+    if(iframe) iframe.style.height = (window.innerHeight - used) + "px";
+  }
+  sizeIframe();
+  window.addEventListener("resize", sizeIframe);
+  window.addEventListener("load", sizeIframe);
+})();
+</script>

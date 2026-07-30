@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Sapno Ka Ghar — Investing for Mummies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+/* ═══════ SAPNO KA GHAR — warm home-magazine take on the IFM palette ═══════ */
+:root{
+  --teal:#2a9d8f; --navy:#1a3a5c; --muted:#5a7d8a; --cream:#f7faf9;
+  --mint:#bde9e4; --mint-lt:#e0f3f0;
+  --gold:#c9962e; --gold-lt:#fdf3dd;
+  --coral:#e76f51; --coral-lt:#fdeae4;
+  --insta:#d6336c; --lim:#7048e8;
+  --card:#ffffff; --line:#e3ece9;
+  --shadow:0 6px 24px rgba(26,58,92,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);overflow-x:hidden}
+body.host-bg{background:
+  radial-gradient(1200px 500px at 85% -10%, var(--mint-lt) 0%, transparent 60%),
+  radial-gradient(900px 420px at -10% 110%, var(--gold-lt) 0%, transparent 55%),
+  var(--cream); overflow:hidden}
+body.player-bg{background:
+  radial-gradient(600px 280px at 100% 0%, var(--mint-lt) 0%, transparent 60%),
+  var(--cream)}
+.hide{display:none!important}
+h1,h2,h3,.serif{font-family:'Lora',serif}
+.num{font-variant-numeric:tabular-nums}
+button{font-family:inherit;cursor:pointer}
+input{font-family:inherit}
+
+/* ── buttons ── */
+.btn{border:none;border-radius:14px;padding:13px 26px;font-weight:900;font-size:1.05rem;
+  background:var(--teal);color:#fff;box-shadow:0 4px 14px rgba(42,157,143,.35);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 7px 20px rgba(42,157,143,.45)}
+.btn.gold{background:linear-gradient(135deg,#d9a83e,var(--gold));box-shadow:0 4px 14px rgba(201,150,46,.4)}
+.btn.ghost{background:#fff;color:var(--navy);border:2px solid var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--mint)}
+.btn.lg{font-size:1.2rem;padding:16px 34px;border-radius:16px}
+.btn.sm{font-size:.9rem;padding:8px 16px;border-radius:10px}
+.btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
+
+/* ── HOST chrome ─────────────────────────────────────── */
+#host{max-width:1500px;margin:0 auto;padding:14px 22px;height:100vh;display:flex;flex-direction:column}
+.brandbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:6px 2px 12px}
+.brandbar .l{display:flex;align-items:center;gap:12px}
+.brandbar img{width:46px;height:46px;border-radius:50%;box-shadow:var(--shadow)}
+.brandbar .sub{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.brandbar .nm{font-family:'Lora',serif;font-weight:700;font-size:1.35rem;color:var(--navy)}
+.brandbar .nm em{color:var(--teal);font-style:italic}
+.livedot{font-size:.7rem;font-weight:900;letter-spacing:.1em;color:#fff;background:var(--coral);
+  border-radius:999px;padding:5px 11px;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+.mini-qr{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--line);border-radius:12px;
+  padding:5px 10px 5px 5px;cursor:pointer;box-shadow:var(--shadow)}
+.mini-qr img{width:44px;height:44px;border-radius:6px;box-shadow:none}
+.mini-qr span{font-size:.66rem;font-weight:800;line-height:1.15;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.host-reset{position:fixed;top:12px;left:12px;z-index:60;background:#fff;border:1.5px solid var(--line);color:var(--muted);
+  border-radius:10px;padding:6px 12px;font-weight:800;font-size:.8rem}
+.host-reset:hover{color:var(--coral);border-color:var(--coral)}
+
+/* stepper */
+.steps{display:flex;gap:6px;flex-wrap:wrap;padding-bottom:12px}
+.step{font-size:.78rem;font-weight:800;color:var(--muted);background:#fff;border:1.5px solid var(--line);
+  border-radius:999px;padding:6px 13px;cursor:pointer;transition:all .15s}
+.step.done{color:var(--teal);border-color:var(--mint);background:var(--mint-lt)}
+.step.on{color:#fff;background:var(--navy);border-color:var(--navy)}
+
+/* stage */
+.stage{flex:1;min-height:0;background:var(--card);border:1.5px solid var(--line);border-radius:24px;
+  box-shadow:var(--shadow);padding:26px 32px;display:flex;flex-direction:column;overflow-y:auto;position:relative}
+.stage .controls{position:sticky;bottom:-26px;margin:auto -32px -26px;padding:14px 32px 18px;display:flex;gap:12px;align-items:center;
+  justify-content:flex-end;background:linear-gradient(to top,#fff 75%,rgba(255,255,255,0));z-index:5}
+.stage .controls .spacer{flex:1}
+.eyebrow{font-size:.75rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+.stage h2{font-size:clamp(1.6rem,2.6vw,2.3rem);font-weight:700;margin:4px 0 6px}
+.stage .lead{font-size:1.08rem;color:var(--muted);font-weight:600;max-width:900px}
+.host-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:26px;flex:1;min-height:0;align-items:start}
+.panel{background:var(--cream);border:1.5px solid var(--line);border-radius:18px;padding:18px 20px}
+.panel h3{font-size:1.1rem;margin-bottom:8px}
+
+/* gold reveal card (the Hiral moment) */
+.reveal-card{background:linear-gradient(135deg,#fdf6e3,var(--gold-lt));border:2px solid #e8c97a;border-radius:18px;
+  padding:20px 24px;animation:rin .5s ease;box-shadow:0 10px 30px rgba(201,150,46,.18)}
+.reveal-card .rc-t{font-family:'Lora',serif;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);color:#7c5a12;font-weight:600}
+@keyframes rin{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.pop{animation:rin .35s ease}
+
+/* lobby */
+.lobby{display:grid;grid-template-columns:1fr 1fr;gap:26px;flex:1;min-height:0}
+.lobby .qr-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;
+  background:var(--cream);border:1.5px solid var(--line);border-radius:20px;padding:22px;cursor:pointer}
+.lobby .qr-box{background:#fff;padding:14px;border-radius:16px;box-shadow:var(--shadow)}
+.pin{font-family:'Lora',serif;font-size:2.4rem;font-weight:700;letter-spacing:.12em;color:var(--navy)}
+.pin small{display:block;font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted)}
+.lobby-right{display:flex;flex-direction:column;min-height:0}
+.pl-list{flex:1;min-height:0;overflow-y:auto;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;padding:6px 2px}
+.pchip{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--line);border-radius:999px;
+  padding:6px 16px 6px 6px;font-weight:800;animation:rin .3s ease}
+.av{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:1.05rem;color:#fff;flex:none}
+.story-card{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:18px 22px;margin-bottom:14px}
+.story-card p{font-family:'Lora',serif;font-style:italic;font-size:1.15rem;color:var(--navy);line-height:1.55}
+
+/* shop host */
+.shop-head{display:flex;align-items:center;gap:26px;margin-bottom:14px}
+.timer-big{font-family:'Lora',serif;font-weight:700;font-size:clamp(3rem,7vw,5rem);color:var(--navy);min-width:170px;text-align:center;
+  background:var(--cream);border:1.5px solid var(--line);border-radius:20px;padding:6px 20px}
+.timer-big.warn{color:var(--coral);border-color:var(--coral);animation:pulse 1s infinite}
+.feed{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:8px}
+.feed-item{background:#fff;border:1.5px solid var(--line);border-left:5px solid var(--teal);border-radius:12px;
+  padding:8px 14px;font-weight:700;font-size:1rem;animation:rin .3s ease}
+.feed-item b{color:var(--teal)}
+.feed-item.big{border-left-color:var(--coral)}
+.feed-item.big b{color:var(--coral)}
+.shopper-grid{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;overflow-y:auto}
+.schip{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:7px 12px;font-size:.88rem;font-weight:800;
+  display:flex;align-items:center;gap:8px}
+.schip .av{width:24px;height:24px;font-size:.8rem}
+.schip .sp{color:var(--teal);font-weight:900}
+
+/* score tables + bars */
+.tbl{width:100%;border-collapse:collapse;font-size:1rem}
+.tbl th{font-size:.72rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  text-align:right;padding:8px 10px;border-bottom:2px solid var(--line)}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl td{padding:9px 10px;border-bottom:1px solid var(--line);font-weight:700;text-align:right}
+.tbl tr:nth-child(even) td{background:#f6faf8}
+.badge{display:inline-block;font-size:.68rem;font-weight:900;letter-spacing:.05em;border-radius:999px;padding:3px 9px;margin-left:6px}
+.badge.lux{background:var(--gold-lt);color:var(--gold)}
+.badge.disc{background:var(--coral-lt);color:var(--coral)}
+.badge.froze{background:#e7f0fb;color:#3b6ea5}
+.badge.hoard{background:#f0e7fb;color:var(--lim)}
+.badge.star{background:var(--mint-lt);color:var(--teal)}
+.scorebar{display:flex;align-items:center;gap:10px;margin:10px 0}
+.scorebar .k{width:170px;font-weight:800;font-size:.95rem}
+.scorebar .track{flex:1;height:16px;background:var(--mint-lt);border-radius:999px;overflow:hidden}
+.scorebar .fill{height:100%;border-radius:999px;background:var(--teal);transition:width .8s ease}
+.scorebar .v{width:44px;text-align:right;font-weight:900}
+.bignum{font-family:'Lora',serif;font-size:clamp(2.6rem,5vw,4rem);font-weight:700;color:var(--teal)}
+
+/* feelings tally */
+.feel-row{display:flex;align-items:center;gap:12px;margin:12px 0}
+.feel-row .em{font-size:1.9rem;width:52px;text-align:center}
+.feel-row .lbl{width:300px;font-weight:800;font-size:1.15rem}
+.feel-row .track{flex:1;height:26px;background:var(--mint-lt);border-radius:999px;overflow:hidden}
+.feel-row .fill{height:100%;background:var(--teal);border-radius:999px;transition:width .6s ease;min-width:0}
+.feel-row .n{width:40px;font-weight:900;font-size:1.2rem;text-align:right}
+
+/* compare cards (DIY vs designer / neighbour) */
+.vs-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin:14px 0}
+.vs-card{background:#fff;border:2px solid var(--line);border-radius:18px;padding:18px 20px;text-align:center}
+.vs-card.win{border-color:var(--teal);box-shadow:0 8px 26px rgba(42,157,143,.18)}
+.vs-card.gold{border-color:#e8c97a;background:linear-gradient(160deg,#fffdf7,var(--gold-lt))}
+.vs-mid{display:grid;place-items:center;font-family:'Lora',serif;font-weight:700;font-size:1.4rem;color:var(--muted)}
+.vs-score{font-family:'Lora',serif;font-size:3rem;font-weight:700;color:var(--navy)}
+.vs-card .cap{font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* event cards */
+.event-hero{display:flex;gap:24px;align-items:center;background:var(--cream);border:1.5px solid var(--line);
+  border-radius:20px;padding:22px 26px;margin:12px 0}
+.event-hero .em{font-size:4.2rem}
+.event-hero h3{font-size:1.7rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+.split .half{border-radius:16px;padding:16px 18px;border:2px solid var(--line);background:#fff}
+.split .half.good{border-color:var(--mint);background:var(--mint-lt)}
+.split .half.bad{border-color:#f2c4b5;background:var(--coral-lt)}
+.split .half h4{font-size:1.02rem;margin-bottom:6px}
+.split .half p{font-weight:600;font-size:.98rem;color:#33566e}
+
+/* sip chart */
+.chart-wrap{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:14px}
+.legend{display:flex;gap:18px;font-size:.85rem;font-weight:800;margin-top:8px;flex-wrap:wrap}
+.legend .dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px}
+
+/* mapping reveal */
+.map-row{display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;gap:10px;background:#fff;
+  border:1.5px solid var(--line);border-radius:14px;padding:12px 18px;margin:8px 0;animation:rin .4s ease}
+.map-row .home{font-weight:800;font-size:1.12rem}
+.map-row .arrow{text-align:center;font-size:1.3rem;color:var(--gold)}
+.map-row .inv{font-weight:900;font-size:1.12rem;color:var(--teal);text-align:right}
+.map-row .sub{display:block;font-size:.8rem;font-weight:600;color:var(--muted)}
+
+/* finale */
+.finale-hero{text-align:center;padding:10px 0 4px}
+.finale-hero h2{font-size:clamp(1.8rem,3.4vw,2.8rem)}
+.closing{max-width:880px;margin:10px auto;font-family:'Lora',serif;font-style:italic;font-size:clamp(1.15rem,1.9vw,1.5rem);
+  line-height:1.6;color:#54432a;text-align:center;background:linear-gradient(135deg,#fdf6e3,var(--gold-lt));
+  border:2px solid #e8c97a;border-radius:20px;padding:22px 30px}
+.award{display:inline-flex;align-items:center;gap:10px;background:#fff;border:2px solid var(--mint);border-radius:16px;
+  padding:10px 20px;margin:6px;font-weight:800;font-size:1.05rem}
+
+/* QR modal */
+#qrModal{position:fixed;inset:0;background:rgba(26,58,92,.9);display:none;z-index:100;
+  flex-direction:column;align-items:center;justify-content:center;gap:18px;cursor:pointer}
+#qrModal.show{display:flex}
+.qm-box{background:#fff;padding:22px;border-radius:24px}
+.qm-pin{color:#fff;font-family:'Lora',serif;font-size:3rem;font-weight:700;letter-spacing:.14em;text-align:center}
+.qm-pin small{display:block;font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.qm-hint{color:#cfe6e2;font-weight:700}
+
+/* confetti */
+.conf{position:fixed;top:-14px;font-size:1.3rem;z-index:200;animation:confFall linear forwards;pointer-events:none}
+@keyframes confFall{to{transform:translateY(110vh) rotate(720deg)}}
+
+/* ── PLAYER ──────────────────────────────────────────── */
+#player{max-width:560px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
+.player-scr{flex:1;display:flex;flex-direction:column;padding:12px 14px 90px}
+.p-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 4px 12px;position:sticky;top:0;
+  background:linear-gradient(to bottom,var(--cream) 82%,rgba(247,250,249,0));z-index:20}
+.p-top .who{display:flex;align-items:center;gap:8px;font-weight:900;font-size:1.02rem}
+.p-top .cash{font-weight:900;color:var(--teal);font-size:1.05rem;background:#fff;border:1.5px solid var(--line);
+  border-radius:999px;padding:6px 14px;box-shadow:var(--shadow)}
+.p-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;padding:20px 8px}
+.p-status{font-family:'Lora',serif;font-size:1.9rem;font-weight:700}
+.p-sub{color:var(--muted);font-weight:700;font-size:1.02rem;max-width:420px}
+.p-input{width:100%;max-width:340px;border:2px solid var(--line);border-radius:14px;padding:14px 18px;font-size:1.15rem;
+  font-weight:800;text-align:center;background:#fff;color:var(--navy);outline:none}
+.p-input:focus{border-color:var(--teal)}
+.p-card{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px 18px;box-shadow:var(--shadow);margin:8px 0}
+
+/* player shop */
+.p-shop-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.p-budget{font-weight:900;font-size:1.3rem;color:var(--navy)}
+.p-budget small{display:block;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.p-timer{font-family:'Lora',serif;font-weight:700;font-size:1.7rem;background:#fff;border:1.5px solid var(--line);
+  border-radius:14px;padding:4px 14px;min-width:74px;text-align:center}
+.p-timer.warn{color:var(--coral);border-color:var(--coral);animation:pulse 1s infinite}
+.cat-row{display:flex;gap:7px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:none;position:sticky;top:56px;
+  background:var(--cream);z-index:19}
+.cat-row::-webkit-scrollbar{display:none}
+.cat-chip{flex:none;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;
+  font-weight:800;font-size:.85rem;color:var(--muted)}
+.cat-chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.item-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.icard{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:10px 12px;position:relative;
+  display:flex;flex-direction:column;gap:3px}
+.icard.owned{border-color:var(--teal);background:var(--mint-lt)}
+.icard .iem{font-size:2rem;line-height:1.15}
+.icard .inm{font-weight:800;font-size:.92rem;line-height:1.2}
+.icard .ibr{font-size:.72rem;font-weight:700;color:var(--muted)}
+.icard .ipr{font-weight:900;font-size:1.02rem;margin-top:2px}
+.icard .ipr s{color:var(--muted);font-weight:600;font-size:.8rem;margin-left:5px}
+.icard .ist{font-size:.76rem;font-weight:800;color:#b98a00}
+.icard .irv{font-size:.72rem;font-weight:600;color:var(--muted);font-style:italic;line-height:1.25}
+.ribbon{position:absolute;top:-8px;right:8px;font-size:.62rem;font-weight:900;letter-spacing:.05em;color:#fff;
+  border-radius:999px;padding:3px 9px;box-shadow:0 3px 8px rgba(0,0,0,.18)}
+.ribbon.SALE{background:var(--coral)} .ribbon.BEST{background:#e8a512} .ribbon.INSTA{background:var(--insta)} .ribbon.LIM{background:var(--lim)}
+.ibuy{margin-top:6px;border:none;border-radius:10px;padding:8px;font-weight:900;font-size:.88rem;background:var(--navy);color:#fff}
+.ibuy.own{background:var(--teal)}
+.ibuy:disabled{background:#cdd9d6;color:#fff}
+.cart-bar{position:fixed;bottom:0;left:0;right:0;z-index:40;display:flex;justify-content:center;pointer-events:none}
+.cart-inner{pointer-events:auto;width:100%;max-width:560px;margin:0 14px 12px;background:var(--navy);color:#fff;border-radius:18px;
+  padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 10px 30px rgba(26,58,92,.4);font-weight:800}
+.cart-inner .left small{display:block;font-size:.68rem;opacity:.75;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.p-tabs{display:flex;gap:8px;margin-bottom:10px}
+.p-tab{flex:1;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:9px;font-weight:900;color:var(--muted)}
+.p-tab.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.room-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:12px 16px;margin:8px 0}
+.room-card h4{font-size:.95rem;margin-bottom:6px}
+.room-card .ritem{display:flex;justify-content:space-between;font-weight:700;font-size:.9rem;padding:3px 0;gap:8px}
+.room-card .ritem .rt{color:var(--muted);font-weight:800;white-space:nowrap}
+.empty-room{color:var(--muted);font-weight:700;font-style:italic;font-size:.88rem}
+
+/* player choice chips (questions, feelings, votes) */
+.choice-grid{display:flex;flex-direction:column;gap:10px;width:100%;max-width:420px;margin:0 auto}
+.choice{border:2px solid var(--line);background:#fff;border-radius:16px;padding:14px 18px;font-weight:800;font-size:1.05rem;
+  text-align:left;display:flex;align-items:center;gap:12px;transition:all .15s;color:var(--navy)}
+.choice .cem{font-size:1.6rem}
+.choice.on{border-color:var(--teal);background:var(--mint-lt);box-shadow:0 6px 18px rgba(42,157,143,.2)}
+.choice:disabled{opacity:.55}
+.choice-row{display:flex;gap:10px;width:100%;max-width:420px;margin:0 auto}
+.choice-row .choice{flex:1;flex-direction:column;text-align:center;gap:4px;padding:12px 8px}
+.q-step{font-size:.75rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.p-q{font-family:'Lora',serif;font-size:1.45rem;font-weight:700;text-align:center;margin-bottom:14px}
+
+/* player scorecard */
+.p-score-hero{text-align:center;padding:8px 0 4px}
+.p-score-hero .bignum{font-size:3.4rem}
+.miss-list{background:var(--coral-lt);border:1.5px solid #f2c4b5;border-radius:14px;padding:12px 16px;margin-top:10px}
+.miss-list h4{font-size:.9rem;color:var(--coral);margin-bottom:4px}
+.miss-list span{display:inline-block;background:#fff;border-radius:999px;padding:4px 12px;margin:3px 4px 3px 0;font-weight:800;font-size:.85rem}
+.upg{display:flex;align-items:center;gap:10px;background:var(--gold-lt);border:1.5px solid #ecd9a8;border-radius:12px;
+  padding:9px 14px;margin:6px 0;font-weight:800;animation:rin .4s ease}
+.designer-chip{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#fdf6e3,var(--gold-lt));
+  border:1.5px solid #e8c97a;border-radius:999px;padding:6px 16px;font-weight:900;color:#7c5a12}
+
+/* noise machine + recommendations */
+.noise-toast{position:fixed;top:10px;left:50%;transform:translate(-50%,-130%);max-width:520px;width:calc(100% - 40px);
+  background:#1a1a2b;color:#fff;border-radius:14px;padding:11px 16px;font-weight:800;font-size:.92rem;z-index:80;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .35s ease;pointer-events:none}
+.noise-toast.show{transform:translate(-50%,0)}
+.noise-bar{background:#1a1a2b;color:#ffd97a;border-radius:12px;padding:9px 16px;font-weight:800;margin-bottom:12px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rec-head{font-size:.8rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--insta);
+  background:#fdeef4;border:1.5px dashed #f2b6cd;border-radius:10px;padding:7px 12px;margin:2px 0 8px}
+
+@media (max-width:900px){
+  .host-grid,.lobby,.split{grid-template-columns:1fr}
+  .vs-grid{grid-template-columns:1fr}
+  .vs-mid{display:none}
+}
+@media (max-width:400px){ .item-grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div id="host" class="hide"></div>
+<div id="player" class="hide"></div>
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   SAPNO KA GHAR — LIVE classroom game
+   Furnish your dream home… and accidentally learn how mutual funds work.
+   Reuses the Stock Rush Supabase project (games table). Host = projector
+   (?role=host, default). Players = phones (?role=player&room=SG####).
+   Host is the single authoritative writer; players send intents via broadcast.
+   ═══════════════════════════════════════════════════════════════════════ */
+const SUPABASE_URL='https://gkfldkytzfngwnkrwrga.supabase.co';
+const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrZmxka3l0emZuZ3dua3J3cmdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5MzI4NDksImV4cCI6MjA5NDUwODg0OX0.wwyFY0bhbGhCKCpAjgZ0oCS8gda21FHcvDdvlg9xCmU';
+const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+const LOGO='https://ifm-deploy.vercel.app/IFM%20round%20logo%20for%20watermark.png';
+
+const BUDGET=1000000;          // ₹10 lakh to furnish the home
+const SHOP_SECS=90;            // round-1 shopping window
+const FEE=10000;               // designer fee = 1% (the "expense ratio")
+const SIP_AMT=50000, SIP_MONTHS=12;
+
+const fmt=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+function fmtMoney(n){ const s=n<0?'-':''; n=Math.abs(Math.round(n));
+  if(n>=10000000){const v=n/10000000;return s+'₹'+(v%1?v.toFixed(2):v)+' Cr';}
+  if(n>=100000){const v=n/100000;return s+'₹'+(v%1?v.toFixed(2):v)+' L';}
+  if(n>=1000){const v=n/1000;return s+'₹'+(v%1?v.toFixed(1):v)+'k';}
+  return s+'₹'+n;
+}
+const fmtTime=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+const AV_EMOJI=['🦊','🐯','🦄','🐼','🦁','🐨','🐸','🦋','🐝','🦉','🐙','🦖','🌸','🍀','⭐','🚀','💎','🎯','🍰','🦚'];
+const AV_COLOR=['#c9962e','#4ea8ff','#2a9d8f','#e76f51','#9c6bde','#d6336c','#38b2a3','#e8a512','#5a7d8a','#7c9cff'];
+function escapeHtml(s){return (s+'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+/* ── categories ─────────────────────────────────────────
+   ess:1 → an essential every liveable home needs (10 of them) */
+const CATS={
+  sofa:    {n:'Sofas',           em:'🛋️', ess:1, room:'Living Room'},
+  bed:     {n:'Beds',            em:'🛏️', ess:1, room:'Bedroom'},
+  mattress:{n:'Mattresses',      em:'🛌', ess:1, room:'Bedroom'},
+  wardrobe:{n:'Wardrobes',       em:'🚪', ess:1, room:'Bedroom'},
+  storage: {n:'Storage & Tables',em:'🗄️', ess:1, room:'Living Room'},
+  light:   {n:'Lighting',        em:'💡', ess:1, room:'All Rooms'},
+  curtain: {n:'Curtains',        em:'🪟', ess:1, room:'All Rooms'},
+  kitchen: {n:'Kitchen & Appliances',em:'🍳', ess:1, room:'Kitchen'},
+  dining:  {n:'Dining',          em:'🍽️', ess:1, room:'Dining'},
+  cool:    {n:'Fans & ACs',      em:'❄️', ess:1, room:'All Rooms'},
+  rug:     {n:'Rugs',            em:'🧶', room:'Living Room'},
+  decor:   {n:'Décor & Art',     em:'🖼️', room:'Living Room'},
+  plant:   {n:'Plants',          em:'🪴', room:'Balcony'},
+  study:   {n:'Study',           em:'💻', room:'Study Corner'},
+  kids:    {n:'Kids',            em:'🧸', room:'Kids Corner'},
+};
+const ESSENTIALS=Object.keys(CATS).filter(c=>CATS[c].ess);
+const SOFT_CATS=['rug','decor','plant','curtain'];
+
+/* ── THE CATALOGUE — 116 items ──────────────────────────
+   [id, cat, name, brand, price, q(true expert quality 1-10),
+    stars(displayed marketing rating), tag, unsafe, expert review]
+   Traps everywhere: SALE items with bought ratings, Insta-bait,
+   one gorgeous ₹4L sofa that eats 40% of the budget. Just like the market. */
+const ITEMS_RAW=[
+ // sofas
+ ['sof1','sofa','Firenze Leather 3+2 Sofa','Firenze Milano',400000,9,4.9,'LIM',0,'Genuinely superb. Also 40% of your entire budget.'],
+ ['sof2','sofa','Oslo Fabric 3-Seater','Ivory Oak',80000,8,4.5,'',0,'Quiet workhorse. Comfortable for a decade.'],
+ ['sof3','sofa','Verona Velvet Lounger','Casa Bella',145000,6,4.7,'INSTA',0,'Photographs better than it sits.'],
+ ['sof4','sofa','FlexiSofa Cum Bed','HomeKart',52000,6,4.2,'',0,'Handy for guests; springs are average.'],
+ ['sof5','sofa','Zingo Neon Bean Combo','Zingo',24000,3,4.6,'SALE',0,'Rating bought with coupons. Sags within a year.'],
+ ['sof6','sofa','UrbanNest Modular L-Sofa','UrbanNest',110000,7,4.4,'BEST',0,'Solid pick if the brand sticks around.'],
+ ['sof7','sofa','Sheesham Bench Sofa','Sheesham & Sons',38000,6,4.1,'',0,'Firm. Grandmother-approved.'],
+ ['sof8','sofa','RecliMax Recliner','HomeKart',95000,7,4.3,'',0,'One seat. One very happy person.'],
+ ['sof9','sofa','Bombay Craft L-Sofa','Sheesham & Sons',85000,8,4.4,'',0,'Roomy and rock-solid. Needs a big hall.'],
+ ['sof10','sofa','NapMaster Fabric Recliner','CloudNine',78000,8,4.3,'',0,'Comfort king. Looks are… fine.'],
+ // beds
+ ['bed1','bed','Streamline Queen Bed','Ivory Oak',55000,8,4.5,'',0,'Does everything a bed should. Nothing it shouldn’t.'],
+ ['bed2','bed','MahaRaja Carved King','MahaLiving',180000,7,4.8,'INSTA',0,'Palace looks. Needs a palace-sized room.'],
+ ['bed3','bed','UrbanNest Storage Bed','UrbanNest',72000,8,4.4,'BEST',0,'Smart storage underneath. Genuinely useful.'],
+ ['bed4','bed','Zingo Foldy Metal Bed','Zingo',15000,3,4.3,'SALE',0,'Creaks by Diwali.'],
+ ['bed5','bed','Sheesham Classic Double','Sheesham & Sons',65000,8,4.4,'',0,'Will outlive the building.'],
+ ['bed6','bed','BunkKids Bed','HomeKart',42000,6,4.2,'',0,'Kids love it. Ladder anxiety included.'],
+ ['bed7','bed','Casa Bella Upholstered Bed','Casa Bella',98000,7,4.6,'',0,'Hotel-suite feel, homely price-ish.'],
+ ['bed8','bed','FloatFrame Platform Bed','Ivory Oak',68000,7,4.3,'',0,'Minimal, sturdy, low to the ground.'],
+ // mattresses
+ ['mat1','mattress','OrthoCloud Memory Foam','CloudNine',35000,9,4.6,'BEST',0,'The thing you actually sleep on. Worth every rupee.'],
+ ['mat2','mattress','CloudNine Latex Luxe','CloudNine',62000,9,4.7,'',0,'Ten-year back-saver.'],
+ ['mat3','mattress','Zingo DreamLite','Zingo',9000,3,4.5,'SALE',0,'You get ₹9,000 of sleep.'],
+ ['mat4','mattress','SpineAlign Ortho','BrightWay',28000,7,4.3,'',0,'Honest orthopaedic support.'],
+ ['mat5','mattress','KanchiWeave Cotton Gadda','KanchiWeave',12000,5,4.0,'',0,'Nostalgic. Needs yearly re-fluffing.'],
+ ['mat6','mattress','AirFlow Hybrid','CloudNine',45000,8,4.5,'',0,'Coils + foam. Cool sleeper’s friend.'],
+ ['mat7','mattress','GuestFoam Single ×2','HomeKart',14000,5,4.1,'',0,'For guests you like moderately.'],
+ ['mat8','mattress','Firenze Royale Mattress','Firenze Milano',120000,8,4.8,'LIM',0,'Lovely. A sofa-priced mattress.'],
+ // wardrobes
+ ['war1','wardrobe','SlideLine 3-Door Wardrobe','Ivory Oak',60000,8,4.4,'',0,'Glides shut. Swallows a family’s clothes.'],
+ ['war2','wardrobe','UrbanNest Mirror Wardrobe','UrbanNest',78000,7,4.5,'BEST',0,'Mirror doubles the room. Allegedly.'],
+ ['war3','wardrobe','Zingo Fabric Foldy','Zingo',6000,2,4.2,'SALE',0,'A tent for your clothes.'],
+ ['war4','wardrobe','Sheesham Almirah','Sheesham & Sons',85000,8,4.3,'',0,'Heirloom material. Two men to move it.'],
+ ['war5','wardrobe','SteelSafe Almirah','SteelSafe',32000,7,4.1,'',0,'The classic. Slightly bank-vault energy.'],
+ ['war6','wardrobe','Walk-In Modular Kit','Casa Bella',160000,8,4.7,'INSTA',0,'Dreamy. Eats a whole room and a lakh-and-a-half.'],
+ ['war7','wardrobe','KidsRainbow Wardrobe','HomeKart',28000,5,4.2,'',0,'Cheerful. Shelves bow under heavy toys.'],
+ ['war8','wardrobe','Firenze Walnut Armoire','Firenze Milano',210000,8,4.8,'LIM',0,'Museum-grade. So is the price.'],
+ // storage & tables
+ ['sto1','storage','ModBox TV Unit','Ivory Oak',30000,7,4.3,'',0,'Hides the cable chaos.'],
+ ['sto2','storage','BookNook Shelf','HomeKart',18000,6,4.2,'',0,'Holds books and unrealistic reading goals.'],
+ ['sto3','storage','UrbanNest Shoe Tower','UrbanNest',12000,6,4.1,'',0,'Forty pairs. Zero excuses.'],
+ ['sto4','storage','Zingo Plastic Drawer Set','Zingo',4000,3,4.4,'SALE',0,'Cracks if you look at it sternly.'],
+ ['sto5','storage','Sheesham Chest of Drawers','Sheesham & Sons',42000,8,4.4,'',0,'Solid wood. Solid choice.'],
+ ['sto6','storage','UnderBed Rollers ×4','BrightWay',7000,5,4.0,'',0,'Out of sight, out of mind.'],
+ ['sto7','storage','Casa Bella Display Cabinet','Casa Bella',55000,6,4.5,'INSTA',0,'For crockery no one is allowed to use.'],
+ ['sto8','storage','Loft Cabinet Set','SteelSafe',22000,6,4.0,'',0,'Where suitcases go to hibernate.'],
+ ['sto9','storage','UrbanNest Glass Coffee Table','UrbanNest',26000,6,4.5,'INSTA',1,'Stunning. Also a toddler-forehead magnet.'],
+ ['sto10','storage','RoundEdge Wooden Coffee Table','Sheesham & Sons',24000,7,4.3,'',0,'Rounded corners. Parents know why.'],
+ // lighting
+ ['lig1','light','GlowTrack Ceiling Set','BrightWay',20000,8,4.4,'',0,'Warm, even light in every room.'],
+ ['lig2','light','Firenze Crystal Chandelier','Firenze Milano',95000,6,4.8,'INSTA',0,'Stunning. Dusting it is a part-time job.'],
+ ['lig3','light','WarmNest Lamp Duo','Ivory Oak',9000,7,4.3,'',0,'Instant cosiness, twice.'],
+ ['lig4','light','Zingo RGB Strip 10m','Zingo',3000,3,4.5,'SALE',0,'Your ceiling becomes a gaming café.'],
+ ['lig5','light','UrbanNest Pendant Trio','UrbanNest',15000,7,4.4,'BEST',0,'Café vibes over the dining table.'],
+ ['lig6','light','TaskBright Study Lamp','BrightWay',4000,6,4.2,'',0,'Does one job well.'],
+ ['lig7','light','Brass Diya Wall Sconces','DecoBazaar',11000,5,4.1,'',0,'Festive glow, fiddly wiring.'],
+ ['lig8','light','SolarSoft Balcony String','GreenLeaf',5000,5,4.3,'',0,'Fairy lights that pay their own bill.'],
+ // curtains
+ ['cur1','curtain','Linen Blackout Set','KanchiWeave',15000,8,4.4,'',0,'Sunday naps, weaponised.'],
+ ['cur2','curtain','Sheer Day Panels','KanchiWeave',8000,6,4.2,'',0,'Soft light, zero privacy after dark.'],
+ ['cur3','curtain','Firenze Silk Drapes','Firenze Milano',85000,7,4.7,'LIM',0,'Gorgeous. Dry-clean only. Forever.'],
+ ['cur4','curtain','Zingo Printed Poly Set','Zingo',3500,3,4.3,'SALE',0,'Fades faster than the discount did.'],
+ ['cur5','curtain','UrbanNest Smart Curtains','UrbanNest',45000,6,4.5,'INSTA',0,'App-controlled. Works till the Wi-Fi doesn’t.'],
+ ['cur6','curtain','Casa Bella Velvet Drapes','Casa Bella',28000,6,4.4,'',0,'Theatre drama for the living room.'],
+ ['cur7','curtain','BambooRoll Blinds','GreenLeaf',12000,6,4.1,'',0,'Clean look, gentle light.'],
+ ['cur8','curtain','KidsGlow Curtains','HomeKart',6000,4,4.2,'',0,'Glow stars wear off in months.'],
+ // kitchen & appliances
+ ['kit1','kitchen','FrostFree 350L Fridge','BrightWay',45000,8,4.4,'',0,'The quiet heart of the kitchen.'],
+ ['kit2','kitchen','ChimneyPro + Hob Combo','BrightWay',35000,8,4.3,'',0,'Tadka without the smoke alarm.'],
+ ['kit3','kitchen','Zingo AirFryer XXL','Zingo',7000,4,4.6,'SALE',0,'Fries air. Occasionally food.'],
+ ['kit4','kitchen','MixMaster Grinder','HomeKart',6000,7,4.3,'BEST',0,'Chutney in forty seconds.'],
+ ['kit5','kitchen','UrbanNest Dishwasher','UrbanNest',48000,7,4.4,'',0,'Ends the great sink debate.'],
+ ['kit6','kitchen','Firenze Espresso Station','Firenze Milano',90000,6,4.8,'INSTA',0,'Barista dreams. Instant-coffee reality.'],
+ ['kit7','kitchen','WashMax Front-Load','BrightWay',30000,8,4.4,'',0,'Clothes washed. Marriage saved.'],
+ ['kit8','kitchen','MicroChef Convection','HomeKart',14000,6,4.2,'',0,'Reheats, bakes, survives teenagers.'],
+ // dining
+ ['din1','dining','Nord 4-Seater Dining','Ivory Oak',45000,8,4.4,'',0,'Clean lines, sturdy legs, happy dinners.'],
+ ['din2','dining','Sheesham 6-Seater Dining','Sheesham & Sons',78000,8,4.5,'',0,'Sunday-lunch headquarters.'],
+ ['din3','dining','GlassTop 4-Seater','Casa Bella',52000,6,4.5,'',1,'Fingerprint museum with legs.'],
+ ['din4','dining','Zingo Foldy Dining','Zingo',9000,3,4.2,'SALE',0,'Folds. Sometimes mid-meal.'],
+ ['din5','dining','Firenze Marble 8-Seater','Firenze Milano',260000,8,4.9,'LIM',0,'Magnificent. Seats 8, costs 26% of your home.'],
+ ['din6','dining','BreakfastBar Duo Stools','HomeKart',16000,5,4.1,'',0,'For fast toast, not family feasts.'],
+ ['din7','dining','UrbanNest Extendable 4→6','UrbanNest',58000,7,4.4,'BEST',0,'Grows when the guests do.'],
+ ['din8','dining','Floor-Seating Thali Set','KanchiWeave',22000,6,4.3,'',0,'Low table, high tradition.'],
+ // fans & ACs
+ ['coo1','cool','1.5T Inverter AC','BrightWay',40000,8,4.4,'',0,'May sleep in peace.'],
+ ['coo2','cool','SilentAir Ceiling Fan ×3','BrightWay',12000,7,4.3,'BEST',0,'Three rooms, zero wobble.'],
+ ['coo3','cool','Zingo Snow Cooler','Zingo',8000,4,4.4,'SALE',0,'Snow not included.'],
+ ['coo4','cool','UrbanNest Smart AC','UrbanNest',52000,7,4.5,'',0,'Cools the room, warms the electricity bill.'],
+ ['coo5','cool','Firenze Designer Fan','Firenze Milano',35000,5,4.7,'INSTA',0,'A sculpture that also spins.'],
+ ['coo6','cool','TowerBreeze Fan','HomeKart',7000,5,4.1,'',0,'Portable. Mildly convincing.'],
+ ['coo7','cool','1T Window AC','BrightWay',28000,6,4.2,'',0,'Old faithful. Hums a bit.'],
+ ['coo8','cool','ExhaustPro Kitchen Fan','BrightWay',3000,6,4.0,'',0,'Unsung hero of fried fish night.'],
+ // rugs
+ ['rug1','rug','KanchiWeave Wool 6×9','KanchiWeave',24000,8,4.4,'',0,'Warm underfoot, ages beautifully.'],
+ ['rug2','rug','Zingo Shaggy Neon Rug','Zingo',5000,3,4.5,'SALE',0,'Sheds like a nervous cat.'],
+ ['rug3','rug','Firenze Persian Heirloom','Firenze Milano',150000,8,4.9,'LIM',0,'Grandchildren will fight over it.'],
+ ['rug4','rug','Jute Natural Rug','GreenLeaf',8000,6,4.2,'',0,'Earthy, honest, scratchy in a nice way.'],
+ ['rug5','rug','UrbanNest Washable Rug','UrbanNest',12000,7,4.4,'BEST',0,'Survives toddlers and turmeric.'],
+ ['rug6','rug','Casa Bella Faux Fur','Casa Bella',15000,4,4.6,'INSTA',0,'Looks divine for six Instagram posts.'],
+ // décor & art
+ ['dec1','decor','Madhubani Original Painting','DecoBazaar',30000,8,4.5,'',0,'Real art. Starts conversations.'],
+ ['dec2','decor','Zingo LED “Live Laugh Love”','Zingo',2500,2,4.4,'SALE',0,'It glows. Your designer weeps.'],
+ ['dec3','decor','Brass Urli with Floats','DecoBazaar',9000,7,4.3,'',0,'Instant festive entrance.'],
+ ['dec4','decor','Gallery Wall Kit (12 frames)','HomeKart',14000,6,4.2,'INSTA',0,'Twelve frames, one Sunday of arguments.'],
+ ['dec5','decor','Firenze Sculpture “Muse”','Firenze Milano',120000,6,4.8,'LIM',0,'Beautiful. Insurance recommended.'],
+ ['dec6','decor','Glass Vase Trio','Casa Bella',8000,5,4.3,'',1,'Lovely until the cricket ball.'],
+ ['dec7','decor','Handloom Cushion Set','KanchiWeave',6000,7,4.4,'BEST',0,'Small money, big cosiness.'],
+ ['dec8','decor','Antique Wall Clock','DecoBazaar',11000,6,4.1,'',0,'Tick-tock gravitas.'],
+ // plants
+ ['pla1','plant','Areca Palm + Planter','GreenLeaf',4000,7,4.4,'',0,'Forgiving, leafy, alive.'],
+ ['pla2','plant','Monstera XL','GreenLeaf',7000,7,4.6,'INSTA',0,'The influencer of houseplants.'],
+ ['pla3','plant','Zingo Plastic Plant Set','Zingo',2000,3,4.3,'SALE',0,'Immortal. Also lifeless.'],
+ ['pla4','plant','Balcony Herb Garden Kit','GreenLeaf',9000,7,4.3,'',0,'Free mint chutney forever.'],
+ ['pla5','plant','Bonsai Ficus (8 yrs)','GreenLeaf',15000,6,4.5,'',0,'A pet that photosynthesises.'],
+ ['pla6','plant','Snake Plant Duo','GreenLeaf',3000,7,4.4,'BEST',0,'Thrives on neglect. Relatable.'],
+ // study
+ ['stu1','study','CompactDesk 4ft','Ivory Oak',22000,8,4.4,'',0,'Work-from-home HQ.'],
+ ['stu2','study','ErgoChair Pro','BrightWay',28000,8,4.5,'BEST',0,'Your spine sends a thank-you note.'],
+ ['stu3','study','Zingo Gamer Desk RGB','Zingo',18000,4,4.6,'SALE',0,'The lights don’t improve the wobble.'],
+ ['stu4','study','UrbanNest Study Combo','UrbanNest',35000,7,4.4,'',0,'Desk + shelf + drawers, sorted.'],
+ ['stu5','study','Sheesham Writing Bureau','Sheesham & Sons',48000,7,4.3,'',0,'For letters no one writes anymore.'],
+ ['stu6','study','KidsStudy Junior Set','HomeKart',16000,6,4.2,'',0,'Homework station, sticker-ready.'],
+ // kids
+ ['kid1','kids','SoftPlay Mat Corner','HomeKart',8000,7,4.4,'',0,'Falls become giggles.'],
+ ['kid2','kids','Montessori Shelf','Ivory Oak',18000,7,4.3,'',0,'Toys they can actually reach.'],
+ ['kid3','kids','Zingo Toy Mountain','Zingo',12000,3,4.5,'SALE',0,'90 toys. 88 will be ignored.'],
+ ['kid4','kids','Casa Bella Kids Teepee','Casa Bella',9000,5,4.5,'INSTA',0,'Adorable for photos. Collapses weekly.'],
+ ['kid5','kids','StudyGrow Adjustable Desk','BrightWay',21000,7,4.2,'',0,'Grows with the child.'],
+ ['kid6','kids','BabyProof Kit (guards + locks)','SteelSafe',4000,8,4.3,'BEST',0,'Boring. Brilliant. Buy it.'],
+];
+const ITEMS={};
+ITEMS_RAW.forEach(r=>{ ITEMS[r[0]]={id:r[0],cat:r[1],name:r[2],brand:r[3],price:r[4],q:r[5],stars:r[6],tag:r[7],unsafe:!!r[8],rev:r[9]}; });
+const ALL_IDS=ITEMS_RAW.map(r=>r[0]);
+const DOOMED_BRAND='UrbanNest';   // event 3: this brand shuts down
+
+/* ── scoring — the game's heart ─────────────────────────
+   A home is judged as a WHOLE: Comfort, Functionality, Balance,
+   Budget Discipline. (Exactly how a portfolio is judged.) */
+function scoreHome(ids,extraSpent){
+  const items=ids.map(i=>ITEMS[i]).filter(Boolean);
+  const spent=items.reduce((s,it)=>s+it.price,0)+(extraSpent||0);
+  const byCat={};
+  items.forEach(it=>{ (byCat[it.cat]=byCat[it.cat]||[]).push(it); });
+  // Functionality — does the home actually work? (essentials coverage)
+  const essOwned=ESSENTIALS.filter(c=>byCat[c]&&byCat[c].length);
+  const func=Math.round(essOwned.length/ESSENTIALS.length*100);
+  // Comfort — quality where it matters: sleep, sit, cool, soften
+  const comfortCats=['bed','mattress','sofa','cool','curtain'];
+  let cq=0;
+  comfortCats.forEach(c=>{ if(byCat[c]) cq+=Math.max(...byCat[c].map(i=>i.q)); });
+  const comfort=Math.round(cq/50*100);
+  // Balance — no single hero item, no hoarding, breadth + softness
+  let bal=100; const notes=[];
+  if(items.some(it=>it.price>BUDGET*0.3)){ bal-=25; notes.push('one item swallowed over 30% of the budget'); }
+  if(spent>0 && Object.keys(byCat).some(c=>byCat[c].reduce((s,i)=>s+i.price,0)/spent>0.5)){ bal-=15; notes.push('half the money went into a single category'); }
+  if(Object.keys(byCat).length<6){ bal-=20; notes.push('too few corners of the home covered'); }
+  if(!SOFT_CATS.some(c=>byCat[c])){ bal-=10; notes.push('no soft touches — the house feels bare'); }
+  if(Object.keys(byCat).some(c=>byCat[c].length>5)){ bal-=15; notes.push('hoarded one category'); }
+  bal=Math.max(0,bal);
+  // Budget Discipline — use the money, keep a buffer
+  const s=spent/BUDGET*100; let bud;
+  if(s>=55&&s<=92) bud=100;
+  else if(s<55) bud=Math.max(0,Math.round(100-(55-s)*2));
+  else bud=Math.max(0,Math.round(100-(s-92)*5));
+  const total=Math.round((comfort+func+bal+bud)/4);
+  return {comfort,func,bal,bud,total,spent,notes,
+    missing:ESSENTIALS.filter(c=>!essOwned.includes(c))};
+}
+function archetype(p){
+  if(!p.r1) return null;
+  const items=(p.r1.items||[]).map(i=>ITEMS[i]).filter(Boolean);
+  if(items.some(it=>it.price>=300000)) return ['lux','💎 Luxury splurge'];
+  const sale=items.filter(it=>it.tag==='SALE').length;
+  if(sale>=4) return ['disc','🏷️ Discount hunter'];
+  if(p.r1.spent<BUDGET*0.4) return ['froze','🥶 Froze up'];
+  const byCat={}; items.forEach(it=>byCat[it.cat]=(byCat[it.cat]||0)+1);
+  if(Object.values(byCat).some(n=>n>5)) return ['hoard','📦 Category hoarder'];
+  return null;
+}
+
+/* ── the Interior Designer's packages (the "fund portfolios") ── */
+const DESIGNER_PICKS={
+  modern:{label:'✨ Modern',ids:['sof2','bed1','mat1','war1','sto1','sto10','lig1','cur1','kit1','kit2','kit7','kit4','din1','coo1','coo2','rug5','dec7','dec1','pla6']},
+  classic:{label:'🏛️ Classic',ids:['sof6','bed5','mat4','war4','sto5','sto10','lig7','lig3','cur6','kit1','kit2','kit7','kit4','din2','coo1','coo2','rug1','dec1','dec8','pla1']},
+  cozy:{label:'☕ Cozy',ids:['sof2','bed8','mat6','war1','sto2','sto10','lig3','lig8','lig1','cur7','cur2','kit1','kit2','kit7','kit4','din1','din8','coo1','coo2','rug4','dec7','pla2','pla4']},
+};
+const KIDS_ADD=['kid6','kid1','kid2'];
+const GUEST_SWAP={modern:['din1','din7'],classic:null,cozy:['din1','din7']}; // [remove, add]
+const GUEST_ADD=['sof4'];
+const FULL_EXTRAS=['dec4','pla5','dec3'];   // "spend it fully" → a few more finishing touches
+function buildDesignerHome(ans){
+  const style=DESIGNER_PICKS[ans.style]?ans.style:'modern';
+  let ids=DESIGNER_PICKS[style].ids.slice();
+  if(ans.kids){ ids=ids.filter(i=>!ITEMS[i].unsafe); KIDS_ADD.forEach(i=>{if(!ids.includes(i))ids.push(i);}); }
+  if(ans.guests){ const sw=GUEST_SWAP[style];
+    if(sw&&ids.includes(sw[0])){ ids=ids.filter(i=>i!==sw[0]); ids.push(sw[1]); }
+    GUEST_ADD.forEach(i=>{if(!ids.includes(i))ids.push(i);}); }
+  if(ans.budget==='full'){ FULL_EXTRAS.forEach(i=>{if(!ids.includes(i))ids.push(i);}); }
+  const sc=scoreHome(ids,FEE);
+  return {ids,style,sc};
+}
+
+/* ── life events (the "market events" → rebalancing) ──── */
+const EVENTS=[
+ {key:'baby',em:'👶',name:'A new baby arrives!',
+  line:'Suddenly, sharp corners and glass tables look very different.',
+  designer:'Your designer already swapped the glass coffee table for a rounded wooden one, added corner guards, and moved the vase trio up high. You didn’t lift a finger.',
+  diyHit:p=>p.items.some(i=>ITEMS[i]&&ITEMS[i].unsafe),
+  diyBad:'You own glass / sharp-edged pieces. Until you notice and replace them yourself, your home just got riskier. −8 Comfort.',
+  diyOk:'Luckily you own nothing fragile — but nobody was watching out for you either.',
+  apply:(p,hired)=>{ if(hired){ p.sub.comfort=Math.min(100,p.sub.comfort+2); }
+    else if(p.items.some(i=>ITEMS[i]&&ITEMS[i].unsafe)){ p.sub.comfort=Math.max(0,p.sub.comfort-8); } }},
+ {key:'wfh',em:'💻',name:'Work-from-home begins!',
+  line:'The dining table is now an office. Everyone is unhappy.',
+  designer:'Your designer carved out a study corner — compact desk, ergonomic chair, task lamp — paid from the plan’s buffer. Done by Friday.',
+  diyHit:p=>!p.items.some(i=>ITEMS[i]&&ITEMS[i].cat==='study'),
+  diyBad:'You have no study space. Laptop-on-the-bed life begins. −10 Functionality.',
+  diyOk:'You already bought a study setup — well spotted!',
+  apply:(p,hired)=>{ if(hired){ ['stu1','stu2','lig6'].forEach(i=>{if(!p.items.includes(i))p.items.push(i);});
+      p.sub.func=Math.min(100,p.sub.func+5); }
+    else if(!p.items.some(i=>ITEMS[i]&&ITEMS[i].cat==='study')){ p.sub.func=Math.max(0,p.sub.func-10); } }},
+ {key:'brand',em:'🏬',name:'UrbanNest shuts down!',
+  line:'The trendy brand goes out of business overnight. Warranties? Gone.',
+  designer:'Your designer had already spread purchases across suppliers — and quietly switched pending orders to another brand. You barely noticed.',
+  diyHit:p=>p.items.some(i=>ITEMS[i]&&ITEMS[i].brand===DOOMED_BRAND),
+  diyBad:'You own UrbanNest pieces. No service, no spares, no warranty. −6 Comfort.',
+  diyOk:'You dodged UrbanNest by luck. This time.',
+  apply:(p,hired)=>{ if(!hired&&p.items.some(i=>ITEMS[i]&&ITEMS[i].brand===DOOMED_BRAND)){ p.sub.comfort=Math.max(0,p.sub.comfort-6); } }},
+ {key:'luck',em:'🎲',name:'Plain luck strikes!',
+  line:'Three headlines nobody — not even a designer — could have predicted.',
+  designer:'', diyHit:()=>false, diyBad:'', diyOk:'',
+  apply:(p)=>{ const brands=p.items.map(i=>ITEMS[i]&&ITEMS[i].brand);
+    if(brands.includes('BrightWay')) p.sub.comfort=Math.min(100,p.sub.comfort+4);
+    if(brands.includes('Sheesham & Sons')) p.sub.bal=Math.min(100,p.sub.bal+3);
+    if(brands.includes('Firenze Milano')) p.sub.comfort=Math.max(0,p.sub.comfort-6); }},
+];
+/* luck outcomes, for display */
+const LUCK_LINES=[
+ ['BrightWay','🎉 BrightWay announces LIFETIME warranties — your appliances just got better for free','+4 Comfort'],
+ ['Sheesham & Sons','🪚 Your Sheesham & Sons carpenter goes viral — your pieces are suddenly collector items','+3 Balance'],
+ ['Firenze Milano','🚢 Firenze imports stuck at port for 6 months — no spares, no service','−6 Comfort'],
+];
+function luckOutcomes(p){ const brands=p.items.map(i=>ITEMS[i]&&ITEMS[i].brand);
+  return LUCK_LINES.filter(l=>brands.includes(l[0])); }
+
+/* ── choose your designer (choosing a fund) ───────────── */
+const DESIGNERS={
+ a:{em:'💅',name:'Glamora Designs',pitch:'2M Instagram followers · celebrity homes · “as seen on TV”',fee:'3% fee',
+    outcome:'Your money went to her marketing. Gorgeous photos, mid workmanship, and a 3% fee — triple the usual.'},
+ b:{em:'📋',name:'Sharma & Associates',pitch:'Boring. 400+ completed homes · transparent pricing · steady reviews',fee:'1% fee',
+    outcome:'Finished on time, on budget, exactly as promised. Boring is beautiful.'},
+ c:{em:'🚀',name:'InstaHome Guarantee',pitch:'“Best home in India, done in 15 days, GUARANTEED”',fee:'Advance only',
+    outcome:'Took the advance payment and left for a “Dubai project”. Phone switched off.'},
+};
+
+/* ── monthly renovation budget (the "SIP") ────────────── */
+const SIP_MODES={
+  designer:{em:'🪄',label:'Give it to my designer',desc:'They’ll improve the home a little every month'},
+  splurge:{em:'🛍️',label:'Spend it on whatever catches my eye',desc:'Something shiny every month!'},
+  ignore:{em:'💤',label:'Let it pile up in the cupboard',desc:'I’ll do a big makeover someday'},
+};
+const SIP_UPGRADES=['Deep-clean + fresh wall paint','Better bedroom blackout curtains','Balcony seating nook','Modular kitchen organisers','Art piece for the hallway','Bathroom fittings upgrade','Smarter lighting layers','Dining chairs reupholstered','Monsoon-proofing + storage','Guest bedding refresh','Festive décor investment','A reading corner, at last'];
+const SPLURGE_BUYS=['A massage chair (blocks the balcony door)','Neon bar sign for the kitchen','Second air-fryer (still in box)','Giant teddy bear (nobody knows why)','Karaoke machine (used once)','Inflatable pool (no terrace)','RGB gaming lights for the pooja room','A treadmill. It dries clothes now.','Crystal swan family (7 pieces)','Another rug, wrong size','Smart mirror that gives compliments','A fondue set. In Chennai.'];
+const SPLURGE_WOBBLE=[2,-1,1,0,2,-2,1,0,1,-1,2,0];
+
+/* ── the Noise Machine — market noise during the rush ── */
+const NOISE=[
+ '📱 Cousin Pinky just bought the Natuzzi sofa 😍😍',
+ '📺 Experts say dark kitchens are OUT this year',
+ '⚡ FLASH SALE on Zingo — ends in 12 seconds!!',
+ "📸 Instagram's Top 10 Homes of 2026 🔥",
+ '🏛️ Celebrity architect: “marble is non-negotiable”',
+ '📰 Breaking: plywood prices to rise 8% next month',
+ '💬 WhatsApp group: “Zingo quality is amazing yaar”',
+ '👵 Neighbour aunty: “buy the biggest fridge, beta”',
+];
+
+/* ── feelings after round 1 ───────────────────────────── */
+const FEELINGS=[
+  ['choices','😵','Too many choices!'],
+  ['lost','🤷','I didn’t know what was important'],
+  ['scared','😨','I was scared of making a mistake'],
+  ['help','🙏','I wished someone could just help me'],
+  ['fun','😎','I loved every second'],
+];
+
+/* ── the big translation (reveal screen) ──────────────── */
+const MAPPING=[
+  ['🛋️ One sofa','A single stock','One company’s share'],
+  ['🏬 The 116-item catalogue','The stock market','Thousands of choices, loud banners, bought ratings'],
+  ['📱 The pop-up notifications','Market noise','Tips, forwards, “breaking news” — mostly ignorable'],
+  ['🧑‍🎨 The interior designer','The fund manager','You set the goals; they make the technical picks'],
+  ['🏡 The fully designed home','A mutual fund portfolio','Many good pieces working together'],
+  ['💸 The ₹10,000 design fee','The expense ratio','A small % for professional care'],
+  ['📅 The monthly ₹50,000','A SIP','Regular investing beats one perfect day'],
+  ['👶 Baby-proofing swaps','Rebalancing','The portfolio adjusts when life changes'],
+  ['👨‍👩‍👧 4,000 families, one designer','A fund house team','Analysts, economists, risk managers — a team sport'],
+];
+const CLOSING='You never wanted to become an interior designer. You just wanted a beautiful home. In the same way — you don’t need to become a stock expert to build wealth. Sometimes the smartest decision is choosing the right expert to build it with you.';
+
+/* ── role / room ────────────────────────────────────── */
+const params=new URLSearchParams(location.search);
+let ROLE=params.get('role')||'host';
+let ROOM=params.get('room')||null;
+const MY_ID=(function(){let id=localStorage.getItem('skg_pid');if(!id){id=crypto.randomUUID();localStorage.setItem('skg_pid',id);}return id;})();
+let isHost=(ROLE==='host');
+let state=null;
+let _saveTimer=null;
+
+function playerUrl(){return location.origin+location.pathname+'?role=player&room='+ROOM;}
+
+/* ── fresh state ────────────────────────────────────── */
+const PHASE_ORDER=['lobby','shop','score1','feel','pick','designer','events','sip','pool','neighbour','reveal','finale'];
+function freshState(){
+  return {phase:'lobby',
+    shopStart:null,               // host timestamp when the 90s rush began
+    shopDone:false,
+    eventIdx:-1, eventReveal:false,
+    dpickReveal:false,
+    sip:{month:0,max:SIP_MONTHS},
+    designerReveal:false,         // the "that's a mutual fund" moment
+    poolReveal:false,
+    nbReveal:false,
+    players:{},
+    feed:[],                      // live purchase ticker for the projector
+    hostId:MY_ID, updatedAt:Date.now()};
+}
+
+/* ── DB ─────────────────────────────────────────────── */
+async function save(){ state.updatedAt=Date.now();
+  clearTimeout(_saveTimer);
+  _saveTimer=setTimeout(saveNow,60);
+}
+async function saveNow(){ state.updatedAt=Date.now();
+  try{await db.from('games').upsert({room_code:ROOM,state,host_id:MY_ID,updated_at:new Date().toISOString()});}
+  catch(e){console.warn('save failed',e);}
+}
+
+/* ── realtime ───────────────────────────────────────── */
+let channel=null;
+function joinChannel(){
+  channel=db.channel('room:'+ROOM);
+  channel.on('postgres_changes',{event:'*',schema:'public',table:'games',filter:'room_code=eq.'+ROOM},
+    (p)=>{const s=p.new&&p.new.state; if(s&&!isHost){state=s; renderPlayer();}})
+    .on('broadcast',{event:'action'},({payload})=>{ if(isHost) hostHandleAction(payload); })
+    .subscribe();
+}
+function sendAction(payload){ channel.send({type:'broadcast',event:'action',payload}); }
+
+/* ── helpers ────────────────────────────────────────── */
+function plist(){return state&&state.players?Object.values(state.players):[];}
+function spentOf(p){return (p.items||[]).reduce((s,i)=>s+(ITEMS[i]?ITEMS[i].price:0),0);}
+function shopOpen(){ return state.phase==='shop' && state.shopStart && !state.shopDone
+  && (Date.now()-state.shopStart)<(SHOP_SECS+2)*1000; }
+function curScore(p){ if(!p.sub) return null;
+  return Math.round((p.sub.comfort+p.sub.func+p.sub.bal+p.sub.bud)/4); }
+function avgScore(list){ const l=list.filter(p=>p.sub); if(!l.length)return 0;
+  return Math.round(l.reduce((s,p)=>s+curScore(p),0)/l.length); }
+
+/* ═══════════════════════ HOST ═══════════════════════ */
+async function initHost(){
+  document.getElementById('host').classList.remove('hide');
+  document.body.classList.add('host-bg');
+  let adopted=false;
+  if(ROOM){ // reload with ?room= → try to adopt a recent live game instead of wiping it
+    try{const {data}=await db.from('games').select('state,updated_at').eq('room_code',ROOM).single();
+      if(data&&data.state&&data.state.phase&&data.state.phase!=='lobby'
+         &&(Date.now()-new Date(data.updated_at).getTime())<30*60*1000
+         &&Object.keys(data.state.players||{}).length){ state=data.state; state.hostId=MY_ID; adopted=true; }
+    }catch(e){}
+  }
+  if(!ROOM){ ROOM='SG'+(1000+Math.floor(Math.random()*9000));
+    const p=new URLSearchParams(location.search);p.set('role','host');p.set('room',ROOM);history.replaceState(null,'','?'+p.toString()); }
+  const rb=document.createElement('button');rb.className='host-reset';rb.textContent='↺ New game';rb.onclick=hostReset;document.body.appendChild(rb);
+  buildMiniQR();
+  if(!adopted) state=freshState();
+  joinChannel();
+  await saveNow();
+  renderHost();
+  setInterval(hostTick,500);   // drives the shop countdown display + auto time-up
+}
+let MINI_QR_SRC='';
+function buildMiniQR(){
+  try{ const tmp=document.createElement('div'); new QRCode(tmp,{text:playerUrl(),width:140,height:140,colorDark:'#1a3a5c',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});
+    const c=tmp.querySelector('canvas'); MINI_QR_SRC=c?c.toDataURL():(tmp.querySelector('img')?tmp.querySelector('img').src:''); }
+  catch(e){ MINI_QR_SRC=''; }
+}
+function openQR(){
+  let m=document.getElementById('qrModal');
+  if(!m){ m=document.createElement('div'); m.id='qrModal'; m.onclick=closeQR; document.body.appendChild(m); }
+  const sz=Math.round(Math.min(window.innerWidth,window.innerHeight)*0.62);
+  m.innerHTML=`<div class="qm-box" id="qmBox"></div><div class="qm-pin"><small>Game PIN · scan to join</small>${ROOM}</div><div class="qm-hint">Tap anywhere to close</div>`;
+  try{ new QRCode(document.getElementById('qmBox'),{text:playerUrl(),width:sz,height:sz,colorDark:'#1a3a5c',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H}); }
+  catch(e){ document.getElementById('qmBox').textContent=playerUrl(); }
+  m.classList.add('show');
+}
+function closeQR(){ const m=document.getElementById('qrModal'); if(m)m.classList.remove('show'); }
+
+/* ── incoming player actions ────────────────────────── */
+function hostHandleAction(a){
+  if(!a||!a.type)return;
+  const p=state.players[a.id];
+  if(a.type==='join'){
+    if(!state.players[a.id]){
+      const n=Object.keys(state.players).length;
+      state.players[a.id]={id:a.id,name:(a.name||'Guest').slice(0,16),
+        av:AV_EMOJI[n%AV_EMOJI.length],color:AV_COLOR[n%AV_COLOR.length],
+        items:[],r1:null,feel:null,hired:null,ans:null,designedIds:null,decisions:0,dpick:null,
+        sub:null,sipMode:null,sipCash:0,upgrades:[],nbVote:null,premium:false};
+    }else{ state.players[a.id].name=(a.name||'').slice(0,16)||state.players[a.id].name; }
+    save(); if(state.phase==='lobby'||state.phase==='shop') renderHost();
+  }
+  else if(a.type==='buy'){
+    if(!p||!shopOpen())return;
+    const it=ITEMS[a.item]; if(!it||p.items.includes(it.id))return;
+    if(spentOf(p)+it.price>BUDGET)return;
+    p.items.push(it.id); p.decisions=(p.decisions||0)+1;
+    state.feed.unshift({n:p.name,item:it.name,price:it.price,big:it.price>=150000,t:Date.now()});
+    state.feed=state.feed.slice(0,9);
+    save(); renderHostShopLive();
+  }
+  else if(a.type==='ret'){
+    if(!p||!shopOpen())return;
+    p.items=p.items.filter(i=>i!==a.item); p.decisions=(p.decisions||0)+1;
+    save(); renderHostShopLive();
+  }
+  else if(a.type==='dpick'){
+    if(!p||state.phase!=='pick'||state.dpickReveal)return;
+    if(DESIGNERS[a.v]) p.dpick=a.v;
+    save(); renderHost();
+  }
+  else if(a.type==='feel'){
+    if(!p||state.phase!=='feel')return;
+    if(FEELINGS.some(f=>f[0]===a.k)) p.feel=a.k;
+    save(); renderHost();
+  }
+  else if(a.type==='hire'){
+    if(!p||state.phase!=='designer'||p.hired!=null)return;
+    if(a.yes){ p.hired=true; }             // answers arrive next
+    else{ p.hired=false;                    // brave DIY soul — keeps the round-1 home
+      p.sub=p.r1?{comfort:p.r1.comfort,func:p.r1.func,bal:p.r1.bal,bud:p.r1.bud}:{comfort:0,func:0,bal:0,bud:0}; }
+    save(); renderHost();
+  }
+  else if(a.type==='answers'){
+    if(!p||state.phase!=='designer'||!p.hired||p.designedIds)return;
+    p.ans={budget:a.budget==='full'?'full':'buffer',kids:!!a.kids,guests:!!a.guests,
+      style:DESIGNER_PICKS[a.style]?a.style:'modern'};
+    const home=buildDesignerHome(p.ans);
+    p.designedIds=home.ids; p.items=home.ids.slice();
+    // designers are consistently GOOD, not perfect: land each home at 82–90
+    let h=0; for(const ch of a.id) h=(h*31+ch.charCodeAt(0))>>>0;
+    const target=82+(h%9), f=Math.min(1,target/Math.max(1,home.sc.total));
+    p.sub={comfort:Math.round(home.sc.comfort*f),func:Math.round(home.sc.func*f),
+           bal:Math.round(home.sc.bal*f),bud:Math.round(home.sc.bud*f)};
+    p.designedSpent=home.sc.spent;
+    save(); renderHost();
+  }
+  else if(a.type==='sipmode'){
+    if(!p||state.phase!=='sip'||state.sip.month>0||p.sipMode)return;
+    if(SIP_MODES[a.m]) p.sipMode=a.m;
+    save(); renderHost();
+  }
+  else if(a.type==='nbvote'){
+    if(!p||state.phase!=='neighbour'||state.nbReveal)return;
+    p.nbVote=(a.v==='regret'?'regret':'whole');
+    save(); renderHost();
+  }
+}
+
+/* ── host flow ──────────────────────────────────────── */
+function goPhase(ph){ if(!PHASE_ORDER.includes(ph))return; state.phase=ph; saveNow(); renderHost(); }
+function hostStartShop(){
+  state.phase='shop'; state.shopStart=Date.now(); state.shopDone=false; state.feed=[];
+  plist().forEach(p=>{p.items=[];p.r1=null;});
+  saveNow(); renderHost();
+}
+let _lastLeft=null;
+function hostTick(){
+  if(!state)return;
+  if(state.phase==='shop'&&state.shopStart&&!state.shopDone){
+    const left=Math.max(0,SHOP_SECS-Math.floor((Date.now()-state.shopStart)/1000));
+    if(left!==_lastLeft){ _lastLeft=left; const el=document.getElementById('hostTimer');
+      if(el){ el.textContent=fmtTime(left); el.classList.toggle('warn',left<=15); } }
+    const nb=document.getElementById('noiseBar');
+    if(nb){ const ni=Math.floor((Date.now()-state.shopStart)/15000);
+      nb.textContent=ni>0?NOISE[(ni-1)%NOISE.length]:'📱 …the noise is about to begin…'; }
+    if(left<=0){ hostEndShop(); }
+  }
+}
+function hostEndShop(){
+  if(state.shopDone)return;
+  state.shopDone=true;
+  plist().forEach(p=>{
+    const sc=scoreHome(p.items);
+    p.r1={...sc,items:p.items.slice()};
+    p.sub={comfort:sc.comfort,func:sc.func,bal:sc.bal,bud:sc.bud};
+  });
+  state.phase='score1'; saveNow(); renderHost();
+}
+function hostToFeel(){ goPhase('feel'); }
+function hostToPick(){ goPhase('pick'); }
+function hostPickReveal(){ state.dpickReveal=true; saveNow(); renderHost(); }
+function hostToDesigner(){ goPhase('designer'); }
+function hostDesignerReveal(){ state.designerReveal=!state.designerReveal; saveNow(); renderHost(); }
+function hostToEvents(){ state.phase='events'; state.eventIdx=-1; state.eventReveal=false; saveNow(); renderHost(); }
+function hostNextEvent(){
+  if(state.eventIdx>=0&&!state.eventReveal){ state.eventReveal=true; // second click reveals impact
+    const ev=EVENTS[state.eventIdx];
+    plist().forEach(p=>{ if(p.sub) ev.apply(p,!!p.hired); });
+    saveNow(); renderHost(); return; }
+  if(state.eventIdx<EVENTS.length-1){ state.eventIdx++; state.eventReveal=false; saveNow(); renderHost(); }
+  else goPhase('sip');
+}
+function sipCohort(k){ const ps=plist().filter(p=>p.sub);
+  return k==='ignore'?ps.filter(p=>p.sipMode==='ignore'||!p.sipMode):ps.filter(p=>p.sipMode===k); }
+function sipSnapshot(){
+  const avgBy=k=>{const l=sipCohort(k); return l.length?Math.round(l.reduce((s,p)=>s+curScore(p),0)/l.length):null;};
+  return {designer:avgBy('designer'),splurge:avgBy('splurge'),ignore:avgBy('ignore')};
+}
+function hostSipMonth(){ hostSipMonthCore(); saveNow(); renderHost(); }
+function hostSipAll(){ while(state.sip.month<state.sip.max) hostSipMonthCore(); saveNow(); renderHost(); }
+function hostSipMonthCore(){
+  const m=state.sip; if(m.month>=m.max)return;
+  if(!state.sipHist) state.sipHist=[sipSnapshot()];   // month-0 baseline
+  m.month++;
+  plist().forEach(p=>{
+    if(!p.sub)return;
+    if(p.sipMode==='designer'){
+      // the designer fixes the weakest corner first — steady, boring, effective
+      const keys=['comfort','func','bal','bud'];
+      keys.sort((a,b)=>p.sub[a]-p.sub[b]);
+      p.sub[keys[0]]=Math.min(96,p.sub[keys[0]]+3);
+      p.sub[keys[1]]=Math.min(96,p.sub[keys[1]]+1);
+      p.upgrades.push(SIP_UPGRADES[(m.month-1)%SIP_UPGRADES.length]);
+    }else if(p.sipMode==='splurge'){
+      const w=SPLURGE_WOBBLE[(m.month-1)%SPLURGE_WOBBLE.length];
+      p.sub.comfort=Math.max(0,Math.min(100,p.sub.comfort+w));
+      p.sub.bud=Math.max(0,p.sub.bud-1);   // money out, plan none
+      p.upgrades.push(SPLURGE_BUYS[(m.month-1)%SPLURGE_BUYS.length]);
+    }else{
+      p.sipCash+=SIP_AMT;                   // piles up in the cupboard
+    }
+  });
+  state.sipHist.push(sipSnapshot());
+}
+function hostToPool(){ goPhase('pool'); }
+function hostPoolReveal(){
+  if(!state.poolReveal){ state.poolReveal=true;
+    plist().forEach(p=>{ if(p.hired&&p.sub){ p.premium=true;
+      ['comfort','func','bal','bud'].forEach(k=>p.sub[k]=Math.min(98,p.sub[k]+2)); } });
+  }
+  saveNow(); renderHost();
+}
+function hostToNeighbour(){ goPhase('neighbour'); }
+function hostNbReveal(){ state.nbReveal=true; saveNow(); renderHost(); }
+function hostToReveal(){ goPhase('reveal'); }
+function hostToFinale(){ goPhase('finale'); confettiBurst(); }
+function hostReset(){
+  if(!confirm('Start a brand-new game?\n\nThis clears ALL players and sends every phone back to the join screen.'))return;
+  state=freshState(); saveNow(); renderHost();
+}
+function confettiBurst(){
+  const ems=['🎉','🏡','✨','🪄','💚','🧡'];
+  for(let i=0;i<44;i++){ const d=document.createElement('div'); d.className='conf';
+    d.textContent=ems[i%ems.length];
+    d.style.left=(Math.random()*100)+'vw';
+    d.style.animationDuration=(2.4+Math.random()*2.2)+'s';
+    d.style.animationDelay=(Math.random()*0.9)+'s';
+    document.body.appendChild(d); setTimeout(()=>d.remove(),6000); }
+}
+
+/* ── host render ────────────────────────────────────── */
+function brandBar(){
+  return `<div class="brandbar"><div class="l">
+     <img src="${LOGO}" onerror="this.style.display='none'">
+     <div><div class="sub">Investing for Mummies</div><div class="nm">Sapno Ka <em>Ghar</em></div></div>
+   </div><div style="display:flex;align-items:center;gap:10px">
+     <div class="mini-qr" onclick="openQR()" title="Scan to join — tap to enlarge">${MINI_QR_SRC?`<img src="${MINI_QR_SRC}">`:''}<span>Scan<br>to join</span></div>
+     <span class="livedot">LIVE</span></div></div>`;
+}
+function stepper(active){
+  const steps=[['lobby','1 · Lobby'],['shop','2 · Shopping Rush'],['score1','3 · Scores'],['feel','4 · How did it feel?'],
+    ['pick','5 · Pick a Designer'],['designer','6 · The Designer'],['events','7 · Life Happens'],['sip','8 · Monthly ₹50k'],
+    ['pool','9 · The Team'],['neighbour','10 · The Neighbour'],['reveal','11 · The Secret'],['finale','🏁 Finale']];
+  const ai=PHASE_ORDER.indexOf(active);
+  return `<div class="steps">${steps.map(s=>{
+    const si=PHASE_ORDER.indexOf(s[0]);
+    return `<button class="step ${si<ai?'done':si===ai?'on':''}" onclick="goPhase('${s[0]}')">${s[1]}</button>`;}).join('')}</div>`;
+}
+function pchip(p){return `<div class="pchip"><span class="av" style="background:${p.color}">${p.av}</span>${escapeHtml(p.name)}</div>`;}
+
+function renderHost(){
+  const el=document.getElementById('host');
+  if(!state){el.innerHTML='Connecting…';return;}
+  const ph=state.phase;
+  let stage='';
+  if(ph==='lobby') stage=hostLobby();
+  else if(ph==='shop') stage=hostShop();
+  else if(ph==='score1') stage=hostScore1();
+  else if(ph==='feel') stage=hostFeel();
+  else if(ph==='pick') stage=hostPick();
+  else if(ph==='designer') stage=hostDesigner();
+  else if(ph==='events') stage=hostEvents();
+  else if(ph==='sip') stage=hostSip();
+  else if(ph==='pool') stage=hostPool();
+  else if(ph==='neighbour') stage=hostNeighbour();
+  else if(ph==='reveal') stage=hostReveal();
+  else if(ph==='finale') stage=hostFinale();
+  el.innerHTML=brandBar()+stepper(ph)+`<div class="stage">${stage}</div>`;
+  if(ph==='lobby'){ const q=document.getElementById('lobbyQR');
+    if(q&&!q.hasChildNodes()){ try{ new QRCode(q,{text:playerUrl(),width:210,height:210,colorDark:'#1a3a5c',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H}); }catch(e){} } }
+}
+
+/* 1 · LOBBY */
+function hostLobby(){
+  const ps=plist();
+  return `<div class="lobby">
+    <div style="display:flex;flex-direction:column;min-height:0">
+      <div class="story-card">
+        <div class="eyebrow">Your story begins</div>
+        <p>“You've just bought your <b>dream home</b>. Congratulations! 🎉<br>
+        You have <b>₹10 lakh</b> to furnish it. Your goal: create a beautiful,
+        comfortable home for your family.”</p>
+      </div>
+      <div class="qr-card" onclick="openQR()" style="flex:1">
+        <div class="qr-box" id="lobbyQR"></div>
+        <div class="pin"><small>Game PIN</small>${ROOM}</div>
+        <div style="color:var(--muted);font-weight:700">Scan with your phone camera · tap QR to enlarge</div>
+      </div>
+    </div>
+    <div class="lobby-right">
+      <h2 class="serif">Who's moving in? <span style="color:var(--teal)">${ps.length}</span></h2>
+      <div class="pl-list">${ps.length?ps.map(pchip).join(''):'<p class="lead" style="padding:14px 4px">Waiting for the first family to arrive…</p>'}</div>
+      <div class="controls" style="position:static;margin:0;padding:14px 0 0;background:none">
+        <button class="btn lg" onclick="hostStartShop()" ${ps.length?'':'disabled'}>🛒 Open the furniture market →</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* 2 · SHOP */
+function hostShop(){
+  const left=state.shopStart?Math.max(0,SHOP_SECS-Math.floor((Date.now()-state.shopStart)/1000)):SHOP_SECS;
+  return `<div class="shop-head">
+    <div class="timer-big num ${left<=15?'warn':''}" id="hostTimer">${fmtTime(left)}</div>
+    <div>
+      <div class="eyebrow">Round 1 · The Shopping Rush</div>
+      <h2>116 items. ₹10 lakh. 90 seconds. Go!</h2>
+      <div class="lead">Furnish your whole home on your phone — before the clock runs out.</div>
+    </div>
+  </div>
+  <div class="noise-bar" id="noiseBar">📱 …the noise is about to begin…</div>
+  <div class="host-grid" style="grid-template-columns:1fr 1fr">
+    <div class="panel" style="min-height:0;display:flex;flex-direction:column">
+      <h3>🛎️ Just bought…</h3>
+      <div class="feed" id="shopFeed">${feedHtml()}</div>
+    </div>
+    <div class="panel" style="min-height:0;display:flex;flex-direction:column">
+      <h3>🏃‍♀️ The shoppers</h3>
+      <div class="shopper-grid" id="shopperGrid">${shopperHtml()}</div>
+    </div>
+  </div>
+  <div class="controls">
+    <span style="color:var(--muted);font-weight:700">The timer ends the round automatically…</span>
+    <div class="spacer"></div>
+    <button class="btn ghost" onclick="hostEndShop()">⏭ End early → Scores</button>
+  </div>`;
+}
+function feedHtml(){
+  return (state.feed||[]).map(f=>`<div class="feed-item ${f.big?'big':''}"><b>${escapeHtml(f.n)}</b> bought ${escapeHtml(f.item)} · <b>${fmt(f.price)}</b>${f.big?' 😱':''}</div>`).join('')
+    ||'<p class="lead">Purchases will roll in here…</p>';
+}
+function shopperHtml(){
+  return plist().map(p=>{const sp=spentOf(p);
+    return `<div class="schip"><span class="av" style="background:${p.color}">${p.av}</span>${escapeHtml(p.name)}
+      <span class="sp">${fmtMoney(sp)}</span><span style="color:var(--muted)">· ${p.items.length} items</span></div>`;}).join('');
+}
+function renderHostShopLive(){
+  const f=document.getElementById('shopFeed'); if(f)f.innerHTML=feedHtml();
+  const g=document.getElementById('shopperGrid'); if(g)g.innerHTML=shopperHtml();
+  if(!document.getElementById('shopFeed')&&state.phase==='shop')renderHost();
+}
+
+/* 3 · SCORES */
+function hostScore1(){
+  const ps=plist().filter(p=>p.r1).sort((a,b)=>b.r1.total-a.r1.total);
+  const top=ps.length?ps[0].id:null;
+  const rows=ps.map((p,i)=>{
+    const arch=archetype(p); const star=(p.id===top&&p.r1.total>=60);
+    return `<tr><td><span class="av" style="background:${p.color};width:24px;height:24px;font-size:.8rem;display:inline-grid;place-items:center;vertical-align:middle;margin-right:6px">${p.av}</span>
+      ${escapeHtml(p.name)}${star?'<span class="badge star">⭐ Natural</span>':''}${arch?`<span class="badge ${arch[0]}">${arch[1]}</span>`:''}</td>
+      <td class="num">${fmtMoney(p.r1.spent)}</td><td class="num">${p.r1.items.length}</td>
+      <td class="num">${p.r1.comfort}</td><td class="num">${p.r1.func}</td><td class="num">${p.r1.bal}</td><td class="num">${p.r1.bud}</td>
+      <td class="num" style="font-weight:900;color:var(--${p.r1.total>=60?'teal':'coral'})">${p.r1.total}</td></tr>`;}).join('');
+  return `<div class="eyebrow">Round 1 · The verdict</div>
+    <h2>A home is judged as a whole — not by its prettiest piece</h2>
+    <div class="lead">Comfort · Functionality · Balance · Budget Discipline. Very few people score well on their first try. That's normal — and that's the point.</div>
+    <div style="overflow:auto;margin-top:12px;flex:1;min-height:0">
+    <table class="tbl"><tr><th>Family</th><th>Spent</th><th>Items</th><th>😌 Comfort</th><th>🔧 Function</th><th>⚖️ Balance</th><th>💰 Budget</th><th>🏆 Home Score</th></tr>${rows||'<tr><td colspan="8">No homes to score yet.</td></tr>'}</table></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
+      <div class="panel" style="flex:1;min-width:260px"><h3>🛋️ There was never ONE right sofa</h3>
+        <p style="font-weight:700;color:var(--muted)">Oslo, Bombay Craft and NapMaster were all equally good — different strengths, same quality. Investing has very few single “right answers” either.</p></div>
+      <div class="panel" style="flex:1;min-width:260px"><h3>📱 And all that noise?</h3>
+        <p style="font-weight:700;color:var(--muted)">Cousins, flash sales, experts, breaking news… you had to ignore almost all of it. Investing feels like that every single day.</p></div>
+    </div>
+    <div class="controls"><div class="spacer"></div>
+      <button class="btn lg" onclick="hostToFeel()">Ask the room: “How did that feel?” →</button></div>`;
+}
+
+/* 4 · FEELINGS */
+function hostFeel(){
+  const ps=plist(); const tally={};
+  FEELINGS.forEach(f=>tally[f[0]]=0);
+  ps.forEach(p=>{ if(p.feel&&tally[p.feel]!=null)tally[p.feel]++; });
+  const answered=ps.filter(p=>p.feel).length;
+  const mx=Math.max(1,...Object.values(tally));
+  return `<div class="eyebrow">The teacher's question</div>
+    <h2 class="serif" style="font-style:italic">“How did that feel?”</h2>
+    <div class="lead">Answer honestly on your phones. ${answered}/${ps.length} have answered.</div>
+    <div style="max-width:900px;margin-top:14px">
+    ${FEELINGS.map(f=>`<div class="feel-row"><div class="em">${f[1]}</div><div class="lbl">${f[2]}</div>
+      <div class="track"><div class="fill" style="width:${tally[f[0]]/mx*100}%"></div></div><div class="n">${tally[f[0]]}</div></div>`).join('')}
+    </div>
+    <div class="reveal-card" style="margin-top:14px;max-width:900px">
+      <div class="rc-t">Hold this feeling. This is exactly how most people feel the first time they open an investing app.</div>
+    </div>
+    <div class="controls"><div class="spacer"></div>
+      <button class="btn lg gold" onclick="hostToPick()">🧑‍🎨 Let's get help… but from whom? →</button></div>`;
+}
+
+/* 5 · PICK A DESIGNER */
+function hostPick(){
+  const ps=plist();
+  const picked=ps.filter(p=>p.dpick).length;
+  const tally=k=>ps.filter(p=>p.dpick===k).length;
+  return `<div class="eyebrow">Round 2 · But first…</div>
+    <h2>Three designers want the job. Choose carefully.</h2>
+    <div class="lead">Pick on your phones. ${picked}/${ps.length} have chosen.</div>
+    <div class="vs-grid" style="grid-template-columns:1fr 1fr 1fr;margin-top:14px">
+      ${Object.entries(DESIGNERS).map(([k,d])=>`<div class="vs-card ${state.dpickReveal&&k==='b'?'win':''}">
+        <div style="font-size:2.4rem">${d.em}</div>
+        <div style="font-weight:900;font-size:1.15rem;margin:4px 0">${d.name}</div>
+        <p style="font-weight:700;color:var(--muted)">${d.pitch}</p>
+        <div><span class="badge ${k==='b'?'star':'disc'}" style="margin:8px 0 0">${d.fee}</span></div>
+        <div class="bignum" style="font-size:2rem">${tally(k)}</div>
+        ${state.dpickReveal?`<p class="pop" style="font-weight:800;margin-top:6px;color:var(--${k==='b'?'teal':'coral'})">${d.outcome}</p>`:''}
+      </div>`).join('')}
+    </div>
+    ${state.dpickReveal?`<div class="reveal-card" style="margin-top:12px"><div class="rc-t">This is exactly how you choose a <b>mutual fund</b>: not the flashiest marketing, not impossible promises — a <b>boring, proven process</b> (and in real life: SEBI-registered, with a public track record). Luckily, in this game everyone gets a do-over with ${DESIGNERS.b.name}.</div></div>`:''}
+    <div class="controls">
+      ${state.dpickReveal?'':'<button class="btn gold" onclick="hostPickReveal()">Reveal how each project went</button>'}
+      <div class="spacer"></div>
+      <button class="btn lg" ${state.dpickReveal?'':'disabled'} onclick="hostToDesigner()">Continue with ${DESIGNERS.b.name} →</button></div>`;
+}
+
+/* 6 · DESIGNER */
+function hostDesigner(){
+  const ps=plist();
+  const hiredList=ps.filter(p=>p.hired===true), diy=ps.filter(p=>p.hired===false);
+  const done=hiredList.filter(p=>p.designedIds);
+  const avgDIY=Math.round(ps.filter(p=>p.r1).reduce((s,p)=>s+p.r1.total,0)/Math.max(1,ps.filter(p=>p.r1).length));
+  const avgD=done.length?Math.round(done.reduce((s,p)=>s+curScore(p),0)/done.length):null;
+  const bestDiy=ps.filter(p=>p.r1&&p.r1.total>=85).sort((a,b)=>b.r1.total-a.r1.total)[0];
+  return `<div class="eyebrow">Round 2 · A different way</div>
+    <h2>Meet ${DESIGNERS.b.name} — your Interior Designer</h2>
+    <div class="lead">No browsing 116 products. She asks just <b>4 questions</b> and builds your whole home in seconds. Fee: <b>₹10,000</b> (1% of your budget).</div>
+    <div class="split" style="max-width:940px;margin-top:10px">
+      <div class="half good"><h4>YOU make the important decisions</h4><p>💰 Budget · 👶 Family · 🥳 Lifestyle · 🎨 Style · 🛡️ How much to keep aside</p></div>
+      <div class="half"><h4>SHE makes the technical ones</h4><p>Which hinges, which paint finish, which mattress brand, which supplier — the hundred decisions you never wanted.</p></div>
+    </div>
+    <div class="host-grid" style="margin-top:14px;flex:0 0 auto">
+      <div class="panel">
+        <h3>📋 On your phones now</h3>
+        <p style="font-weight:700;color:var(--muted);margin-bottom:8px">Hire the designer — or bravely DIY again.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          ${ps.map(p=>{ const st=p.hired==null?'…thinking':p.hired?(p.designedIds?'🪄 home designed ✓':'✍️ answering 4 questions'):'💪 DIY';
+            return `<div class="schip"><span class="av" style="background:${p.color}">${p.av}</span>${escapeHtml(p.name)} <span style="color:var(--${p.designedIds?'teal':'muted'});font-weight:800">${st}</span></div>`;}).join('')||'—'}
+        </div>
+      </div>
+      <div class="panel" style="text-align:center">
+        <h3>The scoreboard so far</h3>
+        <div class="vs-grid">
+          <div class="vs-card"><div class="cap">Doing it yourself</div><div class="vs-score">${avgDIY||'—'}</div><div style="font-weight:700;color:var(--muted)">avg Round-1 home score</div></div>
+          <div class="vs-mid">vs</div>
+          <div class="vs-card ${avgD?'win':''}"><div class="cap">With the designer</div><div class="vs-score">${avgD??'…'}</div><div style="font-weight:700;color:var(--muted)">avg designed home score</div></div>
+        </div>
+        ${bestDiy?`<p style="font-weight:800;color:var(--gold)">👏 ${escapeHtml(bestDiy.name)} scored ${bestDiy.r1.total} completely solo — it CAN be done. It just takes years of learning.</p>`:''}
+      </div>
+    </div>
+    ${state.designerReveal?`<div class="reveal-card" style="margin-top:12px">
+      <div class="rc-t">“You didn't lose control of your home. You made the <b>important</b> decisions — budget, family, goals, style. You hired someone whose <b>full-time job</b> is the hundred technical ones.<br><br>That's <b>exactly what a mutual fund does</b>. The catalogue is the stock market. The designer is the fund manager. The ₹10,000 fee is the expense ratio.<br><br>And notice — a designer isn't magic. She's <b>consistently good</b>, not perfect. Some people CAN build a brilliant home themselves; they just spend years learning how. Most of us simply want a beautiful home.”</div>
+    </div>`:''}
+    <div class="controls">
+      <button class="btn gold" onclick="hostDesignerReveal()">${state.designerReveal?'Hide the secret':'🤫 Reveal the secret'}</button>
+      <div class="spacer"></div>
+      <button class="btn lg" onclick="hostToEvents()">Life happens… →</button></div>`;
+}
+
+/* 6 · EVENTS */
+function hostEvents(){
+  const i=state.eventIdx;
+  const ps=plist().filter(p=>p.sub);
+  if(i<0) return `<div class="eyebrow">Chapter 3 · Life happens</div>
+    <h2>A home is never “done” — and neither is a portfolio</h2>
+    <div class="lead">Three real-life events are about to hit every home in this room. Watch what happens to the DIY homes… and to the designed ones.</div>
+    <div class="event-hero"><div class="em">🎲</div><div><h3>Ready?</h3><p style="font-weight:700;color:var(--muted)">Nobody can predict these. That's the point.</p></div></div>
+    <div class="controls"><div class="spacer"></div><button class="btn lg" onclick="hostNextEvent()">First event →</button></div>`;
+  const ev=EVENTS[i];
+  if(ev.key==='luck'){
+    const lucky=ps.filter(p=>luckOutcomes(p).some(l=>l[2][0]==='+'));
+    const unlucky=ps.filter(p=>luckOutcomes(p).some(l=>l[2][0]==='−'));
+    return `<div class="eyebrow">Life event ${i+1} of ${EVENTS.length}</div>
+    <div class="event-hero"><div class="em">${ev.em}</div><div><h3>${ev.name}</h3><p style="font-weight:700;color:var(--muted);font-size:1.1rem">${ev.line}</p></div></div>
+    ${state.eventReveal?`<div class="split pop">
+      <div class="half good"><h4>🍀 Lucky today (${lucky.length})</h4><p>${LUCK_LINES[0][1]}.<br><br>${LUCK_LINES[1][1]}.</p></div>
+      <div class="half ${unlucky.length?'bad':''}"><h4>🌧️ Unlucky today (${unlucky.length})</h4><p>${LUCK_LINES[2][1]}.</p>
+        ${unlucky.length?`<p style="margin-top:6px">Hit: ${unlucky.map(p=>`<b>${escapeHtml(p.name)}</b>`).join(', ')}</p>`:''}</div>
+    </div>
+    <div class="reveal-card" style="margin-top:12px"><div class="rc-t">Nobody <b>deserved</b> any of that — luck touched designed homes too. Sometimes you make the right decision and still get unlucky. Markets contain luck. That's why we judge <b>the process, not one outcome</b> — and why a balanced home never sinks on a single headline.</div></div>`
+    :`<div class="lead" style="margin-top:10px">What could possibly happen that even an expert can't prevent?…</div>`}
+    <div class="controls"><div class="spacer"></div>
+      <button class="btn lg" onclick="hostNextEvent()">${state.eventReveal?(i<EVENTS.length-1?'Next event →':'📅 The monthly budget →'):'Reveal the impact'}</button></div>`;
+  }
+  const hired=ps.filter(p=>p.hired), diy=ps.filter(p=>!p.hired);
+  const hit=diy.filter(p=>ev.diyHit(p));
+  return `<div class="eyebrow">Life event ${i+1} of ${EVENTS.length}</div>
+    <div class="event-hero"><div class="em">${ev.em}</div><div><h3>${ev.name}</h3><p style="font-weight:700;color:var(--muted);font-size:1.1rem">${ev.line}</p></div></div>
+    ${state.eventReveal?`<div class="split pop">
+      <div class="half good"><h4>🪄 Homes with a designer (${hired.length})</h4><p>${ev.designer}</p></div>
+      <div class="half ${hit.length?'bad':''}"><h4>💪 DIY homes (${diy.length})</h4>
+        <p>${hit.length?ev.diyBad:ev.diyOk}</p>
+        ${hit.length?`<p style="margin-top:6px">Affected: ${hit.map(p=>`<b>${escapeHtml(p.name)}</b>`).join(', ')}</p>`:''}</div>
+    </div>
+    <div class="reveal-card" style="margin-top:12px"><div class="rc-t">The designer's homes adjusted <b>automatically</b>. In investing, this is called <b>rebalancing</b> — your fund manager does it for you, quietly, all year round.</div></div>`
+    :`<div class="lead" style="margin-top:10px">What happens to each home? Take guesses from the room…</div>`}
+    <div class="controls"><div class="spacer"></div>
+      <button class="btn lg" onclick="hostNextEvent()">${state.eventReveal?(i<EVENTS.length-1?'Next event →':'📅 The monthly budget →'):'Reveal the impact'}</button></div>`;
+}
+
+/* 7 · SIP */
+function hostSip(){
+  const m=state.sip;
+  const ps=plist().filter(p=>p.sub);
+  const picked=ps.filter(p=>p.sipMode).length;
+  const cohorts=[['designer','#2a9d8f'],['splurge','#e76f51'],['ignore','#5a7d8a']];
+  const chart=sipChart();
+  return `<div class="eyebrow">Chapter 4 · Every month, ₹50,000 arrives</div>
+    <h2>What will you do with it — for 12 months?</h2>
+    ${m.month===0?`<div class="lead">Pick your plan on your phones. ${picked}/${ps.length} have picked.</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+      ${Object.entries(SIP_MODES).map(([k,v])=>{const n=ps.filter(p=>p.sipMode===k).length;
+        return `<div class="panel" style="flex:1;min-width:200px;text-align:center"><div style="font-size:2.2rem">${v.em}</div>
+          <div style="font-weight:900;margin:4px 0">${v.label}</div><div style="color:var(--muted);font-weight:700;font-size:.9rem">${v.desc}</div>
+          <div class="bignum" style="font-size:2rem">${n}</div></div>`;}).join('')}
+    </div>`
+    :`<div class="lead">Month <b>${m.month}</b> of ${m.max}</div>
+    <div class="host-grid" style="margin-top:10px;flex:0 0 auto">
+      <div class="chart-wrap">${chart}
+        <div class="legend">${cohorts.map(([k,c])=>`<span><span class="dot" style="background:${c}"></span>${SIP_MODES[k].label} (${sipCohort(k).length})</span>`).join('')}</div>
+      </div>
+      <div class="panel"><h3>This month</h3>
+        <div class="upg">🪄 Designer homes: <b>${SIP_UPGRADES[(Math.max(1,m.month)-1)%SIP_UPGRADES.length]}</b></div>
+        <div class="upg" style="background:var(--coral-lt);border-color:#f2c4b5">🛍️ Splurgers bought: <b>${SPLURGE_BUYS[(Math.max(1,m.month)-1)%SPLURGE_BUYS.length]}</b></div>
+        <div class="upg" style="background:#eef2f6;border-color:#d8e2ea">💤 Ignorers now have <b>${fmt(m.month*SIP_AMT)}</b> in the cupboard — and prices rose while it sat there.</div>
+      </div>
+    </div>`}
+    ${m.month>=m.max?`<div class="reveal-card" style="margin-top:12px"><div class="rc-t">Twelve months later: the families who improved their home <b>a little every month</b> ended up far ahead of everyone who tried to be perfect on day one. That's a <b>SIP</b>.</div></div>`:''}
+    <div class="controls">
+      ${m.month>0&&m.month<m.max?`<button class="btn ghost" onclick="hostSipAll()">⏩ Run all 12 months</button>`:''}
+      <div class="spacer"></div>
+      ${m.month<m.max?`<button class="btn lg" onclick="hostSipMonth()">${m.month===0?'Start month 1 →':'Next month →'}</button>`
+        :`<button class="btn lg" onclick="hostToPool()">👨‍👩‍👧‍👦 One more secret →</button>`}</div>`;
+}
+function sipChart(){
+  const H=state.sipHist||[]; if(!H.length)return '<p class="lead">The journey chart appears from month 1…</p>';
+  const W=640,Ht=250,pad=34;
+  const x=i=>pad+i*(W-2*pad)/SIP_MONTHS, y=v=>Ht-pad-(v/100)*(Ht-2*pad);
+  const line=(key,color)=>{ if(!H.some(h=>h[key]!=null)) return '';   // empty cohort → no line
+    const pts=H.map((h,i)=>`${x(i)},${y(h[key]!=null?h[key]:0)}`).join(' ');
+    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="3.5" stroke-linecap="round"/>`;};
+  return `<svg viewBox="0 0 ${W} ${Ht}" style="width:100%;height:auto">
+    ${[0,25,50,75,100].map(v=>`<line x1="${pad}" y1="${y(v)}" x2="${W-pad}" y2="${y(v)}" stroke="#e3ece9"/><text x="${pad-8}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="#5a7d8a" font-weight="700">${v}</text>`).join('')}
+    ${line('designer','#2a9d8f')}${line('splurge','#e76f51')}${line('ignore','#5a7d8a')}
+    <text x="${W-pad}" y="${Ht-8}" text-anchor="end" font-size="11" fill="#5a7d8a" font-weight="700">months →</text></svg>`;
+}
+
+/* 9 · THE TEAM (pooling) */
+function hostPool(){
+  return `<div class="eyebrow">Chapter 5 · You were never alone</div>
+    <h2>4,000 families trusted the same designer</h2>
+    <div class="lead">So she could afford something no single family ever could: a full-time team of specialists working on YOUR home.</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;max-width:1000px">
+      ${[['💡','Lighting expert'],['🍳','Kitchen expert'],['🪚','Master carpenter'],['🎨','Colour consultant'],['📋','Project manager']].map(t=>`<div class="panel" style="flex:1;min-width:150px;text-align:center"><div style="font-size:2rem">${t[0]}</div><div style="font-weight:900">${t[1]}</div></div>`).join('')}
+    </div>
+    ${state.poolReveal?`<div class="reveal-card pop" style="margin-top:12px">
+      <div class="rc-t">A fund manager isn't one genius either. Your monthly money — pooled with thousands of families — hires <b>analysts, economists, sector specialists, risk managers, compliance teams</b>. Investing expertise is a <b>team sport</b>.<br><br>🧰 The specialist team just did a detail-pass on every designed home in this room.</div></div>`:''}
+    <div class="controls">
+      ${state.poolReveal?'':'<button class="btn gold" onclick="hostPoolReveal()">🧰 Put the team to work</button>'}
+      <div class="spacer"></div>
+      <button class="btn lg" onclick="hostToNeighbour()">A friend drops by… →</button></div>`;
+}
+
+/* 9 · NEIGHBOUR */
+function hostNeighbour(){
+  const ps=plist().filter(p=>p.sub);
+  const voted=ps.filter(p=>p.nbVote);
+  const regret=voted.filter(p=>p.nbVote==='regret').length;
+  const avg=avgScore(plist());
+  return `<div class="eyebrow">Chapter 6 · The comparison trap</div>
+    <h2 class="serif" style="font-style:italic">“My neighbour's sofa cost ₹4 lakh. Yours only cost ₹80,000…”</h2>
+    <div class="lead">A friend visits and drops this line at chai. Quick — how do you feel? Vote on your phones. ${voted.length}/${ps.length} voted.</div>
+    <div class="vs-grid" style="max-width:760px;margin-top:14px">
+      <div class="vs-card"><div style="font-size:2rem">😖</div><div style="font-weight:900;margin:4px 0">“Ouch. Did I go wrong?”</div><div class="bignum" style="font-size:2.2rem">${regret}</div></div>
+      <div class="vs-mid">vs</div>
+      <div class="vs-card"><div style="font-size:2rem">😌</div><div style="font-weight:900;margin:4px 0">“My whole home matters more”</div><div class="bignum" style="font-size:2.2rem">${voted.length-regret}</div></div>
+    </div>
+    ${state.nbReveal?`<div class="pop">
+    <div class="vs-grid" style="margin-top:8px">
+      <div class="vs-card"><div class="cap">The neighbour's house</div><div style="font-size:2.4rem">🛋️✨</div>
+        <div class="vs-score" style="color:var(--coral)">58</div>
+        <p style="font-weight:700;color:var(--muted)">One ₹4L showpiece sofa… bare walls, no wardrobe, mattress on EMI</p></div>
+      <div class="vs-mid">vs</div>
+      <div class="vs-card win"><div class="cap">This room's designed homes</div><div style="font-size:2.4rem">🏡</div>
+        <div class="vs-score" style="color:var(--teal)">${avg}</div>
+        <p style="font-weight:700;color:var(--muted)">₹80k sofa — and everything else a family actually needs</p></div>
+    </div>
+    <div class="reveal-card" style="margin-top:10px"><div class="rc-t">A home is judged <b>as a whole</b> — never by one expensive piece. Investing isn't about finding the one winning stock. It's about building a <b>portfolio that serves your goals</b>.</div></div></div>`:''}
+    <div class="controls">
+      ${state.nbReveal?'':'<button class="btn gold" onclick="hostNbReveal()">Show the whole picture</button>'}
+      <div class="spacer"></div>
+      <button class="btn lg" onclick="hostToReveal()">🔓 The final secret →</button></div>`;
+}
+
+/* 10 · REVEAL */
+function hostReveal(){
+  const maxD=Math.max(0,...plist().map(p=>p.decisions||0));
+  return `<div class="eyebrow">The translation</div>
+    <h2>One last question: how many decisions did you make today?</h2>
+    <div class="vs-grid" style="max-width:820px">
+      <div class="vs-card"><div class="cap">Doing it yourself</div><div class="vs-score" style="color:var(--coral)">140+</div>
+        <p style="font-weight:700;color:var(--muted)">116 products scanned · up to ${maxD} buy/return calls · banners, ratings, noise, doubt</p></div>
+      <div class="vs-mid">vs</div>
+      <div class="vs-card win"><div class="cap">With the designer</div><div class="vs-score" style="color:var(--teal)">4</div>
+        <p style="font-weight:700;color:var(--muted)">Budget · family · lifestyle · style. That's it.</p></div>
+    </div>
+    <div class="reveal-card" style="margin:8px 0;max-width:960px"><div class="rc-t">The value of a mutual fund isn't just picking investments — it's <b>reducing hundreds of stressful decisions to a handful of important ones</b>.</div></div>
+    <h2 style="font-size:1.4rem;margin-top:8px">You've been investing this whole time…</h2>
+    <div style="max-width:960px;overflow-y:auto;flex:1;min-height:0;margin-top:8px">
+    ${MAPPING.map((m,i)=>`<div class="map-row" style="animation-delay:${i*0.12}s">
+      <div class="home">${m[0]}</div><div class="arrow">⟶</div>
+      <div class="inv">${m[1]}<span class="sub">${m[2]}</span></div></div>`).join('')}
+    </div>
+    <div class="controls"><div class="spacer"></div>
+      <button class="btn lg gold" onclick="hostToFinale()">🏁 The closing thought →</button></div>`;
+}
+
+/* 🏁 FINALE */
+function hostFinale(){
+  const ps=plist().filter(p=>p.r1&&p.sub).map(p=>({p,now:curScore(p),start:p.r1.total}));
+  ps.sort((a,b)=>b.now-a.now);
+  const glow=ps.slice().sort((a,b)=>(b.now-b.start)-(a.now-a.start))[0];
+  return `<div class="finale-hero">
+      <div class="eyebrow">Sapno Ka Ghar</div>
+      <h2>Every home here got built. 🏡</h2>
+    </div>
+    <div class="closing">“${CLOSING}”</div>
+    <div style="text-align:center;margin-top:10px">
+      ${ps.length?`<span class="award">🏆 Best home: <b>${escapeHtml(ps[0].p.name)}</b> · ${ps[0].now}</span>`:''}
+      ${glow?`<span class="award">🚀 Biggest glow-up: <b>${escapeHtml(glow.p.name)}</b> · ${glow.start} → ${glow.now}</span>`:''}
+    </div>
+    <div style="overflow:auto;margin-top:10px;flex:1;min-height:0;max-width:860px;margin-left:auto;margin-right:auto;width:100%">
+    <table class="tbl"><tr><th>Family</th><th>Round-1 DIY</th><th>Final home</th><th>Journey</th></tr>
+    ${ps.map(({p,now,start},i)=>`<tr><td>${i===0?'🥇':i===1?'🥈':i===2?'🥉':''} <span class="av" style="background:${p.color};width:24px;height:24px;font-size:.8rem;display:inline-grid;place-items:center;vertical-align:middle;margin:0 6px 0 2px">${p.av}</span>${escapeHtml(p.name)}${p.premium?' <span class="badge lux">🧰 full team</span>':''}${p.hired===false?' <span class="badge froze">💪 DIY</span>':''}</td>
+      <td class="num">${start}</td><td class="num" style="font-weight:900;color:var(--teal)">${now}</td>
+      <td class="num" style="color:var(--${now>=start?'teal':'coral'})">${now>=start?'+':''}${now-start}</td></tr>`).join('')}
+    </table></div>
+    <div class="controls"><div class="spacer"></div>
+      <button class="btn ghost" onclick="hostReset()">↺ Play again with a new group</button></div>`;
+}
+
+/* ═══════════════════════ PLAYER ═══════════════════════ */
+let myName=localStorage.getItem('skg_name')||'';
+let joinSent=false, wasJoined=false;
+let shopTab='cat', shopCat='all';
+let myFeel=null, myVote=null, mySip=null, myPick=null;
+let ansStep=0, myAns={budget:null,kids:null,guests:null,style:null}, ansSent=false, hireChoice=null;
+let pendingOps=[];   // optimistic cart ops awaiting server echo
+
+async function initPlayer(){
+  document.getElementById('player').classList.remove('hide');
+  document.body.classList.add('player-bg');
+  if(!ROOM){document.getElementById('player').innerHTML='<div class="player-scr"><div class="p-center"><div style="font-size:3rem">🏡</div><h2 class="serif">Scan the QR on the big screen</h2><p class="p-sub">or open the link with a game PIN to join Sapno Ka Ghar.</p></div></div>';return;}
+  joinChannel();
+  try{const {data}=await db.from('games').select('state').eq('room_code',ROOM).single(); if(data&&data.state)state=data.state;}catch(e){}
+  renderPlayer();
+  // self-heal poll — recover any dropped realtime event within ~2.5s
+  setInterval(async()=>{ if(!me())return;
+    try{const {data}=await db.from('games').select('state').eq('room_code',ROOM).single();
+      if(data&&data.state&&data.state.updatedAt!==state.updatedAt){state=data.state;renderPlayer();}}catch(e){}
+  },2500);
+  document.addEventListener('visibilitychange',async()=>{ if(document.visibilityState!=='visible')return;
+    try{const {data}=await db.from('games').select('state').eq('room_code',ROOM).single();
+      if(data&&data.state){state=data.state;renderPlayer();}}catch(e){} });
+  setInterval(playerTick,500);
+}
+function me(){return state&&state.players?state.players[MY_ID]:null;}
+function doJoin(){
+  const inp=document.getElementById('nameInput'); const n=(inp.value||'').trim();
+  if(!n){inp.focus();return;}
+  myName=n; localStorage.setItem('skg_name',n); joinSent=true;
+  sendAction({type:'join',id:MY_ID,name:n});
+  renderPlayer();
+}
+let _pLastLeft=null;
+function playerTick(){
+  if(!state||state.phase!=='shop'||!state.shopStart)return;
+  const left=Math.max(0,SHOP_SECS-Math.floor((Date.now()-state.shopStart)/1000));
+  if(left!==_pLastLeft){ _pLastLeft=left;
+    const el=document.getElementById('pTimer');
+    if(el){ el.textContent=fmtTime(left); el.classList.toggle('warn',left<=15); }
+    if(left===0) renderPlayer();   // lock the shop
+  }
+  // the Noise Machine — a push notification every 15 seconds
+  if(shopLive()){
+    const ni=Math.floor((Date.now()-state.shopStart)/15000);
+    if(ni>_lastNoiseIdx&&ni>=1){ _lastNoiseIdx=ni; showNoise(NOISE[(ni-1)%NOISE.length]); }
+  }
+}
+let _lastNoiseIdx=0;
+function showNoise(txt){
+  let t=document.getElementById('noiseToast');
+  if(!t){ t=document.createElement('div'); t.id='noiseToast'; t.className='noise-toast'; document.body.appendChild(t); }
+  t.textContent=txt; t.classList.add('show');
+  clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),5500);
+}
+
+/* optimistic cart */
+function effItems(p){
+  let items=(p.items||[]).slice();
+  const now=Date.now();
+  pendingOps=pendingOps.filter(o=>now-o.t<4000&&!(o.op==='buy'?items.includes(o.id):!items.includes(o.id)));
+  pendingOps.forEach(o=>{ if(o.op==='buy'&&!items.includes(o.id))items.push(o.id);
+    if(o.op==='ret')items=items.filter(i=>i!==o.id); });
+  return items;
+}
+function pBuy(id){
+  const p=me(); if(!p||!shopLive())return;
+  const items=effItems(p); const it=ITEMS[id];
+  if(items.includes(id))return;
+  if(items.reduce((s,i)=>s+ITEMS[i].price,0)+it.price>BUDGET){ flashBudget(); return; }
+  pendingOps.push({op:'buy',id,t:Date.now()});
+  sendAction({type:'buy',id:MY_ID,item:id});
+  renderPlayer();
+}
+function pRet(id){
+  const p=me(); if(!p||!shopLive())return;
+  pendingOps.push({op:'ret',id,t:Date.now()});
+  sendAction({type:'ret',item:id,id:MY_ID});
+  renderPlayer();
+}
+function flashBudget(){ const el=document.getElementById('pBudget');
+  if(el){ el.style.color='var(--coral)'; setTimeout(()=>{el.style.color='';},600); } }
+function shopLive(){ return state.phase==='shop'&&state.shopStart&&!state.shopDone
+  &&(Date.now()-state.shopStart)<SHOP_SECS*1000; }
+function setTab(t){shopTab=t;renderPlayer();}
+function setCat(c){shopCat=c;renderPlayer();}
+
+/* ── render ── */
+function renderPlayer(){
+  const el=document.getElementById('player');
+  if(!state){el.innerHTML='<div class="player-scr"><div class="p-center"><p class="p-sub">Connecting…</p></div></div>';return;}
+  const p=me();
+  if(!p){
+    if(wasJoined){ wasJoined=false; joinSent=false; myFeel=null;myVote=null;mySip=null;myPick=null;ansStep=0;ansSent=false;hireChoice=null;
+      myAns={budget:null,kids:null,guests:null,style:null}; pendingOps=[]; }
+    el.innerHTML=joinSent?waitingScr():joinScr(); return;
+  }
+  wasJoined=true;
+  const ph=state.phase;
+  let inner='';
+  if(ph==='lobby') inner=pLobby(p);
+  else if(ph==='shop') inner=pShop(p);
+  else if(ph==='score1') inner=pScore1(p);
+  else if(ph==='feel') inner=pFeel(p);
+  else if(ph==='pick') inner=pPick(p);
+  else if(ph==='designer') inner=pDesigner(p);
+  else if(ph==='events') inner=pEvents(p);
+  else if(ph==='sip') inner=pSip(p);
+  else if(ph==='pool') inner=pPool(p);
+  else if(ph==='neighbour') inner=pNeighbour(p);
+  else if(ph==='reveal') inner=pReveal(p);
+  else if(ph==='finale') inner=pFinale(p);
+  el.innerHTML=`<div class="player-scr">${pTop(p)}${inner}</div>`;
+}
+function joinScr(){
+  return `<div class="player-scr"><div class="p-center">
+    <div style="font-size:3.4rem">🏡</div>
+    <h2 class="serif" style="font-size:1.8rem">Sapno Ka Ghar</h2>
+    <p class="p-sub">You've just bought your dream home. Time to make it yours.</p>
+    <input id="nameInput" class="p-input" placeholder="Your name" maxlength="16" value="${escapeHtml(myName)}">
+    <button class="btn lg" onclick="doJoin()">Get my keys 🔑</button>
+  </div></div>`;
+}
+function waitingScr(){
+  return `<div class="player-scr"><div class="p-center"><div style="font-size:2.6rem">🔑</div>
+    <div class="p-status">Unlocking your door…</div><p class="p-sub">One moment.</p></div></div>`;
+}
+function pTop(p){
+  const ph=state.phase;
+  let right='';
+  if(ph==='shop'){ const spent=effItems(p).reduce((s,i)=>s+ITEMS[i].price,0);
+    right=`<span id="pBudget">${fmtMoney(BUDGET-spent)} left</span>`; }
+  else if(p.sub) right=`🏆 ${curScore(p)}`;
+  return `<div class="p-top"><div class="who"><span class="av" style="background:${p.color}">${p.av}</span>${escapeHtml(p.name)}</div>
+    <div class="cash num">${right||'🏡'}</div></div>`;
+}
+function pLobby(p){
+  return `<div class="p-center">
+    <div class="p-status">You're in! 🎉</div>
+    <div class="p-card" style="max-width:420px"><p style="font-family:'Lora',serif;font-style:italic;font-size:1.1rem;line-height:1.5">
+      “You've just bought your <b>dream home</b>. You have <b>₹10 lakh</b> to furnish it.
+      Your goal: a beautiful, comfortable home for your family.”</p></div>
+    <p class="p-sub">Keep your thumbs ready — the furniture market opens any second. You'll have <b>90 seconds</b>.</p>
+  </div>`;
+}
+
+/* SHOP */
+function pShop(p){
+  if(!shopLive()){
+    return `<div class="p-center"><div style="font-size:2.6rem">⏰</div>
+      <div class="p-status">Time's up!</div>
+      <p class="p-sub">Pens down, wallets away. Look at the big screen — the scores are coming.</p></div>`;
+  }
+  const items=effItems(p);
+  const spent=items.reduce((s,i)=>s+ITEMS[i].price,0);
+  const left=Math.max(0,SHOP_SECS-Math.floor((Date.now()-state.shopStart)/1000));
+  const cats=['all',...Object.keys(CATS)];
+  let body='';
+  if(shopTab==='home'){ body=homeRooms(items,'Tap items in the catalogue to fill these rooms.'); }
+  else{
+    const list=ALL_IDS.filter(id=>shopCat==='all'||ITEMS[id].cat===shopCat);
+    let recs='';
+    if(items.length){ // confirmation bias: the app feeds you more of what you bought
+      const last=ITEMS[items[items.length-1]];
+      const ownBrands=new Set(items.map(i=>ITEMS[i].brand));
+      const rl=ALL_IDS.filter(id=>!items.includes(id)&&ownBrands.has(ITEMS[id].brand)).slice(0,4);
+      if(rl.length) recs=`<div class="rec-head">🎯 Recommended for you · because you bought ${escapeHtml(last.name)}</div>
+        <div class="item-grid" style="margin-bottom:10px">${rl.map(id=>icard(ITEMS[id],false)).join('')}</div>`;
+    }
+    body=recs+`<div class="item-grid">${list.map(id=>icard(ITEMS[id],items.includes(id))).join('')}</div>`;
+  }
+  return `
+  <div class="p-shop-head">
+    <div class="p-budget" id="pBudgetBig">${fmt(BUDGET-spent)}<small>left of ₹10,00,000</small></div>
+    <div class="p-timer num ${left<=15?'warn':''}" id="pTimer">${fmtTime(left)}</div>
+  </div>
+  <div class="p-tabs">
+    <button class="p-tab ${shopTab==='cat'?'on':''}" onclick="setTab('cat')">🛒 Catalogue</button>
+    <button class="p-tab ${shopTab==='home'?'on':''}" onclick="setTab('home')">🏡 My home (${items.length})</button>
+  </div>
+  ${shopTab==='cat'?`<div class="cat-row">${cats.map(c=>`<button class="cat-chip ${shopCat===c?'on':''}" onclick="setCat('${c}')">${c==='all'?'✨ All':CATS[c].em+' '+CATS[c].n}</button>`).join('')}</div>`:''}
+  ${body}
+  <div class="cart-bar"><div class="cart-inner">
+    <div class="left"><small>Spent so far</small>${fmt(spent)}</div>
+    <div>${items.length} item${items.length===1?'':'s'} 🛍️</div>
+  </div></div>`;
+}
+function stars(v){ return '★'.repeat(Math.round(v))+`<span style="color:#d8e2ea">${'★'.repeat(5-Math.round(v))}</span> <b>${v.toFixed(1)}</b>`; }
+function icard(it,owned){
+  const wasPrice=it.tag==='SALE'?`<s>${fmt(Math.round(it.price*1.6))}</s>`:'';
+  return `<div class="icard ${owned?'owned':''}">
+    ${it.tag?`<div class="ribbon ${it.tag}">${{SALE:'🔥 20% OFF TODAY',BEST:'🏅 BEST SELLER',INSTA:'📸 INSTA FAVE',LIM:'⏳ LIMITED STOCK'}[it.tag]}</div>`:''}
+    <div class="iem">${CATS[it.cat].em}</div>
+    <div class="inm">${escapeHtml(it.name)}</div>
+    <div class="ibr">${escapeHtml(it.brand)}</div>
+    <div class="ist">${stars(it.stars)}</div>
+    <div class="ipr">${fmt(it.price)} ${wasPrice}</div>
+    <div class="irv">“${escapeHtml(it.rev)}”</div>
+    <button class="ibuy ${owned?'own':''}" onclick="${owned?`pRet('${it.id}')`:`pBuy('${it.id}')`}">${owned?'✓ In your home · tap to return':'Add to home'}</button>
+  </div>`;
+}
+function homeRooms(ids,emptyMsg){
+  const byRoom={};
+  ids.forEach(i=>{const it=ITEMS[i]; if(!it)return; (byRoom[CATS[it.cat].room]=byRoom[CATS[it.cat].room]||[]).push(it);});
+  const rooms=['Living Room','Bedroom','Kitchen','Dining','Study Corner','Kids Corner','Balcony','All Rooms'];
+  if(!ids.length) return `<div class="p-card"><p class="empty-room">${emptyMsg||'Nothing here yet.'}</p></div>`;
+  return rooms.filter(r=>byRoom[r]).map(r=>`<div class="room-card"><h4>${r}</h4>
+    ${byRoom[r].map(it=>`<div class="ritem"><span>${CATS[it.cat].em} ${escapeHtml(it.name)}</span><span class="rt">${fmtMoney(it.price)}</span></div>`).join('')}
+  </div>`).join('');
+}
+
+/* SCORE 1 */
+function scoreBars(sc){
+  const rows=[['😌 Comfort',sc.comfort],['🔧 Functionality',sc.func],['⚖️ Balance',sc.bal],['💰 Budget Discipline',sc.bud]];
+  return rows.map(r=>`<div class="scorebar"><div class="k">${r[0]}</div>
+    <div class="track"><div class="fill" style="width:${r[1]}%;background:${r[1]>=60?'var(--teal)':'var(--coral)'}"></div></div>
+    <div class="v num">${r[1]}</div></div>`).join('');
+}
+function pScore1(p){
+  if(!p.r1) return `<div class="p-center"><p class="p-sub">Scoring your home…</p></div>`;
+  const missing=p.r1.missing.map(c=>`<span>${CATS[c].em} ${CATS[c].n}</span>`).join('');
+  // regret: the beauties you didn't buy
+  const almost=ALL_IDS.filter(id=>!p.r1.items.includes(id)&&(ITEMS[id].tag==='INSTA'||ITEMS[id].tag==='LIM'||ITEMS[id].stars>=4.6))
+    .sort((a,b)=>ITEMS[b].price-ITEMS[a].price).slice(0,4);
+  // opportunity cost: what the hero item ate
+  const big=p.r1.items.map(i=>ITEMS[i]).filter(it=>it.price>=250000).sort((a,b)=>b.price-a.price)[0];
+  const oppList=[]; if(big){ let sum=0;
+    p.r1.missing.forEach(c=>{ const cand=ALL_IDS.map(i=>ITEMS[i]).filter(it=>it.cat===c&&it.q>=7).sort((a,b)=>a.price-b.price)[0];
+      if(cand&&sum+cand.price<=big.price){ oppList.push(cand); sum+=cand.price; } }); }
+  // confirmation bias: did the app play you?
+  const bc={}; p.r1.items.forEach(i=>{const b=ITEMS[i].brand; bc[b]=(bc[b]||0)+1;});
+  const echoBrand=Object.keys(bc).find(b=>bc[b]>=2);
+  return `<div class="p-score-hero">
+      <div class="eyebrow">Your home score</div>
+      <div class="bignum" style="color:${p.r1.total>=60?'var(--teal)':'var(--coral)'}">${p.r1.total}<span style="font-size:1.4rem;color:var(--muted)">/100</span></div>
+      <p class="p-sub">You spent ${fmt(p.r1.spent)} on ${p.r1.items.length} items</p>
+    </div>
+    <div class="p-card">${scoreBars(p.r1)}</div>
+    ${p.r1.notes.length?`<div class="miss-list"><h4>What pulled you down</h4><p style="font-weight:700;font-size:.9rem">${p.r1.notes.map(n=>'• '+n).join('<br>')}</p></div>`:''}
+    ${missing?`<div class="miss-list"><h4>Essentials your home is missing</h4>${missing}</div>`:''}
+    ${big&&oppList.length?`<div class="miss-list"><h4>💸 What the ${escapeHtml(big.name)} really cost you</h4>
+      <p style="font-weight:700;font-size:.9rem">For the same ${fmt(big.price)} you could have had:</p>
+      ${oppList.map(it=>`<span>${CATS[it.cat].em} ${escapeHtml(it.name)} · ${fmtMoney(it.price)}</span>`).join('')}
+      <p style="font-weight:700;font-size:.85rem;margin-top:4px;color:var(--muted)">One showpiece = many missing rooms. (In investing: 60% in one stock = everything else starves.)</p></div>`:''}
+    ${echoBrand?`<div class="p-card"><p style="font-weight:700">😏 Notice how the app kept recommending more <b>${escapeHtml(echoBrand)}</b> once you bought one? That's <b>confirmation bias</b> — every matching ad made you feel righter. Apps do it. So do stock tips.</p></div>`:''}
+    ${almost.length?`<div class="p-card"><h4 style="margin-bottom:6px">😩 You almost bought…</h4>
+      ${almost.map(id=>`<div class="ritem" style="display:flex;justify-content:space-between;font-weight:700;font-size:.9rem;padding:3px 0"><span>${CATS[ITEMS[id].cat].em} ${escapeHtml(ITEMS[id].name)} ★${ITEMS[id].stars.toFixed(1)}</span><span style="color:var(--muted)">${fmtMoney(ITEMS[id].price)}</span></div>`).join('')}
+      <p style="font-weight:700;font-size:.85rem;margin-top:6px;color:var(--muted)">Feel that little “damn…”? Nobody buys everything — every investor misses some winners. A good home doesn't need every beautiful thing.</p></div>`:''}
+    ${homeRooms(p.r1.items)}`;
+}
+
+/* FEEL */
+function pFeel(p){
+  const sel=p.feel||myFeel;
+  return `<div style="padding-top:14px">
+    <div class="p-q">How did that feel?</div>
+    <div class="choice-grid">
+      ${FEELINGS.map(f=>`<button class="choice ${sel===f[0]?'on':''}" onclick="pSendFeel('${f[0]}')">
+        <span class="cem">${f[1]}</span>${f[2]}</button>`).join('')}
+    </div>
+    ${sel?`<p class="p-sub" style="text-align:center;margin-top:14px">Noted. Look at the big screen 👀</p>`:''}
+  </div>`;
+}
+function pSendFeel(k){ myFeel=k; sendAction({type:'feel',id:MY_ID,k}); renderPlayer(); }
+
+/* PICK A DESIGNER */
+function pPick(p){
+  const sel=p.dpick||myPick;
+  if(state.dpickReveal){
+    const d=sel?DESIGNERS[sel]:null;
+    return `<div class="p-center">
+      <div style="font-size:2.6rem">${d?d.em:'🤷'}</div>
+      ${d?`<div class="p-status">${d.name}</div>
+      <div class="${sel==='b'?'upg':'miss-list'}" style="max-width:400px"><p style="font-weight:700">${d.outcome}</p></div>`:'<p class="p-sub">You never picked!</p>'}
+      <p class="p-sub">${sel==='b'?'Great instincts. Boring wins. 🏆':'No shame — most people fall for it once. Everyone gets a do-over with Sharma & Associates.'}</p></div>`;
+  }
+  return `<div style="padding-top:14px">
+    <div class="p-q">Three designers want the job.<br>Who gets YOUR home?</div>
+    <div class="choice-grid">
+      ${Object.entries(DESIGNERS).map(([k,d])=>`<button class="choice ${sel===k?'on':''}" onclick="pSendPick('${k}')">
+        <span class="cem">${d.em}</span><span><b>${d.name}</b> · ${d.fee}<br><small style="font-weight:700;color:var(--muted)">${d.pitch}</small></span></button>`).join('')}
+    </div>
+    ${sel?'<p class="p-sub" style="text-align:center;margin-top:12px">Locked in — watch the big screen 👀</p>':''}</div>`;
+}
+function pSendPick(k){ myPick=k; sendAction({type:'dpick',id:MY_ID,v:k}); renderPlayer(); }
+
+/* DESIGNER */
+function pDesigner(p){
+  if(p.hired==null&&hireChoice==null){
+    return `<div class="p-center">
+      <div style="font-size:3rem">🧑‍🎨</div>
+      <h2 class="serif" style="font-size:1.6rem">An Interior Designer offers to help</h2>
+      <p class="p-sub">“I'll ask you <b>4 quick questions</b> and design your entire home — balanced, practical, within budget. My fee: <b>₹10,000</b> (1% of your budget).”</p>
+      <div class="choice-grid">
+        <button class="choice" onclick="pHire(true)"><span class="cem">🪄</span>Yes — design it for me (₹10,000 fee)</button>
+        <button class="choice" onclick="pHire(false)"><span class="cem">💪</span>No thanks — I'll keep my DIY home</button>
+      </div></div>`;
+  }
+  if(p.hired===false||hireChoice===false){
+    return `<div class="p-center"><div style="font-size:2.6rem">💪</div>
+      <div class="p-status">Respect.</div>
+      <p class="p-sub">You're keeping your own Round-1 home (score <b>${p.r1?p.r1.total:'—'}</b>). Let's see how it handles what life throws at it…</p>
+      ${homeRooms(p.items)}</div>`;
+  }
+  if(p.designedIds){
+    const sc=curScore(p);
+    return `<div style="padding-top:10px;text-align:center">
+      <div class="designer-chip">🧑‍🎨 Designed by your Interior Designer · fee ₹10,000</div>
+      <div class="p-score-hero"><div class="eyebrow">Your new home score</div>
+        <div class="bignum">${sc}<span style="font-size:1.4rem;color:var(--muted)">/100</span></div>
+        <p class="p-sub">was ${p.r1?p.r1.total:'—'} when you did it alone · spent ${fmt(p.designedSpent||0)} incl. fee</p></div>
+      <div class="p-card" style="text-align:left">${scoreBars(p.sub)}</div>
+      <div style="text-align:left">${homeRooms(p.items)}</div></div>`;
+  }
+  if(ansSent){ return `<div class="p-center"><div style="font-size:2.6rem">📐✏️</div>
+    <div class="p-status">Designing your home…</div><p class="p-sub">Sourcing, measuring, matching colours…</p></div>`; }
+  // the 4 questions
+  const Q=[
+    {k:'budget',q:'What should I do with your ₹10 lakh?',opts:[['buffer','🛡️','Furnish well, keep some aside'],['full','🎀','Use it fully — every finishing touch']]},
+    {k:'kids',q:'Do you have young children?',opts:[[true,'👶','Yes / planning to'],[false,'🧘','No']]},
+    {k:'guests',q:'Do you entertain guests often?',opts:[[true,'🥳','All the time!'],[false,'🍵','Rarely — quiet home']]},
+    {k:'style',q:'Which style feels like YOU?',opts:[['modern','✨','Modern'],['classic','🏛️','Classic'],['cozy','☕','Cozy']]},
+  ];
+  const step=Q[ansStep];
+  return `<div style="padding-top:14px">
+    <div class="q-step" style="text-align:center">Question ${ansStep+1} of 4</div>
+    <div class="p-q">${step.q}</div>
+    <div class="choice-grid">
+      ${step.opts.map(o=>`<button class="choice" onclick="pAns('${step.k}',${typeof o[0]==='string'?`'${o[0]}'`:o[0]})"><span class="cem">${o[1]}</span>${o[2]}</button>`).join('')}
+    </div></div>`;
+}
+function pHire(yes){ hireChoice=yes; sendAction({type:'hire',id:MY_ID,yes}); renderPlayer(); }
+function pAns(k,v){ myAns[k]=v;
+  if(ansStep<3){ ansStep++; renderPlayer(); return; }
+  ansSent=true;
+  sendAction({type:'answers',id:MY_ID,budget:myAns.budget,kids:myAns.kids,guests:myAns.guests,style:myAns.style});
+  renderPlayer();
+}
+
+/* EVENTS */
+function pEvents(p){
+  const i=state.eventIdx;
+  if(i<0) return `<div class="p-center"><div style="font-size:2.6rem">🎲</div>
+    <div class="p-status">Life happens…</div><p class="p-sub">Watch the big screen. Three surprises are coming for every home.</p></div>`;
+  const ev=EVENTS[i];
+  if(ev.key==='luck'){
+    const outs=state.eventReveal?luckOutcomes(p):[];
+    return `<div class="p-center" style="justify-content:flex-start;padding-top:30px">
+      <div style="font-size:3.4rem">🎲</div>
+      <h2 class="serif" style="font-size:1.5rem;text-align:center">${ev.name}</h2>
+      <p class="p-sub">${ev.line}</p>
+      ${state.eventReveal?(outs.length?outs.map(o=>`<div class="${o[2][0]==='+'?'upg':'miss-list'}" style="width:100%;max-width:400px;text-align:left"><p style="font-weight:700">${o[1]} <b>(${o[2]})</b></p></div>`).join(''):'<div class="p-card"><p style="font-weight:700">Luck passed you by this time — nothing changed.</p></div>'):'<p class="p-sub">What could possibly go wrong…? 👀</p>'}
+      ${p.sub?`<p class="p-sub" style="margin-top:10px">Your home score: <b style="color:var(--teal);font-size:1.2rem">${curScore(p)}</b></p>`:''}</div>`;
+  }
+  let msg;
+  if(!state.eventReveal) msg=`<p class="p-sub">What does this mean for YOUR home? 🤔</p>`;
+  else if(p.hired) msg=`<div class="upg">🪄 ${ev.designer}</div>`;
+  else if(ev.diyHit(p)) msg=`<div class="miss-list"><h4>Uh oh</h4><p style="font-weight:700">${ev.diyBad}</p></div>`;
+  else msg=`<div class="p-card"><p style="font-weight:700">${ev.diyOk}</p></div>`;
+  return `<div class="p-center" style="justify-content:flex-start;padding-top:30px">
+    <div style="font-size:3.4rem">${ev.em}</div>
+    <h2 class="serif" style="font-size:1.5rem;text-align:center">${ev.name}</h2>
+    <p class="p-sub">${ev.line}</p>${msg}
+    ${p.sub?`<p class="p-sub" style="margin-top:10px">Your home score: <b style="color:var(--teal);font-size:1.2rem">${curScore(p)}</b></p>`:''}</div>`;
+}
+
+/* SIP */
+function pSip(p){
+  const m=state.sip;
+  if(m.month===0){
+    const sel=p.sipMode||mySip;
+    return `<div style="padding-top:14px">
+      <div class="p-q">₹50,000 arrives every month.<br>What's your plan?</div>
+      <div class="choice-grid">
+        ${Object.entries(SIP_MODES).map(([k,v])=>`<button class="choice ${sel===k?'on':''}" ${p.sipMode?'disabled':''} onclick="pPickSip('${k}')">
+          <span class="cem">${v.em}</span><span>${v.label}<br><small style="font-weight:700;color:var(--muted)">${v.desc}</small></span></button>`).join('')}
+      </div>
+      ${sel?'<p class="p-sub" style="text-align:center;margin-top:12px">Locked in ✓ — watch the year unfold on the big screen.</p>':''}</div>`;
+  }
+  const last=p.upgrades&&p.upgrades.length?p.upgrades[p.upgrades.length-1]:null;
+  return `<div style="padding-top:10px;text-align:center">
+    <div class="eyebrow">Month ${m.month} of ${m.max}</div>
+    <div class="bignum">${p.sub?curScore(p):'—'}</div>
+    <p class="p-sub">your home score</p>
+    ${p.sipMode==='designer'&&last?`<div class="upg" style="text-align:left">🪄 This month: <b>${escapeHtml(last)}</b></div>`:''}
+    ${p.sipMode==='splurge'&&last?`<div class="upg" style="text-align:left;background:var(--coral-lt);border-color:#f2c4b5">🛍️ You bought: <b>${escapeHtml(last)}</b></div>`:''}
+    ${p.sipMode==='ignore'?`<div class="p-card"><p style="font-weight:800">💤 ${fmt(p.sipCash)} sitting in the cupboard</p><p class="p-sub">Doing nothing. Quietly losing to rising prices.</p></div>`:''}
+    ${!p.sipMode?'<p class="p-sub">You never picked a plan — the money just sits there.</p>':''}
+  </div>`;
+}
+function pPickSip(k){ mySip=k; sendAction({type:'sipmode',id:MY_ID,m:k}); renderPlayer(); }
+
+/* POOL */
+function pPool(p){
+  return `<div class="p-center">
+    <div style="font-size:3rem">🧰</div>
+    <h2 class="serif" style="font-size:1.5rem;text-align:center">Your designer just hired a whole team</h2>
+    <p class="p-sub">4,000 families trust her — so YOUR home now gets a lighting expert, a kitchen expert, a master carpenter, a colour consultant and a project manager.</p>
+    ${state.poolReveal&&p.premium?`<div class="upg pop" style="font-size:1.05rem">🧰 <b>Specialist detail-pass done!</b> A hundred little things you'd never have noticed — quietly fixed.</div>
+      <p class="p-sub">New score: <b style="color:var(--teal);font-size:1.3rem">${curScore(p)}</b></p>`
+    :state.poolReveal&&!p.hired?`<div class="p-card"><p style="font-weight:700">DIY homes don't get the team. Every hinge, finish and supplier is still yours to research alone. 🥲</p></div>`
+    :`<p class="p-sub">Watch the big screen…</p>`}</div>`;
+}
+
+/* NEIGHBOUR */
+function pNeighbour(p){
+  const sel=p.nbVote||myVote;
+  return `<div style="padding-top:14px">
+    <div class="p-q">“My neighbour's sofa cost ₹4 lakh.<br>Yours only cost ₹80,000…”</div>
+    <p class="p-sub" style="text-align:center;margin-bottom:12px">Be honest — what's your gut feeling?</p>
+    <div class="choice-grid">
+      <button class="choice ${sel==='regret'?'on':''}" ${state.nbReveal?'disabled':''} onclick="pNb('regret')"><span class="cem">😖</span>Ouch… did I go wrong?</button>
+      <button class="choice ${sel==='whole'?'on':''}" ${state.nbReveal?'disabled':''} onclick="pNb('whole')"><span class="cem">😌</span>My whole home matters more than one sofa</button>
+    </div>
+    ${state.nbReveal?`<div class="upg pop" style="margin-top:14px">🏡 Their flashy-sofa house scores <b>58</b>. Your home scores <b>${curScore(p)||'—'}</b>. A home is judged as a whole.</div>`:''}
+  </div>`;
+}
+function pNb(v){ myVote=v; sendAction({type:'nbvote',id:MY_ID,v}); renderPlayer(); }
+
+/* REVEAL */
+function pReveal(p){
+  return `<div style="padding-top:10px">
+    <h2 class="serif" style="text-align:center;font-size:1.4rem">You've been investing all along 🤯</h2>
+    <div class="p-card" style="text-align:center"><p style="font-weight:900;font-size:1.05rem">You made ${(p.decisions||0)>0?(p.decisions||0)+' buy/return decisions':'a hundred micro-decisions'} in Round 1.</p>
+    <p style="font-weight:700;color:var(--muted);font-size:.9rem">Designer clients made 4. That's the real product: fewer, better decisions.</p></div>
+    ${MAPPING.map(m=>`<div class="map-row" style="grid-template-columns:1fr 30px 1fr;padding:10px 12px">
+      <div class="home" style="font-size:.92rem">${m[0]}</div><div class="arrow" style="font-size:1rem">⟶</div>
+      <div class="inv" style="font-size:.95rem">${m[1]}</div></div>`).join('')}
+  </div>`;
+}
+
+/* FINALE */
+function pFinale(p){
+  const now=p.sub?curScore(p):null, start=p.r1?p.r1.total:null;
+  return `<div class="p-center" style="justify-content:flex-start;padding-top:24px">
+    <div style="font-size:3rem">🏡✨</div>
+    <div class="p-status">Your dream home got built.</div>
+    ${now!=null&&start!=null?`<div class="p-card" style="width:100%;max-width:380px;text-align:center">
+      <div style="display:flex;justify-content:space-around;align-items:center">
+        <div><div class="bignum" style="font-size:2rem;color:var(--muted)">${start}</div><small style="font-weight:800;color:var(--muted)">DIY, day one</small></div>
+        <div style="font-size:1.6rem">→</div>
+        <div><div class="bignum" style="font-size:2.6rem">${now}</div><small style="font-weight:800;color:var(--muted)">your home today</small></div>
+      </div>${p.premium?'<div class="designer-chip" style="margin-top:8px">👑 Premium collection member</div>':''}</div>`:''}
+    <div class="p-card" style="max-width:420px"><p style="font-family:'Lora',serif;font-style:italic;line-height:1.55;color:#54432a">“${CLOSING}”</p></div>
+    <p class="p-sub" style="margin-top:6px">— Sapno Ka Ghar · Investing for Mummies</p>
+  </div>`;
+}
+
+/* ── boot ───────────────────────────────────────────── */
+if(isHost) initHost(); else initPlayer();
+
+</script>
+</body>
+</html>

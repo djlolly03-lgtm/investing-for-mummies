@@ -1,0 +1,33 @@
+<!-- Broke by Friday LIVE — Investing for Mummies -->
+<style>
+body{background:#140a24!important;}
+.wp-block-post-title, h1.entry-title, .page-title{display:none!important;}
+.wp-site-blocks, .is-layout-constrained, .entry-content,
+.wp-block-group{background:#140a24!important;padding:0!important;max-width:100%!important;}
+footer.wp-block-template-part{display:none!important;}
+header.wp-block-template-part{position:relative!important;top:auto!important;}
+html,body{margin:0!important;padding:0!important;}
+#game-wrap{width:100%;background:#140a24;line-height:0;}
+#game-iframe{width:100%;height:100vh;display:block;border:none;}
+</style>
+<div id="game-wrap">
+  <iframe id="game-iframe" title="Broke by Friday LIVE" allowfullscreen loading="eager"></iframe>
+</div>
+<script>
+(function(){
+  var f=document.getElementById("game-iframe");
+  // cache-bust: always load the latest build (no stale visuals)
+  f.src="https://ifm-deploy.vercel.app/broke-by-friday-live.html?role=host&v="+Date.now();
+  // FULL viewport height → the IFM header scrolls up and the game takes the whole screen
+  function sizeIframe(){ f.style.height=window.innerHeight+"px"; }
+  sizeIframe();
+  window.addEventListener("resize", sizeIframe);
+  window.addEventListener("orientationchange", sizeIframe);
+  // hide chat/feedback widgets while the game is live on the projector
+  window.addEventListener("message", function(e){
+    var sel="#tidio-chat, iframe[src*=tidio], iframe[src*=chat], .chat-widget, [id*=tawk], .woot-widget-holder, .joinchat, [class*=whatsapp]";
+    if(e.data&&e.data.type==="stock-rush-live") document.querySelectorAll(sel).forEach(function(n){n.style.display="none";});
+    if(e.data&&e.data.type==="stock-rush-idle") document.querySelectorAll(sel).forEach(function(n){n.style.display="";});
+  });
+})();
+</script>

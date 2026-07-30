@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Crorepati Lane — Investing for Mummies</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#2a9d8f; --teal-d:#1f7d72; --navy:#1a3a5c; --muted:#5a7d8a;
+  --cream:#f7faf9; --mint:#bde9e4; --mint-lt:#e0f3f0; --white:#fff;
+  --gold:#c8900a; --gold-lt:#fff5d6;
+  /* asset-group colours */
+  --g-fixed:#3a6ea5; --g-gold:#c8900a; --g-realestate:#d97a34;
+  --g-funds:#2a9d8f; --g-stocks:#c0392b;
+  --shadow:0 6px 24px rgba(26,58,92,.14);
+  --shadow-lg:0 16px 48px rgba(26,58,92,.28);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Nunito',sans-serif; color:var(--navy);
+  background:radial-gradient(120% 120% at 50% 0%, #eef7f5 0%, #dceee9 45%, #c9e6df 100%);
+  min-height:100vh; overflow-x:hidden;
+}
+h1,h2,h3,.serif{font-family:'Lora',serif}
+button{font-family:'Nunito',sans-serif;cursor:pointer;border:none;font-weight:800}
+.hide{display:none!important}
+
+/* ── SETUP SCREEN ─────────────────────────────── */
+#setup{max-width:560px;margin:0 auto;padding:28px 18px 60px;text-align:center}
+.brand-row{display:flex;align-items:center;justify-content:center;gap:14px;margin:8px 0 4px}
+.brand-row img{width:62px;height:62px;border-radius:50%;box-shadow:var(--shadow)}
+.title{font-size:2.5rem;font-style:italic;color:var(--navy);margin:6px 0 2px;line-height:1.05}
+.subtitle{color:var(--teal-d);font-weight:800;letter-spacing:.5px;font-size:.95rem;text-transform:uppercase}
+.tagline{color:var(--muted);font-weight:600;margin:10px 0 22px}
+.card{background:var(--white);border-radius:22px;box-shadow:var(--shadow);padding:22px 20px;margin:14px 0;text-align:left}
+.card h3{margin:0 0 14px;font-size:1.25rem;color:var(--navy)}
+.count-row{display:flex;gap:10px;justify-content:center;margin-bottom:18px}
+.count-btn{width:54px;height:54px;border-radius:14px;background:var(--mint-lt);color:var(--navy);font-size:1.4rem;font-weight:900;border:2.5px solid transparent;transition:.15s}
+.count-btn.sel{background:var(--teal);color:#fff;border-color:var(--teal-d);transform:translateY(-2px);box-shadow:var(--shadow)}
+.pl-setup{display:flex;align-items:center;gap:10px;margin:10px 0;padding:8px;border-radius:14px;background:var(--cream)}
+.pl-token{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex:0 0 auto;box-shadow:inset 0 0 0 3px rgba(255,255,255,.5)}
+.pl-setup input{flex:1;min-width:0;border:2px solid var(--mint);border-radius:10px;padding:10px 12px;font-size:1rem;font-weight:700;color:var(--navy);font-family:'Nunito'}
+.pl-setup input:focus{outline:none;border-color:var(--teal)}
+.token-pick{display:flex;gap:6px;flex-wrap:wrap}
+.tok-opt{width:34px;height:34px;border-radius:9px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;border:2px solid #e3eeeb}
+.tok-opt.sel{border-color:var(--teal);background:var(--mint-lt)}
+.btn-go{display:block;width:100%;background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;font-size:1.2rem;padding:16px;border-radius:16px;box-shadow:var(--shadow);margin-top:8px;transition:.15s}
+.btn-go:active{transform:scale(.98)}
+.btn-ghost{background:transparent;color:var(--teal-d);text-decoration:underline;font-size:.9rem;margin-top:14px}
+.how{font-size:.9rem;color:var(--muted);line-height:1.6}
+.how b{color:var(--navy)}
+
+/* ── GAME SCREEN ─────────────────────────────── */
+#game{display:none;max-width:1180px;margin:0 auto;padding:10px;}
+.game-grid{display:grid;grid-template-columns:1fr 320px;gap:14px;align-items:start}
+@media(max-width:920px){.game-grid{grid-template-columns:1fr}}
+
+/* board */
+.board-wrap{position:relative;width:100%;max-width:680px;margin:0 auto;aspect-ratio:1/1}
+.board{position:absolute;inset:0;display:grid;
+  grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);
+  gap:3px;background:var(--navy);padding:3px;border-radius:18px;box-shadow:var(--shadow-lg)}
+.cell{position:relative;background:var(--white);border-radius:6px;overflow:hidden;
+  font-size:.52rem;font-weight:800;display:flex;flex-direction:column;min-width:0}
+.cell .band{height:7px;flex:0 0 auto}
+.cell .c-body{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2px;text-align:center;gap:1px;min-height:0}
+.cell .c-name{line-height:1.02;color:var(--navy);font-size:.5rem;font-weight:800;overflow:hidden}
+.cell .c-price{color:var(--teal-d);font-size:.46rem;font-weight:900}
+.cell .c-emoji{font-size:.95rem;line-height:1}
+.cell.corner{font-size:.55rem}
+.cell.corner .c-emoji{font-size:1.4rem}
+.cell.corner .c-name{font-size:.55rem;font-weight:900}
+.cell.owned-mark::after{content:"";position:absolute;top:2px;right:2px;width:8px;height:8px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}
+.units{display:flex;gap:1px;justify-content:center}
+.unit-dot{width:4px;height:4px;border-radius:50%;background:var(--teal);}
+.unit-dot.hotel{width:6px;height:6px;background:var(--gold)}
+/* center logo */
+.board-center{position:absolute;left:12.5%;top:12.5%;width:75%;height:75%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#fff,var(--mint-lt));border-radius:14px;
+  pointer-events:none;text-align:center;padding:8px;box-shadow:inset 0 0 0 2px rgba(42,157,143,.18)}
+.board-center img{width:34%;max-width:90px;border-radius:50%;opacity:.95;box-shadow:var(--shadow)}
+.board-center .bc-title{font-family:'Lora';font-style:italic;font-size:clamp(1rem,3vw,1.7rem);color:var(--navy);margin-top:6px;line-height:1}
+.board-center .bc-sub{font-size:.6rem;letter-spacing:1px;color:var(--teal-d);font-weight:800;text-transform:uppercase}
+.dice-area{display:flex;gap:8px;margin-top:10px}
+.die{width:clamp(34px,8vw,46px);height:clamp(34px,8vw,46px);background:#fff;border-radius:11px;
+  box-shadow:var(--shadow);display:grid;place-items:center;font-size:clamp(1.2rem,4vw,1.7rem);font-weight:900;color:var(--navy)}
+.die.rolling{animation:shake .4s linear infinite}
+@keyframes shake{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-4px) rotate(-8deg)}75%{transform:translateY(2px) rotate(8deg)}}
+
+/* tokens on board */
+.token{position:absolute;width:clamp(13px,2.6vw,18px);height:clamp(13px,2.6vw,18px);border-radius:50%;
+  border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.35);z-index:5;
+  transition:left .25s,top .25s;display:grid;place-items:center;font-size:.6rem}
+.token.cur{box-shadow:0 0 0 3px var(--gold),0 2px 6px rgba(0,0,0,.4);z-index:7}
+
+/* side panel */
+.panel{background:var(--white);border-radius:18px;box-shadow:var(--shadow);padding:14px;margin-bottom:12px}
+.turn-banner{background:linear-gradient(135deg,var(--navy),#16314e);color:#fff;border-radius:18px;padding:14px 16px;margin-bottom:12px;text-align:center}
+.turn-banner .who{font-size:1.2rem;font-weight:900;display:flex;align-items:center;justify-content:center;gap:8px}
+.turn-banner .cash{font-size:1.6rem;font-weight:900;font-family:'Lora';margin-top:2px}
+.turn-banner .hint{font-size:.78rem;color:var(--mint);font-weight:700;margin-top:4px;min-height:1.1em}
+.controls{display:flex;flex-direction:column;gap:9px}
+.btn{padding:13px;border-radius:13px;font-size:1rem;color:#fff;background:var(--teal);box-shadow:var(--shadow);transition:.12s}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:linear-gradient(135deg,var(--teal),var(--teal-d));font-size:1.1rem}
+.btn.warn{background:linear-gradient(135deg,#e08a2e,#c8700a)}
+.btn.dark{background:var(--navy)}
+.btn:disabled{opacity:.4;filter:grayscale(.5);cursor:not-allowed;transform:none}
+.btn.sm{padding:8px 10px;font-size:.85rem;border-radius:10px}
+
+/* players list */
+.pl-card{display:flex;align-items:center;gap:9px;padding:9px;border-radius:12px;margin-bottom:7px;background:var(--cream);border:2px solid transparent;transition:.15s}
+.pl-card.active{border-color:var(--gold);background:var(--gold-lt)}
+.pl-card.out{opacity:.45;filter:grayscale(1)}
+.pl-card .dot{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:1rem;flex:0 0 auto}
+.pl-card .info{flex:1;min-width:0}
+.pl-card .nm{font-weight:900;font-size:.92rem;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pl-card .ca{font-weight:800;color:var(--teal-d);font-size:.85rem}
+.pl-card .pc{font-size:.7rem;color:var(--muted);font-weight:700}
+
+/* log */
+.log{max-height:140px;overflow-y:auto;font-size:.82rem;line-height:1.45}
+.log p{margin:0 0 5px;padding-bottom:5px;border-bottom:1px dashed #e3eeeb;color:var(--muted)}
+.log p b{color:var(--navy)}
+.log p:first-child{color:var(--navy);font-weight:700}
+
+/* ── MODAL ─────────────────────────────── */
+.overlay{position:fixed;inset:0;background:rgba(20,40,60,.6);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;z-index:50;padding:18px;animation:fade .2s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.modal{background:#fff;border-radius:24px;max-width:420px;width:100%;box-shadow:var(--shadow-lg);
+  overflow:hidden;animation:pop .25s cubic-bezier(.2,.9,.3,1.3);max-height:92vh;overflow-y:auto}
+@keyframes pop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+.m-head{padding:18px 20px;color:#fff;text-align:center}
+.m-head .m-emoji{font-size:2.6rem;line-height:1}
+.m-head h2{margin:6px 0 0;font-size:1.5rem;color:#fff}
+.m-head .m-sub{font-size:.85rem;opacity:.9;font-weight:700;margin-top:2px}
+.m-body{padding:20px;text-align:center}
+.m-body p{margin:0 0 12px;color:var(--navy);font-weight:600;line-height:1.5}
+.m-body .big-amt{font-family:'Lora';font-size:1.9rem;font-weight:700;margin:6px 0}
+.m-stat{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #e3eeeb;font-weight:700}
+.m-stat span:last-child{color:var(--teal-d);font-weight:900}
+.m-actions{display:flex;gap:10px;margin-top:16px}
+.m-actions .btn{flex:1}
+.card-flip{background:linear-gradient(135deg,#fff,var(--cream));border:2px dashed var(--teal);border-radius:16px;padding:16px;margin:8px 0}
+.pos{color:var(--teal-d)!important}
+.neg{color:#c0392b!important}
+
+/* manage assets list */
+.asset-row{display:flex;align-items:center;gap:8px;padding:9px;border-radius:11px;background:var(--cream);margin-bottom:7px;text-align:left}
+.asset-row .ab{width:8px;align-self:stretch;border-radius:4px;flex:0 0 auto}
+.asset-row .an{flex:1;min-width:0}
+.asset-row .an .t{font-weight:900;font-size:.9rem}
+.asset-row .an .s{font-size:.72rem;color:var(--muted);font-weight:700}
+.confetti{position:fixed;width:10px;height:14px;z-index:60;border-radius:2px;pointer-events:none}
+.footer-note{text-align:center;color:var(--muted);font-size:.72rem;font-weight:700;margin:14px 0 8px}
+</style>
+</head>
+<body>
+
+<!-- ════════ SETUP ════════ -->
+<div id="setup">
+  <div class="brand-row">
+    <img src="https://ifm-deploy.vercel.app/IFM%20round%20logo%20for%20watermark.png" alt="IFM" onerror="this.style.display='none'">
+  </div>
+  <div class="subtitle">Investing for Mummies</div>
+  <h1 class="title">Crorepati Lane</h1>
+  <p class="tagline">Roll the dice, buy assets, build your portfolio — the richest mum wins.</p>
+
+  <div class="card">
+    <h3>How many players?</h3>
+    <div class="count-row" id="countRow"></div>
+    <div id="playerSetup"></div>
+  </div>
+
+  <button class="btn-go" onclick="startGame()">Start Playing →</button>
+  <button class="btn-ghost" onclick="document.getElementById('rules').classList.toggle('hide')">How to play</button>
+
+  <div class="card hide" id="rules">
+    <h3>How to play</h3>
+    <p class="how">
+      <b>Goal:</b> Be the last mum standing — grow your money while everyone else goes broke.<br><br>
+      <b>Your turn:</b> Tap <b>Roll Dice</b> and your token moves around Crorepati Lane.<br><br>
+      <b>Asset spaces</b> (Fixed Income, Gold, Real Estate, Mutual Funds, Stocks) can be bought. Land on someone else's asset and you pay them <b>returns</b> (like rent).<br><br>
+      <b>Own a full colour group</b> → returns double, and you can <b>top-up your SIP</b> (build) to boost returns further. 5th top-up = <b>Compounding</b> status 💎.<br><br>
+      <b>Market Event</b> 🎲 &amp; <b>Money Mantra</b> 💡 cards shake things up — bull runs, crashes, bonuses, bills.<br><br>
+      <b>PAYDAY</b> pays your salary each lap. <b>Market Crash</b> 🐻 freezes you. <b>Dividend Pool</b> 💰 collects all the penalties — land on it to scoop the pot.<br><br>
+      Run out of cash and can't pay? You're out. Last mum with money is the <b>Crorepati</b>! 👑
+    </p>
+  </div>
+  <div class="footer-note">A game by Investing for Mummies · Play, don't gamble — learn how money grows.</div>
+</div>
+
+<!-- ════════ GAME ════════ -->
+<div id="game">
+  <div class="game-grid">
+    <div>
+      <div class="board-wrap">
+        <div class="board" id="board"></div>
+        <div class="board-center">
+          <img src="https://ifm-deploy.vercel.app/IFM%20round%20logo%20for%20watermark.png" alt="IFM" onerror="this.style.display='none'">
+          <div class="bc-title">Crorepati Lane</div>
+          <div class="bc-sub">Investing for Mummies</div>
+          <div class="dice-area"><div class="die" id="die1">🎲</div><div class="die" id="die2">🎲</div></div>
+        </div>
+        <div id="tokens"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="turn-banner">
+        <div class="who" id="turnWho">—</div>
+        <div class="cash" id="turnCash">₹0</div>
+        <div class="hint" id="turnHint">Tap Roll Dice to begin</div>
+      </div>
+      <div class="controls">
+        <button class="btn primary" id="btnRoll" onclick="rollDice()">🎲 Roll Dice</button>
+        <button class="btn dark" id="btnManage" onclick="openManage()">📊 My Portfolio</button>
+        <button class="btn" id="btnEnd" onclick="endTurn()" disabled>End Turn →</button>
+      </div>
+      <div class="panel" style="margin-top:12px">
+        <div id="playersList"></div>
+      </div>
+      <div class="panel">
+        <div style="font-weight:900;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Activity</div>
+        <div class="log" id="log"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   CROREPATI LANE — IFM multiplayer board game (pass & play)
+   ═══════════════════════════════════════════════════════ */
+
+const fmt = n => '₹' + Math.round(n).toLocaleString('en-IN');
+
+const TOKENS = ['👜','💄','👑','🌸','🍵','💎','🦋','☕'];
+const PCOLORS = ['#2a9d8f','#c0392b','#3a6ea5','#d97a34','#8e44ad','#16a085','#e91e63','#f39c12'];
+
+const GROUPS = {
+  fixed:{name:'Fixed Income', color:'var(--g-fixed)', hex:'#3a6ea5'},
+  gold:{name:'Gold & Commodities', color:'var(--g-gold)', hex:'#c8900a'},
+  realestate:{name:'Real Estate', color:'var(--g-realestate)', hex:'#d97a34'},
+  funds:{name:'Mutual Funds', color:'var(--g-funds)', hex:'#2a9d8f'},
+  stocks:{name:'Stocks', color:'var(--g-stocks)', hex:'#c0392b'},
+};
+
+/* Build a property space from a price; rent scales with price */
+function asset(name, emoji, group, price){
+  return {type:'asset', name, emoji, group, price,
+    buildCost: Math.round(price*0.5/10000)*10000,
+    // rent tiers: [base, 1 top-up, 2, 3, 4, compounding]
+    rent:[
+      Math.round(price*0.10/1000)*1000,
+      Math.round(price*0.35/1000)*1000,
+      Math.round(price*0.90/1000)*1000,
+      Math.round(price*1.60/1000)*1000,
+      Math.round(price*2.40/1000)*1000,
+      Math.round(price*3.60/1000)*1000,
+    ],
+    owner:null, units:0 };
+}
+
+/* 28-space board, clockwise from index 0 (PAYDAY corner) */
+const BOARD = [
+  {type:'go', name:'PAYDAY', emoji:'💰'},                                   //0 corner
+  asset('Fixed Deposit','🏦','fixed',600000),                              //1
+  {type:'card', deck:'mantra', name:'Money Mantra', emoji:'💡'},            //2
+  asset('PPF','📗','fixed',600000),                                        //3
+  {type:'tax', name:'Income Tax', emoji:'🧾', amount:100000},               //4
+  asset('Govt Bonds','📜','fixed',1000000),                               //5
+  asset('Gold','🪙','gold',1200000),                                       //6
+  {type:'jail', name:'Market Crash', emoji:'🐻'},                          //7 corner
+  asset('Silver','🥈','gold',1400000),                                    //8
+  {type:'card', deck:'event', name:'Market Event', emoji:'📈'},             //9
+  asset('Sov. Gold Bond','🏅','gold',1600000),                            //10
+  asset('Residential Plot','🏞️','realestate',1800000),                    //11
+  {type:'card', deck:'mantra', name:'Money Mantra', emoji:'💡'},            //12
+  asset('City Apartment','🏢','realestate',2000000),                       //13
+  {type:'pool', name:'Dividend Pool', emoji:'💰'},                         //14 corner
+  asset('Commercial Space','🏬','realestate',2200000),                     //15
+  asset('Large-Cap Fund','📊','funds',2400000),                           //16
+  {type:'card', deck:'event', name:'Market Event', emoji:'📈'},            //17
+  asset('Mid-Cap Fund','📈','funds',2600000),                             //18
+  asset('Index Fund','🧺','funds',2800000),                               //19
+  {type:'tax', name:'Capital Gains Tax', emoji:'🧾', amount:150000},        //20
+  {type:'gojail', name:'Panic Sell!', emoji:'😱'},                         //21 corner
+  asset('Bluechip Stock','💼','stocks',3000000),                          //22
+  {type:'card', deck:'mantra', name:'Money Mantra', emoji:'💡'},           //23
+  asset('Growth Stock','🚀','stocks',3200000),                            //24
+  {type:'card', deck:'event', name:'Market Event', emoji:'📈'},           //25
+  asset('Small-Cap Stock','⚡','stocks',3400000),                         //26
+  asset('IPO','🎯','stocks',4000000),                                     //27
+];
+
+const SALARY = 200000;
+const JAIL_INDEX = 7, POOL_INDEX = 14, START_CASH = 1500000;
+
+/* ── Cards ─────────────────────────────── */
+const EVENT_CARDS = [
+  {t:'Bull market! Your portfolio rallies hard.', amt:150000},
+  {t:'Brokerage fee refund lands in your account.', amt:75000},
+  {t:'Your SIP matured beautifully. Compounding paid off.', amt:200000},
+  {t:'Dividend season — every other player pays you ₹40,000.', each:40000},
+  {t:'Market correction. Trim your losses.', amt:-100000},
+  {t:'Inflation spike — pay ₹20,000 for each asset you own.', perAsset:-20000},
+  {t:'Flash crash! You panic-sold. Go to Market Crash.', goJail:true},
+  {t:'Advance to PAYDAY and collect your salary.', advance:0},
+  {t:'Festival rally — markets surge.', amt:120000},
+  {t:'Rebalancing bonus from your advisor.', amt:60000},
+];
+const MANTRA_CARDS = [
+  {t:'Your emergency fund saved the day. 👏', amt:100000},
+  {t:'Insurance premium due. Protection isn’t free.', amt:-50000},
+  {t:'Festival bonus from work!', amt:125000},
+  {t:'Compounding magic — collect ₹15,000 per top-up you’ve built.', perUnit:15000},
+  {t:'Started investing early — advance to the Dividend Pool.', advance:POOL_INDEX},
+  {t:'Hospital bill. Glad you had health cover.', amt:-75000},
+  {t:'ELSS tax-saving refund arrives.', amt:60000},
+  {t:'Impulse sale splurge — pay ₹40,000 into the Dividend Pool.', toPool:40000},
+  {t:'You taught a friend to invest. Good karma + cashback.', amt:50000},
+  {t:'Lifestyle creep — that upgrade cost more than planned.', amt:-45000},
+];
+let eventDeck=[], mantraDeck=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function drawCard(deck){
+  if(deck==='event'){ if(!eventDeck.length) eventDeck=shuffle(EVENT_CARDS); return eventDeck.pop(); }
+  if(!mantraDeck.length) mantraDeck=shuffle(MANTRA_CARDS); return mantraDeck.pop();
+}
+
+/* ── State ─────────────────────────────── */
+let players=[], cur=0, poolAmt=0, rolled=false, lastRoll=[0,0], pendingDoubles=false, gameOver=false;
+let numPlayers=2;
+let setupNames=['Mum 1','Mum 2','Mum 3','Mum 4'];
+let setupTokens=[0,1,2,3];
+
+/* ── SETUP UI ─────────────────────────────── */
+function renderSetup(){
+  const cr=document.getElementById('countRow'); cr.innerHTML='';
+  [2,3,4].forEach(n=>{
+    const b=document.createElement('button');
+    b.className='count-btn'+(n===numPlayers?' sel':''); b.textContent=n;
+    b.onclick=()=>{numPlayers=n;renderSetup();};
+    cr.appendChild(b);
+  });
+  const ps=document.getElementById('playerSetup'); ps.innerHTML='';
+  for(let i=0;i<numPlayers;i++){
+    const row=document.createElement('div'); row.className='pl-setup';
+    const tok=document.createElement('div'); tok.className='pl-token';
+    tok.style.background=PCOLORS[setupTokens[i]];
+    tok.textContent=TOKENS[setupTokens[i]];
+    const inp=document.createElement('input'); inp.value=setupNames[i]; inp.maxLength=14;
+    inp.oninput=e=>setupNames[i]=e.target.value;
+    const picker=document.createElement('div'); picker.className='token-pick';
+    TOKENS.forEach((t,ti)=>{
+      if(setupTokens.slice(0,numPlayers).includes(ti)&&ti!==setupTokens[i])return;
+      const o=document.createElement('div'); o.className='tok-opt'+(ti===setupTokens[i]?' sel':''); o.textContent=t;
+      o.onclick=()=>{ if(setupTokens.slice(0,numPlayers).includes(ti))return; setupTokens[i]=ti; renderSetup(); };
+      picker.appendChild(o);
+    });
+    const left=document.createElement('div'); left.style.flex='1'; left.style.minWidth='0';
+    left.appendChild(inp);
+    left.appendChild(picker); picker.style.marginTop='6px';
+    row.appendChild(tok); row.appendChild(left);
+    ps.appendChild(row);
+  }
+}
+renderSetup();
+
+/* ── START ─────────────────────────────── */
+function startGame(){
+  players=[];
+  for(let i=0;i<numPlayers;i++){
+    players.push({
+      id:i, name:(setupNames[i]||('Mum '+(i+1))).trim(),
+      token:TOKENS[setupTokens[i]], color:PCOLORS[setupTokens[i]],
+      cash:START_CASH, pos:0, jail:false, jailTurns:0, bankrupt:false
+    });
+  }
+  // reset board ownership
+  BOARD.forEach(s=>{ if(s.type==='asset'){s.owner=null;s.units=0;} });
+  cur=0; poolAmt=0; rolled=false; gameOver=false; eventDeck=[]; mantraDeck=[];
+  document.getElementById('setup').style.display='none';
+  document.getElementById('game').style.display='block';
+  buildBoard();
+  renderAll();
+  logMsg(`<b>Crorepati Lane</b> begins! ${players.length} mums, ${fmt(START_CASH)} each. ${players[0].name} rolls first.`);
+  beginTurn();
+  window.scrollTo(0,0);
+}
+
+/* ── BOARD RENDER ─────────────────────────────── */
+// map board index (0..27) to grid cell position (row,col) in 8x8, clockwise from top-left going...
+// We'll lay the perimeter: index 0 = bottom-left corner, go up the left side, across top, down right, across bottom back.
+// Simpler: define perimeter coords clockwise starting top-left.
+function perimeterCoords(){
+  const coords=[]; const N=8;
+  // top row left->right (cols 0..7) : indices 0..7
+  for(let c=0;c<N;c++) coords.push([0,c]);
+  // right col top->bottom rows 1..7 : indices 8..14
+  for(let r=1;r<N;r++) coords.push([r,7]);
+  // bottom row right->left cols 6..0 : indices 15..21
+  for(let c=N-2;c>=0;c--) coords.push([7,c]);
+  // left col bottom->top rows 6..1 : indices 22..27
+  for(let r=N-2;r>=1;r--) coords.push([r,0]);
+  return coords; // length 28
+}
+const COORDS=perimeterCoords();
+
+function buildBoard(){
+  const board=document.getElementById('board'); board.innerHTML='';
+  BOARD.forEach((s,i)=>{
+    const [r,c]=COORDS[i];
+    const cell=document.createElement('div');
+    cell.className='cell'+( (s.type!=='asset'&&s.type!=='card'&&s.type!=='tax')?' corner':'');
+    cell.style.gridRow=(r+1); cell.style.gridColumn=(c+1);
+    cell.id='cell'+i;
+    let bandHex='transparent';
+    if(s.type==='asset') bandHex=GROUPS[s.group].hex;
+    let html='';
+    if(s.type==='asset'){
+      html=`<div class="band" style="background:${bandHex}"></div>
+        <div class="c-body">
+          <div class="c-emoji">${s.emoji}</div>
+          <div class="c-name">${s.name}</div>
+          <div class="units" id="units${i}"></div>
+          <div class="c-price">${fmt(s.price)}</div>
+        </div>`;
+    } else if(s.type==='card'){
+      html=`<div class="band" style="background:${s.deck==='event'?'#16314e':'#7a5c1a'}"></div>
+        <div class="c-body"><div class="c-emoji">${s.emoji}</div><div class="c-name">${s.name}</div></div>`;
+    } else if(s.type==='tax'){
+      html=`<div class="band" style="background:#6b7d93"></div>
+        <div class="c-body"><div class="c-emoji">${s.emoji}</div><div class="c-name">${s.name}</div><div class="c-price">${fmt(s.amount)}</div></div>`;
+    } else {
+      html=`<div class="c-body" style="justify-content:center"><div class="c-emoji">${s.emoji}</div><div class="c-name">${s.name}</div></div>`;
+    }
+    cell.innerHTML=html;
+    board.appendChild(cell);
+  });
+  updateBoardOwnership();
+}
+
+function updateBoardOwnership(){
+  BOARD.forEach((s,i)=>{
+    if(s.type!=='asset')return;
+    const cell=document.getElementById('cell'+i);
+    cell.classList.toggle('owned-mark', s.owner!=null);
+    if(s.owner!=null){
+      cell.style.setProperty('--mk', players[s.owner].color);
+      // owner dot colour
+      cell.querySelectorAll('.owner-tag').forEach(e=>e.remove());
+    }
+    // owner marker dot via ::after colour
+    cell.style.background = s.owner!=null ? `linear-gradient(180deg,#fff 70%, ${players[s.owner].color}22 100%)` : '#fff';
+    const dot=cell.querySelector('.own-dot');
+    // units
+    const u=document.getElementById('units'+i);
+    if(u){ u.innerHTML='';
+      if(s.units>0 && s.units<5){ for(let k=0;k<s.units;k++){const d=document.createElement('div');d.className='unit-dot';u.appendChild(d);} }
+      if(s.units===5){const d=document.createElement('div');d.className='unit-dot hotel';u.appendChild(d);}
+    }
+  });
+  // owner corner dot
+  BOARD.forEach((s,i)=>{
+    if(s.type!=='asset')return;
+    const cell=document.getElementById('cell'+i);
+    let dot=cell.querySelector('.own-dot');
+    if(s.owner!=null){
+      if(!dot){dot=document.createElement('div');dot.className='own-dot';dot.style.cssText='position:absolute;top:2px;right:2px;width:9px;height:9px;border-radius:50%;border:1.5px solid #fff;box-shadow:0 0 2px rgba(0,0,0,.4);z-index:3';cell.appendChild(dot);}
+      dot.style.background=players[s.owner].color;
+    } else if(dot){dot.remove();}
+  });
+}
+
+function renderTokens(){
+  const layer=document.getElementById('tokens'); layer.innerHTML='';
+  // group players by cell to offset
+  const byCell={};
+  players.forEach(p=>{ if(p.bankrupt)return; (byCell[p.pos]=byCell[p.pos]||[]).push(p); });
+  Object.keys(byCell).forEach(pos=>{
+    const arr=byCell[pos]; const [r,c]=COORDS[pos];
+    arr.forEach((p,idx)=>{
+      const t=document.createElement('div');
+      t.className='token'+(p.id===cur&&!gameOver?' cur':'');
+      t.style.background=p.color; t.textContent=p.token;
+      // cell is 1/8 of board; position center + small offset for stacking
+      const cellPct=100/8;
+      const ox=(idx%2)*7-3, oy=Math.floor(idx/2)*7-3;
+      t.style.left=`calc(${(c+0.5)*cellPct}% + ${ox}px)`;
+      t.style.top=`calc(${(r+0.5)*cellPct}% + ${oy}px)`;
+      t.style.transform='translate(-50%,-50%)';
+      layer.appendChild(t);
+    });
+  });
+}
+
+/* ── RENDER ─────────────────────────────── */
+function portfolioCount(pid){ return BOARD.filter(s=>s.type==='asset'&&s.owner===pid).length; }
+function netWorth(p){
+  let w=p.cash;
+  BOARD.forEach(s=>{ if(s.type==='asset'&&s.owner===p.id){ w+=s.price + s.units*s.buildCost; } });
+  return w;
+}
+function renderPlayers(){
+  const list=document.getElementById('playersList'); list.innerHTML='';
+  players.forEach(p=>{
+    const d=document.createElement('div');
+    d.className='pl-card'+(p.id===cur&&!gameOver?' active':'')+(p.bankrupt?' out':'');
+    d.innerHTML=`<div class="dot" style="background:${p.color}">${p.token}</div>
+      <div class="info">
+        <div class="nm">${p.name}${p.bankrupt?' (out)':''}</div>
+        <div class="ca">${p.bankrupt?'Bankrupt':fmt(p.cash)}</div>
+        <div class="pc">${portfolioCount(p.id)} assets · net ${fmt(netWorth(p))}</div>
+      </div>`;
+    list.appendChild(d);
+  });
+}
+function renderBanner(){
+  const p=players[cur];
+  document.getElementById('turnWho').innerHTML=`<span style="font-size:1.3rem">${p.token}</span> ${p.name}`;
+  document.getElementById('turnCash').textContent=fmt(p.cash);
+}
+function setHint(t){ document.getElementById('turnHint').textContent=t; }
+function renderAll(){ renderPlayers(); renderBanner(); renderTokens(); updateBoardOwnership(); }
+function logMsg(html){
+  const l=document.getElementById('log');
+  const p=document.createElement('p'); p.innerHTML=html;
+  l.prepend(p);
+  while(l.children.length>40) l.removeChild(l.lastChild);
+}
+
+/* ── TURN FLOW ─────────────────────────────── */
+function beginTurn(){
+  if(gameOver)return;
+  const p=players[cur];
+  if(p.bankrupt){ nextPlayer(); return; }
+  rolled=false; pendingDoubles=false;
+  renderAll();
+  document.getElementById('btnRoll').disabled=false;
+  document.getElementById('btnRoll').textContent='🎲 Roll Dice';
+  document.getElementById('btnEnd').disabled=true;
+  if(p.jail){ setHint(`${p.name} is frozen by the crash 🐻`); }
+  else setHint(`${p.name}, tap Roll Dice`);
+}
+
+function rollDice(){
+  if(gameOver||rolled&&!pendingDoubles)return;
+  const p=players[cur];
+  document.getElementById('btnRoll').disabled=true;
+  const d1=document.getElementById('die1'), d2=document.getElementById('die2');
+  d1.classList.add('rolling'); d2.classList.add('rolling');
+  let ticks=0;
+  const iv=setInterval(()=>{
+    d1.textContent=1+Math.floor(Math.random()*6);
+    d2.textContent=1+Math.floor(Math.random()*6);
+    if(++ticks>9){
+      clearInterval(iv);
+      const a=1+Math.floor(Math.random()*6), b=1+Math.floor(Math.random()*6);
+      d1.textContent=a; d2.textContent=b; lastRoll=[a,b];
+      d1.classList.remove('rolling'); d2.classList.remove('rolling');
+      afterRoll(a,b);
+    }
+  },55);
+}
+
+function afterRoll(a,b){
+  const p=players[cur]; const isDouble=(a===b); const steps=a+b;
+  rolled=true;
+  // JAIL handling
+  if(p.jail){
+    if(isDouble){
+      p.jail=false; p.jailTurns=0;
+      logMsg(`<b>${p.name}</b> rolled doubles and escapes the crash! 🎉`);
+      movePlayer(steps);
+    } else {
+      p.jailTurns++;
+      if(p.jailTurns>=3){
+        // must pay to get out
+        if(p.cash>=50000){ p.cash-=50000; poolAmt+=50000; p.jail=false; p.jailTurns=0;
+          logMsg(`<b>${p.name}</b> pays ${fmt(50000)} to recover from the crash.`);
+          renderAll(); movePlayer(steps);
+        } else { logMsg(`<b>${p.name}</b> can't afford to recover.`); checkBankrupt(p,50000,null); endTurnReady(); }
+      } else {
+        logMsg(`<b>${p.name}</b> stays frozen (${p.jailTurns}/3). Needs doubles or ₹50,000.`);
+        setHint(`Still frozen 🐻 — end turn`);
+        endTurnReady();
+      }
+    }
+    return;
+  }
+  logMsg(`<b>${p.name}</b> rolled ${a} + ${b} = <b>${steps}</b>${isDouble?' (doubles!)':''}.`);
+  if(isDouble){ p._doubles=(p._doubles||0)+1;
+    if(p._doubles>=3){ logMsg(`Three doubles — ${p.name} over-traded and goes to Market Crash! 🐻`); p._doubles=0; goToJail(p); renderAll(); endTurnReady(); return; }
+  } else p._doubles=0;
+  pendingDoubles=isDouble;
+  movePlayer(steps);
+}
+
+function movePlayer(steps){
+  const p=players[cur];
+  let remaining=steps;
+  const stepIv=setInterval(()=>{
+    p.pos=(p.pos+1)%BOARD.length;
+    if(p.pos===0){ p.cash+=SALARY; logMsg(`<b>${p.name}</b> passed PAYDAY — salary ${fmt(SALARY)}! 💰`); }
+    renderTokens(); renderBanner(); renderPlayers();
+    if(--remaining<=0){ clearInterval(stepIv); landOn(p); }
+  },170);
+}
+
+/* ── LANDING ─────────────────────────────── */
+function landOn(p){
+  const s=BOARD[p.pos];
+  if(s.type==='asset'){
+    if(s.owner==null){ promptBuy(s); }
+    else if(s.owner===p.id){ setHint(`Your own ${s.name}.`); offerEndOrManage(); }
+    else { payRent(p,s); }
+  } else if(s.type==='go'){
+    p.cash+=SALARY; logMsg(`<b>${p.name}</b> landed on PAYDAY — full salary ${fmt(SALARY)}! 💰`); renderAll(); offerEndOrManage();
+  } else if(s.type==='tax'){
+    logMsg(`<b>${p.name}</b> owes ${s.name}: ${fmt(s.amount)}.`);
+    if(payOrBust(p,s.amount,null)){ poolAmt+=s.amount; renderAll(); flashModal(s.emoji,'#6b7d93',s.name,`You paid ${fmt(s.amount)} in tax.<br><span style="font-size:.85rem;color:#5a7d8a">It goes into the Dividend Pool 💰</span>`,()=>offerEndOrManage()); }
+  } else if(s.type==='jail'){
+    setHint('Just visiting the crash 🐻'); logMsg(`<b>${p.name}</b> is just visiting Market Crash.`); offerEndOrManage();
+  } else if(s.type==='gojail'){
+    logMsg(`<b>${p.name}</b> hit Panic Sell — straight to Market Crash! 🐻`); goToJail(p); renderAll();
+    flashModal('😱','#c0392b','Panic Sell!','You panicked and sold low. Off to Market Crash 🐻',()=>{pendingDoubles=false;endTurnReady();});
+  } else if(s.type==='pool'){
+    const amt=poolAmt; poolAmt=0; p.cash+=amt;
+    logMsg(`<b>${p.name}</b> scooped the Dividend Pool: ${fmt(amt)}! 💰`); renderAll();
+    flashModal('💰','#c8900a','Dividend Pool!', amt>0?`You collected the whole pot: <b>${fmt(amt)}</b>!`:'The pool is empty right now — better luck next lap!',()=>offerEndOrManage());
+  } else if(s.type==='card'){
+    drawAndApply(p,s.deck);
+  }
+}
+
+function offerEndOrManage(){
+  if(pendingDoubles && !players[cur].jail){
+    setHint('Doubles! Roll again 🎲');
+    document.getElementById('btnRoll').disabled=false;
+    document.getElementById('btnRoll').textContent='🎲 Roll Again';
+    document.getElementById('btnEnd').disabled=false;
+    rolled=false;
+  } else { endTurnReady(); }
+}
+function endTurnReady(){
+  document.getElementById('btnRoll').disabled=true;
+  document.getElementById('btnEnd').disabled=false;
+  if(!pendingDoubles) setHint('Tap End Turn →');
+}
+
+/* ── BUY ─────────────────────────────── */
+function promptBuy(s){
+  const p=players[cur];
+  const g=GROUPS[s.group];
+  const canAfford=p.cash>=s.price;
+  showModal({
+    emoji:s.emoji, color:g.hex, title:s.name, sub:g.name,
+    body:`
+      <div class="m-stat"><span>Price</span><span>${fmt(s.price)}</span></div>
+      <div class="m-stat"><span>Base returns</span><span>${fmt(s.rent[0])}</span></div>
+      <div class="m-stat"><span>Your cash</span><span class="${canAfford?'pos':'neg'}">${fmt(p.cash)}</span></div>
+      <p style="font-size:.82rem;color:#5a7d8a;margin-top:12px">Own all of <b>${g.name}</b> to double returns and unlock SIP top-ups.</p>`,
+    actions:[
+      {label:`Buy · ${fmt(s.price)}`, cls:'primary', disabled:!canAfford, fn:()=>{
+        p.cash-=s.price; s.owner=p.id; closeModal();
+        logMsg(`<b>${p.name}</b> bought <b>${s.name}</b> for ${fmt(s.price)}.`);
+        renderAll(); fireConfetti(g.hex); offerEndOrManage();
+      }},
+      {label:'Pass', cls:'dark', fn:()=>{ closeModal(); offerEndOrManage(); }},
+    ]
+  });
+}
+
+/* ── RENT / RETURNS ─────────────────────────────── */
+function ownsFullGroup(pid, group){
+  const inGroup=BOARD.filter(s=>s.type==='asset'&&s.group===group);
+  return inGroup.every(s=>s.owner===pid);
+}
+function rentDue(s){
+  const owner=s.owner;
+  if(s.units>0) return s.rent[s.units]; // tiers index 1..5 align with units 1..5
+  // no units: base, doubled if monopoly
+  return ownsFullGroup(owner,s.group) ? s.rent[0]*2 : s.rent[0];
+}
+function payRent(p,s){
+  const owner=players[s.owner];
+  const due=rentDue(s);
+  const mono=(s.units===0 && ownsFullGroup(owner.id,s.group));
+  logMsg(`<b>${p.name}</b> landed on ${owner.name}'s ${s.name} — returns due ${fmt(due)}${mono?' (full set ×2!)':''}.`);
+  showModal({
+    emoji:s.emoji, color:GROUPS[s.group].hex, title:s.name, sub:`Owned by ${owner.name}`,
+    body:`<p>Pay <span class="big-amt neg">${fmt(due)}</span><br>in returns to <b>${owner.name}</b>${mono?'<br><span style="font-size:.8rem;color:#c8900a">Full-set bonus: returns doubled!</span>':''}${s.units?'<br><span style="font-size:.8rem;color:#2a9d8f">'+(s.units===5?'💎 Compounding status':s.units+' SIP top-up'+(s.units>1?'s':''))+'</span>':''}</p>
+      <div class="m-stat"><span>Your cash</span><span class="${p.cash>=due?'pos':'neg'}">${fmt(p.cash)}</span></div>`,
+    actions:[{label:'Pay returns', cls:'primary', fn:()=>{
+      closeModal();
+      if(payOrBust(p,due,owner)){ renderAll(); offerEndOrManage(); }
+    }}]
+  });
+}
+
+/* ── PAY or BANKRUPT ─────────────────────────────── */
+// returns true if paid, false if bankruptcy flow took over
+function payOrBust(p, amount, creditor){
+  if(p.cash>=amount){ p.cash-=amount; if(creditor) creditor.cash+=amount; return true; }
+  // try to raise via liquidation
+  const liq=liquidValue(p);
+  if(p.cash+liq>=amount){
+    openRaiseCash(p, amount, creditor);
+    return false;
+  }
+  // truly bankrupt
+  doBankrupt(p, creditor);
+  return false;
+}
+function checkBankrupt(p,amount,creditor){ return payOrBust(p,amount,creditor); }
+function liquidValue(p){
+  let v=0; BOARD.forEach(s=>{ if(s.type==='asset'&&s.owner===p.id){ v+=Math.round((s.price+s.units*s.buildCost)*0.5); } });
+  return v;
+}
+
+function openRaiseCash(p, amount, creditor){
+  const render=()=>{
+    const owned=BOARD.map((s,i)=>({s,i})).filter(o=>o.s.type==='asset'&&o.s.owner===p.id);
+    let rows=owned.map(o=>{
+      const sell=Math.round((o.s.price+o.s.units*o.s.buildCost)*0.5);
+      return `<div class="asset-row">
+        <div class="ab" style="background:${GROUPS[o.s.group].hex}"></div>
+        <div class="an"><div class="t">${o.s.emoji} ${o.s.name}</div><div class="s">${o.s.units?(o.s.units===5?'💎 Compounding':o.s.units+' top-up(s)'):'No top-ups'} · sell for ${fmt(sell)}</div></div>
+        <button class="btn warn sm" onclick="liquidateAsset(${o.i})">Sell</button>
+      </div>`;
+    }).join('');
+    const shortfall=amount-p.cash;
+    showModalRaw(`
+      <div class="m-head" style="background:linear-gradient(135deg,#c0392b,#922b21)">
+        <div class="m-emoji">⚠️</div><h2>Raise Cash</h2>
+        <div class="m-sub">${p.name}, you owe ${fmt(amount)}</div>
+      </div>
+      <div class="m-body" style="text-align:left">
+        <p style="text-align:center">You're short <b class="neg">${fmt(shortfall)}</b>. Sell assets (at 50%) to cover it, or declare bankruptcy.</p>
+        ${rows||'<p style="text-align:center">No assets left to sell.</p>'}
+        <div class="m-actions">
+          <button class="btn primary" id="rcPay" onclick="trySettle(${amount},${creditor?creditor.id:-1})" ${p.cash>=amount?'':'disabled'}>Pay ${fmt(amount)}</button>
+          <button class="btn dark" onclick="declareBankrupt(${creditor?creditor.id:-1})">Give up</button>
+        </div>
+      </div>`);
+  };
+  window._raiseRender=render; render();
+}
+function liquidateAsset(i){
+  const s=BOARD[i]; const p=players[cur];
+  // creditor context preserved in modal; just convert to cash
+  const val=Math.round((s.price+s.units*s.buildCost)*0.5);
+  p.cash+=val; s.owner=null; s.units=0;
+  logMsg(`<b>${p.name}</b> liquidated ${s.name} for ${fmt(val)}.`);
+  renderAll();
+  if(window._raiseRender) window._raiseRender();
+}
+function trySettle(amount, creditorId){
+  const p=players[cur];
+  if(p.cash<amount)return;
+  p.cash-=amount;
+  if(creditorId>=0) players[creditorId].cash+=amount; else poolAmt+=amount;
+  closeModal(); renderAll();
+  logMsg(`<b>${p.name}</b> settled ${fmt(amount)}.`);
+  offerEndOrManage();
+}
+function declareBankrupt(creditorId){
+  const p=players[cur];
+  closeModal();
+  doBankrupt(p, creditorId>=0?players[creditorId]:null);
+}
+function doBankrupt(p, creditor){
+  p.bankrupt=true;
+  // transfer assets
+  BOARD.forEach(s=>{ if(s.type==='asset'&&s.owner===p.id){
+    if(creditor){ s.owner=creditor.id; } else { s.owner=null; s.units=0; }
+  }});
+  if(creditor) creditor.cash+=Math.max(0,p.cash);
+  p.cash=0;
+  logMsg(`💔 <b>${p.name}</b> is bankrupt and out of the game${creditor?` — assets go to ${creditor.name}`:''}.`);
+  renderAll();
+  flashModal('💔','#6b7d93','Out of the Game',`<b>${p.name}</b> has run out of money.<br>${creditor?creditor.name+' takes over their portfolio.':'Their assets return to the market.'}`,()=>{
+    if(checkWin())return;
+    pendingDoubles=false; nextPlayer();
+  });
+}
+
+/* ── CARDS ─────────────────────────────── */
+function drawAndApply(p, deck){
+  const card=drawCard(deck);
+  const isEvent=deck==='event';
+  showModalRaw(`
+    <div class="m-head" style="background:linear-gradient(135deg,${isEvent?'#16314e,#0d2438':'#7a5c1a,#5c4413'})">
+      <div class="m-emoji">${isEvent?'📈':'💡'}</div>
+      <h2>${isEvent?'Market Event':'Money Mantra'}</h2>
+    </div>
+    <div class="m-body">
+      <div class="card-flip"><p style="margin:0;font-size:1.02rem">${card.t}</p></div>
+      <div class="m-actions"><button class="btn primary" onclick="applyCard()">Continue</button></div>
+    </div>`);
+  window._pendingCard={card,p};
+}
+function applyCard(){
+  const {card,p}=window._pendingCard; closeModal();
+  let msg='';
+  if(card.amt!=null){
+    if(card.amt>=0){ p.cash+=card.amt; msg=`${p.name} collected ${fmt(card.amt)}.`; }
+    else { if(!payOrBust(p,-card.amt,null)){ return; } poolAmt+=(-card.amt); msg=`${p.name} paid ${fmt(-card.amt)}.`; }
+  } else if(card.each!=null){
+    let got=0;
+    players.forEach(o=>{ if(o.id!==p.id&&!o.bankrupt){ const pay=Math.min(o.cash,card.each); o.cash-=pay; got+=pay; } });
+    p.cash+=got; msg=`${p.name} collected ${fmt(got)} from the table.`;
+  } else if(card.perAsset!=null){
+    const n=portfolioCount(p.id); const amt=n*(-card.perAsset);
+    if(amt>0){ if(!payOrBust(p,amt,null)){return;} poolAmt+=amt; }
+    msg=`${p.name} paid ${fmt(amt)} (${n} assets).`;
+  } else if(card.perUnit!=null){
+    let units=0; BOARD.forEach(s=>{ if(s.type==='asset'&&s.owner===p.id) units+=s.units; });
+    const amt=units*card.perUnit; p.cash+=amt; msg=`${p.name} collected ${fmt(amt)} (${units} top-ups).`;
+  } else if(card.toPool!=null){
+    if(!payOrBust(p,card.toPool,null)){return;} poolAmt+=card.toPool; msg=`${p.name} paid ${fmt(card.toPool)} into the pool.`;
+  }
+  if(card.goJail){ goToJail(p); msg=(msg?msg+' ':'')+`${p.name} goes to Market Crash.`; logMsg('<b>'+msg+'</b>'); renderAll(); pendingDoubles=false; endTurnReady(); return; }
+  if(card.advance!=null){
+    const target=card.advance;
+    if(target<=p.pos) { p.cash+=SALARY; } // passes payday
+    if(target===0) p.cash+=0; // payday handled by landOn
+    p.pos=target; logMsg('<b>'+msg+'</b> Advancing...'); renderAll();
+    setTimeout(()=>{ landOn(p); },300); return;
+  }
+  if(msg) logMsg('<b>'+msg+'</b>');
+  renderAll();
+  if(checkWin())return;
+  offerEndOrManage();
+}
+
+function goToJail(p){ p.pos=JAIL_INDEX; p.jail=true; p.jailTurns=0; p._doubles=0; }
+
+/* ── MANAGE / BUILD ─────────────────────────────── */
+function openManage(){
+  const p=players[cur];
+  const owned=BOARD.map((s,i)=>({s,i})).filter(o=>o.s.type==='asset'&&o.s.owner===p.id);
+  let rows;
+  if(!owned.length){ rows='<p style="text-align:center;color:#5a7d8a">No assets yet — land on an empty space and buy one!</p>'; }
+  else rows=owned.map(o=>{
+    const s=o.s; const full=ownsFullGroup(p.id,s.group);
+    const canBuild=full && s.units<5 && p.cash>=s.buildCost && !s.jail;
+    const nextLabel = s.units<4?`Top-up SIP · ${fmt(s.buildCost)}`:(s.units===4?`Compounding 💎 · ${fmt(s.buildCost)}`:'Maxed 💎');
+    const status = s.units===5?'💎 Compounding':(s.units>0?s.units+' top-up'+(s.units>1?'s':''):(full?'Full set ×2':'Owned'));
+    return `<div class="asset-row">
+      <div class="ab" style="background:${GROUPS[s.group].hex}"></div>
+      <div class="an"><div class="t">${s.emoji} ${s.name}</div>
+        <div class="s">${status} · returns ${fmt(rentDue(s))}</div></div>
+      ${s.units<5?`<button class="btn sm ${canBuild?'primary':'dark'}" ${canBuild?'':'disabled'} onclick="buildOn(${o.i})">${nextLabel}</button>`:'<span style="font-size:.7rem;color:#c8900a;font-weight:900">MAX</span>'}
+    </div>`;
+  }).join('');
+  showModalRaw(`
+    <div class="m-head" style="background:linear-gradient(135deg,#1a3a5c,#16314e)">
+      <div class="m-emoji">📊</div><h2>${p.name}'s Portfolio</h2>
+      <div class="m-sub">Cash ${fmt(p.cash)} · Net worth ${fmt(netWorth(p))}</div>
+    </div>
+    <div class="m-body" style="text-align:left">
+      <p style="text-align:center;font-size:.82rem;color:#5a7d8a">Own a full colour set to top-up your SIP and boost returns. 5 top-ups = 💎 Compounding.</p>
+      ${rows}
+      <div class="m-actions"><button class="btn dark" onclick="closeModal()">Close</button></div>
+    </div>`);
+}
+function buildOn(i){
+  const s=BOARD[i]; const p=players[cur];
+  if(!(ownsFullGroup(p.id,s.group)&&s.units<5&&p.cash>=s.buildCost))return;
+  p.cash-=s.buildCost; s.units++;
+  logMsg(`<b>${p.name}</b> ${s.units===5?'reached 💎 Compounding on':'topped up SIP on'} ${s.name}.`);
+  renderAll(); fireConfetti(GROUPS[s.group].hex); openManage();
+}
+
+/* ── NEXT / WIN ─────────────────────────────── */
+function endTurn(){
+  if(gameOver)return;
+  if(checkWin())return;
+  pendingDoubles=false;
+  nextPlayer();
+}
+function nextPlayer(){
+  if(checkWin())return;
+  let guard=0;
+  do{ cur=(cur+1)%players.length; guard++; }while(players[cur].bankrupt&&guard<=players.length);
+  beginTurn();
+}
+function checkWin(){
+  const alive=players.filter(p=>!p.bankrupt);
+  if(alive.length<=1 && players.length>1){
+    gameOver=true;
+    const w=alive[0];
+    showWinner(w);
+    return true;
+  }
+  return false;
+}
+function showWinner(w){
+  for(let k=0;k<60;k++) setTimeout(()=>fireConfetti([ '#2a9d8f','#c8900a','#c0392b','#3a6ea5'][k%4]), k*40);
+  const ranking=[...players].sort((a,b)=>netWorth(b)-netWorth(a));
+  const rows=ranking.map((p,i)=>`<div class="m-stat"><span>${i+1}. ${p.token} ${p.name}${p.bankrupt?' (out)':''}</span><span>${fmt(netWorth(p))}</span></div>`).join('');
+  showModalRaw(`
+    <div class="m-head" style="background:linear-gradient(135deg,#c8900a,#a8780a)">
+      <div class="m-emoji">👑</div><h2>${w?w.name+' wins!':'Game Over'}</h2>
+      <div class="m-sub">Crorepati of the Lane</div>
+    </div>
+    <div class="m-body">
+      <p>${w?`<b>${w.name}</b> built the strongest portfolio and outlasted everyone. 🎉`:''}</p>
+      <div style="text-align:left;margin:10px 0">${rows}</div>
+      <div class="m-actions"><button class="btn primary" onclick="location.reload()">Play Again</button></div>
+    </div>`);
+}
+
+/* ── MODAL PLUMBING ─────────────────────────────── */
+function showModal({emoji,color,title,sub,body,actions}){
+  const acts=(actions||[]).map((a,i)=>`<button class="btn ${a.cls||''}" ${a.disabled?'disabled':''} data-i="${i}">${a.label}</button>`).join('');
+  const html=`
+    <div class="m-head" style="background:linear-gradient(135deg,${color},${shade(color,-18)})">
+      <div class="m-emoji">${emoji}</div><h2>${title}</h2>${sub?`<div class="m-sub">${sub}</div>`:''}
+    </div>
+    <div class="m-body">${body}<div class="m-actions">${acts}</div></div>`;
+  showModalRaw(html);
+  if(actions){ document.querySelectorAll('#modalActions, .m-actions .btn').forEach(()=>{});
+    const btns=document.querySelectorAll('.overlay .m-actions .btn');
+    btns.forEach(b=>{ const i=+b.dataset.i; if(!isNaN(i)&&actions[i]) b.onclick=actions[i].fn; });
+  }
+}
+function showModalRaw(inner){
+  closeModal();
+  const ov=document.createElement('div'); ov.className='overlay'; ov.id='ovl';
+  const m=document.createElement('div'); m.className='modal'; m.innerHTML=inner;
+  ov.appendChild(m); document.body.appendChild(ov);
+}
+function closeModal(){ const o=document.getElementById('ovl'); if(o)o.remove(); }
+function flashModal(emoji,color,title,body,then){
+  showModalRaw(`<div class="m-head" style="background:linear-gradient(135deg,${color},${shade(color,-18)})">
+    <div class="m-emoji">${emoji}</div><h2>${title}</h2></div>
+    <div class="m-body"><p>${body}</p><div class="m-actions"><button class="btn primary" id="flashOk">OK</button></div></div>`);
+  document.getElementById('flashOk').onclick=()=>{ closeModal(); if(then)then(); };
+}
+function shade(hex,p){
+  const c=hex.replace('#',''); if(c.length!==6)return hex;
+  let r=parseInt(c.slice(0,2),16),g=parseInt(c.slice(2,4),16),b=parseInt(c.slice(4,6),16);
+  r=Math.max(0,Math.min(255,r+p)); g=Math.max(0,Math.min(255,g+p)); b=Math.max(0,Math.min(255,b+p));
+  return '#'+[r,g,b].map(x=>x.toString(16).padStart(2,'0')).join('');
+}
+function fireConfetti(color){
+  const c=document.createElement('div'); c.className='confetti';
+  c.style.background=color; c.style.left=(20+Math.random()*60)+'%'; c.style.top='-20px';
+  document.body.appendChild(c);
+  const dx=(Math.random()-.5)*240, dur=900+Math.random()*700;
+  c.animate([{transform:'translate(0,0) rotate(0)',opacity:1},{transform:`translate(${dx}px,${window.innerHeight+40}px) rotate(${720*Math.random()}deg)`,opacity:.8}],{duration:dur,easing:'cubic-bezier(.3,.6,.4,1)'}).onfinish=()=>c.remove();
+}
+</script>
+</body>
+</html>

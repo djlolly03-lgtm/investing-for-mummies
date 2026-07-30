@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Short Squeeze — IFM</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2a9d8f;--navy:#1a3a5c;--muted:#5a7d8a;--cream:#f7faf9;--mint:#bde9e4;--mint-lt:#e0f3f0;--red:#e63946;--orange:#f4a261}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--navy);min-height:100vh;display:flex;flex-direction:column}
+
+header{background:var(--navy);color:white;padding:14px 20px;display:flex;align-items:center;gap:12px}
+header img{width:36px;height:36px;border-radius:50%;flex-shrink:0}
+header h1{font-family:'Lora',serif;font-style:italic;font-size:1.15rem;font-weight:600}
+header p{font-size:0.72rem;opacity:0.7;margin-top:1px}
+
+.progress{background:white;padding:12px 20px;display:flex;gap:6px;justify-content:center;border-bottom:1px solid var(--mint-lt)}
+.dot{width:28px;height:6px;border-radius:3px;background:var(--mint);transition:all .3s}
+.dot.active{background:var(--teal);width:40px}
+.dot.done{background:var(--teal);opacity:.45}
+
+.scene{display:none;flex:1;padding:20px 18px 30px;max-width:580px;margin:0 auto;width:100%;flex-direction:column;gap:14px;animation:fadeIn .35s ease}
+.scene.active{display:flex}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.scene-tag{font-size:.65rem;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--teal)}
+.scene-title{font-family:'Lora',serif;font-style:italic;font-size:1.4rem;color:var(--navy);line-height:1.3}
+.scene-sub{font-size:.88rem;color:var(--muted);line-height:1.65}
+
+.card{background:white;border-radius:16px;padding:18px;box-shadow:0 2px 14px rgba(26,58,92,.08)}
+.card-title{font-size:.75rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+
+.analogy{background:var(--mint-lt);border-left:4px solid var(--teal);border-radius:0 12px 12px 0;padding:14px 16px;font-size:.86rem;line-height:1.65;color:var(--navy)}
+.analogy strong{color:var(--teal)}
+
+/* expandable steps */
+.steps{display:flex;flex-direction:column;gap:8px}
+.step-item{border:1.5px solid var(--mint-lt);border-radius:12px;overflow:hidden;cursor:pointer;transition:border-color .2s}
+.step-item.open{border-color:var(--mint)}
+.step-head{display:flex;align-items:center;gap:10px;padding:12px 14px}
+.step-num{width:26px;height:26px;border-radius:50%;background:var(--navy);color:white;font-size:.73rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-title{font-size:.88rem;font-weight:800;color:var(--navy);flex:1}
+.step-arrow{font-size:.75rem;color:var(--muted);transition:transform .25s}
+.step-item.open .step-arrow{transform:rotate(90deg)}
+.step-body{display:none;padding:0 14px 14px 50px;font-size:.82rem;color:var(--muted);line-height:1.6}
+.step-item.open .step-body{display:block}
+.step-example{background:var(--cream);border-radius:8px;padding:9px 12px;margin-top:8px;font-size:.8rem;font-weight:700;color:var(--navy);line-height:1.5}
+
+/* slider calculator */
+.calc-card{background:linear-gradient(135deg,#f0faf8,#e4f7f4);border:1.5px solid var(--mint);border-radius:16px;padding:18px}
+.calc-card .card-title{color:var(--teal)}
+.calc-sub{font-size:.82rem;color:var(--navy);margin-bottom:12px;line-height:1.5}
+.slider-wrap{margin:10px 0}
+.slider-labels{display:flex;justify-content:space-between;font-size:.65rem;font-weight:800;color:var(--muted);margin-bottom:4px}
+input[type=range]{width:100%;accent-color:var(--teal);height:6px;cursor:pointer}
+.calc-result{margin-top:12px;border-radius:12px;padding:12px 14px;font-size:.88rem;font-weight:700;line-height:1.6;transition:background .3s,color .3s}
+.calc-result.profit{background:#d1fae5;color:#065f46}
+.calc-result.loss{background:#fee2e2;color:#991b1b}
+.calc-result.neutral{background:#f3f4f6;color:var(--navy)}
+
+/* asymmetry visual */
+.asym-wrap{display:flex;flex-direction:column;gap:8px}
+.asym-row{display:flex;align-items:center;gap:10px}
+.asym-lbl{font-size:.7rem;font-weight:700;color:var(--muted);width:110px;flex-shrink:0;text-align:right}
+.asym-track{flex:1;height:22px;background:#f3f4f6;border-radius:11px;overflow:hidden;position:relative}
+.asym-fill{height:100%;border-radius:11px;display:flex;align-items:center;padding:0 8px;font-size:.68rem;font-weight:900;color:white;white-space:nowrap}
+.asym-fill.g{background:linear-gradient(90deg,#34d399,var(--teal))}
+.asym-fill.r1{background:linear-gradient(90deg,var(--orange),var(--red))}
+.asym-fill.r2{background:var(--red)}
+.asym-fill.r3{background:#7f1d1d}
+.infinity{font-size:.75rem;font-weight:900;color:var(--red);margin-left:6px}
+
+/* ownership bar */
+.own-bar{height:18px;border-radius:9px;overflow:hidden;display:flex;margin:10px 0}
+.own-seg{display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:900;color:white}
+.own-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.own-leg{display:flex;align-items:center;gap:5px;font-size:.75rem;font-weight:700}
+.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+/* squeeze-o-meter */
+.sqz-meter{margin-top:8px}
+.sqz-lbl{font-size:.7rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;display:flex;justify-content:space-between}
+.sqz-track{height:14px;background:#eee;border-radius:7px;overflow:hidden}
+.sqz-fill{height:100%;border-radius:7px;background:linear-gradient(90deg,var(--orange),var(--red));transition:width .8s ease;width:0%}
+
+/* ingredient reveals */
+.ingredient{border:1.5px solid var(--mint-lt);border-radius:12px;padding:12px 14px;opacity:.4;transition:all .4s}
+.ingredient.revealed{opacity:1;border-color:var(--red)}
+.ingr-head{display:flex;align-items:center;gap:10px}
+.ingr-icon{font-size:1.4rem;flex-shrink:0}
+.ingr-title{font-size:.88rem;font-weight:800;color:var(--navy)}
+.ingr-desc{font-size:.78rem;color:var(--muted);line-height:1.5;margin-top:6px;display:none}
+.ingredient.revealed .ingr-desc{display:block}
+.ingredient.revealed .ingr-title{color:var(--red)}
+
+.reveal-btn{width:100%;padding:12px;border-radius:12px;border:none;background:var(--navy);color:white;font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:800;cursor:pointer;transition:all .2s}
+.reveal-btn:hover{background:#2a5298}
+.reveal-btn:disabled{background:var(--mint);color:var(--teal);cursor:default}
+
+/* borrow meter */
+.meter-bar{height:14px;background:#eee;border-radius:7px;overflow:hidden;margin:6px 0}
+.meter-fill{height:100%;border-radius:7px;transition:width 1.2s ease;background:linear-gradient(90deg,var(--orange),var(--red))}
+
+/* chart */
+.chart-area{background:white;border-radius:16px;padding:16px;box-shadow:0 2px 14px rgba(26,58,92,.08)}
+canvas{width:100%;display:block}
+.chart-labels{display:flex;justify-content:space-between;font-size:.65rem;color:var(--muted);font-weight:700;margin-top:4px}
+.play-btn{background:var(--mint-lt);color:var(--teal);border:none;border-radius:8px;padding:7px 16px;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:800;cursor:pointer;margin-bottom:8px}
+
+/* pnl */
+.pnl-bar{background:var(--navy);border-radius:16px;padding:14px;display:flex;gap:0}
+.pnl-item{flex:1;text-align:center}
+.pnl-item+.pnl-item{border-left:1px solid rgba(255,255,255,.15)}
+.pnl-lbl{font-size:.62rem;color:rgba(255,255,255,.6);font-weight:700;text-transform:uppercase;letter-spacing:.8px}
+.pnl-val{font-size:1.25rem;font-weight:900;color:white;margin-top:3px;transition:all .4s}
+.pnl-val.loss{color:#ff6b6b}
+.pnl-val.gain{color:#6ee7b7}
+
+/* decision */
+.decision-card{background:linear-gradient(135deg,#fff3cd,#ffe8a1);border:2px solid var(--orange);border-radius:16px;padding:16px;display:none}
+.decision-card.show{display:block;animation:fadeIn .4s ease}
+.decision-q{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:var(--navy);margin-bottom:12px}
+.d-btns{display:flex;gap:8px;flex-wrap:wrap}
+.d-btn{flex:1;min-width:130px;padding:12px;border-radius:10px;border:none;font-family:'Nunito',sans-serif;font-size:.84rem;font-weight:800;cursor:pointer;transition:all .2s;line-height:1.4}
+.d-btn.hold{background:var(--red);color:white}
+.d-btn.cut{background:var(--teal);color:white}
+.d-btn:hover{transform:translateY(-2px);opacity:.9}
+.outcome-card{border-radius:12px;padding:14px;font-size:.84rem;line-height:1.6;display:none;margin-top:10px}
+.outcome-card.show{display:block;animation:fadeIn .4s ease}
+.outcome-card.bad{background:#fee2e2;border:1.5px solid var(--red);color:#7f1d1d}
+.outcome-card.good{background:#d1fae5;border:1.5px solid #34d399;color:#065f46}
+
+/* chain */
+.chain{display:flex;flex-direction:column;gap:8px}
+.chain-item{display:flex;align-items:center;gap:10px;background:white;border-radius:12px;padding:11px 14px;box-shadow:0 1px 8px rgba(26,58,92,.06);font-size:.82rem;font-weight:700;opacity:0;transform:translateX(-14px);transition:all .4s ease}
+.chain-item.show{opacity:1;transform:none}
+.chain-item.panic{border-left:4px solid var(--red)}
+.chain-item.rise{border-left:4px solid var(--orange)}
+.chain-item.peak{border-left:4px solid var(--teal)}
+.chain-icon{font-size:1.4rem;flex-shrink:0}
+.chain-txt{flex:1}
+.chain-price{font-size:.95rem;font-weight:900;color:var(--red);margin-left:auto;flex-shrink:0}
+.chain-next-btn{width:100%;padding:13px;border-radius:12px;border:none;background:var(--orange);color:white;font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:800;cursor:pointer;transition:all .2s}
+.chain-next-btn:hover{background:#d4853a;transform:translateY(-1px)}
+
+/* quiz */
+.quiz-card{background:white;border-radius:16px;padding:18px;box-shadow:0 2px 14px rgba(26,58,92,.08)}
+.quiz-q{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:var(--navy);margin-bottom:14px;line-height:1.4}
+.quiz-num{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);margin-bottom:6px}
+.quiz-opts{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{padding:11px 14px;border-radius:10px;border:1.5px solid var(--mint-lt);background:white;font-family:'Nunito',sans-serif;font-size:.84rem;font-weight:700;cursor:pointer;text-align:left;transition:all .2s;color:var(--navy)}
+.quiz-opt:hover:not(:disabled){border-color:var(--teal);background:var(--mint-lt)}
+.quiz-opt.correct{background:#d1fae5;border-color:#34d399;color:#065f46}
+.quiz-opt.wrong{background:#fee2e2;border-color:var(--red);color:#991b1b}
+.quiz-opt:disabled{cursor:default}
+.quiz-feedback{font-size:.8rem;font-weight:700;padding:8px 12px;border-radius:8px;margin-top:6px;display:none}
+.quiz-feedback.show{display:block;animation:fadeIn .3s}
+.quiz-feedback.ok{background:#d1fae5;color:#065f46}
+.quiz-feedback.nope{background:#fee2e2;color:#991b1b}
+.quiz-score{background:linear-gradient(135deg,var(--navy),#2a5298);color:white;border-radius:16px;padding:20px;text-align:center;display:none}
+.quiz-score.show{display:block;animation:fadeIn .4s}
+.score-big{font-size:3rem;font-weight:900;line-height:1}
+.score-lbl{font-size:.82rem;opacity:.8;margin-top:4px}
+.score-msg{font-size:.9rem;margin-top:10px;line-height:1.5}
+
+/* insight */
+.insight{background:linear-gradient(135deg,var(--navy),#1e4d8a);color:white;border-radius:16px;padding:20px;text-align:center}
+.insight h3{font-family:'Lora',serif;font-style:italic;font-size:1.1rem;margin-bottom:8px}
+.insight p{font-size:.82rem;opacity:.85;line-height:1.65}
+
+/* timeline */
+.timeline{display:flex;flex-direction:column}
+.tl-row{display:flex;gap:12px;padding-bottom:14px;position:relative}
+.tl-row:not(:last-child)::before{content:'';position:absolute;left:13px;top:26px;bottom:0;width:2px;background:var(--mint)}
+.tl-dot{width:26px;height:26px;border-radius:50%;color:white;font-size:.7rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1}
+.tl-content{flex:1;padding-top:2px}
+.tl-date{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--teal)}
+.tl-text{font-size:.82rem;font-weight:600;color:var(--navy);line-height:1.4;margin-top:2px}
+.tl-price{font-size:1.05rem;font-weight:900;margin-top:2px}
+
+/* stats row */
+.stats{display:flex;gap:8px}
+.stat{flex:1;background:white;border-radius:12px;padding:12px;text-align:center;box-shadow:0 1px 8px rgba(26,58,92,.06)}
+.stat-v{font-size:1.2rem;font-weight:900}
+.stat-l{font-size:.62rem;color:var(--muted);font-weight:700;text-transform:uppercase;margin-top:3px}
+
+/* buttons */
+.btn-row{display:flex;gap:10px;margin-top:4px}
+.btn{flex:1;padding:14px;border-radius:12px;border:none;font-family:'Nunito',sans-serif;font-size:.92rem;font-weight:800;cursor:pointer;transition:all .2s}
+.btn-p{background:var(--teal);color:white}
+.btn-p:hover{background:#238d80;transform:translateY(-1px)}
+.btn-b{background:var(--mint-lt);color:var(--navy)}
+.btn-b:hover{background:var(--mint)}
+.btn-b:disabled{opacity:.35;cursor:default}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="IFM round logo for watermark.png" alt="IFM">
+  <div>
+    <h1>The Short Squeeze</h1>
+    <p>How Avis stock went from $100 to $850 in 3 weeks</p>
+  </div>
+</header>
+
+<div class="progress">
+  <div class="dot active" id="d1"></div>
+  <div class="dot" id="d2"></div>
+  <div class="dot" id="d3"></div>
+  <div class="dot" id="d4"></div>
+  <div class="dot" id="d5"></div>
+</div>
+
+<!-- ═══════ SCENE 1: Short Selling 101 ═══════ -->
+<div class="scene active" id="s1">
+  <div>
+    <div class="scene-tag">Scene 1 of 5</div>
+    <div class="scene-title">What is short selling?</div>
+  </div>
+  <div class="scene-sub">Most investors buy shares hoping the price <em>rises</em>. Short sellers do the opposite — they bet the price will <em>fall</em>. It's legal, common among hedge funds, and very risky. Here's exactly how it works.</div>
+
+  <div class="analogy">
+    <strong>The gold bangles analogy 💍</strong><br><br>
+    Your neighbour has gold bangles worth <strong>₹1 lakh</strong>. You think gold prices will fall, so you borrow them and sell them immediately for ₹1 lakh.<br><br>
+    A month later, gold falls to ₹80,000. You buy new bangles for ₹80,000, return them to your neighbour, and <strong>keep ₹20,000 profit</strong>. 🎉<br><br>
+    But what if gold <em>rises</em> to ₹1.5 lakh? You still owe those bangles back. You must buy at ₹1.5 lakh — a <strong>₹50,000 loss</strong>. And if gold goes to ₹3 lakh? That's a ₹2 lakh loss... on a ₹1 lakh bet. The loss has <em>no ceiling</em>.
+  </div>
+
+  <div class="card">
+    <div class="card-title">How it works in the stock market — tap each step</div>
+    <div class="steps">
+      <div class="step-item" onclick="toggleStep(this)">
+        <div class="step-head">
+          <div class="step-num">1</div>
+          <div class="step-title">Borrow shares &amp; sell them immediately</div>
+          <div class="step-arrow">▶</div>
+        </div>
+        <div class="step-body">
+          You open a "margin account" with your broker. You borrow 10 Avis shares and sell them on the market straight away.
+          <div class="step-example">📥 You receive: $1,000 cash (10 shares × $100)<br>📋 You owe: 10 Avis shares (to be returned later)</div>
+        </div>
+      </div>
+      <div class="step-item" onclick="toggleStep(this)">
+        <div class="step-head">
+          <div class="step-num">2</div>
+          <div class="step-title">Wait &amp; watch the price</div>
+          <div class="step-arrow">▶</div>
+        </div>
+        <div class="step-body">
+          You're now "short" — you want the price to drop. While you wait, you pay a small daily borrowing fee to your broker. Time is not your friend.
+          <div class="step-example">⏳ Every day the stock stays above $100, you're paying fees with no profit to show for it.</div>
+        </div>
+      </div>
+      <div class="step-item" onclick="toggleStep(this)">
+        <div class="step-head">
+          <div class="step-num">3</div>
+          <div class="step-title">Buy back shares to "cover" your short</div>
+          <div class="step-arrow">▶</div>
+        </div>
+        <div class="step-body">
+          When you're ready to close your position, you buy 10 shares on the market and return them. The difference between what you sold for and what you buy back at = your profit or loss.
+          <div class="step-example">✅ Bought back at $70 → Profit: ($100 − $70) × 10 = <strong>$300</strong><br>❌ Bought back at $200 → Loss: ($200 − $100) × 10 = <strong>$1,000</strong></div>
+        </div>
+      </div>
+      <div class="step-item" onclick="toggleStep(this)">
+        <div class="step-head">
+          <div class="step-num">4</div>
+          <div class="step-title">The danger: the margin call</div>
+          <div class="step-arrow">▶</div>
+        </div>
+        <div class="step-body">
+          If the price rises too much, your broker gets nervous. They issue a <strong>margin call</strong> — demanding you either deposit more cash immediately, or they forcibly close your position (buy back the shares on your behalf, at whatever the price is right now).
+          <div class="step-example">🚨 Margin call = you have no choice. You MUST buy back the shares, even if the price is $850.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-card">
+    <div class="card-title">Try the maths yourself 🧮</div>
+    <div class="calc-sub">You shorted 10 shares at $100. Drag the slider to set the buy-back price:</div>
+    <div class="slider-wrap">
+      <div class="slider-labels"><span>$0 (stock goes bust)</span><span>$400 (big rise)</span></div>
+      <input type="range" id="sldr" min="0" max="400" value="100" oninput="calcSlider(this.value)">
+    </div>
+    <div class="calc-result neutral" id="calcResult">Move the slider to see your profit or loss</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">The brutal asymmetry of short selling</div>
+    <div class="asym-wrap">
+      <div class="asym-row">
+        <div class="asym-lbl">Max profit<br>(stock → $0)</div>
+        <div class="asym-track"><div class="asym-fill g" style="width:22%">+$1,000</div></div>
+      </div>
+      <div class="asym-row">
+        <div class="asym-lbl">Loss at $200</div>
+        <div class="asym-track"><div class="asym-fill r1" style="width:22%">−$1,000</div></div>
+      </div>
+      <div class="asym-row">
+        <div class="asym-lbl">Loss at $500</div>
+        <div class="asym-track"><div class="asym-fill r2" style="width:88%">−$4,000</div></div>
+      </div>
+      <div class="asym-row">
+        <div class="asym-lbl">Loss at $850</div>
+        <div class="asym-track" style="background:#fee2e2"><div class="asym-fill r3" style="width:100%">−$7,500</div></div>
+        <div class="infinity">→ ∞</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:.78rem;color:var(--muted);line-height:1.5">Your max profit is capped at <strong>$1,000</strong> (if the stock hits $0). Your potential loss is <strong>unlimited</strong>.</div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-b" disabled>← Back</button>
+    <button class="btn btn-p" onclick="go(2)">Next: The Setup →</button>
+  </div>
+</div>
+
+<!-- ═══════ SCENE 2: The Setup ═══════ -->
+<div class="scene" id="s2">
+  <div>
+    <div class="scene-tag">Scene 2 of 5</div>
+    <div class="scene-title">The perfect trap is set</div>
+  </div>
+  <div class="scene-sub">In early 2026, Avis (ticker: CAR 🚗) was a popular short. Hedge funds were betting it would fall. Three ingredients combined to make a short squeeze almost inevitable.</div>
+
+  <div class="card">
+    <div class="card-title">Who owned Avis shares?</div>
+    <div class="own-bar">
+      <div class="own-seg" style="width:35%;background:#1a3a5c">SRS 35%</div>
+      <div class="own-seg" style="width:35%;background:var(--teal)">Pentwater 35%</div>
+      <div class="own-seg" style="width:15%;background:var(--mint);color:var(--navy)">Other</div>
+      <div class="own-seg" style="width:15%;background:var(--red)">Shorts</div>
+    </div>
+    <div class="own-legend">
+      <div class="own-leg"><div class="leg-dot" style="background:#1a3a5c"></div>SRS Investment (35%)</div>
+      <div class="own-leg"><div class="leg-dot" style="background:var(--teal)"></div>Pentwater Capital (35%)</div>
+      <div class="own-leg"><div class="leg-dot" style="background:var(--mint);border:1px solid #ccc"></div>Other holders (15%)</div>
+      <div class="own-leg"><div class="leg-dot" style="background:var(--red)"></div>Short sellers (15%)</div>
+    </div>
+  </div>
+
+  <div style="font-size:.85rem;font-weight:800;color:var(--navy)">Reveal the 3 squeeze ingredients one by one:</div>
+
+  <div class="steps" id="ingr-list">
+    <div class="ingredient" id="ingr0">
+      <div class="ingr-head"><div class="ingr-icon">🔒</div><div class="ingr-title">Ingredient 1: Shares locked away</div></div>
+      <div class="ingr-desc">SRS and Pentwater controlled <strong>70% of the float</strong> combined — and neither wanted to lend their shares out. Short sellers could barely find stock to borrow. <br><br>The less stock available to borrow, the harder it is for shorts to close their positions when things go wrong.</div>
+    </div>
+    <div class="ingredient" id="ingr1">
+      <div class="ingr-head"><div class="ingr-icon">📉</div><div class="ingr-title">Ingredient 2: Heavy short interest</div></div>
+      <div class="ingr-desc">Many hedge funds had piled in to short Avis simultaneously. Short sellers owed back a large number of shares — shares that were already scarce to begin with.<br><br>When they'd all need to buy at once... the price had nowhere to go but up.</div>
+    </div>
+    <div class="ingredient" id="ingr2">
+      <div class="ingr-head"><div class="ingr-icon">💥</div><div class="ingr-title">Ingredient 3: A trigger price movement</div></div>
+      <div class="ingr-desc">All it took was an initial price bump — possibly some positive news or large buyers entering the market. When the price started climbing, the first margin calls went out, and the chain reaction began.</div>
+    </div>
+  </div>
+
+  <button class="reveal-btn" id="revealBtn" onclick="revealIngredient()">Reveal ingredient 1 →</button>
+
+  <div class="sqz-meter">
+    <div class="sqz-lbl"><span>Squeeze risk building...</span><span id="sqzPct">0%</span></div>
+    <div class="sqz-track"><div class="sqz-fill" id="sqzFill"></div></div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-b" onclick="go(1)">← Back</button>
+    <button class="btn btn-p" id="s2next" onclick="go(3)" style="opacity:.4;pointer-events:none">Watch it happen →</button>
+  </div>
+</div>
+
+<!-- ═══════ SCENE 3: The Squeeze ═══════ -->
+<div class="scene" id="s3">
+  <div>
+    <div class="scene-tag">Scene 3 of 5</div>
+    <div class="scene-title">Your bet goes horribly wrong</div>
+  </div>
+  <div class="scene-sub">You shorted 10 Avis shares at $100. You received $1,000 and owe 10 shares back. Let's watch what happened...</div>
+
+  <div class="pnl-bar">
+    <div class="pnl-item"><div class="pnl-lbl">Shorted at</div><div class="pnl-val">$100</div></div>
+    <div class="pnl-item"><div class="pnl-lbl">Current price</div><div class="pnl-val" id="curPrice">$100</div></div>
+    <div class="pnl-item"><div class="pnl-lbl">Your P&amp;L</div><div class="pnl-val" id="curPnl">$0</div></div>
+  </div>
+
+  <div class="chart-area">
+    <button class="play-btn" onclick="runChart()" id="playBtn">▶ Play the squeeze</button>
+    <canvas id="priceChart" height="160"></canvas>
+    <div class="chart-labels"><span>Mar 20</span><span>Apr 1</span><span>Apr 10</span><span>Apr 17</span><span>Apr 22</span></div>
+  </div>
+
+  <div class="decision-card" id="decisionCard">
+    <div class="decision-q">"The price just hit $200. Your loss is $1,000 and growing. What do you do?"</div>
+    <div class="d-btns">
+      <button class="d-btn hold" onclick="holdDecision()">😤 Hold — it'll come back down</button>
+      <button class="d-btn cut" onclick="cutDecision()">✂️ Cut my losses now at $200</button>
+    </div>
+    <div class="outcome-card bad" id="outcomeHold">
+      <strong>You held — and the margin call came anyway.</strong><br>
+      The price kept climbing to $850. Your broker forced you out. Loss: <strong>$7,500</strong> on a $1,000 short. You lost 7.5× your original bet.<br><br>
+      <em>This is why professionals call short squeezes "the most dangerous trade in the market."</em>
+    </div>
+    <div class="outcome-card good" id="outcomeCut">
+      <strong>Smart thinking — you cut your losses early.</strong><br>
+      Loss: $1,000 at $200. Painful, but manageable. Those who held got wiped out at $850 with a $7,500 loss.<br><br>
+      <em>Knowing when to exit is often more important than knowing when to enter.</em>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-b" onclick="go(2)">← Back</button>
+    <button class="btn btn-p" id="s3next" onclick="go(4)" style="opacity:.4;pointer-events:none">See the chain reaction →</button>
+  </div>
+</div>
+
+<!-- ═══════ SCENE 4: Death Spiral ═══════ -->
+<div class="scene" id="s4">
+  <div>
+    <div class="scene-tag">Scene 4 of 5</div>
+    <div class="scene-title">The death spiral</div>
+  </div>
+  <div class="scene-sub">Each short seller who's forced to buy back shares pushes the price <em>higher</em> — which forces the next one to panic too. Tap to see each step unfold.</div>
+
+  <div class="chain" id="chain">
+    <div class="chain-item panic" id="c1">
+      <div class="chain-icon">😰</div>
+      <div class="chain-txt"><div>Short seller A: margin call at $200</div><div style="font-size:.72rem;color:var(--muted);margin-top:2px">Forced to buy 50,000 shares to close position</div></div>
+      <div class="chain-price">$200 ↑</div>
+    </div>
+    <div class="chain-item rise" id="c2">
+      <div class="chain-icon">📈</div>
+      <div class="chain-txt"><div>That buying pushes price to $350</div><div style="font-size:.72rem;color:var(--muted);margin-top:2px">Barely any spare shares exist — each buy order has outsized impact</div></div>
+      <div class="chain-price">$350 ↑</div>
+    </div>
+    <div class="chain-item panic" id="c3">
+      <div class="chain-icon">😱</div>
+      <div class="chain-txt"><div>Short seller B: now down $500k — panic!</div><div style="font-size:.72rem;color:var(--muted);margin-top:2px">Buys back shares immediately to stop the bleeding</div></div>
+      <div class="chain-price">$350 ↑</div>
+    </div>
+    <div class="chain-item rise" id="c4">
+      <div class="chain-icon">🚀</div>
+      <div class="chain-txt"><div>Price explodes to $600</div><div style="font-size:.72rem;color:var(--muted);margin-top:2px">Each buy amplified — remember, 70% of shares are locked away</div></div>
+      <div class="chain-price">$600 ↑</div>
+    </div>
+    <div class="chain-item panic" id="c5">
+      <div class="chain-icon">🆘</div>
+      <div class="chain-txt"><div>Short sellers C, D, E all forced to cover</div><div style="font-size:.72rem;color:var(--muted);margin-top:2px">Hedge funds lose hundreds of millions in hours</div></div>
+      <div class="chain-price">$600 ↑</div>
+    </div>
+    <div class="chain-item peak" id="c6">
+      <div class="chain-icon">🏔️</div>
+      <div class="chain-txt"><div style="color:var(--teal);font-weight:900">Avis peaks at $850</div><div style="font-size:.72rem;color:var(--muted);margin-top:2px">All shorts covered. Panic buying stops. Price starts to fall.</div></div>
+      <div class="chain-price" style="color:var(--teal)">$850</div>
+    </div>
+  </div>
+
+  <button class="chain-next-btn" id="chainBtn" onclick="revealNextChain()">What happens next? → <span id="chainCount">(1 of 6)</span></button>
+
+  <div class="insight" id="chainInsight" style="display:none">
+    <h3>Why does scarcity make it so much worse?</h3>
+    <p>When 70% of shares are locked away, even moderate panic buying causes enormous price swings. It's like 100 people trying to flee through a single door — the exit is tiny, and everyone is trapped.<br><br>The squeeze ends only when the last short seller has covered. Then the buying stops, and the price crashes back down.</p>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-b" onclick="go(3)">← Back</button>
+    <button class="btn btn-p" onclick="go(5)">The aftermath →</button>
+  </div>
+</div>
+
+<!-- ═══════ SCENE 5: Quiz + Lessons ═══════ -->
+<div class="scene" id="s5">
+  <div>
+    <div class="scene-tag">Scene 5 of 5</div>
+    <div class="scene-title">Let's see what you remember</div>
+  </div>
+  <div class="scene-sub">Three quick questions before the big reveal. No pressure — you've got this!</div>
+
+  <!-- Quiz -->
+  <div id="quizSection">
+    <div class="quiz-card" id="qCard0">
+      <div class="quiz-num">Question 1 of 3</div>
+      <div class="quiz-q">What is a "short squeeze"?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="answer(0,0,0)">When a company buys back its own shares to push the price up</button>
+        <button class="quiz-opt" onclick="answer(0,1,0)">When short sellers are forced to buy back shares, pushing the price higher and higher</button>
+        <button class="quiz-opt" onclick="answer(0,2,0)">When a stock drops sharply in a short period of time</button>
+        <button class="quiz-opt" onclick="answer(0,3,0)">When two large investors sell their stakes at the same time</button>
+      </div>
+      <div class="quiz-feedback" id="qfb0"></div>
+    </div>
+    <div class="quiz-card" id="qCard1" style="display:none">
+      <div class="quiz-num">Question 2 of 3</div>
+      <div class="quiz-q">Why was Avis so vulnerable to a short squeeze?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="answer(1,0,1)">Avis was close to going bankrupt</button>
+        <button class="quiz-opt" onclick="answer(1,1,1)">70% of shares were locked up by two funds who wouldn't lend them out</button>
+        <button class="quiz-opt" onclick="answer(1,2,1)">The Avis CEO bought millions of shares personally</button>
+        <button class="quiz-opt" onclick="answer(1,3,1)">It was the most popular stock on the market</button>
+      </div>
+      <div class="quiz-feedback" id="qfb1"></div>
+    </div>
+    <div class="quiz-card" id="qCard2" style="display:none">
+      <div class="quiz-num">Question 3 of 3</div>
+      <div class="quiz-q">If you short a $100 share, what is your maximum possible profit?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="answer(2,0,2)">Unlimited — the bigger the rise, the more you make</button>
+        <button class="quiz-opt" onclick="answer(2,1,2)">$100 per share (only if the stock falls all the way to zero)</button>
+        <button class="quiz-opt" onclick="answer(2,2,2)">$50 per share</button>
+        <button class="quiz-opt" onclick="answer(2,3,2)">The same as buying — you can double your money</button>
+      </div>
+      <div class="quiz-feedback" id="qfb2"></div>
+    </div>
+  </div>
+
+  <div class="quiz-score" id="quizScore">
+    <div class="score-big" id="scoreBig">0/3</div>
+    <div class="score-lbl">CORRECT ANSWERS</div>
+    <div class="score-msg" id="scoreMsg"></div>
+  </div>
+
+  <!-- Lessons — hidden until quiz done -->
+  <div id="lessonsSection" style="display:none">
+    <div class="card">
+      <div style="font-family:'Lora',serif;font-style:italic;font-size:1rem;color:var(--navy);margin-bottom:14px">The real Avis timeline — 2026</div>
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--teal)">S</div>
+          <div class="tl-content">
+            <div class="tl-date">March 20</div>
+            <div class="tl-text">Avis trading normally. Hedge funds hold large short positions.</div>
+            <div class="tl-price" style="color:var(--teal)">$100</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--orange)">↑</div>
+          <div class="tl-content">
+            <div class="tl-date">Early April</div>
+            <div class="tl-text">Price starts rising. First margin calls go out. Panic begins.</div>
+            <div class="tl-price" style="color:var(--orange)">$200–400</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--red)">!</div>
+          <div class="tl-content">
+            <div class="tl-date">April 15–22</div>
+            <div class="tl-text">Full squeeze. Shorts scramble. Price surges past $700 in hours. Hedge funds lose hundreds of millions.</div>
+            <div class="tl-price" style="color:var(--red)">$700–850</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--navy)">↓</div>
+          <div class="tl-content">
+            <div class="tl-date">Late April / May</div>
+            <div class="tl-text">All shorts covered. Panic buying stops. Price crashes — Avis fundamentals haven't changed at all.</div>
+            <div class="tl-price" style="color:var(--navy)">~$200</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-v" style="color:var(--red)">750%</div><div class="stat-l">Max price rise</div></div>
+      <div class="stat"><div class="stat-v" style="color:var(--orange)">3 wks</div><div class="stat-l">$100 → $850</div></div>
+      <div class="stat"><div class="stat-v" style="color:var(--teal)">$200s</div><div class="stat-l">Where it settled</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">3 things to take away</div>
+      <div class="steps">
+        <div class="step-item open">
+          <div class="step-head"><div class="step-num" style="background:var(--teal)">1</div><div class="step-title">Short squeezes are always temporary</div><div class="step-arrow">▶</div></div>
+          <div class="step-body" style="display:block">The price spike is driven by panic, not company value. Once all the shorts are covered and forced buying stops, the price returns to something rational.</div>
+        </div>
+        <div class="step-item open">
+          <div class="step-head"><div class="step-num" style="background:var(--teal)">2</div><div class="step-title">Scarcity = amplification</div><div class="step-arrow">▶</div></div>
+          <div class="step-body" style="display:block">The Avis squeeze was so extreme because 70% of shares were locked away. If shares had been freely available, the price rise would have been much smaller.</div>
+        </div>
+        <div class="step-item open">
+          <div class="step-head"><div class="step-num" style="background:var(--teal)">3</div><div class="step-title">Short selling is not for regular investors</div><div class="step-arrow">▶</div></div>
+          <div class="step-body" style="display:block">Unlimited downside, borrowing fees, margin calls, and the risk of getting squeezed. For most investors, the risk is simply not worth it. Long-term investing with real companies is safer, simpler, and kinder to your sleep. 😊</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-b" onclick="go(4)">← Back</button>
+    <button class="btn btn-p" onclick="go(1)">Start again ↺</button>
+  </div>
+</div>
+
+<script>
+let cur = 1;
+
+function go(n) {
+  document.getElementById('s'+cur).classList.remove('active');
+  [1,2,3,4,5].forEach(i => {
+    document.getElementById('d'+i).className = 'dot'+(i===n?' active':i<n?' done':'');
+  });
+  cur = n;
+  document.getElementById('s'+n).classList.add('active');
+  if (n===2) { setTimeout(resetIngredients, 100); }
+  if (n===3) { resetScene3(); setTimeout(()=>{ resetChart(); }, 200); }
+  if (n===4) resetChain();
+  if (n===5) resetQuiz();
+}
+
+// ── SCENE 1: Steps expand ────────────────────────────────────────
+function toggleStep(el) {
+  el.classList.toggle('open');
+}
+
+// ── SCENE 1: Slider calculator ───────────────────────────────────
+function calcSlider(v) {
+  v = parseInt(v);
+  const pnl = (100 - v) * 10;
+  const el = document.getElementById('calcResult');
+  if (v === 100) {
+    el.className = 'calc-result neutral';
+    el.innerHTML = 'Buy back at $100 → no profit, no loss (break even)';
+  } else if (pnl > 0) {
+    el.className = 'calc-result profit';
+    el.innerHTML = `Buy back at $${v} → Profit: ($100 − $${v}) × 10 shares = <strong>+$${pnl.toLocaleString()}</strong> 🎉`;
+  } else {
+    el.className = 'calc-result loss';
+    el.innerHTML = `Buy back at $${v} → Loss: ($${v} − $100) × 10 shares = <strong>−$${Math.abs(pnl).toLocaleString()}</strong> 😬${v >= 300 ? '<br><em>And it could go even higher...</em>' : ''}`;
+  }
+}
+
+// ── SCENE 2: Ingredient reveals ──────────────────────────────────
+let ingrStep = 0;
+const sqzPcts = [33, 66, 100];
+
+function resetIngredients() {
+  ingrStep = 0;
+  document.querySelectorAll('.ingredient').forEach(el => el.classList.remove('revealed'));
+  document.getElementById('revealBtn').textContent = 'Reveal ingredient 1 →';
+  document.getElementById('revealBtn').disabled = false;
+  document.getElementById('sqzFill').style.width = '0%';
+  document.getElementById('sqzPct').textContent = '0%';
+  const nb = document.getElementById('s2next');
+  nb.style.opacity = '.4'; nb.style.pointerEvents = 'none';
+}
+
+function revealIngredient() {
+  if (ingrStep >= 3) return;
+  document.getElementById('ingr'+ingrStep).classList.add('revealed');
+  document.getElementById('sqzFill').style.width = sqzPcts[ingrStep] + '%';
+  document.getElementById('sqzPct').textContent = sqzPcts[ingrStep] + '%';
+  ingrStep++;
+  const btn = document.getElementById('revealBtn');
+  if (ingrStep < 3) {
+    btn.textContent = 'Reveal ingredient ' + (ingrStep+1) + ' →';
+  } else {
+    btn.textContent = '✓ All ingredients revealed — squeeze inevitable!';
+    btn.disabled = true;
+    const nb = document.getElementById('s2next');
+    nb.style.opacity = '1'; nb.style.pointerEvents = 'auto';
+  }
+}
+
+// ── SCENE 3: Chart & decision ────────────────────────────────────
+const PRICES = [100,103,98,105,110,118,125,140,165,200,260,340,430,540,660,760,820,850,820,760,680,580,460,340,260,200];
+const PAUSE_AT = 9; // index where we pause (price = 200)
+let chartAnim = null;
+let chartStep = 0;
+let decisionShown = false;
+let decisionDone = false;
+
+function resetScene3() {
+  if (chartAnim) { clearTimeout(chartAnim); chartAnim = null; }
+  chartStep = 0; decisionShown = false; decisionDone = false;
+  document.getElementById('decisionCard').classList.remove('show');
+  document.getElementById('decisionCard').style.display = 'none';
+  document.getElementById('outcomeHold').className = 'outcome-card bad';
+  document.getElementById('outcomeCut').className = 'outcome-card good';
+  document.querySelectorAll('.d-btn').forEach(b => b.disabled = false);
+  const nb = document.getElementById('s3next');
+  nb.style.opacity = '.4'; nb.style.pointerEvents = 'none';
+  document.getElementById('playBtn').textContent = '▶ Play the squeeze';
+  document.getElementById('playBtn').disabled = false;
+}
+
+function resetChart() {
+  const c = document.getElementById('priceChart');
+  c.width = c.offsetWidth * (window.devicePixelRatio||1);
+  c.height = 160 * (window.devicePixelRatio||1);
+  c.getContext('2d').clearRect(0,0,c.width,c.height);
+  updatePnl(100);
+}
+
+function runChart() {
+  if (chartAnim) { clearTimeout(chartAnim); chartAnim = null; }
+  chartStep = 0;
+  decisionShown = false;
+  document.getElementById('playBtn').disabled = true;
+  document.getElementById('playBtn').textContent = 'Playing...';
+  resetChart();
+  frame();
+}
+
+function frame() {
+  chartStep++;
+  if (chartStep > PRICES.length) return;
+  drawChart(PRICES.slice(0, chartStep));
+  updatePnl(PRICES[chartStep-1]);
+
+  if (chartStep === PAUSE_AT + 1 && !decisionShown) {
+    decisionShown = true;
+    setTimeout(showDecision, 300);
+    return;
+  }
+  chartAnim = setTimeout(frame, 85);
+}
+
+function showDecision() {
+  const dc = document.getElementById('decisionCard');
+  dc.style.display = 'block';
+  setTimeout(() => dc.classList.add('show'), 10);
+}
+
+function holdDecision() {
+  document.querySelectorAll('.d-btn').forEach(b => b.disabled = true);
+  document.getElementById('outcomeHold').classList.add('show');
+  document.getElementById('outcomeCut').className = 'outcome-card good';
+  chartAnim = setTimeout(frameContinue, 600);
+}
+
+function cutDecision() {
+  document.querySelectorAll('.d-btn').forEach(b => b.disabled = true);
+  document.getElementById('outcomeCut').classList.add('show');
+  document.getElementById('outcomeHold').className = 'outcome-card bad';
+  unlockS3Next();
+  document.getElementById('playBtn').textContent = '↺ Replay';
+  document.getElementById('playBtn').disabled = false;
+  document.getElementById('playBtn').onclick = function() { resetScene3(); resetChart(); };
+}
+
+function frameContinue() {
+  chartStep++;
+  if (chartStep > PRICES.length) { unlockS3Next(); document.getElementById('playBtn').textContent='↺ Replay'; document.getElementById('playBtn').disabled=false; document.getElementById('playBtn').onclick=function(){resetScene3();resetChart();}; return; }
+  drawChart(PRICES.slice(0, chartStep));
+  updatePnl(PRICES[chartStep-1]);
+  chartAnim = setTimeout(frameContinue, 85);
+}
+
+function unlockS3Next() {
+  const nb = document.getElementById('s3next');
+  nb.style.opacity = '1'; nb.style.pointerEvents = 'auto';
+}
+
+function drawChart(data) {
+  const c = document.getElementById('priceChart');
+  const ctx = c.getContext('2d');
+  const dpr = window.devicePixelRatio||1;
+  const W = c.width, H = c.height;
+  ctx.clearRect(0,0,W,H);
+  const pad = {l:40*dpr,r:12*dpr,t:16*dpr,b:20*dpr};
+  const w = W-pad.l-pad.r, h = H-pad.t-pad.b;
+  const maxP=900, minP=60;
+  const xStep = w/(PRICES.length-1);
+  const xOf = i => pad.l+i*xStep;
+  const yOf = p => pad.t+h-((p-minP)/(maxP-minP))*h;
+
+  ctx.strokeStyle='#e8f0ee'; ctx.lineWidth=dpr;
+  [200,400,600,800].forEach(p => {
+    const y=yOf(p);
+    ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(W-pad.r,y); ctx.stroke();
+    ctx.fillStyle='#9ab8c4'; ctx.font=`${9*dpr}px Nunito`; ctx.textAlign='right';
+    ctx.fillText('$'+p, pad.l-4*dpr, y+3*dpr);
+  });
+  if (data.length<2) return;
+
+  const curP = data[data.length-1];
+  const color = curP>200?'#e63946':curP>100?'#f4a261':'#2a9d8f';
+  const grad = ctx.createLinearGradient(0,pad.t,0,H-pad.b);
+  grad.addColorStop(0, curP>100?'rgba(230,57,70,.2)':'rgba(42,157,143,.2)');
+  grad.addColorStop(1,'rgba(247,250,249,0)');
+  ctx.beginPath(); ctx.moveTo(xOf(0),yOf(data[0]));
+  data.forEach((p,i)=>ctx.lineTo(xOf(i),yOf(p)));
+  ctx.lineTo(xOf(data.length-1),H-pad.b); ctx.lineTo(xOf(0),H-pad.b);
+  ctx.closePath(); ctx.fillStyle=grad; ctx.fill();
+
+  ctx.beginPath(); ctx.moveTo(xOf(0),yOf(data[0]));
+  data.forEach((p,i)=>ctx.lineTo(xOf(i),yOf(p)));
+  ctx.strokeStyle=color; ctx.lineWidth=2.5*dpr; ctx.lineJoin='round'; ctx.stroke();
+
+  const lx=xOf(data.length-1), ly=yOf(curP);
+  ctx.beginPath(); ctx.arc(lx,ly,5*dpr,0,Math.PI*2);
+  ctx.fillStyle=color; ctx.fill();
+}
+
+function updatePnl(price) {
+  const pnl=(100-price)*10;
+  const pe=document.getElementById('curPrice');
+  const pl=document.getElementById('curPnl');
+  pe.textContent='$'+Math.round(price);
+  pl.textContent=(pnl>=0?'+':'')+' $'+Math.abs(Math.round(pnl)).toLocaleString();
+  pe.className='pnl-val'+(price>100?' loss':price<100?' gain':'');
+  pl.className='pnl-val'+(pnl<0?' loss':pnl>0?' gain':'');
+}
+
+// ── SCENE 4: Tap-triggered chain ─────────────────────────────────
+const CHAIN_IDS = ['c1','c2','c3','c4','c5','c6'];
+let chainStep = 0;
+
+function resetChain() {
+  chainStep = 0;
+  CHAIN_IDS.forEach(id => document.getElementById(id).classList.remove('show'));
+  const btn = document.getElementById('chainBtn');
+  btn.style.display = 'block';
+  btn.textContent = 'What happens next? → ';
+  const counter = document.createElement('span');
+  counter.id = 'chainCount';
+  counter.textContent = '(1 of 6)';
+  btn.appendChild(counter);
+  document.getElementById('chainInsight').style.display = 'none';
+}
+
+function revealNextChain() {
+  if (chainStep >= CHAIN_IDS.length) return;
+  document.getElementById(CHAIN_IDS[chainStep]).classList.add('show');
+  chainStep++;
+  const btn = document.getElementById('chainBtn');
+  if (chainStep < CHAIN_IDS.length) {
+    btn.innerHTML = 'What happens next? → <span id="chainCount">('+( chainStep+1 )+' of 6)</span>';
+  } else {
+    btn.style.display = 'none';
+    document.getElementById('chainInsight').style.display = 'block';
+    document.getElementById('chainInsight').style.animation = 'fadeIn .5s ease';
+  }
+}
+
+// ── SCENE 5: Quiz ────────────────────────────────────────────────
+const CORRECT = [1, 1, 1]; // correct option index for each question
+const FEEDBACK_OK  = ["Exactly right! Short sellers are forced to buy back shares, which pushes the price up — which forces more shorts to buy — and so on.", "Correct! 70% of shares locked by two funds who wouldn't lend = almost no shares to borrow. Perfect squeeze conditions.", "Right! If a stock falls to $0 you make $100 profit per share. That's the ceiling. But losses on the upside are unlimited."];
+const FEEDBACK_BAD = ["Not quite. A short squeeze is specifically about short sellers being forced to buy back shares, causing a rapid price spike.", "Not quite. The key was that 70% of shares were locked up by two investors — meaning shorts could barely borrow stock, and when things went wrong, they couldn't easily exit.", "Not quite. In short selling, profits are capped (stock can only fall to $0), but losses are unlimited — the price can keep rising forever."];
+
+let quizScore = 0;
+let quizCur = 0;
+
+function resetQuiz() {
+  quizScore = 0; quizCur = 0;
+  for (let i=0;i<3;i++) {
+    const card = document.getElementById('qCard'+i);
+    card.style.display = i===0?'block':'none';
+    card.querySelectorAll('.quiz-opt').forEach(b=>{b.className='quiz-opt';b.disabled=false;});
+    const fb = document.getElementById('qfb'+i);
+    fb.className='quiz-feedback'; fb.textContent='';
+  }
+  document.getElementById('quizScore').className='quiz-score';
+  document.getElementById('lessonsSection').style.display='none';
+}
+
+function answer(qIdx, chosen, correctAns) {
+  if (chosen === CORRECT[qIdx]) quizScore++;
+  const card = document.getElementById('qCard'+qIdx);
+  const opts = card.querySelectorAll('.quiz-opt');
+  opts.forEach((b,i) => {
+    b.disabled = true;
+    if (i === CORRECT[qIdx]) b.classList.add('correct');
+    else if (i === chosen && chosen !== CORRECT[qIdx]) b.classList.add('wrong');
+  });
+  const fb = document.getElementById('qfb'+qIdx);
+  fb.textContent = (chosen===CORRECT[qIdx] ? '✓ ' : '✗ ') + (chosen===CORRECT[qIdx] ? FEEDBACK_OK[qIdx] : FEEDBACK_BAD[qIdx]);
+  fb.className = 'quiz-feedback show ' + (chosen===CORRECT[qIdx]?'ok':'nope');
+
+  setTimeout(() => {
+    quizCur++;
+    if (quizCur < 3) {
+      document.getElementById('qCard'+(quizCur)).style.display = 'block';
+      document.getElementById('qCard'+(quizCur)).scrollIntoView({behavior:'smooth',block:'start'});
+    } else {
+      showScore();
+    }
+  }, 1800);
+}
+
+function showScore() {
+  const msgs = ["Have another read through and try again — the concept takes a moment to click!","Good effort — re-read scene 2 and 3 to solidify the mechanics.","Almost perfect — great understanding of how short squeezes work!","Brilliant! You've nailed it. 🎉"];
+  const scoreEl = document.getElementById('quizScore');
+  document.getElementById('scoreBig').textContent = quizScore+'/3';
+  document.getElementById('scoreMsg').textContent = msgs[quizScore];
+  scoreEl.className = 'quiz-score show';
+  scoreEl.scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(() => {
+    document.getElementById('lessonsSection').style.display = 'block';
+    document.getElementById('lessonsSection').scrollIntoView({behavior:'smooth',block:'start'});
+  }, 1200);
+}
+
+window.addEventListener('resize', () => { if (cur===3) { resetChart(); } });
+</script>
+</body>
+</html>

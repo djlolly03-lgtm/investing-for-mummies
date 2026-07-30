@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="bg-br" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#160a04"/>
+      <stop offset="100%" stop-color="#0a0402"/>
+    </radialGradient>
+    <filter id="glow-br" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="redeye" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="clip-br"><circle cx="100" cy="100" r="97"/></clipPath>
+  </defs>
+
+  <circle cx="100" cy="100" r="100" fill="#0a0402"/>
+  <circle cx="100" cy="100" r="97" fill="url(#bg-br)"/>
+
+  <!-- Red scan lines in bg -->
+  <g clip-path="url(#clip-br)" opacity="0.08">
+    <line x1="10" y1="50" x2="190" y2="50" stroke="#ef4444" stroke-width="1"/>
+    <line x1="10" y1="70" x2="190" y2="70" stroke="#ef4444" stroke-width="1"/>
+    <line x1="10" y1="90" x2="190" y2="90" stroke="#ef4444" stroke-width="1"/>
+    <line x1="10" y1="110" x2="190" y2="110" stroke="#ef4444" stroke-width="1"/>
+    <line x1="10" y1="130" x2="190" y2="130" stroke="#ef4444" stroke-width="1"/>
+    <line x1="10" y1="150" x2="190" y2="150" stroke="#ef4444" stroke-width="1"/>
+  </g>
+
+  <!-- Body -->
+  <ellipse cx="100" cy="148" rx="42" ry="30" fill="#3d1a0e"/>
+  <ellipse cx="100" cy="144" rx="36" ry="26" fill="#57200e"/>
+
+  <!-- Ears -->
+  <circle cx="68" cy="72" r="18" fill="#3d1a0e"/>
+  <circle cx="68" cy="72" r="13" fill="#7c3419"/>
+  <circle cx="68" cy="72" r="8" fill="#a84020" opacity="0.7"/>
+  <circle cx="132" cy="72" r="18" fill="#3d1a0e"/>
+  <circle cx="132" cy="72" r="13" fill="#7c3419"/>
+  <circle cx="132" cy="72" r="8" fill="#a84020" opacity="0.7"/>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="108" rx="52" ry="52" fill="#3d1a0e"/>
+  <ellipse cx="100" cy="105" rx="48" ry="48" fill="#57200e"/>
+  <ellipse cx="100" cy="102" rx="44" ry="44" fill="#7c3419"/>
+
+  <!-- Mech armour overlay on forehead -->
+  <rect x="72" y="72" width="56" height="20" rx="6" fill="#2d0e06" opacity="0.9"/>
+  <rect x="75" y="75" width="20" height="14" rx="3" fill="#1a0804" opacity="0.9"/>
+  <rect x="105" y="75" width="20" height="14" rx="3" fill="#1a0804" opacity="0.9"/>
+  <!-- Circuit lines forehead -->
+  <g stroke="#ef4444" stroke-width="1" opacity="0.4" fill="none">
+    <path d="M77 79 L80 79 L80 82 L83 82 L83 86"/>
+    <path d="M107 79 L110 79 L110 82 L113 82 L113 86"/>
+    <line x1="77" y1="86" x2="93" y2="86"/><line x1="107" y1="86" x2="123" y2="86"/>
+  </g>
+
+  <!-- Eyes — glowing red  -->
+  <ellipse cx="82" cy="102" rx="14" ry="13" fill="#1a0402"/>
+  <ellipse cx="118" cy="102" rx="14" ry="13" fill="#1a0402"/>
+  <!-- Red glow -->
+  <ellipse cx="82" cy="102" rx="10" ry="9" fill="#dc2626" filter="url(#redeye)"/>
+  <ellipse cx="118" cy="102" rx="10" ry="9" fill="#dc2626" filter="url(#redeye)"/>
+  <!-- Bright centre -->
+  <ellipse cx="82" cy="102" rx="6" ry="5.5" fill="#fca5a5"/>
+  <ellipse cx="118" cy="102" rx="6" ry="5.5" fill="#fca5a5"/>
+  <ellipse cx="82" cy="102" rx="3" ry="4" fill="#1a0402"/>
+  <ellipse cx="118" cy="102" rx="3" ry="4" fill="#1a0402"/>
+  <circle cx="80" cy="100" r="1.5" fill="white" opacity="0.9"/>
+  <circle cx="116" cy="100" r="1.5" fill="white" opacity="0.9"/>
+
+  <!-- Target reticle left eye -->
+  <circle cx="82" cy="102" r="12" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  <line x1="70" y1="102" x2="76" y2="102" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+  <line x1="94" y1="102" x2="88" y2="102" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+  <!-- Target reticle right eye -->
+  <circle cx="118" cy="102" r="12" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  <line x1="106" y1="102" x2="112" y2="102" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+  <line x1="130" y1="102" x2="124" y2="102" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+
+  <!-- Nose/snout -->
+  <ellipse cx="100" cy="122" rx="24" ry="18" fill="#3d1a0e"/>
+  <ellipse cx="100" cy="120" rx="18" ry="13" fill="#57200e"/>
+  <ellipse cx="100" cy="118" rx="8" ry="6" fill="#1a0402"/>
+  <ellipse cx="100" cy="117" rx="6" ry="4" fill="#ef4444" opacity="0.6"/>
+
+  <!-- Mouth -->
+  <path d="M100 126 Q88 134 84 130" stroke="#7c3419" stroke-width="2" fill="none"/>
+  <path d="M100 126 Q112 134 116 130" stroke="#7c3419" stroke-width="2" fill="none"/>
+  <!-- Teeth -->
+  <polygon points="94,126 92,133 96,126" fill="white" opacity="0.7"/>
+  <polygon points="104,126 102,133 106,126" fill="white" opacity="0.7"/>
+
+  <!-- Cheek plates -->
+  <rect x="56" y="106" width="18" height="22" rx="4" fill="#2d0e06" opacity="0.8"/>
+  <rect x="126" y="106" width="18" height="22" rx="4" fill="#2d0e06" opacity="0.8"/>
+  <line x1="59" y1="112" x2="71" y2="112" stroke="#ef4444" stroke-width="1" opacity="0.5"/>
+  <line x1="59" y1="116" x2="71" y2="116" stroke="#ef4444" stroke-width="1" opacity="0.5"/>
+  <line x1="59" y1="120" x2="71" y2="120" stroke="#ef4444" stroke-width="1" opacity="0.5"/>
+  <line x1="129" y1="112" x2="141" y2="112" stroke="#ef4444" stroke-width="1" opacity="0.5"/>
+  <line x1="129" y1="116" x2="141" y2="116" stroke="#ef4444" stroke-width="1" opacity="0.5"/>
+  <line x1="129" y1="120" x2="141" y2="120" stroke="#ef4444" stroke-width="1" opacity="0.5"/>
+
+  <!-- Crown ring -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#7c5440" stroke-width="3" filter="url(#glow-br)" opacity="0.95"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+
+  <!-- Corner ticks -->
+  <g stroke="#7c5440" stroke-width="1.5" opacity="0.6">
+    <line x1="20" y1="55" x2="28" y2="55"/><line x1="20" y1="55" x2="20" y2="63"/>
+    <line x1="180" y1="55" x2="172" y2="55"/><line x1="180" y1="55" x2="180" y2="63"/>
+    <line x1="20" y1="145" x2="28" y2="145"/><line x1="20" y1="145" x2="20" y2="137"/>
+    <line x1="180" y1="145" x2="172" y2="145"/><line x1="180" y1="145" x2="180" y2="137"/>
+  </g>
+</svg>

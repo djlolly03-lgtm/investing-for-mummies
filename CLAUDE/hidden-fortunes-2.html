@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hidden Fortunes 2.0 — Beta | Investing for Mummies</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,600&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1a2d4a;
+      --navy2:      #f0f5fa;
+      --navy3:      #e2ecf5;
+      --gold:       #c8900a;
+      --gold2:      #a87008;
+      --gold-lt:    #fff8e1;
+      --teal:       #2a9d8f;
+      --teal2:      #00796b;
+      --teal-glow:  rgba(0,150,136,0.25);
+      --white:      #ffffff;
+      --muted:      #6b7d93;
+      --glass:      rgba(0,0,0,0.04);
+      --glass-b:    rgba(0,0,0,0.10);
+    }
+
+    body {
+      background: #ffffff;
+      color: var(--navy);
+      font-family: 'Nunito', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── BACKGROUND CANVAS ── */
+    #bgCanvas {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── CONFETTI ── */
+    #confettiCanvas {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 10px 10px 24px;
+    }
+
+    /* ── GAME HERO BANNER ── */
+    .game-hero {
+      border-radius: 16px;
+      padding: 18px 20px 18px 155px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .game-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.07;
+      background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .gh-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .game-hero h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.56rem, 3.6vw, 2.04rem);
+      font-weight: 700;
+      margin-bottom: 5px;
+      line-height: 1.2;
+    }
+    .game-hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.96rem;
+      max-width: 340px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .hero-logo-wide {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      height: 72px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      border-radius: 10px;
+      z-index: 2;
+    }
+    .beta-ribbon {
+      position: absolute;
+      top: 10px; right: -4px;
+      background: linear-gradient(135deg, #ff6b35, #ff9a6c);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      padding: 4px 12px 4px 10px;
+      border-radius: 30px 0 0 30px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 10px rgba(255,107,53,0.4);
+      z-index: 3;
+    }
+    @media (max-width: 540px) {
+      .hero-logo-wide { height: 50px; max-width: 100px; left: 8px; }
+      .game-hero { padding-left: 116px; }
+    }
+    @media (max-width: 359px) {
+      .game-hero { padding-left: 82px; }
+      .hero-logo-wide { height: 38px; max-width: 76px; }
+    }
+
+    @keyframes floatBob {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50%       { transform: translateY(-10px) rotate(2deg); }
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--glass-b), transparent);
+      margin: 10px 0;
+    }
+
+    /* ── SUB-HERO BOX ── */
+    .sub-hero {
+      background: linear-gradient(135deg, #f0f7ff, #e8f4f0);
+      border: 1.5px solid #c2d8e8;
+      border-radius: 14px;
+      padding: 16px 18px 14px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .sub-hero-icon {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+    .sub-hero h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+    .sub-hero p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── HABIT GRID ── */
+    .habit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-bottom: 10px;
+    }
+
+    .habit-card {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 10px 8px 9px;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1),
+                  border-color 0.2s, background 0.2s, box-shadow 0.25s;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+
+    /* shimmer line at top when selected */
+    .habit-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--navy), var(--gold), var(--navy));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+
+    .habit-card:hover {
+      transform: translateY(-3px) scale(1.02);
+      border-color: rgba(200,144,10,0.45);
+      background: rgba(200,144,10,0.04);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .habit-card.selected {
+      background: linear-gradient(145deg, rgba(26,58,92,0.07), rgba(200,144,10,0.07));
+      border-color: var(--navy);
+      box-shadow: 0 0 0 1.5px var(--navy), 0 6px 20px rgba(26,58,92,0.14);
+      transform: scale(1.02);
+    }
+
+    .habit-card.selected::after {
+      transform: scaleX(1);
+    }
+
+    .habit-check {
+      position: absolute;
+      bottom: 38px; left: 8px;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-size: 0.62rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      box-shadow: 0 2px 8px rgba(26,58,92,0.35);
+    }
+
+    .habit-card.selected .habit-check {
+      display: flex;
+      animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0) rotate(-20deg); opacity: 0; }
+      to   { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+
+    /* top row: text left, emoji right */
+    .habit-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .habit-left { flex: 1; min-width: 0; }
+
+    .habit-emoji {
+      font-size: 3.5rem;       /* mobile: 3-col cards are narrow */
+      flex-shrink: 0;
+      line-height: 1;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 3.7rem;
+    }
+
+    .habit-name {
+      font-weight: 800;
+      font-size: 0.86rem;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 4px;
+      word-break: break-word;
+    }
+
+    .habit-amt {
+      font-family: 'Lora', serif;
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0;
+      transition: color 0.2s;
+    }
+
+    .habit-card.selected .habit-amt { color: var(--gold); }
+
+    .habit-slider {
+      width: 100%;
+      height: 4px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(0,0,0,0.12);
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+    }
+    .habit-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: url('/IFM%20round%20logo%20for%20watermark.png') center/cover no-repeat;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      transition: transform 0.15s;
+      border: none;
+    }
+    .habit-slider:hover::-webkit-slider-thumb { transform: scale(1.15); }
+    .habit-slider::-moz-range-thumb {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: url('/IFM%20round%20logo%20for%20watermark.png') center/cover no-repeat;
+      border: none;
+      cursor: pointer;
+    }
+
+    .slider-range {
+      font-size: 0.72rem;
+      color: rgba(0,0,0,0.28);
+      text-align: right;
+      margin-top: 3px;
+    }
+
+    /* ── TIP ── */
+    .tip-box {
+      background: #fffde7;
+      border: 1px solid #ffe082;
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      color: #7a5500;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    /* ── TOTAL BAR ── */
+    .total-bar {
+      background: linear-gradient(135deg, var(--navy2), var(--navy3));
+      border: 1px solid #c8d8e8;
+      border-radius: 18px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    }
+
+    .total-lbl {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 3px;
+    }
+
+    .total-amt {
+      font-family: 'Lora', serif;
+      font-size: 1.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .total-amt.bump {
+      animation: bump 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes bump {
+      0%   { transform: scale(1); }
+      45%  { transform: scale(1.18); color: var(--gold); }
+      100% { transform: scale(1); }
+    }
+
+    /* ── REVEAL BUTTON ── */
+    .reveal-btn {
+      flex-shrink: 0;
+      padding: 11px 16px;
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      color: var(--navy);
+      border: none;
+      border-radius: 14px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 0.98rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+      box-shadow: 0 4px 18px rgba(240,192,64,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reveal-btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2.4s infinite;
+    }
+
+    @keyframes shimmer {
+      0%   { left: -100%; }
+      100% { left: 200%; }
+    }
+
+    .reveal-btn:disabled {
+      opacity: 0.28;
+      cursor: not-allowed;
+      box-shadow: none;
+      background: rgba(255,255,255,0.1);
+      color: var(--muted);
+    }
+    .reveal-btn:disabled::before { display: none; }
+
+    .reveal-btn:not(:disabled):hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 10px 30px rgba(240,192,64,0.5);
+    }
+    .reveal-btn:not(:disabled):active { transform: scale(0.97); }
+
+    /* ── RESULTS ── */
+    .result-wrap {
+      display: none;
+    }
+    .result-wrap.show {
+      display: block;
+      animation: riseUp 0.55s cubic-bezier(0.22,1,0.36,1);
+    }
+    @keyframes riseUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-head {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .result-head h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .result-head p {
+      font-size: 0.94rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── VALUE CARDS ── */
+    .val-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .val-card {
+      border-radius: 16px;
+      padding: 12px 8px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .val-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.15), transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .val-card.y10 {
+      background: linear-gradient(155deg, #1e3f6e, #1a3a5c);
+      border: none;
+      box-shadow: 0 4px 16px rgba(26,58,92,0.25);
+    }
+    .val-card.y20 {
+      background: linear-gradient(155deg, #00796b, #005f56);
+      border: none;
+      box-shadow: 0 4px 16px rgba(0,121,107,0.25);
+    }
+    .val-card.y30 {
+      background: linear-gradient(155deg, #c8900a, #a87008);
+      border: none;
+      box-shadow: 0 6px 24px rgba(200,144,10,0.35);
+    }
+
+    .val-yr {
+      font-size: 0.7rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 10px;
+    }
+    .y10 .val-yr { color: rgba(255,255,255,0.7); }
+    .y20 .val-yr { color: rgba(255,255,255,0.7); }
+    .y30 .val-yr { color: rgba(255,255,255,0.8); }
+
+    .val-num {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .y10 .val-num { color: #fff; }
+    .y20 .val-num { color: #fff; }
+    .y30 .val-num { color: #fff; }
+
+    .val-rate { font-size: 0.7rem; opacity: 0.55; color: #fff; }
+
+    /* ── CHART ── */
+    .chart-card {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 12px 12px 10px;
+      margin-bottom: 10px;
+    }
+
+    .chart-lbl {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    #growthChart {
+      width: 100%;
+      height: 120px;
+      display: block;
+    }
+
+    .chart-legend {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 8px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+    .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* ── SUMMARY ROW ── */
+    .sum-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .sum-card {
+      border-radius: 14px;
+      padding: 12px 10px;
+      text-align: center;
+    }
+    .sum-card:first-child {
+      background: linear-gradient(135deg, #e8eef6, #d8e4f0);
+      border: 1.5px solid #b8cce0;
+    }
+    .sum-card:last-child {
+      background: linear-gradient(135deg, #1a3a5c, #1e4a6e);
+      border: none;
+      box-shadow: 0 4px 16px rgba(26,58,92,0.25);
+    }
+    .sum-lbl {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 5px;
+    }
+    .sum-card:first-child .sum-lbl { color: var(--muted); }
+    .sum-card:last-child .sum-lbl  { color: rgba(255,255,255,0.65); }
+    .sum-val {
+      font-family: 'Lora', serif;
+      font-size: 1.32rem;
+      font-weight: 700;
+    }
+    .sum-card:first-child .sum-val { color: var(--navy); }
+    .sum-card:last-child .sum-val  { color: #fff; }
+    .sum-val.green { color: inherit; }
+
+    /* ── INSIGHT BOX ── */
+    .insight {
+      background: linear-gradient(135deg, #1a3a5c 0%, #1e4570 100%);
+      border: none;
+      border-radius: 18px;
+      padding: 20px 16px;
+      text-align: center;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(26,58,92,0.22);
+    }
+    .insight::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 140px; height: 140px;
+      background: radial-gradient(circle, rgba(240,192,64,0.2), transparent 70%);
+      pointer-events: none;
+    }
+    .insight-intro {
+      font-size: 0.94rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    .multiplier {
+      font-family: 'Lora', serif;
+      font-size: 2.88rem;
+      font-weight: 700;
+      color: #f0c040;
+      line-height: 1;
+      display: block;
+      margin: 4px 0 4px;
+      text-shadow: 0 0 30px rgba(240,192,64,0.5);
+    }
+    .insight-detail {
+      font-size: 0.94rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.5;
+    }
+    .insight-free {
+      display: inline-block;
+      margin-top: 8px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 30px;
+      padding: 4px 14px;
+      font-size: 0.88rem;
+      color: #fff;
+      font-weight: 800;
+    }
+
+    /* ── BUTTONS ── */
+    .reset-btn {
+      display: block;
+      width: 100%;
+      padding: 11px;
+      background: #f0f4f8;
+      color: var(--muted);
+      border: 1.5px solid #dce4ed;
+      border-radius: 14px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.98rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .reset-btn:hover { background: #e2eaf3; color: var(--navy); }
+
+    .disclaimer {
+      font-size: 0.79rem;
+      color: rgba(0,0,0,0.35);
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    /* ── SELECTION COUNTER PILL ── */
+    .sel-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(26,58,92,0.07);
+      border: 1px solid rgba(26,58,92,0.2);
+      border-radius: 30px;
+      padding: 3px 10px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+      transition: all 0.3s;
+    }
+    .sel-pill .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse-dot 1.5s ease infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE — mobile-first scaling up
+    ───────────────────────────────────────── */
+
+    /* Tiny phones (< 360px): tighten further */
+    @media (max-width: 359px) {
+      .wrap { padding: 0 6px 20px; }
+      .habit-card { padding: 8px 6px 7px; border-radius: 12px; }
+      .habit-emoji { font-size: 1.1rem; }
+      .habit-name { font-size: 0.6rem; }
+      .habit-ask { display: none; }
+      .slider-range { display: none; }
+      .habit-check { width: 16px; height: 16px; font-size: 0.55rem; bottom: 32px; left: 6px; }
+      .total-amt { font-size: 1.3rem; }
+      .reveal-btn { padding: 9px 12px; font-size: 0.76rem; }
+    }
+
+    /* Large phones + iPad mini (600px+) */
+    @media (min-width: 600px) {
+      .wrap { max-width: 600px; padding: 0 20px 36px; }
+      .hero { padding: 22px 0 16px; }
+      .ifm-logo { height: 46px; margin-bottom: 12px; }
+      .hero-tag { font-size: 0.74rem; padding: 5px 16px; margin-bottom: 10px; }
+      .hero h1 { font-size: 2.64rem; margin-bottom: 8px; }
+      .hero p { font-size: 1.06rem; margin-bottom: 12px; }
+      .float-row span { font-size: 1.5rem; }
+      .divider { margin: 14px 0; }
+      .sec-title { font-size: 1.26rem; }
+      .sec-sub { font-size: 0.98rem; margin-bottom: 12px; }
+      .habit-grid { grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+      .habit-card { padding: 14px 12px 12px; border-radius: 18px; }
+      .habit-emoji { font-size: 6rem; width: 6.2rem; }
+      .habit-name { font-size: 0.96rem; }
+      .habit-ask { font-size: 0.82rem; margin-bottom: 8px; }
+      .habit-amt { font-size: 1.06rem; margin-bottom: 6px; }
+      .habit-check { width: 22px; height: 22px; }
+      .tip-box { font-size: 0.96rem; padding: 10px 16px; }
+      .total-bar { padding: 16px 20px; }
+      .total-lbl { font-size: 0.84rem; }
+      .total-amt { font-size: 2.4rem; }
+      .reveal-btn { padding: 14px 22px; font-size: 1.08rem; }
+      .val-yr { font-size: 0.78rem; margin-bottom: 12px; }
+      .val-num { font-size: 1.68rem; }
+      .val-rate { font-size: 0.74rem; }
+      .chart-card { padding: 16px 16px 12px; }
+      #growthChart { height: 150px; }
+      .sum-val { font-size: 1.5rem; }
+      .sum-lbl { font-size: 0.78rem; }
+      .multiplier { font-size: 3.36rem; }
+      .insight-intro, .insight-detail { font-size: 1.06rem; }
+      .insight-free { font-size: 0.96rem; }
+      .reset-btn { font-size: 1.06rem; padding: 13px; }
+      .disclaimer { font-size: 0.84rem; }
+    }
+
+    /* iPad / small desktop (900px+) */
+    @media (min-width: 900px) {
+      .wrap { max-width: 720px; padding: 0 32px 48px; }
+      .hero { padding: 30px 0 20px; }
+      .ifm-logo { height: 54px; margin-bottom: 14px; }
+      .hero h1 { font-size: 3.36rem; margin-bottom: 10px; }
+      .hero p { font-size: 1.14rem; margin-bottom: 14px; }
+      .float-row span { font-size: 1.8rem; }
+      .divider { margin: 18px 0; }
+      .sec-title { font-size: 1.32rem; margin-bottom: 4px; }
+      .sec-sub { font-size: 1.02rem; margin-bottom: 14px; }
+      .habit-grid { gap: 14px; margin-bottom: 16px; }
+      .habit-card { padding: 18px 14px 14px; border-radius: 22px; }
+      .habit-emoji { font-size: 7rem; width: 7.2rem; }
+      .habit-name { font-size: 1.06rem; margin-bottom: 3px; }
+      .habit-ask { font-size: 0.86rem; margin-bottom: 10px; }
+      .habit-amt { font-size: 1.14rem; margin-bottom: 7px; }
+      .tip-box { font-size: 1.01rem; }
+      .total-bar { padding: 20px 24px; }
+      .total-amt { font-size: 2.64rem; }
+      .reveal-btn { padding: 16px 26px; font-size: 1.14rem; }
+      .val-card { padding: 18px 12px; }
+      .val-num { font-size: 1.86rem; }
+      #growthChart { height: 170px; }
+      .sum-card { padding: 16px 14px; }
+      .sum-val { font-size: 1.62rem; }
+      .insight { padding: 22px 24px; }
+      .multiplier { font-size: 3.84rem; }
+    }
+
+    /* Large desktop (1200px+): wider layout, bigger text */
+    @media (min-width: 1200px) {
+      .wrap { max-width: 1080px; padding: 0 40px 56px; }
+      .habit-grid { gap: 18px; margin-bottom: 20px; }
+      .habit-card { padding: 24px 18px 18px; border-radius: 24px; }
+      .habit-emoji { font-size: 9rem; width: 9.5rem; }
+      .habit-name { font-size: 1.15rem; margin-bottom: 5px; }
+      .habit-amt { font-size: 1.25rem; margin-bottom: 10px; }
+      .habit-check { width: 28px; height: 28px; font-size: 0.8rem; bottom: 54px; }
+      .sub-hero { padding: 22px 24px 20px; }
+      .sub-hero-icon { font-size: 2rem; }
+      .sub-hero h3 { font-size: 1.35rem; margin-bottom: 8px; }
+      .sub-hero p { font-size: 0.95rem; }
+      .tip-box { font-size: 0.95rem; padding: 12px 18px; }
+      .total-bar { padding: 22px 28px; }
+      .total-lbl { font-size: 0.8rem; }
+      .total-amt { font-size: 2.6rem; }
+      .reveal-btn { padding: 18px 30px; font-size: 1.05rem; border-radius: 18px; }
+      .slider-range { font-size: 0.7rem; margin-top: 5px; }
+      .sel-pill { font-size: 0.8rem; padding: 5px 14px; }
+      .game-hero h2 { font-size: 2rem; }
+      .game-hero p { font-size: 0.95rem; }
+    }
+
+    /* Presentation / projector (1500px+): max readability from back of room */
+    @media (min-width: 1500px) {
+      .wrap { max-width: 1380px; padding: 0 48px 64px; }
+      .habit-grid { gap: 24px; margin-bottom: 24px; }
+      .habit-card { padding: 32px 24px 24px; border-radius: 28px; border-width: 2.5px; }
+      .habit-emoji { font-size: 11rem; width: 11.5rem; }
+      .habit-name { font-size: 1.5rem; margin-bottom: 8px; font-weight: 900; }
+      .habit-amt { font-size: 1.55rem; margin-bottom: 14px; }
+      .habit-check { width: 34px; height: 34px; font-size: 1rem; bottom: 68px; left: 12px; }
+      .habit-slider { height: 8px; margin-top: 4px; }
+      .habit-slider::-webkit-slider-thumb { width: 36px; height: 36px; }
+      .habit-slider::-moz-range-thumb { width: 36px; height: 36px; }
+      .slider-range { font-size: 0.8rem; margin-top: 6px; }
+      .sub-hero { padding: 28px 32px 24px; }
+      .sub-hero-icon { font-size: 2.6rem; margin-bottom: 10px; }
+      .sub-hero h3 { font-size: 1.75rem; margin-bottom: 10px; }
+      .sub-hero p { font-size: 1.1rem; line-height: 1.6; }
+      .sel-pill { font-size: 1rem; padding: 7px 18px; margin-bottom: 12px; }
+      .sel-pill .dot { width: 10px; height: 10px; }
+      .tip-box { font-size: 1.05rem; padding: 14px 22px; }
+      .total-bar { padding: 26px 36px; border-radius: 24px; }
+      .total-lbl { font-size: 0.9rem; letter-spacing: 1.5px; margin-bottom: 5px; }
+      .total-amt { font-size: 3.2rem; }
+      .reveal-btn { padding: 22px 38px; font-size: 1.2rem; border-radius: 20px; }
+      .game-hero { border-radius: 22px; padding: 26px 28px 26px 200px; margin-bottom: 20px; }
+      .game-hero h2 { font-size: 2.4rem; }
+      .game-hero p { font-size: 1.05rem; }
+      .hero-logo-wide { height: 100px; max-width: 180px; }
+      .beta-ribbon { font-size: 0.65rem; padding: 6px 16px 6px 14px; }
+    }
+
+    /* ── Touch-friendly slider on mobile ── */
+    @media (hover: none) {
+      .habit-slider { height: 6px; }
+      .habit-slider::-webkit-slider-thumb { width: 24px; height: 24px; }
+      .habit-slider::-moz-range-thumb    { width: 24px; height: 24px; }
+      /* Disable hover scale on touch devices — avoids card overlap */
+      .habit-card:hover { transform: none; }
+      .habit-card.selected { transform: none; box-shadow: 0 0 0 2px var(--teal), 0 4px 16px rgba(0,196,174,0.2); }
+    }
+    /* ── SHARE / DOWNLOAD BUTTONS ── */
+    .share-row {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0 6px;
+    }
+    .btn-download, .btn-whatsapp {
+      flex: 1;
+      padding: 13px 10px;
+      border: none;
+      border-radius: 14px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 800;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .btn-download {
+      background: linear-gradient(135deg, #1a3a5c, #1e4a6e);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(26,58,92,0.22);
+    }
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25d366, #128c5e);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(37,211,102,0.28);
+    }
+    .btn-download:disabled, .btn-whatsapp:disabled { opacity: 0.5; cursor: wait; }
+    .btn-download:not(:disabled):hover, .btn-whatsapp:not(:disabled):hover { transform: translateY(-2px); opacity: 0.92; }
+    .share-hint { font-size: 0.76rem; color: var(--muted); text-align: center; margin-bottom: 16px; }
+
+    /* ── QR SCAN BUTTON ── */
+    .qr-btn {
+      display: inline-block;
+      margin-top: 12px;
+      background: rgba(255,255,255,0.15);
+      border: 1.5px solid rgba(255,255,255,0.55);
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.89rem;
+      font-weight: 800;
+      padding: 7px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      letter-spacing: 0.4px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .qr-btn:hover { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.85); }
+
+    /* ── QR MODAL ── */
+    .qr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,20,40,0.75);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .qr-overlay.open { display: flex; }
+    .qr-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 36px 28px 28px;
+      max-width: 340px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.32);
+      animation: qrIn 0.22s ease;
+    }
+    @keyframes qrIn {
+      from { transform: scale(0.86); opacity: 0; }
+      to   { transform: scale(1);    opacity: 1; }
+    }
+    .qr-close {
+      position: absolute;
+      top: 14px; right: 16px;
+      background: #f0f5fa;
+      border: none;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #6b7d93;
+      line-height: 30px;
+      text-align: center;
+      transition: background 0.15s;
+    }
+    .qr-close:hover { background: #dde8f0; color: #1a3a5c; }
+    .qr-title {
+      font-family: 'Lora', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a3a5c;
+      margin-bottom: 4px;
+    }
+    .qr-sub { font-size: 0.78rem; color: #6b7d93; margin-bottom: 22px; line-height: 1.5; }
+    .qr-img {
+      width: 260px; height: 260px;
+      border-radius: 14px;
+      border: 3px solid #e2ecf5;
+      display: block;
+      margin: 0 auto 22px;
+    }
+    .qr-url-box {
+      background: #f0f5fa;
+      border-radius: 14px;
+      padding: 14px 18px;
+    }
+    .qr-url-label {
+      font-size: 0.6rem;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #8a9bb0;
+      margin-bottom: 6px;
+    }
+    .qr-url-text {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      color: #1a3a5c;
+      word-break: break-all;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+<canvas id="confettiCanvas"></canvas>
+
+<div class="wrap">
+
+  <!-- ── HERO BANNER ── -->
+  <div class="game-hero" style="background:linear-gradient(135deg,#1a3a5c 0%,#1e4a6e 60%,#2a6b60 100%);">
+    <div class="beta-ribbon">✦ Beta 2.0</div>
+    <img src="/IFM%20logo%20white%20background.png" class="hero-logo-wide" alt="Investing for Mummies"/>
+    <h2>Hidden <span style="color:#f0c040">Fortunes</span> 2.0</h2>
+    <p>Small daily splurges, redirected wisely, can grow into crores.</p>
+    <button class="qr-btn" onclick="showQRModal()">📱 Scan to Play</button>
+  </div>
+
+  <!-- ── QR CODE MODAL ── -->
+  <div class="qr-overlay" id="qrOverlay" onclick="if(event.target===this)closeQRModal()">
+    <div class="qr-card">
+      <button class="qr-close" onclick="closeQRModal()">✕</button>
+      <div class="qr-title">📱 Scan to Play</div>
+      <div class="qr-sub">Point your phone camera at the code<br>to open the game instantly</div>
+      <img class="qr-img"
+        src="https://api.qrserver.com/v1/create-qr-code/?size=520x520&margin=12&data=https%3A%2F%2Fwww.investingformummies.com%2Fhidden-fortunes%2F"
+        alt="QR Code — investingformummies.com/hidden-fortunes"/>
+      <div class="qr-url-box">
+        <div class="qr-url-label">or type this address</div>
+        <div class="qr-url-text">investingformummies.com<wbr>/hidden-fortunes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PICKER ── -->
+  <div id="stc2_pick">
+
+    <!-- sub-hero box -->
+    <div class="sub-hero">
+      <div class="sub-hero-icon">🛍️</div>
+      <h3>Pick Your Guilty Pleasures</h3>
+      <p>Select the habits you spend on every month — then see what happens when even half goes into a SIP instead.</p>
+    </div>
+
+    <div style="text-align:center;margin-bottom:10px;">
+      <div class="sel-pill" id="selPill"><span class="dot"></span><span id="selCount">0 of 6 selected</span></div>
+    </div>
+
+    <div class="habit-grid">
+
+      <div class="habit-card" id="stc2_h_salon" onclick="stc2Toggle('salon')">
+        <div class="habit-check" id="stc2_ck_salon">✓</div>
+        <div class="habit-top">
+          <div class="habit-left">
+            <div class="habit-name">Salon Visits</div>
+            <div class="habit-amt" id="stc2_amt_salon">₹3,000 / mo</div>
+          </div>
+          <span class="habit-emoji">💅</span>
+        </div>
+        <input type="range" min="0" max="50000" step="500" value="3000"
+          id="stc2_slider_salon" class="habit-slider"
+          oninput="stc2SliderChange('salon',this.value)"
+          onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
+        <div class="slider-range">₹0 — ₹50k</div>
+      </div>
+
+      <div class="habit-card" id="stc2_h_delivery" onclick="stc2Toggle('delivery')">
+        <div class="habit-check" id="stc2_ck_delivery">✓</div>
+        <div class="habit-top">
+          <div class="habit-left">
+            <div class="habit-name">Swiggy / Zomato</div>
+            <div class="habit-amt" id="stc2_amt_delivery">₹4,200 / mo</div>
+          </div>
+          <span class="habit-emoji">🛵</span>
+        </div>
+        <input type="range" min="0" max="50000" step="500" value="4200"
+          id="stc2_slider_delivery" class="habit-slider"
+          oninput="stc2SliderChange('delivery',this.value)"
+          onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
+        <div class="slider-range">₹0 — ₹50k</div>
+      </div>
+
+      <div class="habit-card" id="stc2_h_shopping" onclick="stc2Toggle('shopping')">
+        <div class="habit-check" id="stc2_ck_shopping">✓</div>
+        <div class="habit-top">
+          <div class="habit-left">
+            <div class="habit-name">Impulse Shopping</div>
+            <div class="habit-amt" id="stc2_amt_shopping">₹3,000 / mo</div>
+          </div>
+          <span class="habit-emoji">🛍️</span>
+        </div>
+        <input type="range" min="0" max="50000" step="500" value="3000"
+          id="stc2_slider_shopping" class="habit-slider"
+          oninput="stc2SliderChange('shopping',this.value)"
+          onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
+        <div class="slider-range">₹0 — ₹50k</div>
+      </div>
+
+      <div class="habit-card" id="stc2_h_coffee" onclick="stc2Toggle('coffee')">
+        <div class="habit-check" id="stc2_ck_coffee">✓</div>
+        <div class="habit-top">
+          <div class="habit-left">
+            <div class="habit-name">Café Coffee</div>
+            <div class="habit-amt" id="stc2_amt_coffee">₹6,000 / mo</div>
+          </div>
+          <span class="habit-emoji">☕</span>
+        </div>
+        <input type="range" min="0" max="50000" step="500" value="6000"
+          id="stc2_slider_coffee" class="habit-slider"
+          oninput="stc2SliderChange('coffee',this.value)"
+          onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
+        <div class="slider-range">₹0 — ₹50k</div>
+      </div>
+
+      <div class="habit-card" id="stc2_h_skincare" onclick="stc2Toggle('skincare')">
+        <div class="habit-check" id="stc2_ck_skincare">✓</div>
+        <div class="habit-top">
+          <div class="habit-left">
+            <div class="habit-name">Beauty &amp; Skincare</div>
+            <div class="habit-amt" id="stc2_amt_skincare">₹2,500 / mo</div>
+          </div>
+          <span class="habit-emoji">💄</span>
+        </div>
+        <input type="range" min="0" max="50000" step="500" value="2500"
+          id="stc2_slider_skincare" class="habit-slider"
+          oninput="stc2SliderChange('skincare',this.value)"
+          onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
+        <div class="slider-range">₹0 — ₹50k</div>
+      </div>
+
+      <div class="habit-card" id="stc2_h_weekend" onclick="stc2Toggle('weekend')">
+        <div class="habit-check" id="stc2_ck_weekend">✓</div>
+        <div class="habit-top">
+          <div class="habit-left">
+            <div class="habit-name">Movies &amp; Eating Out</div>
+            <div class="habit-amt" id="stc2_amt_weekend">₹2,000 / mo</div>
+          </div>
+          <span class="habit-emoji">🎬</span>
+        </div>
+        <input type="range" min="0" max="50000" step="500" value="2000"
+          id="stc2_slider_weekend" class="habit-slider"
+          oninput="stc2SliderChange('weekend',this.value)"
+          onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
+        <div class="slider-range">₹0 — ₹50k</div>
+      </div>
+
+    </div>
+
+    <div class="tip-box">
+      💡 You don't need to give these up forever — just ask: <em>what if even half went into a SIP?</em>
+    </div>
+
+    <div class="total-bar">
+      <div>
+        <div class="total-lbl">Monthly SIP if redirected</div>
+        <div class="total-amt" id="stc2_monthly">₹0</div>
+      </div>
+      <button class="reveal-btn" id="stc2_reveal_btn" onclick="stc2Reveal()" disabled>
+        Reveal My Hidden Fortune →
+      </button>
+    </div>
+  </div>
+
+  <!-- ── RESULTS ── -->
+  <div class="result-wrap" id="stc2_result">
+
+    <!-- capture zone starts here -->
+    <div id="stc2_capture_card">
+
+    <div class="result-head">
+      <h2>💎 Your Hidden Fortune, Revealed</h2>
+      <p id="stc2_result_intro"></p>
+    </div>
+
+    <div class="val-row">
+      <div class="val-card y10">
+        <div class="val-yr">10 Years</div>
+        <div class="val-num" id="stc2_v10">—</div>
+        <div class="val-rate">at 12% p.a.</div>
+      </div>
+      <div class="val-card y20">
+        <div class="val-yr">20 Years</div>
+        <div class="val-num" id="stc2_v20">—</div>
+        <div class="val-rate">at 12% p.a.</div>
+      </div>
+      <div class="val-card y30">
+        <div class="val-yr">30 Years</div>
+        <div class="val-num" id="stc2_v30">—</div>
+        <div class="val-rate">at 12% p.a.</div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-lbl">Compound Growth Curve — 30 Years</div>
+      <canvas id="growthChart"></canvas>
+      <div class="chart-legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background:var(--teal)"></div>
+          Portfolio value
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:rgba(0,0,0,0.2)"></div>
+          Amount invested
+        </div>
+      </div>
+    </div>
+
+    <div class="sum-row">
+      <div class="sum-card">
+        <div class="sum-lbl">💸 Total You Put In (30 yrs)</div>
+        <div class="sum-val" id="stc2_invested">—</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-lbl">🚀 What You Walk Away With</div>
+        <div class="sum-val green" id="stc2_walkaway">—</div>
+      </div>
+    </div>
+
+    <div class="insight" id="stc2_insight"></div>
+
+    </div><!-- /stc2_capture_card -->
+
+    <div class="share-row">
+      <button class="btn-download" id="stc2_btn_dl" onclick="stc2Download()">📥 Download</button>
+      <button class="btn-whatsapp" id="stc2_btn_wa" onclick="stc2ShareWhatsApp()">💬 Share on WhatsApp</button>
+    </div>
+    <div class="share-hint">Saves your result card as an image · works with WhatsApp, Instagram, anywhere</div>
+
+    <button class="reset-btn" onclick="stc2Reset()">↺ Try Different Habits</button>
+    <div class="disclaimer">All projections assume 12% annual returns (approximate long-term equity mutual fund average). Past performance is not a guarantee of future returns.</div>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+// ─────────────────────────────────────────────────────
+//  DATA & STATE
+// ─────────────────────────────────────────────────────
+var stc2Data = {
+  salon:    { monthly: 3000 },
+  delivery: { monthly: 4200 },
+  shopping: { monthly: 3000 },
+  coffee:   { monthly: 6000 },
+  skincare: { monthly: 2500 },
+  weekend:  { monthly: 2000 }
+};
+var stc2Sel = { salon:false, delivery:false, shopping:false, coffee:false, skincare:false, weekend:false };
+
+// ─────────────────────────────────────────────────────
+//  FLOATING BACKGROUND PARTICLES
+// ─────────────────────────────────────────────────────
+(function() {
+  var c = document.getElementById('bgCanvas');
+  var ctx = c.getContext('2d');
+  var emojis = ['💅','🛵','🛍️','☕','💄','🎬'];
+  var particles = [];
+
+  function resize() {
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (var i = 0; i < 27; i++) {
+    particles.push({
+      x:     Math.random() * window.innerWidth,
+      y:     Math.random() * window.innerHeight,
+      size:  36 + Math.random() * 48,
+      speed: 0.18 + Math.random() * 0.35,
+      drift: (Math.random() - 0.5) * 0.25,
+      op:    0.06 + Math.random() * 0.15,
+      emoji: emojis[Math.floor(Math.random() * emojis.length)]
+    });
+  }
+
+  function tick() {
+    ctx.clearRect(0, 0, c.width, c.height);
+    particles.forEach(function(p) {
+      ctx.globalAlpha = p.op;
+      ctx.font = p.size + 'px sans-serif';
+      ctx.fillText(p.emoji, p.x, p.y);
+      p.y -= p.speed;
+      p.x += p.drift;
+      if (p.y < -30) {
+        p.y = c.height + 30;
+        p.x = Math.random() * c.width;
+      }
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
+// ─────────────────────────────────────────────────────
+//  CONFETTI
+// ─────────────────────────────────────────────────────
+var _confetti = [];
+var _confettiActive = false;
+
+function launchConfetti() {
+  var c = document.getElementById('confettiCanvas');
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+  var ctx = c.getContext('2d');
+  var colors = ['#f0c040','#00c4ae','#ffffff','#ff8a65','#b3efea','#ffd700','#a78bfa'];
+  _confetti = [];
+  for (var i = 0; i < 100; i++) {
+    _confetti.push({
+      x: Math.random() * c.width,
+      y: -20 - Math.random() * 180,
+      w: 5 + Math.random() * 8,
+      h: 4 + Math.random() * 6,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: (Math.random() - 0.5) * 4,
+      vy: 2 + Math.random() * 4,
+      rot: Math.random() * 360,
+      rv: (Math.random() - 0.5) * 7,
+      op: 1
+    });
+  }
+  _confettiActive = true;
+  tickConfetti(ctx, c);
+  setTimeout(function(){ _confettiActive = false; }, 2800);
+}
+
+function tickConfetti(ctx, c) {
+  ctx.clearRect(0, 0, c.width, c.height);
+  var alive = false;
+  _confetti.forEach(function(p) {
+    if (!_confettiActive) p.op = Math.max(0, p.op - 0.018);
+    if (p.op > 0 && p.y < c.height + 20) alive = true;
+    ctx.save();
+    ctx.globalAlpha = p.op;
+    ctx.translate(p.x + p.w / 2, p.y + p.h / 2);
+    ctx.rotate(p.rot * Math.PI / 180);
+    ctx.fillStyle = p.color;
+    ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+    ctx.restore();
+    p.x += p.vx; p.y += p.vy; p.rot += p.rv; p.vy += 0.07;
+  });
+  if (alive) requestAnimationFrame(function(){ tickConfetti(ctx, c); });
+  else ctx.clearRect(0, 0, c.width, c.height);
+}
+
+// ─────────────────────────────────────────────────────
+//  ANIMATED GROWTH CHART
+// ─────────────────────────────────────────────────────
+function drawGrowthChart(monthly) {
+  var c = document.getElementById('growthChart');
+  var dpr = window.devicePixelRatio || 1;
+  var W = c.offsetWidth || 400;
+  var H = 150;
+  c.width  = W * dpr;
+  c.height = H * dpr;
+  var ctx = c.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  var pad = { t: 8, r: 8, b: 22, l: 8 };
+  var cW = W - pad.l - pad.r;
+  var cH = H - pad.t - pad.b;
+  var rate = 0.12 / 12;
+
+  var growth = [], invested = [], maxV = 0;
+  for (var n = 0; n <= 360; n += 3) {
+    var gv = monthly * ((Math.pow(1 + rate, n) - 1) / rate);
+    var iv = monthly * n;
+    growth.push({ n: n, v: gv });
+    invested.push({ n: n, v: iv });
+    if (gv > maxV) maxV = gv;
+  }
+
+  function tx(n) { return pad.l + (n / 360) * cW; }
+  function ty(v) { return pad.t + cH - (v / maxV) * cH; }
+
+  // invested fill
+  ctx.beginPath();
+  invested.forEach(function(p, i) {
+    if (i === 0) ctx.moveTo(tx(p.n), ty(p.v));
+    else ctx.lineTo(tx(p.n), ty(p.v));
+  });
+  ctx.lineTo(tx(360), ty(0)); ctx.lineTo(tx(0), ty(0)); ctx.closePath();
+  ctx.fillStyle = 'rgba(0,0,0,0.04)';
+  ctx.fill();
+
+  // growth fill
+  var grd = ctx.createLinearGradient(0, pad.t, 0, pad.t + cH);
+  grd.addColorStop(0, 'rgba(0,196,174,0.45)');
+  grd.addColorStop(1, 'rgba(0,196,174,0.03)');
+  ctx.beginPath();
+  growth.forEach(function(p, i) {
+    if (i === 0) ctx.moveTo(tx(p.n), ty(p.v));
+    else ctx.lineTo(tx(p.n), ty(p.v));
+  });
+  ctx.lineTo(tx(360), ty(0)); ctx.lineTo(tx(0), ty(0)); ctx.closePath();
+  ctx.fillStyle = grd;
+  ctx.fill();
+
+  // growth line
+  ctx.beginPath();
+  growth.forEach(function(p, i) {
+    if (i === 0) ctx.moveTo(tx(p.n), ty(p.v));
+    else ctx.lineTo(tx(p.n), ty(p.v));
+  });
+  ctx.strokeStyle = '#00c4ae';
+  ctx.lineWidth = 2.5;
+  ctx.lineJoin = 'round';
+  ctx.stroke();
+
+  // invested line (dashed)
+  ctx.beginPath();
+  invested.forEach(function(p, i) {
+    if (i === 0) ctx.moveTo(tx(p.n), ty(p.v));
+    else ctx.lineTo(tx(p.n), ty(p.v));
+  });
+  ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([5, 5]);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // x-axis labels
+  ctx.fillStyle = 'rgba(0,0,0,0.35)';
+  ctx.font = '10px Nunito, sans-serif';
+  ctx.textAlign = 'center';
+  [0, 120, 240, 360].forEach(function(n) {
+    ctx.fillText((n / 12) + 'yr', tx(n), H - 5);
+  });
+
+  // dot at 30yr
+  var last = growth[growth.length - 1];
+  ctx.beginPath();
+  ctx.arc(tx(last.n), ty(last.v), 5, 0, Math.PI * 2);
+  ctx.fillStyle = '#f0c040';
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(tx(last.n), ty(last.v), 5, 0, Math.PI * 2);
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+}
+
+// ─────────────────────────────────────────────────────
+//  HELPERS
+// ─────────────────────────────────────────────────────
+function stc2Fmt(v) {
+  if (v >= 1e7) return '₹' + (v / 1e7).toFixed(1) + ' Cr';
+  if (v >= 1e5) return '₹' + (v / 1e5).toFixed(1) + ' L';
+  return '₹' + Math.round(v).toLocaleString('en-IN');
+}
+
+function stc2Fv10(monthly) {
+  var r = 0.12 / 12;
+  return monthly * ((Math.pow(1 + r, 120) - 1) / r);
+}
+
+function stc2UpdateFuture(id) {
+  var el = document.getElementById('stc2_fut_' + id);
+  if (!el) return;
+  var monthly = stc2Data[id].monthly;
+  if (monthly === 0) { el.textContent = ''; return; }
+  el.textContent = '→ ' + stc2Fmt(stc2Fv10(monthly)) + ' in 10 yrs';
+}
+
+function updateSelPill() {
+  var n = Object.keys(stc2Sel).filter(function(k){ return stc2Sel[k]; }).length;
+  document.getElementById('selCount').textContent = n + ' of 6 selected';
+}
+
+// ─────────────────────────────────────────────────────
+//  TOGGLE
+// ─────────────────────────────────────────────────────
+function stc2Toggle(id) {
+  stc2Sel[id] = !stc2Sel[id];
+  var card = document.getElementById('stc2_h_' + id);
+  card.classList.toggle('selected', stc2Sel[id]);
+  stc2UpdateTotal();
+  updateSelPill();
+}
+
+// ─────────────────────────────────────────────────────
+//  SLIDER
+// ─────────────────────────────────────────────────────
+function stc2SliderChange(id, val) {
+  val = parseInt(val);
+  stc2Data[id].monthly = val;
+  document.getElementById('stc2_amt_' + id).textContent = '₹' + val.toLocaleString('en-IN') + ' / mo';
+  stc2UpdateFuture(id);
+  if (!stc2Sel[id]) stc2Toggle(id);
+  else stc2UpdateTotal();
+}
+
+// ─────────────────────────────────────────────────────
+//  UPDATE TOTAL
+// ─────────────────────────────────────────────────────
+function stc2UpdateTotal() {
+  var total = 0;
+  Object.keys(stc2Sel).forEach(function(id){ if (stc2Sel[id]) total += stc2Data[id].monthly; });
+  var el = document.getElementById('stc2_monthly');
+  el.textContent = '₹' + total.toLocaleString('en-IN');
+  el.classList.remove('bump');
+  void el.offsetWidth;
+  el.classList.add('bump');
+  var btn = document.getElementById('stc2_reveal_btn');
+  btn.disabled = (total === 0);
+}
+
+// ─────────────────────────────────────────────────────
+//  REVEAL
+// ─────────────────────────────────────────────────────
+function stc2Reveal() {
+  var monthly = 0;
+  Object.keys(stc2Sel).forEach(function(id){ if (stc2Sel[id]) monthly += stc2Data[id].monthly; });
+  var rate = 0.12 / 12;
+  function fv(n) { return monthly * ((Math.pow(1 + rate, n) - 1) / rate); }
+  var v10 = fv(120), v20 = fv(240), v30 = fv(360);
+  var invested = monthly * 360;
+  var gain = v30 - invested;
+  var multiplier = (v30 / invested).toFixed(1);
+
+  document.getElementById('stc2_v10').textContent = stc2Fmt(v10);
+  document.getElementById('stc2_v20').textContent = stc2Fmt(v20);
+  document.getElementById('stc2_v30').textContent = stc2Fmt(v30);
+  document.getElementById('stc2_invested').textContent = stc2Fmt(invested);
+  document.getElementById('stc2_walkaway').textContent = stc2Fmt(v30);
+
+  var names = [];
+  if (stc2Sel.salon)    names.push('salon visits');
+  if (stc2Sel.delivery) names.push('Swiggy');
+  if (stc2Sel.shopping) names.push('impulse buys');
+  if (stc2Sel.coffee)   names.push('coffee');
+  if (stc2Sel.skincare) names.push('beauty & skincare');
+  if (stc2Sel.weekend)  names.push('weekend outings');
+
+  document.getElementById('stc2_result_intro').innerHTML =
+    'Redirect <strong>₹' + monthly.toLocaleString('en-IN') + '/month</strong> ('
+    + names.join(' + ') + ') into a SIP — and watch compounding quietly build your fortune:';
+
+  document.getElementById('stc2_insight').innerHTML =
+    '<div class="insight-intro">You put in <strong>' + stc2Fmt(invested) + '</strong> over 30 years</div>'
+    + '<span class="multiplier">' + multiplier + '×</span>'
+    + '<div class="insight-detail">Compounding turns it into <strong>' + stc2Fmt(v30) + '</strong></div>'
+    + '<div class="insight-free">+ ' + stc2Fmt(gain) + ' earned for free 🤯</div>';
+
+  _stc2ShareData = { monthly: monthly, v30: v30, multiplier: multiplier };
+
+  var res = document.getElementById('stc2_result');
+  res.classList.add('show');
+
+  setTimeout(function(){ drawGrowthChart(monthly); }, 120);
+  launchConfetti();
+  setTimeout(function(){ res.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 80);
+}
+
+// Initialise future values on page load
+Object.keys(stc2Data).forEach(function(id) { stc2UpdateFuture(id); });
+
+// ─────────────────────────────────────────────────────
+//  RESET
+// ─────────────────────────────────────────────────────
+// ── SHARE & DOWNLOAD ─────────────────────────────────
+var _stc2ShareData = { monthly: 0, v30: 0, multiplier: '0' };
+
+async function stc2Capture() {
+  var card = document.getElementById('stc2_capture_card');
+  if (!card || !window.html2canvas) return null;
+  var canvas = await window.html2canvas(card, {
+    backgroundColor: '#ffffff',
+    scale: 2,
+    useCORS: true,
+    logging: false,
+    scrollX: 0,
+    scrollY: -window.scrollY
+  });
+  return new Promise(function(res) { canvas.toBlob(res, 'image/png', 0.95); });
+}
+
+async function stc2Download() {
+  var btn = document.getElementById('stc2_btn_dl');
+  btn.disabled = true; btn.textContent = '⏳ Preparing…';
+  try {
+    var blob = await stc2Capture();
+    if (blob) {
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = 'hidden-fortunes-result.png';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+    }
+  } catch(e) {}
+  btn.disabled = false; btn.textContent = '📥 Download';
+}
+
+async function stc2ShareWhatsApp() {
+  var btn = document.getElementById('stc2_btn_wa');
+  btn.disabled = true; btn.textContent = '⏳ Sharing…';
+  var d = _stc2ShareData;
+  var shareText = '💎 I just discovered my Hidden Fortune on Investing for Mummies!\n\n'
+    + 'Redirecting ₹' + d.monthly.toLocaleString('en-IN') + '/month grows to '
+    + stc2Fmt(d.v30) + ' in 30 years — that\'s ' + d.multiplier + '× what I put in! 🚀\n\n'
+    + 'Find yours 👉 https://www.investingformummies.com/hidden-fortunes/';
+  var waUrl = 'https://wa.me/?text=' + encodeURIComponent(shareText);
+
+  // On mobile: try native share sheet (can attach image + opens WhatsApp directly)
+  var isMobile = /Mobi|Android/i.test(navigator.userAgent);
+  if (isMobile && navigator.share && navigator.canShare) {
+    try {
+      var blob = await stc2Capture();
+      var shareOpts = { title: 'My Hidden Fortune', text: shareText };
+      if (blob) {
+        var file = new File([blob], 'hidden-fortunes.png', { type: 'image/png' });
+        if (navigator.canShare({ files: [file] })) shareOpts.files = [file];
+      }
+      await navigator.share(shareOpts);
+      btn.disabled = false; btn.textContent = '💬 Share on WhatsApp';
+      return;
+    } catch(e) { /* user cancelled or failed — fall through */ }
+  }
+
+  // Desktop (or mobile fallback): open WhatsApp web NOW, before any await
+  window.open(waUrl, '_blank');
+  btn.disabled = false; btn.textContent = '💬 Share on WhatsApp';
+
+  // Separately download the result image (async, non-blocking)
+  stc2Capture().then(function(blob) {
+    if (!blob) return;
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = 'hidden-fortunes.png';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  }).catch(function(){});
+}
+
+// ── QR MODAL ─────────────────────────────────────────
+function showQRModal() {
+  document.getElementById('qrOverlay').classList.add('open');
+}
+function closeQRModal() {
+  document.getElementById('qrOverlay').classList.remove('open');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeQRModal();
+});
+
+function stc2Reset() {
+  Object.keys(stc2Sel).forEach(function(id) {
+    stc2Sel[id] = false;
+    var card = document.getElementById('stc2_h_' + id);
+    if (card) card.classList.remove('selected');
+  });
+  document.getElementById('stc2_monthly').textContent = '₹0';
+  document.getElementById('stc2_reveal_btn').disabled = true;
+  document.getElementById('stc2_result').classList.remove('show');
+  updateSelPill();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

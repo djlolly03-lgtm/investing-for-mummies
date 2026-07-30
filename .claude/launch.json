@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "ifm-hub", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8912"], "port": 8912 }
+  ]
+}

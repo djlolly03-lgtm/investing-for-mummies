@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inflation Calculator 2.0 — Investing for Mummies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,600&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:  #1a3a5c;
+      --gold:  #c8900a;
+      --gold2: #a87008;
+      --teal:  #2a9d8f;
+      --muted: #5a7d8a;
+      --cream: #f7faf9;
+    }
+
+    body {
+      background: #ffffff;
+      color: var(--navy);
+      font-family: 'Nunito', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── FLOATING PARTICLES ── */
+    #particleCanvas {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 0 12px 32px;
+    }
+
+    /* ── HERO ── */
+    .game-hero {
+      border-radius: 16px;
+      padding: 18px 20px 18px 155px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 14px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a3a5c 0%, #b91c1c 55%, #c8900a 100%);
+    }
+    .game-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.07;
+      background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .gh-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+      font-size: 0.6rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .game-hero h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      font-weight: 700;
+      margin-bottom: 5px;
+      line-height: 1.2;
+    }
+    .game-hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+      max-width: 340px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .hero-logo-wide {
+      position: absolute;
+      top: 50%; left: 12px;
+      transform: translateY(-50%);
+      height: 72px; width: auto; max-width: 140px;
+      object-fit: contain;
+      border-radius: 10px;
+      z-index: 2;
+    }
+    @media (max-width: 540px) {
+      .hero-logo-wide { height: 50px; max-width: 100px; left: 8px; }
+      .game-hero { padding-left: 116px; }
+    }
+    @media (max-width: 359px) {
+      .game-hero { padding-left: 82px; }
+      .hero-logo-wide { height: 38px; max-width: 76px; }
+    }
+
+    /* ── INPUT CARD ── */
+    .sub-hero {
+      background: linear-gradient(135deg, #f0f7ff, #e8f4f0);
+      border: 1.5px solid #c2d8e8;
+      border-radius: 14px;
+      padding: 16px 18px 14px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .sub-hero-label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .amount-input-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 12px;
+    }
+    .rupee-prefix {
+      font-family: 'Lora', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      padding: 8px 6px 8px 12px;
+      background: #fff;
+      border: 2px solid #c2d8e8;
+      border-right: none;
+      border-radius: 10px 0 0 10px;
+    }
+    #amountInput {
+      font-family: 'Lora', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: #fff;
+      border: 2px solid #c2d8e8;
+      border-left: none;
+      border-radius: 0 10px 10px 0;
+      padding: 8px 12px 8px 4px;
+      width: 180px;
+      text-align: left;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    #amountInput:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(42,157,143,0.15);
+    }
+    .preset-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+    .chip {
+      background: #fff;
+      border: 1.5px solid #c2d8e8;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--navy);
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .chip:hover, .chip.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    /* ── SLIDERS CARD ── */
+    .card {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .sliders-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 420px) {
+      .sliders-row { grid-template-columns: 1fr; gap: 12px; }
+    }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .slider-val {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--teal);
+    }
+    .calc-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 4px;
+      background: linear-gradient(to right, var(--teal) 0%, var(--teal) var(--pct, 30%), #dde6ec var(--pct, 30%), #dde6ec 100%);
+      outline: none;
+      cursor: pointer;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: url('/IFM%20round%20logo%20for%20watermark.png') center/cover no-repeat;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
+    .calc-slider::-moz-range-thumb {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: url('/IFM%20round%20logo%20for%20watermark.png') center/cover no-repeat;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      border: none;
+    }
+    .slider-sub {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    /* ── BIG REVEAL CARD ── */
+    .reveal-card {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 20px 20px 18px;
+      color: #fff;
+      margin-bottom: 12px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .reveal-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .reveal-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 8px;
+    }
+    .reveal-sentence {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .reveal-amount {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 8vw, 2.8rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .reveal-amount span {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      font-family: 'Nunito', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 4px;
+    }
+    .loss-badge {
+      display: inline-block;
+      background: #ef4444;
+      color: #fff;
+      font-family: 'Lora', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      padding: 6px 20px;
+      border-radius: 30px;
+      margin-bottom: 8px;
+      box-shadow: 0 4px 18px rgba(239,68,68,0.45);
+      animation: pulseBadge 2s ease-in-out infinite;
+    }
+    @keyframes pulseBadge {
+      0%, 100% { box-shadow: 0 4px 18px rgba(239,68,68,0.45); }
+      50%       { box-shadow: 0 4px 28px rgba(239,68,68,0.7); }
+    }
+    .reveal-sub {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      font-style: italic;
+    }
+
+    /* ── BASKET SECTION ── */
+    .section-title {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      padding: 0 2px;
+    }
+    .basket-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    @media (min-width: 600px) {
+      .basket-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .basket-card {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 10px 10px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .basket-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(26,58,92,0.1);
+    }
+    .basket-emoji {
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .basket-name {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--muted);
+      letter-spacing: 0.3px;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+    .basket-today {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+    .basket-today strong {
+      font-family: 'Lora', serif;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .basket-future {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #dc2626;
+      margin-bottom: 3px;
+    }
+    .basket-arrow {
+      font-size: 0.68rem;
+      color: #f97316;
+      font-weight: 800;
+    }
+
+    /* ── CHART ── */
+    .chart-card {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 16px 14px 12px;
+      margin-bottom: 12px;
+    }
+    .chart-title {
+      font-family: 'Lora', serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    #powerChart {
+      width: 100%;
+      height: 220px;
+      display: block;
+      border-radius: 8px;
+    }
+    .chart-legend {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .legend-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── INVESTMENT FIX CARD ── */
+    .fix-card {
+      background: var(--teal);
+      border-radius: 16px;
+      padding: 18px 20px;
+      color: #fff;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .fix-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .fix-card-label {
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 8px;
+    }
+    .fix-line {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 6px;
+      line-height: 1.55;
+    }
+    .fix-line strong {
+      color: #fff;
+    }
+    .fix-multiplier {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 9vw, 3.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin: 10px 0 4px;
+      text-align: center;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .fix-sub {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ── INSIGHT PILL ── */
+    .insight-pill {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--gold);
+    }
+    .insight-pill p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+    .insight-pill strong {
+      color: var(--gold);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+      margin: 14px 0;
+    }
+
+    /* ── NUMBER ANIMATION ── */
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in {
+      animation: countUp 0.35s ease forwards;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particleCanvas"></canvas>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="game-hero">
+    <img src="/IFM%20logo%20white%20background.png" class="hero-logo-wide" alt="IFM"/>
+    <div class="gh-tag">📉 Inflation Calculator 2.0</div>
+    <h2>Your Money is <span style="color:#fca5a5">Shrinking</span></h2>
+    <p>Inflation is silent. See exactly what your money loses — and how to fight back.</p>
+  </div>
+
+  <!-- SECTION 1: Input Card -->
+  <div class="sub-hero">
+    <div class="sub-hero-label">💸 What are you spending today?</div>
+    <div class="amount-input-wrap">
+      <div class="rupee-prefix">₹</div>
+      <input id="amountInput" type="text" inputmode="numeric" value="10,000" autocomplete="off"/>
+    </div>
+    <div class="preset-chips">
+      <button class="chip active" data-val="10000">₹10K</button>
+      <button class="chip" data-val="50000">₹50K</button>
+      <button class="chip" data-val="100000">₹1L</button>
+      <button class="chip" data-val="500000">₹5L</button>
+      <button class="chip" data-val="1000000">₹10L</button>
+    </div>
+  </div>
+
+  <!-- SECTION 2: Sliders -->
+  <div class="card">
+    <div class="card-title">⚙️ Adjust Your Scenario</div>
+    <div class="sliders-row">
+      <div class="slider-group">
+        <label>
+          Inflation Rate
+          <span class="slider-val" id="inflDisplay">6%</span>
+        </label>
+        <input type="range" class="calc-slider" id="inflSlider" min="2" max="15" step="0.5" value="6"/>
+        <div class="slider-sub">2% – 15% per year</div>
+      </div>
+      <div class="slider-group">
+        <label>
+          Years Ahead
+          <span class="slider-val" id="yearsDisplay">10 yrs</span>
+        </label>
+        <input type="range" class="calc-slider" id="yearsSlider" min="5" max="30" step="1" value="10"/>
+        <div class="slider-sub">5 – 30 years</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: Big Reveal -->
+  <div class="reveal-card" id="revealCard">
+    <div class="reveal-label">The Silent Theft</div>
+    <div class="reveal-sentence" id="revealSentence">
+      In <strong>10 years</strong>, ₹10,000 today will only buy what
+    </div>
+    <div class="reveal-amount">
+      <span>purchasing power shrinks to</span>
+      <span id="revealPP">₹5,584</span>
+    </div>
+    <div class="loss-badge" id="lossBadge">▼ 44.2%</div>
+    <div class="reveal-sub">That's silent wealth destruction.</div>
+  </div>
+
+  <!-- SECTION 4: Real-Life Basket -->
+  <div class="section-title">🛒 How Your Everyday Costs Will Look</div>
+  <div class="basket-grid" id="basketGrid">
+    <!-- filled by JS -->
+  </div>
+
+  <!-- SECTION 5: Chart -->
+  <div class="chart-card">
+    <div class="chart-title">Your Purchasing Power Decays Over 30 Years</div>
+    <canvas id="powerChart"></canvas>
+    <div class="chart-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#ef4444;"></div>
+        Purchasing Power
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#2a9d8f;"></div>
+        Invested at 12%
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: Investment Fix -->
+  <div class="fix-card" id="fixCard">
+    <div class="fix-card-label">💡 The Investment Fix</div>
+    <div class="fix-line" id="fixLine1">
+      To maintain ₹10,000 worth of purchasing power in <strong>10 years</strong>, you need <strong>₹17,908</strong>
+    </div>
+    <div class="fix-line" id="fixLine2">
+      But if you invest ₹10,000 at 12% for 10 years → <strong>₹31,058</strong>
+    </div>
+    <div class="fix-multiplier" id="fixMultiplier">3.1×</div>
+    <div class="fix-sub">more than inflation would eat. Equity is the best inflation hedge.</div>
+  </div>
+
+  <!-- SECTION 7: Insight Pill -->
+  <div class="insight-pill">
+    <p id="insightText">
+      Inflation at <strong>6%</strong> means prices <strong>DOUBLE</strong> every <strong>~12 years</strong> (Rule of 72). Your salary, savings, and investments must beat this just to stay still.
+    </p>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+/* ─── STATE ─── */
+var amount    = 10000;
+var inflRate  = 0.06;
+var years     = 10;
+
+/* ─── BASKET ITEMS ─── */
+var basketItems = [
+  { emoji: '🛒', name: 'Monthly Groceries', today: 8000 },
+  { emoji: '⛽', name: 'Petrol (50L)',       today: 5000 },
+  { emoji: '🏫', name: 'School Fees/yr',    today: 60000 },
+  { emoji: '🏠', name: 'Monthly Rent',      today: 20000 },
+  { emoji: '✈️', name: 'Family Holiday',    today: 80000 },
+  { emoji: '📱', name: 'Flagship Phone',    today: 80000 }
+];
+
+/* ─── MATH ─── */
+function futurePrice(p, r, n) { return p * Math.pow(1 + r, n); }
+function purchPower(p, r, n)  { return p / Math.pow(1 + r, n); }
+function invested(p, n)       { return p * Math.pow(1.12, n); }
+
+/* ─── FORMAT ─── */
+function fmtINR(n) {
+  if (n >= 1e7) return '₹' + (n / 1e7).toFixed(1) + ' Cr';
+  if (n >= 1e5) return '₹' + (n / 1e5).toFixed(1) + ' L';
+  if (n >= 1000) return '₹' + Math.round(n).toLocaleString('en-IN');
+  return '₹' + Math.round(n);
+}
+function fmtINRInput(n) {
+  return Math.round(n).toLocaleString('en-IN');
+}
+function parseINR(s) {
+  return parseInt(s.replace(/[^0-9]/g, ''), 10) || 0;
+}
+
+/* ─── SLIDER FILL ─── */
+function updateSliderFill(slider) {
+  var min  = parseFloat(slider.min);
+  var max  = parseFloat(slider.max);
+  var val  = parseFloat(slider.value);
+  var pct  = ((val - min) / (max - min)) * 100;
+  slider.style.setProperty('--pct', pct + '%');
+}
+
+/* ─── MAIN RECALC ─── */
+function recalc() {
+  var pp      = purchPower(amount, inflRate, years);
+  var fp      = futurePrice(amount, inflRate, years);
+  var inv     = invested(amount, years);
+  var lostPct = ((amount - pp) / amount) * 100;
+  var mult    = inv / fp;
+  var rule72  = Math.round(72 / (inflRate * 100));
+
+  /* Reveal card */
+  var sentEl = document.getElementById('revealSentence');
+  sentEl.innerHTML = 'In <strong>' + years + ' year' + (years === 1 ? '' : 's') + '</strong>, ' + fmtINR(amount) + ' today will only buy what';
+  sentEl.classList.remove('animate-in');
+  void sentEl.offsetWidth;
+  sentEl.classList.add('animate-in');
+
+  var ppEl = document.getElementById('revealPP');
+  ppEl.textContent = fmtINR(pp);
+  ppEl.classList.remove('animate-in');
+  void ppEl.offsetWidth;
+  ppEl.classList.add('animate-in');
+
+  var badgeEl = document.getElementById('lossBadge');
+  badgeEl.textContent = '▼ ' + lostPct.toFixed(1) + '%';
+
+  /* Basket */
+  var grid = document.getElementById('basketGrid');
+  grid.innerHTML = '';
+  basketItems.forEach(function(item) {
+    var future  = futurePrice(item.today, inflRate, years);
+    var pctUp   = ((future - item.today) / item.today * 100).toFixed(0);
+    var card    = document.createElement('div');
+    card.className = 'basket-card';
+    card.innerHTML =
+      '<div class="basket-emoji">' + item.emoji + '</div>' +
+      '<div class="basket-name">' + item.name + '</div>' +
+      '<div class="basket-today">Today: <strong>' + fmtINR(item.today) + '</strong></div>' +
+      '<div class="basket-future">' + fmtINR(future) + '</div>' +
+      '<div class="basket-arrow">↗ +' + pctUp + '% in ' + years + ' yr' + (years === 1 ? '' : 's') + '</div>';
+    grid.appendChild(card);
+  });
+
+  /* Fix card */
+  document.getElementById('fixLine1').innerHTML =
+    'To maintain ' + fmtINR(amount) + ' worth of purchasing power in <strong>' + years +
+    ' year' + (years === 1 ? '' : 's') + '</strong>, you need <strong>' + fmtINR(fp) + '</strong>';
+  document.getElementById('fixLine2').innerHTML =
+    'But if you invest ' + fmtINR(amount) + ' at 12% for ' + years + ' year' + (years === 1 ? '' : 's') +
+    ' → <strong>' + fmtINR(inv) + '</strong>';
+  var multEl = document.getElementById('fixMultiplier');
+  multEl.textContent = mult.toFixed(1) + '×';
+  multEl.classList.remove('animate-in');
+  void multEl.offsetWidth;
+  multEl.classList.add('animate-in');
+
+  /* Insight pill */
+  document.getElementById('insightText').innerHTML =
+    'Inflation at <strong>' + (inflRate * 100).toFixed(1) + '%</strong> means prices <strong>DOUBLE</strong> every ' +
+    '<strong>~' + rule72 + ' years</strong> (Rule of 72). Your salary, savings, and investments must beat this just to stay still.';
+
+  /* Chart */
+  drawChart();
+}
+
+/* ─── CHART ─── */
+function drawChart() {
+  var canvas  = document.getElementById('powerChart');
+  var dpr     = window.devicePixelRatio || 1;
+  var W       = canvas.clientWidth;
+  var H       = canvas.clientHeight;
+  canvas.width  = W * dpr;
+  canvas.height = H * dpr;
+  var ctx     = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  var padL = 58, padR = 14, padT = 12, padB = 34;
+  var cW = W - padL - padR;
+  var cH = H - padT - padB;
+
+  ctx.fillStyle = '#f8fafc';
+  ctx.fillRect(0, 0, W, H);
+
+  /* Data: 31 years (0–30) */
+  var maxYr = 30;
+  var base  = 100000; /* always plot against ₹1L base for chart */
+  var ppData  = [];
+  var invData = [];
+  for (var yr = 0; yr <= maxYr; yr++) {
+    ppData.push(purchPower(base, inflRate, yr));
+    invData.push(invested(base, yr));
+  }
+
+  /* Y range */
+  var maxVal = Math.max.apply(null, invData);
+  var minVal = 0;
+
+  function xPx(yr)  { return padL + (yr / maxYr) * cW; }
+  function yPx(val) { return padT + cH - ((val - minVal) / (maxVal - minVal)) * cH; }
+
+  /* Grid lines */
+  ctx.strokeStyle = '#e2e8f0';
+  ctx.lineWidth   = 1;
+  var ySteps = 4;
+  for (var i = 0; i <= ySteps; i++) {
+    var yV  = minVal + (i / ySteps) * (maxVal - minVal);
+    var yPx2 = yPx(yV);
+    ctx.beginPath();
+    ctx.moveTo(padL, yPx2);
+    ctx.lineTo(padL + cW, yPx2);
+    ctx.stroke();
+    /* Y label */
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '500 9px Nunito, sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText(fmtINR(yV), padL - 4, yPx2 + 3);
+  }
+
+  /* X labels */
+  var xYears = [0, 5, 10, 15, 20, 25, 30];
+  ctx.fillStyle = '#94a3b8';
+  ctx.font = '500 9px Nunito, sans-serif';
+  ctx.textAlign = 'center';
+  xYears.forEach(function(yr) {
+    ctx.fillText(yr + 'yr', xPx(yr), padT + cH + 14);
+  });
+
+  function drawLine(data, color, fillColor) {
+    /* Fill */
+    ctx.beginPath();
+    ctx.moveTo(xPx(0), yPx(data[0]));
+    for (var i = 1; i < data.length; i++) {
+      ctx.lineTo(xPx(i), yPx(data[i]));
+    }
+    ctx.lineTo(xPx(data.length - 1), yPx(minVal));
+    ctx.lineTo(xPx(0), yPx(minVal));
+    ctx.closePath();
+    ctx.fillStyle = fillColor;
+    ctx.fill();
+
+    /* Line */
+    ctx.beginPath();
+    ctx.moveTo(xPx(0), yPx(data[0]));
+    for (var j = 1; j < data.length; j++) {
+      ctx.lineTo(xPx(j), yPx(data[j]));
+    }
+    ctx.strokeStyle = color;
+    ctx.lineWidth   = 2.5;
+    ctx.lineJoin    = 'round';
+    ctx.stroke();
+
+    /* Dots at 10yr and 30yr */
+    [10, 30].forEach(function(yr) {
+      var val = data[yr];
+      ctx.beginPath();
+      ctx.arc(xPx(yr), yPx(val), 5, 0, Math.PI * 2);
+      ctx.fillStyle   = color;
+      ctx.fill();
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth   = 2;
+      ctx.stroke();
+      /* Value label */
+      var lbl = fmtINR(val);
+      ctx.font = 'bold 8.5px Nunito, sans-serif';
+      ctx.fillStyle   = color;
+      ctx.textAlign   = 'center';
+      var labelY = yPx(val) - 9;
+      if (labelY < padT + 8) labelY = yPx(val) + 16;
+      ctx.fillText(lbl, xPx(yr), labelY);
+    });
+  }
+
+  drawLine(ppData,  '#ef4444', 'rgba(239,68,68,0.08)');
+  drawLine(invData, '#2a9d8f', 'rgba(42,157,143,0.1)');
+
+  /* Vertical line at selected years */
+  if (years <= maxYr) {
+    ctx.beginPath();
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = 'rgba(26,58,92,0.35)';
+    ctx.lineWidth   = 1.5;
+    ctx.moveTo(xPx(years), padT);
+    ctx.lineTo(xPx(years), padT + cH);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+}
+
+/* ─── FLOATING PARTICLES ─── */
+(function() {
+  var canvas  = document.getElementById('particleCanvas');
+  var ctx     = canvas.getContext('2d');
+  var emojis  = ['📉','💸','🛒','⛽','💰','📈'];
+  var particles = [];
+  var W, H;
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  for (var i = 0; i < 20; i++) {
+    particles.push({
+      x:     Math.random() * window.innerWidth,
+      y:     Math.random() * window.innerHeight,
+      emoji: emojis[Math.floor(Math.random() * emojis.length)],
+      size:  14 + Math.random() * 10,
+      opacity: 0.06 + Math.random() * 0.12,
+      vy:    -(0.2 + Math.random() * 0.4),
+      vx:    (Math.random() - 0.5) * 0.2,
+      drift: Math.random() * Math.PI * 2
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, W, H);
+    var now = Date.now() / 1000;
+    particles.forEach(function(p) {
+      p.y  += p.vy;
+      p.x  += p.vx + Math.sin(now * 0.4 + p.drift) * 0.15;
+      if (p.y < -30) { p.y = H + 10; p.x = Math.random() * W; }
+      if (p.x < -30) p.x = W + 10;
+      if (p.x > W + 30) p.x = -10;
+      ctx.globalAlpha = p.opacity;
+      ctx.font = p.size + 'px serif';
+      ctx.fillText(p.emoji, p.x, p.y);
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+
+/* ─── WIRE UP INPUTS ─── */
+var amountInput = document.getElementById('amountInput');
+var inflSlider  = document.getElementById('inflSlider');
+var yearsSlider = document.getElementById('yearsSlider');
+
+amountInput.addEventListener('input', function() {
+  var raw = parseINR(this.value);
+  amount  = Math.min(Math.max(raw, 1000), 5000000);
+  recalc();
+});
+amountInput.addEventListener('blur', function() {
+  if (amount >= 1000) this.value = fmtINRInput(amount);
+  updateActiveChip(amount);
+});
+amountInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') this.blur();
+});
+
+inflSlider.addEventListener('input', function() {
+  inflRate = parseFloat(this.value) / 100;
+  document.getElementById('inflDisplay').textContent = parseFloat(this.value).toFixed(1) + '%';
+  updateSliderFill(this);
+  recalc();
+});
+
+yearsSlider.addEventListener('input', function() {
+  years = parseInt(this.value, 10);
+  document.getElementById('yearsDisplay').textContent = years + ' yrs';
+  updateSliderFill(this);
+  recalc();
+});
+
+/* ─── PRESET CHIPS ─── */
+function updateActiveChip(val) {
+  document.querySelectorAll('.chip').forEach(function(c) {
+    c.classList.toggle('active', parseInt(c.dataset.val, 10) === val);
+  });
+}
+document.querySelectorAll('.chip').forEach(function(chip) {
+  chip.addEventListener('click', function() {
+    amount = parseInt(this.dataset.val, 10);
+    amountInput.value = fmtINRInput(amount);
+    updateActiveChip(amount);
+    recalc();
+  });
+});
+
+/* ─── INIT ─── */
+updateSliderFill(inflSlider);
+updateSliderFill(yearsSlider);
+recalc();
+
+/* ─── RESIZE CHART ON WINDOW RESIZE ─── */
+window.addEventListener('resize', function() {
+  recalc();
+});
+</script>
+</body>
+</html>
