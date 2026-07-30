@@ -1027,10 +1027,14 @@ function HeroLeaderboard({ ranked, stocks, locks, phase }) {
         if (Math.abs(dy) > 2000) { row.style.transform = ''; return; }
         row.style.transform = 'translateY(' + dy + 'px)';
         row.style.transition = 'none';
-        requestAnimationFrame(() => {
-          row.style.transition = 'transform 550ms cubic-bezier(0.2, 0.9, 0.3, 1.1)';
-          row.style.transform = '';
-        });
+        // Force a layout read to commit the current transform BEFORE we
+        // enable the transition. Without this the browser batches both
+        // style writes into the same frame and the row snaps to its final
+        // position with no animation. Classic FLIP gotcha.
+        // eslint-disable-next-line no-unused-expressions
+        row.offsetHeight;
+        row.style.transition = 'transform 550ms cubic-bezier(0.2, 0.9, 0.3, 1.1)';
+        row.style.transform = '';
       }
     });
     rankMapRef.current = newRankMap;
@@ -1855,84 +1859,121 @@ function RoundTransitionPopup({ round, year, news, stocks, onDismiss }) {
 function NewsPopup({ news, stocks, onDismiss }) {
   const scriptEntry = (window.NEWS_SCRIPT || []).find(n => n.round === news.round);
   const notes = scriptEntry?.stockNotes || {};
+  // Filter to ONLY the 8 stocks in play this session — news.impacts covers
+  // all 20 in the pool. Without the filter the popup was showing every
+  // ticker whether it was in the game or not.
+  const activeIds = new Set((stocks || []).map(s => s.id));
 
-  const affected = Object.entries(news.impacts).map(([ticker, mult]) => {
-    const stock = stocks.find(s => s.id === ticker);
-    const note  = notes[ticker];
-    const movePct = ((mult - 1) * 100);
-    return { ticker, stock, mult, movePct, note };
-  }).sort((a, b) => b.movePct - a.movePct);
+  const affected = Object.entries(news.impacts)
+    .filter(([ticker]) => activeIds.has(ticker))
+    .map(([ticker, mult]) => {
+      const stock = stocks.find(s => s.id === ticker);
+      const note  = notes[ticker];
+      const movePct = ((mult - 1) * 100);
+      return { ticker, stock, mult, movePct, note };
+    }).sort((a, b) => b.movePct - a.movePct);
 
   return (
-    <div className="event-phase-backdrop" style={{ zIndex: 300 }} onClick={onDismiss}>
-      <div className="event-phase-card" style={{ maxWidth: 920, maxHeight: '92vh', padding: '18px 22px', display: 'flex', flexDirection: 'column' }}
-           onClick={e => e.stopPropagation()}>
+    <div className="event-phase-backdrop" style={{
+      zIndex: 300,
+      position: 'fixed', inset: 0,
+      background: 'rgba(0,0,0,0.92)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      padding: '24px',
+      backdropFilter: 'blur(6px)',
+      WebkitBackdropFilter: 'blur(6px)',
+      animation: 'rtp-fade 0.35s ease-out',
+    }} onClick={onDismiss}>
+      <div className="event-phase-card" style={{
+        maxWidth: 1520, width: '96vw', maxHeight: '94vh', minHeight: '80vh',
+        padding: '30px 44px 0',
+        background: 'linear-gradient(180deg, #15161a 0%, #0c0d10 100%)',
+        borderRadius: 18,
+        border: '2px solid rgba(217,119,87,0.55)',
+        display: 'flex', flexDirection: 'column',
+        overflow: 'hidden',
+      }} onClick={e => e.stopPropagation()}>
 
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10, flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
           <span style={{
-            background: 'var(--ink)', color: '#fff',
-            fontFamily: 'Geist Mono, ui-monospace', fontSize: 12, fontWeight: 800,
-            letterSpacing: '0.14em', padding: '4px 11px', borderRadius: 5,
+            background: '#d97757', color: '#fff',
+            fontFamily: 'Geist Mono, ui-monospace', fontSize: 17, fontWeight: 800,
+            letterSpacing: '0.18em', padding: '7px 16px', borderRadius: 6,
+            boxShadow: '0 0 22px rgba(217,119,87,0.55)',
           }}>
-            ROUND {news.round} · BREAKING NEWS
+            ◉ ROUND {news.round} · BREAKING NEWS
           </span>
-          <button onClick={onDismiss} style={{
-            background: 'rgba(255,255,255,0.08)', border: 'none', color: 'rgba(255,255,255,0.7)',
-            fontFamily: 'Geist Mono, ui-monospace', fontSize: 12, padding: '5px 13px',
-            borderRadius: 5, cursor: 'pointer',
-          }}>✕ Dismiss</button>
         </div>
 
-        <div style={{ fontSize: 22, fontWeight: 800, color: '#fff', lineHeight: 1.2, marginBottom: 7, letterSpacing: '-0.01em', flexShrink: 0 }}>
+        <div style={{ fontSize: 40, fontWeight: 800, color: '#fff', lineHeight: 1.15, marginBottom: 14, letterSpacing: '-0.02em' }}>
           {news.headline}
         </div>
 
         <div style={{
-          fontSize: 14, color: 'rgba(255,255,255,0.7)', lineHeight: 1.45,
-          marginBottom: 12, paddingBottom: 10, borderBottom: '1px solid rgba(255,255,255,0.12)', flexShrink: 0,
+          fontSize: 20, color: 'rgba(255,255,255,0.78)', lineHeight: 1.5,
+          marginBottom: 22, paddingBottom: 18, borderBottom: '1px solid rgba(255,255,255,0.14)',
         }}>
           {news.body}
         </div>
 
         <div style={{
-          fontFamily: 'Geist Mono, ui-monospace', fontSize: 11, fontWeight: 800,
-          letterSpacing: '0.12em', color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase',
-          marginBottom: 8, flexShrink: 0,
+          fontFamily: 'Geist Mono, ui-monospace', fontSize: 13, fontWeight: 800,
+          letterSpacing: '0.16em', color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase',
+          marginBottom: 12,
         }}>How it moved the market</div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 8, marginBottom: 12, flex: 1, minHeight: 0, overflowY: 'auto', alignContent: 'start' }}>
+        <div style={{
+          flex: 1, minHeight: 0, overflowY: 'auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(420px, 1fr))',
+          gap: 14, marginBottom: 20,
+        }}>
           {affected.map(({ ticker, stock, movePct, note }) => {
             const up = movePct >= 0;
             return (
               <div key={ticker} style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                borderLeft: `4px solid ${up ? '#1f7a4d' : '#c24a3a'}`,
-                borderRadius: 8, padding: '9px 13px',
-                display: 'flex', alignItems: 'flex-start', gap: 9,
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                borderLeft: `5px solid ${up ? '#1f7a4d' : '#c24a3a'}`,
+                borderRadius: 10, padding: '14px 18px',
               }}>
-                <span style={{ fontSize: 20, lineHeight: 1, marginTop: 1 }}>{stock?.emoji || '📈'}</span>
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 7, marginBottom: 3, flexWrap: 'wrap' }}>
-                    <span style={{
-                      fontFamily: 'Geist Mono, ui-monospace', fontWeight: 800,
-                      fontSize: 14, color: '#fff',
-                    }}>{ticker}</span>
-                    <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>{stock?.name}</span>
-                    <span style={{ flex: 1 }} />
-                    <span style={{
-                      color: up ? '#4ade80' : '#f87171',
-                      fontFamily: 'Geist Mono, ui-monospace', fontWeight: 800, fontSize: 15,
-                    }}>{up ? '▲' : '▼'} {Math.abs(movePct).toFixed(0)}%</span>
-                  </div>
-                  {note?.why && <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)', lineHeight: 1.4 }}>{note.why}</div>}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
+                  <span style={{ fontSize: 28, lineHeight: 1 }}>{stock?.emoji || '📈'}</span>
+                  <span style={{
+                    fontFamily: 'Geist Mono, ui-monospace', fontWeight: 700,
+                    fontSize: 20, color: '#fff', letterSpacing: '0.04em',
+                  }}>{ticker}</span>
+                  <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)' }}>{stock?.name}</span>
+                  <span style={{ flex: 1 }} />
+                  <span style={{
+                    color: up ? '#4ade80' : '#f87171',
+                    fontFamily: 'Geist Mono, ui-monospace', fontWeight: 800, fontSize: 22,
+                  }}>{up ? '▲' : '▼'} {Math.abs(movePct).toFixed(0)}%</span>
                 </div>
+                {note?.why && <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.78)', lineHeight: 1.5 }}>{note.why}</div>}
               </div>
             );
           })}
         </div>
 
-        <button className="big-btn" style={{ width: '100%', fontSize: 16, padding: '11px 20px', flexShrink: 0 }} onClick={onDismiss}>
+        <button
+          onClick={onDismiss}
+          style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14,
+            width: 'calc(100% + 88px)', marginLeft: -44, marginRight: -44, marginTop: 'auto',
+            padding: '24px 32px',
+            fontSize: 26, fontWeight: 800, letterSpacing: '0.02em',
+            color: '#fff',
+            background: 'linear-gradient(90deg, #b04a1e 0%, #d97757 45%, #d97757 55%, #b04a1e 100%)',
+            border: 'none',
+            borderTop: '2px solid rgba(255,255,255,0.15)',
+            borderBottomLeftRadius: 16, borderBottomRightRadius: 16,
+            cursor: 'pointer',
+            boxShadow: '0 -8px 32px rgba(217,119,87,0.35), inset 0 1px 0 rgba(255,255,255,0.15)',
+            flexShrink: 0,
+          }}
+        >
+          <span style={{ fontSize: 22, opacity: 0.9 }}>🏁</span>
           Students are now trading at new prices →
         </button>
       </div>
@@ -2089,10 +2130,10 @@ function EndedOverlay({ ranked }) {
     : 0;
 
   return (
-    <div className="overlay" style={{ alignItems: 'flex-start', paddingTop: 12 }}>
-      <div className="overlay-card wide" style={{ maxWidth: 1180, width: '94vw', maxHeight: '96vh', overflowY: 'auto', padding: 0 }}>
+    <div className="overlay sr-ended-overlay" style={{ alignItems: 'flex-start', paddingTop: 0, padding: 0, background: 'rgba(0,0,0,0.95)' }}>
+      <div className="overlay-card wide sr-racing sr-ended-card" style={{ maxWidth: 1520, width: '96vw', maxHeight: '96vh', overflowY: 'auto', padding: 0 }}>
         <div className="sr-checker" aria-hidden="true" />
-        <div style={{ padding: '14px 18px' }}>
+        <div style={{ padding: '24px 36px' }}>
 
         {/* Header strip — compact */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 12, gap: 16, flexWrap: 'wrap' }}>

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260730av-flipsign" />
+<link rel="stylesheet" href="styles.css?v=20260730ba-textwhite" />
 </head>
 <body>
 <div id="root"><div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#071a10;color:rgba(255,255,255,0.5);font-family:sans-serif;font-size:16px;letter-spacing:0.05em;">Loading…</div></div>
@@ -48,14 +48,14 @@ if (!window.structuredClone) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <!-- Game data (no network deps) -->
-<script src="game-data.js?v=20260730av-flipsign"></script>
+<script src="game-data.js?v=20260730ba-textwhite"></script>
 
 <!-- Load Supabase async, then boot engine. Page stays responsive on slow connections. -->
 <script>
 (function(){
   function loadEngine() {
     var e = document.createElement('script');
-    e.src = 'engine.js?v=20260730av-flipsign';
+    e.src = 'engine.js?v=20260730ba-textwhite';
     document.head.appendChild(e);
   }
   var s = document.createElement('script');
@@ -72,9 +72,9 @@ if (!window.structuredClone) {
 </script>
 
 <!-- shared UI -->
-<script type="text/babel" src="ui-common.jsx?v=20260730av-flipsign"></script>
-<script type="text/babel" src="host-view.jsx?v=20260730av-flipsign"></script>
-<script type="text/babel" src="player-view.jsx?v=20260730av-flipsign"></script>
+<script type="text/babel" src="ui-common.jsx?v=20260730ba-textwhite"></script>
+<script type="text/babel" src="host-view.jsx?v=20260730ba-textwhite"></script>
+<script type="text/babel" src="player-view.jsx?v=20260730ba-textwhite"></script>
 
 <script type="text/babel">
 function App() {

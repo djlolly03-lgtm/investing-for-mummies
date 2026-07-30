@@ -85,7 +85,21 @@ body.host-bg .host-play{margin-top:2px}
 .pod.p3 .bar{height:66px;background:linear-gradient(180deg,#d08a5a,#b5703c)}
 .pod .nm{font-weight:900;font-size:.92rem}.pod .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:1.35rem;margin-bottom:2px}
 /* podium screen polish + 1-player winner hero */
-.podium-stage{padding-bottom:6px}
+/* The podium now carries the race chart and the revisit strip on top of the medals and the
+   full standings, so it's a fixed-height flex column: everything else keeps its size and the
+   standings list scrolls inside itself. Same trick as the round-end leaderboard. */
+.podium-stage{padding-bottom:6px;display:flex;flex-direction:column;height:calc(100vh - 112px);max-height:calc(100vh - 112px)}
+.podium-stage > *{flex:0 0 auto}
+.podium-stage .lb-scroll{flex:1 1 auto;min-height:60px;max-height:none;overflow-y:auto}
+.podium-stage .host-controls{margin-top:8px}
+.podium-video{max-height:11vh}
+/* NB: .race's own max-height is declared further down the sheet, so it would win at equal
+   specificity — hence the descendant selector here. */
+@media(max-height:820px){.podium-video{display:none}.crorepati-title{font-size:1.8rem;margin:2px 0}
+  .podium{margin:8px 0 6px}.win-hero{margin:8px auto;padding:10px 20px}
+  .podium-stage .race{max-height:17vh}.podium-stage .revisit{margin:4px auto 2px}
+  .podium-stage .rv-chip{font-size:.76rem;padding:4px 10px}
+  .podium-stage .pod .bar{height:78px}.podium-stage .pod.p2 .bar{height:62px}.podium-stage .pod.p3 .bar{height:50px}}
 .crorepati-title{font-size:2.1rem;color:var(--gold);margin:6px 0 2px;text-shadow:0 0 26px rgba(245,196,81,.4)}
 .win-hero{display:inline-flex;align-items:center;gap:16px;background:linear-gradient(120deg,rgba(245,196,81,.32),rgba(200,144,10,.12));border:1.5px solid rgba(245,196,81,.6);box-shadow:0 0 30px rgba(245,196,81,.28);border-radius:20px;padding:14px 26px;margin:12px auto}
 .win-hero .win-av{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:2rem;box-shadow:0 0 0 3px rgba(255,255,255,.4)}
@@ -105,7 +119,11 @@ body.host-bg .win-line{color:#eef7f4}
 .host-controls .btn{margin:6px}
 
 /* ════════ HOST · premium broadcast layout ════════ */
-.host-play{display:grid;grid-template-columns:224px 1fr 196px;gap:14px;align-items:start;margin-top:6px}
+/* The play screen was boxed into .wrap's 1100px, leaving ~133px of dead margin either side at
+   1366 (410px at 1920). Widen the host shell and spend ALL of it on the two side panels —
+   the centre column keeps its exact 612px, so question legibility is untouched. */
+body.host-bg .wrap{max-width:1300px}
+.host-play{display:grid;grid-template-columns:333px 1fr 291px;gap:14px;align-items:start;margin-top:6px}
 @media(max-width:1040px){.host-play{grid-template-columns:1fr}}
 .center-col{min-width:0}
 /* pin the primary action button to the same spot on question + reveal so it never jumps */
@@ -355,6 +373,37 @@ input[type=range]{width:100%;accent-color:var(--teal);height:30px}
 .role-toggle a{color:var(--teal-d)}
 .notice{background:var(--gold-lt);border:1.5px solid var(--gold);color:#7a5c1a;border-radius:12px;padding:10px 14px;font-weight:700;font-size:.85rem;margin:10px auto;max-width:600px;text-align:center}
 
+/* ── side panels scaled up ~50-75% for projector legibility (they now have the width) ── */
+.side-panel{padding:18px 17px}
+.side-panel h3{font-size:1.45rem;gap:9px;margin-bottom:14px}
+/* left: class answers */
+.av-big-n{font-size:3.5rem}
+.av-big-l{font-size:.82rem;letter-spacing:.7px}
+.av-hint{font-size:.78rem;margin:-2px 0 10px}
+.av-list{gap:9px}
+.av-row .av-q{width:64px;font-size:.95rem}
+.av-row .av-track{height:17px;border-radius:10px}
+.av-row .av-fill{border-radius:10px}
+.av-row .av-pc{width:52px;font-size:1.12rem}
+/* right: prize ladder */
+.rung{padding:5px 12px;font-size:1.02rem;border-radius:11px;gap:10px}
+.rung .rno{width:40px;font-size:.86rem}
+.rung .rsafe{font-size:.92rem}
+.ladder{gap:3px}
+
+/* 720p projectors: the enlarged panels + a full 16-question log are the tallest things on
+   screen, so pull them back just enough to keep everything above the fold. */
+@media(max-height:745px){
+  .side-panel{padding:12px 13px}
+  .side-panel h3{font-size:1.18rem;margin-bottom:9px}
+  .av-big-n{font-size:2.5rem}
+  .av-big{margin:0 0 8px}
+  .av-list{max-height:42vh;gap:6px}
+  .av-row .av-track{height:14px}
+  .rung{padding:3px 10px;font-size:.9rem}
+  .ladder{gap:2px}
+}
+
 /* ── 🔥 streak: chip on the leaderboard row, beats on the reveal, tease on the live question ── */
 .streak-chip{flex:0 0 auto;font-size:.78rem;font-weight:900;padding:3px 9px;border-radius:20px;letter-spacing:.3px;
   background:linear-gradient(135deg,#ffb347,#ff7a1a);color:#3a1b00;box-shadow:0 0 14px rgba(255,140,40,.45)}
@@ -425,6 +474,34 @@ body.host-bg .wager-timer{color:#ffe08a}
 .av-row .av-track{flex:1;height:12px;border-radius:8px;background:rgba(255,255,255,.10);overflow:hidden}
 .av-row .av-fill{height:100%;border-radius:8px;transition:width .4s}
 .av-row .av-pc{width:38px;text-align:right;font-family:'Poppins';font-weight:700;font-size:.82rem;color:#eaf6f3;flex:0 0 auto}
+
+/* ── rank sparkline in a leaderboard row + the full race chart ── */
+.spark{flex:0 0 auto;opacity:.9}
+.race-wrap{margin:6px auto 2px;max-width:1180px;width:100%}
+.race-head{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:1.6px;color:#8fe6d8;margin-bottom:4px}
+.race{width:100%;height:auto;max-height:52vh;display:block}
+/* the closing "story" screen — the chart is the point here, so give it the room */
+.story-stage{display:flex;flex-direction:column;height:calc(100vh - 112px);max-height:calc(100vh - 112px);justify-content:center}
+.story-stage .race-wrap{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+.story-stage .race{flex:1 1 auto;min-height:0;max-height:none}
+.story-stage .host-controls{flex:0 0 auto;margin:10px 0 0}
+/* podium: the winner names sit on the dark studio backdrop, so they need light type
+   (the base rule is navy, which is invisible here — same trap as the leaderboard title). */
+body.host-bg .pod .nm{color:#eaf6f3;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+/* declared after the base .podium-video rule so the short-screen hide actually wins */
+@media(max-height:820px){body.host-bg .podium-video{display:none}}
+.rc-name{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800}
+.rc-ax{font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;fill:rgba(255,255,255,.45)}
+
+/* ── "worth revisiting" strip on the podium ── */
+.revisit{margin:8px auto 4px;max-width:900px;text-align:center}
+.revisit.good{font-weight:800;color:#8fe6d8;font-size:.95rem}
+.rv-head{font-size:.66rem;font-weight:900;text-transform:uppercase;letter-spacing:1.6px;color:#ffb3c4;margin-bottom:6px}
+.rv-chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
+.rv-chip{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:20px;font-size:.82rem;font-weight:800;
+  background:rgba(240,80,110,.14);border:1px solid rgba(240,80,110,.4);color:#ffd2dc}
+.rv-chip b{color:#fff}
+.rv-q{opacity:.8;font-weight:700;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* ── locked answer: show WHICH one, and let them change it (except fastest-finger) ── */
 .chosen{display:inline-flex;align-items:center;gap:10px;max-width:340px;padding:9px 16px;border-radius:16px;
@@ -815,6 +892,7 @@ function hostAdvance(){
   else if(ph==='reveal') hostNext();
   else if(ph==='standings') hostAfterStandings();
   else if(ph==='round_end') hostNextRound();
+  else if(ph==='ended') hostStory();
 }
 function toggleJoinCorner(){
   const show=!(!state||state.phase==='lobby'||state.phase==='ended');
@@ -1033,6 +1111,7 @@ function hostNextRound(){
 function sortedPlayers(){return Object.values(state.players).sort((a,b)=>b.score-a.score);}
 function renderHost(){
   const el=document.getElementById('host');
+  _rankCache=null;                 // scores may have changed since the last paint
   hideAnswerPop();
   document.body.classList.toggle('qlive-on', state&&state.phase==='question');  // brighter background while a question is live
   toggleJoinCorner();
@@ -1043,6 +1122,7 @@ function renderHost(){
   if(state.phase==='standings'){ el.innerHTML=brand+tplLeaderboard('Where we stand',{pill:'📊 Standings · after Q'+(globalQIndex()+1),btnLabel:'Continue →',btnAction:'hostAfterStandings()'}); return; }
   if(state.phase==='round_intro'){ el.innerHTML=brand+tplRoundIntro(); return; }  // full-screen (no side panels) so the round briefing reads big
   if(state.phase==='ended'){ el.innerHTML=brand+tplPodium(); return; }
+  if(state.phase==='story'){ el.innerHTML=brand+tplStory(); return; }
   // Play phases: class-answers chart (left) · stage (centre) · prize ladder (right)
   let center='';
   if(state.phase==='wager') center=tplHostWager();
@@ -1265,10 +1345,8 @@ function tplHostChoices(){ const q=curQ(),r=curRound(); const ch=state.choices||
 function tplStreakBeats(rv){
   const ups=(rv&&rv.streakUps)||[], brk=(rv&&rv.streakBreaks)||[];
   if(!ups.length&&!brk.length) return '';
-  const up=ups.slice(0,3).map(s=>`<span class="beat up"><span class="beat-av" style="background:${s.color}">${s.av}</span>
-      <b>${escapeHtml(s.name)}</b> — ${s.streak} in a row! <span class="beat-amt">+${fmtMoney(s.bonus)}</span></span>`).join('');
-  const bk=brk.slice(0,2).map(s=>`<span class="beat dn"><span class="beat-av" style="background:${s.color}">${s.av}</span>
-      <b>${escapeHtml(s.name)}</b> — streak broken at ${s.at} 💔</span>`).join('');
+  const up=ups.slice(0,3).map(s=>`<span class="beat up"><span class="beat-av" style="background:${s.color}">${s.av}</span><span><b>${escapeHtml(s.name)}</b> — ${s.streak} in a row! <span class="beat-amt">+${fmtMoney(s.bonus)}</span></span></span>`).join('');
+  const bk=brk.slice(0,2).map(s=>`<span class="beat dn"><span class="beat-av" style="background:${s.color}">${s.av}</span><span><b>${escapeHtml(s.name)}</b> — streak broken at ${s.at} 💔</span></span>`).join('');
   return `<div class="streak-beats">${up}${bk}</div>`;
 }
 /* The pre-question tease — the moment the user singled out. During a live question we show
@@ -1278,8 +1356,8 @@ function tplStreakTease(){
   const on=Object.values(state.players).filter(p=>(p.streak||0)>=STREAK_FROM).sort((a,b)=>b.streak-a.streak);
   if(!on.length) return '';
   const s=on[0], more=on.length>1?` <span class="tease-more">+${on.length-1} more on a run</span>`:'';
-  return `<div class="streak-tease"><span class="beat-av" style="background:${s.color}">${s.av}</span>
-    <b>${escapeHtml(s.name)}</b> is on <b>${s.streak}</b>. Can they make it ${s.streak+1}?${more}</div>`;
+  // one text node only — the flex gap would otherwise space out every word
+  return `<div class="streak-tease"><span class="beat-av" style="background:${s.color}">${s.av}</span><span><b>${escapeHtml(s.name)}</b> is on <b>${s.streak}</b> — can they make it ${s.streak+1}?${more}</span></div>`;
 }
 function tplHostReveal(){ const q=curQ(),r=curRound(),rv=state.reveal;
   const total=Object.keys(state.players).length||1;
@@ -1320,8 +1398,105 @@ function lbRow(p,i){
   const mx=Math.max(1,...Object.values(state.players).map(x=>x.score||0));
   const w=Math.round(((p.score||0)/mx)*100);
   const fire=(p.streak||0)>=STREAK_FROM?`<span class="streak-chip">🔥${p.streak}</span>`:'';
-  return `<div class="lb-row r${rk<=3?rk:'n'}"><span class="rank">${medal}</span><span class="av" style="background:${p.color}">${p.av}</span><span class="nm">${escapeHtml(p.name)}</span>${fire}${delta}<span class="sc">${fmtMoney(p.score)}</span><span class="lb-bar" style="width:${w}%"></span></div>`;
+  const spark=tplSparkline(p);
+  return `<div class="lb-row r${rk<=3?rk:'n'}"><span class="rank">${medal}</span><span class="av" style="background:${p.color}">${p.av}</span><span class="nm">${escapeHtml(p.name)}</span>${fire}${spark}${delta}<span class="sc">${fmtMoney(p.score)}</span><span class="lb-bar" style="width:${w}%"></span></div>`;
 }
+/* ── RANK over time ───────────────────────────────────────────────────────────
+   We plot rank, not money: the ladder is so back-loaded that money lines sit flat for
+   12 questions then all rocket together, and money lines almost never fall so they never
+   cross — and crossing lines ARE the competition. Ties SHARE a rank (standard competition
+   ranking, 1,1,3): early on the room genuinely is level, and fastest-finger already rewards
+   speed so we don't tie-break on it again. Cached per render — recomputing per row is O(n²). */
+let _rankCache=null;
+function getRanks(){
+  if(_rankCache) return _rankCache;
+  const ps=Object.values(state.players||{});
+  const n=Math.max(0,...ps.map(p=>(p.scoreHistory||[]).length));
+  const ranks={}; ps.forEach(p=>ranks[p.id]=[]);
+  for(let i=0;i<n;i++){
+    const col=ps.map(p=>({id:p.id,s:(p.scoreHistory||[])[i]}))
+                .filter(x=>typeof x.s==='number').sort((a,b)=>b.s-a.s);
+    let rank=0,prev=null,seen=0;
+    for(const v of col){ seen++; if(prev===null||v.s<prev){ rank=seen; prev=v.s; } ranks[v.id].push(rank); }
+  }
+  _rankCache={ranks,n,total:ps.length};
+  return _rankCache;
+}
+// Tiny rank trajectory for a leaderboard row — top of the box is 1st.
+function tplSparkline(p){
+  const {ranks,n,total}=getRanks();
+  const r=ranks[p.id]||[];
+  if(n<2||r.length<2||total<2) return '';
+  const W=54,H=18,pad=2;
+  const x=i=>pad+(i/(n-1))*(W-pad*2);
+  const y=v=>pad+((v-1)/Math.max(1,total-1))*(H-pad*2);
+  const pts=r.map((v,i)=>`${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+  const last=r[r.length-1], first=r[0];
+  const col=last<first?'#7CFFB0':(last>first?'#ff9db0':'#9fc2bb');
+  return `<svg class="spark" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true">
+    <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${x(r.length-1).toFixed(1)}" cy="${y(last).toFixed(1)}" r="2.1" fill="${col}"/></svg>`;
+}
+/* The race chart — the story of the whole game in one picture. Only the top few get colour
+   and a label; everyone else is a grey thread, so with 20+ players it stays readable from the
+   back of a room instead of turning into spaghetti. */
+function tplRaceChart(){
+  const {ranks,n,total}=getRanks();
+  if(n<2||total<2) return '';
+  const ps=sortedPlayers(), lead=ps.slice(0,Math.min(6,ps.length)), leadIds=new Set(lead.map(p=>p.id));
+  const W=980,H=250,L=34,R=132,T=16,B=26;
+  const x=i=>L+(i/(n-1))*(W-L-R);
+  const y=v=>T+((v-1)/Math.max(1,total-1))*(H-T-B);
+  const path=p=>(ranks[p.id]||[]).map((v,i)=>`${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+  const grey=ps.filter(p=>!leadIds.has(p.id))
+    .map(p=>`<polyline points="${path(p)}" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>`).join('');
+  const hot=lead.map(p=>{
+    const r=ranks[p.id]||[]; if(r.length<2) return '';
+    const lx=x(r.length-1), ly=y(r[r.length-1]);
+    return `<polyline points="${path(p)}" fill="none" stroke="${p.color}" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" opacity=".95"/>
+      <circle cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="4.5" fill="${p.color}"/>
+      <text x="${(lx+9).toFixed(1)}" y="${(ly+4).toFixed(1)}" class="rc-name" fill="${p.color}">${p.av} ${escapeHtml(p.name)}</text>`;
+  }).join('');
+  // question gridlines + round boundaries
+  let grid='';
+  for(let i=0;i<n;i++){
+    const bound=[3,7,11].includes(i);
+    grid+=`<line x1="${x(i).toFixed(1)}" y1="${T}" x2="${x(i).toFixed(1)}" y2="${H-B}" stroke="rgba(255,255,255,${bound?.16:.06})" stroke-width="1"${bound?' stroke-dasharray="3 3"':''}/>`;
+    if(i%2===0||i===n-1) grid+=`<text x="${x(i).toFixed(1)}" y="${H-8}" class="rc-ax" text-anchor="middle">Q${i+1}</text>`;
+  }
+  return `<div class="race-wrap">
+    <svg class="race" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Rank of each player across the questions">
+      <text x="4" y="${(T+10)}" class="rc-ax">1st</text>
+      <text x="4" y="${(H-B)}" class="rc-ax">${total}${total>9?'':'th'}</text>
+      ${grid}${grey}${hot}
+    </svg></div>`;
+}
+/* "Worth revisiting" — the teaching payoff of the whole game. Any question the room mostly
+   got wrong is a concept that didn't land, so hand the teacher that list at the end rather
+   than making them remember it. Uses the answerLog we already record at every reveal. */
+function tplRevisit(){
+  const log=(state.answerLog||[]).filter(l=>l.answered>0);
+  if(!log.length) return '';
+  const weak=log.map(l=>({...l,pct:l.correct/l.answered}))
+                .filter(l=>l.pct<=0.5)                       // half the room or fewer got it
+                .sort((a,b)=>a.pct-b.pct).slice(0,4);
+  if(!weak.length) return `<div class="revisit good">✅ No weak spots — the room got every question mostly right.</div>`;
+  const chips=weak.map(l=>`<span class="rv-chip"><b>Q${l.gi+1}</b> ${l.correct}/${l.answered}
+    <span class="rv-q">${escapeHtml((l.opts&&l.opts[l.correctIdx])?('✓ '+l.opts[l.correctIdx]):'')}</span></span>`).join('');
+  return `<div class="revisit"><div class="rv-head">📚 Worth revisiting</div><div class="rv-chips">${chips}</div></div>`;
+}
+/* The closing screen. The podium celebrates; THIS is where the game gets explained — how the
+   lead actually moved, and which ideas didn't land. Given its own screen because cramming both
+   onto the podium squeezed the chart down to an unreadable strip. */
+function tplStory(){
+  return `<div class="stage story-stage">
+    <h2 class="lb-title">\u{1F4C8} The story of the game</h2>
+    ${tplRaceChart()}
+    ${tplRevisit()}
+    <div class="host-controls"><button class="btn dark" onclick="location.href=location.pathname+'?role=host'">New game</button></div>
+  </div>`;
+}
+function hostStory(){ pushHistory(); state.phase='story'; saveNow(); renderHost(); }
 function tplPodium(){ const ps=sortedPlayers(); const [a,b,c]=ps; const n=ps.length;
   const pod=(p,cls,medal)=>p?`<div class="pod ${cls}"><div class="av" style="background:${p.color}">${p.av}</div><div class="nm">${escapeHtml(p.name)}</div><div class="bar">${medal}<br>${fmtMoney(p.score)}</div></div>`:'';
   const winHero=a?`<div class="win-hero"><div class="win-av" style="background:${a.color}">${a.av}</div><div><div class="win-name">${escapeHtml(a.name)}</div><div class="win-amt">${fmtMoney(a.score)}</div></div></div>`:'';
@@ -1333,7 +1508,7 @@ function tplPodium(){ const ps=sortedPlayers(); const [a,b,c]=ps; const n=ps.len
     ${centre}
     ${a?`<p class="win-line">${escapeHtml(a.name)} wins with ${fmtMoney(a.score)}! 🎉</p>`:''}
     <div class="lb lb-scroll">${ps.map((p,i)=>lbRow(p,i)).join('')}</div>
-    <div class="host-controls" style="margin-top:10px"><button class="btn dark" onclick="location.href=location.pathname+'?role=host'">New game</button></div>
+    <div class="host-controls" style="margin-top:10px"><button class="btn primary" onclick="hostStory()">See how the lead changed →</button></div>
   </div>`;
 }
 
@@ -1425,7 +1600,7 @@ function renderPlayer(){
   else if(state.phase==='choices') inner=`<div class="p-center"><div class="p-status">👀 Eyes on the big screen</div><p>Here’s what the room picked — let’s talk it through before the answer.</p>${pScoreLine(p)}</div>`;
   else if(state.phase==='reveal') inner=tplPlayerReveal(p);
   else if(state.phase==='standings'||state.phase==='round_end') inner=`<div class="p-center"><div class="p-status">${state.phase==='standings'?'📊 Where we stand':'Round done!'}</div>${pScoreLine(p)}${pRankLine(p)}<p>Check the leaderboard on screen.</p></div>`;
-  else if(state.phase==='ended') inner=tplPlayerEnd(p);
+  else if(state.phase==='ended'||state.phase==='story') inner=tplPlayerEnd(p);
   el.innerHTML=`<div class="player-scr">${topBar(p)}${inner}</div>`;
   if(state.phase==='wager') startWagerCountdown();
 }

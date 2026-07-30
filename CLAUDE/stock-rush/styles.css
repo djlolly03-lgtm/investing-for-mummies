@@ -371,7 +371,12 @@
   color: #fff;
 }
 .sr-race-mode .hero-row:hover { background: rgba(255,255,255,0.03); }
-.sr-race-mode .hero-row.is-bot { opacity: 0.42; }
+.sr-race-mode .hero-row.is-bot { opacity: 0.85; }
+/* Keep the fire, glow ring, and podium stripe at full brightness on bot rows
+   so the P1/2/3 dazzle still POPS even when the leaderboard is bots-only. */
+.sr-race-mode .hero-row.is-bot.rank-1::after,
+.sr-race-mode .hero-row.is-bot.rank-2::after,
+.sr-race-mode .hero-row.is-bot.rank-3::after { opacity: 1; }
 .sr-race-mode .hero-row .hr-name,
 .sr-race-mode .hero-row .hr-worth,
 .sr-race-mode .hero-row .hr-cash,
@@ -475,24 +480,346 @@
 
 /* Explicit rank-row tinting overrides — the base CSS uses --rank-bg CSS var
    set inline via style, which we can't easily strip. Layer a gradient on top. */
+/* PODIUM ROWS — dazzled up. Rank-1 gets an animated gold glow, sparkles,
+   and a fire emoji marker. Rank-2 silver, rank-3 bronze — both brighter
+   than the muted originals. */
 .sr-race-mode .hero-row.rank-1 {
-  background: linear-gradient(90deg, rgba(230,184,0,0.22), rgba(230,184,0,0.06) 55%, rgba(255,255,255,0.02)) !important;
-  border-left: 4px solid var(--racing-gold) !important;
+  background:
+    radial-gradient(ellipse at 8% 50%, rgba(230,184,0,0.32) 0%, transparent 60%),
+    linear-gradient(90deg, rgba(230,184,0,0.28) 0%, rgba(230,184,0,0.10) 45%, rgba(230,184,0,0.02) 80%, transparent) !important;
+  border-left: 6px solid var(--racing-gold) !important;
+  box-shadow: inset 0 0 0 1px rgba(230,184,0,0.28), 0 0 24px -8px rgba(230,184,0,0.35);
+  position: relative;
+}
+.sr-race-mode .hero-row.rank-1::after {
+  content: '🔥';
+  position: absolute;
+  top: 50%; right: 12px;
+  transform: translateY(-50%);
+  font-size: 30px;
+  pointer-events: none;
+  animation: sr-fire-flicker 1.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(255,140,0,0.7));
+}
+@keyframes sr-fire-flicker {
+  0%,100% { transform: translateY(-50%) rotate(-4deg) scale(1); opacity: 1; }
+  25%     { transform: translateY(-52%) rotate(3deg)  scale(1.08); opacity: 0.92; }
+  50%     { transform: translateY(-48%) rotate(-2deg) scale(0.97); opacity: 1; }
+  75%     { transform: translateY(-51%) rotate(4deg)  scale(1.05); opacity: 0.95; }
 }
 .sr-race-mode .hero-row.rank-2 {
-  background: linear-gradient(90deg, rgba(192,192,192,0.18), rgba(192,192,192,0.04) 55%, rgba(255,255,255,0.02)) !important;
-  border-left: 4px solid var(--racing-silv) !important;
+  background:
+    radial-gradient(ellipse at 8% 50%, rgba(220,220,240,0.25) 0%, transparent 60%),
+    linear-gradient(90deg, rgba(220,220,240,0.20) 0%, rgba(220,220,240,0.05) 55%, transparent) !important;
+  border-left: 6px solid var(--racing-silv) !important;
+  box-shadow: inset 0 0 0 1px rgba(220,220,240,0.14);
 }
 .sr-race-mode .hero-row.rank-3 {
-  background: linear-gradient(90deg, rgba(196,123,58,0.18), rgba(196,123,58,0.04) 55%, rgba(255,255,255,0.02)) !important;
-  border-left: 4px solid var(--racing-bronze) !important;
+  background:
+    radial-gradient(ellipse at 8% 50%, rgba(230,140,70,0.24) 0%, transparent 60%),
+    linear-gradient(90deg, rgba(230,140,70,0.18) 0%, rgba(230,140,70,0.05) 55%, transparent) !important;
+  border-left: 6px solid var(--racing-bronze) !important;
+  box-shadow: inset 0 0 0 1px rgba(230,140,70,0.18);
 }
 .sr-race-mode .hero-row:not(.rank-1):not(.rank-2):not(.rank-3) {
-  background: rgba(255,255,255,0.015) !important;
+  background: rgba(255,255,255,0.02) !important;
   border-left: 3px solid transparent !important;
 }
 .sr-race-mode .hero-row { color: #fff !important; }
-.sr-race-mode .hero-row .hr-num { color: rgba(255,255,255,0.4) !important; }
+.sr-race-mode .hero-row .hr-num { color: rgba(255,255,255,0.5) !important; font-weight: 800; font-size: 26px !important; }
+
+/* Bigger, brighter names on podium rows */
+.sr-race-mode .hero-row .hr-name {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+  letter-spacing: -0.01em;
+}
+.sr-race-mode .hero-row.rank-1 .hr-name {
+  font-size: 30px !important;
+  color: #fff5b7 !important;
+  text-shadow: 0 0 22px rgba(255,224,120,0.55), 0 2px 4px rgba(0,0,0,0.35);
+  letter-spacing: 0;
+}
+.sr-race-mode .hero-row.rank-2 .hr-name {
+  font-size: 26px !important;
+  color: #f4f4ff !important;
+  text-shadow: 0 0 14px rgba(220,220,240,0.35);
+}
+.sr-race-mode .hero-row.rank-3 .hr-name {
+  font-size: 24px !important;
+  color: #ffe6cf !important;
+  text-shadow: 0 0 14px rgba(230,140,70,0.35);
+}
+
+/* Glow the avatar circle on top-3 */
+.sr-race-mode .hero-row.rank-1 .avatar-circle,
+.sr-race-mode .hero-row.rank-1 [class*="Avatar"] > div {
+  box-shadow: 0 0 0 3px var(--racing-gold), 0 0 22px rgba(255,215,0,0.55) !important;
+}
+.sr-race-mode .hero-row.rank-2 .avatar-circle,
+.sr-race-mode .hero-row.rank-2 [class*="Avatar"] > div {
+  box-shadow: 0 0 0 3px var(--racing-silv), 0 0 18px rgba(220,220,240,0.5) !important;
+}
+.sr-race-mode .hero-row.rank-3 .avatar-circle,
+.sr-race-mode .hero-row.rank-3 [class*="Avatar"] > div {
+  box-shadow: 0 0 0 3px var(--racing-bronze), 0 0 18px rgba(230,140,70,0.5) !important;
+}
+
+/* Bigger worth values on podium */
+.sr-race-mode .hero-row.rank-1 .hr-worth {
+  font-size: 28px !important;
+  color: var(--racing-gold) !important;
+  text-shadow: 0 0 18px rgba(255,215,0,0.4);
+}
+.sr-race-mode .hero-row.rank-2 .hr-worth {
+  font-size: 24px !important;
+  color: var(--racing-silv) !important;
+}
+.sr-race-mode .hero-row.rank-3 .hr-worth {
+  font-size: 22px !important;
+  color: var(--racing-bronze) !important;
+}
+
+/* Reserve room on right side so the 🔥 emoji doesn't overlap content */
+.sr-race-mode .hero-row.rank-1 { padding-right: 60px !important; }
+
+/* Make chip pills readable and vibrant on the dark theme */
+.sr-race-mode .hero-row .hr-chip {
+  background: rgba(255,255,255,0.10) !important;
+  border-color: rgba(255,255,255,0.18) !important;
+  color: #fff !important;
+}
+.sr-race-mode .hero-row .hr-chip.chip-up { background: rgba(74,222,128,0.22) !important; border-color: rgba(74,222,128,0.4) !important; }
+.sr-race-mode .hero-row .hr-chip.chip-down { background: rgba(248,113,113,0.22) !important; border-color: rgba(248,113,113,0.4) !important; }
+
+/* ============================================================
+   F1 · ENDED OVERLAY — Final Results makeover
+   Dark carbon dashboard vibe (per Organik Truck reference PDF)
+   with racing-red + gold accents. Big italic display headline,
+   full-bleed panels, bold typography, no cream anywhere.
+   ============================================================ */
+
+.overlay.sr-ended-overlay { background: rgba(0,0,0,0.94); align-items: flex-start; padding: 0; }
+
+.overlay-card.sr-ended-card {
+  background: linear-gradient(180deg, #0d0f12 0%, #14171b 60%, #0a0c0f 100%) !important;
+  border: 2px solid rgba(217,119,87,0.4) !important;
+  color: #f5f7fa !important;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 4px rgba(0,0,0,0.5), 0 0 60px rgba(217,119,87,0.15) !important;
+}
+.sr-ended-card * { color: inherit; }
+
+/* Ambient glow ring behind the whole card for drama */
+.sr-ended-card {
+  position: relative;
+}
+.sr-ended-card > .sr-checker { flex-shrink: 0; }
+
+/* Header strip — big italic display headline */
+.sr-ended-card > div > div:first-child {
+  padding-bottom: 24px !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 24px !important;
+}
+.sr-ended-card [style*="font-size: 26px"][style*="font-weight: 700"],
+.sr-ended-card [style*="fontSize: 26"][style*="fontWeight: 700"] {
+  font-size: 56px !important;
+  font-weight: 800 !important;
+  font-family: 'Geist', 'Lora', ui-serif, Georgia, serif !important;
+  font-style: italic !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  text-shadow: 0 0 40px rgba(217,119,87,0.25);
+  background: linear-gradient(135deg, #fff 30%, #ffd28a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.sr-ended-card .overlay-eyebrow,
+.sr-ended-card [style*="letterSpacing: '0.16em'"],
+.sr-ended-card [style*="letter-spacing: 0.16em"] {
+  color: var(--racing-red) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.22em !important;
+  font-weight: 800 !important;
+}
+
+/* MAR 2026 REVEAL pill */
+.sr-ended-card [style*="MAR 2026"],
+.sr-ended-card [style*="rgba(217,119,6"] {
+  background: linear-gradient(135deg, rgba(217,119,6,0.18), rgba(252,211,77,0.10)) !important;
+  border: 1px solid rgba(217,119,6,0.42) !important;
+  color: #ffd28a !important;
+  font-size: 13px !important;
+  padding: 6px 14px !important;
+}
+
+/* Headline stat blocks (Top return, Class avg, Beat the bots) */
+.sr-ended-card [style*="textAlign: 'right'"],
+.sr-ended-card [style*="text-align: right"] {
+  min-width: 100px;
+}
+.sr-ended-card [style*="fontSize: 18"][style*="fontWeight: 700"][style*="Geist Mono"] {
+  font-size: 34px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Counterfactual "What if you slept" card */
+.sr-ended-card [style*="gridTemplateColumns: 'auto 1fr auto'"] {
+  background: linear-gradient(135deg, #1a1206 0%, #0f0a04 100%) !important;
+  border: 1.5px solid rgba(245,158,11,0.4) !important;
+  border-left: 5px solid var(--racing-gold) !important;
+  padding: 18px 24px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 32px rgba(245,158,11,0.15);
+}
+.sr-ended-card [style*="gridTemplateColumns: 'auto 1fr auto'"] * { color: #fff !important; }
+.sr-ended-card [style*="gridTemplateColumns: 'auto 1fr auto'"] [style*="fontSize: 14"] { color: rgba(255,255,255,0.85) !important; font-size: 16px !important; }
+.sr-ended-card [style*="gridTemplateColumns: 'auto 1fr auto'"] [style*="fontSize: 11"] {
+  color: #ffd28a !important;
+  font-size: 12px !important;
+  letter-spacing: 0.16em !important;
+}
+.sr-ended-card [style*="gridTemplateColumns: 'auto 1fr auto'"] [style*="fontSize: 32"] { font-size: 50px !important; }
+.sr-ended-card [style*="fontSize: 22"][style*="fontWeight: 700"][style*="#92400e"] {
+  font-size: 34px !important;
+  color: var(--racing-gold) !important;
+  background: rgba(255,255,255,0.05) !important;
+  border-color: var(--racing-gold) !important;
+  text-shadow: 0 0 20px rgba(245,158,11,0.4);
+}
+
+/* Story-of-the-game strip — big round cards */
+.sr-ended-card [style*="STORY OF THE GAME"],
+.sr-ended-card [style*="Story of the game"] {
+  color: var(--racing-red) !important;
+  font-size: 14px !important;
+  letter-spacing: 0.2em !important;
+  margin-bottom: 18px !important;
+}
+.sr-ended-card [style*="gridTemplateColumns: 'repeat(4'"],
+.sr-ended-card [style*="repeat(4"] { gap: 14px !important; }
+
+/* Story strip individual round cards */
+.sr-ended-card [style*="border: '1px solid var(--line)"][style*="borderRadius: 8"] {
+  background: linear-gradient(180deg, #16191d 0%, #0d0f12 100%) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-top: 3px solid var(--racing-red) !important;
+  padding: 16px 16px !important;
+  border-radius: 10px !important;
+}
+.sr-ended-card [style*="fontSize: 12"][style*="fontWeight: 700"] {
+  font-size: 16px !important;
+  color: #fff !important;
+  line-height: 1.35 !important;
+}
+.sr-ended-card [style*="Round"][style*="fontFamily"] {
+  color: var(--racing-gold) !important;
+}
+
+/* Stock Movers panel — dark carbon with racing accents */
+.sr-ended-card [style*="STOCK MOVERS"] {
+  color: var(--racing-red) !important;
+  font-size: 14px !important;
+  letter-spacing: 0.2em !important;
+}
+.sr-ended-card [style*="Ranked by total return"] {
+  color: rgba(255,255,255,0.5) !important;
+  font-size: 13px !important;
+}
+
+/* Movers table rows */
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"] {
+  background: rgba(255,255,255,0.02) !important;
+  border-color: rgba(255,255,255,0.06) !important;
+  padding: 12px 10px !important;
+  font-size: 15px !important;
+}
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"][style*="rgba(22,163,74,0.06)"] {
+  background: linear-gradient(90deg, rgba(74,222,128,0.15), rgba(74,222,128,0.03) 60%) !important;
+  border: 1px solid rgba(74,222,128,0.35) !important;
+}
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"][style*="rgba(220,38,38,0.06)"] {
+  background: linear-gradient(90deg, rgba(248,113,113,0.15), rgba(248,113,113,0.03) 60%) !important;
+  border: 1px solid rgba(248,113,113,0.35) !important;
+}
+.sr-ended-card [style*="fontSize: 13"][style*="fontWeight: 700"] { font-size: 17px !important; color: #fff !important; }
+.sr-ended-card [style*="fontSize: 10"][style*="color: 'var(--muted)"] { color: rgba(255,255,255,0.55) !important; font-size: 12px !important; }
+
+/* Leaderboard + per-student panels */
+.sr-ended-card [style*="Leaderboard"],
+.sr-ended-card [style*="How each student played"] {
+  color: var(--racing-red) !important;
+  font-size: 14px !important;
+  letter-spacing: 0.2em !important;
+}
+.sr-ended-card [style*="background: 'var(--surface)"][style*="border: '1.5px solid var(--line)"] {
+  background: linear-gradient(180deg, #14171b 0%, #0d0f12 100%) !important;
+  border: 1.5px solid rgba(255,255,255,0.1) !important;
+}
+
+/* Play again button - full racing bar */
+.sr-ended-card .big-btn {
+  background: linear-gradient(90deg, #b04a1e 0%, #d97757 45%, #d97757 55%, #b04a1e 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  padding: 20px 32px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(217,119,87,0.4), inset 0 1px 0 rgba(255,255,255,0.15) !important;
+  text-transform: uppercase;
+}
+.sr-ended-card .big-btn:hover { filter: brightness(1.1); }
+
+/* Muted → light text everywhere */
+.sr-ended-card [style*="color: 'var(--muted)"],
+.sr-ended-card .muted {
+  color: rgba(255,255,255,0.5) !important;
+}
+
+/* Blanket-override text colors — inline styles have color rgb() from React,
+   attribute-substring selectors miss them. Force everything readable. */
+.sr-ended-card,
+.sr-ended-card div,
+.sr-ended-card span,
+.sr-ended-card p,
+.sr-ended-card b {
+  color: #fff !important;
+}
+.sr-ended-card .muted,
+.sr-ended-card [class*="muted"] { color: rgba(255,255,255,0.55) !important; }
+
+/* Restore intended colors for specific components after the blanket */
+.sr-ended-card [style*="rgba(22,163,74"],
+.sr-ended-card [style*="rgb(22, 163, 74"],
+.sr-ended-card [style*="color: rgb(21, 128, 61"] { color: #4ade80 !important; }
+.sr-ended-card [style*="rgba(220,38,38"],
+.sr-ended-card [style*="rgb(220, 38, 38"],
+.sr-ended-card [style*="color: rgb(185, 28, 28"] { color: #f87171 !important; }
+.sr-ended-card .sr-podium { color: var(--racing-black) !important; }
+.sr-ended-card .sr-podium.p1 * { color: #000 !important; }
+.sr-ended-card .sr-podium.p2 * { color: #000 !important; }
+.sr-ended-card .sr-podium.p3 * { color: #000 !important; }
+
+/* Counterfactual card — ensure gold accent text stays gold */
+.sr-ended-card [style*="linear-gradient(135deg, rgba(245,158,11"] b,
+.sr-ended-card [style*="linear-gradient(135deg, rgba(245, 158, 11"] b {
+  color: var(--racing-gold) !important;
+}
+
+/* Story strip stock chips (DIXON +47%) - larger + brighter */
+.sr-ended-card [style*="rgba(22,163,74,0.12)"][style*="Geist Mono"],
+.sr-ended-card [style*="rgba(220,38,38,0.12)"][style*="Geist Mono"] {
+  padding: 6px 12px !important;
+  font-size: 14px !important;
+}
+.sr-ended-card [style*="rgba(22,163,74,0.12)"] { background: rgba(74,222,128,0.20) !important; color: #4ade80 !important; }
+.sr-ended-card [style*="rgba(220,38,38,0.12)"] { background: rgba(248,113,113,0.20) !important; color: #f87171 !important; }
 
 /* News/headline panel + card + big-btn overrides that use white bg */
 .sr-race-mode .news-panel,
