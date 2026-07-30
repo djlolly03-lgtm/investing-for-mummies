@@ -387,10 +387,22 @@ input[type=range]{width:100%;accent-color:var(--teal);height:30px}
 .av-row .av-fill{border-radius:10px}
 .av-row .av-pc{width:52px;font-size:1.12rem}
 /* right: prize ladder */
-.rung{padding:5px 13px;font-size:1.24rem;border-radius:11px;gap:10px}
-.rung .rno{width:46px;font-size:.98rem}
+/* The amount is sized independently of the Q label: it's the number the room reads from
+   the back of the hall, and growing it also closes the dead space right-alignment leaves. */
+.rung{padding:5px 13px;font-size:1.24rem;border-radius:11px;gap:8px}
+.rung .rno{width:42px;font-size:.98rem}
+.rung .ramt{font-size:1.62rem;line-height:1.15;letter-spacing:-.01em}
 .rung .rsafe{font-size:1rem}
 .ladder{gap:3px}
+
+/* 768-tall projectors: 16 rungs at the full amount size run 37px past the fold, so trim the
+   number and the row padding. Declared BEFORE the 745 block so 720p still wins there. */
+@media(max-height:800px){
+  .side-panel{padding:15px 16px}
+  .rung{padding:4px 13px}
+  .rung .ramt{font-size:1.5rem}
+  .ladder{gap:2px}
+}
 
 /* 720p projectors: the enlarged panels + a full 16-question log are the tallest things on
    screen, so pull them back just enough to keep everything above the fold. */
@@ -401,8 +413,9 @@ input[type=range]{width:100%;accent-color:var(--teal);height:30px}
   .av-big{margin:0 0 8px}
   .av-list{max-height:42vh;gap:6px}
   .av-row .av-track{height:14px}
-  .rung{padding:2px 11px;font-size:.98rem}
-  .rung .rno{width:38px;font-size:.82rem}
+  .rung{padding:2px 11px;font-size:.98rem;gap:6px}
+  .rung .rno{width:36px;font-size:.82rem}
+  .rung .ramt{font-size:1.24rem}
   .ladder{gap:2px}
   /* the badge is already tightened; reclaim the top offset on 720p projectors */
   body.host-bg .host-play{margin-top:2px}
