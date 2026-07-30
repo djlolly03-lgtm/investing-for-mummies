@@ -214,8 +214,17 @@ function HostGame() {
   // between commit and paint. With plain useEffect the browser painted one
   // frame with the STALE displayState between popupUp dropping and the effect
   // firing — visible flicker on every round transition.
-  const [displayState, setDisplayState] = React.useState(() => structuredClone(state));
+  // Only clone on mount if we're already in a phase that consumes displayState.
+  // Lobby renders straight from live `state`, so cloning there is pure churn
+  // that causes an initial-mount double render.
+  const [displayState, setDisplayState] = React.useState(() =>
+    state.phase === 'lobby' ? state : structuredClone(state)
+  );
   React.useLayoutEffect(() => {
+    // Skip entirely during lobby — LobbyOverlay uses live `state` directly,
+    // so no downstream consumer needs a frozen snapshot. Prevents any lobby
+    // re-render cost and any flicker on the pit-wall screen.
+    if (state.phase === 'lobby') return;
     // Snapshot when there's no popup up OR when we've exited the 'playing'
     // phase. The phase check prevents a double-render race on end-of-R5 →
     // 'ended': the popup unmounts and EndedOverlay mounts at the same time,
@@ -995,19 +1004,25 @@ function HeroLeaderboard({ ranked, stocks, locks, phase }) {
     // ACTUAL row heights between prevIdx and newIdx per row so each FLIP
     // lands exactly on its final position.
     const heights = Array.from(rows).map(r => r.offsetHeight);
+    // distanceBetween(from, to) = signed vertical offset FROM row-at-from TO
+    // row-at-to. Positive means `to` is below `from` in the leaderboard.
+    // (Bug fix 2026-07-30: sign was flipped — every FLIP was translating the
+    // wrong direction and snapping back, most visibly on R4→R5 when big
+    // rank shuffles happen.)
     function distanceBetween(fromIdx, toIdx) {
       if (fromIdx === toIdx) return 0;
       const [lo, hi] = fromIdx < toIdx ? [fromIdx, toIdx] : [toIdx, fromIdx];
       let sum = 0;
       for (let k = lo; k < hi; k++) sum += heights[k] || 0;
-      return fromIdx < toIdx ? -sum : sum;
+      return fromIdx < toIdx ? sum : -sum;
     }
     rows.forEach((row, newIdx) => {
       const id = row.dataset.playerId;
       const prevIdx = rankMapRef.current.get(id);
       if (prevIdx != null && prevIdx !== newIdx) {
-        // distance the row visually moved TO get from prevIdx to newIdx,
-        // so we translate it BACK by that amount before letting CSS animate.
+        // dy = "distance from where I am NOW to where I WAS", i.e. the offset
+        // that visually restores my previous position. Applied as translateY
+        // then animated to 0 so I appear to slide from my old slot to my new.
         const dy = distanceBetween(newIdx, prevIdx);
         if (Math.abs(dy) > 2000) { row.style.transform = ''; return; }
         row.style.transform = 'translateY(' + dy + 'px)';

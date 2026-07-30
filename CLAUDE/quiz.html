@@ -355,6 +355,23 @@ input[type=range]{width:100%;accent-color:var(--teal);height:30px}
 .role-toggle a{color:var(--teal-d)}
 .notice{background:var(--gold-lt);border:1.5px solid var(--gold);color:#7a5c1a;border-radius:12px;padding:10px 14px;font-weight:700;font-size:.85rem;margin:10px auto;max-width:600px;text-align:center}
 
+/* ── 🔥 streak: chip on the leaderboard row, beats on the reveal, tease on the live question ── */
+.streak-chip{flex:0 0 auto;font-size:.78rem;font-weight:900;padding:3px 9px;border-radius:20px;letter-spacing:.3px;
+  background:linear-gradient(135deg,#ffb347,#ff7a1a);color:#3a1b00;box-shadow:0 0 14px rgba(255,140,40,.45)}
+.streak-beats{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:6px auto 0;max-width:900px}
+.beat{display:inline-flex;align-items:center;gap:7px;padding:6px 14px;border-radius:30px;font-size:.95rem;font-weight:800}
+.beat.up{background:linear-gradient(135deg,rgba(255,179,71,.30),rgba(255,122,26,.12));border:1px solid rgba(255,160,60,.6);color:#ffd9a3}
+.beat.dn{background:rgba(240,80,110,.14);border:1px solid rgba(240,80,110,.45);color:#ffb3c4}
+.beat b{color:#fff}
+.beat-amt{font-family:'Poppins';font-weight:800;color:#7CFFB0}
+.beat-av{width:24px;height:24px;border-radius:50%;display:inline-grid;place-items:center;font-size:.85rem;color:#fff;flex:0 0 auto}
+.streak-tease{display:inline-flex;align-items:center;gap:9px;margin:2px auto 0;padding:7px 18px;border-radius:30px;
+  font-size:1.05rem;font-weight:800;color:#ffd9a3;background:linear-gradient(135deg,rgba(255,179,71,.24),rgba(255,122,26,.08));
+  border:1px solid rgba(255,160,60,.5);animation:teasePulse 1.8s ease-in-out infinite}
+.streak-tease b{color:#fff}
+.tease-more{font-size:.8rem;font-weight:800;opacity:.75}
+@keyframes teasePulse{0%,100%{box-shadow:0 0 0 0 rgba(255,150,50,.0)}50%{box-shadow:0 0 22px 2px rgba(255,150,50,.35)}}
+
 /* ── behaviour / finale pills ── */
 .diff-behaviour{background:linear-gradient(135deg,#7c5cff,#5b3fd6)}
 .diff-finale{background:linear-gradient(135deg,#f5c451,#d69b0a);color:#4a3600}
@@ -408,6 +425,21 @@ body.host-bg .wager-timer{color:#ffe08a}
 .av-row .av-track{flex:1;height:12px;border-radius:8px;background:rgba(255,255,255,.10);overflow:hidden}
 .av-row .av-fill{height:100%;border-radius:8px;transition:width .4s}
 .av-row .av-pc{width:38px;text-align:right;font-family:'Poppins';font-weight:700;font-size:.82rem;color:#eaf6f3;flex:0 0 auto}
+
+/* ── locked answer: show WHICH one, and let them change it (except fastest-finger) ── */
+.chosen{display:inline-flex;align-items:center;gap:10px;max-width:340px;padding:9px 16px;border-radius:16px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16)}
+.chosen-badge{width:34px;height:34px;flex:0 0 auto;border-radius:11px;display:grid;place-items:center;
+  font-family:'Poppins';font-weight:800;font-size:1.05rem;color:#fff}
+.chosen-badge.A{background:var(--A)}.chosen-badge.B{background:var(--B)}
+.chosen-badge.C{background:var(--C)}.chosen-badge.D{background:var(--D)}
+.chosen-txt{font-weight:800;font-size:.95rem;line-height:1.2;text-align:left;color:#eaf6f3}
+.change-tiles{opacity:.9}
+.change-tiles .p-tile{aspect-ratio:2.2/1;font-size:1.35rem}
+.p-tile.mine{outline:3px solid #fff;outline-offset:-3px;box-shadow:0 0 0 4px rgba(255,255,255,.18),0 12px 26px rgba(0,0,0,.3)}
+.p-tile .tx{font-size:1rem;margin-left:6px;opacity:.95}
+.lock-warn{font-size:.82rem;font-weight:900;letter-spacing:.3px;color:#ffd9a3;padding:6px 14px;border-radius:20px;
+  background:rgba(255,150,50,.14);border:1px solid rgba(255,160,60,.45)}
 
 /* ── 50:50 lifeline (player) ── */
 .ll-btn{width:100%;max-width:340px;padding:12px 16px;border-radius:14px;font-weight:900;font-size:.98rem;color:#4a3600;background:linear-gradient(135deg,#ffe08a,#f5c451);box-shadow:0 10px 24px rgba(245,196,81,.35);cursor:pointer}
@@ -498,6 +530,12 @@ const AV_COLOR=['#e05a47','#3a78c9','#2a9d8f','#c8900a','#8e44ad','#e0699a','#16
    The 50:50 lifeline unlocks from Q9. Full-screen standings pop at the round ends
    (after Q4/Q8/Q12) plus the final podium. */
 const WAGER_SECS=15; // seconds to lock a wager in the Risk & Reward round
+/* 🔥 Streak: from 3 correct in a row you earn a bonus on top of that question's prize —
+   3→+25%, 4→+50%, 5→+75%, 6 and beyond→+100% (capped). A wrong or unanswered question
+   resets you to zero. The cap is load-bearing: uncapped escalation on this back-loaded
+   ladder is worth ~₹4.3 Cr over a perfect run (2.7× the entire ladder). */
+const STREAK_FROM=3, STREAK_STEP=0.25, STREAK_MAX=1.00;
+function streakPct(n){ return n<STREAK_FROM?0:Math.min((n-2)*STREAK_STEP, STREAK_MAX); }
 const LIFELINE_FROM=8; // global question index (0-based) from which 50:50 is usable → Q9
 const STANDINGS_AFTER=new Set(); // no mid-round standings — the 3 round ends already break every 4 Qs
 const ROUND_DEFS=[
@@ -592,7 +630,7 @@ const BANK_MUMS=[
 
 /* ── BANK B · TEENS — 🎒 Mutual Fund basics for ages 10–14 (16 Qs, fixed order).
       Same 4·4·4·4 shape, same prize ladder, same tags as the Mums bank — ONLY the
-      questions differ. Topics: units · diversification · NAV myth · expense ratio · fund manager · SIP/SWP
+      questions differ. Topics: units · liquidity · NAV myth · expense ratio · fund manager · SIP/SWP
       · equity · debt · AUM. Options are shuffled per game. ── */
 const BANK_TEENS=[
  /* R1 · Foundations (Q1-4, 60s) */
@@ -602,7 +640,7 @@ const BANK_TEENS=[
  {diff:'hard',q:'You own 100 units. The unit price rises from ₹20 to ₹25. How many units do you own now?',options:['125','80','Still 100','500'],correct:2},
  /* R2 · Fastest Finger First (Q5-8, 20s, fastest doubles) */
  {diff:'medium',q:'A debt fund mainly invests in…',options:['Company shares','Loans and bonds','Gold','Crypto'],correct:1},
- {diff:'medium',q:'₹500 in a mutual fund buys you a small piece of…',options:['One company','Many companies','A bank','Gold only'],correct:1},
+ {diff:'medium',q:'You can usually get your money out of a mutual fund in…',options:['A few days','Five years','Never','Only after you turn 60'],correct:0},
  {diff:'medium',q:'Putting ₹500 into a fund on the same date every month is a…',options:['SIP','SWP','FD','IPO'],correct:0},
  {diff:'medium',q:'AUM tells you…',options:['The fund\'s profit','Total money the fund manages','The unit price','The yearly fee'],correct:1},
  /* R3 · Risk & Reward (Q9-12, invest + 50:50, no clock) */
@@ -742,6 +780,7 @@ function hostKey(e){
     e.preventDefault();
     const full=document.getElementById('qrfull'); if(full){ full.remove(); return; }
     const modal=document.getElementById('hostModal'); if(modal){ hideHostModal(); return; }  // Space dismisses a popup first
+    if(advanceLocked()) return;   // just auto-revealed — let the room see it
     hostAdvance();
   } else if(e.key==='ArrowLeft'||e.key==='Backspace'){ e.preventDefault();
     const modal=document.getElementById('hostModal'); if(modal){ hideHostModal(); return; }
@@ -789,7 +828,7 @@ function hostHandleAction(a){
   if(a.type==='join'){
     if(!state.players[a.id]){
       const n=Object.keys(state.players).length;
-      state.players[a.id]={id:a.id,name:a.name.slice(0,16),av:AV_EMOJI[n%AV_EMOJI.length],color:AV_COLOR[n%AV_COLOR.length],score:0,answered:false,wager:0,lastDelta:0};
+      state.players[a.id]={id:a.id,name:a.name.slice(0,16),av:AV_EMOJI[n%AV_EMOJI.length],color:AV_COLOR[n%AV_COLOR.length],score:0,answered:false,wager:0,lastDelta:0,streak:0,streakBonus:0,scoreHistory:[]};
     }else{ state.players[a.id].name=a.name.slice(0,16); }
     state.totalPlayers=Object.keys(state.players).length;
     save(); if(state.phase==='lobby') updateLobbyPlayers();
@@ -798,11 +837,17 @@ function hostHandleAction(a){
     const p=state.players[a.id]; if(!p||state.phase!=='question')return;
     const k=a.qkey; if(k!==qkey())return; // stale answer for another question
     _answers[k]=_answers[k]||{};
-    if(_answers[k][a.id])return; // already answered
+    // Students mis-tap: the phone shows only A/B/C/D, so a wrong tile is easy to hit under
+    // pressure. Everywhere EXCEPT fastest-finger you may change your mind while the question
+    // is live and we overwrite. In fastest-finger the first tap stands — speed is the whole
+    // point of that round, and allowing changes would make the speed bonus gameable.
+    const locksOnFirstTap = curRound().mode==='fastest';
+    if(_answers[k][a.id] && locksOnFirstTap) return;
     _answers[k][a.id]={choice:a.choice,ts:Date.now()};
     p.answered=true;
-    state.answeredCount=Object.keys(_answers[k]||{}).length;
+    state.answeredCount=Object.keys(_answers[k]||{}).length;   // distinct players, not taps
     save(); updateLiveUI();
+    maybeAutoReveal();
   }
   else if(a.type==='wager'){
     const p=state.players[a.id]; if(!p)return;
@@ -814,7 +859,19 @@ function hostHandleAction(a){
     p.lifelineUsed=true; save();   // persist so it survives a phone reload; 1 use per player
   }
 }
-function maxWager(p){return Math.max(p.score, 100000);} // floor ₹1L so trailing players can still bet big
+// The current question's prize. Works on BOTH sides: the host has state.roundQs (which it
+// built), and players receive the same array over realtime; publicQ.prize is the fallback.
+function curPrize(){
+  const rq=state&&state.roundQs&&state.roundQs[state.round-1];
+  const q=rq?rq[state.qIndex]:null;
+  if(q&&q.prize) return q.prize;
+  return (state&&state.publicQ&&state.publicQ.prize)||0;
+}
+// You may invest at most what you actually HAVE, and never more than the question is worth.
+// Capping to the rung keeps the round additive — betting your whole bank compounded, which let
+// one lucky all-in run away with the game. (The old ₹1L floor let broke players bet money they
+// didn't own; removed — R4's fixed prizes are the comeback route now.)
+function maxWager(p){ return Math.max(0, Math.min(p.score||0, curPrize())); }
 
 /* host flow */
 function hostStart(){ pushHistory(); buildRounds(); state.roundQs=ROUND_QS; state.round=1;state.qIndex=0;state.phase='round_intro';state.reveal=null; resetAnswered(); saveNow(); renderHost(); }
@@ -877,7 +934,21 @@ function updateLiveUI(){
 }
 function timeLeft(){ if(!state.qStartTs)return 0; return Math.max(0,state.timeLimit-(Date.now()-state.qStartTs)/1000); }
 
-function hostReveal(){
+/* Everyone's in — reveal on our own. Saves the teacher watching the counter, and it fires the
+   moment the last phone lands rather than whenever they happen to look up. Manual Space still
+   works if somebody never answers (R3/R4 have no clock to force it). */
+function maybeAutoReveal(){
+  if(!isHost||state.phase!=='question')return;
+  const total=Object.keys(state.players).length;
+  if(total<1||state.answeredCount<total)return;
+  setTimeout(()=>{ if(state.phase==='question'&&state.answeredCount>=Object.keys(state.players).length) hostReveal(true); },450);
+}
+/* The teacher is quick on the spacebar. After an AUTO reveal we swallow input briefly so the
+   room actually sees the answer instead of being skipped straight past it. */
+let _advanceLockUntil=0;
+function lockAdvance(ms){ _advanceLockUntil=Date.now()+ms; toggleJoinCorner(); setTimeout(toggleJoinCorner, ms+60); }
+function advanceLocked(){ return Date.now()<_advanceLockUntil; }
+function hostReveal(auto){
   if(state.phase!=='question'&&state.phase!=='choices')return;   // reveal from the live question OR the discussion screen
   pushHistory();
   stopTick();
@@ -888,6 +959,7 @@ function hostReveal(){
   const tally=[0,0,0,0];
   for(const id in ans){ const c=ans[id].choice; if(c>=0&&c<4)tally[c]++; }
   // score everyone
+  const streakUps=[], streakBreaks=[];
   for(const id in state.players){
     const p=state.players[id]; let delta=0;
     const a=ans[id]; const correct=a&&a.choice===q.correct;
@@ -896,9 +968,30 @@ function hostReveal(){
       delta = q.prize;                                   // win this rung's prize
       if(r.mode==='fastest' && id===correctList[0]) delta = q.prize*2; // fastest correct doubles it
     }
+    // ── streak ──────────────────────────────────────────────────────────────
+    // Correct extends it; a wrong OR unanswered question breaks it. From 3 in a row the
+    // bonus is (streak-2)×25% of THIS question's prize, capped at +100%. The cap matters:
+    // uncapped, a perfect 16/16 run earns ~₹4.3 Cr in bonuses — 2.7× the whole ladder —
+    // which would rebuild the runaway the wager cap just removed.
+    const before=p.streak||0;
+    let bonus=0;
+    if(correct){
+      p.streak=before+1;
+      if(p.streak>=STREAK_FROM){
+        bonus=Math.round(q.prize*streakPct(p.streak));
+        delta+=bonus;
+        streakUps.push({id,name:p.name,av:p.av,color:p.color,streak:p.streak,bonus});
+      }
+    }else{
+      p.streak=0;
+      if(before>=STREAK_FROM) streakBreaks.push({id,name:p.name,av:p.av,color:p.color,at:before});
+    }
+    p.streakBonus=bonus;
     p.score=Math.max(0,p.score+delta); p.lastDelta=delta; p.answered=!!a;
+    (p.scoreHistory=p.scoreHistory||[]).push(p.score);   // for the rank race chart
   }
-  state.reveal={correct:q.correct,tally,correctCount:correctList.length,fastest:correctList[0]||null};
+  state.reveal={correct:q.correct,tally,correctCount:correctList.length,fastest:correctList[0]||null,
+    streakUps:streakUps.sort((a,b)=>b.streak-a.streak), streakBreaks};
   // log this question's result for the live "class answers" chart + hover breakdown on the host's left panel
   const answered=Object.keys(ans).length;
   const who=[[],[],[],[]];
@@ -907,6 +1000,7 @@ function hostReveal(){
   state.answerLog.push({gi:q.gi,correct:correctList.length,answered,behaviour:!!q.behaviour,correctIdx:q.correct,tally:tally.slice(),who,opts:q.options.slice()});
   state.answerLog.sort((a,b)=>a.gi-b.gi);
   state.phase='reveal'; saveNow(); renderHost();
+  if(auto) lockAdvance(2000);   // auto-revealed: hold the screen so a quick Space can't skip it
   if(r.mode==='fastest') setTimeout(showFastestCelebration, 300); // big celebration of who buzzed first
 }
 /* Discussion beat: show the spread of what everyone picked — no correct answer yet — so
@@ -1113,8 +1207,8 @@ function tplRoundIntro(){ const r=curRound();
 function roundRules(r){
   const n=r.tiers.length;
   if(r.mode==='standard')return `Four warm-up questions, ${r.time} seconds each. Straightforward money questions to settle the nerves — answer correctly and it’s in the bank. No tricks yet, so trust what you learned this week.`;
-  if(r.mode==='fastest')return `Four questions, ${r.time} seconds each. Everyone who gets it right still wins the money — but the very FIRST correct answer DOUBLES it. Read quick, tap quicker: this round rewards the brave.`;
-  if(r.mode==='wager')return `Four questions — and the clock is off, so take your time. Before each one you secretly invest part of your winnings (${WAGER_SECS} seconds to lock it in; it starts at half). Right, it grows; wrong, you lose it. And from here on, your one 50:50 lifeline is live.`;
+  if(r.mode==='fastest')return `Four questions, ${r.time} seconds each. Everyone who gets it right still wins the money — but the very FIRST correct answer DOUBLES it. \u26a1 This round only: your first tap locks it in \u2014 no changes. Read quick, tap quicker.`;
+  if(r.mode==='wager')return `Four questions — and the clock is off, so take your time. Before each one you secretly invest some of your winnings, up to what that question is worth (${WAGER_SECS} seconds to lock it in; it starts at half). Right, it grows; wrong, it’s gone. And from here on, your one 50:50 lifeline is live.`;
   if(r.mode==='finale')return `The final four, no timer. The toughest calls of the day, a behaviour round we’ll talk through together, and two “audience traps” designed to catch you out. Nothing is decided yet — the leader can still be caught, all the way to the ₹30 Lakh finish.`;
 }
 function tplHostWager(){ const r=curRound(),q=curQ();
@@ -1124,7 +1218,7 @@ function tplHostWager(){ const r=curRound(),q=curQ();
   return `<div id="hstage" class="stage card">
     <div class="pill-row"><span class="round-pill">${r.name}</span><span class="diff-pill diff-medium">Risk &amp; Reward · invest</span></div>
     <h2 style="font-size:1.7rem;margin:12px 0 4px">💰 Lock in your investments on your phones</h2>
-    <p style="color:var(--muted);font-weight:700">Invest part of your winnings before you see the question. Right, it grows; wrong, you lose it. Not locked in time? It stays at half.</p>
+    <p style="color:var(--muted);font-weight:700">Invest some of your winnings before you see the question — up to ${fmt(curPrize())}, what this one is worth. Right, it grows; wrong, it’s gone. Not locked in time? It stays at half.</p>
     <div class="wager-timer">⏱ Auto-reveals in <b id="wagerCount">${Math.ceil(timeLeft())}</b>s</div>
     <div class="answered-bar">🔒 ${locked} / ${ps.length} locked in</div>
     <div class="wchips">${chips}</div>
@@ -1144,6 +1238,7 @@ function tplHostStage(){ const q=curQ(),r=curRound(); const timed=state.timeLimi
   return `<div id="hstage" class="stage qlive">
     <div class="pill-row"><span class="live-badge">🟢 Live · answer now</span><span class="round-pill">${r.name}</span><span class="diff-pill diff-${q.diff}">${diffLabel(q)}</span>${noclockChip}<span class="prize-pill">💰 ${fmt(q.prize)}${SAFETY.has(q.gi)?' · 🛡️':''}</span></div>
     <div class="qtext">${qDisplay(q)}</div>
+    ${tplStreakTease()}
     ${clock}
     <div class="answered-bar" id="answeredBar">${state.answeredCount} / ${Object.keys(state.players).length} answered</div>
     <div class="opts">${q.options.map((o,i)=>`<div class="opt ${'ABCD'[i]}"><span class="badge">${'ABCD'[i]}</span><span class="label">${escapeHtml(o)}</span></div>`).join('')}</div>
@@ -1164,6 +1259,28 @@ function tplHostChoices(){ const q=curQ(),r=curRound(); const ch=state.choices||
     <div class="host-controls"><button class="btn primary" onclick="hostReveal()">✓ Reveal the answer →</button></div>
   </div>`;
 }
+/* 🔥 The streak theatre. Three of the four moments live here (the chip is on the leaderboard
+   row): who just extended a streak and what it paid, and whose streak just died. These are
+   deliberately loud — the points matter less than the room turning to look at someone. */
+function tplStreakBeats(rv){
+  const ups=(rv&&rv.streakUps)||[], brk=(rv&&rv.streakBreaks)||[];
+  if(!ups.length&&!brk.length) return '';
+  const up=ups.slice(0,3).map(s=>`<span class="beat up"><span class="beat-av" style="background:${s.color}">${s.av}</span>
+      <b>${escapeHtml(s.name)}</b> — ${s.streak} in a row! <span class="beat-amt">+${fmtMoney(s.bonus)}</span></span>`).join('');
+  const bk=brk.slice(0,2).map(s=>`<span class="beat dn"><span class="beat-av" style="background:${s.color}">${s.av}</span>
+      <b>${escapeHtml(s.name)}</b> — streak broken at ${s.at} 💔</span>`).join('');
+  return `<div class="streak-beats">${up}${bk}</div>`;
+}
+/* The pre-question tease — the moment the user singled out. During a live question we show
+   who is riding a streak, so the room knows exactly who is under pressure. p.streak still
+   holds the count from the PREVIOUS question here, which is what makes this work. */
+function tplStreakTease(){
+  const on=Object.values(state.players).filter(p=>(p.streak||0)>=STREAK_FROM).sort((a,b)=>b.streak-a.streak);
+  if(!on.length) return '';
+  const s=on[0], more=on.length>1?` <span class="tease-more">+${on.length-1} more on a run</span>`:'';
+  return `<div class="streak-tease"><span class="beat-av" style="background:${s.color}">${s.av}</span>
+    <b>${escapeHtml(s.name)}</b> is on <b>${s.streak}</b>. Can they make it ${s.streak+1}?${more}</div>`;
+}
 function tplHostReveal(){ const q=curQ(),r=curRound(),rv=state.reveal;
   const total=Object.keys(state.players).length||1;
   const answered=rv.tally.reduce((a,b)=>a+b,0)||1;
@@ -1172,7 +1289,8 @@ function tplHostReveal(){ const q=curQ(),r=curRound(),rv=state.reveal;
     <div class="qtext" style="font-size:clamp(1.3rem,2.7vw,1.9rem)">${qDisplay(q)}</div>
     <div class="opts">${q.options.map((o,i)=>{const pct=Math.round((rv.tally[i]/answered)*100);return `<div class="opt ${'ABCD'[i]} ${i===rv.correct?'right':'dim'}"><span class="badge">${i===rv.correct?'✓':'ABCD'[i]}</span><span class="label">${escapeHtml(o)}</span><span class="pct">${rv.tally[i]}</span><span class="bar" style="width:${pct}%"></span></div>`;}).join('')}</div>
     <p class="reveal-correct" style="font-size:1.05rem;margin-top:3px">✓ Correct answer — <b>${rv.correctCount}/${total}</b> got it</p>
-    <div class="host-controls"><button class="btn primary" onclick="hostNext()">Next →</button></div>
+    ${tplStreakBeats(rv)}
+    <div class="host-controls"><button class="btn primary" onclick="if(!advanceLocked())hostNext()">Next →</button></div>
   </div>`;
 }
 function tplMiniLeader(){ const top=sortedPlayers().slice(0,5);
@@ -1201,7 +1319,8 @@ function lbRow(p,i){
   const delta=d?`<span class="delta ${d>0?'up':'dn'}">${d>0?'+':'−'}${fmtMoney(Math.abs(d))}</span>`:'';
   const mx=Math.max(1,...Object.values(state.players).map(x=>x.score||0));
   const w=Math.round(((p.score||0)/mx)*100);
-  return `<div class="lb-row r${rk<=3?rk:'n'}"><span class="rank">${medal}</span><span class="av" style="background:${p.color}">${p.av}</span><span class="nm">${escapeHtml(p.name)}</span>${delta}<span class="sc">${fmtMoney(p.score)}</span><span class="lb-bar" style="width:${w}%"></span></div>`;
+  const fire=(p.streak||0)>=STREAK_FROM?`<span class="streak-chip">🔥${p.streak}</span>`:'';
+  return `<div class="lb-row r${rk<=3?rk:'n'}"><span class="rank">${medal}</span><span class="av" style="background:${p.color}">${p.av}</span><span class="nm">${escapeHtml(p.name)}</span>${fire}${delta}<span class="sc">${fmtMoney(p.score)}</span><span class="lb-bar" style="width:${w}%"></span></div>`;
 }
 function tplPodium(){ const ps=sortedPlayers(); const [a,b,c]=ps; const n=ps.length;
   const pod=(p,cls,medal)=>p?`<div class="pod ${cls}"><div class="av" style="background:${p.color}">${p.av}</div><div class="nm">${escapeHtml(p.name)}</div><div class="bar">${medal}<br>${fmtMoney(p.score)}</div></div>`:'';
@@ -1220,7 +1339,7 @@ function tplPodium(){ const ps=sortedPlayers(); const [a,b,c]=ps; const n=ps.len
 
 /* ═══════════════════ PLAYER ═══════════════════ */
 let myName=localStorage.getItem('mm_name')||'';
-let myAnswered=false, myLastNonce=-1, myWagerNonce=-1, joinSent=false, wasJoined=false;
+let myAnswered=false, myChoice=-1, myLastNonce=-1, myWagerNonce=-1, joinSent=false, wasJoined=false;
 let myLifeline=null;              // per-question: [keptIndexA, keptIndexB] once 50:50 is used
 let myLifelineUsed=false;         // session-sticky: 50:50 is ONE use per game. Never un-set by incoming
                                   // state (belt-and-suspenders over the server p.lifelineUsed flag); reset
@@ -1256,7 +1375,13 @@ function doJoin(){
   // optimistic local
   renderPlayerJoined();
 }
-function pAnswer(i){ if(myAnswered)return; myAnswered=true;
+// In fastest-finger the first tap is final. Everywhere else you may re-tap to change your
+// answer while the question is live — the host overwrites it.
+function answerLocksOnFirstTap(){ return (state&&state.publicQ&&state.publicQ.mode)==='fastest'; }
+function pAnswer(i){
+  if(myAnswered && answerLocksOnFirstTap()) return;
+  if(myAnswered && myChoice===i) return;          // same tile again — nothing to do
+  myAnswered=true; myChoice=i;
   sendAction({type:'answer',id:MY_ID,qkey:state.round+'-'+state.qIndex,choice:i});
   renderPlayer();
 }
@@ -1283,7 +1408,7 @@ function renderPlayer(){
   // (bumped by the host every hostShowQuestion) so it fires for new rounds AND for a
   // restarted question after a host reload — but never on round_intro/wager.
   if(state.phase==='question'){
-    if(myLastNonce!==state.qNonce){ myAnswered=false; myLifeline=null; myLastNonce=state.qNonce; }
+    if(myLastNonce!==state.qNonce){ myAnswered=false; myChoice=-1; myLifeline=null; myLastNonce=state.qNonce; }
   }
 
   let inner='';
@@ -1334,7 +1459,25 @@ function renderPlayerJoined(){
   document.getElementById('player').innerHTML=scr(`<div class="p-status">You're in! 🎉</div><p>Hi <b>${escapeHtml(myName)}</b></p><p>Waiting for the host to start…</p>`);
 }
 function tplPlayerQuestion(p){
-  if(myAnswered){ return `<div class="p-center"><div class="p-status">Answer locked ✓</div><p>Hang tight — let’s see who’s right!</p>${pScoreLine(p)}</div>`; }
+  const pqa=state.publicQ||{};
+  if(myAnswered){
+    // Always show WHICH answer they locked — a silent "locked ✓" hides mis-taps completely.
+    const L='ABCD'[myChoice]||'?';
+    const txt=(pqa.options&&pqa.options[myChoice])?escapeHtml(pqa.options[myChoice]):'';
+    const locked=answerLocksOnFirstTap();
+    const tiles=locked?'':`<div class="p-tiles change-tiles">${[0,1,2,3].map(i=>{
+        const elim = myLifeline && myLifeline.indexOf(i)<0;
+        const mine = i===myChoice;
+        return `<div class="p-tile ${'ABCD'[i]}${elim?' faded':''}${mine?' mine':''}" ${elim?'':`onclick="pAnswer(${i})"`}>${'ABCD'[i]}${mine?'<span class="tx">✓</span>':''}</div>`;
+      }).join('')}</div>`;
+    return `<div class="p-center" style="gap:12px">
+      <div class="p-status">Answer locked ✓</div>
+      <div class="chosen"><span class="chosen-badge ${L}">${L}</span>${txt?`<span class="chosen-txt">${txt}</span>`:''}</div>
+      ${tiles}
+      <p style="color:#9fc2bb;font-weight:700">${locked?'First tap is final in this round ⚡':'Changed your mind? Tap another — it counts until the answer is shown.'}</p>
+      ${pScoreLine(p)}
+    </div>`;
+  }
   const pq=state.publicQ||{};
   const isBet=(pq.mode==='wager'||pq.finalWager);
   const canLL = pq.lifeline && p && !p.lifelineUsed && !myLifelineUsed && !myLifeline;   // 50:50 available from Q9, exactly ONCE per game
@@ -1351,6 +1494,7 @@ function tplPlayerQuestion(p){
     ${sub?`<div style="font-weight:800;color:#8fe6d8">${sub}</div>`:''}
     <div class="p-tiles">${tiles}</div>
     ${ll}
+    ${pq.mode==='fastest'?'<div class="lock-warn">⚡ First tap locks it in</div>':''}
     <p style="color:#9fc2bb;font-weight:700">Read the options on the big screen 👀</p>
   </div>`;
 }
@@ -1384,6 +1528,13 @@ function tplPlayerReveal(p){
 }
 function tplPlayerWager(p){
   const mx=maxWager(p);
+  // Nothing to invest — a late joiner, or someone who lost it all. Say so kindly instead of
+  // showing a dead 0-to-0 slider; they're still in the game and the finale is worth the most.
+  if(mx<=0) return `<div class="p-center wager-box" id="wagerArea">
+    <div class="p-status">💰 Investing round</div>
+    <p style="color:#9fc2bb;font-weight:700;max-width:300px">You’ve nothing to invest just yet — so sit this one out and answer for the win.</p>
+    <p style="color:#8fe6d8;font-weight:800">The last questions are worth the most 💪</p>
+  </div>`;
   return `<div class="p-center wager-box" id="wagerArea">
     <div class="p-status">💰 Make your investment</div>
     <div class="wager-timer">⏱ locks in <b id="wagerCount2">${Math.max(0,Math.ceil(timeLeft()))}</b>s · defaults to half</div>
@@ -1391,7 +1542,7 @@ function tplPlayerWager(p){
     <div class="wager-val" id="wval">${fmt(wagerAmt(50))}</div>
     <div class="wager-sub" id="wvalsub">${fmtShort(wagerAmt(50))}</div>
     <input type="range" id="wpct" min="0" max="100" step="5" value="50" oninput="pSetWager(this.value)">
-    <div style="display:flex;justify-content:space-between;width:100%;font-weight:800;color:#9fc2bb"><span>₹0 safe</span><span>${fmt(mx)} all-in</span></div>
+    <div style="display:flex;justify-content:space-between;width:100%;font-weight:800;color:#9fc2bb"><span>₹0 safe</span><span>${fmt(mx)} max</span></div>
     <button class="btn gold" style="width:100%;margin-top:10px" onclick="pSubmitWager()">Invest it 🔒</button>
   </div>`;
 }
