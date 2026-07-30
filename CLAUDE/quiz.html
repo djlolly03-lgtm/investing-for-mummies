@@ -603,6 +603,14 @@ body.host-bg .pod .nm{color:#eaf6f3;text-shadow:0 2px 10px rgba(0,0,0,.6)}
 .p-tile.picked{outline:4px dashed #ffe08a;outline-offset:-4px;transform:scale(1.04);
   box-shadow:0 0 0 5px rgba(245,196,81,.28),0 16px 30px rgba(0,0,0,.34);filter:brightness(1.12)}
 .confirm-btn{width:100%;font-size:1.2rem;padding:16px 20px;animation:cpulse 1.5s ease-in-out infinite}
+/* "everyone's in, revealing in N" — shown on the phone and mirrored on the host */
+.grace-chip{font-weight:800;font-size:.95rem;color:#ffe08a;background:rgba(245,196,81,.14);
+  border:1px solid rgba(245,196,81,.5);border-radius:20px;padding:8px 15px;text-align:center}
+.grace-chip b{font-family:'Poppins';font-size:1.15rem}
+.grace-bar{margin:6px auto 0;font-weight:800;font-size:1.02rem;color:#ffe08a;background:rgba(245,196,81,.13);
+  border:1px solid rgba(245,196,81,.45);border-radius:22px;padding:7px 18px;display:inline-block}
+.grace-bar b{font-family:'Poppins';font-size:1.35rem;color:#fff}
+.grace-bar span{color:#9fc2bb;font-weight:700;font-size:.85rem}
 @keyframes cpulse{0%,100%{box-shadow:0 0 0 0 rgba(245,196,81,.5)}50%{box-shadow:0 0 0 12px rgba(245,196,81,0)}}
 .p-tile .tx{font-size:1rem;margin-left:6px;opacity:.95}
 .lock-warn{font-size:.82rem;font-weight:900;letter-spacing:.3px;color:#ffd9a3;padding:6px 14px;border-radius:20px;
@@ -893,7 +901,7 @@ function initialAudience(){
 }
 function freshState(){
   return {phase:'lobby',round:0,qIndex:0,qStartTs:null,timeLimit:60,
-    publicQ:null, answeredCount:0, totalPlayers:0, audience:initialAudience(),
+    publicQ:null, answeredCount:0, totalPlayers:0, graceUntil:null, audience:initialAudience(),
     reveal:null, choices:null, answerLog:[], wagerPhase:false, qNonce:0, roundQs:[], floorUps:[], players:{}, hostId:MY_ID, updatedAt:Date.now()};
 }
 
@@ -1081,7 +1089,8 @@ function tplRecovered(){
   </div>`;
 }
 function hostResumeQuestion(){ _recovering=false; state.wagerPhase=false; state.reveal=null; _skipPush=true; hostShowQuestion(); }
-function resetAnswered(){ for(const id in state.players){state.players[id].answered=false;state.players[id].lastDelta=0;} state.answeredCount=0; }
+function resetAnswered(){ for(const id in state.players){state.players[id].answered=false;state.players[id].lastDelta=0;} state.answeredCount=0;
+  state.graceUntil=null; clearInterval(_graceTimer); _graceTimer=null; }
 
 function hostShowQuestion(){
   if(_skipPush){ _skipPush=false; } else { pushHistory(); }
@@ -1128,11 +1137,36 @@ function timeLeft(){ if(!state.qStartTs)return 0; return Math.max(0,state.timeLi
 /* Everyone's in — reveal on our own. Saves the teacher watching the counter, and it fires the
    moment the last phone lands rather than whenever they happen to look up. Manual Space still
    works if somebody never answers (R3/R4 have no clock to force it). */
+/* Everyone is in — but the LAST person to lock in had no time to reconsider, while everybody
+   else did. So instead of revealing straight away we open a short window for them: the host and
+   every phone count it down, a change during it still counts, and Space reveals early when the
+   room is visibly ready. `graceUntil` lives in state so the phones can show the same clock. */
+const GRACE_SECS=5;
+let _graceTimer=null;
 function maybeAutoReveal(){
   if(!isHost||state.phase!=='question')return;
   const total=Object.keys(state.players).length;
-  if(total<1||state.answeredCount<total)return;
-  setTimeout(()=>{ if(state.phase==='question'&&state.answeredCount>=Object.keys(state.players).length) hostReveal(true); },450);
+  if(total<1||state.answeredCount<total){ cancelGrace(); return; }
+  if(state.graceUntil) return;                       // already counting down
+  state.graceUntil=Date.now()+GRACE_SECS*1000;
+  save(); renderHost(); startGrace();
+}
+function cancelGrace(){
+  clearInterval(_graceTimer); _graceTimer=null;
+  if(state&&state.graceUntil){ state.graceUntil=null; save(); }
+}
+function graceLeft(){ return state&&state.graceUntil?Math.max(0,(state.graceUntil-Date.now())/1000):0; }
+function startGrace(){
+  clearInterval(_graceTimer);
+  _graceTimer=setInterval(()=>{
+    if(!isHost||!state||state.phase!=='question'||!state.graceUntil){ clearInterval(_graceTimer); _graceTimer=null; return; }
+    const el=document.getElementById('graceCount'); if(el) el.textContent=Math.ceil(graceLeft());
+    if(graceLeft()<=0){
+      clearInterval(_graceTimer); _graceTimer=null;
+      state.graceUntil=null;
+      if(state.answeredCount>=Object.keys(state.players).length) hostReveal(true); else { save(); renderHost(); }
+    }
+  },250);
 }
 /* The teacher is quick on the spacebar. After an AUTO reveal we swallow input briefly so the
    room actually sees the answer instead of being skipped straight past it. */
@@ -1190,6 +1224,7 @@ function hostReveal(auto){
   state.answerLog=(state.answerLog||[]).filter(l=>l.gi!==q.gi);
   state.answerLog.push({gi:q.gi,correct:correctList.length,answered,behaviour:!!q.behaviour,correctIdx:q.correct,tally:tally.slice(),who,opts:q.options.slice(),q:q.q});
   state.answerLog.sort((a,b)=>a.gi-b.gi);
+  clearInterval(_graceTimer); _graceTimer=null; state.graceUntil=null;
   state.phase='reveal'; saveNow(); renderHost();
   if(auto) lockAdvance(2000);   // auto-revealed: hold the screen so a quick Space can't skip it
   if(r.mode==='fastest') setTimeout(showFastestCelebration, 300); // big celebration of who buzzed first
@@ -1459,6 +1494,7 @@ function tplHostStage(){ const q=curQ(),r=curRound(); const timed=state.timeLimi
     ${tplStreakTease()}
     ${clock}
     <div class="answered-bar" id="answeredBar">${state.answeredCount} / ${Object.keys(state.players).length} answered</div>
+    ${state.graceUntil?`<div class="grace-bar">\u2705 Everyone\u2019s in \u2014 last chance to change, revealing in <b id="graceCount">${Math.ceil(graceLeft())}</b>s <span>\u00b7 Space to reveal now</span></div>`:''}
     <div class="opts">${q.options.map((o,i)=>`<div class="opt ${'ABCD'[i]}"><span class="badge">${'ABCD'[i]}</span><span class="label">${escapeHtml(o)}</span></div>`).join('')}</div>
     <div class="host-controls"><button class="btn primary" onclick="hostReveal()">Reveal the answer →</button></div>
   </div>`;
@@ -1762,10 +1798,14 @@ function pConfirm(){
 // on a timed question the phone commits it for them as the clock runs out.
 function startAnswerCountdown(){
   clearInterval(_paTimer);
-  if(!state||state.phase!=='question'||!(state.timeLimit>0)) return;
+  if(!state||state.phase!=='question') return;
   _paTimer=setInterval(()=>{
     if(!state||state.phase!=='question'){ clearInterval(_paTimer); return; }
-    if(timeLeft()<=0.6){ clearInterval(_paTimer); if(myPick>=0 && !myAnswered) pConfirm(); }
+    // the "everyone's in, revealing in N" clock, mirrored from the host
+    const g=document.getElementById('pGrace');
+    if(g) g.textContent=Math.ceil(graceLeft());
+    else if(state.graceUntil && myAnswered && myPick<0) renderPlayer();   // countdown just opened
+    if(state.timeLimit>0 && timeLeft()<=0.6){ if(myPick>=0 && !myAnswered) pConfirm(); }
   },300);
 }
 function wagerAmt(pct){ const m=me(); if(!m)return 0; return Math.round(maxWager(m)*(+pct)/100/100)*100; }
@@ -1869,7 +1909,9 @@ function tplPlayerQuestion(p){
       ${tiles}
       ${changing?`<button class="btn gold confirm-btn" onclick="pConfirm()">Change to ${'ABCD'[myPick]} 🔒</button>
                   <p style="color:#9fc2bb;font-weight:700">Still ${L} until you tap that.</p>`
-                :`<p style="color:#9fc2bb;font-weight:700">${locked?'First tap is final in this round ⚡':'Changed your mind? Tap another, then confirm — it counts until the answer is shown.'}</p>`}
+                :(state.graceUntil&&!locked
+                    ? `<div class="grace-chip">⏳ Answer shows in <b id="pGrace">${Math.ceil(graceLeft())}</b>s — tap another to change</div>`
+                    : `<p style="color:#9fc2bb;font-weight:700">${locked?'First tap is final in this round ⚡':'Changed your mind? Tap another, then confirm — it counts until the answer is shown.'}</p>`)}
       ${pScoreLine(p)}
     </div>`;
   }
