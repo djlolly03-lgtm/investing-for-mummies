@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>LTM Live</title>
+<link rel="icon" type="image/png" href="/ifm-round.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=3" />
+</head>
+<body>
+<div id="root">
+  <div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#080a1a;color:rgba(255,255,255,0.4);font-family:sans-serif;font-size:15px;">
+    Loading…
+  </div>
+</div>
+
+<!-- JS error fallback for mobile -->
+<script>
+window.addEventListener('error', function(e) {
+  var r = document.getElementById('root');
+  if (r && r.innerHTML.indexOf('Loading') !== -1) {
+    r.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#080a1a;color:#fff;font-family:sans-serif;text-align:center;padding:24px"><div><div style="font-size:18px;margin-bottom:12px">Failed to load</div><div style="color:rgba(255,255,255,0.5);font-size:13px;word-break:break-all">' + (e.message || 'Unknown error') + '</div><div style="margin-top:16px"><a href="" style="color:#2a9d8f">Tap to refresh</a></div></div></div>';
+  }
+});
+</script>
+
+<!-- Polyfills -->
+<script>
+if (!crypto.randomUUID) {
+  crypto.randomUUID = function() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = crypto.getRandomValues(new Uint8Array(1))[0] % 16;
+      var v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  };
+}
+if (!window.structuredClone) {
+  window.structuredClone = function(obj) { return JSON.parse(JSON.stringify(obj)); };
+}
+</script>
+
+<!-- React 18 + Babel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- Load Supabase → then engine.js -->
+<script>
+(function(){
+  function loadEngine() {
+    var e = document.createElement('script');
+    e.src = 'engine.js?v=8';
+    document.head.appendChild(e);
+  }
+  var s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js';
+  s.onload = loadEngine;
+  s.onerror = function() {
+    document.getElementById('root').innerHTML =
+      '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#080a1a;color:#fff;font-family:sans-serif;text-align:center;padding:24px">' +
+      '<div><div style="font-size:22px;margin-bottom:12px">No connection</div>' +
+      '<div style="color:rgba(255,255,255,0.5)">Check your internet and <a href="" style="color:#2a9d8f">tap to refresh</a></div></div></div>';
+  };
+  document.head.appendChild(s);
+})();
+</script>
+
+<!-- Views -->
+<script type="text/babel" src="host-view.jsx?v=3"></script>
+<script type="text/babel" src="player-view.jsx?v=5"></script>
+
+<script type="text/babel">
+// Expose fmtL globally so both views can call it before engine loads via globals
+// (engine.js also sets window.fmtL — this is a safety shim)
+if (!window.fmtL) {
+  window.fmtL = function(n) {
+    if (n >= 100000) {
+      var v = n / 100000;
+      return '₹' + (v % 1 === 0 ? v : v.toFixed(1)) + 'L';
+    }
+    if (n >= 1000) return '₹' + Math.round(n / 1000) + 'k';
+    return '₹' + n;
+  };
+}
+
+function App() {
+  const params  = new URLSearchParams(window.location.search);
+  const urlRoom = params.get('room');
+  const urlRole = params.get('role');
+
+  // Determine role:
+  //   ?role=host  → host (teacher)
+  //   ?room=XXXX  → player (student joining that room)
+  //   bare URL    → host by default (mirrors stock-rush UX)
+  const isHost   = urlRole === 'host' || (!urlRoom && urlRole !== 'player');
+  const isPlayer = !!urlRoom || urlRole === 'player';
+
+  const [ready, setReady] = React.useState(!!window.LTM_ENGINE);
+  const [slow,  setSlow]  = React.useState(false);
+
+  React.useEffect(() => {
+    if (window.LTM_ENGINE) { setReady(true); return; }
+    const timeout = setTimeout(() => setSlow(true), 10000);
+    const t = setInterval(() => {
+      if (window.LTM_ENGINE) { setReady(true); clearInterval(t); clearTimeout(timeout); }
+    }, 100);
+    return () => { clearInterval(t); clearTimeout(timeout); };
+  }, []);
+
+  if (!ready) {
+    if (slow) return (
+      <div className="centered-screen">
+        <div>
+          <div style={{fontSize:18,marginBottom:12}}>Taking longer than expected</div>
+          <div style={{color:'rgba(255,255,255,0.5)',marginBottom:16,fontSize:14}}>Check your internet connection</div>
+          <a href="" style={{color:'#2a9d8f',fontSize:15}}>Tap to refresh</a>
+        </div>
+      </div>
+    );
+    return (
+      <div className="centered-screen">
+        <div style={{color:'rgba(255,255,255,0.4)',fontSize:15}}>Loading…</div>
+      </div>
+    );
+  }
+
+  if (isHost)   return <HostView />;
+  if (isPlayer) return <PlayerView />;
+
+  // Fallback: show room entry if somehow neither
+  return <PlayerView />;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>
