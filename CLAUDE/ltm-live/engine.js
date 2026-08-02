@@ -331,15 +331,20 @@
     }
 
     if (next === 'r4_intro') {
-      var r4meta = {};
-      var allSpent = players.every(function(p) { return calcSaved(p) <= 0; });
+      var savings   = {};
+      var corpus    = {};
+      var r4budgets = {};
+      var simulated = [];
+      var allSpent  = players.every(function(p) { return calcSaved(p) <= 0; });
 
       players.forEach(function(p) {
-        var saved   = calcSaved(p);
-        var corpus  = Math.round(saved * SAVE_FACTOR);
-        var r1spent = calcR1Spent(p);
-        var r4budget = Math.max(0, BUDGET + corpus - r1spent);
-        r4meta[p.id] = { saved:saved, corpus:corpus, r4budget:r4budget, simulated:false };
+        var saved    = calcSaved(p);
+        var corp     = Math.round(saved * SAVE_FACTOR);
+        var r1spent  = calcR1Spent(p);
+        var r4budget = Math.max(0, BUDGET + corp - r1spent);
+        savings[p.id]   = saved;
+        corpus[p.id]    = corp;
+        r4budgets[p.id] = r4budget;
       });
 
       // If nobody saved, simulate 1–2 random savers so the lesson lands
@@ -353,13 +358,16 @@
         simAmounts.forEach(function(amt, i) {
           var pid = shuffled[i];
           if (!pid) return;
-          var corpus  = Math.round(amt * SAVE_FACTOR);
-          var r1spent = BUDGET - amt;
-          r4meta[pid] = { saved:amt, corpus:corpus, r4budget:Math.max(0, BUDGET + corpus - r1spent), simulated:true };
+          var corp     = Math.round(amt * SAVE_FACTOR);
+          var r1spent  = BUDGET - amt;
+          savings[pid]   = amt;
+          corpus[pid]    = corp;
+          r4budgets[pid] = Math.max(0, BUDGET + corp - r1spent);
+          simulated.push(pid);
         });
       }
 
-      currentState.r4meta = r4meta;
+      currentState.r4meta = { savings:savings, corpus:corpus, r4budgets:r4budgets, simulated:simulated };
     }
 
     if (next === 'r4_picking') {
