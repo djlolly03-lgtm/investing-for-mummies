@@ -160,3 +160,56 @@ else you need — the sheets and Drive folders are shared by account, not by mac
 for six weeks. More than one Claude session can be open on this repo at once, and **any
 deploy publishes the whole shared working tree** — including another session's in-flight
 edits. Commit after a meaningful change rather than letting the tree drift.
+
+## Offsite backup — GitHub
+
+Set up 7 Sep 2026. Until then this repo had **no remote at all**: 19 commits and six
+weeks of uncommitted work existed on exactly one Mac, with no second copy anywhere.
+
+**Remote:** `origin` → private repo under the `djlolly03-lgtm` GitHub account.
+The same account already holds `third-eye-dashboard` and `CC-Tracker`.
+
+### Why pushes were failing everywhere
+
+Not a per-repo problem. macOS git is configured (in
+`/Library/Developer/CommandLineTools/usr/share/git-core/gitconfig`) to use the
+`osxkeychain` credential helper, and **the github.com keychain entry was gone** —
+expired or deleted. The helper returned nothing, git fell back to prompting for a
+username, and a non-interactive session cannot answer a prompt. Hence
+`could not read Username for 'https://github.com'`.
+
+The fix is `gh auth login` once. `gh` installs its own credential helper that holds a
+refreshable OAuth token, so this does not silently expire the way the raw keychain
+entry did. If pushes ever start failing again, run `gh auth status` first.
+
+### The nightly job
+
+| | |
+|---|---|
+| Script | `~/.local/bin/git-autobackup.sh` |
+| launchd | `~/Library/LaunchAgents/com.lollyg.gitautobackup.plist` — daily 21:30 |
+| Log | `~/.local/state/git-autobackup.log` (and `~/Library/Logs/git-autobackup.log`) |
+| Run by hand | `~/.local/bin/git-autobackup.sh` |
+
+It commits anything outstanding and pushes, for three repos: this one, `agency-os`, and
+`THIRD EYE CHECK INs`. It skips a repo mid-merge/rebase or on a detached HEAD, never
+force-pushes, and raises a macOS notification if any repo fails — a backup job that
+fails silently is not a backup.
+
+**It does not deploy.** Committing and pushing are not deploying; the Vercel deploy rule
+at the top of this file is untouched and still needs explicit approval.
+
+Auto-commits are labelled `Auto-backup <date>` and are explicitly unreviewed. They are a
+safety net, not a substitute for the working-tree discipline above — a tree that is
+already committed produces no auto-commit at all.
+
+### Secrets
+
+A live `ANTHROPIC_API_KEY` was found committed in the 30 Jul baseline commit and had
+been sitting in plaintext at `projects/news-agent/.env` since 4 May. History was
+rewritten to purge it before the first push. `.env`/`*.env` are now gitignored.
+
+Before adding a repo to the backup list, grep it for secrets — pushing is the moment a
+mistake becomes permanent. `.gitignore` also excludes `*.raw`/`*.npy` (216 MB of
+regenerable render buffers) and `*.bak`/`*.orig`; without those the baseline commit
+would have been 265 MB instead of 45 MB.
