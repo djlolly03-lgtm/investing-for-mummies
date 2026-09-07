@@ -1458,8 +1458,12 @@ function renderToday(){
     <div class="td-date">${dateStr}</div>
     <div class="td-rows">
       <div class="td-row"><span class="lbl">Outbound</span>${bar(doneN,OUTBOUND_TARGET)}</div>
-      <div class="td-row"><span class="lbl">Stories</span><span class="td-muted">tracking arrives in Phase 4 — post as usual</span></div>
-      <div class="td-row"><span class="lbl">Enquiries</span><span class="td-muted">tab arrives in Phase 2 — log in the sheet for now</span></div>
+      <!-- These two used to read "tracking arrives in Phase 4 / tab arrives in Phase 2".
+           Those promises sat unfulfilled on Sakshi's screen from mid-Aug to Sep and read as
+           broken. Stories keeps its target as a plain reminder (there is genuinely no logging
+           for it); Enquiries is gone entirely — there is no sheet and no feature behind it,
+           so showing a row for it was worse than showing nothing. (devex audit, 7 Sep 2026) -->
+      <div class="td-row"><span class="lbl">Stories</span><span class="td-muted">${STORY_TARGET} a day &middot; post as usual, not logged</span></div>
       <div class="td-row"><span class="lbl">Needs review</span>${pendingN
         ?`<span class="td-review-badge">${pendingN} new from Drive — not catalogued yet</span>`
         :`<span class="td-muted">nothing pending — every registered folder is caught up</span>`}</div>

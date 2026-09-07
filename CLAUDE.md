@@ -104,14 +104,55 @@ the deck missed 29 finished posts for two months. Scan the folder tree, not the 
 | `weekly-competitor-refresh` | Mon 09:39 | **Yes** — the one standing exception |
 | `weekly-aakara-refresh` | *disabled* | superseded by daily-content-processor |
 
-## Credentials — machine-local, not in this repo
+## Credentials — machine-local, and how to rebuild them
 
-- Gmail app password → macOS Keychain, service `ifm-daily-brief-smtp`
-- GA4 service account → `~/.ifm/ga-service-account.json` (chmod 600)
-- Instagram session → `~/.gstack/chromium-profile`
+None of these are in the repo, and none travel with it. On a new machine — or if this Mac
+dies — the daily brief and both Instagram jobs stop until each is re-created by hand.
+Nothing recovers them automatically; this is the runbook.
 
-None of these travel with the repo. On a new machine the daily brief and the
-Instagram scrapes will fail until they are re-created.
+**Never commit any of these, and never paste them into a file inside the repo.**
+
+### 1. Gmail app password → macOS Keychain
+Breaks: the 08:07 daily brief email (`ifm-daily-brief-email`).
+Symptom: task reports "could not read app password from Keychain".
+
+```bash
+# Generate a new 16-char app password at myaccount.google.com/apppasswords
+# (Google account: djlolly03@gmail.com), then store it:
+security add-generic-password -a djlolly03@gmail.com -s ifm-daily-brief-smtp -w '<APP PASSWORD>' -U
+# verify:
+security find-generic-password -s ifm-daily-brief-smtp -w >/dev/null && echo OK
+```
+
+### 2. GA4 service account → `~/.ifm/`
+Breaks: website + games traffic reporting (`content/analytics/fetch_ga.py`).
+Note this pipeline has never fully run — the service account still needs Viewer access
+on the GA property, and the numeric property ID is separate from the `G-` measurement ID.
+
+```bash
+# Google Cloud Console → enable "Google Analytics Data API" → create a service account
+# → download its JSON key. Then:
+mkdir -p ~/.ifm && chmod 700 ~/.ifm
+mv ~/Downloads/<downloaded-key>.json ~/.ifm/ga-service-account.json
+chmod 600 ~/.ifm/ga-service-account.json
+echo '<NUMERIC PROPERTY ID>' > ~/.ifm/ga-property-id
+# then in GA: Admin → Property access management → add the key's client_email as Viewer
+```
+
+### 3. Instagram session → `~/.gstack/chromium-profile`
+Breaks: `weekly-competitor-refresh` and `ifm-followers-daily`. Both have a login guard and
+will stop and notify rather than write bad data, so an expired session is safe but blocking.
+
+Recovery is manual and cannot be scripted: open the GStack browser and log into Instagram
+as @investingformummies. The session then persists in that profile directory.
+
+```bash
+$HOME/.claude/skills/gstack/browse/dist/browse connect   # then log in by hand
+```
+
+### If you are setting up a second machine
+Copy nothing. Re-run all three procedures above. The repo plus this file is everything
+else you need — the sheets and Drive folders are shared by account, not by machine.
 
 ## Working-tree discipline
 
