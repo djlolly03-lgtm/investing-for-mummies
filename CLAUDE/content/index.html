@@ -562,7 +562,8 @@ footer a{color:var(--teal)}
   <footer>
     Data lives in the <a id="lnk-cat" href="#" target="_blank" rel="noopener">Content Catalogue sheet</a> and the
     <a id="lnk-trk" href="#" target="_blank" rel="noopener">Creator Tracker sheet</a> — edit there, refresh here.<br>
-    Performance badges compare engagement (likes + comments + saves + shares) per reach across all published posts:
+    Performance badges rank published posts by engagement (likes + comments) as a share of followers —
+    <b>not</b> reach, which Instagram does not expose to anyone but the account owner:
     🔥 top quartile &middot; 👍 middle &middot; 🌱 bottom quartile.
   </footer>
 </div>
@@ -1200,7 +1201,11 @@ function renderPubTable(){
     const av=val(a,key), bv=val(b,key);
     if(av<bv)return -1*mult; if(av>bv)return 1*mult; return 0;
   });
-  const BADGE={hit:'<span class="pub-badge-sm hit">🔥 Worked</span>',low:'<span class="pub-badge-sm low">Low reach</span>',ok:'<span class="pub-badge-sm ok">OK</span>'};
+  // "Low reach" was wrong twice over: this score is computed from likes+comments, and this very
+  // page states reach cannot be scraped. It is also a forced ranking — cut=ceil(n/3) means the
+  // bottom third is labelled by POSITION, not by performance, so on 12 posts exactly 4 are always
+  // marked down however well they did. Labels now say what they measure. (design audit, 7 Sep 2026)
+  const BADGE={hit:'<span class="pub-badge-sm hit">🔥 Top third</span>',low:'<span class="pub-badge-sm low">Bottom third</span>',ok:'<span class="pub-badge-sm ok">Middle</span>'};
   const TYPE_LABEL={reel:'Reel',post:'Carousel'}; // IFM's "post" posts are carousels, not single images
   tb.innerHTML=sorted.map(p=>{
     const thumb=`<a class="pub-thumb-sm" href="${esc(p.u)}" target="_blank" rel="noopener">${p.t?`<img src="${esc(p.t)}" loading="lazy" alt="">`:'<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:1.1rem">📲</div>'}${p.type==='reel'?'<span class="rl">▶</span>':''}</a>`;
