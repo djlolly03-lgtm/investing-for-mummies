@@ -178,9 +178,20 @@ expired or deleted. The helper returned nothing, git fell back to prompting for 
 username, and a non-interactive session cannot answer a prompt. Hence
 `could not read Username for 'https://github.com'`.
 
-The fix is `gh auth login` once. `gh` installs its own credential helper that holds a
-refreshable OAuth token, so this does not silently expire the way the raw keychain
-entry did. If pushes ever start failing again, run `gh auth status` first.
+**Auth is now an SSH key, not HTTPS.** `~/.ssh/id_ed25519_github`, registered on the
+account as "IFM Mac auto-backup", wired up in `~/.ssh/config` with `AddKeysToAgent` +
+`UseKeychain` so the unattended nightly push never prompts. All three remotes use
+`git@github.com:` URLs. SSH keys do not expire, which is the point — the whole outage
+was caused by a credential that silently lapsed.
+
+Test it with `ssh -T git@github.com` — it should greet you as `djlolly03-lgtm`.
+
+Two things that do **not** work here, so don't burn time on them:
+  - `gh auth login` cannot be driven programmatically. Its prompt ignores piped stdin
+    and `expect`, even with a pty and TERM/LINES/COLUMNS set. It works fine when a
+    human types into it; it just can't be automated.
+  - The Chrome extension cannot script github.com — GitHub's CSP blocks injection on
+    `/settings/*` and `/new` alike. Creating a repo or adding a key is a manual step.
 
 ### The nightly job
 
