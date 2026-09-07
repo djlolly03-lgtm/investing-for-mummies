@@ -51,23 +51,14 @@ header.hub .sub{font-size:.85rem;color:var(--muted);font-weight:600}
 .thumb .ph{font-size:2.4rem;opacity:.5;display:flex;flex-direction:column;align-items:center;gap:6px}
 .thumb .ph::after{content:'not yet shot';font-size:.6rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--navy);opacity:.6}
 .thumb .perf{position:absolute;top:8px;right:8px;z-index:2;background:#fff;border-radius:999px;padding:3px 10px;font-size:.7rem;font-weight:900;box-shadow:0 1px 4px rgba(26,58,92,.2)}
-.typebadge{position:absolute;top:8px;left:8px;z-index:2;background:rgba(26,58,92,.82);color:#fff;border-radius:999px;padding:4px 10px;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;display:flex;align-items:center;gap:4px}
-.playbadge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:54px;height:54px;border-radius:50%;background:rgba(0,0,0,.42);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;pointer-events:none;transition:opacity .2s;padding-left:4px}
 .card.has-video{cursor:pointer}
 .card.has-video:hover .playbadge{opacity:0}
-.cbody{padding:11px 14px 13px;display:flex;flex-direction:column;gap:6px;flex:1}
-.ctitle{font-weight:800;font-size:.92rem;line-height:1.25}
-.details-toggle{background:none;border:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:.72rem;color:var(--teal);cursor:pointer;padding:3px 0;display:flex;align-items:center;gap:4px;text-align:left;white-space:nowrap}
 .details-toggle .chev{transition:transform .2s;font-size:.7rem}
 .details-toggle.open .chev{transform:rotate(180deg)}
-.details{display:flex;flex-direction:column;gap:7px;padding-top:2px}
 .details.hidden{display:none}
-.cbar{display:flex;align-items:center;justify-content:flex-start;gap:9px;flex-wrap:wrap;row-gap:4px}
-.cact{display:flex;align-items:center;gap:9px}
 .dl-mini{font-size:.72rem;font-weight:800;color:var(--teal);text-decoration:none;white-space:nowrap;cursor:pointer;padding:3px 0}
 .dl-mini:hover{text-decoration:underline}
 .dl-mini.off{color:var(--muted);font-weight:700;cursor:default}
-.chips{display:flex;gap:5px;flex-wrap:wrap}
 .chip{font-size:.66rem;font-weight:800;padding:3px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.03em;background:#eef2f6;color:var(--muted)}
 .chip.type{background:var(--mint-lt);color:var(--teal)}
 .chip.src{background:#eef2f6;color:var(--muted)}
@@ -76,10 +67,6 @@ header.hub .sub{font-size:.85rem;color:var(--muted);font-weight:600}
 .chip.st-scheduled{background:var(--mint);color:var(--navy)}
 .chip.st-inproduction,.chip.st-idea{background:#eef2f6;color:var(--muted)}
 .chip.st-onhold,.chip.st-retired{background:#f3e8e5;color:#a13a2d}  /* 2.57:1 -> 5.54:1 */
-.cdesc{font-size:.8rem;color:var(--muted);line-height:1.4}
-.ckeys{font-size:.72rem;color:var(--teal);font-weight:700;line-height:1.5}
-.metrics{display:flex;gap:10px;font-size:.74rem;font-weight:800;color:var(--navy);border-top:1px solid var(--mint-lt);padding-top:8px;margin-top:auto;flex-wrap:wrap}
-.clinks{display:flex;gap:10px;font-size:.76rem;font-weight:800}
 .clinks a{color:var(--teal);text-decoration:none}
 .clinks a:hover{text-decoration:underline}
 
@@ -95,7 +82,6 @@ table.tracker tr:nth-child(even) td{background:#f6faf8}
 .pill.late{background:var(--coral);color:#fff}
 .tracker-summary{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
 /* Competitor cards */
-.comp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;align-items:start}
 .ccard{background:#fff;border-radius:14px;box-shadow:0 1px 5px rgba(26,58,92,.1);padding:14px 15px;display:flex;flex-direction:column;gap:10px}
 .ccard-head{display:flex;gap:11px;align-items:center}
 .ccard-handle{font-size:.76rem;font-weight:800;color:var(--teal);text-decoration:none}
@@ -166,7 +152,6 @@ table.tracker tr:nth-child(even) td{background:#f6faf8}
 .cm-panel{background:#fff;border-radius:16px;max-width:640px;width:100%;max-height:88vh;overflow-y:auto;padding:20px 22px 26px;box-shadow:0 12px 48px rgba(26,58,92,.3)}
 .cm-close{float:right;background:none;border:none;font-size:1.3rem;color:var(--muted);cursor:pointer;line-height:1}
 /* Published (live on IG) grid */
-.pub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:14px}
 /* Growth chart + "what's working" banner, side by side (V2.2: was two big stacked full-width blocks) */
 .pub-row{display:flex;gap:14px;align-items:stretch;margin-bottom:16px}
 .pub-row-growth{flex:0 0 300px;min-width:0}
@@ -188,7 +173,6 @@ table.tracker tr:nth-child(even) td{background:#f6faf8}
 .pg-base{stroke:#e4edf0;stroke-width:1}
 .pg-ax{fill:var(--muted);font-size:11px;font-family:'Nunito',sans-serif;font-weight:700}
 .pg-val{fill:var(--navy);font-size:13px;font-weight:800;font-family:'Nunito',sans-serif}
-.pub-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 5px rgba(26,58,92,.1);display:flex;flex-direction:column}
 .pub-thumb{position:relative;aspect-ratio:1;background:#eef2f6}
 .pub-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .pub-thumb .rl{position:absolute;top:6px;right:8px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.75))}
@@ -198,8 +182,6 @@ table.tracker tr:nth-child(even) td{background:#f6faf8}
 .pub-badge.ok{background:rgba(26,58,92,.66)}
 .pub-er{font-weight:800}
 .pub-er.hit{color:#1f7a6d}.pub-er.low{color:#c0392b}
-.pub-eng{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:.74rem;font-weight:800;padding:16px 9px 6px;display:flex;gap:12px}
-.pub-body{padding:9px 11px 11px;display:flex;flex-direction:column;gap:6px;flex:1}
 .pub-cap{font-size:.78rem;line-height:1.42;color:var(--navy);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .pub-meta{margin-top:auto;font-size:.7rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
 .pub-meta a{color:var(--teal);font-weight:800;text-decoration:none}
@@ -438,7 +420,10 @@ footer a{color:var(--teal)}
     <button class="tab" data-tab="certs">🏅 Certificates</button>
     <button class="tab" data-tab="competitors">📊 Competitors</button>
     <button class="tab" data-tab="published">📲 Published</button>
-    <button id="catalogue-now" class="tab" style="display:none;margin-left:auto;background:#1d56a0;color:#fff;border-color:#1d56a0;font-weight:800">⚡ Catalogue now</button>
+    <!-- "Catalogue now" removed 7 Sep 2026: it sent key=ifm-hub-7Q2x9m, which the deployed
+         Apps Script rejects ({"ok":false,"error":"bad key"}), into a hidden iframe so the error
+         was invisible, then showed "✅ Updated" unconditionally after 25s. The daily-content-
+         processor does this job automatically now. -->
   </div>
 
   <!-- TODAY (Sakshi's landing screen — a to-do list, not a dashboard) -->
@@ -733,56 +718,8 @@ function downloadInfo(it){
   return null;
 }
 
-function card(it){
-  const icon=TYPE_ICON[(it.type||'').toLowerCase()]||'📄';
-  const tsrc=it.thumbnail||it['drive link']||'';
-  const fid=/drive\.google\.com\/(file|thumbnail)/.test(tsrc)?driveId(tsrc):null;
-  const imgSrc=fid?`https://drive.google.com/thumbnail?id=${fid}&sz=w480`:(/\.(png|jpe?g|webp|gif)(\?|$)/i.test(tsrc)?tsrc:null);
-  const dl=it['drive link']||'';
-  // it.video = a self-hosted, web-playable preview (for Drive-hosted clips that can't stream). Used for hover-play + Open.
-  const videoUrl=it.video||(/\.(mp4|mov|webm)(\?|$)/i.test(dl)&&!/drive\.google\.com/.test(dl)?dl:'');
-  const posterImg=imgSrc?`<img class="poster" loading="lazy" src="${esc(imgSrc)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'${icon}'}))">`:`<div class="ph">${icon}</div>`;
-  const thumbInner=videoUrl
-    ? `<video class="vid hidden" muted loop playsinline preload="none" src="${esc(videoUrl)}"${imgSrc?` poster="${esc(imgSrc)}"`:''}></video>${posterImg}<span class="playbadge">▶</span>`
-    : posterImg;
-  const stClass='st-'+(it.status||'idea').toLowerCase().replace(/[^a-z]/g,'');
-  const m=(it.status||'').toLowerCase()==='published' && num(it.reach)>0 ? `
-    <div class="metrics">
-      <span>👁 ${num(it.reach).toLocaleString('en-IN')}</span><span>❤️ ${num(it.likes).toLocaleString('en-IN')}</span>
-      <span>💬 ${num(it.comments)}</span><span>🔖 ${num(it.saves)}</span><span>↗️ ${num(it.shares)}</span>
-    </div>`:'';
-  return `<div class="card${videoUrl?' has-video':''}">
-    <div class="thumb">
-      <span class="typebadge">${icon}${it.type?' '+esc(it.type):''}</span>
-      ${thumbInner}${it._perf?`<div class="perf">${it._perf}</div>`:''}
-    </div>
-    <div class="cbody">
-      <div class="ctitle">${esc(it.title)||'Untitled'}</div>
-      <div class="cbar">
-        <button class="details-toggle" type="button">Details <span class="chev">▾</span></button>
-        <span class="cact">
-          ${(it.video||it['drive link'])?`<a class="dl-mini" href="${esc(it.video||it['drive link'])}" target="_blank" rel="noopener" title="${it.video?'Play preview':'Open the source'}">Open</a>`:''}
-          ${(dlinfo=>dlinfo
-            ? `<a class="dl-mini" href="${esc(dlinfo.href)}"${dlinfo.download?` download="${esc(dlinfo.download)}"`:''}${dlinfo.blank?' target="_blank" rel="noopener"':''} title="${esc(dlinfo.sub||'')}">⤓ ${esc(dlinfo.label)}</a>`
-            : `<span class="dl-mini off" title="No file uploaded to Drive yet">no file</span>`
-          )(downloadInfo(it))}
-          ${ADMIN?`<button class="dl-mini arch-btn" data-arch="${esc(it.id)}" title="${archived.has(it.id)?'Restore to library':'Hide from library'}" style="background:none;border:none;color:${archived.has(it.id)?'var(--teal)':'#c06'}">${archived.has(it.id)?'♻ Restore':'✕ Archive'}</button>`:''}
-        </span>
-      </div>
-      <div class="details hidden">
-        <div class="chips">
-          ${it.status?`<span class="chip ${stClass}">${esc(it.status)}</span>`:''}
-          ${it.source?`<span class="chip src">${esc(it.source)}</span>`:''}
-        </div>
-        ${it.description?`<div class="cdesc">${esc(it.description)}</div>`:''}
-        ${it.keywords?`<div class="ckeys">${esc(it.keywords)}</div>`:''}
-        ${m}
-        <div class="clinks">
-          ${it['ig link']?`<a href="${esc(it['ig link'])}" target="_blank" rel="noopener">View on Instagram</a>`:''}
-        </div>
-      </div>
-    </div></div>`;
-}
+// card() removed 7 Sep 2026 — it rendered the Library card grid, replaced by the
+// sortable table. It was never called after that change; renderTracker has its own local card().
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 // Library v2 (31 Aug 2026): table renderer replaced the card grid — same fix Published and
@@ -1620,31 +1557,6 @@ document.getElementById('gate-form').addEventListener('submit',e=>{e.preventDefa
 let _authed=false; try{_authed=sessionStorage.getItem('ifm-content-auth')==='1';}catch(_){}
 if(_authed){ unlock(); }
 else { document.body.classList.add('locked'); document.getElementById('gate-pw').focus(); }
-
-// Admin-only "Catalogue now" button — visible at /content/?admin=1. Calls the Apps Script web app.
-(function(){
-  if(!/[?&]admin=1/.test(location.search))return;
-  const btn=document.getElementById('catalogue-now');
-  btn.style.display='';
-  btn.addEventListener('click',()=>{
-    let u=localStorage.getItem('ifm_webapp_url');
-    if(!u){
-      u=prompt('Paste your Apps Script Web App URL (Deploy → Web app → ends in /exec):');
-      if(!u)return; u=u.trim(); localStorage.setItem('ifm_webapp_url',u);
-    }
-    // Fire the catalogue in a hidden iframe (no new tab), then refresh the grid.
-    const src=u+(u.indexOf('?')>=0?'&':'?')+'key=ifm-hub-7Q2x9m';
-    const f=document.createElement('iframe'); f.style.display='none'; f.src=src; document.body.appendChild(f);
-    const orig=btn.textContent; btn.disabled=true; btn.textContent='⏳ Cataloguing…';
-    setTimeout(()=>{
-      btn.textContent='🔄 Refreshing…';
-      Promise.resolve(load()).then(()=>{
-        btn.textContent='✅ Updated'; f.remove();
-        setTimeout(()=>{btn.textContent=orig;btn.disabled=false;},2500);
-      }).catch(()=>{btn.textContent=orig;btn.disabled=false;f.remove();});
-    },25000);
-  });
-})();
 
 // --- Competitors add/delete (admin view at ?admin=1) → writes to the sheet via Apps Script web app ---
 function compWebapp(){
