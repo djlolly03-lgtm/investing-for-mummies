@@ -243,23 +243,46 @@ possibilities were checked and all four were empty: Time Machine had no destinat
 configured and had never run, `~/Documents` is a real local folder (not iCloud-synced),
 Dropbox was installed but held 0 B, and no external drive was mounted.
 
-### The fix
+### The fix — done 7 Sep 2026
 
-`~/.local/bin/media-backup.sh` — copies the 3.6 GB to `gdrive:IFM Machine Backup`
-using the `rclone` remote that already existed (20 TiB, ~7.7 GiB used).
+`~/.local/bin/media-backup.sh` — copies to `gdrive:IFM Machine Backup` using the
+`rclone` remote that already existed (20 TiB, ~7.7 GiB used).
 
     ~/.local/bin/media-backup.sh --dry-run   # shows what would go, sends nothing
-    ~/.local/bin/media-backup.sh             # ~10-30 min first run; later runs send only changes
+    ~/.local/bin/media-backup.sh             # later runs send only what changed
 
+**First run completed 7 Sep 2026, 23:02** — 1,767 files, verified folder-by-folder with
+`rclone check --one-way`: deliverables 50, ai-generations 74, course-docs 11,
+highlight-reel-assets 1147, brand 72, Nursery Rhymes 396, documents 17. Zero missing.
 Log: `~/.local/state/media-backup.log`.
+
+The set was trimmed from 3.56 GB to **2.55 GB** by three exclusions, all verified before
+being applied — don't undo them without re-checking:
+
+  - **`work/ w2/ w5/ w30/ w45/`** (269 MB) — lyric-video build dirs, each holding only
+    `body.mp4` + `concat.txt`. Different byte sizes, so separate render attempts at the
+    xfade timing, not copies. Regenerable from `build*.py` plus the source clips.
+  - **`deliverables/videos/nursery-rhymes/`** (258 MB) — md5-identical to the finals
+    already inside `Nursery Rhymes/`. Nine files that were being counted twice.
+  - **`highlight-reel-assets/mummies/`** (504 MB) — curated re-cuts of shoots whose
+    originals already sit in Drive's Content Library (~22.9 GB: Photo gallery 7.6 GB,
+    Session photos & clips 4.9 GB). Re-derivable if the curation is redone.
 
 Two deliberate choices: it uses `rclone copy`, **never `sync`** — a file deleted locally
 is kept on Drive, because a backup that deletes what the source lost is not a backup.
-And the scratch exclusions are what keep this at 3.6 GB instead of 7.6 GB; if you add a
-new pipeline that writes big intermediates, add it to `EXCLUDES`.
+And an interrupted run costs nothing: rclone skips what is already uploaded, so just
+re-run it. That was exercised for real — the first attempt died with the session at 49
+files and resumed with zero rework.
 
-Not yet scheduled — run it by hand, or add a launchd job alongside
+Not scheduled. Run it by hand after a batch of new media, or add a launchd job alongside
 `com.lollyg.gitautobackup` if it proves worth automating.
 
-**Time Machine is still the real answer** for whole-machine cover. Drive sync of one
-folder is not a substitute for it.
+### What is still NOT backed up
+
+- **Everything outside that list** — `CLAUDE/` media, `projects/`, `teaching-assets/`,
+  `game-screens-aug2026/`, `workshop-photos-aug2026/`, and every other folder in
+  `~/Documents`. Neither GitHub nor this script touches them.
+- **Time Machine has never run on this Mac.** It remains the only thing that would cover
+  the whole machine, and it is still unconfigured. A folder-level Drive sync is not a
+  substitute. A real loss already happened once: the "Goa Workshop 18 Jul 2026 — raw
+  video masters" Drive folder was emptied by mistake and no copy exists anywhere.
