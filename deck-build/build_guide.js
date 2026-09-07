@@ -209,7 +209,7 @@ T(s,'☀️  Today — the daily working view',{x:.85,y:.5,w:11,h:.8,fontFace:HE
 T(s,'Built for Sakshi. Opens on a to-do list, not a dashboard — visit ?who=sakshi for the simplified view.',{x:.9,y:1.3,w:11,h:.4,fontSize:14.5,color:MUTED});
 card(s,.9,1.9,5.7,2.5);
 T(s,'THE DAILY TARGETS',{x:1.15,y:2.05,w:5,h:.35,fontSize:12,bold:true,color:TEALD,charSpacing:1,margin:0});
-[['15','outbound comments on other accounts'],['5','stories posted'],['—','items flagged as needing review']].forEach((r,i)=>{
+[['15','outbound comments on other accounts'],['5','stories posted (not logged — a reminder, not a tracker)'],['16','items flagged as needing review']].forEach((r,i)=>{
   const y=2.5+i*.6;
   T(s,r[0],{x:1.15,y:y,w:.75,h:.5,fontFace:HEAD,fontSize:22,bold:true,color:TEAL,valign:'middle',margin:0});
   T(s,r[1],{x:1.95,y:y,w:4.5,h:.5,fontSize:12.5,color:MUTED,valign:'middle',margin:0});
@@ -315,10 +315,10 @@ s=pres.addSlide(); s.background={color:NAVY};
 s.addImage({data:LOGO,x:12.45,y:.32,w:.55,h:.55});
 T(s,'WHAT THE WHOLE SET TELLS US',{x:.9,y:.75,w:9,h:.4,fontSize:12.5,bold:true,color:'8FD1C7',charSpacing:2});
 T(s,'Four conclusions from tracking 23 accounts',{x:.85,y:1.2,w:11.5,h:.85,fontFace:HEAD,fontSize:34,bold:true,color:WHITE});
-[['The white space nobody has taken','Not one tracked account targets mums specifically — every one of them chases “women” broadly. It is IFM’s most ownable and least contested position.'],
+[['The white space nobody has taken','Checked across all 23: not one targets mums specifically — every one chases “women” broadly. IFM’s most ownable and least contested position.'],
  ['The format law of this space','Every high-engagement competitor grows on short, founder-led video. IFM’s own numbers agree: reels average 37 likes against 15 for everything else.'],
  ['Our real rivals for revenue','For the paid workshop business the competition is not the big creators — it is the small workshop-led players. None of them match IFM’s production quality.'],
- ['The uncontested moat','Not one tracked account runs an interactive game. Stock Rush and the live quizzes are a structural differentiator, not a nice extra.']
+ ['The uncontested moat','Zero of the 23 run an interactive game — verified across every content field. Stock Rush and the live quizzes are a structural differentiator, not a nice extra.']
 ].forEach((p,i)=>{
   const x=.9+(i%2)*5.85, y=2.25+Math.floor(i/2)*2.2;
   s.addShape('roundRect',{x,y,w:5.6,h:2.0,rectRadius:.11,fill:{color:'22456B'}});
@@ -374,7 +374,7 @@ T(s,'Four scheduled jobs keep the hub current. None of them require a person to 
 [['7:38','every morning','Content processor','Scans every registered Drive folder, tags new files, collapses duplicates, updates the review count.',TEAL],
  ['8:07','every morning','Daily brief email','A one-page summary to Aditya: what is working, what is stuck, one competitor action.',TEAL],
  ['8:08','every evening','Follower log','Records the Instagram follower count. 34 days of history so far — this is how growth becomes visible.',NAVY],
- ['9:39','Mondays','Competitor refresh','Re-scrapes all tracked accounts, rebuilds engagement figures, republishes the hub.','5B8DB8']
+ ['9:39','Mondays','Competitor refresh','Re-scrapes all 23 tracked accounts and rebuilds the engagement figures. The only job allowed to publish — and only when nothing unrelated is waiting in the tree.','5B8DB8']
 ].forEach((j,i)=>{
   const y=2.0+i*1.15; card(s,.9,y,11.5,1.02);
   s.addShape('roundRect',{x:1.1,y:y+.16,w:1.15,h:.7,rectRadius:.08,fill:{color:j[4]}});
