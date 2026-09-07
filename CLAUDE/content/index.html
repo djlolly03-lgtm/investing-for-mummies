@@ -47,7 +47,9 @@ header.hub .sub{font-size:.85rem;color:var(--muted);font-weight:600}
 .thumb img,.thumb video.vid{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .thumb video.vid{z-index:1}
 .thumb img{object-position:top center}
-.thumb .ph{font-size:2.4rem}
+.thumb:has(.ph){background:linear-gradient(135deg,var(--mint-lt),var(--mint))}
+.thumb .ph{font-size:2.4rem;opacity:.5;display:flex;flex-direction:column;align-items:center;gap:6px}
+.thumb .ph::after{content:'not yet shot';font-size:.6rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--navy);opacity:.6}
 .thumb .perf{position:absolute;top:8px;right:8px;z-index:2;background:#fff;border-radius:999px;padding:3px 10px;font-size:.7rem;font-weight:900;box-shadow:0 1px 4px rgba(26,58,92,.2)}
 .typebadge{position:absolute;top:8px;left:8px;z-index:2;background:rgba(26,58,92,.82);color:#fff;border-radius:999px;padding:4px 10px;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;display:flex;align-items:center;gap:4px}
 .playbadge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:54px;height:54px;border-radius:50%;background:rgba(0,0,0,.42);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;pointer-events:none;transition:opacity .2s;padding-left:4px}
@@ -119,43 +121,66 @@ table.tracker tr:nth-child(even) td{background:#f6faf8}
 .ccard-posts img{width:100%;height:100%;object-fit:cover;display:block}
 .ccard-posts .rl{position:absolute;top:3px;right:4px;font-size:.62rem;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.7))}
 .ccard-posts .lk{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:.58rem;font-weight:800;padding:9px 3px 3px;text-align:center;letter-spacing:.02em}
-/* Competitor LIST view */
-.comp-list{display:flex;flex-direction:column;gap:8px}
-.crow{display:flex;align-items:center;gap:11px;background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(26,58,92,.08);padding:9px 12px;transition:box-shadow .15s,transform .05s}
-.crow:hover{box-shadow:0 2px 12px rgba(26,58,92,.14)}
-.crow.dragging{opacity:.4}
-.crow.dragover{outline:2px dashed var(--teal);outline-offset:-3px}
-.crow .chandle{cursor:grab;color:#c2ced3;font-size:1.15rem;flex:0 0 auto;user-select:none;line-height:1}
-.crow .cav{position:relative;width:42px;height:42px;border-radius:50%;flex:0 0 auto;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;overflow:hidden}
-.crow .cav img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%}
-.crow-main{flex:1 1 auto;min-width:0;cursor:pointer}
-.crow-name{font-weight:800;font-size:.98rem;color:var(--navy);line-height:1.2;display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
-.crow-name .rk{background:#eef2f6;color:var(--muted);font-size:.6rem;font-weight:800;padding:1px 6px;border-radius:999px}
-.crow-name a{font-size:.73rem;font-weight:800;color:var(--teal);text-decoration:none}
-.crow-sub{font-size:.73rem;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
-.crow-nums{display:flex;gap:16px;flex:0 0 auto;text-align:center}
-.crow-nums div b{display:block;font-size:.95rem;font-weight:900;color:var(--teal);line-height:1.1}
-.crow-nums div span{font-size:.57rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+/* Competitor TABLE view (V2.1: replaced the scroll-list of cards so followers/avg-likes are sortable & comparable) */
+.comp-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 5px rgba(26,58,92,.1);font-size:.82rem}
+.comp-table th{position:sticky;top:0;background:var(--navy);color:#fff;text-align:left;font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:9px 10px;white-space:nowrap;cursor:pointer;user-select:none}
+.comp-table th:first-child,.comp-table th:nth-child(3),.comp-table th:last-child{cursor:default}
+.comp-table th.num{text-align:right}
+.comp-table th .arrow{opacity:.7;font-size:.6rem;margin-left:2px}
+.comp-table td{padding:7px 10px;border-bottom:1px solid #eef2f0;vertical-align:middle}
+.comp-table tbody tr.crow:hover{background:var(--cream)}
+.comp-table tr.dragging{opacity:.4}
+.comp-table tr.dragover{outline:2px dashed var(--teal);outline-offset:-2px}
+.comp-table td.num{text-align:right;font-weight:900;color:var(--teal);font-variant-numeric:tabular-nums}
+.comp-table .chandle{cursor:grab;color:#c2ced3;font-size:1.1rem;user-select:none;line-height:1}
+.comp-table.sorted .chandle{visibility:hidden}
+.comp-table .rk{background:#eef2f6;color:var(--muted);font-size:.66rem;font-weight:800;padding:2px 7px;border-radius:999px}
+.comp-table .cav{position:relative;width:32px;height:32px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.82rem;overflow:hidden;flex-shrink:0}
+.comp-table .cav img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.crow-acct{display:flex;align-items:center;gap:9px;cursor:pointer;min-width:0}
+.crow-acct-txt{min-width:0}
+.crow-name{font-weight:800;color:var(--navy);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.crow-name a{font-size:.71rem;font-weight:800;color:var(--teal);text-decoration:none;margin-left:5px}
+.comp-table .kind-pill{font-size:.64rem;font-weight:800;padding:2px 8px;border-radius:999px;background:var(--cream);color:var(--muted);white-space:nowrap}
+.comp-table .threat-pill{font-size:.64rem;font-weight:800;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.comp-table .threat-high{background:#fdecea;color:#c0392b}
+.comp-table .threat-medium{background:#fff4d6;color:#8a6100}
+.comp-table .threat-watch{background:#eef2f6;color:var(--muted)}
+.comp-table .pending-pill{font-size:.58rem;font-weight:800;padding:1px 6px;border-radius:999px;background:#fff4d6;color:#8a6100;white-space:nowrap;margin-left:6px;vertical-align:middle}
+/* Quick-add competitor form (open to anyone on the Competitors tab; delete stays admin-only) */
+.ca-quick{display:flex;gap:8px;flex-wrap:wrap}
+.ca-quick input{flex:1 1 240px;min-width:0}
+.ca-quick select{flex:0 0 auto}
+.ca-quick button{background:#0e7a6e;color:#fff;border:none;border-radius:8px;padding:8px 20px;font-weight:800;cursor:pointer}
+.ca-quick button:disabled{opacity:.55;cursor:default}
+.ca-more{background:none;border:none;color:var(--teal);font-weight:700;font-size:.78rem;cursor:pointer;padding:8px 0 0;text-decoration:underline}
+@media(max-width:640px){.ca-quick input{flex:1 1 100%}.ca-quick button{flex:1 1 100%}#ca-detail{grid-template-columns:1fr!important}#ca-detail input{grid-column:1/2!important}}
 .crow-thumbs{display:flex;gap:3px;flex:0 0 auto}
-.crow-thumbs a{position:relative;width:38px;height:38px;border-radius:6px;overflow:hidden;display:block;background:#eef2f6}
+.crow-thumbs a{position:relative;width:30px;height:30px;border-radius:6px;overflow:hidden;display:block;background:#eef2f6}
 .crow-thumbs img{width:100%;height:100%;object-fit:cover}
 .crow-thumbs .rl2{position:absolute;top:0;right:2px;font-size:.5rem;color:#fff;filter:drop-shadow(0 1px 1px rgba(0,0,0,.85))}
-.crow .cdel2{background:none;border:none;color:#c06;font-size:1rem;cursor:pointer;flex:0 0 auto;padding:2px 4px;line-height:1}
-@media(max-width:760px){.crow-thumbs{display:none}.crow-nums div:nth-child(n+3){display:none}}
+.comp-table .cdel2{background:none;border:none;color:#c06;font-size:1rem;cursor:pointer;padding:2px 4px;line-height:1}
+@media(max-width:760px){.crow-thumbs{display:none}.crow-name{max-width:120px}}
 #comp-modal{position:fixed;inset:0;z-index:900;background:rgba(20,40,60,.5);display:flex;align-items:center;justify-content:center;padding:18px}
 #comp-modal.hidden{display:none}
 .cm-panel{background:#fff;border-radius:16px;max-width:640px;width:100%;max-height:88vh;overflow-y:auto;padding:20px 22px 26px;box-shadow:0 12px 48px rgba(26,58,92,.3)}
 .cm-close{float:right;background:none;border:none;font-size:1.3rem;color:var(--muted);cursor:pointer;line-height:1}
 /* Published (live on IG) grid */
 .pub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:14px}
-.pub-growth-card{background:#fff;border:1px solid #e4edf0;border-radius:14px;padding:14px 16px;margin:12px 0 6px;box-shadow:0 1px 4px rgba(26,58,92,.08)}
-.pg-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px}
-.pg-now{font-size:1.6rem;font-weight:800;color:var(--navy)}
-.pg-lbl{color:var(--muted);font-size:.8rem;margin-left:6px;font-weight:700}
-.pg-delta{font-size:.9rem;font-weight:800}
+/* Growth chart + "what's working" banner, side by side (V2.2: was two big stacked full-width blocks) */
+.pub-row{display:flex;gap:14px;align-items:stretch;margin-bottom:16px}
+.pub-row-growth{flex:0 0 300px;min-width:0}
+.pub-row-ins{flex:1;min-width:0;display:flex}
+.pub-row-ins>div{width:100%}
+@media(max-width:760px){.pub-row{flex-direction:column}.pub-row-growth{flex:0 0 auto}}
+.pub-growth-card{background:#fff;border:1px solid #e4edf0;border-radius:14px;padding:12px 14px;box-shadow:0 1px 4px rgba(26,58,92,.08);height:100%;box-sizing:border-box}
+.pg-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.pg-now{font-size:1.15rem;font-weight:800;color:var(--navy)}
+.pg-lbl{color:var(--muted);font-size:.68rem;margin-left:4px;font-weight:700}
+.pg-delta{font-size:.72rem;font-weight:800}
 .pg-delta.good{color:#1a8f74}.pg-delta.bad{color:var(--coral)}.pg-delta.flat{color:var(--muted)}
-.pg-foot{color:var(--muted);font-size:.72rem;margin-top:6px;font-weight:700}
-.pg-single{color:var(--muted);font-size:.85rem;padding:14px 4px;text-align:center;background:var(--mint-lt);border-radius:10px}
+.pg-foot{color:var(--muted);font-size:.62rem;margin-top:4px;font-weight:700}
+.pg-single{color:var(--muted);font-size:.72rem;padding:10px 4px;text-align:center;background:var(--mint-lt);border-radius:10px}
 .pub-growth-card svg{width:100%;height:auto;display:block}
 .pg-line{fill:none;stroke:var(--teal);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
 .pg-area{fill:var(--teal);opacity:.12}
@@ -178,6 +203,27 @@ table.tracker tr:nth-child(even) td{background:#f6faf8}
 .pub-cap{font-size:.78rem;line-height:1.42;color:var(--navy);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .pub-meta{margin-top:auto;font-size:.7rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
 .pub-meta a{color:var(--teal);font-weight:800;text-decoration:none}
+/* Published — analytics table (V2.1: replaced the scroll-grid so real numbers are comparable at a glance) */
+.pub-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 5px rgba(26,58,92,.1);font-size:.82rem}
+.pub-table th{position:sticky;top:0;background:var(--navy);color:#fff;text-align:left;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:9px 10px;white-space:nowrap;cursor:pointer;user-select:none}
+.pub-table th:first-child,.pub-table th:last-child{cursor:default}
+.pub-table th.num{text-align:right}
+.pub-table th .arrow{opacity:.7;font-size:.6rem;margin-left:2px}
+.pub-table td{padding:7px 10px;border-bottom:1px solid #eef2f0;vertical-align:middle}
+.pub-table tbody tr:hover{background:var(--cream)}
+.pub-table td.num{text-align:right;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums}
+.pub-thumb-sm{position:relative;width:40px;height:40px;border-radius:8px;overflow:hidden;background:#eef2f6;flex-shrink:0;display:block}
+.pub-thumb-sm img{width:100%;height:100%;object-fit:cover;display:block}
+.pub-thumb-sm .rl{position:absolute;bottom:1px;right:2px;color:#fff;font-size:.6rem;filter:drop-shadow(0 1px 1px rgba(0,0,0,.8))}
+.pub-cap-cell{max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--navy)}
+.pub-type-pill{font-size:.66rem;font-weight:900;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);background:var(--cream);padding:3px 8px;border-radius:999px;white-space:nowrap}
+.pub-type-pill.reel{color:#0e7a6e;background:#d9f0ec}
+.pub-type-pill.carousel{color:#96650f;background:#fbecd2}
+.pub-er-cell.hit{color:#1f7a6d}.pub-er-cell.low{color:#c0392b}
+.pub-badge-sm{font-size:.64rem;font-weight:800;padding:2px 8px;border-radius:999px;color:#fff;white-space:nowrap;display:inline-block}
+.pub-badge-sm.hit{background:#1f7a6d}.pub-badge-sm.low{background:#c0392b}.pub-badge-sm.ok{background:rgba(26,58,92,.6)}
+.pub-table td a.pub-open{color:var(--teal);font-weight:800;text-decoration:none;font-size:.76rem;white-space:nowrap}
+@media(max-width:760px){.pub-cap-cell{max-width:140px}}
 /* Published — "what's working" insights */
 .pub-ins{background:#fff;border-radius:14px;box-shadow:0 1px 5px rgba(26,58,92,.1);padding:16px 18px;margin-bottom:16px;border-left:4px solid var(--teal)}
 .pub-ins h4{margin:0 0 12px;font-size:.95rem;font-weight:800;color:var(--navy)}
@@ -188,6 +234,107 @@ table.tracker tr:nth-child(even) td{background:#f6faf8}
 .pub-ins-take{font-size:.85rem;line-height:1.55;color:var(--navy)}
 .pub-ins-take .good{color:#1f7a6d;font-weight:800}
 .pub-ins-take .bad{color:#c0392b;font-weight:800}
+/* Published — bold "what's working" punch banner (V2: was a modest card, now the headline moment) */
+.pub-punch{background:linear-gradient(135deg,var(--navy),#0e2f4d);border-radius:16px;padding:14px 16px;box-shadow:0 4px 18px rgba(26,58,92,.25);box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+.pub-punch-eyebrow{color:var(--mint);font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.pub-punch-head{color:#fff;font-size:1.15rem;font-weight:900;line-height:1.18;margin-bottom:7px}
+.pub-punch-sub{color:#cfe4e0;font-size:.78rem;line-height:1.5}
+.pub-punch-sub b{color:#fff}
+.pub-punch-sub .lowreach{color:#ffb4a8;font-weight:800}
+@media(max-width:640px){.pub-punch-head{font-size:1.1rem}}
+/* Competitors — cross-account synthesis (the takeaway, before the 13-row deep dive) */
+.comp-synth{background:linear-gradient(135deg,var(--navy),#16405f);border-radius:16px;padding:20px 22px;margin-bottom:16px;box-shadow:0 4px 18px rgba(26,58,92,.25)}
+.comp-synth-eyebrow{color:var(--mint);font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.comp-synth-based{color:#9fc4bd;font-size:.72rem;margin-bottom:14px}
+.comp-synth-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.comp-synth-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px}
+.comp-synth-card .cs-title{color:#fff;font-weight:800;font-size:.88rem;margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.comp-synth-card .cs-text{color:#d9e8e5;font-size:.8rem;line-height:1.5}
+/* Competitor modal — collapsible full-intel disclosure (keeps the headline visible, detail on demand) */
+.ccard-more{margin-top:6px;border-top:1px solid #eef2f0;padding-top:10px}
+.ccard-more>summary{cursor:pointer;font-size:.78rem;font-weight:800;color:var(--teal);list-style:none;user-select:none}
+.ccard-more>summary::-webkit-details-marker{display:none}
+.ccard-more>summary::before{content:'▸ ';display:inline-block;transition:transform .15s}
+.ccard-more[open]>summary::before{transform:rotate(90deg)}
+/* Creator Tracker — reconciliation flags (auto-detected mismatches between status and reality) */
+.trk-flag{font-size:.7rem;font-weight:800;padding:3px 8px;border-radius:999px;display:inline-block;margin-top:6px}
+.trk-flag.warn{background:#fdecea;color:#c0392b}
+.trk-flag.catch{background:#fff4d6;color:#8a6100}
+.trk-group.attn{background:#fff8f6;border:1px solid #f6c9c0;border-radius:14px;padding:14px 16px 4px;margin-bottom:16px}
+.trk-group.attn .trk-ghead{color:#a8391f}
+/* Certificates — reskinned as a card grid (V2: was a raw table, broke the app's design language) */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.cert-card{background:#fff;border-radius:14px;box-shadow:0 1px 5px rgba(26,58,92,.1);padding:14px;display:flex;gap:12px;align-items:flex-start}
+.cert-photo{width:52px;height:52px;border-radius:10px;object-fit:cover;flex-shrink:0;background:var(--mint-lt)}
+.cert-photo-ph{width:52px;height:52px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,var(--mint-lt),var(--mint));display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.cert-body{min-width:0;flex:1}
+.cert-name{font-weight:800;color:var(--navy);font-size:.92rem}
+.cert-handle{color:var(--teal);font-weight:700;font-size:.78rem;text-decoration:none}
+.cert-handle.missing{color:var(--coral);font-weight:700}
+.cert-meta{font-size:.72rem;color:var(--muted);margin-top:3px}
+.cert-status{margin-top:6px}
+/* TODAY tab — Sakshi's to-do view. Built mobile-first: single column at 375px, everything tappable. */
+.td-card{background:#fff;border:1px solid #e4edf0;border-radius:14px;box-shadow:0 1px 4px rgba(26,58,92,.08);overflow:hidden}
+.td-date{padding:12px 16px 10px;font-weight:800;color:var(--navy);font-size:1rem;border-bottom:1px solid #eef2f0}
+.td-class{padding:10px 16px;font-size:.85rem;font-weight:800;border-bottom:1px solid #eef2f0}
+.td-class.due{background:#fdecea;color:#b3382a}
+.td-class.done{background:var(--mint-lt);color:#0e7a6e}
+.td-rows{padding:8px 16px}
+.td-row{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:.85rem;color:var(--navy)}
+.td-row .lbl{flex:0 0 92px;font-weight:800;font-size:.74rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+.td-bar{flex:1;height:10px;background:#eef2f0;border-radius:999px;overflow:hidden;min-width:0}
+.td-bar i{display:block;height:100%;background:var(--teal);border-radius:999px;transition:width .3s}
+.td-bar.full i{background:#1a8f74}
+.td-num{flex:0 0 auto;font-weight:900;font-variant-numeric:tabular-nums;font-size:.85rem}
+.td-streak{padding:9px 16px;background:var(--cream);font-size:.8rem;font-weight:800;color:var(--navy);border-top:1px solid #eef2f0}
+.td-muted{color:var(--muted);font-weight:700;font-size:.72rem}
+.td-review-badge{background:#fff4d6;color:#8a6100;font-weight:800;font-size:.72rem;padding:2px 9px;border-radius:999px}
+/* queue cards */
+.oq-card{display:flex;gap:11px;background:#fff;border:1px solid #e4edf0;border-radius:12px;box-shadow:0 1px 4px rgba(26,58,92,.07);padding:10px 12px;margin-bottom:9px;align-items:center}
+.oq-card.done{opacity:.45}
+.oq-thumb{position:relative;width:58px;height:58px;border-radius:9px;overflow:hidden;background:#eef2f6;flex:0 0 auto}
+.oq-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.oq-thumb .rl{position:absolute;top:2px;right:3px;color:#fff;font-size:.6rem;filter:drop-shadow(0 1px 1px rgba(0,0,0,.8))}
+.oq-body{flex:1;min-width:0}
+.oq-handle{font-weight:800;color:var(--navy);font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.oq-meta{font-size:.72rem;color:var(--muted);font-weight:700;margin-top:1px}
+.oq-actions{display:flex;flex-direction:column;gap:6px;flex:0 0 auto}
+/* 44px min height on both: Sakshi taps these ~15x/day on a phone, and 38px was
+   under the 44px iOS / 48px Android touch-target minimum (devex audit, 7 Sep 2026). */
+.oq-open{display:inline-flex;align-items:center;justify-content:center;text-align:center;font-size:.74rem;font-weight:800;color:var(--teal);text-decoration:none;padding:7px 12px;border:1.5px solid var(--teal);border-radius:9px;white-space:nowrap;min-height:44px}
+.oq-done{border:none;background:var(--teal);color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:.78rem;padding:8px 14px;border-radius:9px;cursor:pointer;white-space:nowrap;min-height:44px}
+.oq-done:active{transform:scale(.96)}
+.oq-done[disabled]{background:#a8ccc6;cursor:default}
+@media(max-width:560px){
+  /* Phone: let the actions take their own full-width row under the post details.
+     Side-by-side, the two 44px buttons squeezed the handle down to "@ca_…" and the
+     date wrapped over four lines. (devex audit, 7 Sep 2026) */
+  .oq-card{flex-wrap:wrap}
+  .oq-body{flex:1 1 auto;min-width:0}
+  .oq-actions{flex-direction:row;flex:1 0 100%;gap:8px;margin-top:2px}
+  .oq-actions .oq-open,.oq-actions .oq-done{flex:1 1 0}
+  .oq-meta{white-space:normal}
+  .td-row .lbl{flex-basis:78px}
+}
+/* Library v2 — filter chips + tag pills (31 Aug 2026) */
+.chipbar{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 12px}
+.fchip{border:1.5px solid #dbe6ea;background:#fff;color:var(--muted);font-family:'Nunito',sans-serif;font-weight:800;font-size:.74rem;padding:6px 13px;border-radius:999px;cursor:pointer}
+.fchip.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.lib-title{font-weight:800;color:var(--navy);font-size:.84rem;line-height:1.25}
+.lib-desc{color:var(--muted);font-size:.72rem;line-height:1.35;max-width:300px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tagpill{display:inline-block;font-size:.63rem;font-weight:800;padding:2.5px 9px;border-radius:999px;white-space:nowrap;background:var(--cream);color:var(--muted)}
+.tagpill.hiral{background:var(--navy);color:#fff}
+.tagpill.hero{background:#d9f0ec;color:#0e7a6e}
+.tagpill.testi{background:var(--mint-lt);color:var(--teal)}
+.tagpill.cert{background:#fbecd2;color:#96650f}
+.tagpill.blocked{background:#fdecea;color:#c0392b}
+.tagpill.social{background:#e3f2ee;color:#0e7a6e}
+.lib-sess{font-size:.7rem;color:var(--muted);white-space:nowrap}
+@media(max-width:760px){.lib-desc{max-width:150px}}
+/* mobile scroll hint for wide tables (QA ISSUE-001): right-edge fade when scrollable */
+.tbl-scroll{position:relative}
+.tbl-scroll::after{content:'';position:absolute;top:0;right:0;bottom:0;width:28px;pointer-events:none;background:linear-gradient(to left,rgba(247,250,249,.95),transparent);opacity:0;transition:opacity .2s}
+.tbl-scroll.can-scroll::after{opacity:1}
 /* Creator Tracker — status board */
 .trk-group{margin-bottom:24px}
 .trk-ghead{display:flex;align-items:center;gap:9px;font-weight:800;font-size:.92rem;color:var(--navy);margin-bottom:11px;flex-wrap:wrap}
@@ -239,8 +386,10 @@ footer a{color:var(--teal)}
     <img src="../ifm-round.png" alt="IFM">
     <h1>Content Hub</h1>
     <p>Enter the team password to continue.</p>
-    <input id="gate-pw" type="password" placeholder="Password" autocomplete="current-password">
-    <button id="gate-go" type="button">Unlock</button>
+    <form id="gate-form" autocomplete="on">
+      <input id="gate-pw" type="password" placeholder="Password" autocomplete="current-password" required>
+      <button id="gate-go" type="submit">Unlock</button>
+    </form>
     <div class="gate-err" id="gate-err"></div>
   </div>
 </div>
@@ -256,6 +405,7 @@ footer a{color:var(--teal)}
   <div class="statbar" id="statbar"></div>
 
   <div class="tabs">
+    <button class="tab" data-tab="today">☀️ Today</button>
     <button class="tab active" data-tab="library">📚 Library</button>
     <button class="tab" data-tab="tracker">🎨 Creator Tracker</button>
     <button class="tab" data-tab="certs">🏅 Certificates</button>
@@ -264,21 +414,52 @@ footer a{color:var(--teal)}
     <button id="catalogue-now" class="tab" style="display:none;margin-left:auto;background:#1d56a0;color:#fff;border-color:#1d56a0;font-weight:800">⚡ Catalogue now</button>
   </div>
 
-  <!-- LIBRARY -->
+  <!-- TODAY (Sakshi's landing screen — a to-do list, not a dashboard) -->
+  <section id="tab-today" class="hidden">
+    <div id="today-status"></div>
+    <div id="today-queue-head" style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:16px 0 8px">
+      <span style="font-size:.82rem;font-weight:800;color:var(--navy)">📣 Today's outbound queue</span>
+      <span id="today-queue-count" style="font-size:.72rem;color:var(--muted);font-weight:700"></span>
+    </div>
+    <div id="today-queue"></div>
+    <div class="empty hidden" id="today-empty"></div>
+  </section>
+
+  <!-- LIBRARY (v2, 31 Aug 2026: dense analysis table — same fix Published/Competitors got. Card grid retired.) -->
   <section id="tab-library">
     <div class="controls">
-      <input type="search" id="q" placeholder="Search keywords, titles, descriptions…">
+      <input type="search" id="q" placeholder="Search titles, descriptions, tags, sessions…">
       <select id="f-type"><option value="">All types</option></select>
+      <select id="f-shot"><option value="">All shots</option></select>
       <select id="f-status"><option value="">All statuses</option></select>
       <select id="f-source"><option value="">All sources</option></select>
-      <select id="f-sort">
-        <option value="newest">Newest first</option>
-        <option value="performance">Best performing</option>
-        <option value="title">A–Z</option>
-      </select>
       <label style="display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:var(--muted);cursor:pointer;white-space:nowrap"><input type="checkbox" id="f-showhidden"> Show raw/archived <span id="hidden-count"></span></label>
     </div>
-    <div class="grid" id="grid"></div>
+    <div class="chipbar" id="lib-chips">
+      <button class="fchip" data-f="social">✅ Social-ready</button>
+      <button class="fchip" data-f="hiral">Hiral shots</button>
+      <button class="fchip" data-f="hero">Hero quality</button>
+      <button class="fchip" data-f="testimonial">Testimonials</button>
+      <button class="fchip" data-f="cert">Certificates</button>
+      <button class="fchip" data-f="blocked">🚫 Do not use</button>
+    </div>
+    <div class="tbl-scroll" style="overflow-x:auto">
+      <table class="pub-table" id="lib-table">
+        <thead><tr>
+          <th></th>
+          <th>Asset</th>
+          <th data-k="type">Type</th>
+          <th data-k="shot">Shot</th>
+          <th data-k="quality">Quality</th>
+          <th data-k="session">Session</th>
+          <th data-k="status">Status</th>
+          <th data-k="source">Source</th>
+          <th data-k="date">Date</th>
+          <th></th>
+        </tr></thead>
+        <tbody id="lib-tbody"></tbody>
+      </table>
+    </div>
     <div class="empty hidden" id="lib-empty"></div>
   </section>
 
@@ -293,48 +474,83 @@ footer a{color:var(--teal)}
   <!-- CERTIFICATES -->
   <section id="tab-certs" class="hidden">
     <div class="tracker-summary" id="certs-summary"></div>
-    <div style="overflow-x:auto">
-      <table class="tracker">
-        <thead><tr><th>Photo</th><th>Name</th><th>Student handle</th><th>Workshop</th><th>Posted?</th><th>Posted on</th><th>Caption / notes</th></tr></thead>
-        <tbody id="certs-body"></tbody>
-      </table>
-    </div>
+    <div style="font-size:.72rem;color:var(--muted);margin-bottom:12px">Names shown as first name + last initial to keep this safe to view outside the core team. Full details live in the <a href="#" id="certs-sheet-link" target="_blank" rel="noopener" style="color:var(--teal);font-weight:800">Certificates sheet</a>.</div>
+    <div class="cert-grid" id="certs-grid"></div>
     <div class="empty hidden" id="certs-empty"></div>
   </section>
 
   <!-- COMPETITORS -->
   <section id="tab-competitors" class="hidden">
     <div class="tracker-summary" id="comp-summary"></div>
-    <div id="comp-admin" class="hidden" style="background:#f6f8fb;border:1px solid #e2e8f0;border-radius:10px;padding:14px;margin-bottom:14px">
-      <div style="font-weight:800;margin-bottom:8px">➕ Add a competitor <span style="font-weight:400;color:var(--muted);font-size:.8rem">(admin view — adds a row to the live sheet)</span></div>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
-        <input id="ca-name" placeholder="Name *">
-        <input id="ca-instagram" placeholder="Instagram handle e.g. @lxmeofficial">
-        <select id="ca-kind"><option>Direct</option><option>Content</option><option>Platform</option><option>Benchmark</option></select>
-        <select id="ca-threat"><option>High</option><option>Medium</option><option>Watch</option></select>
+    <div id="comp-synthesis"></div>
+    <div id="comp-admin" style="background:#f6f8fb;border:1px solid #e2e8f0;border-radius:10px;padding:14px;margin-bottom:14px">
+      <div style="font-weight:800;margin-bottom:2px">➕ Track a new competitor</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-bottom:10px">Type a name or paste an @handle and hit Add — that's enough. It saves straight to the live sheet and the row appears below tagged <b>intel pending</b> until someone audits it.</div>
+      <div class="ca-quick">
+        <input id="ca-name" placeholder="Name or @handle *">
+        <select id="ca-kind" title="Direct = same business · Content = creator competing for attention · Platform = app/product · Benchmark = study, not a rival">
+          <option>Direct</option><option>Content</option><option>Platform</option><option>Benchmark</option></select>
+        <select id="ca-threat"><option>High</option><option>Medium</option><option selected>Watch</option></select>
+        <button id="ca-add">Add</button>
+      </div>
+      <button type="button" id="ca-more" class="ca-more">+ add detail now</button>
+      <div id="ca-detail" class="hidden" style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px">
+        <input id="ca-instagram" placeholder="Instagram handle (if the name field isn't the handle)">
+        <input id="ca-website" placeholder="Website">
         <input id="ca-positioning" placeholder="Positioning — who they are" style="grid-column:1/3">
         <input id="ca-content" placeholder="What they make" style="grid-column:1/3">
-        <input id="ca-learn" placeholder="What IFM can learn" style="grid-column:1/3">
-        <input id="ca-followers" placeholder="Followers (optional — or ask Claude to pull)">
-        <input id="ca-website" placeholder="Website (optional)">
+        <input id="ca-learn" placeholder="What IFM can learn from them" style="grid-column:1/3">
+        <input id="ca-followers" placeholder="Followers (optional — or leave it, the weekly refresh pulls it)" style="grid-column:1/3">
       </div>
-      <div style="margin-top:10px;display:flex;gap:10px;align-items:center">
-        <button id="ca-add" style="background:#0e7a6e;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-weight:800;cursor:pointer">Add to roster</button>
-        <span id="ca-status" style="font-size:.85rem;color:var(--muted)"></span>
-      </div>
+      <div style="margin-top:10px"><span id="ca-status" style="font-size:.85rem;color:var(--muted)"></span></div>
     </div>
-    <div id="comp-hint" class="hidden" style="font-size:.76rem;color:var(--muted);margin-bottom:8px">Drag <b>⠿</b> to rank by relevance · click a row for full intel</div>
-    <div id="comp-list" class="comp-list"></div>
+    <div id="comp-hint" class="hidden" style="font-size:.76rem;color:var(--muted);margin-bottom:8px">Click a column to sort for analysis · drag <b>⠿</b> to set your strategic ranking (only while sorted by Rank) · click a row for full intel</div>
+    <div class="tbl-scroll" style="overflow-x:auto">
+      <table class="comp-table" id="comp-table">
+        <thead><tr>
+          <th></th>
+          <th data-k="rank">Rank</th>
+          <th>Account</th>
+          <th data-k="kind">Kind</th>
+          <th data-k="threat">Threat</th>
+          <th data-k="followers" class="num">Followers</th>
+          <th data-k="avglikes" class="num">Avg Likes</th>
+          <th data-k="posts" class="num">Posts</th>
+          <th>Recent</th>
+          <th></th>
+        </tr></thead>
+        <tbody id="comp-list"></tbody>
+      </table>
+    </div>
     <div class="empty hidden" id="comp-empty"></div>
   </section>
 
   <!-- PUBLISHED (live on Instagram) -->
   <section id="tab-published" class="hidden">
     <div class="tracker-summary" id="pub-summary"></div>
-    <div id="pub-growth"></div>
-    <div style="font-size:.79rem;color:var(--muted);margin-bottom:12px">What's actually live on <b>@investingformummies</b> — real posts &amp; engagement pulled from Instagram. (Only <b id="pub-live-n">22</b> of your <b id="pub-cat-n">228</b> catalogued pieces are published.)</div>
-    <div id="pub-insights"></div>
-    <div class="pub-grid" id="pub-grid"></div>
+    <div class="pub-row">
+      <div id="pub-growth" class="pub-row-growth"></div>
+      <div id="pub-insights" class="pub-row-ins"></div>
+    </div>
+    <div style="font-size:.79rem;color:var(--muted);margin-bottom:2px">What's actually live on <b>@investingformummies</b> — real posts &amp; engagement pulled from Instagram. (Only <b id="pub-live-n">22</b> of your <b id="pub-cat-n">228</b> catalogued pieces are published.)</div>
+    <div style="font-size:.7rem;color:var(--muted);margin-bottom:10px">No "reach" column — Instagram doesn't expose reach/impressions to anyone but the account owner, and it can't be scraped. Engagement rate (% of followers who liked+commented) is the honest stand-in. Click a column header to sort.</div>
+    <div class="tbl-scroll" style="overflow-x:auto">
+      <table class="pub-table" id="pub-table">
+        <thead><tr>
+          <th></th>
+          <th data-k="date">Date</th>
+          <th data-k="type">Type</th>
+          <th>Post</th>
+          <th data-k="likes" class="num">♥ Likes</th>
+          <th data-k="comments" class="num">💬 Comments</th>
+          <th data-k="eng" class="num">Engagement</th>
+          <th data-k="er" class="num">ER%</th>
+          <th data-k="tier">Verdict</th>
+          <th></th>
+        </tr></thead>
+        <tbody id="pub-tbody"></tbody>
+      </table>
+    </div>
     <div class="empty hidden" id="pub-empty"></div>
   </section>
 
@@ -354,19 +570,32 @@ footer a{color:var(--teal)}
 <script src="data.js"></script>
 <script>
 const CONFIG = {
-  catalogueSheetId: "1VzLzQzTS_-2w7jxkufJUXMF3r0EeOy0le19ZRUy8e-0",
+  // 31 Aug 2026: v2 sheet — full 344-row export with the new tag schema (shot/setting/quality/
+  // consent/session/social). The old 15-row sheet (1VzLzQzTS_…) was stale since June and is retired.
+  catalogueSheetId: "1N6Gmox-OMxYTYzej8f59jFSlIwVxQ5HSeUzt4U04Rjc",
   trackerSheetId: "117Ht7okUaGlF_XrbrOeTc2gha2WHa80Hz0DIeamihAM",
   certSheetId: "12s0Vz5WmnfweUlA_vNsMMHE0oou9klXWWkSSs_pb4Bk",
   competitorSheetId: "1K1g47i9eyqFeXh9vOInhB0Dcjo_h_Jf2dAFZGLEYMeE",
+  outboundSheetId: "1MvyewFjHW3aZNDo5en-mntKbPxwYejQpMsjQLdxTmEQ", // IFM Outbound Log (Sakshi, Phase 1)
 };
 const ADMIN = /[?&]admin=1/.test(location.search);
+const WHO = (new URLSearchParams(location.search).get('who')||'').toLowerCase(); // ?who=sakshi → Today-first view
 const COMP_KEY = 'ifm-comp-7Q2x9m'; // must match KEY in competitors-webapp.gs
+const SAKSHI_KEY = 'ifm-sakshi-4Km8w2'; // must match SAKSHI_KEY in competitors-webapp.gs
+// Sakshi's logging shares the SAME deployed Apps Script as the competitor admin (merged 17 Aug 2026)
+// — one endpoint, one deployment. Until the script is updated to the merged version ("New version"
+// in Manage deployments), ✓ taps still work: they save locally and sync once the script knows the action.
+const SAKSHI_WEBAPP = localStorage.getItem('ifm_sakshi_webapp') ||
+  'https://script.google.com/macros/s/AKfycbw9G4xNHkh9VkDFO5uh0CEHI76TNHP2wJ2TLnkOUmhVVwTe5UhQhN7RbPNAQ3BhrXA8ow/exec';
+const OUTBOUND_TARGET = 15, STORY_TARGET = 5;
+const QUEUE_MAX_AGE_DAYS = 7;      // dead posts are wasted effort — nobody sees a comment on last year's reel
+const QUEUE_SWEET_SPOT_LIKES = 300; // her comment should land near the top, not at #400 under a giant
 const csvUrl = id => `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&_=${Date.now()}`;
 const sheetUrl = id => `https://docs.google.com/spreadsheets/d/${id}/edit`;
 document.getElementById('lnk-cat').href = sheetUrl(CONFIG.catalogueSheetId);
 document.getElementById('lnk-trk').href = sheetUrl(CONFIG.trackerSheetId);
 
-const TYPE_ICON = {carousel:'🖼️','reel':'🎬','ai video':'🤖',testimonial:'💬','session photo':'📸','session video':'🎥','quote/static':'✒️',story:'📱',certificate:'🏅'};
+const TYPE_ICON = {carousel:'🖼️','reel':'🎬','ai video':'🤖',testimonial:'💬','session photo':'📸','session video':'🎥','quote/static':'✒️',story:'📱',certificate:'🏅','game screen':'🎮','game teaser':'🕹️','brand asset':'🎨',game:'🎮'};
 
 // --- tiny CSV parser (handles quoted fields with commas/newlines) ---
 function parseCSV(text){
@@ -394,7 +623,7 @@ function toObjects(rows){
 const num = v => { const n=parseFloat(String(v).replace(/[, ]/g,'')); return isNaN(n)?0:n; };
 const driveId = link => { const m=String(link).match(/[-\w]{25,}/); return m?m[0]:null; };
 
-let items=[], trackerRows=[], certRows=[], competitorRows=[], compPosts={};
+let items=[], trackerRows=[], certRows=[], competitorRows=[], compPosts={}, compSynthesis={}, outboundRows=[], reviewQueue={items:[]};
 // Declutter: Raw + Archived items are hidden from the Library by default. "Archive" is a per-browser hide (localStorage).
 let showHidden=false;
 let archived=new Set(JSON.parse(localStorage.getItem('ifm-archived')||'[]'));
@@ -427,13 +656,16 @@ function fillSelect(id,values){
 function renderStats(){
   const pub=items.filter(i=>(i.status||'').toLowerCase()==='published');
   const ready=items.filter(i=>['ready','scheduled'].includes((i.status||'').toLowerCase()));
-  const totalReach=pub.reduce((s,i)=>s+num(i.reach),0);
+  // "Total reach" was a labeled stat that never had a data source (IG reach isn't scrapable — private to the account owner).
+  // Replaced with Total Engagement: real, live likes+comments summed from the actual Instagram pull (ifm-published.json).
+  const engPosts=(ifmPub.posts||[]).filter(p=>p.likes!=null);
+  const totalEng=engPosts.reduce((s,p)=>s+(p.likes||0)+(p.comments||0),0);
   const due=trackerRows.filter(r=>!['published','approved'].includes((r.status||'').toLowerCase())).length;
   document.getElementById('statbar').innerHTML = `
     <div class="stat"><div class="num">${items.filter(i=>!isHidden(i)).length}</div><div class="lbl">Usable assets</div></div>
     <div class="stat"><div class="num">${pub.length}</div><div class="lbl">Published</div></div>
     <div class="stat"><div class="num">${ready.length}</div><div class="lbl">Ready to post</div></div>
-    <div class="stat"><div class="num">${totalReach?totalReach.toLocaleString('en-IN'):'—'}</div><div class="lbl">Total reach</div></div>
+    <div class="stat"><div class="num">${totalEng?totalEng.toLocaleString('en-IN'):'—'}</div><div class="lbl">Total engagement <span style="font-weight:600">(♥+💬, live)</span></div></div>
     <div class="stat"><div class="num">${due}</div><div class="lbl">Creator items open</div></div>`;
 }
 
@@ -519,29 +751,106 @@ function card(it){
 }
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
+// Library v2 (31 Aug 2026): table renderer replaced the card grid — same fix Published and
+// Competitors got after the identical "this view doesn't allow real analysis" feedback.
+let libChip=null, libSort={key:'date',dir:'desc'};
+const isHiralShot=it=>/^hiral/i.test(it.shot||'');
+const isBlocked=it=>/do not use/i.test((it.notes||'')+' '+(it.status||''))||/sign-off|consent pending/i.test(it.notes||'');
+function chipMatch(it,f){
+  if(f==='social')return /^y/i.test(it.social||'');
+  if(f==='hiral')return isHiralShot(it);
+  if(f==='hero')return /^hero$/i.test(it.quality||'');
+  if(f==='testimonial')return /testimonial/i.test((it.shot||'')+' '+(it.title||''));
+  if(f==='cert')return /certificate/i.test((it.shot||'')+' '+(it.type||''));
+  if(f==='blocked')return isBlocked(it);
+  return true;
+}
 function renderGrid(){
   const q=document.getElementById('q').value.toLowerCase();
-  const ft=document.getElementById('f-type').value, fs=document.getElementById('f-status').value, fo=document.getElementById('f-source').value;
-  const sort=document.getElementById('f-sort').value;
+  const ft=document.getElementById('f-type').value, fs=document.getElementById('f-status').value,
+        fo=document.getElementById('f-source').value, fsh=(document.getElementById('f-shot')||{}).value||'';
   let list=items.filter(it=>{
     if(ft&&it.type!==ft)return false;
     if(fs&&it.status!==fs)return false;
     if(fo&&it.source!==fo)return false;
-    // hide Raw + Archived by default (unless "Show raw/archived" is on, or the user explicitly filtered to that status)
-    if(!showHidden && isHidden(it) && (it.status||'').toLowerCase()!==(fs||'').toLowerCase())return false;
-    if(q){const hay=[it.title,it.keywords,it.description,it.type,it.source,it.venue,it.status].join(' ').toLowerCase();if(!hay.includes(q))return false;}
+    if(fsh&&(it.shot||'')!==fsh)return false;
+    if(libChip&&!chipMatch(it,libChip))return false;
+    // hide Raw + Archived by default (unless "Show raw/archived" is on, the user filtered to that
+    // status, or a chip is active — a chip is an explicit ask, e.g. Hiral shots are mostly Raw)
+    if(!showHidden && !libChip && isHidden(it) && (it.status||'').toLowerCase()!==(fs||'').toLowerCase())return false;
+    if(q){const hay=[it.title,it.keywords,it.description,it.type,it.source,it.venue,it.status,it.shot,it.setting,it.session,it.quality].join(' ').toLowerCase();if(!hay.includes(q))return false;}
     return true;
   });
   const hc=document.getElementById('hidden-count'); if(hc){const n=items.filter(isHidden).length;hc.textContent=n?`(${n})`:'';}
-  if(sort==='title')list.sort((a,b)=>String(a.title).localeCompare(b.title));
-  else if(sort==='performance')list.sort((a,b)=>(engRate(b)||-1)-(engRate(a)||-1));
-  else list.sort((a,b)=>String(b['date created']||b['published date']||'').localeCompare(String(a['date created']||a['published date']||'')));
-  document.getElementById('grid').innerHTML=list.map(card).join('');
+  const val=(it,k)=>{
+    if(k==='date')return String(it['date created']||it['published date']||'');
+    if(k==='quality')return {hero:3,usable:2,'raw/backup':1}[String(it.quality||'').toLowerCase()]||0;
+    return String(it[k]||'');
+  };
+  const mult=libSort.dir==='asc'?1:-1;
+  list.sort((a,b)=>{const av=val(a,libSort.key),bv=val(b,libSort.key);return av<bv?-1*mult:av>bv?1*mult:0;});
+  const tb=document.getElementById('lib-tbody');
+  tb.innerHTML=list.map(it=>{
+    const icon=TYPE_ICON[(it.type||'').toLowerCase()]||'📄';
+    const tsrc=it.thumbnail||it['drive link']||'';
+    const fid=/drive\.google\.com\/(file|thumbnail)/.test(tsrc)?driveId(tsrc):null;
+    const imgSrc=fid?`https://drive.google.com/thumbnail?id=${fid}&sz=w120`:(/\.(png|jpe?g|webp|gif)(\?|$)/i.test(tsrc)?tsrc:null);
+    const dl=downloadInfo(it);
+    const shot=it.shot||'';
+    const shotPill=shot?`<span class="tagpill${isHiralShot(it)?' hiral':/testimonial/i.test(shot)?' testi':/certificate/i.test(shot)?' cert':''}">${esc(shot)}</span>`:'—';
+    const qp=it.quality?`<span class="tagpill${/^hero$/i.test(it.quality)?' hero':''}">${esc(it.quality)}</span>`:'—';
+    const flags=[
+      /^y/i.test(it.social||'')?'<span class="tagpill social">✅ social</span>':'',
+      isBlocked(it)?'<span class="tagpill blocked" title="'+esc(it.notes||'')+'">🚫 do not use</span>':'',
+      /minors/i.test(it.consent||'')?'<span class="tagpill blocked">minors</span>':'',
+    ].filter(Boolean).join(' ');
+    return `<tr>
+      <td>${imgSrc?`<a class="pub-thumb-sm" href="${esc(it['drive link']||it.video||'#')}" target="_blank" rel="noopener"><img loading="lazy" src="${esc(imgSrc)}" onerror="this.parentElement.textContent='${icon}'"></a>`:`<span style="font-size:1.3rem">${icon}</span>`}</td>
+      <td><div class="lib-title">${esc(it.title)||'Untitled'} ${flags}</div><div class="lib-desc" title="${esc(it.description||'')}">${esc(it.description||'')}</div></td>
+      <td><span class="pub-type-pill ${(it.type||'').toLowerCase()==='reel'?'reel':(it.type||'').toLowerCase()==='carousel'?'carousel':''}">${esc(it.type||'—')}</span></td>
+      <td>${shotPill}</td>
+      <td>${qp}</td>
+      <td class="lib-sess">${esc(it.session||'')}</td>
+      <td>${it.status?`<span class="chip st-${(it.status||'').toLowerCase().replace(/[^a-z]/g,'')}">${esc(it.status)}</span>`:'—'}</td>
+      <td class="lib-sess">${esc(it.source||'')}</td>
+      <td class="lib-sess">${esc((it['date created']||'').slice(0,10))}</td>
+      <td>${it['ig link']?`<a class="pub-open" href="${esc(it['ig link'])}" target="_blank" rel="noopener">IG ↗</a> `:''}${dl?`<a class="pub-open" href="${esc(dl.href)}"${dl.blank?' target="_blank" rel="noopener"':''}${dl.download?` download="${esc(dl.download)}"`:''}>⤓</a>`:''}</td>
+    </tr>`;
+  }).join('');
+  document.querySelectorAll('#lib-table th[data-k]').forEach(th=>{
+    th.querySelector('.arrow')?.remove();
+    if(th.dataset.k===libSort.key)th.insertAdjacentHTML('beforeend',`<span class="arrow">${libSort.dir==='asc'?'▲':'▼'}</span>`);
+  });
   const e=document.getElementById('lib-empty');
-  if(!list.length){e.classList.remove('hidden');e.innerHTML='<h2>Nothing matches</h2><p>Try clearing the search or filters.</p>';}
+  if(!list.length){e.classList.remove('hidden');e.innerHTML='<h2>Nothing matches</h2><p>Try clearing the search, filters or chips.</p>';}
   else e.classList.add('hidden');
 }
+document.querySelector('#lib-table thead')?.addEventListener('click',e=>{
+  const th=e.target.closest('th[data-k]'); if(!th)return;
+  const k=th.dataset.k;
+  if(libSort.key===k)libSort.dir=libSort.dir==='asc'?'desc':'asc';
+  else libSort={key:k,dir:k==='date'?'desc':'asc'};
+  renderGrid();
+});
+document.getElementById('lib-chips')?.addEventListener('click',e=>{
+  const c=e.target.closest('.fchip'); if(!c)return;
+  libChip=libChip===c.dataset.f?null:c.dataset.f;
+  document.querySelectorAll('#lib-chips .fchip').forEach(x=>x.classList.toggle('on',x.dataset.f===libChip));
+  renderGrid();
+});
 
+function normTok(s){return String(s||'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').split(/\s+/).filter(w=>w.length>3);}
+function findLivePost(title){
+  // Reconciliation: does this tracker item actually match a real, currently-live Instagram post?
+  // Token-overlap match against ifm-published.json (same ≥3-shared-word technique used for the one-time Library reconciliation).
+  const t=new Set(normTok(title)); if(!t.size)return null;
+  let best=null,bestScore=0;
+  (ifmPub.posts||[]).forEach(p=>{
+    const c=new Set(normTok(p.caption)); let score=0; t.forEach(w=>{if(c.has(w))score++;});
+    if(score>bestScore){bestScore=score;best=p;}
+  });
+  return bestScore>=3?best:null;
+}
 function renderTracker(){
   const board=document.getElementById('tracker-board'); if(!board)return;
   const cat=(window.IFM_DATA&&IFM_DATA.catalogue)||[];
@@ -549,6 +858,20 @@ function renderTracker(){
   const byTitle={}; cat.forEach(c=>{if(c.title)byTitle[norm(c.title)]=c;});
   const findCat=item=>{const n=norm(item); if(!n)return null; if(byTitle[n])return byTitle[n]; for(const t in byTitle){ if(n.length>5&&(t.includes(n)||n.includes(t)))return byTitle[t]; } return null;};
   const thumbOf=c=>{ if(!c)return ''; const ts=c.thumbnail||c['drive link']||''; const fid=/drive\.google\.com\/(file|thumbnail)/.test(ts)?driveId(ts):null; return fid?`https://drive.google.com/thumbnail?id=${fid}&sz=w480`:(/\.(png|jpe?g|webp|gif)(\?|$)/i.test(ts)?ts:''); };
+  // Reconciliation pass: for every row, check what the LIVE Instagram grid actually says, not just the status label.
+  const recon=new Map();
+  trackerRows.forEach(r=>{
+    const s=(r.status||'').toLowerCase();
+    const match=findLivePost(r.item);
+    // A manually-verified ig-link already on the matched catalogue item counts as confirmed too — the caption
+    // token-match is a *blind* heuristic and can under-match short/paraphrased captions; a stored ig link means
+    // a human (or an earlier Claude pass) already looked at the real post and confirmed it, so trust that.
+    const verifiedLink=(findCat(r.item)||{})['ig link'];
+    let flag=null; // 'warn' = says published but not found live · 'catch' = says not-yet-posted but IS live
+    if(s==='published' && !match && !verifiedLink) flag='warn';
+    else if(['delivered','approved','ready'].includes(s) && (match||verifiedLink)) flag='catch';
+    recon.set(r,{match,verifiedLink,flag});
+  });
   const GROUPS=[
     {label:'🟡 Delivered — ready, not yet posted', hint:'sitting unused; post these', accent:true, m:s=>['delivered','approved','ready'].includes(s)},
     {label:'🟢 Published — live on Instagram', hint:'', m:s=>s==='published'},
@@ -559,17 +882,26 @@ function renderTracker(){
     const icon=TYPE_ICON[(r.type||'').toLowerCase()]||'📄';
     const dl=r['drive link']||(c&&c['drive link'])||'';
     const ig=(c&&c['ig link'])||'';
+    const rc=recon.get(r)||{};
+    const flagHtml=rc.flag==='warn'?`<div class="trk-flag warn">⚠️ Marked published — not found on the live IG grid, verify</div>`
+      :rc.flag==='catch'?`<div class="trk-flag catch">🎉 Actually already live${rc.match&&rc.match.likes!=null?` (♥${rc.match.likes})`:''} — update status to Published</div>`:'';
     return `<div class="trk-card">
       <div class="trk-thumb">${r.type?`<span class="tt">${esc(r.type)}</span>`:''}${img?`<img loading="lazy" src="${esc(img)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'${icon}'}))">`:`<div class="ph">${icon}</div>`}</div>
       <div class="trk-body">
         <div class="trk-name">${esc(r.item)||'Untitled'}</div>
         ${r.notes?`<div class="trk-note">${esc(r.notes)}</div>`:''}
-        ${(dl||ig)?`<div class="trk-links">${dl?`<a href="${esc(dl)}" target="_blank" rel="noopener">Open</a>`:''}${ig?`<a href="${esc(ig)}" target="_blank" rel="noopener">On IG ↗</a>`:''}</div>`:''}
+        ${flagHtml}
+        ${(dl||ig||rc.match)?`<div class="trk-links">${dl?`<a href="${esc(dl)}" target="_blank" rel="noopener">Open</a>`:''}${ig?`<a href="${esc(ig)}" target="_blank" rel="noopener">On IG ↗</a>`:(rc.match?`<a href="${esc(rc.match.u)}" target="_blank" rel="noopener">On IG ↗</a>`:'')}</div>`:''}
       </div></div>`;
   };
-  const used=new Set();
-  let html=GROUPS.map(g=>{
-    const rows=trackerRows.filter(r=>g.m((r.status||'').toLowerCase()));
+  const attnRows=trackerRows.filter(r=>(recon.get(r)||{}).flag);
+  const used=new Set(attnRows);
+  let html='';
+  if(attnRows.length){
+    html+=`<div class="trk-group attn"><div class="trk-ghead">🚩 Needs attention <span class="cnt">${attnRows.length}</span><span class="hint">— status doesn't match what's actually live on Instagram</span></div><div class="trk-grid">${attnRows.map(card).join('')}</div></div>`;
+  }
+  html+=GROUPS.map(g=>{
+    const rows=trackerRows.filter(r=>g.m((r.status||'').toLowerCase()) && !used.has(r));
     rows.forEach(r=>used.add(r));
     if(!rows.length)return '';
     return `<div class="trk-group${g.accent?' accent':''}"><div class="trk-ghead">${g.label} <span class="cnt">${rows.length}</span>${g.hint?`<span class="hint">— ${g.hint}</span>`:''}</div><div class="trk-grid">${rows.map(card).join('')}</div></div>`;
@@ -586,7 +918,86 @@ function renderTracker(){
   const e=document.getElementById('trk-empty'); if(e){if(!trackerRows.length){e.classList.remove('hidden');e.innerHTML='<h2>No deliverables yet</h2>';}else e.classList.add('hidden');}
 }
 
+function renderCompSynthesis(){
+  const el=document.getElementById('comp-synthesis'); if(!el)return;
+  const patterns=(compSynthesis&&compSynthesis.patterns)||[];
+  if(!patterns.length){el.innerHTML='';return;}
+  el.innerHTML=`<div class="comp-synth">
+    <div class="comp-synth-eyebrow">📊 Across your whole competitive set — the takeaway</div>
+    ${compSynthesis.based_on?`<div class="comp-synth-based">Based on ${esc(compSynthesis.based_on)}</div>`:''}
+    <div class="comp-synth-grid">${patterns.map(p=>`<div class="comp-synth-card"><div class="cs-title">${p.icon||''} ${esc(p.title||'')}</div><div class="cs-text">${esc(p.text||'')}</div></div>`).join('')}</div>
+  </div>`;
+}
+let compRows=[], compSort={key:'rank',dir:'asc'};
+const THREAT_ORD={High:2,Medium:1,Watch:0};
+function parseAbbrevNum(s){
+  s=String(s||'').trim().replace(/[,~]/g,''); if(!s)return null;
+  const m=s.match(/^([\d.]+)\s*([KMB])?/i); if(!m)return null;
+  let n=parseFloat(m[1]); if(isNaN(n))return null;
+  const suf=(m[2]||'').toUpperCase();
+  if(suf==='K')n*=1e3; else if(suf==='M')n*=1e6; else if(suf==='B')n*=1e9;
+  return n;
+}
+function renderCompTable(){
+  const tb=document.getElementById('comp-list'); if(!tb)return;
+  const {key,dir}=compSort, mult=dir==='asc'?1:-1;
+  const table=document.getElementById('comp-table'); if(table)table.classList.toggle('sorted',key!=='rank');
+  const val=row=>{
+    if(key==='rank')return row.i;
+    if(key==='followers')return row.folNum??-1;
+    if(key==='avglikes')return row.avgLikesNum??-1;
+    if(key==='posts')return row.postsNum??-1;
+    if(key==='kind')return row.c.kind||'';
+    if(key==='threat')return THREAT_ORD[row.c.threat]??-1;
+    return 0;
+  };
+  const sorted=key==='rank'?compRows:[...compRows].sort((a,b)=>{
+    const av=val(a),bv=val(b);
+    if(av<bv)return -1*mult; if(av>bv)return 1*mult; return 0;
+  });
+  const draggable=key==='rank';
+  tb.innerHTML=sorted.map(row=>{
+    const {c,i,handle,h,fol,avgLikesStr}=row;
+    const igUrl=c.ig_url||(h?('https://www.instagram.com/'+h+'/'):'');
+    const initial=esc(((c.name||'?').trim()[0]||'?').toUpperCase());
+    const thumbs=(compPosts[h]||[]).slice(0,4);
+    const tcls='threat-'+String(c.threat||'').toLowerCase();
+    // Nothing useful in the analysis columns yet → say so, rather than showing blanks
+    // that read like a completed audit.
+    const audited=['pillars','hook_style','whats_working','ifm_action']
+      .some(k=>{const v=String(c[k]||'').trim().toLowerCase();return v&&v!=='not yet audited'&&v!=='n/a';});
+    return `<tr class="crow" ${draggable?'draggable="true"':''} data-key="${esc(ckeyOf(c))}">
+      <td><span class="chandle" title="drag to rank">⠿</span></td>
+      <td><span class="rk">#${i+1}</span></td>
+      <td><div class="crow-acct">
+          <span class="cav">${initial}${h?`<img src="comp-thumbs/${esc(h)}.jpg" alt="" loading="lazy" onerror="this.remove()">`:''}</span>
+          <div class="crow-acct-txt"><div class="crow-name">${esc(c.name)}${igUrl?`<a href="${esc(igUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(handle||'IG ↗')}</a>`:''}${audited?'':'<span class="pending-pill" title="No content audit done yet — ask Claude to run one">intel pending</span>'}</div></div>
+        </div></td>
+      <td><span class="kind-pill">${esc(c.kind||'—')}</span></td>
+      <td>${c.threat?`<span class="threat-pill ${tcls}">${esc(c.threat)}</span>`:'—'}</td>
+      <td class="num">${esc(fol)}</td>
+      <td class="num">${avgLikesStr?'♥ '+esc(avgLikesStr):'—'}</td>
+      <td class="num">${esc(c.posts||'—')}</td>
+      <td><div class="crow-thumbs">${thumbs.map(p=>`<a href="${esc(p.u)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="${p.likes_str?esc(p.likes_str)+' likes':'open on Instagram'}"><img src="${esc(p.t)}" loading="lazy" alt="">${p.type==='reel'?'<span class="rl2">▶</span>':''}</a>`).join('')}</div></td>
+      <td>${ADMIN?`<button class="cdel2" data-del="${esc(c.name)}" data-ig="${esc(handle)}" title="remove">✕</button>`:''}</td>
+    </tr>`;
+  }).join('');
+  document.querySelectorAll('#comp-table th[data-k]').forEach(th=>{
+    th.querySelector('.arrow')?.remove();
+    if(th.dataset.k===compSort.key)th.insertAdjacentHTML('beforeend',`<span class="arrow">${compSort.dir==='asc'?'▲':'▼'}</span>`);
+  });
+}
+function ckeyOf(c){const cnorm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,''); return cnorm((c.instagram||'').replace(/^@/,''))||cnorm(c.name);}
+document.querySelector('#comp-table thead')?.addEventListener('click',e=>{
+  const th=e.target.closest('th[data-k]'); if(!th)return;
+  const k=th.dataset.k;
+  if(k==='rank'){compSort={key:'rank',dir:'asc'};}
+  else if(compSort.key===k)compSort.dir=compSort.dir==='asc'?'desc':'asc';
+  else compSort={key:k,dir:'desc'};
+  renderCompTable();
+});
 function renderCompetitors(){
+  renderCompSynthesis();
   // Sheet is the source of truth for the roster (add/delete/edit); else fall back to baked-in list.
   const baseComps=competitorRows.length?competitorRows:((window.IFM_DATA&&IFM_DATA.competitors)||[]);
   // Deep intelligence lives in data.js and is merged onto each row by name/handle (sheet rows win if they carry their own intel).
@@ -606,7 +1017,6 @@ function renderCompetitors(){
     if(!INTEL_KEYS.some(k=>(out[k]||'').toString().trim())){const rec=lookup(intelMap,out);if(rec)out=Object.assign({},out,rec);} // fill intel from data.js
     return out;
   });
-  const cont=document.getElementById('comp-list');
   const ckey=c=>cnorm((c.instagram||'').replace(/^@/,''))||cnorm(c.name);
   const kindOrder={'Direct':0,'Content':1,'Platform':2,'Benchmark':3};
   // Shared ranking from the sheet's "order" column (team-wide) takes precedence; else this browser's saved order.
@@ -619,28 +1029,18 @@ function renderCompetitors(){
     return (kindOrder[a.kind]??9)-(kindOrder[b.kind]??9);
   });
   compByKey={}; list.forEach(c=>compByKey[ckey(c)]=c);
-  cont.innerHTML=list.map((c,i)=>{
+  // annotate each competitor with real numbers + rank BEFORE any sort, so "Rank" always reflects your curated order
+  compRows=list.map((c,i)=>{
     const handle=(c.instagram||'').trim(); const h=handle.replace(/^@/,'');
-    const igUrl=c.ig_url||(h?('https://www.instagram.com/'+h+'/'):'');
-    const fol=c.followers?String(c.followers).trim().split(' ')[0]:'—';
-    const initial=esc(((c.name||'?').trim()[0]||'?').toUpperCase());
     const meta=(compPosts._meta&&compPosts._meta[h])||null;
-    const thumbs=(compPosts[h]||[]).slice(0,4);
-    return `<div class="crow" draggable="true" data-key="${esc(ckey(c))}">
-      <span class="chandle" title="drag to rank">⠿</span>
-      <span class="cav">${initial}${h?`<img src="comp-thumbs/${esc(h)}.jpg" alt="" loading="lazy" onerror="this.remove()">`:''}</span>
-      <div class="crow-main">
-        <div class="crow-name"><span class="rk">#${i+1}</span>${esc(c.name)}${igUrl?` <a href="${esc(igUrl)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(handle||'IG ↗')}</a>`:''}</div>
-        <div class="crow-sub">${esc(c.kind||'')}${c.positioning?' · '+esc(c.positioning):''}</div>
-      </div>
-      <div class="crow-nums">
-        <div><b>${esc(fol)}</b><span>followers</span></div>
-        ${meta?`<div><b>♥ ${esc(meta.avg_likes_str)}</b><span>avg likes</span></div>`:`<div><b>${esc(c.posts||'—')}</b><span>posts</span></div>`}
-      </div>
-      <div class="crow-thumbs">${thumbs.map(p=>`<a href="${esc(p.u)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="${p.likes_str?esc(p.likes_str)+' likes':'open on Instagram'}"><img src="${esc(p.t)}" loading="lazy" alt="">${p.type==='reel'?'<span class="rl2">▶</span>':''}</a>`).join('')}</div>
-      ${ADMIN?`<button class="cdel2" data-del="${esc(c.name)}" data-ig="${esc(handle)}" title="remove">✕</button>`:''}
-    </div>`;
-  }).join('');
+    return {c,i,handle,h,
+      fol:c.followers?String(c.followers).trim().split(' ')[0]:'—',
+      folNum:parseAbbrevNum(c.followers),
+      avgLikesStr:meta?meta.avg_likes_str:null,
+      avgLikesNum:meta?parseAbbrevNum(meta.avg_likes_str):null,
+      postsNum:parseAbbrevNum(c.posts)};
+  });
+  renderCompTable();
   const n=k=>list.filter(c=>c.kind===k).length;
   document.getElementById('comp-summary').innerHTML=
     `<div class="stat"><div class="num">${list.length}</div><div class="lbl">Tracked accounts</div></div>`+
@@ -674,12 +1074,15 @@ function openCompModal(k){
       ${c.youtube?`<div class="s"><b><a href="${esc(c.youtube)}" target="_blank" rel="noopener">▶ YT</a></b><span>youtube</span></div>`:''}
     </div>
     ${c.positioning?`<p style="margin:0 0 10px;font-size:.85rem;line-height:1.5;color:var(--muted)">${esc(c.positioning)}</p>`:''}
-    ${posts.length?`<div class="ccard-block"><h5>🎬 Latest posts</h5><div class="ccard-posts">${posts.map(pp=>`<a href="${esc(pp.u)}" target="_blank" rel="noopener" title="${pp.likes_str?esc(pp.likes_str)+' likes':'open on Instagram'}"><img src="${esc(pp.t)}" loading="lazy" alt="">${pp.type==='reel'?'<span class="rl">▶</span>':''}${pp.likes_str?`<span class="lk">♥ ${esc(pp.likes_str)}</span>`:''}</a>`).join('')}</div></div>`:''}
-    ${blk('Content pillars',c.pillars||c.content)}
-    ${blk('🔥 Top / most-engaging content',c.top_content,'hot')}
-    ${blk('Winning formats',c.formats)}${blk('Signature hook',c.hook_style)}${blk('Posting cadence',c.cadence)}${blk('💡 Why it works',c.whats_working)}
     ${c.ifm_action&&String(c.ifm_action).trim()?`<div class="ccard-action"><h5 style="margin:0 0 3px;font-size:.64rem;text-transform:uppercase;letter-spacing:.04em;color:#0e7a6e;font-weight:800">▶ IFM action</h5><p style="margin:0;font-size:.86rem;line-height:1.5;font-weight:600;color:var(--navy)">${esc(c.ifm_action)}</p></div>`:''}
-    ${(!INTEL_KEYS_G.some(kk=>(c[kk]||'').toString().trim())&&c.learn)?blk('What IFM can learn',c.learn):''}`;
+    ${blk('💡 Why it works',c.whats_working)}
+    ${posts.length?`<div class="ccard-block"><h5>🎬 Latest posts</h5><div class="ccard-posts">${posts.map(pp=>`<a href="${esc(pp.u)}" target="_blank" rel="noopener" title="${pp.likes_str?esc(pp.likes_str)+' likes':'open on Instagram'}"><img src="${esc(pp.t)}" loading="lazy" alt="">${pp.type==='reel'?'<span class="rl">▶</span>':''}${pp.likes_str?`<span class="lk">♥ ${esc(pp.likes_str)}</span>`:''}</a>`).join('')}</div></div>`:''}
+    ${(()=>{
+      const more=[blk('Content pillars',c.pillars||c.content),blk('🔥 Top / most-engaging content',c.top_content,'hot'),
+        blk('Winning formats',c.formats),blk('Signature hook',c.hook_style),blk('Posting cadence',c.cadence),
+        (!INTEL_KEYS_G.some(kk=>(c[kk]||'').toString().trim())&&c.learn)?blk('What IFM can learn',c.learn):''].join('');
+      return more.trim()?`<details class="ccard-more"><summary>Full competitive intel</summary>${more}</details>`:'';
+    })()}`;
   document.getElementById('comp-modal').classList.remove('hidden');
 }
 const INTEL_KEYS_G=['pillars','formats','hook_style','cadence','top_content','whats_working','ifm_action'];
@@ -695,7 +1098,7 @@ function growthCard(hist){
   if(n<2){
     chart=`<div class="pg-single">Logging daily at 8pm — the growth line fills in over the next few days.</div>`;
   }else{
-    const ys=hist.map(d=>+d.followers), W=600,H=150,pl=46,pr=14,pt=14,pb=24,iw=W-pl-pr,ih=H-pt-pb;
+    const ys=hist.map(d=>+d.followers), W=300,H=104,pl=32,pr=10,pt=12,pb=18,iw=W-pl-pr,ih=H-pt-pb;
     let mn=Math.min(...ys),mx=Math.max(...ys); if(mn===mx){mn-=2;mx+=2;}
     const rng=mx-mn; mn=Math.floor(mn-rng*0.15); mx=Math.ceil(mx+rng*0.15);
     const X=i=>pl+iw*i/(n-1), Y=v=>pt+ih*(1-(v-mn)/(mx-mn));
@@ -746,60 +1149,121 @@ function renderPublished(){
       const top=[...wl].sort((a,b)=>((b.likes+(b.comments||0))-(a.likes+(a.comments||0))))[0];
       const reelsWin=rAvg>sAvg;
       const cap=(top.caption||'').replace(/\s+/g,' ').trim().slice(0,58);
-      ins.innerHTML=`<div class="pub-ins"><h4>📊 What's working <span style="font-weight:600;color:var(--muted);font-size:.72rem">— auto-updated weekly from your live posts</span></h4>
-        <div class="pub-ins-row">
-          <div class="pub-ins-stat"><b>♥ ${rAvg}</b><span>Reels avg (${reels.length})</span></div>
-          <div class="pub-ins-stat"><b>♥ ${sAvg}</b><span>Carousels avg (${stat.length})</span></div>
-          ${mult&&reelsWin?`<div class="pub-ins-stat" style="background:#e7f4f1"><b>${mult}×</b><span>reels win by</span></div>`:''}
-        </div>
-        <div class="pub-ins-take">${reelsWin&&rAvg>=sAvg*1.5
-          ? `<span class="good">🎬 Reels are your winner — ${mult}× the engagement of carousels.</span> Top post: “${esc(cap)}…” (♥${top.likes}${top.comments?` · ${top.comments} comments`:''}). <b>Lean into video</b> — workshop clips + founder on camera. <span class="bad">Generic educational carousels average just ♥${sAvg}</span> — skip evergreen tip-decks unless they decode something timely.`
-          : `Top post: “${esc(cap)}…” (♥${top.likes}). Reels avg ♥${rAvg} vs carousels ♥${sAvg} — keep testing formats.`}</div>
-      </div>`;
+      // V2: bold, blunt directive first — the number-crunching moves to supporting text below it, not the headline.
+      if(reelsWin&&rAvg>=sAvg*1.5){
+        ins.innerHTML=`<div class="pub-punch">
+          <div class="pub-punch-eyebrow">📊 What's working — auto-updated weekly from your live posts</div>
+          <div class="pub-punch-head">🎬 REELS WIN ${mult}× — LEAN INTO VIDEO</div>
+          <div class="pub-punch-sub">Reels avg <b>♥${rAvg}</b> vs carousels <b>♥${sAvg}</b>. Top post: “${esc(cap)}…” (♥${top.likes}${top.comments?` · ${top.comments} comments`:''}). Workshop clips + founder on camera win. <span class="lowreach">Generic educational carousels average just ♥${sAvg}</span> — skip evergreen tip-decks unless they decode something timely.</div>
+        </div>`;
+      }else{
+        ins.innerHTML=`<div class="pub-ins"><h4>📊 What's working <span style="font-weight:600;color:var(--muted);font-size:.72rem">— auto-updated weekly from your live posts</span></h4>
+          <div class="pub-ins-row">
+            <div class="pub-ins-stat"><b>♥ ${rAvg}</b><span>Reels avg (${reels.length})</span></div>
+            <div class="pub-ins-stat"><b>♥ ${sAvg}</b><span>Carousels avg (${stat.length})</span></div>
+          </div>
+          <div class="pub-ins-take">Top post: “${esc(cap)}…” (♥${top.likes}). Reels avg ♥${rAvg} vs carousels ♥${sAvg} — keep testing formats.</div>
+        </div>`;
+      }
     } else ins.innerHTML='';
   }
-  const g=document.getElementById('pub-grid'); if(!g)return;
+  if(!document.getElementById('pub-tbody'))return;
   // verdict tiers: rank posts with engagement, top third = worked, bottom third = flopped
   const scored=posts.map(p=>({p,s:(p.likes||0)+(p.comments||0),has:p.likes!=null}));
   const ranked=scored.filter(x=>x.has).sort((a,b)=>b.s-a.s);
   const nn=ranked.length, cut=Math.max(1,Math.ceil(nn/3));
   ranked.forEach((x,i)=>{x.p._tier=(i<cut)?'hit':((i>=nn-cut)?'low':'ok');});
   const fol=latestFol||meta.followers||0;
-  // grid ordered best → worst (posts without engagement go last)
-  const ordered=[...scored].sort((a,b)=>(b.has-a.has)||(b.s-a.s)).map(x=>x.p);
-  const BADGE={hit:'<span class="pub-badge hit">🔥 Worked</span>',low:'<span class="pub-badge low">Low reach</span>',ok:'<span class="pub-badge ok">OK</span>'};
-  g.innerHTML=ordered.map(p=>{
-    const tier=p._tier||'', er=(fol&&p.likes!=null)?Math.round(100*(p.likes+(p.comments||0))/fol):null;
-    return `<div class="pub-card">
-    <div class="pub-thumb">${BADGE[tier]||''}${p.t?`<img src="${esc(p.t)}" loading="lazy" alt="">`:'<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:1.6rem">📲</div>'}${p.type==='reel'?'<span class="rl">▶</span>':''}
-      <div class="pub-eng"><span>♥ ${p.likes??'—'}</span><span>💬 ${p.comments??'—'}</span>${er!=null?`<span style="margin-left:auto" class="pub-er ${tier}">${er}%</span>`:''}</div></div>
-    <div class="pub-body"><div class="pub-cap">${esc(p.caption||'')}</div>
-      <div class="pub-meta"><span>${esc(p.date||'')} · ${esc(p.type||'')}</span><a href="${esc(p.u)}" target="_blank" rel="noopener">Open ↗</a></div></div>
-  </div>`;}).join('');
+  pubPosts=scored.map(x=>{
+    const p=x.p, er=(fol&&p.likes!=null)?Math.round(100*(p.likes+(p.comments||0))/fol):null;
+    return {...p, _eng:x.has?x.s:null, _er:er, _tier:p._tier||''};
+  });
+  renderPubTable();
   const e=document.getElementById('pub-empty');
   if(!posts.length){e.classList.remove('hidden');e.innerHTML='<h2>No published posts loaded yet</h2><p>Ask Claude to scan the Instagram grid.</p>';}else e.classList.add('hidden');
 }
-
-function renderCerts(){
-  const tb=document.getElementById('certs-body');
-  const col=(r,k)=>{const key=Object.keys(r).find(x=>x.replace(/[^a-z]/g,'').includes(k));return key?r[key]:'';};
-  const rows=certRows.filter(r=>(col(r,'name')||'').trim() && !/^example/i.test(col(r,'name')));
-  tb.innerHTML=rows.map(r=>{
-    const link=col(r,'certificatephoto')||col(r,'photo')||col(r,'drivelink')||'';
-    const fid=driveId(link);
-    const thumb=fid?`<a href="${esc(link)}" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=${fid}&sz=w120" style="width:54px;height:54px;object-fit:cover;border-radius:8px;display:block" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'🏅',style:'font-size:1.4rem'}))"></a>`:'<span style="color:var(--muted)">no photo</span>';
-    const handle=(col(r,'instagram')||'').trim();
-    const hURL=handle?`https://instagram.com/${handle.replace(/^@/,'')}`:'';
-    const posted=(col(r,'posted')||'').trim();
-    const done=/^y/i.test(posted);
+let pubPosts=[], pubSort={key:'eng',dir:'desc'};
+function renderPubTable(){
+  const tb=document.getElementById('pub-tbody'); if(!tb)return;
+  const {key,dir}=pubSort, mult=dir==='asc'?1:-1;
+  const val=(p,k)=>{
+    if(k==='date')return new Date(p.date||0).getTime()||0;
+    if(k==='likes')return p.likes??-1;
+    if(k==='comments')return p.comments??-1;
+    if(k==='eng')return p._eng??-1;
+    if(k==='er')return p._er??-1;
+    if(k==='type')return p.type||'';
+    if(k==='tier')return {hit:2,ok:1,low:0}[p._tier]??-1;
+    return 0;
+  };
+  const sorted=[...pubPosts].sort((a,b)=>{
+    const av=val(a,key), bv=val(b,key);
+    if(av<bv)return -1*mult; if(av>bv)return 1*mult; return 0;
+  });
+  const BADGE={hit:'<span class="pub-badge-sm hit">🔥 Worked</span>',low:'<span class="pub-badge-sm low">Low reach</span>',ok:'<span class="pub-badge-sm ok">OK</span>'};
+  const TYPE_LABEL={reel:'Reel',post:'Carousel'}; // IFM's "post" posts are carousels, not single images
+  tb.innerHTML=sorted.map(p=>{
+    const thumb=`<a class="pub-thumb-sm" href="${esc(p.u)}" target="_blank" rel="noopener">${p.t?`<img src="${esc(p.t)}" loading="lazy" alt="">`:'<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:1.1rem">📲</div>'}${p.type==='reel'?'<span class="rl">▶</span>':''}</a>`;
+    const typeCls=p.type==='reel'?'reel':(p.type==='post'?'carousel':'');
     return `<tr>
       <td>${thumb}</td>
-      <td><strong>${esc(col(r,'name'))}</strong></td>
-      <td>${handle?`<a href="${esc(hURL)}" target="_blank" rel="noopener" style="color:var(--teal);font-weight:800">${esc(handle)}</a>`:'<span style="color:var(--coral);font-weight:700">add handle</span>'}</td>
-      <td style="font-size:.8rem">${esc(col(r,'workshop')||col(r,'batch'))}</td>
-      <td><span class="pill ${done?'published':'planned'}">${done?'Posted':'To post'}</span></td>
-      <td>${esc(col(r,'postdate'))}</td>
-      <td style="color:var(--muted);font-size:.78rem">${esc(col(r,'caption')||col(r,'notes'))}</td></tr>`;
+      <td style="white-space:nowrap;color:var(--muted);font-size:.76rem">${esc(p.date||'—')}</td>
+      <td><span class="pub-type-pill ${typeCls}">${esc(TYPE_LABEL[p.type]||p.type||'—')}</span></td>
+      <td class="pub-cap-cell" title="${esc(p.caption||'')}">${esc(p.caption||'')}</td>
+      <td class="num">${p.likes??'—'}</td>
+      <td class="num">${p.comments??'—'}</td>
+      <td class="num">${p._eng??'—'}</td>
+      <td class="num pub-er-cell ${p._tier}">${p._er!=null?p._er+'%':'—'}</td>
+      <td>${BADGE[p._tier]||''}</td>
+      <td><a class="pub-open" href="${esc(p.u)}" target="_blank" rel="noopener">Open ↗</a></td>
+    </tr>`;
+  }).join('');
+  document.querySelectorAll('#pub-table th[data-k]').forEach(th=>{
+    th.querySelector('.arrow')?.remove();
+    if(th.dataset.k===pubSort.key)th.insertAdjacentHTML('beforeend',`<span class="arrow">${pubSort.dir==='asc'?'▲':'▼'}</span>`);
+  });
+}
+document.querySelector('#pub-table thead')?.addEventListener('click',e=>{
+  const th=e.target.closest('th[data-k]'); if(!th)return;
+  const k=th.dataset.k;
+  if(pubSort.key===k)pubSort.dir=pubSort.dir==='asc'?'desc':'asc';
+  else pubSort={key:k,dir:(k==='date'||k==='type'||k==='tier')?'desc':'desc'};
+  renderPubTable();
+});
+
+function toTitle(w){ w=String(w||'').trim(); return w?w[0].toUpperCase()+w.slice(1).toLowerCase():''; }
+function maskName(full){
+  const parts=String(full||'').trim().split(/\s+/).filter(Boolean);
+  if(!parts.length)return 'Student';
+  if(parts.length===1)return toTitle(parts[0]);
+  return toTitle(parts[0])+' '+parts[parts.length-1][0].toUpperCase()+'.';
+}
+function cleanHandle(raw){
+  raw=String(raw||'').trim(); if(!raw)return null;
+  const m=raw.match(/instagram\.com\/([a-zA-Z0-9._]+)/i);
+  const uname=m?m[1]:raw.replace(/^@/,'').split('?')[0].split('/')[0].trim();
+  return uname?{handle:'@'+uname,url:'https://instagram.com/'+uname}:null;
+}
+function renderCerts(){
+  const grid=document.getElementById('certs-grid'); if(!grid)return;
+  const link=document.getElementById('certs-sheet-link'); if(link)link.href=sheetUrl(CONFIG.certSheetId);
+  const col=(r,k)=>{const key=Object.keys(r).find(x=>x.replace(/[^a-z]/g,'').includes(k));return key?r[key]:'';};
+  const rows=certRows.filter(r=>(col(r,'name')||'').trim() && !/^example/i.test(col(r,'name')));
+  grid.innerHTML=rows.map(r=>{
+    const photoLink=col(r,'certificatephoto')||col(r,'photo')||col(r,'drivelink')||'';
+    const fid=driveId(photoLink);
+    const photo=fid?`<img class="cert-photo" loading="lazy" src="https://drive.google.com/thumbnail?id=${fid}&sz=w120" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'cert-photo-ph',textContent:'🏅'}))">`:`<div class="cert-photo-ph">🏅</div>`;
+    const h=cleanHandle(col(r,'instagram'));
+    const posted=(col(r,'posted')||'').trim();
+    const done=/^y/i.test(posted);
+    return `<div class="cert-card">
+      ${photo}
+      <div class="cert-body">
+        <div class="cert-name">${esc(maskName(col(r,'name')))}</div>
+        ${h?`<a class="cert-handle" href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.handle)}</a>`:'<span class="cert-handle missing">add handle</span>'}
+        <div class="cert-meta">${esc(col(r,'workshop')||col(r,'batch'))}</div>
+        <div class="cert-status"><span class="pill ${done?'published':'planned'}">${done?'Posted':'To post'}</span></div>
+      </div></div>`;
   }).join('');
   const total=rows.length, posted=rows.filter(r=>/^y/i.test((col(r,'posted')||''))).length, noH=rows.filter(r=>!(col(r,'instagram')||'').trim()).length;
   document.getElementById('certs-summary').innerHTML=
@@ -821,7 +1285,9 @@ function sheetError(elId, name, id){
 
 // Built-in data (data.js) is machine-maintained; the sheet carries human edits.
 // Sheet wins on these fields — except a built-in "Published" never downgrades.
-const HUMAN_FIELDS=['status','published date','ig link','reach','likes','comments','saves','shares','notes','venue'];
+const HUMAN_FIELDS=['status','published date','ig link','reach','likes','comments','saves','shares','notes','venue',
+  // v2 tag schema (31 Aug 2026) — humans own these in the Catalogue v2 sheet; sheet edits win over data.js
+  'shot','setting','quality','consent','session','social'];
 function mergeRow(o,rw){
   HUMAN_FIELDS.forEach(k=>{
     const v=rw[k]; if(v===undefined||String(v).trim()==='')return;
@@ -842,6 +1308,7 @@ async function load(){
   }catch(e){ if(!items.length)sheetError('lib-empty','Content Catalogue',CONFIG.catalogueSheetId); }
   ratePublished(items);
   fillSelect('f-type',items.map(i=>i.type));
+  fillSelect('f-shot',items.map(i=>i.shot));
   fillSelect('f-status',items.map(i=>i.status));
   fillSelect('f-source',items.map(i=>i.source));
   renderGrid();
@@ -856,6 +1323,39 @@ async function load(){
       else trackerRows.push(rw);
     });
   }catch(e){ if(!trackerRows.length)sheetError('trk-empty','Creator Tracker',CONFIG.trackerSheetId); }
+  // Auto-derive tracker rows for creator-delivered catalogue items not already hand-tracked.
+  // WHY: the Creator Tracker used to be a hand-copied list that only ever covered June — July and August
+  // content from Aakara was fully catalogued (source:"Aakara") but never showed up here because nobody
+  // manually added tracker rows for it. This merges in anything from a tracked creator source that's
+  // missing, so new months appear automatically instead of silently going invisible again.
+  // CREATOR_SOURCES = catalogue `source` values that represent a paid/external creator (not "In-house" or "Event").
+  const CREATOR_SOURCES=['Aakara'];
+  const CAT_TO_TRK_STATUS={published:'published',ready:'ready',scheduled:'scheduled','in production':'in production',idea:'idea',raw:'idea'};
+  {
+    const normT=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+    const tokT=s=>new Set(String(s||'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').split(/\s+/).filter(w=>w.length>=3));
+    // dedup against EXISTING tracker rows only (fuzzy: substring OR ≥2 shared words) — catalogue titles are
+    // often longer/differently-worded than the hand-curated tracker item names for the same piece of content
+    // (e.g. catalogue "Story S6 — Saving vs investing" vs tracker "S6 saving investing").
+    const knownNorm=trackerRows.map(r=>normT(r.item)).filter(Boolean);
+    const knownTok=trackerRows.map(r=>tokT(r.item)).filter(s=>s.size);
+    const isKnown=title=>{
+      const nt=normT(title); if(!nt)return true;
+      if(knownNorm.some(k=>k.length>5&&nt.length>5&&(k.includes(nt)||nt.includes(k))))return true;
+      const t=tokT(title); if(!t.size)return false;
+      return knownTok.some(k=>{let s=0;t.forEach(w=>{if(k.has(w))s++;});return s>=2&&s>=Math.min(t.size,k.size)*0.6;});
+    };
+    items.filter(c=>CREATOR_SOURCES.includes(c.source) && !isKnown(c.title)).forEach(c=>{
+      const m=(c.title||'').match(/^([A-Za-z]+)/);
+      const month=m?`${m[1]} 2026`:((c['date created']||'').slice(0,7)||'2026');
+      trackerRows.push({
+        month, creator:c.source==='Aakara'?'Aakara Design Studios':c.source, item:c.title, type:c.type,
+        status: CAT_TO_TRK_STATUS[(c.status||'').toLowerCase()] || 'in production',
+        'drive link': c['drive link']||'', 'ig link': c['ig link']||'',
+        notes:'Auto-added from the catalogue (not yet in the Creator Tracker sheet) — verify status'
+      });
+    });
+  }
   renderTracker();
   // Certificates sheet (optional — only errors visibly inside its own tab)
   try{
@@ -869,42 +1369,184 @@ async function load(){
     competitorRows=toObjects(parseCSV(t)).filter(r=>(r.name||'').trim());
   }catch(e){}
   try{ const r=await fetch('comp-posts.json?_='+Date.now()); if(r.ok)compPosts=await r.json(); }catch(e){}
+  try{ const r=await fetch('comp-synthesis.json?_='+Date.now()); if(r.ok)compSynthesis=await r.json(); }catch(e){}
   renderCompetitors();
   try{ const r=await fetch('ifm-published.json?_='+Date.now()); if(r.ok)ifmPub=await r.json(); }catch(e){}
   try{ const r=await fetch('ifm-followers.json?_='+Date.now()); if(r.ok)ifmFollowers=await r.json(); }catch(e){}
+  // Source Registry sync (25 Aug 2026 — proof-of-concept) — files sitting in a
+  // registered Drive folder with no catalogue row yet. Empty file/empty {items:[]}
+  // both read as "nothing pending", so a missing review-queue.json fails silently.
+  try{ const r=await fetch('review-queue.json?_='+Date.now()); if(r.ok)reviewQueue=await r.json(); }catch(e){}
   renderPublished();
   renderStats();
+  renderTracker(); // re-render now that ifmPub (live IG data) is loaded, so status-reconciliation flags can compute
+  // Outbound Log sheet (Sakshi, Phase 1) — feeds the Today tab's counter, streak and dedup
+  try{
+    const t=await fetch(csvUrl(CONFIG.outboundSheetId)).then(r=>{if(!r.ok)throw 0;return r.text();});
+    outboundRows=toObjects(parseCSV(t)).filter(r=>(r.date||'').trim());
+    // reconcile: drop pending (optimistic) rows the sheet has now caught up with
+    const sheetUrls=new Set(outboundRows.map(r=>(r['post link']||'').trim()).filter(Boolean));
+    savePendingLog(pendingLog().filter(p=>!sheetUrls.has(p.url)));
+  }catch(e){}
+  renderToday();
 }
+
+// ============================ TODAY TAB (Sakshi, Phase 1) ============================
+// Design rules: one-tap logging, mobile-first, the hub tells her (no blank-page decisions).
+// ✓ writes are OPTIMISTIC: recorded to localStorage immediately (UI updates now), POSTed
+// no-cors to the Sakshi webapp when configured, reconciled against the sheet on next load.
+function todayISO(){ return new Date().toLocaleDateString('en-CA'); } // YYYY-MM-DD, local tz
+function pendingLog(){ try{ return JSON.parse(localStorage.getItem('ifm-outbound-pending')||'[]'); }catch(_){ return []; } }
+function savePendingLog(a){ try{ localStorage.setItem('ifm-outbound-pending',JSON.stringify(a)); }catch(_){} }
+
+function outboundDoneUrls(){
+  // URLs already commented on: sheet rows + optimistic local rows not yet visible in the sheet
+  const s=new Set();
+  outboundRows.forEach(r=>{ const u=(r['post link']||'').trim(); if(u)s.add(u); });
+  pendingLog().forEach(p=>s.add(p.url));
+  return s;
+}
+function outboundCountToday(){
+  const t=todayISO();
+  const sheetToday=outboundRows.filter(r=>(r.date||'').slice(0,10)===t);
+  const sheetUrls=new Set(sheetToday.map(r=>(r['post link']||'').trim()).filter(Boolean));
+  // pending rows count only until the sheet catches up with that URL (no double count)
+  const extra=pendingLog().filter(p=>p.date===t && !sheetUrls.has(p.url)).length;
+  return sheetToday.length+extra;
+}
+function outboundStreak(){
+  // consecutive days (ending today or yesterday) with ≥1 logged comment
+  const days=new Set(outboundRows.map(r=>(r.date||'').slice(0,10)).filter(Boolean));
+  pendingLog().forEach(p=>days.add(p.date));
+  let streak=0; const d=new Date();
+  if(!days.has(d.toLocaleDateString('en-CA'))) d.setDate(d.getDate()-1); // allow "yesterday" so a morning open doesn't show 0
+  while(days.has(d.toLocaleDateString('en-CA'))){ streak++; d.setDate(d.getDate()-1); }
+  return streak;
+}
+function buildOutboundQueue(){
+  // From comp-posts.json. Filters: no foreign-owner posts (wrong targets), no already-commented
+  // URLs, and NOTHING older than QUEUE_MAX_AGE_DAYS — a comment on a dead post is wasted effort.
+  // Rank: closeness to the likes sweet spot (~a few hundred), where her comment lands near the
+  // top instead of at #400 under a giant. Recency breaks ties.
+  const done=outboundDoneUrls();
+  const now=Date.now();
+  const queue=[];
+  Object.keys(compPosts).filter(h=>h!=='_meta').forEach(h=>{
+    (compPosts[h]||[]).forEach(p=>{
+      if(p.foreign_owner || !p.u || done.has(p.u))return;
+      const d=new Date(p.date||'');
+      const days=(now-d.getTime())/86400000;
+      if(!isFinite(days) || days<0 || days>QUEUE_MAX_AGE_DAYS)return; // undated = unverifiable = skip
+      const likes=num(p.likes);
+      const likesScore=Math.abs(Math.log10(likes+1)-Math.log10(QUEUE_SWEET_SPOT_LIKES));
+      queue.push({handle:h,...p,_days:days,_score:likesScore});
+    });
+  });
+  queue.sort((a,b)=>(a._score-b._score)||(a._days-b._days));
+  return queue;
+}
+function renderToday(){
+  const st=document.getElementById('today-status'); if(!st)return;
+  const doneN=outboundCountToday();
+  const queue=buildOutboundQueue();
+  const streak=outboundStreak();
+  const dateStr=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+  const bar=(n,target)=>{const pct=Math.min(100,Math.round(100*n/target));
+    return `<div class="td-bar${n>=target?' full':''}"><i style="width:${pct}%"></i></div><span class="td-num">${n} / ${target}</span>`;};
+  const pendingN=(reviewQueue.items||[]).length;
+  st.innerHTML=`<div class="td-card">
+    <div class="td-date">${dateStr}</div>
+    <div class="td-rows">
+      <div class="td-row"><span class="lbl">Outbound</span>${bar(doneN,OUTBOUND_TARGET)}</div>
+      <div class="td-row"><span class="lbl">Stories</span><span class="td-muted">tracking arrives in Phase 4 — post as usual</span></div>
+      <div class="td-row"><span class="lbl">Enquiries</span><span class="td-muted">tab arrives in Phase 2 — log in the sheet for now</span></div>
+      <div class="td-row"><span class="lbl">Needs review</span>${pendingN
+        ?`<span class="td-review-badge">${pendingN} new from Drive — not catalogued yet</span>`
+        :`<span class="td-muted">nothing pending — every registered folder is caught up</span>`}</div>
+    </div>
+    ${streak>0?`<div class="td-streak">🔥 ${streak}-day streak</div>`:''}
+  </div>`;
+  const q=document.getElementById('today-queue'), cnt=document.getElementById('today-queue-count');
+  if(cnt)cnt.textContent=queue.length?`${queue.length} live targets · all ≤${QUEUE_MAX_AGE_DAYS} days old`:'';
+  if(!q)return;
+  if(!queue.length){
+    q.innerHTML=`<div class="td-card" style="padding:18px 16px;font-size:.85rem;color:var(--muted)">
+      Queue is empty — every post from the last ${QUEUE_MAX_AGE_DAYS} days has been commented on (or the Monday scrape hasn't run yet). 🎉<br>
+      <b style="color:var(--navy)">Until it refills:</b> work Facebook mum groups and log them in the Outbound sheet. More accounts on the Engagement Targets roster = a deeper queue.</div>`;
+    return;
+  }
+  q.innerHTML=queue.map(p=>{
+    const likes=p.likes_str||p.likes||'';
+    return `<div class="oq-card" data-url="${esc(p.u)}" data-handle="${esc(p.handle)}">
+      <a class="oq-thumb" href="${esc(p.u)}" target="_blank" rel="noopener">${p.t?`<img src="${esc(p.t)}" loading="lazy" alt="">`:''}${p.type==='reel'?'<span class="rl">▶</span>':''}</a>
+      <div class="oq-body">
+        <div class="oq-handle">@${esc(p.handle)}</div>
+        <div class="oq-meta">${esc(p.type||'post')}${likes?` · ♥ ${esc(String(likes))}`:''}${p.date?` · ${esc(p.date)}`:''}</div>
+      </div>
+      <div class="oq-actions">
+        <a class="oq-open" href="${esc(p.u)}" target="_blank" rel="noopener">Open ↗</a>
+        <button class="oq-done" type="button">✓ Commented</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+document.getElementById('today-queue')?.addEventListener('click',e=>{
+  const btn=e.target.closest('.oq-done'); if(!btn)return;
+  const card=btn.closest('.oq-card'); const url=card.dataset.url, handle=card.dataset.handle;
+  // optimistic: record locally + fade the card + bump the counter, all before any network
+  const pend=pendingLog(); pend.push({date:todayISO(),url,handle}); savePendingLog(pend);
+  btn.disabled=true; btn.textContent='✓ Logged'; card.classList.add('done');
+  // fire-and-forget to the webapp (no-cors → response unreadable; sheet reconciles next load)
+  try{
+    if(SAKSHI_WEBAPP){
+      const b=new URLSearchParams({key:SAKSHI_KEY,action:'log_outbound',date:todayISO(),
+        platform:'Instagram',account:'@'+handle,url,gist:''});
+      fetch(SAKSHI_WEBAPP,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:b});
+    }
+  }catch(_){}
+  // refresh just the status block (keep the queue in place so she keeps working down it)
+  const st=document.getElementById('today-status');
+  if(st){ const n=outboundCountToday(); const row=st.querySelector('.td-row');
+    if(row){ const pct=Math.min(100,Math.round(100*n/OUTBOUND_TARGET));
+      row.querySelector('.td-bar i').style.width=pct+'%';
+      row.querySelector('.td-bar').classList.toggle('full',n>=OUTBOUND_TARGET);
+      row.querySelector('.td-num').textContent=`${n} / ${OUTBOUND_TARGET}`; } }
+});
+// mobile scroll hint (QA ISSUE-001): show right-edge fade while a table can still scroll right
+function updateScrollHints(){
+  document.querySelectorAll('.tbl-scroll').forEach(w=>{
+    w.classList.toggle('can-scroll', w.scrollWidth > w.clientWidth + 4 && (w.scrollLeft + w.clientWidth) < w.scrollWidth - 4);
+  });
+}
+document.querySelectorAll('.tbl-scroll').forEach(w=>w.addEventListener('scroll',updateScrollHints,{passive:true}));
+window.addEventListener('resize',updateScrollHints);
+setInterval(updateScrollHints,1200); // tables render async after sheet fetches; cheap poll keeps the hint honest
 
 document.querySelectorAll('.tab[data-tab]').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.tab[data-tab]').forEach(x=>x.classList.toggle('active',x===b));
-  ['library','tracker','certs','competitors','published'].forEach(t=>document.getElementById('tab-'+t).classList.toggle('hidden',b.dataset.tab!==t));
+  ['today','library','tracker','certs','competitors','published'].forEach(t=>document.getElementById('tab-'+t).classList.toggle('hidden',b.dataset.tab!==t));
 }));
-['q','f-type','f-status','f-source','f-sort'].forEach(id=>document.getElementById(id).addEventListener('input',renderGrid));
+// ?who=sakshi → land on Today, hide the tabs she doesn't use (Certificates + admin stay founder-only)
+if(WHO==='sakshi'){
+  document.querySelector('.tab[data-tab="certs"]')?.remove();
+  document.querySelector('.tab[data-tab="today"]')?.click();
+  // Her work starts below the fold otherwise: the founder stat bar (usable assets,
+  // total engagement, creator items open) ate the first 289px of a 812px phone screen,
+  // pushing the outbound queue to 1.02 screens down. Those aren't her numbers — move
+  // them to the bottom so the queue is the first thing she sees. (devex audit, 7 Sep 2026)
+  const sb=document.getElementById('statbar'), wrap=document.querySelector('.wrap'), ft=document.querySelector('footer');
+  if(sb&&wrap){
+    sb.style.marginTop='22px';
+    sb.insertAdjacentHTML('beforebegin','<div id="statbar-note" style="font-size:.72rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:26px">Whole-library totals</div>');
+    const note=document.getElementById('statbar-note');
+    ft?wrap.insertBefore(note,ft):wrap.appendChild(note);
+    ft?wrap.insertBefore(sb,ft):wrap.appendChild(sb);
+  }
+}
+// v2: f-sort dropped (column headers sort now); f-shot added; the card grid and its
+// hover-video/details listeners are gone with it — the table handles everything.
+['q','f-type','f-shot','f-status','f-source'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',renderGrid);});
 document.getElementById('f-showhidden').addEventListener('change',e=>{showHidden=e.target.checked;renderGrid();renderStats();});
-
-// Card interactions (delegated once — survives re-renders)
-const gridEl=document.getElementById('grid');
-gridEl.addEventListener('click',e=>{
-  const arch=e.target.closest('.arch-btn');
-  if(arch){const id=arch.dataset.arch; archived.has(id)?archived.delete(id):archived.add(id); saveArchived(); renderGrid(); renderStats(); return;}
-  const t=e.target.closest('.details-toggle'); if(!t)return;
-  const body=t.closest('.cbody'); const d=body&&body.querySelector('.details');
-  if(d){ t.classList.toggle('open'); d.classList.toggle('hidden'); }
-});
-gridEl.addEventListener('mouseover',e=>{
-  const c=e.target.closest('.card.has-video'); if(!c||c._playing)return;
-  c._playing=true;
-  const v=c.querySelector('video.vid'), img=c.querySelector('.poster');
-  if(v){ v.classList.remove('hidden'); if(img)img.style.visibility='hidden'; const p=v.play(); if(p&&p.catch)p.catch(()=>{}); }
-});
-gridEl.addEventListener('mouseout',e=>{
-  const c=e.target.closest('.card.has-video'); if(!c)return;
-  if(e.relatedTarget&&c.contains(e.relatedTarget))return;
-  c._playing=false;
-  const v=c.querySelector('video.vid'), img=c.querySelector('.poster');
-  if(v){ try{v.pause();v.currentTime=0;}catch(_){} v.classList.add('hidden'); if(img)img.style.visibility=''; }
-});
 
 // Password gate (soft lock — keeps the dashboard private to the team).
 // Plaintext password is never stored here; we compare a SHA-256 hash.
@@ -932,8 +1574,7 @@ async function tryPw(){
     }
   }catch(_){ err.textContent='This page needs a secure (https) connection.'; }
 }
-document.getElementById('gate-go').addEventListener('click',tryPw);
-document.getElementById('gate-pw').addEventListener('keydown',e=>{if(e.key==='Enter')tryPw();});
+document.getElementById('gate-form').addEventListener('submit',e=>{e.preventDefault();tryPw();});
 let _authed=false; try{_authed=sessionStorage.getItem('ifm-content-auth')==='1';}catch(_){}
 if(_authed){ unlock(); }
 else { document.body.classList.add('locked'); document.getElementById('gate-pw').focus(); }
@@ -966,8 +1607,11 @@ else { document.body.classList.add('locked'); document.getElementById('gate-pw')
 // --- Competitors add/delete (admin view at ?admin=1) → writes to the sheet via Apps Script web app ---
 function compWebapp(){
   // Baked-in web-app URL so the add/delete buttons work with no setup. localStorage can override.
-  return localStorage.getItem('ifm_comp_webapp_url') || 'https://script.google.com/macros/s/AKfycbwGJWEmqhFlD_mO1fSRmlTDf12UsdPktNoSwP5TF2ConrDf8XGSPv0qB3VbFDwSxiZP1A/exec';
+  // 17 Aug 2026: new deployment serving the MERGED script (competitor admin + Sakshi logging).
+  return localStorage.getItem('ifm_comp_webapp_url') || 'https://script.google.com/macros/s/AKfycbw9G4xNHkh9VkDFO5uh0CEHI76TNHP2wJ2TLnkOUmhVVwTe5UhQhN7RbPNAQ3BhrXA8ow/exec';
 }
+// migration: clear stale localStorage overrides that still point at the pre-merge deployment
+try{ if((localStorage.getItem('ifm_comp_webapp_url')||'').includes('AKfycbwGJWEmqhFlD')) localStorage.removeItem('ifm_comp_webapp_url'); }catch(_){}
 function postComp(params){
   const u=compWebapp(); if(!u)return Promise.reject('no-url');
   const body=new URLSearchParams(Object.assign({key:COMP_KEY},params));
@@ -975,31 +1619,63 @@ function postComp(params){
     .then(()=>new Promise(r=>setTimeout(r,4500)))   // let the sheet write + gviz cache settle
     .then(()=>load());
 }
+// A row added from the dashboard carries no analysis yet. Stamp the intel columns with
+// this sentinel so the table can badge it "intel pending" instead of silently showing
+// blanks that look like a finished audit.
+const INTEL_PENDING='not yet audited';
 function addComp(){
-  const g=id=>document.getElementById('ca-'+id).value.trim();
-  const name=g('name'); const st=document.getElementById('ca-status');
-  if(!name){alert('Name is required');return;}
-  const handle=g('instagram').replace(/^@/,'');
+  const g=id=>{const el=document.getElementById('ca-'+id);return el?el.value.trim():'';};
+  const st=document.getElementById('ca-status'), btn=document.getElementById('ca-add');
+  const raw=g('name');
+  if(!raw){st.textContent='⚠️ Give it a name or an @handle first';return;}
+  // One field accepts either. "@getbasis" or a pasted profile URL both yield a handle;
+  // a plain name yields no handle unless the detail field supplies one.
+  let handle=g('instagram').replace(/^@/,'').trim();
+  let name=raw;
+  const urlMatch=raw.match(/instagram\.com\/([A-Za-z0-9._]+)/i);
+  if(urlMatch){ handle=handle||urlMatch[1]; name=urlMatch[1]; }
+  else if(raw.startsWith('@')){ handle=handle||raw.slice(1); name=raw.slice(1); }
+  handle=handle.replace(/^@/,'').replace(/\/+$/,'');
+
+  const cnorm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+  const dupe=(competitorRows||[]).find(c=>
+    (cnorm(c.name)&&cnorm(c.name)===cnorm(name))||
+    (handle&&cnorm((c.instagram||'').replace(/^@/,''))===cnorm(handle)));
+  if(dupe){st.textContent='Already tracked: '+dupe.name;return;}
+
+  const today=new Date().toISOString().slice(0,10);
   const params={action:'add',name,kind:g('kind'),threat:g('threat'),
     instagram:handle?('@'+handle):'',ig_url:handle?('https://www.instagram.com/'+handle+'/'):'',
     positioning:g('positioning'),content:g('content'),learn:g('learn'),
-    followers:g('followers'),website:g('website')};
-  st.textContent='Saving…';
+    followers:g('followers'),website:g('website'),
+    notes:'Added from the dashboard '+today+'. INTEL PENDING — ask Claude for a content audit.',
+    pillars:INTEL_PENDING,formats:INTEL_PENDING,hook_style:INTEL_PENDING,
+    cadence:INTEL_PENDING,top_content:INTEL_PENDING,whats_working:INTEL_PENDING,ifm_action:INTEL_PENDING};
+  st.textContent='Saving…'; if(btn)btn.disabled=true;
   postComp(params).then(()=>{
-    st.textContent='✅ Added — refreshed';
-    ['name','instagram','positioning','content','learn','followers','website'].forEach(k=>document.getElementById('ca-'+k).value='');
-    setTimeout(()=>st.textContent='',3000);
-  }).catch(()=>{ st.textContent='⚠️ No web-app URL set — Add/Delete needs the Apps Script deployed first'; });
+    st.textContent='✅ Added '+name+(handle?'':' — no @handle, so it won’t feed the outbound queue yet');
+    ['name','instagram','positioning','content','learn','followers','website']
+      .forEach(k=>{const el=document.getElementById('ca-'+k);if(el)el.value='';});
+    setTimeout(()=>st.textContent='',6000);
+  }).catch(()=>{ st.textContent='⚠️ Couldn’t reach the sheet — the Apps Script web app may be down'; })
+   .finally(()=>{ if(btn)btn.disabled=false; });
 }
 function delComp(name,ig){
   if(!confirm('Remove '+name+' from the roster?'))return;
   postComp({action:'del',name:name||'',instagram:ig||''}).catch(()=>{});
 }
 (function(){
-  if(ADMIN){
-    const panel=document.getElementById('comp-admin'); if(panel)panel.classList.remove('hidden');
-    const addBtn=document.getElementById('ca-add'); if(addBtn)addBtn.addEventListener('click',addComp);
-  }
+  // Adding is open to anyone on the Competitors tab (it's additive and reversible).
+  // Deleting stays behind ?admin=1 — see the cdel2 button in renderCompTable.
+  const addBtn=document.getElementById('ca-add');
+  if(addBtn)addBtn.addEventListener('click',addComp);
+  const nameIn=document.getElementById('ca-name');
+  if(nameIn)nameIn.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();addComp();}});
+  const moreBtn=document.getElementById('ca-more'), detail=document.getElementById('ca-detail');
+  if(moreBtn&&detail)moreBtn.addEventListener('click',()=>{
+    const open=detail.classList.toggle('hidden');
+    moreBtn.textContent=open?'+ add detail now':'– hide detail';
+  });
   const listEl=document.getElementById('comp-list'); if(!listEl)return;
   // Click a row → open detail modal (links, drag handle, delete are excluded)
   listEl.addEventListener('click',e=>{

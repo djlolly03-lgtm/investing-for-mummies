@@ -4,3 +4,27 @@
 *.avi
 api/
 requirements.txt
+
+# Internal docs, build scripts and Apps Script source. 93 of these were being served
+# publicly at ifm-deploy.vercel.app (verified 200 on 7 Sep 2026) — build briefs, sheet
+# IDs, sync scripts. Nothing the site renders fetches a .md/.py/.gs, so blocking them
+# costs nothing. Add a "!" exception below if a page ever genuinely needs one.
+*.md
+*.py
+*.gs
+!3b-hero.mp4
+!ifm-logo-gold-coins-spin.mp4
+
+# Content-hub videos that MUST ship, or their catalogue rows 404 on the live site.
+# The blanket *.mp4 above exists to keep ~778MB of raw footage out of the deploy;
+# these are the small, already-compressed DERIVATIVES the hub actually links to.
+# SIZE BUDGET (keep it, or this problem comes back): thumbs <=25KB, preview clips <=200KB.
+# Masters (full-res photos, finished reels) belong on Drive, never here.
+!content/teasers/*.mp4
+!content/game-assets/*.mp4
+!content/clips/*.mp4
+
+# Saanp Seedhi test harness — puppeteer probes, a node_modules symlink and throwaway
+# agent scripts. None of it is part of the game; shipping it would drag puppeteer into
+# the deploy.
+snakes-ladders/tests/

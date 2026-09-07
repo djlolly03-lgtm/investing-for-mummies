@@ -45,3 +45,6 @@ __pycache__/
 *.pyc
 .gstack/
 **/.gstack/
+
+# deck build tooling (npm install locally: cd deck-build && npm i pptxgenjs)
+deck-build/node_modules/
