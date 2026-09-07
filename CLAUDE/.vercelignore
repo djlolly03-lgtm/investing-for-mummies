@@ -12,6 +12,8 @@ requirements.txt
 *.md
 *.py
 *.gs
+*.bak
+*.orig
 !3b-hero.mp4
 !ifm-logo-gold-coins-spin.mp4
 
