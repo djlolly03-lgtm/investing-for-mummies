@@ -608,7 +608,11 @@ const SAKSHI_WEBAPP = localStorage.getItem('ifm_sakshi_webapp') ||
 const OUTBOUND_TARGET = 15, STORY_TARGET = 5;
 const QUEUE_MAX_AGE_DAYS = 7;      // dead posts are wasted effort — nobody sees a comment on last year's reel
 const QUEUE_SWEET_SPOT_LIKES = 300; // her comment should land near the top, not at #400 under a giant
-const csvUrl = id => `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&_=${Date.now()}`;
+// headers=1 is REQUIRED, not cosmetic. Without it gviz GUESSES how many leading rows are header,
+// and on the catalogue it guessed six — merging ids IFM-R01..R05 into the header cell and returning
+// 339 rows starting at IFM-R06. With it: a clean 'id' header and all 344 rows. Every sheet the hub
+// reads has exactly one header row, so pin it rather than letting gviz infer. (7 Sep 2026)
+const csvUrl = id => `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&headers=1&_=${Date.now()}`;
 const sheetUrl = id => `https://docs.google.com/spreadsheets/d/${id}/edit`;
 document.getElementById('lnk-cat').href = sheetUrl(CONFIG.catalogueSheetId);
 // lnk-trk removed with the footer link (7 Sep 2026) — guard in case the element returns.
