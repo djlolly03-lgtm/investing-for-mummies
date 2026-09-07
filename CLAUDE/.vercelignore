@@ -30,3 +30,18 @@ requirements.txt
 # agent scripts. None of it is part of the game; shipping it would drag puppeteer into
 # the deploy.
 snakes-ladders/tests/
+
+# HR, brand and tracker documents. Verified publicly readable on 7 Sep 2026 — including
+# "Organization Chart/HR/3 - Sakshi Role Definition (internal).docx", a document about a
+# named employee that says "internal" in its own filename. Nothing the site renders fetches
+# a .docx/.xlsx/.csv (checked: zero references), so blocking them costs nothing.
+*.docx
+*.xlsx
+*.csv
+*.env
+*.key
+
+# Sync-tool conflict copies ("... 2.html", "... 2.docx"). 650 of these appeared in the tree;
+# 394 were not covered by the rules above and would each have become a live public URL.
+* 2.*
+*\ 2.*
