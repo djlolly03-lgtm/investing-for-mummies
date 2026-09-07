@@ -224,3 +224,42 @@ Before adding a repo to the backup list, grep it for secrets — pushing is the 
 mistake becomes permanent. `.gitignore` also excludes `*.raw`/`*.npy` (216 MB of
 regenerable render buffers) and `*.bak`/`*.orig`; without those the baseline commit
 would have been 265 MB instead of 45 MB.
+
+## The media that GitHub does *not* cover
+
+Audited 7 Sep 2026. GitHub holds ~45 MB of a 7.7 GB folder. The other 98.6% is excluded
+by `.gitignore` — correctly; GitHub caps files at 100 MB and is not a media store. Split:
+
+| | |
+|---|---|
+| ~2.9 GB | regenerable scratch — `_shots/`, `diag/`, `out/`, `seq/`. Safe to lose. |
+| ~3.6 GB | finished work + source media. **Not** safe to lose. |
+
+The 3.6 GB is `deliverables/`, `Nursery Rhymes/`, `highlight-reel-assets/`,
+`ai-generations-aug2026/`, `course-docs-aug2026/`, `brand/`, `documents/`.
+
+**On 7 Sep 2026 that 3.6 GB had no backup anywhere on this machine.** All four
+possibilities were checked and all four were empty: Time Machine had no destination
+configured and had never run, `~/Documents` is a real local folder (not iCloud-synced),
+Dropbox was installed but held 0 B, and no external drive was mounted.
+
+### The fix
+
+`~/.local/bin/media-backup.sh` — copies the 3.6 GB to `gdrive:IFM Machine Backup`
+using the `rclone` remote that already existed (20 TiB, ~7.7 GiB used).
+
+    ~/.local/bin/media-backup.sh --dry-run   # shows what would go, sends nothing
+    ~/.local/bin/media-backup.sh             # ~10-30 min first run; later runs send only changes
+
+Log: `~/.local/state/media-backup.log`.
+
+Two deliberate choices: it uses `rclone copy`, **never `sync`** — a file deleted locally
+is kept on Drive, because a backup that deletes what the source lost is not a backup.
+And the scratch exclusions are what keep this at 3.6 GB instead of 7.6 GB; if you add a
+new pipeline that writes big intermediates, add it to `EXCLUDES`.
+
+Not yet scheduled — run it by hand, or add a launchd job alongside
+`com.lollyg.gitautobackup` if it proves worth automating.
+
+**Time Machine is still the real answer** for whole-machine cover. Drive sync of one
+folder is not a substitute for it.
