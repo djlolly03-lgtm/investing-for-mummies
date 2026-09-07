@@ -4044,14 +4044,15 @@ window.IFM_DATA =
       "title": "September: Teachers' Day",
       "type": "Reel",
       "source": "Aakara",
-      "status": "Ready",
+      "status": "Published",
       "keywords": "september,reel,teachers day,topical,workshops,baa baa black sheep,nursery rhyme,avatar,aakara,finished,delivered",
       "description": "Delivered Teachers' Day reel built on the 'Baa Baa Black Sheep' nursery-rhyme hook. Opens on the 3D-animated IFM presenter avatar — long dark hair, navy button-down shirt, slight smile — framed against a white wall carrying the green-and-navy INVESTING FOR MUMMIES money-tree logo.",
       "drive link": "https://drive.google.com/drive/folders/1ps-zDRJLzehGV5ugmAWD_Fo-rD4gLP42",
       "date created": "2026-09-05",
-      "notes": "Finished files delivered by Aakara in the Drive tree (September/Reels/Teachers Day). Four variants in the folder: baa-baa-black-sheep.mp4, -SHORT.mp4, -CAPTIONED.mp4 and -SHORT-CAPTIONED.mp4 (captioned cuts are the ones to post). Reconciled from the planning-deck row to the delivery folder on 2 Sep 2026.",
+      "notes": "Finished files delivered by Aakara in the Drive tree (September/Reels/Teachers Day). Four variants in the folder: baa-baa-black-sheep.mp4, -SHORT.mp4, -CAPTIONED.mp4 and -SHORT-CAPTIONED.mp4 (captioned cuts are the ones to post). Reconciled from the planning-deck row to the delivery folder on 2 Sep 2026. | Status corrected 7 Sep 2026: was \"Ready\" but verified live on the IFM grid.",
       "thumbnail": "thumbs/IFM-274.jpg",
-      "shot": "No people"
+      "shot": "No people",
+      "ig link": "https://www.instagram.com/investingformummies/reel/Dc48lXDSNl0/"
     },
     {
       "id": "IFM-275",
@@ -4902,14 +4903,15 @@ window.IFM_DATA =
       "title": "August: Jackson Hole",
       "type": "Reel",
       "source": "Aakara",
-      "status": "Ready",
+      "status": "Published",
       "date created": "2026-08-15",
       "thumbnail": "thumbs/IFM-329.jpg",
       "drive link": "https://drive.google.com/drive/folders/1eRWjOG0Z9flMOvXYbDOy34qWnXOUalNX",
       "video": "",
       "description": "Reel: Hiral in a blue blazer pointing at the camera beside a 'Jackson Hole' road sign — 'Why you should keep an eye on this Secret Meeting.' Fed symposium topical.",
       "keywords": "aakara, august, reel, finished, delivered",
-      "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/jackson hole). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders."
+      "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/jackson hole). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. | Status corrected 7 Sep 2026: was \"Ready\" but verified live on the IFM grid.",
+      "ig link": "https://www.instagram.com/investingformummies/reel/DcSdrOkSpLV/"
     },
     {
       "id": "IFM-330",
@@ -4944,14 +4946,15 @@ window.IFM_DATA =
       "title": "August: Woman's equality",
       "type": "Reel",
       "source": "Aakara",
-      "status": "Ready",
+      "status": "Published",
       "date created": "2026-08-15",
       "thumbnail": "thumbs/IFM-332.jpg",
       "drive link": "https://drive.google.com/drive/folders/1HFRtv7bw1LNdnxGTLfFreF4YRPT9qM5K",
       "video": "",
       "description": "Reel: Hiral in white lace with a second presenter composited — 'Who says Money Conversations aren't for you?' Women's Equality Day topical.",
       "keywords": "aakara, august, reel, finished, delivered",
-      "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/Woman's equality). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders."
+      "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/Woman's equality). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. | Status corrected 7 Sep 2026: was \"Ready\" but verified live on the IFM grid.",
+      "ig link": "https://www.instagram.com/investingformummies/reel/DcfK8mvhUkQ/"
     },
     {
       "id": "IFM-333",
