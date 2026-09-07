@@ -587,8 +587,13 @@ footer a{color:var(--teal)}
   </div>
 
   <footer>
-    Data lives in the <a id="lnk-cat" href="#" target="_blank" rel="noopener">Content Catalogue sheet</a> and the
-    <a id="lnk-trk" href="#" target="_blank" rel="noopener">Creator Tracker sheet</a> — edit there, refresh here.<br>
+    <!-- The Creator Tracker sheet link was removed on 7 Sep 2026: that sheet holds three rows,
+         two of them literally labelled "EXAMPLE — delete once real list is in". The tab derives
+         all 105 of its items from the catalogue instead, so the link sent people to an empty
+         sheet and implied they were supposed to maintain it. -->
+    Tags, statuses and metrics are edited in the
+    <a id="lnk-cat" href="#" target="_blank" rel="noopener">Content Catalogue sheet</a> — edit there, refresh here.
+    Everything else on this page is derived automatically.<br>
     Performance badges rank published posts by engagement (likes + comments) as a share of followers —
     <b>not</b> reach, which Instagram does not expose to anyone but the account owner:
     🔥 top quartile &middot; 👍 middle &middot; 🌱 bottom quartile.
@@ -621,7 +626,8 @@ const QUEUE_SWEET_SPOT_LIKES = 300; // her comment should land near the top, not
 const csvUrl = id => `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&_=${Date.now()}`;
 const sheetUrl = id => `https://docs.google.com/spreadsheets/d/${id}/edit`;
 document.getElementById('lnk-cat').href = sheetUrl(CONFIG.catalogueSheetId);
-document.getElementById('lnk-trk').href = sheetUrl(CONFIG.trackerSheetId);
+// lnk-trk removed with the footer link (7 Sep 2026) — guard in case the element returns.
+const _trk=document.getElementById('lnk-trk'); if(_trk)_trk.href = sheetUrl(CONFIG.trackerSheetId);
 
 const TYPE_ICON = {carousel:'🖼️','reel':'🎬','ai video':'🤖',testimonial:'💬','session photo':'📸','session video':'🎥','quote/static':'✒️',story:'📱',certificate:'🏅','game screen':'🎮','game teaser':'🕹️','brand asset':'🎨',game:'🎮'};
 
