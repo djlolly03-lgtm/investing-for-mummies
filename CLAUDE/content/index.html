@@ -71,11 +71,11 @@ header.hub .sub{font-size:.85rem;color:var(--muted);font-weight:600}
 .chip{font-size:.66rem;font-weight:800;padding:3px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.03em;background:#eef2f6;color:var(--muted)}
 .chip.type{background:var(--mint-lt);color:var(--teal)}
 .chip.src{background:#eef2f6;color:var(--muted)}
-.chip.st-published{background:var(--teal);color:#fff}
+.chip.st-published{background:#0e7a6e;color:#fff}  /* 3.32:1 -> 5.21:1 */
 .chip.st-ready{background:var(--amber);color:var(--navy)}
 .chip.st-scheduled{background:var(--mint);color:var(--navy)}
 .chip.st-inproduction,.chip.st-idea{background:#eef2f6;color:var(--muted)}
-.chip.st-onhold,.chip.st-retired{background:#f3e8e5;color:var(--coral)}
+.chip.st-onhold,.chip.st-retired{background:#f3e8e5;color:#a13a2d}  /* 2.57:1 -> 5.54:1 */
 .cdesc{font-size:.8rem;color:var(--muted);line-height:1.4}
 .ckeys{font-size:.72rem;color:var(--teal);font-weight:700;line-height:1.5}
 .metrics{display:flex;gap:10px;font-size:.74rem;font-weight:800;color:var(--navy);border-top:1px solid var(--mint-lt);padding-top:8px;margin-top:auto;flex-wrap:wrap}
@@ -122,7 +122,7 @@ table.tracker tr:nth-child(even) td{background:#f6faf8}
 .ccard-posts .rl{position:absolute;top:3px;right:4px;font-size:.62rem;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.7))}
 .ccard-posts .lk{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:.58rem;font-weight:800;padding:9px 3px 3px;text-align:center;letter-spacing:.02em}
 /* Competitor TABLE view (V2.1: replaced the scroll-list of cards so followers/avg-likes are sortable & comparable) */
-.comp-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 5px rgba(26,58,92,.1);font-size:.82rem}
+.comp-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;box-shadow:0 1px 5px rgba(26,58,92,.1);font-size:.82rem}
 .comp-table th{position:sticky;top:0;background:var(--navy);color:#fff;text-align:left;font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:9px 10px;white-space:nowrap;cursor:pointer;user-select:none}
 .comp-table th:first-child,.comp-table th:nth-child(3),.comp-table th:last-child{cursor:default}
 .comp-table th.num{text-align:right}
@@ -204,7 +204,7 @@ table.tracker tr:nth-child(even) td{background:#f6faf8}
 .pub-meta{margin-top:auto;font-size:.7rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
 .pub-meta a{color:var(--teal);font-weight:800;text-decoration:none}
 /* Published — analytics table (V2.1: replaced the scroll-grid so real numbers are comparable at a glance) */
-.pub-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 5px rgba(26,58,92,.1);font-size:.82rem}
+.pub-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;box-shadow:0 1px 5px rgba(26,58,92,.1);font-size:.82rem}
 .pub-table th{position:sticky;top:0;background:var(--navy);color:#fff;text-align:left;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:9px 10px;white-space:nowrap;cursor:pointer;user-select:none}
 .pub-table th:first-child,.pub-table th:last-child{cursor:default}
 .pub-table th.num{text-align:right}
@@ -304,7 +304,7 @@ table.tracker tr:nth-child(even) td{background:#f6faf8}
 .oq-open{display:inline-flex;align-items:center;justify-content:center;text-align:center;font-size:.74rem;font-weight:800;color:var(--teal);text-decoration:none;padding:7px 12px;border:1.5px solid var(--teal);border-radius:9px;white-space:nowrap;min-height:44px}
 .oq-done{border:none;background:var(--teal);color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:.78rem;padding:8px 14px;border-radius:9px;cursor:pointer;white-space:nowrap;min-height:44px}
 .oq-done:active{transform:scale(.96)}
-.oq-done[disabled]{background:#a8ccc6;cursor:default}
+.oq-done[disabled]{background:#a8ccc6;color:var(--navy);cursor:default}  /* 1.73:1 -> 6.72:1 */
 @media(max-width:560px){
   /* Phone: let the actions take their own full-width row under the post details.
      Side-by-side, the two 44px buttons squeezed the handle down to "@ca_…" and the
@@ -325,14 +325,41 @@ table.tracker tr:nth-child(even) td{background:#f6faf8}
 .tagpill{display:inline-block;font-size:.63rem;font-weight:800;padding:2.5px 9px;border-radius:999px;white-space:nowrap;background:var(--cream);color:var(--muted)}
 .tagpill.hiral{background:var(--navy);color:#fff}
 .tagpill.hero{background:#d9f0ec;color:#0e7a6e}
-.tagpill.testi{background:var(--mint-lt);color:var(--teal)}
+.tagpill.testi{background:var(--mint-lt);color:#0e7a6e}  /* 2.89:1 -> 4.53:1 */
 .tagpill.cert{background:#fbecd2;color:#96650f}
 .tagpill.blocked{background:#fdecea;color:#c0392b}
 .tagpill.social{background:#e3f2ee;color:#0e7a6e}
 .lib-sess{font-size:.7rem;color:var(--muted);white-space:nowrap}
 @media(max-width:760px){.lib-desc{max-width:150px}}
+/* Library column budget (design audit, 7 Sep 2026). Measured: shot empty in 87% of rows,
+   quality 89%, session 75% — yet the three together took 422px of 1148px while the Asset
+   column carrying title + description got 222px. Widths now follow how full the columns
+   actually are. */
+#lib-table{table-layout:fixed;min-width:980px}
+#lib-table th:nth-child(1),#lib-table td:nth-child(1){width:58px}
+#lib-table th:nth-child(2),#lib-table td:nth-child(2){width:auto}
+#lib-table th:nth-child(3),#lib-table td:nth-child(3){width:92px}
+#lib-table th:nth-child(4),#lib-table td:nth-child(4){width:104px}
+#lib-table th:nth-child(5),#lib-table td:nth-child(5){width:78px}
+#lib-table th:nth-child(6),#lib-table td:nth-child(6){width:120px}
+#lib-table th:nth-child(7),#lib-table td:nth-child(7){width:96px}
+#lib-table th:nth-child(8),#lib-table td:nth-child(8){width:82px}
+#lib-table th:nth-child(9),#lib-table td:nth-child(9){width:86px}
+#lib-table th:nth-child(10),#lib-table td:nth-child(10){width:64px}
+#lib-table .lib-desc{max-width:none}
+/* Library tap targets — the 44px devex fix landed on On Deck only; the download link was 5x17px. */
+#lib-table td a.pub-open{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}
+#lib-table .pub-thumb-sm{width:44px;height:44px}
+@media(max-width:760px){
+  #lib-table{min-width:760px}
+  #lib-table th:nth-child(6),#lib-table td:nth-child(6),
+  #lib-table th:nth-child(9),#lib-table td:nth-child(9){display:none} /* session + date: least useful on a phone */
+}
 /* mobile scroll hint for wide tables (QA ISSUE-001): right-edge fade when scrollable */
-.tbl-scroll{position:relative}
+.tbl-scroll{position:relative;border-radius:12px;overflow:auto;max-height:78vh}
+/* sticky column headers: they were dead because .pub-table/.comp-table set overflow:hidden
+   (for the rounded corners), which silently disables position:sticky on descendants.
+   Clipping now lives on this wrapper, which is also the scroll container. 7 Sep 2026 */
 .tbl-scroll::after{content:'';position:absolute;top:0;right:0;bottom:0;width:28px;pointer-events:none;background:linear-gradient(to left,rgba(247,250,249,.95),transparent);opacity:0;transition:opacity .2s}
 .tbl-scroll.can-scroll::after{opacity:1}
 /* Creator Tracker — status board */
@@ -447,7 +474,7 @@ footer a{color:var(--teal)}
       <table class="pub-table" id="lib-table">
         <thead><tr>
           <th></th>
-          <th>Asset</th>
+          <th data-k="title">Asset</th>
           <th data-k="type">Type</th>
           <th data-k="shot">Shot</th>
           <th data-k="quality">Quality</th>
@@ -666,7 +693,7 @@ function renderStats(){
     <div class="stat"><div class="num">${items.filter(i=>!isHidden(i)).length}</div><div class="lbl">Usable assets</div></div>
     <div class="stat"><div class="num">${pub.length}</div><div class="lbl">Published</div></div>
     <div class="stat"><div class="num">${ready.length}</div><div class="lbl">Ready to post</div></div>
-    <div class="stat"><div class="num">${totalEng?totalEng.toLocaleString('en-IN'):'—'}</div><div class="lbl">Total engagement <span style="font-weight:600">(♥+💬, live)</span></div></div>
+    <div class="stat"><div class="num">${totalEng?totalEng.toLocaleString('en-IN'):'—'}</div><div class="lbl">Total engagement <span style="font-weight:600">(♥+💬 across ${engPosts.length} scraped posts)</span></div></div>
     <div class="stat"><div class="num">${due}</div><div class="lbl">Creator items open</div></div>`;
 }
 
