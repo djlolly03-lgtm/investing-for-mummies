@@ -1,0 +1,18 @@
+{
+  "id": "_pw-drop",
+  "name": "PROBE — identical drop, three materials side by side",
+  "chapter": 0,
+  "sky": "morning",
+  "par": 1,
+  "teaches": "Harness fixture: the same cube, the same height (1.02 m of fall), the same tilt. Only the material differs. Height chosen so all three SURVIVE — this rig measures how a material lands, not how it fails; _pw-smash measures that.",
+  "ammo": ["sip"],
+  "blocks": [
+    { "mat": "wood",  "x": 8.00,  "y": 1.60, "w": 0.90, "h": 0.90, "rot": 0.60 },
+    { "mat": "glass", "x": 11.00, "y": 1.60, "w": 0.90, "h": 0.90, "rot": 0.60 },
+    { "mat": "stone", "x": 14.00, "y": 1.60, "w": 0.90, "h": 0.90, "rot": 0.60 }
+  ],
+  "villains": [
+    { "type": "lotteryUncle", "x": 19.00, "y": 1.543 }
+  ],
+  "props": []
+}

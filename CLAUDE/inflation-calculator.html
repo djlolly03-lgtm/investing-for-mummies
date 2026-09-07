@@ -22,7 +22,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;scroll-padding-top:12px;}
-body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;overflow-x:hidden;}
 
 /* ── HEADER ── */
 header{background:var(--white);border-bottom:2px solid var(--mint-lt);box-shadow:0 2px 12px rgba(26,58,92,0.08);}
@@ -45,6 +45,9 @@ header .h-tag{font-size:0.65rem;color:var(--muted);font-weight:600;letter-spacin
 
 /* ── CONTAINER ── */
 .container{max-width:1000px;margin:0 auto;padding:12px 14px 40px;}
+
+/* Inflation Calculator breaks out of the 1000px container cap for large-classroom viewing */
+#inflation{max-width:none;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:24px;padding-right:24px;box-sizing:border-box;}
 
 /* ── GAME SCREEN ── */
 .game-screen{display:none;}
@@ -1675,6 +1678,15 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 
 
 </style>
+<!-- Google Analytics (GA4) — same property as investingformummies.com, so website + games
+     report in one place. content_group:'Games' makes "how many reached the games" a one-line report. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCN0R6L3B9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PCN0R6L3B9', { content_group: 'Games' });
+</script>
 </head>
 <body>
 <div class="container">
@@ -1736,8 +1748,8 @@ function showGame(n){ if(n===0||n==='0'||n==='game0'){ location.href='/'; } }
     input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;cursor:pointer;box-shadow:0 2px 10px rgba(26,58,92,0.3)}
     input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none}
     input[type=number]{-moz-appearance:textfield}
-    .rate-btn{flex:1;padding:10px 0;border-radius:10px;font-size:0.85rem;font-weight:800;cursor:pointer;transition:all 0.18s;font-family:Nunito,sans-serif}
-    .amt-btn{padding:7px 13px;border-radius:9px;font-size:0.78rem;font-weight:800;cursor:pointer;font-family:Nunito,sans-serif;transition:all 0.18s}
+    .rate-btn{flex:1;padding:10px 0;border-radius:10px;font-size:1.26rem;font-weight:800;cursor:pointer;transition:all 0.18s;font-family:Nunito,sans-serif}
+    .amt-btn{padding:7px 13px;border-radius:9px;font-size:1.14rem;font-weight:800;cursor:pointer;font-family:Nunito,sans-serif;transition:all 0.18s}
   </style>
 </head>
 <body>
@@ -1767,7 +1779,7 @@ function fmtRs(n) {
 function MoneyCard({ amount, label, year, pctLeft, faded }) {
   return (
     <div style={{
-      width:210, borderRadius:20, overflow:'hidden', flexShrink:0,
+      width:232, borderRadius:20, overflow:'hidden', flexShrink:0,
       background: faded
         ? 'linear-gradient(145deg,#1a1e1b,#141714)'
         : 'linear-gradient(145deg,#163520,#0e2416,#163520)',
@@ -1784,19 +1796,19 @@ function MoneyCard({ amount, label, year, pctLeft, faded }) {
         {/* Top row */}
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:14}}>
           <div>
-            <div style={{fontSize:'0.48rem',fontWeight:'800',letterSpacing:'1.8px',textTransform:'uppercase',color:faded?'rgba(255,255,255,0.22)':'rgba(74,222,128,0.75)',marginBottom:3}}>{year}</div>
-            <div style={{fontSize:'0.38rem',color:'rgba(255,255,255,0.18)',letterSpacing:'0.5px'}}>भारतीय रिज़र्व बैंक</div>
+            <div style={{fontSize:'0.75rem',fontWeight:'800',letterSpacing:'1.8px',textTransform:'uppercase',color:faded?'rgba(255,255,255,0.22)':'rgba(74,222,128,0.75)',marginBottom:3}}>{year}</div>
+            <div style={{fontSize:'0.6rem',color:'rgba(255,255,255,0.18)',letterSpacing:'0.5px'}}>भारतीय रिज़र्व बैंक</div>
           </div>
-          <div style={{width:28,height:28,borderRadius:'50%',background:faded?'rgba(255,255,255,0.04)':'rgba(74,222,128,0.1)',border:'1px solid '+(faded?'rgba(255,255,255,0.08)':'rgba(74,222,128,0.2)'),display:'flex',alignItems:'center',justifyContent:'center',fontSize:'0.85rem',opacity:faded?0.4:1}}>
+          <div style={{width:28,height:28,borderRadius:'50%',background:faded?'rgba(255,255,255,0.04)':'rgba(74,222,128,0.1)',border:'1px solid '+(faded?'rgba(255,255,255,0.08)':'rgba(74,222,128,0.2)'),display:'flex',alignItems:'center',justifyContent:'center',fontSize:'1.26rem',opacity:faded?0.4:1}}>
             ₹
           </div>
         </div>
 
         {/* Amount */}
-        <div style={{fontFamily:'EB Garamond,Georgia,serif',fontSize:'1.85rem',fontWeight:'700',color:faded?'rgba(255,255,255,0.28)':'rgba(255,255,255,0.95)',lineHeight:1,marginBottom:5,letterSpacing:'-0.5px'}}>
+        <div style={{fontFamily:'EB Garamond,Georgia,serif',fontSize:'2.52rem',fontWeight:'700',color:faded?'rgba(255,255,255,0.28)':'rgba(255,255,255,0.95)',lineHeight:1,marginBottom:5,letterSpacing:'-0.5px'}}>
           {amount}
         </div>
-        <div style={{fontSize:'0.52rem',fontWeight:'700',color:faded?'rgba(255,255,255,0.18)':'rgba(255,255,255,0.45)',letterSpacing:'0.5px',textTransform:'uppercase',marginBottom:14}}>
+        <div style={{fontSize:'0.8rem',fontWeight:'700',color:faded?'rgba(255,255,255,0.18)':'rgba(255,255,255,0.45)',letterSpacing:'0.5px',textTransform:'uppercase',marginBottom:14}}>
           {label}
         </div>
 
@@ -1804,7 +1816,7 @@ function MoneyCard({ amount, label, year, pctLeft, faded }) {
         <div style={{height:4,background:'rgba(255,255,255,0.07)',borderRadius:2,overflow:'hidden',marginBottom:6}}>
           <div style={{height:'100%',width:(faded?pctLeft:100)+'%',background:faded?'#bde9e4':'#4ade80',borderRadius:2,transition:'width 0.5s ease'}}/>
         </div>
-        <div style={{fontSize:'0.52rem',fontWeight:'800',color:faded?'#bde9e4':'#4ade80'}}>
+        <div style={{fontSize:'0.8rem',fontWeight:'800',color:faded?'#bde9e4':'#4ade80'}}>
           {faded?pctLeft.toFixed(0)+'% buying power remaining':'100% buying power'}
         </div>
       </div>
@@ -1834,13 +1846,13 @@ function PowerChart({ amount, rate, years }) {
           <stop offset="100%" stopColor="#4ade80" stopOpacity="0.01"/>
         </linearGradient>
       </defs>
-      {milestones.map(function(m){return(<g key={m.p}><line x1={pl} y1={m.cy} x2={W-pr} y2={m.cy} stroke="rgba(26,58,92,0.1)" strokeWidth="1" strokeDasharray="4,4"/><text x={pl-4} y={m.cy+4} fontSize="7.5" fill="#8aacbf" textAnchor="end" fontFamily="Nunito,sans-serif" fontWeight="700">{m.l}</text></g>);})}
+      {milestones.map(function(m){return(<g key={m.p}><line x1={pl} y1={m.cy} x2={W-pr} y2={m.cy} stroke="rgba(26,58,92,0.1)" strokeWidth="1" strokeDasharray="4,4"/><text x={pl-4} y={m.cy+4} fontSize="11.5" fill="#8aacbf" textAnchor="end" fontFamily="Nunito,sans-serif" fontWeight="700">{m.l}</text></g>);})}
       <path d={areaPath} fill="url(#aG)"/>
       <path d={linePath} fill="none" stroke="#4ade80" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
       <circle cx={coords[0][0]} cy={coords[0][1]} r="4" fill="#4ade80"/>
       <circle cx={coords[coords.length-1][0]} cy={coords[coords.length-1][1]} r="5" fill="#bde9e4"/>
       <line x1={pl} y1={pt+IH} x2={W-pr} y2={pt+IH} stroke="rgba(26,58,92,0.12)" strokeWidth="1"/>
-      {xLabels.map(function(yr){return(<text key={yr} x={(pl+yr*xS).toFixed(1)} y={H-4} fontSize="8" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
+      {xLabels.map(function(yr){return(<text key={yr} x={(pl+yr*xS).toFixed(1)} y={H-4} fontSize="12" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
       <line x1={pl} y1={pt} x2={pl} y2={pt+IH} stroke="rgba(26,58,92,0.12)" strokeWidth="1"/>
     </svg>
   );
@@ -1863,13 +1875,13 @@ function SustainChart({ amount, rate, years }) {
     <svg viewBox={'0 0 '+W+' '+H} style={{width:'100%',display:'block',overflow:'visible'}}>
       <defs><linearGradient id="sG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#bde9e4" stopOpacity="0.35"/><stop offset="100%" stopColor="#bde9e4" stopOpacity="0.02"/></linearGradient></defs>
       <line x1={pl} y1={nomY} x2={W-pr} y2={nomY} stroke="rgba(26,58,92,0.18)" strokeWidth="1.5" strokeDasharray="5,4"/>
-      <text x={pl-4} y={parseFloat(nomY)+3} fontSize="7" fill="rgba(26,58,92,0.4)" textAnchor="end" fontFamily="Nunito,sans-serif">today</text>
+      <text x={pl-4} y={parseFloat(nomY)+3} fontSize="11" fill="rgba(26,58,92,0.4)" textAnchor="end" fontFamily="Nunito,sans-serif">today</text>
       <path d={areaPath} fill="url(#sG)"/>
       <path d={linePath} fill="none" stroke="#bde9e4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
       <circle cx={coords[0][0]} cy={coords[0][1]} r="4" fill="#1a3a5c"/>
       <circle cx={coords[coords.length-1][0]} cy={coords[coords.length-1][1]} r="5" fill="#bde9e4"/>
       <line x1={pl} y1={pt+IH} x2={W-pr} y2={pt+IH} stroke="rgba(26,58,92,0.12)" strokeWidth="1"/>
-      {xLbls.map(function(yr){return(<text key={yr} x={(pl+(yr-1)*xS).toFixed(1)} y={H-4} fontSize="8" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
+      {xLbls.map(function(yr){return(<text key={yr} x={(pl+(yr-1)*xS).toFixed(1)} y={H-4} fontSize="12" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
       <line x1={pl} y1={pt} x2={pl} y2={pt+IH} stroke="rgba(26,58,92,0.12)" strokeWidth="1"/>
     </svg>
   );
@@ -1895,7 +1907,7 @@ function CorpusChart({ startExp, rate, corpusYears }) {
       <defs><linearGradient id="cG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#bde9e4" stopOpacity="0.4"/><stop offset="100%" stopColor="#bde9e4" stopOpacity="0.02"/></linearGradient></defs>
       {yLbls.map(function(v,i){
         var y=(pt+IH-((v-yMin)/yRange)*IH).toFixed(1);
-        return(<g key={i}><line x1={pl} y1={y} x2={W-pr} y2={y} stroke="rgba(26,58,92,0.08)" strokeWidth="1" strokeDasharray="4,4"/><text x={pl-4} y={parseFloat(y)+3} fontSize="7" fill="rgba(26,58,92,0.45)" textAnchor="end" fontFamily="Nunito,sans-serif">{fmtY(v)}</text></g>);
+        return(<g key={i}><line x1={pl} y1={y} x2={W-pr} y2={y} stroke="rgba(26,58,92,0.08)" strokeWidth="1" strokeDasharray="4,4"/><text x={pl-4} y={parseFloat(y)+3} fontSize="11" fill="rgba(26,58,92,0.45)" textAnchor="end" fontFamily="Nunito,sans-serif">{fmtY(v)}</text></g>);
       })}
       <path d={areaPath} fill="url(#cG)"/>
       <path d={linePath} fill="none" stroke="#1a3a5c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -1903,7 +1915,7 @@ function CorpusChart({ startExp, rate, corpusYears }) {
       <circle cx={coords[coords.length-1][0]} cy={coords[coords.length-1][1]} r="5" fill="#1a3a5c"/>
       <line x1={pl} y1={pt+IH} x2={W-pr} y2={pt+IH} stroke="rgba(26,58,92,0.15)" strokeWidth="1"/>
       <line x1={pl} y1={pt} x2={pl} y2={pt+IH} stroke="rgba(26,58,92,0.15)" strokeWidth="1"/>
-      {xLbls.map(function(yr){return(<text key={yr} x={(pl+(yr-1)*xS).toFixed(1)} y={H-4} fontSize="8" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
+      {xLbls.map(function(yr){return(<text key={yr} x={(pl+(yr-1)*xS).toFixed(1)} y={H-4} fontSize="12" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
     </svg>
   );
 }
@@ -1953,18 +1965,18 @@ function App() {
 
 
 
-      <div style={{maxWidth:860,margin:'0 auto',padding:'0 20px'}}>
+      <div style={{maxWidth:1600,margin:'0 auto',padding:'0 28px'}}>
 
         {/* ── TOGGLE ── */}
         <div style={{display:'flex',gap:4,marginTop:16,marginBottom:12,background:'#fff',borderRadius:14,padding:4,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 2px 10px rgba(26,58,92,0.07)'}}>
-          <button onClick={function(){setMode('sustain');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'0.75rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='sustain'?'linear-gradient(135deg,#1a3a5c,#254d78)':'transparent',color:mode==='sustain'?'#fff':'#5a7d9a'}}>
-            📈 Sustain My Lifestyle<br/><span style={{fontSize:'0.65rem',fontWeight:600,opacity:0.8}}>How much will I need?</span>
+          <button onClick={function(){setMode('sustain');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'1.1rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='sustain'?'linear-gradient(135deg,#1a3a5c,#254d78)':'transparent',color:mode==='sustain'?'#fff':'#5a7d9a'}}>
+            📈 Sustain My Lifestyle<br/><span style={{fontSize:'0.98rem',fontWeight:600,opacity:0.8}}>How much will I need?</span>
           </button>
-          <button onClick={function(){setMode('erodes');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'0.75rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='erodes'?'linear-gradient(135deg,#1a3a5c,#2e6b8a)':'transparent',color:mode==='erodes'?'#fff':'#5a7d9a'}}>
-            💸 Purchasing Power<br/><span style={{fontSize:'0.65rem',fontWeight:600,opacity:0.8}}>What will my money buy later?</span>
+          <button onClick={function(){setMode('erodes');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'1.1rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='erodes'?'linear-gradient(135deg,#1a3a5c,#2e6b8a)':'transparent',color:mode==='erodes'?'#fff':'#5a7d9a'}}>
+            💸 Purchasing Power<br/><span style={{fontSize:'0.98rem',fontWeight:600,opacity:0.8}}>What will my money buy later?</span>
           </button>
-          <button onClick={function(){setMode('corpus');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'0.75rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='corpus'?'linear-gradient(135deg,#1a3a5c,#254d78)':'transparent',color:mode==='corpus'?'#fff':'#5a7d9a'}}>
-            🏦 Corpus Calculator<br/><span style={{fontSize:'0.65rem',fontWeight:600,opacity:0.8}}>How much lump sum do I need?</span>
+          <button onClick={function(){setMode('corpus');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'1.1rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='corpus'?'linear-gradient(135deg,#1a3a5c,#254d78)':'transparent',color:mode==='corpus'?'#fff':'#5a7d9a'}}>
+            🏦 Corpus Calculator<br/><span style={{fontSize:'0.98rem',fontWeight:600,opacity:0.8}}>How much lump sum do I need?</span>
           </button>
         </div>
 
@@ -1973,7 +1985,7 @@ function App() {
 
           {/* Row 1: ₹ Amount + badge + Mo/Yr */}
           <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:10}}>
-            <span style={{fontSize:'1rem',fontWeight:'900',color:'#1a3a5c',flexShrink:0}}>₹</span>
+            <span style={{fontSize:'1.44rem',fontWeight:'900',color:'#1a3a5c',flexShrink:0}}>₹</span>
             <input type="text" inputMode="numeric" value={inputVal} placeholder="10,000"
               onChange={function(e){
                 var raw = e.target.value.replace(/,/g,'');
@@ -1993,7 +2005,7 @@ function App() {
                   setInputVal(v.toLocaleString('en-IN'));
                 }
               }}
-              style={{flex:1,padding:'9px 12px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #c5d5e0',borderRadius:10,fontSize:'1rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,minWidth:0}}
+              style={{flex:1,padding:'9px 12px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #c5d5e0',borderRadius:10,fontSize:'1.44rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,minWidth:0}}
             />
             {(function(){
               var raw = inputVal.replace(/,/g,'');
@@ -2004,11 +2016,11 @@ function App() {
               else if(v >= 100000) label = parseFloat((v/100000).toFixed(2)).toString() + 'L';
               else if(v >= 1000) label = parseFloat((v/1000).toFixed(2)).toString() + 'K';
               if(!label) return null;
-              return <span style={{fontSize:'0.7rem',fontWeight:'900',color:'#5a7d9a',whiteSpace:'nowrap',flexShrink:0}}>{label}</span>;
+              return <span style={{fontSize:'1.06rem',fontWeight:'900',color:'#5a7d9a',whiteSpace:'nowrap',flexShrink:0}}>{label}</span>;
             })()}
             <div style={{display:'flex',gap:2,background:'#f0f4f8',borderRadius:8,padding:2,border:'1px solid #c5d5e0',flexShrink:0}}>
-              <button onClick={function(){setPeriod('monthly');}} style={{padding:'4px 9px',borderRadius:6,border:'none',fontSize:'0.62rem',fontWeight:800,cursor:'pointer',background:period==='monthly'?'#1a3a5c':'transparent',color:period==='monthly'?'#fff':'#5a7d9a',transition:'all 0.15s'}}>Monthly</button>
-              <button onClick={function(){setPeriod('yearly');}} style={{padding:'4px 9px',borderRadius:6,border:'none',fontSize:'0.62rem',fontWeight:800,cursor:'pointer',background:period==='yearly'?'#1a3a5c':'transparent',color:period==='yearly'?'#fff':'#5a7d9a',transition:'all 0.15s'}}>Yearly</button>
+              <button onClick={function(){setPeriod('monthly');}} style={{padding:'4px 9px',borderRadius:6,border:'none',fontSize:'0.94rem',fontWeight:800,cursor:'pointer',background:period==='monthly'?'#1a3a5c':'transparent',color:period==='monthly'?'#fff':'#5a7d9a',transition:'all 0.15s'}}>Monthly</button>
+              <button onClick={function(){setPeriod('yearly');}} style={{padding:'4px 9px',borderRadius:6,border:'none',fontSize:'0.94rem',fontWeight:800,cursor:'pointer',background:period==='yearly'?'#1a3a5c':'transparent',color:period==='yearly'?'#fff':'#5a7d9a',transition:'all 0.15s'}}>Yearly</button>
             </div>
           </div>
 
@@ -2029,9 +2041,9 @@ function App() {
                 else if(n > 30) { setRateInput('30'); setRate(30); }
                 else setRateInput(String(n));
               }}
-              style={{width:52,padding:'7px 10px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #fbd4b4',borderRadius:10,fontSize:'1rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,textAlign:'center'}}
+              style={{width:52,padding:'7px 10px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #fbd4b4',borderRadius:10,fontSize:'1.44rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,textAlign:'center'}}
             />
-            <span style={{fontSize:'0.72rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>% inflation</span>
+            <span style={{fontSize:'1.08rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>% inflation</span>
             <div style={{flex:1}}/>
             <input type="text" inputMode="numeric" value={yearsInput} placeholder="10"
               onChange={function(e){
@@ -2046,9 +2058,9 @@ function App() {
                 else if(n > 50) { setYearsInput('50'); setYears(50); }
                 else setYearsInput(String(n));
               }}
-              style={{width:48,padding:'7px 10px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #b3e0d8',borderRadius:10,fontSize:'1rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,textAlign:'center'}}
+              style={{width:48,padding:'7px 10px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #b3e0d8',borderRadius:10,fontSize:'1.44rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,textAlign:'center'}}
             />
-            <span style={{fontSize:'0.72rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>yrs → {targetYear}</span>
+            <span style={{fontSize:'1.08rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>yrs → {targetYear}</span>
           </div>
         </div>
 
@@ -2060,8 +2072,8 @@ function App() {
             <MoneyCard amount={fmtRs(amount)} label="purchasing power" year={'Today · '+new Date().getFullYear()} pctLeft={100} faded={false}/>
           </div>
           <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:4}}>
-            <div style={{fontSize:'1.8rem',opacity:0.18}}>→</div>
-            <div style={{fontSize:'0.52rem',color:'#8aacbf',fontWeight:'700'}}>{years} yrs</div>
+            <div style={{fontSize:'2.4rem',opacity:0.18}}>→</div>
+            <div style={{fontSize:'0.8rem',color:'#8aacbf',fontWeight:'700'}}>{years} yrs</div>
           </div>
           <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:8}}>
             <MoneyCard amount={fmtRs(Math.round(futureVal))} label="equivalent value" year={targetYear+' equivalent'} pctLeft={pctLeft} faded={true}/>
@@ -2071,16 +2083,16 @@ function App() {
         {/* ── Big stat ── */}
         <div style={{textAlign:'center',background:'linear-gradient(135deg,#1a3a5c 0%,#1b5e7a 50%,#2a9d8f 100%)',borderRadius:18,padding:'22px 20px',marginBottom:14,boxShadow:'0 8px 32px rgba(26,58,92,0.22)',position:'relative',overflow:'hidden'}}>
           <div style={{position:'absolute',inset:0,opacity:0.05,backgroundImage:'radial-gradient(circle,#fff 1px,transparent 1px)',backgroundSize:'24px 24px',pointerEvents:'none'}}/>
-          <div style={{fontSize:'0.58rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>In {years} years at {rate}% inflation</div>
-          <div style={{fontSize:'3rem',fontWeight:'900',color:'#fff',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(futureVal))}</div>
-          <div style={{fontSize:'0.8rem',color:'rgba(255,255,255,0.65)',marginBottom:16}}>is the real buying power of <strong style={{color:'#fff'}}>{fmtRs(amount)}</strong> by {targetYear}</div>
+          <div style={{fontSize:'0.86rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>In {years} years at {rate}% inflation</div>
+          <div style={{fontSize:'4.1rem',fontWeight:'900',color:'#fff',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(futureVal))}</div>
+          <div style={{fontSize:'1.18rem',color:'rgba(255,255,255,0.65)',marginBottom:16}}>is the real buying power of <strong style={{color:'#fff'}}>{fmtRs(amount)}</strong> by {targetYear}</div>
           <div style={{height:10,borderRadius:5,background:'rgba(255,255,255,0.12)',overflow:'hidden',position:'relative'}}>
             <div style={{position:'absolute',left:0,top:0,bottom:0,width:pctLeft+'%',background:'linear-gradient(90deg,#4ade80,#86efac)',borderRadius:5,transition:'width 0.4s ease'}}/>
             <div style={{position:'absolute',right:0,top:0,bottom:0,width:(100-pctLeft)+'%',background:'rgba(189,233,228,0.45)',borderRadius:5}}/>
           </div>
           <div style={{display:'flex',justifyContent:'space-between',marginTop:8}}>
-            <span style={{fontSize:'0.63rem',color:'#4ade80',fontWeight:'800'}}>{pctLeft.toFixed(1)}% remaining</span>
-            <span style={{fontSize:'0.63rem',color:'#bde9e4',fontWeight:'800'}}>{(100-pctLeft).toFixed(1)}% lost to inflation</span>
+            <span style={{fontSize:'0.96rem',color:'#4ade80',fontWeight:'800'}}>{pctLeft.toFixed(1)}% remaining</span>
+            <span style={{fontSize:'0.96rem',color:'#bde9e4',fontWeight:'800'}}>{(100-pctLeft).toFixed(1)}% lost to inflation</span>
           </div>
         </div>
 
@@ -2088,14 +2100,14 @@ function App() {
         {(function(){
           return(
             <div style={{background:'#fff',borderRadius:16,padding:'16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.12)',boxShadow:'0 4px 20px rgba(26,58,92,0.07)',borderTop:'3px solid #bde9e4'}}>
-              <div style={{fontSize:'0.6rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📉 YEAR-BY-YEAR PURCHASING POWER — {fmtRs(amount)} today</div>
-              <div style={{fontSize:'0.58rem',color:'#8aacbf',marginBottom:12}}>How much {fmtRs(amount)} is really worth, in today's money, as years pass</div>
+              <div style={{fontSize:'0.9rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📉 YEAR-BY-YEAR PURCHASING POWER — {fmtRs(amount)} today</div>
+              <div style={{fontSize:'0.86rem',color:'#8aacbf',marginBottom:12}}>How much {fmtRs(amount)} is really worth, in today's money, as years pass</div>
               {/* Header */}
-              <div style={{display:'grid',gridTemplateColumns:'44px 1fr 80px 64px',gap:8,padding:'4px 6px',marginBottom:4}}>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>REAL VALUE</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>LOST</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>REMAINING</div>
+              <div style={{display:'grid',gridTemplateColumns:'54px 1fr 96px 76px',gap:8,padding:'4px 6px',marginBottom:4}}>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>REAL VALUE</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>LOST</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>REMAINING</div>
               </div>
               <div style={{maxHeight:340,overflowY:'auto',paddingRight:2}}>
                 {Array.from({length:years},function(_,i){return i+1;}).map(function(y){
@@ -2107,16 +2119,16 @@ function App() {
                   var barColor = heat > 0.7 ? '#1a3a5c' : heat > 0.4 ? '#2e6b8a' : '#bde9e4';
                   var isLast = y===years;
                   return(
-                    <div key={y} style={{display:'grid',gridTemplateColumns:'44px 1fr 80px 64px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(239,68,68,0.05)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}}>
-                      <div style={{fontSize:'0.58rem',fontWeight:'800',color:isLast?'#ef4444':'#8aacbf'}}>Yr {y}</div>
+                    <div key={y} style={{display:'grid',gridTemplateColumns:'54px 1fr 96px 76px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(239,68,68,0.05)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}}>
+                      <div style={{fontSize:'0.86rem',fontWeight:'800',color:isLast?'#ef4444':'#8aacbf'}}>Yr {y}</div>
                       <div>
-                        <div style={{fontSize:'0.72rem',fontWeight:'900',color:isLast?'#1a3a5c':heat>0.5?'#2e6b8a':'#1a3a5c',marginBottom:3}}>{fmtRs(Math.round(realVal))}</div>
+                        <div style={{fontSize:'1.08rem',fontWeight:'900',color:isLast?'#1a3a5c':heat>0.5?'#2e6b8a':'#1a3a5c',marginBottom:3}}>{fmtRs(Math.round(realVal))}</div>
                         <div style={{height:5,borderRadius:3,background:'#f0f4f8',overflow:'hidden'}}>
                           <div style={{height:'100%',width:barW+'%',background:'linear-gradient(90deg,#22c55e,'+barColor+')',borderRadius:3,transition:'width 0.3s'}}/>
                         </div>
                       </div>
-                      <div style={{fontSize:'0.65rem',fontWeight:'900',color:heat>0.5?'#1a3a5c':'#2e6b8a',textAlign:'right'}}>-{pctLost}%</div>
-                      <div style={{fontSize:'0.65rem',fontWeight:'900',color:heat>0.5?'#1a3a5c':heat>0.3?'#2e6b8a':'#bde9e4',textAlign:'right'}}>{pctRemaining.toFixed(0)}%</div>
+                      <div style={{fontSize:'0.98rem',fontWeight:'900',color:heat>0.5?'#1a3a5c':'#2e6b8a',textAlign:'right'}}>-{pctLost}%</div>
+                      <div style={{fontSize:'0.98rem',fontWeight:'900',color:heat>0.5?'#1a3a5c':heat>0.3?'#2e6b8a':'#bde9e4',textAlign:'right'}}>{pctRemaining.toFixed(0)}%</div>
                     </div>
                   );
                 })}
@@ -2127,7 +2139,7 @@ function App() {
 
         {/* ── Basket ── */}
         <div style={{background:'linear-gradient(135deg,#fffbf0 0%,#fff 60%)',borderRadius:16,padding:'16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 4px 20px rgba(26,58,92,0.07)',borderTop:'3px solid #bde9e4'}}>
-          <div style={{fontSize:'0.6rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:12}}>🛒 BASKET OF GOODS — TODAY vs {targetYear}</div>
+          <div style={{fontSize:'0.9rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:12}}>🛒 BASKET OF GOODS — TODAY vs {targetYear}</div>
           <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:9}}>
             {BASKET.map(function(item){
               var future = item.price * Math.pow(1 + rate/100, years);
@@ -2135,15 +2147,15 @@ function App() {
               return(
                 <div key={item.name} style={{background:'#fff',borderRadius:12,padding:'14px 14px 12px',border:'1px solid rgba(26,58,92,0.1)',borderLeft:'3px solid #bde9e4',boxShadow:'0 2px 8px rgba(26,58,92,0.05)'}}>
                   <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:10}}>
-                    <span style={{fontSize:'2rem',lineHeight:1}}>{item.emoji}</span>
-                    <span style={{fontSize:'0.82rem',fontWeight:'800',color:'#1a3a5c'}}>{item.name}</span>
+                    <span style={{fontSize:'2.76rem',lineHeight:1}}>{item.emoji}</span>
+                    <span style={{fontSize:'1.2rem',fontWeight:'800',color:'#1a3a5c'}}>{item.name}</span>
                   </div>
                   <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:6}}>
-                    <div><div style={{fontSize:'0.52rem',color:'#8aacbf',fontWeight:'700',marginBottom:2}}>TODAY</div><div style={{fontSize:'1.2rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1}}>{fmtRs(item.price)}</div></div>
-                    <div style={{color:'#c5d5e0',fontSize:'1rem',paddingBottom:2}}>→</div>
-                    <div style={{textAlign:'right'}}><div style={{fontSize:'0.52rem',color:'#8aacbf',fontWeight:'700',marginBottom:2}}>{targetYear}</div><div style={{fontSize:'1.2rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1}}>{fmtRs(Math.round(future))}</div></div>
+                    <div><div style={{fontSize:'0.8rem',color:'#8aacbf',fontWeight:'700',marginBottom:2}}>TODAY</div><div style={{fontSize:'1.68rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1}}>{fmtRs(item.price)}</div></div>
+                    <div style={{color:'#c5d5e0',fontSize:'1.44rem',paddingBottom:2}}>→</div>
+                    <div style={{textAlign:'right'}}><div style={{fontSize:'0.8rem',color:'#8aacbf',fontWeight:'700',marginBottom:2}}>{targetYear}</div><div style={{fontSize:'1.68rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1}}>{fmtRs(Math.round(future))}</div></div>
                   </div>
-                  <div style={{fontSize:'0.62rem',color:'#1a3a5c',fontWeight:'700',textAlign:'right'}}>+{incPct}% more expensive</div>
+                  <div style={{fontSize:'0.94rem',color:'#1a3a5c',fontWeight:'700',textAlign:'right'}}>+{incPct}% more expensive</div>
                 </div>
               );
             })}
@@ -2153,22 +2165,22 @@ function App() {
         {/* ── Insights ── */}
         <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10,marginBottom:12}}>
           <div style={{background:'rgba(189,233,228,0.18)',borderRadius:14,padding:'15px 13px',border:'1px solid rgba(26,58,92,0.12)'}}>
-            <div style={{fontSize:'0.55rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>⏱ RULE OF 72</div>
-            <div style={{fontSize:'1.55rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{halvingYrs} yrs</div>
-            <div style={{fontSize:'0.65rem',color:'#5a7d9a',lineHeight:1.6}}>At {rate}% inflation, buying power <strong style={{color:'#1a3a5c'}}>halves</strong> every {halvingYrs} years</div>
+            <div style={{fontSize:'0.84rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>⏱ RULE OF 72</div>
+            <div style={{fontSize:'2.22rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{halvingYrs} yrs</div>
+            <div style={{fontSize:'0.98rem',color:'#5a7d9a',lineHeight:1.6}}>At {rate}% inflation, buying power <strong style={{color:'#1a3a5c'}}>halves</strong> every {halvingYrs} years</div>
           </div>
           <div style={{background:'rgba(22,163,74,0.07)',borderRadius:14,padding:'15px 13px',border:'1px solid rgba(22,163,74,0.18)'}}>
-            <div style={{fontSize:'0.55rem',color:'#16a34a',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>🎯 TO BEAT INFLATION</div>
-            <div style={{fontSize:'1.55rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{rate+3}%+ p.a.</div>
-            <div style={{fontSize:'0.65rem',color:'#5a7d9a',lineHeight:1.6}}>Earn at least {rate+3}% to <strong style={{color:'#1a3a5c'}}>genuinely grow</strong> wealth in real terms</div>
+            <div style={{fontSize:'0.84rem',color:'#16a34a',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>🎯 TO BEAT INFLATION</div>
+            <div style={{fontSize:'2.22rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{rate+3}%+ p.a.</div>
+            <div style={{fontSize:'0.98rem',color:'#5a7d9a',lineHeight:1.6}}>Earn at least {rate+3}% to <strong style={{color:'#1a3a5c'}}>genuinely grow</strong> wealth in real terms</div>
           </div>
         </div>
 
         <div style={{background:'linear-gradient(135deg,#f0f4f8,#fff)',borderRadius:14,padding:'14px 16px 14px 20px',border:'1px solid rgba(26,58,92,0.1)',borderLeft:'4px solid #1a3a5c',boxShadow:'0 2px 14px rgba(26,58,92,0.06)'}}>
-          <div style={{fontSize:'0.7rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
+          <div style={{fontSize:'1.06rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
             💡 A Bank FD at ~7% barely beats {rate}% inflation after tax. Equity mutual funds averaging <strong style={{color:'#1a3a5c'}}>12–14% p.a.</strong> are one of India's most powerful long-term inflation hedges.
           </div>
-          <div style={{fontSize:'0.62rem',color:'#8aacbf',fontStyle:'italic'}}>Idle cash loses value silently. Invested money fights back.</div>
+          <div style={{fontSize:'0.94rem',color:'#8aacbf',fontStyle:'italic'}}>Idle cash loses value silently. Invested money fights back.</div>
         </div>
 
         </React.Fragment>}
@@ -2179,9 +2191,9 @@ function App() {
         {/* Hero stat — navy card: what you'll need at year N */}
         <div style={{background:'linear-gradient(135deg,#1a3a5c,#1e4570)',borderRadius:18,padding:'22px 20px',marginBottom:14,boxShadow:'0 8px 32px rgba(26,58,92,0.28)',position:'relative',overflow:'hidden'}}>
           <div style={{position:'absolute',inset:0,opacity:0.05,backgroundImage:'radial-gradient(circle,#fff 1px,transparent 1px)',backgroundSize:'24px 24px',pointerEvents:'none'}}/>
-          <div style={{fontSize:'0.58rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>📆 In year {years} ({targetYear}), your {period} expense will be</div>
-          <div style={{fontSize:'3rem',fontWeight:'900',color:'#bde9e4',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(period==='monthly' ? lastYearCost/12 : lastYearCost))}</div>
-          <div style={{fontSize:'0.8rem',color:'rgba(255,255,255,0.65)'}}>vs <strong style={{color:'rgba(255,255,255,0.85)'}}>{fmtRs(amount)}{periodLabel}</strong> today</div>
+          <div style={{fontSize:'0.86rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>📆 In year {years} ({targetYear}), your {period} expense will be</div>
+          <div style={{fontSize:'4.1rem',fontWeight:'900',color:'#bde9e4',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(period==='monthly' ? lastYearCost/12 : lastYearCost))}</div>
+          <div style={{fontSize:'1.18rem',color:'rgba(255,255,255,0.65)'}}>vs <strong style={{color:'rgba(255,255,255,0.85)'}}>{fmtRs(amount)}{periodLabel}</strong> today</div>
         </div>
 
         {/* Year-by-year visual table */}
@@ -2189,14 +2201,14 @@ function App() {
           var maxCost = annualAmount * Math.pow(1+rate/100, years);
           return(
             <div style={{background:'#fff',borderRadius:16,padding:'16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 4px 20px rgba(26,58,92,0.07)',borderTop:'3px solid #bde9e4'}}>
-              <div style={{fontSize:'0.6rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📅 YEAR-BY-YEAR EXPENSE — {fmtRs(amount)}{periodLabel} in today's money</div>
-              <div style={{fontSize:'0.58rem',color:'#8aacbf',marginBottom:12}}>Each year your same lifestyle costs MORE due to inflation</div>
+              <div style={{fontSize:'0.9rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📅 YEAR-BY-YEAR EXPENSE — {fmtRs(amount)}{periodLabel} in today's money</div>
+              <div style={{fontSize:'0.86rem',color:'#8aacbf',marginBottom:12}}>Each year your same lifestyle costs MORE due to inflation</div>
               {/* Header row */}
-              <div style={{display:'grid',gridTemplateColumns:'44px 1fr 95px 64px',gap:8,padding:'4px 6px',marginBottom:4}}>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>ANNUAL EXPENSE</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>CUMULATIVE</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>vs TODAY</div>
+              <div style={{display:'grid',gridTemplateColumns:'54px 1fr 112px 76px',gap:8,padding:'4px 6px',marginBottom:4}}>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>ANNUAL EXPENSE</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>CUMULATIVE</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>vs TODAY</div>
               </div>
               <div style={{maxHeight:340,overflowY:'auto',paddingRight:2}}>
                 {Array.from({length:years},function(_,i){return i+1;}).map(function(y){
@@ -2208,16 +2220,16 @@ function App() {
                   var rowColor = heat > 0.7 ? '#1a3a5c' : heat > 0.4 ? '#2e6b8a' : '#bde9e4';
                   var isLast = y===years;
                   return(
-                    <div key={y} style={{display:'grid',gridTemplateColumns:'44px 1fr 95px 64px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(189,233,228,0.12)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}}>
-                      <div style={{fontSize:'0.58rem',fontWeight:'800',color:isLast?'#1a3a5c':'#8aacbf'}}>Yr {y}</div>
+                    <div key={y} style={{display:'grid',gridTemplateColumns:'54px 1fr 112px 76px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(189,233,228,0.12)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}}>
+                      <div style={{fontSize:'0.86rem',fontWeight:'800',color:isLast?'#1a3a5c':'#8aacbf'}}>Yr {y}</div>
                       <div>
-                        <div style={{fontSize:'0.72rem',fontWeight:'900',color:'#1a3a5c',marginBottom:3}}>{fmtRs(Math.round(cost))}</div>
+                        <div style={{fontSize:'1.08rem',fontWeight:'900',color:'#1a3a5c',marginBottom:3}}>{fmtRs(Math.round(cost))}</div>
                         <div style={{height:5,borderRadius:3,background:'#f0f4f8',overflow:'hidden'}}>
                           <div style={{height:'100%',width:barW+'%',background:'linear-gradient(90deg,#bde9e4,'+rowColor+')',borderRadius:3,transition:'width 0.3s'}}/>
                         </div>
                       </div>
-                      <div style={{fontSize:'0.62rem',fontWeight:'700',color:'#5a7d9a',textAlign:'right'}}>{fmtRs(Math.round(cumul))}</div>
-                      <div style={{fontSize:'0.65rem',fontWeight:'900',color:rowColor,textAlign:'right'}}>+{pctMore}%</div>
+                      <div style={{fontSize:'0.94rem',fontWeight:'700',color:'#5a7d9a',textAlign:'right'}}>{fmtRs(Math.round(cumul))}</div>
+                      <div style={{fontSize:'0.98rem',fontWeight:'900',color:rowColor,textAlign:'right'}}>+{pctMore}%</div>
                     </div>
                   );
                 })}
@@ -2229,23 +2241,23 @@ function App() {
         {/* Insights */}
         <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10,marginBottom:12}}>
           <div style={{background:'rgba(189,233,228,0.18)',borderRadius:14,padding:'15px 13px',border:'1px solid rgba(26,58,92,0.12)'}}>
-            <div style={{fontSize:'0.55rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>⏱ EXPENSE DOUBLES IN</div>
-            <div style={{fontSize:'1.55rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{halvingYrs} yrs</div>
-            <div style={{fontSize:'0.65rem',color:'#5a7d9a',lineHeight:1.6}}>Your {fmtRs(amount)}{periodLabel} spend will <strong style={{color:'#1a3a5c'}}>cost twice as much</strong> in {halvingYrs} years</div>
+            <div style={{fontSize:'0.84rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>⏱ EXPENSE DOUBLES IN</div>
+            <div style={{fontSize:'2.22rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{halvingYrs} yrs</div>
+            <div style={{fontSize:'0.98rem',color:'#5a7d9a',lineHeight:1.6}}>Your {fmtRs(amount)}{periodLabel} spend will <strong style={{color:'#1a3a5c'}}>cost twice as much</strong> in {halvingYrs} years</div>
           </div>
           <div style={{background:'rgba(26,58,92,0.05)',borderRadius:14,padding:'15px 13px',border:'1px solid rgba(26,58,92,0.12)'}}>
-            <div style={{fontSize:'0.55rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>💸 EXTRA COST DUE TO INFLATION</div>
-            <div style={{fontSize:'1.55rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:4}}>{fmtRs(Math.round(extraNeeded))}</div>
-            <div style={{fontSize:'0.58rem',color:'#8aacbf',marginBottom:5}}>on top of the {fmtRs(Math.round(nominalTotal))} you'd need with zero inflation</div>
-            <div style={{fontSize:'0.65rem',color:'#5a7d9a',lineHeight:1.4}}><strong style={{color:'#1a3a5c'}}>Total needed: {fmtRs(Math.round(inflAdjTotal))}</strong></div>
+            <div style={{fontSize:'0.84rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>💸 EXTRA COST DUE TO INFLATION</div>
+            <div style={{fontSize:'2.22rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:4}}>{fmtRs(Math.round(extraNeeded))}</div>
+            <div style={{fontSize:'0.86rem',color:'#8aacbf',marginBottom:5}}>on top of the {fmtRs(Math.round(nominalTotal))} you'd need with zero inflation</div>
+            <div style={{fontSize:'0.98rem',color:'#5a7d9a',lineHeight:1.4}}><strong style={{color:'#1a3a5c'}}>Total needed: {fmtRs(Math.round(inflAdjTotal))}</strong></div>
           </div>
         </div>
 
 <div style={{background:'linear-gradient(135deg,#f0f7f6,#fff)',borderRadius:14,padding:'14px 16px 14px 20px',border:'1px solid rgba(26,58,92,0.1)',borderLeft:'4px solid #bde9e4',boxShadow:'0 2px 14px rgba(26,58,92,0.06)',marginBottom:12}}>
-          <div style={{fontSize:'0.7rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
+          <div style={{fontSize:'1.06rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
             💡 This is why retirement planning needs an <strong style={{color:'#1a3a5c'}}>inflation buffer</strong>. If you plan to spend {fmtRs(amount)}{periodLabel}, you won't need {fmtRs(Math.round(nominalTotal))} — you'll need <strong style={{color:'#1a3a5c'}}>{fmtRs(Math.round(inflAdjTotal))}</strong> to maintain the same lifestyle over {years} years.
           </div>
-          <div style={{fontSize:'0.62rem',color:'#8aacbf',fontStyle:'italic'}}>Plan for more. Inflation is silent but relentless.</div>
+          <div style={{fontSize:'0.94rem',color:'#8aacbf',fontStyle:'italic'}}>Plan for more. Inflation is silent but relentless.</div>
         </div>
 
 </React.Fragment>}
@@ -2255,15 +2267,15 @@ function App() {
 
         {/* Auto-pulled values banner */}
         <div style={{background:'rgba(189,233,228,0.18)',borderRadius:12,padding:'12px 16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.12)',display:'flex',alignItems:'center',gap:10}}>
-          <span style={{fontSize:'1.1rem'}}>🔗</span>
-          <div style={{fontSize:'0.68rem',color:'#5a7d9a',lineHeight:1.6}}>
+          <span style={{fontSize:'1.56rem'}}>🔗</span>
+          <div style={{fontSize:'1.02rem',color:'#5a7d9a',lineHeight:1.6}}>
             Using your Section 2 settings — current {period} expense: <strong style={{color:'#1a3a5c'}}>{fmtRs(amount)}{periodLabel}</strong> &nbsp;·&nbsp; Inflation rate: <strong style={{color:'#1a3a5c'}}>{rate}%</strong>
           </div>
         </div>
 
         {/* Corpus duration input */}
         <div style={{background:'#fff',borderRadius:18,padding:'18px',marginBottom:16,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 4px 20px rgba(26,58,92,0.08)',borderTop:'3px solid #1a3a5c'}}>
-          <div style={{fontSize:'0.62rem',fontWeight:'800',color:'#1a3a5c',marginBottom:10,letterSpacing:'1px',display:'flex',alignItems:'center',gap:6}}>
+          <div style={{fontSize:'0.94rem',fontWeight:'800',color:'#1a3a5c',marginBottom:10,letterSpacing:'1px',display:'flex',alignItems:'center',gap:6}}>
             <span style={{display:'inline-block',width:10,height:10,borderRadius:3,background:'linear-gradient(135deg,#1a3a5c,#254d78)'}}/>
             CORPUS DURATION
           </div>
@@ -2281,39 +2293,39 @@ function App() {
                 else if(n>100){setCorpusYearsInput('100');setCorpusYears(100);}
                 else setCorpusYearsInput(String(n));
               }}
-              style={{flex:1,padding:'10px 14px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #c5d5e0',borderRadius:12,fontSize:'1rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800}}
+              style={{flex:1,padding:'10px 14px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #c5d5e0',borderRadius:12,fontSize:'1.44rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800}}
             />
-            <span style={{fontSize:'0.85rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>years</span>
+            <span style={{fontSize:'1.26rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>years</span>
           </div>
-          <div style={{fontSize:'0.6rem',color:'#8aacbf',marginTop:6}}>How many years do you need this corpus to last? (e.g. years in retirement)</div>
+          <div style={{fontSize:'0.9rem',color:'#8aacbf',marginTop:6}}>How many years do you need this corpus to last? (e.g. years in retirement)</div>
         </div>
 
         {/* Hero result */}
         <div style={{background:'linear-gradient(135deg,#1a3a5c,#1e4570)',borderRadius:18,padding:'22px 20px',marginBottom:14,boxShadow:'0 8px 32px rgba(26,58,92,0.28)',position:'relative',overflow:'hidden'}}>
           <div style={{position:'absolute',inset:0,opacity:0.05,backgroundImage:'radial-gradient(circle,#fff 1px,transparent 1px)',backgroundSize:'24px 24px',pointerEvents:'none'}}/>
-          <div style={{fontSize:'0.58rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>🏦 TOTAL CORPUS REQUIRED</div>
-          <div style={{fontSize:'3rem',fontWeight:'900',color:'#bde9e4',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(corpusTotal))}</div>
-          <div style={{fontSize:'0.8rem',color:'rgba(255,255,255,0.65)',marginBottom:14}}>to sustain <strong style={{color:'rgba(255,255,255,0.85)'}}>{fmtRs(amount)}{periodLabel}</strong> (today's money), growing at <strong style={{color:'#bde9e4'}}>{rate}% p.a.</strong> for {corpusYears} years</div>
+          <div style={{fontSize:'0.86rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>🏦 TOTAL CORPUS REQUIRED</div>
+          <div style={{fontSize:'4.1rem',fontWeight:'900',color:'#bde9e4',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(corpusTotal))}</div>
+          <div style={{fontSize:'1.18rem',color:'rgba(255,255,255,0.65)',marginBottom:14}}>to sustain <strong style={{color:'rgba(255,255,255,0.85)'}}>{fmtRs(amount)}{periodLabel}</strong> (today's money), growing at <strong style={{color:'#bde9e4'}}>{rate}% p.a.</strong> for {corpusYears} years</div>
           <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10}}>
             <div style={{background:'rgba(255,255,255,0.08)',borderRadius:10,padding:'10px 12px'}}>
-              <div style={{fontSize:'0.52rem',color:'rgba(255,255,255,0.55)',fontWeight:'800',marginBottom:3}}>YEAR 1 EXPENSE</div>
-              <div style={{fontSize:'1.1rem',fontWeight:'900',color:'#fff'}}>{fmtRs(Math.round(corpusStartExp))}<span style={{fontSize:'0.6rem',opacity:0.7}}>/yr</span></div>
+              <div style={{fontSize:'0.8rem',color:'rgba(255,255,255,0.55)',fontWeight:'800',marginBottom:3}}>YEAR 1 EXPENSE</div>
+              <div style={{fontSize:'1.56rem',fontWeight:'900',color:'#fff'}}>{fmtRs(Math.round(corpusStartExp))}<span style={{fontSize:'0.9rem',opacity:0.7}}>/yr</span></div>
             </div>
             <div style={{background:'rgba(255,255,255,0.08)',borderRadius:10,padding:'10px 12px'}}>
-              <div style={{fontSize:'0.52rem',color:'rgba(255,255,255,0.55)',fontWeight:'800',marginBottom:3}}>YEAR {corpusYears} EXPENSE</div>
-              <div style={{fontSize:'1.1rem',fontWeight:'900',color:'#bde9e4'}}>{fmtRs(Math.round(corpusLastExp))}<span style={{fontSize:'0.6rem',opacity:0.7}}>/yr</span></div>
+              <div style={{fontSize:'0.8rem',color:'rgba(255,255,255,0.55)',fontWeight:'800',marginBottom:3}}>YEAR {corpusYears} EXPENSE</div>
+              <div style={{fontSize:'1.56rem',fontWeight:'900',color:'#bde9e4'}}>{fmtRs(Math.round(corpusLastExp))}<span style={{fontSize:'0.9rem',opacity:0.7}}>/yr</span></div>
             </div>
           </div>
         </div>
 
         {/* Year-by-year table */}
         <div style={{background:'#fff',borderRadius:16,padding:'16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 4px 20px rgba(26,58,92,0.07)',borderTop:'3px solid #bde9e4'}}>
-          <div style={{fontSize:'0.6rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📅 YEAR-BY-YEAR BREAKDOWN</div>
-          <div style={{fontSize:'0.58rem',color:'#8aacbf',marginBottom:12}}>Annual expense grows each year with inflation</div>
-          <div style={{display:'grid',gridTemplateColumns:'44px 1fr 95px',gap:8,padding:'4px 6px',marginBottom:4}}>
-            <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
-            <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>ANNUAL EXPENSE</div>
-            <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>CUMULATIVE</div>
+          <div style={{fontSize:'0.9rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📅 YEAR-BY-YEAR BREAKDOWN</div>
+          <div style={{fontSize:'0.86rem',color:'#8aacbf',marginBottom:12}}>Annual expense grows each year with inflation</div>
+          <div style={{display:'grid',gridTemplateColumns:'54px 1fr 112px',gap:8,padding:'4px 6px',marginBottom:4}}>
+            <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
+            <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>ANNUAL EXPENSE</div>
+            <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>CUMULATIVE</div>
           </div>
           <div style={{maxHeight:340,overflowY:'auto',paddingRight:2}}>
             {(function(){
@@ -2327,15 +2339,15 @@ function App() {
                 var heat=(y-1)/(Math.max(corpusYears-1,1));
                 var barCol=heat>0.6?'#1a3a5c':heat>0.3?'#2e6b8a':'#bde9e4';
                 rows.push(
-                  React.createElement('div',{key:y,style:{display:'grid',gridTemplateColumns:'44px 1fr 95px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(189,233,228,0.12)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}},
-                    React.createElement('div',{style:{fontSize:'0.58rem',fontWeight:'800',color:isLast?'#1a3a5c':'#8aacbf'}},'Yr '+y),
+                  React.createElement('div',{key:y,style:{display:'grid',gridTemplateColumns:'54px 1fr 112px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(189,233,228,0.12)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}},
+                    React.createElement('div',{style:{fontSize:'0.86rem',fontWeight:'800',color:isLast?'#1a3a5c':'#8aacbf'}},'Yr '+y),
                     React.createElement('div',null,
-                      React.createElement('div',{style:{fontSize:'0.72rem',fontWeight:'900',color:'#1a3a5c',marginBottom:3}},fmtRs(Math.round(exp))),
+                      React.createElement('div',{style:{fontSize:'1.08rem',fontWeight:'900',color:'#1a3a5c',marginBottom:3}},fmtRs(Math.round(exp))),
                       React.createElement('div',{style:{height:5,borderRadius:3,background:'#f0f4f8',overflow:'hidden'}},
                         React.createElement('div',{style:{height:'100%',width:barW+'%',background:'linear-gradient(90deg,#bde9e4,'+barCol+')',borderRadius:3,transition:'width 0.3s'}})
                       )
                     ),
-                    React.createElement('div',{style:{fontSize:'0.62rem',fontWeight:'700',color:'#5a7d9a',textAlign:'right'}},fmtRs(Math.round(cumul)))
+                    React.createElement('div',{style:{fontSize:'0.94rem',fontWeight:'700',color:'#5a7d9a',textAlign:'right'}},fmtRs(Math.round(cumul)))
                   )
                 );
               }
@@ -2346,21 +2358,21 @@ function App() {
 
         {/* Chart */}
         <div style={{background:'#fff',borderRadius:16,padding:'16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 4px 20px rgba(26,58,92,0.07)',borderTop:'3px solid #1a3a5c'}}>
-          <div style={{fontSize:'0.6rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📈 EXPENSE GROWTH OVER {corpusYears} YEARS</div>
-          <div style={{fontSize:'0.58rem',color:'#8aacbf',marginBottom:10}}>Annual expense rising with {rate}% inflation</div>
+          <div style={{fontSize:'0.9rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📈 EXPENSE GROWTH OVER {corpusYears} YEARS</div>
+          <div style={{fontSize:'0.86rem',color:'#8aacbf',marginBottom:10}}>Annual expense rising with {rate}% inflation</div>
           <CorpusChart startExp={corpusStartExp} rate={rate} corpusYears={corpusYears}/>
           <div style={{display:'flex',justifyContent:'space-between',marginTop:8}}>
-            <span style={{fontSize:'0.6rem',color:'#8aacbf',fontWeight:'700'}}>Yr 1: {fmtRs(Math.round(corpusStartExp))}</span>
-            <span style={{fontSize:'0.6rem',color:'#1a3a5c',fontWeight:'800'}}>Yr {corpusYears}: {fmtRs(Math.round(corpusLastExp))}</span>
+            <span style={{fontSize:'0.9rem',color:'#8aacbf',fontWeight:'700'}}>Yr 1: {fmtRs(Math.round(corpusStartExp))}</span>
+            <span style={{fontSize:'0.9rem',color:'#1a3a5c',fontWeight:'800'}}>Yr {corpusYears}: {fmtRs(Math.round(corpusLastExp))}</span>
           </div>
         </div>
 
         {/* Explanation */}
         <div style={{background:'linear-gradient(135deg,#f0f7f6,#fff)',borderRadius:14,padding:'14px 16px 14px 20px',border:'1px solid rgba(26,58,92,0.1)',borderLeft:'4px solid #bde9e4',boxShadow:'0 2px 14px rgba(26,58,92,0.06)'}}>
-          <div style={{fontSize:'0.7rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
+          <div style={{fontSize:'1.06rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
             💡 This shows how your expenses grow over time due to inflation, and the total amount you would need to fund this goal. The total corpus of <strong style={{color:'#1a3a5c'}}>{fmtRs(Math.round(corpusTotal))}</strong> is the lump sum required today to cover all {corpusYears} years of inflation-adjusted expenses, starting from your current {fmtRs(amount)}{periodLabel}.
           </div>
-          <div style={{fontSize:'0.62rem',color:'#8aacbf',fontStyle:'italic'}}>Start early — the earlier you build this corpus, the less you need to save each month.</div>
+          <div style={{fontSize:'0.94rem',color:'#8aacbf',fontStyle:'italic'}}>Start early — the earlier you build this corpus, the less you need to save each month.</div>
         </div>
 
         </React.Fragment>}

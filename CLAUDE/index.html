@@ -43,7 +43,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;scroll-padding-top:12px;}
-body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;overflow-x:hidden;}
 
 /* ── HEADER ── */
 header{background:var(--white);border-bottom:2px solid var(--mint-lt);box-shadow:0 2px 12px rgba(26,58,92,0.08);}
@@ -66,6 +66,9 @@ header .h-tag{font-size:0.65rem;color:var(--muted);font-weight:600;letter-spacin
 
 /* ── CONTAINER ── */
 .container{max-width:1000px;margin:0 auto;padding:12px 14px 40px;}
+
+/* Inflation Calculator breaks out of the 1000px container cap for large-classroom viewing */
+#inflation{max-width:none;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:24px;padding-right:24px;box-sizing:border-box;}
 
 /* ── GAME SCREEN ── */
 .game-screen{display:none;}
@@ -1696,6 +1699,15 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 
 
 </style>
+<!-- Google Analytics (GA4) — same property as investingformummies.com, so website + games
+     report in one place. content_group:'Games' makes "how many reached the games" a one-line report. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCN0R6L3B9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PCN0R6L3B9', { content_group: 'Games' });
+</script>
 </head>
 <body>
 
@@ -8909,6 +8921,7 @@ calculate = function() {
     --success: #27AE60;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
   body {
     font-family: &#x27;Nunito&#x27;, sans-serif;
     background: var(--cream);
@@ -9163,6 +9176,9 @@ calculate = function() {
   .bar-pct.green { color: #1B9E6E; font-size: 2.2rem; }
   .bar-track { height: 14px; background: #eaf2ef; border-radius: 99px; overflow: hidden; }
   .bar-fill { height: 100%; border-radius: 99px; transition: width 1.1s cubic-bezier(.4,0,.2,1); }
+  .surplus-mode { display: flex; gap: 8px; margin-bottom: 16px; }
+  .surplus-mode button { padding: 7px 16px; border-radius: 99px; border: 1.5px solid #dfe9e7; background: #fff; font-family: &#x27;Nunito&#x27;, sans-serif; font-weight: 700; font-size: 0.8rem; color: var(--muted); cursor: pointer; }
+  .surplus-mode button.active { background: var(--navy); color: #fff; border-color: var(--navy); }
 
   .tips-card {
     background: linear-gradient(135deg, #e8f5f2, #F3F8FF);
@@ -9319,11 +9335,11 @@ calculate = function() {
 
 
 &lt;header style=&quot;position:relative;&quot;&gt;
-  &lt;img src=&quot;data:image/jpeg;base64,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&quot; style=&quot;position:absolute;top:50%;left:8px;transform:translateY(-50%);height:calc(100% - 10px);width:auto;object-fit:contain;border-radius:10px;z-index:2;&quot; alt=&quot;Logo&quot;/&gt;
+  &lt;img src=&quot;/IFM%20logo%20white%20background.png&quot; style=&quot;position:absolute;top:50%;left:12px;transform:translateY(-50%);height:62px;width:auto;max-width:140px;object-fit:contain;border-radius:8px;z-index:2;&quot; alt=&quot;IFM&quot;/&gt;
   &lt;div class=&quot;header-inner&quot; style=&quot;padding-left:105px;&quot;&gt;
     &lt;div class=&quot;header-text&quot;&gt;
       &lt;h1&gt;&lt;strong&gt;EDUCATION PLANNER&lt;/strong&gt; — their future, your plan&lt;/h1&gt;
-      &lt;p&gt;Plan your children&#x27;s education costs and see how much you need to start saving today 🎓&lt;/p&gt;
+      &lt;p&gt;Plan your children&#x27;s education costs and see how much you need to start investing today 🎓&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/header&gt;
@@ -9355,7 +9371,7 @@ calculate = function() {
         &lt;h3&gt;New SIP Assumption&lt;/h3&gt;
         &lt;span class=&quot;badge navy&quot;&gt;For Gap&lt;/span&gt;
       &lt;/div&gt;
-      &lt;p style=&quot;font-size:0.8rem;color:var(--muted);margin-bottom:14px;&quot;&gt;If there&#x27;s a gap after existing savings, at what return rate would you invest new monthly SIPs?&lt;/p&gt;
+      &lt;p style=&quot;font-size:0.8rem;color:var(--muted);margin-bottom:14px;&quot;&gt;If there&#x27;s a gap after your existing invested surplus, at what return rate would you invest new monthly SIPs?&lt;/p&gt;
       &lt;div class=&quot;field&quot;&gt;&lt;label&gt;Expected SIP Returns (% p.a.)&lt;/label&gt;&lt;div class=&quot;inp-group&quot;&gt;&lt;div class=&quot;inp-wrap narrow&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;sip_ret&quot; value=&quot;11&quot; style=&quot;padding-left:10px;text-align:center;&quot;&gt;&lt;/div&gt;&lt;span class=&quot;inp-short&quot;&gt;%&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -9364,9 +9380,26 @@ calculate = function() {
   &lt;div class=&quot;card aqua-top&quot; style=&quot;margin-bottom:20px;&quot;&gt;
     &lt;div class=&quot;card-head&quot;&gt;
       &lt;span class=&quot;icon&quot;&gt;💰&lt;/span&gt;
-      &lt;h3&gt;Existing Education Savings&lt;/h3&gt;
+      &lt;h3&gt;Existing Invested&lt;/h3&gt;
       &lt;span class=&quot;badge&quot;&gt;What you have so far&lt;/span&gt;
     &lt;/div&gt;
+    &lt;div class=&quot;surplus-mode&quot;&gt;
+      &lt;button id=&quot;surplus_mode_full&quot; class=&quot;active&quot; onclick=&quot;setSurplusMode(&#x27;full&#x27;)&quot;&gt;Full breakdown&lt;/button&gt;
+      &lt;button id=&quot;surplus_mode_quick&quot; onclick=&quot;setSurplusMode(&#x27;quick&#x27;)&quot;&gt;Quick — one number&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;quick_surplus_row&quot; style=&quot;display:none;&quot;&gt;
+      &lt;p style=&quot;font-size:0.8rem;color:var(--muted);margin-bottom:14px;&quot;&gt;One number is enough — your total amount already invested for education, and the return you expect on it.&lt;/p&gt;
+      &lt;div class=&quot;field&quot;&gt;&lt;label&gt;Total invested today&lt;/label&gt;
+        &lt;div class=&quot;inp-group&quot;&gt;
+          &lt;div class=&quot;inp-wrap&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;qsav&quot; placeholder=&quot;0&quot; oninput=&quot;handleQuickSurplus(this)&quot;&gt;&lt;/div&gt;
+          &lt;span class=&quot;inp-short&quot; id=&quot;qsav_s&quot;&gt;&lt;/span&gt;
+          &lt;div class=&quot;inp-wrap&quot; style=&quot;width:62px;&quot;&gt;&lt;span class=&quot;sym&quot; style=&quot;left:auto;right:5px;font-size:0.75rem;&quot;&gt;%&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;qr&quot; value=&quot;11&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; oninput=&quot;recalcEduFVs()&quot;&gt;&lt;/div&gt;
+          &lt;div style=&quot;width:90px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#16a34a;&quot; id=&quot;qfv&quot;&gt;—&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p style=&quot;font-size:0.7rem;color:var(--muted);margin-top:2px;&quot;&gt;Amount · expected return % p.a. · projected value at education start&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;full_surplus_rows&quot;&gt;
     &lt;p style=&quot;font-size:0.8rem;color:var(--muted);margin-bottom:14px;&quot;&gt;Add your current investments earmarked for education, with the expected annual return for each.&lt;/p&gt;
     &lt;div class=&quot;field&quot; style=&quot;margin-bottom:6px;&quot;&gt;
       &lt;label style=&quot;visibility:hidden;&quot;&gt;&amp;nbsp;&lt;/label&gt;
@@ -9376,17 +9409,18 @@ calculate = function() {
         &lt;div style=&quot;width:62px;color:var(--teal);font-size:0.7rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;text-align:center;&quot;&gt;Return %&lt;/div&gt;
         &lt;div style=&quot;width:110px;color:var(--teal);font-size:0.7rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;text-align:center;&quot;&gt;Contribution&lt;/div&gt;
         &lt;div style=&quot;width:30px;&quot;&gt;&lt;/div&gt;
-        &lt;div style=&quot;width:62px;color:var(--muted);font-size:0.7rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;text-align:center;cursor:help;&quot; data-edu-tip=&quot;Years from TODAY you contribute — e.g. 5 means add money for 5 yrs, then it grows until education starts&quot;&gt;Cont. Yrs &#9432;&lt;/div&gt;
+        &lt;div style=&quot;width:62px;color:var(--muted);font-size:0.7rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;text-align:center;cursor:help;&quot; data-edu-tip=&quot;Years from TODAY you contribute — e.g. 5 means add money for 5 yrs, then it grows until education starts&quot;&gt;Cont. Yrs ⓘ&lt;/div&gt;
         &lt;div style=&quot;width:90px;color:#16a34a;font-size:0.7rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;text-align:center;&quot;&gt;At Ed. Start&lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;field&quot;&gt;&lt;label&gt;Mutual Funds / SIPs&lt;/label&gt;&lt;div class=&quot;inp-group&quot;&gt;&lt;div class=&quot;inp-wrap&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;sav1&quot; value=&quot;0&quot; oninput=&quot;handleEduSaving(this)&quot;&gt;&lt;/div&gt;&lt;span class=&quot;inp-short&quot; id=&quot;sav1_s&quot;&gt;&lt;/span&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:62px;&quot;&gt;&lt;span class=&quot;sym&quot; style=&quot;left:auto;right:5px;font-size:0.75rem;&quot;&gt;%&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;r1&quot; value=&quot;12&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; oninput=&quot;recalcEduFVs()&quot;&gt;&lt;/div&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:110px;&quot;&gt;&lt;span class=&quot;sym&quot;&gt;&#x20B9;&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ec1&quot; placeholder=&quot;0&quot; data-pair=&quot;ep1&quot; oninput=&quot;handleEduContrib(this)&quot;&gt;&lt;/div&gt;&lt;button class=&quot;edu-toggle&quot; id=&quot;ect1&quot; onclick=&quot;toggleEduMode(1)&quot; data-edu-tip=&quot;M = monthly  |  Y = yearly&quot;&gt;M&lt;/button&gt;&lt;div class=&quot;inp-wrap edu-period-disabled&quot; style=&quot;width:62px;&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ep1&quot; placeholder=&quot;&#x2014;&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; disabled oninput=&quot;handleEduPeriod(this)&quot;&gt;&lt;/div&gt;&lt;div style=&quot;width:90px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#16a34a;&quot; id=&quot;efv1&quot;&gt;&#x2014;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;div class=&quot;field&quot;&gt;&lt;label&gt;Fixed Deposits&lt;/label&gt;&lt;div class=&quot;inp-group&quot;&gt;&lt;div class=&quot;inp-wrap&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;sav2&quot; value=&quot;0&quot; oninput=&quot;handleEduSaving(this)&quot;&gt;&lt;/div&gt;&lt;span class=&quot;inp-short&quot; id=&quot;sav2_s&quot;&gt;&lt;/span&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:62px;&quot;&gt;&lt;span class=&quot;sym&quot; style=&quot;left:auto;right:5px;font-size:0.75rem;&quot;&gt;%&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;r2&quot; value=&quot;7&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; oninput=&quot;recalcEduFVs()&quot;&gt;&lt;/div&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:110px;&quot;&gt;&lt;span class=&quot;sym&quot;&gt;&#x20B9;&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ec2&quot; placeholder=&quot;0&quot; data-pair=&quot;ep2&quot; oninput=&quot;handleEduContrib(this)&quot;&gt;&lt;/div&gt;&lt;button class=&quot;edu-toggle&quot; id=&quot;ect2&quot; onclick=&quot;toggleEduMode(2)&quot; data-edu-tip=&quot;M = monthly  |  Y = yearly&quot;&gt;M&lt;/button&gt;&lt;div class=&quot;inp-wrap edu-period-disabled&quot; style=&quot;width:62px;&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ep2&quot; placeholder=&quot;&#x2014;&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; disabled oninput=&quot;handleEduPeriod(this)&quot;&gt;&lt;/div&gt;&lt;div style=&quot;width:90px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#16a34a;&quot; id=&quot;efv2&quot;&gt;&#x2014;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;div class=&quot;field&quot;&gt;&lt;label&gt;Sukanya / PPF / SSY&lt;/label&gt;&lt;div class=&quot;inp-group&quot;&gt;&lt;div class=&quot;inp-wrap&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;sav3&quot; value=&quot;0&quot; oninput=&quot;handleEduSaving(this)&quot;&gt;&lt;/div&gt;&lt;span class=&quot;inp-short&quot; id=&quot;sav3_s&quot;&gt;&lt;/span&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:62px;&quot;&gt;&lt;span class=&quot;sym&quot; style=&quot;left:auto;right:5px;font-size:0.75rem;&quot;&gt;%&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;r3&quot; value=&quot;8&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; oninput=&quot;recalcEduFVs()&quot;&gt;&lt;/div&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:110px;&quot;&gt;&lt;span class=&quot;sym&quot;&gt;&#x20B9;&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ec3&quot; placeholder=&quot;0&quot; data-pair=&quot;ep3&quot; oninput=&quot;handleEduContrib(this)&quot;&gt;&lt;/div&gt;&lt;button class=&quot;edu-toggle&quot; id=&quot;ect3&quot; onclick=&quot;toggleEduMode(3)&quot; data-edu-tip=&quot;M = monthly  |  Y = yearly&quot;&gt;M&lt;/button&gt;&lt;div class=&quot;inp-wrap edu-period-disabled&quot; style=&quot;width:62px;&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ep3&quot; placeholder=&quot;&#x2014;&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; disabled oninput=&quot;handleEduPeriod(this)&quot;&gt;&lt;/div&gt;&lt;div style=&quot;width:90px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#16a34a;&quot; id=&quot;efv3&quot;&gt;&#x2014;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;div class=&quot;field&quot;&gt;&lt;label&gt;Gold / Other Savings&lt;/label&gt;&lt;div class=&quot;inp-group&quot;&gt;&lt;div class=&quot;inp-wrap&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;sav4&quot; value=&quot;0&quot; oninput=&quot;handleEduSaving(this)&quot;&gt;&lt;/div&gt;&lt;span class=&quot;inp-short&quot; id=&quot;sav4_s&quot;&gt;&lt;/span&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:62px;&quot;&gt;&lt;span class=&quot;sym&quot; style=&quot;left:auto;right:5px;font-size:0.75rem;&quot;&gt;%&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;r4&quot; value=&quot;9&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; oninput=&quot;recalcEduFVs()&quot;&gt;&lt;/div&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:110px;&quot;&gt;&lt;span class=&quot;sym&quot;&gt;&#x20B9;&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ec4&quot; placeholder=&quot;0&quot; data-pair=&quot;ep4&quot; oninput=&quot;handleEduContrib(this)&quot;&gt;&lt;/div&gt;&lt;button class=&quot;edu-toggle&quot; id=&quot;ect4&quot; onclick=&quot;toggleEduMode(4)&quot; data-edu-tip=&quot;M = monthly  |  Y = yearly&quot;&gt;M&lt;/button&gt;&lt;div class=&quot;inp-wrap edu-period-disabled&quot; style=&quot;width:62px;&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ep4&quot; placeholder=&quot;&#x2014;&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; disabled oninput=&quot;handleEduPeriod(this)&quot;&gt;&lt;/div&gt;&lt;div style=&quot;width:90px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#16a34a;&quot; id=&quot;efv4&quot;&gt;&#x2014;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;field&quot;&gt;&lt;label&gt;Mutual Funds / SIPs&lt;/label&gt;&lt;div class=&quot;inp-group&quot;&gt;&lt;div class=&quot;inp-wrap&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;sav1&quot; value=&quot;0&quot; oninput=&quot;handleEduSaving(this)&quot;&gt;&lt;/div&gt;&lt;span class=&quot;inp-short&quot; id=&quot;sav1_s&quot;&gt;&lt;/span&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:62px;&quot;&gt;&lt;span class=&quot;sym&quot; style=&quot;left:auto;right:5px;font-size:0.75rem;&quot;&gt;%&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;r1&quot; value=&quot;12&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; oninput=&quot;recalcEduFVs()&quot;&gt;&lt;/div&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:110px;&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ec1&quot; placeholder=&quot;0&quot; data-pair=&quot;ep1&quot; oninput=&quot;handleEduContrib(this)&quot;&gt;&lt;/div&gt;&lt;button class=&quot;edu-toggle&quot; id=&quot;ect1&quot; onclick=&quot;toggleEduMode(1)&quot; data-edu-tip=&quot;M = monthly  |  Y = yearly&quot;&gt;M&lt;/button&gt;&lt;div class=&quot;inp-wrap edu-period-disabled&quot; style=&quot;width:62px;&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ep1&quot; placeholder=&quot;—&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; disabled oninput=&quot;handleEduPeriod(this)&quot;&gt;&lt;/div&gt;&lt;div style=&quot;width:90px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#16a34a;&quot; id=&quot;efv1&quot;&gt;—&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;field&quot;&gt;&lt;label&gt;Fixed Deposits&lt;/label&gt;&lt;div class=&quot;inp-group&quot;&gt;&lt;div class=&quot;inp-wrap&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;sav2&quot; value=&quot;0&quot; oninput=&quot;handleEduSaving(this)&quot;&gt;&lt;/div&gt;&lt;span class=&quot;inp-short&quot; id=&quot;sav2_s&quot;&gt;&lt;/span&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:62px;&quot;&gt;&lt;span class=&quot;sym&quot; style=&quot;left:auto;right:5px;font-size:0.75rem;&quot;&gt;%&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;r2&quot; value=&quot;7&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; oninput=&quot;recalcEduFVs()&quot;&gt;&lt;/div&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:110px;&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ec2&quot; placeholder=&quot;0&quot; data-pair=&quot;ep2&quot; oninput=&quot;handleEduContrib(this)&quot;&gt;&lt;/div&gt;&lt;button class=&quot;edu-toggle&quot; id=&quot;ect2&quot; onclick=&quot;toggleEduMode(2)&quot; data-edu-tip=&quot;M = monthly  |  Y = yearly&quot;&gt;M&lt;/button&gt;&lt;div class=&quot;inp-wrap edu-period-disabled&quot; style=&quot;width:62px;&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ep2&quot; placeholder=&quot;—&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; disabled oninput=&quot;handleEduPeriod(this)&quot;&gt;&lt;/div&gt;&lt;div style=&quot;width:90px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#16a34a;&quot; id=&quot;efv2&quot;&gt;—&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;field&quot;&gt;&lt;label&gt;Sukanya / PPF / SSY&lt;/label&gt;&lt;div class=&quot;inp-group&quot;&gt;&lt;div class=&quot;inp-wrap&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;sav3&quot; value=&quot;0&quot; oninput=&quot;handleEduSaving(this)&quot;&gt;&lt;/div&gt;&lt;span class=&quot;inp-short&quot; id=&quot;sav3_s&quot;&gt;&lt;/span&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:62px;&quot;&gt;&lt;span class=&quot;sym&quot; style=&quot;left:auto;right:5px;font-size:0.75rem;&quot;&gt;%&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;r3&quot; value=&quot;8&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; oninput=&quot;recalcEduFVs()&quot;&gt;&lt;/div&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:110px;&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ec3&quot; placeholder=&quot;0&quot; data-pair=&quot;ep3&quot; oninput=&quot;handleEduContrib(this)&quot;&gt;&lt;/div&gt;&lt;button class=&quot;edu-toggle&quot; id=&quot;ect3&quot; onclick=&quot;toggleEduMode(3)&quot; data-edu-tip=&quot;M = monthly  |  Y = yearly&quot;&gt;M&lt;/button&gt;&lt;div class=&quot;inp-wrap edu-period-disabled&quot; style=&quot;width:62px;&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ep3&quot; placeholder=&quot;—&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; disabled oninput=&quot;handleEduPeriod(this)&quot;&gt;&lt;/div&gt;&lt;div style=&quot;width:90px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#16a34a;&quot; id=&quot;efv3&quot;&gt;—&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;field&quot;&gt;&lt;label&gt;Gold / Other Investments&lt;/label&gt;&lt;div class=&quot;inp-group&quot;&gt;&lt;div class=&quot;inp-wrap&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;sav4&quot; value=&quot;0&quot; oninput=&quot;handleEduSaving(this)&quot;&gt;&lt;/div&gt;&lt;span class=&quot;inp-short&quot; id=&quot;sav4_s&quot;&gt;&lt;/span&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:62px;&quot;&gt;&lt;span class=&quot;sym&quot; style=&quot;left:auto;right:5px;font-size:0.75rem;&quot;&gt;%&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;r4&quot; value=&quot;9&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; oninput=&quot;recalcEduFVs()&quot;&gt;&lt;/div&gt;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:110px;&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ec4&quot; placeholder=&quot;0&quot; data-pair=&quot;ep4&quot; oninput=&quot;handleEduContrib(this)&quot;&gt;&lt;/div&gt;&lt;button class=&quot;edu-toggle&quot; id=&quot;ect4&quot; onclick=&quot;toggleEduMode(4)&quot; data-edu-tip=&quot;M = monthly  |  Y = yearly&quot;&gt;M&lt;/button&gt;&lt;div class=&quot;inp-wrap edu-period-disabled&quot; style=&quot;width:62px;&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;ep4&quot; placeholder=&quot;—&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; disabled oninput=&quot;handleEduPeriod(this)&quot;&gt;&lt;/div&gt;&lt;div style=&quot;width:90px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#16a34a;&quot; id=&quot;efv4&quot;&gt;—&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;div id=&quot;dyn_edu_rows&quot;&gt;&lt;/div&gt;
     &lt;button class=&quot;btn-add-row&quot; onclick=&quot;addEduAssetRow()&quot;&gt;+ Add Asset&lt;/button&gt;
-    &lt;div class=&quot;subtotal&quot; style=&quot;margin-top:10px;&quot;&gt;&lt;span&gt;Total Current Savings&lt;/span&gt;&lt;span class=&quot;sv&quot; id=&quot;d_savings&quot;&gt;₹0&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;subtotal&quot; style=&quot;margin-top:10px;&quot;&gt;&lt;span&gt;Total Invested Surplus&lt;/span&gt;&lt;span class=&quot;sv&quot; id=&quot;d_savings&quot;&gt;₹0&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;button class=&quot;btn-go&quot; onclick=&quot;calculate()&quot;&gt;🎓 Show Me the Education Plan&lt;/button&gt;
@@ -9399,27 +9433,30 @@ calculate = function() {
       &lt;div class=&quot;tile&quot;&gt;
         &lt;div class=&quot;tlabel&quot;&gt;Total Education Cost (Today)&lt;/div&gt;
         &lt;div class=&quot;tval&quot; id=&quot;t_today&quot;&gt;—&lt;/div&gt;
-        &lt;div class=&quot;tsub&quot;&gt;Before inflation&lt;/div&gt;
+        &lt;div class=&quot;tsub&quot; id=&quot;t_today_sub&quot;&gt;Before inflation&lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;tile gold&quot;&gt;
         &lt;div class=&quot;tlabel&quot;&gt;Total Inflation-Adjusted Cost&lt;/div&gt;
         &lt;div class=&quot;tval&quot; id=&quot;t_inflated&quot;&gt;—&lt;/div&gt;
-        &lt;div class=&quot;tsub&quot;&gt;What you&#x27;ll actually pay&lt;/div&gt;
+        &lt;div class=&quot;tsub&quot;&gt;What you&#x27;ll actually pay across the years&lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;tile&quot; id=&quot;tile_gap&quot;&gt;
         &lt;div class=&quot;tlabel&quot;&gt;Funding Gap&lt;/div&gt;
         &lt;div class=&quot;tval&quot; id=&quot;t_gap&quot;&gt;—&lt;/div&gt;
-        &lt;div class=&quot;tsub&quot;&gt;After existing savings grow&lt;/div&gt;
+        &lt;div class=&quot;tsub&quot;&gt;In future rupees, if you add nothing more&lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
 
     &lt;div class=&quot;charts-grid&quot;&gt;
       &lt;div class=&quot;chart-card&quot;&gt;
-        &lt;h4&gt;Funding: Savings vs Gap 🥧&lt;/h4&gt;
-        &lt;canvas id=&quot;pieChart&quot; height=&quot;280&quot;&gt;&lt;/canvas&gt;
+        &lt;h4&gt;Funding: Invested Surplus vs Gap 🥧&lt;/h4&gt;
+        &lt;div style=&quot;position:relative;&quot;&gt;
+          &lt;canvas id=&quot;pieChart&quot; height=&quot;280&quot;&gt;&lt;/canvas&gt;
+          &lt;video id=&quot;pieLogoVid&quot; src=&quot;/ifm-logo-gold-coins-spin.mp4&quot; autoplay loop muted playsinline style=&quot;position:absolute;display:none;border-radius:50%;object-fit:cover;pointer-events:none;box-shadow:0 2px 12px rgba(26,58,92,0.28);&quot;&gt;&lt;/video&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;chart-card&quot;&gt;
-        &lt;h4&gt;Year-wise Education Costs 📊&lt;/h4&gt;
+        &lt;h4&gt;Year-wise: Funded vs Gap 📊&lt;/h4&gt;
         &lt;canvas id=&quot;barChart&quot; height=&quot;280&quot;&gt;&lt;/canvas&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -9429,24 +9466,20 @@ calculate = function() {
       &lt;p class=&quot;sub&quot;&gt;How prepared are you to fund your children&#x27;s education?&lt;/p&gt;
       &lt;div class=&quot;bar-row&quot;&gt;
         &lt;div class=&quot;bar-lbl&quot;&gt;
-          &lt;span class=&quot;bar-name&quot;&gt;Current Savings → Future Value&lt;/span&gt;
-          &lt;span class=&quot;bar-pct&quot; id=&quot;pct_funded&quot;&gt;—&lt;/span&gt;
+          &lt;span class=&quot;bar-name&quot; style=&quot;color:var(--navy);&quot;&gt;Funded &lt;span class=&quot;bar-pct&quot; id=&quot;pct_funded&quot;&gt;—&lt;/span&gt;&lt;/span&gt;
+          &lt;span class=&quot;bar-name&quot; style=&quot;color:#D94040;&quot;&gt;Gap &lt;span class=&quot;bar-pct red&quot; id=&quot;pct_gap&quot;&gt;—&lt;/span&gt;&lt;/span&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;bar-track&quot;&gt;&lt;div class=&quot;bar-fill&quot; id=&quot;b_funded&quot; style=&quot;width:0%;background:var(--navy)&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;bar-row&quot;&gt;
-        &lt;div class=&quot;bar-lbl&quot;&gt;
-          &lt;span class=&quot;bar-name&quot;&gt;Unfunded Gap&lt;/span&gt;
-          &lt;span class=&quot;bar-pct red&quot; id=&quot;pct_gap&quot;&gt;—&lt;/span&gt;
+        &lt;div class=&quot;bar-track&quot; style=&quot;display:flex;overflow:hidden;height:22px;&quot;&gt;
+          &lt;div class=&quot;bar-fill&quot; id=&quot;b_funded&quot; style=&quot;width:0%;background:var(--navy);border-radius:99px 0 0 99px;&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;bar-fill&quot; id=&quot;b_gap&quot; style=&quot;width:0%;background:#D94040;border-radius:0 99px 99px 0;&quot;&gt;&lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;bar-track&quot;&gt;&lt;div class=&quot;bar-fill&quot; id=&quot;b_gap&quot; style=&quot;width:0%;background:#D94040&quot;&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
 
     &lt;div class=&quot;corpus-section&quot;&gt;
       &lt;div class=&quot;corpus-header&quot;&gt;
         &lt;div class=&quot;section-title&quot; style=&quot;margin-top:0;&quot;&gt;Your Education Numbers 🎯&lt;/div&gt;
-        &lt;p&gt;What you need vs what your savings could grow into&lt;/p&gt;
+        &lt;p&gt;What you&#x27;ll pay vs what your invested surplus could grow into&lt;/p&gt;
       &lt;/div&gt;
       &lt;div class=&quot;corpus-grid&quot;&gt;
         &lt;div class=&quot;corpus-card corpus-need&quot;&gt;
@@ -9458,10 +9491,10 @@ calculate = function() {
         &lt;/div&gt;
         &lt;div class=&quot;corpus-card corpus-have&quot;&gt;
           &lt;span class=&quot;corpus-icon&quot;&gt;🌱&lt;/span&gt;
-          &lt;div class=&quot;corpus-label&quot;&gt;Future Value of Savings&lt;/div&gt;
-          &lt;div class=&quot;corpus-desc&quot;&gt;What your current savings could grow to by the first education year, compounded at each asset&#x27;s own return rate&lt;/div&gt;
+          &lt;div class=&quot;corpus-label&quot;&gt;Future Value of Invested Surplus&lt;/div&gt;
+          &lt;div class=&quot;corpus-desc&quot;&gt;What your invested surplus could grow to by the first education year, compounded at each asset&#x27;s own return rate&lt;/div&gt;
           &lt;div class=&quot;corpus-amount&quot; id=&quot;c_have&quot;&gt;—&lt;/div&gt;
-          &lt;div class=&quot;corpus-tag&quot;&gt;If you don&#x27;t add anything more&lt;/div&gt;
+          &lt;div class=&quot;corpus-tag&quot;&gt;Includes your ongoing contributions&lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -9478,6 +9511,7 @@ calculate = function() {
 
     &lt;div class=&quot;chart-card&quot; style=&quot;margin-bottom:20px;&quot;&gt;
       &lt;h4&gt;Year-by-Year Breakdown 📅&lt;/h4&gt;
+      &lt;canvas id=&quot;corpusChart&quot; height=&quot;130&quot; style=&quot;margin-bottom:16px;&quot;&gt;&lt;/canvas&gt;
       &lt;div style=&quot;overflow-x:auto;&quot; id=&quot;yearTableContainer&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
 
@@ -9496,7 +9530,15 @@ calculate = function() {
 &lt;footer&gt;Made with 💚 by &lt;span&gt;Investing for Mummies&lt;/span&gt; — Nurturing Financially Confident Women&lt;/footer&gt;
 
 &lt;script&gt;
-let pie, bar;
+let pie, bar, corpusLine;
+
+// resume the doughnut logo video if autoplay was blocked while the tab was hidden
+document.addEventListener(&#x27;visibilitychange&#x27;, function(){
+  var v = document.getElementById(&#x27;pieLogoVid&#x27;);
+  if(v &amp;&amp; v.style.display === &#x27;block&#x27; &amp;&amp; v.paused){
+    var p = v.play(); if(p &amp;&amp; p.catch) p.catch(function(){});
+  }
+});
 let childCount = 0;
 
 const fmt = n =&gt; &#x27;₹&#x27; + Math.abs(n).toLocaleString(&#x27;en-IN&#x27;, {maximumFractionDigits: 0});
@@ -9592,6 +9634,41 @@ function getEduPeriod(n){
   return parseInt(el.value.replace(/[^0-9]/g,&#x27;&#x27;),10)||0;
 }
 
+var surplusMode = &#x27;full&#x27;;
+function setSurplusMode(m){
+  surplusMode = m;
+  var f = document.getElementById(&#x27;full_surplus_rows&#x27;);
+  var q = document.getElementById(&#x27;quick_surplus_row&#x27;);
+  if(f) f.style.display = m===&#x27;full&#x27; ? &#x27;&#x27; : &#x27;none&#x27;;
+  if(q) q.style.display = m===&#x27;quick&#x27; ? &#x27;&#x27; : &#x27;none&#x27;;
+  var bf = document.getElementById(&#x27;surplus_mode_full&#x27;);
+  var bq = document.getElementById(&#x27;surplus_mode_quick&#x27;);
+  if(bf) bf.classList.toggle(&#x27;active&#x27;, m===&#x27;full&#x27;);
+  if(bq) bq.classList.toggle(&#x27;active&#x27;, m===&#x27;quick&#x27;);
+  recalcSavings();
+  recalcEduFVs();
+}
+function handleQuickSurplus(el){
+  var raw = el.value.replace(/[^0-9]/g,&#x27;&#x27;);
+  var num = parseInt(raw,10)||0;
+  var distFromEnd = el.value.length-(el.selectionStart||0);
+  el.value = num &gt; 0 ? indianFormat(num) : &#x27;&#x27;;
+  var newPos = Math.max(0,el.value.length-distFromEnd);
+  try{ el.setSelectionRange(newPos,newPos); }catch(e){}
+  var sh = document.getElementById(&#x27;qsav_s&#x27;);
+  if(sh) sh.textContent = num &gt; 0 ? shorthand(num) : &#x27;&#x27;;
+  recalcSavings();
+  recalcEduFVs();
+}
+function getQuickSurplus(){
+  var el = document.getElementById(&#x27;qsav&#x27;);
+  return el ? (parseInt((el.value||&#x27;&#x27;).replace(/[^0-9]/g,&#x27;&#x27;),10)||0) : 0;
+}
+function getQuickRate(){
+  var el = document.getElementById(&#x27;qr&#x27;);
+  return el ? ((parseFloat(el.value)||0)/100) : 0;
+}
+
 function eduAssetFV(pv, rate, contrib, period, yrs, monthly){
   if(yrs &lt;= 0) return pv;
   var contribYrs = period &gt; 0 ? Math.min(period, yrs) : yrs;
@@ -9620,7 +9697,7 @@ function recalcEduFVs(){
     var el = document.getElementById(&#x27;efv&#x27;+i);
     if(!el) continue;
     if(yrs &lt;= 0 || (pv &lt;= 0 &amp;&amp; contrib &lt;= 0)){
-      el.textContent = &#x27;&#x2014;&#x27;;
+      el.textContent = &#x27;—&#x27;;
       continue;
     }
     var rate = gv(&#x27;r&#x27;+i)/100;
@@ -9648,8 +9725,8 @@ function addEduAssetRow(){
       &#x27;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:62px;&quot;&gt;&lt;span class=&quot;sym&quot; style=&quot;left:auto;right:5px;font-size:0.75rem;&quot;&gt;%&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;der&#x27;+n+&#x27;&quot; value=&quot;10&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; oninput=&quot;recalcEduFVs()&quot;&gt;&lt;/div&gt;&#x27;+
       &#x27;&lt;div class=&quot;inp-wrap&quot; style=&quot;width:110px;&quot;&gt;&lt;span class=&quot;sym&quot;&gt;₹&lt;/span&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;dec&#x27;+n+&#x27;&quot; placeholder=&quot;0&quot; data-depair=&quot;&#x27;+n+&#x27;&quot; oninput=&quot;dynHandleEduContrib(this,&#x27;+n+&#x27;)&quot;&gt;&lt;/div&gt;&#x27;+
       &#x27;&lt;button class=&quot;edu-toggle&quot; id=&quot;dect&#x27;+n+&#x27;&quot; onclick=&quot;toggleEduModeDyn(&#x27;+n+&#x27;)&quot;&gt;M&lt;/button&gt;&#x27;+
-      &#x27;&lt;div class=&quot;inp-wrap edu-period-disabled&quot; style=&quot;width:62px;&quot; id=&quot;depw&#x27;+n+&#x27;&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;dep&#x27;+n+&#x27;&quot; placeholder=&quot;&#x2014;&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; disabled oninput=&quot;handleEduPeriod(this);recalcEduFVs();&quot;&gt;&lt;/div&gt;&#x27;+
-      &#x27;&lt;div style=&quot;width:90px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#16a34a;&quot; id=&quot;defv&#x27;+n+&#x27;&quot;&gt;&#x2014;&lt;/div&gt;&#x27;+
+      &#x27;&lt;div class=&quot;inp-wrap edu-period-disabled&quot; style=&quot;width:62px;&quot; id=&quot;depw&#x27;+n+&#x27;&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot; id=&quot;dep&#x27;+n+&#x27;&quot; placeholder=&quot;—&quot; style=&quot;padding-left:6px;text-align:center;font-size:0.82rem;&quot; disabled oninput=&quot;handleEduPeriod(this);recalcEduFVs();&quot;&gt;&lt;/div&gt;&#x27;+
+      &#x27;&lt;div style=&quot;width:90px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:#16a34a;&quot; id=&quot;defv&#x27;+n+&#x27;&quot;&gt;—&lt;/div&gt;&#x27;+
     &#x27;&lt;/div&gt;&#x27;+
     &#x27;&lt;button class=&quot;btn-rm-dyn&quot; onclick=&quot;removeDynEduAsset(this)&quot; title=&quot;Remove&quot;&gt;✕&lt;/button&gt;&#x27;;
   document.getElementById(&#x27;dyn_edu_rows&#x27;).appendChild(div);
@@ -9700,6 +9777,11 @@ function toggleEduModeDyn(n){
 // Patch recalcSavings to include dynamic edu rows
 var _origEduRecalcSavings = recalcSavings;
 recalcSavings = function(){
+  if(surplusMode === &#x27;quick&#x27;){
+    var dispQ = document.getElementById(&#x27;d_savings&#x27;);
+    if(dispQ) dispQ.textContent = fmt(getQuickSurplus());
+    return;
+  }
   _origEduRecalcSavings();
   var dynTotal = 0;
   document.querySelectorAll(&#x27;#dyn_edu_rows [id^=desav]&#x27;).forEach(function(inp){
@@ -9724,7 +9806,7 @@ recalcEduFVs = function(){
     var n = row.dataset.n;
     var el = document.getElementById(&#x27;defv&#x27;+n);
     if(!el) return;
-    if(yrs &lt;= 0){ el.textContent=&#x27;&#x2014;&#x27;; return; }
+    if(yrs &lt;= 0){ el.textContent=&#x27;—&#x27;; return; }
     var savEl = document.getElementById(&#x27;desav&#x27;+n);
     var rEl = document.getElementById(&#x27;der&#x27;+n);
     var ecEl = document.getElementById(&#x27;dec&#x27;+n);
@@ -9734,10 +9816,16 @@ recalcEduFVs = function(){
     var ec = ecEl ? (parseInt(ecEl.value.replace(/[^0-9]/g,&#x27;&#x27;))||0) : 0;
     var ep = epEl ? (parseInt(epEl.value)||0) : 0;
     var em = (dynEduModes[n]||&#x27;M&#x27;)===&#x27;M&#x27;;
-    if(pv &lt;= 0 &amp;&amp; ec &lt;= 0){ el.textContent=&#x27;&#x2014;&#x27;; return; }
+    if(pv &lt;= 0 &amp;&amp; ec &lt;= 0){ el.textContent=&#x27;—&#x27;; return; }
     var fv = eduAssetFV(pv, rate, ec, ep, yrs, em);
     el.textContent = fmtBig(Math.round(fv));
   });
+  var qEl = document.getElementById(&#x27;qfv&#x27;);
+  if(qEl){
+    var qv = getQuickSurplus();
+    if(yrs &lt;= 0 || qv &lt;= 0){ qEl.textContent = &#x27;—&#x27;; }
+    else { qEl.textContent = fmtBig(Math.round(eduAssetFV(qv, getQuickRate(), 0, 0, yrs, true))); }
+  }
 };
 
 function toggleEduDetail(yr){
@@ -9853,7 +9941,7 @@ function calculate(){
     { name:&#x27;Mutual Funds / SIPs&#x27;, val: gv(&#x27;sav1&#x27;), rate: gv(&#x27;r1&#x27;)/100, contrib: getEduContrib(1), period: getEduPeriod(1), monthly: (eduModes[1]||&#x27;M&#x27;)===&#x27;M&#x27; },
     { name:&#x27;Fixed Deposits&#x27;, val: gv(&#x27;sav2&#x27;), rate: gv(&#x27;r2&#x27;)/100, contrib: getEduContrib(2), period: getEduPeriod(2), monthly: (eduModes[2]||&#x27;M&#x27;)===&#x27;M&#x27; },
     { name:&#x27;Sukanya / PPF / SSY&#x27;, val: gv(&#x27;sav3&#x27;), rate: gv(&#x27;r3&#x27;)/100, contrib: getEduContrib(3), period: getEduPeriod(3), monthly: (eduModes[3]||&#x27;M&#x27;)===&#x27;M&#x27; },
-    { name:&#x27;Gold / Other Savings&#x27;, val: gv(&#x27;sav4&#x27;), rate: gv(&#x27;r4&#x27;)/100, contrib: getEduContrib(4), period: getEduPeriod(4), monthly: (eduModes[4]||&#x27;M&#x27;)===&#x27;M&#x27; },
+    { name:&#x27;Gold / Other Investments&#x27;, val: gv(&#x27;sav4&#x27;), rate: gv(&#x27;r4&#x27;)/100, contrib: getEduContrib(4), period: getEduPeriod(4), monthly: (eduModes[4]||&#x27;M&#x27;)===&#x27;M&#x27; },
   ];
   document.querySelectorAll(&#x27;#dyn_edu_rows .dyn-edu-row&#x27;).forEach(function(row){
     var n = row.dataset.n;
@@ -9866,12 +9954,16 @@ function calculate(){
     var ep = epEl ? (parseInt(epEl.value)||0) : 0;
     var em = (dynEduModes[n]||&#x27;M&#x27;)===&#x27;M&#x27;;
     assets.push({
-      name: nameEl ? (nameEl.value.trim()||&#x27;Other Savings&#x27;) : &#x27;Other Savings&#x27;,
+      name: nameEl ? (nameEl.value.trim()||&#x27;Other Investments&#x27;) : &#x27;Other Investments&#x27;,
       val: savEl ? (parseInt(savEl.value.replace(/[^0-9]/g,&#x27;&#x27;))||0) : 0,
       rate: rEl ? (parseFloat(rEl.value)/100||0) : 0,
       contrib: ec, period: ep, monthly: em
     });
   });
+  if(surplusMode === &#x27;quick&#x27;){
+    assets.length = 0;
+    assets.push({ name:&#x27;Invested Corpus&#x27;, val: getQuickSurplus(), rate: getQuickRate(), contrib: 0, period: 0, monthly: true });
+  }
   const totalSavings = assets.reduce(function(a,b){return a+b.val;},0);
 
   let totalCostToday = 0;
@@ -9902,115 +9994,14 @@ function calculate(){
 
   if(earliestYearsFromNow === Infinity) earliestYearsFromNow = 0;
 
-  // CORRECT APPROACH: Discount all future inflated costs back to present using SIP return rate
-  // Then compare with current savings to find the gap in today&#x27;s terms
-  // Finally compute SIP needed to accumulate the gap by earliest education year
-
-  // Present Value of all future education costs (discounted at SIP return rate)
-  const pvAllCosts = allRows.reduce((sum, r) =&gt; {
-    return sum + r.inflated / Math.pow(1 + sipRet/12, r.yearsFromNow * 12);
-  }, 0);
-
-  // FV of each asset at earliest education start (including contributions)
+  // FUTURE-RUPEE BASIS: every number on the dashboard is in inflated (future) rupees.
+  // The year-by-year drawdown shows how much of each year&#x27;s cost the invested
+  // surplus can cover; whatever it can&#x27;t cover is the funding gap.
   const monthlyRateDisc = sipRet / 12;
   const sipMonthsDisc = Math.max(1, earliestYearsFromNow * 12);
   const totalSavingsFVAtStart = assets.reduce((sum, a) =&gt; {
     return sum + eduAssetFV(a.val, a.rate, a.contrib, a.period, earliestYearsFromNow, a.monthly);
   }, 0);
-  // PV-equivalent of savings FV (discounted at sipRet for fair comparison with pvAllCosts)
-  const fvSavings = totalSavingsFVAtStart / Math.pow(1 + monthlyRateDisc, sipMonthsDisc);
-
-  // Gap in today&#x27;s terms
-  const gap = Math.max(0, pvAllCosts - fvSavings);
-  const fundedPct = pvAllCosts &gt; 0 ? Math.min(100, (fvSavings / pvAllCosts) * 100) : 0;
-  const gapPct = 100 - fundedPct;
-
-  // Monthly SIP to bridge the gap: accumulate to FV of gap at earliest education year
-  const monthlyRate = monthlyRateDisc;
-  const sipMonths = sipMonthsDisc;
-  const fvGap = gap * Math.pow(1 + monthlyRate, sipMonths);
-  const sipNeeded = fvGap &gt; 0 ? pmtForFV(fvGap, monthlyRate, sipMonths) : 0;
-
-  // Update display
-  document.getElementById(&#x27;ret_rate_display&#x27;).textContent = gv(&#x27;sip_ret&#x27;);
-
-  document.getElementById(&#x27;t_today&#x27;).textContent = fmtBig(totalCostToday);
-  document.getElementById(&#x27;t_inflated&#x27;).textContent = fmtBig(totalInflatedCost);
-  const gapEl = document.getElementById(&#x27;t_gap&#x27;);
-  if(gap &gt; 0){
-    gapEl.textContent = fmtBig(gap);
-    gapEl.className = &#x27;tval danger&#x27;;
-    document.getElementById(&#x27;tile_gap&#x27;).className = &#x27;tile warn&#x27;;
-  } else {
-    gapEl.textContent = &#x27;₹0 — Funded!&#x27;;
-    gapEl.className = &#x27;tval ok&#x27;;
-    document.getElementById(&#x27;tile_gap&#x27;).className = &#x27;tile&#x27;;
-  }
-
-  document.getElementById(&#x27;c_need&#x27;).textContent = fmtBig(pvAllCosts);
-  document.getElementById(&#x27;c_have&#x27;).textContent = fmtBig(totalSavingsFVAtStart);
-  document.getElementById(&#x27;t_sip&#x27;).textContent = fmtBig(sipNeeded);
-
-  document.getElementById(&#x27;pct_funded&#x27;).textContent = fundedPct.toFixed(1) + &#x27;%&#x27;;
-  document.getElementById(&#x27;pct_funded&#x27;).className = &#x27;bar-pct &#x27; + (fundedPct &gt;= 80 ? &#x27;green&#x27; : fundedPct &gt;= 40 ? &#x27;amber&#x27; : &#x27;red&#x27;);
-  document.getElementById(&#x27;pct_gap&#x27;).textContent = gapPct.toFixed(1) + &#x27;%&#x27;;
-  setTimeout(()=&gt;{
-    document.getElementById(&#x27;b_funded&#x27;).style.width = fundedPct + &#x27;%&#x27;;
-    document.getElementById(&#x27;b_gap&#x27;).style.width = gapPct + &#x27;%&#x27;;
-  },120);
-
-  // PIE
-  if(pie) pie.destroy();
-  pie = new Chart(document.getElementById(&#x27;pieChart&#x27;),{
-    type:&#x27;doughnut&#x27;,
-    data:{
-      labels:[&#x27;Funded (Savings FV)&#x27;,&#x27;Unfunded Gap&#x27;],
-      datasets:[{
-        data:[Math.min(totalSavings, pvAllCosts), gap],
-        backgroundColor:[&#x27;#1a3a5c&#x27;,&#x27;#D94040&#x27;],
-        borderColor:&#x27;#fff&#x27;, borderWidth:3, hoverOffset:8
-      }]
-    },
-    options:{
-      plugins:{
-        legend:{ position:&#x27;bottom&#x27;, labels:{ font:{family:&#x27;Nunito&#x27;,size:12}, padding:14, color:&#x27;#1a3a5c&#x27; }},
-        tooltip:{ callbacks:{ label:c=&gt;&#x27; &#x27;+c.label+&#x27;: &#x27;+fmtBig(c.raw) }}
-      },
-      cutout:&#x27;60%&#x27;,
-      animation:{animateScale:true,duration:900}
-    }
-  });
-
-  // BAR
-  const years = Object.keys(yearMap).sort();
-  const barData = years.map(y =&gt; yearMap[y]);
-  if(bar) bar.destroy();
-  bar = new Chart(document.getElementById(&#x27;barChart&#x27;),{
-    type:&#x27;bar&#x27;,
-    data:{
-      labels: years,
-      datasets:[{
-        label: &#x27;Education Cost&#x27;,
-        data: barData,
-        backgroundColor: &#x27;rgba(26,58,92,0.75)&#x27;,
-        borderColor: &#x27;#1a3a5c&#x27;,
-        borderWidth: 1,
-        borderRadius: 6,
-        maxBarThickness: 40
-      }]
-    },
-    options:{
-      plugins:{
-        legend:{ display:false },
-        tooltip:{ callbacks:{ label:c=&gt;&#x27; &#x27;+fmtBig(c.raw) }}
-      },
-      scales:{
-        y:{ ticks:{ callback:v=&gt;&#x27;₹&#x27;+shorthand(v), font:{family:&#x27;Nunito&#x27;,size:10}, color:&#x27;#5a7d8a&#x27; }, grid:{color:&#x27;#dff0ed&#x27;} },
-        x:{ ticks:{ font:{family:&#x27;Nunito&#x27;,size:10}, color:&#x27;#1a3a5c&#x27; }, grid:{display:false} }
-      },
-      animation:{duration:900}
-    }
-  });
 
   // Year breakdown table — sequential drawdown per asset (retirement planner SWP style)
   var multiChild = new Set(allRows.map(function(r){return r.child;})).size &gt; 1;
@@ -10050,7 +10041,7 @@ function calculate(){
     simYear = yfn;
 
     var childLabel = yrGroups[yfn].map(function(r){return r.child;}).filter(function(v,i,arr){return arr.indexOf(v)===i;}).join(&#x27; + &#x27;);
-    simRows.push({year:yrGroups[yfn][0].year,age:yrGroups[yfn][0].age,child:childLabel,cost:totalCost,opening:totalOpening,closing:totalClosing,assets:assetDet});
+    simRows.push({yearsFromNow:yfn,year:yrGroups[yfn][0].year,age:yrGroups[yfn][0].age,child:childLabel,cost:totalCost,opening:totalOpening,closing:totalClosing,assets:assetDet});
   });
 
   // Build table HTML
@@ -10058,7 +10049,7 @@ function calculate(){
   var hdr = multiChild
     ? &#x27;&lt;th&gt;Year&lt;/th&gt;&lt;th style=&quot;text-align:center;&quot;&gt;Age&lt;/th&gt;&lt;th&gt;Child&lt;/th&gt;&lt;th style=&quot;text-align:right;&quot;&gt;Ed. Cost&lt;/th&gt;&lt;th style=&quot;text-align:right;&quot;&gt;Corpus Before&lt;/th&gt;&lt;th style=&quot;text-align:right;&quot;&gt;Corpus After&lt;/th&gt;&#x27;
     : &#x27;&lt;th&gt;Year&lt;/th&gt;&lt;th style=&quot;text-align:center;&quot;&gt;Age&lt;/th&gt;&lt;th style=&quot;text-align:right;&quot;&gt;Ed. Cost&lt;/th&gt;&lt;th style=&quot;text-align:right;&quot;&gt;Corpus Before&lt;/th&gt;&lt;th style=&quot;text-align:right;&quot;&gt;Corpus After&lt;/th&gt;&#x27;;
-  var tHtml = &#x27;&lt;table class=&quot;year-table&quot;&gt;&lt;thead&gt;&lt;tr&gt;&#x27;+hdr+&#x27;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#x27;;
+  var tHtml = &#x27;&lt;p style=&quot;font-size:0.78rem;color:#5a7d8a;margin:0 0 8px;&quot;&gt;Existing invested surplus only — the recommended monthly SIP is not included here.&lt;/p&gt;&lt;table class=&quot;year-table&quot;&gt;&lt;thead&gt;&lt;tr&gt;&#x27;+hdr+&#x27;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#x27;;
 
   simRows.forEach(function(r,i){
     var bg = i%2===0 ? &#x27;#fff9f7&#x27; : &#x27;#ffffff&#x27;;
@@ -10097,10 +10088,170 @@ function calculate(){
     +&#x27;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&#x27;;
   document.getElementById(&#x27;yearTableContainer&#x27;).innerHTML = tHtml;
 
+  // Funding gap in future rupees: the education costs the invested surplus cannot pay
+  let gap = 0;
+  let fvGapAtStart = 0;
+  simRows.forEach(function(r){
+    var short = Math.max(0, r.cost - r.opening);
+    gap += short;
+    fvGapAtStart += short / Math.pow(1 + monthlyRateDisc, Math.max(0, r.yearsFromNow - earliestYearsFromNow) * 12);
+  });
+  const fundedPct = totalInflatedCost &gt; 0 ? Math.min(100, Math.max(0, (totalInflatedCost - gap) / totalInflatedCost * 100)) : 0;
+  const gapPct = 100 - fundedPct;
+
+  // Monthly SIP to close the gap: build, by the first education year, a corpus equal
+  // to the unfunded costs discounted back to that year at the SIP return rate
+  const sipNeeded = fvGapAtStart &gt; 0 ? pmtForFV(fvGapAtStart, monthlyRateDisc, sipMonthsDisc) : 0;
+
+  // Update display
+  document.getElementById(&#x27;ret_rate_display&#x27;).textContent = gv(&#x27;sip_ret&#x27;);
+
+  document.getElementById(&#x27;t_today&#x27;).textContent = fmtBig(totalCostToday);
+  var todaySub = document.getElementById(&#x27;t_today_sub&#x27;);
+  if(todaySub){
+    if(children.length === 1){
+      var c0 = children[0];
+      var annualINR = c0.loc === &#x27;abroad&#x27; ? c0.cost * usdInr : c0.cost;
+      todaySub.textContent = fmtBig(annualINR) + &quot;/yr × &quot; + c0.dur + &quot; yrs — today&#x27;s money&quot;;
+    } else {
+      todaySub.textContent = &quot;All children, all years — today&#x27;s money&quot;;
+    }
+  }
+  document.getElementById(&#x27;t_inflated&#x27;).textContent = fmtBig(totalInflatedCost);
+  const gapEl = document.getElementById(&#x27;t_gap&#x27;);
+  if(gap &gt; 0){
+    gapEl.textContent = fmtBig(gap);
+    gapEl.className = &#x27;tval danger&#x27;;
+    document.getElementById(&#x27;tile_gap&#x27;).className = &#x27;tile warn&#x27;;
+  } else {
+    gapEl.textContent = &#x27;₹0 — Funded!&#x27;;
+    gapEl.className = &#x27;tval ok&#x27;;
+    document.getElementById(&#x27;tile_gap&#x27;).className = &#x27;tile&#x27;;
+  }
+
+  document.getElementById(&#x27;c_need&#x27;).textContent = fmtBig(totalInflatedCost);
+  document.getElementById(&#x27;c_have&#x27;).textContent = fmtBig(totalSavingsFVAtStart);
+  document.getElementById(&#x27;t_sip&#x27;).textContent = fmtBig(sipNeeded);
+
+  document.getElementById(&#x27;pct_funded&#x27;).textContent = fundedPct.toFixed(1) + &#x27;%&#x27;;
+  document.getElementById(&#x27;pct_funded&#x27;).className = &#x27;bar-pct &#x27; + (fundedPct &gt;= 80 ? &#x27;green&#x27; : fundedPct &gt;= 40 ? &#x27;amber&#x27; : &#x27;red&#x27;);
+  document.getElementById(&#x27;pct_gap&#x27;).textContent = gapPct.toFixed(1) + &#x27;%&#x27;;
+  setTimeout(()=&gt;{
+    document.getElementById(&#x27;b_funded&#x27;).style.width = fundedPct + &#x27;%&#x27;;
+    document.getElementById(&#x27;b_gap&#x27;).style.width = gapPct + &#x27;%&#x27;;
+  },120);
+
+  // PIE
+  if(pie) pie.destroy();
+  pie = new Chart(document.getElementById(&#x27;pieChart&#x27;),{
+    type:&#x27;doughnut&#x27;,
+    data:{
+      labels:[&#x27;Funded by Invested Surplus&#x27;,&#x27;Unfunded Gap&#x27;],
+      datasets:[{
+        data:[Math.max(0, totalInflatedCost - gap), gap],
+        backgroundColor:[&#x27;#1a3a5c&#x27;,&#x27;#D94040&#x27;],
+        borderColor:&#x27;#fff&#x27;, borderWidth:3, hoverOffset:8
+      }]
+    },
+    options:{
+      plugins:{
+        legend:{ position:&#x27;bottom&#x27;, labels:{ font:{family:&#x27;Nunito&#x27;,size:12}, padding:14, color:&#x27;#1a3a5c&#x27; }},
+        tooltip:{ callbacks:{ label:c=&gt;&#x27; &#x27;+c.label+&#x27;: &#x27;+fmtBig(c.raw) }}
+      },
+      cutout:&#x27;60%&#x27;,
+      animation:{animateScale:true,duration:900}
+    }
+  });
+
+  // IFM spinning-coins logo in the doughnut hole — retries until the chart has real size
+  var pieLogoTries = 0;
+  function positionPieLogo(){
+    var vid = document.getElementById(&#x27;pieLogoVid&#x27;);
+    if(!vid || !pie) return;
+    var p = null;
+    try{
+      var arc = pie.getDatasetMeta(0).data[0];
+      p = arc &amp;&amp; arc.getProps([&#x27;x&#x27;,&#x27;y&#x27;,&#x27;innerRadius&#x27;], true);
+    }catch(e){}
+    if(p &amp;&amp; p.innerRadius &gt; 20){
+      var sz = Math.round(p.innerRadius*2 - 14);
+      vid.style.width = sz+&#x27;px&#x27;; vid.style.height = sz+&#x27;px&#x27;;
+      vid.style.left = Math.round(p.x - sz/2)+&#x27;px&#x27;;
+      vid.style.top = Math.round(p.y - sz/2)+&#x27;px&#x27;;
+      vid.style.display = &#x27;block&#x27;;
+      var pl = vid.play(); if(pl &amp;&amp; pl.catch) pl.catch(function(){});
+    } else if(pieLogoTries++ &lt; 60){
+      setTimeout(positionPieLogo, 500);
+    }
+  }
+  pie.options.onResize = function(){ setTimeout(positionPieLogo, 60); };
+  setTimeout(positionPieLogo, 150);
+
+  // BAR
+  const stackYears = simRows.map(r =&gt; r.year);
+  const fundedData = simRows.map(r =&gt; Math.min(r.cost, r.opening));
+  const gapData = simRows.map(r =&gt; Math.max(0, r.cost - r.opening));
+  if(bar) bar.destroy();
+  bar = new Chart(document.getElementById(&#x27;barChart&#x27;),{
+    type:&#x27;bar&#x27;,
+    data:{
+      labels: stackYears,
+      datasets:[
+        { label:&#x27;Funded by Invested Surplus&#x27;, data: fundedData, backgroundColor:&#x27;rgba(26,58,92,0.85)&#x27;, borderColor:&#x27;#1a3a5c&#x27;, borderWidth:1, borderRadius:4, maxBarThickness:40 },
+        { label:&#x27;Unfunded Gap&#x27;, data: gapData, backgroundColor:&#x27;rgba(217,64,64,0.8)&#x27;, borderColor:&#x27;#D94040&#x27;, borderWidth:1, borderRadius:4, maxBarThickness:40 }
+      ]
+    },
+    options:{
+      plugins:{
+        legend:{ position:&#x27;bottom&#x27;, labels:{ font:{family:&#x27;Nunito&#x27;,size:12}, padding:14, color:&#x27;#1a3a5c&#x27; } },
+        tooltip:{ callbacks:{ label:c=&gt;&#x27; &#x27;+c.dataset.label+&#x27;: &#x27;+fmtBig(c.raw) }}
+      },
+      scales:{
+        y:{ stacked:true, ticks:{ callback:v=&gt;&#x27;₹&#x27;+shorthand(v), font:{family:&#x27;Nunito&#x27;,size:10}, color:&#x27;#5a7d8a&#x27; }, grid:{color:&#x27;#dff0ed&#x27;} },
+        x:{ stacked:true, ticks:{ font:{family:&#x27;Nunito&#x27;,size:10}, color:&#x27;#1a3a5c&#x27; }, grid:{display:false} }
+      },
+      animation:{duration:900}
+    }
+  });
+
+  // Corpus depletion curve — existing invested surplus only (no new SIP)
+  const cyLabels = [String(new Date().getFullYear())].concat(simRows.map(r=&gt;String(r.year)));
+  if(corpusLine) corpusLine.destroy();
+  const corpusCanvas = document.getElementById(&#x27;corpusChart&#x27;);
+  if(corpusCanvas){
+    corpusLine = new Chart(corpusCanvas,{
+      type:&#x27;line&#x27;,
+      data:{
+        labels: cyLabels,
+        datasets:[
+          { label:&#x27;Corpus after paying fees&#x27;, data: [totalSavings].concat(simRows.map(r=&gt;r.closing)),
+            borderColor:&#x27;#2a9d8f&#x27;, backgroundColor:&#x27;rgba(42,157,143,0.18)&#x27;, fill:true, tension:0.35,
+            pointRadius:4, pointBackgroundColor:&#x27;#2a9d8f&#x27; },
+          { label:&#x27;Corpus before paying fees&#x27;, data: [totalSavings].concat(simRows.map(r=&gt;r.opening)),
+            borderColor:&#x27;#1a3a5c&#x27;, backgroundColor:&#x27;transparent&#x27;, fill:false, tension:0.35,
+            borderDash:[5,4], pointRadius:3, pointBackgroundColor:&#x27;#1a3a5c&#x27; }
+        ]
+      },
+      options:{
+        plugins:{
+          legend:{ position:&#x27;bottom&#x27;, labels:{ font:{family:&#x27;Nunito&#x27;,size:11}, padding:12, color:&#x27;#1a3a5c&#x27; } },
+          tooltip:{ callbacks:{ label:c=&gt;&#x27; &#x27;+c.dataset.label+&#x27;: &#x27;+fmtBig(c.raw) }}
+        },
+        scales:{
+          y:{ ticks:{ callback:v=&gt;&#x27;₹&#x27;+shorthand(v), font:{family:&#x27;Nunito&#x27;,size:10}, color:&#x27;#5a7d8a&#x27; }, grid:{color:&#x27;#dff0ed&#x27;} },
+          x:{ ticks:{ font:{family:&#x27;Nunito&#x27;,size:10}, color:&#x27;#1a3a5c&#x27; }, grid:{display:false} }
+        },
+        animation:{duration:900}
+      }
+    });
+  }
+
+
+
   // TIPS
   const tips=[];
   if(gap &lt;= 0){
-    tips.push({i:&#x27;🎉&#x27;,t:&#x27;&lt;strong&gt;Congratulations!&lt;/strong&gt; Your current savings, compounded at their respective return rates, should cover the full education cost. Keep going!&#x27;});
+    tips.push({i:&#x27;🎉&#x27;,t:&#x27;&lt;strong&gt;Congratulations!&lt;/strong&gt; Your invested surplus, compounded at their respective return rates, should cover the full education cost. Keep going!&#x27;});
   } else if(fundedPct &gt;= 50){
     tips.push({i:&#x27;👏&#x27;,t:`&lt;strong&gt;You&#x27;re more than halfway there!&lt;/strong&gt; ${fundedPct.toFixed(0)}% of the education cost is funded. A monthly SIP of ${fmtBig(sipNeeded)} can close the gap.`});
   } else if(fundedPct &gt; 0){
@@ -10123,7 +10274,7 @@ function calculate(){
   }
 
   tips.push({i:&#x27;💡&#x27;,t:&#x27;&lt;strong&gt;Start early, save less:&lt;/strong&gt; Every year you delay, your required monthly SIP increases significantly due to the power of compounding.&#x27;});
-  tips.push({i:&#x27;📚&#x27;,t:&#x27;&lt;strong&gt;Explore education loans:&lt;/strong&gt; For higher education, education loans can supplement your savings. Interest on education loans is tax-deductible under Section 80E.&#x27;});
+  tips.push({i:&#x27;📚&#x27;,t:&#x27;&lt;strong&gt;Explore education loans:&lt;/strong&gt; For higher education, education loans can supplement your invested surplus. Interest on education loans is tax-deductible under Section 80E.&#x27;});
   tips.push({i:&#x27;🛡️&#x27;,t:&quot;&lt;strong&gt;Protect your plan:&lt;/strong&gt; A term insurance policy ensures your children&#x27;s education fund is protected even if something happens to you.&quot;});
 
   document.getElementById(&#x27;tips_out&#x27;).innerHTML = tips.map(t=&gt;`&lt;div class=&quot;tip&quot;&gt;&lt;span class=&quot;ti&quot;&gt;${t.i}&lt;/span&gt;&lt;p&gt;${t.t}&lt;/p&gt;&lt;/div&gt;`).join(&#x27;&#x27;);
@@ -10208,14 +10359,14 @@ window.generateReport = function(logoSrc) {
   h += &#x27;@page { margin:0.5cm; size:A4; } @media print { html,body { width:210mm; } } canvas { display:none !important; } .card { page-break-inside:avoid; } .dashboard { page-break-inside:avoid; } table { page-break-inside:avoid; font-size:0.82rem; } img { max-width:100% !important; height:auto !important; } .chart-container, .chart-wrap, .charts-grid { page-break-inside:avoid; } .charts-grid img, .chart-container img { width:100% !important; min-height:240px; } h2,h3 { page-break-after:avoid; } &#x27;;
   h += &#x27;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&#x27;;
   h += &#x27;&lt;div class=&quot;rpt-hdr&quot;&gt;&#x27; + logoTag + &#x27;&lt;div class=&quot;rpt-title&quot;&gt;&#x27;;
-  h += &#x27;&lt;div class=&quot;gh-tag&quot;&gt;&#x1F393; Resource &amp;middot; Education Planning&lt;/div&gt;&#x27;;
+  h += &#x27;&lt;div class=&quot;gh-tag&quot;&gt;🎓 Resource &amp;middot; Education Planning&lt;/div&gt;&#x27;;
   h += &#x27;&lt;h2&gt;Education Planner&lt;/h2&gt;&#x27;;
   h += &#x27;&lt;p&gt;Plan ahead for your child&amp;#x27;s education &amp;mdash; never be caught short.&lt;/p&gt;&#x27;;
-  h += &#x27;&lt;div class=&quot;rpt-date&quot;&gt;&#x1F4C5; &#x27; + today + &#x27;&lt;/div&gt;&#x27;;
+  h += &#x27;&lt;div class=&quot;rpt-date&quot;&gt;📅 &#x27; + today + &#x27;&lt;/div&gt;&#x27;;
   h += &#x27;&lt;/div&gt;&lt;/div&gt;&#x27;;
   h += &#x27;&lt;div class=&quot;rpt-body&quot;&gt;&#x27; + tmp.innerHTML + &#x27;&lt;/div&gt;&#x27;;
   h += &#x27;&lt;div class=&quot;rpt-ftr&quot;&gt;&#x27;;
-  h += &#x27;&lt;strong&gt;Investing for Mummies&lt;/strong&gt; &middot; &lt;span class=&quot;rpt-site&quot;&gt;investingformummies.com&lt;/span&gt;&lt;br&gt;&#x27;;
+  h += &#x27;&lt;strong&gt;Investing for Mummies&lt;/strong&gt; · &lt;span class=&quot;rpt-site&quot;&gt;investingformummies.com&lt;/span&gt;&lt;br&gt;&#x27;;
   h += &#x27;&lt;em style=&quot;color:rgba(255,255,255,0.4);font-size:0.7rem;&quot;&gt;Nurturing Financially Confident Women \uD83D\uDC9A&lt;/em&gt;&#x27;;
   h += &#x27;&lt;div class=&quot;rpt-disc&quot;&gt;This report is for educational purposes only and does not constitute financial advice.&lt;/div&gt;&#x27;;
   h += &#x27;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&#x27;;
@@ -14053,133 +14204,21 @@ function sharePlan() {
   <div class="buckets-row">
     <div class="bucket-wrap" id="g8_bwrap-emergency" onclick="g8_sortItem('emergency')">
       <div class="bucket-count" id="g8_count-emergency">0</div>
-      <svg class="bucket-svg" viewBox="0 0 180 175" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="pR" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8e1a10"/><stop offset="28%" stop-color="#c0392b"/><stop offset="52%" stop-color="#e8614a"/><stop offset="76%" stop-color="#c0392b"/><stop offset="100%" stop-color="#8e1a10"/></linearGradient>
-          <linearGradient id="pRrim" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#b82a1a"/><stop offset="35%" stop-color="#ff8a7a"/><stop offset="65%" stop-color="#ff7b6b"/><stop offset="100%" stop-color="#b82a1a"/></linearGradient>
-          <linearGradient id="pRin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5a0e08"/><stop offset="100%" stop-color="#300604"/></linearGradient>
-          <radialGradient id="pRsp" cx="0.36" cy="0.3" r="0.5"><stop offset="0%" stop-color="rgba(255,255,255,0.2)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient>
-        </defs>
-        <!-- Ground shadow -->
-        <ellipse cx="90" cy="169" rx="52" ry="5.5" fill="rgba(0,0,0,0.22)"/>
-        <!-- Foot ring -->
-        <ellipse cx="90" cy="157" rx="49" ry="7" fill="#7a1208"/>
-        <ellipse cx="90" cy="155" rx="49" ry="7" fill="#c0392b"/>
-        <!-- Curved body -->
-        <path d="M30 44 C22 90 24 138 42 155 L138 155 C156 138 158 90 150 44 Z" fill="url(#pR)"/>
-        <!-- Specular -->
-        <path d="M30 44 C22 90 24 138 42 155 L138 155 C156 138 158 90 150 44 Z" fill="url(#pRsp)"/>
-        <!-- Left highlight -->
-        <path d="M38 60 C34 96 34 132 46 152" fill="none" stroke="rgba(255,255,255,0.24)" stroke-width="7" stroke-linecap="round"/>
-        <!-- Right shadow -->
-        <path d="M142 60 C146 96 146 132 134 152" fill="none" stroke="rgba(0,0,0,0.16)" stroke-width="6" stroke-linecap="round"/>
-        <!-- Handles -->
-        <path d="M28 82 C12 76 10 58 22 53 C29 50 33 55 34 62" fill="none" stroke="url(#pRrim)" stroke-width="10" stroke-linecap="round"/>
-        <path d="M152 82 C168 76 170 58 158 53 C151 50 147 55 146 62" fill="none" stroke="url(#pRrim)" stroke-width="10" stroke-linecap="round"/>
-        <!-- Mid band -->
-        <path d="M34 108 C30 102 150 102 146 108" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="5"/>
-        <!-- Rim -->
-        <ellipse cx="90" cy="44" rx="66" ry="14" fill="url(#pRrim)"/>
-        <ellipse cx="90" cy="42" rx="64" ry="12" fill="rgba(255,255,255,0.1)"/>
-        <ellipse cx="90" cy="40" rx="58" ry="10" fill="#c0392b"/>
-        <ellipse cx="90" cy="42" rx="52" ry="11" fill="url(#pRin)"/>
-        <ellipse cx="85" cy="39" rx="20" ry="4.5" fill="rgba(255,255,255,0.07)"/>
-        <!-- Shield emblem (embossed) -->
-        <path d="M90 62 L72 72 L72 93 Q72 110 90 118 Q108 110 108 93 L108 72 Z" fill="none" stroke="rgba(0,0,0,0.4)" stroke-width="4.5" stroke-linejoin="round" transform="translate(0,1.4)"/>
-        <path d="M90 62 L72 72 L72 93 Q72 110 90 118 Q108 110 108 93 L108 72 Z" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.92)" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M81 90 L88 98 L100 80" fill="none" stroke="rgba(0,0,0,0.4)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1.4)"/>
-        <path d="M81 90 L88 98 L100 80" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <img class="bucket-svg" src="3b-emergency.png" alt="Emergency bucket"/>
       <div class="bucket-inside" id="g8_inside-emergency"></div>
       <div class="bucket-label bl-emergency"><b>🛡️ Emergency</b><span>Quick access · safety net</span></div>
     </div>
 
     <div class="bucket-wrap" id="g8_bwrap-stability" onclick="g8_sortItem('stability')">
       <div class="bucket-count" id="g8_count-stability">0</div>
-      <svg class="bucket-svg" viewBox="0 0 180 175" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="pB" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#09182a"/><stop offset="28%" stop-color="#1a3a5c"/><stop offset="52%" stop-color="#1e5878"/><stop offset="76%" stop-color="#1a3a5c"/><stop offset="100%" stop-color="#09182a"/></linearGradient>
-          <linearGradient id="pBrim" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a3a5c"/><stop offset="35%" stop-color="#2a9d8f"/><stop offset="65%" stop-color="#bde9e4"/><stop offset="100%" stop-color="#1a3a5c"/></linearGradient>
-          <linearGradient id="pBin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#050f1c"/><stop offset="100%" stop-color="#02060e"/></linearGradient>
-          <radialGradient id="pBsp" cx="0.36" cy="0.3" r="0.5"><stop offset="0%" stop-color="rgba(189,233,228,0.2)"/><stop offset="100%" stop-color="rgba(189,233,228,0)"/></radialGradient>
-        </defs>
-        <ellipse cx="90" cy="169" rx="52" ry="5.5" fill="rgba(0,0,0,0.22)"/>
-        <ellipse cx="90" cy="157" rx="49" ry="7" fill="#05101e"/>
-        <ellipse cx="90" cy="155" rx="49" ry="7" fill="#1a3a5c"/>
-        <path d="M30 44 C22 90 24 138 42 155 L138 155 C156 138 158 90 150 44 Z" fill="url(#pB)"/>
-        <path d="M30 44 C22 90 24 138 42 155 L138 155 C156 138 158 90 150 44 Z" fill="url(#pBsp)"/>
-        <path d="M38 60 C34 96 34 132 46 152" fill="none" stroke="rgba(189,233,228,0.22)" stroke-width="7" stroke-linecap="round"/>
-        <path d="M142 60 C146 96 146 132 134 152" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="6" stroke-linecap="round"/>
-        <!-- Handles -->
-        <path d="M28 82 C12 76 10 58 22 53 C29 50 33 55 34 62" fill="none" stroke="url(#pBrim)" stroke-width="10" stroke-linecap="round"/>
-        <path d="M152 82 C168 76 170 58 158 53 C151 50 147 55 146 62" fill="none" stroke="url(#pBrim)" stroke-width="10" stroke-linecap="round"/>
-        <!-- Teal mid band -->
-        <path d="M34 108 C30 102 150 102 146 108" fill="none" stroke="rgba(42,157,143,0.28)" stroke-width="5"/>
-        <!-- Rim -->
-        <ellipse cx="90" cy="44" rx="66" ry="14" fill="url(#pBrim)"/>
-        <ellipse cx="90" cy="42" rx="64" ry="12" fill="rgba(255,255,255,0.08)"/>
-        <ellipse cx="90" cy="40" rx="58" ry="10" fill="#1a3a5c"/>
-        <ellipse cx="90" cy="42" rx="52" ry="11" fill="url(#pBin)"/>
-        <ellipse cx="85" cy="39" rx="20" ry="4.5" fill="rgba(189,233,228,0.08)"/>
-        <!-- Scales emblem (embossed) -->
-        <g stroke="rgba(0,0,0,0.4)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1.4)">
-          <line x1="90" y1="60" x2="90" y2="100"/>
-          <line x1="64" y1="72" x2="116" y2="72"/>
-          <path d="M64 72 L64 86 Q64 97 76 97 Q88 97 88 86 L88 72"/>
-          <path d="M92 72 L92 86 Q92 97 104 97 Q116 97 116 86 L116 72"/>
-          <line x1="80" y1="100" x2="100" y2="100"/>
-        </g>
-        <g stroke="rgba(255,255,255,0.95)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="90" y1="60" x2="90" y2="100"/>
-          <line x1="64" y1="72" x2="116" y2="72"/>
-          <path d="M64 72 L64 86 Q64 97 76 97 Q88 97 88 86 L88 72" fill="rgba(255,255,255,0.12)"/>
-          <path d="M92 72 L92 86 Q92 97 104 97 Q116 97 116 86 L116 72" fill="rgba(255,255,255,0.12)"/>
-          <line x1="80" y1="100" x2="100" y2="100"/>
-        </g>
-      </svg>
+      <img class="bucket-svg" src="3b-stability.png" alt="Stability bucket"/>
       <div class="bucket-inside" id="g8_inside-stability"></div>
       <div class="bucket-label bl-stability"><b>⚖️ Stability</b><span>Steady · low-risk returns</span></div>
     </div>
 
     <div class="bucket-wrap" id="g8_bwrap-growth" onclick="g8_sortItem('growth')">
       <div class="bucket-count" id="g8_count-growth">0</div>
-      <svg class="bucket-svg" viewBox="0 0 180 175" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="pG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0c3010"/><stop offset="28%" stop-color="#1a5e20"/><stop offset="52%" stop-color="#27ae60"/><stop offset="76%" stop-color="#1a5e20"/><stop offset="100%" stop-color="#0c3010"/></linearGradient>
-          <linearGradient id="pGrim" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a5e20"/><stop offset="35%" stop-color="#3ecf7a"/><stop offset="65%" stop-color="#66bb6a"/><stop offset="100%" stop-color="#1a5e20"/></linearGradient>
-          <linearGradient id="pGin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#071808"/><stop offset="100%" stop-color="#030c04"/></linearGradient>
-          <radialGradient id="pGsp" cx="0.36" cy="0.3" r="0.5"><stop offset="0%" stop-color="rgba(255,255,255,0.18)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient>
-        </defs>
-        <ellipse cx="90" cy="169" rx="52" ry="5.5" fill="rgba(0,0,0,0.22)"/>
-        <ellipse cx="90" cy="157" rx="49" ry="7" fill="#061208"/>
-        <ellipse cx="90" cy="155" rx="49" ry="7" fill="#1a5e20"/>
-        <path d="M30 44 C22 90 24 138 42 155 L138 155 C156 138 158 90 150 44 Z" fill="url(#pG)"/>
-        <path d="M30 44 C22 90 24 138 42 155 L138 155 C156 138 158 90 150 44 Z" fill="url(#pGsp)"/>
-        <path d="M38 60 C34 96 34 132 46 152" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="7" stroke-linecap="round"/>
-        <path d="M142 60 C146 96 146 132 134 152" fill="none" stroke="rgba(0,0,0,0.16)" stroke-width="6" stroke-linecap="round"/>
-        <!-- Handles -->
-        <path d="M28 82 C12 76 10 58 22 53 C29 50 33 55 34 62" fill="none" stroke="url(#pGrim)" stroke-width="10" stroke-linecap="round"/>
-        <path d="M152 82 C168 76 170 58 158 53 C151 50 147 55 146 62" fill="none" stroke="url(#pGrim)" stroke-width="10" stroke-linecap="round"/>
-        <!-- Mid band -->
-        <path d="M34 108 C30 102 150 102 146 108" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="5"/>
-        <!-- Rim -->
-        <ellipse cx="90" cy="44" rx="66" ry="14" fill="url(#pGrim)"/>
-        <ellipse cx="90" cy="42" rx="64" ry="12" fill="rgba(255,255,255,0.1)"/>
-        <ellipse cx="90" cy="40" rx="58" ry="10" fill="#1a5e20"/>
-        <ellipse cx="90" cy="42" rx="52" ry="11" fill="url(#pGin)"/>
-        <ellipse cx="85" cy="39" rx="20" ry="4.5" fill="rgba(255,255,255,0.07)"/>
-        <!-- Sprout emblem (embossed, grows upward) -->
-        <g stroke="rgba(0,0,0,0.4)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,1.4)">
-          <path d="M90 112 L90 70"/>
-          <path d="M90 88 C80 86 70 78 70 64 C84 64 92 74 90 88 Z"/>
-          <path d="M90 80 C100 78 110 70 110 56 C96 56 88 66 90 80 Z"/>
-        </g>
-        <g stroke="rgba(255,255,255,0.95)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M90 112 L90 70"/>
-          <path d="M90 88 C80 86 70 78 70 64 C84 64 92 74 90 88 Z" fill="rgba(255,255,255,0.14)"/>
-          <path d="M90 80 C100 78 110 70 110 56 C96 56 88 66 90 80 Z" fill="rgba(255,255,255,0.14)"/>
-        </g>
-      </svg>
+      <img class="bucket-svg" src="3b-growth.png" alt="Growth bucket"/>
       <div class="bucket-inside" id="g8_inside-growth"></div>
       <div class="bucket-label bl-growth"><b>🌱 Growth</b><span>Long-term wealth building</span></div>
     </div>
@@ -22834,7 +22873,7 @@ function switchBeta(tab){
 </div>
 
 <!-- Hard gate overlay — shown before game 3 (requires registration) -->
-<div id="ifm-lead-gate-overlay" style="display:none;"></div>
+<div id="ifm-lead-gate-overlay" style="display:none;" onclick="ifmLeadCloseGate()"></div>
 <div id="ifm-lead-gate" class="ilc-gate" style="display:none;">
   <div class="ilc-gate-logo"><img src="/IFM%20round%20logo%20for%20watermark.png" alt="IFM" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 2px 10px rgba(0,0,0,0.12);"/></div>
   <div class="ilc-gate-emoji">🌟</div>
@@ -23337,6 +23376,19 @@ function ifmSugFsClose(){
   document.body.style.overflow = '';
 }
 
+// Escape closes the suggestions fullscreen
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var fs = document.getElementById('ifm-sug-fullscreen');
+    if(fs && fs.classList.contains('open')) ifmSugFsClose();
+  }
+});
+
+// bfcache guard — restoring via back/forward clears any stuck overflow:hidden
+window.addEventListener('pageshow', function(){
+  document.body.style.overflow = '';
+});
+
 function ifmSugFsRender(){
   var arr = _ifmSugArr();
   var counts = {open:0, pending:0, done:0};
@@ -23655,6 +23707,14 @@ async function ifmSugSyncAll(){
     document.getElementById('ifm-lead-gate').style.display = 'none';
     document.body.style.overflow = '';
   };
+
+  // Escape key closes the lead gate
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      var gate = document.getElementById('ifm-lead-gate');
+      if(gate && gate.style.display !== 'none') ifmLeadCloseGate();
+    }
+  });
 
   window.ifmLeadSubmit = function(){
     var fname  = (document.getElementById('ilc-fname').value||'').trim();
@@ -26533,6 +26593,8 @@ function closeSB() {
 /* ═══ SVG ICONS ═══ */
 function g8_svgIcon(id){
 var I={
+ppf:'<svg viewBox="0 0 40 40"><rect x="4" y="30" width="32" height="5" rx="1.5" fill="#1a3a5c"/><rect x="6" y="14" width="4" height="16" rx="1" fill="#2a5580"/><rect x="13" y="14" width="4" height="16" rx="1" fill="#2a5580"/><rect x="23" y="14" width="4" height="16" rx="1" fill="#2a5580"/><rect x="30" y="14" width="4" height="16" rx="1" fill="#2a5580"/><path d="M20 3 L37 13 L3 13 Z" fill="#c9a84c"/><circle cx="20" cy="24" r="7.5" fill="#f5f0e0" stroke="#c9a84c" stroke-width="1.6"/><text x="20" y="28" text-anchor="middle" font-size="10" font-weight="900" fill="#1a3a5c" font-family="Arial">\u20B9</text></svg>',
+ssy:'<svg viewBox="0 0 40 40"><circle cx="20" cy="12" r="6.5" fill="#f8c8c8" stroke="#d88" stroke-width="1"/><path d="M13.5 9 Q20 3 26.5 9 Q25 6 20 5.5 Q15 6 13.5 9 Z" fill="#5a3a1a"/><path d="M12 34 Q12 20 20 20 Q28 20 28 34 Z" fill="#e05a8a"/><circle cx="27" cy="27" r="6" fill="#c9a84c" stroke="#f5f0e0" stroke-width="1.4"/><text x="27" y="30.5" text-anchor="middle" font-size="8.5" font-weight="900" fill="#fff" font-family="Arial">\u20B9</text><circle cx="14" cy="10" r="1.6" fill="#e05a8a"/></svg>',
 nifty50:'<svg viewBox="0 0 40 40"><defs><linearGradient id="ng1" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#1a5e20"/><stop offset="100%" stop-color="#66bb6a"/></linearGradient></defs><rect x="2" y="34" width="36" height="3" rx="1.5" fill="#e0e0e0"/><rect x="4" y="26" width="5" height="8" rx="1.2" fill="#43a047"/><rect x="11" y="20" width="5" height="14" rx="1.2" fill="#2e7d32"/><rect x="18" y="14" width="5" height="20" rx="1.2" fill="#c9a84c"/><rect x="25" y="9" width="5" height="25" rx="1.2" fill="#1a3a5c"/><rect x="32" y="4" width="5" height="30" rx="1.2" fill="url(#ng1)"/><path d="M6 24 L13 18 L20 12 L27 7 L34 3" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34" cy="3" r="2.5" fill="#c9a84c"/><text x="20" y="40" text-anchor="middle" fill="#1a3a5c" font-size="3.5" font-weight="900" font-family="sans-serif">NIFTY 50</text></svg>',
 
 sbi:'<svg viewBox="0 0 40 40"><defs><linearGradient id="sb1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#264d78"/><stop offset="100%" stop-color="#1a3a5c"/></linearGradient></defs><rect x="6" y="8" width="28" height="20" rx="4" fill="url(#sb1)"/><rect x="6" y="8" width="28" height="8" rx="4" fill="#3498db" opacity="0.3"/><rect x="10" y="12" width="20" height="4" rx="1" fill="#bde9e4" opacity="0.9"/><rect x="10" y="18" width="14" height="2.5" rx="1" fill="rgba(255,255,255,0.2)"/><rect x="10" y="22" width="10" height="2.5" rx="1" fill="rgba(255,255,255,0.15)"/><circle cx="30" cy="22" r="3.5" fill="#c9a84c" stroke="#8a6e20" stroke-width="0.5"/><text x="30" y="23.5" text-anchor="middle" fill="#8a6e20" font-size="4" font-weight="900">₹</text><rect x="12" y="31" width="16" height="4" rx="2" fill="#5a7d8a"/><rect x="14" y="32" width="12" height="2" rx="1" fill="#bde9e4" opacity="0.5"/><circle cx="8" cy="35" r="1.5" fill="#c9a84c" opacity="0.6"/><circle cx="32" cy="35" r="1.5" fill="#c9a84c" opacity="0.6"/></svg>',
@@ -26566,12 +26628,13 @@ flat:'<svg viewBox="0 0 40 40"><defs><linearGradient id="fl1" x1="0" y1="0" x2="
 
 /* ═══ G8_ITEMS ═══ */
 var G8_ITEMS=[
+{name:"PPF (Public Provident Fund)",icon:"ppf",iconBorder:"#1a3a5c",iconBg:"#e0f0f5",desc:"The government\u2019s 15-year savings scheme. Currently earns ~7.1% interest, fully tax-free, and backed by the Government of India.",bucket:["stability"],why:"PPF gives a guaranteed, government-backed return with zero market risk \u2014 the definition of Stability. The 15-year lock-in builds discipline, but the rate is fixed, so it protects wealth rather than multiplying it."},
+{name:"Sukanya Samriddhi (Daughter\u2019s Scheme)",icon:"ssy",iconBorder:"#e05a8a",iconBg:"#fce8f0",desc:"A government scheme for your daughter \u2014 invest till she turns 14, she withdraws at 21. Currently ~8.2%, the highest guaranteed rate, tax-free.",bucket:["stability","growth"],multi:true,why:"SSY earns a guaranteed government rate \u2014 pure Stability. But with a 15\u201321 year horizon it also quietly builds long-term wealth for your daughter \u2014 so Growth thinking applies too. Both buckets earn full marks!"},
 {name:"Nifty 50 Index Mutual Fund",icon:"nifty50",iconBorder:"#27AE60",iconBg:"#e8f5f2",desc:"A fund that invests your money in the top 50 largest companies listed on the NSE, like Reliance, TCS, and HDFC Bank.",bucket:["growth"],why:"The Nifty 50 tracks India\u2019s biggest companies. Over 10\u201315 years, it has historically delivered 12\u201314% returns \u2014 a classic Growth bucket investment."},
 {name:"SBI Savings Bank Account",icon:"sbi",iconBorder:"#1a3a5c",iconBg:"#e0f0f5",desc:"A basic savings account at SBI with a debit card for instant ATM access. Earns ~2.7% interest per year.",bucket:["emergency"],why:"A savings account gives you instant access to your money \u2014 withdraw from any ATM, any time. The most essential Emergency bucket item."},
 {name:"Newborn Son\u2019s IIT Education Fund",icon:"baby",iconBorder:"#c9a84c",iconBg:"#f5f0e0",desc:"A long-term plan to save and invest for your newborn\u2019s engineering education at IIT, roughly 18 years from now.",bucket:["growth"],why:"With 18 years to go, this is a classic Growth bucket goal. You have time to ride out market ups and downs, and equity funds can turn small monthly investments into a large education corpus through compounding."},
 {name:"Sovereign Gold Bonds (SGB)",icon:"gold",iconBorder:"#c9a84c",iconBg:"#f7f3e8",desc:"A government security denominated in grams of gold. Pays 2.5% fixed interest per year, locked in for 8 years.",bucket:["growth"],why:"SGBs give gold\u2019s long-term price appreciation PLUS 2.5% annual interest \u2014 tax-free at maturity. The 8-year lock-in makes this a Growth bucket asset."},
 {name:"Rental Income for Retirement",icon:"rental",iconBorder:"#264d78",iconBg:"#e0f0f5",desc:"Buying a completed shop to get monthly rental income that covers grocery expenses in retirement.",bucket:["stability"],why:"Regular rental income provides steady, predictable cash flow \u2014 exactly what you need in retirement. A classic Stability bucket asset."},
-{name:"3-Year Post Office Time Deposit",icon:"postoffice",iconBorder:"#c0392b",iconBg:"#fce8e8",desc:"A government-backed scheme where you lock a lump sum for 3 years at a fixed interest rate, guaranteed by the Government of India.",bucket:["stability"],why:"Government-guaranteed, fixed returns, defined time \u2014 textbook Stability. Safe, predictable, no surprises."},
 {name:"Job Loss Cushion",icon:"jobloss",iconBorder:"#5a7d8a",iconBg:"#e0f3f0",desc:"Money set aside to cover 6\u201312 months of essential household expenses if you or your spouse lose your job.",bucket:["emergency"],why:"Job loss is one of life\u2019s biggest financial emergencies. This cushion must be liquid and instantly accessible \u2014 pure Emergency bucket."},
 {name:"Liquid Mutual Fund",icon:"liquid",iconBorder:"#3498db",iconBg:"#e0f0f5",desc:"A mutual fund that lends to companies/government for very short periods (up to 91 days). Withdraw within one working day.",bucket:["emergency"],why:"Liquid funds offer better returns than savings accounts while keeping money available within one day \u2014 the smarter Emergency bucket choice."},
 {name:"Car Down Payment in 3\u20134 Years",icon:"car",iconBorder:"#264d78",iconBg:"#e0f0f5",desc:"Money you\u2019re saving now for a car down payment in 3\u20134 years.",bucket:["stability"],why:"With a 3\u20134 year timeline, you need safe, predictable money \u2014 can\u2019t risk a market crash right when you need it! Stability bucket all the way."},
@@ -26726,7 +26789,7 @@ function g8_sortItem(chosen){
   }
 }
 
-function g8_showPopup(it,ok,chosen){document.getElementById('g8_popOverlay').classList.add('show');var p=document.getElementById('g8_popCard');p.classList.add('show');var bl={emergency:'\uD83D\uDEE1\uFE0F Emergency',stability:'\u2696\uFE0F Stability',growth:'\uD83C\uDF31 Growth'};var allCorrect=it.bucket.map(function(b){return bl[b];}).join(' or ');p.innerHTML='<div class="popup-header"><button class="popup-close" onclick="g8_closePopup()">\u2715</button><div style="display:flex;align-items:center;gap:12px;"><span style="font-size:28px;">'+(ok?'\uD83C\uDF89':'\uD83D\uDE05')+'</span><div><div style="font-family:Lora,serif;font-size:1.15rem;font-weight:700;font-style:italic;">'+(ok?'Correct!':'Not quite!')+'</div><div style="font-size:0.72rem;color:rgba(255,255,255,0.6);">'+(ok?'+10 points \u00B7 Streak: '+g8_streak+' \uD83D\uDD25':'The right bucket was shown!')+'</div></div></div></div><div class="popup-body"><div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">'+(!ok?'<div style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;background:#fce8e8;color:var(--danger);font-weight:800;font-size:0.78rem;">\u2717 You chose: '+bl[chosen]+'</div>':'')+'<div style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;background:'+(ok?'#e8f5f2':'var(--mint-lt)')+';color:'+(ok?'var(--success)':'var(--navy)')+';font-weight:800;font-size:0.78rem;">\u2713 Correct: '+allCorrect+'</div></div><div style="border:2px solid var(--mint);border-radius:12px;padding:12px 14px;margin-bottom:14px;background:var(--cream);"><div style="font-size:0.68rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">THE ITEM</div><div style="font-weight:800;font-size:0.88rem;color:var(--navy);line-height:1.4;display:flex;align-items:center;gap:8px;"><span style="width:24px;height:24px;display:inline-block;">'+g8_svgIcon(it.icon)+'</span> '+it.name+'</div></div><div style="border:2px solid var(--mint);border-radius:12px;padding:12px 14px;margin-bottom:16px;background:var(--cream);"><div style="font-size:0.68rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">\uD83D\uDCA1 WHY THIS BUCKET?</div><div style="font-size:0.85rem;color:var(--ink);line-height:1.7;">'+it.why+'</div></div><button class="btn btn-primary btn-block" onclick="g8_closePopup()" style="border-radius:14px;padding:14px 28px 14px 56px;position:relative;display:flex;align-items:center;justify-content:center;width:100%;"><img src="'+LOGO_SRC+'" style="width:28px;height:28px;border-radius:50%;position:absolute;left:14px;box-shadow:0 1px 4px rgba(0,0,0,0.2);" alt="" />'+(g8_current+1<g8_items.length?'Next Item \u2192':'\uD83C\uDFC6 See Results')+'</button><div style="text-align:center;margin-top:8px;font-size:0.68rem;color:var(--muted);">'+(g8_current+1<g8_items.length?(g8_items.length-g8_current-1)+' items remaining':'All items sorted!')+'</div></div>';}
+function g8_showPopup(it,ok,chosen){document.getElementById('g8_popOverlay').classList.add('show');var p=document.getElementById('g8_popCard');p.classList.add('show');var bl={emergency:'\uD83D\uDEE1\uFE0F Emergency',stability:'\u2696\uFE0F Stability',growth:'\uD83C\uDF31 Growth'};var allCorrect=it.bucket.map(function(b){return bl[b];}).join(' or ');p.innerHTML='<div class="popup-header"><button class="popup-close" onclick="g8_closePopup()">\u2715</button><div style="display:flex;align-items:center;gap:12px;"><span style="font-size:46px;">'+(ok?'\uD83C\uDF89':'\uD83D\uDE05')+'</span><div><div style="font-family:Lora,serif;font-size:1.85rem;font-weight:700;font-style:italic;">'+(ok?'Correct!':'Not quite!')+'</div><div style="font-size:1.02rem;color:#8a7d68;">'+(ok?'+10 points \u00B7 Streak: '+g8_streak+' \uD83D\uDD25':'The right bucket was shown!')+'</div></div></div></div><div class="popup-body"><div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">'+(!ok?'<div style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:24px;background:#fce8e8;color:var(--danger);font-weight:800;font-size:1.12rem;">\u2717 You chose: '+bl[chosen]+'</div>':'')+'<div style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;background:'+(ok?'#e8f5f2':'var(--mint-lt)')+';color:'+(ok?'var(--success)':'var(--navy)')+';font-weight:800;font-size:1.12rem;">\u2713 Correct: '+allCorrect+'</div></div><div style="border:2px solid var(--mint);border-radius:12px;padding:12px 14px;margin-bottom:14px;background:var(--cream);"><div style="font-size:0.9rem;font-weight:800;color:#8a6e20;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;">THE ITEM</div><div style="font-weight:800;font-size:1.3rem;color:var(--navy);line-height:1.4;display:flex;align-items:center;gap:8px;"><span style="width:36px;height:36px;display:inline-block;">'+g8_svgIcon(it.icon)+'</span> '+it.name+'</div></div><div style="border:2px solid var(--mint);border-radius:12px;padding:12px 14px;margin-bottom:16px;background:var(--cream);"><div style="font-size:0.9rem;font-weight:800;color:#8a6e20;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;">\uD83D\uDCA1 WHY THIS BUCKET?</div><div style="font-size:1.22rem;color:var(--ink);line-height:1.75;">'+it.why+'</div></div><button class="btn btn-primary btn-block" onclick="g8_closePopup()" style="border-radius:14px;padding:14px 28px 14px 56px;position:relative;display:flex;align-items:center;justify-content:center;width:100%;"><img src="'+LOGO_SRC+'" style="width:28px;height:28px;border-radius:50%;position:absolute;left:14px;box-shadow:0 1px 4px rgba(0,0,0,0.2);" alt="" />'+(g8_current+1<g8_items.length?'Next Item \u2192':'\uD83C\uDFC6 See Results')+'</button><div style="text-align:center;margin-top:8px;font-size:0.95rem;color:var(--muted);">'+(g8_current+1<g8_items.length?(g8_items.length-g8_current-1)+' items remaining':'All items sorted!')+'</div></div>';}
 function g8_closePopup(){document.getElementById('g8_popOverlay').classList.remove('show');document.getElementById('g8_popCard').classList.remove('show');g8_current++;g8_drawDots();g8_updateUI();if(g8_current>=g8_items.length)g8_showFinal();else g8_showItem();}
 
 function g8_showReview(){
@@ -26779,14 +26842,15 @@ function g8_goToResults(){
 function g8_showFinal(){g8_reportScore();var n8=document.getElementById('next8');if(n8)n8.disabled=false;document.getElementById('g8_gameScreen').style.display='none';document.getElementById('g8_reviewScreen').style.display='none';var fs=document.getElementById('g8_finalScreen');fs.style.display='block';var n=g8_items.length,pct=Math.round(g8_correct/n*100);var trophy,title,msg;if(pct>=82){trophy='🏆';title='Bucket Master!';msg='You sorted like a financial planning pro!';}else if(pct>=55){trophy='🌟';title='Smart Sorter!';msg='Almost there — a few more tries and you will master it.';}else if(pct>=36){trophy='🌱';title='Growing Learner!';msg='Keep practising — you are building great financial intuition.';}else{trophy='📚';title='Just Getting Started!';msg='Review the buckets and try again!';}
 var bItems={emergency:[],stability:[],growth:[]};g8_items.forEach(function(it,i){bItems[it.bucket[0]].push({item:it,ok:g8_results[i]});});
 var meta={emergency:{ic:'🛡️ Emergency',vo:'Nailed the safety-net items.',vb:'Revisit which items are truly quick-access.'},stability:{ic:'⚖️ Stability',vo:'Solid on steady, low-risk picks.',vb:'A couple of these belong elsewhere.'},growth:{ic:'🌱 Growth',vo:'Strong on long-term wealth.',vb:'Watch which items are really growth.'}};
-var svgFor=function(b){var s=document.querySelector('#g8_bwrap-'+b+' .bucket-svg');return s?s.outerHTML:'';};
+var svgFor=function(b){var s=document.querySelector('#g8_bwrap-'+b+' .bucket-svg');return s?g8_uidSvg(s.outerHTML,'fin'):'';};
 var cols=['emergency','stability','growth'].map(function(b){var list=bItems[b];var got=list.filter(function(e){return e.ok;}).length;var chips=list.map(function(e){return '<div class="g8-ichip'+(e.ok?'':' miss')+'">'+e.item.name+(e.ok?'':' ✗')+'</div>';}).join('');if(!list.length)chips='<div class="g8-ichip" style="opacity:.6;">—</div>';var allok=got===list.length&&list.length>0;return '<div class="g8-rcol bl-'+b+'">'+svgFor(b)+'<div class="hwp-l">'+meta[b].ic+'</div><div class="g8-rscore">'+got+' / '+list.length+(allok?' ✓':'')+'</div><div class="g8-rchips">'+chips+'</div><div class="g8-verdict">'+(allok?meta[b].vo:meta[b].vb)+'</div></div>';}).join('');
 fs.innerHTML='<div class="g8-finalboard"><div class="g8-props" aria-hidden="true"><span style="top:22%;left:5%;">🏆</span><span style="top:66%;right:6%;">💰</span><span style="bottom:10%;left:44%;">🌱</span></div><div class="g8-rhero"><div class="tr">'+trophy+'</div><h2>'+title+'</h2><div class="g8-ring" style="background:conic-gradient(#c9a84c 0% '+pct+'%, rgba(255,255,255,0.15) '+pct+'% 100%);"><span class="n">'+g8_correct+'</span><span class="m">of '+n+'</span></div><p>'+msg+'</p></div><div class="g8-stats"><div class="g8-stat"><div class="v">'+pct+'%</div><div class="l">Accuracy</div></div><div class="g8-stat gold"><div class="v">'+g8_pts+'</div><div class="l">Points</div></div><div class="g8-stat green"><div class="v">'+g8_best+' 🔥</div><div class="l">Best Streak</div></div></div><div class="g8-revtitle">🧺 Your Balanced Portfolio</div><div class="g8-revsub">Here’s everything you sorted — discuss with your group before playing again!</div><div class="g8-reveal">'+cols+'</div><div class="card" style="background:rgba(255,255,255,0.85)!important;margin-top:14px;"><div class="card-title">💡 Key Takeaway</div><p style="font-size:0.8rem;color:var(--muted);line-height:1.7;margin:0;">A healthy portfolio needs all three: <strong style="color:#c0392b;">Emergency</strong> protects you from surprises, <strong style="color:#2a9d8f;">Stability</strong> gives peace of mind, and <strong style="color:#27ae60;">Growth</strong> builds your family’s future.</p></div><div class="g8-quote">“Do not save what is left after spending, but spend what is left after saving.”<cite>— Warren Buffett</cite></div><div class="g8-finbtns"><button class="btn btn-gold" onclick="g8_startGame()">🔄 Play Again</button><button class="btn btn-outline" onclick="g8_goBack()">← Back</button></div></div>';
 document.getElementById('game8').scrollIntoView({behavior:'smooth',block:'start'});}
 
 
 
-function g8_initPreview(){var host=document.getElementById('g8_bucketPreview');if(!host||host.getAttribute('data-done'))return;var map=[['emergency','🛡️ Emergency'],['stability','⚖️ Stability'],['growth','🌱 Growth']];host.innerHTML=map.map(function(m){var s=document.querySelector('#g8_bwrap-'+m[0]+' .bucket-svg');return '<div class="hwp bl-'+m[0]+'">'+(s?s.outerHTML:'')+'<div class="hwp-l">'+m[1]+'</div></div>';}).join('');host.setAttribute('data-done','1');}
+function g8_uidSvg(h,s){return h.replace(/id="(p[A-Za-z0-9]+)"/g,'id="$1_'+s+'"').replace(/url\(#(p[A-Za-z0-9]+)\)/g,'url(#$1_'+s+')');}
+function g8_initPreview(){var host=document.getElementById('g8_bucketPreview');if(!host||host.getAttribute('data-done'))return;var map=[['emergency','🛡️ Emergency'],['stability','⚖️ Stability'],['growth','🌱 Growth']];host.innerHTML=map.map(function(m){var s=document.querySelector('#g8_bwrap-'+m[0]+' .bucket-svg');return '<div class="hwp bl-'+m[0]+'">'+(s?g8_uidSvg(s.outerHTML,'pv'):'')+'<div class="hwp-l">'+m[1]+'</div></div>';}).join('');host.setAttribute('data-done','1');}
 function g8_init() {
   document.getElementById('g8_startScreen').style.display='block';
   document.getElementById('g8_gameScreen').style.display='none';
@@ -30701,8 +30765,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(
     input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;cursor:pointer;box-shadow:0 2px 10px rgba(26,58,92,0.3)}
     input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none}
     input[type=number]{-moz-appearance:textfield}
-    .rate-btn{flex:1;padding:10px 0;border-radius:10px;font-size:0.85rem;font-weight:800;cursor:pointer;transition:all 0.18s;font-family:Nunito,sans-serif}
-    .amt-btn{padding:7px 13px;border-radius:9px;font-size:0.78rem;font-weight:800;cursor:pointer;font-family:Nunito,sans-serif;transition:all 0.18s}
+    .rate-btn{flex:1;padding:10px 0;border-radius:10px;font-size:1.26rem;font-weight:800;cursor:pointer;transition:all 0.18s;font-family:Nunito,sans-serif}
+    .amt-btn{padding:7px 13px;border-radius:9px;font-size:1.14rem;font-weight:800;cursor:pointer;font-family:Nunito,sans-serif;transition:all 0.18s}
   </style>
 </head>
 <body>
@@ -30732,7 +30796,7 @@ function fmtRs(n) {
 function MoneyCard({ amount, label, year, pctLeft, faded }) {
   return (
     <div style={{
-      width:210, borderRadius:20, overflow:'hidden', flexShrink:0,
+      width:232, borderRadius:20, overflow:'hidden', flexShrink:0,
       background: faded
         ? 'linear-gradient(145deg,#1a1e1b,#141714)'
         : 'linear-gradient(145deg,#163520,#0e2416,#163520)',
@@ -30749,19 +30813,19 @@ function MoneyCard({ amount, label, year, pctLeft, faded }) {
         {/* Top row */}
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:14}}>
           <div>
-            <div style={{fontSize:'0.48rem',fontWeight:'800',letterSpacing:'1.8px',textTransform:'uppercase',color:faded?'rgba(255,255,255,0.22)':'rgba(74,222,128,0.75)',marginBottom:3}}>{year}</div>
-            <div style={{fontSize:'0.38rem',color:'rgba(255,255,255,0.18)',letterSpacing:'0.5px'}}>भारतीय रिज़र्व बैंक</div>
+            <div style={{fontSize:'0.75rem',fontWeight:'800',letterSpacing:'1.8px',textTransform:'uppercase',color:faded?'rgba(255,255,255,0.22)':'rgba(74,222,128,0.75)',marginBottom:3}}>{year}</div>
+            <div style={{fontSize:'0.6rem',color:'rgba(255,255,255,0.18)',letterSpacing:'0.5px'}}>भारतीय रिज़र्व बैंक</div>
           </div>
-          <div style={{width:28,height:28,borderRadius:'50%',background:faded?'rgba(255,255,255,0.04)':'rgba(74,222,128,0.1)',border:'1px solid '+(faded?'rgba(255,255,255,0.08)':'rgba(74,222,128,0.2)'),display:'flex',alignItems:'center',justifyContent:'center',fontSize:'0.85rem',opacity:faded?0.4:1}}>
+          <div style={{width:28,height:28,borderRadius:'50%',background:faded?'rgba(255,255,255,0.04)':'rgba(74,222,128,0.1)',border:'1px solid '+(faded?'rgba(255,255,255,0.08)':'rgba(74,222,128,0.2)'),display:'flex',alignItems:'center',justifyContent:'center',fontSize:'1.26rem',opacity:faded?0.4:1}}>
             ₹
           </div>
         </div>
 
         {/* Amount */}
-        <div style={{fontFamily:'EB Garamond,Georgia,serif',fontSize:'1.85rem',fontWeight:'700',color:faded?'rgba(255,255,255,0.28)':'rgba(255,255,255,0.95)',lineHeight:1,marginBottom:5,letterSpacing:'-0.5px'}}>
+        <div style={{fontFamily:'EB Garamond,Georgia,serif',fontSize:'2.52rem',fontWeight:'700',color:faded?'rgba(255,255,255,0.28)':'rgba(255,255,255,0.95)',lineHeight:1,marginBottom:5,letterSpacing:'-0.5px'}}>
           {amount}
         </div>
-        <div style={{fontSize:'0.52rem',fontWeight:'700',color:faded?'rgba(255,255,255,0.18)':'rgba(255,255,255,0.45)',letterSpacing:'0.5px',textTransform:'uppercase',marginBottom:14}}>
+        <div style={{fontSize:'0.8rem',fontWeight:'700',color:faded?'rgba(255,255,255,0.18)':'rgba(255,255,255,0.45)',letterSpacing:'0.5px',textTransform:'uppercase',marginBottom:14}}>
           {label}
         </div>
 
@@ -30769,7 +30833,7 @@ function MoneyCard({ amount, label, year, pctLeft, faded }) {
         <div style={{height:4,background:'rgba(255,255,255,0.07)',borderRadius:2,overflow:'hidden',marginBottom:6}}>
           <div style={{height:'100%',width:(faded?pctLeft:100)+'%',background:faded?'#bde9e4':'#4ade80',borderRadius:2,transition:'width 0.5s ease'}}/>
         </div>
-        <div style={{fontSize:'0.52rem',fontWeight:'800',color:faded?'#bde9e4':'#4ade80'}}>
+        <div style={{fontSize:'0.8rem',fontWeight:'800',color:faded?'#bde9e4':'#4ade80'}}>
           {faded?pctLeft.toFixed(0)+'% buying power remaining':'100% buying power'}
         </div>
       </div>
@@ -30799,13 +30863,13 @@ function PowerChart({ amount, rate, years }) {
           <stop offset="100%" stopColor="#4ade80" stopOpacity="0.01"/>
         </linearGradient>
       </defs>
-      {milestones.map(function(m){return(<g key={m.p}><line x1={pl} y1={m.cy} x2={W-pr} y2={m.cy} stroke="rgba(26,58,92,0.1)" strokeWidth="1" strokeDasharray="4,4"/><text x={pl-4} y={m.cy+4} fontSize="7.5" fill="#8aacbf" textAnchor="end" fontFamily="Nunito,sans-serif" fontWeight="700">{m.l}</text></g>);})}
+      {milestones.map(function(m){return(<g key={m.p}><line x1={pl} y1={m.cy} x2={W-pr} y2={m.cy} stroke="rgba(26,58,92,0.1)" strokeWidth="1" strokeDasharray="4,4"/><text x={pl-4} y={m.cy+4} fontSize="11.5" fill="#8aacbf" textAnchor="end" fontFamily="Nunito,sans-serif" fontWeight="700">{m.l}</text></g>);})}
       <path d={areaPath} fill="url(#aG)"/>
       <path d={linePath} fill="none" stroke="#4ade80" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
       <circle cx={coords[0][0]} cy={coords[0][1]} r="4" fill="#4ade80"/>
       <circle cx={coords[coords.length-1][0]} cy={coords[coords.length-1][1]} r="5" fill="#bde9e4"/>
       <line x1={pl} y1={pt+IH} x2={W-pr} y2={pt+IH} stroke="rgba(26,58,92,0.12)" strokeWidth="1"/>
-      {xLabels.map(function(yr){return(<text key={yr} x={(pl+yr*xS).toFixed(1)} y={H-4} fontSize="8" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
+      {xLabels.map(function(yr){return(<text key={yr} x={(pl+yr*xS).toFixed(1)} y={H-4} fontSize="12" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
       <line x1={pl} y1={pt} x2={pl} y2={pt+IH} stroke="rgba(26,58,92,0.12)" strokeWidth="1"/>
     </svg>
   );
@@ -30828,13 +30892,13 @@ function SustainChart({ amount, rate, years }) {
     <svg viewBox={'0 0 '+W+' '+H} style={{width:'100%',display:'block',overflow:'visible'}}>
       <defs><linearGradient id="sG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#bde9e4" stopOpacity="0.35"/><stop offset="100%" stopColor="#bde9e4" stopOpacity="0.02"/></linearGradient></defs>
       <line x1={pl} y1={nomY} x2={W-pr} y2={nomY} stroke="rgba(26,58,92,0.18)" strokeWidth="1.5" strokeDasharray="5,4"/>
-      <text x={pl-4} y={parseFloat(nomY)+3} fontSize="7" fill="rgba(26,58,92,0.4)" textAnchor="end" fontFamily="Nunito,sans-serif">today</text>
+      <text x={pl-4} y={parseFloat(nomY)+3} fontSize="11" fill="rgba(26,58,92,0.4)" textAnchor="end" fontFamily="Nunito,sans-serif">today</text>
       <path d={areaPath} fill="url(#sG)"/>
       <path d={linePath} fill="none" stroke="#bde9e4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
       <circle cx={coords[0][0]} cy={coords[0][1]} r="4" fill="#1a3a5c"/>
       <circle cx={coords[coords.length-1][0]} cy={coords[coords.length-1][1]} r="5" fill="#bde9e4"/>
       <line x1={pl} y1={pt+IH} x2={W-pr} y2={pt+IH} stroke="rgba(26,58,92,0.12)" strokeWidth="1"/>
-      {xLbls.map(function(yr){return(<text key={yr} x={(pl+(yr-1)*xS).toFixed(1)} y={H-4} fontSize="8" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
+      {xLbls.map(function(yr){return(<text key={yr} x={(pl+(yr-1)*xS).toFixed(1)} y={H-4} fontSize="12" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
       <line x1={pl} y1={pt} x2={pl} y2={pt+IH} stroke="rgba(26,58,92,0.12)" strokeWidth="1"/>
     </svg>
   );
@@ -30860,7 +30924,7 @@ function CorpusChart({ startExp, rate, corpusYears }) {
       <defs><linearGradient id="cG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#bde9e4" stopOpacity="0.4"/><stop offset="100%" stopColor="#bde9e4" stopOpacity="0.02"/></linearGradient></defs>
       {yLbls.map(function(v,i){
         var y=(pt+IH-((v-yMin)/yRange)*IH).toFixed(1);
-        return(<g key={i}><line x1={pl} y1={y} x2={W-pr} y2={y} stroke="rgba(26,58,92,0.08)" strokeWidth="1" strokeDasharray="4,4"/><text x={pl-4} y={parseFloat(y)+3} fontSize="7" fill="rgba(26,58,92,0.45)" textAnchor="end" fontFamily="Nunito,sans-serif">{fmtY(v)}</text></g>);
+        return(<g key={i}><line x1={pl} y1={y} x2={W-pr} y2={y} stroke="rgba(26,58,92,0.08)" strokeWidth="1" strokeDasharray="4,4"/><text x={pl-4} y={parseFloat(y)+3} fontSize="11" fill="rgba(26,58,92,0.45)" textAnchor="end" fontFamily="Nunito,sans-serif">{fmtY(v)}</text></g>);
       })}
       <path d={areaPath} fill="url(#cG)"/>
       <path d={linePath} fill="none" stroke="#1a3a5c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -30868,7 +30932,7 @@ function CorpusChart({ startExp, rate, corpusYears }) {
       <circle cx={coords[coords.length-1][0]} cy={coords[coords.length-1][1]} r="5" fill="#1a3a5c"/>
       <line x1={pl} y1={pt+IH} x2={W-pr} y2={pt+IH} stroke="rgba(26,58,92,0.15)" strokeWidth="1"/>
       <line x1={pl} y1={pt} x2={pl} y2={pt+IH} stroke="rgba(26,58,92,0.15)" strokeWidth="1"/>
-      {xLbls.map(function(yr){return(<text key={yr} x={(pl+(yr-1)*xS).toFixed(1)} y={H-4} fontSize="8" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
+      {xLbls.map(function(yr){return(<text key={yr} x={(pl+(yr-1)*xS).toFixed(1)} y={H-4} fontSize="12" fill="#8aacbf" textAnchor="middle" fontFamily="Nunito,sans-serif">Yr {yr}</text>);})}
     </svg>
   );
 }
@@ -30918,18 +30982,18 @@ function App() {
 
 
 
-      <div style={{maxWidth:860,margin:'0 auto',padding:'0 20px'}}>
+      <div style={{maxWidth:1600,margin:'0 auto',padding:'0 28px'}}>
 
         {/* ── TOGGLE ── */}
         <div style={{display:'flex',gap:4,marginTop:16,marginBottom:12,background:'#fff',borderRadius:14,padding:4,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 2px 10px rgba(26,58,92,0.07)'}}>
-          <button onClick={function(){setMode('sustain');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'0.75rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='sustain'?'linear-gradient(135deg,#1a3a5c,#254d78)':'transparent',color:mode==='sustain'?'#fff':'#5a7d9a'}}>
-            📈 Sustain My Lifestyle<br/><span style={{fontSize:'0.65rem',fontWeight:600,opacity:0.8}}>How much will I need?</span>
+          <button onClick={function(){setMode('sustain');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'1.1rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='sustain'?'linear-gradient(135deg,#1a3a5c,#254d78)':'transparent',color:mode==='sustain'?'#fff':'#5a7d9a'}}>
+            📈 Sustain My Lifestyle<br/><span style={{fontSize:'0.98rem',fontWeight:600,opacity:0.8}}>How much will I need?</span>
           </button>
-          <button onClick={function(){setMode('erodes');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'0.75rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='erodes'?'linear-gradient(135deg,#1a3a5c,#2e6b8a)':'transparent',color:mode==='erodes'?'#fff':'#5a7d9a'}}>
-            💸 Purchasing Power<br/><span style={{fontSize:'0.65rem',fontWeight:600,opacity:0.8}}>What will my money buy later?</span>
+          <button onClick={function(){setMode('erodes');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'1.1rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='erodes'?'linear-gradient(135deg,#1a3a5c,#2e6b8a)':'transparent',color:mode==='erodes'?'#fff':'#5a7d9a'}}>
+            💸 Purchasing Power<br/><span style={{fontSize:'0.98rem',fontWeight:600,opacity:0.8}}>What will my money buy later?</span>
           </button>
-          <button onClick={function(){setMode('corpus');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'0.75rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='corpus'?'linear-gradient(135deg,#1a3a5c,#254d78)':'transparent',color:mode==='corpus'?'#fff':'#5a7d9a'}}>
-            🏦 Corpus Calculator<br/><span style={{fontSize:'0.65rem',fontWeight:600,opacity:0.8}}>How much lump sum do I need?</span>
+          <button onClick={function(){setMode('corpus');}} style={{flex:1,padding:'11px 8px',borderRadius:10,border:'none',fontWeight:800,fontSize:'1.1rem',cursor:'pointer',lineHeight:1.35,transition:'all 0.2s',background:mode==='corpus'?'linear-gradient(135deg,#1a3a5c,#254d78)':'transparent',color:mode==='corpus'?'#fff':'#5a7d9a'}}>
+            🏦 Corpus Calculator<br/><span style={{fontSize:'0.98rem',fontWeight:600,opacity:0.8}}>How much lump sum do I need?</span>
           </button>
         </div>
 
@@ -30938,7 +31002,7 @@ function App() {
 
           {/* Row 1: ₹ Amount + badge + Mo/Yr */}
           <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:10}}>
-            <span style={{fontSize:'1rem',fontWeight:'900',color:'#1a3a5c',flexShrink:0}}>₹</span>
+            <span style={{fontSize:'1.44rem',fontWeight:'900',color:'#1a3a5c',flexShrink:0}}>₹</span>
             <input type="text" inputMode="numeric" value={inputVal} placeholder="10,000"
               onChange={function(e){
                 var raw = e.target.value.replace(/,/g,'');
@@ -30958,7 +31022,7 @@ function App() {
                   setInputVal(v.toLocaleString('en-IN'));
                 }
               }}
-              style={{flex:1,padding:'9px 12px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #c5d5e0',borderRadius:10,fontSize:'1rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,minWidth:0}}
+              style={{flex:1,padding:'9px 12px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #c5d5e0',borderRadius:10,fontSize:'1.44rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,minWidth:0}}
             />
             {(function(){
               var raw = inputVal.replace(/,/g,'');
@@ -30969,11 +31033,11 @@ function App() {
               else if(v >= 100000) label = parseFloat((v/100000).toFixed(2)).toString() + 'L';
               else if(v >= 1000) label = parseFloat((v/1000).toFixed(2)).toString() + 'K';
               if(!label) return null;
-              return <span style={{fontSize:'0.7rem',fontWeight:'900',color:'#5a7d9a',whiteSpace:'nowrap',flexShrink:0}}>{label}</span>;
+              return <span style={{fontSize:'1.06rem',fontWeight:'900',color:'#5a7d9a',whiteSpace:'nowrap',flexShrink:0}}>{label}</span>;
             })()}
             <div style={{display:'flex',gap:2,background:'#f0f4f8',borderRadius:8,padding:2,border:'1px solid #c5d5e0',flexShrink:0}}>
-              <button onClick={function(){setPeriod('monthly');}} style={{padding:'4px 9px',borderRadius:6,border:'none',fontSize:'0.62rem',fontWeight:800,cursor:'pointer',background:period==='monthly'?'#1a3a5c':'transparent',color:period==='monthly'?'#fff':'#5a7d9a',transition:'all 0.15s'}}>Monthly</button>
-              <button onClick={function(){setPeriod('yearly');}} style={{padding:'4px 9px',borderRadius:6,border:'none',fontSize:'0.62rem',fontWeight:800,cursor:'pointer',background:period==='yearly'?'#1a3a5c':'transparent',color:period==='yearly'?'#fff':'#5a7d9a',transition:'all 0.15s'}}>Yearly</button>
+              <button onClick={function(){setPeriod('monthly');}} style={{padding:'4px 9px',borderRadius:6,border:'none',fontSize:'0.94rem',fontWeight:800,cursor:'pointer',background:period==='monthly'?'#1a3a5c':'transparent',color:period==='monthly'?'#fff':'#5a7d9a',transition:'all 0.15s'}}>Monthly</button>
+              <button onClick={function(){setPeriod('yearly');}} style={{padding:'4px 9px',borderRadius:6,border:'none',fontSize:'0.94rem',fontWeight:800,cursor:'pointer',background:period==='yearly'?'#1a3a5c':'transparent',color:period==='yearly'?'#fff':'#5a7d9a',transition:'all 0.15s'}}>Yearly</button>
             </div>
           </div>
 
@@ -30994,9 +31058,9 @@ function App() {
                 else if(n > 30) { setRateInput('30'); setRate(30); }
                 else setRateInput(String(n));
               }}
-              style={{width:52,padding:'7px 10px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #fbd4b4',borderRadius:10,fontSize:'1rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,textAlign:'center'}}
+              style={{width:52,padding:'7px 10px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #fbd4b4',borderRadius:10,fontSize:'1.44rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,textAlign:'center'}}
             />
-            <span style={{fontSize:'0.72rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>% inflation</span>
+            <span style={{fontSize:'1.08rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>% inflation</span>
             <div style={{flex:1}}/>
             <input type="text" inputMode="numeric" value={yearsInput} placeholder="10"
               onChange={function(e){
@@ -31011,9 +31075,9 @@ function App() {
                 else if(n > 50) { setYearsInput('50'); setYears(50); }
                 else setYearsInput(String(n));
               }}
-              style={{width:48,padding:'7px 10px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #b3e0d8',borderRadius:10,fontSize:'1rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,textAlign:'center'}}
+              style={{width:48,padding:'7px 10px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #b3e0d8',borderRadius:10,fontSize:'1.44rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800,textAlign:'center'}}
             />
-            <span style={{fontSize:'0.72rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>yrs → {targetYear}</span>
+            <span style={{fontSize:'1.08rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>yrs → {targetYear}</span>
           </div>
         </div>
 
@@ -31025,8 +31089,8 @@ function App() {
             <MoneyCard amount={fmtRs(amount)} label="purchasing power" year={'Today · '+new Date().getFullYear()} pctLeft={100} faded={false}/>
           </div>
           <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:4}}>
-            <div style={{fontSize:'1.8rem',opacity:0.18}}>→</div>
-            <div style={{fontSize:'0.52rem',color:'#8aacbf',fontWeight:'700'}}>{years} yrs</div>
+            <div style={{fontSize:'2.4rem',opacity:0.18}}>→</div>
+            <div style={{fontSize:'0.8rem',color:'#8aacbf',fontWeight:'700'}}>{years} yrs</div>
           </div>
           <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:8}}>
             <MoneyCard amount={fmtRs(Math.round(futureVal))} label="equivalent value" year={targetYear+' equivalent'} pctLeft={pctLeft} faded={true}/>
@@ -31036,16 +31100,16 @@ function App() {
         {/* ── Big stat ── */}
         <div style={{textAlign:'center',background:'linear-gradient(135deg,#1a3a5c 0%,#1b5e7a 50%,#2a9d8f 100%)',borderRadius:18,padding:'22px 20px',marginBottom:14,boxShadow:'0 8px 32px rgba(26,58,92,0.22)',position:'relative',overflow:'hidden'}}>
           <div style={{position:'absolute',inset:0,opacity:0.05,backgroundImage:'radial-gradient(circle,#fff 1px,transparent 1px)',backgroundSize:'24px 24px',pointerEvents:'none'}}/>
-          <div style={{fontSize:'0.58rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>In {years} years at {rate}% inflation</div>
-          <div style={{fontSize:'3rem',fontWeight:'900',color:'#fff',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(futureVal))}</div>
-          <div style={{fontSize:'0.8rem',color:'rgba(255,255,255,0.65)',marginBottom:16}}>is the real buying power of <strong style={{color:'#fff'}}>{fmtRs(amount)}</strong> by {targetYear}</div>
+          <div style={{fontSize:'0.86rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>In {years} years at {rate}% inflation</div>
+          <div style={{fontSize:'4.1rem',fontWeight:'900',color:'#fff',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(futureVal))}</div>
+          <div style={{fontSize:'1.18rem',color:'rgba(255,255,255,0.65)',marginBottom:16}}>is the real buying power of <strong style={{color:'#fff'}}>{fmtRs(amount)}</strong> by {targetYear}</div>
           <div style={{height:10,borderRadius:5,background:'rgba(255,255,255,0.12)',overflow:'hidden',position:'relative'}}>
             <div style={{position:'absolute',left:0,top:0,bottom:0,width:pctLeft+'%',background:'linear-gradient(90deg,#4ade80,#86efac)',borderRadius:5,transition:'width 0.4s ease'}}/>
             <div style={{position:'absolute',right:0,top:0,bottom:0,width:(100-pctLeft)+'%',background:'rgba(189,233,228,0.45)',borderRadius:5}}/>
           </div>
           <div style={{display:'flex',justifyContent:'space-between',marginTop:8}}>
-            <span style={{fontSize:'0.63rem',color:'#4ade80',fontWeight:'800'}}>{pctLeft.toFixed(1)}% remaining</span>
-            <span style={{fontSize:'0.63rem',color:'#bde9e4',fontWeight:'800'}}>{(100-pctLeft).toFixed(1)}% lost to inflation</span>
+            <span style={{fontSize:'0.96rem',color:'#4ade80',fontWeight:'800'}}>{pctLeft.toFixed(1)}% remaining</span>
+            <span style={{fontSize:'0.96rem',color:'#bde9e4',fontWeight:'800'}}>{(100-pctLeft).toFixed(1)}% lost to inflation</span>
           </div>
         </div>
 
@@ -31053,14 +31117,14 @@ function App() {
         {(function(){
           return(
             <div style={{background:'#fff',borderRadius:16,padding:'16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.12)',boxShadow:'0 4px 20px rgba(26,58,92,0.07)',borderTop:'3px solid #bde9e4'}}>
-              <div style={{fontSize:'0.6rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📉 YEAR-BY-YEAR PURCHASING POWER — {fmtRs(amount)} today</div>
-              <div style={{fontSize:'0.58rem',color:'#8aacbf',marginBottom:12}}>How much {fmtRs(amount)} is really worth, in today's money, as years pass</div>
+              <div style={{fontSize:'0.9rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📉 YEAR-BY-YEAR PURCHASING POWER — {fmtRs(amount)} today</div>
+              <div style={{fontSize:'0.86rem',color:'#8aacbf',marginBottom:12}}>How much {fmtRs(amount)} is really worth, in today's money, as years pass</div>
               {/* Header */}
-              <div style={{display:'grid',gridTemplateColumns:'44px 1fr 80px 64px',gap:8,padding:'4px 6px',marginBottom:4}}>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>REAL VALUE</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>LOST</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>REMAINING</div>
+              <div style={{display:'grid',gridTemplateColumns:'54px 1fr 96px 76px',gap:8,padding:'4px 6px',marginBottom:4}}>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>REAL VALUE</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>LOST</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>REMAINING</div>
               </div>
               <div style={{maxHeight:340,overflowY:'auto',paddingRight:2}}>
                 {Array.from({length:years},function(_,i){return i+1;}).map(function(y){
@@ -31072,16 +31136,16 @@ function App() {
                   var barColor = heat > 0.7 ? '#1a3a5c' : heat > 0.4 ? '#2e6b8a' : '#bde9e4';
                   var isLast = y===years;
                   return(
-                    <div key={y} style={{display:'grid',gridTemplateColumns:'44px 1fr 80px 64px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(239,68,68,0.05)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}}>
-                      <div style={{fontSize:'0.58rem',fontWeight:'800',color:isLast?'#ef4444':'#8aacbf'}}>Yr {y}</div>
+                    <div key={y} style={{display:'grid',gridTemplateColumns:'54px 1fr 96px 76px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(239,68,68,0.05)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}}>
+                      <div style={{fontSize:'0.86rem',fontWeight:'800',color:isLast?'#ef4444':'#8aacbf'}}>Yr {y}</div>
                       <div>
-                        <div style={{fontSize:'0.72rem',fontWeight:'900',color:isLast?'#1a3a5c':heat>0.5?'#2e6b8a':'#1a3a5c',marginBottom:3}}>{fmtRs(Math.round(realVal))}</div>
+                        <div style={{fontSize:'1.08rem',fontWeight:'900',color:isLast?'#1a3a5c':heat>0.5?'#2e6b8a':'#1a3a5c',marginBottom:3}}>{fmtRs(Math.round(realVal))}</div>
                         <div style={{height:5,borderRadius:3,background:'#f0f4f8',overflow:'hidden'}}>
                           <div style={{height:'100%',width:barW+'%',background:'linear-gradient(90deg,#22c55e,'+barColor+')',borderRadius:3,transition:'width 0.3s'}}/>
                         </div>
                       </div>
-                      <div style={{fontSize:'0.65rem',fontWeight:'900',color:heat>0.5?'#1a3a5c':'#2e6b8a',textAlign:'right'}}>-{pctLost}%</div>
-                      <div style={{fontSize:'0.65rem',fontWeight:'900',color:heat>0.5?'#1a3a5c':heat>0.3?'#2e6b8a':'#bde9e4',textAlign:'right'}}>{pctRemaining.toFixed(0)}%</div>
+                      <div style={{fontSize:'0.98rem',fontWeight:'900',color:heat>0.5?'#1a3a5c':'#2e6b8a',textAlign:'right'}}>-{pctLost}%</div>
+                      <div style={{fontSize:'0.98rem',fontWeight:'900',color:heat>0.5?'#1a3a5c':heat>0.3?'#2e6b8a':'#bde9e4',textAlign:'right'}}>{pctRemaining.toFixed(0)}%</div>
                     </div>
                   );
                 })}
@@ -31092,7 +31156,7 @@ function App() {
 
         {/* ── Basket ── */}
         <div style={{background:'linear-gradient(135deg,#fffbf0 0%,#fff 60%)',borderRadius:16,padding:'16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 4px 20px rgba(26,58,92,0.07)',borderTop:'3px solid #bde9e4'}}>
-          <div style={{fontSize:'0.6rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:12}}>🛒 BASKET OF GOODS — TODAY vs {targetYear}</div>
+          <div style={{fontSize:'0.9rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:12}}>🛒 BASKET OF GOODS — TODAY vs {targetYear}</div>
           <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:9}}>
             {BASKET.map(function(item){
               var future = item.price * Math.pow(1 + rate/100, years);
@@ -31100,15 +31164,15 @@ function App() {
               return(
                 <div key={item.name} style={{background:'#fff',borderRadius:12,padding:'14px 14px 12px',border:'1px solid rgba(26,58,92,0.1)',borderLeft:'3px solid #bde9e4',boxShadow:'0 2px 8px rgba(26,58,92,0.05)'}}>
                   <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:10}}>
-                    <span style={{fontSize:'2rem',lineHeight:1}}>{item.emoji}</span>
-                    <span style={{fontSize:'0.82rem',fontWeight:'800',color:'#1a3a5c'}}>{item.name}</span>
+                    <span style={{fontSize:'2.76rem',lineHeight:1}}>{item.emoji}</span>
+                    <span style={{fontSize:'1.2rem',fontWeight:'800',color:'#1a3a5c'}}>{item.name}</span>
                   </div>
                   <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:6}}>
-                    <div><div style={{fontSize:'0.52rem',color:'#8aacbf',fontWeight:'700',marginBottom:2}}>TODAY</div><div style={{fontSize:'1.2rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1}}>{fmtRs(item.price)}</div></div>
-                    <div style={{color:'#c5d5e0',fontSize:'1rem',paddingBottom:2}}>→</div>
-                    <div style={{textAlign:'right'}}><div style={{fontSize:'0.52rem',color:'#8aacbf',fontWeight:'700',marginBottom:2}}>{targetYear}</div><div style={{fontSize:'1.2rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1}}>{fmtRs(Math.round(future))}</div></div>
+                    <div><div style={{fontSize:'0.8rem',color:'#8aacbf',fontWeight:'700',marginBottom:2}}>TODAY</div><div style={{fontSize:'1.68rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1}}>{fmtRs(item.price)}</div></div>
+                    <div style={{color:'#c5d5e0',fontSize:'1.44rem',paddingBottom:2}}>→</div>
+                    <div style={{textAlign:'right'}}><div style={{fontSize:'0.8rem',color:'#8aacbf',fontWeight:'700',marginBottom:2}}>{targetYear}</div><div style={{fontSize:'1.68rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1}}>{fmtRs(Math.round(future))}</div></div>
                   </div>
-                  <div style={{fontSize:'0.62rem',color:'#1a3a5c',fontWeight:'700',textAlign:'right'}}>+{incPct}% more expensive</div>
+                  <div style={{fontSize:'0.94rem',color:'#1a3a5c',fontWeight:'700',textAlign:'right'}}>+{incPct}% more expensive</div>
                 </div>
               );
             })}
@@ -31118,22 +31182,22 @@ function App() {
         {/* ── Insights ── */}
         <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10,marginBottom:12}}>
           <div style={{background:'rgba(189,233,228,0.18)',borderRadius:14,padding:'15px 13px',border:'1px solid rgba(26,58,92,0.12)'}}>
-            <div style={{fontSize:'0.55rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>⏱ RULE OF 72</div>
-            <div style={{fontSize:'1.55rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{halvingYrs} yrs</div>
-            <div style={{fontSize:'0.65rem',color:'#5a7d9a',lineHeight:1.6}}>At {rate}% inflation, buying power <strong style={{color:'#1a3a5c'}}>halves</strong> every {halvingYrs} years</div>
+            <div style={{fontSize:'0.84rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>⏱ RULE OF 72</div>
+            <div style={{fontSize:'2.22rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{halvingYrs} yrs</div>
+            <div style={{fontSize:'0.98rem',color:'#5a7d9a',lineHeight:1.6}}>At {rate}% inflation, buying power <strong style={{color:'#1a3a5c'}}>halves</strong> every {halvingYrs} years</div>
           </div>
           <div style={{background:'rgba(22,163,74,0.07)',borderRadius:14,padding:'15px 13px',border:'1px solid rgba(22,163,74,0.18)'}}>
-            <div style={{fontSize:'0.55rem',color:'#16a34a',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>🎯 TO BEAT INFLATION</div>
-            <div style={{fontSize:'1.55rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{rate+3}%+ p.a.</div>
-            <div style={{fontSize:'0.65rem',color:'#5a7d9a',lineHeight:1.6}}>Earn at least {rate+3}% to <strong style={{color:'#1a3a5c'}}>genuinely grow</strong> wealth in real terms</div>
+            <div style={{fontSize:'0.84rem',color:'#16a34a',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>🎯 TO BEAT INFLATION</div>
+            <div style={{fontSize:'2.22rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{rate+3}%+ p.a.</div>
+            <div style={{fontSize:'0.98rem',color:'#5a7d9a',lineHeight:1.6}}>Earn at least {rate+3}% to <strong style={{color:'#1a3a5c'}}>genuinely grow</strong> wealth in real terms</div>
           </div>
         </div>
 
         <div style={{background:'linear-gradient(135deg,#f0f4f8,#fff)',borderRadius:14,padding:'14px 16px 14px 20px',border:'1px solid rgba(26,58,92,0.1)',borderLeft:'4px solid #1a3a5c',boxShadow:'0 2px 14px rgba(26,58,92,0.06)'}}>
-          <div style={{fontSize:'0.7rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
+          <div style={{fontSize:'1.06rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
             💡 A Bank FD at ~7% barely beats {rate}% inflation after tax. Equity mutual funds averaging <strong style={{color:'#1a3a5c'}}>12–14% p.a.</strong> are one of India's most powerful long-term inflation hedges.
           </div>
-          <div style={{fontSize:'0.62rem',color:'#8aacbf',fontStyle:'italic'}}>Idle cash loses value silently. Invested money fights back.</div>
+          <div style={{fontSize:'0.94rem',color:'#8aacbf',fontStyle:'italic'}}>Idle cash loses value silently. Invested money fights back.</div>
         </div>
 
         </React.Fragment>}
@@ -31144,9 +31208,9 @@ function App() {
         {/* Hero stat — navy card: what you'll need at year N */}
         <div style={{background:'linear-gradient(135deg,#1a3a5c,#1e4570)',borderRadius:18,padding:'22px 20px',marginBottom:14,boxShadow:'0 8px 32px rgba(26,58,92,0.28)',position:'relative',overflow:'hidden'}}>
           <div style={{position:'absolute',inset:0,opacity:0.05,backgroundImage:'radial-gradient(circle,#fff 1px,transparent 1px)',backgroundSize:'24px 24px',pointerEvents:'none'}}/>
-          <div style={{fontSize:'0.58rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>📆 In year {years} ({targetYear}), your {period} expense will be</div>
-          <div style={{fontSize:'3rem',fontWeight:'900',color:'#bde9e4',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(period==='monthly' ? lastYearCost/12 : lastYearCost))}</div>
-          <div style={{fontSize:'0.8rem',color:'rgba(255,255,255,0.65)'}}>vs <strong style={{color:'rgba(255,255,255,0.85)'}}>{fmtRs(amount)}{periodLabel}</strong> today</div>
+          <div style={{fontSize:'0.86rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>📆 In year {years} ({targetYear}), your {period} expense will be</div>
+          <div style={{fontSize:'4.1rem',fontWeight:'900',color:'#bde9e4',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(period==='monthly' ? lastYearCost/12 : lastYearCost))}</div>
+          <div style={{fontSize:'1.18rem',color:'rgba(255,255,255,0.65)'}}>vs <strong style={{color:'rgba(255,255,255,0.85)'}}>{fmtRs(amount)}{periodLabel}</strong> today</div>
         </div>
 
         {/* Year-by-year visual table */}
@@ -31154,14 +31218,14 @@ function App() {
           var maxCost = annualAmount * Math.pow(1+rate/100, years);
           return(
             <div style={{background:'#fff',borderRadius:16,padding:'16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 4px 20px rgba(26,58,92,0.07)',borderTop:'3px solid #bde9e4'}}>
-              <div style={{fontSize:'0.6rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📅 YEAR-BY-YEAR EXPENSE — {fmtRs(amount)}{periodLabel} in today's money</div>
-              <div style={{fontSize:'0.58rem',color:'#8aacbf',marginBottom:12}}>Each year your same lifestyle costs MORE due to inflation</div>
+              <div style={{fontSize:'0.9rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📅 YEAR-BY-YEAR EXPENSE — {fmtRs(amount)}{periodLabel} in today's money</div>
+              <div style={{fontSize:'0.86rem',color:'#8aacbf',marginBottom:12}}>Each year your same lifestyle costs MORE due to inflation</div>
               {/* Header row */}
-              <div style={{display:'grid',gridTemplateColumns:'44px 1fr 95px 64px',gap:8,padding:'4px 6px',marginBottom:4}}>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>ANNUAL EXPENSE</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>CUMULATIVE</div>
-                <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>vs TODAY</div>
+              <div style={{display:'grid',gridTemplateColumns:'54px 1fr 112px 76px',gap:8,padding:'4px 6px',marginBottom:4}}>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>ANNUAL EXPENSE</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>CUMULATIVE</div>
+                <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>vs TODAY</div>
               </div>
               <div style={{maxHeight:340,overflowY:'auto',paddingRight:2}}>
                 {Array.from({length:years},function(_,i){return i+1;}).map(function(y){
@@ -31173,16 +31237,16 @@ function App() {
                   var rowColor = heat > 0.7 ? '#1a3a5c' : heat > 0.4 ? '#2e6b8a' : '#bde9e4';
                   var isLast = y===years;
                   return(
-                    <div key={y} style={{display:'grid',gridTemplateColumns:'44px 1fr 95px 64px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(189,233,228,0.12)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}}>
-                      <div style={{fontSize:'0.58rem',fontWeight:'800',color:isLast?'#1a3a5c':'#8aacbf'}}>Yr {y}</div>
+                    <div key={y} style={{display:'grid',gridTemplateColumns:'54px 1fr 112px 76px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(189,233,228,0.12)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}}>
+                      <div style={{fontSize:'0.86rem',fontWeight:'800',color:isLast?'#1a3a5c':'#8aacbf'}}>Yr {y}</div>
                       <div>
-                        <div style={{fontSize:'0.72rem',fontWeight:'900',color:'#1a3a5c',marginBottom:3}}>{fmtRs(Math.round(cost))}</div>
+                        <div style={{fontSize:'1.08rem',fontWeight:'900',color:'#1a3a5c',marginBottom:3}}>{fmtRs(Math.round(cost))}</div>
                         <div style={{height:5,borderRadius:3,background:'#f0f4f8',overflow:'hidden'}}>
                           <div style={{height:'100%',width:barW+'%',background:'linear-gradient(90deg,#bde9e4,'+rowColor+')',borderRadius:3,transition:'width 0.3s'}}/>
                         </div>
                       </div>
-                      <div style={{fontSize:'0.62rem',fontWeight:'700',color:'#5a7d9a',textAlign:'right'}}>{fmtRs(Math.round(cumul))}</div>
-                      <div style={{fontSize:'0.65rem',fontWeight:'900',color:rowColor,textAlign:'right'}}>+{pctMore}%</div>
+                      <div style={{fontSize:'0.94rem',fontWeight:'700',color:'#5a7d9a',textAlign:'right'}}>{fmtRs(Math.round(cumul))}</div>
+                      <div style={{fontSize:'0.98rem',fontWeight:'900',color:rowColor,textAlign:'right'}}>+{pctMore}%</div>
                     </div>
                   );
                 })}
@@ -31194,23 +31258,23 @@ function App() {
         {/* Insights */}
         <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10,marginBottom:12}}>
           <div style={{background:'rgba(189,233,228,0.18)',borderRadius:14,padding:'15px 13px',border:'1px solid rgba(26,58,92,0.12)'}}>
-            <div style={{fontSize:'0.55rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>⏱ EXPENSE DOUBLES IN</div>
-            <div style={{fontSize:'1.55rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{halvingYrs} yrs</div>
-            <div style={{fontSize:'0.65rem',color:'#5a7d9a',lineHeight:1.6}}>Your {fmtRs(amount)}{periodLabel} spend will <strong style={{color:'#1a3a5c'}}>cost twice as much</strong> in {halvingYrs} years</div>
+            <div style={{fontSize:'0.84rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>⏱ EXPENSE DOUBLES IN</div>
+            <div style={{fontSize:'2.22rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{halvingYrs} yrs</div>
+            <div style={{fontSize:'0.98rem',color:'#5a7d9a',lineHeight:1.6}}>Your {fmtRs(amount)}{periodLabel} spend will <strong style={{color:'#1a3a5c'}}>cost twice as much</strong> in {halvingYrs} years</div>
           </div>
           <div style={{background:'rgba(26,58,92,0.05)',borderRadius:14,padding:'15px 13px',border:'1px solid rgba(26,58,92,0.12)'}}>
-            <div style={{fontSize:'0.55rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>💸 EXTRA COST DUE TO INFLATION</div>
-            <div style={{fontSize:'1.55rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:4}}>{fmtRs(Math.round(extraNeeded))}</div>
-            <div style={{fontSize:'0.58rem',color:'#8aacbf',marginBottom:5}}>on top of the {fmtRs(Math.round(nominalTotal))} you'd need with zero inflation</div>
-            <div style={{fontSize:'0.65rem',color:'#5a7d9a',lineHeight:1.4}}><strong style={{color:'#1a3a5c'}}>Total needed: {fmtRs(Math.round(inflAdjTotal))}</strong></div>
+            <div style={{fontSize:'0.84rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>💸 EXTRA COST DUE TO INFLATION</div>
+            <div style={{fontSize:'2.22rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:4}}>{fmtRs(Math.round(extraNeeded))}</div>
+            <div style={{fontSize:'0.86rem',color:'#8aacbf',marginBottom:5}}>on top of the {fmtRs(Math.round(nominalTotal))} you'd need with zero inflation</div>
+            <div style={{fontSize:'0.98rem',color:'#5a7d9a',lineHeight:1.4}}><strong style={{color:'#1a3a5c'}}>Total needed: {fmtRs(Math.round(inflAdjTotal))}</strong></div>
           </div>
         </div>
 
 <div style={{background:'linear-gradient(135deg,#f0f7f6,#fff)',borderRadius:14,padding:'14px 16px 14px 20px',border:'1px solid rgba(26,58,92,0.1)',borderLeft:'4px solid #bde9e4',boxShadow:'0 2px 14px rgba(26,58,92,0.06)',marginBottom:12}}>
-          <div style={{fontSize:'0.7rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
+          <div style={{fontSize:'1.06rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
             💡 This is why retirement planning needs an <strong style={{color:'#1a3a5c'}}>inflation buffer</strong>. If you plan to spend {fmtRs(amount)}{periodLabel}, you won't need {fmtRs(Math.round(nominalTotal))} — you'll need <strong style={{color:'#1a3a5c'}}>{fmtRs(Math.round(inflAdjTotal))}</strong> to maintain the same lifestyle over {years} years.
           </div>
-          <div style={{fontSize:'0.62rem',color:'#8aacbf',fontStyle:'italic'}}>Plan for more. Inflation is silent but relentless.</div>
+          <div style={{fontSize:'0.94rem',color:'#8aacbf',fontStyle:'italic'}}>Plan for more. Inflation is silent but relentless.</div>
         </div>
 
 </React.Fragment>}
@@ -31220,15 +31284,15 @@ function App() {
 
         {/* Auto-pulled values banner */}
         <div style={{background:'rgba(189,233,228,0.18)',borderRadius:12,padding:'12px 16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.12)',display:'flex',alignItems:'center',gap:10}}>
-          <span style={{fontSize:'1.1rem'}}>🔗</span>
-          <div style={{fontSize:'0.68rem',color:'#5a7d9a',lineHeight:1.6}}>
+          <span style={{fontSize:'1.56rem'}}>🔗</span>
+          <div style={{fontSize:'1.02rem',color:'#5a7d9a',lineHeight:1.6}}>
             Using your Section 2 settings — current {period} expense: <strong style={{color:'#1a3a5c'}}>{fmtRs(amount)}{periodLabel}</strong> &nbsp;·&nbsp; Inflation rate: <strong style={{color:'#1a3a5c'}}>{rate}%</strong>
           </div>
         </div>
 
         {/* Corpus duration input */}
         <div style={{background:'#fff',borderRadius:18,padding:'18px',marginBottom:16,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 4px 20px rgba(26,58,92,0.08)',borderTop:'3px solid #1a3a5c'}}>
-          <div style={{fontSize:'0.62rem',fontWeight:'800',color:'#1a3a5c',marginBottom:10,letterSpacing:'1px',display:'flex',alignItems:'center',gap:6}}>
+          <div style={{fontSize:'0.94rem',fontWeight:'800',color:'#1a3a5c',marginBottom:10,letterSpacing:'1px',display:'flex',alignItems:'center',gap:6}}>
             <span style={{display:'inline-block',width:10,height:10,borderRadius:3,background:'linear-gradient(135deg,#1a3a5c,#254d78)'}}/>
             CORPUS DURATION
           </div>
@@ -31246,39 +31310,39 @@ function App() {
                 else if(n>100){setCorpusYearsInput('100');setCorpusYears(100);}
                 else setCorpusYearsInput(String(n));
               }}
-              style={{flex:1,padding:'10px 14px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #c5d5e0',borderRadius:12,fontSize:'1rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800}}
+              style={{flex:1,padding:'10px 14px',background:'#f8fafc',color:'#1a3a5c',border:'2px solid #c5d5e0',borderRadius:12,fontSize:'1.44rem',outline:'none',fontFamily:'Nunito,sans-serif',fontWeight:800}}
             />
-            <span style={{fontSize:'0.85rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>years</span>
+            <span style={{fontSize:'1.26rem',fontWeight:'800',color:'#1a3a5c',whiteSpace:'nowrap'}}>years</span>
           </div>
-          <div style={{fontSize:'0.6rem',color:'#8aacbf',marginTop:6}}>How many years do you need this corpus to last? (e.g. years in retirement)</div>
+          <div style={{fontSize:'0.9rem',color:'#8aacbf',marginTop:6}}>How many years do you need this corpus to last? (e.g. years in retirement)</div>
         </div>
 
         {/* Hero result */}
         <div style={{background:'linear-gradient(135deg,#1a3a5c,#1e4570)',borderRadius:18,padding:'22px 20px',marginBottom:14,boxShadow:'0 8px 32px rgba(26,58,92,0.28)',position:'relative',overflow:'hidden'}}>
           <div style={{position:'absolute',inset:0,opacity:0.05,backgroundImage:'radial-gradient(circle,#fff 1px,transparent 1px)',backgroundSize:'24px 24px',pointerEvents:'none'}}/>
-          <div style={{fontSize:'0.58rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>🏦 TOTAL CORPUS REQUIRED</div>
-          <div style={{fontSize:'3rem',fontWeight:'900',color:'#bde9e4',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(corpusTotal))}</div>
-          <div style={{fontSize:'0.8rem',color:'rgba(255,255,255,0.65)',marginBottom:14}}>to sustain <strong style={{color:'rgba(255,255,255,0.85)'}}>{fmtRs(amount)}{periodLabel}</strong> (today's money), growing at <strong style={{color:'#bde9e4'}}>{rate}% p.a.</strong> for {corpusYears} years</div>
+          <div style={{fontSize:'0.86rem',color:'rgba(255,255,255,0.55)',fontWeight:'700',letterSpacing:'1.5px',marginBottom:6,textTransform:'uppercase'}}>🏦 TOTAL CORPUS REQUIRED</div>
+          <div style={{fontSize:'4.1rem',fontWeight:'900',color:'#bde9e4',lineHeight:1,marginBottom:4,letterSpacing:'-1px'}}>{fmtRs(Math.round(corpusTotal))}</div>
+          <div style={{fontSize:'1.18rem',color:'rgba(255,255,255,0.65)',marginBottom:14}}>to sustain <strong style={{color:'rgba(255,255,255,0.85)'}}>{fmtRs(amount)}{periodLabel}</strong> (today's money), growing at <strong style={{color:'#bde9e4'}}>{rate}% p.a.</strong> for {corpusYears} years</div>
           <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10}}>
             <div style={{background:'rgba(255,255,255,0.08)',borderRadius:10,padding:'10px 12px'}}>
-              <div style={{fontSize:'0.52rem',color:'rgba(255,255,255,0.55)',fontWeight:'800',marginBottom:3}}>YEAR 1 EXPENSE</div>
-              <div style={{fontSize:'1.1rem',fontWeight:'900',color:'#fff'}}>{fmtRs(Math.round(corpusStartExp))}<span style={{fontSize:'0.6rem',opacity:0.7}}>/yr</span></div>
+              <div style={{fontSize:'0.8rem',color:'rgba(255,255,255,0.55)',fontWeight:'800',marginBottom:3}}>YEAR 1 EXPENSE</div>
+              <div style={{fontSize:'1.56rem',fontWeight:'900',color:'#fff'}}>{fmtRs(Math.round(corpusStartExp))}<span style={{fontSize:'0.9rem',opacity:0.7}}>/yr</span></div>
             </div>
             <div style={{background:'rgba(255,255,255,0.08)',borderRadius:10,padding:'10px 12px'}}>
-              <div style={{fontSize:'0.52rem',color:'rgba(255,255,255,0.55)',fontWeight:'800',marginBottom:3}}>YEAR {corpusYears} EXPENSE</div>
-              <div style={{fontSize:'1.1rem',fontWeight:'900',color:'#bde9e4'}}>{fmtRs(Math.round(corpusLastExp))}<span style={{fontSize:'0.6rem',opacity:0.7}}>/yr</span></div>
+              <div style={{fontSize:'0.8rem',color:'rgba(255,255,255,0.55)',fontWeight:'800',marginBottom:3}}>YEAR {corpusYears} EXPENSE</div>
+              <div style={{fontSize:'1.56rem',fontWeight:'900',color:'#bde9e4'}}>{fmtRs(Math.round(corpusLastExp))}<span style={{fontSize:'0.9rem',opacity:0.7}}>/yr</span></div>
             </div>
           </div>
         </div>
 
         {/* Year-by-year table */}
         <div style={{background:'#fff',borderRadius:16,padding:'16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 4px 20px rgba(26,58,92,0.07)',borderTop:'3px solid #bde9e4'}}>
-          <div style={{fontSize:'0.6rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📅 YEAR-BY-YEAR BREAKDOWN</div>
-          <div style={{fontSize:'0.58rem',color:'#8aacbf',marginBottom:12}}>Annual expense grows each year with inflation</div>
-          <div style={{display:'grid',gridTemplateColumns:'44px 1fr 95px',gap:8,padding:'4px 6px',marginBottom:4}}>
-            <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
-            <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>ANNUAL EXPENSE</div>
-            <div style={{fontSize:'0.48rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>CUMULATIVE</div>
+          <div style={{fontSize:'0.9rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📅 YEAR-BY-YEAR BREAKDOWN</div>
+          <div style={{fontSize:'0.86rem',color:'#8aacbf',marginBottom:12}}>Annual expense grows each year with inflation</div>
+          <div style={{display:'grid',gridTemplateColumns:'54px 1fr 112px',gap:8,padding:'4px 6px',marginBottom:4}}>
+            <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>YEAR</div>
+            <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase'}}>ANNUAL EXPENSE</div>
+            <div style={{fontSize:'0.75rem',color:'#8aacbf',fontWeight:'800',textTransform:'uppercase',textAlign:'right'}}>CUMULATIVE</div>
           </div>
           <div style={{maxHeight:340,overflowY:'auto',paddingRight:2}}>
             {(function(){
@@ -31292,15 +31356,15 @@ function App() {
                 var heat=(y-1)/(Math.max(corpusYears-1,1));
                 var barCol=heat>0.6?'#1a3a5c':heat>0.3?'#2e6b8a':'#bde9e4';
                 rows.push(
-                  React.createElement('div',{key:y,style:{display:'grid',gridTemplateColumns:'44px 1fr 95px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(189,233,228,0.12)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}},
-                    React.createElement('div',{style:{fontSize:'0.58rem',fontWeight:'800',color:isLast?'#1a3a5c':'#8aacbf'}},'Yr '+y),
+                  React.createElement('div',{key:y,style:{display:'grid',gridTemplateColumns:'54px 1fr 112px',gap:8,padding:'5px 6px',borderRadius:7,background:isLast?'rgba(189,233,228,0.12)':'transparent',borderBottom:'1px solid rgba(26,58,92,0.05)',alignItems:'center'}},
+                    React.createElement('div',{style:{fontSize:'0.86rem',fontWeight:'800',color:isLast?'#1a3a5c':'#8aacbf'}},'Yr '+y),
                     React.createElement('div',null,
-                      React.createElement('div',{style:{fontSize:'0.72rem',fontWeight:'900',color:'#1a3a5c',marginBottom:3}},fmtRs(Math.round(exp))),
+                      React.createElement('div',{style:{fontSize:'1.08rem',fontWeight:'900',color:'#1a3a5c',marginBottom:3}},fmtRs(Math.round(exp))),
                       React.createElement('div',{style:{height:5,borderRadius:3,background:'#f0f4f8',overflow:'hidden'}},
                         React.createElement('div',{style:{height:'100%',width:barW+'%',background:'linear-gradient(90deg,#bde9e4,'+barCol+')',borderRadius:3,transition:'width 0.3s'}})
                       )
                     ),
-                    React.createElement('div',{style:{fontSize:'0.62rem',fontWeight:'700',color:'#5a7d9a',textAlign:'right'}},fmtRs(Math.round(cumul)))
+                    React.createElement('div',{style:{fontSize:'0.94rem',fontWeight:'700',color:'#5a7d9a',textAlign:'right'}},fmtRs(Math.round(cumul)))
                   )
                 );
               }
@@ -31311,21 +31375,21 @@ function App() {
 
         {/* Chart */}
         <div style={{background:'#fff',borderRadius:16,padding:'16px',marginBottom:14,border:'1px solid rgba(26,58,92,0.1)',boxShadow:'0 4px 20px rgba(26,58,92,0.07)',borderTop:'3px solid #1a3a5c'}}>
-          <div style={{fontSize:'0.6rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📈 EXPENSE GROWTH OVER {corpusYears} YEARS</div>
-          <div style={{fontSize:'0.58rem',color:'#8aacbf',marginBottom:10}}>Annual expense rising with {rate}% inflation</div>
+          <div style={{fontSize:'0.9rem',fontWeight:'800',color:'#1a3a5c',letterSpacing:'1.2px',marginBottom:4}}>📈 EXPENSE GROWTH OVER {corpusYears} YEARS</div>
+          <div style={{fontSize:'0.86rem',color:'#8aacbf',marginBottom:10}}>Annual expense rising with {rate}% inflation</div>
           <CorpusChart startExp={corpusStartExp} rate={rate} corpusYears={corpusYears}/>
           <div style={{display:'flex',justifyContent:'space-between',marginTop:8}}>
-            <span style={{fontSize:'0.6rem',color:'#8aacbf',fontWeight:'700'}}>Yr 1: {fmtRs(Math.round(corpusStartExp))}</span>
-            <span style={{fontSize:'0.6rem',color:'#1a3a5c',fontWeight:'800'}}>Yr {corpusYears}: {fmtRs(Math.round(corpusLastExp))}</span>
+            <span style={{fontSize:'0.9rem',color:'#8aacbf',fontWeight:'700'}}>Yr 1: {fmtRs(Math.round(corpusStartExp))}</span>
+            <span style={{fontSize:'0.9rem',color:'#1a3a5c',fontWeight:'800'}}>Yr {corpusYears}: {fmtRs(Math.round(corpusLastExp))}</span>
           </div>
         </div>
 
         {/* Explanation */}
         <div style={{background:'linear-gradient(135deg,#f0f7f6,#fff)',borderRadius:14,padding:'14px 16px 14px 20px',border:'1px solid rgba(26,58,92,0.1)',borderLeft:'4px solid #bde9e4',boxShadow:'0 2px 14px rgba(26,58,92,0.06)'}}>
-          <div style={{fontSize:'0.7rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
+          <div style={{fontSize:'1.06rem',color:'#5a7d9a',lineHeight:1.75,marginBottom:5}}>
             💡 This shows how your expenses grow over time due to inflation, and the total amount you would need to fund this goal. The total corpus of <strong style={{color:'#1a3a5c'}}>{fmtRs(Math.round(corpusTotal))}</strong> is the lump sum required today to cover all {corpusYears} years of inflation-adjusted expenses, starting from your current {fmtRs(amount)}{periodLabel}.
           </div>
-          <div style={{fontSize:'0.62rem',color:'#8aacbf',fontStyle:'italic'}}>Start early — the earlier you build this corpus, the less you need to save each month.</div>
+          <div style={{fontSize:'0.94rem',color:'#8aacbf',fontStyle:'italic'}}>Start early — the earlier you build this corpus, the less you need to save each month.</div>
         </div>
 
         </React.Fragment>}
@@ -41801,3 +41865,168 @@ ReactDOM.render(<App/>, document.getElementById('root'));
 
 })();
 </script>
+
+<style id="g8v2-theme">
+/* ══ 3B v2 — LUXE MARBLE THEME (sandbox) ══ */
+#g8_gameScreen{background:linear-gradient(180deg,#faf8f4 0%,#f4efe7 100%)!important;box-shadow:inset 0 0 0 1px rgba(201,168,76,0.25)!important;}
+#g8_gameScreen::before{background-image:radial-gradient(circle at 15% 12%,rgba(201,168,76,0.10),transparent 40%),radial-gradient(circle at 85% 88%,rgba(201,168,76,0.08),transparent 45%)!important;}
+#game8 .buckets-row{background:url("3b-marble.png") center/cover,linear-gradient(160deg,#f7f3ec,#efe9df)!important;background-blend-mode:overlay!important;border:1.5px solid rgba(201,168,76,0.35)!important;box-shadow:0 14px 40px rgba(90,70,30,0.18),inset 0 1px 0 rgba(255,255,255,0.8)!important;}
+#game8 .buckets-row::before{display:none!important;}
+#game8 .bucket-svg{max-width:230px!important;filter:drop-shadow(0 14px 22px rgba(60,40,10,0.30))!important;}
+#game8 .bucket-wrap:hover .bucket-svg{filter:drop-shadow(0 18px 30px rgba(60,40,10,0.4)) brightness(1.05)!important;}
+#game8 .bucket-label b{font-family:'Lora',serif!important;font-size:1.16rem!important;letter-spacing:0.2px;text-shadow:none!important;}
+#game8 .bl-emergency b{color:#7a1420!important;}
+#game8 .bl-stability b{color:#173a63!important;}
+#game8 .bl-growth b{color:#1d5c2a!important;}
+#game8 .bucket-label span{color:#8a7d68!important;}
+#game8 .bucket-count{background:linear-gradient(135deg,#c9a84c,#e6c86a)!important;color:#3b2f10!important;border:1px solid #fff;}
+/* topbar goes ivory+gold */
+#game8 .g8-topbar{background:linear-gradient(135deg,#fffdf8,#f3ecdf)!important;border:1.5px solid rgba(201,168,76,0.5);box-shadow:0 6px 22px rgba(90,70,30,0.15)!important;}
+#game8 .g8-tb-titles h3{color:#1a3a5c!important;}
+#game8 .g8-tb-titles h3 span{color:#b3922f!important;}
+#game8 .g8-tb-titles p{color:#8a7d68!important;}
+#game8 .g8-scorepill{background:linear-gradient(135deg,#c9a84c,#e6c86a)!important;border:1.5px solid #fff!important;box-shadow:0 3px 12px rgba(201,168,76,0.5);}
+#game8 .g8-sp-num{color:#2e2408!important;}
+#game8 .g8-sp-lbl{color:rgba(46,36,8,0.55)!important;}
+#game8 .g8-progress{background:rgba(201,168,76,0.18)!important;}
+#game8 .g8-progress-fill{background:linear-gradient(90deg,#c9a84c,#e6c86a)!important;box-shadow:0 0 10px rgba(201,168,76,0.6)!important;}
+#game8 .item-card{border-left:5px solid #c9a84c!important;border-color:rgba(201,168,76,0.4)!important;background:linear-gradient(135deg,#fffdf9,#faf5ea)!important;}
+#game8 .item-card .drag-hint{background:rgba(201,168,76,0.15)!important;color:#8a6e20!important;}
+/* start screen */
+#game8 .g8-startboard{background:linear-gradient(180deg,#faf8f4,#f2ecdf)!important;box-shadow:inset 0 0 0 1px rgba(201,168,76,0.25)!important;}
+#g8_heroVideoCard{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 12px 36px rgba(90,70,30,0.25);margin-bottom:14px;}
+#g8_heroVideoCard video{display:block;width:100%;height:clamp(180px,32vh,300px);object-fit:cover;object-position:center 55%;}
+#g8_heroVideoCard .hv-cap{position:absolute;left:0;right:0;bottom:0;padding:20px 22px 14px;background:linear-gradient(transparent,rgba(20,14,4,0.72));display:flex;align-items:flex-end;justify-content:space-between;gap:10px;}
+#g8_heroVideoCard .hv-cap h2{font-family:'Lora',serif;color:#fff;font-size:1.5rem;margin:0;font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,0.5);}
+#g8_heroVideoCard .hv-cap p{color:rgba(255,255,255,0.85);font-size:0.75rem;margin:2px 0 0;}
+#g8_heroVideoCard .hv-tag{background:rgba(201,168,76,0.9);color:#2e2408;border-radius:20px;padding:3px 12px;font-size:0.58rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;}
+#g8_goldStart{position:relative;display:block;margin:0 auto;cursor:pointer;border:none;padding:0;background:none;transition:transform .16s;-webkit-tap-highlight-color:transparent;}
+#g8_goldStart .gs-face{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;padding:20px 52px 22px;border-radius:60px;background:linear-gradient(178deg,#e9cf83 0%,#d4af5a 38%,#b98f34 72%,#caa64e 100%);box-shadow:0 2px 0 rgba(255,255,255,0.55) inset,0 -3px 8px rgba(90,60,10,0.35) inset,0 10px 0 #8a6a24,0 16px 30px rgba(120,90,25,0.45);overflow:hidden;}
+#g8_goldStart .gs-face::before{content:'';position:absolute;inset:7px;border-radius:52px;border:2px solid rgba(120,88,26,0.55);box-shadow:0 1px 0 rgba(255,246,214,0.6);pointer-events:none;}
+#g8_goldStart .gs-face::after{content:'';position:absolute;top:-60%;left:-30%;width:36%;height:220%;transform:rotate(18deg);background:linear-gradient(90deg,transparent,rgba(255,252,235,0.5),transparent);animation:g8_btnshine 3.4s ease-in-out infinite;}
+@keyframes g8_btnshine{0%,55%{left:-36%;}80%,100%{left:130%;}}
+#g8_goldStart .gs-txt{font-family:'Lora',serif;font-weight:700;font-size:1.9rem;letter-spacing:0.5px;color:#4a3408;text-shadow:0 1px 0 rgba(255,248,220,0.75),0 -1px 1px rgba(70,48,8,0.5);}
+#g8_goldStart .gs-arrow{width:46px;height:46px;border-radius:50%;border:2.5px solid rgba(74,52,8,0.65);display:flex;align-items:center;justify-content:center;font-size:1.15rem;color:#4a3408;background:rgba(255,248,220,0.28);box-shadow:0 1px 0 rgba(255,248,220,0.6),0 1px 3px rgba(96,68,12,0.4) inset;padding-left:4px;}
+#g8_goldStart:hover{transform:translateY(-2px);}
+#g8_goldStart:hover .gs-face{box-shadow:0 2px 0 rgba(255,255,255,0.6) inset,0 -3px 8px rgba(90,60,10,0.35) inset,0 12px 0 #8a6a24,0 20px 40px rgba(120,90,25,0.55);}
+#g8_goldStart:active{transform:translateY(6px);}
+#g8_goldStart:active .gs-face{box-shadow:0 2px 0 rgba(255,255,255,0.5) inset,0 -3px 8px rgba(90,60,10,0.4) inset,0 4px 0 #8a6a24,0 8px 16px rgba(120,90,25,0.4);}
+#game8 .g8-bpv{background:url("3b-marble.png") center/cover,linear-gradient(160deg,#f7f3ec,#efe9df)!important;background-blend-mode:overlay!important;border:1.5px solid rgba(201,168,76,0.35);box-shadow:0 8px 24px rgba(90,70,30,0.15)!important;}
+#game8 .g8-bpv .hwp-l{text-shadow:none!important;}
+#game8 .g8-bpv .bl-emergency .hwp-l{color:#7a1420!important;}
+#game8 .g8-bpv .bl-stability .hwp-l{color:#173a63!important;}
+#game8 .g8-bpv .bl-growth .hwp-l{color:#1d5c2a!important;}
+/* results reveal — marble too */
+#game8 .g8-reveal{background:url("3b-marble.png") center/cover,linear-gradient(160deg,#f7f3ec,#efe9df)!important;background-blend-mode:overlay!important;border:1.5px solid rgba(201,168,76,0.35);}
+#game8 .g8-rcol .hwp-l{text-shadow:none!important;}
+#game8 .g8-rcol.bl-emergency .hwp-l{color:#7a1420!important;}
+#game8 .g8-rcol.bl-stability .hwp-l{color:#173a63!important;}
+#game8 .g8-rcol.bl-growth .hwp-l{color:#1d5c2a!important;}
+#game8 .g8-ichip{color:#4a3f28!important;background:rgba(255,255,255,0.75)!important;border:1px solid rgba(201,168,76,0.3);}
+#game8 .g8-ichip.miss{color:#8f1d12!important;background:rgba(214,80,60,0.14)!important;}
+#game8 .g8-verdict{color:#8a7d68!important;}
+#game8 .g8-rscore{color:#3b2f10!important;background:rgba(201,168,76,0.3)!important;}
+#game8 .g8-rcol::before{display:none!important;}
+#game8 .bucket-svg{-webkit-mask-image:radial-gradient(ellipse 62% 72% at 50% 48%,#000 52%,transparent 78%);mask-image:radial-gradient(ellipse 62% 72% at 50% 48%,#000 52%,transparent 78%);}
+/* FX: squash + ripple + gold confetti + flyer */
+#game8 .bucket-wrap.g8fx-squash .bucket-svg{animation:g8fx_squash .5s cubic-bezier(.34,1.56,.64,1)!important;}
+@keyframes g8fx_squash{0%{transform:scale(1,1);}30%{transform:scale(1.1,0.86);}60%{transform:scale(0.95,1.07);}100%{transform:scale(1,1);}}
+.g8fx-ripple{position:fixed;border:3px solid rgba(201,168,76,0.85);border-radius:50%;pointer-events:none;z-index:60;animation:g8fx_ripple .7s ease-out forwards;}
+@keyframes g8fx_ripple{0%{transform:scale(0.25);opacity:0.95;}100%{transform:scale(1.5);opacity:0;}}
+.g8fx-conf{position:fixed;width:9px;height:9px;pointer-events:none;z-index:10000;border-radius:2px;}
+.g8fx-plus{position:fixed;z-index:10001;font-family:'Lora',serif;font-weight:700;font-size:1.5rem;color:#b3922f;text-shadow:0 0 12px rgba(201,168,76,0.7),0 1px 2px rgba(0,0,0,0.25);pointer-events:none;transition:all 1s cubic-bezier(.2,.7,.3,1);}
+/* flashes on light stage */
+@keyframes g8_flashOK{0%{filter:drop-shadow(0 14px 22px rgba(60,40,10,0.3));transform:scale(1);}18%{filter:drop-shadow(0 0 34px rgba(36,190,90,1)) drop-shadow(0 0 70px rgba(36,190,90,0.8)) brightness(1.22) saturate(1.25);transform:scale(1.08);}40%{filter:drop-shadow(0 14px 22px rgba(60,40,10,0.3));transform:scale(1);}62%{filter:drop-shadow(0 0 34px rgba(36,190,90,1)) drop-shadow(0 0 70px rgba(36,190,90,0.8)) brightness(1.22) saturate(1.25);transform:scale(1.08);}100%{filter:drop-shadow(0 14px 22px rgba(60,40,10,0.3));transform:scale(1);}}
+@keyframes g8_flashWRONG{0%{filter:drop-shadow(0 14px 22px rgba(60,40,10,0.3));transform:translateX(0);}12%{filter:drop-shadow(0 0 34px rgba(224,52,40,1)) drop-shadow(0 0 70px rgba(224,52,40,0.85)) brightness(1.18) saturate(1.3);transform:translateX(-7px) scale(1.04);}28%{transform:translateX(7px) scale(1.04);}44%{filter:drop-shadow(0 0 34px rgba(224,52,40,1)) drop-shadow(0 0 70px rgba(224,52,40,0.85)) brightness(1.18);transform:translateX(-6px);}60%{transform:translateX(6px);}76%{filter:drop-shadow(0 0 26px rgba(224,52,40,0.85));transform:translateX(-3px);}100%{filter:drop-shadow(0 14px 22px rgba(60,40,10,0.3));transform:translateX(0);}}
+#game8 .g8-pill{background:rgba(201,168,76,0.16)!important;color:#8a6e20!important;border:1px solid rgba(201,168,76,0.35);}
+</style>
+<script id="g8v2-js">
+(function(){
+  // start-screen: swap gradient hero for the ambient video + gold button
+  function upgradeStart(){
+    var hero=document.querySelector('#g8_startScreen .game-hero');
+    if(hero&&!document.getElementById('g8_heroVideoCard')){
+      var vc=document.createElement('div');vc.id='g8_heroVideoCard';
+      vc.innerHTML='<video muted loop playsinline preload="none" poster="3b-hero-poster.jpg" data-src="3b-hero.mp4"></video><div class="hv-cap"><div><h2>3 Buckets</h2><p>Sort each product into the right bucket — Emergency, Stability, or Growth.</p></div><span class="hv-tag">🪣 Game · Financial Planning</span></div>';
+      hero.parentNode.replaceChild(vc,hero);
+    }
+    var btn=document.querySelector('#g8_startScreen .btn-gold');
+    if(btn&&!document.getElementById('g8_goldStart')){
+      var b=document.createElement('button');b.id='g8_goldStart';b.onclick=function(){g8_startGame();};
+      b.innerHTML='<span class="gs-face"><span class="gs-txt">Start Sorting!</span><span class="gs-arrow">\u25B6</span></span>';
+      btn.parentNode.replaceChild(b,btn);
+    }
+  }
+  // gold confetti/ripple/+10/squash on landing
+  var COLORS={emergency:['#c9a84c','#e6c86a','#8f1d12','#fff'],stability:['#c9a84c','#e6c86a','#173a63','#fff'],growth:['#c9a84c','#e6c86a','#1d5c2a','#fff']};
+  function confetti(x,y,b){var cols=COLORS[b]||COLORS.growth;for(var i=0;i<14;i++){var c=document.createElement('div');c.className='g8fx-conf';c.style.background=cols[i%cols.length];c.style.left=x+'px';c.style.top=y+'px';if(i%3===0)c.style.borderRadius='50%';document.body.appendChild(c);var a=Math.random()*Math.PI*2,v=60+Math.random()*95,vx=Math.cos(a)*v,vy=Math.sin(a)*v-75,rot=Math.random()*720-360;c.animate([{transform:'translate(0,0) rotate(0)',opacity:1},{transform:'translate('+vx+'px,'+(vy+140)+'px) rotate('+rot+'deg)',opacity:0}],{duration:900+Math.random()*350,easing:'cubic-bezier(.2,.6,.4,1)'}).onfinish=(function(el){return function(){el.remove();};})(c);}}
+  function plusTen(x,y){var p=document.createElement('div');p.className='g8fx-plus';p.textContent='+10';p.style.left=x+'px';p.style.top=y+'px';document.body.appendChild(p);var pill=document.querySelector('#game8 .g8-scorepill');var tx=x,ty=y-90;if(pill){var r=pill.getBoundingClientRect();tx=r.left+r.width/2;ty=r.top+r.height/2;}requestAnimationFrame(function(){requestAnimationFrame(function(){p.style.left=tx+'px';p.style.top=ty+'px';p.style.opacity='0';p.style.fontSize='0.9rem';});});setTimeout(function(){p.remove();},1050);}
+  function ripple(b){var w=document.getElementById('g8_bwrap-'+b);if(!w)return;var s=w.querySelector('.bucket-svg');var r=s.getBoundingClientRect();var rp=document.createElement('div');rp.className='g8fx-ripple';var rw=r.width*0.62,rh=rw*0.24;rp.style.width=rw+'px';rp.style.height=rh+'px';rp.style.left=(r.left+r.width/2-rw/2)+'px';rp.style.top=(r.top+r.height*0.16-rh/2)+'px';document.body.appendChild(rp);setTimeout(function(){rp.remove();},720);}
+  var oF=window.g8_flyIcon;
+  window.g8_flyIcon=function(b,it,ok){oF(b,it,ok);setTimeout(function(){var w=document.getElementById('g8_bwrap-'+b);if(!w)return;var r=w.getBoundingClientRect();var cx=r.left+r.width/2,cy=r.top+r.height*0.3;w.classList.add('g8fx-squash');setTimeout(function(){w.classList.remove('g8fx-squash');},520);ripple(b);if(ok){confetti(cx,cy,b);plusTen(cx,cy);}},960);};
+  var oU=window.g8_updateUI,shown=0;
+  window.g8_updateUI=function(){var t=g8_pts;oU();var el=document.getElementById('g8_scoreDisplay');if(!el)return;if(t===shown)return;var f=shown,st=8,i=0;var iv=setInterval(function(){i++;el.textContent=Math.round(f+(t-f)*i/st);if(i>=st){clearInterval(iv);shown=t;}},40);};
+  var oSG=window.showGame;
+  if(oSG){window.showGame=function(n){var r=oSG.apply(this,arguments);try{if(String(n)==='8'){var v=document.querySelector('#g8_heroVideoCard video');if(v&&!v.getAttribute('src')){v.setAttribute('src',v.getAttribute('data-src'));v.play().catch(function(){});}}}catch(e){}return r;};}
+  window.addEventListener('load',function(){upgradeStart();});
+})();
+</script>
+<style id="g8v2-teacher">
+/* ══ TEACHER / PROJECTOR SCALE + LUXE POPUP ══ */
+/* HUD */
+#game8 .g8-tb-titles h3{font-size:1.6rem!important;}
+#game8 .g8-tb-titles p{font-size:0.92rem!important;letter-spacing:1.6px!important;}
+#game8 .g8-sp-num{font-size:1.9rem!important;}
+#game8 .g8-sp-lbl{font-size:0.78rem!important;}
+#game8 .g8-sp-flame{font-size:1.3rem!important;}
+#game8 .g8-progress{height:14px!important;}
+/* item card */
+#game8 .item-card .item-name{font-size:1.6rem!important;}
+#game8 .item-card .item-desc{font-size:1.12rem!important;line-height:1.6!important;}
+#game8 .item-card .drag-hint{font-size:0.82rem!important;padding:6px 16px!important;}
+#game8 .item-icon-circle{width:112px!important;height:112px!important;min-width:112px!important;}
+#game8 .item-icon-circle svg{width:86px!important;height:86px!important;}
+#game8 .multi-badge{font-size:0.9rem!important;padding:4px 16px!important;}
+/* buckets */
+#game8 .bucket-label b{font-size:1.6rem!important;}
+#game8 .bucket-label span{font-size:0.85rem!important;letter-spacing:1px!important;}
+#game8 .bucket-count{width:32px!important;height:32px!important;font-size:0.95rem!important;}
+/* start screen */
+#g8_heroVideoCard .hv-cap h2{font-size:2.1rem!important;}
+#g8_heroVideoCard .hv-cap p{font-size:1.05rem!important;}
+#g8_heroVideoCard .hv-tag{font-size:0.78rem!important;padding:5px 16px!important;}
+#game8 .g8-step .e{font-size:2.1rem!important;}
+#game8 .g8-step .l{font-size:0.85rem!important;}
+#game8 .g8-step .n{width:28px!important;height:28px!important;font-size:0.85rem!important;}
+#game8 .g8-hw-sub{font-size:1.08rem!important;line-height:1.65!important;}
+#game8 .card-title{font-size:1.25rem!important;}
+#game8 .g8-bpv-title{font-size:0.82rem!important;}
+#game8 .g8-bpv .hwp-l{font-size:1.05rem!important;}
+#game8 .g8-pill{font-size:0.92rem!important;padding:7px 18px!important;}
+/* results */
+#game8 .g8-rhero h2{font-size:2.2rem!important;}
+#game8 .g8-rhero p{font-size:1.05rem!important;}
+#game8 .g8-ring{width:120px!important;height:120px!important;}
+#game8 .g8-ring .n{font-size:2.4rem!important;}
+#game8 .g8-ring .m{font-size:0.75rem!important;}
+#game8 .g8-stat .v{font-size:1.7rem!important;}
+#game8 .g8-stat .l{font-size:0.75rem!important;}
+#game8 .g8-revtitle{font-size:1.5rem!important;}
+#game8 .g8-revsub{font-size:0.95rem!important;}
+#game8 .g8-rcol .hwp-l{font-size:1.05rem!important;}
+#game8 .g8-rscore{font-size:0.85rem!important;padding:4px 14px!important;}
+#game8 .g8-ichip{font-size:0.88rem!important;padding:6px 8px!important;}
+#game8 .g8-verdict{font-size:0.8rem!important;}
+#game8 .g8-quote{font-size:1.15rem!important;}
+#game8 .g8-quote cite{font-size:0.85rem!important;}
+/* ── LUXE POPUP ── */
+#g8_popOverlay{background:rgba(46,36,8,0.45)!important;backdrop-filter:blur(4px);}
+#g8_popCard{border-radius:22px!important;border:1.5px solid rgba(201,168,76,0.55)!important;box-shadow:0 30px 80px rgba(60,40,10,0.45)!important;overflow:hidden;max-width:745px!important;width:min(94vw,745px)!important;}
+#g8_popCard .popup-header{background:linear-gradient(135deg,#fffdf8,#f3ecdf)!important;color:#1a3a5c!important;border-bottom:2px solid rgba(201,168,76,0.5)!important;padding:20px 24px!important;}
+#g8_popCard .popup-header [style*="font-style:italic"]{font-family:'Lora',serif!important;color:#1a3a5c!important;}
+#g8_popCard .popup-close{background:rgba(201,168,76,0.18)!important;color:#8a6e20!important;border:1px solid rgba(201,168,76,0.4)!important;width:38px!important;height:38px!important;font-size:1.1rem!important;border-radius:50%!important;}
+#g8_popCard .popup-body{background:linear-gradient(180deg,#fffdf9,#faf5ea)!important;padding:22px 24px!important;}
+#g8_popCard .popup-body [style*="border:2px solid var(--mint)"]{border:1.5px solid rgba(201,168,76,0.45)!important;background:#fffdf8!important;border-radius:14px!important;}
+#g8_popCard .btn.btn-primary{background:linear-gradient(135deg,#c9a84c,#e6c86a)!important;color:#2e2408!important;font-size:1.25rem!important;padding:18px 32px 18px 64px!important;border-radius:16px!important;box-shadow:0 8px 24px rgba(201,168,76,0.45)!important;font-weight:900!important;}
+</style>
+

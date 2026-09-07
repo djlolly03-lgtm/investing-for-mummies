@@ -1,0 +1,30 @@
+{
+  "id": "_crit-pw-fall",
+  "name": "CRITIC PW r1 — identical cube, four fall heights, three materials",
+  "chapter": 0,
+  "sky": "morning",
+  "par": 1,
+  "teaches": "Critic fixture (PW r1, independent of the builder's rigs). 0.90 m cube, rot 0.08 so the landing is essentially flat and vy reverses cleanly. Four fall distances: 0.80 / 1.60 / 2.60 / 4.00 m.",
+  "ammo": ["sip"],
+  "blocks": [
+    { "mat": "wood",  "x": 4.0,  "y": 1.25, "w": 0.90, "h": 0.90, "rot": 0.08 },
+    { "mat": "glass", "x": 6.4,  "y": 1.25, "w": 0.90, "h": 0.90, "rot": 0.08 },
+    { "mat": "stone", "x": 8.8,  "y": 1.25, "w": 0.90, "h": 0.90, "rot": 0.08 },
+
+    { "mat": "wood",  "x": 11.2, "y": 2.05, "w": 0.90, "h": 0.90, "rot": 0.08 },
+    { "mat": "glass", "x": 13.6, "y": 2.05, "w": 0.90, "h": 0.90, "rot": 0.08 },
+    { "mat": "stone", "x": 16.0, "y": 2.05, "w": 0.90, "h": 0.90, "rot": 0.08 },
+
+    { "mat": "wood",  "x": 18.4, "y": 3.05, "w": 0.90, "h": 0.90, "rot": 0.08 },
+    { "mat": "glass", "x": 20.8, "y": 3.05, "w": 0.90, "h": 0.90, "rot": 0.08 },
+    { "mat": "stone", "x": 23.2, "y": 3.05, "w": 0.90, "h": 0.90, "rot": 0.08 },
+
+    { "mat": "wood",  "x": 25.6, "y": 4.45, "w": 0.90, "h": 0.90, "rot": 0.08 },
+    { "mat": "glass", "x": 28.0, "y": 4.45, "w": 0.90, "h": 0.90, "rot": 0.08 },
+    { "mat": "stone", "x": 30.4, "y": 4.45, "w": 0.90, "h": 0.90, "rot": 0.08 }
+  ],
+  "villains": [
+    { "type": "lotteryUncle", "x": 34.00, "y": 0.56 }
+  ],
+  "props": []
+}

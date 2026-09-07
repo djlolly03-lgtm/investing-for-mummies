@@ -1,0 +1,45 @@
+{
+  "id": "_crit-pw-tilt",
+  "name": "CRITIC PW r1 — tilted cube, one height, three materials (slide / spin / rest)",
+  "chapter": 0,
+  "sky": "morning",
+  "par": 1,
+  "teaches": "Critic fixture (PW r1). Three identical 0.90 m cubes AT REST on the grass, so the loader's own settle cannot break anything. The scenario lifts them to an exact height and drops them.",
+  "ammo": [
+    "sip"
+  ],
+  "blocks": [
+    {
+      "mat": "wood",
+      "x": 9.0,
+      "y": 0.45,
+      "w": 0.9,
+      "h": 0.9,
+      "rot": 0.0
+    },
+    {
+      "mat": "glass",
+      "x": 14.0,
+      "y": 0.45,
+      "w": 0.9,
+      "h": 0.9,
+      "rot": 0.0
+    },
+    {
+      "mat": "stone",
+      "x": 19.0,
+      "y": 0.45,
+      "w": 0.9,
+      "h": 0.9,
+      "rot": 0.0
+    }
+  ],
+  "villains": [
+    {
+      "type": "lotteryUncle",
+      "x": 25.0,
+      "y": 0.56
+    }
+  ],
+  "props": []
+}

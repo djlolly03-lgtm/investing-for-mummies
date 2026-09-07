@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#1a3a5c">
+<title>Scam Slingshot</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>%F0%9F%8F%B9</text></svg>">
+
+<!-- ============================================================================
+     IMPORTMAP — everything is LOCAL. No CDN at runtime, ever.
+     three:                        src/vendor/three/build/three.module.js
+     three/addons/*:               src/vendor/three/addons/*      (curated subset)
+     @dimforge/rapier3d-compat:    src/vendor/rapier3d-compat/rapier.mjs (wasm inlined b64)
+     See src/vendor/VENDOR.md for pinned versions + how to re-vendor.
+     ========================================================================= -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "./src/vendor/three/build/three.module.js",
+    "three/addons/": "./src/vendor/three/addons/",
+    "three/examples/jsm/": "./src/vendor/three/addons/",
+    "@dimforge/rapier3d-compat": "./src/vendor/rapier3d-compat/rapier.mjs"
+  }
+}
+</script>
+
+<style>
+  :root{
+    --teal:#2a9d8f; --navy:#1a3a5c; --ink:#1a3a5c;
+    --sun:#f4a259; --cream:#fdf6ec; --coral:#e76f51;
+    --font-ui:"Nunito","Nunito Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --font-display:"Lora",Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%;overflow:hidden;background:#0d1b2a;
+    font-family:var(--font-ui);-webkit-font-smoothing:antialiased;
+    -webkit-tap-highlight-color:transparent;touch-action:none;overscroll-behavior:none}
+  #stage{position:fixed;inset:0}
+  #game{display:block;width:100%;height:100%;touch-action:none}
+
+  /* ---- loading screen placeholder (P18 owns the real one) ---- */
+  #boot{position:fixed;inset:0;z-index:50;display:grid;place-items:center;
+    background:radial-gradient(120% 90% at 50% 18%,#2e5f7a 0%,#1a3a5c 48%,#10233a 100%);
+    color:var(--cream);transition:opacity .45s ease;font-family:var(--font-ui)}
+  #boot.gone{opacity:0;pointer-events:none}
+  .boot-in{text-align:center;padding:24px;max-width:min(520px,86vw)}
+  .boot-mark{width:72px;height:72px;margin:0 auto 18px;border-radius:20px;
+    background:linear-gradient(150deg,var(--teal),#1f7d72);
+    box-shadow:0 14px 34px rgba(0,0,0,.38),inset 0 2px 0 rgba(255,255,255,.28);
+    display:grid;place-items:center;animation:bob 1.6s ease-in-out infinite}
+  .boot-mark svg{width:40px;height:40px;display:block}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-9px) rotate(3deg)}}
+  #boot h1{font-family:var(--font-display);font-size:clamp(28px,7vw,44px);margin:0 0 6px;
+    letter-spacing:.2px;font-weight:700}
+  #boot p{margin:0 0 22px;opacity:.78;font-size:15px}
+  .bar{height:8px;border-radius:99px;background:rgba(255,255,255,.16);overflow:hidden}
+  .bar > i{display:block;height:100%;width:12%;border-radius:99px;
+    background:linear-gradient(90deg,var(--teal),#7fd6c8);
+    animation:slide 1.15s cubic-bezier(.6,.05,.3,1) infinite}
+  @keyframes slide{0%{margin-left:-14%;width:22%}55%{width:46%}100%{margin-left:104%;width:16%}}
+  #boot .msg{margin-top:14px;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;opacity:.6}
+  #boot.failed .bar>i{animation:none;width:100%;background:var(--coral)}
+  #boot .err{display:none;margin-top:16px;font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
+    color:#ffd9cf;background:rgba(0,0,0,.32);border-radius:10px;padding:12px;text-align:left;
+    white-space:pre-wrap;max-height:34vh;overflow:auto}
+  #boot.failed .err{display:block}
+</style>
+</head>
+<body>
+  <div id="stage"><canvas id="game"></canvas></div>
+
+  <div id="boot">
+    <div class="boot-in">
+      <div class="boot-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fdf6ec" stroke-width="2.1"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 3v7c0 3 2.6 5 6 5s6-2 6-5V3"/><path d="M12 15v6"/><path d="M8.5 21h7"/>
+        </svg>
+      </div>
+      <h1>Scam Slingshot</h1>
+      <p>Loading the ammunition&hellip;</p>
+      <div class="bar"><i></i></div>
+      <div class="msg" id="boot-msg">starting up</div>
+      <div class="err" id="boot-err"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { boot } from './src/main.js';
+    boot().catch(err => {
+      const b = document.getElementById('boot');
+      b.classList.add('failed');
+      document.getElementById('boot-msg').textContent = 'failed to start';
+      document.getElementById('boot-err').textContent = (err && err.stack) || String(err);
+      (window.SS ||= { errors: [] }).errors.push({ type: 'boot', text: String(err && err.stack || err) });
+      console.error(err);
+    });
+  </script>
+</body>
+</html>

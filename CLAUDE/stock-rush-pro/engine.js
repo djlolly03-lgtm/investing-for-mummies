@@ -119,6 +119,13 @@
       currentEvent: null,   // event being shown/processed right now
       eventChoices: {},     // { [playerId]: 'accept' | 'reject' | { amount: N } }
 
+      // IPO recap — set when an IPO event finishes so the teacher can walk
+      // the class through what actually happened (applied vs allotted vs
+      // refunded, per student). Populated in _applyChoiceResults, cleared by
+      // dismissIpoRecap(). Advancing to the next event is blocked while
+      // this is non-null — same lock as an open event popup.
+      ipoRecap: null,
+
       stocks: initStocks.map(s => ({
         ...s,
         price: r1Prices[s.id] || 0,
@@ -482,6 +489,8 @@
 
   function _applyChoiceResults(state) {
     const event = state.currentEvent;
+    // Reset the recap bucket before applying — each IPO event fills it fresh.
+    if (event.type === 'ipo') state._ipoRecapBucket = [];
     for (const [playerId, choice] of Object.entries(state.eventChoices)) {
       const p = state.players[playerId];
       if (!p) continue;
@@ -499,6 +508,23 @@
           history: [event.ipoPrice],
         });
       }
+    }
+    // Seal the IPO recap so the teacher's IpoRecapOverlay can display it.
+    // Includes aggregate totals so the popup doesn't have to recompute.
+    if (event.type === 'ipo') {
+      const items = state._ipoRecapBucket || [];
+      const totals = items.reduce((a, it) => ({
+        applied:   a.applied   + (it.applied   || 0),
+        cost:      a.cost      + (it.cost      || 0),
+        refund:    a.refund    + (it.refund    || 0),
+        allocated: a.allocated + (it.allocated || 0),
+      }), { applied: 0, cost: 0, refund: 0, allocated: 0 });
+      state.ipoRecap = {
+        event: { ...event },
+        items,
+        totals,
+      };
+      delete state._ipoRecapBucket;
     }
     // Log to news feed
     state.news.unshift({ ...event, t: Date.now() });
@@ -550,9 +576,30 @@
 
       case 'ipo': {
         // choice = { amount: N } (₹ to apply) or 'reject'
-        if (!choice || choice === 'reject') break;
-        const applyAmount = (typeof choice === 'object' && choice.amount) ? choice.amount : 0;
-        if (applyAmount <= 0 || p.cash < applyAmount) break;
+        // Recap-tracking: push a per-player entry into state._ipoRecapBucket
+        // so _applyChoiceResults can build the teacher's summary popup even
+        // for players who rejected or couldn't afford the application.
+        if (!state._ipoRecapBucket) state._ipoRecapBucket = [];
+
+        const rejected = !choice || choice === 'reject';
+        const applyAmount = (typeof choice === 'object' && choice?.amount) ? choice.amount : 0;
+        const insufficient = !rejected && (applyAmount <= 0 || p.cash < applyAmount);
+
+        if (rejected || insufficient) {
+          state._ipoRecapBucket.push({
+            playerId: p.id,
+            name: p.name,
+            isBot: !!p.isBot,
+            avatar: p.avatar || null,
+            color: p.color || null,
+            applied: 0,
+            allocated: 0,
+            cost: 0,
+            refund: 0,
+            status: rejected ? 'rejected' : 'insufficient',
+          });
+          break;
+        }
 
         const cfg = window.GAME_CONFIG;
         const gamePct = cfg.ipoAllocationMin +
@@ -579,6 +626,20 @@
           };
           state.stocks.push(zStock);
         }
+
+        state._ipoRecapBucket.push({
+          playerId: p.id,
+          name: p.name,
+          isBot: !!p.isBot,
+          avatar: p.avatar || null,
+          color: p.color || null,
+          applied: applyAmount,
+          allocated,
+          cost,
+          refund,
+          allocPct: Math.round(gamePct),
+          status: 'allotted',
+        });
 
         _pushActivity(state,
           `${p.name} got ${allocated} ${ipoId} @ ₹${event.ipoPrice}`);
@@ -1161,6 +1222,29 @@
         }
         _applyChoiceResults(state);
       }
+      // If an IPO recap was just built, hold here — clear currentEvent so the
+      // event popup dismisses, but DO NOT advance to the next event or round.
+      // The teacher-facing IpoRecapOverlay renders while state.ipoRecap is set,
+      // and dismissIpoRecap() resumes the flow.
+      if (state.ipoRecap) {
+        state.currentEvent = null;
+        state.eventChoices = {};
+        _saveToDB(state);
+        _notify(state);
+        return;
+      }
+      _nextEvent(state);
+      _saveToDB(state);
+      _notify(state);
+    },
+
+    // Teacher's "Continue" on the IPO recap popup. Clears the recap and
+    // resumes normal event / round-advance flow. Safe no-op if no recap.
+    dismissIpoRecap() {
+      if (!isHost || !currentState) return;
+      const state = currentState;
+      if (!state.ipoRecap) return;
+      state.ipoRecap = null;
       _nextEvent(state);
       _saveToDB(state);
       _notify(state);

@@ -157,9 +157,93 @@ function GoLiveScreen({ onGoLive }) {
   );
 }
 
+// ── Round-flow reducer ─────────────────────────────────────────────────────
+// Owns viewSnapshot + subPhase + seen counters. See ROUND_FLOW_REWRITE_PLAN.md.
+//
+//   subPhase  transitions:
+//   'live' ──ROUND_ADVANCED──> 'popup-open'
+//   'popup-open' ──CONTINUE_CLICKED──> 'popup-closing'
+//   'popup-closing' ──POPUP_CLOSED──> 'live' (snapshot swapped atomically)
+//
+// The reducer never allows engine state to leak into viewSnapshot while a
+// popup is on screen — that decoupling is the fix for the random glitches.
+// Between-round choreography — every beat gets its own subphase so overlays
+// can gate on it. The sequencer (a useEffect on subPhase) schedules the next
+// transition via setTimeout, so beats fire in a deterministic order with
+// bots + student trades frozen the whole way through (see engine.js gate on
+// state.roundTimerStartsAt). Timings, in ms from CONTINUE_CLICKED:
+//
+//   0     'popup-fade'   — popup fades out over 300ms, view still frozen
+//   300   'reveal-hold'  — snapshot swaps, FLIP fires; hold for 1200ms
+//   1500  'big-moment'   — BigMoment hero card + confetti (2700ms)
+//   4200  'countdown'    — "GET READY / 3 / 2 / 1 / GO TRADING!" (3200ms)
+//   7400  'live'         — startRoundTimer(), bots + trades resume
+function flowReducer(flow, action) {
+  switch (action.type) {
+    case 'ENGINE_STATE': {
+      // Only refresh snapshot while nothing is on screen. In any non-live
+      // subphase the reducer IGNORES engine ticks so the view stays frozen.
+      if (flow.subPhase !== 'live') return flow;
+      return { ...flow, viewSnapshot: structuredClone(action.state) };
+    }
+    case 'ROUND_ADVANCED': {
+      // Freeze immediately. viewSnapshot stays at whatever it was (the
+      // pre-advance state). Popup opens.
+      return { ...flow, subPhase: 'popup-open', pendingRound: action.round };
+    }
+    case 'CONTINUE_CLICKED': {
+      // Popup dismissed — start the fade. Snapshot is NOT swapped yet
+      // (happens at REVEAL_HOLD_START, when the popup is fully gone).
+      return {
+        ...flow,
+        subPhase: 'popup-fade',
+        seenPopupRound: action.round,
+        seenNewsRound: action.newsRound != null ? action.newsRound : flow.seenNewsRound,
+        pendingRound: null,
+      };
+    }
+    case 'REVEAL_HOLD_START': {
+      // Popup fully faded. Swap snapshot → leaderboard rerenders → FLIP
+      // useLayoutEffect fires within the same commit → rows slide.
+      return {
+        ...flow,
+        subPhase: 'reveal-hold',
+        viewSnapshot: structuredClone(action.state),
+      };
+    }
+    case 'BIG_MOMENT_START': {
+      return { ...flow, subPhase: 'big-moment' };
+    }
+    case 'COUNTDOWN_START': {
+      return { ...flow, subPhase: 'countdown', countdownStartedAt: action.startedAt };
+    }
+    case 'REVEAL_COMPLETE': {
+      // Choreography done. Engine mirroring resumes; startRoundTimer is
+      // called from the same sequencer so bots + student trades unlock.
+      return { ...flow, subPhase: 'live', countdownStartedAt: null };
+    }
+    case 'MARK_NEWS_SEEN': {
+      // Standalone news popup dismissed (no round-transition popup).
+      return { ...flow, seenNewsRound: action.round };
+    }
+    case 'GAME_RESET': {
+      // Fresh game — clear seen counters + snapshot to current engine state.
+      return {
+        subPhase: 'live',
+        viewSnapshot: structuredClone(action.state),
+        seenPopupRound: 0,
+        seenNewsRound: null,
+        pendingRound: null,
+        countdownStartedAt: null,
+      };
+    }
+    default:
+      return flow;
+  }
+}
+
 function HostGame() {
   const [state, setState] = React.useState(() => window.StockRush.getState());
-  const [seenNewsRound, setSeenNewsRound] = React.useState(null);
 
   // Play a news-drop sting when a new headline arrives
   const lastNewsSoundRef = React.useRef(null);
@@ -170,70 +254,140 @@ function HostGame() {
       try { window.SR_AUDIO?.newsDrop?.(); } catch(e){}
     }
   }, [state.news?.[0]?.round]);
-  const [seenPopupRound, setSeenPopupRound] = React.useState(0);
 
   React.useEffect(() => {
     return window.StockRush.subscribe(setState);
   }, []);
 
-  // Auto-show popup when new news arrives
+  // Popup fade-out: after Continue is clicked, snapshot swaps atomically
+  // AND popupFading flips true. Popup stays rendered for 300ms with the
+  // rtp-fade-out CSS animation so the view emerges smoothly behind it,
+  // rather than a snap-disappear that reads as a "flash".
+  const [popupFading, setPopupFading] = React.useState(false);
+  const lastRoundPopupPropsRef = React.useRef(null);
+
+  // Round-flow reducer — single owner of viewSnapshot + subPhase + seen
+  // counters. Declared here so downstream popup gates can read from it.
+  const [flow, dispatchFlow] = React.useReducer(flowReducer, null, () => ({
+    subPhase: 'live',
+    viewSnapshot: state.phase === 'lobby' ? state : structuredClone(state),
+    seenPopupRound: 0,
+    seenNewsRound: null,
+    pendingRound: null,
+    countdownStartedAt: null,
+  }));
+
+  // Auto-show popup when new news arrives. Popup stays mounted during the
+  // 'popup-fade' subphase so the CSS fade-out animation can play; only after
+  // fade completes (subPhase→'reveal-hold') does it actually unmount.
   const latestNews = state.news?.[0];
-  // Popups ONLY show during the playing phase. Once the game ends, the
-  // EndedOverlay (z=50) should never be blocked by NewsPopup (z=300) — that
-  // bug made "Force end" look like it didn't work.
+  const isFading = flow.subPhase === 'popup-fade';
   const showNewsPopup = state.phase === 'playing'
-    && latestNews && latestNews.round !== seenNewsRound;
+    && latestNews
+    && (latestNews.round !== flow.seenNewsRound || isFading);
 
   // Round transition popup — shown at the start of rounds 2–5
   const roundNews = window.ROUND_NEWS?.[state.round - 1];
   const showRoundPopup = state.phase === 'playing'
     && state.round > 1
-    && state.round > seenPopupRound
+    && (state.round > flow.seenPopupRound || isFading)
     && roundNews != null;
 
-  // ── FROZEN DISPLAY STATE ─────────────────────────────────────────────────
-  // The rendered game view uses a snapshot of state that ONLY updates when
-  // no popup is showing. This means when a round-transition or news popup
-  // mounts, the leaderboard/ticker/news/feed freeze at their pre-transition
-  // state — no half-visible price updates ticking underneath, no FLIP
-  // animations firing invisibly under a cover, no cascading layout shifts.
+  // ── ROUND-FLOW STATE MACHINE ─────────────────────────────────────────────
+  // All round-transition state lives here. subPhase controls whether the view
+  // reads live `state` or a frozen `viewSnapshot`:
+  //   'live'          — view = viewSnapshot mirrors live state; normal play
+  //   'popup-open'    — view frozen at pre-advance state, popup showing
+  //   'popup-closing' — popup fading out, view still frozen
+  //   'reveal'        — popup gone, viewSnapshot just swapped to live,
+  //                     FLIP animation runs during this window
   //
-  // On popup dismiss the snapshot updates in one atomic frame, and every
-  // downstream animation (FLIP reorder, ticker delta pill flip, new headline
-  // card appear) fires together during the popup's fade-out. The reveal is
-  // clean and dramatic instead of glitchy and half-baked.
+  // Actions dispatched atomically so no partial-update flicker is possible.
+  // See ROUND_FLOW_REWRITE_PLAN.md for the full architectural rationale.
   const popupUp = showRoundPopup || showNewsPopup;
-  // CRITICAL: the engine mutates state IN PLACE (currentState.stocks[i].price = ...).
-  // So React's `state` and any stored ref to it are the same object. Freezing
-  // via `useState(state)` freezes the REFERENCE but the underlying data keeps
-  // mutating from underneath. We must snapshot with a DEEP CLONE for the view
-  // to actually stay put. structuredClone handles all the plain data in state
-  // (stocks[], players[], news[], activity[], reactions[]).
-  //
-  // useLayoutEffect (not useEffect) so the snapshot update fires SYNCHRONOUSLY
-  // between commit and paint. With plain useEffect the browser painted one
-  // frame with the STALE displayState between popupUp dropping and the effect
-  // firing — visible flicker on every round transition.
-  // Only clone on mount if we're already in a phase that consumes displayState.
-  // Lobby renders straight from live `state`, so cloning there is pure churn
-  // that causes an initial-mount double render.
-  const [displayState, setDisplayState] = React.useState(() =>
-    state.phase === 'lobby' ? state : structuredClone(state)
-  );
+
+  // ORDER MATTERS: the ROUND_ADVANCED effect must run BEFORE the ENGINE_STATE
+  // mirror effect so the subPhase transitions to 'popup-open' first — then
+  // the mirror sees subPhase !== 'live' and skips, leaving the pre-advance
+  // snapshot intact.
+
+  // Reset the reducer's seen counters when a fresh game starts (round goes
+  // back to 0 or 1 from a higher number, or phase transitions to 'lobby').
+  // Prevents Play Again from carrying over R5's popup-seen state.
+  const prevPhaseForResetRef = React.useRef(state.phase);
   React.useLayoutEffect(() => {
-    // Skip entirely during lobby — LobbyOverlay uses live `state` directly,
-    // so no downstream consumer needs a frozen snapshot. Prevents any lobby
-    // re-render cost and any flicker on the pit-wall screen.
-    if (state.phase === 'lobby') return;
-    // Snapshot when there's no popup up OR when we've exited the 'playing'
-    // phase. The phase check prevents a double-render race on end-of-R5 →
-    // 'ended': the popup unmounts and EndedOverlay mounts at the same time,
-    // and we need displayState to include the finale prices immediately,
-    // not on a second render pass.
-    if (!popupUp || state.phase !== 'playing') {
-      setDisplayState(structuredClone(state));
+    const prev = prevPhaseForResetRef.current;
+    if (prev === 'ended' && state.phase === 'lobby') {
+      dispatchFlow({ type: 'GAME_RESET', state });
     }
-  }, [popupUp, state.phase, state]);
+    prevPhaseForResetRef.current = state.phase;
+  }, [state.phase, state]);
+
+  // Detect a round advance and freeze the view via ROUND_ADVANCED. Also
+  // guard against re-firing for the SAME round after a popup was dismissed —
+  // React 18 concurrent mode can re-run effects with stale closure values,
+  // and we don't want a spurious popup re-open flashing across the screen.
+  const prevRoundForFlowRef = React.useRef(state.round);
+  const lastDispatchedRoundRef = React.useRef(0);
+  React.useLayoutEffect(() => {
+    if (state.phase !== 'playing') return;
+    const prev = prevRoundForFlowRef.current;
+    if (
+      state.round > prev &&
+      state.round > flow.seenPopupRound &&
+      state.round > lastDispatchedRoundRef.current &&
+      window.ROUND_NEWS?.[state.round - 1] != null
+    ) {
+      lastDispatchedRoundRef.current = state.round;
+      dispatchFlow({ type: 'ROUND_ADVANCED', round: state.round });
+    }
+    prevRoundForFlowRef.current = state.round;
+  }, [state.round, state.phase, flow.seenPopupRound]);
+
+  // Mirror engine ticks into viewSnapshot while we're in 'live'. During
+  // popup subphases the reducer ignores ENGINE_STATE actions (see
+  // flowReducer), so the view stays frozen no matter how many times the
+  // engine notifies.
+  React.useLayoutEffect(() => {
+    if (state.phase === 'lobby') return;
+    dispatchFlow({ type: 'ENGINE_STATE', state });
+  }, [state]);
+
+  // Between-round choreography sequencer. Each subphase auto-schedules the
+  // next one via setTimeout. If the user resets mid-sequence, the cleanup
+  // clears the pending timer and the reducer skips back to 'live'.
+  //   popup-fade  → +300ms  → reveal-hold  (popup done fading)
+  //   reveal-hold → +1200ms → big-moment   (FLIP + hold)
+  //   big-moment  → +2700ms → countdown    (BigMoment done)
+  //   countdown   → +3200ms → live         (fires startRoundTimer)
+  React.useEffect(() => {
+    if (flow.subPhase === 'popup-fade') {
+      const t = setTimeout(() => {
+        dispatchFlow({ type: 'REVEAL_HOLD_START', state: window.StockRush.getState() });
+      }, 300);
+      return () => clearTimeout(t);
+    }
+    if (flow.subPhase === 'reveal-hold') {
+      const t = setTimeout(() => dispatchFlow({ type: 'BIG_MOMENT_START' }), 1200);
+      return () => clearTimeout(t);
+    }
+    if (flow.subPhase === 'big-moment') {
+      const t = setTimeout(
+        () => dispatchFlow({ type: 'COUNTDOWN_START', startedAt: Date.now() }),
+        2700
+      );
+      return () => clearTimeout(t);
+    }
+    if (flow.subPhase === 'countdown') {
+      const t = setTimeout(() => {
+        dispatchFlow({ type: 'REVEAL_COMPLETE' });
+        try { window.StockRush.startRoundTimer(); } catch(e){}
+      }, 3200);
+      return () => clearTimeout(t);
+    }
+  }, [flow.subPhase]);
+
+  const displayState = flow.viewSnapshot;
   // Bots are seeded by _initHost() — no extra setup needed here.
 
   const players = Object.values(displayState.players || {});
@@ -266,6 +420,11 @@ function HostGame() {
   }, [state.phase]);
 
   // ── BIG MOMENT: when a stock jumps >50% on news, fire a confetti overlay ─
+  // Two-phase now: (1) on round advance, COMPUTE which stock deserves the
+  // celebration and stash it. (2) When subPhase enters 'big-moment', that's
+  // when we actually mount the overlay + play the sting. The visibility gate
+  // in JSX is subPhase-driven so no auto-clear timer is needed — the beat
+  // ends when the sequencer moves to 'countdown'.
   const seenMomentRef = React.useRef(null);
   const [moment, setMoment] = React.useState(null);
   React.useEffect(() => {
@@ -286,14 +445,23 @@ function HostGame() {
         best = { tk, pct, mult };
       }
     }
-    if (!best) return;
+    if (!best) { setMoment(null); return; }
     const stock = state.stocks?.find(s => s.id === best.tk);
-    if (!stock) return;
+    if (!stock) { setMoment(null); return; }
     setMoment({ id: news.round, stock, pct: best.pct });
-    try { window.SR_AUDIO?.bigMove?.(); } catch(e){}
-    const t = setTimeout(() => setMoment(null), 4500);
-    return () => clearTimeout(t);
   }, [state.news?.[0]?.round]);
+
+  // Play the big-move audio sting exactly when the celebration beat starts,
+  // not when the round advanced. Previously the sting fired several seconds
+  // before the confetti was actually visible.
+  const stungMomentRef = React.useRef(null);
+  React.useEffect(() => {
+    if (flow.subPhase !== 'big-moment') return;
+    if (!moment) return;
+    if (stungMomentRef.current === moment.id) return;
+    stungMomentRef.current = moment.id;
+    try { window.SR_AUDIO?.bigMove?.(); } catch(e){}
+  }, [flow.subPhase, moment?.id]);
 
   // ── BIG BET: when a student bets ≥50% of their worth in one trade ────────
   const seenBigBetRef = React.useRef(null);
@@ -316,6 +484,14 @@ function HostGame() {
     return () => clearTimeout(t);
   }, [state.activity?.[0]?.id]);
 
+  // Track when the round last advanced so we can silence noisy overlays for
+  // ~2.5s afterwards (BigMoment owns that window — no ActionPop stacking on
+  // top of the celebration).
+  const roundAdvancedAtRef = React.useRef(0);
+  React.useEffect(() => {
+    roundAdvancedAtRef.current = Date.now();
+  }, [state.round]);
+
   // ── Live action popups — flash on every human trade or lock ──────────────
   const lastActIdRef = React.useRef(null);
   const [actionPops, setActionPops] = React.useState([]); // stack of {id, ...}
@@ -324,6 +500,10 @@ function HostGame() {
     const top = state.activity?.[0];
     if (!top || !top.id || top.id === lastActIdRef.current) return;
     lastActIdRef.current = top.id;
+    // Quiet window right after a round advance — the BigMoment celebration
+    // owns the screen for ~2.5s; stacking bot-trade chips on top made the
+    // whole transition read as glitchy visual noise.
+    if (Date.now() - roundAdvancedAtRef.current < 2500) return;
     // Popup for trades + locks from ANYONE (humans + bots) — news/joins skip.
     const player = top.playerId ? state.players?.[top.playerId] : null;
     if (!player) return;
@@ -337,33 +517,6 @@ function HostGame() {
     return () => clearTimeout(t);
   }, [state.activity?.[0]?.id, state.phase]);
 
-  // ── Leaderboard banter banner — when #1 changes, flash a cheeky one-liner ─
-  const prevLeaderRef = React.useRef(null);
-  const [banter, setBanter] = React.useState(null);
-  React.useEffect(() => {
-    if (state.phase !== 'playing') { prevLeaderRef.current = null; return; }
-    const newLeader = ranked[0];
-    if (!newLeader) return;
-    const prev = prevLeaderRef.current;
-    if (prev && prev !== newLeader.id) {
-      const oldName = players.find(p => p.id === prev)?.name || 'someone';
-      const lines = [
-        `🔥 Hold my chai — ${newLeader.name} just took over!`,
-        `👑 ${newLeader.name} grabs #1 from ${oldName}!`,
-        `🚀 ${newLeader.name} just leapfrogged into the lead!`,
-        `🎯 New leader: ${newLeader.name}. ${oldName} bumped to #2.`,
-        `⚡ ${newLeader.name} climbs to the top of the leaderboard!`,
-      ];
-      const msg = lines[Math.floor(Math.random() * lines.length)];
-      setBanter({ id: Date.now(), msg });
-      try { window.SR_AUDIO?.rankUp?.(); } catch(e){}
-      const t = setTimeout(() => setBanter(null), 4500);
-      // Cleanup if a new banter pre-empts
-      return () => clearTimeout(t);
-    }
-    prevLeaderRef.current = newLeader.id;
-  }, [ranked[0]?.id, state.phase]);
-
   // Lock stats (only humans count toward "all locked")
   const humans = players.filter(p => !p.isBot);
   const lockedHumans = humans.filter(p => state.locks?.[p.id]);
@@ -371,8 +524,10 @@ function HostGame() {
 
   return (
     <div className="host-shell sr-race-mode">
-      {/* BIG MOMENT — confetti burst when a stock moves >50% on news */}
-      {moment && !showRoundPopup && !showNewsPopup && <BigMoment moment={moment} />}
+      {/* BIG MOMENT — celebration beat in the choreographed round transition.
+         Gated on subPhase='big-moment' so it fires AFTER the FLIP reveal has
+         settled, not simultaneously with the leaderboard shuffle. */}
+      {moment && flow.subPhase === 'big-moment' && <BigMoment moment={moment} />}
 
       {/* BIG BET — student commits ≥50% of their worth in one trade */}
       {bigBet && <BigBetMoment data={bigBet} />}
@@ -390,31 +545,6 @@ function HostGame() {
           {actionPops.map(p => <ActionPop key={p.id} pop={p} />)}
         </div>
       )}
-      {banter && (
-        <div style={{
-          position: 'fixed', top: 16, left: '50%', transform: 'translateX(-50%)',
-          zIndex: 2000,
-          background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
-          border: '2px solid #f59e0b',
-          borderRadius: 14,
-          padding: '10px 22px',
-          fontSize: 17, fontWeight: 700,
-          color: '#92400e',
-          boxShadow: '0 10px 30px rgba(245,158,11,0.32), 0 4px 12px rgba(0,0,0,0.1)',
-          animation: 'banter-pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2)',
-          letterSpacing: '-0.01em',
-          whiteSpace: 'nowrap',
-        }}>
-          {banter.msg}
-          <style>{`
-            @keyframes banter-pop {
-              0%   { opacity: 0; transform: translateX(-50%) translateY(-20px) scale(0.85); }
-              60%  { opacity: 1; transform: translateX(-50%) translateY(2px)   scale(1.04); }
-              100% { opacity: 1; transform: translateX(-50%) translateY(0)     scale(1); }
-            }
-          `}</style>
-        </div>
-      )}
       <HostHeader state={state} lockedHumans={lockedHumans} humans={humans} allLocked={allLocked} popupOpen={popupUp} />
       <div className="sr-checker" aria-hidden="true" />
       {state.phase === 'playing' && <StockTickerMarquee stocks={displayState.stocks} />}
@@ -424,7 +554,7 @@ function HostGame() {
            an open popup. See "Frozen display state" pattern in build doc. */}
         <div className="host-main">
           <HeroLeaderboard ranked={ranked} stocks={displayState.stocks} locks={displayState.locks} phase={state.phase} />
-          <NewsPanel news={displayState.news} phase={state.phase} />
+          <NewsPanel news={displayState.news} phase={state.phase} stocks={displayState.stocks} />
         </div>
         {/* SIDEBAR — live feed + compact market */}
         <div className="host-sidebar">
@@ -440,25 +570,88 @@ function HostGame() {
           year={window.ROUND_YEARS?.[state.round - 1]}
           news={roundNews}
           stocks={state.stocks}
+          closing={isFading}
           onDismiss={() => {
-            // Mark BOTH popups as seen so we don't show NewsPopup right after.
-            // RoundTransitionPopup already covers the news for this round.
-            setSeenPopupRound(state.round);
-            if (latestNews) setSeenNewsRound(latestNews.round);
-            // Now (and only now) the round countdown begins ticking down.
-            window.StockRush.startRoundTimer();
+            // Kick off the choreographed sequence. Sequencer effect above
+            // schedules reveal-hold → big-moment → countdown → live, calling
+            // startRoundTimer at the very end so bots + trades stay frozen
+            // throughout.
+            dispatchFlow({
+              type: 'CONTINUE_CLICKED',
+              round: state.round,
+              newsRound: latestNews?.round,
+            });
           }}
         />
       ) : (
         showNewsPopup && (
           <NewsPopup news={latestNews} stocks={state.stocks} onDismiss={() => {
-            setSeenNewsRound(latestNews.round);
-            // For news drops that aren't tied to a round-transition popup,
-            // dismissing here also starts the countdown.
-            window.StockRush.startRoundTimer();
+            dispatchFlow({ type: 'MARK_NEWS_SEEN', round: latestNews.round });
+            try { window.StockRush.startRoundTimer(); } catch(e){}
           }} />
         )
       )}
+      {flow.subPhase === 'countdown' && (
+        <CountdownOverlay startedAt={flow.countdownStartedAt} />
+      )}
+    </div>
+  );
+}
+
+// Full-screen countdown overlay — the final beat of the between-round
+// choreography. Beats: 0-500 "GET READY" · 500-1200 "3" · 1200-1900 "2" ·
+// 1900-2600 "1" · 2600-3200 "GO TRADING!". Re-renders every 100ms driven by
+// setInterval so the text advances cleanly through the beats.
+function CountdownOverlay({ startedAt }) {
+  const [, force] = React.useState(0);
+  React.useEffect(() => {
+    const i = setInterval(() => force(n => n + 1), 100);
+    return () => clearInterval(i);
+  }, []);
+  const elapsed = Date.now() - (startedAt || Date.now());
+  let text;
+  let tone = 'ready';
+  if (elapsed < 500)        { text = 'GET READY'; tone = 'ready'; }
+  else if (elapsed < 1200)  { text = '3'; tone = 'num'; }
+  else if (elapsed < 1900)  { text = '2'; tone = 'num'; }
+  else if (elapsed < 2600)  { text = '1'; tone = 'num'; }
+  else                      { text = 'GO TRADING!'; tone = 'go'; }
+  // Key on `text` so React remounts the display element every beat — that
+  // restarts the pop animation clean instead of interpolating between beats.
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 2400,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      background: 'radial-gradient(ellipse at center, rgba(7,26,16,0.85) 0%, rgba(7,26,16,0.55) 60%, rgba(7,26,16,0.35) 100%)',
+      pointerEvents: 'none',
+    }}>
+      <div
+        key={text}
+        style={{
+          fontFamily: 'Geist Mono, ui-monospace',
+          fontWeight: 800,
+          letterSpacing: tone === 'num' ? '-0.02em' : '0.04em',
+          color: tone === 'go' ? '#4ade80' : tone === 'num' ? '#fff5b7' : '#fff',
+          fontSize: tone === 'num' ? 'clamp(240px, 34vw, 480px)' : 'clamp(80px, 10vw, 160px)',
+          textShadow: tone === 'go'
+            ? '0 0 40px rgba(74,222,128,0.7), 0 8px 24px rgba(0,0,0,0.5)'
+            : tone === 'num'
+              ? '0 0 32px rgba(255,224,120,0.6), 0 8px 24px rgba(0,0,0,0.5)'
+              : '0 4px 18px rgba(0,0,0,0.5)',
+          animation: 'sr-count-pop 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.4) both',
+          lineHeight: 1,
+          textAlign: 'center',
+        }}
+      >
+        {text}
+      </div>
+      <style>{`
+        @keyframes sr-count-pop {
+          0%   { opacity: 0; transform: scale(0.55); }
+          55%  { opacity: 1; transform: scale(1.12); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
     </div>
   );
 }
@@ -808,9 +1001,13 @@ function StockTickerMarquee({ stocks }) {
   );
 }
 
-function NewsPanel({ news, phase }) {
+function NewsPanel({ news, phase, stocks }) {
   const latest = news[0];
   const older  = news.slice(1);
+  // Only show impact chips for stocks actually in play this session.
+  // Without this filter the sidebar news card was showing all 20 tickers
+  // when only 8 are being traded.
+  const activeIds = new Set((stocks || []).map(s => s.id));
 
   const [isFresh, setIsFresh] = React.useState(false);
   React.useEffect(() => {
@@ -883,7 +1080,7 @@ function NewsPanel({ news, phase }) {
           </div>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-            {Object.entries(latest.impacts).map(([tk, mult]) => {
+            {Object.entries(latest.impacts).filter(([tk]) => activeIds.has(tk)).map(([tk, mult]) => {
               const up = mult >= 1;
               const pct = ((mult - 1) * 100).toFixed(0);
               const stockName = (window.STOCKS || []).find(s => s.id === tk)?.name || tk;
@@ -936,7 +1133,7 @@ function NewsPanel({ news, phase }) {
                 </div>
               </div>
               <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', justifyContent: 'flex-end', maxWidth: 220 }}>
-                {Object.entries(n.impacts).map(([tk, mult]) => {
+                {Object.entries(n.impacts).filter(([tk]) => activeIds.has(tk)).map(([tk, mult]) => {
                   const up = mult >= 1;
                   return (
                     <span key={tk} style={{
@@ -1033,8 +1230,19 @@ function HeroLeaderboard({ ranked, stocks, locks, phase }) {
         // position with no animation. Classic FLIP gotcha.
         // eslint-disable-next-line no-unused-expressions
         row.offsetHeight;
-        row.style.transition = 'transform 550ms cubic-bezier(0.2, 0.9, 0.3, 1.1)';
-        row.style.transform = '';
+        // Clean ease-out — NO overshoot. The previous bezier ended with
+        // y2 = 1.1, which meant every row bounced ~5-7px past its target
+        // and settled back. All 5 rows wobbling at once at the end of the
+        // slide is what read as "glitching" on the projector.
+        row.style.transition = 'transform 550ms cubic-bezier(0.25, 0.1, 0.25, 1)';
+        // MUST set an explicit target (translateY(0)) rather than '' —
+        // an empty string just removes the inline style, and browsers
+        // won't animate a transition with no explicit "to" value. The
+        // result was rows stuck at their FLIP starting offsets (e.g.
+        // translateY(442px)) FOREVER after the animation "started" —
+        // no interpolation ever fired. That was the residual glitch
+        // showing up as rows sitting in wrong positions between rounds.
+        row.style.transform = 'translateY(0)';
       }
     });
     rankMapRef.current = newRankMap;
@@ -1110,7 +1318,7 @@ function HeroLeaderboard({ ranked, stocks, locks, phase }) {
 
               {/* Avatar + name */}
               <div className="hr-identity">
-                <Avatar name={p.name} color={p.color} avatar={p.avatar} size={i === 0 ? 44 : 34} />
+                <Avatar name={p.name} color={p.color} avatar={p.avatar} size={i === 0 ? 66 : 51} />
                 <div>
                   <div className="hr-name" style={{ fontSize: i === 0 ? '1.15rem' : '0.95rem' }}>
                     {p.name}
@@ -1708,18 +1916,22 @@ function PreGameBriefing({ onCancel, onStart }) {
 // Shown to the teacher at the START of rounds 2–5, before news popup appears.
 // Explains what happened to each stock's price and why.
 
-function RoundTransitionPopup({ round, year, news, stocks, onDismiss }) {
+function RoundTransitionPopup({ round, year, news, stocks, onDismiss, closing }) {
   // Filter notes to only stocks that are actually in play this session
   // (we have 20 in the data pool but each game uses a random 8)
   const activeIds = new Set((stocks || []).map(s => s.id));
   const entries = Object.entries(news.notes || {}).filter(([id]) => activeIds.has(id));
-  // Fire dismiss IMMEDIATELY on click. The previous setTimeout+closing gate
-  // was swallowing later clicks (Force End button, second popup, etc.) and
-  // creating a "clicks don't register" bug on rounds 4→5 and endgame.
-  // Now with frozen displayState the parent unmounts the popup atomically
-  // on state change — no exit animation needed to hide stale transforms.
   const handleDismiss = onDismiss;
-  const closing = false;
+
+  // Defer the "closing" style application by one animation frame so the
+  // browser paints opacity: 1 first, then transitions to opacity: 0. Applying
+  // both in the same commit gives the browser no start value → no fade.
+  const [visualClosing, setVisualClosing] = React.useState(false);
+  React.useEffect(() => {
+    if (!closing) { setVisualClosing(false); return; }
+    const raf = requestAnimationFrame(() => setVisualClosing(true));
+    return () => cancelAnimationFrame(raf);
+  }, [closing]);
 
   return (
     <div
@@ -1732,7 +1944,12 @@ function RoundTransitionPopup({ round, year, news, stocks, onDismiss }) {
         padding: '24px',
         backdropFilter: 'blur(6px)',
         WebkitBackdropFilter: 'blur(6px)',
-        animation: closing ? 'rtp-fade-out 0.28s ease-in forwards' : 'rtp-fade 0.35s ease-out',
+        // Fade-out on close via visualClosing (deferred by 1 rAF so the
+        // browser paints opacity: 1 first, then transitions to 0).
+        opacity: visualClosing ? 0 : 1,
+        transition: 'opacity 0.28s ease-in-out',
+        animation: visualClosing ? 'none' : 'rtp-fade 0.35s ease-out',
+        pointerEvents: closing ? 'none' : 'auto',
       }}
     >
       <div
@@ -2212,6 +2429,11 @@ function EndedOverlay({ ranked }) {
         {/* Multi-player race chart — only meaningful with 2+ humans */}
         <ClassRaceChart humans={humans} startingCash={start} />
 
+        {/* Big podium for the top 3 humans — hero celebration moment */}
+        {humansRanked.length > 0 && (
+          <PodiumTop3 players={humansRanked.slice(0, 3)} startCash={start} pct={pct} />
+        )}
+
         {/* TWO-COLUMN: leaderboard left, per-student breakdown right */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 14 }}>
 
@@ -2223,7 +2445,13 @@ function EndedOverlay({ ranked }) {
             {humansRanked.length === 0 && (
               <div style={{ color: 'var(--muted)', fontSize: 13, padding: '8px 0' }}>No students played this round.</div>
             )}
-            {humansRanked.map((p, i) => {
+            {humansRanked.length > 0 && humansRanked.length <= 3 && (
+              <div style={{ color: 'var(--muted)', fontSize: 13, padding: '8px 0', fontFamily: 'Geist Mono, ui-monospace' }}>
+                All ranks shown on the podium above.
+              </div>
+            )}
+            {humansRanked.slice(3).map((p, offset) => {
+              const i = offset + 3;
               const change = pct(p.worth);
               const up = change >= 0;
               const podiumLabel = ['P1','P2','P3'][i];
@@ -2465,6 +2693,104 @@ function EndedOverlay({ ranked }) {
           }}
         />
       )}
+    </div>
+  );
+}
+
+// Podium top-3 hero visualization for the ended overlay.
+// Big pill-shaped cards, winner in the middle at max height + gold gradient,
+// runner-up and 3rd on either side. Trophies at the bottom, name + return %
+// + worth. Inspired by the Predictr.ca-style leaderboard the user shared.
+function PodiumTop3({ players, startCash, pct }) {
+  const p1 = players[0];
+  const p2 = players[1];
+  const p3 = players[2];
+  // Display order left→right: silver, gold, bronze. Center is the winner.
+  return (
+    <div style={{
+      display: 'flex',
+      alignItems: 'flex-end',
+      justifyContent: 'center',
+      gap: 20,
+      padding: '18px 0 28px',
+      marginBottom: 12,
+      borderBottom: '1px solid rgba(255,255,255,0.06)',
+    }}>
+      {p2 && <PodiumPill place={2} player={p2} startCash={startCash} pct={pct} />}
+      {p1 && <PodiumPill place={1} player={p1} startCash={startCash} pct={pct} />}
+      {p3 && <PodiumPill place={3} player={p3} startCash={startCash} pct={pct} />}
+    </div>
+  );
+}
+function PodiumPill({ place, player, startCash, pct }) {
+  const gradients = {
+    1: 'linear-gradient(180deg, #fff5b7 0%, #ffd54a 30%, #d97706 100%)',
+    2: 'linear-gradient(180deg, #f4f4fa 0%, #d4d4dc 35%, #8a8a94 100%)',
+    3: 'linear-gradient(180deg, #ffddb0 0%, #d99760 35%, #8b4513 100%)',
+  };
+  const glow = {
+    1: '0 0 60px rgba(255,215,0,0.55), 0 12px 40px rgba(0,0,0,0.4)',
+    2: '0 0 40px rgba(220,220,240,0.30), 0 10px 30px rgba(0,0,0,0.35)',
+    3: '0 0 40px rgba(217,151,96,0.30), 0 10px 30px rgba(0,0,0,0.35)',
+  };
+  const trophies = { 1: '🥇', 2: '🥈', 3: '🥉' };
+  const change = pct ? pct(player.worth) : 0;
+  const up = change >= 0;
+  const size = place === 1 ? { w: 260, h: 420, avatar: 120, name: 30 } : { w: 220, h: 360, avatar: 96, name: 24 };
+  return (
+    <div style={{
+      width: size.w, height: size.h,
+      borderRadius: 130,
+      background: gradients[place],
+      boxShadow: glow[place],
+      border: '2.5px solid rgba(0,0,0,0.45)',
+      display: 'flex', flexDirection: 'column',
+      alignItems: 'center', justifyContent: 'space-between',
+      padding: place === 1 ? '32px 16px 24px' : '26px 16px 22px',
+      position: 'relative',
+      overflow: 'hidden',
+    }}>
+      <Avatar name={player.name} color={player.color} avatar={player.avatar} size={size.avatar} />
+      <div style={{ textAlign: 'center', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+        <div style={{
+          color: '#0a0a0a',
+          fontFamily: 'Geist, sans-serif',
+          fontWeight: 800,
+          fontSize: size.name,
+          letterSpacing: '-0.01em',
+          textShadow: '0 1px 0 rgba(255,255,255,0.5)',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          maxWidth: size.w - 40,
+        }}>{player.name}</div>
+        <div style={{
+          color: up ? '#166534' : '#7f1d1d',
+          fontFamily: 'Geist Mono, ui-monospace',
+          fontWeight: 800,
+          fontSize: place === 1 ? 18 : 15,
+          letterSpacing: '-0.01em',
+        }}>
+          {up ? '▲' : '▼'} {Math.abs(change).toFixed(1)}%
+        </div>
+      </div>
+      <div style={{
+        background: 'rgba(0,0,0,0.22)',
+        borderRadius: 24,
+        padding: place === 1 ? '10px 22px' : '8px 18px',
+        color: '#fff',
+        fontFamily: 'Geist Mono, ui-monospace',
+        fontWeight: 800,
+        fontSize: place === 1 ? 24 : 20,
+        textShadow: '0 1px 0 rgba(0,0,0,0.4)',
+        letterSpacing: '-0.01em',
+        border: '1px solid rgba(0,0,0,0.35)',
+      }}>
+        💵 {formatMoney(player.worth)}
+      </div>
+      <div style={{ fontSize: place === 1 ? 72 : 60, lineHeight: 1, filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.4))' }}>
+        {trophies[place]}
+      </div>
     </div>
   );
 }
@@ -2711,7 +3037,7 @@ function StockMoversTable({ stocks, humans, startingCash }) {
                 {up ? '▲ +' : '▼ '}{Math.abs(r.pct).toFixed(0)}%
               </div>
               <div style={{ display: 'flex', alignItems: 'center', height: 24 }}>
-                <Sparkline data={r.s.history || [r.start, r.end]} width={140} height={22} stroke={up ? '#15803d' : '#b91c1c'} />
+                <Sparkline data={r.s.history || [r.start, r.end]} width={220} height={32} stroke={up ? '#15803d' : '#b91c1c'} />
               </div>
               <div style={{ fontSize: 10, color: 'var(--muted)', textAlign: 'right', fontFamily: 'Geist Mono, ui-monospace' }}>
                 {r.holders}/{humans.length} held

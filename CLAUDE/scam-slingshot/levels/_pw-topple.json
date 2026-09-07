@@ -1,0 +1,18 @@
+{
+  "id": "_pw-topple",
+  "name": "PROBE — identical column, identical lean, three materials",
+  "chapter": 0,
+  "sky": "morning",
+  "par": 1,
+  "teaches": "Harness fixture: the same 0.44 x 1.80 column at the same 0.35 rad lean, past its own tipping point. It falls, it lands along its length, it settles. Only the material differs.",
+  "ammo": ["sip"],
+  "blocks": [
+    { "mat": "wood",  "x": 8.00,  "y": 0.94, "w": 0.44, "h": 1.80, "rot": 0.35 },
+    { "mat": "glass", "x": 11.00, "y": 0.94, "w": 0.44, "h": 1.80, "rot": 0.35 },
+    { "mat": "stone", "x": 14.00, "y": 0.94, "w": 0.44, "h": 1.80, "rot": 0.35 }
+  ],
+  "villains": [
+    { "type": "lotteryUncle", "x": 19.00, "y": 0.56 }
+  ],
+  "props": []
+}

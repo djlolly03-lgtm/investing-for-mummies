@@ -26,6 +26,7 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);mi
 /* ── HEADER ── */
 header{background:var(--white);border-bottom:2px solid var(--mint-lt);box-shadow:0 2px 12px rgba(26,58,92,0.08);}
 header .h-inner{max-width:1000px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:12px;}
+@media(min-width:1100px){header .h-inner{max-width:min(96vw,1900px);}}
 header .h-logo{height:50px;width:50px;border-radius:50%;object-fit:cover;flex-shrink:0;}
 header .h-name{font-family:'Lora',serif;font-size:1.1rem;font-weight:700;color:var(--navy);}
 header .h-tag{font-size:0.65rem;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase;}
@@ -37,6 +38,7 @@ header .h-tag{font-size:0.65rem;color:var(--muted);font-weight:600;letter-spacin
 .game-nav:hover,.game-nav:focus-within,.game-nav.open{max-height:200px;cursor:default;}
 .game-nav:hover::after,.game-nav:focus-within::after,.game-nav.open::after{display:none;}
 .game-nav-inner{width:100%;max-width:1000px;box-sizing:border-box;margin:0 auto;padding:8px 14px;display:flex;flex-wrap:wrap;gap:6px;}
+@media(min-width:1100px){.game-nav-inner{max-width:min(96vw,1900px);}}
 .nav-tab{flex:0 0 auto;padding:7px 13px;border-radius:12px;border:2px solid var(--mint);background:var(--white);font-family:'Nunito',sans-serif;font-size:0.75rem;font-weight:800;color:var(--muted);cursor:pointer;transition:all .25s;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;flex-shrink:0;}
 .nav-tab:hover{border-color:var(--navy);color:var(--navy);background:var(--mint-lt);}
 .nav-tab.active{border-color:var(--navy);background:var(--navy);color:#fff;box-shadow:0 2px 10px rgba(26,58,92,0.18);}
@@ -44,6 +46,8 @@ header .h-tag{font-size:0.65rem;color:var(--muted);font-weight:600;letter-spacin
 
 /* ── CONTAINER ── */
 .container{max-width:1000px;margin:0 auto;padding:12px 14px 40px;}
+@media(min-width:1100px){.container{max-width:min(96vw,1900px);}}
+@media(min-width:900px) and (max-height:940px){.container{padding:8px 14px 16px;}}
 
 /* ── GAME SCREEN ── */
 .game-screen{display:none;}
@@ -92,6 +96,7 @@ header .h-tag{font-size:0.65rem;color:var(--muted);font-weight:600;letter-spacin
 
 /* ── GAME HERO ── */
 .game-hero{border-radius:16px;padding:18px 20px 18px 95px;color:#fff;text-align:center;margin-bottom:14px;position:relative;overflow:hidden;}
+@media(min-width:900px) and (max-height:940px){.game-hero{padding:12px 20px 12px 95px;margin-bottom:8px;}.game-hero h2{font-size:1.25rem!important;margin-bottom:2px;}.game-hero p{font-size:0.75rem;}}
 .game-hero::before{content:'';position:absolute;inset:0;opacity:0.07;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
 .gh-tag{display:inline-block;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);font-size:0.6rem;font-weight:900;letter-spacing:1.5px;padding:3px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:4px;}
 .game-hero h2{font-family:'Lora',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);margin-bottom:4px;line-height:1.2;}
@@ -1646,7 +1651,7 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 .r72-opt.wrong{border-color:#e74c3c!important;background:#f8d7da!important;color:#721c24!important;font-weight:900!important;}
 .r72-opt.reveal{border-color:#27ae60!important;background:#d4edda!important;color:#155724!important;font-weight:900!important;}
 .r72-feedback{margin-top:18px;border-radius:14px;padding:16px 18px;font-size:0.85rem;line-height:1.65;display:none;}
-.r72-feedback.correct{background:linear-gradient(135deg,#e8f5f2,#d4efe9);border:1.5px solid #0e8a7a;color:#0a5a50;}
+.r72-feedback.correct{background:linear-gradient(135deg,#e8f5f2,#d4efe9);border:1.5px solid #2a9d8f;color:#0a5a50;}
 .r72-feedback.wrong{background:#fdf0f0;border:1.5px solid #e74c3c;color:#8b2020;}
 .r72-fb-formula{display:inline-block;background:rgba(255,255,255,0.75);border-radius:8px;padding:3px 12px;font-size:0.95rem;font-weight:900;font-family:'Lora',serif;margin-bottom:6px;}
 .r72-pts-badge{display:inline-block;font-size:0.72rem;font-weight:900;padding:3px 10px;border-radius:20px;margin-left:6px;vertical-align:middle;}
@@ -1668,19 +1673,28 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 .r72-recap-header{display:flex;align-items:center;justify-content:space-between;gap:8px;}
 .r72-recap-label{font-size:0.65rem;font-weight:900;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted);}
 .r72-recap-question{font-size:0.82rem;color:var(--navy);line-height:1.45;}
-.r72-recap-answer{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:#0e8a7a;background:#e8f5f3;border-radius:7px;padding:4px 10px;display:inline-block;}
+.r72-recap-answer{font-family:'Lora',serif;font-size:0.88rem;font-weight:700;color:#2a9d8f;background:#e8f5f3;border-radius:7px;padding:4px 10px;display:inline-block;}
 .r72-recap-pts{font-weight:900;font-family:'Lora',serif;font-size:0.9rem;white-space:nowrap;}
 .r72-btn-play-again{display:block;width:100%;margin-top:10px;padding:10px;background:var(--mint-lt);color:var(--navy);border:2px solid var(--mint);border-radius:14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.88rem;cursor:pointer;}
 .r72-btn-play-again:hover{background:var(--mint);}
 
 
 </style>
+<!-- Google Analytics (GA4) — same property as investingformummies.com, so website + games
+     report in one place. content_group:'Games' makes "how many reached the games" a one-line report. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCN0R6L3B9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PCN0R6L3B9', { content_group: 'Games' });
+</script>
 </head>
 <body>
 <div class="container">
 <div class="game-screen active" id="debtboss">
 
-  <div class="game-hero" style="background:linear-gradient(135deg,#1a3a5c 0%,#2a5272 50%,#0e8a7a 100%);" data-logo="white">
+  <div class="game-hero" style="background:linear-gradient(135deg,#1a3a5c 0%,#2a5272 50%,#2a9d8f 100%);" data-logo="white">
     <div class="gh-tag">💰 Game</div>
     <h2>Debt Boss</h2>
     <p>Allocate ₹10,00,000 across debt instruments. Survive 4 market events. See how debt really works!</p>
@@ -1731,18 +1745,328 @@ function showGame(n){ if(n===0||n==='0'||n==='game0'){ location.href='/'; } }
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Debt Boss</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"><\/script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"><\/script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"><\/script>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     html,body{height:auto;overflow-x:hidden}
-    body{font-family:'Nunito','DM Sans',sans-serif;background:#f0f4f8}
+    body{font-family:'Nunito','DM Sans',sans-serif;background:#f7faf9}
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
     input[type=number]{-moz-appearance:textfield}
     .db-inp{width:100%;padding:6px 8px;border-radius:7px;font-size:0.82rem;font-weight:800;color:#1a3a5c;background:#f8fafc;outline:none;text-align:right;font-family:Nunito,sans-serif}
+
+    /* ── Mobile: 2-across cards (not 3) so each card has room — prevents grid overflow/cramping, and reclaims side whitespace ── */
+    @media(max-width:600px){
+      .db-wrap{padding:0 10px!important;}
+      .db-wrap-narrow{padding:0 10px!important;}
+      .db-grid6{grid-template-columns:1fr 1fr!important;gap:8px!important;}
+      .db-instr-card{min-width:0!important;padding:10px 8px!important;}
+      .db-instr-icon-badge{width:40px!important;height:40px!important;font-size:1.4rem!important;}
+      .db-instr-name{font-size:0.76rem!important;}
+      .db-instr-rate{font-size:0.74rem!important;}
+      .db-instr-risk{font-size:0.6rem!important;}
+      .db-instr-amt{font-size:0.78rem!important;padding:5px 6px!important;}
+      .db-step-btn{width:30px!important;height:30px!important;}
+    }
+    .db-instr-card{min-width:0;}
+
+    /* ── Desktop / large-screen scale-up (applies to every db-* screen + popup) ── */
+    @media(min-width:900px){
+      .db-wrap{max-width:min(94vw,1000px)!important;}
+      .db-wrap-narrow{max-width:min(90vw,800px)!important;}
+      .db-card{padding:26px 28px!important;border-radius:22px!important;}
+      .db-card-title{font-size:1.35rem!important;margin-bottom:16px!important;}
+      .db-card-sub{font-size:1rem!important;margin-bottom:20px!important;}
+      .db-grid6{gap:16px!important;grid-template-columns:repeat(6,1fr)!important;}
+      .db-instr-card{padding:20px 16px!important;border-radius:18px!important;border-width:2.5px!important;}
+      .db-instr-icon-badge{width:66px!important;height:66px!important;font-size:2.3rem!important;margin-bottom:12px!important;border-width:2px!important;}
+      .db-instr-name{font-size:1rem!important;line-height:1.25!important;min-height:2.5em!important;display:flex!important;align-items:flex-start!important;}
+      .db-instr-rate{font-size:1.15rem!important;}
+      .db-instr-risk{font-size:0.78rem!important;min-height:2.4em!important;line-height:1.35!important;}
+      .db-instr-amt{font-size:1.05rem!important;padding:10px 10px!important;border-radius:12px!important;min-height:34px!important;}
+      .db-step-btn{width:40px!important;height:40px!important;font-size:1.35rem!important;border-radius:10px!important;}
+      .db-step-lbl{font-size:0.68rem!important;}
+      .db-tip{font-size:0.98rem!important;padding:16px 20px!important;border-radius:14px!important;border-width:2px!important;}
+      .db-cta{font-size:1.15rem!important;padding:18px!important;border-radius:16px!important;}
+      .db-status-lbl{font-size:0.85rem!important;}
+      .db-status-total{font-size:2.1rem!important;}
+      .db-status-rem{font-size:1.5rem!important;}
+      .db-status-bar-wrap{height:64px!important;}
+      .db-status-seg-icon{font-size:1.5rem!important;}
+      .db-status-seg-amt{font-size:0.78rem!important;}
+      .db-popup-card{max-width:820px!important;border-radius:22px!important;}
+      .db-popup-head{padding:18px 26px!important;}
+      .db-popup-head-eyebrow{font-size:0.72rem!important;}
+      .db-popup-title{font-size:1.5rem!important;margin-bottom:6px!important;}
+      .db-popup-headline{font-size:0.92rem!important;}
+      .db-popup-card{display:flex!important;flex-direction:column!important;max-height:820px!important;}
+      .db-popup-body{padding:16px 24px!important;max-height:none!important;overflow-y:auto!important;flex:1 1 auto!important;min-height:0!important;}
+      .db-popup-classroom{font-size:0.86rem!important;padding:12px 16px!important;border-radius:14px!important;border-left-width:4px!important;margin-bottom:12px!important;}
+      .db-popup-impact-label{font-size:0.72rem!important;margin-bottom:8px!important;}
+      .db-popup-impact-list{display:grid!important;grid-template-columns:1fr 1fr!important;gap:0 20px!important;}
+      .db-popup-impact-row{padding:8px 0!important;gap:10px!important;}
+      .db-popup-impact-icon{font-size:1.3rem!important;}
+      .db-popup-impact-name{font-size:0.85rem!important;}
+      .db-popup-impact-desc{font-size:0.75rem!important;}
+      .db-popup-impact-pct{font-size:0.95rem!important;min-width:50px!important;}
+      .db-popup-foot{padding:12px 24px 18px!important;}
+      .db-popup-btn{font-size:1rem!important;padding:14px!important;border-radius:14px!important;}
+      .db-infl-card{max-width:760px!important;max-height:820px!important;}
+      .db-infl-head{padding:24px 28px 14px!important;}
+      .db-infl-body{padding:0 28px!important;}
+      .db-infl-foot{padding:14px 28px 24px!important;}
+      .db-infl-list{display:grid!important;grid-template-columns:1fr 1fr!important;gap:0 16px!important;}
+      .db-hdr{padding:16px 24px 14px!important;}
+      .db-hdr-logo{height:32px!important;width:32px!important;}
+      .db-hdr-round{font-size:0.75rem!important;}
+      .db-hdr-score{font-size:0.85rem!important;}
+      .db-hdr-bar{height:6px!important;}
+      .db-quiz-eyebrow{font-size:0.72rem!important;margin-bottom:10px!important;}
+      .db-quiz-q{font-size:1.05rem!important;margin-bottom:16px!important;}
+      .db-quiz-opt{padding:14px 18px!important;font-size:0.95rem!important;border-radius:14px!important;border-width:2px!important;}
+      .db-quiz-feedback{font-size:0.9rem!important;padding:14px 18px!important;border-radius:14px!important;}
+      .db-ev-headline-card{padding:20px 24px!important;border-radius:20px!important;}
+      .db-ev-year{font-size:0.72rem!important;}
+      .db-ev-title{font-size:1.4rem!important;margin-bottom:8px!important;}
+      .db-ev-headline{font-size:0.92rem!important;}
+    }
+    @media(min-width:1300px){
+      .db-wrap{max-width:min(94vw,1500px)!important;}
+      .db-wrap-narrow{max-width:min(90vw,1000px)!important;}
+      .db-popup-card{max-width:min(84vw,1050px)!important;}
+      .db-popup-title{font-size:1.65rem!important;}
+      .db-popup-classroom{font-size:0.92rem!important;}
+      .db-popup-impact-name{font-size:0.92rem!important;}
+      .db-popup-impact-desc{font-size:0.8rem!important;}
+      .db-infl-card{max-width:min(80vw,950px)!important;}
+      .db-instr-icon-badge{width:78px!important;height:78px!important;font-size:2.7rem!important;}
+      .db-instr-name{font-size:1.1rem!important;}
+      .db-instr-rate{font-size:1.25rem!important;}
+      .db-card-title{font-size:1.55rem!important;}
+      .db-status-total{font-size:2.4rem!important;}
+      .db-res-grade{font-size:1.35rem!important;}
+      .db-res-score{font-size:2.2rem!important;}
+      .db-res-label{font-size:0.85rem!important;}
+      .db-res-started{font-size:1.6rem!important;}
+      .db-res-pct-big{font-size:1.5rem!important;}
+      .db-res-row{padding:12px 0!important;}
+      .db-res-row-icon{font-size:2.1rem!important;}
+      .db-res-row-name{font-size:1.05rem!important;}
+      .db-res-row-pct{font-size:1.4rem!important;}
+      .db-res-row-bar{height:7px!important;}
+      .db-res-row-amt{font-size:0.85rem!important;}
+      .db-res-profile-name{font-size:1.05rem!important;}
+      .db-res-profile-desc{font-size:0.88rem!important;}
+      .db-res-lesson{font-size:0.88rem!important;}
+      .db-res-disc-text{font-size:0.82rem!important;}
+      .db-res-btn{font-size:1.05rem!important;padding:14px!important;}
+    }
+    @media(min-width:1600px){
+      .db-wrap{max-width:min(94vw,1900px)!important;}
+      .db-wrap-narrow{max-width:min(88vw,1150px)!important;}
+      .db-grid6{gap:24px!important;}
+      /* Round-transition popup at projector width: go genuinely full-screen (no floating card
+         with a dark margin around it) and scale text up for "readable from the back of the
+         room," not just "readable up close on a wide monitor." */
+      .db-popup-overlay{padding:0!important;}
+      .db-popup-card{max-width:100%!important;width:100%!important;height:100%!important;max-height:100%!important;border-radius:0!important;display:flex!important;flex-direction:column!important;}
+      .db-popup-head{padding:40px 56px 32px!important;}
+      .db-popup-head-eyebrow{font-size:1rem!important;}
+      .db-popup-title{font-size:3.2rem!important;margin-bottom:12px!important;}
+      .db-popup-headline{font-size:1.4rem!important;}
+      .db-popup-body{padding:32px 56px!important;flex:1 1 auto!important;}
+      .db-popup-classroom{font-size:1.35rem!important;line-height:1.6!important;padding:22px 26px!important;border-radius:16px!important;}
+      .db-popup-impact-label{font-size:1.05rem!important;margin-bottom:16px!important;}
+      .db-popup-impact-list{grid-template-columns:1fr 1fr 1fr!important;gap:0 28px!important;}
+      .db-popup-impact-row{padding:12px 0!important;gap:14px!important;}
+      .db-popup-impact-icon{font-size:2.1rem!important;}
+      .db-popup-impact-name{font-size:1.3rem!important;}
+      .db-popup-impact-desc{font-size:1.05rem!important;}
+      .db-popup-impact-pct{font-size:1.5rem!important;min-width:80px!important;}
+      .db-popup-foot{padding:24px 56px 40px!important;}
+      .db-popup-btn{font-size:1.5rem!important;padding:22px!important;border-radius:16px!important;}
+      .db-infl-card{max-width:min(76vw,1200px)!important;max-height:960px!important;}
+      .db-infl-head{padding:28px 34px 16px!important;}
+      .db-infl-body{padding:0 34px!important;}
+      .db-infl-foot{padding:16px 34px 26px!important;}
+      .db-instr-card{padding-left:22px!important;padding-right:22px!important;}
+      .db-instr-icon-badge{width:88px!important;height:88px!important;font-size:3.1rem!important;}
+      .db-instr-name{font-size:1.18rem!important;}
+      .db-instr-rate{font-size:1.3rem!important;}
+      .db-instr-risk{font-size:0.86rem!important;}
+      .db-instr-amt{font-size:1.15rem!important;}
+      .db-card-title{font-size:1.7rem!important;}
+      .db-status-total{font-size:2.7rem!important;}
+      .db-tip{font-size:1.05rem!important;}
+      .db-cta{font-size:1.25rem!important;}
+      /* Results screen — projector/presentation scale (never had a desktop tier before) */
+      .db-res-hero{padding:20px 28px 24px!important;}
+      .db-res-grade{font-size:1.7rem!important;}
+      .db-res-score{font-size:2.8rem!important;}
+      .db-res-score-sub{font-size:1.4rem!important;}
+      .db-res-label{font-size:1.05rem!important;}
+      .db-res-started{font-size:2rem!important;}
+      .db-res-pct-big{font-size:1.9rem!important;}
+      .db-res-pct-sub{font-size:1.2rem!important;}
+      .db-res-row{padding:16px 0!important;}
+      .db-res-row-icon{font-size:2.6rem!important;}
+      .db-res-row-name{font-size:1.35rem!important;}
+      .db-res-row-pct{font-size:1.7rem!important;}
+      .db-res-row-bar{height:9px!important;margin:8px 6px 8px!important;}
+      .db-res-row-amt{font-size:1.05rem!important;}
+      .db-res-footnote{font-size:1.05rem!important;}
+      .db-res-profile-icon{font-size:2.3rem!important;}
+      .db-res-profile-name{font-size:1.35rem!important;}
+      .db-res-profile-desc{font-size:1.08rem!important;}
+      .db-res-lesson{font-size:1.08rem!important;}
+      .db-res-disc-title{font-size:1.1rem!important;}
+      .db-res-disc-text{font-size:1rem!important;}
+      .db-res-btn{font-size:1.3rem!important;padding:18px!important;}
+    }
+    /* ── Compact vertical rhythm so Welcome/Allocate fit one screen, no scroll ── */
+    @media(min-width:900px){
+      .db-page{padding-top:10px!important;padding-bottom:14px!important;}
+      .db-status-card{margin-bottom:10px!important;padding:16px 24px!important;}
+      .db-card-sub{margin-bottom:12px!important;}
+      .db-instr-card{padding-top:16px!important;padding-bottom:16px!important;}
+      .db-instr-icon-badge{margin-bottom:8px!important;}
+      .db-instr-risk{margin-bottom:6px!important;}
+      .db-instr-amt{margin-bottom:6px!important;min-height:auto!important;padding-top:7px!important;padding-bottom:7px!important;}
+      .db-tip{margin-top:10px!important;padding:10px 18px!important;}
+      .db-cta{margin-top:10px!important;padding:13px 18px!important;}
+      .db-journey{padding:10px 16px!important;margin-bottom:8px!important;}
+      .db-summary-banner{padding:10px 18px!important;margin-bottom:8px!important;}
+      .db-grid6{margin-bottom:8px!important;}
+    }
+    @media(min-width:900px) and (min-height:820px){
+      .db-status-card{padding:20px 26px!important;}
+      .db-tip{padding:14px 18px!important;}
+    }
+    @media(min-width:900px) and (max-height:940px){
+      .db-popup-head{padding:12px 22px!important;}
+      .db-popup-title{font-size:1.3rem!important;margin-bottom:4px!important;}
+      .db-popup-body{padding:12px 22px!important;}
+      .db-popup-classroom{padding:10px 14px!important;margin-bottom:8px!important;}
+      .db-popup-impact-row{padding:6px 0!important;}
+      .db-popup-foot{padding:8px 22px 14px!important;}
+      .db-infl-head{padding:14px 22px 10px!important;}
+      .db-infl-body{padding:0 22px!important;}
+      .db-infl-foot{padding:8px 22px 14px!important;}
+      .db-ev-headline-card{padding:14px 20px!important;margin-bottom:8px!important;}
+      .db-ev-title{font-size:1.15rem!important;margin-bottom:4px!important;}
+      .db-quiz-q{margin-bottom:10px!important;}
+      .db-quiz-opt{padding:10px 16px!important;}
+      .db-wrap{gap:8px!important;}
+      .db-intro-head{padding:14px 20px 12px!important;}
+      .db-intro-title{font-size:1.5rem!important;margin-bottom:4px!important;}
+      .db-intro-pitch{font-size:0.8rem!important;line-height:1.4!important;}
+      .db-intro-steps{padding:12px 20px!important;gap:8px!important;}
+      .db-intro-step-num{width:24px!important;height:24px!important;font-size:0.72rem!important;margin-bottom:4px!important;}
+      .db-intro-step-label{font-size:0.72rem!important;}
+      .db-card{padding:14px 16px!important;}
+      .db-card-title{margin-bottom:8px!important;}
+      .db-card-sub{margin-bottom:8px!important;}
+    }
+
+    /* ── Floating background icons — ambient decoration behind Intro + Welcome only.
+       CSS-only drift (no canvas/JS loop) so it stays cheap on classroom hardware.
+       pointer-events:none + aria-hidden so it never interferes with real content or a11y. ── */
+    .db-float-layer{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+    .db-float-icon{position:absolute;opacity:0.09;filter:grayscale(0.15);animation:dbFloat linear infinite;will-change:transform;}
+    @keyframes dbFloat{
+      0%{transform:translate(0,0) rotate(0deg);}
+      50%{transform:translate(18px,-26px) rotate(8deg);}
+      100%{transform:translate(0,0) rotate(0deg);}
+    }
+    @media(prefers-reduced-motion:reduce){.db-float-icon{animation:none;}}
+
+    /* ── Entrance stagger — cards fade/slide up on first mount ── */
+    @keyframes dbCardIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+    .db-land-card{animation:dbCardIn 0.5s cubic-bezier(.2,.8,.2,1) both;}
+
+    /* ── Landing (Welcome) instrument preview cards — bare large icon, no badge, colour stripe,
+       hover lift. Deliberately separate classNames from .db-instr-* (used on Allocate/impact
+       screens) so this redesign can't leak into or disturb those already-tuned layouts. ── */
+    .db-land-card{position:relative;border-radius:14px;padding:14px 10px 12px;background:linear-gradient(160deg,var(--land-bg1,#f7faf9),var(--land-bg2,#fff));border:2px solid var(--land-border,#e0f3f0);box-shadow:0 4px 14px var(--land-shadow,rgba(26,58,92,0.08));overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;cursor:default;}
+    .db-land-card::before{content:'';position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--land-col,#2a9d8f);}
+    .db-land-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 28px var(--land-shadow-hover,rgba(26,58,92,0.2));border-color:var(--land-col,#2a9d8f);}
+    .db-land-icon{font-size:2.6rem;line-height:1;display:block;margin-bottom:8px;filter:drop-shadow(0 3px 6px rgba(26,58,92,0.18));}
+    .db-land-name{font-size:0.8rem;font-weight:800;color:#1a3a5c;margin-bottom:2px;}
+    .db-land-rate{font-size:0.78rem;font-weight:900;margin-bottom:1px;}
+    .db-land-tax{font-size:0.62rem;color:#5a7d8a;font-weight:600;}
+    @media(min-width:900px){
+      .db-land-card{padding:22px 14px 18px;border-radius:18px;border-width:2px;}
+      .db-land-icon{font-size:4.4rem;margin-bottom:12px;}
+      .db-land-name{font-size:1.05rem;}
+      .db-land-rate{font-size:1.05rem;}
+      .db-land-tax{font-size:0.78rem;}
+    }
+    @media(min-width:1300px){
+      .db-land-icon{font-size:5.4rem;}
+      .db-land-name{font-size:1.18rem;}
+      .db-land-rate{font-size:1.18rem;}
+    }
+    @media(min-width:1600px){
+      .db-land-icon{font-size:6.2rem;}
+      .db-land-name{font-size:1.3rem;}
+      .db-land-rate{font-size:1.3rem;}
+      .db-land-tax{font-size:0.9rem;}
+    }
+
+    /* ── CTA glow + deeper card lift (was: same flat gray shadow everywhere) ── */
+    .db-cta{box-shadow:0 6px 20px rgba(42,157,143,0.38),0 2px 6px rgba(26,58,92,0.15)!important;transition:transform .18s ease,box-shadow .18s ease;}
+    .db-cta:hover{transform:translateY(-1px);box-shadow:0 8px 26px rgba(42,157,143,0.46),0 3px 8px rgba(26,58,92,0.18)!important;}
+    .db-card{box-shadow:0 6px 22px rgba(26,58,92,0.09),0 1px 3px rgba(26,58,92,0.06)!important;}
+
+    /* ── Allocate screen: hover tooltip on each instrument card — what it is, in plain English,
+       for a student refreshing their memory before picking. Pure CSS (:hover), no JS state,
+       so it can't affect gameplay logic; hidden entirely on touch (no hover) devices where it
+       would just get stuck open. ── */
+    .db-instr-card{overflow:visible!important;}
+    .db-instr-tooltip{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%) translateY(4px);width:max(200px,90%);max-width:240px;background:#1a3a5c;color:#fff;border-radius:10px;padding:10px 12px;font-size:0.7rem;line-height:1.45;text-align:left;opacity:0;pointer-events:none;transition:opacity .15s ease,transform .15s ease;z-index:20;box-shadow:0 8px 20px rgba(26,58,92,0.3);}
+    .db-instr-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1a3a5c;}
+    .db-instr-tooltip-title{font-family:'Lora',serif;font-weight:700;font-size:0.76rem;margin-bottom:3px;color:#bde9e4;}
+    .db-instr-tooltip-desc{color:rgba(255,255,255,0.9);}
+    @media(hover:hover){.db-instr-card:hover .db-instr-tooltip{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto;}}
+    @media(min-width:900px){.db-instr-tooltip{font-size:0.85rem;padding:12px 14px;max-width:280px;}.db-instr-tooltip-title{font-size:0.9rem;}}
+
+    /* ── Allocate screen: thick icon bar (replaces the old thin anonymous progress strip) ── */
+    .db-status-bar-wrap{display:flex;height:44px;border-radius:12px;overflow:hidden;background:#f7faf9;border:1px solid #e0f3f0;gap:2px;}
+    .db-status-seg{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-width:22px;overflow:hidden;transition:flex 0.25s ease;color:#fff;}
+    .db-status-seg-icon{font-size:1.05rem;line-height:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.25));}
+    .db-status-seg-amt{font-size:0.58rem;font-weight:800;line-height:1;white-space:nowrap;text-shadow:0 1px 2px rgba(0,0,0,0.25);}
+    .db-status-seg-empty{background:repeating-linear-gradient(135deg,#eef5f3,#eef5f3 6px,#e3edea 6px,#e3edea 12px)!important;color:#8a9fb0;}
+    .db-status-seg-empty .db-status-seg-amt{color:#5a7d8a;text-shadow:none;font-weight:700;}
+
+    /* ── "Fill remaining" auto-complete button — for anyone unsure how to make the numbers hit
+       exactly ₹10L. Distributes the leftover across whatever hasn't been picked yet (respecting
+       the PPF/SSY ₹1.5L cap), rather than requiring manual step-by-step math. ── */
+    .db-fill-btn{display:flex;align-items:center;justify-content:center;gap:4px;width:100%;background:#f7f3e8;color:#8a6e20;border:1.5px solid #e0c675;border-radius:9px;padding:6px 6px;font-family:'Nunito',sans-serif;font-size:0.62rem;font-weight:800;cursor:pointer;transition:all .18s ease;white-space:nowrap;margin-top:6px;}
+    .db-fill-btn:hover{background:linear-gradient(135deg,#c9a84c,#e0c675);color:#fff;border-color:#c9a84c;transform:translateY(-1px);box-shadow:0 4px 12px rgba(201,168,76,0.35);}
+    @media(min-width:900px){.db-fill-btn{font-size:0.78rem;padding:8px 8px;border-radius:11px;}}
+
+    /* ── Intro screen ── */
+    .db-intro-wrap{position:relative;min-height:100vh;overflow:hidden;}
+    .db-intro-card{position:relative;z-index:1;background:#fff;border-radius:22px;box-shadow:0 16px 48px rgba(26,58,92,0.16);overflow:hidden;}
+    .db-intro-head{background:linear-gradient(135deg,#1a3a5c 0%,#2a5272 50%,#2a9d8f 100%);color:#fff;padding:28px 24px 24px;text-align:center;position:relative;}
+    .db-intro-head::before{content:'';position:absolute;inset:0;opacity:0.07;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
+    .db-intro-eyebrow{display:inline-block;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);font-size:0.62rem;font-weight:900;letter-spacing:1.5px;padding:4px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:10px;}
+    .db-intro-title{font-family:'Lora',serif;font-size:1.5rem;font-weight:700;margin-bottom:8px;}
+    .db-intro-pitch{font-size:0.88rem;color:rgba(255,255,255,0.9);line-height:1.6;max-width:440px;margin:0 auto;}
+    .db-intro-steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:22px 20px;}
+    .db-intro-step{text-align:center;}
+    .db-intro-step-num{width:26px;height:26px;border-radius:50%;background:#e0f3f0;color:#0e6050;font-weight:900;font-size:0.78rem;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;}
+    .db-intro-step-label{font-size:0.76rem;font-weight:800;color:#1a3a5c;line-height:1.35;}
+    @media(min-width:900px){
+      .db-intro-title{font-size:2.1rem;}
+      .db-intro-pitch{font-size:1.05rem;max-width:600px;}
+      .db-intro-steps{padding:32px 36px;gap:20px;}
+      .db-intro-step-num{width:36px;height:36px;font-size:1rem;}
+      .db-intro-step-label{font-size:0.95rem;}
+    }
   </style>
 </head>
 <body>
@@ -1756,12 +2080,12 @@ const RECT_LOGO = '/IFM%20logo%20white%20background.png';
 const SQ_LOGO = '/IFM%20round%20logo%20for%20watermark.png';
 
 const INSTR = [
-  { id:'ppf',   name:'PPF',       full:'Public Provident Fund',    rate:7.1,  risk:'Very Low', lock:'15 yrs',   tax:'Tax-Free', col:'#0e6050', icon:'🏛️' },
-  { id:'ssy',   name:'SSY',       full:'Sukanya Samriddhi',        rate:8.2,  risk:'Very Low', lock:'21 yrs',   tax:'Tax-Free', col:'#2a9d8f', icon:'👧' },
-  { id:'fd',    name:'Bank FD',   full:'Fixed Deposit',            rate:7.5,  risk:'Low',      lock:'1-5 yrs',  tax:'Taxable',  col:'#1a3a5c', icon:'💳' },
-  { id:'gbond', name:'Govt Bond', full:'Government Bond (AAA)',    rate:7.0,  risk:'Low',      lock:'Variable', tax:'Taxable',  col:'#6a1b9a', icon:'📜' },
-  { id:'cbond', name:'Corp Bond', full:'Corporate Bond (BBB)',     rate:11.0, risk:'High',     lock:'Variable', tax:'Taxable',  col:'#1a3a5c', icon:'🏢' },
-  { id:'dmf',   name:'Debt MF',   full:'Debt Mutual Fund',        rate:8.0,  risk:'Medium',   lock:'None',     tax:'LTCG',     col:'#b5600a', icon:'📊' },
+  { id:'ppf',   name:'PPF',       full:'Public Provident Fund',    rate:7.1,  risk:'Very Low', lock:'15 yrs',   tax:'Tax-Free', col:'#0e6050', icon:'🏛️', desc:'A government-backed long-term savings scheme. Locks your money for 15 years but the returns are fully tax-free.' },
+  { id:'ssy',   name:'SSY',       full:'Sukanya Samriddhi',        rate:8.2,  risk:'Very Low', lock:'21 yrs',   tax:'Tax-Free', col:'#2a9d8f', icon:'👧', desc:'A government scheme to build savings for a daughter. Offers the best guaranteed rate here, locked in for 21 years.' },
+  { id:'fd',    name:'Bank FD',   full:'Fixed Deposit',            rate:7.5,  risk:'Low',      lock:'1-5 yrs',  tax:'Taxable',  col:'#1a3a5c', icon:'💳', desc:'Park money with a bank for a fixed term at a fixed rate. Simple and safe, but the interest earned is taxable.' },
+  { id:'gbond', name:'Govt Bond', full:'Government Bond (AAA)',    rate:7.0,  risk:'Low',      lock:'Variable', tax:'Taxable',  col:'#6a1b9a', icon:'📜', desc:'A loan to the government. Very safe from default, but its market price can rise or fall as interest rates change.' },
+  { id:'cbond', name:'Corp Bond', full:'Corporate Bond (BBB)',     rate:11.0, risk:'High',     lock:'Variable', tax:'Taxable',  col:'#1a3a5c', icon:'🏢', desc:'A loan to a company. Pays a higher rate to compensate for the real risk that the company could default.' },
+  { id:'dmf',   name:'Debt MF',   full:'Debt Mutual Fund',        rate:8.0,  risk:'Medium',   lock:'None',     tax:'LTCG',     col:'#b5600a', icon:'📊', desc:'A professionally managed basket of many bonds. Diversification spreads the risk of any single one out automatically.' },
 ];
 
 const EVENTS = [
@@ -1833,29 +2157,92 @@ function DonutChart({ alloc, sz }) {
   );
 }
 
-function Welcome({ onNext }) {
+// Ambient drifting instrument-icon backdrop — reused behind Intro + Welcome.
+// Deterministic pseudo-random layout (seeded, not Math.random()) so it doesn't reshuffle
+// on every re-render/prop change; purely decorative, aria-hidden, pointer-events:none.
+function FloatingIcons() {
+  var seeds = [
+    {t:'8%',l:'6%',sz:'2.6rem',dur:'52s',delay:'0s'},
+    {t:'62%',l:'3%',sz:'2rem',dur:'61s',delay:'-14s'},
+    {t:'14%',l:'88%',sz:'2.2rem',dur:'47s',delay:'-6s'},
+    {t:'70%',l:'91%',sz:'2.8rem',dur:'58s',delay:'-22s'},
+    {t:'40%',l:'18%',sz:'1.7rem',dur:'44s',delay:'-30s'},
+    {t:'85%',l:'40%',sz:'2.3rem',dur:'55s',delay:'-9s'},
+    {t:'4%',l:'45%',sz:'1.9rem',dur:'50s',delay:'-38s'},
+    {t:'50%',l:'70%',sz:'2.5rem',dur:'63s',delay:'-17s'},
+    {t:'28%',l:'60%',sz:'1.6rem',dur:'41s',delay:'-25s'},
+    {t:'90%',l:'12%',sz:'2rem',dur:'49s',delay:'-12s'},
+    {t:'20%',l:'32%',sz:'2.1rem',dur:'57s',delay:'-4s'},
+    {t:'78%',l:'65%',sz:'1.8rem',dur:'46s',delay:'-33s'}
+  ];
   return (
-    <div style={{background:'#f7faf9',fontFamily:'Nunito,sans-serif',minHeight:'100vh',paddingBottom:'32px',paddingTop:'20px'}}>
+    <div className="db-float-layer" aria-hidden="true">
+      {seeds.map(function(s, i) {
+        var inst = INSTR[i % INSTR.length];
+        return <span key={i} className="db-float-icon" style={{top:s.t,left:s.l,fontSize:s.sz,animationDuration:s.dur,animationDelay:s.delay}}>{inst.icon}</span>;
+      })}
+    </div>
+  );
+}
 
-      {/* Centred column — no hero, parent app already has one */}
-      <div style={{maxWidth:'520px',margin:'0 auto',padding:'0 20px',display:'flex',flexDirection:'column',gap:'14px'}}>
+function Welcome({ onNext }) {
+  var steps = [
+    {n:1, label:'Allocate ₹10L across 6 instruments'},
+    {n:2, label:'Survive 4 real market events'},
+    {n:3, label:'See how debt really performs'}
+  ];
+  return (
+    <div className="db-page" style={{background:'#f7faf9',fontFamily:'Nunito,sans-serif',minHeight:'100vh',paddingBottom:'32px',paddingTop:'20px',position:'relative',overflow:'hidden'}}>
+      <FloatingIcons />
 
-        {/* Instrument preview grid */}
-        <div style={{background:'#fff',borderRadius:'20px',padding:'20px 18px',boxShadow:'0 2px 12px rgba(26,58,92,0.07)'}}>
-          <div style={{fontFamily:'Georgia,serif',fontSize:'1rem',fontWeight:'700',color:'#1a3a5c',marginBottom:'14px'}}>6 Instruments to choose from</div>
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'8px'}}>
-            {INSTR.map(function(inst) { return (
-              <div key={inst.id} style={{borderRadius:'14px',padding:'11px 10px',border:'2.5px solid #bde9e4',background:'#f7faf9'}}>
-                <div style={{fontSize:'1.4rem',marginBottom:'4px'}}>{inst.icon}</div>
-                <div style={{fontSize:'0.78rem',fontWeight:'800',color:'#1a3a5c',marginBottom:'2px'}}>{inst.name}</div>
-                <div style={{fontSize:'0.75rem',fontWeight:'900',color:inst.col,marginBottom:'1px'}}>{inst.rate}%</div>
-                <div style={{fontSize:'0.6rem',color:'#5a7d8a',fontWeight:'600'}}>{inst.tax}</div>
-              </div>
-            ); })}
+      {/* Centred column — sits above the floating-icon backdrop */}
+      <div className="db-wrap" style={{position:'relative',zIndex:1,maxWidth:'520px',margin:'0 auto',padding:'0 20px',display:'flex',flexDirection:'column',gap:'14px'}}>
+
+        {/* Pitch + how-to-play — merged with the instrument grid so it's one screen, not two */}
+        <div className="db-intro-card">
+          <div className="db-intro-head">
+            <div className="db-intro-eyebrow">💰 Game</div>
+            <div className="db-intro-title">Debt Boss</div>
+            <p className="db-intro-pitch">Your class has ₹10,00,000 to invest across 6 debt instruments. Rate hikes, a corporate default, inflation — survive all 4 and see how debt really works.</p>
+          </div>
+          <div className="db-intro-steps">
+            {steps.map(function(s) {
+              return (
+                <div key={s.n} className="db-intro-step">
+                  <div className="db-intro-step-num">{s.n}</div>
+                  <div className="db-intro-step-label">{s.label}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        <button onClick={onNext} style={{padding:'15px',background:'linear-gradient(135deg,#1a3a5c,#0e7060)',color:'#fff',fontWeight:'900',fontSize:'1rem',border:'none',borderRadius:'14px',cursor:'pointer',boxShadow:'0 4px 16px rgba(26,58,92,0.25)',letterSpacing:'0.3px'}}>
+        {/* Instrument preview grid */}
+        <div className="db-card" style={{background:'#fff',borderRadius:'20px',padding:'20px 18px'}}>
+          <div className="db-card-title" style={{fontFamily:'Lora,Georgia,serif',fontSize:'1rem',fontWeight:'700',color:'#1a3a5c',marginBottom:'14px'}}>6 Instruments to choose from</div>
+          <div className="db-grid6" style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'8px'}}>
+            {INSTR.map(function(inst, i) {
+              var landVars = {
+                '--land-col': inst.col,
+                '--land-bg1': inst.col+'29',
+                '--land-bg2': inst.col+'0d',
+                '--land-border': inst.col+'73',
+                '--land-shadow': inst.col+'33',
+                '--land-shadow-hover': inst.col+'61'
+              };
+              return (
+                <div key={inst.id} className="db-land-card" style={Object.assign({animationDelay:(i*70)+'ms'}, landVars)}>
+                  <span className="db-land-icon">{inst.icon}</span>
+                  <div className="db-land-name">{inst.name}</div>
+                  <div className="db-land-rate" style={{color:inst.col}}>{inst.rate}%</div>
+                  <div className="db-land-tax">{inst.tax}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <button className="db-cta" onClick={onNext} style={{padding:'15px',background:'linear-gradient(135deg,#1a3a5c,#2a9d8f)',color:'#fff',fontWeight:'900',fontSize:'1rem',border:'none',borderRadius:'14px',cursor:'pointer',letterSpacing:'0.3px'}}>
           Start Allocating →
         </button>
       </div>
@@ -1896,6 +2283,23 @@ function Allocate({ alloc, setAlloc, onNext }) {
     setAlloc(Object.assign({}, alloc, {[id]: newVal}));
   }
 
+  // Puts whatever's left entirely into ONE chosen instrument — a per-card "rest here" action
+  // instead of auto-splitting across all six, so the student decides where the leftover goes.
+  // Still respects the PPF/SSY ₹1.5L cap: if the remainder is bigger than that instrument's
+  // room, it fills up to the cap and leaves the (now smaller) true remainder still unplaced.
+  function fillInto(id) {
+    var curTotal = INSTR.reduce(function(s,v){ return s + (alloc[v.id]||0); }, 0);
+    var remaining = TOTAL - curTotal;
+    if (remaining <= 0) return;
+    var isCapped = (id === 'ppf' || id === 'ssy');
+    var cap = isCapped ? PPF_SSY_MAX : Infinity;
+    var cur = alloc[id] || 0;
+    var room = cap - cur;
+    if (room <= 0) return;
+    var add = Math.min(remaining, room);
+    setAlloc(Object.assign({}, alloc, {[id]: cur + add}));
+  }
+
   function fmtL(n) {
     if (!n) return '—';
     if (n >= 100000) return '₹' + (n/100000).toFixed(1).replace(/\.0$/, '') + 'L';
@@ -1905,85 +2309,101 @@ function Allocate({ alloc, setAlloc, onNext }) {
   var riskColor = { 'Very Low':'#2a9d8f', 'Low':'#5a9fd4', 'Medium':'#c9a84c', 'High':'#d9838a' };
 
   return (
-    <div style={{background:'#f7faf9',fontFamily:'Nunito,sans-serif',minHeight:'100vh',paddingBottom:'32px',paddingTop:'20px'}}>
+    <div className="db-page" style={{background:'#f7faf9',fontFamily:'Nunito,sans-serif',minHeight:'100vh',paddingBottom:'32px',paddingTop:'20px'}}>
 
       {/* ── Centred content column ── */}
-      <div style={{maxWidth:'520px',margin:'0 auto',padding:'0 20px'}}>
+      <div className="db-wrap" style={{maxWidth:'520px',margin:'0 auto',padding:'0 20px'}}>
 
         {/* ── Status card ── */}
-        <div style={{background:'#fff',borderRadius:'20px',marginBottom:'14px',padding:'18px 20px',boxShadow:'0 2px 12px rgba(26,58,92,0.07)'}}>
+        <div className="db-card db-status-card" style={{background:'#fff',borderRadius:'20px',marginBottom:'14px',padding:'18px 20px',boxShadow:'0 2px 12px rgba(26,58,92,0.07)'}}>
           <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'12px'}}>
             <div>
-              <div style={{fontSize:'0.72rem',fontWeight:'700',color:'#5a7d8a',marginBottom:'3px'}}>Portfolio allocated</div>
-              <div style={{fontSize:'1.5rem',fontWeight:'900',color:'#1a3a5c',fontFamily:'Georgia,serif'}}>₹{indFmtDB(total)||'0'}</div>
+              <div className="db-status-lbl" style={{fontSize:'0.72rem',fontWeight:'700',color:'#5a7d8a',marginBottom:'3px'}}>Portfolio allocated</div>
+              <div className="db-status-total" style={{fontSize:'1.5rem',fontWeight:'900',color:'#1a3a5c',fontFamily:'Lora,Georgia,serif'}}>₹{indFmtDB(total)||'0'}</div>
             </div>
             <div style={{textAlign:'right'}}>
-              <div style={{fontSize:'0.72rem',fontWeight:'700',color:'#5a7d8a',marginBottom:'3px'}}>{rem===0?'status':'remaining'}</div>
-              <div style={{fontSize:'1.15rem',fontWeight:'900',color:rem===0?'#0e7060':rem<0?'#d9838a':'#c9a84c'}}>
+              <div className="db-status-lbl" style={{fontSize:'0.72rem',fontWeight:'700',color:'#5a7d8a',marginBottom:'3px'}}>{rem===0?'status':'remaining'}</div>
+              <div className="db-status-rem" style={{fontSize:'1.15rem',fontWeight:'900',color:rem===0?'#2a9d8f':rem<0?'#d9838a':'#c9a84c'}}>
                 {rem===0?'✓ All Set':rem<0?'−₹'+indFmtDB(Math.abs(rem)):'₹'+indFmtDB(rem)}
               </div>
             </div>
           </div>
-          {/* Stacked bar */}
-          <div style={{display:'flex',height:'9px',borderRadius:'5px',overflow:'hidden',background:'#f7faf9'}}>
+          {/* Thick icon bar — each instrument's slice shown as a coloured block with its own
+              icon (and amount, if the slice is wide enough to hold it) instead of a thin
+              anonymous progress strip. Same alloc/rem data as before, purely a display change. */}
+          <div className="db-status-bar-wrap">
             {INSTR.map(function(inst){
               var v=alloc[inst.id]||0;
               if(!v) return null;
-              return <div key={inst.id} style={{flex:v,background:inst.col,transition:'flex 0.25s ease'}} />;
+              return (
+                <div key={inst.id} className="db-status-seg" style={{flex:v,background:'linear-gradient(160deg,'+inst.col+'e6,'+inst.col+')'}}>
+                  <span className="db-status-seg-icon">{inst.icon}</span>
+                  <span className="db-status-seg-amt">{fmtL(v)}</span>
+                </div>
+              );
             })}
-            {rem>0 && <div style={{flex:Math.max(0,rem),background:'transparent'}} />}
+            {rem>0 && <div className="db-status-seg db-status-seg-empty" style={{flex:rem}}><span className="db-status-seg-amt">₹{indFmtDB(rem)} left</span></div>}
           </div>
-          <div style={{display:'flex',justifyContent:'space-between',marginTop:'6px'}}>
+          <div style={{display:'flex',justifyContent:'space-between',marginTop:'8px'}}>
             <span style={{fontSize:'0.65rem',fontWeight:'700',color:'#aab8c2'}}>₹0</span>
-            <span style={{fontSize:'0.65rem',fontWeight:'800',color:can?'#0e7060':'#5a7d8a'}}>{pct.toFixed(0)}% placed</span>
+            <span style={{fontSize:'0.65rem',fontWeight:'800',color:can?'#2a9d8f':'#5a7d8a'}}>{pct.toFixed(0)}% placed</span>
             <span style={{fontSize:'0.65rem',fontWeight:'700',color:'#aab8c2'}}>₹10L</span>
           </div>
         </div>
 
         {/* ── Instrument cards ── */}
-        <div style={{background:'#fff',borderRadius:'20px',padding:'20px 18px',boxShadow:'0 2px 12px rgba(26,58,92,0.07)'}}>
-          <div style={{fontFamily:'Georgia,serif',fontSize:'1.1rem',fontWeight:'700',color:'#1a3a5c',marginBottom:'4px'}}>🏛️ Pick Your Instruments</div>
-          <p style={{color:'#5a7d8a',fontSize:'0.83rem',lineHeight:1.55,marginBottom:'16px'}}>Spread ₹10,00,000 across these debt options. Each has a different return, risk and lock-in.</p>
+        <div className="db-card" style={{background:'#fff',borderRadius:'20px',padding:'20px 18px',boxShadow:'0 2px 12px rgba(26,58,92,0.07)'}}>
+          <div className="db-card-title" style={{fontFamily:'Lora,Georgia,serif',fontSize:'1.1rem',fontWeight:'700',color:'#1a3a5c',marginBottom:'4px'}}>🏛️ Pick Your Instruments</div>
+          <p className="db-card-sub" style={{color:'#5a7d8a',fontSize:'0.83rem',lineHeight:1.55,marginBottom:'16px'}}>Spread ₹10,00,000 across these debt options. Each has a different return, risk and lock-in.</p>
 
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'10px'}}>
+          <div className="db-grid6" style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'10px'}}>
             {INSTR.map(function(inst){
               var val=alloc[inst.id]||0;
               var isCapped=inst.id==='ppf'||inst.id==='ssy';
               var filled=val>0;
+              var hasRoom=(isCapped ? PPF_SSY_MAX : Infinity) - val > 0;
               return (
-                <div key={inst.id} style={{borderRadius:'14px',padding:'12px 10px',border:'2.5px solid '+(filled?inst.col+'55':'#e0f3f0'),background:'#f7faf9',position:'relative',transition:'border-color 0.2s'}}>
+                <div key={inst.id} className="db-instr-card" style={{borderRadius:'14px',padding:'12px 10px',border:'2.5px solid '+(filled?inst.col+'99':inst.col+'35'),background:filled?inst.col+'0d':'#f7faf9',position:'relative',transition:'border-color 0.2s'}}>
                   {filled && <div style={{position:'absolute',top:'8px',right:'8px',width:'18px',height:'18px',borderRadius:'50%',background:inst.col,color:'#fff',fontSize:'0.6rem',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:'900'}}>✓</div>}
-                  <span style={{fontSize:'1.6rem',marginBottom:'6px',display:'block'}}>{inst.icon}</span>
-                  <div style={{fontWeight:'800',color:'#1a3a5c',fontSize:'0.8rem',marginBottom:'2px',paddingRight:filled?'20px':'0'}}>{inst.name}</div>
-                  <div style={{fontSize:'0.78rem',fontWeight:'900',color:inst.col,marginBottom:'3px'}}>{inst.rate}%</div>
-                  <div style={{fontSize:'0.63rem',color:'#5a7d8a',fontWeight:'600',marginBottom:'8px'}}>{inst.risk} risk{isCapped?' · cap ₹1.5L':''}</div>
+                  <div className="db-instr-icon-badge" style={{width:'48px',height:'48px',borderRadius:'50%',background:'#fff',border:'1.5px solid '+inst.col+'55',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'1.6rem',marginBottom:'8px',boxShadow:'0 2px 6px rgba(26,58,92,0.08)'}}>{inst.icon}</div>
+                  {/* Hover tooltip — what this instrument is, for students who want a refresher before picking */}
+                  <div className="db-instr-tooltip">
+                    <div className="db-instr-tooltip-title">{inst.full}</div>
+                    <div className="db-instr-tooltip-desc">{inst.desc}</div>
+                  </div>
+                  <div className="db-instr-name" style={{fontWeight:'800',color:'#1a3a5c',fontSize:'0.8rem',marginBottom:'2px',paddingRight:filled?'20px':'0'}}>{inst.name}</div>
+                  <div className="db-instr-rate" style={{fontSize:'0.78rem',fontWeight:'900',color:inst.col,marginBottom:'3px'}}>{inst.rate}%</div>
+                  <div className="db-instr-risk" style={{fontSize:'0.63rem',color:'#5a7d8a',fontWeight:'600',marginBottom:'8px'}}>{inst.risk} risk{isCapped?' · cap ₹1.5L':''}</div>
                   {/* Amount stepper */}
-                  <div style={{marginTop:'8px',background:filled?inst.col+'12':'#f7faf9',borderRadius:'10px',padding:'6px 8px',textAlign:'center',fontWeight:'900',fontSize:'0.82rem',color:filled?inst.col:'#aab8c2',minHeight:'28px',letterSpacing:'0.3px',marginBottom:'7px'}}>
+                  <div className="db-instr-amt" style={{marginTop:'8px',background:filled?inst.col+'12':'#f7faf9',border:'1px solid '+(filled?inst.col+'30':'#e0f3f0'),borderRadius:'10px',padding:'6px 8px',textAlign:'center',fontWeight:'900',fontSize:'0.82rem',color:filled?inst.col:'#aab8c2',minHeight:'28px',letterSpacing:'0.3px',marginBottom:'7px'}}>
                     {filled ? '₹'+indFmtDB(val) : '—'}
                   </div>
                   <div style={{display:'flex',gap:'6px',alignItems:'center'}}>
-                    <button onClick={function(){handleStep(inst.id,-STEP);}} disabled={val<=0}
+                    <button className="db-step-btn" onClick={function(){handleStep(inst.id,-STEP);}} disabled={val<=0}
                       style={{flex:'0 0 32px',height:'32px',borderRadius:'8px',border:'1.5px solid '+(val>0?inst.col+'80':'#e0f3f0'),background:val>0?'#fff':'#f7faf9',color:val>0?inst.col:'#bcc8d4',fontWeight:'900',fontSize:'1.1rem',cursor:val>0?'pointer':'not-allowed',display:'flex',alignItems:'center',justifyContent:'center',lineHeight:1}}>−</button>
-                    <div style={{flex:1,textAlign:'center',fontSize:'0.58rem',fontWeight:'700',color:'#8a9fb0',lineHeight:1}}>±₹25K</div>
-                    <button onClick={function(){handleStep(inst.id,+STEP);}} disabled={rem<STEP}
+                    <div className="db-step-lbl" style={{flex:1,textAlign:'center',fontSize:'0.58rem',fontWeight:'700',color:'#8a9fb0',lineHeight:1}}>±₹25K</div>
+                    <button className="db-step-btn" onClick={function(){handleStep(inst.id,+STEP);}} disabled={rem<STEP}
                       style={{flex:'0 0 32px',height:'32px',borderRadius:'8px',border:'none',background:rem>=STEP?inst.col:'#e0f3f0',color:rem>=STEP?'#fff':'#aab8c2',fontWeight:'900',fontSize:'1.1rem',cursor:rem>=STEP?'pointer':'not-allowed',display:'flex',alignItems:'center',justifyContent:'center',lineHeight:1}}>+</button>
                   </div>
+                  {/* Put the whole remaining balance into just this instrument */}
+                  {rem>0 && hasRoom && <button className="db-fill-btn" onClick={function(){fillInto(inst.id);}}>✨ Rest here</button>}
                 </div>
               );
             })}
           </div>
 
           {/* Info tip */}
-          <div style={{background:'#f7f3e8',border:'1.5px solid rgba(201,168,76,0.3)',borderRadius:'12px',padding:'12px 16px',fontSize:'0.8rem',color:'#8a6e20',marginTop:'16px',lineHeight:1.55}}>
+          <div className="db-tip" style={{background:'#f7f3e8',border:'1.5px solid rgba(201,168,76,0.3)',borderRadius:'12px',padding:'12px 16px',fontSize:'0.8rem',color:'#8a6e20',marginTop:'16px',lineHeight:1.55}}>
             💡 PPF and SSY are government-backed and tax-free — great anchors for a debt portfolio.
           </div>
 
           {/* CTA */}
           <button
+            className="db-cta"
             onClick={onNext} disabled={!can}
             style={{
               width:'100%',marginTop:'16px',padding:'14px',
-              background:can?'linear-gradient(135deg,#1a3a5c,#0e7060)':'#e0f3f0',
+              background:can?'linear-gradient(135deg,#1a3a5c,#2a9d8f)':'#e0f3f0',
               color:can?'#fff':'#8a9fb0',fontWeight:'900',fontSize:'0.95rem',
               border:'none',borderRadius:'14px',cursor:can?'pointer':'not-allowed',
               boxShadow:can?'0 4px 16px rgba(26,58,92,0.25)':'none',
@@ -2005,36 +2425,38 @@ function EventPopup({ ev, onClose }) {
     : ev.num===3?'linear-gradient(135deg,#3d1515,#b5474a)'
     : 'linear-gradient(135deg,#3d2800,#b5600a)';
   return (
-    <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.65)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:1000,padding:'16px'}}>
-      <div style={{background:'#fff',borderRadius:'16px',maxWidth:'370px',width:'100%',overflow:'hidden',boxShadow:'0 20px 60px rgba(0,0,0,0.35)'}}>
-        <div style={{background:headerGrad,padding:'13px 15px',color:'#fff'}}>
-          <div style={{fontSize:'0.6rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'1px',color:'rgba(255,255,255,0.65)',marginBottom:'3px'}}>ROUND {ev.num} OF 4 — {ev.year}</div>
-          <div style={{fontSize:'1.2rem',fontWeight:'900',marginBottom:'4px'}}>{ev.emoji} {ev.title}</div>
-          <div style={{fontSize:'0.72rem',color:'rgba(255,255,255,0.85)',lineHeight:1.5}}>{ev.headline}</div>
+    <div className="db-popup-overlay" style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.65)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:1000,padding:'16px',overflowY:'auto'}}>
+      <div className="db-popup-card" style={{background:'#fff',borderRadius:'16px',maxWidth:'370px',width:'100%',overflow:'hidden',boxShadow:'0 20px 60px rgba(0,0,0,0.35)',border:'1px solid rgba(255,255,255,0.08)',margin:'auto'}}>
+        <div className="db-popup-head" style={{background:headerGrad,padding:'13px 15px',color:'#fff'}}>
+          <div className="db-popup-head-eyebrow" style={{fontSize:'0.6rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'1px',color:'rgba(255,255,255,0.65)',marginBottom:'3px'}}>ROUND {ev.num} OF 4 — {ev.year}</div>
+          <div className="db-popup-title" style={{fontSize:'1.2rem',fontWeight:'900',marginBottom:'4px'}}>{ev.emoji} {ev.title}</div>
+          <div className="db-popup-headline" style={{fontSize:'0.72rem',color:'rgba(255,255,255,0.85)',lineHeight:1.5}}>{ev.headline}</div>
         </div>
-        <div style={{padding:'10px 13px',maxHeight:'55vh',overflowY:'auto'}}>
-          <div style={{background:'#e0f3f0',borderRadius:'9px',padding:'9px 11px',marginBottom:'9px',fontSize:'0.69rem',color:'#1a3a5c',lineHeight:1.65,borderLeft:'3px solid #2a9d8f'}}>
+        <div className="db-popup-body" style={{padding:'10px 13px',maxHeight:'55vh',overflowY:'auto'}}>
+          <div className="db-popup-classroom" style={{background:'#e0f3f0',borderRadius:'9px',padding:'9px 11px',marginBottom:'9px',fontSize:'0.69rem',color:'#1a3a5c',lineHeight:1.65,borderLeft:'3px solid #2a9d8f'}}>
             {ev.classroom.split('\\n\\n').map(function(para, i) {
               return <p key={i} style={{margin: i > 0 ? '8px 0 0' : '0'}}>{para}</p>;
             })}
           </div>
-          <div style={{fontSize:'0.6rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'0.8px',color:'#6a8a9c',marginBottom:'6px'}}>How each instrument is affected</div>
-          {INSTR.map(function(inst) {
-            var imp = ev.impacts[inst.id];
-            return (
-              <div key={inst.id} style={{display:'flex',alignItems:'flex-start',gap:'8px',padding:'6px 0',borderBottom:'1px solid #edf5f3'}}>
-                <span style={{fontSize:'1.05rem',flexShrink:0,marginTop:'1px'}}>{inst.icon}</span>
-                <div style={{flex:1,minWidth:0}}>
-                  <div style={{fontSize:'0.72rem',fontWeight:'800',color:'#1a3a5c'}}>{inst.name}</div>
-                  <div style={{fontSize:'0.63rem',color:'#4a5a6a',lineHeight:1.4}}>{ev.descs[inst.id]}</div>
+          <div className="db-popup-impact-label" style={{fontSize:'0.6rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'0.8px',color:'#6a8a9c',marginBottom:'6px'}}>How each instrument is affected</div>
+          <div className="db-popup-impact-list">
+            {INSTR.map(function(inst) {
+              var imp = ev.impacts[inst.id];
+              return (
+                <div key={inst.id} className="db-popup-impact-row" style={{display:'flex',alignItems:'flex-start',gap:'8px',padding:'6px 0',borderBottom:'1px solid #edf5f3'}}>
+                  <span className="db-popup-impact-icon" style={{fontSize:'1.05rem',flexShrink:0,marginTop:'1px'}}>{inst.icon}</span>
+                  <div style={{flex:1,minWidth:0}}>
+                    <div className="db-popup-impact-name" style={{fontSize:'0.72rem',fontWeight:'800',color:'#1a3a5c'}}>{inst.name}</div>
+                    <div className="db-popup-impact-desc" style={{fontSize:'0.63rem',color:'#4a5a6a',lineHeight:1.4}}>{ev.descs[inst.id]}</div>
+                  </div>
+                  <div className="db-popup-impact-pct" style={{fontSize:'0.8rem',fontWeight:'900',color:imp>=0?'#0e6050':'#b5474a',flexShrink:0,minWidth:'42px',textAlign:'right'}}>{pctStr(imp)}</div>
                 </div>
-                <div style={{fontSize:'0.8rem',fontWeight:'900',color:imp>=0?'#0e6050':'#b5474a',flexShrink:0,minWidth:'42px',textAlign:'right'}}>{pctStr(imp)}</div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-        <div style={{padding:'10px 13px 13px'}}>
-          <button onClick={onClose} style={{width:'100%',padding:'11px',background:headerGrad,color:'#fff',fontWeight:'800',fontSize:'0.88rem',border:'none',borderRadius:'11px',cursor:'pointer'}}>
+        <div className="db-popup-foot" style={{padding:'10px 13px 13px'}}>
+          <button className="db-popup-btn" onClick={onClose} style={{width:'100%',padding:'11px',background:headerGrad,color:'#fff',fontWeight:'800',fontSize:'0.88rem',border:'none',borderRadius:'11px',cursor:'pointer'}}>
             Got it — answer a quick question →
           </button>
         </div>
@@ -2070,16 +2492,16 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
 
   function Header() {
     return (
-      <div style={{background:'linear-gradient(135deg,#1a3a5c,#2a5272)',padding:'11px 17px 10px',color:'#fff'}}>
+      <div className="db-hdr" style={{background:'linear-gradient(135deg,#1a3a5c,#2a5272)',padding:'11px 17px 10px',color:'#fff'}}>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'6px'}}>
-          <img src={RECT_LOGO} alt="IFM" style={{height:'24px',objectFit:'contain',borderRadius:'4px',opacity:0.95}} onError={function(e){e.target.style.display='none';}} />
+          <img className="db-hdr-logo" src={SQ_LOGO} alt="IFM" style={{height:'24px',width:'24px',objectFit:'cover',borderRadius:'50%',opacity:0.95}} onError={function(e){e.target.style.display='none';}} />
           <div style={{display:'flex',alignItems:'center',gap:'10px'}}>
-            <div style={{fontSize:'0.62rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'1px',color:'#bde9e4'}}>ROUND {round} OF 4</div>
-            <div style={{fontSize:'0.7rem',fontWeight:'800',color:'#fdf3dc'}}>Score: {score} pts</div>
+            <div className="db-hdr-round" style={{fontSize:'0.62rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'1px',color:'#bde9e4'}}>ROUND {round} OF 4</div>
+            <div className="db-hdr-score" style={{fontSize:'0.7rem',fontWeight:'800',color:'#fdf3dc'}}>Score: {score} pts</div>
           </div>
         </div>
         <div style={{display:'flex',gap:'5px'}}>
-          {[1,2,3,4].map(function(i){return <div key={i} style={{flex:1,height:'4px',borderRadius:'2px',background:i<=round?'#bde9e4':'rgba(255,255,255,0.2)'}}></div>;})}
+          {[1,2,3,4].map(function(i){return <div key={i} className="db-hdr-bar" style={{flex:1,height:'4px',borderRadius:'2px',background:i<=round?'#bde9e4':'rgba(255,255,255,0.2)'}}></div>;})}
         </div>
       </div>
     );
@@ -2091,18 +2513,18 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
       <div style={{background:'#f7faf9',fontFamily:"Nunito,sans-serif"}}>
         {showPopup && <EventPopup ev={ev} onClose={function(){ setShowPopup(false); }} />}
         <Header />
-        <div style={{maxWidth:'480px',margin:'0 auto',padding:'12px 16px'}}>
+        <div className="db-wrap-narrow" style={{maxWidth:'480px',margin:'0 auto',padding:'12px 16px'}}>
           {/* Event headline card */}
-          <div style={{background:headerGrad,borderRadius:'16px',padding:'14px 16px',marginBottom:'12px',color:'#fff'}}>
-            <div style={{fontSize:'0.6rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'1px',color:'rgba(255,255,255,0.65)',marginBottom:'3px'}}>{ev.year}</div>
-            <div style={{fontSize:'1.1rem',fontWeight:'900',marginBottom:'4px'}}>{ev.emoji} {ev.title}</div>
-            <div style={{fontSize:'0.75rem',color:'rgba(255,255,255,0.85)',lineHeight:1.5}}>{ev.headline}</div>
+          <div className="db-ev-headline-card" style={{background:headerGrad,borderRadius:'16px',padding:'14px 16px',marginBottom:'12px',color:'#fff'}}>
+            <div className="db-ev-year" style={{fontSize:'0.6rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'1px',color:'rgba(255,255,255,0.65)',marginBottom:'3px'}}>{ev.year}</div>
+            <div className="db-ev-title" style={{fontSize:'1.1rem',fontWeight:'900',marginBottom:'4px'}}>{ev.emoji} {ev.title}</div>
+            <div className="db-ev-headline" style={{fontSize:'0.75rem',color:'rgba(255,255,255,0.85)',lineHeight:1.5}}>{ev.headline}</div>
           </div>
 
           {/* Quiz card */}
-          <div style={{background:'#fff',borderRadius:'16px',padding:'14px 15px',marginBottom:'12px',boxShadow:'0 2px 10px rgba(26,58,92,0.07)'}}>
-            <div style={{fontSize:'0.6rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'0.8px',color:'#6a8a9c',marginBottom:'6px'}}>Quick Question — +25 pts</div>
-            <div style={{fontSize:'0.85rem',fontWeight:'700',color:'#1a3a5c',marginBottom:'10px',lineHeight:1.5}}>{ev.q}</div>
+          <div className="db-card" style={{background:'#fff',borderRadius:'16px',padding:'14px 15px',marginBottom:'12px',boxShadow:'0 2px 10px rgba(26,58,92,0.07)'}}>
+            <div className="db-quiz-eyebrow" style={{fontSize:'0.6rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'0.8px',color:'#6a8a9c',marginBottom:'6px'}}>Quick Question — +25 pts</div>
+            <div className="db-quiz-q" style={{fontSize:'0.85rem',fontWeight:'700',color:'#1a3a5c',marginBottom:'10px',lineHeight:1.5}}>{ev.q}</div>
             <div style={{display:'flex',flexDirection:'column',gap:'7px'}}>
               {ev.opts.map(function(opt, i) {
                 var bg='#f7faf9', border='1.5px solid #bde9e4', col='#1a3a5c';
@@ -2111,7 +2533,7 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
                   else if (i === chosen) { bg='#fde8e6'; border='2px solid #c62828'; col='#b5474a'; }
                 }
                 return (
-                  <button key={i} onClick={function(){handle(i);}} disabled={answered}
+                  <button key={i} className="db-quiz-opt" onClick={function(){handle(i);}} disabled={answered}
                     style={{padding:'9px 12px',background:bg,border:border,borderRadius:'11px',cursor:answered?'default':'pointer',textAlign:'left',fontSize:'0.8rem',fontWeight:'700',color:col}}>
                     {answered && i === ev.ans ? '✅ ' : (answered && i === chosen && i !== ev.ans ? '❌ ' : '')}{opt}
                   </button>
@@ -2119,13 +2541,14 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
               })}
             </div>
             {answered && (
-              <div style={{marginTop:'10px',padding:'9px 12px',background:correct?'#e0f3f0':'#fff8e1',borderRadius:'11px',borderLeft:'3px solid '+(correct?'#2a9d8f':'#b5600a'),fontSize:'0.75rem',color:'#1a3a5c',lineHeight:1.55}}>
+              <div className="db-quiz-feedback" style={{marginTop:'10px',padding:'9px 12px',background:correct?'#e0f3f0':'#fff8e1',borderRadius:'11px',borderLeft:'3px solid '+(correct?'#2a9d8f':'#b5600a'),fontSize:'0.75rem',color:'#1a3a5c',lineHeight:1.55}}>
                 {correct ? '🎉 +25 points! ' : '💡 Good try! '}{ev.explain}
               </div>
             )}
           </div>
 
           <button
+            className="db-cta"
             onClick={function(){ setPhase('impact'); }}
             disabled={!answered}
             style={{width:'100%',padding:'13px',background:answered?headerGrad:'#bde9e4',color:'#fff',fontWeight:'900',fontSize:'0.92rem',border:'none',borderRadius:'14px',cursor:answered?'pointer':'not-allowed',opacity:answered?1:0.7,boxShadow:answered?'0 4px 14px rgba(26,58,92,0.2)':'none'}}
@@ -2149,9 +2572,9 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
   var maxImpact = Math.max.apply(null, allocatedInstr.map(function(inst){ return Math.abs(ev.impacts[inst.id]); }));
 
   return (
-    <div style={{background:'#f7faf9',fontFamily:"Nunito,sans-serif",paddingBottom:'24px'}}>
+    <div className="db-page" style={{background:'#f7faf9',fontFamily:"Nunito,sans-serif",paddingBottom:'24px'}}>
       <Header />
-      <div style={{maxWidth:'480px',margin:'0 auto',padding:'12px 16px'}}>
+      <div className="db-wrap" style={{maxWidth:'480px',margin:'0 auto',padding:'12px 16px'}}>
 
         {/* Journey strip — portfolio value across all rounds */}
         {(function(){
@@ -2160,7 +2583,7 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
           points.push({label:'Yr '+round, value:totalAfter, emoji:ev.emoji, current:true});
           for (var i = round + 1; i <= 4; i++) points.push({label:'Yr '+i, value:null, emoji:EVENTS[i-1]?EVENTS[i-1].emoji:'⬜', future:true});
           return (
-            <div style={{background:'#fff',borderRadius:'16px',padding:'12px 14px',marginBottom:'12px',boxShadow:'0 2px 10px rgba(26,58,92,0.07)'}}>
+            <div className="db-journey" style={{background:'#fff',borderRadius:'16px',padding:'12px 14px',marginBottom:'12px',boxShadow:'0 2px 10px rgba(26,58,92,0.07)'}}>
               <div style={{fontSize:'0.6rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'1.5px',color:'#8a9fb0',marginBottom:'10px'}}>📈 Portfolio Journey</div>
               <div style={{display:'flex',alignItems:'stretch',overflowX:'auto',gap:'0',paddingBottom:'2px',WebkitOverflowScrolling:'touch'}}>
                 {points.map(function(pt, idx){
@@ -2172,7 +2595,7 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
                   var textCol = pt.current ? '#fff' : pt.future ? '#b0bec5' : '#1a3a5c';
                   var subCol = pt.current ? 'rgba(255,255,255,0.65)' : pt.future ? '#c0cfd8' : '#5a7d8a';
                   var pctBg = pt.current ? 'rgba(255,255,255,0.15)' : (pct>=0 ? '#e0f3f0' : '#fde8e6');
-                  var pctCol = pt.current ? (pct>=0?'#bde9e4':'#f5c0bc') : (pct>=0?'#0e7060':'#b5474a');
+                  var pctCol = pt.current ? (pct>=0?'#bde9e4':'#f5c0bc') : (pct>=0?'#2a9d8f':'#b5474a');
                   return (
                     <React.Fragment key={idx}>
                       {idx > 0 && (
@@ -2196,7 +2619,7 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
         })()}
 
         {/* Summary banner */}
-        <div style={{background:headerGrad,borderRadius:'16px',padding:'14px 18px',marginBottom:'14px',color:'#fff'}}>
+        <div className="db-summary-banner" style={{background:headerGrad,borderRadius:'16px',padding:'14px 18px',marginBottom:'14px',color:'#fff'}}>
           <div style={{fontSize:'0.65rem',fontWeight:'800',textTransform:'uppercase',letterSpacing:'1px',color:'rgba(255,255,255,0.65)',marginBottom:'4px'}}>{ev.emoji} {ev.title} — Portfolio Impact</div>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end'}}>
             <div>
@@ -2215,8 +2638,8 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
           </div>
         </div>
 
-        {/* Per-instrument cards — 3-col grid */}
-        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'8px',marginBottom:'14px'}}>
+        {/* Per-instrument cards — matches the Allocate screen's 6-across card system */}
+        <div className="db-grid6" style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'8px',marginBottom:'14px'}}>
           {allocatedInstr.map(function(inst){
             var imp = ev.impacts[inst.id];
             var before = portfolio[inst.id] || 0;
@@ -2224,36 +2647,30 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
             var gain = after - before;
             var isPos = imp >= 0;
             var barWidth = maxImpact > 0 ? Math.abs(imp) / maxImpact * 100 : 0;
+            var col = isPos ? inst.col : '#b5474a';
 
             return (
-              <div key={inst.id} style={{background:'#fff',borderRadius:'14px',padding:'10px',boxShadow:'0 2px 8px rgba(26,58,92,0.06)',border:'2px solid '+(isPos?'#e0f3f0':'#fde8e6'),display:'flex',flexDirection:'column',gap:'7px'}}>
-                {/* Icon + name */}
-                <div style={{display:'flex',alignItems:'center',gap:'5px'}}>
-                  <span style={{fontSize:'1.3rem'}}>{inst.icon}</span>
-                  <div style={{fontWeight:'800',color:'#1a3a5c',fontSize:'0.75rem',lineHeight:1.2}}>{inst.name}</div>
+              <div key={inst.id} className="db-instr-card" style={{background:isPos?inst.col+'0d':'#fde8e6',borderRadius:'14px',padding:'10px',boxShadow:'0 2px 8px rgba(26,58,92,0.06)',border:'2.5px solid '+(isPos?inst.col+'99':'#e08a8a'),display:'flex',flexDirection:'column',gap:'7px'}}>
+                {/* Icon badge + name */}
+                <div style={{display:'flex',alignItems:'center',gap:'8px'}}>
+                  <div className="db-instr-icon-badge" style={{width:'34px',height:'34px',borderRadius:'50%',background:'#fff',border:'1.5px solid '+col+'55',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'1.1rem',flexShrink:0,boxShadow:'0 2px 6px rgba(26,58,92,0.08)'}}>{inst.icon}</div>
+                  <div className="db-instr-name" style={{fontWeight:'800',color:'#1a3a5c',fontSize:'0.75rem',lineHeight:1.2}}>{inst.name}</div>
                 </div>
 
                 {/* % change */}
-                <div style={{fontSize:'1.1rem',fontWeight:'900',color:isPos?'#0e6050':'#b5474a'}}>{pctStr(imp)}</div>
+                <div className="db-instr-rate" style={{fontSize:'1.1rem',fontWeight:'900',color:isPos?'#0e6050':'#b5474a'}}>{pctStr(imp)}</div>
 
                 {/* Impact bar */}
-                <div style={{height:'6px',borderRadius:'3px',background:'#f7faf9',overflow:'hidden'}}>
+                <div style={{height:'6px',borderRadius:'3px',background:'#fff',overflow:'hidden'}}>
                   <div style={{height:'100%',width:barWidth+'%',background:isPos?'linear-gradient(90deg,#2a9d8f,#4db89e)':'linear-gradient(90deg,#c0575a,#d9838a)',borderRadius:'3px'}}></div>
                 </div>
 
-                {/* Before → After */}
-                <div style={{background:'#f7faf9',borderRadius:'8px',padding:'6px 7px'}}>
-                  <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-                    <div>
-                      <div style={{fontSize:'0.5rem',color:'#8a9fb0',fontWeight:'700',marginBottom:'2px'}}>BEFORE</div>
-                      <div style={{fontSize:'0.65rem',fontWeight:'900',color:'#1a3a5c'}}>₹{indFmtDB(Math.round(before))}</div>
-                    </div>
-                    <div style={{color:'#c0ccd8',fontSize:'0.7rem'}}>→</div>
-                    <div style={{textAlign:'right'}}>
-                      <div style={{fontSize:'0.5rem',color:'#8a9fb0',fontWeight:'700',marginBottom:'2px'}}>AFTER</div>
-                      <div style={{fontSize:'0.65rem',fontWeight:'900',color:isPos?'#0e6050':'#b5474a'}}>₹{indFmtDB(Math.round(after))}</div>
-                    </div>
-                  </div>
+                {/* After value, prominent — with Before as muted subtext. Stacked (not side-by-side) so it never has to
+                    squeeze two 9-character rupee amounts into a ~150px-wide 6-across card; this is what was colliding. */}
+                <div className="db-instr-amt" style={{background:'#fff',border:'1px solid '+(isPos?col+'30':'#f0c7c7'),borderRadius:'8px',padding:'6px 7px',minHeight:'auto',textAlign:'center'}}>
+                  <div style={{fontSize:'0.5rem',color:'#8a9fb0',fontWeight:'700',letterSpacing:'0.3px'}}>AFTER</div>
+                  <div style={{fontSize:'0.78rem',fontWeight:'900',color:isPos?'#0e6050':'#b5474a',fontVariantNumeric:'tabular-nums',lineHeight:1.3}}>₹{indFmtDB(Math.round(after))}</div>
+                  <div style={{fontSize:'0.58rem',color:'#aab8c2',fontWeight:'700',fontVariantNumeric:'tabular-nums'}}>was ₹{indFmtDB(Math.round(before))}</div>
                 </div>
 
                 {/* Gain/loss badge */}
@@ -2274,7 +2691,7 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
 
         <button
           onClick={onNext}
-          style={{width:'100%',padding:'14px',background:'linear-gradient(135deg,#1a3a5c,#0e7060)',color:'#fff',fontWeight:'900',fontSize:'0.95rem',border:'none',borderRadius:'14px',cursor:'pointer',boxShadow:'0 4px 14px rgba(26,58,92,0.2)',letterSpacing:'0.3px'}}
+          style={{width:'100%',padding:'14px',background:'linear-gradient(135deg,#1a3a5c,#2a9d8f)',color:'#fff',fontWeight:'900',fontSize:'0.95rem',border:'none',borderRadius:'14px',cursor:'pointer',boxShadow:'0 4px 14px rgba(26,58,92,0.2)',letterSpacing:'0.3px'}}
         >
           {round < 4 ? 'Next: '+EVENTS[round].emoji+' '+EVENTS[round].title+' →' : '🏆 See Final Results'}
         </button>
@@ -2283,13 +2700,16 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
       {showInflPopup && (
         <div onClick={function(e){if(e.target===e.currentTarget)setShowInflPopup(false);}}
           style={{position:'fixed',inset:0,background:'rgba(26,58,92,0.62)',zIndex:9999,display:'flex',alignItems:'center',justifyContent:'center',padding:'16px',overflowY:'auto'}}>
-          <div style={{background:'#fff',borderRadius:'22px',maxWidth:'420px',width:'100%',padding:'24px 20px',maxHeight:'88vh',overflowY:'auto',boxShadow:'0 12px 48px rgba(26,58,92,0.28)'}}>
+          <div className="db-infl-card" style={{background:'#fff',borderRadius:'22px',maxWidth:'420px',width:'100%',maxHeight:'960px',overflowY:'visible',boxShadow:'0 12px 48px rgba(26,58,92,0.28)',display:'flex',flexDirection:'column'}}>
 
-            {/* Header */}
-            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'14px'}}>
-              <div style={{fontFamily:'Georgia,serif',fontSize:'1rem',fontWeight:'700',color:'#1a3a5c'}}>🧮 Real Return Calculator</div>
+            {/* Header (pinned) */}
+            <div className="db-infl-head" style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'24px 20px 14px',flexShrink:0}}>
+              <div style={{fontFamily:'Lora,Georgia,serif',fontSize:'1rem',fontWeight:'700',color:'#1a3a5c'}}>🧮 Real Return Calculator</div>
               <button onClick={function(){setShowInflPopup(false);}} style={{background:'none',border:'none',fontSize:'1.4rem',cursor:'pointer',color:'#8a9fb0',lineHeight:1}}>✕</button>
             </div>
+
+            {/* Scrollable middle */}
+            <div className="db-infl-body" style={{padding:'0 20px',overflowY:'auto',flex:'1 1 auto',minHeight:0}}>
 
             {/* Formula callout */}
             <div style={{background:'#fff8e1',borderRadius:'12px',padding:'11px 13px',marginBottom:'14px',border:'1.5px solid #ffe082'}}>
@@ -2300,6 +2720,7 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
             <div style={{fontSize:'0.62rem',fontWeight:'800',textTransform:'uppercase',color:'#8a9fb0',letterSpacing:'0.6px',marginBottom:'10px'}}>Year 4 — Inflation: 7.5%</div>
 
             {/* Instrument rows */}
+            <div className="db-infl-list">
             {[
               {name:'FD',           icon:'🏦', nominal:7.5,  col:'#1a3a5c', note:'Just keeping pace with inflation'},
               {name:'Gold Bond',    icon:'🪙', nominal:7.0,  col:'#b8860b', note:'Falling behind inflation'},
@@ -2313,7 +2734,7 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
               var realBg  = isPos ? '#e0f3f0' : isZero ? '#e0f3f0' : '#fde8e6';
               var border  = isPos ? '#e0f3f0' : isZero ? '#e0f3f0' : '#f5c0bc';
               return (
-                <div key={item.name} style={{background:'#f7faf9',borderRadius:'13px',padding:'12px 13px',marginBottom:'9px',border:'1.5px solid '+border}}>
+                <div key={item.name} className="db-infl-row" style={{background:'#f7faf9',borderRadius:'13px',padding:'12px 13px',marginBottom:'9px',border:'1.5px solid '+border}}>
                   <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'8px'}}>
                     <div style={{display:'flex',alignItems:'center',gap:'7px'}}>
                       <span style={{fontSize:'1.2rem'}}>{item.icon}</span>
@@ -2333,17 +2754,22 @@ function EventScreen({ ev, round, portfolio, alloc, score, portHistory, onAnswer
                 </div>
               );
             })}
+            </div>
 
             {/* Insight */}
-            <div style={{background:'linear-gradient(135deg,#e0f3f0,#f7faf9)',borderRadius:'13px',padding:'12px 14px',marginTop:'4px',border:'1.5px solid #a5d6a7'}}>
+            <div style={{background:'linear-gradient(135deg,#e0f3f0,#f7faf9)',borderRadius:'13px',padding:'12px 14px',margin:'4px 0 20px',border:'1.5px solid #a5d6a7'}}>
               <div style={{fontWeight:'900',color:'#0e6050',fontSize:'0.8rem',marginBottom:'5px'}}>💡 The Takeaway</div>
               <div style={{fontSize:'0.76rem',color:'#2a9d8f',lineHeight:1.6}}>Only Corporate Bonds meaningfully beat inflation (+3.5%). FDs and PPF barely keep up — or fall behind. This is why long-term wealth needs <strong>growth assets beyond just debt</strong>.</div>
             </div>
+            </div>{/* end db-infl-body */}
 
-            <button onClick={function(){setShowInflPopup(false);}}
-              style={{width:'100%',marginTop:'16px',padding:'13px',background:'linear-gradient(135deg,#1a3a5c,#0e7060)',color:'#fff',border:'none',borderRadius:'13px',fontWeight:'900',fontSize:'0.9rem',cursor:'pointer',boxShadow:'0 3px 12px rgba(26,58,92,0.2)'}}>
-              Got it! 👍
-            </button>
+            {/* Footer (pinned) */}
+            <div className="db-infl-foot" style={{padding:'12px 20px 20px',flexShrink:0}}>
+              <button onClick={function(){setShowInflPopup(false);}}
+                style={{width:'100%',padding:'13px',background:'linear-gradient(135deg,#1a3a5c,#2a9d8f)',color:'#fff',border:'none',borderRadius:'13px',fontWeight:'900',fontSize:'0.9rem',cursor:'pointer',boxShadow:'0 3px 12px rgba(26,58,92,0.2)'}}>
+                Got it! 👍
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -2372,41 +2798,41 @@ function Results({ portfolio, alloc, score, onReplay }) {
     ? { name:'Yield Hunter', icon:'🎯', col:'#1a3a5c', desc:'You chase higher returns and can handle volatility. Rewarding when markets behave — just remember to diversify!' }
     : { name:'Balanced Borrower', icon:'🔮', col:'#1a3a5c', desc:'You balance safety and yield — the professional approach that weathers most market conditions.' };
   return (
-    <div style={{background:'#f7faf9',fontFamily:"Nunito,sans-serif"}}>
-      <div style={{background:'linear-gradient(160deg,#0d2744 0%,#1a3a5c 60%,#2a5272 100%)',padding:'12px 18px 14px',color:'#fff'}}>
+    <div className="db-page" style={{background:'#f7faf9',fontFamily:"Nunito,sans-serif"}}>
+      <div className="db-res-hero" style={{background:'linear-gradient(160deg,#0d2744 0%,#1a3a5c 60%,#2a5272 100%)',padding:'12px 18px 14px',color:'#fff'}}>
         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'8px'}}>
           <img src={RECT_LOGO} alt="IFM" style={{height:'28px',objectFit:'contain',objectPosition:'left'}} onError={function(e){e.target.style.display='none';}} />
           <div style={{textAlign:'right'}}>
-            <div style={{fontFamily:'Georgia,serif',fontSize:'1.1rem',fontWeight:'700'}}>{grade}</div>
-            <div style={{fontSize:'1.8rem',fontWeight:'900',color:'#fdf3dc',lineHeight:1}}>{score} <span style={{fontSize:'0.9rem',color:'#bde9e4'}}>/ 100 🏆</span></div>
+            <div className="db-res-grade" style={{fontFamily:'Lora,Georgia,serif',fontSize:'1.1rem',fontWeight:'700'}}>{grade}</div>
+            <div className="db-res-score" style={{fontSize:'1.8rem',fontWeight:'900',color:'#fdf3dc',lineHeight:1}}>{score} <span className="db-res-score-sub" style={{fontSize:'0.9rem',color:'#bde9e4'}}>/ 100 🏆</span></div>
           </div>
         </div>
       </div>
-      <div style={{padding:'8px 13px',maxWidth:'440px',margin:'0 auto'}}>
+      <div className="db-wrap-narrow" style={{padding:'8px 13px',maxWidth:'440px',margin:'0 auto'}}>
 
-        <div style={{background:'#fff',borderRadius:'13px',padding:'12px',marginBottom:'7px',boxShadow:'0 2px 8px rgba(26,58,92,0.07)'}}>
+        <div className="db-card" style={{background:'#fff',borderRadius:'13px',padding:'12px',marginBottom:'7px',boxShadow:'0 2px 8px rgba(26,58,92,0.07)'}}>
 
           {/* Summary totals row */}
-          <div style={{display:'flex',alignItems:'stretch',gap:'10px',marginBottom:'14px'}}>
+          <div style={{display:'flex',alignItems:'stretch',gap:'10px',marginBottom:'11px'}}>
             <div style={{flex:'0 0 auto',display:'flex',flexDirection:'column',justifyContent:'center'}}>
-              <div style={{fontSize:'0.72rem',color:'#8a9fb0',fontWeight:'800',textTransform:'uppercase',marginBottom:'3px'}}>Started</div>
-              <div style={{fontSize:'1.3rem',fontWeight:'900',color:'#1a3a5c'}}>{fmt(TOTAL)}</div>
+              <div className="db-res-label" style={{fontSize:'0.72rem',color:'#8a9fb0',fontWeight:'800',textTransform:'uppercase',marginBottom:'3px'}}>Started</div>
+              <div className="db-res-started" style={{fontSize:'1.3rem',fontWeight:'900',color:'#1a3a5c'}}>{fmt(TOTAL)}</div>
             </div>
             <div style={{flex:1,display:'flex',flexDirection:'column',gap:'6px'}}>
               {/* Nominal total */}
               <div style={{background:'#e0f3f0',borderRadius:'9px',padding:'9px 12px',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-                <div style={{fontSize:'0.72rem',color:'#0e6050',fontWeight:'800',textTransform:'uppercase'}}>💰 Nominal</div>
+                <div className="db-res-label" style={{fontSize:'0.72rem',color:'#0e6050',fontWeight:'800',textTransform:'uppercase'}}>💰 Nominal</div>
                 <div style={{textAlign:'right'}}>
-                  <span style={{fontSize:'1.25rem',fontWeight:'900',color:nomGain>=0?'#0e6050':'#b5474a'}}>{nomGain>=0?'+':''}{nomGainPct.toFixed(1)}%</span>
-                  <span style={{fontSize:'0.78rem',fontWeight:'700',color:'#5a7d8a',marginLeft:'8px'}}>{fmt(Math.round(nominalFinal))}</span>
+                  <span className="db-res-pct-big" style={{fontSize:'1.25rem',fontWeight:'900',color:nomGain>=0?'#0e6050':'#b5474a'}}>{nomGain>=0?'+':''}{nomGainPct.toFixed(1)}%</span>
+                  <span className="db-res-pct-sub" style={{fontSize:'0.78rem',fontWeight:'700',color:'#5a7d8a',marginLeft:'8px'}}>{fmt(Math.round(nominalFinal))}</span>
                 </div>
               </div>
               {/* Real total */}
               <div style={{background:realGain>=0?'#e0f3f0':'#fde8e6',borderRadius:'9px',padding:'9px 12px',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-                <div style={{fontSize:'0.72rem',color:realGain>=0?'#0e6050':'#b5474a',fontWeight:'800',textTransform:'uppercase'}}>📉 Real @7%</div>
+                <div className="db-res-label" style={{fontSize:'0.72rem',color:realGain>=0?'#0e6050':'#b5474a',fontWeight:'800',textTransform:'uppercase'}}>📉 Real @7%</div>
                 <div style={{textAlign:'right'}}>
-                  <span style={{fontSize:'1.25rem',fontWeight:'900',color:realGain>=0?'#0e6050':'#b5474a'}}>{realGain>=0?'+':''}{realGainPct.toFixed(1)}%</span>
-                  <span style={{fontSize:'0.78rem',fontWeight:'700',color:realGain>=0?'#5a7d8a':'#b5474a',marginLeft:'8px'}}>{fmt(Math.round(realFinal))}</span>
+                  <span className="db-res-pct-big" style={{fontSize:'1.25rem',fontWeight:'900',color:realGain>=0?'#0e6050':'#b5474a'}}>{realGain>=0?'+':''}{realGainPct.toFixed(1)}%</span>
+                  <span className="db-res-pct-sub" style={{fontSize:'0.78rem',fontWeight:'700',color:realGain>=0?'#5a7d8a':'#b5474a',marginLeft:'8px'}}>{fmt(Math.round(realFinal))}</span>
                 </div>
               </div>
             </div>
@@ -2414,9 +2840,9 @@ function Results({ portfolio, alloc, score, onReplay }) {
 
           {/* Column headers */}
           <div style={{display:'grid',gridTemplateColumns:'1.5fr 1fr 1fr',gap:'4px',paddingBottom:'8px',borderBottom:'1.5px solid #e0f3f0',marginBottom:'2px'}}>
-            <div style={{fontSize:'0.68rem',fontWeight:'800',color:'#8a9fb0',textTransform:'uppercase'}}>Instrument</div>
-            <div style={{fontSize:'0.68rem',fontWeight:'800',color:'#2a9d8f',textTransform:'uppercase',textAlign:'center'}}>💰 Nominal</div>
-            <div style={{fontSize:'0.68rem',fontWeight:'800',color:'#b5474a',textTransform:'uppercase',textAlign:'center'}}>📉 Real @7%</div>
+            <div className="db-res-label" style={{fontSize:'0.68rem',fontWeight:'800',color:'#8a9fb0',textTransform:'uppercase'}}>Instrument</div>
+            <div className="db-res-label" style={{fontSize:'0.68rem',fontWeight:'800',color:'#2a9d8f',textTransform:'uppercase',textAlign:'center'}}>💰 Nominal</div>
+            <div className="db-res-label" style={{fontSize:'0.68rem',fontWeight:'800',color:'#b5474a',textTransform:'uppercase',textAlign:'center'}}>📉 Real @7%</div>
           </div>
 
           {/* Per-instrument table rows */}
@@ -2442,27 +2868,27 @@ function Results({ portfolio, alloc, score, onReplay }) {
               var barWNom = Math.min(100, Math.abs(nomIgPct) / scale * 100);
               var barWReal = Math.min(100, Math.abs(realIgPct) / scale * 100);
               return (
-                <div key={inst.id} style={{display:'grid',gridTemplateColumns:'1.5fr 1fr 1fr',gap:'4px',padding:'11px 0',borderBottom:'1px solid #edf5f3',alignItems:'center'}}>
+                <div key={inst.id} className="db-res-row" style={{display:'grid',gridTemplateColumns:'1.5fr 1fr 1fr',gap:'4px',padding:'8px 0',borderBottom:'1px solid #edf5f3',alignItems:'center'}}>
                   {/* Name */}
                   <div style={{display:'flex',alignItems:'center',gap:'7px'}}>
-                    <span style={{fontSize:'1.7rem',flexShrink:0,lineHeight:1}}>{inst.icon}</span>
-                    <span style={{fontSize:'0.88rem',fontWeight:'800',color:'#1a3a5c',lineHeight:1.2}}>{inst.name}</span>
+                    <span className="db-res-row-icon" style={{fontSize:'1.7rem',flexShrink:0,lineHeight:1}}>{inst.icon}</span>
+                    <span className="db-res-row-name" style={{fontSize:'0.88rem',fontWeight:'800',color:'#1a3a5c',lineHeight:1.2}}>{inst.name}</span>
                   </div>
                   {/* Nominal col */}
                   <div style={{textAlign:'center'}}>
-                    <div style={{fontSize:'1.1rem',fontWeight:'900',color:nomPos?'#0e6050':'#b5474a',lineHeight:1}}>{nomPos?'+':''}{nomIgPct.toFixed(1)}%</div>
-                    <div style={{height:'5px',borderRadius:'3px',background:'#e0f3f0',overflow:'hidden',margin:'5px 4px 4px'}}>
+                    <div className="db-res-row-pct" style={{fontSize:'1.1rem',fontWeight:'900',color:nomPos?'#0e6050':'#b5474a',lineHeight:1}}>{nomPos?'+':''}{nomIgPct.toFixed(1)}%</div>
+                    <div className="db-res-row-bar" style={{height:'5px',borderRadius:'3px',background:'#e0f3f0',overflow:'hidden',margin:'5px 4px 4px'}}>
                       <div style={{height:'100%',width:barWNom+'%',background:nomPos?'#2a9d8f':'#c0575a',borderRadius:'3px'}}></div>
                     </div>
-                    <div style={{fontSize:'0.68rem',fontWeight:'700',color:'#8a9fb0'}}>{nomPos?'+':'−'}₹{indFmtDB(Math.round(Math.abs(nomIg)))}</div>
+                    <div className="db-res-row-amt" style={{fontSize:'0.68rem',fontWeight:'700',color:'#8a9fb0'}}>{nomPos?'+':'−'}₹{indFmtDB(Math.round(Math.abs(nomIg)))}</div>
                   </div>
                   {/* Real col */}
                   <div style={{textAlign:'center'}}>
-                    <div style={{fontSize:'1.1rem',fontWeight:'900',color:realPos?'#0e6050':'#b5474a',lineHeight:1}}>{realPos?'+':''}{realIgPct.toFixed(1)}%</div>
-                    <div style={{height:'5px',borderRadius:'3px',background:'#e0f3f0',overflow:'hidden',margin:'5px 4px 4px'}}>
+                    <div className="db-res-row-pct" style={{fontSize:'1.1rem',fontWeight:'900',color:realPos?'#0e6050':'#b5474a',lineHeight:1}}>{realPos?'+':''}{realIgPct.toFixed(1)}%</div>
+                    <div className="db-res-row-bar" style={{height:'5px',borderRadius:'3px',background:'#e0f3f0',overflow:'hidden',margin:'5px 4px 4px'}}>
                       <div style={{height:'100%',width:barWReal+'%',background:realPos?'#2a9d8f':'#c0575a',borderRadius:'3px'}}></div>
                     </div>
-                    <div style={{fontSize:'0.68rem',fontWeight:'700',color:realPos?'#8a9fb0':'#b5474a'}}>{realPos?'+':'−'}₹{indFmtDB(Math.round(Math.abs(realIg)))}</div>
+                    <div className="db-res-row-amt" style={{fontSize:'0.68rem',fontWeight:'700',color:realPos?'#8a9fb0':'#b5474a'}}>{realPos?'+':'−'}₹{indFmtDB(Math.round(Math.abs(realIg)))}</div>
                   </div>
                 </div>
               );
@@ -2470,43 +2896,46 @@ function Results({ portfolio, alloc, score, onReplay }) {
           })()}
 
           {/* Footnote */}
-          <div style={{marginTop:'10px',fontSize:'0.68rem',color:'#aab8c2',fontWeight:'600',lineHeight:1.5}}>
+          <div className="db-res-footnote" style={{marginTop:'8px',fontSize:'0.68rem',color:'#aab8c2',fontWeight:'600',lineHeight:1.5}}>
             📉 Real @7% = what your money is worth in today's rupees (÷{INFL_FACTOR.toFixed(2)})
           </div>
         </div>
-        <div style={{background:'#fff',borderRadius:'13px',padding:'10px',marginBottom:'7px',boxShadow:'0 2px 8px rgba(26,58,92,0.07)',borderLeft:'4px solid '+profile.col}}>
-          <div style={{display:'flex',alignItems:'center',gap:'8px',marginBottom:'4px'}}>
-            <span style={{fontSize:'1.5rem'}}>{profile.icon}</span>
-            <div style={{fontSize:'0.88rem',fontWeight:'900',color:profile.col}}>{profile.name}</div>
+        <div style={{background:'#fff',borderRadius:'13px',padding:'9px 10px',marginBottom:'6px',boxShadow:'0 2px 8px rgba(26,58,92,0.07)',borderLeft:'4px solid '+profile.col}}>
+          <div style={{display:'flex',alignItems:'center',gap:'8px',marginBottom:'3px'}}>
+            <span className="db-res-profile-icon" style={{fontSize:'1.5rem'}}>{profile.icon}</span>
+            <div className="db-res-profile-name" style={{fontSize:'0.88rem',fontWeight:'900',color:profile.col}}>{profile.name}</div>
           </div>
-          <div style={{fontSize:'0.7rem',color:'#4a5a6a',lineHeight:1.5}}>{profile.desc}</div>
+          <div className="db-res-profile-desc" style={{fontSize:'0.7rem',color:'#4a5a6a',lineHeight:1.5}}>{profile.desc}</div>
         </div>
-        <div style={{background:'linear-gradient(135deg,#e0f3f0,#f7faf9)',borderRadius:'13px',padding:'10px',marginBottom:'9px',borderLeft:'4px solid #2a9d8f'}}>
-          <div style={{fontSize:'0.7rem',color:'#1a3a5c',lineHeight:1.55}}>
+        <div style={{background:'linear-gradient(135deg,#e0f3f0,#f7faf9)',borderRadius:'13px',padding:'9px 10px',marginBottom:'7px',borderLeft:'4px solid #2a9d8f'}}>
+          <div className="db-res-lesson" style={{fontSize:'0.7rem',color:'#1a3a5c',lineHeight:1.55}}>
             The Big Lesson: Debt instruments are not all equal — interest rates, credit defaults, and inflation attack each one differently. Diversifying across government, bank, and market-linked debt gives you stability and growth.
           </div>
         </div>
 
         {/* Disclaimer */}
-        <div style={{background:'#f7faf9',borderRadius:'13px',padding:'12px 14px',marginBottom:'10px',border:'1px solid #e0f3f0'}}>
+        <div style={{background:'#f7faf9',borderRadius:'13px',padding:'10px 12px',marginBottom:'8px',border:'1px solid #e0f3f0'}}>
           <div style={{display:'flex',alignItems:'flex-start',gap:'8px'}}>
             <span style={{fontSize:'1.1rem',flexShrink:0,marginTop:'1px'}}>ℹ️</span>
             <div>
-              <div style={{fontSize:'0.72rem',fontWeight:'900',color:'#1a3a5c',marginBottom:'5px'}}>For Educational Purposes Only</div>
-              <div style={{fontSize:'0.67rem',color:'#5a7d8a',lineHeight:1.65}}>
+              <div className="db-res-disc-title" style={{fontSize:'0.72rem',fontWeight:'900',color:'#1a3a5c',marginBottom:'5px'}}>For Educational Purposes Only</div>
+              <div className="db-res-disc-text" style={{fontSize:'0.67rem',color:'#5a7d8a',lineHeight:1.65}}>
                 The events in this game — including the corporate bond default — are <strong>simulated scenarios</strong> designed to show how different market conditions affect debt portfolios. They do not reflect any specific company or real event.
               </div>
-              <div style={{fontSize:'0.67rem',color:'#5a7d8a',lineHeight:1.65,marginTop:'6px'}}>
+              <div className="db-res-disc-text" style={{fontSize:'0.67rem',color:'#5a7d8a',lineHeight:1.65,marginTop:'6px'}}>
                 Corporate bonds, government bonds, FDs, PPF and other debt instruments all have a legitimate place in a well-constructed portfolio. <strong>No instrument should be written off based on a game outcome.</strong> Always consult a qualified financial advisor before making investment decisions.
               </div>
             </div>
           </div>
         </div>
 
-        <button onClick={onReplay} style={{width:'100%',padding:'11px',background:'linear-gradient(135deg,#1a3a5c,#2a5272)',color:'#fff',fontWeight:'800',fontSize:'0.88rem',border:'none',borderRadius:'13px',cursor:'pointer',marginBottom:'6px'}}>
+        <button className="db-res-btn" onClick={onReplay} style={{width:'100%',padding:'11px',background:'linear-gradient(135deg,#1a3a5c,#2a5272)',color:'#fff',fontWeight:'800',fontSize:'0.88rem',border:'none',borderRadius:'13px',cursor:'pointer',marginBottom:'6px'}}>
           Play Again with Different Allocation
         </button>
-        <button onClick={function(){ try { window.parent.postMessage({type:'db_done', score:score}, '*'); } catch(ex) {} }} style={{width:'100%',padding:'8px',background:'transparent',color:'#1a3a5c',fontWeight:'700',fontSize:'0.82rem',border:'2px solid #1a3a5c',borderRadius:'13px',cursor:'pointer',marginBottom:'10px'}}>
+        <button className="db-res-btn" onClick={function(){
+          try { window.parent.postMessage({type:'db_done', score:score}, '*'); } catch(ex) {}
+          try { window.top.location.href = '/'; } catch(ex) { window.location.href = '/'; }
+        }} style={{width:'100%',padding:'8px',background:'transparent',color:'#1a3a5c',fontWeight:'700',fontSize:'0.82rem',border:'2px solid #1a3a5c',borderRadius:'13px',cursor:'pointer',marginBottom:'10px'}}>
           Back to Main Menu
         </button>
       </div>
@@ -2564,14 +2993,37 @@ function App() {
     setPortHistory([]);
   }
 
-  // Auto-resize iframe to content height on every render
+  // Auto-resize iframe to content height on every render.
+  // Popups (db-popup-card / db-infl-card) are position:fixed, so they never contribute to
+  // document.body.scrollHeight — the iframe was staying frozen at whatever height the screen
+  // behind the popup needed, which meant a popup taller than that stale height had nowhere to
+  // go but scroll internally, no matter how big its own max-height budget was.
+  //
+  // getBoundingClientRect() alone isn't enough either: the popup body's own max-height is set
+  // in vh units, relative to THIS iframe's current (still-small) viewport — so the rect
+  // we'd measure is already clamped to the old height, and the iframe can never grow past that
+  // local minimum. Instead, measure body.scrollHeight (the natural, un-clamped content height,
+  // which scrollHeight always reports regardless of overflow/max-height) so the FIRST
+  // measurement already accounts for full content, then remeasure shortly after so any
+  // vh-based CSS that recomputes against the new, taller iframe settles without a scrollbar.
   useEffect(function() {
     function sendH() {
-      try { window.parent.postMessage({type:'db_height', h: document.body.scrollHeight}, '*'); } catch(e) {}
+      var h = document.body.scrollHeight;
+      var popup = document.querySelector('.db-popup-card, .db-infl-card');
+      if (popup) {
+        var head = popup.querySelector('.db-popup-head, .db-infl-head');
+        var body = popup.querySelector('.db-popup-body, .db-infl-body');
+        var foot = popup.querySelector('.db-popup-foot, .db-infl-foot');
+        var natural = (head?head.offsetHeight:0) + (body?body.scrollHeight:0) + (foot?foot.offsetHeight:0);
+        var r = popup.getBoundingClientRect();
+        h = Math.max(h, r.top + Math.max(r.height, natural) + 32);
+      }
+      try { window.parent.postMessage({type:'db_height', h: h}, '*'); } catch(e) {}
     }
     sendH();
-    var t = setTimeout(sendH, 120); // catch any late reflows
-    return function() { clearTimeout(t); };
+    var t1 = setTimeout(sendH, 120);  // catch late reflows
+    var t2 = setTimeout(sendH, 350);  // remeasure once the grown iframe's own vh has settled
+    return function() { clearTimeout(t1); clearTimeout(t2); };
   });
 
   if (screen === 'welcome') return <Welcome onNext={function(){setScreen('allocate');}} />;

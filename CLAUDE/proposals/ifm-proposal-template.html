@@ -1,0 +1,921 @@
+<meta charset="utf-8">
+<title>IFM Workshop Proposal</title>
+
+<!--
+  ══════════════════════════════════════════════════════════════════════════
+  INVESTING FOR MUMMIES — MASTER WORKSHOP PROPOSAL  (magazine format, A4)
+  ══════════════════════════════════════════════════════════════════════════
+  1.  cp ifm-proposal-template.html "IFM Proposal - <Client>.html"
+  2.  Edit ONLY the CONFIG block (between ▼ EDIT FROM HERE and ▲ EDIT TO HERE)
+  3.  node render.js "IFM Proposal - <Client>.html"
+  4.  Send the PDF.
+  ══════════════════════════════════════════════════════════════════════════
+-->
+
+<style>
+:root{
+  /* Brand Guidelines 2026 §3 — exact values, no drift */
+  --navy:#1a3a5c;     --ink:#1a3a5c;      --navy-lt:#264d78;
+  --teal:#2a9d8f;     --teal-deep:#1f7a70;
+  --muted:#5a7d8a;    --cream:#f7faf9;    --white:#ffffff;
+  --mint:#bde9e4;     --mint-lt:#e0f3f0;
+  --gold:#c9a84c;     --gold-lt:#f5f0e0;
+  --success:#27AE60;  --danger:#c0392b;
+  --line:#dfe9e7;
+  /* §6 radius hierarchy: sections 16 · cards 14 · inputs 12 · pills 10 · chips 5 */
+  --r-sec:16px; --r-card:14px; --r-input:12px; --r-pill:10px;
+}
+@page{ size:A4; margin:16mm 16mm 15mm; }
+@page cover{ size:A4; margin:0; }
+@page dark { size:A4; margin:0; }
+@page cream{ size:A4; margin:0; }
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:#fff; color:var(--navy);
+  font-family:"Poppins","Nunito","Avenir Next",system-ui,sans-serif;
+  font-size:10.5pt; line-height:1.6;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+p{margin:0 0 3.6mm}
+b,strong{font-weight:700}
+em{font-style:italic}
+
+.page{break-before:page;page-break-before:always}
+
+/* full-bleed tinted sheets — §24 "alternating section backgrounds" */
+.sheet{width:210mm;min-height:297mm;padding:18mm 16mm 16mm;break-before:page;
+  page-break-before:always}
+.sheet.cream{page:cream;background:var(--cream)}
+.sheet.mint {page:cream;background:var(--mint-lt)}
+.sheet.mint .shot{border-color:#c8e3de}
+.sheet.dark{page:dark;color:#fff;
+  background:linear-gradient(135deg, var(--navy-lt) 0%, var(--navy) 55%, #14304c 100%)}
+.sheet.dark h2{color:#fff}
+.sheet.dark .eyebrow{color:var(--mint)}
+.sheet.dark .dek{color:#cfe6e3}
+.sheet.dark figcaption{color:#a9c6d4}
+.sheet.dark .shot{border-color:rgba(189,233,228,.28);
+  box-shadow:0 2mm 9mm rgba(0,0,0,.30)}
+.sheet.dark .step p{color:#bcd4dc}
+.sheet.dark .step b{color:#fff}
+.sheet.dark .step .k{background:var(--mint);color:var(--navy)}
+
+/* ══ COVER ══════════════════════════════════════════════════════════════ */
+.cover{
+  page:cover; width:210mm; height:297mm; padding:22mm 20mm 18mm;
+  background:
+    radial-gradient(115% 75% at 80% 6%, rgba(189,233,228,.30) 0%, rgba(189,233,228,0) 55%),
+    linear-gradient(135deg, var(--teal) 0%, var(--navy-lt) 48%, var(--navy) 100%);
+  color:#fff; position:relative; overflow:hidden;
+  display:flex; flex-direction:column;
+}
+.cover::after{ /* watermark */
+  content:""; position:absolute; right:-58mm; bottom:-52mm; width:170mm; height:170mm;
+  background:url('assets/ifm-logo-round.png') center/contain no-repeat; opacity:.05;
+}
+.cover-logo{background:#fff;border-radius:var(--r-card);padding:4mm 6mm;align-self:flex-start;
+  box-shadow:0 2mm 8mm rgba(0,0,0,.18)}
+.cover-logo img{height:15mm;width:auto;display:block}
+.cover-eyebrow{margin:14mm 0 0;font-size:8.5pt;letter-spacing:.32em;text-transform:uppercase;
+  color:#8fd8cd;font-weight:600}
+.cover h1{font-family:Lora,Georgia,serif;font-size:46pt;line-height:1.04;font-weight:700;
+  margin:5mm 0 0;letter-spacing:-.01em}
+.cover .rule{width:34mm;height:1.4mm;background:var(--gold);border-radius:1mm;margin:7mm 0}
+.cover .lede{font-size:12pt;line-height:1.55;color:#dbe7ee;max-width:130mm;font-weight:300}
+.cover-toc{margin:12mm 0 0;padding:0;list-style:none;position:relative;z-index:1;
+  columns:2;column-gap:10mm;max-width:130mm}
+.cover-toc li{font-size:9.5pt;color:#cfe0e9;padding:2.2mm 0;break-inside:avoid;
+  border-bottom:.25mm solid rgba(255,255,255,.14)}
+.cover-toc li span{color:var(--gold);font-weight:700;margin-right:2.5mm;
+  font-variant-numeric:tabular-nums}
+.cover-for{margin-top:auto;position:relative;z-index:1}
+.cover-for .label{font-size:8pt;letter-spacing:.24em;text-transform:uppercase;color:#8fd8cd;
+  font-weight:600;margin-bottom:2mm}
+.cover-for .who{font-family:Lora,Georgia,serif;font-size:17pt;font-weight:600;line-height:1.3}
+.cover-for .when{font-size:9.5pt;color:#b9cbd8;margin-top:1mm}
+.cover-strip{display:flex;gap:3mm;margin-top:9mm;position:relative;z-index:1}
+.cover-strip figure{margin:0;flex:1;height:38mm;border-radius:var(--r-input);overflow:hidden;
+  border:.6mm solid rgba(255,255,255,.22)}
+.cover-strip img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ══ TYPOGRAPHY ═════════════════════════════════════════════════════════ */
+.eyebrow{font-size:8pt;letter-spacing:.26em;text-transform:uppercase;color:var(--teal-deep);
+  font-weight:700;margin:0 0 2.5mm}
+h2{font-family:Lora,Georgia,serif;font-size:20pt;font-weight:700;line-height:1.15;
+  margin:0 0 3.5mm;letter-spacing:-.005em}
+h3{font-size:12.5pt;font-weight:700;margin:0 0 2mm}
+.dek{font-size:10.5pt;color:var(--muted);line-height:1.5;max-width:140mm;margin:0 0 5.5mm}
+
+/* big pull statement */
+.statement{font-family:Lora,Georgia,serif;font-size:17pt;line-height:1.32;font-weight:600;
+  color:var(--navy);border-left:1.6mm solid var(--gold);padding:.5mm 0 .5mm 6mm;margin:0 0 6mm}
+.statement span{color:var(--teal-deep)}
+
+/* ══ PILLAR CARDS ═══════════════════════════════════════════════════════ */
+.pillars{display:flex;gap:4mm;margin:0 0 6mm}
+.pillar{flex:1;border:.3mm solid var(--line);border-radius:var(--r-card);
+  padding:4mm 4.5mm 4.5mm;border-top:1.4mm solid var(--teal);background:var(--cream)}
+.pillar:nth-child(1){background:var(--mint-lt);border-top-color:var(--teal)}
+.pillar:nth-child(2){background:var(--gold-lt);border-top-color:var(--gold)}
+.pillar:nth-child(3){background:#eaf0f7;border-top-color:var(--navy-lt)}
+.pillar .n{font-family:Lora,Georgia,serif;font-size:20pt;font-weight:700;
+  line-height:1;margin-bottom:2mm;color:var(--teal)}
+.pillar:nth-child(2) .n{color:#a8862f}
+.pillar:nth-child(3) .n{color:var(--navy-lt)}
+.pillar h4{font-size:10.5pt;font-weight:700;margin:0 0 1.5mm}
+.pillar p{font-size:9pt;color:var(--muted);margin:0;line-height:1.5}
+
+/* ══ CHECK LIST ═════════════════════════════════════════════════════════ */
+.checks{list-style:none;padding:0;margin:0 0 6mm}
+.checks li{position:relative;padding:0 0 0 7.5mm;margin:0 0 2.3mm;font-size:9.8pt;line-height:1.45}
+.checks li::before{content:"";position:absolute;left:0;top:1.4mm;width:4.6mm;height:4.6mm;
+  border-radius:50%;background:var(--mint-lt)}
+.checks li::after{content:"";position:absolute;left:1.5mm;top:2.7mm;width:1.6mm;height:.9mm;
+  border-left:.55mm solid var(--teal-deep);border-bottom:.55mm solid var(--teal-deep);
+  transform:rotate(-45deg)}
+
+/* ══ STAT BAND ══════════════════════════════════════════════════════════ */
+.stats{display:flex;border-radius:var(--r-sec);color:#fff;overflow:hidden;margin:0 0 5mm;
+  background:linear-gradient(135deg, var(--teal) 0%, var(--navy-lt) 55%, var(--navy) 100%)}
+.stat{flex:1;padding:4.5mm 4.5mm;border-right:.3mm solid rgba(255,255,255,.14)}
+.stat:last-child{border-right:none}
+.stat .fig{font-family:Lora,Georgia,serif;font-size:22pt;font-weight:700;color:#f0dfa6;
+  line-height:1;margin-bottom:1.5mm}
+.stat .cap{font-size:8.5pt;color:#dbeceb;line-height:1.4}
+
+/* ══ IMAGES ═════════════════════════════════════════════════════════════ */
+figure{margin:0}
+.shot{border-radius:var(--r-input);overflow:hidden;border:.3mm solid var(--line);
+  box-shadow:0 1mm 5mm rgba(26,58,92,.10)}
+.shot img{width:100%;display:block}
+figcaption{font-size:8.5pt;color:var(--muted);margin-top:2mm;line-height:1.45}
+.tiles{display:flex;gap:3.5mm;margin-top:5mm}
+.tiles figure{flex:1}
+.tiles .shot img{height:36mm;object-fit:cover;object-position:top}
+.split{display:flex;gap:6mm;align-items:flex-start}
+.split .col{flex:1}
+
+/* side photo column (page 2) */
+.sidephoto .shot img{height:70mm;object-fit:cover;object-position:center 45%}
+/* timeline photo column — fixed heights so both fit beside the timeline */
+.tl-photo-a .shot img{height:92mm;object-fit:cover;object-position:center 35%}
+.tl-photo-b .shot img{height:58mm;object-fit:cover;object-position:center 40%}
+
+/* wide photo band inside a normal page */
+.wideband{margin:0 0 6mm}
+.wideband .shot img{height:44mm;object-fit:cover;object-position:center 40%}
+
+/* three-up photo strip */
+.pstrip{display:flex;gap:3.5mm;margin:0 0 5mm;break-inside:avoid;page-break-inside:avoid}
+.pstrip figure{flex:1}
+.pstrip .shot img{height:35mm;object-fit:cover;object-position:center 35%}
+.sheet.dark .pstrip .shot{border-color:rgba(189,233,228,.30)}
+.closing .pstrip .shot img{height:42mm}
+
+/* two-up photo pair */
+.ppair{display:flex;gap:4mm;margin:5mm 0 0;break-inside:avoid;page-break-inside:avoid}
+.ppair figure{flex:1}
+.ppair .shot img{height:46mm;object-fit:cover;object-position:center 38%}
+.ppair.sm .shot img{height:33mm}
+
+/* tinted panel (mint) for short lists */
+.panel{background:var(--mint-lt);border-radius:var(--r-sec);padding:5mm 5.5mm 4mm;
+  margin:0 0 5mm;break-inside:avoid}
+.panel h3{margin-bottom:2.5mm}
+.panel .checks{margin-bottom:0}
+.panel .checks li{margin-bottom:1.8mm}
+.panel .checks li::before{background:#fff}
+
+/* three-step "how they join" strip */
+.steps{display:flex;gap:4mm;margin:6mm 0 0}
+.step{flex:1;display:flex;gap:3mm;align-items:flex-start}
+.step .k{flex:0 0 7mm;height:7mm;border-radius:50%;background:var(--teal);color:#fff;
+  font-size:9pt;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step p{font-size:9pt;color:var(--muted);margin:0;line-height:1.45}
+.step b{color:var(--navy);display:block;font-size:9.5pt}
+
+/* ══ WORKSHOP CARDS ═════════════════════════════════════════════════════ */
+.wcard{break-inside:avoid;page-break-inside:avoid;border:.3mm solid var(--line);
+  border-radius:var(--r-card);padding:4.5mm 5mm 4mm;margin:0 0 4mm;background:#fff;
+  box-shadow:0 1mm 4mm rgba(26,58,92,.06);border-top:1.4mm solid var(--accent,var(--teal))}
+.wcard .wnum{background:var(--accent,var(--navy));color:var(--accent-fg,#fff)}
+.wcard .pill{background:var(--accent-tint,var(--mint-lt));color:var(--accent-ink,var(--teal-deep))}
+.wcard .takeaway{background:var(--accent-tint,var(--cream));
+  border-left-color:var(--accent,var(--gold))}
+.wcard .takeaway b{color:var(--accent-ink,var(--teal-deep))}
+.wcard .wlabel{color:var(--accent-ink,var(--teal-deep))}
+.wcard .checks li::before{background:var(--accent-tint,var(--mint-lt))}
+.wcard .checks li::after{border-color:var(--accent-ink,var(--teal-deep))}
+.wcard .checks{margin-bottom:0}
+.wcard .checks li{margin-bottom:1.9mm;font-size:9.6pt}
+.wcard-head{display:flex;align-items:flex-start;gap:4mm;margin-bottom:2.5mm}
+.wnum{flex:0 0 11mm;height:11mm;border-radius:var(--r-input);background:var(--navy);color:#fff;
+  font-family:Lora,Georgia,serif;font-size:14pt;font-weight:700;
+  display:flex;align-items:center;justify-content:center}
+.wtitle{flex:1}
+.wtitle h3{margin:0 0 1.2mm;line-height:1.25}
+.pill{display:inline-block;background:var(--mint-lt);color:var(--teal-deep);font-size:8pt;
+  font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:1mm 3mm;border-radius:99px}
+.wobj{font-size:9.4pt;color:var(--muted);margin:0 0 3mm;line-height:1.48}
+.wlabel{font-size:8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-deep);
+  font-weight:700;margin:0 0 2.2mm}
+.takeaway{background:var(--cream);border-left:1.2mm solid var(--gold);border-radius:0 var(--r-pill) var(--r-pill) 0;
+  padding:3mm 4mm;margin-top:3.5mm;font-family:Lora,Georgia,serif;font-size:9.8pt;
+  font-style:italic;line-height:1.42}
+.takeaway b{font-style:normal;font-weight:700;color:var(--teal-deep);font-family:inherit}
+
+/* summary table */
+.sumtable{width:100%;border-collapse:collapse;margin:0 0 6mm;font-size:9pt}
+.sumtable th{font-size:7.6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);
+  text-align:left;padding:0 4mm 2.2mm 0;border-bottom:.6mm solid var(--navy);font-weight:700}
+.sumtable td{padding:2.6mm 4mm 2.6mm 0;border-bottom:.3mm solid var(--line);vertical-align:top;
+  line-height:1.45}
+.sumtable td:first-child{font-weight:700;width:38%}
+.sumtable td:nth-child(2){color:var(--teal-deep);font-weight:700;width:14%;white-space:nowrap}
+
+/* ══ TIMELINE ═══════════════════════════════════════════════════════════ */
+.timeline{list-style:none;padding:0;margin:0}
+.timeline li{position:relative;padding:0 0 5mm 14mm;border-left:.4mm solid var(--line);
+  margin-left:16mm}
+.timeline li:last-child{border-left-color:transparent;padding-bottom:0}
+.timeline .t{position:absolute;left:-16mm;top:-0.5mm;width:14mm;text-align:right;
+  font-size:9pt;font-weight:700;color:var(--teal-deep);font-variant-numeric:tabular-nums}
+.timeline li::before{content:"";position:absolute;left:-1.6mm;top:1mm;width:3mm;height:3mm;
+  border-radius:50%;background:var(--teal);border:.6mm solid #fff}
+.timeline h4{font-size:10.5pt;font-weight:700;margin:0 0 1mm}
+.timeline p{font-size:9pt;color:var(--muted);margin:0;line-height:1.5}
+
+/* ══ QUOTES / TESTIMONIALS ══════════════════════════════════════════════ */
+.quotes{display:flex;gap:4mm;margin:0 0 7mm}
+.quote{flex:1;background:var(--mint-lt);border-radius:var(--r-card);padding:5mm}
+.quote p{font-family:Lora,Georgia,serif;font-style:italic;font-size:10pt;line-height:1.45;
+  margin:0 0 3mm}
+.quote .who{font-size:8.5pt;color:var(--teal-deep);font-weight:700;font-style:normal}
+
+/* ══ FOUNDER ════════════════════════════════════════════════════════════ */
+.founder{display:flex;gap:6mm;align-items:flex-start}
+.founder .pic{flex:0 0 46mm}
+.founder .pic img{width:100%;border-radius:var(--r-card);display:block}
+.founder .pic .cap{font-size:8.5pt;color:var(--muted);text-align:center;margin-top:2mm}
+.founder .txt{flex:1}
+.founder .txt p{font-size:9.5pt;margin-bottom:3mm}
+
+/* ══ CLOSING SHEET (bookends the cover) ═════════════════════════════════ */
+.closing{display:flex;flex-direction:column;position:relative;overflow:hidden}
+.closing::after{content:"";position:absolute;left:-46mm;bottom:-46mm;width:150mm;height:150mm;
+  background:url('assets/ifm-logo-round.png') center/contain no-repeat;opacity:.06}
+.closing .inner{margin:auto 0;position:relative;z-index:1}
+.closing .eyebrow{color:var(--mint)}
+.closing h2{color:#fff;font-size:30pt;margin-bottom:4mm}
+.closing .rule{width:30mm;height:1.4mm;background:var(--gold);border-radius:1mm;margin:0 0 6mm}
+.closing .say{font-size:11.5pt;color:#d3e6e4;max-width:125mm;line-height:1.55}
+.closing .card{background:rgba(255,255,255,.07);border:.3mm solid rgba(189,233,228,.28);
+  border-radius:var(--r-sec);padding:7mm 7.5mm;margin-top:8mm;max-width:135mm}
+.closing .name{font-family:Lora,Georgia,serif;font-size:17pt;font-weight:700;color:#fff;
+  margin:0 0 2mm}
+.closing .line{font-size:11pt;color:#fff;margin:0 0 4mm}
+.closing .line a{color:var(--mint);text-decoration:none}
+.closing .links{font-size:9.8pt;color:#c6dcdd;line-height:1.9;margin:0;padding-top:4mm;
+  border-top:.3mm solid rgba(189,233,228,.24)}
+.closing .links a{color:var(--gold);text-decoration:none}
+.closing .foot{margin-top:auto;position:relative;z-index:1;display:flex;align-items:center;
+  gap:4mm;padding-top:8mm;border-top:.3mm solid rgba(189,233,228,.20)}
+.closing .foot img{width:13mm}
+.closing .foot b{display:block;font-size:10pt;color:#fff}
+.closing .foot small{font-size:8.5pt;color:#a9c6d4}
+
+/* ══ CLOSING ════════════════════════════════════════════════════════════ */
+.cta{background:var(--navy);color:#fff;border-radius:var(--r-card);padding:6.5mm 7mm;margin-top:5mm;
+  position:relative;overflow:hidden;break-inside:avoid;page-break-inside:avoid}
+.cta h2{color:#fff;margin-bottom:2.5mm;font-size:20pt}
+.cta p{color:#cddae3;max-width:120mm}
+.cta .name{font-family:Lora,Georgia,serif;font-size:14pt;font-weight:700;color:#fff;margin:4mm 0 1mm}
+.cta .line{font-size:10.5pt;color:#fff;margin:0 0 1mm}
+.cta a{color:var(--gold);text-decoration:none}
+.cta .links{font-size:9.3pt;color:#cddae3;line-height:1.7;margin-top:3.5mm;
+  padding-top:3.5mm;border-top:.3mm solid rgba(255,255,255,.18)}
+.brandfoot{text-align:center;margin-top:5mm;break-inside:avoid}
+.brandfoot img{width:11mm;display:block;margin:0 auto 1.5mm}
+.brandfoot span{font-size:8.5pt;font-weight:700;color:var(--navy)}
+.brandfoot small{display:block;font-size:8pt;color:var(--muted);margin-top:.5mm}
+.note{font-size:8.6pt;color:var(--muted);margin-top:3mm;line-height:1.45}
+</style>
+
+<main id="doc"></main>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════════════
+   ▼▼▼  EDIT FROM HERE  ▼▼▼
+   ══════════════════════════════════════════════════════════════════════════ */
+
+const P = {
+
+  /* ── 1. COVER ─────────────────────────────────────────────────────────── */
+  title:      "Women & Wealth",
+  eyebrow:    "Workshop Proposal",
+  lede:       `A series of practical, hands-on financial workshops — built so that
+               participants leave able to do something, not just having heard something.`,
+  preparedFor:"The ONGC Women Forum",
+  date:       "August 2026",
+
+  /* Contents list on the cover. Keep to 5–6 short lines. */
+  coverToc: [
+    "Why this matters",
+    "How the room works",
+    "The workshops",
+    "How a session runs",
+    "About the founder",
+    "Next steps",
+  ],
+
+  client:     "ONGC",                    // short name, used mid-sentence
+  clientFull: "the ONGC Women Forum",    // used in Next Steps
+
+  /* ── 2. THE OPENING PAGE ──────────────────────────────────────────────── */
+  /* The one line the whole proposal hangs off. Wrap 2–4 words in <span> to
+     tint them teal. Keep it under ~25 words. */
+  statement: `Most women are not bad with money.
+              They were simply <span>never invited into the conversation</span>.`,
+
+  intro: `We'd love to bring a series of practical, hands-on financial workshops to the
+    women of {CLIENT} — designed to help them become more confident and informed participants
+    in their own financial lives, whether they are beginning their investment journey,
+    already investing, or simply want to understand their finances better.`,
+
+  /* Three pillars — what makes IFM different. Keep each to one line. */
+  pillars: [
+    { n:"01", h:"Practical, not theoretical",
+      p:"Every session ends with something built — a plan, a calculation, a policy checked." },
+    { n:"02", h:"Played, not lectured",
+      p:"Participants join live multiplayer games from their own phones. Nobody sits passive." },
+    { n:"03", h:"Independent, always",
+      p:"We sell no products and take no commissions. There is nothing to be sold at the end." },
+  ],
+
+  /* Stat band. EDIT THESE — keep them true and defensible. */
+  stats: [
+    { fig:"30+",  cap:"interactive games and calculators, all built in-house" },
+    { fig:"Zero", cap:"financial products sold. Ever. No commissions, no tie-ups" },
+    { fig:"100%", cap:"jargon-free — no prior financial knowledge assumed" },
+  ],
+
+  /* ── 3. WHY IT MATTERS FOR THIS CLIENT ────────────────────────────────── */
+  whyHeading: "Why this matters for ONGC's women employees",
+  whyIntro: `Financial literacy complements professional development by building another
+    dimension of women's empowerment: financial confidence and agency.`,
+  whyBullets: [
+    "Participate confidently in family and personal financial decisions",
+    "Understand what they already own, rather than relying on someone else to manage it",
+    "Ask better questions of financial advisors, banks and insurance agents",
+    "Avoid common financial mistakes and understand the trade-offs behind financial products",
+    "Plan across life stages — from building wealth today to children's education, healthcare and retirement",
+  ],
+
+  /* ── 4. WORKSHOPS ─────────────────────────────────────────────────────── */
+  /* Pick keys from the MODULES library below. Order = order in the PDF. */
+  modules: ["blueprint", "mutualfunds", "insurance"],
+
+  /* ── 5. OPTIONAL SECTIONS — set false to hide ─────────────────────────── */
+  showTech:         true,   // the games / classroom technology page
+  showTimeline:     true,   // how a session actually runs
+  showTestimonials: false,  // ⚠ REAL QUOTES ONLY — fill section 7 before enabling
+  showPastClients:  true,
+  showLongerFormat: true,
+  showCommercials:  false,  // fee table — section 8
+  showLogistics:    false,  // what IFM needs on the day — section 9
+
+  /* ── 6. THE GAMES PAGE ────────────────────────────────────────────────── */
+  tech: {
+    eyebrow: "What makes the room different",
+    heading: "This is not a slide deck.",
+    dek: `Participants join a live game from their own phones by scanning a QR code on the
+      screen. They make real decisions under time pressure, watch the consequences play out,
+      and only then do we unpack the concept behind what just happened. Every game below was
+      designed and built in-house for these workshops.`,
+    hero:     { img:"assets/game-quiz.jpg",
+                cap:"Kaun Banega Crorepati — the host screen as the room scans in. Four rounds, a hot seat, and a ₹30 lakh finish." },
+    tiles: [
+      { img:"assets/game-fundmgr.jpg",  cap:"Mutual Fund Manager — the room invests in a live fund and watches the market move." },
+      { img:"assets/game-buckets.jpg",  cap:"The 3-Bucket Strategy — sorting real money into Protect, Stabilise and Grow." },
+      { img:"assets/game-inflation.jpg",cap:"Inflation and compounding calculators — participants run their own numbers." },
+    ],
+    joinSteps: [
+      { k:"1", h:"Scan",  p:"A QR code goes up on the projector. Everyone joins from their own phone — no app, no login." },
+      { k:"2", h:"Play",  p:"They make real money decisions against a clock, and see the room's answers live." },
+      { k:"3", h:"Learn", p:"We stop and unpack why the room chose what it did. The lesson lands because they lived it." },
+    ],
+  },
+
+  /* ── 7. HOW A SESSION RUNS + TESTIMONIALS ─────────────────────────────── */
+  timeline: {
+    heading: "How a three-hour session runs",
+    dek: `A rhythm of play, then explain, then apply — repeated. No segment of pure lecture
+      runs longer than fifteen minutes.`,
+    photo: "assets/photo-teaching.jpg",
+    photoCap: "A session in progress — Mumbai, 2026.",
+    steps: [
+      { t:"0:00", h:"Scan in",             p:"Everyone joins the first game from their phone. The room is talking within four minutes." },
+      { t:"0:15", h:"Play first",          p:"A live multiplayer round that lets participants make money decisions before any theory." },
+      { t:"0:40", h:"Unpack what happened",p:"We work backwards from their own choices to the concept underneath." },
+      { t:"1:10", h:"Run your own numbers",p:"Participants use the calculators on their own salary, goals and timelines." },
+      { t:"1:45", h:"Break",               p:"" },
+      { t:"2:00", h:"The harder half",     p:"The subject proper — funds, insurance or goals — in short blocks with an exercise after each." },
+      { t:"2:40", h:"Questions, openly",   p:"The part most participants say they came for. No question is too basic." },
+      { t:"2:55", h:"Leave with a plan",   p:"Everyone writes down one number and one action for the coming week." },
+    ],
+  },
+
+  /* ⚠ TESTIMONIALS — put REAL quotes here. Never invent one.
+     Set showTestimonials:true only once these are real. */
+  testimonials: [
+    { q:"[Paste a real participant quote here.]",  who:"— Participant, [Organisation], [Month Year]" },
+    { q:"[Paste a second real quote here.]",       who:"— Participant, [Organisation], [Month Year]" },
+  ],
+
+  pastClients: {
+    heading: "Where we have taught",
+    items: [
+      "Vishwamangalya Sabha — Stree Dhan: Savings to Financial Freedom",
+      "K-Phyto Extraction — Mutual Funds",
+      "Women-led forums and community groups across Mumbai",
+    ],
+  },
+
+  /* ── 8. COMMERCIALS (shown only if showCommercials: true) ──────────────── */
+  commercials: {
+    heading: "Investment",
+    rows: [
+      ["2-hour workshop",        "up to 40 participants", "₹00,000"],
+      ["3-hour workshop",        "up to 40 participants", "₹00,000"],
+      ["Series of three, booked together", "up to 40 participants", "₹00,000"],
+    ],
+    notes: [
+      "Fees are inclusive of GST.",
+      "Travel and accommodation outside Mumbai at actuals.",
+      "Digital calculators, worksheets and handouts for every participant are included.",
+    ],
+  },
+
+  /* ── 9. LOGISTICS (shown only if showLogistics: true) ─────────────────── */
+  logistics: {
+    heading: "What we need on the day",
+    items: [
+      "A room that seats participants in small groups rather than lecture rows",
+      "A projector or large screen with HDMI, and a microphone for groups above 30",
+      "Wi-Fi or reasonable mobile data — several activities run on participants' phones",
+      "Participants bring a phone. No prior financial knowledge is needed",
+    ],
+  },
+
+  /* ── 10. FOUNDER ──────────────────────────────────────────────────────── */
+  bio: {
+    heading: "About Hiral Goel",
+    photo:   "assets/hiral-goel.jpg",
+    caption: "Hiral Goel · Founder",
+    pull:    "Understanding business did not mean understanding my own money. I doubt I was the only one.",
+    paras: [
+      `Hiral Goel is the Founder of Investing for Mummies. A graduate of the
+       <b>University of Michigan, Ann Arbor</b>, she spent over a decade as a business journalist
+       with <em>Business India</em> magazine, covering India's corporate landscape, and helmed the
+       flagship <b>Businessman of the Year</b> award for three years.`,
+      `Despite that background, Hiral realised that understanding business did not necessarily
+       mean understanding personal finance. A conversation with a friend inspired her to take
+       what she had learned to other women, leading to the creation of <b>Investing for Mummies</b>.`,
+      `Today she combines her experience as a journalist and communicator with her passion for
+       financial education, creating a safe, relatable and jargon-free space where women can ask
+       the questions they may otherwise hesitate to ask.`,
+    ],
+  },
+
+  /* ── 11. CLOSING ──────────────────────────────────────────────────────── */
+  close: {
+    heading: "Let's find a date.",
+    text: `To take this forward, simply reply to this proposal. We'd be glad to discuss dates,
+      format, fees and any customisation for {CLIENT_FULL}.`,
+    name:  "Hiral Goel",
+    phone: "+91 88987 03415",
+    email: "hiral@investingformummies.com",
+    links: [
+      ["Website",   "www.investingformummies.com", "https://www.investingformummies.com"],
+      ["Instagram", "@investingformummies",        "https://www.instagram.com/investingformummies"],
+      ["A glimpse of our workshops", "Watch here", "REPLACE_WITH_VIDEO_LINK"],
+    ],
+  },
+};
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MODULE LIBRARY — the reusable workshop catalogue.
+   VERIFIED = already used in a sent proposal.   DRAFT = read before sending.
+   ══════════════════════════════════════════════════════════════════════════ */
+const MODULES = {
+
+  /* ───────────────────────────────────────────────────────── VERIFIED ── */
+  blueprint: {
+    name:"The Money Blueprint", hours:"2 hrs", hoursLong:"2 hours",
+    objective:`Build your personal financial roadmap: understand what you are investing for,
+      where your money should sit and how to match investments to your goals.`,
+    intro:`A practical introduction to investing that starts with the participant's financial
+      goals — not financial products. Covers inflation, compounding, saving vs investing and the
+      3-Bucket Strategy (Protect, Stabilise, Grow) through interactive games and exercises.`,
+    bullets:[
+      "Use inflation and compounding calculators to plan real financial goals",
+      "Identify their key goals and organise money with the 3-Bucket Strategy",
+      "Recognise why investment choices must match goals and time horizon",
+      "Know what to ask before making any investment decision",
+    ],
+    takeaway:`You don't need to know everything about investing. You need a blueprint for your money.`,
+  },
+
+  mutualfunds: {
+    name:"Mutual Funds: From Confusion to Confidence", hours:"3 hrs", hoursLong:"3 hours",
+    objective:`Understand a mutual fund: what it owns, what it costs, how risky it is and
+      whether it fits your goals.`,
+    intro:`For women who already hold mutual funds, are considering a SIP, or simply want to
+      understand what their investments actually do. Through interactive exercises participants
+      learn to evaluate a fund they already own, rather than chase past returns.`,
+    bullets:[
+      "Open up a real fund and understand what it actually holds",
+      "Navigate SIPs, step-up SIPs, fund categories, and direct vs regular plans",
+      "Judge a fund on goal, risk, horizon, portfolio, performance and cost",
+    ],
+    takeaway:`Don't invest because someone says a fund is good. Understand what you own,
+      why you own it and whether it still fits your goals.`,
+  },
+
+  insurance: {
+    name:"Insurance: Protect Before You Invest", hours:"3 hrs", hoursLong:"3 hours",
+    objective:`Check whether you are adequately protected: understand term and health cover,
+      employer policies, and how to evaluate what you already hold.`,
+    intro:`Insurance as protection first, while making sense of policies participants may already
+      own. Covers term and health insurance in depth, including employer cover, and explains
+      endowment plans and ULIPs through guided exercises.`,
+    bullets:[
+      "Separate insurance from investment, and know what to look for in term cover",
+      "Weigh employer health cover against personal health insurance",
+      "Spot the policy features and exclusions that matter",
+      "Understand endowment plans and ULIPs",
+      "Know what to ask before buying, renewing or exiting a policy",
+    ],
+    takeaway:`Insurance isn't about making money — it's about protecting the money, income
+      and goals you already have.`,
+  },
+
+  /* ─────────────────────────────────────── DRAFT — edit before sending ── */
+  streedhan: {
+    name:"Stree Dhan: Savings to Financial Freedom", hours:"2 hrs", hoursLong:"2 hours",
+    objective:`Turn the money and gold a woman already holds into a working plan
+      rather than idle savings.`,
+    intro:`Built around what women already have — savings, gold, jewellery, deposits and
+      household surplus. Shows how those assets behave over time, and what it takes to turn
+      them into independence rather than dormant wealth.`,
+    bullets:[
+      "See what inflation does to money left idle in a savings account or a locker",
+      "Understand where gold genuinely belongs in a portfolio, and where it does not",
+      "Separate an emergency fund from long-term savings, and size both",
+      "Build a first, simple plan for the money already in hand",
+    ],
+    takeaway:`Stree Dhan is not just what you keep. It's what you can make it do for you.`,
+  },
+
+  budgeting: {
+    name:"Where Does The Money Go?", hours:"2 hrs", hoursLong:"2 hours",
+    objective:`Find the gap between what comes in and what stays, and build a household
+      cash-flow system that survives real life.`,
+    intro:`Household cash flow, hands-on: needs, wants and savings, the leaks that quietly drain
+      a salary, and a system that still works in the month when a wedding, a school fee and a
+      hospital bill all arrive together.`,
+    bullets:[
+      "Map a real monthly cash flow across needs, wants and savings",
+      "Identify recurring leaks and the trade-off behind each",
+      "Size and place an emergency fund before investing anything",
+      "Automate saving so it doesn't depend on willpower",
+    ],
+    takeaway:`A budget isn't a restriction. It's the instruction you give your money
+      before it disappears.`,
+  },
+
+  debt: {
+    name:"Good Debt, Bad Debt", hours:"2 hrs", hoursLong:"2 hours",
+    objective:`Understand what a loan really costs, and in what order existing debt
+      should be cleared.`,
+    intro:`Home loans, personal loans, credit cards, EMIs and buy-now-pay-later — what each
+      actually costs, how interest compounds against you, and the order in which debt should be
+      repaid before any investing begins.`,
+    bullets:[
+      "Calculate the true cost of an EMI, a credit card revolve and a 'no-cost' EMI",
+      "Tell debt that builds an asset from debt that funds consumption",
+      "Prioritise repayment across several loans at once",
+      "Understand how a credit score is built and what damages it",
+    ],
+    takeaway:`Clearing a 36% credit card is a guaranteed 36% return.
+      No investment can promise that.`,
+  },
+
+  stockmarket: {
+    name:"The Stock Market, Without The Jargon", hours:"3 hrs", hoursLong:"3 hours",
+    objective:`Understand what a share is, what moves its price, and how a beginner should —
+      and should not — participate.`,
+    intro:`An introduction to equity for participants who have heard the words but never the
+      explanation. A live multiplayer trading game puts them through market cycles, news shocks
+      and their own reactions, before we unpack what actually drives long-term returns.`,
+    bullets:[
+      "Understand what owning a share means and where returns really come from",
+      "Separate investing from trading, and see what the latter costs",
+      "Watch news, emotion and herd behaviour move prices in a live simulation",
+      "Know why index funds are the sensible starting point for most beginners",
+    ],
+    takeaway:`The market rewards patience far more reliably than it rewards cleverness.`,
+  },
+
+  retirement: {
+    name:"Planning Across Life Stages", hours:"3 hrs", hoursLong:"3 hours",
+    objective:`Put a number on retirement, children's education and healthcare — and work out
+      what to set aside from today.`,
+    intro:`The three long-horizon goals and how inflation changes each of them. Participants
+      calculate their own numbers rather than being handed generic ones, and see exactly what a
+      five-year delay costs.`,
+    bullets:[
+      "Calculate an inflation-adjusted retirement and education corpus for their own situation",
+      "Understand EPF, NPS and PPF, and where each fits",
+      "Plan healthcare costs independently of employer cover",
+      "See the cost of starting late, in rupees rather than percentages",
+    ],
+    takeaway:`Every goal has a number. Once you know the number, the plan gets much simpler.`,
+  },
+
+  teens: {
+    name:"Money Skills for Teenagers", hours:"2 hrs", hoursLong:"2 hours",
+    objective:`Give teenagers the money habits and vocabulary most adults had to learn
+      the expensive way.`,
+    intro:`A game-led session for school and college-age participants covering earning, spending,
+      saving and the first steps of investing — built entirely around interactive multiplayer
+      games rather than lectures.`,
+    bullets:[
+      "Understand needs vs wants and the real cost of lifestyle creep",
+      "See compounding work on a timeline that is genuinely theirs",
+      "Recognise how advertising, apps and friends shape spending",
+      "Learn what a bank account, a credit card and an SIP actually do",
+    ],
+    takeaway:`Starting at 20 instead of 35 is worth more than any clever decision made later.`,
+  },
+};
+
+/* ══════════════════════════════════════════════════════════════════════════
+   ▲▲▲  EDIT TO HERE — rendering below, do not change  ▲▲▲
+   ══════════════════════════════════════════════════════════════════════════ */
+
+const t = s => String(s).replace(/\s+/g," ").trim()
+                 .replace(/\{CLIENT_FULL\}/g, String(P.clientFull))
+                 .replace(/\{CLIENT\}/g, String(P.client));
+const checks = a => `<ul class="checks">${a.map(x=>`<li>${t(x)}</li>`).join("")}</ul>`;
+/* workshop cards cycle through the brand palette (§3) so a set of any length stays on-brand */
+const ACCENTS = [
+  { a:"var(--teal)",    fg:"#fff",         tint:"var(--mint-lt)", ink:"var(--teal-deep)" },
+  { a:"var(--gold)",    fg:"var(--navy)",  tint:"var(--gold-lt)", ink:"#a8862f"          },
+  { a:"var(--navy-lt)", fg:"#fff",         tint:"#eaf0f7",        ink:"var(--navy-lt)"   },
+];
+const accentVars = i => { const c = ACCENTS[i % ACCENTS.length];
+  return `--accent:${c.a};--accent-fg:${c.fg};--accent-tint:${c.tint};--accent-ink:${c.ink}`; };
+const mods = P.modules.map(k=>{
+  if(!MODULES[k]) throw new Error(`Unknown module key "${k}" — check P.modules`);
+  return MODULES[k];
+});
+
+const html = `
+<!-- ══ PAGE 1 — COVER ══════════════════════════════════════════════════ -->
+<section class="cover">
+  <div class="cover-logo"><img src="assets/ifm-logo-wide.png" alt="Investing for Mummies"></div>
+  <p class="cover-eyebrow">${t(P.eyebrow)}</p>
+  <h1>${t(P.title)}</h1>
+  <div class="rule"></div>
+  <p class="lede">${t(P.lede)}</p>
+  <ul class="cover-toc">
+    ${P.coverToc.map((x,i)=>`<li><span>${String(i+1).padStart(2,"0")}</span>${t(x)}</li>`).join("")}
+  </ul>
+  <div class="cover-for">
+    <p class="label">Prepared for</p>
+    <p class="who">${t(P.preparedFor)}</p>
+    <p class="when">${t(P.date)}</p>
+    <div class="cover-strip">
+      <figure><img src="assets/photo-group.jpg" alt=""></figure>
+      <figure><img src="assets/photo-room.jpg" alt=""></figure>
+      <figure><img src="assets/photo-table.jpg" alt=""></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PAGE 2 — THE ARGUMENT ═══════════════════════════════════════════ -->
+<section class="page">
+  <p class="eyebrow">Investing for Mummies</p>
+  <p class="statement">${P.statement.replace(/\s+/g," ").trim()}</p>
+  <p>${t(P.intro)}</p>
+  <p>Investing for Mummies is a financial literacy initiative founded by Hiral Goel with a
+  simple mission: to talk about finance without making it feel complicated. Women don't need to
+  become financial experts to take ownership of their money — they need to know enough to
+  understand what they own, ask the right questions, and take part in the decisions being made
+  around them.</p>
+
+  <div class="pillars">
+    ${P.pillars.map(p=>`<div class="pillar">
+      <div class="n">${t(p.n)}</div><h4>${t(p.h)}</h4><p>${t(p.p)}</p></div>`).join("")}
+  </div>
+
+  <div class="stats">
+    ${P.stats.map(s=>`<div class="stat">
+      <div class="fig">${t(s.fig)}</div><div class="cap">${t(s.cap)}</div></div>`).join("")}
+  </div>
+
+  <h2>${t(P.whyHeading)}</h2>
+  <div class="split">
+    <div class="col" style="flex:1.35">
+      <p>${t(P.whyIntro)} The workshops help women:</p>
+      ${checks(P.whyBullets)}
+    </div>
+    <div class="col sidephoto">
+      <figure>
+        <div class="shot"><img src="assets/photo-room2.jpg" alt=""></div>
+        <figcaption>Small groups around a table, not rows facing a screen.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+${P.showTech ? `
+<!-- ══ PAGE 3 — THE GAMES (dark full-bleed sheet) ══════════════════════ -->
+<section class="sheet dark">
+  <p class="eyebrow">${t(P.tech.eyebrow)}</p>
+  <h2>${t(P.tech.heading)}</h2>
+  <p class="dek">${t(P.tech.dek)}</p>
+  <figure>
+    <div class="shot"><img src="${P.tech.hero.img}" alt=""></div>
+    <figcaption>${t(P.tech.hero.cap)}</figcaption>
+  </figure>
+  <div class="steps">
+    ${P.tech.joinSteps.map(s=>`<div class="step"><div class="k">${t(s.k)}</div>
+      <p><b>${t(s.h)}</b>${t(s.p)}</p></div>`).join("")}
+  </div>
+  <div class="tiles">
+    ${P.tech.tiles.map(x=>`<figure>
+      <div class="shot"><img src="${x.img}" alt=""></div>
+      <figcaption>${t(x.cap)}</figcaption></figure>`).join("")}
+  </div>
+</section>` : ""}
+
+<!-- ══ WORKSHOPS ═══════════════════════════════════════════════════════ -->
+<section class="page">
+  <p class="eyebrow">The programme</p>
+  <h2>Workshops we propose</h2>
+  <p class="dek">Each workshop stands on its own, and each ends with something built rather than
+  something heard. Run them as a series or pick the one that fits the group.</p>
+  <table class="sumtable">
+    <tr><th>Workshop</th><th>Duration</th><th>What participants walk out able to do</th></tr>
+    ${mods.map(m=>`<tr><td>${t(m.name)}</td><td>${t(m.hours)}</td>
+      <td>${t(m.objective)}</td></tr>`).join("")}
+  </table>
+
+  <div class="pstrip">
+    <figure><div class="shot"><img src="assets/photo-band-workshop.jpg" alt=""></div></figure>
+    <figure><div class="shot"><img src="assets/photo-p1.jpg" alt=""></div></figure>
+    <figure><div class="shot"><img src="assets/photo-p2.jpg" alt=""></div></figure>
+  </div>
+
+  ${mods.map((m,i)=>`
+  <div class="wcard" style="${accentVars(i)}">
+    <div class="wcard-head">
+      <div class="wnum">${i+1}</div>
+      <div class="wtitle"><h3>${t(m.name)}</h3><span class="pill">${t(m.hoursLong)}</span></div>
+    </div>
+    <p class="wobj">${t(m.intro)}</p>
+    <p class="wlabel">Participants will</p>
+    ${checks(m.bullets)}
+    <div class="takeaway"><b>Takeaway —</b> ${t(m.takeaway)}</div>
+  </div>`).join("")}
+
+  ${P.showLongerFormat ? `
+  <div class="wcard" style="background:var(--cream);border-style:dashed;border-top-style:solid">
+    <h3>Longer formats</h3>
+    <div style="display:flex;gap:5mm;align-items:flex-start">
+      <p class="wobj" style="margin-bottom:0;flex:1">Extended 4-hour and 6-hour versions allow
+      deeper exploration and more hands-on exercises — useful when a group wants to cover
+      investing and protection in a single day. Details on request.</p>
+      <div class="shot" style="flex:0 0 48mm"><img src="assets/photo-p3.jpg"
+        style="height:30mm;object-fit:cover;object-position:center 40%" alt=""></div>
+    </div>
+  </div>` : ""}
+
+</section>
+
+${P.showTimeline ? `
+<!-- ══ HOW A SESSION RUNS (cream full-bleed sheet) ═════════════════════ -->
+<section class="sheet mint">
+  <p class="eyebrow">Inside the room</p>
+  <h2>${t(P.timeline.heading)}</h2>
+  <p class="dek">${t(P.timeline.dek)}</p>
+  <div class="split">
+    <div class="col" style="flex:1.25">
+      <ul class="timeline">
+        ${P.timeline.steps.map(s=>`<li><span class="t">${t(s.t)}</span>
+          <h4>${t(s.h)}</h4>${s.p?`<p>${t(s.p)}</p>`:""}</li>`).join("")}
+      </ul>
+    </div>
+    <div class="col">
+      <figure class="tl-photo-a">
+        <div class="shot"><img src="${P.timeline.photo}" alt=""></div>
+        <figcaption>${t(P.timeline.photoCap)}</figcaption>
+      </figure>
+      <figure class="tl-photo-b" style="margin-top:5mm">
+        <div class="shot"><img src="assets/photo-engaged.jpg" alt=""></div>
+        <figcaption>Questions run long. That is usually the sign it worked.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>` : ""}
+
+<!-- ══ FOUNDER + CLOSE ═════════════════════════════════════════════════ -->
+<section class="page">
+  ${P.showTestimonials ? `
+  <p class="eyebrow">In their words</p>
+  <div class="quotes">
+    ${P.testimonials.map(q=>`<div class="quote"><p>“${t(q.q)}”</p>
+      <div class="who">${t(q.who)}</div></div>`).join("")}
+  </div>` : ""}
+
+  <p class="eyebrow">The person in front of the room</p>
+  <h2>${t(P.bio.heading)}</h2>
+  <div class="founder">
+    <div class="pic">
+      <img src="${P.bio.photo}" alt="">
+      <div class="cap">${t(P.bio.caption)}</div>
+    </div>
+    <div class="txt">
+      ${P.bio.paras.map(x=>`<p>${t(x)}</p>`).join("")}
+      ${P.bio.pull?`<div class="takeaway">“${t(P.bio.pull)}”</div>`:""}
+    </div>
+  </div>
+
+  <div class="pstrip" style="margin-top:6mm">
+    <figure><div class="shot"><img src="assets/photo-s1.jpg" alt=""></div></figure>
+    <figure><div class="shot"><img src="assets/photo-s2.jpg" alt=""></div></figure>
+    <figure><div class="shot"><img src="assets/photo-s3.jpg" alt=""></div></figure>
+  </div>
+
+  ${P.showPastClients ? `
+  <div class="panel">
+    <h3>${t(P.pastClients.heading)}</h3>
+    ${checks(P.pastClients.items)}
+  </div>` : ""}
+
+  <div class="ppair" style="margin-top:2mm">
+    <figure><div class="shot"><img src="assets/photo-p4.jpg" alt=""></div>
+      <figcaption>Mapping goals on the board before any product is mentioned.</figcaption></figure>
+    <figure><div class="shot"><img src="assets/photo-engaged.jpg" alt=""></div>
+      <figcaption>The room doing the talking.</figcaption></figure>
+  </div>
+
+  ${P.showCommercials ? `
+  <h3 style="margin-top:6mm">${t(P.commercials.heading)}</h3>
+  <table class="sumtable">
+    <tr><th>Format</th><th>Fee</th><th>Group size</th></tr>
+    ${P.commercials.rows.map(r=>`<tr><td>${t(r[0])}</td><td>${t(r[2])}</td>
+      <td>${t(r[1])}</td></tr>`).join("")}
+  </table>
+  ${checks(P.commercials.notes)}` : ""}
+
+  ${P.showLogistics ? `
+  <h3>${t(P.logistics.heading)}</h3>
+  ${checks(P.logistics.items)}` : ""}
+
+</section>
+
+<!-- ══ CLOSING — dark full-bleed sheet ═════════════════════════════════ -->
+<section class="sheet dark closing">
+  <div class="inner">
+    <p class="eyebrow">Next steps</p>
+    <h2>${t(P.close.heading)}</h2>
+    <div class="rule"></div>
+    <p class="say">${t(P.close.text)}</p>
+    <div class="card">
+      <div class="name">${t(P.close.name)}</div>
+      <p class="line">${t(P.close.phone)} &nbsp;·&nbsp;
+        <a href="mailto:${P.close.email}">${t(P.close.email)}</a></p>
+      <div class="links">
+        ${P.close.links.map(l=>`<b>${t(l[0])}</b> &nbsp;<a href="${l[2]}">${t(l[1])}</a>`).join("<br>")}
+      </div>
+    </div>
+  </div>
+  <div class="pstrip" style="position:relative;z-index:1;margin:9mm 0 0">
+    <figure><div class="shot"><img src="assets/photo-p5.jpg" alt=""></div></figure>
+    <figure><div class="shot"><img src="assets/photo-teaching.jpg" alt=""></div></figure>
+    <figure><div class="shot"><img src="assets/photo-founder-live.jpg" alt=""></div></figure>
+  </div>
+  <div class="foot">
+    <img src="assets/ifm-logo-round.png" alt="">
+    <div><b>Investing for Mummies</b><small>Nurturing financially confident women</small></div>
+  </div>
+</section>`;
+
+document.getElementById("doc").innerHTML = html;
+document.title = `IFM Workshop Proposal — ${P.client}`;
+</script>

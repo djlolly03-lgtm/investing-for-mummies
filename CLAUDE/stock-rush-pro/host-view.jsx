@@ -663,6 +663,20 @@ function BigBetMoment({ data }) {
 function HostGame() {
   const [state, setState] = React.useState(() => window.StockRush.getState());
   const [seenPopupRound, setSeenPopupRound] = React.useState(0);
+  // Multi-slide teacher briefing — fires when Round 1 opens.
+  // React state only (no sessionStorage): mid-round refresh will re-show the
+  // briefing, which is intentional — earlier the sessionStorage key was tied
+  // to the room code, so once a teacher dismissed the briefing on the default
+  // room they never saw it again on any new game. Skip button is one click.
+  const [briefingShown, setBriefingShown] = React.useState(false);
+  const dismissBriefing = React.useCallback(() => setBriefingShown(true), []);
+  // Reset the flag any time we go back to a lobby (new game / play-again),
+  // so the next R1 shows the briefing fresh.
+  React.useEffect(() => {
+    if (state.phase === 'lobby') setBriefingShown(false);
+  }, [state.phase]);
+  const showBriefing = state.phase !== 'lobby' && state.phase !== 'ended'
+    && state.round === 1 && !briefingShown;
 
   React.useEffect(() => window.StockRush.subscribe(setState), []);
 
@@ -790,7 +804,16 @@ function HostGame() {
           transition popup. So end-of-R1 sequence is: ITC dividend → R2 starts →
           Titan split → "Next Round" transition popup → R2 trading. */}
       {state.phase === 'lobby' && <LobbyOverlay state={state} />}
-      {state.phase === 'events' && state.currentEvent ? (
+      {/* Teacher briefing carousel — fires once, right at the start of R1
+          (after lobby, before the first event popup). Sits above every other
+          overlay so nothing else can steal focus during the walkthrough. */}
+      {showBriefing && <TeacherBriefingCarousel onFinish={dismissBriefing} />}
+      {/* IPO recap sits ABOVE the event-popup gate — when an IPO finishes,
+          engine clears currentEvent but sets ipoRecap so the teacher can
+          walk the class through applied/allotted/refund before advancing. */}
+      {state.ipoRecap ? (
+        <IpoRecapOverlay recap={state.ipoRecap} />
+      ) : state.phase === 'events' && state.currentEvent ? (
         <EventPhaseOverlay
           event={state.currentEvent}
           choices={state.eventChoices}
@@ -1185,15 +1208,18 @@ function RoundTransitionPopup({ round, year, news, stocks, recap, players, onDis
   }
 
   return (
-    <div className="event-phase-backdrop" style={{ zIndex: 300, padding: 16 }}>
+    <div className="event-phase-backdrop" style={{ zIndex: 300, padding: 12 }}>
       <div
         ref={cardRef}
-        className="event-phase-card"
+        className="event-phase-card event-phase-card-body"
         style={{
-          maxWidth: 1020,
-          height: 'calc(100vh - 32px)',   // backdrop has 16px padding × 2
+          maxWidth: 'none',                // was 1020 — capped the popup to
+                                           // ~50% of a projector screen, leaving
+                                           // huge black side bars. Now fills.
+          height: 'calc(100vh - 24px)',    // matches new 12px backdrop padding
           maxHeight: 'none',
-          overflowY: 'hidden',            // zero scroll — content sized to fit
+          overflowY: 'auto',               // invisible scroll (see CSS) so tall
+                                           // stock cards don't get clipped
           display: 'flex',
           flexDirection: 'column',
         }}
@@ -1204,33 +1230,33 @@ function RoundTransitionPopup({ round, year, news, stocks, recap, players, onDis
         {recapStrip}
 
         {/* Round label */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8, flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12, flexShrink: 0 }}>
           <span style={{
             background: 'var(--ink)', color: '#fff',
-            fontFamily: 'Geist Mono, ui-monospace', fontSize: 15, fontWeight: 700,
-            letterSpacing: '0.12em', padding: '5px 12px', borderRadius: 4,
+            fontFamily: 'Geist Mono, ui-monospace', fontSize: 22, fontWeight: 700,
+            letterSpacing: '0.12em', padding: '8px 18px', borderRadius: 6,
           }}>
             ROUND {round} · {year}
           </span>
           <span style={{
             background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)',
-            fontFamily: 'Geist Mono, ui-monospace', fontSize: 13,
-            padding: '5px 12px', borderRadius: 4,
+            fontFamily: 'Geist Mono, ui-monospace', fontSize: 18,
+            padding: '8px 18px', borderRadius: 6,
           }}>
             TEACHER VIEW — MARKET UPDATE
           </span>
         </div>
 
         {/* Headline */}
-        <div style={{ fontSize: 26, fontWeight: 700, lineHeight: 1.2, marginBottom: 6, color: '#fff', flexShrink: 0 }}>
+        <div style={{ fontSize: 42, fontWeight: 700, lineHeight: 1.15, marginBottom: 10, color: '#fff', flexShrink: 0, letterSpacing: '-0.02em' }}>
           {news.headline}
         </div>
 
         {/* Subhead */}
         <div style={{
-          fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.5,
-          marginBottom: 12, paddingBottom: 12,
-          borderBottom: '1px solid rgba(255,255,255,0.1)',
+          fontSize: 20, color: 'rgba(255,255,255,0.8)', lineHeight: 1.5,
+          marginBottom: 18, paddingBottom: 18,
+          borderBottom: '1px solid rgba(255,255,255,0.12)',
           flexShrink: 0,
         }}>
           {news.subhead}
@@ -1243,8 +1269,8 @@ function RoundTransitionPopup({ round, year, news, stocks, recap, players, onDis
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gridAutoRows: '1fr',
-          gap: 8,
-          marginBottom: 10,
+          gap: 12,
+          marginBottom: 16,
           overflow: 'hidden',
         }}>
           {entries.map(([ticker, note]) => {
@@ -1254,29 +1280,29 @@ function RoundTransitionPopup({ round, year, news, stocks, recap, players, onDis
             const pctStr = pct >= 100 ? Math.round(pct) + '%' : pct.toFixed(1) + '%';
             return (
               <div key={ticker} style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                borderLeft: `3px solid ${up ? '#1f7a4d' : '#c24a3a'}`,
-                borderRadius: 8, padding: '8px 10px',
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                borderLeft: `4px solid ${up ? '#1f7a4d' : '#c24a3a'}`,
+                borderRadius: 10, padding: '14px 16px',
                 overflow: 'hidden',
                 display: 'flex', flexDirection: 'column',
               }}>
                 {/* Ticker row */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 5, flexShrink: 0 }}>
-                  <span style={{ fontSize: 22, lineHeight: 1 }}>{stock?.emoji || '•'}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, flexShrink: 0 }}>
+                  <span style={{ fontSize: 34, lineHeight: 1 }}>{stock?.emoji || '•'}</span>
                   <span style={{
                     fontFamily: 'Geist Mono, ui-monospace', fontWeight: 700,
-                    fontSize: 16, color: '#fff', letterSpacing: '0.04em',
+                    fontSize: 22, color: '#fff', letterSpacing: '0.04em',
                   }}>
                     {ticker}
                   </span>
                   {(note.splitAdjusted || note.bonusAdjusted) && (
                     <span style={{
-                      fontSize: 11, fontWeight: 700, letterSpacing: '0.06em',
+                      fontSize: 14, fontWeight: 700, letterSpacing: '0.06em',
                       background: note.bonusAdjusted ? 'rgba(180,83,9,0.25)' : 'rgba(59,130,196,0.25)',
                       color: note.bonusAdjusted ? '#fbbf24' : '#7ab8e8',
                       border: `1px solid ${note.bonusAdjusted ? 'rgba(180,83,9,0.5)' : 'rgba(59,130,196,0.4)'}`,
-                      padding: '2px 6px', borderRadius: 3,
+                      padding: '3px 8px', borderRadius: 4,
                     }}>
                       {note.bonusAdjusted ? 'BONUS' : 'SPLIT'}
                     </span>
@@ -1285,14 +1311,14 @@ function RoundTransitionPopup({ round, year, news, stocks, recap, players, onDis
                   <span style={{
                     color: up ? '#4ade80' : '#f87171',
                     fontFamily: 'Geist Mono, ui-monospace',
-                    fontWeight: 700, fontSize: 17,
+                    fontWeight: 700, fontSize: 28, letterSpacing: '-0.01em',
                   }}>
                     {up ? '▲' : '▼'} {pctStr}
                   </span>
                 </div>
                 {/* Why */}
                 <div style={{
-                  fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.5,
+                  fontSize: 18, color: 'rgba(255,255,255,0.82)', lineHeight: 1.5,
                   overflow: 'hidden',
                 }}>
                   {note.why}
@@ -1302,10 +1328,20 @@ function RoundTransitionPopup({ round, year, news, stocks, recap, players, onDis
           })}
         </div>
 
-        {/* CTA */}
+        {/* CTA — bright accent so it stands out as the next action */}
         <button
           className="big-btn"
-          style={{ width: '100%', fontSize: 15, flexShrink: 0 }}
+          style={{
+            width: '100%',
+            fontSize: 22, fontWeight: 700,
+            padding: '18px 28px',
+            background: 'linear-gradient(135deg, #22c55e 0%, #15803d 100%)',
+            color: '#fff',
+            border: 'none',
+            boxShadow: '0 8px 24px rgba(34,197,94,0.35), 0 2px 6px rgba(0,0,0,0.2)',
+            letterSpacing: '0.01em',
+            flexShrink: 0,
+          }}
           onClick={onDismiss}
         >
           Got it — Start Round {round} →
@@ -1399,8 +1435,12 @@ function EventPhaseOverlay({ event, choices, players, stocks }) {
           {isMid ? 'Breaking mid-round: ' : ''}{event.headline}
         </div>
 
-        {/* Scrollable content region — keeps CTA pinned in view */}
-        <div style={{ flex: 1, minHeight: 0, overflowY: 'auto', paddingRight: 4 }}>
+        {/* Content region — scrolls invisibly if the event body pushes the
+            card past viewport (IPO popup + long body + concept walkthrough +
+            choice tracker adds up). CTA below is pinned so it's always
+            reachable without needing a visible scrollbar. Scrollbar itself
+            is hidden via CSS (.event-phase-card-body::-webkit-scrollbar). */}
+        <div className="event-phase-card-body" style={{ flex: 1, minHeight: 0, overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
 
         {/* Educational body — the in-game flavor narrative */}
         <div className="event-phase-body">{event.body}</div>
@@ -1502,12 +1542,16 @@ function EventPhaseOverlay({ event, choices, players, stocks }) {
             onClick={() => window.StockRush.dismissCurrentEvent()}
             className="big-btn"
             style={{
-              width: '100%', maxWidth: 420,
-              fontSize: 15, padding: '12px 22px', borderRadius: 10,
+              width: '100%', maxWidth: 560,
+              fontSize: 22, fontWeight: 700, padding: '18px 28px', borderRadius: 12,
               background: isChoice && responded < total
                 ? 'linear-gradient(135deg,#c24a3a,#8b3424)'
-                : 'linear-gradient(135deg,#1f7a4d,#155b38)',
+                : 'linear-gradient(135deg, #22c55e 0%, #15803d 100%)',
               border: 'none',
+              color: '#fff',
+              boxShadow: isChoice && responded < total
+                ? '0 8px 24px rgba(194,74,58,0.35), 0 2px 6px rgba(0,0,0,0.2)'
+                : '0 8px 24px rgba(34,197,94,0.35), 0 2px 6px rgba(0,0,0,0.2)',
             }}
             title={isChoice && responded < total
               ? `Force-skip — non-responding students will be marked 'reject'`
@@ -1541,25 +1585,26 @@ function EventTeachingPanel({ edu }) {
       marginTop: 10, marginBottom: 10,
       background: 'rgba(255,255,255,0.04)',
       border: '1px solid rgba(255,255,255,0.12)',
-      borderRadius: 10,
+      borderRadius: 12,
       overflow: 'hidden',
+      flexShrink: 0,
     }}>
       {/* Header strip */}
       <div style={{
         background: 'linear-gradient(135deg, rgba(202,168,76,0.18), rgba(202,168,76,0.06))',
         borderBottom: '1px solid rgba(255,255,255,0.1)',
-        padding: '10px 14px',
-        display: 'flex', alignItems: 'center', gap: 10,
+        padding: '12px 18px',
+        display: 'flex', alignItems: 'center', gap: 14,
       }}>
-        <span style={{ fontSize: 24, lineHeight: 1 }}>{edu.emoji}</span>
+        <span style={{ fontSize: 32, lineHeight: 1 }}>{edu.emoji}</span>
         <div>
           <div style={{
-            fontFamily: 'Geist Mono, ui-monospace', fontSize: 10, fontWeight: 700,
+            fontFamily: 'Geist Mono, ui-monospace', fontSize: 12, fontWeight: 700,
             letterSpacing: '0.14em', color: '#c9a84c', textTransform: 'uppercase',
           }}>
             Concept walkthrough
           </div>
-          <div style={{ fontSize: 17, fontWeight: 700, color: '#fff', letterSpacing: '-0.01em', marginTop: 2 }}>
+          <div style={{ fontSize: 21, fontWeight: 700, color: '#fff', letterSpacing: '-0.01em', marginTop: 2 }}>
             {edu.title}
           </div>
         </div>
@@ -1568,7 +1613,7 @@ function EventTeachingPanel({ edu }) {
       {/* Three teaching sections */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
         gap: 1,
         background: 'rgba(255,255,255,0.08)',
       }}>
@@ -1579,17 +1624,17 @@ function EventTeachingPanel({ edu }) {
         ].map((s) => (
           <div key={s.label} style={{
             background: 'rgba(15,15,15,0.96)',
-            padding: '10px 14px',
+            padding: '12px 16px',
           }}>
             <div style={{
-              fontFamily: 'Geist Mono, ui-monospace', fontSize: 10, fontWeight: 700,
-              letterSpacing: '0.12em', color: s.accent, marginBottom: 5,
+              fontFamily: 'Geist Mono, ui-monospace', fontSize: 12, fontWeight: 700,
+              letterSpacing: '0.12em', color: s.accent, marginBottom: 6,
             }}>
               {s.label}
             </div>
             <div style={{
-              fontSize: 12.5, lineHeight: 1.45,
-              color: 'rgba(255,255,255,0.9)',
+              fontSize: 15, lineHeight: 1.45,
+              color: 'rgba(255,255,255,0.92)',
             }}>
               {s.body}
             </div>
@@ -1600,18 +1645,18 @@ function EventTeachingPanel({ edu }) {
       {/* Talking prompt for the teacher */}
       {edu.talkAbout && (
         <div style={{
-          padding: '14px 22px',
+          padding: '14px 20px',
           background: 'rgba(74,141,108,0.10)',
           borderTop: '1px solid rgba(255,255,255,0.08)',
-          fontSize: 15.5,
-          color: 'rgba(255,255,255,0.85)',
-          lineHeight: 1.55,
+          fontSize: 16,
+          color: 'rgba(255,255,255,0.88)',
+          lineHeight: 1.5,
           display: 'flex', alignItems: 'flex-start', gap: 12,
         }}>
-          <span style={{ fontSize: 22, lineHeight: 1 }}>🗣️</span>
+          <span style={{ fontSize: 24, lineHeight: 1 }}>🗣️</span>
           <div>
             <span style={{
-              fontFamily: 'Geist Mono, ui-monospace', fontSize: 12, fontWeight: 700,
+              fontFamily: 'Geist Mono, ui-monospace', fontSize: 13, fontWeight: 700,
               letterSpacing: '0.14em', color: '#4ade80', textTransform: 'uppercase',
               marginRight: 10,
             }}>
@@ -1985,7 +2030,74 @@ function ActivityRow({ text }) {
 
 // ── Game rules modal — shown automatically when teacher first enters the lobby ─
 
+// Multi-slide teacher briefing carousel — fires when Round 1 begins, right
+// after the lobby closes and students have joined. Modelled on the teen
+// Stock Rush briefing so the teacher gets a narratable walkthrough instead
+// of one dense wall of rules. Each slide is a full-screen focused beat.
+const BRIEFING_SLIDES = [
+  {
+    eyebrow: 'THE GOAL',
+    title: 'Most money wins.',
+    subtitle: 'That\'s the whole game.',
+    body: 'Every student starts with ₹2 lakh. Over 6 rounds spanning 2014-2026, they trade real Indian stocks at their real historical prices. Whoever\'s portfolio is worth the most at the end takes the crown.',
+    accent: '#22c55e',
+    icon: '🎯',
+    aside: 'Cash + share value = net worth. Both count.',
+  },
+  {
+    eyebrow: 'REAL YEARS, REAL PRICES',
+    title: '11 years of Indian markets.',
+    subtitle: 'Not a simulation — the actual price history.',
+    body: 'Each round jumps to a real historical moment: demonetisation, the COVID crash, the Jio data revolution, the rate-hike storm, the post-2023 rally. Students see what actually happened to Titan, Zomato, ITC, Yes Bank and more.',
+    accent: '#7ab8e8',
+    icon: '📅',
+    chips: [
+      { label: '2014-2018 · Modi + Jio', color: '#7ab8e8' },
+      { label: '2018-2020 · COVID crash', color: '#f87171' },
+      { label: '2020-2023 · Rally', color: '#4ade80' },
+      { label: '2023-2026 · Rate storm', color: '#fbbf24' },
+    ],
+  },
+  {
+    eyebrow: 'CORPORATE ACTIONS',
+    title: 'One real event per round.',
+    subtitle: 'Dividend, Split, IPO, Bonus, Buyback, Rights.',
+    body: 'Every round, one real corporate action fires — always from an actual Indian company move. Auto-events (dividend, split, bonus) apply to everyone. Choice events (IPO, buyback, rights) ask each student what they want to do.',
+    accent: '#c9a84c',
+    icon: '💼',
+    chips: [
+      { label: '💰 Dividend', color: '#4ade80' },
+      { label: '✂️ Split', color: '#7ab8e8' },
+      { label: '🎫 IPO', color: '#fbbf24' },
+      { label: '🎁 Bonus', color: '#c084fc' },
+      { label: '🔄 Buyback', color: '#f87171' },
+      { label: '📬 Rights', color: '#4ade80' },
+    ],
+  },
+  {
+    eyebrow: 'HOW EACH ROUND FLOWS',
+    title: 'News → Trade → Lock → Advance.',
+    subtitle: 'You pace the class.',
+    body: 'Every round opens with a market-update popup on your screen (share it with the class). Students then trade on their phones for however long you want — no timer pressure. When they\'re ready they lock in. You click Next Round when the class is done talking.',
+    accent: '#f472b6',
+    icon: '⏱️',
+    aside: 'No auto-advance. You\'re the pace-setter — take your time.',
+  },
+  {
+    eyebrow: 'YOUR ROLE',
+    title: 'Pause. Discuss. Teach.',
+    subtitle: 'The game is the classroom.',
+    body: 'Pause any time to explain a concept — trading freezes for everyone. Each corporate action popup includes a concept walkthrough for you to read aloud (what it is, how it works, why it matters). End-of-round popups summarise what just happened so students learn from every move.',
+    accent: '#a78bfa',
+    icon: '🎓',
+    aside: 'When in doubt, pause and ask "why did Zomato\'s price move today?"',
+  },
+];
+
 function GameRulesModal({ onDismiss }) {
+  // Deprecated single-box modal — kept as a compact reference popup accessible
+  // from the lobby's "Show rules" chip. The real classroom briefing is the
+  // multi-slide TeacherBriefingCarousel that fires when Round 1 starts.
   const RULES = [
     {
       icon: '🎯',
@@ -2055,11 +2167,11 @@ function GameRulesModal({ onDismiss }) {
           </div>
         </div>
 
-        {/* Rules — scrollable */}
+        {/* Rules — no scroll; kept as a compact reference panel. */}
         <div style={{
           padding: '14px 18px',
           display: 'flex', flexDirection: 'column', gap: 8,
-          flex: 1, minHeight: 0, overflowY: 'auto',
+          flex: 1, minHeight: 0, overflow: 'hidden',
         }}>
           {RULES.map((r, i) => (
             <div key={i} style={{
@@ -2142,6 +2254,393 @@ function GameRulesModal({ onDismiss }) {
   );
 }
 
+// Full-screen multi-slide carousel that opens when R1 begins. Modelled after
+// the teen Stock Rush briefing so the teacher walks the class through one
+// concept at a time, not one wall of rules.
+function TeacherBriefingCarousel({ onFinish }) {
+  const [idx, setIdx] = React.useState(0);
+  const total = BRIEFING_SLIDES.length;
+  const slide = BRIEFING_SLIDES[idx];
+  const isLast = idx === total - 1;
+  const goNext = () => (isLast ? onFinish() : setIdx(i => Math.min(total - 1, i + 1)));
+  const goBack = () => setIdx(i => Math.max(0, i - 1));
+  React.useEffect(() => {
+    function onKey(e) {
+      if (e.key === 'ArrowRight' || e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goNext(); }
+      else if (e.key === 'ArrowLeft')                                    { e.preventDefault(); goBack(); }
+      else if (e.key === 'Escape')                                       { onFinish(); }
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [idx, isLast]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 650,
+      background: 'radial-gradient(ellipse at center, rgba(10,14,22,0.94) 0%, rgba(6,8,14,0.98) 70%)',
+      backdropFilter: 'blur(10px)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      padding: 32,
+      animation: 'tbc-fade 0.4s ease',
+    }}>
+      <div key={idx} style={{
+        width: '100%', maxWidth: 1120,
+        display: 'flex', flexDirection: 'column',
+        color: '#fff',
+        animation: 'tbc-slide 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.05)',
+      }}>
+        {/* Progress dots + slide count */}
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: 10,
+          marginBottom: 32,
+        }}>
+          <div style={{ display: 'flex', gap: 8 }}>
+            {BRIEFING_SLIDES.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIdx(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                style={{
+                  width: i === idx ? 40 : 12, height: 12,
+                  borderRadius: 6,
+                  background: i === idx ? slide.accent : 'rgba(255,255,255,0.18)',
+                  border: 'none', cursor: 'pointer', padding: 0,
+                  transition: 'all 0.3s ease',
+                }}
+              />
+            ))}
+          </div>
+          <div style={{
+            marginLeft: 'auto',
+            fontFamily: 'Geist Mono, ui-monospace',
+            fontSize: 14, letterSpacing: '0.14em',
+            color: 'rgba(255,255,255,0.5)',
+          }}>
+            {String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+          </div>
+        </div>
+
+        {/* Slide content */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'minmax(260px, 340px) 1fr',
+          gap: 60,
+          alignItems: 'flex-start',
+        }}>
+          {/* Left column — icon + eyebrow */}
+          <div>
+            <div style={{
+              width: 180, height: 180,
+              borderRadius: 28,
+              background: `linear-gradient(135deg, ${slide.accent}22 0%, ${slide.accent}05 100%)`,
+              border: `2px solid ${slide.accent}55`,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontSize: 96, lineHeight: 1,
+              boxShadow: `0 20px 60px ${slide.accent}22`,
+              marginBottom: 22,
+            }}>
+              {slide.icon}
+            </div>
+            <div style={{
+              fontFamily: 'Geist Mono, ui-monospace',
+              fontSize: 15, fontWeight: 700, letterSpacing: '0.2em',
+              color: slide.accent, textTransform: 'uppercase',
+            }}>
+              {slide.eyebrow}
+            </div>
+          </div>
+
+          {/* Right column — text */}
+          <div>
+            <div style={{
+              fontSize: 56, fontWeight: 800, letterSpacing: '-0.03em',
+              lineHeight: 1.05, marginBottom: 12, color: '#fff',
+            }}>
+              {slide.title}
+            </div>
+            <div style={{
+              fontSize: 24, fontWeight: 500, letterSpacing: '-0.01em',
+              lineHeight: 1.3, marginBottom: 22,
+              color: slide.accent,
+            }}>
+              {slide.subtitle}
+            </div>
+            <div style={{
+              fontSize: 20, lineHeight: 1.55,
+              color: 'rgba(255,255,255,0.82)',
+              maxWidth: 680, marginBottom: slide.chips || slide.aside ? 24 : 0,
+            }}>
+              {slide.body}
+            </div>
+            {slide.chips && (
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: slide.aside ? 20 : 0 }}>
+                {slide.chips.map(c => (
+                  <span key={c.label} style={{
+                    padding: '10px 18px', borderRadius: 999,
+                    background: `${c.color}18`,
+                    border: `1.5px solid ${c.color}55`,
+                    color: c.color,
+                    fontSize: 17, fontWeight: 700,
+                    letterSpacing: '-0.005em',
+                  }}>
+                    {c.label}
+                  </span>
+                ))}
+              </div>
+            )}
+            {slide.aside && (
+              <div style={{
+                padding: '14px 20px',
+                background: `${slide.accent}0f`,
+                borderLeft: `4px solid ${slide.accent}`,
+                borderRadius: 6,
+                fontSize: 18, fontStyle: 'italic',
+                color: 'rgba(255,255,255,0.75)',
+                lineHeight: 1.5,
+              }}>
+                {slide.aside}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Nav footer */}
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: 16,
+          marginTop: 48,
+        }}>
+          {idx > 0 && (
+            <button
+              onClick={goBack}
+              style={{
+                padding: '14px 24px',
+                background: 'rgba(255,255,255,0.06)',
+                border: '1.5px solid rgba(255,255,255,0.18)',
+                color: 'rgba(255,255,255,0.85)',
+                fontSize: 18, fontWeight: 600, letterSpacing: '-0.005em',
+                borderRadius: 10, cursor: 'pointer',
+              }}
+            >
+              ← Back
+            </button>
+          )}
+          <button
+            onClick={onFinish}
+            style={{
+              marginLeft: idx === 0 ? 0 : 0,
+              padding: '10px 18px',
+              background: 'transparent',
+              border: 'none',
+              color: 'rgba(255,255,255,0.45)',
+              fontSize: 15, fontWeight: 500,
+              cursor: 'pointer',
+            }}
+          >
+            Skip briefing
+          </button>
+          <span style={{ flex: 1 }} />
+          <button
+            onClick={goNext}
+            style={{
+              padding: '18px 32px',
+              background: `linear-gradient(135deg, ${slide.accent} 0%, ${slide.accent}cc 100%)`,
+              border: 'none',
+              color: '#fff',
+              fontSize: 22, fontWeight: 800, letterSpacing: '-0.005em',
+              borderRadius: 12, cursor: 'pointer',
+              boxShadow: `0 12px 32px ${slide.accent}55, 0 3px 8px rgba(0,0,0,0.25)`,
+              minWidth: 220,
+            }}
+          >
+            {isLast ? "Let's play — Round 1 →" : 'Next →'}
+          </button>
+        </div>
+      </div>
+      <style>{`
+        @keyframes tbc-fade  { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes tbc-slide {
+          from { opacity: 0; transform: translateX(24px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+// Teacher-facing IPO recap — fires after every student has responded to an
+// IPO subscription event. Shows the class-wide outcome (money applied,
+// shares allotted, refunded) so the teacher can walk through what actually
+// happened before the next round begins.
+function IpoRecapOverlay({ recap }) {
+  const { event, items, totals } = recap;
+  const fmt = (n) => '₹' + (Math.round(n || 0)).toLocaleString('en-IN');
+  const allottedCount = items.filter(i => i.allocated > 0).length;
+  const rejectedCount = items.filter(i => i.status === 'rejected').length;
+  return (
+    <div className="event-phase-backdrop">
+      <div className="event-phase-card" style={{
+        border: '2px solid rgba(212,149,58,0.55)',
+        boxShadow: '0 0 60px rgba(212,149,58,0.28), 0 20px 60px rgba(0,0,0,0.5)',
+        borderRadius: 14,
+        background: 'linear-gradient(180deg, #141010 0%, #0a0806 100%)',
+        padding: '24px 30px',
+      }}>
+        {/* Type badge + eyebrow */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16, flexShrink: 0 }}>
+          <span className="event-type-badge evt-ipo">IPO RESULTS</span>
+          <span style={{
+            fontFamily: 'Geist Mono, ui-monospace',
+            fontSize: 18, color: 'rgba(255,255,255,0.6)',
+            letterSpacing: '0.08em',
+          }}>
+            📋 SUBSCRIPTION COMPLETE
+          </span>
+        </div>
+
+        {/* Headline */}
+        <div style={{
+          fontSize: 42, fontWeight: 800, letterSpacing: '-0.02em',
+          lineHeight: 1.1, marginBottom: 10, color: '#fff', flexShrink: 0,
+        }}>
+          Here's what happened with the {event.stockId} IPO.
+        </div>
+        <div style={{
+          fontSize: 20, color: 'rgba(255,255,255,0.75)', lineHeight: 1.5,
+          marginBottom: 18, paddingBottom: 18,
+          borderBottom: '1px solid rgba(255,255,255,0.12)', flexShrink: 0,
+        }}>
+          IPO priced at <b style={{ color: '#fff' }}>₹{event.ipoPrice}</b> · Subscribed <b style={{ color: '#4ade80' }}>{event.subscriptionX}×</b> · Allocation cut proportionally to applications.
+        </div>
+
+        {/* Big totals row */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: 10, marginBottom: 12, flexShrink: 0,
+        }}>
+          {[
+            { label: 'MONEY APPLIED',   value: fmt(totals.applied), color: '#7ab8e8' },
+            { label: 'SHARES ALLOTTED', value: totals.allocated + '',  color: '#4ade80' },
+            { label: 'MONEY LOCKED IN', value: fmt(totals.cost),    color: '#c9a84c' },
+            { label: 'REFUNDED',        value: fmt(totals.refund),  color: '#f472b6' },
+          ].map(t => (
+            <div key={t.label} style={{
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: 10, padding: '10px 14px',
+            }}>
+              <div style={{
+                fontFamily: 'Geist Mono, ui-monospace', fontSize: 11, fontWeight: 700,
+                letterSpacing: '0.14em', color: 'rgba(255,255,255,0.55)', marginBottom: 4,
+              }}>
+                {t.label}
+              </div>
+              <div style={{
+                fontFamily: 'Geist Mono, ui-monospace',
+                fontSize: 24, fontWeight: 800, color: t.color, letterSpacing: '-0.02em',
+              }}>
+                {t.value}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Per-student breakdown — scrolls invisibly (scrollbar hidden by
+            .event-phase-card CSS) if the class is bigger than the row-count
+            that fits. Prevents rows getting silently cut. */}
+        <div style={{
+          flex: 1, minHeight: 0, overflowY: 'auto',
+          border: '1px solid rgba(255,255,255,0.08)',
+          borderRadius: 10, marginBottom: 18,
+        }}>
+          <div style={{
+            display: 'grid', gridTemplateColumns: '2fr 1.3fr 1.3fr 1.3fr 1.3fr 1fr',
+            padding: '8px 14px',
+            background: 'rgba(255,255,255,0.04)',
+            fontFamily: 'Geist Mono, ui-monospace',
+            fontSize: 12, fontWeight: 700,
+            letterSpacing: '0.12em', color: 'rgba(255,255,255,0.55)',
+            borderBottom: '1px solid rgba(255,255,255,0.1)',
+          }}>
+            <div>STUDENT</div><div>APPLIED</div><div>ALLOTTED</div><div>LOCKED</div><div>REFUND</div><div style={{ textAlign: 'right' }}>STATUS</div>
+          </div>
+          {items.map(it => {
+            const statusStyle = it.status === 'rejected'
+              ? { color: 'rgba(255,255,255,0.4)', label: 'Passed' }
+              : it.status === 'insufficient'
+                ? { color: '#f87171', label: 'No funds' }
+                : { color: '#4ade80', label: `${it.allocPct || 0}% got` };
+            return (
+              <div key={it.playerId} style={{
+                display: 'grid', gridTemplateColumns: '2fr 1.3fr 1.3fr 1.3fr 1.3fr 1fr',
+                padding: '8px 14px',
+                fontSize: 15, color: 'rgba(255,255,255,0.9)',
+                borderBottom: '1px solid rgba(255,255,255,0.06)',
+                alignItems: 'center',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span style={{ fontWeight: 700 }}>{it.name}</span>
+                  {it.isBot && <span style={{
+                    fontSize: 11, padding: '2px 6px', borderRadius: 3,
+                    background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.5)',
+                    fontFamily: 'Geist Mono, ui-monospace', letterSpacing: '0.1em',
+                  }}>BOT</span>}
+                </div>
+                <div style={{ fontFamily: 'Geist Mono, ui-monospace' }}>{fmt(it.applied)}</div>
+                <div style={{ fontFamily: 'Geist Mono, ui-monospace', color: it.allocated > 0 ? '#4ade80' : 'rgba(255,255,255,0.4)' }}>{it.allocated || 0}</div>
+                <div style={{ fontFamily: 'Geist Mono, ui-monospace' }}>{fmt(it.cost)}</div>
+                <div style={{ fontFamily: 'Geist Mono, ui-monospace', color: it.refund > 0 ? '#f472b6' : 'rgba(255,255,255,0.4)' }}>{fmt(it.refund)}</div>
+                <div style={{ textAlign: 'right', color: statusStyle.color, fontWeight: 700, fontSize: 14 }}>
+                  {statusStyle.label}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Teacher talking prompt */}
+        <div style={{
+          padding: '18px 22px',
+          background: 'rgba(212,149,58,0.10)',
+          border: '1px solid rgba(212,149,58,0.28)',
+          borderRadius: 10,
+          marginBottom: 18, flexShrink: 0,
+          display: 'flex', alignItems: 'flex-start', gap: 16,
+        }}>
+          <span style={{ fontSize: 28, lineHeight: 1 }}>🗣️</span>
+          <div style={{ fontSize: 18, color: 'rgba(255,255,255,0.85)', lineHeight: 1.55 }}>
+            <div style={{
+              fontFamily: 'Geist Mono, ui-monospace', fontSize: 13, fontWeight: 700,
+              letterSpacing: '0.14em', color: '#d4953a', marginBottom: 6, textTransform: 'uppercase',
+            }}>
+              Talk about
+            </div>
+            {rejectedCount === items.length
+              ? `Nobody subscribed — that's a choice. Real investors sit out IPOs they don't understand.`
+              : `Everyone applied for the same shares, but only ${allottedCount} of ${items.length} got any allocation, and even they got only a fraction — the rest of their money was refunded. Ask the class: why does that happen? What does "oversubscribed" tell you about market demand?`}
+          </div>
+        </div>
+
+        {/* Continue */}
+        <button
+          onClick={() => window.StockRush.dismissIpoRecap?.()}
+          style={{
+            width: '100%', padding: '18px 28px',
+            background: 'linear-gradient(135deg, #22c55e 0%, #15803d 100%)',
+            border: 'none', borderRadius: 12,
+            color: '#fff', fontSize: 22, fontWeight: 700,
+            letterSpacing: '0.01em', cursor: 'pointer',
+            boxShadow: '0 8px 24px rgba(34,197,94,0.35), 0 2px 6px rgba(0,0,0,0.2)',
+            flexShrink: 0,
+          }}
+        >
+          Got it — Continue →
+        </button>
+      </div>
+    </div>
+  );
+}
+
 // ── Lobby overlay ─────────────────────────────────────────────────────────────
 
 function LobbyOverlay({ state }) {
@@ -2149,7 +2648,11 @@ function LobbyOverlay({ state }) {
   const humans  = players.filter(p => !p.isBot);
   const qrRef   = React.useRef(null);
   const url     = `${window.location.origin}${window.location.pathname}?role=player&room=${window.GAME_CONFIG.roomCode}`;
-  const [showRules, setShowRules] = React.useState(true);
+  // The full teacher briefing is now the multi-slide carousel that fires when
+  // R1 begins (see TeacherBriefingCarousel). In the lobby, keep the short
+  // rules modal available as an on-demand reference — closed by default so
+  // it doesn't cover the QR while students are still joining.
+  const [showRules, setShowRules] = React.useState(false);
 
   // Track which player IDs we've already seen, so newcomers can animate in
   const seenIds = React.useRef(new Set(humans.map(p => p.id)));

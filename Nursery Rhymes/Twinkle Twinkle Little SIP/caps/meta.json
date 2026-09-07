@@ -1,0 +1,74 @@
+[
+ {
+  "file": "caps/cap00.png",
+  "start": 0.0,
+  "end": 2.34,
+  "h": 116
+ },
+ {
+  "file": "caps/cap01.png",
+  "start": 2.34,
+  "end": 4.84,
+  "h": 116
+ },
+ {
+  "file": "caps/cap02.png",
+  "start": 4.84,
+  "end": 8.04,
+  "h": 116
+ },
+ {
+  "file": "caps/cap03.png",
+  "start": 8.58,
+  "end": 10.94,
+  "h": 116
+ },
+ {
+  "file": "caps/cap04.png",
+  "start": 10.94,
+  "end": 12.04,
+  "h": 116
+ },
+ {
+  "file": "caps/cap05.png",
+  "start": 12.22,
+  "end": 14.49,
+  "h": 116
+ },
+ {
+  "file": "caps/cap06.png",
+  "start": 14.66,
+  "end": 16.99,
+  "h": 116
+ },
+ {
+  "file": "caps/cap07.png",
+  "start": 17.16,
+  "end": 19.26,
+  "h": 116
+ },
+ {
+  "file": "caps/cap08.png",
+  "start": 19.26,
+  "end": 21.84,
+  "h": 116
+ },
+ {
+  "file": "caps/cap09.png",
+  "start": 21.9,
+  "end": 24.29,
+  "h": 116
+ },
+ {
+  "file": "caps/cap10.png",
+  "start": 24.49,
+  "end": 26.89,
+  "h": 116
+ },
+ {
+  "file": "caps/cap11.png",
+  "start": 27.09,
+  "end": 29.44,
+  "h": 116
+ }
+]

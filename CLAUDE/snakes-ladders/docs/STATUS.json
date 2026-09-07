@@ -1,0 +1,296 @@
+{
+ "phase": "Re-scored \u2014 3.75 \u2192 6.75",
+ "phaseNote": "Every slice moved. Two now beat the benchmark. Three critics independently named the same root cause: the camera never fills the screen.",
+ "pieces": [
+  {
+   "name": "endgame 6\u21927.5",
+   "note": "benchmark 6 \u00b7 ours",
+   "status": "done",
+   "label": "beats it",
+   "scores": [
+    "was 6",
+    "now 7.5",
+    "ref 6"
+   ]
+  },
+  {
+   "name": "teaching 5\u21927",
+   "note": "benchmark 6 \u00b7 ours",
+   "status": "done",
+   "label": "beats it",
+   "scores": [
+    "was 5",
+    "now 7",
+    "ref 6"
+   ]
+  },
+  {
+   "name": "hud 4\u21927",
+   "note": "benchmark 8 \u00b7 tie",
+   "status": "done",
+   "label": "ties",
+   "scores": [
+    "was 4",
+    "now 7",
+    "ref 8"
+   ]
+  },
+  {
+   "name": "language 3\u21927",
+   "note": "benchmark 9 \u00b7 reference",
+   "status": "work",
+   "label": "still behind",
+   "scores": [
+    "was 3",
+    "now 7",
+    "ref 9"
+   ]
+  },
+  {
+   "name": "handoff 3\u21927",
+   "note": "benchmark 8 \u00b7 reference",
+   "status": "work",
+   "label": "still behind",
+   "scores": [
+    "was 3",
+    "now 7",
+    "ref 8"
+   ]
+  },
+  {
+   "name": "projector 4\u21926.5",
+   "note": "benchmark 7 \u00b7 reference",
+   "status": "work",
+   "label": "still behind",
+   "scores": [
+    "was 4",
+    "now 6.5",
+    "ref 7"
+   ]
+  },
+  {
+   "name": "first30 1\u21926",
+   "note": "benchmark 8 \u00b7 reference",
+   "status": "work",
+   "label": "still behind",
+   "scores": [
+    "was 1",
+    "now 6",
+    "ref 8"
+   ]
+  },
+  {
+   "name": "board 4\u21926",
+   "note": "benchmark 9 \u00b7 reference",
+   "status": "work",
+   "label": "still behind",
+   "scores": [
+    "was 4",
+    "now 6",
+    "ref 9"
+   ]
+  }
+ ],
+ "log": [
+  {
+   "t": "14:47",
+   "m": "Scaffold created \u00b7 Three.js r169 vendored \u00b7 static server on :8791"
+  },
+  {
+   "t": "14:52",
+   "m": "Engineering CONTRACT.md written \u2014 20 modules, one owner each, fixed interfaces so agents can work in parallel"
+  },
+  {
+   "t": "14:56",
+   "m": "Inspection harness built (puppeteer): critics drive the <b>real running game</b> on phone/tablet/desktop/projector, screenshot every beat, measure fps + draw calls. No critic ever reads a builder's summary."
+  },
+  {
+   "t": "14:58",
+   "m": "Design wave launched: 4 rival full designs (ludo-first \u00b7 varsity-first \u00b7 mother-first \u00b7 classroom-first) judged blind by 3 panels \u2014 a Nagpur mother, a mobile game producer, a Varsity editor."
+  },
+  {
+   "t": "15:04",
+   "m": "Research landed: a measured Ludo King UX/animation teardown, a Varsity teaching-style teardown from 8 real chapters, a 2026 field brief on what Indian households get wrong, and the Moksha Patam origin (Snakes &amp; Ladders was an Indian moral-instruction game before the British stripped the meaning out \u2014 we're reclaiming that)."
+  },
+  {
+   "t": "15:05",
+   "m": "Foundation written and unit-tested by hand: <b>util.js</b> (Indian money formatting, easings, seeded RNG) and <b>rules.js</b> (pure, seeded, replayable game engine) \u2014 20/20 tests pass, a full game terminates in ~67 rolls."
+  },
+  {
+   "t": "15:26",
+   "m": "<b>Design locked.</b> Judges split \u2014 the Nagpur mother picked <i>mother-first</i>, the game producer picked <i>ludo-first</i>, the Varsity editor picked <i>varsity-first</i>. The synthesis takes ludo-first's nervous system, varsity-first's causal zone curriculum, mother-first's voice, and classroom-first's restraint rules."
+  },
+  {
+   "t": "15:27",
+   "m": "The Varsity-editor panel caught three <b>wrong rupee figures</b> in the drafts (a stale ULIP charge, an NBFC gold rate sold as typical, \u20b922,495 cr misattributed). All corrected before a single square shipped."
+  },
+  {
+   "t": "15:38",
+   "m": "<b>Board validated by simulation</b> \u2014 40,000 games. 8 ladders, 8 snakes: median 21 rounds, p99 42. Nothing bites above square 96. The catch-up mechanic is a <i>Bura Waqt Fund</i> that absorbs one snake bite \u2014 measured to close the last-place gap from 36 squares to 21 <i>while lowering</i> the trailing player's win rate. The fairest comeback mechanic and the most important lesson in Indian household finance turned out to be the same object."
+  },
+  {
+   "t": "15:40",
+   "m": "Rules engine rewritten to the canonical design and re-tested: 36/36. Overshoot wins \u00b7 game ends at first finish \u00b7 nobody is ever eliminated \u00b7 a third six is never called a punishment."
+  },
+  {
+   "t": "15:53",
+   "m": "<b>Curriculum written and independently audited.</b> I wrote the ethics/clarity lint myself rather than let the author grade their own work \u2014 100 squares, no sentence over 22 words, no blame language, every claim carrying a real rupee figure in Indian grouping, and every snake naming who got paid. Sample: <i>\"nobody. This one costs you and pays no one, which is why nobody warns you.\"</i>"
+  },
+  {
+   "t": "15:54",
+   "m": "Four measured benchmark docs saved for the critics to judge against \u2014 a Ludo King UX teardown with real timings, a Varsity teaching-style teardown from 8 chapters, the 2026 Indian household field brief, and the Moksha Patam origin."
+  },
+  {
+   "t": "16:08",
+   "m": "Hit the session token limit mid-build. 8 of the 12 3D subsystems had already written their files (scene, board, snakes, tokens, dice, camera, fx, audio) \u2014 all pass syntax check."
+  },
+  {
+   "t": "17:40",
+   "m": "Resumed. Building the last four modules \u2014 the HUD, the teaching moment, the setup screen and the endgame scorecard \u2014 then the integrator writes the conductor and drives the <b>real running game</b> in a browser until it plays end to end. It is not allowed to report success it has not seen in a screenshot."
+  },
+  {
+   "t": "04:35",
+   "m": "<b>It runs.</b> The conductor (<code>game.js</code>) and boot (<code>main.js</code>) are written and the real game was driven in a browser until it played end to end: a 51-turn seeded 2-player game to a win, 50 teaching moments, <b>zero console errors and zero page errors</b> on both desktop and a 4x-throttled phone. 60 fps, 54 draw calls, 61k triangles. Seven real bugs found and fixed by looking at screenshots \u2014 a TDZ crash in the camera, a camera safe-frame that cropped squares 1-10 behind the ribbon on every device, a die rendered 2.5x too large on anything wider than a phone, a start pad cropped off-screen, a handoff card naming the wrong player, a stale hint line, and a \"Read more\" chevron sitting on the card\u2019s own first sentence."
+  },
+  {
+   "t": "04:50",
+   "m": "<b>It runs.</b> A full seeded 51-turn game plays to a win with zero console errors. 60fps, 54 draw calls, 61k triangles \u2014 comfortably inside budget. All gates green: 36/36 rules, content lint, board pacing, 6,785 content assertions, i18n."
+  },
+  {
+   "t": "04:50",
+   "m": "The integrator found real bugs none of the 17 builders could have seen: a temporal-dead-zone crash in the camera that stopped the game booting at all; a symmetric safe-rect that hid squares 1\u201310 behind the ribbon on every device; a die rendering 2.5\u00d7 too large off-phone; a start pad cropped off-screen so a player couldn't see her own piece on turn one; and a handoff card naming the wrong player."
+  },
+  {
+   "t": "04:52",
+   "m": "Known miss already: first paint on a 4\u00d7-throttled phone is 2.9s against a 1.8s budget. Going to the critics."
+  },
+  {
+   "t": "05:40",
+   "m": "<b>Smoke critics found a landmine.</b> A 14-second watchdog in the shell irreversibly replaced the <i>working</i> game with the no-WebGL apology page \u2014 one-way, invisible to every error channel. On a slow connection a teacher would open the projector URL and see a wall of Hinglish text with a button that reloads into the same trap. Fixed: the net now polls, never fires while the game is alive, and takes itself down if the game arrives late."
+  },
+  {
+   "t": "05:50",
+   "m": "<b>Payload 1,528 KB \u2192 463 KB.</b> A 1 MB print watermark was being preloaded at high priority to be drawn at 72px \u2014 69% of the whole download, and the cause of the 36-second cold load that tripped the watchdog. Now a 59 KB screen asset; the big file is left only on the social-share card, which crawlers fetch and players never do."
+  },
+  {
+   "t": "06:05",
+   "m": "Chased the reported \"fps halves and never recovers\" and it is a <b>false alarm</b> \u2014 measured directly, nothing accumulates over 30 turns (draw calls 52\u219255, textures flat, heap 12\u219214 MB). Headless Chrome just schedules at 30Hz with no display. In a real browser: <b>120fps median, 98fps p95</b>. Recorded in the contract so no critic wastes a round hunting it."
+  },
+  {
+   "t": "06:20",
+   "m": "<b>Critic loop running.</b> 16 slices, each judged by a critic with no loyalty to the builders and no access to their summaries \u2014 they run the game themselves, look at the pictures, and must name <i>the single biggest gap</i>. A 7/10 counts as a failure."
+  },
+  {
+   "t": "07:05",
+   "m": "<b>All 16 critics reported. Every single slice lost to the benchmark.</b> Scores ran 1\u20137 against 6\u20139. The critics were given no builder summaries \u2014 each one ran the game itself and had to look at the pictures."
+  },
+  {
+   "t": "07:06",
+   "m": "<b>The find of the day:</b> the setup screen is <i>inert</i>. An invisible full-screen overlay eats every tap, so a real person pressing \u201cStart playing\u201d gets nothing at all. Scored 1/10. Every earlier check drove the game through the debug API \u2014 which is exactly why the critics were told to open it like a user instead of trusting a summary."
+  },
+  {
+   "t": "07:08",
+   "m": "Paused at 70% of the credit window as asked. 121 scoped fixes saved to <b>docs/CRITIC-QUEUE.md</b>; nothing is lost. Reminder set for 3:30pm to restart."
+  },
+  {
+   "t": "11:40",
+   "m": "<b>Fixed a boot-stopper I had caused.</b> Stray backticks inside CSS-template-literal comments were terminating the literal in setup.js and lesson.js \u2014 the game failed to load in a real browser while the probe was still reporting green off a cached build. All 18 modules now parse clean."
+  },
+  {
+   "t": "11:55",
+   "m": "<b>Correction: the setup screen was never inert.</b> Verified with real touch taps on a clean browser profile \u2014 one tap on \u201cStart playing\u201d starts a game on phone, tablet and desktop, and one tap on \u201cRoll\u201d rolls the dice. The critic was fooled by the deliberate 3s \u201cequal start\u201d line, plus localStorage making that line skip on later runs. The 1/10 stands corrected."
+  },
+  {
+   "t": "11:56",
+   "m": "One real bug did fall out of chasing it: the intro's skip-tap listener stayed armed when the line timed out on its own, and ate the player's next tap. Fixed."
+  },
+  {
+   "t": "15:05",
+   "m": "<b>Visuals rejected \u2014 and rightly.</b> The render reads as a diagram, not an object: flat white tiles, a washed-out beige table, thin salmon tubes for snakes, roughness 0.85 on every material so nothing catches light, no ornament, no contact shadows, and a board taking a quarter of the phone screen."
+  },
+  {
+   "t": "15:12",
+   "m": "Wrote a new art direction (docs/ART-DIRECTION.md): <i>a beautiful, slightly worn, hand-made Indian board game photographed on a table in warm afternoon light.</i> Lacquered wood, brass inlay, block-print borders, gold leaf on the milestones. Every material spec'd with before/after values. Legibility still beats ornament \u2014 all 100 numerals must be readable, up from ~76."
+  },
+  {
+   "t": "15:30",
+   "m": "<b>Paused at your request.</b> Stopped the visual wave after 3 of 6 files (lighting/table, pieces, dice rebuilt; board, snakes and framing untouched). Verified the half-finished state is coherent and working \u2014 51-turn game, 0 errors, 54 draw calls, 476 KB. Handover written to docs/RESUME-HERE.md."
+  },
+  {
+   "t": "09:10",
+   "m": "<b>Resumed</b>, trimmed to the three files that never ran \u2014 board, snakes/ladders, framing \u2014 so nothing already paid for is redone. The three rebuilt yesterday (lighting/table, pieces, die) stand."
+  },
+  {
+   "t": "09:11",
+   "m": "Corrected my own saved notes first: they still said \u201cthe setup screen is inert\u201d, which I disproved with real touch taps. A future session would have wasted a round chasing it."
+  },
+  {
+   "t": "12:40",
+   "m": "<b>v2 look landed.</b> Board, snakes/ladders and framing rebuilt. Two inherited bugs surfaced that only a picture could reveal: every snake's tube was <b>wound inside-out</b>, so the painted back had never once been visible on this board; and every ground ribbon was wound face-down, so the shadows were invisible too."
+  },
+  {
+   "t": "12:52",
+   "m": "Integration pass done by hand rather than by agent (the final agent hit the session limit). Aligned the roster to real names \u2014 <b>You / Priya</b>, not \u201cKhiladi 1 / Khiladi 2\u201d \u2014 and slimmed the ladders (width .34\u2192.28, rail .035\u2192.027) while raising them (.18\u2192.27) so they now shadow the numerals instead of blanketing them."
+  },
+  {
+   "t": "12:55",
+   "m": "<b>Honest number:</b> obscured numerals are down from ~24 to about 14, not 0. The long diagonal ladders still clip the lower-left corner where the number sits. Closing the last of it means routing the furniture around the numeral corner per tile \u2014 real work, not a tweak."
+  },
+  {
+   "t": "12:56",
+   "m": "Gates all green: rules 36/36 \u00b7 content lint \u00b7 board pacing \u00b7 content.js clean. 61 draw calls, 90k triangles, 493 KB \u2014 inside every budget. Zero console errors over a 51-turn game."
+  },
+  {
+   "t": "13:20",
+   "m": "<b>Client approved the v2 look.</b> Moving on to the fix pass that never ran \u2014 the 121 findings from sixteen critics who each drove the real game and lost every slice to the benchmark. Ten files, one owner each so nobody collides, then a verify pass. Each fixer is warned that the approved visuals are not to be regressed, and that some findings are already stale."
+  },
+  {
+   "t": "18:45",
+   "m": "<b>Fix pass: 7 of 10 files landed.</b> Biggest win \u2014 the game was <b>86.6% English behind a Hindi button</b>. The full curriculum is now translated, 173/173 keys. Second \u2014 the pass-the-phone card was firing on 16 of 16 turns, including a bot's; it is now gated on the device actually changing hands (21 in 35, never for Mithu)."
+  },
+  {
+   "t": "18:46",
+   "m": "ui.js, setup.js and board3d.js hit the session limit, and so did the verify pass. I ran the gates and a full probe by hand instead: <b>0 errors, 51-turn game, all four gates green, content lint down to 0 warnings.</b>"
+  },
+  {
+   "t": "18:47",
+   "m": "<b>Caveat worth stating:</b> the 1\u20137 vs 6\u20139 critic scores on this page are now stale \u2014 they were measured before any of these fixes. Nothing has re-scored the game yet, so the gap is not proven closed."
+  },
+  {
+   "t": "19:05",
+   "m": "<b>Wave 5 away.</b> Finishing the three files that hit the limit, then a verify pass that plays the game with <i>real touch taps on a clean profile</i> and drives it in Hindi (the Hindi curriculum has never once been seen on a board), then fresh critics re-score eight slices blind. Until that last step lands, the scores on this page are stale and I am not claiming the gap has closed."
+  },
+  {
+   "t": "08:40",
+   "m": "<b>Verify pass caught the builder overstating itself.</b> The board agent reported 100/100 numerals legible; independent measurement found <b>81/100</b>. The router was shrinking a numeral to dodge a ladder <i>and then</i> putting it on an opaque plaque anyway \u2014 so 19 numbers were rendered at 76\u201388% size for a collision the plaque had already solved. Now genuinely 100/100, every numeral at full size."
+  },
+  {
+   "t": "08:41",
+   "m": "Square 100 had its own bug: its raised gold plaque's specular highlight landed exactly on the numeral and washed navy out to steel blue \u2014 <b>2.79:1 contrast</b> where square 99 next door ran 5:1. It is the one number a player must read to know she has won."
+  },
+  {
+   "t": "08:42",
+   "m": "<b>Played by hand, not by API.</b> Clean profile, real touch taps on real pixels: Start \u2192 board in 0.26s \u2192 39 rolls \u2192 69 lessons each read and dismissed \u2192 reached 100 \u2192 Play again returns to a live board. Same in Hindi, 26 rolls, zero errors."
+  },
+  {
+   "t": "08:43",
+   "m": "The verifier also disproved three of its own findings before reporting them, and caught that its contrast metric was weighting gamma-encoded sRGB instead of linearising first \u2014 which had made every numeral look like it failed. That is the standard I wanted."
+  },
+  {
+   "t": "08:50",
+   "m": "<b>Paused at your request.</b> Stopped the re-score; the critics are read-only so no file was left half-edited. Re-verified: all 19 modules parse, all four gates green. Handover in docs/RESUME-HERE.md \u2014 the one thing outstanding is that <b>nobody has scored the current build</b>; the numbers in the critic queue predate three waves of work."
+  },
+  {
+   "t": "09:35",
+   "m": "<b>Re-score complete \u2014 average 3.75 \u2192 6.75.</b> Every one of the eight slices moved up. <b>Endgame (7.5 vs 6) and teaching (7 vs 6) now beat the benchmark</b>; HUD ties. First-30-seconds went 1 \u2192 6, language 3 \u2192 7, handoff 3 \u2192 7."
+  },
+  {
+   "t": "09:36",
+   "m": "<b>Three of eight critics independently named the same root cause:</b> the camera never fills the screen. The board sits at 38.6% of phone height with ~580px of bare table, and takes only 15% of a projector's pixels \u2014 and when it zooms for a lesson it <i>overshoots</i>, running the right column off-screen with 91, 90, 71, 51, 31, 11 sliced. That is now the single highest-leverage fix in the game."
+  },
+  {
+   "t": "09:37",
+   "m": "<b>One real bug nobody had caught: no Devanagari typeface is loaded.</b> index.html declares only Nunito and Lora, so every Hindi glyph the audience reads falls back to an uncontrolled OS font, and Lora italic becomes a synthetic oblique. The English build has two curated fonts; the Hindi build has none."
+  }
+ ]
+}

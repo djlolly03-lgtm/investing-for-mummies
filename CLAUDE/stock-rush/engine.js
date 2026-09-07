@@ -362,6 +362,10 @@
     const s = state.stocks.find(s => s.id === ticker);
     if (!p || !s || state.phase !== 'playing') return;
     if (state.locks[playerId]) return; // locked players can't trade
+    // Trading window closed — between round advance and startRoundTimer()
+    // (which now runs at the end of the popup + reveal + countdown sequence).
+    // Silently drop trade actions so the choreographed reveal stays clean.
+    if (!state.roundTimerStartsAt || Date.now() < state.roundTimerStartsAt) return;
 
     // Pre-trade net worth — used to detect "big bets" (>=50% of worth in one trade)
     const preWorth = (p.cash || 0) + state.stocks.reduce(
@@ -710,13 +714,20 @@
       return;
     }
 
-    // Bot trades every 3rd tick
-    if (state.tickCount % 3 === 0) _botTrade(state);
+    // TRADING WINDOW: bots freeze between round-advance and startRoundTimer(),
+    // which now covers popup + reveal-hold + big-moment + countdown. Keeps the
+    // choreographed between-round sequence deterministic (no accumulated bot
+    // trades snapping the leaderboard mid-reveal).
+    const tradingOpen = !!state.roundTimerStartsAt && Date.now() >= state.roundTimerStartsAt;
+    if (tradingOpen) {
+      // Bot trades every 3rd tick
+      if (state.tickCount % 3 === 0) _botTrade(state);
 
-    // Bots auto-lock gradually — ~2% chance per tick (~50s average)
-    for (const p of Object.values(state.players)) {
-      if (p.isBot && !state.locks?.[p.id] && Math.random() < 0.02) {
-        state.locks[p.id] = true;
+      // Bots auto-lock gradually — ~2% chance per tick (~50s average)
+      for (const p of Object.values(state.players)) {
+        if (p.isBot && !state.locks?.[p.id] && Math.random() < 0.02) {
+          state.locks[p.id] = true;
+        }
       }
     }
 

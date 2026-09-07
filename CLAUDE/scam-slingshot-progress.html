@@ -1,0 +1,83 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scam Slingshot — build progress</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#2a9d8f;--navy:#1a3a5c;--ink:#1a3a5c;--bg:#0e1621;--card:#16233340;--line:#ffffff1a;
+        --pass:#43c59e;--fail:#e8705a;--warn:#e9b949;--mute:#8fa3b8}
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 700px at 20% -10%,#1d3350,#0e1621 60%);
+       color:#e8f0f7;font:15px/1.55 Nunito,system-ui,sans-serif;padding:26px 22px 60px}
+  h1{font:800 27px/1.2 Nunito;margin:0 0 2px;letter-spacing:-.4px}
+  h1 span{color:var(--teal)}
+  .sub{font:italic 500 15px/1.4 Lora,serif;color:var(--mute);margin-bottom:20px}
+  .bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+  .chip{background:#ffffff0d;border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:13px}
+  .chip b{color:var(--teal)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:13px;margin-bottom:30px}
+  .p{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 15px;
+     box-shadow:0 6px 20px #0006;display:flex;flex-direction:column;gap:8px;min-height:120px}
+  .p.pass{border-color:#43c59e55;background:linear-gradient(180deg,#43c59e14,#16233340)}
+  .p.fail{border-color:#e8705a44}
+  .ph{display:flex;align-items:baseline;gap:8px}
+  .pid{font-weight:800;color:var(--teal);font-size:13px;letter-spacing:.5px}
+  .pn{font-weight:600;flex:1}
+  .st{font-size:11px;text-transform:uppercase;letter-spacing:.9px;color:var(--mute)}
+  .v{font-weight:800;font-size:12px;letter-spacing:.6px}
+  .v.PASS{color:var(--pass)} .v.FAIL{color:var(--fail)}
+  .gap{background:#0009;border-left:3px solid var(--fail);border-radius:0 8px 8px 0;padding:8px 11px;
+       font:italic 500 14px/1.45 Lora,serif;color:#ffd9d0}
+  .gap.ok{border-color:var(--pass);color:#c9f2e4}
+  .gl{font-size:10px;letter-spacing:1.1px;text-transform:uppercase;color:var(--mute);font-family:Nunito;font-style:normal;display:block;margin-bottom:3px}
+  .thumbs{display:flex;gap:7px;flex-wrap:wrap}
+  .thumbs img{height:74px;border-radius:7px;border:1px solid var(--line);cursor:zoom-in;background:#000}
+  .log{background:#0b131d;border:1px solid var(--line);border-radius:14px;padding:6px 0;max-height:380px;overflow:auto}
+  .log div{padding:7px 16px;border-bottom:1px solid #ffffff0a;font-size:13px;display:flex;gap:11px}
+  .log time{color:var(--mute);font-variant-numeric:tabular-nums;flex:none;font-size:12px}
+  .log .wave{color:var(--teal);font-weight:800}
+  h2{font:800 15px/1 Nunito;letter-spacing:1.4px;text-transform:uppercase;color:var(--mute);margin:26px 0 11px}
+  #big{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:9;padding:24px}
+  #big img{max-width:100%;max-height:100%;border-radius:10px}
+  .empty{color:var(--mute);padding:22px;text-align:center;font-style:italic}
+</style></head><body>
+<h1>Scam <span>Slingshot</span></h1>
+<div class="sub">Angry-Birds-level build · builder → blind critic loop · live</div>
+<div class="bar" id="bar"></div>
+<div class="grid" id="grid"></div>
+<h2>Event log</h2><div class="log" id="log"></div>
+<div id="big" onclick="this.style.display='none'"><img></div>
+<script>
+const ORDER=['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10','P11','P12','P13','P14','P15','P16','P17','P18'];
+const el=(h)=>{const d=document.createElement('div');d.innerHTML=h;return d.firstElementChild};
+function ago(t){const s=(Date.now()-new Date(t))/1000;if(s<90)return Math.round(s)+'s ago';
+  if(s<5400)return Math.round(s/60)+'m ago';return (s/3600).toFixed(1)+'h ago'}
+function big(src){const b=document.getElementById('big');b.querySelector('img').src=src;b.style.display='flex'}
+async function tick(){
+  let d; try{d=await (await fetch('scam-slingshot/_state/progress.json?t='+Date.now())).json()}catch(e){return}
+  const done=Object.values(d.pieces).filter(p=>p.verdict==='PASS').length;
+  const rounds=Object.values(d.pieces).reduce((a,p)=>a+(p.rounds||0),0);
+  document.getElementById('bar').innerHTML=
+    `<div class="chip">${d.wave}</div>`+
+    `<div class="chip">running <b>${((Date.now()-new Date(d.startedAt))/3600000).toFixed(1)}h</b></div>`+
+    `<div class="chip">critic PASS <b>${done}/18</b></div>`+
+    `<div class="chip">builder rounds <b>${rounds}</b></div>`+
+    `<div class="chip">updated <b>${d.updatedAt?ago(d.updatedAt):'—'}</b></div>`;
+  const g=document.getElementById('grid'); g.innerHTML='';
+  const ids=[...new Set([...ORDER.filter(i=>d.pieces[i]),...Object.keys(d.pieces)])];
+  if(!ids.length) g.innerHTML='<div class="empty">No pieces registered yet — Wave 0 is gathering reference frames.</div>';
+  for(const id of ids){const p=d.pieces[id];
+    const v=p.verdict||''; const cls=v==='PASS'?'pass':v==='FAIL'?'fail':'';
+    g.appendChild(el(`<div class="p ${cls}">
+      <div class="ph"><span class="pid">${id}</span><span class="pn">${p.name||''}</span>
+        <span class="v ${v}">${v}</span></div>
+      <div class="st">${p.status||'queued'} · round ${p.rounds||0} · ${p.updatedAt?ago(p.updatedAt):''}</div>
+      ${p.gap?`<div class="gap ${v==='PASS'?'ok':''}"><span class="gl">${v==='PASS'?'critic would still improve':'single biggest gap'}</span>${p.gap}</div>`:''}
+      <div class="thumbs">${[p.shot,p.blind].filter(Boolean).map(s=>`<img loading="lazy" src="${s}?t=${Date.now()}" onclick="big(this.src)">`).join('')}</div>
+    </div>`));}
+  document.getElementById('log').innerHTML=(d.events||[]).map(e=>
+    `<div><time>${new Date(e.ts).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}</time>
+     <span class="${e.kind==='wave'?'wave':''}">${e.text}</span></div>`).join('')
+    ||'<div class="empty">nothing logged yet</div>';
+}
+tick(); setInterval(tick, 8000);
+</script></body></html>

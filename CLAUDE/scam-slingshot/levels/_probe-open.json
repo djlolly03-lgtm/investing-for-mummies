@@ -1,0 +1,14 @@
+{
+  "id": "_probe-open",
+  "name": "PROBE — open ground, one villain, no cover",
+  "chapter": 0,
+  "sky": "morning",
+  "par": 1,
+  "teaches": "Harness fixture: the villain damage path, measured with nothing in the way.",
+  "ammo": ["sip", "sip", "sip", "sip", "sip", "sip"],
+  "blocks": [],
+  "villains": [
+    { "type": "lotteryUncle", "x": 18.00, "y": 0.56 }
+  ],
+  "props": []
+}

@@ -1,0 +1,201 @@
+<title>IFM — From Classroom to Ed-Tech: Platform Deep-Dive & Proposal</title>
+<style>
+:root{
+  --paper:#faf8f4; --ink:#1a3a5c; --teal:#2a9d8f; --teal-deep:#1f7a70;
+  --gold:#e9c46a; --coral:#e76f51; --muted:#5b6b7d; --line:#dfd9cc;
+  --card:#ffffff; --card-tint:#f2efe7; --good:#2a9d8f; --warn:#c77b28; --bad:#c0503a;
+  --shadow:0 2px 14px rgba(26,58,92,.07);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#131c26; --ink:#e8ecf1; --teal:#3fb8a9; --teal-deep:#63cabd;
+    --gold:#e9c46a; --coral:#f08a6e; --muted:#93a3b5; --line:#2b3a4b;
+    --card:#1b2836; --card-tint:#22303f; --good:#3fb8a9; --warn:#e0a95c; --bad:#f08a6e;
+    --shadow:0 2px 14px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131c26; --ink:#e8ecf1; --teal:#3fb8a9; --teal-deep:#63cabd;
+  --gold:#e9c46a; --coral:#f08a6e; --muted:#93a3b5; --line:#2b3a4b;
+  --card:#1b2836; --card-tint:#22303f; --good:#3fb8a9; --warn:#e0a95c; --bad:#f08a6e;
+  --shadow:0 2px 14px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --paper:#faf8f4; --ink:#1a3a5c; --teal:#2a9d8f; --teal-deep:#1f7a70;
+  --gold:#e9c46a; --coral:#e76f51; --muted:#5b6b7d; --line:#dfd9cc;
+  --card:#ffffff; --card-tint:#f2efe7; --good:#2a9d8f; --warn:#c77b28; --bad:#c0503a;
+  --shadow:0 2px 14px rgba(26,58,92,.07);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:16px/1.65 "Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;}
+main{max-width:860px;margin:0 auto;padding:48px 24px 96px}
+h1,h2,h3{font-family:Charter,Georgia,"Times New Roman",serif;line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:2.3rem;font-weight:700}
+h2{font-size:1.5rem;margin:56px 0 14px;padding-top:20px;border-top:3px solid var(--teal)}
+h3{font-size:1.12rem;margin:26px 0 8px}
+p{margin:10px 0;max-width:70ch}
+.eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);font-weight:700;margin-bottom:10px}
+.sub{color:var(--muted);font-size:1.05rem;max-width:64ch;margin-top:12px}
+.meta{color:var(--muted);font-size:.85rem;margin-top:18px}
+.verdict{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--teal);
+  border-radius:10px;padding:22px 26px;margin:34px 0;box-shadow:var(--shadow)}
+.verdict h3{margin-top:0;font-size:1.2rem}
+.callout{background:var(--card-tint);border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:20px 0}
+.callout.amber{border-left:5px solid var(--gold)}
+.callout.red{border-left:5px solid var(--coral)}
+.callout.teal{border-left:5px solid var(--teal)}
+.callout p{margin:6px 0}
+.tablewrap{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:640px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--card-tint)}
+td.num{font-variant-numeric:tabular-nums;text-align:center}
+tr:last-child td{border-bottom:none}
+.pill{display:inline-block;padding:2px 10px;border-radius:99px;font-size:.72rem;font-weight:700;letter-spacing:.03em}
+.pill.go{background:color-mix(in srgb,var(--good) 16%,transparent);color:var(--good)}
+.pill.no{background:color-mix(in srgb,var(--bad) 14%,transparent);color:var(--bad)}
+.pill.mid{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.score{font-weight:700;font-variant-numeric:tabular-nums}
+.win td{background:color-mix(in srgb,var(--teal) 7%,transparent)}
+ul,ol{padding-left:22px;max-width:70ch}
+li{margin:6px 0}
+.ladder{list-style:none;padding:0;margin:18px 0;counter-reset:step}
+.ladder li{counter-increment:step;display:flex;gap:16px;align-items:flex-start;margin:0;padding:14px 0;border-bottom:1px dashed var(--line)}
+.ladder li:last-child{border-bottom:none}
+.ladder li::before{content:counter(step);flex:0 0 34px;height:34px;border-radius:50%;
+  background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.95rem}
+.ladder b{display:block}
+.ladder small{color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;box-shadow:var(--shadow)}
+.card h3{margin-top:0}
+.kpi{font-family:Charter,Georgia,serif;font-size:1.7rem;font-weight:700;color:var(--teal-deep);font-variant-numeric:tabular-nums}
+.small{font-size:.85rem;color:var(--muted)}
+a{color:var(--teal-deep)}
+footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+@media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
+</style>
+<main>
+<header>
+  <div class="eyebrow">Investing for Mummies · Strategy Proposal · August 2026</div>
+  <h1>From Classroom to Ed-Tech</h1>
+  <p class="sub">Which platform should carry IFM online — Thinkific, Teachable, LearnWorlds, Podia, TalentLMS, LearnDash, or an Indian counterpart — and the phased plan to go from physical-only workshops to a hybrid education business.</p>
+  <p class="meta">Based on three research tracks (Aug 2026): global platforms · Indian platforms · funnel strategy, pricing benchmarks &amp; SEBI compliance. Prices verified against official pages; re-check before purchase.</p>
+</header>
+
+<div class="verdict">
+  <h3>The verdict, up front</h3>
+  <p><b>None of the six you named is the best fit.</b> IFM has two non-negotiable requirements that most platforms fail: (1) your 11 games must embed <em>playable inside lessons</em> (they're iframes on Vercel), and (2) you must collect INR via UPI with GST invoices. Podia bans iframes outright; Teachable pays Indian creators by PayPal once a month, two months late; Thinkific, LearnWorlds and TalentLMS all depend on Stripe — which is effectively closed to new Indian merchants.</p>
+  <p><b>Recommendation: start with no LMS at all for 60 days</b> (Zoom + Razorpay payment pages + WhatsApp — ₹0 platform cost), <b>then adopt Graphy</b> (₹24,999/yr Launch plan) as your course home — it's Indian, Razorpay/UPI/GST-native, has documented iframe embedding inside lessons, native live classes, and is the exact platform CA Rachana Ranade built her empire on. <b>Fallback: LearnDash on your existing WordPress</b> (₹25–50k/yr all-in, zero transaction fees, total ownership) if Graphy's trial disappoints or its 10% entry-tier fee stings at scale.</p>
+</div>
+
+<h2>1 · Why the games decide everything</h2>
+<p>IFM's unfair advantage online is the same as offline: nobody else's finance class has multiplayer QR-join games. Stock Rush, KBC, LTM, Sapno Ka Ghar and the rest already live on Vercel as self-contained web apps — which means they can embed in <em>any</em> platform that allows an iframe inside a lesson, and they keep working even if you switch platforms later. The games are platform-independent; the LMS is replaceable. That's the right architecture, and it's already built.</p>
+<p>So the platform question reduces to three filters: <b>can it iframe? can it take UPI? can one person run it?</b></p>
+
+<h2>2 · The six global platforms</h2>
+<div class="tablewrap"><table>
+  <tr><th>Platform</th><th>Realistic cost</th><th>India payments (UPI/GST)</th><th>Games embed in lessons</th><th>Live / cohort</th><th>Fit</th></tr>
+  <tr><td><b>LearnDash</b> (WordPress plugin)</td><td>$259/yr Essentials + plugins ≈ ₹25–50k/yr, 0% fees</td><td class="num"><span class="pill go">Best</span><br><span class="small">Razorpay is first-party in LearnDash core: UPI, netbanking, wallets, Indian bank settlement; GST via WooCommerce</span></td><td class="num"><span class="pill go">Perfect</span><br><span class="small">it's your own WordPress</span></td><td class="num"><span class="pill mid">Via plugins</span></td><td>Only India-viable global option; assembly &amp; maintenance is yours</td></tr>
+  <tr><td><b>LearnWorlds</b></td><td>$79–99/mo ≈ ₹7k/mo + app add-on $149/mo</td><td class="num"><span class="pill no">Stripe/PayPal only</span><br><span class="small">needs CheckoutJoy bridge for Razorpay</span></td><td class="num"><span class="pill go">Excellent</span><br><span class="small">dedicated Embed activity + HTML5 upload</span></td><td class="num"><span class="pill go">Best-in-class</span></td><td>Feature king; payments make it a non-starter for INR consumers</td></tr>
+  <tr><td><b>Thinkific</b></td><td>$74–99/mo ≈ ₹6.5k/mo; free plan gone; prices rising Aug 2026</td><td class="num"><span class="pill no">Stripe-India wall</span></td><td class="num"><span class="pill go">Excellent</span><br><span class="small">Multimedia Lesson = iframe</span></td><td class="num"><span class="pill go">Good</span></td><td>Cheaper LearnWorlds with the same India problem</td></tr>
+  <tr><td><b>TalentLMS</b></td><td>$119+/mo ≈ ₹8.4k/mo, 40-user cap</td><td class="num"><span class="pill no">Stripe/PayPal only</span></td><td class="num"><span class="pill go">Good</span><br><span class="small">native iFrame unit</span></td><td class="num"><span class="pill go">Good</span></td><td>Corporate LMS — per-user pricing punishes a free funnel</td></tr>
+  <tr><td><b>Teachable</b></td><td>$29/mo + 7.5% fee, or $69/mo</td><td class="num"><span class="pill no">Worst</span><br><span class="small">monthly PayPal payout, ~2-month lag</span></td><td class="num"><span class="pill mid">Works, unsupported</span></td><td class="num"><span class="pill no">Weak</span></td><td>Eliminated on payments alone</td></tr>
+  <tr><td><b>Podia</b></td><td>$42/mo + 5%, or $84/mo</td><td class="num"><span class="pill no">No Razorpay</span></td><td class="num"><span class="pill no">iframes explicitly unsupported</span></td><td class="num"><span class="pill no">Link out only</span></td><td>Eliminated — games can't embed at all</td></tr>
+</table></div>
+<p class="small">Stripe context: Stripe India has been closed/invite-only for new merchant onboarding since 2023, and Indian Stripe accounts can only charge INR — so every "Stripe-first" platform inherits that wall. Third-party bridges (CheckoutJoy) exist but add cost and fragility.</p>
+
+<h2>3 · The Indian counterparts</h2>
+<div class="tablewrap"><table>
+  <tr><th>Platform</th><th>Cost (INR)</th><th>UPI/GST</th><th>Games embed</th><th>Live</th><th>Stability</th><th>Verdict</th></tr>
+  <tr class="win"><td><b>Graphy</b> (Unacademy)</td><td>₹24,999/yr + 10% fee (Launch); ₹49,999/yr + 7.5% (Grow)</td><td class="num"><span class="pill go">Razorpay native</span></td><td class="num"><span class="pill go">Yes — documented HTML/iframe in lessons</span></td><td class="num"><span class="pill go">Native + Zoom</span></td><td class="num"><span class="pill mid">Unacademy turmoil</span></td><td><b>Recommended.</b> The Rachana Ranade platform; only Indian option with first-class embedding</td></tr>
+  <tr><td><b>Learnyst</b></td><td>from ~₹3,149/mo, 0% fees</td><td class="num"><span class="pill go">Excellent</span></td><td class="num"><span class="pill no">DRM-first; no lesson iframes</span></td><td class="num"><span class="pill go">Good</span></td><td class="num"><span class="pill go">Solid, profitable</span></td><td>Pick only if piracy protection outranks the games (it shouldn't)</td></tr>
+  <tr><td><b>FreshLearn</b></td><td>Free plan (25 learners); $37–49/mo, 0% fees</td><td class="num"><span class="pill go">Razorpay</span></td><td class="num"><span class="pill no">No HTML lesson type</span></td><td class="num"><span class="pill go">Zoom + email automation</span></td><td class="num"><span class="pill go">Lean, liked</span></td><td>Free tier useful as a zero-cost experiment only</td></tr>
+  <tr><td><b>TagMango</b></td><td>₹24,999 setup + tiered commission</td><td class="num"><span class="pill go">WhatsApp-first</span></td><td class="num"><span class="pill no">Weak</span></td><td class="num"><span class="pill go">Good</span></td><td class="num"><span class="pill mid">OK</span></td><td>Community/funnel tool, not a lesson platform</td></tr>
+  <tr><td><b>Knorish</b></td><td>~₹2,900/mo</td><td class="num"><span class="pill go">Razorpay</span></td><td class="num"><span class="pill mid">Pages yes, lessons unverified</span></td><td class="num"><span class="pill mid">Zoom only</span></td><td class="num"><span class="pill mid">Small ($1.1M raised)</span></td><td>Second-tier option</td></tr>
+  <tr><td><b>Classplus</b></td><td>~₹30k/yr + per-sale commission</td><td class="num"><span class="pill go">Yes</span></td><td class="num"><span class="pill no">No custom code</span></td><td class="num"><span class="pill go">In-app</span></td><td class="num"><span class="pill go">Well-funded</span></td><td>K-12 coaching ERP — wrong audience, pushy sales</td></tr>
+  <tr><td><b>Exly</b></td><td>Custom + 5–10% commission</td><td class="num"><span class="pill go">Hindi flows</span></td><td class="num"><span class="pill no">No</span></td><td class="num"><span class="pill go">Bookings-strong</span></td><td class="num"><span class="pill mid">OK</span></td><td>Workshop-seat seller, not an LMS</td></tr>
+  <tr><td>Teachmint</td><td colspan="5" class="small">Exited the creator market — pivoted to B2B school hardware/ERP</td><td>Not a candidate</td></tr>
+</table></div>
+
+<div class="callout teal">
+  <p><b>What the benchmarks use:</b> CA Rachana Ranade's store runs on <b>Graphy</b> (plus Rioplay for her regional-language app). Elearnmarkets and LXME built custom stacks with VC money. Finsafe (closest B2B analog) runs WordPress + webinars + corporate contracts. Basis — a VC-funded women's-finance app — built custom-first and wound down. Lesson: <b>off-the-shelf Indian LMS + owned games is the proven path; custom-app-first is the graveyard.</b></p>
+</div>
+
+<h2>4 · Recommended stack &amp; decision logic</h2>
+<div class="grid2">
+  <div class="card"><h3>Phase 0 — now (₹0/mo)</h3>
+    <p>Zoom Pro (₹1,376/mo) + Razorpay payment pages + WhatsApp Business (free) + existing Vercel games &amp; WordPress. Run the whole funnel with no LMS while you validate demand.</p></div>
+  <div class="card"><h3>Phase 1 — Graphy Launch (₹24,999/yr)</h3>
+    <p>Adopt once ~50+ paying students exist. Trial first: <b>verify your game iframes render un-sanitized inside a lesson on the Launch tier</b> — that single test is the go/no-go. Upgrade to Grow later to cut the fee to 7.5% and unlock white-label WhatsApp.</p></div>
+  <div class="card"><h3>Fallback — LearnDash (₹25–50k/yr)</h3>
+    <p>If Graphy fails the embed test, feels shaky (Unacademy risk), or the 10% fee bites: LearnDash Essentials ($259/yr) on your existing WordPress — Razorpay/UPI is built into LearnDash core, GST via WooCommerce. Zero fees, perfect embedding, full ownership — and unusually viable for IFM because Claude already maintains your web stack.</p></div>
+  <div class="card"><h3>Hedges (always)</h3>
+    <p>Games stay on Vercel (never upload to any platform). Video masters stay on your drive. Export learner emails/phone numbers monthly. The platform is a tenant, not the landlord.</p></div>
+</div>
+
+<h2>5 · The funnel: free virtual class as the hook</h2>
+<p>This is the model every successful Indian finance educator runs, adapted to IFM's one true differentiator — <b>nobody else's free webinar has live multiplayer games.</b></p>
+<ol class="ladder">
+  <li><b>Free "Money Games Night" masterclass<small> — 90 min on Zoom: one QR-join game + one teaching block. Instagram → registration → WhatsApp group → reminders → live session. Attendees scan and play from their phones exactly like your physical classes.</small></b></li>
+  <li><b>₹199–499 paid mini-workshop (2 hr)<small> — the "1% Club move": even ₹99 entry roughly doubles show-up rates and pre-qualifies buyers.</small></b></li>
+  <li><b>Flagship live cohort — "Money Confident Mummies" ₹4,999<small> — 4–6 weekly Zoom sessions, 25–40 seats, games as the spine of every session, WhatsApp group between sessions, replays included. Raise to ₹6,999 after two sold-out runs.</small></b></li>
+  <li><b>Gen Z track ₹999–1,999 + corporate virtual at ₹40–60k<small> — student pricing sold via college gigs; corporate stays your highest-margin leg.</small></b></li>
+  <li><b>Alumni membership — "IFM Circle" ₹499/qtr or ₹4,999 lifetime<small> — monthly live game night + Q&amp;A + community. The continuity revenue layer (1% Club's ₹16,999 lifetime proves Indians pay for this).</small></b></li>
+</ol>
+
+<div class="callout amber">
+  <p><b>Plan with honest numbers.</b> Registration→attendance runs 35–50%; attendee→buyer for a mid-ticket offer is realistically 3–5% for cold audiences (your warm Instagram + past-workshop audience will do better). So: 1,000 registrants → ~450 attend → ~15–25 cohort buyers. WhatsApp — not email — is the nurture channel for this demographic; graduate from the free WhatsApp Business app to AiSensy (from ₹1,500/mo) only when broadcasts outgrow manual sending.</p>
+</div>
+
+<h3>Why live cohorts, not a video library</h3>
+<p>Self-paced courses complete at 3–15%; cohort-based at 64–90%. LXME — the closest women-focused analog, 1.5M members — built entirely on live sessions + games + community, not recorded libraries. Completion matters commercially: completers refer, and referral is the cheapest acquisition for the mummies segment. Recordings are a replay perk, never the product.</p>
+
+<h2>6 · Revenue math (conservative, months 6–12)</h2>
+<div class="grid2">
+  <div class="card"><div class="kpi">₹1.5L</div><p class="small">per quarterly cohort — 30 seats × ₹4,999 (≈ ₹50k/mo)</p></div>
+  <div class="card"><div class="kpi">₹40–80k</div><p class="small">per month from 1–2 corporate workshops (highest margin, already proven)</p></div>
+  <div class="card"><div class="kpi">₹30k</div><p class="small">per month gross from ₹199–499 mini-workshops (mostly funnel subsidy)</p></div>
+  <div class="card"><div class="kpi">₹1.2–1.8L</div><p class="small">realistic blended monthly run-rate at month 12 — on tooling costs under ₹5k/mo</p></div>
+</div>
+
+<h2>7 · Staying on the right side of SEBI</h2>
+<div class="callout red">
+  <p>The 2024–25 finfluencer crackdown (Reg 16A + Jan/Feb 2025 circulars) is actually <b>good news for IFM</b> — it clears out tip-sellers while explicitly protecting pure investor education. The lines:</p>
+  <p><b>Allowed without any registration:</b> teaching budgeting, SIPs, compounding, mutual-fund mechanics, insurance, tax — everything your games do. Paid literacy courses and workshops. Historical market data older than 3 months.</p>
+  <p><b>Never do (without RIA registration):</b> name real stocks with recent prices, imply future returns, show live trades or live market data, run groups guiding market positions.</p>
+  <p><b>Hygiene:</b> games keep using fictional companies (they already do); a standard "educational simulation, not investment advice" disclaimer on everything; no "guaranteed returns" language in marketing. Staying cleanly education-only also preserves the right to do paid partnerships with AMCs and brokers later — regulated entities may only associate with unregistered persons who are pure educators.</p>
+</div>
+
+<h2>8 · 12-month roadmap</h2>
+<div class="tablewrap"><table>
+  <tr><th>When</th><th>Milestone</th><th>Tooling</th></tr>
+  <tr><td>Month 1–2</td><td>Two free "Money Games Night" masterclasses; build the WhatsApp nurture flow; Razorpay payment page live</td><td>Zoom Pro, WhatsApp Business, Razorpay — ~₹1.5k/mo</td></tr>
+  <tr><td>Month 2–3</td><td>First ₹199–499 paid mini-workshop; measure show-up and conversion honestly</td><td>Same stack</td></tr>
+  <tr><td>Month 3–5</td><td>Cohort #1: "Money Confident Mummies" ₹4,999 × 25–40 seats; start Graphy free trial and run the iframe embed test</td><td>+ Graphy trial</td></tr>
+  <tr><td>Month 5–8</td><td>Cohort #2; launch Gen Z track via college gigs; pitch corporate virtual workshops; commit to Graphy Launch (or LearnDash) and move replays + self-paced version there</td><td>+ ₹24,999/yr Graphy</td></tr>
+  <tr><td>Month 9–12</td><td>Cohort #3–4; launch IFM Circle membership; consider AiSensy for WhatsApp scale; revisit Grow tier if fees exceed the upgrade cost</td><td>+ AiSensy ~₹1.5k/mo if needed</td></tr>
+</table></div>
+
+<h2>9 · Risks &amp; mitigations</h2>
+<ul>
+  <li><b>Graphy/Unacademy instability</b> — real but hedged: games on Vercel, videos offline, monthly data exports; migration to LearnDash is days, not months.</li>
+  <li><b>Graphy's 10% entry fee</b> — at ₹1.5L/cohort that's ₹15k/cohort; the Grow tier (₹49,999/yr, 7.5%) pays for itself around ₹10L/yr of platform sales. Track and upgrade.</li>
+  <li><b>Free-webinar no-shows</b> — WhatsApp reminders + the ₹99–199 paid-qualifier tier are the proven fixes.</li>
+  <li><b>Founder time</b> — the funnel is designed so one person runs it: 2 masterclasses + 1 mini-workshop per month, one cohort per quarter. Resist launching everything at once.</li>
+  <li><b>Regulatory drift</b> — SEBI is tightening further on live-market-data "education"; IFM's simulation-based approach is on the safest ground and should stay there.</li>
+</ul>
+
+<h2>10 · Next steps (this month)</h2>
+<ol>
+  <li>Pick a date for the first free "Money Games Night" and announce on Instagram.</li>
+  <li>Set up Razorpay payment pages + a WhatsApp Community for registrants.</li>
+  <li>Start a Graphy free trial and run the one decisive test: paste a Stock Rush iframe into a lesson on the Launch tier.</li>
+  <li>Add the "educational simulation, not investment advice" disclaimer to games and marketing.</li>
+  <li>Draft the ₹4,999 cohort outline — 4 sessions, each anchored on one existing game.</li>
+</ol>
+
+<footer>Prepared for Hiral Goel · Investing for Mummies · August 2026. Sources: official pricing pages (Graphy, Learnyst, FreshLearn, Thinkific, Teachable, LearnWorlds, Podia, TalentLMS, LearnDash), platform help-centre docs on payments &amp; embedding, SEBI circulars (Jan/Feb 2025), Inc42/YourStory profiles of 1% Club, Ruzuku completion-rate dataset, Livestorm/Demandsage webinar benchmarks. Conversion figures are practitioner consensus, not audited — pilot and measure.</footer>
+</main>

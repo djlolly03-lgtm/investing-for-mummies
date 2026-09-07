@@ -1,0 +1,729 @@
+<title>Registernow Teardown</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Nunito:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#eef4f4; --surface:#ffffff; --surface-2:#f6faf9;
+  --ink:#14313f; --ink-2:#3d5f6c; --ink-3:#6b8a95;
+  --rule:rgba(20,49,63,.13); --rule-2:rgba(20,49,63,.07);
+  --accent:#2a9d8f; --accent-ink:#1c6f66; --accent-bg:#e4f2ef;
+  --crit:#c0392f; --crit-bg:#fbeceb;
+  --imp:#b8761f; --imp-bg:#fbf3e6;
+  --pol:#5d7f8c; --pol-bg:#eef3f5;
+  --ok:#2f8f66; --ok-bg:#e7f4ed;
+  --shadow:0 1px 2px rgba(20,49,63,.05),0 8px 24px -12px rgba(20,49,63,.18);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0e1f27; --surface:#152b34; --surface-2:#1a333d;
+    --ink:#e8f1f0; --ink-2:#a9c3cb; --ink-3:#7e9aa4;
+    --rule:rgba(232,241,240,.16); --rule-2:rgba(232,241,240,.08);
+    --accent:#48bfae; --accent-ink:#7ad6c6; --accent-bg:#173a38;
+    --crit:#f0857a; --crit-bg:#3a1d1b;
+    --imp:#e0aa5c; --imp-bg:#352a17;
+    --pol:#9fbcc6; --pol-bg:#1d333b;
+    --ok:#5fc794; --ok-bg:#16332a;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0e1f27; --surface:#152b34; --surface-2:#1a333d;
+  --ink:#e8f1f0; --ink-2:#a9c3cb; --ink-3:#7e9aa4;
+  --rule:rgba(232,241,240,.16); --rule-2:rgba(232,241,240,.08);
+  --accent:#48bfae; --accent-ink:#7ad6c6; --accent-bg:#173a38;
+  --crit:#f0857a; --crit-bg:#3a1d1b;
+  --imp:#e0aa5c; --imp-bg:#352a17;
+  --pol:#9fbcc6; --pol-bg:#1d333b;
+  --ok:#5fc794; --ok-bg:#16332a;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+body{
+  margin:0;background:var(--ground);color:var(--ink-2);
+  font-family:'Nunito',system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.page{max-width:980px;margin:0 auto;padding:48px 24px 96px;}
+
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);
+}
+h1{
+  font-family:'Lora',Georgia,serif;font-weight:600;
+  font-size:clamp(32px,5.4vw,46px);line-height:1.12;color:var(--ink);
+  margin:14px 0 0;letter-spacing:-.015em;text-wrap:balance;
+}
+.subject{margin:16px 0 0;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-3);word-break:break-word;}
+.subject b{color:var(--ink-2);font-weight:600;}
+
+.verdict{
+  margin-top:30px;padding:24px 26px;background:var(--surface);
+  border:1px solid var(--rule);border-left:3px solid var(--accent);
+  border-radius:3px;box-shadow:var(--shadow);
+}
+.verdict .k{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);
+}
+.verdict p{margin:10px 0 0;font-size:17.5px;line-height:1.62;color:var(--ink-2);max-width:64ch;}
+.verdict p+p{margin-top:14px;}
+.verdict strong{color:var(--ink);font-weight:800;}
+
+.score{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  margin-top:14px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;
+}
+.score div{background:var(--surface);padding:16px 18px;}
+.score .n{font-family:'IBM Plex Mono',monospace;font-size:27px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums;}
+.score .l{display:block;margin-top:7px;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);}
+.s-crit .n{color:var(--crit);} .s-imp .n{color:var(--imp);}
+.s-pol .n{color:var(--pol);} .s-ok .n{color:var(--ok);}
+
+/* contents */
+nav.toc{
+  margin-top:34px;padding:20px 24px;background:var(--surface);
+  border:1px solid var(--rule);border-radius:3px;box-shadow:var(--shadow);
+}
+nav.toc .k{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);
+}
+nav.toc ol{margin:12px 0 0;padding:0;list-style:none;counter-reset:toc;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px 24px;}
+nav.toc li{counter-increment:toc;font-size:14.5px;padding:3px 0;}
+nav.toc li::before{
+  content:counter(toc,decimal-leading-zero);
+  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;
+  color:var(--accent-ink);margin-right:9px;
+}
+nav.toc a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid transparent;}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--ink);border-bottom-color:var(--accent);}
+
+section{margin-top:58px;scroll-margin-top:20px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;padding-bottom:11px;border-bottom:1px solid var(--rule);flex-wrap:wrap;}
+.part{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);
+  width:100%;margin-bottom:-4px;
+}
+h2{font-family:'Lora',Georgia,serif;font-weight:600;font-size:25px;color:var(--ink);margin:0;letter-spacing:-.01em;}
+.sec-count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-3);}
+.sec-note{margin:12px 0 0;font-size:14.5px;color:var(--ink-3);max-width:68ch;}
+
+/* finding + steal cards share a chassis */
+.cards{display:flex;flex-direction:column;gap:14px;margin-top:22px;}
+.c{
+  background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+  box-shadow:var(--shadow);display:grid;grid-template-columns:52px 1fr;overflow:hidden;
+  scroll-margin-top:20px;
+}
+.c-rail{
+  display:flex;align-items:flex-start;justify-content:center;padding-top:22px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;
+}
+.c-body{padding:20px 22px 20px 4px;min-width:0;}
+.k-crit .c-rail{background:var(--crit-bg);color:var(--crit);}
+.k-imp  .c-rail{background:var(--imp-bg);color:var(--imp);}
+.k-pol  .c-rail{background:var(--pol-bg);color:var(--pol);}
+.k-do   .c-rail{background:var(--accent-bg);color:var(--accent-ink);}
+.k-dont .c-rail{background:var(--imp-bg);color:var(--imp);}
+h3{font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;line-height:1.35;color:var(--ink);margin:0 0 9px;letter-spacing:-.005em;text-wrap:balance;}
+.c-body p{margin:0;font-size:15px;line-height:1.62;max-width:70ch;}
+.c-body p+p{margin-top:10px;}
+
+.src{
+  display:inline-block;margin-bottom:9px;padding:2px 8px;border-radius:2px;
+  background:var(--surface-2);border:1px solid var(--rule-2);
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);
+}
+.ev{
+  margin-top:13px;padding:11px 14px;background:var(--surface-2);
+  border:1px solid var(--rule-2);border-radius:3px;
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.75;
+  color:var(--ink-2);overflow-x:auto;
+}
+.ev div{white-space:nowrap;}
+.ev .k{color:var(--ink-3);}
+.ev .bad{color:var(--crit);font-weight:600;}
+.ev .good{color:var(--ok);font-weight:600;}
+
+blockquote{
+  margin:12px 0 0;padding:11px 16px;background:var(--surface-2);
+  border-left:2px solid var(--accent);border-radius:0 3px 3px 0;
+  font-family:'Lora',Georgia,serif;font-style:italic;font-size:15.5px;line-height:1.55;color:var(--ink);
+}
+blockquote cite{display:block;margin-top:7px;font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);}
+
+.fix{margin-top:13px;padding-top:12px;border-top:1px dashed var(--rule);font-size:14.5px;color:var(--ink-2);}
+.fix b{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);display:block;margin-bottom:4px;
+}
+.k-dont .fix b{color:var(--imp);}
+
+a.xref{
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:500;
+  color:var(--accent-ink);text-decoration:none;border-bottom:1px solid var(--rule);
+  white-space:nowrap;
+}
+a.xref:hover,a.xref:focus-visible{border-bottom-color:var(--accent);}
+
+/* price ladder */
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:20px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+.ladder div{background:var(--surface);padding:17px 18px;}
+.ladder .who{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);}
+.ladder .amt{font-family:'IBM Plex Mono',monospace;font-size:25px;font-weight:600;line-height:1.15;margin-top:8px;font-variant-numeric:tabular-nums;color:var(--ink);}
+.ladder .cap{display:block;margin-top:7px;font-size:13px;line-height:1.45;color:var(--ink-3);}
+.ladder .l-you .amt{color:var(--crit);}
+.ladder .l-them .amt{color:var(--ok);}
+
+/* comparison table */
+.tblwrap{margin-top:22px;overflow-x:auto;border:1px solid var(--rule);border-radius:3px;box-shadow:var(--shadow);}
+table{border-collapse:collapse;width:100%;min-width:680px;background:var(--surface);}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--rule-2);font-size:14.5px;vertical-align:top;}
+thead th{
+  background:var(--surface-2);font-family:'IBM Plex Mono',monospace;
+  font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+thead th.c-you{color:var(--crit);}
+tbody th{font-weight:700;color:var(--ink);font-size:14px;width:150px;}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:none;}
+td.you{background:var(--crit-bg);color:var(--ink-2);}
+td.you b{color:var(--crit);font-weight:800;}
+
+/* working list */
+ul.works{margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+ul.works li{background:var(--surface);padding:14px 16px 14px 38px;position:relative;font-size:14.5px;color:var(--ink-2);list-style:none;}
+ul.works li::before{content:'';position:absolute;left:16px;top:21px;width:9px;height:9px;border-radius:50%;background:var(--ok-bg);border:2px solid var(--ok);}
+ul.works li b{color:var(--ink);font-weight:700;}
+
+/* brief */
+dl.brief{margin:22px 0 0;display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+.brief-row{background:var(--surface);padding:18px 22px;display:grid;grid-template-columns:190px 1fr;gap:20px;align-items:start;}
+.brief-row dt{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);padding-top:3px;}
+.brief-row dd{margin:0;font-size:15px;line-height:1.6;color:var(--ink-2);}
+.brief-row dd b{color:var(--ink);font-weight:700;}
+
+/* plan */
+ol.plan{margin:22px 0 0;padding:0;counter-reset:p;display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+ol.plan li{background:var(--surface);padding:16px 20px 16px 58px;position:relative;list-style:none;counter-increment:p;font-size:15px;}
+ol.plan li::before{content:counter(p);position:absolute;left:20px;top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--accent-ink);}
+ol.plan li b{color:var(--ink);font-weight:800;display:block;margin-bottom:3px;}
+ol.plan .when{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);float:right;padding-left:14px;}
+
+footer{
+  margin-top:64px;padding-top:20px;border-top:1px solid var(--rule);
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+
+@media(max-width:660px){
+  .page{padding:36px 16px 72px;}
+  .score{grid-template-columns:repeat(2,1fr);}
+  .ladder{grid-template-columns:1fr;}
+  .brief-row{grid-template-columns:1fr;gap:7px;}
+  .c{grid-template-columns:40px 1fr;}
+  .c-body{padding:18px 16px 18px 4px;}
+  ol.plan .when{float:none;display:block;padding:0 0 4px;}
+}
+</style>
+
+<div class="page">
+
+<header>
+  <div class="eyebrow">Conversion audit · 27 Aug 2026</div>
+  <h1>What the registration page is costing you</h1>
+  <p class="subject"><b>investingformummies.com/registernow</b> — served as <b>register-v2.html</b>, audited from the Instagram link-in-bio URL, desktop + mobile, source and rendered DOM. Benchmarked against <b>webinar.finkhoz.com</b> and <b>workshop.digitalscholar.in/agentic-ai-mastery</b>.</p>
+
+  <div class="verdict">
+    <div class="k">Verdict</div>
+    <p>The page is <strong>a well-built catalogue, not a landing page</strong>. It answers “which batch?” cleanly and quickly. It never answers the question a woman arriving cold from Instagram is actually asking: <em>who is teaching this, and why should I trust her with ₹19,000?</em></p>
+    <p>Three things need fixing today rather than in a redesign. One of them is <strong>quoting September buyers ₹19,000 and charging them ₹21,000</strong>.</p>
+  </div>
+
+  <div class="score">
+    <div class="s-crit"><div class="n">3</div><span class="l">Critical</span></div>
+    <div class="s-imp"><div class="n">6</div><span class="l">Important</span></div>
+    <div class="s-pol"><div class="n">7</div><span class="l">Polish</span></div>
+    <div class="s-ok"><div class="n">11</div><span class="l">Verified working</span></div>
+  </div>
+
+  <nav class="toc">
+    <div class="k">Contents</div>
+    <ol>
+      <li><a href="#critical">Critical — fix today</a></li>
+      <li><a href="#important">Important — this week</a></li>
+      <li><a href="#polish">Polish</a></li>
+      <li><a href="#working">What’s working</a></li>
+      <li><a href="#benchmark">Benchmarked against two competitors</a></li>
+      <li><a href="#steal">Steal these</a></li>
+      <li><a href="#dont">Don’t steal these</a></li>
+      <li><a href="#advantage">The advantage you’re not using</a></li>
+      <li><a href="#brief">The redesign brief</a></li>
+      <li><a href="#plan">What to do, in order</a></li>
+    </ol>
+  </nav>
+</header>
+
+<section id="critical">
+  <div class="sec-head"><span class="part">Part one · your page</span><h2>Critical</h2><span class="sec-count">3 findings · fix today</span></div>
+  <p class="sec-note">These are live right now, on a page taking payments from a running Instagram campaign.</p>
+
+  <div class="cards">
+
+    <article class="c k-crit" id="f01">
+      <div class="c-rail">01</div>
+      <div class="c-body">
+        <h3>September buyers are shown ₹19,000 and charged ₹21,000</h3>
+        <p>The hero shows one flat price for all four batches: <b>₹21,000 struck through → ₹19,000, “Early bird — till 20 Aug 2026.”</b> But the checkout prices each batch separately, and the September early-bird deadline passed seven days ago. October is still discounted; September is not.</p>
+        <p>So a woman clicks “Reserve” on September B1 having just read ₹19,000, and the payment button says <b>Pay &amp; Register — ₹21,000</b>. That is a ₹2,000 surprise at the exact moment of payment, from traffic that has no prior relationship with you.</p>
+        <div class="ev">
+          <div><span class="k">register-v2.html hero →</span> ₹19,000 · "Early bird — till 20 Aug 2026" <span class="k">(all 4 batches)</span></div>
+          <div><span class="k">ifm form   →</span> SEP_EARLY_BIRD_DEADLINE = <span class="bad">2026-08-20</span> <span class="k">// expired</span></div>
+          <div><span class="k">ifm form   →</span> OCT_EARLY_BIRD_DEADLINE = <span class="good">2026-09-20</span> <span class="k">// live</span></div>
+          <div><span class="k">checkout   →</span> "I agree to register and confirm payment of <span class="bad">₹21,000</span>"</div>
+        </div>
+        <div class="fix"><b>Fix</b>Price the batch cards individually — September ₹21,000, October ₹19,000 with “early bird till 20 Sep”. Kill the blanket hero price. Either way the “till 20 Aug” date must come off the page today; it makes even the discount you <em>are</em> still honouring look stale.</div>
+      </div>
+    </article>
+
+    <article class="c k-crit" id="f02">
+      <div class="c-rail">02</div>
+      <div class="c-body">
+        <h3>Nothing is measuring this. The Instagram campaign is invisible</h3>
+        <p>The URL you sent carries <code>utm_source=ig</code>, <code>utm_medium=social</code>, <code>utm_content=link_in_bio</code> and an <code>fbclid</code>. The page reads none of them, stores none of them, and passes none of them to the registration form. There is no Meta pixel, no Google Analytics, no GTM, no dataLayer — on either the landing page or the checkout page.</p>
+        <p>Concretely: you cannot tell how many people hit this page, how many reached checkout, how many paid, or that a single rupee came from Instagram. You are also building <b>no retargeting audience</b> — every warm visitor who doesn’t buy is lost permanently, which is normally the cheapest money in a funnel like this.</p>
+        <p>Both competitors do this properly, and Finkhoz’s implementation is worth copying outright <a class="xref" href="#benchmark">→ part five</a>.</p>
+        <div class="ev">
+          <div><span class="k">registernow  →</span> fbq <span class="bad">0</span> · gtag <span class="bad">0</span> · gtm <span class="bad">0</span> · dataLayer <span class="bad">0</span></div>
+          <div><span class="k">/ifm form    →</span> fbq <span class="bad">0</span> · gtag <span class="bad">0</span> · utm_ <span class="bad">0</span> · fbclid <span class="bad">0</span></div>
+          <div><span class="k">reserve link →</span> /ifm?batch=B3 <span class="k">— utm params dropped at the click</span></div>
+        </div>
+        <div class="fix"><b>Fix</b>Meta pixel + GA4 on both pages; forward the query string through the Reserve links; fire a Purchase / Lead event on the Razorpay success callback. This is a half-day of work and it is the difference between running a campaign and guessing at one.</div>
+      </div>
+    </article>
+
+    <article class="c k-crit" id="f03">
+      <div class="c-rail">03</div>
+      <div class="c-body">
+        <h3>You ask people to accept terms that don’t exist</h3>
+        <p>The checkout has a consent checkbox and an error state reading <b>“Please accept the terms to continue.”</b> There are no terms. Neither the landing page nor the form links to a Terms &amp; Conditions, Privacy Policy, or Refund/Cancellation policy — the footer of the landing page contains exactly one link, back to the homepage.</p>
+        <p>Your own FAQ compounds it: “we’ll work with you to either reschedule to a later batch or <b>process a refund as per our cancellation policy</b>” — a policy that is nowhere published. For a page collecting ₹21,000 through Razorpay, that’s both a trust problem and a gap against what payment gateways normally expect a merchant to display. Both competitors publish all three policies <a class="xref" href="#s05">→ steal 05</a>.</p>
+        <div class="ev">
+          <div><span class="k">policy links on registernow →</span> <span class="bad">none</span></div>
+          <div><span class="k">policy links on /ifm form   →</span> <span class="bad">none</span></div>
+          <div><span class="k">footer contents             →</span> "www.investingformummies.com" <span class="k">(1 link)</span></div>
+        </div>
+        <div class="fix"><b>Fix</b>Publish the three policies, link them in the footer and next to the consent checkbox, and add the legal entity + GSTIN (Mooga Tech Solutions India Pvt Ltd, 27AAECM9012F1ZM) and the Nariman Point address to the footer.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="important">
+  <div class="sec-head"><span class="part">Part two · your page</span><h2>Important</h2><span class="sec-count">6 findings · this week</span></div>
+  <p class="sec-note">These are what the redesign is really for. Nothing here is broken code — it’s absent persuasion.</p>
+
+  <div class="cards">
+
+    <article class="c k-imp" id="f04">
+      <div class="c-rail">04</div>
+      <div class="c-body">
+        <h3>There is no proof of any kind on the page</h3>
+        <p>No testimonials. No founder. No photographs of a cohort. No “X women trained”, no ratings, no alumni quotes, no credentials. Hiral Goel — the entire reason this course is worth ₹21,000 rather than a free YouTube playlist — is not mentioned once.</p>
+        <p>This is the single biggest gap. You are asking a stranger from Instagram for ₹21,000 and eight weekday mornings, and the page’s only argument is a syllabus. Both competitors put their teacher above the fold <a class="xref" href="#s02">→ steal 02</a>.</p>
+        <div class="fix"><b>Fix</b>A founder block with a real photo and why-she-teaches-this; three named testimonials from past cohorts; one honest number you can actually stand behind. You have the workshop photos and videos already — they’re sitting in the repo unused.</div>
+      </div>
+    </article>
+
+    <article class="c k-imp" id="f05">
+      <div class="c-rail">05</div>
+      <div class="c-body">
+        <h3>The page is entirely text — two images, both logos</h3>
+        <p>For a brand whose line is “nurturing financially confident women”, the registration page is a spreadsheet. No venue photo, no classroom, no printed handbook, no faces. Warmth is the brand’s whole differentiator against every bank and finfluencer, and none of it is on the page where money changes hands.</p>
+        <div class="ev">
+          <div><span class="k">document.images →</span> 2 <span class="k">(round logo + wordmark, both in the header)</span></div>
+          <div><span class="k">&lt;video&gt; →</span> 0 &nbsp; <span class="k">page height →</span> 7,749px of near-pure text</div>
+        </div>
+        <div class="fix"><b>Fix</b>Show the room, the handbook, and the women. Even three good photographs would change this page’s temperature completely.</div>
+      </div>
+    </article>
+
+    <article class="c k-imp" id="f06">
+      <div class="c-rail">06</div>
+      <div class="c-body">
+        <h3>Shared on WhatsApp, this link renders as a bare URL</h3>
+        <p><b>Treat this one as critical.</b> It is filed under Important because that’s its usual severity — but IFM does not grow the usual way. Students arrive through Hiral’s network, friends of friends, and word of mouth; Instagram is where they verify you afterwards, not where they find you. <b>Word of mouth in this market travels on WhatsApp</b>, which makes a forwarded link your actual acquisition channel.</p>
+        <p>And it degrades at exactly the handoff. No Open Graph tags, no Twitter card, no share image — so when one woman sends this to a friend, it arrives as a naked URL with no title, no image, no description. The referral survives; the persuasion doesn’t.</p>
+        <div class="ev"><div><span class="k">og: tags</span> <span class="bad">0</span> &nbsp;·&nbsp; <span class="k">twitter: tags</span> <span class="bad">0</span> &nbsp;·&nbsp; <span class="k">canonical</span> <span class="bad">0</span></div></div>
+        <div class="fix"><b>Fix</b>og:title, og:description, og:image (1200×630 with the batch dates baked in), plus a canonical URL so the utm/fbclid variants don’t fragment.</div>
+      </div>
+    </article>
+
+    <article class="c k-imp" id="f07">
+      <div class="c-rail">07</div>
+      <div class="c-body">
+        <h3>The page has no h1</h3>
+        <p>A 7,749-pixel commercial page carries a single <code>h2</code> and zero <code>h1</code>. “Choose your programme” is styled text in a div. That costs you on search, and screen-reader users get no document outline to navigate by. It’s also a wasted position — the h1 is where the competitors put their sharpest line <a class="xref" href="#s01">→ steal 01</a>.</p>
+        <div class="ev"><div><span class="k">h1</span> <span class="bad">0</span> &nbsp;·&nbsp; <span class="k">h2</span> 1 &nbsp;·&nbsp; <span class="k">h3</span> <span class="bad">0</span> &nbsp;·&nbsp; <span class="k">ld+json schema</span> <span class="bad">0</span></div></div>
+        <div class="fix"><b>Fix</b>Real heading hierarchy, plus <code>Course</code> and <code>FAQPage</code> structured data — you already have the FAQ content written, so the rich result is nearly free.</div>
+      </div>
+    </article>
+
+    <article class="c k-imp" id="f08">
+      <div class="c-rail">08</div>
+      <div class="c-body">
+        <h3>September B1 starts in five days and the page is completely calm about it</h3>
+        <p>The first session is <b>1 September</b>. Nothing on the page conveys that. Your FAQ says batches are capped at 10–12 people — genuine, credible scarcity — but the batch cards never show seats remaining, and the only urgency device on the page is an early-bird deadline that already expired <a class="xref" href="#s07">→ steal 07</a>.</p>
+        <div class="fix"><b>Fix</b>Live seat counts on the batch cards (the checkout already tracks seats — <code>loadSeats('batch4')</code>), a “starts in 5 days” marker, and honest urgency instead of an expired one.</div>
+      </div>
+    </article>
+
+    <article class="c k-imp" id="f09">
+      <div class="c-rail">09</div>
+      <div class="c-body">
+        <h3>“Reserve →” on three programmes you can’t actually reserve</h3>
+        <p>Introductory, Young Adults and Teens all show “Next batch — TBA” and a <b>Reserve →</b> button. The button actually leads to a waitlist/notify form. The word promises a booking and delivers a mailing list — a small broken promise, right where you're asking for trust.</p>
+        <div class="ev">
+          <div><span class="k">/iya  live-batches-meta →</span> chips: [] <span class="k">— nothing bookable</span></div>
+          <div><span class="k">/ift  live-batches-meta →</span> chips: [] <span class="k">— nothing bookable</span></div>
+          <div><span class="k">/iya  page contains     →</span> "SOLD OUT" · "Waitlist" · "Notify"</div>
+        </div>
+        <div class="fix"><b>Fix</b>Label the button by what it does: “Notify me →”. And use these three as email capture — they’re the only lead-generation surface on an otherwise pay-or-leave page.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="polish">
+  <div class="sec-head"><span class="part">Part three · your page</span><h2>Polish</h2><span class="sec-count">7 findings · fold into the redesign</span></div>
+
+  <div class="cards">
+
+    <article class="c k-pol" id="f10">
+      <div class="c-rail">10</div>
+      <div class="c-body">
+        <h3>A visible copy bug: “Next batch — Next batch dates TBA”</h3>
+        <p>The live-sync script prefixes “Next batch — ” onto a chip whose text is already “Next batch dates TBA”. It renders on the Introductory card right now.</p>
+        <div class="fix"><b>Fix</b>Strip the prefix when the chip already contains it, or return a bare date string from the meta.</div>
+      </div>
+    </article>
+
+    <article class="c k-pol" id="f11">
+      <div class="c-rail">11</div>
+      <div class="c-body">
+        <h3>The page has drifted off the brand system</h3>
+        <p>It’s set in <b>Poppins</b>, not the brand’s Nunito + Lora. The teal is <code>#5ec4ba</code>, not the brand’s <code>#2a9d8f</code>. And there are two different navies inside this one file — the page variables use <code>#1a4a5a</code> while the site header nav uses the correct <code>#1a3a5c</code>.</p>
+        <div class="ev">
+          <div><span class="k">font-family →</span> Poppins <span class="k">(brand: Nunito + Lora)</span></div>
+          <div><span class="k">--ifm-teal  →</span> #5ec4ba <span class="k">(brand: #2a9d8f)</span></div>
+          <div><span class="k">--ifm-navy  →</span> #1a4a5a <span class="k">vs .sh-nav → #1a3a5c</span></div>
+        </div>
+        <div class="fix"><b>Fix</b>Reconcile to the tokens in IFM Brand Guidelines 2026 §3 — that reconciliation was already done once across the games codebase.</div>
+      </div>
+    </article>
+
+    <article class="c k-pol" id="f12">
+      <div class="c-rail">12</div>
+      <div class="c-body">
+        <h3>Every visit downloads three extra pages to update three words</h3>
+        <p>On load, the page fetches <code>/register/ifm-intro</code>, <code>/iya</code> and <code>/ift</code> in full — three extra round trips, roughly 52 KB compressed against the page’s own 8 KB — purely to refresh the three “next batch” pills, which all currently resolve to “TBA” anyway.</p>
+        <div class="ev">
+          <div><span class="k">page itself →</span> 8,042 B &nbsp; <span class="k">ttfb</span> 0.66s</div>
+          <div><span class="k">sync fetches →</span> 10,717 + 20,212 + 21,434 = <span class="bad">52,363 B</span></div>
+        </div>
+        <div class="fix"><b>Fix</b>Serve one small JSON endpoint with all batch states, or bake the state at deploy time. The architecture is sound; the payload is not.</div>
+      </div>
+    </article>
+
+    <article class="c k-pol" id="f13">
+      <div class="c-rail">13</div>
+      <div class="c-body">
+        <h3>Mobile is four tall, near-identical cards and no persistent CTA</h3>
+        <p>At 375px the batch cards stack full-width and very tall, so the four of them are a long, repetitive scroll before anything else — curriculum, FAQ, trust — is reached. There is no sticky “Reserve” bar, so a user deep in the FAQ has to scroll all the way back up to act.</p>
+        <div class="fix"><b>Fix</b>Compress the cards to a scannable row each, and add a sticky bottom CTA once the user is past the hero.</div>
+      </div>
+    </article>
+
+    <article class="c k-pol" id="f14">
+      <div class="c-rail">14</div>
+      <div class="c-body">
+        <h3>The two holiday skips are correct but unlabelled</h3>
+        <p>September B2 runs Mon &amp; Wed but skips Mon 14 Sep. October B1 runs Tue &amp; Thu but skips Tue 20 Oct. <b>Both are deliberate holiday skips — confirmed.</b> The dates are right; the page just doesn’t say why they break pattern.</p>
+        <p>That matters more than it sounds. Your buyer is scanning these dates against school runs and family commitments, and an irregular list with no explanation reads as carelessness — on a page that already has an expired discount on it <a class="xref" href="#f01">→ finding 01</a>. Labelling the gap turns an apparent mistake into evidence that you plan around her calendar.</p>
+        <div class="ev">
+          <div><span class="k">Sep B2 →</span> 2, 7, 9, <span class="good">·14 holiday·</span> 16, 21, 23, 28, 30</div>
+          <div><span class="k">Oct B1 →</span> 1, 6, 8, 13, 15, <span class="good">·20 holiday·</span> 22, 27, 29</div>
+        </div>
+        <div class="fix"><b>Fix</b>Name the holiday inline on the batch card — “no session, 14 Sep (holiday)”. One line each, and it removes the doubt instead of leaving her to wonder.</div>
+      </div>
+    </article>
+
+    <article class="c k-pol" id="f15">
+      <div class="c-rail">15</div>
+      <div class="c-body">
+        <h3>Dead August data still in the checkout</h3>
+        <p><code>BATCH_LABELS</code> still contains the finished August B1 and B2 batches, and a code comment still maps “B1 → batch2 (August B1)”. Not user-visible today — those cards no longer render — but it’s exactly the kind of stale mapping that produces a wrong-batch booking next time someone edits this file.</p>
+        <div class="fix"><b>Fix</b>Remove past batches when they close, as part of the batch rollover routine.</div>
+      </div>
+    </article>
+
+    <article class="c k-pol" id="f16">
+      <div class="c-rail">16</div>
+      <div class="c-body">
+        <h3>The homepage this page links to is still the rolled-back build</h3>
+        <p>Outside the scope of this page, but it’s one click away via the logo: <code>investingformummies.com/</code> is still serving the old pre-rebuild snapshot — 255,614 bytes, unchanged since 11 August. That’s the regression your checklist has been tracking for seventeen days, and it still re-breaks seven previously-fixed items including the duplicated footer legal bar and the black video thumbnails.</p>
+        <div class="fix"><b>Fix</b>Redeploy the 8 August build. One action, fixes all seven.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="working">
+  <div class="sec-head"><span class="part">Part four · your page</span><h2>What’s working</h2><span class="sec-count">11 verified</span></div>
+  <p class="sec-note">Checked, not assumed — every item below was tested against the live site.</p>
+
+  <ul class="works">
+    <li><b>Batch routing is correct.</b> All four Reserve links map to the right batch in the checkout — verified end to end.</li>
+    <li><b>The <code>?batch=</code> preselect works.</b> The right card is selected and scrolled into view on arrival.</li>
+    <li><b>No dead links.</b> All 11 destinations return 200.</li>
+    <li><b>Dates match the real calendar.</b> Every Sep/Oct date falls on its stated weekday, and the two pattern breaks are confirmed holiday skips — the schedule is correct.</li>
+    <li><b>The curriculum section is genuinely strong.</b> Eight sessions, specific and concrete — the most persuasive thing on the page.</li>
+    <li><b>The FAQ answers real objections</b> — batch size, missed sessions, venue, materials, cancellation.</li>
+    <li><b>Fast.</b> 8 KB compressed, 0.66s to first byte — better than both competitors.</li>
+    <li><b>Form fields carry correct autocomplete</b> attributes — mobile autofill will work.</li>
+    <li><b>The live-batch sync idea is right</b>, even though the payload needs work.</li>
+    <li><b>Mobile header and hamburger work</b> correctly at every breakpoint.</li>
+    <li><b>The visual design is calm and uncluttered.</b> The gold-bordered flagship card and restrained palette are doing their job.</li>
+  </ul>
+</section>
+
+<section id="benchmark">
+  <div class="sec-head"><span class="part">Part five · the competitors</span><h2>Benchmarked against two competitors</h2><span class="sec-count">both audited at source</span></div>
+  <p class="sec-note">Both are paid-Instagram funnels. <b>Finkhoz is the one that matters</b> — same market, same beginner audience, same Razorpay stack, and a structure you can copy almost line for line. Digital Scholar is worth studying for two mechanics and worth ignoring for four.</p>
+
+  <div class="verdict" style="margin-top:22px;">
+    <div class="k">The finding underneath all the others</div>
+    <p>Neither of these pages tries to close a big sale from a cold Reels click. <strong>Finkhoz asks for ₹99. Digital Scholar asks for ₹1,997. You ask for ₹21,000.</strong> Every design difference below is downstream of that one decision — they get to be persuasive over weeks, you have to do it in a single scroll.</p>
+  </div>
+
+  <div class="ladder">
+    <div class="l-them"><div class="who">Finkhoz</div><div class="amt">₹99</div><span class="cap">2-day live Zoom workshop. A tripwire — the real offer comes later.</span></div>
+    <div class="l-them"><div class="who">Digital Scholar</div><div class="amt">₹1,997</div><span class="cap">Recorded course, anchored against a ₹14,999 “founding price” rise.</span></div>
+    <div class="l-you"><div class="who">Investing for Mummies</div><div class="amt">₹21,000</div><span class="cap">8 in-person sessions, weekday mornings, Mumbai only. Asked for on the first click.</span></div>
+  </div>
+
+  <div class="tblwrap">
+  <table>
+    <thead>
+      <tr><th></th><th class="c-you">Your page</th><th>Finkhoz</th><th>Digital Scholar</th></tr>
+    </thead>
+    <tbody>
+      <tr><th>Headline</th><td class="you"><b>No h1 at all.</b> “Choose your programme”</td><td>“Confused between SIPs, Gold and Mutual Funds?”</td><td>“Master Agentic AI In Depth”</td></tr>
+      <tr><th>Opens with</th><td class="you"><b>A menu</b></td><td>The visitor’s confusion</td><td>Price + scarcity bar</td></tr>
+      <tr><th>Teacher named</th><td class="you"><b>Never mentioned</b></td><td>Above the fold — “Hosted by Aarzoo Shah”</td><td>Full “Meet Your Mentor” section</td></tr>
+      <tr><th>Testimonials</th><td class="you"><b>0</b></td><td>7 — name, role, city, rating</td><td>14+ across three separate sections</td></tr>
+      <tr><th>Credibility</th><td class="you"><b>None</b></td><td>Claims 17,000+ trained, 4.9/5, SEBI Registered Analyst</td><td>Claims 100K learners, $30M ad spend, TV appearance</td></tr>
+      <tr><th>Pain section</th><td class="you"><b>None</b></td><td>“Sound familiar?” — 4 bullets</td><td>“Read this if you are tired of being average”</td></tr>
+      <tr><th>Curriculum</th><td class="you">8 topics listed</td><td>8 timed blocks, each with an outcome</td><td>7 modules, each with an outcome + a thing you build</td></tr>
+      <tr><th>Value stack</th><td class="you"><b>None</b></td><td>₹6,395 of value → ₹99</td><td>₹54,995 of value → ₹1,997</td></tr>
+      <tr><th>Scarcity</th><td class="you"><b>An early bird that expired 7 days ago</b></td><td>“Only 12 seats left · closes when full”</td><td>“First 500 at ₹1,997, then ₹14,999”</td></tr>
+      <tr><th>Meta pixel</th><td class="you"><b>None</b></td><td>fbq + AddToCart event</td><td>fbq + GTM + Clarity + Snap + LinkedIn</td></tr>
+      <tr><th>UTM capture</th><td class="you"><b>Dropped on arrival</b></td><td>Explicit keep-list incl. fbclid + gclid</td><td>Handled via GTM</td></tr>
+      <tr><th>Legal</th><td class="you"><b>Nothing published</b></td><td>Refund + Privacy + T&amp;C + risk disclaimer</td><td>Privacy + Terms + Refund</td></tr>
+      <tr><th>Page weight</th><td class="you">8 KB — genuinely good</td><td>314 KB</td><td>6.4 MB</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="steal">
+  <div class="sec-head"><span class="part">Part six · the competitors</span><h2>Steal these</h2><span class="sec-count">7 · ranked by impact</span></div>
+  <p class="sec-note">Ordered by how much each is likely to move registrations, not by effort.</p>
+
+  <div class="cards">
+
+    <article class="c k-do" id="s01">
+      <div class="c-rail">01</div>
+      <div class="c-body">
+        <span class="src">Finkhoz · headline</span>
+        <h3>Open with her problem, not your catalogue</h3>
+        <p>Finkhoz leads with a question the reader is already asking herself. Your page leads with an instruction to the reader about how to use your website.</p>
+        <blockquote>Confused between SIPs, Gold and Mutual Funds?<cite>Finkhoz h1</cite></blockquote>
+        <p>You already own a better version of this line — <em>“You don’t need to know everything to begin”</em> — and it’s currently set in 13px italic grey, above the fold, and then abandoned. That sentence is your headline. It answers the real objection, which isn’t “what’s the syllabus” but “I’ll feel stupid.”</p>
+        <div class="fix"><b>Do</b>Promote the tagline to a real h1 <a class="xref" href="#f07">→ finding 07</a>. Follow it with the outcome: what she can do on day 9 that she can’t do today.</div>
+      </div>
+    </article>
+
+    <article class="c k-do" id="s02">
+      <div class="c-rail">02</div>
+      <div class="c-body">
+        <span class="src">Both pages</span>
+        <h3>Put Hiral on the page</h3>
+        <p>Finkhoz names Aarzoo above the fold and gives her a full bio block with five credential lines and a positioning sentence — “she teaches the way a smart friend would.” Digital Scholar does the same at greater length. Both understand that in education, the person <em>is</em> the product.</p>
+        <p>Your page doesn’t mention Hiral Goel once. For a ₹21,000 in-person course, that is the single biggest hole <a class="xref" href="#f04">→ finding 04</a> — bigger than the pricing bug, though slower to hurt you.</p>
+        <div class="fix"><b>Do</b>Photo, three sentences on why she teaches this, and the credentials. Then say plainly whether IFM is SEBI-registered or explicitly education-only — Finkhoz leads with that badge because in this category it settles the trust question fast.</div>
+      </div>
+    </article>
+
+    <article class="c k-do" id="s03">
+      <div class="c-rail">03</div>
+      <div class="c-body">
+        <span class="src">Finkhoz · “Sound familiar?”</span>
+        <h3>Name the problem in her words before you sell the fix</h3>
+        <p>Four bullets, each a sentence a real person would say to herself: <em>salary comes in, vanishes by month-end, and you can’t say where.</em> Then the bridge — “You don’t need a finance degree to fix this.” It costs one screen and it earns the right to everything after it.</p>
+        <p>Your equivalents are easy and you know them better than Finkhoz does: the household where she isn’t told what the investments are; the SIP someone sold her that she can’t explain; the sense that this conversation happens over her head.</p>
+        <div class="fix"><b>Do</b>Add one “Sound familiar?” block between the hero and the batch cards. Write it in her voice, not yours.</div>
+      </div>
+    </article>
+
+    <article class="c k-do" id="s04">
+      <div class="c-rail">04</div>
+      <div class="c-body">
+        <span class="src">Both pages</span>
+        <h3>Attach an outcome to every session</h3>
+        <p>Your curriculum is already the strongest thing on your page — eight sessions, specific and concrete. Both competitors do one thing you don’t: they promise a result per unit, not a topic per unit.</p>
+        <blockquote>By the end of this module, you will use Claude like an operator, not a consumer.<cite>Digital Scholar · every module</cite></blockquote>
+        <p>Digital Scholar also ends each module with a <em>“★ Build:”</em> line — a tangible thing you walk away holding. Finkhoz frames the whole curriculum as “every block ends with something you can actually use on your next salary credit.”</p>
+        <div class="fix"><b>Do</b>One outcome line per session. Session 2 isn’t “insurance made simple” — it’s “you’ll know whether your existing policies are protection or a bad investment, and what to do about it.”</div>
+      </div>
+    </article>
+
+    <article class="c k-do" id="s05">
+      <div class="c-rail">05</div>
+      <div class="c-body">
+        <span class="src">Both pages · footer</span>
+        <h3>Publish the legal layer — both of them did</h3>
+        <p>Finkhoz publishes a Refund Policy, Privacy Policy, Terms, and an unusually thorough risk disclaimer written against the DPDP Act 2023 and the Consumer Protection Act. Digital Scholar carries Privacy, Terms and Refund Policy plus a trademark disclaimer.</p>
+        <p>You publish none, while your checkout says “Please accept the terms to continue” and your FAQ cites a cancellation policy that doesn’t exist <a class="xref" href="#f03">→ finding 03</a>. Two out of two competitors treat this as table stakes.</p>
+        <div class="fix"><b>Do</b>Use Finkhoz’s as the scope template — it’s written for exactly your regulatory context.</div>
+      </div>
+    </article>
+
+    <article class="c k-do" id="s06">
+      <div class="c-rail">06</div>
+      <div class="c-body">
+        <span class="src">Finkhoz · offer block</span>
+        <h3>Itemise what ₹21,000 actually buys</h3>
+        <p>Finkhoz lists six components with individual prices totalling ₹6,395, then prices the lot at ₹99. The arithmetic is theatre, but the underlying move is sound: <b>an unbundled offer feels bigger than a single number.</b></p>
+        <p>Your ₹21,000 currently buys “8 days · 2 hrs” — which reads as a time cost, not a value. It actually includes a printed handbook, small-group teaching capped at 10–12, session notes and slides after every session, interactive games, WhatsApp support, and a venue in Nariman Point. None of that is itemised.</p>
+        <div class="fix"><b>Do</b>List the components. Skip the invented rupee values — you don’t need them and at your price point they’d cheapen it.</div>
+      </div>
+    </article>
+
+    <article class="c k-do" id="s07">
+      <div class="c-rail">07</div>
+      <div class="c-body">
+        <span class="src">Finkhoz · closing CTA</span>
+        <h3>Honest scarcity, stated once</h3>
+        <blockquote>Only 12 seats left in this cohort · Closes when full<cite>Finkhoz · final CTA</cite></blockquote>
+        <p>You have the more credible version of this and don’t use it: your batches are genuinely capped at 10–12, your checkout already tracks seats, and September B1 starts in five days <a class="xref" href="#f08">→ finding 08</a>. Right now the only urgency device on your page is an early-bird deadline that expired a week ago — which does the opposite of urgency. It signals nobody is minding the page.</p>
+        <div class="fix"><b>Do</b>Surface the real seat count on each batch card, and a “starts in 5 days” marker. Real scarcity, stated once, with no countdown-timer theatrics.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="dont">
+  <div class="sec-head"><span class="part">Part seven · the competitors</span><h2>Don’t steal these</h2><span class="sec-count">4 · wrong for your category</span></div>
+  <p class="sec-note">Digital Scholar sells AI skills. You sell financial education in India, which is a regulated conversation — several of its best-performing devices would be liabilities on your page.</p>
+
+  <div class="cards">
+
+    <article class="c k-dont">
+      <div class="c-rail">!</div>
+      <div class="c-body">
+        <span class="src">Digital Scholar</span>
+        <h3>Income-claim testimonials</h3>
+        <p>“I earned ₹1 lakh in a single month.” “I’m proud to say that I earned ₹80,000.” These work for a course about billable skills. On a page teaching people to invest, testimonials about returns edge toward performance claims — the thing financial educators get into trouble for.</p>
+        <p>Notice how carefully Finkhoz avoids it: every testimonial is about <em>clarity and behaviour change</em> — “we finally feel like a team about money”, “I opened my first SIP the same week.” Not one mentions a return.</p>
+        <div class="fix"><b>Instead</b>Collect testimonials about confidence, clarity, and the first action taken. They’re also more persuasive to your actual buyer.</div>
+      </div>
+    </article>
+
+    <article class="c k-dont">
+      <div class="c-rail">!</div>
+      <div class="c-body">
+        <span class="src">Digital Scholar</span>
+        <h3>Manufactured scarcity and price-rise threats</h3>
+        <p>“Goes up the moment we cross 500. No second chances.” “You either move now, or you pay 7x later.” This is a high-pressure register that will read as predatory to a 40-year-old woman deciding whether to spend ₹21,000 of household money — the precise audience whose trust you’ve spent years building.</p>
+        <div class="fix"><b>Instead</b>Your scarcity is real (10–12 seats). Real scarcity needs no adjectives.</div>
+      </div>
+    </article>
+
+    <article class="c k-dont">
+      <div class="c-rail">!</div>
+      <div class="c-body">
+        <span class="src">Digital Scholar</span>
+        <h3>The contempt-for-the-reader voice</h3>
+        <p>“Most people will close this page in 12 seconds. Good. This was never written for them.” “Read this if you are tired of being average.” It’s an effective filter for an ambitious-founder audience. It is the exact opposite of “nurturing financially confident women,” and it would repel yours.</p>
+        <div class="fix"><b>Instead</b>Finkhoz’s register is your register: “no jargon, no hype, just clarity” — a smart friend, not a drill sergeant.</div>
+      </div>
+    </article>
+
+    <article class="c k-dont">
+      <div class="c-rail">!</div>
+      <div class="c-body">
+        <span class="src">Digital Scholar</span>
+        <h3>The 6.4 MB page</h3>
+        <p>Their landing page is 6.4 MB of HTML — roughly 800× yours. On the mid-range Android phones your audience is actually browsing from, that’s a slow, janky first impression. Your 8 KB / 0.66s page is one of the genuinely good things you have. Add photographs and proof, but don’t inherit a page builder’s bloat along with its layout.</p>
+        <div class="fix"><b>Instead</b>Keep the hand-built page. Compress images properly and lazy-load below the fold.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="advantage">
+  <div class="sec-head"><span class="part">Part eight</span><h2>The advantage you’re not using</h2></div>
+  <div class="verdict" style="margin-top:22px;">
+    <div class="k">Nobody else in this comparison has this</div>
+    <p>Digital Scholar built a bespoke interactive widget — click the tools you use, watch it calculate the hours you’re losing — purely to create one moment of personalised, self-inflicted pain before the pitch. It’s the most sophisticated thing on their page.</p>
+    <p><strong>You have twenty-odd interactive calculators and games already built</strong> — inflation, three buckets, SIP, retirement, goal planning — and not one of them appears on the page that sells the course. They sit on a separate subdomain, entirely outside the funnel.</p>
+  </div>
+  <p class="sec-note" style="margin-top:18px;">This is the highest-leverage thing in this document. One embedded calculator — <em>“what did last year cost your savings account?”</em> — does three jobs at once that no amount of copywriting can: it creates the pain, it proves you can teach, and it demonstrates the classroom experience rather than describing it. It also gives you the free front-end rung your price ladder is missing, and something worth an email address.</p>
+</section>
+
+<section id="brief">
+  <div class="sec-head"><span class="part">Part nine</span><h2>The redesign brief</h2><span class="sec-count">what to add that isn’t there at all</span></div>
+  <p class="sec-note">Ordered by how much each is likely to move registrations, not by effort.</p>
+
+  <dl class="brief">
+    <div class="brief-row"><dt>The founder</dt><dd><b>Who is Hiral, and why her?</b> A photo, a short story, the credential. This is the missing centre of the page.</dd></div>
+    <div class="brief-row"><dt>Proof</dt><dd>Named testimonials from past cohorts, cohort photographs, and one honest number you can defend. <b>No invented statistics</b> — the earlier website prototypes had fabricated figures; don’t inherit them.</dd></div>
+    <div class="brief-row"><dt>The outcome</dt><dd>The page sells a syllabus. It should sell a <b>transformation</b>: what will she be able to do on day 9 that she can’t do today?</dd></div>
+    <div class="brief-row"><dt>The real objection</dt><dd>Not “what’s the syllabus” but <b>“I’m bad with money and I’ll feel stupid.”</b> Your tagline already answers it — “You don’t need to know everything to begin” — but it’s set in 13px italic grey above the fold and then never developed.</dd></div>
+    <div class="brief-row"><dt>Scarcity</dt><dd>Seats remaining per batch. You cap at 10–12 and that is a genuinely good reason to book now.</dd></div>
+    <div class="brief-row"><dt>One clear CTA</dt><dd>The hero currently offers two soft scroll links. Give it a single primary action, and a sticky one on mobile.</dd></div>
+    <div class="brief-row"><dt>A trust bar</dt><dd>Policies, entity, GSTIN, address, WhatsApp. Standard for a page taking ₹21,000, and currently absent.</dd></div>
+    <div class="brief-row"><dt>Measurement</dt><dd>Pixel, analytics, UTM pass-through, purchase events. Without it you cannot tell whether the redesign worked.</dd></div>
+  </dl>
+</section>
+
+<section id="plan">
+  <div class="sec-head"><span class="part">Part ten</span><h2>What to do, in order</h2></div>
+  <ol class="plan">
+    <li><span class="when">Today</span><b>Fix the price and the pixel</b>Findings 01–03: separate September from October pricing, remove the expired early bird, install Meta pixel + GA4 with UTM pass-through, publish the three policies. None of the rest is measurable until the pixel is on.</li>
+    <li><span class="when">Today</span><b>Redeploy the 8 August homepage build</b>Finding 16 — seventeen days of a one-action regression, and it’s one click from this page.</li>
+    <li><span class="when">This week</span><b>Add the missing half of the page</b>Hiral’s block, three real testimonials, the “Sound familiar?” section, and outcome lines on the eight sessions. This is copy and photographs, not a redesign — it can go onto the current page.</li>
+    <li><span class="when">This week</span><b>Turn on real scarcity</b>Seat counts on the batch cards from the data your checkout already holds, plus a “starts in 5 days” marker.</li>
+    <li><span class="when">Next</span><b>Embed one calculator above the batch cards</b>Your unfair advantage, currently unused. Pick the one with the sharpest emotional payload and gate nothing.</li>
+    <li><span class="when">Decide</span><b>Whether you need a rung below ₹21,000</b>The real strategic question this comparison raises. Both competitors earn the right to a big ask with a small one first; your cheapest entry point is ₹8,000 and it’s for teenagers. A free or near-free live session — built on the games you already own — would change what your Instagram spend is allowed to do.</li>
+  </ol>
+</section>
+
+<footer>
+  <span>Audited 27 Aug 2026 · desktop + mobile · source and rendered DOM · competitor claims marked as claims</span>
+  <span>Investing for Mummies</span>
+</footer>
+
+</div>

@@ -48,3 +48,21 @@ __pycache__/
 
 # deck build tooling (npm install locally: cd deck-build && npm i pptxgenjs)
 deck-build/node_modules/
+
+# ── Added 7 Sep 2026: keep the GitHub backup lean ──────────────────────────
+# Raw intermediate render buffers from the lyric-video pipeline (216 MB across
+# 4 files). Regenerable from the source clips; never worth versioning.
+*.raw
+*.npy
+
+# Editor / script backup copies. These are working scratch, not history —
+# git IS the backup mechanism, so committing .bak defeats the point.
+*.bak
+*.bak2
+*.orig
+
+# Secrets — never version these. (An ANTHROPIC_API_KEY was found committed in
+# the 30 Jul 2026 baseline commit; history was purged 7 Sep 2026 before the
+# first push to GitHub. Keep it that way.)
+.env
+*.env

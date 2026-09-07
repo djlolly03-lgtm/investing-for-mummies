@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Page zoom stays ON. The board numerals are small and 15 of them sit under a
+     snake or a ladder; pinch-zoom is the only escape hatch a 45-year-old has.
+     camera.js owns the canvas gesture and preventDefaults it, so the game's own
+     pinch is unaffected. Never re-add maximum-scale / user-scalable=no. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7faf9">
+<meta name="color-scheme" content="light">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Saanp Seedhi">
+<meta name="format-detection" content="telephone=no">
+
+<title>Saanp Seedhi — Investing for Mummies</title>
+<meta name="description" content="The Snakes &amp; Ladders board your family already owns, rebuilt in 3D — where the size of every fall is what the mistake actually costs. Two to four players, one phone, about twelve minutes.">
+
+<link rel="icon" href="./favicon.png">
+<link rel="apple-touch-icon" href="./ifm-mark.png">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Investing for Mummies">
+<meta property="og:title" content="Saanp Seedhi — the money board">
+<meta property="og:description" content="Every snake is a product, not a person, and its price is painted on its back. Two to four players, one phone, about twelve minutes.">
+<meta property="og:url" content="https://ifm-deploy.vercel.app/snakes-ladders/">
+<meta property="og:image" content="https://ifm-deploy.vercel.app/snakes-ladders/ifm-mark.png">
+<meta property="og:image:alt" content="Investing for Mummies">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Saanp Seedhi — the money board">
+<meta name="twitter:description" content="Every snake is a product, not a person, and its price is painted on its back.">
+<meta name="twitter:image" content="https://ifm-deploy.vercel.app/snakes-ladders/ifm-mark.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="./ifm-mark.png">
+
+<!-- The critical path is three.js, not the fonts. Declare it here so the browser
+     starts it at ~0ms instead of discovering it three module hops deep. -->
+<link rel="modulepreload" href="./vendor/three.module.js">
+<link rel="modulepreload" href="./js/config.js">
+
+<!-- FOUR families, two scripts. Latin: Nunito (UI) + Lora italic 600 (display).
+     Devanagari: Noto Sans Devanagari (UI) + Martel (display). Half this game's
+     audience reads the Hindi build, and until now Devanagari fell to whatever
+     the OS had — Kohinoor for body, Devanagari MT faked into an oblique for
+     headings, two uninvited faces on every Hinglish line. Measured, not guessed
+     (CSS.getPlatformFontsForNode).
+
+     Martel over the alternatives: Tiro Devanagari Hindi has a true italic but
+     ships one weight, so the display face's 600 would be a synthetic bold;
+     Rozha One is a high-contrast Didone that fights Lora's warmth. Martel is a
+     humanist Devanagari serif with real 400 and 600, and its moderate contrast
+     and open counters sit beside Lora instead of arguing with it.
+
+     No &text= subsetting: players type their own names, so the glyph set is not
+     knowable, and Devanagari conjuncts break the moment a subset misses one.
+     Full faces. Devanagari adds ~182 KB and ONLY on pages that draw Devanagari
+     — Google's unicode-range subsetting means the Latin cuts of these two are
+     never fetched, because Nunito and Lora sit ahead of them in every stack.
+
+     Fonts load ASYNC. A render-blocking Google Fonts stylesheet was measured
+     holding module execution for 1.15s on a 4x-throttled phone. media="print"
+     makes it non-blocking; onload promotes it. Every font-family below ends in
+     a real system fallback, so the boot screen paints immediately either way. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&family=Martel:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&family=Martel:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&family=Martel:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap"></noscript>
+
+<!-- No JavaScript: skip straight to the written board. Legal in <head>. -->
+<noscript><style>
+  #snl-boot{display:none!important}
+  #snl-canvas{display:none!important}
+  #snl-nowebgl{display:block!important}
+</style></noscript>
+
+<style>
+/* ══════════════════════════════════════════════════════════════════════
+   Saanp Seedhi — shell only.
+   This file owns: the document, fonts, :root custom properties, the reset,
+   the loading screen, the no-WebGL fallback, and the four root elements.
+   EVERY other style in this game is injected by its own module with
+   injectCss('<module>', css) from js/util.js, namespaced .snl-<module>.
+   Do not add component CSS here.
+   ══════════════════════════════════════════════════════════════════════ */
+
+:root{
+  /* ── IFM palette · used semantically (DESIGN §7.4). Never invent a colour. ── */
+  --teal:#2a9d8f;      /* ladders · active player · primary button · progress */
+  --teal-d:#1f7d72;    /* pressed states · the 4px button under-edge          */
+  --navy:#1a3a5c;      /* all body text · square numerals · the board frame   */
+  --ink:#1a3a5c;       /* alias of --navy, per the IFM brand guidelines       */
+  --muted:#48656f;     /* counterparty lines · Jhatka edge · disabled ink     */
+  --cream:#f7faf9;     /* the board surface · every card ground               */
+  --mint:#bde9e4;      /* ladder-foot tiles · the "way out" band              */
+  --mint-lt:#e0f3f0;   /* zone tints · the standings strip ground             */
+  --gold:#8d6106;      /* rupee numbers · milestones · square 100. Money only */
+  --gold-lt:#fff5d6;   /* milestone tile fill · the finish bloom              */
+  --clay:#a75438;      /* SNAKES ONLY. Deliberately not alarm-red.            */
+
+  /* NOTE — these three are the DOM-TEXT tones and they deliberately differ from
+     their 3D twins in js/config.js (colors.gold 0xc8900a, muted 0x5a7d8a, clay
+     0xc0674a), which stay as-is because a lit, shaded mesh is not read at a
+     text contrast ratio. Measured on --cream: gold 5.20:1 (was 2.68), muted
+     5.94:1 (was 4.22), clay 5.04:1 (was 3.79). CONTRACT §Brand lists the old
+     hexes; this is a knowing, reported deviation for WCAG 1.4.3. */
+  --white:#ffffff;
+
+  /* Player colours sit OUTSIDE the semantic palette so a token is never
+     mistaken for a meaning. Four maximally separated hues (DESIGN §7.4). */
+  --p1:#3a4f9b;  --p1-name:'indigo';   /* matka  */
+  --p2:#e08a1e;  --p2-name:'saffron';  /* diya   */
+  --p3:#8a3f6b;  --p3-name:'plum';     /* chaabi */
+  --p4:#3f7a4a;  --p4-name:'forest';   /* ghanti */
+  --brass:#b08d3f;                     /* Mithu, and the Bura Waqt Fund lota  */
+
+  /* ── elevation, radius ── */
+  --shadow:0 6px 24px rgba(26,58,92,.14);
+  --shadow-lg:0 16px 48px rgba(26,58,92,.28);
+  --shadow-sm:0 2px 8px rgba(26,58,92,.10);
+  --radius:20px;
+  --radius-sm:12px;
+  --radius-lg:26px;
+
+  /* ── safe-area insets. Two spellings so no module has to guess. ── */
+  --sat:env(safe-area-inset-top,0px);
+  --sar:env(safe-area-inset-right,0px);
+  --sab:env(safe-area-inset-bottom,0px);
+  --sal:env(safe-area-inset-left,0px);
+  --safe-top:var(--sat);
+  --safe-right:var(--sar);
+  --safe-bottom:var(--sab);
+  --safe-left:var(--sal);
+
+  /* ── type ────────────────────────────────────────────────────────────
+     ONE stack per role, both scripts inside it. Nunito and Lora have no
+     Devanagari, so the browser falls through PER GLYPH: Latin keeps the
+     curated Latin face, Devanagari lands on the curated Devanagari face,
+     and a Hinglish line sets two faces that were chosen together instead
+     of two the OS picked. Nothing about the English build changes.
+     Never put the Devanagari face first — it carries Latin glyphs too and
+     would quietly take the Roman words off Nunito. */
+  --ui:'Nunito','Noto Sans Devanagari',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --display:'Lora','Martel',Georgia,'Times New Roman',serif;
+
+  /* the minimum touch target, everywhere, no exceptions (CONTRACT a11y) */
+  --tap:44px;
+}
+
+/* ── reset ─────────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{
+  /* Devanagari has no italic. Every display heading in this game asks for
+     font-style:italic, and Lora answers with a real drawn italic — but Martel
+     has none, so without this the browser SHEARS it and the shirorekha comes
+     out crooked. That is what shipped: "Devanagari MT" slanted 12 degrees.
+     Suppressing only the style synthesis leaves real italics (Lora, Georgia)
+     untouched and leaves weight synthesis alone, and older engines that do not
+     know the property simply keep today's behaviour. */
+  font-synthesis-style:none;
+  height:100%;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  touch-action:manipulation;
+  overscroll-behavior:none;
+}
+body{
+  margin:0;padding:0;
+  position:fixed;inset:0;          /* kills iOS rubber-band scroll dead */
+  width:100%;height:100vh;height:100dvh;
+  overflow:hidden;
+  overscroll-behavior:none;
+  touch-action:manipulation;
+  font-family:var(--ui);
+  font-weight:600;
+  color:var(--navy);
+  background:var(--cream);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+img,canvas{display:block;max-width:100%}
+/* A module that sets display: on something it also marks [hidden] otherwise ships
+   an invisible, full-screen, tap-eating overlay. setup.js did exactly that and it
+   killed the first screen. This one line makes the whole class of bug impossible. */
+[hidden]{display:none!important}
+button,input,select,textarea{font-family:inherit;font-size:100%;color:inherit;margin:0}
+p,h1,h2,h3,h4,ul,ol,li{margin:0;padding:0}
+ul,ol{list-style:none}
+
+/* the play surface is never selectable, never long-press-copied */
+#snl-canvas,#snl-hud,#snl-overlay{
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
+}
+
+/* ── the four root elements ────────────────────────────────────────── */
+/* Both DOM layers are pass-through at the root and interactive one level
+   in, so the canvas keeps its gestures. A module that mounts a full-bleed
+   wrapper must set pointer-events:none on it and re-enable its own bits. */
+#snl-canvas{
+  position:fixed;inset:0;
+  width:100%;height:100vh;height:100dvh;   /* dvh so the URL bar never crops the board */
+  z-index:0;
+  touch-action:none;                       /* camera.js owns two-finger yaw */
+  background:var(--cream);
+}
+#snl-hud{position:fixed;inset:0;z-index:10;pointer-events:none}
+#snl-overlay{position:fixed;inset:0;z-index:20;pointer-events:none}
+#snl-hud>*,#snl-overlay>*{pointer-events:auto}
+
+/* ── utilities used site-wide ──────────────────────────────────────── */
+.sr-only{
+  position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;
+}
+:where(a,button,summary,input,select,textarea,[tabindex]):focus-visible{
+  outline:3px solid var(--teal);
+  outline-offset:3px;
+  border-radius:8px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Loading screen. Cream ground, warm afternoon bounce off the floor —
+   the same light the board is lit with. One 3px teal bar. No percentage,
+   no tips, no spinner (DESIGN §2).
+   ══════════════════════════════════════════════════════════════════════ */
+#snl-boot{
+  position:fixed;inset:0;z-index:100;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0;
+  padding:calc(28px + var(--sat)) calc(24px + var(--sar)) calc(28px + var(--sab)) calc(24px + var(--sal));
+  text-align:center;
+  /* top layer is the warm floor bounce (#e8d9c0) the 3D scene is lit with —
+     kept in the background stack, not an overlay, so the logo can blend */
+  background:
+    linear-gradient(to top,rgba(232,217,192,.44) 0%,rgba(232,217,192,0) 42%),
+    radial-gradient(120% 80% at 50% 6%, #ffffff 0%, var(--cream) 46%, #e9f4f1 100%),
+    var(--cream);
+  transition:opacity 400ms cubic-bezier(.33,1,.68,1),visibility 0s linear 400ms;
+}
+#snl-boot.is-gone{opacity:0;visibility:hidden;pointer-events:none}
+
+.snl-boot__in{
+  display:flex;flex-direction:column;align-items:center;
+  width:100%;max-width:400px;
+}
+/* the shipped logo PNG carries an opaque white plate; multiply drops it
+   onto the cream ground cleanly without touching the artwork */
+.snl-boot__logo{
+  width:auto;height:98px;max-width:62%;object-fit:contain;
+  mix-blend-mode:multiply;
+  animation:snl-boot-rise 620ms cubic-bezier(.16,1,.3,1) both;
+}
+.snl-boot__title{
+  font-family:var(--display);font-style:italic;font-weight:600;
+  font-size:clamp(2.25rem,10.5vw,3.25rem);line-height:1.02;
+  color:var(--navy);
+  margin-top:18px;
+  letter-spacing:-.005em;
+  animation:snl-boot-rise 620ms 90ms cubic-bezier(.16,1,.3,1) both;
+}
+.snl-boot__rule{
+  width:52px;height:4px;border-radius:2px;background:var(--mint);
+  margin:16px 0 0;
+  animation:snl-boot-rise 620ms 150ms cubic-bezier(.16,1,.3,1) both;
+}
+.snl-boot__sub{
+  margin-top:16px;
+  font-family:var(--ui);font-weight:600;font-size:1.0625rem;line-height:1.5;
+  color:var(--navy);
+  max-width:22em;
+  animation:snl-boot-rise 620ms 200ms cubic-bezier(.16,1,.3,1) both;
+}
+.snl-boot__bar{
+  position:relative;
+  width:min(240px,72%);height:3px;border-radius:2px;
+  margin-top:40px;
+  background:var(--mint-lt);
+  overflow:hidden;
+  animation:snl-boot-rise 620ms 260ms cubic-bezier(.16,1,.3,1) both;
+}
+.snl-boot__bar>span{
+  display:block;width:100%;height:100%;border-radius:2px;
+  background:var(--teal);
+  transform:scaleX(.04);transform-origin:left center;
+  animation:snl-boot-fill 2800ms cubic-bezier(.22,.61,.36,1) forwards;
+}
+.snl-boot__mark{
+  position:absolute;left:0;right:0;
+  bottom:calc(26px + var(--sab));
+  font-size:.8125rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-d);
+  animation:snl-boot-rise 620ms 320ms cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes snl-boot-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes snl-boot-fill{0%{transform:scaleX(.04)}38%{transform:scaleX(.46)}72%{transform:scaleX(.74)}100%{transform:scaleX(.9)}}
+
+/* ══════════════════════════════════════════════════════════════════════
+   No WebGL / no JavaScript. Hidden by default; main.js reveals it, and the
+   shell watchdog reveals it if nothing ever booted. It is never an apology
+   and never a dead end — the whole curriculum is written out below.
+   ══════════════════════════════════════════════════════════════════════ */
+#snl-nowebgl{
+  display:none;
+  position:fixed;inset:0;z-index:90;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+  background:var(--cream);
+  -webkit-user-select:text;user-select:text;
+  padding:calc(26px + var(--sat)) calc(18px + var(--sar)) calc(48px + var(--sab)) calc(18px + var(--sal));
+}
+#snl-nowebgl .nw-in{max-width:640px;margin:0 auto}
+#snl-nowebgl .nw-logo{height:72px;width:auto;margin:0 auto 18px;object-fit:contain;mix-blend-mode:multiply}
+#snl-nowebgl h1{
+  font-family:var(--display);font-style:italic;font-weight:600;
+  font-size:clamp(1.9rem,7vw,2.4rem);line-height:1.1;color:var(--navy);text-align:center;
+}
+#snl-nowebgl .nw-lede{
+  margin:14px auto 4px;max-width:34em;text-align:center;
+  font-size:1.0625rem;line-height:1.6;font-weight:600;color:var(--navy);
+}
+#snl-nowebgl .nw-lede b{font-weight:800}
+#snl-nowebgl .nw-retry{
+  display:block;margin:22px auto 6px;
+  min-height:var(--tap);padding:14px 26px;
+  border:0;border-radius:14px;
+  background:var(--teal);border-bottom:4px solid var(--teal-d);
+  color:#fff;font-weight:800;font-size:1rem;cursor:pointer;
+  box-shadow:var(--shadow-sm);
+}
+#snl-nowebgl .nw-retry:active{transform:translateY(1px)}
+#snl-nowebgl h2{
+  margin:38px 0 6px;
+  font-size:1.375rem;font-weight:900;letter-spacing:-.01em;
+}
+#snl-nowebgl h2 .en{display:block;font-size:.8125rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-top:4px}
+#snl-nowebgl .nw-up h2{color:var(--teal-d)}
+#snl-nowebgl .nw-dn h2{color:var(--clay)}
+#snl-nowebgl li{
+  background:var(--white);border-radius:var(--radius-sm);
+  box-shadow:var(--shadow-sm);
+  padding:16px 18px;margin-top:12px;
+  border-left:5px solid var(--teal);
+}
+#snl-nowebgl .nw-dn li{border-left-color:var(--clay)}
+#snl-nowebgl .jump{
+  display:inline-block;font-weight:900;font-size:.9375rem;
+  color:var(--white);background:var(--teal-d);
+  padding:3px 10px;border-radius:999px;margin-bottom:8px;
+}
+#snl-nowebgl .nw-dn .jump{background:var(--clay)}
+#snl-nowebgl h3{font-size:1.0625rem;font-weight:900;line-height:1.3;color:var(--navy);margin-bottom:8px}
+#snl-nowebgl p{font-size:1rem;line-height:1.58;font-weight:600;color:var(--navy)}
+#snl-nowebgl p+p{margin-top:8px}
+/* The one place in the game that WANTS a synthesised oblique: this page is
+   pure Roman Hinglish set in Nunito, which ships no italic. Latin sheared
+   from an upright is a normal, legible thing; Devanagari sheared is not. */
+#snl-nowebgl i{font-synthesis-style:auto}
+#snl-nowebgl .lab{font-weight:900;color:var(--teal-d)}
+#snl-nowebgl .nw-dn .lab{color:var(--teal-d)}
+#snl-nowebgl .who{font-size:.9375rem;color:var(--navy);font-weight:600;opacity:.92}
+#snl-nowebgl .nw-note{
+  margin-top:30px;padding:16px 18px;border-radius:var(--radius-sm);
+  background:var(--mint-lt);border-left:5px solid var(--muted);
+  font-size:1rem;line-height:1.58;font-weight:600;color:var(--navy);
+}
+#snl-nowebgl .nw-foot{
+  margin-top:34px;text-align:center;font-size:.9375rem;font-weight:700;color:var(--navy);line-height:1.6;
+}
+
+/* ── reduced motion: nothing here moves ────────────────────────────── */
+@media (prefers-reduced-motion: reduce){
+  .snl-boot__logo,.snl-boot__title,.snl-boot__rule,.snl-boot__sub,
+  .snl-boot__bar,.snl-boot__mark{animation:none}
+  .snl-boot__bar>span{animation:none;transform:scaleX(.9)}
+  #snl-boot{transition:opacity 120ms linear,visibility 0s linear 120ms}
+}
+
+/* ── very short screens: the loading screen must never clip ────────── */
+@media (max-height:560px){
+  .snl-boot__logo{height:74px}
+  .snl-boot__title{margin-top:14px}
+  .snl-boot__bar{margin-top:26px}
+  .snl-boot__mark{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ── the four root elements, exactly as CONTRACT.md specifies ──────── -->
+<canvas id="snl-canvas"></canvas>
+<div id="snl-hud"></div>      <!-- ui.js mounts here                     -->
+<div id="snl-overlay"></div>  <!-- setup.js · lesson.js · endgame.js     -->
+<div id="snl-live" aria-live="polite" class="sr-only"></div>
+
+<!-- ── no WebGL / no JavaScript: the board, written out ──────────────── -->
+<div id="snl-nowebgl" role="region" aria-label="Saanp Seedhi — likha hua board">
+  <div class="nw-in">
+    <img class="nw-logo" src="./ifm-mark.png" alt="Investing for Mummies" width="202" height="224">
+    <h1>3D board yahan nahi khul paaya</h1>
+    <p class="nw-lede">Is browser mein board nahi ban saka — <b>par sabak poora yahan likha hai.</b> Aath seedhiyan, aath saanp, har ek ka daam aur usse bachne ka tareeka. Padh lijiye, ya kisi naye browser mein kholiye.</p>
+    <button class="nw-retry" type="button" id="snl-retry">Phir se koshish karo</button>
+
+    <section class="nw-up">
+      <h2>Aath seedhiyan<span class="en">The eight ladders · plumbing, not virtue</span></h2>
+      <ol>
+        <li><span class="jump">3 → 22</span>
+          <h3>Saat din ka hisaab</h3>
+          <p>Seven days of writing down every rupee usually finds ₹1,500 to ₹3,000 a month leaking — ₹18,000 to ₹36,000 a year, found without earning any more.</p>
+          <p><span class="lab">Karo:</span> Notes app or the back of a bill. Seven days only. Cut nothing yet — just read it once at the end.</p></li>
+
+        <li><span class="jump">12 → 30</span>
+          <h3>Pehli SIP — ₹500</h3>
+          <p>₹500 a month for twenty years is ₹1,20,000 of your own money going in, ₹500 at a time. The habit is what you are really buying.</p>
+          <p><span class="lab">Karo:</span> One index fund, direct plan, ₹500, auto-debit dated two days after salary. Fifteen minutes, once.</p></li>
+
+        <li><span class="jump">17 → 36</span>
+          <h3>Aadhaar se mobile jodo</h3>
+          <p>This one costs about ₹50 and one morning, and it is the single most common reason a first attempt to invest fails.</p>
+          <p><span class="lab">Karo:</span> Go to an Aadhaar Seva Kendra with your Aadhaar and the phone number you actually use today. That is it.</p></li>
+
+        <li><span class="jump">25 → 49</span>
+          <h3>Bura Waqt Fund</h3>
+          <p>If the house spends ₹25,000 a month, three months is ₹75,000. That is what stops a hospital bill turning into card debt at 42 paise a rupee.</p>
+          <p><span class="lab">Karo:</span> Open a separate savings account, no card linked. Send ₹2,000 a month until it holds three months of kharcha.</p></li>
+
+        <li><span class="jump">41 → 62</span>
+          <h3>Apna health cover</h3>
+          <p>One serious hospital admission costs ₹3,00,000 to ₹5,00,000. A ₹10,00,000 family floater costs roughly ₹20,000 to ₹30,000 a year.</p>
+          <p><span class="lab">Karo:</span> Buy a family floater of at least ₹10,00,000 in your own name, separate from the office cover, while everyone is healthy.</p></li>
+
+        <li><span class="jump">54 → 71</span>
+          <h3>Term insurance</h3>
+          <p>For a healthy 30-year-old, ₹1,00,00,000 of cover often costs about ₹12,000 to ₹15,000 a year — roughly ₹1,000 a month. Nothing comes back, which is exactly why it is cheap.</p>
+          <p><span class="lab">Karo:</span> Take 10 to 15 times your yearly income. Term only, bought online, nothing bundled with it, every health question answered honestly.</p></li>
+
+        <li><span class="jump">68 → 85</span>
+          <h3>Direct plan</h3>
+          <p>Same fund, same manager, two prices. Direct typically keeps about ₹500 a year in your hands for every ₹1,00,000 you hold — every year, for as long as you hold it.</p>
+          <p><span class="lab">Karo:</span> In the app, choose the Direct version and the Growth option. Check the exit load before moving old money.</p></li>
+
+        <li><span class="jump">78 → 94</span>
+          <h3>Kuch nahi kiya</h3>
+          <p>Prices fell 30% — ₹5,00,000 showed as ₹3,50,000 — and you changed nothing for eighteen months. Your ₹5,000 kept buying every month while everyone else stopped.</p>
+          <p><span class="lab">Karo:</span> Decide today, in writing, while things are calm: when it falls, I do nothing for eighteen months. Show that page to your family.</p></li>
+      </ol>
+    </section>
+
+    <section class="nw-dn">
+      <h2>Aath saanp<span class="en">The eight snakes · a product, never a person</span></h2>
+      <ol>
+        <li><span class="jump">27 → 9</span>
+          <h3>“FD se better” scheme</h3>
+          <p>₹50,000 a year for 15 years is ₹7,50,000 of your money, and it comes back as about ₹10,40,000 — roughly ₹2,50,000 less than the same money in an FD.</p>
+          <p><span class="lab">Bachne ka tareeka:</span> Ask one question before signing — <i>policy kitne saal ki hai?</i> If the answer is 15 or 20, it is not an FD.</p>
+          <p class="who"><span class="lab">Yeh paisa kisko gaya:</span> the bank branch and the agent, from a large first-year commission.</p></li>
+
+        <li><span class="jump">38 → 20</span>
+          <h3>Card ka minimum due</h3>
+          <p>A ₹50,000 bill left running on the card costs about ₹21,000 of interest in a year. The “minimum due” of ₹2,500 keeps the card alive and the karza growing.</p>
+          <p><span class="lab">Bachne ka tareeka:</span> Pay the full bill on the date. If you truly cannot, ask the bank to convert it to a normal loan — 14 paise a rupee beats 42.</p>
+          <p class="who"><span class="lab">Yeh paisa kisko gaya:</span> the card issuer. Interest on revolving balances is most of what a card earns.</p></li>
+
+        <li><span class="jump">46 → 28</span>
+          <h3>3% har mahine</h3>
+          <p>₹2,00,000 into a scheme paying 3% a month. It paid on time for eight months, then stopped. Nothing came back.</p>
+          <p><span class="lab">Bachne ka tareeka:</span> Ask where the profit comes from. If the answer is new members, it is a chain system — walk away, and warn the neighbour too.</p>
+          <p class="who"><span class="lab">Yeh paisa kisko gaya:</span> the earlier members and the organiser, paid out of the newer members’ money.</p></li>
+
+        <li><span class="jump">57 → 40</span>
+          <h3>Sona girvi rakha</h3>
+          <p>₹4,00,000 borrowed against the family gold at 20 paise a rupee is ₹80,000 of interest a year. Miss the payments and the chain is auctioned, not returned.</p>
+          <p><span class="lab">Bachne ka tareeka:</span> Save for known kharcha months ahead. Gold is the last door to open, never the first.</p>
+          <p class="who"><span class="lab">Yeh paisa kisko gaya:</span> the gold-loan NBFC or the local lender, and whoever buys the auctioned gold.</p></li>
+
+        <li><span class="jump">66 → 47</span>
+          <h3>F&amp;O ka chakkar</h3>
+          <p>SEBI’s own study: almost 88 of every 100 people who traded F&amp;O last year lost money. The average net loss was ₹1,17,000 per person, in one year.</p>
+          <p><span class="lab">Bachne ka tareeka:</span> That is trading, not investing. If you want the market, use a SIP and give it years.</p>
+          <p class="who"><span class="lab">Yeh paisa kisko gaya:</span> the broker and the exchange. Transaction costs alone took about ₹25,000 crore.</p></li>
+
+        <li><span class="jump">74 → 55</span>
+          <h3>SIP band kar di</h3>
+          <p>Prices fell, so you paused ₹5,000 a month for eight months. That is ₹40,000 that never went in — and it never went in cheap.</p>
+          <p><span class="lab">Bachne ka tareeka:</span> If money is tight, cut the SIP to ₹500. Cutting is fine. Stopping is what hurts.</p>
+          <p class="who"><span class="lab">Yeh paisa kisko gaya:</span> nobody. This one costs you and pays no one — which is why almost nobody warns you about it.</p></li>
+
+        <li><span class="jump">89 → 79</span>
+          <h3>Ek aur premium</h3>
+          <p>A call says one more premium unlocks your stuck money. ₹30,000 paid — and it turned out to be a brand new 15-year policy.</p>
+          <p><span class="lab">Bachne ka tareeka:</span> Ask for the old policy number and its maturity date, in writing, before paying anything.</p>
+          <p class="who"><span class="lab">Yeh paisa kisko gaya:</span> the agent, who earns a fresh first-year commission on a “revival”.</p></li>
+
+        <li><span class="jump">96 → 88</span>
+          <h3>“CBI bol raha hoon”</h3>
+          <p>A video call, a police backdrop, your Aadhaar “found in a parcel”, and then ₹8,000 as a release fee. Indians lost about ₹3,012 crore to this between 2022 and 2025.</p>
+          <p><span class="lab">Bachne ka tareeka:</span> Cut the call, tell one family member, dial 1930 within the hour. No officer ever asks for a transfer.</p>
+          <p class="who"><span class="lab">Yeh paisa kisko gaya:</span> organised scam centres — around 46% of these operations run out of Cambodia, Myanmar and Laos.</p></li>
+      </ol>
+    </section>
+
+    <p class="nw-note"><b>Aur chhe khaane “Jhatka” hain — 15, 31, 44, 59, 73, 86.</b> A repair, an illness, a rent rise, work stopping, a parent needing care, a bill nobody could have seen. Har ek pe likha hai: <b>aapki galti nahi.</b> Woh isi liye board pe hain — taaki khel yeh na keh sake ki aap peeche isliye hain kyunki aapne galti ki.</p>
+
+    <p class="nw-foot">Saanp Seedhi · Investing for Mummies<br>Yeh sabak hai, salaah nahi. Koi product, fund ya company ka naam yahan nahi hai.</p>
+  </div>
+</div>
+
+<!-- ── loading screen ───────────────────────────────────────────────── -->
+<div id="snl-boot" role="status" aria-label="Saanp Seedhi khul raha hai">
+  <div class="snl-boot__in">
+    <img class="snl-boot__logo" src="./ifm-mark.png" alt="Investing for Mummies" width="202" height="224" fetchpriority="high">
+    <h1 class="snl-boot__title">Saanp Seedhi</h1>
+    <div class="snl-boot__rule" aria-hidden="true"></div>
+    <p class="snl-boot__sub">Ghar wala wahi purana board — is baar har saanp ka daam uski peeth pe likha hai.</p>
+    <div class="snl-boot__bar" role="progressbar" aria-label="Board taiyaar ho raha hai"><span id="snl-boot-fill"></span></div>
+  </div>
+  <div class="snl-boot__mark">Investing for Mummies</div>
+</div>
+
+<script>
+/* Shell hooks. main.js calls window.__snlLoaded() once the first frame is
+   painted; __snlProgress(0..1) is optional and simply drives the bar. */
+(function () {
+  var boot = document.getElementById('snl-boot');
+  var fill = document.getElementById('snl-boot-fill');
+  var done = false;
+
+  window.__snlProgress = function (p) {
+    if (done || !fill) return;
+    p = Math.max(0, Math.min(1, Number(p) || 0));
+    fill.style.animation = 'none';
+    fill.style.transition = 'transform 240ms cubic-bezier(.22,.61,.36,1)';
+    fill.style.transform = 'scaleX(' + Math.max(0.04, p * 0.92) + ')';
+  };
+
+  window.__snlLoaded = function () {
+    if (done) return; done = true;
+    if (window.__snlHideNet) window.__snlHideNet();
+    if (fill) {
+      fill.style.animation = 'none';
+      fill.style.transition = 'transform 220ms cubic-bezier(.22,.61,.36,1)';
+      fill.style.transform = 'scaleX(1)';
+    }
+    setTimeout(function () {
+      if (!boot) return;
+      boot.classList.add('is-gone');
+      boot.setAttribute('aria-hidden', 'true');
+    }, 200);
+  };
+
+  /* Safety net: if nothing ever boots — no ES modules, a throw before main.js
+     gets going, a blocked import — the page still teaches rather than sitting on
+     a loading bar forever.
+
+     It MUST be reversible. An earlier version fired on a slow connection and
+     permanently buried a perfectly good game under an apology page, with nothing
+     logged anywhere. A safety net you cannot climb out of is a trap. So: we poll
+     rather than fire once, we never fire while the game is visibly alive, and if
+     the game turns up late we take the net away again. */
+  var netShown = false;
+  function nw() { return document.getElementById('snl-nowebgl'); }
+  function gameIsAlive() { return done || !!window.__SNL; }
+  function showNet() {
+    if (netShown || gameIsAlive()) return;
+    var n = nw(); if (!n) return;
+    netShown = true;
+    n.style.display = 'block';
+    if (boot) { boot.classList.add('is-gone'); boot.setAttribute('aria-hidden', 'true'); }
+  }
+  window.__snlHideNet = function () {
+    var n = nw();
+    if (n) { n.style.display = 'none'; n.removeAttribute('style'); }
+    netShown = false;
+  };
+  var waited = 0;
+  var poll = setInterval(function () {
+    waited += 1000;
+    if (gameIsAlive()) {                 // it arrived, late but alive
+      if (netShown) window.__snlHideNet();
+      clearInterval(poll);
+      return;
+    }
+    if (waited >= 25000) showNet();      // give a 2G connection a real chance
+    if (waited >= 90000) clearInterval(poll);
+  }, 1000);
+
+  var retry = document.getElementById('snl-retry');
+  if (retry) retry.addEventListener('click', function () { location.reload(); });
+
+  /* iOS pinch-to-zoom ignores user-scalable=no; this does not. */
+  document.addEventListener('gesturestart', function (e) { e.preventDefault(); }, { passive: false });
+})();
+</script>
+
+<script type="module" src="./js/main.js"></script>
+
+</body>
+</html>

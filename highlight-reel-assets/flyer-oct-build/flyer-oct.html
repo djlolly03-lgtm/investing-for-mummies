@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:900px; height:1600px; overflow:hidden; font-family:'Nunito', sans-serif; }
+  body { position:relative; background:#0C548E; }
+  #navy { position:relative; width:900px; height:983px; background:#0C548E; overflow:hidden; }
+  .coin-tl { position:absolute; top:0; left:0; }
+  .coin-tr { position:absolute; top:0; right:0; }
+  #illus { position:absolute; top:983px; left:0; width:900px; height:617px; }
+  #illus img { width:100%; height:100%; display:block; }
+
+  .content { position:relative; z-index:2; padding:44px 40px 0; }
+  h1 { color:#fff; font-weight:900; font-size:56px; line-height:1.14; letter-spacing:.2px; }
+  .sub { color:#fff; font-size:27px; line-height:1.46; margin-top:18px; max-width:660px; font-weight:600; }
+  .title { color:#fff; font-weight:900; text-align:center; font-size:44px; line-height:1.22; margin:34px 0 30px; }
+
+  .cards { display:flex; gap:16px; margin-top:2px; }
+  .card { flex:1; background:#fff; border-radius:24px; padding:28px 24px 30px; }
+  .batch { color:#0C548E; font-size:24px; font-weight:700; }
+  .daytime { color:#0C548E; font-weight:800; font-size:29px; margin-top:8px; }
+  .time { color:#0C548E; font-weight:800; font-size:23px; margin-top:4px; }
+  .dates { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .dates span { background:#eef3f8; color:#0C548E; font-weight:700; font-size:17px;
+                padding:7px 13px; border-radius:20px; }
+  .price-row { display:flex; align-items:baseline; gap:10px; margin-top:22px; }
+  .now { color:#0C548E; font-weight:900; font-size:31px; }
+  .was { color:#9aa8b8; font-size:21px; text-decoration:line-through; }
+  .early { color:#C08A1E; font-weight:800; font-size:16px; margin-top:5px; }
+  .seats { color:#2a9d5f; font-weight:800; font-size:18px; margin-top:16px; }
+  .reserve { display:inline-block; margin-top:20px; background:#F2C75C; color:#0C548E;
+             font-weight:800; font-size:21px; padding:13px 26px; border-radius:14px; }
+
+  .loc { display:flex; align-items:center; gap:12px; color:#fff; font-weight:700; font-size:27px;
+         margin-top:34px; }
+</style>
+</head>
+<body>
+  <div id="navy">
+    <img class="coin-tl" src="coin_tl.png">
+    <img class="coin-tr" src="coin_tr.png">
+    <div class="content">
+      <h1>NEW TO INVESTING?<br>START HERE.</h1>
+      <div class="sub">Investing for Mummies makes finance feel simple, practical and
+        beginner-friendly. No finance background required. 💛</div>
+      <div class="title">INVESTING FOR MUMMIES<br>BEGINNER'S WORKSHOP ✨</div>
+      <div class="cards">
+        <div class="card">
+          <div class="batch">October B1</div>
+          <div class="daytime">Tue &amp; Thu</div>
+          <div class="time">11:30 AM – 1:30 PM</div>
+          <div class="dates" id="datesB1"></div>
+          <div class="price-row"><span class="was">₹21,000</span><span class="now">₹19,000</span></div>
+          <div class="early">🏅 early bird till 20 Sep</div>
+          <div class="seats">9 seats available</div>
+          <div class="reserve">Reserve B1</div>
+        </div>
+        <div class="card">
+          <div class="batch">October B2</div>
+          <div class="daytime">Mon &amp; Wed</div>
+          <div class="time">11:00 AM – 1:00 PM</div>
+          <div class="dates" id="datesB2"></div>
+          <div class="price-row"><span class="was">₹21,000</span><span class="now">₹19,000</span></div>
+          <div class="early">🏅 early bird till 20 Sep</div>
+          <div class="seats">9 seats available</div>
+          <div class="reserve">Reserve B2</div>
+        </div>
+      </div>
+      <div class="loc">📍 Location: Nariman Point</div>
+    </div>
+  </div>
+  <div id="illus"><img src="illustration.png"></div>
+<script>
+const B1 = ['Oct 1','Oct 6','Oct 8','Oct 13','Oct 15','Oct 22','Oct 29'];
+const B2 = ['Oct 5','Oct 7','Oct 12','Oct 14','Oct 19','Oct 21','Oct 26','Oct 28'];
+document.getElementById('datesB1').innerHTML = B1.map(d=>`<span>${d}</span>`).join('');
+document.getElementById('datesB2').innerHTML = B2.map(d=>`<span>${d}</span>`).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+83 parts
+frames want 1796 (59.87s) got 1796 (59.87s)
+body = 59.863411 expected 59.879999999999995
+body 59.86 + card 1.8 - fade 0.6 = 61.06s
+OUTPUT 61.066667

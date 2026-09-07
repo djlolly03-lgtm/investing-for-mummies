@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Snakes &amp; Ladders — Build Progress</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2a9d8f;--teal-d:#1f7d72;--navy:#1a3a5c;--muted:#5a7d8a;--cream:#f7faf9;--mint:#bde9e4;--mint-lt:#e0f3f0;--gold:#c8900a;--gold-lt:#fff5d6;--red:#c0392b}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Nunito',sans-serif;color:var(--navy);background:radial-gradient(120% 120% at 50% 0%,#eef7f5 0%,#dceee9 45%,#c9e6df 100%);min-height:100vh;padding:22px 16px 60px}
+.wrap{max-width:980px;margin:0 auto}
+h1{font-family:'Lora',serif;font-style:italic;font-size:2.2rem;margin:0 0 2px}
+.sub{color:var(--teal-d);font-weight:800;text-transform:uppercase;letter-spacing:.6px;font-size:.8rem}
+.phase{background:linear-gradient(135deg,var(--navy),#16314e);color:#fff;border-radius:18px;padding:16px 20px;margin:16px 0;box-shadow:0 6px 24px rgba(26,58,92,.14)}
+.phase .p-t{font-size:1.35rem;font-weight:900;font-family:'Lora',serif}
+.phase .p-s{color:var(--mint);font-weight:700;font-size:.9rem;margin-top:3px}
+.bar{height:10px;border-radius:99px;background:rgba(255,255,255,.18);margin-top:12px;overflow:hidden}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--mint),#fff);border-radius:99px;transition:width .6s}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.pc{background:#fff;border-radius:16px;padding:13px 15px;box-shadow:0 6px 24px rgba(26,58,92,.10);border-left:5px solid #dfeeeb}
+.pc.done{border-left-color:var(--teal)}.pc.work{border-left-color:var(--gold);background:var(--gold-lt)}
+.pc.fail{border-left-color:var(--red)}.pc.todo{opacity:.62}
+.pc .n{font-weight:900;font-size:.98rem;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.pc .d{color:var(--muted);font-size:.82rem;font-weight:600;margin-top:4px;line-height:1.4}
+.pill{font-size:.62rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;padding:3px 8px;border-radius:99px;background:var(--mint-lt);color:var(--teal-d);white-space:nowrap}
+.pc.done .pill{background:var(--teal);color:#fff}.pc.work .pill{background:var(--gold);color:#fff}
+.pc.fail .pill{background:var(--red);color:#fff}
+.score{margin-top:8px;display:flex;gap:5px;flex-wrap:wrap}
+.score span{font-size:.66rem;font-weight:800;background:var(--cream);border-radius:6px;padding:2px 6px;color:var(--muted)}
+h2{font-family:'Lora',serif;font-size:1.3rem;margin:26px 0 10px}
+.log{background:#fff;border-radius:16px;padding:8px 16px;box-shadow:0 6px 24px rgba(26,58,92,.10);max-height:460px;overflow:auto}
+.log div{padding:9px 0;border-bottom:1px dashed #e3eeeb;font-size:.87rem;line-height:1.5}
+.log div:last-child{border:none}
+.log b{color:var(--teal-d);font-weight:900;margin-right:8px;font-variant-numeric:tabular-nums}
+.foot{text-align:center;color:var(--muted);font-size:.75rem;margin-top:24px;font-weight:700}
+.live{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2ecc71;margin-right:6px;animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+a.play{display:inline-block;margin-top:10px;background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;text-decoration:none;font-weight:900;padding:11px 20px;border-radius:13px;box-shadow:0 6px 24px rgba(26,58,92,.14)}
+</style></head><body><div class="wrap">
+<h1>Saanp Seedhi <span style="font-style:normal">🐍🪜</span></h1>
+<div class="sub">Investing for Mummies · build progress</div>
+<a class="play" href="./index.html">▶ Play the current build</a>
+<div class="phase"><div class="p-t" id="ph">Loading…</div><div class="p-s" id="phs"></div>
+<div class="bar"><i id="bar" style="width:0%"></i></div></div>
+<h2>Pieces</h2><div class="grid" id="grid"></div>
+<h2>Activity</h2><div class="log" id="log"></div>
+<div class="foot"><span class="live"></span>Auto-refreshes every 5s · <span id="ts"></span></div>
+</div><script>
+async function tick(){
+ try{
+  const r=await fetch('./docs/STATUS.json?t='+Date.now());const s=await r.json();
+  document.getElementById('ph').textContent=s.phase||'—';
+  document.getElementById('phs').textContent=s.phaseNote||'';
+  const ps=s.pieces||[];const done=ps.filter(p=>p.status==='done').length;
+  document.getElementById('bar').style.width=(ps.length?Math.round(done/ps.length*100):0)+'%';
+  document.getElementById('grid').innerHTML=ps.map(p=>{
+   const sc=(p.scores||[]).map(x=>'<span>'+x+'</span>').join('');
+   return '<div class="pc '+(p.status||'todo')+'"><div class="n"><span>'+p.name+'</span><span class="pill">'+(p.label||p.status||'queued')+'</span></div><div class="d">'+(p.note||'')+'</div>'+(sc?'<div class="score">'+sc+'</div>':'')+'</div>';
+  }).join('')||'<div class="pc todo"><div class="n">Planning…</div></div>';
+  document.getElementById('log').innerHTML=(s.log||[]).slice().reverse().map(l=>'<div><b>'+l.t+'</b>'+l.m+'</div>').join('');
+  document.getElementById('ts').textContent='updated '+new Date().toLocaleTimeString();
+ }catch(e){document.getElementById('ph').textContent='waiting for status…';}
+}
+tick();setInterval(tick,5000);
+</script></body></html>

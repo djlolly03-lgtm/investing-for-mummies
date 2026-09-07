@@ -1592,6 +1592,15 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 
 
 </style>
+<!-- Google Analytics (GA4) — same property as investingformummies.com, so website + games
+     report in one place. content_group:'Games' makes "how many reached the games" a one-line report. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCN0R6L3B9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PCN0R6L3B9', { content_group: 'Games' });
+</script>
 </head>
 <body>
 <div class="container">
@@ -1711,6 +1720,7 @@ const ladderData = [
 ];
 let g4Step = 0;
 let g4CQDone = false;
+const gameScores = { g4: 0 };
 
 function g4Guess(btn, choice) {
   disableOpts('g4_guess_opts');
@@ -1793,6 +1803,7 @@ function g4RevealNext() {
 }
 
 function drawLadderChart() {
+  var existing = Chart.getChart('g4LadderChart'); if(existing) existing.destroy();
   var invested = ladderData.map(function(d){return d.yr * 12 * 10000;});
   var gains = ladderData.map(function(d,i){return d.val - invested[i];});
   var investedColor = '#b8d4e8';
@@ -1877,6 +1888,8 @@ function drawDelayChart() {
   const gain35 = age35 - inv35;
 
   const fmtL = v => '₹' + (Math.round(v)/100000).toFixed(0) + 'L';
+
+  var existingDelay = Chart.getChart('g4Chart'); if(existingDelay) existingDelay.destroy();
 
   document.getElementById('g4_delay_chips').innerHTML = `
     <div class="chip green"><div class="ch-val">${fmtC(age25)}</div><div class="ch-label">Start at 25</div></div>

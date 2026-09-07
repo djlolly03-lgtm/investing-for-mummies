@@ -1676,6 +1676,15 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 
 
 </style>
+<!-- Google Analytics (GA4) — same property as investingformummies.com, so website + games
+     report in one place. content_group:'Games' makes "how many reached the games" a one-line report. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCN0R6L3B9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PCN0R6L3B9', { content_group: 'Games' });
+</script>
 </head>
 <body>
 <div class="container">
@@ -2076,7 +2085,8 @@ function dd_showFinal(){
   document.getElementById('dd_gameScreen').style.display='none';
   var fin=document.getElementById('dd_finalScreen');
   fin.style.display='block';
-  gameScores.gdd=dd_correct*10;
+  window.gameScores=window.gameScores||{};
+  window.gameScores.gdd=dd_correct*10;
 
   var pct=Math.round(dd_correct/8*100);
   var grade='';

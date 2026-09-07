@@ -872,6 +872,7 @@ function PlayerPlaying({ me, state, isLocked, allStocks }) {
       {flashing && (
         <NewsToast
           news={latestNews}
+          stocks={state.stocks}
           onReact={e => window.StockRush.react(me.id, e)}
           onClose={() => {
             setSeenNewsRound(latestNews.round);
@@ -2316,7 +2317,14 @@ function NewsCompactItem({ news }) {
 
 // ── News toast ────────────────────────────────────────────────────────────────
 
-function NewsToast({ news, onReact, onClose }) {
+function NewsToast({ news, stocks, onReact, onClose }) {
+  // NEWS_SCRIPT defines impacts for the FULL 25-stock pool, but each game
+  // only plays 8. Filter down so the student's popup shows only tickers
+  // that are actually on their trade screen.
+  const activeIds = new Set((stocks || []).map(s => s.id));
+  const activeImpacts = news.impacts
+    ? Object.fromEntries(Object.entries(news.impacts).filter(([tk]) => activeIds.has(tk)))
+    : null;
   const [reacted, setReacted] = React.useState(null);
   // Buzz the phone on display — gives haptic feedback for big news drops
   React.useEffect(() => {
@@ -2365,9 +2373,9 @@ function NewsToast({ news, onReact, onClose }) {
       <div style={{ fontSize: 15, fontWeight: 700, lineHeight: 1.25, color: '#0f172a', marginBottom: 10, letterSpacing: '-0.01em' }}>
         {news.headline}
       </div>
-      {news.impacts && (
+      {activeImpacts && Object.keys(activeImpacts).length > 0 && (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginBottom: 10 }}>
-          {Object.entries(news.impacts).map(([tk, mult]) => {
+          {Object.entries(activeImpacts).map(([tk, mult]) => {
             const up = mult >= 1;
             return (
               <div key={tk} style={{

@@ -1,0 +1,152 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0C548E}
+#stage{position:absolute;width:1080px;height:1920px;overflow:hidden;background:#0C548E;font-family:'Nunito',sans-serif}
+.lyr{position:absolute;inset:0;display:none}
+#simg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,40,72,.52) 0%,rgba(6,40,72,.04) 30%,rgba(6,40,72,.10) 52%,rgba(6,40,72,.90) 100%)}
+#logo{position:absolute;top:72px;left:50%;transform:translateX(-50%);width:110px;background:#fff;border-radius:50%;padding:12px;opacity:.95}
+#cap{position:absolute;left:64px;right:64px;bottom:180px;text-align:center;color:#fff;
+  font-weight:800;font-size:66px;line-height:1.22;text-shadow:0 6px 30px rgba(0,0,0,.55)}
+#cap.sm{font-size:54px}
+#cap b{color:#F2C75C}
+#live{position:absolute;left:50%;transform:translateX(-50%);bottom:104px;display:none;
+  align-items:center;gap:14px;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.34);
+  padding:12px 26px;border-radius:999px;color:#fff;font-weight:800;font-size:30px;letter-spacing:.14em}
+#live i{width:16px;height:16px;border-radius:50%;background:#F2C75C;display:block}
+#slam{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 80px;
+  background:radial-gradient(820px 940px at 50% 42%,#1567a8 0%,#0C548E 55%,#083c68 100%)}
+#sw{font-weight:900;font-size:128px;line-height:1.06;color:#fff;text-align:center;letter-spacing:-1px}
+#sw .g{color:#F2C75C}
+#sw.sm{font-size:96px}
+#sw.xs{font-size:78px;line-height:1.14}
+#sw .sub{display:block;margin-top:34px;font-size:46px;font-weight:700;color:#cfe6fb;letter-spacing:0}
+#openL{background:radial-gradient(820px 940px at 50% 44%,#1567a8 0%,#0C548E 58%,#083c68 100%)}
+#openWrap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center}
+#olog{width:300px;background:#fff;border-radius:50%;padding:26px;display:block;margin:0 auto 40px;
+  box-shadow:0 26px 70px rgba(0,0,0,.35)}
+#otag{font-family:'Lora',serif;font-size:56px;color:#fff;font-weight:600;letter-spacing:.5px}
+#otag i{color:#F2C75C}
+#qrbadge{position:absolute;left:64px;right:64px;bottom:88px;display:flex;align-items:center;gap:30px;
+  background:#fff;border-radius:28px;padding:26px 32px;opacity:0;
+  box-shadow:0 22px 60px rgba(0,0,0,.34), 0 0 0 3px rgba(12,84,142,.10)}
+#qrbadge img{width:300px;height:300px;flex:0 0 auto;border-radius:10px}
+#qrbadge .qt{display:flex;flex-direction:column;gap:10px;text-align:left}
+#qrbadge .l1{font-family:'Nunito',sans-serif;font-weight:900;font-size:48px;color:#0C548E;line-height:1.05}
+#qrbadge .l2{font-family:'Nunito',sans-serif;font-weight:700;font-size:31px;color:#C08A1E}
+#flyimg{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover}
+#fade{position:absolute;inset:0;background:#0C548E;opacity:0}
+</style></head><body><div id="stage">
+  <div class="lyr" id="shot"><img id="simg"><div id="tint"></div><img id="logo" src="img/logo.png">
+    <div id="cap"></div><div id="live"><i></i><span id="livetxt">LIVE FROM CLASS</span></div></div>
+  <div class="lyr" id="slamL"><div id="slam"><div id="sw"></div></div></div>
+  <div class="lyr" id="openL"><div id="openWrap">
+    <img id="olog" src="img/logo.png"><div id="otag">Investing <i>for</i> Mummies</div></div></div>
+  <div class="lyr" id="flyerL"><img id="flyimg" src="img/flyer.jpg">
+    <div id="qrbadge"><img src="img/qr_raw.png">
+      <div class="qt"><span class="l1">SCAN TO REGISTER</span><span class="l2">investingformummies.com</span></div>
+    </div></div>
+  <div id="fade"></div>
+</div>
+<script>
+const FPS=30;
+const cl=(v,a,b)=>Math.max(a,Math.min(b,v)),lp=(a,b,t)=>a+(b-a)*t;
+const eo=t=>1-Math.pow(1-t,3), eq=t=>1-Math.pow(1-t,5);
+const sg=(t,a,b)=>cl((t-a)/(b-a),0,1);
+const SEQ={T1:240,L1:108,L2:105,c2:420,G21:78};
+const IMGS=['hiral','hiral_exp','hiral_bid','engaged','certs','bigroup','g_kbc','g4b','g10b','flyer'];
+const src={},pre=[];
+const P=s=>{const i=new Image();i.src=s;pre.push(i);return new Promise(r=>{i.onload=r;i.onerror=r})};
+async function load(){const ps=[P('img/logo.png'),P('img/qr_raw.png')];
+ for(const n of IMGS)ps.push(P(`img/${n}.jpg`));
+ for(const[k,c]of Object.entries(SEQ)){src[k]=[];
+  for(let i=1;i<=c;i++){const s=`seq/${k}/${String(i).padStart(3,'0')}.jpg`;src[k].push(s);ps.push(P(s))}}
+ await Promise.all(ps)}
+const S=[];
+const SL=(a,b,html,sz)=>{
+  const parts=html.split('{{DELAY}}');
+  if(parts.length===2) S.push({a,b,k:'slam',htmlA:parts[0],htmlB:parts[1],sz});
+  else S.push({a,b,k:'slam',html,sz});
+};
+const SH=(a,b,o)=>S.push(Object.assign({a,b,k:'shot'},o));
+S.push({a:0.0,b:2.6,k:'open'});
+SH(2.6, 5.8,{img:'hiral',     cap:'Meet <b>Hiral Goel</b><br>Founder, Investing for Mummies'});
+SL(5.8, 9.2,'New to<br>investing?<br><span class="g">Start here.</span><span class="sub">Here’s a peek into our workshops</span>','sm');
+SH(9.2, 12.8,{seq:'L1', cap:'', live:1});
+SH(12.8,26.8,{seq:'c2', cap:'', live:1});
+SH(26.8,29.6,{img:'hiral_exp',cap:'We start at the basics<br>and <b>build a solid foundation</b>.'});
+SH(29.6,32.4,{img:'engaged',  cap:'Ask anything.<br><b>Nothing is a silly question.</b>'});
+SL(32.4,35.2,'We don’t just teach.<br><span class="g">We learn through<br>interactive games<br>and simulations.</span>','xs');
+SH(35.2,37.8,{img:'g_kbc', flat:1, cap:'<b>Live quizzes.</b><br>Real-time leaderboard.'});
+SH(37.8,40.4,{img:'g4b',   flat:1, cap:'<b>Simulate a Mutual Fund.</b>'});
+SH(40.4,43.0,{seq:'G21',   flat:1, cap:'Fake money.<br><b>Real market conditions.</b>'});
+SH(43.0,45.6,{img:'g10b',  flat:1, cap:'Play the<br><b>asset class Swayamvar.</b>'});
+SH(45.6,49.1,{seq:'L2', cap:'', live:1});
+SH(49.1,51.9,{img:'hiral_bid',cap:'Every concept,<br><b>broken down simply</b>.'});
+SH(51.9,55.1,{img:'bigroup',  cap:'Batch after batch,<br><b>the room keeps filling.</b>'});
+SH(55.1,63.1,{seq:'T1', cap:'', live:1, pill:'IN HER WORDS'});
+SL(63.1,66.2,'8 sessions.<br><span class="g">2 hours each.</span><span class="sub">Small batches · Nariman Point</span>','sm');
+SL(66.2,69.2,'We cover Insurance,<br>stocks, mutual funds{{DELAY}}<span class="g">and every asset class<br>in between.</span>','xs');
+SH(69.2,72.4,{img:'certs',    cap:'You finish <b>financially empowered</b><br>with a certificate — and a handbook<br>to refer to.'});
+SL(72.4,75.4,'No finance<br>background<br><span class="g">required.</span><span class="sub">Just bring your questions.</span>','sm');
+S.push({a:75.4,b:81.2,k:'flyer'});
+const TOT=81.2; window.TOTAL=Math.round(TOT*FPS);
+const $=i=>document.getElementById(i);
+const L={shot:$('shot'),slam:$('slamL'),flyer:$('flyerL'),open:$('openL')};
+const hide=()=>{for(const k in L)L[k].style.display='none'};
+function seqAt(img,name,loc){const a=src[name];const i=cl(Math.floor(loc*FPS),0,a.length-1);
+  if(img.getAttribute('src')!==a[i])img.setAttribute('src',a[i])}
+window.SEEK=function(f){
+ const t=f/FPS+1e-6;
+ const sh=S.find(s=>t>=s.a&&t<s.b)||S[S.length-1];
+ const loc=t-sh.a;
+ hide();
+ if(sh.k==='open'){
+   L.open.style.display='block';
+   const k=eq(sg(loc,0,1.5)); const w=$('openWrap');
+   w.style.opacity=Math.min(k,1-sg(loc,2.2,2.6));
+   w.style.transform=`translate(-50%,-50%) scale(${lp(.90,1,k)})`;
+ } else if(sh.k==='slam'){
+   L.slam.style.display='block';
+   const w=$('sw');
+   w.classList.toggle('sm',sh.sz==='sm'); w.classList.toggle('xs',sh.sz==='xs');
+   if(sh.htmlB!==undefined){
+     w.innerHTML=`<span id="swA" style="display:block">${sh.htmlA}</span><span id="swB" style="display:block">${sh.htmlB}</span>`;
+     w.style.opacity=1; w.style.transform='none';
+     const eA=w.querySelector('#swA'), eB=w.querySelector('#swB');
+     const kA=eq(sg(loc,0,.5));
+     const kB=eq(sg(loc,1.0,1.5));
+     eA.style.opacity=kA; eA.style.transform=`translateY(${lp(26,0,kA)}px)`;
+     eB.style.opacity=kB; eB.style.transform=`translateY(${lp(20,0,kB)}px)`;
+   } else {
+     w.innerHTML=sh.html;
+     const k=eq(sg(loc,0,.5));
+     w.style.opacity=k; w.style.transform=`translateY(${lp(26,0,k)}px)`;
+   }
+ } else if(sh.k==='flyer'){
+   L.flyer.style.display='block';
+   const k=eq(sg(loc,0,.55));
+   L.flyer.style.opacity=k;
+   $('flyimg').style.transform=`scale(${lp(1.05,1,k)})`;
+   const qk=eq(sg(loc,0.9,1.9)); const qb=$('qrbadge');
+   qb.style.opacity=qk; qb.style.transform=`translateY(${lp(34,0,qk)}px)`;
+ } else {
+   L.shot.style.display='block';
+   const img=$('simg');
+   if(sh.seq) seqAt(img,sh.seq,loc);
+   else { const s=`img/${sh.img}.jpg`; if(img.getAttribute('src')!==s) img.setAttribute('src',s); }
+   img.style.transform=`scale(${sh.flat?1.0:lp(1.07,1.01,eo(sg(loc,0,1.15)))})`;
+   const c=$('cap'); c.innerHTML=sh.cap||'';
+   c.classList.toggle('sm',(sh.cap||'').length>52);
+   const k=eo(sg(loc,.15,.75)); c.style.opacity=sh.cap?k:0;
+   c.style.transform=`translateY(${lp(20,0,k)}px)`;
+   $('live').style.display = sh.live ? 'flex' : 'none';
+   if(sh.live){ $('livetxt').textContent = sh.pill || 'LIVE FROM CLASS';
+     $('live').style.opacity = eo(sg(loc,.1,.6))*(1-sg(loc,(sh.b-sh.a)-.5,sh.b-sh.a)); }
+ }
+ let fo=0; if(t<.25) fo=1-sg(t,0,.25); if(t>TOT-.6) fo=sg(t,TOT-.6,TOT-.02);
+ $('fade').style.opacity=fo;
+ return true;
+};
+window.READY=false; load().then(()=>{SEEK(0);window.READY=true});
+</script></body></html>

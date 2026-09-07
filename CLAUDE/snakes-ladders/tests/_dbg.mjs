@@ -1,0 +1,13 @@
+import puppeteer from 'puppeteer';
+const b = await puppeteer.launch({ headless: 'new', args:['--no-sandbox','--use-gl=swiftshader','--enable-webgl'] });
+const p = await b.newPage();
+await p.setViewport({width:820,height:1180,hasTouch:true,isMobile:true});
+p.on('console', m => console.log('CON', m.type(), m.text().slice(0,160)));
+p.on('pageerror', e => console.log('ERR', e.message.slice(0,200)));
+p.on('requestfailed', r => console.log('REQFAIL', r.url().slice(0,120), r.failure()?.errorText));
+const resp = await p.goto('http://localhost:8791/snakes-ladders/', {waitUntil:'domcontentloaded', timeout:30000});
+console.log('status', resp.status());
+await new Promise(r=>setTimeout(r,25000));
+console.log(await p.evaluate(()=>({ html: document.body.innerHTML.length, setup: !!document.querySelector('.snl-setup'), go: !!document.querySelector('.snl-setup__go'), cls: document.querySelector('.snl-setup')?.className, snl: !!window.__SNL, txt: document.body.innerText.slice(0,300), api: Object.keys(window.__SNL||{}), ids: [...document.body.children].map(e=>e.tagName+'.'+e.className+'#'+e.id), ov: document.querySelector('#snl-overlay')?.innerHTML.slice(0,400) })));
+await p.screenshot({path:'/tmp/_dbg.png'});
+await b.close();

@@ -1,0 +1,18 @@
+{
+  "id": "_pw-smash",
+  "name": "PROBE — the same cube, dropped hard enough to fail",
+  "chapter": 0,
+  "sky": "morning",
+  "par": 1,
+  "teaches": "Harness fixture: 2.62 m of fall onto grass. Which materials break, and what the pieces do.",
+  "ammo": ["sip"],
+  "blocks": [
+    { "mat": "wood",  "x": 8.00,  "y": 3.20, "w": 0.90, "h": 0.90, "rot": 0.60 },
+    { "mat": "glass", "x": 11.00, "y": 3.20, "w": 0.90, "h": 0.90, "rot": 0.60 },
+    { "mat": "stone", "x": 14.00, "y": 3.20, "w": 0.90, "h": 0.90, "rot": 0.60 }
+  ],
+  "villains": [
+    { "type": "lotteryUncle", "x": 19.00, "y": 3.143 }
+  ],
+  "props": []
+}

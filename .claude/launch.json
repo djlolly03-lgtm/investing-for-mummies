@@ -1,6 +1,23 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "ifm-hub", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8912"], "port": 8912 }
+    {
+      "name": "snl",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd '/Users/lollyg/Documents/investing for Mummies/CLAUDE' && npx --yes serve -l 8791 --no-clipboard ."
+      ],
+      "port": 8791
+    },
+    {
+      "name": "ifm-game",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd '/Users/lollyg/Documents/investing for Mummies/CLAUDE' && npx --yes serve -l 8743 --no-clipboard ."
+      ],
+      "port": 8743
+    }
   ]
 }

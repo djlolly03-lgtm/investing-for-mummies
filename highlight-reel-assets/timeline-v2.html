@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden; background:#faf6ef; }
+  #stage { position:absolute; width:1280px; height:720px; overflow:hidden; font-family:'Nunito', sans-serif; }
+
+  /* ---------- paper ---------- */
+  #paper { position:absolute; inset:0; background:#faf6ef; }
+  #grain { position:absolute; inset:0; background-size:1280px 720px; opacity:.55; mix-blend-mode:multiply; }
+  #ledger { position:absolute; inset:0;
+            background:
+              repeating-linear-gradient(0deg, rgba(26,58,92,.045) 0 1px, transparent 1px 46px),
+              repeating-linear-gradient(90deg, rgba(26,58,92,.028) 0 1px, transparent 1px 46px); }
+  #warm { position:absolute; inset:0; pointer-events:none;
+          background:radial-gradient(1100px 720px at 50% 42%, rgba(255,255,255,.55) 0%, rgba(233,214,182,.0) 55%, rgba(196,171,133,.28) 100%); }
+
+  #jitter { position:absolute; inset:0; }
+  .scene { position:absolute; inset:0; display:none; }
+
+  /* ---------- scrapbook pieces ---------- */
+  .pol { position:absolute; left:0; top:0; background:#fffdf7; padding:11px 11px 44px;
+         box-shadow:0 12px 26px rgba(26,58,92,.17), 0 2px 5px rgba(26,58,92,.12);
+         transform-origin:50% 50%; }
+  .pol .fr { overflow:hidden; background:#e7e1d6; }
+  .pol .fr img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.04) contrast(1.02); }
+  .pol .cap { position:absolute; left:6px; right:6px; bottom:11px; text-align:center;
+              font-family:'Bradley Hand','Noteworthy',cursive; font-size:19px; color:rgba(26,58,92,.72); }
+  .print { position:absolute; left:0; top:0; background:#fffdf7; padding:8px;
+           box-shadow:0 10px 22px rgba(26,58,92,.16), 0 2px 4px rgba(26,58,92,.10); transform-origin:50% 50%; }
+  .print .fr { overflow:hidden; background:#e7e1d6; }
+  .print .fr img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.04); }
+
+  .tape { position:absolute; width:96px; height:29px; opacity:.92;
+          background:repeating-linear-gradient(135deg, rgba(233,196,106,.92) 0 7px, rgba(243,216,152,.86) 7px 14px);
+          box-shadow:0 2px 6px rgba(26,58,92,.16);
+          clip-path:polygon(3% 0, 100% 5%, 97% 100%, 0 95%); transform-origin:50% 50%; }
+  .tape.teal { background:repeating-linear-gradient(135deg, rgba(42,157,143,.62) 0 7px, rgba(42,157,143,.46) 7px 14px); }
+  .tape.sm { width:70px; height:24px; }
+
+  /* ---------- type ---------- */
+  .chip { display:inline-block; background:#2a9d8f; color:#fffdf7; font-weight:800; font-size:12px;
+          letter-spacing:3.4px; padding:6px 15px; border-radius:999px; }
+  .chip.gold { background:#e9c46a; color:#1a3a5c; }
+  .chip.navy { background:#1a3a5c; color:#faf6ef; }
+  .head { font-family:'Lora', serif; font-weight:700; color:#1a3a5c; line-height:1.14; }
+  .hand { font-family:'Bradley Hand','Noteworthy',cursive; color:rgba(26,58,92,.66); }
+
+  /* ---------- S1 ---------- */
+  #s1 .wrap { position:absolute; left:0; right:0; top:126px; text-align:center; }
+  #s1 img.logo { width:104px; display:block; margin:0 auto 22px; }
+  #s1 .ttl { font-family:'Lora', serif; font-weight:700; font-size:66px; color:#1a3a5c; letter-spacing:-.5px; }
+  #s1 .ttl span { display:inline-block; transform-origin:50% 90%; }
+  #s1 .ttl .for { color:#2a9d8f; font-style:italic; }
+  #s1 svg.uline { display:block; margin:14px auto 0; }
+  #s1 .sub { margin-top:20px; font-size:14px; letter-spacing:7px; font-weight:800; color:rgba(26,58,92,.55); }
+
+  /* ---------- S5 ---------- */
+  #s5 .hl { position:absolute; border-radius:5px; transform-origin:0% 50%; }
+  #s5 .w { position:absolute; font-family:'Lora', serif; font-weight:700; color:#1a3a5c;
+           white-space:nowrap; transform-origin:0% 60%; }
+
+  /* ---------- S7 ---------- */
+  #endCard { position:absolute; left:0; top:0; width:600px; background:#fffdf7;
+             box-shadow:0 26px 54px rgba(26,58,92,.24), 0 4px 10px rgba(26,58,92,.14);
+             padding:32px 38px 30px; text-align:center; transform-origin:50% 50%; }
+  #endCard .inner { border:1px solid rgba(26,58,92,.16); padding:22px 20px 24px; }
+  #endCard img { width:104px; display:block; margin:0 auto 18px; }
+  #endCard .et { font-family:'Lora', serif; font-weight:700; font-size:37px; color:#1a3a5c; line-height:1.22; }
+  #endCard .rule { height:3px; width:0; margin:16px auto 0; border-radius:3px; background:#2a9d8f; }
+  #endCard .eu { margin-top:14px; font-size:13px; letter-spacing:5px; font-weight:800; color:rgba(26,58,92,.6); }
+
+  #flash { position:absolute; inset:0; background:#fffdf7; opacity:0; pointer-events:none; }
+  #fade  { position:absolute; inset:0; background:#faf6ef; opacity:1; pointer-events:none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="paper">
+    <div id="ledger"></div>
+    <div id="grain"></div>
+  </div>
+
+  <div id="jitter">
+    <!-- S1 title page -->
+    <div class="scene" id="s1">
+      <div class="wrap">
+        <img class="logo" src="assets/logo.png">
+        <div class="ttl" id="s1ttl"></div>
+        <svg class="uline" id="s1u" width="440" height="18" viewBox="0 0 440 18">
+          <path id="s1upath" d="M6 12 C 90 4, 170 16, 250 8 S 400 4, 434 10"
+                fill="none" stroke="#e9c46a" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+        <div class="sub" id="s1sub">WORKSHOP&nbsp;SCRAPBOOK&nbsp;·&nbsp;2026</div>
+      </div>
+    </div>
+
+    <!-- S2 collage -->
+    <div class="scene" id="s2">
+      <div id="s2head" style="position:absolute;left:62px;top:52px;width:380px">
+        <span class="chip">THE SESSIONS</span>
+        <div class="head" style="font-size:40px;margin-top:14px">Real rooms.<br>Real questions.</div>
+      </div>
+      <div id="s2note" style="position:absolute;left:60px;top:618px;width:440px">
+        <div class="hand" style="font-size:26px">200+ students, one very full table</div>
+      </div>
+      <svg id="s2arrow" style="position:absolute;left:478px;top:592px" width="130" height="60" viewBox="0 0 130 60">
+        <path id="s2apath" d="M4 44 C 40 44, 62 30, 78 14" fill="none" stroke="#2a9d8f" stroke-width="3.5" stroke-linecap="round"/>
+        <path id="s2ahead" d="M62 12 L82 10 L78 30" fill="none" stroke="#2a9d8f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- S3 split -->
+    <div class="scene" id="s3">
+      <div id="s3txt" style="position:absolute"></div>
+    </div>
+
+    <!-- S4 three clips -->
+    <div class="scene" id="s4">
+      <div id="s4head" style="position:absolute;left:96px;top:62px">
+        <span class="chip gold">HANDS-ON</span>
+        <div class="head" style="font-size:40px;margin-top:12px">Everyone plays.</div>
+      </div>
+      <div id="s4note" style="position:absolute;right:70px;top:74px;width:330px;text-align:right">
+        <div class="hand" style="font-size:25px">louder than any maths class</div>
+      </div>
+    </div>
+
+    <!-- S5 typographic -->
+    <div class="scene" id="s5">
+      <div id="s5foot" style="position:absolute;left:112px;top:588px">
+        <div class="hand" style="font-size:27px">— what one afternoon actually changes</div>
+      </div>
+    </div>
+
+    <!-- S6 big clip -->
+    <div class="scene" id="s6">
+      <div id="s6chipwrap" style="position:absolute;left:64px;top:52px"><span class="chip navy" id="s6chip">UNFILTERED</span></div>
+    </div>
+
+    <!-- S7 finale -->
+    <div class="scene" id="s7">
+      <div id="endCard">
+        <div class="inner">
+          <img src="assets/logo.png">
+          <div class="et">Let's raise<br>money-smart families<span style="color:#e9c46a">.</span></div>
+          <div class="rule" id="endRule"></div>
+          <div class="eu">INVESTINGFORMUMMIES.COM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="warm"></div>
+  <div id="flash"></div>
+  <div id="fade"></div>
+</div>
+
+<script>
+/* ================= timing ================= */
+const FPS = 30;
+const T1=4.2, T2=11.9, T3=19.9, T4=24.9, T5=32.1, T6=39.3, T7=46.1;
+const TOTAL_FRAMES = Math.round(T7*FPS);
+
+/* ================= helpers ================= */
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const easeOut=t=>1-Math.pow(1-t,3);
+const easeIn=t=>t*t*t;
+const easeInOut=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const easeOutBack=t=>{const c1=1.5,c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);};
+const seg=(t,a,b)=>clamp((t-a)/(b-a),0,1);
+const snap=(t,hz)=>Math.floor(t*hz)/hz;                 // stop-motion quantiser
+function mulberry(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; let x=Math.imul(seed^seed>>>15,1|seed); x=x+Math.imul(x^x>>>7,61|x)^x; return ((x^x>>>14)>>>0)/4294967296; }; }
+const rng = mulberry(20260819);
+
+/* ================= assets ================= */
+const PHOTOS=['p4225','p4226','p4227','p4228','p4230','p4240','p4241','p4242','p4256','p4257','p4258',
+              'p8223','p8224','p8227','p8411','p8412','p8413','p8424','p8432','p8433','p8434',
+              'wa1','wa2','wa3','wa6','wa7'];
+const SEQ={c1:132,c2:132,c3:132,c4:132,c5:132,c6:132,f1:108,f2:108};
+const seqSrc={}; const keep=[];
+function pre(src){ const im=new Image(); im.src=src; keep.push(im);
+  return new Promise(r=>{ im.onload=r; im.onerror=r; }); }
+async function loadAll(){
+  const ps=[];
+  for(const n of PHOTOS) ps.push(pre(`assets/prep/${n}.jpg`));
+  ps.push(pre('assets/logo.png'));
+  for(const [n,c] of Object.entries(SEQ)){
+    seqSrc[n]=[];
+    for(let i=1;i<=c;i++){ const s=`assets/seq/${n}/${String(i).padStart(3,'0')}.jpg`; seqSrc[n].push(s); ps.push(pre(s)); }
+  }
+  await Promise.all(ps);
+  if(document.fonts && document.fonts.ready) await document.fonts.ready;
+}
+function setSeqFrame(imgEl,name,t0,t){
+  const arr=seqSrc[name];
+  const idx=clamp(Math.floor((t-t0)*FPS),0,arr.length-1);
+  const src=arr[idx];
+  if(imgEl.getAttribute('src')!==src) imgEl.setAttribute('src',src);
+}
+
+/* ================= paper grain (seeded, drawn once) ================= */
+(function grain(){
+  const c=document.createElement('canvas'); c.width=1280; c.height=720;
+  const g=c.getContext('2d');
+  g.fillStyle='rgba(255,255,255,0)'; g.fillRect(0,0,1280,720);
+  for(let i=0;i<26000;i++){
+    const x=rng()*1280, y=rng()*720, r=rng()*1.5+.2, a=rng()*.06;
+    g.fillStyle = rng()<.5 ? `rgba(120,98,70,${a.toFixed(3)})` : `rgba(255,255,255,${(a*1.6).toFixed(3)})`;
+    g.fillRect(x,y,r,r);
+  }
+  for(let i=0;i<260;i++){                     // paper fibres
+    const x=rng()*1280, y=rng()*720, len=8+rng()*40, ang=rng()*Math.PI;
+    g.strokeStyle=`rgba(140,118,88,${(rng()*.05).toFixed(3)})`; g.lineWidth=.8;
+    g.beginPath(); g.moveTo(x,y); g.lineTo(x+Math.cos(ang)*len, y+Math.sin(ang)*len); g.stroke();
+  }
+  document.getElementById('grain').style.backgroundImage=`url(${c.toDataURL()})`;
+})();
+
+/* ================= builders ================= */
+function tape(parent,{x,y,rot,teal,sm}){
+  const d=document.createElement('div');
+  d.className='tape'+(teal?' teal':'')+(sm?' sm':'');
+  d.style.left=x+'px'; d.style.top=y+'px'; d.style.transform=`rotate(${rot}deg)`;
+  parent.appendChild(d); return d;
+}
+function polaroid(parent,{img,w,h,cap,padB}){
+  const d=document.createElement('div'); d.className='pol';
+  if(padB!==undefined) d.style.paddingBottom=padB+'px';
+  const fr=document.createElement('div'); fr.className='fr';
+  fr.style.width=w+'px'; fr.style.height=h+'px';
+  const im=document.createElement('img'); if(img) im.src=img;
+  fr.appendChild(im); d.appendChild(fr);
+  if(cap!==undefined){ const c=document.createElement('div'); c.className='cap'; c.textContent=cap; d.appendChild(c); }
+  parent.appendChild(d);
+  return {el:d, img:im, w:w+22, h:h+11+(padB!==undefined?padB:44)};
+}
+function print(parent,{img,w,h}){
+  const d=document.createElement('div'); d.className='print';
+  const fr=document.createElement('div'); fr.className='fr';
+  fr.style.width=w+'px'; fr.style.height=h+'px';
+  const im=document.createElement('img'); if(img) im.src=img;
+  fr.appendChild(im); d.appendChild(fr); parent.appendChild(d);
+  return {el:d, img:im, w:w+16, h:h+16};
+}
+const P=n=>`assets/prep/${n}.jpg`;
+
+/* pop-in: drops onto the page, stop-motion stepped */
+function place(o, t, t0, dur){
+  const k = easeOutBack(seg(snap(t,15), t0, t0+dur));
+  const wob = Math.sin(snap(t,6)*1.3 + o.ph)*0.55;
+  const s = lerp(1.16,1,clamp(k,0,1.35));
+  const rot = o.rot + (1-clamp(k,0,1))*(o.spin||7) + wob;
+  o.el.style.opacity = clamp(seg(snap(t,15), t0, t0+dur*0.35),0,1);
+  o.el.style.transform = `translate(${o.x}px,${o.y - (1-clamp(k,0,1))*22}px) rotate(${rot}deg) scale(${s})`;
+}
+function popTape(el, t, t0){
+  const k=seg(snap(t,15), t0, t0+.18);
+  el.style.opacity = (k*0.92).toFixed(3);
+  el.style.transform = `rotate(${el._rot}deg) scale(${lerp(.6,1,easeOutBack(k))})`;
+}
+function tapeAt(parent,spec){ const d=tape(parent,spec); d._rot=spec.rot; d.style.opacity=0; return d; }
+
+/* scene enter/exit — snappy paper slide, not a smooth glide */
+function board(el,t,t0,t1){
+  const inK=easeOutBack(seg(snap(t,20),t0,t0+.34));
+  const outK=easeIn(seg(t,t1-.26,t1));
+  el.style.transform=`translate(${(1-clamp(inK,0,1))*64 - outK*90}px, ${-outK*10}px) scale(${lerp(.985,1,clamp(inK,0,1))})`;
+  el.style.opacity=1-outK;
+}
+
+/* ================= S1 ================= */
+(function(){
+  const words=[['Investing',''],['for','for'],['Mummies','']];
+  const ttl=document.getElementById('s1ttl');
+  words.forEach(([w,cls],i)=>{
+    const s=document.createElement('span'); s.textContent=w; if(cls) s.className='for';
+    ttl.appendChild(s);
+    if(i<words.length-1) ttl.appendChild(document.createTextNode(' '));
+  });
+  const s1=document.getElementById('s1');
+  // corner scraps
+  window.S1SCRAPS=[
+    Object.assign(print(s1,{img:P('wa3'),w:196,h:262}),{x:-38,y:404,rot:-9,ph:.4,spin:-12,t0:2.25}),
+    Object.assign(print(s1,{img:P('p4257'),w:236,h:178}),{x:1078,y:96,rot:8,ph:1.9,spin:12,t0:2.55}),
+    Object.assign(print(s1,{img:P('p8412'),w:176,h:236}),{x:1112,y:428,rot:-6,ph:3.1,spin:10,t0:2.85})
+  ];
+  window.S1TAPES=[ tapeAt(s1,{x:16,y:392,rot:-24,sm:true}),
+                   tapeAt(s1,{x:1104,y:82,rot:14,teal:true,sm:true}),
+                   tapeAt(s1,{x:1146,y:416,rot:-8,sm:true}) ];
+  const p=document.getElementById('s1upath');
+  window.S1LEN=p.getTotalLength();
+  p.style.strokeDasharray=window.S1LEN; p.style.strokeDashoffset=window.S1LEN;
+})();
+
+/* ================= S2 ================= */
+const S2=(function(){
+  const s2=document.getElementById('s2');
+  const specs=[
+    {n:'wa3',   x:468, y:20,  rot:-4,   w:176,h:236, cap:'day one'},
+    {n:'p4241', x:690, y:56,  rot:3.5,  w:176,h:236, cap:'hands up!'},
+    {n:'wa1',   x:904, y:18,  rot:-2.5, w:236,h:178, cap:'certificates!'},
+    {n:'p8223', x:58,  y:246, rot:2.5,  w:176,h:236, cap:'the big question'},
+    {n:'p4257', x:300, y:296, rot:-3,   w:176,h:236, cap:'full house'},
+    {n:'wa7',   x:518, y:336, rot:4,    w:236,h:178, cap:'worksheet time'},
+    {n:'p8412', x:828, y:376, rot:-5,   w:176,h:236, cap:'team huddle'},
+    {n:'p4230', x:1052,y:272, rot:6.5,  w:176,h:236, cap:'slide one'}
+  ];
+  const items=specs.map((s,i)=>{
+    const o=polaroid(s2,{img:P(s.n),w:s.w,h:s.h,cap:s.cap});
+    Object.assign(o,{x:s.x,y:s.y,rot:s.rot,ph:i*1.7,spin:(i%2?9:-9),t0:0.18+i*0.40});
+    o.tape=tapeAt(s2,{x:s.x+o.w/2-48+(i%2?14:-14), y:s.y-13, rot:(i%2?7:-9), teal:i%3===0, sm:i%2===1});
+    return o;
+  });
+  const ap=document.getElementById('s2apath'), ah=document.getElementById('s2ahead');
+  const aL=ap.getTotalLength(), hL=ah.getTotalLength();
+  ap.style.strokeDasharray=aL; ah.style.strokeDasharray=hL;
+  return {items, ap, ah, aL, hL};
+})();
+
+/* ================= S3 ================= */
+const S3=(function(){
+  const s3=document.getElementById('s3');
+  const A={}, B={};
+  // half A — clip left, text right
+  A.clip=Object.assign(polaroid(s3,{img:null,w:300,h:428,cap:'listening in'}),{x:92,y:112,rot:-3,ph:.6,spin:-8});
+  A.tape=tapeAt(s3,{x:196,y:100,rot:-11});
+  A.s1=Object.assign(print(s3,{img:P('p4226'),w:200,h:142}),{x:512,y:404,rot:4,ph:2.2,spin:9});
+  A.s2=Object.assign(print(s3,{img:P('p8433'),w:200,h:142}),{x:748,y:420,rot:-3.5,ph:4.4,spin:-9});
+  A.t1=tapeAt(s3,{x:560,y:392,rot:6,teal:true,sm:true});
+  A.t2=tapeAt(s3,{x:796,y:408,rot:-5,sm:true});
+  A.txt=document.createElement('div');
+  A.txt.style.cssText='position:absolute;left:512px;top:126px;width:700px';
+  A.txt.innerHTML='<span class="chip">IN THE ROOM</span>'
+    +'<div class="head" style="font-size:47px;margin-top:16px">Not a lecture.<br>A conversation.</div>'
+    +'<div class="hand" style="font-size:26px;margin-top:20px">(they asked us everything)</div>';
+  s3.appendChild(A.txt);
+  // half B — text left, clip right
+  B.clip=Object.assign(polaroid(s3,{img:null,w:300,h:428,cap:'no wrong answers'}),{x:866,y:120,rot:3,ph:1.4,spin:9});
+  B.tape=tapeAt(s3,{x:966,y:108,rot:9,teal:true});
+  B.s1=Object.assign(print(s3,{img:P('p4258'),w:222,h:166}),{x:74,y:418,rot:-4,ph:3.3,spin:-9});
+  B.s2=Object.assign(print(s3,{img:P('p8424'),w:200,h:142}),{x:344,y:440,rot:5,ph:5.1,spin:9});
+  B.t1=tapeAt(s3,{x:128,y:406,rot:-7,sm:true});
+  B.t2=tapeAt(s3,{x:392,y:428,rot:8,teal:true,sm:true});
+  B.txt=document.createElement('div');
+  B.txt.style.cssText='position:absolute;left:74px;top:132px;width:740px';
+  B.txt.innerHTML='<span class="chip gold">STRAIGHT TALK</span>'
+    +'<div class="head" style="font-size:47px;margin-top:16px">The money questions<br>school never answers.</div>'
+    +'<div class="hand" style="font-size:26px;margin-top:20px">SIPs, salaries, scams — all of it</div>';
+  s3.appendChild(B.txt);
+  return {A,B};
+})();
+
+/* ================= S4 ================= */
+const S4=(function(){
+  const s4=document.getElementById('s4');
+  const defs=[{x:112,y:262,rot:-5,cap:'hands up'},
+              {x:498,y:250,rot:2.5,cap:'team talk'},
+              {x:882,y:266,rot:-2,cap:'the big idea'}];
+  const items=defs.map((d,i)=>{
+    const o=polaroid(s4,{img:null,w:238,h:336,cap:d.cap});
+    Object.assign(o,{x:d.x,y:d.y,rot:d.rot,ph:i*2.4,spin:i%2?10:-10,t0:.1+i*.14});
+    o.tape=tapeAt(s4,{x:d.x+70+(i%2?18:-6), y:d.y-14, rot:i%2?8:-9, teal:i===1});
+    return o;
+  });
+  return {items};
+})();
+
+/* ================= S5 ================= */
+const S5=(function(){
+  const s5=document.getElementById('s5');
+  const defs=[{w:'Curious.',    y:118, size:96, col:'rgba(42,157,143,.30)', t0:.28},
+              {w:'Confident.',  y:266, size:96, col:'rgba(233,196,106,.55)', t0:1.95},
+              {w:'Money-smart.',y:414, size:92, col:'rgba(42,157,143,.26)', t0:3.6}];
+  const words=defs.map(d=>{
+    const hl=document.createElement('div'); hl.className='hl';
+    hl.style.cssText+=`left:104px;top:${d.y+d.size*0.30}px;height:${d.size*0.66}px;background:${d.col};transform:scaleX(0) skewX(-9deg) rotate(-.7deg);`;
+    s5.appendChild(hl);
+    const el=document.createElement('div'); el.className='w';
+    el.textContent=d.w; el.style.cssText+=`left:112px;top:${d.y}px;font-size:${d.size}px;`;
+    s5.appendChild(el);
+    return {el, hl, t0:d.t0};
+  });
+  const scraps=[
+    Object.assign(print(s5,{img:P('wa6'),w:172,h:230}),{x:872,y:52,rot:5,ph:.9,spin:11,t0:1.0}),
+    Object.assign(print(s5,{img:P('wa2'),w:212,h:158}),{x:1046,y:296,rot:-7,ph:2.6,spin:-11,t0:2.6}),
+    Object.assign(print(s5,{img:P('p8434'),w:168,h:224}),{x:848,y:428,rot:3.5,ph:4.8,spin:9,t0:4.2})
+  ];
+  const tapes=[ tapeAt(s5,{x:912,y:40,rot:-8,sm:true}),
+                tapeAt(s5,{x:1104,y:284,rot:10,teal:true,sm:true}),
+                tapeAt(s5,{x:890,y:416,rot:-6,sm:true}) ];
+  return {words,scraps,tapes};
+})();
+
+/* ================= S6 ================= */
+const S6=(function(){
+  const s6=document.getElementById('s6');
+  const backs=[
+    Object.assign(print(s6,{img:P('p4256'),w:196,h:148}),{x:92,y:132,rot:-8,ph:1.1,spin:-11,t0:.06}),
+    Object.assign(print(s6,{img:P('p8411'),w:168,h:224}),{x:1024,y:52,rot:7,ph:2.9,spin:11,t0:.16}),
+    Object.assign(print(s6,{img:P('p4242'),w:180,h:240}),{x:1010,y:412,rot:-5,ph:4.2,spin:-9,t0:.26})
+  ];
+  const main=Object.assign(polaroid(s6,{img:null,w:720,h:404,cap:'the good bit'}),{x:266,y:118,rot:-1.6,ph:.2,spin:-5,t0:.3});
+  const tapes=[ tapeAt(s6,{x:300,y:106,rot:-9}), tapeAt(s6,{x:924,y:110,rot:8,teal:true}) ];
+  const tape2=tapeAt(s6,{x:612,y:100,rot:3});
+  return {backs,main,tapes,tape2};
+})();
+
+/* ================= S7 ================= */
+const S7=(function(){
+  const s7=document.getElementById('s7');
+  const ring=[
+    {n:'p4225',x:62, y:18, rot:-6,w:124,h:166},{n:'p8224',x:246,y:34, rot:4, w:124,h:166},
+    {n:'wa3',  x:432,y:14, rot:-3,w:168,h:126},{n:'p4256',x:698,y:22, rot:5, w:124,h:166},
+    {n:'p8411',x:884,y:30, rot:-4,w:168,h:126},{n:'p4242',x:1096,y:16,rot:6, w:124,h:166},
+    {n:'wa7',  x:52, y:512,rot:5, w:124,h:166},{n:'p8432',x:250,y:536,rot:-4,w:168,h:126},
+    {n:'wa1',  x:892,y:530,rot:3, w:168,h:126},{n:'p4240',x:1094,y:508,rot:-6,w:124,h:166}
+  ].map((d,i)=>{
+    const o=print(s7,{img:P(d.n),w:d.w,h:d.h});
+    return Object.assign(o,{x:d.x,y:d.y,rot:d.rot,ph:i*1.3,spin:i%2?12:-12,t0:.04+i*.08});
+  });
+  const card=document.getElementById('endCard');
+  const tapes=[ tapeAt(s7,{x:368,y:176,rot:-12}), tapeAt(s7,{x:856,y:180,rot:10,teal:true}) ];
+  return {ring,card,tapes};
+})();
+
+/* ================= per-frame ================= */
+const scenes=['s1','s2','s3','s4','s5','s6','s7'].map(id=>document.getElementById(id));
+function show(i){ scenes.forEach((s,k)=>s.style.display = k===i?'block':'none'); }
+const jitEl=document.getElementById('jitter');
+const jit=[]; for(let i=0;i<512;i++) jit.push([rng()*2-1, rng()*2-1, rng()*2-1]);
+const CUTS=[T1,T2,T3,T4,T5,T6];
+const flash=document.getElementById('flash'), fade=document.getElementById('fade');
+
+window.SEEK=function(f){
+  const t=f/FPS;
+
+  // handmade jitter — quantised, so the page feels re-photographed each beat
+  const j=jit[Math.floor(snap(t,8)*8)%jit.length];
+  jitEl.style.transform=`translate(${(j[0]*1.3).toFixed(2)}px,${(j[1]*1.3).toFixed(2)}px) rotate(${(j[2]*0.10).toFixed(3)}deg)`;
+
+  // snappy paper-white blink at every cut
+  let fl=0;
+  for(const c of CUTS){ const d=Math.abs(t-c); if(d<0.09) fl=Math.max(fl, .8*(1-d/0.09)); }
+  flash.style.opacity=fl.toFixed(3);
+  fade.style.opacity=(t<0.35? 1-seg(t,0,0.35) : t>T7-0.55? seg(t,T7-0.55,T7-0.05) : 0).toFixed(3);
+
+  if(t<T1){ show(0); s1(t); }
+  else if(t<T2){ show(1); s2(t); }
+  else if(t<T3){ show(2); s3(t); }
+  else if(t<T4){ show(3); s4(t); }
+  else if(t<T5){ show(4); s5(t); }
+  else if(t<T6){ show(5); s6(t); }
+  else { show(6); s7(t); }
+  return true;
+};
+
+/* ---- S1 ---- */
+function s1(t){
+  const spans=document.querySelectorAll('#s1ttl span');
+  spans.forEach((s,i)=>{
+    const k=clamp(easeOutBack(seg(snap(t,15),.25+i*.19,.72+i*.19)),0,1.4);
+    s.style.opacity=seg(snap(t,15),.25+i*.19,.42+i*.19);
+    s.style.transform=`translateY(${(1-k)*18}px) rotate(${(1-k)*(i%2?4:-4)}deg) scale(${lerp(.72,1,k)})`;
+  });
+  const logo=document.querySelector('#s1 img.logo');
+  const lk=clamp(easeOutBack(seg(snap(t,15),.08,.5)),0,1.4);
+  logo.style.opacity=seg(snap(t,15),.08,.24);
+  logo.style.transform=`scale(${lerp(.5,1,lk)}) rotate(${(1-lk)*-12}deg)`;
+  document.getElementById('s1upath').style.strokeDashoffset=(1-easeOut(seg(t,1.05,1.85)))*window.S1LEN;
+  const sub=document.getElementById('s1sub');
+  const sk=seg(snap(t,15),1.5,2.0);
+  sub.style.opacity=sk; sub.style.letterSpacing=lerp(13,7,easeOut(sk)).toFixed(2)+'px';
+  window.S1SCRAPS.forEach((o,i)=>{ place(o,t,o.t0,.34); });
+  window.S1TAPES.forEach((tp,i)=>popTape(tp,t,2.4+i*.3));
+  board(scenes[0],t,0,T1);
+}
+
+/* ---- S2 ---- */
+function s2(t){
+  const l=t-T1;
+  S2.items.forEach(o=>{ place(o,t,T1+o.t0,.32); popTape(o.tape,t,T1+o.t0+.1); });
+  const hk=clamp(easeOutBack(seg(snap(t,15),.12,.6)),0,1.3);
+  const head=document.getElementById('s2head');
+  head.style.opacity=seg(snap(t,15),.12,.32);
+  head.style.transform=`translate(${(1-hk)*-26}px,0) rotate(${(1-hk)*-2}deg)`;
+  const note=document.getElementById('s2note');
+  const nk=seg(snap(t,15),T1+4.2,T1+4.6);
+  note.style.opacity=nk; note.style.transform=`translateY(${(1-easeOut(nk))*12}px)`;
+  S2.ap.style.strokeDashoffset=(1-easeOut(seg(l,4.6,5.15)))*S2.aL;
+  S2.ah.style.strokeDashoffset=(1-easeOut(seg(l,5.05,5.35)))*S2.hL;
+  // slow board pull-back after everything has landed
+  const pb=easeInOut(seg(l,4.9,7.7));
+  scenes[1].style.transformOrigin='50% 46%';
+  const inK=clamp(easeOutBack(seg(snap(t,20),T1,T1+.34)),0,1.3);
+  const outK=easeIn(seg(t,T2-.26,T2));
+  scenes[1].style.transform=`translate(${(1-inK)*64 - outK*90}px,0) scale(${lerp(1,.955,pb)*lerp(.985,1,inK)}) rotate(${pb*-.7}deg)`;
+  scenes[1].style.opacity=1-outK;
+}
+
+/* ---- S3 ---- */
+function s3(t){
+  const l=t-T2;                       // 0..8
+  const half=l<4.0;
+  const A=S3.A, B=S3.B;
+  [A,B].forEach((H,hi)=>{
+    const on=(hi===0)===half;
+    ['clip','s1','s2'].forEach(k=>{ H[k].el.style.display=on?'block':'none'; });
+    ['tape','t1','t2'].forEach(k=>{ H[k].style.display=on?'block':'none'; });
+    H.txt.style.display=on?'block':'none';
+  });
+  const H=half?A:B, base=half?0:4.0, lt=l-base, t0=T2+base;
+  setSeqFrame(H.clip.img, half?'c3':'c1', t0+.2, t);
+  place(H.clip,t,t0+.06,.32); popTape(H.tape,t,t0+.24);
+  place(H.s1,t,t0+.58,.3); popTape(H.t1,t,t0+.72);
+  place(H.s2,t,t0+.76,.3); popTape(H.t2,t,t0+.9);
+  const chip=H.txt.querySelector('.chip'), hd=H.txt.querySelector('.head'), hn=H.txt.querySelector('.hand');
+  const ck=clamp(easeOutBack(seg(snap(t,15),t0+.16,t0+.56)),0,1.3);
+  chip.style.opacity=seg(snap(t,15),t0+.16,t0+.32);
+  chip.style.transform=`scale(${lerp(.7,1,ck)})`; chip.style.display='inline-block';
+  const dk=clamp(easeOutBack(seg(snap(t,15),t0+.32,t0+.84)),0,1.3);
+  hd.style.opacity=seg(snap(t,15),t0+.32,t0+.52);
+  hd.style.transform=`translate(${(1-dk)*(half?26:-26)}px,0)`;
+  const nk=seg(snap(t,15),t0+.9,t0+1.25);
+  hn.style.opacity=nk; hn.style.transform=`translateY(${(1-easeOut(nk))*10}px)`;
+  // mid-scene snap: quick blink when the layout flips
+  board(scenes[2],t,T2,T3);
+  if(Math.abs(l-4.0)<0.09) flash.style.opacity=Math.max(+flash.style.opacity, .8*(1-Math.abs(l-4.0)/0.09));
+}
+
+/* ---- S4 ---- */
+function s4(t){
+  const l=t-T3;
+  S4.items.forEach((o,i)=>{
+    setSeqFrame(o.img, ['c4','c5','c6'][i], T3+.25, t);
+    place(o,t,T3+o.t0,.3); popTape(o.tape,t,T3+o.t0+.12);
+  });
+  const hk=clamp(easeOutBack(seg(snap(t,15),T3+.02,T3+.46)),0,1.3);
+  const hd=document.getElementById('s4head');
+  hd.style.opacity=seg(snap(t,15),T3+.02,T3+.22); hd.style.transform=`translateY(${(1-hk)*-18}px)`;
+  const nt=document.getElementById('s4note');
+  const nk=seg(snap(t,15),T3+.95,T3+1.3);
+  nt.style.opacity=nk; nt.style.transform=`translate(${(1-easeOut(nk))*16}px,0) rotate(${(1-nk)*2}deg)`;
+  board(scenes[3],t,T3,T4);
+}
+
+/* ---- S5 ---- */
+function s5(t){
+  const l=t-T4;
+  S5.words.forEach(w=>{
+    const k=clamp(easeOutBack(seg(snap(t,15),T4+w.t0,T4+w.t0+.36)),0,1.35);
+    w.el.style.opacity=seg(snap(t,15),T4+w.t0,T4+w.t0+.14);
+    w.el.style.transform=`translateY(${(1-clamp(k,0,1))*20}px) rotate(${(1-clamp(k,0,1))*-2.4}deg) scale(${lerp(.82,1,k)})`;
+    if(!w.hl._w){ w.hl.style.width=(w.el.offsetWidth+14)+'px'; w.hl._w=1; }
+    const sk=easeOut(seg(t,T4+w.t0+.22,T4+w.t0+.62));
+    w.hl.style.transform=`scaleX(${sk.toFixed(3)}) skewX(-9deg) rotate(-.7deg)`;
+  });
+  S5.scraps.forEach((o,i)=>{ place(o,t,T4+o.t0,.32); popTape(S5.tapes[i],t,T4+o.t0+.14); });
+  const ft=document.getElementById('s5foot');
+  const fk=seg(snap(t,15),T4+4.85,T4+5.3);
+  ft.style.opacity=fk; ft.style.transform=`translateY(${(1-easeOut(fk))*12}px)`;
+  const zoom=1+easeInOut(seg(l,5.5,7.2))*.045;
+  const inK=clamp(easeOutBack(seg(snap(t,20),T4,T4+.34)),0,1.3);
+  const outK=easeIn(seg(t,T5-.26,T5));
+  scenes[4].style.transformOrigin='30% 45%';
+  scenes[4].style.transform=`translate(${(1-inK)*64 - outK*90}px,0) scale(${zoom*lerp(.985,1,inK)})`;
+  scenes[4].style.opacity=1-outK;
+}
+
+/* ---- S6 ---- */
+function s6(t){
+  const l=t-T5;                     // 0..7.2
+  const first=l<3.6;
+  setSeqFrame(S6.main.img, first?'f1':'f2', T5+(first?.2:3.6), t);
+  S6.backs.forEach((o,i)=>place(o,t,T5+o.t0,.3));
+  // second print "dropped on top" at the swap: new angle + fresh tape
+  S6.main.rot = first? -1.6 : 1.9;
+  S6.main.el.querySelector('.cap').textContent = first? 'the good bit' : '…and the fun bit';
+  place(S6.main,t,first?T5+.3:T5+3.62,.28);
+  S6.tapes.forEach((tp,i)=>popTape(tp,t,T5+.45+i*.12));
+  S6.tape2.style.display=first?'none':'block';
+  popTape(S6.tape2,t,T5+3.74);
+  const cw=document.getElementById('s6chipwrap');
+  const ck=clamp(easeOutBack(seg(snap(t,15),T5+.06,T5+.5)),0,1.3);
+  cw.style.opacity=seg(snap(t,15),T5+.06,T5+.26); cw.style.transform=`scale(${lerp(.7,1,ck)})`;
+  document.getElementById('s6chip').textContent = first? 'UNFILTERED' : 'AND YES — FUN';
+  board(scenes[5],t,T5,T6);
+  if(Math.abs(l-3.6)<0.08) flash.style.opacity=Math.max(+flash.style.opacity, .75*(1-Math.abs(l-3.6)/0.08));
+}
+
+/* ---- S7 ---- */
+function s7(t){
+  const l=t-T6;                     // 0..6.8
+  S7.ring.forEach(o=>place(o,t,T6+o.t0,.28));
+  const card=S7.card;
+  const ck=clamp(easeOutBack(seg(snap(t,20),T6+1.15,T6+1.75)),0,1.35);
+  card.style.opacity=seg(snap(t,20),T6+1.15,T6+1.3);
+  card.style.left='340px'; card.style.top='176px';
+  card.style.transform=`translateY(${(1-clamp(ck,0,1))*-300}px) rotate(${(1-clamp(ck,0,1))*-3+ -0.6}deg) scale(${lerp(.94,1,clamp(ck,0,1.2))})`;
+  S7.tapes.forEach((tp,i)=>popTape(tp,t,T6+1.85+i*.14));
+  document.getElementById('endRule').style.width=(easeOut(seg(l,2.2,3.1))*180)+'px';
+  const inK=clamp(easeOutBack(seg(snap(t,20),T6,T6+.3)),0,1.3);
+  const push=easeInOut(seg(l,3.0,6.8))*.035;
+  scenes[6].style.transformOrigin='50% 46%';
+  scenes[6].style.transform=`translate(${(1-inK)*40}px,0) scale(${1+push})`;
+  scenes[6].style.opacity=1;
+}
+
+/* ================= boot ================= */
+window.READY=false; window.TOTAL=TOTAL_FRAMES;
+loadAll().then(()=>{
+  scenes.forEach(s=>s.style.display='block');   // let everything lay out once for measurement
+  S5.words.forEach(w=>{ w.hl.style.width=(w.el.offsetWidth+14)+'px'; w.hl._w=1; });
+  SEEK(0); window.READY=true;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "id": "_p3-wood",
+  "name": "PROBE — a single wood column, identical geometry across materials",
+  "chapter": 0,
+  "sky": "morning",
+  "par": 1,
+  "teaches": "Harness fixture: one material, one shot, so break silhouettes are comparable.",
+  "ammo": ["sip", "sip", "sip", "sip"],
+  "blocks": [
+    { "mat": "wood", "x": 18.00, "y": 1.35, "w": 0.62, "h": 2.70, "rot": 0 },
+    { "mat": "wood", "x": 18.00, "y": 3.05, "w": 1.40, "h": 0.70, "rot": 0 }
+  ],
+  "villains": [
+    { "type": "lotteryUncle", "x": 26.00, "y": 0.56 }
+  ],
+  "props": []
+}

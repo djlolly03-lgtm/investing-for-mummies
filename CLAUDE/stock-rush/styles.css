@@ -485,44 +485,44 @@
    than the muted originals. */
 .sr-race-mode .hero-row.rank-1 {
   background:
-    radial-gradient(ellipse at 8% 50%, rgba(230,184,0,0.32) 0%, transparent 60%),
-    linear-gradient(90deg, rgba(230,184,0,0.28) 0%, rgba(230,184,0,0.10) 45%, rgba(230,184,0,0.02) 80%, transparent) !important;
+    radial-gradient(ellipse at 8% 50%, rgba(230,184,0,0.42) 0%, transparent 60%),
+    linear-gradient(90deg, rgba(230,184,0,0.36) 0%, rgba(230,184,0,0.13) 45%, rgba(230,184,0,0.03) 80%, transparent) !important;
   border-left: 6px solid var(--racing-gold) !important;
-  box-shadow: inset 0 0 0 1px rgba(230,184,0,0.28), 0 0 24px -8px rgba(230,184,0,0.35);
+  box-shadow: inset 0 0 0 1px rgba(230,184,0,0.36), 0 0 24px -8px rgba(230,184,0,0.45);
   position: relative;
 }
 .sr-race-mode .hero-row.rank-1::after {
   content: '🔥';
   position: absolute;
-  top: 50%; right: 12px;
+  top: 50%; right: 14px;
   transform: translateY(-50%);
-  font-size: 30px;
+  font-size: 60px;
   pointer-events: none;
-  animation: sr-fire-flicker 1.4s ease-in-out infinite;
-  filter: drop-shadow(0 0 12px rgba(255,140,0,0.7));
+  animation: sr-fire-flicker 0.9s ease-in-out infinite;
+  filter: drop-shadow(0 0 18px rgba(255,140,0,0.85));
 }
 @keyframes sr-fire-flicker {
-  0%,100% { transform: translateY(-50%) rotate(-4deg) scale(1); opacity: 1; }
-  25%     { transform: translateY(-52%) rotate(3deg)  scale(1.08); opacity: 0.92; }
-  50%     { transform: translateY(-48%) rotate(-2deg) scale(0.97); opacity: 1; }
-  75%     { transform: translateY(-51%) rotate(4deg)  scale(1.05); opacity: 0.95; }
+  0%,100% { transform: translateY(-50%) rotate(-6deg) scale(1);    opacity: 1; }
+  25%     { transform: translateY(-56%) rotate(5deg)  scale(1.22); opacity: 0.9; }
+  50%     { transform: translateY(-44%) rotate(-4deg) scale(0.9);  opacity: 1; }
+  75%     { transform: translateY(-54%) rotate(6deg)  scale(1.18); opacity: 0.92; }
 }
 .sr-race-mode .hero-row.rank-2 {
   background:
-    radial-gradient(ellipse at 8% 50%, rgba(220,220,240,0.25) 0%, transparent 60%),
-    linear-gradient(90deg, rgba(220,220,240,0.20) 0%, rgba(220,220,240,0.05) 55%, transparent) !important;
+    radial-gradient(ellipse at 8% 50%, rgba(220,220,240,0.33) 0%, transparent 60%),
+    linear-gradient(90deg, rgba(220,220,240,0.26) 0%, rgba(220,220,240,0.07) 55%, transparent) !important;
   border-left: 6px solid var(--racing-silv) !important;
-  box-shadow: inset 0 0 0 1px rgba(220,220,240,0.14);
+  box-shadow: inset 0 0 0 1px rgba(220,220,240,0.20);
 }
 .sr-race-mode .hero-row.rank-3 {
   background:
-    radial-gradient(ellipse at 8% 50%, rgba(230,140,70,0.24) 0%, transparent 60%),
-    linear-gradient(90deg, rgba(230,140,70,0.18) 0%, rgba(230,140,70,0.05) 55%, transparent) !important;
+    radial-gradient(ellipse at 8% 50%, rgba(230,140,70,0.31) 0%, transparent 60%),
+    linear-gradient(90deg, rgba(230,140,70,0.23) 0%, rgba(230,140,70,0.07) 55%, transparent) !important;
   border-left: 6px solid var(--racing-bronze) !important;
-  box-shadow: inset 0 0 0 1px rgba(230,140,70,0.18);
+  box-shadow: inset 0 0 0 1px rgba(230,140,70,0.24);
 }
 .sr-race-mode .hero-row:not(.rank-1):not(.rank-2):not(.rank-3) {
-  background: rgba(255,255,255,0.02) !important;
+  background: rgba(255,255,255,0.06) !important;
   border-left: 3px solid transparent !important;
 }
 .sr-race-mode .hero-row { color: #fff !important; }
@@ -530,26 +530,30 @@
 
 /* Bigger, brighter names on podium rows */
 .sr-race-mode .hero-row .hr-name {
-  font-size: 22px !important;
+  font-size: 26px !important;
   font-weight: 800 !important;
   color: #fff !important;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 .sr-race-mode .hero-row.rank-1 .hr-name {
-  font-size: 30px !important;
+  font-size: 36px !important;
   color: #fff5b7 !important;
   text-shadow: 0 0 22px rgba(255,224,120,0.55), 0 2px 4px rgba(0,0,0,0.35);
-  letter-spacing: 0;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 .sr-race-mode .hero-row.rank-2 .hr-name {
-  font-size: 26px !important;
+  font-size: 31px !important;
   color: #f4f4ff !important;
   text-shadow: 0 0 14px rgba(220,220,240,0.35);
+  text-transform: uppercase;
 }
 .sr-race-mode .hero-row.rank-3 .hr-name {
-  font-size: 24px !important;
+  font-size: 29px !important;
   color: #ffe6cf !important;
   text-shadow: 0 0 14px rgba(230,140,70,0.35);
+  text-transform: uppercase;
 }
 
 /* Glow the avatar circle on top-3 */
@@ -582,7 +586,7 @@
 }
 
 /* Reserve room on right side so the 🔥 emoji doesn't overlap content */
-.sr-race-mode .hero-row.rank-1 { padding-right: 60px !important; }
+.sr-race-mode .hero-row.rank-1 { padding-right: 96px !important; }
 
 /* Make chip pills readable and vibrant on the dark theme */
 .sr-race-mode .hero-row .hr-chip {
@@ -787,29 +791,183 @@
 .sr-ended-card,
 .sr-ended-card div,
 .sr-ended-card span,
-.sr-ended-card p,
-.sr-ended-card b {
+.sr-ended-card p {
   color: #fff !important;
+}
+/* Bold text universally = gold highlight (racing theme). Winner-numbers,
+   share counts, %s — all pop with the racing-gold accent. */
+.sr-ended-card b,
+.sr-ended-card strong {
+  color: var(--racing-gold) !important;
+  font-weight: 800 !important;
 }
 .sr-ended-card .muted,
 .sr-ended-card [class*="muted"] { color: rgba(255,255,255,0.55) !important; }
 
-/* Restore intended colors for specific components after the blanket */
-.sr-ended-card [style*="rgba(22,163,74"],
-.sr-ended-card [style*="rgb(22, 163, 74"],
-.sr-ended-card [style*="color: rgb(21, 128, 61"] { color: #4ade80 !important; }
-.sr-ended-card [style*="rgba(220,38,38"],
-.sr-ended-card [style*="rgb(220, 38, 38"],
-.sr-ended-card [style*="color: rgb(185, 28, 28"] { color: #f87171 !important; }
-.sr-ended-card .sr-podium { color: var(--racing-black) !important; }
-.sr-ended-card .sr-podium.p1 * { color: #000 !important; }
-.sr-ended-card .sr-podium.p2 * { color: #000 !important; }
-.sr-ended-card .sr-podium.p3 * { color: #000 !important; }
+/* The ×26.4 sleep-multiplier pill — target it via its unique cream
+   background `#fef3c7` (rgb(254, 243, 199)). Nothing else in the recap
+   has that exact background so this is safe. */
+.sr-ended-card [style*="rgb(254, 243, 199)"],
+.sr-ended-card [style*="#fef3c7"] {
+  background: linear-gradient(135deg, #ffe067 0%, #d97706 100%) !important;
+  color: #1a0a02 !important;
+  border: 2px solid #f5b301 !important;
+  font-size: 34px !important;
+  font-weight: 900 !important;
+  padding: 8px 18px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 24px rgba(245,158,11,0.4), 0 4px 14px rgba(0,0,0,0.35);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+  white-space: nowrap;
+}
+.sr-ended-card [style*="rgb(254, 243, 199)"] *,
+.sr-ended-card [style*="#fef3c7"] * { color: #1a0a02 !important; }
 
-/* Counterfactual card — ensure gold accent text stays gold */
-.sr-ended-card [style*="linear-gradient(135deg, rgba(245,158,11"] b,
-.sr-ended-card [style*="linear-gradient(135deg, rgba(245, 158, 11"] b {
-  color: var(--racing-gold) !important;
+/* Green / red delta pills need to stay coloured — override the blanket */
+.sr-ended-card [style*="rgba(74,222,128"],
+.sr-ended-card [style*="rgb(74, 222, 128"],
+.sr-ended-card [style*="rgba(22,163,74"],
+.sr-ended-card [style*="rgb(22, 163, 74"] { color: #4ade80 !important; }
+.sr-ended-card [style*="rgba(248,113,113"],
+.sr-ended-card [style*="rgb(248, 113, 113"],
+.sr-ended-card [style*="rgba(220,38,38"],
+.sr-ended-card [style*="rgb(220, 38, 38"] { color: #f87171 !important; }
+
+/* Podium chips keep dark text on their metallic gradients */
+.sr-ended-card .sr-podium,
+.sr-ended-card .sr-podium * { color: var(--racing-black) !important; }
+
+/* Top-return / Class-average / Beat-the-bots headline stats — big colour */
+.sr-ended-card [style*="color: rgb(21, 128, 61)"],
+.sr-ended-card [style*="color: rgb(74, 222, 128)"] { color: #4ade80 !important; }
+.sr-ended-card [style*="color: rgb(185, 28, 28)"],
+.sr-ended-card [style*="color: rgb(248, 113, 113)"] { color: #f87171 !important; }
+
+/* ============================================================
+   STEP 1 · Classroom-projector text bumps for the Final Results
+   All numbers picked so a teacher standing 8m from the screen
+   can read every value without squinting.
+   ============================================================ */
+
+/* "GAME OVER · N STUDENTS · N ROUNDS" — jump from tiny 13px to big-headline size */
+.sr-ended-card [style*="font-size: 10px"][style*="letter-spacing: 0.16em"],
+.sr-ended-card [style*="fontSize: 10"][style*="letterSpacing: '0.16em"] {
+  font-size: 22px !important;
+  letter-spacing: 0.2em !important;
+}
+
+/* "MAR 2026 REVEAL" pill */
+.sr-ended-card [style*="MAR 2026"] { font-size: 18px !important; padding: 8px 18px !important; }
+
+/* Top-return / Class-avg / Beat-bots big values — pop them */
+.sr-ended-card [style*="font-size: 18px"][style*="font-weight: 700"][style*="Geist Mono"],
+.sr-ended-card [style*="fontSize: 18"][style*="fontWeight: 700"][style*="Geist Mono"] {
+  font-size: 48px !important;
+  letter-spacing: -0.02em !important;
+}
+.sr-ended-card [style*="fontSize: 9"][style*="letterSpacing: '0.12em"] {
+  font-size: 16px !important;
+}
+
+/* Counterfactual body ("Buying N shares of X at the start would...") */
+.sr-ended-card [style*="font-size: 14px"][style*="line-height: 1.45"],
+.sr-ended-card [style*="fontSize: 14"][style*="lineHeight: 1.45"] {
+  font-size: 22px !important;
+  line-height: 1.5 !important;
+}
+.sr-ended-card [style*="fontSize: 14"][style*="marginTop: 4"] {
+  font-size: 22px !important;
+}
+/* Bold gold values inside counterfactual and elsewhere — bump */
+.sr-ended-card b { font-size: 1.15em !important; }
+
+/* Counterfactual small italic disclaimer */
+.sr-ended-card [style*="fontStyle: 'italic"][style*="fontSize: 11"] {
+  font-size: 14px !important;
+}
+
+/* "STORY OF THE GAME · 10 YEARS IN 5 ROUNDS" section header */
+.sr-ended-card [style*="Story of the game"],
+.sr-ended-card [style*="STORY OF THE GAME"] {
+  font-size: 20px !important;
+  letter-spacing: 0.22em !important;
+  padding-bottom: 14px !important;
+}
+
+/* Story cards inside the strip */
+.sr-ended-card [style*="Round"][style*="fontFamily"][style*="fontSize: 10"] {
+  font-size: 16px !important;
+  letter-spacing: 0.14em !important;
+}
+.sr-ended-card [style*="linear-gradient(180deg, rgba(15,23,42"] [style*="fontSize: 12"][style*="fontWeight: 700"] {
+  font-size: 20px !important;
+  line-height: 1.4 !important;
+}
+
+/* Story-strip stock chips (DIXON +47%) */
+.sr-ended-card [style*="fontSize: 11"][style*="Geist Mono"][style*="fontWeight: 700"] {
+  font-size: 17px !important;
+  padding: 6px 12px !important;
+}
+
+/* "STOCK MOVERS · 2016 → MAR 2026" section header */
+.sr-ended-card [style*="STOCK MOVERS"] {
+  font-size: 20px !important;
+  letter-spacing: 0.22em !important;
+}
+.sr-ended-card [style*="Ranked by total return"] {
+  font-size: 15px !important;
+}
+
+/* Stock movers table rows — bump everything for classroom readability */
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"] > div:nth-child(1),
+.sr-ended-card [style*="grid-template-columns: 22px 30px 130px 84px 84px 100px 1fr 78px"] > div:nth-child(1) {
+  font-size: 20px !important;
+}
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"] > div:nth-child(2),
+.sr-ended-card [style*="grid-template-columns: 22px 30px 130px 84px 84px 100px 1fr 78px"] > div:nth-child(2) {
+  font-size: 30px !important;
+}
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"] > div:nth-child(3) [style*="fontWeight: 700"],
+.sr-ended-card [style*="grid-template-columns: 22px 30px 130px 84px 84px 100px 1fr 78px"] > div:nth-child(3) [style*="fontWeight: 700"] {
+  font-size: 24px !important;
+}
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"] > div:nth-child(3) [style*="var(--muted)"],
+.sr-ended-card [style*="grid-template-columns: 22px 30px 130px 84px 84px 100px 1fr 78px"] > div:nth-child(3) [style*="var(--muted)"],
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"] > div:nth-child(3) [style*="rgb(255, 255, 255"],
+.sr-ended-card [style*="grid-template-columns: 22px 30px 130px 84px 84px 100px 1fr 78px"] > div:nth-child(3) [style*="rgb(255, 255, 255"] {
+  font-size: 16px !important;
+}
+/* Movers row prices ₹160 → ₹4,223 (children 4 + 5) */
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"] > div:nth-child(4),
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"] > div:nth-child(5),
+.sr-ended-card [style*="grid-template-columns: 22px 30px 130px 84px 84px 100px 1fr 78px"] > div:nth-child(4),
+.sr-ended-card [style*="grid-template-columns: 22px 30px 130px 84px 84px 100px 1fr 78px"] > div:nth-child(5) {
+  font-size: 20px !important;
+}
+/* Movers row % delta (child 6) */
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"] > div:nth-child(6),
+.sr-ended-card [style*="grid-template-columns: 22px 30px 130px 84px 84px 100px 1fr 78px"] > div:nth-child(6) {
+  font-size: 20px !important;
+  padding: 8px 12px !important;
+}
+/* Movers row "0/0 held" (child 8, last) */
+.sr-ended-card [style*="gridTemplateColumns: '22px 30px 130px 84px 84px 100px 1fr 78px'"] > div:nth-child(8),
+.sr-ended-card [style*="grid-template-columns: 22px 30px 130px 84px 84px 100px 1fr 78px"] > div:nth-child(8) {
+  font-size: 15px !important;
+}
+
+/* Legend at bottom of movers table (🏆 = ..., 🐌 = ..., 💥 = ...) */
+.sr-ended-card [style*="marginTop: 8"][style*="gap: 12"][style*="fontSize: 11"] {
+  font-size: 15px !important;
+  gap: 20px !important;
+}
+
+/* Leaderboard + How each student played panel labels */
+.sr-ended-card [style*="Leaderboard"][style*="fontFamily"][style*="letterSpacing"],
+.sr-ended-card [style*="How each student played"][style*="fontFamily"] {
+  font-size: 20px !important;
+  letter-spacing: 0.22em !important;
 }
 
 /* Story strip stock chips (DIXON +47%) - larger + brighter */
@@ -1624,6 +1782,9 @@ input  { font-family: inherit; }
   padding: 32px;
   z-index: 90;
   animation: fade-in 0.3s ease;
+}
+.event-phase-backdrop.rtp-closing {
+  animation: rtp-fade-out 0.3s ease forwards;
 }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 

@@ -1,0 +1,380 @@
+<title>Steal This Funnel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Nunito:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#eef4f4; --surface:#ffffff; --surface-2:#f6faf9;
+  --ink:#14313f; --ink-2:#3d5f6c; --ink-3:#6b8a95;
+  --rule:rgba(20,49,63,.13); --rule-2:rgba(20,49,63,.07);
+  --accent:#2a9d8f; --accent-ink:#1c6f66; --accent-bg:#e4f2ef;
+  --you:#c0392f; --you-bg:#fbeceb;
+  --them:#2f8f66; --them-bg:#e7f4ed;
+  --warn:#b8761f; --warn-bg:#fbf3e6;
+  --shadow:0 1px 2px rgba(20,49,63,.05),0 8px 24px -12px rgba(20,49,63,.18);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0e1f27; --surface:#152b34; --surface-2:#1a333d;
+    --ink:#e8f1f0; --ink-2:#a9c3cb; --ink-3:#7e9aa4;
+    --rule:rgba(232,241,240,.16); --rule-2:rgba(232,241,240,.08);
+    --accent:#48bfae; --accent-ink:#7ad6c6; --accent-bg:#173a38;
+    --you:#f0857a; --you-bg:#3a1d1b;
+    --them:#5fc794; --them-bg:#16332a;
+    --warn:#e0aa5c; --warn-bg:#352a17;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0e1f27; --surface:#152b34; --surface-2:#1a333d;
+  --ink:#e8f1f0; --ink-2:#a9c3cb; --ink-3:#7e9aa4;
+  --rule:rgba(232,241,240,.16); --rule-2:rgba(232,241,240,.08);
+  --accent:#48bfae; --accent-ink:#7ad6c6; --accent-bg:#173a38;
+  --you:#f0857a; --you-bg:#3a1d1b;
+  --them:#5fc794; --them-bg:#16332a;
+  --warn:#e0aa5c; --warn-bg:#352a17;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;background:var(--ground);color:var(--ink-2);
+  font-family:'Nunito',system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.page{max-width:980px;margin:0 auto;padding:48px 24px 96px;}
+
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);
+}
+h1{
+  font-family:'Lora',Georgia,serif;font-weight:600;
+  font-size:clamp(32px,5.4vw,46px);line-height:1.12;color:var(--ink);
+  margin:14px 0 0;letter-spacing:-.015em;text-wrap:balance;
+}
+.lede{margin:18px 0 0;font-size:17.5px;line-height:1.62;max-width:64ch;}
+.lede b{color:var(--ink);font-weight:800;}
+
+/* headline insight */
+.thesis{
+  margin-top:30px;padding:26px 28px;background:var(--surface);
+  border:1px solid var(--rule);border-left:3px solid var(--accent);
+  border-radius:3px;box-shadow:var(--shadow);
+}
+.thesis .k{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);
+}
+.thesis p{margin:10px 0 0;font-size:17.5px;line-height:1.6;max-width:64ch;}
+.thesis strong{color:var(--ink);font-weight:800;}
+
+/* price ladder */
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:20px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+.ladder div{background:var(--surface);padding:17px 18px;}
+.ladder .who{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);}
+.ladder .amt{font-family:'IBM Plex Mono',monospace;font-size:25px;font-weight:600;line-height:1.15;margin-top:8px;font-variant-numeric:tabular-nums;color:var(--ink);}
+.ladder .cap{display:block;margin-top:7px;font-size:13px;line-height:1.45;color:var(--ink-3);}
+.ladder .l-you .amt{color:var(--you);}
+.ladder .l-them .amt{color:var(--them);}
+
+section{margin-top:58px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;padding-bottom:11px;border-bottom:1px solid var(--rule);flex-wrap:wrap;}
+h2{font-family:'Lora',Georgia,serif;font-weight:600;font-size:25px;color:var(--ink);margin:0;letter-spacing:-.01em;}
+.sec-count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-3);}
+.sec-note{margin:12px 0 0;font-size:14.5px;color:var(--ink-3);max-width:68ch;}
+
+/* comparison table */
+.tblwrap{margin-top:22px;overflow-x:auto;border:1px solid var(--rule);border-radius:3px;box-shadow:var(--shadow);}
+table{border-collapse:collapse;width:100%;min-width:660px;background:var(--surface);}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--rule-2);font-size:14.5px;vertical-align:top;}
+thead th{
+  background:var(--surface-2);font-family:'IBM Plex Mono',monospace;
+  font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+thead th.c-you{color:var(--you);}
+tbody th{font-weight:700;color:var(--ink);font-size:14px;width:150px;}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:none;}
+td.you{background:var(--you-bg);color:var(--ink-2);}
+td.you b{color:var(--you);font-weight:800;}
+
+/* steal cards */
+.steals{display:flex;flex-direction:column;gap:14px;margin-top:22px;}
+.st{
+  background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+  box-shadow:var(--shadow);display:grid;grid-template-columns:50px 1fr;overflow:hidden;
+}
+.st-rail{
+  display:flex;align-items:flex-start;justify-content:center;padding-top:21px;
+  background:var(--accent-bg);color:var(--accent-ink);
+  font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;
+}
+.st-warn .st-rail{background:var(--warn-bg);color:var(--warn);}
+.st-body{padding:19px 22px 19px 4px;min-width:0;}
+h3{font-family:'Nunito',sans-serif;font-weight:800;font-size:17.5px;line-height:1.35;color:var(--ink);margin:0 0 8px;text-wrap:balance;}
+.st-body p{margin:0;font-size:15px;line-height:1.62;max-width:70ch;}
+.st-body p+p{margin-top:9px;}
+.src{
+  display:inline-block;margin-bottom:9px;padding:2px 8px;border-radius:2px;
+  background:var(--surface-2);border:1px solid var(--rule-2);
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);
+}
+blockquote{
+  margin:12px 0 0;padding:11px 16px;background:var(--surface-2);
+  border-left:2px solid var(--accent);border-radius:0 3px 3px 0;
+  font-family:'Lora',Georgia,serif;font-style:italic;font-size:15.5px;
+  line-height:1.55;color:var(--ink);
+}
+blockquote cite{
+  display:block;margin-top:7px;font-family:'IBM Plex Mono',monospace;
+  font-style:normal;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);
+}
+.do{
+  margin-top:12px;padding-top:11px;border-top:1px dashed var(--rule);font-size:14.5px;color:var(--ink-2);
+}
+.do b{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);display:block;margin-bottom:4px;
+}
+.st-warn .do b{color:var(--warn);}
+
+/* plan */
+ol.plan{margin:22px 0 0;padding:0;counter-reset:p;display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+ol.plan li{background:var(--surface);padding:16px 20px 16px 58px;position:relative;list-style:none;counter-increment:p;font-size:15px;}
+ol.plan li::before{
+  content:counter(p);position:absolute;left:20px;top:16px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--accent-ink);
+}
+ol.plan li b{color:var(--ink);font-weight:800;display:block;margin-bottom:3px;}
+ol.plan .when{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-3);float:right;padding-left:14px;
+}
+
+footer{
+  margin-top:64px;padding-top:20px;border-top:1px solid var(--rule);
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+
+@media(max-width:660px){
+  .page{padding:36px 16px 72px;}
+  .ladder{grid-template-columns:1fr;}
+  .st{grid-template-columns:38px 1fr;}
+  .st-body{padding:17px 16px 17px 4px;}
+  ol.plan .when{float:none;display:block;padding:0 0 4px;}
+}
+</style>
+
+<div class="page">
+
+<header>
+  <div class="eyebrow">Competitive teardown · 27 Aug 2026</div>
+  <h1>What those two pages do that yours doesn’t</h1>
+  <p class="lede">Both are paid-Instagram funnels, both audited at source. <b>Finkhoz is the one that matters</b> — same market, same beginner audience, same Razorpay stack, and a structure you can copy almost line for line. Digital Scholar is worth studying for two mechanics and worth ignoring for four.</p>
+
+  <div class="thesis">
+    <div class="k">The finding underneath all the others</div>
+    <p>Neither of these pages tries to close a big sale from a cold Reels click. <strong>Finkhoz asks for ₹99. Digital Scholar asks for ₹1,997. You ask for ₹21,000.</strong> Every design difference below is downstream of that one decision — they get to be persuasive over weeks, you have to do it in a single scroll.</p>
+  </div>
+
+  <div class="ladder">
+    <div class="l-them"><div class="who">Finkhoz</div><div class="amt">₹99</div><span class="cap">2-day live Zoom workshop. A tripwire — the real offer comes later.</span></div>
+    <div class="l-them"><div class="who">Digital Scholar</div><div class="amt">₹1,997</div><span class="cap">Recorded course, anchored against a ₹14,999 “founding price” rise.</span></div>
+    <div class="l-you"><div class="who">Investing for Mummies</div><div class="amt">₹21,000</div><span class="cap">8 in-person sessions, weekday mornings, Mumbai only. Asked for on the first click.</span></div>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head"><h2>Side by side</h2><span class="sec-count">verified from page source</span></div>
+  <p class="sec-note">Every row checked against the live HTML of all three pages, not from memory.</p>
+
+  <div class="tblwrap">
+  <table>
+    <thead>
+      <tr><th></th><th class="c-you">Your page</th><th>Finkhoz</th><th>Digital Scholar</th></tr>
+    </thead>
+    <tbody>
+      <tr><th>Headline</th><td class="you"><b>No h1 at all.</b> “Choose your programme”</td><td>“Confused between SIPs, Gold and Mutual Funds?”</td><td>“Master Agentic AI In Depth”</td></tr>
+      <tr><th>Opens with</th><td class="you"><b>A menu</b></td><td>The visitor’s confusion</td><td>Price + scarcity bar</td></tr>
+      <tr><th>Teacher named</th><td class="you"><b>Never mentioned</b></td><td>Above the fold — “Hosted by Aarzoo Shah”</td><td>Full “Meet Your Mentor” section</td></tr>
+      <tr><th>Testimonials</th><td class="you"><b>0</b></td><td>7 — name, role, city, rating</td><td>14+ across three separate sections</td></tr>
+      <tr><th>Credibility</th><td class="you"><b>None</b></td><td>Claims 17,000+ trained, 4.9/5, SEBI Registered Analyst</td><td>Claims 100K learners, $30M ad spend, TV appearance</td></tr>
+      <tr><th>Pain section</th><td class="you"><b>None</b></td><td>“Sound familiar?” — 4 bullets</td><td>“Read this if you are tired of being average”</td></tr>
+      <tr><th>Curriculum</th><td class="you">8 topics listed</td><td>8 timed blocks, each with an outcome</td><td>7 modules, each with an outcome + a thing you build</td></tr>
+      <tr><th>Value stack</th><td class="you"><b>None</b></td><td>₹6,395 of value → ₹99</td><td>₹54,995 of value → ₹1,997</td></tr>
+      <tr><th>Scarcity</th><td class="you"><b>An early bird that expired 7 days ago</b></td><td>“Only 12 seats left · closes when full”</td><td>“First 500 at ₹1,997, then ₹14,999”</td></tr>
+      <tr><th>Meta pixel</th><td class="you"><b>None</b></td><td>fbq + AddToCart event</td><td>fbq + GTM + Clarity + Snap + LinkedIn</td></tr>
+      <tr><th>UTM capture</th><td class="you"><b>Dropped on arrival</b></td><td>Explicit keep-list incl. fbclid + gclid</td><td>Handled via GTM</td></tr>
+      <tr><th>Legal</th><td class="you"><b>Nothing published</b></td><td>Refund + Privacy + T&amp;C + risk disclaimer</td><td>Privacy + Terms + Refund</td></tr>
+      <tr><th>Page weight</th><td class="you">8 KB — genuinely good</td><td>314 KB</td><td>6.4 MB</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>Steal these</h2><span class="sec-count">7 · ranked by impact</span></div>
+  <p class="sec-note">Ordered by how much each is likely to move registrations, not by effort.</p>
+
+  <div class="steals">
+
+    <article class="st">
+      <div class="st-rail">01</div>
+      <div class="st-body">
+        <span class="src">Finkhoz · headline</span>
+        <h3>Open with her problem, not your catalogue</h3>
+        <p>Finkhoz leads with a question the reader is already asking herself. Your page leads with an instruction to the reader about how to use your website.</p>
+        <blockquote>Confused between SIPs, Gold and Mutual Funds?<cite>Finkhoz h1</cite></blockquote>
+        <p>You already own a better version of this line — <em>“You don’t need to know everything to begin”</em> — and it’s currently set in 13px italic grey, above the fold, and then abandoned. That sentence is your headline. It answers the real objection, which isn’t “what’s the syllabus” but “I’ll feel stupid.”</p>
+        <div class="do"><b>Do</b>Promote the tagline to a real h1. Follow it with the outcome: what she can do on day 9 that she can’t do today.</div>
+      </div>
+    </article>
+
+    <article class="st">
+      <div class="st-rail">02</div>
+      <div class="st-body">
+        <span class="src">Both pages</span>
+        <h3>Put Hiral on the page</h3>
+        <p>Finkhoz names Aarzoo above the fold and gives her a full bio block with five credential lines and a positioning sentence — “she teaches the way a smart friend would.” Digital Scholar does the same at greater length. Both understand that in education, the person <em>is</em> the product.</p>
+        <p>Your page doesn’t mention Hiral Goel once. For a ₹21,000 in-person course, that is the single biggest hole — bigger than the pricing bug, though slower to hurt you.</p>
+        <div class="do"><b>Do</b>Photo, three sentences on why she teaches this, and the credentials. Then say plainly whether IFM is SEBI-registered or explicitly education-only — Finkhoz leads with that badge because in this category it settles the trust question fast.</div>
+      </div>
+    </article>
+
+    <article class="st">
+      <div class="st-rail">03</div>
+      <div class="st-body">
+        <span class="src">Finkhoz · “Sound familiar?”</span>
+        <h3>Name the problem in her words before you sell the fix</h3>
+        <p>Four bullets, each a sentence a real person would say to herself: <em>salary comes in, vanishes by month-end, and you can’t say where.</em> Then the bridge — “You don’t need a finance degree to fix this.” It costs one screen and it earns the right to everything after it.</p>
+        <p>Your equivalents are easy and you know them better than Finkhoz does: the household where she isn’t told what the investments are; the SIP someone sold her that she can’t explain; the sense that this conversation happens over her head.</p>
+        <div class="do"><b>Do</b>Add one “Sound familiar?” block between the hero and the batch cards. Write it in her voice, not yours.</div>
+      </div>
+    </article>
+
+    <article class="st">
+      <div class="st-rail">04</div>
+      <div class="st-body">
+        <span class="src">Both pages</span>
+        <h3>Attach an outcome to every session</h3>
+        <p>Your curriculum is already the strongest thing on your page — eight sessions, specific and concrete. Both competitors do one thing you don’t: they promise a result per unit, not a topic per unit.</p>
+        <blockquote>By the end of this module, you will use Claude like an operator, not a consumer.<cite>Digital Scholar · every module</cite></blockquote>
+        <p>Digital Scholar also ends each module with a <em>“★ Build:”</em> line — a tangible thing you walk away holding. Finkhoz frames the whole curriculum as “every block ends with something you can actually use on your next salary credit.”</p>
+        <div class="do"><b>Do</b>One outcome line per session. Session 2 isn’t “insurance made simple” — it’s “you’ll know whether your existing policies are protection or a bad investment, and what to do about it.”</div>
+      </div>
+    </article>
+
+    <article class="st">
+      <div class="st-rail">05</div>
+      <div class="st-body">
+        <span class="src">Both pages · footer</span>
+        <h3>Publish the legal layer — both of them did</h3>
+        <p>Finkhoz publishes a Refund Policy, Privacy Policy, Terms, and an unusually thorough risk disclaimer written against the DPDP Act 2023 and the Consumer Protection Act. Digital Scholar carries Privacy, Terms and Refund Policy plus a trademark disclaimer.</p>
+        <p>You publish none, while your checkout says “Please accept the terms to continue” and your FAQ cites a cancellation policy that doesn’t exist. Two out of two competitors treat this as table stakes.</p>
+        <div class="do"><b>Do</b>This is already item 3 on your critical list. These two pages are useful templates for scope — particularly Finkhoz’s, which is written for exactly your regulatory context.</div>
+      </div>
+    </article>
+
+    <article class="st">
+      <div class="st-rail">06</div>
+      <div class="st-body">
+        <span class="src">Finkhoz · offer block</span>
+        <h3>Itemise what ₹21,000 actually buys</h3>
+        <p>Finkhoz lists six components with individual prices totalling ₹6,395, then prices the lot at ₹99. The arithmetic is theatre, but the underlying move is sound: <b>an unbundled offer feels bigger than a single number.</b></p>
+        <p>Your ₹21,000 currently buys “8 days · 2 hrs” — which reads as a time cost, not a value. It actually includes a printed handbook, small-group teaching capped at 10–12, session notes and slides after every session, interactive games, WhatsApp support, and a venue in Nariman Point. None of that is itemised.</p>
+        <div class="do"><b>Do</b>List the components. Skip the invented rupee values — you don’t need them and at your price point they’d cheapen it.</div>
+      </div>
+    </article>
+
+    <article class="st">
+      <div class="st-rail">07</div>
+      <div class="st-body">
+        <span class="src">Finkhoz · closing CTA</span>
+        <h3>Honest scarcity, stated once</h3>
+        <blockquote>Only 12 seats left in this cohort · Closes when full<cite>Finkhoz · final CTA</cite></blockquote>
+        <p>You have the more credible version of this and don’t use it: your batches are genuinely capped at 10–12, your checkout already tracks seats, and September B1 starts in five days. Right now the only urgency device on your page is an early-bird deadline that expired a week ago — which does the opposite of urgency. It signals nobody is minding the page.</p>
+        <div class="do"><b>Do</b>Surface the real seat count on each batch card, and a “starts in 5 days” marker. Real scarcity, stated once, with no countdown-timer theatrics.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>Don’t steal these</h2><span class="sec-count">4 · wrong for your category</span></div>
+  <p class="sec-note">Digital Scholar sells AI skills. You sell financial education in India, which is a regulated conversation — several of its best-performing devices would be liabilities on your page.</p>
+
+  <div class="steals">
+
+    <article class="st st-warn">
+      <div class="st-rail">!</div>
+      <div class="st-body">
+        <span class="src">Digital Scholar</span>
+        <h3>Income-claim testimonials</h3>
+        <p>“I earned ₹1 lakh in a single month.” “I’m proud to say that I earned ₹80,000.” These work for a course about billable skills. On a page teaching people to invest, testimonials about returns edge toward performance claims — the thing financial educators get into trouble for.</p>
+        <p>Notice how carefully Finkhoz avoids it: every testimonial is about <em>clarity and behaviour change</em> — “we finally feel like a team about money”, “I opened my first SIP the same week.” Not one mentions a return.</p>
+        <div class="do"><b>Instead</b>Collect testimonials about confidence, clarity, and the first action taken. They’re also more persuasive to your actual buyer.</div>
+      </div>
+    </article>
+
+    <article class="st st-warn">
+      <div class="st-rail">!</div>
+      <div class="st-body">
+        <span class="src">Digital Scholar</span>
+        <h3>Manufactured scarcity and price-rise threats</h3>
+        <p>“Goes up the moment we cross 500. No second chances.” “You either move now, or you pay 7x later.” This is a high-pressure register that will read as predatory to a 40-year-old woman deciding whether to spend ₹21,000 of household money — the precise audience whose trust you’ve spent years building.</p>
+        <div class="do"><b>Instead</b>Your scarcity is real (10–12 seats). Real scarcity needs no adjectives.</div>
+      </div>
+    </article>
+
+    <article class="st st-warn">
+      <div class="st-rail">!</div>
+      <div class="st-body">
+        <span class="src">Digital Scholar</span>
+        <h3>The contempt-for-the-reader voice</h3>
+        <p>“Most people will close this page in 12 seconds. Good. This was never written for them.” “Read this if you are tired of being average.” It’s an effective filter for an ambitious-founder audience. It is the exact opposite of “nurturing financially confident women,” and it would repel yours.</p>
+        <div class="do"><b>Instead</b>Finkhoz’s register is your register: “no jargon, no hype, just clarity” — a smart friend, not a drill sergeant.</div>
+      </div>
+    </article>
+
+    <article class="st st-warn">
+      <div class="st-rail">!</div>
+      <div class="st-body">
+        <span class="src">Digital Scholar</span>
+        <h3>The 6.4 MB page</h3>
+        <p>Their landing page is 6.4 MB of HTML — roughly 800× yours. On the mid-range Android phones your audience is actually browsing from, that’s a slow, janky first impression. Your 8 KB / 0.66s page is one of the genuinely good things you have. Add photographs and proof, but don’t inherit a page builder’s bloat along with its layout.</p>
+        <div class="do"><b>Instead</b>Keep the hand-built page. Compress images properly and lazy-load below the fold.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>The advantage you’re not using</h2></div>
+  <div class="thesis" style="margin-top:22px;">
+    <div class="k">Nobody else in this comparison has this</div>
+    <p>Digital Scholar built a bespoke interactive widget — click the tools you use, watch it calculate the hours you’re losing — purely to create one moment of personalised, self-inflicted pain before the pitch. It’s the most sophisticated thing on their page.</p>
+    <p><strong>You have twenty-odd interactive calculators and games already built</strong> — inflation, three buckets, SIP, retirement, goal planning — and not one of them appears on the page that sells the course. They sit on a separate subdomain, entirely outside the funnel.</p>
+  </div>
+  <p class="sec-note" style="margin-top:18px;">This is the highest-leverage thing on either list. One embedded calculator — <em>“what did last year cost your savings account?”</em> — does three jobs at once that no amount of copywriting can: it creates the pain, it proves you can teach, and it demonstrates the classroom experience rather than describing it. It also gives you the free front-end rung your price ladder is missing, and something worth an email address.</p>
+</section>
+
+<section>
+  <div class="sec-head"><h2>What to do, in order</h2></div>
+  <ol class="plan">
+    <li><span class="when">Today</span><b>Fix the price and the pixel</b>Items 1–3 from the first audit: separate September from October pricing, remove the expired early bird, install Meta pixel + GA4 with UTM pass-through, publish the three policies. None of the rest is measurable until the pixel is on.</li>
+    <li><span class="when">This week</span><b>Add the missing half of the page</b>Hiral’s block, three real testimonials, the “Sound familiar?” section, and outcome lines on the eight sessions. This is copy and photographs, not a redesign — it can go onto the current page.</li>
+    <li><span class="when">This week</span><b>Turn on real scarcity</b>Seat counts on the batch cards from the data your checkout already holds, plus a “starts in 5 days” marker.</li>
+    <li><span class="when">Next</span><b>Embed one calculator above the batch cards</b>Your unfair advantage, currently unused. Pick the one with the sharpest emotional payload and gate nothing.</li>
+    <li><span class="when">Decide</span><b>Whether you need a rung below ₹21,000</b>The real strategic question this comparison raises. Both competitors earn the right to a big ask with a small one first; your cheapest entry point is ₹8,000 and it’s for teenagers. A free or near-free live session — built on the games you already own — would change what your Instagram spend is allowed to do.</li>
+  </ol>
+</section>
+
+<footer>
+  <span>Sources audited 27 Aug 2026 · page source + rendered DOM · claims marked as claims</span>
+  <span>Investing for Mummies</span>
+</footer>
+
+</div>

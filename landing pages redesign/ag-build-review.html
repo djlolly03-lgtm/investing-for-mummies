@@ -1,0 +1,355 @@
+<title>AG Build Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Nunito:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#eef4f4; --surface:#ffffff; --surface-2:#f6faf9;
+  --ink:#14313f; --ink-2:#3d5f6c; --ink-3:#6b8a95;
+  --rule:rgba(20,49,63,.13); --rule-2:rgba(20,49,63,.07);
+  --accent:#2a9d8f; --accent-ink:#1c6f66; --accent-bg:#e4f2ef;
+  --stop:#c0392f; --stop-bg:#fbeceb;
+  --check:#b8761f; --check-bg:#fbf3e6;
+  --carry:#5d7f8c; --carry-bg:#eef3f5;
+  --go:#2f8f66; --go-bg:#e7f4ed;
+  --shadow:0 1px 2px rgba(20,49,63,.05),0 8px 24px -12px rgba(20,49,63,.18);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0e1f27; --surface:#152b34; --surface-2:#1a333d;
+    --ink:#e8f1f0; --ink-2:#a9c3cb; --ink-3:#7e9aa4;
+    --rule:rgba(232,241,240,.16); --rule-2:rgba(232,241,240,.08);
+    --accent:#48bfae; --accent-ink:#7ad6c6; --accent-bg:#173a38;
+    --stop:#f0857a; --stop-bg:#3a1d1b;
+    --check:#e0aa5c; --check-bg:#352a17;
+    --carry:#9fbcc6; --carry-bg:#1d333b;
+    --go:#5fc794; --go-bg:#16332a;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0e1f27; --surface:#152b34; --surface-2:#1a333d;
+  --ink:#e8f1f0; --ink-2:#a9c3cb; --ink-3:#7e9aa4;
+  --rule:rgba(232,241,240,.16); --rule-2:rgba(232,241,240,.08);
+  --accent:#48bfae; --accent-ink:#7ad6c6; --accent-bg:#173a38;
+  --stop:#f0857a; --stop-bg:#3a1d1b;
+  --check:#e0aa5c; --check-bg:#352a17;
+  --carry:#9fbcc6; --carry-bg:#1d333b;
+  --go:#5fc794; --go-bg:#16332a;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+body{margin:0;background:var(--ground);color:var(--ink-2);font-family:'Nunito',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.page{max-width:960px;margin:0 auto;padding:48px 24px 96px;}
+
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);}
+h1{font-family:'Lora',Georgia,serif;font-weight:600;font-size:clamp(32px,5.4vw,46px);line-height:1.12;color:var(--ink);margin:14px 0 0;letter-spacing:-.015em;text-wrap:balance;}
+.subject{margin:16px 0 0;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-3);}
+.subject b{color:var(--ink-2);font-weight:600;}
+
+.verdict{margin-top:30px;padding:24px 26px;background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:3px;box-shadow:var(--shadow);}
+.verdict .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);}
+.verdict p{margin:10px 0 0;font-size:17.5px;line-height:1.62;max-width:64ch;}
+.verdict p+p{margin-top:13px;}
+.verdict strong{color:var(--ink);font-weight:800;}
+
+.score{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:14px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+.score div{background:var(--surface);padding:16px 18px;}
+.score .n{font-family:'IBM Plex Mono',monospace;font-size:27px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums;}
+.score .l{display:block;margin-top:7px;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);}
+.s-stop .n{color:var(--stop);} .s-check .n{color:var(--check);}
+.s-carry .n{color:var(--carry);} .s-go .n{color:var(--go);}
+
+section{margin-top:56px;scroll-margin-top:20px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;padding-bottom:11px;border-bottom:1px solid var(--rule);flex-wrap:wrap;}
+h2{font-family:'Lora',Georgia,serif;font-weight:600;font-size:25px;color:var(--ink);margin:0;letter-spacing:-.01em;}
+.sec-count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-3);}
+.sec-note{margin:12px 0 0;font-size:14.5px;color:var(--ink-3);max-width:68ch;}
+
+.cards{display:flex;flex-direction:column;gap:14px;margin-top:22px;}
+.c{background:var(--surface);border:1px solid var(--rule);border-radius:3px;box-shadow:var(--shadow);display:grid;grid-template-columns:52px 1fr;overflow:hidden;}
+.c-rail{display:flex;align-items:flex-start;justify-content:center;padding-top:22px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;}
+.c-body{padding:20px 22px 20px 4px;min-width:0;}
+.k-stop .c-rail{background:var(--stop-bg);color:var(--stop);}
+.k-check .c-rail{background:var(--check-bg);color:var(--check);}
+.k-carry .c-rail{background:var(--carry-bg);color:var(--carry);}
+h3{font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;line-height:1.35;color:var(--ink);margin:0 0 9px;letter-spacing:-.005em;text-wrap:balance;}
+.c-body p{margin:0;font-size:15px;line-height:1.62;max-width:70ch;}
+.c-body p+p{margin-top:10px;}
+
+.ev{margin-top:13px;padding:11px 14px;background:var(--surface-2);border:1px solid var(--rule-2);border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.75;color:var(--ink-2);overflow-x:auto;}
+.ev div{white-space:nowrap;}
+.ev .k{color:var(--ink-3);}
+.ev .bad{color:var(--stop);font-weight:600;}
+.ev .good{color:var(--go);font-weight:600;}
+
+blockquote{margin:12px 0 0;padding:11px 16px;background:var(--surface-2);border-left:2px solid var(--check);border-radius:0 3px 3px 0;font-family:'Lora',Georgia,serif;font-style:italic;font-size:15.5px;line-height:1.55;color:var(--ink);}
+blockquote cite{display:block;margin-top:7px;font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);}
+
+.fix{margin-top:13px;padding-top:12px;border-top:1px dashed var(--rule);font-size:14.5px;color:var(--ink-2);}
+.fix b{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);display:block;margin-bottom:4px;}
+
+ul.works{margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+ul.works li{background:var(--surface);padding:14px 16px 14px 38px;position:relative;font-size:14.5px;color:var(--ink-2);list-style:none;}
+ul.works li::before{content:'';position:absolute;left:16px;top:21px;width:9px;height:9px;border-radius:50%;background:var(--go-bg);border:2px solid var(--go);}
+ul.works li b{color:var(--ink);font-weight:700;}
+
+ol.plan{margin:22px 0 0;padding:0;counter-reset:p;display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+ol.plan li{background:var(--surface);padding:16px 20px 16px 58px;position:relative;list-style:none;counter-increment:p;font-size:15px;}
+ol.plan li::before{content:counter(p);position:absolute;left:20px;top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--accent-ink);}
+ol.plan li b{color:var(--ink);font-weight:800;display:block;margin-bottom:3px;}
+code{font-family:'IBM Plex Mono',monospace;font-size:12.5px;background:var(--surface-2);border:1px solid var(--rule-2);border-radius:2px;padding:1px 5px;}
+
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-3);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+
+@media(max-width:660px){
+  .page{padding:36px 16px 72px;}
+  .score{grid-template-columns:repeat(2,1fr);}
+  .c{grid-template-columns:40px 1fr;}
+  .c-body{padding:18px 16px 18px 4px;}
+}
+</style>
+
+<div class="page">
+
+<header>
+  <div class="eyebrow">Build review · 28 Aug 2026</div>
+  <h1>The page is right. It just isn’t wired up yet.</h1>
+  <p class="subject">Artifact <b>“IFM — Website Build AG”</b> · title <b>Investing for Mummies — Register</b> · reviewed from the decoded page source (142 KB), the bundled asset manifest (27 assets, ~7 MB), the page JavaScript, and the rendered artifact.</p>
+
+  <div class="verdict">
+    <div class="k">Verdict</div>
+    <p>This is the rebuild spec <strong>executed well</strong>. The positioning, the headline, the founder block, the pain section, the outcome lines, the working calculator, the itemised offer, per-batch pricing, the labelled holiday skips — nearly all of it is there, and the writing is good. The persuasion layer is essentially done.</p>
+    <p>But it is <strong>a prototype, not a shippable page</strong>. Every link on it is an in-page anchor — there is no way to book, no way to reach the call, no policy links. Four blocks still contain visible placeholder text. The classroom gallery is broken. And several proof elements need checking before they go in front of anyone.</p>
+  </div>
+
+  <div class="score">
+    <div class="s-stop"><div class="n">4</div><span class="l">Blockers</span></div>
+    <div class="s-check"><div class="n">5</div><span class="l">Verify first</span></div>
+    <div class="s-carry"><div class="n">5</div><span class="l">Still carried over</span></div>
+    <div class="s-go"><div class="n">14</div><span class="l">Genuinely good</span></div>
+  </div>
+</header>
+
+<section id="blockers">
+  <div class="sec-head"><h2>Blockers</h2><span class="sec-count">4 · cannot publish as-is</span></div>
+
+  <div class="cards">
+
+    <article class="c k-stop">
+      <div class="c-rail">01</div>
+      <div class="c-body">
+        <h3>Nothing on the page links anywhere</h3>
+        <p>Every single <code>href</code> in the document is an in-page anchor. There is no booking link, no Calendly link, no WhatsApp, Instagram or email link, and the Refund / Privacy / Terms items in the footer are plain text, not links.</p>
+        <p>So the two CTAs the whole page is built around — <em>Reserve a seat</em> and <em>Pick a time with Hiral</em> — both just scroll you further down the same page. <strong>In its current state the page cannot take a booking or a call.</strong></p>
+        <div class="ev">
+          <div><span class="k">hrefs found →</span> #batches · #call · #curriculum · #familiar · #faq · #hiral · #includes · #room · #top · #voices</div>
+          <div><span class="k">external →</span> fonts.googleapis.com · fonts.gstatic.com · claude.com/product/design</div>
+          <div><span class="k">booking / calendly / wa.me / mailto →</span> <span class="bad">none</span></div>
+          <div><span class="k">&lt;form&gt; →</span> <span class="bad">0</span> &nbsp; <span class="k">&lt;input&gt; →</span> 1 <span class="k">(the calculator)</span></div>
+        </div>
+        <div class="fix"><b>Fix</b>Point each batch card at <code>/ifm?batch=B3…B6</code>, the call CTA at the real Calendly URL, and wire the footer links. Carry the query string through so referral sources survive the click.</div>
+      </div>
+    </article>
+
+    <article class="c k-stop">
+      <div class="c-rail">02</div>
+      <div class="c-body">
+        <h3>Placeholder notes are visible to visitors</h3>
+        <p>Two internal to-dos are rendered as body copy, not comments — a reader sees them:</p>
+        <blockquote>TBC: state SEBI status here in one line — registered, or education-only. Decide before publishing.<cite>In the “what we are, plainly” block</cite></blockquote>
+        <blockquote>Investing for Mummies is a financial education programme and provides no investment advice. [SEBI status line — to confirm]<cite>Footer</cite></blockquote>
+        <p>This is the open decision from the audit surfacing in the page itself. It needs answering, not displaying.</p>
+        <div class="fix"><b>Fix</b>Decide the SEBI wording, write the line, delete both placeholders.</div>
+      </div>
+    </article>
+
+    <article class="c k-stop">
+      <div class="c-rail">03</div>
+      <div class="c-body">
+        <h3>Two of the four batch cards are placeholders — and the real data exists</h3>
+        <p>September B2 shows “Seats to confirm”, “Days &amp; time to confirm”, “Eight dates across September — to confirm” and “Holiday skips to be named inline”. October B2 shows “Eight dates across October — to confirm”.</p>
+        <p>That’s <strong>a regression against your current live page</strong>, which already publishes September B2 correctly: Mon &amp; Wed, 11:00 AM – 1:00 PM, Sep 2, 7, 9, 16, 21, 23, 28, 30. Half the batches on a booking page reading “to confirm” four days before the cohort starts reads as an abandoned page.</p>
+        <div class="fix"><b>Fix</b>Fill both from the live checkout data. Nothing needs deciding — it’s already published elsewhere.</div>
+      </div>
+    </article>
+
+    <article class="c k-stop">
+      <div class="c-rail">04</div>
+      <div class="c-body">
+        <h3>The classroom gallery is broken — all 12 images fail</h3>
+        <p>“The room — this is what it actually looks like” builds its two drifting rows from twelve Google Drive images hotlinked at <code>lh3.googleusercontent.com/d/&lt;id&gt;=w900</code>. They are not bundled with the page, and they return <b>403</b> in the published artifact — the console shows the failures.</p>
+        <p>So the section that proves the room exists renders empty. And even on a normal host this approach is fragile: Drive hotlinks depend on those files staying publicly shared and are rate-limited.</p>
+        <div class="ev">
+          <div><span class="k">gallery images →</span> 12, all from <span class="bad">lh3.googleusercontent.com</span></div>
+          <div><span class="k">console →</span> <span class="bad">Failed to load resource: 403</span></div>
+          <div><span class="k">bundled images →</span> 5 jpg + 1 png + 1 mp4 <span class="k">(the gallery is not among them)</span></div>
+        </div>
+        <div class="fix"><b>Fix</b>Host the twelve photos with the site and reference them by relative path. You already have the originals in <code>CLAUDE/proposals/assets/</code> and <code>highlight-reel-assets/</code>.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="verify">
+  <div class="sec-head"><h2>Verify before this goes public</h2><span class="sec-count">5 · proof and claims</span></div>
+  <p class="sec-note">None of these are style notes. Each is a factual claim the page makes to a stranger being asked for ₹21,000.</p>
+
+  <div class="cards">
+
+    <article class="c k-check">
+      <div class="c-rail">05</div>
+      <div class="c-body">
+        <h3>A teen workshop photo is captioned as a flagship alumna</h3>
+        <p>The image with alt text <b>“Alumna — the wins”</b>, used as a testimonial thumbnail under the heading <em>“116 alumni · Filmed in the room on the last session”</em>, is a photograph of a <strong>teenage classroom</strong> — a mixed-gender group of school-age students, shot from behind, at what is plainly an IFT or IYA session, not the mums flagship.</p>
+        <p>Two problems. It misrepresents who is in the room on a page selling the flagship. And these are <strong>minors</strong> — publishing children’s faces needs verifiable parental consent under the DPDP Act, which is a live concern for a brand selling trust to parents.</p>
+        <p>It’s also, on your own numbers, weak content: your worst-performing post ever was faceless teen-workshop footage shot from behind.</p>
+        <div class="fix"><b>Fix</b>Replace with a flagship-cohort photo. The group shot already bundled with the page (alt “Alumna from the cohort”) is exactly right — real adult women, real room.</div>
+      </div>
+    </article>
+
+    <article class="c k-check">
+      <div class="c-rail">06</div>
+      <div class="c-body">
+        <h3>The three video quotes are the spec’s examples, presented as real footage</h3>
+        <p>The page shows three video testimonials — <em>“I finally read my own policy documents.”</em> · <em>“I opened my first SIP the same week.”</em> · <em>“I stopped nodding along.”</em> — under the line <b>“Filmed in the room on the last session.”</b></p>
+        <p>Those are verbatim the illustrative examples from the rebuild spec, written to show the <em>kind</em> of quote to collect. And the filming task is still outstanding — it’s scheduled for the last session of the September batch, which starts on the 1st. <strong>They cannot yet be real footage.</strong></p>
+        <p>Presenting invented quotes as filmed testimony is the one thing I’d least want this brand to ship. It is also the exact failure mode flagged in the earlier prototypes.</p>
+        <div class="fix"><b>Fix</b>Pull the video block until the September filming happens, or mark it plainly as a layout placeholder. Do not publish it as-is.</div>
+      </div>
+    </article>
+
+    <article class="c k-check">
+      <div class="c-rail">07</div>
+      <div class="c-body">
+        <h3>Confirm who the “aha moment” alumna actually is</h3>
+        <p>The third testimonial thumbnail (alt <b>“Alumna — the aha moment”</b>) is a posed, produced photograph of a woman seated with the printed IFM handbook — a brand shot, not candid classroom footage. Whoever she is, she is being presented as a course graduate giving testimony.</p>
+        <div class="fix"><b>Fix</b>Confirm she is a real flagship alumna and has consented to appear as one. If she is staff, or the photo is a brand shoot, it cannot sit in the testimonial rail.</div>
+      </div>
+    </article>
+
+    <article class="c k-check">
+      <div class="c-rail">08</div>
+      <div class="c-body">
+        <h3>Seat counts are stated as fact</h3>
+        <p>“4 of 12 seats left” on September B1 and “9 of 12 seats left” on October B1. This is exactly the honest scarcity the page should carry — but only if the numbers come from the checkout’s real seat data rather than being written in.</p>
+        <div class="fix"><b>Fix</b>Wire them to the live count (<code>loadSeats('batch4')</code> already holds it) or remove them. A scarcity number that stays frozen for three weeks is worse than none.</div>
+      </div>
+    </article>
+
+    <article class="c k-check">
+      <div class="c-rail">09</div>
+      <div class="c-body">
+        <h3>The four named testimonials need sign-off</h3>
+        <p>Neha M. (Bandra), Celia (Juhu), Amisha Gandhi, Sakshi Jiwrajka. The quotes read as genuine and are correctly framed — every one is about clarity and confidence, none mentions returns. That discipline is right.</p>
+        <p>They still need confirming as real, with permission to publish name and location. Worth a specific check that <b>Sakshi Jiwrajka</b> is an alumna and not the team member of the same first name — a staff testimonial presented as a customer one would be costly if spotted.</p>
+        <div class="fix"><b>Fix</b>Confirm each against the students dashboard and get a one-line written OK. The WhatsApp round to the 72 alumni covers this.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="carried">
+  <div class="sec-head"><h2>Still carried over from the audit</h2><span class="sec-count">5 · unfixed</span></div>
+  <p class="sec-note">These were findings on the live page. The rebuild doesn’t address them yet.</p>
+
+  <div class="cards">
+
+    <article class="c k-carry">
+      <div class="c-rail">10</div>
+      <div class="c-body">
+        <h3>Still no WhatsApp share preview</h3>
+        <p>No Open Graph tags, no Twitter card, no canonical, and no meta description. Given that word of mouth is your actual acquisition engine and it travels on WhatsApp, this remains the highest-value fifteen minutes on the list — and it survived the rebuild untouched.</p>
+        <div class="ev"><div><span class="k">og:</span> <span class="bad">0</span> · <span class="k">twitter:</span> <span class="bad">0</span> · <span class="k">canonical</span> <span class="bad">0</span> · <span class="k">meta description</span> <span class="bad">0</span></div></div>
+      </div>
+    </article>
+
+    <article class="c k-carry">
+      <div class="c-rail">11</div>
+      <div class="c-body">
+        <h3>Still nothing measuring the page</h3>
+        <p>No Meta pixel, no GA4, no GTM, no dataLayer. If this build replaces the current page, you will have rebuilt the entire funnel without any way to tell whether it converts better than what it replaced.</p>
+        <div class="ev"><div><span class="k">fbq</span> <span class="bad">0</span> · <span class="k">gtag</span> <span class="bad">0</span> · <span class="k">gtm</span> <span class="bad">0</span> · <span class="k">dataLayer</span> <span class="bad">0</span></div></div>
+      </div>
+    </article>
+
+    <article class="c k-carry">
+      <div class="c-rail">12</div>
+      <div class="c-body">
+        <h3>No structured data</h3>
+        <p>No <code>Course</code> or <code>FAQPage</code> JSON-LD, though the page now has a full eight-session curriculum and six FAQ entries written out — the richest source material you’ve ever had for it.</p>
+      </div>
+    </article>
+
+    <article class="c k-carry">
+      <div class="c-rail">13</div>
+      <div class="c-body">
+        <h3>It is now a very heavy page</h3>
+        <p>Roughly 7 MB of bundled assets: <b>19 separate woff2 font files</b>, and two founder photographs shipped at 1.4 MB and 1.1 MB uncompressed. Your current live page is 8 KB and serves in 0.66s.</p>
+        <p>Some of that is the artifact bundler inlining everything, and will shrink on a real host. The uncompressed photos and the 19 font files will not shrink on their own. On the mid-range Android phones your audience actually browses from, this is the bloat I flagged as the one thing not to copy from Digital Scholar.</p>
+        <div class="ev">
+          <div><span class="k">fonts →</span> 19 × woff2 &nbsp; <span class="k">images →</span> 5 jpg + 1 png &nbsp; <span class="k">video →</span> 1 mp4 (2.9 MB)</div>
+          <div><span class="k">largest →</span> <span class="bad">1,429 KB</span> and <span class="bad">1,103 KB</span> — both “Hiral Goel”</div>
+        </div>
+        <div class="fix"><b>Fix</b>Subset the fonts to Latin, compress the photos to ~200 KB, and lazy-load the video behind a poster frame.</div>
+      </div>
+    </article>
+
+    <article class="c k-carry">
+      <div class="c-rail">14</div>
+      <div class="c-body">
+        <h3>The calculator shows one number before JavaScript, another after</h3>
+        <p>The served HTML has <b>“– ₹12,500”</b> baked in as the headline figure for the ₹5,00,000 default. The script computes the loss as <code>value × 5%</code> and renders <b>₹25,000</b>. So the number visibly jumps on load — and if the script fails, the wrong figure is what stays on screen.</p>
+        <p>₹12,500 is the <em>shortfall after interest</em> (5% inflation less 2.5% interest), which is what the caption underneath describes. The two numbers are both defensible; they’re just inconsistent with each other.</p>
+        <div class="fix"><b>Fix</b>Pick one figure as the headline and make the static HTML match what the script renders.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="good">
+  <div class="sec-head"><h2>What this build gets right</h2><span class="sec-count">14 · verified in the source</span></div>
+  <p class="sec-note">Worth stating plainly: the hard part — knowing what the page should say — is done, and done well.</p>
+
+  <ul class="works">
+    <li><b>A real h1, at last.</b> Plus 11 <code>h2</code> and 18 <code>h3</code>. The live page has zero headings of any kind.</li>
+    <li><b>The pricing bug is fixed.</b> September ₹21,000, October ₹19,000 with “Early bird until 20 Sep” — priced per batch, correctly.</li>
+    <li><b>Holiday skips are named inline</b> — “No session Mon 14 Sep — holiday, planned”. Exactly right.</li>
+    <li><b>The calculator is built and works</b> — chips, a typed input, live recalculation, and Indian number formatting per the build guide.</li>
+    <li><b>An outcome line on all eight sessions</b>, and the curriculum is richer than the live one, with the games named per session.</li>
+    <li><b>The founder block is there</b> — the business-journalist story, in the hero and in full.</li>
+    <li><b>“Sound familiar?” landed intact</b>, including the deferral line that does the most work.</li>
+    <li><b>Two CTAs</b>, with a genuine “what the call is” section — four bullets that remove every reason to hesitate about booking it.</li>
+    <li><b>What’s included, itemised</b>, with “no invented rupee values, no total-value arithmetic” said out loud.</li>
+    <li><b>Education-not-advice stated twice</b>, and testimonials framed “No returns, no profit claims”.</li>
+    <li><b>Entity, GSTIN and address in the footer</b> — Mooga Tech Solutions, 27AAECM9012F1ZM, Nariman Point.</li>
+    <li><b>The FAQ grew to six</b>, including two good local additions I hadn’t thought of: English-or-Hindi, and how to actually find the venue.</li>
+    <li><b>Accessibility basics are right</b> — alt text on all 7 images, 3 lazy-loaded, aria labels on the calculator.</li>
+    <li><b>21 media queries</b> and a reveal-on-scroll built on IntersectionObserver — responsive and light on the main thread.</li>
+  </ul>
+</section>
+
+<section id="next">
+  <div class="sec-head"><h2>To make it shippable</h2></div>
+  <ol class="plan">
+    <li><b>Wire the links</b>Batch cards → the checkout, call CTA → Calendly, footer → the three policies and WhatsApp. Without this nothing else matters.</li>
+    <li><b>Pull the video testimonial block</b>Until the September filming happens. Keep the four written ones once they’re confirmed.</li>
+    <li><b>Swap the teen photo</b>For a flagship-cohort image, and settle the consent question on the other two.</li>
+    <li><b>Fill September B2 and October B2</b>From the live checkout data — it already exists.</li>
+    <li><b>Rehost the twelve gallery images</b>Alongside the site instead of hotlinking Drive.</li>
+    <li><b>Answer the SEBI question and delete both placeholders</b>The page is currently asking your visitors to wait for a decision.</li>
+    <li><b>Add OG tags, GA4 and the pixel</b>Fifteen minutes, three hours, and the only way you’ll know if this build beat the old page.</li>
+    <li><b>Compress the photos and subset the fonts</b>Before it meets a mid-range Android on mobile data.</li>
+  </ol>
+</section>
+
+<footer>
+  <span>Reviewed 28 Aug 2026 · decoded page source, asset manifest, page JS, rendered artifact</span>
+  <span>Investing for Mummies</span>
+</footer>
+
+</div>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden; background:#0d1b2a; }
+  #stage { position:absolute; width:1280px; height:720px; overflow:hidden;
+           background:radial-gradient(1200px 800px at 50% 30%, #16324a 0%, #0d1b2a 60%, #081220 100%);
+           font-family:'Nunito', sans-serif; }
+  .scene { position:absolute; inset:0; display:none; }
+
+  /* ---------- S1 cold open ---------- */
+  #s1 canvas { position:absolute; inset:0; }
+  #s1 .logoWrap { position:absolute; left:50%; top:44%; transform:translate(-50%,-50%); text-align:center; }
+  #s1 img.logo { width:200px; display:block; margin:0 auto 26px; filter:drop-shadow(0 12px 34px rgba(0,0,0,.5)); }
+  #s1 .t1 { font-family:'Lora', serif; font-size:52px; color:#fff; letter-spacing:1px; font-weight:600; }
+  #s1 .t1 .gold { color:#e9c46a; font-style:italic; }
+  #s1 .t2 { margin-top:14px; font-size:17px; letter-spacing:7px; color:#9fc4c0; font-weight:700; }
+  #s1 .rule { height:2px; width:0; margin:20px auto 0; background:linear-gradient(90deg,transparent,#e9c46a,transparent); }
+
+  /* ---------- S2 tunnel ---------- */
+  #s2 { perspective:900px; perspective-origin:50% 46%; }
+  #world { position:absolute; inset:0; transform-style:preserve-3d; }
+  .card3d { position:absolute; left:50%; top:50%; transform-style:preserve-3d;
+            border:6px solid #fff; border-radius:10px; overflow:hidden;
+            box-shadow:0 30px 70px rgba(0,0,0,.55), 0 0 44px rgba(42,157,143,.25); background:#000; }
+  .card3d img { width:100%; height:100%; object-fit:cover; display:block; }
+  .streak { position:absolute; width:3px; height:160px; border-radius:3px;
+            background:linear-gradient(180deg,transparent,#e9c46a,transparent); opacity:.5; }
+  #s2 .kicker { position:absolute; left:0; right:0; bottom:52px; text-align:center;
+                font-size:15px; letter-spacing:6px; color:#cfe3e0; font-weight:800; opacity:0; }
+
+  /* ---------- S3 hero ---------- */
+  #s3 .bg { position:absolute; inset:-40px; background-size:cover; background-position:center; filter:blur(26px) brightness(.45) saturate(1.1); }
+  #s3 .heroWrap { position:absolute; left:50%; top:50%; height:720px; aspect-ratio:3/4; transform:translate(-50%,-50%); overflow:hidden; }
+  #s3 .heroWrap img { width:100%; height:100%; object-fit:cover; }
+  #s3 .shade { position:absolute; inset:0; background:linear-gradient(180deg,transparent 55%, rgba(8,14,24,.82) 100%); }
+  #s3 .cap { position:absolute; left:64px; bottom:58px; }
+  .chip { display:inline-block; background:#2a9d8f; color:#fff; font-weight:800; font-size:13px; letter-spacing:3px;
+          padding:7px 16px; border-radius:999px; margin-bottom:14px; }
+  .capBig { font-family:'Lora', serif; font-size:40px; color:#fff; line-height:1.15; text-shadow:0 4px 24px rgba(0,0,0,.6); }
+  .capBig em { color:#e9c46a; }
+
+  /* ---------- S4 phones ---------- */
+  #s4 .bg { position:absolute; inset:-40px; background:url('assets/prep/bg_blur.jpg') center/cover; filter:brightness(.4); }
+  #s4 .bgTint { position:absolute; inset:0; background:linear-gradient(120deg, rgba(13,27,42,.85), rgba(26,58,92,.55)); }
+  .phone { position:absolute; width:236px; height:470px; border-radius:26px; background:#0b0f14;
+           border:3px solid rgba(255,255,255,.85); overflow:hidden;
+           box-shadow:0 34px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(0,0,0,.4); }
+  .phone img.fr { width:100%; height:100%; object-fit:cover; display:block; }
+  .phone .notch { position:absolute; top:8px; left:50%; transform:translateX(-50%); width:74px; height:14px;
+                  border-radius:8px; background:rgba(0,0,0,.85); }
+  #s4 .head { position:absolute; left:56px; top:238px; width:270px; }
+  #s4 .head .chip { background:#e9c46a; color:#1a3a5c; }
+  #s4 .head .capBig { font-size:32px; }
+
+  /* ---------- S5 wall ---------- */
+  #s5 .wallWrap { position:absolute; left:-160px; top:-120px; width:1600px; height:980px; transform:rotate(-4deg); }
+  .wrow { position:absolute; left:0; width:6000px; height:250px; display:flex; gap:14px; }
+  .wrow .tile { flex:0 0 auto; height:250px; border-radius:12px; overflow:hidden; border:4px solid rgba(255,255,255,.9); }
+  .wrow .tile img { height:100%; width:auto; display:block; }
+  #s5 .dim { position:absolute; inset:0; background:radial-gradient(900px 560px at 50% 50%, rgba(8,14,24,.18) 0%, rgba(8,14,24,.72) 100%); }
+  #s5 .word { position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); text-align:center;
+              font-family:'Lora', serif; font-weight:700; font-size:120px; color:#fff;
+              text-shadow:0 8px 40px rgba(0,0,0,.75); letter-spacing:2px; }
+  #s5 .word .dot { color:#e9c46a; }
+
+  /* ---------- S6 full-bleed clips ---------- */
+  #s6 .clip { position:absolute; inset:0; overflow:hidden; }
+  #s6 .clip img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  #s6 .shade { position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,14,24,.25) 0%, transparent 30%, transparent 60%, rgba(8,14,24,.8) 100%); }
+  #s6 .cap { position:absolute; left:64px; bottom:56px; }
+
+  /* ---------- S7 finale ---------- */
+  #s7 .mtile { position:absolute; border-radius:8px; overflow:hidden; border:3px solid rgba(255,255,255,.85);
+               box-shadow:0 14px 34px rgba(0,0,0,.5); }
+  #s7 .mtile img { width:100%; height:100%; object-fit:cover; display:block; }
+  #s7 .mdim { position:absolute; inset:0; background:rgba(8,14,24,0); }
+  #s7 .endCard { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); text-align:center; }
+  #s7 .endCard img { width:230px; display:block; margin:0 auto 20px; filter:drop-shadow(0 16px 44px rgba(0,0,0,.65)); }
+  #s7 .endT { font-family:'Lora', serif; font-size:44px; color:#fff; font-weight:600; text-shadow:0 4px 22px rgba(0,0,0,.7); }
+  #s7 .endU { margin-top:12px; font-size:19px; letter-spacing:4px; color:#e9c46a; font-weight:800; }
+  #s7 .endRule { height:2px; width:0; margin:18px auto 0; background:linear-gradient(90deg,transparent,#2a9d8f,transparent); }
+
+  #vig { position:absolute; inset:0; pointer-events:none;
+         background:radial-gradient(1100px 700px at 50% 45%, transparent 55%, rgba(5,10,18,.5) 100%); }
+  #fade { position:absolute; inset:0; background:#081220; opacity:1; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="scene" id="s1">
+    <canvas id="pcv" width="1280" height="720"></canvas>
+    <div class="logoWrap">
+      <img class="logo" src="assets/logo.png">
+      <div class="t1">Investing <span class="gold">for</span> Mummies</div>
+      <div class="rule" id="s1rule"></div>
+      <div class="t2" id="s1sub">WORKSHOP&nbsp;HIGHLIGHTS&nbsp;·&nbsp;2026</div>
+    </div>
+  </div>
+
+  <div class="scene" id="s2">
+    <div id="world"></div>
+    <div class="kicker" id="s2kick">EVERY&nbsp;SESSION&nbsp;·&nbsp;A&nbsp;ROOM&nbsp;FULL&nbsp;OF&nbsp;FIRSTS</div>
+  </div>
+
+  <div class="scene" id="s3">
+    <div class="bg" id="s3bg"></div>
+    <div class="heroWrap" id="s3wrap"><img id="s3img" src="assets/prep/wa6.jpg"></div>
+    <div class="shade"></div>
+    <div class="cap" id="s3cap">
+      <span class="chip">IN THE CLASSROOM</span>
+      <div class="capBig">Real classrooms.<br><em>Real money skills.</em></div>
+    </div>
+  </div>
+
+  <div class="scene" id="s4">
+    <div class="bg"></div><div class="bgTint"></div>
+    <div class="head" id="s4head">
+      <span class="chip">HANDS-ON</span>
+      <div class="capBig" id="s4cap">Games. Worksheets.<br>Real conversations.</div>
+    </div>
+    <div class="phone" id="ph0"><img class="fr" id="phimg0"><div class="notch"></div></div>
+    <div class="phone" id="ph1"><img class="fr" id="phimg1"><div class="notch"></div></div>
+    <div class="phone" id="ph2"><img class="fr" id="phimg2"><div class="notch"></div></div>
+  </div>
+
+  <div class="scene" id="s5">
+    <div class="wallWrap" id="wallWrap"></div>
+    <div class="dim"></div>
+    <div class="word" id="s5word">Learn<span class="dot">.</span></div>
+  </div>
+
+  <div class="scene" id="s6">
+    <div class="clip"><img id="s6img"></div>
+    <div class="shade"></div>
+    <div class="cap" id="s6cap">
+      <span class="chip" id="s6chip">THE VIBE</span>
+      <div class="capBig" id="s6text">This is what money education<br><em>should feel like.</em></div>
+    </div>
+  </div>
+
+  <div class="scene" id="s7">
+    <div id="mosaic"></div>
+    <div class="mdim" id="mdim"></div>
+    <div class="endCard" id="endCard">
+      <img src="assets/logo.png">
+      <div class="endT">Let's raise money-smart families<span style="color:#e9c46a">.</span></div>
+      <div class="endRule" id="endRule"></div>
+      <div class="endU">INVESTINGFORMUMMIES.COM</div>
+    </div>
+  </div>
+
+  <div id="vig"></div>
+  <div id="fade"></div>
+</div>
+
+<script>
+/* ================= timing ================= */
+const FPS = 30;
+const S1_END = 3.6, S2_END = 12.0, S3_END = 15.2, S4_END = 24.4,
+      S5_END = 33.0, S6_END = 40.2, S7_END = 47.6;
+const TOTAL_FRAMES = Math.round(S7_END * FPS);
+
+/* ================= helpers ================= */
+const clamp = (v,a,b)=>Math.max(a,Math.min(b,v));
+const lerp = (a,b,t)=>a+(b-a)*t;
+const ease = t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;      // easeInOutCubic
+const easeOut = t=>1-Math.pow(1-t,3);
+const easeIn = t=>t*t*t;
+const easeOutBack = t=>{const c1=1.20;const c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);}
+function seg(t,a,b){ return clamp((t-a)/(b-a),0,1); }
+function mulberry(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; let x=Math.imul(seed^seed>>>15,1|seed); x=x+Math.imul(x^x>>>7,61|x)^x; return ((x^x>>>14)>>>0)/4294967296; } }
+
+/* ================= assets ================= */
+const TUNNEL = ['p8224','p8411','wa3','p4256','p8227','p4225','wa1','p8434','p4241','wa7','p8223','p4230','p8432','wa2','p8413','wa6'];
+const WALL = ['p8223','p8224','p8227','p8411','p8412','p8413','p8424','p8432','p8433','p8434',
+              'p4225','p4226','p4227','p4228','p4230','p4240','p4241','p4242','p4256','p4257','p4258',
+              'wa1','wa2','wa3','wa4','wa5','wa6','wa7'];
+const SEQ = { c1:132,c2:132,c3:132,c4:132,c5:132,c6:132,f1:108,f2:108 };
+const seqSrc = {};   // name -> [src,...]
+const preloaded = [];
+
+function pre(src){ const im = new Image(); im.src = src; preloaded.push(im);
+  return new Promise(res=>{ im.onload=res; im.onerror=res; }); }
+
+async function loadAll(){
+  const ps = [];
+  for(const n of WALL) ps.push(pre(`assets/prep/${n}.jpg`));
+  ps.push(pre('assets/logo.png')); ps.push(pre('assets/prep/bg_blur.jpg'));
+  for(const [name,count] of Object.entries(SEQ)){
+    seqSrc[name]=[];
+    for(let i=1;i<=count;i++){
+      const s=`assets/seq/${name}/${String(i).padStart(3,'0')}.jpg`;
+      seqSrc[name].push(s); ps.push(pre(s));
+    }
+  }
+  await Promise.all(ps);
+}
+
+/* ================= scene setup ================= */
+const rng = mulberry(20260818);
+
+// S1 particles
+const parts = [];
+for(let i=0;i<70;i++) parts.push({x:rng()*1280, y:rng()*720, r:.8+rng()*2.2, sp:6+rng()*22, ph:rng()*Math.PI*2, o:.25+rng()*.6});
+
+// S2 tunnel cards
+const world = document.getElementById('world');
+const GAP = 620;
+const tunnelCards = TUNNEL.map((n,i)=>{
+  const d = document.createElement('div'); d.className='card3d';
+  const last = i===TUNNEL.length-1;
+  const portrait = n!=='wa1' && n!=='wa2';
+  const w = last? 420 : (portrait? 300: 420), h = last? 560 : (portrait? 400: 300);
+  d.style.width=w+'px'; d.style.height=h+'px';
+  d.style.marginLeft=(-w/2)+'px'; d.style.marginTop=(-h/2)+'px';
+  const img=document.createElement('img'); img.src=`assets/prep/${n}.jpg`; d.appendChild(img);
+  world.appendChild(d);
+  const side = i%2===0? -1: 1;
+  return { el:d, z:-(i+1)*GAP,
+           x: last? 0 : side*(300+rng()*160),
+           y: last? -10 : (rng()*220-110),
+           ry: last? 0 : side*(10+rng()*9),
+           rz: last? 0 : (rng()*8-4), last };
+});
+// streaks
+const streaks=[];
+for(let i=0;i<8;i++){ const s=document.createElement('div'); s.className='streak';
+  document.getElementById('s2').insertBefore(s, document.getElementById('s2kick'));
+  streaks.push({el:s, x:rng()*1280, ph:rng()*10, sp:.6+rng()*1.4}); }
+
+// S4 phones
+const phoneEls=[0,1,2].map(i=>document.getElementById('ph'+i));
+const phoneImgs=[0,1,2].map(i=>document.getElementById('phimg'+i));
+const PH_X=[368,656,944], PH_Y=125;
+
+// S5 wall rows
+const wallWrap=document.getElementById('wallWrap');
+const ROWS=[[],[],[]];
+WALL.forEach((n,i)=>ROWS[i%3].push(n));
+const rowEls=[];
+ROWS.forEach((names,r)=>{
+  const row=document.createElement('div'); row.className='wrow'; row.style.top=(r*264+40)+'px';
+  const list=[...names,...names,...names,...names];
+  list.forEach(n=>{ const t=document.createElement('div'); t.className='tile';
+    const im=document.createElement('img'); im.src=`assets/prep/${n}.jpg`; t.appendChild(im); row.appendChild(t); });
+  wallWrap.appendChild(row); rowEls.push(row);
+});
+
+// S7 mosaic — 7x4 grid of tiles flying in
+const mosaic=document.getElementById('mosaic');
+const M_COLS=7, M_ROWS=4, MW=1280/M_COLS, MH=720/M_ROWS;
+const mtiles=[];
+for(let r=0;r<M_ROWS;r++) for(let c=0;c<M_COLS;c++){
+  const i=r*M_COLS+c; const n=WALL[i%WALL.length];
+  const d=document.createElement('div'); d.className='mtile';
+  d.style.width=(MW-8)+'px'; d.style.height=(MH-8)+'px';
+  d.style.left=(c*MW+4)+'px'; d.style.top=(r*MH+4)+'px';
+  const im=document.createElement('img'); im.src=`assets/prep/${n}.jpg`; d.appendChild(im);
+  mosaic.appendChild(d);
+  const ang=Math.atan2(r-1.5, c-3)||.7;
+  mtiles.push({el:d, dx:Math.cos(ang)*1400, dy:Math.sin(ang)*900, rot:(rng()*70-35), delay:rng()*.55});
+}
+
+/* ================= per-frame ================= */
+const scenes=['s1','s2','s3','s4','s5','s6','s7'].map(id=>document.getElementById(id));
+function show(idx){ scenes.forEach((s,i)=>s.style.display = i===idx?'block':'none'); }
+
+const pcv=document.getElementById('pcv').getContext('2d');
+const fade=document.getElementById('fade');
+
+function setSeqFrame(imgEl, name, t0, t){
+  const arr=seqSrc[name];
+  const idx=clamp(Math.floor((t-t0)*FPS),0,arr.length-1);
+  const src=arr[idx];
+  if(imgEl.getAttribute('src')!==src) imgEl.setAttribute('src',src);
+}
+
+window.SEEK = function(f){
+  const t=f/FPS;
+  // global fade: in 0-0.5, out last 0.6, plus quick dips at hard scene cuts
+  let fo=0;
+  if(t<0.5) fo=1-seg(t,0,0.5);
+  if(t>S7_END-0.7) fo=seg(t,S7_END-0.7,S7_END-0.05);
+  for(const b of [S1_END, S3_END, S4_END]){
+    const d=Math.abs(t-b);
+    if(d<0.14) fo=Math.max(fo, .75*(1-d/0.14));
+  }
+  fade.style.opacity=fo;
+
+  if(t<S1_END){ show(0); s1(t); }
+  else if(t<S2_END){ show(1); s2(t); }
+  else if(t<S3_END){ show(2); s3(t); }
+  else if(t<S4_END){ show(3); s4(t); }
+  else if(t<S5_END){ show(4); s5(t); }
+  else if(t<S6_END){ show(5); s6(t); }
+  else { show(6); s7(t); }
+  return true;
+};
+
+/* ---- S1 ---- */
+function s1(t){
+  pcv.clearRect(0,0,1280,720);
+  for(const p of parts){
+    const y=(p.y - t*p.sp + 720*10)%720;
+    const tw=.5+.5*Math.sin(t*2.2+p.ph);
+    pcv.beginPath(); pcv.arc(p.x + 14*Math.sin(t*.7+p.ph), y, p.r, 0, 7);
+    pcv.fillStyle=`rgba(233,196,106,${(p.o*tw).toFixed(3)})`; pcv.fill();
+  }
+  const lw=document.querySelector('#s1 .logoWrap');
+  const k=easeOut(seg(t,.15,1.3));
+  lw.style.opacity=k;
+  lw.style.transform=`translate(-50%,-50%) scale(${lerp(.86,1,k)})`;
+  lw.style.filter=`blur(${(1-k)*10}px)`;
+  document.getElementById('s1rule').style.width=(easeOut(seg(t,1.0,1.9))*320)+'px';
+  const sub=document.getElementById('s1sub');
+  sub.style.opacity=seg(t,1.3,2.0);
+  // slow push-in at end
+  const z=easeIn(seg(t,2.7,S1_END));
+  scenes[0].style.transform=`scale(${1+z*.35})`;
+  scenes[0].style.opacity=1-easeIn(seg(t,3.15,S1_END))*.9;
+}
+
+/* ---- S2 ---- */
+function s2(t){
+  const u=seg(t,S1_END,S2_END);
+  const totalDepth=(TUNNEL.length)*GAP;
+  const camZ=380+ease(u)*(totalDepth+560-380);
+  for(const c of tunnelCards){
+    const rel=c.z+camZ;
+    const vis=rel>-4200 && rel<700;
+    c.el.style.display=vis?'block':'none';
+    if(!vis) continue;
+    const wob=Math.sin(t*1.1+c.z)*4;
+    c.el.style.transform=`translate3d(${c.x}px,${c.y+wob}px,${rel}px) rotateY(${c.ry}deg) rotateZ(${c.rz}deg)`;
+    c.el.style.opacity=clamp((rel+4200)/900,0,1);
+  }
+  for(const s of streaks){
+    const y=((t*260*s.sp+s.ph*173)%1000)-160;
+    s.el.style.transform=`translate(${s.x}px,${y}px)`;
+    s.el.style.opacity=.14+.2*Math.sin(t*3+s.ph);
+  }
+  const kick=document.getElementById('s2kick');
+  kick.style.opacity=seg(t,4.6,5.6)-seg(t,10.4,11.2);
+}
+
+/* ---- S3 ---- */
+function s3(t){
+  const u=seg(t,S2_END,S3_END);
+  document.getElementById('s3bg').style.backgroundImage="url('assets/prep/wa6.jpg')";
+  const wrap=document.getElementById('s3wrap');
+  wrap.style.transform=`translate(-50%,-50%) scale(${lerp(1.10,1.0,easeOut(seg(t,S2_END,S2_END+.8)))*lerp(1,1.06,u)})`;
+  const cap=document.getElementById('s3cap');
+  const k=easeOut(seg(t,S2_END+.35,S2_END+1.1));
+  cap.style.opacity=k; cap.style.transform=`translateY(${(1-k)*26}px)`;
+}
+
+/* ---- S4 ---- */
+function s4(t){
+  const local=t-S3_END;             // 0..9.2
+  const swap=4.6;
+  const setA=local<swap;
+  const clips=setA?['c1','c2','c3']:['c4','c5','c6'];
+  const t0=setA?S3_END:S3_END+swap;
+  for(let i=0;i<3;i++){
+    const lt=setA?local:local-swap;
+    const inK=easeOutBack(seg(lt,.12+i*.16,.72+i*.16));
+    const outK=setA? easeIn(seg(lt,swap-.5+i*.1,swap+.1+i*.1)) : 0;
+    const y=PH_Y+(1-inK)*560+Math.sin(t*1.4+i*2.1)*7;
+    const x=PH_X[i]-outK*900*(i===1?1.15:1);
+    const rot=(i-1)*3.5+Math.sin(t*.9+i)*2 - outK*14;
+    phoneEls[i].style.transform=`translate(${x}px,${y}px) rotate(${rot}deg)`;
+    phoneEls[i].style.opacity=clamp(inK,0,1);
+    setSeqFrame(phoneImgs[i], clips[i], t0+.1, t);
+  }
+  const head=document.getElementById('s4head');
+  const hk=easeOut(seg(local,.25,1.0));
+  head.style.opacity=hk; head.style.transform=`translateY(${(1-hk)*-20}px)`;
+  document.getElementById('s4cap').innerHTML = setA
+    ? 'Games. Worksheets.<br>Real conversations.'
+    : 'Every student<br><em style="color:#e9c46a">leans in.</em>';
+}
+
+/* ---- S5 ---- */
+function s5(t){
+  const local=t-S4_END;             // 0..8.6
+  const accel=easeIn(seg(local,0,8.6));
+  const base=local*90+accel*local*260;
+  rowEls.forEach((row,r)=>{
+    const dir=r%2===0?-1:1;
+    const P=row._period||1800;
+    const off=(base*(1+r*.18))%P;
+    row.style.transform=`translateX(${dir<0? -off : off-2*P}px)`;
+  });
+  const words=[['Learn',24.4],['Play',27.3],['Grow',30.1]];
+  const wEl=document.getElementById('s5word');
+  let txt='Learn', k=0;
+  for(const [w,st] of words){ if(t>=st){ txt=w; k=seg(t,st,st+.55);} }
+  wEl.innerHTML=`${txt}<span class="dot">.</span>`;
+  wEl.style.opacity=easeOut(k);
+  wEl.style.transform=`translateY(-50%) scale(${lerp(.92,1,easeOut(k))})`;
+  const zoom=1+easeIn(seg(local,6.4,8.6))*.5;
+  scenes[4].style.transform=`scale(${zoom})`;
+  scenes[4].style.opacity=1-easeIn(seg(local,7.6,8.6));
+}
+
+/* ---- S6 ---- */
+function s6(t){
+  const local=t-S5_END;             // 0..7.2
+  const first=local<3.6;
+  const img=document.getElementById('s6img');
+  setSeqFrame(img, first?'f1':'f2', first?S5_END:S5_END+3.6, t);
+  img.style.transform=`scale(${1.04+ (first?seg(local,0,3.6):seg(local,3.6,7.2))*.05})`;
+  document.getElementById('s6chip').textContent = first? 'THE VIBE':'THE WORK';
+  document.getElementById('s6text').innerHTML = first
+    ? 'This is what money education<br><em>should feel like.</em>'
+    : 'Budgets. Bazaars. Big ideas<em>.</em>';
+  const cap=document.getElementById('s6cap');
+  const lk = first? easeOut(seg(local,.3,.95)) : easeOut(seg(local,3.9,4.55));
+  cap.style.opacity=lk; cap.style.transform=`translateY(${(1-lk)*24}px)`;
+}
+
+/* ---- S7 ---- */
+function s7(t){
+  const local=t-S6_END;             // 0..7.4
+  for(const m of mtiles){
+    const k=easeOut(seg(local,m.delay,m.delay+.85));
+    m.el.style.transform=`translate(${(1-k)*m.dx}px,${(1-k)*m.dy}px) rotate(${(1-k)*m.rot}deg)`;
+    m.el.style.opacity=k;
+  }
+  const dimK=seg(local,1.7,2.6);
+  document.getElementById('mdim').style.background=`rgba(8,14,24,${(dimK*.82).toFixed(3)})`;
+  mosaic.style.transform=`scale(${1+dimK*.06})`;
+  mosaic.style.filter=`blur(${dimK*5}px)`;
+  const ec=document.getElementById('endCard');
+  const ek=easeOutBack(seg(local,2.1,3.1));
+  ec.style.opacity=seg(local,2.1,2.7);
+  ec.style.transform=`translate(-50%,-50%) scale(${lerp(.8,1,clamp(ek,0,1.2))})`;
+  document.getElementById('endRule').style.width=(easeOut(seg(local,3.0,3.9))*360)+'px';
+}
+
+/* ================= boot ================= */
+window.READY=false;
+window.TOTAL=TOTAL_FRAMES;
+loadAll().then(()=>{
+  // measure marquee repeat period while s5 is visible (scrollWidth is 0 under display:none)
+  scenes.forEach(s=>s.style.display='none');
+  document.getElementById('s5').style.display='block';
+  rowEls.forEach(row=>{ row._period=(row.scrollWidth+14)/4; });
+  SEEK(0); window.READY=true;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<title>Registernow Build Checklist</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Nunito:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<script type="application/json" id="ifm-state">
+{"v":1,"done":[]}
+</script>
+
+<style>
+:root{
+  --ground:#eef4f4; --surface:#ffffff; --surface-2:#f6faf9;
+  --ink:#14313f; --ink-2:#3d5f6c; --ink-3:#6b8a95;
+  --rule:rgba(20,49,63,.13); --rule-2:rgba(20,49,63,.07);
+  --accent:#2a9d8f; --accent-ink:#1c6f66; --accent-bg:#e4f2ef;
+  --hot:#c0392f; --hot-bg:#fbeceb;
+  --warm:#b8761f; --warm-bg:#fbf3e6;
+  --cool:#5d7f8c; --cool-bg:#eef3f5;
+  --shadow:0 1px 2px rgba(20,49,63,.05),0 8px 24px -12px rgba(20,49,63,.18);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0e1f27; --surface:#152b34; --surface-2:#1a333d;
+    --ink:#e8f1f0; --ink-2:#a9c3cb; --ink-3:#7e9aa4;
+    --rule:rgba(232,241,240,.16); --rule-2:rgba(232,241,240,.08);
+    --accent:#48bfae; --accent-ink:#7ad6c6; --accent-bg:#173a38;
+    --hot:#f0857a; --hot-bg:#3a1d1b;
+    --warm:#e0aa5c; --warm-bg:#352a17;
+    --cool:#9fbcc6; --cool-bg:#1d333b;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0e1f27; --surface:#152b34; --surface-2:#1a333d;
+  --ink:#e8f1f0; --ink-2:#a9c3cb; --ink-3:#7e9aa4;
+  --rule:rgba(232,241,240,.16); --rule-2:rgba(232,241,240,.08);
+  --accent:#48bfae; --accent-ink:#7ad6c6; --accent-bg:#173a38;
+  --hot:#f0857a; --hot-bg:#3a1d1b;
+  --warm:#e0aa5c; --warm-bg:#352a17;
+  --cool:#9fbcc6; --cool-bg:#1d333b;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;background:var(--ground);color:var(--ink-2);
+  font-family:'Nunito',system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
+}
+.page{max-width:860px;margin:0 auto;padding:40px 20px 90px;}
+
+h1{font-family:'Lora',Georgia,serif;font-weight:600;font-size:clamp(27px,4.6vw,36px);line-height:1.15;color:var(--ink);margin:12px 0 0;letter-spacing:-.015em;}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);}
+.lede{margin:12px 0 0;font-size:16px;max-width:62ch;color:var(--ink-2);}
+.lede a{color:var(--accent-ink);}
+
+/* progress */
+.prog{margin-top:24px;padding:20px 22px;background:var(--surface);border:1px solid var(--rule);border-radius:4px;box-shadow:var(--shadow);}
+.prog-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.prog-n{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1;}
+.prog-n span{color:var(--ink-3);font-size:16px;}
+.prog-lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);}
+.bar{margin-top:14px;height:7px;border-radius:99px;background:var(--rule);overflow:hidden;}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .35s ease;}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none;}}
+.phase-mini{margin-top:14px;display:flex;gap:16px;flex-wrap:wrap;}
+.phase-mini div{font-size:12.5px;color:var(--ink-3);font-family:'IBM Plex Mono',monospace;}
+.phase-mini b{color:var(--ink-2);font-weight:600;}
+
+/* filters */
+.filters{margin-top:20px;display:flex;gap:7px;flex-wrap:wrap;align-items:center;}
+.filters .fl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-right:3px;}
+.chip{
+  font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;
+  padding:5px 12px;border-radius:99px;cursor:pointer;
+  background:var(--surface);color:var(--ink-2);
+  border:1px solid var(--rule);transition:all .12s;
+}
+.chip:hover{border-color:var(--accent);}
+.chip[aria-pressed="true"]{background:var(--accent-bg);border-color:var(--accent);color:var(--accent-ink);}
+.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* groups */
+.grp{margin-top:34px;}
+.grp-head{display:flex;align-items:baseline;gap:12px;padding-bottom:9px;border-bottom:1px solid var(--rule);flex-wrap:wrap;}
+h2{font-family:'Lora',Georgia,serif;font-weight:600;font-size:20px;color:var(--ink);margin:0;}
+.grp-when{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:3px;}
+.w-hot{background:var(--hot-bg);color:var(--hot);}
+.w-warm{background:var(--warm-bg);color:var(--warm);}
+.w-cool{background:var(--cool-bg);color:var(--cool);}
+.grp-count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-3);margin-left:auto;font-variant-numeric:tabular-nums;}
+
+ul.tasks{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;}
+li.task{background:var(--surface);display:grid;grid-template-columns:44px 1fr;transition:background .12s;}
+li.task:hover{background:var(--surface-2);}
+li.task.is-done{background:var(--surface-2);}
+.tick{display:flex;align-items:flex-start;justify-content:center;padding:15px 0 0;}
+.tick input{
+  appearance:none;-webkit-appearance:none;margin:0;
+  width:19px;height:19px;border-radius:4px;
+  border:1.5px solid var(--ink-3);background:var(--surface);
+  cursor:pointer;position:relative;flex:0 0 auto;transition:all .12s;
+}
+.tick input:hover{border-color:var(--accent);}
+.tick input:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.tick input:checked{background:var(--accent);border-color:var(--accent);}
+.tick input:checked::after{
+  content:'';position:absolute;left:5.5px;top:2px;
+  width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);
+}
+.tick input:disabled{cursor:not-allowed;opacity:.45;}
+.tbody{padding:13px 18px 14px 0;min-width:0;}
+.ttl{font-size:15.5px;font-weight:700;color:var(--ink);line-height:1.4;}
+li.is-done .ttl{text-decoration:line-through;color:var(--ink-3);font-weight:600;}
+.why{margin:4px 0 0;font-size:13.5px;line-height:1.5;color:var(--ink-3);max-width:66ch;}
+li.is-done .why{opacity:.6;}
+.meta{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;}
+.tag{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;
+  letter-spacing:.07em;text-transform:uppercase;padding:2.5px 7px;border-radius:3px;
+  background:var(--surface-2);border:1px solid var(--rule-2);color:var(--ink-3);
+}
+li.task:hover .tag{background:var(--surface);}
+.tag.own{background:var(--accent-bg);border-color:transparent;color:var(--accent-ink);}
+.tag.blocks{background:var(--hot-bg);border-color:transparent;color:var(--hot);}
+code{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--surface-2);border:1px solid var(--rule-2);border-radius:2px;padding:0 4px;}
+
+/* save state */
+.saver{
+  position:fixed;left:50%;bottom:20px;transform:translateX(-50%);
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;
+  padding:8px 16px;border-radius:99px;
+  background:var(--ink);color:var(--ground);
+  box-shadow:0 6px 22px rgba(0,0,0,.25);
+  opacity:0;pointer-events:none;transition:opacity .2s;z-index:50;
+}
+.saver.on{opacity:1;}
+.note{
+  margin-top:20px;padding:13px 17px;border-radius:4px;font-size:14px;
+  background:var(--warm-bg);border:1px solid var(--rule-2);color:var(--ink-2);
+}
+.note b{color:var(--ink);}
+.note.hide{display:none;}
+
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-3);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+footer a{color:var(--accent-ink);}
+
+@media(max-width:600px){
+  .page{padding:30px 14px 80px;}
+  li.task{grid-template-columns:38px 1fr;}
+  .tbody{padding:12px 14px 13px 0;}
+  .grp-count{margin-left:0;width:100%;}
+}
+</style>
+
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Investing for Mummies · registration page</div>
+    <h1>Registernow build checklist</h1>
+    <p class="lede">Everything from the audit and the rebuild, as one list. Tick as you go — progress saves for everyone with the link. Background and reasoning live in the <a href="https://claude.ai/code/artifact/983f4036-22a0-4d2f-b2bb-47460c12ce1b">audit</a> and the <a href="https://claude.ai/code/artifact/c9c2e7a4-c6b7-4644-a418-39a5f47cf9f7">rebuild spec</a> — you don't need either to work this list.</p>
+
+    <div class="prog">
+      <div class="prog-top">
+        <div><div class="prog-n" id="pn">0 <span>/ 36</span></div><div class="prog-lbl" style="margin-top:6px;">tasks complete</div></div>
+        <div class="prog-lbl" id="ppct">0%</div>
+      </div>
+      <div class="bar"><i id="pbar" style="width:0%"></i></div>
+      <div class="phase-mini" id="pmini"></div>
+    </div>
+
+    <div class="note hide" id="ro"></div>
+
+    <div class="filters">
+      <span class="fl">Owner</span>
+      <button class="chip" data-own="all" aria-pressed="true">Everyone</button>
+      <button class="chip" data-own="Hiral" aria-pressed="false">Hiral</button>
+      <button class="chip" data-own="Coordinator" aria-pressed="false">Coordinator</button>
+      <button class="chip" data-own="Dev" aria-pressed="false">Dev</button>
+      <button class="chip" data-own="Copy" aria-pressed="false">Copy</button>
+      <button class="chip" data-own="Social" aria-pressed="false">Social</button>
+      <button class="chip" id="hideDone" data-own="__hide" aria-pressed="false">Hide done</button>
+    </div>
+  </header>
+
+  <main id="list"></main>
+
+  <footer>
+    <span>27 Aug 2026 · 34 tasks · 2 decisions</span>
+    <span>Ticks save for everyone with the link</span>
+  </footer>
+</div>
+
+<div class="saver" id="saver">Saving…</div>
+
+<script>
+(function(){
+"use strict";
+
+var TASKS = [
+ {id:"d1",g:"decide",t:"Decide September pricing — revert to ₹21,000, or extend the early bird?",w:"The page advertises ₹19,000; the checkout charges ₹21,000 because the 20 Aug deadline passed. September batches start 1 Sep. Blocks the pricing fix below.",o:"Hiral",e:"5 min",b:1},
+ {id:"d2",g:"decide",t:"Decide the SEBI wording — registered, or education-only?",w:"Needed for the founder block. Finkhoz leads with this badge because it settles trust in one line. Ambiguity costs more than either answer.",o:"Hiral",e:"5 min",b:1},
+
+ {id:"t1",g:"today",t:"Fix September pricing on the page",w:"Right now a September buyer reads ₹19,000 and is charged ₹21,000 at checkout. Price each batch separately — September and October are on different deadlines.",o:"Dev",e:"30 min"},
+ {id:"t2",g:"today",t:"Remove “Early bird — till 20 Aug 2026”",w:"Expired a week ago and still on the page. Makes even the October discount you are still honouring look unattended.",o:"Dev",e:"5 min"},
+ {id:"t3",g:"today",t:"Add Open Graph tags so the page previews on WhatsApp",w:"Referrals are how you actually grow, and in India they travel on WhatsApp. Every forwarded link currently arrives as a bare URL — no title, no image, no description.",o:"Dev",e:"15 min"},
+ {id:"t4",g:"today",t:"Redeploy the 8 August homepage build",w:"Seventeen days of a one-action regression. Fixes seven previously-fixed items at once, including the duplicated footer and black video thumbnails.",o:"Dev",e:"5 min"},
+ {id:"t5",g:"today",t:"WhatsApp the 72 flagship alumni",w:"Two asks in one message: “what can you do now that you couldn’t before?” for testimonials, plus a plain referral ask with a forwardable link. Mention September has seats. Highest-return hour this month.",o:"Coordinator",e:"1 hr"},
+ {id:"t6",g:"today",t:"Set up the Calendly call with Hiral",w:"15 minutes, titled “Is IFM right for me?”. Two capped windows a week. Ask “what’s making you hesitate?” on the booking form. The missing middle between ₹21,000 and closing the tab.",o:"Hiral",e:"2 hrs"},
+
+ {id:"t7",g:"week",t:"Write and publish Refund, Privacy and T&C policies",w:"The checkout says “Please accept the terms to continue” and there are no terms. Your FAQ cites a cancellation policy that isn’t published. Both competitors publish all three.",o:"Hiral",e:"3 hrs"},
+ {id:"t8",g:"week",t:"Build the trust footer",w:"Policy links, Mooga Tech Solutions India Pvt Ltd, GSTIN 27AAECM9012F1ZM, the Nariman Point address, WhatsApp number. The footer currently holds one link.",o:"Dev",e:"30 min"},
+ {id:"t9",g:"week",t:"Install Meta pixel + GA4",w:"Not for ads today — it quietly builds the audience for the day you do run them, and with no paid spend, page analytics is your only attribution.",o:"Dev",e:"3 hrs"},
+ {id:"t10",g:"week",t:"Add “How did you hear about us?” to the checkout",w:"One dropdown, populating the referredBy field your form already sends and never fills. Two cohorts from now you’ll know what fills the room instead of estimating.",o:"Dev",e:"1 hr"},
+ {id:"t11",g:"week",t:"New hero headline and subhead",w:"“You were never bad with money. You were just never taught.” Replaces “Choose your programme” — an instruction about using your website, in the most valuable position on the page. You currently have no h1 at all.",o:"Copy",e:"1 hr"},
+ {id:"t12",g:"week",t:"Founder line and photo in the hero",w:"“I covered business for a living. I still let someone else handle my money.” Your top-performing post ever. Asset: hiral-goel.jpg",o:"Copy",e:"1 hr"},
+ {id:"t13",g:"week",t:"Two CTAs — Reserve primary, Talk to Hiral secondary",w:"Style the call lighter. Someone ready to pay should never be diverted into a call; the call catches people who’d otherwise leave.",o:"Dev",e:"1 hr"},
+ {id:"t14",g:"week",t:"Trust strip under the CTA",w:"116 people have taken an IFM workshop · 12 seats per batch · 8 sessions, 2 hrs each · Nariman Point. Use the real number — specificity reads as honesty.",o:"Copy",e:"30 min"},
+ {id:"t15",g:"week",t:"“Sound familiar?” pain block",w:"Four lines in her voice, not yours. The one that matters most names the deferral — “you’ll get to it properly once the children are older; that was four years ago.”",o:"Copy",e:"1 hr"},
+ {id:"t16",g:"week",t:"“Meet Hiral” full block",w:"The business-journalist story, why IFM exists, and how she teaches. Your page doesn’t mention her once. This is the biggest hole on it.",o:"Copy",e:"2 hrs"},
+ {id:"t17",g:"week",t:"Photo band — 3 or 4 workshop photos",w:"Your page has two images and both are logos. Assets in CLAUDE/proposals/assets/ — photo-teaching.jpg, photo-room.jpg, photo-group.jpg, photo-engaged.jpg. Compress properly.",o:"Copy",e:"2 hrs"},
+ {id:"t18",g:"week",t:"Games video v1",w:"Cut from IFM-reel-E-games.mp4 and the 11 finished reels. Build the page version around people playing — your worst-performing reel ever was faceless workshop footage. Ship v1, upgrade later.",o:"Social",e:"4 hrs"},
+ {id:"t19",g:"week",t:"“What’s included” — itemised",w:"₹21,000 currently buys “8 days · 2 hrs”, which reads as a time cost. List the handbook, the cap of 12, notes after each session, the games, WhatsApp access, the venue. No invented rupee values.",o:"Copy",e:"30 min"},
+ {id:"t20",g:"week",t:"Rebuild the batch cards",w:"Per-batch pricing, seats remaining from the data your checkout already holds, and the holiday skips named inline so the date gaps read as planning, not typos.",o:"Dev",e:"2 hrs"},
+ {id:"t21",g:"week",t:"Rename “Reserve →” to “Notify me →” on the three TBA programmes",w:"The button promises a booking and delivers a waitlist. Those three are also your only lead-capture surface — use them properly.",o:"Dev",e:"15 min"},
+
+ {id:"t22",g:"next",t:"Embed one calculator above the batch cards",w:"Your unfair advantage — 0 of 13 tracked competitors has a single interactive game and you have eleven. Pick the sharpest: what last year cost the money in her savings account. Ungated.",o:"Dev",e:"1 day"},
+ {id:"t23",g:"next",t:"Add an outcome line to each of the 8 sessions",w:"The topic says what you cover; the outcome says what she can do. “You’ll know whether the policies you already own are protection or a badly sold investment.”",o:"Copy",e:"2 hrs"},
+ {id:"t24",g:"next",t:"Film video testimonials at the last September session",w:"In the room, on the last day — everyone’s already there and it’s the emotional peak. One question, 30–45s each, shot vertical so every clip doubles as a Reel. Written consent at filming.",o:"Hiral",e:"30 min"},
+ {id:"t25",g:"next",t:"Add 3 text testimonials to the page",w:"From the alumni replies to the WhatsApp message above. First name and “Flagship · [month] batch”. Nothing about returns or profit — clarity and first actions only.",o:"Copy",e:"1 hr"},
+ {id:"t26",g:"next",t:"Add the 3 new FAQ entries",w:"“I’m not good with numbers, will I keep up?” · “Do I need to already have investments?” · “Will you tell me which funds to buy?” These are the objections that stop the booking.",o:"Copy",e:"1 hr"},
+ {id:"t27",g:"next",t:"State the SEBI position on the page",w:"Whatever decision 2 lands on — say it plainly in the founder block.",o:"Copy",e:"15 min"},
+
+ {id:"t28",g:"ongoing",t:"Put a CTA on every Instagram caption",w:"Zero of your twelve captured captions contained a call to action, a price, or a date — and all three workshop mentions were retrospective. A reader who wants in has nowhere to go. Free to fix, starting with the next post.",o:"Social",e:"ongoing"},
+ {id:"t29",g:"ongoing",t:"Keep the batch data current at rollover",w:"Remove past batches when they close. August B1 and B2 are still sitting in the checkout’s BATCH_LABELS.",o:"Dev",e:"10 min"},
+
+ {id:"c1",g:"cleanup",t:"Fix “Next batch — Next batch dates TBA”",w:"Duplicated wording rendering live on the Introductory card — the sync script prefixes text that already contains it.",o:"Dev",e:"15 min"},
+ {id:"c2",g:"cleanup",t:"Reconcile the brand tokens",w:"Page is in Poppins, not Nunito + Lora. Teal is #5ec4ba not #2a9d8f. Two different navies in one file — #1a4a5a in the page vars, #1a3a5c in the header nav.",o:"Dev",e:"2 hrs"},
+ {id:"c3",g:"cleanup",t:"Replace the three background page fetches with one JSON endpoint",w:"Every visit downloads three full pages (~52 KB) to update three words that all currently say TBA. The architecture is right; the payload isn’t.",o:"Dev",e:"2 hrs"},
+ {id:"c4",g:"cleanup",t:"Mobile — compress the batch cards, add a sticky CTA",w:"At 375px the four cards are a long repetitive scroll before anything else, and someone deep in the FAQ has to scroll all the way back up to act.",o:"Dev",e:"3 hrs"},
+ {id:"c5",g:"cleanup",t:"Add Course and FAQPage structured data",w:"You’ve already written the FAQ content, so the rich result is nearly free.",o:"Dev",e:"1 hr"}
+];
+
+var GROUPS = [
+ {k:"decide", n:"Decisions needed", w:"Blocking", c:"w-hot"},
+ {k:"today",  n:"Today",            w:"Urgent",   c:"w-hot"},
+ {k:"week",   n:"This week",        w:"High",     c:"w-warm"},
+ {k:"next",   n:"Next",             w:"Medium",   c:"w-warm"},
+ {k:"ongoing",n:"Ongoing",          w:"Habit",    c:"w-cool"},
+ {k:"cleanup",n:"Cleanup",          w:"Low",      c:"w-cool"}
+];
+
+var TAG = "ifm-state";
+var done = {}, api = null, src = null, writable = false;
+var filterOwn = "all", hideDone = false, timer = null;
+
+function readState(){
+  try{
+    var el = document.getElementById(TAG);
+    var s = JSON.parse(el.textContent);
+    (s.done||[]).forEach(function(id){ done[id] = true; });
+  }catch(e){}
+}
+function localKey(){ return "ifm-checklist-" + location.pathname; }
+function readLocal(){
+  try{
+    var raw = localStorage.getItem(localKey());
+    if(raw) JSON.parse(raw).forEach(function(id){ done[id] = true; });
+  }catch(e){}
+}
+function writeLocal(){
+  try{ localStorage.setItem(localKey(), JSON.stringify(doneList())); }catch(e){}
+}
+function doneList(){
+  return TASKS.filter(function(t){ return done[t.id]; }).map(function(t){ return t.id; });
+}
+
+function esc(s){
+  return String(s).replace(/[&<>"']/g,function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+  });
+}
+
+function render(){
+  var host = document.getElementById("list");
+  var html = "";
+  GROUPS.forEach(function(g){
+    var items = TASKS.filter(function(t){ return t.g === g.k; });
+    var shown = items.filter(function(t){
+      if(filterOwn !== "all" && t.o !== filterOwn) return false;
+      if(hideDone && done[t.id]) return false;
+      return true;
+    });
+    if(!shown.length) return;
+    var nd = items.filter(function(t){ return done[t.id]; }).length;
+    html += '<section class="grp"><div class="grp-head">'
+         +  '<h2>' + esc(g.n) + '</h2>'
+         +  '<span class="grp-when ' + g.c + '">' + esc(g.w) + '</span>'
+         +  '<span class="grp-count">' + nd + ' / ' + items.length + '</span>'
+         +  '</div><ul class="tasks">';
+    shown.forEach(function(t){
+      var d = !!done[t.id];
+      html += '<li class="task' + (d ? " is-done" : "") + '">'
+           +  '<div class="tick"><input type="checkbox" id="cb-' + t.id + '" data-id="' + t.id + '"'
+           +  (d ? " checked" : "") + ' aria-labelledby="lb-' + t.id + '"></div>'
+           +  '<div class="tbody">'
+           +  '<label class="ttl" id="lb-' + t.id + '" for="cb-' + t.id + '">' + esc(t.t) + '</label>'
+           +  '<p class="why">' + esc(t.w) + '</p>'
+           +  '<div class="meta"><span class="tag own">' + esc(t.o) + '</span>'
+           +  '<span class="tag">' + esc(t.e) + '</span>'
+           +  (t.b ? '<span class="tag blocks">Blocking</span>' : "")
+           +  '</div></div></li>';
+    });
+    html += "</ul></section>";
+  });
+  if(!html) html = '<p style="margin-top:34px;color:var(--ink-3);">Nothing matches that filter.</p>';
+  host.innerHTML = html;
+  paint();
+}
+
+function paint(){
+  var total = TASKS.length, n = doneList().length;
+  var pct = total ? Math.round(n / total * 100) : 0;
+  document.getElementById("pn").innerHTML = n + ' <span>/ ' + total + '</span>';
+  document.getElementById("pbar").style.width = pct + "%";
+  document.getElementById("ppct").textContent = pct + "%";
+  var mini = GROUPS.map(function(g){
+    var items = TASKS.filter(function(t){ return t.g === g.k; });
+    var nd = items.filter(function(t){ return done[t.id]; }).length;
+    return '<div>' + esc(g.n) + ' <b>' + nd + '/' + items.length + '</b></div>';
+  }).join("");
+  document.getElementById("pmini").innerHTML = mini;
+}
+
+function saver(msg, hold){
+  var el = document.getElementById("saver");
+  el.textContent = msg;
+  el.classList.add("on");
+  clearTimeout(el._t);
+  el._t = setTimeout(function(){ el.classList.remove("on"); }, hold || 1600);
+}
+
+function buildDoc(){
+  if(!src) return null;
+  var open = '<script type="application/json" id="' + TAG + '">';
+  var i = src.indexOf(open);
+  if(i < 0) return null;
+  var j = src.indexOf("<" + "/script>", i);
+  if(j < 0) return null;
+  var payload = JSON.stringify({ v:1, done: doneList() });
+  return src.slice(0, i + open.length) + "\n" + payload + "\n" + src.slice(j);
+}
+
+function scheduleSave(){
+  writeLocal();
+  if(!api || !writable) return;
+  clearTimeout(timer);
+  saver("Saving…", 4000);
+  timer = setTimeout(function(){
+    var doc = buildDoc();
+    if(!doc){ saver("Saved on this device only"); return; }
+    api.publish(doc).catch(function(err){
+      var code = (err && err.code) || "upstream_error";
+      if(code === "conflict") return;                     // shell reloads to the winner
+      if(code === "not_writer" || code === "not_granted" || code === "not_declared"){
+        writable = false; readOnly("Your ticks are saving on this device only — you have view access to this page, not edit access.");
+        return;
+      }
+      saver("Couldn’t save — ticks kept on this device", 3200);
+    });
+  }, 1800);
+}
+
+function readOnly(msg){
+  var el = document.getElementById("ro");
+  el.innerHTML = msg;
+  el.classList.remove("hide");
+}
+
+document.addEventListener("change", function(e){
+  var cb = e.target.closest && e.target.closest('input[type="checkbox"][data-id]');
+  if(!cb) return;
+  var id = cb.getAttribute("data-id");
+  if(cb.checked) done[id] = true; else delete done[id];
+  var li = cb.closest("li.task");
+  if(li) li.classList.toggle("is-done", cb.checked);
+  paint();
+  if(hideDone) render();
+  scheduleSave();
+});
+
+document.addEventListener("click", function(e){
+  var chip = e.target.closest && e.target.closest(".chip");
+  if(!chip) return;
+  var own = chip.getAttribute("data-own");
+  if(own === "__hide"){
+    hideDone = !hideDone;
+    chip.setAttribute("aria-pressed", hideDone ? "true" : "false");
+  } else {
+    filterOwn = own;
+    Array.prototype.forEach.call(document.querySelectorAll('.chip[data-own]'), function(c){
+      if(c.getAttribute("data-own") !== "__hide")
+        c.setAttribute("aria-pressed", c === chip ? "true" : "false");
+    });
+  }
+  render();
+});
+
+readState();
+readLocal();
+render();
+
+fetch(location.href, {cache:"no-store"})
+  .then(function(r){ return r.ok ? r.text() : null; })
+  .then(function(text){ if(text && text.indexOf(TAG) >= 0) src = text; })
+  .catch(function(){});
+
+if(window.claude && window.claude.use){
+  window.claude.use("artifact").then(function(ns){
+    if(!ns){
+      readOnly("Shared saving isn’t available in this view — your ticks are kept <b>on this device only</b>. Open the artifact link to share progress with the team.");
+      return;
+    }
+    api = ns; writable = true;
+  }).catch(function(){});
+} else {
+  readOnly("Shared saving isn’t available in this copy of the page — ticks are kept <b>on this device only</b>. Use the artifact link for shared progress.");
+}
+
+})();
+</script>

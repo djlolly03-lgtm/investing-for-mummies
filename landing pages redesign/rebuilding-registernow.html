@@ -1,0 +1,536 @@
+<title>Rebuilding Registernow</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Nunito:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#eef4f4; --surface:#ffffff; --surface-2:#f6faf9;
+  --ink:#14313f; --ink-2:#3d5f6c; --ink-3:#6b8a95;
+  --rule:rgba(20,49,63,.13); --rule-2:rgba(20,49,63,.07);
+  --accent:#2a9d8f; --accent-ink:#1c6f66; --accent-bg:#e4f2ef;
+  --gold:#b8761f; --gold-bg:#fbf3e6;
+  --crit:#c0392f; --crit-bg:#fbeceb;
+  --ok:#2f8f66; --ok-bg:#e7f4ed;
+  --shadow:0 1px 2px rgba(20,49,63,.05),0 8px 24px -12px rgba(20,49,63,.18);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0e1f27; --surface:#152b34; --surface-2:#1a333d;
+    --ink:#e8f1f0; --ink-2:#a9c3cb; --ink-3:#7e9aa4;
+    --rule:rgba(232,241,240,.16); --rule-2:rgba(232,241,240,.08);
+    --accent:#48bfae; --accent-ink:#7ad6c6; --accent-bg:#173a38;
+    --gold:#e0aa5c; --gold-bg:#352a17;
+    --crit:#f0857a; --crit-bg:#3a1d1b;
+    --ok:#5fc794; --ok-bg:#16332a;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0e1f27; --surface:#152b34; --surface-2:#1a333d;
+  --ink:#e8f1f0; --ink-2:#a9c3cb; --ink-3:#7e9aa4;
+  --rule:rgba(232,241,240,.16); --rule-2:rgba(232,241,240,.08);
+  --accent:#48bfae; --accent-ink:#7ad6c6; --accent-bg:#173a38;
+  --gold:#e0aa5c; --gold-bg:#352a17;
+  --crit:#f0857a; --crit-bg:#3a1d1b;
+  --ok:#5fc794; --ok-bg:#16332a;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+body{
+  margin:0;background:var(--ground);color:var(--ink-2);
+  font-family:'Nunito',system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.page{max-width:960px;margin:0 auto;padding:48px 24px 96px;}
+
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);}
+h1{font-family:'Lora',Georgia,serif;font-weight:600;font-size:clamp(32px,5.4vw,46px);line-height:1.12;color:var(--ink);margin:14px 0 0;letter-spacing:-.015em;text-wrap:balance;}
+.lede{margin:18px 0 0;font-size:17.5px;line-height:1.62;max-width:65ch;}
+.lede b{color:var(--ink);font-weight:800;}
+
+.callout{
+  margin-top:30px;padding:24px 26px;background:var(--surface);
+  border:1px solid var(--rule);border-left:3px solid var(--accent);
+  border-radius:3px;box-shadow:var(--shadow);
+}
+.callout .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);}
+.callout p{margin:10px 0 0;font-size:17px;line-height:1.62;max-width:64ch;}
+.callout p+p{margin-top:12px;}
+.callout strong{color:var(--ink);font-weight:800;}
+.callout.warn{border-left-color:var(--gold);}
+.callout.warn .k{color:var(--gold);}
+
+/* evidence strip */
+.eyestat{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:16px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+.eyestat div{background:var(--surface);padding:15px 17px;}
+.eyestat .n{font-family:'IBM Plex Mono',monospace;font-size:23px;font-weight:600;line-height:1.1;color:var(--ink);font-variant-numeric:tabular-nums;}
+.eyestat .l{display:block;margin-top:6px;font-size:12px;line-height:1.4;color:var(--ink-3);}
+
+section{margin-top:58px;scroll-margin-top:20px;}
+.sec-head{display:flex;align-items:baseline;gap:14px;padding-bottom:11px;border-bottom:1px solid var(--rule);flex-wrap:wrap;}
+.part{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);width:100%;margin-bottom:-4px;}
+h2{font-family:'Lora',Georgia,serif;font-weight:600;font-size:25px;color:var(--ink);margin:0;letter-spacing:-.01em;}
+.sec-count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-3);}
+.sec-note{margin:12px 0 0;font-size:14.5px;color:var(--ink-3);max-width:68ch;}
+
+/* pillars */
+.pillars{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+.pillars li{background:var(--surface);padding:17px 22px;display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;}
+.pillars .pn{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--accent-ink);padding-top:3px;}
+.pillars b{display:block;color:var(--ink);font-weight:800;font-size:16px;margin-bottom:3px;}
+.pillars span.t{font-size:14.5px;line-height:1.6;}
+
+/* page blocks */
+.blocks{display:flex;flex-direction:column;gap:14px;margin-top:22px;}
+.bk{background:var(--surface);border:1px solid var(--rule);border-radius:3px;box-shadow:var(--shadow);display:grid;grid-template-columns:52px 1fr;overflow:hidden;}
+.bk-rail{display:flex;align-items:flex-start;justify-content:center;padding-top:21px;background:var(--accent-bg);color:var(--accent-ink);font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;}
+.bk-body{padding:19px 22px 20px 4px;min-width:0;}
+h3{font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;line-height:1.35;color:var(--ink);margin:0 0 4px;letter-spacing:-.005em;text-wrap:balance;}
+.why{font-size:13.5px;color:var(--ink-3);margin:0 0 11px;}
+.bk-body p{margin:0;font-size:15px;line-height:1.62;max-width:70ch;}
+.bk-body p+p{margin-top:9px;}
+
+/* copy panel — the paste-this block */
+.copy{
+  margin-top:12px;padding:16px 18px;background:var(--surface-2);
+  border:1px solid var(--rule-2);border-left:2px solid var(--gold);border-radius:0 3px 3px 0;
+}
+.copy .cl{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:9px;}
+.copy .h{font-family:'Lora',Georgia,serif;font-size:21px;font-weight:600;line-height:1.25;color:var(--ink);margin:0 0 8px;letter-spacing:-.01em;}
+.copy .sub{font-size:15px;line-height:1.55;color:var(--ink-2);margin:0;}
+.copy .sub+.sub{margin-top:8px;}
+.copy .eb{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:7px;}
+.copy ul{margin:9px 0 0;padding-left:20px;}
+.copy li{font-size:14.5px;line-height:1.6;margin-bottom:5px;color:var(--ink-2);}
+.copy li::marker{color:var(--gold);}
+.copy .attrib{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-3);margin-top:9px;display:block;}
+
+.assets{margin-top:12px;padding-top:11px;border-top:1px dashed var(--rule);font-size:14px;color:var(--ink-2);}
+.assets b{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);display:block;margin-bottom:5px;}
+code{font-family:'IBM Plex Mono',monospace;font-size:12.5px;background:var(--surface-2);border:1px solid var(--rule-2);border-radius:2px;padding:1px 5px;}
+.assets code{margin-right:3px;}
+
+/* kill list */
+ul.kill{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+ul.kill li{background:var(--surface);padding:14px 18px 14px 44px;position:relative;font-size:14.5px;}
+ul.kill li::before{content:'✕';position:absolute;left:18px;top:14px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:var(--crit);}
+ul.kill b{color:var(--ink);font-weight:700;}
+
+/* plan */
+ol.plan{margin:22px 0 0;padding:0;counter-reset:p;display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+ol.plan li{background:var(--surface);padding:16px 20px 16px 58px;position:relative;list-style:none;counter-increment:p;font-size:15px;}
+ol.plan li::before{content:counter(p);position:absolute;left:20px;top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--accent-ink);}
+ol.plan li b{color:var(--ink);font-weight:800;display:block;margin-bottom:3px;}
+ol.plan .when{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);float:right;padding-left:14px;}
+
+table{border-collapse:collapse;width:100%;background:var(--surface);margin-top:22px;border:1px solid var(--rule);border-radius:3px;}
+th,td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--rule-2);font-size:14.5px;vertical-align:top;}
+thead th{background:var(--surface-2);font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);border-bottom:1px solid var(--rule);}
+tbody tr:last-child td{border-bottom:none;}
+td.num{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.tblwrap{overflow-x:auto;}
+
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-3);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+
+@media(max-width:660px){
+  .page{padding:36px 16px 72px;}
+  .eyestat{grid-template-columns:repeat(2,1fr);}
+  .bk{grid-template-columns:40px 1fr;}
+  .bk-body{padding:17px 16px 18px 4px;}
+  ol.plan .when{float:none;display:block;padding:0 0 4px;}
+}
+</style>
+
+<div class="page">
+
+<header>
+  <div class="eyebrow">Positioning + page rebuild · 27 Aug 2026</div>
+  <h1>Stop selling a syllabus. Start selling the room.</h1>
+  <p class="lede">You asked how to position the page. <b>Your own numbers already answered it</b> — I just went and read them. What follows is the position, then the page block by block with the actual copy, then the part the page can’t fix.</p>
+
+  <div class="callout">
+    <div class="k">What your data says, before I say anything</div>
+    <p>Your three best-performing Instagram posts of all time are <strong>a founder telling her own story and a room full of real women</strong>. Your explainers — RBI policy, repo rate, gold — get roughly half the likes and almost zero comments. Nearly every comment this account has ever received landed on a post with a face in it.</p>
+    <p>Your landing page contains <strong>no founder, no faces, and no story</strong>. It is built entirely out of the content type your audience demonstrably ignores.</p>
+  </div>
+
+  <div class="eyestat">
+    <div><div class="n">116</div><span class="l">people have paid for an IFM workshop</span></div>
+    <div><div class="n">₹14.2L</div><span class="l">collected across three programmes</span></div>
+    <div><div class="n">0 / 13</div><span class="l">tracked competitors target mums</span></div>
+    <div><div class="n">0 / 13</div><span class="l">tracked competitors have a game</span></div>
+  </div>
+</header>
+
+<section id="position">
+  <div class="sec-head"><span class="part">Part one</span><h2>The position</h2></div>
+
+  <div class="callout">
+    <div class="k">The one line everything hangs off</div>
+    <p><strong>The only money school built for mums — taught by a business journalist who was still shut out of her own money conversations.</strong></p>
+  </div>
+
+  <p class="sec-note">Two halves, and both are doing work. “For mums” is the category nobody has claimed. “A business journalist who was still shut out” is the credential that disarms — because if it happened to <em>her</em>, the reader stops believing her own confusion is a personal failing. That second half is not my invention: it’s the top-performing post you have ever published.</p>
+
+  <ol class="pillars">
+    <li><span class="pn">01</span><span class="t"><b>Mums, said out loud</b>Zero of the thirteen accounts you track target mums — every one of them chases “women” broadly. This is the most ownable, least contested position in your category, and your brand name already claims it while your landing page says the generic word “programme”.</span></li>
+    <li><span class="pn">02</span><span class="t"><b>The journalist who was still left out</b>Hiral covered business for a living and money conversations still happened over her head. That is a more persuasive credential than any certification, because it converts the reader’s shame into recognition. It is also true, differentiated, and impossible for a competitor to copy.</span></li>
+    <li><span class="pn">03</span><span class="t"><b>A room of twelve, not a webinar of five hundred</b>Everyone else in this category is selling Zoom. You are selling twelve women around a table in Nariman Point, in person, for eight mornings. That is the premium, and it is what justifies ₹21,000 against a ₹99 webinar. Right now the page treats it as a logistics detail.</span></li>
+    <li><span class="pn">04</span><span class="t"><b>You play it, you don’t sit through it</b>Eleven interactive games. Not one of the thirteen tracked accounts has a single one. Your own competitor synthesis calls this a structural moat — and it is currently being used as social content rather than as the reason to hand over money or an email address.</span></li>
+    <li><span class="pn">05</span><span class="t"><b>116 people already did this</b>You have a real number and you’re hiding it. Seventy-two mums have completed the flagship. That is the honest proof point the page needs, and it is worth more than any invented statistic.</span></li>
+  </ol>
+
+  <div class="callout warn" style="margin-top:22px;">
+    <div class="k">The trap to avoid</div>
+    <p>Do not position against Finkhoz on price or convenience. You will lose — they’re ₹99 and on Zoom. <strong>Position on the opposite axis: small, in person, and finite.</strong> A webinar is something you attend; this is something you finish, in a room, with eleven other women who are also starting from zero.</p>
+  </div>
+</section>
+
+<section id="page">
+  <div class="sec-head"><span class="part">Part two</span><h2>The page, block by block</h2><span class="sec-count">14 blocks · in order</span></div>
+  <p class="sec-note">Copy below is written to be used, not paraphrased. Asset filenames are real files already in your repo. Where a block replaces something that exists, I’ve said so.</p>
+
+  <div class="blocks">
+
+    <article class="bk">
+      <div class="bk-rail">01</div>
+      <div class="bk-body">
+        <h3>Hero</h3>
+        <p class="why">Replaces “Choose your programme”. This is your h1 — you currently have none.</p>
+        <div class="copy">
+          <span class="cl">Paste this</span>
+          <span class="eb">Flagship · September &amp; October 2026 · Nariman Point, Mumbai</span>
+          <p class="h">You were never bad with money. You were just never taught.</p>
+          <p class="sub">Eight mornings. Twelve women in a room. By the end you’ll know exactly where your money is, what it’s doing, and what to ask the person managing it.</p>
+        </div>
+        <p style="margin-top:11px;">Directly beneath, small, beside her photograph — this is the hook your audience has already voted for:</p>
+        <div class="copy">
+          <span class="cl">Founder line · in the hero, not further down</span>
+          <p class="sub" style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:16.5px;">“I covered business for a living. I still let someone else handle my money. That’s exactly why IFM exists.”</p>
+          <span class="attrib">— Hiral Goel, founder · former business journalist</span>
+        </div>
+        <div class="assets"><b>Assets</b><code>proposals/assets/hiral-goel.jpg</code> — professional, warm, direct-to-camera. Crop to a circle at ~72px in the hero.</div>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">02</div>
+      <div class="bk-body">
+        <h3>Two CTAs — book, or talk to Hiral first</h3>
+        <p class="why">The hero currently offers two soft scroll links and no primary action.</p>
+        <div class="copy">
+          <span class="cl">Paste this</span>
+          <p class="sub"><b>Primary button:</b> See September &amp; October batches →</p>
+          <p class="sub"><b>Secondary, lighter weight:</b> Not sure yet? Talk to Hiral for 15 minutes →</p>
+          <p class="sub"><b>Strip beneath, four items:</b></p>
+          <ul>
+            <li>116 people have taken an IFM workshop</li>
+            <li>12 seats per batch — never more</li>
+            <li>8 sessions · 2 hours each · in person</li>
+            <li>Nariman Point, Mumbai</li>
+          </ul>
+        </div>
+        <p>Use “116 people” — not a rounded-up or invented figure. It’s a real number from your students dashboard, and at this size specificity reads as honesty rather than weakness.</p>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">03</div>
+      <div class="bk-body">
+        <h3>“Sound familiar?”</h3>
+        <p class="why">New. The single highest-value addition after the founder block.</p>
+        <div class="copy">
+          <span class="cl">Paste this</span>
+          <p class="h">If money feels like someone else’s subject, you’re not alone</p>
+          <ul>
+            <li>There’s an insurance policy in your name and you couldn’t say what it actually covers.</li>
+            <li>Someone sold your family a SIP. You nod when it comes up. You’ve never seen the statement.</li>
+            <li>You run a household budget better than most CFOs — and still feel unqualified to open a Demat account.</li>
+            <li>You’ve decided you’ll “get to it properly” once the children are older. That was four years ago.</li>
+          </ul>
+          <p class="sub" style="margin-top:11px;">None of that is a maths problem. It’s a nobody-sat-down-and-explained-it problem. That is the entire premise of these eight mornings.</p>
+        </div>
+        <p>Write these in her voice, not yours. The fourth one is the most important — it names the deferral, which is the actual reason she won’t book today.</p>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">04</div>
+      <div class="bk-body">
+        <h3>The interactive moment</h3>
+        <p class="why">New, and your single biggest unfair advantage. Nobody in your category can copy this.</p>
+        <p>Embed one calculator right here, above the batch cards. Not a link out to <code>games.investingformummies.com</code> — embedded, playable, ungated. Pick the one with the sharpest emotional payload: <b>what last year cost the money sitting in her savings account.</b></p>
+        <div class="copy">
+          <span class="cl">Framing copy around it</span>
+          <p class="h">Try the first thing we teach</p>
+          <p class="sub">Put in what’s sitting in your savings account. We’ll show you what inflation quietly took from it last year. This is one of eleven games we play in the room — no lectures, no jargon, no slides you can’t follow.</p>
+        </div>
+        <p>This does three jobs at once that copy cannot: it creates the pain, it proves you can teach, and it demonstrates the classroom instead of describing it. It is also the only thing on the page a visitor might send to a friend.</p>
+        <div class="assets"><b>Assets</b><code>CLAUDE/inflation-calculator.html</code> · game stills at <code>proposals/assets/game-inflation.jpg</code>, <code>game-buckets.jpg</code>, <code>game-quiz.jpg</code></div>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">05</div>
+      <div class="bk-body">
+        <h3>Meet Hiral — the full block</h3>
+        <p class="why">New. Your top two posts of all time are this content. It is not on your page at all.</p>
+        <div class="copy">
+          <span class="cl">Paste this</span>
+          <p class="h">The person who’ll be teaching you</p>
+          <p class="sub">Hiral Goel spent years as a business journalist — reporting on markets, companies and money for a living. And she still found herself outside her own family’s money conversations, nodding along, quietly tuning out.</p>
+          <p class="sub">She started Investing for Mummies because the problem was never intelligence. It was that nobody had ever sat down and explained it patiently, without jargon, without making her feel slow for asking.</p>
+          <p class="sub">That’s how she teaches: everyday analogies, real numbers, games instead of lectures, and no question treated as too basic.</p>
+        </div>
+        <p>Add a plain credential line beneath — and state explicitly whether IFM is SEBI-registered or is education-only. Finkhoz leads with that badge because in this category it settles the trust question in one line. Ambiguity costs you more than either answer.</p>
+        <div class="assets"><b>Assets</b><code>hiral-goel.jpg</code> · <code>photo-founder-live.jpg</code> · <code>photo-teaching.jpg</code> — the last one is the best photo you own: small group, real room, jargon on screen made visual.</div>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">06</div>
+      <div class="bk-body">
+        <h3>Outcomes, not topics</h3>
+        <p class="why">Rewrites your existing curriculum section — already the strongest thing on the page.</p>
+        <p>Keep all eight sessions. Add one outcome line to each. The topic says what you’ll cover; the outcome says what she’ll be able to do. Two examples, in the register to use throughout:</p>
+        <div class="copy">
+          <span class="cl">Pattern</span>
+          <p class="sub"><b>Session 2 — Protect before you grow</b><br>Term &amp; health cover · corporate insurance · ULIPs and endowment plans, demystified<br><em style="color:var(--accent-ink);">You’ll know whether the policies you already own are protection or a badly sold investment — and exactly what to do about each one.</em></p>
+          <p class="sub" style="margin-top:12px;"><b>Session 4 — Mutual funds, part one</b><br>NAV · expense ratio · active vs passive · SIPs, STPs, SWPs<br><em style="color:var(--accent-ink);">You’ll open a fund factsheet and read it without flinching — and know what you’re being charged.</em></p>
+        </div>
+        <p>Then close the section on the two things you already offer and undersell: <b>games run through most sessions</b>, and <b>a printed handbook you keep</b>.</p>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">07</div>
+      <div class="bk-body">
+        <h3>The room — photographs</h3>
+        <p class="why">New. Your page has two images and both are logos.</p>
+        <p>Three or four photographs, no more. The 56-like, 10-comment post — your highest-conversation content ever — was workshop photos. Show what she’s buying: a table, a screen, a small group, women who look like her.</p>
+        <div class="copy">
+          <span class="cl">Caption over the band</span>
+          <p class="sub">Eight mornings, twelve women, one table in Nariman Point. This is what it actually looks like.</p>
+        </div>
+        <div class="assets"><b>Assets</b><code>photo-teaching.jpg</code> · <code>photo-room.jpg</code> · <code>photo-group.jpg</code> · <code>photo-engaged.jpg</code> · <code>photo-table.jpg</code> — all in <code>CLAUDE/proposals/assets/</code>. Compress properly; don’t inherit Digital Scholar’s 6.4 MB page.</div>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">08</div>
+      <div class="bk-body">
+        <h3>Games video</h3>
+        <p class="why">New on the page — but most of it is already shot and cut. Owner: social · Effort: half a day to ship v1.</p>
+        <p>This is the block that makes “interactive games” believable instead of a claim. 30–40 seconds, muted autoplay, captions burned in, sitting directly under the photo band so the page moves from stills to motion.</p>
+        <div class="callout warn" style="margin-top:12px;padding:16px 18px;">
+          <div class="k">The one trap here</div>
+          <p style="font-size:15px;">Your existing game reels are mostly <b>screen recordings</b>. Your own data says faceless workshop content is the worst-performing thing you make — the 5 Aug Young Adults reel, all backs-of-heads and no faces, got 11 likes, your lowest ever. <b>Cut the page version around people playing</b>, with the game screens as B-roll, not the reverse.</p>
+        </div>
+        <p style="margin-top:11px;"><b>Ship v1 this week from what exists</b>, then cut the proper version from the raw session footage. Don’t let the better version block the page.</p>
+        <div class="assets"><b>Assets — already finished</b><code>deliverables/videos/reels/IFM-reel-E-games.mp4</code> (a games cut already exists) · 11 × 15s reels in <code>CLAUDE/content/reels/</code> — <code>stockrush</code>, <code>swayamvar</code>, <code>bbf</code>, <code>buckets</code>, <code>moneymap</code>, <code>hidden</code>, <code>lifestyle-time-machine</code>, <code>nwv</code>, <code>fundgoal</code>, <code>srpro</code>, <code>wealth</code> · 4 teasers in <code>CLAUDE/content/teasers/</code> · real-room footage in <code>highlight-reel-assets/</code> and <code>IFM-workshop-highlights-v4.mp4</code></div>
+        <div class="copy">
+          <span class="cl">Caption above the video</span>
+          <p class="sub">Most sessions run on a game. Eleven of them, built in-house — nobody else teaching this in India has a single one.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">09</div>
+      <div class="bk-body">
+        <h3>Testimonials — video and text</h3>
+        <p class="why">New. You have 116 alumni and zero quotes on the page. Owner: coordinator + founder · Effort: one WhatsApp round, then 20 minutes at the end of a session.</p>
+        <p><b>Video first — and film them in the room, on the last session.</b> That’s the operational trick: everyone is already there, it’s the emotional peak of the course, and it costs you nothing to schedule. Trying to book alumni for filming afterwards is where most brands lose this.</p>
+        <div class="copy">
+          <span class="cl">The only question you need to ask on camera</span>
+          <p class="sub">“What can you do now that you couldn’t do eight mornings ago?”</p>
+          <p class="sub" style="margin-top:9px;">Let them answer unscripted. 30–45 seconds each, shot vertical on a phone at eye level. Vertical means every clip is also a Reel — the format your own account already proves works.</p>
+        </div>
+        <p style="margin-top:11px;"><b>Text testimonials in parallel:</b> WhatsApp the 72 flagship alumni with the same question. Use three or four verbatim, with first name and “Flagship · [month] batch”. Aim for specifics — “I finally read my own policy documents” beats “great course”.</p>
+        <p><b>On the page:</b> two or three videos, muted autoplay with captions (most people watch silent), plus three or four text quotes beneath. Faces visible in every thumbnail.</p>
+        <div class="callout warn" style="margin-top:12px;padding:16px 18px;">
+          <div class="k">Two rules, non-negotiable</div>
+          <p style="font-size:15px;"><b>No returns or profit claims.</b> Digital Scholar runs income-claim testimonials because it sells AI skills; you teach investing, where those edge into performance claims. Every Finkhoz testimonial is about clarity and the first action taken — not one mentions a return. Copy that discipline exactly.</p>
+          <p style="font-size:15px;margin-top:9px;"><b>Written consent before anything is published</b> — a one-line form at filming covering web and social use. You need it under the DPDP Act, and for a brand selling trust it is cheap insurance.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">10</div>
+      <div class="bk-body">
+        <h3>What ₹21,000 includes</h3>
+        <p class="why">New. Right now ₹21,000 buys “8 days · 2 hrs”, which reads as a time cost, not a value.</p>
+        <div class="copy">
+          <span class="cl">Paste this — itemised, no invented rupee values</span>
+          <p class="h">What’s included</p>
+          <ul>
+            <li>8 live sessions, 2 hours each, in person in Nariman Point</li>
+            <li>A cohort capped at 12 — small enough to ask anything</li>
+            <li>A printed handbook to keep and revisit</li>
+            <li>Notes, slides and worksheets after every session</li>
+            <li>Interactive games run through most sessions</li>
+            <li>WhatsApp access for questions between sessions</li>
+          </ul>
+        </div>
+        <p>Skip the fake “total value ₹64,000” arithmetic. At your price point it cheapens the offer — that device belongs to ₹99 funnels.</p>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">11</div>
+      <div class="bk-body">
+        <h3>Batch cards — fixed</h3>
+        <p class="why">Rebuilds the existing cards. Carries three fixes from the audit.</p>
+        <p>Per card: <b>correct per-batch price</b> (September ₹21,000, October ₹19,000 until 20 Sep — not one blanket figure), <b>seats remaining</b> from the data your checkout already holds, and <b>the holiday skip named inline</b> so the date gap reads as planning rather than a typo.</p>
+        <div class="copy">
+          <span class="cl">Card pattern</span>
+          <p class="sub"><b>September · B1</b> · Tue &amp; Thu · 11:30 AM – 1:30 PM<br>Sep 1, 3, 8, 10, 15, 17, 22, 24<br><span style="color:var(--ink-3);">No session 14 Sep (holiday)</span><br><b>₹21,000</b> incl. GST · <span style="color:var(--gold);">4 of 12 seats left</span><br>Reserve →</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">12</div>
+      <div class="bk-body">
+        <h3>Book a call with Hiral</h3>
+        <p class="why">New — and strategically the most important addition on this list. Owner: founder + coordinator · Effort: an afternoon to set up.</p>
+        <p>Right now the page is binary: pay ₹21,000, or leave. For a stranger who found you through a bio link, that is a very large first step. A 15-minute call is the missing middle — and at your scale it isn’t a compromise, it’s the <b>right</b> mechanic.</p>
+        <p><b>Here’s why it fits you specifically.</b> You need 10–12 seats per batch, not 500. A business selling a thousand places a month cannot get on the phone; you can. Every objection this page struggles to answer in text — <em>am I too far behind, will I keep up, is this worth ₹21,000</em> — dissolves in ten minutes of Hiral being the person she is on camera. It is also the single best fix for the cold-₹21,000 problem, and unlike building a ₹99 webinar it requires no new product.</p>
+        <div class="copy">
+          <span class="cl">Paste this</span>
+          <p class="h">Still deciding? Talk to me for fifteen minutes.</p>
+          <p class="sub">No pitch, and no obligation to book. Tell me where you’re starting from and I’ll tell you honestly whether this course is the right thing for you right now — or whether something else is.</p>
+          <p class="sub" style="margin-top:9px;"><b>Button:</b> Pick a time with Hiral →</p>
+        </div>
+        <p style="margin-top:12px;"><b>Set it up like this:</b></p>
+        <div class="copy">
+          <span class="cl">Calendly configuration</span>
+          <ul>
+            <li><b>15 minutes</b>, titled “Is IFM right for me?” — not “sales call”, not “discovery call”</li>
+            <li><b>Two windows a week</b>, capped. Protects Hiral’s mornings and makes the scarcity real rather than performed</li>
+            <li><b>Booking form:</b> name, WhatsApp number, which batch you’re considering, and one open field — <em>“what’s making you hesitate?”</em>. That last answer is the most valuable marketing research you will get all year</li>
+            <li><b>Pass UTMs through as hidden fields</b> so you can see which bio link and which post produced the call</li>
+            <li><b>WhatsApp confirmation and a reminder</b> — you already run that pipeline for registrations</li>
+          </ul>
+        </div>
+        <div class="callout warn" style="margin-top:12px;padding:16px 18px;">
+          <div class="k">Keep it secondary</div>
+          <p style="font-size:15px;">Style the call CTA lighter than “Reserve” everywhere it appears. Someone ready to pay should never be diverted into a call — the call exists to catch the people who would otherwise close the tab. Track both paths separately so you learn which one actually fills the room.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">13</div>
+      <div class="bk-body">
+        <h3>FAQ — keep yours, add three</h3>
+        <p class="why">Your existing six are genuinely good. These three answer the objections that stop the booking.</p>
+        <div class="copy">
+          <span class="cl">Add these</span>
+          <p class="sub"><b>I’m not good with numbers. Will I keep up?</b><br>Yes. There is no maths beyond what you already do running a household. We use analogies and games, not formulas, and nobody in the room has a finance background either.</p>
+          <p class="sub" style="margin-top:11px;"><b>Do I need to already have investments?</b><br>No. Roughly half the room starts with nothing invested. The other half arrives with things someone else chose for them and wants to understand what they own.</p>
+          <p class="sub" style="margin-top:11px;"><b>Will you tell me which funds to buy?</b><br>No — and that’s deliberate. This is education, not advice. You’ll leave able to evaluate a fund yourself, which is the thing nobody can sell you.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="bk">
+      <div class="bk-rail">14</div>
+      <div class="bk-body">
+        <h3>Close, then the trust footer</h3>
+        <p class="why">Replaces a footer containing exactly one link.</p>
+        <div class="copy">
+          <span class="cl">Final CTA</span>
+          <p class="h">You don’t need to know everything to begin.</p>
+          <p class="sub">Twelve seats a batch, and September starts on the 1st. Pick the mornings that fit your week.</p>
+        </div>
+        <p style="margin-top:11px;">Then the footer the page has never had: <b>Refund Policy · Privacy Policy · Terms &amp; Conditions</b>, the legal entity (Mooga Tech Solutions India Pvt Ltd), GSTIN 27AAECM9012F1ZM, the Nariman Point address, and the WhatsApp number. Both competitors publish all three policies. You currently ask people to “accept the terms” that don’t exist.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="kill">
+  <div class="sec-head"><span class="part">Part three</span><h2>What to delete</h2></div>
+  <p class="sec-note">A page gets stronger by subtraction too. All five of these are on it now.</p>
+  <ul class="kill">
+    <li><b>The blanket hero price.</b> It quotes ₹19,000 to September buyers who are charged ₹21,000. Per-batch pricing replaces it.</li>
+    <li><b>“Early bird — till 20 Aug 2026.”</b> Seven days expired. It makes the whole page look unattended.</li>
+    <li><b>“Choose your programme” as the opening line.</b> It’s an instruction about using your website, in the most valuable position on the page.</li>
+    <li><b>“Reserve →” on the three TBA programmes.</b> It leads to a waitlist. Call it “Notify me →” and capture the email properly — that’s your only lead-capture surface.</li>
+    <li><b>The three full-page background fetches</b> that fire on every load to update three words that all say “TBA”.</li>
+  </ul>
+</section>
+
+<section id="traffic">
+  <div class="sec-head"><span class="part">Part four</span><h2>Where students actually come from</h2></div>
+
+  <div class="callout warn">
+    <div class="k">Correcting my own model</div>
+    <p>I previously wrote that 342 followers implies 3–7 seats. <strong>That was the wrong model for your business</strong>, and it’s worth being precise about why, because the right model points somewhere different.</p>
+    <p>I treated Instagram as the top of your funnel. It isn’t. Your students came from Hiral’s direct network, then friends of friends, and now increasingly from people who’ve simply <em>heard about you</em>. Instagram isn’t where they discover you — it’s where they <strong>check you’re real</strong> after someone has already mentioned your name. On your own estimate, 50–60% of students follow the account, which means following largely happens <em>after</em> interest, not before it.</p>
+    <p>So a good chunk of those 342 are people you’ve already taught. Applying a follower-to-customer conversion rate to them double-counts your own customers.</p>
+  </div>
+
+  <div class="tblwrap">
+  <table>
+    <thead><tr><th>The actual engine</th><th>Role</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td><b>Word of mouth</b> — network → friends of friends → “heard about you”</td><td>Acquisition</td><td>Working, and widening</td></tr>
+      <tr><td><b>The landing page</b> — where the referral lands</td><td>Confirmation</td><td>Weakest link</td></tr>
+      <tr><td><b>Instagram</b> — checked <em>after</em> someone hears your name</td><td>Validation</td><td>Thin on proof</td></tr>
+      <tr><td><b>116 past students</b> — the people doing the referring</td><td>Amplifier</td><td>Never asked</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout" style="margin-top:22px;">
+    <div class="k">What this changes — and it makes the page matter more, not less</div>
+    <p>A referred visitor arrives with <strong>intent already high</strong>. Someone she trusts has told her to do this. She is not looking to be persuaded from zero — she is looking for confirmation that what she was told is true, and for the practical facts: when, how much, can I keep up.</p>
+    <p>Which means every friction point on that page costs you more, not less. She arrives ready, reads ₹19,000, and gets charged ₹21,000. She looks for the person she was told about and Hiral isn’t on the page. <strong>You are losing people at the confirmation step, which is the most expensive place to lose them</strong> — someone spent their own credibility sending her.</p>
+  </div>
+
+  <p class="sec-note" style="margin-top:18px;">Three consequences follow.</p>
+
+  <ol class="pillars" style="margin-top:14px;">
+    <li><span class="pn">01</span><span class="t"><b>The WhatsApp share preview stops being a nice-to-have</b>If word of mouth is the engine, in India that word travels on WhatsApp. Your page has no Open Graph tags, so every time someone forwards it to a friend it arrives as a naked URL — no title, no image, no description. That is your acquisition channel degrading at the exact moment of handoff. In the audit I filed this as “important”. Given how you actually grow, treat it as <b>critical</b>.</span></li>
+    <li><span class="pn">02</span><span class="t"><b>Start capturing how people heard about you — the field already exists</b>You’re estimating 50–60% because nothing measures it. Your checkout already sends a <code>referredBy</code> field to your backend and it is hardcoded empty, never filled. Add one dropdown to the form — <em>friend or family · Instagram · past student · found you online · other</em> — and populate it. Within two cohorts you’ll know exactly which channel fills the room instead of guessing, and the answer decides where every future rupee goes.</span></li>
+    <li><span class="pn">03</span><span class="t"><b>Ask for the referral explicitly</b>Word of mouth is already working without being asked for. It is the single cheapest lever you have and nobody is pulling it. Message the 72 flagship alumni — not only for testimonials, but with a plain ask and a forwardable link. A brand this early usually has to manufacture advocacy; you already have it and are leaving it passive.</span></li>
+  </ol>
+
+  <div class="callout" style="margin-top:22px;">
+    <div class="k">On the pixel, now that there’s no ad spend</div>
+    <p>This changes the argument but not the answer. You are not wasting ad budget — but you are still <strong>failing to build the audience you’ll need the day you do spend</strong>. A Meta pixel installed today quietly collects everyone who reads this page; installed the day you launch ads, it starts from zero and you wait months. GA4 matters more now, not less: with no paid attribution, page analytics plus that <code>referredBy</code> field are the only way you’ll ever know what actually works.</p>
+  </div>
+
+  <div class="callout" style="margin-top:22px;">
+    <div class="k">And the strategic question</div>
+    <p>Both competitors earn a big ask with a small one first — ₹99, ₹1,997. Your cheapest entry point is ₹8,000, and it’s for teenagers. <strong>You are the only one in this comparison who could run a genuinely great free session, because you own eleven games nobody else has.</strong> A free 90-minute “play one game, learn one thing” evening — online, monthly — would build the list, the retargeting audience and the testimonial reel all at once, and it would grow the follower base that is currently the binding constraint on everything else.</p>
+  </div>
+</section>
+
+<section id="order">
+  <div class="sec-head"><span class="part">Part five</span><h2>Build order</h2></div>
+  <ol class="plan">
+    <li><span class="when">Today · dev</span><b>Fix the price, install pixel + GA4, publish the policies</b>Non-negotiable and unrelated to design. September buyers are currently quoted ₹19,000 and charged ₹21,000, and nothing on the page is measured.</li>
+    <li><span class="when">Today · dev</span><b>Add OG tags so the page previews on WhatsApp</b>Fifteen minutes of work on your actual acquisition channel. Every forwarded link currently arrives as a bare URL with no title, image, or description.</li>
+    <li><span class="when">Today · coordinator</span><b>WhatsApp the 72 flagship alumni</b>Two asks in one message: a testimonial question, and a plain referral ask with a forwardable link. Mention September has seats. Highest-return message you will send this month, and it takes an hour. Feeds block 9 and fills the room at the same time.</li>
+    <li><span class="when">This week · dev</span><b>Add “how did you hear about us?” to the checkout</b>One dropdown, populating the <code>referredBy</code> field your form already sends and never fills. Two cohorts from now you’ll know which channel actually fills the room instead of estimating it.</li>
+    <li><span class="when">Today · founder</span><b>Set up the Calendly — block 12</b>An afternoon of setup, live the same day. Cheapest conversion mechanic on this list and the only one that works while the rest of the page is still being written.</li>
+    <li><span class="when">This week · copy + design</span><b>Blocks 1, 2, 3, 5, 7 — hero, CTAs, pain, founder, photographs</b>All copy and existing assets. No redesign needed; these drop into the current page. This is roughly 80% of the persuasion gap, and it’s the half your Instagram data says your audience actually responds to.</li>
+    <li><span class="when">This week · dev</span><b>Blocks 10, 11, 14 — inclusions, fixed batch cards, trust footer</b>Mechanical, and closes the audit’s critical findings at the same time.</li>
+    <li><span class="when">This week · social</span><b>Block 8 — games video v1</b>Cut from what already exists. Upgrade to the real-people version once you have the footage; don’t let that block shipping.</li>
+    <li><span class="when">Next · dev + founder</span><b>Blocks 4, 6, 9, 13 — calculator, outcome lines, testimonials, FAQ</b>The calculator is the highest-leverage single item on this list — a developer day, not a designer. Testimonial video gets filmed at the last session of the September batch.</li>
+    <li><span class="when">Ongoing · social</span><b>Put a CTA on every caption</b>Free, immediate, and currently the largest gap in your funnel: zero of twelve captured captions contained a call to action, a price, or a date.</li>
+  </ol>
+</section>
+
+<footer>
+  <span>Grounded in ifm-published.json · ifm-followers.json · comp-synthesis.json · social-audit-aug-2026.md · students dashboard</span>
+  <span>Investing for Mummies</span>
+</footer>
+
+</div>

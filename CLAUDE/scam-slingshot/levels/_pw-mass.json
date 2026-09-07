@@ -1,0 +1,23 @@
+{
+  "id": "_pw-mass",
+  "name": "PROBE — momentum transfer: three hammers, three identical targets",
+  "chapter": 0,
+  "sky": "morning",
+  "par": 1,
+  "teaches": "Harness fixture: identical free-standing wood column, identical 0.55 m drop onto its top corner. Only the hammer's material — and therefore its mass — differs.",
+  "ammo": ["sip"],
+  "blocks": [
+    { "mat": "wood",  "x": 9.00,  "y": 1.30, "w": 0.44, "h": 2.60, "rot": 0 },
+    { "mat": "glass", "x": 9.30,  "y": 3.60, "w": 0.90, "h": 0.90, "rot": 0 },
+
+    { "mat": "wood",  "x": 13.00, "y": 1.30, "w": 0.44, "h": 2.60, "rot": 0 },
+    { "mat": "wood",  "x": 13.30, "y": 3.60, "w": 0.90, "h": 0.90, "rot": 0 },
+
+    { "mat": "wood",  "x": 17.00, "y": 1.30, "w": 0.44, "h": 2.60, "rot": 0 },
+    { "mat": "stone", "x": 17.30, "y": 3.60, "w": 0.90, "h": 0.90, "rot": 0 }
+  ],
+  "villains": [
+    { "type": "lotteryUncle", "x": 24.00, "y": 0.56 }
+  ],
+  "props": []
+}
