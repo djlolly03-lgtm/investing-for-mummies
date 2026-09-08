@@ -12,18 +12,26 @@ const SP=__dirname+'/assets/';
 const THUMBS='/Users/lollyg/Documents/investing for Mummies/CLAUDE/content/thumbs/';
 const b64=f=>'image/jpeg;base64,'+fs.readFileSync(THUMBS+f).toString('base64');
 const png64=f=>'image/png;base64,'+fs.readFileSync(SP+f).toString('base64');
-const LOGO='image/png;base64,'+fs.readFileSync(SP+'ifm-logo-circ.png').toString('base64');
+// Built by prep_assets.js from IFM-logo-round-560px-transparent-no-TM.png.
+// The old ifm-logo-circ.png was the TM badge: its white disc cropped the mark
+// off-centre and clipped the trademark glyph at the circle's edge. Both files are
+// genuinely SQUARE, so the square boxes below scale them uniformly instead of
+// squashing the 560x616 master by 10%.
+const LOGO='image/png;base64,'+fs.readFileSync(SP+'ifm-logo-sq-light.png').toString('base64');
+// Navy slides need the white plate — the mark is dark navy and vanishes without it.
+const LOGOD='image/png;base64,'+fs.readFileSync(SP+'ifm-logo-sq-plate.png').toString('base64');
 
 const pres = new pptxgen();
 pres.layout='LAYOUT_WIDE';
 const T=(s,t,o)=>s.addText(t,Object.assign({fontFace:BODY,isTextBox:true},o));
 const logo=s=>s.addImage({data:LOGO,x:12.45,y:.32,w:.55,h:.55});
+const logoD=s=>s.addImage({data:LOGOD,x:12.45,y:.32,w:.55,h:.55});
 const card=(s,x,y,w,h,fill)=>s.addShape('roundRect',{x,y,w,h,rectRadius:.1,fill:{color:fill||CREAM},line:{color:LINE,width:1}});
 // section divider slide
 function section(n,title,sub){
   const s=pres.addSlide(); s.background={color:NAVY};
   s.addShape('ellipse',{x:10.4,y:-1.5,w:5.2,h:5.2,fill:{color:INKDK}});
-  s.addImage({data:LOGO,x:12.45,y:.32,w:.55,h:.55});
+  s.addImage({data:LOGOD,x:12.45,y:.32,w:.55,h:.55});
   T(s,'PART '+n,{x:.9,y:2.7,w:4,h:.4,fontSize:13,bold:true,color:'8FD1C7',charSpacing:2.5});
   T(s,title,{x:.85,y:3.15,w:10.5,h:1.1,fontFace:HEAD,fontSize:42,bold:true,color:WHITE});
   T(s,sub,{x:.9,y:4.35,w:9.5,h:.8,fontSize:16,color:'CADCE8'});
@@ -35,7 +43,7 @@ let s;
 s=pres.addSlide(); s.background={color:NAVY};
 s.addShape('ellipse',{x:10.1,y:-1.4,w:5.4,h:5.4,fill:{color:INKDK}});
 s.addShape('ellipse',{x:-1.6,y:5.2,w:4.6,h:4.6,fill:{color:INKDK}});
-s.addImage({data:LOGO,x:.9,y:.75,w:1.0,h:1.0});
+s.addImage({data:LOGOD,x:.9,y:.75,w:1.0,h:1.0});
 T(s,'INVESTING FOR MUMMIES · SEPTEMBER 2026',{x:2.05,y:1.05,w:10,h:.4,fontSize:13,bold:true,color:'8FD1C7',charSpacing:2});
 T(s,'The Content Hub',{x:.85,y:2.15,w:11.6,h:1.1,fontFace:HEAD,fontSize:54,bold:true,color:WHITE});
 T(s,'Operating guide — how we capture, tag, publish and measure everything we make.',{x:.9,y:3.4,w:9.6,h:.9,fontSize:20,color:'CADCE8'});
@@ -144,7 +152,7 @@ T(s,'Existing folders continue to work — nothing was moved. The daily processo
 /* ============ 9. ONE RULE ============ */
 s=pres.addSlide(); s.background={color:NAVY};
 s.addShape('ellipse',{x:10.6,y:4.6,w:4.4,h:4.4,fill:{color:INKDK}});
-s.addImage({data:LOGO,x:12.45,y:.32,w:.55,h:.55});
+s.addImage({data:LOGOD,x:12.45,y:.32,w:.55,h:.55});
 T(s,'THE ONLY THING THAT CHANGES FOR YOU',{x:.9,y:.9,w:11,h:.4,fontSize:13,bold:true,color:'8FD1C7',charSpacing:2});
 T(s,'Everything goes in one folder:',{x:.85,y:1.5,w:11.5,h:.9,fontFace:HEAD,fontSize:34,bold:true,color:WHITE});
 s.addShape('roundRect',{x:.9,y:2.6,w:11.5,h:1.15,rectRadius:.12,fill:{color:TEAL}});
@@ -312,7 +320,7 @@ T(s,'For IFM: a founder-led voice is the format that works — not a faceless br
 
 /* ============ 18. COMPETITORS — THE STRATEGIC READ ============ */
 s=pres.addSlide(); s.background={color:NAVY};
-s.addImage({data:LOGO,x:12.45,y:.32,w:.55,h:.55});
+s.addImage({data:LOGOD,x:12.45,y:.32,w:.55,h:.55});
 T(s,'WHAT THE WHOLE SET TELLS US',{x:.9,y:.75,w:9,h:.4,fontSize:12.5,bold:true,color:'8FD1C7',charSpacing:2});
 T(s,'Four more conclusions from tracking 23 accounts',{x:.85,y:1.2,w:11.5,h:.85,fontFace:HEAD,fontSize:34,bold:true,color:WHITE});
 [['The white space nobody has taken','Checked across all 23: not one targets mums specifically — every one chases “women” broadly. IFM’s most ownable and least contested position.'],
@@ -351,7 +359,7 @@ T(s,'HOW TO READ THE TAB',{x:.9,y:4.8,w:11,h:.35,fontSize:12.5,bold:true,color:T
 
 /* ============ 20. MEDIA KIT ============ */
 s=pres.addSlide(); s.background={color:NAVY};
-s.addImage({data:LOGO,x:12.45,y:.32,w:.55,h:.55});
+s.addImage({data:LOGOD,x:12.45,y:.32,w:.55,h:.55});
 T(s,'FOR PRESS AND AGENCIES',{x:.9,y:.8,w:8,h:.4,fontSize:13,bold:true,color:'8FD1C7',charSpacing:2});
 T(s,'The Hiral Media Kit',{x:.85,y:1.3,w:8,h:.95,fontFace:HEAD,fontSize:40,bold:true,color:WHITE});
 T(s,'A separate Drive folder holding only agency-grade portraits. Any new Hero-quality portrait or teaching shot is copied across automatically.',{x:.9,y:2.35,w:6.6,h:1.1,fontSize:16,color:'CADCE8',lineSpacingMultiple:1.2});
@@ -362,10 +370,16 @@ T(s,'Currently holds 11 professional DSLR portraits from the July corporate sess
 // so the slide has to say so rather than describe a workflow nobody can run.
 T(s,'⚠  Before this link can be sent, the folder still needs sharing turned on — it is currently visible to Aditya only.',{x:.9,y:5.62,w:6.6,h:.6,fontSize:12.5,bold:true,color:AMBER,lineSpacingMultiple:1.15});
 try{
-  s.addImage({data:b64('IFM-319.jpg'),x:7.95,y:1.55,w:2.15,h:2.85,rounding:true});
-  s.addImage({data:b64('IFM-317.jpg'),x:10.3,y:1.55,w:2.15,h:2.85,rounding:true});
-  s.addImage({data:b64('IFM-316.jpg'),x:7.95,y:4.6,w:4.5,h:2.0,rounding:true});
-  T(s,'the group photograph is held back pending client approval — the system enforces this automatically',{x:7.95,y:6.68,w:4.5,h:.4,fontSize:10,italic:true,color:'8FA9BC',align:'center'});
+  // 2.15 x 3.22in = aspect 0.6677, which is exactly what prep_assets.js crops these
+  // files to. Previously this slide fed 400px workshop thumbs into mismatched boxes and
+  // pptxgenjs stretched them by -43% and +69%. It also displayed the group photograph
+  // the caption said was being withheld; portraits are what the Media Kit actually holds.
+  // NO rounding:true here. pptxgenjs's rounding crops to an ELLIPSE inscribed in the
+  // box, so on a 2.15x3.22 portrait it produced tall ovals that read as squashed faces —
+  // the same visual fault as the stretch it replaced. Rounding is only safe on a square.
+  s.addImage({data:png64('kit-portrait-1.jpg'),x:7.95,y:1.55,w:2.15,h:3.22});
+  s.addImage({data:png64('kit-portrait-2.jpg'),x:10.3,y:1.55,w:2.15,h:3.22});
+  T(s,'Two of the eleven portraits in the folder',{x:7.95,y:4.92,w:4.5,h:.35,fontSize:10,italic:true,color:'8FA9BC',align:'center'});
 }catch(e){}
 
 /* ============ 21. PART 4 DIVIDER ============ */
@@ -410,7 +424,7 @@ let wy=1.65;
 /* ============ 24. COMMITMENTS ============ */
 s=pres.addSlide(); s.background={color:NAVY};
 s.addShape('ellipse',{x:-1.4,y:-1.8,w:5,h:5,fill:{color:INKDK}});
-s.addImage({data:LOGO,x:12.45,y:.32,w:.55,h:.55});
+s.addImage({data:LOGOD,x:12.45,y:.32,w:.55,h:.55});
 T(s,'Three commitments, by design',{x:.85,y:.8,w:11.5,h:.9,fontFace:HEAD,fontSize:36,bold:true,color:WHITE});
 [['Complete coverage','Every registered folder is scanned daily. Any file placed in Drive is catalogued and searchable within 24 hours.'],
  ['Compliance before publication','Content involving minors, pending consent, or awaiting client approval is restricted at the tag level — it cannot surface in “Social-ready”.'],
