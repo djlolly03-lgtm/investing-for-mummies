@@ -48,8 +48,8 @@ s=pres.addSlide(); s.background={color:WHITE}; logo(s);
 T(s,'One place, six views',{x:.85,y:.5,w:11,h:.8,fontFace:HEAD,fontSize:38,bold:true,color:NAVY});
 T(s,'Everything IFM makes, everything competitors publish, and everything still to do — behind one password.',{x:.9,y:1.32,w:11,h:.45,fontSize:15,color:MUTED});
 const tabs=[
- ['☀️','Today','What Sakshi does right now: outbound queue, daily targets, items needing review.','Sakshi'],
- ['📚','Library','All 378 assets, tagged and filterable. The searchable archive of everything we own.','Everyone'],
+ ['🎯','On Deck','What Sakshi does right now: outbound queue, daily targets, items needing review.','Sakshi'],
+ ['📚','Library','All 382 assets, tagged and filterable. The searchable archive of everything we own.','Everyone'],
  ['🎨','Creator Tracker','Aakara deliveries by month — what is planned, delivered, published, or sitting unused.','Aditya'],
  ['🏅','Certificates','Course-completion photos matched to students and handles, with consent tracked.','Sakshi'],
  ['📊','Competitors','23 tracked accounts, their engagement, and what it means for us.','Aditya · Hiral'],
@@ -187,7 +187,7 @@ section('THREE','The six tabs, in use','What each view is for, who owns it, and 
 s=pres.addSlide(); s.background={color:WHITE}; logo(s);
 T(s,'📚  Library — the searchable archive',{x:.85,y:.5,w:11,h:.8,fontFace:HEAD,fontSize:34,bold:true,color:NAVY});
 T(s,'Every asset IFM owns, in one sortable table. This is where you go to find something.',{x:.9,y:1.3,w:11,h:.4,fontSize:14.5,color:MUTED});
-[['378','assets catalogued'],['102','ready to post'],['231','raw footage'],['17','published']].forEach((k,i)=>{
+[['382','assets catalogued'],['104','ready to post'],['231','raw footage'],['20','published']].forEach((k,i)=>{
   const x=.9+i*2.92; card(s,x,1.85,2.7,1.15,MINT);
   T(s,k[0],{x:x+.2,y:1.95,w:2.3,h:.62,fontFace:HEAD,fontSize:30,bold:true,color:TEALD,margin:0});
   T(s,k[1],{x:x+.2,y:2.55,w:2.3,h:.35,fontSize:11.5,bold:true,color:MUTED,margin:0});
@@ -205,11 +205,11 @@ T(s,'Raw and archived material is hidden by default so the view stays useful —
 
 /* ============ 13. TODAY TAB ============ */
 s=pres.addSlide(); s.background={color:WHITE}; logo(s);
-T(s,'☀️  Today — the daily working view',{x:.85,y:.5,w:11,h:.8,fontFace:HEAD,fontSize:34,bold:true,color:NAVY});
+T(s,'🎯  On Deck — the daily working view',{x:.85,y:.5,w:11,h:.8,fontFace:HEAD,fontSize:34,bold:true,color:NAVY});
 T(s,'Built for Sakshi. Opens on a to-do list, not a dashboard — visit ?who=sakshi for the simplified view.',{x:.9,y:1.3,w:11,h:.4,fontSize:14.5,color:MUTED});
 card(s,.9,1.9,5.7,2.5);
 T(s,'THE DAILY TARGETS',{x:1.15,y:2.05,w:5,h:.35,fontSize:12,bold:true,color:TEALD,charSpacing:1,margin:0});
-[['15','outbound comments on other accounts'],['5','stories posted (not logged — a reminder, not a tracker)'],['16','items flagged as needing review']].forEach((r,i)=>{
+[['15','outbound comments on other accounts'],['5','stories posted (not logged — a reminder, not a tracker)'],['7','items flagged as needing review']].forEach((r,i)=>{
   const y=2.5+i*.6;
   T(s,r[0],{x:1.15,y:y,w:.75,h:.5,fontFace:HEAD,fontSize:22,bold:true,color:TEAL,valign:'middle',margin:0});
   T(s,r[1],{x:1.95,y:y,w:4.5,h:.5,fontSize:12.5,color:MUTED,valign:'middle',margin:0});
@@ -244,7 +244,7 @@ T(s,'105 catalogue items now come from Aakara — the tracker builds itself from
 s=pres.addSlide(); s.background={color:WHITE}; logo(s);
 T(s,'🏅  Certificates — proof, handled carefully',{x:.85,y:.5,w:11,h:.8,fontFace:HEAD,fontSize:34,bold:true,color:NAVY});
 T(s,'Completion photos are among our strongest social proof — and the most sensitive content we hold.',{x:.9,y:1.3,w:11,h:.4,fontSize:14.5,color:MUTED});
-[['78','students in the sheet'],['16','new photos awaiting review'],['1','tag that blocks publication']].forEach((k,i)=>{
+[['78','names in the sheet'],['5','have an Instagram handle'],['0','have a photo linked yet']].forEach((k,i)=>{
   const x=.9+i*3.87; card(s,x,1.85,3.6,1.15,MINT);
   T(s,k[0],{x:x+.25,y:1.95,w:3.1,h:.62,fontFace:HEAD,fontSize:30,bold:true,color:TEALD,margin:0});
   T(s,k[1],{x:x+.25,y:2.55,w:3.1,h:.35,fontSize:11.5,bold:true,color:MUTED,margin:0});
@@ -278,7 +278,7 @@ T(s,'23 accounts, refreshed automatically every Monday. Sorted into four kinds, 
 T(s,'WHAT THE WEEKLY REFRESH COLLECTS',{x:.9,y:4.0,w:11,h:.35,fontSize:12.5,bold:true,color:TEALD,charSpacing:1});
 [['Follower counts','tracked over time, so growth is visible'],
  ['Recent posts + thumbnails','up to 6 per account, with likes and comments'],
- ['Average engagement','the honest measure — reach cannot be scraped'],
+ ['Average engagement','the honest measure — reach is not scrapable for other accounts'],
  ['Qualitative intel','positioning, content pillars, hooks, and what IFM should do about it']
 ].forEach((r,i)=>{
   const x=.9+(i%2)*5.85, y=4.45+Math.floor(i/2)*.85;
@@ -314,7 +314,7 @@ T(s,'For IFM: a founder-led voice is the format that works — not a faceless br
 s=pres.addSlide(); s.background={color:NAVY};
 s.addImage({data:LOGO,x:12.45,y:.32,w:.55,h:.55});
 T(s,'WHAT THE WHOLE SET TELLS US',{x:.9,y:.75,w:9,h:.4,fontSize:12.5,bold:true,color:'8FD1C7',charSpacing:2});
-T(s,'Four conclusions from tracking 23 accounts',{x:.85,y:1.2,w:11.5,h:.85,fontFace:HEAD,fontSize:34,bold:true,color:WHITE});
+T(s,'Four more conclusions from tracking 23 accounts',{x:.85,y:1.2,w:11.5,h:.85,fontFace:HEAD,fontSize:34,bold:true,color:WHITE});
 [['The white space nobody has taken','Checked across all 23: not one targets mums specifically — every one chases “women” broadly. IFM’s most ownable and least contested position.'],
  ['The format law of this space','Every high-engagement competitor grows on short, founder-led video. IFM’s own numbers agree: reels average 37 likes against 15 for everything else.'],
  ['Our real rivals for revenue','For the paid workshop business the competition is not the big creators — it is the small workshop-led players. None of them match IFM’s production quality.'],
@@ -332,7 +332,7 @@ T(s,'This analysis is regenerated from the tracked set — it is a standing read
 s=pres.addSlide(); s.background={color:WHITE}; logo(s);
 T(s,'📲  Published — what actually worked',{x:.85,y:.5,w:11,h:.8,fontFace:HEAD,fontSize:34,bold:true,color:NAVY});
 T(s,'Live posts pulled from Instagram with real engagement — the feedback loop for everything we make.',{x:.9,y:1.3,w:11,h:.4,fontSize:14.5,color:MUTED});
-[['378','followers today',TEALD],['+59','in 34 days',TEALD],['55','posts live',NAVY],['37 vs 15','avg likes: reels vs rest',CORAL]].forEach((k,i)=>{
+[['379','followers today',TEALD],['+60','in 39 days',TEALD],['56','posts live',NAVY],['37 vs 15','avg likes: reels vs rest',CORAL]].forEach((k,i)=>{
   const x=.9+i*2.92; card(s,x,1.85,2.7,1.25,MINT);
   T(s,k[0],{x:x+.2,y:1.95,w:2.35,h:.62,fontFace:HEAD,fontSize:k[0].length>5?21:29,bold:true,color:k[2],valign:'middle',margin:0});
   T(s,k[1],{x:x+.2,y:2.6,w:2.35,h:.4,fontSize:11,bold:true,color:MUTED,margin:0});
@@ -341,8 +341,8 @@ s.addShape('roundRect',{x:.9,y:3.35,w:11.5,h:1.25,rectRadius:.1,fill:{color:NAVY
 T(s,'The single clearest signal we have',{x:1.2,y:3.5,w:10.9,h:.4,fontSize:14,bold:true,color:WHITE,margin:0});
 T(s,'Reels earn roughly 2.5× the likes of carousels and static posts on our own account. Our four best-performing posts of all time are all reels, and all founder-led. This is not a preference — it is what the data says.',{x:1.2,y:3.9,w:10.9,h:.65,fontSize:12,color:'CADCE8',lineSpacingMultiple:1.12});
 T(s,'HOW TO READ THE TAB',{x:.9,y:4.8,w:11,h:.35,fontSize:12.5,bold:true,color:TEALD,charSpacing:1});
-[['Engagement rate, not reach','Instagram does not expose reach to anyone but the account owner and it cannot be scraped. Likes + comments as a share of followers is the honest stand-in.'],
- ['Verdict badges','Each post is scored against our own average — top quartile, middle, or bottom. It answers “was this actually good for us”, not “is this good in the abstract”.']
+[['Engagement rate, for now','Reach is visible only to the account owner and cannot be scraped. A direct Instagram connection is being set up that will give us real reach, views and saves; until it is live, likes + comments as a share of followers is the honest stand-in.'],
+ ['Verdict badges','Each post is scored against our own average — top third, middle, or bottom third. It answers “was this actually good for us”, not “is this good in the abstract”.']
 ].forEach((r,i)=>{
   const y=5.2+i*.83; card(s,.9,y,11.5,.72);
   T(s,r[0],{x:1.15,y:y,w:2.9,h:.72,fontSize:12.5,bold:true,color:NAVY,valign:'middle',margin:0});
@@ -356,7 +356,11 @@ T(s,'FOR PRESS AND AGENCIES',{x:.9,y:.8,w:8,h:.4,fontSize:13,bold:true,color:'8F
 T(s,'The Hiral Media Kit',{x:.85,y:1.3,w:8,h:.95,fontFace:HEAD,fontSize:40,bold:true,color:WHITE});
 T(s,'A separate Drive folder holding only agency-grade portraits. Any new Hero-quality portrait or teaching shot is copied across automatically.',{x:.9,y:2.35,w:6.6,h:1.1,fontSize:16,color:'CADCE8',lineSpacingMultiple:1.2});
 T(s,'When a journalist, agency or event requests photographs,\nsend this one folder link.',{x:.9,y:3.75,w:6.6,h:1.0,fontSize:16,bold:true,color:AMBER,lineSpacingMultiple:1.2});
-T(s,'Currently holds 11 professional DSLR portraits from the July corporate session, including RAW files for retouching.',{x:.9,y:5.0,w:6.5,h:1.0,fontSize:13.5,color:'CADCE8',lineSpacingMultiple:1.2});
+T(s,'Currently holds 11 professional DSLR portraits from the July corporate session, plus two workshop stills — all high-resolution JPEG.',{x:.9,y:4.9,w:6.5,h:.7,fontSize:13.5,color:'CADCE8',lineSpacingMultiple:1.2});
+// Audited 8 Sep 2026: the folder has exactly one permission — owner. Not Hiral, not
+// link-shared. The "send this one folder link" instruction above silently fails today,
+// so the slide has to say so rather than describe a workflow nobody can run.
+T(s,'⚠  Before this link can be sent, the folder still needs sharing turned on — it is currently visible to Aditya only.',{x:.9,y:5.62,w:6.6,h:.6,fontSize:12.5,bold:true,color:AMBER,lineSpacingMultiple:1.15});
 try{
   s.addImage({data:b64('IFM-319.jpg'),x:7.95,y:1.55,w:2.15,h:2.85,rounding:true});
   s.addImage({data:b64('IFM-317.jpg'),x:10.3,y:1.55,w:2.15,h:2.85,rounding:true});
@@ -373,7 +377,7 @@ T(s,'What runs without anyone',{x:.85,y:.55,w:11,h:.85,fontFace:HEAD,fontSize:38
 T(s,'Four scheduled jobs keep the hub current. None of them require a person to remember anything.',{x:.9,y:1.4,w:11,h:.45,fontSize:15,color:MUTED});
 [['7:38','every morning','Content processor','Scans every registered Drive folder, tags new files, collapses duplicates, updates the review count.',TEAL],
  ['8:07','every morning','Daily brief email','A one-page summary to Aditya: what is working, what is stuck, one competitor action.',TEAL],
- ['8:08','every evening','Follower log','Records the Instagram follower count. 34 days of history so far — this is how growth becomes visible.',NAVY],
+ ['8:08','every evening','Follower log','Records the Instagram follower count. 39 days of history so far — this is how growth becomes visible.',NAVY],
  ['9:39','Mondays','Competitor refresh','Re-scrapes all 23 tracked accounts and rebuilds the engagement figures. The only job allowed to publish — and only when nothing unrelated is waiting in the tree.','5B8DB8']
 ].forEach((j,i)=>{
   const y=2.0+i*1.15; card(s,.9,y,11.5,1.02);
@@ -389,7 +393,7 @@ T(s,'Nothing is published to Instagram automatically, and nothing goes live on t
 s=pres.addSlide(); s.background={color:WHITE}; logo(s);
 T(s,'What each of us does',{x:.85,y:.55,w:11,h:.85,fontFace:HEAD,fontSize:38,bold:true,color:NAVY});
 let wy=1.65;
-[['Sakshi','Add every class’s photos and videos to IFM Content Drop, ideally the same day. Work the outbound queue on the Today tab. Use the Social-ready filter to choose what to post.'],
+[['Sakshi','Add every class’s photos and videos to IFM Content Drop, ideally the same day. Work the outbound queue on the On Deck tab. Use the Social-ready filter to choose what to post.'],
  ['Hiral','Send the Media Kit link when media request photographs. Review the Published tab for what is resonating — the reel finding is the one to act on.'],
  ['Asba','Tell us where the older photo backlog lives so it can be ingested once and tagged. New material goes straight to Content Drop.'],
  ['Aakara','No change to delivery. Keep the Month → Carousels / Reels / Stories structure — the system now reads it correctly, daily.'],
