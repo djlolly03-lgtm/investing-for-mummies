@@ -92,7 +92,8 @@ the deck missed 29 finished posts for two months. Scan the folder tree, not the 
 - Instagram cannot be scraped logged-out for post grids. The weekly refresh drives a
   logged-in browser profile at `~/.gstack/chromium-profile`.
 - Reach and impressions are **not** obtainable by scraping — engagement rate is the
-  honest stand-in. Only the Instagram Graph API (Business account + token) would give reach.
+  honest stand-in until a Graph token exists. `content/analytics/fetch_ig.py` is the real
+  route; see "Instagram Graph token" under Credentials for the one-time setup.
 
 ## Scheduled tasks (`~/.claude/scheduled-tasks/<name>/SKILL.md`)
 
@@ -149,6 +150,53 @@ as @investingformummies. The session then persists in that profile directory.
 ```bash
 $HOME/.claude/skills/gstack/browse/dist/browse connect   # then log in by hand
 ```
+
+### 4. Instagram Graph token → macOS Keychain (`ifm-ig-graph-token`)
+Feeds: `content/analytics/fetch_ig.py` → `content/ig-insights.json`.
+Breaks: reach / views / saves reporting. Nothing scheduled depends on it, so its absence
+is a WARN not a FAIL — but it is the **only** route to reach. Scraping cannot get it at
+any login level, which is why the hub otherwise shows engagement rate as the stand-in.
+
+Two logins exist and they are not the same thing. **Use Instagram Login** — it needs no
+Facebook Page. Business Login (via `graph.facebook.com` and a linked Page) is only worth
+the extra setup if IFM ever runs Meta ads. `fetch_ig.py` auto-detects which one a token
+came from and caches the answer in `~/.ifm/ig-user-id`.
+
+```
+1. Instagram app → Settings → Account type → switch to Professional (Business).
+2. developers.facebook.com → Create App → "Business".
+3. Add the "Instagram" product → "API setup with Instagram login".
+4. Add @investingformummies, generate a token with scopes:
+      instagram_business_basic, instagram_business_manage_insights
+5. security add-generic-password -a ifm -s ifm-ig-graph-token -w '<TOKEN>' -U
+6. IFM_IG_APP_SECRET='<app secret>' /usr/bin/python3 \
+     "CLAUDE/content/analytics/fetch_ig.py" --exchange     # 1 hour → 60 days
+7. /usr/bin/python3 "CLAUDE/content/analytics/fetch_ig.py" --check
+```
+
+**The failure mode to design against is the 60-day expiry.** A step-4 token lasts one
+hour; `--exchange` makes it 60 days; `--refresh` extends it another 60 and can be run any
+time after day 1. Nothing renews it automatically, so an unrefreshed token dies quietly.
+`scripts/ifm-check-credentials.sh` section 4 reads the expiry recorded in
+`~/.ifm/ig-token-meta.json` and warns under 14 days. Past expiry, refresh no longer works
+and the token has to be generated again in the app dashboard.
+
+Two API details that cost real time if unknown:
+- **`impressions` no longer exists** — it was replaced by `views` in v22. Asking for it
+  fails the *entire* call, not just that metric. `insights()` retries metric-by-metric on
+  a batch failure for exactly this reason, so a version change degrades to one missing
+  number instead of an empty file.
+- **`v26.0` was the newest version answering on 8 Sep 2026** (v27+ returned "Unknown path
+  components"). Meta retires a version ~2 years after release. Bump `API_VERSION` when a
+  call fails with a version error, not on a schedule.
+
+Rate limit is ~200 calls/hour/user and each post costs one insights call, so a 30-day
+window with daily posting is close to the ceiling. The script sleeps 0.4s between posts.
+
+⚠️ `ig-insights.json` lands in `CLAUDE/content/` and is therefore **publicly fetchable**,
+like `data.js` and `ifm-published.json` — the hub's password gate is client-side only.
+That is the existing accepted tradeoff, but it now covers reach and follower numbers.
+Block it in `.vercelignore` if that stops being acceptable.
 
 ### If you are setting up a second machine
 Copy nothing. Re-run all three procedures above. The repo plus this file is everything

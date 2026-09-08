@@ -209,6 +209,52 @@ else
   fi
 fi
 
+# ======================================================= 4. Instagram Graph token
+hdr "4. Instagram Graph token  —  Keychain service 'ifm-ig-graph-token'"
+note "Feeds: content/analytics/fetch_ig.py (reach, views, saves — not scrapable any other way)"
+
+IG_TOK_FIX="See the SETUP block in CLAUDE/content/analytics/fetch_ig.py, then: security add-generic-password -a ifm -s ifm-ig-graph-token -w '<TOKEN>' -U"
+IG_META="$HOME/.ifm/ig-token-meta.json"
+
+if IG_TOK="$(security find-generic-password -s ifm-ig-graph-token -w 2>/dev/null)"; then
+  IG_TOK_LEN=${#IG_TOK}
+  unset IG_TOK
+  if [ "$IG_TOK_LEN" -lt 40 ]; then
+    fail "Token present but only ${IG_TOK_LEN} characters — Graph tokens are ~100+. This looks truncated."
+    fix  "$IG_TOK_FIX"
+  else
+    pass "Token present in the login Keychain (${IG_TOK_LEN} chars, value not shown)."
+  fi
+
+  # A 60-day token that nobody refreshes expires silently — the whole point of this check.
+  if [ -f "$IG_META" ] && [ -x "$PY" ]; then
+    IG_EXP="$("$PY" -c 'import json,sys;print(json.load(open(sys.argv[1])).get("expires",""))' "$IG_META" 2>/dev/null || echo '')"
+    if [ -n "$IG_EXP" ]; then
+      IG_LEFT="$("$PY" -c 'import datetime,sys;print((datetime.date.fromisoformat(sys.argv[1])-datetime.date.today()).days)' "$IG_EXP" 2>/dev/null || echo '')"
+      if [ -z "$IG_LEFT" ]; then
+        warn "Could not parse the recorded expiry '$IG_EXP'."
+      elif [ "$IG_LEFT" -lt 0 ]; then
+        fail "Token EXPIRED on $IG_EXP. Insights pulls will fail with 'Invalid OAuth access token'."
+        note "Past expiry a refresh no longer works — the token must be generated again in the Meta app dashboard."
+        fix  "$IG_TOK_FIX"
+      elif [ "$IG_LEFT" -lt 14 ]; then
+        warn "Token expires on $IG_EXP — ${IG_LEFT} day(s) left."
+        fix  "/usr/bin/python3 'CLAUDE/content/analytics/fetch_ig.py' --refresh"
+      else
+        pass "Token valid until $IG_EXP (${IG_LEFT} days left)."
+      fi
+    fi
+  else
+    warn "No expiry recorded at $IG_META — this token was stored by hand, not by --exchange/--refresh."
+    note "Short-lived tokens last 1 hour. Swap it for a 60-day one so the pipeline survives past today:"
+    fix  "IFM_IG_APP_SECRET='<app secret>' /usr/bin/python3 'CLAUDE/content/analytics/fetch_ig.py' --exchange"
+  fi
+else
+  warn "No Keychain entry for 'ifm-ig-graph-token' — reach/views/saves are unavailable and the hub falls back to engagement rate."
+  note "Not a failure: nothing scheduled depends on it yet. It is the only route to reach data."
+  fix  "$IG_TOK_FIX"
+fi
+
 # ==================================================================== summary
 printf '\n%s%s%s\n' "$DIM" "------------------------------------------------------------" "$RESET"
 if [ "$FAIL_COUNT" -eq 0 ] && [ "$WARN_COUNT" -eq 0 ]; then
