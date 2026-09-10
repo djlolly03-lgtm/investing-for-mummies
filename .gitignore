@@ -66,3 +66,10 @@ deck-build/node_modules/
 # first push to GitHub. Keep it that way.)
 .env
 *.env
+
+# Browser "Save Page As" dumps of webmail. These capture the whole mailbox
+# chrome — inbox previews, sender addresses — and almost never the message you
+# wanted. One was committed on 30 Jul 2026: 906 KB, 93% Gmail JavaScript, 78
+# third-party email addresses, and zero course content. Copy the text instead.
+*- Gmail.html
+*- Outlook.html
