@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IFM Content Library — V1 storyboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* ============================================================================
+   STORYBOARD — six states of the redesigned Library, built from the REAL
+   catalogue: real ids, real titles, real descriptions, real thumbnails, real
+   taxonomy values, real result counts. Nothing here is placeholder copy.
+   This page is a mockup for review; it is not the app.
+   ========================================================================= */
+:root{
+  --ink:#16304a;            /* deepened navy — more editorial than the brand navy */
+  --ink-2:#4a6478;
+  --muted:#7b8f9c;
+  --line:#e6ebe9;
+  --line-2:#f0f4f2;
+  --paper:#fcfcfb;          /* warm off-white, not clinical grey */
+  --card:#ffffff;
+  --teal:#2a9d8f;
+  --teal-d:#1d7a6e;
+  --wash:#f2f8f6;
+  --amber:#b2803a;
+  --shadow:0 1px 2px rgba(22,48,74,.04), 0 12px 32px -18px rgba(22,48,74,.22);
+  --f-d:'Lora',Georgia,serif;
+  --f-b:'Nunito',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#eef1ef;font-family:var(--f-b);color:var(--ink);font-size:15px}
+.sb{max-width:1560px;margin:0 auto;padding:30px 26px 70px}
+.sb-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+.sb-head h1{font-family:var(--f-d);font-weight:600;font-size:27px;margin:0;letter-spacing:-.01em}
+.sb-head h1 span{font-weight:400;font-style:italic;color:var(--ink-2)}
+.sb-head .tag{color:var(--muted);font-size:13.5px}
+.sb-note{color:var(--ink-2);font-size:13.5px;margin:0 0 22px;max-width:104ch;line-height:1.55}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:22px}
+.panel.wide{grid-column:span 2}
+@media(max-width:940px){.panel.wide{grid-column:span 1}}
+.panel{background:#f7f9f8;border:1px solid #dfe5e2;border-radius:14px;padding:16px}
+.panel > h2{font-size:14px;font-weight:800;margin:0 0 2px}
+.panel > p.cap{color:var(--muted);font-size:12.5px;margin:0 0 13px}
+.frame{background:var(--paper);border:1px solid var(--line);border-radius:11px;overflow:hidden;box-shadow:var(--shadow)}
+.frame.tall{min-height:430px}
+
+/* ---------------------------------------------------------------- app chrome */
+.bar{display:flex;align-items:center;gap:14px;padding:13px 20px;border-bottom:1px solid var(--line-2);background:var(--card)}
+.logo{font-family:var(--f-d);font-weight:600;font-size:16px;letter-spacing:.06em}
+.logo em{font-style:normal;color:var(--teal-d)}
+.bar nav{margin-left:auto;display:flex;gap:18px;font-size:12.5px;color:var(--muted)}
+.bar nav b{color:var(--ink);font-weight:700}
+
+/* ------------------------------------------------------------- 1 empty state */
+.hero{padding:46px 40px 40px;text-align:center}
+.hero .kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-d);font-weight:800;margin:0 0 16px}
+.hero h2{font-family:var(--f-d);font-weight:500;font-size:33px;margin:0 0 10px;letter-spacing:-.015em}
+.hero p{color:var(--ink-2);font-size:14px;margin:0 auto 24px;max-width:46ch}
+.search{display:flex;align-items:center;gap:11px;background:var(--card);border:1.5px solid var(--line);
+  border-radius:13px;padding:14px 17px;max-width:520px;margin:0 auto;box-shadow:0 1px 2px rgba(22,48,74,.04)}
+.search .mag{width:16px;height:16px;flex:none;opacity:.42}
+.search span.ph{color:var(--muted);font-size:15px}
+.search .q{font-size:15px;color:var(--ink);font-weight:600}
+.try{margin-top:20px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center}
+.try .lbl{color:var(--muted);font-size:12px;margin-right:2px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px;
+  font-size:12.5px;color:var(--ink-2)}
+.foot{display:flex;justify-content:space-between;padding:12px 20px;border-top:1px solid var(--line-2);
+  color:var(--muted);font-size:11.5px;background:var(--card)}
+.foot i{font-family:var(--f-d);font-style:italic}
+
+/* --------------------------------------------------------- 2/3 results state */
+.srow{display:flex;gap:10px;padding:13px 18px;border-bottom:1px solid var(--line-2);background:var(--card);align-items:center}
+.search.compact{flex:1;max-width:none;margin:0;padding:10px 14px;border-radius:10px}
+.fbtn{display:flex;align-items:center;gap:7px;border:1.5px solid var(--line);background:var(--card);
+  border-radius:10px;padding:10px 14px;font-size:13px;font-weight:700;color:var(--ink-2)}
+.meta-row{display:flex;align-items:baseline;justify-content:space-between;padding:14px 20px 9px}
+.meta-row .n{font-size:13.5px;font-weight:800}
+.meta-row .sort{font-size:12px;color:var(--muted)}
+.results{padding:0 12px 14px}
+.res{display:grid;grid-template-columns:124px 1fr auto;gap:15px;align-items:center;
+  padding:11px 8px;border-radius:11px}
+.res + .res{border-top:1px solid var(--line-2)}
+.res:hover{background:var(--wash)}
+.thumb{position:relative;width:124px;height:78px;border-radius:8px;overflow:hidden;background:#dfe7e4;flex:none}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;left:7px;bottom:7px;width:22px;height:22px;border-radius:50%;
+  background:rgba(12,28,42,.72);display:flex;align-items:center;justify-content:center}
+.play::after{content:'';border-left:6px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent;margin-left:2px}
+.res h3{font-size:14.5px;font-weight:800;margin:0 0 3px;line-height:1.32}
+.res p{font-size:12.5px;color:var(--ink-2);margin:0 0 7px;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tags{display:flex;gap:5px;flex-wrap:wrap}
+.t{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:5px;background:var(--line-2);color:var(--ink-2)}
+.t.key{background:var(--wash);color:var(--teal-d)}
+.view{border:1.5px solid var(--line);background:var(--card);border-radius:9px;padding:8px 16px;
+  font-size:12.5px;font-weight:800;color:var(--ink)}
+.more{margin:8px 12px 14px;padding:11px;text-align:center;border:1px dashed #d8e0dd;border-radius:10px;
+  color:var(--ink-2);font-size:12.5px;font-weight:700;background:#fbfcfc}
+
+/* ------------------------------------------------------------- 4 asset detail */
+.detail{display:grid;grid-template-columns:1.25fr 1fr;gap:0;min-height:352px}
+.dm{background:#0e1f2e;position:relative;display:flex;align-items:center;justify-content:center}
+.dm img{width:100%;height:100%;object-fit:cover;opacity:.96}
+.dm .bigplay{position:absolute;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.93);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.dm .bigplay::after{content:'';border-left:15px solid var(--ink);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.dd{padding:22px 24px;background:var(--card);position:relative;display:flex;flex-direction:column}
+.dd .x{position:absolute;top:16px;right:18px;color:var(--muted);font-size:15px}
+.dd .eyebrow{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:800;margin:0 0 7px}
+.dd h3{font-family:var(--f-d);font-weight:600;font-size:19px;margin:0 0 9px;line-height:1.28;padding-right:22px}
+.dd .desc{font-size:13px;color:var(--ink-2);line-height:1.55;margin:0 0 18px}
+.dl{display:grid;grid-template-columns:82px minmax(0,1fr);align-items:start;align-content:start;gap:9px 14px;font-size:12.5px;margin-bottom:20px}
+.dl dt{color:var(--muted);font-weight:700}
+.dl dd{margin:0;color:var(--ink)}
+.dl dd.unset{color:#a8b6bd;font-style:italic}
+.acts{display:flex;gap:9px}
+.btn{border-radius:9px;padding:10px 16px;font-size:13px;font-weight:800;border:1.5px solid var(--ink);
+  background:var(--ink);color:#fff}
+.btn.ghost{background:var(--card);color:var(--ink-2);border-color:var(--line)}
+
+/* ------------------------------------------------------------- 5 empty result */
+.none{padding:56px 24px;text-align:center}
+.none .ring{width:52px;height:52px;border-radius:50%;background:var(--line-2);margin:0 auto 18px;
+  display:flex;align-items:center;justify-content:center;opacity:.8}
+.none h3{font-family:var(--f-d);font-weight:500;font-size:19px;margin:0 0 7px}
+.none p{color:var(--muted);font-size:13px;margin:0 0 18px}
+
+/* ------------------------------------------------------------------- 6 mobile */
+.phone{width:330px;margin:0 auto;border:9px solid #1d2b33;border-radius:30px;overflow:hidden;background:var(--paper)}
+.mbar{display:flex;align-items:center;padding:11px 14px;border-bottom:1px solid var(--line-2);background:var(--card)}
+.mbar .logo{font-size:14px}
+.mbar .burger{margin-left:auto;color:var(--ink-2);font-size:15px}
+.mwrap{padding:11px 12px}
+.search.m{padding:10px 12px;border-radius:10px;max-width:none;margin:0 0 8px}
+.search.m .q{font-size:14px}
+.fbtn.m{width:100%;justify-content:center;padding:9px;font-size:12.5px;margin-bottom:11px}
+.mcount{font-size:12px;font-weight:800;margin:0 2px 9px}
+.mres{display:grid;grid-template-columns:104px 1fr;gap:11px;padding:9px 2px;align-items:center}
+.mres + .mres{border-top:1px solid var(--line-2)}
+.mres .thumb{width:104px;height:68px}
+.mres h3{font-size:13px;font-weight:800;margin:0 0 3px;line-height:1.3}
+.mres .tags{gap:4px}
+.mres .t{font-size:9.5px;padding:2px 6px}
+
+.callout{margin-top:26px;background:#fff8ea;border:1px solid #e8d4a8;border-left:4px solid var(--amber);
+  border-radius:0 12px 12px 0;padding:16px 20px}
+.callout h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.11em;color:var(--amber);margin:0 0 8px}
+.callout p{margin:0 0 9px;font-size:13.5px;line-height:1.6;color:var(--ink)}
+.callout p:last-child{margin:0}
+.callout code{background:#fff;border:1px solid #ecdfc4;border-radius:4px;padding:1px 5px;font-size:12px}
+</style>
+</head>
+<body>
+<div class="sb">
+
+  <div class="sb-head">
+    <h1>IFM Content Library <span>— V1 storyboard</span></h1>
+    <span class="tag">Real assets · real counts · real taxonomy</span>
+  </div>
+  <p class="sb-note">
+    Six states, built from the live 378-asset catalogue. Every id, title, description, tag and
+    result count below is what the search engine actually returns today — no placeholder copy.
+    Read it as the visual target for the rebuild, not as the running app.
+  </p>
+
+  <div class="grid">
+
+    <!-- ============================================ 1. EMPTY STATE (desktop) -->
+    <div class="panel">
+      <h2>1 · Empty state — desktop</h2>
+      <p class="cap">Search is the only thing asking to be used.</p>
+      <div class="frame tall">
+        <div class="bar">
+          <span class="logo">INVESTING FOR <em>MUMMIES</em></span>
+          <nav><b>Library</b><span>About</span></nav>
+        </div>
+        <div class="hero">
+          <p class="kicker">Content Library</p>
+          <h2>What are you looking for?</h2>
+          <p>Videos, photos, carousels and workshop footage — searchable in plain English.</p>
+          <div class="search">
+            <svg class="mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+            <span class="ph">Search IFM content…</span>
+          </div>
+          <div class="try">
+            <span class="lbl">Try</span>
+            <span class="chip">Hiral talking about gold</span>
+            <span class="chip">funny classroom moments</span>
+            <span class="chip">August certificates</span>
+          </div>
+        </div>
+        <div class="foot"><span>378 assets</span><i>Find it. Use it.</i></div>
+      </div>
+    </div>
+
+    <!-- ========================================== 2. SEARCH RESULTS (desktop) -->
+    <div class="panel">
+      <h2>2 · Results — “Hiral talking about gold”</h2>
+      <p class="cap">Chrome collapses. Thumbnails big enough to recognise.</p>
+      <div class="frame tall">
+        <div class="bar"><span class="logo">INVESTING FOR <em>MUMMIES</em></span><nav><b>Library</b><span>About</span></nav></div>
+        <div class="srow">
+          <div class="search compact">
+            <svg class="mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+            <span class="q">Hiral talking about gold</span>
+          </div>
+          <span class="fbtn">Filters</span>
+        </div>
+        <div class="meta-row"><span class="n">9 relevant results</span><span class="sort">Most relevant ▾</span></div>
+        <div class="results">
+          <div class="res">
+            <div class="thumb"><img src="../thumbs/IFM-101.jpg" alt=""><span class="play"></span></div>
+            <div>
+              <h3>Explaining Gold Investments (SGB &amp; Gold Funds)</h3>
+              <p>A presenter gestures in front of a ‘Gold’ slide listing SGB and gold mutual funds, while two women listen — covering ways to invest in gold.</p>
+              <div class="tags"><span class="t">Video</span><span class="t key">Gold</span><span class="t">Hiral Speaking</span><span class="t">Hiral</span></div>
+            </div>
+            <span class="view">View</span>
+          </div>
+          <div class="res">
+            <div class="thumb"><img src="../thumbs/IFM-099.jpg" alt=""></div>
+            <div>
+              <h3>Gold as a Safe Haven Talk</h3>
+              <p>A speaker points at a ‘Gold: Your Portfolio’s Safe Haven’ slide with a ways-to-invest-in-gold pie chart, while two attendees watch.</p>
+              <div class="tags"><span class="t">Image</span><span class="t key">Gold</span><span class="t">Asset Allocation</span><span class="t">Hiral</span></div>
+            </div>
+            <span class="view">View</span>
+          </div>
+          <div class="res">
+            <div class="thumb"><img src="../thumbs/IFM-100.jpg" alt=""></div>
+            <div>
+              <h3>Ways to Invest in Gold Session</h3>
+              <p>The presenter gestures with both hands at the ‘Gold: Your Portfolio’s Safe Haven’ screen as two women listen.</p>
+              <div class="tags"><span class="t">Image</span><span class="t key">Gold</span><span class="t">Asset Allocation</span><span class="t">Hiral</span></div>
+            </div>
+            <span class="view">View</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================== 3. BROAD SEARCH (desktop) -->
+    <div class="panel">
+      <h2>3 · Broad search — “funny classroom”</h2>
+      <p class="cap">Strong matches only. The tail is offered, not dumped.</p>
+      <div class="frame tall">
+        <div class="bar"><span class="logo">INVESTING FOR <em>MUMMIES</em></span><nav><b>Library</b><span>About</span></nav></div>
+        <div class="srow">
+          <div class="search compact">
+            <svg class="mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+            <span class="q">funny classroom</span>
+          </div>
+          <span class="fbtn">Filters</span>
+        </div>
+        <div class="meta-row"><span class="n">7 relevant results</span><span class="sort">Most relevant ▾</span></div>
+        <div class="results">
+          <div class="res">
+            <div class="thumb"><img src="../thumbs/IFM-357.jpg" alt=""><span class="play"></span></div>
+            <div>
+              <h3>Stree Dhan workshop — participants at the table</h3>
+              <p>Close and mid shots of participants seated around the boardroom table, watching the screen, laughing and talking.</p>
+              <div class="tags"><span class="t">Video</span><span class="t key">Classroom Moment</span><span class="t">Women &amp; Money</span></div>
+            </div>
+            <span class="view">View</span>
+          </div>
+          <div class="res">
+            <div class="thumb"><img src="../thumbs/IFM-066.jpg" alt=""></div>
+            <div>
+              <h3>Hiral laughing at table under branded screen</h3>
+              <p>Hiral seated at the boardroom table laughing warmly, laptop and book in front, ‘Investing for Mummies’ slide on the screen behind.</p>
+              <div class="tags"><span class="t">Image</span><span class="t">Hiral Speaking</span><span class="t">Hiral</span></div>
+            </div>
+            <span class="view">View</span>
+          </div>
+          <div class="res">
+            <div class="thumb"><img src="../thumbs/IFM-117.jpg" alt=""></div>
+            <div>
+              <h3>Shared Laugh During Laptop Work</h3>
+              <p>Two women work side by side at the conference table, one operating a MacBook while the other laughs and gestures.</p>
+              <div class="tags"><span class="t">Image</span><span class="t key">Classroom Moment</span></div>
+            </div>
+            <span class="view">View</span>
+          </div>
+        </div>
+        <div class="more">⌄&nbsp; Show 165 weaker matches</div>
+      </div>
+    </div>
+
+    <!-- =========================================== 4. ASSET DETAIL (desktop) -->
+    <div class="panel wide">
+      <h2>4 · Asset detail</h2>
+      <p class="cap">Preview first. Metadata reads as a caption, not a form.</p>
+      <div class="frame tall">
+        <div class="detail">
+          <div class="dm"><img src="../thumbs/IFM-101.jpg" alt=""><span class="bigplay"></span></div>
+          <div class="dd">
+            <span class="x">✕</span>
+            <p class="eyebrow">Video · Hiral Speaking</p>
+            <h3>Explaining Gold Investments (SGB &amp; Gold Funds)</h3>
+            <p class="desc">A presenter gestures animatedly in front of a ‘Gold’ slide listing SGB and gold mutual funds, while two women listen — covering ways to invest in gold.</p>
+            <dl class="dl">
+              <dt>Topics</dt><dd>Gold · Asset Allocation · Mutual Funds · ETFs</dd>
+              <dt>Person</dt><dd>Hiral, Student</dd>
+              <dt>Session</dt><dd class="unset">not recorded</dd>
+              <dt>Source</dt><dd class="unset">unknown</dd>
+              <dt>Status</dt><dd>Raw</dd>
+            </dl>
+            <div class="acts"><span class="btn">Open in Drive ↗</span><span class="btn ghost">Copy link</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================== 5. NO RESULTS (desktop) -->
+    <div class="panel">
+      <h2>5 · No results — “purple elephant”</h2>
+      <p class="cap">Says nothing, rather than something vaguely related.</p>
+      <div class="frame tall">
+        <div class="bar"><span class="logo">INVESTING FOR <em>MUMMIES</em></span><nav><b>Library</b><span>About</span></nav></div>
+        <div class="srow">
+          <div class="search compact">
+            <svg class="mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+            <span class="q">purple elephant</span>
+          </div>
+          <span class="fbtn">Filters</span>
+        </div>
+        <div class="none">
+          <div class="ring"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7b8f9c" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg></div>
+          <h3>Nothing matches that.</h3>
+          <p>Try different words, or clear your filters.</p>
+          <span class="view">Clear search</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================== 6. MOBILE (375px) -->
+    <div class="panel">
+      <h2>6 · Mobile — 375px</h2>
+      <p class="cap">First result above the fold. No banner, no chip wall.</p>
+      <div class="frame" style="padding:16px 0;background:#eef1ef;border:none;box-shadow:none">
+        <div class="phone">
+          <div class="mbar"><span class="logo">IFM <em>Library</em></span><span class="burger">☰</span></div>
+          <div class="mwrap">
+            <div class="search m">
+              <svg class="mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+              <span class="q">gold</span>
+            </div>
+            <div class="fbtn m">Filters</div>
+            <p class="mcount">10 relevant results</p>
+            <div class="mres">
+              <div class="thumb"><img src="../thumbs/IFM-101.jpg" alt=""><span class="play"></span></div>
+              <div><h3>Explaining Gold Investments</h3>
+                <div class="tags"><span class="t">Video</span><span class="t key">Gold</span></div></div>
+            </div>
+            <div class="mres">
+              <div class="thumb"><img src="../thumbs/IFM-099.jpg" alt=""></div>
+              <div><h3>Gold as a Safe Haven Talk</h3>
+                <div class="tags"><span class="t">Image</span><span class="t key">Gold</span></div></div>
+            </div>
+            <div class="mres">
+              <div class="thumb"><img src="../thumbs/IFM-100.jpg" alt=""></div>
+              <div><h3>Ways to Invest in Gold Session</h3>
+                <div class="tags"><span class="t">Image</span><span class="t key">Gold</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    <h3>One thing in state 2 and 6 is not true today</h3>
+    <p><strong>Typing <code>gold</code> currently returns 36 results that all score exactly 68.</strong>
+       Every hit ties, so the order is just array position — which is why four decorative
+       “Vedanta demerger — gold globe” renders sit above IFM-101, IFM-099 and IFM-100. The
+       tagging is correct; those renders carry no Gold topic. The <em>ranking</em> simply has
+       no way to prefer an asset that genuinely is about gold.</p>
+    <p>Reaching the ordering shown above needs one scoring change: <strong>a query word that
+       exactly matches a controlled Topic or Format should count for more than the same word
+       appearing in a title or description.</strong> That is a few lines in the scorer, and it is
+       what makes the “N relevant results” cutoff meaningful too — without a spread of scores
+       there is no tail to cut.</p>
+    <p>You froze the search engine and asked me to stop and report rather than modify it, so I
+       have not touched it. <strong>This is the one change I need approved before implementing.</strong>
+       Everything else in this storyboard is presentation only.</p>
+  </div>
+
+</div>
+</body>
+</html>
