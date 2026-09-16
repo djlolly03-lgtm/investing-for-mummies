@@ -2,6 +2,33 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "snl",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd '/Users/lollyg/Documents/investing for Mummies/CLAUDE' && npx --yes serve -l 8791 --no-clipboard ."
+      ],
+      "port": 8791
+    },
+    {
+      "name": "ifm-game",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd /tmp && npx --yes serve -l 8743 --no-clipboard '/Users/lollyg/Documents/investing for Mummies/CLAUDE'"
+      ],
+      "port": 8743
+    },
+    {
+      "name": "ss-build",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd /Users/lollyg/Developer && npx --yes serve -l 8744 --no-clipboard ."
+      ],
+      "port": 8744
+    },
+    {
       "name": "ifm-os-prototype",
       "runtimeExecutable": "node",
       "runtimeArgs": ["scripts/dev-serve-content.js"],

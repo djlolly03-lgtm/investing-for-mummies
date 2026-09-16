@@ -63,3 +63,16 @@ content/v1-prototype/sample10.js
 content/v1-prototype/tagged20.js
 content/v1-prototype/storyboard.html
 content/v1-prototype/enrichment.json
+# Added 17 Sep 2026. Same reason as the five above, and the same trap: this list is
+# per-file, so anything added to the prototype later is public by default until it is
+# named here. None of these four is referenced by index.html — the page loads only
+# taxonomy.js, v1-catalogue.js, media-map.js and transcripts.js — so blocking them costs
+# the site nothing. interpreter-tests.js and nl-diagnostic.js also carry internal audit
+# commentary and asset IDs that were never meant to be readable from the open web.
+content/v1-prototype/interpreter.js
+content/v1-prototype/interpreter-tests.js
+content/v1-prototype/nl-diagnostic.js
+content/v1-prototype/semantic-experiment.js
+# Dot-files are uploaded like any other file; this one is the HEAD-probe cache written by
+# media-audit.py.
+.media-probe.json
