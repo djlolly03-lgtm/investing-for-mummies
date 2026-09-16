@@ -311,7 +311,13 @@ const STOP=new Set(['find','me','a','an','the','of','for','show','get','to','on'
   // of `moments`. Note `footage`, `shot` and `clip` are NOT here: they map to real
   // Format/Type meaning through SYN.
   'moment','moments','content','stuff','thing','things','something','anything',
-  'piece','pieces','asset','assets','file','files','material','bit','bits','item','items']);
+  'piece','pieces','asset','assets','file','files','material','bit','bits','item','items',
+  // Conversational filler. These are how people TALK, and they are catastrophic here: 'was'
+  // occurs in exactly 1 of 378 assets, so it scores an IDF of 27.8 against 'gold' at 6.1 —
+  // a meaningless word outweighing the subject 4x and starving the coverage test.
+  'was','were','do','does','did','we','have','has','had','there','here','be','been',
+  'good','nice','great','best','really','just','actually','maybe','some','somewhere',
+  'that','those','these','my','your','their','am','are','then','when','while','got']);
 
 // Query word -> extra tokens. Lets someone type how they speak and still hit the taxonomy.
 const SYN={
@@ -327,6 +333,8 @@ const SYN={
   broll:['b-roll'], 'b-roll':['b-roll'], cutaway:['b-roll'], footage:['b-roll'],
   clip:['video'], clips:['video'], reel:['video'], reels:['video'], film:['video'],
   photo:['image'], photos:['image'], picture:['image'], pictures:['image'], image:['image'],
+  pic:['image'], pics:['image'], snap:['image'], snaps:['image'], visual:['image'],
+  visuals:['image'], imagery:['image'], stills:['image'], still:['image'],
   shot:['image'], shots:['image'], headshot:['portrait'], headshots:['portrait'],
   portrait:['portrait'], portraits:['portrait'],
   certificate:['certificate'], certificates:['certificate'], graduation:['certificate'],
@@ -505,8 +513,16 @@ function search(query){
       if(!con.format.length && !con.type.length) return;
       results.push({a,score:Math.round(score)||1,hits:[...hits]}); return;
     }
-    let total=0; meaningful.forEach(t=>total+=rawIdf(t));
-    let cover=0; coveredRaw.forEach(t=>{ if(meaningful.includes(t)) cover+=rawIdf(t); });
+    // ROOT-CAUSE FIX. Coverage asks "did we account for most of what she meant?" and
+  // weights each word by rarity. But rarity in a 378-asset catalogue is not importance:
+  // 'was' appears in 1 asset and scores 27.8, while 'gold' appears in 36 and scores 6.1.
+  // A filler word therefore outweighed the subject 4x and starved every query of coverage.
+  // Capping the weight any single word can contribute keeps rare-but-real terms strong
+  // (xirr, sgb) while stopping incidental words from deciding the whole query.
+  const COVER_CAP=8;
+  const cidf=t=>Math.min(rawIdf(t),COVER_CAP);
+  let total=0; meaningful.forEach(t=>total+=cidf(t));
+    let cover=0; coveredRaw.forEach(t=>{ if(meaningful.includes(t)) cover+=cidf(t); });
     // 0.45, not 0.55. At 20 assets 0.55 was right; across 379 a single rare filler word
     // ('batch', 'clip') carries enough IDF mass on its own to sink a query whose real
     // terms all matched. 'certificates from the August batch' lost the August certificates
