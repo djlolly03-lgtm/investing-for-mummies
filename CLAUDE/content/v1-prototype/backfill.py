@@ -65,6 +65,9 @@ SHOT_MAP = {
 # "teal/gold theme". A naive \bgold\b matched 37 rows; excluding colour compounds still
 # left 24, of which about eight were real. So: tag Gold only where gold appears with
 # investment language, or inside an explicit asset-class list.
+GOLD_ORNAMENTAL = re.compile(
+    r'gold[- ](?:coins?|medallion|trophy|globe|hoop|earrings?|tree|sherwani|saree|badge|'
+    r'foil|type|accent|theme|ifm|end[- ]?card|logo|plinth)', re.I)
 GOLD_POSITIVE = re.compile(
     r'\bsgb\b|sovereign gold|bullion|gold bar|gold funds?|gold mutual|gold etf|'
     r'invest(ing|ment|ments)? in gold|ways to invest in gold|gold[- ]invest|safe haven|'
@@ -122,15 +125,25 @@ FORMAT_RULES = [
                          r'\breviews\b|social proof|word of mouth'),
  ('Portrait',            r'\bportrait\b|headshot|founder photo|profile photo'),
  ('Student Question',    r'q ?and ?a|q&a|questions? slide|fielding quer|asking quer'),
- ('Social / Promotional',r'game reel|game teaser|teaser|gameplay|game screen|quiz|leaderboard|promo reel'),
- ('Classroom Moment',    r'group photo|group shot|group with|applaud|clapping|laugh|candid|audience|'
-                         r'students? (watch|listen|tak|work)|cohort|ceremony|participants'),
- # The last alternative covers Hiral to camera. A reel fronted by her is her speaking even
- # when the description uses no teaching verb — 'Reel: Hiral against a gold-bar backdrop'
- # was otherwise falling through to B-roll, which it plainly is not.
+ ('Social / Promotional',r'game reel|game teaser|teaser|gameplay|game screen|quiz|leaderboard|promo reel|'
+                         r'screen \d+:|join screen|scan-to-join|scan to join|room code|voting board|'
+                         r'suitor|closing recap|prize ladder|lobby'),
+ # ORDER MATTERS — Hiral Speaking is tested BEFORE Classroom Moment. 'Hiral presents the
+ # gold slide while two women listen' hit 'listening' first and became a Classroom Moment,
+ # which broke the flagship gold query. When Hiral is named AND explaining, that is what
+ # the asset IS; an audience listening is the backdrop, not the subject.
+ # The last alternative covers Hiral to camera: a reel fronted by her is her speaking even
+ # with no teaching verb — 'Reel: Hiral against a gold-bar backdrop' was falling to B-roll.
  ('Hiral Speaking',      r'hiral (—|-)? ?teaching|teaching|presents|presenting|explain|talk\b|speaks|'
                          r'addressing|mid-explanation|fronted by|anchor|'
                          r'reel:?\s*hiral|hiral (?:against|in a|in blue|in black|holding|stood|sits|seated)'),
+ # Widened after looking at ~40 session photos: 'discussion', 'listening', 'collaborating',
+ # 'leaning in', 'workbooks out' are all something-is-happening, which is the agreed test.
+ ('Classroom Moment',    r'group photo|group shot|group with|applaud|clapping|laugh|candid|audience|'
+                         r'students? (watch|listen|tak|work)|cohort|ceremony|participants|'
+                         r'discussion|discussing|listening|listen intently|collaborat|lean in|'
+                         r'working (on|together)|chat(ting)?|follow along|workbooks?|'
+                         r'participating|answering|activity|gestures? (expressively|animatedly|while talking)'),
  # 'backdrop' and 'close-up' were removed: they describe what is BEHIND the subject and how
  # tight the framing is, not whether the shot is supporting footage.
  ('B-roll',              r'room[/ ]venue wide|wide (view|shot)|establishing|cutaway|b-?roll|detail shot'),
@@ -140,7 +153,13 @@ FORMAT_RE = [(f, re.compile(p, re.I)) for f, p in FORMAT_RULES]
 
 # Boilerplate descriptions carry no visual information. These rows are findable by title
 # and session only, and are flagged for a vision pass rather than guessed at.
-BOILERPLATE = re.compile(r'^photo from the ifm|^(not yet analysed)|video in production|^photo \d+$', re.I)
+BOILERPLATE = re.compile(
+    r'^photo from the ifm|^\(?not yet analysed|video in production|^photo \d+$|'
+    # Raw dumps and placeholders describe WHERE footage came from, never what is in it.
+    # 'Raw video from the IFM women's money workshop in Goa. Candidate footage for reels.'
+    # was becoming a Classroom Moment on the strength of the word 'workshop' alone.
+    r'^raw video from|candidate footage|^placeholder|presumably|not yet analysed or clipped|'
+    r'^raw \d+ ?mb|raw session video dump', re.I)
 
 STOPISH = set('the a an of for and or in on at to with is are this that it its'.split())
 
@@ -149,6 +168,24 @@ def load_rows():
     src = open(DATA, encoding='utf-8').read()
     i = src.index('window.IFM_DATA'); a = src.index('{', i); b = src.rindex('}') + 1
     return json.loads(src[a:b])
+
+
+# Descriptions routinely quote what is written on a slide, a graphic or a game screen:
+# "the question 'Waiting for the perfect time usually means...'". That IS slide text, read
+# by whoever wrote the row. Harvesting it is not invention — it is promoting evidence that
+# was already there into a field the search engine weights properly.
+QUOTED = re.compile(r"[\u2018\u201c'\"]([^\u2019\u201d'\"]{12,160})[\u2019\u201d'\"]")
+SCREENY = re.compile(r'slide|screen|projector|headline|titled|caption|cover|wordmark|reads?\b|'
+                     r'board|display|artboard|poster|type alongside', re.I)
+
+def slide_text_for(r):
+    """Only harvest from rows that actually show a screen or a graphic with copy on it."""
+    desc = str(r.get('description') or '')
+    if not SCREENY.search(desc):
+        return ''
+    parts = [m.group(1).strip() for m in QUOTED.finditer(desc)]
+    parts = [p for p in parts if not p.lower().startswith(('http', 'www'))]
+    return ' '.join(dict.fromkeys(parts))[:600]
 
 
 def blob(r, *fields):
@@ -166,7 +203,9 @@ def topics_for(r):
     found = []
     for t, rx in TOPIC_RE:
         if t == 'Gold':
-            if GOLD_POSITIVE.search(text):
+            # Remove decorative uses first, then ask whether any investment-context
+            # gold remains. 'gold coins' and 'the gold IFM medallion' are art direction.
+            if GOLD_POSITIVE.search(GOLD_ORNAMENTAL.sub(' ', text)):
                 found.append(t)
             continue
         if rx.search(text):
@@ -185,9 +224,30 @@ def format_for(r, mechanical):
     text = blob(r, 'title', 'description', 'keywords', 'shot')
     if BOILERPLATE.search(str(r.get('description') or '')):
         return '', 'needs_vision'
+    has_hiral = bool(re.search(r"\bhiral\b|\bthe founder\b|\bfounder.?s\b", text, re.I))
     for f, rx in FORMAT_RE:
         if rx.search(text):
+            # 'Hiral Speaking' is named for her, so it REQUIRES her. Without this guard the
+            # keyword 'explainer' matched `explain` and tagged carousels as Hiral speaking:
+            # 60 of 114 had no Hiral in them at all. An unidentified presenter teaching is
+            # a Classroom Moment — honest, and it keeps this format meaning one thing.
+            if f == 'Hiral Speaking' and not has_hiral:
+                continue
             return f, 'text'
+    # Nothing matched. A moving asset with no people in it and no promo signal is, by the
+    # agreed definition, supporting footage: the AI concept renders (coin jars, medallions,
+    # the Vedanta pizza) are exactly this. Stills are NOT included — a photo of nobody is
+    # more likely a detail shot we cannot classify than deliberate B-roll.
+    no_people = (str(r.get('shot') or '') == 'No people'
+                 or re.search(r'no identifiable people', str(r.get('consent') or ''), re.I)
+                 # or simply: nothing in the description mentions a person at all. The AI
+                 # concept renders (coin jars, medallions, the Vedanta pizza) carry no
+                 # consent field, so the explicit checks above never fired on them.
+                 or not re.search(r'\bhiral\b|founder|women|woman|student|teen|people|person|'
+                                  r'presenter|speaker|host|participant|attendee|audience|'
+                                  r'girl|lady|colleague|mums?\b|her\b|she\b', text, re.I))
+    if no_people and TYPE_MAP.get((r.get('type') or '').strip()) == 'Video':
+        return 'B-roll', 'no_people_video'
     return '', 'no_evidence'
 
 
@@ -195,7 +255,8 @@ def person_for(r):
     """Explicit evidence only. 'A presenter' / 'a woman in white' is NOT Hiral."""
     text = blob(r, 'title', 'description', 'keywords', 'shot')
     people = []
-    if re.search(r'\bhiral\b', text, re.I):
+    # 'the founder' names Hiral as unambiguously as her name does — IFM has one founder.
+    if re.search(r"\bhiral\b|\bthe founder\b|\bfounder.?s\b", text, re.I):
         people.append('Hiral')
     if re.search(r'student|teen|participant|attendee|audience|women (listen|watch|seated|apply)|'
                  r'graduate|cohort|class\b', text, re.I):
@@ -264,7 +325,7 @@ def main():
             'drive': r.get('drive link') or r.get('video') or '',
             'description': r.get('description') or '',
             'session': (r.get('session') or '').strip(),
-            'slide_text': '',                     # filled by the vision pass, never guessed
+            'slide_text': slide_text_for(r),
         }
         if r['id'] in EXCLUDE:
             v1['library'] = False                 # internal flag; never a UI filter
@@ -294,8 +355,32 @@ def main():
         if v1['person']: stats['has_person'] += 1
         out.append(v1); stats['library'] += 1
 
+    # Vision findings win over anything the rules produced — a human (or a model) actually
+    # looked at these. Applied last, and only to keys the file names.
+    epath = os.path.join(HERE, 'enrichment.json')
+    enrich = {}
+    if os.path.exists(epath):
+        enrich = {k: v for k, v in json.load(open(epath, encoding='utf-8')).items()
+                  if not k.startswith('_')}
+    applied = 0
+    by_id = {o['id']: o for o in out}
+    for aid, patch in enrich.items():
+        o = by_id.get(aid)
+        if not o:
+            print('enrichment for unknown id:', aid); continue
+        for k, v in patch.items():
+            if k.startswith('_'):
+                continue
+            o[k] = v
+        applied += 1
+    out = [o for o in out]
+    stats['enriched'] = applied
+
     report = {
-        'rows': len(out), 'in_library': stats['library'], 'excluded': stats['excluded'],
+        'rows': len(out), 'in_library': sum(1 for o in out if o.get('library') is not False),
+        'excluded': sum(1 for o in out if o.get('library') is False),
+        'enriched_by_vision': stats['enriched'],
+        'with_slide_text': sum(1 for o in out if o.get('slide_text')),
         'coverage': {k: stats[k] for k in sorted(stats) if k.startswith('has_')},
         'format_source': dict(fmt_src), 'needs_vision': needs_vision,
     }

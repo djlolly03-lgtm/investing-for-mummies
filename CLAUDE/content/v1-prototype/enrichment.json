@@ -1,0 +1,257 @@
+{
+  "_README": [
+    "Per-asset findings from the Phase 2 vision pass, 16 Sep 2026. Merged by backfill.py",
+    "AFTER the rules run, so these win over any rule-derived value.",
+    "",
+    "Only assets actually LOOKED AT are listed. Every value here came from inspecting the",
+    "image, not from re-reading the description. Where looking still did not establish a",
+    "value (the identity of an unnamed presenter, for instance) the field is omitted, not guessed.",
+    "",
+    "slide_text is transcribed from what is legible on a screen, projector or graphic.",
+    "Nothing is inferred from a blurred or partially visible slide."
+  ],
+  "IFM-251": {
+    "format": "Hiral Speaking",
+    "person": [
+      "Hiral",
+      "Student"
+    ],
+    "description": "Open-air Goa venue: women seated at cafe tables listening while Hiral presents from the far side in a blue dress. A dog sleeps on the floor in the foreground — an unusually relaxed, non-corporate setting.",
+    "search_terms": "goa workshop offsite retreat open air cafe relaxed informal casual dog seated audience listening destination blue dress",
+    "_seen": "Boilerplate description replaced. Hiral confirmed by the blue dress matching IFM-252/253 the same day."
+  },
+  "IFM-252": {
+    "format": "Hiral Speaking",
+    "topic": [
+      "Financial Planning",
+      "Saving",
+      "Managing Money"
+    ],
+    "person": [
+      "Hiral"
+    ],
+    "description": "Hiral presenting from a laptop beside a large screen showing an emergency-fund diagram — a safety net catching a falling figure.",
+    "slide_text": "Secure Your Emergency Fund. Financial Safety Net.",
+    "search_terms": "emergency fund rainy day safety net contingency months of expenses buffer goa workshop presenting laptop screen",
+    "_seen": "Three topics came from reading the screen. The row's own text had none."
+  },
+  "IFM-253": {
+    "format": "Classroom Moment",
+    "person": [
+      "Hiral",
+      "Student"
+    ],
+    "description": "Group photo on the steps of the Goa venue — around eight women with Hiral, several holding IFM workbooks, greenery and a tiled roof behind.",
+    "search_terms": "group photo goa cohort batch together posed steps outdoors workbooks smiling alumni",
+    "_seen": "Posed cohort photo — Classroom Moment per the agreed rule."
+  },
+  "IFM-254": {
+    "format": "Classroom Moment",
+    "person": [
+      "Hiral",
+      "Student"
+    ],
+    "description": "Goa cohort on the cafe steps holding up IFM course material, Hiral in the blue dress among them. Stone pillars and a chalkboard menu behind.",
+    "search_terms": "goa group photo cohort batch holding certificates workbooks steps cafe posed proud",
+    "_seen": ""
+  },
+  "IFM-255": {
+    "format": "Classroom Moment",
+    "person": [
+      "Hiral",
+      "Student"
+    ],
+    "description": "Tighter group shot of the Goa cohort on the steps, several women holding up their IFM material to camera.",
+    "search_terms": "goa group photo cohort batch holding certificates workbooks posed smiling",
+    "_seen": ""
+  },
+  "IFM-256": {
+    "format": "B-roll",
+    "person": [
+      "Student"
+    ],
+    "description": "Wide panorama of the open-air Goa venue — tiled roof, plants and garden seating, with the small group gathered at the far end.",
+    "search_terms": "goa venue wide panorama establishing location outdoor garden cafe setting context",
+    "_seen": "Establishing wide with no specific moment — B-roll, not Classroom Moment."
+  },
+  "IFM-144": {
+    "format": "Classroom Moment",
+    "person": [
+      "Hiral",
+      "Student"
+    ],
+    "search_terms": "founder smiling to camera boardroom session attendees watching presentation candid warm",
+    "_seen": "'The founder' is Hiral — IFM has one. Confirmed visually against the reference photo."
+  },
+  "IFM-302": {
+    "format": "Social / Promotional",
+    "slide_text": "Stock Rush Pro. A decade of India's markets in 30 minutes. FBAP. Start Game with 15 Players.",
+    "search_terms": "stock rush pro join screen qr code scan to join room code lobby players classroom game markets decade",
+    "_seen": "Slide text read off the join screen."
+  },
+  "IFM-295": {
+    "slide_text": "Waiting for the 'perfect time' usually means... Class answers 67% correct. Prize Ladder. Scan to join.",
+    "_seen": "Read from the host screen."
+  },
+  "IFM-026": {
+    "person": [
+      "Hiral"
+    ],
+    "slide_text": "Hi, I'm Hiral Goel. Business Journalist for 10+ years at Business India magazine. Organised and led the magazine's prestigious Businessman of the Year property. Mother of 2.",
+    "search_terms": "founder intro about hiral goel business journalist business india credentials bio mother of two personal brand",
+    "_seen": "Hiral confirmed visually; credential text read off the story card."
+  },
+  "IFM-021": {
+    "format": "Social Graphic",
+    "topic": [
+      "Money Mindset",
+      "Family & Money"
+    ],
+    "slide_text": "Crazy that school taught us trigonometry but not about taxes, investing or credit cards.",
+    "search_terms": "school education gap trigonometry taxes credit cards financial literacy relatable hook notebook flat lay",
+    "_seen": "Full on-image copy read."
+  },
+  "IFM-030": {
+    "format": "Social Graphic",
+    "slide_text": "Guess the Finance Term. Ready? Tap to test your finance knowledge!",
+    "search_terms": "quiz game guess the finance term jargon glossary interactive story tap engagement",
+    "_seen": "Gold coins in frame are decorative — deliberately NOT tagged Gold."
+  },
+  "IFM-R02": {
+    "slide_text": "A chaotic money sim. Survive the month on Rs 10,000? 28 days. Surprise bills. Pure chaos.",
+    "_seen": "Hook copy read off the opening frame."
+  },
+  "IFM-037": {
+    "library": false,
+    "_seen": "BRAND ASSET. A 9-second animated logo reveal — the same class as IFM-312/313/314, which were excluded by decision. Excluding it too keeps the Library to actual content."
+  },
+  "IFM-003": {
+    "format": "Classroom Moment",
+    "person": [
+      "Other Person",
+      "Student"
+    ],
+    "search_terms": "collaborating budgeting worksheet pointing pen working together small group hands on activity",
+    "_seen": "Presenter is not identifiable as Hiral, so Person stays Other Person."
+  },
+  "IFM-004": {
+    "person": [
+      "Other Person",
+      "Student"
+    ],
+    "_seen": "Raw unclipped 365MB session video. Format left blank — nothing establishes what it shows."
+  },
+  "IFM-059": {
+    "format": "Classroom Moment",
+    "person": [
+      "Other Person",
+      "Student"
+    ],
+    "_seen": "Green-top presenter with tied-back hair and glasses; NOT confirmable as Hiral, so left as Other Person."
+  },
+  "IFM-060": {
+    "format": "Hiral Speaking",
+    "person": [
+      "Hiral"
+    ],
+    "search_terms": "props snack packets demo activity investing lesson raw clip behind the scenes",
+    "_seen": "Row text names Hiral explicitly."
+  },
+  "IFM-114": {
+    "format": "B-roll",
+    "person": [
+      "Other Person"
+    ],
+    "_seen": "Over-the-shoulder screen shot — contextual, no identifiable moment."
+  },
+  "IFM-115": {
+    "format": "B-roll",
+    "person": [
+      "Other Person"
+    ],
+    "_seen": "Session set-up, not a moment."
+  },
+  "IFM-134": {
+    "format": "Classroom Moment",
+    "person": [
+      "Student"
+    ],
+    "search_terms": "group discussion whiteboard mind map investment planning boardroom engaged talking",
+    "_seen": ""
+  },
+  "IFM-080": {
+    "format": "Classroom Moment",
+    "person": [
+      "Student"
+    ],
+    "_seen": "Posed cohort group photo. Was wrongly Testimonial before the 'review' rule was tightened."
+  },
+  "IFM-081": {
+    "format": "Classroom Moment",
+    "person": [
+      "Student"
+    ],
+    "_seen": "As IFM-080."
+  },
+  "IFM-101": {
+    "format": "Hiral Speaking",
+    "person": [
+      "Hiral",
+      "Student"
+    ],
+    "topic": [
+      "Gold",
+      "Asset Allocation",
+      "Mutual Funds",
+      "ETFs"
+    ],
+    "slide_text": "Gold: Your Portfolio's Safe Haven. Ways to invest in gold: SGBs (best way to invest in gold, for low risk long term investors, backed by RBI); Gold Mutual Funds (invest into ETFs, gold mining and gold-related assets); ETFs (highly liquid, traded on the stock exchange); Digital Gold; Physical Gold (low liquidity, high risk of theft, making and storage costs). 5-10% of portfolio.",
+    "search_terms": "sgb sovereign gold bond gold funds gold etf digital gold physical gold safe haven hedge portfolio allocation five to ten percent rbi ways to invest in gold bullion explaining teaching",
+    "_seen": "Hiral confirmed from a 1200px frame against the founder reference. Slide read directly — it yielded four topics the row's own text never mentioned. ('jewellery' removed from search terms — the slide says 'Physical Gold', not jewellery; that word was my inference, not evidence.)"
+  },
+  "IFM-099": {
+    "format": "Hiral Speaking",
+    "person": [
+      "Hiral",
+      "Student"
+    ],
+    "topic": [
+      "Gold",
+      "Asset Allocation",
+      "Mutual Funds",
+      "ETFs"
+    ],
+    "slide_text": "Gold: Your Portfolio's Safe Haven. Ways to invest in gold: SGBs, Gold Mutual Funds, ETFs, Digital Gold, Physical Gold. 5-10% of portfolio.",
+    "search_terms": "gold safe haven pie chart allocation sgb sovereign gold bond gold funds etf portfolio hedge presenting pointing",
+    "_seen": "Same session and slide as IFM-101."
+  },
+  "IFM-100": {
+    "format": "Hiral Speaking",
+    "person": [
+      "Hiral",
+      "Student"
+    ],
+    "topic": [
+      "Gold",
+      "Asset Allocation"
+    ],
+    "search_terms": "ways to invest in gold sgb gold funds allocation safe haven portfolio",
+    "_seen": "Same 6 Apr session."
+  },
+  "IFM-088": {
+    "format": "Student Question",
+    "person": [
+      "Hiral",
+      "Student"
+    ],
+    "_seen": "Same 6 Apr session; Hiral confirmed by session match."
+  },
+  "IFM-179": {
+    "format": "Hiral Speaking",
+    "person": [
+      "Hiral",
+      "Student"
+    ],
+    "_seen": "Same 6 Apr session; Hiral confirmed by session match."
+  }
+}

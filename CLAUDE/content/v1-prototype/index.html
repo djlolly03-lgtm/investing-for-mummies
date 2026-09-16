@@ -270,9 +270,16 @@ function search(query){
     });
     const meaningful=raw.filter(t=>((DF[t]||0)>0 || (SYN[t]||[]).some(s=>DF[s.split(' ')[0]]>0))
                                    && !conWords.has(t));
-    // Query was nothing BUT a constraint ("portrait", "b-roll"). The filter has already
-    // selected the right set, so every survivor is a hit — don't drop them all.
-    if(!meaningful.length){ results.push({a,score:Math.round(score)||1,hits:[...hits]}); return; }
+    if(!meaningful.length){
+      // Two very different situations reach here and they must not share an answer.
+      // (a) The query was nothing BUT a constraint ("portrait", "b-roll"): the filter has
+      //     already selected the right set, so every survivor is a hit.
+      // (b) NOTHING the user typed exists anywhere in the corpus ("CAGR", "REIT"): the
+      //     honest answer is no results. Returning everything — which this did, all 378
+      //     assets for "ETF" — is the worst possible response to an unknown term.
+      if(!con.format.length && !con.type.length) return;
+      results.push({a,score:Math.round(score)||1,hits:[...hits]}); return;
+    }
     let total=0; meaningful.forEach(t=>total+=rawIdf(t));
     let cover=0; coveredRaw.forEach(t=>{ if(meaningful.includes(t)) cover+=rawIdf(t); });
     // 0.45, not 0.55. At 20 assets 0.55 was right; across 379 a single rare filler word

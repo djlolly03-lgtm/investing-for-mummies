@@ -33,7 +33,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/reels/bbf-15s.mp4",
 "description": "15s 9:16 reel. Hook over real classroom footage — 'Survive the month on ₹10,000?' — into the Broke by Friday life-sim screens ('Will you make it?'), coral/gold theme, IFM end-card.",
 "session": "",
-"slide_text": "",
+"slide_text": "A chaotic money sim. Survive the month on Rs 10,000? 28 days. Surprise bills. Pure chaos.",
 "type": "Video",
 "status": "Ready",
 "format": "Social / Promotional",
@@ -51,7 +51,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/reels/nwv-15s.mp4",
 "description": "15s 9:16 reel. Workshop crane-shot hook 'Need it? Want it? Or gold?' into the Need·Want·Value sorting screens ('Build mindful habits'), navy/blue theme, IFM end-card.",
 "session": "",
-"slide_text": "",
+"slide_text": "Need it? Want it? Or gold? Build mindful habits",
 "type": "Video",
 "status": "Ready",
 "format": "Social / Promotional",
@@ -92,7 +92,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/reels/stockrush-15s.mp4",
 "description": "15s 9:16 reel mixing teacher + student views. Real students watching a live leaderboard (Seedance) → host leaderboard screen ('Teacher view') → player trading screen ('Student view'), black/green market theme, IFM end-card.",
 "session": "",
-"slide_text": "",
+"slide_text": "Teacher view Student view",
 "type": "Video",
 "status": "Ready",
 "format": "Social / Promotional",
@@ -115,7 +115,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/reels/srpro-15s.mp4",
 "description": "15s 9:16 reel, premium black/gold. Mentor-at-whiteboard hook 'Think you can beat the market?' into the real Stock Rush PRO screens — the '6 corporate actions' teacher briefing and the 'decade of India's markets in 30 min' landing — IFM end-card.",
 "session": "",
-"slide_text": "",
+"slide_text": "Think you can beat the market? 6 corporate actions decade of India",
 "type": "Video",
 "status": "Published",
 "format": "Social / Promotional",
@@ -136,7 +136,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/reels/hidden-15s.mp4",
 "description": "15s 9:16 reel, teal/gold. 'What's hiding in your daily habits?' over real footage → Hidden Fortunes SIP-projection screens ('Watch it compound'), IFM end-card.",
 "session": "",
-"slide_text": "",
+"slide_text": "s hiding in your daily habits? Watch it compound",
 "type": "Video",
 "status": "Ready",
 "format": "Social / Promotional",
@@ -179,7 +179,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/reels/fundgoal-15s.mp4",
 "description": "15s 9:16 reel, teal. 'Got a goal? Get the plan.' over real footage → the Fund YOUR Goal SIP calculator + cost-of-delay screen ('Start today, not someday'), IFM end-card.",
 "session": "",
-"slide_text": "",
+"slide_text": "Got a goal? Get the plan. Start today, not someday",
 "type": "Video",
 "status": "Ready",
 "format": "Social / Promotional",
@@ -199,7 +199,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/reels/wealth-15s.mp4",
 "description": "15s 9:16 reel, premium gold. Cinematic chapter-hero footage, 'The conversation every family avoids' → 'Watch. Reflect. Talk.' → the Wealth Conversation title screen, IFM end-card.",
 "session": "",
-"slide_text": "",
+"slide_text": "The conversation every family avoids Watch. Reflect. Talk.",
 "type": "Video",
 "status": "Ready",
 "format": "Social / Promotional",
@@ -220,7 +220,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/reels/lifestyle-time-machine-15s.mp4",
 "description": "15s 9:16 reel. Real class footage hook 'Can you afford your future?' → dream-life game screens → the 2031 inflation reveal ('Same dreams. Lakhs more.') → real students playing, purple/pink theme, IFM end-card.",
 "session": "",
-"slide_text": "",
+"slide_text": "Can you afford your future? Same dreams. Lakhs more.",
 "type": "Video",
 "status": "Ready",
 "format": "Social / Promotional",
@@ -243,7 +243,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1lOaOhLWBhSwNsRQy8DvPYMDT6G5_2T8c/view",
 "description": "A speaker stands beside a projector screen showing a 'Risk vs Reward' slide, addressing rows of seated women in a bright community hall. The IFM roll-up banner is visible at stage left.",
 "session": "",
-"slide_text": "",
+"slide_text": "Risk vs Reward",
 "type": "Image",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -291,16 +291,17 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Managing Money",
 "Money Conversations"
 ],
 "person": [
-"Other Person"
+"Other Person",
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "session mar mums collaborating budgeting worksheet close three women over one pointing figure pen coffee cups calculators table collaboration calculator discussion hands workshop activity"
+"search_terms": "collaborating budgeting worksheet pointing pen working together small group hands on activity"
 },
 {
 "id": "IFM-004",
@@ -316,7 +317,10 @@ window.IFM_V1 =
 "status": "Raw",
 "format": "",
 "topic": [],
-"person": [],
+"person": [
+"Other Person",
+"Student"
+],
 "source": "Unknown",
 "search_terms": "session mar raw video 365 from march not yet analysed clipped footage financial education workshop"
 },
@@ -329,7 +333,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/carousel_spacex_higgsfield/slide_01.png",
 "description": "8-slide dark-navy carousel: 'SpaceX IPO: What's All The Buzz About? The biggest IPO in history may be here' — rocket emoji lift-off, teal serif headline, IPO SERIES badge.",
 "session": "",
-"slide_text": "",
+"slide_text": "SpaceX IPO: What",
 "type": "Carousel",
 "status": "Published",
 "format": "Social Graphic",
@@ -354,7 +358,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Saving vs Investing",
 "Saving"
@@ -395,7 +399,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Family & Money",
 "Inflation & Interest Rates"
@@ -416,7 +420,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Compounding"
 ],
@@ -433,13 +437,11 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter5-small-amounts-matter/chap5hero.mp4",
 "description": "A sign reads '₹5,000 per month at 12% per year' beside a flip calendar; note stacks rocket upward in a blur of light and settle as a mountain of gold coins behind the gold IFM medallion. Small monthly SIPs build a fortune.",
 "session": "",
-"slide_text": "",
+"slide_text": "₹5,000 per month at 12% per year",
 "type": "Video",
 "status": "Ready",
-"format": "",
-"topic": [
-"Gold"
-],
+"format": "B-roll",
+"topic": [],
 "person": [],
 "source": "IFM / In-house",
 "search_terms": "sip systematic investment plan monthly investing wealth conversation small amounts matter sign reads 000 per month year beside flip calendar note stacks rocket upward blur light settle mountain gold coins behind ifm medallion monthly sips build fortune sip 5000 rupees percent cash bundles coin"
@@ -456,7 +458,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Wealth",
 "Family & Money"
@@ -477,7 +479,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Wealth"
 ],
@@ -497,7 +499,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "B-roll",
 "topic": [],
 "person": [],
 "source": "IFM / In-house",
@@ -553,7 +555,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1eVutEOYaeP5f1oxyIQsmxwmxBNs-mrx3",
 "description": "Minimal type-only slide on a light teal pixel-grid background with the playful headline 'JOIN Investing for Mummies NOWWWWWWWW' in mixed serif/sans navy type, IFM wordmark top right.",
 "session": "",
-"slide_text": "",
+"slide_text": "JOIN Investing for Mummies NOWWWWWWWW",
 "type": "Carousel",
 "status": "Ready",
 "format": "Social Graphic",
@@ -573,7 +575,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1KAI5PADUhgopnqiaQTlFOtDczT9loXbl",
 "description": "Cream slide asking 'Do words like Nifty, Sensex, PE Ratios make your brain instantly switch off?' with jargon terms in navy pill badges and a navy/gold candlestick chart along the bottom.",
 "session": "",
-"slide_text": "",
+"slide_text": "Do words like Nifty, Sensex, PE Ratios make your brain instantly switch off?",
 "type": "Carousel",
 "status": "Published",
 "format": "Social Graphic",
@@ -594,7 +596,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1a17dQ-OiJ479dcYTNbyLQm7JYPWSCpn5",
 "description": "Mint-green slide with headline 'Wanna end up RICHER than someone investing WAAAAAYYYYY more money than you?' above a photo of a hand clutching crumpled rupee notes.",
 "session": "",
-"slide_text": "",
+"slide_text": "Wanna end up RICHER than someone investing WAAAAAYYYYY more money than you?",
 "type": "Carousel",
 "status": "Ready",
 "format": "Social Graphic",
@@ -616,7 +618,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1YuNP75eJAwlot448jHgzS8XS5NmJV3V0",
 "description": "Cream slide with serif headline 'IT'S ALWAYS THE RIGHT TIME to start learning about investing!' above a minimalist clock-face illustration, faded rupee coins behind.",
 "session": "",
-"slide_text": "",
+"slide_text": "S ALWAYS THE RIGHT TIME to start learning about investing!",
 "type": "Carousel",
 "status": "Ready",
 "format": "Social Graphic",
@@ -636,10 +638,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1uMZq13u1Hf_nvMX6WMqPcAs2fjII7mB9",
 "description": "Textured beige cover titled 'What is Savings Vs Investments' with a hand dropping a banknote into a pink piggy bank.",
 "session": "",
-"slide_text": "",
+"slide_text": "What is Savings Vs Investments",
 "type": "Carousel",
 "status": "Ready",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Saving vs Investing",
 "Saving",
@@ -658,17 +660,17 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1iThpvYEB0Y59ziS3YTOpM5jbV5oI1tt1",
 "description": "Flat-lay of a spiral notebook, pencil and calculator with the line 'Crazy that school taught us trigonometry but not about taxes, investing or credit cards.'",
 "session": "",
-"slide_text": "",
+"slide_text": "Crazy that school taught us trigonometry but not about taxes, investing or credit cards.",
 "type": "Carousel",
 "status": "Published",
-"format": "",
+"format": "Social Graphic",
 "topic": [
-"Family & Money",
-"Investing"
+"Money Mindset",
+"Family & Money"
 ],
 "person": [],
 "source": "Aakara",
-"search_terms": "school flat lay spiral notebook pencil calculator line crazy taught trigonometry but not about taxes investing credit cards financial education relatable meme gap"
+"search_terms": "school education gap trigonometry taxes credit cards financial literacy relatable hook notebook flat lay"
 },
 {
 "id": "IFM-022",
@@ -679,7 +681,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1amkwMb8xJ15ucjtkq6AqDLiqX6NB4vuv",
 "description": "Five-slide cream carousel opening 'Don't buy that stock.. just because someone said so.' — disclaims tip-giving and promises jargon-free, safe, empowering learning.",
 "session": "",
-"slide_text": "",
+"slide_text": "t buy that stock.. just because someone said so.",
 "type": "Carousel",
 "status": "Published",
 "format": "Social Graphic",
@@ -700,7 +702,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1L9ushgmQ3pmO3JF5yL-UdtwQT3xCli8-",
 "description": "Cream slide asking 'Why do so many capable women still feel intimidated by money?' above a photo of a stressed woman holding her temples, faded gold coins behind.",
 "session": "",
-"slide_text": "",
+"slide_text": "Why do so many capable women still feel intimidated by money?",
 "type": "Carousel",
 "status": "Published",
 "format": "Portrait",
@@ -723,7 +725,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1UsqgAdCafw_Qu0HIPNi_JmzIctr-qNN-",
 "description": "Slide asking 'If you suddenly had to manage all your finances today, would you know WHERE TO START?' with a retro-styled woman reading a newspaper beside a money-bag illustration.",
 "session": "",
-"slide_text": "",
+"slide_text": "If you suddenly had to manage all your finances today, would you know WHERE TO START?",
 "type": "Carousel",
 "status": "Published",
 "format": "Social Graphic",
@@ -769,7 +771,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1YuwVgssHrbwh6eyLtgiBYtbWqOkP9lQS",
 "description": "Mint story introducing the founder: 'Hi, I'm Hiral Goel.' with photo and credential pills — business journalist 10+ years at Business India, led Businessman of the Year, mother of 2.",
 "session": "",
-"slide_text": "",
+"slide_text": "Hi, I'm Hiral Goel. Business Journalist for 10+ years at Business India magazine. Organised and led the magazine's prestigious Businessman of the Year property. Mother of 2.",
 "type": "Video",
 "status": "Ready",
 "format": "Social Graphic",
@@ -778,7 +780,7 @@ window.IFM_V1 =
 "Hiral"
 ],
 "source": "Aakara",
-"search_terms": "story hiral intro mint introducing founder goel photo credential pills business journalist years india led businessman year mother credibility about format green credentials personal brand"
+"search_terms": "founder intro about hiral goel business journalist business india credentials bio mother of two personal brand"
 },
 {
 "id": "IFM-027",
@@ -814,7 +816,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "",
 "topic": [],
 "person": [],
 "source": "Aakara",
@@ -829,7 +831,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1Zs1ITTOI-euFdNcuTpXaW7FZ9qZB-r9W",
 "description": "Aqua story with headline 'Finance Myths people still believe' around a 3D keyboard Delete key — myths to be deleted.",
 "session": "",
-"slide_text": "",
+"slide_text": "Finance Myths people still believe",
 "type": "Video",
 "status": "Ready",
 "format": "Social Graphic",
@@ -849,14 +851,14 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1MG3bdcOqnbOENYgv9CfI1Ij3X_dd9ZWX",
 "description": "Teal story titled 'Guess the Finance Term' with falling gold coins: 'Ready? Tap to test your finance knowledge!'",
 "session": "",
-"slide_text": "",
+"slide_text": "Guess the Finance Term. Ready? Tap to test your finance knowledge!",
 "type": "Video",
 "status": "Ready",
-"format": "Social / Promotional",
+"format": "Social Graphic",
 "topic": [],
 "person": [],
 "source": "Aakara",
-"search_terms": "story finance word game teal titled guess term falling gold coins ready tap test your knowledge quiz interactive background engagement gamification"
+"search_terms": "quiz game guess the finance term jargon glossary interactive story tap engagement"
 },
 {
 "id": "IFM-031",
@@ -870,7 +872,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Ready",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Saving vs Investing",
 "Saving",
@@ -909,10 +911,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/117PQmNIpH-dDe_KBtS6EQO1YtFTdmIcY",
 "description": "Second SpaceX cover variant: 'SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let's talk about the risks.' — rocket against light-blue sky with satellite, moon and emoji accents.",
 "session": "",
-"slide_text": "",
+"slide_text": "SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let",
 "type": "Carousel",
 "status": "Published",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Stocks / Equity",
 "Stock Market",
@@ -931,7 +933,7 @@ window.IFM_V1 =
 "drive": "",
 "description": "Mint-green cover with hands exchanging a fan of ₹500 notes and falling currency: 'Your future is getting expensive Faaast!'",
 "session": "",
-"slide_text": "",
+"slide_text": "Your future is getting expensive Faaast!",
 "type": "Carousel",
 "status": "Published",
 "format": "Social Graphic",
@@ -952,7 +954,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1uR_OTMYRvv2J_AWQfhyEqKnghNUvGe9R",
 "description": "4-slide workshop promo carousel: 'INVESTING FEELS INTIMIDATING? You're not alone — if finance jargon and market conversations feel overwhelming, THIS WORKSHOP IS FOR YOU', a woman thinking surrounded by BONDS / STOCKS / ETFS / MUTUAL FUNDS pills, swipe arrow.",
 "session": "",
-"slide_text": "",
+"slide_text": "INVESTING FEELS INTIMIDATING? You",
 "type": "Carousel",
 "status": "Published",
 "format": "Social Graphic",
@@ -1000,16 +1002,17 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/ifm-hero-lockup-9s.mp4",
 "description": "9s 16:9 premium homepage-hero reveal: the metallic IFM tree emblem (brushed gunmetal + obsidian glass) does one slow 360-degree rotation beside a static 'Investing for Mummies' serif wordmark; dark cinematic environment with volumetric fog and god-rays. Higgsfield seedance_2_0 animated from a nano-banana lockup frame.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies",
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Investing"
 ],
 "person": [],
 "source": "IFM / In-house",
-"search_terms": "investing mummies logo hero reveal lockup premium homepage metallic ifm tree emblem brushed gunmetal obsidian glass does one slow 360 degree rotation beside static serif wordmark dark cinematic environment volumetric fog god rays higgsfield seedance animated from nano banana frame"
+"search_terms": "investing mummies logo hero reveal lockup premium homepage metallic ifm tree emblem brushed gunmetal obsidian glass does one slow 360 degree rotation beside static serif wordmark dark cinematic environment volumetric fog god rays higgsfield seedance animated from nano banana frame",
+"library": false
 },
 {
 "id": "IFM-038",
@@ -1061,7 +1064,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Investing"
 ],
@@ -1081,7 +1084,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [],
 "person": [],
 "source": "IFM / In-house",
@@ -1099,7 +1102,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "B-roll",
 "topic": [],
 "person": [],
 "source": "IFM / In-house",
@@ -1117,7 +1120,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "B-roll",
 "topic": [],
 "person": [],
 "source": "IFM / In-house",
@@ -1135,7 +1138,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Stocks / Equity"
 ],
@@ -1155,7 +1158,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Stocks / Equity"
 ],
@@ -1175,7 +1178,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Stocks / Equity"
 ],
@@ -1195,7 +1198,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Stocks / Equity"
 ],
@@ -1215,7 +1218,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Stocks / Equity"
 ],
@@ -1235,7 +1238,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Stocks / Equity"
 ],
@@ -1275,7 +1278,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Ready",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Stocks / Equity"
 ],
@@ -1292,10 +1295,10 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/carousel_vedanta_slides/slide_01.png",
 "description": "Premium 8-slide dark-slate carousel explaining the Vedanta demerger. Opens on a steaming photoreal pizza stamped with the Vedanta globe — 'Vedanta just split into 5 companies. 5× richer?'. Frosted-glass cards then walk through what a demerger is (family-business analogy), the old bundle (Aluminium, Power, Oil & Gas, Iron & Steel), the split shown as a sliced pizza, and the share math (×5 new holdings + your original 100 stay put). Two embedded videos — the animated pizza-split explainer and the IFM hero-lockup outro. Closes on 'Same pizza. Different slices.' Round IFM logo top-right throughout. 1080×1080.",
 "session": "",
-"slide_text": "",
+"slide_text": "Vedanta just split into 5 companies. 5× richer? Same pizza. Different slices.",
 "type": "Carousel",
 "status": "Published",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Wealth",
 "Family & Money",
@@ -1314,7 +1317,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/vedanta-reel-anchor-18s.mp4",
 "description": "Vertical 9:16 news-style Reel (~18s) fronted by the founder's AI avatar as a business-news anchor in a dark-graphite, gold-accented newsroom (Bloomberg / ET Now look). She delivers a demerger explainer to camera with synced lip movement and an Anjali voiceover: 'Vedanta has just split into five companies… does that make shareholders 5× richer? Not quite — think of it like a pizza cut into slices.' Cuts to a steaming Vedanta-globe pizza splitting, then five gold sector blocks (Base Metals, Aluminium, Oil & Gas, Power, Iron & Steel) arranging around a central VEDANTA node, a split-screen, and a hero end-card: 'VEDANTA DEMERGER → WHAT IT MEANS FOR SHAREHOLDERS'. News lower-thirds throughout, no background music.",
 "session": "",
-"slide_text": "",
+"slide_text": "Vedanta has just split into five companies… does that make shareholders 5× richer? Not quite — think of it like a pizza cut into slices. VEDANTA DEMERGER → WHAT IT MEANS FOR SHAREHOLDERS",
 "type": "Video",
 "status": "Ready",
 "format": "Hiral Speaking",
@@ -1322,7 +1325,9 @@ window.IFM_V1 =
 "Wealth",
 "Stocks / Equity"
 ],
-"person": [],
+"person": [
+"Hiral"
+],
 "source": "IFM / In-house",
 "search_terms": "vedanta demerger anchor news explainer reel vertical style 18s fronted founder avatar business dark graphite gold accented newsroom bloomberg now look she delivers camera synced lip movement anjali voiceover has just split into five companies does make shareholders richer not"
 },
@@ -1335,7 +1340,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1Oz3ezoKAyFzh-mny3Oz-0n3-pT8h1KVn/view",
 "description": "Founder Hiral Goel teaches a small group of young women at the office boardroom whiteboard; the TV reads 'Class Mutual Fund — one pools money together' and the board is covered in hand-drawn notes on debt mutual funds, corporate bonds and debentures. A clear activity box and QR sign-in sit on the table.",
 "session": "",
-"slide_text": "",
+"slide_text": "Class Mutual Fund — one pools money together",
 "type": "Image",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -1383,7 +1388,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/17ent--UAPlEJFczBd0ytUoprEwTYdKOL/view",
 "description": "Wide boardroom shot of participants watching an interactive game/leaderboard on the TV screen; a 'Certificate of Completion' and a Monopoly box sit on the table. Same office youth session.",
 "session": "",
-"slide_text": "",
+"slide_text": "Certificate of Completion",
 "type": "Image",
 "status": "Raw",
 "format": "Certificate",
@@ -1453,10 +1458,10 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [],
 "person": [
-"Hiral",
+"Other Person",
 "Student"
 ],
 "source": "Unknown",
@@ -1474,7 +1479,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "Hiral Speaking",
 "topic": [
 "Investing"
 ],
@@ -1482,7 +1487,7 @@ window.IFM_V1 =
 "Hiral"
 ],
 "source": "Unknown",
-"search_terms": "office youth workshop pulling snack props from box clip raw hiral pulls packets garden chips dark fantasy clear investing analogy snacks assets goel hands"
+"search_terms": "props snack packets demo activity investing lesson raw clip behind the scenes"
 },
 {
 "id": "IFM-061",
@@ -1538,7 +1543,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1Kwes1SHtYOhbHbEbfZP1KyXmiQp9xSmv/view",
 "description": "Over-shoulder candid of Hiral's hands holding the 'Investing for Mummies' book, the multi-armed-mother cover illustration clearly visible, on a dark wooden table. Blue eyelet-lace blouse.",
 "session": "",
-"slide_text": "",
+"slide_text": "s hands holding the",
 "type": "Image",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -1560,7 +1565,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/15UeP1UzVtRDN5sCL7RIkk0S3LKISSdTu/view",
 "description": "Hiral seated at a boardroom table with open laptop, smiling softly; the wall screen behind shows the 'Investing for Mummies' title slide. White eyelet blouse, pale blue skirt.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies",
 "type": "Image",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -1582,7 +1587,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1DvDOcKKzWgzpo16JZU86MbIQ8mmzh0vm/view",
 "description": "Hiral seated at the boardroom table with laptop, hand resting on a book, the 'Investing for Mummies' slide on the screen behind. White eyelet blouse, blue skirt, relaxed smile.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies",
 "type": "Image",
 "status": "Raw",
 "format": "Portrait",
@@ -1604,10 +1609,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1fnVbCJI8dIxqhSLxuS3NBSg4mrHReeGm/view",
 "description": "Hiral seated at the boardroom table laughing warmly, laptop and book in front, 'Investing for Mummies' slide on the wall screen behind. White eyelet blouse, blue skirt.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies",
 "type": "Image",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "Hiral Speaking",
 "topic": [
 "Investing"
 ],
@@ -1686,7 +1691,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1B9QhEt_qnPFCFgw9czDLmO3La7KMZqxX/view",
 "description": "Hiral seated at the boardroom table with laptop, smiling at camera; the 'Investing for Mummies' multi-armed-mother slide fills the wall screen to her left. White eyelet blouse, blue skirt.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies",
 "type": "Image",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -1752,7 +1757,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1yetYTzgxIBfRLe912fmRTPPe8V4BFbqA/view",
 "description": "Hiral seated at a wooden table working on a MacBook, the 'Investing for Mummies' book propped to her left and the title slide on the screen behind. White eyelet shirt.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies",
 "type": "Image",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -1774,7 +1779,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1PCxgmUXE67sck7GJ48VINkTYOy4pzO24/view",
 "description": "Hiral seated at the wooden table at her MacBook smiling at camera, the book propped beside her and the 'Investing for Mummies' slide on the wall screen behind. White eyelet blouse.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies",
 "type": "Image",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -1796,7 +1801,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1FHb952-62GIinZgbl8KxBMLkOvfUl9FM/view",
 "description": "Hiral seated at the wooden table with hands folded on the surface, smiling at camera; the 'Investing for Mummies' slide fills the screen behind her. White eyelet-sleeve blouse.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies",
 "type": "Image",
 "status": "Raw",
 "format": "Portrait",
@@ -1818,7 +1823,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1g_r9y_jySqXXn8A_80xXXzCTAB6mIPHn/view",
 "description": "Candid side profile of Hiral, in glasses, reading an open spread of the colourful illustrated 'Investing for Mummies' book at the boardroom table, branded slide on the screen above. White eyelet blouse.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies",
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -1840,10 +1845,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1vX2R_Ajj3ud5EBLrVsZ_9Y_1HwN2PomK/view",
 "description": "Wide shot of Hiral standing and presenting at a lounge-style workshop, gesturing beside a screen reading 'Inflation Simplified'; patterned wallpaper, bookshelves, orange pendant lamp, seated audience. Cream sleeveless outfit.",
 "session": "",
-"slide_text": "",
+"slide_text": "Inflation Simplified",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "Hiral Speaking",
 "topic": [
 "Inflation & Interest Rates"
 ],
@@ -1863,10 +1868,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1NEHg5KVhwRsaWAWfN1jBLI9iih-OJvPe/view",
 "description": "Wide shot of Hiral standing and speaking at the workshop, hands gesturing, beside a screen showing an 'Inflation Analogy — balanced supply & demand' slide. Patterned wallpaper, bookshelves, orange lamp, seated audience. Cream sleeveless outfit.",
 "session": "",
-"slide_text": "",
+"slide_text": "Inflation Analogy — balanced supply & demand",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "Hiral Speaking",
 "topic": [
 "Inflation & Interest Rates"
 ],
@@ -1886,10 +1891,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/190anJw9_VhvExeUfyrQlf5Zzga8ppGeu",
 "description": "Light-blue 7-slide carousel, 'SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let's talk about the risks.' — rocket launch with satellite, moon and emoji accents. A shorter 7-slide variant of the Rocket-or-Rollercoaster carousel.",
 "session": "",
-"slide_text": "",
+"slide_text": "SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let",
 "type": "Carousel",
 "status": "Ready",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Stocks / Equity",
 "Stock Market",
@@ -1911,7 +1916,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Testimonial",
+"format": "Classroom Moment",
 "topic": [],
 "person": [
 "Student"
@@ -1931,7 +1936,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Testimonial",
+"format": "Classroom Moment",
 "topic": [],
 "person": [
 "Student"
@@ -1948,7 +1953,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1zwqvM8_rY3miD1m2NKM3aw3oOGbg1X6h/view",
 "description": "Wide candid of the women's workshop in the IFM office boardroom: attendees seated around the table watching a mutual-fund diagram on the TV while one woman presents; 'Investing for Mummies' books, notebooks and the BORROWER debt whiteboard visible.",
 "session": "",
-"slide_text": "",
+"slide_text": "s workshop in the IFM office boardroom: attendees seated around the table watching a mutual-fund diagram on the TV while one woman presents;",
 "type": "Image",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -1971,7 +1976,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1xhyTa-7ms0_VAXT2CNUXG4wEHk85bRV_/view",
 "description": "A facilitator stands by a wall-mounted screen showing an IFM course-flow diagram while a group of women follow along with open workbooks, mugs and water bottles around a wood conference table; a hand-drawn 'borrower / banks / government' mind map fills the whiteboard behind.",
 "session": "",
-"slide_text": "",
+"slide_text": "borrower / banks / government",
 "type": "Image",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -2084,6 +2089,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2098,7 +2104,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1u_yRjVnHiHPzbP1LQQii7sS5lHXitXMb/view",
 "description": "A presenter in a pink kurta speaks beside a screen showing the colourful 'Investing for Mummies' logo with its goddess illustration, as attendees listen from the foreground of the boardroom.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies",
 "type": "Image",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -2168,7 +2174,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "B-roll",
 "topic": [],
 "person": [
 "Other Person"
@@ -2185,7 +2191,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1Fgai57EWCBo9RJcG-yQN7SWxIzPNuYAD/view",
 "description": "A presenter in a bright pink dress points at a 'Types of Mutual Funds' slide while seated participants follow along at the conference table, breaking down mutual fund categories.",
 "session": "",
-"slide_text": "",
+"slide_text": "Types of Mutual Funds",
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -2208,7 +2214,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1M8rq7WSWP7Ol6FosXp-pBFRznFCf4xPZ/view",
 "description": "A presenter in pink points at a 'Types of Mutual Funds' slide categorising equity, debt, hybrid and lifecycle funds while seated women take notes and one snaps a photo of the screen.",
 "session": "",
-"slide_text": "",
+"slide_text": "Types of Mutual Funds",
 "type": "Image",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -2232,7 +2238,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1_X2_yxXrLgoxbP_s7NDs2J3Y0mGyNjOo/view",
 "description": "The pink-clad facilitator stands centred before the 'Types of Mutual Funds' screen addressing attendees seated in tall leather chairs around the conference table.",
 "session": "",
-"slide_text": "",
+"slide_text": "Types of Mutual Funds",
 "type": "Image",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -2276,7 +2282,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1pRD11xC6CLJ0PmSuYWkyg3axbRScqXyB/view",
 "description": "A presenter in pink gestures toward a slide titled 'The Different Ways Companies Raise Money' as a small circle of women in leather chairs listen around the table.",
 "session": "",
-"slide_text": "",
+"slide_text": "The Different Ways Companies Raise Money",
 "type": "Image",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -2296,7 +2302,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1Brl_xVgtMYKodweKk9UPYTSeIvR4zfW5/view",
 "description": "Founder Hiral Goel stands smiling in front of the branded 'Investing for Mummies' slide with its multitasking-mum graphic, addressing the camera directly — an intro/welcome segment.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies",
 "type": "Video",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -2318,19 +2324,22 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1qYxKCBvl_bfa7Bh1_KZ-wShkF1kJhmPD/view",
 "description": "A speaker in a white shirt and red trousers points emphatically at a 'Gold: Your Portfolio's Safe Haven' slide with a ways-to-invest-in-gold pie chart, while two attendees watch from the foreground.",
 "session": "",
-"slide_text": "",
+"slide_text": "Gold: Your Portfolio's Safe Haven. Ways to invest in gold: SGBs, Gold Mutual Funds, ETFs, Digital Gold, Physical Gold. 5-10% of portfolio.",
 "type": "Image",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "Hiral Speaking",
 "topic": [
-"Investing",
-"Gold"
+"Gold",
+"Asset Allocation",
+"Mutual Funds",
+"ETFs"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "candid funny fun warm joyful lively natural unposed real moment gold safe haven talk speaker white shirt red trousers points emphatically your portfolio slide ways invest pie chart while two attendees watch from foreground investing presenter workshop women boardroom candid vertical"
+"search_terms": "gold safe haven pie chart allocation sgb sovereign gold bond gold funds etf portfolio hedge presenting pointing"
 },
 {
 "id": "IFM-100",
@@ -2341,19 +2350,20 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1-7p1qVMylbxt2L_sawOmrDJqE1-9nwCl/view",
 "description": "Same gold-investment talk: the presenter in white and red gestures with both hands at the 'Gold: Your Portfolio's Safe Haven' screen as two women listen across the wood table.",
 "session": "",
-"slide_text": "",
+"slide_text": "Gold: Your Portfolio",
 "type": "Image",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "Hiral Speaking",
 "topic": [
-"Investing",
-"Gold"
+"Gold",
+"Asset Allocation"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "candid funny fun warm joyful lively natural unposed real moment ways invest gold session same investment talk presenter white red gestures both hands your portfolio safe haven screen two women listen across wood table investing slide workshop boardroom gesture candid vertical finance"
+"search_terms": "ways to invest in gold sgb gold funds allocation safe haven portfolio"
 },
 {
 "id": "IFM-101",
@@ -2364,19 +2374,22 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1NdM9y701az7VViop_skRPvLosg2NFD50/view",
 "description": "A presenter in a white top and red trousers gestures animatedly in front of a 'Gold' slide listing SGB and gold mutual funds, while two women listen — covering ways to invest in gold.",
 "session": "",
-"slide_text": "",
+"slide_text": "Gold: Your Portfolio's Safe Haven. Ways to invest in gold: SGBs (best way to invest in gold, for low risk long term investors, backed by RBI); Gold Mutual Funds (invest into ETFs, gold mining and gold-related assets); ETFs (highly liquid, traded on the stock exchange); Digital Gold; Physical Gold (low liquidity, high risk of theft, making and storage costs). 5-10% of portfolio.",
 "type": "Video",
 "status": "Raw",
 "format": "Hiral Speaking",
 "topic": [
+"Gold",
+"Asset Allocation",
 "Mutual Funds",
-"Gold"
+"ETFs"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "sgb sovereign gold bond clip explaining gold investments sgb funds presenter white top red trousers gestures animatedly front slide listing mutual while two women listen covering ways invest video investment workshop boardroom session"
+"search_terms": "sgb sovereign gold bond gold funds gold etf digital gold physical gold safe haven hedge portfolio allocation five to ten percent rbi ways to invest in gold bullion explaining teaching"
 },
 {
 "id": "IFM-102",
@@ -2490,10 +2503,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1z1KuyEwo5_dpM_esYkhJHa1nDOm-mcav/view",
 "description": "A presenter in a white top gestures toward a wall screen displaying a colourful 'Bid Price & Ask Price' slide explaining the spread, while two attendees watch and take notes. CleanPlus tissues, books and mugs cover the table.",
 "session": "",
-"slide_text": "",
+"slide_text": "Bid Price & Ask Price",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Stocks / Equity",
 "Stock Market"
@@ -2513,10 +2526,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1HL33ecHSAg74Zst5e5plEme8B96PBS3I/view",
 "description": "Wide overhead shot of a workshop in progress: a presenter points at a 'Bid Price & Ask Price' screen while four women work at the conference table with laptops, notes and a mind-map whiteboard nearby. Bright fluorescent ceiling light overhead.",
 "session": "",
-"slide_text": "",
+"slide_text": "Bid Price & Ask Price",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "B-roll",
 "topic": [
 "Family & Money",
 "Investing"
@@ -2536,10 +2549,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1Ta2WjIwekIaFQTcyaBaTA6b3NjfrDlaa/view",
 "description": "Four women sit around the conference table engaged in discussion as one presents the 'Bid Price & Ask Price' slide on the wall screen. Laptops, mugs and a whiteboard frame the working session.",
 "session": "",
-"slide_text": "",
+"slide_text": "Bid Price & Ask Price",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Investing"
@@ -2562,7 +2575,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [],
 "person": [
 "Other Person"
@@ -2642,12 +2655,12 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Investing"
 ],
 "person": [
-"Student"
+"Other Person"
 ],
 "source": "Unknown",
 "search_terms": "clip participant following along laptop over shoulder shot woman green geometric print dress navigating screen her macbook during session doing hands exercise video investing workshop women learning"
@@ -2664,7 +2677,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Stocks / Equity"
 ],
@@ -2686,7 +2699,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [],
 "person": [
 "Other Person"
@@ -2726,7 +2739,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "Classroom Moment",
 "topic": [
 "Financial Planning"
 ],
@@ -2748,7 +2761,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Family & Money",
 "Mutual Funds"
@@ -2771,7 +2784,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "B-roll",
 "topic": [
 "Investing",
 "Mutual Funds"
@@ -2794,7 +2807,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Stocks / Equity",
 "Mutual Funds"
@@ -2817,7 +2830,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "B-roll",
 "topic": [
 "Family & Money",
 "Mutual Funds"
@@ -2840,7 +2853,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "B-roll",
 "topic": [
 "Family & Money",
 "Mutual Funds"
@@ -2863,7 +2876,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Investing",
 "Mutual Funds"
@@ -2886,7 +2899,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing",
 "Mutual Funds"
@@ -2932,7 +2945,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "B-roll",
 "topic": [
 "Investing",
 "Mutual Funds"
@@ -2985,6 +2998,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3023,7 +3037,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1EACUzBd3XPEYHJ3qmBwlMgPS3mRJ6RE6/view",
 "description": "Vertical shot of the presenter pointing directly at the 'Funds Assets' icon on the NAV slide while two women in white and denim watch from the foreground. Handbags, a coffee mug and a phone rest on the table.",
 "session": "",
-"slide_text": "",
+"slide_text": "Funds Assets",
 "type": "Image",
 "status": "Raw",
 "format": "Social Graphic",
@@ -3049,7 +3063,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing",
 "Mutual Funds"
@@ -3095,16 +3109,16 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Investing"
 ],
 "person": [
-"Other Person"
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "whiteboard roundtable discussion group around boardroom table hand drawn investment mind map behind woman black red works laptop while others converse mac desktop screen framed artwork frame room workshop women financial literacy brainstorm office investing strategy"
+"search_terms": "group discussion whiteboard mind map investment planning boardroom engaged talking"
 },
 {
 "id": "IFM-135",
@@ -3118,7 +3132,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Financial Planning",
 "Money Conversations"
@@ -3141,13 +3155,13 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Financial Planning",
 "Money Conversations"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "animated discussion whiteboard table woman blue striped shirt gestures expressively while talking colleagues around boardroom investment mind map visible behind founder black red looks from left gesturing roundtable workshop women financial literacy conversation office investing team planning"
@@ -3164,7 +3178,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Investing"
@@ -3187,7 +3201,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Investing"
@@ -3238,6 +3252,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3277,7 +3292,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Investing"
@@ -3306,6 +3321,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3323,15 +3339,16 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "candid funny fun warm joyful lively natural unposed real moment smiling founder among group black top smiles toward camera foreground while four women behind her watch presentation asset classes whiteboard left macbook tissue box water glasses sit table workshop boardroom financial literacy attentive investing session laptop"
+"search_terms": "founder smiling to camera boardroom session attendees watching presentation candid warm"
 },
 {
 "id": "IFM-145",
@@ -3397,7 +3414,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "founder laptop room listening black pink works her macbook while five attentive women around table listen off frame talk asset classes mind map filling whiteboard behind water glasses notebooks scattered across workshop boardroom financial literacy investing session"
@@ -3442,7 +3459,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "two way pointing discussion lively moment both founder foreground woman white tee across table point same direction rest group watching engaged expressions asset classes whiteboard macbook anchor scene workshop boardroom financial literacy investing session women"
@@ -3459,7 +3476,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3504,7 +3521,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3526,7 +3543,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Investing"
@@ -3569,10 +3586,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1MMdO3cpSZ0akfJWKwm3xM50Hl95HYxYa/view",
 "description": "A presenter in beige gestures beside an 'Evaluating Investments — why do we need different measures?' slide, laptops and bottles on the table — the opening of a returns-evaluation module.",
 "session": "",
-"slide_text": "",
+"slide_text": "Evaluating Investments — why do we need different measures?",
 "type": "Video",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Risk & Returns",
 "Investing"
@@ -3592,10 +3609,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1QOBaisDyZUFcaL33MQhq5P6zytRi9Vqu/view",
 "description": "A presenter in a brown top stands and gestures beside a TV screen reading 'Evaluating Investments' while women in colourful outfits follow along with workbooks and notes. The room has wood panelling and a whiteboard of financial diagrams.",
 "session": "",
-"slide_text": "",
+"slide_text": "Evaluating Investments",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3614,7 +3631,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1x6FUgWMBLfgiRxoGbGp76i33b-N8oUan/view",
 "description": "A woman in a brown top presents the 'Evaluating Investments' slide while seated participants take notes and sip from mugs around the dark wooden table. Workbooks, water bottles and a tissue box clutter the tabletop.",
 "session": "",
-"slide_text": "",
+"slide_text": "Evaluating Investments",
 "type": "Image",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -3636,10 +3653,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1hHrb8tnvz8Y5HpOAWRsQsa2fmQFoGcCq/view",
 "description": "A tall vertical shot of a presenter explaining 'Evaluating Investments' to women gathered at the conference table, with workbooks, an iPad and water bottles spread out. Wood-panelled wall and overhead strip light frame the scene.",
 "session": "",
-"slide_text": "",
+"slide_text": "Evaluating Investments",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3658,10 +3675,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1Uz-bvChoy6-7sOlnU51V7k1oh3Q4Jd6E/view",
 "description": "A presenter in brown gestures with both hands explaining the 'Evaluating Investments' slide as women lean in around the table with open IFM workbooks. Cacti, water bottles and coffee tumblers dot the wooden surface.",
 "session": "",
-"slide_text": "",
+"slide_text": "Evaluating Investments",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3680,10 +3697,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1li77ze85IzhV1yNy6-pJVKVJwiGSUVsW/view",
 "description": "A presenter mid-explanation beside an 'Evaluating Investments — why these concepts matter' slide, while two women follow along with workbooks open — a deeper dive into investment metrics.",
 "session": "",
-"slide_text": "",
+"slide_text": "Evaluating Investments — why these concepts matter",
 "type": "Video",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3702,7 +3719,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1tYNb40egmHWGPOCAqSbvwlnfcCtGi-bg/view",
 "description": "A presenter points toward an 'Absolute Rate of Return / Simple Interest' slide with a worked ₹10–13 lakh example as participants follow with open workbooks — teaching how absolute returns are measured.",
 "session": "",
-"slide_text": "",
+"slide_text": "Absolute Rate of Return / Simple Interest",
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -3728,7 +3745,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3747,10 +3764,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1mQ_RKYhWKLdvwKpaUDoTvp1NPRNplz7I/view",
 "description": "A presenter in a pink kurta stands by a TV displaying 'Principles of Smart Investing' with a colourful cycle diagram, addressing women seated around the table. The right-hand whiteboard is filled with handwritten financial notes.",
 "session": "",
-"slide_text": "",
+"slide_text": "Principles of Smart Investing",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "",
 "topic": [
 "Investing"
 ],
@@ -3769,10 +3786,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/192tkBqjqDnfnpZ1tE6HHcM4OLqclChjc/view",
 "description": "Wide vertical shot of a pink-clad presenter teaching the 'Principles of Smart Investing' slide to a circle of women at the wooden table, workbooks and water glasses in front of them. Whiteboard diagrams and AC unit fill the back wall.",
 "session": "",
-"slide_text": "",
+"slide_text": "Principles of Smart Investing",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3791,10 +3808,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1escFRvm00lwsDRVQGRebeDSoBweHgtMF/view",
 "description": "A pink-kurta presenter gestures toward the 'Principles of Smart Investing' screen while women seated around the table watch, some with open workbooks and sticky notes. Warm office lighting and wood panelling set the tone.",
 "session": "",
-"slide_text": "",
+"slide_text": "Principles of Smart Investing",
 "type": "Image",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3816,7 +3833,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3835,10 +3852,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1reE4q5jpN0yQ-iXpBaicsJ7K95Tl3Iw0/view",
 "description": "The pink-kurta facilitator gestures mid-sentence beside the 'Principles of Smart Investing' TV slide as women in the foreground listen attentively. Pens, water glasses, coffee tumblers and a workbook cover the wooden table.",
 "session": "",
-"slide_text": "",
+"slide_text": "Principles of Smart Investing",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3883,7 +3900,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Investing"
@@ -3906,7 +3923,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Investing"
@@ -3929,7 +3946,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3951,7 +3968,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Investing"
@@ -3974,7 +3991,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -3996,7 +4013,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Investing"
@@ -4019,7 +4036,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -4041,7 +4058,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -4063,7 +4080,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Investing"
 ],
@@ -4102,7 +4119,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/193E3rVDPJyZbX35xq2NLLzcgeBnk91Vt/view",
 "description": "The presenter stands beside a wall-mounted screen displaying a pink-headed 'Types of Insurance' slide while attentive women look on from around the table. Denim jacket and orange-top attendees are visible in the foreground.",
 "session": "",
-"slide_text": "",
+"slide_text": "Types of Insurance",
 "type": "Image",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -4110,6 +4127,7 @@ window.IFM_V1 =
 "Insurance"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4124,7 +4142,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1EsIx0Kf1ckoT4HVtnm0gL8B8RjcHKGkr/view",
 "description": "Hiral stands beside an 'Is Your Corporate Health Plan Enough?' slide addressing the seated group on health-insurance gaps — covering why employer cover may be insufficient.",
 "session": "",
-"slide_text": "",
+"slide_text": "Is Your Corporate Health Plan Enough?",
 "type": "Video",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -4146,7 +4164,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1cTA22_2MVN9MHpneDgTNSbZcsqgMretO/view",
 "description": "Hiral stands by the 'Is Your Corporate Health Plan Enough?' slide while a woman in pink responds or asks a question, others listening — an interactive discussion on health insurance.",
 "session": "",
-"slide_text": "",
+"slide_text": "Is Your Corporate Health Plan Enough?",
 "type": "Video",
 "status": "Raw",
 "format": "Student Question",
@@ -4194,10 +4212,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1lpQVrbyuzje915u0IEJ5kDJiEBJo20TQ/view",
 "description": "A presenter gestures toward a whiteboard covered in handwritten notes beside an 'Emergency Bucket – Terms To Know' slide, as women take notes over open IFM workbooks on the table.",
 "session": "",
-"slide_text": "",
+"slide_text": "Emergency Bucket – Terms To Know",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Saving",
 "Financial Planning",
@@ -4218,10 +4236,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/16pnkEliG_6-jBTSD0XKaEMolwgnuJCYM/view",
 "description": "A wide landscape shot of the boardroom showing women seated around the full table, the presenter standing between an 'Emergency Bucket' slide and a marker-filled whiteboard. Framed artwork and a QR code poster hang on the right wall.",
 "session": "",
-"slide_text": "",
+"slide_text": "Emergency Bucket",
 "type": "Image",
 "status": "Raw",
-"format": "B-roll",
+"format": "Classroom Moment",
 "topic": [
 "Saving",
 "Financial Planning",
@@ -4245,7 +4263,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "Classroom Moment",
 "topic": [
 "Saving",
 "Financial Planning",
@@ -4269,7 +4287,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Asset Allocation"
@@ -4292,7 +4310,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [],
 "person": [
 "Student"
@@ -4309,7 +4327,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/177l6g5PsOHpMc7F67gf57qZ6czh9D6sw/view",
 "description": "The presenter sits casually at the head of the table addressing the seated group beneath the 'Emergency Bucket' slide, with several women appearing to applaud. Open workbooks, water bottles and a teal flask sit on the table.",
 "session": "",
-"slide_text": "",
+"slide_text": "Emergency Bucket",
 "type": "Image",
 "status": "Raw",
 "format": "Classroom Moment",
@@ -4359,7 +4377,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Saving",
 "Financial Planning",
@@ -4380,10 +4398,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1IKSiKVAyr84X6u3K3hyHS9iN4Pnia2Vk/view",
 "description": "A wide view of the boardroom session with the presenter standing at front by the 'Emergency Bucket' slide and whiteboard, women seated around the table taking notes in IFM workbooks. Framed artwork hangs on the right.",
 "session": "",
-"slide_text": "",
+"slide_text": "Emergency Bucket",
 "type": "Image",
 "status": "Raw",
-"format": "B-roll",
+"format": "Classroom Moment",
 "topic": [
 "Saving",
 "Financial Planning",
@@ -4408,7 +4426,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Saving",
 "Financial Planning",
@@ -4429,10 +4447,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1WzXqJeJrnS6gPMwSnyvWIMW4TfHNbG3y/view",
 "description": "A presenter in a green top and beige skirt stands by a 'Fixed Deposits' slide explaining to a group of seated women, with tissues, flasks and open IFM workbooks across the table. One attendee in coral and another in blue print look on.",
 "session": "",
-"slide_text": "",
+"slide_text": "Fixed Deposits",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Family & Money",
 "Fixed Income"
@@ -4452,10 +4470,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1fkKrxrEpmr_dHdYiud-HgvJ5e1KXWKL8/view",
 "description": "The green-topped presenter gestures while teaching the 'Fixed Deposits' slide, attendees seated closely around the table with phones, flasks and a CleanPlus tissue box. A woman checks her phone in the foreground.",
 "session": "",
-"slide_text": "",
+"slide_text": "Fixed Deposits",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Risk & Returns",
 "Fixed Income"
@@ -4475,10 +4493,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1-bwbfrLtcFxOmXKw5Ib-vJeN1vHI2Uoa/view",
 "description": "The presenter stands by the 'Fixed Deposits' slide addressing a tightly seated group, with women in coral and blue-print tops listening intently. Flasks, glasses and a tissue box crowd the wooden table.",
 "session": "",
-"slide_text": "",
+"slide_text": "Fixed Deposits",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Classroom Moment",
 "topic": [
 "Fixed Income"
 ],
@@ -4497,10 +4515,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1idAfr5Shu-qZUrnl6R3Pfk8Te8UsZ3E3/view",
 "description": "The green-topped presenter holds a notebook while leading a discussion beneath the 'Fixed Deposits' slide, with a foreground attendee gesturing as if asking a question. Coral and blue-print dressed women listen across the table.",
 "session": "",
-"slide_text": "",
+"slide_text": "Fixed Deposits",
 "type": "Image",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Fixed Income"
@@ -4520,10 +4538,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/14QHomDDUiEzGbCDYw8knhtfr3QsJ0DY0/view",
 "description": "A vertical view of the busy session with the presenter at the 'Fixed Deposits' slide and women seated all around reviewing open IFM workbooks, flasks and bags on the table. One attendee smiles broadly in the foreground.",
 "session": "",
-"slide_text": "",
+"slide_text": "Fixed Deposits",
 "type": "Image",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "Classroom Moment",
 "topic": [
 "Fixed Income"
 ],
@@ -4542,10 +4560,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1WaHQ95b4b0OUqvUStv8LxbFzd1Y3fvid/view",
 "description": "The presenter stands beside a 'Fixed Deposits' slide detailing taxation rules and gestures to the group, with women in tank tops and print dresses seated around the table holding phones and workbooks.",
 "session": "",
-"slide_text": "",
+"slide_text": "Fixed Deposits",
 "type": "Image",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "Classroom Moment",
 "topic": [
 "Fixed Income"
 ],
@@ -4567,7 +4585,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Fixed Income"
 ],
@@ -4646,7 +4664,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1lvZVFjlQpDgeL-XtNjZG_7Hus-e3O8wT/view",
 "description": "Static post — a gold trophy on a black plinth stuffed with a fan of green ₹500 notes, against a plain off-white corner wall. Blue type alongside reads 'MONEY IS NOT THE GOAL, IT'S A TOOL TO CREATE YOUR DREAM LIFE.' IFM wordmark top-right.",
 "session": "Aakara July delivery",
-"slide_text": "",
+"slide_text": "MONEY IS NOT THE GOAL, IT",
 "type": "Image",
 "status": "Ready",
 "format": "Social Graphic",
@@ -4668,7 +4686,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1zv0psStlNEPSk9Jh3nn4JFu_nZCZ9d9T/view",
 "description": "Reel cover — Hiral in a red top stands smiling beside a full bookshelf in a bright home corner, one hand resting on the shelf. Navy serif 'One Minute' floats top-left with three purple twin-bell alarm-clock graphics scattered around her; bold white 'Investing School' across the lower third.",
 "session": "Aakara July delivery",
-"slide_text": "",
+"slide_text": "floats top-left with three purple twin-bell alarm-clock graphics scattered around her; bold white",
 "type": "Video",
 "status": "Ready",
 "format": "Portrait",
@@ -4713,7 +4731,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1qDvAz_R1jLO27sUEuFEpiTrfaL94cy5X",
 "description": "Carousel cover: a shopping basket holding a handbag, salad bowl and chocolate — 'PLOT TWIST! Your salary didn't disappear. You just accidentally sponsored your cravings, carts & convenience first.'",
 "session": "",
-"slide_text": "",
+"slide_text": "PLOT TWIST! Your salary didn",
 "type": "Carousel",
 "status": "Ready",
 "format": "Social Graphic",
@@ -4734,7 +4752,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1y0k30JshEDKtt9mZTvd9XUlEIu8fveTO",
 "description": "Carousel cover: a woman in a rust top thinking hard, headline 'Money Myths we grew up believing' on a cream doodle background.",
 "session": "",
-"slide_text": "",
+"slide_text": "Money Myths we grew up believing",
 "type": "Carousel",
 "status": "Published",
 "format": "Social Graphic",
@@ -4758,7 +4776,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1xEYXGTux7FdszKoUkEIP3zd6tiwlxTgn",
 "description": "Carousel cover: a Starbucks frappuccino surrounded by gold coins — 'Your Starbucks habit might secretly be worth… ₹2.8 CRORES. Yes, really!'",
 "session": "",
-"slide_text": "",
+"slide_text": "Your Starbucks habit might secretly be worth… ₹2.8 CRORES. Yes, really!",
 "type": "Carousel",
 "status": "Published",
 "format": "Social Graphic",
@@ -4819,7 +4837,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1jJlezELTMwFTlIUygb_SXR8RVVfd7IpQ",
 "description": "Carousel cover: a baby's hand gripping ₹500 and ₹200 notes, headline 'Rich people are not secretly born with some magical money gene'.",
 "session": "",
-"slide_text": "",
+"slide_text": "s hand gripping ₹500 and ₹200 notes, headline",
 "type": "Carousel",
 "status": "Ready",
 "format": "Social Graphic",
@@ -4861,7 +4879,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/18kYz_4NHBe7AzWMo8zGGdnIM1RbCur8M",
 "description": "Carousel cover: two women in bathrobes and face masks wearing ₹-sign sunglasses, one on a phone, one on a laptop — 'HOT TAKE ALERT: Financial confidence is self care too!!'",
 "session": "",
-"slide_text": "",
+"slide_text": "HOT TAKE ALERT: Financial confidence is self care too!!",
 "type": "Carousel",
 "status": "Published",
 "format": "Social Graphic",
@@ -4905,7 +4923,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1AL94xlrYVnbb9uXea4QrSkFPKUgXReEt",
 "description": "Carousel cover: an open envelope holding a note — 'Parents spend years planning their children's future. But who's planning the parents' retirement?' — with a family polaroid, #HappyNationalParentsDay.",
 "session": "",
-"slide_text": "",
+"slide_text": "Parents spend years planning their children s planning the parents",
 "type": "Carousel",
 "status": "Ready",
 "format": "Social Graphic",
@@ -4972,7 +4990,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -4994,7 +5012,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5016,7 +5034,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5038,7 +5056,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5060,7 +5078,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5082,7 +5100,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5104,7 +5122,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5126,7 +5144,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5148,7 +5166,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5170,7 +5188,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5192,7 +5210,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5214,7 +5232,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5236,7 +5254,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5258,7 +5276,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5280,7 +5298,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5302,7 +5320,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5324,7 +5342,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5346,7 +5364,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5368,7 +5386,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5390,7 +5408,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5412,7 +5430,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5434,7 +5452,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5456,7 +5474,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5478,7 +5496,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5500,7 +5518,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5522,7 +5540,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5544,7 +5562,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5566,7 +5584,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5588,7 +5606,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5610,7 +5628,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5632,7 +5650,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5654,7 +5672,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5676,7 +5694,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Classroom Moment",
+"format": "",
 "topic": [
 "Women & Money"
 ],
@@ -5693,20 +5711,21 @@ window.IFM_V1 =
 "thumb": "../thumbs/IFM-251.jpg",
 "video": "",
 "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-251.jpg",
-"description": "Photo from the IFM women’s money workshop in Goa (18 Jul 2026).",
+"description": "Open-air Goa venue: women seated at cafe tables listening while Hiral presents from the far side in a blue dress. A dog sleeps on the floor in the foreground — an unusually relaxed, non-corporate setting.",
 "session": "Goa — 17 Jul 2026",
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Hiral Speaking",
 "topic": [
 "Women & Money"
 ],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "goa workshop photo from ifm women money jul 2026 financial literacy session event july live"
+"search_terms": "goa workshop offsite retreat open air cafe relaxed informal casual dog seated audience listening destination blue dress"
 },
 {
 "id": "IFM-252",
@@ -5715,20 +5734,22 @@ window.IFM_V1 =
 "thumb": "../thumbs/IFM-252.jpg",
 "video": "",
 "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-252.jpg",
-"description": "Photo from the IFM women’s money workshop in Goa (18 Jul 2026).",
+"description": "Hiral presenting from a laptop beside a large screen showing an emergency-fund diagram — a safety net catching a falling figure.",
 "session": "Goa — 17 Jul 2026",
-"slide_text": "",
+"slide_text": "Secure Your Emergency Fund. Financial Safety Net.",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Hiral Speaking",
 "topic": [
-"Women & Money"
+"Financial Planning",
+"Saving",
+"Managing Money"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
-"search_terms": "goa workshop photo from ifm women money jul 2026 financial literacy session event july live"
+"search_terms": "emergency fund rainy day safety net contingency months of expenses buffer goa workshop presenting laptop screen"
 },
 {
 "id": "IFM-253",
@@ -5737,20 +5758,21 @@ window.IFM_V1 =
 "thumb": "../thumbs/IFM-253.jpg",
 "video": "",
 "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-253.jpg",
-"description": "Photo from the IFM women’s money workshop in Goa (18 Jul 2026).",
+"description": "Group photo on the steps of the Goa venue — around eight women with Hiral, several holding IFM workbooks, greenery and a tiled roof behind.",
 "session": "Goa — 17 Jul 2026",
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Women & Money"
 ],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "goa workshop photo from ifm women money jul 2026 financial literacy session event july live"
+"search_terms": "group photo goa cohort batch together posed steps outdoors workbooks smiling alumni"
 },
 {
 "id": "IFM-254",
@@ -5759,20 +5781,21 @@ window.IFM_V1 =
 "thumb": "../thumbs/IFM-254.jpg",
 "video": "",
 "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-254.jpg",
-"description": "Photo from the IFM women’s money workshop in Goa (18 Jul 2026).",
+"description": "Goa cohort on the cafe steps holding up IFM course material, Hiral in the blue dress among them. Stone pillars and a chalkboard menu behind.",
 "session": "Goa — 17 Jul 2026",
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Women & Money"
 ],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "goa workshop photo from ifm women money jul 2026 financial literacy session event july live"
+"search_terms": "goa group photo cohort batch holding certificates workbooks steps cafe posed proud"
 },
 {
 "id": "IFM-255",
@@ -5781,20 +5804,21 @@ window.IFM_V1 =
 "thumb": "../thumbs/IFM-255.jpg",
 "video": "",
 "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-255.jpg",
-"description": "Photo from the IFM women’s money workshop in Goa (18 Jul 2026).",
+"description": "Tighter group shot of the Goa cohort on the steps, several women holding up their IFM material to camera.",
 "session": "Goa — 17 Jul 2026",
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Women & Money"
 ],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "goa workshop photo from ifm women money jul 2026 financial literacy session event july live"
+"search_terms": "goa group photo cohort batch holding certificates workbooks posed smiling"
 },
 {
 "id": "IFM-256",
@@ -5803,20 +5827,20 @@ window.IFM_V1 =
 "thumb": "../thumbs/IFM-256.jpg",
 "video": "",
 "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-256.jpg",
-"description": "Photo from the IFM women’s money workshop in Goa (18 Jul 2026).",
+"description": "Wide panorama of the open-air Goa venue — tiled roof, plants and garden seating, with the small group gathered at the far end.",
 "session": "Goa — 17 Jul 2026",
 "slide_text": "",
 "type": "Image",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Women & Money"
 ],
 "person": [
-"Other Person"
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "goa workshop photo from ifm women money jul 2026 financial literacy session event july live"
+"search_terms": "goa venue wide panorama establishing location outdoor garden cafe setting context"
 },
 {
 "id": "IFM-257",
@@ -5827,7 +5851,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1p6vkIou0fwyp-iMnYJPY2Y-BdTI-XDPH",
 "description": "Carousel cover: heart-stamped gold coins and a checklist — 'Is your relationship with money built to last? The \"life partner\" checklist for your finances.'",
 "session": "",
-"slide_text": "",
+"slide_text": "Is your relationship with money built to last? The checklist for your finances.",
 "type": "Carousel",
 "status": "Ready",
 "format": "Social Graphic",
@@ -5870,7 +5894,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/148mY1w9gmo-xLYe7JjvsrkNChZYiyRzQ",
 "description": "Story: a student in headphones over her books, a Notes screenshot above — 'You grow up and suddenly… it's bills, taxes, savings, investing… But when did anyone actually teach us this?' International Youth Day.",
 "session": "",
-"slide_text": "",
+"slide_text": "You grow up and suddenly… it",
 "type": "Video",
 "status": "Ready",
 "format": "Social Graphic",
@@ -5915,7 +5939,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1lK16tUvwut8tG6r5CPKeaH9aOv8sSHbY",
 "description": "Carousel cover: a row of colourful San-Francisco-style houses — 'If assets are homes for your money, why do investors use more than one?'",
 "session": "",
-"slide_text": "",
+"slide_text": "If assets are homes for your money, why do investors use more than one?",
 "type": "Video",
 "status": "Ready",
 "format": "Social Graphic",
@@ -5956,7 +5980,7 @@ window.IFM_V1 =
 "drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
 "description": "'Top 5 things to look at' weekly news reel — recurring news-roundup format, placeholder slide with no frames designed yet.",
 "session": "",
-"slide_text": "",
+"slide_text": "Top 5 things to look at",
 "type": "Video",
 "status": "Raw",
 "format": "Social Graphic",
@@ -6068,7 +6092,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1Cx0NIOhg_pNzos0UdMpW_KKAYrMTA-Rl",
 "description": "Delivered 5-artboard testimonial carousel. Cover is cream with an oversized dark-green 'review' wordmark bleeding off all four edges, a white rounded card centred over it reading \"Here's what people are saying about our workshops\" with a thin right arrow, and the INVESTING FOR MUMMIES logo top-right. Artboards 2-5 carry the participant quote cards.",
 "session": "",
-"slide_text": "",
+"slide_text": "wordmark bleeding off all four edges, a white rounded card centred over it reading s what people are saying about our workshops",
 "type": "Carousel",
 "status": "Ready",
 "format": "Testimonial",
@@ -6113,10 +6137,10 @@ window.IFM_V1 =
 "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
 "description": "Placeholder slide — a Ganesh Chaturthi festival tie-in carousel is planned but no frames have been designed yet. The slide carries only the label 'Topic: Ganesh Chaturthi related · Pillar: Topical · Format: Carousel'.",
 "session": "",
-"slide_text": "",
+"slide_text": "Topic: Ganesh Chaturthi related · Pillar: Topical · Format: Carousel",
 "type": "Carousel",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "",
 "topic": [],
 "person": [],
 "source": "Aakara",
@@ -6131,7 +6155,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1jQutmd7uAd-TIkbpANSMRDR3pc7_P0o-",
 "description": "Reel: Hiral beside a High-to-Low risk ranking board — 'Are these Investments Risky?' Ranks five investment types by risk.",
 "session": "",
-"slide_text": "",
+"slide_text": "Are these Investments Risky?",
 "type": "Video",
 "status": "Ready",
 "format": "Hiral Speaking",
@@ -6154,10 +6178,10 @@ window.IFM_V1 =
 "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
 "description": "Placeholder slide for a one-minute asset-allocation explainer reel, continuing the 'One Minute Investing School' strand from August's asset-class reels. Label only — no frames designed yet.",
 "session": "",
-"slide_text": "",
+"slide_text": "One Minute Investing School",
 "type": "Video",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "",
 "topic": [
 "Family & Money",
 "Asset Allocation"
@@ -6177,10 +6201,10 @@ window.IFM_V1 =
 "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
 "description": "Placeholder slide for the next instalment of the recurring 'Ever Wondered?' reel series. The deck notes the topic itself has yet to be decided — label reads 'Topic has to come'.",
 "session": "",
-"slide_text": "",
+"slide_text": "Ever Wondered? Topic has to come",
 "type": "Video",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "",
 "topic": [],
 "person": [],
 "source": "Aakara",
@@ -6198,7 +6222,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Published",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Investing"
 ],
@@ -6220,7 +6244,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "",
 "topic": [],
 "person": [
 "Student"
@@ -6240,7 +6264,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "",
 "topic": [],
 "person": [],
 "source": "Aakara",
@@ -6255,10 +6279,10 @@ window.IFM_V1 =
 "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
 "description": "Placeholder slide for a reel built around a '₹1,00,000 a day' reference — a scale/perspective hook on large sums. Label only; no frames yet.",
 "session": "",
-"slide_text": "",
+"slide_text": "₹1,00,000 a day",
 "type": "Video",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "",
 "topic": [
 "Wealth"
 ],
@@ -6275,10 +6299,10 @@ window.IFM_V1 =
 "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
 "description": "Placeholder slide for three news-topical reels — the September continuation of the weekly news strand (cf. July's 'Top 5 Things To Look At', IFM-263). Label only; no frames yet.",
 "session": "",
-"slide_text": "",
+"slide_text": "Top 5 Things To Look At",
 "type": "Video",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "",
 "topic": [],
 "person": [],
 "source": "Aakara",
@@ -6319,7 +6343,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "B-roll",
+"format": "Classroom Moment",
 "topic": [
 "Money Conversations",
 "Family & Money"
@@ -6342,7 +6366,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Family & Money",
 "Investing"
@@ -6411,7 +6435,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Family & Money",
 "Investing"
@@ -6434,7 +6458,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Family & Money",
 "Investing"
@@ -6454,7 +6478,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1AiqrV7-IuvBDrYsODMUsQBLLga5AsGqY/view",
 "description": "Hiral presents the 'What if you invest every month' compounding slide (20/25/30/40-year wealth outcomes) to the teens.",
 "session": "Teens — Aug 2026",
-"slide_text": "",
+"slide_text": "What if you invest every month",
 "type": "Video",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -6598,7 +6622,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1jXIR7j6C5_LtqjZHGtIbi_C9gsqT_oK0/view",
 "description": "Hiral gestures at the 'What if you invest ₹5,000 every month' slide — 20/25/30/40-year outcomes ending at ₹5.9 crore; teens' worksheets in the foreground.",
 "session": "Teens — Aug 2026",
-"slide_text": "",
+"slide_text": "What if you invest ₹5,000 every month",
 "type": "Image",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -6647,7 +6671,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/19CG02yljxBe8b3pNqvIQnD3hFH8xa0i8/view",
 "description": "Hiral teaches the Warren Buffett 'Expenses = Income − Savings' famous-words slide; teens with IFM worksheets around the table.",
 "session": "Teens — Aug 2026",
-"slide_text": "",
+"slide_text": "Expenses = Income − Savings",
 "type": "Image",
 "status": "Raw",
 "format": "Social Graphic",
@@ -6672,7 +6696,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/game-assets/kbc-live-question.png",
 "description": "Projector/host view mid-round: the question “Waiting for the ‘perfect time’ usually means…” with A–D options, a live 'Class answers' breakdown panel (67% correct so far), the ₹1,00,000 prize ladder down the right, and a scan-to-join QR top-right. 3200×1800.",
 "session": "",
-"slide_text": "",
+"slide_text": "Waiting for the 'perfect time' usually means... Class answers 67% correct. Prize Ladder. Scan to join.",
 "type": "Image",
 "status": "Ready",
 "format": "Social / Promotional",
@@ -6696,7 +6720,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/game-assets/kbc-player-phone.png",
 "description": "The student's phone screen: big A/B/C/D colour tiles under 'Tap your answer!', the player's name and running total (₹7.50 L) pinned top, a '50:50 — remove 2 wrong' lifeline button, and 'Read the options on the big screen'. 1200×2580, portrait.",
 "session": "",
-"slide_text": "",
+"slide_text": "s phone screen: big A/B/C/D colour tiles under , the player 50:50 — remove 2 wrong Read the options on the big screen",
 "type": "Image",
 "status": "Ready",
 "format": "Portrait",
@@ -6718,7 +6742,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/game-assets/kbc-winner-podium.png",
 "description": "End-of-game 'Crorepati! 🎉' screen — three-place podium with Priya winning ₹30 L, full class leaderboard below, IFM medallion and studio-audience backdrop. 3200×1800.",
 "session": "",
-"slide_text": "",
+"slide_text": "Crorepati! 🎉",
 "type": "Image",
 "status": "Ready",
 "format": "Social / Promotional",
@@ -6741,10 +6765,10 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/game-assets/mf-lobby.png",
 "description": "Screen 1: the teacher names the fund ('Priya's Growth Fund'), picks Equity / Debt / Hybrid, and taps assets (Reliance, HDFC Bank, Infosys, TCS) to build it. Join QR + game PIN MF5003 on the left, 13 investors already joined. 2720×1680.",
 "session": "",
-"slide_text": "",
+"slide_text": "s Growth Fund",
 "type": "Image",
 "status": "Ready",
-"format": "",
+"format": "Social / Promotional",
 "topic": [
 "Stocks / Equity",
 "Mutual Funds",
@@ -6765,10 +6789,10 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/game-assets/mf-market.png",
 "description": "Screen 6: AUM ₹7.27L / NAV ₹10.60 / Units 68,600 as three live cards, with the rule table showing how market up/down and money in/out each move AUM, NAV and units — plus the explainer 'the fund's holdings are worth more, so NAV and AUM climb together'. 2720×1680.",
 "session": "",
-"slide_text": "",
+"slide_text": "s holdings are worth more, so NAV and AUM climb together",
 "type": "Image",
 "status": "Ready",
-"format": "Hiral Speaking",
+"format": "Social / Promotional",
 "topic": [
 "Mutual Funds"
 ],
@@ -6787,10 +6811,10 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/game-assets/mf-withdraw.png",
 "description": "Screen 8: 'The NAV is now ₹22.00 — time to cash out.' AUM falling, NAV unchanged, units redeemed, with each student's withdrawal listed on the right (6 of 13 cashed out) — the lesson that selling drops AUM and units but not NAV. 2720×1680.",
 "session": "",
-"slide_text": "",
+"slide_text": "The NAV is now ₹22.00 — time to cash out.",
 "type": "Image",
 "status": "Ready",
-"format": "",
+"format": "Social / Promotional",
 "topic": [
 "Family & Money",
 "Mutual Funds"
@@ -6813,7 +6837,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Ready",
-"format": "",
+"format": "Social / Promotional",
 "topic": [
 "Mutual Funds"
 ],
@@ -6832,10 +6856,10 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/game-assets/stockrush-lobby.jpg",
 "description": "Room FBAP lobby: 'A decade of India's markets · in 30 minutes', large scan-to-join QR with the room code, players-in-room list, and 'Start Game with 15 Players'. Footer notes ₹2L starting cash, 6 rounds spanning 2014–2026. 1440×1679.",
 "session": "",
-"slide_text": "",
+"slide_text": "Stock Rush Pro. A decade of India's markets in 30 minutes. FBAP. Start Game with 15 Players.",
 "type": "Image",
 "status": "Ready",
-"format": "",
+"format": "Social / Promotional",
 "topic": [
 "Stocks / Equity"
 ],
@@ -6843,7 +6867,7 @@ window.IFM_V1 =
 "No Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "stock rush pro join lobby room fbap decade india markets minutes large scan code players list start game footer notes ₹2l starting cash rounds spanning 2014 2026 1440 1679 classroom setup ifm games screenshot marketing asset"
+"search_terms": "stock rush pro join screen qr code scan to join room code lobby players classroom game markets decade"
 },
 {
 "id": "IFM-303",
@@ -6854,7 +6878,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/game-assets/stockrush-results.jpg",
 "description": "Game-over board: top trader Riya at ₹3.82L (+90.9%), class average +15.5%, 15/15 beat the bots, most-owned stock Reliance — full leaderboard plus a 'where did everyone land' return-distribution chart. 1440×2183.",
 "session": "",
-"slide_text": "",
+"slide_text": "where did everyone land",
 "type": "Image",
 "status": "Ready",
 "format": "Social / Promotional",
@@ -6878,10 +6902,10 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/game-assets/swayamvar-lobby.jpg",
 "description": "'The Swayamvar is Open' join screen in the marigold/red wedding theme — scan-to-take-your-seat QR (ifm.game/swayamvar), four guests seated with playful aliases (Gold Mom, Maharani Ji, Family CFO, Bua Supreme), and tonight's format: 6 prospects, 4 rounds. 1440×900.",
 "session": "",
-"slide_text": "",
+"slide_text": "The Swayamvar is Open",
 "type": "Image",
 "status": "Ready",
-"format": "",
+"format": "Social / Promotional",
 "topic": [
 "Family & Money"
 ],
@@ -6903,7 +6927,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Ready",
-"format": "Hiral Speaking",
+"format": "Social / Promotional",
 "topic": [
 "Inflation & Interest Rates"
 ],
@@ -6922,10 +6946,10 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/game-assets/swayamvar-voting.jpg",
 "description": "'Who Would You Marry?' voting board — all 12 suitors (male and female versions of Cash, Debt, Gold, Real Estate, Equity, Alt Investments) with a live 'verdicts roll in' panel showing each guest's status. 1440×900.",
 "session": "",
-"slide_text": "",
+"slide_text": "Who Would You Marry? verdicts roll in",
 "type": "Image",
 "status": "Ready",
-"format": "",
+"format": "Social / Promotional",
 "topic": [
 "Stocks / Equity",
 "Fixed Income",
@@ -6950,7 +6974,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Ready",
-"format": "Hiral Speaking",
+"format": "Social / Promotional",
 "topic": [
 "Money Conversations"
 ],
@@ -6969,7 +6993,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/teasers/kbc-teaser.mp4",
 "description": "12s silent screen-recorded teaser cutting through the KBC quiz flow — round intros ('Fastest correct doubles up'), live questions and the winner podium, in the teal TV-studio theme. 1920×1080, no audio (add music in-app).",
 "session": "",
-"slide_text": "",
+"slide_text": "Fastest correct doubles up",
 "type": "Video",
 "status": "Ready",
 "format": "Social / Promotional",
@@ -7039,7 +7063,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Image",
 "status": "Ready",
-"format": "",
+"format": "Social / Promotional",
 "topic": [
 "Stocks / Equity",
 "Fixed Income",
@@ -7099,7 +7123,7 @@ window.IFM_V1 =
 "drive": "https://ifm-deploy.vercel.app/content/game-assets/ifm-hero-logo.mp4",
 "description": "9s animated logo reveal — the polished 3D metallic IFM medallion rotating into place on a dark smoky ground beside 'Investing for Mummies · nurturing financially confident women'. 1280×720. Used as the intro/outro on reels and as game-screen branding.",
 "session": "",
-"slide_text": "",
+"slide_text": "Investing for Mummies · nurturing financially confident women",
 "library": false,
 "type": "",
 "format": "",
@@ -7118,7 +7142,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1FrE-A4xMaPFv-zjo61cWcG9Ea6ZsaccJ",
 "description": "Handheld phone footage of a women-only corporate session in a wood-panelled boardroom with a large world map on the wall. Covers the room filling up, Hiral in a red top presenting to roughly 28 seated women, close-ups of attendees listening and taking notes, and screen-grabs of the projected deck — including the ₹1-doubled-every-day-for-30-days = ₹5 crore riddle, a ‘How to Read a Factsheet / which AMC is managing it’ slide, and the Mutual Fund Manager LIVE join QR with room PIN MF4236. 165 .MOV files, ~36MB each (~5.8GB total).",
 "session": "Corporate — 4 Jul 2026",
-"slide_text": "",
+"slide_text": "How to Read a Factsheet / which AMC is managing it",
 "type": "Video",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -7252,7 +7276,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Stocks / Equity"
 ],
@@ -7269,7 +7293,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/17MMraBVxH9ezUuX58BUrXgfoGiW92-S6",
 "description": "Reel cover art: mint-green dotted background with a large faded rupee-and-arrows watermark. Navy serif headline 'GDP explained' above a cut-out of Hiral in a white sleeveless top, arms folded, smiling to camera. A tilted 'FINANCE NEWS' clipping overlays her forearm reading 'INDIA'S 7.8% GDP KEEPS IT THE FASTEST GROWING MAJOR ECONOMY'. Closing line 'without the boring part' in navy and red serif.",
 "session": "Aakara September delivery",
-"slide_text": "",
+"slide_text": "GDP explained FINANCE NEWS S 7.8% GDP KEEPS IT THE FASTEST GROWING MAJOR ECONOMY without the boring part",
 "type": "Video",
 "status": "Ready",
 "format": "Portrait",
@@ -7291,7 +7315,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1RJjIbuDvuEmQMi2Md9vqBg87eE1aBp_g",
 "description": "Carousel cover: two mock 'World News' front pages — 'Elon Musk gains $18 billion overnight' and 'Mukesh Ambani's wealth jumps after Reliance shares rise' — under the headline 'Headlines we see all the time', closing with 'So… where did all that money come from?'",
 "session": "",
-"slide_text": "",
+"slide_text": "front pages — Mukesh Ambani — under the headline , closing with",
 "type": "Carousel",
 "status": "Ready",
 "format": "Social Graphic",
@@ -7312,7 +7336,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/138UQtZ83QoSNeq1Cx-SFIuTZ81oKuUTt",
 "description": "Carousel cover: a school report card graded A+/A- on Revenue, Net Profit and Earnings Per Share — 'The Stock Market's Report Card Season Starts Thursday! And yes, it affects your wallet.' (TCS quarterly results topical.)",
 "session": "",
-"slide_text": "",
+"slide_text": "The Stock Market",
 "type": "Carousel",
 "status": "Ready",
 "format": "Social Graphic",
@@ -7354,7 +7378,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1d_EcPr_9CeqA-A3FnIrKlyNWpGVo-2fx",
 "description": "Carousel cover: 'The 10-minute money job you should do this week' in bold serif on cream — a do-one-thing-now actionable carousel.",
 "session": "",
-"slide_text": "",
+"slide_text": "The 10-minute money job you should do this week",
 "type": "Carousel",
 "status": "Ready",
 "format": "Social Graphic",
@@ -7547,7 +7571,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1Lc57tOczIQn2XhtDQ2PlMYGRpPagmRm9/view",
 "description": "Hiral stands at the head of a long boardroom table mid-sentence, both hands raised, presenting to a seated group. The projector screen behind her shows the 'Introduction' slide — an illustrated avatar of her ringed by bio callouts: created a handbook to teach investing simply, Bachelor's in Communications, 10 years as a writer, mother of 2, 'Have a math phobia', and learned personal finance through self-study. Water bottles and Maruti-branded snack boxes line the table.",
 "session": "RSS workshop (Balsabha) — 4 Jun 2026",
-"slide_text": "",
+"slide_text": "Introduction s in Communications, 10 years as a writer, mother of 2,",
 "type": "Image",
 "status": "Ready",
 "format": "Hiral Speaking",
@@ -7570,7 +7594,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/17MMLvmTMbbCrEMCEfpdNMT3oOBlE37Tt/view",
 "description": "Hiral presenting at the head of the boardroom table, hands together, with attendees' chair-backs in the foreground. The screen behind reads 'The Invisible Enemy: Inflation' — 'Inflation quietly steals the purchasing power of...' — with a cartoon green inflation monster looming over a pile of cash, a list of rising costs (school fees, groceries, healthcare, travel), and the punchline 'Our mothers were taught to SAVE / Our generation must learn to INVEST'.",
 "session": "RSS workshop (Balsabha) — 4 Jun 2026",
-"slide_text": "",
+"slide_text": "chair-backs in the foreground. The screen behind reads Inflation quietly steals the purchasing power of... Our mothers were taught to SAVE / Our generation must learn to INVEST",
 "type": "Image",
 "status": "Ready",
 "format": "Hiral Speaking",
@@ -7658,7 +7682,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
 "description": "101 raw MP4 clips from the RSS workshop, shot on phone and dumped with UUID filenames. Sampled frames are largely projector captures of the workshop deck — 'From Stree Dhan to Financial Wisdom' and the prompt slide 'What does ‘Stree Dhan’ mean to you?' over an illustrated money-tree-and-vault graphic — plus room and speaker coverage. NOT individually reviewed or tagged.",
 "session": "RSS workshop (Balsabha) — 4 Jun 2026",
-"slide_text": "",
+"slide_text": "From Stree Dhan to Financial Wisdom What does ‘Stree Dhan",
 "type": "Video",
 "status": "Raw",
 "format": "B-roll",
@@ -7680,7 +7704,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1izAZNyIytUGtfGpxYAQLA-83pShtUHcx",
 "description": "8-artboard carousel on the coming Jio IPO, on IFM's pale-teal grid background with a faint candlestick-chart watermark. Cover: a hand fanning three blue/green/red Jio 'Digital Life' cards under 'You know Jio. But do you know how to invest in Jio?'. Inside slides argue against familiarity bias — 'Don't confuse familiarity with an investment thesis', with a cut-out of Mukesh Ambani — and close on a checklist card: 'An IPO is not an invitation to buy, it's an invitation to do your homework — What am I buying? What am I paying? What could go wrong? Does it belong in MY portfolio?'",
 "session": "Aakara September delivery",
-"slide_text": "",
+"slide_text": "s pale-teal grid background with a faint candlestick-chart watermark. Cover: a hand fanning three blue/green/red Jio cards under . Inside slides argue against familiarity bias — t confuse familiarity with an investment thesis An IPO is not an invitation to buy, it",
 "type": "Carousel",
 "status": "Ready",
 "format": "Social Graphic",
@@ -7703,7 +7727,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1lUpzR-igdWwhXt7dCWOX65sPjo9fJ4Es",
 "description": "Single MP4. The sampled frame is an extreme, motion-blurred close-up of a woman speaking to camera — only mouth, chin and neck in frame, gold hoop earring, dark hair, denim-blue collared shirt — with the caption 'Can we stop apologizing' in a white box across the lower third. Handheld, fast-moving.",
 "session": "Aakara September delivery",
-"slide_text": "",
+"slide_text": "Can we stop apologizing",
 "type": "Video",
 "status": "Raw",
 "format": "Portrait",
@@ -7725,7 +7749,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1H7FGAM7hjLW_l-0DKCCiMWx79HwcaNzM/view",
 "description": "Reel cover — Hiral in a pink kurta sits at a wooden desk with a laptop, lapel mic clipped on, smiling at camera in front of a large whiteboard-style candlestick chart with red and green candles and a grey volume histogram. White caps 'HOW TO READ A' sits above a navy rounded box reading 'QUARTERLY REPORT'.",
 "session": "Aakara July delivery",
-"slide_text": "",
+"slide_text": "HOW TO READ A QUARTERLY REPORT",
 "type": "Video",
 "status": "Ready",
 "format": "Portrait",
@@ -7745,10 +7769,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/15fqBhWg93HGvTO9e0-zJRpCYa7Afn84l",
 "description": "8-artboard explainer carousel on IFM's pale-teal wave background. Cover asks 'Why do IPOs suddenly come in waves?' over a white upward zig-zag arrow. Slide 2 pairs a stock photo of a woman peering through a magnifying glass with 'One month... hardly any IPOs. The next... they're everywhere! It's not a coincidence.' Later slides explain that companies can spend years ready to list but wait for market conditions, closing on a navy card: 'Being ready isn't enough - the market has to be ready too.'",
 "session": "Aakara June delivery",
-"slide_text": "",
+"slide_text": "s pale-teal wave background. Cover asks over a white upward zig-zag arrow. Slide 2 pairs a stock photo of a woman peering through a magnifying glass with re everywhere! It Later slides explain that companies can spend years ready to list but wait for market conditions, closing on a navy card: t enough - the market has to be ready too.",
 "type": "Carousel",
 "status": "Ready",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Stocks / Equity",
 "IPOs"
@@ -7768,10 +7792,10 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/drive/folders/1P6p2Mk89Xl5mUywlgIVQk4qxMdsM6N2m",
 "description": "6-artboard news-topical carousel on a mint-green tint over a photo of the NSE building at Bandra Kurla Complex. Cover: 'NSE has filed a ₹30,000 crore IPO - and soon you may be able to buy NSE on BSE!' with a 'No, that's not a typo' CTA. Inside slides bust the assumption that NSE is government-owned ('Most people think NSE is owned by the Government of India. But it's not.') and close on the plot twist that BSE is already listed - and its shares trade on NSE.",
 "session": "Aakara June delivery",
-"slide_text": "",
+"slide_text": "NSE has filed a ₹30,000 crore IPO - and soon you may be able to buy NSE on BSE! s not a typo Most people think NSE is owned by the Government of India. But it",
 "type": "Carousel",
 "status": "Ready",
-"format": "Hiral Speaking",
+"format": "Social Graphic",
 "topic": [
 "Wealth",
 "Stocks / Equity",
@@ -7792,7 +7816,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1ZkhuVC0gHyAlgBPrnaOCyRudGNn0IuWo/view",
 "description": "Projector screen showing the opening slide 'From Stree Dhan to Financial Wisdom' — an illustrated tree growing out of a pile of gold coins and jewellery, with the prompt “What does ‘Stree Dhan’ mean to you?” across the bottom. Dark wood-paneled hotel conference room, empty black executive chairs in the foreground.",
 "session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
+"slide_text": "From Stree Dhan to Financial Wisdom What does ‘Stree Dhan",
 "type": "Video",
 "status": "Raw",
 "format": "Social Graphic",
@@ -7814,7 +7838,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1YBYiX32SZ-KYpFBPxDOnHRA0bfbuiY37/view",
 "description": "Facilitator stands beside the projector screen presenting the colour-coded 'Introduction' slide — an illustrated woman surrounded by four labelled boxes explaining who the course is for. A roll-up IFM banner stands to the right of the screen; participants watch from black chairs in the foreground.",
 "session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
+"slide_text": "Introduction",
 "type": "Video",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -7837,7 +7861,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1Lac_goy_sqm5CKmLYBw7Jvyk-VI5m8RB/view",
 "description": "Facilitator presenting the inflation block of the deck: 'What Causes Inflation?' (three bullet causes beside a cartoon of shoppers), 'The Invisible Enemy: Inflation' listing school fees, groceries, healthcare and travel, and 'The Real Cost of Waiting' showing a ₹500 note shrinking. She gestures at the screen with both hands; seated participants in the foreground.",
 "session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
+"slide_text": "What Causes Inflation? The Invisible Enemy: Inflation The Real Cost of Waiting",
 "type": "Video",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -7863,7 +7887,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1fqZZCVaKDBGhu1_YNu_n6FXjWhqd9Z50/view",
 "description": "Interactive slide asking ‘Which of these expenses do you think…’ with three photo cards — a takeaway coffee cup, a card-swipe machine and a food-delivery bag — for participants to sort. Facilitator stands at the whiteboard beside the screen; women at the boardroom table look up at it, one holding a phone.",
 "session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
+"slide_text": "Which of these expenses do you think…",
 "type": "Video",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -7887,7 +7911,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1u60sKnbp5iqVOvpgNWfnl4E-8rK2rZcH/view",
 "description": "Projector screen split into 'Saving' (a pink piggy bank) and 'Investing' (a green sapling growing coins), shot across the empty end of the U-shaped boardroom table with red tissue boxes and water bottles in the foreground.",
 "session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
+"slide_text": "(a pink piggy bank) and",
 "type": "Video",
 "status": "Raw",
 "format": "Social Graphic",
@@ -7935,7 +7959,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1xzLxOTQUE_LQ0dbZKB6tG-XRlFw39p_P/view",
 "description": "Closing-section slides: 'Reimagining Stree Dhan Today' with a bulleted list beside an illustrated woman at a laptop, and a slide reading ‘…more connected than we realised’ over a crowd illustration of many women. Facilitator seated at the head of the table working from her laptop.",
 "session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
+"slide_text": "Reimagining Stree Dhan Today …more connected than we realised",
 "type": "Video",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -7981,7 +8005,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1Juoj1nVCEj17C3tTYyFuoFoi_9HaJ_wV/view",
 "description": "Facilitator in a cream block-print kurta presenting the workshop line-up slide — three pricing cards for the Investing for Mummies Flagship 8-session (₹16,000), the Introductory 4-session (₹9,500) and the Young Adults foundation course (₹9,500), with June batch dates and 'Register Now' buttons.",
 "session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
+"slide_text": "Register Now",
 "type": "Video",
 "status": "Raw",
 "format": "Hiral Speaking",
@@ -8139,7 +8163,7 @@ window.IFM_V1 =
 "slide_text": "",
 "type": "Video",
 "status": "Raw",
-"format": "",
+"format": "B-roll",
 "topic": [
 "Women & Money"
 ],
@@ -8158,7 +8182,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1l1SCV70bis0224e7Ynrya9oMeuKOZejd/view",
 "description": "A grey-haired woman in a lilac striped shirt beams at the camera holding up her IFM 'Certificate of Completion' for the Investing for Mummies Flagship course, dated August 2026. She is seated at a polished wood boardroom table with an open handwritten notebook in front of her; plain whiteboard behind.",
 "session": "Investing for Mummies Flagship graduation — Aug 2026",
-"slide_text": "",
+"slide_text": "Certificate of Completion",
 "type": "Image",
 "status": "Raw",
 "format": "Certificate",
@@ -8223,7 +8247,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/15d-G15xuTtMzWPHHIKAkm_ZV8uLFvtic/view",
 "description": "Nine women packed together behind the office boardroom table, most holding IFM 'Certificate of Completion' sheets toward the camera, one holding hers up high at the back. Cream room with framed artwork, a wooden cabinet and curtains; the table in front holds notebooks, a purple IFM pouch, glasses of water and handbags.",
 "session": "Investing for Mummies Flagship graduation — Aug 2026",
-"slide_text": "",
+"slide_text": "Certificate of Completion",
 "type": "Image",
 "status": "Raw",
 "format": "Certificate",
@@ -8243,7 +8267,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1I3lMqYQ2iOzth0LSciCrhSuOEHA0Nejx/view",
 "description": "Reel cover art: a woman in a denim-blue dress sits in a cream armchair against a pale blue swirl background with ₹ notes floating around her. Title type across the lower third reads 'THE POWER OF COMPOUNDING', 'COMPOUNDING' highlighted in a blue block.",
 "session": "Aakara June delivery",
-"slide_text": "",
+"slide_text": "THE POWER OF COMPOUNDING",
 "type": "Image",
 "status": "Ready",
 "format": "Portrait",
@@ -8325,7 +8349,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1kIWngHziv-pYjlGAJE79vcWGlFwqxhcO/view",
 "description": "Ten women grouped behind two black leather boardroom chairs, most holding navy-and-cream 'Certificate of Completion' certificates toward camera; one at the back holds hers up overhead. Warm downlights, a framed abstract painting on the left wall, cream curtains and a wooden cabinet behind. The table in front holds phones, a notebook, a glass tumbler and more certificates. Everyone is smiling straight at the lens.",
 "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
-"slide_text": "",
+"slide_text": "Certificate of Completion",
 "type": "Image",
 "status": "Ready",
 "format": "Certificate",
@@ -8345,7 +8369,7 @@ window.IFM_V1 =
 "drive": "https://drive.google.com/file/d/1Kk4CyE_Z80DlEtSe7_QHU1crX1IzZ_op/view",
 "description": "Phone screenshot of the Instagram story composer, UI chrome included (Text, Stickers, Audio, Effects, Draw, Download, Label AI, More down the right; 'Your stories' and 'Close Friends' along the bottom). Two stacked certificate photos fill the canvas: on top, four women holding 'Certificate of Completion — Investing for Mummies Flagship' certificates with names printed on them; below, the ten-person group shot.",
 "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
-"slide_text": "",
+"slide_text": "Your stories Close Friends Certificate of Completion — Investing for Mummies Flagship",
 "type": "Image",
 "status": "Ready",
 "format": "Certificate",
