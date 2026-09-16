@@ -10,6 +10,10 @@
 <style>
 :root{
   --navy:#0C548E; --ink:#24313F; --ink-2:#55646f; --muted:#8c94a1;
+  /* The brand navy from the IFM palette, for filled primary buttons. `--navy` above is the
+     interactive accent (focus rings, hovers, links) and is a brighter blue — as the page's
+     single largest block of colour it read as generic startup blue rather than as IFM. */
+  --navy-deep:#1a3a5c;
   /* Display ink. Sampled off the storyboard: titles there are a deep navy (#101C3A),
      not the charcoal body colour. It is what makes the type feel like a brand and not
      a database, so it is a token rather than a one-off. */
@@ -51,10 +55,11 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
    treatment the brand does not actually use. */
 .brand{font-family:var(--f-d);font-weight:600;font-size:19px;letter-spacing:.01em;
   color:var(--display);padding:0;line-height:1}
-.mast .rule{width:1px;height:18px;background:var(--stone)}
-.mast .tag{font-family:var(--f-d);font-size:14px;color:var(--ink-2);line-height:1}
+/* The count belongs to the empty state only. In the storyboard the app frame carries
+   "IFM OS" and "378 assets" on panel 1 and nothing at all on the results panels — the
+   tagline beside the wordmark is the POSTER's title, not the product's chrome. Carried on
+   every screen it spent the top of the page on words that say nothing about the content. */
 .mast .count{margin-left:auto;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
-@media(max-width:760px){ .mast .rule,.mast .tag{display:none} }
 
 /* ------------------------------------------------------- stage (hero/results) */
 /* 52px is the masthead's exact height (16 + 19 + 16 + 1px rule). Anything larger leaves a
@@ -64,16 +69,22 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 /* padding-block only — the shared padding-inline above still applies, so the empty-state
    field lines up with the masthead and, more usefully, with the field it turns into the
    moment she types. It used to be a 470px box centred on nothing. */
+/* 9vh, not 14vh, and no bottom padding: the hero image now follows directly instead of
+   being flung to the foot of the viewport, so the question, the field and the photograph
+   read as one composition rather than three strips with dead bands between them. */
 .stage.hero{position:static;border-bottom:none;background:none;backdrop-filter:none;
-  padding-block:14vh 6vh;text-align:center;flex:none}
+  padding-block:8vh 40px;text-align:center;flex:none}
 .herotext{display:none}
 .stage.hero .herotext{display:block;max-width:600px;margin:0 auto 28px}
 /* The 29px floor put the question within 19px of the right gutter on a 375 phone. */
 .stage h1{font-family:var(--f-d);font-weight:500;font-size:clamp(25px,5.2vw,38px);
   line-height:1.16;margin:0;letter-spacing:-.018em;color:var(--display)}
-.searchrow{display:flex;gap:10px;align-items:center}
-/* Full content width, as the storyboard draws it. The field is the page here. */
-.stage.hero .searchrow{margin:0}
+/* Capped, not full-bleed. In the storyboard the field is about 60% of the frame with clear
+   space to its right; stretched across 1440px it stopped reading as a question and started
+   reading as a toolbar, which is the single strongest "admin panel" signal a page can send.
+   Filters stays inside the same group so the two never drift apart. */
+.searchrow{display:flex;gap:10px;align-items:center;max-width:760px}
+.stage.hero .searchrow{margin:0 auto}
 .stage.hero .fbtn{display:none}
 .sbox{flex:1;display:flex;align-items:center;gap:10px;background:var(--card);
   border:1.5px solid var(--stone);border-radius:10px;padding:10px 14px;min-width:0;
@@ -95,7 +106,7 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .try{display:none}
 /* Left-aligned to the field's own left edge, not centred — that is how the storyboard
    sets it, and it gives the empty state a second alignment to hang on. */
-.stage.hero .try{display:flex;margin:18px 0 0;gap:8px;
+.stage.hero .try{display:flex;margin:18px auto 0;gap:8px;max-width:760px;
   justify-content:flex-start;flex-wrap:wrap;align-items:center}
 .try .lbl{color:var(--muted);font-size:12.5px;margin-right:2px}
 .try button{background:var(--card);border:1px solid var(--stone);border-radius:999px;
@@ -103,19 +114,20 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .try button:hover{border-color:var(--navy);color:var(--navy)}
 
 /* the quiet brand moment at the foot of the empty state */
-/* Full-bleed and pinned to the foot of the viewport, as the storyboard has it. `margin-top:
-   auto` in the body flex column does the pinning; capped at 1600 so a 1200px-wide source
-   is never asked to stretch across a very large display. */
-/* hero.jpg is a 1200x270 strip. Left at its natural ratio it rendered 84px tall on a phone
-   — a sliver the caption alone overflowed. The floor keeps it an image at every width, and
-   the expression is written so the crop never asks the source to upscale past 1.33x:
-   at 1440 the natural height already wins, below that the 240px floor crops horizontally. */
-.heroimg{width:100%;max-width:1600px;margin:auto auto 0;position:relative;overflow:hidden;
-  flex:none;height:max(240px,calc(min(100vw,1600px) / 4.444))}
+/* INSET, not full-bleed, and rounded — the storyboard sets the photograph inside the panel
+   with the same gutters as the content, which is what keeps it feeling like part of a
+   composed page rather than a banner bolted to the bottom of one. Pinning it to the foot of
+   the viewport with `margin-top:auto` is gone too: that was what opened the dead band
+   between the Try chips and the image. It now simply follows them. */
+/* `margin-top:auto` seats it at the foot of the first screen, as the storyboard does, and
+   the taller frame is what keeps the gap above it reading as composed whitespace rather
+   than as the orphan band the full-bleed version left. */
+.heroimg{width:min(var(--col),calc(100% - 56px));margin:auto auto 0;position:relative;
+  overflow:hidden;border-radius:12px;flex:none;height:clamp(240px,30vw,400px)}
 /* Muted on purpose. At full saturation the photo shouts louder than the one question on
    the page, and the italic caption sitting on it was illegible against the foliage. */
 .heroimg img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;
-  filter:saturate(.72) contrast(.97) brightness(1.04)}
+  filter:saturate(.84) contrast(.99) brightness(1.02)}
 /* The wash is only where the caption lands. Spread across the whole frame it drained the
    photograph of the warmth that is the point of putting it there. */
 .heroimg::after{content:'';position:absolute;inset:0;pointer-events:none;
@@ -160,7 +172,10 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .cardx{text-align:left;padding:0;display:block;width:100%;background:none}
 /* display:block matters. As an inline span, aspect-ratio and width:100% were both
    ignored, every thumbnail rendered at its natural size and the cards ran 718px tall. */
-.shot{display:block;position:relative;width:100%;aspect-ratio:5/4;border-radius:6px;
+/* 3:2 and an 8px radius, measured off the storyboard. The 5:4 crop was taller than the
+   design, which pushed the second row of results below the fold at 1440x900 where the
+   storyboard shows two full rows; square corners read as data cells rather than content. */
+.shot{display:block;position:relative;width:100%;aspect-ratio:3/2;border-radius:8px;
   overflow:hidden;background:var(--stone-2);margin-bottom:12px;
   box-shadow:inset 0 0 0 1px rgba(21,38,63,.07)}
 /* Absolute, so it paints over the "no preview" label that always sits underneath it.
@@ -215,10 +230,23 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .scrim{position:fixed;inset:0;background:rgba(36,49,63,.34);opacity:0;pointer-events:none;
   transition:opacity .2s;z-index:50}
 .scrim.open{opacity:1;pointer-events:auto}
-#detail{position:fixed;top:0;right:0;width:min(880px,100%);height:100%;background:var(--paper);
-  z-index:60;transform:translateX(101%);transition:transform .24s cubic-bezier(.4,0,.2,1);
-  display:flex;flex-direction:column;box-shadow:-10px 0 50px -20px rgba(36,49,63,.5)}
-#detail.open{transform:none}
+/* A CENTRED MODAL, not a right-edge drawer. The drawer forced everything into one vertical
+   stack — media on top, metadata underneath — which is what squashed the media into a short
+   letterbox and put the database fields in the middle of vision. The storyboard composes it
+   side by side: media left, words right. Restoring that is the whole point of this pass. */
+#detail{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;
+  padding:28px;opacity:0;pointer-events:none;transition:opacity .2s}
+#detail.open{opacity:1;pointer-events:auto}
+/* fit-content, so the card takes its width from the asset. A fixed 1080 left a portrait
+   still floating in the middle of an over-wide left column — the same visual fault as the
+   pillarboxing, one level up. The storyboard's two detail panels are not the same width
+   either: the composition follows the media. */
+.dcard{width:fit-content;max-width:min(1080px,100%);min-width:min(720px,100%);
+  max-height:calc(100vh - 56px);background:var(--paper);
+  border-radius:12px;overflow:hidden;display:flex;flex-direction:column;
+  box-shadow:0 30px 80px -26px rgba(21,38,63,.5);
+  transform:translateY(12px) scale(.985);transition:transform .24s cubic-bezier(.4,0,.2,1)}
+#detail.open .dcard{transform:none}
 /* No rule on desktop: with only a close button in it, a bordered bar reads as an empty
    toolbar. The storyboard just floats the ✕. Mobile keeps the rule — it has a Back control
    that needs to sit against something. */
@@ -232,23 +260,42 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 /* video detail is two columns; image/carousel detail is one wide visual then text */
 /* stretch, not start: the right column then runs the full height of the player, so
    `margin-top:auto` can drop the actions onto the same bottom line as the filmstrip. */
-.dgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch}
-.dgrid.single{grid-template-columns:1fr}
-/* Dark ground only where there is a real player — black bars around a photograph are a
-   video convention, and putting a still on a near-black slab made two harsh columns. */
-.dmedia{background:var(--stone-2);border-radius:6px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center}
+/* `auto` for the media column so it hugs the asset, and a bounded text column so the words
+   keep a readable measure whatever the media does. */
+.dgrid{display:grid;grid-template-columns:auto minmax(320px,390px);gap:30px;align-items:stretch}
+/* NO fixed frame, and no background behind the media. The old box was a fixed landscape
+   rectangle with `width:100%` and `object-fit:contain`, so every portrait asset floated in
+   the middle of it with wide beige bars either side — on mobile roughly a third of the
+   media area was dead space. Letting the media size itself and the box hug it means the
+   frame takes the asset's own aspect ratio, and there is nothing left to pillarbox. */
+/* fit-content on BOTH. The media column is `auto`, so it sized to the widest thing in it —
+   which was the "no sound" note, not the player. The dark ground then stretched to 612px
+   behind a 324px portrait clip, and the bars were back by a different route. Hugging the
+   media means the ground can never be wider than what it sits behind, and the filmstrip
+   lines up with the player edge as the storyboard draws it. */
+.dvis{display:flex;flex-direction:column;width:fit-content;max-width:100%}
+.dmedia{display:flex;align-items:flex-start;justify-content:center;border-radius:8px;
+  width:fit-content;max-width:100%}
+.dmedia img,.dmedia video{display:block;max-width:min(620px,48vw);max-height:64vh;
+  width:auto;height:auto;border-radius:8px}
+/* Dark ground only behind a real player — black surround is a video convention, and a
+   photograph on a near-black slab made two harsh columns. It hugs the player, so it can
+   never show as bars. */
 .dmedia.dark{background:#141d27}
-.dmedia video,.dmedia img{width:100%;max-height:58vh;object-fit:contain}
-.dgrid.single .dmedia img{max-height:50vh}
 /* A grid of five, so the strip measures exactly the same as the player above it — the
    storyboard aligns both edges, and five fixed-width frames left a ragged right end. */
-.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}
+/* `width:0;min-width:100%` keeps these two OUT of the wrapper's intrinsic width while still
+   letting them fill it. Without it the five 120px canvases summed to 632px and the note's
+   text to ~600px, so the fit-content wrapper sized to THEM rather than to the 324px portrait
+   player — which pushed the modal back out to its 1080 cap and reopened a gap beside the
+   media. The strip must measure the player, not the other way round. */
+.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px;
+  width:0;min-width:100%}
 .strip .frame{width:100%;height:auto;border-radius:3px;opacity:.85;display:block;
   transition:opacity .15s;background:var(--stone-2)}
 .strip .frame:hover{opacity:1}
 .note{margin:12px 0 0;padding:9px 12px;background:var(--cream);border-radius:5px;
-  font-size:12.5px;color:var(--ink-2);line-height:1.5}
+  font-size:12.5px;color:var(--ink-2);line-height:1.5;width:0;min-width:100%}
 .dtext{display:flex;flex-direction:column}
 .dtext h2{font-family:var(--f-d);font-weight:600;font-size:21px;line-height:1.3;margin:0 0 6px;
   color:var(--display);letter-spacing:-.005em}
@@ -264,9 +311,9 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
    rather than interrupting it. */
 .acts{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;margin-top:auto}
 .btn{border-radius:6px;padding:11px 18px;font-size:13.5px;font-weight:500;
-  border:1.5px solid var(--navy);background:var(--navy);color:#fff;text-decoration:none;
+  border:1.5px solid var(--navy-deep);background:var(--navy-deep);color:#fff;text-decoration:none;
   display:inline-flex;align-items:center;gap:7px;transition:background .15s,border-color .15s,color .15s}
-.btn:hover{background:#0a4677;border-color:#0a4677}
+.btn:hover{background:#142e49;border-color:#142e49}
 .btn.ghost{background:var(--card);color:var(--ink-2);border-color:var(--stone)}
 .btn.ghost:hover{background:var(--card);border-color:var(--navy);color:var(--navy)}
 .btn svg{flex:none}
@@ -277,7 +324,11 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 @media(max-width:860px){ .dgrid{grid-template-columns:1fr} .acts{justify-content:flex-start} }
 @media(max-width:760px){
   .mast{padding-block:13px} .brand{font-size:17px}
-  .stage{top:44px;padding-block:11px} .stage.hero{padding:6vh 18px 0}   /* 13+17+13+1 */
+  /* The storyboard's phone opens on search and goes straight to results — there is no hero
+     on mobile at all. Carried over from desktop it produced roughly 500px of void followed
+     by a washed-out photograph almost entirely below the fold. */
+  .heroimg{display:none}
+  .stage{top:44px;padding-block:11px} .stage.hero{padding:3.5vh 16px 0}  /* 13+17+13+1 */
   .searchrow{flex-wrap:wrap;gap:9px} .fbtn{width:100%;justify-content:center}
   .wrap{padding:0 16px} .mast,.stage{padding-inline:16px}
   /* The storyboard's mobile header carries the count alone — the sort note is the first
@@ -291,7 +342,7 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
      height between them and the context line drifted 23px clear of its own title. */
   .cardx{display:grid;grid-template-columns:116px minmax(0,1fr);grid-template-rows:auto 1fr;
     gap:0 14px;align-items:start;padding:13px 0;border-bottom:1px solid var(--stone-2)}
-  .shot{grid-row:1/3;width:116px;aspect-ratio:5/4;margin:0;border-radius:5px}
+  .shot{grid-row:1/3;width:116px;aspect-ratio:3/2;margin:0;border-radius:6px}
   .cardx:hover .shot img{transform:none}
   .cardx .ttl{grid-column:2;font-size:14px;min-height:0;margin-bottom:4px;align-self:start}
   .cardx .ctx{grid-column:2;margin-bottom:0;align-self:start}
@@ -301,9 +352,25 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
   .play::after{border-left-width:6px;border-top-width:4px;border-bottom-width:4px;margin-left:2px}
   .sep{margin:18px 0 8px}
   .weak{margin:14px 0 32px}
-  #detail{width:100%} .dtop .back{display:flex} .dtop .x{display:none}
+  /* Full-screen on a phone: a centred card with a margin around it wastes the only
+     dimension there is. */
+  #detail{padding:0}
+  .dcard{width:100%;height:100%;max-height:100%;border-radius:0;transform:none}
+  .dtop .back{display:flex} .dtop .x{display:none}
   .dtop{padding:12px 16px;border-bottom:1px solid var(--stone)} .dbody{padding:18px 16px 28px}
   .dl,.dl.two{grid-template-columns:72px minmax(0,1fr);gap:10px 14px}
+  /* Everything below is aimed at one thing: getting "Open in Drive" onto the first screen.
+     The storyboard's phone detail shows media, title, a short description, Type and Topic,
+     then the button — and nothing else above it. */
+  /* The 48vw cap exists to balance the two desktop columns; on a phone there is only one
+     column, and 48vw is 180px — half the screen left unused. Centred, because the wrapper
+     hugs the media and a portrait still would otherwise sit hard against the left margin. */
+  .dvis{margin-inline:auto}
+  .dmedia img,.dmedia video{max-width:calc(100vw - 32px);max-height:50vh}
+  .dtext .desc{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
+    overflow:hidden;margin-bottom:18px}
+  .dl{margin-bottom:20px}
+  .dl .sec{display:none}
   /* Stacked, full width — the storyboard's phone detail gives "Open in Drive" the whole
      measure rather than halving it against a secondary action. */
   .acts{gap:9px;flex-direction:column;align-items:stretch}
@@ -316,8 +383,6 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 
 <header class="mast">
   <button class="brand" id="home">IFM OS</button>
-  <span class="rule"></span>
-  <span class="tag">Content library for a richer financial future.</span>
   <span class="count" id="libcount"></span>
 </header>
 
@@ -358,11 +423,13 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 
 <div class="scrim" id="scrim"></div>
 <aside id="detail" aria-hidden="true">
-  <div class="dtop">
-    <button class="back" id="dback"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 19l-7-7 7-7"/></svg>Back</button>
-    <button class="x" id="dclose" aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="dcard">
+    <div class="dtop">
+      <button class="back" id="dback"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 19l-7-7 7-7"/></svg>Back</button>
+      <button class="x" id="dclose" aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="dbody" id="dbody"></div>
   </div>
-  <div class="dbody" id="dbody"></div>
 </aside>
 
 <script src="taxonomy.js"></script>
@@ -712,6 +779,7 @@ function render(){
   $('heroimg').hidden=!heroMode;
   $('main').hidden=heroMode;
   $('libcount').textContent=`${ASSETS.length} assets`;
+  $('libcount').hidden=!heroMode;          // empty state only, as the storyboard has it
   $('sbox').classList.toggle('has',searching);
   $('fbtn').classList.toggle('on',activeFilters()>0);
   $('fdot').hidden=!activeFilters(); $('fclear').hidden=!activeFilters();
@@ -741,30 +809,35 @@ function render(){
 function openDetail(id){
   const a=ASSETS.find(x=>x.id===id); if(!a)return;
   const m=media(a); state.openId=id;
-  const unset=v=>v?esc(v):'<span class="unset">not recorded</span>';
-  const row=(k,v)=>`<dt>${k}</dt><dd>${v}</dd>`;
+  /* Rows are built, not templated, so a field with no value produces NOTHING. Printing
+     "Session — not recorded" is the interface announcing the shape of the database; two of
+     the six rows on a typical asset were placeholders for absent data, padding the block
+     until it competed with the image. `sec` marks the secondary fields the storyboard's
+     phone layout leaves out — hidden by CSS on mobile, present on desktop. */
+  const row=(k,v,sec)=>v?`<dt class="${sec?'sec':''}">${k}</dt><dd class="${sec?'sec':''}">${v}</dd>`:'';
+  const list=v=>(v||[]).length?v.map(esc).join(', '):'';
   let visual;
   if(m.playable&&m.url){
     // The filmstrip is built from real frames of THIS file (see buildStrip). It used to be
     // built by joining on `session` — which looked reasonable and rendered for exactly none
     // of the 34 playable assets, because not one of them carries a session value. Frames
     // also can't mislead: neighbouring thumbnails under a player read as "this video".
-    visual=`<div><div class="dmedia dark"><video controls preload="metadata" playsinline
+    visual=`<div class="dvis"><div class="dmedia dark"><video controls preload="metadata" playsinline
         ${a.thumb?`poster="${esc(a.thumb)}"`:''} src="${esc(m.url)}"></video></div>
       <div class="strip" hidden></div>
       ${m.silent?'<p class="note">Preview has no sound — the original on Drive does.</p>':''}</div>`;
   } else {
-    visual=`<div><div class="dmedia">${a.thumb?`<img src="${esc(a.thumb)}" alt="">`:''}</div>
+    visual=`<div class="dvis"><div class="dmedia">${a.thumb?`<img src="${esc(a.thumb)}" alt="">`:''}</div>
       ${m.kind==='video'?'<p class="note">Video preview unavailable — open the original on Drive to watch it.</p>':''}
       ${m.kind==='carousel'?'<p class="note">Carousel — cover shown. Open in Drive for all slides.</p>':''}</div>`;
   }
-  const meta=`<dl class="dl${m.kind==='video'?'':' two'}">
-      ${row('Type',esc(a.type||'—'))}
-      ${row('Topic',(a.topic||[]).length?a.topic.map(esc).join(', '):'<span class="unset">none</span>')}
-      ${row('Person',(a.person||[]).length?a.person.map(esc).join(', '):'<span class="unset">not recorded</span>')}
-      ${row('Session',unset(a.session))}
-      ${row('Source',a.source==='Unknown'?'<span class="unset">unknown</span>':esc(a.source))}
-      ${row('Status',esc(a.status))}</dl>`;
+  const meta=`<dl class="dl">
+      ${row('Type',esc(a.type||''))}
+      ${row('Topic',list(a.topic))}
+      ${row('Person',list(a.person),true)}
+      ${row('Session',esc(a.session||''),true)}
+      ${row('Source',a.source&&a.source!=='Unknown'?esc(a.source):'',true)}
+      ${row('Status',esc(a.status||''),true)}</dl>`;
   const text=`<div class="dtext"><h2>${esc(titleOf(a))}</h2>
       <p class="ctx">${esc(context(a))}</p>
       ${a.description?`<p class="desc">${esc(a.description)}</p>`:''}
@@ -776,7 +849,9 @@ function openDetail(id){
         // button that swallowed the click and did nothing — say so instead.
         : `<p class="nolink">No Drive link recorded for this asset.</p>`}
       </div></div>`;
-  $('dbody').innerHTML=`<div class="dgrid${m.playable?'':' single'}">${visual}${text}</div>`;
+  // Always two columns. The `single` variant collapsed every non-playable asset — the large
+  // majority of the library — back into the stacked layout this pass exists to remove.
+  $('dbody').innerHTML=`<div class="dgrid">${visual}${text}</div>`;
   $('detail').classList.add('open'); $('detail').setAttribute('aria-hidden','false');
   $('scrim').classList.add('open');
   if(m.playable&&m.url) buildStrip(m.url,id);
@@ -842,6 +917,9 @@ $('home').onclick=()=>{state.filters={};$('fgrid').querySelectorAll('select').fo
 $('fbtn').onclick=()=>$('filters').classList.toggle('open');
 $('fclear').onclick=clearFilters;
 $('dclose').onclick=closeDetail; $('dback').onclick=closeDetail; $('scrim').onclick=closeDetail;
+// The modal's own backdrop. #detail now covers the viewport to centre the card, so it sits
+// over .scrim and swallows the click that used to dismiss it — this restores click-outside.
+$('detail').addEventListener('click',e=>{ if(e.target===$('detail')) closeDetail(); });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
 document.querySelectorAll('.try button').forEach(b=>b.onclick=()=>{setQuery(b.dataset.ex);$('q').focus();});
 document.addEventListener('click',e=>{
