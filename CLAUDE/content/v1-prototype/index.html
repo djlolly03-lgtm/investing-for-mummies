@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IFM Library — V1 prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+:root{
+  --navy:#1a3a5c; --teal:#2a9d8f; --teal-d:#0e7a6e; --mint:#e0f3f0; --mint-lt:#eef8f6;
+  --muted:#5a7d8a; --line:#e2ebe8; --paper:#f4f7f7; --amber:#e9c46a; --clay:#a13a2d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--navy);font-family:Nunito,system-ui,sans-serif;font-size:15px}
+.wrap{max-width:1180px;margin:0 auto;padding:22px 18px 60px}
+h1{font-family:Lora,Georgia,serif;font-size:26px;margin:0 0 3px}
+.sub{color:var(--muted);font-size:13.5px;margin:0 0 18px}
+.banner{background:#fff8e6;border:1px solid var(--amber);border-radius:10px;padding:10px 14px;
+  font-size:13px;color:#7a5a12;margin-bottom:18px}
+
+/* search */
+.searchbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:12px}
+#q{flex:1;min-width:260px;padding:13px 16px;border:2px solid var(--mint);border-radius:12px;
+  font-family:inherit;font-size:15.5px;background:#fff;color:var(--navy)}
+#q:focus{outline:none;border-color:var(--teal)}
+.examples{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
+.ex{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:12.5px;
+  color:var(--muted);cursor:pointer;font-family:inherit}
+.ex:hover{border-color:var(--teal);color:var(--teal-d)}
+
+/* filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+select{padding:8px 11px;border:1.5px solid var(--line);border-radius:9px;background:#fff;
+  font-family:inherit;font-size:13px;color:var(--navy);max-width:200px}
+.count{margin-left:auto;align-self:center;font-size:13px;color:var(--muted);font-weight:700}
+
+/* results */
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th{background:var(--mint-lt);text-align:left;padding:10px 12px;font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted);font-weight:800}
+td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;font-size:13.5px}
+tr.row{cursor:pointer}
+tr.row:hover td{background:var(--mint-lt)}
+tr.row.sel td{background:var(--mint)}
+.th-img{width:56px;height:56px;object-fit:cover;border-radius:7px;background:var(--mint);display:block}
+.ttl{font-weight:800;line-height:1.3}
+.dsc{color:var(--muted);font-size:12px;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;
+  -webkit-box-orient:vertical;overflow:hidden}
+.pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:10.5px;font-weight:800;
+  background:var(--mint);color:var(--teal-d);margin:1px 2px 1px 0;white-space:nowrap}
+.pill.fmt{background:#e7eef5;color:#31567a}
+.pill.unk{background:#f1f1f1;color:#7a7a7a}
+.pill.st-ready{background:var(--amber);color:var(--navy)}
+.pill.st-raw{background:#eef2f6;color:var(--muted)}
+.pill.st-published{background:var(--teal-d);color:#fff}
+.pill.st-donotuse{background:#f3e8e5;color:var(--clay)}
+.score{font-family:ui-monospace,monospace;font-size:11px;color:var(--muted)}
+.why{font-size:11px;color:var(--teal-d);margin-top:4px}
+
+/* detail */
+#detail{position:fixed;top:0;right:0;width:400px;max-width:100%;height:100%;background:#fff;
+  border-left:1px solid var(--line);box-shadow:-8px 0 26px rgba(26,58,92,.13);padding:20px;
+  overflow-y:auto;transform:translateX(100%);transition:transform .18s}
+#detail.open{transform:none}
+#detail h2{font-family:Lora,serif;font-size:19px;margin:0 0 10px;line-height:1.3}
+#detail img,#detail video{width:100%;border-radius:10px;background:var(--mint);margin-bottom:14px}
+.dl{display:grid;grid-template-columns:82px 1fr;gap:7px 10px;font-size:13px;margin-bottom:16px}
+.dl dt{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;padding-top:2px}
+.dl dd{margin:0}
+.close{position:absolute;top:14px;right:16px;border:none;background:var(--mint);width:30px;height:30px;
+  border-radius:50%;cursor:pointer;font-size:15px;color:var(--navy)}
+.openfile{display:block;text-align:center;background:var(--teal);color:#fff;padding:11px;border-radius:10px;
+  text-decoration:none;font-weight:800;font-size:14px;margin-top:6px}
+.empty{background:#fff;border:1px dashed var(--line);border-radius:12px;padding:38px;text-align:center;color:var(--muted)}
+@media(max-width:700px){#detail{width:100%}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>IFM Library</h1>
+  <p class="sub">V1 prototype · 20-asset acceptance set · taxonomy-controlled tags + natural-language search</p>
+  <div class="banner">
+    <strong>Prototype.</strong> 20 real assets, tagged by hand through the pipeline being tested.
+    It does not touch the live hub. Blank fields mean the evidence did not establish a value — that is
+    deliberate, not missing work.
+  </div>
+
+  <div class="searchbar"><input id="q" type="search" placeholder="Try: find me a video of Hiral talking about gold" autocomplete="off"></div>
+  <div class="examples" id="examples"></div>
+
+  <div class="filters">
+    <select id="f-type"></select>
+    <select id="f-format"></select>
+    <select id="f-topic"></select>
+    <select id="f-person"></select>
+    <select id="f-source"></select>
+    <select id="f-status"></select>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div id="results"></div>
+</div>
+
+<aside id="detail"><button class="close" id="close">✕</button><div id="detail-body"></div></aside>
+
+<script src="taxonomy.js"></script>
+<script src="tagged20.js"></script>
+<script>
+const T=window.IFM_TAXONOMY, ASSETS=window.IFM_TAGGED20;
+
+/* ---------------------------------------------------------------- search ----
+ * Deliberately NOT embeddings. Embeddings need an API at index time, ship a vector
+ * blob, and add infrastructure this project does not have. What actually makes the
+ * example queries work is having good TEXT to match — the per-asset `search_terms`
+ * field carrying synonyms, the finance terms that have no Topic of their own (SIP,
+ * XIRR, SGB), and affect words people really type ("funny", "candid").
+ *
+ * Matching is WORD-BOUNDARY, not substring. That single decision is what stops a
+ * search for "gold" returning "marigold", "teal/gold" and "black/gold" — which is
+ * exactly what the current hub does, on 37 rows, almost all of them wrong.
+ */
+const STOP=new Set(['find','me','a','an','the','of','for','show','get','to','on','in','at','is',
+  'with','and','or','some','any','please','i','want','need','looking','look','can','you','that',
+  'from','about','where','which','it','this','our','us','all']);
+
+// Query word -> extra tokens. Lets someone type how they speak and still hit the taxonomy.
+const SYN={
+  talking:['hiral speaking','speaking','explaining','teaching'],
+  talks:['hiral speaking','speaking'], talk:['hiral speaking','speaking'],
+  speaking:['hiral speaking'], explains:['hiral speaking','explaining'],
+  explaining:['hiral speaking'], teaching:['hiral speaking'], teaches:['hiral speaking'],
+  says:['hiral speaking'], discusses:['hiral speaking','explaining'], discussing:['hiral speaking'],
+  funny:['candid','laughing','smiling','fun','warm','joyful','lively'],
+  fun:['candid','smiling','lively'], candid:['candid','unposed','natural'],
+  testimonial:['testimonial'], testimonials:['testimonial'], review:['testimonial'],
+  reviews:['testimonial'], feedback:['testimonial'],
+  broll:['b-roll'], 'b-roll':['b-roll'], cutaway:['b-roll'], footage:['b-roll'],
+  clip:['video'], clips:['video'], reel:['video'], reels:['video'], film:['video'],
+  photo:['image'], photos:['image'], picture:['image'], pictures:['image'], image:['image'],
+  shot:['image'], shots:['image'], headshot:['portrait'], headshots:['portrait'],
+  portrait:['portrait'], portraits:['portrait'],
+  certificate:['certificate'], certificates:['certificate'], graduation:['certificate'],
+  question:['student question'], questions:['student question'], qna:['student question'],
+  classroom:['classroom moment'], workshop:['classroom moment','workshop'],
+  student:['student'], students:['student'], teens:['teens','student'],
+  ai:['ai generated'], generated:['ai generated'],
+  sip:['sip','systematic investment plan','compounding'],
+  xirr:['xirr','cagr','returns','risk & returns'],
+  independence:['financial independence'], freedom:['financial independence'],
+  august:['aug'], july:['jul'], june:['jun'], september:['sep'],
+};
+
+// Field weights. Topic and title dominate; description is support, not signal.
+const FIELDS=[
+  ['title',5],['topic',5],['format',4],['person',4],['search_terms',3],
+  ['slide_text',3],['session',3],['source',2],['type',2],['description',2],
+];
+
+function textOf(a,f){
+  const v=a[f];
+  return Array.isArray(v)?v.join(' ').toLowerCase():String(v||'').toLowerCase();
+}
+function tokenise(s){
+  return s.toLowerCase().split(/[^a-z0-9₹&/+-]+/).filter(w=>w.length>1&&!STOP.has(w));
+}
+function expand(tokens){
+  const out=[];
+  tokens.forEach(t=>{ out.push(t); (SYN[t]||[]).forEach(s=>out.push(s)); });
+  return [...new Set(out)];
+}
+// Word-boundary test. `gold` must not match `marigold`.
+function hasTerm(hay,term){
+  if(term.includes(' ')) return hay.includes(term);
+  return new RegExp('(^|[^a-z0-9])'+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'([^a-z0-9]|$)').test(hay);
+}
+
+/* Rarity weighting (IDF). Without it, "the video where Hiral talks about XIRR" ranks
+ * every Hiral video above the one asset that actually says XIRR, because `hiral`,
+ * `video` and `talks` each score as much as the one rare word that identifies it.
+ * Computed once over the corpus: a term in 1 of 20 assets is worth far more than a
+ * term in 15 of 20. */
+const DF={};
+ASSETS.forEach(a=>{
+  const seen=new Set();
+  FIELDS.forEach(([f])=>tokenise(textOf(a,f)).forEach(t=>seen.add(t)));
+  seen.forEach(t=>DF[t]=(DF[t]||0)+1);
+});
+// Squared, not linear. A linear curve made `xirr` (in 1 asset) worth only ~2x `hiral`
+// (in 12), so three Hiral videos still outranked the one asset that mentions XIRR.
+// Squaring makes it ~5x, which is what "the video about XIRR" actually means.
+const idf=t=>Math.pow(Math.log(1+ASSETS.length/(1+(DF[t]||0))),2)+0.3;
+
+/* IDF of a word the USER typed. A word absent from the corpus scores near-infinite
+ * rarity, which is right for ranking but wrong for coverage: "talks" appears in no
+ * asset, so it dominated the denominator and pushed the XIRR asset below the 55% bar
+ * despite matching the only word that mattered. When a word is reachable only through a
+ * synonym, weight it as that synonym — which is what it actually means here. */
+function rawIdf(t){
+  if(DF[t]) return idf(t);
+  let best=0;
+  (SYN[t]||[]).forEach(s=>{ const h=s.split(' ')[0]; if(DF[h]) best=Math.max(best,idf(h)); });
+  return best||idf(t);
+}
+
+// Words that constrain rather than describe. If a query names a format or a type, the
+// user means "only those" — "gold b-roll" must not return gold talks ranked above b-roll.
+//
+// ⚠️ Constraints are read from what the user ACTUALLY TYPED, never from the synonym
+// expansion. "Hiral talks about XIRR" expands `talks` -> `hiral speaking`; treating that
+// as a hard format filter silently excluded every B-roll asset, including the only one
+// that mentions XIRR. A synonym is a hint for ranking; it is not an instruction.
+const FORMAT_L=T.format.map(f=>f.toLowerCase());
+const TYPE_L=T.type.map(t=>t.toLowerCase());
+function constraintsOf(rawTokens,queryText){
+  const q=' '+queryText.toLowerCase()+' ';
+  return {
+    format:FORMAT_L.filter(f=>f.includes(' ')||f.includes('/')?q.includes(f):rawTokens.includes(f)),
+    type:TYPE_L.filter(t=>rawTokens.includes(t)),
+  };
+}
+
+function search(query){
+  const raw=tokenise(query);
+  if(!raw.length) return ASSETS.map(a=>({a,score:0,hits:[]}));
+  const terms=expand(raw);
+  // Which raw word produced which expanded term, so a synonym hit still counts as
+  // covering the word the user typed ("august" -> "aug" must satisfy "august").
+  const origin={};
+  raw.forEach(r=>{ origin[r]=r; (SYN[r]||[]).forEach(s=>{ origin[s]=r; }); });
+  const con=constraintsOf(raw,query);
+
+  const results=[];
+  ASSETS.forEach(a=>{
+    if(con.format.length && !con.format.includes((a.format||'').toLowerCase())) return;
+    if(con.type.length && !con.type.includes((a.type||'').toLowerCase())) return;
+
+    // Score each TERM ONCE, at the best field it appears in — not once per field.
+    // Summing across fields let `hiral` bank points from title + person + description +
+    // search_terms, which is how a generic Hiral video outranked the XIRR one.
+    const best={}; const coveredRaw=new Set(); const hits=new Set();
+    FIELDS.forEach(([f,w])=>{
+      const hay=textOf(a,f);
+      if(!hay) return;
+      terms.forEach(t=>{
+        if(hasTerm(hay,t)){
+          if(w>(best[t]||0)) best[t]=w;
+          if(origin[t]) coveredRaw.add(origin[t]);
+          if(['topic','format','person','type','source'].includes(f)) hits.add(f);
+        }
+      });
+    });
+    let score=0;
+    Object.entries(best).forEach(([t,w])=>{ score+=w*idf(t.split(' ')[0]); });
+
+    // Coverage is measured in IDF MASS, not word count. Two failures drove this:
+    //   "student testimonials" — `student` never matches the text-quote carousel, but
+    //      `testimonials` is the rare, load-bearing word. Counting words dropped it.
+    //   "financial independence" — `financial` is common and matches Financial Planning
+    //      assets; the phrase itself matches nothing. Counting words let it through.
+    // Requiring most of the query's *rarity* to be accounted for handles both.
+    const meaningful=raw.filter(t=>(DF[t]||0)>0 || (SYN[t]||[]).some(s=>DF[s.split(' ')[0]]>0));
+    if(!meaningful.length) return;
+    let total=0; meaningful.forEach(t=>total+=rawIdf(t));
+    let cover=0; coveredRaw.forEach(t=>{ if(meaningful.includes(t)) cover+=rawIdf(t); });
+    if(cover/total < 0.55) return;
+
+    results.push({a,score:Math.round(score+cover*6),hits:[...hits]});
+  });
+  return results.sort((x,y)=>y.score-x.score);
+}
+
+/* --------------------------------------------------------------- rendering - */
+function pill(v,cls){return `<span class="pill ${cls||''}">${v}</span>`}
+function statusPill(s){return pill(s,'st-'+s.toLowerCase().replace(/[^a-z]/g,''))}
+
+function render(){
+  const q=document.getElementById('q').value;
+  const fv=id=>document.getElementById(id).value;
+  let list=search(q);
+  const F={type:fv('f-type'),format:fv('f-format'),topic:fv('f-topic'),
+           person:fv('f-person'),source:fv('f-source'),status:fv('f-status')};
+  list=list.filter(({a})=>
+    (!F.type||a.type===F.type)&&(!F.format||a.format===F.format)&&
+    (!F.topic||(a.topic||[]).includes(F.topic))&&
+    (!F.person||(a.person||[]).includes(F.person))&&
+    (!F.source||a.source===F.source)&&(!F.status||a.status===F.status));
+
+  document.getElementById('count').textContent=`${list.length} of ${ASSETS.length}`;
+  const el=document.getElementById('results');
+  if(!list.length){el.innerHTML='<div class="empty"><strong>Nothing matches.</strong><br>Try fewer words, or clear the filters.</div>';return;}
+
+  el.innerHTML=`<table><thead><tr>
+    <th></th><th>Asset</th><th>Type</th><th>Format</th><th class="hide-sm">Topics</th>
+    <th class="hide-sm">Source</th><th>Status</th>${q.trim()?'<th>Match</th>':''}</tr></thead><tbody>
+    ${list.map(({a,score,hits})=>`<tr class="row" data-id="${a.id}">
+      <td><img class="th-img" loading="lazy" src="${a.thumb}" alt="" onerror="this.style.visibility='hidden'"></td>
+      <td><div class="ttl">${a.title}</div><div class="dsc">${a.description||''}</div>
+          ${hits.length&&q.trim()?`<div class="why">matched on ${hits.join(' · ')}</div>`:''}</td>
+      <td>${pill(a.type)}</td>
+      <td>${pill(a.format,'fmt')}</td>
+      <td class="hide-sm">${(a.topic||[]).length?a.topic.map(t=>pill(t)).join(''):'<span class="pill unk">—</span>'}</td>
+      <td class="hide-sm">${a.source==='Unknown'?pill('Unknown','unk'):pill(a.source)}</td>
+      <td>${statusPill(a.status)}</td>
+      ${q.trim()?`<td class="score">${score}</td>`:''}
+    </tr>`).join('')}</tbody></table>`;
+
+  el.querySelectorAll('tr.row').forEach(r=>r.onclick=()=>openDetail(r.dataset.id));
+}
+
+function openDetail(id){
+  const a=ASSETS.find(x=>x.id===id); if(!a)return;
+  document.querySelectorAll('tr.row').forEach(r=>r.classList.toggle('sel',r.dataset.id===id));
+  const media=a.video
+    ? `<video controls preload="metadata" poster="${a.thumb}" src="${a.video}"></video>`
+    : `<img src="${a.thumb}" alt="" onerror="this.style.display='none'">`;
+  const row=(k,v)=>`<dt>${k}</dt><dd>${v}</dd>`;
+  const blank='<span class="pill unk">not established</span>';
+  document.getElementById('detail-body').innerHTML=`
+    <h2>${a.title}</h2>${media}
+    <dl class="dl">
+      ${row('Type',pill(a.type))}
+      ${row('Format',pill(a.format,'fmt'))}
+      ${row('Topics',(a.topic||[]).length?a.topic.map(t=>pill(t)).join(''):blank)}
+      ${row('Person',(a.person||[]).map(p=>pill(p)).join(''))}
+      ${row('Source',a.source==='Unknown'?pill('Unknown','unk'):pill(a.source))}
+      ${row('Session',a.session?a.session:blank)}
+      ${row('Status',statusPill(a.status))}
+      ${row('Date',a.date||'—')}
+      ${row('ID',`<span class="score">${a.id}</span>`)}
+    </dl>
+    <p style="font-size:13px;color:var(--muted);line-height:1.5">${a.description||''}</p>
+    ${a.slide_text?`<p style="font-size:12px;color:var(--muted);background:var(--mint-lt);padding:9px 11px;border-radius:8px;line-height:1.45"><strong>On screen:</strong> ${a.slide_text}</p>`:''}
+    <a class="openfile" href="${a.drive}" target="_blank" rel="noopener">Open in Drive ↗</a>
+    ${a._evidence?`<p style="font-size:11.5px;color:var(--muted);margin-top:14px;border-top:1px solid var(--line);padding-top:10px"><strong>How it was tagged:</strong> ${a._evidence}</p>`:''}`;
+  document.getElementById('detail').classList.add('open');
+}
+document.getElementById('close').onclick=()=>{
+  document.getElementById('detail').classList.remove('open');
+  document.querySelectorAll('tr.row').forEach(r=>r.classList.remove('sel'));
+};
+
+/* ------------------------------------------------------------------ setup -- */
+function fill(id,label,values){
+  const s=document.getElementById(id);
+  s.innerHTML=`<option value="">${label}</option>`+values.map(v=>`<option>${v}</option>`).join('');
+  s.onchange=render;
+}
+fill('f-type','Any type',T.type);
+fill('f-format','Any format',T.format);
+// Topics keep their groups in the dropdown — 29 flat values is an unusable list.
+document.getElementById('f-topic').innerHTML='<option value="">Any topic</option>'+
+  Object.entries(T.topic).map(([g,vs])=>
+    `<optgroup label="${g}">${vs.map(v=>`<option>${v}</option>`).join('')}</optgroup>`).join('');
+document.getElementById('f-topic').onchange=render;
+fill('f-person','Anyone',T.person);
+fill('f-source','Any source',T.source);
+fill('f-status','Any status',T.status);
+
+const EXAMPLES=['find me a video of Hiral talking about gold','funny classroom moments',
+  'student testimonials','find the clip where Hiral explains SIP','gold b-roll',
+  'content about financial independence','the video where Hiral talks about XIRR',
+  'certificates from the August batch','insurance'];
+document.getElementById('examples').innerHTML=EXAMPLES.map(e=>`<button class="ex">${e}</button>`).join('');
+document.getElementById('examples').onclick=e=>{
+  const b=e.target.closest('.ex'); if(!b)return;
+  document.getElementById('q').value=b.textContent; render();
+};
+document.getElementById('q').addEventListener('input',render);
+render();
+</script>
+</body>
+</html>
