@@ -45,3 +45,21 @@ snakes-ladders/tests/
 # 394 were not covered by the rules above and would each have become a live public URL.
 * 2.*
 *\ 2.*
+
+# Scam Slingshot dev-only folders — MUST NOT SHIP.
+# _reference holds real Angry Birds screenshots used privately as a critique baseline;
+# publishing them would put Rovio's copyrighted art on the live site. _shots/_state/_tools
+# are build scratch, capture harness and progress state — none of it belongs on the web.
+scam-slingshot/_reference
+scam-slingshot/_shots
+scam-slingshot/_state
+scam-slingshot/_tools
+scam-slingshot/BUILDING-ELSEWHERE.md
+
+# V1 Library prototype — ship only what the page needs. The rest is build tooling and
+# review material that would otherwise each become a public URL.
+content/v1-prototype/run-tests.js
+content/v1-prototype/sample10.js
+content/v1-prototype/tagged20.js
+content/v1-prototype/storyboard.html
+content/v1-prototype/enrichment.json

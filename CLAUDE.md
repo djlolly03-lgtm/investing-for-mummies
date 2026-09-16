@@ -288,7 +288,7 @@ The 3.6 GB is `deliverables/`, `Nursery Rhymes/`, `highlight-reel-assets/`,
 
 **On 7 Sep 2026 that 3.6 GB had no backup anywhere on this machine.** All four
 possibilities were checked and all four were empty: Time Machine had no destination
-configured and had never run, `~/Documents` is a real local folder (not iCloud-synced),
+configured and had never run, `~/Documents` is not a usable backup (see the iCloud note below),
 Dropbox was installed but held 0 B, and no external drive was mounted.
 
 ### The fix — done 7 Sep 2026
@@ -334,3 +334,39 @@ Not scheduled. Run it by hand after a batch of new media, or add a launchd job a
   the whole machine, and it is still unconfigured. A folder-level Drive sync is not a
   substitute. A real loss already happened once: the "Goa Workshop 18 Jul 2026 — raw
   video masters" Drive folder was emptied by mistake and no copy exists anywhere.
+
+## ⚠️ `~/Documents` IS iCloud-synced — and it corrupts git
+
+Corrected 9 Sep 2026. An earlier note in this file claimed `~/Documents` was "a real local folder
+(not iCloud-synced)". That is **wrong**, and the mistake matters because it was used as evidence that
+the folder was safe.
+
+**Verified:** macOS "Desktop & Documents Folders" sync is ON —
+`defaults read com.apple.finder FXICloudDriveDocuments` returns `1`, and
+`~/Library/Mobile Documents/com~apple~CloudDocs/Documents` is a symlink to `/Users/lollyg/Documents`
+dated **October 2018**. Everything in `~/Documents`, including this repo, has been syncing for years.
+
+**What it did.** During a heavy multi-agent build, iCloud created **1,115 " 2" conflict copies**
+across the repo — **949 of them inside `.git`**, including `.git/index 2` and, worst,
+`refs/heads/main 2` holding a **null SHA** (`0000...`). `git fsck` reports errors for those.
+
+Nothing was lost: every copy was byte-identical to a surviving original, `git show-ref` lists only
+the real `refs/heads/main`, and history is intact. But it was a near miss — iCloud copied the branch
+pointer at the instant it was empty mid-write. If a future conflict resolves the other way (iCloud
+overwriting the original rather than copying it), `refs/heads/main` becomes a null pointer and the
+branch appears to vanish. `.git` is a database written in small rapid bursts, which is exactly the
+access pattern iCloud handles worst.
+
+**Identifying a conflict copy:** mode `-rw-------` with no extended attributes, versus a normal
+file's `-rw-r--r--@`. They are junk — git ignores `main 2` because it is an invalid refname.
+
+**What to do:**
+- Heavy build work should happen OUTSIDE `~/Documents`. The Scam Slingshot build runs from
+  `~/Developer/scam-slingshot` for this reason and syncs back before publishing.
+- The real fix is System Settings → Apple ID → iCloud → iCloud Drive → Options → turn off
+  "Desktop & Documents Folders" (or move the repo). **Be careful in that dialog** — macOS moves
+  files when you disable it, and the wrong choice is how people think their Documents folder emptied.
+- The `.git` conflict copies are still present and safe to remove (all verified to have surviving
+  originals), but removing files inside `.git` should be a deliberate, confirmed action.
+- **iCloud is not a backup.** It syncs, which means it faithfully replicates a deletion. The rclone
+  media backup and the GitHub remote are the actual backups.

@@ -15,9 +15,18 @@
       "runtimeExecutable": "bash",
       "runtimeArgs": [
         "-c",
-        "cd '/Users/lollyg/Documents/investing for Mummies/CLAUDE' && npx --yes serve -l 8743 --no-clipboard ."
+        "cd /tmp && npx --yes serve -l 8743 --no-clipboard '/Users/lollyg/Documents/investing for Mummies/CLAUDE'"
       ],
       "port": 8743
+    },
+    {
+      "name": "ss-build",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd /Users/lollyg/Developer && npx --yes serve -l 8744 --no-clipboard ."
+      ],
+      "port": 8744
     }
   ]
 }
