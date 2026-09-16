@@ -58,7 +58,9 @@ button{font-family:inherit;cursor:pointer}
 .stage h1{font-family:var(--f-d);font-weight:500;font-size:clamp(30px,5vw,42px);
   line-height:1.12;margin:0 0 12px;letter-spacing:-.02em}
 .lede{color:var(--ink-2);font-size:15px;margin:0 auto 30px;max-width:44ch;line-height:1.55}
-.searchrow{display:flex;gap:10px;align-items:center}
+/* In compact mode the search row must share the grid's measure, or its left edge sits
+   26px off the first column and the whole page looks untucked. */
+.searchrow{display:flex;gap:10px;align-items:center;max-width:1128px;margin:0 auto}
 .stage.hero .searchrow{max-width:520px;margin:0 auto}
 .stage.hero .fbtn{display:none}
 .try{display:none}
@@ -70,7 +72,9 @@ button{font-family:inherit;cursor:pointer}
 .try button:hover{border-color:var(--navy);color:var(--navy)}
 
 /* ------------------------------------------------------------------- searchbox */
-.sbox{flex:1;display:flex;align-items:center;gap:11px;background:var(--card);
+/* min-width:0 is load-bearing, not hygiene: without it the search box refuses to shrink
+   below its content and pushes the Filters button 17px off the right edge at 375. */
+.sbox{flex:1;min-width:0;display:flex;align-items:center;gap:11px;background:var(--card);
   border:1.5px solid var(--stone);border-radius:11px;padding:10px 15px;
   box-shadow:0 1px 2px rgba(36,49,63,.04);transition:border-color .15s,box-shadow .15s}
 .stage.hero .sbox{padding:15px 18px;border-radius:14px}
@@ -92,59 +96,71 @@ button{font-family:inherit;cursor:pointer}
 .fbtn .dot{width:6px;height:6px;border-radius:50%;background:var(--navy)}
 
 .panelwrap{max-width:1180px;margin:0 auto;padding:0 26px}
-.summary{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
-  padding:22px 0 12px;flex-wrap:wrap}
-.summary h2{font-size:15px;font-weight:600;margin:0}
-.summary .sub{font-size:12.5px;color:var(--muted)}
+.summary{display:flex;align-items:baseline;gap:12px;padding:30px 0 20px;flex-wrap:wrap}
+.summary h2{font-size:11px;font-weight:600;margin:0;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink)}
+.summary .sub{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.summary .sub::before{content:'·';margin-right:12px;color:var(--stone)}
 
 /* ------------------------------------------------------------------- filters */
-.filters{display:none;background:var(--cream);border:1px solid var(--stone);
-  border-radius:var(--r);padding:16px 18px;margin-bottom:6px}
+/* A ruled band, not a card. Filters are a secondary control that happens to be open —
+   giving them a filled, bordered panel made the page look like a reporting tool. */
+.filters{display:none;background:none;border:none;border-bottom:1px solid var(--stone);
+  border-radius:0;padding:22px 0 24px}
 .filters.open{display:block}
-.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:11px}
-.fgrid label{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--muted);font-weight:600;margin-bottom:5px}
-.fgrid select{width:100%;padding:9px 11px;border:1px solid var(--stone);border-radius:9px;
-  background:var(--card);font-family:inherit;font-size:13px;color:var(--ink)}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px 20px}
+.fgrid label{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;margin-bottom:7px}
+.fgrid select{width:100%;padding:7px 2px;border:none;border-bottom:1px solid var(--stone);
+  border-radius:0;background:none;font-family:inherit;font-size:13.5px;color:var(--ink)}
+.fgrid select:focus{outline:none;border-bottom-color:var(--navy)}
 .fclear{margin-top:13px;border:none;background:none;color:var(--navy);font-size:13px;
   font-weight:600;padding:0;text-decoration:underline;text-underline-offset:3px}
 
-/* -------------------------------------------------------------------- results */
-.res{display:grid;grid-template-columns:var(--thumb-w,132px) 1fr auto;gap:18px;align-items:center;
-  padding:15px 12px;border-radius:var(--r);border:1px solid transparent;
-  background:none;width:100%;text-align:left;color:inherit;font-family:inherit}
-.res + .res{border-top:1px solid var(--stone-2)}
-.res:hover,.res:focus-visible{background:var(--card);border-color:var(--stone);
-  box-shadow:var(--shadow);outline:none}
-.res.sel{background:var(--cream);border-color:var(--stone)}
-.thumb{position:relative;width:var(--thumb-w,132px);height:var(--thumb-h,84px);border-radius:9px;overflow:hidden;
-  background:var(--stone);flex:none}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+/* --------------------------------------------------------------------- gallery
+ * An editorial grid, not a list of rows. The image is the interface: Aakara
+ * recognises the asset by sight, so the picture gets the space and the words stay
+ * quiet underneath it. No card chrome at all — no shadow, no border, no fill. The
+ * tile IS the image, and whitespace does the separating. */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:46px 30px;padding-bottom:12px}
+.res{display:block;width:100%;text-align:left;color:inherit;font-family:inherit;
+  background:none;border:none;padding:0;margin:0}
+.thumb{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;
+  background:var(--stone-2);border-radius:3px;display:block}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .45s cubic-bezier(.2,0,.2,1)}
+.res:hover .thumb img{transform:scale(1.028)}
 .thumb .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  color:#b6ab9c;font-size:19px}
-.play{position:absolute;left:8px;bottom:8px;width:23px;height:23px;border-radius:50%;
-  background:rgba(36,49,63,.76);display:flex;align-items:center;justify-content:center}
-.play::after{content:'';border-left:7px solid #fff;border-top:4.5px solid transparent;
-  border-bottom:4.5px solid transparent;margin-left:2px}
-.res h3{font-size:15px;font-weight:600;margin:0 0 3px;line-height:1.35}
-.when{display:block;font-size:11.5px;color:var(--muted);margin-bottom:5px;
-  letter-spacing:.01em}
-.res p{font-size:13px;color:var(--ink-2);margin:0 0 9px;line-height:1.5;
+  color:#c2b8a8;font-size:22px;font-family:var(--f-d)}
+.res:focus-visible{outline:none}
+.res:focus-visible .thumb{outline:2px solid var(--navy);outline-offset:3px}
+.res.sel .thumb{outline:2px solid var(--navy);outline-offset:3px}
+/* Play indicator: rendered ONLY when media-map says the clip actually plays. */
+.play{position:absolute;left:10px;bottom:10px;width:26px;height:26px;border-radius:50%;
+  background:rgba(20,28,37,.62);backdrop-filter:blur(3px);display:flex;
+  align-items:center;justify-content:center}
+.play::after{content:'';border-left:8px solid #fff;border-top:5px solid transparent;
+  border-bottom:5px solid transparent;margin-left:2.5px}
+/* Reserve two lines whether or not the title needs them, so the context line and the
+   tags sit on a shared baseline right across the row. Ragged metadata is the fastest
+   way to make a calm grid look accidental. */
+.res h3{font-family:var(--f-d);font-size:16.5px;font-weight:500;margin:14px 0 0;
+  line-height:1.32;letter-spacing:-.005em;min-height:2.64em;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.tags{display:flex;gap:6px;flex-wrap:wrap}
-.t{font-size:11px;font-weight:500;padding:3px 9px;border-radius:6px;
-  background:var(--stone-2);color:var(--ink-2);white-space:nowrap}
-.t.key{background:#e7effa;color:var(--navy)}
-.view{border:1.5px solid var(--stone);background:var(--card);border-radius:10px;
-  padding:9px 18px;font-size:13px;font-weight:600;color:var(--ink)}
-.res:hover .view{border-color:var(--navy);color:var(--navy)}
+.res:hover h3{color:var(--navy)}
+.when{display:block;font-size:12px;color:var(--muted);margin-top:6px;letter-spacing:.01em}
+.tags{display:flex;gap:14px;flex-wrap:wrap;margin-top:9px}
+.t{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap}
+.t.key{color:var(--navy)}
 
-.weak{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
-  margin:14px 0 34px;padding:14px;border:1px dashed var(--stone);border-radius:var(--r);
-  background:none;color:var(--ink-2);font-size:13.5px;font-weight:500}
-.weak:hover{border-color:var(--navy);color:var(--navy);background:var(--cream)}
-.divider{display:flex;align-items:center;gap:14px;margin:26px 0 8px;color:var(--muted);
-  font-size:11.5px;letter-spacing:.07em;text-transform:uppercase}
+.weak{display:block;margin:38px auto 46px;padding:12px 26px;border:none;
+  border-bottom:1px solid var(--stone);background:none;color:var(--ink-2);
+  font-size:13.5px;font-weight:500}
+.weak:hover{color:var(--navy);border-color:var(--navy)}
+.divider{display:flex;align-items:center;gap:16px;margin:44px 0 26px;color:var(--muted);
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--stone)}
 
 /* ------------------------------------------------------------------ no results */
@@ -168,9 +184,14 @@ button{font-family:inherit;cursor:pointer}
 .dtop .x{margin-left:auto;border:1px solid var(--stone);background:var(--card);width:32px;height:32px;
   border-radius:50%;color:var(--ink-2);font-size:14px;line-height:1}
 .dbody{overflow-y:auto;flex:1}
-.dmedia{background:#1b242e;display:flex;align-items:center;justify-content:center;
-  min-height:190px;max-height:52vh}
-.dmedia video,.dmedia img{width:100%;max-height:52vh;object-fit:contain;display:block}
+.dmedia{background:#202a34;display:flex;align-items:center;justify-content:center;
+  min-height:190px;max-height:46vh}
+.dmedia video,.dmedia img{width:100%;max-height:46vh;object-fit:contain;display:block}
+/* An asset with no thumbnail at all (18 of them) still gets a considered surface rather
+   than a hole where the media should be. */
+.dmedia.empty{background:var(--cream);border-bottom:1px solid var(--stone);
+  min-height:150px;max-height:none;color:#b3a795;font-family:var(--f-d);font-size:13px;
+  letter-spacing:.06em}
 .note{margin:0;padding:9px 24px;background:var(--cream);border-bottom:1px solid var(--stone);
   font-size:12.5px;color:var(--ink-2)}
 .dtext{padding:22px 24px 30px}
@@ -189,21 +210,27 @@ button{font-family:inherit;cursor:pointer}
 .btn.ghost:hover{border-color:var(--navy);color:var(--navy)}
 
 /* --------------------------------------------------------------------- mobile */
-@media(min-width:1180px){ :root{--thumb-w:168px;--thumb-h:106px} }
+@media(max-width:1080px){ .grid{gap:40px 26px} }
+@media(max-width:860px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 20px} }
 @media(max-width:760px){
   .mast{padding:12px 16px}
-    .bar2 .fbtn{padding:11px 13px}
   .panelwrap{padding:0 16px}
-  .res{grid-template-columns:112px 1fr;gap:13px;padding:13px 6px;align-items:start}
-  .thumb{width:112px;height:74px}
-  .res h3{font-size:14px}
-  .res p{-webkit-line-clamp:2;font-size:12.5px;margin-bottom:7px}
-  /* The View button is redundant on touch — the whole row is the target. */
-  .res .view{display:none}
+  .stage{padding:10px 16px}
+  .stage.hero{padding:7vh 20px 6vh}
+  .fbtn{padding:12px 14px;min-height:44px}
+  .sbox{padding:11px 14px;min-height:44px}
+  .res h3{font-size:15.5px;margin-top:11px}
   #detail{width:100%}
-  .dtext{padding:18px 18px 26px}
-  .dl{grid-template-columns:80px minmax(0,1fr);font-size:13px}
-  .acts .btn{flex:1;justify-content:center}
+  .dtext{padding:18px 18px 30px}
+  .dl{grid-template-columns:78px minmax(0,1fr);font-size:13px}
+  .dtext .acts .btn{flex:1;justify-content:center;min-height:46px}
+}
+/* One column below ~430px: at 375 a two-up grid makes every thumbnail too small to
+   recognise, which is the only job the thumbnail has. */
+@media(max-width:470px){
+  .grid{grid-template-columns:1fr;gap:30px}
+  .thumb{aspect-ratio:3/2}
+  .summary{padding:16px 0 10px}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -223,7 +250,7 @@ button{font-family:inherit;cursor:pointer}
   <div class="herotext" id="herotext">
     <p class="kicker">Content Library</p>
     <h1>What are you looking for?</h1>
-    <p class="lede">Videos, photos, carousels and workshop footage — searchable in plain English.</p>
+    <p class="lede">Describe it the way you remember it.</p>
   </div>
   <div class="searchrow">
     <div class="sbox" id="sbox">
@@ -261,6 +288,7 @@ button{font-family:inherit;cursor:pointer}
 
 <script src="taxonomy.js"></script>
 <script src="v1-catalogue.js"></script>
+<script src="media-map.js"></script>
 <script>
 const T=window.IFM_TAXONOMY, ASSETS=window.IFM_V1.filter(r=>r.library!==false);
 /* ---------------------------------------------------------------- search ----
@@ -557,28 +585,57 @@ function when(a){
   const d=new Date(a.date); if(isNaN(d)) return '';
   return MON[d.getMonth()]+' '+d.getFullYear();
 }
+/* ---------------------------------------------------------------- media truth --
+ * IFM_MEDIA was produced by HEAD-probing every URL (media-audit.py). It is the ONLY
+ * authority on what can actually play. The previous build inferred playability from
+ * `type === 'Video'` and so stamped a play badge on 145 videos whose file 404s, plus
+ * promised playback on stills. Nothing below reads `type` for that decision. */
+const MEDIA = window.IFM_MEDIA || {};
+function media(a){
+  const m = MEDIA[a.id];
+  if(m) return m;
+  // Unknown to the probe: assume nothing plays. Silence is the safe failure here.
+  return {kind:(a.type||'').toLowerCase()||'image', playable:false, url:null, silent:false};
+}
+// A handful of catalogue rows carry an absolute URL with the relative prefix still
+// glued on ('../https://…'), which 404s. Presentation-layer repair only — the data
+// file is frozen.
+function thumbOf(a){
+  const t=a.thumb||'';
+  return t.replace(/^(\.\.\/)+(?=https?:)/,'');
+}
+// Context line: who and when, in that order, as quiet prose.
+function contextOf(a){
+  const bits=[];
+  // 'Student', 'Other Person' and 'Unknown' are catalogue placeholders, not names —
+  // printing them makes the context line read like a database dump.
+  const who=(a.person||[]).filter(p=>!['Student','Other Person','Unknown','Other'].includes(p));
+  if(who.length) bits.push(who.slice(0,2).join(' & '));
+  const w=when(a); if(w) bits.push(w);
+  return bits.join(' · ');
+}
 function card(x){
-  const a=x.a;
-  // Show at most three tags: the topic that earned the match, then format, then person.
+  const a=x.a, m=media(a);
+  // At most two tags, and they are typographic labels rather than pills. The topic
+  // that earned the match leads; format supports it. The long AI description does
+  // NOT appear here — it is search fuel and belongs in the detail view.
   const tags=[];
   const qt=state.q.toLowerCase();
   const hot=(a.topic||[]).find(t=>qt && hasTerm(qt,t.toLowerCase().split(' ')[0]));
   if(hot) tags.push(`<span class="t key">${esc(hot)}</span>`);
+  else if((a.topic||[]).length) tags.push(`<span class="t key">${esc(a.topic[0])}</span>`);
   if(a.format) tags.push(`<span class="t">${esc(a.format)}</span>`);
-  if(!hot && (a.topic||[]).length) tags.push(`<span class="t key">${esc(a.topic[0])}</span>`);
-  if((a.person||[]).includes('Hiral')) tags.push('<span class="t">Hiral</span>');
-  const isVid=a.type==='Video';
+  // ONLY a probed-playable video earns the indicator. Images and carousels never do.
+  const playable = m.kind==='video' && m.playable;
+  const th=thumbOf(a);
+  const ctx=contextOf(a);
   return `<button class="res${state.openId===a.id?' sel':''}" data-id="${esc(a.id)}">
-    <span class="thumb">${a.thumb
-      ? `<img loading="lazy" src="${esc(a.thumb)}" alt="" onerror="this.remove()">`
-      : `<span class="ph">${ICON[a.type]||'▣'}</span>`}${isVid?'<span class="play"></span>':''}</span>
-    <span>
-      <h3>${esc(a.title)||'Untitled'}</h3>
-      ${when(a)?`<span class="when">${esc(when(a))}</span>`:''}
-      <p>${esc(a.description||'')}</p>
-      <span class="tags">${tags.slice(0,3).join('')}</span>
-    </span>
-    <span class="view">View</span>
+    <span class="thumb">${th
+      ? `<img loading="lazy" src="${esc(th)}" alt="" onerror="this.remove()">`
+      : `<span class="ph">${ICON[a.type]||'▣'}</span>`}${playable?'<span class="play"></span>':''}</span>
+    <h3>${esc(a.title)||'Untitled'}</h3>
+    ${ctx?`<span class="when">${esc(ctx)}</span>`:''}
+    <span class="tags">${tags.slice(0,2).join('')}</span>
   </button>`;
 }
 
@@ -613,11 +670,11 @@ function render(){
   }
   sum.innerHTML=`<h2>${strong.length} ${searching?'relevant result':'asset'}${strong.length===1?'':'s'}</h2>
     <span class="sub">${searching?'Most relevant first':'Newest first'}</span>`;
-  let html=strong.map(card).join('');
+  let html=`<div class="grid">${strong.map(card).join('')}</div>`;
   if(weak.length && !state.showWeak){
-    html+=`<button class="weak" data-act="weak">⌄ Show ${weak.length} weaker match${weak.length===1?'':'es'}</button>`;
+    html+=`<button class="weak" data-act="weak">Show ${weak.length} weaker match${weak.length===1?'':'es'}</button>`;
   } else if(weak.length){
-    html+=`<div class="divider">Weaker matches</div>`+weak.map(card).join('');
+    html+=`<div class="divider">Weaker matches</div><div class="grid">${weak.map(card).join('')}</div>`;
   }
   $('results').innerHTML=html;
 }
@@ -626,18 +683,27 @@ function render(){
 function openDetail(id){
   const a=ASSETS.find(x=>x.id===id); if(!a) return;
   state.openId=id;
-  $('dlbl').textContent=[a.type,a.format].filter(Boolean).join(' · ');
-  const media=a.video
-    ? `<video controls preload="metadata" playsinline ${a.thumb?`poster="${esc(a.thumb)}"`:''} src="${esc(a.video)}"></video>`
-    : (a.thumb?`<img src="${esc(a.thumb)}" alt="">`:'');
-  // Say it plainly rather than letting a silent clip look like a broken one.
-  const silentNote = (a.video && a.silent)
-    ? '<p class="note">Preview has no sound — the original on Drive does.</p>' : '';
+  const m=media(a), th=thumbOf(a);
+  const kindLabel = m.kind==='carousel' ? 'Carousel' : (m.kind==='video' ? 'Video' : 'Image');
+  $('dlbl').textContent=[kindLabel,a.format].filter(Boolean).join(' · ');
+
+  // Three honest outcomes, decided by the probe and nothing else.
+  let mediaHtml='', note='', emptyMedia=false;
+  if(m.kind==='video' && m.playable && m.url){
+    mediaHtml=`<video controls preload="metadata" playsinline ${th?`poster="${esc(th)}"`:''} src="${esc(m.url)}"></video>`;
+    // Say it plainly rather than letting a silent clip look like a broken one.
+    if(m.silent) note='<p class="note">Preview has no sound — the original on Drive does.</p>';
+  } else {
+    mediaHtml = th?`<img src="${esc(th)}" alt="">`:'<span>No preview available</span>';
+    if(!th) emptyMedia=true;
+    if(m.kind==='video') note='<p class="note">Video preview unavailable — open the original on Drive to watch it.</p>';
+    else if(m.kind==='carousel') note='<p class="note">Carousel — cover shown. Open on Drive for every slide.</p>';
+  }
   const unset=v=>v?esc(v):'<span class="unset">not recorded</span>';
   const row=(k,v)=>`<dt>${k}</dt><dd>${v}</dd>`;
   $('dbody').innerHTML=`
-    ${media?`<div class="dmedia">${media}</div>`:''}
-    ${silentNote}
+    ${mediaHtml?`<div class="dmedia${emptyMedia?' empty':''}">${mediaHtml}</div>`:''}
+    ${note}
     <div class="dtext">
       <h2>${esc(a.title)||'Untitled'}</h2>
       ${a.description?`<p class="desc">${esc(a.description)}</p>`:''}
