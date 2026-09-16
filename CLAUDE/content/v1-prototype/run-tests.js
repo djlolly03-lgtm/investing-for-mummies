@@ -13,8 +13,13 @@ eval(fs.readFileSync('taxonomy.js','utf8'));
 eval(fs.readFileSync('v1-catalogue.js','utf8'));
 const html=fs.readFileSync('index.html','utf8');
 const js=html.split('<script>').pop().split('</script>')[0];
-eval(js.slice(js.indexOf('const T=window.IFM_TAXONOMY'),
-                js.indexOf('/* --------------------------------------------------------------- rendering')));
+// Slice out just the engine. The UI below it needs a DOM and would throw under node.
+// Tolerant of either marker so a UI rewrite cannot silently disable the suite.
+const END=['/* ======================================================================= UI ==',
+           '/* --------------------------------------------------------------- rendering']
+          .map(m=>js.indexOf(m)).filter(i=>i>0).sort((a,b)=>a-b)[0];
+if(!END){ console.error('FATAL: could not find the end-of-engine marker'); process.exit(1); }
+eval(js.slice(js.indexOf('const T=window.IFM_TAXONOMY'), END));
 
 const lib=window.IFM_V1.filter(r=>r.library!==false);
 console.log(`library: ${lib.length} assets (${window.IFM_V1.length} catalogued, ${window.IFM_V1.length-lib.length} excluded)\n`);
