@@ -59,9 +59,33 @@
 
      No &text= subsetting: players type their own names, so the glyph set is not
      knowable, and Devanagari conjuncts break the moment a subset misses one.
-     Full faces. Devanagari adds ~182 KB and ONLY on pages that draw Devanagari
-     — Google's unicode-range subsetting means the Latin cuts of these two are
-     never fetched, because Nunito and Lora sit ahead of them in every stack.
+
+     MEASURED, 7 Sep — do not re-investigate these (all woff2, content-length):
+       Nunito latin + latin-ext  74,616   Lora italic 600  23,376
+       Noto Sans Devanagari      121,188  (ONE variable file, all five weights)
+       Martel 400 + 600          60,892   (two statics, 600 arrives with the
+                                           first display heading, not at boot)
+       English build 219,180 · Hindi build 280,072 at the first lesson.
+     The Latin cuts of Noto and Martel are never fetched: Nunito and Lora sit
+     ahead of them in every stack, so unicode-range never asks for them.
+     Verified with CSS.getPlatformFontsForNode across setup, board and lesson —
+     Devanagari lands on Noto/Martel, Latin on Nunito/Lora, zero OS fallback.
+
+     Two numbers that look wrong and are not:
+     1. The Devanagari VARIABLE font is the cheap option, not the dear one.
+        Asking for five discrete weights makes Google serve one 121 KB variable
+        file; five static weights would be about 270 KB (a single static cut
+        measures 53,832). Do not "optimise" this into per-weight statics.
+     2. The English build still pays that 121 KB, for exactly three codepoints
+        — U+902 U+939 U+93F, the "hin" half of the language chip, the only
+        Devanagari an English game ever draws. A text= subset of just those
+        three is 1,196 bytes and Google does give it a tight unicode-range, so
+        it is safe in the English build — but those three are among the
+        commonest glyphs in Hindi, so in the Hindi build they would come from a
+        separate static file while every glyph beside them came from the
+        variable one. Cheaper English boot is not worth mixed sources in the
+        build the audience actually reads. Fonts sit outside the CONTRACT
+        transfer budget; this stays a full face on purpose.
 
      Fonts load ASYNC. A render-blocking Google Fonts stylesheet was measured
      holding module execution for 1.15s on a 4x-throttled phone. media="print"

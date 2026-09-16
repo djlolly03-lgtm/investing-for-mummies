@@ -146,11 +146,12 @@ live code with a real contract; extend it, do not rebuild it.
 | `level/structure.js` | the STRUCTURAL INTEGRITY layer — joint failure, the rack, the support audit, the shudder | turns "this block broke" into "the tower came down". Built by the loader, ticked from `main.js` inside the fixed step, and provably inert on an untouched level. Read its header before touching it. |
 | `level/fragments.js` | the three shard silhouettes — wood sliver / glass triangle / stone lump | unit-sized cached geometry, own private prng; also feeds `fx/`'s chip pools |
 | `level/shadows.js` | `ContactShadows` — one instanced blob under every body | pure presentation, driven from `render()`; a shadow MAP alone cannot answer "nothing floats" |
-| `level/loader.js` | JSON load + validate + build, ground, environment | throws loudly and names the offending index |
+| `level/loader.js` | JSON load + validate + build, ground, environment | throws loudly and names the offending index. **INTERFACE CHANGE (L2 r1):** the villain registry is no longer imported from `lotteryUncle.js`; every `villains/<x>.js` exports its own `VILLAIN_TYPES` and loader.js MERGES them. Adding a villain is one import and one spread there, plus its id in `LEVELS`. |
 | `ammo/base.js` | `Ammo`, `Trail` (shared breadcrumbs), `Ribbon` (per projectile) | nose-first flight, rolling resistance, ability plumbing. **P1 r2b:** `Trail.beginShot(origin, ammo)` takes the launched ammo as a second argument and stamps the release cut at the trail's own fixed TIME cadence, so the line is continuous from the pouch to the muzzle instead of one dot at the sling and the next ten units away. `origin`-only calls still work. |
 | `ammo/sip.js` | `SipArrow` + `AMMO_TYPES` | ability = split into three |
-| `villains/base.js` | `Villain` — hp, crush, alarm, idle, the death pop | |
-| `villains/lotteryUncle.js` | `LotteryUncle` + `VILLAIN_TYPES` | the cheque becomes a real rigid body on death |
+| `villains/base.js` | `Villain` — hp, crush, alarm, idle, the death pop | **P6 r2:** the pose machine now takes TWO threats, not one. `tti` is the incoming projectile; `duress` (0..1, from `crushLoad` + `batter`) is the masonry already on you, and it drives the face state, a held `loadSquash`, the release of the upright levelling and a directional `loadTilt`. Before it, `crushLoad` drove damage and no performance at all — a villain wedged in l1's bay held a smug idle pose through the collapse that killed him (48.6 % of loaded frames were IDLE; now 1.1 %). New subclass hook `onDuress(k, dt)`. Constants and measured distributions in the file header. |
+| `villains/lotteryUncle.js` | `LotteryUncle` + `VILLAIN_TYPES` | the cheque becomes a real rigid body on death — **and that spawn transform is read off the live mesh pose, which makes it the one channel by which a villain's VISUAL layer can move the solver.** Proven by A/B: pin the spawn transform and the whole r2 performance layer is bit-identical on P3's 8-shot gate; leave it live and individual shots swing by 35,000 points. Re-run `p3-r6-gate.mjs` in both arms after changing any pose a physical prop hangs off. |
+| `villains/creditCardTrap.js` | `CreditCardTrap` + `VILLAIN_TYPES` | villain #2, l2's. His HEAD is the credit card (magstripe / chip / a jaw that drops below the card's own bottom edge) so he cannot black-fill to villain #1's silhouette; the prop is the statement he holds out to the LEFT, and it becomes the physics prop on death exactly as the cheque does — same coupling, same warning. The gloat GROWS the bill one step per survived shot, and that growth deliberately scales a CHILD of the prop group with a compensating offset so the group transform (and therefore `onDeath`'s spawn pose, and therefore the physics) never moves. |
 | `art/toon.js` | ramps, procedural canvas grain, `glassPane()`, `smokeSprite()` / `blastSprite()` / `flashSprite()`, `ink()` / `inkAll()` / `inkEdges()`, `makeEye()` | has its OWN prng; never import rng.js here |
 | `art/materials.js` | the seven presets | unchanged API, toon shading inside |
 | `fx/index.js` | eight shape-specific particle pools (incl. the dark release `blast`), hit-stop, camera punch routing, score popups | pure subscriber; draws from the FX prng only |
@@ -1032,3 +1033,906 @@ world) · `p3-r6-late` PASS (0 fractures in a ≥90 %-asleep world, idle windows
 `p3-budget` bit-identical at 1.0 / 0.5 / 0.05 · `p3-planez` peak |z| 4.218e-7 ·
 `p0-hook-audit` 24/24 honest · `p3-perf` median 8.4 ms / p99 10.8 / max 25.9 / **0** frames
 over 100 ms · `final.mjs` l1 won, zero console errors or warnings.
+
+---
+
+## PW ROUND 5 — THE FRACTURE SPAWN WAS THE BIGGEST ENERGY SOURCE IN THE GAME
+
+**The report.** "Debris is born carrying 2–17x the parent block's kinetic energy — and the net
+only *looked* balanced because 7–37 % of each block's mass is deleted at the same instant,
+which subtracts potential energy without dissipating anything. The audit that certified the
+last fix excluded births and deaths, so it could not see any of this."
+
+Confirmed, and the "looked balanced" half is the part worth remembering. Measured on the
+shipped tree with the pre-r5 spawn restored (`FRACTURE_TUNE.conserve = false`), six l1 shots,
+seed 4242: the fracture channel's **net** boundary energy is **+1.85 J** — two errors of
+opposite sign, **+215.82 J of invented kinetic energy** cancelling **−213.97 J of destroyed
+potential energy**, with **−3.062 kg** of mass gone. A single net figure was never going to
+find that. The split is the instrument.
+
+### The four passes, and why the order is forced
+`Block.fracture` used to be one loop: make a chunk, give it the parent's velocity plus a kick
+along the blow, plus an unconditional upward push and a ±9 rad/s spin. It is now:
+
+1. **resolve the whole cut plan before a single body exists.** Mass conservation needs the
+   total volume, and the old single loop never had that number at the point it needed it.
+2. **correct the density and shift the pieces so their centre of mass IS the parent's.** An
+   authored plan over- or under-shoots its parent's volume by 20–45 % (pieces overlap, every
+   collider is inset 6 % in plane, each fragment's depth is 62–95 % of the block's), so the
+   correction runs 1.2–1.5x; `DEBRIS_DENSITY_CLAMP` is a tripwire for a broken future plan,
+   not a tuning knob. Matching the centre of mass is what makes the potential-energy delta
+   exactly zero and makes step 3 conserve linear momentum exactly.
+3. **hand every child the parent's own rigid velocity field, `v + ω × r`.** Over pieces whose
+   centre of mass is the parent's, that field costs exactly the parent's kinetic energy and no
+   more. The rotational half is scaled by `min(1, sqrt(I_parent / I_children))` — only ever
+   DOWN, so a plan tighter than its parent dissipates rather than invents.
+4. **add a bounded, MOMENTUM-NEUTRAL burst and buy it** from the same joule pool
+   `structure.js` spends from, whose only depositor is the player's shot
+   (`structure.buyFracture`, `FRAC_BURST_CAP = 6.0 J` per spawn on top of the 60 J pool).
+
+**Why momentum-neutral is load-bearing and not merely tidy.** A burst that sums to zero
+momentum in the parent's frame has no cross term with the motion the parent already had
+(`Σ mᵢ v·bᵢ = v · Σ mᵢ bᵢ = 0`), so it costs its own kinetic energy whatever the block was
+doing. The old fan pushed every piece the same way — a rocket — so its cost went as the
+parent's speed, which is exactly why the worst events were the fastest-moving blocks
+(+48.44 J on one). `BURST_ALONG` came 0.65 → 0.30 for the same reason: a component every
+fragment shares IS the debris cloud's centre-of-mass velocity, i.e. pure invented momentum.
+The "blown through rather than exploded from within" read is carried instead by the parent's
+own velocity, which the blow has already delivered before the contact event fires (measured
+on l1: the struck block is doing 2.6–5.7 m/s at the instant it fractures).
+
+### Result — same tree, both arms, one process (`_tools/scenarios/pw-r5-ab.mjs`)
+| 6 l1 shots, seed 4242 | before | after |
+|---|---|---|
+| fracture spawn, invented KE | **+215.82 J** | **+36.22 J** |
+| worst single spawn event | **+48.44 J** | **+6.00 J** (the cap binds) |
+| fracture spawn, destroyed PE | **−213.97 J** | **0.00 J** |
+| fracture spawn, mass delta | **−3.062 kg** | **0.000 kg** |
+| worst single block's mass loss | **−43.1 %** | **−0.0 %** |
+| net boundary energy from fractures | +1.85 J (two errors cancelling) | +36.22 J (all of it declared) |
+| burst asked / paid | — (free) | 54.55 J / **37.42 J** (31 % refused) |
+| closed-system balance residual | 0.000000 J | 0.000000 J |
+
+The ledger's own price (37.42 J) and the independently measured spawn energy (36.22 J) agree
+to 3 %, which is the check that says `buyFracture`'s quadratic is pricing the real thing.
+
+### THE COUNTERWEIGHT WENT THE OTHER WAY: CONSERVING MASS IS WHAT MAKES STONE BREAKABLE
+This was not predicted and it is the most useful thing in the round. `p3-r6-gate.mjs`, both
+arms, same tree:
+
+| l1 8-shot gate | pre-r5 spawn | shipped |
+|---|---|---|
+| stone fractures / shots with stone | **0** / **0 of 8** | **3** / **3 of 8** |
+| settled stone | **0 %** | 4 % |
+| wood fractures / shots | 12 / 7 of 8 | **18** / **8 of 8** |
+| BROKE median | 4.5 / 17 | 6 / 17 |
+| STANDING at settle | 12.5 | 11 |
+| ONE-SHOT clears | 5/8 | 7/8 |
+| MOVED at contact+800 ms | 9 | **8.5** |
+| load-bearing frame reacted | 5/6 | **5/6** |
+| COHESION @300 ms | 100 % | 100 % median (one shot 94 %) |
+
+Stone dies to a storey landing on it (P3 r6b's crush ramp is a severity read on the arrival),
+and a storey that has quietly shed a third of its mass does not land like one. Deleting debris
+mass was silently disarming the crush channel. **Mass conservation is a destruction feature,
+not only an accounting one.**
+
+### STATED, NOT HIDDEN: r3's fixed-cohort instrument reads WORSE, and it is the wrong authority
+`crit-PW-r3-attrib.mjs`, both arms, same tree, its own four shots: created energy
+**67.50 → 93.35 J**, while the worst single step goes **10.72 → 9.62 J** (down). That
+instrument tracks 23 bodies by identity and excludes debris, so kinetic energy a now-full-weight
+fragment legitimately carries INTO a surviving block is booked as "created" — the same class of
+blindness that hid this round's bug, pointing the other way. Its `structure.enabled = false`
+floor moves too (0.35 → 2.26 J on 0.30@0.90) with no structure write in play at all, which is
+the tell. The closed audit, whose balance identity holds to 0.000000 J with every crossing
+attributed, puts the fracture channel's real invention at 36.22 J over six shots. Both numbers
+are recorded here rather than one of them being quietly dropped.
+
+### THE MEASUREMENT LESSON, WHICH OUTLIVES THE BUG
+- **Book the boundary by RAPIER HANDLE, never on a `destroy` hook.** The first version of the
+  r5 probe hooked `Entity.prototype.destroy` and still reported 0.646 kg per villain killed as
+  unaccounted. `Villain.die()` (`villains/base.js` ~983) removes its rigid body and nulls
+  `this.body` directly, so the later `destroy()` sees nothing to book. Diffing the live body
+  set by handle needs no cooperation from any call site. **That crossing is still open and it
+  is not PW's** — a villain removed at height loses `m·g·y` without dissipating it, the same
+  shape as the fracture mass deletion this round removed.
+- **A single net "created" figure cannot find two errors of opposite sign.** Split the boundary
+  into the part each mechanism owns and report the parts.
+- **A whole-system net is not a detector either.** The survivor term on an l1 collapse is
+  −190 to −720 J of honest dissipation; a 40 J invention is inside its noise. The signal lives
+  in the boundary term alone.
+
+### Debug knob, same contract as `structure.js`'s
+`blocks.js` exports `FRACTURE_TUNE = { conserve: true }`. Nothing in `src/` writes it. Setting
+it false restores the pre-r5 spawn so an A/B runs on ONE tree — there is no git history in this
+working copy to diff against, and ORCHESTRATOR-NOTES r6 §5 rules out comparing across time. The
+two arms deliberately share pass 1 and consume the seeded PRNG in the same order with the same
+count, so what separates them is the model and not the random stream.
+
+Regression gates, all green after the change: `determinism.mjs` 6/6 PASS · `p3-r5-detshot`
+every row `0==1:true 1==2:true` straddling first contact and first fracture · `p3-r5-rest` PASS ·
+`p3-budget` bit-identical at 1.0 / 0.5 / 0.05 · `p3-planez` peak |z| 1.020e-7 · `p3-r6-late`
+PASS · `p0-hook-audit` 24/24 honest · `p3-perf` median 8.3 ms / p99 10.1 / max 20.7 / **0**
+frames over 100 ms · `p2-sweep` 1 of 24 zero-score (unchanged) · `p1-r2b-snap` PASS (every draw
+≥ 0.8 clears 8 AD by t = 50 ms) · `final.mjs` l1 won, zero console errors or warnings.
+
+---
+
+## PW ROUND 6 — EVERY COLLAPSE WRITE NOW NAMES A DONOR
+
+**The report.** "`structure.js`'s collapse writes are one-sided ADDS bought from a budget, not
+conserving TRANSFERS. `applyImpulseAtPoint` / `applyTorqueImpulse` put kinetic energy into a
+body and take none out of anywhere, and `TRANSMIT = 1.0` licenses the layer to add up to 100 %
+of the contact energy the solver has ALREADY delivered."
+
+Confirmed, and the numbers are worse than the ledger's own figure because the ledger was never
+the instrument. Round 3 made every write PRICED; it did not make one write CONSERVING.
+
+### The instrument first: `_tools/scenarios/pw-r6-audit.mjs`
+
+Neither existing audit could price ONE WRITE. `crit-PW-r3-attrib.mjs` tracks a fixed cohort and
+excludes births and deaths — the exclusion that hid the r5 fracture bug for eight rounds.
+`pw-r5-ab.mjs` closed that hole with a per-step census by rapier handle, but its resolution is a
+solver step and its survivor term on an l1 collapse is −190…−720 J of honest dissipation, so a
+40 J invention sits inside its noise.
+
+So this one takes a **full census of the dynamic world twice INSIDE every `spend()`** — mass,
+linear momentum, angular momentum about a fixed origin, kinetic and potential energy, keyed by
+handle. Nothing is born and nothing dies inside a `spend()`, so that comparison is closed and
+exact, and it sees a debit to a donor exactly as clearly as a credit to a recipient. Three
+things come out of it, and **momentum is the sharpest of the three**:
+
+* **Δp** — an equal-and-opposite pair injects exactly zero whatever the masses or geometry; a
+  one-sided impulse injects |J|. Gravity cannot confound it (two censuses, one step, no
+  integration between). Unlike energy it has no honest positive term to hide inside.
+* **ΔL** about a fixed origin — same argument.
+* **ΔKE** — the headline, and the weakest detector: a genuine transfer can create energy
+  through its quadratics and legitimately destroy it when the donor is closing.
+
+The whole-shot book (births and deaths by handle, balance identity printed) is kept from
+`pw-r5-ab.mjs` around it, so a fix that hid inside a birth would still show.
+
+**Baseline, 8-shot l1 gate, seed 4242:** +330.48 J created (50.2 % of the 658.7 J the darts
+actually delivered; 77 % of the blow on 0.30@0.90), 400.8 kg·m/s of momentum and 2455 kg·m²/s
+of angular momentum injected, worst single write **+10.63 J** into a 1.956 kg stone cube in one
+8.3 ms step (|v| 0.85 → 3.20 m/s AND wz −0.27 → −3.20 rad/s at once). By mechanism:
+**hop 60 %, rack 38 %, everything else 2 %.**
+
+### The donor rule
+
+A shock front does not create momentum, it CARRIES it. Every write now names the body whose
+motion it is passing on, and the reaction is applied to it. Where the donors come from was
+**measured before the model was written** (`_tools/scenarios/pw-r6-donor.mjs`, four l1
+collapses):
+
+| write | donor | availability, measured |
+|---|---|---|
+| wave, hops 2-4 | the member it came from | live on **268 of 273**, closing at 0.94-1.57 m/s; 100 / 74 / 56 % of the requested Δv transferable at hops 2 / 3 / 4 |
+| wave, hop 1 | the DEBRIS of the block that came apart | the source is a live node on **0 of 38** — it has just shattered — and those 38 writes hold the four biggest impulses in the game, all into the stone cube. `structure.registerDebris()` is the hand-off from `Block.fracture`. |
+| load drop | the storey the dead block was carrying (`dropIds`) | it is an inelastic collision and an inelastic collision has two sides |
+| rack / tip / side / hinge | what the member bears on | a live block under **68 of 68** racks and **24 of 25** tips; on the ground the reaction crosses into the fixed world and the write stays a declared seed |
+
+### Two corrections that are the whole difference between a model and a spring
+
+**1. The reaction lands on the DONOR'S OWN centre of mass.** Applying every share at one point
+conserves angular momentum by inspection and is very tempting for that reason. A debris chip is
+40 g with `I ≈ 3e-4`; a lever arm of a metre turns its share into `τ²/2I` of twenty joules of
+spin about a point it is nowhere near. That term dominates `A`, the clamp collapses, and the
+first draft conserved **15.7 %** of the impulse and still created 261 J. The exchange is
+therefore LINEAR — what a shock actually carries — and the angular residual
+`λ·(p − centroid) × J` is declared in `stats.seedL` instead of being paid for with fictitious
+chip spin.
+
+**2. The clamp is the PLASTIC limit, not the energy-neutral one.** `A·λ² + C·λ = 0` at
+`λ = −C/A` looks like the largest free transfer. It is — it is the perfectly ELASTIC exchange,
+exactly twice the plastic impulse, and it drives the donor past the pair's common velocity and
+out the other side. Measured on the l1 gate: **one-shot clears 7/8 → 4/8**, because the shock
+was braking the members it was supposed to be travelling through. The vertex of the same
+parabola, `λ = −C/(2A)`, is the perfectly INELASTIC exchange: both bodies reach a common
+velocity along the axis, the pair's energy is at its minimum, nothing is reversed, and with one
+donor it reduces to `λ|J| = μ × closing speed` exactly. Rubble is inelastic. Kept as
+`tuneElastic` so the finding is reproducible rather than a sentence in a document.
+
+`A` and `C` are built from the linear exchange alone, so the criterion is about the pair's
+RELATIVE velocity and is frame-invariant. **`C ≥ 0` means the donor has nothing to hand over
+along this axis, `λ = 0`, and the write is byte-for-byte the one-sided write round 3 shipped.**
+Adding a donor can therefore never make a write more expensive — but what is left is still
+invented, still one-sided, still bought from the pool, and it is COUNTED: `stats.seedP` and
+`stats.seedJ` beside `stats.transferP` and `stats.transferJ`. Driving the seed share down is the
+objective; a rule that shrank it by writing less would show up instantly as lost propagation.
+
+### Result — `pw-r6-audit.mjs`, both arms, one process, 8-shot l1 gate, seed 4242
+
+| | r3 one-sided | r6 donor transfers |
+|---|---|---|
+| created kinetic energy, sum | **+330.48 J** | **+152.52 J** |
+| as % of contact energy delivered | 50.2 % | **23.3 %** |
+| momentum injected Σ\|Δp\| | 400.79 | 351.37 kg·m/s |
+| impulse conserved | 0.0 % | **21.1 %** (93.88 N·s transferred) |
+| angular momentum injected Σ\|ΔL\| | 2455.37 | 1955.17 kg·m²/s |
+| energy destroyed by the hand-over | 0.00 J | **−116.90 J** |
+| worst single write | +10.63 J | +10.31 J |
+| ledger `spentJ` | 358.04 J | 310.65 J |
+| writes refused for want of budget (0.30@0.90) | 14 | **6** |
+| balance residual | −0.000000 J | 0.000000 J |
+
+by mechanism, created KE / writes / worst single write:
+
+| | r3 one-sided | r6 |
+|---|---|---|
+| **hop** | 196.76 J / 390 / 10.63 | **33.49 J** / 365 / 10.31 |
+| **rack** | 124.36 J / 579 / 1.18 | 109.68 J / 508 / 1.18 |
+| tip | 10.63 J / 243 / 0.35 | 10.63 J / 253 / 0.46 |
+| load | 1.21 J / 10 | 0.84 J / 7 |
+| side | −2.41 J / 45 | −5.46 J / 49 |
+| hinge | −0.06 J / 9 | 3.34 J / 1 |
+
+### The counterweights, same protocol (`_tools/scenarios/pw-r6-gate.mjs` wrapping `p3-r6-gate`)
+
+| l1 8-shot gate | r3 one-sided | r6 |
+|---|---|---|
+| **stone fractures / shots fracturing stone** | 3 / **3 of 8** | **6** / **5 of 8** |
+| settled debris W / G / S | 38 / 58 / **4** % | 39 / 51 / **10** % |
+| wood / glass fractures | 18 / 23 | 16 / 18 |
+| COHESION @300 ms | 100 % median (one shot 94) | **100 % on all eight** |
+| BROKE median | 6 / 17 | 5.5 / 17 |
+| STANDING at settle | 11 | 11.5 |
+| MOVED at contact+800 ms | 8.5 | **8** |
+| load-bearing frame reacted | 5/6 | 5/6 |
+| ONE-SHOT clears | 7/8 | **6/8** |
+
+**KNOWN COST, MEASURED AND NOT HIDDEN: one-shot clears 7/8 → 6/8, and it is one shot.**
+`0.36@1.00` goes MOVED 6 → 2, FRAME 3/6 → 0/6, broke 6 → 1. It was already the weakest shot in
+the gate (the only one below 5/6 on the frame in either arm), it is a graze over the tower's
+shoulder, and in the one-sided arm its cascade is six fractures of which four land at impulses
+of 0.6-0.9 — jostling, funded by exactly the energy this round removed. ORCHESTRATOR-NOTES
+recorded the same shape at r5 ("a graze that used to cascade into an 11-block collapse purely
+by jostling blocks to death"; the fix belongs to scoring, P12/P13). MOVED 8.5 → 8 and BROKE
+6 → 5.5 are the same effect, smaller. Against them: stone — **the canary for anything that
+softens a collapse (PW r3 §3), and independently for anything that thins it (PW r5)** —
+doubles, from 3 fractures on 3 shots to 6 on 5, and its settled share goes 4 % → 10 %.
+
+### Negative results — do not re-run these
+
+* **The elastic clamp.** Above. 7/8 → 4/8 one-shot clears. `tuneElastic`.
+* **The reaction at the recipient's application point.** Above. 15.7 % of impulse conserved and
+  261 J created, versus 21.1 % and 152 J with the reaction at the donor's own centre.
+* **`side` with a debris donor.** A member whose brace has gone leans into the hole pivoting on
+  its own base — nothing pushes it. Handing it the dead brace's debris (on the grounds that the
+  pieces flew at it) made the write brake the cloud for a shove the cloud never gave: −21.6 J of
+  over-dissipation across the gate and, downstream, a cloud too slow to break what it should.
+  It is a PIVOT, not a transmission.
+* **Turning the hop-1 debris donor off** (`tuneDebrisWave = 0`, kept as a knob). It recovers
+  `0.36@1.00` only partially (MOVED 2 → 5, FRAME 0 → 1) and does **not** recover the one-shot
+  clear, while taking stone straight back down: shots fracturing stone 5/8 → 3/8, BROKE 5.5 → 5,
+  STANDING 11.5 → 12. The debris donor stays on.
+
+### STILL OPEN, NAMED AND MEASURED, AND NOT SOLVABLE BY A DONOR
+
+* **The rack is now 72 % of what is left** (109.68 J of 152.52 J) and it has no dynamic donor.
+  Its toe bears on a footing that is itself braced by the ground, so the reaction genuinely
+  crosses into the fixed world and no census of dynamic bodies can book it. **Gravity is a BOUND
+  on it, not a conservation law**: front-loading a topple's kinetic energy against the potential
+  energy it is "about to" release is never repaid — the bay still descends the whole distance
+  afterwards and ends with the loan on top — so a "gravity loan" would be creation with a
+  ceiling, dressed as conservation. It stays a declared, priced, one-sided seed.
+* **The worst single write is unchanged at ~10.3 J and it is always the stone cube**, because
+  `WAVE_CAP` is a Δv target and a fixed Δv costs energy in proportion to mass. PW r2 made the
+  DAMAGE model mass-invariant for exactly this reason; the wave's magnitude never was. That is a
+  P3 propagation constant, not PW's to retune blind, and it is why `nudge`'s velocity match
+  cannot fix it either.
+
+### Debug knobs, same contract as the rest of the file
+`tuneTransfer` (false restores the r3 one-sided model), `tuneElastic`, `tuneDebrisWave`. Nothing
+in `src/` writes them; they exist so an A/B runs on ONE tree, which ORCHESTRATOR-NOTES r6 §5
+requires and which this working copy's lack of git history makes mandatory.
+
+Regression gates, all green after the change: `determinism.mjs` 6/6 PASS · `p3-r5-detshot` every
+row `0==1:true 1==2:true` straddling first contact and first fracture · `p3-r5-rest` PASS
+(0 audits, 0 racks, 0 tips, 0 collapses on an untouched level) · `p3-r6-late` PASS (0 fractures
+in a ≥90 %-asleep world, idle windows clean) · `p3-budget` bit-identical at 1.0 / 0.5 / 0.05 ·
+`p3-planez` peak |z| 1.060e-7 · `p0-hook-audit` **24/24 honest** · `p3-perf` median 8.2 ms /
+p99 11.4 / max 18.2 / **0** frames over 100 ms · `p1-r2b-snap` PASS (every draw ≥ 0.8 clears
+8 AD by t = 50 ms) · `p2-sweep` **1 of 24** zero-score (unchanged) · `final.mjs` l1 won, zero
+console errors or warnings.
+
+---
+
+## PW ROUND 7 — THE FRACTURE MINTED A COUPLE, AND ONLY A MOMENTUM AUDIT COULD SEE IT
+
+**The report.** "The donor rule fires on only 5-16 % of collapse writes — lambda is zero
+whenever the donor cross-term `C >= 0` — so 82 % of the shock's momentum is still minted
+one-sided, and `hop`, the write the donor rule was built for, is the single largest energy
+source in the game."
+
+Confirmed on the write side and reproduced (see the donor census below). But the round's
+actual finding is in the channel the report did not name, and it was found by building the
+instrument the 8 Sep orchestrator note asked for: an audit that books **mass and energy
+ENTERING AND LEAVING**, split per mechanism, rather than one that reports survivors or one
+net figure.
+
+### 1. The instrument: `_tools/scenarios/pw-r7-audit.mjs`
+
+Every previous audit obeyed half of the rule. `crit-PW-r3-attrib.mjs` tracks a fixed cohort
+and excludes births and deaths — the exclusion that hid the r5 fracture bug for eight rounds.
+`pw-r5-ab.mjs` books births and deaths by rapier handle but reports ONE boundary figure per
+shot, so two errors of opposite sign cancel. `pw-r6-audit.mjs` prices one WRITE exactly, and
+a fracture is a death and N births that `spend()` never sees.
+
+This one takes a full census of the dynamic world — mass, linear momentum, angular momentum
+about the world origin, kinetic and potential energy, keyed by handle — **immediately before
+and immediately after each MECHANISM runs**, and attributes every crossing to the code that
+caused it:
+
+| channel | instrumented at | sees |
+|---|---|---|
+| fracture | `Block.prototype.fracture` | 1 death + N births in one call, closed and exact |
+| write | `Structure.prototype.spend` | one impulse pair, plus the donor clamp's own A / C / lambda, recomputed independently |
+| cull | debris deaths outside a fracture window | mass and energy deleted by `MAX_DEBRIS` / `DEBRIS_LIFE` |
+| villain | villain deaths | `m·g·y` removed at height (known open, not PW's) |
+| solver | the remainder | contacts, gravity, friction — the honest part |
+
+Two things it does that the earlier ones could not, and both mattered:
+
+* **It books a crossing AT THE CROSSING, not at the step edge.** The first version charged
+  the fracture channel with a whole solver step of work either side of the split and read
+  **−224 J** against the channel's exact **+50.66 J**. A parent measured at the start of the
+  step has not yet absorbed the dart; children measured at the end have already been through
+  a step of contacts. The balance identity is printed either way (residual **0.000000 J**),
+  but the attribution is only right when each body is booked with the energy it actually had
+  as it crossed.
+* **It cross-checks against an independent instrument.** Run on the 8-shot l1 gate it
+  reproduces `pw-r6-audit.mjs`'s recorded **152.52 J** shot for shot, and on the 6-shot
+  cohort both give **159.3 J**. An audit that agrees with nothing is not evidence.
+
+### 2. WHAT IT FOUND: the spawn conserved everything except a couple
+
+On the 6-shot l1 cohort, seed 4242, the r5/r6 fracture spawn conserved mass to **0.0000 kg**,
+potential energy to **0.00 J** and linear momentum to **0.00 kg·m/s** — and minted
+**5.78 kg·m²/s of ANGULAR momentum** over 30 fractures. PW r6 §2 is why that is the number to
+look at: momentum has no honest positive term to hide inside, and this one was invisible to
+every energy audit because **it was bought at its energy price like any other motion.**
+
+Two sources, and the second is the one everybody would have guessed wrong:
+
+* **The burst minted a couple.** `bs -= ism` zeroes the pieces' own spins, `Σ I_i·bs_i`. It
+  says nothing about the burst's ORBITAL angular momentum `Σ m_i (r_i × b_i)` — a chip thrown
+  left at the top of a block and one thrown right at the bottom. The comment on that line
+  said "zero net linear and angular momentum"; only the first half was ever true. The cure is
+  the exact analogue of the linear one: subtract the rigid ROTATION about the parent's centre
+  of mass, `Ω = L_burst / Σ(I_i + m_i r_i²)`, which cannot undo the linear neutralisation
+  because `Σ m_i (Ω × r_i) = Ω × Σ m_i r_i` and pass 2 already made that exactly zero.
+* **The rigid field's `sqrt(IP/J)` scaling — and it is INERT here, which is the useful part.**
+  r5 scaled the children's spin to hold rotational ENERGY, which mints angular momentum
+  whenever the cut plan is looser than its parent. `IP/J` conserves angular momentum instead.
+  **Measured (`pw-r7-Lcheck.mjs`, 19 fractures): J/IP is 0.67-1.00 on 19 of 19** — every cut
+  plan in this game is TIGHTER than its parent, so `min(1, …)` binds on every fracture and
+  both branches give `w0 = w`. `FRACTURE_TUNE.spinL` is kept and defaulted on because it is
+  the branch that stays correct if a plan is ever authored looser; it is **not** what fixed
+  this round's number, and the file says so rather than taking credit for it.
+
+What the clamp leaves is `dL = (J − IP)·w`, verified against the census to five decimals
+(stone: predicted −0.15076 / measured −0.15076; −0.64701 / −0.64701). It is strictly
+**negative** — the spawn dissipates angular momentum and can never invent it. Closing it
+would mean spinning the children faster than the parent, i.e. trading a momentum leak for up
+to 1.49× of invented rotational energy. r5's "only ever DOWN" guarantee is right and stays.
+
+### 3. Result — `pw-r7-audit.mjs`, both arms, ONE process, 6-shot l1 cohort, seed 4242
+
+| | r6 spawn | r7 spawn |
+|---|---|---|
+| **fracture: angular momentum minted Σ\|ΔL\|** | **5.78** | **3.74** kg·m²/s |
+| fracture: per-fracture \|ΔL\| / \|L_parent\| (19-fracture probe) | **1.218** | **0.141** |
+| fracture: Σ\|ΔL\| on that same probe | 3.5952 | **1.6408** |
+| fracture: invented KE | 50.66 | 50.59 J |
+| fracture: destroyed PE / mass delta / minted Δp | 0.00 J / 0.0000 kg / 0.00 | **unchanged, all exactly zero** |
+| **write channel: created kinetic energy** | **159.32 J** | **126.81 J** |
+| &nbsp;&nbsp;as % of the contact energy delivered | 32.5 % | **25.0 %** |
+| **write channel: `hop` created** | **59.6 J** | **40.3 J** |
+| write channel: momentum injected Σ\|Δp\| | 286.73 | 281.19 kg·m/s |
+| write channel: impulse conserved | 20.3 % | 20.6 % |
+| worst single write | 10.31 | 10.28 J |
+| balance residual | −0.000000 | 0.000000 J |
+
+The write channel is not this round's code — it improves because a debris cloud that is not
+spinning about a point it never orbited arrives differently, and the collapse it drives needs
+less invention. `hop` falls furthest, which is the channel the report named.
+
+**STATED, NOT BURIED: the write channel's angular momentum went the WRONG way**, Σ\|ΔL\|
+1573 → 1841 (`hop` 647 → 910). That is `structure.js`'s one-sided seed torque on a collapse
+that now diverges, not a term this round writes; it is recorded here rather than omitted, and
+it is the number for whoever takes the wave's magnitude (still open, PW r6).
+
+### 4. NEGATIVE RESULT — the arriving-front donor. Measured, and it LOST. Do not re-enable.
+
+The natural companion fix, and the one the report points at: hop 1's donor is the debris cloud
+from `Block.fracture`, and `donorDebris()` was handing over the WHOLE cloud including the
+chips flying away from the recipient. Restricting it to the pieces actually closing does
+exactly what it was built to do at the write level — mean lambda **0.322 → 0.474**, closing
+speed **0.85 → 1.21 m/s**, writes with a live transfer 35/45 → 36/45 — and it still loses:
+
+| 8-shot l1 gate, one process | front donor OFF | ON |
+|---|---|---|
+| **shots fracturing stone** | **5/8** | **4/8** |
+| BROKE median | 5.5 | 5 |
+| STANDING at settle | 11.5 | 12 |
+| closed audit, created KE | **126.81 J** | 135.67 J |
+
+Concentrating the reaction on the front concentrates the BRAKE on the front, and the front is
+the arrival that kills stone. **Stone is the canary for the third independent time** — PW r3 §3
+(softened in TIME), PW r5 §2 (thinned in MASS), and now thinned in the DONOR SET — and the
+headline number moved the wrong way as well. Same shape as PW r6's rejected `side` debris
+donor: get the donor SET wrong and the model dissipates in the wrong place. Kept as
+`structure.tuneFrontDonor`, defaulted **false**.
+
+### 5. The donor census, reproduced — and where the remaining mint really is
+
+`C >= 0` means the donor is not closing along the write's axis, so lambda is zero and the write
+falls back to r3's one-sided seed. Per mechanism, 6-shot cohort, 966 writes:
+
+| mechanism | writes | NO_DONOR | C ≥ 0 | fires | created KE | Σ\|Δp\| |
+|---|---|---|---|---|---|---|
+| **rack** | 427 | 0 | **405 (95 %)** | 22 | **93.4 J** | 77.6 |
+| hop | 298 | 0 | 112 (38 %) | 186 | 59.6 J | **185.9** |
+| tip | 201 | 12 | 151 | 38 | 6.2 J | 0.6 |
+| side / load / hinge | 40 | 16 | 9 | 15 | −0.1 J | 22.7 |
+
+The rack is 95 % one-sided and 59 % of the created energy, and PW r6 already established that
+it has no dynamic donor — its toe bears on a footing braced by the ground, so the reaction
+genuinely crosses into the fixed world, and a "gravity loan" is creation with a ceiling. It is
+not solvable in the fracture lane and this round did not pretend otherwise.
+
+On hop 1 specifically (`pw-r7-front.mjs`, `pw-r7-decay.mjs`, 45 writes): the cloud asks
+70.35 N·s and can supply 18.94, because `lambda·|J| = mu × closing speed` and the wave's ask is
+a fixed **Δv** scaled by the RECIPIENT's mass while the cloud carries what it carries — the
+1.956 kg stone cube is asked for 4.89 N·s against a 0.974 kg cloud closing at 0.50 m/s. And it
+is not a decay problem: the counterfactual lambda if the cloud had kept its spawn speed is
+**0.365 against 0.393 now**, i.e. no gain. Expressing the wave in momentum rather than in Δv
+remains the open lever, and it is a P3 propagation constant.
+
+### Debug knobs, same contract as the rest of the file
+`FRACTURE_TUNE.spinNeutral` (false restores the r5 burst, which minted the couple),
+`FRACTURE_TUNE.spinL` (false restores `sqrt(IP/J)`; measured inert on today's cut plans),
+`structure.tuneFrontDonor` (true re-enables the rejected front donor). Nothing in `src/`
+writes them. `pw-r7-audit.mjs` and `pw-r7-gate.mjs` drive named arms, and **every arm states
+the WHOLE knob set** — this round's first A/B passed `{}` for the shipped arm, inherited the
+previous arm's knobs and printed byte-identical numbers, which reads exactly like "the change
+does nothing".
+
+### Regression gates, all green after the change
+`determinism.mjs` **6/6 PASS** (A≡B across two browser processes, A≡C, t=0 rebuild, A≠D,
+240 solver steps, zero console errors) · `p3-r5-detshot` every row `0==1:true 1==2:true`
+straddling first contact and first fracture · `p3-r5-rest` PASS (the audit is unreachable from
+a settled world) · `p3-r6-late` PASS (every fracture happened while the world was moving) ·
+`p3-budget` bit-identical at 0.50 and 0.05 · `p3-planez` peak |z| **1.727e-7** (bound 1e-6) ·
+`p0-hook-audit` **24/24 honest** · `p3-perf` median **8.3 ms** / p99 10.6 / max 22.0 / **0**
+frames over 100 ms · `p1-r2b-snap` PASS · `p2-sweep` **1 of 24** zero-score (unchanged) ·
+`final.mjs` l1 **won**, zero console errors, zero warnings.
+
+**KNOWN COST, MEASURED AND NOT HIDDEN: one-shot clears 6/8 → 5/8 on the l1 gate**, which is
+the r5 baseline the gate itself prints. Two solid clears flip out (`0.32@0.94`, `0.28@0.88`)
+and one flips in (`0.24@0.92`, 7 100 → 43 400). Every destruction counterweight is unmoved —
+stone 5/8, wood 7/8, glass 8/8, BROKE median 5.5, STANDING 11.5, MOVED 8, FRAME 5/6, COHESION
+100 % on all eight — so this is the marginal "did the frame land on both villains" coin flip
+that ORCHESTRATOR-NOTES already assigns to P12 (l1's two villains are both inside one tower),
+not a weakened model. `pw-r7-look.mjs` films the collapse at PHONE size in both arms: the
+tower comes apart at the joints, the glass panes lean and separate, the debris fans and the
+frame drops, indistinguishable between arms — the numbers improved and nothing started to
+look shoved.
+
+---
+
+## PW ROUND 9 — THE BURST SPENT 44 % OF ITS BUDGET ON THE HALF NOBODY CAN SEE
+
+**Where round 8 left it.** The fracture spawn conserved mass, potential energy and linear
+momentum exactly, and dissipated angular momentum only (r5–r7). What it had no bound on was
+the SIZE of its separation burst. A momentum-neutral burst costs exactly `½·m·b² + ½·I·bs²`,
+so an ask stated as a speed and a spin costs **whatever the block happens to weigh**: measured
+(`_tools/scenarios/pw-r9-frac.mjs`, 35 fractures on the 6-shot l1 cohort) the same authored
+event cost **0.07 J on a 0.30 kg glass mullion and 10.97 J on a 1.375 kg wood beam — a 157x
+spread** for a fan the player cannot tell apart, and two of those 35 spent **5.30 J against a
+0.3 J blow** and **6.00 J against a 1.4 J blow**. On the closed audit the channel invented
+**51.70 J against 499.4 J of delivered contact energy — 10.4 %**.
+
+That is the same defect PW r2 removed from the damage model (a Δv, not an impulse) and PW r8
+removed from the wave's ask (a momentum the donor holds, not a Δv the recipient wants). Third
+instance, and the last one in this lane.
+
+### 1. What shipped
+
+**(a) The ask is bounded by the blow that broke the block.**
+
+    E_ask = min( authored ask ,  max( BURST_SHARE * blowE ,  BURST_SEED_J ) )
+
+`BURST_SHARE = 0.06`, `BURST_SEED_J = 0.30` — a floor in JOULES, therefore the same number for
+a glass mullion and a stone cube, because a block that comes apart under a slow crush has
+almost no blow to name and still has to come apart. `BURST_BLOW_TICKS = 6` is a tripwire, not
+a dial: 33 of 35 fractures land on the same tick as their blow and the other two at +1 and +2.
+`structure.buyFracture()` still bounds it a second time by `FRAC_BURST_CAP` and a third by the
+pool, whose only depositor is the player's shot. **The share is an attribution bound, not a
+funding source** — `lastBlowE` on a chain fracture is a block-on-block contact that credits
+nothing (PW r3's rule stands), so it can only ever make the ask SMALLER than the pool already
+allowed, and no money-printing loop is possible.
+
+**(b) `BURST_SPIN` 9 → 4, and the spin ask made differential (`burstSpinMassK`).** `massK` has
+scaled the LINEAR kick since r5 precisely because a Δv ask costs `½·m·Δv²`. The spin line asked
+every piece for the same ±9 rad/s while `I` runs two orders of magnitude from a chip to a
+half-beam. Measured over 34 fractures: **spin was 43.9 % of the entire burst bill**, and the
+two heaviest pieces of each fracture carried **55 %** of it while moving slowest (0.85 and
+0.75 m/s against the light chips' 1.28) — the fan the eye follows is the LIGHT pieces, and they
+were paying a tenth of the bill.
+
+### 2. WHY CUTTING THE SPIN ASK IS NOT A CUT TO THE FAN
+
+This is the non-obvious part, and it is why the change is close to free:
+
+* where the blow bound **binds**, cutting the spin ask costs nothing at all — the same budget
+  is spent and `f` rises, so more of it goes into separation;
+* where it does **not** bind, it is a straight saving.
+
+Measured across both (`pw-r9-frac.mjs`, arms `s06` → `p4`, 6-shot l1 cohort, seed 4242):
+
+| | spin ask 9 | spin ask 4 |
+|---|---|---|
+| Σ burst SPENT, J | 43.07 | **22.51** |
+| spin share of the energy bill | 43.9 % | **16.9 %** |
+| mean separation \|b·f\|, all pieces | 1.054 | **1.074** m/s |
+| mean \|b·f\|, **lightest half** (what the eye follows) | 1.170 | **1.268** m/s |
+| mean tumble \|spin·f\| | 3.94 | 1.99 rad/s |
+| spawns spending more than their own blow | 1 | **0** |
+| max spent / blowE | 1.39 | **0.12** |
+
+1.99 rad/s is a third of a revolution per second on a piece with a 1–2 s flight, and the
+rubric's debris criterion is "pieces tumble on independent random spin, **no two share a
+rotation**" — a jitter about this number, unaffected by its magnitude. `pw-r9-look.mjs` films
+both arms at PHONE size on the canonical shot: the tower comes apart at the joints, the glass
+panes lean and separate, the debris fans and the frame drops, indistinguishable between arms.
+
+### 3. Result — `pw-r9-audit.mjs`, all arms, ONE process, 6-shot l1 cohort, seed 4242
+
+The closed per-mechanism census — mass, Δp, ΔL, KE and PE crossing the boundary, booked AT each
+mechanism — with `pw-r7-audit.mjs`'s `SETUP` imported verbatim rather than re-derived (r7 §2
+records what a re-written census costs). `pw-r9-frac.mjs` reads the same event from INSIDE
+`fracture()` via `FRACTURE_LOG`; two independent instruments, same answer.
+
+| | r8 | r9a (ask bound only) | **r9 SHIPPED** |
+|---|---|---|---|
+| contact energy in, J | 499.4 | 493.6 | 481.9 |
+| **FRACTURE invented KE, J** | **51.70** | 39.47 | **16.26** |
+| &nbsp;&nbsp;as % of the dart's delivered energy | 10.4 % | 8.0 % | **3.4 %** |
+| write channel created KE, J | 50.24 | 74.01 | 58.27 |
+| **BOTH, as % of delivered energy** | **20.4 %** | 23.0 % | **15.5 %** |
+| worst single fracture, J | 6.00 | 4.53 | **3.13** |
+| fractures with ΔKE > parent KE | 9/29 | 11/31 | **1/21** (that one by 0.92 J) |
+| median ΔKE / parent KE | 0.494 | 0.442 | **0.305** |
+| jolts above 1 J anywhere in the game | 29, Σ 67.4 J | 28, Σ 56.0 J | **17, Σ 28.4 J** |
+| worst single WRITE, J (round 8's number) | 2.03 | 5.32 | **2.14** |
+| mass delta across fracture, kg | −0.0000 | −0.0000 | **0.0000** |
+| potential energy delta, J | −0.0000 | −0.0000 | **0.0000** |
+| Σ\|Δp\| minted, kg·m/s | 0.0000 | 0.0000 | **0.0000** |
+| Σ\|ΔL\|, kg·m²/s (dissipative, never invented) | 2.424 | 2.355 | 1.673 |
+| balance residual, J | −0.000000 | −0.000000 | **−0.000000** |
+
+**`r9a` is the state this round INHERITED, unmeasured, from a killed agent** — the ask bound
+alone, landed in `blocks.js` with no audit run against it. It improves the fracture channel
+(51.70 → 39.47 J) and makes the WHOLE-GAME number WORSE (20.4 % → 23.0 %), and it fails the
+star gate. **A channel-level improvement is not a result until the closed audit has seen the
+whole board**, and a landed change with no gate behind it is not landed.
+
+### 4. THE COST, PRICED RATHER THAN ARGUED
+
+`pw-r9-gate.mjs` puts the burst on an arm switch around `p3-r6-gate.mjs` (8 shots, seed 4242).
+Its `r8` arm reproduces ORCHESTRATOR-NOTES' recorded r8 row exactly — MOVED 8.5, FRAME 5/6,
+BROKE 6, one-shot 5/8, fractures W18 G18 S7, stone in 7/8 — so the instrument agrees with the
+record before it is used to move away from it.
+
+| | r8 | **r9** | s4k12 | s4k14 |
+|---|---|---|---|---|
+| MOVED median (**propagation**) | 8.5 | **9** | 8 | 8.5 |
+| FRAME median (**propagation**) | 5/6 | **5/6** (5 on 7/8 shots, was 6/8) | 5/6 | 5/6 |
+| COHESION@300 ms | 100 % | **100 %** | 100 % | 100 % |
+| ONE-SHOT CLEARS | 5/8 | **7/8** | 6/8 | 6/8 |
+| BROKE median | 6 | **4** | 5.5 | 6.5 |
+| shots fracturing stone | 7/8 | **5/8** | 7/8 | 6/8 |
+| fractures W / G / S | 18/18/7 | 14/14/5 | 16/13/7 | 20/18/9 |
+| fracture invented, J | 51.70 | **16.26** | 34.94 | 38.61 |
+| total created, % of delivered | 20.4 % | **15.5 %** | 20.9 % | 25.4 % |
+
+**PROPAGATION WENT UP; FRAGMENTATION WENT DOWN; THEY ARE NOT THE SAME NUMBER.** Every
+protected propagation figure holds or improves — the tower still goes over as one object and
+l1 is now WON on 7 of 8 gate shots instead of 5, recovering both one-shot clears round 7
+recorded as its known cost. What falls is BROKE (6 → 4) and stone (7/8 → 5/8 shots): a cloud
+that separates on less energy lands on its neighbours with less, because that energy was
+invented and is now gone.
+
+**`burstKickK` exists to price exactly that, and it was priced.** It scales the LINEAR ask
+only, so budget can be MOVED between the burst's two halves instead of merely shrunk. It buys
+the fragmentation back exactly — ×1.2 returns stone to 7/8 and BROKE to 5.5; ×1.4 reaches
+BROKE 6.5 and W20 G18 S9, better than r8 on both — and the closed audit prices those at
+**34.94 J / 20.9 %** and **38.61 J / 25.4 %**. The destruction costs precisely what it always
+cost. Raising the CAP instead does nothing at all (`s4s10`, `s4s16` are identical to `r9` at
+the gate), which is the check that says the 0.06 share is not the binding constraint at spin 4
+— the authored ask is. `burstKickK` ships at **1**: it is the instrument that makes "we could
+have kept the fragmentation" a measured statement with a price on it, not a tuning dial.
+
+**=> The remaining lever is the STRUCTURE, and it is not PW's.** The brief's own instruction
+for this case is "if an honest fracture propagates less, make the STRUCTURE more precarious
+instead". That is `levels/*.json` geometry — P12's — and it re-derives P13's thresholds
+underneath it, so it is named here rather than done in the fracture lane.
+
+### 5. THE STAR THRESHOLDS HAD TO BE RE-DERIVED, AND THAT IS THE PRESCRIBED PROCEDURE
+
+`p13-stargate.mjs` FAILED after the landing. `pw-r9-stargate.mjs` (the same gate with the burst
+on an arm switch) attributes it: **r8 PASS, r9a FAIL ×4, r9 FAIL ×5** — so the inherited,
+unaudited landing had already broken it. In every case the *thresholds* were fine and the
+grader invariants passed; what had gone stale were the recorded PROOF PLANS, which is what
+`p13-stargate`'s own header says to expect ("run it after ANY change that can move the score
+distribution: … **PW's collapse energy** …") and what `p13-sweep.mjs` exists to fix. Re-derived
+with `APPLY=1`, unchanged method, nothing hand-picked:
+
+| | l1 | l2 | l3 |
+|---|---|---|---|
+| t1 | 9 500 → 9 500 | 9 500 → 9 500 | 28 500 → 28 500 |
+| t2 | 30 000 → **30 500** | 21 000 → **11 000** | 51 000 → **52 000** |
+| t3 | 39 500 → **39 500** | 30 500 → **21 000** | 60 500 → **60 500** |
+
+`p13-stargate` then **PASSES on all three levels**, no clamp, 3 stars reachable everywhere.
+
+**MEASURED AND NOT HIDDEN — l2 got harder, and it is this round's doing.** `pw-r9-sweep.mjs`
+runs P13's own sweep on l2 under both arms in one process: **r8 7 wins of 46 with a 2-shot
+32 200 clear; r9 4 wins of 46, best a 3-shot 22 200.** The `s4k12` arm restores the 2-shot plan
+(and l2's 30 500 t3) but NOT the win rate — it is 4/46 as well — so the difficulty change is
+not something `burstKickK` fixes; only the top-end proof plan is. One consequence is worth
+flagging to P13: on l2 no measured win now lands in the 1-star band (bands 0/3/1), so every win
+is worth 2 or 3 stars. The gate accepts it; the ladder is flatter than it was.
+
+### 6. TWO INSTRUMENTS WERE POINTED AT A TREE THEY NO LONGER DESCRIBED
+
+`pw-r8-audit.mjs`'s `DEFAULT` and `pw-r8-gate.mjs`'s `SET` named `conserve / spinNeutral /
+spinL` and stopped. `FRACTURE_TUNE` is a module singleton that `loadLevel()` does not
+re-import, so from the moment round 9's knobs existed **both arms of both files silently
+inherited the r9 burst** — r6 §1 and r7 §3's recorded false negative, armed and waiting, and
+round 8's own numbers would no longer have reproduced. Both now pin the whole burst to the
+values ROUND 8 ran against, in the same edit that adds the r9 instruments. **An arm that names
+a difference instead of a state is a bug with a delayed fuse.**
+
+### Debug knobs, same contract as the rest of the file
+`FRACTURE_TUNE.burstSpin` (9 restores the pre-r9 ask), `burstSpinMassK` (false restores the
+flat spin every piece used to get), `burstShare` (`Infinity` restores the unbounded ask),
+`burstSeedJ`, `burstBlowTicks`, `burstKickK` (the linear/spin rebalance lever, shipped at 1).
+Nothing in `src/` writes them. `FRACTURE_LOG` is the matching read side — one row per spawn
+carrying the parent's mass properties, the rigid field's exact cost, the burst's quadratic
+(A, C), what the ledger granted, and the PER-PIECE split of the bill against the separation
+speed each piece actually got. Off by default; it allocates nothing when off, so it cannot
+perturb a measurement.
+
+### Regression gates, all green after the change
+`determinism.mjs` **6/6 PASS** (A≡B across two browser processes, A≡C, t=0 rebuild, A≠D, 240
+solver steps, zero console errors) · `p3-r5-detshot` every row `0==1:true 1==2:true` straddling
+first contact and first fracture · `p3-r5-rest` PASS · `p3-r6-late` PASS · `p3-budget` PASS ·
+`p3-planez` peak |z| **1.079e-7** (bound 1e-6) · `p0-hook-audit` **24/24 honest** ·
+`p13-stargate` **PASS** all three levels, no clamp · `p2-sweep` **1 of 24** zero-score
+(unchanged) · `p1-r2b-snap` every draw ≥ 0.8 clears 8 AD by t=50 ms · `p3-perf` median
+**8.2 ms** / p99 12.2 / max 18.9 / **0** frames over 100 ms · `final.mjs` l1 **won**, 21 900,
+**1 star**, zero console errors, zero warnings.
+
+---
+
+## PW ROUND 10 — THE LEDGER HAD NO DEBIT SIDE, AND 97.5 % OF THE GAME'S INVENTED ENERGY WAS THIS ONE LAYER
+
+**The report.** "`structure.js` double-counts the player's blow, and that double-count IS the
+game. `creditContact()` credits the spend pool with the contact energy the solver has ALREADY
+delivered at the contact, and `spend()` then pays it out a second time as new velocity, at
+`TRANSMIT = 1.0`."
+
+Confirmed, and the file's own header said it without noticing: "the cumulative energy this file
+can **ADD** over a shot is bounded by TRANSMIT times the energy that shot actually delivered". A
+ledger whose every entry is a credit is not a currency. Rounds 3 to 9 built the half that proves
+THE SHOT PAID FOR IT — priced writes, donor transfers, a conserving spawn, a bounded burst — and
+never built the half that takes anything out of the world.
+
+Priced on ONE tree with both arms back to back (`critpw-r9-ab.mjs`, six l1 shots, seed 4242):
+with `structure.enabled = false` — same dart, same damage model, same fractures, same debris
+burst — created energy falls **131.9 J -> 3.3 J**, disturbed blocks at contact+150 ms 10 -> 4,
+reach 5.2 m -> 2.1 m, and **one-shot clears 6/6 -> 0/6**. Every win on l1 was funded by energy
+the game invented.
+
+### 1. MEASURE WHAT THE WORLD CAN PAY BEFORE DESIGNING HOW IT PAYS
+
+The obvious fix — debit the collision inside `creditContact()` — is ruled out by measurement,
+not by argument (`_tools/scenarios/pw-r10-probe.mjs`, same cohort, at the first credited hit):
+
+| | median | range |
+|---|---|---|
+| `blowE` credited | 42.7 J | 4.1 – 52.8 |
+| the struck block's kinetic energy | 3.5 J | 1.0 – 26.3 |
+| the dart's, after the hit | 13.2 J | 3.3 – 38.8 |
+| **the PAIR** | **30.3 J** | 12.3 – 39.8 |
+| the whole dynamic world | 30.6 J | 19.6 – 40.0 |
+| what the layer then SPENDS over the shot | 25.9 J | 22.1 – 33.0 |
+
+`blowE` is `½·J·v_approach` — the energy the collision removed from the pair, not energy the
+struck block is holding, and the block holds a tenth of it. The pair is very nearly the whole
+live reserve at that instant, so debiting eagerly means braking the dart and the struck block to
+~13 % of their speed at the exact moment the dart has to follow through and the block has to come
+apart at 2.6–5.7 m/s (PW r5 §4's "blown through" read) — for a budget that is then 57 % unspent
+(spent / credited = 0.43).
+
+So the pool stays a CLAIM and the debit is **settled at each write**. The same probe measured the
+reserve across a collapse — 31 / 30 / 29 / 79 / 13 / 47 J at contact + 0 / 100 / 200 / 400 / 800 /
+1600 ms, never empty because gravity keeps feeding it — against a worst single write of 2.14 J.
+
+### 2. WHAT SHIPPED: `reserveKE()` / `settleTake()` / `payFor()`
+
+`settleTake(d)` scales every reserve body's linear velocity by `f = sqrt(1 - d/KE_reserve)`, which
+removes **exactly** `d` joules because a uniform velocity scale takes the same FRACTION of every
+body's energy. Exact, not a damping coefficient. Invisible, because the cost lands in proportion
+to what each body is already doing (2.14 J out of a 30 J reserve is a 3.6 % speed cut shared over
+~25 bodies; the typical write is ~0.1 J, i.e. 0.17 %) — a per-body brake sized for one write would
+stop a 40 g chip dead, which is the mistake PW r6 §2 already measured. And LINEAR ONLY, the same
+choice r6 made for the donor exchange: a shock carries linear momentum, and scaling spin would
+flatten the independent tumble the rubric's debris criterion is written on.
+
+**Stated, not glossed: the settlement conserves ENERGY exactly and does NOT conserve momentum.**
+It removes momentum in proportion to what each body carries while the seed injects its own
+one-sided impulse elsewhere. That residual is `stats.debitP` (60.8) beside `stats.seedP` (196.1),
+declared in exactly the spirit r6 declared `seedL`. r6's local momentum-conserving transfer still
+runs FIRST and is untouched; this round funds the seed r6 left one-sided.
+
+### 3. TWO THINGS THE FIRST DRAFT GOT WRONG, BOTH FOUND BY THE GATE
+
+**(a) THE RESERVE MUST NOT INCLUDE STANDING BLOCKS.** Lending from every live dynamic body is the
+one rule with no arbitrary preference in it, and it brakes the collapse to pay for the collapse.
+On the 8-shot gate: MOVED 9 -> 6.5, FRAME 5/6 -> 4/6, one-shot 7/8 -> 4/8 — while the fracture
+counterweights went UP. The storey on its way down is the one body a shock must not be funded out
+of: it is the thing the shock is trying to move. The reserve is therefore the LOOSE motion —
+debris, the spent dart, a dead villain — which is PW r6's hop-1 doctrine ("the debris is
+physically the thing that hits the neighbour") generalised from one write to the whole ledger.
+**The wreckage pays, because the wreckage has already been paid for.** `tuneReserveLoose`.
+
+**(b) `DEBIT_FRAC` IS NOT A TRIPWIRE.** It was documented as one — "0.25 permits 7.5 J out of a
+30 J reserve and the worst write is 2.14 J, so it never binds". A settlement scales velocities by
+`sqrt(1 - frac)`, so a `frac` charged twice a solver step for 240 steps is an EXPONENTIAL DECAY on
+the whole world. Same shape as PW r3's "a repeated velocity match is a SERVO, not a ramp". Its real
+job is deciding how much of a write falls through to the mint. Swept: created 29.3 / 22.5 / 22.2 J
+and one-shot 3 / 5 / 5 of 6 at 0.08 / 0.25 / 0.50 — 0.25 and 0.50 indistinguishable, 0.08 worse.
+
+### 4. THE BOOTSTRAP CLIFF, AND WHY A RESIDUAL MINT IS THE HONEST ANSWER
+
+A settlement with **no** mintable residual fails, and the shot that fails names the mechanism:
+`0.32@0.94` — the shot PW r3 put in this file's header, an 18 N·s hit that fractures NOTHING —
+went MOVED 10 -> 3, FRAME 5/6 -> 0/6, broke 5 -> 0, with the reserve refusing 15 writes outright.
+A blow that breaks nothing leaves the level at rest; a level at rest has no motion to
+redistribute; so the rack that would start the topple cannot be funded; so the level stays at
+rest. Exactly PW r3's fracture-only-ledger failure, reached from the far side.
+
+The cliff is physically real. `blowE` is the energy the INELASTIC collision DESTROYED — Rapier has
+already thrown it away into solver-phase dissipation, so no live body is holding it. In the world
+part of it goes to plastic deformation and part travels through the structure as an elastic wave,
+which is precisely what this file models. Recovering a share of that is not a transfer between two
+dynamic bodies and no census of dynamic bodies can book it; PW r6 named the same crossing for the
+rack, whose reaction "genuinely crosses into the fixed world". So:
+
+1. **THE RESERVE PAYS FIRST** — every joule that can come out of loose motion does;
+2. **THE MINT PAYS THE REMAINDER**, from an allowance worth `TRANSMIT_MINT` of the blow, counted
+   in `stats.mintJ` and never folded into `spentJ`.
+
+**Reserve-first is the round's best single number.** At `TRANSMIT_MINT = 1.0` — round 9's own
+ceiling, nothing tightened at all — created energy is **38.9 J against round 9's 131.9 J**. Seventy
+per cent of what this layer invented was never needed; it was simply never asked for out of the
+world first.
+
+`0.20` is the sweep's knee, not a dial (`pw-r10-ab.mjs`, 6-shot cohort):
+
+| mint share | 0 | 0.01 | 0.02 | 0.05 | 0.10 | **0.20** | 1.0 | r9 |
+|---|---|---|---|---|---|---|---|---|
+| created, J | 0.4 | 2.2 | 5.3 | 12.7 | 22.5 | **32.0** | 38.9 | 131.9 |
+| minted, J | 0.0 | 3.4 | 6.5 | 15.6 | 25.0 | **35.2** | 42.1 | — |
+| one-shot clears | 1/6 | 1/6 | 3/6 | 3/6 | 5/6 | **6/6** | 5/6 | 6/6 |
+| disturbed at 2 s | 13 | 13 | 15.5 | 15 | 16 | **16.5** | 16 | 16 |
+
+It is the smallest share that gives up nothing; 1.0 is WORSE (one-shot 5/6, and 6/8 on the gate),
+because the extra allowance goes into jostling rather than into the frame.
+
+### 5. RESULT — `pw-r10-ab.mjs`, three arms, ONE process, 6-shot l1 cohort, seed 4242
+
+The closed boundary census, books MASS AND ENERGY BOTH ENTERING AND LEAVING, per arm.
+
+| | r9 (pure credit) | **r10 SHIPPED** | solver only |
+|---|---|---|---|
+| **created (code phase, gross +), J** | **131.9** | **32.0** | 3.3 |
+| net code phase, J | −64.6 | −116.0 | −89.3 |
+| solver phase net (dissipation), J | −2426 | −2067 | −1207 |
+| ENTERING: born energy, J | 1701.5 | 1566.5 | 1190.7 |
+| LEAVING: died energy, J | 1800.4 | 1615.4 | 1276.3 |
+| ENTERING: born mass, kg | 18.295 | 19.541 | 10.581 |
+| LEAVING: died mass, kg | 22.565 | 22.591 | 11.198 |
+| mass booked−census, worst kg | 0.6888 | 0.6464 | 0.0000 |
+| paid out of the pool, J | 161.4 | 182.0 | 3.5 |
+| **DEBITED out of the world, J** | **0.0** | **146.8** | 0.0 |
+| **MINTED, J** | — (all of it) | **35.2** over 152 writes | 0.0 |
+| shortfall (reserve promised, not delivered), J | — | **0.000** | — |
+| settlements / worst single | — | 859 / 3.24 J | — |
+| momentum debited out / seeded in, kg·m/s | 0.0 / 160.4 | 60.8 / 196.1 | 0 / 0 |
+| **ONE-SHOT CLEARS** | 6/6 | **6/6** | 0/6 |
+| disturbed @150 ms / @2000 ms | 10 / 16 | **10 / 16.5** | 4 / 6 |
+| reach @150 ms, m | 5.2 | **5.2** | 2.1 |
+| blocks broken, median | 4.5 | **5.5** | 2.5 |
+
+`debitShortJ` is **0.000 J**: the reserve delivered every joule it promised, on all 859
+settlements, which is the one failure this round must not be able to hide — unfunded creation
+wearing the settlement's label.
+
+### 6. The counterweights — `pw-r10-gate.mjs` wrapping `p3-r6-gate.mjs`, 8 shots, seed 4242
+
+| l1 8-shot gate | r9 | **r10** |
+|---|---|---|
+| **MOVED median** (propagation) | 9 | **9** |
+| **FRAME median** (propagation) | 5/6 | **5/6** |
+| COHESION @300 ms | 100 % on all eight | **100 % on all eight** |
+| ONE-SHOT CLEARS | 7/8 | **7/8** |
+| BROKE median | 4 | **5.5** |
+| STANDING at settle | 13 | **11.5** |
+| fractures W / G / S | 14 / 14 / 5 | **18 / 15 / 8** |
+| shots fracturing W / G / S | 7/8 · 8/8 · 5/8 | **7/8 · 8/8 · 5/8** |
+| settled debris W / G / S | 41 / 49 / 10 % | 43 / 43 / **13** % |
+
+**Nothing regressed and the destruction improved.** Stone — the canary for the sixth independent
+time — goes 5 fractures to 8 and its settled share 10 % to 13 %. `pw-r10-look.mjs` films both arms
+at PHONE size on the canonical shot: the tower comes apart at the joints, the glass panes lean and
+separate, the debris fans and the frame drops and flattens through 3 s. Indistinguishable between
+arms, and specifically not treacle, which was the named risk of putting a brake in the loop.
+
+### 7. TRANSMIT, RE-DERIVED — AND IT IS NO LONGER THE CONTROL
+
+Swept again with the settlement in place (`t04`, `t02` against `r10`): MOVED 9 / 8.5 / 2.5, FRAME
+5/6 · 4.5/6 · 0/6, one-shot 7/8 · 5/8 · 2/8, and at 0.2 the pool starves 100 writes. r3's cliff is
+exactly where r3 left it. The finding is that **what the layer may CREATE is now bounded by
+`TRANSMIT_MINT`, not by `TRANSMIT`** — lowering the claim on top of the settlement only starves
+writes the world was going to pay for anyway, which is why the defect was not closed that way.
+
+### 8. STILL OPEN, NAMED
+
+* **The rack is still the largest one-sided seed** and still has no dynamic donor (PW r6, r7 §5).
+  It is now FUNDED out of the world rather than invented, which is the part this round could fix;
+  its momentum is still declared, not conserved.
+* **`mass booked − census` is 0.65 kg on the r10 arm and 0.69 kg on r9**, unchanged in kind — the
+  villain-death crossing PW r5 §5 recorded as "still open and not PW's".
+* **The two shots that only ever won by jostling** (`0.36@1.00`, and `0.32@0.94` under a
+  zero-mint ledger) are the same class ORCHESTRATOR-NOTES assigns to P12/P13. The brief's own
+  instruction stands: if an honest collapse propagates less, make the STRUCTURE more precarious.
+
+### Debug knobs, same contract as the rest of the file
+`tuneDebit` (false restores round 9's pure-credit pool exactly), `tuneReserveLoose` (false lends
+from standing blocks too — the measured-and-lost first draft), `tuneDebitFrac`, `tuneTransmitMint`
+(1.0 restores r9's ceiling with the reserve still paying first; 0 is the bootstrap cliff). Nothing
+in `src/` writes them. `stats.debitJ / debitP / debitShortJ / debitN / debitDry / debitWorst /
+mintJ / mintN` are the matching read side.
+
+### Regression gates, all green after the change
+`determinism.mjs` **6/6 PASS** (A≡B across two browser processes, A≡C, t=0 rebuild, A≠D, 240
+solver steps, zero console errors) · `p3-r5-detshot` every row `0==1:true 1==2:true` straddling
+first contact and first fracture · `p3-r5-rest` **PASS** (0 audits, 0 racks, 0 tips, 0 collapses on
+an untouched level — the settlement never writes to a sleeping body, which is what `DEBIT_KE_EPS`
+and `setLinvel(..., false)` are for) · `p3-r6-late` **PASS** · `p3-budget` bit-identical at 1.0 /
+0.5 / 0.05 · `p3-planez` peak |z| **1.167e-7** (bound 1e-6) · `p0-hook-audit` **24/24 honest** ·
+`p13-stargate` **PASS** all three levels, no clamp, 3 stars reachable everywhere · `p2-sweep`
+**1 of 24** zero-score (unchanged, `0.48@0.8`) · `p1-r2b-snap` every draw ≥ 0.8 clears 8 AD by
+t = 50 ms · `p3-perf` median **8.2 ms** / p99 11.0 / max 13.7 / **0** frames over 100 ms ·
+`final.mjs` l1 **won**, 21 600, 1 star, HUD "Level 1 of 3", `storageOK` true, zero console errors,
+zero warnings.
+
+**THE STAR THRESHOLDS WERE RE-DERIVED, WHICH IS THE PRESCRIBED PROCEDURE (PW r9 §5).**
+`p13-stargate` failed on the recorded PROOF PLANS, not on the thresholds or the grader invariants.
+Re-derived with `p13-sweep.mjs APPLY=1`, unchanged method, nothing hand-picked:
+
+| | l1 | l2 | l3 |
+|---|---|---|---|
+| t1 | 9 500 → 9 500 | 9 500 → 9 500 | 28 500 → 28 500 |
+| t2 | 30 500 → **30 500** | 11 000 → **11 500** | 52 000 → **60 500** |
+| t3 | 39 500 → **39 500** | 21 000 → **21 000** | 60 500 → **70 000** |
+
+l1 is unchanged outright. l3's bar went UP because l3 got easier to clear cleanly — its best
+measured plan is now a 1-shot 73 200 where it was a 2-shot 63 500 — and 3 stars is reachable on
+all three levels with the proof runs recorded (l1 44 000 ≥ 39 500, l2 22 200 ≥ 21 000, l3 73 200 ≥
+70 000).

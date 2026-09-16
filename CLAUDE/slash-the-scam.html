@@ -167,6 +167,21 @@ canvas{width:100%;height:100%;display:block;cursor:none;}
   background:rgba(0,0,0,.25);border:1.5px solid var(--h-gold);border-radius:999px;
   padding:6px 14px;font-size:.72rem;font-weight:800;color:#e8c877;
 }
+.life-lesson{
+  width:100%;max-width:460px;background:var(--parchment);color:var(--h-green);
+  border-radius:16px;padding:14px 18px 15px;margin-bottom:6px;text-align:center;
+  border:1.5px solid var(--h-gold);
+}
+.ll-head{
+  font-family:'Lora',serif;font-style:italic;font-size:1rem;color:var(--h-gold-dk);
+  margin-bottom:6px;
+}
+.ll-body{font-size:.9rem;font-weight:600;line-height:1.5;}
+.ll-body b{font-weight:900;color:var(--h-green-dk);}
+.ll-you{
+  margin-top:10px;padding-top:9px;border-top:1px solid rgba(201,162,75,.45);
+  font-size:.82rem;font-weight:700;color:var(--h-gold-dk);
+}
 .lesson-card{
   width:100%;max-width:460px;background:var(--parchment);color:var(--h-green);
   border-radius:16px;padding:10px 13px;margin-bottom:9px;text-align:left;
@@ -260,6 +275,77 @@ canvas{width:100%;height:100%;display:block;cursor:none;}
 .how-tx{font-size:.78rem;line-height:1.4;color:var(--h-green);}
 .how-tx b{display:block;font-weight:900;font-size:.83rem;margin-bottom:1px;}
 .how-tx span{opacity:.85;}
+/* animated how-to demo */
+.demo{display:flex;gap:14px;width:100%;max-width:440px;margin:2px 0 10px;}
+.demo-panel{
+  flex:1;background:#fff9ec;border:1.5px solid rgba(201,162,75,.55);border-radius:16px;
+  padding:9px 8px 10px;box-shadow:0 2px 6px rgba(23,80,90,.08);
+}
+.demo-tag{font-size:.58rem;font-weight:900;letter-spacing:.1em;margin-bottom:5px;}
+.demo-tag.do{color:#a8402e;}
+.demo-tag.dont{color:#2c6b4b;}
+.demo-stage{
+  position:relative;height:104px;border-radius:11px;overflow:hidden;
+  background:linear-gradient(180deg,#12333a,#17505a);
+}
+.d-item{position:absolute;left:50%;width:46px;height:46px;object-fit:contain;margin-left:-23px;}
+.d-cut{top:30px;animation:dCut 3.2s infinite;}
+.d-fall{top:-4px;animation:dFall 3.2s infinite;}
+.d-blade{
+  position:absolute;top:44px;left:-45%;width:45%;height:3px;border-radius:3px;
+  background:linear-gradient(90deg,transparent,#fffdf2,#e8c877);
+  box-shadow:0 0 10px rgba(232,200,119,.9);opacity:0;animation:dBlade 3.2s infinite;
+}
+.d-line{position:absolute;left:6px;right:6px;bottom:22px;border-top:2px dashed rgba(201,162,75,.45);}
+.d-purse{
+  position:absolute;left:50%;bottom:2px;transform:translateX(-50%);
+  width:34px;height:19px;border-radius:5px 5px 9px 9px;
+  background:linear-gradient(180deg,#e8c877,#a97f2c);border:1.5px solid #8a6420;
+  color:#123c44;font-weight:900;font-size:.66rem;line-height:19px;text-align:center;
+  animation:dPurse 3.2s infinite;
+}
+.d-pop{position:absolute;left:50%;transform:translateX(-50%);font-weight:900;font-size:.7rem;opacity:0;}
+.d-pop.good{top:22px;color:#e8c877;animation:dPop 3.2s infinite;}
+.d-pop.safe{bottom:26px;color:#7ee0a8;animation:dSafe 3.2s infinite;}
+@keyframes dCut{
+  0%,26%{opacity:1;transform:scale(1) rotate(0)}
+  34%{opacity:0;transform:scale(1.25) rotate(10deg)}
+  35%,72%{opacity:0}
+  86%,100%{opacity:1;transform:scale(1) rotate(0)}
+}
+@keyframes dBlade{
+  0%,20%{left:-45%;opacity:0}
+  24%{opacity:1}
+  38%{left:100%;opacity:1}
+  44%,100%{left:100%;opacity:0}
+}
+@keyframes dPop{
+  0%,32%{opacity:0;transform:translate(-50%,6px)}
+  40%{opacity:1;transform:translate(-50%,-2px)}
+  62%{opacity:0;transform:translate(-50%,-14px)}
+  100%{opacity:0}
+}
+@keyframes dFall{
+  0%{top:-4px;opacity:0}
+  8%{opacity:1}
+  56%{top:52px;opacity:1}
+  64%,100%{top:52px;opacity:0}
+}
+@keyframes dPurse{
+  0%,54%{box-shadow:none}
+  62%{box-shadow:0 0 14px rgba(232,200,119,.95)}
+  78%,100%{box-shadow:none}
+}
+@keyframes dSafe{
+  0%,56%{opacity:0}
+  66%{opacity:1}
+  84%,100%{opacity:0}
+}
+.demo-cap{font-size:.74rem;font-weight:700;color:var(--h-green);margin-top:6px;line-height:1.3;}
+.demo-cap b{font-weight:900;}
+.demo-note{
+  font-size:.75rem;font-weight:700;color:var(--h-green);opacity:.9;margin-bottom:12px;
+}
 /* preview cases — same look as the in-game trophy columns */
 .h-main{display:flex;flex-direction:column;align-items:center;width:100%;}
 .case-row{display:flex;gap:14px;justify-content:center;align-items:flex-start;
@@ -367,28 +453,28 @@ canvas{width:100%;height:100%;display:block;cursor:none;}
         <b>You get 75 seconds to tell them apart.</b></div>
       <hr class="h-rule">
 
-      <div class="how">
-        <div class="how-step">
-          <div class="how-ic slash">✂️</div>
-          <div class="how-tx"><b>SWIPE the scams away</b>
-            <span>Magic money schemes, lottery bait, burning credit cards, toxic loans. Each one you cut = money saved.</span></div>
+      <div class="demo">
+        <div class="demo-panel do">
+          <div class="demo-tag do">✂️ DO THIS</div>
+          <div class="demo-stage">
+            <img class="d-item d-cut" id="demoScam" alt="">
+            <div class="d-blade"></div>
+            <div class="d-pop good">+ ₹</div>
+          </div>
+          <div class="demo-cap">Swipe the <b>scams</b> away</div>
         </div>
-        <div class="how-step">
-          <div class="how-ic keep">🤲</div>
-          <div class="how-tx"><b>LET the good ones fall</b>
-            <span>Gold, PPF, insurance, your emergency fund. Don't touch them — they land safely in your purse.</span></div>
-        </div>
-        <div class="how-step">
-          <div class="how-ic warn">💛</div>
-          <div class="how-tx"><b>3 hearts. That's it.</b>
-            <span>Swipe a good investment by mistake and you lose a heart. Lose all three and the round ends early.</span></div>
-        </div>
-        <div class="how-step">
-          <div class="how-ic big">💎</div>
-          <div class="how-tx"><b>Bigger icon = bigger money</b>
-            <span>Large items are worth double — and cost double if you get them wrong. The richer you get, the faster they fly.</span></div>
+        <div class="demo-panel dont">
+          <div class="demo-tag dont">🤲 NOT THIS</div>
+          <div class="demo-stage">
+            <img class="d-item d-fall" id="demoGood" alt="">
+            <div class="d-line"></div>
+            <div class="d-purse">₹</div>
+            <div class="d-pop safe">safe</div>
+          </div>
+          <div class="demo-cap">Let the <b>good ones</b> land</div>
         </div>
       </div>
+      <div class="demo-note">💛 You get <b>3 hearts</b> — swipe a good one by mistake and you lose one.</div>
       </div>
 
       <div class="case-row">
@@ -432,8 +518,10 @@ canvas{width:100%;height:100%;display:block;cursor:none;}
       <div class="stat-pill" id="statKnow"></div>
       <div class="stat-pill" id="statBest"></div>
     </div>
-    <div class="lesson-head" id="lessonHead">What just happened — in plain words</div>
-    <div id="lessonList"></div>
+    <div class="life-lesson">
+      <div class="ll-head">The lesson</div>
+      <div class="ll-body" id="llBody"></div>
+    </div>
     <button class="big-btn" id="againBtn">↺ PLAY AGAIN</button>
   </div>
 </div>
@@ -471,6 +559,7 @@ const SVG_NS='data:image/svg+xml;utf8,';
 function mkImg(svg){const i=new Image();i.src=SVG_NS+encodeURIComponent(svg);return i;}
 function mkPng(src){const i=new Image();i.src=src;return i;}
 const BLADE=mkImg(`<svg xmlns="http://www.w3.org/2000/svg" width="132" height="42" viewBox="0 0 132 42"><defs><linearGradient id="bl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a6420"/><stop offset=".18" stop-color="#e8c877"/><stop offset=".6" stop-color="#fffdf2"/><stop offset="1" stop-color="#fff"/></linearGradient><linearGradient id="hl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2dc9e"/><stop offset="1" stop-color="#a97f2c"/></linearGradient></defs><path d="M34 22 C60 10 96 6 128 15 C98 22 66 30 34 30 Z" fill="url(#bl)" stroke="#a97f2c" stroke-width="1.2" stroke-linejoin="round"/><path d="M40 24 C68 16 96 13 120 16" fill="none" stroke="#fff" stroke-width="1.6" opacity=".85"/><rect x="26" y="14" width="9" height="22" rx="3" fill="url(#hl)" stroke="#8a6420" stroke-width="1.3"/><rect x="6" y="19" width="22" height="11" rx="5" fill="url(#hl)" stroke="#8a6420" stroke-width="1.3"/><circle cx="12" cy="24.5" r="3" fill="#2f7d5c" stroke="#8a6420" stroke-width="1"/></svg>`);
+const IFM_MIST=mkPng('game-icons/mist-ifm.png?v=1');
 const HEART_SRC=SVG_NS+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" viewBox="0 0 32 30"><defs><radialGradient id="hg" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#ff9c8c"/><stop offset="48%" stop-color="#e23b2e"/><stop offset="1" stop-color="#8d1e17"/></radialGradient></defs><path d="M16 28.4C6.2 21.4 2 15.8 2 10.6 2 5.9 5.8 2 10.4 2 13.1 2 15.2 3.4 16 5.3 16.8 3.4 18.9 2 21.6 2 26.2 2 30 5.9 30 10.6 30 15.8 25.8 21.4 16 28.4Z" fill="url(#hg)" stroke="#5e120e" stroke-width="1.5" stroke-linejoin="round"/><ellipse cx="10.8" cy="9.2" rx="3.8" ry="2.5" fill="#fff" opacity=".5" transform="rotate(-28 10.8 9.2)"/></svg>');
 const SYM={
 ponzi:mkPng('game-icons/ponzi.png?v=2'),
@@ -851,6 +940,7 @@ function slashItem(it){
     scamsSlashed++; swipeScamCount++;
     scamTray.push({img:it.img,e:it.e,w:it.w,h:it.h,tk:it.tk,val:it.val,at:performance.now()});
     impactFlash(it.x,it.y,'#fff6d8'); shatter(it, it.tk==='L'?8:6);
+    if(it.tk==='L') particles.push({ifm:true,x:it.x,y:it.y+16,vx:0,vy:-0.85,life:1.4});
     score+=it.val;
     burst(it.x,it.y,BRAND.hGold);
     floatText(it.x+52,it.y-16,'+'+indian(it.val),BRAND.goldLight);
@@ -1000,8 +1090,21 @@ function loop(){
 
   /* particles / floating text */
   for(const p of particles){
-    if(!paused){ p.x+=p.vx; p.y+=p.vy; p.life-=0.02; }
+    if(!paused){ p.x+=p.vx; p.y+=p.vy; p.life-=(p.ifm?0.013:0.02); }
     ctx.globalAlpha=Math.max(0,Math.min(1,p.life));
+    if(p.ifm){
+      const im=IFM_MIST;
+      if(im&&im.complete){
+        const t=1-Math.max(0,p.life)/1.4;
+        const fade=p.life>1.15 ? (1.4-p.life)/0.25 : Math.min(1,Math.max(0,p.life)/0.5);
+        const sc=0.85+t*0.4;
+        ctx.save(); ctx.translate(p.x,p.y); ctx.scale(sc,sc);
+        ctx.globalAlpha=0.35*Math.max(0,Math.min(1,fade));
+        ctx.drawImage(im,-95,-95,190,190);
+        ctx.restore();
+      }
+      ctx.globalAlpha=1; continue;
+    }
     if(p.flash){
       const t=1-p.life/0.55, rad=10+t*54;
       const fg=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,rad);
@@ -1174,23 +1277,19 @@ function endGame(timeUp){
   document.getElementById('statLand').textContent='🙌 '+goodsLanded+' good one'+(goodsLanded===1?'':'s')+' kept';
   const kp=document.getElementById('statKnow'); if(kp) kp.textContent='💡 +'+knowledge+' knowledge';
   document.getElementById('statBest').textContent=(newBest?'🏆 NEW BEST!':'🏆 Best: '+indian(Math.max(best,score)));
-  const ll=document.getElementById('lessonList'); ll.innerHTML='';
-  document.getElementById('lessonHead').style.display=lessonsSeen.length?'block':'none';
-  const VERDICT={
-    dodged:['✓ Good — you swiped it away','good'],
-    missed:['✗ It slipped into your purse','bad'],
-    cut:   ['✗ Oops — this one was GOOD for you','bad']
-  };
-  lessonsSeen.slice(0,4).forEach(l=>{
-    const v=VERDICT[l.verdict]||VERDICT.dodged;
-    const art=l.img&&SYM[l.img]?'<img src="'+SYM[l.img].src+'" alt="">':'<span class="em">'+(l.e||'')+'</span>';
-    const d=document.createElement('div');
-    d.className='lesson-card '+v[1];
-    d.innerHTML='<div class="lc-ic '+v[1]+'">'+art+'</div>'
-      +'<div class="lc-tx"><div class="lc-top"><b>'+l.title+'</b><span class="lc-tag">'+v[0]+'</span></div>'
-      +'<div class="lc-why">'+l.simple+'</div></div>';
-    ll.appendChild(d);
-  });
+  const llb=document.getElementById('llBody');
+  if(llb){
+    const clean = goodsSlashed===0;
+    const sharp = acc>=0.7;
+    let line;
+    if(clean && sharp) line='You spotted them fast — and you never cut a good one. That instinct is the whole skill.';
+    else if(sharp)     line='You caught most of the scams. Now practise leaving the good ones alone.';
+    else               line='A few slipped past. The good news: this gets quicker every time you play.';
+    llb.innerHTML='<b>A scam always sounds fast, easy or guaranteed.</b> '
+      +'Real money grows slowly and quietly.<br>'
+      +'If you can tell the two apart in one second, no one can take your money.'
+      +'<div class="ll-you">'+line+'</div>';
+  }
   document.getElementById('endOverlay').classList.remove('hidden');
   if(timeUp) sfx.win(); else sfx.ko();
 }
@@ -1245,6 +1344,9 @@ window.addEventListener('resize',fitCases);
   put(document.getElementById('vsScams'),roundScams);
   put(document.getElementById('vsGoods'),roundGoods);
   fitCases(); requestAnimationFrame(fitCases); setTimeout(fitCases,300);
+  const ds=document.getElementById('demoScam'), dg=document.getElementById('demoGood');
+  if(ds&&roundScams[0]&&SYM[roundScams[0].img]) ds.src=SYM[roundScams[0].img].src;
+  if(dg&&roundGoods[0]&&SYM[roundGoods[0].img]) dg.src=SYM[roundGoods[0].img].src;
 })();
 
 /* best score on start screen */

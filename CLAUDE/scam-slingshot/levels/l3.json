@@ -1,0 +1,179 @@
+{
+  "id": "l3",
+  "name": "12% Every Month, Guaranteed",
+  "chapter": 3,
+  "sky": "morning",
+  "setting": "colony",
+  "par": 3,
+  "ammo": [
+    "sip",
+    "sip",
+    "sip",
+    "sip",
+    "sip"
+  ],
+  "teaches": "The returns are real. They are made of the next person’s money.",
+  "busts": [
+    "Paid with the next person's money",
+    "12% a month is 290% a year",
+    "It stops the month nobody new joins",
+    "The returns were never earned",
+    "He never invested anything",
+    "The last ones in get nothing"
+  ],
+  "blocks": [
+    {
+      "mat": "glass",
+      "x": 6.5,
+      "y": 0.775,
+      "w": 0.8,
+      "h": 1.55,
+      "rot": 0
+    },
+    {
+      "mat": "stone",
+      "x": 9.3,
+      "y": 0.775,
+      "w": 1.1,
+      "h": 1.55,
+      "rot": 0
+    },
+    {
+      "mat": "glass",
+      "x": 12.1,
+      "y": 0.775,
+      "w": 0.7,
+      "h": 1.55,
+      "rot": 0
+    },
+    {
+      "mat": "stone",
+      "x": 14.79,
+      "y": 0.775,
+      "w": 0.46,
+      "h": 1.55,
+      "rot": 0
+    },
+    {
+      "mat": "wood",
+      "x": 7.7,
+      "y": 1.85,
+      "w": 3.2,
+      "h": 0.6,
+      "rot": 0
+    },
+    {
+      "mat": "wood",
+      "x": 10.7,
+      "y": 1.85,
+      "w": 2.8,
+      "h": 0.6,
+      "rot": 0
+    },
+    {
+      "mat": "wood",
+      "x": 13.56,
+      "y": 1.75,
+      "w": 2.92,
+      "h": 0.4,
+      "rot": 0
+    },
+    {
+      "mat": "wood",
+      "x": 6.9,
+      "y": 2.927,
+      "w": 0.44,
+      "h": 1.554,
+      "rot": 0
+    },
+    {
+      "mat": "wood",
+      "x": 11.3,
+      "y": 2.927,
+      "w": 0.44,
+      "h": 1.554,
+      "rot": 0
+    },
+    {
+      "mat": "wood",
+      "x": 9.1,
+      "y": 3.924,
+      "w": 5.4,
+      "h": 0.44,
+      "rot": 0
+    },
+    {
+      "mat": "wood",
+      "x": 7.7,
+      "y": 5.122,
+      "w": 0.42,
+      "h": 1.956,
+      "rot": 0
+    },
+    {
+      "mat": "wood",
+      "x": 10.5,
+      "y": 5.122,
+      "w": 0.42,
+      "h": 1.956,
+      "rot": 0
+    },
+    {
+      "mat": "wood",
+      "x": 9.1,
+      "y": 6.34,
+      "w": 3.5,
+      "h": 0.48,
+      "rot": 0
+    },
+    {
+      "mat": "glass",
+      "x": 8.15,
+      "y": 7.03,
+      "w": 0.56,
+      "h": 0.9,
+      "rot": 0
+    },
+    {
+      "mat": "glass",
+      "x": 10.05,
+      "y": 7.03,
+      "w": 0.56,
+      "h": 0.9,
+      "rot": 0
+    }
+  ],
+  "villains": [
+    {
+      "type": "conman",
+      "x": 7.825,
+      "y": 0.48
+    },
+    {
+      "type": "conman",
+      "x": 10.8,
+      "y": 0.48
+    },
+    {
+      "type": "conman",
+      "x": 13.505,
+      "y": 0.48
+    },
+    {
+      "type": "conman",
+      "x": 7.95,
+      "y": 2.63
+    },
+    {
+      "type": "conman",
+      "x": 10.25,
+      "y": 2.63
+    },
+    {
+      "type": "ponziPyramid",
+      "x": 9.1,
+      "y": 7.2
+    }
+  ],
+  "props": []
+}

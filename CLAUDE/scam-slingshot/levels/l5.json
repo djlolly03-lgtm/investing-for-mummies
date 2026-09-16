@@ -1,0 +1,213 @@
+{
+  "id": "l5",
+  "name": "Rolling It Over",
+  "chapter": 2,
+  "sky": "morning",
+  "setting": "city",
+  "par": 4,
+  "ammo": [
+    "sip",
+    "sip",
+    "sip",
+    "sip",
+    "sip",
+    "sip"
+  ],
+  "teaches": "Move a debt to a new card and you have not paid it. You have only restarted the clock.",
+  "busts": [
+    "Moving a debt is not paying it",
+    "The clock just restarted",
+    "New card, same ₹48,200",
+    "You paid a fee to owe the same",
+    "Nothing was cleared"
+  ],
+  "scam": {
+    "shrugLabel": "+₹2,410 interest"
+  },
+  "blocks": [
+    {
+      "mat": "stone",
+      "x": 10.5,
+      "y": 0.275,
+      "w": 10.2,
+      "h": 0.55,
+      "debt": true
+    },
+    {
+      "mat": "glass",
+      "x": 7.05,
+      "y": 1.21,
+      "w": 0.6,
+      "h": 1.32,
+      "role": "interest"
+    },
+    {
+      "mat": "stone",
+      "x": 9.95,
+      "y": 1.21,
+      "w": 0.6,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 8.5,
+      "y": 2.11,
+      "w": 3.86,
+      "h": 0.48
+    },
+    {
+      "mat": "stone",
+      "x": 7.05,
+      "y": 3.01,
+      "w": 0.6,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 9.95,
+      "y": 3.01,
+      "w": 0.6,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 8.5,
+      "y": 3.91,
+      "w": 3.86,
+      "h": 0.48
+    },
+    {
+      "mat": "glass",
+      "x": 7.05,
+      "y": 4.81,
+      "w": 0.6,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 9.95,
+      "y": 4.81,
+      "w": 0.6,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 8.5,
+      "y": 5.71,
+      "w": 3.86,
+      "h": 0.48
+    },
+    {
+      "mat": "stone",
+      "x": 7.05,
+      "y": 6.61,
+      "w": 0.6,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 9.95,
+      "y": 6.61,
+      "w": 0.6,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 8.5,
+      "y": 7.51,
+      "w": 3.86,
+      "h": 0.48,
+      "debt": true
+    },
+    {
+      "mat": "wood",
+      "x": 8.5,
+      "y": 7.97,
+      "w": 3.4,
+      "h": 0.44
+    },
+    {
+      "mat": "stone",
+      "x": 13.5,
+      "y": 1.275,
+      "w": 1.6,
+      "h": 1.45,
+      "debt": true
+    },
+    {
+      "mat": "stone",
+      "x": 13.5,
+      "y": 2.725,
+      "w": 1.6,
+      "h": 1.45,
+      "debt": true
+    },
+    {
+      "mat": "stone",
+      "x": 13.5,
+      "y": 4.175,
+      "w": 1.6,
+      "h": 1.45,
+      "debt": true
+    },
+    {
+      "mat": "stone",
+      "x": 13.5,
+      "y": 5.625,
+      "w": 1.6,
+      "h": 1.45,
+      "debt": true
+    },
+    {
+      "mat": "stone",
+      "x": 13.5,
+      "y": 7.075,
+      "w": 1.6,
+      "h": 1.45,
+      "debt": true
+    },
+    {
+      "mat": "stone",
+      "x": 14.7,
+      "y": 3.15,
+      "w": 0.55,
+      "h": 5.2,
+      "debt": true
+    },
+    {
+      "mat": "wood",
+      "x": 13.5,
+      "y": 8.04,
+      "w": 2.4,
+      "h": 0.48
+    }
+  ],
+  "villains": [
+    {
+      "type": "conman",
+      "x": 8.5,
+      "y": 1.09
+    },
+    {
+      "type": "conman",
+      "x": 8.5,
+      "y": 2.89
+    },
+    {
+      "type": "conman",
+      "x": 8.5,
+      "y": 4.69
+    },
+    {
+      "type": "conman",
+      "x": 8.5,
+      "y": 6.49
+    },
+    {
+      "type": "conman",
+      "x": 13.5,
+      "y": 8.34
+    }
+  ],
+  "props": []
+}

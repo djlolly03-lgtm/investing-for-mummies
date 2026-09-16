@@ -440,7 +440,23 @@ const PRESETS = {
     }),
     // The dart's own damping is set by ammo/base.js (0.055 / 0.9) — that pair is P2's arc
     // droop and P1's nose-first flight, and it is deliberately NOT the material's.
-    physics: { density: 2.30, restitution: 0.20, friction: 0.55,
+    /**
+     * DENSITY 2.30 -> 1.60. On 11 Sep the ammo gained BOTH size and speed in the same day —
+     * collider radius 0.40 -> 0.52 (medallion.js) and SLING.maxSpeed 14.4 -> 24.0 — and nothing
+     * re-priced the punch afterwards. Mass goes as radius cubed, so that pair multiplied the
+     * impulse by 2.20 x 1.67 = 3.7x, and a player reported "one big shot breaks the entire
+     * structure". Measured on a standard shot at the old value: l1 was WON outright by shot one.
+     *
+     * MASS IS THE RIGHT LEVER, NOT SPEED. The speed rise is what lets the arc reach the top of
+     * the rebuilt levels at all (see the maxSpeed docblock in slingshot.js), and a trajectory
+     * under gravity is mass-INVARIANT — so trimming density takes the punch out and leaves the
+     * arc, the apex and the whole aim feel untouched. Nothing in sweep-arc needs re-running.
+     *
+     * 1.60 from a measured sweep (2.30 / 1.60 / 1.15 on all three levels): it is the value that
+     * stops the one-shot clear on l1 while a hit still takes out 6 blocks on l2 and 3 of l3's
+     * six villains. 1.15 was barely weaker than 1.60 and starts to read as feeble.
+     */
+    physics: { density: 1.60, restitution: 0.20, friction: 0.55,
                linearDamping: 0.055, angularDamping: 0.90,
                debris: { linearDamping: 0.03, angularDamping: 1.0, restitution: 0.10, friction: 0.90 },
                breakImpulse: Infinity, sound: 'thump' },

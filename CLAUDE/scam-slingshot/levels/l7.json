@@ -1,0 +1,215 @@
+{
+  "id": "l7",
+  "name": "The Locked Vault",
+  "chapter": 2,
+  "sky": "morning",
+  "setting": "city",
+  "par": 4,
+  "ammo": [
+    "sip",
+    "sip",
+    "sip",
+    "sip",
+    "sip"
+  ],
+  "teaches": "A promise kept behind a wall you cannot see into is not a promise. It is a story.",
+  "busts": [
+    "You cannot audit what you cannot see",
+    "No statement, no proof",
+    "‘Locked in’ means you cannot leave",
+    "A wall is not a guarantee"
+  ],
+  "blocks": [
+    {
+      "mat": "stone",
+      "x": 10.6,
+      "y": 0.25,
+      "w": 10.8,
+      "h": 0.5
+    },
+    {
+      "mat": "glass",
+      "x": 7.4,
+      "y": 1.16,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 9.4,
+      "y": 1.16,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 11.4,
+      "y": 1.16,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 13.4,
+      "y": 1.16,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 10.4,
+      "y": 2.01,
+      "w": 7.4,
+      "h": 0.38
+    },
+    {
+      "mat": "glass",
+      "x": 7.4,
+      "y": 2.86,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 9.4,
+      "y": 2.86,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 11.4,
+      "y": 2.86,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 13.4,
+      "y": 2.86,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 10.4,
+      "y": 3.71,
+      "w": 7.4,
+      "h": 0.38
+    },
+    {
+      "mat": "glass",
+      "x": 7.4,
+      "y": 4.56,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 9.4,
+      "y": 4.56,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 11.4,
+      "y": 4.56,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 13.4,
+      "y": 4.56,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 10.4,
+      "y": 5.41,
+      "w": 7.4,
+      "h": 0.38
+    },
+    {
+      "mat": "glass",
+      "x": 9.5,
+      "y": 6.26,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 11.3,
+      "y": 6.26,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 10.4,
+      "y": 7.12,
+      "w": 2.6,
+      "h": 0.4
+    },
+    {
+      "mat": "glass",
+      "x": 6.12,
+      "y": 0.72,
+      "w": 0.44,
+      "h": 0.44
+    },
+    {
+      "mat": "wood",
+      "x": 6.66,
+      "y": 0.72,
+      "w": 0.44,
+      "h": 0.44
+    },
+    {
+      "mat": "glass",
+      "x": 14.32,
+      "y": 0.72,
+      "w": 0.44,
+      "h": 0.44
+    },
+    {
+      "mat": "wood",
+      "x": 14.86,
+      "y": 0.72,
+      "w": 0.44,
+      "h": 0.44
+    },
+    {
+      "mat": "glass",
+      "x": 15.4,
+      "y": 0.72,
+      "w": 0.44,
+      "h": 0.44
+    }
+  ],
+  "villains": [
+    {
+      "type": "conman",
+      "x": 8.4,
+      "y": 1.04
+    },
+    {
+      "type": "conman",
+      "x": 12.4,
+      "y": 2.74
+    },
+    {
+      "type": "conman",
+      "x": 8.4,
+      "y": 4.44
+    },
+    {
+      "type": "conman",
+      "x": 10.4,
+      "y": 6.14
+    }
+  ],
+  "props": []
+}

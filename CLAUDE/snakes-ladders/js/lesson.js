@@ -91,6 +91,13 @@ let heritagePending = null;
    teaching, so an over-budget card costs type size, not words. */
 const WORD_BUDGET = 45;
 
+/* How much of the deep dive the "Aur padho" tap is allowed to pull over the fold.
+   Its top padding is 13px and its type is 16px on 1.55, so this is the block's
+   own edge plus about two and a half lines: unmistakably "the new text starts
+   here", and small enough that the arithmetic and the mint escape band above it
+   keep their place. Everything past it is a scroll she asks for. */
+const DEEP_PEEK = 78;
+
 /* ═══════════════════════════════════════════════════════════════════════
    2. CSS — one stylesheet, owned by this module alone.
    ═══════════════════════════════════════════════════════════════════════ */
@@ -314,8 +321,20 @@ injectCss('lesson', `
   background:var(--cream);
   box-shadow:0 -13px 0 var(--cream);
 }
+/* A single blurred shadow was too short and too weak: the line arriving under the
+   title still read as a horizontal cut through the caps (ENDOWMENT / MONEY-BACK,
+   sliced at its own mid-height). The title carries overflow:hidden for its
+   ellipsis, so a pseudo-element under it would be clipped away — but an
+   element's OWN box-shadow is never clipped by its overflow. So the dissolve is
+   built out of stacked cream shadows: 4px solid, then two overlapping blurs that
+   carry it to zero about 15px down. Anything passing beneath the title now fades
+   out; nothing is ever guillotined mid-glyph. */
 .snl-lesson.is-card.is-scrolled .snl-lesson__title{
-  box-shadow:0 -13px 0 var(--cream), 0 9px 11px -5px var(--cream);
+  box-shadow:
+    0 -13px 0 var(--cream),
+    0 4px 0 var(--cream),
+    0 10px 8px -3px var(--cream),
+    0 16px 13px -8px var(--cream);
 }
 /* The chevron floats over a SCROLLING body, and it is BOTH the invitation in and
    the only way back out of the deep dive, so it never leaves. It used to hide
@@ -806,11 +825,17 @@ function toggleDeep() {
   }
   grow(true);
   if (!on) {
-    /* This tap IS a request to be moved — but only far enough to see the new
-       text. The old code scrolled to the very bottom, which threw the title, the
-       gold figure, the term chip and the mint escape band clean off the top. */
+    /* §5.3: the deep dive expands IN PLACE. This tap is not a request to be taken
+       somewhere — the reader is mid-card, and the title, the arithmetic, the gold
+       figure, the term chip and the mint escape band are what she is reading. So
+       the card GROWS (that is the motion that says "it opened"), the chevron
+       flips to "Close this", and we move the text by the smallest amount that
+       brings the first couple of lines of the new block over the fold — and by
+       nothing at all when the growth alone already showed them. Claiming half the
+       viewport for the new block, as a general reveal does, threw everything
+       above it off the top; that is what this peek exists to prevent. */
     userScrolled = false;
-    revealInto(elDeep);
+    revealInto(elDeep, 0, DEEP_PEEK);
   } else {
     // closing it hands her back the line she was on, never the top of nowhere
     const back = deepReturn;
@@ -1061,8 +1086,10 @@ function finalViewH() {
     so the title, the figure, the term chip and the mint escape band she was
     reading must stay where they are for as long as they can. We never scroll UP
     (that would move the card under her either way) and never past the last line.
-    'frac' is how much of the viewport the new block may claim. */
-function revealInto(el, frac = 0.55) {
+    'frac' is how much of the viewport the new block may claim; 'peek' overrides
+    it with an absolute number of pixels — a deliberately small one, for content
+    the reader must merely be SHOWN the start of rather than be carried into. */
+function revealInto(el, frac = 0.55, peek = 0) {
   if (!cardOpen || !el || el.hidden) return;
   const view = finalViewH();
   const over = Math.max(0, body.scrollHeight - view);
@@ -1070,7 +1097,9 @@ function revealInto(el, frac = 0.55) {
   const bTop = body.getBoundingClientRect().top;
   const r = el.getBoundingClientRect();
   const top = r.top - bTop + body.scrollTop;            // its place in the scrolled content
-  const want = Math.min(r.height + 10, Math.max(120, Math.round(view * frac)));
+  const want = peek > 0
+    ? Math.min(r.height, peek)
+    : Math.min(r.height + 10, Math.max(120, Math.round(view * frac)));
   const target = clamp(Math.round(top + want - view), body.scrollTop, over);
   if (target - body.scrollTop < 6) { updateEdgeFade(); return; }
   /* one motion with the growth: the sheet rises and the text glides just enough.

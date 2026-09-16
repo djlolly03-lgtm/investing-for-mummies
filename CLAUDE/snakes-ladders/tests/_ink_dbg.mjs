@@ -1,0 +1,13 @@
+import puppeteer from 'puppeteer';
+const b = await puppeteer.launch({headless:true,args:['--use-gl=angle','--enable-unsafe-swiftshader','--hide-scrollbars','--mute-audio','--autoplay-policy=no-user-gesture-required'],defaultViewport:{width:390,height:844,deviceScaleFactor:2,isMobile:true,hasTouch:true}});
+const p = await b.newPage();
+await p.setUserAgent('Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Mobile Safari/537.36');
+const errs=[]; p.on('pageerror',e=>errs.push('PE '+e.message)); p.on('console',m=>{if(m.type()==='error')errs.push('C '+m.text())});
+await p.goto('http://localhost:8791/snakes-ladders/',{waitUntil:'networkidle2',timeout:60000});
+await new Promise(r=>setTimeout(r,8000));
+console.log('plaques', await p.evaluate(()=>document.querySelectorAll('.snl-setup__plaque').length));
+console.log('SNL', await p.evaluate(()=>!!window.__SNL));
+console.log('bodyclasses', await p.evaluate(()=>document.body.className+' | '+document.body.innerText.slice(0,300)));
+console.log(errs.slice(0,10));
+await p.screenshot({path:'/tmp/dbg1.png'});
+await b.close();

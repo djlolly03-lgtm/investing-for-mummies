@@ -834,6 +834,8 @@ export class FX {
     this.scene = scene;
     this.rig = rig;
     this.popups = [];
+    /** sim time of the last shrug caption; see the debtShrug handler. */
+    this._lastShrugSay = -99;
     this.enabled = true;
     this.budget = 1.0;              // scaled down on weak devices by main.js
 
@@ -936,7 +938,15 @@ export class FX {
         } else {
           this.impactBody(point, 'tuftWood', 0.64 + s * 0.54);
         }
-        this.rig.punch(0.035 + s * 0.20);
+        /**
+         * ROUND 9 (CAM) — 0.035 + s*0.20 -> 0.020 + s*0.105, i.e. a hard impact's own peak falls
+         * from 0.56 %H to 0.19 %H. Every punch strength in this file was halved or better,
+         * because 548 of them landed inside one 8.26 s shot on l1 and the camera never got a
+         * quiet frame. The amplitude of ONE hit was never the problem; their number was, and
+         * `CameraRig.punch()` now refuses to sum them — so each one only has to be big enough to
+         * be felt on its own. See the long block on `punch()` in camera.js.
+         */
+        this.rig.punch(0.020 + s * 0.105);
         // Hit-stop is what makes a big hit LAND. 2 ticks is imperceptible, 9 is a thump.
         world.hitStop = Math.max(world.hitStop, Math.round(2 + s * 7));
       } else {
@@ -947,7 +957,15 @@ export class FX {
         if (dust && impulse > 2.0) {
           this.smoke(point, 1.05 + s * 0.75, 1 + Math.round(s * 2), material === 'stone' ? 'stone' : 'earth');
         }
-        if (impulse > 3) this.rig.punch(0.012 + s * 0.05);
+        /**
+         * ROUND 9 (CAM): gate 3 -> 6 N·s and 0.012 + s*0.05 -> 0.005 + s*0.018. This branch was
+         * the single largest contributor to the constant-vibration state — it is the SHOVE
+         * branch, the one the comment above calls "not an impact", and a collapse is made almost
+         * entirely of shoves. A beam settling against its neighbour now moves the camera by
+         * 0.03 %H (0.2 px at 390x660), which is honest: you should feel a ground slam here and
+         * nothing else.
+         */
+        if (impulse > 6) this.rig.punch(0.005 + s * 0.018);
       }
     });
 
@@ -1000,7 +1018,9 @@ export class FX {
         this.burst('streak', point, 4, { cone: Math.PI, scale: 1.1 });
       }
 
-      this.rig.punch(0.09 + Math.min(0.22, (impulse ?? 6) / 60));
+      // ROUND 9 (CAM): 0.09 + min(0.22, imp/60) -> 0.045 + min(0.085, imp/115). A fracture's peak
+      // falls from 0.74 %H to 0.20 %H; it is still the loudest thing a collapse produces.
+      this.rig.punch(0.045 + Math.min(0.085, (impulse ?? 6) / 115));
       world.hitStop = Math.max(world.hitStop, material === 'stone' ? 7 : 4);
     });
 
@@ -1009,7 +1029,9 @@ export class FX {
       this.burst('pop', point, this.n(RECIPE.pop.n), { up: 0.9, spread: 1.3, scale: 1.15 });
       this.burst('cash', point, this.n(RECIPE.cash.n), { up: 1.2, spread: 1.0, scale: 1.0 });
       this.smoke(point, 1.1, 2);
-      this.rig.punch(0.30);
+      // ROUND 9 (CAM): 0.30 -> 0.17. Still the biggest non-launch kick in the game, which is
+      // right — a villain going down is the payoff beat — but 0.26 %H instead of 0.72 %H.
+      this.rig.punch(0.17);
       world.hitStop = Math.max(world.hitStop, 10);
       this.popup(point, '+5,000', PALETTE.gold, 1.5);
     });
@@ -1022,9 +1044,14 @@ export class FX {
      *   · THE FAN — a small bright sparkle fan thrown OUT of the pouch and confined to ~2 AD
      *     of it, which is the widening fan the rubric measures at t = +80 ms
      *   · a hot additive core, i.e. the muzzle flash
-     * plus the camera kick. 0.42 of full shake = 1.0 %H peak at full draw, inside the rubric's
-     * 0.5–2 %H window; the 15/s falloff (vs the house 8.6) puts it under 0.02 %H by +250 ms,
-     * because a launch is a snap and a collapse is a rumble and they must not decay alike.
+     * plus the camera kick. THE ONE PUNCH ROUND 9 (CAM) LEFT ALONE: its strength is still
+     * 0.16 + power·0.26 = 0.42 at full draw, because it is the only shake in the game with a
+     * LOWER bound on it — P1's rubric wants it inside 0.5–2 %H. `shakeMaxPctH` falling from
+     * 0.024 to 0.015 takes its peak from 1.0 %H to 0.63 %H, which is still inside that window
+     * and is now the loudest shake the game contains, as a launch should be. The 15/s falloff
+     * (vs the house 12.0) puts it under 0.02 %H by +250 ms, because a launch is a snap and a
+     * collapse is a rumble and they must not decay alike — and round 9 made that stick: a
+     * quieter collapse punch can no longer reset this decay back to the house rate.
      *
      * ── WHAT THE SLING MUST LOOK LIKE, AND THE NUMBER THAT SAYS SO (r6) ──────────
      * This burst has exactly one job at the sling and it is NOT to be the event there. The
@@ -1167,6 +1194,71 @@ export class FX {
     on('score', ({ point, amount, color }) => {
       if (!this.enabled) return;
       this.popup(point, `+${amount.toLocaleString('en-IN')}`, color ?? PALETTE.cream, 1.0);
+    });
+
+    /**
+     * THE DEBT SHRUGGING OFF A PAYMENT (level/blocks.js `fracture()`).
+     *
+     * Every other impact in this game is designed to feel like it LANDED. This one has to
+     * feel like it DIDN'T, while still reading as a real hit rather than a dropped frame —
+     * those are different failures and the second one looks like a bug. So:
+     *   · `cash` particles, because what absorbed the blow was money;
+     *   · a coral popup naming the interest, coral being the house colour for the scam;
+     *   · a SMALL punch (0.05 against a villain's 0.17). Not zero: a hit that moves the
+     *     camera not at all is indistinguishable from a hit the game missed. Small enough
+     *     that the body language is "swallowed", not "exploded";
+     *   · deliberately NO hitStop. Hit-stop is how this game says a blow mattered, so the
+     *     shrug is the one impact in the game that must not get any.
+     */
+    /**
+     * THE TRUTH ABOUT THE MAN YOU JUST HIT. Held far longer than any other popup in the game
+     * (3.4 s against the score's 1.0) and lifted clear of his own "+5,000", because this is the
+     * only text in the whole game that carries the point of it. Cream on the tower's colours,
+     * not coral: coral is the scam's colour here, and the correction should not wear it.
+     */
+    on('scamTruth', ({ point, text }) => {
+      if (!this.enabled || !text) return;
+      // barely drifts: it has to hang over him long enough to be read
+      this.popup({ x: point.x, y: point.y + 0.9, z: point.z ?? 0 }, text, PALETTE.cream, 3.4, 0.45, 250);
+    });
+
+    on('debtShrug', ({ point, label }) => {
+      if (!this.enabled) return;
+      this.burst('cash', point, this.n(RECIPE.cash.n), { up: 1.0, spread: 0.9, scale: 0.85 });
+      this.smoke(point, 0.8, 2);
+      this.rig.punch(0.05);
+      /**
+       * ONE STATEMENT PER BEAT, NOT ONE PER BLOCK. A single shot into the debt tower shrugs
+       * 6-13 times (measured, `_tools/scenarios/scam-sweep.mjs`), and captioning every one of
+       * them printed the same line over itself in an unreadable coral pile that ran off the
+       * right edge of the frame. The particles and the punch still fire per block — that is
+       * the physical feedback and it should be as busy as the collision was — but the WORDS
+       * are the teaching, and the teaching is said once.
+       */
+      if (world.simTime - this._lastShrugSay > 0.45) {
+        this._lastShrugSay = world.simTime;
+        this.popup(point, label ?? '+ interest', PALETTE.coral, 1.35);
+      }
+    });
+
+    /**
+     * THE WEAK POINT GOING DOWN — the frame the debt becomes breakable.
+     *
+     * This is the aha, so it is the loudest non-win beat in the game: it has to land hard
+     * enough that a player who has just watched three shots get swallowed understands, with
+     * no text, that the rules just changed. Hit-stop is the specific tool for that — it is
+     * what the rest of the game uses to mean "this mattered", and the shrug above withholds
+     * it precisely so that this moment owns it.
+     */
+    on('interestCleared', ({ point }) => {
+      if (!this.enabled) return;
+      this.burst('pop', point, this.n(RECIPE.pop.n), { up: 1.0, spread: 1.5, scale: 1.2 });
+      this.burst('spark', point, this.n(RECIPE.spark.n), { up: 0.8, spread: 1.6, scale: 1.1 });
+      this.smoke(point, 1.3, 3);
+      this.core(point, 0.7);
+      this.rig.punch(0.20);
+      world.hitStop = Math.max(world.hitStop, 12);
+      this.popup(point, 'INTEREST STOPPED', PALETTE.gold, 1.8);
     });
   }
 
@@ -1601,7 +1693,19 @@ export class FX {
   // -------------------------------------------------------------------------
   // SCORE POPUPS — DOM, projected each render so the text stays pin-sharp
   // -------------------------------------------------------------------------
-  popup(at, text, color = 0xfdf6ec, dur = 1.2) {
+  /**
+   * @param {number} vy  world units/second the popup drifts upward. The default 3.4 is tuned
+   *   for the ~1 s score pops; anything held longer MUST slow down or it leaves the frame — a
+   *   3.4 s line at 3.4 u/s climbs eleven units and is gone before it can be read, which is
+   *   exactly how the scam-truth line failed the first time it was wired up.
+   */
+  /**
+   * @param {number} minY  the screen row this popup may not rise above, in CSS px. Scores use
+   *   the default; the scam-truth line is pushed to its own lane lower down, because when a
+   *   villain dies near the ceiling EVERY popup clamps to the same band and the one sentence
+   *   that carries the teaching ends up overprinted by two score numbers.
+   */
+  popup(at, text, color = 0xfdf6ec, dur = 1.2, vy = 3.4, minY = 104) {
     const layer = document.getElementById('fx-layer');
     if (!layer) return;
     const el = document.createElement('div');
@@ -1609,7 +1713,7 @@ export class FX {
     el.textContent = text;
     el.style.color = '#' + color.toString(16).padStart(6, '0');
     layer.appendChild(el);
-    this.popups.push({ el, x: at.x, y: at.y + 0.4, z: at.z ?? 0, vy: 3.4, t: 0, dur });
+    this.popups.push({ el, x: at.x, y: at.y + 0.4, z: at.z ?? 0, vy, t: 0, dur, minY });
   }
 
   /** Called from render(), not from the fixed step — this is pure presentation. */
@@ -1619,8 +1723,21 @@ export class FX {
     for (const p of this.popups) {
       v.set(p.x, p.y, p.z).project(camera);
       const k = p.t / p.dur;
+      /**
+       * CLAMPED INTO THE FRAME. The projection used to write raw screen coordinates, so a
+       * popup born above the top of the view rendered at a negative y and was simply never
+       * seen — silently. That cost every kill at the top of a level its "+5,000", and it was
+       * why the scam-truth line appeared to do nothing at all: the boss of l3 dies near the
+       * ceiling, so both his score and his lesson were drawn off-screen.
+       *
+       * A popup that cannot be read is worth nothing, so an off-frame one is pinned just
+       * inside the edge rather than dropped. The top margin clears the HUD's own chips; a
+       * number sitting under the level card is as unreadable as one outside the window.
+       */
+      const sx = Math.min(Math.max((v.x * 0.5 + 0.5) * w, 70), w - 70);
+      const sy = Math.min(Math.max((-v.y * 0.5 + 0.5) * h, p.minY ?? 104), h - 40);
       p.el.style.transform =
-        `translate(-50%,-50%) translate(${(v.x * 0.5 + 0.5) * w}px, ${(-v.y * 0.5 + 0.5) * h}px) ` +
+        `translate(-50%,-50%) translate(${sx}px, ${sy}px) ` +
         `scale(${0.72 + 0.42 * Math.min(1, k * 5) - 0.14 * k})`;
       p.el.style.opacity = String(k < 0.72 ? 1 : 1 - (k - 0.72) / 0.28);
     }
@@ -1638,5 +1755,8 @@ export class FX {
     // the first star of the next run, which is exactly the class of bug the r5 notes record
     // (`structure.lean` kept its state across reset and every shot diverged after it).
     this._cores.length = 0;
+    // Same hazard, same fix: world.simTime restarts at 0 on every level build, so a throttle
+    // left holding a stale positive time would swallow the NEXT level's first shrug caption.
+    this._lastShrugSay = -99;
   }
 }

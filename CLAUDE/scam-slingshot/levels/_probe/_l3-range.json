@@ -1,0 +1,14 @@
+{
+  "id": "_l3-range",
+  "name": "PROBE — open ground, for measuring L3's catch envelope",
+  "chapter": 0,
+  "sky": "morning",
+  "par": 1,
+  "teaches": "Harness fixture: where does a shot actually arrive, at every height a pyramid has?",
+  "ammo": ["sip", "sip", "sip", "sip", "sip", "sip", "sip", "sip"],
+  "blocks": [],
+  "villains": [
+    { "type": "lotteryUncle", "x": 26.00, "y": 0.56 }
+  ],
+  "props": []
+}

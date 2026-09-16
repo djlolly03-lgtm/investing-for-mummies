@@ -1,6 +1,6 @@
 {
- "phase": "Re-scored \u2014 3.75 \u2192 6.75",
- "phaseNote": "Every slice moved. Two now beat the benchmark. Three critics independently named the same root cause: the camera never fills the screen.",
+ "phase": "PAUSED \u2014 5 items to go",
+ "phaseNote": "Stopped at your request. Build verified clean after the stop: 19 modules parse, all gates green, 51-turn game, 0 errors. docs/RESUME-HERE.md has tonight's list.",
  "pieces": [
   {
    "name": "endgame 6\u21927.5",
@@ -291,6 +291,18 @@
   {
    "t": "09:37",
    "m": "<b>One real bug nobody had caught: no Devanagari typeface is loaded.</b> index.html declares only Nunito and Lora, so every Hindi glyph the audience reads falls back to an uncontrolled OS font, and Lora italic becomes a synthetic oblique. The English build has two curated fonts; the Hindi build has none."
+  },
+  {
+   "t": "17:20",
+   "m": "<b>Paused.</b> Re-verified after stopping \u2014 all 19 modules parse, all four gates green, full 51-turn game, zero errors. Nothing left half-edited."
+  },
+  {
+   "t": "17:21",
+   "m": "<b>Devanagari fonts landed</b> \u2014 Noto Sans Devanagari 400\u2013900 for UI, Martel as the Devanagari display face pairing with Lora, so Hindi no longer falls back to an OS font and Lora italic is no longer faked into an oblique. That is 1 of the 6 round-2 items done; <b>5 left for tonight.</b>"
+  },
+  {
+   "t": "17:22",
+   "m": "<b>Changed how the waves run.</b> Six agents each driving a headless Chrome thrashed this 10-core box \u2014 every one stalled 3\u20134 times and the wave spent 1.35M tokens to land one file. Rewritten to run three at a time in two sequential batches."
   }
  ]
 }

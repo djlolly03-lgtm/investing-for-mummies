@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Wheel of Gold — Investing for Mummies</title>
 <link rel="icon" type="image/png" href="/ifm-round.png">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,600;1,500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,600;1,500&family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 :root{
   --mint:#bde9e4;--mint-lt:#e0f3f0;--teal:#2a9d8f;
@@ -1596,7 +1596,211 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 .r72-btn-play-again{display:block;width:100%;margin-top:10px;padding:10px;background:var(--mint-lt);color:var(--navy);border:2px solid var(--mint);border-radius:14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.88rem;cursor:pointer;}
 .r72-btn-play-again:hover{background:var(--mint);}
 
+/* ══════════════════════════════════════════════════════════════
+   TREASURE-MEDALLION RESKIN v2 — Wheel of Gold / Wheel of Silver only
+   Built against two approved concept photos (wax-seal wheel card +
+   pedestal scenario card). Reconciled into one design: the wheel stays
+   (game's core identity) with real cropped-photo wax seals as the
+   choice buttons (they read better as compact accents beside a wheel
+   than 3-column pedestals do), and the wheel medallion itself now uses
+   8 real cropped relief-icon photos instead of raw emoji.
+   Assets: CLAUDE/wheel-assets/gold/*.png (see WOG_ICON map in JS).
+   Everything below overrides the base IFM template via cascade order.
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --parch:#ecdfbc;--parch-lt:#f6efd9;--parch-dk:#d8c290;
+  --wood:#6b4226;--wood-lt:#8a5a35;--wood-dk:#432814;
+  --stone:#9aa3ac;--stone-lt:#c7cdd4;--stone-dk:#5c636b;
+  --seal-green:#2f7a4a;--seal-green-dk:#184a2c;
+  --seal-red:#a53a2a;--seal-red-dk:#6e2418;
+  --gold-deep:#a97a25;--gold-hi:#f4dd94;
+  --wog-assets:'/wheel-assets/gold/';
+}
+body{
+  background:
+    radial-gradient(ellipse 700px 420px at 18% 8%, rgba(255,255,255,0.35), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 85% 15%, rgba(0,0,0,0.06), transparent 55%),
+    radial-gradient(ellipse 800px 600px at 50% 100%, rgba(0,0,0,0.08), transparent 60%),
+    linear-gradient(160deg,#c9cdd2 0%,#b7bcc3 45%,#a7adb5 100%);
+}
+.container{position:relative;}
+/* parchment/wood card frame, replaces the plain white mint-bordered card everywhere on this page */
+.card{
+  background:
+    radial-gradient(ellipse 420px 200px at 20% 0%, rgba(255,255,255,0.4), transparent 60%),
+    linear-gradient(160deg,var(--parch-lt),var(--parch) 55%,var(--parch-dk) 100%);
+  border:none;
+  border-radius:16px;
+  padding:18px 18px;
+  box-shadow:
+    0 0 0 3px var(--wood-dk),
+    0 0 0 7px var(--wood-lt),
+    0 0 0 9px var(--gold-deep),
+    0 10px 26px rgba(0,0,0,0.28);
+  color:#3a2c18;
+  position:relative;
+}
+.card-title{color:var(--wood-dk);font-family:'Cinzel',serif;font-weight:700;letter-spacing:0.3px;}
+.card p, .card div{color:#4a3a22;}
+.card .ch-label, .card .muted, .card p[style*="var(--muted)"]{color:#6b5a3e!important;}
+/* corner flourishes — real cropped photo asset, mirrored into all 4 corners */
+.card::before,.card::after,#wheelOverlay::before,#wheelOverlay::after{
+  content:'';position:absolute;width:34px;height:34px;pointer-events:none;z-index:2;
+  background:url('/wheel-assets/gold/corner-flourish.png') center/contain no-repeat;
+  opacity:0.85;filter:drop-shadow(0 1px 1px rgba(0,0,0,0.25));
+}
+.card::before{top:6px;left:6px;}
+.card::after{top:6px;right:6px;transform:scaleX(-1);}
+#wheelOverlay::before{top:8px;left:8px;}
+#wheelOverlay::after{top:8px;right:8px;transform:scaleX(-1);}
 
+/* ── ORNATE HEADER PLAQUE ── */
+.score-banner{
+  background:linear-gradient(160deg,#1f3a54,#122234 70%);
+  border:none;
+  border-radius:14px;
+  box-shadow:
+    0 0 0 2px var(--gold-hi),
+    0 0 0 4px var(--gold-deep),
+    0 0 0 6px var(--wood-dk),
+    0 8px 22px rgba(0,0,0,0.35);
+  position:relative;
+}
+.score-banner::before,.score-banner::after{content:'';position:absolute;left:14px;right:14px;height:4px;pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent,rgba(244,221,148,0.85) 8%,rgba(244,221,148,0.85) 92%,transparent) top/100% 1px no-repeat,
+    linear-gradient(90deg,transparent,rgba(244,221,148,0.4) 8%,rgba(244,221,148,0.4) 92%,transparent) bottom/100% 1px no-repeat;
+}
+.score-banner::before{top:6px;}
+.score-banner::after{bottom:6px;}
+.sb-text h3{font-family:'Cinzel',serif;font-weight:800;letter-spacing:0.3px;
+  background:linear-gradient(180deg,#fdf3d0,var(--gold-hi) 45%,var(--gold-deep) 90%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  text-shadow:0 1px 0 rgba(0,0,0,0.35);filter:drop-shadow(0 1px 1px rgba(0,0,0,0.3));}
+.sb-text h3 span{-webkit-text-fill-color:var(--gold-hi);background:none;}
+.sb-text p{color:rgba(244,221,148,0.75)!important;}
+.sb-score{display:flex;flex-direction:column;align-items:flex-end;line-height:1;}
+.sb-score::before{content:'POINTS';font-family:'Nunito',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:2px;color:rgba(244,221,148,0.65);margin-bottom:2px;}
+.sb-score{text-shadow:0 2px 8px rgba(0,0,0,0.4);}
+
+/* ── COIN-STYLE PROGRESS DOTS ── */
+.step-row{gap:8px;padding-top:14px;}
+.step-dot{
+  width:42px;height:42px;border-width:0;position:relative;
+  background:radial-gradient(circle at 32% 28%, #d9b877, #a97a25 55%, #6b4c14 100%);
+  color:#4a3308;box-shadow:0 2px 5px rgba(0,0,0,0.35),inset 0 1px 1px rgba(255,255,255,0.45),inset 0 -2px 3px rgba(0,0,0,0.35);
+  font-family:'Cinzel',serif;
+}
+.step-dot.done{background:radial-gradient(circle at 32% 28%, #a8dab8, #2f7a4a 55%, #184a2c 100%);color:#eafff0;box-shadow:0 2px 5px rgba(0,0,0,0.35),inset 0 1px 1px rgba(255,255,255,0.4),inset 0 -2px 3px rgba(0,0,0,0.3),0 0 0 2px rgba(47,122,74,0.35);}
+.step-dot.wrong-dot{background:radial-gradient(circle at 32% 28%, #e0a89c, #a53a2a 55%, #6e2418 100%);color:#fff0ec;box-shadow:0 2px 5px rgba(0,0,0,0.35),inset 0 1px 1px rgba(255,255,255,0.4),inset 0 -2px 3px rgba(0,0,0,0.3),0 0 0 2px rgba(165,58,42,0.35);}
+.step-dot.active{
+  background:radial-gradient(circle at 32% 28%, var(--gold-hi), var(--gold-deep) 55%, #6b4c14 100%);
+  color:#3a2708;transform:scale(1.14);
+  box-shadow:0 3px 10px rgba(0,0,0,0.4),inset 0 1px 1px rgba(255,255,255,0.6),inset 0 -2px 3px rgba(0,0,0,0.35),0 0 0 2px var(--gold-hi),0 0 14px rgba(244,221,148,0.55);
+}
+.step-dot.active::before{
+  content:'▼';position:absolute;top:-15px;left:50%;transform:translateX(-50%);
+  font-size:0.72rem;color:var(--gold-deep);text-shadow:0 1px 2px rgba(0,0,0,0.35);
+}
+
+/* ── WHEEL CARD: stone recess the medallion sits in, with real gold-coin clutter at the base ── */
+#wogGame .card:has(#wheelWrap){
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 42%, rgba(0,0,0,0.18), transparent 70%),
+    linear-gradient(160deg,var(--stone-lt),var(--stone) 55%,var(--stone-dk) 100%);
+  padding:26px 16px 34px;
+  box-shadow:0 0 0 3px var(--wood-dk),0 0 0 7px var(--wood-lt),0 0 0 9px var(--gold-deep),0 10px 26px rgba(0,0,0,0.28);
+  overflow:visible;
+}
+#wogGame .card:has(#wheelWrap)::before,#wogGame .card:has(#wheelWrap)::after{content:none;}
+.wog-clutter{position:absolute;bottom:-16px;width:76px;height:66px;background-size:contain;background-repeat:no-repeat;background-position:bottom;pointer-events:none;z-index:3;filter:drop-shadow(0 4px 6px rgba(0,0,0,0.35));}
+.wog-clutter.wc-left{left:6px;background-image:url('/wheel-assets/gold/coin-stack.png');}
+.wog-clutter.wc-right{right:6px;background-image:url('/wheel-assets/gold/gold-bar-pair.png');width:92px;}
+@media(max-width:640px){.wog-clutter{width:46px;height:42px;bottom:-10px;}.wog-clutter.wc-right{width:56px;}}
+.wheel-pointer svg polygon{filter:drop-shadow(0 1px 1px rgba(0,0,0,0.5));}
+
+/* ── WAX-SEAL UP/DOWN BUTTONS — real cropped photo seals, compact accents beside the wheel ── */
+.wog-side-wrap{flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+.wog-choice{
+  border-radius:50%;
+  width:min(96px,100%);aspect-ratio:1/1;height:auto;
+  padding:0;border:none;
+  background-size:cover;background-position:center;
+  box-shadow:0 6px 16px rgba(0,0,0,0.4),0 0 0 2px rgba(0,0,0,0.15);
+  transition:transform .22s,box-shadow .22s,filter .22s;
+}
+.wog-up{background-image:url('/wheel-assets/gold/seal-up.png');}
+.wog-dn{background-image:url('/wheel-assets/gold/seal-down.png');}
+.wog-choice:hover:not(:disabled){transform:scale(1.08) translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,0.45),0 0 0 3px var(--gold-hi);}
+.wog-choice .wc-arrow{display:none;}
+.wog-choice .wc-label{display:none;}
+.wog-choice.correct{outline:4px solid var(--gold-hi)!important;transform:scale(1.12)!important;box-shadow:0 10px 28px rgba(244,221,148,0.6)!important;filter:brightness(1.08);}
+.wog-choice.wrong{opacity:0.4;transform:scale(0.92)!important;filter:grayscale(0.4) brightness(0.8);}
+.wog-seal-caption{font-family:'Nunito',sans-serif;font-size:0.66rem;font-weight:900;letter-spacing:0.4px;text-transform:uppercase;color:#3a2c18;text-align:center;line-height:1.25;max-width:96px;}
+@media(max-width:640px){
+  .wog-side-wrap{width:64px;}
+  .wog-choice{width:min(58px,100%);}
+  .wog-seal-caption{font-size:0.54rem;max-width:60px;}
+}
+
+/* ── SCENARIO CARD: parchment tablet over the wheel, wood + gold triple frame ── */
+#wheelOverlay{
+  background:
+    radial-gradient(ellipse 300px 180px at 30% 15%, rgba(255,255,255,0.35), transparent 60%),
+    linear-gradient(165deg,var(--parch-lt),var(--parch) 55%,var(--parch-dk) 100%)!important;
+  box-shadow:
+    0 0 0 3px var(--wood-dk),
+    0 0 0 7px var(--wood-lt),
+    0 0 0 9px var(--gold-deep),
+    0 14px 30px rgba(0,0,0,0.4)!important;
+  border-radius:10px!important;
+}
+.wov-eyebrow{font-size:0.72rem;font-weight:800;letter-spacing:2px;color:var(--gold-deep);margin-bottom:2px;font-family:'Cinzel',serif;}
+.wov-title{color:var(--wood-dk);text-shadow:none;font-family:'Cinzel',serif;}
+.wov-desc{color:#4a3a22!important;}
+.wov-prompt{color:#6b5a3e!important;}
+.wov-icon{width:64px;height:64px;margin:0 auto 4px;background-size:contain;background-repeat:no-repeat;background-position:center;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.3));flex-shrink:0;}
+.wov-icon.emoji-fallback{font-size:3.2rem;width:auto;height:auto;background:none;}
+#wheelOverlay{overflow-y:auto;}
+@media(max-width:480px){
+  .wov-icon{width:38px;height:38px;margin-bottom:2px;}
+  .wov-icon.emoji-fallback{font-size:2rem;}
+  .wov-title{font-size:1.05rem!important;margin-bottom:3px!important;}
+  .wov-desc{font-size:0.82rem!important;line-height:1.3!important;margin:0 auto 6px!important;}
+  .wov-prompt{font-size:0.68rem!important;}
+  .wov-eyebrow{font-size:0.6rem!important;}
+  #wheelOverlay{padding:10px 8px;gap:3px;}
+}
+
+/* ── RESULT POPUP: parchment scenario/explanation boxes ── */
+.popup{box-shadow:0 0 0 3px var(--wood-dk),0 0 0 7px var(--wood-lt),0 0 0 9px var(--gold-deep),0 20px 60px rgba(0,0,0,0.4);}
+.popup-body{background:linear-gradient(165deg,var(--parch-lt),var(--parch));}
+.popup-body>div[style*="border:2px solid var(--mint)"]{
+  background:linear-gradient(160deg,var(--parch-lt),var(--parch-dk))!important;
+  border:none!important;
+  box-shadow:0 0 0 2px var(--wood-lt),0 0 0 3px var(--gold-deep)!important;
+}
+
+/* ── FINAL SCREEN: extend the treasure look for consistency ── */
+.final-hero{background:linear-gradient(160deg,#1f3a54,#122234 70%);box-shadow:0 0 0 2px var(--gold-hi),0 0 0 4px var(--gold-deep),0 0 0 6px var(--wood-dk),0 8px 22px rgba(0,0,0,0.35);position:relative;}
+.final-hero h2{font-family:'Cinzel',serif;}
+.score-ring{background:radial-gradient(circle at 35% 30%, var(--gold-hi), var(--gold-deep) 60%, var(--wood-dk) 100%);border-color:var(--gold-hi)!important;box-shadow:0 0 0 3px var(--wood-dk);}
+.score-ring .sr-num{color:#3a2708!important;text-shadow:none;font-family:'Cinzel',serif;}
+.score-ring .sr-max{color:rgba(58,39,8,0.65)!important;}
+.chip{background:linear-gradient(160deg,var(--parch-lt),var(--parch-dk))!important;border:none!important;box-shadow:0 0 0 2px var(--wood-lt),0 0 0 3px var(--gold-deep),0 3px 8px rgba(0,0,0,0.2);}
+.chip .ch-val{color:var(--wood-dk)!important;}
+.chip .ch-label{color:#6b5a3e!important;}
+.chip.green{background:linear-gradient(160deg,#dcefe0,#b7d9c0)!important;}
+.badge{background:linear-gradient(160deg,var(--parch-lt),var(--parch-dk))!important;border:1.5px solid var(--gold-deep)!important;box-shadow:0 3px 8px rgba(0,0,0,0.2);}
+.badge .b-name{color:var(--wood-dk)!important;}
+.feedback.info{background:linear-gradient(160deg,var(--parch-lt),var(--parch-dk))!important;border-left:4px solid var(--gold-deep)!important;color:#3a2c18!important;}
+.fb-head{color:var(--wood-dk);}
+.quote-box{background:linear-gradient(160deg,#1f3a54,#122234 70%)!important;box-shadow:0 0 0 2px var(--gold-hi),0 0 0 4px var(--gold-deep);}
+
+/* ── BUTTONS: gold-ribbon treatment ── */
+.btn-gold{background:linear-gradient(180deg,var(--gold-hi),var(--gold) 55%,var(--gold-deep) 100%);box-shadow:0 0 0 2px var(--wood-dk),0 4px 14px rgba(0,0,0,0.3);color:#3a2708;text-shadow:0 1px 0 rgba(255,255,255,0.3);}
+.btn-primary{box-shadow:0 0 0 2px var(--wood-dk),0 4px 14px rgba(0,0,0,0.3);}
+.btn-next-game{box-shadow:0 0 0 2px var(--wood-dk),0 4px 14px rgba(0,0,0,0.3);}
 </style>
 <!-- Google Analytics (GA4) — same property as investingformummies.com, so website + games
      report in one place. content_group:'Games' makes "how many reached the games" a one-line report. -->
@@ -1661,6 +1865,8 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 
   <!-- Wheel + side buttons -->
   <div class="card" style="padding:10px 12px;text-align:center;">
+    <div class="wog-clutter wc-left" aria-hidden="true"></div>
+    <div class="wog-clutter wc-right" aria-hidden="true"></div>
     <div style="display:flex;align-items:stretch;justify-content:center;gap:8px;">
       <!-- UP button (left) -->
       <div id="upBtnWrap" class="wog-side-wrap"></div>
@@ -1688,7 +1894,7 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
     <!-- Spin button -->
     <div id="spinArea" style="margin-top:8px;">
       <button class="btn btn-gold" onclick="spinWheel()" id="spinBtn" style="padding:18px 52px;font-size:1.3rem;border-radius:14px;">🎡 SPIN THE WHEEL</button>
-      <div style="margin-top:9px;font-size:1.15rem;color:var(--muted);font-weight:700;" id="remainLabel">8 factors remaining</div>
+      <div style="margin-top:9px;font-size:1.15rem;color:#3a2c18;font-weight:700;" id="remainLabel">8 factors remaining</div>
     </div>
   </div>
 </div>
@@ -1781,18 +1987,34 @@ const DATA={
   ]
 };
 const SEGS_GOLD=[
-  {bg:"#1a3a5c",bg2:"#2d5580"},{bg:"#2e9e78",bg2:"#40b890"},
-  {bg:"#c9a84c",bg2:"#dabb65"},{bg:"#3d80aa",bg2:"#5598c0"},
-  {bg:"#223e5e",bg2:"#2e5478"},{bg:"#27AE60",bg2:"#35c270"},
-  {bg:"#a87838",bg2:"#c09050"},{bg:"#267888",bg2:"#3890a0"},
+  {bg:"#3d5a78",bg2:"#547394"},{bg:"#b8944a",bg2:"#d0ac66"},
+  {bg:"#8f97a0",bg2:"#aab1b8"},{bg:"#5a7a4a",bg2:"#749a62"},
+  {bg:"#8a6a30",bg2:"#a7864a"},{bg:"#2f4a58",bg2:"#44677a"},
+  {bg:"#a9843c",bg2:"#c49f58"},{bg:"#4a5f72",bg2:"#647a90"},
 ];
 const SEGS_SILVER=[
-  {bg:"#1a3a5c",bg2:"#2d5580"},{bg:"#2e9e78",bg2:"#40b890"},
-  {bg:"#8890a0",bg2:"#a0a8b6"},{bg:"#3d80aa",bg2:"#5598c0"},
-  {bg:"#223e5e",bg2:"#2e5478"},{bg:"#27AE60",bg2:"#35c270"},
-  {bg:"#6e7888",bg2:"#8890a0"},{bg:"#267888",bg2:"#3890a0"},
+  {bg:"#4a5560",bg2:"#647080"},{bg:"#9aa3ac",bg2:"#b8c0c8"},
+  {bg:"#6b7580",bg2:"#8792a0"},{bg:"#5a7a4a",bg2:"#749a62"},
+  {bg:"#3d5a78",bg2:"#547394"},{bg:"#2f4a58",bg2:"#44677a"},
+  {bg:"#7a828c",bg2:"#98a0aa"},{bg:"#4a5f72",bg2:"#647a90"},
 ];
 const INS={gold:"The Golden Rule: Gold thrives on bad news and struggles when the economy is healthy.",silver:"Jewellery is NOT an investment! Making charges, storage & GST make it hard to liquidate."};
+
+/* ═══ REAL RELIEF-ICON PHOTOS (cropped from the approved gold-medallion concept photo) ═══
+   Keyed by each gold factor's "short" label. Wheel of Silver has no matching source photo,
+   so it intentionally falls back to the original emoji rendering below (WOG_ICON[short]
+   simply won't exist for silver's short codes). */
+const WOG_ICON_BASE='/wheel-assets/gold/';
+const WOG_ICON={
+  "War & Crisis":"icon-arrows.png",
+  "High Interest":"icon-scale.png",
+  "Inflation":"icon-flame.png",
+  "Strong Dollar":"icon-barchart.png",
+  "Low Rates":"icon-campfire.png",
+  "Market Boom":"icon-rocket.png",
+  "Weak Dollar":"icon-globe.png",
+  "Gold Dumped":"icon-gold-bars.png",
+};
 
 let metal,cards,rotation,spinning,landed,phase,done,pts,correct,streak,best,results,wogEntryGame;
 
@@ -1859,18 +2081,54 @@ function drawWheel(){
     html+=`<circle cx="${px}" cy="${py}" r="5" fill="${pegFill}" stroke="${pegStroke}" stroke-width="1"/>`;
     html+=`<circle cx="${px-1.2}" cy="${py-1.2}" r="2" fill="${pegHighlight}" opacity="0.5"/>`;
   }
-  // Segments
+  // Segments — gold uses a shared warm-gold relief texture (matching the medallion photo);
+  // silver keeps its original per-segment cool-tone gradient array since it has no photo source.
+  if(isGold){
+    html+=`<defs><radialGradient id="goldSegFill" cx="42%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#f6e2a0"/><stop offset="35%" stop-color="#e0b656"/>
+      <stop offset="70%" stop-color="#b98a3a"/><stop offset="100%" stop-color="#8a6420"/>
+    </radialGradient></defs>`;
+  }
   for(let i=0;i<n;i++){
     const a1=i*arc-Math.PI/2, a2=a1+arc;
     const x1=cx+R*Math.cos(a1),y1=cy+R*Math.sin(a1);
     const x2=cx+R*Math.cos(a2),y2=cy+R*Math.sin(a2);
     const mid=a1+arc/2, col=(isGold?SEGS_GOLD:SEGS_SILVER)[i], c=cards[i];
-    const fill=c.used?"#c0c8d0":col.bg;
-    html+=`<path d="M${cx},${cy} L${x1},${y1} A${R},${R} 0 0,1 ${x2},${y2} Z" fill="${fill}" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>`;
-    // Icon only — large, centered in segment
-    const rot=(mid*180/Math.PI)+90;
-    const ix=cx+R*.73*Math.cos(mid),iy=cy+R*.73*Math.sin(mid);
-    html+=`<text x="${ix}" y="${iy}" text-anchor="middle" dominant-baseline="central" font-size="38" transform="rotate(${rot},${ix},${iy})" opacity="${c.used?0.35:1}">${c.icon}</text>`;
+    const pathD=`M${cx},${cy} L${x1},${y1} A${R},${R} 0 0,1 ${x2},${y2} Z`;
+    const fill=isGold?'url(#goldSegFill)':(c.used?"#c0c8d0":col.bg);
+    html+=`<clipPath id="wedgeClip${i}"><path d="${pathD}"/></clipPath>`;
+    html+=`<path d="${pathD}" fill="${fill}" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>`;
+    const iconFile=isGold?WOG_ICON[c.short]:null;
+    const ix=cx+R*.62*Math.cos(mid),iy=cy+R*.62*Math.sin(mid);
+    // Oversized so the image's own square edge always falls outside the clipped wedge —
+    // the wedge is filled edge-to-edge by real photo texture with no visible seam, only
+    // the wedge's own thin divider stroke shows between segments (matches the reference).
+    const isz=isGold?R*2.15:0;
+    if(iconFile){
+      // Real cropped relief-icon photo, kept upright (the source medallion photo keeps every
+      // icon vertical regardless of wedge position — it does NOT rotate icons with the wheel).
+      html+=`<g clip-path="url(#wedgeClip${i})" opacity="${c.used?0.4:1}">
+        <image href="${WOG_ICON_BASE}${iconFile}" x="${ix-isz/2}" y="${iy-isz/2}" width="${isz}" height="${isz}" preserveAspectRatio="xMidYMid slice"/>
+      </g>`;
+      if(c.used)html+=`<path d="${pathD}" fill="#1a3a5c" opacity="0.28"/>`;
+    }else{
+      // Fallback (Wheel of Silver, or any factor without a matching source photo): emoji glyph.
+      const rot=(mid*180/Math.PI)+90;
+      html+=`<text x="${ix}" y="${iy}" text-anchor="middle" dominant-baseline="central" font-size="38" transform="rotate(${rot},${ix},${iy})" opacity="${c.used?0.35:1}">${c.icon}</text>`;
+    }
+  }
+  // Unifying studio-light overlay across the whole face — blends the 8 individually-lit
+  // icon photos into one coherent lit medallion surface (matches the reference photo's
+  // single soft top-left highlight + gentle rim falloff) instead of a patchwork of tiles.
+  if(isGold){
+    html+=`<defs>
+      <radialGradient id="wheelLightOv" cx="38%" cy="30%" r="80%">
+        <stop offset="0%" stop-color="#fff8e0" stop-opacity="0.55"/>
+        <stop offset="45%" stop-color="#fff8e0" stop-opacity="0.12"/>
+        <stop offset="100%" stop-color="#3a2708" stop-opacity="0.28"/>
+      </radialGradient>
+    </defs>`;
+    html+=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="url(#wheelLightOv)" style="mix-blend-mode:soft-light" pointer-events="none"/>`;
   }
   // Center hub
   html+=`<circle cx="${cx}" cy="${cy}" r="47" fill="#1a3a5c" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.15))"/>`;
@@ -1962,31 +2220,28 @@ function spinWheel(){
 function showChoiceUI(){
   const c=cards[landed];
   const mn=metal==='gold'?'Gold':'Silver';
+  const iconFile=metal==='gold'?WOG_ICON[c.short]:null;
+  const iconHtml=iconFile
+    ?`<div class="wov-icon" style="background-image:url('${WOG_ICON_BASE}${iconFile}')"></div>`
+    :`<div class="wov-icon emoji-fallback">${c.icon}</div>`;
   // Show scenario overlay over the wheel
   const ov=document.getElementById('wheelOverlay');
   ov.innerHTML=`
-    <div class="wov-icon">${c.icon}</div>
+    <div class="wov-eyebrow">SCENARIO</div>
+    ${iconHtml}
     <div class="wov-title">${c.short}</div>
     <div class="wov-desc">${c.f}</div>
     <div class="wov-prompt">↕ Does ${mn} go UP or DOWN?</div>
   `;
   ov.classList.add('show');
-  // UP button (left of wheel)
+  // UP button (left of wheel) — real cropped wax-seal photo, caption below like the concept card
   document.getElementById('upBtnWrap').innerHTML=`
-    <button class="wog-choice wog-up fade-up" onclick="makeChoice('up')" id="upBtn">
-      <svg class="wc-arrow" viewBox="0 0 44 52" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="22,4 42,24 30,24 30,48 14,48 14,24 2,24" filter="drop-shadow(0 2px 3px rgba(0,0,0,0.25))"/>
-      </svg>
-      <span class="wc-label">Price<br>Goes UP</span>
-    </button>`;
+    <button class="wog-choice wog-up fade-up" onclick="makeChoice('up')" id="upBtn" aria-label="Price goes up"></button>
+    <div class="wog-seal-caption">Price<br>Goes Up</div>`;
   // DOWN button (right of wheel)
   document.getElementById('dnBtnWrap').innerHTML=`
-    <button class="wog-choice wog-dn fade-up" onclick="makeChoice('down')" id="dnBtn">
-      <svg class="wc-arrow" viewBox="0 0 44 52" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="22,48 42,28 30,28 30,4 14,4 14,28 2,28" filter="drop-shadow(0 2px 3px rgba(0,0,0,0.25))"/>
-      </svg>
-      <span class="wc-label">Price<br>Goes DOWN</span>
-    </button>`;
+    <button class="wog-choice wog-dn fade-up" onclick="makeChoice('down')" id="dnBtn" aria-label="Price goes down"></button>
+    <div class="wog-seal-caption">Price<br>Goes Down</div>`;
 }
 
 /* ═══ MAKE CHOICE ═══ */

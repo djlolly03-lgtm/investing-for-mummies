@@ -75,6 +75,177 @@ const MAX_DEBRIS = 130;
 const DEBRIS_LIFE = 9.0;
 
 /**
+ * ── THE FRACTURE BURST (PW r5) ──────────────────────────────────────────────
+ * The separation speed a fracture ASKS for, before the ledger prices it. These three are
+ * the numbers the cut plans were authored against and they are unchanged from the round
+ * that set them; what changed is that the ask is now momentum-neutral and paid for.
+ * `massK` (below, at the call site) still gives a chip more of it than a half-beam, which
+ * is what makes the cone read "biggest lowest, smallest highest and furthest".
+ */
+const BURST_V0 = 1.6, BURST_VK = 0.34, BURST_V_MAX = 9.5;
+/**
+ * ── PW r9: PEAK DIFFERENTIAL SPIN THE BURST ASKS FOR, rad/s ──────────────────
+ * before neutralisation and pricing.
+ *
+ * It was 9, and 9 was the single biggest line in the burst's energy bill: MEASURED
+ * (`_tools/scenarios/pw-r9-frac.mjs`, 34 fractures on the 6-shot l1 cohort) **spin was
+ * 43.9 % of everything the burst spent**, and it is the half of the fan the player cannot
+ * read. `½·I·w²` runs two orders of magnitude from a chip to a half-beam, so the bill for
+ * it landed on the two heaviest pieces of every fracture — which are also the two that
+ * barely move (0.85 and 0.75 m/s against the light chips' 1.28).
+ *
+ * Cutting it to 4 is not a reduction in the fan, and that is the point:
+ *   · on a fracture where the blow bound binds it costs NOTHING — the same budget buys
+ *     more separation, and the light chips the eye actually follows go 1.170 -> 1.268 m/s;
+ *   · on one where it does not bind it is a straight saving.
+ * Measured across both: burst spend **43.07 -> 22.51 J**, spin share of the bill
+ * **43.9 % -> 16.9 %**, mean separation speed 1.054 -> **1.074 m/s** (up), mean tumble
+ * 3.94 -> 1.99 rad/s — still a third of a revolution per second on a piece with a 1-2 s
+ * flight, so the rubric's "pieces tumble on independent random spin, no two share a
+ * rotation" is a jitter about this number and is unaffected.
+ *
+ * 9 is kept for the pre-r5 arm below, which must keep reproducing the numbers it was
+ * recorded against.
+ */
+const BURST_SPIN = 4, BURST_SPIN_LEGACY = 9;
+/**
+ * How much of the burst points along the blow rather than outward from the contact.
+ *
+ * It was 0.65 along / 0.35 outward, authored when the burst was free: the along-the-blow
+ * share was what read as "blown through rather than exploded from within". That share is
+ * now the wrong tool for that job and an expensive one. A component every fragment shares
+ * is COMMON MODE — it is the debris cloud's centre-of-mass velocity, i.e. pure invented
+ * momentum, and it is exactly what the neutralisation below removes; paying for it would be
+ * paying for a rocket. The "blown through" read is carried instead by the parent's own
+ * velocity, which the blow has already delivered before the contact event fires (measured
+ * on l1: the struck block is doing 2.6-5.7 m/s at the instant it fractures).
+ *
+ * What is left for the burst to do is SEPARATE the pieces, and separation is radial. 0.30
+ * keeps enough forward lean that the fan is asymmetric — pieces on the far side of the
+ * contact get more than pieces behind it — without spending the budget on common mode.
+ */
+const BURST_ALONG = 0.30;
+/**
+ * ── PW r9: THE BURST'S ASK IS AN ENERGY, AND IT IS THE BLOW'S ENERGY ─────────
+ *
+ * Everything above authors the burst as a SPEED (`BURST_V0/VK/V_MAX`) and a SPIN
+ * (`BURST_SPIN`). A momentum-neutral burst costs exactly its own kinetic energy in the
+ * parent's frame — the cross term vanishes by construction, measured at `Σ|C| = 0.0000 J`
+ * over 35 fractures — so an ask stated in m/s and rad/s costs `½·m·b² + ½·I·bs²`, i.e.
+ * **whatever the block happens to weigh**. Measured (`_tools/scenarios/pw-r9-frac.mjs`,
+ * 35 fractures on the 6-shot l1 cohort): the same authored event cost **0.07 J on a
+ * 0.30 kg glass mullion and 10.97 J on a 1.375 kg wood beam — a 157x spread** for a fan
+ * the player cannot tell apart. That is the same defect PW r2 removed from the damage
+ * model (a Δv, not an impulse) and PW r8 removed from the wave (a momentum the donor
+ * holds, not a Δv the recipient wants). Third instance, and the last one in this lane.
+ *
+ * The bound that is both physical and attributable: the separation energy of a fracture is
+ * the strain energy the BLOW put into the block, so the ask is a share of the energy that
+ * blow actually dissipated (`lastBlowE`, the ½·J·v the solver reports at the contact — see
+ * `onImpact`). A block finished off by a weak accumulated blow is not entitled to a
+ * full-mass burst, and before this round it took one: two of those 35 fractures spent
+ * **5.30 J against a 0.3 J blow and 6.00 J against a 1.4 J blow** — 17x and 4x the blow
+ * that broke them, and the two largest single spawns in the run.
+ *
+ * ── AND A SEED, FOR THE SAME REASON PW r8 NEEDED ONE ─────────────────────────
+ * A block that comes apart under a slow crush has almost no blow to name, and it still has
+ * to come apart — "a scaled burst still reads as a burst, an omitted one reads as a block
+ * quietly falling into pieces". `BURST_SEED_J` is the floor under the ask, in JOULES, so
+ * it is the same number for a glass mullion and a stone cube.
+ *
+ *     E_ask = min( authored ask ,  max( BURST_SHARE * blowE ,  BURST_SEED_J ) )
+ *
+ * and `structure.buyFracture()` still bounds it a second time by `FRAC_BURST_CAP` and a
+ * third time by the pool, whose only depositor is the player's own shot.
+ *
+ * THE SHARE IS AN ATTRIBUTION BOUND, NOT A FUNDING SOURCE, and the distinction matters:
+ * `lastBlowE` on a chain fracture is a block-on-block contact, which the collapse paid for
+ * and not the player. It may not credit anything (PW r3's rule stands — `creditContact()`
+ * fires only on a live projectile), so nothing here can be a money-printing loop; it only
+ * ever makes the ask SMALLER than the pool would already allow.
+ */
+const BURST_SHARE = 0.06, BURST_SEED_J = 0.30;
+/** How stale a blow may be and still be the blow that broke this block, in solver ticks.
+ *  Measured: 33 of 35 fractures land on the same tick as their blow and the other two at
+ *  +1 and +2, so this window is a tripwire against spending a blow from three seconds ago,
+ *  not a tuning knob. */
+const BURST_BLOW_TICKS = 6;
+/**
+ * How far the mass-conserving density correction may go, as a multiple of the material's
+ * own density. An authored cut plan overshoots or undershoots its parent's volume by
+ * 20-45 % (the pieces overlap, each collider is inset 6 % in plane, and each fragment's
+ * depth is 62-95 % of the block's), so the correction is normally 1.2-1.5x. The clamp is a
+ * tripwire for a future cut plan that has gone badly wrong, not a tuning knob: if it ever
+ * binds, mass stops being conserved and the fracture is back to inventing potential energy.
+ */
+const DEBRIS_DENSITY_CLAMP = [0.55, 2.2];
+
+/**
+ * ── DEBUG A/B KNOB. Nothing in `src/` ever writes this. ──────────────────────
+ * `conserve: false` restores the pre-r5 spawn — the single loop that gave every chunk the
+ * parent's velocity PLUS a free kick 0.65 along the blow, an unconditional upward push and
+ * a ±9 rad/s spin, at the material's own density and with no ledger.
+ *
+ * It exists for the same reason `structure.js`'s knobs do (ORCHESTRATOR-NOTES r6 §5): a
+ * number taken before another builder's edit is not comparable to one taken after, so both
+ * arms of an A/B have to run back to back in ONE process on ONE tree. There is no git
+ * history here to diff against.
+ *
+ * It is deliberately built so the two arms share pass 1 (the cut plan and every per-piece
+ * geometry draw) and consume the seeded PRNG in the SAME ORDER with the SAME COUNT — `up`,
+ * then per piece `rngJitter(1.0)` and `rngJitter(BURST_SPIN)`. Without that the arms diverge
+ * on the rng stream as well as on the model and nothing measured between them is
+ * attributable. Only four things move: the density correction, the centre-of-mass shift,
+ * the rigid velocity field, and the neutralise-then-buy step.
+ */
+export const FRACTURE_TUNE = {
+  conserve: true,
+  /** PW r7. false restores the r5 burst, which zeroed the pieces' own spins but left the
+   *  cloud's ORBITAL angular momentum minted. See "NEUTRALISATION, BOTH HALVES" in
+   *  `fracture()`; measured at 5.78 kg.m^2/s over 30 fractures before the fix. */
+  spinNeutral: true,
+  /** PW r7. false restores r5's `sqrt(IP/J)` rigid-field scaling, which holds the fracture's
+   *  rotational ENERGY constant and therefore MINTS angular momentum whenever the cut plan is
+   *  looser than its parent. true conserves angular momentum exactly instead. MEASURED INERT
+   *  on today's plans — J/IP is 0.67-1.00 on 19 of 19 fractures, so the `min(1, ...)` clamp
+   *  binds either way; it is on because it is the branch that stays correct if a cut plan is
+   *  ever authored looser. See pass 3 of `fracture()`. */
+  spinL: true,
+  /** PW r9. Peak DIFFERENTIAL spin the burst asks for, rad/s, before neutralisation and
+   *  pricing. 9 is the pre-r9 ask and 4 is shipped; it is a knob rather than a constant
+   *  because it is the single biggest line in the burst's energy bill and the round had to
+   *  price it. See BURST_SPIN above for the sweep. */
+  burstSpin: BURST_SPIN,
+  /** PW r9. Multiplier on the LINEAR separation ask, so the round could price moving the
+   *  burst's budget between its two halves rather than only shrinking it. 1 is authored. */
+  burstKickK: 1,
+  /** PW r9. Give the spin ask the same mass differential the linear kick has had since r5.
+   *  false restores the flat ±`burstSpin` every piece used to get. */
+  burstSpinMassK: true,
+  /** PW r9. Share of the blow that broke this block the burst may spend on separation.
+   *  `Infinity` restores the pre-r9 ask exactly (the authored Δv/spin always binds), which
+   *  is what the A/B arm uses. See "THE BURST'S ASK IS AN ENERGY" above. */
+  burstShare: BURST_SHARE,
+  /** PW r9. Floor under that ask, in JOULES — mass-invariant by construction. */
+  burstSeedJ: BURST_SEED_J,
+  /** PW r9. Freshness window on `lastBlowE`, in solver ticks. */
+  burstBlowTicks: BURST_BLOW_TICKS,
+};
+
+/**
+ * ── DEBUG INSTRUMENT (PW r9). Nothing in `src/` ever writes or reads this. ───
+ * `FRACTURE_LOG.on = true` makes `fracture()` append one row per spawn holding the
+ * internals no census outside the call can reconstruct: the parent's own mass properties,
+ * the rigid field's exact cost, the burst's quadratic (A, C), what the ledger granted, and
+ * the PER-PIECE split of the burst's energy bill against the separation speed each piece
+ * actually got. Round 8 could not have been argued without `availableP()` being visible to
+ * `pw-r8-audit.mjs`; the burst needs the same visibility for the same reason — an
+ * instrument that has to ask the code under test to grade itself cannot see it being wrong.
+ * Off by default and it allocates nothing when off, so it cannot perturb a measurement.
+ */
+export const FRACTURE_LOG = { on: false, rows: [] };
+
+/**
  * Who hit you decides how much it hurts. See the header — this is the whole
  * separation-before-fragmentation rule, expressed as a set of numbers.
  *
@@ -290,8 +461,23 @@ export class Block extends Entity {
   /**
    * @param {object} o { matName, x, y, w, h, rot }
    */
-  constructor({ matName = 'wood', x, y, w, h, rot = 0, depth = DEPTH, fixed = false }) {
-    const m = mat(matName);
+  constructor({ matName = 'wood', x, y, w, h, rot = 0, depth = DEPTH, fixed = false,
+                debt = false, role = null }) {
+    /**
+     * THE INTEREST METER IS TINTED AT CONSTRUCTION, and that is a gameplay requirement rather
+     * than decoration: the whole L2 mechanic is "find the weak point", so a meter the player
+     * cannot pick out of a tower of grey stone is a mechanic that silently does not work.
+     * Coral is the house colour for the scam (PALETTE.coral, the same one the shrug popup and
+     * the villains use), and the emissive lifts it clear of the tower's own value so it still
+     * reads on a phone and in greyscale — the two tests in villains/base.js.
+     *
+     * `mat()` with overrides returns a FRESH material rather than the shared cached one. That
+     * is already how every glass block in the game works (`glassBase(w, h)` below is per
+     * block), so this introduces no new kind of leak — one extra material per level build.
+     */
+    const m = role === 'interest'
+      ? mat(matName, { color: PALETTE.coral, emissive: 0x7a2412, emissiveIntensity: 0.40 })
+      : mat(matName);
     const { body, collider } = makeBody({
       kind: fixed ? 'fixed' : 'dynamic',
       x, y, rot, m,
@@ -316,7 +502,10 @@ export class Block extends Entity {
     // width on a 0.40 m column and a 1.40 m lintel. See art/toon.js glassPane(): a single
     // square tile stretched over a 6.5:1 column is what turned every pane into a striped
     // tube in round 2.
-    const mesh = new THREE.Mesh(g, matName === 'glass' ? glassBase(w, h) : m.three);
+    // The meter keeps its tinted material even when authored as glass — glassBase() would
+    // throw the coral away, which is the one thing that must not happen to it.
+    const mesh = new THREE.Mesh(g,
+      (matName === 'glass' && role !== 'interest') ? glassBase(w, h) : m.three);
     mesh.castShadow = !fixed;
     // Glass casts a contact shadow like every other block, but never RECEIVES one. Its whole
     // job is to be the brightest value in the frame; a beam's shadow falling across a pane
@@ -338,6 +527,16 @@ export class Block extends Entity {
     super({ mesh, body, collider, material: m, tag: 'block' });
 
     this.matName = matName;
+    /**
+     * THE SCAM MECHANIC'S TWO AUTHORING FLAGS (level JSON; see world.js `scam`).
+     *   debt  this block is part of the debt's LOAD-BEARING core. While the interest is
+     *         still running it cannot break — see the gate at the top of `fracture()`.
+     *   role  'interest' marks the one block that IS the interest. Breaking it clears
+     *         the shield on every `debt` block in the level, at once.
+     * Both default off, so a level that does not opt in behaves exactly as before.
+     */
+    this.debt = debt === true;
+    this.role = role ?? null;
     this.w = w; this.h = h; this.depth = depth;
     this.damage = 0;
     /** This material's failure mode — crush efficiency, leak rate, permanent scar. */
@@ -533,12 +732,60 @@ export class Block extends Entity {
    */
   fracture(impulse, point) {
     if (this.broken) return [];
+
+    /**
+     * ── THE SCAM, AS A MECHANIC ───────────────────────────────────────────────
+     * A shielded debt block does not break. It ABSORBS the blow and keeps standing.
+     *
+     * This is the one place the toxic-debt lesson is PLAYED rather than printed. The blow
+     * itself is left completely alone — the collision already resolved in the solver, so the
+     * tower still lurches, chips still fly off the unshielded top, the score still ticks.
+     * Only the FRACTURE is refused. That asymmetry is the whole feeling: visible effort, no
+     * progress, which is exactly what paying the minimum buys you.
+     *
+     * Damage is RESET, not capped, so a player cannot chip a shielded block across six shots
+     * and eventually break it. The debt does not remember your payments; neither does this.
+     *
+     * Nothing here can destabilise the physics. It is a pure early return on the *decision*
+     * to break, taken before `broken` is set, so the body lives on untouched and no ledger,
+     * propagation graph or debris path is entered. The failure mode to design against is the
+     * opposite one — a level shielded so heavily it cannot be won — which is why only the
+     * load-bearing core carries `debt` and the interest meter sits on an exposed face.
+     */
+    if (this.debt && !world.scam.interestCleared) {
+      this.damage = 0;
+      world.scam.shrugs = (world.scam.shrugs | 0) + 1;
+      emit('debtShrug', {
+        point: { x: point.x, y: point.y, z: 0 }, impulse, block: this,
+        label: world.level?.scam?.shrugLabel ?? '+ interest',
+      });
+      return [];
+    }
+
     this.broken = true;
+
+    /**
+     * THE WEAK POINT. Breaking the interest clears the shield on every debt block at once —
+     * one loud beat, so the player ties cause to effect on the same frame. Guarded so a
+     * second meter, or a re-entrant break, cannot fire the beat twice.
+     */
+    // A broken block LEAVES world.blocks, so "how many shielded blocks have broken" cannot be
+    // counted by walking that list later — it has to be tallied here, as it happens.
+    if (this.debt) world.scam.debtBroken = (world.scam.debtBroken | 0) + 1;
+
+    if (this.role === 'interest' && !world.scam.interestCleared) {
+      world.scam.interestCleared = true;
+      emit('interestCleared', { point: { x: point.x, y: point.y, z: 0 } });
+    }
 
     const pos = this.position(new THREE.Vector3());
     const ang = zAngleOf(this.body);
     const vel = this.velocity(new THREE.Vector3());
     const av = this.body.angvel();
+    // Read the parent's mass properties BEFORE anything can touch the body — everything in
+    // the spawn below is priced against them.
+    const mP = this.body.mass();
+    const IP = this.body.principalInertia().z;
 
     emit('break', {
       material: this.matName, point: { x: point.x, y: point.y, z: 0 },
@@ -557,37 +804,297 @@ export class Block extends Entity {
      */
     structure.onCollapse(this, impulse, this.hitDir);
 
+    /**
+     * ═══ THE SPAWN, AND WHY IT IS BUILT IN FOUR PASSES (PW round 5) ═══════════
+     *
+     * It used to be one loop: create a chunk, give it the parent's velocity PLUS a kick
+     * along the blow, plus an unconditional upward push and a +/-9 rad/s spin. Measured
+     * with a closed-system audit (`_tools/scenarios/pw-r5-frac.mjs`, which books births and
+     * deaths instead of excluding them), that loop was the largest energy source in the
+     * game: the children of a fracture were born with 2.3-15.3x their parent's kinetic
+     * energy, +203 J across six l1 shots against darts carrying 60-64 J, worst single event
+     * +38 J. Every earlier energy audit missed it by construction, because a fracture is a
+     * death and N births on one solver step and all of them tracked a fixed cohort.
+     *
+     * It looked balanced only because the same loop DELETED 7-37 % of the block's mass
+     * (-3.5 kg over the same six shots), which subtracts m*g*y of potential energy without
+     * dissipating anything: -279 J of book-keeping loss hiding +203 J of invented motion.
+     *
+     * So:
+     *   1. resolve the whole cut plan first, so the total volume is known BEFORE any body
+     *      exists — mass conservation needs a number the old single loop never had;
+     *   2. build the children at a corrected density, shifted so their centre of mass IS
+     *      the parent's (that makes the potential-energy delta exactly zero, and makes the
+     *      rigid field below conserve linear momentum exactly);
+     *   3. hand every child the PARENT'S OWN RIGID VELOCITY FIELD, v + w x r. A rigid field
+     *      over pieces whose centre of mass is the parent's costs exactly the parent's
+     *      kinetic energy — no more — so a fracture on its own now creates nothing at all;
+     *   4. add a BOUNDED, MOMENTUM-NEUTRAL burst on top and buy it from the same joule
+     *      pool `structure.js` spends from, whose only depositor is the player's shot.
+     *
+     * Why momentum-neutral is not merely tidy: a burst that sums to zero momentum in the
+     * parent's frame has ZERO cross term with the motion the parent already had
+     * (sum m_i v.b_i = v . sum m_i b_i = 0), so it costs exactly its own kinetic energy
+     * whatever the block was doing at the time. The old fan was a rocket — every piece
+     * pushed the same way — so its cost went as the parent's speed, which is precisely why
+     * the worst events were the fastest-moving blocks. The debris still fans downrange:
+     * that read comes from the parent's own velocity, which the blow has already delivered
+     * by the time the contact event fires.
+     */
     const kids = [];
     const pieces = cutPlan(this.matName, this.w, this.h);
+    const ca = Math.cos(ang), sa = Math.sin(ang);
 
-    // The fan direction, in the block's own frame plus a little of the outward push. 65/35 is
-    // the mix that reads as "blown through" rather than "exploded from within".
-    const dx = this.hitDir.x, dy = this.hitDir.y;
-
+    // ── 1. the whole plan, resolved before a single body exists ───────────────
+    const plan = [];
+    let vol = 0;
     for (const p of pieces) {
+      const rot = ang + rngJitter(0.25);
+      const depth = this.depth * rngRange(0.62, 0.95);
+      // The Debris constructor insets its COLLIDER by 0.94 on both in-plane axes; mass
+      // follows the collider, not the mesh, so that is the volume to measure.
+      const v = (p.w * 0.94) * (p.h * 0.94) * depth;
+      plan.push({ p, rot, depth, vol: v });
+      vol += v;
+    }
+
+    // ── 2. mass conserved, and the centre of mass with it ────────────────────
+    const legacy = !FRACTURE_TUNE.conserve;      // see FRACTURE_TUNE — debug A/B only
+    const rho = this.material.physics.density;
+    const dens = legacy ? null
+      : Math.min(rho * DEBRIS_DENSITY_CLAMP[1],
+                 Math.max(rho * DEBRIS_DENSITY_CLAMP[0], mP / Math.max(vol, 1e-9)));
+    // Uniform density, so the volume-weighted centroid IS the mass-weighted one.
+    let cx = 0, cy = 0;
+    if (!legacy) {
+      for (const q of plan) { cx += q.vol * q.p.x; cy += q.vol * q.p.y; }
+      cx /= vol; cy /= vol;
+    }
+
+    const live = [];
+    for (const q of plan) {
       if (world.debris.length >= MAX_DEBRIS) cullOldestDebris();
-      const lx = p.x, ly = p.y;
-      const wx = pos.x + lx * Math.cos(ang) - ly * Math.sin(ang);
-      const wy = pos.y + lx * Math.sin(ang) + ly * Math.cos(ang);
+      const lx = q.p.x - cx, ly = q.p.y - cy;
+      const wx = pos.x + lx * ca - ly * sa;
+      const wy = pos.y + lx * sa + ly * ca;
       const d = new Debris({
-        matName: this.matName, x: wx, y: wy, rot: ang + rngJitter(0.25),
-        w: p.w, h: p.h, depth: this.depth * rngRange(0.62, 0.95),
-        cracked: p.cracked !== false,
+        matName: this.matName, x: wx, y: wy, rot: q.rot,
+        w: q.p.w, h: q.p.h, depth: q.depth,
+        cracked: q.p.cracked !== false, density: dens,
       });
-      let rx = wx - point.x, ry = wy - point.y;
+      // cullOldestDebris() can in principle reach a sibling created moments ago, so nothing
+      // below may assume a body is still there.
+      if (d.dead || !d.body) continue;
+      q.d = d; q.rx = wx - pos.x; q.ry = wy - pos.y;
+      q.m = d.body.mass(); q.I = d.body.principalInertia().z;
+      live.push(q); kids.push(d);
+    }
+    if (!live.length) { this.destroy(); return kids; }
+
+    /**
+     * ── 3. the parent's rigid velocity field ─────────────────────────────────────────
+     *
+     * `J = Sum(I_i + m_i*r_i^2)` is the children's inertia about the PARENT's centre of
+     * mass, and an authored cut plan does not reproduce the parent's own `IP`. Spinning the
+     * children at the parent's rate therefore cannot reproduce both the parent's rotational
+     * ENERGY and its angular MOMENTUM; something gives, and which thing gives is the choice.
+     *
+     * Round 5 chose `sqrt(IP/J)`, which holds the rotational energy. That is the wrong
+     * invariant: the conserved quantity across an instantaneous split with no external
+     * torque is angular momentum, `J*w0` against `IP*w`, and `sqrt` leaves
+     * `w*sqrt(IP*J)` — which MINTS whenever the plan is looser than its parent, invisibly
+     * to any energy audit, because it is energy-neutral by construction. `IP/J` conserves
+     * angular momentum exactly and lets the rotational energy dissipate, which is what
+     * breaking something does.
+     *
+     * MEASURED, AND IT CHANGES THE CONCLUSION (`_tools/scenarios/pw-r7-Lcheck.mjs`, 19
+     * fractures over four l1 shots): **J/IP is 0.67-1.00 on 19 of 19** — every cut plan in
+     * this game is TIGHTER than the block it came from, not looser. So `min(1, ...)` binds
+     * on every fracture, both branches give `w0 = w`, and `spinL` is INERT on today's cut
+     * plans. It is kept, and defaulted on, because it is the branch that stays correct if a
+     * future plan ever goes the other way; it is not what fixed round 7's number.
+     *
+     * What the clamp leaves is `dL = (J - IP)*w`, verified against the census to five
+     * decimals (stone: predicted -0.15076 / measured -0.15076, -0.64701 / -0.64701). It is
+     * strictly NEGATIVE — the spawn dissipates angular momentum and can never invent it —
+     * and closing it would mean spinning the children FASTER than the parent, i.e. trading
+     * a momentum leak for up to 1.49x of invented rotational energy. r5's "only ever DOWN"
+     * guarantee is right and stays.
+     */
+    let J = 0, mSum = 0;
+    for (const q of live) { J += q.I + q.m * (q.rx * q.rx + q.ry * q.ry); mSum += q.m; }
+    const spinK = J > 1e-9
+      ? Math.min(1, FRACTURE_TUNE.spinL ? IP / J : Math.sqrt(IP / J))
+      : 1;
+    const w0 = legacy ? 0 : av.z * spinK;
+    for (const q of live) {
+      q.vx = vel.x - w0 * q.ry;
+      q.vy = vel.y + w0 * q.rx;
+      q.wz = w0;
+    }
+
+    // ── 4. the burst: authored, then neutralised, then bought ────────────────
+    const dx = this.hitDir.x, dy = this.hitDir.y;
+    const kick = Math.min(BURST_V_MAX, BURST_V0 + impulse * BURST_VK);
+    const up = rngRange(0.5, 2.9);
+    const along = legacy ? 0.65 : BURST_ALONG;   // the pre-r5 share; see FRACTURE_TUNE
+    const spinAsk = legacy ? BURST_SPIN_LEGACY : FRACTURE_TUNE.burstSpin;
+    let bmx = 0, bmy = 0, ism = 0, iSum = 0;
+    for (const q of live) {
+      const rx = q.rx - (point.x - pos.x), ry = q.ry - (point.y - pos.y);
       const L = Math.hypot(rx, ry) || 1;
+      let ux = dx * along + (rx / L) * (1 - along),
+          uy = dy * along + (ry / L) * (1 - along);
+      const un = Math.hypot(ux, uy) || 1; ux /= un; uy /= un;
       // Bigger pieces get less of the kick — that is what makes the debris cone read
       // "biggest lowest, smallest highest and furthest" (impact-burst-tower-splitting_03).
-      const massK = 1 / (0.55 + p.rel * 1.6);
-      const kick = Math.min(9.5, 1.6 + impulse * 0.34) * massK;
-      d.body.setLinvel({
-        x: vel.x + (dx * 0.65 + (rx / L) * 0.35) * kick + rngJitter(1.0),
-        y: vel.y + (dy * 0.65 + (ry / L) * 0.35) * kick * 0.85 + rngRange(0.5, 2.9),
-        z: 0,
-      }, true);
-      d.body.setAngvel({ x: 0, y: 0, z: av.z + rngJitter(9) }, true);
-      kids.push(d);
+      // It also survives neutralisation: subtracting the mass-weighted MEAN leaves the
+      // light pieces going up and out and the heavy ones barely moving, which is the same
+      // read expressed as a differential instead of as free momentum.
+      const massK = 1 / (0.55 + q.p.rel * 1.6);
+      // `burstKickK` scales the LINEAR ask only — `massK` still carries the spin ask below,
+      // so the knob moves budget between the burst's two halves instead of scaling both.
+      const kK = massK * FRACTURE_TUNE.burstKickK;
+      q.bx = ux * kick * kK + rngJitter(1.0);
+      q.by = uy * kick * kK * 0.85 + up * kK;
+      /**
+       * PW r9 — THE SPIN ASK IS THE OTHER HALF OF THE BURST AND IT WAS NEVER MADE
+       * DIFFERENTIAL. `massK` above exists because a Δv ask costs `½·m·Δv²`, so a flat
+       * separation speed puts the whole bill on the heaviest chunk. The line below asked
+       * every piece for the SAME ±9 rad/s, and rotational energy is `½·I·ω²` with `I`
+       * running two orders of magnitude from a chip to a half-beam. Measured
+       * (`pw-r9-frac.mjs`, 11 fractures): spin was **58.8 % of the entire burst ask**, and
+       * the two heaviest pieces of each fracture carried **77.6 %** of the bill while
+       * moving slowest — the fan the player reads is the LIGHT pieces, and they were
+       * paying 8 % of it. Same defect PW r2 fixed for damage and PW r8 fixed for the
+       * wave's ask, third instance, and the one place in this file that still had it.
+       */
+      q.bs = rngJitter(spinAsk * (FRACTURE_TUNE.burstSpinMassK ? massK : 1));
+      bmx += q.m * q.bx; bmy += q.m * q.by;
+      ism += q.I * q.bs; iSum += q.I;
     }
+    if (legacy) {                                 // the pre-r5 arm: free, unpriced, unbalanced
+      for (const q of live) {
+        q.d.body.setLinvel({ x: q.vx + q.bx, y: q.vy + q.by, z: 0 }, true);
+        q.d.body.setAngvel({ x: 0, y: 0, z: q.bs }, true);
+      }
+      structure.registerDebris(this.id, kids);
+      this.destroy();
+      return kids;
+    }
+    bmx /= mSum; bmy /= mSum; ism /= Math.max(iSum, 1e-9);
+    /**
+     * ── NEUTRALISATION, BOTH HALVES (PW r7) ─────────────────────────────────────────
+     *
+     * Round 5 subtracted the mass-weighted MEAN velocity and the inertia-weighted mean
+     * SPIN, and the line below carried the comment "zero net linear and angular momentum".
+     * Only the first half of that was ever true. `bs -= ism` zeroes the pieces' OWN spins,
+     * `SUM I_i*bs_i`. It says nothing about the burst's ORBITAL angular momentum,
+     * `SUM m_i*(r_i x b_i)` — a chip thrown left at the top of a block and a chip thrown
+     * right at the bottom is a COUPLE, and the old burst minted one out of nothing.
+     *
+     * Measured with `_tools/scenarios/pw-r7-audit.mjs`, which takes a full census of the
+     * dynamic world either side of the fracture CALL so the channel is closed and exact:
+     * on the 6-shot l1 cohort the spawn conserved mass to 0.0000 kg, potential energy to
+     * 0.00 J and LINEAR momentum to 0.00 kg.m/s — and minted 5.78 kg.m^2/s of angular
+     * momentum over 30 fractures. PW r6 §2's lesson is that momentum is the sharper
+     * detector precisely because it has no honest positive term to hide inside; this was
+     * the one conservation law the spawn still broke, and no energy-only audit could see
+     * it, because a couple is bought at its energy price like any other motion.
+     *
+     * The cure is the exact analogue of the linear one. Subtracting a rigid TRANSLATION
+     * removes net linear momentum; subtracting a rigid ROTATION about the parent's centre
+     * of mass removes net angular momentum:
+     *
+     *     Om = L_burst / SUM(I_i + m_i*r_i^2)     then   b_i -= Om x r_i,   bs_i -= Om
+     *
+     * and it cannot undo the linear neutralisation, because `SUM m_i*(Om x r_i)` is
+     * `Om x SUM m_i*r_i`, which pass 2 already made exactly zero. What is left is a true
+     * internal separation — no net force, no net couple, energy only — which is what a
+     * block coming apart is. `A` and `C` are accumulated AFTER the correction so the
+     * ledger prices the field that is actually applied, not the one before it.
+     */
+    let Lb = 0, Jb = 0;
+    for (const q of live) {
+      q.bx -= bmx; q.by -= bmy; q.bs -= ism;      // zero net linear momentum and net spin
+      Lb += q.I * q.bs + q.m * (q.rx * q.by - q.ry * q.bx);
+      Jb += q.I + q.m * (q.rx * q.rx + q.ry * q.ry);
+    }
+    if (FRACTURE_TUNE.spinNeutral && Jb > 1e-9) {
+      const Om = Lb / Jb;                        // the rigid rotation the burst was hiding
+      for (const q of live) { q.bx += Om * q.ry; q.by -= Om * q.rx; q.bs -= Om; }
+    }
+    let A = 0, C = 0;
+    for (const q of live) {
+      A += 0.5 * q.m * (q.bx * q.bx + q.by * q.by) + 0.5 * q.I * q.bs * q.bs;
+      C += q.m * (q.vx * q.bx + q.vy * q.by) + q.I * q.wz * q.bs;
+    }
+    /**
+     * dKE(f) = A f^2 + C f — the burst's whole energy bill, exactly, because pass 4's
+     * neutralisation makes the cross term with the parent's own motion vanish (C is
+     * 0.0000 J to four decimals across 35 measured fractures).
+     *
+     * PW r9: the ask is bounded FIRST by the blow that broke this block and only then
+     * offered to the ledger. `buyFracture()` still applies `FRAC_BURST_CAP` and the pool
+     * on top, so the three bounds are: what this fracture is entitled to, what one spawn
+     * may take, and what the shot paid for.
+     */
+    const full = A + C;
+    const fresh = (physics.tick - this.lastBlowTick) <= FRACTURE_TUNE.burstBlowTicks;
+    const askCap = Math.max(FRACTURE_TUNE.burstSeedJ,
+                            FRACTURE_TUNE.burstShare * (fresh ? this.lastBlowE : 0));
+    const want = legacy ? full : Math.min(full, askCap);
+    let f = 1;
+    if (want > 0) {
+      // Buy as much of it as the ledger will fund and scale to fit — the same "scale,
+      // never drop" rule spend() uses, for the same reason: a scaled burst still reads as
+      // a burst, an omitted one reads as a block quietly falling into pieces.
+      // `this` and `kids` are the two exclusions the PW r10 settlement needs — see
+      // `buyFracture()`: the parent is destroyed a few lines below and its motion is already
+      // inside the children's rigid field (pass 3), and the children are still at rest until
+      // the write loop at the end of this function.
+      const budget = Math.min(want, structure.buyFracture(want, this, kids));
+      if (budget < full - 1e-9) {
+        f = A > 1e-12
+          ? (-C + Math.sqrt(Math.max(0, C * C + 4 * A * budget))) / (2 * A)
+          : (C > 1e-12 ? budget / C : 1);
+        f = f > 1 ? 1 : (f > 0 ? f : 0);
+      }
+    } else if (full > 0) {
+      f = 0;
+    }
+    if (FRACTURE_LOG.on) {
+      let rigid = 0;
+      for (const q of live) rigid += 0.5 * q.m * (q.vx * q.vx + q.vy * q.vy) + 0.5 * q.I * q.wz * q.wz;
+      FRACTURE_LOG.rows.push({
+        tick: physics.tick, mat: this.matName, mP, IP,
+        vP: Math.hypot(vel.x, vel.y), wP: av.z,
+        keP: 0.5 * mP * (vel.x * vel.x + vel.y * vel.y) + 0.5 * IP * av.z * av.z,
+        rigid, kids: live.length, kick, A, C, full, askCap, want, f, spent: A * f * f + C * f,
+        blowE: this.lastBlowE, blowAge: physics.tick - this.lastBlowTick,
+        pieces: live.map(q => ({
+          m: q.m, rel: q.p.rel, I: q.I,
+          b: Math.hypot(q.bx, q.by), bs: q.bs,
+          eA: 0.5 * q.m * (q.bx * q.bx + q.by * q.by) + 0.5 * q.I * q.bs * q.bs,
+        })),
+      });
+    }
+    for (const q of live) {
+      q.d.body.setLinvel({ x: q.vx + f * q.bx, y: q.vy + f * q.by, z: 0 }, true);
+      q.d.body.setAngvel({ x: 0, y: 0, z: q.wz + f * q.bs }, true);
+    }
+
+    /**
+     * THE DONOR HAND-OFF (PW r6). `structure.onCollapse()` above queued a shock wave whose
+     * FIRST hop comes from this block — and by the time that wave fires, a few solver steps
+     * later, this block no longer exists. Its debris does, it carries exactly the momentum
+     * this block had (passes 3 and 4 above are what make that true), and it is physically the
+     * thing that hits the neighbour. Registering it here is what lets `structure.js` debit a
+     * real body for hop 1 instead of minting the momentum: measured on the l1 gate, those 38
+     * hop-1 writes contain the four biggest impulses in the game. See THE DONOR RULE in
+     * `structure.js`. Registered in BOTH arms so the r5 knob cannot change the r6 model.
+     */
+    structure.registerDebris(this.id, kids);
 
     this.destroy();
     return kids;
@@ -718,10 +1225,10 @@ function stonePlan(L, T) {
  * that silhouette fits inside. See the fragments.js header for why that trade is right.
  */
 export class Debris extends Entity {
-  constructor({ matName, x, y, rot, w, h, depth, cracked = true }) {
+  constructor({ matName, x, y, rot, w, h, depth, cracked = true, density = null }) {
     const m = mat(matName);
     const { body, collider } = makeBody({
-      kind: 'dynamic', x, y, rot, m,
+      kind: 'dynamic', x, y, rot, m, density,
       shape: shapes.box(w * 0.94, h * 0.94, depth),
       /**
        * DEBRIS DAMPING IS PER MATERIAL, AND THE LINEAR TERM IS NOW SMALL ON PURPOSE.

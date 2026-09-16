@@ -1,0 +1,263 @@
+{
+  "id": "l9",
+  "name": "The Syndicate",
+  "chapter": 2,
+  "sky": "morning",
+  "setting": "colony",
+  "par": 4,
+  "ammo": [
+    "sip",
+    "sip",
+    "sip",
+    "sip",
+    "sip",
+    "sip"
+  ],
+  "teaches": "Nine people below him, all paying up. He calls that a business.",
+  "busts": [
+    "Nine people below him, all paying up",
+    "He calls that a business",
+    "The network IS the product",
+    "No investment. Just introductions.",
+    "Recruit or lose your money",
+    "The last row always pays"
+  ],
+  "blocks": [
+    {
+      "mat": "stone",
+      "x": 8.2,
+      "y": 0.25,
+      "w": 3.4,
+      "h": 0.5
+    },
+    {
+      "mat": "glass",
+      "x": 7.15,
+      "y": 1.16,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 9.25,
+      "y": 1.16,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 8.2,
+      "y": 2.04,
+      "w": 3.0,
+      "h": 0.44
+    },
+    {
+      "mat": "glass",
+      "x": 7.15,
+      "y": 2.92,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 9.25,
+      "y": 2.92,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 8.2,
+      "y": 3.8,
+      "w": 3.0,
+      "h": 0.44
+    },
+    {
+      "mat": "stone",
+      "x": 7.15,
+      "y": 4.68,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 9.25,
+      "y": 4.68,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 8.2,
+      "y": 5.56,
+      "w": 3.0,
+      "h": 0.44
+    },
+    {
+      "mat": "glass",
+      "x": 7.4,
+      "y": 5.98,
+      "w": 0.4,
+      "h": 0.4
+    },
+    {
+      "mat": "wood",
+      "x": 7.9,
+      "y": 5.98,
+      "w": 0.4,
+      "h": 0.4
+    },
+    {
+      "mat": "glass",
+      "x": 8.4,
+      "y": 5.98,
+      "w": 0.4,
+      "h": 0.4
+    },
+    {
+      "mat": "wood",
+      "x": 8.9,
+      "y": 5.98,
+      "w": 0.4,
+      "h": 0.4
+    },
+    {
+      "mat": "stone",
+      "x": 14.2,
+      "y": 0.25,
+      "w": 3.4,
+      "h": 0.5
+    },
+    {
+      "mat": "glass",
+      "x": 13.15,
+      "y": 1.16,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 15.25,
+      "y": 1.16,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 14.2,
+      "y": 2.04,
+      "w": 3.0,
+      "h": 0.44
+    },
+    {
+      "mat": "glass",
+      "x": 13.15,
+      "y": 2.92,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 15.25,
+      "y": 2.92,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 14.2,
+      "y": 3.8,
+      "w": 3.0,
+      "h": 0.44
+    },
+    {
+      "mat": "stone",
+      "x": 13.15,
+      "y": 4.68,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 15.25,
+      "y": 4.68,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 14.2,
+      "y": 5.56,
+      "w": 3.0,
+      "h": 0.44
+    },
+    {
+      "mat": "glass",
+      "x": 13.4,
+      "y": 5.98,
+      "w": 0.4,
+      "h": 0.4
+    },
+    {
+      "mat": "wood",
+      "x": 13.9,
+      "y": 5.98,
+      "w": 0.4,
+      "h": 0.4
+    },
+    {
+      "mat": "glass",
+      "x": 14.4,
+      "y": 5.98,
+      "w": 0.4,
+      "h": 0.4
+    },
+    {
+      "mat": "wood",
+      "x": 14.9,
+      "y": 5.98,
+      "w": 0.4,
+      "h": 0.4
+    },
+    {
+      "mat": "glass",
+      "x": 11.2,
+      "y": 0.7,
+      "w": 1.6,
+      "h": 0.4
+    }
+  ],
+  "villains": [
+    {
+      "type": "conman",
+      "x": 8.2,
+      "y": 1.04
+    },
+    {
+      "type": "conman",
+      "x": 8.2,
+      "y": 2.8
+    },
+    {
+      "type": "conman",
+      "x": 8.2,
+      "y": 4.56
+    },
+    {
+      "type": "conman",
+      "x": 14.2,
+      "y": 1.04
+    },
+    {
+      "type": "conman",
+      "x": 14.2,
+      "y": 2.8
+    },
+    {
+      "type": "conman",
+      "x": 14.2,
+      "y": 4.56
+    }
+  ],
+  "props": []
+}

@@ -1,0 +1,651 @@
+{
+  "_": "MACHINE-OWNED — do not hand-edit. Regenerate: APPLY=1 node capture.mjs --scenario ./scenarios/p13-sweep.mjs --url http://localhost:8744/scam-slingshot/ --out ../_shots/P13/derive",
+  "derivedAt": "2026-09-14T12:47:58.659Z",
+  "method": "t1 = 0.95*min(structuralFloor, minWin) | t2 = 0.96*min(2nd-fewest-shot win cluster) | t3 = 0.96*min(fewest-shot win cluster) | strictly increasing, >= 1500 apart. Sample = every single shot in a 8x4 angle-by-power grid plus 14 whole-game plans built from that ranking (strong, middling and deliberately wasteful) over 1 seed(s), so it spans 1..ammo shots. Each recorded proof carries a seedCheck: the same plan replayed under every sweep seed. A proof that only wins under one seed is knife-edge — see the tombstone in level/loader.js for what a 0.004-unit jitter change did to the previous generation of these plans.",
+  "grid": {
+    "ANGLES": [
+      0.16,
+      0.24,
+      0.32,
+      0.4,
+      0.48,
+      0.56,
+      0.66,
+      0.78
+    ],
+    "POWERS": [
+      0.55,
+      0.7,
+      0.85,
+      1
+    ],
+    "SEEDS": [
+      4242
+    ]
+  },
+  "levels": {
+    "l1": {
+      "t1": 9500,
+      "t2": 27500,
+      "t3": 29000,
+      "derivedBy": "range",
+      "measured": {
+        "runs": 46,
+        "wins": 1,
+        "winMin": 29300,
+        "winMax": 29300,
+        "structuralFloor": 10000,
+        "villains": 2,
+        "ammo": 4,
+        "clusters": [
+          {
+            "shots": 3,
+            "n": 1,
+            "min": 29300,
+            "max": 29300
+          }
+        ],
+        "band": {
+          "s1": 0,
+          "s2": 0,
+          "s3": 1
+        }
+      },
+      "proof3": {
+        "plan": [
+          [
+            0.32,
+            0.55
+          ],
+          [
+            0.56,
+            1
+          ],
+          [
+            0.32,
+            1
+          ]
+        ],
+        "seed": 4242,
+        "score": 29300,
+        "name": "scattergun",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 29300,
+            "shots": 3
+          }
+        ]
+      },
+      "proof2": null,
+      "proofWeak": {
+        "plan": [
+          [
+            0.32,
+            0.55
+          ],
+          [
+            0.56,
+            1
+          ],
+          [
+            0.32,
+            1
+          ]
+        ],
+        "seed": 4242,
+        "score": 29300,
+        "name": "scattergun",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 29300,
+            "shots": 3
+          }
+        ]
+      }
+    },
+    "l2": {
+      "t1": 14000,
+      "t2": 35500,
+      "t3": 55500,
+      "derivedBy": "cluster",
+      "measured": {
+        "runs": 46,
+        "wins": 12,
+        "winMin": 20600,
+        "winMax": 58200,
+        "structuralFloor": 15000,
+        "villains": 3,
+        "ammo": 5,
+        "clusters": [
+          {
+            "shots": 1,
+            "n": 7,
+            "min": 58000,
+            "max": 58200
+          },
+          {
+            "shots": 3,
+            "n": 4,
+            "min": 37300,
+            "max": 40100
+          },
+          {
+            "shots": 5,
+            "n": 1,
+            "min": 20600,
+            "max": 20600
+          }
+        ],
+        "band": {
+          "s1": 1,
+          "s2": 4,
+          "s3": 7
+        }
+      },
+      "proof3": {
+        "plan": [
+          [
+            0.24,
+            1
+          ]
+        ],
+        "seed": 4242,
+        "score": 58200,
+        "name": "single",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 58200,
+            "shots": 1
+          }
+        ]
+      },
+      "proof2": {
+        "plan": [
+          [
+            0.78,
+            0.85
+          ],
+          [
+            0.48,
+            1
+          ],
+          [
+            0.16,
+            1
+          ]
+        ],
+        "seed": 4242,
+        "score": 37300,
+        "name": "waste2",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 37300,
+            "shots": 3
+          }
+        ]
+      },
+      "proofWeak": {
+        "plan": [
+          [
+            0.32,
+            0.55
+          ],
+          [
+            0.56,
+            1
+          ],
+          [
+            0.16,
+            1
+          ],
+          [
+            0.24,
+            0.55
+          ],
+          [
+            0.24,
+            1
+          ]
+        ],
+        "seed": 4242,
+        "score": 20600,
+        "name": "scattergun",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 20600,
+            "shots": 5
+          }
+        ]
+      }
+    },
+    "l3": {
+      "t1": 28500,
+      "t2": 32500,
+      "t3": 69500,
+      "derivedBy": "cluster",
+      "measured": {
+        "runs": 87,
+        "wins": 5,
+        "winMin": 34100,
+        "winMax": 72800,
+        "structuralFloor": 30000,
+        "villains": 6,
+        "ammo": 5,
+        "clusters": [
+          {
+            "shots": 1,
+            "n": 4,
+            "min": 72800,
+            "max": 72800
+          },
+          {
+            "shots": 5,
+            "n": 1,
+            "min": 34100,
+            "max": 34100
+          }
+        ],
+        "band": {
+          "s1": 0,
+          "s2": 1,
+          "s3": 4
+        }
+      },
+      "proof3": {
+        "plan": [
+          [
+            0.36,
+            1
+          ]
+        ],
+        "seed": 4242,
+        "score": 72800,
+        "name": "single",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 72800,
+            "shots": 1
+          },
+          {
+            "seed": 12345,
+            "phase": "aiming",
+            "score": 16900,
+            "shots": 1
+          },
+          {
+            "seed": 2026,
+            "phase": "aiming",
+            "score": 17400,
+            "shots": 1
+          }
+        ]
+      },
+      "proof2": {
+        "plan": [
+          [
+            0.8,
+            0.75
+          ],
+          [
+            0.7,
+            0.9
+          ],
+          [
+            0.8,
+            0.9
+          ],
+          [
+            0.7,
+            1
+          ],
+          [
+            0.36,
+            1
+          ]
+        ],
+        "seed": 2026,
+        "score": 34100,
+        "name": "waste4",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "lost",
+            "score": 16900,
+            "shots": 5
+          },
+          {
+            "seed": 12345,
+            "phase": "lost",
+            "score": 17600,
+            "shots": 5
+          },
+          {
+            "seed": 2026,
+            "phase": "won",
+            "score": 34100,
+            "shots": 5
+          }
+        ]
+      },
+      "proofWeak": {
+        "plan": [
+          [
+            0.8,
+            0.75
+          ],
+          [
+            0.7,
+            0.9
+          ],
+          [
+            0.8,
+            0.9
+          ],
+          [
+            0.7,
+            1
+          ],
+          [
+            0.36,
+            1
+          ]
+        ],
+        "seed": 2026,
+        "score": 34100,
+        "name": "waste4",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "lost",
+            "score": 16900,
+            "shots": 5
+          },
+          {
+            "seed": 12345,
+            "phase": "lost",
+            "score": 17600,
+            "shots": 5
+          },
+          {
+            "seed": 2026,
+            "phase": "won",
+            "score": 34100,
+            "shots": 5
+          }
+        ]
+      }
+    },
+    "l4": {
+      "t1": 19000,
+      "t2": 46000,
+      "t3": 52500,
+      "derivedBy": "cluster",
+      "measured": {
+        "runs": 46,
+        "wins": 6,
+        "winMin": 27700,
+        "winMax": 57400,
+        "structuralFloor": 20000,
+        "villains": 4,
+        "ammo": 5,
+        "clusters": [
+          {
+            "shots": 2,
+            "n": 4,
+            "min": 54800,
+            "max": 57400
+          },
+          {
+            "shots": 3,
+            "n": 1,
+            "min": 48000,
+            "max": 48000
+          },
+          {
+            "shots": 5,
+            "n": 1,
+            "min": 27700,
+            "max": 27700
+          }
+        ],
+        "band": {
+          "s1": 1,
+          "s2": 1,
+          "s3": 4
+        }
+      },
+      "proof3": {
+        "plan": [
+          [
+            0.4,
+            1
+          ],
+          [
+            0.16,
+            0.55
+          ]
+        ],
+        "seed": 4242,
+        "score": 57400,
+        "name": "top-rotate",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 57400,
+            "shots": 2
+          }
+        ]
+      },
+      "proof2": {
+        "plan": [
+          [
+            0.24,
+            0.55
+          ],
+          [
+            0.4,
+            1
+          ],
+          [
+            0.16,
+            0.55
+          ]
+        ],
+        "seed": 4242,
+        "score": 48000,
+        "name": "top-order",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 48000,
+            "shots": 3
+          }
+        ]
+      },
+      "proofWeak": {
+        "plan": [
+          [
+            0.24,
+            0.55
+          ],
+          [
+            0.78,
+            0.85
+          ],
+          [
+            0.4,
+            1
+          ],
+          [
+            0.48,
+            1
+          ],
+          [
+            0.16,
+            0.55
+          ]
+        ],
+        "seed": 4242,
+        "score": 27700,
+        "name": "alternate",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 27700,
+            "shots": 5
+          }
+        ]
+      }
+    },
+    "l5": {
+      "t1": 23500,
+      "t2": 66000,
+      "t3": 76500,
+      "derivedBy": "cluster",
+      "measured": {
+        "runs": 46,
+        "wins": 17,
+        "winMin": 41900,
+        "winMax": 83800,
+        "structuralFloor": 25000,
+        "villains": 5,
+        "ammo": 6,
+        "clusters": [
+          {
+            "shots": 1,
+            "n": 10,
+            "min": 79700,
+            "max": 83800
+          },
+          {
+            "shots": 2,
+            "n": 1,
+            "min": 69200,
+            "max": 69200
+          },
+          {
+            "shots": 3,
+            "n": 4,
+            "min": 60300,
+            "max": 65900
+          },
+          {
+            "shots": 4,
+            "n": 1,
+            "min": 49200,
+            "max": 49200
+          },
+          {
+            "shots": 5,
+            "n": 1,
+            "min": 41900,
+            "max": 41900
+          }
+        ],
+        "band": {
+          "s1": 6,
+          "s2": 1,
+          "s3": 10
+        }
+      },
+      "proof3": {
+        "plan": [
+          [
+            0.32,
+            0.85
+          ]
+        ],
+        "seed": 4242,
+        "score": 83800,
+        "name": "single",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 83800,
+            "shots": 1
+          }
+        ]
+      },
+      "proof2": {
+        "plan": [
+          [
+            0.66,
+            0.85
+          ],
+          [
+            0.32,
+            0.85
+          ]
+        ],
+        "seed": 4242,
+        "score": 69200,
+        "name": "waste1",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 69200,
+            "shots": 2
+          }
+        ]
+      },
+      "proofWeak": {
+        "plan": [
+          [
+            0.66,
+            0.85
+          ],
+          [
+            0.78,
+            0.55
+          ],
+          [
+            0.78,
+            0.7
+          ],
+          [
+            0.78,
+            0.85
+          ],
+          [
+            0.32,
+            0.85
+          ]
+        ],
+        "seed": 4242,
+        "score": 41900,
+        "name": "waste4",
+        "seedCheck": [
+          {
+            "seed": 4242,
+            "phase": "won",
+            "score": 41900,
+            "shots": 5
+          }
+        ]
+      }
+    }
+  },
+  "derivedLevels": [
+    "l1",
+    "l2",
+    "l4",
+    "l5"
+  ]
+}

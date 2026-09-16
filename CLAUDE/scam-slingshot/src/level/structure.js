@@ -267,9 +267,32 @@ const WRITES_PER_STEP = 2;
 const AUDIT_TICKS = 8;
 /** How long the level stays armed after the last break, in solver steps. 300 = 2.5 s. */
 const ARM_TICKS = 300;
-/** Distance / angle at which a member has visibly left the frame and stops carrying load. */
-const DETACH_D = 0.55;
-const DETACH_A = 0.35;
+/**
+ * Distance / angle at which a member has visibly left the frame and stops carrying load.
+ *
+ * ── TIGHTENED IN PW ROUND 5, AND IT IS A COUNTERWEIGHT, NOT A TUNING ─────────
+ * Round 5 made `Block.fracture` conserve energy: debris is no longer born with a free
+ * downrange kick, so a collapse is carried by real load transfer instead of by wreckage
+ * being thrown at the next block. That is correct and it cost propagation — MOVED at
+ * contact+800 ms fell 8.5 -> 8 on the l1 gate. The brief's instruction for exactly this
+ * case is to make the STRUCTURE more precarious rather than re-inflate the spawn.
+ *
+ * Of the four precariousness levers this file exposes, three are INERT on l1: swept back to
+ * back on one tree (`_tools/scenarios/pw-r5-prec.mjs`), `tuneHeadOv` 0.06 -> 0.14 and
+ * `tuneRackTrigger` 0.30 -> 0.20 reproduce the base arm shot for shot, to the decimal, on
+ * all eight gate shots. Only the detachment threshold moves anything, because on l1 the
+ * question that decides whether the frame lets go is always "has this member left its
+ * authored pose yet", and 0.55 m is most of a block width — a post can lean right out of
+ * the bay and still be counted as carrying its share of the roof.
+ *
+ * 0.38 m / 0.24 rad restores MOVED to 8.5 and BROKE to 6, and it also rescues the shot the
+ * ORCHESTRATOR-NOTES solvability probe recorded as the dead zone: 0.36@1.00 has scored 600
+ * with 15 of 17 blocks standing in every gate run on record, and now clears the level
+ * (MOVED 2 -> 6, FRAME 0/6 -> 3/6, broke 2 -> 6, 600 -> 42 000). Cohesion at +300 ms is
+ * unchanged at 100 %, so the tower still comes apart at the joints rather than dissolving.
+ */
+const DETACH_D = 0.38;
+const DETACH_A = 0.24;
 /** Vertical tolerance for "this block is standing on my head" / "this is under my foot". */
 const FACE_TOL = 0.30;
 /** How much horizontal overlap still counts as "something is standing on my head", m. Above
@@ -308,6 +331,75 @@ const HOP_TICKS = 7;
  * only there so the side nearest the hole leads.
  */
 const WAVE_ALONG_BLOW = 0.85;
+
+/**
+ * ══ THE ASK IS A MOMENTUM THE DONOR HOLDS, NOT A Δv THE RECIPIENT WANTS ══════
+ * PW round 8. The paragraph above defends carrying the shudder in m/s, and for the
+ * DIRECTION and the DECAY ladder that defence still stands — one number, one readable
+ * amount of movement. It does not survive contact with the donor rule, and the reason is
+ * arithmetic:
+ *
+ *     a Δv ask costs `m * Δv` newton-seconds, so the HEAVIEST member in the level always
+ *     generates the BIGGEST ask — while the thing being asked to pay for it is a debris
+ *     cloud whose momentum has nothing to do with the recipient's mass.
+ *
+ * Measured over the 6-shot l1 cohort before this round (`pw-r8-audit.mjs`): `hop` asked for
+ * 200.88 N·s, its donors could supply 70.73, and the remaining 130.15 N·s — 65 % — was minted
+ * one-sided at 94.84 J, which was 51 % of every joule this file created. The single worst
+ * write was +10.25 J and +4.577 kg·m/s into the 1.956 kg stone cube in ONE 8.3 ms step, with
+ * six donors already registered and 89 % of the impulse still invented. PW r7 §5 measured the
+ * same thing from the other end and named the cause exactly: "hop 1 cannot be rescued by a
+ * better donor. The ASK is the problem."
+ *
+ * ── WHY THE CAP IS FREE, AND IT IS PROVABLE RATHER THAN HOPEFUL ──────────────
+ * `spend()` clamps the exchange at the plastic vertex, `lam = -C/(2A)`. Write the write's
+ * magnitude as |J| and the donor set's closing speed along the axis as Δ:
+ *
+ *     A = |J|^2 * K,   K = 1/(2m) + Σ w_i^2/(2 m_i)          C = -|J| * Δ
+ *     lam        = Δ / (2 |J| K)
+ *     lam * |J|  = Δ / (2K)                                  ← INDEPENDENT of |J|
+ *
+ * The momentum that actually changes hands does not depend on how much was asked for. Asking
+ * for more than `Δ/(2K)` therefore transfers not one extra newton-second — it only enlarges
+ * the one-sided remainder the pool has to invent. Capping the ask at `availableP()` leaves
+ * the transfer EXACTLY unchanged and deletes the minting; that is why this is not a
+ * softening of the collapse dressed up as conservation.
+ *
+ * ── AND A BOUNDED SEED, BECAUSE A SHOCK IS NOT ONLY A COLLISION ──────────────
+ * A stress wave crosses a wedged, braced, barely-moving member without that member having
+ * bulk momentum to hand over — which is the whole reason this layer exists (the solver
+ * absorbs exactly that case into the brace). Bounding the ask at the donor's momentum ALONE
+ * would make the wave die wherever the frame is stiffest. `WAVE_SEED_P` is the ceiling on
+ * what may still be invented there, in NEWTON-SECONDS rather than in Δv, so it is the same
+ * number for a glass mullion and for a stone cube:
+ *
+ *     |J|_ask = min( m * dv ,  max( availableP , WAVE_SEED_P * dv/WAVE_CAP ) )
+ *
+ * The `dv/WAVE_CAP` factor keeps the seed on the same decay ladder as the Δv ceiling, so a
+ * hop-4 write cannot invent as much as a hop-1 write. `Infinity` restores the old ask
+ * exactly (`m * dv` always binds), which is what the A/B arm uses.
+ *
+ * ── WHY 1.0 N·s, AND IT WAS SWEPT, NOT PICKED ────────────────────────────────
+ * Five values priced on the 8-shot l1 gate and the 6-shot audit cohort, all arms back to
+ * back in ONE process (r6 §5), against `Infinity` = the shipped r7 ask:
+ *
+ *   seedP        stone frac · shots   ONE-SHOT   MOVED   BROKE   created J   hop mint N·s
+ *   Infinity        6 · 5/8             5/8       8      5.5       126.81        177
+ *   0               8 · 6/8             4/8       7.5    5.5        54.00          0
+ *   0.6             6 · 6/8             4/8       8      5.5          —            —
+ *   1.0             7 · 7/8             5/8       8.5    6          50.24         50
+ *   2.0             6 · 6/8             6/8       8      5.5        85.55        114
+ *
+ * 0 is the purest statement of the rule and it costs a one-shot clear: a stress wave really
+ * does cross a wedged member that has no bulk momentum to hand over, and bounding the ask at
+ * the donor alone makes the wave die exactly where the frame is stiffest. 2.0 buys a
+ * one-shot clear back and gives most of the minting back with it. 1.0 is the only value that
+ * holds or improves EVERY protected number — stone fractures 6 -> 7 and shots fracturing
+ * stone 5/8 -> 7/8 (the canary, PW r3 §3 / r5 §2 / r7 §4), BROKE 5.5 -> 6, MOVED 8 -> 8.5,
+ * one-shot clears 5/8 held, FRAME 5/6 and cohesion 100 % held — while taking the write
+ * channel's created energy 126.81 -> 50.24 J and the worst single write +10.28 -> +2.03 J.
+ */
+const WAVE_SEED_P = 1.0;
 
 /**
  * How much of a shudder arrives as DAMAGE rather than as motion, as a fraction of the
@@ -415,6 +507,26 @@ const SHOCK_DAMAGE = 0.02;
  * propagation counterweight, and falls off a cliff below 0.4 — at 0.22 the pool is dry
  * within 40 writes of the first fracture and MOVED / FRAME / one-shot clears go
  * 8 -> 5, 5/6 -> 2.5/6, 5/8 -> 0/8.
+ *
+ * ── RE-DERIVED WITH THE SETTLEMENT IN PLACE (PW r10), AND IT DOES NOT MOVE ───
+ * Round 10 turns the pool into a real currency, so the obvious question is whether the CLAIM
+ * still has to be this large. Swept again on the 8-shot l1 gate with everything else shipped
+ * (`pw-r10-gate.mjs`, arms `t04` / `t02` against `r10`):
+ *
+ *   | claim ceiling | 1.0 (shipped) | 0.4 | 0.2 |
+ *   |---|---|---|---|
+ *   | MOVED median          | **9**   | 8.5   | 2.5 |
+ *   | FRAME median          | **5/6** | 4.5/6 | 0/6 |
+ *   | ONE-SHOT CLEARS       | **7/8** | 5/8   | 2/8 |
+ *   | BROKE median          | **5.5** | 4     | 2.5 |
+ *   | writes starved by the pool | 0  | 0     | 100 |
+ *
+ * r3's cliff is exactly where r3 left it. The finding is not that the number changed — it is
+ * that **TRANSMIT has stopped being the control**. What the layer may CREATE is now bounded by
+ * `TRANSMIT_MINT` (0.20) instead, and lowering the claim on top of that only starves writes the
+ * world was going to pay for anyway. That is why this round did not close the defect by
+ * lowering TRANSMIT: doing so buys honesty in the one place it was already free and pays for it
+ * where it is most expensive.
  */
 const TRANSMIT = 1.0;
 /** Hard ceiling on the live pool, J. The pool is a buffer for the blow that is happening now,
@@ -424,6 +536,287 @@ const TRANSMIT = 1.0;
 const POOL_CAP = 60;
 /** Below this the pool is spent and writes are skipped outright, J. */
 const POOL_FLOOR = 0.02;
+
+/**
+ * ══ THE SETTLEMENT — THE OTHER SIDE OF THE LEDGER (PW round 10) ══════════════
+ *
+ * ── THE DEFECT ───────────────────────────────────────────────────────────────
+ * Rounds 3 to 9 built a ledger that proves THE SHOT PAID FOR IT. They never built the other
+ * half, and the header above said so without noticing: "the cumulative energy this file can
+ * ADD over a shot is bounded by TRANSMIT times the energy that shot actually delivered".
+ * `creditContact()` credits the pool with energy the solver has ALREADY resolved at the
+ * contact, and `spend()` then writes a second copy of it into a body as new velocity. A
+ * ledger whose every entry is a credit is not a currency; it is a licence to print, with a
+ * ceiling on it.
+ *
+ * Priced on ONE tree with both arms back to back (`_tools/scenarios/critpw-r9-ab.mjs`, six l1
+ * shots, seed 4242): with `structure.enabled = false` — same dart, same damage model, same
+ * fractures, same debris burst — created energy falls **131.9 J -> 3.3 J**. 97.5 % of every
+ * joule this game invents was this one layer. And the doctrine above — "the layer's honest
+ * share is the small part that goes into breaking symmetry" so gravity can do the rest — was
+ * not what was happening: in the honest arm disturbed blocks at contact+150 ms went 10 -> 4,
+ * reach 5.2 m -> 2.1 m, and ONE-SHOT CLEARS 6/6 -> 0/6. Every win on l1 was funded by energy
+ * the game invented.
+ *
+ * ── WHY THE DEBIT IS TAKEN AT THE WRITE AND NOT AT THE CONTACT ───────────────
+ * The obvious fix is to debit the collision inside `creditContact()`: take the credit straight
+ * back out of the struck block and the dart. MEASURED FIRST (`_tools/scenarios/pw-r10-probe.mjs`,
+ * the same six-shot cohort), and the measurement rules it out:
+ *
+ *   | at the first credited contact      | median | range        |
+ *   |------------------------------------|--------|--------------|
+ *   | blowE credited                     | 42.7 J | 4.1 .. 52.8  |
+ *   | the struck block's kinetic energy  |  3.5 J | 1.0 .. 26.3  |
+ *   | the dart's, after the hit          | 13.2 J | 3.3 .. 38.8  |
+ *   | the PAIR                           | 30.3 J | 12.3 .. 39.8 |
+ *   | what the layer then SPENDS, a shot | 25.9 J | 22.1 .. 33.0 |
+ *
+ * `blowE` is `½·J·v_approach`, the energy the collision removed from the PAIR. It is not
+ * energy the struck block is holding — the block holds a tenth of it — and the pair is very
+ * nearly all the live kinetic energy in the level at that instant (whole dynamic world: 30.6 J
+ * median). So the pair cannot fund the credit. Debiting it eagerly would brake the dart and
+ * the struck block to ~13 % of their speed at the exact moment the dart has to follow through
+ * and the struck block has to come apart at 2.6-5.7 m/s — which is what carries the "blown
+ * through, not exploded from within" read (PW r5 §4) — and it would do it for a budget that is
+ * then 57 % unspent (spent / credited = 0.43).
+ *
+ * So the pool stays a CLAIM, and the debit is SETTLED AT EACH WRITE against whatever the world
+ * holds at that moment. The same probe measures that reserve across the collapse: live dynamic
+ * kinetic energy is 31 / 30 / 29 / 79 / 13 / 47 J (median) at contact + 0 / 100 / 200 / 400 /
+ * 800 / 1600 ms — never empty, because gravity keeps feeding it — against a worst single write
+ * of 2.14 J. A write can therefore nearly always be funded out of real motion, which is the
+ * only reason the propagation survives this round at all.
+ *
+ * ── WHAT THE SETTLEMENT IS, EXACTLY ──────────────────────────────────────────
+ * `reserveKE()` sums the TRANSLATIONAL kinetic energy of every live dynamic body except the
+ * recipient. `settleTake(d)` then scales every one of those linear velocities by
+ *
+ *     f = sqrt(1 - d / KE_reserve)
+ *
+ * which removes exactly `d` joules, because a uniform velocity scale takes the same FRACTION
+ * of every body's kinetic energy. Three consequences, all deliberate:
+ *
+ *   · **It is exact.** Not a damping coefficient that removes "about" the right amount — `f`
+ *     is solved from the energy it has to remove, so the write channel's net energy crossing
+ *     is zero by construction rather than by tuning.
+ *   · **It is invisible.** The cost is spread over the whole world in proportion to what each
+ *     body is already doing, so nothing is braked enough to see: 2.14 J out of a 30 J reserve
+ *     is a 3.6 % speed reduction shared over ~25 bodies, and the typical write is ~0.1 J, i.e.
+ *     0.17 %. A per-body brake sized for one write would stop a 40 g chip dead — the same
+ *     mistake PW r6 §2 made and measured when it landed the reaction on the recipient's
+ *     application point.
+ *   · **It is LINEAR ONLY, which is the choice PW r6 already made for the donor exchange.** A
+ *     shock front carries linear momentum; it does not reach across a level and stop things
+ *     spinning. Scaling spin too would flatten the independent tumble the rubric's debris
+ *     criterion is written on ("no two share a rotation") to buy a few per cent more reserve
+ *     that is never needed.
+ *
+ * ── WHAT IT IS NOT. STATED, NOT GLOSSED ──────────────────────────────────────
+ * The settlement conserves ENERGY exactly and does NOT conserve momentum: it removes momentum
+ * from the world in proportion to what each body carries, while the seed write injects its own
+ * one-sided impulse somewhere else. That residual is `stats.debitP`, reported beside
+ * `stats.seedP`, in exactly the spirit in which PW r6 declared `seedL` rather than paying for
+ * it with fictitious chip spin. PW r6's local, momentum-CONSERVING donor exchange still runs
+ * first and is untouched: this round funds the seed r6 left one-sided, it does not replace the
+ * transfer.
+ *
+ * And it moves energy across a distance, which a contact does not. The defence is the one the
+ * whole file rests on: this layer exists because a rigid-body solver cannot see that a column
+ * is only standing because of a beam two metres away. It was already reaching across that
+ * distance to write the motion. Now it pays for it out of the world instead of out of nothing.
+ */
+/**
+ * Most of the live reserve ONE settlement may take, as a fraction.
+ *
+ * THIS IS NOT THE TRIPWIRE ITS FIRST DRAFT CALLED IT, and the reason is worth keeping. A
+ * settlement scales every live velocity by `sqrt(1 - frac)`, so a `frac` charged twice a solver
+ * step for the 240 steps of a collapse is an EXPONENTIAL DECAY on the whole world, not a bound —
+ * the same shape as PW r3's "a repeated velocity match is a SERVO, not a ramp". Its real job is
+ * to decide how much of a write has to fall through to the mint when the reserve is thin.
+ *
+ * Swept on the 6-shot cohort with everything else at its shipped value (`pw-r10-ab.mjs`, arms
+ * `L08` / `L25` / `L50`): created energy 29.3 / 22.5 / 22.2 J, one-shot clears 3 / 5 / 5 of 6,
+ * disturbed at 2 s 16 / 16 / 16. 0.25 and 0.50 are indistinguishable and 0.08 is worse on both,
+ * so 0.25 sits inside the flat region with its lower edge measured rather than assumed.
+ */
+const DEBIT_FRAC = 0.25;
+/** Below this a body holds no usable motion. Skipped, so a settled or sleeping body is never
+ *  written to — which would wake it — and contributes nothing to the reserve. */
+const DEBIT_KE_EPS = 1e-9;
+
+/**
+ * ══ THE MINT ALLOWANCE — WHY A RESIDUAL STILL EXISTS, AND WHY IT IS 0.20 ═════
+ *
+ * The settlement is the whole answer while a tower is coming down: the world is full of loose
+ * motion and every write is paid for out of it. It is NOT the answer on the shot this file was
+ * written for. Measured on the 8-shot l1 gate (`pw-r10-gate.mjs`, one tree, arms back to back),
+ * a settlement with NO residual allowance at all:
+ *
+ *   | 8-shot l1 gate  | pool = pure credit (r9) | settled, nothing mintable |
+ *   |---|---|---|
+ *   | MOVED median    | 9    | **7**  |
+ *   | FRAME median    | 5/6  | 5/6, but 0/6 on three shots instead of one |
+ *   | ONE-SHOT CLEARS | 7/8  | **4/8** |
+ *
+ * and the lost shots name the mechanism exactly. `0.32@0.94` — the shot PW r3 put in this file's
+ * header, a genuine 18 N·s hit that fractures NOTHING — went MOVED 10 -> 3, FRAME 5/6 -> 0/6,
+ * broke 5 -> 0, with the reserve refusing 15 writes outright. It is a BOOTSTRAP CLIFF: a blow
+ * that breaks nothing leaves the level at rest, a level at rest has no loose motion to
+ * redistribute, so the rack that would start the topple cannot be funded, so the level stays at
+ * rest. Exactly the shape PW r3 recorded when the ledger credited on FRACTURE instead of at the
+ * contact ("a shot that shakes the tower WITHOUT breaking anything credits nothing, so it can
+ * buy nothing... the frame sat at its authored pose 800 ms later"), arrived at from the far side.
+ *
+ * And the cliff is physically real, not an artefact. `blowE` is `½·J·v_approach`: the energy the
+ * INELASTIC collision DESTROYED. Rapier has already thrown it away — it is inside the
+ * solver-phase dissipation — so no live body is holding it to be debited. In the world that
+ * energy does not vanish; part goes into plastic deformation and part travels through the
+ * structure as an elastic wave, which is the thing this file exists to model. Recovering a share
+ * of it is not the same act as inventing energy, but it is also not a transfer between two
+ * dynamic bodies, and no census of dynamic bodies can ever book it. PW r6 named this same
+ * crossing for the rack, whose reaction "genuinely crosses into the fixed world", and kept it as
+ * a declared, priced, one-sided seed. This is that, generalised and bounded.
+ *
+ * So the ledger is two-tier and ORDERED, and the ORDER is the whole design:
+ *
+ *   1. **THE RESERVE PAYS FIRST.** Every joule that can come out of loose motion does.
+ *   2. **THE MINT PAYS THE REMAINDER**, from an allowance worth `TRANSMIT_MINT` of the blow, and
+ *      every joule of it is counted in `stats.mintJ` — the number this round exists to drive
+ *      down, reported separately and never folded into `spentJ`.
+ *
+ * Reserve-first is what makes the residual small without making the game smaller, and the size
+ * of that effect is the round's best single number: at `TRANSMIT_MINT = 1.0`, i.e. ROUND 9's OWN
+ * CEILING with nothing tightened at all, created energy is **38.9 J against round 9's 131.9 J**.
+ * Seventy per cent of what this layer used to invent was never needed; it was simply never asked
+ * for out of the world first.
+ *
+ * ── 0.20 IS THE SWEEP'S KNEE, NOT A DIAL ─────────────────────────────────────
+ * `pw-r10-ab.mjs`, 6-shot l1 cohort, seed 4242, everything else shipped:
+ *
+ *   | mint share | 0 | 0.01 | 0.02 | 0.05 | 0.10 | **0.20** | 1.0 | r9 |
+ *   |---|---|---|---|---|---|---|---|---|
+ *   | created, J        | 0.4 | 2.2 | 5.3 | 12.7 | 22.5 | **32.0** | 38.9 | 131.9 |
+ *   | minted, J         | 0.0 | 3.4 | 6.5 | 15.6 | 25.0 | **35.2** | 42.1 | — |
+ *   | one-shot clears   | 1/6 | 1/6 | 3/6 | 3/6  | 5/6  | **6/6**  | 5/6  | 6/6 |
+ *   | disturbed at 2 s  | 13  | 13  | 15.5| 15   | 16   | **16.5** | 16   | 16 |
+ *
+ * 0.20 is the SMALLEST share that gives up nothing, and the 8-shot gate confirms it end to end:
+ * MOVED 9, FRAME 5/6, COHESION 100 %, ONE-SHOT 7/8 — every one of them r9's own figure — while
+ * BROKE goes 4 -> 5.5, STANDING 13 -> 11.5 and the fracture mix 14/14/5 -> 18/15/8. Going above
+ * it buys nothing: 1.0 is WORSE on one-shot clears (6/8) and on BROKE (4.5), because the extra
+ * allowance goes into jostling rather than into the frame.
+ */
+const TRANSMIT_MINT = 0.20;
+
+/**
+ * ══ WHICH BODIES THE RESERVE IS MADE OF ══════════════════════════════════════
+ *
+ * The first draft lent from EVERY live dynamic body, on the grounds that a uniform proportional
+ * scale is the one rule with no arbitrary preference in it. Measured on the 8-shot l1 gate, that
+ * is true and it is also wrong, because it brakes the collapse to pay for the collapse: MOVED
+ * went 9 -> 6.5 and FRAME 5/6 -> 4/6 while the fracture counterweights went UP (BROKE 4 -> 5,
+ * stone 5 -> 7 fractures, settled stone 10 % -> 16 %). The storey that is on its way down is the
+ * one body a shock must NOT be funded out of: it is the thing the shock is trying to move.
+ *
+ * So the reserve is the LOOSE motion — debris, the spent projectile, a dead villain — and never
+ * a standing block. That is the same doctrine PW r6 arrived at for hop 1, whose donor is the
+ * debris cloud of the block that just came apart "because it is physically the thing that hits
+ * the neighbour", generalised from one write to the whole ledger: **the wreckage pays, because
+ * the wreckage has already been paid for.** A block is in the structure graph precisely while it
+ * is still load-bearing, and the moment it shatters its pieces join the reserve.
+ */
+const RESERVE_LOOSE = true;
+
+/**
+ * Per-fracture ceiling on the debris burst, J — the second bound in `buyFracture()`.
+ *
+ * The pool alone already guarantees "the shot paid for it", but it does not stop ONE
+ * fracture drinking the whole 60 J and starving the propagation writes that follow it a few
+ * solver steps later. This bounds a single spawn.
+ *
+ * 6.0 J is measured, not picked: a momentum-neutralised burst costs exactly its own kinetic
+ * energy in the parent's centre-of-mass frame (the cross term vanishes by construction —
+ * see `Block.fracture`), so the cap is directly a separation speed. At l1's block masses
+ * 6 J buys ~3 m/s of spread on a 1.6 kg wood beam and ~6 m/s on a 0.27 kg glass column,
+ * which is the fan the cut plans were authored against. Swept 2 / 4 / 6 / 10 J on the
+ * 8-shot l1 gate via `tuneFracCap`; see ARCHITECTURE.md PW ROUND 5.
+ */
+const FRAC_BURST_CAP = 6.0;
+
+/**
+ * ══ THE DONOR RULE (PW round 6) ══════════════════════════════════════════════════════════
+ *
+ * Round 3 made every write PRICED. It did not make any write CONSERVING. A priced write is
+ * still `applyImpulseAtPoint` on one body and nothing anywhere else: momentum appears out of
+ * nothing, angular momentum appears out of nothing, and the kinetic energy is charged to a
+ * pool that a completely different event filled. Measured with `_tools/scenarios/pw-r6-audit.mjs`
+ * — a full census of the dynamic world taken twice INSIDE one `spend()`, so nothing is born,
+ * nothing dies, and the comparison is closed — the 8-shot l1 gate reads:
+ *
+ *     created kinetic energy  +330.5 J   (50 % of the 658.7 J the darts actually delivered,
+ *                                         and 77 % of the blow on 0.30@0.90)
+ *     momentum injected       401.7 kg·m/s      angular momentum injected 2455 kg·m²/s
+ *     worst single write      +10.63 J into a 1.956 kg stone cube in one 8.3 ms step
+ *                             (|v| 0.85 -> 3.20 m/s AND wz -0.27 -> -3.20 rad/s at once)
+ *     by mechanism            hop 60 %, rack 38 %, everything else 2 %
+ *
+ * A shock front does not create momentum. It CARRIES momentum from the member it came from
+ * to the member it arrives at. So every write now names a DONOR — the body (or bodies) whose
+ * motion it is passing on — and the reaction is applied to it at the same world point:
+ *
+ *     recipient  +J at p          donor i  -J·wᵢ at p     (Σ wᵢ = 1)
+ *
+ * Applying every share at the SAME point p is what makes the pair exact rather than merely
+ * tidy: linear momentum sums to zero by inspection, and angular momentum about any origin
+ * sums to `p × J + Σ p × (−J·wᵢ)` = 0 as well, whatever the donors' shapes or positions.
+ *
+ * ── THE CLAMP, AND WHY IT IS THE PHYSICS AND NOT A SAFETY VALVE ─────────────────────────
+ * A third-law pair is honest about momentum but it is NOT automatically cheaper in energy:
+ * the quadratic term gains the donor's 1/m as well, and only the cross term
+ * `J·(u_donor − u_recipient)` buys that back. A donor standing still would make a write MORE
+ * expensive — an equal-and-opposite pair applied blindly is a spring, not a transfer.
+ *
+ * So the transfer is clamped to the largest fraction of the write that a real shock could
+ * deliver: the fraction that does not INCREASE the pair's kinetic energy. The pair's price is
+ * the same quadratic `spend()` has always used, extended over recipient + donors,
+ *
+ *     dKE(λ) = A·λ² + C·λ      A ≥ 0 always,  C = the pair's cross term
+ *
+ * so the largest free fraction is `λ = min(1, −C/A)` when `C < 0`, and zero when `C ≥ 0`.
+ *   • `C < 0` means the donor is closing on the recipient — it HAS momentum to hand over,
+ *     and handing over up to λ of it costs nothing and usually destroys energy, which is what
+ *     an inelastic contact does.
+ *   • `C ≥ 0` means the donor has nothing to give along this axis. λ = 0, and the write falls
+ *     back to exactly the one-sided, pool-priced write it was before. Nothing regresses.
+ *
+ * ── WHAT IS LEFT IS CALLED A SEED, AND IT IS COUNTED ────────────────────────────────────
+ * The remaining `(1−λ)·J` is still applied one-sided and still bought from the pool exactly as
+ * round 3 left it. That part is honestly invented, and `stats.seedP` / `stats.seedJ` report it
+ * separately from `stats.transferP` / `stats.transferJ` so the split is a measurement rather
+ * than a claim. Driving the seed share down is the round's actual objective; a rule that made
+ * the number small by writing less would show up immediately as lost propagation.
+ *
+ * ── WHERE THE DONORS COME FROM ─────────────────────────────────────────────────────────
+ * Measured before the model was written (`_tools/scenarios/pw-r6-donor.mjs`), over four l1
+ * collapses:
+ *   • the shock wave, hops 2-4: the member it came from is still a live node on 268 of 273
+ *     writes, and it is closing on the recipient at 0.94-1.57 m/s. 100 / 74 / 56 % of the
+ *     requested Δv is transferable at hops 2 / 3 / 4.
+ *   • the shock wave, hop 1: the source is the block that has just come apart, so it is never
+ *     a live node (0 of 38) — and those 38 writes contain the four biggest impulses in the
+ *     game, all four into the stone cube. Its DEBRIS is the donor: the cloud exists by the
+ *     time the wave fires (2-5 ticks later), it carries exactly the parent's momentum, and it
+ *     is physically the thing that hits the neighbour. `registerDebris()` is that hand-off.
+ *   • rack and tip: the toe bears on another live block on 68 of 68 racks and 24 of 25 tips,
+ *     never on thin air. That block is the donor; when the toe is on the ground the reaction
+ *     goes into the fixed world, which no dynamic census can see, and the write stays a
+ *     declared seed rather than pretending to be a transfer.
+ */
+/** How long a fractured block's debris stays available as a donor, in solver steps. The waves
+ *  a fracture queues fire 2-5 steps later and hop again every HOP_TICKS(7)+0-3; four hops is
+ *  ~40 steps at the outside. 90 covers it with room and still expires inside one collapse, so
+ *  a cloud can never donate to the NEXT shot's wave. */
+const DEBRIS_TTL = 90;
 
 function extents(b) {
   const t = b.body.translation();
@@ -471,6 +864,19 @@ class Structure {
      */
     this.pool = 0;
     /**
+     * THE MINT ALLOWANCE, in joules (PW r10). The pool is a CLAIM — it says the shot paid for
+     * the write. This is the much smaller part of that claim the layer may write WITHOUT taking
+     * it out of a live body, i.e. the residual creation that survives the settlement. Reset
+     * with the level for exactly the same reason the pool is.
+     */
+    this.mint = 0;
+    /**
+     * Fractured blocks' debris, by block id, for `donorDebris()`. Like `lean` and `pool` this
+     * MUST be cleared by `reset()` — a cloud surviving a level rebuild would be a donor made
+     * of freed rapier bodies, which is both non-deterministic and a crash waiting to happen.
+     */
+    this.debris = new Map();
+    /**
      * ── DEBUG A/B KNOBS. Nothing in `src/` ever writes these. ───────────────────
      * They exist so a scenario can price each half of the ledger separately ON ONE TREE
      * (ORCHESTRATOR-NOTES r6 §5: a number taken before another builder's edit is not
@@ -483,7 +889,60 @@ class Structure {
     this.tuneTransmit = TRANSMIT;
     this.tuneMatch = true;
     this.tunePriced = true;
+    /** false => every write is one-sided again (the round-3 model), so a before/after runs on
+     *  ONE tree. There is no git history in this working copy and ORCHESTRATOR-NOTES r6 §5
+     *  rules out comparing against a number taken before another builder's edit. */
+    this.tuneTransfer = true;
+    /** true => clamp the exchange at the ELASTIC limit (-C/A) instead of the plastic vertex
+     *  (-C/2A). Debug only, and it is the wrong physics for rubble — it is here because the
+     *  first draft of round 6 used it and the l1 gate priced it at one-shot clears 7/8 -> 4/8.
+     *  Keep it so that finding is reproducible rather than a sentence in a document. */
+    this.tuneElastic = false;
+    /** false => hop 1 gets no debris donor; see `donorWave()`. Debug-only like the rest. */
+    this.tuneDebrisWave = true;
+    /**
+     * PW r7, and it is OFF because it was MEASURED AND LOST — see `donorDebris()`.
+     *
+     * true => hop 1 debits only the debris pieces closing on the recipient. It does exactly
+     * what it was built to do at the write level (hop-1 mean lambda 0.322 -> 0.474, closing
+     * speed 0.85 -> 1.21 m/s, writes with a live transfer 35/45 -> 36/45) and it still loses:
+     * concentrating the reaction on the front is concentrating the BRAKE on the front, and
+     * the front is the arrival that kills stone. On the 8-shot l1 gate, one process, one
+     * tree: shots fracturing stone 5/8 -> 4/8 and BROKE median 5.5 -> 5, while the closed
+     * audit's created energy went the WRONG way too (126.81 J with it off, 135.67 J with it
+     * on). Stone is the canary for the third time — PW r3 §3 (softened in time), PW r5 §2
+     * (thinned in mass), and now thinned in the DONOR SET. Kept as a knob so the finding is
+     * reproducible rather than a sentence in a document.
+     */
+    this.tuneFrontDonor = false;
+    /**
+     * PW r8. Ceiling in NEWTON-SECONDS on what one hop write may invent beyond what its
+     * donor set actually holds — see THE ASK IS A MOMENTUM above. `Infinity` reproduces the
+     * pre-r8 ask (`m * dv`, scaled by the recipient's mass) exactly, so both arms of the A/B
+     * run on ONE tree. Same debug-only contract as the rest: nothing in `src/` writes it.
+     */
+    this.tuneWaveSeedP = WAVE_SEED_P;
+    /**
+     * PW r10. false => no write is settled against the world and the pool is a pure credit
+     * again, i.e. EXACTLY the round-9 minting model, so a before/after runs on ONE tree.
+     * Same debug-only contract as the rest: nothing in `src/` writes it.
+     */
+    this.tuneDebit = true;
+    /** PW r10. Share of the live reserve one settlement may take; see DEBIT_FRAC. */
+    this.tuneDebitFrac = DEBIT_FRAC;
+    /** PW r10. false => the reserve lends from every live dynamic body, standing blocks
+     *  included. Measured, and it brakes the collapse to pay for the collapse; see
+     *  WHICH BODIES THE RESERVE IS MADE OF. */
+    this.tuneReserveLoose = RESERVE_LOOSE;
+    /** PW r10. Share of a blow the layer may still MINT, for the part of a write that arrives
+     *  when nothing is moving. 1.0 restores round 9's ceiling (with the reserve still paying
+     *  first, so it is not the same as `tuneDebit = false`); 0 is reserve-only and drives the
+     *  bootstrap cliff in THE MINT ALLOWANCE. Re-derived by sweep, not chosen. */
+    this.tuneTransmitMint = TRANSMIT_MINT;
     this.tunePoolCap = POOL_CAP;
+    /** Per-fracture ceiling on debris-burst energy, J. Same debug-only contract; see
+     *  `buyFracture()` for why a second, tighter bound exists on top of the pool. */
+    this.tuneFracCap = FRAC_BURST_CAP;
     /** Precariousness knobs, same debug-only contract — see `crit-PW-r3-precarious.mjs`. */
     this.tuneDetachD = DETACH_D;
     this.tuneDetachA = DETACH_A;
@@ -503,6 +962,37 @@ class Structure {
   freshStats() {
     return { collapses: 0, joints: 0, tips: 0, hinges: 0, loads: 0, hops: 0, racks: 0, audits: 0,
              detached: 0, creditJ: 0, spentJ: 0, starved: 0, poolPeak: 0,
+             /** The FRACTURE-SPAWN half of the ledger (PW r5). `fracAskJ` is what
+              *  `Block.fracture` asked for at full authored strength, `fracJ` what the pool
+              *  could actually pay; the gap is burst that was scaled down rather than
+              *  invented. `fracStarved` counts fractures that got nothing at all. */
+             fracN: 0, fracAskJ: 0, fracJ: 0, fracStarved: 0,
+             /** THE DONOR SPLIT (PW r6). `transferP` / `seedP` are impulse in N·s: how much
+              *  of what this file applied was handed over by a real body (momentum-neutral,
+              *  free) against how much was invented one-sided and bought from the pool.
+              *  `transferJ` is <= 0 by construction — the energy an inelastic hand-over
+              *  destroys. `donorMiss` counts writes that asked for a donor and found none. */
+             transfers: 0, transferJ: 0, transferP: 0, seedJ: 0, seedP: 0, donorMiss: 0,
+             /** PW r8. `waveAskP` is what the hop ladder asked for at full Δv, N·s;
+              *  `waveCutP` is how much of that the momentum cap removed before the write.
+              *  Cheap enough for a gate to print without the full census. */
+             waveAskP: 0, waveCutP: 0,
+             /** THE SETTLEMENT (PW r10). `debitJ` is joules actually taken back out of the
+              *  world to fund the seed writes and the bursts — with the settlement on it
+              *  tracks `spentJ + fracJ` to the last decimal, and the gap is `debitShortJ`.
+              *  `debitP` is the linear momentum that came out with it, kg·m/s, declared
+              *  beside `seedP` rather than hidden (the settlement conserves energy, not
+              *  momentum). `debitDry` counts writes the RESERVE refused, as distinct from
+              *  `starved`, which is the pool refusing. */
+             debitJ: 0, debitP: 0, debitShortJ: 0, debitN: 0, debitDry: 0, debitWorst: 0,
+             /** What the layer still MINTS after the reserve has paid all it can — the number
+              *  PW r10 exists to drive down. Kept out of `spentJ` on purpose: `spentJ` is what
+              *  the layer wrote, `mintJ` is the part of it that came out of nowhere. */
+             mintJ: 0, mintN: 0,
+             /** Angular momentum the exchange leaves unbalanced, kg·m²/s — the price of
+              *  landing the reaction on the donor's own centre instead of on the recipient's
+              *  application point. Declared, not hidden; see THE TRANSFER in `spend()`. */
+             seedL: 0,
              /** joules spent per mechanism — which part of the collapse the shot is paying
               *  for. Diagnostics only; the game never reads it. */
              byJ: { tip: 0, rack: 0, hop: 0, hinge: 0, load: 0, side: 0 } };
@@ -518,11 +1008,121 @@ class Structure {
     this.armedUntil = 0;
     this.nextAudit = 0;
     this.pool = 0;              // the energy ledger. See the constructor: this MUST be reset.
+    this.mint = 0;              // the residual-creation allowance. Same argument.
+    this.debris.clear();        // donor clouds. See the constructor: this MUST be reset.
+    // The settlement's cached reserve holds raw rapier bodies. A list surviving a level
+    // rebuild is the same class of bug as a surviving donor cloud — freed bodies, and a crash
+    // waiting for the first write. Nothing reads it without repricing, but clear it anyway.
+    if (this._res) { this._res.list.length = 0; this._res.ke = 0; }
     this.stats = this.freshStats();
   }
 
   // ══ THE LEDGER ═════════════════════════════════════════════════════════════
-  // Two functions, and every body write in this file goes through them.
+  // Two functions, and every body write in this file goes through them. A third, the
+  // SETTLEMENT, is what makes the pool a currency instead of a credit line — see
+  // THE SETTLEMENT above the constants.
+
+  /**
+   * Price the reserve: the translational kinetic energy of every live dynamic body, in joules,
+   * skipping `skipA` and `skipB`. The body list is cached in `this._res` so that the matching
+   * `settleTake()` scales EXACTLY the bodies that were priced — nothing can be born, die or
+   * move between the two calls (they are in the same code phase, with no solver step between),
+   * so the debit is exact rather than approximately exact.
+   *
+   * Iterates `world.entities`, which is in creation order and is the game's determinism
+   * ordering (see world.js). A uniform scale is order-independent anyway; the only thing the
+   * order affects is the float rounding of the sum, and creation order fixes that too.
+   *
+   * `skipA` is always the recipient of the write being funded. Paying for a write partly by
+   * braking the body it is being written INTO is self-cancelling, and worst exactly where it
+   * matters — the stone cube holds a third of the reserve on the shots that hit it.
+   */
+  reserveKE(skipA = null, skipB = null) {
+    const R = this._res || (this._res = { list: [], ke: 0 });
+    R.list.length = 0; R.ke = 0;
+    if (!this.tuneDebit) return 0;
+    const L = world.entities;
+    for (let i = 0; i < L.length; i++) {
+      const e = L[i];
+      if (e === skipA || e === skipB || e.dead) continue;
+      // A standing block is load-bearing by definition and is what the shock is trying to move;
+      // lending out of it is borrowing from the collapse to pay for the collapse. See
+      // WHICH BODIES THE RESERVE IS MADE OF. Its debris joins the reserve the instant it breaks.
+      if (this.tuneReserveLoose && e.tag === 'block') continue;
+      const b = e.body;
+      if (!b) continue;
+      // A fixed body has infinite mass and no velocity to take; `isFixed` is absent on
+      // nothing we build, but a missing method must read as "not a donor", never as "dynamic".
+      if (typeof b.isFixed !== 'function' || b.isFixed()) continue;
+      const m = b.mass();
+      if (!(m > 0)) continue;
+      const v = b.linvel();
+      const ke = 0.5 * m * (v.x * v.x + v.y * v.y + v.z * v.z);
+      if (!(ke > DEBIT_KE_EPS)) continue;
+      R.list.push(b); R.ke += ke;
+    }
+    return R.ke;
+  }
+
+  /**
+   * Take `joules` back out of the world, exactly, by scaling the reserve priced by the
+   * immediately preceding `reserveKE()` call. `f = sqrt(1 - d/KE)` removes the same FRACTION
+   * of every body's kinetic energy, so the cost lands in proportion to what each body is
+   * already doing and nothing is singled out.
+   *
+   * `setLinvel(..., false)` — never wake a body to brake it. Anything with usable motion is
+   * awake already (the `DEBIT_KE_EPS` filter in `reserveKE` is what guarantees that), and a
+   * settlement that woke a sleeping tower would break `p3-r5-rest` and `p3-r6-late`, which
+   * exist to prove this file is unreachable from a world at rest.
+   *
+   * @returns {number} joules actually removed — less than asked only if the reserve is short,
+   *                   which is then declared in `stats.debitShortJ`.
+   */
+  settleTake(joules) {
+    const R = this._res;
+    if (!this.tuneDebit || !R || !(joules > 0) || !(R.ke > DEBIT_KE_EPS)) return 0;
+    const d = Math.min(joules, R.ke);
+    const f = Math.sqrt(Math.max(0, 1 - d / R.ke));
+    let dp = 0;
+    for (let i = 0; i < R.list.length; i++) {
+      const b = R.list[i], v = b.linvel();
+      dp += (1 - f) * b.mass() * Math.hypot(v.x, v.y);
+      b.setLinvel({ x: v.x * f, y: v.y * f, z: v.z * f }, false);
+    }
+    this.stats.debitJ += d;
+    this.stats.debitP += dp;
+    this.stats.debitN++;
+    if (d > this.stats.debitWorst) this.stats.debitWorst = d;
+    return d;
+  }
+
+  /**
+   * Pay for `joules` of write, RESERVE FIRST and mint only for the remainder — the ordering is
+   * the whole of THE MINT ALLOWANCE above. `resAvail` is what the `reserveKE()` call that sized
+   * this write said the reserve could lend; passing it in rather than re-measuring is what makes
+   * the payment consistent with the budget the write was scaled against.
+   *
+   * `mintJ` is deliberately NOT folded into `spentJ`: `spentJ` is what the layer wrote, `mintJ`
+   * is the part of it that came out of nowhere, and the second number is the one this round
+   * exists to drive down. `debitShortJ` is a third thing again — what the reserve promised and
+   * could not deliver — and it should stay at zero.
+   */
+  payFor(joules, resAvail) {
+    if (!(joules > 0)) return;
+    const promised = Math.min(joules, resAvail);
+    const fromWorld = this.settleTake(promised);
+    const minted = joules - promised;
+    if (minted > 1e-12) {
+      this.mint -= minted;
+      this.stats.mintJ += minted;
+      this.stats.mintN++;
+    }
+    // `resAvail` is `tuneDebitFrac * reserve`, so `promised` can never exceed what the reserve
+    // holds and this is structurally zero. It is measured anyway: a shortfall here would be
+    // unfunded creation wearing the settlement's label, which is the one failure this round
+    // must not be able to hide.
+    if (promised - fromWorld > 1e-9) this.stats.debitShortJ += promised - fromWorld;
+  }
 
   /**
    * Price and apply one write — a linear impulse at a world point, optionally carrying an
@@ -546,47 +1146,434 @@ class Structure {
    *
    * @returns {number} the fraction of the requested write actually applied, 0..1
    */
-  spend(node, jx, jy, px, py, tauZ = 0) {
+  spend(node, jx, jy, px, py, tauZ = 0, donors = null) {
     const body = node.b?.body;
     if (!body) return 0;
     const m = node.mass, I = node.inertia;
     if (!(m > 0) || !(I > 0)) return 0;
     const t = body.translation();
     const tau = tauZ + ((px - t.x) * jy - (py - t.y) * jx);
-    const v = body.linvel(), w = body.angvel();
-    const a = (jx * jx + jy * jy) / (2 * m) + (tau * tau) / (2 * I);
-    const c = jx * v.x + jy * v.y + tau * w.z;
 
-    let s = 1;
     if (!this.tunePriced) {
+      const v0 = body.linvel(), w0 = body.angvel();
+      const a0 = (jx * jx + jy * jy) / (2 * m) + (tau * tau) / (2 * I);
+      const c0 = jx * v0.x + jy * v0.y + tau * w0.z;
       if (jx !== 0 || jy !== 0) {
         body.applyImpulseAtPoint({ x: jx, y: jy, z: 0 }, { x: px, y: py, z: 0 }, true);
       }
       if (tauZ !== 0) body.applyTorqueImpulse({ x: 0, y: 0, z: tauZ }, true);
-      this.stats.spentJ += Math.max(0, a + c);
-      if (this.spendTag) this.stats.byJ[this.spendTag] += Math.max(0, a + c);
+      this.stats.spentJ += Math.max(0, a0 + c0);
+      if (this.spendTag) this.stats.byJ[this.spendTag] += Math.max(0, a0 + c0);
       return 1;
     }
-    if (a + c > this.pool) {
-      if (this.pool <= POOL_FLOOR) { this.stats.starved++; return 0; }
 
+    // ══ 1. THE TRANSFER ═══════════════════════════════════════════════════════════════
+    /**
+     * THE MOMENTUM EXCHANGE, AND ITS TWO CORRECTIONS — both of which were measured, not
+     * reasoned, and the first draft of this round got both wrong.
+     *
+     * 1. THE REACTION LANDS ON THE DONOR'S OWN CENTRE OF MASS, not on the recipient's
+     *    application point. Applying every share at one point conserves angular momentum by
+     *    inspection and is very tempting for that reason — but a debris chip is 40 g with
+     *    `I` on the order of 3e-4, and a lever arm of a metre turns its share of the reaction
+     *    into `tau^2/2I` of TWENTY joules, all of it spin about a point the chip is nowhere
+     *    near. That term dominates `A`, the clamp below collapses, and 84 % of the impulse
+     *    stays invented. The exchange here is therefore LINEAR — the thing a shock actually
+     *    carries — and the angular residual `lam * (p - centroid) x J` is declared in
+     *    `stats.seedL` rather than being paid for with fictitious chip spin.
+     *
+     * 2. THE CLAMP IS THE PLASTIC LIMIT, NOT THE ENERGY-NEUTRAL ONE. `A*lam^2 + C*lam = 0`
+     *    at `lam = -C/A` looks like "the largest free transfer", and it is: it is the
+     *    perfectly ELASTIC exchange, which is exactly TWICE the plastic impulse. It drives
+     *    the donor past the pair's common velocity and out the other side — measured as a
+     *    real cost on the l1 gate, one-shot clears 7/8 -> 4/8, because the shock was braking
+     *    the very members it was supposed to be travelling through. The vertex of the same
+     *    parabola, `lam = -C/(2A)`, is the perfectly INELASTIC exchange: both bodies end at
+     *    a common velocity along the axis, the pair's energy is at its MINIMUM, and neither
+     *    body is ever reversed. Rubble is inelastic. With one donor it reduces to
+     *    `lam*|J| = mu * closing speed` exactly, which is the textbook plastic impulse.
+     *
+     * `A` and `C` are built from the linear exchange alone, so the criterion is a statement
+     * about the pair's RELATIVE velocity and is frame-invariant. `C >= 0` means the donor is
+     * not closing on the recipient along this axis — it has nothing to hand over — and the
+     * write falls back to exactly the one-sided write round 3 shipped.
+     */
+    let lam = 0;
+    const D = (this.tuneTransfer && donors && donors.length) ? donors : null;
+    if (D) {
+      const v = body.linvel();
+      let A = (jx * jx + jy * jy) / (2 * m);
+      let C = jx * v.x + jy * v.y;
+      for (const d of D) {
+        const dv = d.body.linvel();
+        A += (jx * jx + jy * jy) * d.w * d.w / (2 * d.mass);
+        C -= d.w * (jx * dv.x + jy * dv.y);
+      }
+      if (C < 0 && A > 1e-12) lam = Math.min(1, -C / (this.tuneElastic ? A : 2 * A));
+      if (lam > 1e-6) {
+        if (jx !== 0 || jy !== 0) {
+          body.applyImpulseAtPoint({ x: jx * lam, y: jy * lam, z: 0 }, { x: px, y: py, z: 0 }, true);
+        }
+        if (tauZ !== 0) body.applyTorqueImpulse({ x: 0, y: 0, z: tauZ * lam }, true);
+        let cx = 0, cy = 0;
+        for (const d of D) {
+          const dt = d.body.translation();
+          cx += d.w * dt.x; cy += d.w * dt.y;
+          const jdx = -jx * lam * d.w, jdy = -jy * lam * d.w;
+          if (jdx !== 0 || jdy !== 0) {
+            d.body.applyImpulseAtPoint({ x: jdx, y: jdy, z: 0 }, { x: dt.x, y: dt.y, z: 0 }, true);
+          }
+        }
+        // A*lam^2 + C*lam is <= 0 for every lam in (0, -C/A], so the exchange is free and is
+        // never refunded into the pool (round 3's rule: the ledger is a ceiling on creation,
+        // not a currency). At the plastic vertex it is at its most negative.
+        this.stats.transferJ += A * lam * lam + C * lam;
+        this.stats.transferP += lam * Math.hypot(jx, jy);
+        this.stats.seedL += Math.abs(lam * ((px - cx) * jy - (py - cy) * jx));
+        this.stats.transfers++;
+      } else lam = 0;
+    }
+
+    // ══ 2. THE SEED ═══════════════════════════════════════════════════════════════════
+    // Whatever the donor could not supply is still invented, still one-sided, and still
+    // bought from the pool at its exact price — read off the state the transfer LEFT, not
+    // the state it started from, or the cross term is priced against a velocity that is
+    // already gone.
+    const rest = 1 - lam;
+    if (rest <= 1e-9) return lam;
+    const jsx = jx * rest, jsy = jy * rest, taus = tau * rest, tzs = tauZ * rest;
+    const v = body.linvel(), w = body.angvel();
+    const a = (jsx * jsx + jsy * jsy) / (2 * m) + (taus * taus) / (2 * I);
+    const c = jsx * v.x + jsy * v.y + taus * w.z;
+
+    /**
+     * ── THE SECOND BOUND: WHAT THE WORLD CAN ACTUALLY LEND (PW r10) ─────────────
+     * The pool says the SHOT paid for this write. It does not say that anything was taken out
+     * of the world to fund it, and until this round nothing ever was — see THE SETTLEMENT
+     * above the constants. So the affordable budget is the smaller of two numbers: the claim,
+     * and what the layer can actually PAY — a share of the live kinetic energy out there to be
+     * redistributed, plus the much smaller mint allowance that covers the part of a write
+     * arriving when nothing is moving (THE MINT ALLOWANCE). One quadratic then scales the
+     * write to whichever binds, which is the machinery round 3 already built.
+     */
+    let cap = this.pool;
+    let resAvail = Infinity;
+    if (this.tuneDebit) {
+      resAvail = this.tuneDebitFrac * this.reserveKE(node.b);
+      const funds = resAvail + Math.max(0, this.mint);
+      if (funds < cap) cap = funds;
+    }
+
+    let s = 1;
+    if (a + c > cap) {
+      if (cap <= POOL_FLOOR) {
+        // WHICH ceiling refused the write is the diagnosis, so the two are counted apart.
+        if (this.tuneDebit && cap < this.pool) this.stats.debitDry++; else this.stats.starved++;
+        return lam;
+      }
       s = a > 1e-12
-        ? (-c + Math.sqrt(Math.max(0, c * c + 4 * a * this.pool))) / (2 * a)
-        : (c > 1e-12 ? this.pool / c : 1);
-      if (!(s > 0)) { this.stats.starved++; return 0; }
+        ? (-c + Math.sqrt(Math.max(0, c * c + 4 * a * cap))) / (2 * a)
+        : (c > 1e-12 ? cap / c : 1);
+      if (!(s > 0)) { this.stats.starved++; return lam; }
       if (s > 1) s = 1;
     }
     const paid = a * s * s + c * s;
     if (paid > 0) {
       this.pool -= paid; this.stats.spentJ += paid;
       if (this.spendTag) this.stats.byJ[this.spendTag] += paid;
+      // THE RESERVE PAYS FIRST; only the remainder is minted. A negative `paid` is a write that
+      // REMOVES energy from the body: always free, never refunded into either tier — the ledger
+      // is a ceiling on creation, not a savings account (round 3's rule).
+      if (this.tuneDebit) this.payFor(paid, resAvail);
     }
+    this.stats.seedJ += Math.max(0, paid);
+    this.stats.seedP += s * rest * Math.hypot(jx, jy);
 
-    if (jx !== 0 || jy !== 0) {
-      body.applyImpulseAtPoint({ x: jx * s, y: jy * s, z: 0 }, { x: px, y: py, z: 0 }, true);
+    if (jsx !== 0 || jsy !== 0) {
+      body.applyImpulseAtPoint({ x: jsx * s, y: jsy * s, z: 0 }, { x: px, y: py, z: 0 }, true);
     }
-    if (tauZ !== 0) body.applyTorqueImpulse({ x: 0, y: 0, z: tauZ * s }, true);
-    return s;
+    if (tzs !== 0) body.applyTorqueImpulse({ x: 0, y: 0, z: tzs * s }, true);
+    return lam + s * rest;
+  }
+
+  // ══ DONOR RESOLUTION ═══════════════════════════════════════════════════════════════
+  // Three sources, all deterministic in iteration order (Maps are insertion-ordered and the
+  // debris list is the array `Block.fracture` returned). A donor entry is
+  // `{ body, mass, inertia, w }` with the weights summing to 1.
+
+  /** The live member a write is passing momentum on from. Null if it has gone. */
+  donorNode(id) {
+    const n = id == null ? null : this.nodes.get(id);
+    if (!n || !n.b || n.b.dead || n.b.fixed || !n.b.body) return null;
+    return [{ body: n.b.body, mass: n.mass, inertia: n.inertia, w: 1 }];
+  }
+
+  /**
+   * THE HAND-OFF FROM `Block.fracture`. A shattered block is the source of the first hop of
+   * every wave it queues, and by the time that wave fires the block is gone — but its debris
+   * is not, and the debris is what physically hits the neighbour. Called immediately after the
+   * spawn (the node is already unlinked by then, so this cannot disturb the graph).
+   *
+   * Kept as a plain list rather than as an aggregate body: the reaction is split by mass and
+   * applied at the SAME world point, so the cloud recoils as one object at `J / Σm` and no
+   * individual chip can be flung by a share sized for the whole block.
+   */
+  registerDebris(blockId, kids) {
+    if (!this.enabled || blockId == null || !kids || !kids.length) return;
+    const list = [];
+    let M = 0;
+    for (const k of kids) {
+      const b = k?.body;
+      if (!b || k.dead) continue;
+      const mass = b.mass();
+      if (!(mass > 0)) continue;
+      list.push({ e: k, body: b, mass, inertia: Math.max(1e-4, b.principalInertia().z) });
+      M += mass;
+    }
+    if (!list.length || !(M > 0)) return;
+    for (const d of list) d.w = d.mass / M;
+    this.debris.set(blockId, { at: this.clock, list });
+  }
+
+  /** The debris cloud of a block that has come apart, while it is still fresh enough to be
+   *  the thing that hit you. Dead pieces are dropped and the weights re-normalised, so a
+   *  cloud half of which has already shattered again donates only what is left of it. */
+  /**
+   * THE ARRIVING FRONT, NOT THE WHOLE CLOUD (PW r7).
+   *
+   * With an `axis` — `{ux, uy, ur}`, the write's unit direction and the RECIPIENT's speed
+   * along it — only the pieces that are actually CLOSING on the recipient are offered as
+   * donors. A chip flying the other way is not what hit you, and debiting it is the same
+   * error PW r6 rejected for `side` (handing a member the dead brace's debris "on the
+   * grounds that the pieces flew at it" made the write brake a cloud for a shove the cloud
+   * never gave), pointing the other way: averaging the closing chips together with the
+   * receding ones under-reads the front and hands the shortfall to the one-sided seed.
+   *
+   * The pair stays exact either way — recipient +lam*J, donors -lam*J*w_i, weights summing
+   * to 1 — so this is a question about which bodies the contact is with, not about the
+   * book-keeping. Measured on the 45 hop-1 writes of the 6-shot l1 cohort
+   * (`_tools/scenarios/pw-r7-front.mjs`): mean closing speed 0.85 -> 1.48 m/s and writes
+   * with a live transfer 35/45 -> 41/45, against a donor mass falling 1.055 -> 0.681 kg.
+   *
+   * ── NEGATIVE RESULT. IT IS OFF. DO NOT RE-ENABLE WITHOUT RE-RUNNING THE GATE. ──────────
+   * It delivers the write-level improvement above and STILL loses, because concentrating
+   * the reaction on the front concentrates the BRAKE on the front, and the front is the
+   * arrival that kills stone: on the 8-shot l1 gate, shots fracturing stone 5/8 -> 4/8 and
+   * BROKE median 5.5 -> 5. The closed audit agrees — created energy is 126.81 J with it off
+   * and 135.67 J with it on, so the headline number moved the wrong way as well. It is the
+   * same shape as PW r6's rejected `side` debris donor: getting the donor SET wrong makes
+   * the model dissipate in the wrong place.
+   */
+  donorDebris(id, axis = null) {
+    if (id == null) return null;
+    const rec = this.debris.get(id);
+    if (!rec) return null;
+    if (this.clock - rec.at > DEBRIS_TTL) { this.debris.delete(id); return null; }
+    const front = axis && this.tuneFrontDonor;
+    const out = [];
+    let M = 0;
+    for (const d of rec.list) {
+      if (d.e.dead || !d.e.body) continue;
+      if (front) {
+        const v = d.e.body.linvel();
+        if (v.x * axis.ux + v.y * axis.uy <= axis.ur) continue;   // receding: it did not hit you
+      }
+      out.push(d); M += d.mass;
+    }
+    if (!out.length || !(M > 0)) return null;
+    return out.map(d => ({ body: d.e.body, mass: d.mass, inertia: d.inertia, w: d.mass / M }));
+  }
+
+  /**
+   * The wave's donor: the member it came from, or — on hop 1, where that member is the block
+   * that has just come apart — the debris that member became.
+   *
+   * `tuneDebrisWave` exists because the hop-1 case is the one place the donor rule can DOUBLE
+   * COUNT. This layer exists to supply propagation the SOLVER cannot: a shock travelling
+   * through a wedged, resting, braced stack, which rapier's contact solver absorbs into the
+   * brace instead of passing on. Free bodies flying into standing ones are the case the solver
+   * handles perfectly well — so on hop 1, where the donor is a debris cloud that the solver is
+   * about to collide with the recipient anyway, debiting the cloud takes its momentum a second
+   * time. Measured on the l1 gate, both arms in one process, that second debit is worth
+   * roughly one one-shot clear. Hops 2+ travel block-to-block through the standing frame,
+   * which is exactly the case the solver misses, and there the debit is the whole point.
+   */
+  donorWave(it, axis = null) {
+    const n = this.donorNode(it.srcId);
+    if (n) return n;
+    return this.tuneDebrisWave ? this.donorDebris(it.srcId, axis) : null;
+  }
+
+  /**
+   * HOW MUCH MOMENTUM THIS DONOR SET ACTUALLY HOLDS, along the unit axis (ux, uy), in N·s.
+   *
+   * This is `lam * |J|` at the plastic vertex `spend()` already clamps to, solved in closed
+   * form — and, as the derivation above THE ASK IS A MOMENTUM shows, it does not depend on
+   * |J| at all:
+   *
+   *     Δ   = Σ w_i (u · v_i)  −  (u · v_recipient)        the set's CLOSING speed, m/s
+   *     K   = 1/(2m) + Σ w_i^2/(2 m_i)                     the pair's reduced-mass term
+   *     out = Δ / (2K)          (Δ / K at the elastic clamp, to match `tuneElastic`)
+   *
+   * With one donor of mass M it reduces to `mu * closing speed`, the textbook plastic
+   * impulse. Zero when the set is receding (Δ <= 0): nothing is arriving, so nothing is on
+   * offer, and `spend()` would have found `C >= 0` and refused the transfer anyway.
+   *
+   * It reads body state only — no RNG, no allocation beyond the loop — so it cannot disturb
+   * the draw order the determinism gates check.
+   */
+  availableP(node, donors, ux, uy) {
+    if (!donors || !donors.length || !this.tuneTransfer) return 0;
+    const body = node.b?.body;
+    if (!body) return 0;
+    const v = body.linvel();
+    let closing = -(v.x * ux + v.y * uy);
+    let K = 1 / (2 * node.mass);
+    for (const d of donors) {
+      const dv = d.body.linvel();
+      closing += d.w * (dv.x * ux + dv.y * uy);
+      K += d.w * d.w / (2 * d.mass);
+    }
+    if (!(closing > 0) || !(K > 1e-12)) return 0;
+    return closing / (this.tuneElastic ? K : 2 * K);
+  }
+
+  /**
+   * What a member is bearing DOWN on: the live nodes whose top face meets its underside.
+   * This is the reaction path for every pivot write — a column going over, a bay racking, a
+   * cantilever hinging — because a member that pivots on its footing pushes that footing.
+   *
+   * A member sitting on the GROUND deliberately returns null: the reaction crosses into the
+   * fixed world, where no census of dynamic bodies can see it, and a write that claimed it as
+   * a transfer would be claiming credit for a book it does not keep. It stays a declared seed.
+   */
+  supportersOf(node, e) {
+    if (!node || !node.b || !node.b.body) return null;
+    if (e.y0 <= 0.14) return null;                       // standing on the ground
+    const out = [];
+    let M = 0;
+    for (const m of this.nodes.values()) {
+      if (m === node || !m.b || m.b.dead || m.b.fixed || !m.b.body) continue;
+      const me = extents(m.b);
+      if (Math.abs(me.y1 - e.y0) > FACE_TOL) continue;
+      if (Math.min(me.x1, e.x1) - Math.max(me.x0, e.x0) <= 0.06) continue;
+      out.push({ body: m.b.body, mass: m.mass, inertia: m.inertia, w: 0 });
+      M += m.mass;
+    }
+    if (!out.length || !(M > 0)) return null;
+    for (const d of out) d.w = d.mass / M;
+    return out;
+  }
+
+  /**
+   * The ids of the live members carrying a footprint `[x0,x1]` whose underside sits at `y0`.
+   * Used to latch a pivot's reaction path at the moment a ramp is SCHEDULED, so all `n` steps
+   * of that ramp push on the same thing and the choice cannot drift mid-topple. Returns an
+   * empty array when the footprint is on the ground — see `supportersOf()` for why that stays
+   * a declared seed rather than being quietly booked against the fixed world.
+   */
+  supporterIds(x0, x1, y0, exclude) {
+    if (y0 <= 0.14) return [];
+    const out = [];
+    for (const m of this.nodes.values()) {
+      if (exclude.has(m) || !m.b || m.b.dead || m.b.fixed || !m.b.body) continue;
+      const me = extents(m.b);
+      if (Math.abs(me.y1 - y0) > FACE_TOL) continue;
+      if (Math.min(me.x1, x1) - Math.max(me.x0, x0) <= 0.06) continue;
+      out.push(m.b.id);
+    }
+    return out;
+  }
+
+  /** Same, resolved from a list of node ids captured when a ramp was scheduled. Re-checked
+   *  every step because a supporter can shatter in the middle of an 8-step rack. */
+  donorIds(ids) {
+    if (!ids || !ids.length) return null;
+    const out = [];
+    let M = 0;
+    for (const id of ids) {
+      const n = this.nodes.get(id);
+      if (!n || !n.b || n.b.dead || n.b.fixed || !n.b.body) continue;
+      out.push({ body: n.b.body, mass: n.mass, inertia: n.inertia, w: 0 });
+      M += n.mass;
+    }
+    if (!out.length || !(M > 0)) return null;
+    for (const d of out) d.w = d.mass / M;
+    return out;
+  }
+
+  /**
+   * THE FRACTURE HALF OF THE SAME LEDGER (PW r5).
+   *
+   * `spend()` prices a write onto ONE existing body, so it cannot price a fracture: a
+   * fracture destroys a body and creates six, and the energy it invents lives in the gap
+   * between the parent's kinetic energy and the children's. `Block.fracture` computes that
+   * gap itself — exactly, from real masses and inertias — and buys it here.
+   *
+   * Same pool, same depositor, same property: the only thing that ever credits this ledger
+   * is a live projectile's contact (`creditContact`), so whatever a fracture spends, the
+   * player's shot paid for. A chain fracture — a block killed by another block, or by this
+   * file's own shudder — credits nothing, exactly as it credits nothing today, and simply
+   * gets a smaller burst.
+   *
+   * THREE bounds, and they do different jobs:
+   *   1. `tuneFracCap` bounds ONE spawn, so a single fracture cannot drink the pool and
+   *      starve the propagation writes queued three solver steps behind it.
+   *   2. the pool bounds the SHOT.
+   *   3. the SETTLEMENT (PW r10) bounds it by what is actually out there to redistribute, and
+   *      TAKES IT OUT of the world — without that the burst is the same mint the write channel
+   *      was, measured at 16.26 J over the six-shot cohort in PW r9 §3.
+   *
+   * `parent` and `kids` are the two things the reserve must exclude, and both exclusions are
+   * load-bearing rather than tidy:
+   *   · the PARENT is destroyed two lines after this returns, and `Block.fracture` has already
+   *     snapshotted its velocity into the children's rigid field, so braking it here would
+   *     delete the same energy twice and change nothing the player can see;
+   *   · the KIDS exist already but are still AT REST — their velocities are written after this
+   *     call — so any debit taken from them would be silently overwritten, i.e. minted back.
+   *     `DEBIT_KE_EPS` skips them today because they are motionless; they are named anyway, so
+   *     that giving `Debris` a birth velocity some day cannot quietly re-open this.
+   *
+   * @param {number} joules   what the burst costs at full authored strength, J
+   * @param {object} [parent] the block coming apart
+   * @param {Array}  [kids]   its debris, already created and still at rest
+   * @returns {number} joules actually granted — debited from the pool AND from the world
+   */
+  buyFracture(joules, parent = null, kids = null) {
+    this.stats.fracN++;
+    if (!(joules > 0)) return 0;                 // a burst that removes energy is free
+    this.stats.fracAskJ += joules;
+    const want = Math.min(joules, this.tuneFracCap);
+    if (!this.tunePriced) { this.stats.fracJ += want; return want; }
+    let cap = Math.max(0, this.pool);
+    let resAvail = Infinity;
+    if (this.tuneDebit) {
+      this.reserveKE(parent, null);
+      const R = this._res;
+      if (kids && kids.length) {
+        for (let i = R.list.length - 1; i >= 0; i--) {
+          for (let j = 0; j < kids.length; j++) {
+            const kb = kids[j] && kids[j].body;
+            if (kb && kb === R.list[i]) {
+              const v = kb.linvel();
+              R.ke -= 0.5 * kb.mass() * (v.x * v.x + v.y * v.y + v.z * v.z);
+              R.list.splice(i, 1);
+              break;
+            }
+          }
+        }
+        if (R.ke < 0) R.ke = 0;
+      }
+      resAvail = this.tuneDebitFrac * R.ke;
+      const funds = resAvail + Math.max(0, this.mint);
+      if (funds < cap) cap = funds;
+    }
+    const granted = Math.min(want, cap);
+    if (granted <= POOL_FLOOR) { this.stats.fracStarved++; return 0; }
+    this.pool -= granted;
+    this.stats.fracJ += granted;
+    if (this.tuneDebit) this.payFor(granted, resAvail);
+    return granted;
   }
 
   /**
@@ -612,7 +1599,8 @@ class Structure {
    *
    * @returns {number} the fraction actually applied, 0..1 (0 = already there, or pool dry)
    */
-  nudge(node, ux, uy, vTarget, omTarget, px, py, dvCap = Infinity, domCap = Infinity) {
+  nudge(node, ux, uy, vTarget, omTarget, px, py, dvCap = Infinity, domCap = Infinity,
+        donors = null) {
     const body = node.b?.body;
     if (!body) return 0;
     const v = body.linvel(), w = body.angvel();
@@ -634,7 +1622,8 @@ class Structure {
       tauZ = dw * node.inertia;
     }
     if (jx === 0 && jy === 0 && tauZ === 0) return 0;
-    return this.spend(node, jx, jy, px, py, tauZ);
+    if (donors === null) this.stats.donorMiss++;
+    return this.spend(node, jx, jy, px, py, tauZ, donors);
   }
 
   /**
@@ -759,6 +1748,7 @@ class Structure {
 
 
     // Snapshot the joints BEFORE forget() unlinks them.
+    const above = node.above.filter(l => !l.n.b.dead).map(l => l.n.b.id);
     const joints = [];
     for (const l of node.above) joints.push({ n: l.n, rel: 'lostBelow', ov: l.ov });
     for (const l of node.below) joints.push({ n: l.n, rel: 'lostAbove', ov: l.ov });
@@ -785,6 +1775,11 @@ class Structure {
         deadMass: node.mass, deadLoad: load, deadAt: { x: node.e.cx, y: node.e.cy },
         deadHalf: { w: node.e.hw, h: node.e.hh },
         dir: { x: dx, y: dy }, wave,
+        /** The donors this joint's reaction is owed to, resolved when it fires:
+         *  `srcId`   the block that died — for a side brace, its DEBRIS is what shoved you;
+         *  `dropIds` what that block was holding up — for a beam that has just had a storey
+         *            dropped on it, those members are the storey, and they are the momentum. */
+        srcId: block.id, dropIds: above,
         at: this.clock + JOINT_TICKS + Math.floor(rng() * 4),
       });
     }
@@ -795,6 +1790,12 @@ class Structure {
         this.queue.push({
           kind: 'wave', id: j.n.b.id, energy: E0, hop: 1, wave, seen,
           dir: { x: dx, y: dy }, from: { x: node.e.cx, y: node.e.cy },
+          /** The member this hop is arriving FROM — the DONOR of the momentum it carries.
+           *  On hop 1 that member is the block that has just come apart, so the id names a
+           *  node that no longer exists and `transferFrom()` finds nothing; that is correct
+           *  and deliberate (see THE DONOR RULE): the first reaction to a fracture is the
+           *  player's blow entering the frame, and the pool is what the blow paid into. */
+          srcId: block.id,
           at: this.clock + 2 + Math.floor(rng() * 3),
         });
       }
@@ -816,9 +1817,22 @@ class Structure {
    * @param {number} blowE  contact energy the blow delivered, J
    */
   creditContact(blowE) {
-    if (!this.enabled || !(blowE > 0)) return;
+    /**
+     * NOT gated on `this.enabled` (PW r5). `enabled` means "the collapse-propagation layer
+     * is switched off", which is a statement about WRITES; the pool is bookkeeping, and
+     * `Block.fracture` now draws on it too. Gating the credit here made the debug arm
+     * `structure.enabled = false` silently defund the debris burst as well, so that arm
+     * stopped measuring "the solver plus an honest fracture, without propagation" and
+     * started measuring a game whose blocks come apart with no separation at all.
+     * Every WRITE path — onCollapse(), update(), the audit — is still gated.
+     */
+    if (!(blowE > 0)) return;
     const credit = blowE * this.tuneTransmit;
     this.pool = Math.min(this.tunePoolCap, this.pool + credit);
+    // The second, much tighter tier. Same cap argument as the pool's — one blow's worth, not a
+    // savings account — scaled by the share the blow may still have MINTED rather than lent.
+    const mintCap = this.tunePoolCap * this.tuneTransmitMint;
+    this.mint = Math.min(mintCap, this.mint + blowE * this.tuneTransmitMint);
     this.stats.creditJ += credit;
     if (this.pool > this.stats.poolPeak) this.stats.poolPeak = this.pool;
   }
@@ -858,6 +1872,10 @@ class Structure {
       // expires with it — a pool that survives the event it belongs to is a war chest, and
       // the next graze would inherit it.
       this.pool = 0;
+      this.mint = 0;
+      // Same argument for the donor clouds: nothing is pending, so nothing can still be owed
+      // a debit, and a cloud that outlived its collapse would be a donor for the NEXT one.
+      if (this.debris.size) this.debris.clear();
       return;
     }
     this.clock++;
@@ -952,7 +1970,13 @@ class Structure {
       let ux = lean * 0.25, uy = -1;
       const ul = Math.hypot(ux, uy); ux /= ul; uy /= ul;
       this.spendTag = 'load';
-      this.nudge(node, ux, uy, dv * ul, 0, px, e.cy + e.hh * 0.9);
+      // THE STOREY IS THE DONOR. This branch models an inelastic collision between the load
+      // and the beam, and an inelastic collision has two sides: the members that were being
+      // carried give up the momentum the beam gains. When none of them is left (they have all
+      // shattered on the way down) the debris of the block that died is the next best thing,
+      // and it is literally what lands on the beam.
+      this.nudge(node, ux, uy, dv * ul, 0, px, e.cy + e.hh * 0.9, Infinity, Infinity,
+                 this.donorIds(it.dropIds) ?? this.donorDebris(it.srcId));
       this.spendTag = null;
       b.onShock?.(drop * LOAD_DAMAGE, lean, -0.35);
       this.stats.loads++;
@@ -965,7 +1989,10 @@ class Structure {
       let ux = lean * 0.35, uy = -1;
       const ul = Math.hypot(ux, uy); ux /= ul; uy /= ul;
       this.spendTag = 'hinge';
-      this.nudge(node, ux, uy, v * ul, 0, px, e.cy - e.hh * 0.9);
+      // A member swinging down over a hole pivots on the support it has LEFT and pushes on it.
+      // That support is the reaction path; if it is the ground the write stays a declared seed.
+      this.nudge(node, ux, uy, v * ul, 0, px, e.cy - e.hh * 0.9, Infinity, Infinity,
+                 this.supportersOf(node, e));
       this.spendTag = null;
       this.stats.hinges++;
     } else {
@@ -974,7 +2001,18 @@ class Structure {
       const py = e.cy + e.hh * (node.column ? 0.7 : 0.25);
       const om = node.column ? -lean * TIP_OMEGA * 0.35 * sig : 0;
       this.spendTag = 'side';
-      this.nudge(node, lean, 0, v, om, e.cx + rngJitter(e.hw * 0.3), py);
+      /**
+       * A PIVOT, NOT A TRANSMISSION — and the first draft of round 6 got this wrong.
+       * Nothing pushes this member: its brace has gone and it leans into the hole, pivoting
+       * on its own base. Handing it the dead brace's DEBRIS as the donor (which the draft did,
+       * on the grounds that the pieces flew at it) made the write brake the debris cloud for
+       * a shove the debris never gave — measured as 21.6 J of over-dissipation across the l1
+       * gate and, downstream of it, a cloud too slow to break what it should have. The base is
+       * the reaction path, exactly as for `tip` and `hinge`, and on the ground it is a
+       * declared seed.
+       */
+      this.nudge(node, lean, 0, v, om, e.cx + rngJitter(e.hw * 0.3), py, Infinity, Infinity,
+                 this.supportersOf(node, e));
       this.spendTag = null;
       if (node.column) this.stats.tips++;
     }
@@ -1019,8 +2057,39 @@ class Structure {
     const hl = Math.hypot(hx, hy) || 1;
     hx /= hl; hy /= hl;
     this.spendTag = 'hop';
+    // THE WAVE CARRIES MOMENTUM, IT DOES NOT MINT IT. The member this hop came from — or, on
+    // hop 1, the debris that member became — hands over as much of the write as it can without
+    // the pair gaining energy, and only the remainder is invented. See THE DONOR RULE.
+    // The write's own axis and the recipient's speed along it, so `donorDebris()` can offer
+    // the pieces that are ARRIVING rather than the whole cloud. Computed before the nudge
+    // call so the RNG draw order inside it is untouched.
+    const rv = b.body.linvel();
+    const axis = { ux: hx, uy: hy, ur: rv.x * hx + rv.y * hy };
+    const px = e.cx + rngJitter(e.hw * 0.30);          // drawn first, exactly as before
+    const donors = this.donorWave(it, axis);
+    /**
+     * PW r8 — THE CAP. What the donor set holds, plus a bounded seed in N·s, and never more
+     * than the Δv ladder was going to give anyway. `nudge`'s `dvCap` is the right lever for
+     * it: it bounds how much of the velocity deficit THIS write may close, so expressing the
+     * bound as `J / m` turns a momentum ceiling into a velocity ceiling exactly.
+     *
+     * The transfer is untouched by this (see the derivation above the constant): only the
+     * one-sided remainder shrinks. `stats.waveAskP` / `waveCutP` record how much, so a gate
+     * can see the cap working without running the full census.
+     */
+    // The ask is the DEFICIT the write would close, not the target speed — `nudge` matches
+    // rather than adds, so a member already travelling with the front asks for less.
+    const askP = node.mass * Math.max(0, this.tuneMatch ? dv * hl - axis.ur : dv * hl);
+    let dvCap = Infinity;
+    if (this.tuneWaveSeedP !== Infinity) {
+      const capP = Math.min(askP, Math.max(this.availableP(node, donors, hx, hy),
+                                           this.tuneWaveSeedP * (dv / WAVE_CAP)));
+      dvCap = capP / node.mass;
+      this.stats.waveCutP += askP - capP;
+    }
+    this.stats.waveAskP += askP;
     const frac = this.nudge(node, hx, hy, dv * hl, 0,
-      e.cx + rngJitter(e.hw * 0.30), e.cy + e.hh * 0.35);
+      px, e.cy + e.hh * 0.35, dvCap, Infinity, donors);
     this.spendTag = null;
 
     // The damage a shock carries is a tenth of what it DELIVERED, so a wave that arrived
@@ -1040,6 +2109,7 @@ class Structure {
       this.queue.push({
         kind: 'wave', id: o.b.id, energy: next, hop: it.hop + 1, wave: it.wave, seen,
         dir: { x: ux, y: uy }, from: { x: e.cx, y: e.cy },
+        srcId: it.id,          // the member passing the shock on — see srcId in onCollapse()
         at: this.clock + HOP_TICKS + Math.floor(rng() * 4),
       });
     }
@@ -1108,7 +2178,9 @@ class Structure {
           let ux = lean * 0.30, uy = -1;
           const ul = Math.hypot(ux, uy); ux /= ul; uy /= ul;
           this.spendTag = 'hinge';
-          this.nudge(n, ux, uy, HINGE_V * ul, 0, e.cx + side * e.hw * 0.85, e.cy);
+          // A cantilever hinges about the support it still has, and pushes down on it.
+          this.nudge(n, ux, uy, HINGE_V * ul, 0, e.cx + side * e.hw * 0.85, e.cy,
+                     Infinity, Infinity, this.supportersOf(n, e));
           this.spendTag = null;
           this.stats.hinges++;
         }
@@ -1183,8 +2255,13 @@ class Structure {
       if (sp > RACK_VMAX) { const q = RACK_VMAX / sp; vx *= q; vy *= q; }
       const vl = Math.hypot(vx, vy);
       this.spendTag = 'rack';
-      if (vl > 1e-6) this.nudge(m, vx / vl, vy / vl, vl, om, me.cx, me.cy, vl / d.n, Math.abs(om) / d.n);
-      else this.nudge(m, 1, 0, 0, om, me.cx, me.cy, 0, Math.abs(om) / d.n);
+      // THE BAY PUSHES ON ITS FOOTING. A bay racking about its toe is bearing on whatever that
+      // toe stands on, and that is where the reaction goes (measured: a block on 68 of 68 l1
+      // racks, never thin air). When the toe is on the ground the reaction leaves the dynamic
+      // world, `supIds` is empty, and the write stays the declared one-sided seed it was.
+      const sup = this.donorIds(d.supIds);
+      if (vl > 1e-6) this.nudge(m, vx / vl, vy / vl, vl, om, me.cx, me.cy, vl / d.n, Math.abs(om) / d.n, sup);
+      else this.nudge(m, 1, 0, 0, om, me.cx, me.cy, 0, Math.abs(om) / d.n, sup);
       this.spendTag = null;
     }
   }
@@ -1195,8 +2272,9 @@ class Structure {
     if (!n || !n.b || n.b.dead || n.b.fixed || !n.b.body) return;
     const e = n.e = extents(n.b);
     this.spendTag = 'tip';
+    // Same reaction path as the rack: a column going over pivots on its base and drives it.
     this.nudge(n, d.lean, 0, d.v, d.om, e.cx, e.cy + e.hh * 0.80,
-               d.v / d.n, Math.abs(d.om) / d.n);
+               d.v / d.n, Math.abs(d.om) / d.n, this.donorIds(d.supIds));
     this.spendTag = null;
   }
 
@@ -1208,6 +2286,7 @@ class Structure {
   tipColumn(n, e, lean, k = 1) {
     const w = TIP_OMEGA * k * rngRange(0.8, 1.15);
     this.drives.push({ kind: 'tip', id: n.b.id, lean,
+                       supIds: this.supporterIds(e.x0, e.x1, e.y0, new Set([n])),
                        v: TIP_V * k, om: -lean * w, step: 0, n: Math.max(1, this.tuneTipSteps) });
     this.stats.tips++;
   }
@@ -1231,12 +2310,16 @@ class Structure {
 
     // The toe: the downwind bottom corner of the bay. Everything rotates about this point.
     let px = lean > 0 ? -Infinity : Infinity, py = Infinity;
+    let bx0 = Infinity, bx1 = -Infinity;
     for (const m of bay) {
       const me = m.e = extents(m.b);
       py = Math.min(py, me.y0);
       px = lean > 0 ? Math.max(px, me.x1) : Math.min(px, me.x0);
+      bx0 = Math.min(bx0, me.x0); bx1 = Math.max(bx1, me.x1);
     }
     if (!Number.isFinite(px) || !Number.isFinite(py)) return;
+    // Latched once, here, so every step of the ramp bears on the same footing.
+    const supIds = this.supporterIds(bx0, bx1, py, new Set(bay));
 
     this.stats.racks++;
     // The bay's rigid velocity field is a TARGET, not an addition: a member already moving
@@ -1245,7 +2328,7 @@ class Structure {
     // applied at the centre of mass, so the spin is the whole of the member's rotation and
     // `nudge` has no induced torque to subtract.
     const om = -lean * RACK_OMEGA * Math.min(1, k) * rngRange(0.90, 1.12);
-    this.drives.push({ kind: 'rack', ids: bay.map(m => m.b.id),
+    this.drives.push({ kind: 'rack', ids: bay.map(m => m.b.id), supIds,
                        px, py, om, step: 0, n: Math.max(1, this.tuneRackSteps) });
     for (const m of bay) {
       // Its head restraint is going over with it. Do not also tip it as a lone column.

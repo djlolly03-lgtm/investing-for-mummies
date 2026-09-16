@@ -1,0 +1,194 @@
+{
+  "id": "l8",
+  "name": "The Ladder",
+  "chapter": 2,
+  "sky": "morning",
+  "setting": "colony",
+  "par": 4,
+  "ammo": [
+    "sip",
+    "sip",
+    "sip",
+    "sip",
+    "sip",
+    "sip"
+  ],
+  "teaches": "Every storey was sold to the one below it. The top floor was never built at all.",
+  "busts": [
+    "Each floor was sold to the one below",
+    "The top floor was never built",
+    "He sold you the floor above",
+    "Nobody checked if it existed",
+    "A ladder to nowhere"
+  ],
+  "blocks": [
+    {
+      "mat": "stone",
+      "x": 10.4,
+      "y": 0.25,
+      "w": 4.0,
+      "h": 0.5
+    },
+    {
+      "mat": "stone",
+      "x": 10.4,
+      "y": 1.125,
+      "w": 1.4,
+      "h": 1.25
+    },
+    {
+      "mat": "stone",
+      "x": 10.4,
+      "y": 2.375,
+      "w": 1.4,
+      "h": 1.25
+    },
+    {
+      "mat": "stone",
+      "x": 10.4,
+      "y": 3.625,
+      "w": 1.4,
+      "h": 1.25
+    },
+    {
+      "mat": "wood",
+      "x": 10.4,
+      "y": 4.525,
+      "w": 12.6,
+      "h": 0.55
+    },
+    {
+      "mat": "glass",
+      "x": 4.7,
+      "y": 5.46,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 6.5,
+      "y": 5.46,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 5.6,
+      "y": 6.33,
+      "w": 2.6,
+      "h": 0.42
+    },
+    {
+      "mat": "glass",
+      "x": 14.3,
+      "y": 5.46,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 16.1,
+      "y": 5.46,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 15.2,
+      "y": 6.33,
+      "w": 2.6,
+      "h": 0.42
+    },
+    {
+      "mat": "glass",
+      "x": 7.22,
+      "y": 5.02,
+      "w": 0.44,
+      "h": 0.44
+    },
+    {
+      "mat": "wood",
+      "x": 7.76,
+      "y": 5.02,
+      "w": 0.44,
+      "h": 0.44
+    },
+    {
+      "mat": "glass",
+      "x": 8.3,
+      "y": 5.02,
+      "w": 0.44,
+      "h": 0.44
+    },
+    {
+      "mat": "glass",
+      "x": 12.62,
+      "y": 5.02,
+      "w": 0.44,
+      "h": 0.44
+    },
+    {
+      "mat": "wood",
+      "x": 13.16,
+      "y": 5.02,
+      "w": 0.44,
+      "h": 0.44
+    },
+    {
+      "mat": "glass",
+      "x": 13.7,
+      "y": 5.02,
+      "w": 0.44,
+      "h": 0.44
+    },
+    {
+      "mat": "glass",
+      "x": 9.5,
+      "y": 5.46,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 11.3,
+      "y": 5.46,
+      "w": 0.5,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 10.4,
+      "y": 6.32,
+      "w": 2.4,
+      "h": 0.4
+    }
+  ],
+  "villains": [
+    {
+      "type": "conman",
+      "x": 5.6,
+      "y": 5.34
+    },
+    {
+      "type": "conman",
+      "x": 15.2,
+      "y": 5.34
+    },
+    {
+      "type": "conman",
+      "x": 10.4,
+      "y": 5.34
+    },
+    {
+      "type": "conman",
+      "x": 7.6,
+      "y": 1.04
+    },
+    {
+      "type": "conman",
+      "x": 13.2,
+      "y": 1.04
+    }
+  ],
+  "props": []
+}

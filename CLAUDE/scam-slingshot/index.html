@@ -25,10 +25,37 @@
 }
 </script>
 
+<!-- ============================================================================
+     IFM BRAND FONTS — SELF-HOSTED, because the alternative is a game that is only ever
+     on-brand on the machine it was built on.
+
+     The IFM design system is "Nunito + Lora, loaded at the top of every file — never system
+     fonts", and this game may not call a CDN at runtime. Until this pass there was no
+     @font-face at all: the CSS asked for Nunito and Lora and the browser served whatever the
+     device had. Both families happen to be INSTALLED on the build Mac, so every capture ever
+     taken of this game showed correct brand type while a student's phone would have rendered
+     the whole shell in Roboto or Helvetica. A brand judged under that condition is not judged.
+
+     assets/fonts/*.woff are subsets of the OFL families cut to the characters this UI uses:
+     11.6 + 10.6 + 28.6 = 51 KB for all three faces. Lora stays VARIABLE (wght 400..700) so
+     one file covers every serif weight the sheets ask for. `swap` because a game must never
+     hold its own first frame waiting for type.
+     ========================================================================= -->
+<link rel="preload" href="assets/fonts/nunito-700.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="assets/fonts/lora-var.woff"   as="font" type="font/woff" crossorigin>
+
 <style>
+  @font-face{font-family:"Nunito";font-style:normal;font-weight:400;font-display:swap;
+    src:url("assets/fonts/nunito-400.woff") format("woff")}
+  @font-face{font-family:"Nunito";font-style:normal;font-weight:600 900;font-display:swap;
+    src:url("assets/fonts/nunito-700.woff") format("woff")}
+  @font-face{font-family:"Lora";font-style:normal;font-weight:400 700;font-display:swap;
+    src:url("assets/fonts/lora-var.woff") format("woff")}
+
   :root{
     --teal:#2a9d8f; --navy:#1a3a5c; --ink:#1a3a5c;
     --sun:#f4a259; --cream:#fdf6ec; --coral:#e76f51;
+    --mint:#bde9e4; --teal-dk:#1f7d72; --teal-lt:#7fd6c8;
     --font-ui:"Nunito","Nunito Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     --font-display:"Lora",Georgia,"Times New Roman",serif;
   }
@@ -36,35 +63,57 @@
   html,body{margin:0;padding:0;height:100%;overflow:hidden;background:#0d1b2a;
     font-family:var(--font-ui);-webkit-font-smoothing:antialiased;
     -webkit-tap-highlight-color:transparent;touch-action:none;overscroll-behavior:none}
-  #stage{position:fixed;inset:0}
+  /* iOS Safari: `inset:0` on a fixed element uses the LAYOUT viewport, which includes the strip
+     behind the URL bar — so the bottom of the play area rendered underneath Safari's toolbar on a
+     real phone. dvh is the dynamic viewport (chrome excluded); the JS below pins exact pixels from
+     visualViewport for engines that do not support it, and re-pins when the toolbar shows/hides. */
+  #stage{position:fixed;left:0;top:0;width:100%;height:100vh;height:100dvh}
   #game{display:block;width:100%;height:100%;touch-action:none}
 
-  /* ---- loading screen placeholder (P18 owns the real one) ---- */
+  /* ------------------------------------------------------------------------
+     THE LOADING STATE — the first thing anyone sees, so it is where the IFM mark goes.
+     It is also the ONE branded surface that costs the play area nothing, because the play
+     area does not exist yet. (The mark deliberately does NOT reappear as a watermark over
+     the game: it would compete with the ammo and the tower, and the backdrop already
+     carries identity.)
+     The roundel is the real logo, 112 px, over a cream disc — the artwork is dark navy on
+     transparent, so on a navy panel it disappears and on cream it reads. Under it the
+     wordmark is TYPESET rather than trusted to the logo's own lettering, which is ~7 px tall
+     at this size and unreadable; the brand has to be nameable, not merely present.
+     ---------------------------------------------------------------------- */
   #boot{position:fixed;inset:0;z-index:50;display:grid;place-items:center;
-    background:radial-gradient(120% 90% at 50% 18%,#2e5f7a 0%,#1a3a5c 48%,#10233a 100%);
+    background:radial-gradient(120% 90% at 50% 16%,#2e5f7a 0%,#1a3a5c 46%,#10233a 100%);
     color:var(--cream);transition:opacity .45s ease;font-family:var(--font-ui)}
   #boot.gone{opacity:0;pointer-events:none}
   .boot-in{text-align:center;padding:24px;max-width:min(520px,86vw)}
-  .boot-mark{width:72px;height:72px;margin:0 auto 18px;border-radius:20px;
-    background:linear-gradient(150deg,var(--teal),#1f7d72);
-    box-shadow:0 14px 34px rgba(0,0,0,.38),inset 0 2px 0 rgba(255,255,255,.28);
-    display:grid;place-items:center;animation:bob 1.6s ease-in-out infinite}
-  .boot-mark svg{width:40px;height:40px;display:block}
-  @keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-9px) rotate(3deg)}}
-  #boot h1{font-family:var(--font-display);font-size:clamp(28px,7vw,44px);margin:0 0 6px;
-    letter-spacing:.2px;font-weight:700}
-  #boot p{margin:0 0 22px;opacity:.78;font-size:15px}
+  .boot-mark{width:112px;height:112px;margin:0 auto 16px;border-radius:50%;
+    background:var(--cream);padding:5px;
+    box-shadow:0 16px 38px rgba(4,14,26,.46),0 0 0 1px rgba(255,255,255,.22),
+      0 0 44px rgba(42,157,143,.30);
+    animation:bob 2.4s ease-in-out infinite}
+  .boot-mark img{width:100%;height:100%;display:block;border-radius:50%}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
+  #boot .brand{margin:0 0 14px;font-size:12px;font-weight:900;letter-spacing:.20em;
+    text-transform:uppercase;color:var(--teal-lt);opacity:1}
+  #boot h1{font-family:var(--font-display);font-size:clamp(30px,8vw,46px);margin:0 0 8px;
+    letter-spacing:.2px;font-weight:700;line-height:1.08}
+  #boot p.tag{margin:0 0 22px;opacity:.82;font-size:15px;font-weight:600;font-family:var(--font-display)}
   .bar{height:8px;border-radius:99px;background:rgba(255,255,255,.16);overflow:hidden}
   .bar > i{display:block;height:100%;width:12%;border-radius:99px;
     background:linear-gradient(90deg,var(--teal),#7fd6c8);
     animation:slide 1.15s cubic-bezier(.6,.05,.3,1) infinite}
   @keyframes slide{0%{margin-left:-14%;width:22%}55%{width:46%}100%{margin-left:104%;width:16%}}
-  #boot .msg{margin-top:14px;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;opacity:.6}
+  #boot .msg{margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    opacity:.62;font-weight:800}
   #boot.failed .bar>i{animation:none;width:100%;background:var(--coral)}
   #boot .err{display:none;margin-top:16px;font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
     color:#ffd9cf;background:rgba(0,0,0,.32);border-radius:10px;padding:12px;text-align:left;
     white-space:pre-wrap;max-height:34vh;overflow:auto}
   #boot.failed .err{display:block}
+  @media (prefers-reduced-motion:reduce){
+    .boot-mark{animation:none}
+    .bar > i{animation:none;width:100%;opacity:.7}
+  }
 </style>
 </head>
 <body>
@@ -72,16 +121,14 @@
 
   <div id="boot">
     <div class="boot-in">
-      <div class="boot-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fdf6ec" stroke-width="2.1"
-             stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 3v7c0 3 2.6 5 6 5s6-2 6-5V3"/><path d="M12 15v6"/><path d="M8.5 21h7"/>
-        </svg>
+      <div class="boot-mark">
+        <img src="assets/ifm-logo-ui.png" width="112" height="112" alt="Investing for Mummies">
       </div>
+      <p class="brand">Investing for Mummies</p>
       <h1>Scam Slingshot</h1>
-      <p>Loading the ammunition&hellip;</p>
+      <p class="tag">Three scams. One slingshot.</p>
       <div class="bar"><i></i></div>
-      <div class="msg" id="boot-msg">starting up</div>
+      <div class="msg" id="boot-msg">loading the ammunition</div>
       <div class="err" id="boot-err"></div>
     </div>
   </div>
@@ -97,5 +144,30 @@
       console.error(err);
     });
   </script>
+
+<script>
+/* Keep the stage exactly the size of the VISIBLE viewport on mobile browsers, and tell the game to
+   re-fit whenever the browser chrome slides in or out. Without this the canvas is taller than the
+   screen and the bottom of the play area sits behind the toolbar. */
+(function () {
+  var stage = document.getElementById('stage');
+  function pin() {
+    if (!stage) return;
+    var vv = window.visualViewport;
+    var h = vv ? vv.height : window.innerHeight;
+    var w = vv ? vv.width  : window.innerWidth;
+    stage.style.height = h + 'px';
+    stage.style.width  = w + 'px';
+    window.dispatchEvent(new Event('resize'));
+  }
+  if (window.visualViewport) {
+    visualViewport.addEventListener('resize', pin, { passive: true });
+    visualViewport.addEventListener('scroll', pin, { passive: true });
+  }
+  addEventListener('orientationchange', function () { setTimeout(pin, 250); }, { passive: true });
+  addEventListener('load', pin);
+  pin();
+})();
+</script>
 </body>
 </html>

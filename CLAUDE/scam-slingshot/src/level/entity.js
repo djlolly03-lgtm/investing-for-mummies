@@ -154,7 +154,7 @@ export function zAngleOf(body) {
 export function makeBody({
   kind = 'dynamic', x, y, rot = 0, shape, m,
   ccd = false, linearDamping = null, angularDamping = null,
-  sensor = false, contactForce = 0, sleepy = true, gravityScale = 1,
+  sensor = false, contactForce = 0, sleepy = true, gravityScale = 1, density = null,
 }) {
   const mp = m.physics;
   const linD = linearDamping ?? mp.linearDamping ?? 0.06;
@@ -176,7 +176,17 @@ export function makeBody({
   const cd = shape();
   cd.setFriction(mp.friction).setRestitution(mp.restitution);
   cd.setFrictionCombineRule(RAPIER.CoefficientCombineRule.Min);
-  if (kind === 'dynamic') cd.setDensity(mp.density);
+  /**
+   * `density` defaults to NULL, and null means "ask the material" — same contract as the
+   * damping pair above. The ONE legitimate override is `Block.fracture`, which conserves
+   * mass across a fracture: an authored cut plan does not tile its parent exactly (the
+   * pieces overlap and undershoot by design, and each fragment's collider is inset), so the
+   * children are given the effective density that makes their masses SUM to the parent's.
+   * Without it a fracture deleted 7-37 % of the block, which removes m*g*y of potential
+   * energy without dissipating anything and hides created kinetic energy inside the net.
+   * Nothing else may pass this: a material's density is the material.
+   */
+  if (kind === 'dynamic') cd.setDensity(density ?? mp.density);
   if (sensor) cd.setSensor(true);
   if (contactForce > 0) {
     cd.setActiveEvents(RAPIER.ActiveEvents.CONTACT_FORCE_EVENTS);

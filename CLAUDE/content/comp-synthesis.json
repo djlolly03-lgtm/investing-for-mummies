@@ -1,31 +1,36 @@
 {
-  "generated": "2026-09-07",
-  "based_on": "23 tracked accounts — 7 direct rivals, 8 content creators, 7 international benchmarks, 1 platform",
-  "patterns": [
-    {
-      "icon": "🎯",
-      "title": "The white space nobody has taken",
-      "text": "Checked all 23 tracked accounts: not one targets mums specifically. Every single one chases \"women\" broadly, or personal finance generally. It remains IFM's most ownable and least contested position — and the set has nearly doubled since this was last checked, which makes the finding stronger, not weaker."
-    },
-    {
-      "icon": "🎬",
-      "title": "Founder-led video is the format law",
-      "text": "Every high-engagement account in the set grows on short, founder- or persona-driven video rather than carousels. IFM's own numbers agree: reels average 37 likes against 15 for everything else, and the four best-performing posts of all time are all reels, all founder-led."
-    },
-    {
-      "icon": "📉",
-      "title": "Follower counts are lying to you",
-      "text": "LXME has 123,000 followers and averages 55 likes a post — 0.04% engagement. Rachana Ranade converts 4.58% of a million. Ellevest manages 0.20% on 423,000. The category leaders by size are not winning attention; individual voices are. Judge every competitor on engagement rate, never on follower count."
-    },
-    {
-      "icon": "💰",
-      "title": "Your real rivals for revenue are the small ones",
-      "text": "For the paid workshop business the competition is not the big creators — it is the small workshop-led players (Finsafe/Womantra, Her Money Talks, Dhan Diksha, and now Women On Wealth and LakshMe). None of them match IFM's production quality, and WOW is the one to study: it blends education with real money action, which is where IFM's course currently stops."
-    },
-    {
-      "icon": "🎮",
-      "title": "The uncontested moat",
-      "text": "Zero of the 23 accounts run an interactive game — verified across every content and formats field in the sheet. Stock Rush, the live quizzes and Mutual Fund Manager are a structural differentiator this space simply does not have."
-    }
-  ]
+ "generated": "2026-09-14",
+ "based_on": "23 tracked accounts — 7 direct rivals, 8 content creators, 7 international benchmarks, 1 platform",
+ "patterns": [
+  {
+   "icon": "🎯",
+   "title": "The white space nobody has taken",
+   "text": "Re-checked all 23 tracked accounts this week: not one targets mums specifically. Every one chases \"women\" broadly (LXME, Ellevest, Her First $100K) or personal finance generally (Anushka, Rachana). It stays IFM's most ownable and least contested position, and no new entrant this week moved into it."
+  },
+  {
+   "icon": "📉",
+   "title": "The direct rivals have followers but no attention",
+   "text": "This week's scrape: LXME converts 123K followers into 56 likes a post (0.05%). Her Money Talks manages 2 likes on 3,639 followers (0.05%). Monika Halan, 37 on 21K (0.18%). Every direct women's-money rival sits at or below 0.2% engagement — the lane is commercially crowded but attention-empty. IFM's own 28 likes on 400 followers is 7.0%, higher than every single account tracked."
+  },
+  {
+   "icon": "🙂",
+   "title": "A face beats a logo, and the gap is widening",
+   "text": "The two accounts clearing real engagement at scale are both one person on camera: Rachana Ranade 48.4K avg (4.84% of 1M), Anushka Rathod 17.4K (1.74%). The two big institutional brand handles are the worst in the set — Ellevest 817 on 423K (0.19%), LXME 0.05%. Hiral's face is the asset; branded template posts are the thing to cut."
+  },
+  {
+   "icon": "🌏",
+   "title": "Borrow the US framing, ignore the US numbers",
+   "text": "Her First $100K (2M) averages 3.5K likes — 0.17%. Ellevest 0.19%. Both are reach-rich and engagement-poor, while India-facing creators run 10-25x hotter: Rachana 4.84%, Vinita 3.89%, Anushka 1.74%. Steal Tori Dunlap's rallying-POV framing and Ellevest's ownable-stat play, but benchmark IFM's performance against the Indian set only."
+  },
+  {
+   "icon": "🔬",
+   "title": "Small and specific already beats big and broad",
+   "text": "Vinita (@vinitashares) holds 3.89% on just 15K followers — within striking distance of Rachana's 4.84% at 1/66th the size, and 78x LXME's rate at 1/8th the size. Engagement in this niche does not require scale, which means IFM's 400-follower base is not the constraint on proving the content works; distribution is."
+  },
+  {
+   "icon": "🎮",
+   "title": "The uncontested moat",
+   "text": "Still zero of the 23 accounts run an interactive game — re-verified across every content and formats field in the sheet this week. Stock Rush, the live quizzes and Mutual Fund Manager remain a structural differentiator nobody in the set has moved toward. LakshMe's take-home Family Record Book is the only comparable 'artefact' play, and it is paper."
+  }
+ ]
 }

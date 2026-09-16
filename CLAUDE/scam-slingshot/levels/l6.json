@@ -1,0 +1,238 @@
+{
+  "id": "l6",
+  "name": "The Whole Network",
+  "chapter": 2,
+  "sky": "morning",
+  "setting": "colony",
+  "par": 4,
+  "ammo": [
+    "sip",
+    "sip",
+    "sip",
+    "sip",
+    "sip",
+    "sip"
+  ],
+  "teaches": "The man at the top is paid by the row below him. When the rows stop, everyone loses.",
+  "busts": [
+    "He is paid by the row below him",
+    "The bottom row pays for everyone",
+    "Six friends each, or it collapses",
+    "No product. Only recruits.",
+    "The top gets out first",
+    "Everyone below loses",
+    "It was always going to end",
+    "The maths never worked",
+    "New money, not returns",
+    "And then it stopped"
+  ],
+  "blocks": [
+    {
+      "mat": "stone",
+      "x": 10.6,
+      "y": 0.275,
+      "w": 12.2,
+      "h": 0.55
+    },
+    {
+      "mat": "glass",
+      "x": 5.15,
+      "y": 1.21,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 7.25,
+      "y": 1.21,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 7.95,
+      "y": 1.21,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 10.05,
+      "y": 1.21,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 10.75,
+      "y": 1.21,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 12.85,
+      "y": 1.21,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 13.55,
+      "y": 1.21,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "glass",
+      "x": 15.65,
+      "y": 1.21,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 10.4,
+      "y": 2.12,
+      "w": 11.3,
+      "h": 0.5
+    },
+    {
+      "mat": "stone",
+      "x": 6.55,
+      "y": 3.03,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 8.65,
+      "y": 3.03,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 9.35,
+      "y": 3.03,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 11.45,
+      "y": 3.03,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 12.15,
+      "y": 3.03,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 14.25,
+      "y": 3.03,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 10.4,
+      "y": 3.94,
+      "w": 8.5,
+      "h": 0.5
+    },
+    {
+      "mat": "stone",
+      "x": 7.95,
+      "y": 4.85,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 10.05,
+      "y": 4.85,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 10.75,
+      "y": 4.85,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "stone",
+      "x": 12.85,
+      "y": 4.85,
+      "w": 0.55,
+      "h": 1.32
+    },
+    {
+      "mat": "wood",
+      "x": 10.4,
+      "y": 5.76,
+      "w": 5.7,
+      "h": 0.5
+    }
+  ],
+  "villains": [
+    {
+      "type": "conman",
+      "x": 6.2,
+      "y": 1.09
+    },
+    {
+      "type": "conman",
+      "x": 9.0,
+      "y": 1.09
+    },
+    {
+      "type": "conman",
+      "x": 11.8,
+      "y": 1.09
+    },
+    {
+      "type": "conman",
+      "x": 14.6,
+      "y": 1.09
+    },
+    {
+      "type": "conman",
+      "x": 7.6,
+      "y": 2.91
+    },
+    {
+      "type": "conman",
+      "x": 10.4,
+      "y": 2.91
+    },
+    {
+      "type": "conman",
+      "x": 13.2,
+      "y": 2.91
+    },
+    {
+      "type": "conman",
+      "x": 9.0,
+      "y": 4.73
+    },
+    {
+      "type": "conman",
+      "x": 11.8,
+      "y": 4.73
+    },
+    {
+      "type": "ponziPyramid",
+      "x": 10.4,
+      "y": 6.63
+    }
+  ],
+  "props": []
+}

@@ -26,6 +26,7 @@ import {
 import { summarise } from './rules.js';
 import { cellToWorld } from './board3d.js';
 import * as fx from './fx.js';
+import { hideToast } from './ui.js';
 import { sfx } from './audio.js';
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -330,59 +331,86 @@ const CSS = `
 }
 .snl-end button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 
-/* ── beat 1 · the arrival. No scrim. The board stays visible. ─────────── */
+/* ── beat 1 · the arrival. No scrim, no modal — and no plate lying across
+      the middle of the board either. §12 beat 1 asks the board to STAY
+      VISIBLE, and it is the board that the celebration is about: her own
+      token, standing on square 100, at the top of the frame.
+
+      On a 390x844 phone the board occupies roughly y 165-540 and everything
+      below it is bare table. So the plate takes the bare table: bottom
+      anchored, laid out sideways so the crest costs one row instead of two,
+      short enough that all one hundred squares stay on screen, and still a
+      real object with a shadow under it. The button sits under the plate,
+      where a thumb already is. ───────────────────────────────────────── */
 .snl-end__arrival{
   position:absolute;inset:0;pointer-events:auto;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
   gap:0;text-align:center;
-  padding:calc(24px + var(--sat)) calc(22px + var(--sar)) calc(28px + var(--sab)) calc(22px + var(--sal));
+  padding:calc(12px + var(--sat)) calc(12px + var(--sar)) calc(10px + var(--sab)) calc(12px + var(--sal));
 }
+/* The bloom is warmth ON the board, not a wash OVER it. At .96 alpha in the
+   core it whited out the very squares it was celebrating. */
 .snl-end__bloom{
-  position:absolute;left:50%;top:44%;width:min(150vw,150vh);aspect-ratio:1;
+  position:absolute;left:50%;top:36%;width:min(150vw,150vh);aspect-ratio:1;
   transform:translate(-50%,-50%) scale(.6);transform-origin:center;
-  background:radial-gradient(circle,rgba(255,245,214,.96) 0%,rgba(255,245,214,.72) 34%,rgba(247,250,249,0) 68%);
+  background:radial-gradient(circle,rgba(255,235,183,.56) 0%,rgba(255,240,206,.30) 36%,rgba(247,250,249,0) 70%);
   opacity:0;pointer-events:none;
 }
 /* The plate. Twelve minutes of dice end on a real object, not on loose
    letterforms lying across the board's numerals. §12 beat 1. */
 .snl-end__plate{
-  display:flex;flex-direction:column;align-items:center;
-  background:rgba(247,250,249,.96);
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  grid-template-areas:"crest eyebrow" "won won" "praise praise";
+  align-items:center;column-gap:14px;
+  width:100%;max-width:26em;
+  background:rgba(247,250,249,.97);
   border-radius:var(--radius);
-  padding:22px 24px 26px;
+  padding:12px 14px 14px;
   box-shadow:var(--shadow-lg);
-  max-width:26em;
 }
 .snl-end__crest{
-  width:104px;height:104px;border-radius:50%;
+  grid-area:crest;
+  width:64px;height:64px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   background:var(--white);
-  border:5px solid var(--pc,var(--teal));
-  box-shadow:var(--shadow-lg);
+  border:4px solid var(--pc,var(--teal));
+  box-shadow:var(--shadow);
 }
 .snl-end__crest svg{
-  width:62px;height:62px;display:block;
+  width:38px;height:38px;display:block;
   --sil:var(--pc,var(--teal));--sil-d:var(--pc-d,var(--teal-d));--sil-l:#ffffff;
 }
 .snl-end__eyebrow{
-  margin-top:16px;
+  grid-area:eyebrow;text-align:left;
   font-family:var(--display);font-style:italic;font-weight:600;
-  font-size:clamp(2rem,9.4vw,3rem);line-height:1.04;color:var(--gold);
+  font-size:clamp(1.65rem,7.4vw,2.5rem);line-height:1.04;color:var(--gold);
 }
 .snl-end__won{
-  margin-top:6px;font-weight:900;font-size:1.2em;line-height:1.26;color:var(--navy);
+  grid-area:won;
+  margin-top:8px;font-weight:900;font-size:1.08em;line-height:1.28;color:var(--navy);
 }
 .snl-end__praise{
-  margin-top:12px;max-width:22em;font-weight:600;font-size:1em;line-height:1.5;
+  grid-area:praise;
+  margin-top:8px;font-weight:600;font-size:.92em;line-height:1.44;
   color:var(--muted);background:none;box-shadow:none;padding:0;
 }
 button.snl-end__go{
-  margin-top:22px;
+  margin-top:10px;
   background:var(--teal);color:var(--white);
   box-shadow:0 4px 0 var(--teal-d),var(--shadow);
-  font-size:1.02em;min-height:56px;padding:0 26px;
+  font-size:1.02em;min-height:52px;padding:0 26px;
 }
 button.snl-end__go:active{transform:translateY(2px);box-shadow:0 2px 0 var(--teal-d)}
+/* Very short phones: the board is squeezed too, so give the words less. */
+@media (max-height:680px){
+  .snl-end__crest{width:52px;height:52px;border-width:3px}
+  .snl-end__crest svg{width:31px;height:31px}
+  .snl-end__eyebrow{font-size:clamp(1.4rem,6.2vw,2rem)}
+  .snl-end__won{font-size:1em;margin-top:6px}
+  .snl-end__praise{font-size:.86em;margin-top:6px}
+  button.snl-end__go{min-height:48px;margin-top:8px}
+}
 
 /* ── beat 2 · the scorecard sheet ──────────────────────────────────────── */
 .snl-end__sheet{
@@ -649,6 +677,11 @@ button.snl-end__peek{
 /* ── projector / desktop: bigger type, two columns, one screenful of hall ── */
 @media (min-width:860px){
   .snl-end{--e-fs:19px;--e-gap:22px}
+  /* A hall has room: the plate grows, but it still keeps to the foot of the
+     frame so the board it is celebrating is never behind it. */
+  .snl-end__plate{padding:18px 22px 20px;max-width:30em}
+  .snl-end__crest{width:84px;height:84px;border-width:5px}
+  .snl-end__crest svg{width:50px;height:50px}
   .snl-end__in{max-width:1100px}
   .snl-end__roads{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
   .snl-end__missList{grid-template-columns:1fr 1fr;gap:12px 26px}
@@ -999,22 +1032,33 @@ export function showEndgame(root, summary, opts = {}) {
     announce(`${t('a11y.liveWin', { name: winner.name })} ` +
       sum.players.map((p, i) => `${p.name}: ${ordinal(p.rank || i + 1)}, ${t('end.finishedOn', { n: p.pos })}.`).join(' '));
 
-    /* the win sound, and confetti settling on square 100 */
+    /* The last thing the HUD said is not part of this moment. A shield line,
+       a "you need exactly 3" line or a "six — roll again" line is still inside
+       its 2400 ms hold when the winner lands, and it goes on being painted in
+       dark navy across the board underneath the arrival button. Take it down
+       before the celebration starts; ui.js no-ops if the HUD is not mounted. */
+    try { hideToast(); } catch { /* 2D fallback, or no HUD in this harness */ }
+
+    /* the win sound, and confetti settling on the board */
     try { sfx.win(); } catch { /* audio is a bonus, never a channel */ }
-    /* One burst seeded inside a quarter-cell of square 100 lands about fifteen
-       specks in a corner of the frame while the eye is on the plate in the
-       middle. Spend the SAME tier budget across three seeds — the winner's own
-       square plus the two centre cells — so the celebration covers the picture.
-       The third argument is fx.js's spread; harmless on builds without it. */
+    /* Where confetti is seeded is where it is SEEN. The previous seeds — 45 and
+       56, the two centre cells — sat exactly under the plate, so two thirds of
+       the tier budget fell behind an opaque card and nothing reached the eye.
+       All three seeds now sit in the top half of the board, which is the half
+       the plate can never reach: the winner's own square 100, the far end of
+       the same top row, and one mid-board cell to carry the spread down. */
     try {
       const cap = CFG.quality.current?.particles;
       const total = Math.min(CFG.fx.confetti.count,
         typeof cap === 'number' ? cap : CFG.fx.confetti.count);
-      const main = Math.max(1, Math.round(total * 0.5));
+      const main = Math.max(1, Math.round(total * 0.44));
       const side = Math.max(1, Math.round((total - main) / 2));
-      fx.confetti(cellToWorld(100), main, 2.5);
-      fx.confetti(cellToWorld(45), side, 2.5);
-      fx.confetti(cellToWorld(56), side, 2.5);
+      fx.confetti(cellToWorld(100), main);
+      fx.confetti(cellToWorld(91), side);
+      fx.confetti(cellToWorld(55), side);
+      /* and a gold ring on 100 itself, so the eye is told WHERE she arrived
+         before it is told that she did. §12 beat 1 — "square 100 rises". */
+      fx.glowRing(cellToWorld(100), CFG.css?.gold || '#c8900a');
     } catch { /* 2D board, no pools */ }
 
     if (rm) {

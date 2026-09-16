@@ -37,12 +37,17 @@ import { syncAll } from './level/entity.js';
 import { loadLevelData, buildLevel, updateEnvironment } from './level/loader.js';
 import { disposeBlockCaches } from './level/blocks.js';
 import { structure } from './level/structure.js';
-import { AMMO_TYPES } from './ammo/sip.js';
+import { AMMO_TYPES, preloadMedallionFace, medallionFaceVariant } from './ammo/medallion.js';
 import { Trail } from './ammo/base.js';
 import { FX } from './fx/index.js';
 import { ContactShadows } from './level/shadows.js';
 import { Audio } from './audio/index.js';
 import { Hud } from './ui/hud.js';
+import {
+  LEVEL_ORDER, levelNumber, nextLevel, isLastLevel, isFixture,
+  grade, scoring, recordResult, totalStars, bestFor, hintSeen, markHintSeen,
+  resetProgress, progress, storage as progressStorage,
+} from './progression.js';
 
 export const VERSION = 'P0-foundation-2';
 
@@ -55,9 +60,53 @@ let sunLight, rimLight;
 let levelId = 'l1';
 let lastWall = 0;
 let settleStart = 0;
+/**
+ * ── HOW LONG THE WIN SHEET WAITS ─────────────────────────────────────────────────────────
+ *
+ * This was a flat 132 ticks (1.1 s), and a player reported the sheet arriving "too quickly —
+ * there are still parts of the structure falling down". A flat delay cannot be right for both
+ * cases: a clean last kill with nothing moving wants to move on, and a tower still mid-collapse
+ * wants to be watched. Any single number is too slow for one and too fast for the other.
+ *
+ * So the beat is a floor, a condition and a ceiling:
+ *   MIN    always hold this long, so the kill and its first debris land on screen.
+ *   QUIET  after the floor, keep holding while anything is still moving — `worldQuiet()` is
+ *          the same 0.85 m/s test the settle gate below uses, so "still falling" means exactly
+ *          what it already means everywhere else in this file.
+ *   MAX    a hard ceiling, because a projectile can trundle below the sleep threshold for a
+ *          very long time and the player must never be left waiting on it. This is a payoff
+ *          beat, not a settle gate: nothing after the last villain dies can un-win the level.
+ */
+const WIN_BEAT_MIN_TICKS = 180;    // 1.5 s at 120 Hz — the floor the player asked for
+const WIN_BEAT_MAX_TICKS = 312;    // 2.6 s — never hold longer than this, whatever is moving
+const WIN_BEAT_QUIET_TICKS = 18;   // 0.15 s of stillness is enough to call the collapse over
+/** Tick the last villain died on, or -1. Drives the short-circuit above. */
+let winPendingSince = -1;
+/** Consecutive quiet ticks since the win became pending. Separate from `quietRun`, which the
+ *  settle gate owns — sharing one counter let each reset the other mid-collapse. */
+let winQuietRun = 0;
 let launchTick = -1;
 let lastImpactPoint = new THREE.Vector3(18, 3, 0);
 let dragPointerId = null;
+/**
+ * THE PLAYER'S LOOK (camera.js `lookBy`). A second, independent pointer identity: a drag that
+ * misses the launch bay pans the camera instead of doing nothing at all, which is what it did
+ * before. Separate from `dragPointerId` so the two can never be confused for each other — the
+ * band always wins the grab test, and only what the band refuses reaches the camera.
+ */
+let lookPointerId = null;
+let lookLastX = 0, lookLastY = 0;
+/**
+ * ── PINCH TO ZOOM THE LOOK (ROUND 3) ────────────────────────────────────────────────────────
+ * `lookZoomBy` was reachable only from `wheel`, i.e. only on a desktop, and this game is played
+ * on phones. Every live pointer is tracked here so a SECOND finger can turn a pan into a pinch
+ * and back again without either gesture dropping the other.
+ *
+ * `pinchSpan` is null whenever fewer than two fingers are down, which is also how a pinch that
+ * loses a finger re-arms cleanly rather than jumping by the whole ratio on the next move.
+ */
+const livePointers = new Map();
+let pinchSpan = null;
 const frameTimes = [];
 
 // ---------------------------------------------------------------------------
@@ -271,9 +320,27 @@ async function loadLevel(id = levelId) {
   world.phase = 'settling';
   settleStart = physics.tick;
 
-  emit('levelLoaded', { level: levelId, data });
+  emit('levelLoaded', {
+    level: levelId, data,
+    number: levelNumber(levelId), count: LEVEL_ORDER.length,
+    best: bestFor(levelId), totalStars: totalStars(),
+  });
   world.hud?.refresh();
-  world.hud?.hint(true, 'Drag back from the slingshot, then let go');
+  /**
+   * THE TUTORIAL HINT IS L1-ONLY, AND ONE-TIME.
+   *
+   * It used to be unconditional, so "Drag back from the slingshot, then let go" was still on
+   * screen on level 3 — a shipping defect the orchestrator saw directly. l1 IS the tutorial
+   * (SCOPE CHANGE 2), so the hint belongs to l1 and nowhere else, and once the player has
+   * drawn the band back for real they never need it again (`hud`'s `bandStretch` handler,
+   * `markHintSeen` on the launch that follows).
+   *
+   * `instant: true` matters and is not tidiness. Removing the class alone starts a 400 ms
+   * opacity fade, so l1 -> l2 carried the tutorial line, legible at opacity .92, across the
+   * level boundary and onto the next level. The gate was correct and the render was still
+   * wrong; a level load hides it in one frame.
+   */
+  world.hud?.hint(showTutorialHint(), TUTORIAL_HINT, { instant: true });
 
   const settleTicks = settleAfterBuild();
   render();                         // guarantee one rendered frame before we resolve
@@ -310,6 +377,8 @@ function settleAfterBuild() {
   settleStart = 0;
   launchTick = -1;
   quietRun = 0;
+  winPendingSince = -1;
+  winQuietRun = 0;
   for (const e of world.entities) e.bornTick = 0;
   return n;
 }
@@ -332,6 +401,8 @@ function loadNextAmmo() {
 // ---------------------------------------------------------------------------
 function onLaunch(ammo) {
   world.ammoUsed++;
+  // A launch is a COMPLETED drag, which is the moment the tutorial line has done its job.
+  if (showTutorialHint()) markHintSeen();
   world.phase = 'flying';
   launchTick = physics.tick;
   /**
@@ -354,21 +425,79 @@ on('ammoSpent', () => {
   world.rig.frameAll(lastImpactPoint);
 });
 
+/**
+ * THE SCORING RULES, NAMED. They used to be two magic numbers inline, which meant nothing
+ * outside this file could reason about the score — and the star thresholds are derived FROM
+ * the score, so `_tools/scenarios/p13-sweep.mjs` had no way to compute a level's structural
+ * minimum winning score (every villain down, no ammo left, no blocks broken) except by
+ * copying the constant and hoping it stayed in sync. It is exposed through `SS.scoreRules()`.
+ */
+export const SCORE = {
+  /** Per villain removed. */
+  villain: 5000,
+  /** Per UNUSED ammo at the moment the level is cleared — the efficiency reward, and by far
+   *  the biggest term, which is why star bands come out as "shots to clear". */
+  ammoBonus: 10000,
+};
+
 on('score', ({ amount }) => { world.score += amount; });
-on('villainDefeated', () => { world.score += 5000; });
+/**
+ * ── THE ONE MOMENT THE GAME ACTUALLY TEACHES ────────────────────────────────
+ *
+ * A player asked the fair question: what IS the scammer, what am I learning, why should I
+ * avoid this? The honest answer was nothing — the lesson lived on the win sheet, after the
+ * fact, and the villains' own `fact` lines were wired only as a FALLBACK behind the level's
+ * `teaches` string, so they never rendered at all. Replacing every villain with one shared
+ * con man then collapsed nine specific lessons into a single bland line about a suit.
+ *
+ * So the truth is told at the BUST: the frame a scammer goes down, his own line appears over
+ * him. That is the moment the player is looking straight at him and is most receptive, it
+ * needs no extra screen and no extra tap, and it makes each of the nine levels teach its own
+ * scam rather than all of them teaching "scams are bad".
+ *
+ * Lines are authored per level in `busts[]`, one per villain, and handed out in order — so a
+ * level with six scammers delivers six different facts about the same scam rather than the
+ * same fact six times.
+ */
+on('villainDefeated', ({ point }) => {
+  world.score += SCORE.villain;
+  const lines = world.level?.busts;
+  if (!lines?.length) return;
+  const i = world.bustsShown | 0;
+  world.bustsShown = i + 1;
+  const text = lines[Math.min(i, lines.length - 1)];
+  if (text) emit('scamTruth', { point, text });
+});
 
 function evaluate() {
   if (aliveVillains() === 0) {
     // unused-ammo bonus, the classic "you were efficient" reward
-    const bonus = ammoLeft() * 10000;
+    const bonus = ammoLeft() * SCORE.ammoBonus;
     world.score += bonus;
-    world.stars = starsFor(world.score);
+    /**
+     * GRADING IS NOT A FORMULA ANY MORE. `grade()` reads the thresholds measured from this
+     * level's real achievable score range (levels/stars.json, regenerated by
+     * _tools/scenarios/p13-sweep.mjs) and guarantees a won level is never worth zero stars.
+     * The old `starsFor()` here was `26000 + par*4000` scaled 0.7/1.15/1.55 and it drifted
+     * until a 21 600-point WIN on l1 scored 0 of 3 and l2's 3-star band was unreachable.
+     */
+    world.stars = grade(levelId, world.score, true);
     world.phase = 'won';
-    emit('levelWon', { score: world.score, stars: world.stars, bonus, level: levelId });
+    const rec = recordResult(levelId, world.score, world.stars);
+    emit('levelWon', {
+      score: world.score, stars: world.stars, bonus, level: levelId,
+      number: levelNumber(levelId), count: LEVEL_ORDER.length,
+      next: nextLevel(levelId), last: isLastLevel(levelId),
+      best: rec, totalStars: totalStars(), teaches: world.level?.teaches ?? '',
+    });
   } else if (ammoLeft() <= 0) {
     world.stars = 0;
     world.phase = 'lost';
-    emit('levelLost', { score: world.score, level: levelId });
+    emit('levelLost', {
+      score: world.score, level: levelId, stars: 0,
+      number: levelNumber(levelId), count: LEVEL_ORDER.length,
+      villainsAlive: aliveVillains(), teaches: world.level?.teaches ?? '',
+    });
   } else {
     world.phase = 'aiming';
     loadNextAmmo();
@@ -377,12 +506,44 @@ function evaluate() {
   }
 }
 
-function starsFor(score) {
-  const par = world.level?.par ?? 3;
-  // Thresholds scale with how much ammo the level gives you, so a generous level is not
-  // automatically a 3-star level.
-  const base = 26000 + par * 4000;
-  return score >= base * 1.55 ? 3 : score >= base * 1.15 ? 2 : score >= base * 0.7 ? 1 : 0;
+// ---------------------------------------------------------------------------
+// 4b. PROGRESSION — the chain, and the tutorial hint's one-time life
+// ---------------------------------------------------------------------------
+
+export const TUTORIAL_HINT = 'Drag back from the slingshot, then let go';
+
+/** l1 only, and only until the player has completed one real draw. */
+function showTutorialHint() { return levelId === LEVEL_ORDER[0] && !hintSeen(); }
+
+/**
+ * Advance to the next level in the chain. Returns an honest report rather than silently
+ * reloading the same level when there is nothing after this one — the finish panel is the
+ * thing that handles the end of the chain, not a wrap-around.
+ */
+async function goNext() {
+  const id = nextLevel(levelId);
+  if (!id) return { ok: false, reason: `"${levelId}" is the last level in the chain`, level: levelId };
+  const r = await loadLevel(id);
+  return { ok: true, ...r };
+}
+
+/** Start the whole game over from level 1. Used by the finish panel. */
+async function goFirst() { return { ok: true, ...(await loadLevel(LEVEL_ORDER[0])) }; }
+
+/**
+ * The level named by `?level=lN`, if it is a real level. Before this existed the owner could
+ * not reach l2 or l3 without typing into a devtools console, which is the gap this piece is
+ * here to close; it also lets a scenario deep-link a level without a second round trip.
+ */
+function requestedLevel() {
+  let id = null;
+  try { id = new URLSearchParams(location.search).get('level'); } catch { /* no location in some embedders */ }
+  if (!id) return null;
+  if (!LEVEL_ORDER.includes(id)) {
+    console.warn(`[main] ?level=${id} is not one of ${LEVEL_ORDER.join(', ')} — starting at ${LEVEL_ORDER[0]}.`);
+    return null;
+  }
+  return id;
 }
 
 // ---------------------------------------------------------------------------
@@ -434,6 +595,40 @@ function stepOnce() {
     world.phase = 'settling';
     settleStart = physics.tick;
     world.rig.frameAll(lastImpactPoint);
+  }
+
+  /**
+   * ── THE OUTCOME IS DECIDED THE MOMENT THE LAST VILLAIN DIES ──────────────────────────────
+   * Reported by the owner on a real phone: "level 2 I managed to finish with 1 cannonball, but
+   * it makes me fire a 2nd before moving forward." Reproduced — on l1 the last villain died
+   * while phase was still 'flying', and the win did not register for SIX SECONDS, with the end
+   * sheet never appearing in that window. The player sees nothing happen and fires again.
+   *
+   * Cause: a win was only ever *evaluated* after the world went quiet — 'flying' does not hand
+   * over to 'settling' for 10 s, and 'settling' then waits on worldQuiet(). Both are the right
+   * rules for deciding whether a level was LOST (debris can still topple the last villain), but
+   * they are the wrong rules for a level already WON. Nothing that happens after the last
+   * villain dies can un-win it.
+   *
+   * So: short-circuit on a kill. Hold a brief beat so the death and the collapse actually land
+   * on screen — cutting straight to the sheet would throw away the payoff — then evaluate.
+   */
+  if (world.phase !== 'won' && world.phase !== 'lost' && world.ammoUsed > 0 && aliveVillains() === 0) {
+    if (winPendingSince < 0) { winPendingSince = physics.tick; winQuietRun = 0; }
+    const held = physics.tick - winPendingSince;
+    winQuietRun = worldQuiet() ? winQuietRun + 1 : 0;
+    const stillFalling = winQuietRun < WIN_BEAT_QUIET_TICKS;
+    if (held >= WIN_BEAT_MIN_TICKS && (!stillFalling || held >= WIN_BEAT_MAX_TICKS)) {
+      winPendingSince = -1;
+      winQuietRun = 0;
+      quietRun = 0;
+      emit('settle', { tick: physics.tick });
+      evaluate();
+      return;
+    }
+  } else {
+    winPendingSince = -1;
+    winQuietRun = 0;
   }
 
   // --- phase transitions that depend on the world quieting down ---
@@ -503,25 +698,60 @@ function bootInput() {
 
   const worldAt = (ev) => world.sling?.screenToWorld(ev.clientX, ev.clientY);
 
+  /** Live pointers, and the pinch they may add up to. See `livePointers` at the top of the file. */
+  const twoDown = () => {
+    const p = [...livePointers.values()];
+    return p.length === 2 ? Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y) : null;
+  };
+  const forgetPointer = (id) => { livePointers.delete(id); if (livePointers.size < 2) pinchSpan = null; };
+  /**
+   * `setPointerCapture` THROWS — it does not return false — when the id names no active
+   * pointer, and a throw here aborts `pointerdown` before the drag or the look is armed, so the
+   * touch silently does nothing. That is reachable for real: a pointer whose gesture the OS has
+   * already stolen (an iOS edge swipe, a system sheet) can still deliver a `pointerdown` whose
+   * capture is refused a moment later. Capture is an optimisation — losing it costs a drag that
+   * leaves the canvas, not the drag itself — so it is never worth an exception.
+   */
+  const capture = (id) => { try { el.setPointerCapture?.(id); } catch { /* not capturable */ } };
+
   el.addEventListener('pointerdown', (ev) => {
     world.audio?.unlock();
     if (ev.button != null && ev.button !== 0) return;
+    livePointers.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
+    pinchSpan = twoDown();
     const s = world.sling;
     if (!s) return;
 
+    // FIRST TOUCH SKIPS THE ESTABLISHING PAN (camera.js `skipEstablish`). Unconditional: it is
+    // a no-op in every other mode, so it does not need to know what the camera is doing.
+    world.rig?.skipEstablish?.();
+
     if (world.phase === 'flying') { tapAbility(); return; }
     if (world.phase !== 'aiming' && world.phase !== 'settling') return;
-    if (s.state !== 'loaded') return;
 
     const p = worldAt(ev);
-    if (!p) return;
     // Generous grab: near the pouch, OR anywhere in the launch bay. Missing the pouch on a
     // phone is the fastest way to make a slingshot feel broken.
-    const near = Math.hypot(p.x - s.anchor.x, p.y - s.anchor.y) < SLING.grabRadius;
-    const inBay = p.x < s.anchor.x + 5.5 && p.y < 9;
-    if (!near && !inBay) return;
+    const near = !!p && Math.hypot(p.x - s.anchor.x, p.y - s.anchor.y) < SLING.grabRadius;
+    const inBay = !!p && p.x < s.anchor.x + 5.5 && p.y < 9;
+    /**
+     * ── A DRAG THAT MISSES THE BAND LOOKS AROUND INSTEAD OF DOING NOTHING ──────
+     * The band is asked FIRST and always wins, so this can only ever pick up a drag the
+     * slingshot has already refused. ROUND 3: the portrait aim frame now holds the whole shot
+     * — sling, band and structure — so the look is no longer how a student finds the target at
+     * all. It is how they go and INSPECT it: `lookZoomMin` takes l1's frame to 15.8 units and
+     * the tower to 27.4 %H, which is a size the static frame cannot deliver while the sling is
+     * on screen (see camera.js `aimFarMarginPortrait`). Pan with one finger, pinch with two.
+     */
+    if (s.state !== 'loaded' || !near && !inBay) {
+      capture(ev.pointerId);
+      lookPointerId = ev.pointerId;
+      lookLastX = ev.clientX; lookLastY = ev.clientY;
+      ev.preventDefault();
+      return;
+    }
 
-    el.setPointerCapture?.(ev.pointerId);
+    capture(ev.pointerId);
     dragPointerId = ev.pointerId;
     s.beginDrag(p.x, p.y);
     world.hud?.hint(false);
@@ -529,6 +759,32 @@ function bootInput() {
   }, { passive: false });
 
   el.addEventListener('pointermove', (ev) => {
+    if (livePointers.has(ev.pointerId)) livePointers.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
+    /**
+     * TWO FINGERS ARE A PINCH, AND A PINCH OUTRANKS EVERYTHING ELSE THE MOVE COULD MEAN.
+     * A second finger arriving mid-drag cancels the draw rather than fighting it — a band that
+     * keeps stretching under a zoom gesture is how a phone control stops feeling like a control.
+     * The ratio is `newSpan / oldSpan`, which is what `lookZoomMul` is written to take.
+     */
+    const span = twoDown();
+    if (span !== null) {
+      // ROUND 4: a cancelled draw must also give the CAMERA back. The portrait draw pans the
+      // frame downrange onto the target, and `cancelDrag()` only puts the band back — without
+      // this the camera would be stranded on the structure with the sling off screen and
+      // nothing left to move it, since `drawing()` is only called by a live draw.
+      if (dragPointerId !== null) { dragPointerId = null; world.sling?.cancelDrag(); world.rig?.focusSling?.(); }
+      lookPointerId = null;
+      if (pinchSpan !== null && pinchSpan > 8 && span > 8) world.rig?.lookZoomMul(pinchSpan / span);
+      pinchSpan = span;
+      ev.preventDefault();
+      return;
+    }
+    if (lookPointerId === ev.pointerId) {
+      world.rig?.lookBy(ev.clientX - lookLastX, ev.clientY - lookLastY);
+      lookLastX = ev.clientX; lookLastY = ev.clientY;
+      ev.preventDefault();
+      return;
+    }
     if (dragPointerId !== ev.pointerId) return;
     const p = worldAt(ev);
     if (p) world.sling?.setPouch(p.x, p.y);
@@ -536,17 +792,37 @@ function bootInput() {
   }, { passive: false });
 
   const finish = (ev) => {
+    forgetPointer(ev.pointerId);
+    if (lookPointerId === ev.pointerId) {
+      lookPointerId = null;
+      try { el.releasePointerCapture?.(ev.pointerId); } catch { /* already gone */ }
+      return;
+    }
     if (dragPointerId !== ev.pointerId) return;
     dragPointerId = null;
-    el.releasePointerCapture?.(ev.pointerId);
+    try { el.releasePointerCapture?.(ev.pointerId); } catch { /* already gone */ }
     world.sling?.endDrag();
   };
   el.addEventListener('pointerup', finish);
   el.addEventListener('pointercancel', (ev) => {
+    forgetPointer(ev.pointerId);
+    if (lookPointerId === ev.pointerId) { lookPointerId = null; return; }
     if (dragPointerId !== ev.pointerId) return;
     dragPointerId = null;
     world.sling?.cancelDrag();
+    world.rig?.focusSling?.();      // …and the same for a pointer the OS takes away mid-draw
   });
+
+  /**
+   * Wheel / trackpad pinch = zoom the look. Desktop only in practice (a phone has no wheel), and
+   * it is the same bounded offset the drag uses — `camera.js` clamps it and every real intent
+   * clears it, so it can never leak into a shot.
+   */
+  el.addEventListener('wheel', (ev) => {
+    if (world.phase !== 'aiming' && world.phase !== 'settling') return;
+    world.rig?.lookZoomBy(ev.deltaY);
+    ev.preventDefault();
+  }, { passive: false });
 
   addEventListener('keydown', (ev) => {
     world.audio?.unlock();
@@ -558,6 +834,8 @@ function bootInput() {
   // A tab that loses focus mid-drag must not come back holding an invisible band.
   addEventListener('blur', () => {
     if (dragPointerId !== null) { dragPointerId = null; world.sling?.cancelDrag(); }
+    lookPointerId = null;
+    livePointers.clear(); pinchSpan = null;
   });
 }
 
@@ -591,8 +869,72 @@ function state() {
     driven: physics.driven,
     timeScale: physics.timeScale,
     hitStop: world.hitStop,
+    // --- progression (P13) ---
+    levelNumber: levelNumber(levelId),
+    levelCount: LEVEL_ORDER.length,
+    nextLevel: nextLevel(levelId),
+    totalStars: totalStars(),
+    best: bestFor(levelId),
+    /**
+     * How many times `grade()` has had to rescue a won level that fell below its own 1-star
+     * threshold. MUST be 0: a non-zero value means levels/stars.json has drifted under the
+     * real score distribution and needs re-deriving. `p13-stargate.mjs` asserts on it.
+     */
+    starsClamped: scoring.starsClamped,
+
+    /**
+     * ── THE AMMO'S MARK, AS A MEASURED SIZE AND NOT AN INTENTION ──────────────────────────
+     *
+     * Round 2 of the BALL piece was rejected because the IFM mark was authored and judged at
+     * 26 CSS px and shipped at 8.5, and no hook in the game could see the difference. These
+     * two fields close that: `faceCssPx` is the live medallion's projected DISC diameter in
+     * CSS px through the real camera, and `faceLod` is which of the two marks that size
+     * selected. A critic can now assert "the coin is under the detail threshold on a phone"
+     * instead of taking a screenshot and squinting.
+     *
+     * Null when nothing is loaded or in the air, which is a state and not a failure.
+     */
+    ammoFace: (() => {
+      const a = world.sling?.ammo ?? world.projectiles.find(p => !p.dead);
+      if (!a || a.faceCssPx === undefined) return null;
+      return { lod: a.faceLod, cssPx: +a.faceCssPx.toFixed(2), variant: medallionFaceVariant() };
+    })(),
+
+    /**
+     * ── THE TUTORIAL HINT: THREE FIELDS, BECAUSE THEY ARE THREE DIFFERENT FACTS ──────────
+     *
+     * `hintDone` used to be the SAVED FLAG, and it read `true` while the hint was plainly on
+     * screen. A hook that lies is worse than the visual bug behind it: a critic checking
+     * `hintDone` passes a build that still shows the line on level 3, and the defect ships
+     * with the game. So the flag no longer answers a question about the screen.
+     *
+     *   hintVisible — MEASURED off the DOM every call (offsetParent + computed
+     *                 display/visibility/opacity + a box that intersects the viewport). This
+     *                 is the ground truth; `innerText` cannot see an opacity-hidden element
+     *                 and must never be used for it.
+     *   hintDone    — literally "the hint is not on screen". Derived from hintVisible, so
+     *                 `hintDone === true` CANNOT coexist with a visible hint by construction.
+     *   hintSeen    — the persisted intention: has the player ever completed a real draw?
+     *                 Useful, and honestly named — it says nothing about what is rendered.
+     */
+    hintVisible: hintOnScreen(),
+    hintDone: !hintOnScreen(),
+    hintSeen: hintSeen(),
+
+    /**
+     * WHAT THE HUD IS ACTUALLY SHOWING — text read back out of the DOM. Every field above
+     * is the game's intent; this is the render. They have already disagreed on this project
+     * (the chip read "Level 1" on level 3 while the level index was correct everywhere a
+     * hook could see it), and nothing in the hook surface could see it. Now it can.
+     */
+    hud: world.hud?.readback() ?? null,
+
+    storageOK: progressStorage.available,
   };
 }
+
+/** Rendered truth about the tutorial line. No HUD at all means nothing is on screen. */
+function hintOnScreen() { return world.hud?.hintVisible() ?? false; }
 
 /** Full-precision transform dump — the determinism oracle. Hex is the f64 bit pattern. */
 function dumpBodies() {
@@ -636,9 +978,22 @@ export async function boot() {
   world.shadows = new ContactShadows(scene);
   world.audio = new Audio();
   world.hud = new Hud();
-  world.hud.onRestart = () => { world.audio?.cue('click'); restart(); };
+  world.hud.onRestart = () => { world.audio?.cue('click'); return restart(); };
+  world.hud.onNext = () => { world.audio?.cue('click'); return goNext(); };
+  world.hud.onFirst = () => { world.audio?.cue('click'); return goFirst(); };
+  world.hud.onPickLevel = (id) => { world.audio?.cue('click'); return loadLevel(id); };
+  world.hud.onResetProgress = () => { world.audio?.cue('click'); return resetProgress(); };
 
-  await loadLevel('l1');
+  /**
+   * The IFM medallion's face is composited from assets/ifm-round.png, and it is preloaded
+   * HERE — before the first level builds — so the very first projectile the player sees is
+   * already branded rather than popping in a frame later. It never rejects and it carries its
+   * own timeout: HOOKS.md is explicit that `ready` must not be gated on a fetch that can hang,
+   * so a missing asset degrades to a drawn IFM mark and a logged warning, not a stalled boot.
+   */
+  await preloadMedallionFace();
+
+  await loadLevel(requestedLevel() ?? LEVEL_ORDER[0]);
   bootInput();
 
   const SS = installHooks({
@@ -658,6 +1013,35 @@ export async function boot() {
     },
     entities: () => world.entities,
     world,
+    /**
+     * PROGRESSION HOOKS. A three-level game that can only be walked through by a human is a
+     * three-level game nobody can gate, so the chain is drivable: `SS.nextLevel()` is the
+     * Next Level button, `SS.progress()` is the saved record, `SS.resetProgress()` wipes it.
+     */
+    progression: {
+      next: () => goNext(),
+      first: () => goFirst(),
+      order: () => LEVEL_ORDER.slice(),
+      read: () => ({ ...progress(), totalStars: totalStars(), storage: { ...progressStorage } }),
+      reset: () => resetProgress(),
+      grade: (id, score, won = true) => grade(id, score, won),
+      /**
+       * The scoring constants plus the level's own structural MINIMUM winning score — every
+       * villain down, zero ammo left, zero blocks broken. The 1-star threshold must sit below
+       * this, or a scruffy last-shot win can score below its own 1-star band. l1's sweep never
+       * produced a 4-shot win, so a distribution-only derivation could not see that floor.
+       */
+      rules: () => ({
+        ...SCORE,
+        level: levelId,
+        villains: world.villains.length,
+        ammo: world.ammoQueue.length,
+        minWinScore: world.villains.length * SCORE.villain,
+        maxAmmoBonus: world.ammoQueue.length * SCORE.ammoBonus,
+      }),
+      thresholds: () => scoring.table(),
+      clamped: () => scoring.starsClamped,
+    },
   });
 
   requestAnimationFrame((t) => { lastWall = t; loop(t); });

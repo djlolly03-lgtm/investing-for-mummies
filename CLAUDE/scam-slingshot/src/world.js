@@ -42,6 +42,25 @@ export const world = {
   // --- deterministic clock ---
   simTime: 0,       // seconds, = tick * FIXED
   hitStop: 0,       // solver steps to hold the world still (deterministic, tick-counted)
+
+  /**
+   * PER-LEVEL SCAM STATE — the one flag each level's scam mechanic runs on.
+   *
+   * The scam used to be a SKIN: villains named the scam, `teaches` explained it, and the
+   * verbs underneath were plain Angry Birds. A student could clear all three levels without
+   * ever feeling what a scam does to you. These flags are how a scam becomes a MECHANIC —
+   * see the gate in level/blocks.js `fracture()`.
+   *
+   *   interestCleared  L2, toxic debt. While false, every load-bearing block in the debt
+   *                    tower ABSORBS its damage instead of breaking: the tower shakes, chips
+   *                    fly off the top, the score ticks — and the debt does not come down.
+   *                    Killing the interest meter flips it and the whole structure becomes
+   *                    breakable. That is the lesson as a verb: paying the minimum is not
+   *                    progress, and the thing to kill is the interest.
+   */
+  scam: { interestCleared: false },
+  /** Index into the level's `busts[]` — see the villainDefeated handler in main.js. */
+  bustsShown: 0,
 };
 
 /** Register an entity. Creation order matters — it is the determinism ordering. */
@@ -78,6 +97,9 @@ export function resetWorldLists() {
   world.ammoUsed = 0;
   world.simTime = 0;
   world.hitStop = 0;
+  // a retry must meet the scam intact
+  world.scam = { interestCleared: false };
+  world.bustsShown = 0;      // how many truth lines this level has spent
 }
 
 export function aliveVillains() { return world.villains.filter(v => v.alive).length; }

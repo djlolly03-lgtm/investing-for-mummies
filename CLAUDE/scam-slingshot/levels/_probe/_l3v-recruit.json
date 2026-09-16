@@ -1,0 +1,12 @@
+{
+  "id": "_l3v-recruit",
+  "name": "PROBE — one ponziRecruit on open ground, for the damage budget",
+  "chapter": 0,
+  "sky": "morning",
+  "par": 1,
+  "teaches": "Harness fixture: base.js says re-derive the four damage constants after any radius change. This is that.",
+  "ammo": ["sip", "sip", "sip", "sip", "sip", "sip"],
+  "blocks": [],
+  "villains": [ { "type": "ponziRecruit", "x": 18.00, "y": 0.62 } ],
+  "props": []
+}

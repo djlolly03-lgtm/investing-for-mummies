@@ -1,73 +1,108 @@
-# Scam Slingshot — paused 7 Sep 2026, ~08:45 IST
+# Scam Slingshot — RESUME HERE (updated 10 Sep 2026, paused on request — low credits)
 
-Paused on request mid-round. **The game is healthy**: loads clean, 24/24 hooks present, l1 won,
-0 console errors/warnings. Nothing is half-written.
+**Verified at pause**: 24/24 hooks · all three levels play · l1 won · 0 console errors · desktop
+unregressed · portrait playable (after a stopgap, see below). Nothing half-written.
 
-## To restart
-1. Start the server: Claude Code preview config **`ifm-game`** (serves `CLAUDE/` on :8743).
-   The server does NOT survive a session — restart it every time.
-2. Game:     http://localhost:8743/scam-slingshot/
-   Progress:  http://localhost:8743/scam-slingshot-progress.html
-3. Health check:
-   `cd CLAUDE/scam-slingshot/_tools && NODE_PATH=/opt/homebrew/lib/node_modules node capture.mjs --scenario ./scenarios/final.mjs --out ../_shots/check`
+## ✅ WHAT LANDED THIS SESSION
+- **IFM branding, complete and measured.** IFM mountain silhouette + low-opacity logo in the sky +
+  layered parallax + haze + foreground grass; scam-icon villain props from the Slash the Scam set;
+  branded shell (Nunito/Lora, teal #2a9d8f, navy #1a3a5c, logo on loading + level-complete sheets).
+- **Contrast hierarchy verified by measurement**, not eyeball: villains > structures > ground/HUD >
+  backdrop, on all three levels, at both viewports. Structures out-edge the backdrop 4.5-24x. The
+  branding made the backdrop QUIETER than what it replaced (saturation 38.4 -> 19.7) while the
+  tower's edge energy was unchanged. Branding added identity without stealing attention.
+- **The IFM cannonball reads.** Medallion at 46 CSS px, navy rim, cream face, arc lettering legible.
+- **Zero parallel-edit collisions** from four simultaneous builders.
 
-## Scope (set by Hiral, 6 Sep) — see the SCOPE CHANGE section in scam-slingshot-BRIEF.md
-**Level 1 only, finished to the Angry Birds bar.** Priority: (1) breaking physics,
-(2) gravity/weight, (3) everything else. Levels 2+, other villains, the rest of the ammo roster,
-level-select and meta polish are OUT until L1 is signed off.
+## ⚠️ THE ONE OPEN BLOCKER — portrait framing (stopgap applied, not finished)
+The camera fix hit its tower-height target while putting the structure 100% OFF-SCREEN
+(`onScreenFracW = 0.000`). I applied a stopgap myself — `COMPOSE.minVwPortrait` 4.2 -> **25.0** —
+which puts the sling and the whole structure back on screen and makes portrait playable. Cost: the
+tower is ~12 %H instead of the 35-45 % target. Playable-and-small beats unplayable-and-large, but it
+is not the finished answer. Original camera backed up at `/tmp/camera.js.bak`.
+**The real fix** is a camera MOVE, not a fit: an establishing pan on load, and/or a projectile
+follow, and/or player pan-zoom (currently absent — drag and wheel move the camera 0.00 units).
+Full detail in `_reference/ORCHESTRATOR-NOTES.md`.
 
-## Where each area stands
-| area | round | state |
-|---|---|---|
-| P0 Foundation | r3 | PASS — determinism, 24/24 honest hooks, aim mapping verified |
-| P2 Flight & tuning | r1 | done — concave power curve; zero-score shots 14/24 -> 0/24 |
-| P3 Destruction & materials | r8 | **won a blind A/B (critic picked OURS)** on materials; now FAIL on impact VFX composition |
-| PW Weight & gravity | r3 | FAIL — **the big one**, see below |
-| P4 Camera | r8 | FAIL — stalled 8 rounds; a 3-way bake-off was mid-flight when paused |
-| P1 Launch feel | r8 | FAIL — muzzle lance tapered backwards (widest end on the dart, not the fork) |
-| P13 Scoring | r0 | BLOCKED/untended — star thresholds fixed while retuning moves the score range |
-| P5-P18 rest | — | not started |
+## 🚀 TO PUBLISH (all three commands are yours to run; none cost Claude credits)
+    /Users/lollyg/Developer/sync-back-to-repo.sh            # dry run
+    /Users/lollyg/Developer/sync-back-to-repo.sh --go       # bring the build into the repo
+    cd "/Users/lollyg/Documents/investing for Mummies/CLAUDE" && vercel deploy --yes
+`vercel deploy --yes` is a PREVIEW deploy — public URL, does not touch the live site. Add `--prod`
+only when you want it live. **Deploy from INSIDE `CLAUDE/`** — deploying the parent wipes the site.
+`_reference/` holds real Angry Birds screenshots used privately as a critique baseline; it is blocked
+by BOTH .gitignore and .vercelignore and MUST stay blocked.
 
-## THE MOST IMPORTANT OPEN ITEM — resume here
-**The collapse is authored, not transmitted.** l1 GAINS 97-143 J of mechanical energy in the 2 s
-after impact (fixed 23-body cohort, gravity's PE release subtracted) against a dart carrying only
-57-60 J, in jolts up to +37.6 J in ONE 8.3 ms step. Noise floor 0.54 J idle / 0.00 J dart-in-flight.
-Every jolt above 4 J lands on a `structure.js` hop/tip/joint event.
+## FIRST THREE COMMANDS ON RESUME
+1. Start the server: launch config **`ss-build`** (serves `~/Developer` on :8744). Never survives a
+   session — restart every time. Game: http://localhost:8744/scam-slingshot/
+2. Health check:
+   `cd ~/Developer/scam-slingshot/_tools && node capture.mjs --scenario ./scenarios/final.mjs --url http://localhost:8744/scam-slingshot/ --out ../_shots/check`
+3. Relaunch the wave (stopped mid-run; the hint phase is done, energy was on round 9):
+   `Workflow({ scriptPath: "/Users/lollyg/.claude/projects/-Users-lollyg-Documents-investing-for-Mummies/30f1b549-eb06-4147-9b13-cf3a1460fcc4/workflows/scripts/scam-slingshot-night4-wf_e9368f03-e2f.js" })`
+   The hint phase will re-run harmlessly (it is idempotent); energy resumes at round 9.
 
-The "rack" mechanism that won P3's propagation round is shoving the tower over. Cap what
-structure.js writes so cumulative added KE cannot exceed the contact energy the fracture delivered.
-**If an honest collapse propagates less, make the STRUCTURE more precarious (joint strength, contact
-margins, centre of mass, bay stacking) — do not re-inject energy and do not revert propagation.**
+## SCOPE (Hiral) — full detail in "SCOPE CHANGE 2" at the end of scam-slingshot-BRIEF.md
+**Three levels, published for students to play, mostly on phones.** Look-and-feel polish is DEFERRED
+("we will build that"). P1 launch feel and P4 camera are PARKED at working state — do not iterate.
+Villain IDENTITY is IN scope: it is how the scam is taught.
 
-Note: P3's appearance-critic could not see this; PW's physics-critic could. Keep PW as a standing
-adversary to the destruction work, not a one-off.
+## STATE — roughly 75% of the 3-level launch scope
+| area | state |
+|---|---|
+| Foundation, determinism, hooks | PASS — 24/24 honest hooks, both determinism gates green |
+| P2 flight & tuning | done — zero-score shots 14/24 -> 0/24 |
+| P3 destruction & materials | **won a blind A/B (critic picked OURS)** on materials |
+| Three levels | ALL BUILT and playable: l1 lottery · l2 credit-card trap · l3 Ponzi pyramid |
+| Progression | **LANDED** — levelNumber/levelCount/nextLevel wired, HUD reads "LEVEL n OF 3" |
+| Stars | **LANDED** — thresholds DERIVED per level with a recorded proof plan; 3 stars provably reachable (l3 t3=60,500, proof run 63,500). A 22,400 win now scores 1 star, was 0 |
+| Persistence | totalStars + per-level best in localStorage, storageOK true |
+| PW energy | converging, NOT done — created energy 522 J -> ~50 J vs a ~60 J dart |
+| P6 villain identity | FAIL — reactions invisible at played size |
+| Brand pass, mobile perf, deploy | not started |
 
-## The camera bake-off (was running when paused, will need re-running)
-P4 failed 8 rounds by overcorrecting each previous fix: zoomed out (metric-gaming) -> dollied in too
-early -> hard positional lock -> frozen-then-lunge. Three distinct approaches were being built behind
-a `window.__CAM_APPROACH__` switch in src/camera.js — `lookahead` (solve the ballistic impact point,
-interpolate over known flight time), `springrail` (critically-damped spring on a sling-to-target
-rail), `framefit` (fit to a must-be-visible bounding box, no follow logic). Then blind-rank them,
-blind-A/B the winner vs Angry Birds, promote the winner to default. Re-run this; do not iterate the
-existing rig again.
+## OPEN DEFECTS, most important first
+1. **Fracture energy still creates ~50 J** against a dart delivering ~60 J. Down from 522 J over four
+   rounds and converging — finish it. Children must not exceed the parent's KE plus a bounded,
+   priced burst. Do NOT buy it by losing propagation; make the structure more precarious instead.
+2. **Villain reactions are invisible at the size played.** Measured: `guardK = 0.0000` on 8/8 shots,
+   root rotation 0.05 deg; the only change is eye geometry — ~9px/4px desktop, ~3px/1px on a phone.
+   Put the reaction in the SILHOUETTE (cheque jerked up as a shield, body duck). Also still open:
+   villains are crushed without performing it — `crushLoad` drives damage but no brace/squash/tilt.
+3. ~~Tutorial hint on all three levels + lying `hintDone`~~ — **FIXED AND VERIFIED 9 Sep.** Hint is
+   visible on l1 only (opacity 0.92) and opacity 0 on l2/l3; dismissed on the first real draw.
+   `SS.state()` now also exposes an honest `hud` object (level chip, level name, score, ammo pips,
+   end-sheet title/button, `hintVisible`) so critics can check what is RENDERED, not an intent flag.
+4. Villains and props are below the 40px readability floor at phone size (Lottery Uncle 14x25 CSS px,
+   cheque 11x6). The scam does not read on the device students will use.
+5. Draw calls 245-365 — needs a mid-range phone check before publishing.
 
-## Hard-won facts — do not rediscover (full list in _reference/ORCHESTRATOR-NOTES.md)
+## BEFORE PUBLISHING
+Sync back to the repo (above) · `/ifm-finish-game` brand pass on the shell UI · mobile performance ·
+then deploy from INSIDE `CLAUDE/` with Hiral's explicit approval. Two open questions from Hiral:
+how far branding should reach into the game world (default: UI shell only, world keeps its own art
+direction), and where the IFM logo goes.
+
+## HARD-WON FACTS — do not rediscover (full list in _reference/ORCHESTRATOR-NOTES.md)
 - Locking BOTH translations and rotations makes Rapier's friction solve singular and removes ALL
-  friction. Either lock alone is fine. z=0 is held by `physics.clampPlane()`.
-- Bodies do NOT sleep mid-collapse — tested and disproved (0 asleep at t=400/800/1200/1600 ms).
-- `structure.lean` must reset on `reset()` or identical shots diverge after the first fracture.
-  The determinism gate that fires no shot cannot see this; `p3-r5-detshot.mjs` can.
-- This machine's ffmpeg has NO `drawtext` filter (no libfreetype). blind.mjs/capture.mjs composite
-  in headless Chrome instead — do not reintroduce drawtext.
-- Never judge via the shared Browser pane: a hidden pane throttles rAF to ~2 Hz and looks exactly
-  like a stalled game loop.
-- 48 Angry Birds reference frames in `_reference/` have NO recorded source URLs (process gap). No
-  band-under-tension frame exists, so P1's stretch criteria are judged against written criteria only.
+  friction. Either alone is fine. z=0 is held by `physics.clampPlane()`.
+- Bodies do NOT sleep mid-collapse (tested, disproved).
+- A repeated velocity match is a SERVO not a ramp — it tops the member back up and injects energy.
+- **An exclusion in a measurement spec is where defects hide.** "Fixed cohort, births/deaths excluded"
+  was blind to fracture spawn creating 2-17x the parent's KE (+522 J). Audit what ENTERS and LEAVES.
+- **Test at the size actually played.** The 40px villain floor was being applied at desktop size.
+- **`innerText` ignores opacity and visibility** — use offsetParent + computed style + bounding box.
+- ffmpeg here has NO `drawtext` (no libfreetype); composite in headless Chrome.
+- Never judge via the shared Browser pane — a hidden pane throttles rAF to ~2Hz and looks like a stall.
+- `structure.lean` must reset on `reset()`; the determinism gate that fires no shot cannot see this.
 
-## Known open defects not yet owned
-- Star thresholds: 43,700 -> 2 stars, 43,200 -> 1, 21,600 -> 0. A won level can award zero. Derive
-  thresholds from a measured score sweep and gate that a win never returns 0 stars.
-- ~245-365 draw calls for a simple scene; will not survive a full level with debris (P15).
-- Tutorial hint stays on screen through the whole shot (P17).
-- Villains do not read as characters — no reaction, no taunt, no death worth watching (P6/P11).
-- Background is two flat hill bands; the AB2 reference has four parallax layers, haze and DOF (P8).
+## PROCESS NOTES THAT EARNED THEIR PLACE
+- Keep a PHYSICS critic pointed at the destruction work permanently. P3 won a blind A/B with a
+  mechanism that was quietly injecting energy; the appearance-critic could not see it.
+- Watch for METRIC GAMING — a builder once hit "structure <= 60 %W at impact" by zooming the camera
+  far out. Both roles are warned about it explicitly now.
+- Independent fresh critics can CONTRADICT each other (P1 oscillated on the lance for three rounds).
+  When that happens the orchestrator must look at the reference itself and rule.
+- When a piece fails ~6 rounds by overcorrecting, stop iterating and run a 3-way bake-off. P4's is
+  designed (lookahead / springrail / framefit) and still un-run.
+- Throughput: ~60% of this project's agents have been killed mid-task by usage limits.

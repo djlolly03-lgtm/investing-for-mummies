@@ -89,6 +89,85 @@ export function installHooks(ctx) {
       return { ms, steps, tick: physics.tick };
     },
 
+    // --- progression (P13) --------------------------------------------------
+    /**
+     * The chain is drivable. Before these existed the only way to reach l2 or l3 was to type
+     * `SS.loadLevel('l3')` into a console, which means the progression itself could not be
+     * gated end to end — and an ungateable system is one nobody can prove works.
+     * `nextLevel()` is exactly what the overlay's Next Level button calls.
+     */
+    /**
+     * ── THE SCAM MECHANIC, MADE OBSERVABLE ───────────────────────────────────
+     * A shielded block that refused to break is indistinguishable, in `state()`, from a block
+     * nothing ever hit — same count, same pose, no debris. So a critic judging the mechanic
+     * from screenshots alone cannot tell "the shield worked" from "the shot missed", which is
+     * exactly the confusion that lets a silently-dead mechanic ship. These report the numbers
+     * that separate them.
+     */
+    /** The live view box, so framing complaints can be measured instead of eyeballed. */
+    camFrame: () => {
+      const r = ctx.world.rig, c = ctx.world.camera;
+      if (!r || !c) return null;
+      const v = r.view ? r.view() : null;
+      const dist = Math.abs(c.position.z);
+      const vh = 2 * dist * Math.tan((c.fov * Math.PI / 180) / 2);
+      return {
+        aspect: +c.aspect.toFixed(3),
+        camX: +c.position.x.toFixed(2), camY: +c.position.y.toFixed(2),
+        vwFromFov: +(vh * c.aspect).toFixed(2), vhFromFov: +vh.toFixed(2),
+        view: v ? { vw: +(v.vw ?? 0).toFixed(2), cx: +(v.cx ?? 0).toFixed(2) } : null,
+      };
+    },
+
+    /**
+     * ART LENS: hide every villain's mesh, leaving the structure and the level intact. For
+     * mocking replacement character art into a real frame — a composite pasted OVER the
+     * existing villains shows the old art behind the new, which makes an honest comparison
+     * impossible. Physics, colliders and counts are untouched; this only stops them drawing.
+     * A lens, not a game mode: nothing in the game calls it.
+     */
+    hideVillains: (on = true) => {
+      let n = 0;
+      for (const v of ctx.world.villains) { if (v.mesh) { v.mesh.visible = !on; n++; } }
+      return { ok: true, hidden: on, count: n };
+    },
+
+    scam: () => ({
+      cleared: ctx.world.scam.interestCleared,
+      shrugs: ctx.world.scam.shrugs | 0,
+      shielded: ctx.world.blocks.filter(b => b.debt).length,
+      debtBroken: ctx.world.scam.debtBroken | 0,   // cumulative: broken blocks leave the list
+      meters: ctx.world.blocks.filter(b => b.role === 'interest').length,
+      metersBroken: ctx.world.blocks.filter(b => b.role === 'interest' && b.broken).length,
+    }),
+
+    /**
+     * Destroy the interest meter through the REAL `fracture()` path, so a test exercises
+     * production code rather than flipping the flag behind its back. Returns null if the
+     * level has no meter.
+     */
+    breakInterest: () => {
+      const m = ctx.world.blocks.find(b => b.role === 'interest' && !b.broken);
+      if (!m) return null;
+      m.fracture(999, m.body.translation());
+      return { cleared: ctx.world.scam.interestCleared };
+    },
+
+    nextLevel: () => ctx.progression.next(),
+    firstLevel: () => ctx.progression.first(),
+    levelOrder: () => ctx.progression.order(),
+    /** The saved record: per-level best score/stars, total stars, whether storage works. */
+    progress: () => ctx.progression.read(),
+    resetProgress: () => ctx.progression.reset(),
+    /** The MEASURED thresholds in force (levels/stars.json), so a gate can assert on them. */
+    starThresholds: () => ctx.progression.thresholds(),
+    /** Pure grader, no play required — for sweeping a score range against the table. */
+    gradeFor: (id, score, won = true) => ctx.progression.grade(id, score, won),
+    /** Times a won level had to be rescued from 0 stars. MUST be 0; see state().starsClamped. */
+    starsClamped: () => ctx.progression.clamped(),
+    /** Scoring constants + this level's structural minimum winning score. */
+    scoreRules: () => ctx.progression.rules(),
+
     // --- determinism --------------------------------------------------------
     /**
      * Reseed AND hard-rebuild the level from that seed, then enter driven mode.

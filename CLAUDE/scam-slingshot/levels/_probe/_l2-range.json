@@ -1,0 +1,14 @@
+{
+  "id": "_l2-range",
+  "name": "PROBE — open ground, measure the landing envelope for L2",
+  "chapter": 0,
+  "sky": "morning",
+  "par": 1,
+  "teaches": "Harness fixture: where does a given (angle, power) actually come down?",
+  "ammo": ["sip", "sip", "sip", "sip", "sip", "sip", "sip", "sip"],
+  "blocks": [],
+  "villains": [
+    { "type": "lotteryUncle", "x": 62.00, "y": 0.56 }
+  ],
+  "props": []
+}

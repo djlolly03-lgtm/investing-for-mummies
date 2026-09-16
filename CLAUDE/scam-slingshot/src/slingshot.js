@@ -66,38 +66,94 @@ export const SLING = {
   maxStretch: 2.80,
   /**
    * CRUISE speed in m/s at full draw — the speed the shot actually flies the level at, which
-   * is NOT the speed it leaves at (see `kick`). It came down from 27.5 when the muzzle lead
-   * and the launch kick were added, from 24.5 in round 2b when the cut was enlarged, and from
-   * 16.5 in P2 round 1 when the range envelope was re-measured across the WHOLE draw instead
-   * of at two sampled powers.
+   * is NOT the speed it leaves at (see `kick`). Its history: 27.5 before the muzzle lead and
+   * the launch kick existed, 24.5 in round 2b when the cut was enlarged, 16.5 in P2 round 1
+   * when the range envelope was first measured across the WHOLE draw rather than at two
+   * sampled powers, 14.4 for the level layout that preceded the rescale, and 24.0 now.
+   *
+   * ── 11 SEP 2026: 14.4 -> 24.0, BECAUSE THE LEVELS GREW AND THIS DID NOT ──────
+   * The owner reported it from a phone, in one sentence: "the arch of firing is not enough
+   * height to reach the top of game 2." It was not a feel complaint, it was a geometry fact.
+   *
+   * The levels were rescaled to roughly 3x their old height and pushed out to 12-14 units
+   * from the sling. 14.4 was chosen when l1's blocks started at x 2.0, and was deliberately
+   * left alone through the rescale because the layout was still moving. The layout settled;
+   * this is the re-derivation it was waiting for.
+   *
+   * `_tools/scenarios/tune-apex.mjs` is the instrument for THIS number, and it exists because
+   * `tune-curve.mjs` cannot see the defect: while the arc is physically short of the tower,
+   * a shot that fell 6 units below the crown and a shot that reached it and missed both score
+   * the same nothing. Apex is the one number that separates them. Measured 390x660, seed
+   * 4242, 8 angles 0.20-1.25 rad x 3 powers, apex of the free flight only (it stops at first
+   * contact, so no bounce can be mistaken for the arc the player aimed):
+   *
+   *               | best apex anywhere in the grid | l1 top 21.96 | l2 top 20.68
+   *      at 14.4  |  18.70  (angle 1.25, at x 6.40)|  SHORT 3.26  |  SHORT 1.98
+   *      at 24.0  |  30.55  (angle 1.25, at x12.35)|  CLEARS 8.59 |  CLEARS 9.87
+   *
+   * At 14.4 the count of shots in that grid whose apex cleared the top block was **0 of 24 on
+   * l1 and 0 of 24 on l2** — the top third of both towers was unreachable at every angle and
+   * every power, and on l2 the whole 24-shot grid killed nothing at all because the arc died
+   * against the near wall (every first contact at x 11.6-11.8, the wall's face, 12 units short
+   * of the villain at x 17.05). At 24.0 it is 5 of 24 and 5 of 24, from 0.95 rad upwards —
+   * i.e. the crown is a lob, which is what a crown should be, and the flat shots still go
+   * through the base.
+   *
+   * ── WHY NOT FURTHER ─────────────────────────────────────────────────────────
+   * 28.0 reaches apex 36.4 and is worse, not better. The launch cut scales with this number
+   * (`muzzleLead * speed`), so the faster it goes the further past the towers the ammo is born
+   * and the harder `muzzlePoint()` has to trim — at the then-current split l1's clamped-birth
+   * count went 1/24 at 14.4 to 6/24 at 24.0 to 7/24 at 28.0, and l2's to 12/27. `muzzleBase`
+   * and `muzzleLead` were re-split to absorb that at 24.0 (see them below); there is no split
+   * that absorbs it at 28.0 while leaving any clearance for the bigger medallion. The extra
+   * height buys nothing either, because l2's crown is already cleared by 9.87.
+   *
+   * ── l3 IS A DIFFERENT SIZE OF WORLD, AND NO SINGLE SPEED HIDES THAT ─────────
+   * Read this before "fixing" l3's numbers. Distance from the sling to the near face, and the
+   * height of the top block, all measured off the level json:
+   *
+   *      l1   x 11.93 .. 33.78   top 21.96
+   *      l2   x 11.99 .. 32.50   top 20.68
+   *      l3   x  6.28 .. 15.01   top  6.38     <-- half the distance, a third of the height
+   *
+   * One `maxSpeed` serves all three, so a draw sized for l1/l2 overflies l3 by construction: at
+   * p >= 0.44 an l3 shot lands at x 17-44 against a structure that ends at 15.01, and the standard
+   * 0.55/0.78/1.00 power grid duly reports 20 of 27 aims leaving l3 standing. That number is real,
+   * and reading it as "l3 is broken" is the trap. Probed at p 0.18/0.25/0.35 over the same angles
+   * (`_shots/TUNE2/curve-l3-low`) the level comes alive: 5 of 27 dead, ONE on/off flip across the
+   * whole angle row, and a one-shot win — 1.25 rad at p 0.25 clears all six villains for 72 400.
+   * l3 is played in the bottom third of the draw, which is what a target seven units away should
+   * ask for. `tune-winnable.mjs` carries that as a standing check.
+   *
+   * The asymmetry is l3's geometry, not this number, and it predates the retune: at 14.4 on the
+   * same geometry l3 already showed 13 of 24 dead with every scoring shot making first contact at
+   * t=50 ms — point-blank off the launch cut rather than off an arc. The fix, if one is wanted,
+   * belongs to whoever owns `levels/`: put l3 on l1/l2's footing with
+   * `node _tools/apply-scale.mjs l3 <kx> <ky> 12`, so its near face sits ~12 units out and its top
+   * lands in the 20-22 band. A uniform scale preserves the pyramid — recruits holding the tier
+   * above them — which is protected design work. Do NOT compensate in here: a per-level speed
+   * fudge makes the same draw mean different things on different levels, and the learnable
+   * draw-to-range mapping that `power()` exists to protect is the whole point.
+   *
+   * The curve EXPONENT was swept as the alternative to more speed, since a steeper curve would
+   * leave the low draws gentle for l3 while the top of the draw still reached l2's crown.
+   * Measured at 24.0 across the same grid (`_shots/TUNE/speed/s24.0-e{0.55,0.80,1.05}`):
+   * e=0.80 is 2 dead / 20 kills / 11 one-shot wins on l1 against 0.55's 4 / 17 / 8, but it
+   * LOSES l2's only one-shot win, and e=1.05 is worse than both (4 / 15 / 7, and 2 kills on l2
+   * against 3). Neither moved l3's 20/27 at all. So the exponent stays at 0.55, where `power()`
+   * argues it belongs, and none of this was bought by bending the protected curve.
    *
    * ── RETUNE IT AGAINST THE SWEEP, NEVER AGAINST TASTE ─────────────────────────
-   * `_tools/scenarios/p2-sweep.mjs` is the instrument: 8 angles x 3 powers, fresh restart and
-   * a fixed seed per shot, and it prints the muzzle, the apex, where the shot FIRST TOUCHED
-   * anything and where it stopped — so a miss is diagnosable as "short" or "long" instead of
-   * just "0". Run it before and after touching this number, `power()`, `GRAVITY_SCALE`, the
-   * ammo's damping, or l1's geometry. `p1-r2b-band.mjs` remains the right instrument for the
-   * BAND (it measures 4 powers against the release criteria); it is not a range instrument.
-   *
-   * Measured FIRST-CONTACT envelope at 14.4 with the `power()` curve below — l1, seed 3,
-   * eight angles from 0.16 to 0.78 rad (`p2-sweep.mjs`, `_shots/P2/after5`):
-   *
-   *      draw 0.60 -> contact at y 1.2-3.8, x 15.3-15.7   the tower's flank and guts
-   *      draw 0.80 -> contact at y 3.9-7.1, x 16.0-17.3   the tower's upper storey and crown
-   *      draw 1.00 -> contact at y 4.8-7.7 on the tower for angles <= 0.40, and over the
-   *                   crown into the far outpost (x 22.0-23.3) above that
-   *
-   * 24 of 24 of those shots score. Before this retune, 14 of the same 24 scored LITERALLY
-   * ZERO with the whole level standing: every draw-0.60 shot fell ten units short of the
-   * tower and six of the eight draw-1.00 shots landed at x 28-30, five units past the end
-   * of the level.
-   *
-   * The point is that those bands are ADJACENT and ORDERED: pull harder, arrive higher and
-   * further along the same structure. At 16.5 with the old convex curve the landing bands
-   * were 11 / 18 / 28 — a huge dead zone below the draw that worked, and a top quarter that
-   * flew clean off the end of the level.
+   * Two instruments, both required, in this order:
+   *   `tune-apex.mjs`  — can the arc reach the top at all. Fast (no settle), wide angle grid.
+   *   `tune-curve.mjs` — once it can, is the outcome space readable: dead band, gradient,
+   *                      overfly, and whether full power is a good shot. `curve-report.mjs`
+   *                      scores its json on those four.
+   * `_tools/sweep-arc.sh` and `sweep-speed.sh` drive them across candidate values and restore
+   * this file on any exit. Re-run BOTH after touching this number, `power()`, `muzzleLead`,
+   * `GRAVITY_SCALE`, the ammo's radius or damping, or any level's geometry.
    */
-  maxSpeed: 14.4,
+  maxSpeed: 24.0,
   minDrawForPreview: 0.20,
   grabRadius: 3.6,
   /**
@@ -129,21 +185,62 @@ export const SLING = {
    * ammo, which is what the rubric's "on-screen height of the loaded projectile" means), so
    * the reference cut in our units is 7.9 * 1.241 = 9.8 world units.
    *
-   * At full draw we now sit at 4.00 + 0.437 * 16.5 = 11.21, which is 9.0 AD — a shade over
-   * the reference, deliberately, because a 0.8 draw has to clear 8 AD by t=50 ms as well and
-   * the cut is the only part of the budget that scales down with the draw gracefully. It was
-   * 4.99 in round 2a, which is 4.0 AD, half the reference, and is precisely why the release
-   * read as a lob.
+   * A 0.8 draw has to clear 8 AD by t=50 ms as well, and the cut is the only part of that
+   * budget that scales down with the draw gracefully, so the pair is sized a shade over the
+   * reference on purpose. It was 4.99 in round 2a, which is 4.0 AD, half the reference, and is
+   * precisely why the release read as a lob.
+   *
+   * ── THE PAIR IS A BUDGET, AND maxSpeed SPENDS FROM IT ────────────────────────
+   * `muzzleLead` is multiplied by speed, so the cut moves whenever `maxSpeed` does, and THAT is
+   * why the two halves were re-split when `maxSpeed` went 14.4 -> 24.0 on 11 Sep 2026:
+   *
+   *      4.00 + 0.437 * 14.4 = 10.29 world units   the cut that shipped
+   *      4.00 + 0.437 * 24.0 = 14.49 world units   the same split at the new speed
+   *      5.20 + 0.260 * 24.0 = 11.44 world units   this split  <-- back on budget
+   *
+   * 14.49 is longer than the gap from the sling to l2's near wall (11.99), and the effect was
+   * measurable and ugly: at that split **12 of 27 l2 aims had their birth clamped and 4 of them
+   * made first contact at t=50 ms** — the medallion was created already touching the wall, and
+   * two of those rebounded backwards past the slingshot (measured end x -3.22 and +2.66). A cut
+   * longer than the distance to the target is not a launch, it is a spawn.
+   *
+   * So the speed-proportional half came down and the geometric half went up to pay for it.
+   * 11.44 is a shade over the 10.29 that shipped, it is inside l2's 11.99 gap at every angle,
+   * and because `muzzleBase` carries the draw ramp (0.30 + 0.70 * drawn) rather than the speed,
+   * the clearance it buys is there at LOW draws too — which is where P1's gate is thinnest,
+   * since a soft shot has neither a long cut nor much speed to fly out of one.
+   *
+   * ── WHY NOT SHORTEN IT FURTHER: THE CUT IS WHAT PAYS FOR THE BALL'S SIZE ─────
+   * P1's gate is ">= 8 AD clear at t=50 ms", and AD is the ammo's own bounding height, so a
+   * BIGGER medallion makes the same distance score fewer AD. The t=50 ms clearance is the
+   * budget the medallion's diameter is spent out of, and the cut is most of it:
+   *
+   *      t50 clearance (draw 0.8)  ~=  0.86 * muzzleBase + muzzleLead * v + 0.177 * v
+   *
+   * Measured 11.265 world units with the old pair at 14.4; ~13.7 with this pair at 24.0. That
+   * rise is what let the medallion grow 1.30x (see `COLLIDER_R` in ammo/medallion.js) without
+   * the gate failing. Shortening the cut claws it straight back, and speed cannot replace it:
+   * pinning the cut at 11.0 and pushing `maxSpeed` to 30 still only reaches ~14.3, because the
+   * flight term grows far more slowly than the cut term. The cut, the speed and the ball's
+   * diameter are ONE budget — re-pick any of the three and re-run `p1-r2b-snap.mjs`.
    *
    * `muzzlePoint()` clamps it so it can never put the ammo inside geometry or under the
    * ground.
    */
-  muzzleBase: 4.00,
-  muzzleLead: 0.437,
+  muzzleBase: 5.20,
+  muzzleLead: 0.260,
   /**
    * THE LAUNCH KICK. Extra exit speed, as a multiple of cruise speed, unwound over
-   * `kickTicks` SOLVER STEPS. At full draw the ammo leaves at 16.5 * (1 + 2.9) = 64 m/s and
+   * `kickTicks` SOLVER STEPS. At full draw the ammo leaves at 24.0 * (1 + 2.9) = 93.6 m/s and
    * is back to cruise 83 ms later.
+   *
+   * NOT RAISED with maxSpeed, and that was a decision: the kick is the cheapest way to buy
+   * t=50 ms clearance for P1's 8 AD gate (it lands entirely inside the measured window), which
+   * made it tempting when the bigger medallion tightened that gate. It was rejected because
+   * the kick is real velocity, and on l3 the pyramid is only 6.28 units from the sling — a
+   * kick of 7 would still be unwinding at ~190 m/s when the ammo arrived, turning one level's
+   * close composition into a tunnelling and energy-injection problem to solve a measurement
+   * problem. 2.9 is the multiple the release FRAME needs; speed is where range comes from.
    *
    * This exists because the muzzle lead alone is a jump-cut and nothing else: it fixes where
    * the ammo IS on the release frame and does nothing for the four frames after it, which
@@ -362,6 +459,10 @@ export class Slingshot {
 
   beginDrag(wx, wy) {
     if (this.state !== 'loaded') return false;
+    // The drag maps its pixels through the frame it began in, for as long as it lasts — the
+    // portrait draw pans the camera 17-19 units while the finger is down. camera.js
+    // `captureDragFrame()` carries the whole argument.
+    this.rig?.captureDragFrame?.();
     this.state = 'dragging';
     this.grabPop = 1;                    // the ammo flinches when you take hold of it
     this.setPouch(wx, wy);
@@ -404,6 +505,7 @@ export class Slingshot {
   }
 
   cancelDrag() {
+    this.rig?.clearDragFrame?.();
     if (this.state !== 'dragging') return false;
     this.state = 'loaded';
     this.drawn = 0;
@@ -425,6 +527,9 @@ export class Slingshot {
       return { ok: false, reason: `aim({angle,power}) needs finite numbers, got ${angle},${power}` };
     }
     this.state = 'dragging';
+    // `aim()` places the pouch against the frame that is on screen NOW, so that frame becomes
+    // the drag's reference — see camera.js `captureDragFrame()`.
+    this.rig?.captureDragFrame?.();
     // The pouch goes OPPOSITE the launch direction — that is what a slingshot is.
     this.pouch.set(
       this.anchor.x - Math.cos(a) * SLING.maxStretch * p,
@@ -480,6 +585,7 @@ export class Slingshot {
    * the single most limp thing a launch can look like.
    */
   release() {
+    this.rig?.clearDragFrame?.();
     if (this.state !== 'dragging' || !this.ammo) {
       return { ok: false, reason: `nothing to release (state="${this.state}")` };
     }
@@ -976,6 +1082,20 @@ export class Slingshot {
     const el = world.renderer?.domElement;
     if (!cam || !el) return null;
     const r = el.getBoundingClientRect();
+    /**
+     * WHILE A DRAG IS LIVE, PIXELS MEAN WHAT THEY MEANT WHEN IT STARTED.
+     * The z = 0 play plane maps linearly onto the frame, so the frozen frame is the same
+     * arithmetic the unproject below performs — with `cx/cy/vw/vh` read once at the grab
+     * instead of every move. Everything else (the grab test at pointerdown, any call made
+     * while the sling is loaded, empty or in recoil) still asks the live camera.
+     */
+    const f = this.state === 'dragging' ? this.rig?.dragFrame?.() : null;
+    if (f) {
+      return new THREE.Vector2(
+        f.cx + ((((sx - r.left) / r.width) * 2 - 1) * f.vw) / 2,
+        f.cy + ((-((sy - r.top) / r.height) * 2 + 1) * f.vh) / 2,
+      );
+    }
     const ndc = new THREE.Vector3(
       ((sx - r.left) / r.width) * 2 - 1,
       -((sy - r.top) / r.height) * 2 + 1,
