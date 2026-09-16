@@ -368,8 +368,16 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 <script src="taxonomy.js"></script>
 <script src="v1-catalogue.js"></script>
 <script src="media-map.js"></script>
+<script src="transcripts.js"></script>
 <script>
 const T=window.IFM_TAXONOMY, ASSETS=window.IFM_V1.filter(r=>r.library!==false);
+// Fold speech into each asset's searchable text BEFORE the engine builds its index. The
+// engine already weights `search_terms`, so a spoken word becomes findable without
+// touching a line of frozen scoring code, and without inventing a new taxonomy field.
+(function(){
+  const TX=window.IFM_TRANSCRIPTS||{};
+  ASSETS.forEach(a=>{ const t=TX[a.id]; if(t) a.search_terms=((a.search_terms||'')+' '+t).trim(); });
+})();
 /* ---------------------------------------------------------------- search ----
  * Deliberately NOT embeddings. Embeddings need an API at index time, ship a vector
  * blob, and add infrastructure this project does not have. What actually makes the
