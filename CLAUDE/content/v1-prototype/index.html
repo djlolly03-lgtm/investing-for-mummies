@@ -80,11 +80,11 @@ tr.row.sel td{background:var(--mint)}
 <body>
 <div class="wrap">
   <h1>IFM Library</h1>
-  <p class="sub">V1 prototype · 20-asset acceptance set · taxonomy-controlled tags + natural-language search</p>
+  <p class="sub">V1 · 379 assets · taxonomy-controlled tags + natural-language search</p>
   <div class="banner">
-    <strong>Prototype.</strong> 20 real assets, tagged by hand through the pipeline being tested.
-    It does not touch the live hub. Blank fields mean the evidence did not establish a value — that is
-    deliberate, not missing work.
+    <strong>V1 preview.</strong> All 379 content assets, backfilled into the V1 taxonomy. Does not touch
+    the live hub yet. Blank fields mean the evidence did not establish a value — that is deliberate, not
+    missing work. 5 further assets (logo files, playable games) are catalogued but excluded from the Library.
   </div>
 
   <div class="searchbar"><input id="q" type="search" placeholder="Try: find me a video of Hiral talking about gold" autocomplete="off"></div>
@@ -106,9 +106,9 @@ tr.row.sel td{background:var(--mint)}
 <aside id="detail"><button class="close" id="close">✕</button><div id="detail-body"></div></aside>
 
 <script src="taxonomy.js"></script>
-<script src="tagged20.js"></script>
+<script src="v1-catalogue.js"></script>
 <script>
-const T=window.IFM_TAXONOMY, ASSETS=window.IFM_TAGGED20;
+const T=window.IFM_TAXONOMY, ASSETS=window.IFM_V1.filter(r=>r.library!==false);
 
 /* ---------------------------------------------------------------- search ----
  * Deliberately NOT embeddings. Embeddings need an API at index time, ship a vector
@@ -260,11 +260,26 @@ function search(query){
     //   "financial independence" — `financial` is common and matches Financial Planning
     //      assets; the phrase itself matches nothing. Counting words let it through.
     // Requiring most of the query's *rarity* to be accounted for handles both.
-    const meaningful=raw.filter(t=>(DF[t]||0)>0 || (SYN[t]||[]).some(s=>DF[s.split(' ')[0]]>0));
-    if(!meaningful.length) return;
+    // A word used as a CONSTRAINT is already doing its job by filtering, so it must not
+    // also count as content matched. Otherwise "gold b-roll" is satisfied by `b-roll`
+    // alone and quietly degenerates into "every B-roll asset", ignoring gold entirely.
+    const conWords=new Set();
+    [...con.format,...con.type].forEach(v=>{
+      conWords.add(v);                                     // the whole value, e.g. "b-roll"
+      v.split(/[^a-z0-9]+/).filter(Boolean).forEach(w=>conWords.add(w));   // and its parts
+    });
+    const meaningful=raw.filter(t=>((DF[t]||0)>0 || (SYN[t]||[]).some(s=>DF[s.split(' ')[0]]>0))
+                                   && !conWords.has(t));
+    // Query was nothing BUT a constraint ("portrait", "b-roll"). The filter has already
+    // selected the right set, so every survivor is a hit — don't drop them all.
+    if(!meaningful.length){ results.push({a,score:Math.round(score)||1,hits:[...hits]}); return; }
     let total=0; meaningful.forEach(t=>total+=rawIdf(t));
     let cover=0; coveredRaw.forEach(t=>{ if(meaningful.includes(t)) cover+=rawIdf(t); });
-    if(cover/total < 0.55) return;
+    // 0.45, not 0.55. At 20 assets 0.55 was right; across 379 a single rare filler word
+    // ('batch', 'clip') carries enough IDF mass on its own to sink a query whose real
+    // terms all matched. 'certificates from the August batch' lost the August certificates
+    // this way. Re-verified against the full suite after loosening.
+    if(cover/total < 0.45) return;
 
     results.push({a,score:Math.round(score+cover*6),hits:[...hits]});
   });
@@ -360,7 +375,7 @@ fill('f-status','Any status',T.status);
 
 const EXAMPLES=['find me a video of Hiral talking about gold','funny classroom moments',
   'student testimonials','find the clip where Hiral explains SIP','gold b-roll',
-  'content about financial independence','the video where Hiral talks about XIRR',
+  'content about financial independence','wide shot of the room',
   'certificates from the August batch','insurance'];
 document.getElementById('examples').innerHTML=EXAMPLES.map(e=>`<button class="ex">${e}</button>`).join('');
 document.getElementById('examples').onclick=e=>{
