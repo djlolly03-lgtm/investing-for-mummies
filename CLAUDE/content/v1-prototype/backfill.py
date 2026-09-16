@@ -291,7 +291,15 @@ def search_terms_for(r, topics):
         (r'\bsgb\b|sovereign gold', 'sgb sovereign gold bond'),
         (r'\bnav\b', 'nav net asset value'),
         (r'\brbi\b|repo', 'rbi repo rate central bank'),
-        (r'candid|applaud|laugh|smil', 'candid funny fun warm joyful lively natural unposed real moment'),
+        # Split deliberately. A posed group photo where everyone smiles at the camera is
+        # NOT funny, and lumping 'smil' in here injected 'funny' into ~40 assets — so
+        # searching "funny classroom" surfaced graduation portraits. Genuine humour has
+        # its own signals; warmth is a different, weaker thing.
+        # 'celebrat' moved out: a certificate ceremony is a celebration, not a joke, and
+        # it was dragging six graduation portraits into 'funny'. Anything genuinely light
+        # in those frames still matches through laugh/grin.
+        (r'laugh|giggl|\bgrin|joke|fist pump', 'funny fun laughing humour lively'),
+        (r'candid|applaud|smil|relaxed|celebrat|beams?\b', 'candid warm natural unposed relaxed friendly celebration'),
         (r'certificate|graduat', 'certificate completion graduation proud achievement social proof'),
         (r'\bportrait\b|headshot', 'portrait headshot founder press media kit agency bio'),
         (r'testimonial|review', 'testimonial review feedback social proof word of mouth'),
@@ -326,6 +334,12 @@ def main():
             'description': r.get('description') or '',
             'session': (r.get('session') or '').strip(),
             'slide_text': slide_text_for(r),
+            # Preview clips are built with ffmpeg -an to hit the <=200KB asset budget, so
+            # they carry no audio at all; the AI chapter renders are silent too. Only the
+            # game reels have a music bed. Flagged so the player can say so — a video that
+            # plays with no sound and no explanation just reads as broken.
+            'silent': ('/clips/' in (r.get('video') or r.get('drive link') or '')
+                       or 'wealth-conversation-videos' in (r.get('drive link') or '')),
         }
         if r['id'] in EXCLUDE:
             v1['library'] = False                 # internal flag; never a UI filter

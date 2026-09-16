@@ -41,37 +41,49 @@ button{font-family:inherit;cursor:pointer}
 .mast .spacer{margin-left:auto}
 .mast .count{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
 
-/* ---------------------------------------------------------------- empty state */
-.hero{max-width:640px;margin:0 auto;padding:11vh 24px 8vh;text-align:center}
-.hero .kicker{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
+/* ------------------------------------------------------- stage (hero -> results) */
+/* The search box is ONE element in both modes. In hero mode the stage centres it under
+   a headline; once there is a query the stage becomes a sticky compact bar. Because the
+   input is never destroyed, focus and cursor survive the transition — which is what made
+   the old two-input version feel like the page was snatching the keyboard away. */
+.stage{position:sticky;top:53px;z-index:35;background:rgba(252,250,247,.94);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--stone);
+  padding:12px 26px;transition:padding .2s}
+.stage.hero{position:static;border-bottom:none;background:none;backdrop-filter:none;
+  padding:11vh 24px 7vh;text-align:center}
+.herotext{display:none}
+.stage.hero .herotext{display:block;max-width:640px;margin:0 auto}
+.kicker{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
   color:var(--navy);font-weight:600;margin:0 0 18px}
-.hero h1{font-family:var(--f-d);font-weight:500;font-size:clamp(30px,5vw,42px);
+.stage h1{font-family:var(--f-d);font-weight:500;font-size:clamp(30px,5vw,42px);
   line-height:1.12;margin:0 0 12px;letter-spacing:-.02em}
-.hero .lede{color:var(--ink-2);font-size:15px;margin:0 auto 30px;max-width:44ch;line-height:1.55}
-.try{margin-top:22px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center}
+.lede{color:var(--ink-2);font-size:15px;margin:0 auto 30px;max-width:44ch;line-height:1.55}
+.searchrow{display:flex;gap:10px;align-items:center}
+.stage.hero .searchrow{max-width:520px;margin:0 auto}
+.stage.hero .fbtn{display:none}
+.try{display:none}
+.stage.hero .try{display:flex;margin-top:22px;gap:8px;justify-content:center;
+  flex-wrap:wrap;align-items:center}
 .try .lbl{color:var(--muted);font-size:12.5px}
 .try button{background:var(--card);border:1px solid var(--stone);border-radius:999px;
   padding:7px 14px;font-size:12.5px;color:var(--ink-2)}
 .try button:hover{border-color:var(--navy);color:var(--navy)}
 
 /* ------------------------------------------------------------------- searchbox */
-.sbox{display:flex;align-items:center;gap:11px;background:var(--card);
-  border:1.5px solid var(--stone);border-radius:14px;padding:15px 18px;
+.sbox{flex:1;display:flex;align-items:center;gap:11px;background:var(--card);
+  border:1.5px solid var(--stone);border-radius:11px;padding:10px 15px;
   box-shadow:0 1px 2px rgba(36,49,63,.04);transition:border-color .15s,box-shadow .15s}
+.stage.hero .sbox{padding:15px 18px;border-radius:14px}
 .sbox:focus-within{border-color:var(--navy);box-shadow:0 0 0 3px rgba(12,84,142,.09)}
 .sbox svg{width:17px;height:17px;flex:none;color:var(--muted)}
 .sbox input{flex:1;border:none;outline:none;background:none;font-family:inherit;
-  font-size:15.5px;color:var(--ink);min-width:0}
+  font-size:14.5px;color:var(--ink);min-width:0}
+.stage.hero .sbox input{font-size:15.5px}
 .sbox input::placeholder{color:var(--muted)}
 .sbox .clr{border:none;background:none;color:var(--muted);font-size:16px;padding:0 2px;display:none}
 .sbox.has .clr{display:block}
 
 /* --------------------------------------------------------------- results shell */
-.bar2{position:sticky;top:53px;z-index:35;display:flex;gap:10px;align-items:center;
-  padding:12px 26px;background:rgba(252,250,247,.94);backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--stone)}
-.bar2 .sbox{flex:1;padding:10px 15px;border-radius:11px}
-.bar2 .sbox input{font-size:14.5px}
 .fbtn{display:flex;align-items:center;gap:8px;border:1.5px solid var(--stone);
   background:var(--card);border-radius:11px;padding:11px 16px;font-size:13.5px;
   font-weight:600;color:var(--ink-2);white-space:nowrap}
@@ -159,6 +171,8 @@ button{font-family:inherit;cursor:pointer}
 .dmedia{background:#1b242e;display:flex;align-items:center;justify-content:center;
   min-height:190px;max-height:52vh}
 .dmedia video,.dmedia img{width:100%;max-height:52vh;object-fit:contain;display:block}
+.note{margin:0;padding:9px 24px;background:var(--cream);border-bottom:1px solid var(--stone);
+  font-size:12.5px;color:var(--ink-2)}
 .dtext{padding:22px 24px 30px}
 .dtext h2{font-family:var(--f-d);font-weight:600;font-size:22px;line-height:1.28;margin:0 0 11px}
 .dtext .desc{font-size:14px;color:var(--ink-2);line-height:1.6;margin:0 0 22px}
@@ -178,10 +192,8 @@ button{font-family:inherit;cursor:pointer}
 @media(min-width:1180px){ :root{--thumb-w:168px;--thumb-h:106px} }
 @media(max-width:760px){
   .mast{padding:12px 16px}
-  .bar2{top:49px;padding:10px 16px;gap:8px}
-  .bar2 .fbtn{padding:11px 13px}
+    .bar2 .fbtn{padding:11px 13px}
   .panelwrap{padding:0 16px}
-  .hero{padding:7vh 18px 5vh}
   .res{grid-template-columns:112px 1fr;gap:13px;padding:13px 6px;align-items:start}
   .thumb{width:112px;height:74px}
   .res h3{font-size:14px}
@@ -204,34 +216,32 @@ button{font-family:inherit;cursor:pointer}
   <span class="count" id="libcount"></span>
 </header>
 
-<!-- empty state -->
-<section class="hero" id="hero">
-  <p class="kicker">Content Library</p>
-  <h1>What are you looking for?</h1>
-  <p class="lede">Videos, photos, carousels and workshop footage — searchable in plain English.</p>
-  <div class="sbox" id="sbox-hero">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
-    <input id="q-hero" type="search" placeholder="Search IFM content…" autocomplete="off" aria-label="Search IFM content">
+<!-- One stage, one input. The hero is a costume the search box wears, not a second
+     screen with a second field: swapping inputs teleported focus mid-keystroke, and
+     backspacing to empty tore the page down and lost the cursor entirely. -->
+<div class="stage" id="stage">
+  <div class="herotext" id="herotext">
+    <p class="kicker">Content Library</p>
+    <h1>What are you looking for?</h1>
+    <p class="lede">Videos, photos, carousels and workshop footage — searchable in plain English.</p>
   </div>
-  <div class="try">
+  <div class="searchrow">
+    <div class="sbox" id="sbox">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+      <input id="q" type="search" placeholder="Search IFM content…" autocomplete="off" aria-label="Search IFM content">
+      <button class="clr" id="clearq" aria-label="Clear search">✕</button>
+    </div>
+    <button class="fbtn" id="fbtn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 5h18M6 12h12M10 19h4"/></svg>
+      Filters<span class="dot" id="fdot" hidden></span>
+    </button>
+  </div>
+  <div class="try" id="try">
     <span class="lbl">Try</span>
     <button data-ex="Hiral talking about gold">Hiral talking about gold</button>
     <button data-ex="funny classroom moments">funny classroom moments</button>
     <button data-ex="August certificates">August certificates</button>
   </div>
-</section>
-
-<!-- results -->
-<div class="bar2" id="bar2" hidden>
-  <div class="sbox" id="sbox-main">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
-    <input id="q" type="search" placeholder="Search IFM content…" autocomplete="off" aria-label="Search IFM content">
-    <button class="clr" id="clearq" aria-label="Clear search">✕</button>
-  </div>
-  <button class="fbtn" id="fbtn">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 5h18M6 12h12M10 19h4"/></svg>
-    Filters<span class="dot" id="fdot" hidden></span>
-  </button>
 </div>
 
 <main class="panelwrap" id="main" hidden>
@@ -491,7 +501,7 @@ const RELEVANT = 0.7;
 
 const $=id=>document.getElementById(id);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const state={q:'',filters:{},showWeak:false,openId:null};
+const state={q:'',filters:{},showWeak:false,openId:null,engaged:false};
 
 /* ------------------------------------------------------------------- filters */
 const FILTERS=[['type','Type',T.type],['format','Format',T.format],
@@ -574,14 +584,18 @@ function card(x){
 
 function render(){
   const searching=!!state.q.trim();
-  $('hero').hidden=searching||activeFilters()>0;
-  $('bar2').hidden=$('main').hidden=!($('hero').hidden);
+  // `engaged` is sticky. Once she has started searching the layout stops rearranging
+  // itself: deleting the query back to empty used to snap the whole page back to the
+  // hero and destroy the cursor mid-edit. Now only the logo or Clear returns to the hero.
+  const heroMode = !state.engaged && !searching && !activeFilters();
+  $('stage').classList.toggle('hero',heroMode);
+  $('main').hidden = heroMode;
   $('libcount').textContent=`${ASSETS.length} assets`;
-  $('sbox-main').classList.toggle('has',searching);
+  $('sbox').classList.toggle('has',searching);
   $('fbtn').classList.toggle('on',activeFilters()>0);
   $('fdot').hidden=!activeFilters();
   $('fclear').hidden=!activeFilters();
-  if($('hero').hidden===false) return;
+  if(heroMode) return;
 
   const {strong,weak}=currentResults();
   const sum=$('summary');
@@ -616,10 +630,14 @@ function openDetail(id){
   const media=a.video
     ? `<video controls preload="metadata" playsinline ${a.thumb?`poster="${esc(a.thumb)}"`:''} src="${esc(a.video)}"></video>`
     : (a.thumb?`<img src="${esc(a.thumb)}" alt="">`:'');
+  // Say it plainly rather than letting a silent clip look like a broken one.
+  const silentNote = (a.video && a.silent)
+    ? '<p class="note">Preview has no sound — the original on Drive does.</p>' : '';
   const unset=v=>v?esc(v):'<span class="unset">not recorded</span>';
   const row=(k,v)=>`<dt>${k}</dt><dd>${v}</dd>`;
   $('dbody').innerHTML=`
     ${media?`<div class="dmedia">${media}</div>`:''}
+    ${silentNote}
     <div class="dtext">
       <h2>${esc(a.title)||'Untitled'}</h2>
       ${a.description?`<p class="desc">${esc(a.description)}</p>`:''}
@@ -649,25 +667,28 @@ function closeDetail(){
 }
 
 /* ------------------------------------------------------------------- plumbing */
-function setQuery(v,{fromHero=false}={}){
+function setQuery(v,{engage=true}={}){
   state.q=v; state.showWeak=false;
-  closeDetail();                       // a new search must never leave the panel covering results
-  $('q').value=v; $('q-hero').value=fromHero?v:'';
+  if(v.trim()) state.engaged=true;
+  if(engage===false) state.engaged=false;
+  closeDetail();                     // a new search must never leave the panel over results
+  $('q').value=v;
   render();
-  if(!fromHero) return;
-  requestAnimationFrame(()=>$('q').focus({preventScroll:true}));
 }
-$('q').addEventListener('input',e=>{ state.q=e.target.value; state.showWeak=false; closeDetail(); render(); });
-$('q-hero').addEventListener('input',e=>{ if(e.target.value.trim()) setQuery(e.target.value,{fromHero:true}); });
-$('clearq').onclick=()=>{ setQuery(''); $('q-hero').focus(); };
-$('home').onclick=()=>{ clearFiltersSilent(); setQuery(''); };
-function clearFiltersSilent(){ state.filters={}; $('fgrid').querySelectorAll('select').forEach(s=>s.value=''); }
+$('q').addEventListener('input',e=>{
+  state.q=e.target.value; state.showWeak=false;
+  if(state.q.trim()) state.engaged=true;
+  closeDetail(); render();
+});
+$('clearq').onclick=()=>{ setQuery('',{engage:false}); $('q').focus(); };
+$('home').onclick=()=>{ state.filters={}; $('fgrid').querySelectorAll('select').forEach(x=>x.value='');
+                        setQuery('',{engage:false}); window.scrollTo({top:0}); };
 $('fbtn').onclick=()=>$('filters').classList.toggle('open');
 $('fclear').onclick=clearFilters;
 $('dclose').onclick=closeDetail;
 $('scrim').onclick=closeDetail;
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDetail(); });
-document.querySelectorAll('.try button').forEach(b=>b.onclick=()=>setQuery(b.dataset.ex,{fromHero:true}));
+document.querySelectorAll('.try button').forEach(b=>b.onclick=()=>{ setQuery(b.dataset.ex); $('q').focus(); });
 
 document.addEventListener('click',e=>{
   const row=e.target.closest('.res'); if(row){ openDetail(row.dataset.id); return; }
