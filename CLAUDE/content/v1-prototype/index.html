@@ -37,6 +37,18 @@ body{background:var(--paper);color:var(--ink);font-family:var(--f-b);font-size:1
   -webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 img{display:block}
+/* ONE focus ring, in the interactive accent, for everything. There was no designed focus
+   state at all: most controls here have their border removed, so a keyboard user got
+   whatever Chrome draws — a hairline on a chip, nothing legible on a card. `:focus-visible`
+   rather than `:focus`, so a mouse click never paints a ring. */
+button:focus-visible,a:focus-visible,select:focus-visible{outline:2px solid var(--navy);
+  outline-offset:3px;border-radius:5px}
+.cardx:focus-visible{outline-offset:5px;border-radius:10px}
+.themes button:focus-visible{outline-offset:4px;border-radius:14px}
+.try button:focus-visible,.btn:focus-visible{border-radius:999px}
+.btn:focus-visible{border-radius:6px}
+/* The field paints its own focus state on .sbox — a second ring inside it is noise. */
+.sbox input:focus-visible{outline:none}
 /* Chromium draws its own ✕ inside input[type=search]. Left alone it sat beside our own
    clear button — two identical crosses, 16px apart. */
 input[type=search]::-webkit-search-cancel-button,
@@ -68,6 +80,13 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
    this read as a toolbar pinned above a table of records. The field now sits on the page's
    own paper and results scroll under it. */
 .stage{position:sticky;top:52px;z-index:35;background:var(--paper);padding-block:20px 12px}
+/* Scrolled results were being guillotined: the sticky field's opaque paper cut each card
+   off at an invisible horizontal line, mid-photograph. A rule there would put the toolbar
+   back (see above), so the edge is softened instead — 22px of paper fading to nothing, so
+   content dissolves under the field rather than being sliced by it. */
+.stage::after{content:'';position:absolute;left:0;right:0;top:100%;height:22px;
+  pointer-events:none;background:linear-gradient(var(--paper),rgba(252,250,247,0))}
+.stage.hero::after{display:none}
 /* padding-block only — the shared padding-inline above still applies, so the empty-state
    field lines up with the masthead and, more usefully, with the field it turns into the
    moment she types. It used to be a 470px box centred on nothing. */
@@ -85,8 +104,13 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
    space to its right; stretched across 1440px it stopped reading as a question and started
    reading as a toolbar, which is the single strongest "admin panel" signal a page can send.
    Filters stays inside the same group so the two never drift apart. */
-.searchrow{display:flex;gap:10px;align-items:center;max-width:760px}
-.stage.hero .searchrow{margin:0 auto}
+/* Two measures, not one. 760px is right for the QUESTION — centred, with clear space
+   around it, it reads as an invitation. In results it read as an orphan: a 760px control
+   left-aligned under a 1284px grid, with 520px of nothing to its right. Boards 01 and 02
+   both run the results field to about three-quarters of the grid it sits over, which is
+   wide enough to belong to the results and still short of a full-width toolbar. */
+.searchrow{display:flex;gap:10px;align-items:center;max-width:960px}
+.stage.hero .searchrow{margin:0 auto;max-width:760px}
 /* Generous and soft rather than tight and utilitarian. The size is doing the talking now
    that the icon is gone: a field this open reads as an invitation to say something, where
    a 40px-high box with a lens in it reads as a query bar. */
@@ -156,13 +180,22 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
   font-size:11.5px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
 
 .recent{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-bottom:8px}
-.recent .cardx .ttl{font-size:13.5px;min-height:0;-webkit-line-clamp:2;margin-bottom:3px}
-.recent .cardx .ctx{font-size:11.5px;margin-bottom:0}
+.recent .cardx .ttl{font-size:13.5px;-webkit-line-clamp:2;margin-bottom:3px}
+.recent .cardx .ctx{font-size:12px;margin:0;line-height:1.4}
 .recent .cardx .tags{display:none}
 .recent .shot{border-radius:10px;margin-bottom:9px}
 
-@media(max-width:1000px){
+/* 1180, not 1000. Six tiles need the full content column to be recognisable; between 1000
+   and 1180 they resolved to ~154px squares with "Classroom Moments" wrapping onto two lines
+   over the picture and every Recently-added title clamped mid-word. Three across at 1024 is
+   a 320px tile — which is the size that makes a tile worth looking at. */
+@media(max-width:1180px){
   .themes,.recent{grid-template-columns:repeat(3,1fr);gap:15px}
+  /* The 4:5 crop is for a 195px tile in a row of six. Carried onto a 310px tile in a row of
+     three it made two 390px-tall rows that pushed Recently added entirely off the first
+     screen — a portrait ratio only works while the tile is narrow. 3:2 at this width keeps
+     all six themes on one screen AND puts them in the same ratio as the result cards. */
+  .themes .tw{aspect-ratio:3/2}
   .recent .cardx:nth-child(n+4){display:none}
 }
 @media(max-width:760px){
@@ -238,21 +271,35 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 
 .summary{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
   padding:20px 0 16px;flex-wrap:wrap}
-/* Serif, and a sentence rather than a count. "6 relevant results / Most relevant first" is
-   a database reporting its query plan; this is the library telling her what it found. */
-.summary h2{font-family:var(--f-d);font-weight:500;font-size:16.5px;margin:0;
-  color:var(--display);letter-spacing:-.005em}
+/* A sentence rather than a count — "6 relevant results / Most relevant first" is a database
+   reporting its query plan, and this is the library telling her what it found.
+   But NOT serif at 16.5px. At that size and face it was identical to the card titles below
+   it, so the line describing the results carried exactly as much weight as any one result:
+   no hierarchy at all. Both reference boards set this as a small bold sans caption above a
+   grid of serif titles, and pair it with the control at the other end of the row. */
+.summary h2{font-weight:600;font-size:13px;margin:0;color:var(--display);letter-spacing:.005em}
 /* Refine is the old Filters control, demoted out of the primary row: quiet text, no border,
    no icon, no pill. Present for the person who wants it, invisible to the person who does
    not — which is the opposite of a bordered button sitting beside the field. */
-.summary .refine{font-size:12.5px;color:var(--muted);padding:0;line-height:1.4;
+/* Quiet, but a control. As bare 12.5px --muted text it was indistinguishable from the
+   context lines below it and read as a caption; the icon and the darker ink are what say
+   "press me" without putting a bordered button back on the primary row. */
+.summary .refine{display:inline-flex;align-items:center;gap:7px;font-size:13px;
+  color:var(--ink-2);padding:0;line-height:1.4;
   border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.summary .refine svg{width:14px;height:14px;flex:none;opacity:.75;transition:opacity .15s}
 .summary .refine:hover,.summary .refine.on{color:var(--navy);border-bottom-color:var(--navy)}
+.summary .refine:hover svg,.summary .refine.on svg{opacity:1}
 
 /* Gutters measured off the storyboard: the column gap there is ~11% of the card width,
    and the row gap runs about a quarter wider again so rows read as rows. */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 36px;padding-bottom:24px}
-.cardx{text-align:left;padding:0;display:block;width:100%;background:none}
+/* A flex column, not a block. Row alignment used to be bought by reserving two lines of
+   title height on EVERY card — which meant a one-line title left a 20px hole between
+   itself and its own context line, on most cards, in every view. The slack belongs at the
+   BOTTOM of the card, not inside it: stretched to the row's height, each card can hug its
+   own text and still land its tag pills on one shared baseline (see .tags below). */
+.cardx{text-align:left;padding:0;display:flex;flex-direction:column;width:100%;background:none}
 /* display:block matters. As an inline span, aspect-ratio and width:100% were both
    ignored, every thumbnail rendered at its natural size and the cards ran 718px tall. */
 /* 3:2 and an 8px radius, measured off the storyboard. The 5:4 crop was taller than the
@@ -260,7 +307,11 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
    storyboard shows two full rows; square corners read as data cells rather than content. */
 .shot{display:block;position:relative;width:100%;aspect-ratio:3/2;border-radius:8px;
   overflow:hidden;background:var(--stone-2);margin-bottom:12px;
-  box-shadow:inset 0 0 0 1px rgba(21,38,63,.07)}
+  box-shadow:inset 0 0 0 1px rgba(21,38,63,.07);transition:box-shadow .25s}
+/* The only hover feedback was a 3.5% image scale inside a fixed frame, which on a busy
+   photograph is close to invisible. A soft lift under the frame reads at a glance and tells
+   you the whole card is the target, not just the picture. */
+.cardx:hover .shot{box-shadow:inset 0 0 0 1px rgba(21,38,63,.07),0 12px 26px -16px rgba(21,38,63,.55)}
 /* Absolute, so it paints over the "no preview" label that always sits underneath it.
    23 of the 378 rows point at a thumbnail that 404s; removing the broken <img> then
    uncovers the label instead of leaving a silent empty rectangle. */
@@ -294,20 +345,32 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
   font-size:10px;font-weight:500;letter-spacing:.03em;padding:4px 9px;border-radius:4px;line-height:1.3}
 @media(max-width:760px){ .nopv{font-size:8.5px;padding:3px 6px;left:5px;bottom:5px} }
 .cardx .ttl{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-  min-height:44px;font-family:var(--f-d);font-size:16px;font-weight:600;line-height:1.36;color:var(--display);
-  margin-bottom:5px;transition:color .15s;letter-spacing:-.006em}
+  font-family:var(--f-d);font-size:16px;font-weight:600;line-height:1.36;color:var(--display);
+  margin-bottom:4px;transition:color .15s;letter-spacing:-.006em}
 .cardx:hover .ttl{color:var(--navy)}
-.cardx .ctx{display:block;font-size:12px;color:var(--muted);margin-bottom:9px;line-height:1.4}
-.cardx .tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.cardx .t{font-size:10.5px;font-weight:500;padding:3px 8px;border-radius:4px;
+/* Who and when is the line she scans a row by — it was 12px at --muted (#8c94a1), which on
+   this paper is roughly 2.8:1 and read as disabled text rather than as information. */
+.cardx .ctx{display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:12px;line-height:1.45}
+/* No auto-margin pushing these to a shared row baseline. That was tried: it aligns the
+   pills, but it does it by moving the hole rather than closing it — a one-line card then
+   carries 42px of air between its context line and its own tags. Reference board 04 does
+   not align them either; a card that hugs its own text reads as one object, and a 22px rag
+   where a title runs to two lines is cheaper than a hole inside every other card. */
+.cardx .tags{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.cardx .t{font-size:11.5px;font-weight:500;padding:4px 10px;border-radius:5px;
   background:var(--stone-2);color:var(--ink-2);white-space:nowrap;line-height:1.35}
-.cardx .tsep{color:var(--muted);font-size:10.5px;line-height:1}
+.cardx .tsep{color:var(--muted);font-size:11.5px;line-height:1}
 
+/* A soft filled bar, as the storyboard draws it — not a bordered white one. White fill
+   inside a hairline stone border, 1284px wide, read as an empty text input sitting under
+   the results; and at radius 6 against the cards' 8 it was subtly out of key with
+   everything above it. Fill and no border is what makes it read as a quiet band of page
+   you can press rather than a field you should type into. */
 .weak{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
-  margin:4px 0 44px;padding:14px;border:1px solid var(--stone);border-radius:6px;
-  color:var(--ink-2);font-size:13.5px;font-weight:500;background:var(--card);
-  transition:border-color .15s,color .15s}
-.weak:hover{border-color:var(--navy);color:var(--navy)}
+  margin:24px 0 48px;padding:15px;border-radius:8px;
+  color:var(--ink-2);font-size:13.5px;font-weight:500;background:var(--stone-2);
+  transition:background .15s,color .15s}
+.weak:hover{background:var(--stone);color:var(--display)}
 .sep{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:4px 0 0;
   color:var(--muted);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:500}
 .sep::before,.sep::after{content:'';flex:1;height:1px;background:var(--stone)}
@@ -364,7 +427,7 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
    `margin-top:auto` can drop the actions onto the same bottom line as the filmstrip. */
 /* `auto` for the media column so it hugs the asset, and a bounded text column so the words
    keep a readable measure whatever the media does. */
-.dgrid{display:grid;grid-template-columns:auto minmax(320px,390px);gap:30px;align-items:stretch}
+.dgrid{display:grid;grid-template-columns:auto minmax(320px,390px);gap:34px;align-items:start}
 /* NO fixed frame, and no background behind the media. The old box was a fixed landscape
    rectangle with `width:100%` and `object-fit:contain`, so every portrait asset floated in
    the middle of it with wide beige bars either side — on mobile roughly a third of the
@@ -396,8 +459,12 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .strip .frame{width:100%;height:auto;border-radius:3px;opacity:.85;display:block;
   transition:opacity .15s;background:var(--stone-2)}
 .strip .frame:hover{opacity:1}
-.note{margin:12px 0 0;padding:9px 12px;background:var(--cream);border-radius:5px;
-  font-size:12.5px;color:var(--ink-2);line-height:1.5;width:0;min-width:100%}
+/* The asset's caveat, closing the text column under the actions — see openDetail. */
+.dnote{display:flex;gap:11px;align-items:flex-start;margin-top:26px;padding:14px 16px;
+  background:var(--cream);border-radius:8px;font-size:12.5px;color:var(--ink-2);line-height:1.55}
+.dnote svg{width:17px;height:17px;flex:none;margin-top:1px;color:var(--navy);opacity:.85}
+.dnote b{display:block;font-weight:600;font-size:13px;color:var(--display);margin-bottom:3px;
+  letter-spacing:-.003em}
 .dtext{display:flex;flex-direction:column}
 .dtext h2{font-family:var(--f-d);font-weight:600;font-size:21px;line-height:1.3;margin:0 0 6px;
   color:var(--display);letter-spacing:-.005em}
@@ -410,8 +477,13 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .dl dd{margin:0;color:var(--ink);line-height:1.45}
 .dl dd.unset,.dl dd .unset{color:#a8a095;font-style:italic}
 /* Right-aligned and last, as the storyboard has them — the actions close the column
-   rather than interrupting it. */
-.acts{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;margin-top:auto}
+   rather than interrupting it.
+   NOT `margin-top:auto`. Pinning them to the foot of a column whose height is set by a
+   tall player opened a 390px canyon between the last metadata row and the buttons — the
+   two things that belong together were the two furthest apart on the screen. Reference
+   board 04 sets the actions a single generous step below the metadata and lets the column
+   end there; the media column is free to run on past it. */
+.acts{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;margin-top:4px}
 .btn{border-radius:6px;padding:11px 18px;font-size:13.5px;font-weight:500;
   border:1.5px solid var(--navy-deep);background:var(--navy-deep);color:#fff;text-decoration:none;
   display:inline-flex;align-items:center;gap:7px;transition:background .15s,border-color .15s,color .15s}
@@ -445,7 +517,7 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
     gap:0 14px;align-items:start;padding:13px 0;border-bottom:1px solid var(--stone-2)}
   .shot{grid-row:1/3;width:116px;aspect-ratio:3/2;margin:0;border-radius:6px}
   .cardx:hover .shot img{transform:none}
-  .cardx .ttl{grid-column:2;font-size:14px;min-height:0;margin-bottom:4px;align-self:start}
+  .cardx .ttl{grid-column:2;font-size:14px;margin-bottom:4px;align-self:start}
   .cardx .ctx{grid-column:2;margin-bottom:0;align-self:start}
   .cardx .tags{display:none}
   .dur{font-size:9.5px;padding:2px 5px;right:5px;bottom:5px}
@@ -1009,7 +1081,7 @@ function render(){
   const n=strong.length, piece=`${n} piece${n===1?'':'s'} of content`;
   const nf=activeFilters();
   $('summary').innerHTML=`<h2>${searching?`Found ${piece}`:piece}</h2>
-    <button class="refine${nf?' on':''}" data-act="filters">Filters${nf?` · ${nf}`:''}</button>`;
+    <button class="refine${nf?' on':''}" data-act="filters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M6 12h12M10 18h4"/></svg>Filters${nf?` · ${nf}`:''}</button>`;
   // Browsing: sectioned by Format. Searching: one ranked grid, unchanged.
   if(state.browse&&!searching){ $('results').innerHTML=groupByFormat(strong); return; }
   let html='<div class="grid">'+strong.map(card).join('');
@@ -1031,6 +1103,15 @@ function openDetail(id){
   const row=(k,v,sec)=>v?`<dt class="${sec?'sec':''}">${k}</dt><dd class="${sec?'sec':''}">${v}</dd>`:'';
   const list=v=>(v||[]).length?v.map(esc).join(', '):'';
   let visual;
+  /* The caveat about this asset — no sound, no playable master, cover slide only. It used
+     to sit under the media in the left column, which put it as far as it could get from the
+     "Open in Drive" button that is its actual answer, and left the right column ending 320px
+     short of the media beside it. Reference board 04 composes it the other way: the note is
+     the last block of the TEXT column, directly under the actions, and it is what closes
+     that column. Splitting each into a heading and a sentence is that board's treatment too
+     — a one-line grey sentence reads as a disclaimer, a titled panel reads as an answer. */
+  const note=(k,b)=>`<div class="dnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v5.5" stroke-linecap="round"/><circle cx="12" cy="7.8" r="1.05" fill="currentColor" stroke="none"/></svg><div><b>${k}</b>${b}</div></div>`;
+  let caveat='';
   if(m.playable&&m.url){
     // The filmstrip is built from real frames of THIS file (see buildStrip). It used to be
     // built by joining on `session` — which looked reasonable and rendered for exactly none
@@ -1038,12 +1119,12 @@ function openDetail(id){
     // also can't mislead: neighbouring thumbnails under a player read as "this video".
     visual=`<div class="dvis"><div class="dmedia dark"><video controls preload="metadata" playsinline
         ${a.thumb?`poster="${esc(a.thumb)}"`:''} src="${esc(m.url)}"></video></div>
-      <div class="strip" hidden></div>
-      ${m.silent?'<p class="note">Preview has no sound — the original on Drive does.</p>':''}</div>`;
+      <div class="strip" hidden></div></div>`;
+    if(m.silent) caveat=note('Preview has no sound','This clip is a silent preview. The original on Drive has its audio.');
   } else {
-    visual=`<div class="dvis"><div class="dmedia">${a.thumb?`<img src="${esc(a.thumb)}" alt="">`:''}</div>
-      ${m.kind==='video'?'<p class="note">Video preview unavailable — open the original on Drive to watch it.</p>':''}
-      ${m.kind==='carousel'?'<p class="note">Carousel — cover shown. Open in Drive for all slides.</p>':''}</div>`;
+    visual=`<div class="dvis"><div class="dmedia">${a.thumb?`<img src="${esc(a.thumb)}" alt="">`:''}</div></div>`;
+    if(m.kind==='video') caveat=note('Video preview unavailable','No playable master has been made for this asset. Open the original on Drive to watch it.');
+    else if(m.kind==='carousel') caveat=note('Cover slide shown','This is the first slide only. Open in Drive for the full carousel.');
   }
   const meta=`<dl class="dl">
       ${row('Type',esc(a.type||''))}
@@ -1062,7 +1143,7 @@ function openDetail(id){
         // One asset in the library has no Drive link. Rendering Copy link anyway gave a
         // button that swallowed the click and did nothing — say so instead.
         : `<p class="nolink">No Drive link recorded for this asset.</p>`}
-      </div></div>`;
+      </div>${caveat}</div>`;
   // Always two columns. The `single` variant collapsed every non-playable asset — the large
   // majority of the library — back into the stacked layout this pass exists to remove.
   $('dbody').innerHTML=`<div class="dgrid">${visual}${text}</div>`;
