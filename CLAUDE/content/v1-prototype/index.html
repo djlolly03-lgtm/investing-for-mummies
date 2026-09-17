@@ -461,6 +461,7 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 <script src="v1-catalogue.js"></script>
 <script src="media-map.js"></script>
 <script src="transcripts.js"></script>
+<script src="interpreter.js"></script>
 <script>
 const T=window.IFM_TAXONOMY, ASSETS=window.IFM_V1.filter(r=>r.library!==false);
 // Fold speech into each asset's searchable text BEFORE the engine builds its index. The
@@ -737,8 +738,17 @@ function buildFilters(){
 const activeFilters=()=>Object.values(state.filters).filter(Boolean).length;
 function clearFilters(){state.filters={};$('fgrid').querySelectorAll('select').forEach(s=>s.value='');state.showWeak=false;render();}
 
+/* Spec §8:  user request -> interpretation -> existing engine -> ranking.
+ * The interpreter is a TRANSLATOR. It strips purpose and filler, maps subjects onto
+ * controlled Topics and passes through the constraints she actually stated; it never
+ * scores, never ranks and never sees an asset. The engine below it is untouched.
+ * If interpreter.js fails to load for any reason the page falls straight back to the
+ * raw engine rather than breaking search. */
+const INT=window.IFM_INTERPRETER;
+const retrieve=q=>INT?INT.run(q,search).results:search(q);
+
 function currentResults(){
-  let list=state.q.trim()?search(state.q):ASSETS.map(a=>({a,score:0}));
+  let list=state.q.trim()?retrieve(state.q):ASSETS.map(a=>({a,score:0}));
   const f=state.filters;
   list=list.filter(({a})=>(!f.type||a.type===f.type)&&(!f.format||a.format===f.format)&&
     (!f.topic||(a.topic||[]).includes(f.topic))&&(!f.person||(a.person||[]).includes(f.person))&&
@@ -835,7 +845,7 @@ function render(){
     $('results').innerHTML=`<div class="none-state">
       <div class="ring"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#15263F" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.9-3.9"/></svg></div>
       <h2>No matching content found.</h2>
-      <p>Try a different search, topic or person.</p>
+      <p>Try a different search or clear your filters.</p>
       <button class="btn ghost" data-act="${activeFilters()?'clearf':'clearq'}">${activeFilters()?'Clear filters':'Clear search'}</button>
     </div>`;
     return;
@@ -845,7 +855,7 @@ function render(){
   const n=strong.length, piece=`${n} piece${n===1?'':'s'} of content`;
   const nf=activeFilters();
   $('summary').innerHTML=`<h2>${searching?`Found ${piece}`:piece}</h2>
-    <button class="refine${nf?' on':''}" data-act="filters">Refine${nf?` · ${nf}`:''}</button>`;
+    <button class="refine${nf?' on':''}" data-act="filters">Filters${nf?` · ${nf}`:''}</button>`;
   // Browsing: sectioned by Format. Searching: one ranked grid, unchanged.
   if(state.browse&&!searching){ $('results').innerHTML=groupByFormat(strong); return; }
   let html='<div class="grid">'+strong.map(card).join('');
