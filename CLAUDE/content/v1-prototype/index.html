@@ -284,6 +284,7 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 /* Quiet, but a control. As bare 12.5px --muted text it was indistinguishable from the
    context lines below it and read as a caption; the icon and the darker ink are what say
    "press me" without putting a bordered button back on the primary row. */
+.sumright{display:flex;align-items:baseline;gap:18px}
 .summary .refine{display:inline-flex;align-items:center;gap:7px;font-size:13px;
   color:var(--ink-2);padding:0;line-height:1.4;
   border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
@@ -623,7 +624,14 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 <script src="transcripts.js"></script>
 <script src="interpreter.js"></script>
 <script>
-const T=window.IFM_TAXONOMY, ASSETS=window.IFM_V1.filter(r=>r.library!==false);
+/* The Library is what Aakara can discover. `library:false` covers logos, playable games
+ * and the 33 Goa clips whose masters were deleted; "Do Not Use" is the human's own verdict,
+ * set in the Catalogue sheet. Marking it removes the asset from view here IMMEDIATELY and
+ * reversibly, and nothing on Drive moves until someone runs scripts/ifm-retire-assets.sh
+ * on a machine. That separation is deliberate: this page is public and un-authenticated,
+ * so it must never be able to destroy anything. */
+const T=window.IFM_TAXONOMY,
+      ASSETS=window.IFM_V1.filter(r=>r.library!==false && (r.status||'')!=='Do Not Use');
 // Fold speech into each asset's searchable text BEFORE the engine builds its index. The
 // engine already weights `search_terms`, so a spoken word becomes findable without
 // touching a line of frozen scoring code, and without inventing a new taxonomy field.
@@ -881,7 +889,7 @@ const media=a=>MEDIA[a.id]||{kind:'image',playable:false};
 const RELEVANT=0.7;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const state={q:'',filters:{},showWeak:false,openId:null,engaged:false,browse:false};
+const state={q:'',filters:{},showWeak:false,openId:null,engaged:false,browse:false,sort:'relevance'};
 
 const FILTERS=[['type','Type',T.type],['format','Format',T.format],['topic','Topic',null],
   ['person','Person',T.person],['source','Source',T.source],['session','Session',null],['status','Status',T.status]];
@@ -1081,7 +1089,16 @@ function render(){
   const n=strong.length, piece=`${n} piece${n===1?'':'s'} of content`;
   const nf=activeFilters();
   $('summary').innerHTML=`<h2>${searching?`Found ${piece}`:piece}</h2>
-    <button class="refine${nf?' on':''}" data-act="filters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M6 12h12M10 18h4"/></svg>Filters${nf?` · ${nf}`:''}</button>`;
+    <span class="sumright"><button class="refine${state.sort==='newest'?' on':''}" data-act="sort" title="${state.sort==='newest'?'Showing newest uploads first — tap for best matches':'Showing best matches first — tap for newest uploads'}">${state.sort==='newest'?'Newest first':'Most relevant'}</button><button class="refine${nf?' on':''}" data-act="filters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M6 12h12M10 18h4"/></svg>Filters${nf?` · ${nf}`:''}</button></span>`;
+  /* Newest first is applied AFTER the engine has ranked, and only when she asks for it.
+   * The default stays relevance, so the validated ordering is what you get unless you
+   * choose otherwise — the frontend is not quietly re-ranking anything. Undated assets
+   * sort last rather than jumping to the top on an empty string. */
+  if(state.sort==='newest'){
+    const key=a=>a.date||a.session||'';
+    const byDate=(x,y)=>String(key(y.a)).localeCompare(String(key(x.a)));
+    strong.sort(byDate); weak.sort(byDate);
+  }
   // Browsing: sectioned by Format. Searching: one ranked grid, unchanged.
   if(state.browse&&!searching){ $('results').innerHTML=groupByFormat(strong); return; }
   let html='<div class="grid">'+strong.map(card).join('');
@@ -1231,6 +1248,7 @@ document.addEventListener('click',e=>{
   // Refine lives inside the summary, which is rebuilt on every render, so it cannot
   // carry its own handler the way the old static Filters button did.
   if(a==='filters')$('filters').classList.toggle('open');
+  if(a==='sort'){state.sort=state.sort==='newest'?'relevance':'newest';render();}
   if(a==='clearq')setQuery('',{engage:false});
   if(a==='clearf')clearFilters();
   if(a==='copy'){const h=act.dataset.href; if(!h)return;
