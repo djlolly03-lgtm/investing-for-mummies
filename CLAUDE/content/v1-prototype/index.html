@@ -112,25 +112,65 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .try .lbl{color:var(--muted);font-size:12.5px;margin-right:2px}
 /* One quiet line, on the field's own left edge. It is the only thing standing between her
    and the library, so it is text rather than a button — but it is always there. */
-/* Explore by theme. The tiles are built from the Format values the catalogue actually
-   carries — no new taxonomy, no new filter, no invented category. Each one is the existing
-   Format filter with a face on it. */
-.themes{display:none}
-.stage.hero .themes{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;
-  max-width:760px;margin:30px auto 0;text-align:left}
-.themes button{padding:0;background:none;display:block}
-.themes .tw{display:block;width:100%;aspect-ratio:1/1;border-radius:10px;overflow:hidden;
-  background:var(--stone-2);position:relative;
-  box-shadow:inset 0 0 0 1px rgba(21,38,63,.07);transition:transform .25s cubic-bezier(.2,.6,.2,1)}
-.themes img{width:100%;height:100%;object-fit:cover;transition:transform .45s cubic-bezier(.2,.6,.2,1)}
-.themes button:hover img{transform:scale(1.06)}
-.themes .tl{display:block;margin-top:9px;font-size:12px;font-weight:600;color:var(--display);
-  line-height:1.3;letter-spacing:-.003em}
-.themes .tn{display:block;font-size:11px;color:var(--muted);margin-top:2px;
-  font-variant-numeric:tabular-nums}
+/* THE LIBRARY FRONT PAGE.
+   The empty state used to be a search field with a photograph under it, and it read as
+   bare because it was: one control and no content. Reference board 02 fills that space
+   with the library itself — themes to enter by, and what has just arrived. Neither is a
+   new feature. The tiles are the existing Format filter with a face on it; "Recently
+   added" is the catalogue sorted by date. No new taxonomy, no new filter, and none of the
+   sidebar, Collections, Favourites or profile that §9 and §26 rule out. */
+.home{display:none}
+.stage.hero .home{display:block;max-width:var(--col);margin:46px auto 0;text-align:left}
+.homehead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  margin:0 0 16px}
+.homehead+.themes+.homehead{margin-top:40px}   /* or the next heading sits on the tiles */
+.homehead h2{font-family:var(--f-d);font-weight:500;font-size:17px;margin:0;
+  color:var(--display);letter-spacing:-.005em}
+.morelink{font-size:12.5px;color:var(--muted);padding:0;line-height:1.4;
+  border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.morelink:hover{color:var(--navy);border-bottom-color:var(--navy)}
+
+/* Tiles at the content width, not squeezed into the search field's 760px. At six across
+   they were 110px squares — too small to recognise a room, a face or a slide, which is the
+   entire job of a thumbnail. */
+.themes{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+/* position:relative is load-bearing. The label and count are siblings of .tw, not children,
+   so without a positioned ancestor here they escaped the tile entirely and rendered
+   nowhere useful. */
+.themes button{padding:0;background:none;display:block;position:relative}
+.themes .tw{display:block;width:100%;aspect-ratio:4/5;border-radius:12px;overflow:hidden;
+  background:var(--stone-2);position:relative;box-shadow:inset 0 0 0 1px rgba(21,38,63,.07)}
+.themes img{width:100%;height:100%;object-fit:cover;
+  transition:transform .5s cubic-bezier(.2,.6,.2,1)}
+.themes button:hover img{transform:scale(1.05)}
+/* The label sits ON the image, as board 02 sets it — a caption underneath turns six tiles
+   into six captions, and the pictures stop being the thing you look at. */
+/* The scrim has to survive a LIGHT tile. At .78 the B-roll tile — a pale logo on cream —
+   put white type on near-white and the label was unreadable. Darker, and taller. */
+.themes .tw::after{content:'';position:absolute;inset:auto 0 0 0;height:74%;
+  background:linear-gradient(to top,rgba(10,16,26,.92),rgba(10,16,26,.55) 38%,transparent)}
+.themes .tl{position:absolute;left:13px;right:13px;bottom:24px;z-index:1;color:#fff;
+  font-family:var(--f-d);font-size:14.5px;font-weight:600;line-height:1.25;
+  letter-spacing:-.004em;text-shadow:0 1px 8px rgba(14,22,34,.4)}
+.themes .tn{position:absolute;left:13px;bottom:9px;z-index:1;color:rgba(255,255,255,.82);
+  font-size:11.5px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+
+.recent{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-bottom:8px}
+.recent .cardx .ttl{font-size:13.5px;min-height:0;-webkit-line-clamp:2;margin-bottom:3px}
+.recent .cardx .ctx{font-size:11.5px;margin-bottom:0}
+.recent .cardx .tags{display:none}
+.recent .shot{border-radius:10px;margin-bottom:9px}
+
+@media(max-width:1000px){
+  .themes,.recent{grid-template-columns:repeat(3,1fr);gap:15px}
+  .recent .cardx:nth-child(n+4){display:none}
+}
 @media(max-width:760px){
-  .stage.hero .themes{grid-template-columns:repeat(3,1fr);gap:11px;margin-top:22px}
-  .themes .tl{font-size:11.5px}
+  .stage.hero .home{margin-top:30px}
+  .themes,.recent{grid-template-columns:repeat(2,1fr);gap:12px}
+  .themes .tl{font-size:13px;bottom:22px}
+  .homehead h2{font-size:15.5px}
+  .recent .cardx:nth-child(n+5){display:none}
 }
 .browseall{display:none}
 .stage.hero .browseall{display:block;max-width:760px;margin:20px auto 0;text-align:left}
@@ -150,8 +190,15 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 /* `margin-top:auto` seats it at the foot of the first screen, as the storyboard does, and
    the taller frame is what keeps the gap above it reading as composed whitespace rather
    than as the orphan band the full-bleed version left. */
-.heroimg{width:min(var(--col),calc(100% - 56px));margin:auto auto 0;position:relative;
-  overflow:hidden;border-radius:12px;flex:none;height:clamp(240px,30vw,400px)}
+/* RETIRED 17 Sep 2026. hero.jpg is a workshop group photo used as decoration, and it was
+   taking the whole lower half of the first screen — 400px of desaturated grey directly
+   under the one control that matters. §22 allows a hero only if it does not dominate the
+   search action; this dominated it. That space now carries Explore by theme and Recently
+   added, which is the library itself rather than a picture of it. The file stays in the
+   repo; put this back by deleting the `display:none`. */
+.heroimg{display:none}
+.heroimg.on{display:block;width:min(var(--col),calc(100% - 56px));margin:auto auto 0;
+  position:relative;overflow:hidden;border-radius:12px;flex:none;height:clamp(240px,30vw,400px)}
 /* Muted on purpose. At full saturation the photo shouts louder than the one question on
    the page, and the italic caption sitting on it was illegible against the foliage. */
 .heroimg img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;
@@ -456,8 +503,13 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
        Reference board 02 arrives at the same conclusion from the design side — "Explore
        by theme" — so the text link it started as is now what that board shows: real
        thumbnails, real counts, one tap into the library. -->
-  <div class="themes" id="themes"></div>
-  <p class="browseall"><button id="browse" data-act="browse"></button></p>
+  <div class="home">
+    <div class="homehead"><h2>Explore by theme</h2>
+      <button class="morelink" data-act="browse">Browse all 378 →</button></div>
+    <div class="themes" id="themes"></div>
+    <div class="homehead"><h2>Recently added</h2></div>
+    <div class="recent" id="recent"></div>
+  </div>
 </div>
 
 <figure class="heroimg" id="heroimg">
@@ -896,6 +948,26 @@ function buildThemes(){
     </button>`;}).join('');
 }
 
+/* Recently added. Not a new feature and not a new field — the catalogue sorted by the date
+ * it already carries. It answers the question the empty state could not: "what has landed
+ * since I last looked?" Assets with no thumbnail are skipped, because a row of grey
+ * rectangles is worse than a shorter row. */
+function buildRecent(){
+  const dated=ASSETS.filter(a=>a.thumb&&a.thumb.startsWith('../thumbs/')&&a.date)
+    .sort((x,y)=>String(y.date).localeCompare(String(x.date)));
+  // One per session. Straight date order gave four near-identical certificate photos from
+  // a single afternoon — the same cannibalisation that makes ranked search unable to show
+  // you a spread. Six different things is the point of the row.
+  const seen=new Set(), out=[];
+  for(const a of dated){
+    const k=a.session||a.format||a.id;
+    if(seen.has(k)) continue;
+    seen.add(k); out.push(a);
+    if(out.length===6) break;
+  }
+  $('recent').innerHTML=out.map(a=>card({a})).join('');
+}
+
 function render(){
   const searching=!!state.q.trim();
   const heroMode=!state.engaged&&!searching&&!activeFilters()&&!state.browse;
@@ -1072,7 +1144,7 @@ document.addEventListener('click',e=>{
     const lbl=act.querySelector('.lbl')||act;
     navigator.clipboard?.writeText(h).then(()=>{lbl.textContent='Copied';setTimeout(()=>lbl.textContent='Copy link',1400);});}
 });
-buildFilters(); buildThemes(); render();
+buildFilters(); buildThemes(); buildRecent(); render();
 </script>
 </body>
 </html>

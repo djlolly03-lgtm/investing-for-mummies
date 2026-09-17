@@ -108,6 +108,40 @@ const TOPIC_MAP = [
   [/\bbudget(ing|s)?\b|\bexpenses?\b|\bspending\b/i, 'Managing Money'],
   [/\bmoney mindset\b|\bmoney myths?\b/i, 'Money Mindset'],
 ];
+/* VERNACULAR -> CORPUS VOCABULARY.
+ *
+ * Six people will ask for the same asset six ways, and the catalogue only speaks one. This
+ * is measured, not guessed — word-boundary counts across all 378 assets:
+ *
+ *     people TYPE          corpus HAS
+ *     enjoying   0         candid      98
+ *     happy      0         warm       103
+ *     excited    0         relaxed     98
+ *     kids       1         student    140
+ *     girls      0         women      195
+ *     students   3         student    140
+ *
+ * The failure this fixes is not ranking, it is a veto. The engine refuses a multi-word
+ * query containing a word that appears NOWHERE in the corpus — correctly, because that is
+ * usually evidence we do not own the thing. But "students enjoying the session" tripped it
+ * on `enjoying` alone and returned zero, while "candid classroom" returned 66 of the very
+ * same assets.
+ *
+ * SUBSTITUTION, not addition. Adding synonyms alongside her words would inflate the
+ * query's rarity mass and starve the coverage test — the same trap the canonical Topic
+ * append fell into. One word in, one word out, so the token count never moves.
+ *
+ * Only words the corpus genuinely lacks are rewritten. `laughing` (5 assets) and
+ * `smiling` (36) are left alone: they work, and they are more precise than the pool. */
+const VERNACULAR = [
+  [/\b(enjoy(ing|ed|s)?|happy|happiness|excited|exciting|joy(ful)?|cheerful|delighted|having fun|good vibes?)\b/ig, 'candid'],
+  [/\b(giggl\w*|chuckl\w*|grinning|beaming|chuffed)\b/ig, 'laughing'],
+  [/\b(kids?|children|child|girls?|boys?|learners?|pupils?)\b/ig, 'student'],
+  [/\b(informal|unposed|natural|spontaneous|off.guard)\b/ig, 'candid'],
+  [/\b(lively|energetic|animated|buzzing)\b/ig, 'warm'],
+  [/\b(calm|quiet|focused|attentive|concentrating)\b/ig, 'relaxed'],
+];
+
 /* Format words a person would actually say. */
 const FORMAT_MAP = [
   [/\btestimonials?\b|\breviews?\b/i, 'Testimonial'],
@@ -139,6 +173,12 @@ function interpret(query) {
    *          Topic, and it is exactly the word the transcript index can answer. */
   let text = raw;
   PURPOSE.forEach(([re]) => { text = text.replace(new RegExp(re.source, 'ig'), ' '); });
+  // Speak the catalogue's language before the engine ever sees the query.
+  const translated = [];
+  VERNACULAR.forEach(([re, to]) => {
+    const m = text.match(new RegExp(re.source, 'ig'));
+    if (m) { translated.push(m[0].toLowerCase() + ' -> ' + to); text = text.replace(new RegExp(re.source, 'ig'), to); }
+  });
 
   /* CANONICALISE — the actual translation step, and the only use of taxonomy_terms.
    * When her words name a controlled value the engine cannot reach on its own, the
@@ -185,6 +225,7 @@ function interpret(query) {
     purpose,                        // context only — never matched against an asset
     preferences,                    // soft; never a filter
     free_search_terms,              // words that belong to no controlled value
+    translated,                     // vernacular rewritten into corpus vocabulary
     specificity,
     search_text: text,              // what the EXISTING engine receives, verbatim
   };
