@@ -1,41 +1,83 @@
 {
-  "generated_by": "daily-content-processor (17 Sep 2026)",
-  "note": "One new item staged this run: Aakara delivered the BSE & NSE reel cover on 16 Sep, which filled the blank IFM-321 placeholder (updated in place, not duplicated). Everything else in the four registered folders is caught up — Content Drop holds only _Trash, Sakshi's uploads and the Certificates folder have no uncatalogued candidates, and every topic folder across the Aakara tree (June–October) plus all 108 RSS workshop clips already have rows. The four PNGs under June/Workshops/Women's are the artboards of already-published IFM-035, correctly collapsed to one row rather than catalogued separately. The six items below are blocked or upstream gaps rather than pending work — none can be resolved by a re-run.",
-  "count": 6,
+  "generated_by": "daily-content-processor (17 Sep 2026, second run)",
+  "note": "23 rows staged this run: 2 new Aakara September deliveries (Designer Hand Bag topic folder, Tata Group reel cover — both landed overnight), and 21 rows for the Content Library's 'IFM Aug 2026' corporate boardroom shoot (20 moments, each pointing at its own file with its own thumbnail, plus one 'rest of the shoot' catch-all). The Content Library was added as a source today and is the bulk of what remains: 377 of its 558 files had never been seen by this task. This run cleared 121 of them. Two Aakara shortcut folders that the previous run recorded as 'target not shared' — Hiral Goel and workshop/Rakshita — are in fact readable; the earlier scan followed the shortcut's own id, which has no children, instead of its target. That is a scanner bug, now fixed, and it exposes 239 more uncatalogued files. Nothing below is blocked on Drive access except where it says so.",
+  "count": 13,
   "items": [
     {
+      "source": "Content Library — IFM feedback videos",
+      "title": "40 of 63 files uncatalogued. TESTIMONIALS: one row per file, because each clip is a different person saying a different thing. Highest-value block left. Note the honest limit — a Drive thumbnail gives who is speaking and where, not what they say; rows will describe the speaker and setting unless someone watches them.",
+      "folder_url": "https://drive.google.com/drive/folders/1NNiiIQYum3Ko_1LmkRVC29WBExQ64Iuz",
+      "status": "needs_review"
+    },
+    {
+      "source": "Content Library — IFM (sharing experience)",
+      "title": "10 files, none catalogued. TESTIMONIALS: one row per file, same rule and same caveat as IFM feedback videos.",
+      "folder_url": "https://drive.google.com/drive/folders/1n9n-_auiXX2xnfye89JZuWVKQ8PAWwvC",
+      "status": "needs_review"
+    },
+    {
+      "source": "Aakara delivery tree — workshop / Rakshita",
+      "title": "196 of 199 files uncatalogued, and READABLE after all. The previous queue recorded this as an unshared shortcut; it is a shortcut, but its target lists fine. Canon camera CR3+JPG pairs plus ~150 iPhone MOV clips from a 3-4 Jul 2026 workshop. Raw-dump shoot: apply the moments rule (~20 moment rows, each pointing at its own file, plus one catch-all). Skip the .CR3 raws — the .JPG of each pair is the usable frame.",
+      "folder_url": "https://drive.google.com/drive/folders/1Cfoycn5PzyIrD48I_1Jg5FpfjVLdphSj",
+      "status": "needs_review"
+    },
+    {
+      "source": "Aakara delivery tree — Hiral Goel",
+      "title": "43 files uncatalogued, also READABLE after all (same shortcut bug). 18 Hiral photos/clips from 24 Mar 2026 plus a 'Teens video' folder of 25 clips from 25 Jun 2026. The Mar 2026 portraits are the strongest Hiral Media Kit candidates seen so far — worth a pass on their own.",
+      "folder_url": "https://drive.google.com/drive/folders/1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI",
+      "status": "needs_review"
+    },
+    {
+      "source": "Content Library — IFM Games",
+      "title": "33 files, none catalogued. Not yet inspected — needs a look before choosing a rule, since game screens are probably individually-named deliverables (a row each) rather than a raw dump.",
+      "folder_url": "https://drive.google.com/drive/folders/1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n",
+      "status": "needs_review"
+    },
+    {
+      "source": "Content Library — IFT Aug 2026",
+      "title": "23 files, none catalogued. Raw-dump shoot: moments rule, likely 6-10 moments plus a catch-all.",
+      "folder_url": "https://drive.google.com/drive/folders/1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p",
+      "status": "needs_review"
+    },
+    {
+      "source": "Content Library — IFM August feedback",
+      "title": "11 files, none catalogued. Listed under the raw-dump rule in the task file, but the name says feedback — check whether these are testimonials (one row per file) before grouping them into moments. Getting this backwards is exactly the mistake the 17 Sep testimonial correction was written to prevent.",
+      "folder_url": "https://drive.google.com/drive/folders/1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT",
+      "status": "needs_review"
+    },
+    {
+      "source": "Content Library — Aakara — June 2026",
+      "title": "114 files across 19 topic folders — DELIBERATELY NOT CATALOGUED. This is a second copy of the June Aakara delivery already catalogued from the Aakara tree; all 19 topics (Power of Compounding, Savings vs Investing, SpaceX IPO, Why Women Feel Left Out, and so on) already have rows. Different Drive ids, same content. Listed so it is not rediscovered as 'new' every run.",
+      "folder_url": "https://drive.google.com/drive/folders/1iR0DcgjfAYq40KxNGY9dDrkRxPKO0Vt_",
+      "status": "needs_review"
+    },
+    {
       "source": "Aakara delivery tree",
-      "title": "September BSE & NSE — only the COVER GRAPHIC was delivered (nse bse.png, 16 Sep). The reel video itself is not in the folder. IFM-321 is marked Ready to mean the cover art is final, NOT that the reel is cut. Chase Aakara for the video.",
+      "title": "IFM-375 (Tata Group) and IFM-321 (BSE & NSE) are COVER GRAPHICS ONLY — the reel videos have not been delivered. 'Ready' on both means the cover art is final, not that the reel is cut. Chase Aakara. Also check IFM-375 against the in-house reel_tata_sons/ work in this repo so the same post is not built twice.",
       "folder_url": "https://drive.google.com/drive/folders/1oRleXGcjZGKLHuSJdan8-grL4_gwjiNl",
       "status": "needs_review"
     },
     {
       "source": "Aakara delivery tree",
-      "title": "September: 11 planned posts still 'In Production' with no artwork delivered — 5 carousels (IFM-269, 270, 320, 372, 373) and 6 reels (IFM-272, 273, 275, 276, 277, 278). They link only to the planning decks. The Carousels folder holds two delivered topics (JIO IPO, Reviews) and Reels holds five plus the new BSE/NSE cover, so this is a gap in those 11 topics, not an empty folder.",
-      "folder_url": "https://drive.google.com/drive/folders/1nbw5ePSwhJ9v5nflqiTrVhjU2zrCsGxN",
+      "title": "IFM-374 (Designer Hand Bag) may be a duplicate of IFM-275 'September: Asset vs Liability'. Same handbag-as-asset concept, but the delivered artwork pairs ASSET with INVESTMENT, not with LIABILITY, so a new row was staged rather than closing IFM-275. Ask Aakara whether these are one post; if so, merge IFM-374 into IFM-275.",
+      "folder_url": "https://drive.google.com/drive/folders/1ghNZJa6wiVxh0yX8UQrvaNpQ_6M7hYX7",
+      "status": "needs_review"
+    },
+    {
+      "source": "Hiral Media Kit",
+      "title": "Two Hero teaching frames from the Aug 2026 corporate shoot (IFM-376, IFM-392) qualify for the Hiral Media Kit, but the presenter's identity could not be confirmed from the thumbnails. The copies were HELD rather than made — putting the wrong person into a folder shared with the agency is worse than a missing file. Confirm who is teaching in IMG_0916 and IMG_4882, then copy.",
+      "folder_url": "https://drive.google.com/drive/folders/1OPOAbJ_MsKxrz7Ijq6tLaxdA6eMr6Vw4",
       "status": "needs_review"
     },
     {
       "source": "Aakara delivery tree",
-      "title": "October: still no real plan — 'IFM Internal_October' is unmodified since 7 Sep 06:47, its overview slide still reads 'Content Plan for August', and its topics duplicate September's. Only the date grid is October. No October rows created, and the October folder contains nothing but that one deck.",
+      "title": "September: 11 planned posts still 'In Production' with no artwork delivered — 5 carousels (IFM-269, 270, 320, 372, 373) and 6 reels (IFM-272, 273, 275, 276, 277, 278). Unchanged since the last run. October still has no real plan: 'IFM Internal_October' is unmodified since 7 Sep, its overview slide still reads 'Content Plan for August', and its topics duplicate September's. No October rows created.",
       "folder_url": "https://drive.google.com/drive/folders/17Qyr7t4PLqxBMMG6FleA1PYKH49x5ZJ_",
       "status": "needs_review"
     },
     {
       "source": "Aakara delivery tree",
-      "title": "Hiral Goel — is a Drive shortcut (vnd.google-apps.shortcut) owned by aakaradesignstudios@gmail.com, not a folder; it has no children to list and its target is not shared with us, so we cannot tell what it points at. Unchanged since 12 Jun.",
-      "folder_url": "https://drive.google.com/file/d/1PpmYKQwTk1yoyo0_vhekvCl9sY6T9vet/view",
-      "status": "needs_review"
-    },
-    {
-      "source": "Aakara delivery tree",
-      "title": "workshop / Rakshita — also a Drive shortcut, not a folder; target not shared. Ask Aakara to share the target folders directly (or replace both shortcuts with real shared folders). Unchanged since 21 Aug.",
-      "folder_url": "https://drive.google.com/file/d/1Nog5TrEHts1I6SmYP0OaAN8WhVCioEqI/view",
-      "status": "needs_review"
-    },
-    {
-      "source": "Aakara delivery tree",
-      "title": "6 planning decks sit in the tree uncatalogued: IFM Internal_June, IFM Internal_July, IFM Internal_August, IFM Internal_September, IFM Internal_October, IFM_June Content / IFM_June Creatives / IFM July Creatives. Checked August — every topic it plans is already delivered and catalogued, so these are planning artifacts, not missing content. Deliberately not given catalogue rows; listed so they are not rediscovered as 'new' each run.",
+      "title": "6 planning decks sit in the tree uncatalogued (IFM Internal_June through October, plus the IFM_June/July Creatives decks). Checked previously — every topic they plan is already delivered and catalogued, so these are planning artifacts, not missing content. Deliberately not given rows; listed so they are not rediscovered as 'new' each run.",
       "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
       "status": "needs_review"
     }

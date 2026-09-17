@@ -8837,5 +8837,563 @@ window.IFM_V1 =
 "person": [],
 "source": "Aakara",
 "search_terms": "september news items carousel label only placeholder slide focused carousels counterpart topical reel strand ifm 278 323 324 specific stories named markets designed aakara internal deck"
+},
+{
+"id": "IFM-374",
+"title": "September: Designer Hand Bag — asset or investment?",
+"date": "2026-09-17",
+"thumb": "../thumbs/IFM-374.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1ghNZJa6wiVxh0yX8UQrvaNpQ_6M7hYX7",
+"description": "Aakara's 'Designer Hand Bag' topic folder. The designed graphic shows a neon-yellow studded designer handbag on white with a $2,995 price tag hanging off the handle, a grey speech bubble reading 'ASSET' above it and a second reading 'INVESTMENT' below, inside a scalloped yellow border. The base footage is Hiral sitting cross-legged on a cream sofa in a blue sweatshirt and black trousers, holding the same neon-yellow bag up by its strap and talking to camera.",
+"session": "Aakara September delivery — 17 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Investing"
+],
+"person": [
+"Hiral"
+],
+"source": "Aakara",
+"search_terms": "september designer hand bag asset investment aakara topic folder designed graphic shows neon yellow studded handbag white 995 price tag hanging off handle grey speech bubble reading above second below inside scalloped border base footage hiral sitting cross legged cream"
+},
+{
+"id": "IFM-375",
+"title": "September: The $100 Billion TATA secret",
+"date": "2026-09-17",
+"thumb": "../thumbs/IFM-375.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1FDCPjy0-pJxhxL6UT0gDM0b4OkGjyZFJ/view",
+"description": "Reel cover — Hiral, cut out mid-sentence in a taupe sleeveless top with a rosette at the shoulder, stands against a pale mint circle on a cream dotted background. Beside her sits a hessian money bag carrying the black TATA logo, with a fan of Indian rupee notes tucked behind it. Navy type reads 'The' and, in large rust serif, '$100 Billion'; a navy italic line across the bottom asks 'TATA secret?'",
+"session": "Aakara September delivery — 17 Sep 2026",
+"slide_text": "and, in large rust serif, ; a navy italic line across the bottom asks",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral"
+],
+"source": "Aakara",
+"search_terms": "september 100 billion tata secret reel cover hiral cut out mid sentence taupe sleeveless top rosette shoulder stands against pale mint circle cream dotted background beside her sits hessian money bag carrying black logo fan indian rupee notes tucked behind"
+},
+{
+"id": "IFM-376",
+"title": "Aug 2026 corporate workshop — Opening the session at the 'Investing for Mummies' title slide",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-376.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1_0DJzLu-Is_pLMtj4R3KBkEOHbNmG3qt/view",
+"description": "The facilitator, in a blue pinstripe sleeveless shirt-dress, stands beside a wall-mounted screen showing the illustrated 'INVESTING FOR MUMMIES' title slide, one hand resting on the desk beside an open MacBook that carries the same IFM logo artwork. Start-of-session frame in the boardroom.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "INVESTING FOR MUMMIES",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop opening session investing mummies title slide facilitator blue pinstripe sleeveless shirt dress stands beside wall mounted screen showing illustrated one hand resting desk open macbook carries same ifm logo artwork start frame boardroom august office women"
+},
+{
+"id": "IFM-377",
+"title": "Aug 2026 corporate workshop — Boardroom wide — participants seated around the table at the opening slide",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-377.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1L9zWRx3npLJUId_AL3TeWQ9PinUIzAFT/view",
+"description": "Wide of the boardroom from the doorway: eight or nine women seated around a long wooden table with printed IFM workbooks, water bottles and glasses in front of them, all turned toward the wall-mounted screen at the far end. Ceiling strip lights overhead.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop boardroom wide participants seated around table opening slide from doorway eight nine women long wooden printed ifm workbooks water bottles glasses front them all turned toward wall mounted screen far end ceiling strip lights overhead august"
+},
+{
+"id": "IFM-378",
+"title": "Aug 2026 corporate workshop — Hands on the illustrated IFM workbook",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-378.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1GzSHMB66NGy_lA0SfYnappz5rck9ER92/view",
+"description": "Close over the shoulder of two participants at the boardroom table — a hand rests on the open illustrated IFM workbook, its cartoon spread clearly visible, with a pen, spiral notepad and a striped sleeve alongside. Detail of the printed course material in use.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop hands illustrated ifm workbook close over shoulder two participants boardroom table hand rests open cartoon spread clearly visible pen spiral notepad striped sleeve alongside detail printed course material use august office women live game stock market"
+},
+{
+"id": "IFM-379",
+"title": "Aug 2026 corporate workshop — Participant reading the workbook while the title slide is up",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-379.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1al8HuFyW7T3yjJRAL7DmYd5T8g49YmHr/view",
+"description": "A participant in a blue sleeveless top, seen from behind and to the side, holds open the illustrated IFM workbook at the table and reads it, with the 'INVESTING FOR MUMMIES' slide glowing on the screen behind her.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "INVESTING FOR MUMMIES",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop participant reading workbook while title slide blue sleeveless top seen from behind side holds open illustrated ifm table reads investing mummies glowing screen her august boardroom office women participants live game stock market content library sakshi"
+},
+{
+"id": "IFM-380",
+"title": "Aug 2026 corporate workshop — Participant laughing during the session",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-380.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1ZS23-hgcBEiwJpRfoRq75DeWi_YwCit5/view",
+"description": "A participant in a pale blue patterned shirt sits with her chin propped on both hands, laughing openly, an open workbook and a black flask on the table in front of her and another attendee beside her. Warm, candid, unposed.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration aug 2026 corporate workshop participant laughing during session pale blue patterned shirt sits her chin propped both hands openly open workbook black flask table front another attendee beside warm candid unposed august boardroom office women participants ifm live game stock"
+},
+{
+"id": "IFM-381",
+"title": "Aug 2026 corporate workshop — The table applauding an older participant in a yellow kurta",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-381.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/164Lpabqxcvv9bCAsVguWjwcPBjyUXPgM/view",
+"description": "Several participants around the table clap, hands raised mid-applause, turned toward an older woman in a bright yellow kurta seated in the foreground with her back half to camera. Bookshelves and framed art on the wall behind.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "candid warm natural unposed relaxed friendly celebration aug 2026 corporate workshop table applauding older participant yellow kurta several participants around clap hands raised mid applause turned toward woman bright seated foreground her back half camera bookshelves framed art wall behind august boardroom office women ifm workbook live"
+},
+{
+"id": "IFM-382",
+"title": "Aug 2026 corporate workshop — Participant in pink talking across the table",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-382.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1ZsWPiPJNfv4KdHFF9AWcGp54TEobGvlU/view",
+"description": "A participant in a bright pink shirt leans forward across the boardroom table, both hands open mid-sentence, talking to the women opposite her; an open notebook, a purple folder and a printed handout sit in front of her.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop participant pink talking across table bright shirt leans forward boardroom both hands open mid sentence women opposite her notebook purple folder printed handout sit front august office participants ifm workbook live game stock market content library"
+},
+{
+"id": "IFM-383",
+"title": "Aug 2026 corporate workshop — Phone over an open workbook during the live game",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-383.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1aASnG-XbtQzh5yrVxO5-J0OcSAAPNsa_/view",
+"description": "Close-up over a participant's shoulder: she holds her phone in one hand above the open illustrated IFM workbook, the phone screen showing the live game's join screen, a gold watch on her wrist and the boardroom table with tissues and glasses behind.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "s shoulder: she holds her phone in one hand above the open illustrated IFM workbook, the phone screen showing the live game",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop phone over open workbook during live game close participant shoulder she holds her one hand above illustrated ifm screen showing join gold watch wrist boardroom table tissues glasses behind august office women participants stock market content"
+},
+{
+"id": "IFM-384",
+"title": "Aug 2026 corporate workshop — The live game's four-colour answer grid on a participant's phone",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-384.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1qLrkVAtBazney-fRO2gni2PgQaW45mK9/view",
+"description": "Tight detail of a phone held in both hands over an open workbook, the screen filled with the live quiz game's four coloured answer tiles. The participant's blue-and-white striped sleeve and gold watch frame the shot.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "s four coloured answer tiles. The participant",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop live game four colour answer grid participant phone tight detail held both hands over open workbook screen filled quiz coloured tiles blue white striped sleeve gold watch frame shot august boardroom office women participants ifm stock"
+},
+{
+"id": "IFM-385",
+"title": "Aug 2026 corporate workshop — Quiz leaderboard on the boardroom screen",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-385.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1IweOKQhAwUvWEdxQ1VlLKveTPrwT0xMo/view",
+"description": "A participant in a white top sits with her back to camera at the head of the table, facing the wall-mounted screen which shows the live quiz's dark leaderboard view with coloured question blocks and player scores.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations",
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop quiz leaderboard boardroom screen participant white top sits her back camera head table facing wall mounted which shows live dark view coloured question blocks player scores august office women participants ifm workbook game stock market content"
+},
+{
+"id": "IFM-386",
+"title": "Aug 2026 corporate workshop — Teaching from the 'Why Businesses Need Cash' slide",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-386.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1tGQ5Y8ZV40ugS7i7y7AYSKCLql-6d1fN/view",
+"description": "The facilitator sits at the end of the boardroom table with a laptop open in front of her, one hand raised mid-explanation, talking through a slide headed 'Why Businesses Need Cash' on the screen behind her.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "Why Businesses Need Cash",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop teaching from why businesses need cash slide facilitator sits end boardroom table laptop open front her one hand raised mid explanation talking through headed screen behind august office women participants ifm workbook live game stock market"
+},
+{
+"id": "IFM-387",
+"title": "Aug 2026 corporate workshop — Running the live game from the laptop, quiz up on the big screen",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-387.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1cMpdYUQxsrR0hfPSSe5tBwb7PT1iDT0u/view",
+"description": "Over-the-shoulder view of a participant in a green top seated at the boardroom table working the laptop, with the live quiz question and its coloured answer blocks filling the wall-mounted screen ahead of her.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations",
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop running live game from laptop quiz big screen over shoulder view participant green top seated boardroom table working question coloured answer blocks filling wall mounted ahead her august office women participants ifm workbook stock market content"
+},
+{
+"id": "IFM-388",
+"title": "Aug 2026 corporate workshop — Older man in a pink shirt joining the discussion",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-388.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/15MT2Utbh0giGDjOZ9IVM3u5c-a3MnbhH/view",
+"description": "An older man in a salmon-pink shirt sits with his back to camera at the boardroom table, facing two women mid-conversation across from him — the only male participant visible in this shoot.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations",
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop older man pink shirt joining discussion salmon sits his back camera boardroom table facing two women mid conversation across from him only male participant visible shoot august office participants ifm workbook live game stock market content"
+},
+{
+"id": "IFM-389",
+"title": "Aug 2026 corporate workshop — Handwritten notes in a participant's notebook",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-389.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1o180W0FbCj0xgK69xPU9xFQ-pjGpzWFn/view",
+"description": "Close-up of a participant's hands writing in a ruled notebook with a blue pen, a page of handwritten session notes already filled, a green lunch container and a pink sleeve at the edge of frame.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop handwritten notes participant notebook close hands writing ruled blue pen page session already filled green lunch container pink sleeve edge frame august boardroom office women participants ifm workbook live game stock market content library sakshi"
+},
+{
+"id": "IFM-390",
+"title": "Aug 2026 corporate workshop — Teaching at the 'How the Stock Market Works' slide",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-390.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1YL4jSkoJR6-NtxEHl0Pc8uUnpyl2dvpE/view",
+"description": "The facilitator, in a green kurta set, stands beside the wall-mounted screen with one hand raised toward an illustrated slide about how the stock market works, addressing the seated table.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop teaching how stock market works slide facilitator green kurta set stands beside wall mounted screen one hand raised toward illustrated about addressing seated table august boardroom office women participants ifm workbook live game content library sakshi"
+},
+{
+"id": "IFM-391",
+"title": "Aug 2026 corporate workshop — Full room wide — the boardroom at capacity",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-391.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1dqkubk9cPW9wBqxSYw63knyWQQ3k8FdP/view",
+"description": "Wide from the back of the room: two long rows of participants down both sides of the boardroom table, most seen from behind, with the facilitator in red standing at the far end beside the lit screen. Pendant light in the foreground.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop full room wide boardroom capacity from back two long rows participants down both sides table most seen behind facilitator red standing far end beside lit screen pendant light foreground august office women ifm workbook live game"
+},
+{
+"id": "IFM-392",
+"title": "Aug 2026 corporate workshop — Teaching 'How to Buy/Sell a Share?' at the screen",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-392.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1KbKD1YW6M_BLuFU9-OJbO4Z55zOjAqga/view",
+"description": "The facilitator, in a red-and-white striped dress, stands at the wall-mounted screen with her hand up against a dense diagram slide headed 'How to Buy/Sell a Share?', walking the room through the order flow. A participant's hands and the boardroom stationery are in the foreground.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "How to Buy/Sell a Share?",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop teaching how buy sell share screen facilitator red white striped dress stands wall mounted her hand against dense diagram slide headed walking room through order flow participant hands boardroom stationery foreground august office women participants ifm"
+},
+{
+"id": "IFM-393",
+"title": "Aug 2026 corporate workshop — Teaching 'Market Order vs. Limit Order'",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-393.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1ZyruKIm2eqR_mgdzgAGawkqihMZXqRY5/view",
+"description": "The facilitator in the red striped dress stands in profile beside the screen, both hands raised mid-gesture, explaining a two-column slide headed 'Market Order vs. Limit Order'.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "Market Order vs. Limit Order",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop teaching market order limit facilitator red striped dress stands profile beside screen both hands raised mid gesture explaining two column slide headed august boardroom office women participants ifm workbook live game stock content library sakshi"
+},
+{
+"id": "IFM-394",
+"title": "Aug 2026 corporate workshop — Teaching 'Understanding Stock Valuation Basics'",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-394.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1rP5_hwTVdQzjKZ-hHFJgT1m_yyslaRm_/view",
+"description": "The facilitator in the red striped dress stands beside the screen showing a red-headed slide, 'Understanding Stock Valuation Basics', with a list of questions mapped to the words Profit, Price, Quality, Risk and Discount. Glasses, bottles and PREMIER stationery on the table in the foreground.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "Understanding Stock Valuation Basics",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Money Conversations",
+"Risk & Returns",
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop teaching understanding stock valuation basics facilitator red striped dress stands beside screen showing headed slide list questions mapped words profit price quality risk discount glasses bottles premier stationery table foreground august boardroom office women participants ifm"
+},
+{
+"id": "IFM-395",
+"title": "Aug 2026 corporate workshop — Participant taking notes beside the branded stationery",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-395.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1TCixMD6ML59pUqkZDlaBFf3SK1sV8ar8/view",
+"description": "Close-up of a participant's hands resting on an open ruled notebook part-filled with session notes, a beaded bracelet on her wrist, next to a red folder and a stack of PREMIER-branded books on the boardroom table.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "aug 2026 corporate workshop participant taking notes beside branded stationery close hands resting open ruled notebook part filled session beaded bracelet her wrist next red folder stack premier books boardroom table august office women participants ifm workbook live game stock"
+},
+{
+"id": "IFM-396",
+"title": "Aug 2026 corporate workshop — rest of the shoot",
+"date": "2026-08-19",
+"thumb": "",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1Ehyg9SAPjcNfBiu1Q5cf2kPi_-EBaOxt",
+"description": "Catch-all for the remaining ~100 raw frames of the August 2026 corporate boardroom workshop that are interchangeable backups of the twenty moments catalogued separately — repeated frames of the live game being run from the laptop, of each teaching slide, and of the table in discussion. Opens the folder, not a single file.",
+"session": "IFM corporate boardroom workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "aug 2026 corporate workshop rest shoot catch all remaining 100 raw frames august boardroom interchangeable backups twenty moments catalogued separately repeated live game being run from laptop each teaching slide table discussion opens folder not single file backup contact sheet"
 }
 ];
