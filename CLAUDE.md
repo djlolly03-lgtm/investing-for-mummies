@@ -43,6 +43,21 @@ Single-file app: `CLAUDE/content/index.html` (~1900 lines, no build step). Six t
 Today · Library · Creator Tracker · Certificates · Competitors · Published.
 `?who=sakshi` gives the simplified daily view; `?admin=1` reveals delete/catalogue buttons.
 
+### ⚠️ There are TWO front ends and TWO catalogues
+
+`/content/` (the hub, six tabs) reads `content/data.js`.
+`/content/v1-prototype/` (the searchable Library built 16–17 Sep 2026) reads
+`content/v1-prototype/v1-catalogue.js`, which is **generated from data.js** by
+`v1-prototype/backfill.py` and must never be hand-edited — hand corrections go in
+`v1-prototype/enrichment.json`, which is applied last and overrides the rules.
+
+Decision 17 Sep 2026: **run both for now, converge on one later.** So anything that writes
+to `data.js` must finish by running `backfill.py`, or the Library silently freezes while the
+hub grows. `daily-content-processor` now does this. Anyone else editing `data.js` must too.
+
+The Library also hides any asset with **no thumbnail and no playable preview** — a row with
+no file is not an asset. A staged row without a thumbnail never appears there at all.
+
 ### Where the data comes from
 
 | Store | ID / location | Feeds |
