@@ -163,6 +163,88 @@ function PlayerView() {
       {ipoResult && (
         <IpoResultModal result={ipoResult} onDismiss={() => setIpoResult(null)} />
       )}
+
+      {/* Reconnect guard — surfaces the "iOS killed my Realtime socket during
+          a phone call" case that would otherwise strand the student on a
+          frozen screen. Dormant during normal play; only fires when the tab
+          returns to the foreground and no state updates arrive. Reloading is
+          safe because identity lives in localStorage and the host's join
+          handler is a no-op for players it still has (engine.js:344-345). */}
+      <ReconnectGuard hasIdentity={!!me} />
+    </div>
+  );
+}
+
+// Tap-to-rejoin overlay. See the note at the render site above for the
+// safety argument. Detection heuristic: track visibilitychange; when the tab
+// comes back to visible after being hidden, give Realtime 4 seconds to
+// deliver a state update. If it doesn't, the pipe is dead — show the overlay.
+// Any incoming state update dismisses the overlay automatically.
+function ReconnectGuard({ hasIdentity }) {
+  const [visible, setVisible] = React.useState(false);
+  const lastStateAtRef = React.useRef(Date.now());
+  const wasHiddenRef   = React.useRef(false);
+  const graceTimerRef  = React.useRef(null);
+
+  React.useEffect(() => {
+    if (!hasIdentity) return;
+    const unsub = window.StockRush.subscribe(() => {
+      lastStateAtRef.current = Date.now();
+      setVisible(false);
+    });
+    function onVis() {
+      if (document.hidden) {
+        wasHiddenRef.current = true;
+        return;
+      }
+      if (!wasHiddenRef.current) return;
+      wasHiddenRef.current = false;
+      lastStateAtRef.current = Date.now(); // reset the silence window
+      clearTimeout(graceTimerRef.current);
+      graceTimerRef.current = setTimeout(() => {
+        const silentFor = Date.now() - lastStateAtRef.current;
+        if (silentFor >= 4000) setVisible(true);
+      }, 4200);
+    }
+    document.addEventListener('visibilitychange', onVis);
+    return () => {
+      unsub && unsub();
+      document.removeEventListener('visibilitychange', onVis);
+      clearTimeout(graceTimerRef.current);
+    };
+  }, [hasIdentity]);
+
+  if (!visible) return null;
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 9999,
+      background: 'rgba(10,14,22,0.96)',
+      backdropFilter: 'blur(8px)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      padding: 24,
+    }}>
+      <div style={{ textAlign: 'center', maxWidth: 380, color: '#fff' }}>
+        <div style={{ fontSize: 64, marginBottom: 18 }}>📡</div>
+        <div style={{ fontSize: 26, fontWeight: 800, marginBottom: 10, letterSpacing: '-0.02em' }}>
+          Lost connection
+        </div>
+        <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.72)', marginBottom: 28, lineHeight: 1.5 }}>
+          Your phone stopped hearing from the game. Tap below to rejoin — your portfolio, cash and holdings are safe.
+        </div>
+        <button
+          onClick={() => window.location.reload()}
+          style={{
+            width: '100%', padding: '18px 24px',
+            background: 'linear-gradient(135deg, #22c55e 0%, #15803d 100%)',
+            border: 'none', borderRadius: 14,
+            color: '#fff', fontSize: 19, fontWeight: 800, letterSpacing: '-0.005em',
+            cursor: 'pointer',
+            boxShadow: '0 10px 28px rgba(34,197,94,0.35), 0 2px 6px rgba(0,0,0,0.25)',
+          }}
+        >
+          Tap to rejoin →
+        </button>
+      </div>
     </div>
   );
 }

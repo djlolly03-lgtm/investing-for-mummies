@@ -1989,6 +1989,43 @@ function escapeHtml(s){return (s+'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&l
 
 /* ── boot ─────────────────────────────────────────────────────── */
 if(isHost) initHost(); else initPlayer();
+
+/* ── Tap-to-rejoin (added 2026-09-17) ────────────────────────────
+   Recovers from iOS Safari's "phone call killed my Realtime socket"
+   case. Dormant during normal play; only wakes when the tab returns
+   to the foreground and no state update has arrived for a few
+   seconds. Reload is portfolio-safe: MY_ID is in localStorage
+   ('mm_pid'), and the host's join handler is a no-op for players
+   still in state.players[a.id]. */
+(function(){
+  if (typeof isHost === 'undefined' || isHost) return;
+  var lastRenderAt = Date.now(), wasHidden = false, graceTimer = null, overlayEl = null;
+  if (typeof renderPlayer === 'function') {
+    var _orig = renderPlayer;
+    renderPlayer = function(){
+      lastRenderAt = Date.now();
+      if (overlayEl) { overlayEl.remove(); overlayEl = null; }
+      return _orig.apply(this, arguments);
+    };
+  }
+  function showOverlay(){
+    if (overlayEl) return;
+    overlayEl = document.createElement('div');
+    overlayEl.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(10,14,22,0.96);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:24px';
+    overlayEl.innerHTML = '<div style="text-align:center;max-width:380px;color:#fff;font-family:system-ui,-apple-system,sans-serif"><div style="font-size:64px;margin-bottom:18px">📡</div><div style="font-size:26px;font-weight:800;margin-bottom:10px;letter-spacing:-0.02em">Lost connection</div><div style="font-size:16px;color:rgba(255,255,255,0.72);margin-bottom:28px;line-height:1.5">Your phone stopped hearing from the game. Tap below to rejoin — your progress is safe.</div><button id="__rejoinBtn" style="width:100%;padding:18px 24px;background:linear-gradient(135deg,#22c55e 0%,#15803d 100%);border:none;border-radius:14px;color:#fff;font-size:19px;font-weight:800;cursor:pointer;box-shadow:0 10px 28px rgba(34,197,94,0.35),0 2px 6px rgba(0,0,0,0.25)">Tap to rejoin →</button></div>';
+    document.body.appendChild(overlayEl);
+    document.getElementById('__rejoinBtn').onclick = function(){ location.reload(); };
+  }
+  document.addEventListener('visibilitychange', function(){
+    if (document.hidden) { wasHidden = true; return; }
+    if (!wasHidden) return;
+    wasHidden = false; lastRenderAt = Date.now();
+    clearTimeout(graceTimer);
+    graceTimer = setTimeout(function(){
+      if (Date.now() - lastRenderAt >= 4000) showOverlay();
+    }, 4200);
+  });
+})();
 </script>
 </body>
 </html>
