@@ -64,8 +64,10 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 /* ------------------------------------------------------- stage (hero/results) */
 /* 52px is the masthead's exact height (16 + 19 + 16 + 1px rule). Anything larger leaves a
    band of page showing through between the two sticky bars as you scroll. */
-.stage{position:sticky;top:52px;z-index:35;background:rgba(252,250,247,.94);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--stone);padding-block:14px}
+/* No rule, no blur, no bar. A full-width border under a full-width control is what made
+   this read as a toolbar pinned above a table of records. The field now sits on the page's
+   own paper and results scroll under it. */
+.stage{position:sticky;top:52px;z-index:35;background:var(--paper);padding-block:20px 12px}
 /* padding-block only — the shared padding-inline above still applies, so the empty-state
    field lines up with the masthead and, more usefully, with the field it turns into the
    moment she types. It used to be a 470px box centred on nothing. */
@@ -85,24 +87,23 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
    Filters stays inside the same group so the two never drift apart. */
 .searchrow{display:flex;gap:10px;align-items:center;max-width:760px}
 .stage.hero .searchrow{margin:0 auto}
-.stage.hero .fbtn{display:none}
+/* Generous and soft rather than tight and utilitarian. The size is doing the talking now
+   that the icon is gone: a field this open reads as an invitation to say something, where
+   a 40px-high box with a lens in it reads as a query bar. */
 .sbox{flex:1;display:flex;align-items:center;gap:10px;background:var(--card);
-  border:1.5px solid var(--stone);border-radius:10px;padding:10px 14px;min-width:0;
+  border:1.5px solid var(--stone);border-radius:12px;padding:13px 18px;min-width:0;
   transition:border-color .15s,box-shadow .15s}
-.stage.hero .sbox{padding:13px 16px;border-radius:11px}
+.stage.hero .sbox{padding:19px 24px;border-radius:15px;
+  box-shadow:0 1px 2px rgba(21,38,63,.03),0 8px 26px -18px rgba(21,38,63,.28)}
 .sbox:focus-within{border-color:var(--navy);box-shadow:0 0 0 3px rgba(12,84,142,.08)}
-.sbox svg{width:16px;height:16px;flex:none;color:var(--muted)}
+.sbox .clr svg{width:16px;height:16px;flex:none}
 .sbox input{flex:1;border:none;outline:none;background:none;font-family:inherit;
-  font-size:14.5px;color:var(--ink);min-width:0}
+  font-size:15px;color:var(--ink);min-width:0}
+.stage.hero .sbox input{font-size:17px}
 .sbox input::placeholder{color:var(--muted)}
 .sbox .clr{color:var(--muted);padding:0;display:none;line-height:0;flex:none;transition:color .15s}
 .sbox .clr:hover{color:var(--display)}
 .sbox.has .clr{display:block}
-.fbtn{display:flex;align-items:center;gap:7px;border:1.5px solid var(--stone);
-  background:var(--card);border-radius:10px;padding:10px 15px;font-size:13.5px;
-  font-weight:500;color:var(--ink-2);white-space:nowrap}
-.fbtn:hover,.fbtn.on{border-color:var(--navy);color:var(--navy)}
-.fbtn .dot{width:5px;height:5px;border-radius:50%;background:var(--navy)}
 .try{display:none}
 /* Left-aligned to the field's own left edge, not centred — that is how the storyboard
    sets it, and it gives the empty state a second alignment to hang on. */
@@ -163,8 +164,16 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 
 .summary{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
   padding:20px 0 16px;flex-wrap:wrap}
-.summary h2{font-size:14px;font-weight:600;margin:0;color:var(--display)}
-.summary .sub{font-size:12.5px;color:var(--muted)}
+/* Serif, and a sentence rather than a count. "6 relevant results / Most relevant first" is
+   a database reporting its query plan; this is the library telling her what it found. */
+.summary h2{font-family:var(--f-d);font-weight:500;font-size:16.5px;margin:0;
+  color:var(--display);letter-spacing:-.005em}
+/* Refine is the old Filters control, demoted out of the primary row: quiet text, no border,
+   no icon, no pill. Present for the person who wants it, invisible to the person who does
+   not — which is the opposite of a bordered button sitting beside the field. */
+.summary .refine{font-size:12.5px;color:var(--muted);padding:0;line-height:1.4;
+  border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.summary .refine:hover,.summary .refine.on{color:var(--navy);border-bottom-color:var(--navy)}
 
 /* Gutters measured off the storyboard: the column gap there is ~11% of the card width,
    and the row gap runs about a quarter wider again so rows read as rows. */
@@ -329,7 +338,6 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
      by a washed-out photograph almost entirely below the fold. */
   .heroimg{display:none}
   .stage{top:44px;padding-block:11px} .stage.hero{padding:3.5vh 16px 0}  /* 13+17+13+1 */
-  .searchrow{flex-wrap:wrap;gap:9px} .fbtn{width:100%;justify-content:center}
   .wrap{padding:0 16px} .mast,.stage{padding-inline:16px}
   /* The storyboard's mobile header carries the count alone — the sort note is the first
      thing to go when there is 343px to play with. */
@@ -388,16 +396,14 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 
 <div class="stage hero" id="stage">
   <div class="herotext"><h1>What are you looking for?</h1></div>
+  <!-- A request field, not a search box. The magnifier is deliberately gone: a hand lens is
+       the universal mark of "query this database", and it was the first thing on the page
+       telling her she was addressing a system rather than asking for something. -->
   <div class="searchrow">
     <div class="sbox" id="sbox">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
-      <input id="q" type="search" placeholder="Search the IFM library…" autocomplete="off" aria-label="Search the IFM library">
-      <button class="clr" id="clearq" aria-label="Clear search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <input id="q" type="search" placeholder="Tell us what you're looking for…" autocomplete="off" aria-label="Tell us what you're looking for">
+      <button class="clr" id="clearq" aria-label="Clear"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
-    <button class="fbtn" id="fbtn">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 5h18M6 12h12M10 19h4"/></svg>
-      Filters<span class="dot" id="fdot" hidden></span>
-    </button>
   </div>
   <div class="try">
     <span class="lbl">Try</span>
@@ -413,11 +419,13 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 </figure>
 
 <main class="wrap" id="main" hidden>
+  <!-- Summary first, then the refine panel it belongs to: the control that opens it now
+       lives on the summary line, so the panel has to unfold directly beneath it. -->
+  <div class="summary" id="summary"></div>
   <div class="filters" id="filters">
     <div class="fgrid" id="fgrid"></div>
     <button class="fclear" id="fclear" hidden>Clear filters</button>
   </div>
-  <div class="summary" id="summary"></div>
   <div id="results"></div>
 </main>
 
@@ -781,8 +789,7 @@ function render(){
   $('libcount').textContent=`${ASSETS.length} assets`;
   $('libcount').hidden=!heroMode;          // empty state only, as the storyboard has it
   $('sbox').classList.toggle('has',searching);
-  $('fbtn').classList.toggle('on',activeFilters()>0);
-  $('fdot').hidden=!activeFilters(); $('fclear').hidden=!activeFilters();
+  $('fclear').hidden=!activeFilters();
   if(heroMode) return;
 
   const {strong,weak}=currentResults();
@@ -796,8 +803,12 @@ function render(){
     </div>`;
     return;
   }
-  $('summary').innerHTML=`<h2>${strong.length} ${searching?'relevant result':'asset'}${strong.length===1?'':'s'}</h2>
-    <span class="sub">${searching?'Most relevant first':'Newest first'}</span>`;
+  // A sentence, not a query report. "Found" rather than "I found": first person is where an
+  // assistant persona starts, and this is a library that understood her, not a chatbot.
+  const n=strong.length, piece=`${n} piece${n===1?'':'s'} of content`;
+  const nf=activeFilters();
+  $('summary').innerHTML=`<h2>${searching?`Found ${piece}`:piece}</h2>
+    <button class="refine${nf?' on':''}" data-act="filters">Refine${nf?` · ${nf}`:''}</button>`;
   let html='<div class="grid">'+strong.map(card).join('');
   if(weak.length&&state.showWeak) html+='<div class="sep">Weaker matches</div>'+weak.map(card).join('');
   html+='</div>';
@@ -914,7 +925,6 @@ $('q').addEventListener('input',e=>{state.q=e.target.value;state.showWeak=false;
 $('clearq').onclick=()=>{setQuery('',{engage:false});$('q').focus();};
 $('home').onclick=()=>{state.filters={};$('fgrid').querySelectorAll('select').forEach(x=>x.value='');
   setQuery('',{engage:false});window.scrollTo({top:0});};
-$('fbtn').onclick=()=>$('filters').classList.toggle('open');
 $('fclear').onclick=clearFilters;
 $('dclose').onclick=closeDetail; $('dback').onclick=closeDetail; $('scrim').onclick=closeDetail;
 // The modal's own backdrop. #detail now covers the viewport to centre the card, so it sits
@@ -927,6 +937,9 @@ document.addEventListener('click',e=>{
   const act=e.target.closest('[data-act]'); if(!act)return;
   const a=act.dataset.act;
   if(a==='weak'){state.showWeak=true;render();}
+  // Refine lives inside the summary, which is rebuilt on every render, so it cannot
+  // carry its own handler the way the old static Filters button did.
+  if(a==='filters')$('filters').classList.toggle('open');
   if(a==='clearq')setQuery('',{engage:false});
   if(a==='clearf')clearFilters();
   if(a==='copy'){const h=act.dataset.href; if(!h)return;
