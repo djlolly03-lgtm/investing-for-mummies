@@ -236,10 +236,27 @@ function interpret(query) {
 function run(query, engine) {
   const it = interpret(query);
 
-  /* Nothing contentful survived ("do we have anything?"). Handing the engine an empty
-   * string makes it return the whole library, which is the worst possible answer and
-   * would break the must-return-nothing guarantees. Return nothing instead. */
-  if (!it.search_text) return { interpretation: it, results: [] };
+  /* Nothing contentful survived. Two very different cases reach here and they must not
+   * share an answer.
+   *
+   * "reel" is the one that caught me. It is a purpose word, so it is stripped — but it is
+   * ALSO a type word, so the interpretation still carries type=Video. Searching for "reel"
+   * returned NOTHING while meaning "show me the videos", which is about as wrong as a
+   * library gets. When a constraint survives, honour it: the request was understood, it
+   * just had no free text in it.
+   *
+   * "do we have anything?" or a bare "instagram" leaves no constraint either. There the
+   * honest answer really is nothing — she has described a destination, not content, and
+   * handing the engine an empty string makes it return all 345 assets, which is the worst
+   * possible response and breaks the must-return-nothing guarantees. */
+  if (!it.search_text) {
+    const c0 = it.explicit_constraints;
+    if (!c0.type && !c0.person.length) return { interpretation: it, results: [] };
+    let all = engine('');                       // every asset, unranked
+    if (c0.type) all = all.filter(r => r.a.type === c0.type);
+    if (c0.person.length) all = all.filter(r => c0.person.every(p => (r.a.person || []).includes(p)));
+    return { interpretation: it, results: all };
+  }
 
   let results = engine(it.search_text);
 
