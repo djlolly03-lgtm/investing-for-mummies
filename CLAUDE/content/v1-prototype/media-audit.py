@@ -23,7 +23,7 @@ WHY THIS EXISTS
   The output is a SEPARATE file. The approved catalogue, taxonomy and search engine are
   frozen and are not touched.
 """
-import json, os, re, sys, urllib.request, urllib.error
+import json, os, re, subprocess, sys, urllib.request, urllib.error
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CAT = os.path.join(HERE, 'v1-catalogue.js')
@@ -62,6 +62,42 @@ def probe(url, timeout=20):
         return 0
 
 
+DEPLOY = os.path.abspath(os.path.join(HERE, '..', '..'))
+
+
+def duration(url):
+    """Measure a playable clip's real length, in m:ss.
+
+    Added 17 Sep 2026 after a re-run of this script silently wiped all 34 durations from
+    media-map.js. They had been written by some other pass and this script has never
+    computed them, so every regeneration lost them — a fact nobody noticed because
+    nobody regenerated. The UI shows `dur` beside the play badge and shows nothing when
+    it is absent, so the failure was invisible rather than loud.
+
+    Measured with ffprobe, never guessed: a duration on a card is a promise about the
+    file, the same class of claim as the play badge itself. Prefers the local copy when
+    the URL is one of ours, because probing 60 files over the network is slow and the
+    bytes are identical.
+    """
+    local = None
+    if url.startswith('https://ifm-deploy.vercel.app/'):
+        cand = os.path.join(DEPLOY, url.replace('https://ifm-deploy.vercel.app/', '').split('?')[0])
+        if os.path.isfile(cand):
+            local = cand
+    try:
+        out = subprocess.run(
+            ['ffprobe', '-v', 'error', '-show_entries', 'format=duration',
+             '-of', 'default=nw=1:nk=1', local or url],
+            capture_output=True, text=True, timeout=60,
+            env={**os.environ, 'PATH': '/opt/homebrew/bin:' + os.environ.get('PATH', '')})
+        secs = float(out.stdout.strip())
+    except Exception:
+        return None                      # no duration is fine; a wrong one is not
+    if secs <= 0:
+        return None
+    return '%d:%02d' % (int(secs) // 60, int(secs) % 60)
+
+
 def main():
     rows = load_catalogue()
     offline = '--offline' in sys.argv
@@ -92,6 +128,7 @@ def main():
             # `silent` only means something for a file that actually plays.
             out[r['id']] = {'kind': 'video', 'playable': ok,
                             'url': u if ok else None,
+                            'dur': duration(u) if ok else None,
                             'silent': bool(r.get('silent')) if ok else False}
             stats['playable' if ok else 'unavailable'] += 1
         elif t == 'Carousel':
