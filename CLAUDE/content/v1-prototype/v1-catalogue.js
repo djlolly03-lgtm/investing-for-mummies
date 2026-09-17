@@ -4,8803 +4,8803 @@
  */
 window.IFM_V1 =
 [
-{
-"id": "IFM-R01",
-"title": "Money Map — game reel",
-"date": "2026-06-20",
-"thumb": "../thumbs/IFM-R01.jpg",
-"video": "https://ifm-deploy.vercel.app/content/reels/moneymap-15s.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/reels/moneymap-15s.mp4",
-"description": "15s 9:16 promo reel. Opens on Seedance-animated real budgeting-workshop footage with the hook 'Where does your money actually go?', cuts to punch-ins of the purple Money Map budget tracker ('Every rupee, mapped'), closes on the round IFM end-card. Gen-Z budget tracker.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Managing Money"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "money map game reel 15s promo opens seedance animated real budgeting workshop footage hook where does your actually cuts punch ins purple budget tracker every rupee mapped closes round ifm end card gen 9x16 vertical"
-},
-{
-"id": "IFM-R02",
-"title": "Broke by Friday — game reel",
-"date": "2026-06-20",
-"thumb": "../thumbs/IFM-R02.jpg",
-"video": "https://ifm-deploy.vercel.app/content/reels/bbf-15s.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/reels/bbf-15s.mp4",
-"description": "15s 9:16 reel. Hook over real classroom footage — 'Survive the month on ₹10,000?' — into the Broke by Friday life-sim screens ('Will you make it?'), coral/gold theme, IFM end-card.",
-"session": "",
-"slide_text": "A chaotic money sim. Survive the month on Rs 10,000? 28 days. Surprise bills. Pure chaos.",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "broke friday game reel 15s hook over real classroom footage survive month ₹10 000 into life sim screens will you make coral gold theme ifm end card gen promo vertical"
-},
-{
-"id": "IFM-R03",
-"title": "Need / Want / Value — game reel",
-"date": "2026-06-20",
-"thumb": "../thumbs/IFM-R03.jpg",
-"video": "https://ifm-deploy.vercel.app/content/reels/nwv-15s.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/reels/nwv-15s.mp4",
-"description": "15s 9:16 reel. Workshop crane-shot hook 'Need it? Want it? Or gold?' into the Need·Want·Value sorting screens ('Build mindful habits'), navy/blue theme, IFM end-card.",
-"session": "",
-"slide_text": "Need it? Want it? Or gold? Build mindful habits",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Managing Money"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "need want value game reel 15s workshop crane shot hook gold into sorting screens build mindful habits navy blue theme ifm end card spending vertical"
-},
-{
-"id": "IFM-R04",
-"title": "3 Buckets — game reel",
-"date": "2026-06-20",
-"thumb": "../thumbs/IFM-R04.jpg",
-"video": "https://ifm-deploy.vercel.app/content/reels/buckets-15s.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/reels/buckets-15s.mp4",
-"description": "15s 9:16 reel. 'How should you split your salary?' over real workshop footage, into the 3 Buckets sorting game ('Find your ideal split'), green/gold theme, IFM end-card.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Managing Money",
-"3-Bucket Investing"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "buckets game reel 15s how should you split your salary over real workshop footage into sorting find ideal green gold theme ifm end card budgeting vertical"
-},
-{
-"id": "IFM-R05",
-"title": "Stock Rush — game reel",
-"date": "2026-06-20",
-"thumb": "../thumbs/IFM-R05.jpg",
-"video": "https://ifm-deploy.vercel.app/content/reels/stockrush-15s.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/reels/stockrush-15s.mp4",
-"description": "15s 9:16 reel mixing teacher + student views. Real students watching a live leaderboard (Seedance) → host leaderboard screen ('Teacher view') → player trading screen ('Student view'), black/green market theme, IFM end-card.",
-"session": "",
-"slide_text": "Teacher view Student view",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Stocks / Equity",
-"Stock Market"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "stock rush game reel 15s mixing teacher student views real students watching live leaderboard seedance host screen view player trading black green market theme ifm end card classroom vertical"
-},
-{
-"id": "IFM-R06",
-"title": "Stock Rush PRO — game reel",
-"date": "2026-06-20",
-"thumb": "../thumbs/IFM-R06.jpg",
-"video": "https://ifm-deploy.vercel.app/content/reels/srpro-15s.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/reels/srpro-15s.mp4",
-"description": "15s 9:16 reel, premium black/gold. Mentor-at-whiteboard hook 'Think you can beat the market?' into the real Stock Rush PRO screens — the '6 corporate actions' teacher briefing and the 'decade of India's markets in 30 min' landing — IFM end-card.",
-"session": "",
-"slide_text": "Think you can beat the market? 6 corporate actions decade of India",
-"silent": false,
-"type": "Video",
-"status": "Published",
-"format": "Social / Promotional",
-"topic": [
-"Stocks / Equity",
-"Stock Market"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "stock rush pro game reel 15s premium black gold mentor whiteboard hook think you can beat market into real screens corporate actions teacher briefing decade india markets min landing ifm end card advanced trading portfolio vertical"
-},
-{
-"id": "IFM-R07",
-"title": "Hidden Fortunes — game reel",
-"date": "2026-06-20",
-"thumb": "../thumbs/IFM-R07.jpg",
-"video": "https://ifm-deploy.vercel.app/content/reels/hidden-15s.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/reels/hidden-15s.mp4",
-"description": "15s 9:16 reel, teal/gold. 'What's hiding in your daily habits?' over real footage → Hidden Fortunes SIP-projection screens ('Watch it compound'), IFM end-card.",
-"session": "",
-"slide_text": "s hiding in your daily habits? Watch it compound",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Compounding",
-"Wealth"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "sip systematic investment plan monthly investing hidden fortunes game reel 15s teal gold what hiding your daily habits over real footage sip projection screens watch compound ifm end card compounding vertical"
-},
-{
-"id": "IFM-R08",
-"title": "Swayamvar — game reel",
-"date": "2026-06-20",
-"thumb": "../thumbs/IFM-R08.jpg",
-"video": "https://ifm-deploy.vercel.app/content/reels/swayamvar-15s.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/reels/swayamvar-15s.mp4",
-"description": "15s 9:16 reel built from the festive Swayamvar teaser. Marigold/pink theme, photoreal suitors (Mr Equity, Miss Gold, Mr Debt), 'Your money needs the right rishta' → 'Pick the one', IFM end-card. Investment matchmaking game.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Stocks / Equity",
-"Fixed Income",
-"Gold"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "swayamvar game reel 15s built from festive teaser marigold pink theme photoreal suitors equity miss gold debt your money needs right rishta pick one ifm end card investment matchmaking products vertical"
-},
-{
-"id": "IFM-R09",
-"title": "Fund YOUR Goal — game reel",
-"date": "2026-06-20",
-"thumb": "../thumbs/IFM-R09.jpg",
-"video": "https://ifm-deploy.vercel.app/content/reels/fundgoal-15s.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/reels/fundgoal-15s.mp4",
-"description": "15s 9:16 reel, teal. 'Got a goal? Get the plan.' over real footage → the Fund YOUR Goal SIP calculator + cost-of-delay screen ('Start today, not someday'), IFM end-card.",
-"session": "",
-"slide_text": "Got a goal? Get the plan. Start today, not someday",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Financial Planning"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "sip systematic investment plan monthly investing fund your goal game reel 15s teal got get plan over real footage sip calculator cost delay screen start today not someday ifm end card based vertical"
-},
-{
-"id": "IFM-R10",
-"title": "The Wealth Conversation — game reel",
-"date": "2026-06-20",
-"thumb": "../thumbs/IFM-R10.jpg",
-"video": "https://ifm-deploy.vercel.app/content/reels/wealth-15s.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/reels/wealth-15s.mp4",
-"description": "15s 9:16 reel, premium gold. Cinematic chapter-hero footage, 'The conversation every family avoids' → 'Watch. Reflect. Talk.' → the Wealth Conversation title screen, IFM end-card.",
-"session": "",
-"slide_text": "The conversation every family avoids Watch. Reflect. Talk.",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Money Conversations",
-"Family & Money"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "wealth conversation game reel 15s premium gold cinematic chapter hero footage every family avoids watch reflect talk title screen ifm end card legacy reflection vertical"
-},
-{
-"id": "IFM-R11",
-"title": "Lifestyle Time Machine — game reel",
-"date": "2026-06-20",
-"thumb": "../thumbs/IFM-R11.jpg",
-"video": "https://ifm-deploy.vercel.app/content/reels/lifestyle-time-machine-15s.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/reels/lifestyle-time-machine-15s.mp4",
-"description": "15s 9:16 reel. Real class footage hook 'Can you afford your future?' → dream-life game screens → the 2031 inflation reveal ('Same dreams. Lakhs more.') → real students playing, purple/pink theme, IFM end-card.",
-"session": "",
-"slide_text": "Can you afford your future? Same dreams. Lakhs more.",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Compounding",
-"Inflation & Interest Rates"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "lifestyle time machine game reel 15s real class footage hook can you afford your future dream life screens 2031 inflation reveal same dreams lakhs more students playing purple pink theme ifm end card compounding classroom vertical"
-},
-{
-"id": "IFM-001",
-"title": "Session 12 Mar — Speaker with Risk vs Reward slide",
-"date": "2026-03-12",
-"thumb": "../thumbs/IFM-001.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1lOaOhLWBhSwNsRQy8DvPYMDT6G5_2T8c/view",
-"description": "A speaker stands beside a projector screen showing a 'Risk vs Reward' slide, addressing rows of seated women in a bright community hall. The IFM roll-up banner is visible at stage left.",
-"session": "",
-"slide_text": "Risk vs Reward",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Women & Money",
-"Risk & Returns"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "session mar speaker risk reward slide stands beside projector screen showing addressing rows seated women bright community hall ifm roll banner visible stage left presentation audience financial education daytime"
-},
-{
-"id": "IFM-002",
-"title": "Session 12 Mar — Wide shot of attendees",
-"date": "2026-03-12",
-"thumb": "../thumbs/IFM-002.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1uEgijIwl8oxfKcIL-j-MPTQtoWLFE6cP/view",
-"description": "Wide shot of roughly 25 attendees seated at long tables with IFM workbooks and notepads, listening attentively during the session.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context session mar wide shot attendees roughly seated long tables ifm workbooks notepads listening attentively during audience community hall engagement women financial literacy"
-},
-{
-"id": "IFM-003",
-"title": "Session 12 Mar — Mums collaborating on budgeting worksheet",
-"date": "2026-03-12",
-"thumb": "../thumbs/IFM-003.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1g132C_jP_gspHXNRz2ai91SZGBp6CxYz/view",
-"description": "Close-up of three women collaborating over a budgeting worksheet, one pointing at a figure with a pen; coffee cups and calculators on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Managing Money",
-"Money Conversations"
-],
-"person": [
-"Other Person",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "collaborating budgeting worksheet pointing pen working together small group hands on activity"
-},
-{
-"id": "IFM-004",
-"title": "Session 12 Mar — Raw session video",
-"date": "2026-03-12",
-"thumb": "../thumbs/IFM-004.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-004.mp4",
-"drive": "https://drive.google.com/file/d/1am2wan2BSu-04ebq2dzm_q4o9DX1oGPI/view",
-"description": "Raw 365 MB video from the 12 March session — not yet analysed or clipped.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [],
-"person": [
-"Other Person",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "session mar raw video 365 from march not yet analysed clipped footage financial education workshop"
-},
-{
-"id": "IFM-005",
-"title": "SpaceX IPO — What's All The Buzz About? (IPO Series)",
-"date": "2026-06-09",
-"thumb": "../https://ifm-deploy.vercel.app/carousel_spacex_higgsfield/slide_01.png",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/carousel_spacex_higgsfield/slide_01.png",
-"description": "8-slide dark-navy carousel: 'SpaceX IPO: What's All The Buzz About? The biggest IPO in history may be here' — rocket emoji lift-off, teal serif headline, IPO SERIES badge.",
-"session": "",
-"slide_text": "SpaceX IPO: What",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Stocks / Equity",
-"Stock Market",
-"IPOs"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "spacex ipo what all buzz about series slide dark navy carousel biggest history may here rocket emoji lift off teal serif headline badge stock market listing investing news theme slides"
-},
-{
-"id": "IFM-006",
-"title": "Wealth Conversation Ch.1 — Why Saving Isn't Enough",
-"date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap1.png",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter1-why-saving-isnt-enough/chap1hero.mp4",
-"description": "Split-screen of two coin jars on a wooden table: the left jar gathers dust and smoke while the right sprouts a glowing sapling that blooms into a golden money tree dripping coins. Saving stagnates; investing grows.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Ready",
-"format": "B-roll",
-"topic": [
-"Saving vs Investing",
-"Saving"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "wealth conversation why saving isn enough split screen two coin jars wooden table left jar gathers dust smoke while right sprouts glowing sapling blooms into golden money tree dripping coins stagnates investing grows savings growth"
-},
-{
-"id": "IFM-007",
-"title": "Wealth Conversation Ch.2 — Inflation",
-"date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap2.png",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter2-inflation-carousel/chap2test2.mp4",
-"description": "A single coin sprouts a green seedling that grows into a gold-coin tree (test render). The other file in this folder is byte-identical to Ch.1's video — final Ch.2 hero still pending.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Inflation & Interest Rates"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "wealth conversation inflation single coin sprouts green seedling grows into gold tree test render other file folder byte identical video final hero still pending sprout growth chapter money plant"
-},
-{
-"id": "IFM-008",
-"title": "Wealth Conversation Ch.3 — Purchasing Power",
-"date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap3.png",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter3-purchasing-power/chap3hero.mp4",
-"description": "A wire shopping basket on a kitchen counter holds glowing everyday essentials — groceries, schoolbook, toy plane, medicine, petrol pump, toy house — whose golden glow fades as prices bite. The same basket buys less every year.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Ready",
-"format": "B-roll",
-"topic": [
-"Family & Money",
-"Inflation & Interest Rates"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "wealth conversation purchasing power wire shopping basket kitchen counter holds glowing everyday essentials groceries schoolbook toy plane medicine petrol pump house whose golden glow fades prices bite same buys less every year inflation school items"
-},
-{
-"id": "IFM-009",
-"title": "Wealth Conversation Ch.4 — Magic of Compounding",
-"date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap4.png",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter4-magic-of-compounding/chap4hero.mp4",
-"description": "Cash bundles rain down beside a desk calendar and a sign '₹10,000 invested at 12% per year', stacking into a tower labelled '20 yrs ₹96,463' that morphs into a Burj Khalifa-style skyscraper. One sum compounds into a monument.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Ready",
-"format": "B-roll",
-"topic": [
-"Compounding"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "wealth conversation magic compounding cash bundles rain down beside desk calendar sign ₹10 000 invested per year stacking into tower labelled yrs ₹96 463 morphs burj khalifa style skyscraper one sum compounds monument stack 10000 rupees percent 96463 money years"
-},
-{
-"id": "IFM-010",
-"title": "Wealth Conversation Ch.5 — Small Amounts Matter",
-"date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap5.png",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter5-small-amounts-matter/chap5hero.mp4",
-"description": "A sign reads '₹5,000 per month at 12% per year' beside a flip calendar; note stacks rocket upward in a blur of light and settle as a mountain of gold coins behind the gold IFM medallion. Small monthly SIPs build a fortune.",
-"session": "",
-"slide_text": "₹5,000 per month at 12% per year",
-"silent": true,
-"type": "Video",
-"status": "Ready",
-"format": "B-roll",
-"topic": [],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "sip systematic investment plan monthly investing wealth conversation small amounts matter sign reads 000 per month year beside flip calendar note stacks rocket upward blur light settle mountain gold coins behind ifm medallion monthly sips build fortune sip 5000 rupees percent cash bundles coin"
-},
-{
-"id": "IFM-011",
-"title": "Wealth Conversation Ch.6 — Growing With Income",
-"date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap6.png",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter6-growing-with-income/chap6hero.mp4",
-"description": "Two banded cash stacks sit side by side on dark wood; one grows into a towering skyscraper of note bundles, closing on the gold IFM coin leaning against the piles. Step up investing as income steps up.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Ready",
-"format": "B-roll",
-"topic": [
-"Wealth",
-"Family & Money"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "sip systematic investment plan monthly investing wealth conversation growing income two banded cash stacks sit side dark wood one grows into towering skyscraper note bundles closing gold ifm coin leaning against piles step investing steps money tower banknote growth comparison sip"
-},
-{
-"id": "IFM-012",
-"title": "Wealth Conversation Ch.7 — Cost of Waiting",
-"date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap7.png",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter7-cost-of-waiting/chap7hero.mp4",
-"description": "Coins rain into three piggy boxes labelled Tanya (22), Kabil (27) and Rojan (32), growing into glowing coin towers — the 22-year-old's tower ends tallest by far (₹2.87cr vs ₹1.64cr). Every year you wait costs crores.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Ready",
-"format": "B-roll",
-"topic": [
-"Wealth"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "wealth conversation cost waiting coins rain into three piggy boxes labelled tanya kabil rojan growing glowing coin towers year old tower ends tallest far 87cr 64cr every you wait costs crores falling start early age bars"
-},
-{
-"id": "IFM-013",
-"title": "Wealth Conversation Ch.8 — Hidden Treasures",
-"date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap8.png",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter8-hidden-treasures/chap8hero.mp4",
-"description": "Small lifestyle spends — nail polish, lipstick, a scooter, shopping bag, teacup, movie clapperboard — float up and dissolve one by one into a swelling heap of gold coins under the IFM logo. Everyday spends are hidden treasure.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Ready",
-"format": "B-roll",
-"topic": [],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "wealth conversation hidden treasures small lifestyle spends nail polish lipstick scooter shopping bag teacup movie clapperboard float dissolve one into swelling heap gold coins under ifm logo everyday treasure movies coin pile latte factor"
-},
-{
-"id": "IFM-014",
-"title": "Wealth Conversation Ch.9 — Goals First",
-"date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap9.png",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter9-goals-first/chap9hero.mp4",
-"description": "A worried cartoon gold-coin sits at a desert crossroads crowded with signposts shouting Stocks, FDs and Gold — 'choosing investments before you choose your destination' — until a glowing Home signpost points the way. Goal first, product after.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Financial Planning",
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "wealth conversation goals first worried cartoon gold coin sits desert crossroads crowded signposts shouting stocks fds choosing investments before you choose your destination until glowing home signpost points way goal product after confused sign"
-},
-{
-"id": "IFM-015",
-"title": "Wealth Conversation Ch.10 — Three Buckets",
-"date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap10.png",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter10-three-buckets/chap10hero.mp4",
-"description": "Neon goal icons (plane, house, graduation cap, medical cross, palm tree) float on black — 'We don't have just one financial goal' — then three glowing buckets (red shield, blue house, green rocket) line up: 'Different goals need different kinds of money.'",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Ready",
-"format": "Certificate",
-"topic": [
-"3-Bucket Investing"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "certificate completion graduation proud achievement social proof wealth conversation three buckets neon goal icons plane house graduation cap medical cross palm tree float black don have just one financial then glowing red shield blue green rocket line different goals need kinds money canisters coins safety growth dreams"
-},
-{
-"id": "IFM-016",
-"title": "Join IFM now",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-016.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1eVutEOYaeP5f1oxyIQsmxwmxBNs-mrx3",
-"description": "Minimal type-only slide on a light teal pixel-grid background with the playful headline 'JOIN Investing for Mummies NOWWWWWWWW' in mixed serif/sans navy type, IFM wordmark top right.",
-"session": "",
-"slide_text": "JOIN Investing for Mummies NOWWWWWWWW",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Investing"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "join ifm now minimal type only slide light teal pixel grid background playful headline investing mummies nowwwwwwww mixed serif sans navy wordmark top right call action sign community typography copy brand awareness carousel cover"
-},
-{
-"id": "IFM-017",
-"title": "Learning with IFM",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-017.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1KAI5PADUhgopnqiaQTlFOtDczT9loXbl",
-"description": "Cream slide asking 'Do words like Nifty, Sensex, PE Ratios make your brain instantly switch off?' with jargon terms in navy pill badges and a navy/gold candlestick chart along the bottom.",
-"session": "",
-"slide_text": "Do words like Nifty, Sensex, PE Ratios make your brain instantly switch off?",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Investing",
-"Stocks / Equity"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "learning ifm cream slide asking words like nifty sensex ratios make your brain instantly switch off jargon terms navy pill badges gold candlestick chart along bottom financial beginner investing relatable hook palette"
-},
-{
-"id": "IFM-018",
-"title": "Power of Compounding",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-018.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1a17dQ-OiJ479dcYTNbyLQm7JYPWSCpn5",
-"description": "Mint-green slide with headline 'Wanna end up RICHER than someone investing WAAAAAYYYYY more money than you?' above a photo of a hand clutching crumpled rupee notes.",
-"session": "",
-"slide_text": "Wanna end up RICHER than someone investing WAAAAAYYYYY more money than you?",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Compounding",
-"Wealth",
-"Money Conversations"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "power compounding mint green slide headline wanna end richer than someone investing waaaaayyyyy more money you above photo hand clutching crumpled rupee notes compound interest wealth building start early hook question collage"
-},
-{
-"id": "IFM-019",
-"title": "Right time to learn",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-019.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1YuNP75eJAwlot448jHgzS8XS5NmJV3V0",
-"description": "Cream slide with serif headline 'IT'S ALWAYS THE RIGHT TIME to start learning about investing!' above a minimalist clock-face illustration, faded rupee coins behind.",
-"session": "",
-"slide_text": "S ALWAYS THE RIGHT TIME to start learning about investing!",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Investing"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "right time learn cream slide serif headline always start learning about investing above minimalist clock face illustration faded rupee coins behind now timing motivation palette typography"
-},
-{
-"id": "IFM-020",
-"title": "Savings vs Investing",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-020.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1uMZq13u1Hf_nvMX6WMqPcAs2fjII7mB9",
-"description": "Textured beige cover titled 'What is Savings Vs Investments' with a hand dropping a banknote into a pink piggy bank.",
-"session": "",
-"slide_text": "What is Savings Vs Investments",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Saving vs Investing",
-"Saving",
-"Family & Money"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "savings investing textured beige cover titled what investments hand dropping banknote into pink piggy bank money basics explainer comparison texture photo illustration beginner"
-},
-{
-"id": "IFM-021",
-"title": "School",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-021.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1iThpvYEB0Y59ziS3YTOpM5jbV5oI1tt1",
-"description": "Flat-lay of a spiral notebook, pencil and calculator with the line 'Crazy that school taught us trigonometry but not about taxes, investing or credit cards.'",
-"session": "",
-"slide_text": "Crazy that school taught us trigonometry but not about taxes, investing or credit cards.",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Money Mindset",
-"Family & Money"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "school education gap trigonometry taxes credit cards financial literacy relatable hook notebook flat lay"
-},
-{
-"id": "IFM-022",
-"title": "What IFM is Not",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-022.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1amkwMb8xJ15ucjtkq6AqDLiqX6NB4vuv",
-"description": "Five-slide cream carousel opening 'Don't buy that stock.. just because someone said so.' — disclaims tip-giving and promises jargon-free, safe, empowering learning.",
-"session": "",
-"slide_text": "t buy that stock.. just because someone said so.",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Money Mindset",
-"Stocks / Equity"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "what ifm not five slide cream carousel opening don buy stock just because someone said disclaims tip giving promises jargon free safe empowering learning tips myth busting brand positioning palette illustration trust"
-},
-{
-"id": "IFM-023",
-"title": "Why IFM Exists",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-023.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1L9ushgmQ3pmO3JF5yL-UdtwQT3xCli8-",
-"description": "Cream slide asking 'Why do so many capable women still feel intimidated by money?' above a photo of a stressed woman holding her temples, faded gold coins behind.",
-"session": "",
-"slide_text": "Why do so many capable women still feel intimidated by money?",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Portrait",
-"topic": [
-"Money Mindset",
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "portrait headshot founder press media kit agency bio why ifm exists cream slide asking many capable women still feel intimidated money above photo stressed woman holding her temples faded gold coins behind intimidation anxiety brand purpose empowerment portrait palette"
-},
-{
-"id": "IFM-024",
-"title": "Why Women Feel Left Out",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-024.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1UsqgAdCafw_Qu0HIPNi_JmzIctr-qNN-",
-"description": "Slide asking 'If you suddenly had to manage all your finances today, would you know WHERE TO START?' with a retro-styled woman reading a newspaper beside a money-bag illustration.",
-"session": "",
-"slide_text": "If you suddenly had to manage all your finances today, would you know WHERE TO START?",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Money Conversations",
-"Financial Independence",
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "why women feel left out slide asking you suddenly had manage all your finances today would know where start retro styled woman reading newspaper beside money bag illustration financial independence collage management hook question indian"
-},
-{
-"id": "IFM-025",
-"title": "Inflation — ₹500 is shrinking",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-025.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/17EErsy4pp7huiMwSLU8lGcWr2OQxifvE",
-"description": "Vertical reel of a smiling woman in a red dress holding a ₹500 note, with stacked text 'Your 500 rupee note is SHRINKING SHRINKING SHRINKING every year!'",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Inflation & Interest Rates"
-],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "candid warm natural unposed relaxed friendly celebration inflation ₹500 shrinking vertical reel smiling woman red dress holding note stacked text your 500 rupee every year purchasing power cover presenter money video hook"
-},
-{
-"id": "IFM-026",
-"title": "Story — Hiral intro",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-026.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1YuwVgssHrbwh6eyLtgiBYtbWqOkP9lQS",
-"description": "Mint story introducing the founder: 'Hi, I'm Hiral Goel.' with photo and credential pills — business journalist 10+ years at Business India, led Businessman of the Year, mother of 2.",
-"session": "",
-"slide_text": "Hi, I'm Hiral Goel. Business Journalist for 10+ years at Business India magazine. Organised and led the magazine's prestigious Businessman of the Year property. Mother of 2.",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "founder intro about hiral goel business journalist business india credentials bio mother of two personal brand"
-},
-{
-"id": "IFM-027",
-"title": "Story S1 — Finance was not made easy",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-027.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/12OeXN5iJf2glhfZounnSTWvqemZcnEOb",
-"description": "Cream story with scattered teal pill badges of jargon words (Compounding, Investing, Inflation, SIPs, Mutual Funds) held up by two hands: 'Finance was never made easy for most of us.'",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Compounding",
-"Mutual Funds",
-"Inflation & Interest Rates"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "story finance was not made easy cream scattered teal pill badges jargon words compounding investing inflation sips mutual funds held two hands never most format relatable financial literacy"
-},
-{
-"id": "IFM-028",
-"title": "Story S2 — Words people secretly Google",
-"date": "2026-06-11",
-"thumb": "",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/17U-InCX9Lwgf-PYS7lSsDA6HGB-_Ayzp",
-"description": "(Not yet analysed — only a .psd source file delivered.)",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [],
-"person": [],
-"source": "Aakara",
-"search_terms": "story words people secretly google not yet analysed only psd source file delivered finance terms jargon glossary format curiosity financial literacy"
-},
-{
-"id": "IFM-029",
-"title": "Story S4 — Finance Myths",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-029.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1Zs1ITTOI-euFdNcuTpXaW7FZ9qZB-r9W",
-"description": "Aqua story with headline 'Finance Myths people still believe' around a 3D keyboard Delete key — myths to be deleted.",
-"session": "",
-"slide_text": "Finance Myths people still believe",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Money Mindset"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "story finance myths aqua headline people still believe around keyboard delete key deleted myth busting misconceptions format background graphic debunk"
-},
-{
-"id": "IFM-030",
-"title": "Story S5 — Finance word game",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-030.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1MG3bdcOqnbOENYgv9CfI1Ij3X_dd9ZWX",
-"description": "Teal story titled 'Guess the Finance Term' with falling gold coins: 'Ready? Tap to test your finance knowledge!'",
-"session": "",
-"slide_text": "Guess the Finance Term. Ready? Tap to test your finance knowledge!",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [],
-"person": [],
-"source": "Aakara",
-"search_terms": "quiz game guess the finance term jargon glossary interactive story tap engagement"
-},
-{
-"id": "IFM-031",
-"title": "Story S6 — Saving vs investing",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-031.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1l7miwiXG526HdJae1KxIylCVP_3BG7A1",
-"description": "Split story: 'Saving means your money is just lying under the mattress' (cash-stuffed mattress with padlock) vs 'Investing means your money is slowly trying to grow' (man watering a money plant).",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Saving vs Investing",
-"Saving",
-"Family & Money"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "story saving investing split means your money just lying under mattress cash stuffed padlock slowly trying grow man watering plant growth comparison cartoon illustration format explainer"
-},
-{
-"id": "IFM-032",
-"title": "Story — Website game (10 years from today)",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-032.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1SDPRVmszXMKjkqkpPhuAoKSHEJxihmIM",
-"description": "Dreamy lilac story asking 'Imagine it's 10 years from today... What does your life look like?' with tappable poll pills: Dream home, Family Vacation, Early Retirement, Start a business.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Family & Money"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "story website game years from today dreamy lilac asking imagine what does your life look like tappable poll pills dream home family vacation early retirement start business goals options interactive year vision engagement"
-},
-{
-"id": "IFM-033",
-"title": "SpaceX IPO — Rocket or Rollercoaster? (IPO Series)",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-033.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/117PQmNIpH-dDe_KBtS6EQO1YtFTdmIcY",
-"description": "Second SpaceX cover variant: 'SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let's talk about the risks.' — rocket against light-blue sky with satellite, moon and emoji accents.",
-"session": "",
-"slide_text": "SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Stocks / Equity",
-"Stock Market",
-"IPOs"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "spacex ipo rocket rollercoaster series second cover variant everyone talking about opportunity let talk risks against light blue sky satellite moon emoji accents stock market collage"
-},
-{
-"id": "IFM-034",
-"title": "Your future is getting expensive Faaast!",
-"date": "2026-06-11",
-"thumb": "",
-"video": "",
-"drive": "",
-"description": "Mint-green cover with hands exchanging a fan of ₹500 notes and falling currency: 'Your future is getting expensive Faaast!'",
-"session": "",
-"slide_text": "Your future is getting expensive Faaast!",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Managing Money",
-"Inflation & Interest Rates"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "your future getting expensive faaast mint green cover hands exchanging fan ₹500 notes falling currency inflation rising costs expenses rupee money palette hook urgency"
-},
-{
-"id": "IFM-035",
-"title": "Investing feels intimidating? — Workshop promo",
-"date": "2026-06-11",
-"thumb": "../thumbs/IFM-035.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1uR_OTMYRvv2J_AWQfhyEqKnghNUvGe9R",
-"description": "4-slide workshop promo carousel: 'INVESTING FEELS INTIMIDATING? You're not alone — if finance jargon and market conversations feel overwhelming, THIS WORKSHOP IS FOR YOU', a woman thinking surrounded by BONDS / STOCKS / ETFS / MUTUAL FUNDS pills, swipe arrow.",
-"session": "",
-"slide_text": "INVESTING FEELS INTIMIDATING? You",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Money Mindset",
-"Money Conversations",
-"Women & Money",
-"Stocks / Equity",
-"Mutual Funds"
-],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "investing feels intimidating workshop promo slide carousel you not alone finance jargon market conversations feel overwhelming woman thinking surrounded bonds stocks etfs mutual funds pills swipe arrow cta"
-},
-{
-"id": "IFM-036",
-"title": "Swayamvar — 15s game teaser",
-"date": "2026-06-12",
-"thumb": "../thumbs/IFM-036.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/teasers/swayamvar-teaser.mp4",
-"description": "15s vertical (1080x1920) hook teaser, photoreal cast: cold-open on the live voting hall (your money needs a rishta), flash cuts through ultra-realistic suitors — Mr. Equity (purple suit, neon office, PURE DRAMA), Miss Gold (gold saree, BUA APPROVED), Mr. Debt (sweater vest + chai, THE GREEN FLAG) — then the hall voting live, the verdicts, the grand-finale choice wall, festive marigold end card.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Stocks / Equity",
-"Fixed Income",
-"Gold"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "swayamvar 15s game teaser vertical 1080x1920 hook photoreal cast cold open live voting hall your money needs rishta flash cuts through ultra realistic suitors equity purple suit neon office pure drama miss gold saree bua approved debt sweater vest chai"
-},
-{
-"id": "IFM-037",
-"title": "Investing for Mummies — logo hero reveal (lockup)",
-"date": "2026-06-13",
-"thumb": "../thumbs/IFM-037.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/ifm-hero-lockup-9s.mp4",
-"description": "9s 16:9 premium homepage-hero reveal: the metallic IFM tree emblem (brushed gunmetal + obsidian glass) does one slow 360-degree rotation beside a static 'Investing for Mummies' serif wordmark; dark cinematic environment with volumetric fog and god-rays. Higgsfield seedance_2_0 animated from a nano-banana lockup frame.",
-"session": "",
-"slide_text": "Investing for Mummies",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "B-roll",
-"topic": [
-"Investing"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "investing mummies logo hero reveal lockup premium homepage metallic ifm tree emblem brushed gunmetal obsidian glass does one slow 360 degree rotation beside static serif wordmark dark cinematic environment volumetric fog god rays higgsfield seedance animated from nano banana frame",
-"library": false
-},
-{
-"id": "IFM-038",
-"title": "Crorepati Lane — investing board game",
-"date": "2026-06-13",
-"thumb": "../thumbs/IFM-038.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/crorepati-lane.html",
-"description": "IFM-styled Monopoly: pass-and-play for 2-4 players. Board of asset classes (fixed income, gold, real estate, mutual funds, stocks); buy assets, collect returns, build SIP top-ups to Compounding, market-event & money-mantra cards, taxes, Market Crash & Dividend Pool corners; richest mum wins.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"library": false,
-"type": "",
-"format": "",
-"topic": [],
-"person": [],
-"source": "IFM / In-house",
-"status": "Ready",
-"search_terms": ""
-},
-{
-"id": "IFM-039",
-"title": "Kaun Banega Crorepati — live workshop quiz",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-039.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/quiz.html?role=host",
-"description": "Live scan-to-join KBC-style workshop quiz. Host on projector (TV-studio look + prize ladder); participants join on phones. 16 questions follow the KBC rupee prize ladder (₹1,000 → ₹7 Crore) drawn randomly each game from a 50-question bank across the 6 course modules. 4 rounds: 60s opener, fastest-finger (doubles), risk & reward wager (bet in ₹), grand-finale jackpot. Winnings + wagers all in INR. Realtime via the Stock Rush Supabase project; ↺ New game hard-reset.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"library": false,
-"type": "",
-"format": "",
-"topic": [],
-"person": [],
-"source": "IFM / In-house",
-"status": "Ready",
-"search_terms": ""
-},
-{
-"id": "IFM-040",
-"title": "IFM logo → pizza slices (brand splitter, Kling)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-040.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-kling.mp4",
-"description": "The round 'Investing for Mummies' tree badge sits on a plain white background and splits like a pizza into 5 wedge slices that drift gently apart. Square 1:1, ~5s, silent.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Investing"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "ifm logo pizza slices brand splitter kling round investing mummies tree badge sits plain white background splits like into wedge drift gently apart square silent split animation one becomes five"
-},
-{
-"id": "IFM-041",
-"title": "IFM logo → pizza slices (brand splitter, Seedance)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-041.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-seedance.mp4",
-"description": "Same concept as IFM-040 — the round IFM tree badge splitting into 5 pizza wedges on white — rendered with Seedance 2.0; softer motion, smaller file. 1:1, ~5s, silent.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "ifm logo pizza slices brand splitter seedance same concept 040 round tree badge splitting into wedges white rendered softer motion smaller file silent split background square animation"
-},
-{
-"id": "IFM-042",
-"title": "IFM 3D medallion 5-way split — cinematic (5s)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-042.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-kling.mp4",
-"description": "The metallic 3D IFM medallion splits into 5 thick wedge 'slices' that float apart while the camera orbits the circumference; dark moody studio, rim light, glossy reflections, premium commercial grade. 16:9, 5s, silent.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "B-roll",
-"topic": [],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "ifm medallion way split cinematic metallic splits into thick wedge slices float apart while camera orbits circumference dark moody studio rim light glossy reflections premium commercial grade silent orbit kling"
-},
-{
-"id": "IFM-043",
-"title": "IFM 3D medallion 5-way split — cinematic (8s, wider spread)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-043.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-8s.mp4",
-"description": "Longer 8s cut of the metallic IFM medallion breaking into 5 fully-separated floating wedges with a dramatic orbit; the 5 pieces read clearly before the reveal. 16:9, silent.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "B-roll",
-"topic": [],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "ifm medallion way split cinematic wider spread longer cut metallic breaking into fully separated floating wedges dramatic orbit pieces read clearly before reveal silent camera dark"
-},
-{
-"id": "IFM-044",
-"title": "Vedanta demerger — gold globe → 5 segments (v1)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-044.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-9x16-15s.mp4",
-"description": "Vertical reel concept: the Vedanta globe as a metallic-gold 3D medallion rotates, cracks and separates into 5 glowing gold segments in a radial formation; dark graphite studio, gold particles, market grid. 9:16, 15s, silent, no text.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger gold globe segments vertical reel concept metallic medallion rotates cracks separates into glowing radial formation dark graphite studio particles market grid 15s silent text bloomberg kling"
-},
-{
-"id": "IFM-045",
-"title": "Vedanta demerger — gold globe + IFM badge (v2)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-045.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v2-ifm-15s.mp4",
-"description": "Same gold-globe-into-5-segments reel with the round IFM badge composited top-right. 9:16, 15s, silent. Corner badge read as pasted-on — fixed in v3.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger gold globe ifm badge same into segments reel round composited top right 15s silent corner read pasted fixed dark"
-},
-{
-"id": "IFM-046",
-"title": "Vedanta demerger — gold globe, integrated badge, locked 5-split (v3 pro)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-046.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v3-pro-15s.mp4",
-"description": "Best gold-medallion reel: the metallic-gold Vedanta globe rotates with energy lines and glowing cracks, then elegantly separates into 5 distinct gold segments in a clean radial ring; IFM badge rendered into the scene on a gold-rim disc. Start+end frame controlled, Kling pro full-HD. 9:16, 15s, silent, no text.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger gold globe integrated badge locked split pro best medallion reel metallic rotates energy lines glowing cracks then elegantly separates into distinct segments clean radial ring ifm rendered scene rim disc start end frame controlled kling full 15s silent"
-},
-{
-"id": "IFM-047",
-"title": "Vedanta demerger — gold globe (v3 std alt take)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-047.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v3-std-15s.mp4",
-"description": "Standard-mode alternate of the v3 gold-globe demerger reel — same 5-segment split + badge, lighter render, different motion feel. 9:16, 15s, silent.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger gold globe std alt take standard mode alternate reel same segment split badge lighter render different motion feel 15s silent segments"
-},
-{
-"id": "IFM-048",
-"title": "Vedanta pizza demerger — angled deep-dish split",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-048.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-pizza-split-pro-10s.mp4",
-"description": "A deep-dish pizza with the blue-green Vedanta globe as its cheese-top design, shot at a 3/4 angle, separates into slices with stretching cheese and steam; IFM badge top-right. 9:16, 10s, silent. Slice count not exact.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta pizza demerger angled deep dish split blue green globe cheese top design shot angle separates into slices stretching steam ifm badge right 10s silent slice count not exact kling pro"
-},
-{
-"id": "IFM-049",
-"title": "Vedanta pizza demerger — exact 5 slices (top-down)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-049.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-pizza-5slices-pro-10s.mp4",
-"description": "Top-down deep-dish pizza with the Vedanta globe design, cut into exactly 5 equal wedges that separate into a radial spread while the camera arcs and zooms out; IFM badge top-right. 9:16, 10s, silent, no text.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta pizza demerger exact slices top down deep dish globe design cut into exactly equal wedges separate radial spread while camera arcs zooms out ifm badge right 10s silent text orbit zoom"
-},
-{
-"id": "IFM-050",
-"title": "IFM pizza → 5 slices (clean, reusable, 5s)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-050.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/pizza-5slices-clean-5s.mp4",
-"description": "A plain cheese deep-dish pizza cut into exactly 5 equal slices that separate as the camera arcs and zooms out; clean white-disc IFM badge top-right, no other branding. Top-down, 9:16, 5s, silent.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "ifm pizza slices clean reusable plain cheese deep dish cut into exactly equal separate camera arcs zooms out white disc badge top right other branding down silent split demerger template one becomes five"
-},
-{
-"id": "IFM-051",
-"title": "Vedanta demerger explainer — 1 pizza → 5 companies",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-051.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-pizza-explainer-5s.mp4",
-"description": "Clean white-background infographic: a pizza labelled 'VEDANTA' (1 company) slices into 5 equal pieces that become labelled tiles — Vedanta Aluminium, Vedanta Power, Vedanta Oil & Gas, Vedanta Steel & Ferrous, Vedanta Ltd (5 companies). IFM logo at top. 9:16, exactly 5s.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger explainer pizza companies clean white background infographic labelled company slices into equal pieces become tiles aluminium power oil gas steel ferrous ltd ifm logo top exactly labels motion graphic"
-},
-{
-"id": "IFM-052",
-"title": "Vedanta Demerger — Same Pizza, Different Slices",
-"date": "2026-06-15",
-"thumb": "../thumbs/IFM-052.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/carousel_vedanta_slides/slide_01.png",
-"description": "Premium 8-slide dark-slate carousel explaining the Vedanta demerger. Opens on a steaming photoreal pizza stamped with the Vedanta globe — 'Vedanta just split into 5 companies. 5× richer?'. Frosted-glass cards then walk through what a demerger is (family-business analogy), the old bundle (Aluminium, Power, Oil & Gas, Iron & Steel), the split shown as a sliced pizza, and the share math (×5 new holdings + your original 100 stay put). Two embedded videos — the animated pizza-split explainer and the IFM hero-lockup outro. Closes on 'Same pizza. Different slices.' Round IFM logo top-right throughout. 1080×1080.",
-"session": "",
-"slide_text": "Vedanta just split into 5 companies. 5× richer? Same pizza. Different slices.",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Wealth",
-"Family & Money",
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger same pizza different slices premium slide dark slate carousel explaining opens steaming photoreal stamped globe just split into companies richer frosted glass cards then walk through what family business analogy old bundle aluminium power oil gas iron steel"
-},
-{
-"id": "IFM-053",
-"title": "Vedanta Demerger — AI Anchor News Explainer (Reel)",
-"date": "2026-06-15",
-"thumb": "../thumbs/IFM-053.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-reel-anchor-18s.mp4",
-"description": "Vertical 9:16 news-style Reel (~18s) fronted by the founder's AI avatar as a business-news anchor in a dark-graphite, gold-accented newsroom (Bloomberg / ET Now look). She delivers a demerger explainer to camera with synced lip movement and an Anjali voiceover: 'Vedanta has just split into five companies… does that make shareholders 5× richer? Not quite — think of it like a pizza cut into slices.' Cuts to a steaming Vedanta-globe pizza splitting, then five gold sector blocks (Base Metals, Aluminium, Oil & Gas, Power, Iron & Steel) arranging around a central VEDANTA node, a split-screen, and a hero end-card: 'VEDANTA DEMERGER → WHAT IT MEANS FOR SHAREHOLDERS'. News lower-thirds throughout, no background music.",
-"session": "",
-"slide_text": "Vedanta has just split into five companies… does that make shareholders 5× richer? Not quite — think of it like a pizza cut into slices. VEDANTA DEMERGER → WHAT IT MEANS FOR SHAREHOLDERS",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Wealth",
-"Stocks / Equity"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger anchor news explainer reel vertical style 18s fronted founder avatar business dark graphite gold accented newsroom bloomberg now look she delivers camera synced lip movement anjali voiceover has just split into five companies does make shareholders richer not"
-},
-{
-"id": "IFM-054",
-"title": "Office youth workshop — Hiral teaching mutual funds at the whiteboard",
-"date": "2026-06-15",
-"thumb": "../thumbs/IFM-054.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1Oz3ezoKAyFzh-mny3Oz-0n3-pT8h1KVn/view",
-"description": "Founder Hiral Goel teaches a small group of young women at the office boardroom whiteboard; the TV reads 'Class Mutual Fund — one pools money together' and the board is covered in hand-drawn notes on debt mutual funds, corporate bonds and debentures. A clear activity box and QR sign-in sit on the table.",
-"session": "",
-"slide_text": "Class Mutual Fund — one pools money together",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Family & Money",
-"Mutual Funds",
-"Fixed Income"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "office youth workshop hiral teaching mutual funds whiteboard founder goel teaches small group young women boardroom reads class fund one pools money together board covered hand drawn notes debt corporate bonds debentures clear activity box sign sit table teen session"
-},
-{
-"id": "IFM-055",
-"title": "Office youth workshop — Hiral with activity card, group watching",
-"date": "2026-06-15",
-"thumb": "../thumbs/IFM-055.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1SrKEVM1gtUELmu1cNSoSYQk6bvj6_yVE/view",
-"description": "Hiral Goel holds up a card mid-explanation during the hands-on activity, the group of young women seated around the boardroom table watching; clear prop box, snacks and sticky notes on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Mutual Funds"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "office youth workshop hiral activity card group watching goel holds mid explanation during hands young women seated around boardroom table clear prop box snacks sticky notes mutual funds teaching code"
-},
-{
-"id": "IFM-056",
-"title": "Office youth workshop — Participants watching the game screen (wide)",
-"date": "2026-06-15",
-"thumb": "../thumbs/IFM-056.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/17ent--UAPlEJFczBd0ytUoprEwTYdKOL/view",
-"description": "Wide boardroom shot of participants watching an interactive game/leaderboard on the TV screen; a 'Certificate of Completion' and a Monopoly box sit on the table. Same office youth session.",
-"session": "",
-"slide_text": "Certificate of Completion",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Certificate",
-"topic": [
-"Stock Market"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "certificate completion graduation proud achievement social proof b-roll cutaway establishing supporting footage context office youth workshop participants watching game screen wide boardroom shot interactive leaderboard certificate completion monopoly box sit table same session young women attentive recap"
-},
-{
-"id": "IFM-057",
-"title": "Office youth workshop — Snacks-as-assets clip (chips prop)",
-"date": "2026-06-15",
-"thumb": "../thumbs/IFM-057.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-057.mp4",
-"drive": "https://drive.google.com/file/d/1SuEL2j7slMlpd8SaBo9rkKEYatasNOW0/view",
-"description": "Raw clip: Hiral holds up a Garden chips packet as a teaching prop — using snacks from the clear box as an analogy for assets/investing. Office youth workshop.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing",
-"Mutual Funds"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "office youth workshop snacks assets clip chips prop raw hiral holds garden packet teaching using from clear box analogy investing goel hands mutual funds"
-},
-{
-"id": "IFM-058",
-"title": "Office youth workshop — Hiral explaining (clip)",
-"date": "2026-06-15",
-"thumb": "../thumbs/IFM-058.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-058.mp4",
-"drive": "https://drive.google.com/file/d/1kcfZusR0y_Nxnw5xvlxfTVpuFlBaxQHo/view",
-"description": "Raw clip: Hiral gesturing and explaining a concept with the snack prop box on the table. Office youth workshop.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Mutual Funds"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "office youth workshop hiral explaining clip raw gesturing concept snack prop box table goel teaching boardroom mutual funds"
-},
-{
-"id": "IFM-059",
-"title": "Office youth workshop — Teaching at the prop box with helper (clip)",
-"date": "2026-06-15",
-"thumb": "../thumbs/IFM-059.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-059.mp4",
-"drive": "https://drive.google.com/file/d/1_9efT6ywL-gqA8WR-c2kVam9GmspFOy_/view",
-"description": "Raw clip: Hiral teaching at the prop box with a young participant standing beside her assisting. Office youth workshop.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Other Person",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "office youth workshop teaching prop box helper clip raw hiral young participant standing beside her assisting goel woman hands boardroom"
-},
-{
-"id": "IFM-060",
-"title": "Office youth workshop — Pulling snack props from the box (clip)",
-"date": "2026-06-15",
-"thumb": "../thumbs/IFM-060.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-060.mp4",
-"drive": "https://drive.google.com/file/d/1Uh2pv2cU1cxw8ktB41xUrT3PH4W7gTer/view",
-"description": "Raw clip: Hiral pulls snack packets (Garden chips, Dark Fantasy) from the clear box as props for the investing analogy. Office youth workshop.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "props snack packets demo activity investing lesson raw clip behind the scenes"
-},
-{
-"id": "IFM-061",
-"title": "Hiral at whiteboard — debt instruments mind-map",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-061.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1KZf0Y7UI_UDHg6-fr7UBb_IX9W1iwyDK/view",
-"description": "Hiral Goel stands with her back to camera writing on a whiteboard, circling 'BORROWER' at the centre of a hand-drawn debt-instruments mind-map (debt mutual funds, banks, companies, government, G-secs). White shirt, bright red trousers.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Mutual Funds",
-"Fixed Income"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context hiral whiteboard debt instruments mind map goel stands her back camera writing circling borrower centre hand drawn mutual funds banks companies government secs white shirt bright red trousers teaching wide shot classroom financial literacy"
-},
-{
-"id": "IFM-062",
-"title": "Hiral writing 'BORROWER' bond-market diagram",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-062.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1qCKGgFLQUtFYO_FhbMMsXQqieKuojrtk/view",
-"description": "Side-on shot of Hiral writing on the whiteboard, the 'BORROWER' bond-market diagram fully visible (banks, FD/RD, PPF, SSY, EPF, T-bills, G-secs). White shirt, red trousers.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Fixed Income"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "hiral writing borrower bond market diagram side shot whiteboard fully visible banks ppf ssy epf bills secs white shirt red trousers goel teaching profile financial literacy workshop"
-},
-{
-"id": "IFM-063",
-"title": "Hands holding the 'Investing for Mummies' book",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-063.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1Kwes1SHtYOhbHbEbfZP1KyXmiQp9xSmv/view",
-"description": "Over-shoulder candid of Hiral's hands holding the 'Investing for Mummies' book, the multi-armed-mother cover illustration clearly visible, on a dark wooden table. Blue eyelet-lace blouse.",
-"session": "",
-"slide_text": "s hands holding the",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration hands holding investing mummies book over shoulder candid hiral multi armed mother cover illustration clearly visible dark wooden table blue eyelet lace blouse product shot branding close promotional"
-},
-{
-"id": "IFM-064",
-"title": "Hiral at table under the branded title slide",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-064.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/15UeP1UzVtRDN5sCL7RIkk0S3LKISSdTu/view",
-"description": "Hiral seated at a boardroom table with open laptop, smiling softly; the wall screen behind shows the 'Investing for Mummies' title slide. White eyelet blouse, pale blue skirt.",
-"session": "",
-"slide_text": "Investing for Mummies",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration hiral table under branded title slide seated boardroom open laptop smiling softly wall screen behind shows investing mummies white eyelet blouse pale blue skirt goel founder about"
-},
-{
-"id": "IFM-065",
-"title": "Hiral at laptop, hand on book — branded screen",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-065.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1DvDOcKKzWgzpo16JZU86MbIQ8mmzh0vm/view",
-"description": "Hiral seated at the boardroom table with laptop, hand resting on a book, the 'Investing for Mummies' slide on the screen behind. White eyelet blouse, blue skirt, relaxed smile.",
-"session": "",
-"slide_text": "Investing for Mummies",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio hiral laptop hand book branded screen seated boardroom table resting investing mummies slide behind white eyelet blouse blue skirt relaxed smile goel founder portrait workshop"
-},
-{
-"id": "IFM-066",
-"title": "Hiral laughing at table under branded screen",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-066.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1fnVbCJI8dIxqhSLxuS3NBSg4mrHReeGm/view",
-"description": "Hiral seated at the boardroom table laughing warmly, laptop and book in front, 'Investing for Mummies' slide on the wall screen behind. White eyelet blouse, blue skirt.",
-"session": "",
-"slide_text": "Investing for Mummies",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration hiral laughing table under branded screen seated boardroom warmly laptop book front investing mummies slide wall behind white eyelet blouse blue skirt goel candid joyful founder warm"
-},
-{
-"id": "IFM-067",
-"title": "Hiral standing portrait, arms crossed — wood backdrop",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-067.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1mA21c5_IPGHcyf_cOVPxkrXsUVcGORSi/view",
-"description": "Three-quarter standing portrait of Hiral with arms crossed against a warm wood-panel wall, gentle closed-mouth smile. White eyelet-sleeve shirt, pale blue striped skirt.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio b-roll cutaway establishing supporting footage context hiral standing portrait arms crossed wood backdrop three quarter against warm panel wall gentle closed mouth smile white eyelet sleeve shirt pale blue striped skirt goel founder profile photo professional about"
-},
-{
-"id": "IFM-068",
-"title": "Hiral standing portrait, soft smile — wood backdrop",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-068.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/18xZO7b8CULUt8EBW2lCAHyGtccIuGRXJ/view",
-"description": "Standing three-quarter portrait of Hiral, arms crossed, against the wood-panel wall with a soft natural smile. White eyelet blouse, pale blue skirt.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio b-roll cutaway establishing supporting footage context hiral standing portrait soft smile wood backdrop three quarter arms crossed against panel wall natural white eyelet blouse pale blue skirt goel founder headshot about"
-},
-{
-"id": "IFM-069",
-"title": "Hiral standing portrait, broad smile — wood backdrop",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-069.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1U3lH-ZSOYWFZjvIaTGp-s0hlK8WbQdhV/view",
-"description": "Standing portrait of Hiral with arms crossed and a broad open smile against the wood-panel wall. White eyelet-sleeve shirt, pale blue striped skirt.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio b-roll cutaway establishing supporting footage context hiral standing portrait broad smile wood backdrop arms crossed open against panel wall white eyelet sleeve shirt pale blue striped skirt goel smiling founder profile photo friendly about"
-},
-{
-"id": "IFM-070",
-"title": "Hiral seated beside branded screen, smiling",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-070.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1B9QhEt_qnPFCFgw9czDLmO3La7KMZqxX/view",
-"description": "Hiral seated at the boardroom table with laptop, smiling at camera; the 'Investing for Mummies' multi-armed-mother slide fills the wall screen to her left. White eyelet blouse, blue skirt.",
-"session": "",
-"slide_text": "Investing for Mummies",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration hiral seated beside branded screen smiling boardroom table laptop camera investing mummies multi armed mother slide fills wall her left white eyelet blouse blue skirt goel founder workshop about"
-},
-{
-"id": "IFM-071",
-"title": "Hiral at desk with book, framed Madhubani art",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-071.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/10Eu51jQ5uEA2tw_VR4g81rGKHyoW4i9c/view",
-"description": "Hiral seated at a wooden desk with the 'Investing for Mummies' book in front of her, a large framed black-and-white Madhubani-style artwork on the wall behind. White eyelet shirt, executive chair.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "portrait headshot founder press media kit agency bio hiral desk book framed madhubani art seated wooden investing mummies front her large black white style artwork wall behind eyelet shirt executive chair goel office founder portrait indian editorial about"
-},
-{
-"id": "IFM-072",
-"title": "Hiral pointing to the book at her desk",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-072.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1bKmybgb0uzW260qf3pCKcOZktiHvMXfV/view",
-"description": "Hiral seated at the wooden desk gesturing toward the 'Investing for Mummies' book, framed monochrome folk artwork behind her. White eyelet blouse, relaxed smile.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration hiral pointing book her desk seated wooden gesturing toward investing mummies framed monochrome folk artwork behind white eyelet blouse relaxed smile goel madhubani art office founder promotional indian about"
-},
-{
-"id": "IFM-073",
-"title": "Hiral at MacBook, book propped, branded screen",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-073.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1yetYTzgxIBfRLe912fmRTPPe8V4BFbqA/view",
-"description": "Hiral seated at a wooden table working on a MacBook, the 'Investing for Mummies' book propped to her left and the title slide on the screen behind. White eyelet shirt.",
-"session": "",
-"slide_text": "Investing for Mummies",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "hiral macbook book propped branded screen seated wooden table working investing mummies her left title slide behind white eyelet shirt goel laptop founder workshop about"
-},
-{
-"id": "IFM-074",
-"title": "Hiral working at laptop under branded slide",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-074.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1PCxgmUXE67sck7GJ48VINkTYOy4pzO24/view",
-"description": "Hiral seated at the wooden table at her MacBook smiling at camera, the book propped beside her and the 'Investing for Mummies' slide on the wall screen behind. White eyelet blouse.",
-"session": "",
-"slide_text": "Investing for Mummies",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration hiral working laptop under branded slide seated wooden table her macbook smiling camera book propped beside investing mummies wall screen behind white eyelet blouse goel founder about"
-},
-{
-"id": "IFM-075",
-"title": "Hiral seated, hands on table, branded screen",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-075.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1FHb952-62GIinZgbl8KxBMLkOvfUl9FM/view",
-"description": "Hiral seated at the wooden table with hands folded on the surface, smiling at camera; the 'Investing for Mummies' slide fills the screen behind her. White eyelet-sleeve blouse.",
-"session": "",
-"slide_text": "Investing for Mummies",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio hiral seated hands table branded screen wooden folded surface smiling camera investing mummies slide fills behind her white eyelet sleeve blouse goel founder portrait warm workshop about"
-},
-{
-"id": "IFM-076",
-"title": "Clip — Hiral reading the book at the table",
-"date": "2026-03-24",
-"thumb": "../thumbs/IFM-076.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-076.mp4",
-"drive": "https://drive.google.com/file/d/1g_r9y_jySqXXn8A_80xXXzCTAB6mIPHn/view",
-"description": "Candid side profile of Hiral, in glasses, reading an open spread of the colourful illustrated 'Investing for Mummies' book at the boardroom table, branded slide on the screen above. White eyelet blouse.",
-"session": "",
-"slide_text": "Investing for Mummies",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration clip hiral reading book table candid side profile glasses open spread colourful illustrated investing mummies boardroom branded slide screen above white eyelet blouse goel founder behind scenes video"
-},
-{
-"id": "IFM-077",
-"title": "Clip — Hiral presenting 'Inflation Simplified'",
-"date": "2026-06-12",
-"thumb": "../thumbs/IFM-077.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-077.mp4",
-"drive": "https://drive.google.com/file/d/1vX2R_Ajj3ud5EBLrVsZ_9Y_1HwN2PomK/view",
-"description": "Wide shot of Hiral standing and presenting at a lounge-style workshop, gesturing beside a screen reading 'Inflation Simplified'; patterned wallpaper, bookshelves, orange pendant lamp, seated audience. Cream sleeveless outfit.",
-"session": "",
-"slide_text": "Inflation Simplified",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Inflation & Interest Rates"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context clip hiral presenting inflation simplified wide shot standing lounge style workshop gesturing beside screen reading patterned wallpaper bookshelves orange pendant lamp seated audience cream sleeveless outfit goel speaking founder event video"
-},
-{
-"id": "IFM-078",
-"title": "Clip — Hiral teaching the inflation analogy",
-"date": "2026-06-12",
-"thumb": "../thumbs/IFM-078.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-078.mp4",
-"drive": "https://drive.google.com/file/d/1NEHg5KVhwRsaWAWfN1jBLI9iih-OJvPe/view",
-"description": "Wide shot of Hiral standing and speaking at the workshop, hands gesturing, beside a screen showing an 'Inflation Analogy — balanced supply & demand' slide. Patterned wallpaper, bookshelves, orange lamp, seated audience. Cream sleeveless outfit.",
-"session": "",
-"slide_text": "Inflation Analogy — balanced supply & demand",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Inflation & Interest Rates"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context clip hiral teaching inflation analogy wide shot standing speaking workshop hands gesturing beside screen showing balanced supply demand slide patterned wallpaper bookshelves orange lamp seated audience cream sleeveless outfit goel presenting lounge founder event video"
-},
-{
-"id": "IFM-079",
-"title": "SpaceX IPO — Rocket or Rollercoaster? (7-slide v2)",
-"date": "2026-06-15",
-"thumb": "../thumbs/IFM-079.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/190anJw9_VhvExeUfyrQlf5Zzga8ppGeu",
-"description": "Light-blue 7-slide carousel, 'SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let's talk about the risks.' — rocket launch with satellite, moon and emoji accents. A shorter 7-slide variant of the Rocket-or-Rollercoaster carousel.",
-"session": "",
-"slide_text": "SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Stocks / Equity",
-"Stock Market",
-"IPOs"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "spacex ipo rocket rollercoaster slide light blue carousel everyone talking about opportunity let talk risks launch satellite moon emoji accents shorter variant slides series stock market delivered aakara delivery tree"
-},
-{
-"id": "IFM-080",
-"title": "Women's workshop — group photo",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-080.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1ZZ0V14vZHgVh1IjcFpW2F2JTxII8du5K/view",
-"description": "Smiling group photo of around eight women attendees together in the IFM office after the workshop, framed Madhubani-style artwork on the wall behind.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration testimonial review feedback social proof word of mouth women workshop group photo smiling around eight attendees together ifm office after framed madhubani style artwork wall behind class art community testimonial candid founder"
-},
-{
-"id": "IFM-081",
-"title": "Women's workshop — group photo (2)",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-081.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1_xooXBzgca-0ab3u0YDnwUL6HB5kaWJi/view",
-"description": "Second smiling group photo of the women's-workshop attendees together in the IFM office, framed folk artwork behind them.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration testimonial review feedback social proof word of mouth women workshop group photo second smiling attendees together ifm office framed folk artwork behind them class madhubani art community testimonial candid founder"
-},
-{
-"id": "IFM-082",
-"title": "Women's workshop — session in progress (wide)",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-082.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1zwqvM8_rY3miD1m2NKM3aw3oOGbg1X6h/view",
-"description": "Wide candid of the women's workshop in the IFM office boardroom: attendees seated around the table watching a mutual-fund diagram on the TV while one woman presents; 'Investing for Mummies' books, notebooks and the BORROWER debt whiteboard visible.",
-"session": "",
-"slide_text": "s workshop in the IFM office boardroom: attendees seated around the table watching a mutual-fund diagram on the TV while one woman presents;",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Mutual Funds",
-"Fixed Income"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration women workshop session progress wide candid ifm office boardroom attendees seated around table watching mutual fund diagram while one woman presents investing mummies books notebooks borrower debt whiteboard visible presenting community financial literacy"
-},
-{
-"id": "IFM-083",
-"title": "Course Map Walkthrough at the Boardroom Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-083.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1xhyTa-7ms0_VAXT2CNUXG4wEHk85bRV_/view",
-"description": "A facilitator stands by a wall-mounted screen showing an IFM course-flow diagram while a group of women follow along with open workbooks, mugs and water bottles around a wood conference table; a hand-drawn 'borrower / banks / government' mind map fills the whiteboard behind.",
-"session": "",
-"slide_text": "borrower / banks / government",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration b-roll cutaway establishing supporting footage context course map walkthrough boardroom table facilitator stands wall mounted screen showing ifm flow diagram while group women follow along open workbooks mugs water bottles around wood conference hand drawn borrower banks government mind fills whiteboard behind workshop learners financial literacy"
-},
-{
-"id": "IFM-084",
-"title": "Session in Progress from the Doorway",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-084.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1wvV05sgORwNU2-BBTAidXNbRqg1XoJtS/view",
-"description": "Wide candid of the same workshop seen across the table: a presenter gestures toward the on-screen course diagram as participants in pink and black tops listen, one woman in the foreground checking her phone beside an Investing for Mummies workbook.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration session progress from doorway wide candid same workshop seen across table presenter gestures toward screen course diagram participants pink black tops listen one woman foreground checking her phone beside investing mummies workbook group boardroom whiteboard women vertical attentive"
-},
-{
-"id": "IFM-085",
-"title": "Eyes on the Curriculum Slide",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-085.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1sfZ3qn_hcBTfwwaBGdzSq_omrotBFLCN/view",
-"description": "Participants seated along a conference table watch a facilitator point at the projected IFM curriculum grid; foreground attendees hold a workbook and phone while coffee tumblers and stationery cover the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration eyes curriculum slide participants seated along conference table watch facilitator point projected ifm grid foreground attendees hold workbook phone while coffee tumblers stationery cover workshop screen boardroom candid learning women"
-},
-{
-"id": "IFM-086",
-"title": "Roundtable Discussion Mid-Session",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-086.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1SWmjkjKDaskAA50t2LmyVSNlkC8MOnEq/view",
-"description": "Over-the-shoulder view of the workshop with a course-flow slide on screen and a borrower/asset-class mind map on the whiteboard; several women in pink and red lean in attentively around the dark wood table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration roundtable discussion mid session over shoulder view workshop course flow slide screen borrower asset class mind map whiteboard several women pink red lean attentively around dark wood table boardroom attentive candid vertical finance"
-},
-{
-"id": "IFM-087",
-"title": "Group Portrait of the Workshop Cohort",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-087.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1LQI8RCoEl8_SM4cQoElNy8vqzqSPIrj2/view",
-"description": "Eight smartly dressed women pose smiling shoulder-to-shoulder in the office, framed art on the wall behind them, in a warm end-of-session group photo.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio group portrait workshop cohort eight smartly dressed women pose smiling shoulder office framed art wall behind them warm end session photo team posed indoor community celebration founder ifm"
-},
-{
-"id": "IFM-088",
-"title": "Clip — Open Q&A on the Questions Slide",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-088.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-088.mp4",
-"drive": "https://drive.google.com/file/d/1YLM4M6hJA3D0oJl_RxtH-ufC9gvEAuCl/view",
-"description": "A woman in pink stands beside a colourful 'QUESTIONS?' slide and gestures while fielding queries from a small group of women seated around a boardroom table — the interactive Q&A wrap-up of a workshop session.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Student Question",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "clip open questions slide woman pink stands beside colourful gestures while fielding queries from small group women seated around boardroom table interactive wrap workshop session video presenter investing ifm discussion"
-},
-{
-"id": "IFM-089",
-"title": "Branded Title Slide on Screen",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-089.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1u_yRjVnHiHPzbP1LQQii7sS5lHXitXMb/view",
-"description": "A presenter in a pink kurta speaks beside a screen showing the colourful 'Investing for Mummies' logo with its goddess illustration, as attendees listen from the foreground of the boardroom.",
-"session": "",
-"slide_text": "Investing for Mummies",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration branded title slide screen presenter pink kurta speaks beside showing colourful investing mummies logo goddess illustration attendees listen from foreground boardroom branding women workshop candid wide session"
-},
-{
-"id": "IFM-090",
-"title": "Writing on the Whiteboard",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-090.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1W3YUt2ZSM-Fe9MWDlnoMiAGwPwcon5wX/view",
-"description": "A woman in pink writes a mutual-fund/equity diagram on the whiteboard while the IFM branded slide glows on the side screen and seated participants watch with laptops and a handbag on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Stocks / Equity",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration writing whiteboard woman pink writes mutual fund equity diagram while ifm branded slide glows side screen seated participants watch laptops handbag table teaching funds presenter branding workshop women laptop boardroom candid vertical explaining"
-},
-{
-"id": "IFM-091",
-"title": "Whiteboard Close-Up: Types of Mutual Funds",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-091.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1610w4gnUwSaNFR7NZhK-j41-HTCLUKHQ/view",
-"description": "Tight candid of a woman in a pink kurta writing 'MF — Lifecycle Fund / Other Funds / Index' in red marker, with a bespectacled attendee holding a coffee cup watching intently in the foreground.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration whiteboard close types mutual funds tight candid woman pink kurta writing lifecycle fund other index red marker bespectacled attendee holding coffee cup watching intently foreground teaching glasses workshop finance explaining"
-},
-{
-"id": "IFM-092",
-"title": "Wide View of the Training Room",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-092.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1vMx4rnBuo7UBKY_xFpjMfD7BS1oTYscN/view",
-"description": "Full-room shot from the doorway showing the marble-floored boardroom: leather chairs around the table, the IFM title slide on screen and a presenter at the whiteboard addressing a small group.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "B-roll",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context wide view training room full shot from doorway showing marble floored boardroom leather chairs around table ifm title slide screen presenter whiteboard addressing small group branding women office interior workshop"
-},
-{
-"id": "IFM-093",
-"title": "Clip — Types of Mutual Funds Walkthrough",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-093.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-093.mp4",
-"drive": "https://drive.google.com/file/d/1Fgai57EWCBo9RJcG-yQN7SWxIzPNuYAD/view",
-"description": "A presenter in a bright pink dress points at a 'Types of Mutual Funds' slide while seated participants follow along at the conference table, breaking down mutual fund categories.",
-"session": "",
-"slide_text": "Types of Mutual Funds",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "clip types mutual funds walkthrough presenter bright pink dress points slide while seated participants follow along conference table breaking down fund categories video presentation workshop boardroom women investing learning session"
-},
-{
-"id": "IFM-094",
-"title": "Pointing to the Mutual Funds Matrix",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-094.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1M8rq7WSWP7Ol6FosXp-pBFRznFCf4xPZ/view",
-"description": "A presenter in pink points at a 'Types of Mutual Funds' slide categorising equity, debt, hybrid and lifecycle funds while seated women take notes and one snaps a photo of the screen.",
-"session": "",
-"slide_text": "Types of Mutual Funds",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Stocks / Equity",
-"Mutual Funds",
-"Fixed Income"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration pointing mutual funds matrix presenter pink points types slide categorising equity debt hybrid lifecycle while seated women take notes one snaps photo screen presentation workshop note taking boardroom candid vertical finance"
-},
-{
-"id": "IFM-095",
-"title": "Standing Presenter and Mutual Funds Slide",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-095.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1_X2_yxXrLgoxbP_s7NDs2J3Y0mGyNjOo/view",
-"description": "The pink-clad facilitator stands centred before the 'Types of Mutual Funds' screen addressing attendees seated in tall leather chairs around the conference table.",
-"session": "",
-"slide_text": "Types of Mutual Funds",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration standing presenter mutual funds slide pink clad facilitator stands centred before types screen addressing attendees seated tall leather chairs around conference table boardroom women workshop candid vertical teaching"
-},
-{
-"id": "IFM-096",
-"title": "Mutual Fund Categories Explained",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-096.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1UoSKxPR6SePVuMMpKSrOR3SQ7FqlJk3L/view",
-"description": "Vertical candid of the presenter beside the colour-coded mutual-fund classification slide as participants listen, one in the foreground raising a phone to capture the screen.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration mutual fund categories explained vertical candid presenter beside colour coded classification slide participants listen one foreground raising phone capture screen funds workshop women boardroom attentive finance session"
-},
-{
-"id": "IFM-097",
-"title": "How Companies Raise Money",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-097.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1pRD11xC6CLJ0PmSuYWkyg3axbRScqXyB/view",
-"description": "A presenter in pink gestures toward a slide titled 'The Different Ways Companies Raise Money' as a small circle of women in leather chairs listen around the table.",
-"session": "",
-"slide_text": "The Different Ways Companies Raise Money",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration how companies raise money presenter pink gestures toward slide titled different ways small circle women leather chairs listen around table presentation raising workshop boardroom gesturing candid vertical finance"
-},
-{
-"id": "IFM-098",
-"title": "Clip — Hiral's Smiling Piece-to-Camera",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-098.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-098.mp4",
-"drive": "https://drive.google.com/file/d/1Brl_xVgtMYKodweKk9UPYTSeIvR4zfW5/view",
-"description": "Founder Hiral Goel stands smiling in front of the branded 'Investing for Mummies' slide with its multitasking-mum graphic, addressing the camera directly — an intro/welcome segment.",
-"session": "",
-"slide_text": "Investing for Mummies",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration clip hiral smiling piece camera founder goel stands front branded investing mummies slide multitasking mum graphic addressing directly intro welcome segment video branding presenter workshop host"
-},
-{
-"id": "IFM-099",
-"title": "Gold as a Safe Haven Talk",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-099.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1qYxKCBvl_bfa7Bh1_KZ-wShkF1kJhmPD/view",
-"description": "A speaker in a white shirt and red trousers points emphatically at a 'Gold: Your Portfolio's Safe Haven' slide with a ways-to-invest-in-gold pie chart, while two attendees watch from the foreground.",
-"session": "",
-"slide_text": "Gold: Your Portfolio's Safe Haven. Ways to invest in gold: SGBs, Gold Mutual Funds, ETFs, Digital Gold, Physical Gold. 5-10% of portfolio.",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Gold",
-"Asset Allocation",
-"Mutual Funds",
-"ETFs"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "gold safe haven pie chart allocation sgb sovereign gold bond gold funds etf portfolio hedge presenting pointing"
-},
-{
-"id": "IFM-100",
-"title": "Ways to Invest in Gold Session",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-100.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1-7p1qVMylbxt2L_sawOmrDJqE1-9nwCl/view",
-"description": "Same gold-investment talk: the presenter in white and red gestures with both hands at the 'Gold: Your Portfolio's Safe Haven' screen as two women listen across the wood table.",
-"session": "",
-"slide_text": "Gold: Your Portfolio",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Gold",
-"Asset Allocation"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "ways to invest in gold sgb gold funds allocation safe haven portfolio"
-},
-{
-"id": "IFM-101",
-"title": "Clip — Explaining Gold Investments (SGB & Gold Funds)",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-101.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-101.mp4",
-"drive": "https://drive.google.com/file/d/1NdM9y701az7VViop_skRPvLosg2NFD50/view",
-"description": "A presenter in a white top and red trousers gestures animatedly in front of a 'Gold' slide listing SGB and gold mutual funds, while two women listen — covering ways to invest in gold.",
-"session": "",
-"slide_text": "Gold: Your Portfolio's Safe Haven. Ways to invest in gold: SGBs (best way to invest in gold, for low risk long term investors, backed by RBI); Gold Mutual Funds (invest into ETFs, gold mining and gold-related assets); ETFs (highly liquid, traded on the stock exchange); Digital Gold; Physical Gold (low liquidity, high risk of theft, making and storage costs). 5-10% of portfolio.",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Gold",
-"Asset Allocation",
-"Mutual Funds",
-"ETFs"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "sgb sovereign gold bond gold funds gold etf digital gold physical gold safe haven hedge portfolio allocation five to ten percent rbi ways to invest in gold bullion explaining teaching"
-},
-{
-"id": "IFM-102",
-"title": "Four-Woman Table Portrait",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-102.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1elNMG02koaIfopOIhlPia2XEbY-ZivXz/view",
-"description": "Four women smile at the camera around the conference table, one standing behind in a white shirt and red trousers, with a UPI/payment QR code and framed art on the wall behind them.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio four woman table portrait women smile camera around conference one standing behind white shirt red trousers upi payment code framed art wall them group smiling boardroom posed office community indoor session ifm"
-},
-{
-"id": "IFM-103",
-"title": "Cohort Smiles at the Boardroom Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-103.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/13xZs8dbTkov3BHIFwHZxFuwJxHHpC8EM/view",
-"description": "Duplicate-style portrait of four women posing warmly around the wood table, a phone and notebook between them and abstract framed artwork on the wall.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio cohort smiles boardroom table duplicate style portrait four women posing warmly around wood phone notebook between them abstract framed artwork wall group smiling posed art office community indoor candid team"
-},
-{
-"id": "IFM-104",
-"title": "Seated Group Portrait, Wider Frame",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-104.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/13I9xqbk-F35jqX0ovaqSii7V2lPciQ9W/view",
-"description": "Wider variant of the four-woman portrait showing more of the table and the payment QR poster on the left wall, the women smiling toward the camera in white, peach and printed tops.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio seated group portrait wider frame variant four woman showing more table payment poster left wall women smiling toward camera white peach printed tops boardroom wide code framed art office community posed indoor session"
-},
-{
-"id": "IFM-105",
-"title": "End-of-Session Foursome",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-105.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1vZviu5hHQfOcirY5sDF9dpd_C61l-eIp/view",
-"description": "Four participants pose smiling around the conference table at session's end, one standing in a white shirt, a glass of water and notebook on the table and abstract art on the wall.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio end session foursome four participants pose smiling around conference table one standing white shirt glass water notebook abstract art wall group portrait women boardroom posed framed office community indoor team"
-},
-{
-"id": "IFM-106",
-"title": "Four Women Smiling at Conference Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-106.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1_2Jyh4yOjkz30j52IqKfuTb4Xr4zIexP/view",
-"description": "Four women pose and smile together around a wood conference table, with a whiteboard listing investing terms (debt, equity, fixed income, ownership) and a framed artwork behind them. Coffee mugs, water glasses and a laptop sit on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Stocks / Equity",
-"Fixed Income"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration four women smiling conference table pose smile together around wood whiteboard listing investing terms debt equity fixed income ownership framed artwork behind them coffee mugs water glasses laptop sit workshop group photo room team office financial literacy"
-},
-{
-"id": "IFM-107",
-"title": "Presenting the Bid Price and Ask Price Slide",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-107.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1z1KuyEwo5_dpM_esYkhJHa1nDOm-mcav/view",
-"description": "A presenter in a white top gestures toward a wall screen displaying a colourful 'Bid Price & Ask Price' slide explaining the spread, while two attendees watch and take notes. CleanPlus tissues, books and mugs cover the table.",
-"session": "",
-"slide_text": "Bid Price & Ask Price",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Stocks / Equity",
-"Stock Market"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "presenting bid price ask slide presenter white top gestures toward wall screen displaying colourful explaining spread while two attendees watch take notes cleanplus tissues books mugs cover table presentation teaching workshop note taking stock market classroom women office"
-},
-{
-"id": "IFM-108",
-"title": "Wide View of Bid-Ask Lesson in Session",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-108.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1HL33ecHSAg74Zst5e5plEme8B96PBS3I/view",
-"description": "Wide overhead shot of a workshop in progress: a presenter points at a 'Bid Price & Ask Price' screen while four women work at the conference table with laptops, notes and a mind-map whiteboard nearby. Bright fluorescent ceiling light overhead.",
-"session": "",
-"slide_text": "Bid Price & Ask Price",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context wide view bid ask lesson session overhead shot workshop progress presenter points price screen while four women work conference table laptops notes mind map whiteboard nearby bright fluorescent ceiling light classroom laptop room attendees teaching office investing"
-},
-{
-"id": "IFM-109",
-"title": "Group Discussion Around the Bid-Ask Slide",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-109.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1Ta2WjIwekIaFQTcyaBaTA6b3NjfrDlaa/view",
-"description": "Four women sit around the conference table engaged in discussion as one presents the 'Bid Price & Ask Price' slide on the wall screen. Laptops, mugs and a whiteboard frame the working session.",
-"session": "",
-"slide_text": "Bid Price & Ask Price",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "group discussion around bid ask slide four women sit conference table engaged one presents price wall screen laptops mugs whiteboard frame working session workshop laptop teaching office collaboration investing classroom"
-},
-{
-"id": "IFM-110",
-"title": "Three Women Huddled Over a Laptop",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-110.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1YF87jsMLuJBBWuBe4HVVoVXaCaiK79pv/view",
-"description": "Three women lean in around a MacBook on a wood table, one seated and typing while two stand and watch the screen, against a dark wood-panelled wall. A green flask, phone and notebook sit nearby.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "three women huddled over laptop lean around macbook wood table one seated typing while two stand watch screen against dark panelled wall green flask phone notebook sit nearby huddle collaboration working office problem solving teamwork panel workshop"
-},
-{
-"id": "IFM-111",
-"title": "Collaborating at the Laptop, Candid",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-111.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1ZD_QluuKdtCyZCUArfer7eAdy_LKsjPT/view",
-"description": "Candid shot of three women working together at a laptop, one seated and focused on the screen while a colleague in white smiles and another in green leans over. Mug, glass and notebook with pen in the foreground.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration collaborating laptop candid shot three women working together one seated focused screen while colleague white smiles another green leans over mug glass notebook pen foreground collaboration smiling office teamwork macbook workshop"
-},
-{
-"id": "IFM-112",
-"title": "Four-Woman Group Portrait, Wood-Panelled Room",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-112.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/10zkyD2AbJ57BvIg523pP3-tqn0pzsQaJ/view",
-"description": "Four women pose for a warm group portrait by the conference table, three standing and one seated resting her cheek on her hand. Laptops and a pink phone sit on the table against a wood-panelled wall.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio four woman group portrait wood panelled room women pose warm conference table three standing one seated resting her cheek hand laptops pink phone sit against wall team smiling panel laptop office workshop candid posing"
-},
-{
-"id": "IFM-113",
-"title": "Team Group Photo by the Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-113.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1VS_GuL8UGSCqyqe_c4BEPUTAOw8BbkAC/view",
-"description": "Four women gather for a friendly group photo around the conference table, smiling at the camera with laptops and a pink phone in front of them and dark wood panelling behind.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio team group photo table four women gather friendly around conference smiling camera laptops pink phone front them dark wood panelling behind office laptop panel workshop posing portrait"
-},
-{
-"id": "IFM-114",
-"title": "Clip — Participant Following Along on Laptop",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-114.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-114.mp4",
-"drive": "https://drive.google.com/file/d/12ytp8IEEVhhaNu4Ghc8KVoWI55n9xNg9/view",
-"description": "Over-the-shoulder shot of a woman in a green geometric-print dress navigating a screen on her MacBook during the session — a participant doing a hands-on exercise.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "clip participant following along laptop over shoulder shot woman green geometric print dress navigating screen her macbook during session doing hands exercise video investing workshop women learning"
-},
-{
-"id": "IFM-115",
-"title": "Setting Up the Screen-Share Session",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-115.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1S1hwDY2Ns7KGtnGkvXnt-EUOkbaQJ57i/view",
-"description": "Two women set up a working session: one stands behind reviewing while the other, in a green print dress, holds her phone connected to a laptop. The wall screen shows a clock and a meeting-join code.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "testimonial review feedback social proof word of mouth setting screen share session two women set working one stands behind reviewing while other green print dress holds her phone connected laptop wall shows clock meeting join code setup office connecting workshop technology"
-},
-{
-"id": "IFM-116",
-"title": "Mentoring Over a Spreadsheet",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-116.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1f2088XEWI6wqDFSzOct-XmFGP1Y-gQsQ/view",
-"description": "A woman in white leans over to guide a colleague in a green print dress who is working on a spreadsheet on her MacBook, with a customer mind-map whiteboard behind them. Phone and printed sheets on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "mentoring over spreadsheet woman white leans guide colleague green print dress who working her macbook customer mind map whiteboard behind them phone printed sheets table laptop women coaching office workshop collaboration"
-},
-{
-"id": "IFM-117",
-"title": "Shared Laugh During Laptop Work",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-117.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1Q-76NSnL6swYrTMcByxawPJcGqPpt17i/view",
-"description": "Two women work side by side at the conference table, one in green operating a MacBook while the other in white laughs and gestures, with a customer mind-map whiteboard behind. A phone showing a video rests on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration shared laugh during laptop work two women side conference table one green operating macbook while other white laughs gestures customer mind map whiteboard behind phone showing video rests laughing candid working office collaboration dress workshop"
-},
-{
-"id": "IFM-118",
-"title": "Reviewing an IFM Slide on Screen",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-118.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1HxJPdbznonczEWi9l_x-9IlxrkiCleMZ/view",
-"description": "Two women lean over a MacBook together, pointing at a teal IFM-branded slide on screen while a strategy mind-map whiteboard sits in the background. Phone, notebook and printed handouts on the wood table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Financial Planning"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "testimonial review feedback social proof word of mouth reviewing ifm slide screen two women lean over macbook together pointing teal branded while strategy mind map whiteboard sits background phone notebook printed handouts wood table review laptop collaboration office workshop planning"
-},
-{
-"id": "IFM-119",
-"title": "Founder Presenting the NAV Lesson",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-119.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1zV8XPkyB83UWWXIKP-dw3pGy_ar7ETKB/view",
-"description": "A presenter in a black top and red skirt points at a wall screen explaining 'NAV' (Net Asset Value) with colourful fund-assets graphics, while four seated attendees watch. A pink book and tissues sit on the conference table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Family & Money",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value founder presenting nav lesson presenter black top red skirt points wall screen explaining net asset value colourful fund assets graphics while four seated attendees watch pink book tissues sit conference table presentation mutual teaching workshop slide room women investing"
-},
-{
-"id": "IFM-120",
-"title": "NAV Session, Room Overview",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-120.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1CxQere1EeAtMGu0dxcvpj9X3kfozziJU/view",
-"description": "Overview of the workshop room as the presenter in black and red explains the 'NAV' slide to a group seated around the conference table. Laptops, glasses, a pink book and handbags fill the working space.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Investing",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value b-roll cutaway establishing supporting footage context nav session room overview workshop presenter black red explains slide group seated around conference table laptops glasses pink book handbags fill working space wide shot mutual fund presentation attendees teaching women screen office investing"
-},
-{
-"id": "IFM-121",
-"title": "Explaining NAV Up Close",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-121.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1DcpoDCkkZWD5_Do-K0bGXQ9OILEsZ1CD/view",
-"description": "Closer view of the presenter mid-explanation, gesturing in front of the 'NAV' slide that breaks down fund assets, liabilities and outstanding shares, as two attendees listen from the foreground. CleanPlus tissues on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Stocks / Equity",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value explaining nav close closer view presenter mid explanation gesturing front slide breaks down fund assets liabilities outstanding shares two attendees listen from foreground cleanplus tissues table net asset value presentation teaching mutual founder workshop screen women investing"
-},
-{
-"id": "IFM-122",
-"title": "NAV Lesson From the Back of the Room",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-122.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1CBA9wjn5K7mLBG8LXC-GjR3xnpbT2Atr/view",
-"description": "Shot from the rear of the conference room showing the presenter at the 'NAV' screen while several women watch from the table, with a pink book, mugs and water glasses in view. Wood panelling and a printer line the back wall.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Family & Money",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value b-roll cutaway establishing supporting footage context nav lesson from back room shot rear conference showing presenter screen while several women watch table pink book mugs water glasses view wood panelling printer line wall mutual fund presentation wide workshop attendees teaching office investing"
-},
-{
-"id": "IFM-123",
-"title": "Full Room During the NAV Talk",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-123.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1ZG7JqLBLGT7NzkMx7ashvsRycPSma-jX/view",
-"description": "Wide angle of the full workshop room with the presenter at the 'NAV' screen and a group of women seated around the long wood table taking in the lesson. Fluorescent light, wood panelling and a printer in the background.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Family & Money",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value b-roll cutaway establishing supporting footage context full room during nav talk wide angle workshop presenter screen group women seated around long wood table taking lesson fluorescent light panelling printer background shot mutual fund presentation conference attendees teaching office investing"
-},
-{
-"id": "IFM-124",
-"title": "Presenter Pointing at the NAV Diagram",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-124.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/147oDZGeKKqdJ02LsWvs1RyXt2l4z-jsG/view",
-"description": "The presenter reaches up to point at the fund-assets diagram on the 'NAV' slide while seated attendees watch from the foreground of the conference table. Pink book, tissues and mugs on the table, wood panelling behind.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Investing",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value presenter pointing nav diagram reaches point fund assets slide while seated attendees watch from foreground conference table pink book tissues mugs wood panelling behind mutual presentation teaching workshop room women screen office investing"
-},
-{
-"id": "IFM-125",
-"title": "NAV Workshop in Full Swing",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-125.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/19Rl3h8oBUZD2LImii4pRAz8kRDR3e-Ww/view",
-"description": "The presenter in black and red gestures toward the 'NAV' screen as a group of women, one taking notes, follow along around the conference table. A pink book and printed handouts sit among the mugs and glasses.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value nav workshop full swing presenter black red gestures toward screen group women one taking notes follow along around conference table pink book printed handouts sit among mugs glasses mutual fund presentation note room attendees teaching office investing"
-},
-{
-"id": "IFM-126",
-"title": "Standing at the NAV Screen",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-126.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1YbiH_qZjZD_xM9R0kNO0VdJe8-O7_2Ox/view",
-"description": "A presenter in a black top and red skirt gestures toward a wall-mounted screen displaying a 'NAV' mutual-fund slide while four women watch from a dark wood boardroom table. A pink floral book and coffee cups sit on the table in the foreground.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Investing",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value standing nav screen presenter black top red skirt gestures toward wall mounted displaying mutual fund slide while four women watch from dark wood boardroom table pink floral book coffee cups sit foreground workshop financial literacy investing mummies session india training"
-},
-{
-"id": "IFM-127",
-"title": "Boardroom NAV Session, Wide View",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-127.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/13x-FN70-kQcYLx1gSdO-ynvJ8AV4Z5eu/view",
-"description": "Wide shot of an IFM office workshop where the presenter stands beside a screen explaining Net Asset Value to a small group of women seated around a polished wooden table. A pink floral notebook and water glasses are visible in the foreground.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Investing",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value b-roll cutaway establishing supporting footage context boardroom nav session wide view shot ifm office workshop where presenter stands beside screen explaining net asset value small group women seated around polished wooden table pink floral notebook water glasses visible foreground mutual fund investing financial literacy training"
-},
-{
-"id": "IFM-128",
-"title": "Explaining the NAV Formula",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-128.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1YbQ5BJrOxuZPJesqrUMEAsVuN-upuhcA/view",
-"description": "Hiral, in a black sleeveless top, smiles while teaching beside a large screen breaking down NAV into funds assets, liabilities and outstanding shares. Two attendees view from behind, one pointing at the slide.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Stocks / Equity",
-"Mutual Funds"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value candid warm natural unposed relaxed friendly celebration explaining nav formula hiral black sleeveless top smiles while teaching beside large screen breaking down into funds assets liabilities outstanding shares two attendees view from behind one pointing slide founder mutual fund workshop financial literacy boardroom explainer investing"
-},
-{
-"id": "IFM-129",
-"title": "NAV Breakdown on Big Screen",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-129.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1GT1Fh5y-1jlZQZnzz5j6rSPwVwu70snO/view",
-"description": "The founder gestures while presenting a colourful 'NAV' explainer slide showing assets minus liabilities divided by outstanding shares, with two women watching from the back of the room. A laptop and beige handbag sit on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Stocks / Equity",
-"Mutual Funds"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value nav breakdown big screen founder gestures while presenting colourful explainer slide showing assets minus liabilities divided outstanding shares two women watching from back room laptop beige handbag sit table mutual fund presenter workshop financial literacy boardroom investing session"
-},
-{
-"id": "IFM-130",
-"title": "Hiral Mid-Lesson on Net Asset Value",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-130.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1hWJIJ7LatIPV84b7YC9u5xM_ioyY4Na6/view",
-"description": "Close presenter shot of Hiral in black and red gesturing as she explains the NAV slide, with two attendees seen from behind in the foreground. A CleanPlus tissue box sits on the wooden table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Family & Money",
-"Mutual Funds"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value hiral mid lesson net asset value close presenter shot black red gesturing she explains nav slide two attendees seen from behind foreground cleanplus tissue box sits wooden table founder teaching mutual fund workshop screen financial literacy boardroom investing session"
-},
-{
-"id": "IFM-131",
-"title": "Pointing to Funds Assets",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-131.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1EACUzBd3XPEYHJ3qmBwlMgPS3mRJ6RE6/view",
-"description": "Vertical shot of the presenter pointing directly at the 'Funds Assets' icon on the NAV slide while two women in white and denim watch from the foreground. Handbags, a coffee mug and a phone rest on the table.",
-"session": "",
-"slide_text": "Funds Assets",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Investing",
-"Mutual Funds"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value pointing funds assets vertical shot presenter directly icon nav slide while two women white denim watch from foreground handbags coffee mug phone rest table workshop mutual fund financial literacy boardroom screen investing session"
-},
-{
-"id": "IFM-132",
-"title": "NAV Slide, Two Attendees Listening",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-132.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1xO3CWTSP_BAcD_iqFwLqbgMuud_bDhnm/view",
-"description": "The presenter gestures with both hands beside the NAV explainer screen as two seated women listen attentively in a wood-panelled boardroom. Water glasses and a coffee mug are arranged on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value nav slide two attendees listening presenter gestures both hands beside explainer screen seated women listen attentively wood panelled boardroom water glasses coffee mug arranged table workshop mutual fund financial literacy investing session"
-},
-{
-"id": "IFM-133",
-"title": "Clip — Breaking Down NAV (Net Asset Value)",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-133.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-133.mp4",
-"drive": "https://drive.google.com/file/d/1q8VG_DF00HvnwOuUJ97q8xHlaJCNvmMn/view",
-"description": "A presenter stands with arms crossed beside a detailed 'NAV' slide explaining net asset value as seated participants watch — walking through how mutual fund NAV is calculated.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "nav net asset value clip breaking down nav net asset value presenter stands arms crossed beside detailed slide explaining seated participants watch walking through how mutual fund calculated video funds presentation workshop boardroom women investing"
-},
-{
-"id": "IFM-134",
-"title": "Whiteboard Roundtable Discussion",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-134.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1-ypRi0GEzfcgXLTkQQn0d_5_fQxvbl8y/view",
-"description": "Group discussion around a boardroom table with a hand-drawn investment mind-map on the whiteboard behind; a woman in black and red works on a laptop while others converse. A Mac desktop screen and framed artwork frame the room.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "group discussion whiteboard mind map investment planning boardroom engaged talking"
-},
-{
-"id": "IFM-135",
-"title": "Team Brainstorm Around the Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-135.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/15fbUeBhROvme2OXCBSQ_P3IfWDiQjY3u/view",
-"description": "High-angle view of five women seated around a wooden boardroom table mid-discussion, with a detailed investment flowchart filling the whiteboard behind them. Notebooks, a coffee mug and a tissue box clutter the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Financial Planning",
-"Money Conversations"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "team brainstorm around table high angle view five women seated wooden boardroom mid discussion detailed investment flowchart filling whiteboard behind them notebooks coffee mug tissue box clutter roundtable workshop financial literacy office investing planning"
-},
-{
-"id": "IFM-136",
-"title": "Animated Discussion at Whiteboard Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-136.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1tEQliYYrv920pJVwI_cfEX6RiC_knZiM/view",
-"description": "A woman in a blue striped shirt gestures expressively while talking to colleagues around the boardroom table, an investment mind-map visible on the whiteboard behind. The founder in black and red looks on from the left.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Financial Planning",
-"Money Conversations"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "animated discussion whiteboard table woman blue striped shirt gestures expressively while talking colleagues around boardroom investment mind map visible behind founder black red looks from left gesturing roundtable workshop women financial literacy conversation office investing team planning"
-},
-{
-"id": "IFM-137",
-"title": "Strategy Talk, Mind-Map Backdrop",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-137.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1RcvO1-RTUEXYFhYd69rv-EgUgJbvC-JT/view",
-"description": "Five women in conversation around the wooden table; a central attendee gestures while explaining, with the investment flowchart whiteboard and a Mac screen in the background. Coffee mugs and notebooks sit on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context strategy talk mind map backdrop five women conversation around wooden table central attendee gestures while explaining investment flowchart whiteboard mac screen background coffee mugs notebooks sit discussion roundtable workshop financial literacy office investing team"
-},
-{
-"id": "IFM-138",
-"title": "Roundtable With Presentation Screen",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-138.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1urYn9tM8ebwB2lQ-UNEluUVsRFbcdTZf/view",
-"description": "Group of women seated around the boardroom table during discussion, an orange IFM-style slide showing on the wall screen and the investment whiteboard behind. Laptops, notebooks and water glasses fill the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "roundtable presentation screen group women seated around boardroom table during discussion orange ifm style slide showing wall investment whiteboard behind laptops notebooks water glasses fill workshop financial literacy office investing team session"
-},
-{
-"id": "IFM-139",
-"title": "Founder at Laptop, Attendees Engaged",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-139.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1zq-0snNeO3No_dOXZiF0kzXln_jmtKU7/view",
-"description": "Hiral in black and pink works at a MacBook in the foreground while four women behind her watch a presentation attentively, an asset-classes whiteboard visible at left. A coffee mug and water glasses sit nearby.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "founder laptop attendees engaged hiral black pink works macbook foreground while four women behind her watch presentation attentively asset classes whiteboard visible left coffee mug water glasses sit nearby workshop attentive financial literacy boardroom investing session"
-},
-{
-"id": "IFM-140",
-"title": "Attentive Audience at the Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-140.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1-EUQ8Um0WuGWukJou3RT8CwAePIt59qh/view",
-"description": "Wide vertical shot of five women listening intently during a session, the founder seated at her laptop in the foreground and an asset-classes whiteboard behind. Notebooks and water glasses cover the wooden table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "attentive audience table wide vertical shot five women listening intently during session founder seated her laptop foreground asset classes whiteboard behind notebooks water glasses cover wooden workshop financial literacy boardroom investing"
-},
-{
-"id": "IFM-141",
-"title": "Clip — Hiral Leading from the Laptop",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-141.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-141.mp4",
-"drive": "https://drive.google.com/file/d/172cVvukdwdRaZl5ebB0gx0z-26UwUxvs/view",
-"description": "Founder Hiral in a black top and pink trousers sits at the head of the table with her laptop, addressing a room of attentive women in front of a note-filled whiteboard — a teaching moment mid-session.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "clip hiral leading from laptop founder black top pink trousers sits head table her addressing room attentive women front note filled whiteboard teaching moment mid session video workshop boardroom investing"
-},
-{
-"id": "IFM-142",
-"title": "Clip — Group Discussion Around the Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-142.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-142.mp4",
-"drive": "https://drive.google.com/file/d/1rBtVBAnCX6av2IvwFB-KcSZxbvGHqIHs/view",
-"description": "Hiral turns toward the camera mid-sentence while several women seated around the boardroom table listen — an interactive discussion segment of the workshop.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "clip group discussion around table hiral turns toward camera mid sentence while several women seated boardroom listen interactive segment workshop video investing listening session"
-},
-{
-"id": "IFM-143",
-"title": "Group Watching the Screen Together",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-143.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1TQZoL7CY9WGE6axe0duKqt3QZT1Oro88/view",
-"description": "Five women including the founder in black gaze toward an off-frame presentation, seated around the wooden boardroom table with a whiteboard and storage cabinet behind. A laptop, notebook and pens lie on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "group watching screen together five women including founder black gaze toward off frame presentation seated around wooden boardroom table whiteboard storage cabinet behind laptop notebook pens lie audience workshop financial literacy attentive investing session"
-},
-{
-"id": "IFM-144",
-"title": "Smiling Founder Among the Group",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-144.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/18oLJZDhxLKIyZPBMQKzDjgKvSXGY3Plo/view",
-"description": "The founder in a black top smiles toward the camera in the foreground while four women behind her watch a presentation, the asset-classes whiteboard at left. A MacBook, tissue box and water glasses sit on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "founder smiling to camera boardroom session attendees watching presentation candid warm"
-},
-{
-"id": "IFM-145",
-"title": "Clip — Participants Engaging in Q&A",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-145.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-145.mp4",
-"drive": "https://drive.google.com/file/d/1o7LhNVRmnwPDUYV2MMA9fjAB26GUJK28/view",
-"description": "A wide shot of women around the table looking toward the front with engaged expressions while Hiral gestures from the foreground — an audience/Q&A moment.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Student Question",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context clip participants engaging wide shot women around table looking toward front engaged expressions while hiral gestures from foreground audience moment video boardroom workshop investing discussion session"
-},
-{
-"id": "IFM-146",
-"title": "Clip — Hiral Making a Point with Her Hands",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-146.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-146.mp4",
-"drive": "https://drive.google.com/file/d/1dpmyx6LF-aSMS1Vg7q_phpW9UuKX1B1J/view",
-"description": "Hiral leans forward with an open-palm gesture while speaking to the group, several women watching attentively across the table — emphasising a key teaching point.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "clip hiral making point her hands leans forward open palm gesture while speaking group several women watching attentively across table emphasising key teaching video explaining boardroom workshop investing session emphasis"
-},
-{
-"id": "IFM-147",
-"title": "Founder at Laptop, Room Listening",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-147.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1IGRYq4M6njcvwuqQdYlVEXgiSNhImspx/view",
-"description": "The founder in black and pink works at her MacBook while five attentive women around the table listen to an off-frame talk, an asset-classes mind-map filling the whiteboard behind. Water glasses and notebooks are scattered across the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "founder laptop room listening black pink works her macbook while five attentive women around table listen off frame talk asset classes mind map filling whiteboard behind water glasses notebooks scattered across workshop boardroom financial literacy investing session"
-},
-{
-"id": "IFM-148",
-"title": "Founder Pointing Across the Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-148.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1wNethHWzuXnwCmzSjFg6xIQZ6UwkVQrU/view",
-"description": "Hiral in a black top points emphatically toward the screen while teaching, four women around the table following her gesture with focused expressions. An asset-classes whiteboard and framed art line the wall behind.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "founder pointing across table hiral black top points emphatically toward screen while teaching four women around following her gesture focused expressions asset classes whiteboard framed art line wall behind workshop boardroom financial literacy investing session gesturing"
-},
-{
-"id": "IFM-149",
-"title": "Two-Way Pointing Discussion",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-149.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/16pY-9ynUaTXbIf2MN92zp_DzN0ivYzmc/view",
-"description": "Lively moment as both the founder in the foreground and a woman in a white tee across the table point in the same direction, the rest of the group watching with engaged expressions. The asset-classes whiteboard and a MacBook anchor the scene.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "two way pointing discussion lively moment both founder foreground woman white tee across table point same direction rest group watching engaged expressions asset classes whiteboard macbook anchor scene workshop boardroom financial literacy investing session women"
-},
-{
-"id": "IFM-150",
-"title": "Listening at the Boardroom Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-150.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1KGKRRa9o5asLKk5zjHncKB_vjawF_VFN/view",
-"description": "Several women sit around a wooden conference table with laptops, notebooks and coffee, listening intently during an IFM workshop; a financial mind-map fills the whiteboard behind them. A woman in a black top with a pink wrap sits in the foreground.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "listening boardroom table several women sit around wooden conference laptops notebooks coffee intently during ifm workshop financial mind map fills whiteboard behind them woman black top pink wrap sits foreground laptop notebook literacy investing session attentive office"
-},
-{
-"id": "IFM-151",
-"title": "Clip — Note-Taking During the Session",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-151.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-151.mp4",
-"drive": "https://drive.google.com/file/d/1PwXz_qzPgJQ6RQcu2UPSPHcYF4Gj1OiI/view",
-"description": "Women seated around the table listen and jot notes as Hiral leads from the foreground beside her laptop — a focused learning stretch of the workshop.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "clip note taking during session women seated around table listen jot notes hiral leads from foreground beside her laptop focused learning stretch workshop video participants boardroom investing"
-},
-{
-"id": "IFM-152",
-"title": "Screen-Led Session in Progress",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-152.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/13Y2SRtLMd9LsQywe-dx2_AiX9Fh2_z7I/view",
-"description": "A facilitator at a laptop presents an on-screen calculator to a small group of women seated around the conference table, with a detailed asset-classes whiteboard diagram on the right. Tissues, water glasses and an IFM workbook sit on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "screen led session progress facilitator laptop presents calculator small group women seated around conference table detailed asset classes whiteboard diagram right tissues water glasses ifm workbook sit workshop presentation room learning investing office"
-},
-{
-"id": "IFM-153",
-"title": "Clip — Casual Group Session Around the Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-153.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-153.mp4",
-"drive": "https://drive.google.com/file/d/1g524nVu6CsMFYEvseFC6vK3uTgj3FuT5/view",
-"description": "A presenter in beige stands by the screen while women chat around a table laden with lunchboxes, water bottles and books in a relaxed setting — a casual/break-time portion.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration clip casual group session around table presenter beige stands screen while women chat laden lunchboxes water bottles books relaxed setting break time portion video boardroom workshop investing conversation"
-},
-{
-"id": "IFM-154",
-"title": "Clip — Relaxed Roundtable Conversation",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-154.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-154.mp4",
-"drive": "https://drive.google.com/file/d/148RJwZOVoLspDj5zbXo_neSqTceOpxrx/view",
-"description": "A wide view of women laughing and talking around the table with a presenter standing by the screen behind — a light, informal moment during the workshop.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration b-roll cutaway establishing supporting footage context clip relaxed roundtable conversation wide view women laughing talking around table presenter standing screen behind light informal moment during workshop video boardroom investing session"
-},
-{
-"id": "IFM-155",
-"title": "Clip — Intro to Evaluating Investments",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-155.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-155.mp4",
-"drive": "https://drive.google.com/file/d/1MMdO3cpSZ0akfJWKwm3xM50Hl95HYxYa/view",
-"description": "A presenter in beige gestures beside an 'Evaluating Investments — why do we need different measures?' slide, laptops and bottles on the table — the opening of a returns-evaluation module.",
-"session": "",
-"slide_text": "Evaluating Investments — why do we need different measures?",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Risk & Returns",
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "clip intro evaluating investments presenter beige gestures beside why need different measures slide laptops bottles table opening returns evaluation module video presentation boardroom workshop investing session teaching"
-},
-{
-"id": "IFM-156",
-"title": "Evaluating Investments Talk",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-156.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1QOBaisDyZUFcaL33MQhq5P6zytRi9Vqu/view",
-"description": "A presenter in a brown top stands and gestures beside a TV screen reading 'Evaluating Investments' while women in colourful outfits follow along with workbooks and notes. The room has wood panelling and a whiteboard of financial diagrams.",
-"session": "",
-"slide_text": "Evaluating Investments",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "evaluating investments talk presenter brown top stands gestures beside screen reading while women colourful outfits follow along workbooks notes room has wood panelling whiteboard financial diagrams workshop slide workbook investing session gesture office learning"
-},
-{
-"id": "IFM-157",
-"title": "Standing Presenter, Engaged Group",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-157.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1x6FUgWMBLfgiRxoGbGp76i33b-N8oUan/view",
-"description": "A woman in a brown top presents the 'Evaluating Investments' slide while seated participants take notes and sip from mugs around the dark wooden table. Workbooks, water bottles and a tissue box clutter the tabletop.",
-"session": "",
-"slide_text": "Evaluating Investments",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "sip systematic investment plan monthly investing standing presenter engaged group woman brown top presents evaluating investments slide while seated participants take notes sip from mugs around dark wooden table workbooks water bottles tissue box clutter tabletop workshop presentation women note taking conference workbook investing whiteboard office"
-},
-{
-"id": "IFM-158",
-"title": "Vertical View of the Workshop",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-158.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1hHrb8tnvz8Y5HpOAWRsQsa2fmQFoGcCq/view",
-"description": "A tall vertical shot of a presenter explaining 'Evaluating Investments' to women gathered at the conference table, with workbooks, an iPad and water bottles spread out. Wood-panelled wall and overhead strip light frame the scene.",
-"session": "",
-"slide_text": "Evaluating Investments",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "vertical view workshop tall shot presenter explaining evaluating investments women gathered conference table workbooks ipad water bottles spread out wood panelled wall overhead strip light frame scene workbook room investing office session learning"
-},
-{
-"id": "IFM-159",
-"title": "Hands-On Explanation",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-159.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1Uz-bvChoy6-7sOlnU51V7k1oh3Q4Jd6E/view",
-"description": "A presenter in brown gestures with both hands explaining the 'Evaluating Investments' slide as women lean in around the table with open IFM workbooks. Cacti, water bottles and coffee tumblers dot the wooden surface.",
-"session": "",
-"slide_text": "Evaluating Investments",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "hands explanation presenter brown gestures both explaining evaluating investments slide women lean around table open ifm workbooks cacti water bottles coffee tumblers dot wooden surface workshop gesture workbook investing conference room engaged office session learning"
-},
-{
-"id": "IFM-160",
-"title": "Clip — Why Evaluation Concepts Matter",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-160.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-160.mp4",
-"drive": "https://drive.google.com/file/d/1li77ze85IzhV1yNy6-pJVKVJwiGSUVsW/view",
-"description": "A presenter mid-explanation beside an 'Evaluating Investments — why these concepts matter' slide, while two women follow along with workbooks open — a deeper dive into investment metrics.",
-"session": "",
-"slide_text": "Evaluating Investments — why these concepts matter",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "clip why evaluation concepts matter presenter mid explanation beside evaluating investments these slide while two women follow along workbooks open deeper dive into investment metrics video workbook boardroom workshop investing session"
-},
-{
-"id": "IFM-161",
-"title": "Clip — Absolute Rate of Return Explained",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-161.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-161.mp4",
-"drive": "https://drive.google.com/file/d/1tYNb40egmHWGPOCAqSbvwlnfcCtGi-bg/view",
-"description": "A presenter points toward an 'Absolute Rate of Return / Simple Interest' slide with a worked ₹10–13 lakh example as participants follow with open workbooks — teaching how absolute returns are measured.",
-"session": "",
-"slide_text": "Absolute Rate of Return / Simple Interest",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Risk & Returns",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "clip absolute rate return explained presenter points toward simple interest slide worked ₹10 lakh example participants follow open workbooks teaching how returns measured video workbook boardroom workshop investing session"
-},
-{
-"id": "IFM-162",
-"title": "Clip — Small-Group Laptop Work Session",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-162.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-162.mp4",
-"drive": "https://drive.google.com/file/d/1zqC2qfII21eGbykhGw_yuB3k1irJNiAC/view",
-"description": "Three women smile toward the camera while working on laptops around the table in a relaxed small-group setting — a hands-on/break moment.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration clip small group laptop work session three women smile toward camera while working laptops around table relaxed setting hands break moment video boardroom workshop investing smiling"
-},
-{
-"id": "IFM-163",
-"title": "Principles of Smart Investing",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-163.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1mQ_RKYhWKLdvwKpaUDoTvp1NPRNplz7I/view",
-"description": "A presenter in a pink kurta stands by a TV displaying 'Principles of Smart Investing' with a colourful cycle diagram, addressing women seated around the table. The right-hand whiteboard is filled with handwritten financial notes.",
-"session": "",
-"slide_text": "Principles of Smart Investing",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "",
-"topic": [
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "principles smart investing presenter pink kurta stands displaying colourful cycle diagram addressing women seated around table right hand whiteboard filled handwritten financial notes workshop conference room session office learning"
-},
-{
-"id": "IFM-164",
-"title": "Smart Investing Cycle Slide",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-164.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/192tkBqjqDnfnpZ1tE6HHcM4OLqclChjc/view",
-"description": "Wide vertical shot of a pink-clad presenter teaching the 'Principles of Smart Investing' slide to a circle of women at the wooden table, workbooks and water glasses in front of them. Whiteboard diagrams and AC unit fill the back wall.",
-"session": "",
-"slide_text": "Principles of Smart Investing",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "smart investing cycle slide wide vertical shot pink clad presenter teaching principles circle women wooden table workbooks water glasses front them whiteboard diagrams unit fill back wall workshop kurta workbook conference room office session"
-},
-{
-"id": "IFM-165",
-"title": "Group Around the Investing Slide",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-165.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1escFRvm00lwsDRVQGRebeDSoBweHgtMF/view",
-"description": "A pink-kurta presenter gestures toward the 'Principles of Smart Investing' screen while women seated around the table watch, some with open workbooks and sticky notes. Warm office lighting and wood panelling set the tone.",
-"session": "",
-"slide_text": "Principles of Smart Investing",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "group around investing slide pink kurta presenter gestures toward principles smart screen while women seated table watch some open workbooks sticky notes warm office lighting wood panelling set tone workshop workbook conference room session learning"
-},
-{
-"id": "IFM-166",
-"title": "Close Angle on the Pink Presenter",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-166.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/12pfVkVVSHMUQgOFFnWRwHmokw7JoUUz3/view",
-"description": "A tighter view of the presenter in pink explaining the smart-investing 'cycle' slide, with two women in the foreground listening and a workbook open on the table. Tissue box and coffee tumblers sit nearby.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "close angle pink presenter tighter view explaining smart investing cycle slide two women foreground listening workbook open table tissue box coffee tumblers sit nearby workshop kurta conference room office session"
-},
-{
-"id": "IFM-167",
-"title": "Mid-Talk on Investing Principles",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-167.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1reE4q5jpN0yQ-iXpBaicsJ7K95Tl3Iw0/view",
-"description": "The pink-kurta facilitator gestures mid-sentence beside the 'Principles of Smart Investing' TV slide as women in the foreground listen attentively. Pens, water glasses, coffee tumblers and a workbook cover the wooden table.",
-"session": "",
-"slide_text": "Principles of Smart Investing",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "mid talk investing principles pink kurta facilitator gestures sentence beside smart slide women foreground listen attentively pens water glasses coffee tumblers workbook cover wooden table workshop presenter gesture conference room office session attentive"
-},
-{
-"id": "IFM-168",
-"title": "Roundtable Discussion",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-168.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/13w0dtfVB8u3Jc4ii122zmX39dc_xGHMP/view",
-"description": "A candid overhead-angle shot of women in casual wear talking and discussing around the conference table, with a facilitator standing by the blank screen and a financial whiteboard behind. Denim jackets, mugs and workbooks fill the scene.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration roundtable discussion candid overhead angle shot women casual wear talking discussing around conference table facilitator standing blank screen financial whiteboard behind denim jackets mugs workbooks fill scene workshop room investing office session"
-},
-{
-"id": "IFM-169",
-"title": "Clip — Discussion in Front of Blank Screen",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-169.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-169.mp4",
-"drive": "https://drive.google.com/file/d/1mZSuEbDnzFEShoVG4nYJ-hozYnooQBMt/view",
-"description": "A presenter stands by a blank display while a packed table of women lean in for discussion, some with workbooks and phones out — an open-floor conversation or topic transition.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "clip discussion front blank screen presenter stands display while packed table women lean some workbooks phones out open floor conversation topic transition video boardroom workshop investing session group"
-},
-{
-"id": "IFM-170",
-"title": "Facilitator Standing by the Screen",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-170.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/10SZJ5-1AjHGzFTcUtqr4xe9PSkaOqQo2/view",
-"description": "A facilitator stands beside the wall-mounted screen leading a discussion with women seated tightly around the wooden table, mugs and open workbooks in front of them. Whiteboard financial diagrams cover the right wall.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "facilitator standing screen stands beside wall mounted leading discussion women seated tightly around wooden table mugs open workbooks front them whiteboard financial diagrams cover right workshop conference room workbook investing office session learning"
-},
-{
-"id": "IFM-171",
-"title": "Pointing at the Display",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-171.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1zUksnhwTpTi-q88DTkFrHeGJmE8PogZ-/view",
-"description": "A facilitator gestures toward the wall screen while a full table of women in casual outfits follow along with workbooks, phones and coffee. The wood-panelled boardroom and handwritten whiteboard frame the busy session.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "pointing display facilitator gestures toward wall screen while full table women casual outfits follow along workbooks phones coffee wood panelled boardroom handwritten whiteboard frame busy session workshop workbook conference room investing office"
-},
-{
-"id": "IFM-172",
-"title": "Clip — Presenter Fielding a Raised-Hand Question",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-172.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-172.mp4",
-"drive": "https://drive.google.com/file/d/1kb5QQLc_J7F3eBBuV6RPU8qM6X1JqBgI/view",
-"description": "A presenter in white raises her hand mid-explanation in front of the screen while women at the table follow with open workbooks — an interactive teaching exchange.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "clip presenter fielding raised hand question white raises her mid explanation front screen while women table follow open workbooks interactive teaching exchange video workbook boardroom workshop investing session"
-},
-{
-"id": "IFM-173",
-"title": "Workbook Session, Standing Host",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-173.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1TtgKogwSFLusT_wZImLAb5Y0yVGFAW6P/view",
-"description": "A standing host in a sleeveless top leads a session as women around the table study colourful IFM workbooks and sip coffee. Wood panelling, recessed lights and a wall-mounted display set the office-boardroom scene.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "sip systematic investment plan monthly investing workbook session standing host sleeveless top leads women around table study colourful ifm workbooks sip coffee wood panelling recessed lights wall mounted display set office boardroom scene workshop conference room panel investing learning denim"
-},
-{
-"id": "IFM-174",
-"title": "Intimate Boardroom Circle",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-174.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1MRXbYCrU53EtdFuj27n4LJUiYHr6kZ2c/view",
-"description": "Women cluster closely around the table in casual wear, mugs in hand, as a sleeveless facilitator stands and speaks beside the blank screen. Snack jars and a tissue box sit on the table in the warm wood-panelled room.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "intimate boardroom circle women cluster closely around table casual wear mugs hand sleeveless facilitator stands speaks beside blank screen snack jars tissue box sit warm wood panelled room workshop conference panel investing office session discussion"
-},
-{
-"id": "IFM-175",
-"title": "Casual Group Engagement",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-175.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1oOxuTtXHIp5jUkO-AtlwEyaP9_jb9ELZ/view",
-"description": "A standing facilitator gestures while seated women in denim and prints sip coffee and listen, an IFM workbook visible in the foreground. The cosy wood-panelled boardroom is lit by overhead strip lighting.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "sip systematic investment plan monthly investing casual group engagement standing facilitator gestures while seated women denim prints sip coffee listen ifm workbook visible foreground cosy wood panelled boardroom lit overhead strip lighting workshop conference room panel investing office session"
-},
-{
-"id": "IFM-176",
-"title": "Explaining to a Full Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-176.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1CV8kUjGu6FHJx3pAcGohCER2IvAEkGkY/view",
-"description": "A facilitator in a sleeveless top explains a point with hands raised as a full table of women in casual clothes follow along over open workbooks and mugs. Snack jars and tissues sit on the wooden surface under warm lighting.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "explaining full table facilitator sleeveless top explains point hands raised women casual clothes follow along over open workbooks mugs snack jars tissues sit wooden surface under warm lighting workshop gesture workbook conference room wood panel investing office session coffee"
-},
-{
-"id": "IFM-177",
-"title": "Standing Talk Over Workbooks",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-177.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/13XsQbMz0l5YLtDhAv5rRroATVmqHRVJL/view",
-"description": "A facilitator stands and gestures beside the wall display as women seated around the table review colourful IFM workbooks and drink coffee. The wood-panelled boardroom, strip lighting and recessed lights frame the session.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "testimonial review feedback social proof word of mouth standing talk over workbooks facilitator stands gestures beside wall display women seated around table review colourful ifm drink coffee wood panelled boardroom strip lighting recessed lights frame session workshop workbook conference room panel investing office gesture learning"
-},
-{
-"id": "IFM-178",
-"title": "Workshop Kickoff in the Boardroom",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-178.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1zgpkOnO7ULZStkkidT-Hu2H84TOf0j7W/view",
-"description": "A woman in a cream top stands and presents to a group of women seated around a wooden conference table in a wood-panelled office, with a blank wall-mounted screen behind her. Water bottles, mugs and a tissue box dot the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "workshop kickoff boardroom woman cream top stands presents group women seated around wooden conference table wood panelled office blank wall mounted screen behind her water bottles mugs tissue box dot presenter financial literacy session india mums standing audience"
-},
-{
-"id": "IFM-179",
-"title": "Types of Insurance Slide Begins",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-179.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/193E3rVDPJyZbX35xq2NLLzcgeBnk91Vt/view",
-"description": "The presenter stands beside a wall-mounted screen displaying a pink-headed 'Types of Insurance' slide while attentive women look on from around the table. Denim jacket and orange-top attendees are visible in the foreground.",
-"session": "",
-"slide_text": "Types of Insurance",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Insurance"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "types insurance slide begins presenter stands beside wall mounted screen displaying pink headed while attentive women look from around table denim jacket orange top attendees visible foreground presentation workshop boardroom financial literacy session teaching india learning"
-},
-{
-"id": "IFM-180",
-"title": "Clip — Is Your Corporate Health Plan Enough?",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-180.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-180.mp4",
-"drive": "https://drive.google.com/file/d/1EsIx0Kf1ckoT4HVtnm0gL8B8RjcHKGkr/view",
-"description": "Hiral stands beside an 'Is Your Corporate Health Plan Enough?' slide addressing the seated group on health-insurance gaps — covering why employer cover may be insufficient.",
-"session": "",
-"slide_text": "Is Your Corporate Health Plan Enough?",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Insurance"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "clip your corporate health plan enough hiral stands beside slide addressing seated group insurance gaps covering why employer cover may insufficient video presenter boardroom women workshop protection session coverage"
-},
-{
-"id": "IFM-181",
-"title": "Clip — Health Cover Q&A with Participant",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-181.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-181.mp4",
-"drive": "https://drive.google.com/file/d/1cTA22_2MVN9MHpneDgTNSbZcsqgMretO/view",
-"description": "Hiral stands by the 'Is Your Corporate Health Plan Enough?' slide while a woman in pink responds or asks a question, others listening — an interactive discussion on health insurance.",
-"session": "",
-"slide_text": "Is Your Corporate Health Plan Enough?",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Student Question",
-"topic": [
-"Money Conversations",
-"Insurance"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "clip health cover participant hiral stands your corporate plan enough slide while woman pink responds asks question others listening interactive discussion insurance video boardroom women workshop session"
-},
-{
-"id": "IFM-182",
-"title": "Is Your Family Plan Enough Discussion",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-182.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1xNAUtkPWuAgA6VLDTLGN9S1MVBsJnm66/view",
-"description": "Seated facilitators lead a discussion at the head of the table beneath a colourful mind-map slide, while participants browse printed IFM workbooks. One woman in a bold red-and-black floral dress sits in the foreground.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Financial Planning",
-"Money Conversations",
-"Family & Money"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "your family plan enough discussion seated facilitators lead head table beneath colourful mind map slide while participants browse printed ifm workbooks one woman bold red black floral dress sits foreground workbook workshop women boardroom facilitator financial planning session reading india"
-},
-{
-"id": "IFM-183",
-"title": "Emergency Bucket Terms Explained",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-183.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1lpQVrbyuzje915u0IEJ5kDJiEBJo20TQ/view",
-"description": "A presenter gestures toward a whiteboard covered in handwritten notes beside an 'Emergency Bucket – Terms To Know' slide, as women take notes over open IFM workbooks on the table.",
-"session": "",
-"slide_text": "Emergency Bucket – Terms To Know",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Saving",
-"Financial Planning",
-"3-Bucket Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "emergency bucket terms explained presenter gestures toward whiteboard covered handwritten notes beside know slide women take over open ifm workbooks table fund workshop workbook boardroom savings session note taking india teaching"
-},
-{
-"id": "IFM-184",
-"title": "Wide View of the Emergency Bucket Session",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-184.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/16pnkEliG_6-jBTSD0XKaEMolwgnuJCYM/view",
-"description": "A wide landscape shot of the boardroom showing women seated around the full table, the presenter standing between an 'Emergency Bucket' slide and a marker-filled whiteboard. Framed artwork and a QR code poster hang on the right wall.",
-"session": "",
-"slide_text": "Emergency Bucket",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Saving",
-"Financial Planning",
-"3-Bucket Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context wide view emergency bucket session landscape shot boardroom showing women seated around full table presenter standing between slide marker filled whiteboard framed artwork code poster hang right wall workshop fund financial literacy india workbooks group"
-},
-{
-"id": "IFM-185",
-"title": "Full Room Engaged Around the Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-185.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1US0pDnQEf0lkt5C5ys9sWB54v2cJjh4z/view",
-"description": "Landscape view of the workshop with attendees seated around the wooden table reviewing IFM workbooks, the presenter standing at front beside the emergency-bucket slide and a detailed whiteboard mind map. Framed art and QR poster on the wall.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Saving",
-"Financial Planning",
-"3-Bucket Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "testimonial review feedback social proof word of mouth full room engaged around table landscape view workshop attendees seated wooden reviewing ifm workbooks presenter standing front beside emergency bucket slide detailed whiteboard mind map framed art poster wall boardroom women fund session financial literacy india group"
-},
-{
-"id": "IFM-186",
-"title": "Clip — Asset Classes Whiteboard Discussion",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-186.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-186.mp4",
-"drive": "https://drive.google.com/file/d/1LDuoGUdhrc1Pj3Spjc4uzedcJdkoKTrD/view",
-"description": "A presenter in white sits at the head of the table beside a whiteboard mapping out asset classes, while women discuss with workbooks and charts open — a recap on asset allocation.",
-"session": "",
-"slide_text": "",
-"silent": true,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Asset Allocation"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "clip asset classes whiteboard discussion presenter white sits head table beside mapping out while women discuss workbooks charts open recap allocation video boardroom workshop investing session"
-},
-{
-"id": "IFM-187",
-"title": "Attendees Listening Intently",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-187.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1WFL6L7qbp9gEu2uzJieLp35qc4YHnA-a/view",
-"description": "A vertical shot focused on three seated women listening to the off-frame presenter, with a brightly lit overhead fixture above and a handwritten whiteboard and QR poster behind them. Open IFM workbooks rest on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "attendees listening intently vertical shot focused three seated women off frame presenter brightly lit overhead fixture above handwritten whiteboard poster behind them open ifm workbooks rest table workshop workbook boardroom session financial literacy india focus"
-},
-{
-"id": "IFM-188",
-"title": "Presenter Perched at the Head of the Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-188.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/177l6g5PsOHpMc7F67gf57qZ6czh9D6sw/view",
-"description": "The presenter sits casually at the head of the table addressing the seated group beneath the 'Emergency Bucket' slide, with several women appearing to applaud. Open workbooks, water bottles and a teal flask sit on the table.",
-"session": "",
-"slide_text": "Emergency Bucket",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Saving",
-"Financial Planning",
-"3-Bucket Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration presenter perched head table sits casually addressing seated group beneath emergency bucket slide several women appearing applaud open workbooks water bottles teal flask sit workshop applause boardroom fund workbook session financial literacy india engaged"
-},
-{
-"id": "IFM-189",
-"title": "Seated Facilitator Leads Q and A",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-189.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1MxcmXT2JFfj9dLeJMaZx40-fnQmZf2Ut/view",
-"description": "The facilitator sits at the head of the wooden table leading the group beneath the emergency-bucket slide and whiteboard mind map, as women around the table follow along with open IFM workbooks and phones.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Student Question",
-"topic": [
-"Money Conversations",
-"3-Bucket Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "seated facilitator leads sits head wooden table leading group beneath emergency bucket slide whiteboard mind map women around follow along open ifm workbooks phones workshop boardroom workbook session financial literacy india discussion"
-},
-{
-"id": "IFM-190",
-"title": "Presenter Mid-Gesture at the Whiteboard",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-190.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1hyRSNBlgmkCpyl9yBRr_s6wMzwn6RNsn/view",
-"description": "Landscape shot of the presenter standing and gesturing with a raised hand beside the emergency-bucket slide and whiteboard, addressing the seated semicircle of women with workbooks open on the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Saving",
-"Financial Planning",
-"3-Bucket Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "presenter mid gesture whiteboard landscape shot standing gesturing raised hand beside emergency bucket slide addressing seated semicircle women workbooks open table workshop boardroom fund session financial literacy india teaching"
-},
-{
-"id": "IFM-191",
-"title": "Classroom-Style Emergency Fund Lesson",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-191.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1IKSiKVAyr84X6u3K3hyHS9iN4Pnia2Vk/view",
-"description": "A wide view of the boardroom session with the presenter standing at front by the 'Emergency Bucket' slide and whiteboard, women seated around the table taking notes in IFM workbooks. Framed artwork hangs on the right.",
-"session": "",
-"slide_text": "Emergency Bucket",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Saving",
-"Financial Planning",
-"Family & Money",
-"3-Bucket Investing"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context classroom style emergency fund lesson wide view boardroom session presenter standing front bucket slide whiteboard women seated around table taking notes ifm workbooks framed artwork hangs right workshop workbook financial literacy india note group"
-},
-{
-"id": "IFM-192",
-"title": "Engaged Group During Savings Talk",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-192.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1b8NAOt5L8u8J0OwQn0_e7L8GVKa8b2-D/view",
-"description": "Landscape shot of the workshop with the presenter at the front beside the emergency-bucket slide and whiteboard, several women raising hands or gesturing as they engage from around the table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Saving",
-"Financial Planning",
-"3-Bucket Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "engaged group during savings talk landscape shot workshop presenter front beside emergency bucket slide whiteboard several women raising hands gesturing they engage from around table boardroom engagement fund session financial literacy india workbooks"
-},
-{
-"id": "IFM-193",
-"title": "Fixed Deposits Lesson with Green-Top Presenter",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-193.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1WzXqJeJrnS6gPMwSnyvWIMW4TfHNbG3y/view",
-"description": "A presenter in a green top and beige skirt stands by a 'Fixed Deposits' slide explaining to a group of seated women, with tissues, flasks and open IFM workbooks across the table. One attendee in coral and another in blue print look on.",
-"session": "",
-"slide_text": "Fixed Deposits",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Family & Money",
-"Fixed Income"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "fixed deposits lesson green top presenter beige skirt stands slide explaining group seated women tissues flasks open ifm workbooks across table one attendee coral another blue print look workshop boardroom session financial literacy india teaching"
-},
-{
-"id": "IFM-194",
-"title": "Explaining Fixed Deposit Returns",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-194.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1fkKrxrEpmr_dHdYiud-HgvJ5e1KXWKL8/view",
-"description": "The green-topped presenter gestures while teaching the 'Fixed Deposits' slide, attendees seated closely around the table with phones, flasks and a CleanPlus tissue box. A woman checks her phone in the foreground.",
-"session": "",
-"slide_text": "Fixed Deposits",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Risk & Returns",
-"Fixed Income"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "explaining fixed deposit returns green topped presenter gestures while teaching deposits slide attendees seated closely around table phones flasks cleanplus tissue box woman checks her phone foreground workshop women boardroom session financial literacy india gesturing"
-},
-{
-"id": "IFM-195",
-"title": "Attentive Faces During FD Breakdown",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-195.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1-bwbfrLtcFxOmXKw5Ib-vJeN1vHI2Uoa/view",
-"description": "The presenter stands by the 'Fixed Deposits' slide addressing a tightly seated group, with women in coral and blue-print tops listening intently. Flasks, glasses and a tissue box crowd the wooden table.",
-"session": "",
-"slide_text": "Fixed Deposits",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Fixed Income"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "attentive faces during breakdown presenter stands fixed deposits slide addressing tightly seated group women coral blue print tops listening intently flasks glasses tissue box crowd wooden table workshop boardroom session financial literacy india"
-},
-{
-"id": "IFM-196",
-"title": "Discussion on Fixed Deposit Characteristics",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-196.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1idAfr5Shu-qZUrnl6R3Pfk8Te8UsZ3E3/view",
-"description": "The green-topped presenter holds a notebook while leading a discussion beneath the 'Fixed Deposits' slide, with a foreground attendee gesturing as if asking a question. Coral and blue-print dressed women listen across the table.",
-"session": "",
-"slide_text": "Fixed Deposits",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Fixed Income"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "discussion fixed deposit characteristics green topped presenter holds notebook while leading beneath deposits slide foreground attendee gesturing asking question coral blue print dressed women listen across table workshop boardroom session financial literacy india group"
-},
-{
-"id": "IFM-197",
-"title": "Lively FD Session Around the Table",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-197.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/14QHomDDUiEzGbCDYw8knhtfr3QsJ0DY0/view",
-"description": "A vertical view of the busy session with the presenter at the 'Fixed Deposits' slide and women seated all around reviewing open IFM workbooks, flasks and bags on the table. One attendee smiles broadly in the foreground.",
-"session": "",
-"slide_text": "Fixed Deposits",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Fixed Income"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration testimonial review feedback social proof word of mouth lively session around table vertical view busy presenter fixed deposits slide women seated all reviewing open ifm workbooks flasks bags one attendee smiles broadly foreground workshop boardroom financial literacy india smiling group"
-},
-{
-"id": "IFM-198",
-"title": "FD Taxation Rules on Screen",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-198.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1WaHQ95b4b0OUqvUStv8LxbFzd1Y3fvid/view",
-"description": "The presenter stands beside a 'Fixed Deposits' slide detailing taxation rules and gestures to the group, with women in tank tops and print dresses seated around the table holding phones and workbooks.",
-"session": "",
-"slide_text": "Fixed Deposits",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Fixed Income"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "taxation rules screen presenter stands beside fixed deposits slide detailing gestures group women tank tops print dresses seated around table holding phones workbooks workshop boardroom session financial literacy india gesturing attendees"
-},
-{
-"id": "IFM-199",
-"title": "Closing Point on Fixed Deposit Tax Efficiency",
-"date": "2026-04-06",
-"thumb": "../thumbs/IFM-199.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1hma254KiSQI1RlxEALsz4hVmH8UECUKN/view",
-"description": "The presenter explains the FD taxation slide noting fixed deposits are not tax-efficient for higher tax brackets, as the seated group of women listens around the cluttered conference table.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Fixed Income"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "closing point fixed deposit tax efficiency presenter explains taxation slide noting deposits not efficient higher brackets seated group women listens around cluttered conference table workshop boardroom session financial literacy india teaching"
-},
-{
-"id": "IFM-200",
-"title": "July: About Hiral (Reel 1)",
-"date": "2026-07-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
-"description": "Reel introducing founder Hiral Goel — video in production by Aakara (placeholder in the July deck).",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "july about hiral reel introducing founder goel video production aakara placeholder deck intro"
-},
-{
-"id": "IFM-201",
-"title": "July: About Hiral (Reel 2)",
-"date": "2026-07-02",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
-"description": "Second 'About Hiral' founder-intro reel — video in production by Aakara.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "july about hiral reel second founder intro video production aakara"
-},
-{
-"id": "IFM-202",
-"title": "July: If finance pages confuse you",
-"date": "2026-07-02",
-"thumb": "../thumbs/IFM-202.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/16m3DN9FMY9keFaUU_cplbIR1MgtO01Ec",
-"description": "Story: a worried woman under a duvet on her phone — 'If finance pages confuse you… this is for you. Tap to know why.'",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "july finance pages confuse you story worried woman under duvet her phone tap know why jargon confusing beginner relatable women aakara"
-},
-{
-"id": "IFM-203",
-"title": "July: Money is a tool",
-"date": "2026-07-04",
-"thumb": "../thumbs/IFM-203.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1lvZVFjlQpDgeL-XtNjZG_7Hus-e3O8wT/view",
-"description": "Static post — a gold trophy on a black plinth stuffed with a fan of green ₹500 notes, against a plain off-white corner wall. Blue type alongside reads 'MONEY IS NOT THE GOAL, IT'S A TOOL TO CREATE YOUR DREAM LIFE.' IFM wordmark top-right.",
-"session": "Aakara July delivery",
-"slide_text": "MONEY IS NOT THE GOAL, IT",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Money Mindset"
-],
-"person": [
-"No Person"
-],
-"source": "Aakara",
-"search_terms": "july money tool static post gold trophy black plinth stuffed fan green ₹500 notes against plain off white corner wall blue type alongside reads not goal create your dream life ifm wordmark top right mindset cash reframe aakara"
-},
-{
-"id": "IFM-204",
-"title": "July: 1 Minute Investing",
-"date": "2026-07-07",
-"thumb": "../thumbs/IFM-204.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1zv0psStlNEPSk9Jh3nn4JFu_nZCZ9d9T/view",
-"description": "Reel cover — Hiral in a red top stands smiling beside a full bookshelf in a bright home corner, one hand resting on the shelf. Navy serif 'One Minute' floats top-left with three purple twin-bell alarm-clock graphics scattered around her; bold white 'Investing School' across the lower third.",
-"session": "Aakara July delivery",
-"slide_text": "floats top-left with three purple twin-bell alarm-clock graphics scattered around her; bold white",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Portrait",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "candid warm natural unposed relaxed friendly celebration july minute investing reel cover hiral red top stands smiling beside full bookshelf bright home corner one hand resting shelf navy serif floats left three purple twin bell alarm clock graphics scattered around her bold white school across lower third"
-},
-{
-"id": "IFM-205",
-"title": "July: Mini Money Lesson (50-30-20)",
-"date": "2026-07-08",
-"thumb": "../thumbs/IFM-205.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1yYpS3-In5sLtbspbQhxu055hBgYvoY_a",
-"description": "Story: money bags and paper-scrap lettering on green — 'It's time for a Mini Money Lesson, Part 1.'",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Saving",
-"Managing Money",
-"Family & Money"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "july mini money lesson story bags paper scrap lettering green time part budgeting pizza rule savings aakara"
-},
-{
-"id": "IFM-206",
-"title": "July: Savings and Expense (flip the formula)",
-"date": "2026-07-09",
-"thumb": "../thumbs/IFM-206.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1qDvAz_R1jLO27sUEuFEpiTrfaL94cy5X",
-"description": "Carousel cover: a shopping basket holding a handbag, salad bowl and chocolate — 'PLOT TWIST! Your salary didn't disappear. You just accidentally sponsored your cravings, carts & convenience first.'",
-"session": "",
-"slide_text": "PLOT TWIST! Your salary didn",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Saving",
-"Managing Money"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "july savings expense flip formula carousel cover shopping basket holding handbag salad bowl chocolate plot twist your salary didn disappear you just accidentally sponsored cravings carts convenience first expenses pay yourself budgeting aakara"
-},
-{
-"id": "IFM-207",
-"title": "July: Money myths we grew up believing",
-"date": "2026-07-13",
-"thumb": "../thumbs/IFM-207.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1y0k30JshEDKtt9mZTvd9XUlEIu8fveTO",
-"description": "Carousel cover: a woman in a rust top thinking hard, headline 'Money Myths we grew up believing' on a cream doodle background.",
-"session": "",
-"slide_text": "Money Myths we grew up believing",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Wealth",
-"Money Mindset",
-"Women & Money"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "july money myths grew believing carousel cover woman rust top thinking hard headline cream doodle background women gold wealth creation hiral beliefs aakara"
-},
-{
-"id": "IFM-208",
-"title": "July: Your Coffee Has Potential",
-"date": "2026-07-15",
-"thumb": "../thumbs/IFM-208.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1xEYXGTux7FdszKoUkEIP3zd6tiwlxTgn",
-"description": "Carousel cover: a Starbucks frappuccino surrounded by gold coins — 'Your Starbucks habit might secretly be worth… ₹2.8 CRORES. Yes, really!'",
-"session": "",
-"slide_text": "Your Starbucks habit might secretly be worth… ₹2.8 CRORES. Yes, really!",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [
-"Compounding",
-"Wealth"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "sip systematic investment plan monthly investing july your coffee has potential carousel cover starbucks frappuccino surrounded gold coins habit might secretly worth crores yes really compounding latte factor sip aakara"
-},
-{
-"id": "IFM-209",
-"title": "July: You Can't Buy Twice",
-"date": "2026-07-17",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
-"description": "'You Can't Buy Twice' reel — video in production by Aakara.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Managing Money"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "july you can buy twice reel video production aakara cant spending"
-},
-{
-"id": "IFM-210",
-"title": "July: Finance Green Flags",
-"date": "2026-07-19",
-"thumb": "../thumbs/IFM-210.jpg",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
-"description": "5-frame story — 'Do you know the green flags of your financial partner, Mr. Money?' #1 expense limit at month start, #2 don't treat salary day like a shopping festival, #3 pay your future self first.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Managing Money"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "july finance green flags frame story you know your financial partner money expense limit month start don treat salary day like shopping festival pay future self first budgeting relatable aakara"
-},
-{
-"id": "IFM-211",
-"title": "July: Rich people aren't magically born with money",
-"date": "2026-07-20",
-"thumb": "../thumbs/IFM-211.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1jJlezELTMwFTlIUygb_SXR8RVVfd7IpQ",
-"description": "Carousel cover: a baby's hand gripping ₹500 and ₹200 notes, headline 'Rich people are not secretly born with some magical money gene'.",
-"session": "",
-"slide_text": "s hand gripping ₹500 and ₹200 notes, headline",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Wealth",
-"Money Mindset"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "july rich people aren magically born money carousel cover baby hand gripping ₹500 ₹200 notes headline not secretly some magical gene wealth building magic investing discipline mindset aakara"
-},
-{
-"id": "IFM-212",
-"title": "July: Investment Bucket Game",
-"date": "2026-07-21",
-"thumb": "../thumbs/IFM-212.jpg",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
-"description": "Interactive story game — sort investments into 3 buckets: Emergency, Stability, Growth. 'Think you know all about investing? Take a shot and find out how much you really know.'",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Social / Promotional",
-"topic": [
-"3-Bucket Investing",
-"Investing"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "july investment bucket game interactive story sort investments into buckets emergency stability growth think you know all about investing take shot find out how much really quiz aakara"
-},
-{
-"id": "IFM-213",
-"title": "July: Financial confidence as self care",
-"date": "2026-07-24",
-"thumb": "../thumbs/IFM-213.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/18kYz_4NHBe7AzWMo8zGGdnIM1RbCur8M",
-"description": "Carousel cover: two women in bathrobes and face masks wearing ₹-sign sunglasses, one on a phone, one on a laptop — 'HOT TAKE ALERT: Financial confidence is self care too!!'",
-"session": "",
-"slide_text": "HOT TAKE ALERT: Financial confidence is self care too!!",
-"silent": false,
-"type": "Carousel",
-"status": "Published",
-"format": "Social Graphic",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "july financial confidence self care carousel cover two women bathrobes face masks wearing sign sunglasses one phone laptop hot take alert too preparedness aakara"
-},
-{
-"id": "IFM-214",
-"title": "July: Rich people mindset (meet Richa)",
-"date": "2026-07-25",
-"thumb": "../thumbs/IFM-214.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1malSLw2effKQR7QkmQdWXJhTKRyzhkGb",
-"description": "Story: smiling young woman high-fiving the camera — 'Meet Richa. She thinks being rich is all about having lots of money, spending it however she wants and never worrying about prices.'",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Managing Money",
-"Wealth",
-"Money Mindset"
-],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "candid warm natural unposed relaxed friendly celebration july rich people mindset meet richa story smiling young woman high fiving camera she thinks being all about having lots money spending however wants never worrying prices wealth character aakara"
-},
-{
-"id": "IFM-215",
-"title": "July: National Parent's Day",
-"date": "2026-07-26",
-"thumb": "../thumbs/IFM-215.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1AL94xlrYVnbb9uXea4QrSkFPKUgXReEt",
-"description": "Carousel cover: an open envelope holding a note — 'Parents spend years planning their children's future. But who's planning the parents' retirement?' — with a family polaroid, #HappyNationalParentsDay.",
-"session": "",
-"slide_text": "Parents spend years planning their children s planning the parents",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Financial Planning",
-"Family & Money"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "july national parent day carousel cover open envelope holding note parents spend years planning their children future but who retirement family polaroid happynationalparentsday letters india aakara"
-},
-{
-"id": "IFM-216",
-"title": "July: Ever Wondered",
-"date": "2026-07-28",
-"thumb": "../thumbs/IFM-216.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1Q38Vzk2Cj4BAnL9HQs3WFwLFUeD4OIuS",
-"description": "Reel: Hiral against a gold-bar backdrop — 'Ever wondered why central banks own so much gold?'",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Gold",
-"Markets & Economy"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "b-roll cutaway establishing supporting footage context july ever wondered reel hiral against gold bar backdrop why central banks own much hook aakara production video"
-},
-{
-"id": "IFM-217",
-"title": "July: Women's Workshop",
-"date": "2026-07-11",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
-"description": "Women's-workshop highlight reel — video in production by Aakara.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Published",
-"format": "",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "july women workshop highlight reel video production aakara womens event session"
-},
-{
-"id": "IFM-218",
-"title": "Goa Workshop — clip 1",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-218.jpg",
-"video": "clips/IFM-218.mp4",
-"drive": "clips/IFM-218.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-219",
-"title": "Goa Workshop — clip 2",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-219.jpg",
-"video": "clips/IFM-219.mp4",
-"drive": "clips/IFM-219.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-220",
-"title": "Goa Workshop — clip 3",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-220.jpg",
-"video": "clips/IFM-220.mp4",
-"drive": "clips/IFM-220.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-221",
-"title": "Goa Workshop — clip 4",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-221.jpg",
-"video": "clips/IFM-221.mp4",
-"drive": "clips/IFM-221.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-222",
-"title": "Goa Workshop — clip 5",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-222.jpg",
-"video": "clips/IFM-222.mp4",
-"drive": "clips/IFM-222.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-223",
-"title": "Goa Workshop — clip 6",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-223.jpg",
-"video": "clips/IFM-223.mp4",
-"drive": "clips/IFM-223.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-224",
-"title": "Goa Workshop — clip 7",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-224.jpg",
-"video": "clips/IFM-224.mp4",
-"drive": "clips/IFM-224.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-225",
-"title": "Goa Workshop — clip 8",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-225.jpg",
-"video": "clips/IFM-225.mp4",
-"drive": "clips/IFM-225.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-226",
-"title": "Goa Workshop — clip 9",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-226.jpg",
-"video": "clips/IFM-226.mp4",
-"drive": "clips/IFM-226.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-227",
-"title": "Goa Workshop — clip 10",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-227.jpg",
-"video": "clips/IFM-227.mp4",
-"drive": "clips/IFM-227.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-228",
-"title": "Goa Workshop — clip 11",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-228.jpg",
-"video": "clips/IFM-228.mp4",
-"drive": "clips/IFM-228.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-229",
-"title": "Goa Workshop — clip 12",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-229.jpg",
-"video": "clips/IFM-229.mp4",
-"drive": "clips/IFM-229.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-230",
-"title": "Goa Workshop — clip 13",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-230.jpg",
-"video": "clips/IFM-230.mp4",
-"drive": "clips/IFM-230.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-231",
-"title": "Goa Workshop — clip 14",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-231.jpg",
-"video": "clips/IFM-231.mp4",
-"drive": "clips/IFM-231.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-232",
-"title": "Goa Workshop — clip 15",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-232.jpg",
-"video": "clips/IFM-232.mp4",
-"drive": "clips/IFM-232.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-233",
-"title": "Goa Workshop — clip 16",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-233.jpg",
-"video": "clips/IFM-233.mp4",
-"drive": "clips/IFM-233.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-234",
-"title": "Goa Workshop — clip 17",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-234.jpg",
-"video": "clips/IFM-234.mp4",
-"drive": "clips/IFM-234.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-235",
-"title": "Goa Workshop — clip 18",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-235.jpg",
-"video": "clips/IFM-235.mp4",
-"drive": "clips/IFM-235.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-236",
-"title": "Goa Workshop — clip 19",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-236.jpg",
-"video": "clips/IFM-236.mp4",
-"drive": "clips/IFM-236.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-237",
-"title": "Goa Workshop — clip 20",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-237.jpg",
-"video": "clips/IFM-237.mp4",
-"drive": "clips/IFM-237.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-238",
-"title": "Goa Workshop — clip 21",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-238.jpg",
-"video": "clips/IFM-238.mp4",
-"drive": "clips/IFM-238.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-239",
-"title": "Goa Workshop — clip 22",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-239.jpg",
-"video": "clips/IFM-239.mp4",
-"drive": "clips/IFM-239.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-240",
-"title": "Goa Workshop — clip 23",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-240.jpg",
-"video": "clips/IFM-240.mp4",
-"drive": "clips/IFM-240.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-241",
-"title": "Goa Workshop — clip 24",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-241.jpg",
-"video": "clips/IFM-241.mp4",
-"drive": "clips/IFM-241.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-242",
-"title": "Goa Workshop — clip 25",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-242.jpg",
-"video": "clips/IFM-242.mp4",
-"drive": "clips/IFM-242.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-243",
-"title": "Goa Workshop — clip 26",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-243.jpg",
-"video": "clips/IFM-243.mp4",
-"drive": "clips/IFM-243.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-244",
-"title": "Goa Workshop — clip 27",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-244.jpg",
-"video": "clips/IFM-244.mp4",
-"drive": "clips/IFM-244.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-245",
-"title": "Goa Workshop — clip 28",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-245.jpg",
-"video": "clips/IFM-245.mp4",
-"drive": "clips/IFM-245.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-246",
-"title": "Goa Workshop — clip 29",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-246.jpg",
-"video": "clips/IFM-246.mp4",
-"drive": "clips/IFM-246.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-247",
-"title": "Goa Workshop — clip 30",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-247.jpg",
-"video": "clips/IFM-247.mp4",
-"drive": "clips/IFM-247.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-248",
-"title": "Goa Workshop — clip 31",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-248.jpg",
-"video": "clips/IFM-248.mp4",
-"drive": "clips/IFM-248.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-249",
-"title": "Goa Workshop — clip 32",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-249.jpg",
-"video": "clips/IFM-249.mp4",
-"drive": "clips/IFM-249.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-250",
-"title": "Goa Workshop — clip 33",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-250.jpg",
-"video": "clips/IFM-250.mp4",
-"drive": "clips/IFM-250.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
-},
-{
-"id": "IFM-251",
-"title": "Goa Workshop — photo 1",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-251.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-251.jpg",
-"description": "Open-air Goa venue: women seated at cafe tables listening while Hiral presents from the far side in a blue dress. A dog sleeps on the floor in the foreground — an unusually relaxed, non-corporate setting.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "goa workshop offsite retreat open air cafe relaxed informal casual dog seated audience listening destination blue dress"
-},
-{
-"id": "IFM-252",
-"title": "Goa Workshop — photo 2",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-252.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-252.jpg",
-"description": "Hiral presenting from a laptop beside a large screen showing an emergency-fund diagram — a safety net catching a falling figure.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "Secure Your Emergency Fund. Financial Safety Net.",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Financial Planning",
-"Saving",
-"Managing Money"
-],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "emergency fund rainy day safety net contingency months of expenses buffer goa workshop presenting laptop screen"
-},
-{
-"id": "IFM-253",
-"title": "Goa Workshop — photo 3",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-253.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-253.jpg",
-"description": "Group photo on the steps of the Goa venue — around eight women with Hiral, several holding IFM workbooks, greenery and a tiled roof behind.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "group photo goa cohort batch together posed steps outdoors workbooks smiling alumni"
-},
-{
-"id": "IFM-254",
-"title": "Goa Workshop — photo 4",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-254.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-254.jpg",
-"description": "Goa cohort on the cafe steps holding up IFM course material, Hiral in the blue dress among them. Stone pillars and a chalkboard menu behind.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "goa group photo cohort batch holding certificates workbooks steps cafe posed proud"
-},
-{
-"id": "IFM-255",
-"title": "Goa Workshop — photo 5",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-255.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-255.jpg",
-"description": "Tighter group shot of the Goa cohort on the steps, several women holding up their IFM material to camera.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "goa group photo cohort batch holding certificates workbooks posed smiling"
-},
-{
-"id": "IFM-256",
-"title": "Goa Workshop — photo 6",
-"date": "2026-07-18",
-"thumb": "../thumbs/IFM-256.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-256.jpg",
-"description": "Wide panorama of the open-air Goa venue — tiled roof, plants and garden seating, with the small group gathered at the far end.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Student"
-],
-"source": "Unknown",
-"search_terms": "goa venue wide panorama establishing location outdoor garden cafe setting context"
-},
-{
-"id": "IFM-257",
-"title": "August: Finance Green Flags",
-"date": "2026-08-01",
-"thumb": "../thumbs/IFM-257.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1p6vkIou0fwyp-iMnYJPY2Y-BdTI-XDPH",
-"description": "Carousel cover: heart-stamped gold coins and a checklist — 'Is your relationship with money built to last? The \"life partner\" checklist for your finances.'",
-"session": "",
-"slide_text": "Is your relationship with money built to last? The checklist for your finances.",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Managing Money"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "august finance green flags carousel cover heart stamped gold coins checklist your relationship money built last life partner finances expense limit salary day pay yourself first terms made simple aakara"
-},
-{
-"id": "IFM-258",
-"title": "August: Types of Assets",
-"date": "2026-08-06",
-"thumb": "../thumbs/IFM-258.jpg",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/1BILbOjh-gBDTEPsccDBDRQpjalt8ds0AaQWyATdtuxQ/edit",
-"description": "6-frame mint carousel — 'If assets are homes for your money, why do investors use more than one?' Assets as specialists (Growth, Stability, Liquidity, Protection); the one-pair-of-shoes analogy for a marathon, a wedding, a beach holiday and a mountain trek. Ends on 'which asset is best for this goal?' and a pointer to Part 2 of 1 Minute Investing School.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Carousel",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Family & Money",
-"Diversification"
-],
-"person": [
-"Student"
-],
-"source": "Aakara",
-"search_terms": "august types assets frame mint carousel homes your money why investors use more than one specialists growth stability liquidity protection pair shoes analogy marathon wedding beach holiday mountain trek ends which asset best goal pointer part minute investing school class"
-},
-{
-"id": "IFM-259",
-"title": "August: International Youth Day",
-"date": "2026-08-11",
-"thumb": "../thumbs/IFM-259.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/148mY1w9gmo-xLYe7JjvsrkNChZYiyRzQ",
-"description": "Story: a student in headphones over her books, a Notes screenshot above — 'You grow up and suddenly… it's bills, taxes, savings, investing… But when did anyone actually teach us this?' International Youth Day.",
-"session": "",
-"slide_text": "You grow up and suddenly… it",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Saving",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Aakara",
-"search_terms": "august international youth day story student headphones over her books notes screenshot above you grow suddenly bills taxes savings investing but when did anyone actually teach young adults app workshop aakara"
-},
-{
-"id": "IFM-260",
-"title": "August: Independence Day",
-"date": "2026-08-15",
-"thumb": "../thumbs/IFM-260.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1ZZDRU07DRsYI_jxCpcFnl7ShEp8eV8ue",
-"description": "Reel: Hiral in a pale blue kurta in a garden playground — 'This Independence Day, build your freedom.' Independence Day topical.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Financial Independence"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "august independence day reel hiral pale blue kurta garden playground build your freedom topical story financial confidence informed choices aakara"
-},
-{
-"id": "IFM-261",
-"title": "August: Asset Analogy",
-"date": "2026-08-21",
-"thumb": "../thumbs/IFM-261.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1lK16tUvwut8tG6r5CPKeaH9aOv8sSHbY",
-"description": "Carousel cover: a row of colourful San-Francisco-style houses — 'If assets are homes for your money, why do investors use more than one?'",
-"session": "",
-"slide_text": "If assets are homes for your money, why do investors use more than one?",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Diversification"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "august asset analogy carousel cover row colourful san francisco style houses assets homes your money why investors use more than one story classes sports team goalkeepers portfolio diversification aakara"
-},
-{
-"id": "IFM-262",
-"title": "August: Mini Money Lesson 2 (Save First, Spend Later)",
-"date": "2026-08-24",
-"thumb": "../thumbs/IFM-262.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1wt2XSJk5gDVZQTI8jibW2DZKWmtA9Brw",
-"description": "Story: piggy bank in sunglasses and a jar of coins on a palm — 'It's time for a Mini Money Lesson, Part 2.'",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Saving",
-"Family & Money"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "august mini money lesson save first spend later story piggy bank sunglasses jar coins palm time part pay yourself future you savings habit aakara"
-},
-{
-"id": "IFM-263",
-"title": "July: Top 5 Things To Look At (weekly news)",
-"date": "2026-07-22",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
-"description": "'Top 5 things to look at' weekly news reel — recurring news-roundup format, placeholder slide with no frames designed yet.",
-"session": "",
-"slide_text": "Top 5 things to look at",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [],
-"person": [],
-"source": "Aakara",
-"search_terms": "july top things look weekly news reel recurring roundup format placeholder slide frames designed yet market aakara"
-},
-{
-"id": "IFM-264",
-"title": "August: Assets Class Part 1 (What is an Asset?)",
-"date": "2026-08-03",
-"thumb": "../thumbs/IFM-264.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1wO4vQ5peI3r4bIiXkRLZCI98F7k42iYc",
-"description": "Reel: 'One Minute Investing School — What is an Asset?' Hiral seated in black, houses composited behind her. Part 1 of the assets series.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Aakara",
-"search_terms": "august assets class part what asset reel one minute investing school hiral seated black houses composited behind her series finance terms made simple aakara"
-},
-{
-"id": "IFM-265",
-"title": "August: Assets Class Part 2 (Types of Assets)",
-"date": "2026-08-07",
-"thumb": "../thumbs/IFM-265.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/152_v76R684SsMdI-QBaLAcdPJZCuD3BK",
-"description": "Reel: 'One Minute Investing School — Types of Assets, Part 2.' Hiral in black with four family-member cutouts behind her.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Family & Money",
-"Stocks / Equity",
-"Fixed Income",
-"Real Estate / REITs",
-"Gold"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Aakara",
-"search_terms": "august assets class part types reel one minute investing school hiral black four family member cutouts behind her cash debt real estate gold equity aakara"
-},
-{
-"id": "IFM-266",
-"title": "August: Asset Allocation Website Game (3 Buckets)",
-"date": "2026-08-21",
-"thumb": "../thumbs/IFM-266.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/18rRcmZbv7WmkGF_oJd2xgXQmYQEvFShO",
-"description": "Story: a thinking emoji with a magnifying glass on blue — 'Think you know all about investing?' Teaser driving to the 3-Buckets asset-allocation game.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"3-Bucket Investing",
-"Asset Allocation"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "august asset allocation website game buckets story thinking emoji magnifying glass blue think you know all about investing teaser driving emergency stability growth quiz link bio aakara"
-},
-{
-"id": "IFM-267",
-"title": "July: Hidden Fortunes Game",
-"date": "2026-07-21",
-"thumb": "../thumbs/IFM-267.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/10sqI-QqaD8JG637mBx93shzQ5iEc83OM",
-"description": "Story: 'Are you GUILTY of impulse shopping, salon visits, cafe hopping?' with cartoon icons — teaser driving to the Hidden Fortunes game.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Managing Money",
-"Wealth",
-"Money Mindset"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "sip systematic investment plan monthly investing july hidden fortunes game story you guilty impulse shopping salon visits cafe hopping cartoon icons teaser driving spending sip website link bio aakara"
-},
-{
-"id": "IFM-268",
-"title": "September: Reviews (workshop testimonials)",
-"date": "2026-09-01",
-"thumb": "../thumbs/IFM-268.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1Cx0NIOhg_pNzos0UdMpW_KKAYrMTA-Rl",
-"description": "Delivered 5-artboard testimonial carousel. Cover is cream with an oversized dark-green 'review' wordmark bleeding off all four edges, a white rounded card centred over it reading \"Here's what people are saying about our workshops\" with a thin right arrow, and the INVESTING FOR MUMMIES logo top-right. Artboards 2-5 carry the participant quote cards.",
-"session": "",
-"slide_text": "wordmark bleeding off all four edges, a white rounded card centred over it reading s what people are saying about our workshops",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Testimonial",
-"topic": [
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Aakara",
-"search_terms": "testimonial review feedback social proof word of mouth september reviews workshop testimonials delivered artboard testimonial carousel cover cream oversized dark green review wordmark bleeding off all four edges white rounded card centred over reading here what people saying about our workshops thin right arrow investing mummies logo top"
-},
-{
-"id": "IFM-269",
-"title": "September: You Don't Need To Know Everything To Start",
-"date": "2026-09-01",
-"thumb": "../thumbs/IFM-269.jpg",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
-"description": "4-frame mint-green carousel opening on a woman hiding behind a thick 'Finance Dictionary' — 'Do you need a Finance Dictionary to start investing?' Frame 2 is a big sticker 'NOPE' with 'confidence doesn't come from knowing every term. It comes from understanding what they mean for you.' Frame 3: 'Nobody gets there overnight' with start-with one simple question / one easy concept / one step at a time. Closes on an IFM Instagram profile mockup — 'Tap follow to learn slowly with us. No finance degree needed.'",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Carousel",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Money Conversations",
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "september you don need know everything start frame mint green carousel opening woman hiding behind thick finance dictionary investing big sticker nope confidence doesn come from knowing every term comes understanding what they mean nobody gets there overnight one simple"
-},
-{
-"id": "IFM-270",
-"title": "September: Ganesh Chaturthi related",
-"date": "2026-09-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
-"description": "Placeholder slide — a Ganesh Chaturthi festival tie-in carousel is planned but no frames have been designed yet. The slide carries only the label 'Topic: Ganesh Chaturthi related · Pillar: Topical · Format: Carousel'.",
-"session": "",
-"slide_text": "Topic: Ganesh Chaturthi related · Pillar: Topical · Format: Carousel",
-"silent": false,
-"type": "Carousel",
-"status": "Raw",
-"format": "",
-"topic": [],
-"person": [],
-"source": "Aakara",
-"search_terms": "september ganesh chaturthi related placeholder slide festival tie carousel planned but frames have been designed yet carries only label topic pillar topical format aakara"
-},
-{
-"id": "IFM-271",
-"title": "September: Ranking Reel",
-"date": "2026-09-01",
-"thumb": "../thumbs/IFM-271.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1jQutmd7uAd-TIkbpANSMRDR3pc7_P0o-",
-"description": "Reel: Hiral beside a High-to-Low risk ranking board — 'Are these Investments Risky?' Ranks five investment types by risk.",
-"session": "",
-"slide_text": "Are these Investments Risky?",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Risk & Returns",
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "september ranking reel hiral beside high low risk board these investments risky ranks five investment types workshops placeholder shot list format aakara"
-},
-{
-"id": "IFM-272",
-"title": "September: Asset Allocation in One Minute",
-"date": "2026-09-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
-"description": "Placeholder slide for a one-minute asset-allocation explainer reel, continuing the 'One Minute Investing School' strand from August's asset-class reels. Label only — no frames designed yet.",
-"session": "",
-"slide_text": "One Minute Investing School",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Family & Money",
-"Asset Allocation"
-],
-"person": [
-"Student"
-],
-"source": "Aakara",
-"search_terms": "september asset allocation one minute placeholder slide explainer reel continuing investing school strand from august class reels label only frames designed yet workshops shot aakara"
-},
-{
-"id": "IFM-273",
-"title": "September: “Ever Wondered?” (topic TBC)",
-"date": "2026-09-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
-"description": "Placeholder slide for the next instalment of the recurring 'Ever Wondered?' reel series. The deck notes the topic itself has yet to be decided — label reads 'Topic has to come'.",
-"session": "",
-"slide_text": "Ever Wondered? Topic has to come",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [],
-"person": [],
-"source": "Aakara",
-"search_terms": "september ever wondered topic tbc placeholder slide next instalment recurring reel series deck notes itself has yet decided label reads come workshops shot aakara"
-},
-{
-"id": "IFM-274",
-"title": "September: Teachers' Day",
-"date": "2026-09-05",
-"thumb": "../thumbs/IFM-274.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1ps-zDRJLzehGV5ugmAWD_Fo-rD4gLP42",
-"description": "Delivered Teachers' Day reel built on the 'Baa Baa Black Sheep' nursery-rhyme hook. Opens on the 3D-animated IFM presenter avatar — long dark hair, navy button-down shirt, slight smile — framed against a white wall carrying the green-and-navy INVESTING FOR MUMMIES money-tree logo.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Published",
-"format": "B-roll",
-"topic": [
-"Investing"
-],
-"person": [
-"No Person"
-],
-"source": "Aakara",
-"search_terms": "candid warm natural unposed relaxed friendly celebration september teachers day delivered reel built baa black sheep nursery rhyme hook opens animated ifm presenter avatar long dark hair navy button down shirt slight smile framed against white wall carrying green investing mummies money tree logo topical workshops aakara"
-},
-{
-"id": "IFM-275",
-"title": "September: Asset vs Liability",
-"date": "2026-09-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
-"description": "Placeholder slide for an asset-vs-liability explainer reel, extending the August asset-class series. Label only — no frames designed yet.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "Aakara",
-"search_terms": "september asset liability placeholder slide explainer reel extending august class series label only frames designed yet finance terms workshops shot aakara"
-},
-{
-"id": "IFM-276",
-"title": "September: Cups Video",
-"date": "2026-09-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
-"description": "Placeholder slide for a 'cups' reel — presumably footage of the cups activity used in IFM workshops. Label only; no script or frames in the deck.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [],
-"person": [],
-"source": "Aakara",
-"search_terms": "september cups video placeholder slide reel presumably footage activity used ifm workshops label only script frames deck workshop demo props shot aakara"
-},
-{
-"id": "IFM-277",
-"title": "September: ₹1,00,000-a-Day Reference",
-"date": "2026-09-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
-"description": "Placeholder slide for a reel built around a '₹1,00,000 a day' reference — a scale/perspective hook on large sums. Label only; no frames yet.",
-"session": "",
-"slide_text": "₹1,00,000 a day",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Wealth"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "september 000 day reference placeholder slide reel built around scale perspective hook large sums label only frames yet one lakh big numbers wealth workshops shot aakara"
-},
-{
-"id": "IFM-278",
-"title": "September: 3 News Topicals",
-"date": "2026-09-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
-"description": "Placeholder slide for three news-topical reels — the September continuation of the weekly news strand (cf. July's 'Top 5 Things To Look At', IFM-263). Label only; no frames yet.",
-"session": "",
-"slide_text": "Top 5 Things To Look At",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [],
-"person": [],
-"source": "Aakara",
-"search_terms": "september news topicals placeholder slide three topical reels continuation weekly strand july top things look ifm 263 label only frames yet reel markets workshops shot aakara"
-},
-{
-"id": "IFM-279",
-"title": "Teens workshop — celebration moment (Aug 2026)",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-279.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1Kbtq2K1lhK7IHljygOqNv34UwDgwixjU/view",
-"description": "Teen pumps his fist in celebration during a game/activity while another laughs across the boardroom table — candid win moment from the teens workshop.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration teens workshop celebration moment aug 2026 teen pumps his fist during game activity while another laughs across boardroom table candid win from investing session august sakshi video stories footage"
-},
-{
-"id": "IFM-280",
-"title": "Teens workshop — room discussion (Aug 2026)",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-280.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1veqobx3CHP72-kgtam4Kkx70wXOCMoNk/view",
-"description": "Wide shot of the teens around the conference table, one participant speaking to the group during discussion.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Family & Money"
-],
-"person": [
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "b-roll cutaway establishing supporting footage context teens workshop room discussion aug 2026 wide shot around conference table one participant speaking group during investing session august sakshi boardroom video stories footage"
-},
-{
-"id": "IFM-281",
-"title": "Teens workshop — table activity (Aug 2026)",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-281.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1ojqrRc7crYuaYjKJaPWp7ott9TwnC2aJ/view",
-"description": "Three teens working at the table during an activity, one checking her phone as part of the exercise.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "teens workshop table activity aug 2026 three working during one checking her phone part exercise investing session august sakshi boardroom video stories footage"
-},
-{
-"id": "IFM-282",
-"title": "Teens workshop — watching the deck (Aug 2026)",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-282.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1V15Abmss9Y3sQrpa29GUbYSNg4Uv0qaa/view",
-"description": "Teens at the table facing the screen during a slide presentation.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "teens workshop watching deck aug 2026 table facing screen during slide presentation investing session august sakshi boardroom video stories footage"
-},
-{
-"id": "IFM-283",
-"title": "Teens workshop — IFM game on laptop (Aug 2026)",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-283.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1E4m_jvni7ygI2FXiosbqvVNVX8PwEszL/view",
-"description": "Participant reacts while playing an IFM game on the laptop (green game screen visible) — interactive game segment of the workshop.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Social / Promotional",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "teens workshop ifm game laptop aug 2026 participant reacts while playing green screen visible interactive segment investing session august sakshi boardroom video stories footage"
-},
-{
-"id": "IFM-284",
-"title": "Teens workshop — teens listening (Aug 2026)",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-284.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1GlgVWVhbmFbpUPyEUGEPkWIW4OcluU74/view",
-"description": "Teens around the table listening during the session, IFM worksheets and pencil cases out.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "teens workshop listening aug 2026 around table during session ifm worksheets pencil cases out investing august sakshi boardroom video stories footage"
-},
-{
-"id": "IFM-285",
-"title": "Teens workshop — animated answer (Aug 2026)",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-285.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1I4xJGfFv0PQRQKnD-58aN2v23m0cS4o2/view",
-"description": "A teen gestures animatedly while answering/participating at the table.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "teens workshop animated answer aug 2026 teen gestures animatedly while answering participating table investing session august sakshi boardroom video stories footage"
-},
-{
-"id": "IFM-286",
-"title": "Teens workshop — Hiral teaching compounding (Aug 2026)",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-286.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1AiqrV7-IuvBDrYsODMUsQBLLga5AsGqY/view",
-"description": "Hiral presents the 'What if you invest every month' compounding slide (20/25/30/40-year wealth outcomes) to the teens.",
-"session": "Teens — Aug 2026",
-"slide_text": "What if you invest every month",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Compounding",
-"Wealth",
-"Family & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "teens workshop hiral teaching compounding aug 2026 presents what you invest every month slide year wealth outcomes investing session august sakshi boardroom video stories footage"
-},
-{
-"id": "IFM-287",
-"title": "Teens workshop — screen walkthrough (Aug 2026)",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-287.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1SeL5N9ylIUwsZYNWYec1moMNWG2IeUCo/view",
-"description": "A teen points at the screen during a walkthrough; laptop open on the table.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "teens workshop screen walkthrough aug 2026 teen points during laptop open table investing session august sakshi boardroom video stories footage"
-},
-{
-"id": "IFM-288",
-"title": "Teens workshop — certificates group photo 1 (Aug 2026)",
-"date": "2026-08-17",
-"thumb": "../thumbs/IFM-288.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1auLjBxrzWjPJSzfyL-AmrJkVWksa7fl2/view",
-"description": "Certificate ceremony — eight teens holding their Certificates of Completion with Hiral, big smiles in the boardroom.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Certificate",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof teens workshop certificates group photo aug 2026 certificate ceremony eight holding their completion hiral big smiles boardroom investing session august sakshi"
-},
-{
-"id": "IFM-289",
-"title": "Teens workshop — compounding slide teaching 1 (Aug 2026)",
-"date": "2026-08-17",
-"thumb": "../thumbs/IFM-289.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/104uI4saoGdm0YPSDzQlJRx96JhiReLW7/view",
-"description": "Hiral at the screen teaching the ₹5,000/month compounding slide; teens follow along with IFM illustrated worksheets on the table.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Compounding",
-"Family & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "teens workshop compounding slide teaching aug 2026 hiral screen 000 month follow along ifm illustrated worksheets table investing session august sakshi boardroom photo"
-},
-{
-"id": "IFM-290",
-"title": "Teens workshop — inflation calculator demo (Aug 2026)",
-"date": "2026-08-17",
-"thumb": "../thumbs/IFM-290.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1YPChH8FD0zV8xKRXRfsY7hqBJGN0RrL-/view",
-"description": "Hiral seated mid-explanation with the IFM inflation calculator up on the screen (₹2,15,892 result visible) — QR-code stand and workshop kit on the table.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Family & Money",
-"Inflation & Interest Rates"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "teens workshop inflation calculator demo aug 2026 hiral seated mid explanation ifm screen 892 result visible code stand kit table investing session august sakshi boardroom photo"
-},
-{
-"id": "IFM-291",
-"title": "Teens workshop — room wide shot (Aug 2026)",
-"date": "2026-08-17",
-"thumb": "../thumbs/IFM-291.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/14b3CEUYhQyAXfUG65qN6sRBhGfEH2o_B/view",
-"description": "Wide view of the boardroom mid-session — Hiral at the head of the table, screen live, teens with worksheets.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "b-roll cutaway establishing supporting footage context teens workshop room wide shot aug 2026 view boardroom mid session hiral head table screen live worksheets investing august sakshi photo"
-},
-{
-"id": "IFM-292",
-"title": "Teens workshop — compounding slide teaching 2 (Aug 2026)",
-"date": "2026-08-17",
-"thumb": "../thumbs/IFM-292.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1jXIR7j6C5_LtqjZHGtIbi_C9gsqT_oK0/view",
-"description": "Hiral gestures at the 'What if you invest ₹5,000 every month' slide — 20/25/30/40-year outcomes ending at ₹5.9 crore; teens' worksheets in the foreground.",
-"session": "Teens — Aug 2026",
-"slide_text": "What if you invest ₹5,000 every month",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Compounding",
-"Wealth",
-"Family & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "teens workshop compounding slide teaching aug 2026 hiral gestures what you invest 000 every month year outcomes ending crore worksheets foreground investing session august sakshi boardroom photo"
-},
-{
-"id": "IFM-293",
-"title": "Teens workshop — certificates group photo 2 (Aug 2026)",
-"date": "2026-08-17",
-"thumb": "../thumbs/IFM-293.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1yf6mrEATO3CmZfUj6UL-tf7gkAVCBfY5/view",
-"description": "Certificate ceremony — five participants with their Certificates of Completion alongside Hiral and a colleague.",
-"session": "Teens — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Certificate",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "certificate completion graduation proud achievement social proof teens workshop certificates group photo aug 2026 certificate ceremony five participants their completion alongside hiral colleague investing session august sakshi boardroom"
-},
-{
-"id": "IFM-294",
-"title": "Teens workshop — Buffett quote slide (Aug 2026)",
-"date": "2026-08-17",
-"thumb": "../thumbs/IFM-294.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/19CG02yljxBe8b3pNqvIQnD3hFH8xa0i8/view",
-"description": "Hiral teaches the Warren Buffett 'Expenses = Income − Savings' famous-words slide; teens with IFM worksheets around the table.",
-"session": "Teens — Aug 2026",
-"slide_text": "Expenses = Income − Savings",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Saving",
-"Managing Money",
-"Family & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "teens workshop buffett quote slide aug 2026 hiral teaches warren expenses income savings famous words ifm worksheets around table investing session august sakshi boardroom photo"
-},
-{
-"id": "IFM-295",
-"title": "Kaun Banega Crorepati — live question screen",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-295.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/kbc-live-question.png",
-"description": "Projector/host view mid-round: the question “Waiting for the ‘perfect time’ usually means…” with A–D options, a live 'Class answers' breakdown panel (67% correct so far), the ₹1,00,000 prize ladder down the right, and a scan-to-join QR top-right. 3200×1800.",
-"session": "",
-"slide_text": "Waiting for the 'perfect time' usually means... Class answers 67% correct. Prize Ladder. Scan to join.",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Wealth",
-"Money Mindset",
-"Money Conversations"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "kaun banega crorepati live question screen projector host view mid round waiting perfect time usually means options class answers breakdown panel correct far 000 prize ladder down right scan join top 3200 1800 kbc quiz game ifm games screenshot marketing"
-},
-{
-"id": "IFM-296",
-"title": "Kaun Banega Crorepati — player phone view",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-296.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/kbc-player-phone.png",
-"description": "The student's phone screen: big A/B/C/D colour tiles under 'Tap your answer!', the player's name and running total (₹7.50 L) pinned top, a '50:50 — remove 2 wrong' lifeline button, and 'Read the options on the big screen'. 1200×2580, portrait.",
-"session": "",
-"slide_text": "s phone screen: big A/B/C/D colour tiles under , the player 50:50 — remove 2 wrong Read the options on the big screen",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Portrait",
-"topic": [
-"Wealth"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "portrait headshot founder press media kit agency bio kaun banega crorepati player phone view student screen big colour tiles under tap your answer name running total pinned top remove wrong lifeline button read options 1200 2580 portrait kbc quiz game ifm games screenshot marketing asset"
-},
-{
-"id": "IFM-297",
-"title": "Kaun Banega Crorepati — winner podium",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-297.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/kbc-winner-podium.png",
-"description": "End-of-game 'Crorepati! 🎉' screen — three-place podium with Priya winning ₹30 L, full class leaderboard below, IFM medallion and studio-audience backdrop. 3200×1800.",
-"session": "",
-"slide_text": "Crorepati! 🎉",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Wealth",
-"Stock Market"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "b-roll cutaway establishing supporting footage context kaun banega crorepati winner podium end game screen three place priya winning ₹30 full class leaderboard below ifm medallion studio audience backdrop 3200 1800 kbc quiz finale games screenshot marketing asset"
-},
-{
-"id": "IFM-298",
-"title": "Mutual Fund Manager LIVE — fund launch lobby",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-298.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/mf-lobby.png",
-"description": "Screen 1: the teacher names the fund ('Priya's Growth Fund'), picks Equity / Debt / Hybrid, and taps assets (Reliance, HDFC Bank, Infosys, TCS) to build it. Join QR + game PIN MF5003 on the left, 13 investors already joined. 2720×1680.",
-"session": "",
-"slide_text": "s Growth Fund",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Stocks / Equity",
-"Mutual Funds",
-"Fixed Income"
-],
-"person": [
-"No Person"
-],
-"source": "IFM / In-house",
-"search_terms": "mutual fund manager live launch lobby screen teacher names priya growth picks equity debt hybrid taps assets reliance hdfc bank infosys tcs build join game pin mf5003 left investors already joined 2720 1680 ifm games screenshot marketing asset"
-},
-{
-"id": "IFM-299",
-"title": "Mutual Fund Manager LIVE — market rules screen",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-299.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/mf-market.png",
-"description": "Screen 6: AUM ₹7.27L / NAV ₹10.60 / Units 68,600 as three live cards, with the rule table showing how market up/down and money in/out each move AUM, NAV and units — plus the explainer 'the fund's holdings are worth more, so NAV and AUM climb together'. 2720×1680.",
-"session": "",
-"slide_text": "s holdings are worth more, so NAV and AUM climb together",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Mutual Funds"
-],
-"person": [
-"No Person"
-],
-"source": "IFM / In-house",
-"search_terms": "nav net asset value mutual fund manager live market rules screen aum 27l nav ₹10 units 600 three cards rule table showing how down money out each move plus explainer holdings worth more climb together 2720 1680 teaching game ifm games screenshot marketing asset"
-},
-{
-"id": "IFM-300",
-"title": "Mutual Fund Manager LIVE — withdrawal screen",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-300.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/mf-withdraw.png",
-"description": "Screen 8: 'The NAV is now ₹22.00 — time to cash out.' AUM falling, NAV unchanged, units redeemed, with each student's withdrawal listed on the right (6 of 13 cashed out) — the lesson that selling drops AUM and units but not NAV. 2720×1680.",
-"session": "",
-"slide_text": "The NAV is now ₹22.00 — time to cash out.",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Family & Money",
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "nav net asset value mutual fund manager live withdrawal screen nav now ₹22 time cash out aum falling unchanged units redeemed each student listed right cashed lesson selling drops but not 2720 1680 redemption game ifm games screenshot marketing asset"
-},
-{
-"id": "IFM-301",
-"title": "Mutual Fund Manager LIVE — group recap",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-301.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/mf-recap.png",
-"description": "Closing recap: 'Together, you started & ran a real mutual fund.' ₹16.32L put in → ₹35.90L, NAV ₹10 → ₹22 (+120%), 13 investors — ending on 'your students didn't just hear about mutual funds — they started one, grew it, and cashed out.' 2720×1680.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Mutual Funds"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "nav net asset value mutual fund manager live group recap closing together you started ran real ₹16 32l put ₹35 90l nav ₹10 ₹22 120 investors ending your students didn just hear about funds they one grew cashed out 2720 1680 results outcome wrap"
-},
-{
-"id": "IFM-302",
-"title": "Stock Rush Pro — join lobby",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-302.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/stockrush-lobby.jpg",
-"description": "Room FBAP lobby: 'A decade of India's markets · in 30 minutes', large scan-to-join QR with the room code, players-in-room list, and 'Start Game with 15 Players'. Footer notes ₹2L starting cash, 6 rounds spanning 2014–2026. 1440×1679.",
-"session": "",
-"slide_text": "Stock Rush Pro. A decade of India's markets in 30 minutes. FBAP. Start Game with 15 Players.",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Stocks / Equity"
-],
-"person": [
-"No Person"
-],
-"source": "IFM / In-house",
-"search_terms": "stock rush pro join screen qr code scan to join room code lobby players classroom game markets decade"
-},
-{
-"id": "IFM-303",
-"title": "Stock Rush Pro — final results",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-303.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/stockrush-results.jpg",
-"description": "Game-over board: top trader Riya at ₹3.82L (+90.9%), class average +15.5%, 15/15 beat the bots, most-owned stock Reliance — full leaderboard plus a 'where did everyone land' return-distribution chart. 1440×2183.",
-"session": "",
-"slide_text": "where did everyone land",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Risk & Returns",
-"Stocks / Equity",
-"Stock Market"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "stock rush pro final results game over board top trader riya 82l class average beat bots most owned reliance full leaderboard plus where did everyone land return distribution chart 1440 2183 returns performance ifm games screenshot marketing asset"
-},
-{
-"id": "IFM-304",
-"title": "Swayamvar — matchmaking lobby",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-304.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/swayamvar-lobby.jpg",
-"description": "'The Swayamvar is Open' join screen in the marigold/red wedding theme — scan-to-take-your-seat QR (ifm.game/swayamvar), four guests seated with playful aliases (Gold Mom, Maharani Ji, Family CFO, Bua Supreme), and tonight's format: 6 prospects, 4 rounds. 1440×900.",
-"session": "",
-"slide_text": "The Swayamvar is Open",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Family & Money"
-],
-"person": [
-"No Person"
-],
-"source": "IFM / In-house",
-"search_terms": "swayamvar matchmaking lobby open join screen marigold red wedding theme scan take your seat ifm game four guests seated playful aliases gold mom maharani family cfo bua supreme tonight format prospects rounds 1440 900 games screenshot marketing asset"
-},
-{
-"id": "IFM-305",
-"title": "Swayamvar — suitor profile card",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-305.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/swayamvar-suitors.jpg",
-"description": "'Meet the Suitors' card for Mr./Miss Cash Khan ('Always Available', Emergency Response Specialist) — green flags (always available, extremely dependable) vs red flags (zero ambition, career growth stalled, inflation stealing his confidence), with 'what this represents: CASH' revealed at the bottom. 1440×900.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Inflation & Interest Rates"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "swayamvar suitor profile card meet suitors miss cash khan always available emergency response specialist green flags extremely dependable red zero ambition career growth stalled inflation stealing his confidence what represents revealed bottom 1440 900 asset class analogy game ifm games"
-},
-{
-"id": "IFM-306",
-"title": "Swayamvar — voting round",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-306.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/swayamvar-voting.jpg",
-"description": "'Who Would You Marry?' voting board — all 12 suitors (male and female versions of Cash, Debt, Gold, Real Estate, Equity, Alt Investments) with a live 'verdicts roll in' panel showing each guest's status. 1440×900.",
-"session": "",
-"slide_text": "Who Would You Marry? verdicts roll in",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Stocks / Equity",
-"Fixed Income",
-"Real Estate / REITs",
-"Gold"
-],
-"person": [
-"No Person"
-],
-"source": "IFM / In-house",
-"search_terms": "swayamvar voting round who would you marry board all suitors male female versions cash debt gold real estate equity alt investments live verdicts roll panel showing each guest status 1440 900 asset classes grid game ifm games screenshot marketing"
-},
-{
-"id": "IFM-307",
-"title": "Swayamvar — grand finale reveal",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-307.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/swayamvar-finale.jpg",
-"description": "'Who did everyone choose?' finale matrix — each guest's answers across the four questions (marry / date / your mother's pick / call at 2am), colour-coded by suitor, with 'Reveal Their Role' to unmask what each asset class represents. 1440×900.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Money Conversations"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "swayamvar grand finale reveal who did everyone choose matrix each guest answers across four questions marry date your mother pick call 2am colour coded suitor their role unmask what asset class represents 1440 900 results game ifm games screenshot marketing"
-},
-{
-"id": "IFM-308",
-"title": "Kaun Banega Crorepati — 12s game teaser",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-308.jpg",
-"video": "teasers/kbc-teaser.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/teasers/kbc-teaser.mp4",
-"description": "12s silent screen-recorded teaser cutting through the KBC quiz flow — round intros ('Fastest correct doubles up'), live questions and the winner podium, in the teal TV-studio theme. 1920×1080, no audio (add music in-app).",
-"session": "",
-"slide_text": "Fastest correct doubles up",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Wealth",
-"Money Conversations"
-],
-"person": [
-"No Person"
-],
-"source": "IFM / In-house",
-"search_terms": "kaun banega crorepati 12s game teaser silent screen recorded cutting through kbc quiz flow round intros fastest correct doubles live questions winner podium teal studio theme 1920 1080 audio add music app gameplay promo ifm games screenshot marketing asset"
-},
-{
-"id": "IFM-309",
-"title": "Lifestyle Time Machine — 12s game teaser",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-309.jpg",
-"video": "teasers/ltm-teaser.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/teasers/ltm-teaser.mp4",
-"description": "12s silent teaser for LTM — the 'Dreams Are In' round recap where each player's lifestyle picks (Louis Vuitton haul, dream car, Disney trip, business class, start a business) are totalled against their 25L budget. 1920×1080, no audio.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Managing Money"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "lifestyle time machine 12s game teaser silent ltm dreams round recap where each player picks louis vuitton haul dream car disney trip business class start totalled against their 25l budget 1920 1080 audio gameplay ifm games screenshot marketing asset"
-},
-{
-"id": "IFM-310",
-"title": "Stock Rush — 12s game teaser",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-310.jpg",
-"video": "teasers/stockrush-teaser.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/teasers/stockrush-teaser.mp4",
-"description": "12s silent teaser for Stock Rush — the COVID Crash round (March 2020: India locked down) with the news cards and a player selling MARUTI at '70% of worth', in the game's red crash palette. 1920×1080, no audio.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Stocks / Equity"
-],
-"person": [
-"No Person"
-],
-"source": "IFM / In-house",
-"search_terms": "stock rush 12s game teaser silent covid crash round march 2020 india locked down news cards player selling maruti worth red palette 1920 1080 audio gameplay ifm games screenshot marketing asset"
-},
-{
-"id": "IFM-311",
-"title": "Swayamvar — suitor character cards (set of 6)",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-311.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/suitor-cash.png",
-"description": "The six AI-generated Bollywood-style suitor portraits used on the Swayamvar cards, one per asset class: Cash (police officer on the phone, always available), Gold (sunglasses and gold sherwani), Equity (charming, unpredictable), Debt (bespectacled and steady), Real Estate (turbaned, outside a mansion), Alt Investments (pink sunglasses, flashy). 250×162 each — download gives all six as a zip.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [
-"Stocks / Equity",
-"Fixed Income",
-"Real Estate / REITs",
-"Gold"
-],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "swayamvar suitor character cards set six generated bollywood style portraits used one per asset class cash police officer phone always available gold sunglasses sherwani equity charming unpredictable debt bespectacled steady real estate turbaned outside mansion alt investments pink flashy 250"
-},
-{
-"id": "IFM-312",
-"title": "IFM logo — horizontal lockup",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-312.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/logo-full.png",
-"description": "Full horizontal IFM lockup: the circular tree-and-woman mark beside 'INVESTING FOR MUMMIES' with the ™ and the tagline 'nurturing financially confident women'. Transparent PNG, 1818×792.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"library": false,
-"type": "",
-"format": "",
-"topic": [],
-"person": [],
-"source": "IFM / In-house",
-"status": "Ready",
-"search_terms": ""
-},
-{
-"id": "IFM-313",
-"title": "IFM logo — round mark",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-313.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/logo-round.png",
-"description": "The circular IFM mark on its own — woman raising two ₹ coins in a leafy tree, 'INVESTING FOR' arched above, 'MUMMIES' below, ™ top-right. 224×218, the version used as the reel watermark and game header.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"library": false,
-"type": "",
-"format": "",
-"topic": [],
-"person": [],
-"source": "IFM / In-house",
-"status": "Ready",
-"search_terms": ""
-},
-{
-"id": "IFM-314",
-"title": "IFM animated hero logo (9s)",
-"date": "2026-08-18",
-"thumb": "../thumbs/IFM-314.jpg",
-"video": "game-assets/ifm-hero-logo.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/ifm-hero-logo.mp4",
-"description": "9s animated logo reveal — the polished 3D metallic IFM medallion rotating into place on a dark smoky ground beside 'Investing for Mummies · nurturing financially confident women'. 1280×720. Used as the intro/outro on reels and as game-screen branding.",
-"session": "",
-"slide_text": "Investing for Mummies · nurturing financially confident women",
-"silent": false,
-"library": false,
-"type": "",
-"format": "",
-"topic": [],
-"person": [],
-"source": "IFM / In-house",
-"status": "Ready",
-"search_terms": ""
-},
-{
-"id": "IFM-315",
-"title": "Corporate workshop (4 Jul 2026) — full session footage, 165 clips",
-"date": "2026-07-04",
-"thumb": "../thumbs/IFM-315.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1FrE-A4xMaPFv-zjo61cWcG9Ea6ZsaccJ",
-"description": "Handheld phone footage of a women-only corporate session in a wood-panelled boardroom with a large world map on the wall. Covers the room filling up, Hiral in a red top presenting to roughly 28 seated women, close-ups of attendees listening and taking notes, and screen-grabs of the projected deck — including the ₹1-doubled-every-day-for-30-days = ₹5 crore riddle, a ‘How to Read a Factsheet / which AMC is managing it’ slide, and the Mutual Fund Manager LIVE join QR with room PIN MF4236. 165 .MOV files, ~36MB each (~5.8GB total).",
-"session": "Corporate — 4 Jul 2026",
-"slide_text": "How to Read a Factsheet / which AMC is managing it",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Compounding",
-"Wealth",
-"Mutual Funds"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "corporate workshop jul 2026 full session footage 165 clips handheld phone women only wood panelled boardroom large world map wall covers room filling hiral red top presenting roughly seated close ups attendees listening taking notes screen grabs projected deck including"
-},
-{
-"id": "IFM-316",
-"title": "Corporate workshop (4 Jul 2026) — full group photo",
-"date": "2026-07-04",
-"thumb": "../thumbs/IFM-316.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/15idf4KKtm_16BH4xSqMscuzBPqQj7QnH/view",
-"description": "End-of-session group shot: about 28 women stood and seated around the boardroom table, Hiral centre-front in the red top. Water bottles, notebooks and the IFM handout are still on the table. Four near-identical frames exist in the folder (IMG_6177–6180); this is the cleanest.",
-"session": "Corporate — 4 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "testimonial review feedback social proof word of mouth corporate workshop jul 2026 full group photo end session shot about women stood seated around boardroom table hiral centre front red top water bottles notebooks ifm handout still four near identical frames exist folder img 6177 6180 cleanest attendees testimonial"
-},
-{
-"id": "IFM-317",
-"title": "Corporate workshop (4 Jul 2026) — Hiral teaching the room",
-"date": "2026-07-04",
-"thumb": "../thumbs/IFM-317.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1p2yqh9WvAG05z2CpAAUlqiEhLsX1pqhp/view",
-"description": "Hiral stood at the head of the boardroom table mid-explanation, hand out, addressing a full row of women down one side of the table. Shot from behind the attendees so the room reads as packed. Wide 4:3, good crop room for a carousel or slide.",
-"session": "Corporate — 4 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "corporate workshop jul 2026 hiral teaching room stood head boardroom table mid explanation hand out addressing full row women down one side shot from behind attendees reads packed wide good crop carousel slide action speaker photo july session"
-},
-{
-"id": "IFM-318",
-"title": "Corporate workshop (4 Jul 2026) — room wide, world-map wall",
-"date": "2026-07-04",
-"thumb": "../thumbs/IFM-318.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1OzJSDCLvWUmMM-3qGyr3bZCemUoLFijT/view",
-"description": "Wide establishing shot of the whole boardroom — world map on the left wall, dark screen at the far end, attendees ringing the table and a second row of chairs along the right. Hiral stands with her back to camera at the far side.",
-"session": "Corporate — 4 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "B-roll",
-"topic": [],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context corporate workshop jul 2026 room wide world map wall establishing shot whole boardroom left dark screen far end attendees ringing table second row chairs along right hiral stands her back camera side venue july session photo"
-},
-{
-"id": "IFM-319",
-"title": "Corporate workshop (4 Jul 2026) — DSLR portraits of Hiral (11 shots + RAW)",
-"date": "2026-07-04",
-"thumb": "../thumbs/IFM-319.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1iZye0DSRAsi8WgQIYApMNhx45GcVNswF",
-"description": "Canon-shot portraits from the /camera subfolder: Hiral seated at the boardroom table behind an open MacBook, red sleeveless top, warm wood and cream-panel background, some frames with glasses on and some off. 11 JPEGs plus matching .CR3 RAW files (4E7A5748–5760). Cleanest founder headshots IFM currently has — far better lit than the phone stills.",
-"session": "Corporate — 4 Jul 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Hiral"
-],
-"source": "Unknown",
-"search_terms": "portrait headshot founder press media kit agency bio corporate workshop jul 2026 dslr portraits hiral shots raw canon shot from camera subfolder seated boardroom table behind open macbook red sleeveless top warm wood cream panel background some frames glasses off jpegs plus matching cr3 files 4e7a5748 5760 cleanest"
-},
-{
-"id": "IFM-320",
-"title": "September: Kinda Chic",
-"date": "2026-09-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
-"description": "Copy-only slide for a 'kinda chic' trend carousel — no frames designed yet, just the six lines the carousel will use: kinda chic to start learning finance after 2 kids; to understand finance; to create a community with other women; to be able to discuss finance with confidence; to be able to take charge of your own financial future; to start Investing for Mummies.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Carousel",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Money Conversations",
-"Family & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "september kinda chic copy only slide trend carousel frames designed yet just six lines will use start learning finance after kids understand create community other women able discuss confidence take charge your own financial future investing mummies topical aakara"
-},
-{
-"id": "IFM-321",
-"title": "September: BSE and NSE",
-"date": "2026-09-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
-"description": "Blank placeholder slide for a reel explaining BSE and NSE. Label only — no script, frames or copy on the slide yet.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "september bse nse blank placeholder slide reel explaining label only script frames copy yet stock exchange markets workshops jargon shot aakara"
-},
-{
-"id": "IFM-322",
-"title": "September: GDP explained without the boring part",
-"date": "2026-09-01",
-"thumb": "../thumbs/IFM-322.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/17MMraBVxH9ezUuX58BUrXgfoGiW92-S6",
-"description": "Reel cover art: mint-green dotted background with a large faded rupee-and-arrows watermark. Navy serif headline 'GDP explained' above a cut-out of Hiral in a white sleeveless top, arms folded, smiling to camera. A tilted 'FINANCE NEWS' clipping overlays her forearm reading 'INDIA'S 7.8% GDP KEEPS IT THE FASTEST GROWING MAJOR ECONOMY'. Closing line 'without the boring part' in navy and red serif.",
-"session": "Aakara September delivery",
-"slide_text": "GDP explained FINANCE NEWS S 7.8% GDP KEEPS IT THE FASTEST GROWING MAJOR ECONOMY without the boring part",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Portrait",
-"topic": [
-"Markets & Economy"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "candid warm natural unposed relaxed friendly celebration september gdp explained without boring part reel cover art mint green dotted background large faded rupee arrows watermark navy serif headline above cut out hiral white sleeveless top arms folded smiling camera tilted finance news clipping overlays her forearm reading"
-},
-{
-"id": "IFM-323",
-"title": "July: Headline News",
-"date": "2026-07-15",
-"thumb": "../thumbs/IFM-323.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1RJjIbuDvuEmQMi2Md9vqBg87eE1aBp_g",
-"description": "Carousel cover: two mock 'World News' front pages — 'Elon Musk gains $18 billion overnight' and 'Mukesh Ambani's wealth jumps after Reliance shares rise' — under the headline 'Headlines we see all the time', closing with 'So… where did all that money come from?'",
-"session": "",
-"slide_text": "front pages — Mukesh Ambani — under the headline , closing with",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Wealth",
-"Stocks / Equity"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "july headline news carousel cover two mock world front pages elon musk gains billion overnight mukesh ambani wealth jumps after reliance shares rise under headlines see all time closing where did money come from aakara finished delivered"
-},
-{
-"id": "IFM-324",
-"title": "July: TCS QResults News",
-"date": "2026-07-15",
-"thumb": "../thumbs/IFM-324.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/138UQtZ83QoSNeq1Cx-SFIuTZ81oKuUTt",
-"description": "Carousel cover: a school report card graded A+/A- on Revenue, Net Profit and Earnings Per Share — 'The Stock Market's Report Card Season Starts Thursday! And yes, it affects your wallet.' (TCS quarterly results topical.)",
-"session": "",
-"slide_text": "The Stock Market",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Family & Money",
-"Stocks / Equity",
-"Stock Market"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "rbi repo rate central bank july tcs qresults news carousel cover school report card graded revenue net profit earnings per share stock market season starts thursday yes affects your wallet quarterly results topical aakara finished delivered"
-},
-{
-"id": "IFM-325",
-"title": "July: Hiral expertise",
-"date": "2026-07-15",
-"thumb": "../thumbs/IFM-325.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1Z8tXHbWcBfY88F5bRp4GpFAqnjz9AKHP",
-"description": "Reel: Hiral to camera on a blue gradient — 'If finance pages confuse you, this is for you!' Founder-expertise positioning reel, 4 files in the folder.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "july hiral expertise reel camera blue gradient finance pages confuse you founder positioning files folder aakara finished delivered"
-},
-{
-"id": "IFM-326",
-"title": "August: 10 Minute Money",
-"date": "2026-08-15",
-"thumb": "../thumbs/IFM-326.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1d_EcPr_9CeqA-A3FnIrKlyNWpGVo-2fx",
-"description": "Carousel cover: 'The 10-minute money job you should do this week' in bold serif on cream — a do-one-thing-now actionable carousel.",
-"session": "",
-"slide_text": "The 10-minute money job you should do this week",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [],
-"person": [],
-"source": "Aakara",
-"search_terms": "august minute money carousel cover job you should week bold serif cream one thing now actionable aakara finished delivered"
-},
-{
-"id": "IFM-327",
-"title": "August: 1X1",
-"date": "2026-08-15",
-"thumb": "../thumbs/IFM-327.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1nKWRAbAlLJuL-71WsJiawcutTTymJzH4",
-"description": "Reel: Hiral in blue holding a gold bar in one hand and a boxed necklace in the other — 'This simple Money Rule will change your life!'",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Gold"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "august 1x1 reel hiral blue holding gold bar one hand boxed necklace other simple money rule will change your life aakara finished delivered"
-},
-{
-"id": "IFM-328",
-"title": "August: Hidden Cost",
-"date": "2026-08-15",
-"thumb": "../thumbs/IFM-328.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1mnT8cYTv37rc1pdVmFlfGlSHLrySkC6Q",
-"description": "Reel: a woman counting ₹500 notes amid faded family scenes — 'The Hidden Cost of neglecting your finances.'",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "",
-"topic": [
-"Family & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "august hidden cost reel woman counting ₹500 notes amid faded family scenes neglecting your finances aakara finished delivered"
-},
-{
-"id": "IFM-329",
-"title": "August: Jackson Hole",
-"date": "2026-08-15",
-"thumb": "../thumbs/IFM-329.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1eRWjOG0Z9flMOvXYbDOy34qWnXOUalNX",
-"description": "Reel: Hiral in a blue blazer pointing at the camera beside a 'Jackson Hole' road sign — 'Why you should keep an eye on this Secret Meeting.' Fed symposium topical.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Published",
-"format": "Hiral Speaking",
-"topic": [
-"Family & Money",
-"Markets & Economy"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "august jackson hole reel hiral blue blazer pointing camera beside road sign why you should keep eye secret meeting fed symposium topical aakara finished delivered"
-},
-{
-"id": "IFM-330",
-"title": "August: RBI (part 1)",
-"date": "2026-08-15",
-"thumb": "../thumbs/IFM-330.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1qHuy7M_PLi3O1f_9j27iCNDA7zL678gN",
-"description": "Reel: Hiral in a green striped shirt mid-sentence, 'Be honest.' on-screen — RBI explainer part 1.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Markets & Economy"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "rbi repo rate central bank august rbi part reel hiral green striped shirt mid sentence honest screen explainer aakara finished delivered"
-},
-{
-"id": "IFM-331",
-"title": "August: RBI pt2",
-"date": "2026-08-15",
-"thumb": "../thumbs/IFM-331.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1hP9YuLjEJ03UmSQkJW3-rcnCq5zan76E",
-"description": "Reel: Hiral on a sofa holding an AC-style remote with the RBI seal behind — 'Why you shouldn't ignore the Repo Rate.' RBI part 2.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Markets & Economy",
-"Inflation & Interest Rates"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "rbi repo rate central bank august rbi pt2 reel hiral sofa holding style remote seal behind why you shouldn ignore repo rate part aakara finished delivered"
-},
-{
-"id": "IFM-332",
-"title": "August: Woman's equality",
-"date": "2026-08-15",
-"thumb": "../thumbs/IFM-332.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1HFRtv7bw1LNdnxGTLfFreF4YRPT9qM5K",
-"description": "Reel: Hiral in white lace with a second presenter composited — 'Who says Money Conversations aren't for you?' Women's Equality Day topical.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Published",
-"format": "Hiral Speaking",
-"topic": [
-"Money Conversations"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "august woman equality reel hiral white lace second presenter composited who says money conversations aren you women day topical aakara finished delivered"
-},
-{
-"id": "IFM-333",
-"title": "August: Asset",
-"date": "2026-08-15",
-"thumb": "../thumbs/IFM-333.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1ulQgtjpWj9EYvq5EcnfFBSqjFGjtLrig",
-"description": "Story: postage-stamp frame on coral — 'Confused about assets? WE'VE GOT YOU!' Teaser for the assets series.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social / Promotional",
-"topic": [],
-"person": [],
-"source": "Aakara",
-"search_terms": "august asset story postage stamp frame coral confused about assets got you teaser series aakara finished delivered"
-},
-{
-"id": "IFM-334",
-"title": "September: Thali (asset allocation)",
-"date": "2026-09-01",
-"thumb": "../thumbs/IFM-334.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1ok5PdE0vEGugyvA7dm8XLxgerDgnlHrW",
-"description": "Hiral sits at a wooden dining table talking straight to camera with a steel thali in front of her — rice, chana sabzi, dal, roti, salad and pickle in separate compartments, a glass of water alongside, on a bright red-and-green printed placemat. White graphic tee, bright modern home interior behind. The balanced-plate framing sets up an asset-allocation analogy.",
-"session": "Aakara September delivery",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Portrait",
-"topic": [
-"Asset Allocation",
-"Diversification"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "september thali asset allocation hiral sits wooden dining table talking straight camera steel front her rice chana sabzi dal roti salad pickle separate compartments glass water alongside bright red green printed placemat white graphic tee modern home interior behind balanced"
-},
-{
-"id": "IFM-335",
-"title": "RSS workshop — Hiral presenting the Introduction slide",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-335.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1Lc57tOczIQn2XhtDQ2PlMYGRpPagmRm9/view",
-"description": "Hiral stands at the head of a long boardroom table mid-sentence, both hands raised, presenting to a seated group. The projector screen behind her shows the 'Introduction' slide — an illustrated avatar of her ringed by bio callouts: created a handbook to teach investing simply, Bachelor's in Communications, 10 years as a writer, mother of 2, 'Have a math phobia', and learned personal finance through self-study. Water bottles and Maruti-branded snack boxes line the table.",
-"session": "RSS workshop (Balsabha) — 4 Jun 2026",
-"slide_text": "Introduction s in Communications, 10 years as a writer, mother of 2,",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Women & Money",
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "rss workshop hiral presenting introduction slide stands head long boardroom table mid sentence both hands raised seated group projector screen behind her shows illustrated avatar ringed bio callouts created handbook teach investing simply bachelor communications years writer mother have math"
-},
-{
-"id": "IFM-336",
-"title": "RSS workshop — Hiral on the \"Invisible Enemy: Inflation\" slide",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-336.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/17MMLvmTMbbCrEMCEfpdNMT3oOBlE37Tt/view",
-"description": "Hiral presenting at the head of the boardroom table, hands together, with attendees' chair-backs in the foreground. The screen behind reads 'The Invisible Enemy: Inflation' — 'Inflation quietly steals the purchasing power of...' — with a cartoon green inflation monster looming over a pile of cash, a list of rising costs (school fees, groceries, healthcare, travel), and the punchline 'Our mothers were taught to SAVE / Our generation must learn to INVEST'.",
-"session": "RSS workshop (Balsabha) — 4 Jun 2026",
-"slide_text": "chair-backs in the foreground. The screen behind reads Inflation quietly steals the purchasing power of... Our mothers were taught to SAVE / Our generation must learn to INVEST",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Family & Money",
-"Inflation & Interest Rates"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Aakara",
-"search_terms": "rss workshop hiral invisible enemy inflation slide presenting head boardroom table hands together attendees chair backs foreground screen behind reads quietly steals purchasing power cartoon green monster looming over pile cash list rising costs school fees groceries healthcare travel punchline"
-},
-{
-"id": "IFM-337",
-"title": "RSS workshop — group photo at the Balsabha banner (close group)",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-337.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1FgWlN8LJvFV5oR8ExZb1ZC7-6_uMUpmF/view",
-"description": "Nine women posed around a roll-up BALSABHA banner — five standing, four crouched in front — smiling at camera in a hotel function room, projector screen glowing at the left edge and a patterned cream carpet underfoot. Mix of Indian ethnic wear and casual clothes.",
-"session": "RSS workshop (Balsabha) — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Aakara",
-"search_terms": "candid warm natural unposed relaxed friendly celebration rss workshop group photo balsabha banner close nine women posed around roll five standing four crouched front smiling camera hotel function room projector screen glowing left edge patterned cream carpet underfoot mix indian ethnic wear casual clothes attendees june 2026"
-},
-{
-"id": "IFM-338",
-"title": "RSS workshop — full group photo at the Balsabha banner",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-338.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1NRXLdsUFeMSH1YhVJLlkyRhrhldUDAyD/view",
-"description": "The full cohort — around sixteen women — gathered on and around a low step beside the BALSABHA roll-up banner, front row crouched, everyone facing camera. Warm cove lighting, dark panelled wall behind, patterned cream carpet.",
-"session": "RSS workshop (Balsabha) — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Classroom Moment",
-"topic": [
-"Family & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Aakara",
-"search_terms": "rss workshop full group photo balsabha banner cohort around sixteen women gathered low step beside roll front row crouched everyone facing camera warm cove lighting dark panelled wall behind patterned cream carpet attendees june 2026"
-},
-{
-"id": "IFM-339",
-"title": "RSS workshop — audience applauding",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-339.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/10yIA3Kf-EBt3wiKdzk9BhzFRz8ADbQiU/view",
-"description": "Candid from the back of the room: around a dozen women in black office chairs applauding, several smiling toward the front. A ceiling-mounted projector is prominent in the upper frame and a handout held by someone in the foreground catches the light. Shot past the seated rows rather than posed.",
-"session": "RSS workshop (Balsabha) — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "Aakara",
-"search_terms": "candid warm natural unposed relaxed friendly celebration rss workshop audience applauding candid from back room around dozen women black office chairs several smiling toward front ceiling mounted projector prominent upper frame handout held someone foreground catches light shot past seated rows rather than posed balsabha applause attendees"
-},
-{
-"id": "IFM-340",
-"title": "RSS workshop — raw session video dump (101 clips, UNREVIEWED)",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-340.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
-"description": "101 raw MP4 clips from the RSS workshop, shot on phone and dumped with UUID filenames. Sampled frames are largely projector captures of the workshop deck — 'From Stree Dhan to Financial Wisdom' and the prompt slide 'What does ‘Stree Dhan’ mean to you?' over an illustrated money-tree-and-vault graphic — plus room and speaker coverage. NOT individually reviewed or tagged.",
-"session": "RSS workshop (Balsabha) — 4 Jun 2026",
-"slide_text": "From Stree Dhan to Financial Wisdom What does ‘Stree Dhan",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Other Person"
-],
-"source": "Aakara",
-"search_terms": "testimonial review feedback social proof word of mouth rss workshop raw session video dump 101 clips unreviewed mp4 from shot phone dumped uuid filenames sampled frames largely projector captures deck stree dhan financial wisdom prompt slide what does mean you over illustrated money tree vault graphic plus room"
-},
-{
-"id": "IFM-341",
-"title": "September: Jio IPO — do you know how to invest in Jio?",
-"date": "2026-09-03",
-"thumb": "../thumbs/IFM-341.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1izAZNyIytUGtfGpxYAQLA-83pShtUHcx",
-"description": "8-artboard carousel on the coming Jio IPO, on IFM's pale-teal grid background with a faint candlestick-chart watermark. Cover: a hand fanning three blue/green/red Jio 'Digital Life' cards under 'You know Jio. But do you know how to invest in Jio?'. Inside slides argue against familiarity bias — 'Don't confuse familiarity with an investment thesis', with a cut-out of Mukesh Ambani — and close on a checklist card: 'An IPO is not an invitation to buy, it's an invitation to do your homework — What am I buying? What am I paying? What could go wrong? Does it belong in MY portfolio?'",
-"session": "Aakara September delivery",
-"slide_text": "s pale-teal grid background with a faint candlestick-chart watermark. Cover: a hand fanning three blue/green/red Jio cards under . Inside slides argue against familiarity bias — t confuse familiarity with an investment thesis An IPO is not an invitation to buy, it",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Investing",
-"IPOs"
-],
-"person": [
-"No Person"
-],
-"source": "Aakara",
-"search_terms": "september jio ipo you know how invest artboard carousel coming ifm pale teal grid background faint candlestick chart watermark cover hand fanning three blue green red digital life cards under but inside slides argue against familiarity bias don confuse investment"
-},
-{
-"id": "IFM-342",
-"title": "September: Brand awareness — “Can we stop apologizing”",
-"date": "2026-09-03",
-"thumb": "../thumbs/IFM-342.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1lUpzR-igdWwhXt7dCWOX65sPjo9fJ4Es",
-"description": "Single MP4. The sampled frame is an extreme, motion-blurred close-up of a woman speaking to camera — only mouth, chin and neck in frame, gold hoop earring, dark hair, denim-blue collared shirt — with the caption 'Can we stop apologizing' in a white box across the lower third. Handheld, fast-moving.",
-"session": "Aakara September delivery",
-"slide_text": "Can we stop apologizing",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Portrait",
-"topic": [
-"Money Mindset"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "testimonial review feedback social proof word of mouth september brand awareness can stop apologizing single mp4 sampled frame extreme motion blurred close woman speaking camera only mouth chin neck gold hoop earring dark hair denim blue collared shirt caption white box across lower third handheld fast moving reel"
-},
-{
-"id": "IFM-343",
-"title": "July: How To Read A Quarterly Report",
-"date": "2026-07-15",
-"thumb": "../thumbs/IFM-343.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1H7FGAM7hjLW_l-0DKCCiMWx79HwcaNzM/view",
-"description": "Reel cover — Hiral in a pink kurta sits at a wooden desk with a laptop, lapel mic clipped on, smiling at camera in front of a large whiteboard-style candlestick chart with red and green candles and a grey volume histogram. White caps 'HOW TO READ A' sits above a navy rounded box reading 'QUARTERLY REPORT'.",
-"session": "Aakara July delivery",
-"slide_text": "HOW TO READ A QUARTERLY REPORT",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "rbi repo rate central bank candid warm natural unposed relaxed friendly celebration july how read quarterly report reel cover hiral pink kurta sits wooden desk laptop lapel mic clipped smiling camera front large whiteboard style candlestick chart red green candles grey volume histogram white caps above navy rounded box reading results earnings"
-},
-{
-"id": "IFM-344",
-"title": "June: Why do IPOs come in waves?",
-"date": "2026-06-29",
-"thumb": "../thumbs/IFM-344.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/15fqBhWg93HGvTO9e0-zJRpCYa7Afn84l",
-"description": "8-artboard explainer carousel on IFM's pale-teal wave background. Cover asks 'Why do IPOs suddenly come in waves?' over a white upward zig-zag arrow. Slide 2 pairs a stock photo of a woman peering through a magnifying glass with 'One month... hardly any IPOs. The next... they're everywhere! It's not a coincidence.' Later slides explain that companies can spend years ready to list but wait for market conditions, closing on a navy card: 'Being ready isn't enough - the market has to be ready too.'",
-"session": "Aakara June delivery",
-"slide_text": "s pale-teal wave background. Cover asks over a white upward zig-zag arrow. Slide 2 pairs a stock photo of a woman peering through a magnifying glass with re everywhere! It Later slides explain that companies can spend years ready to list but wait for market conditions, closing on a navy card: t enough - the market has to be ready too.",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Stocks / Equity",
-"IPOs"
-],
-"person": [
-"No Person"
-],
-"source": "Aakara",
-"search_terms": "june why ipos come waves artboard explainer carousel ifm pale teal wave background cover asks suddenly over white upward zig zag arrow slide pairs stock photo woman peering through magnifying glass one month hardly any next they everywhere not coincidence"
-},
-{
-"id": "IFM-345",
-"title": "June: NSE has filed a ₹30,000 crore IPO",
-"date": "2026-06-22",
-"thumb": "../thumbs/IFM-345.jpg",
-"video": "",
-"drive": "https://drive.google.com/drive/folders/1P6p2Mk89Xl5mUywlgIVQk4qxMdsM6N2m",
-"description": "6-artboard news-topical carousel on a mint-green tint over a photo of the NSE building at Bandra Kurla Complex. Cover: 'NSE has filed a ₹30,000 crore IPO - and soon you may be able to buy NSE on BSE!' with a 'No, that's not a typo' CTA. Inside slides bust the assumption that NSE is government-owned ('Most people think NSE is owned by the Government of India. But it's not.') and close on the plot twist that BSE is already listed - and its shares trade on NSE.",
-"session": "Aakara June delivery",
-"slide_text": "NSE has filed a ₹30,000 crore IPO - and soon you may be able to buy NSE on BSE! s not a typo Most people think NSE is owned by the Government of India. But it",
-"silent": false,
-"type": "Carousel",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Wealth",
-"Stocks / Equity",
-"IPOs"
-],
-"person": [
-"No Person"
-],
-"source": "Aakara",
-"search_terms": "june nse has filed ₹30 000 crore ipo artboard news topical carousel mint green tint over photo building bandra kurla complex cover soon you may able buy bse not typo cta inside slides bust assumption government owned most people think"
-},
-{
-"id": "IFM-346",
-"title": "Stree Dhan workshop — opening title slide",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-346.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1ZkhuVC0gHyAlgBPrnaOCyRudGNn0IuWo/view",
-"description": "Projector screen showing the opening slide 'From Stree Dhan to Financial Wisdom' — an illustrated tree growing out of a pile of gold coins and jewellery, with the prompt “What does ‘Stree Dhan’ mean to you?” across the bottom. Dark wood-paneled hotel conference room, empty black executive chairs in the foreground.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "From Stree Dhan to Financial Wisdom What does ‘Stree Dhan",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Women & Money"
-],
-"person": [
-"No Person"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop opening title slide projector screen showing from financial wisdom illustrated tree growing out pile gold coins jewellery prompt what does mean you across bottom dark wood paneled hotel conference room empty black executive chairs foreground balsabha"
-},
-{
-"id": "IFM-347",
-"title": "Stree Dhan workshop — Introduction slide",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-347.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1YBYiX32SZ-KYpFBPxDOnHRA0bfbuiY37/view",
-"description": "Facilitator stands beside the projector screen presenting the colour-coded 'Introduction' slide — an illustrated woman surrounded by four labelled boxes explaining who the course is for. A roll-up IFM banner stands to the right of the screen; participants watch from black chairs in the foreground.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "Introduction",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop introduction slide facilitator stands beside projector screen presenting colour coded illustrated woman surrounded four labelled boxes explaining who course roll ifm banner right participants watch from black chairs foreground intro balsabha hiral teaching"
-},
-{
-"id": "IFM-348",
-"title": "Stree Dhan workshop — inflation slides",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-348.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1Lac_goy_sqm5CKmLYBw7Jvyk-VI5m8RB/view",
-"description": "Facilitator presenting the inflation block of the deck: 'What Causes Inflation?' (three bullet causes beside a cartoon of shoppers), 'The Invisible Enemy: Inflation' listing school fees, groceries, healthcare and travel, and 'The Real Cost of Waiting' showing a ₹500 note shrinking. She gestures at the screen with both hands; seated participants in the foreground.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "What Causes Inflation? The Invisible Enemy: Inflation The Real Cost of Waiting",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Women & Money",
-"Family & Money",
-"Stock Market",
-"Inflation & Interest Rates"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop inflation slides facilitator presenting block deck what causes three bullet beside cartoon shoppers invisible enemy listing school fees groceries healthcare travel real cost waiting showing ₹500 note shrinking she gestures screen both hands seated participants foreground purchasing"
-},
-{
-"id": "IFM-349",
-"title": "Stree Dhan workshop — expense-sorting activity slide",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-349.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1fqZZCVaKDBGhu1_YNu_n6FXjWhqd9Z50/view",
-"description": "Interactive slide asking ‘Which of these expenses do you think…’ with three photo cards — a takeaway coffee cup, a card-swipe machine and a food-delivery bag — for participants to sort. Facilitator stands at the whiteboard beside the screen; women at the boardroom table look up at it, one holding a phone.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "Which of these expenses do you think…",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Managing Money",
-"Women & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop expense sorting activity slide interactive asking which these expenses you think three photo cards takeaway coffee cup card swipe machine food delivery bag participants sort facilitator stands whiteboard beside screen women boardroom table look one holding phone"
-},
-{
-"id": "IFM-350",
-"title": "Stree Dhan workshop — Saving vs Investing slide",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-350.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1u60sKnbp5iqVOvpgNWfnl4E-8rK2rZcH/view",
-"description": "Projector screen split into 'Saving' (a pink piggy bank) and 'Investing' (a green sapling growing coins), shot across the empty end of the U-shaped boardroom table with red tissue boxes and water bottles in the foreground.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "(a pink piggy bank) and",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Saving vs Investing",
-"Saving",
-"Women & Money",
-"Family & Money"
-],
-"person": [
-"No Person"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop saving investing slide projector screen split into pink piggy bank green sapling growing coins shot across empty end shaped boardroom table red tissue boxes water bottles foreground money tree comparison"
-},
-{
-"id": "IFM-351",
-"title": "Stree Dhan workshop — IFM game screens on the projector",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-351.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1nITiEIDHip9RZuua6UL66f0h62a3ylrZ/view",
-"description": "Facilitator demonstrating live IFM web tools on the big screen — the Investing for Mummies dashboard with its coloured game tiles and a calculator screen showing a rupee figure. She faces the room mid-explanation; the printed IFM roll-up banner stands beside the screen.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Women & Money",
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop ifm game screens projector facilitator demonstrating live web tools big screen investing mummies dashboard coloured tiles calculator showing rupee figure she faces room mid explanation printed roll banner stands beside demo tool"
-},
-{
-"id": "IFM-352",
-"title": "Stree Dhan workshop — Reimagining Stree Dhan slides",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-352.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1xzLxOTQUE_LQ0dbZKB6tG-XRlFw39p_P/view",
-"description": "Closing-section slides: 'Reimagining Stree Dhan Today' with a bulleted list beside an illustrated woman at a laptop, and a slide reading ‘…more connected than we realised’ over a crowd illustration of many women. Facilitator seated at the head of the table working from her laptop.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "Reimagining Stree Dhan Today …more connected than we realised",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Women & Money",
-"Stock Market"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop reimagining slides closing section today bulleted list beside illustrated woman laptop slide reading more connected than realised over crowd illustration many women facilitator seated head table working from her community"
-},
-{
-"id": "IFM-353",
-"title": "Stree Dhan workshop — facilitator teaching the room",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-353.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/19C7obWlQQgbicBIfGVfwjKiiAH4IuYip/view",
-"description": "Facilitator in a blue-and-white block-print kurta and white trousers presenting on her feet in the middle of the room, hands mid-gesture, with the BALSABHA roll-up banner behind her and a participant watching from a chair at the table. Other clips in this cluster follow her walking the U of the table and writing at the flip chart.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop facilitator teaching room blue white block print kurta trousers presenting her feet middle hands mid gesture balsabha roll banner behind participant watching from chair table other clips cluster follow walking writing flip chart hiral mums"
-},
-{
-"id": "IFM-354",
-"title": "Stree Dhan workshop — IFM course pricing slide pitch",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-354.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1Juoj1nVCEj17C3tTYyFuoFoi_9HaJ_wV/view",
-"description": "Facilitator in a cream block-print kurta presenting the workshop line-up slide — three pricing cards for the Investing for Mummies Flagship 8-session (₹16,000), the Introductory 4-session (₹9,500) and the Young Adults foundation course (₹9,500), with June batch dates and 'Register Now' buttons.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "Register Now",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Hiral Speaking",
-"topic": [
-"Women & Money",
-"Investing"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop ifm course pricing slide pitch facilitator cream block print kurta presenting line three cards investing mummies flagship session ₹16 000 introductory 500 young adults foundation june batch dates register now buttons registration"
-},
-{
-"id": "IFM-355",
-"title": "Stree Dhan workshop — two facilitators co-presenting",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-355.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/15DLnB_i55tB18xxpyHHakbc3sio2CMmo/view",
-"description": "Two women presenting together at the front of the room — one in the block-print kurta, a second in a cream dupatta — standing either side of the pricing slide and, in other clips of this cluster, working together at the flip chart and leaning over the table talking to participants.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop two facilitators presenting women together front room one block print kurta second cream dupatta standing either side pricing slide other clips cluster working flip chart leaning over table talking participants team balsabha"
-},
-{
-"id": "IFM-356",
-"title": "Stree Dhan workshop — room wide",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-356.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1K0mQKPpZlPB9OOYp8MjvkGlzoiH-HiWU/view",
-"description": "Wide views of the full room: a U-shaped boardroom table in a dark wood-and-cream hotel conference room, roughly twenty women in black executive chairs facing the lit projector screen, red tissue boxes and water bottles spaced along the table, patterned grey carpet.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Student"
-],
-"source": "Aakara",
-"search_terms": "b-roll cutaway establishing supporting footage context stree dhan workshop room wide views full shaped boardroom table dark wood cream hotel conference roughly twenty women black executive chairs facing lit projector screen red tissue boxes water bottles spaced along patterned grey carpet venue audience balsabha"
-},
-{
-"id": "IFM-357",
-"title": "Stree Dhan workshop — participants at the table",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-357.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1nIwQMHzDgkSlc5VsK01TyoIDY8Om0rpw/view",
-"description": "Close and mid shots of the participants — adult women seated around the boardroom table in kurtas and summer dresses, watching the screen, laughing, taking notes and talking to each other between sections. Several clips catch a row of women smiling at something on the screen.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Student"
-],
-"source": "Aakara",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration stree dhan workshop participants table close mid shots adult women seated around boardroom kurtas summer dresses watching screen laughing taking notes talking each other between sections several clips catch row smiling something audience listening candid mums balsabha"
-},
-{
-"id": "IFM-358",
-"title": "Stree Dhan workshop — hands up during the activity",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-358.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1Oc63KsMQnikPKT5wvDnirSPzpqVEwwjJ/view",
-"description": "Participants raising their hands to answer during the interactive section — one woman with her arm fully up in the middle of the row while the women around her look toward the front.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Money Conversations",
-"Women & Money"
-],
-"person": [
-"Student"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop hands during activity participants raising their answer interactive section one woman her arm fully middle row while women around look toward front raised participation engagement"
-},
-{
-"id": "IFM-359",
-"title": "BALSABHA workshop — group photo at the banner",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-359.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1IBTsvlvZbnesjDOYt12pczVMzN9A8b61/view",
-"description": "End-of-session group photo: nine women posed in two rows — five standing, four kneeling — in front of the BALSABHA roll-up banner ('Where Values Take Root & Young Hearts Blossom'), all smiling at the camera in the hotel conference room.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "candid warm natural unposed relaxed friendly celebration balsabha workshop group photo banner end session nine women posed two rows five standing four kneeling front roll where values take root young hearts blossom all smiling camera hotel conference room team"
-},
-{
-"id": "IFM-360",
-"title": "Stree Dhan workshop — break-time candid",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-360.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/11yiiRvG0QuMImzvqdTtgNjSnIOOvlYsj/view",
-"description": "Participants standing and chatting in a cluster at the far end of the boardroom table during a break, handbags on the table beside red tissue boxes and water bottles.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [
-"Women & Money"
-],
-"person": [
-"Student"
-],
-"source": "Aakara",
-"search_terms": "candid warm natural unposed relaxed friendly celebration stree dhan workshop break time candid participants standing chatting cluster far end boardroom table during handbags beside red tissue boxes water bottles networking informal"
-},
-{
-"id": "IFM-361",
-"title": "Stree Dhan workshop — blank/accidental clips",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-361.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1vPZ4MI5jgJp6SVQI_vQPEhuy6rNmIOgV/view",
-"description": "Three accidental recordings from the shoot: two clips of blank grey wall and carpet and one of plain wood panelling, no subject in frame.",
-"session": "BALSABHA women’s workshop — 4 Jun 2026",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Women & Money"
-],
-"person": [
-"No Person"
-],
-"source": "Aakara",
-"search_terms": "stree dhan workshop blank accidental clips three recordings from shoot two grey wall carpet one plain wood panelling subject frame unusable offcut raw"
-},
-{
-"id": "IFM-362",
-"title": "Flagship graduate with her certificate",
-"date": "2026-09-04",
-"thumb": "../thumbs/IFM-362.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1l1SCV70bis0224e7Ynrya9oMeuKOZejd/view",
-"description": "A grey-haired woman in a lilac striped shirt beams at the camera holding up her IFM 'Certificate of Completion' for the Investing for Mummies Flagship course, dated August 2026. She is seated at a polished wood boardroom table with an open handwritten notebook in front of her; plain whiteboard behind.",
-"session": "Investing for Mummies Flagship graduation — Aug 2026",
-"slide_text": "Certificate of Completion",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Certificate",
-"topic": [
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof flagship graduate her certificate grey haired woman lilac striped shirt beams camera holding ifm completion investing mummies course dated august 2026 she seated polished wood boardroom table open handwritten notebook front plain whiteboard behind celebration"
-},
-{
-"id": "IFM-363",
-"title": "Flagship graduates holding certificates",
-"date": "2026-09-04",
-"thumb": "../thumbs/IFM-363.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1KLibH866vZ5nPfmKMpTkfmlCGBULd0bT/view",
-"description": "Four women grouped at the end of the boardroom table — two seated holding their Investing for Mummies certificates up to the camera, two standing behind them, one also holding a certificate. All smiling; cream wall and wooden panelling behind.",
-"session": "Investing for Mummies Flagship graduation — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Certificate",
-"topic": [
-"Investing"
-],
-"person": [
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof flagship graduates holding certificates four women grouped end boardroom table two seated their investing mummies camera standing behind them one also certificate all smiling cream wall wooden panelling group completion celebration"
-},
-{
-"id": "IFM-364",
-"title": "Flagship graduates — group portrait",
-"date": "2026-09-04",
-"thumb": "../thumbs/IFM-364.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1lcVEzrbiix13vA1Ei_yUHh4szlASL9t3/view",
-"description": "The same four women posed together at the boardroom table without the certificates raised — two seated with arms folded and smiling, two standing behind with hands on the chair backs. Relaxed end-of-course portrait.",
-"session": "Investing for Mummies Flagship graduation — Aug 2026",
-"slide_text": "",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Hiral",
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof portrait headshot founder press media kit agency bio flagship graduates group portrait same four women posed together boardroom table without certificates raised two seated arms folded smiling standing behind hands chair backs relaxed end course celebration"
-},
-{
-"id": "IFM-365",
-"title": "Graduation group with certificates — office boardroom",
-"date": "2026-09-04",
-"thumb": "../thumbs/IFM-365.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/15d-G15xuTtMzWPHHIKAkm_ZV8uLFvtic/view",
-"description": "Nine women packed together behind the office boardroom table, most holding IFM 'Certificate of Completion' sheets toward the camera, one holding hers up high at the back. Cream room with framed artwork, a wooden cabinet and curtains; the table in front holds notebooks, a purple IFM pouch, glasses of water and handbags.",
-"session": "Investing for Mummies Flagship graduation — Aug 2026",
-"slide_text": "Certificate of Completion",
-"silent": false,
-"type": "Image",
-"status": "Raw",
-"format": "Certificate",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof graduation group certificates office boardroom nine women packed together behind table most holding ifm certificate completion sheets toward camera one hers high back cream room framed artwork wooden cabinet curtains front holds notebooks purple pouch glasses water handbags celebration"
-},
-{
-"id": "IFM-366",
-"title": "June: The Power of Compounding — reel cover",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-366.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1I3lMqYQ2iOzth0LSciCrhSuOEHA0Nejx/view",
-"description": "Reel cover art: a woman in a denim-blue dress sits in a cream armchair against a pale blue swirl background with ₹ notes floating around her. Title type across the lower third reads 'THE POWER OF COMPOUNDING', 'COMPOUNDING' highlighted in a blue block.",
-"session": "Aakara June delivery",
-"slide_text": "THE POWER OF COMPOUNDING",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Portrait",
-"topic": [
-"Compounding"
-],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "june power compounding reel cover art woman denim blue dress sits cream armchair against pale swirl background notes floating around her title type across lower third reads highlighted block rupee aakara"
-},
-{
-"id": "IFM-367",
-"title": "Why IFM — founder piece to camera",
-"date": "2026-06-04",
-"thumb": "../thumbs/IFM-367.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1gTm-luKbZqjcNcHljZH-jHt1oQj0xJ9W/view",
-"description": "Talking-head brand video: Hiral sits on a cream sofa holding a printed mug, in a white-and-blue textured knit top and white skirt, speaking to camera. A potted areca palm and sheer sunlit curtains fill the background. Soft natural daylight, clean vertical framing.",
-"session": "Aakara June delivery",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Portrait",
-"topic": [],
-"person": [
-"Hiral"
-],
-"source": "Aakara",
-"search_terms": "why ifm founder piece camera talking head brand video hiral sits cream sofa holding printed mug white blue textured knit top skirt speaking potted areca palm sheer sunlit curtains fill background soft natural daylight clean vertical framing"
-},
-{
-"id": "IFM-368",
-"title": "Certificate handover — brownies on the boardroom table",
-"date": "2026-09-07",
-"thumb": "../thumbs/IFM-368.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1CWwnxY471XUncc2_5FhRDddHq7D2YIh7/view",
-"description": "Handheld vertical clip in a small boardroom: a woman in a red-and-black floral kurta, back to camera, reaches across a dark wood table to hand a rolled certificate to a smiling woman in a green print top. The table is set with a plate of chocolate brownies, sandwiches, a card machine, a pen pot and a red tissue box. Whiteboard and wall AC behind.",
-"session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Certificate",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof certificate handover brownies boardroom table handheld vertical clip small woman red black floral kurta back camera reaches across dark wood hand rolled smiling green print top set plate chocolate sandwiches card machine pen pot tissue box whiteboard wall behind workshop"
-},
-{
-"id": "IFM-369",
-"title": "Certificate handover across the boardroom table — group watching",
-"date": "2026-09-07",
-"thumb": "../thumbs/IFM-369.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1pQjgCfKBMJmfYpQ4MzgxQmW34WhDCQMy/view",
-"description": "Handheld vertical clip down the length of a boardroom table. An open certificate is passed across the table between two pairs of hands while five women stand along the far side smiling and watching — one in a blue striped shirt by the wall screen, others in lilac, black and print tops. Glasses of water, coasters, notebooks and a phone on the table; a large wall-mounted display and a marked-up whiteboard behind.",
-"session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Certificate",
-"topic": [],
-"person": [
-"Other Person"
-],
-"source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof certificate handover across boardroom table group watching handheld vertical clip down length open passed between two pairs hands while five women stand along far side smiling one blue striped shirt wall screen others lilac black print tops glasses water coasters"
-},
-{
-"id": "IFM-370",
-"title": "Flagship batch group photo with certificates",
-"date": "2026-09-07",
-"thumb": "../thumbs/IFM-370.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1kIWngHziv-pYjlGAJE79vcWGlFwqxhcO/view",
-"description": "Ten women grouped behind two black leather boardroom chairs, most holding navy-and-cream 'Certificate of Completion' certificates toward camera; one at the back holds hers up overhead. Warm downlights, a framed abstract painting on the left wall, cream curtains and a wooden cabinet behind. The table in front holds phones, a notebook, a glass tumbler and more certificates. Everyone is smiling straight at the lens.",
-"session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
-"slide_text": "Certificate of Completion",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Certificate",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof flagship batch group photo certificates ten women grouped behind two black leather boardroom chairs most holding navy cream certificate completion toward camera one back holds hers overhead warm downlights framed abstract painting left wall curtains wooden cabinet table front phones"
-},
-{
-"id": "IFM-371",
-"title": "Instagram story composer screenshot — certificate photos",
-"date": "2026-09-07",
-"thumb": "../thumbs/IFM-371.jpg",
-"video": "",
-"drive": "https://drive.google.com/file/d/1Kk4CyE_Z80DlEtSe7_QHU1crX1IzZ_op/view",
-"description": "Phone screenshot of the Instagram story composer, UI chrome included (Text, Stickers, Audio, Effects, Draw, Download, Label AI, More down the right; 'Your stories' and 'Close Friends' along the bottom). Two stacked certificate photos fill the canvas: on top, four women holding 'Certificate of Completion — Investing for Mummies Flagship' certificates with names printed on them; below, the ten-person group shot.",
-"session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
-"slide_text": "Your stories Close Friends Certificate of Completion — Investing for Mummies Flagship",
-"silent": false,
-"type": "Image",
-"status": "Ready",
-"format": "Certificate",
-"topic": [
-"Family & Money",
-"Investing"
-],
-"person": [
-"Other Person"
-],
-"source": "Sakshi",
-"search_terms": "certificate completion graduation proud achievement social proof instagram story composer screenshot certificate photos phone chrome included text stickers audio effects draw download label more down right your stories close friends along bottom two stacked fill canvas top four women holding completion investing mummies flagship certificates names printed"
-},
-{
-"id": "IFM-372",
-"title": "September: Rules for Mastering Personal Finance",
-"date": "2026-09-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/1j88loWk4b_yUlDu_CokLLigpPdvyQKU1sKj6QxJ5gVQ/edit",
-"description": "Label-only placeholder slide for a brand-awareness carousel on the rules for mastering personal finance. No frames, copy or references on the slide yet — topic and pillar only.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Carousel",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [],
-"person": [],
-"source": "Aakara",
-"search_terms": "september rules mastering personal finance label only placeholder slide brand awareness carousel frames copy references yet topic pillar basics designed aakara internal deck"
-},
-{
-"id": "IFM-373",
-"title": "September: News Items (carousel)",
-"date": "2026-09-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/1j88loWk4b_yUlDu_CokLLigpPdvyQKU1sKj6QxJ5gVQ/edit",
-"description": "Label-only placeholder slide for news-focused carousels — the carousel counterpart to the news-topical reel strand (cf. IFM-278, IFM-323, IFM-324). No specific stories named on the slide.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Carousel",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [],
-"person": [],
-"source": "Aakara",
-"search_terms": "september news items carousel label only placeholder slide focused carousels counterpart topical reel strand ifm 278 323 324 specific stories named markets designed aakara internal deck"
-}
+ {
+  "id": "IFM-R01",
+  "title": "Money Map — game reel",
+  "date": "2026-06-20",
+  "thumb": "../thumbs/IFM-R01.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/reels/moneymap-15s.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/reels/moneymap-15s.mp4",
+  "description": "15s 9:16 promo reel. Opens on Seedance-animated real budgeting-workshop footage with the hook 'Where does your money actually go?', cuts to punch-ins of the purple Money Map budget tracker ('Every rupee, mapped'), closes on the round IFM end-card. Gen-Z budget tracker.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Managing Money"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "money map game reel 15s promo opens seedance animated real budgeting workshop footage hook where does your actually cuts punch ins purple budget tracker every rupee mapped closes round ifm end card gen 9x16 vertical"
+ },
+ {
+  "id": "IFM-R02",
+  "title": "Broke by Friday — game reel",
+  "date": "2026-06-20",
+  "thumb": "../thumbs/IFM-R02.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/reels/bbf-15s.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/reels/bbf-15s.mp4",
+  "description": "15s 9:16 reel. Hook over real classroom footage — 'Survive the month on ₹10,000?' — into the Broke by Friday life-sim screens ('Will you make it?'), coral/gold theme, IFM end-card.",
+  "session": "",
+  "slide_text": "A chaotic money sim. Survive the month on Rs 10,000? 28 days. Surprise bills. Pure chaos.",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "broke friday game reel 15s hook over real classroom footage survive month ₹10 000 into life sim screens will you make coral gold theme ifm end card gen promo vertical"
+ },
+ {
+  "id": "IFM-R03",
+  "title": "Need / Want / Value — game reel",
+  "date": "2026-06-20",
+  "thumb": "../thumbs/IFM-R03.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/reels/nwv-15s.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/reels/nwv-15s.mp4",
+  "description": "15s 9:16 reel. Workshop crane-shot hook 'Need it? Want it? Or gold?' into the Need·Want·Value sorting screens ('Build mindful habits'), navy/blue theme, IFM end-card.",
+  "session": "",
+  "slide_text": "Need it? Want it? Or gold? Build mindful habits",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Managing Money"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "need want value game reel 15s workshop crane shot hook gold into sorting screens build mindful habits navy blue theme ifm end card spending vertical"
+ },
+ {
+  "id": "IFM-R04",
+  "title": "3 Buckets — game reel",
+  "date": "2026-06-20",
+  "thumb": "../thumbs/IFM-R04.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/reels/buckets-15s.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/reels/buckets-15s.mp4",
+  "description": "15s 9:16 reel. 'How should you split your salary?' over real workshop footage, into the 3 Buckets sorting game ('Find your ideal split'), green/gold theme, IFM end-card.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Managing Money",
+   "3-Bucket Investing"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "buckets game reel 15s how should you split your salary over real workshop footage into sorting find ideal green gold theme ifm end card budgeting vertical"
+ },
+ {
+  "id": "IFM-R05",
+  "title": "Stock Rush — game reel",
+  "date": "2026-06-20",
+  "thumb": "../thumbs/IFM-R05.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/reels/stockrush-15s.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/reels/stockrush-15s.mp4",
+  "description": "15s 9:16 reel mixing teacher + student views. Real students watching a live leaderboard (Seedance) → host leaderboard screen ('Teacher view') → player trading screen ('Student view'), black/green market theme, IFM end-card.",
+  "session": "",
+  "slide_text": "Teacher view Student view",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Stocks / Equity",
+   "Stock Market"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "stock rush game reel 15s mixing teacher student views real students watching live leaderboard seedance host screen view player trading black green market theme ifm end card classroom vertical"
+ },
+ {
+  "id": "IFM-R06",
+  "title": "Stock Rush PRO — game reel",
+  "date": "2026-06-20",
+  "thumb": "../thumbs/IFM-R06.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/reels/srpro-15s.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/reels/srpro-15s.mp4",
+  "description": "15s 9:16 reel, premium black/gold. Mentor-at-whiteboard hook 'Think you can beat the market?' into the real Stock Rush PRO screens — the '6 corporate actions' teacher briefing and the 'decade of India's markets in 30 min' landing — IFM end-card.",
+  "session": "",
+  "slide_text": "Think you can beat the market? 6 corporate actions decade of India",
+  "silent": false,
+  "type": "Video",
+  "status": "Published",
+  "format": "Social / Promotional",
+  "topic": [
+   "Stocks / Equity",
+   "Stock Market"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "stock rush pro game reel 15s premium black gold mentor whiteboard hook think you can beat market into real screens corporate actions teacher briefing decade india markets min landing ifm end card advanced trading portfolio vertical"
+ },
+ {
+  "id": "IFM-R07",
+  "title": "Hidden Fortunes — game reel",
+  "date": "2026-06-20",
+  "thumb": "../thumbs/IFM-R07.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/reels/hidden-15s.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/reels/hidden-15s.mp4",
+  "description": "15s 9:16 reel, teal/gold. 'What's hiding in your daily habits?' over real footage → Hidden Fortunes SIP-projection screens ('Watch it compound'), IFM end-card.",
+  "session": "",
+  "slide_text": "s hiding in your daily habits? Watch it compound",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Compounding",
+   "Wealth"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "sip systematic investment plan monthly investing hidden fortunes game reel 15s teal gold what hiding your daily habits over real footage sip projection screens watch compound ifm end card compounding vertical"
+ },
+ {
+  "id": "IFM-R08",
+  "title": "Swayamvar — game reel",
+  "date": "2026-06-20",
+  "thumb": "../thumbs/IFM-R08.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/reels/swayamvar-15s.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/reels/swayamvar-15s.mp4",
+  "description": "15s 9:16 reel built from the festive Swayamvar teaser. Marigold/pink theme, photoreal suitors (Mr Equity, Miss Gold, Mr Debt), 'Your money needs the right rishta' → 'Pick the one', IFM end-card. Investment matchmaking game.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Stocks / Equity",
+   "Fixed Income",
+   "Gold"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "swayamvar game reel 15s built from festive teaser marigold pink theme photoreal suitors equity miss gold debt your money needs right rishta pick one ifm end card investment matchmaking products vertical"
+ },
+ {
+  "id": "IFM-R09",
+  "title": "Fund YOUR Goal — game reel",
+  "date": "2026-06-20",
+  "thumb": "../thumbs/IFM-R09.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/reels/fundgoal-15s.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/reels/fundgoal-15s.mp4",
+  "description": "15s 9:16 reel, teal. 'Got a goal? Get the plan.' over real footage → the Fund YOUR Goal SIP calculator + cost-of-delay screen ('Start today, not someday'), IFM end-card.",
+  "session": "",
+  "slide_text": "Got a goal? Get the plan. Start today, not someday",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Financial Planning"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "sip systematic investment plan monthly investing fund your goal game reel 15s teal got get plan over real footage sip calculator cost delay screen start today not someday ifm end card based vertical"
+ },
+ {
+  "id": "IFM-R10",
+  "title": "The Wealth Conversation — game reel",
+  "date": "2026-06-20",
+  "thumb": "../thumbs/IFM-R10.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/reels/wealth-15s.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/reels/wealth-15s.mp4",
+  "description": "15s 9:16 reel, premium gold. Cinematic chapter-hero footage, 'The conversation every family avoids' → 'Watch. Reflect. Talk.' → the Wealth Conversation title screen, IFM end-card.",
+  "session": "",
+  "slide_text": "The conversation every family avoids Watch. Reflect. Talk.",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Money Conversations",
+   "Family & Money"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "wealth conversation game reel 15s premium gold cinematic chapter hero footage every family avoids watch reflect talk title screen ifm end card legacy reflection vertical"
+ },
+ {
+  "id": "IFM-R11",
+  "title": "Lifestyle Time Machine — game reel",
+  "date": "2026-06-20",
+  "thumb": "../thumbs/IFM-R11.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/reels/lifestyle-time-machine-15s.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/reels/lifestyle-time-machine-15s.mp4",
+  "description": "15s 9:16 reel. Real class footage hook 'Can you afford your future?' → dream-life game screens → the 2031 inflation reveal ('Same dreams. Lakhs more.') → real students playing, purple/pink theme, IFM end-card.",
+  "session": "",
+  "slide_text": "Can you afford your future? Same dreams. Lakhs more.",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Compounding",
+   "Inflation & Interest Rates"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "lifestyle time machine game reel 15s real class footage hook can you afford your future dream life screens 2031 inflation reveal same dreams lakhs more students playing purple pink theme ifm end card compounding classroom vertical"
+ },
+ {
+  "id": "IFM-001",
+  "title": "Session 12 Mar — Speaker with Risk vs Reward slide",
+  "date": "2026-03-12",
+  "thumb": "../thumbs/IFM-001.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1lOaOhLWBhSwNsRQy8DvPYMDT6G5_2T8c/view",
+  "description": "A speaker stands beside a projector screen showing a 'Risk vs Reward' slide, addressing rows of seated women in a bright community hall. The IFM roll-up banner is visible at stage left.",
+  "session": "",
+  "slide_text": "Risk vs Reward",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money",
+   "Risk & Returns"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "session mar speaker risk reward slide stands beside projector screen showing addressing rows seated women bright community hall ifm roll banner visible stage left presentation audience financial education daytime"
+ },
+ {
+  "id": "IFM-002",
+  "title": "Session 12 Mar — Wide shot of attendees",
+  "date": "2026-03-12",
+  "thumb": "../thumbs/IFM-002.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1uEgijIwl8oxfKcIL-j-MPTQtoWLFE6cP/view",
+  "description": "Wide shot of roughly 25 attendees seated at long tables with IFM workbooks and notepads, listening attentively during the session.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "b-roll cutaway establishing supporting footage context session mar wide shot attendees roughly seated long tables ifm workbooks notepads listening attentively during audience community hall engagement women financial literacy"
+ },
+ {
+  "id": "IFM-003",
+  "title": "Session 12 Mar — Mums collaborating on budgeting worksheet",
+  "date": "2026-03-12",
+  "thumb": "../thumbs/IFM-003.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1g132C_jP_gspHXNRz2ai91SZGBp6CxYz/view",
+  "description": "Close-up of three women collaborating over a budgeting worksheet, one pointing at a figure with a pen; coffee cups and calculators on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Managing Money",
+   "Money Conversations"
+  ],
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "collaborating budgeting worksheet pointing pen working together small group hands on activity"
+ },
+ {
+  "id": "IFM-004",
+  "title": "Session 12 Mar — Raw session video",
+  "date": "2026-03-12",
+  "thumb": "../thumbs/IFM-004.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-004.mp4",
+  "drive": "https://drive.google.com/file/d/1am2wan2BSu-04ebq2dzm_q4o9DX1oGPI/view",
+  "description": "Raw 365 MB video from the 12 March session — not yet analysed or clipped.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "",
+  "topic": [],
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "session mar raw video 365 from march not yet analysed clipped footage financial education workshop"
+ },
+ {
+  "id": "IFM-005",
+  "title": "SpaceX IPO — What's All The Buzz About? (IPO Series)",
+  "date": "2026-06-09",
+  "thumb": "../https://ifm-deploy.vercel.app/carousel_spacex_higgsfield/slide_01.png",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/carousel_spacex_higgsfield/slide_01.png",
+  "description": "8-slide dark-navy carousel: 'SpaceX IPO: What's All The Buzz About? The biggest IPO in history may be here' — rocket emoji lift-off, teal serif headline, IPO SERIES badge.",
+  "session": "",
+  "slide_text": "SpaceX IPO: What",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Stocks / Equity",
+   "Stock Market",
+   "IPOs"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "spacex ipo what all buzz about series slide dark navy carousel biggest history may here rocket emoji lift off teal serif headline badge stock market listing investing news theme slides"
+ },
+ {
+  "id": "IFM-006",
+  "title": "Wealth Conversation Ch.1 — Why Saving Isn't Enough",
+  "date": "2026-06-11",
+  "thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap1.png",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter1-why-saving-isnt-enough/chap1hero.mp4",
+  "description": "Split-screen of two coin jars on a wooden table: the left jar gathers dust and smoke while the right sprouts a glowing sapling that blooms into a golden money tree dripping coins. Saving stagnates; investing grows.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Ready",
+  "format": "B-roll",
+  "topic": [
+   "Saving vs Investing",
+   "Saving"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "wealth conversation why saving isn enough split screen two coin jars wooden table left jar gathers dust smoke while right sprouts glowing sapling blooms into golden money tree dripping coins stagnates investing grows savings growth"
+ },
+ {
+  "id": "IFM-007",
+  "title": "Wealth Conversation Ch.2 — Inflation",
+  "date": "2026-06-11",
+  "thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap2.png",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter2-inflation-carousel/chap2test2.mp4",
+  "description": "A single coin sprouts a green seedling that grows into a gold-coin tree (test render). The other file in this folder is byte-identical to Ch.1's video — final Ch.2 hero still pending.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Inflation & Interest Rates"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "wealth conversation inflation single coin sprouts green seedling grows into gold tree test render other file folder byte identical video final hero still pending sprout growth chapter money plant"
+ },
+ {
+  "id": "IFM-008",
+  "title": "Wealth Conversation Ch.3 — Purchasing Power",
+  "date": "2026-06-11",
+  "thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap3.png",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter3-purchasing-power/chap3hero.mp4",
+  "description": "A wire shopping basket on a kitchen counter holds glowing everyday essentials — groceries, schoolbook, toy plane, medicine, petrol pump, toy house — whose golden glow fades as prices bite. The same basket buys less every year.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Ready",
+  "format": "B-roll",
+  "topic": [
+   "Family & Money",
+   "Inflation & Interest Rates"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "wealth conversation purchasing power wire shopping basket kitchen counter holds glowing everyday essentials groceries schoolbook toy plane medicine petrol pump house whose golden glow fades prices bite same buys less every year inflation school items"
+ },
+ {
+  "id": "IFM-009",
+  "title": "Wealth Conversation Ch.4 — Magic of Compounding",
+  "date": "2026-06-11",
+  "thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap4.png",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter4-magic-of-compounding/chap4hero.mp4",
+  "description": "Cash bundles rain down beside a desk calendar and a sign '₹10,000 invested at 12% per year', stacking into a tower labelled '20 yrs ₹96,463' that morphs into a Burj Khalifa-style skyscraper. One sum compounds into a monument.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Ready",
+  "format": "B-roll",
+  "topic": [
+   "Compounding"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "wealth conversation magic compounding cash bundles rain down beside desk calendar sign ₹10 000 invested per year stacking into tower labelled yrs ₹96 463 morphs burj khalifa style skyscraper one sum compounds monument stack 10000 rupees percent 96463 money years"
+ },
+ {
+  "id": "IFM-010",
+  "title": "Wealth Conversation Ch.5 — Small Amounts Matter",
+  "date": "2026-06-11",
+  "thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap5.png",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter5-small-amounts-matter/chap5hero.mp4",
+  "description": "A sign reads '₹5,000 per month at 12% per year' beside a flip calendar; note stacks rocket upward in a blur of light and settle as a mountain of gold coins behind the gold IFM medallion. Small monthly SIPs build a fortune.",
+  "session": "",
+  "slide_text": "₹5,000 per month at 12% per year",
+  "silent": true,
+  "type": "Video",
+  "status": "Ready",
+  "format": "B-roll",
+  "topic": [],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "sip systematic investment plan monthly investing wealth conversation small amounts matter sign reads 000 per month year beside flip calendar note stacks rocket upward blur light settle mountain gold coins behind ifm medallion monthly sips build fortune sip 5000 rupees percent cash bundles coin"
+ },
+ {
+  "id": "IFM-011",
+  "title": "Wealth Conversation Ch.6 — Growing With Income",
+  "date": "2026-06-11",
+  "thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap6.png",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter6-growing-with-income/chap6hero.mp4",
+  "description": "Two banded cash stacks sit side by side on dark wood; one grows into a towering skyscraper of note bundles, closing on the gold IFM coin leaning against the piles. Step up investing as income steps up.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Ready",
+  "format": "B-roll",
+  "topic": [
+   "Wealth",
+   "Family & Money"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "sip systematic investment plan monthly investing wealth conversation growing income two banded cash stacks sit side dark wood one grows into towering skyscraper note bundles closing gold ifm coin leaning against piles step investing steps money tower banknote growth comparison sip"
+ },
+ {
+  "id": "IFM-012",
+  "title": "Wealth Conversation Ch.7 — Cost of Waiting",
+  "date": "2026-06-11",
+  "thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap7.png",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter7-cost-of-waiting/chap7hero.mp4",
+  "description": "Coins rain into three piggy boxes labelled Tanya (22), Kabil (27) and Rojan (32), growing into glowing coin towers — the 22-year-old's tower ends tallest by far (₹2.87cr vs ₹1.64cr). Every year you wait costs crores.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Ready",
+  "format": "B-roll",
+  "topic": [
+   "Wealth"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "wealth conversation cost waiting coins rain into three piggy boxes labelled tanya kabil rojan growing glowing coin towers year old tower ends tallest far 87cr 64cr every you wait costs crores falling start early age bars"
+ },
+ {
+  "id": "IFM-013",
+  "title": "Wealth Conversation Ch.8 — Hidden Treasures",
+  "date": "2026-06-11",
+  "thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap8.png",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter8-hidden-treasures/chap8hero.mp4",
+  "description": "Small lifestyle spends — nail polish, lipstick, a scooter, shopping bag, teacup, movie clapperboard — float up and dissolve one by one into a swelling heap of gold coins under the IFM logo. Everyday spends are hidden treasure.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Ready",
+  "format": "B-roll",
+  "topic": [],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "wealth conversation hidden treasures small lifestyle spends nail polish lipstick scooter shopping bag teacup movie clapperboard float dissolve one into swelling heap gold coins under ifm logo everyday treasure movies coin pile latte factor"
+ },
+ {
+  "id": "IFM-014",
+  "title": "Wealth Conversation Ch.9 — Goals First",
+  "date": "2026-06-11",
+  "thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap9.png",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter9-goals-first/chap9hero.mp4",
+  "description": "A worried cartoon gold-coin sits at a desert crossroads crowded with signposts shouting Stocks, FDs and Gold — 'choosing investments before you choose your destination' — until a glowing Home signpost points the way. Goal first, product after.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Financial Planning",
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "wealth conversation goals first worried cartoon gold coin sits desert crossroads crowded signposts shouting stocks fds choosing investments before you choose your destination until glowing home signpost points way goal product after confused sign"
+ },
+ {
+  "id": "IFM-015",
+  "title": "Wealth Conversation Ch.10 — Three Buckets",
+  "date": "2026-06-11",
+  "thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap10.png",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter10-three-buckets/chap10hero.mp4",
+  "description": "Neon goal icons (plane, house, graduation cap, medical cross, palm tree) float on black — 'We don't have just one financial goal' — then three glowing buckets (red shield, blue house, green rocket) line up: 'Different goals need different kinds of money.'",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Certificate",
+  "topic": [
+   "3-Bucket Investing"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "certificate completion graduation proud achievement social proof wealth conversation three buckets neon goal icons plane house graduation cap medical cross palm tree float black don have just one financial then glowing red shield blue green rocket line different goals need kinds money canisters coins safety growth dreams"
+ },
+ {
+  "id": "IFM-016",
+  "title": "Join IFM now",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-016.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1eVutEOYaeP5f1oxyIQsmxwmxBNs-mrx3",
+  "description": "Minimal type-only slide on a light teal pixel-grid background with the playful headline 'JOIN Investing for Mummies NOWWWWWWWW' in mixed serif/sans navy type, IFM wordmark top right.",
+  "session": "",
+  "slide_text": "JOIN Investing for Mummies NOWWWWWWWW",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Investing"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "join ifm now minimal type only slide light teal pixel grid background playful headline investing mummies nowwwwwwww mixed serif sans navy wordmark top right call action sign community typography copy brand awareness carousel cover"
+ },
+ {
+  "id": "IFM-017",
+  "title": "Learning with IFM",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-017.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1KAI5PADUhgopnqiaQTlFOtDczT9loXbl",
+  "description": "Cream slide asking 'Do words like Nifty, Sensex, PE Ratios make your brain instantly switch off?' with jargon terms in navy pill badges and a navy/gold candlestick chart along the bottom.",
+  "session": "",
+  "slide_text": "Do words like Nifty, Sensex, PE Ratios make your brain instantly switch off?",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Investing",
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "learning ifm cream slide asking words like nifty sensex ratios make your brain instantly switch off jargon terms navy pill badges gold candlestick chart along bottom financial beginner investing relatable hook palette"
+ },
+ {
+  "id": "IFM-018",
+  "title": "Power of Compounding",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-018.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1a17dQ-OiJ479dcYTNbyLQm7JYPWSCpn5",
+  "description": "Mint-green slide with headline 'Wanna end up RICHER than someone investing WAAAAAYYYYY more money than you?' above a photo of a hand clutching crumpled rupee notes.",
+  "session": "",
+  "slide_text": "Wanna end up RICHER than someone investing WAAAAAYYYYY more money than you?",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Compounding",
+   "Wealth",
+   "Money Conversations"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "power compounding mint green slide headline wanna end richer than someone investing waaaaayyyyy more money you above photo hand clutching crumpled rupee notes compound interest wealth building start early hook question collage"
+ },
+ {
+  "id": "IFM-019",
+  "title": "Right time to learn",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-019.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1YuNP75eJAwlot448jHgzS8XS5NmJV3V0",
+  "description": "Cream slide with serif headline 'IT'S ALWAYS THE RIGHT TIME to start learning about investing!' above a minimalist clock-face illustration, faded rupee coins behind.",
+  "session": "",
+  "slide_text": "S ALWAYS THE RIGHT TIME to start learning about investing!",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Investing"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "right time learn cream slide serif headline always start learning about investing above minimalist clock face illustration faded rupee coins behind now timing motivation palette typography"
+ },
+ {
+  "id": "IFM-020",
+  "title": "Savings vs Investing",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-020.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1uMZq13u1Hf_nvMX6WMqPcAs2fjII7mB9",
+  "description": "Textured beige cover titled 'What is Savings Vs Investments' with a hand dropping a banknote into a pink piggy bank.",
+  "session": "",
+  "slide_text": "What is Savings Vs Investments",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Saving vs Investing",
+   "Saving",
+   "Family & Money"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "savings investing textured beige cover titled what investments hand dropping banknote into pink piggy bank money basics explainer comparison texture photo illustration beginner"
+ },
+ {
+  "id": "IFM-021",
+  "title": "School",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-021.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1iThpvYEB0Y59ziS3YTOpM5jbV5oI1tt1",
+  "description": "Flat-lay of a spiral notebook, pencil and calculator with the line 'Crazy that school taught us trigonometry but not about taxes, investing or credit cards.'",
+  "session": "",
+  "slide_text": "Crazy that school taught us trigonometry but not about taxes, investing or credit cards.",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Money Mindset",
+   "Family & Money"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "school education gap trigonometry taxes credit cards financial literacy relatable hook notebook flat lay"
+ },
+ {
+  "id": "IFM-022",
+  "title": "What IFM is Not",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-022.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1amkwMb8xJ15ucjtkq6AqDLiqX6NB4vuv",
+  "description": "Five-slide cream carousel opening 'Don't buy that stock.. just because someone said so.' — disclaims tip-giving and promises jargon-free, safe, empowering learning.",
+  "session": "",
+  "slide_text": "t buy that stock.. just because someone said so.",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Money Mindset",
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "what ifm not five slide cream carousel opening don buy stock just because someone said disclaims tip giving promises jargon free safe empowering learning tips myth busting brand positioning palette illustration trust"
+ },
+ {
+  "id": "IFM-023",
+  "title": "Why IFM Exists",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-023.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1L9ushgmQ3pmO3JF5yL-UdtwQT3xCli8-",
+  "description": "Cream slide asking 'Why do so many capable women still feel intimidated by money?' above a photo of a stressed woman holding her temples, faded gold coins behind.",
+  "session": "",
+  "slide_text": "Why do so many capable women still feel intimidated by money?",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Portrait",
+  "topic": [
+   "Money Mindset",
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "portrait headshot founder press media kit agency bio why ifm exists cream slide asking many capable women still feel intimidated money above photo stressed woman holding her temples faded gold coins behind intimidation anxiety brand purpose empowerment portrait palette"
+ },
+ {
+  "id": "IFM-024",
+  "title": "Why Women Feel Left Out",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-024.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1UsqgAdCafw_Qu0HIPNi_JmzIctr-qNN-",
+  "description": "Slide asking 'If you suddenly had to manage all your finances today, would you know WHERE TO START?' with a retro-styled woman reading a newspaper beside a money-bag illustration.",
+  "session": "",
+  "slide_text": "If you suddenly had to manage all your finances today, would you know WHERE TO START?",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Money Conversations",
+   "Financial Independence",
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "why women feel left out slide asking you suddenly had manage all your finances today would know where start retro styled woman reading newspaper beside money bag illustration financial independence collage management hook question indian"
+ },
+ {
+  "id": "IFM-025",
+  "title": "Inflation — ₹500 is shrinking",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-025.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/17EErsy4pp7huiMwSLU8lGcWr2OQxifvE",
+  "description": "Vertical reel of a smiling woman in a red dress holding a ₹500 note, with stacked text 'Your 500 rupee note is SHRINKING SHRINKING SHRINKING every year!'",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Inflation & Interest Rates"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration inflation ₹500 shrinking vertical reel smiling woman red dress holding note stacked text your 500 rupee every year purchasing power cover presenter money video hook"
+ },
+ {
+  "id": "IFM-026",
+  "title": "Story — Hiral intro",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-026.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1YuwVgssHrbwh6eyLtgiBYtbWqOkP9lQS",
+  "description": "Mint story introducing the founder: 'Hi, I'm Hiral Goel.' with photo and credential pills — business journalist 10+ years at Business India, led Businessman of the Year, mother of 2.",
+  "session": "",
+  "slide_text": "Hi, I'm Hiral Goel. Business Journalist for 10+ years at Business India magazine. Organised and led the magazine's prestigious Businessman of the Year property. Mother of 2.",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "founder intro about hiral goel business journalist business india credentials bio mother of two personal brand"
+ },
+ {
+  "id": "IFM-027",
+  "title": "Story S1 — Finance was not made easy",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-027.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/12OeXN5iJf2glhfZounnSTWvqemZcnEOb",
+  "description": "Cream story with scattered teal pill badges of jargon words (Compounding, Investing, Inflation, SIPs, Mutual Funds) held up by two hands: 'Finance was never made easy for most of us.'",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Compounding",
+   "Mutual Funds",
+   "Inflation & Interest Rates"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "story finance was not made easy cream scattered teal pill badges jargon words compounding investing inflation sips mutual funds held two hands never most format relatable financial literacy"
+ },
+ {
+  "id": "IFM-028",
+  "title": "Story S2 — Words people secretly Google",
+  "date": "2026-06-11",
+  "thumb": "",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/17U-InCX9Lwgf-PYS7lSsDA6HGB-_Ayzp",
+  "description": "(Not yet analysed — only a .psd source file delivered.)",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "",
+  "topic": [],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "story words people secretly google not yet analysed only psd source file delivered finance terms jargon glossary format curiosity financial literacy"
+ },
+ {
+  "id": "IFM-029",
+  "title": "Story S4 — Finance Myths",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-029.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1Zs1ITTOI-euFdNcuTpXaW7FZ9qZB-r9W",
+  "description": "Aqua story with headline 'Finance Myths people still believe' around a 3D keyboard Delete key — myths to be deleted.",
+  "session": "",
+  "slide_text": "Finance Myths people still believe",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Money Mindset"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "story finance myths aqua headline people still believe around keyboard delete key deleted myth busting misconceptions format background graphic debunk"
+ },
+ {
+  "id": "IFM-030",
+  "title": "Story S5 — Finance word game",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-030.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1MG3bdcOqnbOENYgv9CfI1Ij3X_dd9ZWX",
+  "description": "Teal story titled 'Guess the Finance Term' with falling gold coins: 'Ready? Tap to test your finance knowledge!'",
+  "session": "",
+  "slide_text": "Guess the Finance Term. Ready? Tap to test your finance knowledge!",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "quiz game guess the finance term jargon glossary interactive story tap engagement"
+ },
+ {
+  "id": "IFM-031",
+  "title": "Story S6 — Saving vs investing",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-031.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1l7miwiXG526HdJae1KxIylCVP_3BG7A1",
+  "description": "Split story: 'Saving means your money is just lying under the mattress' (cash-stuffed mattress with padlock) vs 'Investing means your money is slowly trying to grow' (man watering a money plant).",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Saving vs Investing",
+   "Saving",
+   "Family & Money"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "story saving investing split means your money just lying under mattress cash stuffed padlock slowly trying grow man watering plant growth comparison cartoon illustration format explainer"
+ },
+ {
+  "id": "IFM-032",
+  "title": "Story — Website game (10 years from today)",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-032.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1SDPRVmszXMKjkqkpPhuAoKSHEJxihmIM",
+  "description": "Dreamy lilac story asking 'Imagine it's 10 years from today... What does your life look like?' with tappable poll pills: Dream home, Family Vacation, Early Retirement, Start a business.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Family & Money"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "story website game years from today dreamy lilac asking imagine what does your life look like tappable poll pills dream home family vacation early retirement start business goals options interactive year vision engagement"
+ },
+ {
+  "id": "IFM-033",
+  "title": "SpaceX IPO — Rocket or Rollercoaster? (IPO Series)",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-033.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/117PQmNIpH-dDe_KBtS6EQO1YtFTdmIcY",
+  "description": "Second SpaceX cover variant: 'SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let's talk about the risks.' — rocket against light-blue sky with satellite, moon and emoji accents.",
+  "session": "",
+  "slide_text": "SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Stocks / Equity",
+   "Stock Market",
+   "IPOs"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "spacex ipo rocket rollercoaster series second cover variant everyone talking about opportunity let talk risks against light blue sky satellite moon emoji accents stock market collage"
+ },
+ {
+  "id": "IFM-034",
+  "title": "Your future is getting expensive Faaast!",
+  "date": "2026-06-11",
+  "thumb": "",
+  "video": "",
+  "drive": "",
+  "description": "Mint-green cover with hands exchanging a fan of ₹500 notes and falling currency: 'Your future is getting expensive Faaast!'",
+  "session": "",
+  "slide_text": "Your future is getting expensive Faaast!",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Managing Money",
+   "Inflation & Interest Rates"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "your future getting expensive faaast mint green cover hands exchanging fan ₹500 notes falling currency inflation rising costs expenses rupee money palette hook urgency"
+ },
+ {
+  "id": "IFM-035",
+  "title": "Investing feels intimidating? — Workshop promo",
+  "date": "2026-06-11",
+  "thumb": "../thumbs/IFM-035.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1uR_OTMYRvv2J_AWQfhyEqKnghNUvGe9R",
+  "description": "4-slide workshop promo carousel: 'INVESTING FEELS INTIMIDATING? You're not alone — if finance jargon and market conversations feel overwhelming, THIS WORKSHOP IS FOR YOU', a woman thinking surrounded by BONDS / STOCKS / ETFS / MUTUAL FUNDS pills, swipe arrow.",
+  "session": "",
+  "slide_text": "INVESTING FEELS INTIMIDATING? You",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Money Mindset",
+   "Money Conversations",
+   "Women & Money",
+   "Stocks / Equity",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "investing feels intimidating workshop promo slide carousel you not alone finance jargon market conversations feel overwhelming woman thinking surrounded bonds stocks etfs mutual funds pills swipe arrow cta"
+ },
+ {
+  "id": "IFM-036",
+  "title": "Swayamvar — 15s game teaser",
+  "date": "2026-06-12",
+  "thumb": "../thumbs/IFM-036.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/teasers/swayamvar-teaser.mp4",
+  "description": "15s vertical (1080x1920) hook teaser, photoreal cast: cold-open on the live voting hall (your money needs a rishta), flash cuts through ultra-realistic suitors — Mr. Equity (purple suit, neon office, PURE DRAMA), Miss Gold (gold saree, BUA APPROVED), Mr. Debt (sweater vest + chai, THE GREEN FLAG) — then the hall voting live, the verdicts, the grand-finale choice wall, festive marigold end card.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Stocks / Equity",
+   "Fixed Income",
+   "Gold"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "swayamvar 15s game teaser vertical 1080x1920 hook photoreal cast cold open live voting hall your money needs rishta flash cuts through ultra realistic suitors equity purple suit neon office pure drama miss gold saree bua approved debt sweater vest chai"
+ },
+ {
+  "id": "IFM-037",
+  "title": "Investing for Mummies — logo hero reveal (lockup)",
+  "date": "2026-06-13",
+  "thumb": "../thumbs/IFM-037.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/ifm-hero-lockup-9s.mp4",
+  "description": "9s 16:9 premium homepage-hero reveal: the metallic IFM tree emblem (brushed gunmetal + obsidian glass) does one slow 360-degree rotation beside a static 'Investing for Mummies' serif wordmark; dark cinematic environment with volumetric fog and god-rays. Higgsfield seedance_2_0 animated from a nano-banana lockup frame.",
+  "session": "",
+  "slide_text": "Investing for Mummies",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "B-roll",
+  "topic": [
+   "Investing"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "investing mummies logo hero reveal lockup premium homepage metallic ifm tree emblem brushed gunmetal obsidian glass does one slow 360 degree rotation beside static serif wordmark dark cinematic environment volumetric fog god rays higgsfield seedance animated from nano banana frame",
+  "library": false
+ },
+ {
+  "id": "IFM-038",
+  "title": "Crorepati Lane — investing board game",
+  "date": "2026-06-13",
+  "thumb": "../thumbs/IFM-038.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/crorepati-lane.html",
+  "description": "IFM-styled Monopoly: pass-and-play for 2-4 players. Board of asset classes (fixed income, gold, real estate, mutual funds, stocks); buy assets, collect returns, build SIP top-ups to Compounding, market-event & money-mantra cards, taxes, Market Crash & Dividend Pool corners; richest mum wins.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "library": false,
+  "type": "",
+  "format": "",
+  "topic": [],
+  "person": [],
+  "source": "IFM / In-house",
+  "status": "Ready",
+  "search_terms": ""
+ },
+ {
+  "id": "IFM-039",
+  "title": "Kaun Banega Crorepati — live workshop quiz",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-039.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/quiz.html?role=host",
+  "description": "Live scan-to-join KBC-style workshop quiz. Host on projector (TV-studio look + prize ladder); participants join on phones. 16 questions follow the KBC rupee prize ladder (₹1,000 → ₹7 Crore) drawn randomly each game from a 50-question bank across the 6 course modules. 4 rounds: 60s opener, fastest-finger (doubles), risk & reward wager (bet in ₹), grand-finale jackpot. Winnings + wagers all in INR. Realtime via the Stock Rush Supabase project; ↺ New game hard-reset.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "library": false,
+  "type": "",
+  "format": "",
+  "topic": [],
+  "person": [],
+  "source": "IFM / In-house",
+  "status": "Ready",
+  "search_terms": ""
+ },
+ {
+  "id": "IFM-040",
+  "title": "IFM logo → pizza slices (brand splitter, Kling)",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-040.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-kling.mp4",
+  "description": "The round 'Investing for Mummies' tree badge sits on a plain white background and splits like a pizza into 5 wedge slices that drift gently apart. Square 1:1, ~5s, silent.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Investing"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "ifm logo pizza slices brand splitter kling round investing mummies tree badge sits plain white background splits like into wedge drift gently apart square silent split animation one becomes five"
+ },
+ {
+  "id": "IFM-041",
+  "title": "IFM logo → pizza slices (brand splitter, Seedance)",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-041.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-seedance.mp4",
+  "description": "Same concept as IFM-040 — the round IFM tree badge splitting into 5 pizza wedges on white — rendered with Seedance 2.0; softer motion, smaller file. 1:1, ~5s, silent.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "ifm logo pizza slices brand splitter seedance same concept 040 round tree badge splitting into wedges white rendered softer motion smaller file silent split background square animation"
+ },
+ {
+  "id": "IFM-042",
+  "title": "IFM 3D medallion 5-way split — cinematic (5s)",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-042.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-kling.mp4",
+  "description": "The metallic 3D IFM medallion splits into 5 thick wedge 'slices' that float apart while the camera orbits the circumference; dark moody studio, rim light, glossy reflections, premium commercial grade. 16:9, 5s, silent.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "B-roll",
+  "topic": [],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "ifm medallion way split cinematic metallic splits into thick wedge slices float apart while camera orbits circumference dark moody studio rim light glossy reflections premium commercial grade silent orbit kling"
+ },
+ {
+  "id": "IFM-043",
+  "title": "IFM 3D medallion 5-way split — cinematic (8s, wider spread)",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-043.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-8s.mp4",
+  "description": "Longer 8s cut of the metallic IFM medallion breaking into 5 fully-separated floating wedges with a dramatic orbit; the 5 pieces read clearly before the reveal. 16:9, silent.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "B-roll",
+  "topic": [],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "ifm medallion way split cinematic wider spread longer cut metallic breaking into fully separated floating wedges dramatic orbit pieces read clearly before reveal silent camera dark"
+ },
+ {
+  "id": "IFM-044",
+  "title": "Vedanta demerger — gold globe → 5 segments (v1)",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-044.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-9x16-15s.mp4",
+  "description": "Vertical reel concept: the Vedanta globe as a metallic-gold 3D medallion rotates, cracks and separates into 5 glowing gold segments in a radial formation; dark graphite studio, gold particles, market grid. 9:16, 15s, silent, no text.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "vedanta demerger gold globe segments vertical reel concept metallic medallion rotates cracks separates into glowing radial formation dark graphite studio particles market grid 15s silent text bloomberg kling"
+ },
+ {
+  "id": "IFM-045",
+  "title": "Vedanta demerger — gold globe + IFM badge (v2)",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-045.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v2-ifm-15s.mp4",
+  "description": "Same gold-globe-into-5-segments reel with the round IFM badge composited top-right. 9:16, 15s, silent. Corner badge read as pasted-on — fixed in v3.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "vedanta demerger gold globe ifm badge same into segments reel round composited top right 15s silent corner read pasted fixed dark"
+ },
+ {
+  "id": "IFM-046",
+  "title": "Vedanta demerger — gold globe, integrated badge, locked 5-split (v3 pro)",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-046.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v3-pro-15s.mp4",
+  "description": "Best gold-medallion reel: the metallic-gold Vedanta globe rotates with energy lines and glowing cracks, then elegantly separates into 5 distinct gold segments in a clean radial ring; IFM badge rendered into the scene on a gold-rim disc. Start+end frame controlled, Kling pro full-HD. 9:16, 15s, silent, no text.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "vedanta demerger gold globe integrated badge locked split pro best medallion reel metallic rotates energy lines glowing cracks then elegantly separates into distinct segments clean radial ring ifm rendered scene rim disc start end frame controlled kling full 15s silent"
+ },
+ {
+  "id": "IFM-047",
+  "title": "Vedanta demerger — gold globe (v3 std alt take)",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-047.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v3-std-15s.mp4",
+  "description": "Standard-mode alternate of the v3 gold-globe demerger reel — same 5-segment split + badge, lighter render, different motion feel. 9:16, 15s, silent.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "vedanta demerger gold globe std alt take standard mode alternate reel same segment split badge lighter render different motion feel 15s silent segments"
+ },
+ {
+  "id": "IFM-048",
+  "title": "Vedanta pizza demerger — angled deep-dish split",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-048.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/vedanta-pizza-split-pro-10s.mp4",
+  "description": "A deep-dish pizza with the blue-green Vedanta globe as its cheese-top design, shot at a 3/4 angle, separates into slices with stretching cheese and steam; IFM badge top-right. 9:16, 10s, silent. Slice count not exact.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "vedanta pizza demerger angled deep dish split blue green globe cheese top design shot angle separates into slices stretching steam ifm badge right 10s silent slice count not exact kling pro"
+ },
+ {
+  "id": "IFM-049",
+  "title": "Vedanta pizza demerger — exact 5 slices (top-down)",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-049.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/vedanta-pizza-5slices-pro-10s.mp4",
+  "description": "Top-down deep-dish pizza with the Vedanta globe design, cut into exactly 5 equal wedges that separate into a radial spread while the camera arcs and zooms out; IFM badge top-right. 9:16, 10s, silent, no text.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "vedanta pizza demerger exact slices top down deep dish globe design cut into exactly equal wedges separate radial spread while camera arcs zooms out ifm badge right 10s silent text orbit zoom"
+ },
+ {
+  "id": "IFM-050",
+  "title": "IFM pizza → 5 slices (clean, reusable, 5s)",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-050.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/pizza-5slices-clean-5s.mp4",
+  "description": "A plain cheese deep-dish pizza cut into exactly 5 equal slices that separate as the camera arcs and zooms out; clean white-disc IFM badge top-right, no other branding. Top-down, 9:16, 5s, silent.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "B-roll",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "ifm pizza slices clean reusable plain cheese deep dish cut into exactly equal separate camera arcs zooms out white disc badge top right other branding down silent split demerger template one becomes five"
+ },
+ {
+  "id": "IFM-051",
+  "title": "Vedanta demerger explainer — 1 pizza → 5 companies",
+  "date": "2026-06-14",
+  "thumb": "../thumbs/IFM-051.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/vedanta-pizza-explainer-5s.mp4",
+  "description": "Clean white-background infographic: a pizza labelled 'VEDANTA' (1 company) slices into 5 equal pieces that become labelled tiles — Vedanta Aluminium, Vedanta Power, Vedanta Oil & Gas, Vedanta Steel & Ferrous, Vedanta Ltd (5 companies). IFM logo at top. 9:16, exactly 5s.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "vedanta demerger explainer pizza companies clean white background infographic labelled company slices into equal pieces become tiles aluminium power oil gas steel ferrous ltd ifm logo top exactly labels motion graphic"
+ },
+ {
+  "id": "IFM-052",
+  "title": "Vedanta Demerger — Same Pizza, Different Slices",
+  "date": "2026-06-15",
+  "thumb": "../thumbs/IFM-052.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/carousel_vedanta_slides/slide_01.png",
+  "description": "Premium 8-slide dark-slate carousel explaining the Vedanta demerger. Opens on a steaming photoreal pizza stamped with the Vedanta globe — 'Vedanta just split into 5 companies. 5× richer?'. Frosted-glass cards then walk through what a demerger is (family-business analogy), the old bundle (Aluminium, Power, Oil & Gas, Iron & Steel), the split shown as a sliced pizza, and the share math (×5 new holdings + your original 100 stay put). Two embedded videos — the animated pizza-split explainer and the IFM hero-lockup outro. Closes on 'Same pizza. Different slices.' Round IFM logo top-right throughout. 1080×1080.",
+  "session": "",
+  "slide_text": "Vedanta just split into 5 companies. 5× richer? Same pizza. Different slices.",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Wealth",
+   "Family & Money",
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "IFM / In-house",
+  "search_terms": "vedanta demerger same pizza different slices premium slide dark slate carousel explaining opens steaming photoreal stamped globe just split into companies richer frosted glass cards then walk through what family business analogy old bundle aluminium power oil gas iron steel"
+ },
+ {
+  "id": "IFM-053",
+  "title": "Vedanta Demerger — AI Anchor News Explainer (Reel)",
+  "date": "2026-06-15",
+  "thumb": "../thumbs/IFM-053.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/vedanta-reel-anchor-18s.mp4",
+  "description": "Vertical 9:16 news-style Reel (~18s) fronted by the founder's AI avatar as a business-news anchor in a dark-graphite, gold-accented newsroom (Bloomberg / ET Now look). She delivers a demerger explainer to camera with synced lip movement and an Anjali voiceover: 'Vedanta has just split into five companies… does that make shareholders 5× richer? Not quite — think of it like a pizza cut into slices.' Cuts to a steaming Vedanta-globe pizza splitting, then five gold sector blocks (Base Metals, Aluminium, Oil & Gas, Power, Iron & Steel) arranging around a central VEDANTA node, a split-screen, and a hero end-card: 'VEDANTA DEMERGER → WHAT IT MEANS FOR SHAREHOLDERS'. News lower-thirds throughout, no background music.",
+  "session": "",
+  "slide_text": "Vedanta has just split into five companies… does that make shareholders 5× richer? Not quite — think of it like a pizza cut into slices. VEDANTA DEMERGER → WHAT IT MEANS FOR SHAREHOLDERS",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Wealth",
+   "Stocks / Equity"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "vedanta demerger anchor news explainer reel vertical style 18s fronted founder avatar business dark graphite gold accented newsroom bloomberg now look she delivers camera synced lip movement anjali voiceover has just split into five companies does make shareholders richer not"
+ },
+ {
+  "id": "IFM-054",
+  "title": "Office youth workshop — Hiral teaching mutual funds at the whiteboard",
+  "date": "2026-06-15",
+  "thumb": "../thumbs/IFM-054.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1Oz3ezoKAyFzh-mny3Oz-0n3-pT8h1KVn/view",
+  "description": "Founder Hiral Goel teaches a small group of young women at the office boardroom whiteboard; the TV reads 'Class Mutual Fund — one pools money together' and the board is covered in hand-drawn notes on debt mutual funds, corporate bonds and debentures. A clear activity box and QR sign-in sit on the table.",
+  "session": "",
+  "slide_text": "Class Mutual Fund — one pools money together",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Family & Money",
+   "Mutual Funds",
+   "Fixed Income"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "office youth workshop hiral teaching mutual funds whiteboard founder goel teaches small group young women boardroom reads class fund one pools money together board covered hand drawn notes debt corporate bonds debentures clear activity box sign sit table teen session"
+ },
+ {
+  "id": "IFM-055",
+  "title": "Office youth workshop — Hiral with activity card, group watching",
+  "date": "2026-06-15",
+  "thumb": "../thumbs/IFM-055.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1SrKEVM1gtUELmu1cNSoSYQk6bvj6_yVE/view",
+  "description": "Hiral Goel holds up a card mid-explanation during the hands-on activity, the group of young women seated around the boardroom table watching; clear prop box, snacks and sticky notes on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Mutual Funds"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "office youth workshop hiral activity card group watching goel holds mid explanation during hands young women seated around boardroom table clear prop box snacks sticky notes mutual funds teaching code"
+ },
+ {
+  "id": "IFM-056",
+  "title": "Office youth workshop — Participants watching the game screen (wide)",
+  "date": "2026-06-15",
+  "thumb": "../thumbs/IFM-056.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/17ent--UAPlEJFczBd0ytUoprEwTYdKOL/view",
+  "description": "Wide boardroom shot of participants watching an interactive game/leaderboard on the TV screen; a 'Certificate of Completion' and a Monopoly box sit on the table. Same office youth session.",
+  "session": "",
+  "slide_text": "Certificate of Completion",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Certificate",
+  "topic": [
+   "Stock Market"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "certificate completion graduation proud achievement social proof b-roll cutaway establishing supporting footage context office youth workshop participants watching game screen wide boardroom shot interactive leaderboard certificate completion monopoly box sit table same session young women attentive recap"
+ },
+ {
+  "id": "IFM-057",
+  "title": "Office youth workshop — Snacks-as-assets clip (chips prop)",
+  "date": "2026-06-15",
+  "thumb": "../thumbs/IFM-057.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-057.mp4",
+  "drive": "https://drive.google.com/file/d/1SuEL2j7slMlpd8SaBo9rkKEYatasNOW0/view",
+  "description": "Raw clip: Hiral holds up a Garden chips packet as a teaching prop — using snacks from the clear box as an analogy for assets/investing. Office youth workshop.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "office youth workshop snacks assets clip chips prop raw hiral holds garden packet teaching using from clear box analogy investing goel hands mutual funds"
+ },
+ {
+  "id": "IFM-058",
+  "title": "Office youth workshop — Hiral explaining (clip)",
+  "date": "2026-06-15",
+  "thumb": "../thumbs/IFM-058.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-058.mp4",
+  "drive": "https://drive.google.com/file/d/1kcfZusR0y_Nxnw5xvlxfTVpuFlBaxQHo/view",
+  "description": "Raw clip: Hiral gesturing and explaining a concept with the snack prop box on the table. Office youth workshop.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Mutual Funds"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "office youth workshop hiral explaining clip raw gesturing concept snack prop box table goel teaching boardroom mutual funds"
+ },
+ {
+  "id": "IFM-059",
+  "title": "Office youth workshop — Teaching at the prop box with helper (clip)",
+  "date": "2026-06-15",
+  "thumb": "../thumbs/IFM-059.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-059.mp4",
+  "drive": "https://drive.google.com/file/d/1_9efT6ywL-gqA8WR-c2kVam9GmspFOy_/view",
+  "description": "Raw clip: Hiral teaching at the prop box with a young participant standing beside her assisting. Office youth workshop.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "office youth workshop teaching prop box helper clip raw hiral young participant standing beside her assisting goel woman hands boardroom"
+ },
+ {
+  "id": "IFM-060",
+  "title": "Office youth workshop — Pulling snack props from the box (clip)",
+  "date": "2026-06-15",
+  "thumb": "../thumbs/IFM-060.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-060.mp4",
+  "drive": "https://drive.google.com/file/d/1Uh2pv2cU1cxw8ktB41xUrT3PH4W7gTer/view",
+  "description": "Raw clip: Hiral pulls snack packets (Garden chips, Dark Fantasy) from the clear box as props for the investing analogy. Office youth workshop.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "props snack packets demo activity investing lesson raw clip behind the scenes"
+ },
+ {
+  "id": "IFM-061",
+  "title": "Hiral at whiteboard — debt instruments mind-map",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-061.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1KZf0Y7UI_UDHg6-fr7UBb_IX9W1iwyDK/view",
+  "description": "Hiral Goel stands with her back to camera writing on a whiteboard, circling 'BORROWER' at the centre of a hand-drawn debt-instruments mind-map (debt mutual funds, banks, companies, government, G-secs). White shirt, bright red trousers.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Mutual Funds",
+   "Fixed Income"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "b-roll cutaway establishing supporting footage context hiral whiteboard debt instruments mind map goel stands her back camera writing circling borrower centre hand drawn mutual funds banks companies government secs white shirt bright red trousers teaching wide shot classroom financial literacy"
+ },
+ {
+  "id": "IFM-062",
+  "title": "Hiral writing 'BORROWER' bond-market diagram",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-062.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1qCKGgFLQUtFYO_FhbMMsXQqieKuojrtk/view",
+  "description": "Side-on shot of Hiral writing on the whiteboard, the 'BORROWER' bond-market diagram fully visible (banks, FD/RD, PPF, SSY, EPF, T-bills, G-secs). White shirt, red trousers.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Fixed Income"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "hiral writing borrower bond market diagram side shot whiteboard fully visible banks ppf ssy epf bills secs white shirt red trousers goel teaching profile financial literacy workshop"
+ },
+ {
+  "id": "IFM-063",
+  "title": "Hands holding the 'Investing for Mummies' book",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-063.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1Kwes1SHtYOhbHbEbfZP1KyXmiQp9xSmv/view",
+  "description": "Over-shoulder candid of Hiral's hands holding the 'Investing for Mummies' book, the multi-armed-mother cover illustration clearly visible, on a dark wooden table. Blue eyelet-lace blouse.",
+  "session": "",
+  "slide_text": "s hands holding the",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration hands holding investing mummies book over shoulder candid hiral multi armed mother cover illustration clearly visible dark wooden table blue eyelet lace blouse product shot branding close promotional"
+ },
+ {
+  "id": "IFM-064",
+  "title": "Hiral at table under the branded title slide",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-064.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/15UeP1UzVtRDN5sCL7RIkk0S3LKISSdTu/view",
+  "description": "Hiral seated at a boardroom table with open laptop, smiling softly; the wall screen behind shows the 'Investing for Mummies' title slide. White eyelet blouse, pale blue skirt.",
+  "session": "",
+  "slide_text": "Investing for Mummies",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration hiral table under branded title slide seated boardroom open laptop smiling softly wall screen behind shows investing mummies white eyelet blouse pale blue skirt goel founder about"
+ },
+ {
+  "id": "IFM-065",
+  "title": "Hiral at laptop, hand on book — branded screen",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-065.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1DvDOcKKzWgzpo16JZU86MbIQ8mmzh0vm/view",
+  "description": "Hiral seated at the boardroom table with laptop, hand resting on a book, the 'Investing for Mummies' slide on the screen behind. White eyelet blouse, blue skirt, relaxed smile.",
+  "session": "",
+  "slide_text": "Investing for Mummies",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio hiral laptop hand book branded screen seated boardroom table resting investing mummies slide behind white eyelet blouse blue skirt relaxed smile goel founder portrait workshop"
+ },
+ {
+  "id": "IFM-066",
+  "title": "Hiral laughing at table under branded screen",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-066.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1fnVbCJI8dIxqhSLxuS3NBSg4mrHReeGm/view",
+  "description": "Hiral seated at the boardroom table laughing warmly, laptop and book in front, 'Investing for Mummies' slide on the wall screen behind. White eyelet blouse, blue skirt.",
+  "session": "",
+  "slide_text": "Investing for Mummies",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration hiral laughing table under branded screen seated boardroom warmly laptop book front investing mummies slide wall behind white eyelet blouse blue skirt goel candid joyful founder warm"
+ },
+ {
+  "id": "IFM-067",
+  "title": "Hiral standing portrait, arms crossed — wood backdrop",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-067.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1mA21c5_IPGHcyf_cOVPxkrXsUVcGORSi/view",
+  "description": "Three-quarter standing portrait of Hiral with arms crossed against a warm wood-panel wall, gentle closed-mouth smile. White eyelet-sleeve shirt, pale blue striped skirt.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio b-roll cutaway establishing supporting footage context hiral standing portrait arms crossed wood backdrop three quarter against warm panel wall gentle closed mouth smile white eyelet sleeve shirt pale blue striped skirt goel founder profile photo professional about"
+ },
+ {
+  "id": "IFM-068",
+  "title": "Hiral standing portrait, soft smile — wood backdrop",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-068.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/18xZO7b8CULUt8EBW2lCAHyGtccIuGRXJ/view",
+  "description": "Standing three-quarter portrait of Hiral, arms crossed, against the wood-panel wall with a soft natural smile. White eyelet blouse, pale blue skirt.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio b-roll cutaway establishing supporting footage context hiral standing portrait soft smile wood backdrop three quarter arms crossed against panel wall natural white eyelet blouse pale blue skirt goel founder headshot about"
+ },
+ {
+  "id": "IFM-069",
+  "title": "Hiral standing portrait, broad smile — wood backdrop",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-069.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1U3lH-ZSOYWFZjvIaTGp-s0hlK8WbQdhV/view",
+  "description": "Standing portrait of Hiral with arms crossed and a broad open smile against the wood-panel wall. White eyelet-sleeve shirt, pale blue striped skirt.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio b-roll cutaway establishing supporting footage context hiral standing portrait broad smile wood backdrop arms crossed open against panel wall white eyelet sleeve shirt pale blue striped skirt goel smiling founder profile photo friendly about"
+ },
+ {
+  "id": "IFM-070",
+  "title": "Hiral seated beside branded screen, smiling",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-070.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1B9QhEt_qnPFCFgw9czDLmO3La7KMZqxX/view",
+  "description": "Hiral seated at the boardroom table with laptop, smiling at camera; the 'Investing for Mummies' multi-armed-mother slide fills the wall screen to her left. White eyelet blouse, blue skirt.",
+  "session": "",
+  "slide_text": "Investing for Mummies",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration hiral seated beside branded screen smiling boardroom table laptop camera investing mummies multi armed mother slide fills wall her left white eyelet blouse blue skirt goel founder workshop about"
+ },
+ {
+  "id": "IFM-071",
+  "title": "Hiral at desk with book, framed Madhubani art",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-071.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/10Eu51jQ5uEA2tw_VR4g81rGKHyoW4i9c/view",
+  "description": "Hiral seated at a wooden desk with the 'Investing for Mummies' book in front of her, a large framed black-and-white Madhubani-style artwork on the wall behind. White eyelet shirt, executive chair.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "portrait headshot founder press media kit agency bio hiral desk book framed madhubani art seated wooden investing mummies front her large black white style artwork wall behind eyelet shirt executive chair goel office founder portrait indian editorial about"
+ },
+ {
+  "id": "IFM-072",
+  "title": "Hiral pointing to the book at her desk",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-072.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1bKmybgb0uzW260qf3pCKcOZktiHvMXfV/view",
+  "description": "Hiral seated at the wooden desk gesturing toward the 'Investing for Mummies' book, framed monochrome folk artwork behind her. White eyelet blouse, relaxed smile.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration hiral pointing book her desk seated wooden gesturing toward investing mummies framed monochrome folk artwork behind white eyelet blouse relaxed smile goel madhubani art office founder promotional indian about"
+ },
+ {
+  "id": "IFM-073",
+  "title": "Hiral at MacBook, book propped, branded screen",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-073.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1yetYTzgxIBfRLe912fmRTPPe8V4BFbqA/view",
+  "description": "Hiral seated at a wooden table working on a MacBook, the 'Investing for Mummies' book propped to her left and the title slide on the screen behind. White eyelet shirt.",
+  "session": "",
+  "slide_text": "Investing for Mummies",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "hiral macbook book propped branded screen seated wooden table working investing mummies her left title slide behind white eyelet shirt goel laptop founder workshop about"
+ },
+ {
+  "id": "IFM-074",
+  "title": "Hiral working at laptop under branded slide",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-074.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1PCxgmUXE67sck7GJ48VINkTYOy4pzO24/view",
+  "description": "Hiral seated at the wooden table at her MacBook smiling at camera, the book propped beside her and the 'Investing for Mummies' slide on the wall screen behind. White eyelet blouse.",
+  "session": "",
+  "slide_text": "Investing for Mummies",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration hiral working laptop under branded slide seated wooden table her macbook smiling camera book propped beside investing mummies wall screen behind white eyelet blouse goel founder about"
+ },
+ {
+  "id": "IFM-075",
+  "title": "Hiral seated, hands on table, branded screen",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-075.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1FHb952-62GIinZgbl8KxBMLkOvfUl9FM/view",
+  "description": "Hiral seated at the wooden table with hands folded on the surface, smiling at camera; the 'Investing for Mummies' slide fills the screen behind her. White eyelet-sleeve blouse.",
+  "session": "",
+  "slide_text": "Investing for Mummies",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio hiral seated hands table branded screen wooden folded surface smiling camera investing mummies slide fills behind her white eyelet sleeve blouse goel founder portrait warm workshop about"
+ },
+ {
+  "id": "IFM-076",
+  "title": "Clip — Hiral reading the book at the table",
+  "date": "2026-03-24",
+  "thumb": "../thumbs/IFM-076.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-076.mp4",
+  "drive": "https://drive.google.com/file/d/1g_r9y_jySqXXn8A_80xXXzCTAB6mIPHn/view",
+  "description": "Candid side profile of Hiral, in glasses, reading an open spread of the colourful illustrated 'Investing for Mummies' book at the boardroom table, branded slide on the screen above. White eyelet blouse.",
+  "session": "",
+  "slide_text": "Investing for Mummies",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration clip hiral reading book table candid side profile glasses open spread colourful illustrated investing mummies boardroom branded slide screen above white eyelet blouse goel founder behind scenes video"
+ },
+ {
+  "id": "IFM-077",
+  "title": "Clip — Hiral presenting 'Inflation Simplified'",
+  "date": "2026-06-12",
+  "thumb": "../thumbs/IFM-077.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-077.mp4",
+  "drive": "https://drive.google.com/file/d/1vX2R_Ajj3ud5EBLrVsZ_9Y_1HwN2PomK/view",
+  "description": "Wide shot of Hiral standing and presenting at a lounge-style workshop, gesturing beside a screen reading 'Inflation Simplified'; patterned wallpaper, bookshelves, orange pendant lamp, seated audience. Cream sleeveless outfit.",
+  "session": "",
+  "slide_text": "Inflation Simplified",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Inflation & Interest Rates"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "b-roll cutaway establishing supporting footage context clip hiral presenting inflation simplified wide shot standing lounge style workshop gesturing beside screen reading patterned wallpaper bookshelves orange pendant lamp seated audience cream sleeveless outfit goel speaking founder event video"
+ },
+ {
+  "id": "IFM-078",
+  "title": "Clip — Hiral teaching the inflation analogy",
+  "date": "2026-06-12",
+  "thumb": "../thumbs/IFM-078.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-078.mp4",
+  "drive": "https://drive.google.com/file/d/1NEHg5KVhwRsaWAWfN1jBLI9iih-OJvPe/view",
+  "description": "Wide shot of Hiral standing and speaking at the workshop, hands gesturing, beside a screen showing an 'Inflation Analogy — balanced supply & demand' slide. Patterned wallpaper, bookshelves, orange lamp, seated audience. Cream sleeveless outfit.",
+  "session": "",
+  "slide_text": "Inflation Analogy — balanced supply & demand",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Inflation & Interest Rates"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "b-roll cutaway establishing supporting footage context clip hiral teaching inflation analogy wide shot standing speaking workshop hands gesturing beside screen showing balanced supply demand slide patterned wallpaper bookshelves orange lamp seated audience cream sleeveless outfit goel presenting lounge founder event video"
+ },
+ {
+  "id": "IFM-079",
+  "title": "SpaceX IPO — Rocket or Rollercoaster? (7-slide v2)",
+  "date": "2026-06-15",
+  "thumb": "../thumbs/IFM-079.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/190anJw9_VhvExeUfyrQlf5Zzga8ppGeu",
+  "description": "Light-blue 7-slide carousel, 'SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let's talk about the risks.' — rocket launch with satellite, moon and emoji accents. A shorter 7-slide variant of the Rocket-or-Rollercoaster carousel.",
+  "session": "",
+  "slide_text": "SpaceX IPO: Rocket or Rollercoaster? Everyone is talking about the opportunity. Let",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Stocks / Equity",
+   "Stock Market",
+   "IPOs"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "spacex ipo rocket rollercoaster slide light blue carousel everyone talking about opportunity let talk risks launch satellite moon emoji accents shorter variant slides series stock market delivered aakara delivery tree"
+ },
+ {
+  "id": "IFM-080",
+  "title": "Women's workshop — group photo",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-080.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1ZZ0V14vZHgVh1IjcFpW2F2JTxII8du5K/view",
+  "description": "Smiling group photo of around eight women attendees together in the IFM office after the workshop, framed Madhubani-style artwork on the wall behind.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration testimonial review feedback social proof word of mouth women workshop group photo smiling around eight attendees together ifm office after framed madhubani style artwork wall behind class art community testimonial candid founder"
+ },
+ {
+  "id": "IFM-081",
+  "title": "Women's workshop — group photo (2)",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-081.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1_xooXBzgca-0ab3u0YDnwUL6HB5kaWJi/view",
+  "description": "Second smiling group photo of the women's-workshop attendees together in the IFM office, framed folk artwork behind them.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration testimonial review feedback social proof word of mouth women workshop group photo second smiling attendees together ifm office framed folk artwork behind them class madhubani art community testimonial candid founder"
+ },
+ {
+  "id": "IFM-082",
+  "title": "Women's workshop — session in progress (wide)",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-082.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1zwqvM8_rY3miD1m2NKM3aw3oOGbg1X6h/view",
+  "description": "Wide candid of the women's workshop in the IFM office boardroom: attendees seated around the table watching a mutual-fund diagram on the TV while one woman presents; 'Investing for Mummies' books, notebooks and the BORROWER debt whiteboard visible.",
+  "session": "",
+  "slide_text": "s workshop in the IFM office boardroom: attendees seated around the table watching a mutual-fund diagram on the TV while one woman presents;",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Mutual Funds",
+   "Fixed Income"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration women workshop session progress wide candid ifm office boardroom attendees seated around table watching mutual fund diagram while one woman presents investing mummies books notebooks borrower debt whiteboard visible presenting community financial literacy"
+ },
+ {
+  "id": "IFM-083",
+  "title": "Course Map Walkthrough at the Boardroom Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-083.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1xhyTa-7ms0_VAXT2CNUXG4wEHk85bRV_/view",
+  "description": "A facilitator stands by a wall-mounted screen showing an IFM course-flow diagram while a group of women follow along with open workbooks, mugs and water bottles around a wood conference table; a hand-drawn 'borrower / banks / government' mind map fills the whiteboard behind.",
+  "session": "",
+  "slide_text": "borrower / banks / government",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration b-roll cutaway establishing supporting footage context course map walkthrough boardroom table facilitator stands wall mounted screen showing ifm flow diagram while group women follow along open workbooks mugs water bottles around wood conference hand drawn borrower banks government mind fills whiteboard behind workshop learners financial literacy"
+ },
+ {
+  "id": "IFM-084",
+  "title": "Session in Progress from the Doorway",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-084.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1wvV05sgORwNU2-BBTAidXNbRqg1XoJtS/view",
+  "description": "Wide candid of the same workshop seen across the table: a presenter gestures toward the on-screen course diagram as participants in pink and black tops listen, one woman in the foreground checking her phone beside an Investing for Mummies workbook.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration session progress from doorway wide candid same workshop seen across table presenter gestures toward screen course diagram participants pink black tops listen one woman foreground checking her phone beside investing mummies workbook group boardroom whiteboard women vertical attentive"
+ },
+ {
+  "id": "IFM-085",
+  "title": "Eyes on the Curriculum Slide",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-085.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1sfZ3qn_hcBTfwwaBGdzSq_omrotBFLCN/view",
+  "description": "Participants seated along a conference table watch a facilitator point at the projected IFM curriculum grid; foreground attendees hold a workbook and phone while coffee tumblers and stationery cover the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration eyes curriculum slide participants seated along conference table watch facilitator point projected ifm grid foreground attendees hold workbook phone while coffee tumblers stationery cover workshop screen boardroom candid learning women"
+ },
+ {
+  "id": "IFM-086",
+  "title": "Roundtable Discussion Mid-Session",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-086.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1SWmjkjKDaskAA50t2LmyVSNlkC8MOnEq/view",
+  "description": "Over-the-shoulder view of the workshop with a course-flow slide on screen and a borrower/asset-class mind map on the whiteboard; several women in pink and red lean in attentively around the dark wood table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration roundtable discussion mid session over shoulder view workshop course flow slide screen borrower asset class mind map whiteboard several women pink red lean attentively around dark wood table boardroom attentive candid vertical finance"
+ },
+ {
+  "id": "IFM-087",
+  "title": "Group Portrait of the Workshop Cohort",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-087.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1LQI8RCoEl8_SM4cQoElNy8vqzqSPIrj2/view",
+  "description": "Eight smartly dressed women pose smiling shoulder-to-shoulder in the office, framed art on the wall behind them, in a warm end-of-session group photo.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio group portrait workshop cohort eight smartly dressed women pose smiling shoulder office framed art wall behind them warm end session photo team posed indoor community celebration founder ifm"
+ },
+ {
+  "id": "IFM-088",
+  "title": "Clip — Open Q&A on the Questions Slide",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-088.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-088.mp4",
+  "drive": "https://drive.google.com/file/d/1YLM4M6hJA3D0oJl_RxtH-ufC9gvEAuCl/view",
+  "description": "A woman in pink stands beside a colourful 'QUESTIONS?' slide and gestures while fielding queries from a small group of women seated around a boardroom table — the interactive Q&A wrap-up of a workshop session.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Student Question",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip open questions slide woman pink stands beside colourful gestures while fielding queries from small group women seated around boardroom table interactive wrap workshop session video presenter investing ifm discussion"
+ },
+ {
+  "id": "IFM-089",
+  "title": "Branded Title Slide on Screen",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-089.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1u_yRjVnHiHPzbP1LQQii7sS5lHXitXMb/view",
+  "description": "A presenter in a pink kurta speaks beside a screen showing the colourful 'Investing for Mummies' logo with its goddess illustration, as attendees listen from the foreground of the boardroom.",
+  "session": "",
+  "slide_text": "Investing for Mummies",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration branded title slide screen presenter pink kurta speaks beside showing colourful investing mummies logo goddess illustration attendees listen from foreground boardroom branding women workshop candid wide session"
+ },
+ {
+  "id": "IFM-090",
+  "title": "Writing on the Whiteboard",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-090.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1W3YUt2ZSM-Fe9MWDlnoMiAGwPwcon5wX/view",
+  "description": "A woman in pink writes a mutual-fund/equity diagram on the whiteboard while the IFM branded slide glows on the side screen and seated participants watch with laptops and a handbag on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Stocks / Equity",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration writing whiteboard woman pink writes mutual fund equity diagram while ifm branded slide glows side screen seated participants watch laptops handbag table teaching funds presenter branding workshop women laptop boardroom candid vertical explaining"
+ },
+ {
+  "id": "IFM-091",
+  "title": "Whiteboard Close-Up: Types of Mutual Funds",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-091.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1610w4gnUwSaNFR7NZhK-j41-HTCLUKHQ/view",
+  "description": "Tight candid of a woman in a pink kurta writing 'MF — Lifecycle Fund / Other Funds / Index' in red marker, with a bespectacled attendee holding a coffee cup watching intently in the foreground.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration whiteboard close types mutual funds tight candid woman pink kurta writing lifecycle fund other index red marker bespectacled attendee holding coffee cup watching intently foreground teaching glasses workshop finance explaining"
+ },
+ {
+  "id": "IFM-092",
+  "title": "Wide View of the Training Room",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-092.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1vMx4rnBuo7UBKY_xFpjMfD7BS1oTYscN/view",
+  "description": "Full-room shot from the doorway showing the marble-floored boardroom: leather chairs around the table, the IFM title slide on screen and a presenter at the whiteboard addressing a small group.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "b-roll cutaway establishing supporting footage context wide view training room full shot from doorway showing marble floored boardroom leather chairs around table ifm title slide screen presenter whiteboard addressing small group branding women office interior workshop"
+ },
+ {
+  "id": "IFM-093",
+  "title": "Clip — Types of Mutual Funds Walkthrough",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-093.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-093.mp4",
+  "drive": "https://drive.google.com/file/d/1Fgai57EWCBo9RJcG-yQN7SWxIzPNuYAD/view",
+  "description": "A presenter in a bright pink dress points at a 'Types of Mutual Funds' slide while seated participants follow along at the conference table, breaking down mutual fund categories.",
+  "session": "",
+  "slide_text": "Types of Mutual Funds",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip types mutual funds walkthrough presenter bright pink dress points slide while seated participants follow along conference table breaking down fund categories video presentation workshop boardroom women investing learning session"
+ },
+ {
+  "id": "IFM-094",
+  "title": "Pointing to the Mutual Funds Matrix",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-094.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1M8rq7WSWP7Ol6FosXp-pBFRznFCf4xPZ/view",
+  "description": "A presenter in pink points at a 'Types of Mutual Funds' slide categorising equity, debt, hybrid and lifecycle funds while seated women take notes and one snaps a photo of the screen.",
+  "session": "",
+  "slide_text": "Types of Mutual Funds",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Stocks / Equity",
+   "Mutual Funds",
+   "Fixed Income"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration pointing mutual funds matrix presenter pink points types slide categorising equity debt hybrid lifecycle while seated women take notes one snaps photo screen presentation workshop note taking boardroom candid vertical finance"
+ },
+ {
+  "id": "IFM-095",
+  "title": "Standing Presenter and Mutual Funds Slide",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-095.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1_X2_yxXrLgoxbP_s7NDs2J3Y0mGyNjOo/view",
+  "description": "The pink-clad facilitator stands centred before the 'Types of Mutual Funds' screen addressing attendees seated in tall leather chairs around the conference table.",
+  "session": "",
+  "slide_text": "Types of Mutual Funds",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration standing presenter mutual funds slide pink clad facilitator stands centred before types screen addressing attendees seated tall leather chairs around conference table boardroom women workshop candid vertical teaching"
+ },
+ {
+  "id": "IFM-096",
+  "title": "Mutual Fund Categories Explained",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-096.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1UoSKxPR6SePVuMMpKSrOR3SQ7FqlJk3L/view",
+  "description": "Vertical candid of the presenter beside the colour-coded mutual-fund classification slide as participants listen, one in the foreground raising a phone to capture the screen.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration mutual fund categories explained vertical candid presenter beside colour coded classification slide participants listen one foreground raising phone capture screen funds workshop women boardroom attentive finance session"
+ },
+ {
+  "id": "IFM-097",
+  "title": "How Companies Raise Money",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-097.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1pRD11xC6CLJ0PmSuYWkyg3axbRScqXyB/view",
+  "description": "A presenter in pink gestures toward a slide titled 'The Different Ways Companies Raise Money' as a small circle of women in leather chairs listen around the table.",
+  "session": "",
+  "slide_text": "The Different Ways Companies Raise Money",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration how companies raise money presenter pink gestures toward slide titled different ways small circle women leather chairs listen around table presentation raising workshop boardroom gesturing candid vertical finance"
+ },
+ {
+  "id": "IFM-098",
+  "title": "Clip — Hiral's Smiling Piece-to-Camera",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-098.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-098.mp4",
+  "drive": "https://drive.google.com/file/d/1Brl_xVgtMYKodweKk9UPYTSeIvR4zfW5/view",
+  "description": "Founder Hiral Goel stands smiling in front of the branded 'Investing for Mummies' slide with its multitasking-mum graphic, addressing the camera directly — an intro/welcome segment.",
+  "session": "",
+  "slide_text": "Investing for Mummies",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration clip hiral smiling piece camera founder goel stands front branded investing mummies slide multitasking mum graphic addressing directly intro welcome segment video branding presenter workshop host"
+ },
+ {
+  "id": "IFM-099",
+  "title": "Gold as a Safe Haven Talk",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-099.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1qYxKCBvl_bfa7Bh1_KZ-wShkF1kJhmPD/view",
+  "description": "A speaker in a white shirt and red trousers points emphatically at a 'Gold: Your Portfolio's Safe Haven' slide with a ways-to-invest-in-gold pie chart, while two attendees watch from the foreground.",
+  "session": "",
+  "slide_text": "Gold: Your Portfolio's Safe Haven. Ways to invest in gold: SGBs, Gold Mutual Funds, ETFs, Digital Gold, Physical Gold. 5-10% of portfolio.",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Gold",
+   "Asset Allocation",
+   "Mutual Funds",
+   "ETFs"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "gold safe haven pie chart allocation sgb sovereign gold bond gold funds etf portfolio hedge presenting pointing"
+ },
+ {
+  "id": "IFM-100",
+  "title": "Ways to Invest in Gold Session",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-100.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1-7p1qVMylbxt2L_sawOmrDJqE1-9nwCl/view",
+  "description": "Same gold-investment talk: the presenter in white and red gestures with both hands at the 'Gold: Your Portfolio's Safe Haven' screen as two women listen across the wood table.",
+  "session": "",
+  "slide_text": "Gold: Your Portfolio",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Gold",
+   "Asset Allocation"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "ways to invest in gold sgb gold funds allocation safe haven portfolio"
+ },
+ {
+  "id": "IFM-101",
+  "title": "Clip — Explaining Gold Investments (SGB & Gold Funds)",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-101.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-101.mp4",
+  "drive": "https://drive.google.com/file/d/1NdM9y701az7VViop_skRPvLosg2NFD50/view",
+  "description": "A presenter in a white top and red trousers gestures animatedly in front of a 'Gold' slide listing SGB and gold mutual funds, while two women listen — covering ways to invest in gold.",
+  "session": "",
+  "slide_text": "Gold: Your Portfolio's Safe Haven. Ways to invest in gold: SGBs (best way to invest in gold, for low risk long term investors, backed by RBI); Gold Mutual Funds (invest into ETFs, gold mining and gold-related assets); ETFs (highly liquid, traded on the stock exchange); Digital Gold; Physical Gold (low liquidity, high risk of theft, making and storage costs). 5-10% of portfolio.",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Gold",
+   "Asset Allocation",
+   "Mutual Funds",
+   "ETFs"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "sgb sovereign gold bond gold funds gold etf digital gold physical gold safe haven hedge portfolio allocation five to ten percent rbi ways to invest in gold bullion explaining teaching"
+ },
+ {
+  "id": "IFM-102",
+  "title": "Four-Woman Table Portrait",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-102.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1elNMG02koaIfopOIhlPia2XEbY-ZivXz/view",
+  "description": "Four women smile at the camera around the conference table, one standing behind in a white shirt and red trousers, with a UPI/payment QR code and framed art on the wall behind them.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio four woman table portrait women smile camera around conference one standing behind white shirt red trousers upi payment code framed art wall them group smiling boardroom posed office community indoor session ifm"
+ },
+ {
+  "id": "IFM-103",
+  "title": "Cohort Smiles at the Boardroom Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-103.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/13xZs8dbTkov3BHIFwHZxFuwJxHHpC8EM/view",
+  "description": "Duplicate-style portrait of four women posing warmly around the wood table, a phone and notebook between them and abstract framed artwork on the wall.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio cohort smiles boardroom table duplicate style portrait four women posing warmly around wood phone notebook between them abstract framed artwork wall group smiling posed art office community indoor candid team"
+ },
+ {
+  "id": "IFM-104",
+  "title": "Seated Group Portrait, Wider Frame",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-104.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/13I9xqbk-F35jqX0ovaqSii7V2lPciQ9W/view",
+  "description": "Wider variant of the four-woman portrait showing more of the table and the payment QR poster on the left wall, the women smiling toward the camera in white, peach and printed tops.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio seated group portrait wider frame variant four woman showing more table payment poster left wall women smiling toward camera white peach printed tops boardroom wide code framed art office community posed indoor session"
+ },
+ {
+  "id": "IFM-105",
+  "title": "End-of-Session Foursome",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-105.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1vZviu5hHQfOcirY5sDF9dpd_C61l-eIp/view",
+  "description": "Four participants pose smiling around the conference table at session's end, one standing in a white shirt, a glass of water and notebook on the table and abstract art on the wall.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio end session foursome four participants pose smiling around conference table one standing white shirt glass water notebook abstract art wall group portrait women boardroom posed framed office community indoor team"
+ },
+ {
+  "id": "IFM-106",
+  "title": "Four Women Smiling at Conference Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-106.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1_2Jyh4yOjkz30j52IqKfuTb4Xr4zIexP/view",
+  "description": "Four women pose and smile together around a wood conference table, with a whiteboard listing investing terms (debt, equity, fixed income, ownership) and a framed artwork behind them. Coffee mugs, water glasses and a laptop sit on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Stocks / Equity",
+   "Fixed Income"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration four women smiling conference table pose smile together around wood whiteboard listing investing terms debt equity fixed income ownership framed artwork behind them coffee mugs water glasses laptop sit workshop group photo room team office financial literacy"
+ },
+ {
+  "id": "IFM-107",
+  "title": "Presenting the Bid Price and Ask Price Slide",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-107.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1z1KuyEwo5_dpM_esYkhJHa1nDOm-mcav/view",
+  "description": "A presenter in a white top gestures toward a wall screen displaying a colourful 'Bid Price & Ask Price' slide explaining the spread, while two attendees watch and take notes. CleanPlus tissues, books and mugs cover the table.",
+  "session": "",
+  "slide_text": "Bid Price & Ask Price",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Stocks / Equity",
+   "Stock Market"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "presenting bid price ask slide presenter white top gestures toward wall screen displaying colourful explaining spread while two attendees watch take notes cleanplus tissues books mugs cover table presentation teaching workshop note taking stock market classroom women office"
+ },
+ {
+  "id": "IFM-108",
+  "title": "Wide View of Bid-Ask Lesson in Session",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-108.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1HL33ecHSAg74Zst5e5plEme8B96PBS3I/view",
+  "description": "Wide overhead shot of a workshop in progress: a presenter points at a 'Bid Price & Ask Price' screen while four women work at the conference table with laptops, notes and a mind-map whiteboard nearby. Bright fluorescent ceiling light overhead.",
+  "session": "",
+  "slide_text": "Bid Price & Ask Price",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "b-roll cutaway establishing supporting footage context wide view bid ask lesson session overhead shot workshop progress presenter points price screen while four women work conference table laptops notes mind map whiteboard nearby bright fluorescent ceiling light classroom laptop room attendees teaching office investing"
+ },
+ {
+  "id": "IFM-109",
+  "title": "Group Discussion Around the Bid-Ask Slide",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-109.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1Ta2WjIwekIaFQTcyaBaTA6b3NjfrDlaa/view",
+  "description": "Four women sit around the conference table engaged in discussion as one presents the 'Bid Price & Ask Price' slide on the wall screen. Laptops, mugs and a whiteboard frame the working session.",
+  "session": "",
+  "slide_text": "Bid Price & Ask Price",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "group discussion around bid ask slide four women sit conference table engaged one presents price wall screen laptops mugs whiteboard frame working session workshop laptop teaching office collaboration investing classroom"
+ },
+ {
+  "id": "IFM-110",
+  "title": "Three Women Huddled Over a Laptop",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-110.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1YF87jsMLuJBBWuBe4HVVoVXaCaiK79pv/view",
+  "description": "Three women lean in around a MacBook on a wood table, one seated and typing while two stand and watch the screen, against a dark wood-panelled wall. A green flask, phone and notebook sit nearby.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "three women huddled over laptop lean around macbook wood table one seated typing while two stand watch screen against dark panelled wall green flask phone notebook sit nearby huddle collaboration working office problem solving teamwork panel workshop"
+ },
+ {
+  "id": "IFM-111",
+  "title": "Collaborating at the Laptop, Candid",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-111.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1ZD_QluuKdtCyZCUArfer7eAdy_LKsjPT/view",
+  "description": "Candid shot of three women working together at a laptop, one seated and focused on the screen while a colleague in white smiles and another in green leans over. Mug, glass and notebook with pen in the foreground.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration collaborating laptop candid shot three women working together one seated focused screen while colleague white smiles another green leans over mug glass notebook pen foreground collaboration smiling office teamwork macbook workshop"
+ },
+ {
+  "id": "IFM-112",
+  "title": "Four-Woman Group Portrait, Wood-Panelled Room",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-112.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/10zkyD2AbJ57BvIg523pP3-tqn0pzsQaJ/view",
+  "description": "Four women pose for a warm group portrait by the conference table, three standing and one seated resting her cheek on her hand. Laptops and a pink phone sit on the table against a wood-panelled wall.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio four woman group portrait wood panelled room women pose warm conference table three standing one seated resting her cheek hand laptops pink phone sit against wall team smiling panel laptop office workshop candid posing"
+ },
+ {
+  "id": "IFM-113",
+  "title": "Team Group Photo by the Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-113.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1VS_GuL8UGSCqyqe_c4BEPUTAOw8BbkAC/view",
+  "description": "Four women gather for a friendly group photo around the conference table, smiling at the camera with laptops and a pink phone in front of them and dark wood panelling behind.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio team group photo table four women gather friendly around conference smiling camera laptops pink phone front them dark wood panelling behind office laptop panel workshop posing portrait"
+ },
+ {
+  "id": "IFM-114",
+  "title": "Clip — Participant Following Along on Laptop",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-114.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-114.mp4",
+  "drive": "https://drive.google.com/file/d/12ytp8IEEVhhaNu4Ghc8KVoWI55n9xNg9/view",
+  "description": "Over-the-shoulder shot of a woman in a green geometric-print dress navigating a screen on her MacBook during the session — a participant doing a hands-on exercise.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip participant following along laptop over shoulder shot woman green geometric print dress navigating screen her macbook during session doing hands exercise video investing workshop women learning"
+ },
+ {
+  "id": "IFM-115",
+  "title": "Setting Up the Screen-Share Session",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-115.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1S1hwDY2Ns7KGtnGkvXnt-EUOkbaQJ57i/view",
+  "description": "Two women set up a working session: one stands behind reviewing while the other, in a green print dress, holds her phone connected to a laptop. The wall screen shows a clock and a meeting-join code.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "testimonial review feedback social proof word of mouth setting screen share session two women set working one stands behind reviewing while other green print dress holds her phone connected laptop wall shows clock meeting join code setup office connecting workshop technology"
+ },
+ {
+  "id": "IFM-116",
+  "title": "Mentoring Over a Spreadsheet",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-116.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1f2088XEWI6wqDFSzOct-XmFGP1Y-gQsQ/view",
+  "description": "A woman in white leans over to guide a colleague in a green print dress who is working on a spreadsheet on her MacBook, with a customer mind-map whiteboard behind them. Phone and printed sheets on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "mentoring over spreadsheet woman white leans guide colleague green print dress who working her macbook customer mind map whiteboard behind them phone printed sheets table laptop women coaching office workshop collaboration"
+ },
+ {
+  "id": "IFM-117",
+  "title": "Shared Laugh During Laptop Work",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-117.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1Q-76NSnL6swYrTMcByxawPJcGqPpt17i/view",
+  "description": "Two women work side by side at the conference table, one in green operating a MacBook while the other in white laughs and gestures, with a customer mind-map whiteboard behind. A phone showing a video rests on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration shared laugh during laptop work two women side conference table one green operating macbook while other white laughs gestures customer mind map whiteboard behind phone showing video rests laughing candid working office collaboration dress workshop"
+ },
+ {
+  "id": "IFM-118",
+  "title": "Reviewing an IFM Slide on Screen",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-118.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1HxJPdbznonczEWi9l_x-9IlxrkiCleMZ/view",
+  "description": "Two women lean over a MacBook together, pointing at a teal IFM-branded slide on screen while a strategy mind-map whiteboard sits in the background. Phone, notebook and printed handouts on the wood table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Financial Planning"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "testimonial review feedback social proof word of mouth reviewing ifm slide screen two women lean over macbook together pointing teal branded while strategy mind map whiteboard sits background phone notebook printed handouts wood table review laptop collaboration office workshop planning"
+ },
+ {
+  "id": "IFM-119",
+  "title": "Founder Presenting the NAV Lesson",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-119.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1zV8XPkyB83UWWXIKP-dw3pGy_ar7ETKB/view",
+  "description": "A presenter in a black top and red skirt points at a wall screen explaining 'NAV' (Net Asset Value) with colourful fund-assets graphics, while four seated attendees watch. A pink book and tissues sit on the conference table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Family & Money",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value founder presenting nav lesson presenter black top red skirt points wall screen explaining net asset value colourful fund assets graphics while four seated attendees watch pink book tissues sit conference table presentation mutual teaching workshop slide room women investing"
+ },
+ {
+  "id": "IFM-120",
+  "title": "NAV Session, Room Overview",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-120.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1CxQere1EeAtMGu0dxcvpj9X3kfozziJU/view",
+  "description": "Overview of the workshop room as the presenter in black and red explains the 'NAV' slide to a group seated around the conference table. Laptops, glasses, a pink book and handbags fill the working space.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Investing",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value b-roll cutaway establishing supporting footage context nav session room overview workshop presenter black red explains slide group seated around conference table laptops glasses pink book handbags fill working space wide shot mutual fund presentation attendees teaching women screen office investing"
+ },
+ {
+  "id": "IFM-121",
+  "title": "Explaining NAV Up Close",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-121.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1DcpoDCkkZWD5_Do-K0bGXQ9OILEsZ1CD/view",
+  "description": "Closer view of the presenter mid-explanation, gesturing in front of the 'NAV' slide that breaks down fund assets, liabilities and outstanding shares, as two attendees listen from the foreground. CleanPlus tissues on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Stocks / Equity",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value explaining nav close closer view presenter mid explanation gesturing front slide breaks down fund assets liabilities outstanding shares two attendees listen from foreground cleanplus tissues table net asset value presentation teaching mutual founder workshop screen women investing"
+ },
+ {
+  "id": "IFM-122",
+  "title": "NAV Lesson From the Back of the Room",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-122.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1CBA9wjn5K7mLBG8LXC-GjR3xnpbT2Atr/view",
+  "description": "Shot from the rear of the conference room showing the presenter at the 'NAV' screen while several women watch from the table, with a pink book, mugs and water glasses in view. Wood panelling and a printer line the back wall.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Family & Money",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value b-roll cutaway establishing supporting footage context nav lesson from back room shot rear conference showing presenter screen while several women watch table pink book mugs water glasses view wood panelling printer line wall mutual fund presentation wide workshop attendees teaching office investing"
+ },
+ {
+  "id": "IFM-123",
+  "title": "Full Room During the NAV Talk",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-123.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1ZG7JqLBLGT7NzkMx7ashvsRycPSma-jX/view",
+  "description": "Wide angle of the full workshop room with the presenter at the 'NAV' screen and a group of women seated around the long wood table taking in the lesson. Fluorescent light, wood panelling and a printer in the background.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Family & Money",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value b-roll cutaway establishing supporting footage context full room during nav talk wide angle workshop presenter screen group women seated around long wood table taking lesson fluorescent light panelling printer background shot mutual fund presentation conference attendees teaching office investing"
+ },
+ {
+  "id": "IFM-124",
+  "title": "Presenter Pointing at the NAV Diagram",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-124.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/147oDZGeKKqdJ02LsWvs1RyXt2l4z-jsG/view",
+  "description": "The presenter reaches up to point at the fund-assets diagram on the 'NAV' slide while seated attendees watch from the foreground of the conference table. Pink book, tissues and mugs on the table, wood panelling behind.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Investing",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value presenter pointing nav diagram reaches point fund assets slide while seated attendees watch from foreground conference table pink book tissues mugs wood panelling behind mutual presentation teaching workshop room women screen office investing"
+ },
+ {
+  "id": "IFM-125",
+  "title": "NAV Workshop in Full Swing",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-125.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/19Rl3h8oBUZD2LImii4pRAz8kRDR3e-Ww/view",
+  "description": "The presenter in black and red gestures toward the 'NAV' screen as a group of women, one taking notes, follow along around the conference table. A pink book and printed handouts sit among the mugs and glasses.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value nav workshop full swing presenter black red gestures toward screen group women one taking notes follow along around conference table pink book printed handouts sit among mugs glasses mutual fund presentation note room attendees teaching office investing"
+ },
+ {
+  "id": "IFM-126",
+  "title": "Standing at the NAV Screen",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-126.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1YbiH_qZjZD_xM9R0kNO0VdJe8-O7_2Ox/view",
+  "description": "A presenter in a black top and red skirt gestures toward a wall-mounted screen displaying a 'NAV' mutual-fund slide while four women watch from a dark wood boardroom table. A pink floral book and coffee cups sit on the table in the foreground.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Investing",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value standing nav screen presenter black top red skirt gestures toward wall mounted displaying mutual fund slide while four women watch from dark wood boardroom table pink floral book coffee cups sit foreground workshop financial literacy investing mummies session india training"
+ },
+ {
+  "id": "IFM-127",
+  "title": "Boardroom NAV Session, Wide View",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-127.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/13x-FN70-kQcYLx1gSdO-ynvJ8AV4Z5eu/view",
+  "description": "Wide shot of an IFM office workshop where the presenter stands beside a screen explaining Net Asset Value to a small group of women seated around a polished wooden table. A pink floral notebook and water glasses are visible in the foreground.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Investing",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value b-roll cutaway establishing supporting footage context boardroom nav session wide view shot ifm office workshop where presenter stands beside screen explaining net asset value small group women seated around polished wooden table pink floral notebook water glasses visible foreground mutual fund investing financial literacy training"
+ },
+ {
+  "id": "IFM-128",
+  "title": "Explaining the NAV Formula",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-128.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1YbQ5BJrOxuZPJesqrUMEAsVuN-upuhcA/view",
+  "description": "Hiral, in a black sleeveless top, smiles while teaching beside a large screen breaking down NAV into funds assets, liabilities and outstanding shares. Two attendees view from behind, one pointing at the slide.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Stocks / Equity",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value candid warm natural unposed relaxed friendly celebration explaining nav formula hiral black sleeveless top smiles while teaching beside large screen breaking down into funds assets liabilities outstanding shares two attendees view from behind one pointing slide founder mutual fund workshop financial literacy boardroom explainer investing"
+ },
+ {
+  "id": "IFM-129",
+  "title": "NAV Breakdown on Big Screen",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-129.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1GT1Fh5y-1jlZQZnzz5j6rSPwVwu70snO/view",
+  "description": "The founder gestures while presenting a colourful 'NAV' explainer slide showing assets minus liabilities divided by outstanding shares, with two women watching from the back of the room. A laptop and beige handbag sit on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Stocks / Equity",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value nav breakdown big screen founder gestures while presenting colourful explainer slide showing assets minus liabilities divided outstanding shares two women watching from back room laptop beige handbag sit table mutual fund presenter workshop financial literacy boardroom investing session"
+ },
+ {
+  "id": "IFM-130",
+  "title": "Hiral Mid-Lesson on Net Asset Value",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-130.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1hWJIJ7LatIPV84b7YC9u5xM_ioyY4Na6/view",
+  "description": "Close presenter shot of Hiral in black and red gesturing as she explains the NAV slide, with two attendees seen from behind in the foreground. A CleanPlus tissue box sits on the wooden table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Family & Money",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value hiral mid lesson net asset value close presenter shot black red gesturing she explains nav slide two attendees seen from behind foreground cleanplus tissue box sits wooden table founder teaching mutual fund workshop screen financial literacy boardroom investing session"
+ },
+ {
+  "id": "IFM-131",
+  "title": "Pointing to Funds Assets",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-131.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1EACUzBd3XPEYHJ3qmBwlMgPS3mRJ6RE6/view",
+  "description": "Vertical shot of the presenter pointing directly at the 'Funds Assets' icon on the NAV slide while two women in white and denim watch from the foreground. Handbags, a coffee mug and a phone rest on the table.",
+  "session": "",
+  "slide_text": "Funds Assets",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Investing",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value pointing funds assets vertical shot presenter directly icon nav slide while two women white denim watch from foreground handbags coffee mug phone rest table workshop mutual fund financial literacy boardroom screen investing session"
+ },
+ {
+  "id": "IFM-132",
+  "title": "NAV Slide, Two Attendees Listening",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-132.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1xO3CWTSP_BAcD_iqFwLqbgMuud_bDhnm/view",
+  "description": "The presenter gestures with both hands beside the NAV explainer screen as two seated women listen attentively in a wood-panelled boardroom. Water glasses and a coffee mug are arranged on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value nav slide two attendees listening presenter gestures both hands beside explainer screen seated women listen attentively wood panelled boardroom water glasses coffee mug arranged table workshop mutual fund financial literacy investing session"
+ },
+ {
+  "id": "IFM-133",
+  "title": "Clip — Breaking Down NAV (Net Asset Value)",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-133.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-133.mp4",
+  "drive": "https://drive.google.com/file/d/1q8VG_DF00HvnwOuUJ97q8xHlaJCNvmMn/view",
+  "description": "A presenter stands with arms crossed beside a detailed 'NAV' slide explaining net asset value as seated participants watch — walking through how mutual fund NAV is calculated.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "nav net asset value clip breaking down nav net asset value presenter stands arms crossed beside detailed slide explaining seated participants watch walking through how mutual fund calculated video funds presentation workshop boardroom women investing"
+ },
+ {
+  "id": "IFM-134",
+  "title": "Whiteboard Roundtable Discussion",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-134.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1-ypRi0GEzfcgXLTkQQn0d_5_fQxvbl8y/view",
+  "description": "Group discussion around a boardroom table with a hand-drawn investment mind-map on the whiteboard behind; a woman in black and red works on a laptop while others converse. A Mac desktop screen and framed artwork frame the room.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "group discussion whiteboard mind map investment planning boardroom engaged talking"
+ },
+ {
+  "id": "IFM-135",
+  "title": "Team Brainstorm Around the Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-135.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/15fbUeBhROvme2OXCBSQ_P3IfWDiQjY3u/view",
+  "description": "High-angle view of five women seated around a wooden boardroom table mid-discussion, with a detailed investment flowchart filling the whiteboard behind them. Notebooks, a coffee mug and a tissue box clutter the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Financial Planning",
+   "Money Conversations"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "team brainstorm around table high angle view five women seated wooden boardroom mid discussion detailed investment flowchart filling whiteboard behind them notebooks coffee mug tissue box clutter roundtable workshop financial literacy office investing planning"
+ },
+ {
+  "id": "IFM-136",
+  "title": "Animated Discussion at Whiteboard Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-136.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1tEQliYYrv920pJVwI_cfEX6RiC_knZiM/view",
+  "description": "A woman in a blue striped shirt gestures expressively while talking to colleagues around the boardroom table, an investment mind-map visible on the whiteboard behind. The founder in black and red looks on from the left.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Financial Planning",
+   "Money Conversations"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "animated discussion whiteboard table woman blue striped shirt gestures expressively while talking colleagues around boardroom investment mind map visible behind founder black red looks from left gesturing roundtable workshop women financial literacy conversation office investing team planning"
+ },
+ {
+  "id": "IFM-137",
+  "title": "Strategy Talk, Mind-Map Backdrop",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-137.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1RcvO1-RTUEXYFhYd69rv-EgUgJbvC-JT/view",
+  "description": "Five women in conversation around the wooden table; a central attendee gestures while explaining, with the investment flowchart whiteboard and a Mac screen in the background. Coffee mugs and notebooks sit on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "b-roll cutaway establishing supporting footage context strategy talk mind map backdrop five women conversation around wooden table central attendee gestures while explaining investment flowchart whiteboard mac screen background coffee mugs notebooks sit discussion roundtable workshop financial literacy office investing team"
+ },
+ {
+  "id": "IFM-138",
+  "title": "Roundtable With Presentation Screen",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-138.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1urYn9tM8ebwB2lQ-UNEluUVsRFbcdTZf/view",
+  "description": "Group of women seated around the boardroom table during discussion, an orange IFM-style slide showing on the wall screen and the investment whiteboard behind. Laptops, notebooks and water glasses fill the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "roundtable presentation screen group women seated around boardroom table during discussion orange ifm style slide showing wall investment whiteboard behind laptops notebooks water glasses fill workshop financial literacy office investing team session"
+ },
+ {
+  "id": "IFM-139",
+  "title": "Founder at Laptop, Attendees Engaged",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-139.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1zq-0snNeO3No_dOXZiF0kzXln_jmtKU7/view",
+  "description": "Hiral in black and pink works at a MacBook in the foreground while four women behind her watch a presentation attentively, an asset-classes whiteboard visible at left. A coffee mug and water glasses sit nearby.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "founder laptop attendees engaged hiral black pink works macbook foreground while four women behind her watch presentation attentively asset classes whiteboard visible left coffee mug water glasses sit nearby workshop attentive financial literacy boardroom investing session"
+ },
+ {
+  "id": "IFM-140",
+  "title": "Attentive Audience at the Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-140.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1-EUQ8Um0WuGWukJou3RT8CwAePIt59qh/view",
+  "description": "Wide vertical shot of five women listening intently during a session, the founder seated at her laptop in the foreground and an asset-classes whiteboard behind. Notebooks and water glasses cover the wooden table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "attentive audience table wide vertical shot five women listening intently during session founder seated her laptop foreground asset classes whiteboard behind notebooks water glasses cover wooden workshop financial literacy boardroom investing"
+ },
+ {
+  "id": "IFM-141",
+  "title": "Clip — Hiral Leading from the Laptop",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-141.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-141.mp4",
+  "drive": "https://drive.google.com/file/d/172cVvukdwdRaZl5ebB0gx0z-26UwUxvs/view",
+  "description": "Founder Hiral in a black top and pink trousers sits at the head of the table with her laptop, addressing a room of attentive women in front of a note-filled whiteboard — a teaching moment mid-session.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip hiral leading from laptop founder black top pink trousers sits head table her addressing room attentive women front note filled whiteboard teaching moment mid session video workshop boardroom investing"
+ },
+ {
+  "id": "IFM-142",
+  "title": "Clip — Group Discussion Around the Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-142.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-142.mp4",
+  "drive": "https://drive.google.com/file/d/1rBtVBAnCX6av2IvwFB-KcSZxbvGHqIHs/view",
+  "description": "Hiral turns toward the camera mid-sentence while several women seated around the boardroom table listen — an interactive discussion segment of the workshop.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip group discussion around table hiral turns toward camera mid sentence while several women seated boardroom listen interactive segment workshop video investing listening session"
+ },
+ {
+  "id": "IFM-143",
+  "title": "Group Watching the Screen Together",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-143.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1TQZoL7CY9WGE6axe0duKqt3QZT1Oro88/view",
+  "description": "Five women including the founder in black gaze toward an off-frame presentation, seated around the wooden boardroom table with a whiteboard and storage cabinet behind. A laptop, notebook and pens lie on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "group watching screen together five women including founder black gaze toward off frame presentation seated around wooden boardroom table whiteboard storage cabinet behind laptop notebook pens lie audience workshop financial literacy attentive investing session"
+ },
+ {
+  "id": "IFM-144",
+  "title": "Smiling Founder Among the Group",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-144.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/18oLJZDhxLKIyZPBMQKzDjgKvSXGY3Plo/view",
+  "description": "The founder in a black top smiles toward the camera in the foreground while four women behind her watch a presentation, the asset-classes whiteboard at left. A MacBook, tissue box and water glasses sit on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "founder smiling to camera boardroom session attendees watching presentation candid warm"
+ },
+ {
+  "id": "IFM-145",
+  "title": "Clip — Participants Engaging in Q&A",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-145.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-145.mp4",
+  "drive": "https://drive.google.com/file/d/1o7LhNVRmnwPDUYV2MMA9fjAB26GUJK28/view",
+  "description": "A wide shot of women around the table looking toward the front with engaged expressions while Hiral gestures from the foreground — an audience/Q&A moment.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Student Question",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "b-roll cutaway establishing supporting footage context clip participants engaging wide shot women around table looking toward front engaged expressions while hiral gestures from foreground audience moment video boardroom workshop investing discussion session"
+ },
+ {
+  "id": "IFM-146",
+  "title": "Clip — Hiral Making a Point with Her Hands",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-146.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-146.mp4",
+  "drive": "https://drive.google.com/file/d/1dpmyx6LF-aSMS1Vg7q_phpW9UuKX1B1J/view",
+  "description": "Hiral leans forward with an open-palm gesture while speaking to the group, several women watching attentively across the table — emphasising a key teaching point.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip hiral making point her hands leans forward open palm gesture while speaking group several women watching attentively across table emphasising key teaching video explaining boardroom workshop investing session emphasis"
+ },
+ {
+  "id": "IFM-147",
+  "title": "Founder at Laptop, Room Listening",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-147.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1IGRYq4M6njcvwuqQdYlVEXgiSNhImspx/view",
+  "description": "The founder in black and pink works at her MacBook while five attentive women around the table listen to an off-frame talk, an asset-classes mind-map filling the whiteboard behind. Water glasses and notebooks are scattered across the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "founder laptop room listening black pink works her macbook while five attentive women around table listen off frame talk asset classes mind map filling whiteboard behind water glasses notebooks scattered across workshop boardroom financial literacy investing session"
+ },
+ {
+  "id": "IFM-148",
+  "title": "Founder Pointing Across the Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-148.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1wNethHWzuXnwCmzSjFg6xIQZ6UwkVQrU/view",
+  "description": "Hiral in a black top points emphatically toward the screen while teaching, four women around the table following her gesture with focused expressions. An asset-classes whiteboard and framed art line the wall behind.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "founder pointing across table hiral black top points emphatically toward screen while teaching four women around following her gesture focused expressions asset classes whiteboard framed art line wall behind workshop boardroom financial literacy investing session gesturing"
+ },
+ {
+  "id": "IFM-149",
+  "title": "Two-Way Pointing Discussion",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-149.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/16pY-9ynUaTXbIf2MN92zp_DzN0ivYzmc/view",
+  "description": "Lively moment as both the founder in the foreground and a woman in a white tee across the table point in the same direction, the rest of the group watching with engaged expressions. The asset-classes whiteboard and a MacBook anchor the scene.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "two way pointing discussion lively moment both founder foreground woman white tee across table point same direction rest group watching engaged expressions asset classes whiteboard macbook anchor scene workshop boardroom financial literacy investing session women"
+ },
+ {
+  "id": "IFM-150",
+  "title": "Listening at the Boardroom Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-150.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1KGKRRa9o5asLKk5zjHncKB_vjawF_VFN/view",
+  "description": "Several women sit around a wooden conference table with laptops, notebooks and coffee, listening intently during an IFM workshop; a financial mind-map fills the whiteboard behind them. A woman in a black top with a pink wrap sits in the foreground.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "listening boardroom table several women sit around wooden conference laptops notebooks coffee intently during ifm workshop financial mind map fills whiteboard behind them woman black top pink wrap sits foreground laptop notebook literacy investing session attentive office"
+ },
+ {
+  "id": "IFM-151",
+  "title": "Clip — Note-Taking During the Session",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-151.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-151.mp4",
+  "drive": "https://drive.google.com/file/d/1PwXz_qzPgJQ6RQcu2UPSPHcYF4Gj1OiI/view",
+  "description": "Women seated around the table listen and jot notes as Hiral leads from the foreground beside her laptop — a focused learning stretch of the workshop.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip note taking during session women seated around table listen jot notes hiral leads from foreground beside her laptop focused learning stretch workshop video participants boardroom investing"
+ },
+ {
+  "id": "IFM-152",
+  "title": "Screen-Led Session in Progress",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-152.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/13Y2SRtLMd9LsQywe-dx2_AiX9Fh2_z7I/view",
+  "description": "A facilitator at a laptop presents an on-screen calculator to a small group of women seated around the conference table, with a detailed asset-classes whiteboard diagram on the right. Tissues, water glasses and an IFM workbook sit on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "screen led session progress facilitator laptop presents calculator small group women seated around conference table detailed asset classes whiteboard diagram right tissues water glasses ifm workbook sit workshop presentation room learning investing office"
+ },
+ {
+  "id": "IFM-153",
+  "title": "Clip — Casual Group Session Around the Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-153.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-153.mp4",
+  "drive": "https://drive.google.com/file/d/1g524nVu6CsMFYEvseFC6vK3uTgj3FuT5/view",
+  "description": "A presenter in beige stands by the screen while women chat around a table laden with lunchboxes, water bottles and books in a relaxed setting — a casual/break-time portion.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration clip casual group session around table presenter beige stands screen while women chat laden lunchboxes water bottles books relaxed setting break time portion video boardroom workshop investing conversation"
+ },
+ {
+  "id": "IFM-154",
+  "title": "Clip — Relaxed Roundtable Conversation",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-154.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-154.mp4",
+  "drive": "https://drive.google.com/file/d/148RJwZOVoLspDj5zbXo_neSqTceOpxrx/view",
+  "description": "A wide view of women laughing and talking around the table with a presenter standing by the screen behind — a light, informal moment during the workshop.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration b-roll cutaway establishing supporting footage context clip relaxed roundtable conversation wide view women laughing talking around table presenter standing screen behind light informal moment during workshop video boardroom investing session"
+ },
+ {
+  "id": "IFM-155",
+  "title": "Clip — Intro to Evaluating Investments",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-155.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-155.mp4",
+  "drive": "https://drive.google.com/file/d/1MMdO3cpSZ0akfJWKwm3xM50Hl95HYxYa/view",
+  "description": "A presenter in beige gestures beside an 'Evaluating Investments — why do we need different measures?' slide, laptops and bottles on the table — the opening of a returns-evaluation module.",
+  "session": "",
+  "slide_text": "Evaluating Investments — why do we need different measures?",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Risk & Returns",
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip intro evaluating investments presenter beige gestures beside why need different measures slide laptops bottles table opening returns evaluation module video presentation boardroom workshop investing session teaching"
+ },
+ {
+  "id": "IFM-156",
+  "title": "Evaluating Investments Talk",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-156.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1QOBaisDyZUFcaL33MQhq5P6zytRi9Vqu/view",
+  "description": "A presenter in a brown top stands and gestures beside a TV screen reading 'Evaluating Investments' while women in colourful outfits follow along with workbooks and notes. The room has wood panelling and a whiteboard of financial diagrams.",
+  "session": "",
+  "slide_text": "Evaluating Investments",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "evaluating investments talk presenter brown top stands gestures beside screen reading while women colourful outfits follow along workbooks notes room has wood panelling whiteboard financial diagrams workshop slide workbook investing session gesture office learning"
+ },
+ {
+  "id": "IFM-157",
+  "title": "Standing Presenter, Engaged Group",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-157.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1x6FUgWMBLfgiRxoGbGp76i33b-N8oUan/view",
+  "description": "A woman in a brown top presents the 'Evaluating Investments' slide while seated participants take notes and sip from mugs around the dark wooden table. Workbooks, water bottles and a tissue box clutter the tabletop.",
+  "session": "",
+  "slide_text": "Evaluating Investments",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "sip systematic investment plan monthly investing standing presenter engaged group woman brown top presents evaluating investments slide while seated participants take notes sip from mugs around dark wooden table workbooks water bottles tissue box clutter tabletop workshop presentation women note taking conference workbook investing whiteboard office"
+ },
+ {
+  "id": "IFM-158",
+  "title": "Vertical View of the Workshop",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-158.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1hHrb8tnvz8Y5HpOAWRsQsa2fmQFoGcCq/view",
+  "description": "A tall vertical shot of a presenter explaining 'Evaluating Investments' to women gathered at the conference table, with workbooks, an iPad and water bottles spread out. Wood-panelled wall and overhead strip light frame the scene.",
+  "session": "",
+  "slide_text": "Evaluating Investments",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "vertical view workshop tall shot presenter explaining evaluating investments women gathered conference table workbooks ipad water bottles spread out wood panelled wall overhead strip light frame scene workbook room investing office session learning"
+ },
+ {
+  "id": "IFM-159",
+  "title": "Hands-On Explanation",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-159.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1Uz-bvChoy6-7sOlnU51V7k1oh3Q4Jd6E/view",
+  "description": "A presenter in brown gestures with both hands explaining the 'Evaluating Investments' slide as women lean in around the table with open IFM workbooks. Cacti, water bottles and coffee tumblers dot the wooden surface.",
+  "session": "",
+  "slide_text": "Evaluating Investments",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "hands explanation presenter brown gestures both explaining evaluating investments slide women lean around table open ifm workbooks cacti water bottles coffee tumblers dot wooden surface workshop gesture workbook investing conference room engaged office session learning"
+ },
+ {
+  "id": "IFM-160",
+  "title": "Clip — Why Evaluation Concepts Matter",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-160.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-160.mp4",
+  "drive": "https://drive.google.com/file/d/1li77ze85IzhV1yNy6-pJVKVJwiGSUVsW/view",
+  "description": "A presenter mid-explanation beside an 'Evaluating Investments — why these concepts matter' slide, while two women follow along with workbooks open — a deeper dive into investment metrics.",
+  "session": "",
+  "slide_text": "Evaluating Investments — why these concepts matter",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip why evaluation concepts matter presenter mid explanation beside evaluating investments these slide while two women follow along workbooks open deeper dive into investment metrics video workbook boardroom workshop investing session"
+ },
+ {
+  "id": "IFM-161",
+  "title": "Clip — Absolute Rate of Return Explained",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-161.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-161.mp4",
+  "drive": "https://drive.google.com/file/d/1tYNb40egmHWGPOCAqSbvwlnfcCtGi-bg/view",
+  "description": "A presenter points toward an 'Absolute Rate of Return / Simple Interest' slide with a worked ₹10–13 lakh example as participants follow with open workbooks — teaching how absolute returns are measured.",
+  "session": "",
+  "slide_text": "Absolute Rate of Return / Simple Interest",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Risk & Returns",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip absolute rate return explained presenter points toward simple interest slide worked ₹10 lakh example participants follow open workbooks teaching how returns measured video workbook boardroom workshop investing session"
+ },
+ {
+  "id": "IFM-162",
+  "title": "Clip — Small-Group Laptop Work Session",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-162.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-162.mp4",
+  "drive": "https://drive.google.com/file/d/1zqC2qfII21eGbykhGw_yuB3k1irJNiAC/view",
+  "description": "Three women smile toward the camera while working on laptops around the table in a relaxed small-group setting — a hands-on/break moment.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration clip small group laptop work session three women smile toward camera while working laptops around table relaxed setting hands break moment video boardroom workshop investing smiling"
+ },
+ {
+  "id": "IFM-163",
+  "title": "Principles of Smart Investing",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-163.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1mQ_RKYhWKLdvwKpaUDoTvp1NPRNplz7I/view",
+  "description": "A presenter in a pink kurta stands by a TV displaying 'Principles of Smart Investing' with a colourful cycle diagram, addressing women seated around the table. The right-hand whiteboard is filled with handwritten financial notes.",
+  "session": "",
+  "slide_text": "Principles of Smart Investing",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "principles smart investing presenter pink kurta stands displaying colourful cycle diagram addressing women seated around table right hand whiteboard filled handwritten financial notes workshop conference room session office learning"
+ },
+ {
+  "id": "IFM-164",
+  "title": "Smart Investing Cycle Slide",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-164.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/192tkBqjqDnfnpZ1tE6HHcM4OLqclChjc/view",
+  "description": "Wide vertical shot of a pink-clad presenter teaching the 'Principles of Smart Investing' slide to a circle of women at the wooden table, workbooks and water glasses in front of them. Whiteboard diagrams and AC unit fill the back wall.",
+  "session": "",
+  "slide_text": "Principles of Smart Investing",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "smart investing cycle slide wide vertical shot pink clad presenter teaching principles circle women wooden table workbooks water glasses front them whiteboard diagrams unit fill back wall workshop kurta workbook conference room office session"
+ },
+ {
+  "id": "IFM-165",
+  "title": "Group Around the Investing Slide",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-165.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1escFRvm00lwsDRVQGRebeDSoBweHgtMF/view",
+  "description": "A pink-kurta presenter gestures toward the 'Principles of Smart Investing' screen while women seated around the table watch, some with open workbooks and sticky notes. Warm office lighting and wood panelling set the tone.",
+  "session": "",
+  "slide_text": "Principles of Smart Investing",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "group around investing slide pink kurta presenter gestures toward principles smart screen while women seated table watch some open workbooks sticky notes warm office lighting wood panelling set tone workshop workbook conference room session learning"
+ },
+ {
+  "id": "IFM-166",
+  "title": "Close Angle on the Pink Presenter",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-166.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/12pfVkVVSHMUQgOFFnWRwHmokw7JoUUz3/view",
+  "description": "A tighter view of the presenter in pink explaining the smart-investing 'cycle' slide, with two women in the foreground listening and a workbook open on the table. Tissue box and coffee tumblers sit nearby.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "close angle pink presenter tighter view explaining smart investing cycle slide two women foreground listening workbook open table tissue box coffee tumblers sit nearby workshop kurta conference room office session"
+ },
+ {
+  "id": "IFM-167",
+  "title": "Mid-Talk on Investing Principles",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-167.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1reE4q5jpN0yQ-iXpBaicsJ7K95Tl3Iw0/view",
+  "description": "The pink-kurta facilitator gestures mid-sentence beside the 'Principles of Smart Investing' TV slide as women in the foreground listen attentively. Pens, water glasses, coffee tumblers and a workbook cover the wooden table.",
+  "session": "",
+  "slide_text": "Principles of Smart Investing",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "mid talk investing principles pink kurta facilitator gestures sentence beside smart slide women foreground listen attentively pens water glasses coffee tumblers workbook cover wooden table workshop presenter gesture conference room office session attentive"
+ },
+ {
+  "id": "IFM-168",
+  "title": "Roundtable Discussion",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-168.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/13w0dtfVB8u3Jc4ii122zmX39dc_xGHMP/view",
+  "description": "A candid overhead-angle shot of women in casual wear talking and discussing around the conference table, with a facilitator standing by the blank screen and a financial whiteboard behind. Denim jackets, mugs and workbooks fill the scene.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration roundtable discussion candid overhead angle shot women casual wear talking discussing around conference table facilitator standing blank screen financial whiteboard behind denim jackets mugs workbooks fill scene workshop room investing office session"
+ },
+ {
+  "id": "IFM-169",
+  "title": "Clip — Discussion in Front of Blank Screen",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-169.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-169.mp4",
+  "drive": "https://drive.google.com/file/d/1mZSuEbDnzFEShoVG4nYJ-hozYnooQBMt/view",
+  "description": "A presenter stands by a blank display while a packed table of women lean in for discussion, some with workbooks and phones out — an open-floor conversation or topic transition.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip discussion front blank screen presenter stands display while packed table women lean some workbooks phones out open floor conversation topic transition video boardroom workshop investing session group"
+ },
+ {
+  "id": "IFM-170",
+  "title": "Facilitator Standing by the Screen",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-170.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/10SZJ5-1AjHGzFTcUtqr4xe9PSkaOqQo2/view",
+  "description": "A facilitator stands beside the wall-mounted screen leading a discussion with women seated tightly around the wooden table, mugs and open workbooks in front of them. Whiteboard financial diagrams cover the right wall.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "facilitator standing screen stands beside wall mounted leading discussion women seated tightly around wooden table mugs open workbooks front them whiteboard financial diagrams cover right workshop conference room workbook investing office session learning"
+ },
+ {
+  "id": "IFM-171",
+  "title": "Pointing at the Display",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-171.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1zUksnhwTpTi-q88DTkFrHeGJmE8PogZ-/view",
+  "description": "A facilitator gestures toward the wall screen while a full table of women in casual outfits follow along with workbooks, phones and coffee. The wood-panelled boardroom and handwritten whiteboard frame the busy session.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "pointing display facilitator gestures toward wall screen while full table women casual outfits follow along workbooks phones coffee wood panelled boardroom handwritten whiteboard frame busy session workshop workbook conference room investing office"
+ },
+ {
+  "id": "IFM-172",
+  "title": "Clip — Presenter Fielding a Raised-Hand Question",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-172.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-172.mp4",
+  "drive": "https://drive.google.com/file/d/1kb5QQLc_J7F3eBBuV6RPU8qM6X1JqBgI/view",
+  "description": "A presenter in white raises her hand mid-explanation in front of the screen while women at the table follow with open workbooks — an interactive teaching exchange.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip presenter fielding raised hand question white raises her mid explanation front screen while women table follow open workbooks interactive teaching exchange video workbook boardroom workshop investing session"
+ },
+ {
+  "id": "IFM-173",
+  "title": "Workbook Session, Standing Host",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-173.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1TtgKogwSFLusT_wZImLAb5Y0yVGFAW6P/view",
+  "description": "A standing host in a sleeveless top leads a session as women around the table study colourful IFM workbooks and sip coffee. Wood panelling, recessed lights and a wall-mounted display set the office-boardroom scene.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "sip systematic investment plan monthly investing workbook session standing host sleeveless top leads women around table study colourful ifm workbooks sip coffee wood panelling recessed lights wall mounted display set office boardroom scene workshop conference room panel investing learning denim"
+ },
+ {
+  "id": "IFM-174",
+  "title": "Intimate Boardroom Circle",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-174.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1MRXbYCrU53EtdFuj27n4LJUiYHr6kZ2c/view",
+  "description": "Women cluster closely around the table in casual wear, mugs in hand, as a sleeveless facilitator stands and speaks beside the blank screen. Snack jars and a tissue box sit on the table in the warm wood-panelled room.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "intimate boardroom circle women cluster closely around table casual wear mugs hand sleeveless facilitator stands speaks beside blank screen snack jars tissue box sit warm wood panelled room workshop conference panel investing office session discussion"
+ },
+ {
+  "id": "IFM-175",
+  "title": "Casual Group Engagement",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-175.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1oOxuTtXHIp5jUkO-AtlwEyaP9_jb9ELZ/view",
+  "description": "A standing facilitator gestures while seated women in denim and prints sip coffee and listen, an IFM workbook visible in the foreground. The cosy wood-panelled boardroom is lit by overhead strip lighting.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "sip systematic investment plan monthly investing casual group engagement standing facilitator gestures while seated women denim prints sip coffee listen ifm workbook visible foreground cosy wood panelled boardroom lit overhead strip lighting workshop conference room panel investing office session"
+ },
+ {
+  "id": "IFM-176",
+  "title": "Explaining to a Full Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-176.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1CV8kUjGu6FHJx3pAcGohCER2IvAEkGkY/view",
+  "description": "A facilitator in a sleeveless top explains a point with hands raised as a full table of women in casual clothes follow along over open workbooks and mugs. Snack jars and tissues sit on the wooden surface under warm lighting.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "explaining full table facilitator sleeveless top explains point hands raised women casual clothes follow along over open workbooks mugs snack jars tissues sit wooden surface under warm lighting workshop gesture workbook conference room wood panel investing office session coffee"
+ },
+ {
+  "id": "IFM-177",
+  "title": "Standing Talk Over Workbooks",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-177.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/13XsQbMz0l5YLtDhAv5rRroATVmqHRVJL/view",
+  "description": "A facilitator stands and gestures beside the wall display as women seated around the table review colourful IFM workbooks and drink coffee. The wood-panelled boardroom, strip lighting and recessed lights frame the session.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "testimonial review feedback social proof word of mouth standing talk over workbooks facilitator stands gestures beside wall display women seated around table review colourful ifm drink coffee wood panelled boardroom strip lighting recessed lights frame session workshop workbook conference room panel investing office gesture learning"
+ },
+ {
+  "id": "IFM-178",
+  "title": "Workshop Kickoff in the Boardroom",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-178.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1zgpkOnO7ULZStkkidT-Hu2H84TOf0j7W/view",
+  "description": "A woman in a cream top stands and presents to a group of women seated around a wooden conference table in a wood-panelled office, with a blank wall-mounted screen behind her. Water bottles, mugs and a tissue box dot the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "workshop kickoff boardroom woman cream top stands presents group women seated around wooden conference table wood panelled office blank wall mounted screen behind her water bottles mugs tissue box dot presenter financial literacy session india mums standing audience"
+ },
+ {
+  "id": "IFM-179",
+  "title": "Types of Insurance Slide Begins",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-179.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/193E3rVDPJyZbX35xq2NLLzcgeBnk91Vt/view",
+  "description": "The presenter stands beside a wall-mounted screen displaying a pink-headed 'Types of Insurance' slide while attentive women look on from around the table. Denim jacket and orange-top attendees are visible in the foreground.",
+  "session": "",
+  "slide_text": "Types of Insurance",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Insurance"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "types insurance slide begins presenter stands beside wall mounted screen displaying pink headed while attentive women look from around table denim jacket orange top attendees visible foreground presentation workshop boardroom financial literacy session teaching india learning"
+ },
+ {
+  "id": "IFM-180",
+  "title": "Clip — Is Your Corporate Health Plan Enough?",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-180.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-180.mp4",
+  "drive": "https://drive.google.com/file/d/1EsIx0Kf1ckoT4HVtnm0gL8B8RjcHKGkr/view",
+  "description": "Hiral stands beside an 'Is Your Corporate Health Plan Enough?' slide addressing the seated group on health-insurance gaps — covering why employer cover may be insufficient.",
+  "session": "",
+  "slide_text": "Is Your Corporate Health Plan Enough?",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Insurance"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip your corporate health plan enough hiral stands beside slide addressing seated group insurance gaps covering why employer cover may insufficient video presenter boardroom women workshop protection session coverage"
+ },
+ {
+  "id": "IFM-181",
+  "title": "Clip — Health Cover Q&A with Participant",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-181.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-181.mp4",
+  "drive": "https://drive.google.com/file/d/1cTA22_2MVN9MHpneDgTNSbZcsqgMretO/view",
+  "description": "Hiral stands by the 'Is Your Corporate Health Plan Enough?' slide while a woman in pink responds or asks a question, others listening — an interactive discussion on health insurance.",
+  "session": "",
+  "slide_text": "Is Your Corporate Health Plan Enough?",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Student Question",
+  "topic": [
+   "Money Conversations",
+   "Insurance"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip health cover participant hiral stands your corporate plan enough slide while woman pink responds asks question others listening interactive discussion insurance video boardroom women workshop session"
+ },
+ {
+  "id": "IFM-182",
+  "title": "Is Your Family Plan Enough Discussion",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-182.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1xNAUtkPWuAgA6VLDTLGN9S1MVBsJnm66/view",
+  "description": "Seated facilitators lead a discussion at the head of the table beneath a colourful mind-map slide, while participants browse printed IFM workbooks. One woman in a bold red-and-black floral dress sits in the foreground.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Financial Planning",
+   "Money Conversations",
+   "Family & Money"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "your family plan enough discussion seated facilitators lead head table beneath colourful mind map slide while participants browse printed ifm workbooks one woman bold red black floral dress sits foreground workbook workshop women boardroom facilitator financial planning session reading india"
+ },
+ {
+  "id": "IFM-183",
+  "title": "Emergency Bucket Terms Explained",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-183.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1lpQVrbyuzje915u0IEJ5kDJiEBJo20TQ/view",
+  "description": "A presenter gestures toward a whiteboard covered in handwritten notes beside an 'Emergency Bucket – Terms To Know' slide, as women take notes over open IFM workbooks on the table.",
+  "session": "",
+  "slide_text": "Emergency Bucket – Terms To Know",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Saving",
+   "Financial Planning",
+   "3-Bucket Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "emergency bucket terms explained presenter gestures toward whiteboard covered handwritten notes beside know slide women take over open ifm workbooks table fund workshop workbook boardroom savings session note taking india teaching"
+ },
+ {
+  "id": "IFM-184",
+  "title": "Wide View of the Emergency Bucket Session",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-184.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/16pnkEliG_6-jBTSD0XKaEMolwgnuJCYM/view",
+  "description": "A wide landscape shot of the boardroom showing women seated around the full table, the presenter standing between an 'Emergency Bucket' slide and a marker-filled whiteboard. Framed artwork and a QR code poster hang on the right wall.",
+  "session": "",
+  "slide_text": "Emergency Bucket",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Saving",
+   "Financial Planning",
+   "3-Bucket Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "b-roll cutaway establishing supporting footage context wide view emergency bucket session landscape shot boardroom showing women seated around full table presenter standing between slide marker filled whiteboard framed artwork code poster hang right wall workshop fund financial literacy india workbooks group"
+ },
+ {
+  "id": "IFM-185",
+  "title": "Full Room Engaged Around the Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-185.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1US0pDnQEf0lkt5C5ys9sWB54v2cJjh4z/view",
+  "description": "Landscape view of the workshop with attendees seated around the wooden table reviewing IFM workbooks, the presenter standing at front beside the emergency-bucket slide and a detailed whiteboard mind map. Framed art and QR poster on the wall.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Saving",
+   "Financial Planning",
+   "3-Bucket Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "testimonial review feedback social proof word of mouth full room engaged around table landscape view workshop attendees seated wooden reviewing ifm workbooks presenter standing front beside emergency bucket slide detailed whiteboard mind map framed art poster wall boardroom women fund session financial literacy india group"
+ },
+ {
+  "id": "IFM-186",
+  "title": "Clip — Asset Classes Whiteboard Discussion",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-186.jpg",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-186.mp4",
+  "drive": "https://drive.google.com/file/d/1LDuoGUdhrc1Pj3Spjc4uzedcJdkoKTrD/view",
+  "description": "A presenter in white sits at the head of the table beside a whiteboard mapping out asset classes, while women discuss with workbooks and charts open — a recap on asset allocation.",
+  "session": "",
+  "slide_text": "",
+  "silent": true,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Asset Allocation"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "clip asset classes whiteboard discussion presenter white sits head table beside mapping out while women discuss workbooks charts open recap allocation video boardroom workshop investing session"
+ },
+ {
+  "id": "IFM-187",
+  "title": "Attendees Listening Intently",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-187.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1WFL6L7qbp9gEu2uzJieLp35qc4YHnA-a/view",
+  "description": "A vertical shot focused on three seated women listening to the off-frame presenter, with a brightly lit overhead fixture above and a handwritten whiteboard and QR poster behind them. Open IFM workbooks rest on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "attendees listening intently vertical shot focused three seated women off frame presenter brightly lit overhead fixture above handwritten whiteboard poster behind them open ifm workbooks rest table workshop workbook boardroom session financial literacy india focus"
+ },
+ {
+  "id": "IFM-188",
+  "title": "Presenter Perched at the Head of the Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-188.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/177l6g5PsOHpMc7F67gf57qZ6czh9D6sw/view",
+  "description": "The presenter sits casually at the head of the table addressing the seated group beneath the 'Emergency Bucket' slide, with several women appearing to applaud. Open workbooks, water bottles and a teal flask sit on the table.",
+  "session": "",
+  "slide_text": "Emergency Bucket",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Saving",
+   "Financial Planning",
+   "3-Bucket Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration presenter perched head table sits casually addressing seated group beneath emergency bucket slide several women appearing applaud open workbooks water bottles teal flask sit workshop applause boardroom fund workbook session financial literacy india engaged"
+ },
+ {
+  "id": "IFM-189",
+  "title": "Seated Facilitator Leads Q and A",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-189.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1MxcmXT2JFfj9dLeJMaZx40-fnQmZf2Ut/view",
+  "description": "The facilitator sits at the head of the wooden table leading the group beneath the emergency-bucket slide and whiteboard mind map, as women around the table follow along with open IFM workbooks and phones.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Student Question",
+  "topic": [
+   "Money Conversations",
+   "3-Bucket Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "seated facilitator leads sits head wooden table leading group beneath emergency bucket slide whiteboard mind map women around follow along open ifm workbooks phones workshop boardroom workbook session financial literacy india discussion"
+ },
+ {
+  "id": "IFM-190",
+  "title": "Presenter Mid-Gesture at the Whiteboard",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-190.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1hyRSNBlgmkCpyl9yBRr_s6wMzwn6RNsn/view",
+  "description": "Landscape shot of the presenter standing and gesturing with a raised hand beside the emergency-bucket slide and whiteboard, addressing the seated semicircle of women with workbooks open on the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Saving",
+   "Financial Planning",
+   "3-Bucket Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "presenter mid gesture whiteboard landscape shot standing gesturing raised hand beside emergency bucket slide addressing seated semicircle women workbooks open table workshop boardroom fund session financial literacy india teaching"
+ },
+ {
+  "id": "IFM-191",
+  "title": "Classroom-Style Emergency Fund Lesson",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-191.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1IKSiKVAyr84X6u3K3hyHS9iN4Pnia2Vk/view",
+  "description": "A wide view of the boardroom session with the presenter standing at front by the 'Emergency Bucket' slide and whiteboard, women seated around the table taking notes in IFM workbooks. Framed artwork hangs on the right.",
+  "session": "",
+  "slide_text": "Emergency Bucket",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Saving",
+   "Financial Planning",
+   "Family & Money",
+   "3-Bucket Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "b-roll cutaway establishing supporting footage context classroom style emergency fund lesson wide view boardroom session presenter standing front bucket slide whiteboard women seated around table taking notes ifm workbooks framed artwork hangs right workshop workbook financial literacy india note group"
+ },
+ {
+  "id": "IFM-192",
+  "title": "Engaged Group During Savings Talk",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-192.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1b8NAOt5L8u8J0OwQn0_e7L8GVKa8b2-D/view",
+  "description": "Landscape shot of the workshop with the presenter at the front beside the emergency-bucket slide and whiteboard, several women raising hands or gesturing as they engage from around the table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Saving",
+   "Financial Planning",
+   "3-Bucket Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "engaged group during savings talk landscape shot workshop presenter front beside emergency bucket slide whiteboard several women raising hands gesturing they engage from around table boardroom engagement fund session financial literacy india workbooks"
+ },
+ {
+  "id": "IFM-193",
+  "title": "Fixed Deposits Lesson with Green-Top Presenter",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-193.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1WzXqJeJrnS6gPMwSnyvWIMW4TfHNbG3y/view",
+  "description": "A presenter in a green top and beige skirt stands by a 'Fixed Deposits' slide explaining to a group of seated women, with tissues, flasks and open IFM workbooks across the table. One attendee in coral and another in blue print look on.",
+  "session": "",
+  "slide_text": "Fixed Deposits",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Family & Money",
+   "Fixed Income"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "fixed deposits lesson green top presenter beige skirt stands slide explaining group seated women tissues flasks open ifm workbooks across table one attendee coral another blue print look workshop boardroom session financial literacy india teaching"
+ },
+ {
+  "id": "IFM-194",
+  "title": "Explaining Fixed Deposit Returns",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-194.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1fkKrxrEpmr_dHdYiud-HgvJ5e1KXWKL8/view",
+  "description": "The green-topped presenter gestures while teaching the 'Fixed Deposits' slide, attendees seated closely around the table with phones, flasks and a CleanPlus tissue box. A woman checks her phone in the foreground.",
+  "session": "",
+  "slide_text": "Fixed Deposits",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Risk & Returns",
+   "Fixed Income"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "explaining fixed deposit returns green topped presenter gestures while teaching deposits slide attendees seated closely around table phones flasks cleanplus tissue box woman checks her phone foreground workshop women boardroom session financial literacy india gesturing"
+ },
+ {
+  "id": "IFM-195",
+  "title": "Attentive Faces During FD Breakdown",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-195.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1-bwbfrLtcFxOmXKw5Ib-vJeN1vHI2Uoa/view",
+  "description": "The presenter stands by the 'Fixed Deposits' slide addressing a tightly seated group, with women in coral and blue-print tops listening intently. Flasks, glasses and a tissue box crowd the wooden table.",
+  "session": "",
+  "slide_text": "Fixed Deposits",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Fixed Income"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "attentive faces during breakdown presenter stands fixed deposits slide addressing tightly seated group women coral blue print tops listening intently flasks glasses tissue box crowd wooden table workshop boardroom session financial literacy india"
+ },
+ {
+  "id": "IFM-196",
+  "title": "Discussion on Fixed Deposit Characteristics",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-196.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1idAfr5Shu-qZUrnl6R3Pfk8Te8UsZ3E3/view",
+  "description": "The green-topped presenter holds a notebook while leading a discussion beneath the 'Fixed Deposits' slide, with a foreground attendee gesturing as if asking a question. Coral and blue-print dressed women listen across the table.",
+  "session": "",
+  "slide_text": "Fixed Deposits",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Fixed Income"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "discussion fixed deposit characteristics green topped presenter holds notebook while leading beneath deposits slide foreground attendee gesturing asking question coral blue print dressed women listen across table workshop boardroom session financial literacy india group"
+ },
+ {
+  "id": "IFM-197",
+  "title": "Lively FD Session Around the Table",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-197.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/14QHomDDUiEzGbCDYw8knhtfr3QsJ0DY0/view",
+  "description": "A vertical view of the busy session with the presenter at the 'Fixed Deposits' slide and women seated all around reviewing open IFM workbooks, flasks and bags on the table. One attendee smiles broadly in the foreground.",
+  "session": "",
+  "slide_text": "Fixed Deposits",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Fixed Income"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration testimonial review feedback social proof word of mouth lively session around table vertical view busy presenter fixed deposits slide women seated all reviewing open ifm workbooks flasks bags one attendee smiles broadly foreground workshop boardroom financial literacy india smiling group"
+ },
+ {
+  "id": "IFM-198",
+  "title": "FD Taxation Rules on Screen",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-198.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1WaHQ95b4b0OUqvUStv8LxbFzd1Y3fvid/view",
+  "description": "The presenter stands beside a 'Fixed Deposits' slide detailing taxation rules and gestures to the group, with women in tank tops and print dresses seated around the table holding phones and workbooks.",
+  "session": "",
+  "slide_text": "Fixed Deposits",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Fixed Income"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "taxation rules screen presenter stands beside fixed deposits slide detailing gestures group women tank tops print dresses seated around table holding phones workbooks workshop boardroom session financial literacy india gesturing attendees"
+ },
+ {
+  "id": "IFM-199",
+  "title": "Closing Point on Fixed Deposit Tax Efficiency",
+  "date": "2026-04-06",
+  "thumb": "../thumbs/IFM-199.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1hma254KiSQI1RlxEALsz4hVmH8UECUKN/view",
+  "description": "The presenter explains the FD taxation slide noting fixed deposits are not tax-efficient for higher tax brackets, as the seated group of women listens around the cluttered conference table.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Fixed Income"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "closing point fixed deposit tax efficiency presenter explains taxation slide noting deposits not efficient higher brackets seated group women listens around cluttered conference table workshop boardroom session financial literacy india teaching"
+ },
+ {
+  "id": "IFM-200",
+  "title": "July: About Hiral (Reel 1)",
+  "date": "2026-07-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
+  "description": "Reel introducing founder Hiral Goel — video in production by Aakara (placeholder in the July deck).",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "",
+  "topic": [],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "july about hiral reel introducing founder goel video production aakara placeholder deck intro"
+ },
+ {
+  "id": "IFM-201",
+  "title": "July: About Hiral (Reel 2)",
+  "date": "2026-07-02",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
+  "description": "Second 'About Hiral' founder-intro reel — video in production by Aakara.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "",
+  "topic": [],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "july about hiral reel second founder intro video production aakara"
+ },
+ {
+  "id": "IFM-202",
+  "title": "July: If finance pages confuse you",
+  "date": "2026-07-02",
+  "thumb": "../thumbs/IFM-202.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/16m3DN9FMY9keFaUU_cplbIR1MgtO01Ec",
+  "description": "Story: a worried woman under a duvet on her phone — 'If finance pages confuse you… this is for you. Tap to know why.'",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "july finance pages confuse you story worried woman under duvet her phone tap know why jargon confusing beginner relatable women aakara"
+ },
+ {
+  "id": "IFM-203",
+  "title": "July: Money is a tool",
+  "date": "2026-07-04",
+  "thumb": "../thumbs/IFM-203.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1lvZVFjlQpDgeL-XtNjZG_7Hus-e3O8wT/view",
+  "description": "Static post — a gold trophy on a black plinth stuffed with a fan of green ₹500 notes, against a plain off-white corner wall. Blue type alongside reads 'MONEY IS NOT THE GOAL, IT'S A TOOL TO CREATE YOUR DREAM LIFE.' IFM wordmark top-right.",
+  "session": "Aakara July delivery",
+  "slide_text": "MONEY IS NOT THE GOAL, IT",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Money Mindset"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "july money tool static post gold trophy black plinth stuffed fan green ₹500 notes against plain off white corner wall blue type alongside reads not goal create your dream life ifm wordmark top right mindset cash reframe aakara"
+ },
+ {
+  "id": "IFM-204",
+  "title": "July: 1 Minute Investing",
+  "date": "2026-07-07",
+  "thumb": "../thumbs/IFM-204.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1zv0psStlNEPSk9Jh3nn4JFu_nZCZ9d9T/view",
+  "description": "Reel cover — Hiral in a red top stands smiling beside a full bookshelf in a bright home corner, one hand resting on the shelf. Navy serif 'One Minute' floats top-left with three purple twin-bell alarm-clock graphics scattered around her; bold white 'Investing School' across the lower third.",
+  "session": "Aakara July delivery",
+  "slide_text": "floats top-left with three purple twin-bell alarm-clock graphics scattered around her; bold white",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Portrait",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration july minute investing reel cover hiral red top stands smiling beside full bookshelf bright home corner one hand resting shelf navy serif floats left three purple twin bell alarm clock graphics scattered around her bold white school across lower third"
+ },
+ {
+  "id": "IFM-205",
+  "title": "July: Mini Money Lesson (50-30-20)",
+  "date": "2026-07-08",
+  "thumb": "../thumbs/IFM-205.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1yYpS3-In5sLtbspbQhxu055hBgYvoY_a",
+  "description": "Story: money bags and paper-scrap lettering on green — 'It's time for a Mini Money Lesson, Part 1.'",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Saving",
+   "Managing Money",
+   "Family & Money"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "july mini money lesson story bags paper scrap lettering green time part budgeting pizza rule savings aakara"
+ },
+ {
+  "id": "IFM-206",
+  "title": "July: Savings and Expense (flip the formula)",
+  "date": "2026-07-09",
+  "thumb": "../thumbs/IFM-206.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1qDvAz_R1jLO27sUEuFEpiTrfaL94cy5X",
+  "description": "Carousel cover: a shopping basket holding a handbag, salad bowl and chocolate — 'PLOT TWIST! Your salary didn't disappear. You just accidentally sponsored your cravings, carts & convenience first.'",
+  "session": "",
+  "slide_text": "PLOT TWIST! Your salary didn",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Saving",
+   "Managing Money"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "july savings expense flip formula carousel cover shopping basket holding handbag salad bowl chocolate plot twist your salary didn disappear you just accidentally sponsored cravings carts convenience first expenses pay yourself budgeting aakara"
+ },
+ {
+  "id": "IFM-207",
+  "title": "July: Money myths we grew up believing",
+  "date": "2026-07-13",
+  "thumb": "../thumbs/IFM-207.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1y0k30JshEDKtt9mZTvd9XUlEIu8fveTO",
+  "description": "Carousel cover: a woman in a rust top thinking hard, headline 'Money Myths we grew up believing' on a cream doodle background.",
+  "session": "",
+  "slide_text": "Money Myths we grew up believing",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Wealth",
+   "Money Mindset",
+   "Women & Money"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "july money myths grew believing carousel cover woman rust top thinking hard headline cream doodle background women gold wealth creation hiral beliefs aakara"
+ },
+ {
+  "id": "IFM-208",
+  "title": "July: Your Coffee Has Potential",
+  "date": "2026-07-15",
+  "thumb": "../thumbs/IFM-208.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1xEYXGTux7FdszKoUkEIP3zd6tiwlxTgn",
+  "description": "Carousel cover: a Starbucks frappuccino surrounded by gold coins — 'Your Starbucks habit might secretly be worth… ₹2.8 CRORES. Yes, really!'",
+  "session": "",
+  "slide_text": "Your Starbucks habit might secretly be worth… ₹2.8 CRORES. Yes, really!",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [
+   "Compounding",
+   "Wealth"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "sip systematic investment plan monthly investing july your coffee has potential carousel cover starbucks frappuccino surrounded gold coins habit might secretly worth crores yes really compounding latte factor sip aakara"
+ },
+ {
+  "id": "IFM-209",
+  "title": "July: You Can't Buy Twice",
+  "date": "2026-07-17",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
+  "description": "'You Can't Buy Twice' reel — video in production by Aakara.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "",
+  "topic": [
+   "Managing Money"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "july you can buy twice reel video production aakara cant spending"
+ },
+ {
+  "id": "IFM-210",
+  "title": "July: Finance Green Flags",
+  "date": "2026-07-19",
+  "thumb": "../thumbs/IFM-210.jpg",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
+  "description": "5-frame story — 'Do you know the green flags of your financial partner, Mr. Money?' #1 expense limit at month start, #2 don't treat salary day like a shopping festival, #3 pay your future self first.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Managing Money"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "july finance green flags frame story you know your financial partner money expense limit month start don treat salary day like shopping festival pay future self first budgeting relatable aakara"
+ },
+ {
+  "id": "IFM-211",
+  "title": "July: Rich people aren't magically born with money",
+  "date": "2026-07-20",
+  "thumb": "../thumbs/IFM-211.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1jJlezELTMwFTlIUygb_SXR8RVVfd7IpQ",
+  "description": "Carousel cover: a baby's hand gripping ₹500 and ₹200 notes, headline 'Rich people are not secretly born with some magical money gene'.",
+  "session": "",
+  "slide_text": "s hand gripping ₹500 and ₹200 notes, headline",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Wealth",
+   "Money Mindset"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "july rich people aren magically born money carousel cover baby hand gripping ₹500 ₹200 notes headline not secretly some magical gene wealth building magic investing discipline mindset aakara"
+ },
+ {
+  "id": "IFM-212",
+  "title": "July: Investment Bucket Game",
+  "date": "2026-07-21",
+  "thumb": "../thumbs/IFM-212.jpg",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
+  "description": "Interactive story game — sort investments into 3 buckets: Emergency, Stability, Growth. 'Think you know all about investing? Take a shot and find out how much you really know.'",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Social / Promotional",
+  "topic": [
+   "3-Bucket Investing",
+   "Investing"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "july investment bucket game interactive story sort investments into buckets emergency stability growth think you know all about investing take shot find out how much really quiz aakara"
+ },
+ {
+  "id": "IFM-213",
+  "title": "July: Financial confidence as self care",
+  "date": "2026-07-24",
+  "thumb": "../thumbs/IFM-213.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/18kYz_4NHBe7AzWMo8zGGdnIM1RbCur8M",
+  "description": "Carousel cover: two women in bathrobes and face masks wearing ₹-sign sunglasses, one on a phone, one on a laptop — 'HOT TAKE ALERT: Financial confidence is self care too!!'",
+  "session": "",
+  "slide_text": "HOT TAKE ALERT: Financial confidence is self care too!!",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Published",
+  "format": "Social Graphic",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "july financial confidence self care carousel cover two women bathrobes face masks wearing sign sunglasses one phone laptop hot take alert too preparedness aakara"
+ },
+ {
+  "id": "IFM-214",
+  "title": "July: Rich people mindset (meet Richa)",
+  "date": "2026-07-25",
+  "thumb": "../thumbs/IFM-214.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1malSLw2effKQR7QkmQdWXJhTKRyzhkGb",
+  "description": "Story: smiling young woman high-fiving the camera — 'Meet Richa. She thinks being rich is all about having lots of money, spending it however she wants and never worrying about prices.'",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Managing Money",
+   "Wealth",
+   "Money Mindset"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration july rich people mindset meet richa story smiling young woman high fiving camera she thinks being all about having lots money spending however wants never worrying prices wealth character aakara"
+ },
+ {
+  "id": "IFM-215",
+  "title": "July: National Parent's Day",
+  "date": "2026-07-26",
+  "thumb": "../thumbs/IFM-215.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1AL94xlrYVnbb9uXea4QrSkFPKUgXReEt",
+  "description": "Carousel cover: an open envelope holding a note — 'Parents spend years planning their children's future. But who's planning the parents' retirement?' — with a family polaroid, #HappyNationalParentsDay.",
+  "session": "",
+  "slide_text": "Parents spend years planning their children s planning the parents",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Financial Planning",
+   "Family & Money"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "july national parent day carousel cover open envelope holding note parents spend years planning their children future but who retirement family polaroid happynationalparentsday letters india aakara"
+ },
+ {
+  "id": "IFM-216",
+  "title": "July: Ever Wondered",
+  "date": "2026-07-28",
+  "thumb": "../thumbs/IFM-216.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1Q38Vzk2Cj4BAnL9HQs3WFwLFUeD4OIuS",
+  "description": "Reel: Hiral against a gold-bar backdrop — 'Ever wondered why central banks own so much gold?'",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Gold",
+   "Markets & Economy"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "b-roll cutaway establishing supporting footage context july ever wondered reel hiral against gold bar backdrop why central banks own much hook aakara production video"
+ },
+ {
+  "id": "IFM-217",
+  "title": "July: Women's Workshop",
+  "date": "2026-07-11",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
+  "description": "Women's-workshop highlight reel — video in production by Aakara.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Published",
+  "format": "",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "july women workshop highlight reel video production aakara womens event session"
+ },
+ {
+  "id": "IFM-218",
+  "title": "Goa Workshop — clip 1",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-218.jpg",
+  "video": "clips/IFM-218.mp4",
+  "drive": "clips/IFM-218.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-219",
+  "title": "Goa Workshop — clip 2",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-219.jpg",
+  "video": "clips/IFM-219.mp4",
+  "drive": "clips/IFM-219.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-220",
+  "title": "Goa Workshop — clip 3",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-220.jpg",
+  "video": "clips/IFM-220.mp4",
+  "drive": "clips/IFM-220.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-221",
+  "title": "Goa Workshop — clip 4",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-221.jpg",
+  "video": "clips/IFM-221.mp4",
+  "drive": "clips/IFM-221.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-222",
+  "title": "Goa Workshop — clip 5",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-222.jpg",
+  "video": "clips/IFM-222.mp4",
+  "drive": "clips/IFM-222.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-223",
+  "title": "Goa Workshop — clip 6",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-223.jpg",
+  "video": "clips/IFM-223.mp4",
+  "drive": "clips/IFM-223.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-224",
+  "title": "Goa Workshop — clip 7",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-224.jpg",
+  "video": "clips/IFM-224.mp4",
+  "drive": "clips/IFM-224.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-225",
+  "title": "Goa Workshop — clip 8",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-225.jpg",
+  "video": "clips/IFM-225.mp4",
+  "drive": "clips/IFM-225.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-226",
+  "title": "Goa Workshop — clip 9",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-226.jpg",
+  "video": "clips/IFM-226.mp4",
+  "drive": "clips/IFM-226.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-227",
+  "title": "Goa Workshop — clip 10",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-227.jpg",
+  "video": "clips/IFM-227.mp4",
+  "drive": "clips/IFM-227.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-228",
+  "title": "Goa Workshop — clip 11",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-228.jpg",
+  "video": "clips/IFM-228.mp4",
+  "drive": "clips/IFM-228.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-229",
+  "title": "Goa Workshop — clip 12",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-229.jpg",
+  "video": "clips/IFM-229.mp4",
+  "drive": "clips/IFM-229.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-230",
+  "title": "Goa Workshop — clip 13",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-230.jpg",
+  "video": "clips/IFM-230.mp4",
+  "drive": "clips/IFM-230.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-231",
+  "title": "Goa Workshop — clip 14",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-231.jpg",
+  "video": "clips/IFM-231.mp4",
+  "drive": "clips/IFM-231.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-232",
+  "title": "Goa Workshop — clip 15",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-232.jpg",
+  "video": "clips/IFM-232.mp4",
+  "drive": "clips/IFM-232.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-233",
+  "title": "Goa Workshop — clip 16",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-233.jpg",
+  "video": "clips/IFM-233.mp4",
+  "drive": "clips/IFM-233.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-234",
+  "title": "Goa Workshop — clip 17",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-234.jpg",
+  "video": "clips/IFM-234.mp4",
+  "drive": "clips/IFM-234.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-235",
+  "title": "Goa Workshop — clip 18",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-235.jpg",
+  "video": "clips/IFM-235.mp4",
+  "drive": "clips/IFM-235.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-236",
+  "title": "Goa Workshop — clip 19",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-236.jpg",
+  "video": "clips/IFM-236.mp4",
+  "drive": "clips/IFM-236.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-237",
+  "title": "Goa Workshop — clip 20",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-237.jpg",
+  "video": "clips/IFM-237.mp4",
+  "drive": "clips/IFM-237.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-238",
+  "title": "Goa Workshop — clip 21",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-238.jpg",
+  "video": "clips/IFM-238.mp4",
+  "drive": "clips/IFM-238.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-239",
+  "title": "Goa Workshop — clip 22",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-239.jpg",
+  "video": "clips/IFM-239.mp4",
+  "drive": "clips/IFM-239.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-240",
+  "title": "Goa Workshop — clip 23",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-240.jpg",
+  "video": "clips/IFM-240.mp4",
+  "drive": "clips/IFM-240.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-241",
+  "title": "Goa Workshop — clip 24",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-241.jpg",
+  "video": "clips/IFM-241.mp4",
+  "drive": "clips/IFM-241.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-242",
+  "title": "Goa Workshop — clip 25",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-242.jpg",
+  "video": "clips/IFM-242.mp4",
+  "drive": "clips/IFM-242.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-243",
+  "title": "Goa Workshop — clip 26",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-243.jpg",
+  "video": "clips/IFM-243.mp4",
+  "drive": "clips/IFM-243.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-244",
+  "title": "Goa Workshop — clip 27",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-244.jpg",
+  "video": "clips/IFM-244.mp4",
+  "drive": "clips/IFM-244.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-245",
+  "title": "Goa Workshop — clip 28",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-245.jpg",
+  "video": "clips/IFM-245.mp4",
+  "drive": "clips/IFM-245.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-246",
+  "title": "Goa Workshop — clip 29",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-246.jpg",
+  "video": "clips/IFM-246.mp4",
+  "drive": "clips/IFM-246.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-247",
+  "title": "Goa Workshop — clip 30",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-247.jpg",
+  "video": "clips/IFM-247.mp4",
+  "drive": "clips/IFM-247.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-248",
+  "title": "Goa Workshop — clip 31",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-248.jpg",
+  "video": "clips/IFM-248.mp4",
+  "drive": "clips/IFM-248.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-249",
+  "title": "Goa Workshop — clip 32",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-249.jpg",
+  "video": "clips/IFM-249.mp4",
+  "drive": "clips/IFM-249.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-250",
+  "title": "Goa Workshop — clip 33",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-250.jpg",
+  "video": "clips/IFM-250.mp4",
+  "drive": "clips/IFM-250.mp4",
+  "description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Unknown",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live"
+ },
+ {
+  "id": "IFM-251",
+  "title": "Goa Workshop — photo 1",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-251.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-251.jpg",
+  "description": "Open-air Goa venue: women seated at cafe tables listening while Hiral presents from the far side in a blue dress. A dog sleeps on the floor in the foreground — an unusually relaxed, non-corporate setting.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "goa workshop offsite retreat open air cafe relaxed informal casual dog seated audience listening destination blue dress"
+ },
+ {
+  "id": "IFM-252",
+  "title": "Goa Workshop — photo 2",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-252.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-252.jpg",
+  "description": "Hiral presenting from a laptop beside a large screen showing an emergency-fund diagram — a safety net catching a falling figure.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "Secure Your Emergency Fund. Financial Safety Net.",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Financial Planning",
+   "Saving",
+   "Managing Money"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "emergency fund rainy day safety net contingency months of expenses buffer goa workshop presenting laptop screen"
+ },
+ {
+  "id": "IFM-253",
+  "title": "Goa Workshop — photo 3",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-253.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-253.jpg",
+  "description": "Group photo on the steps of the Goa venue — around eight women with Hiral, several holding IFM workbooks, greenery and a tiled roof behind.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "group photo goa cohort batch together posed steps outdoors workbooks smiling alumni"
+ },
+ {
+  "id": "IFM-254",
+  "title": "Goa Workshop — photo 4",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-254.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-254.jpg",
+  "description": "Goa cohort on the cafe steps holding up IFM course material, Hiral in the blue dress among them. Stone pillars and a chalkboard menu behind.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "goa group photo cohort batch holding certificates workbooks steps cafe posed proud"
+ },
+ {
+  "id": "IFM-255",
+  "title": "Goa Workshop — photo 5",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-255.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-255.jpg",
+  "description": "Tighter group shot of the Goa cohort on the steps, several women holding up their IFM material to camera.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "goa group photo cohort batch holding certificates workbooks posed smiling"
+ },
+ {
+  "id": "IFM-256",
+  "title": "Goa Workshop — photo 6",
+  "date": "2026-07-18",
+  "thumb": "../thumbs/IFM-256.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/photos/IFM-256.jpg",
+  "description": "Wide panorama of the open-air Goa venue — tiled roof, plants and garden seating, with the small group gathered at the far end.",
+  "session": "Goa — 17 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "goa venue wide panorama establishing location outdoor garden cafe setting context"
+ },
+ {
+  "id": "IFM-257",
+  "title": "August: Finance Green Flags",
+  "date": "2026-08-01",
+  "thumb": "../thumbs/IFM-257.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1p6vkIou0fwyp-iMnYJPY2Y-BdTI-XDPH",
+  "description": "Carousel cover: heart-stamped gold coins and a checklist — 'Is your relationship with money built to last? The \"life partner\" checklist for your finances.'",
+  "session": "",
+  "slide_text": "Is your relationship with money built to last? The checklist for your finances.",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Managing Money"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "august finance green flags carousel cover heart stamped gold coins checklist your relationship money built last life partner finances expense limit salary day pay yourself first terms made simple aakara"
+ },
+ {
+  "id": "IFM-258",
+  "title": "August: Types of Assets",
+  "date": "2026-08-06",
+  "thumb": "../thumbs/IFM-258.jpg",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/1BILbOjh-gBDTEPsccDBDRQpjalt8ds0AaQWyATdtuxQ/edit",
+  "description": "6-frame mint carousel — 'If assets are homes for your money, why do investors use more than one?' Assets as specialists (Growth, Stability, Liquidity, Protection); the one-pair-of-shoes analogy for a marathon, a wedding, a beach holiday and a mountain trek. Ends on 'which asset is best for this goal?' and a pointer to Part 2 of 1 Minute Investing School.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Family & Money",
+   "Diversification"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "august types assets frame mint carousel homes your money why investors use more than one specialists growth stability liquidity protection pair shoes analogy marathon wedding beach holiday mountain trek ends which asset best goal pointer part minute investing school class"
+ },
+ {
+  "id": "IFM-259",
+  "title": "August: International Youth Day",
+  "date": "2026-08-11",
+  "thumb": "../thumbs/IFM-259.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/148mY1w9gmo-xLYe7JjvsrkNChZYiyRzQ",
+  "description": "Story: a student in headphones over her books, a Notes screenshot above — 'You grow up and suddenly… it's bills, taxes, savings, investing… But when did anyone actually teach us this?' International Youth Day.",
+  "session": "",
+  "slide_text": "You grow up and suddenly… it",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Saving",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "august international youth day story student headphones over her books notes screenshot above you grow suddenly bills taxes savings investing but when did anyone actually teach young adults app workshop aakara"
+ },
+ {
+  "id": "IFM-260",
+  "title": "August: Independence Day",
+  "date": "2026-08-15",
+  "thumb": "../thumbs/IFM-260.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1ZZDRU07DRsYI_jxCpcFnl7ShEp8eV8ue",
+  "description": "Reel: Hiral in a pale blue kurta in a garden playground — 'This Independence Day, build your freedom.' Independence Day topical.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Financial Independence"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "august independence day reel hiral pale blue kurta garden playground build your freedom topical story financial confidence informed choices aakara"
+ },
+ {
+  "id": "IFM-261",
+  "title": "August: Asset Analogy",
+  "date": "2026-08-21",
+  "thumb": "../thumbs/IFM-261.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1lK16tUvwut8tG6r5CPKeaH9aOv8sSHbY",
+  "description": "Carousel cover: a row of colourful San-Francisco-style houses — 'If assets are homes for your money, why do investors use more than one?'",
+  "session": "",
+  "slide_text": "If assets are homes for your money, why do investors use more than one?",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Diversification"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "august asset analogy carousel cover row colourful san francisco style houses assets homes your money why investors use more than one story classes sports team goalkeepers portfolio diversification aakara"
+ },
+ {
+  "id": "IFM-262",
+  "title": "August: Mini Money Lesson 2 (Save First, Spend Later)",
+  "date": "2026-08-24",
+  "thumb": "../thumbs/IFM-262.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1wt2XSJk5gDVZQTI8jibW2DZKWmtA9Brw",
+  "description": "Story: piggy bank in sunglasses and a jar of coins on a palm — 'It's time for a Mini Money Lesson, Part 2.'",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Saving",
+   "Family & Money"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "august mini money lesson save first spend later story piggy bank sunglasses jar coins palm time part pay yourself future you savings habit aakara"
+ },
+ {
+  "id": "IFM-263",
+  "title": "July: Top 5 Things To Look At (weekly news)",
+  "date": "2026-07-22",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
+  "description": "'Top 5 things to look at' weekly news reel — recurring news-roundup format, placeholder slide with no frames designed yet.",
+  "session": "",
+  "slide_text": "Top 5 things to look at",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "july top things look weekly news reel recurring roundup format placeholder slide frames designed yet market aakara"
+ },
+ {
+  "id": "IFM-264",
+  "title": "August: Assets Class Part 1 (What is an Asset?)",
+  "date": "2026-08-03",
+  "thumb": "../thumbs/IFM-264.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1wO4vQ5peI3r4bIiXkRLZCI98F7k42iYc",
+  "description": "Reel: 'One Minute Investing School — What is an Asset?' Hiral seated in black, houses composited behind her. Part 1 of the assets series.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "august assets class part what asset reel one minute investing school hiral seated black houses composited behind her series finance terms made simple aakara"
+ },
+ {
+  "id": "IFM-265",
+  "title": "August: Assets Class Part 2 (Types of Assets)",
+  "date": "2026-08-07",
+  "thumb": "../thumbs/IFM-265.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/152_v76R684SsMdI-QBaLAcdPJZCuD3BK",
+  "description": "Reel: 'One Minute Investing School — Types of Assets, Part 2.' Hiral in black with four family-member cutouts behind her.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Family & Money",
+   "Stocks / Equity",
+   "Fixed Income",
+   "Real Estate / REITs",
+   "Gold"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "august assets class part types reel one minute investing school hiral black four family member cutouts behind her cash debt real estate gold equity aakara"
+ },
+ {
+  "id": "IFM-266",
+  "title": "August: Asset Allocation Website Game (3 Buckets)",
+  "date": "2026-08-21",
+  "thumb": "../thumbs/IFM-266.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/18rRcmZbv7WmkGF_oJd2xgXQmYQEvFShO",
+  "description": "Story: a thinking emoji with a magnifying glass on blue — 'Think you know all about investing?' Teaser driving to the 3-Buckets asset-allocation game.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "3-Bucket Investing",
+   "Asset Allocation"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "august asset allocation website game buckets story thinking emoji magnifying glass blue think you know all about investing teaser driving emergency stability growth quiz link bio aakara"
+ },
+ {
+  "id": "IFM-267",
+  "title": "July: Hidden Fortunes Game",
+  "date": "2026-07-21",
+  "thumb": "../thumbs/IFM-267.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/10sqI-QqaD8JG637mBx93shzQ5iEc83OM",
+  "description": "Story: 'Are you GUILTY of impulse shopping, salon visits, cafe hopping?' with cartoon icons — teaser driving to the Hidden Fortunes game.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Managing Money",
+   "Wealth",
+   "Money Mindset"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "sip systematic investment plan monthly investing july hidden fortunes game story you guilty impulse shopping salon visits cafe hopping cartoon icons teaser driving spending sip website link bio aakara"
+ },
+ {
+  "id": "IFM-268",
+  "title": "September: Reviews (workshop testimonials)",
+  "date": "2026-09-01",
+  "thumb": "../thumbs/IFM-268.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1Cx0NIOhg_pNzos0UdMpW_KKAYrMTA-Rl",
+  "description": "Delivered 5-artboard testimonial carousel. Cover is cream with an oversized dark-green 'review' wordmark bleeding off all four edges, a white rounded card centred over it reading \"Here's what people are saying about our workshops\" with a thin right arrow, and the INVESTING FOR MUMMIES logo top-right. Artboards 2-5 carry the participant quote cards.",
+  "session": "",
+  "slide_text": "wordmark bleeding off all four edges, a white rounded card centred over it reading s what people are saying about our workshops",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Testimonial",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "testimonial review feedback social proof word of mouth september reviews workshop testimonials delivered artboard testimonial carousel cover cream oversized dark green review wordmark bleeding off all four edges white rounded card centred over reading here what people saying about our workshops thin right arrow investing mummies logo top"
+ },
+ {
+  "id": "IFM-269",
+  "title": "September: You Don't Need To Know Everything To Start",
+  "date": "2026-09-01",
+  "thumb": "../thumbs/IFM-269.jpg",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+  "description": "4-frame mint-green carousel opening on a woman hiding behind a thick 'Finance Dictionary' — 'Do you need a Finance Dictionary to start investing?' Frame 2 is a big sticker 'NOPE' with 'confidence doesn't come from knowing every term. It comes from understanding what they mean for you.' Frame 3: 'Nobody gets there overnight' with start-with one simple question / one easy concept / one step at a time. Closes on an IFM Instagram profile mockup — 'Tap follow to learn slowly with us. No finance degree needed.'",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Money Conversations",
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "september you don need know everything start frame mint green carousel opening woman hiding behind thick finance dictionary investing big sticker nope confidence doesn come from knowing every term comes understanding what they mean nobody gets there overnight one simple"
+ },
+ {
+  "id": "IFM-270",
+  "title": "September: Ganesh Chaturthi related",
+  "date": "2026-09-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+  "description": "Placeholder slide — a Ganesh Chaturthi festival tie-in carousel is planned but no frames have been designed yet. The slide carries only the label 'Topic: Ganesh Chaturthi related · Pillar: Topical · Format: Carousel'.",
+  "session": "",
+  "slide_text": "Topic: Ganesh Chaturthi related · Pillar: Topical · Format: Carousel",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Raw",
+  "format": "",
+  "topic": [],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "september ganesh chaturthi related placeholder slide festival tie carousel planned but frames have been designed yet carries only label topic pillar topical format aakara"
+ },
+ {
+  "id": "IFM-271",
+  "title": "September: Ranking Reel",
+  "date": "2026-09-01",
+  "thumb": "../thumbs/IFM-271.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1jQutmd7uAd-TIkbpANSMRDR3pc7_P0o-",
+  "description": "Reel: Hiral beside a High-to-Low risk ranking board — 'Are these Investments Risky?' Ranks five investment types by risk.",
+  "session": "",
+  "slide_text": "Are these Investments Risky?",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Risk & Returns",
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "september ranking reel hiral beside high low risk board these investments risky ranks five investment types workshops placeholder shot list format aakara"
+ },
+ {
+  "id": "IFM-272",
+  "title": "September: Asset Allocation in One Minute",
+  "date": "2026-09-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+  "description": "Placeholder slide for a one-minute asset-allocation explainer reel, continuing the 'One Minute Investing School' strand from August's asset-class reels. Label only — no frames designed yet.",
+  "session": "",
+  "slide_text": "One Minute Investing School",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "",
+  "topic": [
+   "Family & Money",
+   "Asset Allocation"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "september asset allocation one minute placeholder slide explainer reel continuing investing school strand from august class reels label only frames designed yet workshops shot aakara"
+ },
+ {
+  "id": "IFM-273",
+  "title": "September: “Ever Wondered?” (topic TBC)",
+  "date": "2026-09-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+  "description": "Placeholder slide for the next instalment of the recurring 'Ever Wondered?' reel series. The deck notes the topic itself has yet to be decided — label reads 'Topic has to come'.",
+  "session": "",
+  "slide_text": "Ever Wondered? Topic has to come",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "",
+  "topic": [],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "september ever wondered topic tbc placeholder slide next instalment recurring reel series deck notes itself has yet decided label reads come workshops shot aakara"
+ },
+ {
+  "id": "IFM-274",
+  "title": "September: Teachers' Day",
+  "date": "2026-09-05",
+  "thumb": "../thumbs/IFM-274.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1ps-zDRJLzehGV5ugmAWD_Fo-rD4gLP42",
+  "description": "Delivered Teachers' Day reel built on the 'Baa Baa Black Sheep' nursery-rhyme hook. Opens on the 3D-animated IFM presenter avatar — long dark hair, navy button-down shirt, slight smile — framed against a white wall carrying the green-and-navy INVESTING FOR MUMMIES money-tree logo.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Published",
+  "format": "B-roll",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration september teachers day delivered reel built baa black sheep nursery rhyme hook opens animated ifm presenter avatar long dark hair navy button down shirt slight smile framed against white wall carrying green investing mummies money tree logo topical workshops aakara"
+ },
+ {
+  "id": "IFM-275",
+  "title": "September: Asset vs Liability",
+  "date": "2026-09-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+  "description": "Placeholder slide for an asset-vs-liability explainer reel, extending the August asset-class series. Label only — no frames designed yet.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "",
+  "topic": [],
+  "person": [
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "september asset liability placeholder slide explainer reel extending august class series label only frames designed yet finance terms workshops shot aakara"
+ },
+ {
+  "id": "IFM-276",
+  "title": "September: Cups Video",
+  "date": "2026-09-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+  "description": "Placeholder slide for a 'cups' reel — presumably footage of the cups activity used in IFM workshops. Label only; no script or frames in the deck.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "",
+  "topic": [],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "september cups video placeholder slide reel presumably footage activity used ifm workshops label only script frames deck workshop demo props shot aakara"
+ },
+ {
+  "id": "IFM-277",
+  "title": "September: ₹1,00,000-a-Day Reference",
+  "date": "2026-09-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+  "description": "Placeholder slide for a reel built around a '₹1,00,000 a day' reference — a scale/perspective hook on large sums. Label only; no frames yet.",
+  "session": "",
+  "slide_text": "₹1,00,000 a day",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "",
+  "topic": [
+   "Wealth"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "september 000 day reference placeholder slide reel built around scale perspective hook large sums label only frames yet one lakh big numbers wealth workshops shot aakara"
+ },
+ {
+  "id": "IFM-278",
+  "title": "September: 3 News Topicals",
+  "date": "2026-09-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+  "description": "Placeholder slide for three news-topical reels — the September continuation of the weekly news strand (cf. July's 'Top 5 Things To Look At', IFM-263). Label only; no frames yet.",
+  "session": "",
+  "slide_text": "Top 5 Things To Look At",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "",
+  "topic": [],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "september news topicals placeholder slide three topical reels continuation weekly strand july top things look ifm 263 label only frames yet reel markets workshops shot aakara"
+ },
+ {
+  "id": "IFM-279",
+  "title": "Teens workshop — celebration moment (Aug 2026)",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-279.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1Kbtq2K1lhK7IHljygOqNv34UwDgwixjU/view",
+  "description": "Teen pumps his fist in celebration during a game/activity while another laughs across the boardroom table — candid win moment from the teens workshop.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration teens workshop celebration moment aug 2026 teen pumps his fist during game activity while another laughs across boardroom table candid win from investing session august sakshi video stories footage"
+ },
+ {
+  "id": "IFM-280",
+  "title": "Teens workshop — room discussion (Aug 2026)",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-280.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1veqobx3CHP72-kgtam4Kkx70wXOCMoNk/view",
+  "description": "Wide shot of the teens around the conference table, one participant speaking to the group during discussion.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Family & Money"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "b-roll cutaway establishing supporting footage context teens workshop room discussion aug 2026 wide shot around conference table one participant speaking group during investing session august sakshi boardroom video stories footage"
+ },
+ {
+  "id": "IFM-281",
+  "title": "Teens workshop — table activity (Aug 2026)",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-281.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1ojqrRc7crYuaYjKJaPWp7ott9TwnC2aJ/view",
+  "description": "Three teens working at the table during an activity, one checking her phone as part of the exercise.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "teens workshop table activity aug 2026 three working during one checking her phone part exercise investing session august sakshi boardroom video stories footage"
+ },
+ {
+  "id": "IFM-282",
+  "title": "Teens workshop — watching the deck (Aug 2026)",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-282.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1V15Abmss9Y3sQrpa29GUbYSNg4Uv0qaa/view",
+  "description": "Teens at the table facing the screen during a slide presentation.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "teens workshop watching deck aug 2026 table facing screen during slide presentation investing session august sakshi boardroom video stories footage"
+ },
+ {
+  "id": "IFM-283",
+  "title": "Teens workshop — IFM game on laptop (Aug 2026)",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-283.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1E4m_jvni7ygI2FXiosbqvVNVX8PwEszL/view",
+  "description": "Participant reacts while playing an IFM game on the laptop (green game screen visible) — interactive game segment of the workshop.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Social / Promotional",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "teens workshop ifm game laptop aug 2026 participant reacts while playing green screen visible interactive segment investing session august sakshi boardroom video stories footage"
+ },
+ {
+  "id": "IFM-284",
+  "title": "Teens workshop — teens listening (Aug 2026)",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-284.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1GlgVWVhbmFbpUPyEUGEPkWIW4OcluU74/view",
+  "description": "Teens around the table listening during the session, IFM worksheets and pencil cases out.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "teens workshop listening aug 2026 around table during session ifm worksheets pencil cases out investing august sakshi boardroom video stories footage"
+ },
+ {
+  "id": "IFM-285",
+  "title": "Teens workshop — animated answer (Aug 2026)",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-285.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1I4xJGfFv0PQRQKnD-58aN2v23m0cS4o2/view",
+  "description": "A teen gestures animatedly while answering/participating at the table.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "teens workshop animated answer aug 2026 teen gestures animatedly while answering participating table investing session august sakshi boardroom video stories footage"
+ },
+ {
+  "id": "IFM-286",
+  "title": "Teens workshop — Hiral teaching compounding (Aug 2026)",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-286.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1AiqrV7-IuvBDrYsODMUsQBLLga5AsGqY/view",
+  "description": "Hiral presents the 'What if you invest every month' compounding slide (20/25/30/40-year wealth outcomes) to the teens.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "What if you invest every month",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Compounding",
+   "Wealth",
+   "Family & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "teens workshop hiral teaching compounding aug 2026 presents what you invest every month slide year wealth outcomes investing session august sakshi boardroom video stories footage"
+ },
+ {
+  "id": "IFM-287",
+  "title": "Teens workshop — screen walkthrough (Aug 2026)",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-287.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1SeL5N9ylIUwsZYNWYec1moMNWG2IeUCo/view",
+  "description": "A teen points at the screen during a walkthrough; laptop open on the table.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "teens workshop screen walkthrough aug 2026 teen points during laptop open table investing session august sakshi boardroom video stories footage"
+ },
+ {
+  "id": "IFM-288",
+  "title": "Teens workshop — certificates group photo 1 (Aug 2026)",
+  "date": "2026-08-17",
+  "thumb": "../thumbs/IFM-288.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1auLjBxrzWjPJSzfyL-AmrJkVWksa7fl2/view",
+  "description": "Certificate ceremony — eight teens holding their Certificates of Completion with Hiral, big smiles in the boardroom.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Certificate",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof teens workshop certificates group photo aug 2026 certificate ceremony eight holding their completion hiral big smiles boardroom investing session august sakshi"
+ },
+ {
+  "id": "IFM-289",
+  "title": "Teens workshop — compounding slide teaching 1 (Aug 2026)",
+  "date": "2026-08-17",
+  "thumb": "../thumbs/IFM-289.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/104uI4saoGdm0YPSDzQlJRx96JhiReLW7/view",
+  "description": "Hiral at the screen teaching the ₹5,000/month compounding slide; teens follow along with IFM illustrated worksheets on the table.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Compounding",
+   "Family & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "teens workshop compounding slide teaching aug 2026 hiral screen 000 month follow along ifm illustrated worksheets table investing session august sakshi boardroom photo"
+ },
+ {
+  "id": "IFM-290",
+  "title": "Teens workshop — inflation calculator demo (Aug 2026)",
+  "date": "2026-08-17",
+  "thumb": "../thumbs/IFM-290.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1YPChH8FD0zV8xKRXRfsY7hqBJGN0RrL-/view",
+  "description": "Hiral seated mid-explanation with the IFM inflation calculator up on the screen (₹2,15,892 result visible) — QR-code stand and workshop kit on the table.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Family & Money",
+   "Inflation & Interest Rates"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "teens workshop inflation calculator demo aug 2026 hiral seated mid explanation ifm screen 892 result visible code stand kit table investing session august sakshi boardroom photo"
+ },
+ {
+  "id": "IFM-291",
+  "title": "Teens workshop — room wide shot (Aug 2026)",
+  "date": "2026-08-17",
+  "thumb": "../thumbs/IFM-291.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/14b3CEUYhQyAXfUG65qN6sRBhGfEH2o_B/view",
+  "description": "Wide view of the boardroom mid-session — Hiral at the head of the table, screen live, teens with worksheets.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "b-roll cutaway establishing supporting footage context teens workshop room wide shot aug 2026 view boardroom mid session hiral head table screen live worksheets investing august sakshi photo"
+ },
+ {
+  "id": "IFM-292",
+  "title": "Teens workshop — compounding slide teaching 2 (Aug 2026)",
+  "date": "2026-08-17",
+  "thumb": "../thumbs/IFM-292.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1jXIR7j6C5_LtqjZHGtIbi_C9gsqT_oK0/view",
+  "description": "Hiral gestures at the 'What if you invest ₹5,000 every month' slide — 20/25/30/40-year outcomes ending at ₹5.9 crore; teens' worksheets in the foreground.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "What if you invest ₹5,000 every month",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Compounding",
+   "Wealth",
+   "Family & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "teens workshop compounding slide teaching aug 2026 hiral gestures what you invest 000 every month year outcomes ending crore worksheets foreground investing session august sakshi boardroom photo"
+ },
+ {
+  "id": "IFM-293",
+  "title": "Teens workshop — certificates group photo 2 (Aug 2026)",
+  "date": "2026-08-17",
+  "thumb": "../thumbs/IFM-293.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1yf6mrEATO3CmZfUj6UL-tf7gkAVCBfY5/view",
+  "description": "Certificate ceremony — five participants with their Certificates of Completion alongside Hiral and a colleague.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Certificate",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "certificate completion graduation proud achievement social proof teens workshop certificates group photo aug 2026 certificate ceremony five participants their completion alongside hiral colleague investing session august sakshi boardroom"
+ },
+ {
+  "id": "IFM-294",
+  "title": "Teens workshop — Buffett quote slide (Aug 2026)",
+  "date": "2026-08-17",
+  "thumb": "../thumbs/IFM-294.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/19CG02yljxBe8b3pNqvIQnD3hFH8xa0i8/view",
+  "description": "Hiral teaches the Warren Buffett 'Expenses = Income − Savings' famous-words slide; teens with IFM worksheets around the table.",
+  "session": "Teens — Aug 2026",
+  "slide_text": "Expenses = Income − Savings",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Saving",
+   "Managing Money",
+   "Family & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "teens workshop buffett quote slide aug 2026 hiral teaches warren expenses income savings famous words ifm worksheets around table investing session august sakshi boardroom photo"
+ },
+ {
+  "id": "IFM-295",
+  "title": "Kaun Banega Crorepati — live question screen",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-295.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/kbc-live-question.png",
+  "description": "Projector/host view mid-round: the question “Waiting for the ‘perfect time’ usually means…” with A–D options, a live 'Class answers' breakdown panel (67% correct so far), the ₹1,00,000 prize ladder down the right, and a scan-to-join QR top-right. 3200×1800.",
+  "session": "",
+  "slide_text": "Waiting for the 'perfect time' usually means... Class answers 67% correct. Prize Ladder. Scan to join.",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Wealth",
+   "Money Mindset",
+   "Money Conversations"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "kaun banega crorepati live question screen projector host view mid round waiting perfect time usually means options class answers breakdown panel correct far 000 prize ladder down right scan join top 3200 1800 kbc quiz game ifm games screenshot marketing"
+ },
+ {
+  "id": "IFM-296",
+  "title": "Kaun Banega Crorepati — player phone view",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-296.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/kbc-player-phone.png",
+  "description": "The student's phone screen: big A/B/C/D colour tiles under 'Tap your answer!', the player's name and running total (₹7.50 L) pinned top, a '50:50 — remove 2 wrong' lifeline button, and 'Read the options on the big screen'. 1200×2580, portrait.",
+  "session": "",
+  "slide_text": "s phone screen: big A/B/C/D colour tiles under , the player 50:50 — remove 2 wrong Read the options on the big screen",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Portrait",
+  "topic": [
+   "Wealth"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "portrait headshot founder press media kit agency bio kaun banega crorepati player phone view student screen big colour tiles under tap your answer name running total pinned top remove wrong lifeline button read options 1200 2580 portrait kbc quiz game ifm games screenshot marketing asset"
+ },
+ {
+  "id": "IFM-297",
+  "title": "Kaun Banega Crorepati — winner podium",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-297.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/kbc-winner-podium.png",
+  "description": "End-of-game 'Crorepati! 🎉' screen — three-place podium with Priya winning ₹30 L, full class leaderboard below, IFM medallion and studio-audience backdrop. 3200×1800.",
+  "session": "",
+  "slide_text": "Crorepati! 🎉",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Wealth",
+   "Stock Market"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "b-roll cutaway establishing supporting footage context kaun banega crorepati winner podium end game screen three place priya winning ₹30 full class leaderboard below ifm medallion studio audience backdrop 3200 1800 kbc quiz finale games screenshot marketing asset"
+ },
+ {
+  "id": "IFM-298",
+  "title": "Mutual Fund Manager LIVE — fund launch lobby",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-298.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/mf-lobby.png",
+  "description": "Screen 1: the teacher names the fund ('Priya's Growth Fund'), picks Equity / Debt / Hybrid, and taps assets (Reliance, HDFC Bank, Infosys, TCS) to build it. Join QR + game PIN MF5003 on the left, 13 investors already joined. 2720×1680.",
+  "session": "",
+  "slide_text": "s Growth Fund",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Stocks / Equity",
+   "Mutual Funds",
+   "Fixed Income"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "mutual fund manager live launch lobby screen teacher names priya growth picks equity debt hybrid taps assets reliance hdfc bank infosys tcs build join game pin mf5003 left investors already joined 2720 1680 ifm games screenshot marketing asset"
+ },
+ {
+  "id": "IFM-299",
+  "title": "Mutual Fund Manager LIVE — market rules screen",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-299.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/mf-market.png",
+  "description": "Screen 6: AUM ₹7.27L / NAV ₹10.60 / Units 68,600 as three live cards, with the rule table showing how market up/down and money in/out each move AUM, NAV and units — plus the explainer 'the fund's holdings are worth more, so NAV and AUM climb together'. 2720×1680.",
+  "session": "",
+  "slide_text": "s holdings are worth more, so NAV and AUM climb together",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Mutual Funds"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "nav net asset value mutual fund manager live market rules screen aum 27l nav ₹10 units 600 three cards rule table showing how down money out each move plus explainer holdings worth more climb together 2720 1680 teaching game ifm games screenshot marketing asset"
+ },
+ {
+  "id": "IFM-300",
+  "title": "Mutual Fund Manager LIVE — withdrawal screen",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-300.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/mf-withdraw.png",
+  "description": "Screen 8: 'The NAV is now ₹22.00 — time to cash out.' AUM falling, NAV unchanged, units redeemed, with each student's withdrawal listed on the right (6 of 13 cashed out) — the lesson that selling drops AUM and units but not NAV. 2720×1680.",
+  "session": "",
+  "slide_text": "The NAV is now ₹22.00 — time to cash out.",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Family & Money",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "nav net asset value mutual fund manager live withdrawal screen nav now ₹22 time cash out aum falling unchanged units redeemed each student listed right cashed lesson selling drops but not 2720 1680 redemption game ifm games screenshot marketing asset"
+ },
+ {
+  "id": "IFM-301",
+  "title": "Mutual Fund Manager LIVE — group recap",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-301.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/mf-recap.png",
+  "description": "Closing recap: 'Together, you started & ran a real mutual fund.' ₹16.32L put in → ₹35.90L, NAV ₹10 → ₹22 (+120%), 13 investors — ending on 'your students didn't just hear about mutual funds — they started one, grew it, and cashed out.' 2720×1680.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Mutual Funds"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "nav net asset value mutual fund manager live group recap closing together you started ran real ₹16 32l put ₹35 90l nav ₹10 ₹22 120 investors ending your students didn just hear about funds they one grew cashed out 2720 1680 results outcome wrap"
+ },
+ {
+  "id": "IFM-302",
+  "title": "Stock Rush Pro — join lobby",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-302.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/stockrush-lobby.jpg",
+  "description": "Room FBAP lobby: 'A decade of India's markets · in 30 minutes', large scan-to-join QR with the room code, players-in-room list, and 'Start Game with 15 Players'. Footer notes ₹2L starting cash, 6 rounds spanning 2014–2026. 1440×1679.",
+  "session": "",
+  "slide_text": "Stock Rush Pro. A decade of India's markets in 30 minutes. FBAP. Start Game with 15 Players.",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "stock rush pro join screen qr code scan to join room code lobby players classroom game markets decade"
+ },
+ {
+  "id": "IFM-303",
+  "title": "Stock Rush Pro — final results",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-303.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/stockrush-results.jpg",
+  "description": "Game-over board: top trader Riya at ₹3.82L (+90.9%), class average +15.5%, 15/15 beat the bots, most-owned stock Reliance — full leaderboard plus a 'where did everyone land' return-distribution chart. 1440×2183.",
+  "session": "",
+  "slide_text": "where did everyone land",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Risk & Returns",
+   "Stocks / Equity",
+   "Stock Market"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "stock rush pro final results game over board top trader riya 82l class average beat bots most owned reliance full leaderboard plus where did everyone land return distribution chart 1440 2183 returns performance ifm games screenshot marketing asset"
+ },
+ {
+  "id": "IFM-304",
+  "title": "Swayamvar — matchmaking lobby",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-304.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/swayamvar-lobby.jpg",
+  "description": "'The Swayamvar is Open' join screen in the marigold/red wedding theme — scan-to-take-your-seat QR (ifm.game/swayamvar), four guests seated with playful aliases (Gold Mom, Maharani Ji, Family CFO, Bua Supreme), and tonight's format: 6 prospects, 4 rounds. 1440×900.",
+  "session": "",
+  "slide_text": "The Swayamvar is Open",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Family & Money"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "swayamvar matchmaking lobby open join screen marigold red wedding theme scan take your seat ifm game four guests seated playful aliases gold mom maharani family cfo bua supreme tonight format prospects rounds 1440 900 games screenshot marketing asset"
+ },
+ {
+  "id": "IFM-305",
+  "title": "Swayamvar — suitor profile card",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-305.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/swayamvar-suitors.jpg",
+  "description": "'Meet the Suitors' card for Mr./Miss Cash Khan ('Always Available', Emergency Response Specialist) — green flags (always available, extremely dependable) vs red flags (zero ambition, career growth stalled, inflation stealing his confidence), with 'what this represents: CASH' revealed at the bottom. 1440×900.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Inflation & Interest Rates"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "swayamvar suitor profile card meet suitors miss cash khan always available emergency response specialist green flags extremely dependable red zero ambition career growth stalled inflation stealing his confidence what represents revealed bottom 1440 900 asset class analogy game ifm games"
+ },
+ {
+  "id": "IFM-306",
+  "title": "Swayamvar — voting round",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-306.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/swayamvar-voting.jpg",
+  "description": "'Who Would You Marry?' voting board — all 12 suitors (male and female versions of Cash, Debt, Gold, Real Estate, Equity, Alt Investments) with a live 'verdicts roll in' panel showing each guest's status. 1440×900.",
+  "session": "",
+  "slide_text": "Who Would You Marry? verdicts roll in",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Stocks / Equity",
+   "Fixed Income",
+   "Real Estate / REITs",
+   "Gold"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "swayamvar voting round who would you marry board all suitors male female versions cash debt gold real estate equity alt investments live verdicts roll panel showing each guest status 1440 900 asset classes grid game ifm games screenshot marketing"
+ },
+ {
+  "id": "IFM-307",
+  "title": "Swayamvar — grand finale reveal",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-307.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/swayamvar-finale.jpg",
+  "description": "'Who did everyone choose?' finale matrix — each guest's answers across the four questions (marry / date / your mother's pick / call at 2am), colour-coded by suitor, with 'Reveal Their Role' to unmask what each asset class represents. 1440×900.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Money Conversations"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "swayamvar grand finale reveal who did everyone choose matrix each guest answers across four questions marry date your mother pick call 2am colour coded suitor their role unmask what asset class represents 1440 900 results game ifm games screenshot marketing"
+ },
+ {
+  "id": "IFM-308",
+  "title": "Kaun Banega Crorepati — 12s game teaser",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-308.jpg",
+  "video": "teasers/kbc-teaser.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/teasers/kbc-teaser.mp4",
+  "description": "12s silent screen-recorded teaser cutting through the KBC quiz flow — round intros ('Fastest correct doubles up'), live questions and the winner podium, in the teal TV-studio theme. 1920×1080, no audio (add music in-app).",
+  "session": "",
+  "slide_text": "Fastest correct doubles up",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Wealth",
+   "Money Conversations"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "kaun banega crorepati 12s game teaser silent screen recorded cutting through kbc quiz flow round intros fastest correct doubles live questions winner podium teal studio theme 1920 1080 audio add music app gameplay promo ifm games screenshot marketing asset"
+ },
+ {
+  "id": "IFM-309",
+  "title": "Lifestyle Time Machine — 12s game teaser",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-309.jpg",
+  "video": "teasers/ltm-teaser.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/teasers/ltm-teaser.mp4",
+  "description": "12s silent teaser for LTM — the 'Dreams Are In' round recap where each player's lifestyle picks (Louis Vuitton haul, dream car, Disney trip, business class, start a business) are totalled against their 25L budget. 1920×1080, no audio.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Managing Money"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "lifestyle time machine 12s game teaser silent ltm dreams round recap where each player picks louis vuitton haul dream car disney trip business class start totalled against their 25l budget 1920 1080 audio gameplay ifm games screenshot marketing asset"
+ },
+ {
+  "id": "IFM-310",
+  "title": "Stock Rush — 12s game teaser",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-310.jpg",
+  "video": "teasers/stockrush-teaser.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/teasers/stockrush-teaser.mp4",
+  "description": "12s silent teaser for Stock Rush — the COVID Crash round (March 2020: India locked down) with the news cards and a player selling MARUTI at '70% of worth', in the game's red crash palette. 1920×1080, no audio.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "stock rush 12s game teaser silent covid crash round march 2020 india locked down news cards player selling maruti worth red palette 1920 1080 audio gameplay ifm games screenshot marketing asset"
+ },
+ {
+  "id": "IFM-311",
+  "title": "Swayamvar — suitor character cards (set of 6)",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-311.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/suitor-cash.png",
+  "description": "The six AI-generated Bollywood-style suitor portraits used on the Swayamvar cards, one per asset class: Cash (police officer on the phone, always available), Gold (sunglasses and gold sherwani), Equity (charming, unpredictable), Debt (bespectacled and steady), Real Estate (turbaned, outside a mansion), Alt Investments (pink sunglasses, flashy). 250×162 each — download gives all six as a zip.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [
+   "Stocks / Equity",
+   "Fixed Income",
+   "Real Estate / REITs",
+   "Gold"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "IFM / In-house",
+  "search_terms": "swayamvar suitor character cards set six generated bollywood style portraits used one per asset class cash police officer phone always available gold sunglasses sherwani equity charming unpredictable debt bespectacled steady real estate turbaned outside mansion alt investments pink flashy 250"
+ },
+ {
+  "id": "IFM-312",
+  "title": "IFM logo — horizontal lockup",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-312.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/logo-full.png",
+  "description": "Full horizontal IFM lockup: the circular tree-and-woman mark beside 'INVESTING FOR MUMMIES' with the ™ and the tagline 'nurturing financially confident women'. Transparent PNG, 1818×792.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "library": false,
+  "type": "",
+  "format": "",
+  "topic": [],
+  "person": [],
+  "source": "IFM / In-house",
+  "status": "Ready",
+  "search_terms": ""
+ },
+ {
+  "id": "IFM-313",
+  "title": "IFM logo — round mark",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-313.jpg",
+  "video": "",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/logo-round.png",
+  "description": "The circular IFM mark on its own — woman raising two ₹ coins in a leafy tree, 'INVESTING FOR' arched above, 'MUMMIES' below, ™ top-right. 224×218, the version used as the reel watermark and game header.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "library": false,
+  "type": "",
+  "format": "",
+  "topic": [],
+  "person": [],
+  "source": "IFM / In-house",
+  "status": "Ready",
+  "search_terms": ""
+ },
+ {
+  "id": "IFM-314",
+  "title": "IFM animated hero logo (9s)",
+  "date": "2026-08-18",
+  "thumb": "../thumbs/IFM-314.jpg",
+  "video": "game-assets/ifm-hero-logo.mp4",
+  "drive": "https://ifm-deploy.vercel.app/content/game-assets/ifm-hero-logo.mp4",
+  "description": "9s animated logo reveal — the polished 3D metallic IFM medallion rotating into place on a dark smoky ground beside 'Investing for Mummies · nurturing financially confident women'. 1280×720. Used as the intro/outro on reels and as game-screen branding.",
+  "session": "",
+  "slide_text": "Investing for Mummies · nurturing financially confident women",
+  "silent": false,
+  "library": false,
+  "type": "",
+  "format": "",
+  "topic": [],
+  "person": [],
+  "source": "IFM / In-house",
+  "status": "Ready",
+  "search_terms": ""
+ },
+ {
+  "id": "IFM-315",
+  "title": "Corporate workshop (4 Jul 2026) — full session footage, 165 clips",
+  "date": "2026-07-04",
+  "thumb": "../thumbs/IFM-315.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1FrE-A4xMaPFv-zjo61cWcG9Ea6ZsaccJ",
+  "description": "Handheld phone footage of a women-only corporate session in a wood-panelled boardroom with a large world map on the wall. Covers the room filling up, Hiral in a red top presenting to roughly 28 seated women, close-ups of attendees listening and taking notes, and screen-grabs of the projected deck — including the ₹1-doubled-every-day-for-30-days = ₹5 crore riddle, a ‘How to Read a Factsheet / which AMC is managing it’ slide, and the Mutual Fund Manager LIVE join QR with room PIN MF4236. 165 .MOV files, ~36MB each (~5.8GB total).",
+  "session": "Corporate — 4 Jul 2026",
+  "slide_text": "How to Read a Factsheet / which AMC is managing it",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Compounding",
+   "Wealth",
+   "Mutual Funds"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "corporate workshop jul 2026 full session footage 165 clips handheld phone women only wood panelled boardroom large world map wall covers room filling hiral red top presenting roughly seated close ups attendees listening taking notes screen grabs projected deck including"
+ },
+ {
+  "id": "IFM-316",
+  "title": "Corporate workshop (4 Jul 2026) — full group photo",
+  "date": "2026-07-04",
+  "thumb": "../thumbs/IFM-316.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/15idf4KKtm_16BH4xSqMscuzBPqQj7QnH/view",
+  "description": "End-of-session group shot: about 28 women stood and seated around the boardroom table, Hiral centre-front in the red top. Water bottles, notebooks and the IFM handout are still on the table. Four near-identical frames exist in the folder (IMG_6177–6180); this is the cleanest.",
+  "session": "Corporate — 4 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "testimonial review feedback social proof word of mouth corporate workshop jul 2026 full group photo end session shot about women stood seated around boardroom table hiral centre front red top water bottles notebooks ifm handout still four near identical frames exist folder img 6177 6180 cleanest attendees testimonial"
+ },
+ {
+  "id": "IFM-317",
+  "title": "Corporate workshop (4 Jul 2026) — Hiral teaching the room",
+  "date": "2026-07-04",
+  "thumb": "../thumbs/IFM-317.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1p2yqh9WvAG05z2CpAAUlqiEhLsX1pqhp/view",
+  "description": "Hiral stood at the head of the boardroom table mid-explanation, hand out, addressing a full row of women down one side of the table. Shot from behind the attendees so the room reads as packed. Wide 4:3, good crop room for a carousel or slide.",
+  "session": "Corporate — 4 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "corporate workshop jul 2026 hiral teaching room stood head boardroom table mid explanation hand out addressing full row women down one side shot from behind attendees reads packed wide good crop carousel slide action speaker photo july session"
+ },
+ {
+  "id": "IFM-318",
+  "title": "Corporate workshop (4 Jul 2026) — room wide, world-map wall",
+  "date": "2026-07-04",
+  "thumb": "../thumbs/IFM-318.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1OzJSDCLvWUmMM-3qGyr3bZCemUoLFijT/view",
+  "description": "Wide establishing shot of the whole boardroom — world map on the left wall, dark screen at the far end, attendees ringing the table and a second row of chairs along the right. Hiral stands with her back to camera at the far side.",
+  "session": "Corporate — 4 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Unknown",
+  "search_terms": "b-roll cutaway establishing supporting footage context corporate workshop jul 2026 room wide world map wall establishing shot whole boardroom left dark screen far end attendees ringing table second row chairs along right hiral stands her back camera side venue july session photo"
+ },
+ {
+  "id": "IFM-319",
+  "title": "Corporate workshop (4 Jul 2026) — DSLR portraits of Hiral (11 shots + RAW)",
+  "date": "2026-07-04",
+  "thumb": "../thumbs/IFM-319.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1iZye0DSRAsi8WgQIYApMNhx45GcVNswF",
+  "description": "Canon-shot portraits from the /camera subfolder: Hiral seated at the boardroom table behind an open MacBook, red sleeveless top, warm wood and cream-panel background, some frames with glasses on and some off. 11 JPEGs plus matching .CR3 RAW files (4E7A5748–5760). Cleanest founder headshots IFM currently has — far better lit than the phone stills.",
+  "session": "Corporate — 4 Jul 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Unknown",
+  "search_terms": "portrait headshot founder press media kit agency bio corporate workshop jul 2026 dslr portraits hiral shots raw canon shot from camera subfolder seated boardroom table behind open macbook red sleeveless top warm wood cream panel background some frames glasses off jpegs plus matching cr3 files 4e7a5748 5760 cleanest"
+ },
+ {
+  "id": "IFM-320",
+  "title": "September: Kinda Chic",
+  "date": "2026-09-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+  "description": "Copy-only slide for a 'kinda chic' trend carousel — no frames designed yet, just the six lines the carousel will use: kinda chic to start learning finance after 2 kids; to understand finance; to create a community with other women; to be able to discuss finance with confidence; to be able to take charge of your own financial future; to start Investing for Mummies.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Money Conversations",
+   "Family & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "september kinda chic copy only slide trend carousel frames designed yet just six lines will use start learning finance after kids understand create community other women able discuss confidence take charge your own financial future investing mummies topical aakara"
+ },
+ {
+  "id": "IFM-321",
+  "title": "September: BSE and NSE",
+  "date": "2026-09-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+  "description": "Blank placeholder slide for a reel explaining BSE and NSE. Label only — no script, frames or copy on the slide yet.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "september bse nse blank placeholder slide reel explaining label only script frames copy yet stock exchange markets workshops jargon shot aakara"
+ },
+ {
+  "id": "IFM-322",
+  "title": "September: GDP explained without the boring part",
+  "date": "2026-09-01",
+  "thumb": "../thumbs/IFM-322.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/17MMraBVxH9ezUuX58BUrXgfoGiW92-S6",
+  "description": "Reel cover art: mint-green dotted background with a large faded rupee-and-arrows watermark. Navy serif headline 'GDP explained' above a cut-out of Hiral in a white sleeveless top, arms folded, smiling to camera. A tilted 'FINANCE NEWS' clipping overlays her forearm reading 'INDIA'S 7.8% GDP KEEPS IT THE FASTEST GROWING MAJOR ECONOMY'. Closing line 'without the boring part' in navy and red serif.",
+  "session": "Aakara September delivery",
+  "slide_text": "GDP explained FINANCE NEWS S 7.8% GDP KEEPS IT THE FASTEST GROWING MAJOR ECONOMY without the boring part",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Portrait",
+  "topic": [
+   "Markets & Economy"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration september gdp explained without boring part reel cover art mint green dotted background large faded rupee arrows watermark navy serif headline above cut out hiral white sleeveless top arms folded smiling camera tilted finance news clipping overlays her forearm reading"
+ },
+ {
+  "id": "IFM-323",
+  "title": "July: Headline News",
+  "date": "2026-07-15",
+  "thumb": "../thumbs/IFM-323.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1RJjIbuDvuEmQMi2Md9vqBg87eE1aBp_g",
+  "description": "Carousel cover: two mock 'World News' front pages — 'Elon Musk gains $18 billion overnight' and 'Mukesh Ambani's wealth jumps after Reliance shares rise' — under the headline 'Headlines we see all the time', closing with 'So… where did all that money come from?'",
+  "session": "",
+  "slide_text": "front pages — Mukesh Ambani — under the headline , closing with",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Wealth",
+   "Stocks / Equity"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "july headline news carousel cover two mock world front pages elon musk gains billion overnight mukesh ambani wealth jumps after reliance shares rise under headlines see all time closing where did money come from aakara finished delivered"
+ },
+ {
+  "id": "IFM-324",
+  "title": "July: TCS QResults News",
+  "date": "2026-07-15",
+  "thumb": "../thumbs/IFM-324.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/138UQtZ83QoSNeq1Cx-SFIuTZ81oKuUTt",
+  "description": "Carousel cover: a school report card graded A+/A- on Revenue, Net Profit and Earnings Per Share — 'The Stock Market's Report Card Season Starts Thursday! And yes, it affects your wallet.' (TCS quarterly results topical.)",
+  "session": "",
+  "slide_text": "The Stock Market",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Family & Money",
+   "Stocks / Equity",
+   "Stock Market"
+  ],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "rbi repo rate central bank july tcs qresults news carousel cover school report card graded revenue net profit earnings per share stock market season starts thursday yes affects your wallet quarterly results topical aakara finished delivered"
+ },
+ {
+  "id": "IFM-325",
+  "title": "July: Hiral expertise",
+  "date": "2026-07-15",
+  "thumb": "../thumbs/IFM-325.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1Z8tXHbWcBfY88F5bRp4GpFAqnjz9AKHP",
+  "description": "Reel: Hiral to camera on a blue gradient — 'If finance pages confuse you, this is for you!' Founder-expertise positioning reel, 4 files in the folder.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "july hiral expertise reel camera blue gradient finance pages confuse you founder positioning files folder aakara finished delivered"
+ },
+ {
+  "id": "IFM-326",
+  "title": "August: 10 Minute Money",
+  "date": "2026-08-15",
+  "thumb": "../thumbs/IFM-326.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1d_EcPr_9CeqA-A3FnIrKlyNWpGVo-2fx",
+  "description": "Carousel cover: 'The 10-minute money job you should do this week' in bold serif on cream — a do-one-thing-now actionable carousel.",
+  "session": "",
+  "slide_text": "The 10-minute money job you should do this week",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "august minute money carousel cover job you should week bold serif cream one thing now actionable aakara finished delivered"
+ },
+ {
+  "id": "IFM-327",
+  "title": "August: 1X1",
+  "date": "2026-08-15",
+  "thumb": "../thumbs/IFM-327.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1nKWRAbAlLJuL-71WsJiawcutTTymJzH4",
+  "description": "Reel: Hiral in blue holding a gold bar in one hand and a boxed necklace in the other — 'This simple Money Rule will change your life!'",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Gold"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "august 1x1 reel hiral blue holding gold bar one hand boxed necklace other simple money rule will change your life aakara finished delivered"
+ },
+ {
+  "id": "IFM-328",
+  "title": "August: Hidden Cost",
+  "date": "2026-08-15",
+  "thumb": "../thumbs/IFM-328.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1mnT8cYTv37rc1pdVmFlfGlSHLrySkC6Q",
+  "description": "Reel: a woman counting ₹500 notes amid faded family scenes — 'The Hidden Cost of neglecting your finances.'",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Family & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "august hidden cost reel woman counting ₹500 notes amid faded family scenes neglecting your finances aakara finished delivered"
+ },
+ {
+  "id": "IFM-329",
+  "title": "August: Jackson Hole",
+  "date": "2026-08-15",
+  "thumb": "../thumbs/IFM-329.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1eRWjOG0Z9flMOvXYbDOy34qWnXOUalNX",
+  "description": "Reel: Hiral in a blue blazer pointing at the camera beside a 'Jackson Hole' road sign — 'Why you should keep an eye on this Secret Meeting.' Fed symposium topical.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Published",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Family & Money",
+   "Markets & Economy"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "august jackson hole reel hiral blue blazer pointing camera beside road sign why you should keep eye secret meeting fed symposium topical aakara finished delivered"
+ },
+ {
+  "id": "IFM-330",
+  "title": "August: RBI (part 1)",
+  "date": "2026-08-15",
+  "thumb": "../thumbs/IFM-330.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1qHuy7M_PLi3O1f_9j27iCNDA7zL678gN",
+  "description": "Reel: Hiral in a green striped shirt mid-sentence, 'Be honest.' on-screen — RBI explainer part 1.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Markets & Economy"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "rbi repo rate central bank august rbi part reel hiral green striped shirt mid sentence honest screen explainer aakara finished delivered"
+ },
+ {
+  "id": "IFM-331",
+  "title": "August: RBI pt2",
+  "date": "2026-08-15",
+  "thumb": "../thumbs/IFM-331.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1hP9YuLjEJ03UmSQkJW3-rcnCq5zan76E",
+  "description": "Reel: Hiral on a sofa holding an AC-style remote with the RBI seal behind — 'Why you shouldn't ignore the Repo Rate.' RBI part 2.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Markets & Economy",
+   "Inflation & Interest Rates"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "rbi repo rate central bank august rbi pt2 reel hiral sofa holding style remote seal behind why you shouldn ignore repo rate part aakara finished delivered"
+ },
+ {
+  "id": "IFM-332",
+  "title": "August: Woman's equality",
+  "date": "2026-08-15",
+  "thumb": "../thumbs/IFM-332.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1HFRtv7bw1LNdnxGTLfFreF4YRPT9qM5K",
+  "description": "Reel: Hiral in white lace with a second presenter composited — 'Who says Money Conversations aren't for you?' Women's Equality Day topical.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Published",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Money Conversations"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "august woman equality reel hiral white lace second presenter composited who says money conversations aren you women day topical aakara finished delivered"
+ },
+ {
+  "id": "IFM-333",
+  "title": "August: Asset",
+  "date": "2026-08-15",
+  "thumb": "../thumbs/IFM-333.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1ulQgtjpWj9EYvq5EcnfFBSqjFGjtLrig",
+  "description": "Story: postage-stamp frame on coral — 'Confused about assets? WE'VE GOT YOU!' Teaser for the assets series.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Social / Promotional",
+  "topic": [],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "august asset story postage stamp frame coral confused about assets got you teaser series aakara finished delivered"
+ },
+ {
+  "id": "IFM-334",
+  "title": "September: Thali (asset allocation)",
+  "date": "2026-09-01",
+  "thumb": "../thumbs/IFM-334.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1ok5PdE0vEGugyvA7dm8XLxgerDgnlHrW",
+  "description": "Hiral sits at a wooden dining table talking straight to camera with a steel thali in front of her — rice, chana sabzi, dal, roti, salad and pickle in separate compartments, a glass of water alongside, on a bright red-and-green printed placemat. White graphic tee, bright modern home interior behind. The balanced-plate framing sets up an asset-allocation analogy.",
+  "session": "Aakara September delivery",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Portrait",
+  "topic": [
+   "Asset Allocation",
+   "Diversification"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "september thali asset allocation hiral sits wooden dining table talking straight camera steel front her rice chana sabzi dal roti salad pickle separate compartments glass water alongside bright red green printed placemat white graphic tee modern home interior behind balanced"
+ },
+ {
+  "id": "IFM-335",
+  "title": "RSS workshop — Hiral presenting the Introduction slide",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-335.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1Lc57tOczIQn2XhtDQ2PlMYGRpPagmRm9/view",
+  "description": "Hiral stands at the head of a long boardroom table mid-sentence, both hands raised, presenting to a seated group. The projector screen behind her shows the 'Introduction' slide — an illustrated avatar of her ringed by bio callouts: created a handbook to teach investing simply, Bachelor's in Communications, 10 years as a writer, mother of 2, 'Have a math phobia', and learned personal finance through self-study. Water bottles and Maruti-branded snack boxes line the table.",
+  "session": "RSS workshop (Balsabha) — 4 Jun 2026",
+  "slide_text": "Introduction s in Communications, 10 years as a writer, mother of 2,",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Women & Money",
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "rss workshop hiral presenting introduction slide stands head long boardroom table mid sentence both hands raised seated group projector screen behind her shows illustrated avatar ringed bio callouts created handbook teach investing simply bachelor communications years writer mother have math"
+ },
+ {
+  "id": "IFM-336",
+  "title": "RSS workshop — Hiral on the \"Invisible Enemy: Inflation\" slide",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-336.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/17MMLvmTMbbCrEMCEfpdNMT3oOBlE37Tt/view",
+  "description": "Hiral presenting at the head of the boardroom table, hands together, with attendees' chair-backs in the foreground. The screen behind reads 'The Invisible Enemy: Inflation' — 'Inflation quietly steals the purchasing power of...' — with a cartoon green inflation monster looming over a pile of cash, a list of rising costs (school fees, groceries, healthcare, travel), and the punchline 'Our mothers were taught to SAVE / Our generation must learn to INVEST'.",
+  "session": "RSS workshop (Balsabha) — 4 Jun 2026",
+  "slide_text": "chair-backs in the foreground. The screen behind reads Inflation quietly steals the purchasing power of... Our mothers were taught to SAVE / Our generation must learn to INVEST",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Family & Money",
+   "Inflation & Interest Rates"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "rss workshop hiral invisible enemy inflation slide presenting head boardroom table hands together attendees chair backs foreground screen behind reads quietly steals purchasing power cartoon green monster looming over pile cash list rising costs school fees groceries healthcare travel punchline"
+ },
+ {
+  "id": "IFM-337",
+  "title": "RSS workshop — group photo at the Balsabha banner (close group)",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-337.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1FgWlN8LJvFV5oR8ExZb1ZC7-6_uMUpmF/view",
+  "description": "Nine women posed around a roll-up BALSABHA banner — five standing, four crouched in front — smiling at camera in a hotel function room, projector screen glowing at the left edge and a patterned cream carpet underfoot. Mix of Indian ethnic wear and casual clothes.",
+  "session": "RSS workshop (Balsabha) — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration rss workshop group photo balsabha banner close nine women posed around roll five standing four crouched front smiling camera hotel function room projector screen glowing left edge patterned cream carpet underfoot mix indian ethnic wear casual clothes attendees june 2026"
+ },
+ {
+  "id": "IFM-338",
+  "title": "RSS workshop — full group photo at the Balsabha banner",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-338.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1NRXLdsUFeMSH1YhVJLlkyRhrhldUDAyD/view",
+  "description": "The full cohort — around sixteen women — gathered on and around a low step beside the BALSABHA roll-up banner, front row crouched, everyone facing camera. Warm cove lighting, dark panelled wall behind, patterned cream carpet.",
+  "session": "RSS workshop (Balsabha) — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Classroom Moment",
+  "topic": [
+   "Family & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "rss workshop full group photo balsabha banner cohort around sixteen women gathered low step beside roll front row crouched everyone facing camera warm cove lighting dark panelled wall behind patterned cream carpet attendees june 2026"
+ },
+ {
+  "id": "IFM-339",
+  "title": "RSS workshop — audience applauding",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-339.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/10yIA3Kf-EBt3wiKdzk9BhzFRz8ADbQiU/view",
+  "description": "Candid from the back of the room: around a dozen women in black office chairs applauding, several smiling toward the front. A ceiling-mounted projector is prominent in the upper frame and a handout held by someone in the foreground catches the light. Shot past the seated rows rather than posed.",
+  "session": "RSS workshop (Balsabha) — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration rss workshop audience applauding candid from back room around dozen women black office chairs several smiling toward front ceiling mounted projector prominent upper frame handout held someone foreground catches light shot past seated rows rather than posed balsabha applause attendees"
+ },
+ {
+  "id": "IFM-340",
+  "title": "RSS workshop — raw session video dump (101 clips, UNREVIEWED)",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-340.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+  "description": "101 raw MP4 clips from the RSS workshop, shot on phone and dumped with UUID filenames. Sampled frames are largely projector captures of the workshop deck — 'From Stree Dhan to Financial Wisdom' and the prompt slide 'What does ‘Stree Dhan’ mean to you?' over an illustrated money-tree-and-vault graphic — plus room and speaker coverage. NOT individually reviewed or tagged.",
+  "session": "RSS workshop (Balsabha) — 4 Jun 2026",
+  "slide_text": "From Stree Dhan to Financial Wisdom What does ‘Stree Dhan",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "testimonial review feedback social proof word of mouth rss workshop raw session video dump 101 clips unreviewed mp4 from shot phone dumped uuid filenames sampled frames largely projector captures deck stree dhan financial wisdom prompt slide what does mean you over illustrated money tree vault graphic plus room"
+ },
+ {
+  "id": "IFM-341",
+  "title": "September: Jio IPO — do you know how to invest in Jio?",
+  "date": "2026-09-03",
+  "thumb": "../thumbs/IFM-341.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1izAZNyIytUGtfGpxYAQLA-83pShtUHcx",
+  "description": "8-artboard carousel on the coming Jio IPO, on IFM's pale-teal grid background with a faint candlestick-chart watermark. Cover: a hand fanning three blue/green/red Jio 'Digital Life' cards under 'You know Jio. But do you know how to invest in Jio?'. Inside slides argue against familiarity bias — 'Don't confuse familiarity with an investment thesis', with a cut-out of Mukesh Ambani — and close on a checklist card: 'An IPO is not an invitation to buy, it's an invitation to do your homework — What am I buying? What am I paying? What could go wrong? Does it belong in MY portfolio?'",
+  "session": "Aakara September delivery",
+  "slide_text": "s pale-teal grid background with a faint candlestick-chart watermark. Cover: a hand fanning three blue/green/red Jio cards under . Inside slides argue against familiarity bias — t confuse familiarity with an investment thesis An IPO is not an invitation to buy, it",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Investing",
+   "IPOs"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "september jio ipo you know how invest artboard carousel coming ifm pale teal grid background faint candlestick chart watermark cover hand fanning three blue green red digital life cards under but inside slides argue against familiarity bias don confuse investment"
+ },
+ {
+  "id": "IFM-342",
+  "title": "September: Brand awareness — “Can we stop apologizing”",
+  "date": "2026-09-03",
+  "thumb": "../thumbs/IFM-342.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1lUpzR-igdWwhXt7dCWOX65sPjo9fJ4Es",
+  "description": "Single MP4. The sampled frame is an extreme, motion-blurred close-up of a woman speaking to camera — only mouth, chin and neck in frame, gold hoop earring, dark hair, denim-blue collared shirt — with the caption 'Can we stop apologizing' in a white box across the lower third. Handheld, fast-moving.",
+  "session": "Aakara September delivery",
+  "slide_text": "Can we stop apologizing",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Portrait",
+  "topic": [
+   "Money Mindset"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "testimonial review feedback social proof word of mouth september brand awareness can stop apologizing single mp4 sampled frame extreme motion blurred close woman speaking camera only mouth chin neck gold hoop earring dark hair denim blue collared shirt caption white box across lower third handheld fast moving reel"
+ },
+ {
+  "id": "IFM-343",
+  "title": "July: How To Read A Quarterly Report",
+  "date": "2026-07-15",
+  "thumb": "../thumbs/IFM-343.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1H7FGAM7hjLW_l-0DKCCiMWx79HwcaNzM/view",
+  "description": "Reel cover — Hiral in a pink kurta sits at a wooden desk with a laptop, lapel mic clipped on, smiling at camera in front of a large whiteboard-style candlestick chart with red and green candles and a grey volume histogram. White caps 'HOW TO READ A' sits above a navy rounded box reading 'QUARTERLY REPORT'.",
+  "session": "Aakara July delivery",
+  "slide_text": "HOW TO READ A QUARTERLY REPORT",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "rbi repo rate central bank candid warm natural unposed relaxed friendly celebration july how read quarterly report reel cover hiral pink kurta sits wooden desk laptop lapel mic clipped smiling camera front large whiteboard style candlestick chart red green candles grey volume histogram white caps above navy rounded box reading results earnings"
+ },
+ {
+  "id": "IFM-344",
+  "title": "June: Why do IPOs come in waves?",
+  "date": "2026-06-29",
+  "thumb": "../thumbs/IFM-344.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/15fqBhWg93HGvTO9e0-zJRpCYa7Afn84l",
+  "description": "8-artboard explainer carousel on IFM's pale-teal wave background. Cover asks 'Why do IPOs suddenly come in waves?' over a white upward zig-zag arrow. Slide 2 pairs a stock photo of a woman peering through a magnifying glass with 'One month... hardly any IPOs. The next... they're everywhere! It's not a coincidence.' Later slides explain that companies can spend years ready to list but wait for market conditions, closing on a navy card: 'Being ready isn't enough - the market has to be ready too.'",
+  "session": "Aakara June delivery",
+  "slide_text": "s pale-teal wave background. Cover asks over a white upward zig-zag arrow. Slide 2 pairs a stock photo of a woman peering through a magnifying glass with re everywhere! It Later slides explain that companies can spend years ready to list but wait for market conditions, closing on a navy card: t enough - the market has to be ready too.",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Stocks / Equity",
+   "IPOs"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "june why ipos come waves artboard explainer carousel ifm pale teal wave background cover asks suddenly over white upward zig zag arrow slide pairs stock photo woman peering through magnifying glass one month hardly any next they everywhere not coincidence"
+ },
+ {
+  "id": "IFM-345",
+  "title": "June: NSE has filed a ₹30,000 crore IPO",
+  "date": "2026-06-22",
+  "thumb": "../thumbs/IFM-345.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/drive/folders/1P6p2Mk89Xl5mUywlgIVQk4qxMdsM6N2m",
+  "description": "6-artboard news-topical carousel on a mint-green tint over a photo of the NSE building at Bandra Kurla Complex. Cover: 'NSE has filed a ₹30,000 crore IPO - and soon you may be able to buy NSE on BSE!' with a 'No, that's not a typo' CTA. Inside slides bust the assumption that NSE is government-owned ('Most people think NSE is owned by the Government of India. But it's not.') and close on the plot twist that BSE is already listed - and its shares trade on NSE.",
+  "session": "Aakara June delivery",
+  "slide_text": "NSE has filed a ₹30,000 crore IPO - and soon you may be able to buy NSE on BSE! s not a typo Most people think NSE is owned by the Government of India. But it",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Ready",
+  "format": "Social Graphic",
+  "topic": [
+   "Wealth",
+   "Stocks / Equity",
+   "IPOs"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "june nse has filed ₹30 000 crore ipo artboard news topical carousel mint green tint over photo building bandra kurla complex cover soon you may able buy bse not typo cta inside slides bust assumption government owned most people think"
+ },
+ {
+  "id": "IFM-346",
+  "title": "Stree Dhan workshop — opening title slide",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-346.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1ZkhuVC0gHyAlgBPrnaOCyRudGNn0IuWo/view",
+  "description": "Projector screen showing the opening slide 'From Stree Dhan to Financial Wisdom' — an illustrated tree growing out of a pile of gold coins and jewellery, with the prompt “What does ‘Stree Dhan’ mean to you?” across the bottom. Dark wood-paneled hotel conference room, empty black executive chairs in the foreground.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "From Stree Dhan to Financial Wisdom What does ‘Stree Dhan",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop opening title slide projector screen showing from financial wisdom illustrated tree growing out pile gold coins jewellery prompt what does mean you across bottom dark wood paneled hotel conference room empty black executive chairs foreground balsabha"
+ },
+ {
+  "id": "IFM-347",
+  "title": "Stree Dhan workshop — Introduction slide",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-347.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1YBYiX32SZ-KYpFBPxDOnHRA0bfbuiY37/view",
+  "description": "Facilitator stands beside the projector screen presenting the colour-coded 'Introduction' slide — an illustrated woman surrounded by four labelled boxes explaining who the course is for. A roll-up IFM banner stands to the right of the screen; participants watch from black chairs in the foreground.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "Introduction",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop introduction slide facilitator stands beside projector screen presenting colour coded illustrated woman surrounded four labelled boxes explaining who course roll ifm banner right participants watch from black chairs foreground intro balsabha hiral teaching"
+ },
+ {
+  "id": "IFM-348",
+  "title": "Stree Dhan workshop — inflation slides",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-348.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1Lac_goy_sqm5CKmLYBw7Jvyk-VI5m8RB/view",
+  "description": "Facilitator presenting the inflation block of the deck: 'What Causes Inflation?' (three bullet causes beside a cartoon of shoppers), 'The Invisible Enemy: Inflation' listing school fees, groceries, healthcare and travel, and 'The Real Cost of Waiting' showing a ₹500 note shrinking. She gestures at the screen with both hands; seated participants in the foreground.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "What Causes Inflation? The Invisible Enemy: Inflation The Real Cost of Waiting",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Women & Money",
+   "Family & Money",
+   "Stock Market",
+   "Inflation & Interest Rates"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop inflation slides facilitator presenting block deck what causes three bullet beside cartoon shoppers invisible enemy listing school fees groceries healthcare travel real cost waiting showing ₹500 note shrinking she gestures screen both hands seated participants foreground purchasing"
+ },
+ {
+  "id": "IFM-349",
+  "title": "Stree Dhan workshop — expense-sorting activity slide",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-349.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1fqZZCVaKDBGhu1_YNu_n6FXjWhqd9Z50/view",
+  "description": "Interactive slide asking ‘Which of these expenses do you think…’ with three photo cards — a takeaway coffee cup, a card-swipe machine and a food-delivery bag — for participants to sort. Facilitator stands at the whiteboard beside the screen; women at the boardroom table look up at it, one holding a phone.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "Which of these expenses do you think…",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Managing Money",
+   "Women & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop expense sorting activity slide interactive asking which these expenses you think three photo cards takeaway coffee cup card swipe machine food delivery bag participants sort facilitator stands whiteboard beside screen women boardroom table look one holding phone"
+ },
+ {
+  "id": "IFM-350",
+  "title": "Stree Dhan workshop — Saving vs Investing slide",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-350.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1u60sKnbp5iqVOvpgNWfnl4E-8rK2rZcH/view",
+  "description": "Projector screen split into 'Saving' (a pink piggy bank) and 'Investing' (a green sapling growing coins), shot across the empty end of the U-shaped boardroom table with red tissue boxes and water bottles in the foreground.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "(a pink piggy bank) and",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [
+   "Saving vs Investing",
+   "Saving",
+   "Women & Money",
+   "Family & Money"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop saving investing slide projector screen split into pink piggy bank green sapling growing coins shot across empty end shaped boardroom table red tissue boxes water bottles foreground money tree comparison"
+ },
+ {
+  "id": "IFM-351",
+  "title": "Stree Dhan workshop — IFM game screens on the projector",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-351.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1nITiEIDHip9RZuua6UL66f0h62a3ylrZ/view",
+  "description": "Facilitator demonstrating live IFM web tools on the big screen — the Investing for Mummies dashboard with its coloured game tiles and a calculator screen showing a rupee figure. She faces the room mid-explanation; the printed IFM roll-up banner stands beside the screen.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Women & Money",
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop ifm game screens projector facilitator demonstrating live web tools big screen investing mummies dashboard coloured tiles calculator showing rupee figure she faces room mid explanation printed roll banner stands beside demo tool"
+ },
+ {
+  "id": "IFM-352",
+  "title": "Stree Dhan workshop — Reimagining Stree Dhan slides",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-352.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1xzLxOTQUE_LQ0dbZKB6tG-XRlFw39p_P/view",
+  "description": "Closing-section slides: 'Reimagining Stree Dhan Today' with a bulleted list beside an illustrated woman at a laptop, and a slide reading ‘…more connected than we realised’ over a crowd illustration of many women. Facilitator seated at the head of the table working from her laptop.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "Reimagining Stree Dhan Today …more connected than we realised",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Women & Money",
+   "Stock Market"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop reimagining slides closing section today bulleted list beside illustrated woman laptop slide reading more connected than realised over crowd illustration many women facilitator seated head table working from her community"
+ },
+ {
+  "id": "IFM-353",
+  "title": "Stree Dhan workshop — facilitator teaching the room",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-353.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/19C7obWlQQgbicBIfGVfwjKiiAH4IuYip/view",
+  "description": "Facilitator in a blue-and-white block-print kurta and white trousers presenting on her feet in the middle of the room, hands mid-gesture, with the BALSABHA roll-up banner behind her and a participant watching from a chair at the table. Other clips in this cluster follow her walking the U of the table and writing at the flip chart.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop facilitator teaching room blue white block print kurta trousers presenting her feet middle hands mid gesture balsabha roll banner behind participant watching from chair table other clips cluster follow walking writing flip chart hiral mums"
+ },
+ {
+  "id": "IFM-354",
+  "title": "Stree Dhan workshop — IFM course pricing slide pitch",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-354.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1Juoj1nVCEj17C3tTYyFuoFoi_9HaJ_wV/view",
+  "description": "Facilitator in a cream block-print kurta presenting the workshop line-up slide — three pricing cards for the Investing for Mummies Flagship 8-session (₹16,000), the Introductory 4-session (₹9,500) and the Young Adults foundation course (₹9,500), with June batch dates and 'Register Now' buttons.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "Register Now",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Hiral Speaking",
+  "topic": [
+   "Women & Money",
+   "Investing"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop ifm course pricing slide pitch facilitator cream block print kurta presenting line three cards investing mummies flagship session ₹16 000 introductory 500 young adults foundation june batch dates register now buttons registration"
+ },
+ {
+  "id": "IFM-355",
+  "title": "Stree Dhan workshop — two facilitators co-presenting",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-355.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/15DLnB_i55tB18xxpyHHakbc3sio2CMmo/view",
+  "description": "Two women presenting together at the front of the room — one in the block-print kurta, a second in a cream dupatta — standing either side of the pricing slide and, in other clips of this cluster, working together at the flip chart and leaning over the table talking to participants.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop two facilitators presenting women together front room one block print kurta second cream dupatta standing either side pricing slide other clips cluster working flip chart leaning over table talking participants team balsabha"
+ },
+ {
+  "id": "IFM-356",
+  "title": "Stree Dhan workshop — room wide",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-356.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1K0mQKPpZlPB9OOYp8MjvkGlzoiH-HiWU/view",
+  "description": "Wide views of the full room: a U-shaped boardroom table in a dark wood-and-cream hotel conference room, roughly twenty women in black executive chairs facing the lit projector screen, red tissue boxes and water bottles spaced along the table, patterned grey carpet.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "b-roll cutaway establishing supporting footage context stree dhan workshop room wide views full shaped boardroom table dark wood cream hotel conference roughly twenty women black executive chairs facing lit projector screen red tissue boxes water bottles spaced along patterned grey carpet venue audience balsabha"
+ },
+ {
+  "id": "IFM-357",
+  "title": "Stree Dhan workshop — participants at the table",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-357.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1nIwQMHzDgkSlc5VsK01TyoIDY8Om0rpw/view",
+  "description": "Close and mid shots of the participants — adult women seated around the boardroom table in kurtas and summer dresses, watching the screen, laughing, taking notes and talking to each other between sections. Several clips catch a row of women smiling at something on the screen.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration stree dhan workshop participants table close mid shots adult women seated around boardroom kurtas summer dresses watching screen laughing taking notes talking each other between sections several clips catch row smiling something audience listening candid mums balsabha"
+ },
+ {
+  "id": "IFM-358",
+  "title": "Stree Dhan workshop — hands up during the activity",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-358.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1Oc63KsMQnikPKT5wvDnirSPzpqVEwwjJ/view",
+  "description": "Participants raising their hands to answer during the interactive section — one woman with her arm fully up in the middle of the row while the women around her look toward the front.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Money Conversations",
+   "Women & Money"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop hands during activity participants raising their answer interactive section one woman her arm fully middle row while women around look toward front raised participation engagement"
+ },
+ {
+  "id": "IFM-359",
+  "title": "BALSABHA workshop — group photo at the banner",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-359.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1IBTsvlvZbnesjDOYt12pczVMzN9A8b61/view",
+  "description": "End-of-session group photo: nine women posed in two rows — five standing, four kneeling — in front of the BALSABHA roll-up banner ('Where Values Take Root & Young Hearts Blossom'), all smiling at the camera in the hotel conference room.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration balsabha workshop group photo banner end session nine women posed two rows five standing four kneeling front roll where values take root young hearts blossom all smiling camera hotel conference room team"
+ },
+ {
+  "id": "IFM-360",
+  "title": "Stree Dhan workshop — break-time candid",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-360.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/11yiiRvG0QuMImzvqdTtgNjSnIOOvlYsj/view",
+  "description": "Participants standing and chatting in a cluster at the far end of the boardroom table during a break, handbags on the table beside red tissue boxes and water bottles.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Aakara",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration stree dhan workshop break time candid participants standing chatting cluster far end boardroom table during handbags beside red tissue boxes water bottles networking informal"
+ },
+ {
+  "id": "IFM-361",
+  "title": "Stree Dhan workshop — blank/accidental clips",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-361.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1vPZ4MI5jgJp6SVQI_vQPEhuy6rNmIOgV/view",
+  "description": "Three accidental recordings from the shoot: two clips of blank grey wall and carpet and one of plain wood panelling, no subject in frame.",
+  "session": "BALSABHA women’s workshop — 4 Jun 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Raw",
+  "format": "B-roll",
+  "topic": [
+   "Women & Money"
+  ],
+  "person": [
+   "No Person"
+  ],
+  "source": "Aakara",
+  "search_terms": "stree dhan workshop blank accidental clips three recordings from shoot two grey wall carpet one plain wood panelling subject frame unusable offcut raw"
+ },
+ {
+  "id": "IFM-362",
+  "title": "Flagship graduate with her certificate",
+  "date": "2026-09-04",
+  "thumb": "../thumbs/IFM-362.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1l1SCV70bis0224e7Ynrya9oMeuKOZejd/view",
+  "description": "A grey-haired woman in a lilac striped shirt beams at the camera holding up her IFM 'Certificate of Completion' for the Investing for Mummies Flagship course, dated August 2026. She is seated at a polished wood boardroom table with an open handwritten notebook in front of her; plain whiteboard behind.",
+  "session": "Investing for Mummies Flagship graduation — Aug 2026",
+  "slide_text": "Certificate of Completion",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Certificate",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof flagship graduate her certificate grey haired woman lilac striped shirt beams camera holding ifm completion investing mummies course dated august 2026 she seated polished wood boardroom table open handwritten notebook front plain whiteboard behind celebration"
+ },
+ {
+  "id": "IFM-363",
+  "title": "Flagship graduates holding certificates",
+  "date": "2026-09-04",
+  "thumb": "../thumbs/IFM-363.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1KLibH866vZ5nPfmKMpTkfmlCGBULd0bT/view",
+  "description": "Four women grouped at the end of the boardroom table — two seated holding their Investing for Mummies certificates up to the camera, two standing behind them, one also holding a certificate. All smiling; cream wall and wooden panelling behind.",
+  "session": "Investing for Mummies Flagship graduation — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Certificate",
+  "topic": [
+   "Investing"
+  ],
+  "person": [
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof flagship graduates holding certificates four women grouped end boardroom table two seated their investing mummies camera standing behind them one also certificate all smiling cream wall wooden panelling group completion celebration"
+ },
+ {
+  "id": "IFM-364",
+  "title": "Flagship graduates — group portrait",
+  "date": "2026-09-04",
+  "thumb": "../thumbs/IFM-364.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1lcVEzrbiix13vA1Ei_yUHh4szlASL9t3/view",
+  "description": "The same four women posed together at the boardroom table without the certificates raised — two seated with arms folded and smiling, two standing behind with hands on the chair backs. Relaxed end-of-course portrait.",
+  "session": "Investing for Mummies Flagship graduation — Aug 2026",
+  "slide_text": "",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Classroom Moment",
+  "topic": [],
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof portrait headshot founder press media kit agency bio flagship graduates group portrait same four women posed together boardroom table without certificates raised two seated arms folded smiling standing behind hands chair backs relaxed end course celebration"
+ },
+ {
+  "id": "IFM-365",
+  "title": "Graduation group with certificates — office boardroom",
+  "date": "2026-09-04",
+  "thumb": "../thumbs/IFM-365.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/15d-G15xuTtMzWPHHIKAkm_ZV8uLFvtic/view",
+  "description": "Nine women packed together behind the office boardroom table, most holding IFM 'Certificate of Completion' sheets toward the camera, one holding hers up high at the back. Cream room with framed artwork, a wooden cabinet and curtains; the table in front holds notebooks, a purple IFM pouch, glasses of water and handbags.",
+  "session": "Investing for Mummies Flagship graduation — Aug 2026",
+  "slide_text": "Certificate of Completion",
+  "silent": false,
+  "type": "Image",
+  "status": "Raw",
+  "format": "Certificate",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Sakshi",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof graduation group certificates office boardroom nine women packed together behind table most holding ifm certificate completion sheets toward camera one hers high back cream room framed artwork wooden cabinet curtains front holds notebooks purple pouch glasses water handbags celebration"
+ },
+ {
+  "id": "IFM-366",
+  "title": "June: The Power of Compounding — reel cover",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-366.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1I3lMqYQ2iOzth0LSciCrhSuOEHA0Nejx/view",
+  "description": "Reel cover art: a woman in a denim-blue dress sits in a cream armchair against a pale blue swirl background with ₹ notes floating around her. Title type across the lower third reads 'THE POWER OF COMPOUNDING', 'COMPOUNDING' highlighted in a blue block.",
+  "session": "Aakara June delivery",
+  "slide_text": "THE POWER OF COMPOUNDING",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Portrait",
+  "topic": [
+   "Compounding"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "june power compounding reel cover art woman denim blue dress sits cream armchair against pale swirl background notes floating around her title type across lower third reads highlighted block rupee aakara"
+ },
+ {
+  "id": "IFM-367",
+  "title": "Why IFM — founder piece to camera",
+  "date": "2026-06-04",
+  "thumb": "../thumbs/IFM-367.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1gTm-luKbZqjcNcHljZH-jHt1oQj0xJ9W/view",
+  "description": "Talking-head brand video: Hiral sits on a cream sofa holding a printed mug, in a white-and-blue textured knit top and white skirt, speaking to camera. A potted areca palm and sheer sunlit curtains fill the background. Soft natural daylight, clean vertical framing.",
+  "session": "Aakara June delivery",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Portrait",
+  "topic": [],
+  "person": [
+   "Hiral"
+  ],
+  "source": "Aakara",
+  "search_terms": "why ifm founder piece camera talking head brand video hiral sits cream sofa holding printed mug white blue textured knit top skirt speaking potted areca palm sheer sunlit curtains fill background soft natural daylight clean vertical framing"
+ },
+ {
+  "id": "IFM-368",
+  "title": "Certificate handover — brownies on the boardroom table",
+  "date": "2026-09-07",
+  "thumb": "../thumbs/IFM-368.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1CWwnxY471XUncc2_5FhRDddHq7D2YIh7/view",
+  "description": "Handheld vertical clip in a small boardroom: a woman in a red-and-black floral kurta, back to camera, reaches across a dark wood table to hand a rolled certificate to a smiling woman in a green print top. The table is set with a plate of chocolate brownies, sandwiches, a card machine, a pen pot and a red tissue box. Whiteboard and wall AC behind.",
+  "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Certificate",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Sakshi",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof certificate handover brownies boardroom table handheld vertical clip small woman red black floral kurta back camera reaches across dark wood hand rolled smiling green print top set plate chocolate sandwiches card machine pen pot tissue box whiteboard wall behind workshop"
+ },
+ {
+  "id": "IFM-369",
+  "title": "Certificate handover across the boardroom table — group watching",
+  "date": "2026-09-07",
+  "thumb": "../thumbs/IFM-369.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1pQjgCfKBMJmfYpQ4MzgxQmW34WhDCQMy/view",
+  "description": "Handheld vertical clip down the length of a boardroom table. An open certificate is passed across the table between two pairs of hands while five women stand along the far side smiling and watching — one in a blue striped shirt by the wall screen, others in lilac, black and print tops. Glasses of water, coasters, notebooks and a phone on the table; a large wall-mounted display and a marked-up whiteboard behind.",
+  "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
+  "slide_text": "",
+  "silent": false,
+  "type": "Video",
+  "status": "Ready",
+  "format": "Certificate",
+  "topic": [],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Sakshi",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof certificate handover across boardroom table group watching handheld vertical clip down length open passed between two pairs hands while five women stand along far side smiling one blue striped shirt wall screen others lilac black print tops glasses water coasters"
+ },
+ {
+  "id": "IFM-370",
+  "title": "Flagship batch group photo with certificates",
+  "date": "2026-09-07",
+  "thumb": "../thumbs/IFM-370.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1kIWngHziv-pYjlGAJE79vcWGlFwqxhcO/view",
+  "description": "Ten women grouped behind two black leather boardroom chairs, most holding navy-and-cream 'Certificate of Completion' certificates toward camera; one at the back holds hers up overhead. Warm downlights, a framed abstract painting on the left wall, cream curtains and a wooden cabinet behind. The table in front holds phones, a notebook, a glass tumbler and more certificates. Everyone is smiling straight at the lens.",
+  "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
+  "slide_text": "Certificate of Completion",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Certificate",
+  "topic": [],
+  "person": [
+   "Student"
+  ],
+  "source": "Sakshi",
+  "search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof flagship batch group photo certificates ten women grouped behind two black leather boardroom chairs most holding navy cream certificate completion toward camera one back holds hers overhead warm downlights framed abstract painting left wall curtains wooden cabinet table front phones"
+ },
+ {
+  "id": "IFM-371",
+  "title": "Instagram story composer screenshot — certificate photos",
+  "date": "2026-09-07",
+  "thumb": "../thumbs/IFM-371.jpg",
+  "video": "",
+  "drive": "https://drive.google.com/file/d/1Kk4CyE_Z80DlEtSe7_QHU1crX1IzZ_op/view",
+  "description": "Phone screenshot of the Instagram story composer, UI chrome included (Text, Stickers, Audio, Effects, Draw, Download, Label AI, More down the right; 'Your stories' and 'Close Friends' along the bottom). Two stacked certificate photos fill the canvas: on top, four women holding 'Certificate of Completion — Investing for Mummies Flagship' certificates with names printed on them; below, the ten-person group shot.",
+  "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
+  "slide_text": "Your stories Close Friends Certificate of Completion — Investing for Mummies Flagship",
+  "silent": false,
+  "type": "Image",
+  "status": "Ready",
+  "format": "Certificate",
+  "topic": [
+   "Family & Money",
+   "Investing"
+  ],
+  "person": [
+   "Other Person"
+  ],
+  "source": "Sakshi",
+  "search_terms": "certificate completion graduation proud achievement social proof instagram story composer screenshot certificate photos phone chrome included text stickers audio effects draw download label more down right your stories close friends along bottom two stacked fill canvas top four women holding completion investing mummies flagship certificates names printed"
+ },
+ {
+  "id": "IFM-372",
+  "title": "September: Rules for Mastering Personal Finance",
+  "date": "2026-09-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/1j88loWk4b_yUlDu_CokLLigpPdvyQKU1sKj6QxJ5gVQ/edit",
+  "description": "Label-only placeholder slide for a brand-awareness carousel on the rules for mastering personal finance. No frames, copy or references on the slide yet — topic and pillar only.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "september rules mastering personal finance label only placeholder slide brand awareness carousel frames copy references yet topic pillar basics designed aakara internal deck"
+ },
+ {
+  "id": "IFM-373",
+  "title": "September: News Items (carousel)",
+  "date": "2026-09-01",
+  "thumb": "",
+  "video": "",
+  "drive": "https://docs.google.com/presentation/d/1j88loWk4b_yUlDu_CokLLigpPdvyQKU1sKj6QxJ5gVQ/edit",
+  "description": "Label-only placeholder slide for news-focused carousels — the carousel counterpart to the news-topical reel strand (cf. IFM-278, IFM-323, IFM-324). No specific stories named on the slide.",
+  "session": "",
+  "slide_text": "",
+  "silent": false,
+  "type": "Carousel",
+  "status": "Raw",
+  "format": "Social Graphic",
+  "topic": [],
+  "person": [],
+  "source": "Aakara",
+  "search_terms": "september news items carousel label only placeholder slide focused carousels counterpart topical reel strand ifm 278 323 324 specific stories named markets designed aakara internal deck"
+ }
 ];
