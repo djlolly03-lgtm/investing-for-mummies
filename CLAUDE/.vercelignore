@@ -81,21 +81,3 @@ content/v1-prototype/semantic-experiment.js
 # screenshots would each become a public URL on ifm-deploy. They are internal design
 # material and nothing the site renders fetches them.
 content/v1-prototype/references/
-
-# Vedanta demerger, retired 17 Sep 2026. The story is over — the demerger completed months
-# ago — and the nine catalogue rows are marked "Do Not Use", so nothing in the Library
-# points here any more. 25MB of stills, slides and a 6.5MB carousel page were still being
-# served publicly for content that will never be used again. Nothing links to the carousel
-# except data files.
-# STOPPING SERVING, not deleting: the files stay on disk. Most of them are untracked in git
-# AND outside the rclone media backup, so a delete would be unrecoverable — that is a call
-# for a human, not a deploy rule.
-carousel_vedanta.html
-carousel_vedanta_slides/
-vedanta-gold-hero-frame.png
-vedanta-pizza-5slices-end.png
-vedanta-pizza-5slices-start.png
-vedanta-pizza-end-frame.jpg
-vedanta-pizza-start-frame.png
-vedanta-v3-end-frame.png
-vedanta-v3-start-frame.png
