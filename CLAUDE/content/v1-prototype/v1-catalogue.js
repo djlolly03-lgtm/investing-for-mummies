@@ -1192,7 +1192,7 @@ window.IFM_V1 =
   "slide_text": "",
   "silent": false,
   "type": "Video",
-  "status": "Raw",
+  "status": "Do Not Use",
   "format": "B-roll",
   "topic": [
    "Stocks / Equity"
@@ -1213,7 +1213,7 @@ window.IFM_V1 =
   "slide_text": "",
   "silent": false,
   "type": "Video",
-  "status": "Raw",
+  "status": "Do Not Use",
   "format": "B-roll",
   "topic": [
    "Stocks / Equity"
@@ -1234,7 +1234,7 @@ window.IFM_V1 =
   "slide_text": "",
   "silent": false,
   "type": "Video",
-  "status": "Raw",
+  "status": "Do Not Use",
   "format": "B-roll",
   "topic": [
    "Stocks / Equity"
@@ -1255,7 +1255,7 @@ window.IFM_V1 =
   "slide_text": "",
   "silent": false,
   "type": "Video",
-  "status": "Raw",
+  "status": "Do Not Use",
   "format": "B-roll",
   "topic": [
    "Stocks / Equity"
@@ -1276,7 +1276,7 @@ window.IFM_V1 =
   "slide_text": "",
   "silent": false,
   "type": "Video",
-  "status": "Raw",
+  "status": "Do Not Use",
   "format": "B-roll",
   "topic": [
    "Stocks / Equity"
@@ -1297,7 +1297,7 @@ window.IFM_V1 =
   "slide_text": "",
   "silent": false,
   "type": "Video",
-  "status": "Raw",
+  "status": "Do Not Use",
   "format": "B-roll",
   "topic": [
    "Stocks / Equity"
@@ -1339,7 +1339,7 @@ window.IFM_V1 =
   "slide_text": "",
   "silent": false,
   "type": "Video",
-  "status": "Ready",
+  "status": "Do Not Use",
   "format": "Social Graphic",
   "topic": [
    "Stocks / Equity"
@@ -1360,7 +1360,7 @@ window.IFM_V1 =
   "slide_text": "Vedanta just split into 5 companies. 5× richer? Same pizza. Different slices.",
   "silent": false,
   "type": "Carousel",
-  "status": "Published",
+  "status": "Do Not Use",
   "format": "Social Graphic",
   "topic": [
    "Wealth",
@@ -1383,7 +1383,7 @@ window.IFM_V1 =
   "slide_text": "Vedanta has just split into five companies… does that make shareholders 5× richer? Not quite — think of it like a pizza cut into slices. VEDANTA DEMERGER → WHAT IT MEANS FOR SHAREHOLDERS",
   "silent": false,
   "type": "Video",
-  "status": "Ready",
+  "status": "Do Not Use",
   "format": "Hiral Speaking",
   "topic": [
    "Wealth",
