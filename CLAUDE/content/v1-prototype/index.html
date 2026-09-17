@@ -630,8 +630,29 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
  * reversibly, and nothing on Drive moves until someone runs scripts/ifm-retire-assets.sh
  * on a machine. That separation is deliberate: this page is public and un-authenticated,
  * so it must never be able to destroy anything. */
+/* An asset with NO FILE is not an asset, it is a plan. Eighteen rows carried no thumbnail,
+ * no playable preview and no reachable master — "September: Cups Video", "Ever Wondered?
+ * (topic TBC)" — content that has not been made yet. They rendered as grey NO PREVIEW
+ * rectangles and did nothing but pad the grid.
+ *
+ * A RULE, not eighteen marks. Written as a mark, someone has to notice the day Aakara
+ * delivers and undo it by hand; written as a rule, the asset reappears the moment it has a
+ * thumbnail. `thumb` is the test because that is the only field that means "there is
+ * something to look at" — a Drive link can point at a file that was deleted, as 33 Goa
+ * rows still prove.
+ *
+ * `library:false` covers logos, playable games and the Goa clips; "Do Not Use" is the
+ * human's own verdict, set in the Catalogue sheet or the local admin console. */
+/* Inlined, not hoisted to its own const. The test harnesses slice the engine out of this
+ * file by searching for the first line of the declaration below, so anything declared
+ * ABOVE it is absent when they eval — both suites died with a ReferenceError the moment I
+ * put a helper there. Nor can this comment quote that line verbatim: indexOf then matches
+ * the comment instead of the code and the slice starts mid-sentence, which is a
+ * SyntaxError and cost me a second round-trip to work out. */
 const T=window.IFM_TAXONOMY,
-      ASSETS=window.IFM_V1.filter(r=>r.library!==false && (r.status||'')!=='Do Not Use');
+      ASSETS=window.IFM_V1.filter(r=>r.library!==false
+        && (r.status||'')!=='Do Not Use'
+        && (!!r.thumb || ((window.IFM_MEDIA||{})[r.id]||{}).playable));
 // Fold speech into each asset's searchable text BEFORE the engine builds its index. The
 // engine already weights `search_terms`, so a spoken word becomes findable without
 // touching a line of frozen scoring code, and without inventing a new taxonomy field.
