@@ -110,6 +110,13 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .stage.hero .try{display:flex;margin:18px auto 0;gap:8px;max-width:760px;
   justify-content:flex-start;flex-wrap:wrap;align-items:center}
 .try .lbl{color:var(--muted);font-size:12.5px;margin-right:2px}
+/* One quiet line, on the field's own left edge. It is the only thing standing between her
+   and the library, so it is text rather than a button — but it is always there. */
+.browseall{display:none}
+.stage.hero .browseall{display:block;max-width:760px;margin:20px auto 0;text-align:left}
+.browseall button{font-size:13px;color:var(--ink-2);padding:0;line-height:1.5;
+  border-bottom:1px solid var(--stone);transition:color .15s,border-color .15s}
+.browseall button:hover{color:var(--navy);border-bottom-color:var(--navy)}
 .try button{background:var(--card);border:1px solid var(--stone);border-radius:999px;
   padding:6px 14px;font-size:12.5px;color:var(--ink-2);transition:border-color .15s,color .15s}
 .try button:hover{border-color:var(--navy);color:var(--navy)}
@@ -225,6 +232,13 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .sep{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:4px 0 0;
   color:var(--muted);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:500}
 .sep::before,.sep::after{content:'';flex:1;height:1px;background:var(--stone)}
+/* Section rule for the browse view. Same language as .sep, its own spacing — it separates
+   whole grids rather than sitting inside one. */
+.gsec{display:flex;align-items:center;gap:16px;margin:34px 0 20px;color:var(--ink-2);
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.gsec:first-child{margin-top:8px}
+.gsec .n{color:var(--muted);font-weight:500;letter-spacing:.06em}
+.gsec::after{content:'';flex:1;height:1px;background:var(--stone)}
 
 .none-state{text-align:center;padding:76px 24px 100px}
 /* The storyboard's empty-result mark is generous — roughly twice the height of the search
@@ -411,6 +425,9 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
     <button data-ex="funny classroom moments">funny classroom moments</button>
     <button data-ex="August certificates">August certificates</button>
   </div>
+  <!-- The front door. Without it the only way into 378 assets was guessing the right
+       words, because `main` is hidden until something is searched or filtered. -->
+  <p class="browseall"><button id="browse" data-act="browse"></button></p>
 </div>
 
 <figure class="heroimg" id="heroimg">
@@ -703,7 +720,7 @@ const media=a=>MEDIA[a.id]||{kind:'image',playable:false};
 const RELEVANT=0.7;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const state={q:'',filters:{},showWeak:false,openId:null,engaged:false};
+const state={q:'',filters:{},showWeak:false,openId:null,engaged:false,browse:false};
 
 const FILTERS=[['type','Type',T.type],['format','Format',T.format],['topic','Topic',null],
   ['person','Person',T.person],['source','Source',T.source],['session','Session',null],['status','Status',T.status]];
@@ -780,9 +797,28 @@ function card(x){
   </button>`;
 }
 
+/* BROWSE — the library grouped by Format, which the ablation showed is the strongest
+ * dimension in the catalogue by a distance (removing it costs five queries; removing
+ * Person, Source, Status or Session costs none). Sections are ordered by size, and the 51
+ * assets with no format land in "Unsorted" rather than being quietly dropped — the gap is
+ * real and hiding it is how it stays unfixed.
+ *
+ * This is also the only view that can answer "show me the options". Ranked search returns
+ * the single best match by construction, so the eight near-identical Vedanta B-roll
+ * variants can never all surface; here they sit together under one heading. */
+function groupByFormat(list){
+  const by={};
+  list.forEach(x=>{ const k=x.a.format||'Unsorted'; (by[k]=by[k]||[]).push(x); });
+  const keys=Object.keys(by).sort((x,y)=>
+    x==='Unsorted'?1 : y==='Unsorted'?-1 : by[y].length-by[x].length);
+  return keys.map(k=>
+    `<div class="gsec">${esc(k)}<span class="n">${by[k].length}</span></div>`+
+    `<div class="grid">${by[k].map(card).join('')}</div>`).join('');
+}
+
 function render(){
   const searching=!!state.q.trim();
-  const heroMode=!state.engaged&&!searching&&!activeFilters();
+  const heroMode=!state.engaged&&!searching&&!activeFilters()&&!state.browse;
   $('stage').classList.toggle('hero',heroMode);
   $('heroimg').hidden=!heroMode;
   $('main').hidden=heroMode;
@@ -790,6 +826,7 @@ function render(){
   $('libcount').hidden=!heroMode;          // empty state only, as the storyboard has it
   $('sbox').classList.toggle('has',searching);
   $('fclear').hidden=!activeFilters();
+  $('browse').textContent=`or browse all ${ASSETS.length} pieces →`;
   if(heroMode) return;
 
   const {strong,weak}=currentResults();
@@ -809,6 +846,8 @@ function render(){
   const nf=activeFilters();
   $('summary').innerHTML=`<h2>${searching?`Found ${piece}`:piece}</h2>
     <button class="refine${nf?' on':''}" data-act="filters">Refine${nf?` · ${nf}`:''}</button>`;
+  // Browsing: sectioned by Format. Searching: one ranked grid, unchanged.
+  if(state.browse&&!searching){ $('results').innerHTML=groupByFormat(strong); return; }
   let html='<div class="grid">'+strong.map(card).join('');
   if(weak.length&&state.showWeak) html+='<div class="sep">Weaker matches</div>'+weak.map(card).join('');
   html+='</div>';
@@ -917,7 +956,8 @@ function closeDetail(){
 
 function setQuery(v,{engage=true}={}){
   state.q=v; state.showWeak=false;
-  if(v.trim())state.engaged=true; if(engage===false)state.engaged=false;
+  if(v.trim())state.engaged=true;
+  if(engage===false){state.engaged=false;state.browse=false;}
   closeDetail(); $('q').value=v; render();
 }
 $('q').addEventListener('input',e=>{state.q=e.target.value;state.showWeak=false;
@@ -937,6 +977,7 @@ document.addEventListener('click',e=>{
   const act=e.target.closest('[data-act]'); if(!act)return;
   const a=act.dataset.act;
   if(a==='weak'){state.showWeak=true;render();}
+  if(a==='browse'){state.browse=true;state.engaged=true;render();window.scrollTo({top:0});}
   // Refine lives inside the summary, which is rebuilt on every render, so it cannot
   // carry its own handler the way the old static Filters button did.
   if(a==='filters')$('filters').classList.toggle('open');
