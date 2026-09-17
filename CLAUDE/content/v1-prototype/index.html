@@ -112,6 +112,26 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .try .lbl{color:var(--muted);font-size:12.5px;margin-right:2px}
 /* One quiet line, on the field's own left edge. It is the only thing standing between her
    and the library, so it is text rather than a button — but it is always there. */
+/* Explore by theme. The tiles are built from the Format values the catalogue actually
+   carries — no new taxonomy, no new filter, no invented category. Each one is the existing
+   Format filter with a face on it. */
+.themes{display:none}
+.stage.hero .themes{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;
+  max-width:760px;margin:30px auto 0;text-align:left}
+.themes button{padding:0;background:none;display:block}
+.themes .tw{display:block;width:100%;aspect-ratio:1/1;border-radius:10px;overflow:hidden;
+  background:var(--stone-2);position:relative;
+  box-shadow:inset 0 0 0 1px rgba(21,38,63,.07);transition:transform .25s cubic-bezier(.2,.6,.2,1)}
+.themes img{width:100%;height:100%;object-fit:cover;transition:transform .45s cubic-bezier(.2,.6,.2,1)}
+.themes button:hover img{transform:scale(1.06)}
+.themes .tl{display:block;margin-top:9px;font-size:12px;font-weight:600;color:var(--display);
+  line-height:1.3;letter-spacing:-.003em}
+.themes .tn{display:block;font-size:11px;color:var(--muted);margin-top:2px;
+  font-variant-numeric:tabular-nums}
+@media(max-width:760px){
+  .stage.hero .themes{grid-template-columns:repeat(3,1fr);gap:11px;margin-top:22px}
+  .themes .tl{font-size:11.5px}
+}
 .browseall{display:none}
 .stage.hero .browseall{display:block;max-width:760px;margin:20px auto 0;text-align:left}
 .browseall button{font-size:13px;color:var(--ink-2);padding:0;line-height:1.5;
@@ -214,8 +234,14 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
   font-variant-numeric:tabular-nums;letter-spacing:.01em}
 /* Two lines, always. Reserving the second line is what lets the context lines and the tag
    pills sit on one baseline right across a row of three. */
+/* Serif titles, as reference board 04 sets them. Inter 600 read as a UI label on a row;
+   Lora reads as the name of a piece of content, which is what it is. */
+.kind{position:absolute;left:12px;bottom:12px;width:30px;height:30px;border-radius:50%;
+  background:rgba(14,22,34,.6);box-shadow:0 0 0 1.5px rgba(255,255,255,.85);
+  backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;color:#fff}
+.kind svg{width:15px;height:15px}
 .cardx .ttl{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-  min-height:40px;font-size:14.5px;font-weight:600;line-height:1.38;color:var(--display);
+  min-height:44px;font-family:var(--f-d);font-size:16px;font-weight:600;line-height:1.36;color:var(--display);
   margin-bottom:5px;transition:color .15s;letter-spacing:-.006em}
 .cardx:hover .ttl{color:var(--navy)}
 .cardx .ctx{display:block;font-size:12px;color:var(--muted);margin-bottom:9px;line-height:1.4}
@@ -426,7 +452,11 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
     <button data-ex="August certificates">August certificates</button>
   </div>
   <!-- The front door. Without it the only way into 378 assets was guessing the right
-       words, because `main` is hidden until something is searched or filtered. -->
+       words, because `main` is hidden until something is searched or filtered.
+       Reference board 02 arrives at the same conclusion from the design side — "Explore
+       by theme" — so the text link it started as is now what that board shows: real
+       thumbnails, real counts, one tap into the library. -->
+  <div class="themes" id="themes"></div>
   <p class="browseall"><button id="browse" data-act="browse"></button></p>
 </div>
 
@@ -785,6 +815,10 @@ function titleOf(a){
 const shortFmt=f=>({'Hiral Speaking':'Speaking','Classroom Moment':'Classroom',
   'Social / Promotional':'Promo','Social Graphic':'Graphic','Student Question':'Q&A'}[f]||f);
 
+const ICO={
+  img:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M21 16l-5-5-5.5 5.5L8 14l-5 5"/></svg>',
+  car:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="4" width="13" height="16" rx="2.5"/><path d="M4 7v11.5A2.5 2.5 0 0 0 6.5 21H16"/></svg>'
+};
 function card(x){
   const a=x.a, m=media(a);
   const qt=state.q.toLowerCase();
@@ -797,7 +831,17 @@ function card(x){
   if(a.format) tags.push(esc(shortFmt(a.format)));
   const pills=tags.map(t=>`<span class="t">${t}</span>`).join('<span class="tsep">·</span>');
   // Play badge and duration ONLY when a real file was probed and answered. Never from `type`.
-  const badge = m.playable ? '<span class="play"></span>'+(m.dur?`<span class="dur">${esc(m.dur)}</span>`:'') : '';
+  // Reference board 04 marks EVERY thumbnail with what it is: a play control on real
+  // video, a still icon on images, a layers icon on carousels. Before this, a still and a
+  // video-with-no-playable-master looked identical — both unbadged — so the one thing a
+  // person needs to know at a glance was the one thing the card did not say.
+  // §14 is not weakened: an image icon is not a play icon, and an unplayable video still
+  // gets nothing, because any marker there would imply playback we cannot deliver.
+  const badge = m.playable
+    ? '<span class="play"></span>'+(m.dur?`<span class="dur">${esc(m.dur)}</span>`:'')
+    : a.type==='Image'    ? '<span class="kind" title="Image">'+ICO.img+'</span>'
+    : a.type==='Carousel' ? '<span class="kind" title="Carousel">'+ICO.car+'</span>'
+    : '';
   // Spans throughout: <h3>/<p> are flow content and are not valid inside a <button>.
   return `<button class="cardx" data-id="${esc(a.id)}">
     <span class="shot"><span class="none">no preview</span>${a.thumb?`<img loading="lazy" src="${esc(a.thumb)}" alt="" onerror="this.remove()">`:''}${badge}</span>
@@ -824,6 +868,32 @@ function groupByFormat(list){
   return keys.map(k=>
     `<div class="gsec">${esc(k)}<span class="n">${by[k].length}</span></div>`+
     `<div class="grid">${by[k].map(card).join('')}</div>`).join('');
+}
+
+/* Six tiles, largest Format first, each showing a real asset from inside it.
+ *
+ * FACE SELECTION. A first pass picked the first asset with any `thumb` at all, and two of
+ * six tiles rendered as empty beige squares — the eleven rows that point at an absolute
+ * URL are full-size PNGs of up to 2.2MB, and they had not painted by the time anyone
+ * looked. Preferring the local `../thumbs/` set, which is the small probed one, is what
+ * makes a tile reliably show a picture. `onerror` still hides a broken image rather than
+ * leaving a browser icon in the frame. */
+const THEME_LABEL={'Hiral Speaking':'Hiral Speaks','Classroom Moment':'Classroom Moments',
+  'Social Graphic':'Social Graphics','Social / Promotional':'Promos','B-roll':'B-roll',
+  'Portrait':'Portraits','Certificate':'Certificates','Testimonial':'Testimonials',
+  'Student Question':'Student Questions'};
+function buildThemes(){
+  const by={};
+  ASSETS.forEach(a=>{ if(a.format) (by[a.format]=by[a.format]||[]).push(a); });
+  const top=Object.entries(by).sort((x,y)=>y[1].length-x[1].length).slice(0,6);
+  const local=a=>a.thumb&&a.thumb.startsWith('../thumbs/');
+  $('themes').innerHTML=top.map(([fmt,list])=>{
+    const face=list.find(local)||list.find(a=>a.thumb)||list[0];
+    return `<button data-theme="${esc(fmt)}">
+      <span class="tw">${face.thumb?`<img loading="lazy" src="${esc(face.thumb)}" alt="" onerror="this.remove()">`:''}</span>
+      <span class="tl">${esc(THEME_LABEL[fmt]||fmt)}</span>
+      <span class="tn">${list.length}</span>
+    </button>`;}).join('');
 }
 
 function render(){
@@ -984,6 +1054,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
 document.querySelectorAll('.try button').forEach(b=>b.onclick=()=>{setQuery(b.dataset.ex);$('q').focus();});
 document.addEventListener('click',e=>{
   const c=e.target.closest('.cardx'); if(c){openDetail(c.dataset.id);return;}
+  // A theme tile is the Format filter, entered from the empty state.
+  const t=e.target.closest('[data-theme]');
+  if(t){ state.filters={format:t.dataset.theme}; state.browse=true; state.engaged=true;
+         const sel=$('f-format'); if(sel) sel.value=t.dataset.theme;
+         render(); window.scrollTo({top:0}); return; }
   const act=e.target.closest('[data-act]'); if(!act)return;
   const a=act.dataset.act;
   if(a==='weak'){state.showWeak=true;render();}
@@ -997,7 +1072,7 @@ document.addEventListener('click',e=>{
     const lbl=act.querySelector('.lbl')||act;
     navigator.clipboard?.writeText(h).then(()=>{lbl.textContent='Copied';setTimeout(()=>lbl.textContent='Copy link',1400);});}
 });
-buildFilters(); render();
+buildFilters(); buildThemes(); render();
 </script>
 </body>
 </html>
