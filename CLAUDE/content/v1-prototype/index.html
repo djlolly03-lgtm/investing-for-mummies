@@ -1120,8 +1120,12 @@ function render(){
     const byDate=(x,y)=>String(key(y.a)).localeCompare(String(key(x.a)));
     strong.sort(byDate); weak.sort(byDate);
   }
-  // Browsing: sectioned by Format. Searching: one ranked grid, unchanged.
-  if(state.browse&&!searching){ $('results').innerHTML=groupByFormat(strong); return; }
+  /* Browsing: sectioned by Format. Searching: one ranked grid, unchanged.
+     EXCEPT when she has asked for newest first. Format sections cut the timeline into
+     piles and then sort each pile separately, so the newest thing uploaded is buried
+     inside whichever section it belongs to and there is no way to see it. "Newest first"
+     has to mean ONE list in date order — that is the whole question it answers. */
+  if(state.browse&&!searching&&state.sort!=='newest'){ $('results').innerHTML=groupByFormat(strong); return; }
   let html='<div class="grid">'+strong.map(card).join('');
   if(weak.length&&state.showWeak) html+='<div class="sep">Weaker matches</div>'+weak.map(card).join('');
   html+='</div>';
