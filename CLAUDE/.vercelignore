@@ -76,3 +76,8 @@ content/v1-prototype/semantic-experiment.js
 # Dot-files are uploaded like any other file; this one is the HEAD-probe cache written by
 # media-audit.py.
 .media-probe.json
+# The spec's reference pack. *.md above already blocks SPEC.md, but *.png is NOT blocked
+# anywhere in this file, so without this line the approved storyboard and the current-state
+# screenshots would each become a public URL on ifm-deploy. They are internal design
+# material and nothing the site renders fetches them.
+content/v1-prototype/references/
