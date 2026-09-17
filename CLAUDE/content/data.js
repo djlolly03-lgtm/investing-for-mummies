@@ -2,8 +2,7 @@
 // The dashboard merges the Google Sheet on top: human-owned fields (status, dates, IG link, metrics, notes)
 // from the sheet override these rows; machine fields (descriptions, keywords, thumbnails) live here.
 // Thumbnails are self-hosted in content/thumbs/ (Drive image endpoints don't load for anonymous viewers).
-window.IFM_DATA =
-{
+window.IFM_DATA ={
   "catalogue": [
     {
       "id": "IFM-R01",
@@ -4794,12 +4793,13 @@ window.IFM_DATA =
       "title": "September: BSE and NSE",
       "type": "Reel",
       "source": "Aakara",
-      "status": "In Production",
-      "keywords": "september,reel,bse,nse,stock exchange,markets,workshops,jargon,placeholder,to be shot,aakara",
-      "description": "Blank placeholder slide for a reel explaining BSE and NSE. Label only — no script, frames or copy on the slide yet.",
-      "drive link": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+      "status": "Ready",
+      "keywords": "september,reel,reel cover,bse,nse,stock exchange,dalal street,bandra kurla,markets,jargon,hiral,cutout,mint green,aakara,delivered",
+      "description": "Reel cover — Hiral, cut out mid-explanation with one hand raised, stands beside a composited photo of the BSE tower and the NSE building on a pale mint dotted background. Navy type reads 'The one thing about BSE & NSE' with 'BSE & NSE' large in navy serif, and a coral italic kicker below: 'which shocks everyone!'",
+      "drive link": "https://drive.google.com/file/d/1kQ6SlHjUjlPYgYaNb66LlvXkqJBypA2_/view",
       "date created": "2026-09-01",
-      "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates — date is a month placeholder (Sep 1), not a scheduled slot."
+      "notes": "Originally a blank label-only placeholder from Aakara's 'IFM Creatives_September' deck. Aakara delivered the artwork on 16 Sep 2026 as 'nse bse.png', sitting loose in September/Reels rather than in a topic folder — this row was updated in place rather than duplicated. ⚠️ Only the COVER GRAPHIC has been delivered; the reel video itself is not in the folder, so 'Ready' means the cover art is final, not that the reel is cut. Same treatment as the other loose reel covers (cf. IFM-204, IFM-343, IFM-366). Pillar: Workshops. September deck carries no per-post dates — date stays the month placeholder (Sep 1). Mirrored to our own Drive (IFM Content Archive → From Aakara): archive: 1Y2m_etZIWxd4KKpCstyw2UO4-F5dNG3A. STAGED — not yet deployed.",
+      "thumbnail": "thumbs/IFM-321.jpg"
     },
     {
       "id": "IFM-322",

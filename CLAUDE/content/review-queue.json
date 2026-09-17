@@ -1,35 +1,41 @@
 {
-  "generated_by": "daily-content-processor (14 Sep 2026)",
-  "note": "All four registered folders are caught up: every topic folder in the Aakara tree (58), all 108 RSS workshop clips, every candidate file in Sakshi's uploads and the Certificates folder is already catalogued, and the Content Drop holds nothing but _Trash. Nothing new was staged today. The five items below are blocked or upstream problems rather than pending work — none can be resolved by a re-run. Two corrections to yesterday's queue: (1) 'Hiral Goel' and 'workshop/Rakshita' are Drive SHORTCUTS, not folders whose permissions are wrong, so the fix is different; (2) September's Carousels folder is no longer empty — it holds JIO IPO and Reviews, both already catalogued — though the five deck-planned carousels below are still undelivered.",
-  "count": 5,
+  "generated_by": "daily-content-processor (17 Sep 2026)",
+  "note": "One new item staged this run: Aakara delivered the BSE & NSE reel cover on 16 Sep, which filled the blank IFM-321 placeholder (updated in place, not duplicated). Everything else in the four registered folders is caught up — Content Drop holds only _Trash, Sakshi's uploads and the Certificates folder have no uncatalogued candidates, and every topic folder across the Aakara tree (June–October) plus all 108 RSS workshop clips already have rows. The four PNGs under June/Workshops/Women's are the artboards of already-published IFM-035, correctly collapsed to one row rather than catalogued separately. The six items below are blocked or upstream gaps rather than pending work — none can be resolved by a re-run.",
+  "count": 6,
   "items": [
     {
       "source": "Aakara delivery tree",
-      "title": "Hiral Goel — is a Drive shortcut (vnd.google-apps.shortcut), not a folder; it has no children to list and its target is not shared with us, so we cannot tell what it points at",
-      "folder_url": "https://drive.google.com/file/d/1PpmYKQwTk1yoyo0_vhekvCl9sY6T9vet/view",
+      "title": "September BSE & NSE — only the COVER GRAPHIC was delivered (nse bse.png, 16 Sep). The reel video itself is not in the folder. IFM-321 is marked Ready to mean the cover art is final, NOT that the reel is cut. Chase Aakara for the video.",
+      "folder_url": "https://drive.google.com/drive/folders/1oRleXGcjZGKLHuSJdan8-grL4_gwjiNl",
       "status": "needs_review"
     },
     {
       "source": "Aakara delivery tree",
-      "title": "workshop / Rakshita — also a Drive shortcut, not a folder; target not shared. Ask Aakara to share the target folders directly (or replace both shortcuts with real shared folders)",
-      "folder_url": "https://drive.google.com/file/d/1Nog5TrEHts1I6SmYP0OaAN8WhVCioEqI/view",
+      "title": "September: 11 planned posts still 'In Production' with no artwork delivered — 5 carousels (IFM-269, 270, 320, 372, 373) and 6 reels (IFM-272, 273, 275, 276, 277, 278). They link only to the planning decks. The Carousels folder holds two delivered topics (JIO IPO, Reviews) and Reels holds five plus the new BSE/NSE cover, so this is a gap in those 11 topics, not an empty folder.",
+      "folder_url": "https://drive.google.com/drive/folders/1nbw5ePSwhJ9v5nflqiTrVhjU2zrCsGxN",
       "status": "needs_review"
     },
     {
       "source": "Aakara delivery tree",
-      "title": "October: still no real plan — 'IFM Internal_October' is unchanged since 7 Sep, its overview slide still reads 'Content Plan for August', and its topics duplicate September's. Only the date grid is October. No October rows created.",
+      "title": "October: still no real plan — 'IFM Internal_October' is unmodified since 7 Sep 06:47, its overview slide still reads 'Content Plan for August', and its topics duplicate September's. Only the date grid is October. No October rows created, and the October folder contains nothing but that one deck.",
       "folder_url": "https://drive.google.com/drive/folders/17Qyr7t4PLqxBMMG6FleA1PYKH49x5ZJ_",
       "status": "needs_review"
     },
     {
       "source": "Aakara delivery tree",
-      "title": "September: 5 planned carousels (IFM-269, 270, 320, 372, 373) still 'In Production' with no artwork delivered — they link only to the planning decks. The Carousels folder itself now holds two delivered topics (JIO IPO, Reviews), so this is a gap in those 5 topics, not an empty folder.",
-      "folder_url": "https://drive.google.com/drive/folders/12QiLAx_B-FEfM5E6V2RHRet4UaiWSli9",
+      "title": "Hiral Goel — is a Drive shortcut (vnd.google-apps.shortcut) owned by aakaradesignstudios@gmail.com, not a folder; it has no children to list and its target is not shared with us, so we cannot tell what it points at. Unchanged since 12 Jun.",
+      "folder_url": "https://drive.google.com/file/d/1PpmYKQwTk1yoyo0_vhekvCl9sY6T9vet/view",
       "status": "needs_review"
     },
     {
       "source": "Aakara delivery tree",
-      "title": "5 planning decks sit in the tree uncatalogued: IFM Internal_June, IFM Internal_July, IFM Internal_August, IFM Internal_October, IFM_June Content, IFM_June Creatives. Checked August — every topic it plans is already delivered and catalogued, so these are planning artifacts, not missing content. Deliberately not given catalogue rows; listed so they are not rediscovered as 'new' each run.",
+      "title": "workshop / Rakshita — also a Drive shortcut, not a folder; target not shared. Ask Aakara to share the target folders directly (or replace both shortcuts with real shared folders). Unchanged since 21 Aug.",
+      "folder_url": "https://drive.google.com/file/d/1Nog5TrEHts1I6SmYP0OaAN8WhVCioEqI/view",
+      "status": "needs_review"
+    },
+    {
+      "source": "Aakara delivery tree",
+      "title": "6 planning decks sit in the tree uncatalogued: IFM Internal_June, IFM Internal_July, IFM Internal_August, IFM Internal_September, IFM Internal_October, IFM_June Content / IFM_June Creatives / IFM July Creatives. Checked August — every topic it plans is already delivered and catalogued, so these are planning artifacts, not missing content. Deliberately not given catalogue rows; listed so they are not rediscovered as 'new' each run.",
       "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
       "status": "needs_review"
     }
