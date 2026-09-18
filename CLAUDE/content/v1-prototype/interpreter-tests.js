@@ -125,14 +125,16 @@ const NATURAL = [
    topic('Mutual Funds'), 'anything genuinely tagged Mutual Funds'],
   ['A photo I can use on the website showing a workshop in progress',
    a => isImg(a) && fmt('Classroom Moment', 'B-roll')(a), 'a room-in-session image'],
-  /* Expectation changed with cause, not to go green. The library has NO footage of Hiral
-   * at a whiteboard. The two whiteboard-with-Hiral assets (IFM-061, IFM-062) are stills,
-   * and the one genuine whiteboard VIDEO, IFM-186 "Asset Classes Whiteboard Discussion",
-   * is tagged person: ["Other Person"] — the presenter in it is not Hiral. She said
-   * "footage", so Video is hard and the stills must not be offered as if they were it.
-   * The honest requirement is therefore: every result is a Hiral video, and the images
-   * the unfiltered engine used to rank first are gone. This is a CONTENT gap, not a
-   * retrieval bug — the fix is to shoot or find the clip, not to loosen the rule. */
+  /* CORRECTED 18 Sep 2026. This comment used to assert "the library has NO footage of Hiral
+   * at a whiteboard", on the grounds that IFM-186 "Asset Classes Whiteboard Discussion" was
+   * tagged person: ["Other Person"] and so "the presenter in it is not Hiral". That was my
+   * inference from a tag, not a fact about the footage — and the tag itself only said
+   * "Other Person" because the description never wrote her name. The user confirmed from the
+   * thumbnails that the presenter in these sessions IS Hiral, so the footage existed the
+   * whole time and I had written the opposite into a test file as though it were settled.
+   * A tag is evidence about the catalogue, never evidence about the world.
+   * The requirement is unchanged and still right: she said "footage", so Video is hard and
+   * stills must not be offered as if they were it. */
   ['Footage of Hiral at a whiteboard',
    a => isVid(a) && hiral(a),
    'no such footage exists — so: Hiral videos only, and no stills passed off as footage'],
