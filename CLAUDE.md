@@ -63,7 +63,8 @@ no file is not an asset. A staged row without a thumbnail never appears there at
 | Store | ID / location | Feeds |
 |---|---|---|
 | Catalogue (machine) | `CLAUDE/content/data.js` — `window.IFM_DATA = {...};` | Library, stats |
-| Catalogue v2 (human) | Sheet `1N6Gmox-OMxYTYzej8f59jFSlIwVxQ5HSeUzt4U04Rjc` | Overrides data.js on tag/status fields |
+| Catalogue v2 (human) | Sheet `1N6Gmox-OMxYTYzej8f59jFSlIwVxQ5HSeUzt4U04Rjc` | **RETIRED 18 Sep 2026** — see below |
+| Human corrections | `content/v1-prototype/enrichment.json` | Overrides the generated rules; feeds the Library |
 | Competitors | Sheet `1K1g47i9eyqFeXh9vOInhB0Dcjo_h_Jf2dAFZGLEYMeE` | Competitors tab |
 | Creator tracker | Sheet `117Ht7okUaGlF_XrbrOeTc2gha2WHa80Hz0DIeamihAM` | Creator Tracker |
 | Certificates | Sheet `12s0Vz5WmnfweUlA_vNsMMHE0oou9klXWWkSSs_pb4Bk` | Certificates |
@@ -72,6 +73,19 @@ no file is not an asset. A staged row without a thumbnail never appears there at
 
 Sheets are read as CSV via `gviz/tq?tqx=out:csv` and **must be shared "anyone with the
 link → Viewer"** or the tab shows setup instructions instead of data.
+
+### The Catalogue v2 sheet is retired — corrections go in `enrichment.json`
+
+Built 31 Aug as the place a human overrides machine tags. Retired 18 Sep 2026: Sakshi does not
+use it, it sat untouched from 7 Sep while the catalogue grew ~80 rows, and it only ever overrode
+**the old hub**. The V1 Library makes zero gviz calls and never read it, so an edit there did
+nothing to the app the team actually reviews. Do not sync it; do not report its drift. It stays
+in Drive as a record.
+
+**Corrections now go in `CLAUDE/content/v1-prototype/enrichment.json`** — a flat
+`{"IFM-NNN": {field: value}}` map applied LAST by `backfill.py`, so it beats every generated
+rule and survives regeneration. Add a `_why` key explaining the change; several entries record
+a human decision that the rules would otherwise undo on the next run.
 
 ### Drive folders
 

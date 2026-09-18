@@ -6094,7 +6094,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM testimonial recordings — 9 Sep 2026",
    "social": "Yes",
-   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 551 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed."
+   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 551 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1x6dgj8tGHqzCFXjUfE-dpzDrmnDcQs1U"
   },
   {
    "id": "IFM-398",
@@ -6113,7 +6113,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM testimonial recordings — 9 Sep 2026",
    "social": "Yes",
-   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 1182 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed."
+   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 1182 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1JbE0iUE26r7p8VZGY0qpja6iyG18VFac"
   },
   {
    "id": "IFM-399",
@@ -6132,7 +6132,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — 17 Jul 2026",
    "social": "Yes",
-   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 1449 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed."
+   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 1449 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1rBbqLRTOPm_KeF1W3dNxYtYUJanTb_2s"
   },
   {
    "id": "IFM-400",
@@ -6151,7 +6151,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — 24 Jun 2026",
    "social": "",
-   "notes": "Byte-identical duplicate rejected: file 1BoBZ4i1FrZzzXeZSCUmVrE3SPDbShcWF, same name IMG_4248.MOV and same size 628374179, re-uploaded 14 Jul 2026 into the same folder. This row points at the 24 Jun 2026 original. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 628 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed."
+   "notes": "Byte-identical duplicate rejected: file 1BoBZ4i1FrZzzXeZSCUmVrE3SPDbShcWF, same name IMG_4248.MOV and same size 628374179, re-uploaded 14 Jul 2026 into the same folder. This row points at the 24 Jun 2026 original. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 628 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 12DTTzOFEbiaHpOgq0TY6FFtgOzh-RALf"
   },
   {
    "id": "IFM-401",
@@ -6189,7 +6189,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — 24 Jun 2026",
    "social": "",
-   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 210 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed."
+   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 210 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1rRyKRigEB0AIdwr-wG-WynzoSloPtZVV"
   },
   {
    "id": "IFM-403",
@@ -6360,7 +6360,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM small-group session — Sep 2026",
    "social": "",
-   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 369 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed."
+   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 369 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1q3kFATEmjXLbySu-hSzDEij6R8dYwF9z"
   },
   {
    "id": "IFM-412",
@@ -6379,7 +6379,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM corporate session — Sep 2026",
    "social": "",
-   "notes": "Filed in the 'IFM (sharing experience)' folder but this is not a testimonial — it is a room shot of a corporate session, and it is out of focus throughout the cover frame. Kept as a Raw-backup record rather than dropped. Same yellow-shirted presenter as IFM-410. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 538 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed."
+   "notes": "Filed in the 'IFM (sharing experience)' folder but this is not a testimonial — it is a room shot of a corporate session, and it is out of focus throughout the cover frame. Kept as a Raw-backup record rather than dropped. Same yellow-shirted presenter as IFM-410. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 538 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1VR0sjkdUm3_IghcdTV-_90GrnArc-eYu"
   },
   {
    "id": "IFM-413",
@@ -6645,7 +6645,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 254 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 254 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1YobcsPcsC6FLBnUHi5n98MJthnvH-bm1"
   },
   {
    "id": "IFM-427",
@@ -7139,7 +7139,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 363 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 363 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1MlZD4lVwla-SKGUe813aEEsFy55Qcfk6"
   },
   {
    "id": "IFM-453",
@@ -7158,7 +7158,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "Yes",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_1838.MOV (1-BG7aF4xPcmSOch9QyJEr6HUS0gQql96); IMG_1839.MOV (1us-3DflkJSPKhneQMfvRfFon6gefPeuE). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 605 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_1838.MOV (1-BG7aF4xPcmSOch9QyJEr6HUS0gQql96); IMG_1839.MOV (1us-3DflkJSPKhneQMfvRfFon6gefPeuE). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 605 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1fAinP4eMt1al-t2E5KCM4wNPaQuu5s6z"
   },
   {
    "id": "IFM-454",
@@ -7177,7 +7177,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "Yes",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_1841.MOV (1NcimFLhJXBBDHh0WOYmZqfS4L44Gq8IU). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 255 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_1841.MOV (1NcimFLhJXBBDHh0WOYmZqfS4L44Gq8IU). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 255 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 14oli2iNAaq8fhHRlcspUijWRYXlEGHry"
   },
   {
    "id": "IFM-455",
@@ -7215,7 +7215,7 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 735 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 735 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1lFZNwu1JIHvuP-UrLr_F7ZDDGz-xgPEb"
   },
   {
    "id": "IFM-457",
