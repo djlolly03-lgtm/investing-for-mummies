@@ -472,5 +472,29 @@
  },
  "IFM-043": {
   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-043.mp4"
+ },
+ "IFM-410": {
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "format": "Hiral Speaking",
+  "_why": "Presenter identified as Hiral by the user from the thumbnail, 18 Sep 2026. The backfill rule only credits her on explicit textual evidence and the description just said \"presenter in yellow shirt\", so she was Other Person."
+ },
+ "IFM-412": {
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "format": "Hiral Speaking",
+  "_why": "Presenter identified as Hiral by the user from the thumbnail, 18 Sep 2026. The backfill rule only credits her on explicit textual evidence and the description just said \"presenter in yellow shirt\", so she was Other Person."
+ },
+ "IFM-411": {
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "format": "Hiral Speaking",
+  "_why": "Presenter identified as Hiral by the user from the thumbnail, 18 Sep 2026. The backfill rule only credits her on explicit textual evidence and the description just said \"presenter in yellow shirt\", so she was Other Person."
  }
 }
