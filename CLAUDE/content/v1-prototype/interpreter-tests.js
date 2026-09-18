@@ -46,6 +46,11 @@ const interpreted = q => INT.run(q, search);
 
 /* --------------------------------------------------------------- helpers --- */
 const ids = r => r.map(x => x.a.id);
+// Intent predicate for the "something funny" queries. Asserting the QUALITY of the answer
+// rather than its id is what keeps these tests honest as the library grows — a pinned id
+// list silently starts testing "has the catalogue changed", which is not the requirement.
+const isFunny = a => /laugh|giggl|grin|joke|candid|applau|clap|fist pump|funny|humour/i
+  .test(`${a.title} ${a.description} ${a.search_terms}`);
 const top3 = r => ids(r).slice(0, 3);
 // She scans, she does not read one line — a good asset anywhere in the top 3 is a hit.
 function judge(res, want) {
@@ -59,7 +64,10 @@ function judge(res, want) {
  * acceptable if it leaves every structured query exactly as good as it was. */
 const STRUCTURED = [
   ['find me a video of Hiral talking about gold', ['IFM-101', 'IFM-100', 'IFM-099']],
-  ['funny classroom moments',                     ['IFM-066', 'IFM-117', 'IFM-339', 'IFM-357']],
+  // Was a pinned id list, which rotted on 18 Sep 2026 when the library went 328 -> 412 and
+  // newer, better laughing frames outranked the originals. The documented intent is "genuinely
+  // candid/laughing moments", so assert THAT and it stops breaking every time content grows.
+  ['funny classroom moments',                     isFunny],
   ['show me student testimonials',                ['IFM-268']],
   ['find the clip where Hiral explains SIP',      ['IFM-286', 'IFM-018', 'IFM-315']],
   ['find gold b-roll',                            r => !r.topic.includes('Gold')],
@@ -70,7 +78,9 @@ const STRUCTURED = [
   ['compounding',                                 ['IFM-009', 'IFM-018', 'IFM-286', 'IFM-R07', 'IFM-R11']],
   ['savings vs investing',                        ['IFM-020']],
   ['classroom moment from the teens workshop',    ['IFM-279', 'IFM-288', 'IFM-291', 'IFM-293']],
-  ['testimonial video',                           null],
+  // Was `null` — "none exist". True at 328 assets; falsified on 18 Sep 2026 when Sakshi's
+  // testimonial folders were catalogued one row per person. The content changed, not the engine.
+  ['testimonial video',                           ['IFM-398', 'IFM-399', 'IFM-397', 'IFM-402']],
   ['wide shot of the room',                       ['IFM-291', 'IFM-318']],
 ];
 
@@ -90,7 +100,7 @@ const NATURAL = [
   ['Give me a nice photo of Hiral teaching',
    a => isImg(a) && (a.format === 'Hiral Speaking' || hiral(a)), 'an image of Hiral, not a video'],
   ['Something funny from the classroom',
-   ['IFM-066', 'IFM-117', 'IFM-339', 'IFM-357'], 'genuinely candid/laughing moments'],
+   isFunny, 'genuinely candid/laughing moments'],
   ['Find me that video where Hiral was talking about gold',
    ['IFM-101', 'IFM-099', 'IFM-100'], 'the gold-investment talk'],
   ['Do we have any funny photos from the teens batch?',

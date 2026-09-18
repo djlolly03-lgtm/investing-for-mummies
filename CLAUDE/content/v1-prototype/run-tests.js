@@ -27,7 +27,12 @@ console.log(`library: ${lib.length} assets (${window.IFM_V1.length} catalogued, 
 // null = expect no results; that is a real requirement, not an absence of one.
 const TESTS=[
  ['find me a video of Hiral talking about gold', ['IFM-101','IFM-100','IFM-099']],
- ['funny classroom moments',                     ['IFM-066','IFM-117','IFM-339','IFM-357']],
+ // Updated 18 Sep 2026 after the Content Library ingestion took the set 328 -> 412. The old
+ // expectation was not wrong, it was outranked: IFM-404 ("leopard-print shirt reaching across
+ // the table, laughing"), IFM-406 and IFM-419 are genuinely better answers that did not exist
+ // when this line was written. IFM-357 still appears. Widened rather than pinned, because the
+ // requirement is "a real laughing frame comes first", not "this particular id does".
+ ['funny classroom moments',                     ['IFM-404','IFM-406','IFM-380','IFM-419','IFM-357','IFM-066','IFM-117']],
  ['show me student testimonials',                ['IFM-268']],
  ['find the clip where Hiral explains SIP',      ['IFM-286','IFM-018','IFM-315']],
  // Returns gold-COLOURED supporting footage (the Vedanta gold-globe renders). That is a
@@ -42,7 +47,11 @@ const TESTS=[
  ['compounding',                                 ['IFM-009','IFM-018','IFM-286','IFM-R07','IFM-R11']],
  ['savings vs investing',                        ['IFM-020']],
  ['classroom moment from the teens workshop',    ['IFM-279','IFM-288','IFM-291','IFM-293']],
- ['testimonial video',                           null],   // none exist: every testimonial is an image or carousel
+ // Was `null` — "none exist: every testimonial is an image or carousel". That was true of the
+ // 328-asset library and stopped being true on 18 Sep 2026, when Sakshi's `IFM feedback videos`
+ // and `IFM (sharing experience)` folders were catalogued one row per person. The assertion was
+ // testing a fact about the CONTENT, not the engine, so new content correctly falsified it.
+ ['testimonial video',                           ['IFM-398','IFM-399','IFM-397','IFM-402']],
  ['wide shot of the room',                       ['IFM-291','IFM-318']],
 ];
 let pass=0;

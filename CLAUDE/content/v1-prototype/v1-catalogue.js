@@ -343,7 +343,7 @@ window.IFM_V1 =
 "id": "IFM-005",
 "title": "SpaceX IPO — What's All The Buzz About? (IPO Series)",
 "date": "2026-06-09",
-"thumb": "../https://ifm-deploy.vercel.app/carousel_spacex_higgsfield/slide_01.png",
+"thumb": "https://ifm-deploy.vercel.app/carousel_spacex_higgsfield/slide_01.png",
 "video": "",
 "drive": "https://ifm-deploy.vercel.app/carousel_spacex_higgsfield/slide_01.png",
 "description": "8-slide dark-navy carousel: 'SpaceX IPO: What's All The Buzz About? The biggest IPO in history may be here' — rocket emoji lift-off, teal serif headline, IPO SERIES badge.",
@@ -366,7 +366,7 @@ window.IFM_V1 =
 "id": "IFM-006",
 "title": "Wealth Conversation Ch.1 — Why Saving Isn't Enough",
 "date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap1.png",
+"thumb": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap1.png",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-006.mp4",
 "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter1-why-saving-isnt-enough/chap1hero.mp4",
 "description": "Split-screen of two coin jars on a wooden table: the left jar gathers dust and smoke while the right sprouts a glowing sapling that blooms into a golden money tree dripping coins. Saving stagnates; investing grows.",
@@ -388,7 +388,7 @@ window.IFM_V1 =
 "id": "IFM-007",
 "title": "Wealth Conversation Ch.2 — Inflation",
 "date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap2.png",
+"thumb": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap2.png",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-007.mp4",
 "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter2-inflation-carousel/chap2test2.mp4",
 "description": "A single coin sprouts a green seedling that grows into a gold-coin tree (test render). The other file in this folder is byte-identical to Ch.1's video — final Ch.2 hero still pending.",
@@ -409,7 +409,7 @@ window.IFM_V1 =
 "id": "IFM-008",
 "title": "Wealth Conversation Ch.3 — Purchasing Power",
 "date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap3.png",
+"thumb": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap3.png",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-008.mp4",
 "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter3-purchasing-power/chap3hero.mp4",
 "description": "A wire shopping basket on a kitchen counter holds glowing everyday essentials — groceries, schoolbook, toy plane, medicine, petrol pump, toy house — whose golden glow fades as prices bite. The same basket buys less every year.",
@@ -431,7 +431,7 @@ window.IFM_V1 =
 "id": "IFM-009",
 "title": "Wealth Conversation Ch.4 — Magic of Compounding",
 "date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap4.png",
+"thumb": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap4.png",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-009.mp4",
 "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter4-magic-of-compounding/chap4hero.mp4",
 "description": "Cash bundles rain down beside a desk calendar and a sign '₹10,000 invested at 12% per year', stacking into a tower labelled '20 yrs ₹96,463' that morphs into a Burj Khalifa-style skyscraper. One sum compounds into a monument.",
@@ -452,7 +452,7 @@ window.IFM_V1 =
 "id": "IFM-010",
 "title": "Wealth Conversation Ch.5 — Small Amounts Matter",
 "date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap5.png",
+"thumb": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap5.png",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-010.mp4",
 "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter5-small-amounts-matter/chap5hero.mp4",
 "description": "A sign reads '₹5,000 per month at 12% per year' beside a flip calendar; note stacks rocket upward in a blur of light and settle as a mountain of gold coins behind the gold IFM medallion. Small monthly SIPs build a fortune.",
@@ -471,7 +471,7 @@ window.IFM_V1 =
 "id": "IFM-011",
 "title": "Wealth Conversation Ch.6 — Growing With Income",
 "date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap6.png",
+"thumb": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap6.png",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-011.mp4",
 "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter6-growing-with-income/chap6hero.mp4",
 "description": "Two banded cash stacks sit side by side on dark wood; one grows into a towering skyscraper of note bundles, closing on the gold IFM coin leaning against the piles. Step up investing as income steps up.",
@@ -493,7 +493,7 @@ window.IFM_V1 =
 "id": "IFM-012",
 "title": "Wealth Conversation Ch.7 — Cost of Waiting",
 "date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap7.png",
+"thumb": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap7.png",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-012.mp4",
 "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter7-cost-of-waiting/chap7hero.mp4",
 "description": "Coins rain into three piggy boxes labelled Tanya (22), Kabil (27) and Rojan (32), growing into glowing coin towers — the 22-year-old's tower ends tallest by far (₹2.87cr vs ₹1.64cr). Every year you wait costs crores.",
@@ -514,7 +514,7 @@ window.IFM_V1 =
 "id": "IFM-013",
 "title": "Wealth Conversation Ch.8 — Hidden Treasures",
 "date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap8.png",
+"thumb": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap8.png",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-013.mp4",
 "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter8-hidden-treasures/chap8hero.mp4",
 "description": "Small lifestyle spends — nail polish, lipstick, a scooter, shopping bag, teacup, movie clapperboard — float up and dissolve one by one into a swelling heap of gold coins under the IFM logo. Everyday spends are hidden treasure.",
@@ -533,7 +533,7 @@ window.IFM_V1 =
 "id": "IFM-014",
 "title": "Wealth Conversation Ch.9 — Goals First",
 "date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap9.png",
+"thumb": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap9.png",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-014.mp4",
 "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter9-goals-first/chap9hero.mp4",
 "description": "A worried cartoon gold-coin sits at a desert crossroads crowded with signposts shouting Stocks, FDs and Gold — 'choosing investments before you choose your destination' — until a glowing Home signpost points the way. Goal first, product after.",
@@ -555,7 +555,7 @@ window.IFM_V1 =
 "id": "IFM-015",
 "title": "Wealth Conversation Ch.10 — Three Buckets",
 "date": "2026-06-11",
-"thumb": "../https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap10.png",
+"thumb": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap10.png",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-015.mp4",
 "drive": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter10-three-buckets/chap10hero.mp4",
 "description": "Neon goal icons (plane, house, graduation cap, medical cross, palm tree) float on black — 'We don't have just one financial goal' — then three glowing buckets (red shield, blue house, green rocket) line up: 'Different goals need different kinds of money.'",
@@ -9395,5 +9395,1408 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "aug 2026 corporate workshop rest shoot catch all remaining 100 raw frames august boardroom interchangeable backups twenty moments catalogued separately repeated live game being run from laptop each teaching slide table discussion opens folder not single file backup contact sheet"
+},
+{
+"id": "IFM-397",
+"title": "Testimonial — woman in black Balmain tee, seated to camera",
+"date": "2026-09-09",
+"thumb": "../thumbs/IFM-397.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1txuqf-L2GR-1BmjgJ7zeqVZP8825JCl_/view",
+"description": "A woman with long wavy hair in a black Balmain Paris t-shirt and jeans sits on a dark sofa against a wood-panelled wall, hands folded in her lap, speaking to someone just off camera. Clean, evenly lit single-speaker framing — a proper sit-down testimonial, not a grabbed clip.",
+"session": "IFM testimonial recordings — 9 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [],
+"person": [
+"Other Person"
+],
+"source": "Unknown",
+"search_terms": "testimonial review feedback social proof word of mouth testimonial woman black balmain tee seated camera long wavy hair paris shirt jeans sits dark sofa against wood panelled wall hands folded her lap speaking someone just off clean evenly lit single speaker framing proper sit down not grabbed clip"
+},
+{
+"id": "IFM-398",
+"title": "Testimonial — woman in blue heart-print shirt at wooden table",
+"date": "2026-09-09",
+"thumb": "../thumbs/IFM-398.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1U0GiH_8-ks472N-UTkJGGCN4fhJg7r86/view",
+"description": "A woman in a blue chambray shirt patterned with small hearts sits at a polished wooden table against wood panelling, hands loosely clasped, looking straight down the lens. A phone rests on the table at her elbow. Steady, well-exposed to-camera testimonial.",
+"session": "IFM testimonial recordings — 9 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [],
+"person": [
+"Other Person"
+],
+"source": "Unknown",
+"search_terms": "testimonial review feedback social proof word of mouth testimonial woman blue heart print shirt wooden table chambray patterned small hearts sits polished against wood panelling hands loosely clasped looking straight down lens phone rests her elbow steady well exposed camera feedback video single speaker sept 2026 content library"
+},
+{
+"id": "IFM-399",
+"title": "Testimonial — woman in black tee, hands clasped, boardroom table",
+"date": "2026-07-17",
+"thumb": "../thumbs/IFM-399.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1DOjdAZCKm5XlyYeFL7fdc_-0MJIr9Kxh/view",
+"description": "A woman with long dark hair in a black t-shirt sits at the boardroom table with her hands clasped under her chin, talking directly to camera. A book and a Paytm QR standee sit in front of her, framed artwork and a light switch panel on the wall behind.",
+"session": "IFM workshop — 17 Jul 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [],
+"person": [
+"Other Person"
+],
+"source": "Unknown",
+"search_terms": "testimonial review feedback social proof word of mouth testimonial woman black tee hands clasped boardroom table long dark hair shirt sits her under chin talking directly camera book paytm standee sit front framed artwork light switch panel wall behind feedback video single speaker july 2026 content library ifm"
+},
+{
+"id": "IFM-400",
+"title": "Woman in pale blue lace top smiling to camera, govt-schemes whiteboard behind",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-400.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1iIXVLoLIVopxwti-p9pKDtmRmfKRIO6t/view",
+"description": "A woman in a pale blue lace top sits smiling at the long boardroom table; the whiteboard behind her is filled with a hand-drawn government savings map — GOVT SAVING SCHEMES, G-SECS, PPF, Sukanya Samriddhi, T-BILLS, dated bonds — next to the three-bucket liquidity/safety/growth diagram. Pens, tissues and workbooks cover the table.",
+"session": "IFM workshop — 24 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Saving",
+"3-Bucket Investing",
+"Fixed Income"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "candid warm natural unposed relaxed friendly celebration testimonial review feedback social proof word of mouth woman pale blue lace top smiling camera govt schemes whiteboard behind sits long boardroom table her filled hand drawn government savings map saving secs ppf sukanya samriddhi bills dated bonds next three bucket liquidity safety growth diagram pens tissues workbooks"
+},
+{
+"id": "IFM-401",
+"title": "Three women at the table, one waving, asset-classes whiteboard behind",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-401.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/12G5ikvwiiJHwB3sZsF-PTkHf9q5HLAAn/view",
+"description": "Three women sit along the boardroom table — one in a denim waistcoat in the foreground, one in a pale blue lace top waving at the camera, one in black resting her chin on her hand. The whiteboard behind carries the full ASSET CLASSES tree (cash, real estate, commercial, debt, equity) above the emergency/safety/growth buckets.",
+"session": "IFM workshop — 24 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"3-Bucket Investing",
+"Stocks / Equity",
+"Fixed Income",
+"Real Estate / REITs"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "three women table one waving asset classes whiteboard behind sit along boardroom denim waistcoat foreground pale blue lace top camera black resting her chin hand carries full tree cash real estate commercial debt equity above emergency safety growth buckets students"
+},
+{
+"id": "IFM-402",
+"title": "Woman in black speaking from the far end of the boardroom table",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-402.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1wZ6p29hfVAK8Ax5J62nGs1iJGSnjmCQy/view",
+"description": "A woman in a black top sits alone at the far end of the long boardroom table, mid-sentence with her hands together. The table between her and the camera is laid out with the workshop kit — ribbed glass tumblers on coasters, a QR standee, a pen pot, an orange water bottle and spread workbooks.",
+"session": "IFM workshop — 24 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [],
+"person": [
+"Other Person"
+],
+"source": "Unknown",
+"search_terms": "testimonial review feedback social proof word of mouth woman black speaking from far end boardroom table top sits alone long mid sentence her hands together between camera laid out workshop kit ribbed glass tumblers coasters standee pen pot orange water bottle spread workbooks testimonial feedback video wide june"
+},
+{
+"id": "IFM-403",
+"title": "Woman in leopard-print shirt talking, hands clasped",
+"date": "2026-09-15",
+"thumb": "../thumbs/IFM-403.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/17D5SmVinALPfDSaD1eTMg6luAxKvFBH1/view",
+"description": "A woman in a leopard-print shirt, glasses and hair in a high bun sits in profile at the wooden boardroom table, hands clasped in front of her, mid-sentence. Two framed prints hang on the yellow wall behind and a dark wood cupboard fills the right of frame.",
+"session": "IFM small-group session — Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "woman leopard print shirt talking hands clasped glasses hair high bun sits profile wooden boardroom table front her mid sentence two framed prints hang yellow wall behind dark wood cupboard fills right frame sharing experience small group discussion sept 2026"
+},
+{
+"id": "IFM-404",
+"title": "Woman in leopard-print shirt reaching across the table, laughing",
+"date": "2026-09-16",
+"thumb": "../thumbs/IFM-404.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1f5O0-8F9JlZMJr6ynwKozrlSF35beE_O/view",
+"description": "The same woman in the leopard-print shirt leans forward and reaches across the boardroom table, smiling broadly. Her checked handbag, a notebook and a phone sit on the table beside her; the empty chair opposite is pushed back.",
+"session": "IFM small-group session — Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration woman leopard print shirt reaching across table laughing same leans forward reaches boardroom smiling broadly her checked handbag notebook phone sit beside empty chair opposite pushed back sharing experience small group sept 2026 content library"
+},
+{
+"id": "IFM-405",
+"title": "Woman in leopard-print shirt gesturing with both hands raised",
+"date": "2026-09-09",
+"thumb": "../thumbs/IFM-405.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1_Wdz3f0lzmxXm1qJ3N92I3gdfUjJprT1/view",
+"description": "The same woman in the leopard-print shirt holds both hands up near her face mid-explanation, her checked handbag hanging from the chair arm. Open IFM workbooks and a printed booklet are spread on the table in front of her.",
+"session": "IFM small-group session — Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "woman leopard print shirt gesturing both hands raised same holds near her face mid explanation checked handbag hanging from chair arm open ifm workbooks printed booklet spread table front sharing experience small group workbook boardroom sept 2026 content library"
+},
+{
+"id": "IFM-406",
+"title": "Woman in white kurta listening, two women laughing behind her",
+"date": "2026-09-09",
+"thumb": "../thumbs/IFM-406.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1590N5lZDy6jsDNmkXEEQd3S9AUtm62Tp/view",
+"description": "A woman in a cream kurta with a long ponytail rests her chin on her hand in the foreground, half-smiling as she listens. Behind her a woman in white and the woman in the leopard-print shirt are both laughing. Glasses of water on coasters line the table.",
+"session": "IFM small-group session — Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration woman white kurta listening two women laughing behind her cream long ponytail rests chin hand foreground half smiling she listens leopard print shirt both glasses water coasters line table sharing experience small group students boardroom sept 2026 content library"
+},
+{
+"id": "IFM-407",
+"title": "Woman in denim jacket laughing at the head of the table",
+"date": "2026-09-09",
+"thumb": "../thumbs/IFM-407.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1h2rXWfvQ8oNbmdNkrwYwqddEWpq44ACu/view",
+"description": "A woman in a denim jacket sits at the head of the boardroom table laughing with her hand raised mid-gesture, while the woman in the cream kurta listens in the foreground. A handwritten notebook, spectacles and a green tissue box sit on the table between them.",
+"session": "IFM small-group session — Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "funny fun laughing humour lively woman denim jacket laughing head table sits boardroom her hand raised mid gesture while cream kurta listens foreground handwritten notebook spectacles green tissue box sit between them sharing experience small group students sept 2026 content library"
+},
+{
+"id": "IFM-408",
+"title": "Woman in white kurta, hand to cheek, two women smiling behind",
+"date": "2026-09-09",
+"thumb": "../thumbs/IFM-408.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1nSzmF-bOGj2i57kS2-dMlK-qYzvrMmUa/view",
+"description": "The woman in the cream kurta sits with her hand against her cheek looking toward the front of the room; behind her a woman in white and the woman in the leopard-print shirt are talking and smiling. Framed artwork and the dark cupboard fill the background.",
+"session": "IFM small-group session — Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "candid warm natural unposed relaxed friendly celebration woman white kurta hand cheek two women smiling behind cream sits her against looking toward front room leopard print shirt talking framed artwork dark cupboard fill background sharing experience small group listening boardroom sept 2026 content library"
+},
+{
+"id": "IFM-409",
+"title": "Woman in white kurta speaking, two women laughing behind her",
+"date": "2026-09-09",
+"thumb": "../thumbs/IFM-409.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1eXYMQ8xMOuq3laDmKm18xAKyaTbqMBSQ/view",
+"description": "The woman in the cream kurta speaks with her hand near her face, caught mid-word, while the two women behind her — one in white, one in the leopard-print shirt — laugh openly. A pen and an annotated worksheet lie on the table at the left edge of frame.",
+"session": "IFM small-group session — Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "funny fun laughing humour lively woman white kurta speaking two women laughing behind her cream speaks hand near face caught mid word while one leopard print shirt laugh openly pen annotated worksheet lie table left edge frame sharing experience small group students boardroom sept 2026"
+},
+{
+"id": "IFM-410",
+"title": "Presenter in yellow shirt making a point, finger raised",
+"date": "2026-09-09",
+"thumb": "../thumbs/IFM-410.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/18E2ZtRFXt0PEj1w0dvhsnRxqFVuib9Cg/view",
+"description": "A woman in a bright yellow shirt with red-framed glasses stands beside an open laptop at the boardroom table, index finger raised and eyes closed mid-point. A whiteboard fills the wall behind her and a ribbed glass tumbler sits on the table.",
+"session": "IFM small-group session — Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [],
+"person": [
+"Other Person"
+],
+"source": "Unknown",
+"search_terms": "presenter yellow shirt making point finger raised woman bright red framed glasses stands beside open laptop boardroom table index eyes closed mid whiteboard fills wall behind her ribbed glass tumbler sits teaching sept 2026 content library"
+},
+{
+"id": "IFM-411",
+"title": "Woman in black leading the table, IFM workbook in foreground",
+"date": "2026-09-15",
+"thumb": "../thumbs/IFM-411.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1toblEGFwm0BUSY_VjYdrHew-Yy9Ndal-/view",
+"description": "A woman in a black sleeveless top sits at the head of the boardroom table holding a red bottle, an open workbook in front of her and a pull-down projector screen behind. An 'Investing for Mummies' workbook lies face-up on the table in the foreground with its illustrated cover clearly visible; an attendee in pink sits with her back to camera.",
+"session": "IFM small-group session — Sep 2026",
+"slide_text": "Investing for Mummies",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Money Conversations",
+"Investing"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "woman black leading table ifm workbook foreground sleeveless top sits head boardroom holding red bottle open front her pull down projector screen behind investing mummies lies face illustrated cover clearly visible attendee pink back camera teaching discussion branded sept 2026"
+},
+{
+"id": "IFM-412",
+"title": "Corporate boardroom session, presenter at wall screen — out of focus",
+"date": "2026-09-17",
+"thumb": "../thumbs/IFM-412.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1iSwN5ihqm6v1Q3mvyiHkydXyu8F2PbBQ/view",
+"description": "A badly out-of-focus frame of a corporate boardroom: a presenter in a yellow top stands beside a wall-mounted screen showing a slide, while an attendee in cream sits with her back to camera at the long table. Usable only as a record that the session happened — nothing in frame is sharp.",
+"session": "IFM corporate session — Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "corporate boardroom session presenter wall screen out focus badly frame yellow top stands beside mounted showing slide while attendee cream sits her back camera long table usable only record happened nothing sharp workshop blurry raw backup sept 2026 content library"
+},
+{
+"id": "IFM-413",
+"title": "Hiral opens the Swayamvar game — QR join screen on the boardroom TV",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-413.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1aVqN9DMAy1GfP4Lrl8gHLJtTmva0OYev/view",
+"description": "Hiral stands at the wall-mounted TV pointing at the QR code on the \"The Swayamvar is Open\" join screen, with the room code and three joined-player slots listed beside it. Two participants sit with their backs to camera at the long table, an open workbook and a MacBook in front of them.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "The Swayamvar is Open",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "hiral opens swayamvar game join screen boardroom stands wall mounted pointing code open room three joined player slots listed beside two participants sit their backs camera long table workbook macbook front them session workshop mums sept 2026 content library ifm"
+},
+{
+"id": "IFM-414",
+"title": "Boardroom wide during the Swayamvar round, game screen lit",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-414.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/13-1NxviuXLELuvCeku3gjJwAHYZP7Ryx/view",
+"description": "The whole room seen from table level: the presenter stands at the TV showing a maroon Swayamvar game screen while four participants work along the table with open workbooks, water glasses and a laptop. A hand reaches across the foreground.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "B-roll",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "boardroom wide during swayamvar round game screen lit whole room seen from table level presenter stands showing maroon while four participants work along open workbooks water glasses laptop hand reaches across foreground session workshop mums sept 2026 content library ifm"
+},
+{
+"id": "IFM-415",
+"title": "Close detail — participant holding a printed game card over her workbook",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-415.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1zkgiayd3HqHZJDBHziVNI7xcPtK0b1i5/view",
+"description": "Tight over-the-shoulder detail of a participant holding a small printed card up off the table, her IFM workbook page and a pen lying open beneath it. Another participant in a dark print top sits opposite.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "close detail participant holding printed game card over her workbook tight shoulder small off table ifm page pen lying open beneath another dark print top sits opposite swayamvar session workshop mums sept 2026 content library games"
+},
+{
+"id": "IFM-416",
+"title": "Participant joining the game on her phone",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-416.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1SpnEZYsW5ivgIK9OhuA8_PPeyRbahI3r/view",
+"description": "A participant in a green striped kurta leans over her phone to join the game, the handset held low against the table edge. A second participant sits further down the table behind her.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "participant joining game her phone green striped kurta leans over join handset held low against table edge second sits further down behind swayamvar session workshop mums sept 2026 content library ifm games"
+},
+{
+"id": "IFM-417",
+"title": "Two participants comparing notes mid-round",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-417.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1FrIlkEkgPmlq-QEQKNMnLYgVreoiZUZP/view",
+"description": "Two participants sit side by side at the table — one in a green striped kurta with her back half to camera, one in a peach striped shirt facing her — talking while the round runs.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "two participants comparing notes mid round sit side table one green striped kurta her back half camera peach shirt facing talking while runs swayamvar game session workshop mums sept 2026 content library ifm games discussion"
+},
+{
+"id": "IFM-418",
+"title": "Hiral mid-explanation at the suitor screen",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-418.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1al-H5sxk4CvT2-IySNllcR3uPd-yect0/view",
+"description": "Hiral stands beside the TV in a cream tee and wide beige trousers, hands open mid-sentence, explaining the suitor card on screen. A participant's head and shoulder fill the lower foreground.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "hiral mid explanation suitor screen stands beside cream tee wide beige trousers hands open sentence explaining card participant head shoulder fill lower foreground swayamvar game session workshop mums sept 2026 content library ifm games teaching"
+},
+{
+"id": "IFM-419",
+"title": "Participants laughing during the game",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-419.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1wjOt2pch6h_Y8gFM3QErmh0sRtoN7y1d/view",
+"description": "Two participants caught laughing — one in a black blazer grinning wide across the table, one in a green kurta in the near foreground turning towards her. Tissues, mugs and a water glass are scattered on the table between them.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration participants laughing during game two caught one black blazer grinning wide across table green kurta near foreground turning towards her tissues mugs water glass scattered between them swayamvar session workshop mums sept 2026 content library ifm games fun engagement candid"
+},
+{
+"id": "IFM-420",
+"title": "Participant in peach smiling over her workbook",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-420.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1gSk3uQ5v9DYi1OI3uHY-_UzxTpv1nKEM/view",
+"description": "A participant in a peach striped shirt sits smiling at the table, her IFM workbook open in front of her next to a black water bottle and a red box of pens.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "candid warm natural unposed relaxed friendly celebration participant peach smiling over her workbook striped shirt sits table ifm open front next black water bottle red box pens swayamvar game session workshop mums sept 2026 content library games engaged"
+},
+{
+"id": "IFM-421",
+"title": "Hiral reaching to the \"Meet the Suitors\" list on screen",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-421.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1QUvuNDqm0AyDjNwkNiMglNJaJBeUDEQI/view",
+"description": "Hiral leans in towards the TV, arm extended to the \"Meet the Suitors\" screen where the suitor options are listed in a maroon panel. Shot from behind her.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "Meet the Suitors",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral"
+],
+"source": "Sakshi",
+"search_terms": "hiral reaching meet suitors list screen leans towards arm extended where suitor options listed maroon panel shot from behind her swayamvar game session workshop mums sept 2026 content library ifm games"
+},
+{
+"id": "IFM-422",
+"title": "Hiral walks the room through the \"Real Estate Singh\" suitor card",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-422.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/10tPD_8AdAc_Ts9m1x1ycGwHXFqMa3q3D/view",
+"description": "Hiral stands at the TV pointing at the \"Mr. / Miss Real Estate Singh\" suitor card on the Swayamvar screen — occupation Landlord, with its green-flag list (tangible, impressive, makes family WhatsApp group proud) and red-flag list (high maintenance, requires commitment, difficult breakup process) side by side.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "Mr. / Miss Real Estate Singh",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money",
+"Real Estate / REITs"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "hiral walks room through real estate singh suitor card stands pointing miss swayamvar screen occupation landlord green flag list tangible impressive makes family whatsapp group proud red high maintenance requires commitment difficult breakup process side game session workshop mums sept"
+},
+{
+"id": "IFM-423",
+"title": "Hiral reacting at the suitor screen, hand to face",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-423.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1QO6xEAgqiNcWAP3P6IeaneHPP-rytqN5/view",
+"description": "Hiral stands at the TV with one hand up to her face, reacting to the suitor card on screen as she talks the room through it.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral"
+],
+"source": "Sakshi",
+"search_terms": "hiral reacting suitor screen hand face stands one her card she talks room through swayamvar game session workshop mums sept 2026 content library ifm games reaction"
+},
+{
+"id": "IFM-424",
+"title": "Two participants in conversation at the far end of the table",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-424.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1QX2CMj_4Cjp5Qz3-cFuNj4OOV0xi13n3/view",
+"description": "Two participants at the whiteboard end of the table mid-conversation — one in peach stripes, one in a black blazer — with workbooks, mugs and a green tissue box spread across the table in front of them.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "two participants conversation far end table whiteboard mid one peach stripes black blazer workbooks mugs green tissue box spread across front them swayamvar game session workshop mums sept 2026 content library ifm games discussion"
+},
+{
+"id": "IFM-425",
+"title": "The table from a participant's seat, green striped sleeve in frame",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-425.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1A0fz2nVFlzPBnYeALJh2SRT-XZ5_L0EV/view",
+"description": "The length of the boardroom table shot from a participant's own seat, her green striped sleeve filling the left foreground, two participants visible across the table with papers and a water glass.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "table from participant seat green striped sleeve frame length boardroom shot own her filling left foreground two participants visible across papers water glass swayamvar game session workshop mums sept 2026 content library ifm games pov wide"
+},
+{
+"id": "IFM-426",
+"title": "Hiral at the game results list, back to camera",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-426.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1irQpeA5ZyHgKh4utb_2_ged96Fjw92-5/view",
+"description": "Hiral stands square to the TV with her back to camera, reading down a list of coloured entries on the game screen — the round results.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Stock Market"
+],
+"person": [
+"Hiral"
+],
+"source": "Sakshi",
+"search_terms": "hiral game results list back camera stands square her reading down coloured entries screen round swayamvar session workshop mums sept 2026 content library ifm games leaderboard"
+},
+{
+"id": "IFM-427",
+"title": "Participant raising her hand to answer",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-427.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1ZrGn2WaGBsr3yRlEi2pUcmqVVSKKkZV8/view",
+"description": "A participant raises her hand high in the near foreground — only the green sleeve and forearm in frame — while two participants across the table look towards her, papers in front of them.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "participant raising her hand answer raises high near foreground only green sleeve forearm frame while two participants across table look towards papers front them swayamvar game session workshop mums sept 2026 content library ifm games raised answering participation"
+},
+{
+"id": "IFM-428",
+"title": "Room wide towards the door, participants along the table",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-428.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/17rxjgKnrjkb212qdKVGd-CeDXgLE5MrN/view",
+"description": "The room shot lengthwise towards the wooden door and window curtains, participants seated along the table with a green kurta and a peach sleeve in the near foreground.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "room wide towards door participants along table shot lengthwise wooden window curtains seated green kurta peach sleeve near foreground swayamvar game session workshop mums sept 2026 content library ifm games venue boardroom"
+},
+{
+"id": "IFM-429",
+"title": "Participant following the game on her laptop",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-429.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/19YQsBoDoGA2KgfVrDfAE0dC4jqalBKbq/view",
+"description": "A participant in dark clothing sits at an open MacBook with the game screen on it, notes and a pen beside her; a participant in peach stripes sits to her right. The whiteboard is behind them.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "participant following game her laptop dark clothing sits open macbook screen notes pen beside peach stripes right whiteboard behind them swayamvar session workshop mums sept 2026 content library ifm games"
+},
+{
+"id": "IFM-430",
+"title": "Participant in navy smiling across the table",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-430.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1AUCt8K0Dcl5zkJV-QQbPKyN3WPMT-DlR/view",
+"description": "A participant in a navy top sits smiling at the table with a workbook and tissue box in front of her, framed artwork on the wall behind.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "candid warm natural unposed relaxed friendly celebration participant navy smiling across table top sits workbook tissue box front her framed artwork wall behind swayamvar game session workshop mums sept 2026 content library ifm games"
+},
+{
+"id": "IFM-431",
+"title": "Participant in green mid-gesture during the discussion",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-431.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1pDOQYIgx81Gy_BCeGSONlUtUJPl2AXZ4/view",
+"description": "A participant in a bright green kurta sits mid-gesture, hand raised near her face as she makes a point; a participant in a cream hoodie is in the near foreground and two more sit behind.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "participant green mid gesture during discussion bright kurta sits hand raised near her face she makes point cream hoodie foreground two more sit behind swayamvar game session workshop mums sept 2026 content library ifm games making"
+},
+{
+"id": "IFM-432",
+"title": "Teens working through the printed worksheet at the table",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-432.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/16ThmGMBnfpuF8ZymLuec1eqEbXx2bae-/view",
+"description": "Three teenagers sit along the boardroom table with the printed IFM activity sheet in front of them; the girl nearest camera in a white long-sleeved top is writing on hers. Water glasses and a pen sit on the table.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "teens working through printed worksheet table three teenagers sit along boardroom ifm activity sheet front them girl nearest camera white long sleeved top writing hers water glasses pen ift youth workshop aug 2026 content library"
+},
+{
+"id": "IFM-433",
+"title": "Room wide with the \"Famous Words\" slide up",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-433.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1yo0K6ABJ21dTPBX6EFLqESm94R0pzjTQ/view",
+"description": "The room shot from the back of the table: the TV at the far end shows the pale \"Famous Words...\" slide while five teenagers sit along the table with their worksheets, backs and profiles to camera.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "Famous Words...",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "room wide famous words slide shot from back table far end shows pale while five teenagers sit along their worksheets backs profiles camera ift teens youth workshop aug 2026 content library"
+},
+{
+"id": "IFM-434",
+"title": "Hiral addressing the teens in front of the \"Famous Words\" slide",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-434.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/18mZqXl62sU-C3V3dCM7Ed0kYHWm-Rocz/view",
+"description": "Hiral stands at the far end of the room beside the TV showing the blue \"Famous Words...\" title slide, talking to the group with one hand raised. Two teenagers sit in the foreground with their backs to camera.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "Famous Words...",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "hiral addressing teens front famous words slide stands far end room beside showing blue title talking group one hand raised two teenagers sit foreground their backs camera ift youth workshop aug 2026 content library teaching"
+},
+{
+"id": "IFM-435",
+"title": "Teens around the table with worksheets, no screen in frame",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-435.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1mbLlWhHpsLb_bt1GwOLg2RtvbeaqaAXG/view",
+"description": "Four teenagers around the table, worksheets and a water glass in front of them, one boy in a white tee turned towards the group. Shot across the table with a chair back in the foreground.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "teens around table worksheets screen frame four teenagers water glass front them one boy white tee turned towards group shot across chair back foreground ift youth workshop aug 2026 content library"
+},
+{
+"id": "IFM-436",
+"title": "The Warren Buffett income-minus-expenses slide, Hiral beside the screen",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-436.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1HM8B11EH5OMJ41fw2lil69GITj5MrrTx/view",
+"description": "The TV shows the \"Famous Words\" slide crediting Warren Buffett, with the savings formula broken out as SAVINGS = INCOME - EXPENSES and then EXPENSES = INCOME - SAVINGS highlighted beneath it. Hiral stands to the right of the screen; teenagers watch from the table in the foreground.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "Famous Words",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Saving",
+"Managing Money",
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "warren buffett income minus expenses slide hiral beside screen shows famous words crediting savings formula broken out then highlighted beneath stands right teenagers watch from table foreground ift teens youth workshop aug 2026 content library"
+},
+{
+"id": "IFM-437",
+"title": "Wide down the table during the Buffett savings lesson",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-437.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/12rCQcwpl88owWjWNGXBoghrK-AgcEuU_/view",
+"description": "The room from the near end of the table looking down its length while the Buffett savings slide is up — five teenagers seated on both sides, an air-conditioner and framed art on the far wall.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [
+"Saving",
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "wide down table during buffett savings lesson room from near end looking length while slide five teenagers seated both sides air conditioner framed art far wall ift teens youth workshop aug 2026 content library"
+},
+{
+"id": "IFM-438",
+"title": "Teens at the table from the opposite corner",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-438.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1r8p29J0Oeny5YyAPDihWGxAkfTDHM6ce/view",
+"description": "The group shot from the opposite corner of the room: four teenagers seated around the table with their worksheets, the whiteboard and framed art behind them.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "teens table from opposite corner group shot room four teenagers seated around their worksheets whiteboard framed art behind them ift youth workshop aug 2026 content library angle"
+},
+{
+"id": "IFM-439",
+"title": "Hiral presents the \"invest Rs 5,000 every month\" slide to the teens",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-439.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1D6Kvhuvj_iSILyEidlFxEB3_85YcsxTk/view",
+"description": "Hiral stands at the TV mid-sentence presenting the bright illustrated slide \"What If You Invest Rs 5,000 Every Month...\" with its three cartoon figures and a money-tree graphic. Teenagers fill the foreground, their printed activity sheets open on the table in front of them.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "What If You Invest Rs 5,000 Every Month...",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Compounding",
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "sip systematic investment plan monthly investing hiral presents invest 000 every month slide teens stands mid sentence presenting bright illustrated what you three cartoon figures money tree graphic teenagers fill foreground their printed activity sheets open table front them ift youth workshop aug 2026 content library"
+},
+{
+"id": "IFM-440",
+"title": "Hiral at the Rs 5,000 slide, shot from behind the teens",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-440.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1TPpa8kjsx7V2nvORkuQxkqyy_61rSgAW/view",
+"description": "The same illustrated \"What If You Invest Rs 5,000 Every Month\" slide, photographed over the heads of the seated teenagers with Hiral standing at the screen reaching towards it. Activity sheets are spread across the table in the foreground.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "What If You Invest Rs 5,000 Every Month",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money",
+"Investing"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "hiral 000 slide shot from behind teens same illustrated what you invest every month photographed over heads seated teenagers standing screen reaching towards activity sheets spread across table foreground ift youth workshop aug 2026 content library 5000 shoulder"
+},
+{
+"id": "IFM-441",
+"title": "Teen boy in black talking with his arms folded",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-441.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/10j7-3wSWLTAQNCndgtq6st-YCvDd5udK/view",
+"description": "A teenage boy in a black tee sits at the table with his arms folded, talking to the group. A yellow booklet, a phone and a plastic cup sit on the table in front of him.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations",
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "teen boy black talking his arms folded teenage tee sits table group yellow booklet phone plastic cup sit front him ift teens youth workshop aug 2026 content library discussion"
+},
+{
+"id": "IFM-442",
+"title": "Hiral teaching beside an illustrated slide, teen in peach in the foreground",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-442.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1nK8IOWtnKu__Uu84ncSI4w85PT_WYQiY/view",
+"description": "Hiral stands beside the TV showing an illustrated blue slide, gesturing as she explains it. A teenager in a peach top sits in the near foreground with her hand to her chin, worksheets and papers across the table.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "hiral teaching beside illustrated slide teen peach foreground stands showing blue gesturing she explains teenager top sits near her hand chin worksheets papers across table ift teens youth workshop aug 2026 content library listening"
+},
+{
+"id": "IFM-443",
+"title": "Close detail — a teen filling in the activity sheet",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-443.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1w2HKowlIH8li_heBAnd3cXdwMuAXBVxL/view",
+"description": "Tight detail of a teenager's hands writing on the colour-printed IFM activity sheet, pen in hand, an open notebook and a phone beside it on the dark table.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "close detail teen filling activity sheet tight teenager hands writing colour printed ifm pen hand open notebook phone beside dark table ift teens youth workshop aug 2026 content library worksheet"
+},
+{
+"id": "IFM-444",
+"title": "Teens at the table, boy in black turned to the group",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-444.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1bT7zYjmEUv4xvsfsAqfmjNsHcifF5W5A/view",
+"description": "A teenage boy in black sits turned towards the group with a girl in white beside him and two more teenagers further down the table; papers and a pink cup sit in front of them.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations",
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "teens table boy black turned group teenage sits towards girl white beside him two more teenagers further down papers pink cup sit front them ift youth workshop aug 2026 content library discussion"
+},
+{
+"id": "IFM-445",
+"title": "Two teen boys across the table, one leaning in",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-445.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1QoLIkc9_gWygYF-hWj2KfXqXZD4n8kNZ/view",
+"description": "Two teenage boys sit across the table — one in a pale blue tee, one in black — with a third in teal in the near foreground, back of head to camera, a laptop open at the end of the table.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "two teen boys across table one leaning teenage sit pale blue tee black third teal near foreground back head camera laptop open end ift teens youth workshop aug 2026 content library"
+},
+{
+"id": "IFM-446",
+"title": "Two teen boys at the table looking towards camera",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-446.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/19TuvwYij8YCq952mHnJTPkcWOd3fTi37/view",
+"description": "Two teenage boys sit side by side at the table looking towards camera, one in a pale blue tee and one in black, printed sheets, a water bottle and a plastic cup between them.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "two teen boys table looking towards camera teenage sit side one pale blue tee black printed sheets water bottle plastic cup between them ift teens youth workshop aug 2026 content library"
+},
+{
+"id": "IFM-447",
+"title": "Teen girl in white with her worksheets, classmate beside her",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-447.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1uN1fAfheirSmrZPgz34XqsHwAn64H2RO/view",
+"description": "A teenage girl in a white tee sits at the table with the printed activity sheets spread in front of her, another teenager beside her in a white top, the whiteboard and framed art behind.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "teen girl white her worksheets classmate beside teenage tee sits table printed activity sheets spread front another teenager top whiteboard framed art behind ift teens youth workshop aug 2026 content library"
+},
+{
+"id": "IFM-448",
+"title": "Teen boy talking with his hands clasped, classmate listening",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-448.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/150CQIOk7cZd3WB1xuK_9GOgvh9IVulfE/view",
+"description": "A teenage boy in black sits with his hands clasped in front of him talking, a girl in a white tee listening beside him and a third teenager in teal in the foreground.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "teen boy talking his hands clasped classmate listening teenage black sits front him girl white tee beside third teenager teal foreground ift teens youth workshop aug 2026 content library"
+},
+{
+"id": "IFM-449",
+"title": "Phones out — teens playing a live round",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-449.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/10hluaB5aaG1L2pU236saOx703rEidaRL/view",
+"description": "Two teenage girls with their phones out during a live round, one holding hers up in front of her while the other, in a peach top, looks down at her own screen. A colour activity sheet lies on the table between them.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "phones out teens playing live round two teenage girls their during one holding hers front her while other peach top looks down own screen colour activity sheet lies table between them ift youth workshop aug 2026 content library game"
+},
+{
+"id": "IFM-450",
+"title": "Room wide from the back corner, screen on",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-450.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1K9WnYtacmB09hU1ftEua0s7EvANC5K13/view",
+"description": "The whole room from the back corner: the TV is on at the far end, teenagers sit along both sides of the table, and an activity sheet and pen lie on the table in the near foreground.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "room wide from back corner screen whole far end teenagers sit along both sides table activity sheet pen lie near foreground ift teens youth workshop aug 2026 content library venue"
+},
+{
+"id": "IFM-451",
+"title": "Certificate handover — eight teens with their Certificates of Completion",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-451.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1khDfmne_Gp3n8AXjVIeV25Ka2e37oTz9/view",
+"description": "Eight teenagers stand together at the end of the session, four of them holding printed \"Certificate of Completion\" sheets up to camera with their names on them. Framed pictures and a wooden cabinet are behind them; the boardroom chairs are pushed back in the foreground.",
+"session": "IFT teens workshop — 19 Aug 2026",
+"slide_text": "Certificate of Completion",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Certificate",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "certificate completion graduation proud achievement social proof certificate handover eight teens their certificates completion teenagers stand together end session four them holding printed sheets camera names framed pictures wooden cabinet behind boardroom chairs pushed back foreground ift youth workshop aug 2026 content library group photo graduation"
+},
+{
+"id": "IFM-452",
+"title": "Meeting-room wide before the feedback round",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-452.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1T-gbwAQhcHXuf5mk_1KlNACJpeTDGZHf/view",
+"description": "Two participants at the meeting-room table seen from the doorway end — an older woman in a lilac striped shirt on the left and a woman in a green checked top across from her — with a laptop, water glasses, snack bowls and a green tissue box between them.",
+"session": "IFM August feedback round — 2 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "meeting room wide before feedback round two participants table seen from doorway end older woman lilac striped shirt left green checked top across her laptop water glasses snack bowls tissue box between them august corporate sept 2026 content library ifm"
+},
+{
+"id": "IFM-453",
+"title": "Participant in a green checked top gives her feedback to camera",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-453.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1DiBnN7G80A_56TBFb1pRlGD-zj9Kt-Nb/view",
+"description": "A participant in a green checked shirt over a white top sits at the meeting-room table facing camera and speaking, a QR-code card propped up on the table in front of her next to a green tissue box and a plate.",
+"session": "IFM August feedback round — 2 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Testimonial",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "testimonial review feedback social proof word of mouth participant green checked top gives her feedback camera shirt over white sits meeting room table facing speaking code card propped front next tissue box plate august corporate sept 2026 content library ifm testimonial"
+},
+{
+"id": "IFM-454",
+"title": "Older participant in a lilac shirt gives her feedback, gesturing",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-454.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1Z4ckGmrZM4-i7j63U3_P1OjZ6cXu5HLV/view",
+"description": "A close seated shot of an older participant in a lilac striped shirt speaking directly to camera with one hand raised mid-gesture, a phone and a notebook on the table in front of her.",
+"session": "IFM August feedback round — 2 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Testimonial",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "testimonial review feedback social proof word of mouth older participant lilac shirt gives her feedback gesturing close seated shot striped speaking directly camera one hand raised mid gesture phone notebook table front august corporate sept 2026 content library ifm testimonial"
+},
+{
+"id": "IFM-455",
+"title": "Participant in a pink floral kurta explains her takeaway, both hands up",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-455.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1PAe-qOp2UADW2kIsO20lsjIHRPY6SEti/view",
+"description": "A participant in a pink floral kurta sits in a meeting-room chair speaking to camera with both hands raised in front of her mid-explanation, plain wall behind.",
+"session": "IFM August feedback round — 2 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Testimonial",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "testimonial review feedback social proof word of mouth participant pink floral kurta explains her takeaway both hands sits meeting room chair speaking camera raised front mid explanation plain wall behind feedback august corporate sept 2026 content library ifm testimonial explaining"
+},
+{
+"id": "IFM-456",
+"title": "Participant leaning back at the whiteboard end of the table",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-456.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1dT4I7KtnF4D2MEyBI-uPGEIi2N5uIvUk/view",
+"description": "The lilac-shirted participant sits right back in her chair with both hands behind her head at the whiteboard end of the table. Plates, glasses, a tissue box and a bin fill the foreground; nobody is addressing camera.",
+"session": "IFM August feedback round — 2 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "participant leaning back whiteboard end table lilac shirted sits right her chair both hands behind head plates glasses tissue box bin fill foreground nobody addressing camera feedback august corporate sept 2026 content library ifm room wide between takes"
+},
+{
+"id": "IFM-457",
+"title": "Wide of the green-checked participant down the table",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-457.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/15J8ijJWsWadSWUSXBTmf1r20Dkxe5RwO/view",
+"description": "The green-checked participant seen from further down the table, seated against the whiteboard wall with plates, glasses and a pen pot across the table in the foreground.",
+"session": "IFM August feedback round — 2 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "wide green checked participant down table seen from further seated against whiteboard wall plates glasses pen pot across foreground feedback august corporate sept 2026 content library ifm room session"
+},
+{
+"id": "IFM-458",
+"title": "Participant presents from printed notes to a colleague at a laptop",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-458.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/17Z4n6rY7k4EkjgOXlFcMev1vpMxc83Tt/view",
+"description": "A woman in a red-and-white striped sleeveless top stands holding a printed sheet and reads from it, addressing a colleague in black who sits at the table behind an open laptop. Whiteboard behind, glasses and a phone on the table.",
+"session": "IFM August feedback round — 2 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "participant presents from printed notes colleague laptop woman red white striped sleeveless top stands holding sheet reads addressing black who sits table behind open whiteboard glasses phone feedback august corporate sept 2026 content library ifm presenting reading"
+},
+{
+"id": "IFM-459",
+"title": "IMG_2847.MOV — byte-identical duplicate upload (rejected)",
+"date": "2026-09-18",
+"thumb": "",
+"video": "",
+"drive": "https://drive.google.com/file/d/1Rlwdg4MyoClnvm_cgcMpeiWHcY9ijx41/view",
+"description": "A second upload of IMG_2847.MOV in the IFM Games folder, byte-identical to the original (both 26,026,062 bytes, same filename). Rejected as a duplicate; nothing new in frame.",
+"session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral"
+],
+"source": "Unknown",
+"search_terms": "img 2847 mov byte identical duplicate upload rejected second ifm games folder original both 026 062 bytes same filename nothing new frame swayamvar sept 2026"
 }
 ];

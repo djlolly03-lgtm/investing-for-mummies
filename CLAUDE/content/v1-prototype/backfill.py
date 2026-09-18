@@ -328,7 +328,14 @@ def main():
             'id': r['id'],
             'title': r.get('title') or '',
             'date': str(r.get('date created') or '')[:10],
-            'thumb': ('../' + r['thumbnail']) if r.get('thumbnail') else '',
+            # '../' makes a hub-relative path work from inside v1-prototype/. But 11 rows
+            # (the SpaceX carousel and all 10 Wealth Conversation chapters) store an ABSOLUTE
+            # URL, and prefixing those produced '../https://ifm-deploy…', which the server
+            # answers with a 308 instead of the image — eleven permanently broken tiles that
+            # nobody noticed because a broken thumb renders as empty space, not an error.
+            # Verified 18 Sep 2026: the bare URL is a 200, the prefixed one is a 308.
+            'thumb': (r['thumbnail'] if str(r.get('thumbnail','')).startswith(('http://', 'https://', '/'))
+                      else '../' + r['thumbnail']) if r.get('thumbnail') else '',
             'video': r.get('video') or '',
             'drive': r.get('drive link') or r.get('video') or '',
             'description': r.get('description') or '',
