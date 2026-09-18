@@ -251,12 +251,43 @@ def format_for(r, mechanical):
     return '', 'no_evidence'
 
 
+# WHOEVER IS PRESENTING IS HIRAL. User's rule, 18 Sep 2026: "the photos and videos that we
+# take are hero-presenting because this is part of content for IFM. Even if you are 60% sure
+# there's someone on the screen, or someone is standing while other people are sitting and it
+# seems like she's teaching, it will be hiral."
+#
+# This deliberately overrides evidence-over-inference for the person field in SESSION imagery.
+# The old rule demanded her name in the text, and the people writing descriptions just wrote
+# "the presenter" — so 72 rows said Other Person and "Hiral teaching NAV" matched none of them.
+# In a founder-led brand the shoot exists to film her; an unnamed presenter is not a stranger.
+#
+# TWO GUARDS, both load-bearing:
+#   1. Requires a FRONT-OF-ROOM signal (standing, presenting, at a screen/whiteboard, pointing
+#      at a slide). Someone SEATED talking to camera is a participant giving a testimonial, and
+#      turning 50 of those into Hiral would be far worse than the problem being fixed.
+#   2. Excluded on designed graphics. An earlier over-broad 'explain' match tagged 60 of 114
+#      carousels as Hiral Speaking when she was in none of them.
+PRESENTER_AT_FRONT = re.compile(
+    r'\bpresenter\b|\bfacilitator\b|presenting|presents\b|standing (?:talk|presenter|at|beside|by)|'
+    r'stands? (?:at|beside|by|against) the (?:screen|whiteboard|board)|at the whiteboard|'
+    r'mid-?(?:talk|explanation|gesture|sentence)|pointing (?:to|at) the|explaining|walkthrough|'
+    r'leads? (?:the )?(?:table|q ?and ?a|discussion)|fielding|addressing|teaching', re.I)
+SEATED_TO_CAMERA = re.compile(
+    r'testimonial|to camera|talking directly to camera|gives her feedback|sharing her|'
+    r'sits? (?:on|at|with|alone)|seated to camera|hands clasped', re.I)
+
 def person_for(r):
-    """Explicit evidence only. 'A presenter' / 'a woman in white' is NOT Hiral."""
+    """Explicit evidence, PLUS the presenter-is-Hiral rule for session imagery."""
     text = blob(r, 'title', 'description', 'keywords', 'shot')
     people = []
     # 'the founder' names Hiral as unambiguously as her name does — IFM has one founder.
     if re.search(r"\bhiral\b|\bthe founder\b|\bfounder.?s\b", text, re.I):
+        people.append('Hiral')
+    elif (PRESENTER_AT_FRONT.search(text)
+          and not SEATED_TO_CAMERA.search(text)
+          and TYPE_MAP.get((r.get('type') or '').strip()) in ('Image', 'Video')
+          and (r.get('shot') or '').strip() != 'No people'
+          and not re.search(r'carousel|artboard|static post|infographic', text, re.I)):
         people.append('Hiral')
     if re.search(r'student|teen|participant|attendee|audience|women (listen|watch|seated|apply)|'
                  r'graduate|cohort|class\b', text, re.I):

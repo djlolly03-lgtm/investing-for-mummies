@@ -264,6 +264,7 @@ window.IFM_V1 =
 "Risk & Returns"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -793,7 +794,7 @@ window.IFM_V1 =
 "Inflation & Interest Rates"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Aakara",
 "search_terms": "candid warm natural unposed relaxed friendly celebration inflation ₹500 shrinking vertical reel smiling woman red dress holding note stacked text your 500 rupee every year purchasing power cover presenter money video hook"
@@ -2055,6 +2056,7 @@ window.IFM_V1 =
 "Fixed Income"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2076,7 +2078,7 @@ window.IFM_V1 =
 "format": "Classroom Moment",
 "topic": [],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "candid warm natural unposed relaxed friendly celebration b-roll cutaway establishing supporting footage context course map walkthrough boardroom table facilitator stands wall mounted screen showing ifm flow diagram while group women follow along open workbooks mugs water bottles around wood conference hand drawn borrower banks government mind fills whiteboard behind workshop learners financial literacy"
@@ -2099,6 +2101,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2120,6 +2123,7 @@ window.IFM_V1 =
 "format": "Classroom Moment",
 "topic": [],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2212,6 +2216,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2236,6 +2241,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2259,6 +2265,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2280,7 +2287,7 @@ window.IFM_V1 =
 "format": "B-roll",
 "topic": [],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "b-roll cutaway establishing supporting footage context wide view training room full shot from doorway showing marble floored boardroom leather chairs around table ifm title slide screen presenter whiteboard addressing small group branding women office interior workshop"
@@ -2304,6 +2311,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2329,7 +2337,7 @@ window.IFM_V1 =
 "Fixed Income"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "candid warm natural unposed relaxed friendly celebration pointing mutual funds matrix presenter pink points types slide categorising equity debt hybrid lifecycle while seated women take notes one snaps photo screen presentation workshop note taking boardroom candid vertical finance"
@@ -2352,6 +2360,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2375,6 +2384,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2396,7 +2406,7 @@ window.IFM_V1 =
 "format": "Classroom Moment",
 "topic": [],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "candid warm natural unposed relaxed friendly celebration how companies raise money presenter pink gestures toward slide titled different ways small circle women leather chairs listen around table presentation raising workshop boardroom gesturing candid vertical finance"
@@ -2630,6 +2640,7 @@ window.IFM_V1 =
 "Stock Market"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2654,6 +2665,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2678,7 +2690,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "group discussion around bid ask slide four women sit conference table engaged one presents price wall screen laptops mugs whiteboard frame working session workshop laptop teaching office collaboration investing classroom"
@@ -2921,6 +2933,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2945,6 +2958,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2969,6 +2983,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -2993,6 +3008,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3017,6 +3033,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3041,6 +3058,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3089,6 +3107,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3188,7 +3207,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "nav net asset value pointing funds assets vertical shot presenter directly icon nav slide while two women white denim watch from foreground handbags coffee mug phone rest table workshop mutual fund financial literacy boardroom screen investing session"
@@ -3212,6 +3231,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3236,6 +3256,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3713,7 +3734,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "candid warm natural unposed relaxed friendly celebration clip casual group session around table presenter beige stands screen while women chat laden lunchboxes water bottles books relaxed setting break time portion video boardroom workshop investing conversation"
@@ -3737,7 +3758,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration b-roll cutaway establishing supporting footage context clip relaxed roundtable conversation wide view women laughing talking around table presenter standing screen behind light informal moment during workshop video boardroom investing session"
@@ -3761,7 +3782,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "clip intro evaluating investments presenter beige gestures beside why need different measures slide laptops bottles table opening returns evaluation module video presentation boardroom workshop investing session teaching"
@@ -3784,7 +3805,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "evaluating investments talk presenter brown top stands gestures beside screen reading while women colourful outfits follow along workbooks notes room has wood panelling whiteboard financial diagrams workshop slide workbook investing session gesture office learning"
@@ -3807,6 +3828,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3830,7 +3852,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "vertical view workshop tall shot presenter explaining evaluating investments women gathered conference table workbooks ipad water bottles spread out wood panelled wall overhead strip light frame scene workbook room investing office session learning"
@@ -3853,7 +3875,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "hands explanation presenter brown gestures both explaining evaluating investments slide women lean around table open ifm workbooks cacti water bottles coffee tumblers dot wooden surface workshop gesture workbook investing conference room engaged office session learning"
@@ -3876,7 +3898,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "clip why evaluation concepts matter presenter mid explanation beside evaluating investments these slide while two women follow along workbooks open deeper dive into investment metrics video workbook boardroom workshop investing session"
@@ -3900,6 +3922,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3946,6 +3969,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -3969,7 +3993,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "smart investing cycle slide wide vertical shot pink clad presenter teaching principles circle women wooden table workbooks water glasses front them whiteboard diagrams unit fill back wall workshop kurta workbook conference room office session"
@@ -3992,6 +4016,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4015,7 +4040,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "close angle pink presenter tighter view explaining smart investing cycle slide two women foreground listening workbook open table tissue box coffee tumblers sit nearby workshop kurta conference room office session"
@@ -4038,7 +4063,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "mid talk investing principles pink kurta facilitator gestures sentence beside smart slide women foreground listen attentively pens water glasses coffee tumblers workbook cover wooden table workshop presenter gesture conference room office session attentive"
@@ -4062,7 +4087,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "candid warm natural unposed relaxed friendly celebration roundtable discussion candid overhead angle shot women casual wear talking discussing around conference table facilitator standing blank screen financial whiteboard behind denim jackets mugs workbooks fill scene workshop room investing office session"
@@ -4086,7 +4111,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "clip discussion front blank screen presenter stands display while packed table women lean some workbooks phones out open floor conversation topic transition video boardroom workshop investing session group"
@@ -4110,6 +4135,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4133,7 +4159,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "pointing display facilitator gestures toward wall screen while full table women casual outfits follow along workbooks phones coffee wood panelled boardroom handwritten whiteboard frame busy session workshop workbook conference room investing office"
@@ -4157,7 +4183,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "clip presenter fielding raised hand question white raises her mid explanation front screen while women table follow open workbooks interactive teaching exchange video workbook boardroom workshop investing session"
@@ -4227,7 +4253,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "sip systematic investment plan monthly investing casual group engagement standing facilitator gestures while seated women denim prints sip coffee listen ifm workbook visible foreground cosy wood panelled boardroom lit overhead strip lighting workshop conference room panel investing office session"
@@ -4273,6 +4299,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4294,6 +4321,7 @@ window.IFM_V1 =
 "format": "Classroom Moment",
 "topic": [],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4391,6 +4419,7 @@ window.IFM_V1 =
 "Family & Money"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4416,7 +4445,7 @@ window.IFM_V1 =
 "3-Bucket Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "emergency bucket terms explained presenter gestures toward whiteboard covered handwritten notes beside know slide women take over open ifm workbooks table fund workshop workbook boardroom savings session note taking india teaching"
@@ -4441,6 +4470,7 @@ window.IFM_V1 =
 "3-Bucket Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4466,6 +4496,7 @@ window.IFM_V1 =
 "3-Bucket Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4511,6 +4542,7 @@ window.IFM_V1 =
 "format": "Classroom Moment",
 "topic": [],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4585,7 +4617,7 @@ window.IFM_V1 =
 "3-Bucket Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "presenter mid gesture whiteboard landscape shot standing gesturing raised hand beside emergency bucket slide addressing seated semicircle women workbooks open table workshop boardroom fund session financial literacy india teaching"
@@ -4611,6 +4643,7 @@ window.IFM_V1 =
 "3-Bucket Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4636,7 +4669,7 @@ window.IFM_V1 =
 "3-Bucket Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "engaged group during savings talk landscape shot workshop presenter front beside emergency bucket slide whiteboard several women raising hands gesturing they engage from around table boardroom engagement fund session financial literacy india workbooks"
@@ -4660,6 +4693,7 @@ window.IFM_V1 =
 "Fixed Income"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4684,6 +4718,7 @@ window.IFM_V1 =
 "Fixed Income"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4707,7 +4742,7 @@ window.IFM_V1 =
 "Fixed Income"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
 "source": "Unknown",
 "search_terms": "attentive faces during breakdown presenter stands fixed deposits slide addressing tightly seated group women coral blue print tops listening intently flasks glasses tissue box crowd wooden table workshop boardroom session financial literacy india"
@@ -4731,6 +4766,7 @@ window.IFM_V1 =
 "Fixed Income"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4754,6 +4790,7 @@ window.IFM_V1 =
 "Fixed Income"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4777,6 +4814,7 @@ window.IFM_V1 =
 "Fixed Income"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -4800,6 +4838,7 @@ window.IFM_V1 =
 "Fixed Income"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -6843,6 +6882,7 @@ window.IFM_V1 =
 "Investing"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Sakshi",
@@ -7140,7 +7180,7 @@ window.IFM_V1 =
 "Mutual Funds"
 ],
 "person": [
-"No Person"
+"Hiral"
 ],
 "source": "IFM / In-house",
 "search_terms": "nav net asset value mutual fund manager live market rules screen aum 27l nav ₹10 units 600 three cards rule table showing how down money out each move plus explainer holdings worth more climb together 2720 1680 teaching game ifm games screenshot marketing asset"
@@ -7281,6 +7321,7 @@ window.IFM_V1 =
 "Inflation & Interest Rates"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "IFM / In-house",
@@ -7330,6 +7371,7 @@ window.IFM_V1 =
 "Money Conversations"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "IFM / In-house",
@@ -9046,6 +9088,7 @@ window.IFM_V1 =
 "Stock Market"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Sakshi",
@@ -9267,6 +9310,7 @@ window.IFM_V1 =
 "Stock Market"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Sakshi",
@@ -9391,6 +9435,7 @@ window.IFM_V1 =
 "Money Conversations"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -9591,6 +9636,7 @@ window.IFM_V1 =
 "format": "Classroom Moment",
 "topic": [],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Unknown",
@@ -9787,6 +9833,7 @@ window.IFM_V1 =
 "format": "B-roll",
 "topic": [],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Sakshi",
@@ -10006,6 +10053,7 @@ window.IFM_V1 =
 "Money Conversations"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Sakshi",
@@ -10157,6 +10205,7 @@ window.IFM_V1 =
 "Money Conversations"
 ],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Sakshi",
@@ -10734,6 +10783,7 @@ window.IFM_V1 =
 "format": "B-roll",
 "topic": [],
 "person": [
+"Hiral",
 "Student"
 ],
 "source": "Sakshi",
