@@ -496,5 +496,21 @@
   ],
   "format": "Hiral Speaking",
   "_why": "Presenter identified as Hiral by the user from the thumbnail, 18 Sep 2026. The backfill rule only credits her on explicit textual evidence and the description just said \"presenter in yellow shirt\", so she was Other Person."
+ },
+ "IFM-204": {
+  "type": "Image",
+  "_why": "Typed Video but the file is a still: July/Reels/one minute investing.png. Corrected 18 Sep 2026 after the user said \"if anything is a pic, then tag it as a pic ... this will frustrate the users\". These are Aakara REEL COVERS — the finished reel does not exist in the tree, so the row promised a video that could never play."
+ },
+ "IFM-343": {
+  "type": "Image",
+  "_why": "Typed Video but the file is a still: July/Reels/news reel2.png. Corrected 18 Sep 2026 after the user said \"if anything is a pic, then tag it as a pic ... this will frustrate the users\". These are Aakara REEL COVERS — the finished reel does not exist in the tree, so the row promised a video that could never play."
+ },
+ "IFM-321": {
+  "type": "Image",
+  "_why": "Typed Video but the file is a still: nse bse.png (image/png, confirmed via Drive metadata). Corrected 18 Sep 2026 after the user said \"if anything is a pic, then tag it as a pic ... this will frustrate the users\". These are Aakara REEL COVERS — the finished reel does not exist in the tree, so the row promised a video that could never play."
+ },
+ "IFM-375": {
+  "type": "Image",
+  "_why": "Typed Video but the file is a still: tata group.png (image/png, confirmed via Drive metadata). Corrected 18 Sep 2026 after the user said \"if anything is a pic, then tag it as a pic ... this will frustrate the users\". These are Aakara REEL COVERS — the finished reel does not exist in the tree, so the row promised a video that could never play."
  }
 }
