@@ -16,7 +16,8 @@ window.IFM_DATA ={
    "date created": "2026-06-20",
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R01.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/reels/moneymap-15s.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R01.mp4",
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/moneymap-15s.mp4"
   },
   {
    "id": "IFM-R02",
@@ -30,7 +31,8 @@ window.IFM_DATA ={
    "date created": "2026-06-20",
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R02.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/reels/bbf-15s.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R02.mp4",
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/bbf-15s.mp4"
   },
   {
    "id": "IFM-R03",
@@ -44,7 +46,8 @@ window.IFM_DATA ={
    "date created": "2026-06-20",
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R03.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/reels/nwv-15s.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R03.mp4",
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/nwv-15s.mp4"
   },
   {
    "id": "IFM-R04",
@@ -58,7 +61,8 @@ window.IFM_DATA ={
    "date created": "2026-06-20",
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R04.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/reels/buckets-15s.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R04.mp4",
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/buckets-15s.mp4"
   },
   {
    "id": "IFM-R05",
@@ -72,7 +76,8 @@ window.IFM_DATA ={
    "date created": "2026-06-20",
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R05.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/reels/stockrush-15s.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R05.mp4",
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/stockrush-15s.mp4"
   },
   {
    "id": "IFM-R06",
@@ -86,11 +91,12 @@ window.IFM_DATA ={
    "date created": "2026-06-20",
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R06.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/reels/srpro-15s.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R06.mp4",
    "likes": 8,
    "comments": 0,
    "ig link": "https://www.instagram.com/investingformummies/p/DZ6XcJziGOw/",
-   "published date": "June 22, 2026"
+   "published date": "June 22, 2026",
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/srpro-15s.mp4"
   },
   {
    "id": "IFM-R07",
@@ -104,7 +110,8 @@ window.IFM_DATA ={
    "date created": "2026-06-20",
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R07.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/reels/hidden-15s.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R07.mp4",
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/hidden-15s.mp4"
   },
   {
    "id": "IFM-R08",
@@ -118,7 +125,8 @@ window.IFM_DATA ={
    "date created": "2026-06-20",
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R08.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/reels/swayamvar-15s.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R08.mp4",
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/swayamvar-15s.mp4"
   },
   {
    "id": "IFM-R09",
@@ -132,7 +140,8 @@ window.IFM_DATA ={
    "date created": "2026-06-20",
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R09.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/reels/fundgoal-15s.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R09.mp4",
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/fundgoal-15s.mp4"
   },
   {
    "id": "IFM-R10",
@@ -146,7 +155,8 @@ window.IFM_DATA ={
    "date created": "2026-06-20",
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R10.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/reels/wealth-15s.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R10.mp4",
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/wealth-15s.mp4"
   },
   {
    "id": "IFM-R11",
@@ -160,7 +170,8 @@ window.IFM_DATA ={
    "date created": "2026-06-20",
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R11.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/reels/lifestyle-time-machine-15s.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R11.mp4",
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/lifestyle-time-machine-15s.mp4"
   },
   {
    "id": "IFM-001",
@@ -243,7 +254,8 @@ window.IFM_DATA ={
    "description": "Split-screen of two coin jars on a wooden table: the left jar gathers dust and smoke while the right sprouts a glowing sapling that blooms into a golden money tree dripping coins. Saving stagnates; investing grows.",
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter1-why-saving-isnt-enough/chap1hero.mp4",
    "date created": "2026-06-11",
-   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap1.png"
+   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap1.png",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-006.mp4"
   },
   {
    "id": "IFM-007",
@@ -256,7 +268,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter2-inflation-carousel/chap2test2.mp4",
    "date created": "2026-06-11",
    "notes": "chap2test1 = duplicate of Ch.1; hero pending",
-   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap2.png"
+   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap2.png",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-007.mp4"
   },
   {
    "id": "IFM-008",
@@ -268,7 +281,8 @@ window.IFM_DATA ={
    "description": "A wire shopping basket on a kitchen counter holds glowing everyday essentials — groceries, schoolbook, toy plane, medicine, petrol pump, toy house — whose golden glow fades as prices bite. The same basket buys less every year.",
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter3-purchasing-power/chap3hero.mp4",
    "date created": "2026-06-11",
-   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap3.png"
+   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap3.png",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-008.mp4"
   },
   {
    "id": "IFM-009",
@@ -280,7 +294,8 @@ window.IFM_DATA ={
    "description": "Cash bundles rain down beside a desk calendar and a sign '₹10,000 invested at 12% per year', stacking into a tower labelled '20 yrs ₹96,463' that morphs into a Burj Khalifa-style skyscraper. One sum compounds into a monument.",
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter4-magic-of-compounding/chap4hero.mp4",
    "date created": "2026-06-11",
-   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap4.png"
+   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap4.png",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-009.mp4"
   },
   {
    "id": "IFM-010",
@@ -292,7 +307,8 @@ window.IFM_DATA ={
    "description": "A sign reads '₹5,000 per month at 12% per year' beside a flip calendar; note stacks rocket upward in a blur of light and settle as a mountain of gold coins behind the gold IFM medallion. Small monthly SIPs build a fortune.",
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter5-small-amounts-matter/chap5hero.mp4",
    "date created": "2026-06-11",
-   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap5.png"
+   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap5.png",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-010.mp4"
   },
   {
    "id": "IFM-011",
@@ -304,7 +320,8 @@ window.IFM_DATA ={
    "description": "Two banded cash stacks sit side by side on dark wood; one grows into a towering skyscraper of note bundles, closing on the gold IFM coin leaning against the piles. Step up investing as income steps up.",
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter6-growing-with-income/chap6hero.mp4",
    "date created": "2026-06-11",
-   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap6.png"
+   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap6.png",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-011.mp4"
   },
   {
    "id": "IFM-012",
@@ -316,7 +333,8 @@ window.IFM_DATA ={
    "description": "Coins rain into three piggy boxes labelled Tanya (22), Kabil (27) and Rojan (32), growing into glowing coin towers — the 22-year-old's tower ends tallest by far (₹2.87cr vs ₹1.64cr). Every year you wait costs crores.",
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter7-cost-of-waiting/chap7hero.mp4",
    "date created": "2026-06-11",
-   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap7.png"
+   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap7.png",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-012.mp4"
   },
   {
    "id": "IFM-013",
@@ -328,7 +346,8 @@ window.IFM_DATA ={
    "description": "Small lifestyle spends — nail polish, lipstick, a scooter, shopping bag, teacup, movie clapperboard — float up and dissolve one by one into a swelling heap of gold coins under the IFM logo. Everyday spends are hidden treasure.",
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter8-hidden-treasures/chap8hero.mp4",
    "date created": "2026-06-11",
-   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap8.png"
+   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap8.png",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-013.mp4"
   },
   {
    "id": "IFM-014",
@@ -340,7 +359,8 @@ window.IFM_DATA ={
    "description": "A worried cartoon gold-coin sits at a desert crossroads crowded with signposts shouting Stocks, FDs and Gold — 'choosing investments before you choose your destination' — until a glowing Home signpost points the way. Goal first, product after.",
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter9-goals-first/chap9hero.mp4",
    "date created": "2026-06-11",
-   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap9.png"
+   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap9.png",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-014.mp4"
   },
   {
    "id": "IFM-015",
@@ -352,7 +372,8 @@ window.IFM_DATA ={
    "description": "Neon goal icons (plane, house, graduation cap, medical cross, palm tree) float on black — 'We don't have just one financial goal' — then three glowing buckets (red shield, blue house, green rocket) line up: 'Different goals need different kinds of money.'",
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter10-three-buckets/chap10hero.mp4",
    "date created": "2026-06-11",
-   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap10.png"
+   "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap10.png",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-015.mp4"
   },
   {
    "id": "IFM-016",
@@ -686,7 +707,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-kling.mp4",
    "date created": "2026-06-14",
    "notes": "First experiment in the pizza-split series. Higgsfield Kling 3.0 from the round logo. Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-040.jpg"
+   "thumbnail": "thumbs/IFM-040.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-040.mp4"
   },
   {
    "id": "IFM-041",
@@ -699,7 +721,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-seedance.mp4",
    "date created": "2026-06-14",
    "notes": "Alternate render of IFM-040; pick one. Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-041.jpg"
+   "thumbnail": "thumbs/IFM-041.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-041.mp4"
   },
   {
    "id": "IFM-042",
@@ -712,7 +735,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-kling.mp4",
    "date created": "2026-06-14",
    "notes": "Reusable cinematic brand sting. Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-042.jpg"
+   "thumbnail": "thumbs/IFM-042.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-042.mp4"
   },
   {
    "id": "IFM-043",
@@ -725,7 +749,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-8s.mp4",
    "date created": "2026-06-14",
    "notes": "8s extension of IFM-042 with cleaner 5-piece separation. Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-043.jpg"
+   "thumbnail": "thumbs/IFM-043.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-043.mp4"
   },
   {
    "id": "IFM-050",
@@ -738,7 +763,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/pizza-5slices-clean-5s.mp4",
    "date created": "2026-06-14",
    "notes": "Generic 'one becomes five' splitter — drop any topic's logo on the pizza to reuse. Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-050.jpg"
+   "thumbnail": "thumbs/IFM-050.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-050.mp4"
   },
   {
    "id": "IFM-052",
@@ -3104,9 +3130,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7829.MOV",
    "thumbnail": "thumbs/IFM-218.jpg",
-   "video": "clips/IFM-218.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-218.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-218.mp4"
   },
   {
    "id": "IFM-219",
@@ -3120,9 +3147,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7834.MOV",
    "thumbnail": "thumbs/IFM-219.jpg",
-   "video": "clips/IFM-219.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-219.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-219.mp4"
   },
   {
    "id": "IFM-220",
@@ -3136,9 +3164,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7836.MOV",
    "thumbnail": "thumbs/IFM-220.jpg",
-   "video": "clips/IFM-220.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-220.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-220.mp4"
   },
   {
    "id": "IFM-221",
@@ -3152,9 +3181,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7837.MOV",
    "thumbnail": "thumbs/IFM-221.jpg",
-   "video": "clips/IFM-221.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-221.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-221.mp4"
   },
   {
    "id": "IFM-222",
@@ -3168,9 +3198,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7838.MOV",
    "thumbnail": "thumbs/IFM-222.jpg",
-   "video": "clips/IFM-222.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-222.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-222.mp4"
   },
   {
    "id": "IFM-223",
@@ -3184,9 +3215,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7839.MOV",
    "thumbnail": "thumbs/IFM-223.jpg",
-   "video": "clips/IFM-223.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-223.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-223.mp4"
   },
   {
    "id": "IFM-224",
@@ -3200,9 +3232,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7840.MOV",
    "thumbnail": "thumbs/IFM-224.jpg",
-   "video": "clips/IFM-224.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-224.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-224.mp4"
   },
   {
    "id": "IFM-225",
@@ -3216,9 +3249,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7841.MOV",
    "thumbnail": "thumbs/IFM-225.jpg",
-   "video": "clips/IFM-225.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-225.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-225.mp4"
   },
   {
    "id": "IFM-226",
@@ -3232,9 +3266,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7842.MOV",
    "thumbnail": "thumbs/IFM-226.jpg",
-   "video": "clips/IFM-226.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-226.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-226.mp4"
   },
   {
    "id": "IFM-227",
@@ -3248,9 +3283,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7843.MOV",
    "thumbnail": "thumbs/IFM-227.jpg",
-   "video": "clips/IFM-227.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-227.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-227.mp4"
   },
   {
    "id": "IFM-228",
@@ -3264,9 +3300,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7844.MOV",
    "thumbnail": "thumbs/IFM-228.jpg",
-   "video": "clips/IFM-228.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-228.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-228.mp4"
   },
   {
    "id": "IFM-229",
@@ -3280,9 +3317,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7845.MOV",
    "thumbnail": "thumbs/IFM-229.jpg",
-   "video": "clips/IFM-229.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-229.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-229.mp4"
   },
   {
    "id": "IFM-230",
@@ -3296,9 +3334,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7848.MOV",
    "thumbnail": "thumbs/IFM-230.jpg",
-   "video": "clips/IFM-230.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-230.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-230.mp4"
   },
   {
    "id": "IFM-231",
@@ -3312,9 +3351,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7849.MOV",
    "thumbnail": "thumbs/IFM-231.jpg",
-   "video": "clips/IFM-231.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-231.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-231.mp4"
   },
   {
    "id": "IFM-232",
@@ -3328,9 +3368,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7850.MOV",
    "thumbnail": "thumbs/IFM-232.jpg",
-   "video": "clips/IFM-232.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-232.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-232.mp4"
   },
   {
    "id": "IFM-233",
@@ -3344,9 +3385,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7851.MOV",
    "thumbnail": "thumbs/IFM-233.jpg",
-   "video": "clips/IFM-233.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-233.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-233.mp4"
   },
   {
    "id": "IFM-234",
@@ -3360,9 +3402,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7855.MOV",
    "thumbnail": "thumbs/IFM-234.jpg",
-   "video": "clips/IFM-234.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-234.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-234.mp4"
   },
   {
    "id": "IFM-235",
@@ -3376,9 +3419,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7856.MOV",
    "thumbnail": "thumbs/IFM-235.jpg",
-   "video": "clips/IFM-235.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-235.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-235.mp4"
   },
   {
    "id": "IFM-236",
@@ -3392,9 +3436,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7857.MOV",
    "thumbnail": "thumbs/IFM-236.jpg",
-   "video": "clips/IFM-236.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-236.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-236.mp4"
   },
   {
    "id": "IFM-237",
@@ -3408,9 +3453,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7858.MOV",
    "thumbnail": "thumbs/IFM-237.jpg",
-   "video": "clips/IFM-237.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-237.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-237.mp4"
   },
   {
    "id": "IFM-238",
@@ -3424,9 +3470,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7860.MOV",
    "thumbnail": "thumbs/IFM-238.jpg",
-   "video": "clips/IFM-238.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-238.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-238.mp4"
   },
   {
    "id": "IFM-239",
@@ -3440,9 +3487,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7862.MOV",
    "thumbnail": "thumbs/IFM-239.jpg",
-   "video": "clips/IFM-239.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-239.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-239.mp4"
   },
   {
    "id": "IFM-240",
@@ -3456,9 +3504,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7863.MOV",
    "thumbnail": "thumbs/IFM-240.jpg",
-   "video": "clips/IFM-240.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-240.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-240.mp4"
   },
   {
    "id": "IFM-241",
@@ -3472,9 +3521,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7864.MOV",
    "thumbnail": "thumbs/IFM-241.jpg",
-   "video": "clips/IFM-241.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-241.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-241.mp4"
   },
   {
    "id": "IFM-242",
@@ -3488,9 +3538,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7865.MOV",
    "thumbnail": "thumbs/IFM-242.jpg",
-   "video": "clips/IFM-242.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-242.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-242.mp4"
   },
   {
    "id": "IFM-243",
@@ -3504,9 +3555,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7866.MOV",
    "thumbnail": "thumbs/IFM-243.jpg",
-   "video": "clips/IFM-243.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-243.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-243.mp4"
   },
   {
    "id": "IFM-244",
@@ -3520,9 +3572,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7867.MOV",
    "thumbnail": "thumbs/IFM-244.jpg",
-   "video": "clips/IFM-244.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-244.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-244.mp4"
   },
   {
    "id": "IFM-245",
@@ -3536,9 +3589,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7868.MOV",
    "thumbnail": "thumbs/IFM-245.jpg",
-   "video": "clips/IFM-245.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-245.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-245.mp4"
   },
   {
    "id": "IFM-246",
@@ -3552,9 +3606,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7869.MOV",
    "thumbnail": "thumbs/IFM-246.jpg",
-   "video": "clips/IFM-246.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-246.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-246.mp4"
   },
   {
    "id": "IFM-247",
@@ -3568,9 +3623,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7870.MOV",
    "thumbnail": "thumbs/IFM-247.jpg",
-   "video": "clips/IFM-247.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-247.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-247.mp4"
   },
   {
    "id": "IFM-248",
@@ -3584,9 +3640,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7875.MOV",
    "thumbnail": "thumbs/IFM-248.jpg",
-   "video": "clips/IFM-248.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-248.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-248.mp4"
   },
   {
    "id": "IFM-249",
@@ -3600,9 +3657,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7876.MOV",
    "thumbnail": "thumbs/IFM-249.jpg",
-   "video": "clips/IFM-249.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-249.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-249.mp4"
   },
   {
    "id": "IFM-250",
@@ -3616,9 +3674,10 @@ window.IFM_DATA ={
    "date created": "2026-07-18",
    "notes": "Master in Dropbox: IMG_7877.MOV",
    "thumbnail": "thumbs/IFM-250.jpg",
-   "video": "clips/IFM-250.mp4",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-250.mp4",
    "setting": "Event/Offsite",
-   "session": "Goa — 17 Jul 2026"
+   "session": "Goa — 17 Jul 2026",
+   "drive link": "clips/IFM-250.mp4"
   },
   {
    "id": "IFM-251",
@@ -4012,7 +4071,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-279.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-279.mp4"
   },
   {
    "id": "IFM-280",
@@ -4029,7 +4089,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-280.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-280.mp4"
   },
   {
    "id": "IFM-281",
@@ -4046,7 +4107,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-281.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-281.mp4"
   },
   {
    "id": "IFM-282",
@@ -4063,7 +4125,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-282.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-282.mp4"
   },
   {
    "id": "IFM-283",
@@ -4080,7 +4143,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-283.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-283.mp4"
   },
   {
    "id": "IFM-284",
@@ -4097,7 +4161,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-284.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-284.mp4"
   },
   {
    "id": "IFM-285",
@@ -4114,7 +4179,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-285.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-285.mp4"
   },
   {
    "id": "IFM-286",
@@ -4132,7 +4198,8 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
    "session": "Teens — Aug 2026",
-   "shot": "Hiral — teaching"
+   "shot": "Hiral — teaching",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-286.mp4"
   },
   {
    "id": "IFM-287",
@@ -4149,7 +4216,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-287.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-287.mp4"
   },
   {
    "id": "IFM-288",
@@ -5558,7 +5626,8 @@ window.IFM_DATA ={
    "quality": "Usable",
    "consent": "Adults only",
    "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
-   "social": "Yes"
+   "social": "Yes",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-368.mp4"
   },
   {
    "id": "IFM-369",
@@ -5577,7 +5646,8 @@ window.IFM_DATA ={
    "quality": "Usable",
    "consent": "Certificates with names visible",
    "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-369.mp4"
   },
   {
    "id": "IFM-370",
@@ -5696,7 +5766,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "Yes",
    "notes": "Presenter identity was not confirmed from the frame, so the description says 'the facilitator' rather than naming anyone; shot is tagged Hiral — teaching because she leads this series. Correct the tag if this is a guest speaker. Source file: IMG_0916.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1eatyB42DpyUssrXJOO76iBTiXq-WdmEZ. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-376.jpg"
+   "thumbnail": "thumbs/IFM-376.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-376.mp4"
   },
   {
    "id": "IFM-377",
@@ -5715,7 +5786,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "Yes",
    "notes": "Participant faces are identifiable — confirm workshop consent before posting. Source file: IMG_0895.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1LqKcGhVg7ufx9XbARcV-0mvE1xRKUW9I. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-377.jpg"
+   "thumbnail": "thumbs/IFM-377.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-377.mp4"
   },
   {
    "id": "IFM-378",
@@ -5734,7 +5806,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "Source file: IMG_0897.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1AEQvj4L3YkkIEStqI6Gl8l5kyDbVbyYp. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-378.jpg"
+   "thumbnail": "thumbs/IFM-378.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-378.mp4"
   },
   {
    "id": "IFM-379",
@@ -5753,7 +5826,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "Source file: IMG_0911.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1BJmhRfvG1fPN3IXzOoN8P8F2GjQI9uOI. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-379.jpg"
+   "thumbnail": "thumbs/IFM-379.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-379.mp4"
   },
   {
    "id": "IFM-380",
@@ -5772,7 +5846,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "Yes",
    "notes": "Participant faces are identifiable — confirm workshop consent before posting. Source file: IMG_1073.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1I1-1dTOboQK74ACeyYWvLdEuq9TdRpe6. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-380.jpg"
+   "thumbnail": "thumbs/IFM-380.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-380.mp4"
   },
   {
    "id": "IFM-381",
@@ -5791,7 +5866,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "Yes",
    "notes": "Near-dupe backups of this moment in the same folder: IMG_1078.MOV (the same participant in yellow raising a cup). Participant faces are identifiable — confirm workshop consent before posting. Source file: IMG_1070.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 17xNISrFv7zbSUSNV4obfweDM8B5kQ7-X. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-381.jpg"
+   "thumbnail": "thumbs/IFM-381.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-381.mp4"
   },
   {
    "id": "IFM-382",
@@ -5810,7 +5886,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "Byte-identical duplicate of this clip also sits in the folder (id 10f_CdDBOY0SeO15ZGQGlZXUGl3GOChux, re-uploaded 1 Sep 2026, same 18,952,334 bytes) — the copy is rejected and this row points at the 24 Aug original. Participant faces are identifiable — confirm workshop consent before posting. Source file: IMG_1578.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1Cs8XT60uNhcnZUghUAvTs7eUC9NcMTAo. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-382.jpg"
+   "thumbnail": "thumbs/IFM-382.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-382.mp4"
   },
   {
    "id": "IFM-383",
@@ -5829,7 +5906,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "Yes",
    "notes": "Source file: IMG_1585.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1j7xm_uwYq_WGJpSKjb4wXQBkmsz_BWY-. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-383.jpg"
+   "thumbnail": "thumbs/IFM-383.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-383.mp4"
   },
   {
    "id": "IFM-384",
@@ -5886,7 +5964,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "Presenter identity was not confirmed from the frame, so the description says 'the facilitator' rather than naming anyone; shot is tagged Hiral — teaching because she leads this series. Correct the tag if this is a guest speaker. Source file: IMG_1627.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 169E2_PvlTaPu2voYy8BnC_75f1ia08gj. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-386.jpg"
+   "thumbnail": "thumbs/IFM-386.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-386.mp4"
   },
   {
    "id": "IFM-387",
@@ -5924,7 +6003,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "Participant faces are identifiable — confirm workshop consent before posting. Source file: IMG_1667.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 10l8UPRYU8a8rm4hiaBZuJ1dAquh8NX5b. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-388.jpg"
+   "thumbnail": "thumbs/IFM-388.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-388.mp4"
   },
   {
    "id": "IFM-389",
@@ -5943,7 +6023,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "Yes",
    "notes": "Source file: IMG_1671.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1IAZV9HPLs_jF1ZKUahuZ8_UkOFOCZiuJ. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-389.jpg"
+   "thumbnail": "thumbs/IFM-389.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-389.mp4"
   },
   {
    "id": "IFM-390",
@@ -5962,7 +6043,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "Presenter identity was not confirmed from the frame, so the description says 'the facilitator' rather than naming anyone; shot is tagged Hiral — teaching because she leads this series. Correct the tag if this is a guest speaker. Near-dupe backup: IMG_1668.MOV from the same position. Source file: IMG_1672.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1Ix-8OXTHMbfJR6EOC5XKFA0WkvjkedHr. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-390.jpg"
+   "thumbnail": "thumbs/IFM-390.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-390.mp4"
   },
   {
    "id": "IFM-391",
@@ -6094,7 +6176,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM testimonial recordings — 9 Sep 2026",
    "social": "Yes",
-   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 551 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1x6dgj8tGHqzCFXjUfE-dpzDrmnDcQs1U"
+   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 551 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1x6dgj8tGHqzCFXjUfE-dpzDrmnDcQs1U",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-397.mp4"
   },
   {
    "id": "IFM-398",
@@ -6113,7 +6196,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM testimonial recordings — 9 Sep 2026",
    "social": "Yes",
-   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 1182 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1JbE0iUE26r7p8VZGY0qpja6iyG18VFac"
+   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 1182 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1JbE0iUE26r7p8VZGY0qpja6iyG18VFac",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-398.mp4"
   },
   {
    "id": "IFM-399",
@@ -6132,7 +6216,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — 17 Jul 2026",
    "social": "Yes",
-   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 1449 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1rBbqLRTOPm_KeF1W3dNxYtYUJanTb_2s"
+   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 1449 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1rBbqLRTOPm_KeF1W3dNxYtYUJanTb_2s",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-399.mp4"
   },
   {
    "id": "IFM-400",
@@ -6151,7 +6236,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — 24 Jun 2026",
    "social": "",
-   "notes": "Byte-identical duplicate rejected: file 1BoBZ4i1FrZzzXeZSCUmVrE3SPDbShcWF, same name IMG_4248.MOV and same size 628374179, re-uploaded 14 Jul 2026 into the same folder. This row points at the 24 Jun 2026 original. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 628 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 12DTTzOFEbiaHpOgq0TY6FFtgOzh-RALf"
+   "notes": "Byte-identical duplicate rejected: file 1BoBZ4i1FrZzzXeZSCUmVrE3SPDbShcWF, same name IMG_4248.MOV and same size 628374179, re-uploaded 14 Jul 2026 into the same folder. This row points at the 24 Jun 2026 original. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 628 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 12DTTzOFEbiaHpOgq0TY6FFtgOzh-RALf",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-400.mp4"
   },
   {
    "id": "IFM-401",
@@ -6170,7 +6256,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — 24 Jun 2026",
    "social": "",
-   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 148 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1sPbAt5cNrQQA9gAFkkZDI3DJAnmfXBAT. STAGED — not yet deployed."
+   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 148 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1sPbAt5cNrQQA9gAFkkZDI3DJAnmfXBAT. STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-401.mp4"
   },
   {
    "id": "IFM-402",
@@ -6189,7 +6276,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — 24 Jun 2026",
    "social": "",
-   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 210 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1rRyKRigEB0AIdwr-wG-WynzoSloPtZVV"
+   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 210 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1rRyKRigEB0AIdwr-wG-WynzoSloPtZVV",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-402.mp4"
   },
   {
    "id": "IFM-403",
@@ -6208,7 +6296,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM small-group session — Sep 2026",
    "social": "",
-   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 101 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1fxV7iM62sj7V6xQkrdZXN5qNEhs4YrMd. STAGED — not yet deployed."
+   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 101 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1fxV7iM62sj7V6xQkrdZXN5qNEhs4YrMd. STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-403.mp4"
   },
   {
    "id": "IFM-404",
@@ -6227,7 +6316,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM small-group session — Sep 2026",
    "social": "",
-   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 199 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 16Ax0M5WFxN3dDuKU8P0QIxMtlL7iacvX. STAGED — not yet deployed."
+   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 199 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 16Ax0M5WFxN3dDuKU8P0QIxMtlL7iacvX. STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-404.mp4"
   },
   {
    "id": "IFM-405",
@@ -6246,7 +6336,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM small-group session — Sep 2026",
    "social": "",
-   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 110 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 18wg-aZGmHYWHLkRpVqHW_V1HQwa8L6Ae. STAGED — not yet deployed."
+   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 110 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 18wg-aZGmHYWHLkRpVqHW_V1HQwa8L6Ae. STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-405.mp4"
   },
   {
    "id": "IFM-406",
@@ -6265,7 +6356,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM small-group session — Sep 2026",
    "social": "Yes",
-   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 130 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1-9fnzO_V_vuRVRyjD2HLatfMBDz7KLGV. STAGED — not yet deployed."
+   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 130 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1-9fnzO_V_vuRVRyjD2HLatfMBDz7KLGV. STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-406.mp4"
   },
   {
    "id": "IFM-407",
@@ -6284,7 +6376,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM small-group session — Sep 2026",
    "social": "Yes",
-   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 56 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1PNvRRcV8JAVVm5U7dHwZdquJr01KpQO-. STAGED — not yet deployed."
+   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 56 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1PNvRRcV8JAVVm5U7dHwZdquJr01KpQO-. STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-407.mp4"
   },
   {
    "id": "IFM-408",
@@ -6303,7 +6396,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM small-group session — Sep 2026",
    "social": "",
-   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 77 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1IJ5jC1OIDKoeOKjY6X9q6HoY8Bs1nwWZ. STAGED — not yet deployed."
+   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 77 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1IJ5jC1OIDKoeOKjY6X9q6HoY8Bs1nwWZ. STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-408.mp4"
   },
   {
    "id": "IFM-409",
@@ -6322,7 +6416,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM small-group session — Sep 2026",
    "social": "Yes",
-   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 33 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1PajD-8dfOCCAsNg4kV8x4t1sgwu6mNfU. STAGED — not yet deployed."
+   "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 33 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1PajD-8dfOCCAsNg4kV8x4t1sgwu6mNfU. STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-409.mp4"
   },
   {
    "id": "IFM-410",
@@ -6341,7 +6436,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM small-group session — Sep 2026",
    "social": "",
-   "notes": "Presenter identity NOT confirmed — this may be Hiral or another facilitator. Shot tagged conservatively rather than as 'Hiral — teaching'; confirm before using for the Media Kit. Same yellow-shirted presenter appears in IFM-412. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 160 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1QzJl4fJrkiwY0vzMAD_5IYkv8ECOa4Vc. STAGED — not yet deployed."
+   "notes": "Presenter identity NOT confirmed — this may be Hiral or another facilitator. Shot tagged conservatively rather than as 'Hiral — teaching'; confirm before using for the Media Kit. Same yellow-shirted presenter appears in IFM-412. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 160 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1QzJl4fJrkiwY0vzMAD_5IYkv8ECOa4Vc. STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-410.mp4"
   },
   {
    "id": "IFM-411",
@@ -6360,7 +6456,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM small-group session — Sep 2026",
    "social": "",
-   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 369 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1q3kFATEmjXLbySu-hSzDEij6R8dYwF9z"
+   "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 369 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1q3kFATEmjXLbySu-hSzDEij6R8dYwF9z",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-411.mp4"
   },
   {
    "id": "IFM-412",
@@ -6379,7 +6476,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM corporate session — Sep 2026",
    "social": "",
-   "notes": "Filed in the 'IFM (sharing experience)' folder but this is not a testimonial — it is a room shot of a corporate session, and it is out of focus throughout the cover frame. Kept as a Raw-backup record rather than dropped. Same yellow-shirted presenter as IFM-410. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 538 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1VR0sjkdUm3_IghcdTV-_90GrnArc-eYu"
+   "notes": "Filed in the 'IFM (sharing experience)' folder but this is not a testimonial — it is a room shot of a corporate session, and it is out of focus throughout the cover frame. Kept as a Raw-backup record rather than dropped. Same yellow-shirted presenter as IFM-410. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 538 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1VR0sjkdUm3_IghcdTV-_90GrnArc-eYu",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-412.mp4"
   },
   {
    "id": "IFM-413",
@@ -6436,7 +6534,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1aalaR4Y7Jx8vkfxW5_RTxRZb_g7O415L (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1aalaR4Y7Jx8vkfxW5_RTxRZb_g7O415L (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-415.mp4"
   },
   {
    "id": "IFM-416",
@@ -6455,7 +6554,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2861.MOV (15LHmfSf1B7WW8ZZNccC6kE-36cwNKkUE); IMG_2860.MOV (1bMiB19skyVEvOO6TG93huMHg9t-rQT-N). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Rjkg-hwhQqatA-I1eyovE8uvAL8WahNg (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2861.MOV (15LHmfSf1B7WW8ZZNccC6kE-36cwNKkUE); IMG_2860.MOV (1bMiB19skyVEvOO6TG93huMHg9t-rQT-N). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Rjkg-hwhQqatA-I1eyovE8uvAL8WahNg (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-416.mp4"
   },
   {
    "id": "IFM-417",
@@ -6474,7 +6574,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1IteSLJONqZgN-NjtIii9Qr_rtk9Py9mK (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1IteSLJONqZgN-NjtIii9Qr_rtk9Py9mK (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-417.mp4"
   },
   {
    "id": "IFM-418",
@@ -6493,7 +6594,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "Yes",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2841.MOV (1pB7vFX3GLw0cSoN9cn0FJPwpx_LTZ4NO); IMG_2866.MOV (1NlJTU-lXx3hJyammOhxX8LOFWzp6BjlZ). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1zT2f61MQki1-Y04GQTY7FmCvMBzAjSvT (mirrored into IFM Content Archive / From Sakshi). In the Hiral Media Kit (copy 1wBaD4NzGa6poQezeZ0Af05ja_JAtHkbT). STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2841.MOV (1pB7vFX3GLw0cSoN9cn0FJPwpx_LTZ4NO); IMG_2866.MOV (1NlJTU-lXx3hJyammOhxX8LOFWzp6BjlZ). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1zT2f61MQki1-Y04GQTY7FmCvMBzAjSvT (mirrored into IFM Content Archive / From Sakshi). In the Hiral Media Kit (copy 1wBaD4NzGa6poQezeZ0Af05ja_JAtHkbT). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-418.mp4"
   },
   {
    "id": "IFM-419",
@@ -6512,7 +6614,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "Yes",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2851.MOV (1Si-N_KDbmrDn5cLENlj6dVJTnVVao2X6). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1xtkrrAdFB9ob8I1JnRKWAorgXlkdzdu6 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2851.MOV (1Si-N_KDbmrDn5cLENlj6dVJTnVVao2X6). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1xtkrrAdFB9ob8I1JnRKWAorgXlkdzdu6 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-419.mp4"
   },
   {
    "id": "IFM-420",
@@ -6531,7 +6634,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2852.MOV (1NdeUwZXPJyaurHVjqFFHF3AYTGr6vat9); IMG_2853.MOV (1nIjsO8SKUcYtYNApKgHuR8BHTyzk_OBP); IMG_2859.MOV (1yOsFWRByBzsf559-eeLXUEFJVsta8X8Q). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1P7QH7QVYEixJ3t52SDOdQVB87hItjdjp (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2852.MOV (1NdeUwZXPJyaurHVjqFFHF3AYTGr6vat9); IMG_2853.MOV (1nIjsO8SKUcYtYNApKgHuR8BHTyzk_OBP); IMG_2859.MOV (1yOsFWRByBzsf559-eeLXUEFJVsta8X8Q). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1P7QH7QVYEixJ3t52SDOdQVB87hItjdjp (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-420.mp4"
   },
   {
    "id": "IFM-421",
@@ -6550,7 +6654,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1_abThzJ_X_LxZCvOmEI37P66otOKnL-R (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1_abThzJ_X_LxZCvOmEI37P66otOKnL-R (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-421.mp4"
   },
   {
    "id": "IFM-422",
@@ -6569,7 +6674,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "Yes",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2846.MOV (1EEfw2oBVf1-5UGMgDsE9f8WNF5dRjjfW). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 14_MCcyXz_dRDz5ZiejLtJ_yhaf9iC1ER (mirrored into IFM Content Archive / From Sakshi). In the Hiral Media Kit (copy 19BC-WGBeCifbxI-nYVri6zLyL5b_PG4B). STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2846.MOV (1EEfw2oBVf1-5UGMgDsE9f8WNF5dRjjfW). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 14_MCcyXz_dRDz5ZiejLtJ_yhaf9iC1ER (mirrored into IFM Content Archive / From Sakshi). In the Hiral Media Kit (copy 19BC-WGBeCifbxI-nYVri6zLyL5b_PG4B). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-422.mp4"
   },
   {
    "id": "IFM-423",
@@ -6588,7 +6694,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 10rRJWYi-6FZ_9vucvz_ofHdhzs2xFsBN (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 10rRJWYi-6FZ_9vucvz_ofHdhzs2xFsBN (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-423.mp4"
   },
   {
    "id": "IFM-424",
@@ -6607,7 +6714,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 18zUck3s0AoJ2Y8bQNM5G3c_AhHLMSmrZ (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 18zUck3s0AoJ2Y8bQNM5G3c_AhHLMSmrZ (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-424.mp4"
   },
   {
    "id": "IFM-425",
@@ -6626,7 +6734,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2863.MOV (1XnIi0uzx49fEbVdo5E2shEj6zM6FZT0l); IMG_2864.MOV (1R_R42INhRbzDVm1PIesNkl8Ara7LAwJW). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1gyhMjPv_bnDfm_t5clCxKcji6BP08qjS (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2863.MOV (1XnIi0uzx49fEbVdo5E2shEj6zM6FZT0l); IMG_2864.MOV (1R_R42INhRbzDVm1PIesNkl8Ara7LAwJW). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1gyhMjPv_bnDfm_t5clCxKcji6BP08qjS (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-425.mp4"
   },
   {
    "id": "IFM-426",
@@ -6645,7 +6754,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 254 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1YobcsPcsC6FLBnUHi5n98MJthnvH-bm1"
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 254 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1YobcsPcsC6FLBnUHi5n98MJthnvH-bm1",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-426.mp4"
   },
   {
    "id": "IFM-427",
@@ -6664,7 +6774,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1vBIHFuCn-0_Forftef_quunyfqJYYoG4 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1vBIHFuCn-0_Forftef_quunyfqJYYoG4 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-427.mp4"
   },
   {
    "id": "IFM-428",
@@ -6683,7 +6794,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1VUXazyJxL9nsLzFKILRph9bqgMH345bD (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1VUXazyJxL9nsLzFKILRph9bqgMH345bD (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-428.mp4"
   },
   {
    "id": "IFM-429",
@@ -6702,7 +6814,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Mu7lAPjsoOtAClJUJpOa4qGymkryzZhU (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Mu7lAPjsoOtAClJUJpOa4qGymkryzZhU (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-429.mp4"
   },
   {
    "id": "IFM-430",
@@ -6721,7 +6834,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1YmTNJLdr--oepxFr7KjKaFFLaP9IxIqi (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1YmTNJLdr--oepxFr7KjKaFFLaP9IxIqi (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-430.mp4"
   },
   {
    "id": "IFM-431",
@@ -6740,7 +6854,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2856.MOV (1Nvf6HFliGLzhxzUqxrPjqOtaC9ws3NeN). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1dd0VKgolqMq7fuY0gqtfM_fxjT2DlIy7 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2856.MOV (1Nvf6HFliGLzhxzUqxrPjqOtaC9ws3NeN). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1dd0VKgolqMq7fuY0gqtfM_fxjT2DlIy7 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-431.mp4"
   },
   {
    "id": "IFM-432",
@@ -6759,7 +6874,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: 1785216806801662.mp4 (1T0P1HiC1uF9gsxA86pGB895gpU85sQoV). From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1mj2k95Feb2D02gWJDoh5BivX2d7JJ6Wt (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: 1785216806801662.mp4 (1T0P1HiC1uF9gsxA86pGB895gpU85sQoV). From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1mj2k95Feb2D02gWJDoh5BivX2d7JJ6Wt (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-432.mp4"
   },
   {
    "id": "IFM-433",
@@ -6778,7 +6894,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1ah8v8In0qKeBX9-3UZM4u71j2zQMzEjU (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1ah8v8In0qKeBX9-3UZM4u71j2zQMzEjU (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-433.mp4"
   },
   {
    "id": "IFM-434",
@@ -6797,7 +6914,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 19At9DwQS_v1WSExSYPvJ47rCLgRHWEFT (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 19At9DwQS_v1WSExSYPvJ47rCLgRHWEFT (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-434.mp4"
   },
   {
    "id": "IFM-435",
@@ -6816,7 +6934,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 11iMRPeRqQ41UMceQlRnQaXZUaatCSTSJ (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 11iMRPeRqQ41UMceQlRnQaXZUaatCSTSJ (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-435.mp4"
   },
   {
    "id": "IFM-436",
@@ -6835,7 +6954,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_0423.mov (5.3MB take) (1OCoaajTbjVh9ixmWNvlX_lNb6CJWiUHB). From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1FjkifgTqDpJPve-n7ABMAnWj92DKu9gA (mirrored into IFM Content Archive / From Sakshi). Qualifies for the Hiral Media Kit by the Hero + Hiral-teaching rule, but HELD BACK: minors are in frame and the Media Kit is shared with the agency. Copy it only on the user's say-so. STAGED — not yet deployed. | In the Hiral Media Kit — added 18 Sep 2026 on the user's explicit decision, knowing minors are in frame: the teens material is wanted for proposals to young-adult audiences. social stays blank and consent stays \"Minors visible\"; this covers the agency media kit only, NOT social publication. media-kit copy: 1j2zw_aEiZkYEOXenPfJqj4Cb5K518wiW"
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_0423.mov (5.3MB take) (1OCoaajTbjVh9ixmWNvlX_lNb6CJWiUHB). From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1FjkifgTqDpJPve-n7ABMAnWj92DKu9gA (mirrored into IFM Content Archive / From Sakshi). Qualifies for the Hiral Media Kit by the Hero + Hiral-teaching rule, but HELD BACK: minors are in frame and the Media Kit is shared with the agency. Copy it only on the user's say-so. STAGED — not yet deployed. | In the Hiral Media Kit — added 18 Sep 2026 on the user's explicit decision, knowing minors are in frame: the teens material is wanted for proposals to young-adult audiences. social stays blank and consent stays \"Minors visible\"; this covers the agency media kit only, NOT social publication. media-kit copy: 1j2zw_aEiZkYEOXenPfJqj4Cb5K518wiW",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-436.mp4"
   },
   {
    "id": "IFM-437",
@@ -6854,7 +6974,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Bfq7eTFaTb00OsnstBXtp2if0c-IRMmL (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Bfq7eTFaTb00OsnstBXtp2if0c-IRMmL (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-437.mp4"
   },
   {
    "id": "IFM-438",
@@ -6873,7 +6994,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1zM-Be-c1TZDV_MWKnd99YaLIe7qD4bM0 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1zM-Be-c1TZDV_MWKnd99YaLIe7qD4bM0 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-438.mp4"
   },
   {
    "id": "IFM-439",
@@ -6930,7 +7052,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1R2hXMhHzfoJdRG2yBKFIoul7I1xk0N0h (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1R2hXMhHzfoJdRG2yBKFIoul7I1xk0N0h (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-441.mp4"
   },
   {
    "id": "IFM-442",
@@ -6949,7 +7072,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Sw6xR7TqMHTu4hWQZZtx7u0xtjI1-98B (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Sw6xR7TqMHTu4hWQZZtx7u0xtjI1-98B (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-442.mp4"
   },
   {
    "id": "IFM-443",
@@ -6968,7 +7092,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_0562.MOV (1C1cUFkML4zTh9C_bygIcbLhf-2TuKO3i). From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 18ZjazBqw0m9-uQBoR0uWN3WD-oA57YJ6 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_0562.MOV (1C1cUFkML4zTh9C_bygIcbLhf-2TuKO3i). From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 18ZjazBqw0m9-uQBoR0uWN3WD-oA57YJ6 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-443.mp4"
   },
   {
    "id": "IFM-444",
@@ -6987,7 +7112,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1gmmnMV0NwgblXDA8pqkMmsA4LrpaQ_3W (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1gmmnMV0NwgblXDA8pqkMmsA4LrpaQ_3W (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-444.mp4"
   },
   {
    "id": "IFM-445",
@@ -7006,7 +7132,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1njR7syHSovw-nn7OzAbugb_ZiUDLnDhB (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1njR7syHSovw-nn7OzAbugb_ZiUDLnDhB (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-445.mp4"
   },
   {
    "id": "IFM-446",
@@ -7025,7 +7152,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1FUClNPLMgOVfP5k46PN8JMC3JNoIu2x2 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1FUClNPLMgOVfP5k46PN8JMC3JNoIu2x2 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-446.mp4"
   },
   {
    "id": "IFM-447",
@@ -7044,7 +7172,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1uN8FrHD-I1HHyp6tbx14ZWLpoijPnLZO (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1uN8FrHD-I1HHyp6tbx14ZWLpoijPnLZO (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-447.mp4"
   },
   {
    "id": "IFM-448",
@@ -7063,7 +7192,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1p1gSmEFWVCsaOyOESpAjr62dQBUhsLmt (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1p1gSmEFWVCsaOyOESpAjr62dQBUhsLmt (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-448.mp4"
   },
   {
    "id": "IFM-449",
@@ -7082,7 +7212,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1zP3rP2ebGw_dZeTu4KAHC5a449aqzwSw (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1zP3rP2ebGw_dZeTu4KAHC5a449aqzwSw (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-449.mp4"
   },
   {
    "id": "IFM-450",
@@ -7101,7 +7232,8 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1d6Kxq5G-KwbgjpApWFFy3v2Fry9u_Ghq (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1d6Kxq5G-KwbgjpApWFFy3v2Fry9u_Ghq (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-450.mp4"
   },
   {
    "id": "IFM-451",
@@ -7139,7 +7271,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 363 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1MlZD4lVwla-SKGUe813aEEsFy55Qcfk6"
+   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 363 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1MlZD4lVwla-SKGUe813aEEsFy55Qcfk6",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-452.mp4"
   },
   {
    "id": "IFM-453",
@@ -7158,7 +7291,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "Yes",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_1838.MOV (1-BG7aF4xPcmSOch9QyJEr6HUS0gQql96); IMG_1839.MOV (1us-3DflkJSPKhneQMfvRfFon6gefPeuE). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 605 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1fAinP4eMt1al-t2E5KCM4wNPaQuu5s6z"
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_1838.MOV (1-BG7aF4xPcmSOch9QyJEr6HUS0gQql96); IMG_1839.MOV (1us-3DflkJSPKhneQMfvRfFon6gefPeuE). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 605 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1fAinP4eMt1al-t2E5KCM4wNPaQuu5s6z",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-453.mp4"
   },
   {
    "id": "IFM-454",
@@ -7177,7 +7311,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "Yes",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_1841.MOV (1NcimFLhJXBBDHh0WOYmZqfS4L44Gq8IU). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 255 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 14oli2iNAaq8fhHRlcspUijWRYXlEGHry"
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_1841.MOV (1NcimFLhJXBBDHh0WOYmZqfS4L44Gq8IU). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 255 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 14oli2iNAaq8fhHRlcspUijWRYXlEGHry",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-454.mp4"
   },
   {
    "id": "IFM-455",
@@ -7196,7 +7331,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "Yes",
-   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1xtq9g2H2jLQNDkAeh6TwqchpCKkLjYhj (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1xtq9g2H2jLQNDkAeh6TwqchpCKkLjYhj (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-455.mp4"
   },
   {
    "id": "IFM-456",
@@ -7215,7 +7351,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 735 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1lFZNwu1JIHvuP-UrLr_F7ZDDGz-xgPEb"
+   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 735 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1lFZNwu1JIHvuP-UrLr_F7ZDDGz-xgPEb",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-456.mp4"
   },
   {
    "id": "IFM-457",
@@ -7234,7 +7371,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1-_V_yQ61t-o4np3h5kqsXuAWvbORJYWL (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1-_V_yQ61t-o4np3h5kqsXuAWvbORJYWL (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-457.mp4"
   },
   {
    "id": "IFM-458",
@@ -7253,7 +7391,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2386.MOV (1ggPf-mHcMv_qxb2qHntunXTIV_hlAVzj). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1BFdlaA2Zvjs3R6NSqR4jIfvWOV5WPZjH (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2386.MOV (1ggPf-mHcMv_qxb2qHntunXTIV_hlAVzj). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1BFdlaA2Zvjs3R6NSqR4jIfvWOV5WPZjH (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-458.mp4"
   },
   {
    "id": "IFM-459",
