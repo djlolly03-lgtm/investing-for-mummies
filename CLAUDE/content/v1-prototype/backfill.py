@@ -27,7 +27,7 @@ NOT DONE HERE: vision. Rows whose description is boilerplate are flagged `needs_
 so they can be worked through with the thumbnail open. Six Goa rows share one 63-character
 description and are indistinguishable without it.
 """
-import json, re, sys, os, collections
+import json, re, sys, os, collections, subprocess
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, '..', 'data.js')
@@ -162,6 +162,40 @@ BOILERPLATE = re.compile(
     r'^raw \d+ ?mb|raw session video dump', re.I)
 
 STOPISH = set('the a an of for and or in on at to with is are this that it its'.split())
+
+
+# DOES IT ACTUALLY HAVE SOUND? Ask the file, do not guess from its path.
+#
+# This used to be `'/clips/' in video or 'wealth-conversation-videos' in drive`, on the reasoning
+# that preview clips were built with ffmpeg -an. That stopped being true on 18 Sep 2026, when 65
+# previews were rebuilt from Sakshi's masters KEEPING audio -- they are testimonials, and a muted
+# one reads as broken. The rule then told 40 rows they were silent while they played a voice.
+#
+# A path is not evidence about a file. ffprobe is. The clips are on disk during a backfill, so
+# this costs one cheap probe per local clip and is then correct by construction, including for
+# every clip added later. Assets whose master is remote fall back to the old heuristic, which is
+# all that can be known without downloading them.
+_SILENT_CACHE = {}
+def is_silent(r):
+    vid = (r.get('video') or '')
+    m = re.search(r'/content/clips/([A-Za-z0-9_-]+\.mp4)$', vid)
+    if m:
+        path = os.path.join(HERE, '..', 'clips', m.group(1))
+        if path in _SILENT_CACHE:
+            return _SILENT_CACHE[path]
+        if os.path.exists(path):
+            try:
+                out = subprocess.run(
+                    ['ffprobe', '-v', 'error', '-select_streams', 'a',
+                     '-show_entries', 'stream=codec_type', '-of', 'csv=p=0', path],
+                    capture_output=True, text=True, timeout=20).stdout.strip()
+                val = (out == '')          # no audio stream at all
+            except Exception:
+                val = False                # unprobeable is not evidence of silence
+            _SILENT_CACHE[path] = val
+            return val
+    # Remote master: the old path heuristic is the only thing available.
+    return 'wealth-conversation-videos' in (r.get('drive link') or '')
 
 
 def load_rows():
@@ -376,8 +410,7 @@ def main():
             # they carry no audio at all; the AI chapter renders are silent too. Only the
             # game reels have a music bed. Flagged so the player can say so — a video that
             # plays with no sound and no explanation just reads as broken.
-            'silent': ('/clips/' in (r.get('video') or r.get('drive link') or '')
-                       or 'wealth-conversation-videos' in (r.get('drive link') or '')),
+            'silent': is_silent(r),
         }
         if r['id'] in EXCLUDE:
             v1['library'] = False                 # internal flag; never a UI filter
