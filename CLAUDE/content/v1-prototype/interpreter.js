@@ -150,6 +150,12 @@ const VERNACULAR = [
   [/\b(mums?|mommy|moms?|ladies|lady|aunty|aunties)\b/ig, 'woman'],
 ];
 
+/* Jewellery, not the asset class. Deliberately narrow: it must name an ORNAMENT or the
+ * cultural frame (stree dhan, a wedding set), never the bare word "gold" — "gold" alone is
+ * overwhelmingly the asset class in this library and rerouting it would break the flagship
+ * query. Mirrors GOLD_ORNAMENTAL in backfill.py, which draws the same line when tagging. */
+const ORNAMENTAL_GOLD = /\b(jewell?ery|jewel|ornament|bangles?|necklace|chain|earrings?|bridal|wedding set|stree ?dhan|haar|mangalsutra)\b/i;
+
 /* Format words a person would actually say. */
 const FORMAT_MAP = [
   [/\btestimonials?\b|\breviews?\b/i, 'Testimonial'],
@@ -273,6 +279,20 @@ function run(query, engine) {
   const c = it.explicit_constraints;
   if (c.type) results = results.filter(r => r.a.type === c.type);
   if (c.person.length) results = results.filter(r => c.person.every(p => (r.a.person || []).includes(p)));
+
+  /* GOLD THE ORNAMENT IS NOT GOLD THE ASSET CLASS. Asking for "gold jewellery" or "stree
+   * dhan" means bangles and a mother's chain, never an SGB. backfill.py already draws this
+   * line when TAGGING (GOLD_ORNAMENTAL vs GOLD_POSITIVE); this is the same line drawn when
+   * SEARCHING, and the two must agree or the taxonomy contradicts the query.
+   *
+   * Made explicit 18 Sep 2026. It had been holding by luck: eight decorative gold-globe
+   * Vedanta renders were diluting the term, and deleting them — they pointed at files that
+   * no longer existed — made "gold" rarer, raised its IDF weight, and pushed "Gold as a Safe
+   * Haven" into a jewellery search. A rule that only works because of what else happens to
+   * be in the corpus is not a rule. */
+  if (ORNAMENTAL_GOLD.test(it.query)) {
+    results = results.filter(r => !(r.a.topic || []).includes('Gold'));
+  }
 
   return { interpretation: it, results };
 }

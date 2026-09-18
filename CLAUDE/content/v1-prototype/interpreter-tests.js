@@ -152,6 +152,21 @@ const NATURAL = [
 
 /* ===================== C. HARD ACCEPTANCE TESTS — must all pass =========== */
 const ACCEPTANCE = [
+  /* Moved here from the engine suite on 18 Sep 2026. The raw engine cannot tell an ornament
+   * from an asset class and is frozen, so it held this only by accident — eight decorative
+   * gold renders happened to be diluting the term, and deleting them broke it. ORNAMENTAL_GOLD
+   * in interpreter.js enforces it properly, so the guarantee is asserted at the layer that
+   * actually provides it. "gold investments" is tested alongside precisely because the rule
+   * must NOT bleed: rerouting the bare word would break the flagship query. */
+  ['"gold jewellery" must not return a single asset-class-gold asset',
+   () => { const r = interpreted('gold jewellery').results;
+           return r.length > 0 && r.every(x => !(x.a.topic || []).includes('Gold')); }],
+  ['"stree dhan" must not return a single asset-class-gold asset',
+   () => { const r = interpreted('stree dhan').results;
+           return r.length > 0 && r.every(x => !(x.a.topic || []).includes('Gold')); }],
+  ['"gold investments" must STILL return asset-class gold',
+   () => { const r = interpreted('gold investments').results;
+           return r.length > 0 && r.slice(0, 3).some(x => (x.a.topic || []).includes('Gold')); }],
   ['purple elephant must return nothing',
    () => interpreted('purple elephant').results.length === 0],
   ['blue hat must return nothing',

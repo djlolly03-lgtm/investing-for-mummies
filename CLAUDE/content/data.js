@@ -728,84 +728,6 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-043.jpg"
   },
   {
-   "id": "IFM-044",
-   "title": "Vedanta demerger — gold globe → 5 segments (v1)",
-   "type": "AI Video",
-   "source": "In-house",
-   "status": "On Hold",
-   "keywords": "vedanta, demerger, gold, 3d, globe, 5 segments, reel, bloomberg, dark, kling, 9:16",
-   "description": "Vertical reel concept: the Vedanta globe as a metallic-gold 3D medallion rotates, cracks and separates into 5 glowing gold segments in a radial formation; dark graphite studio, gold particles, market grid. 9:16, 15s, silent, no text.",
-   "drive link": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-9x16-15s.mp4",
-   "date created": "2026-06-14",
-   "notes": "First pass, no IFM badge. Gold-medallion direction set aside in favour of the pizza explainer (IFM-051). Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-044.jpg"
-  },
-  {
-   "id": "IFM-045",
-   "title": "Vedanta demerger — gold globe + IFM badge (v2)",
-   "type": "AI Video",
-   "source": "In-house",
-   "status": "On Hold",
-   "keywords": "vedanta, demerger, gold, globe, 5 segments, ifm badge, reel, dark, 9:16",
-   "description": "Same gold-globe-into-5-segments reel with the round IFM badge composited top-right. 9:16, 15s, silent. Corner badge read as pasted-on — fixed in v3.",
-   "drive link": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v2-ifm-15s.mp4",
-   "date created": "2026-06-14",
-   "notes": "Iteration of IFM-044. Superseded. Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-045.jpg"
-  },
-  {
-   "id": "IFM-046",
-   "title": "Vedanta demerger — gold globe, integrated badge, locked 5-split (v3 pro)",
-   "type": "AI Video",
-   "source": "In-house",
-   "status": "On Hold",
-   "keywords": "vedanta, demerger, gold, globe, 5 segments, integrated badge, pro, full hd, radial, 9:16",
-   "description": "Best gold-medallion reel: the metallic-gold Vedanta globe rotates with energy lines and glowing cracks, then elegantly separates into 5 distinct gold segments in a clean radial ring; IFM badge rendered into the scene on a gold-rim disc. Start+end frame controlled, Kling pro full-HD. 9:16, 15s, silent, no text.",
-   "drive link": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v3-pro-15s.mp4",
-   "date created": "2026-06-14",
-   "notes": "Strongest gold version. Direction ultimately set aside for the pizza explainer. Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-046.jpg"
-  },
-  {
-   "id": "IFM-047",
-   "title": "Vedanta demerger — gold globe (v3 std alt take)",
-   "type": "AI Video",
-   "source": "In-house",
-   "status": "On Hold",
-   "keywords": "vedanta, demerger, gold, globe, 5 segments, std, alt, 9:16",
-   "description": "Standard-mode alternate of the v3 gold-globe demerger reel — same 5-segment split + badge, lighter render, different motion feel. 9:16, 15s, silent.",
-   "drive link": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v3-std-15s.mp4",
-   "date created": "2026-06-14",
-   "notes": "Alt take of IFM-046. Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-047.jpg"
-  },
-  {
-   "id": "IFM-048",
-   "title": "Vedanta pizza demerger — angled deep-dish split",
-   "type": "AI Video",
-   "source": "In-house",
-   "status": "On Hold",
-   "keywords": "vedanta, pizza, deep dish, demerger, slices, cheese, ifm badge, 9:16, kling pro",
-   "description": "A deep-dish pizza with the blue-green Vedanta globe as its cheese-top design, shot at a 3/4 angle, separates into slices with stretching cheese and steam; IFM badge top-right. 9:16, 10s, silent. Slice count not exact.",
-   "drive link": "https://ifm-deploy.vercel.app/vedanta-pizza-split-pro-10s.mp4",
-   "date created": "2026-06-14",
-   "notes": "Earlier pizza take; slice count imprecise. Superseded by IFM-049/051. Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-048.jpg"
-  },
-  {
-   "id": "IFM-049",
-   "title": "Vedanta pizza demerger — exact 5 slices (top-down)",
-   "type": "AI Video",
-   "source": "In-house",
-   "status": "On Hold",
-   "keywords": "vedanta, pizza, 5 slices, top down, demerger, orbit, zoom out, ifm badge, 9:16",
-   "description": "Top-down deep-dish pizza with the Vedanta globe design, cut into exactly 5 equal wedges that separate into a radial spread while the camera arcs and zooms out; IFM badge top-right. 9:16, 10s, silent, no text.",
-   "drive link": "https://ifm-deploy.vercel.app/vedanta-pizza-5slices-pro-10s.mp4",
-   "date created": "2026-06-14",
-   "notes": "Exact-5 geometry, Vedanta logo on the pizza. Photoreal companion to the explainer. Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-049.jpg"
-  },
-  {
    "id": "IFM-050",
    "title": "IFM pizza → 5 slices (clean, reusable, 5s)",
    "type": "AI Video",
@@ -817,19 +739,6 @@ window.IFM_DATA ={
    "date created": "2026-06-14",
    "notes": "Generic 'one becomes five' splitter — drop any topic's logo on the pizza to reuse. Needs manual drag into Drive Content Library.",
    "thumbnail": "thumbs/IFM-050.jpg"
-  },
-  {
-   "id": "IFM-051",
-   "title": "Vedanta demerger explainer — 1 pizza → 5 companies",
-   "type": "Motion Graphic",
-   "source": "In-house",
-   "status": "Ready",
-   "keywords": "vedanta, demerger, explainer, infographic, 5 companies, aluminium, power, oil gas, steel, vedanta ltd, pizza, labels, white, motion graphic, 9:16",
-   "description": "Clean white-background infographic: a pizza labelled 'VEDANTA' (1 company) slices into 5 equal pieces that become labelled tiles — Vedanta Aluminium, Vedanta Power, Vedanta Oil & Gas, Vedanta Steel & Ferrous, Vedanta Ltd (5 companies). IFM logo at top. 9:16, exactly 5s.",
-   "drive link": "https://ifm-deploy.vercel.app/vedanta-pizza-explainer-5s.mp4",
-   "date created": "2026-06-14",
-   "notes": "Built frame-by-frame in code (not AI video) so labels are perfectly legible — the polished final of this series. Needs manual drag into Drive Content Library.",
-   "thumbnail": "thumbs/IFM-051.jpg"
   },
   {
    "id": "IFM-052",
@@ -848,19 +757,6 @@ window.IFM_DATA ={
    "comments": 4,
    "ig link": "https://www.instagram.com/investingformummies/p/DZnCYwBCFBS/",
    "published date": "June 15, 2026"
-  },
-  {
-   "id": "IFM-053",
-   "title": "Vedanta Demerger — AI Anchor News Explainer (Reel)",
-   "type": "Reel",
-   "source": "In-house",
-   "status": "Ready",
-   "keywords": "vedanta, demerger, reel, ai avatar, founder, digital twin, news anchor, explainer, 5 companies, pizza, shareholders, lip sync, voiceover, dark graphite, gold, 9:16",
-   "description": "Vertical 9:16 news-style Reel (~18s) fronted by the founder's AI avatar as a business-news anchor in a dark-graphite, gold-accented newsroom (Bloomberg / ET Now look). She delivers a demerger explainer to camera with synced lip movement and an Anjali voiceover: 'Vedanta has just split into five companies… does that make shareholders 5× richer? Not quite — think of it like a pizza cut into slices.' Cuts to a steaming Vedanta-globe pizza splitting, then five gold sector blocks (Base Metals, Aluminium, Oil & Gas, Power, Iron & Steel) arranging around a central VEDANTA node, a split-screen, and a hero end-card: 'VEDANTA DEMERGER → WHAT IT MEANS FOR SHAREHOLDERS'. News lower-thirds throughout, no background music.",
-   "drive link": "https://ifm-deploy.vercel.app/vedanta-reel-anchor-18s.mp4",
-   "date created": "2026-06-15",
-   "notes": "Built with the founder's reusable Higgsfield Soul (digital twin) + Wan 2.7 audio-driven lip-sync. Designed as the opening video slide for the Vedanta carousel (IFM-052). File: /vedanta-reel-anchor-18s.mp4. Source project: reel_vedanta/.",
-   "thumbnail": "thumbs/IFM-053.jpg"
   },
   {
    "id": "IFM-054",

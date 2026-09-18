@@ -1182,132 +1182,6 @@ window.IFM_V1 =
 "search_terms": "ifm medallion way split cinematic wider spread longer cut metallic breaking into fully separated floating wedges dramatic orbit pieces read clearly before reveal silent camera dark"
 },
 {
-"id": "IFM-044",
-"title": "Vedanta demerger — gold globe → 5 segments (v1)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-044.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-9x16-15s.mp4",
-"description": "Vertical reel concept: the Vedanta globe as a metallic-gold 3D medallion rotates, cracks and separates into 5 glowing gold segments in a radial formation; dark graphite studio, gold particles, market grid. 9:16, 15s, silent, no text.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger gold globe segments vertical reel concept metallic medallion rotates cracks separates into glowing radial formation dark graphite studio particles market grid 15s silent text bloomberg kling"
-},
-{
-"id": "IFM-045",
-"title": "Vedanta demerger — gold globe + IFM badge (v2)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-045.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v2-ifm-15s.mp4",
-"description": "Same gold-globe-into-5-segments reel with the round IFM badge composited top-right. 9:16, 15s, silent. Corner badge read as pasted-on — fixed in v3.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger gold globe ifm badge same into segments reel round composited top right 15s silent corner read pasted fixed dark"
-},
-{
-"id": "IFM-046",
-"title": "Vedanta demerger — gold globe, integrated badge, locked 5-split (v3 pro)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-046.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v3-pro-15s.mp4",
-"description": "Best gold-medallion reel: the metallic-gold Vedanta globe rotates with energy lines and glowing cracks, then elegantly separates into 5 distinct gold segments in a clean radial ring; IFM badge rendered into the scene on a gold-rim disc. Start+end frame controlled, Kling pro full-HD. 9:16, 15s, silent, no text.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger gold globe integrated badge locked split pro best medallion reel metallic rotates energy lines glowing cracks then elegantly separates into distinct segments clean radial ring ifm rendered scene rim disc start end frame controlled kling full 15s silent"
-},
-{
-"id": "IFM-047",
-"title": "Vedanta demerger — gold globe (v3 std alt take)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-047.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-demerger-reel-v3-std-15s.mp4",
-"description": "Standard-mode alternate of the v3 gold-globe demerger reel — same 5-segment split + badge, lighter render, different motion feel. 9:16, 15s, silent.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger gold globe std alt take standard mode alternate reel same segment split badge lighter render different motion feel 15s silent segments"
-},
-{
-"id": "IFM-048",
-"title": "Vedanta pizza demerger — angled deep-dish split",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-048.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-pizza-split-pro-10s.mp4",
-"description": "A deep-dish pizza with the blue-green Vedanta globe as its cheese-top design, shot at a 3/4 angle, separates into slices with stretching cheese and steam; IFM badge top-right. 9:16, 10s, silent. Slice count not exact.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta pizza demerger angled deep dish split blue green globe cheese top design shot angle separates into slices stretching steam ifm badge right 10s silent slice count not exact kling pro"
-},
-{
-"id": "IFM-049",
-"title": "Vedanta pizza demerger — exact 5 slices (top-down)",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-049.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-pizza-5slices-pro-10s.mp4",
-"description": "Top-down deep-dish pizza with the Vedanta globe design, cut into exactly 5 equal wedges that separate into a radial spread while the camera arcs and zooms out; IFM badge top-right. 9:16, 10s, silent, no text.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "B-roll",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta pizza demerger exact slices top down deep dish globe design cut into exactly equal wedges separate radial spread while camera arcs zooms out ifm badge right 10s silent text orbit zoom"
-},
-{
 "id": "IFM-050",
 "title": "IFM pizza → 5 slices (clean, reusable, 5s)",
 "date": "2026-06-14",
@@ -1327,27 +1201,6 @@ window.IFM_V1 =
 "person": [],
 "source": "IFM / In-house",
 "search_terms": "ifm pizza slices clean reusable plain cheese deep dish cut into exactly equal separate camera arcs zooms out white disc badge top right other branding down silent split demerger template one becomes five"
-},
-{
-"id": "IFM-051",
-"title": "Vedanta demerger explainer — 1 pizza → 5 companies",
-"date": "2026-06-14",
-"thumb": "../thumbs/IFM-051.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-pizza-explainer-5s.mp4",
-"description": "Clean white-background infographic: a pizza labelled 'VEDANTA' (1 company) slices into 5 equal pieces that become labelled tiles — Vedanta Aluminium, Vedanta Power, Vedanta Oil & Gas, Vedanta Steel & Ferrous, Vedanta Ltd (5 companies). IFM logo at top. 9:16, exactly 5s.",
-"session": "",
-"slide_text": "",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Social Graphic",
-"topic": [
-"Stocks / Equity"
-],
-"person": [],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger explainer pizza companies clean white background infographic labelled company slices into equal pieces become tiles aluminium power oil gas steel ferrous ltd ifm logo top exactly labels motion graphic"
 },
 {
 "id": "IFM-052",
@@ -1371,30 +1224,6 @@ window.IFM_V1 =
 "person": [],
 "source": "IFM / In-house",
 "search_terms": "vedanta demerger same pizza different slices premium slide dark slate carousel explaining opens steaming photoreal stamped globe just split into companies richer frosted glass cards then walk through what family business analogy old bundle aluminium power oil gas iron steel"
-},
-{
-"id": "IFM-053",
-"title": "Vedanta Demerger — AI Anchor News Explainer (Reel)",
-"date": "2026-06-15",
-"thumb": "../thumbs/IFM-053.jpg",
-"video": "",
-"drive": "https://ifm-deploy.vercel.app/vedanta-reel-anchor-18s.mp4",
-"description": "Vertical 9:16 news-style Reel (~18s) fronted by the founder's AI avatar as a business-news anchor in a dark-graphite, gold-accented newsroom (Bloomberg / ET Now look). She delivers a demerger explainer to camera with synced lip movement and an Anjali voiceover: 'Vedanta has just split into five companies… does that make shareholders 5× richer? Not quite — think of it like a pizza cut into slices.' Cuts to a steaming Vedanta-globe pizza splitting, then five gold sector blocks (Base Metals, Aluminium, Oil & Gas, Power, Iron & Steel) arranging around a central VEDANTA node, a split-screen, and a hero end-card: 'VEDANTA DEMERGER → WHAT IT MEANS FOR SHAREHOLDERS'. News lower-thirds throughout, no background music.",
-"session": "",
-"slide_text": "Vedanta has just split into five companies… does that make shareholders 5× richer? Not quite — think of it like a pizza cut into slices. VEDANTA DEMERGER → WHAT IT MEANS FOR SHAREHOLDERS",
-"silent": false,
-"type": "Video",
-"status": "Ready",
-"format": "Hiral Speaking",
-"topic": [
-"Wealth",
-"Stocks / Equity"
-],
-"person": [
-"Hiral"
-],
-"source": "IFM / In-house",
-"search_terms": "vedanta demerger anchor news explainer reel vertical style 18s fronted founder avatar business dark graphite gold accented newsroom bloomberg now look she delivers camera synced lip movement anjali voiceover has just split into five companies does make shareholders richer not"
 },
 {
 "id": "IFM-054",
