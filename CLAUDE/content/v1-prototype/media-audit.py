@@ -114,7 +114,13 @@ def main():
     if not offline:
         for i, u in enumerate(sorted(urls), 1):
             cache[u] = probe(u)
-            print('  [%3d/%d] %s %s' % (i, len(urls), cache[u], u[-58:]), file=sys.stderr)
+            # Trim from the MIDDLE, not the left. `u[-58:]` chopped the scheme off long URLs
+            # and printed things like 'tps://ifm-deploy…' and '//ifm-deploy…', which read as
+            # corrupted data in the log and cost a real investigation on 18 Sep 2026 to prove
+            # the stored values were fine. The filename is the useful part; so is knowing the
+            # URL was well-formed.
+            shown = u if len(u) <= 58 else u[:22] + '…' + u[-35:]
+            print('  [%3d/%d] %s %s' % (i, len(urls), cache[u], shown), file=sys.stderr)
         json.dump(cache, open(CACHE, 'w'), indent=0)
 
     out, stats = {}, {'playable': 0, 'unavailable': 0, 'image': 0, 'carousel': 0}
