@@ -5182,14 +5182,15 @@ window.IFM_DATA ={
    "description": "Projector screen showing the opening slide 'From Stree Dhan to Financial Wisdom' — an illustrated tree growing out of a pile of gold coins and jewellery, with the prompt “What does ‘Stree Dhan’ mean to you?” across the bottom. Dark wood-paneled hotel conference room, empty black executive chairs in the foreground.",
    "drive link": "https://drive.google.com/file/d/1ZkhuVC0gHyAlgBPrnaOCyRudGNn0IuWo/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 5 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1ZkhuVC0gHyAlgBPrnaOCyRudGNn0IuWo). Backup file ids: 1G64yoiEHR6d6a-N7HbF74-p4uPOmjaUo, 1vettKEkHFRD6SY_tcSzXwL3JbVl1Fm65, 1hkIo-QuR-FpSC6nK1neNfHw0He4C2dU4, 1cg9ehMVO3v2LWJItnocUtLeZLM-n80Cb. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 5 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1ZkhuVC0gHyAlgBPrnaOCyRudGNn0IuWo). Backup file ids: 1G64yoiEHR6d6a-N7HbF74-p4uPOmjaUo, 1vettKEkHFRD6SY_tcSzXwL3JbVl1Fm65, 1hkIo-QuR-FpSC6nK1neNfHw0He4C2dU4, 1cg9ehMVO3v2LWJItnocUtLeZLM-n80Cb. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1B1CtXbh07ytuebndv1W5r3yMR_VoKM0z",
    "thumbnail": "thumbs/IFM-346.jpg",
    "shot": "No people",
    "setting": "Screen/Projector",
    "quality": "Usable",
    "consent": "No identifiable people",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-346.mp4"
   },
   {
    "id": "IFM-347",
@@ -5202,14 +5203,15 @@ window.IFM_DATA ={
    "description": "Facilitator stands beside the projector screen presenting the colour-coded 'Introduction' slide — an illustrated woman surrounded by four labelled boxes explaining who the course is for. A roll-up IFM banner stands to the right of the screen; participants watch from black chairs in the foreground.",
    "drive link": "https://drive.google.com/file/d/1YBYiX32SZ-KYpFBPxDOnHRA0bfbuiY37/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 6 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1YBYiX32SZ-KYpFBPxDOnHRA0bfbuiY37). Backup file ids: 1S9B8U3c3jRFrr0Oi0ZaFSBv1wX8fnIn0, 14MAIN8B_edpVpGdngx6XEYMrvLfF2gHb, 1QVr_lzgpk1uXna_oftngdXzwg8t-X9qg, 132zCsCpgQzUQ1tgpfDYkNXVLUfHm5Nbg, 1Go-CKgzYIPsU0goIkOa_RKkxXlxbM0XX. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 6 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1YBYiX32SZ-KYpFBPxDOnHRA0bfbuiY37). Backup file ids: 1S9B8U3c3jRFrr0Oi0ZaFSBv1wX8fnIn0, 14MAIN8B_edpVpGdngx6XEYMrvLfF2gHb, 1QVr_lzgpk1uXna_oftngdXzwg8t-X9qg, 132zCsCpgQzUQ1tgpfDYkNXVLUfHm5Nbg, 1Go-CKgzYIPsU0goIkOa_RKkxXlxbM0XX. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1oyPwTJBxDmmwjpHE76dC9JKyBIjaP-tO",
    "thumbnail": "thumbs/IFM-347.jpg",
    "shot": "Hiral — teaching",
    "setting": "Screen/Projector",
    "quality": "Usable",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-347.mp4"
   },
   {
    "id": "IFM-348",
@@ -5222,14 +5224,15 @@ window.IFM_DATA ={
    "description": "Facilitator presenting the inflation block of the deck: 'What Causes Inflation?' (three bullet causes beside a cartoon of shoppers), 'The Invisible Enemy: Inflation' listing school fees, groceries, healthcare and travel, and 'The Real Cost of Waiting' showing a ₹500 note shrinking. She gestures at the screen with both hands; seated participants in the foreground.",
    "drive link": "https://drive.google.com/file/d/1Lac_goy_sqm5CKmLYBw7Jvyk-VI5m8RB/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 6 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1Lac_goy_sqm5CKmLYBw7Jvyk-VI5m8RB). Backup file ids: 1jjWIulH8N_Ug5nCD4n_MhoHr3cANFN2U, 1mOP42ESBmvce7mR3fpYY_FvKrXhATyqh, 1ov2y1zcI1OpXT1EqSjRmmbxec2MTaI0S, 1rV5014ZgWUM6y1TYLIfPBa6oynTXQPr_, 1RhDcdQaBs5LC1FXXTK4C1XyhFJBHrIEz. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 6 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1Lac_goy_sqm5CKmLYBw7Jvyk-VI5m8RB). Backup file ids: 1jjWIulH8N_Ug5nCD4n_MhoHr3cANFN2U, 1mOP42ESBmvce7mR3fpYY_FvKrXhATyqh, 1ov2y1zcI1OpXT1EqSjRmmbxec2MTaI0S, 1rV5014ZgWUM6y1TYLIfPBa6oynTXQPr_, 1RhDcdQaBs5LC1FXXTK4C1XyhFJBHrIEz. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1Q8enmMFm-iAhHQdLPoTd59Wicmto4cx_",
    "thumbnail": "thumbs/IFM-348.jpg",
    "shot": "Hiral — teaching",
    "setting": "Screen/Projector",
    "quality": "Usable",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-348.mp4"
   },
   {
    "id": "IFM-349",
@@ -5242,14 +5245,15 @@ window.IFM_DATA ={
    "description": "Interactive slide asking ‘Which of these expenses do you think…’ with three photo cards — a takeaway coffee cup, a card-swipe machine and a food-delivery bag — for participants to sort. Facilitator stands at the whiteboard beside the screen; women at the boardroom table look up at it, one holding a phone.",
    "drive link": "https://drive.google.com/file/d/1fqZZCVaKDBGhu1_YNu_n6FXjWhqd9Z50/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 4 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1fqZZCVaKDBGhu1_YNu_n6FXjWhqd9Z50). Backup file ids: 1ewaja7T41TBzC1piyqz2oPb5AWT4gkTr, 1_8k_3RUikOb0sKRKG3JUctTHUq7m1A7o, 1wGNnQolEeIN3W_KdoI6_YCHSZNHUZi8O. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 4 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1fqZZCVaKDBGhu1_YNu_n6FXjWhqd9Z50). Backup file ids: 1ewaja7T41TBzC1piyqz2oPb5AWT4gkTr, 1_8k_3RUikOb0sKRKG3JUctTHUq7m1A7o, 1wGNnQolEeIN3W_KdoI6_YCHSZNHUZi8O. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1jq3q3r83ZTtrT8OfbULmU30iMDoSclrS",
    "thumbnail": "thumbs/IFM-349.jpg",
    "shot": "Hiral — teaching",
    "setting": "Screen/Projector",
    "quality": "Usable",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-349.mp4"
   },
   {
    "id": "IFM-350",
@@ -5262,14 +5266,15 @@ window.IFM_DATA ={
    "description": "Projector screen split into 'Saving' (a pink piggy bank) and 'Investing' (a green sapling growing coins), shot across the empty end of the U-shaped boardroom table with red tissue boxes and water bottles in the foreground.",
    "drive link": "https://drive.google.com/file/d/1u60sKnbp5iqVOvpgNWfnl4E-8rK2rZcH/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 1 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1u60sKnbp5iqVOvpgNWfnl4E-8rK2rZcH). Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 1 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1u60sKnbp5iqVOvpgNWfnl4E-8rK2rZcH). Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 13kVGnc9flB2uYKeenc4cJN8vh4-ggM5F",
    "thumbnail": "thumbs/IFM-350.jpg",
    "shot": "No people",
    "setting": "Screen/Projector",
    "quality": "Usable",
    "consent": "No identifiable people",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-350.mp4"
   },
   {
    "id": "IFM-351",
@@ -5282,14 +5287,15 @@ window.IFM_DATA ={
    "description": "Facilitator demonstrating live IFM web tools on the big screen — the Investing for Mummies dashboard with its coloured game tiles and a calculator screen showing a rupee figure. She faces the room mid-explanation; the printed IFM roll-up banner stands beside the screen.",
    "drive link": "https://drive.google.com/file/d/1nITiEIDHip9RZuua6UL66f0h62a3ylrZ/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 6 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1nITiEIDHip9RZuua6UL66f0h62a3ylrZ). Backup file ids: 18HEU93hPksNzCnVsOvJv5NzKRg8rkI1B, 1hFbjdsuSftHMskkFq3uWM5_sSs5rWyfp, 1dn20cL5QL1Ex1pU3a2Pg8UKkMy6eM5xb, 17-h2ZTi8-zWFe4YLCWDOtn1pCR-DNtDH, 1XaRPCNZWM0to4tFAV_9Qz2VEDYrvITle. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 6 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1nITiEIDHip9RZuua6UL66f0h62a3ylrZ). Backup file ids: 18HEU93hPksNzCnVsOvJv5NzKRg8rkI1B, 1hFbjdsuSftHMskkFq3uWM5_sSs5rWyfp, 1dn20cL5QL1Ex1pU3a2Pg8UKkMy6eM5xb, 17-h2ZTi8-zWFe4YLCWDOtn1pCR-DNtDH, 1XaRPCNZWM0to4tFAV_9Qz2VEDYrvITle. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1jJishjaSKisgk5x4iYF1FMMoj8al2zNu",
    "thumbnail": "thumbs/IFM-351.jpg",
    "shot": "Hiral — teaching",
    "setting": "Screen/Projector",
    "quality": "Usable",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-351.mp4"
   },
   {
    "id": "IFM-352",
@@ -5302,14 +5308,15 @@ window.IFM_DATA ={
    "description": "Closing-section slides: 'Reimagining Stree Dhan Today' with a bulleted list beside an illustrated woman at a laptop, and a slide reading ‘…more connected than we realised’ over a crowd illustration of many women. Facilitator seated at the head of the table working from her laptop.",
    "drive link": "https://drive.google.com/file/d/1xzLxOTQUE_LQ0dbZKB6tG-XRlFw39p_P/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 3 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1xzLxOTQUE_LQ0dbZKB6tG-XRlFw39p_P). Backup file ids: 1V_OTpqRfdoBaokpJOA6EYKhvYj96AK81, 1pT3Uputon_PYs0uGB_J4LLBC1_JU22hC. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 3 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1xzLxOTQUE_LQ0dbZKB6tG-XRlFw39p_P). Backup file ids: 1V_OTpqRfdoBaokpJOA6EYKhvYj96AK81, 1pT3Uputon_PYs0uGB_J4LLBC1_JU22hC. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 18vph2Z9lXwzhdJB9Yo886ueC2FlrDQm7",
    "thumbnail": "thumbs/IFM-352.jpg",
    "shot": "Hiral — teaching",
    "setting": "Screen/Projector",
    "quality": "Usable",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-352.mp4"
   },
   {
    "id": "IFM-353",
@@ -5322,14 +5329,15 @@ window.IFM_DATA ={
    "description": "Facilitator in a blue-and-white block-print kurta and white trousers presenting on her feet in the middle of the room, hands mid-gesture, with the BALSABHA roll-up banner behind her and a participant watching from a chair at the table. Other clips in this cluster follow her walking the U of the table and writing at the flip chart.",
    "drive link": "https://drive.google.com/file/d/19C7obWlQQgbicBIfGVfwjKiiAH4IuYip/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 14 near-duplicate clip(s) from the same scene; thumbnail is the best frame (19C7obWlQQgbicBIfGVfwjKiiAH4IuYip). Backup file ids: 1xUKv73iM9n--QTcohMBERdHMBApT52Z1, 13b88akctb9Vx6JlAN-00Ok0S7K5aG8BN, 1Fu1QWNQhJ8xOLxC95Es3XQoXR0AUHV4W, 1njxKZYkK_gbKslQQjP1SiB-zrJlyiL72, 1h5SzkUp3JcpoV9Fe4exJSail6udb9NTH, 1ULXemOqRHfLzzzWnpUKyMuFdJWaV7KOi, 1mabqbK9kIosNNvcF3AOjgqgD0LfJGcSe, 1LDcZ4QrHfYkZ7epLb1fsfVHbHPq164Rd, 1yxG_dwe2Zbzm3ez1RtGskzuDBjZfBQUs, 1wDWrmxFyYmQRK3jB5xLPFoKG6czQW_8i, 1vxokbXuA2hUSx2Ny5oVvrR5pV3KFAR1M, 1mpvG0lQlETfLWaOlvDs9xyVu4mLft5H9, 10wfMU0N_5vIoUysWaL41pvUHt5yO-fQp. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 14 near-duplicate clip(s) from the same scene; thumbnail is the best frame (19C7obWlQQgbicBIfGVfwjKiiAH4IuYip). Backup file ids: 1xUKv73iM9n--QTcohMBERdHMBApT52Z1, 13b88akctb9Vx6JlAN-00Ok0S7K5aG8BN, 1Fu1QWNQhJ8xOLxC95Es3XQoXR0AUHV4W, 1njxKZYkK_gbKslQQjP1SiB-zrJlyiL72, 1h5SzkUp3JcpoV9Fe4exJSail6udb9NTH, 1ULXemOqRHfLzzzWnpUKyMuFdJWaV7KOi, 1mabqbK9kIosNNvcF3AOjgqgD0LfJGcSe, 1LDcZ4QrHfYkZ7epLb1fsfVHbHPq164Rd, 1yxG_dwe2Zbzm3ez1RtGskzuDBjZfBQUs, 1wDWrmxFyYmQRK3jB5xLPFoKG6czQW_8i, 1vxokbXuA2hUSx2Ny5oVvrR5pV3KFAR1M, 1mpvG0lQlETfLWaOlvDs9xyVu4mLft5H9, 10wfMU0N_5vIoUysWaL41pvUHt5yO-fQp. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 12Y6OaJ_Q5I11z_Ehjzud_dtA8ni9Ad83",
    "thumbnail": "thumbs/IFM-353.jpg",
    "shot": "Hiral — teaching",
    "setting": "Workshop — mums",
    "quality": "Usable",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-353.mp4"
   },
   {
    "id": "IFM-354",
@@ -5342,14 +5350,15 @@ window.IFM_DATA ={
    "description": "Facilitator in a cream block-print kurta presenting the workshop line-up slide — three pricing cards for the Investing for Mummies Flagship 8-session (₹16,000), the Introductory 4-session (₹9,500) and the Young Adults foundation course (₹9,500), with June batch dates and 'Register Now' buttons.",
    "drive link": "https://drive.google.com/file/d/1Juoj1nVCEj17C3tTYyFuoFoi_9HaJ_wV/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 2 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1Juoj1nVCEj17C3tTYyFuoFoi_9HaJ_wV). Backup file ids: 1QS_nDy9Apv8zvC3ixl9cdhQii0KdmeWT. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 2 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1Juoj1nVCEj17C3tTYyFuoFoi_9HaJ_wV). Backup file ids: 1QS_nDy9Apv8zvC3ixl9cdhQii0KdmeWT. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1mK_sVmCeNFyeQxDiS-EA14Y5TJUswKf7",
    "thumbnail": "thumbs/IFM-354.jpg",
    "shot": "Hiral — teaching",
    "setting": "Screen/Projector",
    "quality": "Usable",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-354.mp4"
   },
   {
    "id": "IFM-355",
@@ -5362,14 +5371,15 @@ window.IFM_DATA ={
    "description": "Two women presenting together at the front of the room — one in the block-print kurta, a second in a cream dupatta — standing either side of the pricing slide and, in other clips of this cluster, working together at the flip chart and leaning over the table talking to participants.",
    "drive link": "https://drive.google.com/file/d/15DLnB_i55tB18xxpyHHakbc3sio2CMmo/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 4 near-duplicate clip(s) from the same scene; thumbnail is the best frame (15DLnB_i55tB18xxpyHHakbc3sio2CMmo). Backup file ids: 1A8iVIhuLuI6QZi8ENjBVnEG9OZb_UIZP, 1_KPetuZ6yTLfklWTf2gUBGHgI3KNZoIa, 1aymaANJ-hk2Lm3e5QeahlwX9xWuE41KW. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 4 near-duplicate clip(s) from the same scene; thumbnail is the best frame (15DLnB_i55tB18xxpyHHakbc3sio2CMmo). Backup file ids: 1A8iVIhuLuI6QZi8ENjBVnEG9OZb_UIZP, 1_KPetuZ6yTLfklWTf2gUBGHgI3KNZoIa, 1aymaANJ-hk2Lm3e5QeahlwX9xWuE41KW. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1KlsJf0PJVwt4C9vcUvtM5s5rB7YizJhI",
    "thumbnail": "thumbs/IFM-355.jpg",
    "shot": "Group with Hiral",
    "setting": "Workshop — mums",
    "quality": "Usable",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-355.mp4"
   },
   {
    "id": "IFM-356",
@@ -5382,14 +5392,15 @@ window.IFM_DATA ={
    "description": "Wide views of the full room: a U-shaped boardroom table in a dark wood-and-cream hotel conference room, roughly twenty women in black executive chairs facing the lit projector screen, red tissue boxes and water bottles spaced along the table, patterned grey carpet.",
    "drive link": "https://drive.google.com/file/d/1K0mQKPpZlPB9OOYp8MjvkGlzoiH-HiWU/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 15 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1K0mQKPpZlPB9OOYp8MjvkGlzoiH-HiWU). Backup file ids: 1KfyNuZtcerlxTaa_phic_4PFlXj0KSR-, 1YhPRDGeSR3mDMHEiF6vuL8QW3-FcFVr_, 14vENPhRUY4SIRi_s0rBJBWve4JucJolh, 1ZO9bBI5Dn1fSIMnG6dzsVlxQO8p2EkvP, 1uNO1-P2anGRniiKXoil3rIF67xwDKUjj, 1y6oZRKCemIZT1j1tic88ffW630f6Uei4, 1QaxT-ZF95FU_03Ry1CwfgAdxN0xqH2fU, 1cgd8nhISsBJCi63lBiZEfmyGZdzXSXHj, 1w1D0fvwp2UUE7bcyFdzRQ9XGlXnAGs2H, 1XjSJw_7zv5mzrPhHC-QuNnfVWWb_Ub8G, 1PwVEOin-P4j2gHQV6rL_cKJv_E_lxiaF, 1x9wOw52ClAHr67B2V0XWb78Mb6ZOSHrW, 147-1FEplENhGHGmGmhCGGqlGHWng7bqJ, 1Iqcc2JfhLKet671hAWyeEItlVQwUA1iR. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 15 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1K0mQKPpZlPB9OOYp8MjvkGlzoiH-HiWU). Backup file ids: 1KfyNuZtcerlxTaa_phic_4PFlXj0KSR-, 1YhPRDGeSR3mDMHEiF6vuL8QW3-FcFVr_, 14vENPhRUY4SIRi_s0rBJBWve4JucJolh, 1ZO9bBI5Dn1fSIMnG6dzsVlxQO8p2EkvP, 1uNO1-P2anGRniiKXoil3rIF67xwDKUjj, 1y6oZRKCemIZT1j1tic88ffW630f6Uei4, 1QaxT-ZF95FU_03Ry1CwfgAdxN0xqH2fU, 1cgd8nhISsBJCi63lBiZEfmyGZdzXSXHj, 1w1D0fvwp2UUE7bcyFdzRQ9XGlXnAGs2H, 1XjSJw_7zv5mzrPhHC-QuNnfVWWb_Ub8G, 1PwVEOin-P4j2gHQV6rL_cKJv_E_lxiaF, 1x9wOw52ClAHr67B2V0XWb78Mb6ZOSHrW, 147-1FEplENhGHGmGmhCGGqlGHWng7bqJ, 1Iqcc2JfhLKet671hAWyeEItlVQwUA1iR. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1E6PFxP7KEfgTPt6AoLnvS8j_S4wTC87M",
    "thumbnail": "thumbs/IFM-356.jpg",
    "shot": "Room/venue wide",
    "setting": "Workshop — mums",
    "quality": "Usable",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-356.mp4"
   },
   {
    "id": "IFM-357",
@@ -5402,14 +5413,15 @@ window.IFM_DATA ={
    "description": "Close and mid shots of the participants — adult women seated around the boardroom table in kurtas and summer dresses, watching the screen, laughing, taking notes and talking to each other between sections. Several clips catch a row of women smiling at something on the screen.",
    "drive link": "https://drive.google.com/file/d/1nIwQMHzDgkSlc5VsK01TyoIDY8Om0rpw/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 27 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1nIwQMHzDgkSlc5VsK01TyoIDY8Om0rpw). Backup file ids: 1PPQO4b1JZkBsIuItx_LjrlDOT6axsN9J, 1TaNTi-j2Oid-NXoyqTYpd-7Qgm2-59aw, 1YOHBvczwJgnAEXfP3irPyj-cQpA7QIsD, 11PfkcF7dMayuLP3X62zzYteKhUNFW2pY, 1sAfKiQoO97C_2E12WXq0hCokEMFfnFNl, 1TfLI595W7Yd_hbGEaDHOW08M_98gFv_z, 1xAouv-ZfWRdPJDoipbzCD2lhLv5tWA3X, 15Zy9gTxqQOoZ6SMsoSjHzZihTOli_nLB, 1WHFmTIBE5uJbfmh4U2vYBzYQV-nAs4AB, 19M7HSto8YY2FmQnr-1Vf2uNR2Gcagoo9, 1gGdS02OZ9l1-U2tlDbrWLq65bzPEF-es, 1hqTobMOSfn-redmIEN80wv6bRCaNbROY, 1xaLgKyOyrY1bSfye1I3WOJjOfo1VcChO, 1RhoSNkJCI5R1vq8fXjSZv3uDLhDMPRt-, 1uc8y0C83A_W_xkHSpfzIihLT61e6fBO5, 1T7gbOZ51AC9MM6a8rd-XNlNZnm-fA_Pt, 10VARl8nC4S9F9Gy5IE_pLt9QzBzKzzKN, 1PHsSvwyTWkhGIZKEQJyVUB5CpauaVymu, 1f876XO2xqDAYLLBG57NRFk4QONfS0pLd, 1uAK8wcdqcs3Bzi4NQPoUa4ie0lQTpKuk, 15afmNy-fcE8EFj_NzeEn-ZL-slWqfnTP, 16OO7uhDaZ9pCACtktQ96VMwBVwznowvZ, 1FiywP0-cqLaJQxac41NFFsQpSnAjWz1C, 1UNbG32eCTum5mG0lUDWGUBKKJpR43DvG, 1TThi0KHjkUNAuJixq7I9gX15UXknVbCD, 1vjyM4RJBzpoUNvlCecQ3a9eFPttY5Ui0, 18L-uZJWGUEFUCV4ukYXq52UBxfEyHdUs. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 27 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1nIwQMHzDgkSlc5VsK01TyoIDY8Om0rpw). Backup file ids: 1PPQO4b1JZkBsIuItx_LjrlDOT6axsN9J, 1TaNTi-j2Oid-NXoyqTYpd-7Qgm2-59aw, 1YOHBvczwJgnAEXfP3irPyj-cQpA7QIsD, 11PfkcF7dMayuLP3X62zzYteKhUNFW2pY, 1sAfKiQoO97C_2E12WXq0hCokEMFfnFNl, 1TfLI595W7Yd_hbGEaDHOW08M_98gFv_z, 1xAouv-ZfWRdPJDoipbzCD2lhLv5tWA3X, 15Zy9gTxqQOoZ6SMsoSjHzZihTOli_nLB, 1WHFmTIBE5uJbfmh4U2vYBzYQV-nAs4AB, 19M7HSto8YY2FmQnr-1Vf2uNR2Gcagoo9, 1gGdS02OZ9l1-U2tlDbrWLq65bzPEF-es, 1hqTobMOSfn-redmIEN80wv6bRCaNbROY, 1xaLgKyOyrY1bSfye1I3WOJjOfo1VcChO, 1RhoSNkJCI5R1vq8fXjSZv3uDLhDMPRt-, 1uc8y0C83A_W_xkHSpfzIihLT61e6fBO5, 1T7gbOZ51AC9MM6a8rd-XNlNZnm-fA_Pt, 10VARl8nC4S9F9Gy5IE_pLt9QzBzKzzKN, 1PHsSvwyTWkhGIZKEQJyVUB5CpauaVymu, 1f876XO2xqDAYLLBG57NRFk4QONfS0pLd, 1uAK8wcdqcs3Bzi4NQPoUa4ie0lQTpKuk, 15afmNy-fcE8EFj_NzeEn-ZL-slWqfnTP, 16OO7uhDaZ9pCACtktQ96VMwBVwznowvZ, 1FiywP0-cqLaJQxac41NFFsQpSnAjWz1C, 1UNbG32eCTum5mG0lUDWGUBKKJpR43DvG, 1TThi0KHjkUNAuJixq7I9gX15UXknVbCD, 1vjyM4RJBzpoUNvlCecQ3a9eFPttY5Ui0, 18L-uZJWGUEFUCV4ukYXq52UBxfEyHdUs. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1ivaIUYHmDZR-47BUSfWLpy1gUqaHv_nX",
    "thumbnail": "thumbs/IFM-357.jpg",
    "shot": "Students",
    "setting": "Workshop — mums",
    "quality": "Usable",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-357.mp4"
   },
   {
    "id": "IFM-358",
@@ -5422,14 +5434,15 @@ window.IFM_DATA ={
    "description": "Participants raising their hands to answer during the interactive section — one woman with her arm fully up in the middle of the row while the women around her look toward the front.",
    "drive link": "https://drive.google.com/file/d/1Oc63KsMQnikPKT5wvDnirSPzpqVEwwjJ/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 2 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1Oc63KsMQnikPKT5wvDnirSPzpqVEwwjJ). Backup file ids: 1XCZMjLoDpCxPRB94G_0QgGzx5AkhR8Wk. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 2 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1Oc63KsMQnikPKT5wvDnirSPzpqVEwwjJ). Backup file ids: 1XCZMjLoDpCxPRB94G_0QgGzx5AkhR8Wk. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 195dIEnoh-Vlw4OvYW6p2YP49UUir8T2d",
    "thumbnail": "thumbs/IFM-358.jpg",
    "shot": "Students",
    "setting": "Workshop — mums",
    "quality": "Usable",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-358.mp4"
   },
   {
    "id": "IFM-359",
@@ -5462,14 +5475,15 @@ window.IFM_DATA ={
    "description": "Participants standing and chatting in a cluster at the far end of the boardroom table during a break, handbags on the table beside red tissue boxes and water bottles.",
    "drive link": "https://drive.google.com/file/d/11yiiRvG0QuMImzvqdTtgNjSnIOOvlYsj/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 1 near-duplicate clip(s) from the same scene; thumbnail is the best frame (11yiiRvG0QuMImzvqdTtgNjSnIOOvlYsj). Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 1 near-duplicate clip(s) from the same scene; thumbnail is the best frame (11yiiRvG0QuMImzvqdTtgNjSnIOOvlYsj). Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1Yh9ZmSdioeDwKOu7WGp_K7cBssGPKFQ6",
    "thumbnail": "thumbs/IFM-360.jpg",
    "shot": "Students",
    "setting": "Workshop — mums",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-360.mp4"
   },
   {
    "id": "IFM-361",
@@ -5482,14 +5496,15 @@ window.IFM_DATA ={
    "description": "Three accidental recordings from the shoot: two clips of blank grey wall and carpet and one of plain wood panelling, no subject in frame.",
    "drive link": "https://drive.google.com/file/d/1vPZ4MI5jgJp6SVQI_vQPEhuy6rNmIOgV/view",
    "date created": "2026-06-04",
-   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 3 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1vPZ4MI5jgJp6SVQI_vQPEhuy6rNmIOgV). Backup file ids: 1xfMT1obr4b5gbpUy6ZJ_oBupKTbRTl-x, 1J40O0qOHCQFFtwl3vo-HQfZElPy0YY31. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv — candidates for _Trash, not auto-rejected.",
+   "notes": "Aakara delivery tree → workshop/RSS workshop. Session 4 Jun 2026 (file dates). Row covers 3 near-duplicate clip(s) from the same scene; thumbnail is the best frame (1vPZ4MI5jgJp6SVQI_vQPEhuy6rNmIOgV). Backup file ids: 1xfMT1obr4b5gbpUy6ZJ_oBupKTbRTl-x, 1J40O0qOHCQFFtwl3vo-HQfZElPy0YY31. Folder: https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv — candidates for _Trash, not auto-rejected. | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1VwBp2nplEwPG8ZsiK16scpS6R401aiMN",
    "thumbnail": "thumbs/IFM-361.jpg",
    "shot": "No people",
    "setting": "Not applicable",
    "quality": "Raw-backup",
    "consent": "No identifiable people",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-361.mp4"
   },
   {
    "id": "IFM-362",
@@ -5600,14 +5615,15 @@ window.IFM_DATA ={
    "description": "Talking-head brand video: Hiral sits on a cream sofa holding a printed mug, in a white-and-blue textured knit top and white skirt, speaking to camera. A potted areca palm and sheer sunlit curtains fill the background. Soft natural daylight, clean vertical framing.",
    "drive link": "https://drive.google.com/file/d/1gTm-luKbZqjcNcHljZH-jHt1oQj0xJ9W/view",
    "date created": "2026-06-04",
-   "notes": "Delivered file found 5 Sep 2026 as 'Why IFM video.mp4', loose in Aakara June/Reels (not inside a topic subfolder). Hero founder footage — copied to the Hiral Media Kit.",
+   "notes": "Delivered file found 5 Sep 2026 as 'Why IFM video.mp4', loose in Aakara June/Reels (not inside a topic subfolder). Hero founder footage — copied to the Hiral Media Kit. | MIRRORED 18 Sep 2026: this master was owned by aakaradesignstudios@ and sat in no registered scan folder, so we did not own it and the scanner could not see it. Copy now owned by djlolly03@. archive: 1bttQQs1aZlrKbkPH-SwX5rNaP8nlrTMT",
    "thumbnail": "thumbs/IFM-367.jpg",
    "shot": "Hiral — portrait",
    "setting": "Studio/Posed",
    "quality": "Hero",
    "consent": "Adults only",
    "session": "Aakara June delivery",
-   "social": "Yes"
+   "social": "Yes",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-367.mp4"
   },
   {
    "id": "IFM-368",
