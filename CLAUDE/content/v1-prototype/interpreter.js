@@ -140,6 +140,14 @@ const VERNACULAR = [
   [/\b(informal|unposed|natural|spontaneous|off.guard)\b/ig, 'candid'],
   [/\b(lively|energetic|animated|buzzing)\b/ig, 'warm'],
   [/\b(calm|quiet|focused|attentive|concentrating)\b/ig, 'relaxed'],
+  // "testimonial from a mum" returned NOTHING before this line, found in the 18 Sep stress
+  // test. Both words are in the corpus -- but no single asset carries both, and the engine
+  // gates on coverage, so the query dies. Descriptions say "a woman in a black t-shirt";
+  // nobody writing them says "mum". The audience IS mums, so this is the same person.
+  // NOTE 'mummies' is deliberately absent: it is the brand name, appears 65 times in the
+  // corpus already, and rewriting "Investing for Mummies" to "Investing for woman" would
+  // break a query that currently works.
+  [/\b(mums?|mommy|moms?|ladies|lady|aunty|aunties)\b/ig, 'woman'],
 ];
 
 /* Format words a person would actually say. */
