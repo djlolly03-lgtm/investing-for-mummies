@@ -1,11 +1,11 @@
 {
  "generated_by": "daily-content-processor 2026-09-19",
  "note": "Updated 19 Sep 2026 after a full Drive re-audit against every registered root. ~707 media files reachable; all but 25 are catalogued, covered by a folder/topic row, or skipped by a documented rule. The 25 are the Hiral Goel gap at the top of this list.",
- "count": 7,
+ "count": 8,
  "items": [
   {
    "source": "Aakara tree / Hiral Goel",
-   "title": "25 UNCATALOGUED files in Aakara's \"Hiral Goel\" folder — 21 videos from a 25 Jun 2026 Hiral shoot (20260625_*.mp4, 6-85MB each) plus 4 IMG_425x MOVs. A previous run saw 18 identically-named JPGs, called the folder a duplicate and stopped. The 18 photos ARE duplicates; the folder holds 43 files.",
+   "title": "9 uncatalogued files remain in Aakara's \"Hiral Goel\" folder: 8 x 20260625_14xxxx.mp4 (tail of the 25 Jun teens session) and IMG_4254.MOV. Was reported as 25 on 18 Sep -- the processor catalogued 16 on 19 Sep, and 18 of the rest are TRUE duplicates (same filename AND same byte size as an already-catalogued file). A name-only comparison is not sufficient.",
    "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
    "status": "needs_review"
   },
@@ -44,6 +44,12 @@
    "title": "IFM-396 (Aug corporate 'rest of the shoot') has no thumbnail, so the catch-all row is invisible in the V1 Library",
    "folder_url": "https://drive.google.com/drive/folders/1Ehyg9SAPjcNfBiu1Q5cf2kPi_-EBaOxt",
    "status": "needs_review"
+  },
+  {
+   "source": "Aakara / workshop",
+   "status": "needs_review",
+   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "title": "RAW and source files are invisible to every scan. 11 .CR3 were found only by accident on 19 Sep and are now IFM-478..483. Still uncounted by the scanners: 11 .psd (580MB of editable carousel sources) and 6 internal .pptx decks. Any future scan must declare which extensions it ignores rather than silently dropping them."
   }
  ]
 }
