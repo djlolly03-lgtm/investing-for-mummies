@@ -375,6 +375,8 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .sep{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:4px 0 0;
   color:var(--muted);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:500}
 .sep::before,.sep::after{content:'';flex:1;height:1px;background:var(--stone)}
+.kitfor{margin:-2px 0 12px;font-size:.84rem;color:var(--muted)}
+.kitrow button .tl{background:none}
 /* Section rule for the browse view. Same language as .sep, its own spacing — it separates
    whole grids rather than sitting inside one. */
 .gsec{display:flex;align-items:center;gap:16px;margin:34px 0 20px;color:var(--ink-2);
@@ -583,6 +585,15 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
        by theme" — so the text link it started as is now what that board shows: real
        thumbnails, real counts, one tap into the library. -->
   <div class="home">
+    <!-- The Media Kit is a destination, not a query. Agencies and press ask for a photo of
+         Hiral often enough that making someone construct a search for it every time is the
+         wrong shape. It is NOT `person: Hiral` — that is 203 rows and most of them are the
+         room she happens to be standing in. It is the 33 where she is the SUBJECT, judged by
+         eye and recorded as `kit`, so new content joins it automatically when it earns a
+         place rather than when someone remembers to curate. -->
+    <div class="homehead"><h2>Hiral — Media Kit</h2>
+      <button class="morelink" data-act="kit" id="kitall"></button></div>
+    <div class="themes kitrow" id="kitrow"></div>
     <div class="homehead"><h2>Explore by theme</h2>
       <button class="morelink" data-act="browse" id="browseall"></button></div>
     <div class="themes" id="themes"></div>
@@ -910,7 +921,7 @@ const media=a=>MEDIA[a.id]||{kind:'image',playable:false};
 const RELEVANT=0.7;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const state={q:'',filters:{},showWeak:false,openId:null,engaged:false,browse:false,sort:'relevance'};
+const state={q:'',filters:{},showWeak:false,openId:null,engaged:false,browse:false,sort:'relevance',kit:false};
 
 const FILTERS=[['type','Type',T.type],['format','Format',T.format],['topic','Topic',null],
   ['person','Person',T.person],['source','Source',T.source],['session','Session',null],['status','Status',T.status]];
@@ -1047,6 +1058,45 @@ const THEME_LABEL={'Hiral Speaking':'Hiral Speaks','Classroom Moment':'Classroom
   'Social Graphic':'Social Graphics','Social / Promotional':'Promos','B-roll':'B-roll',
   'Portrait':'Portraits','Certificate':'Certificates','Testimonial':'Testimonials',
   'Student Question':'Student Questions'};
+/* MEDIA KIT. Three shelves, because "a photo of Hiral" is three different requests:
+ *   portrait  press feature, speaker bio        — to camera, face clear
+ *   teaching  proposal deck, event listing      — her working, brand visible
+ *   candid    social, warmth                    — unposed
+ * Ranked 1-3 by eye. The home strip shows rank 1 only; the full view shows 1 and 2, with
+ * rank 3 behind a click, so the first thing anyone sees is her best work and not a grid. */
+const KIT_LABEL={portrait:'Portraits',teaching:'Teaching',candid:'Candid'};
+const KIT_FOR={portrait:'Press features and speaker bios',
+               teaching:'Proposals, event listings, credibility',
+               candid:'Social and anything that needs warmth'};
+const kitOf=use=>ASSETS.filter(a=>a.kit===use).sort((x,y)=>
+  (x.kit_rank-y.kit_rank) || String(y.date||'').localeCompare(String(x.date||'')));
+
+function buildKitRow(){
+  const all=ASSETS.filter(a=>a.kit);
+  $('kitall').textContent=`See all ${all.length} →`;
+  const lead=all.filter(a=>a.kit_rank===1)
+    .sort((x,y)=>String(y.date||'').localeCompare(String(x.date||''))).slice(0,6);
+  $('kitrow').innerHTML=lead.map(a=>`<button data-kitopen="${esc(a.id)}">
+      <span class="tw">${a.thumb?`<img loading="lazy" src="${esc(a.thumb)}" alt="" onerror="this.remove()">`:''}</span>
+      <span class="tl">${esc(KIT_LABEL[a.kit])}</span>
+    </button>`).join('');
+}
+
+function renderKit(){
+  const out=['portrait','teaching','candid'].map(use=>{
+    const list=kitOf(use); if(!list.length) return '';
+    const top=list.filter(a=>a.kit_rank<=2), more=list.filter(a=>a.kit_rank===3);
+    return `<div class="gsec">${esc(KIT_LABEL[use])}<span class="n">${list.length}</span></div>
+      <p class="kitfor">${esc(KIT_FOR[use])}</p>
+      <div class="grid">${top.map(a=>card({a,score:1})).join('')}</div>
+      ${more.length?`<div class="grid kitmore" hidden>${more.map(a=>card({a,score:1})).join('')}</div>
+        <button class="weak" data-act="kitmore">Show ${more.length} more ${esc(KIT_LABEL[use].toLowerCase())} ↓</button>`:''}`;
+  }).join('');
+  $('summary').innerHTML=`<h2>Hiral — Media Kit</h2>
+    <span class="sumright"><button class="refine" data-act="home">Back</button></span>`;
+  $('results').innerHTML=out;
+}
+
 function buildThemes(){
   $('browseall').textContent=`Browse all ${ASSETS.length} →`;
   const by={};
@@ -1084,7 +1134,7 @@ function buildRecent(){
 
 function render(){
   const searching=!!state.q.trim();
-  const heroMode=!state.engaged&&!searching&&!activeFilters()&&!state.browse;
+  const heroMode=!state.engaged&&!searching&&!activeFilters()&&!state.browse&&!state.kit;
   $('stage').classList.toggle('hero',heroMode);
   $('heroimg').hidden=!heroMode;
   $('main').hidden=heroMode;
@@ -1093,6 +1143,8 @@ function render(){
   $('sbox').classList.toggle('has',searching);
   $('fclear').hidden=!activeFilters();
   if(heroMode) return;
+  // The Media Kit is a curated view, not a query — it never touches the engine.
+  if(state.kit){ renderKit(); return; }
 
   const {strong,weak}=currentResults();
   if(!strong.length&&!weak.length){
@@ -1250,7 +1302,7 @@ function setQuery(v,{engage=true}={}){
 $('q').addEventListener('input',e=>{state.q=e.target.value;state.showWeak=false;
   if(state.q.trim())state.engaged=true; closeDetail(); render();});
 $('clearq').onclick=()=>{setQuery('',{engage:false});$('q').focus();};
-$('home').onclick=()=>{state.filters={};$('fgrid').querySelectorAll('select').forEach(x=>x.value='');
+$('home').onclick=()=>{state.kit=false;state.filters={};$('fgrid').querySelectorAll('select').forEach(x=>x.value='');
   setQuery('',{engage:false});window.scrollTo({top:0});};
 $('fclear').onclick=clearFilters;
 $('dclose').onclick=closeDetail; $('dback').onclick=closeDetail; $('scrim').onclick=closeDetail;
@@ -1261,6 +1313,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
 document.querySelectorAll('.try button').forEach(b=>b.onclick=()=>{setQuery(b.dataset.ex);$('q').focus();});
 document.addEventListener('click',e=>{
   const c=e.target.closest('.cardx'); if(c){openDetail(c.dataset.id);return;}
+  const kb=e.target.closest('[data-kitopen]'); if(kb){openDetail(kb.dataset.kitopen);return;}
   // A theme tile is the Format filter, entered from the empty state.
   const t=e.target.closest('[data-theme]');
   if(t){ state.filters={format:t.dataset.theme}; state.browse=true; state.engaged=true;
@@ -1270,6 +1323,9 @@ document.addEventListener('click',e=>{
   const a=act.dataset.act;
   if(a==='weak'){state.showWeak=true;render();}
   if(a==='browse'){state.browse=true;state.engaged=true;render();window.scrollTo({top:0});}
+  if(a==='kit'){state.kit=true;state.engaged=true;render();window.scrollTo({top:0});}
+  if(a==='kitmore'){const g=act.previousElementSibling; if(g){g.hidden=false; act.remove();}}
+  if(a==='home'){state.kit=false;state.engaged=false;state.browse=false;render();window.scrollTo({top:0});}
   // Refine lives inside the summary, which is rebuilt on every render, so it cannot
   // carry its own handler the way the old static Filters button did.
   if(a==='filters')$('filters').classList.toggle('open');
@@ -1280,7 +1336,7 @@ document.addEventListener('click',e=>{
     const lbl=act.querySelector('.lbl')||act;
     navigator.clipboard?.writeText(h).then(()=>{lbl.textContent='Copied';setTimeout(()=>lbl.textContent='Copy link',1400);});}
 });
-buildFilters(); buildThemes(); buildRecent(); render();
+buildFilters(); buildKitRow(); buildThemes(); buildRecent(); render();
 </script>
 </body>
 </html>

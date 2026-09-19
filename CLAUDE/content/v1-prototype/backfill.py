@@ -431,6 +431,14 @@ def main():
             needs_vision.append(r['id'])
         v1['topic'] = topics_for(r)
         v1['person'] = person_for(r)
+        # WHERE her name came from. 107 of 203 Hiral rows got it from the presenter rule
+        # rather than the text, and that is right for search but wrong for anything shown to
+        # an agency: "someone is teaching, so it is her" is a 60%-confidence call. The rule
+        # was firing and leaving no trace, so the Media Kit could not tell the two apart.
+        # Recorded, never used to filter search.
+        if 'Hiral' in v1['person']:
+            v1['hiral_named'] = bool(re.search(r'\bhiral\b|\bthe founder\b',
+                                               blob(r, 'title', 'description', 'keywords'), re.I))
         v1['source'] = source_for(r)
         v1['search_terms'] = search_terms_for(r, v1['topic'])
 
