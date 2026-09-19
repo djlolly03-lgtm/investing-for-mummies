@@ -58,6 +58,30 @@ hub grows. `daily-content-processor` now does this. Anyone else editing `data.js
 The Library also hides any asset with **no thumbnail and no playable preview** — a row with
 no file is not an asset. A staged row without a thumbnail never appears there at all.
 
+### The Hiral Media Kit — `kit` and `kit_rank`
+
+Built 19 Sep 2026, first block on the Library home page. It is **not** `person: Hiral` — that
+is 200+ rows and most of them are a room she happens to be standing in. It is the rows where
+she is **the subject**, judged by eye and stored as two keys in `enrichment.json`:
+
+- `kit` — what the frame is FOR: `portrait` (press, speaker bio) · `teaching` (proposals,
+  credibility) · `candid` (social, warmth). Absent means "in the room, not the subject".
+- `kit_rank` — `1` lead, `2` strong, `3` usable. The home strip shows rank 1; the full view
+  shows 1–2; rank 3 sits behind a click. Be strict with rank 1 — there are ~7 across 428 assets.
+
+Excluded on purpose: back-to-camera, wide rooms where she is small, and reel covers with copy
+baked into the image. `daily-content-processor` assesses every new Hiral row the same way, so
+the kit stays current without anyone curating it — that was the actual requirement.
+
+⚠️ **A description saying "Hiral" is not proof it is Hiral.** IFM-098 reached the live kit as
+a founder portrait because its description asserted "Founder Hiral Goel stands smiling…". Every
+check agreed, including `hiral_named`. It is a participant's testimonial. No rule catches a
+confident, specific, wrong description — so never promote to rank 1 on the description alone,
+and treat a seated piece-to-camera in front of an IFM slide as a testimonial by default.
+
+`hiral_named` (set by `backfill.py`) records whether her name was in the text or came from the
+presenter-inference rule — 95 named, 108 inferred. Useful context, not proof.
+
 ### Where the data comes from
 
 | Store | ID / location | Feeds |
