@@ -547,9 +547,13 @@
   "_kit_why": "Media Kit assessment, vision pass 19 Sep 2026. kit = what the frame is FOR; kit_rank 1 leads, 2 strong, 3 usable. Absence of `kit` means she is in the room but not the subject -- back to camera, small in frame, or the image is a designed graphic with copy baked in, none of which belong in a kit sent to press or an agency."
  },
  "IFM-098": {
-  "kit": "portrait",
-  "kit_rank": 2,
-  "_kit_why": "Media Kit assessment, vision pass 19 Sep 2026. kit = what the frame is FOR; kit_rank 1 leads, 2 strong, 3 usable. Absence of `kit` means she is in the room but not the subject -- back to camera, small in frame, or the image is a designed graphic with copy baked in, none of which belong in a kit sent to press or an agency."
+  "title": "Testimonial — participant to camera in front of the IFM slide",
+  "person": [
+   "Student"
+  ],
+  "format": "Testimonial",
+  "description": "A workshop participant stands smiling in front of the branded \"Investing for Mummies\" slide with its multitasking-mum graphic, speaking directly to camera — her own account of the session, not a presenter segment.",
+  "_why": "CORRECTED 19 Sep 2026. The user spotted this in the Media Kit: it is a STUDENT giving a testimonial, not Hiral. The original description asserted \"Founder Hiral Goel stands smiling\", so every automatic check agreed -- including hiral_named, which looks for her name in the text. The name was there; the text was simply wrong. This is the failure mode no rule catches: a confident, specific, incorrect description. Removed from the kit; person and format corrected."
  },
  "IFM-319": {
   "kit": "portrait",

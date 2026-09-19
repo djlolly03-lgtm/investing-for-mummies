@@ -2313,29 +2313,27 @@ window.IFM_V1 =
 },
 {
 "id": "IFM-098",
-"title": "Clip — Hiral's Smiling Piece-to-Camera",
+"title": "Testimonial — participant to camera in front of the IFM slide",
 "date": "2026-04-06",
 "thumb": "../thumbs/IFM-098.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-098.mp4",
 "drive": "https://drive.google.com/file/d/1Brl_xVgtMYKodweKk9UPYTSeIvR4zfW5/view",
-"description": "Founder Hiral Goel stands smiling in front of the branded 'Investing for Mummies' slide with its multitasking-mum graphic, addressing the camera directly — an intro/welcome segment.",
+"description": "A workshop participant stands smiling in front of the branded \"Investing for Mummies\" slide with its multitasking-mum graphic, speaking directly to camera — her own account of the session, not a presenter segment.",
 "session": "",
 "slide_text": "Investing for Mummies",
 "silent": false,
 "type": "Video",
 "status": "Raw",
-"format": "Hiral Speaking",
+"format": "Testimonial",
 "topic": [
 "Investing"
 ],
 "person": [
-"Hiral"
+"Student"
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration clip hiral smiling piece camera founder goel stands front branded investing mummies slide multitasking mum graphic addressing directly intro welcome segment video branding presenter workshop host",
-"kit": "portrait",
-"kit_rank": 2
+"search_terms": "candid warm natural unposed relaxed friendly celebration clip hiral smiling piece camera founder goel stands front branded investing mummies slide multitasking mum graphic addressing directly intro welcome segment video branding presenter workshop host"
 },
 {
 "id": "IFM-099",
