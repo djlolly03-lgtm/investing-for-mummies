@@ -10680,5 +10680,421 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "img 2847 mov byte identical duplicate upload rejected second ifm games folder original both 026 062 bytes same filename nothing new frame swayamvar sept 2026"
+},
+{
+"id": "IFM-460",
+"title": "Hiral piece-to-camera for the teens reel — 9 takes (25 Jun 2026)",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-460.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1ZXDwgT_oLHxzPWl3zbkmRWxo40q1PjrB/view",
+"description": "Hiral records a vertical piece-to-camera on the day of the June teens workshop, standing in front of a framed panel of green and grey artwork in a dark teal top. Nine consecutive takes of the same short direct-address piece, shot 14:17–14:22; she is alone in frame throughout and the framing does not change between takes.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Portrait",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Unknown",
+"search_terms": "hiral piece camera teens reel takes jun 2026 records vertical day june workshop standing front framed panel green grey artwork dark teal top nine consecutive same short direct address shot she alone frame throughout framing does not change between goel"
+},
+{
+"id": "IFM-461",
+"title": "Teen boy in a white tee answering at the table",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-461.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1Oit6bbHkTig32dlxhovmUujoBdGTa4uA/view",
+"description": "A teenage boy in a plain white t-shirt sits at the head of the boardroom table, talking towards camera with a black water bottle and his worksheet in front of him; cream curtains fill the background.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "teen boy white tee answering table teenage plain shirt sits head boardroom talking towards camera black water bottle his worksheet front him cream curtains fill background teens youth workshop student speaking answer june 2026 jun whiteboard aakara reel voice"
+},
+{
+"id": "IFM-462",
+"title": "Teen boy in black, grinning as he answers",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-462.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1TL7C6UzRqRT39Jxm8JzSo4LjOTNrw1Ab/view",
+"description": "A teenage boy in a black t-shirt leans back in the boardroom chair, smiling broadly mid-answer with one hand raised; a plain wall and the edge of the table are behind him.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration teen boy black grinning answers teenage shirt leans back boardroom chair smiling broadly mid answer one hand raised plain wall edge table behind him teens youth workshop student speaking camera june 2026 jun whiteboard aakara reel talking head voice"
+},
+{
+"id": "IFM-463",
+"title": "Teen boy in glasses explaining with his hands",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-463.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1c4oDl0v1xxiO7iV91d5nFfsXXHcROXP4/view",
+"description": "A teenage boy in glasses and a navy graphic t-shirt talks animatedly to camera, gesturing with an open hand as he works through his answer.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "teen boy glasses explaining his hands teenage navy graphic shirt talks animatedly camera gesturing open hand works through answer teens youth workshop student speaking june 2026 jun boardroom whiteboard aakara reel talking head voice"
+},
+{
+"id": "IFM-464",
+"title": "Teen girl in pink thinking through her answer",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-464.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1_88pr0H3YqzeABvkPol_OVko4rENQUhA/view",
+"description": "A teenage girl in a pink top sits at the table with her hand near her mouth, mid-thought as she answers; the whiteboard behind her is covered in the session's hand-written notes and a laptop sits open in the foreground.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "teen girl pink thinking through her answer teenage top sits table hand near mouth mid thought she answers whiteboard behind covered session written notes laptop open foreground teens youth workshop student speaking camera june 2026 jun boardroom aakara reel talking"
+},
+{
+"id": "IFM-465",
+"title": "Teen in glasses and a white tee answering, classmates behind",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-465.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1s1Y0nzkAxJiMYdzhpF7kPPwI52DaKPG4/view",
+"description": "A teenager in glasses and a white t-shirt talks to camera from the boardroom chair, hand raised mid-point; two classmates and a laptop screen are visible behind, with a wooden cabinet and framed picture on the back wall.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "teen glasses white tee answering classmates behind teenager shirt talks camera from boardroom chair hand raised mid point two laptop screen visible wooden cabinet framed picture back wall teens youth workshop student speaking answer june 2026 jun whiteboard aakara reel"
+},
+{
+"id": "IFM-466",
+"title": "Teen girl in glasses speaking, side-on at the table",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-466.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1wBFX_zTTRQtntaKpYYJHfw8XKDl4pI8P/view",
+"description": "A teenage girl in glasses and a white printed t-shirt turns towards camera to answer, seated side-on in the boardroom chair with cream curtains behind her.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "teen girl glasses speaking side table teenage white printed shirt turns towards camera answer seated boardroom chair cream curtains behind her teens youth workshop student june 2026 jun whiteboard aakara reel talking head voice"
+},
+{
+"id": "IFM-467",
+"title": "Teen boy answering in front of the lending-and-borrowing whiteboard",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-467.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1ZmjqTs8ic0AlagJo6ecqnMmVHjLxr7ek/view",
+"description": "A teenage boy in a black t-shirt looks straight to camera as he answers; directly behind him the whiteboard carries the session note about lending money to someone, with 'NEED' written in red.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "teen boy answering front lending borrowing whiteboard teenage black shirt looks straight camera answers directly behind him carries session note about money someone need written red teens youth workshop student speaking answer june 2026 jun boardroom aakara reel talking head"
+},
+{
+"id": "IFM-468",
+"title": "Teen girl in a white printed tee answering, hands in her lap",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-468.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/143T92B2-eIWxKLl7Rc11QCDjywg0lRcL/view",
+"description": "A teenage girl in a white printed t-shirt sits with her hands folded in her lap, talking to camera; a classmate's arm and the boardroom chairs frame her on both sides.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "teen girl white printed tee answering hands her lap teenage shirt sits folded talking camera classmate arm boardroom chairs frame both sides teens youth workshop student speaking answer june 2026 jun whiteboard aakara reel head voice"
+},
+{
+"id": "IFM-469",
+"title": "Teens working on their phones and tablets around the boardroom table",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-469.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1L5uE_OlRkpuaedvbT_Yu2KVDHNNZeZBa/view",
+"description": "The group works through an activity at the long wooden boardroom table, several teenagers heads-down on phones and a tablet while one boy stands at the far end watching; the whiteboard behind is already full of the session's notes and printed worksheets and drinks cover the table.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "teens working their phones tablets around boardroom table group works through activity long wooden several teenagers heads down tablet while one boy stands far end watching whiteboard behind already full session notes printed worksheets drinks cover teen youth workshop june"
+},
+{
+"id": "IFM-470",
+"title": "Teen boy at the table with the printed activity cards",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-470.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1DAL4_aVA5yRsJaJbm6Df5ZqPsVgWkAwt/view",
+"description": "A teenage boy in a black t-shirt sits at the table with printed cards and worksheets spread in front of him, reaching towards the pile as he plays through the activity.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "teen boy table printed activity cards teenage black shirt sits worksheets spread front him reaching towards pile plays through teens youth workshop june 2026 jun boardroom whiteboard group students aakara reel session video room"
+},
+{
+"id": "IFM-471",
+"title": "Room wide — the whole teens group mid-activity",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-471.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1YCrOsPBjgfVpd4MzqyGYyaCS5M_wjC7H/view",
+"description": "Wide of the boardroom from the head of the table: eight or nine teenagers seated along both sides mid-activity, worksheets, water bottles and snacks across the table, two whiteboards of hand-written session notes on the left and an air-conditioner and cabinets behind.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "room wide whole teens group mid activity boardroom from head table eight nine teenagers seated along both sides worksheets water bottles snacks across two whiteboards hand written session notes left air conditioner cabinets behind teen youth workshop june 2026 jun"
+},
+{
+"id": "IFM-472",
+"title": "Room wide from the door end, whole group around the table",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-472.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1P9YEoA5beYCeITiol-QlsanxK6sfKKC0/view",
+"description": "Wide of the same boardroom shot from the door end, the full group of teenagers seated around the table with laptops, a storage crate and worksheets in the foreground and the note-covered whiteboards catching the window light behind.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "room wide from door end whole group around table same boardroom shot full teenagers seated laptops storage crate worksheets foreground note covered whiteboards catching window light behind teens teen youth workshop june 2026 jun whiteboard activity students aakara reel session"
+},
+{
+"id": "IFM-473",
+"title": "Boardroom wide during the teens session, shot from the corner",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-473.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1t4_IABJjD33SqxMFiQiKWHMqA2yMrDSl/view",
+"description": "Wide handheld shot down the boardroom from the corner of the room: teenagers seated along the table with their worksheets and phones, ceiling lights and cream curtains above, a laptop and printed sheets in the near foreground.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "boardroom wide during teens session shot from corner handheld down room teenagers seated along table their worksheets phones ceiling lights cream curtains above laptop printed sheets near foreground teen youth workshop june 2026 jun whiteboard activity group students aakara reel"
+},
+{
+"id": "IFM-474",
+"title": "Two teens side by side at the near end of the table",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-474.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1IB2lKqyJSW2vgXipkzb8-2LUmqiS8K1W/view",
+"description": "Close on two teenagers sitting together at the near end of the boardroom table, one in a white printed t-shirt leaning in towards the other; glasses of water, a phone and an open laptop sit on the polished wood in front of them.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "two teens side near end table close teenagers sitting together boardroom one white printed shirt leaning towards other glasses water phone open laptop sit polished wood front them teen youth workshop june 2026 jun whiteboard activity group students aakara reel"
+},
+{
+"id": "IFM-475",
+"title": "Teen boy at the table with his worksheet and water bottle",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-475.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1QZkmL_JDlQ0odoZ4Xymm3fjMooS8wnc4/view",
+"description": "A teenage boy in a white t-shirt sits at the boardroom table looking towards the front of the room, his printed worksheet, phone and a black water bottle laid out in front of him; a classmate's shoulder is in frame on the right.",
+"session": "Teens workshop — 25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "teen boy table his worksheet water bottle teenage white shirt sits boardroom looking towards front room printed phone black laid out him classmate shoulder frame right teens youth workshop june 2026 jun whiteboard activity group students aakara reel session video"
+},
+{
+"id": "IFM-476",
+"title": "The Swayamvar game leaderboard on the boardroom screen",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-476.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1mKxouUy0F_KGMie_sVq_eolz5REkHFYB/view",
+"description": "The wall-mounted screen showing the live Swayamvar game board mid-round — the round counter and timer across the top, the coloured player rows with their running scores down the left and the suitor columns filled in across the table. Shot square on to the screen; the back of a participant's head is in the bottom-left corner.",
+"session": "IFM corporate Swayamvar game session — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Stock Market"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "swayamvar game leaderboard boardroom screen wall mounted showing live board mid round counter timer across top coloured player rows their running scores down left suitor columns filled table shot square back participant head bottom corner corporate workshop projector results"
+},
+{
+"id": "IFM-477",
+"title": "IFM Games (corporate Swayamvar session) — rest of the shoot",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-477.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n",
+"description": "Catch-all for the remaining twelve raw frames of the corporate Swayamvar game session that are interchangeable backups of the moments already catalogued as IFM-413 to IFM-431 — repeated angles on the wall screen with the leaderboard up, on participants following the round on their phones, and on Hiral in red beside the screen. Opens the folder, not a single file.",
+"session": "IFM corporate Swayamvar game session — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Stock Market"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "ifm games corporate swayamvar session rest shoot catch all remaining twelve raw frames game interchangeable backups moments already catalogued 413 431 repeated angles wall screen leaderboard participants following round their phones hiral red beside opens folder not single file workshop"
 }
 ];

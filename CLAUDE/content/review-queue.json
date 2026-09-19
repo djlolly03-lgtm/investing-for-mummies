@@ -1,61 +1,42 @@
 {
- "generated_by": "claude, 18 Sep 2026 post-video-pass",
- "note": "Rewritten 18 Sep 2026 after the video pass. Three items were stale and are removed: the over-cap masters ARE now mirrored (12 files, 7.14GB), the two held Media Kit frames WERE copied on the user's call, and the 41 videos DO have previews (playable 60 -> 156).",
- "count": 8,
+ "generated_by": "daily-content-processor 2026-09-19",
+ "note": "Everything still uncatalogued or needing a human decision after the 19 Sep 2026 run. All five registered sources were scanned recursively with rclone (file ids, not the embeddedfolderview HTML). 18 new rows staged as IFM-460..IFM-477.",
+ "count": 6,
  "items": [
   {
-   "source": "Content Library / IFM feedback videos / IYA-IFT Photo gallery (11MncEXMdZy3sP2pTt0zfibLbEn30ldOO)",
-   "title": "33 files, all IMG_42xx / IMG_84xx — skipped by the June pre-Sakshi batch filter",
-   "folder_url": "https://drive.google.com/drive/folders/11MncEXMdZy3sP2pTt0zfibLbEn30ldOO",
-   "status": "needs_review",
-   "note": "The task rule says ignore IMG_42xx/IMG_84xx here because they are catalogued elsewhere. Listed so the skip stays visible: none of these 33 Drive ids appear in data.js. Confirm the June batch really is catalogued under other ids, or lift the filter."
+   "source": "Aakara delivery tree — workshop/Rakshita/camera (1iZye0DSRAsi8WgQIYApMNhx45GcVNswF)",
+   "title": "IFM-319 covers 26 DSLR files with ONE folder-level row — needs splitting into moment rows",
+   "folder_url": "https://drive.google.com/drive/folders/1iZye0DSRAsi8WgQIYApMNhx45GcVNswF",
+   "status": "needs_review"
   },
   {
-   "source": "Content Library / Certificates (1CasigFU-SKr_X__0d7ywpjTE9-jmDcgA)",
-   "title": "5 files (IMG_4249/4250 + three \"Copy of IMG_4256/57/58\") — skipped by the same June batch filter",
-   "folder_url": "https://drive.google.com/drive/folders/1CasigFU-SKr_X__0d7ywpjTE9-jmDcgA",
-   "status": "needs_review",
-   "note": "The three \"Copy of ...\" files duplicate IMG_4256/4257/4258 which also sit in the Photo gallery folder."
+   "source": "Content Library — Aakara — July 2026 (in progress)",
+   "title": "Artboard 3.png — lone artboard of an unfinished July carousel; no row created until the set lands",
+   "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
+   "status": "needs_review"
   },
   {
-   "source": "Content Library / Aakara — June 2026 (1iR0DcgjfAYq40KxNGY9dDrkRxPKO0Vt_)",
-   "title": "21 topic folders / ~110 files — a second copy of the June Aakara delivery, already catalogued",
-   "folder_url": "https://drive.google.com/drive/folders/1iR0DcgjfAYq40KxNGY9dDrkRxPKO0Vt_",
-   "status": "needs_review",
-   "note": "Every topic name here matches a topic under the Aakara tree June/Social media and June/Workshops, which already has catalogue rows. Different folder ids, same posts. No rows created. Safe to leave, but it is why a raw id-diff reports ~110 \"new\" files in this folder every run."
+   "source": "Content Library — root",
+   "title": "TEST — join ifm now_real-01.png — looks like a test export, not a deliverable; confirm then delete or catalogue",
+   "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
+   "status": "needs_review"
   },
   {
-   "source": "Content Library / Aakara — July 2026 (in progress) (1GEi5c1ToE6VcffW2QSSromeOR_7M9iAS)",
-   "title": "1 stray file, \"Artboard 3.png\" — not a complete post",
-   "folder_url": "https://drive.google.com/drive/folders/1GEi5c1ToE6VcffW2QSSromeOR_7M9iAS",
-   "status": "needs_review",
-   "note": "A single artboard with no sibling artboards and no topic folder. Not catalogued as a post."
+   "source": "Aakara delivery tree — October",
+   "title": "October has only IFM Internal_October.pptx — no IFM Creatives_October deck yet, so no October planned topics could be read",
+   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "status": "needs_review"
   },
   {
-   "source": "Aakara delivery tree / October (17Qyr7t4PLqxBMMG6FleA1PYKH49x5ZJ_)",
-   "title": "October folder exists but holds only the \"IFM Internal_October\" deck — no finished files yet",
-   "folder_url": "https://drive.google.com/drive/folders/17Qyr7t4PLqxBMMG6FleA1PYKH49x5ZJ_",
-   "status": "needs_review",
-   "note": "No Carousels / Reels / Stories subfolders yet, and no \"IFM Creatives_October\" forward-calendar deck to read planned topics from. Nothing to catalogue this run; re-check when Aakara delivers."
+   "source": "Aakara delivery tree — month roots",
+   "title": "Internal planning decks (IFM Internal_June/July/August/October, IFM_June Content) are not catalogued — confirm they are internal-only and should stay out",
+   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "status": "needs_review"
   },
   {
-   "source": "UNREGISTERED — \"Hiral Goel\" (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI), owned by investingformummies@",
-   "title": "25 uncatalogued files in two nested subfolders: \"Teens video\" (9) + \"Teens reel\" (16)",
-   "folder_url": "https://drive.google.com/drive/folders/1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI",
-   "status": "needs_review",
-   "note": "Found 18 Sep 2026 by walking Aakara-owned folders rather than the registered source list. This folder is NOT one of the five registered sources, so no rows were created. Its 18 direct files are byte-identical copies of the Content Library's \"Hiral Goel - photos & clips (Mar 2026)\" folder and ARE already catalogued (IFM-067/068/069 and siblings) - no action needed there. But two nested subfolders are not mirrored and not catalogued anywhere: \"Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N, Aakara-owned, 9 mp4s dated 25 Jun 2026) and inside it \"Teens reel\" (1HSMDzdb3YKhgbXohXhaMRK9SO5-ms24-, Sakshi-owned, 16 files: 14 mp4 cuts plus IMG_4251/4252/4254/4255.MOV). Decide whether to register this folder as a sixth source; if yes, it is teens-workshop footage and should be catalogued as moments, not per file."
-  },
-  {
-   "source": "CLAUDE/content/data.js - IFM-396",
-   "title": "The corporate-shoot catch-all row is invisible in the V1 Library (no thumbnail)",
+   "source": "Catalogue hygiene — IFM-396",
+   "title": "IFM-396 (Aug corporate 'rest of the shoot') has no thumbnail, so the catch-all row is invisible in the V1 Library",
    "folder_url": "https://drive.google.com/drive/folders/1Ehyg9SAPjcNfBiu1Q5cf2kPi_-EBaOxt",
-   "status": "needs_review",
-   "note": "\"Aug 2026 corporate workshop - rest of the shoot\" is the catch-all covering the ~100 leftover raw frames in IFM Aug 2026 that were deliberately not given their own moment rows. It has no thumbnail and no preview, so the Library hides it - which means those 100 files are reachable from the hub but not from the searchable Library. Giving it one representative thumbnail would make the catch-all findable. Same applies to any future \"rest of the shoot\" row."
-  },
-  {
-   "source": "Content Library / Aakara",
-   "title": "Content keeps appearing in UNREGISTERED folders — twice in two days. Sakshi moved to Content Library (388 files unseen), and the whole Stree Dhan shoot sat in an Aakara folder no source covered. The scanner only sees what it is told about.",
-   "folder_url": "",
    "status": "needs_review"
   }
  ]
