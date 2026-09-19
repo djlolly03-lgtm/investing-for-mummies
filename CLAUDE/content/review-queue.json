@@ -1,8 +1,14 @@
 {
  "generated_by": "daily-content-processor 2026-09-19",
- "note": "Everything still uncatalogued or needing a human decision after the 19 Sep 2026 run. All five registered sources were scanned recursively with rclone (file ids, not the embeddedfolderview HTML). 18 new rows staged as IFM-460..IFM-477.",
- "count": 6,
+ "note": "Updated 19 Sep 2026 after a full Drive re-audit against every registered root. ~707 media files reachable; all but 25 are catalogued, covered by a folder/topic row, or skipped by a documented rule. The 25 are the Hiral Goel gap at the top of this list.",
+ "count": 7,
  "items": [
+  {
+   "source": "Aakara tree / Hiral Goel",
+   "title": "25 UNCATALOGUED files in Aakara's \"Hiral Goel\" folder — 21 videos from a 25 Jun 2026 Hiral shoot (20260625_*.mp4, 6-85MB each) plus 4 IMG_425x MOVs. A previous run saw 18 identically-named JPGs, called the folder a duplicate and stopped. The 18 photos ARE duplicates; the folder holds 43 files.",
+   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "status": "needs_review"
+  },
   {
    "source": "Aakara delivery tree — workshop/Rakshita/camera (1iZye0DSRAsi8WgQIYApMNhx45GcVNswF)",
    "title": "IFM-319 covers 26 DSLR files with ONE folder-level row — needs splitting into moment rows",
