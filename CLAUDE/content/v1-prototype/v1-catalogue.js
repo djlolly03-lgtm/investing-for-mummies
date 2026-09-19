@@ -11096,5 +11096,134 @@ window.IFM_V1 =
 ],
 "source": "Sakshi",
 "search_terms": "ifm games corporate swayamvar session rest shoot catch all remaining twelve raw frames game interchangeable backups moments already catalogued 413 431 repeated angles wall screen leaderboard participants following round their phones hiral red beside opens folder not single file workshop"
+},
+{
+"id": "IFM-478",
+"title": "Boardroom shoot — Hiral to camera at the laptop",
+"date": "2026-07-03",
+"thumb": "../thumbs/IFM-478.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+"description": "Hiral sits at the head of a long polished boardroom table in a sleeveless orange-red button front top, glasses on, smiling directly to camera with both hands resting either side of an open MacBook. A blue notepad and pen sit to her left; cream upholstered wall panels and dark wood panelling behind. Clean, well-lit, shot on a Canon body — the strongest founder portrait in the library.",
+"session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Portrait",
+"topic": [],
+"person": [
+"Hiral"
+],
+"source": "Aakara",
+"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio boardroom shoot hiral camera laptop sits head long polished table sleeveless orange red button front top glasses smiling directly both hands resting either side open macbook blue notepad pen sit her left cream upholstered wall panels dark wood panelling behind"
+},
+{
+"id": "IFM-479",
+"title": "Boardroom shoot — Hiral working at the laptop",
+"date": "2026-07-03",
+"thumb": "../thumbs/IFM-479.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+"description": "Hiral at the same boardroom table looking down at her MacBook mid-work, glasses on, hand on the trackpad, in the orange-red sleeveless top. Unposed and candid rather than to camera. Cabling runs across the table towards a floor box in the foreground.",
+"session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Portrait",
+"topic": [],
+"person": [
+"Hiral"
+],
+"source": "Aakara",
+"search_terms": "candid warm natural unposed relaxed friendly celebration boardroom shoot hiral working laptop same table looking down her macbook mid work glasses hand trackpad orange red sleeveless top unposed candid rather than camera cabling runs across towards floor box foreground world map workshop raw cr3 canon"
+},
+{
+"id": "IFM-480",
+"title": "Boardroom shoot — participants listening under the world map",
+"date": "2026-07-03",
+"thumb": "../thumbs/IFM-480.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+"description": "Eight or nine women seated along the boardroom table listening, several with notebooks and pens out, one resting her chin on her hand. A large full-colour political world map fills the wall behind them. Warm tungsten light, institutional wood panelling.",
+"session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Aakara",
+"search_terms": "boardroom shoot participants listening under world map eight nine women seated along table several notebooks pens out one resting her chin hand large full colour political fills wall behind them warm tungsten light institutional wood panelling workshop raw cr3 canon"
+},
+{
+"id": "IFM-481",
+"title": "Boardroom shoot — participant asking a question",
+"date": "2026-07-03",
+"thumb": "../thumbs/IFM-481.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+"description": "A woman in a blue graphic t-shirt and glasses leans forward at the table with one hand raised mid-gesture, asking a question, her worksheet and pen in front of her. Three other participants in kurtas listen on either side. The world map fills the wall behind.",
+"session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"source": "Aakara",
+"search_terms": "boardroom shoot participant asking question woman blue graphic shirt glasses leans forward table one hand raised mid gesture her worksheet pen front three other participants kurtas listen either side world map fills wall behind workshop raw cr3 canon"
+},
+{
+"id": "IFM-482",
+"title": "Boardroom shoot — participant smiling with her worksheet",
+"date": "2026-07-03",
+"thumb": "../thumbs/IFM-482.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+"description": "A woman in a blue graphic t-shirt and glasses sits at the boardroom table smiling, an open printed worksheet and a booklet in front of her, pen in hand. Other participants and the world map are behind her.",
+"session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Aakara",
+"search_terms": "candid warm natural unposed relaxed friendly celebration boardroom shoot participant smiling her worksheet woman blue graphic shirt glasses sits table open printed booklet front pen hand other participants world map behind workshop raw cr3 canon"
+},
+{
+"id": "IFM-483",
+"title": "Boardroom shoot — the second row on office chairs",
+"date": "2026-07-03",
+"thumb": "../thumbs/IFM-483.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+"description": "A woman in a pink striped t-shirt sits on a wheeled office chair set back from the table with a notepad on her lap and a pen in hand, listening. More participants are seated behind her in the same back row. Shows the room had more attendees than the table seated.",
+"session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Aakara",
+"search_terms": "boardroom shoot second row office chairs woman pink striped shirt sits wheeled chair set back from table notepad her lap pen hand listening more participants seated behind same shows room had attendees than world map workshop raw cr3 canon"
 }
 ];
