@@ -171,12 +171,25 @@ const ACCEPTANCE = [
            return r.length > 0 && r.slice(0, 3).some(x => (x.a.topic || []).includes('Gold')); }],
   ['purple elephant must return nothing',
    () => interpreted('purple elephant').results.length === 0],
-  ['blue hat must return nothing',
-   () => interpreted('blue hat').results.length === 0],
-  ['CAGR must return nothing',
-   () => interpreted('CAGR').results.length === 0],
-  ['crypto must return nothing',
-   () => interpreted('crypto').results.length === 0],
+  // Was 'blue hat'. Retired 20 Sep 2026, NOT to go green: it stopped being nonsense. Once
+  // every video was transcribed, `blue` is in the library (a "blue chip fund") and `hat` is
+  // in it ("available at the drop of a hat"), so the coverage gate correctly let a two-word
+  // query through on two words we genuinely have. The guard's INTENT is that a query naming
+  // something we do not have returns nothing, so it needs words we do not have.
+  ['a nonsense two-word query must return nothing',
+   () => interpreted('scuba trombone').results.length === 0],
+  // CAGR and crypto were asserted absent when nothing in the catalogue text mentioned them.
+  // Transcription made that false: a participant reads "looking at that CAGR, looking at
+  // XIRR" off her notes in IFM-536, and IFM-271 ranks crypto's risk against other assets.
+  // These assertions were about the CONTENT, not the engine, and new content falsified them.
+  // They now assert the opposite -- that spoken-only terms ARE findable, which is the point.
+  ['CAGR is findable because someone says it out loud',
+   () => { const r = interpreted('CAGR').results;
+           return r.length > 0 && r.every(x => /cagr/i.test(x.a.speech || '')); }],
+  ['crypto is findable because a reel ranks it',
+   () => { const r = interpreted('crypto').results;
+           return r.length > 0 && r.every(x => /crypto/i.test((x.a.speech || '') +
+                                  x.a.title + x.a.description)); }],
   ['"photo of Hiral" must not return a single video',
    () => { const r = interpreted('photo of Hiral').results;
            return r.length > 0 && r.every(x => x.a.type === 'Image'); }],

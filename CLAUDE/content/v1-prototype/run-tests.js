@@ -84,7 +84,12 @@ console.log(`\n${'='.repeat(62)}\n${pass}/${TESTS.length} passed`);
  */
 const P2=[
  ['XIRR',            r=>r.length>0 && r.slice(0,3).every(x=>x.a.topic.includes('Risk & Returns')), 'NO asset literally contains XIRR; the synonym maps it to Risk & Returns, which is the honest best answer'],
- ['CAGR',            r=>r.length===0, 'term appears nowhere and has no synonym — must return NOTHING, not the whole library'],
+ // Was `r.length===0`, on the ground that CAGR appeared nowhere. Transcription made that
+ // false on 20 Sep 2026: a participant reads "looking at that CAGR, looking at XIRR" off
+ // her notes in IFM-536. The assertion was about the CONTENT, not the engine, so new
+ // content falsified it. It now asserts the useful thing -- a term nobody ever WROTE down
+ // is findable because somebody said it.
+ ['CAGR',            r=>r.length>0 && r.every(x=>/cagr/i.test(x.a.speech||'')), 'findable from speech alone'],
  ['SIP',             r=>r.length>0 && r.slice(0,3).some(x=>/compound|sip|monthly/i.test(x.a.search_terms+x.a.title)), 'SIP is searchable without being a Topic'],
  // WEAKENED ON PURPOSE, 18 Sep 2026, and the strong form moved to where it can be kept.
  // This suite tests the RAW ENGINE, which has no notion of "jewellery means the ornament".
@@ -100,7 +105,10 @@ const P2=[
  ['Hiral speaking',  r=>r.length>0 && r.slice(0,3).every(x=>x.a.format==='Hiral Speaking'), 'format constraint holds'],
  ['classroom group photo', r=>r.length>0 && r.slice(0,3).some(x=>x.a.format==='Classroom Moment'), ''],
  ['social promotional',    r=>r.length>0 && r.slice(0,3).every(x=>x.a.format==='Social / Promotional'), ''],
- ['ETF',             r=>r.every(x=>/etf|exchange traded/i.test(x.a.title+x.a.description+x.a.slide_text+x.a.search_terms)), 'no false ETF hits'],
+ // `speech` added to the fields checked, same reason: "New jewelry, add to your Gold ETF"
+ // (IFM-327) and two testimonials naming ETFs are real hits that this test called false
+ // only because it was not looking at what the video says.
+ ['ETF',             r=>r.every(x=>/etf|exchange traded/i.test(x.a.title+x.a.description+x.a.slide_text+x.a.search_terms+(x.a.speech||''))), 'no false ETF hits'],
  ['REIT',            r=>r.every(x=>/reit|real estate/i.test(x.a.title+x.a.description+x.a.slide_text+x.a.search_terms)), ''],
  ['RBI',             r=>r.every(x=>/\brbi\b|central bank|repo/i.test(x.a.title+x.a.description+x.a.slide_text+x.a.search_terms)), ''],
  ['funny classroom', r=>r.length>0 && r.slice(0,3).some(x=>/laugh|candid|smil|celebrat|fist/i.test(x.a.description+x.a.search_terms)), ''],

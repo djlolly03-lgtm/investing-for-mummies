@@ -751,6 +751,14 @@ const SYN={
 const FIELDS=[
   ['title',5],['topic',5],['format',4],['person',4],['search_terms',3],
   ['slide_text',3],['session',3],['source',2],['type',2],['description',2],
+  // What the video actually SAYS, at the lowest weight there is. Speech is the only field
+  // written by the content rather than about it, so it must be searchable -- "can we stop
+  // apologizing" is a spoken line and appears in no title, description or keyword anywhere.
+  // But it is unedited talk: it carries idioms, filler and tangents that a curated
+  // description does not. At weight 1 a spoken phrase is findable and a stray spoken word
+  // cannot outrank a real one. It was briefly folded into search_terms (weight 3) instead,
+  // which ranked an aside above a description and pushed the right SIP clip from #1 to #4.
+  ['speech',1],
 ];
 
 function textOf(a,f){

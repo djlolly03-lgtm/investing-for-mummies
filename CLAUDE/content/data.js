@@ -3099,8 +3099,9 @@ window.IFM_DATA = {
    "description": "Reel: Hiral against a gold-bar backdrop — 'Ever wondered why central banks own so much gold?'",
    "drive link": "https://drive.google.com/drive/folders/1Q38Vzk2Cj4BAnL9HQs3WFwLFUeD4OIuS",
    "date created": "2026-07-28",
-   "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck. | Finished files delivered by Aakara in the Drive tree (August/Reels/ever wondered gold). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-216.jpg"
+   "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck. | Finished files delivered by Aakara in the Drive tree (August/Reels/ever wondered gold). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "thumbnail": "thumbs/IFM-216.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-216.mp4"
   },
   {
    "id": "IFM-217",
@@ -3875,8 +3876,9 @@ window.IFM_DATA = {
    "description": "Reel: 'One Minute Investing School — What is an Asset?' Hiral seated in black, houses composited behind her. Part 1 of the assets series.",
    "drive link": "https://drive.google.com/drive/folders/1wO4vQ5peI3r4bIiXkRLZCI98F7k42iYc",
    "date created": "2026-08-03",
-   "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Designed reel — video frames shown in the deck. Date from the deck's August calendar slide (Aug 3, 'Assets class - reel'). | Finished files delivered by Aakara in the Drive tree (August/Reels/Asset class 1). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-264.jpg"
+   "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Designed reel — video frames shown in the deck. Date from the deck's August calendar slide (Aug 3, 'Assets class - reel'). | Finished files delivered by Aakara in the Drive tree (August/Reels/Asset class 1). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "thumbnail": "thumbs/IFM-264.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-264.mp4"
   },
   {
    "id": "IFM-265",
@@ -3888,8 +3890,9 @@ window.IFM_DATA = {
    "description": "Reel: 'One Minute Investing School — Types of Assets, Part 2.' Hiral in black with four family-member cutouts behind her.",
    "drive link": "https://drive.google.com/drive/folders/152_v76R684SsMdI-QBaLAcdPJZCuD3BK",
    "date created": "2026-08-07",
-   "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Designed reel — cover frame plus Aakara's execution note on the character casting per asset class. Date from the deck's August calendar slide (Aug 7, 'Asset class reel - 2'). | Finished files delivered by Aakara in the Drive tree (August/Reels/Asset Class 2). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-265.jpg"
+   "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Designed reel — cover frame plus Aakara's execution note on the character casting per asset class. Date from the deck's August calendar slide (Aug 7, 'Asset class reel - 2'). | Finished files delivered by Aakara in the Drive tree (August/Reels/Asset Class 2). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "thumbnail": "thumbs/IFM-265.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-265.mp4"
   },
   {
    "id": "IFM-266",
@@ -3966,8 +3969,9 @@ window.IFM_DATA = {
    "description": "Reel: Hiral beside a High-to-Low risk ranking board — 'Are these Investments Risky?' Ranks five investment types by risk.",
    "drive link": "https://drive.google.com/drive/folders/1jQutmd7uAd-TIkbpANSMRDR3pc7_P0o-",
    "date created": "2026-09-01",
-   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot. | Finished files delivered by Aakara in the Drive tree (September/Reels/Ranking reel). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-271.jpg"
+   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot. | Finished files delivered by Aakara in the Drive tree (September/Reels/Ranking reel). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "thumbnail": "thumbs/IFM-271.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-271.mp4"
   },
   {
    "id": "IFM-272",
@@ -4003,10 +4007,11 @@ window.IFM_DATA = {
    "description": "Delivered Teachers' Day reel built on the 'Baa Baa Black Sheep' nursery-rhyme hook. Opens on the 3D-animated IFM presenter avatar — long dark hair, navy button-down shirt, slight smile — framed against a white wall carrying the green-and-navy INVESTING FOR MUMMIES money-tree logo.",
    "drive link": "https://drive.google.com/drive/folders/1ps-zDRJLzehGV5ugmAWD_Fo-rD4gLP42",
    "date created": "2026-09-05",
-   "notes": "Finished files delivered by Aakara in the Drive tree (September/Reels/Teachers Day). Four variants in the folder: baa-baa-black-sheep.mp4, -SHORT.mp4, -CAPTIONED.mp4 and -SHORT-CAPTIONED.mp4 (captioned cuts are the ones to post). Reconciled from the planning-deck row to the delivery folder on 2 Sep 2026. | Status corrected 7 Sep 2026: was \"Ready\" but verified live on the IFM grid.",
+   "notes": "Finished files delivered by Aakara in the Drive tree (September/Reels/Teachers Day). Four variants in the folder: baa-baa-black-sheep.mp4, -SHORT.mp4, -CAPTIONED.mp4 and -SHORT-CAPTIONED.mp4 (captioned cuts are the ones to post). Reconciled from the planning-deck row to the delivery folder on 2 Sep 2026. | Status corrected 7 Sep 2026: was \"Ready\" but verified live on the IFM grid. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
    "thumbnail": "thumbs/IFM-274.jpg",
    "shot": "No people",
-   "ig link": "https://www.instagram.com/investingformummies/reel/Dc48lXDSNl0/"
+   "ig link": "https://www.instagram.com/investingformummies/reel/Dc48lXDSNl0/",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-274.mp4"
   },
   {
    "id": "IFM-275",
@@ -4821,10 +4826,10 @@ window.IFM_DATA = {
    "date created": "2026-07-15",
    "thumbnail": "thumbs/IFM-325.jpg",
    "drive link": "https://drive.google.com/drive/folders/1Z8tXHbWcBfY88F5bRp4GpFAqnjz9AKHP",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-325.mp4",
    "description": "Reel: Hiral to camera on a blue gradient — 'If finance pages confuse you, this is for you!' Founder-expertise positioning reel, 4 files in the folder.",
    "keywords": "aakara, july, reel, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (July/Reels/Hiral expertise). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
+   "notes": "Finished files delivered by Aakara in the Drive tree (July/Reels/Hiral expertise). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
    "shot": "Hiral — portrait"
   },
   {
@@ -4850,10 +4855,10 @@ window.IFM_DATA = {
    "date created": "2026-08-15",
    "thumbnail": "thumbs/IFM-327.jpg",
    "drive link": "https://drive.google.com/drive/folders/1nKWRAbAlLJuL-71WsJiawcutTTymJzH4",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-327.mp4",
    "description": "Reel: Hiral in blue holding a gold bar in one hand and a boxed necklace in the other — 'This simple Money Rule will change your life!'",
    "keywords": "aakara, august, reel, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/1x1). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders."
+   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/1x1). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library."
   },
   {
    "id": "IFM-328",
@@ -4893,10 +4898,10 @@ window.IFM_DATA = {
    "date created": "2026-08-15",
    "thumbnail": "thumbs/IFM-330.jpg",
    "drive link": "https://drive.google.com/drive/folders/1qHuy7M_PLi3O1f_9j27iCNDA7zL678gN",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-330.mp4",
    "description": "Reel: Hiral in a green striped shirt mid-sentence, 'Be honest.' on-screen — RBI explainer part 1.",
    "keywords": "aakara, august, reel, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/RBI (part 1)). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders."
+   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/RBI (part 1)). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library."
   },
   {
    "id": "IFM-331",
@@ -4921,10 +4926,10 @@ window.IFM_DATA = {
    "date created": "2026-08-15",
    "thumbnail": "thumbs/IFM-332.jpg",
    "drive link": "https://drive.google.com/drive/folders/1HFRtv7bw1LNdnxGTLfFreF4YRPT9qM5K",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-332.mp4",
    "description": "Reel: Hiral in white lace with a second presenter composited — 'Who says Money Conversations aren't for you?' Women's Equality Day topical.",
    "keywords": "aakara, august, reel, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/Woman's equality). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. | Status corrected 7 Sep 2026: was \"Ready\" but verified live on the IFM grid.",
+   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/Woman's equality). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. | Status corrected 7 Sep 2026: was \"Ready\" but verified live on the IFM grid. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
    "ig link": "https://www.instagram.com/investingformummies/reel/DcfK8mvhUkQ/"
   },
   {
@@ -4951,14 +4956,15 @@ window.IFM_DATA = {
    "description": "Hiral sits at a wooden dining table talking straight to camera with a steel thali in front of her — rice, chana sabzi, dal, roti, salad and pickle in separate compartments, a glass of water alongside, on a bright red-and-green printed placemat. White graphic tee, bright modern home interior behind. The balanced-plate framing sets up an asset-allocation analogy.",
    "drive link": "https://drive.google.com/drive/folders/1ok5PdE0vEGugyvA7dm8XLxgerDgnlHrW",
    "date created": "2026-09-01",
-   "notes": "Finished files delivered by Aakara in the Drive tree (September/Reels/Thali) — one MP4 plus the 'Food 2.psd' working file. NEW ROW created 2 Sep 2026: no planning-deck row named 'Thali'. POSSIBLE MERGE — this may be the delivery of IFM-272 'September: Asset Allocation in One Minute' (still In Production); left separate because the match is not certain. Confirm and merge if so.",
+   "notes": "Finished files delivered by Aakara in the Drive tree (September/Reels/Thali) — one MP4 plus the 'Food 2.psd' working file. NEW ROW created 2 Sep 2026: no planning-deck row named 'Thali'. POSSIBLE MERGE — this may be the delivery of IFM-272 'September: Asset Allocation in One Minute' (still In Production); left separate because the match is not certain. Confirm and merge if so. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
    "thumbnail": "thumbs/IFM-334.jpg",
    "shot": "Hiral — portrait",
    "setting": "Studio/Posed",
    "quality": "Hero",
    "consent": "Adults only",
    "session": "Aakara September delivery",
-   "social": "Yes"
+   "social": "Yes",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-334.mp4"
   },
   {
    "id": "IFM-335",
@@ -5065,14 +5071,15 @@ window.IFM_DATA = {
    "description": "101 raw MP4 clips from the RSS workshop, shot on phone and dumped with UUID filenames. Sampled frames are largely projector captures of the workshop deck — 'From Stree Dhan to Financial Wisdom' and the prompt slide 'What does ‘Stree Dhan’ mean to you?' over an illustrated money-tree-and-vault graphic — plus room and speaker coverage. NOT individually reviewed or tagged.",
    "drive link": "https://drive.google.com/drive/folders/1gccUMualA-fLf1l0y7KrKGofIgl9RLfv",
    "date created": "2026-06-04",
-   "notes": "PLACEHOLDER ROW covering the whole folder — the 101 MP4s are NOT catalogued one-by-one and their contents are unverified beyond a sampled frame. Needs a dedicated triage pass to pull usable clips before any of this is used. The folder's 7 JPGs ARE catalogued individually as IFM-335 to IFM-339. Staged 2 Sep 2026.",
+   "notes": "PLACEHOLDER ROW covering the whole folder — the 101 MP4s are NOT catalogued one-by-one and their contents are unverified beyond a sampled frame. Needs a dedicated triage pass to pull usable clips before any of this is used. The folder's 7 JPGs ARE catalogued individually as IFM-335 to IFM-339. Staged 2 Sep 2026. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
    "thumbnail": "thumbs/IFM-340.jpg",
    "shot": "Room/venue wide",
    "setting": "Workshop — mums",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "RSS workshop (Balsabha) — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-340.mp4"
   },
   {
    "id": "IFM-341",
@@ -5103,14 +5110,15 @@ window.IFM_DATA = {
    "description": "Single MP4. The sampled frame is an extreme, motion-blurred close-up of a woman speaking to camera — only mouth, chin and neck in frame, gold hoop earring, dark hair, denim-blue collared shirt — with the caption 'Can we stop apologizing' in a white box across the lower third. Handheld, fast-moving.",
    "drive link": "https://drive.google.com/drive/folders/1lUpzR-igdWwhXt7dCWOX65sPjo9fJ4Es",
    "date created": "2026-09-03",
-   "notes": "NEW ROW created 3 Sep 2026 — delivered by Aakara in September/Reels/Brand awareness; no matching planning-deck row. ONLY ONE FRAME SAMPLED and it is motion-blurred: the speaker's identity is NOT confirmed (assumed Hiral from hair/wardrobe, not verified) and the frame is not representative of the cut. Status left Raw and quality Raw-backup until someone watches it; retag then.",
+   "notes": "NEW ROW created 3 Sep 2026 — delivered by Aakara in September/Reels/Brand awareness; no matching planning-deck row. ONLY ONE FRAME SAMPLED and it is motion-blurred: the speaker's identity is NOT confirmed (assumed Hiral from hair/wardrobe, not verified) and the frame is not representative of the cut. Status left Raw and quality Raw-backup until someone watches it; retag then. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
    "thumbnail": "thumbs/IFM-342.jpg",
    "shot": "Hiral — portrait",
    "setting": "Studio/Posed",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "Aakara September delivery",
-   "social": ""
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-342.mp4"
   },
   {
    "id": "IFM-343",
@@ -5743,8 +5751,9 @@ window.IFM_DATA = {
    "consent": "Adults only",
    "session": "Aakara September delivery — 17 Sep 2026",
    "social": "",
-   "notes": "NEW topic folder delivered by Aakara overnight 17 Sep 2026 (02:03–04:01). Holds 'Asset or invest.psd' (the graphic) and 'Base.mp4' (132MB base footage of Hiral with the bag). One row for the topic folder per the Aakara rule. Status Raw, not Ready: the .psd is a working design file and the reel is not cut. ⚠️ POSSIBLE DUPLICATE OF IFM-275 'September: Asset vs Liability', which is still a label-only In Production placeholder from the Creatives deck. The concept is the same asset/liability handbag trope, but the delivered artwork pairs ASSET with INVESTMENT, not with LIABILITY, so this was staged as a NEW row rather than closing IFM-275 — per the 'match conservatively, when unsure create a new row and say so' rule. If Aakara confirms these are one post, merge IFM-374 into IFM-275 and delete this row. Mirrored to our own Drive (IFM Content Archive -> From Aakara): archive: 1WdIW2aBT9TU_2603ckeMPjbw7wl2sMDM (psd), archive: 1DsPYHYgCo5pmXGcNsMjPgUFfJN_HOPUI (Base.mp4). STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-374.jpg"
+   "notes": "NEW topic folder delivered by Aakara overnight 17 Sep 2026 (02:03–04:01). Holds 'Asset or invest.psd' (the graphic) and 'Base.mp4' (132MB base footage of Hiral with the bag). One row for the topic folder per the Aakara rule. Status Raw, not Ready: the .psd is a working design file and the reel is not cut. ⚠️ POSSIBLE DUPLICATE OF IFM-275 'September: Asset vs Liability', which is still a label-only In Production placeholder from the Creatives deck. The concept is the same asset/liability handbag trope, but the delivered artwork pairs ASSET with INVESTMENT, not with LIABILITY, so this was staged as a NEW row rather than closing IFM-275 — per the 'match conservatively, when unsure create a new row and say so' rule. If Aakara confirms these are one post, merge IFM-374 into IFM-275 and delete this row. Mirrored to our own Drive (IFM Content Archive -> From Aakara): archive: 1WdIW2aBT9TU_2603ckeMPjbw7wl2sMDM (psd), archive: 1DsPYHYgCo5pmXGcNsMjPgUFfJN_HOPUI (Base.mp4). STAGED — not yet deployed. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "thumbnail": "thumbs/IFM-374.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-374.mp4"
   },
   {
    "id": "IFM-375",
@@ -7921,7 +7930,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1-SQXPqmL6IJm52nc-w3h2J4YeI1OelxO/view",
    "date created": "2026-06-23",
    "keywords": "teens school uniform compounding slide boardroom presenting worksheets",
-   "notes": "Best teaching frame in this shoot — the slide is legible and she is mid-gesture. Backups of the same moment: IMG_8428.MOV (wider, whole room), IMG_8415.MOV (from the far corner). Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1KnjMjcpkpyHahpxJoCDwVLSCnpRH4n5E"
+   "notes": "Best teaching frame in this shoot — the slide is legible and she is mid-gesture. Backups of the same moment: IMG_8428.MOV (wider, whole room), IMG_8415.MOV (from the far corner). Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1KnjMjcpkpyHahpxJoCDwVLSCnpRH4n5E Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-484.mp4"
   },
   {
    "id": "IFM-485",
@@ -7940,7 +7950,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1K6cj9acxfjF9xDYSgbBlF1EtRu6BeIIg/view",
    "date created": "2026-06-23",
    "keywords": "chessboard compounding story teens attention slide classroom",
-   "notes": "Backups of the same moment: IMG_8432.JPG, IMG_8433.JPG. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1NqcnBqRD1nInem2kK6ls1R2DhWT7GPvs"
+   "notes": "Backups of the same moment: IMG_8432.JPG, IMG_8433.JPG. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1NqcnBqRD1nInem2kK6ls1R2DhWT7GPvs Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-485.mp4"
   },
   {
    "id": "IFM-486",
@@ -7978,7 +7989,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/15obGQxp1cKQcrKC2_JrcrbYkSWL4lfEM/view",
    "date created": "2026-06-23",
    "keywords": "over the shoulder back row teens handheld b-roll",
-   "notes": "B-roll only — the presenter is small and backlit. No near-dupes. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 17FrSz5fK5kgWLT3QFYgfGPwimFjVsd8l"
+   "notes": "B-roll only — the presenter is small and backlit. No near-dupes. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 17FrSz5fK5kgWLT3QFYgfGPwimFjVsd8l Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-487.mp4"
   },
   {
    "id": "IFM-488",
@@ -7997,7 +8009,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1wMpLmW7DECQNHSiqSePwoN18tcr9M3kf/view",
    "date created": "2026-06-24",
    "keywords": "money personality character cards activity teaching teens",
-   "notes": "Backup of the same moment: IMG_4223.MOV (from further back, laptop in shot). Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1hpHaNkkLJDoKfEnN6IQ4Z8U5GW29v471"
+   "notes": "Backup of the same moment: IMG_4223.MOV (from further back, laptop in shot). Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1hpHaNkkLJDoKfEnN6IQ4Z8U5GW29v471 Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-488.mp4"
   },
   {
    "id": "IFM-489",
@@ -8035,7 +8048,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1C5DcUMmwxwSnpdF2164nVO-z1nf2mGS1/view",
    "date created": "2026-06-24",
    "keywords": "back to camera reading slide teens b-roll",
-   "notes": "Back-to-camera, so deliberately not Media Kit material. Backups of the same moment: IMG_4232.MOV, IMG_4237.MOV. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1wsdxf4923ZKTXWZC5cNaIz2z1vAWuGHU"
+   "notes": "Back-to-camera, so deliberately not Media Kit material. Backups of the same moment: IMG_4232.MOV, IMG_4237.MOV. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1wsdxf4923ZKTXWZC5cNaIz2z1vAWuGHU Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-490.mp4"
   },
   {
    "id": "IFM-491",
@@ -8054,7 +8068,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1p7WcgswtHqxSlQYNEqFRs-C--Q2RCkyX/view",
    "date created": "2026-06-24",
    "keywords": "laptop spreadsheet whiteboard explaining seated teaching teens",
-   "notes": "IMG_4240/4241/4242.HEIC were first filed here as backups and then split out as IFM-499 on the same run -- they are the group reacting to a student, not her at the laptop, and someone would ask for them separately. No backups of this exact moment. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1SC9EIJHb0czIy452QM8D96uNVHMc-jJo"
+   "notes": "IMG_4240/4241/4242.HEIC were first filed here as backups and then split out as IFM-499 on the same run -- they are the group reacting to a student, not her at the laptop, and someone would ask for them separately. No backups of this exact moment. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1SC9EIJHb0czIy452QM8D96uNVHMc-jJo Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-491.mp4"
   },
   {
    "id": "IFM-492",
@@ -8073,7 +8088,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1FqTBsbS7aaVEt2PMyYG4Gjq0TwaEHddz/view",
    "date created": "2026-06-24",
    "keywords": "cohort table worksheets cacti room wide teens group",
-   "notes": "Backups of the same moment: IMG_4239.MOV, IMG_4234.MOV, IMG_4236.MOV. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1HL0Lkcj-4MR0IXAfYZioz7-tjEb3NRv2"
+   "notes": "Backups of the same moment: IMG_4239.MOV, IMG_4234.MOV, IMG_4236.MOV. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1HL0Lkcj-4MR0IXAfYZioz7-tjEb3NRv2 Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-492.mp4"
   },
   {
    "id": "IFM-493",
@@ -8130,7 +8146,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1LuFUU322gEx7DdeG75Mz9rd3bPMc3tPT/view",
    "date created": "2026-07-03",
    "keywords": "participant speaking discussion boardroom corporate video canon",
-   "notes": "Canon video from Aakara's workshop/Rakshita/camera folder — the same 3 Jul 2026 session as the CR3 stills catalogued as IFM-478..483. The 19 Sep run catalogued the 11 RAW frames and missed the four .MP4 clips beside them; found 20 Sep 2026. Drive's thumbnailer renders these clips sideways, so the thumbnail here is rotated 90° clockwise to sit upright — worth confirming against the master before anyone cuts with it. Owner toocrafty1595@gmail.com. archive: 1XK5-76pa5iMz1YMcA1dpZk5p825EvAJE"
+   "notes": "Canon video from Aakara's workshop/Rakshita/camera folder — the same 3 Jul 2026 session as the CR3 stills catalogued as IFM-478..483. The 19 Sep run catalogued the 11 RAW frames and missed the four .MP4 clips beside them; found 20 Sep 2026. Drive's thumbnailer renders these clips sideways, so the thumbnail here is rotated 90° clockwise to sit upright — worth confirming against the master before anyone cuts with it. Owner toocrafty1595@gmail.com. archive: 1XK5-76pa5iMz1YMcA1dpZk5p825EvAJE Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-495.mp4"
   },
   {
    "id": "IFM-496",
@@ -8149,7 +8166,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1DL6PcZkuH5RVXJU6RZeH8Y_zyiNM86Oh/view",
    "date created": "2026-07-03",
    "keywords": "world map boardroom room wide corporate workshop video canon",
-   "notes": "Backup of the same moment: 4E7A5761.MP4 (tighter down the table). Same 3 Jul 2026 session as IFM-478..483; see IFM-495 for why these four clips were missed and for the thumbnail-rotation caveat. Owner toocrafty1595@gmail.com. archive: 1KlZYQzcgQn9wvByNXXZ6t-iV7K2EqMOl"
+   "notes": "Backup of the same moment: 4E7A5761.MP4 (tighter down the table). Same 3 Jul 2026 session as IFM-478..483; see IFM-495 for why these four clips were missed and for the thumbnail-rotation caveat. Owner toocrafty1595@gmail.com. archive: 1KlZYQzcgQn9wvByNXXZ6t-iV7K2EqMOl Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-496.mp4"
   },
   {
    "id": "IFM-497",
@@ -8168,7 +8186,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1NcRgVetnKOatlbem43xMVX_TSoA_70ua/view",
    "date created": "2026-07-03",
    "keywords": "slide projector mutual fund best shoes analogy teaching content detail",
-   "notes": "Useful on its own as teaching content — the shoes analogy is one of the clearer explanations in the deck and nothing in the catalogue captured it before. No people in frame. Same 3 Jul 2026 session as IFM-478..483; see IFM-495 for the thumbnail-rotation caveat. Owner toocrafty1595@gmail.com. archive: 1iKTKp5FD5mVALPlSpkq2CFq1Rl23PBOx"
+   "notes": "Useful on its own as teaching content — the shoes analogy is one of the clearer explanations in the deck and nothing in the catalogue captured it before. No people in frame. Same 3 Jul 2026 session as IFM-478..483; see IFM-495 for the thumbnail-rotation caveat. Owner toocrafty1595@gmail.com. archive: 1iKTKp5FD5mVALPlSpkq2CFq1Rl23PBOx Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-497.mp4"
   },
   {
    "id": "IFM-498",
@@ -8757,7 +8776,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/15zKdMWV2HVYqmyPUdQ6CLZyt-LorjW3V/view",
    "date created": "2026-06-24",
    "keywords": "certificate graduation teens feedback workshop",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_4236.MOV. Backups of the same moment, kept on Drive and not catalogued separately: IMG_4232.MOV, IMG_4234.MOV, IMG_4237.MOV."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_4236.MOV. Backups of the same moment, kept on Drive and not catalogued separately: IMG_4232.MOV, IMG_4234.MOV, IMG_4237.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-528.mp4"
   },
   {
    "id": "IFM-529",
@@ -8852,7 +8872,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1-BG7aF4xPcmSOch9QyJEr6HUS0gQql96/view",
    "date created": "2026-08-19",
    "keywords": "certificate graduation teens feedback workshop",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1838.MOV."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1838.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-533.mp4"
   },
   {
    "id": "IFM-534",
@@ -8871,7 +8892,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1us-3DflkJSPKhneQMfvRfFon6gefPeuE/view",
    "date created": "2026-08-19",
    "keywords": "certificate graduation teens feedback workshop",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1839.MOV."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1839.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-534.mp4"
   },
   {
    "id": "IFM-535",
@@ -8890,7 +8912,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1NcimFLhJXBBDHh0WOYmZqfS4L44Gq8IU/view",
    "date created": "2026-08-19",
    "keywords": "certificate graduation teens feedback workshop",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1841.MOV."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1841.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-535.mp4"
   },
   {
    "id": "IFM-536",
@@ -8909,7 +8932,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1ggPf-mHcMv_qxb2qHntunXTIV_hlAVzj/view",
    "date created": "2026-08-19",
    "keywords": "certificate graduation teens feedback workshop",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_2386.MOV."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_2386.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-536.mp4"
   },
   {
    "id": "IFM-537",
@@ -8928,7 +8952,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1T0P1HiC1uF9gsxA86pGB895gpU85sQoV/view",
    "date created": "2026-08-19",
    "keywords": "certificate graduation teens feedback workshop",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: 1785216806801662.mp4."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: 1785216806801662.mp4. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-537.mp4"
   },
   {
    "id": "IFM-538",
@@ -8947,7 +8972,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1OCoaajTbjVh9ixmWNvlX_lNb6CJWiUHB/view",
    "date created": "2026-08-19",
    "keywords": "certificate graduation teens feedback workshop",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_0423.mov."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_0423.mov. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-538.mp4"
   },
   {
    "id": "IFM-539",
@@ -8966,7 +8992,8 @@ window.IFM_DATA = {
    "drive link": "https://drive.google.com/file/d/1C1cUFkML4zTh9C_bygIcbLhf-2TuKO3i/view",
    "date created": "2026-08-19",
    "keywords": "certificate graduation teens feedback workshop",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_0562.MOV."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_0562.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-539.mp4"
   }
  ],
  "tracker": [

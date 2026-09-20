@@ -492,8 +492,13 @@ def main():
             v1['speech'] = sp['text']
             v1['speech_dur'] = sp.get('dur')
             v1['speech_at'] = [[s['t'], s['x']] for s in sp.get('segments', [])]
-            v1['search_terms'] = (v1['search_terms'] + ' ' + speech_terms(sp['text'])).strip()
             stats['has_speech'] += 1
+            # Deliberately NOT folded into search_terms. search_terms carries weight 3 in the
+            # engine -- above `description` at 2 -- and a spoken aside must not outrank a
+            # curated description. `speech` is its own field at weight 1, the lowest there is:
+            # a phrase is still findable, but half a nonsense query landing on an idiom ("at
+            # the drop of a hat") cannot drag a result to the top. Folding it into
+            # search_terms was measurably worse: it pushed the right SIP clip from #1 to #4.
 
         for k in ('type', 'format', 'source', 'session'):
             if v1.get(k): stats['has_' + k] += 1
