@@ -1678,7 +1678,7 @@ window.IFM_V1 =
 "source": "IFM / In-house",
 "search_terms": "portrait headshot founder press media kit agency bio hiral desk book framed madhubani art seated wooden investing mummies front her large black white style artwork wall behind eyelet shirt executive chair goel office founder portrait indian editorial about",
 "kit": "portrait",
-"kit_rank": 2
+"kit_rank": 3
 },
 {
 "id": "IFM-072",
@@ -7661,7 +7661,7 @@ window.IFM_V1 =
 "source": "Unknown",
 "search_terms": "portrait headshot founder press media kit agency bio corporate workshop jul 2026 dslr portraits hiral shots raw canon shot from camera subfolder seated boardroom table behind open macbook red sleeveless top warm wood cream panel background some frames glasses off jpegs plus matching cr3 files 4e7a5748 5760 cleanest",
 "kit": "portrait",
-"kit_rank": 2
+"kit_rank": 3
 },
 {
 "id": "IFM-320",
@@ -8435,7 +8435,7 @@ window.IFM_V1 =
 "source": "Aakara",
 "search_terms": "stree dhan workshop ifm game screens projector facilitator demonstrating live web tools big screen investing mummies dashboard coloured tiles calculator showing rupee figure she faces room mid explanation printed roll banner stands beside demo tool",
 "kit": "teaching",
-"kit_rank": 2
+"kit_rank": 3
 },
 {
 "id": "IFM-352",
@@ -10989,7 +10989,7 @@ window.IFM_V1 =
 "source": "Unknown",
 "search_terms": "hiral piece camera teens reel takes jun 2026 records vertical day june workshop standing front framed panel green grey artwork dark teal top nine consecutive same short direct address shot she alone frame throughout framing does not change between goel",
 "kit": "portrait",
-"kit_rank": 3
+"kit_rank": 2
 },
 {
 "id": "IFM-461",
