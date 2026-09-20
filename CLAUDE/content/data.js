@@ -2,7 +2,7 @@
 // The dashboard merges the Google Sheet on top: human-owned fields (status, dates, IG link, metrics, notes)
 // from the sheet override these rows; machine fields (descriptions, keywords, thumbnails) live here.
 // Thumbnails are self-hosted in content/thumbs/ (Drive image endpoints don't load for anonymous viewers).
-window.IFM_DATA ={
+window.IFM_DATA = {
  "catalogue": [
   {
    "id": "IFM-R01",
@@ -6173,7 +6173,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
-   "notes": "This is the only row in this shoot that links to the folder rather than to one file — by design. Five byte-identical duplicate pairs were found in the folder (IMG_1576, 1577, 1578, 1579, 1580 each uploaded twice); IMG_1578 was confirmed identical by size and the other four match the same pattern — a 1 Sep 2026 re-upload of five 24 Aug clips. The copies are rejected, not catalogued. STAGED — not yet deployed."
+   "notes": "This is the only row in this shoot that links to the folder rather than to one file — by design. Five byte-identical duplicate pairs were found in the folder (IMG_1576, 1577, 1578, 1579, 1580 each uploaded twice); IMG_1578 was confirmed identical by size and the other four match the same pattern — a 1 Sep 2026 re-upload of five 24 Aug clips. The copies are rejected, not catalogued. STAGED — not yet deployed.",
+   "thumbnail": "thumbs/IFM-396.jpg"
   },
   {
    "id": "IFM-397",
@@ -7803,10 +7804,10 @@ window.IFM_DATA ={
    "session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
    "description": "Hiral sits at the head of a long polished boardroom table in a sleeveless orange-red button front top, glasses on, smiling directly to camera with both hands resting either side of an open MacBook. A blue notepad and pen sit to her left; cream upholstered wall panels and dark wood panelling behind. Clean, well-lit, shot on a Canon body — the strongest founder portrait in the library.",
    "thumbnail": "thumbs/IFM-478.jpg",
-   "drive link": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "drive link": "https://drive.google.com/file/d/17mr1P9-cCt5qCjGb-w4CdoaAWO1HICrd/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5753.CR3."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5753.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
   },
   {
    "id": "IFM-479",
@@ -7822,10 +7823,10 @@ window.IFM_DATA ={
    "session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
    "description": "Hiral at the same boardroom table looking down at her MacBook mid-work, glasses on, hand on the trackpad, in the orange-red sleeveless top. Unposed and candid rather than to camera. Cabling runs across the table towards a floor box in the foreground.",
    "thumbnail": "thumbs/IFM-479.jpg",
-   "drive link": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "drive link": "https://drive.google.com/file/d/1tQi8ijWBa-hD2-i_TZqlin_-tjRx3Nd_/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5750.CR3."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5750.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
   },
   {
    "id": "IFM-480",
@@ -7841,10 +7842,10 @@ window.IFM_DATA ={
    "session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
    "description": "Eight or nine women seated along the boardroom table listening, several with notebooks and pens out, one resting her chin on her hand. A large full-colour political world map fills the wall behind them. Warm tungsten light, institutional wood panelling.",
    "thumbnail": "thumbs/IFM-480.jpg",
-   "drive link": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "drive link": "https://drive.google.com/file/d/17ZvbkU7EWfYPLAdalZXxds-Yv2EUPumt/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5754.CR3."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5754.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
   },
   {
    "id": "IFM-481",
@@ -7860,10 +7861,10 @@ window.IFM_DATA ={
    "session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
    "description": "A woman in a blue graphic t-shirt and glasses leans forward at the table with one hand raised mid-gesture, asking a question, her worksheet and pen in front of her. Three other participants in kurtas listen on either side. The world map fills the wall behind.",
    "thumbnail": "thumbs/IFM-481.jpg",
-   "drive link": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "drive link": "https://drive.google.com/file/d/1PF54-47tfJ-0M6Cj1Dfewf0EVO5Y4x46/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5758.CR3."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5758.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
   },
   {
    "id": "IFM-482",
@@ -7879,10 +7880,10 @@ window.IFM_DATA ={
    "session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
    "description": "A woman in a blue graphic t-shirt and glasses sits at the boardroom table smiling, an open printed worksheet and a booklet in front of her, pen in hand. Other participants and the world map are behind her.",
    "thumbnail": "thumbs/IFM-482.jpg",
-   "drive link": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "drive link": "https://drive.google.com/file/d/10iYnu5sqoO-XExamvwxAg0-2dkpk_H1g/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5759.CR3."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5759.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
   },
   {
    "id": "IFM-483",
@@ -7898,10 +7899,10 @@ window.IFM_DATA ={
    "session": "Corporate workshop boardroom shoot — RAW (Rakshita)",
    "description": "A woman in a pink striped t-shirt sits on a wheeled office chair set back from the table with a notepad on her lap and a pen in hand, listening. More participants are seated behind her in the same back row. Shows the room had more attendees than the table seated.",
    "thumbnail": "thumbs/IFM-483.jpg",
-   "drive link": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "drive link": "https://drive.google.com/file/d/1UGT2e4h2_4LILf6BZqLM8P0_yjeJHwul/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5755.CR3."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5755.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
   },
   {
    "id": "IFM-484",

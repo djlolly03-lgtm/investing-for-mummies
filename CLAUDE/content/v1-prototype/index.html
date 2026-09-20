@@ -660,10 +660,30 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
  * put a helper there. Nor can this comment quote that line verbatim: indexOf then matches
  * the comment instead of the code and the slice starts mid-sentence, which is a
  * SyntaxError and cost me a second round-trip to work out. */
-const T=window.IFM_TAXONOMY,
+const T=window.IFM_TAXONOMY;
+      /* WHAT IS ALLOWED TO APPEAR AT ALL. Tightened 20 Sep 2026 on the user's rule:
+       *   "if we can't find a high-resolution photo or the video, do not even show it …
+       *    it just frustrates the user: hey, I found something, but there's no real link.
+       *    If you are displaying something, it must have a preview, and it must have a
+       *    file in the Google Drive."
+       * So both halves are required, and for a video "preview" means one that actually
+       * plays — a thumbnail over a dead play button is the exact frustration described.
+       * The old rule was `thumb OR playable`, which admitted both failure modes. */
+      const PLAYS = r => (((window.IFM_MEDIA||{})[r.id])||{}).playable;
+      const OPENS = r => {
+        const u = (r.video || '') + ' ' + (r.drive || '');
+        // a Drive file, a Drive folder of real assets, or a file we host ourselves
+        return /drive\.google\.com\/file\/d\//.test(u)
+            || /drive\.google\.com\/drive\/folders\//.test(u)
+            || /\/content\/clips\//.test(u)
+            || /ifm-deploy[^\s]*\.(mp4|png|jpe?g|webp)/i.test(u);
+      };
       ASSETS=window.IFM_V1.filter(r=>r.library!==false
         && (r.status||'')!=='Do Not Use'
-        && (!!r.thumb || ((window.IFM_MEDIA||{})[r.id]||{}).playable));
+        && !!r.thumb                     // you can always SEE what it is
+        && OPENS(r)                      // and you can always GET the real thing
+        && (r.type!=='Video' || PLAYS(r)) // a video that will not play is not a result
+      );
 // Fold speech into each asset's searchable text BEFORE the engine builds its index. The
 // engine already weights `search_terms`, so a spoken word becomes findable without
 // touching a line of frozen scoring code, and without inventing a new taxonomy field.

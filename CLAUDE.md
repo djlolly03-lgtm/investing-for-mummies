@@ -55,8 +55,36 @@ Decision 17 Sep 2026: **run both for now, converge on one later.** So anything t
 to `data.js` must finish by running `backfill.py`, or the Library silently freezes while the
 hub grows. `daily-content-processor` now does this. Anyone else editing `data.js` must too.
 
-The Library also hides any asset with **no thumbnail and no playable preview** — a row with
-no file is not an asset. A staged row without a thumbnail never appears there at all.
+### What is allowed to appear in the Library at all
+
+Tightened 20 Sep 2026 on the user's rule, and it is now two requirements joined by AND, not OR:
+
+> *"Things that are not fetchable from Google Drive, where we can't find a high-resolution
+> photo or the video, do not even show in the content hub. There is no point in showing
+> something that no one can actually use … If you are displaying something, it must have a
+> preview, and it must have a file in the Google Drive."*
+
+A row reaches `ASSETS` in `v1-prototype/index.html` only if **all** of these hold:
+
+| | |
+|---|---|
+| a thumbnail | you can always SEE what it is |
+| a real link | a Drive `/file/d/`, a Drive `/drive/folders/`, one of our own `/content/clips/`, or an `ifm-deploy` media URL |
+| a video PLAYS | `type: Video` also needs `media-map.js` to say `playable: true` |
+| not `Do Not Use`, not `library:false` | |
+
+The old rule was `thumb OR playable`, which admitted both failure modes the user named: a
+result with a dead link, and a video whose play button does nothing. There is exactly one
+place this is decided — `window.IFM_V1` is referenced on one line of the whole page — so the
+Media Kit, search, browse and counts cannot drift apart.
+
+**Both test suites must load `media-map.js`**, or every Video vanishes under node and the
+suite measures a library that does not exist (it silently dropped 172 rows the first time).
+
+A hidden row is not deleted. 54 rows sit behind this today and almost all are `data.js`
+planning entries for posts that have not been delivered yet ("September: Cups Video"); they
+appear the moment a file and a thumbnail exist. The Content Hub still shows them — that is
+the point of the two front ends.
 
 ### The Hiral Media Kit — `kit` and `kit_rank`
 

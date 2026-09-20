@@ -11,6 +11,9 @@
 const fs=require('fs'); global.window={};
 eval(fs.readFileSync('taxonomy.js','utf8'));
 eval(fs.readFileSync('v1-catalogue.js','utf8'));
+// Visibility now depends on which previews actually play, so the suite must load the
+// probed media map exactly like the page does — without it every Video vanishes.
+eval(fs.readFileSync('media-map.js','utf8'));
 const html=fs.readFileSync('index.html','utf8');
 const js=html.split('<script>').pop().split('</script>')[0];
 // Slice out just the engine. The UI below it needs a DOM and would throw under node.

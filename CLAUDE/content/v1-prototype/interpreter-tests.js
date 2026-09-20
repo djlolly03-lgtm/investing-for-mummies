@@ -25,6 +25,8 @@ const R = f => fs.readFileSync(path.join(DIR, f), 'utf8');
 
 eval(R('taxonomy.js'));
 eval(R('v1-catalogue.js'));
+// see run-tests.js: ASSETS now filters on playability, so the media map is required
+eval(R('media-map.js'));
 eval(R('transcripts.js'));
 
 // The engine, exactly as the page runs it.

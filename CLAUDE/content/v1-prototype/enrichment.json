@@ -102,7 +102,9 @@
   ],
   "slide_text": "Hi, I'm Hiral Goel. Business Journalist for 10+ years at Business India magazine. Organised and led the magazine's prestigious Businessman of the Year property. Mother of 2.",
   "search_terms": "founder intro about hiral goel business journalist business india credentials bio mother of two personal brand",
-  "_seen": "Hiral confirmed visually; credential text read off the story card."
+  "_seen": "Hiral confirmed visually; credential text read off the story card.",
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 4 image(s), no video."
  },
  "IFM-021": {
   "format": "Social Graphic",
@@ -118,7 +120,9 @@
   "format": "Social Graphic",
   "slide_text": "Guess the Finance Term. Ready? Tap to test your finance knowledge!",
   "search_terms": "quiz game guess the finance term jargon glossary interactive story tap engagement",
-  "_seen": "Gold coins in frame are decorative — deliberately NOT tagged Gold."
+  "_seen": "Gold coins in frame are decorative — deliberately NOT tagged Gold.",
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 6 image(s), no video."
  },
  "IFM-R02": {
   "slide_text": "A chaotic money sim. Survive the month on Rs 10,000? 28 days. Surprise bills. Pure chaos.",
@@ -751,5 +755,91 @@
   "kit": "teaching",
   "kit_rank": 3,
   "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-489": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Assessed 20 Sep 2026 as part of the daily run, from the IYA/IFT teens shoot staged the same day. She is clearly the subject here and the frame is a good one, but every frame in this shoot has identifiable school students in it (consent: Minors visible), which under the standing rule bars rank 1 and bars 'portrait' outright. Held at rank 3 so it is discoverable internally without being one click from an agency. Identity is by eye plus the standing presenter-is-Hiral inference across a consistent shoot -- not confirmed by name anywhere in the source, so per the IFM-098 lesson it must not be promoted on this evidence alone. To promote: clear consent for the minors in frame AND confirm the presenter's identity. Cleanest still of her teaching in the shoot -- three-quarter view, face visible, slide lit behind her."
+ },
+ "IFM-484": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Assessed 20 Sep 2026 as part of the daily run, from the IYA/IFT teens shoot staged the same day. She is clearly the subject here and the frame is a good one, but every frame in this shoot has identifiable school students in it (consent: Minors visible), which under the standing rule bars rank 1 and bars 'portrait' outright. Held at rank 3 so it is discoverable internally without being one click from an agency. Identity is by eye plus the standing presenter-is-Hiral inference across a consistent shoot -- not confirmed by name anywhere in the source, so per the IFM-098 lesson it must not be promoted on this evidence alone. To promote: clear consent for the minors in frame AND confirm the presenter's identity. Mid-gesture at the compounding slide; reads well for a proposal or event listing if consent clears."
+ },
+ "IFM-025": {
+  "type": "Image",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 1 image(s), no video."
+ },
+ "IFM-027": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-029": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 6 image(s), no video."
+ },
+ "IFM-031": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-032": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 3 image(s), no video."
+ },
+ "IFM-202": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-205": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-214": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 4 image(s), no video."
+ },
+ "IFM-259": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 3 image(s), no video."
+ },
+ "IFM-260": {
+  "type": "Image",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 1 image(s), no video."
+ },
+ "IFM-261": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 6 image(s), no video."
+ },
+ "IFM-262": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-266": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 4 image(s), no video."
+ },
+ "IFM-267": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 3 image(s), no video."
+ },
+ "IFM-322": {
+  "type": "Image",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 1 image(s), no video."
+ },
+ "IFM-329": {
+  "type": "Image",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 1 image(s), no video."
+ },
+ "IFM-331": {
+  "type": "Image",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 1 image(s), no video."
+ },
+ "IFM-333": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-459": {
+  "library": false,
+  "_why": "Byte-identical re-upload of IMG_2847.MOV (both 26,026,062 bytes, same filename). It was already described as rejected but was still sitting in the library with no thumb and no preview. A duplicate is not an asset; keep the row as a record, hide it."
  }
 }
