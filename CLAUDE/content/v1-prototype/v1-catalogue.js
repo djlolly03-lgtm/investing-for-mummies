@@ -1326,7 +1326,23 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "office youth workshop snacks assets clip chips prop raw hiral holds garden packet teaching using from clear box analogy investing goel hands mutual funds",
+"search_terms": "office youth workshop snacks assets clip chips prop raw hiral holds garden packet teaching using from clear box analogy investing goel hands mutual funds gold has gone down rupees what happened value dollar from now going happen price per unit",
+"speech": "Gold has gone down, 3 rupees, what has happened to the value of the dollar, so from 15 what has it gone down, 13 rupees, so now this has gone down to 13 rupees, what is going to happen to the price per unit.",
+"speech_dur": 18.3,
+"speech_at": [
+[
+0.0,
+"Gold has gone down, 3 rupees, what has happened to the value of the dollar, so from 15 what"
+],
+[
+10.4,
+"has it gone down, 13 rupees, so now this has gone down to 13 rupees, what is going to happen"
+],
+[
+16.9,
+"to the price per unit."
+]
+],
 "kit": "teaching",
 "kit_rank": 3
 },
@@ -1352,7 +1368,95 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "office youth workshop hiral explaining clip raw gesturing concept snack prop box table goel teaching boardroom mutual funds",
+"search_terms": "office youth workshop hiral explaining clip raw gesturing concept snack prop box table goel teaching boardroom mutual funds exactly right okay nav talk about mutual funds one most important things you need know because going determine whether made money not needs increase way increases stocks fund has bought gold debt instruments those price entire value basket goes means per unit will also yeah does make sense anjali did understand second keep your",
+"speech": "55. Exactly. Right. Okay. So this NAV, okay, that we talk about in mutual funds that is one of the most important things you need to know because that's going to determine whether you've made money or not. The NAV needs to increase and the way the NAV increases if that the stocks that the mutual fund has bought or the gold that the mutual fund has bought or the debt instruments that the mutual fund has bought, if those increase in price, right, the entire value of the basket goes up. And that means the price per unit will also go up. Yeah. Does that make sense? Okay. Yeah. Anjali, did you understand that? Okay. One second. Keep your money. Okay. Okay.",
+"speech_dur": 53.9,
+"speech_at": [
+[
+0.0,
+"55."
+],
+[
+1.0,
+"Exactly."
+],
+[
+2.0,
+"Right."
+],
+[
+3.0,
+"Okay."
+],
+[
+4.0,
+"So this NAV, okay, that we talk about in mutual funds that is one of the most important things"
+],
+[
+12.0,
+"you need to know because that's going to determine whether you've made money or not."
+],
+[
+17.0,
+"The NAV needs to increase and the way the NAV increases if that the stocks that the"
+],
+[
+23.2,
+"mutual fund has bought or the gold that the mutual fund has bought or the debt"
+],
+[
+28.6,
+"instruments that the mutual fund has bought, if those increase in price, right,"
+],
+[
+34.6,
+"the entire value of the basket goes up."
+],
+[
+37.6,
+"And that means the price per unit will also go up."
+],
+[
+41.6,
+"Yeah."
+],
+[
+42.6,
+"Does that make sense?"
+],
+[
+43.6,
+"Okay."
+],
+[
+44.6,
+"Yeah."
+],
+[
+45.6,
+"Anjali, did you understand that?"
+],
+[
+46.6,
+"Okay."
+],
+[
+47.6,
+"One second."
+],
+[
+48.6,
+"Keep your money."
+],
+[
+49.6,
+"Okay."
+],
+[
+50.6,
+"Okay."
+]
+],
 "kit": "teaching",
 "kit_rank": 2
 },
@@ -1377,7 +1481,63 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "office youth workshop teaching prop box helper clip raw hiral young participant standing beside her assisting goel woman hands boardroom"
+"search_terms": "office youth workshop teaching prop box helper clip raw hiral young participant standing beside her assisting goel woman hands boardroom about something you have your money use can yours okay now going what decide want put rupee every month get salary first hits bank account start investing time comes some away remember talked should invest before spend our right minute putting tell how much guys nav still let back original increase bucks wait already then extra",
+"speech": "about something, you have your money, so you have to use your money. You can't use yours. You can't use yours. Okay, now we are going to do what if you decide that I want to put in 1 rupee every month. Okay, I get a salary on the first of every month. Okay, the salary hits my bank account. And now I want to start investing. Every time my salary comes in I want to put some away. Remember we talked about we should put some away, we should invest some before we decide what we want to spend our money on. Right? Okay, so the minute the salary hits the account you decide that I want to start putting in some money away every month. Okay? So tell me, how much are you guys going to put in every month? The NAV is still 1 rupee. Okay, let's go back to the original NAV. Or should we increase it? Okay, it's now 2 bucks. Okay, the NAV is 2 bucks. How much do you want to put in every month? So wait, do I already have 5 then? So you already have what you have. Now this is extra money that you invest.",
+"speech_dur": 71.3,
+"speech_at": [
+[
+0.0,
+"about something, you have your money, so you have to use your money. You can't use yours."
+],
+[
+7.0,
+"You can't use yours."
+],
+[
+8.0,
+"Okay, now we are going to do what if you decide that I want to put in 1 rupee every month."
+],
+[
+17.0,
+"Okay, I get a salary on the first of every month. Okay, the salary hits my bank account."
+],
+[
+24.0,
+"And now I want to start investing. Every time my salary comes in I want to put some"
+],
+[
+29.0,
+"away. Remember we talked about we should put some away, we should invest some before we"
+],
+[
+35.0,
+"decide what we want to spend our money on. Right? Okay, so the minute the salary hits the account"
+],
+[
+41.0,
+"you decide that I want to start putting in some money away every month. Okay?"
+],
+[
+47.0,
+"So tell me, how much are you guys going to put in every month?"
+],
+[
+50.0,
+"The NAV is still 1 rupee. Okay, let's go back to the original NAV. Or should we increase it?"
+],
+[
+57.0,
+"Okay, it's now 2 bucks. Okay, the NAV is 2 bucks. How much do you want to put in every month?"
+],
+[
+64.0,
+"So wait, do I already have 5 then?"
+],
+[
+66.0,
+"So you already have what you have. Now this is extra money that you invest."
+]
+]
 },
 {
 "id": "IFM-060",
@@ -1833,7 +1993,31 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context clip hiral presenting inflation simplified wide shot standing lounge style workshop gesturing beside screen reading patterned wallpaper bookshelves orange pendant lamp seated audience cream sleeveless outfit goel speaking founder event video"
+"search_terms": "b-roll cutaway establishing supporting footage context clip hiral presenting inflation simplified wide shot standing lounge style workshop gesturing beside screen reading patterned wallpaper bookshelves orange pendant lamp seated audience cream sleeveless outfit goel speaking founder event video interesting thing there different rate inflation every industry sector currently india experiences about across country but industries they have experience rates example medical today means year our bills going increase compounded basis",
+"speech": "interesting thing is there is a different rate of inflation for every industry or sector. So currently India experiences about a 5-6% inflation rate and that is across the country but different industries they have they experience different inflation rates. So for example medical inflation today is 14-15% so that means every year our medical bills are going to increase by 14-15% on a compounded basis.",
+"speech_dur": 31.5,
+"speech_at": [
+[
+0.0,
+"interesting thing is there is a different rate of inflation for every industry or sector."
+],
+[
+6.2,
+"So currently India experiences about a 5-6% inflation rate and that is across the country"
+],
+[
+13.5,
+"but different industries they have they experience different inflation rates."
+],
+[
+19.4,
+"So for example medical inflation today is 14-15% so that means every year our medical"
+],
+[
+26.5,
+"bills are going to increase by 14-15% on a compounded basis."
+]
+]
 },
 {
 "id": "IFM-078",
@@ -1858,7 +2042,47 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context clip hiral teaching inflation analogy wide shot standing speaking workshop hands gesturing beside screen showing balanced supply demand slide patterned wallpaper bookshelves orange lamp seated audience cream sleeveless outfit goel presenting lounge founder event video"
+"search_terms": "b-roll cutaway establishing supporting footage context clip hiral teaching inflation analogy wide shot standing speaking workshop hands gesturing beside screen showing balanced supply demand slide patterned wallpaper bookshelves orange lamp seated audience cream sleeveless outfit goel presenting lounge founder event video population increases families but baker can still only bake loads bread what you think would happen price will higher yeah why because demand more same limited amount resources say charge people really want pay give inflation actually exists basically contributes yes there now let look",
+"speech": "The population increases to 20 families, but the baker can still only bake 10 loads of bread. What do you think would happen that the price of the bread will go higher? Yeah, why? Because demand is more for the same limited amount of resources. So the baker will say that I will charge more or people will say that no I really want it, I will pay more, you give it to me at a higher price. So that's why inflation actually exists. So basically the population contributes to it. Yes, because population contributes, there are limited resources for the same for higher demand. But now let's look...",
+"speech_dur": 44.5,
+"speech_at": [
+[
+0.0,
+"The population increases to 20 families, but the baker can still only bake 10 loads of bread."
+],
+[
+6.0,
+"What do you think would happen that the price of the bread will go higher?"
+],
+[
+9.0,
+"Yeah, why? Because demand is more for the same limited amount of resources."
+],
+[
+17.0,
+"So the baker will say that I will charge more or people will say that no I really want it,"
+],
+[
+25.0,
+"I will pay more, you give it to me at a higher price."
+],
+[
+29.0,
+"So that's why inflation actually exists."
+],
+[
+33.0,
+"So basically the population contributes to it."
+],
+[
+35.0,
+"Yes, because population contributes, there are limited resources for the same for higher demand."
+],
+[
+43.0,
+"But now let's look..."
+]
+]
 },
 {
 "id": "IFM-079",
@@ -2089,7 +2313,27 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "clip open questions slide woman pink stands beside colourful gestures while fielding queries from small group women seated around boardroom table interactive wrap workshop session video presenter investing ifm discussion"
+"search_terms": "clip open questions slide woman pink stands beside colourful gestures while fielding queries from small group women seated around boardroom table interactive wrap workshop session video presenter investing ifm discussion you top category class move baby their setting activities men they",
+"speech": "You are the top category class. You move the baby. As for their setting of activities for men's activities, they are the top category class.",
+"speech_dur": 9.3,
+"speech_at": [
+[
+0.0,
+"You are the top category class."
+],
+[
+2.0,
+"You move the baby."
+],
+[
+4.0,
+"As for their setting of activities for men's activities,"
+],
+[
+8.0,
+"they are the top category class."
+]
+]
 },
 {
 "id": "IFM-089",
@@ -2213,7 +2457,27 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "clip types mutual funds walkthrough presenter bright pink dress points slide while seated participants follow along conference table breaking down fund categories video presentation workshop boardroom women investing learning session"
+"search_terms": "clip types mutual funds walkthrough presenter bright pink dress points slide while seated participants follow along conference table breaking down fund categories video presentation workshop boardroom women investing learning session really quickly what elss entity linked savings company okay basically again thing which government came try get lots retail participation from masses just gives you tax redemption",
+"speech": "really quickly what is ELSS? It's an entity-linked savings company okay it's basically again a thing which the government came up with to try and get lots of retail participation from the masses and it just gives you a tax redemption",
+"speech_dur": 18.5,
+"speech_at": [
+[
+0.0,
+"really quickly what is ELSS? It's an entity-linked savings company okay it's"
+],
+[
+6.4,
+"basically again a thing which the government came up with to try and get"
+],
+[
+9.8,
+"lots of retail participation from the masses and it just gives you a tax"
+],
+[
+17.5,
+"redemption"
+]
+]
 },
 {
 "id": "IFM-094",
@@ -2335,7 +2599,55 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration clip hiral smiling piece camera founder goel stands front branded investing mummies slide multitasking mum graphic addressing directly intro welcome segment video branding presenter workshop host"
+"search_terms": "candid warm natural unposed relaxed friendly celebration clip hiral smiling piece camera founder goel stands front branded investing mummies slide multitasking mum graphic addressing directly intro welcome segment video branding presenter workshop host you ready guys malika singhamia here herald office where she teaches investing mummies just most amazing course when started didn know anything about basic things like insurance mutual funds sure can relate speak lot girlfriends while might think actually don really even how take care our money then signed learnt there whole big not bad world out anymore because truly feel understand financial terms much better literacy once finish going able control also husband very soon must sign huge value add your life thank",
+"speech": "Are you ready? Are you ready? Hi guys, this is Malika Singhamia and I'm here at Herald's office where she teaches us investing for mummies. It's just the most amazing course. When I started I didn't know anything about basic things like insurance, mutual funds. I'm sure you can relate to it. I speak to a lot of my girlfriends and while we might think we know, we actually don't know and we really don't even know how to take care of our money. Then I signed up for this course and I learnt that there's a whole big, not so bad world out there anymore for me because I truly feel like I understand financial terms so much better, my financial literacy so much better. I feel like once I finish this course I'm going to be able to take control of my money and also my husband's money very soon. So you must sign up and I'm sure it's going to be a huge, huge value add in your life. Thank you.",
+"speech_dur": 59.7,
+"speech_at": [
+[
+1.2,
+"Are you ready?"
+],
+[
+3.2,
+"Are you ready?"
+],
+[
+7.8,
+"Hi guys, this is Malika Singhamia and I'm here at Herald's office where she teaches us investing for mummies."
+],
+[
+14.8,
+"It's just the most amazing course. When I started I didn't know anything about basic things like insurance, mutual funds."
+],
+[
+22.8,
+"I'm sure you can relate to it. I speak to a lot of my girlfriends and while we might think we know, we actually don't know"
+],
+[
+28.8,
+"and we really don't even know how to take care of our money."
+],
+[
+31.8,
+"Then I signed up for this course and I learnt that there's a whole big, not so bad world out there anymore for me"
+],
+[
+37.8,
+"because I truly feel like I understand financial terms so much better, my financial literacy so much better."
+],
+[
+43.8,
+"I feel like once I finish this course I'm going to be able to take control of my money and also my husband's money very soon."
+],
+[
+51.8,
+"So you must sign up and I'm sure it's going to be a huge, huge value add in your life."
+],
+[
+57.8,
+"Thank you."
+]
+]
 },
 {
 "id": "IFM-099",
@@ -2417,7 +2729,47 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "sgb sovereign gold bond gold funds gold etf digital gold physical gold safe haven hedge portfolio allocation five to ten percent rbi ways to invest in gold bullion explaining teaching"
+"search_terms": "sgb sovereign gold bond gold funds gold etf digital gold physical gold safe haven hedge portfolio allocation five to ten percent rbi ways to invest in gold bullion explaining teaching",
+"speech": "But there are those companies that exist and you can either buy shares of those companies right or these are companies who are actually selling you this digital gold okay and the thing is it's always backed by physical gold so when they are saying they are meant to it's meant to be backed by physical gold so when you are buying one rupee worth of gold today on your dad technically they are buying it in the back and it's stored right same thing with gold mutual funds right they are actually storing it so if say this our digital gold of these others say if the gold price is hundred rupees you'll obviously pay like of that one percent premium because they're doing the storing buying whatever you know yeah yeah but it will follow the trend of gold prices right so once the same standard",
+"speech_dur": 51.0,
+"speech_at": [
+[
+0.0,
+"But there are those companies that exist and you can either buy shares of those companies"
+],
+[
+5.2,
+"right or these are companies who are actually selling you this digital gold okay and the"
+],
+[
+11.4,
+"thing is it's always backed by physical gold so when they are saying they are meant to"
+],
+[
+16.3,
+"it's meant to be backed by physical gold so when you are buying one rupee worth"
+],
+[
+21.7,
+"of gold today on your dad technically they are buying it in the back and it's"
+],
+[
+28.2,
+"stored right same thing with gold mutual funds right they are actually storing it"
+],
+[
+34.8,
+"so if say this our digital gold of these others say if the gold price is hundred rupees"
+],
+[
+39.5,
+"you'll obviously pay like of that one percent premium because they're doing the storing buying"
+],
+[
+44.2,
+"whatever you know yeah yeah but it will follow the trend of gold prices right so once the same standard"
+]
+]
 },
 {
 "id": "IFM-102",
@@ -2709,7 +3061,23 @@ window.IFM_V1 =
 "Other Person"
 ],
 "source": "Unknown",
-"search_terms": "clip participant following along laptop over shoulder shot woman green geometric print dress navigating screen her macbook during session doing hands exercise video investing workshop women learning"
+"search_terms": "clip participant following along laptop over shoulder shot woman green geometric print dress navigating screen her macbook during session doing hands exercise video investing workshop women learning like business playing online greens what you buy reds sell let say numbers",
+"speech": "Like business playing online The greens are what you buy and the reds are what you sell Let's say numbers",
+"speech_dur": 13.4,
+"speech_at": [
+[
+0.1,
+"Like business playing online"
+],
+[
+2.8,
+"The greens are what you buy and the reds are what you sell"
+],
+[
+11.3,
+"Let's say numbers"
+]
+]
 },
 {
 "id": "IFM-115",
@@ -3379,7 +3747,35 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "clip hiral leading from laptop founder black top pink trousers sits head table her addressing room attentive women front note filled whiteboard teaching moment mid session video workshop boardroom investing",
+"search_terms": "clip hiral leading from laptop founder black top pink trousers sits head table her addressing room attentive women front note filled whiteboard teaching moment mid session video workshop boardroom investing right but now when you willing sell going 1000 into nav 000 rupees 500 also why doesn matter wow your profits get together kind explains because see yourself end yes exactly",
+"speech": "24, right? But now when you are willing to sell, you are going to do 1000 into 12, right? NAV is 12. That is 12,000 rupees and this 500 rupees into 24 is also 12,000. That's why it doesn't matter. Wow. That is why your profits get this together kind of explains to you why because you see it yourself at the end. Yes, yes. Exactly.",
+"speech_dur": 28.0,
+"speech_at": [
+[
+0.0,
+"24, right? But now when you are willing to sell, you are going to do 1000 into 12, right?"
+],
+[
+9.0,
+"NAV is 12. That is 12,000 rupees and this 500 rupees into 24 is also 12,000."
+],
+[
+15.0,
+"That's why it doesn't matter. Wow."
+],
+[
+16.0,
+"That is why your profits get this together kind of explains to you why because you"
+],
+[
+23.0,
+"see it yourself at the end. Yes, yes."
+],
+[
+26.0,
+"Exactly."
+]
+],
 "kit": "candid",
 "kit_rank": 3
 },
@@ -3407,7 +3803,27 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "clip group discussion around table hiral turns toward camera mid sentence while several women seated boardroom listen interactive segment workshop video investing listening session"
+"search_terms": "clip group discussion around table hiral turns toward camera mid sentence while several women seated boardroom listen interactive segment workshop video investing listening session now you know truth about does not mean any tell price slice size pizza gonna your investment what has grown only tells slimes one want grow become bigger",
+"speech": "Now that you know the truth about this does not mean any we tell you the price of the slice not the size of the pizza It's not it's not it's not gonna tell you the size of your investment or what it has grown Do it only tells you the price of the slimes or one slimes You want that slice to grow to become bigger. That's what you're",
+"speech_dur": 24.0,
+"speech_at": [
+[
+0.3,
+"Now that you know the truth about this does not mean any we tell you the price of the slice not the size of the pizza"
+],
+[
+7.6,
+"It's not it's not it's not gonna tell you the size of your investment or what it has grown"
+],
+[
+13.8,
+"Do it only tells you the price of the slimes or one slimes"
+],
+[
+19.5,
+"You want that slice to grow to become bigger. That's what you're"
+]
+]
 },
 {
 "id": "IFM-143",
@@ -3483,7 +3899,23 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "b-roll cutaway establishing supporting footage context clip participants engaging wide shot women around table looking toward front engaged expressions while hiral gestures from foreground audience moment video boardroom workshop investing discussion session"
+"search_terms": "b-roll cutaway establishing supporting footage context clip participants engaging wide shot women around table looking toward front engaged expressions while hiral gestures from foreground audience moment video boardroom workshop investing discussion session yeah okay just gonna know should say see everybody yes how people talk nonsense spread stuff who don will",
+"speech": "Yeah, yeah, okay. I'm just gonna know we should say okay. See see see okay. Everybody's see Yes This is how people talk nonsense and spread stuff people who don't know will say okay",
+"speech_dur": 26.1,
+"speech_at": [
+[
+0.0,
+"Yeah, yeah, okay. I'm just gonna know we should say okay. See see see okay. Everybody's see"
+],
+[
+7.4,
+"Yes"
+],
+[
+20.3,
+"This is how people talk nonsense and spread stuff people who don't know will say okay"
+]
+]
 },
 {
 "id": "IFM-146",
@@ -3508,7 +3940,167 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "clip hiral making point her hands leans forward open palm gesture while speaking group several women watching attentively across table emphasising key teaching video explaining boardroom workshop investing session emphasis",
+"search_terms": "clip hiral making point her hands leans forward open palm gesture while speaking group several women watching attentively across table emphasising key teaching video explaining boardroom workshop investing session emphasis ganga blue chip fund statement shows equity 850 rupees debt cash liability units outstanding can you help calculate nav calculator form sorry issue when referring refers investment basically has worth investments plus minus yes right means what remember was okay going ask hint formula total assets liabilities divided 919",
+"speech": "Ganga blue chip fund statement, it shows that equity is 850 rupees, debt is 50 rupees, cash is 20 rupees, liability is 15 and the units outstanding are 40. Can you help calculate the NAV? I can't help. I can't help. Calculator. On the form? Sorry. That's my issue. When we are referring to debt, it refers to debt investment. So the fund basically has 850 rupees worth of equity investments, 50 plus the cash minus the liability is. Yes, so do it. Do it. Right? The units outstanding 40 means what? Remember, what was, okay, I am going to ask for a hint. Remember, the formula to calculate the NAV was total assets minus liabilities divided by units outstanding. Okay. 919. 919. 919. 919. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay.",
+"speech_dur": 68.6,
+"speech_at": [
+[
+0.0,
+"Ganga blue chip fund statement, it shows that equity is 850 rupees, debt is 50 rupees, cash"
+],
+[
+9.2,
+"is 20 rupees, liability is 15 and the units outstanding are 40."
+],
+[
+16.1,
+"Can you help calculate the NAV?"
+],
+[
+18.7,
+"I can't help."
+],
+[
+19.7,
+"I can't help."
+],
+[
+20.7,
+"Calculator."
+],
+[
+21.7,
+"On the form?"
+],
+[
+22.7,
+"Sorry."
+],
+[
+23.7,
+"That's my issue."
+],
+[
+24.7,
+"When we are referring to debt, it refers to debt investment."
+],
+[
+30.7,
+"So the fund basically has 850 rupees worth of equity investments, 50 plus the cash minus"
+],
+[
+42.7,
+"the liability is."
+],
+[
+43.7,
+"Yes, so do it."
+],
+[
+44.7,
+"Do it."
+],
+[
+45.7,
+"Right?"
+],
+[
+46.7,
+"The units outstanding 40 means what?"
+],
+[
+49.7,
+"Remember, what was, okay, I am going to ask for a hint."
+],
+[
+53.7,
+"Remember, the formula to calculate the NAV was total assets minus liabilities divided by"
+],
+[
+60.7,
+"units outstanding."
+],
+[
+61.7,
+"Okay."
+],
+[
+62.7,
+"919."
+],
+[
+66.3,
+"919."
+],
+[
+67.3,
+"919."
+],
+[
+68.3,
+"919."
+],
+[
+69.3,
+"Okay."
+],
+[
+70.3,
+"Okay."
+],
+[
+71.3,
+"Okay."
+],
+[
+72.3,
+"Okay."
+],
+[
+73.3,
+"Okay."
+],
+[
+74.3,
+"Okay."
+],
+[
+75.3,
+"Okay."
+],
+[
+76.3,
+"Okay."
+],
+[
+77.3,
+"Okay."
+],
+[
+78.3,
+"Okay."
+],
+[
+79.3,
+"Okay."
+],
+[
+80.3,
+"Okay."
+],
+[
+81.3,
+"Okay."
+],
+[
+82.3,
+"Okay."
+],
+[
+83.3,
+"Okay."
+]
+],
 "kit": "candid",
 "kit_rank": 3
 },
@@ -3637,7 +4229,19 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "clip note taking during session women seated around table listen jot notes hiral leads from foreground beside her laptop focused learning stretch workshop video participants boardroom investing"
+"search_terms": "clip note taking during session women seated around table listen jot notes hiral leads from foreground beside her laptop focused learning stretch workshop video participants boardroom investing you got 905 920 minus right what will nav per unit something",
+"speech": "You got that? 905? It's 920 minus 15, right? So it's 905, right? So what will the NAV per unit be? 22. something.",
+"speech_dur": 13.3,
+"speech_at": [
+[
+0.0,
+"You got that? 905? It's 920 minus 15, right? So it's 905, right? So what will the NAV per unit be?"
+],
+[
+11.0,
+"22. something."
+]
+]
 },
 {
 "id": "IFM-152",
@@ -3685,7 +4289,35 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration clip casual group session around table presenter beige stands screen while women chat laden lunchboxes water bottles books relaxed setting break time portion video boardroom workshop investing conversation"
+"search_terms": "candid warm natural unposed relaxed friendly celebration clip casual group session around table presenter beige stands screen while women chat laden lunchboxes water bottles books relaxed setting break time portion video boardroom workshop investing conversation what your child feeling then she continues throw dust away you very polite radha have wake said want dogs teacher",
+"speech": "What is your child's feeling? And then she continues to throw the dust away. You are very polite. Radha, you have to wake up for this. I said I want to be 20 dogs. What teacher are you?",
+"speech_dur": 24.8,
+"speech_at": [
+[
+5.5,
+"What is your child's feeling?"
+],
+[
+7.5,
+"And then she continues to throw the dust away."
+],
+[
+12.5,
+"You are very polite."
+],
+[
+15.5,
+"Radha, you have to wake up for this."
+],
+[
+18.5,
+"I said I want to be 20 dogs."
+],
+[
+21.5,
+"What teacher are you?"
+]
+]
 },
 {
 "id": "IFM-154",
@@ -3710,7 +4342,183 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration b-roll cutaway establishing supporting footage context clip relaxed roundtable conversation wide view women laughing talking around table presenter standing screen behind light informal moment during workshop video boardroom investing session"
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration b-roll cutaway establishing supporting footage context clip relaxed roundtable conversation wide view women laughing talking around table presenter standing screen behind light informal moment during workshop video boardroom investing session think only important question trying guess why was interesting something serious around subject cool everyone should have round eyed baggy ass not talking going dress can even you full talk today will lucky charm need come meeting what say she makes class different don want know more because one part basically dying ask questions happen listen students like they make three hours getting deja from college people used asked two",
+"speech": "I think it's the only important question. I'm trying to guess why it was... I'm trying to guess why it was... I'm trying to guess why it was... I'm trying to guess why it was... That is interesting. Something so serious around the subject. It's so cool. Everyone should have a round-eyed baggy ass. No, I'm not talking. So, I'm going to have this dress and... I'm trying to guess. I can't even... You are a full talk. Today, I will not talk. You are the lucky charm. You'll need to come to a meeting. What I will say... You... She makes the class interesting. She will come to a meeting. She will come to a meeting. She will come to a meeting. She will come to a meeting. She will come to a meeting. What a different class. I don't want to know. I want to know more. No, because it's the one part. I want to know more. Basically, you are dying. You don't ask questions. You are not going to happen. You are not going to happen. Don't listen to students like this. They make class three hours. I'm getting deja vu from college. This is what people used to say. She asked me. She asked me a question. This is what people used to say. Two hours. Three hours.",
+"speech_dur": 93.1,
+"speech_at": [
+[
+0.3,
+"I think it's the only important question."
+],
+[
+2.3,
+"I'm trying to guess why it was..."
+],
+[
+4.3,
+"I'm trying to guess why it was..."
+],
+[
+6.3,
+"I'm trying to guess why it was..."
+],
+[
+8.3,
+"I'm trying to guess why it was..."
+],
+[
+10.3,
+"That is interesting."
+],
+[
+12.3,
+"Something so serious around the subject."
+],
+[
+14.3,
+"It's so cool."
+],
+[
+16.3,
+"Everyone should have a round-eyed baggy ass."
+],
+[
+18.3,
+"No, I'm not talking."
+],
+[
+20.3,
+"So, I'm going to have this dress and..."
+],
+[
+22.3,
+"I'm trying to guess."
+],
+[
+24.3,
+"I can't even..."
+],
+[
+26.3,
+"You are a full talk."
+],
+[
+28.3,
+"Today, I will not talk."
+],
+[
+30.3,
+"You are the lucky charm."
+],
+[
+32.3,
+"You'll need to come to a meeting."
+],
+[
+34.3,
+"What I will say..."
+],
+[
+36.3,
+"You..."
+],
+[
+42.3,
+"She makes the class interesting."
+],
+[
+44.3,
+"She will come to a meeting."
+],
+[
+46.3,
+"She will come to a meeting."
+],
+[
+48.3,
+"She will come to a meeting."
+],
+[
+50.3,
+"She will come to a meeting."
+],
+[
+52.3,
+"She will come to a meeting."
+],
+[
+54.3,
+"What a different class."
+],
+[
+56.3,
+"I don't want to know."
+],
+[
+58.3,
+"I want to know more."
+],
+[
+60.3,
+"No, because it's the one part."
+],
+[
+62.3,
+"I want to know more."
+],
+[
+64.3,
+"Basically, you are dying."
+],
+[
+66.3,
+"You don't ask questions."
+],
+[
+68.3,
+"You are not going to happen."
+],
+[
+70.3,
+"You are not going to happen."
+],
+[
+72.3,
+"Don't listen to students like this."
+],
+[
+74.3,
+"They make class three hours."
+],
+[
+76.3,
+"I'm getting deja vu from college."
+],
+[
+80.8,
+"This is what people used to say."
+],
+[
+82.8,
+"She asked me."
+],
+[
+84.8,
+"She asked me a question."
+],
+[
+87.8,
+"This is what people used to say."
+],
+[
+89.8,
+"Two hours."
+],
+[
+91.8,
+"Three hours."
+]
+]
 },
 {
 "id": "IFM-155",
@@ -3735,7 +4543,47 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "clip intro evaluating investments presenter beige gestures beside why need different measures slide laptops bottles table opening returns evaluation module video presentation boardroom workshop investing session teaching"
+"search_terms": "clip intro evaluating investments presenter beige gestures beside why need different measures slide laptops bottles table opening returns evaluation module video presentation boardroom workshop investing session teaching all these kinds different situations actually have specific metrics take into consideration plus very often you want compare two investments made but they completely features one let grow years others taken some out then put extra money not fair them like unless use same sort assumptions measure therefore know financial world quite efficient has come able okay",
+"speech": "So, all these kinds of different situations actually have specific metrics that take into consideration all these situations plus very often you want to compare two investments that you have made. But if they have completely different features or in one you have let it grow for 10 years, in the others you have taken some out then you put some extra money in, then it is not fair to compare them like to like unless they have metrics that actually use the same sort of assumptions to measure them. Therefore, you know the financial world is quite efficient and has actually come up with metrics to actually be able to do all of this, okay.",
+"speech_dur": 51.8,
+"speech_at": [
+[
+0.0,
+"So, all these kinds of different situations actually have specific metrics that take into"
+],
+[
+7.1,
+"consideration all these situations plus very often you want to compare two investments that"
+],
+[
+14.6,
+"you have made."
+],
+[
+15.6,
+"But if they have completely different features or in one you have let it grow for 10 years,"
+],
+[
+21.0,
+"in the others you have taken some out then you put some extra money in, then it is"
+],
+[
+27.3,
+"not fair to compare them like to like unless they have metrics that actually use the same"
+],
+[
+34.5,
+"sort of assumptions to measure them."
+],
+[
+39.0,
+"Therefore, you know the financial world is quite efficient and has actually come up with"
+],
+[
+45.2,
+"metrics to actually be able to do all of this, okay."
+]
+]
 },
 {
 "id": "IFM-156",
@@ -3882,7 +4730,47 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "clip absolute rate return explained presenter points toward simple interest slide worked ₹10 lakh example participants follow open workbooks teaching how returns measured video workbook boardroom workshop investing session"
+"search_terms": "clip absolute rate return explained presenter points toward simple interest slide worked ₹10 lakh example participants follow open workbooks teaching how returns measured video workbook boardroom workshop investing session will lakhs minus right shown percentage yeah okay but doesn matter return years grow none only giving you absolute rate understand now thing investment grew from within one year versus same another gain which better time matters take into account period have stayed invested therefore just given analogy think about going road trip how basically",
+"speech": "will be 13 lakhs minus 10 lakhs right, 3 lakhs shown as a percentage yeah okay, but it doesn't matter if the return to 5 years to grow, 10 years to grow none of that it's only giving you an absolute rate of return okay, do you understand? But now the thing is if an investment grew from 10 lakhs to 13 lakhs within one year versus if that same another investment to gain from 10 lakhs to 13 lakhs within 5 years which one is a better one? The one year in the one year right, so time matters time matters this rate of return that this rate of return doesn't take into account the time period okay, that you have stayed invested for therefore it is, so I have just given an analogy just if you think about going on a road trip right okay, how it basically will",
+"speech_dur": 66.8,
+"speech_at": [
+[
+0.0,
+"will be 13 lakhs minus 10 lakhs right, 3 lakhs shown as a percentage yeah okay, but it doesn't"
+],
+[
+9.3,
+"matter if the return to 5 years to grow, 10 years to grow none of that it's only giving"
+],
+[
+15.7,
+"you an absolute rate of return okay, do you understand? But now the thing is if an"
+],
+[
+24.8,
+"investment grew from 10 lakhs to 13 lakhs within one year versus if that same another"
+],
+[
+30.5,
+"investment to gain from 10 lakhs to 13 lakhs within 5 years which one is a better one?"
+],
+[
+36.4,
+"The one year in the one year right, so time matters time matters this rate of return that"
+],
+[
+44.0,
+"this rate of return doesn't take into account the time period okay, that you have stayed"
+],
+[
+50.6,
+"invested for therefore it is, so I have just given an analogy just if you think about going"
+],
+[
+61.2,
+"on a road trip right okay, how it basically will"
+]
+]
 },
 {
 "id": "IFM-162",
@@ -3905,7 +4793,31 @@ window.IFM_V1 =
 "Other Person"
 ],
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration clip small group laptop work session three women smile toward camera while working laptops around table relaxed setting hands break moment video boardroom workshop investing smiling"
+"search_terms": "candid warm natural unposed relaxed friendly celebration clip small group laptop work session three women smile toward camera while working laptops around table relaxed setting hands break moment video boardroom workshop investing smiling debt equity you realize next six months going wipe out whatever earn because volatile your bet put into something straightforward then move said get taxed really like all earned little chap house tax bother",
+"speech": "of debt and equity and you realize that in the next six months that it's going to wipe out whatever you earn in debt because equity is going to be so volatile for the next six months. So this is your bet-or-bet is to put it into something as straightforward as an FD for six months and then move it. I said, oh it's going to get taxed because it's really it's like an all-earned little chap in the house that the tax is going to bother you.",
+"speech_dur": 29.3,
+"speech_at": [
+[
+0.0,
+"of debt and equity and you realize that in the next six months that it's going to wipe"
+],
+[
+6.2,
+"out whatever you earn in debt because equity is going to be so volatile for the next six months."
+],
+[
+12.4,
+"So this is your bet-or-bet is to put it into something as straightforward as an FD for six"
+],
+[
+19.2,
+"months and then move it. I said, oh it's going to get taxed because it's really it's like"
+],
+[
+24.6,
+"an all-earned little chap in the house that the tax is going to bother you."
+]
+]
 },
 {
 "id": "IFM-163",
@@ -4077,7 +4989,31 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "clip discussion front blank screen presenter stands display while packed table women lean some workbooks phones out open floor conversation topic transition video boardroom workshop investing session group"
+"search_terms": "clip discussion front blank screen presenter stands display while packed table women lean some workbooks phones out open floor conversation topic transition video boardroom workshop investing session group don want one these faces session you can show normal individually but from your bed",
+"speech": "So I don't want one of these faces for the session. If you can't show it as a normal. You can do it individually. But you can't show it as a normal. But if you can't show it as a normal from your bed.",
+"speech_dur": 14.3,
+"speech_at": [
+[
+0.0,
+"So I don't want one of these faces for the session."
+],
+[
+4.0,
+"If you can't show it as a normal."
+],
+[
+6.0,
+"You can do it individually."
+],
+[
+8.0,
+"But you can't show it as a normal."
+],
+[
+10.0,
+"But if you can't show it as a normal from your bed."
+]
+]
 },
 {
 "id": "IFM-170",
@@ -4152,7 +5088,19 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "clip presenter fielding raised hand question white raises her mid explanation front screen while women table follow open workbooks interactive teaching exchange video workbook boardroom workshop investing session"
+"search_terms": "clip presenter fielding raised hand question white raises her mid explanation front screen while women table follow open workbooks interactive teaching exchange video workbook boardroom workshop investing session now but not willing take risk only then will have more investments stability market",
+"speech": "now but if I am not willing to take the risk only then I will have more of my investments in a stability market.",
+"speech_dur": 7.3,
+"speech_at": [
+[
+0.0,
+"now but if I am not willing to take the risk only then I will have more of my investments"
+],
+[
+5.6,
+"in a stability market."
+]
+]
 },
 {
 "id": "IFM-173",
@@ -4343,7 +5291,55 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "clip your corporate health plan enough hiral stands beside slide addressing seated group insurance gaps covering why employer cover may insufficient video presenter boardroom women workshop protection session coverage"
+"search_terms": "clip your corporate health plan enough hiral stands beside slide addressing seated group insurance gaps covering why employer cover may insufficient video presenter boardroom women workshop protection session coverage have not reached stage yet but when they abroad get set our current insurance necessarily going cover international coverage will different you understand your amount covering internationally unless great comprehensive also check then maybe point might make sense hospitals don recognise definitely know nhs london does",
+"speech": "I have not reached that stage yet But when they go abroad, they have to get a set Our current insurance is not necessarily going to cover But international coverage will be different Do you understand? Your coverage amount, they are not covering you internationally Unless you have a great comprehensive cover So you also have to check on that Then maybe at that point it might not make sense The hospitals that you don't recognise So I definitely know that the NHS in London does not recognise",
+"speech_dur": 39.5,
+"speech_at": [
+[
+0.2,
+"I have not reached that stage yet"
+],
+[
+2.2,
+"But when they go abroad, they have to get a set"
+],
+[
+5.2,
+"Our current insurance is not necessarily going to cover"
+],
+[
+7.2,
+"But international coverage will be different"
+],
+[
+12.2,
+"Do you understand?"
+],
+[
+14.2,
+"Your coverage amount, they are not covering you internationally"
+],
+[
+18.2,
+"Unless you have a great comprehensive cover"
+],
+[
+21.2,
+"So you also have to check on that"
+],
+[
+24.2,
+"Then maybe at that point it might not make sense"
+],
+[
+27.2,
+"The hospitals that you don't recognise"
+],
+[
+31.2,
+"So I definitely know that the NHS in London does not recognise"
+]
+]
 },
 {
 "id": "IFM-181",
@@ -4369,7 +5365,67 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "clip health cover participant hiral stands your corporate plan enough slide while woman pink responds asks question others listening interactive discussion insurance video boardroom women workshop session"
+"search_terms": "clip health cover participant hiral stands your corporate plan enough slide while woman pink responds asks question others listening interactive discussion insurance video boardroom women workshop session you hospital know because happened father law right now when went london had his travel insurance medical all nhs did everything let him they didn take any payment immediately but put papers claim said sorry have pay world amount doesn apply some way paid then came not get reimbursed nothing baby can tell going honestly don like combination here easier",
+"speech": "If you are in a hospital, I know because it's happened to my father-in-law right now, when he went to London, he had his travel insurance, medical, all of that. The NHS did everything, let him go. They didn't take any payment immediately. But when we had to put in the papers for the claim, they said, sorry, you have to pay the world amount. So it doesn't apply in some way. So you paid a world amount and then you came with me? We did not get reimbursed for it at all. Nothing? Nothing. So travel insurance, baby, we can tell if you are going to travel insurance or not. Travel insurance. I honestly don't like the combination here. But it's easier to do that here.",
+"speech_dur": 39.1,
+"speech_at": [
+[
+0.0,
+"If you are in a hospital, I know because it's happened to my father-in-law right now,"
+],
+[
+4.0,
+"when he went to London, he had his travel insurance, medical, all of that."
+],
+[
+8.0,
+"The NHS did everything, let him go. They didn't take any payment immediately."
+],
+[
+13.0,
+"But when we had to put in the papers for the claim, they said,"
+],
+[
+16.0,
+"sorry, you have to pay the world amount."
+],
+[
+18.0,
+"So it doesn't apply in some way."
+],
+[
+20.0,
+"So you paid a world amount and then you came with me?"
+],
+[
+22.0,
+"We did not get reimbursed for it at all."
+],
+[
+25.0,
+"Nothing?"
+],
+[
+26.0,
+"Nothing."
+],
+[
+27.0,
+"So travel insurance, baby, we can tell if you are going to travel insurance or not."
+],
+[
+32.0,
+"Travel insurance."
+],
+[
+33.0,
+"I honestly don't like the combination here."
+],
+[
+36.0,
+"But it's easier to do that here."
+]
+]
 },
 {
 "id": "IFM-182",
@@ -5214,7 +6270,119 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "b-roll cutaway establishing supporting footage context july ever wondered reel hiral against gold bar backdrop why central banks own much hook aakara production video"
+"search_terms": "b-roll cutaway establishing supporting footage context july ever wondered reel hiral against gold bar backdrop why central banks own much hook aakara production video ever wondered why central banks own much gold before you ask bank manages country money india case rbi now here surprising part owns countries around world thousands tons not jewelry actual bars locked away walls when markets become uncertain economies slow down currencies come under pressure often behaves differently from other assets think shock absorber fastest asset most exciting one but can help cushion ride things get bumpy really interesting doesn pay interest dividends yet still choose tells sometimes job isn make rich protect aren going according plan there anything about love hear drop comment follow investing mummies more such content",
+"speech": "Ever wondered why do central banks own so much gold? And before you ask, a central bank is a bank that manages a country's money. In India's case, that's the RBI. Now here's the surprising part. The RBI owns gold. The US owns gold. Countries around the world own thousands of tons of gold, not jewelry, actual gold bars locked away in walls. Why? When markets become uncertain, economies slow down, and currencies come under pressure, gold often behaves differently from other assets. Think of it as a shock absorber. Not the fastest asset, not the most exciting one, but one that can help cushion the ride when things get bumpy. But here's the really interesting part. Gold doesn't pay interest. It doesn't pay dividends. But yet countries around the world still choose to own it. And that tells you, sometimes an asset's job isn't to make you rich. It's to help protect you when other things aren't going according to plan. Is there anything you've ever wondered about gold? I'd love to hear about it. Drop a comment. Follow investing for mummies for more such content.",
+"speech_dur": 64.9,
+"speech_at": [
+[
+0.0,
+"Ever wondered why do central banks own so much gold?"
+],
+[
+3.0,
+"And before you ask, a central bank is a bank that manages a country's money."
+],
+[
+7.0,
+"In India's case, that's the RBI."
+],
+[
+9.0,
+"Now here's the surprising part."
+],
+[
+11.0,
+"The RBI owns gold."
+],
+[
+13.0,
+"The US owns gold."
+],
+[
+14.0,
+"Countries around the world own thousands of tons of gold,"
+],
+[
+17.0,
+"not jewelry, actual gold bars locked away in walls."
+],
+[
+21.0,
+"Why?"
+],
+[
+22.0,
+"When markets become uncertain,"
+],
+[
+24.0,
+"economies slow down,"
+],
+[
+25.0,
+"and currencies come under pressure,"
+],
+[
+27.0,
+"gold often behaves differently from other assets."
+],
+[
+30.0,
+"Think of it as a shock absorber."
+],
+[
+32.0,
+"Not the fastest asset,"
+],
+[
+33.0,
+"not the most exciting one,"
+],
+[
+35.0,
+"but one that can help cushion the ride when things get bumpy."
+],
+[
+38.0,
+"But here's the really interesting part."
+],
+[
+40.0,
+"Gold doesn't pay interest."
+],
+[
+42.0,
+"It doesn't pay dividends."
+],
+[
+44.0,
+"But yet countries around the world still choose to own it."
+],
+[
+47.0,
+"And that tells you, sometimes an asset's job isn't to make you rich."
+],
+[
+51.0,
+"It's to help protect you when other things aren't going according to plan."
+],
+[
+55.0,
+"Is there anything you've ever wondered about gold?"
+],
+[
+58.0,
+"I'd love to hear about it."
+],
+[
+59.0,
+"Drop a comment."
+],
+[
+60.0,
+"Follow investing for mummies for more such content."
+]
+]
 },
 {
 "id": "IFM-217",
@@ -6354,7 +7522,83 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "august assets class part what asset reel one minute investing school hiral seated black houses composited behind her series finance terms made simple aakara"
+"search_terms": "august assets class part what asset reel one minute investing school hiral seated black houses composited behind her series finance terms made simple aakara when most people hear word investing they think one thing stocks but just room much bigger house welcome minute school where break down into simple bite size lessons today lesson what asset you invest your money has live somewhere assets different homes can choose help grow savings account bond gold stock even real estate all places park really about choosing from whole neighborhood interesting part every personality some love stability chase growth highly unpredictable become everyone best friends during uncertain times follow mummies let meet them two",
+"speech": "When most people hear the word investing, they think of one thing, stocks. But stocks are just one room in a much bigger house. Welcome to the One Minute Investing School where we break down investing into simple bite-size lessons. Today's lesson, what is an asset? When you invest, your money has to live somewhere. That somewhere is an asset. Think of assets as different homes you can choose for your money to help it grow. A savings account is an asset. A bond is an asset. Gold is an asset. A stock is an asset. Even real estate is an asset. They're all different places you can choose to park your money. And investing is really about choosing from a whole neighborhood of assets. The interesting part, every asset has a different personality. Some love stability, some chase growth and some are highly unpredictable. And some become everyone's best friends during uncertain times. Follow investing for mummies and let's meet them in part two of the One Minute Investing School.",
+"speech_dur": 59.0,
+"speech_at": [
+[
+0.0,
+"When most people hear the word investing, they think of one thing, stocks."
+],
+[
+4.5,
+"But stocks are just one room in a much bigger house."
+],
+[
+7.6,
+"Welcome to the One Minute Investing School where we break down investing into simple bite-size lessons."
+],
+[
+13.1,
+"Today's lesson, what is an asset?"
+],
+[
+15.2,
+"When you invest, your money has to live somewhere."
+],
+[
+18.1,
+"That somewhere is an asset."
+],
+[
+19.9,
+"Think of assets as different homes you can choose for your money to help it grow."
+],
+[
+24.2,
+"A savings account is an asset."
+],
+[
+26.2,
+"A bond is an asset."
+],
+[
+27.9,
+"Gold is an asset."
+],
+[
+29.4,
+"A stock is an asset."
+],
+[
+31.0,
+"Even real estate is an asset."
+],
+[
+33.3,
+"They're all different places you can choose to park your money."
+],
+[
+36.6,
+"And investing is really about choosing from a whole neighborhood of assets."
+],
+[
+40.9,
+"The interesting part, every asset has a different personality."
+],
+[
+44.6,
+"Some love stability, some chase growth and some are highly unpredictable."
+],
+[
+48.7,
+"And some become everyone's best friends during uncertain times."
+],
+[
+52.6,
+"Follow investing for mummies and let's meet them in part two of the One Minute Investing School."
+]
+]
 },
 {
 "id": "IFM-265",
@@ -6383,7 +7627,63 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "august assets class part types reel one minute investing school hiral black four family member cutouts behind her cash debt real estate gold equity aakara"
+"search_terms": "august assets class part types reel one minute investing school hiral black four family member cutouts behind her cash debt real estate gold equity aakara not every asset same fact has own personality welcome one minute investing school part two lesson what you ever wondered why investors different assets cash cautious friend always available dependable never life party debt predictable likes routines keeps promises prefers stability over surprises real estate slow steady takes commitment needs patience but stick around long haul gold crisis when everyone else panicking often cool equity ambitious dreams big can achieve amazing things little dramatic along way here important best because situations need friends foundation something called allocation follow mummies more such lessons from join our workshops where explain financial concepts using simple language everyday analogy",
+"speech": "Not every asset is the same. In fact, every asset has its own personality. Welcome to the One Minute Investing School and this is part two of the lesson, What is an Asset? And if you've ever wondered why investors own different assets, this is why. Cash is a cautious friend. Always available, always dependable, never the life of the party. Debt is a predictable friend. Likes routines, keeps promises, prefers stability over surprises. Real estate is the slow and steady friend. Takes commitment, needs patience, but likes to stick around for the long haul. Gold is the crisis friend. When everyone else is panicking, gold often keeps its cool. Equity is the ambitious friend. Dreams big can achieve amazing things that can be a little dramatic along the way. And here's the important part. No personality is the best because different situations need different friends. And that's the foundation of something called asset allocation. Follow Investing for Mummies for more such lessons from the One Minute Investing School and join our workshops where we explain financial concepts using simple language and everyday analogy.",
+"speech_dur": 67.9,
+"speech_at": [
+[
+0.0,
+"Not every asset is the same. In fact, every asset has its own personality."
+],
+[
+4.6,
+"Welcome to the One Minute Investing School and this is part two of the lesson,"
+],
+[
+8.8,
+"What is an Asset? And if you've ever wondered why investors own different assets, this is why."
+],
+[
+13.6,
+"Cash is a cautious friend. Always available, always dependable, never the life of the party."
+],
+[
+19.3,
+"Debt is a predictable friend. Likes routines, keeps promises, prefers stability over surprises."
+],
+[
+26.0,
+"Real estate is the slow and steady friend. Takes commitment, needs patience,"
+],
+[
+30.8,
+"but likes to stick around for the long haul. Gold is the crisis friend. When everyone else is panicking,"
+],
+[
+37.1,
+"gold often keeps its cool. Equity is the ambitious friend. Dreams big can achieve amazing things"
+],
+[
+44.3,
+"that can be a little dramatic along the way. And here's the important part. No personality"
+],
+[
+49.3,
+"is the best because different situations need different friends. And that's the foundation"
+],
+[
+54.1,
+"of something called asset allocation. Follow Investing for Mummies for more such lessons"
+],
+[
+58.7,
+"from the One Minute Investing School and join our workshops where we explain"
+],
+[
+62.6,
+"financial concepts using simple language and everyday analogy."
+]
+]
 },
 {
 "id": "IFM-266",
@@ -6519,7 +7819,155 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "september ranking reel hiral beside high low risk board these investments risky ranks five investment types workshops placeholder shot list format aakara"
+"search_terms": "september ranking reel hiral beside high low risk board these investments risky ranks five investment types workshops placeholder shot list format aakara hey hero can you rank these investments terms risk from low high okay but quick disclaimer vary product just broad rankings not hard fast rules let savings account very your money safe easily accessible real estate moderate property values rise fall selling isn always easy gold has stood test time prices still move down fixed deposit returns predictable doesn swing market equity mutual funds again depends fund one thing need remember linked stock debt depending crypto dramatically also stocks ranking wouldn give all same smaller companies more volatile than larger ones individual matters too investing there trade off between return higher expected come want protect top priority then have accept follow mummies such learning",
+"speech": "Hey, hero, can you rank these investments in terms of risk from low to high? Okay, but a quick disclaimer, risk can vary from product to product. So these are just broad rankings, not hard and fast rules. Let's go. Savings account. Very low. Your money is safe and easily accessible. Real estate. Moderate. Property values can rise or fall and selling isn't always quick or easy. Gold. Low to moderate. Gold has stood the test of time, but gold prices can still move up and down. Fixed deposit? Low. Returns are predictable and your money doesn't swing with the market. Equity mutual funds. Moderate to high. But again, it depends on the fund. One thing you need to remember is that your money is linked to the stock market. Debt mutual funds. Low to moderate, but your returns can vary depending on the fund. Crypto. Very high. Prices can move dramatically, so the risk can also be very high. Stocks. Moderate to high. But again, this is a broad ranking. I wouldn't give all stocks the same ranking. Smaller companies are more volatile than the larger ones. But the individual stock matters too. In investing, there's a trade-off between risk and return. Higher expected returns come with higher risk. And if you want to protect your money and that's your top priority, then you have to accept low expected returns. Follow investing for mummies for more such learning.",
+"speech_dur": 76.4,
+"speech_at": [
+[
+0.1,
+"Hey, hero, can you rank these investments in terms of risk from low to high?"
+],
+[
+4.0,
+"Okay, but a quick disclaimer, risk can vary from product to product."
+],
+[
+7.5,
+"So these are just broad rankings, not hard and fast rules."
+],
+[
+10.1,
+"Let's go."
+],
+[
+11.1,
+"Savings account."
+],
+[
+12.1,
+"Very low."
+],
+[
+13.1,
+"Your money is safe and easily accessible."
+],
+[
+15.1,
+"Real estate."
+],
+[
+16.1,
+"Moderate."
+],
+[
+17.1,
+"Property values can rise or fall and selling isn't always quick or easy."
+],
+[
+21.1,
+"Gold."
+],
+[
+22.1,
+"Low to moderate."
+],
+[
+23.1,
+"Gold has stood the test of time, but gold prices can still move up and down."
+],
+[
+27.1,
+"Fixed deposit?"
+],
+[
+28.1,
+"Low."
+],
+[
+29.1,
+"Returns are predictable and your money doesn't swing with the market."
+],
+[
+32.0,
+"Equity mutual funds."
+],
+[
+33.0,
+"Moderate to high."
+],
+[
+34.0,
+"But again, it depends on the fund."
+],
+[
+36.0,
+"One thing you need to remember is that your money is linked to the stock market."
+],
+[
+40.0,
+"Debt mutual funds."
+],
+[
+41.0,
+"Low to moderate, but your returns can vary depending on the fund."
+],
+[
+45.0,
+"Crypto."
+],
+[
+46.0,
+"Very high."
+],
+[
+47.0,
+"Prices can move dramatically, so the risk can also be very high."
+],
+[
+50.0,
+"Stocks."
+],
+[
+51.0,
+"Moderate to high."
+],
+[
+52.0,
+"But again, this is a broad ranking."
+],
+[
+54.0,
+"I wouldn't give all stocks the same ranking."
+],
+[
+56.0,
+"Smaller companies are more volatile than the larger ones."
+],
+[
+59.0,
+"But the individual stock matters too."
+],
+[
+61.0,
+"In investing, there's a trade-off between risk and return."
+],
+[
+64.0,
+"Higher expected returns come with higher risk."
+],
+[
+67.0,
+"And if you want to protect your money and that's your top priority,"
+],
+[
+70.0,
+"then you have to accept low expected returns."
+],
+[
+73.0,
+"Follow investing for mummies for more such learning."
+]
+]
 },
 {
 "id": "IFM-272",
@@ -6689,7 +8137,23 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration teens workshop celebration moment aug 2026 teen pumps his fist during game activity while another laughs across boardroom table candid win from investing session august sakshi video stories footage"
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration teens workshop celebration moment aug 2026 teen pumps his fist during game activity while another laughs across boardroom table candid win from investing session august sakshi video stories footage how much money did you lose month god remember",
+"speech": "How much money did you lose a month? Oh my God. So you remember",
+"speech_dur": 14.1,
+"speech_at": [
+[
+2.1,
+"How much money did you lose a month?"
+],
+[
+9.1,
+"Oh my God."
+],
+[
+13.1,
+"So you remember"
+]
+]
 },
 {
 "id": "IFM-280",
@@ -6713,7 +8177,23 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "b-roll cutaway establishing supporting footage context teens workshop room discussion aug 2026 wide shot around conference table one participant speaking group during investing session august sakshi boardroom video stories footage"
+"search_terms": "b-roll cutaway establishing supporting footage context teens workshop room discussion aug 2026 wide shot around conference table one participant speaking group during investing session august sakshi boardroom video stories footage will next one everyone chosen yes fund manager equity mainly invests what properties there company goal government loans everybody played state where you seeing screen right below time",
+"speech": "I will go to the next one, everyone chosen, yes the fund manager and equity fund mainly invests in what, properties, there is a company's goal of government loans, everybody played it, it's on the state, where are you seeing it on the screen, the right below the time",
+"speech_dur": 35.2,
+"speech_at": [
+[
+0.0,
+"I will go to the next one, everyone chosen, yes the fund manager and equity fund mainly"
+],
+[
+8.1,
+"invests in what, properties, there is a company's goal of government loans, everybody played"
+],
+[
+14.5,
+"it, it's on the state, where are you seeing it on the screen, the right below the time"
+]
+]
 },
 {
 "id": "IFM-281",
@@ -6737,7 +8217,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teens workshop table activity aug 2026 three working during one checking her phone part exercise investing session august sakshi boardroom video stories footage"
+"search_terms": "teens workshop table activity aug 2026 three working during one checking her phone part exercise investing session august sakshi boardroom video stories footage nice not bad lakhs eshna also pretty rayana close each other awesome",
+"speech": "5, 3, nice, not bad, 98 lakhs, Eshna is also pretty, Eshna and Rayana are pretty close to each other, awesome, nice.",
+"speech_dur": 13.2,
+"speech_at": [
+[
+0.0,
+"5, 3, nice, not bad, 98 lakhs, Eshna is also pretty, Eshna and Rayana are pretty close to each other, awesome, nice."
+]
+]
 },
 {
 "id": "IFM-282",
@@ -6761,7 +8249,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teens workshop watching deck aug 2026 table facing screen during slide presentation investing session august sakshi boardroom video stories footage"
+"search_terms": "teens workshop watching deck aug 2026 table facing screen during slide presentation investing session august sakshi boardroom video stories footage you put away what intend save invest then spend left",
+"speech": "you put away what you intend to save or invest and then spend with what is left.",
+"speech_dur": 6.2,
+"speech_at": [
+[
+0.0,
+"you put away what you intend to save or invest and then spend with what is left."
+]
+]
 },
 {
 "id": "IFM-283",
@@ -6785,7 +8281,35 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teens workshop ifm game laptop aug 2026 participant reacts while playing green screen visible interactive segment investing session august sakshi boardroom video stories footage"
+"search_terms": "teens workshop ifm game laptop aug 2026 participant reacts while playing green screen visible interactive segment investing session august sakshi boardroom video stories footage much money you what like okay but she",
+"speech": "That's so much money on you. What? Like what? What? What? Okay, but she...",
+"speech_dur": 8.0,
+"speech_at": [
+[
+0.0,
+"That's so much money on you."
+],
+[
+2.0,
+"What?"
+],
+[
+3.0,
+"Like what?"
+],
+[
+5.0,
+"What?"
+],
+[
+6.0,
+"What?"
+],
+[
+7.0,
+"Okay, but she..."
+]
+]
 },
 {
 "id": "IFM-284",
@@ -6809,7 +8333,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teens workshop listening aug 2026 around table during session ifm worksheets pencil cases out investing august sakshi boardroom video stories footage"
+"search_terms": "teens workshop listening aug 2026 around table during session ifm worksheets pencil cases out investing august sakshi boardroom video stories footage yes okay size doesn mean suits your goal you have based what devisha",
+"speech": "Yes, okay. Size doesn't mean it suits your goal. You have to go based on what your goal is, okay? Okay, Devisha 2.37",
+"speech_dur": 12.7,
+"speech_at": [
+[
+0.8,
+"Yes, okay. Size doesn't mean it suits your goal. You have to go based on what your goal is, okay?"
+],
+[
+9.3,
+"Okay, Devisha 2.37"
+]
+]
 },
 {
 "id": "IFM-285",
@@ -6833,7 +8369,27 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teens workshop animated answer aug 2026 teen gestures animatedly while answering participating table investing session august sakshi boardroom video stories footage"
+"search_terms": "teens workshop animated answer aug 2026 teen gestures animatedly while answering participating table investing session august sakshi boardroom video stories footage very moving also direct right because you",
+"speech": "very moving also direct right? because you go",
+"speech_dur": 4.9,
+"speech_at": [
+[
+0.5,
+"very moving also"
+],
+[
+2.5,
+"direct"
+],
+[
+3.5,
+"right?"
+],
+[
+4.5,
+"because you go"
+]
+]
 },
 {
 "id": "IFM-286",
@@ -6860,7 +8416,19 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "teens workshop hiral teaching compounding aug 2026 presents what you invest every month slide year wealth outcomes investing session august sakshi boardroom video stories footage"
+"search_terms": "teens workshop hiral teaching compounding aug 2026 presents what you invest every month slide year wealth outcomes investing session august sakshi boardroom video stories footage then you cut years your capital would have put lakhs worth about crores",
+"speech": "And then you cut to 40 years, your capital that you would have put in is 24 lakhs and that would be worth about 6 crores.",
+"speech_dur": 10.6,
+"speech_at": [
+[
+0.5,
+"And then you cut to 40 years, your capital that you would have put in is 24 lakhs and"
+],
+[
+7.5,
+"that would be worth about 6 crores."
+]
+]
 },
 {
 "id": "IFM-287",
@@ -6886,7 +8454,23 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "teens workshop screen walkthrough aug 2026 teen points during laptop open table investing session august sakshi boardroom video stories footage"
+"search_terms": "teens workshop screen walkthrough aug 2026 teen points during laptop open table investing session august sakshi boardroom video stories footage legs there good job wow have asahi number arjuna satshah vishkai you least caught guys should give bit analysis what did",
+"speech": "with 8.5 legs there. Good job. Wow, we have Asahi number 2 at 4.5, Arjuna 3.5, Satshah at 2.8, Vishkai you at least caught up. Guys, it should give you a bit of an analysis of what you did.",
+"speech_dur": 25.0,
+"speech_at": [
+[
+0.6,
+"with 8.5 legs there. Good job. Wow, we have Asahi number 2 at 4.5, Arjuna 3.5, Satshah"
+],
+[
+12.5,
+"at 2.8, Vishkai you at least caught up. Guys, it should give you a bit of an analysis of"
+],
+[
+21.6,
+"what you did."
+]
+]
 },
 {
 "id": "IFM-288",
@@ -7800,7 +9384,71 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "july hiral expertise reel camera blue gradient finance pages confuse you founder positioning files folder aakara finished delivered"
+"search_terms": "july hiral expertise reel camera blue gradient finance pages confuse you founder positioning files folder aakara finished delivered you don need finance expert understand investing last video shared about how spent years writing wealth creation but didn know manage own money myself when realized love spreadsheets great numbers all key concept they far simpler than most people think also wasn alone many women want feel overwhelmed complicated seems why started mummies where run workshops break down simple language using interactive games relatable analogy space judgement intimidating jargon pretending things just safe learn ask questions build confidence ever felt intimidated not smart enough career family household your too follow join our financial",
+"speech": "So you don't need to be a finance expert to understand investing. So in the last video I shared about how I spent years writing about wealth creation but I didn't know how to manage my own money myself. And that's when I realized you don't need to love spreadsheets or be great with numbers. All you need is to understand the key concept and they're far simpler than most people think. I also realized I wasn't alone. So many women want to understand money but feel overwhelmed by how complicated finance seems. That's why I started investing for mummies where we run workshops that break down investing in simple language using interactive games and relatable analogy. A space with no judgement, no intimidating jargon and no pretending to know things you don't. Just a safe space to learn, ask questions and build confidence. If you've ever felt intimidated by finance, you're not alone. If you're smart enough to manage a career, a family, a household, you're smart enough to manage your money too. Follow investing for mummies and join our workshops where we build financial confidence.",
+"speech_dur": 65.1,
+"speech_at": [
+[
+0.0,
+"So you don't need to be a finance expert to understand investing."
+],
+[
+3.3,
+"So in the last video I shared about how I spent years writing about wealth creation"
+],
+[
+7.8,
+"but I didn't know how to manage my own money myself."
+],
+[
+10.5,
+"And that's when I realized you don't need to love spreadsheets or be great with numbers."
+],
+[
+15.3,
+"All you need is to understand the key concept and they're far simpler than most people think."
+],
+[
+20.5,
+"I also realized I wasn't alone."
+],
+[
+23.0,
+"So many women want to understand money but feel overwhelmed by how complicated finance seems."
+],
+[
+28.7,
+"That's why I started investing for mummies where we run workshops that break down investing in"
+],
+[
+34.1,
+"simple language using interactive games and relatable analogy."
+],
+[
+38.3,
+"A space with no judgement, no intimidating jargon and no pretending to know things you don't."
+],
+[
+44.3,
+"Just a safe space to learn, ask questions and build confidence."
+],
+[
+48.7,
+"If you've ever felt intimidated by finance, you're not alone."
+],
+[
+52.6,
+"If you're smart enough to manage a career, a family, a household,"
+],
+[
+56.2,
+"you're smart enough to manage your money too."
+],
+[
+58.7,
+"Follow investing for mummies and join our workshops where we build financial confidence."
+]
+]
 },
 {
 "id": "IFM-326",
@@ -7843,7 +9491,55 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "august 1x1 reel hiral blue holding gold bar one hand boxed necklace other simple money rule will change your life aakara finished delivered"
+"search_terms": "august 1x1 reel hiral blue holding gold bar one hand boxed necklace other simple money rule will change your life aakara finished delivered want buy something you don really need try one rule first every luxury purchase asset too new handbag add your investment gadget sips jewelry gold etf treat future self not just present forget tag friend who think should watch reel follow investing mummies join our workshops more such tips",
+"speech": "Want to buy something you don't really need? Try the one-to-one rule first. For every luxury purchase, buy an asset too. New handbag, add to your investment. New gadget, add to your SIPs. New jewelry, add to your Gold ETF. Treat your future self too, not just your present self. And don't forget to tag that one friend who you think should really watch this reel. Follow investing for mummies and join our workshops for more such tips.",
+"speech_dur": 27.1,
+"speech_at": [
+[
+0.0,
+"Want to buy something you don't really need?"
+],
+[
+2.0,
+"Try the one-to-one rule first."
+],
+[
+3.7,
+"For every luxury purchase, buy an asset too."
+],
+[
+6.9,
+"New handbag, add to your investment."
+],
+[
+9.4,
+"New gadget, add to your SIPs."
+],
+[
+12.1,
+"New jewelry, add to your Gold ETF."
+],
+[
+14.9,
+"Treat your future self too, not just your present self."
+],
+[
+17.9,
+"And don't forget to tag that one friend"
+],
+[
+19.8,
+"who you think should really watch this reel."
+],
+[
+22.0,
+"Follow investing for mummies"
+],
+[
+23.4,
+"and join our workshops for more such tips."
+]
+]
 },
 {
 "id": "IFM-328",
@@ -7915,7 +9611,63 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "rbi repo rate central bank august rbi part reel hiral green striped shirt mid sentence honest screen explainer aakara finished delivered",
+"search_terms": "rbi repo rate central bank august rbi part reel hiral green striped shirt mid sentence honest screen explainer aakara finished delivered honest have you ever heard rbi has announced monetary policy wondered okay but why should care exactly what going answer today reserve bank india like money manager our country needs six times year one big question borrowing become cheaper more expensive does matter because when cheap people buy homes cars businesses westmore everyone starts spending too much prices can shoot all place makes little slow things down keep under control every decision they make something called here interesting part how changing single number repo rate influence your emi rates even stock market let ridiculously simple two",
+"speech": "Be honest, have you ever heard the RBI has announced its monetary policy and wondered, okay, but why should I care? That's exactly what we're going to answer today. The RBI or the Reserve Bank of India is like the money manager of our country and it needs six times a year to answer one big question. Should borrowing money become cheaper or more expensive? Why does that matter? Because when borrowing money is cheap, people buy more homes, cars and businesses in Westmore. But when everyone starts spending too much, prices can shoot up. That's all in place. So RBI makes borrowing a little more expensive to slow things down and keep prices under control. And every decision they make is announced in something that's called the monetary policy. But here's the interesting part. How does the RBI make borrowing cheaper or more expensive? By changing one single number, the repo rate. And that one number can influence your EMI, FD rates, businesses and even the stock market. So what exactly is the repo rate? Let's make it ridiculously simple in part two.",
+"speech_dur": 66.9,
+"speech_at": [
+[
+0.0,
+"Be honest, have you ever heard the RBI has announced its monetary policy and wondered,"
+],
+[
+5.8,
+"okay, but why should I care? That's exactly what we're going to answer today."
+],
+[
+9.7,
+"The RBI or the Reserve Bank of India is like the money manager of our country"
+],
+[
+14.5,
+"and it needs six times a year to answer one big question."
+],
+[
+18.0,
+"Should borrowing money become cheaper or more expensive? Why does that matter?"
+],
+[
+22.9,
+"Because when borrowing money is cheap, people buy more homes, cars and businesses in Westmore."
+],
+[
+28.8,
+"But when everyone starts spending too much, prices can shoot up."
+],
+[
+33.3,
+"That's all in place. So RBI makes borrowing a little more expensive to slow things down"
+],
+[
+39.2,
+"and keep prices under control. And every decision they make is announced in something that's called"
+],
+[
+44.2,
+"the monetary policy. But here's the interesting part. How does the RBI make borrowing cheaper"
+],
+[
+49.7,
+"or more expensive? By changing one single number, the repo rate. And that one number can influence"
+],
+[
+56.0,
+"your EMI, FD rates, businesses and even the stock market. So what exactly is the repo rate?"
+],
+[
+62.1,
+"Let's make it ridiculously simple in part two."
+]
+],
 "kit": "portrait",
 "kit_rank": 2
 },
@@ -7966,7 +9718,51 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "august woman equality reel hiral white lace second presenter composited who says money conversations aren you women day topical aakara finished delivered"
+"search_terms": "august woman equality reel hiral white lace second presenter composited who says money conversations aren you women day topical aakara finished delivered women know where every document house except investing manage kids schedules family calendar half time itself but when someone says mutual funds say our husband will handle honestly why helping build life work sacrifices unpaid labour then wealth too don need become finance experts overnight start participating decisions conversations shape future feels less scary explains simply follow mummies bigger friendly lessons",
+"speech": "Women know where every document in the house is, except the investing document. We manage the house, the kids, the schedules, the family calendar, half the time the family itself. But when someone says, mutual funds, we say our husband will handle it. And honestly, why? If we are helping build this life to our work, our sacrifices, our unpaid labour, then this is our family's wealth too. So no, we don't need to become finance experts overnight. But we do need to start participating in decisions and conversations that shape our future. Finance feels less scary when someone explains it to us simply. Follow investing for mummies for bigger, friendly lessons.",
+"speech_dur": 41.9,
+"speech_at": [
+[
+0.0,
+"Women know where every document in the house is, except the investing document."
+],
+[
+4.5,
+"We manage the house, the kids, the schedules, the family calendar, half the time the family itself."
+],
+[
+10.4,
+"But when someone says, mutual funds, we say our husband will handle it."
+],
+[
+15.0,
+"And honestly, why?"
+],
+[
+16.6,
+"If we are helping build this life to our work, our sacrifices, our unpaid labour,"
+],
+[
+22.6,
+"then this is our family's wealth too."
+],
+[
+24.7,
+"So no, we don't need to become finance experts overnight."
+],
+[
+28.3,
+"But we do need to start participating in decisions and conversations that shape our future."
+],
+[
+33.4,
+"Finance feels less scary when someone explains it to us simply."
+],
+[
+37.5,
+"Follow investing for mummies for bigger, friendly lessons."
+]
+]
 },
 {
 "id": "IFM-333",
@@ -8205,7 +10001,111 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Aakara",
-"search_terms": "testimonial review feedback social proof word of mouth september brand awareness can stop apologizing single mp4 sampled frame extreme motion blurred close woman speaking camera only mouth chin neck gold hoop earring dark hair denim blue collared shirt caption white box across lower third handheld fast moving reel"
+"search_terms": "testimonial review feedback social proof word of mouth september brand awareness can stop apologizing single mp4 sampled frame extreme motion blurred close woman speaking camera only mouth chin neck gold hoop earring dark hair denim blue collared shirt caption white box across lower third handheld fast moving reel can stop apologizing about not knowing money because hear all time don know too much investing really bad numbers sorry but silly question often comes apology finance somehow reflection how capable think were taught math science even baking weren invest something you never failure certainly need pretend understand just afraid someone else might judge ask stupid again confidence doesn come from everything learn exactly what want start mummies judgment jargon embarrassment safe space say teach resonates follow join our workshops",
+"speech": "Can we stop apologizing about not knowing about money? Because I hear this all the time. I don't know too much about investing. I'm really bad with numbers. I'm sorry, but this is a really silly question. And often it comes with an apology. As if not knowing about finance, somehow is a reflection about how capable we are. Think about it. We were taught math, science, even baking. But we weren't taught how to invest. Not knowing something you were never taught is not a failure. You certainly don't need to pretend that you understand something just because you're afraid that someone else might judge you. Ask the question. Ask the stupid question. And if you don't understand it, ask again. Because confidence doesn't come from knowing everything. It comes from knowing that you can learn. And that's exactly what we want to start at investing for mummies. No judgment, no jargon, no embarrassment. Just a safe space for you to say, I don't know, teach me. If this resonates with you, follow investing for mummies and join our workshops.",
+"speech_dur": 60.0,
+"speech_at": [
+[
+0.0,
+"Can we stop apologizing about not knowing about money?"
+],
+[
+3.0,
+"Because I hear this all the time."
+],
+[
+5.0,
+"I don't know too much about investing."
+],
+[
+7.0,
+"I'm really bad with numbers."
+],
+[
+8.8,
+"I'm sorry, but this is a really silly question."
+],
+[
+11.5,
+"And often it comes with an apology."
+],
+[
+13.5,
+"As if not knowing about finance,"
+],
+[
+15.6,
+"somehow is a reflection about how capable we are."
+],
+[
+18.4,
+"Think about it."
+],
+[
+19.4,
+"We were taught math, science, even baking."
+],
+[
+22.2,
+"But we weren't taught how to invest."
+],
+[
+24.1,
+"Not knowing something you were never taught is not a failure."
+],
+[
+27.3,
+"You certainly don't need to pretend that you understand something"
+],
+[
+30.2,
+"just because you're afraid that someone else might judge you."
+],
+[
+32.9,
+"Ask the question."
+],
+[
+34.2,
+"Ask the stupid question."
+],
+[
+36.2,
+"And if you don't understand it, ask again."
+],
+[
+38.7,
+"Because confidence doesn't come from knowing everything."
+],
+[
+41.4,
+"It comes from knowing that you can learn."
+],
+[
+43.4,
+"And that's exactly what we want to start at investing for mummies."
+],
+[
+46.6,
+"No judgment, no jargon, no embarrassment."
+],
+[
+49.5,
+"Just a safe space for you to say,"
+],
+[
+51.8,
+"I don't know, teach me."
+],
+[
+53.7,
+"If this resonates with you,"
+],
+[
+55.4,
+"follow investing for mummies and join our workshops."
+]
+]
 },
 {
 "id": "IFM-343",
@@ -8815,7 +10715,51 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "why ifm founder piece camera talking head brand video hiral sits cream sofa holding printed mug white blue textured knit top skirt speaking potted areca palm sheer sunlit curtains fill background soft natural daylight clean vertical framing",
+"search_terms": "why ifm founder piece camera talking head brand video hiral sits cream sofa holding printed mug white blue textured knit top skirt speaking potted areca palm sheer sunlit curtains fill background soft natural daylight clean vertical framing even business journalist didn fully understand how manage money nifty ratios sips mutual funds nobody taught what these meant realised many incredibly intelligent women quietly feel way tune out conversations not because incapable but simple language why created investing mums safe space where finances explain through games analogies everyday examples judgement pretending about turning into financial experts overnight building confidence slowly take charge your future",
+"speech": "Even as a business journalist, I didn't fully understand how to manage my money. Nifty, PE ratios, SIPs, mutual funds, nobody taught us what these meant. And I realised how many incredibly intelligent women quietly feel this way. We tune out of money conversations not because we're incapable, but nobody taught us these in simple language. That's why I created Investing for Mums, a safe space where finances explain through games, analogies and everyday examples. No judgement, no pretending to understand. This is not about turning women into financial experts overnight. It's about building the confidence to slowly take charge of your financial future.",
+"speech_dur": 42.0,
+"speech_at": [
+[
+0.0,
+"Even as a business journalist, I didn't fully understand how to manage my money."
+],
+[
+4.3,
+"Nifty, PE ratios, SIPs, mutual funds, nobody taught us what these meant."
+],
+[
+10.5,
+"And I realised how many incredibly intelligent women quietly feel this way."
+],
+[
+15.6,
+"We tune out of money conversations not because we're incapable,"
+],
+[
+18.8,
+"but nobody taught us these in simple language."
+],
+[
+21.3,
+"That's why I created Investing for Mums,"
+],
+[
+23.7,
+"a safe space where finances explain through games, analogies and everyday examples."
+],
+[
+29.3,
+"No judgement, no pretending to understand."
+],
+[
+32.1,
+"This is not about turning women into financial experts overnight."
+],
+[
+35.9,
+"It's about building the confidence to slowly take charge of your financial future."
+]
+],
 "kit": "portrait",
 "kit_rank": 2
 },
@@ -8838,7 +10782,19 @@ window.IFM_V1 =
 "Other Person"
 ],
 "source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof certificate handover brownies boardroom table handheld vertical clip small woman red black floral kurta back camera reaches across dark wood hand rolled smiling green print top set plate chocolate sandwiches card machine pen pot tissue box whiteboard wall behind workshop"
+"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof certificate handover brownies boardroom table handheld vertical clip small woman red black floral kurta back camera reaches across dark wood hand rolled smiling green print top set plate chocolate sandwiches card machine pen pot tissue box whiteboard wall behind workshop going put rest video then see you next one yeah all",
+"speech": "I'm going to put it on for the rest of the video and then we'll see you in the next one. Yeah, I'll see you all.",
+"speech_dur": 4.4,
+"speech_at": [
+[
+0.0,
+"I'm going to put it on for the rest of the video and then we'll see you in the next one."
+],
+[
+2.0,
+"Yeah, I'll see you all."
+]
+]
 },
 {
 "id": "IFM-369",
@@ -8859,7 +10815,47 @@ window.IFM_V1 =
 "Other Person"
 ],
 "source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof certificate handover across boardroom table group watching handheld vertical clip down length open passed between two pairs hands while five women stand along far side smiling one blue striped shirt wall screen others lilac black print tops glasses water coasters"
+"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof certificate handover across boardroom table group watching handheld vertical clip down length open passed between two pairs hands while five women stand along far side smiling one blue striped shirt wall screen others lilac black print tops glasses water coasters bharti mahi can you pass thank prachi ashima somebody else samira agarwal amrita samrati girls give quick picture",
+"speech": "Bharti, Mahi, can you pass it to me? Thank you. Prachi, Ashima. Thank you. This is somebody else. Samira, Agarwal. Thank you. Amrita, Samrati. Girls, give me a quick picture.",
+"speech_dur": 22.5,
+"speech_at": [
+[
+1.5,
+"Bharti, Mahi, can you pass it to me?"
+],
+[
+5.5,
+"Thank you."
+],
+[
+6.5,
+"Prachi, Ashima."
+],
+[
+9.5,
+"Thank you."
+],
+[
+12.5,
+"This is somebody else."
+],
+[
+15.5,
+"Samira, Agarwal."
+],
+[
+17.5,
+"Thank you."
+],
+[
+18.5,
+"Amrita, Samrati."
+],
+[
+20.5,
+"Girls, give me a quick picture."
+]
+]
 },
 {
 "id": "IFM-370",
@@ -9014,7 +11010,15 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "aug 2026 corporate workshop opening session investing mummies title slide facilitator blue pinstripe sleeveless shirt dress stands beside wall mounted screen showing illustrated one hand resting desk open macbook carries same ifm logo artwork start frame boardroom august office women",
+"search_terms": "aug 2026 corporate workshop opening session investing mummies title slide facilitator blue pinstripe sleeveless shirt dress stands beside wall mounted screen showing illustrated one hand resting desk open macbook carries same ifm logo artwork start frame boardroom august office women thank you joining here today welcome investing mummies meant safe space where all can come together please feel free ask many questions possible",
+"speech": "Thank you for joining me here today. Welcome to Investing for Mummies. This is meant to be a safe space where all of you can come together and please feel free to ask as many questions as possible.",
+"speech_dur": 12.4,
+"speech_at": [
+[
+0.0,
+"Thank you for joining me here today. Welcome to Investing for Mummies. This is meant to be a safe space where all of you can come together and please feel free to ask as many questions as possible."
+]
+],
 "kit": "teaching",
 "kit_rank": 1
 },
@@ -9040,7 +11044,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "aug 2026 corporate workshop boardroom wide participants seated around table opening slide from doorway eight nine women long wooden printed ifm workbooks water bottles glasses front them all turned toward wall mounted screen far end ceiling strip lights overhead august"
+"search_terms": "aug 2026 corporate workshop boardroom wide participants seated around table opening slide from doorway eight nine women long wooden printed ifm workbooks water bottles glasses front them all turned toward wall mounted screen far end ceiling strip lights overhead august form side business you doing whatever imagine your income 100 rupees when calculate what have available remember always",
+"speech": "in the form of a side business that you are doing, whatever it is. So imagine your income is 100 rupees and when we calculate what income we have available to us, remember we always",
+"speech_dur": 13.4,
+"speech_at": [
+[
+0.0,
+"in the form of a side business that you are doing, whatever it is. So imagine your income"
+],
+[
+6.7,
+"is 100 rupees and when we calculate what income we have available to us, remember we always"
+]
+]
 },
 {
 "id": "IFM-378",
@@ -9064,7 +11080,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "aug 2026 corporate workshop hands illustrated ifm workbook close over shoulder two participants boardroom table hand rests open cartoon spread clearly visible pen spiral notepad striped sleeve alongside detail printed course material use august office women live game stock market"
+"search_terms": "aug 2026 corporate workshop hands illustrated ifm workbook close over shoulder two participants boardroom table hand rests open cartoon spread clearly visible pen spiral notepad striped sleeve alongside detail printed course material use august office women live game stock market rule tells you how should allocating income",
+"speech": "The 50-30-20 rule tells you how you should be allocating that income.",
+"speech_dur": 4.6,
+"speech_at": [
+[
+0.0,
+"The 50-30-20 rule tells you how you should be allocating that income."
+]
+]
 },
 {
 "id": "IFM-379",
@@ -9112,7 +11136,35 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration aug 2026 corporate workshop participant laughing during session pale blue patterned shirt sits her chin propped both hands openly open workbook black flask table front another attendee beside warm candid unposed august boardroom office women participants ifm live game stock"
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration aug 2026 corporate workshop participant laughing during session pale blue patterned shirt sits her chin propped both hands openly open workbook black flask table front another attendee beside warm candid unposed august boardroom office women participants ifm live game stock was never top time she would have done you worked just can older ones more than younger",
+"speech": "I was never top that time. She would have never done that. I would have never done that. You would have worked on it just for me. You would have worked on it just for me. You can go older ones, more than the younger ones.",
+"speech_dur": 16.3,
+"speech_at": [
+[
+0.0,
+"I was never top that time."
+],
+[
+2.0,
+"She would have never done that."
+],
+[
+4.0,
+"I would have never done that."
+],
+[
+6.0,
+"You would have worked on it just for me."
+],
+[
+8.0,
+"You would have worked on it just for me."
+],
+[
+10.0,
+"You can go older ones, more than the younger ones."
+]
+]
 },
 {
 "id": "IFM-381",
@@ -9136,7 +11188,39 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration aug 2026 corporate workshop table applauding older participant yellow kurta several participants around clap hands raised mid applause turned toward woman bright seated foreground her back half camera bookshelves framed art wall behind august boardroom office women ifm workbook live"
+"search_terms": "candid warm natural unposed relaxed friendly celebration aug 2026 corporate workshop table applauding older participant yellow kurta several participants around clap hands raised mid applause turned toward woman bright seated foreground her back half camera bookshelves framed art wall behind august boardroom office women ifm workbook live flash headlines federal reserve reduces rates because even now part stock market affects indian but like way home buying business car works not caught don take loans lot work savings only ones more think yeah exactly",
+"speech": "flash of headlines, federal reserve reduces rates or federal reserve because even now part of the stock market even now affects the Indian market but like the way the home buying business, the home buying business and the car business works in the US is not so caught up like and we don't take loans a lot of us work on savings and the US works only on the ones and more because I don't think yeah exactly so yeah",
+"speech_dur": 33.9,
+"speech_at": [
+[
+0.0,
+"flash of headlines, federal reserve reduces rates or federal"
+],
+[
+4.2,
+"reserve because even now part of the stock market even now"
+],
+[
+7.6,
+"affects the Indian market but like the way the home buying"
+],
+[
+13.1,
+"business, the home buying business and the car business works"
+],
+[
+17.1,
+"in the US is not so caught up like and we don't take loans"
+],
+[
+23.2,
+"a lot of us work on savings and the US works only on"
+],
+[
+29.7,
+"the ones and more because I don't think yeah exactly so yeah"
+]
+]
 },
 {
 "id": "IFM-382",
@@ -9162,7 +11246,19 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "aug 2026 corporate workshop participant pink talking across table bright shirt leans forward boardroom both hands open mid sentence women opposite her notebook purple folder printed handout sit front august office participants ifm workbook live game stock market content library"
+"search_terms": "aug 2026 corporate workshop participant pink talking across table bright shirt leans forward boardroom both hands open mid sentence women opposite her notebook purple folder printed handout sit front august office participants ifm workbook live game stock market content library keeps getting large chunks money put into saying need every month live life come out like smartest way now",
+"speech": "He keeps getting large chunks of money and he's put it into this saying I need money every month to live my life and that I come out like this. It's the smartest way now to do it.",
+"speech_dur": 16.5,
+"speech_at": [
+[
+0.0,
+"He keeps getting large chunks of money and he's put it into this saying I need money every month to live my life and that I come out like this."
+],
+[
+11.0,
+"It's the smartest way now to do it."
+]
+]
 },
 {
 "id": "IFM-383",
@@ -9261,7 +11357,39 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "aug 2026 corporate workshop teaching from why businesses need cash slide facilitator sits end boardroom table laptop open front her one hand raised mid explanation talking through headed screen behind august office women participants ifm workbook live game stock market",
+"search_terms": "aug 2026 corporate workshop teaching from why businesses need cash slide facilitator sits end boardroom table laptop open front her one hand raised mid explanation talking through headed screen behind august office women participants ifm workbook live game stock market options either can borrow money raise from public giving part ownership their company interest fee right they decide about exactly was going come next thing but just tell you when issue shares buy those become shareholder okay",
+"speech": "options, either it can borrow money or it can raise money from the public by giving a part ownership of their company. So that is an interest fee, right, the money that they decide about. Exactly, so I was going to come to the next thing but just to tell you, when they issue shares to the public and you buy those shares, you become a shareholder of the company. Okay.",
+"speech_dur": 24.8,
+"speech_at": [
+[
+0.0,
+"options, either it can borrow money or it can raise money from the public by giving a part"
+],
+[
+5.5,
+"ownership of their company."
+],
+[
+7.5,
+"So that is an interest fee, right, the money that they decide about."
+],
+[
+12.9,
+"Exactly, so I was going to come to the next thing but just to tell you, when they issue"
+],
+[
+17.6,
+"shares to the public and you buy those shares, you become a shareholder of the"
+],
+[
+23.2,
+"company."
+],
+[
+24.2,
+"Okay."
+]
+],
 "kit": "teaching",
 "kit_rank": 3
 },
@@ -9313,7 +11441,59 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "aug 2026 corporate workshop older man pink shirt joining discussion salmon sits his back camera boardroom table facing two women mid conversation across from him only male participant visible shoot august office participants ifm workbook live game stock market content"
+"search_terms": "aug 2026 corporate workshop older man pink shirt joining discussion salmon sits his back camera boardroom table facing two women mid conversation across from him only male participant visible shoot august office participants ifm workbook live game stock market content they would invest countries like vietnam singapore which philippines all these other what happened were known tiger economies was european american fii pushed their prices hong kong exchange right then late 90s said okay great pulled drew out money kind crashed india learning from had time set caps you know only much will allowed not withdrawn quickly stuff",
+"speech": "They would invest in countries like Vietnam Singapore Which are the Philippines all these other countries what happened is they were known as tiger economies Was all these European and American FII's would invest Pushed up their prices on the Hong Kong exchange this exchange that exchange right? Then what happened is? It happened in the late 90s then they Said okay these economies of the great and they pulled they drew out their money. So these economies kind of crashed So India learning from that had like at that time set these caps that you know only so much FII money will be allowed in and it will not be allowed to be withdrawn That quickly all that stuff",
+"speech_dur": 53.4,
+"speech_at": [
+[
+0.0,
+"They would invest in countries like Vietnam Singapore"
+],
+[
+5.5,
+"Which are the Philippines all these other countries what happened is they were known as tiger economies"
+],
+[
+12.2,
+"Was all these European and American"
+],
+[
+15.1,
+"FII's would invest"
+],
+[
+17.3,
+"Pushed up their prices on the Hong Kong exchange this exchange that exchange right?"
+],
+[
+22.5,
+"Then what happened is?"
+],
+[
+24.9,
+"It happened in the late 90s"
+],
+[
+27.3,
+"then they"
+],
+[
+28.7,
+"Said okay these economies of the great and they pulled they drew out their money. So these economies kind of crashed"
+],
+[
+37.1,
+"So India learning from that had like at that time set these caps that you know only so much"
+],
+[
+44.9,
+"FII money will be allowed in and it will not be allowed to be withdrawn"
+],
+[
+50.2,
+"That quickly all that stuff"
+]
+]
 },
 {
 "id": "IFM-389",
@@ -9337,7 +11517,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "aug 2026 corporate workshop handwritten notes participant notebook close hands writing ruled blue pen page session already filled green lunch container pink sleeve edge frame august boardroom office women participants ifm workbook live game stock market content library sakshi"
+"search_terms": "aug 2026 corporate workshop handwritten notes participant notebook close hands writing ruled blue pen page session already filled green lunch container pink sleeve edge frame august boardroom office women participants ifm workbook live game stock market content library sakshi playoffs stock market okay now there whole",
+"speech": "The playoffs in the stock market, okay, and now this there is a whole",
+"speech_dur": 7.9,
+"speech_at": [
+[
+0.1,
+"The playoffs in the stock market, okay, and now this there is a whole"
+]
+]
 },
 {
 "id": "IFM-390",
@@ -9363,7 +11551,43 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "aug 2026 corporate workshop teaching how stock market works slide facilitator green kurta set stands beside wall mounted screen one hand raised toward illustrated about addressing seated table august boardroom office women participants ifm workbook live game content library sakshi"
+"search_terms": "aug 2026 corporate workshop teaching how stock market works slide facilitator green kurta set stands beside wall mounted screen one hand raised toward illustrated about addressing seated table august boardroom office women participants ifm workbook live game content library sakshi dmat trading account now your will always connected bank because help transfer funds into whatever you can decide say lakh amount money want hold mentioned just like electronic statement stocks have need both these accounts start when investor buy sell share what put order blocking",
+"speech": "a DMAT and a trading account. Now your trading account will always be connected to your bank account because your bank account will help transfer funds into your trading account. So your bank account will be whatever you can decide to transfer say 2 lakh or whatever amount of money you want into your trading account and your trading account will hold that money for you. Your DMAT account as I mentioned is just like an electronic statement of your stocks. It's like an electronic bank statement that we have. You need both these accounts to start trading. Now when as an investor say you decide to buy or sell or share what you will do is you will put in this order into your blocking account.",
+"speech_dur": 50.3,
+"speech_at": [
+[
+0.0,
+"a DMAT and a trading account. Now your trading account will always be connected to your bank"
+],
+[
+6.0,
+"account because your bank account will help transfer funds into your trading account."
+],
+[
+11.3,
+"So your bank account will be whatever you can decide to transfer say 2 lakh or whatever"
+],
+[
+17.5,
+"amount of money you want into your trading account and your trading account will hold"
+],
+[
+22.7,
+"that money for you. Your DMAT account as I mentioned is just like an electronic statement"
+],
+[
+29.9,
+"of your stocks. It's like an electronic bank statement that we have. You need both these"
+],
+[
+37.7,
+"accounts to start trading. Now when as an investor say you decide to buy or sell or share what"
+],
+[
+45.0,
+"you will do is you will put in this order into your blocking account."
+]
+]
 },
 {
 "id": "IFM-391",
@@ -9545,7 +11769,107 @@ window.IFM_V1 =
 "Other Person"
 ],
 "source": "Unknown",
-"search_terms": "testimonial review feedback social proof word of mouth testimonial woman black balmain tee seated camera long wavy hair paris shirt jeans sits dark sofa against wood panelled wall hands folded her lap speaking someone just off clean evenly lit single speaker framing proper sit down not grabbed clip"
+"search_terms": "testimonial review feedback social proof word of mouth testimonial woman black balmain tee seated camera long wavy hair paris shirt jeans sits dark sofa against wood panelled wall hands folded her lap speaking someone just off clean evenly lit single speaker framing proper sit down not grabbed clip malika can ask you few questions course how confident feel about investing now know just finished first eight sessions while much more from where started still think have little bit long way which why extending what surprised most workshop actually knew very but learn realize one concept learned during really noticed relationship between gold dollar economy was interesting discussion question statement made your husband many joke tells tell night love things discuss him all different mutual funds invested life insurance etc lots fun stuff great control money not yet controlling definitely thing start doing differently after when read newspaper articles related finance understand better been daily sort change did comfortable asking absolutely nicest sweetest informative teacher helpful part friends would highly recommend because also laugh middle were always too embarrassed before asked every smallest detail don learnings like said thank time",
+"speech": "Hi Malika. Hi. Can we ask you a few questions? Of course. How confident do you feel about investing now? You know, we've just finished the first eight sessions and while I'm much more confident from where I started I still think I have a little bit of a long way to go which is why we're extending the course. What surprised you the most in this workshop? How little I actually knew. I knew I knew very little but I think the more you learn the more you realize how little you know. And what's the one concept you learned during the workshop? I really, I think, noticed the relationship between gold and the dollar and the economy and that was very interesting to me. What discussion or question statement have you made to your husband? So many. It's a joke now he tells me. I tell me what he learned at night. I'd love to learn from you but so many things that I've learned and I discuss with him all about the different mutual funds that we've invested in, life insurance, etc. Lots of fun stuff. That's great. Do you feel more in control of your money now? I've not yet started controlling my money but I definitely feel more confident. What's one thing you'll start doing differently after this? I think when I read newspaper articles on things related to finance I can understand better and I think that's been a daily sort of change in my life. Did you feel comfortable asking questions in the sessions? Absolutely. He really is just the nicest, sweetest and most informative teacher and very helpful. What was the most fun part of the workshop? Doing it with my friends. I would highly recommend doing this course with your friends because you can also laugh in the middle of it which is great. And what was the question you were always too embarrassed to ask before this? I think we've asked every smallest detail question so I don't think we were embarrassed but lots of learnings like I said. Thank you. Thank you so much for your time.",
+"speech_dur": 122.0,
+"speech_at": [
+[
+0.5,
+"Hi Malika. Hi. Can we ask you a few questions? Of course. How confident do you feel about investing now?"
+],
+[
+7.5,
+"You know, we've just finished the first eight sessions and while I'm much more confident from where I started"
+],
+[
+15.3,
+"I still think I have a little bit of a long way to go which is why we're extending the course."
+],
+[
+19.9,
+"What surprised you the most in this workshop?"
+],
+[
+23.3,
+"How little I actually knew. I knew I knew very little but I think the more you learn the more you realize how little you know."
+],
+[
+30.3,
+"And what's the one concept you learned during the workshop?"
+],
+[
+33.9,
+"I really, I think, noticed the relationship between gold and the dollar and the economy and that was very interesting to me."
+],
+[
+44.3,
+"What discussion or question statement have you made to your husband?"
+],
+[
+48.1,
+"So many. It's a joke now he tells me. I tell me what he learned at night. I'd love to learn from you but"
+],
+[
+55.1,
+"so many things that I've learned and I discuss with him all about the different mutual funds that we've invested in, life insurance, etc."
+],
+[
+63.3,
+"Lots of fun stuff. That's great. Do you feel more in control of your money now?"
+],
+[
+68.8,
+"I've not yet started controlling my money but I definitely feel more confident."
+],
+[
+73.2,
+"What's one thing you'll start doing differently after this?"
+],
+[
+76.7,
+"I think when I read newspaper articles on things related to finance I can understand better and I think that's been a"
+],
+[
+83.8,
+"daily sort of change in my life."
+],
+[
+87.0,
+"Did you feel comfortable asking questions in the sessions?"
+],
+[
+89.5,
+"Absolutely. He really is just the nicest, sweetest and most informative teacher and very helpful."
+],
+[
+95.9,
+"What was the most fun part of the workshop?"
+],
+[
+99.1,
+"Doing it with my friends. I would highly recommend doing this course with your friends because"
+],
+[
+103.0,
+"you can also laugh in the middle of it which is great."
+],
+[
+106.2,
+"And what was the question you were always too embarrassed to ask before this?"
+],
+[
+110.6,
+"I think we've asked every smallest detail question so I don't think we were embarrassed but"
+],
+[
+117.3,
+"lots of learnings like I said."
+],
+[
+119.5,
+"Thank you. Thank you so much for your time."
+]
+]
 },
 {
 "id": "IFM-398",
@@ -9566,7 +11890,163 @@ window.IFM_V1 =
 "Other Person"
 ],
 "source": "Unknown",
-"search_terms": "testimonial review feedback social proof word of mouth testimonial woman blue heart print shirt wooden table chambray patterned small hearts sits polished against wood panelling hands loosely clasped looking straight down lens phone rests her elbow steady well exposed camera feedback video single speaker sept 2026 content library"
+"search_terms": "testimonial review feedback social proof word of mouth testimonial woman blue heart print shirt wooden table chambray patterned small hearts sits polished against wood panelling hands loosely clasped looking straight down lens phone rests her elbow steady well exposed camera feedback video single speaker sept 2026 content library sakshi jivrajka have joined signed amazing investing mummy course heral she absolutely fabulous really enjoying myself basically learning about lot concepts you heard know men working professionals talk stuff but never quite understood depth meaning how impacts individual investors detailers think has given little bit more clarity terms what terminology job ends thank start quick session confident feel now wouldn say super yes expect aware not opposed surprised most workshop fear knowing thinking rocket science least thought was pretty decoded simplified just use logic your eye ball participate keep eyes ears open see hard there any one new concept learned lots mean surprisingly basic fundamentals taken granted actually something were like who going ppf did providence fund always only employees turns out things term insurance life actual behind these necessary because herd mentality should doing brought awareness sparked wow didn discussion question statement made husband gone told him need looking together into investments tell keen kind understand done far parents laws opportunities table can bring add value our bucket yeah conversations control money fully nutshell clear pathway could look thing differently after definitely invest smartly comfortable asking questions here heeral such answers repeatedly over again felt hesitation her fun part games some lovely personality easy welcoming don inhibited too embarrassed ask before everything much",
+"speech": "Hi, I'm Sakshi Jivrajka and I have joined, signed up for this amazing investing for Mummy's course by Heral. She is absolutely fabulous. I am really enjoying myself. Basically learning about a lot of concepts that you've heard, you know, the men or working professionals talk about stuff, but you've never quite understood the in-depth meaning and how it impacts us as individual investors and detailers. So that I think has given me a little bit more clarity in terms of, you know, what terminology and job ends are. Thank you Sakshi. We'll start with a quick Q&A session. So how confident do you feel about investing now? I wouldn't say super confident, but yes, I feel I know the terminology. I know what to expect and I'm more aware of what not to do as opposed to, you know, what to do. And what surprised you the most in the workshop? The fear of investing or the fear of not knowing or thinking it's rocket science, at least I thought it was, but it's not that. It's pretty decoded, simplified. If you just use logic to it and if you have your eye on the ball and if you participate or keep your eyes and ears open as you see, it's not that hard. Is there any one new concept that you learned? Oh lots. I mean, I think I am, you know, surprisingly the basic fundamentals of investing, what we think is taken for granted is actually not, you know, something you were like, oh, who's going to do this? Like the PPF, I did not know the Providence Fund was, I mean, I always thought it was only for employees, but turns out no, it is for any of us. Things like term insurance, life insurance, the actual meaning behind these terms and if it's necessary for us, not just because of herd mentality, we should be doing it. So that I think really brought out a lot of awareness and sparked a lot of like, wow, I didn't know this. What discussion or question statement have you made to your husband? I have gone and told him that we need to start looking together into what investments we're doing. Tell me what you have. Now I'm keen on to kind of understand what he's done so far, what my parents have done so far, what my in-laws have done, what opportunities are there on the table, what can he bring more to add value to our bucket. So yeah, these are the conversations. Do you feel more in control of your money now? I wouldn't say fully in control, but yes, I'm aware. I think this course in a nutshell has brought about a lot of awareness and a clear pathway that this, this, this, this is what we should be doing or these are the opportunities we could look at. What is the one thing you'll start doing differently after this? Definitely invest more smartly. Do you feel comfortable asking questions here? Absolutely. I mean, Heeral has given us such comfortable, in-depth answers repeatedly over and over again if you've not understood something. So yes, I've not felt any hesitation in asking her questions. What was the most fun part of the workshop? The games. She has some lovely games and her personality, it's so easy, so welcoming. So, you know, you don't feel inhibited with her. What question were you always too embarrassed to ask before this? How do I invest? Can you start? Everything, I mean, I was not embarrassed, but I did no much. That's it. That's it. Thank you. Thank you, Sakshi.",
+"speech_dur": 261.3,
+"speech_at": [
+[
+0.8,
+"Hi, I'm Sakshi Jivrajka and I have joined, signed up for this amazing"
+],
+[
+8.4,
+"investing for Mummy's course by Heral. She is absolutely fabulous. I am really enjoying myself."
+],
+[
+18.7,
+"Basically learning about a lot of concepts that you've heard, you know, the men or working"
+],
+[
+25.1,
+"professionals talk about stuff, but you've never quite understood the in-depth meaning and how it"
+],
+[
+31.5,
+"impacts us as individual investors and detailers. So that I think has given me a little bit more"
+],
+[
+39.2,
+"clarity in terms of, you know, what terminology and job ends are. Thank you Sakshi. We'll"
+],
+[
+46.8,
+"start with a quick Q&A session. So how confident do you feel about investing now?"
+],
+[
+53.1,
+"I wouldn't say super confident, but yes, I feel I know the terminology. I know what to expect and"
+],
+[
+62.7,
+"I'm more aware of what not to do as opposed to, you know, what to do."
+],
+[
+71.9,
+"And what surprised you the most in the workshop?"
+],
+[
+76.8,
+"The fear of investing or the fear of not knowing or thinking it's rocket science,"
+],
+[
+81.5,
+"at least I thought it was, but it's not that. It's pretty decoded, simplified. If you just use"
+],
+[
+87.3,
+"logic to it and if you have your eye on the ball and if you participate or keep your eyes and"
+],
+[
+95.8,
+"ears open as you see, it's not that hard. Is there any one new concept that you learned?"
+],
+[
+101.8,
+"Oh lots. I mean, I think I am, you know, surprisingly the basic fundamentals of investing,"
+],
+[
+111.0,
+"what we think is taken for granted is actually not, you know, something you were like, oh,"
+],
+[
+115.5,
+"who's going to do this? Like the PPF, I did not know the Providence Fund was, I mean,"
+],
+[
+123.0,
+"I always thought it was only for employees, but turns out no, it is for any of us."
+],
+[
+130.9,
+"Things like term insurance, life insurance, the actual meaning behind these terms and"
+],
+[
+138.6,
+"if it's necessary for us, not just because of herd mentality, we should be doing it."
+],
+[
+144.7,
+"So that I think really brought out a lot of awareness and sparked a lot of like, wow,"
+],
+[
+151.5,
+"I didn't know this. What discussion or question statement have you made to your husband?"
+],
+[
+157.3,
+"I have gone and told him that we need to start looking together into what investments we're doing."
+],
+[
+163.9,
+"Tell me what you have. Now I'm keen on to kind of understand what he's done so far,"
+],
+[
+169.3,
+"what my parents have done so far, what my in-laws have done, what opportunities are there on the"
+],
+[
+174.8,
+"table, what can he bring more to add value to our bucket. So yeah, these are the conversations."
+],
+[
+182.1,
+"Do you feel more in control of your money now? I wouldn't say fully in control,"
+],
+[
+188.0,
+"but yes, I'm aware. I think this course in a nutshell has brought about a lot of awareness"
+],
+[
+193.2,
+"and a clear pathway that this, this, this, this is what we should be doing or these are the"
+],
+[
+198.9,
+"opportunities we could look at. What is the one thing you'll start doing differently after this?"
+],
+[
+205.5,
+"Definitely invest more smartly. Do you feel comfortable asking questions here?"
+],
+[
+212.2,
+"Absolutely. I mean, Heeral has given us such comfortable, in-depth answers repeatedly over"
+],
+[
+219.7,
+"and over again if you've not understood something. So yes, I've not felt any hesitation in asking"
+],
+[
+225.5,
+"her questions. What was the most fun part of the workshop? The games. She has some lovely"
+],
+[
+231.4,
+"games and her personality, it's so easy, so welcoming. So, you know, you don't feel"
+],
+[
+240.8,
+"inhibited with her. What question were you always too embarrassed to ask before this?"
+],
+[
+249.1,
+"How do I invest? Can you start? Everything, I mean, I was not embarrassed, but"
+],
+[
+255.4,
+"I did no much. That's it. That's it. Thank you. Thank you, Sakshi."
+]
+]
 },
 {
 "id": "IFM-399",
@@ -9587,7 +12067,215 @@ window.IFM_V1 =
 "Other Person"
 ],
 "source": "Unknown",
-"search_terms": "testimonial review feedback social proof word of mouth testimonial woman black tee hands clasped boardroom table long dark hair shirt sits her under chin talking directly camera book paytm standee sit front framed artwork light switch panel wall behind feedback video single speaker july 2026 content library ifm"
+"search_terms": "testimonial review feedback social proof word of mouth testimonial woman black tee hands clasped boardroom table long dark hair shirt sits her under chin talking directly camera book paytm standee sit front framed artwork light switch panel wall behind feedback video single speaker july 2026 content library ifm like number years compounding just multiplies your money how was amazing okay what discussion question statement have you made husband since class can answer actually think had interest reading economic times knowing market about now every morning wake 100 questions him fed suddenly going asking etfs equities impressed getting more interested speak very proud sure awesome but same thing would say gone office opened all insurance papers financial documents many accountant never come lot changes yet process making quite excited probably guys feel control absolutely understanding smartly efficiently invest not blindly doing following somebody telling understand difference entire course anything else even sitting planner least talking explaining counter stuff great has helped develop subject first obviously confident increased levels because interesting thank quick ask please yeah maybe considering already been investing one will start differently after through long term planning sake portfolio big takeaway also which back family sit them well planned huge there people here really don totally most fun part session games were fantastic especially stock should later get repeat imagine enjoyed maximum could find three unfair game know dixon these asian tech done true",
+"speech": "That's like number of years with the compounding just multiplies your money and how. That was amazing. Okay, what discussion or question or statement have you made to your husband since this class? Can I answer this actually? I think I had no interest in reading the economic times or knowing what the market was about and now every morning I wake up and I have 100 questions for him and I think he's fed up. He's like suddenly what's going on and you're asking me about ETFs and about equities and he's actually impressed and I think now he's getting more interested to speak to me so I am very proud of that for sure. That's awesome. But actually the same thing for me, I would say that I have gone to my office, opened all the insurance papers and all the financial documents and I'm asking so many questions to my accountant. He's like, what is up in 20 years you've never come and now suddenly you're asking so many questions. I've made a lot of changes. I'm yet in process of making the changes. Quite excited about it. That's awesome. Okay, so this is probably for all you guys. Do you feel more in control of your money now? Absolutely. I think the understanding of how smartly and efficiently I can invest my money with an understanding, not blindly doing it or following somebody telling me, me getting an understanding and asking the questions to understand, I think that's made a difference in the entire course. Anything else? Even if I'm sitting with my financial planner, at least I'll have an understanding of what he's talking to me and what he's explaining to me, I can counter question him about the stuff he's talking to me. So I think that is a great understanding. I think for me, it has helped me develop an interest in the subject first. And obviously now I'm more confident and the understanding has increased, but I think that interest levels have gone up because you made it so interesting in the class. Thank you. Thank you. I think we're just doing a quick thing. I'm going to ask you questions. Please. So yeah, maybe this is for you considering you've already been investing. So what's one thing you will start doing differently after this class? I think what I'm going to do differently is going through long term planning because you've made me understand planning not just for investing, for the sake of investing and understanding my portfolio, but planning my portfolio. I think that's the one very big takeaway and also the planning which I'm going to go back to my family. I'm going to sit with them and understand how well have we planned it. That's the one huge takeaway there are people doing. Questions here? I really don't think that is... Not for you for sure. No, but totally okay. What was the most fun part of the session? The games. The games were just fantastic. Especially the stock market. We should later get the repeat. Imagine what I really, really, really enjoyed. What was the most maximum that I could find? And you were number three. That was an unfair game. I know what Dixon and H... You know, all these asian tech and all of that is done. Yeah, but it's true.",
+"speech_dur": 216.3,
+"speech_at": [
+[
+0.0,
+"That's like number of years with the compounding just multiplies your money and how. That was amazing."
+],
+[
+9.0,
+"Okay, what discussion or question or statement have you made to your husband since this class?"
+],
+[
+18.0,
+"Can I answer this actually? I think I had no interest in reading the economic times"
+],
+[
+26.0,
+"or knowing what the market was about and now every morning I wake up and I have 100 questions for him"
+],
+[
+31.0,
+"and I think he's fed up. He's like suddenly what's going on and you're asking me about ETFs and about equities"
+],
+[
+39.0,
+"and he's actually impressed and I think now he's getting more interested to speak to me so I am very proud of that for sure."
+],
+[
+45.0,
+"That's awesome. But actually the same thing for me, I would say that I have gone to my office,"
+],
+[
+50.0,
+"opened all the insurance papers and all the financial documents and I'm asking so many questions to my accountant."
+],
+[
+55.0,
+"He's like, what is up in 20 years you've never come and now suddenly you're asking so many questions."
+],
+[
+60.0,
+"I've made a lot of changes. I'm yet in process of making the changes. Quite excited about it."
+],
+[
+65.0,
+"That's awesome. Okay, so this is probably for all you guys. Do you feel more in control of your money now?"
+],
+[
+75.0,
+"Absolutely. I think the understanding of how smartly and efficiently I can invest my money"
+],
+[
+82.0,
+"with an understanding, not blindly doing it or following somebody telling me,"
+],
+[
+86.0,
+"me getting an understanding and asking the questions to understand,"
+],
+[
+90.0,
+"I think that's made a difference in the entire course."
+],
+[
+93.0,
+"Anything else?"
+],
+[
+94.0,
+"Even if I'm sitting with my financial planner, at least I'll have an understanding of what he's talking to me"
+],
+[
+101.0,
+"and what he's explaining to me, I can counter question him about the stuff he's talking to me."
+],
+[
+108.0,
+"So I think that is a great understanding."
+],
+[
+111.0,
+"I think for me, it has helped me develop an interest in the subject first."
+],
+[
+116.0,
+"And obviously now I'm more confident and the understanding has increased,"
+],
+[
+120.0,
+"but I think that interest levels have gone up because you made it so interesting in the class."
+],
+[
+124.0,
+"Thank you."
+],
+[
+126.0,
+"Thank you."
+],
+[
+127.0,
+"I think we're just doing a quick thing."
+],
+[
+129.0,
+"I'm going to ask you questions."
+],
+[
+131.0,
+"Please."
+],
+[
+133.0,
+"So yeah, maybe this is for you considering you've already been investing."
+],
+[
+138.0,
+"So what's one thing you will start doing differently after this class?"
+],
+[
+143.0,
+"I think what I'm going to do differently is going through long term planning"
+],
+[
+148.0,
+"because you've made me understand planning not just for investing,"
+],
+[
+154.0,
+"for the sake of investing and understanding my portfolio, but planning my portfolio."
+],
+[
+159.0,
+"I think that's the one very big takeaway and also the planning which I'm going to go back to my family."
+],
+[
+165.0,
+"I'm going to sit with them and understand how well have we planned it."
+],
+[
+169.0,
+"That's the one huge takeaway there are people doing."
+],
+[
+174.6,
+"Questions here?"
+],
+[
+176.6,
+"I really don't think that is..."
+],
+[
+178.6,
+"Not for you for sure."
+],
+[
+182.6,
+"No, but totally okay."
+],
+[
+184.6,
+"What was the most fun part of the session?"
+],
+[
+187.6,
+"The games."
+],
+[
+189.6,
+"The games were just fantastic."
+],
+[
+193.6,
+"Especially the stock market."
+],
+[
+195.6,
+"We should later get the repeat."
+],
+[
+197.6,
+"Imagine what I really, really, really enjoyed."
+],
+[
+201.6,
+"What was the most maximum that I could find?"
+],
+[
+205.6,
+"And you were number three."
+],
+[
+207.6,
+"That was an unfair game."
+],
+[
+209.6,
+"I know what Dixon and H..."
+],
+[
+211.6,
+"You know, all these asian tech and all of that is done."
+],
+[
+214.6,
+"Yeah, but it's true."
+]
+]
 },
 {
 "id": "IFM-400",
@@ -9612,7 +12300,115 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration testimonial review feedback social proof word of mouth woman pale blue lace top smiling camera govt schemes whiteboard behind sits long boardroom table her filled hand drawn government savings map saving secs ppf sukanya samriddhi bills dated bonds next three bucket liquidity safety growth diagram pens tissues workbooks"
+"search_terms": "candid warm natural unposed relaxed friendly celebration testimonial review feedback social proof word of mouth woman pale blue lace top smiling camera govt schemes whiteboard behind sits long boardroom table her filled hand drawn government savings map saving secs ppf sukanya samriddhi bills dated bonds next three bucket liquidity safety growth diagram pens tissues workbooks okay lets around room what was one question you always had but were too embarrassed ask before class everything because clue getting into first day even when got know about inflation have gone home spoken like god discovered something new how need invest money today sustain lifestyle after years plan able live life way living aha moment actually see movies stock exchange these large number people standing yelling top their voices holding some little slips wondered there middle those grew thankfully never wanted madhuri think don very understand eps all just taken granted investing markets didn yesterday understood lot back studied also bit more come awesome difference between basic solutions insecurity ets terminology obviously initially made really simple confident thank",
+"speech": "Okay so this lets go around the room and what was the one question you always had but you were too embarrassed to ask before this class. I was embarrassed of everything because I had no clue what I was getting into. The first day even when I got to know about inflation I have gone home and spoken about it like oh my god I discovered something new how I need to invest money today to sustain my lifestyle after 10 years how I need to plan the money that I am able to live my life the way I am living was a was an aha moment for me actually. What about you? I always see in movies the stock exchange with these large number of people standing and yelling at the top of their voices holding some little slips and I wondered if I have to invest or I have to be there in the middle of those people and I grew thankfully no. So I never wanted to ask that question. What about you Madhuri? I think I don't know like this. I was very embarrassed to ask how to understand the PE and the EPS and all of that. It was just taken for granted that when you are investing in the markets you know that. I didn't. So yesterday I actually understood a lot of that. I have gone back home studied it also a little bit more and I have come back today. Awesome. What about you? I think I just didn't know the difference between the basic solutions for insecurity, ETS, terminology and I was obviously embarrassed initially but I think you just made it really simple to understand this and I am more confident today. Thank you. That was it.",
+"speech_dur": 97.0,
+"speech_at": [
+[
+0.0,
+"Okay so this lets go around the room and what was the one question you always had but you"
+],
+[
+6.3,
+"were too embarrassed to ask before this class."
+],
+[
+10.6,
+"I was embarrassed of everything because I had no clue what I was getting into."
+],
+[
+15.0,
+"The first day even when I got to know about inflation I have gone home and spoken about"
+],
+[
+19.6,
+"it like oh my god I discovered something new how I need to invest money today to"
+],
+[
+24.4,
+"sustain my lifestyle after 10 years how I need to plan the money that I am able"
+],
+[
+28.8,
+"to live my life the way I am living was a was an aha moment for me actually."
+],
+[
+33.8,
+"What about you?"
+],
+[
+34.8,
+"I always see in movies the stock exchange with these large number of people standing and yelling"
+],
+[
+40.8,
+"at the top of their voices holding some little slips and I wondered if I have to invest or"
+],
+[
+44.8,
+"I have to be there in the middle of those people and I grew thankfully no."
+],
+[
+50.8,
+"So I never wanted to ask that question."
+],
+[
+52.8,
+"What about you Madhuri?"
+],
+[
+54.8,
+"I think I don't know like this."
+],
+[
+58.8,
+"I was very embarrassed to ask how to understand the PE and the EPS and all of that."
+],
+[
+64.8,
+"It was just taken for granted that when you are investing in the markets you know that."
+],
+[
+69.8,
+"I didn't."
+],
+[
+70.8,
+"So yesterday I actually understood a lot of that."
+],
+[
+73.8,
+"I have gone back home studied it also a little bit more and I have come back today."
+],
+[
+77.8,
+"Awesome."
+],
+[
+78.8,
+"What about you?"
+],
+[
+79.8,
+"I think I just didn't know the difference between the basic solutions for insecurity,"
+],
+[
+84.8,
+"ETS, terminology and I was obviously embarrassed initially but I think you just made it really"
+],
+[
+90.8,
+"simple to understand this and I am more confident today."
+],
+[
+94.8,
+"Thank you."
+],
+[
+95.8,
+"That was it."
+]
+]
 },
 {
 "id": "IFM-401",
@@ -9638,7 +12434,35 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "three women table one waving asset classes whiteboard behind sit along boardroom denim waistcoat foreground pale blue lace top camera black resting her chin hand carries full tree cash real estate commercial debt equity above emergency safety growth buckets students"
+"search_terms": "three women table one waving asset classes whiteboard behind sit along boardroom denim waistcoat foreground pale blue lace top camera black resting her chin hand carries full tree cash real estate commercial debt equity above emergency safety growth buckets students think what surprised most was fact there many more women same boat not only one give you lot confidence actually ahead try something new especially after learnt yeah very important know alone can look camera but should come way",
+"speech": "I think what surprised me most was the fact that there are many more women in the same boat as I am. I am not the only one and I give you a lot of confidence to actually go ahead and try something new especially after you learnt it. So yeah it was very important to know that I am not alone. Can you look in the camera? Yeah but I think you should come this way.",
+"speech_dur": 24.7,
+"speech_at": [
+[
+0.0,
+"I think what surprised me most was the fact that there are many more women in the same"
+],
+[
+7.0,
+"boat as I am. I am not the only one and I give you a lot of confidence to actually go"
+],
+[
+13.0,
+"ahead and try something new especially after you learnt it. So yeah it was very important"
+],
+[
+18.0,
+"to know that I am not alone."
+],
+[
+20.0,
+"Can you look in the camera?"
+],
+[
+23.0,
+"Yeah but I think you should come this way."
+]
+]
 },
 {
 "id": "IFM-402",
@@ -9659,7 +12483,31 @@ window.IFM_V1 =
 "Other Person"
 ],
 "source": "Unknown",
-"search_terms": "testimonial review feedback social proof word of mouth woman black speaking from far end boardroom table top sits alone long mid sentence her hands together between camera laid out workshop kit ribbed glass tumblers coasters standee pen pot orange water bottle spread workbooks testimonial feedback video wide june"
+"search_terms": "testimonial review feedback social proof word of mouth woman black speaking from far end boardroom table top sits alone long mid sentence her hands together between camera laid out workshop kit ribbed glass tumblers coasters standee pen pot orange water bottle spread workbooks testimonial feedback video wide june every day second minute was aha moment because had head tail least concept finance like zero when used hear people talking about sip first class ended asking what form",
+"speech": "every day every second minute was an aha moment because we had no head or tail at least I had no head or tail of the concept of finance like I was zero like when I used to hear people talking about SIP my first class I ended up asking what is an SIP so what is the first form of an SIP so every day was every moment was an aha moment",
+"speech_dur": 27.0,
+"speech_at": [
+[
+0.0,
+"every day every second minute was an aha moment because we had no head or tail"
+],
+[
+5.6,
+"at least I had no head or tail of the concept of finance like I was zero like"
+],
+[
+12.7,
+"when I used to hear people talking about SIP my first class I ended up asking"
+],
+[
+17.2,
+"what is an SIP so what is the first form of an SIP so every day was every"
+],
+[
+22.4,
+"moment was an aha moment"
+]
+]
 },
 {
 "id": "IFM-403",
@@ -9682,7 +12530,23 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "woman leopard print shirt talking hands clasped glasses hair high bun sits profile wooden boardroom table front her mid sentence two framed prints hang yellow wall behind dark wood cupboard fills right frame sharing experience small group discussion sept 2026"
+"search_terms": "woman leopard print shirt talking hands clasped glasses hair high bun sits profile wooden boardroom table front her mid sentence two framed prints hang yellow wall behind dark wood cupboard fills right frame sharing experience small group discussion sept 2026 men house take forefront you unknowingly back seat everything taken care don interfere kitchen like then same way finances",
+"speech": "the men in the house take the forefront. So you unknowingly take the back seat. Everything is taken care of. The men don't interfere in the kitchen like me and then the same way we don't interfere in the finances.",
+"speech_dur": 15.1,
+"speech_at": [
+[
+0.0,
+"the men in the house take the forefront. So you unknowingly take the back seat. Everything"
+],
+[
+7.4,
+"is taken care of. The men don't interfere in the kitchen like me and then the same way"
+],
+[
+11.8,
+"we don't interfere in the finances."
+]
+]
 },
 {
 "id": "IFM-404",
@@ -9703,7 +12567,27 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration woman leopard print shirt reaching across table laughing same leans forward reaches boardroom smiling broadly her checked handbag notebook phone sit beside empty chair opposite pushed back sharing experience small group sept 2026 content library"
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration woman leopard print shirt reaching across table laughing same leans forward reaches boardroom smiling broadly her checked handbag notebook phone sit beside empty chair opposite pushed back sharing experience small group sept 2026 content library book amazing who wrote think person taking our session she herself has written put much hard work said been year working showed one her couple was having them over dinner also into financially showing simplified way explaining thank you",
+"speech": "The book is amazing. Who wrote this book? I think the person who is taking our session, she herself has written it. She has put in so much of hard work. She said it's been a year that she has been working on the book. This is amazing and he showed one of her couple was having them over for dinner and he showed. He is also into the financially. He is showing the book. It's a simplified way of explaining the way. Thank you.",
+"speech_dur": 29.6,
+"speech_at": [
+[
+0.0,
+"The book is amazing. Who wrote this book? I think the person who is taking our session, she herself has written it. She has put in so much of hard work. She said it's been a year that she has been working on the book."
+],
+[
+12.0,
+"This is amazing and he showed one of her couple was having them over for dinner and he showed. He is also into the financially."
+],
+[
+21.0,
+"He is showing the book. It's a simplified way of explaining the way."
+],
+[
+29.0,
+"Thank you."
+]
+]
 },
 {
 "id": "IFM-405",
@@ -9749,7 +12633,47 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration woman white kurta listening two women laughing behind her cream long ponytail rests chin hand foreground half smiling she listens leopard print shirt both glasses water coasters line table sharing experience small group students boardroom sept 2026 content library"
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration woman white kurta listening two women laughing behind her cream long ponytail rests chin hand foreground half smiling she listens leopard print shirt both glasses water coasters line table sharing experience small group students boardroom sept 2026 content library what about you because just temporary thing right like can try see return seeing investment point view not from guide new figure works short term",
+"speech": "What about you? Because it's just a temporary thing, right? Like you can try and see if the return... I'm seeing the investment point of view not from the guide point of view Just to try a new investment and figure if it works or not because it's a short term Because it's short",
+"speech_dur": 19.7,
+"speech_at": [
+[
+0.0,
+"What about you?"
+],
+[
+2.0,
+"Because it's just a temporary thing, right?"
+],
+[
+4.0,
+"Like you can try and see if the return..."
+],
+[
+6.0,
+"I'm seeing the investment point of view"
+],
+[
+8.0,
+"not from the guide point of view"
+],
+[
+12.0,
+"Just to try a new investment"
+],
+[
+14.0,
+"and figure if it works or not"
+],
+[
+16.0,
+"because it's a short term"
+],
+[
+18.0,
+"Because it's short"
+]
+]
 },
 {
 "id": "IFM-407",
@@ -9770,7 +12694,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "funny fun laughing humour lively woman denim jacket laughing head table sits boardroom her hand raised mid gesture while cream kurta listens foreground handwritten notebook spectacles green tissue box sit between them sharing experience small group students sept 2026 content library"
+"search_terms": "funny fun laughing humour lively woman denim jacket laughing head table sits boardroom her hand raised mid gesture while cream kurta listens foreground handwritten notebook spectacles green tissue box sit between them sharing experience small group students sept 2026 content library don see second",
+"speech": "I don't see a second",
+"speech_dur": 8.6,
+"speech_at": [
+[
+0.0,
+"I don't see a second"
+]
+]
 },
 {
 "id": "IFM-408",
@@ -9791,7 +12723,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration woman white kurta hand cheek two women smiling behind cream sits her against looking toward front room leopard print shirt talking framed artwork dark cupboard fill background sharing experience small group listening boardroom sept 2026 content library"
+"search_terms": "candid warm natural unposed relaxed friendly celebration woman white kurta hand cheek two women smiling behind cream sits her against looking toward front room leopard print shirt talking framed artwork dark cupboard fill background sharing experience small group listening boardroom sept 2026 content library three your mom would choose equity you debt yeah smarter money",
+"speech": "three. So your mom would choose equity and you would choose debt? Yeah. You are smarter with money. You are smarter with money.",
+"speech_dur": 11.7,
+"speech_at": [
+[
+0.0,
+"three. So your mom would choose equity and you would choose debt? Yeah. You are smarter with money."
+],
+[
+7.8,
+"You are smarter with money."
+]
+]
 },
 {
 "id": "IFM-409",
@@ -9812,7 +12756,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "funny fun laughing humour lively woman white kurta speaking two women laughing behind her cream speaks hand near face caught mid word while one leopard print shirt laugh openly pen annotated worksheet lie table left edge frame sharing experience small group students boardroom sept 2026"
+"search_terms": "funny fun laughing humour lively woman white kurta speaking two women laughing behind her cream speaks hand near face caught mid word while one leopard print shirt laugh openly pen annotated worksheet lie table left edge frame sharing experience small group students boardroom sept 2026 gosh you would need someone wouldn cash know",
+"speech": "Gosh, you would need someone that you wouldn't be in cash at, you know.",
+"speech_dur": 4.9,
+"speech_at": [
+[
+0.0,
+"Gosh, you would need someone that you wouldn't be in cash at, you know."
+]
+]
 },
 {
 "id": "IFM-410",
@@ -9834,7 +12786,27 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "presenter yellow shirt making point finger raised woman bright red framed glasses stands beside open laptop boardroom table index eyes closed mid whiteboard fills wall behind her ribbed glass tumbler sits teaching sept 2026 content library",
+"search_terms": "presenter yellow shirt making point finger raised woman bright red framed glasses stands beside open laptop boardroom table index eyes closed mid whiteboard fills wall behind her ribbed glass tumbler sits teaching sept 2026 content library workshops somebody chose alt investments thought let see thing 2am who would you call then she was like why choose alternative said but made booty never about",
+"speech": "my workshops, somebody chose alt investments and I thought let's see this thing for 2am who would you call it 2am then she chose alt investments and I was like why would you choose alternative investments and she said but I thought 2am made booty call so I'm like oh I never thought about that",
+"speech_dur": 24.3,
+"speech_at": [
+[
+0.0,
+"my workshops, somebody chose alt investments and I thought let's see this thing for 2am"
+],
+[
+7.0,
+"who would you call it 2am then she chose alt investments and I was like why would you"
+],
+[
+12.0,
+"choose alternative investments and she said but I thought 2am made booty call so I'm"
+],
+[
+20.0,
+"like oh I never thought about that"
+]
+],
 "kit": "candid",
 "kit_rank": 2
 },
@@ -9861,7 +12833,51 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "woman black leading table ifm workbook foreground sleeveless top sits head boardroom holding red bottle open front her pull down projector screen behind investing mummies lies face illustrated cover clearly visible attendee pink back camera teaching discussion branded sept 2026"
+"search_terms": "woman black leading table ifm workbook foreground sleeveless top sits head boardroom holding red bottle open front her pull down projector screen behind investing mummies lies face illustrated cover clearly visible attendee pink back camera teaching discussion branded sept 2026 you know like game just understanding another level language changing about entire thing don think can talk was quiet actually couldn speak wouldn stand out there certain otherwise everything used turn part organization today having ramdev varvar come kept telling husband why would understand anything now happy have pune isi regretting because feel maybe understood bit yeah",
+"speech": "you know like this game and the it's just that the understanding is like on another level. A language is changing about the entire thing. I don't think I can talk about it. I think I was quiet actually. I couldn't speak the language and I wouldn't stand out. There is a certain talk about it. Otherwise everything is used to turn. I am part of an organization and today we are having Ramdev and Varvar come and talk. And I kept telling my husband why would I come? I wouldn't understand anything. And now I am so happy I have to go to Pune for ISI. I am actually regretting because I feel like maybe I would have understood a bit. I would have, yeah.",
+"speech_dur": 49.1,
+"speech_at": [
+[
+0.0,
+"you know like this game and the it's just that the understanding is like on"
+],
+[
+5.2,
+"another level. A language is changing about the entire thing. I don't think I can talk about it."
+],
+[
+11.2,
+"I think I was quiet actually. I couldn't speak the language and I wouldn't stand out."
+],
+[
+19.2,
+"There is a certain talk about it."
+],
+[
+25.2,
+"Otherwise everything is used to turn."
+],
+[
+31.2,
+"I am part of an organization and today we are having Ramdev and Varvar come and talk."
+],
+[
+36.2,
+"And I kept telling my husband why would I come? I wouldn't understand anything."
+],
+[
+39.2,
+"And now I am so happy I have to go to Pune for ISI."
+],
+[
+43.2,
+"I am actually regretting because I feel like maybe I would have understood a bit."
+],
+[
+47.2,
+"I would have, yeah."
+]
+]
 },
 {
 "id": "IFM-412",
@@ -9883,7 +12899,139 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "corporate boardroom session presenter wall screen out focus badly frame yellow top stands beside mounted showing slide while attendee cream sits her back camera long table usable only record happened nothing sharp workshop blurry raw backup sept 2026 content library"
+"search_terms": "corporate boardroom session presenter wall screen out focus badly frame yellow top stands beside mounted showing slide while attendee cream sits her back camera long table usable only record happened nothing sharp workshop blurry raw backup sept 2026 content library was just telling mom cousin least these two classes feel like asking questions written down but said when will you come going back reading actually tried read book given why asked also because wanted article doing mean hope take forward never felt whatever did maybe way they explained something didn into head goes understand would say there times india were insurance class talking boom makers don need yes can start one day taking picture sharing what those husband traveling once ask him funds know want things even understanding not explain very well",
+"speech": "I was just telling my mom and my cousin that at least in these two classes, at least I feel like asking questions. I'm written down, but I said, when will you come? I feel like going back and reading, and I actually tried to read the book that you've given. That's why I asked you. I asked you also because I wanted to read that article. I feel like doing it. I mean, I hope it will take me forward also, but at least I feel like doing it. I never felt like also whatever I did because maybe the way they explained or something, it didn't go into the head, but this goes. It's you understand it. Like, they would say there was an article in the Times of India that they were insurance class. We were talking that boom makers don't need the insurance. Yes, you can start an article one day. That article. And I felt like taking a picture and sharing what it was. That's an article. I've actually written down those questions that my husband is traveling. So once he's back, I'm going to ask him, insurance, funds, I don't know what to say. I've actually written it down. I want to understand things. Didn't I never feel like even understanding it? Maybe because they did not explain it very well or whatever. Whatever.",
+"speech_dur": 80.7,
+"speech_at": [
+[
+0.0,
+"I was just telling my mom and my cousin"
+],
+[
+2.9,
+"that at least in these two classes,"
+],
+[
+5.4,
+"at least I feel like asking questions."
+],
+[
+7.2,
+"I'm written down, but I said,"
+],
+[
+8.7,
+"when will you come?"
+],
+[
+9.8,
+"I feel like going back and reading,"
+],
+[
+11.6,
+"and I actually tried to read the book that you've given."
+],
+[
+15.8,
+"That's why I asked you."
+],
+[
+16.7,
+"I asked you also because I wanted to read that article."
+],
+[
+20.9,
+"I feel like doing it."
+],
+[
+23.0,
+"I mean, I hope it will take me forward also,"
+],
+[
+26.2,
+"but at least I feel like doing it."
+],
+[
+29.1,
+"I never felt like also whatever I did"
+],
+[
+31.5,
+"because maybe the way they explained or something,"
+],
+[
+34.3,
+"it didn't go into the head, but this goes."
+],
+[
+37.8,
+"It's you understand it."
+],
+[
+39.8,
+"Like, they would say there was an article"
+],
+[
+42.0,
+"in the Times of India that they were insurance class."
+],
+[
+45.8,
+"We were talking that boom makers don't need the insurance."
+],
+[
+48.4,
+"Yes, you can start an article one day."
+],
+[
+50.2,
+"That article."
+],
+[
+52.1,
+"And I felt like taking a picture and sharing what it was."
+],
+[
+56.1,
+"That's an article."
+],
+[
+58.6,
+"I've actually written down those questions"
+],
+[
+62.4,
+"that my husband is traveling."
+],
+[
+63.5,
+"So once he's back, I'm going to ask him,"
+],
+[
+65.7,
+"insurance, funds, I don't know what to say."
+],
+[
+68.3,
+"I've actually written it down."
+],
+[
+70.2,
+"I want to understand things."
+],
+[
+73.4,
+"Didn't I never feel like even understanding it?"
+],
+[
+76.5,
+"Maybe because they did not explain it very well or whatever."
+],
+[
+80.4,
+"Whatever."
+]
+]
 },
 {
 "id": "IFM-413",
@@ -9950,7 +13098,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "close detail participant holding printed game card over her workbook tight shoulder small off table ifm page pen lying open beneath another dark print top sits opposite swayamvar session workshop mums sept 2026 content library games"
+"search_terms": "close detail participant holding printed game card over her workbook tight shoulder small off table ifm page pen lying open beneath another dark print top sits opposite swayamvar session workshop mums sept 2026 content library games asset class going have own little bio data really fun game",
+"speech": "And asset class is going to have its own little bio data and it's a really fun game.",
+"speech_dur": 7.4,
+"speech_at": [
+[
+0.0,
+"And asset class is going to have its own little bio data and it's a really fun game."
+]
+]
 },
 {
 "id": "IFM-416",
@@ -9971,7 +13127,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "participant joining game her phone green striped kurta leans over join handset held low against table edge second sits further down behind swayamvar session workshop mums sept 2026 content library ifm games"
+"search_terms": "participant joining game her phone green striped kurta leans over join handset held low against table edge second sits further down behind swayamvar session workshop mums sept 2026 content library ifm games first have gash khan what",
+"speech": "So first we have Mr. or Ms. Gash Khan, what is it?",
+"speech_dur": 3.7,
+"speech_at": [
+[
+0.0,
+"So first we have Mr. or Ms. Gash Khan, what is it?"
+]
+]
 },
 {
 "id": "IFM-417",
@@ -9994,7 +13158,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "two participants comparing notes mid round sit side table one green striped kurta her back half camera peach shirt facing talking while runs swayamvar game session workshop mums sept 2026 content library ifm games discussion"
+"search_terms": "two participants comparing notes mid round sit side table one green striped kurta her back half camera peach shirt facing talking while runs swayamvar game session workshop mums sept 2026 content library ifm games discussion what red flags zero emission okay know",
+"speech": "What are the red flags? Zero emission. Okay, we know that...",
+"speech_dur": 5.7,
+"speech_at": [
+[
+0.0,
+"What are the red flags? Zero emission."
+],
+[
+4.0,
+"Okay, we know that..."
+]
+]
 },
 {
 "id": "IFM-418",
@@ -10017,7 +13193,19 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "hiral mid explanation suitor screen stands beside cream tee wide beige trousers hands open sentence explaining card participant head shoulder fill lower foreground swayamvar game session workshop mums sept 2026 content library ifm games teaching",
+"search_terms": "hiral mid explanation suitor screen stands beside cream tee wide beige trousers hands open sentence explaining card participant head shoulder fill lower foreground swayamvar game session workshop mums sept 2026 content library ifm games teaching what friends say about cash wonderful person who just don ask future plans now let see next shooter",
+"speech": "What friends say about cash is wonderful person who just don't ask about future plans. So now let's see who the next shooter is.",
+"speech_dur": 10.3,
+"speech_at": [
+[
+0.0,
+"What friends say about cash is wonderful person who just don't ask about future plans."
+],
+[
+7.0,
+"So now let's see who the next shooter is."
+]
+],
 "kit": "teaching",
 "kit_rank": 3
 },
@@ -10040,7 +13228,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration participants laughing during game two caught one black blazer grinning wide across table green kurta near foreground turning towards her tissues mugs water glass scattered between them swayamvar session workshop mums sept 2026 content library ifm games fun engagement candid"
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration participants laughing during game two caught one black blazer grinning wide across table green kurta near foreground turning towards her tissues mugs water glass scattered between them swayamvar session workshop mums sept 2026 content library ifm games fun engagement candid okay now let repeat next",
+"speech": "Okay, now let's repeat that next.",
+"speech_dur": 2.8,
+"speech_at": [
+[
+0.3,
+"Okay, now let's repeat that next."
+]
+]
 },
 {
 "id": "IFM-420",
@@ -10061,7 +13257,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration participant peach smiling over her workbook striped shirt sits table ifm open front next black water bottle red box pens swayamvar game session workshop mums sept 2026 content library games engaged"
+"search_terms": "candid warm natural unposed relaxed friendly celebration participant peach smiling over her workbook striped shirt sits table ifm open front next black water bottle red box pens swayamvar game session workshop mums sept 2026 content library games engaged proofs boos definitely your",
+"speech": "Proofs, boos are definitely your proofs.",
+"speech_dur": 3.4,
+"speech_at": [
+[
+0.0,
+"Proofs, boos are definitely your proofs."
+]
+]
 },
 {
 "id": "IFM-421",
@@ -10083,7 +13287,15 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "hiral reaching meet suitors list screen leans towards arm extended where suitor options listed maroon panel shot from behind her swayamvar game session workshop mums sept 2026 content library ifm games"
+"search_terms": "hiral reaching meet suitors list screen leans towards arm extended where suitor options listed maroon panel shot from behind her swayamvar game session workshop mums sept 2026 content library ifm games have real estate singh okay what his occupation landlord bio reads owns land need",
+"speech": "We have Mr. Real Estate Singh. Okay, what's his occupation? He's a landlord bio reads owns land need",
+"speech_dur": 8.1,
+"speech_at": [
+[
+0.7,
+"We have Mr. Real Estate Singh. Okay, what's his occupation? He's a landlord bio reads owns land need"
+]
+]
 },
 {
 "id": "IFM-422",
@@ -10109,7 +13321,27 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "hiral walks room through real estate singh suitor card stands pointing miss swayamvar screen occupation landlord green flag list tangible impressive makes family whatsapp group proud red high maintenance requires commitment difficult breakup process side game session workshop mums sept"
+"search_terms": "hiral walks room through real estate singh suitor card stands pointing miss swayamvar screen occupation landlord green flag list tangible impressive makes family whatsapp group proud red high maintenance requires commitment difficult breakup process side game session workshop mums sept makes family whatsapp groups really proud anybody who says they bought home something everybody excited right commands logs",
+"speech": "makes family WhatsApp groups really proud. So anybody who says they bought a home or they bought something, everybody on the WhatsApp is really, really excited. Right? Commands, logs.",
+"speech_dur": 10.7,
+"speech_at": [
+[
+0.0,
+"makes family WhatsApp groups really proud. So anybody who says they bought a"
+],
+[
+4.4,
+"home or they bought something, everybody on the WhatsApp is really, really excited."
+],
+[
+8.7,
+"Right?"
+],
+[
+9.7,
+"Commands, logs."
+]
+]
 },
 {
 "id": "IFM-423",
@@ -10131,7 +13363,15 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "hiral reacting suitor screen hand face stands one her card she talks room through swayamvar game session workshop mums sept 2026 content library ifm games reaction",
+"search_terms": "hiral reacting suitor screen hand face stands one her card she talks room through swayamvar game session workshop mums sept 2026 content library ifm games reaction understands how cryptocurrencies work what really",
+"speech": "Understands how cryptocurrencies work? What really?",
+"speech_dur": 3.9,
+"speech_at": [
+[
+0.0,
+"Understands how cryptocurrencies work? What really?"
+]
+],
 "kit": "teaching",
 "kit_rank": 3
 },
@@ -10158,7 +13398,15 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "two participants conversation far end table whiteboard mid one peach stripes black blazer workbooks mugs green tissue box spread across front them swayamvar game session workshop mums sept 2026 content library ifm games discussion"
+"search_terms": "two participants conversation far end table whiteboard mid one peach stripes black blazer workbooks mugs green tissue box spread across front them swayamvar game session workshop mums sept 2026 content library ifm games discussion just fun here can discuss why you chose one there right answer",
+"speech": "No, it's just a fun here and we can discuss as to why you chose one. There is no right answer.",
+"speech_dur": 6.8,
+"speech_at": [
+[
+0.1,
+"No, it's just a fun here and we can discuss as to why you chose one. There is no right answer."
+]
+]
 },
 {
 "id": "IFM-425",
@@ -10179,7 +13427,27 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "table from participant seat green striped sleeve frame length boardroom shot own her filling left foreground two participants visible across papers water glass swayamvar game session workshop mums sept 2026 content library ifm games pov wide"
+"search_terms": "table from participant seat green striped sleeve frame length boardroom shot own her filling left foreground two participants visible across papers water glass swayamvar game session workshop mums sept 2026 content library ifm games pov wide amazing but honestly just",
+"speech": "Amazing. Amazing. Amazing. But I honestly, this is just...",
+"speech_dur": 3.7,
+"speech_at": [
+[
+0.0,
+"Amazing."
+],
+[
+1.0,
+"Amazing."
+],
+[
+2.0,
+"Amazing."
+],
+[
+3.0,
+"But I honestly, this is just..."
+]
+]
 },
 {
 "id": "IFM-426",
@@ -10203,7 +13471,123 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "hiral game results list back camera stands square her reading down coloured entries screen round swayamvar session workshop mums sept 2026 content library ifm games leaderboard"
+"search_terms": "hiral game results list back camera stands square her reading down coloured entries screen round swayamvar session workshop mums sept 2026 content library ifm games leaderboard right why not stable more like debt yeah was shruti only one who chose should start you did choose would prefer stability okay point she had marry look her portfolio what about rest most equity potential growth literally mad liquidity yes excitement",
+"speech": "Right? Why? No, not stable. More like... No debt? No. Yeah, debt was... Shruti was the only one who chose debt. I should start with you. Why did you choose debt? I am in. I would prefer more of stability. Okay. So at this point if she had to marry, she would look for stability in her portfolio. Right? What about the rest? Why did most of you choose equity? Potential for growth. Potential for growth. I'm literally mad at the liquidity. Potential for growth. Yes. Right? And excitement. Excitement. Yeah? Right? So...",
+"speech_dur": 34.9,
+"speech_at": [
+[
+0.0,
+"Right? Why?"
+],
+[
+2.0,
+"No, not stable."
+],
+[
+4.0,
+"More like..."
+],
+[
+5.0,
+"No debt?"
+],
+[
+6.0,
+"No."
+],
+[
+7.0,
+"Yeah, debt was..."
+],
+[
+8.0,
+"Shruti was the only one who chose debt."
+],
+[
+10.0,
+"I should start with you."
+],
+[
+11.0,
+"Why did you choose debt?"
+],
+[
+12.0,
+"I am in."
+],
+[
+13.0,
+"I would prefer more of stability."
+],
+[
+15.0,
+"Okay."
+],
+[
+16.0,
+"So at this point if she had to marry,"
+],
+[
+18.0,
+"she would look for stability in her portfolio."
+],
+[
+20.0,
+"Right?"
+],
+[
+21.0,
+"What about the rest?"
+],
+[
+22.0,
+"Why did most of you choose equity?"
+],
+[
+23.0,
+"Potential for growth."
+],
+[
+24.0,
+"Potential for growth."
+],
+[
+25.0,
+"I'm literally mad at the liquidity."
+],
+[
+27.0,
+"Potential for growth."
+],
+[
+29.0,
+"Yes."
+],
+[
+30.0,
+"Right?"
+],
+[
+31.0,
+"And excitement."
+],
+[
+32.0,
+"Excitement."
+],
+[
+33.0,
+"Yeah?"
+],
+[
+34.0,
+"Right?"
+],
+[
+35.0,
+"So..."
+]
+]
 },
 {
 "id": "IFM-427",
@@ -10224,7 +13608,31 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "participant raising her hand answer raises high near foreground only green sleeve forearm frame while two participants across table look towards papers front them swayamvar game session workshop mums sept 2026 content library ifm games raised answering participation"
+"search_terms": "participant raising her hand answer raises high near foreground only green sleeve forearm frame while two participants across table look towards papers front them swayamvar game session workshop mums sept 2026 content library ifm games raised answering participation just fun yeah but learning",
+"speech": "Just for fun. Yeah? But for learning. Yeah. Just...",
+"speech_dur": 3.7,
+"speech_at": [
+[
+0.1,
+"Just for fun."
+],
+[
+1.1,
+"Yeah?"
+],
+[
+2.0,
+"But for learning."
+],
+[
+3.0,
+"Yeah."
+],
+[
+4.0,
+"Just..."
+]
+]
 },
 {
 "id": "IFM-428",
@@ -10266,7 +13674,23 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "participant following game her laptop dark clothing sits open macbook screen notes pen beside peach stripes right whiteboard behind them swayamvar session workshop mums sept 2026 content library ifm games"
+"search_terms": "participant following game her laptop dark clothing sits open macbook screen notes pen beside peach stripes right whiteboard behind them swayamvar session workshop mums sept 2026 content library ifm games shot time going out what you want lot",
+"speech": "I shot the time for going out. What do you want? A lot of...",
+"speech_dur": 7.0,
+"speech_at": [
+[
+0.0,
+"I shot the time for going out."
+],
+[
+4.0,
+"What do you want?"
+],
+[
+6.0,
+"A lot of..."
+]
+]
 },
 {
 "id": "IFM-430",
@@ -10287,7 +13711,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration participant navy smiling across table top sits workbook tissue box front her framed artwork wall behind swayamvar game session workshop mums sept 2026 content library ifm games"
+"search_terms": "candid warm natural unposed relaxed friendly celebration participant navy smiling across table top sits workbook tissue box front her framed artwork wall behind swayamvar game session workshop mums sept 2026 content library ifm games wasn going landlord",
+"speech": "I wasn't going to be a landlord.",
+"speech_dur": 5.5,
+"speech_at": [
+[
+0.2,
+"I wasn't going to be a landlord."
+]
+]
 },
 {
 "id": "IFM-431",
@@ -10312,7 +13744,31 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "participant green mid gesture during discussion bright kurta sits hand raised near her face she makes point cream hoodie foreground two more sit behind swayamvar game session workshop mums sept 2026 content library ifm games making",
+"search_terms": "participant green mid gesture during discussion bright kurta sits hand raised near her face she makes point cream hoodie foreground two more sit behind swayamvar game session workshop mums sept 2026 content library ifm games making but you wanted cash everyone yeah why newbie waiting there exactly right",
+"speech": "But you wanted cash, cash, everyone wanted cash, yeah? Why cash? He's a newbie. No waiting, it's there. Exactly, right?",
+"speech_dur": 10.4,
+"speech_at": [
+[
+0.0,
+"But you wanted cash, cash, everyone wanted cash, yeah?"
+],
+[
+4.0,
+"Why cash?"
+],
+[
+5.4,
+"He's a newbie."
+],
+[
+6.6,
+"No waiting, it's there."
+],
+[
+8.8,
+"Exactly, right?"
+]
+],
 "kit": "candid",
 "kit_rank": 3
 },
@@ -10337,7 +13793,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teens working through printed worksheet table three teenagers sit along boardroom ifm activity sheet front them girl nearest camera white long sleeved top writing hers water glasses pen ift youth workshop aug 2026 content library"
+"search_terms": "teens working through printed worksheet table three teenagers sit along boardroom ifm activity sheet front them girl nearest camera white long sleeved top writing hers water glasses pen ift youth workshop aug 2026 content library love says going ask you today how would calculate savings what formula most simplest come",
+"speech": "love it says so I'm going to ask you today how would you calculate savings what is the formula the most simplest formula how do you come up with",
+"speech_dur": 8.8,
+"speech_at": [
+[
+0.1,
+"love it says so I'm going to ask you today how would you calculate savings what is the formula"
+],
+[
+6.3,
+"the most simplest formula how do you come up with"
+]
+]
 },
 {
 "id": "IFM-433",
@@ -10360,7 +13828,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "room wide famous words slide shot from back table far end shows pale while five teenagers sit along their worksheets backs profiles camera ift teens youth workshop aug 2026 content library"
+"search_terms": "room wide famous words slide shot from back table far end shows pale while five teenagers sit along their worksheets backs profiles camera ift teens youth workshop aug 2026 content library what formula most simplest how you come",
+"speech": "What is the formula the most simplest formula? How do you come up with?",
+"speech_dur": 3.8,
+"speech_at": [
+[
+0.0,
+"What is the formula the most simplest formula? How do you come up with?"
+]
+]
 },
 {
 "id": "IFM-434",
@@ -10385,7 +13861,19 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "hiral addressing teens front famous words slide stands far end room beside showing blue title talking group one hand raised two teenagers sit foreground their backs camera ift youth workshop aug 2026 content library teaching"
+"search_terms": "hiral addressing teens front famous words slide stands far end room beside showing blue title talking group one hand raised two teenagers sit foreground their backs camera ift youth workshop aug 2026 content library teaching exactly today savings equal income minus expense right money which coming you deduct your expenses from whatever left over",
+"speech": "Exactly, today savings equal to income minus expense right, money which is coming in, you deduct your expenses from it and whatever is left over is your savings right.",
+"speech_dur": 12.2,
+"speech_at": [
+[
+0.0,
+"Exactly, today savings equal to income minus expense right, money which is coming in, you"
+],
+[
+7.0,
+"deduct your expenses from it and whatever is left over is your savings right."
+]
+]
 },
 {
 "id": "IFM-435",
@@ -10408,7 +13896,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teens around table worksheets screen frame four teenagers water glass front them one boy white tee turned towards group shot across chair back foreground ift youth workshop aug 2026 content library"
+"search_terms": "teens around table worksheets screen frame four teenagers water glass front them one boy white tee turned towards group shot across chair back foreground ift youth workshop aug 2026 content library your ceilings right",
+"speech": "is your ceilings, right?",
+"speech_dur": 2.3,
+"speech_at": [
+[
+0.0,
+"is your ceilings, right?"
+]
+]
 },
 {
 "id": "IFM-436",
@@ -10435,7 +13931,23 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "warren buffett income minus expenses slide hiral beside screen shows famous words crediting savings formula broken out then highlighted beneath stands right teenagers watch from table foreground ift teens youth workshop aug 2026 content library"
+"search_terms": "warren buffett income minus expenses slide hiral beside screen shows famous words crediting savings formula broken out then highlighted beneath stands right teenagers watch from table foreground ift teens youth workshop aug 2026 content library left don tend save whatever over after spend our money but what said minute income comes you put away intend invest then",
+"speech": "is left. We don't tend to do that. We tend to save whatever is left over after we spend our money. But what he said, the minute income comes in, you put away what you intend to save or invest and then spend with what is left.",
+"speech_dur": 17.0,
+"speech_at": [
+[
+0.0,
+"is left. We don't tend to do that. We tend to save whatever is left over after we spend"
+],
+[
+7.2,
+"our money. But what he said, the minute income comes in, you put away what you intend to"
+],
+[
+13.4,
+"save or invest and then spend with what is left."
+]
+]
 },
 {
 "id": "IFM-437",
@@ -10459,7 +13971,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "wide down table during buffett savings lesson room from near end looking length while slide five teenagers seated both sides air conditioner framed art far wall ift teens youth workshop aug 2026 content library"
+"search_terms": "wide down table during buffett savings lesson room from near end looking length while slide five teenagers seated both sides air conditioner framed art far wall ift teens youth workshop aug 2026 content library you put away what intend save invest then spend left",
+"speech": "You put away what you intend to save or invest and then spend with what is left.",
+"speech_dur": 7.4,
+"speech_at": [
+[
+0.0,
+"You put away what you intend to save or invest and then spend with what is left."
+]
+]
 },
 {
 "id": "IFM-438",
@@ -10482,7 +14002,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teens table from opposite corner group shot room four teenagers seated around their worksheets whiteboard framed art behind them ift youth workshop aug 2026 content library angle"
+"search_terms": "teens table from opposite corner group shot room four teenagers seated around their worksheets whiteboard framed art behind them ift youth workshop aug 2026 content library angle you put away what intend save invest then spend left",
+"speech": "You put away what you intend to save or invest and then spend with what is left.",
+"speech_dur": 7.4,
+"speech_at": [
+[
+0.0,
+"You put away what you intend to save or invest and then spend with what is left."
+]
+]
 },
 {
 "id": "IFM-439",
@@ -10558,7 +14086,47 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teen boy black talking his arms folded teenage tee sits table group yellow booklet phone plastic cup sit front him ift teens youth workshop aug 2026 content library discussion"
+"search_terms": "teen boy black talking his arms folded teenage tee sits table group yellow booklet phone plastic cup sit front him ift teens youth workshop aug 2026 content library discussion what about you was your favorite game think one played first where had like choose which financial thing were given scenario then happiness stress yeah broke friendship board pick things wanted did enjoy most just shows ideas better long run",
+"speech": "What about you? What was your favorite game? I think the one we played first where we had to like choose which financial thing we do and we were given a scenario and then we had like that happiness or stress Yeah, the broke by friendship Yeah What about you? The one where you had to go to the board and pick the things you wanted to do What did you enjoy most about that game? It's just that it shows you what ideas are better in the long run",
+"speech_dur": 36.3,
+"speech_at": [
+[
+0.0,
+"What about you? What was your favorite game?"
+],
+[
+5.0,
+"I think the one we played first where we had to like choose which financial thing we do"
+],
+[
+11.0,
+"and we were given a scenario and then we had like that happiness or stress"
+],
+[
+16.0,
+"Yeah, the broke by friendship"
+],
+[
+18.0,
+"Yeah"
+],
+[
+19.0,
+"What about you?"
+],
+[
+21.0,
+"The one where you had to go to the board and pick the things you wanted to do"
+],
+[
+25.0,
+"What did you enjoy most about that game?"
+],
+[
+29.0,
+"It's just that it shows you what ideas are better in the long run"
+]
+]
 },
 {
 "id": "IFM-442",
@@ -10583,7 +14151,31 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "hiral teaching beside illustrated slide teen peach foreground stands showing blue gesturing she explains teenager top sits near her hand chin worksheets papers across table ift teens youth workshop aug 2026 content library listening"
+"search_terms": "hiral teaching beside illustrated slide teen peach foreground stands showing blue gesturing she explains teenager top sits near her hand chin worksheets papers across table ift teens youth workshop aug 2026 content library listening going talk about what ipo why company raising money they because wanted grow expand their business using repay loans have taken first one good thing second best",
+"speech": "We are going to talk about what an IPO is, why is the company raising the money? Are they raising the money because they wanted to grow and expand their business or are they raising money because they are using it to repay the loans that they have taken. The first one is a good thing. The second one is in the best.",
+"speech_dur": 23.1,
+"speech_at": [
+[
+0.0,
+"We are going to talk about what an IPO is, why is the company raising the money?"
+],
+[
+5.0,
+"Are they raising the money because they wanted to grow and expand their business or are they"
+],
+[
+11.0,
+"raising money because they are using it to repay the loans that they have taken."
+],
+[
+17.0,
+"The first one is a good thing."
+],
+[
+19.0,
+"The second one is in the best."
+]
+]
 },
 {
 "id": "IFM-443",
@@ -10606,7 +14198,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "close detail teen filling activity sheet tight teenager hands writing colour printed ifm pen hand open notebook phone beside dark table ift teens youth workshop aug 2026 content library worksheet"
+"search_terms": "close detail teen filling activity sheet tight teenager hands writing colour printed ifm pen hand open notebook phone beside dark table ift teens youth workshop aug 2026 content library worksheet okay process private company giving out shares everyone called ipo once does only",
+"speech": "Okay, the process of that private company giving out shares to everyone is called an IPO and once the company does the IPO only...",
+"speech_dur": 12.7,
+"speech_at": [
+[
+0.6,
+"Okay, the process of that private company giving out shares to everyone is called an IPO"
+],
+[
+9.6,
+"and once the company does the IPO only..."
+]
+]
 },
 {
 "id": "IFM-444",
@@ -10630,7 +14234,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teens table boy black turned group teenage sits towards girl white beside him two more teenagers further down papers pink cup sit front them ift youth workshop aug 2026 content library discussion"
+"search_terms": "teens table boy black turned group teenage sits towards girl white beside him two more teenagers further down papers pink cup sit front them ift youth workshop aug 2026 content library discussion buy market price like share right now",
+"speech": "buy it at a market price like the share price that's right now no",
+"speech_dur": 4.9,
+"speech_at": [
+[
+0.0,
+"buy it at a market price like the share price that's right now no"
+]
+]
 },
 {
 "id": "IFM-445",
@@ -10676,7 +14288,27 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "two teen boys table looking towards camera teenage sit side one pale blue tee black printed sheets water bottle plastic cup between them ift teens youth workshop aug 2026 content library"
+"search_terms": "two teen boys table looking towards camera teenage sit side one pale blue tee black printed sheets water bottle plastic cup between them ift teens youth workshop aug 2026 content library what india two most popular indices think you know moment don nifty sensex",
+"speech": "What is the India's two most popular indices? I think you know it. At the moment I don't know. The Nifty and the Sensex.",
+"speech_dur": 13.1,
+"speech_at": [
+[
+0.1,
+"What is the India's two most popular indices?"
+],
+[
+4.1,
+"I think you know it."
+],
+[
+6.1,
+"At the moment I don't know."
+],
+[
+8.1,
+"The Nifty and the Sensex."
+]
+]
 },
 {
 "id": "IFM-447",
@@ -10699,7 +14331,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teen girl white her worksheets classmate beside teenage tee sits table printed activity sheets spread front another teenager top whiteboard framed art behind ift teens youth workshop aug 2026 content library"
+"search_terms": "teen girl white her worksheets classmate beside teenage tee sits table printed activity sheets spread front another teenager top whiteboard framed art behind ift teens youth workshop aug 2026 content library each based size company which part basket",
+"speech": "that each based on the size of the company which is part of the basket",
+"speech_dur": 9.3,
+"speech_at": [
+[
+0.0,
+"that each based on the size of the company which is part of the basket"
+]
+]
 },
 {
 "id": "IFM-448",
@@ -10722,7 +14362,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teen boy talking his hands clasped classmate listening teenage black sits front him girl white tee beside third teenager teal foreground ift teens youth workshop aug 2026 content library"
+"search_terms": "teen boy talking his hands clasped classmate listening teenage black sits front him girl white tee beside third teenager teal foreground ift teens youth workshop aug 2026 content library demand increased because people expect expectations always matter they",
+"speech": "The demand is increased because people expect it, so expectations always matter and they",
+"speech_dur": 14.9,
+"speech_at": [
+[
+0.0,
+"The demand is increased because people expect it, so expectations always matter and they"
+]
+]
 },
 {
 "id": "IFM-449",
@@ -10812,7 +14460,43 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "meeting room wide before feedback round two participants table seen from doorway end older woman lilac striped shirt left green checked top across her laptop water glasses snack bowls tissue box between them august corporate sept 2026 content library ifm"
+"search_terms": "meeting room wide before feedback round two participants table seen from doorway end older woman lilac striped shirt left green checked top across her laptop water glasses snack bowls tissue box between them august corporate sept 2026 content library ifm confident feel better equipped take decisions least smaller quantities trying understand how work started framing questions would say more like before financial goals helping mom frame you know beginning ask why invest versus really great course especially already process want get yeah",
+"speech": "are confident and I feel I'm better equipped to take decisions at least in smaller quantities and at least trying to understand how my decisions work. I started framing my questions, so I would say I'm 60-70% more confident and I started framing my questions, I started like before the questions, I started framing my financial goals, helping my mom frame financial goals and you know I'm beginning to ask questions of why would I invest in this versus that. So I would say that this is really a great course especially if you're already in that process of like I want to get started, yeah.",
+"speech_dur": 48.6,
+"speech_at": [
+[
+0.0,
+"are confident and I feel I'm better equipped to take decisions at least in smaller quantities"
+],
+[
+9.0,
+"and at least trying to understand how my decisions work."
+],
+[
+13.5,
+"I started framing my questions, so I would say I'm 60-70% more confident and I started"
+],
+[
+20.3,
+"framing my questions, I started like before the questions, I started framing my financial"
+],
+[
+25.9,
+"goals, helping my mom frame financial goals and you know I'm beginning to ask questions"
+],
+[
+31.9,
+"of why would I invest in this versus that."
+],
+[
+34.7,
+"So I would say that this is really a great course especially if you're already in that"
+],
+[
+40.1,
+"process of like I want to get started, yeah."
+]
+]
 },
 {
 "id": "IFM-453",
@@ -10833,7 +14517,39 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "testimonial review feedback social proof word of mouth participant green checked top gives her feedback camera shirt over white sits meeting room table facing speaking code card propped front next tissue box plate august corporate sept 2026 content library ifm testimonial"
+"search_terms": "testimonial review feedback social proof word of mouth participant green checked top gives her feedback camera shirt over white sits meeting room table facing speaking code card propped front next tissue box plate august corporate sept 2026 content library ifm testimonial think rohingya rituals very interesting even twr time was because something layman you look online don get all these answers definitely gives deeper perspective when comes some things might not available readily anything what one thing found ipo looking forward have mentioned also scan looks which maybe coming then would like much detail will try into awesome",
+"speech": "I think the Rohingya Rituals is very interesting for me and even this, the TWR or TWR, the time, that was very interesting because that's something even as a layman or if you look online, you don't get all of these answers. So it definitely gives us a deeper perspective when it comes to some things that might not be available readily. Anything? What is the one thing you found interesting? The IPO thing was interesting for me because that is something that I was looking forward for and that's what I have mentioned also in the scan, the thing that looks in me. IPO is something which maybe we are coming up with one so then I would like to go in much detail also and I will try to get into it. That's awesome.",
+"speech_dur": 58.2,
+"speech_at": [
+[
+0.0,
+"I think the Rohingya Rituals is very interesting for me and even this, the TWR or TWR, the time, that was very interesting because that's something even as a layman or if you look online, you don't get all of these answers."
+],
+[
+17.0,
+"So it definitely gives us a deeper perspective when it comes to some things that might not be available readily."
+],
+[
+25.0,
+"Anything?"
+],
+[
+28.0,
+"What is the one thing you found interesting?"
+],
+[
+32.0,
+"The IPO thing was interesting for me because that is something that I was looking forward for and that's what I have mentioned also in the scan, the thing that looks in me."
+],
+[
+45.0,
+"IPO is something which maybe we are coming up with one so then I would like to go in much detail also and I will try to get into it."
+],
+[
+57.0,
+"That's awesome."
+]
+]
 },
 {
 "id": "IFM-454",
@@ -10854,7 +14570,43 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "testimonial review feedback social proof word of mouth older participant lilac shirt gives her feedback gesturing close seated shot striped speaking directly camera one hand raised mid gesture phone notebook table front august corporate sept 2026 content library ifm testimonial"
+"search_terms": "testimonial review feedback social proof word of mouth older participant lilac shirt gives her feedback gesturing close seated shot striped speaking directly camera one hand raised mid gesture phone notebook table front august corporate sept 2026 content library ifm testimonial about like learning various types mutual funds those kinds things have invested more but now see myself wanting husband already does lot hydro stuff strategy balance him out really look stability bucket there one version isn yeah still try maximize returns giving liquidity mean little arsenal",
+"speech": "about like learning about the various types of mutual funds or those are the kinds of things I have invested more but like now I see myself wanting, my husband already does a lot of hydro stuff and my strategy to balance him out now is to really look at the stability bucket. There is one version isn't there? Yeah, look at the stability bucket but still try to maximize returns on the stability bucket and giving us a lot more liquidity so that's and I mean now I have a little arsenal with my husband.",
+"speech_dur": 37.4,
+"speech_at": [
+[
+0.0,
+"about like learning about the various types of mutual funds or those are the kinds of things"
+],
+[
+5.5,
+"I have invested more but like now I see myself wanting, my husband already does a lot of"
+],
+[
+11.2,
+"hydro stuff and my strategy to balance him out now is to really look at the stability"
+],
+[
+18.6,
+"bucket."
+],
+[
+19.6,
+"There is one version isn't there?"
+],
+[
+21.6,
+"Yeah, look at the stability bucket but still try to maximize returns on the stability"
+],
+[
+25.9,
+"bucket and giving us a lot more liquidity so that's and I mean now I have a little arsenal"
+],
+[
+33.6,
+"with my husband."
+]
+]
 },
 {
 "id": "IFM-455",
@@ -10875,7 +14627,27 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "testimonial review feedback social proof word of mouth participant pink floral kurta explains her takeaway both hands sits meeting room chair speaking camera raised front mid explanation plain wall behind feedback august corporate sept 2026 content library ifm testimonial explaining"
+"search_terms": "testimonial review feedback social proof word of mouth participant pink floral kurta explains her takeaway both hands sits meeting room chair speaking camera raised front mid explanation plain wall behind feedback august corporate sept 2026 content library ifm testimonial explaining what happening office will understand from account then start giving thoughts also okay now even know something you can have conversation them yeah awesome",
+"speech": "what is happening in my office, I will understand from my CA, from my account and then I will start giving my thoughts also to it. Okay, now even I know something so you know I can have a conversation with them. Yeah, awesome.",
+"speech_dur": 13.1,
+"speech_at": [
+[
+0.0,
+"what is happening in my office, I will understand from my CA, from my account and then I will"
+],
+[
+4.5,
+"start giving my thoughts also to it. Okay, now even I know something so you know I can"
+],
+[
+10.1,
+"have a conversation with them."
+],
+[
+11.5,
+"Yeah, awesome."
+]
+]
 },
 {
 "id": "IFM-456",
@@ -10898,7 +14670,195 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "participant leaning back whiteboard end table lilac shirted sits right her chair both hands behind head plates glasses tissue box bin fill foreground nobody addressing camera feedback august corporate sept 2026 content library ifm room wide between takes"
+"search_terms": "participant leaning back whiteboard end table lilac shirted sits right her chair both hands behind head plates glasses tissue box bin fill foreground nobody addressing camera feedback august corporate sept 2026 content library ifm room wide between takes would like more into detail mutual funds taxis case you come something ipo don mind just how evaluate ipos stuff but anything also taxation because think what every day versus wills trusts one off thing your trust tax base six months have many different limitations combinations then eventually mercy says good option okay fun mixer people who alumni these batches genuinely interested actively looking developing them learning from they taken here grown want share each other session planning give yeah know should doing might was really nice she brought interesting investment opportunism right real way never thought margin sorry brutal electrification bring things very out box already growth everybody knows about big portfolio works makes some money",
+"speech": "I would like to go more into detail and mutual funds Taxis, I would like to In case you come up with something like IPO in detail, I don't mind Just how to evaluate IPOs and stuff But would anything with also But it's more on taxation because I think that's what we do every day Versus wills or trusts would be like One-off thing Like your trust is that your tax is something you base on every six months Or you have so many different limitations and combinations to it And then eventually you're at the mercy of the CA And he says this is a good option Okay, we go with that I think it would be fun to have a mixer for people who are alumni of these batches Who are genuinely interested and actively looking at developing them And learning also from what they've taken from here and grown with And what they want to share with each other I'm an alumni session I'm planning to have But I just Give it to us six months Yeah, I know I don't know what I should do Yeah, I'm doing detail and then I might The other thing I think was like really Would be nice is like how she brought up These really interesting investment Opportunism Right, like this real way thing I would have never thought of that I know the margin thing Oh no, sorry You brought that brutal electrification So to like bring up these really These things that you don't really think of They're very out of the box Versus what we already know You know like this growth stuff Okay, everybody knows about this growth stuff It's like a big thing But you don't have like something Interesting in your portfolio like this And how it works It's how It's how it works And it makes some more money for you Yeah",
+"speech_dur": 110.1,
+"speech_at": [
+[
+0.0,
+"I would like to go more into detail and mutual funds"
+],
+[
+3.0,
+"Taxis, I would like to"
+],
+[
+5.0,
+"In case you come up with something like IPO in detail, I don't mind"
+],
+[
+9.0,
+"Just how to evaluate IPOs and stuff"
+],
+[
+12.0,
+"But would anything with also"
+],
+[
+15.0,
+"But it's more on taxation because I think that's what we do every day"
+],
+[
+19.0,
+"Versus wills or trusts would be like"
+],
+[
+22.0,
+"One-off thing"
+],
+[
+24.0,
+"Like your trust is that your tax is something you base on every six months"
+],
+[
+28.0,
+"Or you have so many different limitations and combinations to it"
+],
+[
+32.0,
+"And then eventually you're at the mercy of the CA"
+],
+[
+35.0,
+"And he says this is a good option"
+],
+[
+37.0,
+"Okay, we go with that"
+],
+[
+38.0,
+"I think it would be fun to have a mixer for people who are alumni of these batches"
+],
+[
+44.0,
+"Who are genuinely interested and actively looking at developing them"
+],
+[
+49.0,
+"And learning also from what they've taken from here and grown with"
+],
+[
+53.0,
+"And what they want to share with each other"
+],
+[
+56.0,
+"I'm an alumni session I'm planning to have"
+],
+[
+58.0,
+"But I just"
+],
+[
+59.0,
+"Give it to us six months"
+],
+[
+60.0,
+"Yeah, I know"
+],
+[
+61.0,
+"I don't know what I should do"
+],
+[
+62.0,
+"Yeah, I'm doing detail and then I might"
+],
+[
+65.0,
+"The other thing I think was like really"
+],
+[
+67.0,
+"Would be nice is like how she brought up"
+],
+[
+69.0,
+"These really interesting investment"
+],
+[
+72.0,
+"Opportunism"
+],
+[
+73.0,
+"Right, like this real way thing"
+],
+[
+75.0,
+"I would have never thought of that"
+],
+[
+77.0,
+"I know the margin thing"
+],
+[
+79.0,
+"Oh no, sorry"
+],
+[
+80.0,
+"You brought that brutal electrification"
+],
+[
+82.0,
+"So to like bring up these really"
+],
+[
+85.0,
+"These things that you don't really think of"
+],
+[
+88.0,
+"They're very out of the box"
+],
+[
+89.0,
+"Versus what we already know"
+],
+[
+91.0,
+"You know like this growth stuff"
+],
+[
+92.0,
+"Okay, everybody knows about this growth stuff"
+],
+[
+95.0,
+"It's like a big thing"
+],
+[
+96.0,
+"But you don't have like something"
+],
+[
+99.0,
+"Interesting in your portfolio like this"
+],
+[
+101.0,
+"And how it works"
+],
+[
+103.0,
+"It's how"
+],
+[
+104.0,
+"It's how it works"
+],
+[
+106.0,
+"And it makes some more money for you"
+],
+[
+109.0,
+"Yeah"
+]
+]
 },
 {
 "id": "IFM-457",
@@ -10919,7 +14879,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "wide green checked participant down table seen from further seated against whiteboard wall plates glasses pen pot across foreground feedback august corporate sept 2026 content library ifm room session"
+"search_terms": "wide green checked participant down table seen from further seated against whiteboard wall plates glasses pen pot across foreground feedback august corporate sept 2026 content library ifm room session money end trying find write but least you have right knowledge move further",
+"speech": "money at the end of it and trying to find to write, but at least you have the right knowledge to move further.",
+"speech_dur": 11.3,
+"speech_at": [
+[
+0.0,
+"money at the end of it and trying to find to write, but at least you have the right knowledge"
+],
+[
+7.0,
+"to move further."
+]
+]
 },
 {
 "id": "IFM-458",
@@ -10940,7 +14912,35 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "participant presents from printed notes colleague laptop woman red white striped sleeveless top stands holding sheet reads addressing black who sits table behind open whiteboard glasses phone feedback august corporate sept 2026 content library ifm presenting reading"
+"search_terms": "participant presents from printed notes colleague laptop woman red white striped sleeveless top stands holding sheet reads addressing black who sits table behind open whiteboard glasses phone feedback august corporate sept 2026 content library ifm presenting reading after course versus when you started more confidence much yes all studying again will look now have study about stocks sponsor didn start meeting people how understand but confident making investment decisions myself probably not yet",
+"speech": "After this course versus when you started with more confidence and confidence, so much. Yes, we are all studying again and we will look at it. Now I have to study more about the stocks. Sponsor didn't start meeting with people and how do you understand it? But am I confident in making investment decisions by myself? Probably not yet.",
+"speech_dur": 27.0,
+"speech_at": [
+[
+0.0,
+"After this course versus when you started with more confidence and confidence, so much."
+],
+[
+8.0,
+"Yes, we are all studying again and we will look at it."
+],
+[
+12.0,
+"Now I have to study more about the stocks."
+],
+[
+15.0,
+"Sponsor didn't start meeting with people and how do you understand it?"
+],
+[
+20.0,
+"But am I confident in making investment decisions by myself?"
+],
+[
+24.0,
+"Probably not yet."
+]
+]
 },
 {
 "id": "IFM-459",
@@ -10988,7 +14988,15 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "hiral piece camera teens reel takes jun 2026 records vertical day june workshop standing front framed panel green grey artwork dark teal top nine consecutive same short direct address shot she alone frame throughout framing does not change between goel",
+"search_terms": "hiral piece camera teens reel takes jun 2026 records vertical day june workshop standing front framed panel green grey artwork dark teal top nine consecutive same short direct address shot she alone frame throughout framing does not change between goel going explain today kirao zoom",
+"speech": "I am going to explain it in today's Kirao Zoom.",
+"speech_dur": 4.0,
+"speech_at": [
+[
+0.3,
+"I am going to explain it in today's Kirao Zoom."
+]
+],
 "kit": "portrait",
 "kit_rank": 2
 },
@@ -11013,7 +15021,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "teen boy white tee answering table teenage plain shirt sits head boardroom talking towards camera black water bottle his worksheet front him cream curtains fill background teens youth workshop student speaking answer june 2026 jun whiteboard aakara reel voice"
+"search_terms": "teen boy white tee answering table teenage plain shirt sits head boardroom talking towards camera black water bottle his worksheet front him cream curtains fill background teens youth workshop student speaking answer june 2026 jun whiteboard aakara reel voice yeah understanding how stocks work all because usually had mental block against works their investments okay",
+"speech": "Yeah, understanding how stocks work and all because I've usually had a mental block against understanding how all of the works and their investments do. Okay.",
+"speech_dur": 8.4,
+"speech_at": [
+[
+0.0,
+"Yeah, understanding how stocks work and all because I've usually had a mental block against understanding how all of the works and their investments do."
+],
+[
+8.0,
+"Okay."
+]
+]
 },
 {
 "id": "IFM-462",
@@ -11036,7 +15056,35 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration teen boy black grinning answers teenage shirt leans back boardroom chair smiling broadly mid answer one hand raised plain wall edge table behind him teens youth workshop student speaking camera june 2026 jun whiteboard aakara reel talking head voice"
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration teen boy black grinning answers teenage shirt leans back boardroom chair smiling broadly mid answer one hand raised plain wall edge table behind him teens youth workshop student speaking camera june 2026 jun whiteboard aakara reel talking head voice camera shy funny okay fine assume there can but say what one thing your dad asked you could answer was about how stock market works not",
+"speech": "I'm a camera shy. That's funny, okay fine. Assume that there's no camera on. I can't. But say, okay, what is the one thing that your dad asked you that you could answer? The one thing he asked me was about how the stock market works or not.",
+"speech_dur": 26.2,
+"speech_at": [
+[
+0.1,
+"I'm a camera shy."
+],
+[
+2.1,
+"That's funny, okay fine."
+],
+[
+4.1,
+"Assume that there's no camera on."
+],
+[
+6.1,
+"I can't."
+],
+[
+9.1,
+"But say, okay, what is the one thing that your dad asked you that you could answer?"
+],
+[
+16.1,
+"The one thing he asked me was about how the stock market works or not."
+]
+]
 },
 {
 "id": "IFM-463",
@@ -11059,7 +15107,51 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "teen boy glasses explaining his hands teenage navy graphic shirt talks animatedly camera gesturing open hand works through answer teens youth workshop student speaking june 2026 jun boardroom whiteboard aakara reel talking head voice"
+"search_terms": "teen boy glasses explaining his hands teenage navy graphic shirt talks animatedly camera gesturing open hand works through answer teens youth workshop student speaking june 2026 jun boardroom whiteboard aakara reel talking head voice will your throwback what say you saying look answer can come vivaan did learn end class learned how stock market works",
+"speech": "This will be your throwback. What? Say... What are you saying? Look! What are you saying? It's...it's...it's your answer. I can't say your answer. Come on, Vivaan. What did you learn at the end of this class? I learned how the stock market works.",
+"speech_dur": 20.1,
+"speech_at": [
+[
+0.0,
+"This will be your throwback."
+],
+[
+2.0,
+"What?"
+],
+[
+2.5,
+"Say..."
+],
+[
+5.5,
+"What are you saying?"
+],
+[
+7.0,
+"Look!"
+],
+[
+7.5,
+"What are you saying?"
+],
+[
+9.0,
+"It's...it's...it's your answer. I can't say your answer."
+],
+[
+12.0,
+"Come on, Vivaan."
+],
+[
+13.0,
+"What did you learn at the end of this class?"
+],
+[
+16.0,
+"I learned how the stock market works."
+]
+]
 },
 {
 "id": "IFM-464",
@@ -11082,7 +15174,79 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "teen girl pink thinking through her answer teenage top sits table hand near mouth mid thought she answers whiteboard behind covered session written notes laptop open foreground teens youth workshop student speaking camera june 2026 jun boardroom aakara reel talking"
+"search_terms": "teen girl pink thinking through her answer teenage top sits table hand near mouth mid thought she answers whiteboard behind covered session written notes laptop open foreground teens youth workshop student speaking camera june 2026 jun boardroom aakara reel talking learned learn playing them how you put your hand games were fun what did one concept investing specific diversification say louder huh just said should not like all our money pocket store because can use everything yeah fine",
+"speech": "And I learned to learn playing them. How? How do you put your hand up? The games were fun and I learned to learn playing them. What did you learn? What is the one concept that you learned? Investing. Be specific. Diversification. Say it louder. Huh? Say it? What you just said, just say it louder. I learned that we should not like put all our money in pocket. One store. Because we can't use everything. Yeah, that's fine.",
+"speech_dur": 46.4,
+"speech_at": [
+[
+0.0,
+"And I learned to learn playing them."
+],
+[
+4.0,
+"How?"
+],
+[
+5.0,
+"How do you put your hand up?"
+],
+[
+6.0,
+"The games were fun and I learned to learn playing them."
+],
+[
+9.0,
+"What did you learn?"
+],
+[
+10.0,
+"What is the one concept that you learned?"
+],
+[
+13.0,
+"Investing."
+],
+[
+16.0,
+"Be specific."
+],
+[
+18.0,
+"Diversification."
+],
+[
+20.0,
+"Say it louder."
+],
+[
+23.0,
+"Huh?"
+],
+[
+24.0,
+"Say it?"
+],
+[
+28.0,
+"What you just said, just say it louder."
+],
+[
+32.0,
+"I learned that we should not like put all our money in pocket."
+],
+[
+39.0,
+"One store."
+],
+[
+42.0,
+"Because we can't use everything."
+],
+[
+45.0,
+"Yeah, that's fine."
+]
+]
 },
 {
 "id": "IFM-465",
@@ -11105,7 +15269,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "teen glasses white tee answering classmates behind teenager shirt talks camera from boardroom chair hand raised mid point two laptop screen visible wooden cabinet framed picture back wall teens youth workshop student speaking answer june 2026 jun whiteboard aakara reel"
+"search_terms": "teen glasses white tee answering classmates behind teenager shirt talks camera from boardroom chair hand raised mid point two laptop screen visible wooden cabinet framed picture back wall teens youth workshop student speaking answer june 2026 jun whiteboard aakara reel what about stock market one was most fun you really enjoyed game",
+"speech": "What about the stock market one was most fun for you? It was really fun and I enjoyed the game.",
+"speech_dur": 8.7,
+"speech_at": [
+[
+0.0,
+"What about the stock market one was most fun for you?"
+],
+[
+5.0,
+"It was really fun and I enjoyed the game."
+]
+]
 },
 {
 "id": "IFM-466",
@@ -11128,7 +15304,39 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "teen girl glasses speaking side table teenage white printed shirt turns towards camera answer seated boardroom chair cream curtains behind her teens youth workshop student june 2026 jun whiteboard aakara reel talking head voice"
+"search_terms": "teen girl glasses speaking side table teenage white printed shirt turns towards camera answer seated boardroom chair cream curtains behind her teens youth workshop student june 2026 jun whiteboard aakara reel talking head voice guys one second when played stock market game learned how not put all money into company because ended losing everything",
+"speech": "Guys! One second. When we played the stock market game, I learned how to not put all of my money into one company because I ended up losing everything. That's all.",
+"speech_dur": 14.8,
+"speech_at": [
+[
+0.0,
+"Guys!"
+],
+[
+2.0,
+"One second."
+],
+[
+4.0,
+"When we played the stock market game,"
+],
+[
+6.0,
+"I learned how to not put all of my money"
+],
+[
+8.0,
+"into one company because"
+],
+[
+10.0,
+"I ended up losing everything."
+],
+[
+14.0,
+"That's all."
+]
+]
 },
 {
 "id": "IFM-467",
@@ -11151,7 +15359,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "teen boy answering front lending borrowing whiteboard teenage black shirt looks straight camera answers directly behind him carries session note about money someone need written red teens youth workshop student speaking answer june 2026 jun boardroom aakara reel talking head"
+"search_terms": "teen boy answering front lending borrowing whiteboard teenage black shirt looks straight camera answers directly behind him carries session note about money someone need written red teens youth workshop student speaking answer june 2026 jun boardroom aakara reel talking head stock market game invested all money left maybe 000 ended winning got 300 profit",
+"speech": "In the stock market game, I invested all my money. I left maybe 3,000 and I ended up winning and got the 300% profit.",
+"speech_dur": 14.0,
+"speech_at": [
+[
+0.0,
+"In the stock market game, I invested all my money. I left maybe 3,000 and I ended up winning and got the 300% profit."
+]
+]
 },
 {
 "id": "IFM-468",
@@ -11174,7 +15390,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "teen girl white printed tee answering hands her lap teenage shirt sits folded talking camera classmate arm boardroom chairs frame both sides teens youth workshop student speaking answer june 2026 jun whiteboard aakara reel head voice"
+"search_terms": "teen girl white printed tee answering hands her lap teenage shirt sits folded talking camera classmate arm boardroom chairs frame both sides teens youth workshop student speaking answer june 2026 jun whiteboard aakara reel head voice was cool how they even managed make just about finance yeah",
+"speech": "It was cool how they even managed to make it to just about finance. Yeah.",
+"speech_dur": 8.4,
+"speech_at": [
+[
+0.0,
+"It was cool how they even managed to make it to just about finance."
+],
+[
+7.0,
+"Yeah."
+]
+]
 },
 {
 "id": "IFM-469",
@@ -11197,7 +15425,39 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "teens working their phones tablets around boardroom table group works through activity long wooden several teenagers heads down tablet while one boy stands far end watching whiteboard behind already full session notes printed worksheets drinks cover teen youth workshop june"
+"search_terms": "teens working their phones tablets around boardroom table group works through activity long wooden several teenagers heads down tablet while one boy stands far end watching whiteboard behind already full session notes printed worksheets drinks cover teen youth workshop june you can make one box two boxes too absolutely fantastic fire have",
+"speech": "You can make one box. No, you can make two boxes. Oh, me too. You can make one box. Absolutely fantastic. Fire in two boxes. You have to be...",
+"speech_dur": 14.0,
+"speech_at": [
+[
+0.0,
+"You can make one box."
+],
+[
+2.0,
+"No, you can make two boxes."
+],
+[
+4.0,
+"Oh, me too."
+],
+[
+6.0,
+"You can make one box."
+],
+[
+8.0,
+"Absolutely fantastic."
+],
+[
+10.0,
+"Fire in two boxes."
+],
+[
+12.0,
+"You have to be..."
+]
+]
 },
 {
 "id": "IFM-470",
@@ -11220,7 +15480,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "teen boy table printed activity cards teenage black shirt sits worksheets spread front him reaching towards pile plays through teens youth workshop june 2026 jun boardroom whiteboard group students aakara reel session video room"
+"search_terms": "teen boy table printed activity cards teenage black shirt sits worksheets spread front him reaching towards pile plays through teens youth workshop june 2026 jun boardroom whiteboard group students aakara reel session video room give you one chip want",
+"speech": "I'll give you one chip, one chip I want that chip, one chip I want that chip.",
+"speech_dur": 18.3,
+"speech_at": [
+[
+0.0,
+"I'll give you one chip, one chip I want that chip, one chip I want that chip."
+]
+]
 },
 {
 "id": "IFM-471",
@@ -11243,7 +15511,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "room wide whole teens group mid activity boardroom from head table eight nine teenagers seated along both sides worksheets water bottles snacks across two whiteboards hand written session notes left air conditioner cabinets behind teen youth workshop june 2026 jun"
+"search_terms": "room wide whole teens group mid activity boardroom from head table eight nine teenagers seated along both sides worksheets water bottles snacks across two whiteboards hand written session notes left air conditioner cabinets behind teen youth workshop june 2026 jun jim",
+"speech": "it's jim jim jim jim jim jim it's jim jim jim",
+"speech_dur": 9.1,
+"speech_at": [
+[
+0.0,
+"it's jim jim jim jim jim jim it's jim jim jim"
+]
+]
 },
 {
 "id": "IFM-472",
@@ -11266,7 +15542,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "room wide from door end whole group around table same boardroom shot full teenagers seated laptops storage crate worksheets foreground note covered whiteboards catching window light behind teens teen youth workshop june 2026 jun whiteboard activity students aakara reel session"
+"search_terms": "room wide from door end whole group around table same boardroom shot full teenagers seated laptops storage crate worksheets foreground note covered whiteboards catching window light behind teens teen youth workshop june 2026 jun whiteboard activity students aakara reel session part class just game all games yeah would you recommend your friends awesome",
+"speech": "part of the class just that game or all the games yeah would you recommend this to your friends yeah awesome",
+"speech_dur": 17.8,
+"speech_at": [
+[
+0.0,
+"part of the class just that game or all the games yeah would you recommend this"
+],
+[
+13.4,
+"to your friends yeah awesome"
+]
+]
 },
 {
 "id": "IFM-473",
@@ -11289,7 +15577,123 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "boardroom wide during teens session shot from corner handheld down room teenagers seated along table their worksheets phones ceiling lights cream curtains above laptop printed sheets near foreground teen youth workshop june 2026 jun whiteboard activity group students aakara reel"
+"search_terms": "boardroom wide during teens session shot from corner handheld down room teenagers seated along table their worksheets phones ceiling lights cream curtains above laptop printed sheets near foreground teen youth workshop june 2026 jun whiteboard activity group students aakara reel how you suspend from your body don well expel wasn exactly both them know about didn have kids care yeah just stopped feeling going stop what fits want wear did everyone get one once put because",
+"speech": "How do you suspend it from your body? I don't suspend it from my body. You don't suspend it from your body as well? I don't do it. I don't expel it from my body. He wasn't exactly expel it from my body. I don't expel it from my body. I do both of them. I don't know about this. We didn't have kids. No, we didn't have kids. No, no, no. I don't care about that. You don't do well with that. Yeah. We don't care about that. We don't. We don't. I just stopped feeling it. Yeah. I'm going to stop. Is this what fits? Yeah. You want to wear it? Yeah. Did everyone get one? Yeah. Once I don't put it in because we're going to...",
+"speech_dur": 44.6,
+"speech_at": [
+[
+0.2,
+"How do you suspend it from your body?"
+],
+[
+5.2,
+"I don't suspend it from my body."
+],
+[
+7.2,
+"You don't suspend it from your body as well?"
+],
+[
+9.2,
+"I don't do it."
+],
+[
+10.2,
+"I don't expel it from my body."
+],
+[
+12.2,
+"He wasn't exactly expel it from my body."
+],
+[
+15.2,
+"I don't expel it from my body."
+],
+[
+17.2,
+"I do both of them."
+],
+[
+18.2,
+"I don't know about this."
+],
+[
+19.2,
+"We didn't have kids."
+],
+[
+21.2,
+"No, we didn't have kids."
+],
+[
+22.2,
+"No, no, no."
+],
+[
+23.2,
+"I don't care about that."
+],
+[
+24.2,
+"You don't do well with that."
+],
+[
+26.2,
+"Yeah."
+],
+[
+27.2,
+"We don't care about that."
+],
+[
+28.2,
+"We don't."
+],
+[
+29.2,
+"We don't."
+],
+[
+30.2,
+"I just stopped feeling it."
+],
+[
+32.2,
+"Yeah."
+],
+[
+33.2,
+"I'm going to stop."
+],
+[
+34.2,
+"Is this what fits?"
+],
+[
+36.2,
+"Yeah."
+],
+[
+37.2,
+"You want to wear it?"
+],
+[
+39.2,
+"Yeah."
+],
+[
+40.2,
+"Did everyone get one?"
+],
+[
+42.2,
+"Yeah."
+],
+[
+43.2,
+"Once I don't put it in because we're going to..."
+]
+]
 },
 {
 "id": "IFM-474",
@@ -11312,7 +15716,207 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "two teens side near end table close teenagers sitting together boardroom one white printed shirt leaning towards other glasses water phone open laptop sit polished wood front them teen youth workshop june 2026 jun whiteboard activity group students aakara reel"
+"search_terms": "two teens side near end table close teenagers sitting together boardroom one white printed shirt leaning towards other glasses water phone open laptop sit polished wood front them teen youth workshop june 2026 jun whiteboard activity group students aakara reel what one conversation you had either your parents result class raise hands whoever has something say can same person answering come ahaan want yes fine not offering asking father capital shy okay assume there camera let thing dad asked could answer was about how stock market works does each why did put out noise know sir get jobs very bad cool sorry disrespectful disrespective don see here though ugh yours learn end learned leave said",
+"speech": "What is the one conversation you had with either of your parents as a result of this class? Raise your hands whoever has something to say. It can't be the same person answering. Come on. Ahaan, do you want to? Me? Yes. I'm fine. No, I'm not offering you. I'm asking you, what is the conversation you had with your father or whoever? I'm a capital shy. That's fine. Okay, fine. Assume that there's no camera on. I can't. Let's say, okay, what is the one thing that your dad asked you that you could answer? The one thing he asked me was about how the stock market works and what does it do with each class? Why? Did you put out noise? Yes. You know, sir, we get jobs. Very bad. Not cool. Ahaan, sorry. You're not cool. Ahaan, that's disrespectful, that's not cool. Disrespective. You're not cool. Ahaan, you're not. Okay, sorry. No. No, no. Don't. Did you not see this one? Here, though. What? Say. Ugh. What do you say? What? What do you say? It's your answer. I can't say yours. Come on, Ahaan. What did you learn at the end of this class? I learned how the stock market works. Leave it. Leave it. I said leave it.",
+"speech_dur": 103.5,
+"speech_at": [
+[
+0.0,
+"What is the one conversation you had with either of your parents as a result of this class?"
+],
+[
+8.0,
+"Raise your hands whoever has something to say."
+],
+[
+11.0,
+"It can't be the same person answering."
+],
+[
+13.0,
+"Come on."
+],
+[
+15.7,
+"Ahaan, do you want to?"
+],
+[
+17.7,
+"Me?"
+],
+[
+18.7,
+"Yes."
+],
+[
+19.7,
+"I'm fine."
+],
+[
+20.7,
+"No, I'm not offering you."
+],
+[
+24.7,
+"I'm asking you, what is the conversation you had with your father or whoever?"
+],
+[
+31.7,
+"I'm a capital shy."
+],
+[
+33.7,
+"That's fine."
+],
+[
+34.7,
+"Okay, fine."
+],
+[
+35.7,
+"Assume that there's no camera on."
+],
+[
+37.7,
+"I can't."
+],
+[
+40.7,
+"Let's say, okay, what is the one thing that your dad asked you that you could answer?"
+],
+[
+47.7,
+"The one thing he asked me was about how the stock market works and what does it do with each class?"
+],
+[
+58.7,
+"Why?"
+],
+[
+60.7,
+"Did you put out noise?"
+],
+[
+62.7,
+"Yes."
+],
+[
+63.7,
+"You know, sir, we get jobs."
+],
+[
+65.7,
+"Very bad."
+],
+[
+66.7,
+"Not cool."
+],
+[
+67.7,
+"Ahaan, sorry."
+],
+[
+68.7,
+"You're not cool."
+],
+[
+69.7,
+"Ahaan, that's disrespectful, that's not cool."
+],
+[
+71.7,
+"Disrespective."
+],
+[
+72.7,
+"You're not cool."
+],
+[
+73.7,
+"Ahaan, you're not."
+],
+[
+74.7,
+"Okay, sorry."
+],
+[
+75.7,
+"No."
+],
+[
+76.7,
+"No, no."
+],
+[
+77.7,
+"Don't."
+],
+[
+78.7,
+"Did you not see this one?"
+],
+[
+79.7,
+"Here, though."
+],
+[
+80.7,
+"What?"
+],
+[
+81.7,
+"Say."
+],
+[
+82.7,
+"Ugh."
+],
+[
+83.7,
+"What do you say?"
+],
+[
+85.7,
+"What?"
+],
+[
+86.7,
+"What do you say?"
+],
+[
+87.7,
+"It's your answer."
+],
+[
+89.7,
+"I can't say yours."
+],
+[
+90.7,
+"Come on, Ahaan."
+],
+[
+91.7,
+"What did you learn at the end of this class?"
+],
+[
+94.7,
+"I learned how the stock market works."
+],
+[
+100.7,
+"Leave it."
+],
+[
+101.7,
+"Leave it."
+],
+[
+102.7,
+"I said leave it."
+]
+]
 },
 {
 "id": "IFM-475",
@@ -11335,7 +15939,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "teen boy table his worksheet water bottle teenage white shirt sits boardroom looking towards front room printed phone black laid out him classmate shoulder frame right teens youth workshop june 2026 jun whiteboard activity group students aakara reel session video"
+"search_terms": "teen boy table his worksheet water bottle teenage white shirt sits boardroom looking towards front room printed phone black laid out him classmate shoulder frame right teens youth workshop june 2026 jun whiteboard activity group students aakara reel session video understanding all works their investments okay can remove bond",
+"speech": "understanding of all of the works and their investments do. Okay, can we remove that bond?",
+"speech_dur": 5.5,
+"speech_at": [
+[
+0.0,
+"understanding of all of the works and their investments do."
+],
+[
+3.0,
+"Okay, can we remove that bond?"
+]
+]
 },
 {
 "id": "IFM-476",
@@ -11545,7 +16161,35 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "teens session hiral screen time secret ingredient compounding stands wall mounted her arm stretched out slide headed why reading line about starting early students dark green school uniform sit along near side boardroom table printed worksheets water bottles front them",
+"search_terms": "teens session hiral screen time secret ingredient compounding stands wall mounted her arm stretched out slide headed why reading line about starting early students dark green school uniform sit along near side boardroom table printed worksheets water bottles front them much larger proportion yellow part show you visually how compounding works grows exponentially longer stay best work every year matters don need start large amounts money build corpses just give your time which why today parents really wanted class early because earlier growth potential yes exactly what compound interest does",
+"speech": "a much larger proportion of the yellow part. This is to show you visually how compounding works. It grows exponentially the longer you stay at best at work. So every year matters and you don't need to start with large amounts of money to build large corpses. You just need to give your money time. Which is why today your parents really wanted you to do this class early because the earlier you start the longer your money's growth potential is. Yes, exactly. It's what compound interest does.",
+"speech_dur": 40.3,
+"speech_at": [
+[
+0.0,
+"a much larger proportion of the yellow part. This is to show you visually how compounding"
+],
+[
+7.0,
+"works. It grows exponentially the longer you stay at best at work. So every year matters"
+],
+[
+14.0,
+"and you don't need to start with large amounts of money to build large corpses. You just need"
+],
+[
+21.0,
+"to give your money time. Which is why today your parents really wanted you to do this"
+],
+[
+27.0,
+"class early because the earlier you start the longer your money's growth potential is."
+],
+[
+34.0,
+"Yes, exactly. It's what compound interest does."
+]
+],
 "kit": "teaching",
 "kit_rank": 3
 },
@@ -11571,7 +16215,91 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "teens session king chessboard slide class watching screen shows illustrated grain doubling square rising curve uniformed students around table turned towards one leaning forward her elbows compounding story attention classroom"
+"search_terms": "teens session king chessboard slide class watching screen shows illustrated grain doubling square rising curve uniformed students around table turned towards one leaning forward her elbows compounding story attention classroom inventor told him would like reward you game created asked what said first all does anybody know how many squares chessboard exactly will place one green rice square every subsequent want double amount grains started second went two right cut think was fifth 16th which about 512 still really small but eventually got point where granaries kingdom were empty there not enough chess player actually magic compounding way works grows your money exponentially over time have riddle who make more year old putting",
+"speech": "inventor and told him that I would like to reward you for the game that you've created. So we asked him what would you like as a reward. The inventor said that, first of all, does anybody know how many squares are on a chessboard? 64. 64. Exactly. So the inventor said that I will place one green of rice on the first square and for every subsequent square, I want you to double the amount of grains of rice. So he started with one green of rice. On the second square, it went to two grains of rice, right? Cut to the, I think it was the fifth square or the 16th square, which was about 512 grains of rice and that was still a really small amount. But eventually it got to a point where all the granaries in the kingdom were empty and there was not enough grains of rice to reward this chess player. That's actually the magic of compounding and the way it works. It grows your money exponentially over time. So I have a riddle for you. Who do you think will make more money? A 15-year-old or a 25-year-old. The 15-year-old is putting in...",
+"speech_dur": 87.9,
+"speech_at": [
+[
+0.0,
+"inventor and told him that I would like to reward you for the game that you've created."
+],
+[
+7.0,
+"So we asked him what would you like as a reward."
+],
+[
+10.6,
+"The inventor said that, first of all, does anybody know how many squares are on a chessboard?"
+],
+[
+16.6,
+"64."
+],
+[
+17.6,
+"64."
+],
+[
+18.6,
+"Exactly."
+],
+[
+19.6,
+"So the inventor said that I will place one green of rice on the first square and"
+],
+[
+25.8,
+"for every subsequent square, I want you to double the amount of grains of rice."
+],
+[
+32.8,
+"So he started with one green of rice."
+],
+[
+35.8,
+"On the second square, it went to two grains of rice, right?"
+],
+[
+39.8,
+"Cut to the, I think it was the fifth square or the 16th square,"
+],
+[
+45.8,
+"which was about 512 grains of rice and that was still a really small amount."
+],
+[
+52.8,
+"But eventually it got to a point where all the granaries in the kingdom were empty"
+],
+[
+60.8,
+"and there was not enough grains of rice to reward this chess player."
+],
+[
+66.8,
+"That's actually the magic of compounding and the way it works."
+],
+[
+70.8,
+"It grows your money exponentially over time."
+],
+[
+74.8,
+"So I have a riddle for you."
+],
+[
+77.8,
+"Who do you think will make more money?"
+],
+[
+80.8,
+"A 15-year-old or a 25-year-old."
+],
+[
+84.8,
+"The 15-year-old is putting in..."
+]
+]
 },
 {
 "id": "IFM-486",
@@ -11619,7 +16347,43 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "teens session over back row towards screen mid lesson handheld from behind heads shoulders seated students foreground standing presenter small slightly blown out end room shoulder roll"
+"search_terms": "teens session over back row towards screen mid lesson handheld from behind heads shoulders seated students foreground standing presenter small slightly blown out end room shoulder roll actually rupee doubled every day days amounts over 000 what call magic compounding now let see math start rupees can anybody tell how get second will third fourth fifth right going 512",
+"speech": "Actually, 1 rupee doubled for every day for 30 days is actually amounts to over 5,000. And that's what we call as the magic of compounding. Now, let's see what the math is. So, on day 1, we start with 1 rupee, by day 5 it amounts to 16 rupees. Can anybody tell me how we get to 16? On the second day, 1 rupee will be, on the third day it will be, on the fourth day it will be, and on the fifth day it will be 16, right? By day 10, that's going to be 512 rupees. By day 15, it's going to be over 16,000.",
+"speech_dur": 42.4,
+"speech_at": [
+[
+0.0,
+"Actually, 1 rupee doubled for every day for 30 days is actually amounts to over 5,000."
+],
+[
+8.2,
+"And that's what we call as the magic of compounding."
+],
+[
+12.2,
+"Now, let's see what the math is."
+],
+[
+14.2,
+"So, on day 1, we start with 1 rupee, by day 5 it amounts to 16 rupees."
+],
+[
+21.2,
+"Can anybody tell me how we get to 16?"
+],
+[
+25.0,
+"On the second day, 1 rupee will be, on the third day it will be, on the fourth day it will be, and on the fifth day it will be 16, right?"
+],
+[
+35.0,
+"By day 10, that's going to be 512 rupees."
+],
+[
+39.0,
+"By day 15, it's going to be over 16,000."
+]
+]
 },
 {
 "id": "IFM-488",
@@ -11645,7 +16409,31 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "candid warm natural unposed relaxed friendly celebration teens session hiral presenting money personality cards stands left screen black sleeveless top long tan skirt smiling towards group slide behind her holds two red character portraits bullet lists activity teaching"
+"search_terms": "candid warm natural unposed relaxed friendly celebration teens session hiral presenting money personality cards stands left screen black sleeveless top long tan skirt smiling towards group slide behind her holds two red character portraits bullet lists activity teaching class course hope self explanatory kash khan represents cash asset what features characteristics emergency response specialist did talk about best emergencies right because quick accessible liquid bio need already downstairs when you always available drop hat there waiting dramas questions asked green flags extremely dependable loves",
+"speech": "class. Of course, I hope it's self-explanatory that Mr. or Ms. Kash Khan represents cash as an asset class. What are the features of characteristics of cash as an asset class? Emergency response specialist. What did we talk about? That cash is best for emergencies, right? Because it's quick, it's accessible, and it's liquid. Bio of Kash Khan is need me at 2 a.m. and already downstairs. When you need cash, it's always available to you at the drop of a hat. There's no waiting, no dramas, no questions asked. Green flags, Kash Khan is always available, extremely dependable, loves emergencies and...",
+"speech_dur": 49.0,
+"speech_at": [
+[
+0.0,
+"class. Of course, I hope it's self-explanatory that Mr. or Ms. Kash Khan represents cash as an asset class."
+],
+[
+9.0,
+"What are the features of characteristics of cash as an asset class? Emergency response specialist."
+],
+[
+16.0,
+"What did we talk about? That cash is best for emergencies, right? Because it's quick, it's accessible, and it's liquid."
+],
+[
+24.0,
+"Bio of Kash Khan is need me at 2 a.m. and already downstairs. When you need cash, it's always available to you at the drop of a hat."
+],
+[
+36.0,
+"There's no waiting, no dramas, no questions asked. Green flags, Kash Khan is always available, extremely dependable, loves emergencies and..."
+]
+]
 },
 {
 "id": "IFM-489",
@@ -11697,7 +16485,71 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "teens session hiral reading slide her back class stands square screen camera character card aloud empty chairs student shoulder foreground roll"
+"search_terms": "teens session hiral reading slide her back class stands square screen camera character card aloud empty chairs student shoulder foreground roll his occupation founder ceo their bio reads they have big dreams think but occasionally public breakdowns what mean referring happens you know listen stable exactly right share price generally tends fluctuate sometimes crash yeah green flags ambitious equity one actually going create wealth your portfolio creator long term winner hold period time generate great amounts money loves growth red has moong swings yes over very often emotional rollercoaster because idea how shares perform definitely not",
+"speech": "His occupation or his occupation is founder and CEO. Their bio reads that they have big dreams, they think big, but occasionally they have public breakdowns. What do I mean by occasionally have public breakdowns? What am I referring to? What happens, you know? Listen to a stable. Exactly, right? The share price generally tends to fluctuate and sometimes it tends to crash, yeah? Green flags, they're ambitious, their equity is the one that's actually going to create wealth in your portfolio. So it's a wealth creator, it's a long-term winner. If you hold it for a long period of time, it's going to generate you great amounts of money. It loves growth, but the red flags are it has moong swings. What do I mean by moong swings? Yes, the share price tends to fluctuate over time. So very often it's an emotional rollercoaster because you have no idea how the shares are going to perform. So it's definitely not...",
+"speech_dur": 71.7,
+"speech_at": [
+[
+0.7,
+"His occupation or his occupation is founder and CEO."
+],
+[
+5.7,
+"Their bio reads that they have big dreams, they think big, but occasionally they have public breakdowns."
+],
+[
+14.7,
+"What do I mean by occasionally have public breakdowns? What am I referring to?"
+],
+[
+18.7,
+"What happens, you know?"
+],
+[
+21.7,
+"Listen to a stable."
+],
+[
+24.7,
+"Exactly, right? The share price generally tends to fluctuate"
+],
+[
+28.7,
+"and sometimes it tends to crash, yeah?"
+],
+[
+32.7,
+"Green flags, they're ambitious, their equity is the one that's actually going to create wealth in your portfolio."
+],
+[
+41.7,
+"So it's a wealth creator, it's a long-term winner."
+],
+[
+44.7,
+"If you hold it for a long period of time, it's going to generate you great amounts of money."
+],
+[
+50.7,
+"It loves growth, but the red flags are it has moong swings."
+],
+[
+55.7,
+"What do I mean by moong swings?"
+],
+[
+58.7,
+"Yes, the share price tends to fluctuate over time."
+],
+[
+63.7,
+"So very often it's an emotional rollercoaster because you have no idea how the shares are going to perform."
+],
+[
+69.7,
+"So it's definitely not..."
+]
+]
 },
 {
 "id": "IFM-491",
@@ -11722,7 +16574,71 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "teens session hiral working through spreadsheet her laptop group sits head table behind open showing green white hand raised mid explanation talking across students whiteboard covered flow diagrams from earlier explaining seated teaching"
+"search_terms": "teens session hiral working through spreadsheet her laptop group sits head table behind open showing green white hand raised mid explanation talking across students whiteboard covered flow diagrams from earlier explaining seated teaching wow there lot gold manhutras picture yes because stable picked you want pick okay your mom would mostly something timeless classic appeal survives crisis yeah generally popular choice who additionally our parents grandparents equity was oftentimes looked way gambling money putting into stock market very often akin back day but now longer case people tended put their",
+"speech": "Wow, there is a lot of gold manhutras in the picture. Yes, because it's stable. He picked it for you. He picked it for you. I want to pick gold. Gold. Okay, so your mom would mostly pick something that is timeless, classic appeal, survives crisis. Yeah. Yes. So that's generally your popular choice for who your mom would pick. Additionally, our parents, our grandparents, equity was oftentimes looked as a way of gambling money. Putting money into the stock market was very often akin to gambling back in the day. But now that's no longer the case. Back in the day people tended to put their money in gold because it was",
+"speech_dur": 46.0,
+"speech_at": [
+[
+0.0,
+"Wow, there is a lot of gold manhutras in the picture."
+],
+[
+4.0,
+"Yes, because it's stable."
+],
+[
+7.0,
+"He picked it for you."
+],
+[
+8.0,
+"He picked it for you."
+],
+[
+9.0,
+"I want to pick gold."
+],
+[
+10.0,
+"Gold."
+],
+[
+11.0,
+"Okay, so your mom would mostly pick something that is timeless, classic appeal, survives"
+],
+[
+17.0,
+"crisis."
+],
+[
+18.0,
+"Yeah."
+],
+[
+19.0,
+"Yes."
+],
+[
+20.0,
+"So that's generally your popular choice for who your mom would pick."
+],
+[
+24.0,
+"Additionally, our parents, our grandparents, equity was oftentimes looked as a way of gambling money."
+],
+[
+34.0,
+"Putting money into the stock market was very often akin to gambling back in the day."
+],
+[
+40.0,
+"But now that's no longer the case."
+],
+[
+42.0,
+"Back in the day people tended to put their money in gold because it was"
+]
+]
 },
 {
 "id": "IFM-492",
@@ -11747,7 +16663,55 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "teens session cohort around table their worksheets wide lighter end room eight nine students seated printed handouts laptop mugs potted cacti sill behind them presenter right frame group"
+"search_terms": "teens session cohort around table their worksheets wide lighter end room eight nine students seated printed handouts laptop mugs potted cacti sill behind them presenter right frame group yes most people make cash why because liquid available everywhere exactly wherever you want there two who picked debt what was reason they she speechless wanted pick unidentified everybody fair response thing going whenever need end game guys hope enjoyed reinforced all characteristics each asset class would nice give more feedback",
+"speech": "Yes, so most people make cash. Why cash? Because cash is liquid. It's available everywhere. Exactly, it's available wherever you want it. And there are two people who picked debt. What was the reason they picked debt? She was speechless. Because you wanted me to pick it for you. Who is the unidentified cash? So everybody picked a cash and that's a fair response because that's the thing that's going to be available to you whenever you need it. So that is the end of the game, guys. I hope you enjoyed this game and I hope it reinforced all the characteristics of each asset class. Yes, it would be nice for you to give me more feedback.",
+"speech_dur": 51.5,
+"speech_at": [
+[
+0.0,
+"Yes, so most people make cash. Why cash? Because cash is liquid."
+],
+[
+7.0,
+"It's available everywhere."
+],
+[
+9.0,
+"Exactly, it's available wherever you want it."
+],
+[
+12.0,
+"And there are two people who picked debt. What was the reason they picked debt?"
+],
+[
+17.0,
+"She was speechless."
+],
+[
+19.0,
+"Because you wanted me to pick it for you."
+],
+[
+22.0,
+"Who is the unidentified cash?"
+],
+[
+26.0,
+"So everybody picked a cash and that's a fair response because that's the thing that's going to be available to you whenever you need it."
+],
+[
+36.0,
+"So that is the end of the game, guys."
+],
+[
+40.0,
+"I hope you enjoyed this game and I hope it reinforced all the characteristics of each asset class."
+],
+[
+47.0,
+"Yes, it would be nice for you to give me more feedback."
+]
+]
 },
 {
 "id": "IFM-493",
@@ -11814,7 +16778,23 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "boardroom shoot participant speaking room video pink top sits turned away from table wheeled office chair talking gesturing rest group four five others seated behind her along wall listening discussion corporate canon"
+"search_terms": "boardroom shoot participant speaking room video pink top sits turned away from table wheeled office chair talking gesturing rest group four five others seated behind her along wall listening discussion corporate canon yeah what doing here now next spot going",
+"speech": "Yeah. What's it doing here? So now, this next spot, we're going to...",
+"speech_dur": 13.3,
+"speech_at": [
+[
+3.0,
+"Yeah."
+],
+[
+7.3,
+"What's it doing here?"
+],
+[
+10.3,
+"So now, this next spot, we're going to..."
+]
+]
 },
 {
 "id": "IFM-496",
@@ -11860,7 +16840,15 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "boardroom shoot wrong question mutual fund slide projector close projected which best answered like asking what pair shoes over list running heels hiking boots football flip flops line depends where you going analogy teaching content detail"
+"search_terms": "boardroom shoot wrong question mutual fund slide projector close projected which best answered like asking what pair shoes over list running heels hiking boots football flip flops line depends where you going analogy teaching content detail determines which appropriate shoe you should choose wear",
+"speech": "That determines which is the appropriate shoe you should choose to wear.",
+"speech_dur": 5.5,
+"speech_at": [
+[
+0.4,
+"That determines which is the appropriate shoe you should choose to wear."
+]
+]
 },
 {
 "id": "IFM-498",
@@ -12585,7 +17573,43 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "certificate completion graduation proud achievement social proof iya ift teens session working through slide footage from back boardroom group watching screen while presenter talks students turning between their sheets certificate graduation feedback workshop"
+"search_terms": "certificate completion graduation proud achievement social proof iya ift teens session working through slide footage from back boardroom group watching screen while presenter talks students turning between their sheets certificate graduation feedback workshop what did you pick instead yeah okay why guys both because most time prices higher just sometimes great have leave right now",
+"speech": "What did you pick instead? Yeah, okay, so why did you guys pick both? Because most of the time the prices go higher just sometimes Okay, great, yeah I have to leave You have to leave right now? Okay Okay, what is the time?",
+"speech_dur": 21.2,
+"speech_at": [
+[
+0.9,
+"What did you pick instead?"
+],
+[
+2.9,
+"Yeah, okay, so why did you guys pick both?"
+],
+[
+5.9,
+"Because most of the time the prices go higher just sometimes"
+],
+[
+10.9,
+"Okay, great, yeah"
+],
+[
+13.9,
+"I have to leave"
+],
+[
+15.9,
+"You have to leave right now?"
+],
+[
+16.9,
+"Okay"
+],
+[
+18.9,
+"Okay, what is the time?"
+]
+]
 },
 {
 "id": "IFM-529",
@@ -12702,7 +17726,91 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "IFM / In-house",
-"search_terms": "certificate completion graduation proud achievement social proof august feedback participant green camera woman kurta sits table talking snacks tissues front her framed art behind own account session certificate graduation teens workshop"
+"search_terms": "certificate completion graduation proud achievement social proof august feedback participant green camera woman kurta sits table talking snacks tissues front her framed art behind own account session certificate graduation teens workshop things had learned beginning was about insurance what kind there also you can have investment your some form return life term know whole bivocation yeah big discussion when started off then obviously etf gold different kinds funds linked not yet come now feel brad but like office talk here told husband initially actually said please all our yourself unit right mean still evaluate claude asking him questions has lot more respect willing answer detailed whereas earlier just read somewhere why don ask these figure out okay gonna show analysis whether makes sense good yes",
+"speech": "the things that I had learned in the beginning it was about the insurance and what kind of insurance is there and also that you can have an investment with your you can have some form of return with the insurance and your life term insurance and you know the whole bivocation in it. Yeah. That was a big discussion we had when we started off and then there was obviously the ETF and the gold and the different kinds of funds linked to gold. What about you? No not yet come on. Come on. Now you can feel Brad. I can I can but he's like not now you know you come to office and then we'll talk not here. So I've told my husband initially he actually when I said can I please have all our insurance funds he was like go do it yourself you go the unit right I mean I still have to have to evaluate it on Claude but now when I'm asking him questions he has a lot more respect and he is willing to answer my detailed questions whereas earlier he kind of was like oh you just read that somewhere and that's why he was asking me don't ask me these questions go figure it out yourself whereas now he's like okay I'm gonna show you my analysis and then you evaluate for yourself whether this makes sense so that was good yes",
+"speech_dur": 84.6,
+"speech_at": [
+[
+0.0,
+"the things that I had learned in the beginning it was about the insurance and what kind of"
+],
+[
+4.8,
+"insurance is there and also that you can have an investment with your you can have some form"
+],
+[
+11.1,
+"of return with the insurance and your life term insurance and you know the whole bivocation"
+],
+[
+18.2,
+"in it."
+],
+[
+19.2,
+"Yeah."
+],
+[
+20.2,
+"That was a big discussion we had when we started off and then there was obviously"
+],
+[
+24.2,
+"the ETF and the gold and the different kinds of funds linked to gold."
+],
+[
+29.5,
+"What about you?"
+],
+[
+30.5,
+"No not yet come on."
+],
+[
+32.5,
+"Come on."
+],
+[
+33.5,
+"Now you can feel Brad."
+],
+[
+35.5,
+"I can I can but he's like not now you know you come to office and then we'll talk not"
+],
+[
+39.8,
+"here."
+],
+[
+41.8,
+"So I've told my husband initially he actually when I said can I please have all our insurance"
+],
+[
+48.5,
+"funds he was like go do it yourself you go the unit right I mean I still have to"
+],
+[
+53.8,
+"have to evaluate it on Claude but now when I'm asking him questions he has a lot more"
+],
+[
+59.6,
+"respect and he is willing to answer my detailed questions whereas earlier he kind of was like"
+],
+[
+68.4,
+"oh you just read that somewhere and that's why he was asking me don't ask me these questions go figure"
+],
+[
+75.0,
+"it out yourself whereas now he's like okay I'm gonna show you my analysis and then you evaluate"
+],
+[
+80.2,
+"for yourself whether this makes sense so that was good yes"
+]
+]
 },
 {
 "id": "IFM-534",
@@ -12725,7 +17833,23 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "IFM / In-house",
-"search_terms": "certificate completion graduation proud achievement social proof august feedback participant green second take same from closer angle mid sentence one hand raised speaking directly camera certificate graduation teens workshop"
+"search_terms": "certificate completion graduation proud achievement social proof august feedback participant green second take same from closer angle mid sentence one hand raised speaking directly camera certificate graduation teens workshop invest myself smaller amount little more confident about but definitely take baby steps investing versus just listening everyone else advice say okay buy you know xyz",
+"speech": "invest for myself at a smaller amount and I am a little more confident about myself but I definitely take baby steps in investing for myself versus just listening to everyone else's advice and say okay buy this for X amount and do this for you know XYZ",
+"speech_dur": 20.0,
+"speech_at": [
+[
+0.0,
+"invest for myself at a smaller amount and I am a little more confident about myself but I definitely"
+],
+[
+7.5,
+"take baby steps in investing for myself versus just listening to everyone else's advice and say"
+],
+[
+14.0,
+"okay buy this for X amount and do this for you know XYZ"
+]
+]
 },
 {
 "id": "IFM-535",
@@ -12748,7 +17872,155 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "IFM / In-house",
-"search_terms": "certificate completion graduation proud achievement social proof august feedback older participant lilac woman shirt sits boardroom table notebook phone front her speaking camera about session certificate graduation teens workshop"
+"search_terms": "certificate completion graduation proud achievement social proof august feedback older participant lilac woman shirt sits boardroom table notebook phone front her speaking camera about session certificate graduation teens workshop one really close friends was mba great told her you might want look these flexi caps not ones suggesting but husband actually evaluated rates return them girls see those work honestly speaking just making more confident can myself few years doing well money have family what excited about there energetic shift energy healer okay feel comfortable asking questions absolutely add inspiring too also fun think group were lot back forthing which like know some cross learning from instructor hiral each other makes much informative enjoyable session thank most part games god yeah keep everyone then understand help way play exactly therefore change get opportunity don need how typically use kind mindset anymore",
+"speech": "One of my really close friends was a CA and an MBA and it was great that I told her. You might want to look at these flexi-caps, not the ones that you are suggesting. But these are the ones that my husband actually evaluated and look at the rates of return on them, look at the K-girls on these and see if those work for you. But honestly speaking, it's just making me more confident that I can see myself in a few years doing really well with the money we have for myself and my family. So that's what I'm excited about. There's an energetic shift. I'm an energy healer and there's an energetic shift. Okay. Do you feel comfortable asking questions? Absolutely. Absolutely. I have to add what was inspiring and I have one too. What was really also fun was I think my group was really great and there were a lot of questions and a lot of back-and-forthing and which was like, you know, there was also some cross-learning. So there was learning from the instructor, Hiral, but there's also learning from each other and that makes it a much more informative and enjoyable session. Thank you. Thank you. What was the most fun part? The games. Oh my God. The games were so fun. The games were a lot of fun. Yeah. There were games. There were some more games. Yeah. You keep a session with everyone. And then you understand, you know, the games also really help you understand the way you play. Exactly. And therefore also change. Yeah. Yeah, you get the opportunity to change. Oh, you know what? I don't need to play like how I typically do. I don't need to use that kind of mindset anymore.",
+"speech_dur": 120.9,
+"speech_at": [
+[
+0.0,
+"One of my really close friends was a CA and an MBA and it was great that I told her."
+],
+[
+7.0,
+"You might want to look at these flexi-caps, not the ones that you are suggesting."
+],
+[
+18.0,
+"But these are the ones that my husband actually evaluated and look at the rates of return"
+],
+[
+23.0,
+"on them, look at the K-girls on these and see if those work for you."
+],
+[
+29.0,
+"But honestly speaking, it's just making me more confident that I can see myself in a few years"
+],
+[
+36.0,
+"doing really well with the money we have for myself and my family."
+],
+[
+40.0,
+"So that's what I'm excited about."
+],
+[
+43.0,
+"There's an energetic shift. I'm an energy healer and there's an energetic shift."
+],
+[
+49.0,
+"Okay. Do you feel comfortable asking questions?"
+],
+[
+53.0,
+"Absolutely."
+],
+[
+54.0,
+"Absolutely. I have to add what was inspiring and I have one too."
+],
+[
+61.0,
+"What was really also fun was I think my group was really great and there were a lot of questions"
+],
+[
+68.0,
+"and a lot of back-and-forthing and which was like, you know, there was also some cross-learning."
+],
+[
+73.0,
+"So there was learning from the instructor, Hiral, but there's also learning from each other"
+],
+[
+80.0,
+"and that makes it a much more informative and enjoyable session."
+],
+[
+85.0,
+"Thank you."
+],
+[
+86.0,
+"Thank you."
+],
+[
+87.0,
+"What was the most fun part?"
+],
+[
+90.0,
+"The games."
+],
+[
+91.0,
+"Oh my God."
+],
+[
+93.0,
+"The games were so fun."
+],
+[
+95.0,
+"The games were a lot of fun."
+],
+[
+97.0,
+"Yeah."
+],
+[
+98.0,
+"There were games."
+],
+[
+99.0,
+"There were some more games."
+],
+[
+101.0,
+"Yeah."
+],
+[
+102.0,
+"You keep a session with everyone."
+],
+[
+103.0,
+"And then you understand, you know, the games also really help you understand"
+],
+[
+106.0,
+"the way you play."
+],
+[
+107.0,
+"Exactly."
+],
+[
+108.0,
+"And therefore also change."
+],
+[
+110.0,
+"Yeah."
+],
+[
+111.0,
+"Yeah, you get the opportunity to change."
+],
+[
+113.0,
+"Oh, you know what?"
+],
+[
+114.0,
+"I don't need to play like how I typically do."
+],
+[
+117.0,
+"I don't need to use that kind of mindset anymore."
+]
+]
 },
 {
 "id": "IFM-536",
@@ -12771,7 +18043,335 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "IFM / In-house",
-"search_terms": "certificate completion graduation proud achievement social proof august feedback participant reading from her notes woman deep red top seen profile holds printed sheet speaks back what she took session rather than speaking off cuff certificate graduation teens workshop"
+"search_terms": "certificate completion graduation proud achievement social proof august feedback participant reading from her notes woman deep red top seen profile holds printed sheet speaks back what she took session rather than speaking off cuff certificate graduation teens workshop moment any realization you had throughout workshop anything really struck think time value know being disciplined investor will always give good benefits which couldn imagine previously shocked learned app was showing how much should invest now then have play money talking about retirement calculator yes education can buy young investors make sell them okay what one new concept useful read feel looking cagr xirr understand statement better thing would start doing differently today tax free want compartmentalize like fund head put expense travel after retire steady income flow stops certain myself help everybody though but also compartmentalized not dipping into other lessening some things having pay something else awesome youngest wedding leave medical side sips going home right because don need test see happens your hands compared all recently figured sip decided been happening every monday aware when get message yeah glad did comfortable asking questions very most fun part kpco especially talk past love question were too embarrassed ask before last discussion husband father anybody take next meeting pms person could say dumpo sitting there showed off husbands together maybe focusing our goals conversation kids team set understanding health insurance signed just prashit exactly cover family photo becoming more informed own pretty thank girls nice day stay safe bye",
+"speech": "moment or any realization you had throughout the workshop anything that really struck you. I think the time value you know being a disciplined investor will always give you good benefits which you couldn't imagine previously. Anything that shocked you that you learned. The app was showing us how much you should invest now and then how much you have to play in the money. So that shocked me. So you're talking about the retirement calculator. Yes, yes. And the education calculator. And education calculator. Now you can buy young investors. And make and sell them. Okay what's one new concept or any new concept that you learned which you think will be useful for you? Read. Read or feel. Read or feel. Now looking at that CAGR, looking at XIRR. Now we can understand the statement better. Okay what's one thing you would start doing differently? Start it today. No tax free. I want to compartmentalize it like an education fund. Like in my head I will want to put in this much for the expense. I want to put in this much for my travel expense after I retire. After my steady income flow stops. I want to have a certain income for travel for myself. I want to help everybody think though. But in that also I want to have it compartmentalized so I'm not dipping into other or lessening some of my other things for having to pay for education or having to pay for something else. Awesome. Anything you would do differently or the youngest so? Wedding fund. Education fund. Leave the medical side. I'm so into the SIPs, I was like I'm going to go home and do this thing right now. Because you don't need so much money to put it into SIPs. And I was like okay I can test and see what happens. And you have time on your hands. Compared to all of us. I recently figured this SIP thing because I've decided that So for me the SIPs have been happening every Monday. Which I was not aware of. And now when I get the message and I read it I'm like oh yeah. I'm glad that happens. Did you feel comfortable asking questions? Yes very much. What was the most fun part? The KPCO. Especially this talk of the past. The KPCO. I love this one. I love this one. Awesome. Any question you were too embarrassed to ask before this? Okay so one last one. What is the question or discussion you had with your husband or your father or anybody else after this workshop? Give me some money to know. Give me some money. Take me with you to the next meeting with the PMS person. I'm glad I could say that. And I'm glad that I know I'll not be a dumpo sitting there. Anybody you've showed off to your husbands or not? I think for us it's been sitting together and maybe focusing on what our goals are. Because we've not really had that conversation is what is this that we want. You know for our kids education, for our retirement. So I think as a team now we need to set our goals. Understanding what is our health insurance? What have we signed that for? You know you don't know. I just know I have health insurance. What do you say Prashit? Exactly what we don't know. We just know we have. How much is our health insurance? What is the cover? Is it a family photo? You know now we are becoming more informed about what we own and what we can make better. That's pretty much it. Thank you girls so much. Have a nice day. Stay safe. Bye.",
+"speech_dur": 289.9,
+"speech_at": [
+[
+0.0,
+"moment or any realization you had throughout the workshop anything that"
+],
+[
+6.9,
+"really struck you. I think the time value you know being a disciplined"
+],
+[
+15.5,
+"investor will always give you good benefits which you couldn't imagine"
+],
+[
+20.0,
+"previously. Anything that shocked you that you learned."
+],
+[
+25.5,
+"The app was showing us how much you should invest now and then how much you"
+],
+[
+31.1,
+"have to play in the money. So that shocked me."
+],
+[
+36.9,
+"So you're talking about the retirement calculator. Yes, yes. And the education calculator."
+],
+[
+41.9,
+"And education calculator."
+],
+[
+44.0,
+"Now you can buy young investors."
+],
+[
+47.6,
+"And make and sell them."
+],
+[
+50.9,
+"Okay what's one new concept or any new concept that you learned which you think"
+],
+[
+57.5,
+"will be useful for you?"
+],
+[
+60.9,
+"Read."
+],
+[
+62.9,
+"Read or feel."
+],
+[
+66.9,
+"Read or feel."
+],
+[
+70.9,
+"Now looking at that CAGR, looking at XIRR. Now we can understand the statement better."
+],
+[
+78.9,
+"Okay what's one thing you would start doing differently?"
+],
+[
+85.9,
+"Start it today."
+],
+[
+87.9,
+"No tax free."
+],
+[
+93.9,
+"I want to compartmentalize it like an education fund."
+],
+[
+97.9,
+"Like in my head I will want to put in this much for the expense."
+],
+[
+101.9,
+"I want to put in this much for my travel expense after I retire."
+],
+[
+106.9,
+"After my steady income flow stops. I want to have a certain income for travel for myself."
+],
+[
+112.9,
+"I want to help everybody think though."
+],
+[
+115.9,
+"But in that also I want to have it compartmentalized so I'm not dipping into other or lessening"
+],
+[
+121.9,
+"some of my other things for having to pay for education or having to pay for something else."
+],
+[
+127.9,
+"Awesome."
+],
+[
+129.9,
+"Anything you would do differently or the youngest so?"
+],
+[
+133.9,
+"Wedding fund."
+],
+[
+135.9,
+"Education fund."
+],
+[
+138.9,
+"Leave the medical side."
+],
+[
+140.9,
+"I'm so into the SIPs, I was like I'm going to go home and do this thing right now."
+],
+[
+144.9,
+"Because you don't need so much money to put it into SIPs."
+],
+[
+147.9,
+"And I was like okay I can test and see what happens."
+],
+[
+150.9,
+"And you have time on your hands."
+],
+[
+153.9,
+"Compared to all of us."
+],
+[
+155.9,
+"I recently figured this SIP thing because I've decided that"
+],
+[
+160.9,
+"So for me the SIPs have been happening every Monday."
+],
+[
+164.9,
+"Which I was not aware of."
+],
+[
+166.9,
+"And now when I get the message and I read it I'm like oh yeah."
+],
+[
+169.9,
+"I'm glad that happens."
+],
+[
+172.9,
+"Did you feel comfortable asking questions?"
+],
+[
+178.9,
+"Yes very much."
+],
+[
+180.9,
+"What was the most fun part?"
+],
+[
+184.9,
+"The KPCO."
+],
+[
+186.9,
+"Especially this talk of the past."
+],
+[
+190.9,
+"The KPCO."
+],
+[
+193.9,
+"I love this one."
+],
+[
+195.9,
+"I love this one."
+],
+[
+197.9,
+"Awesome."
+],
+[
+199.9,
+"Any question you were too embarrassed to ask before this?"
+],
+[
+204.9,
+"Okay so one last one."
+],
+[
+207.9,
+"What is the question or discussion you had with your husband"
+],
+[
+212.9,
+"or your father or anybody else after this workshop?"
+],
+[
+219.9,
+"Give me some money to know."
+],
+[
+221.9,
+"Give me some money."
+],
+[
+223.9,
+"Take me with you to the next meeting with the PMS person."
+],
+[
+230.9,
+"I'm glad I could say that."
+],
+[
+232.9,
+"And I'm glad that I know I'll not be a dumpo sitting there."
+],
+[
+235.9,
+"Anybody you've showed off to your husbands or not?"
+],
+[
+238.9,
+"I think for us it's been sitting together and maybe focusing on what our goals are."
+],
+[
+243.9,
+"Because we've not really had that conversation is what is this that we want."
+],
+[
+247.9,
+"You know for our kids education, for our retirement."
+],
+[
+250.9,
+"So I think as a team now we need to set our goals."
+],
+[
+255.9,
+"Understanding what is our health insurance?"
+],
+[
+257.9,
+"What have we signed that for?"
+],
+[
+259.9,
+"You know you don't know."
+],
+[
+261.9,
+"I just know I have health insurance."
+],
+[
+265.9,
+"What do you say Prashit?"
+],
+[
+266.9,
+"Exactly what we don't know."
+],
+[
+268.9,
+"We just know we have."
+],
+[
+269.9,
+"How much is our health insurance?"
+],
+[
+271.9,
+"What is the cover?"
+],
+[
+272.9,
+"Is it a family photo?"
+],
+[
+274.9,
+"You know now we are becoming more informed about what we own"
+],
+[
+278.9,
+"and what we can make better."
+],
+[
+281.9,
+"That's pretty much it."
+],
+[
+283.9,
+"Thank you girls so much."
+],
+[
+285.9,
+"Have a nice day."
+],
+[
+287.9,
+"Stay safe."
+],
+[
+288.9,
+"Bye."
+]
+]
 },
 {
 "id": "IFM-537",
@@ -12794,7 +18394,27 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "IFM / In-house",
-"search_terms": "certificate completion graduation proud achievement social proof ift aug 2026 teens working table teenagers around boardroom through printed activity sheets together several leaning over same page certificate graduation feedback workshop"
+"search_terms": "certificate completion graduation proud achievement social proof ift aug 2026 teens working table teenagers around boardroom through printed activity sheets together several leaning over same page certificate graduation feedback workshop going ask you today how would calculate savings what formula most simplest come left don tend save whatever over after spend our money equal income minus expense right which coming deduct your",
+"speech": "So I am going to ask you today how would you calculate savings, what is the formula, the most simplest formula how do you come up with what is left, we don't tend to do that, we tend to save whatever is left over after we spend our money, today savings equal to income minus expense right, money which is coming in you deduct your expense.",
+"speech_dur": 23.2,
+"speech_at": [
+[
+0.0,
+"So I am going to ask you today how would you calculate savings, what is the formula, the"
+],
+[
+6.4,
+"most simplest formula how do you come up with what is left, we don't tend to do that, we"
+],
+[
+12.2,
+"tend to save whatever is left over after we spend our money, today savings equal to income"
+],
+[
+19.2,
+"minus expense right, money which is coming in you deduct your expense."
+]
+]
 },
 {
 "id": "IFM-538",
@@ -12817,7 +18437,15 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "IFM / In-house",
-"search_terms": "certificate completion graduation proud achievement social proof ift aug 2026 room screen short clip from back teens session group seated facing wall slide chairs worksheets foreground certificate graduation feedback workshop"
+"search_terms": "certificate completion graduation proud achievement social proof ift aug 2026 room screen short clip from back teens session group seated facing wall slide chairs worksheets foreground certificate graduation feedback workshop you put away what intend save invest then spend left",
+"speech": "You put away what you intend to save or invest and then spend with what is left.",
+"speech_dur": 7.4,
+"speech_at": [
+[
+0.0,
+"You put away what you intend to save or invest and then spend with what is left."
+]
+]
 },
 {
 "id": "IFM-539",

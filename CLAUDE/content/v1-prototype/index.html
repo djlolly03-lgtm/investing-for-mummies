@@ -632,7 +632,8 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 <script src="taxonomy.js"></script>
 <script src="v1-catalogue.js"></script>
 <script src="media-map.js"></script>
-<script src="transcripts.js"></script>
+<!-- transcripts.js is no longer loaded: speech lives on the row as `speech`/`speech_at`,
+     folded in by backfill.py. The file stays as the generated flat text for other tools. -->
 <script src="interpreter.js"></script>
 <script>
 /* The Library is what Aakara can discover. `library:false` covers logos, playable games
@@ -684,13 +685,11 @@ const T=window.IFM_TAXONOMY;
         && OPENS(r)                      // and you can always GET the real thing
         && (r.type!=='Video' || PLAYS(r)) // a video that will not play is not a result
       );
-// Fold speech into each asset's searchable text BEFORE the engine builds its index. The
-// engine already weights `search_terms`, so a spoken word becomes findable without
-// touching a line of frozen scoring code, and without inventing a new taxonomy field.
-(function(){
-  const TX=window.IFM_TRANSCRIPTS||{};
-  ASSETS.forEach(a=>{ const t=TX[a.id]; if(t) a.search_terms=((a.search_terms||'')+' '+t).trim(); });
-})();
+// Speech used to be folded into search_terms HERE, at page load. It is now done in
+// backfill.py instead, so what a video says is part of the row -- a field the catalogue
+// file carries, that the offline suites can test, and that the other front end can read.
+// Folding it here as well would double-count every spoken word against its own scoring.
+// The row now carries `speech` (verbatim), `speech_dur`, and `speech_at` ([seconds, line]).
 /* ---------------------------------------------------------------- search ----
  * Deliberately NOT embeddings. Embeddings need an API at index time, ship a vector
  * blob, and add infrastructure this project does not have. What actually makes the

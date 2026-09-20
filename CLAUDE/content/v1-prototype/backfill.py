@@ -27,9 +27,10 @@ NOT DONE HERE: vision. Rows whose description is boilerplate are flagged `needs_
 so they can be worked through with the thumbnail open. Six Goa rows share one 63-character
 description and are indistinguishable without it.
 """
-import json, re, sys, os, collections, subprocess
+import json, re, sys, os, glob, collections, subprocess
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+SPEECH = {}
 DATA = os.path.join(HERE, '..', 'data.js')
 OUT  = os.path.join(HERE, 'v1-catalogue.js')
 
@@ -346,6 +347,43 @@ def source_for(r):
     return 'Unknown'
 
 
+def load_speech():
+    """What each video actually SAYS, from transcribe-videos.py's per-video store.
+
+    This is metadata, not a runtime patch. It used to be folded into search_terms by a few
+    lines of JS on page load, which meant the words existed only inside the Library tab --
+    the catalogue file itself had no idea what was said in any video, so nothing else could
+    use it and nothing could test it offline.
+    """
+    out = {}
+    for f in glob.glob(os.path.join(HERE, 'speech', '*.json')):
+        try:
+            rec = json.load(open(f, encoding='utf-8'))
+        except Exception:
+            continue
+        if rec.get('text'):
+            out[rec['id']] = rec
+    return out
+
+
+def speech_terms(text):
+    """The words worth indexing out of a transcript.
+
+    A transcript is talk, and talk is mostly filler. Indexing it verbatim would hand rare
+    conversational words a huge IDF -- the same failure that once let 'was' outscore 'gold'
+    4 to 1 (see the STOP set in index.html). So: content words only, deduplicated, order
+    preserved. The verbatim text still lives in `speech` for display and for quoting the
+    matched line back to the user.
+    """
+    words = [w for w in re.split(r'[^a-z0-9₹]+', text.lower())
+             if len(w) > 2 and w not in STOPISH]
+    seen, keep = set(), []
+    for w in words:
+        if w not in seen:
+            seen.add(w); keep.append(w)
+    return ' '.join(keep)
+
+
 def search_terms_for(r, topics):
     """Synonyms + the specific finance terms that deliberately have no Topic of their own."""
     text = blob(r, 'title', 'description', 'keywords')
@@ -382,6 +420,8 @@ def search_terms_for(r, topics):
 
 
 def main():
+    global SPEECH
+    SPEECH = load_speech()
     data = load_rows()
     rows = data['catalogue']
     out, stats = [], collections.Counter()
@@ -441,6 +481,19 @@ def main():
                                                blob(r, 'title', 'description', 'keywords'), re.I))
         v1['source'] = source_for(r)
         v1['search_terms'] = search_terms_for(r, v1['topic'])
+
+        # WHAT THE VIDEO SAYS, as metadata. A transcript is the only field that reflects
+        # the content rather than someone's description of it, and it is often the only
+        # place a line lives at all: "if this resonates with you, follow investing for
+        # mummies and join our workshops" is 54 seconds into IFM-342 and appears in no
+        # title, description, keyword or caption anywhere in the project.
+        sp = SPEECH.get(v1['id'])
+        if sp:
+            v1['speech'] = sp['text']
+            v1['speech_dur'] = sp.get('dur')
+            v1['speech_at'] = [[s['t'], s['x']] for s in sp.get('segments', [])]
+            v1['search_terms'] = (v1['search_terms'] + ' ' + speech_terms(sp['text'])).strip()
+            stats['has_speech'] += 1
 
         for k in ('type', 'format', 'source', 'session'):
             if v1.get(k): stats['has_' + k] += 1

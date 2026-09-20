@@ -81,3 +81,7 @@ content/v1-prototype/semantic-experiment.js
 # screenshots would each become a public URL on ifm-deploy. They are internal design
 # material and nothing the site renders fetches them.
 content/v1-prototype/references/
+# The per-video transcript store written by transcribe-videos.py. 160 files, ~660KB, and
+# nothing the page fetches: the text is already folded into v1-catalogue.js as each row's
+# `speech` field. Publishing it would be 160 public URLs for no reader.
+content/v1-prototype/speech/
