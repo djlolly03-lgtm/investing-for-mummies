@@ -1,0 +1,44 @@
+{
+ "id": "IFM-059",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Starting a monthly investment the moment your salary lands",
+   "summary": "The facilitator walks the room through setting up a recurring monthly investment: salary hits the bank account on the first, and a fixed amount goes in every month before anything else.",
+   "start": 8.0,
+   "end": 50.0,
+   "weight": "primary",
+   "evidence": "the minute the salary hits the account you decide that I want to start putting in some money away every month",
+   "search_terms": [
+    "sip",
+    "investing every month",
+    "salary"
+   ]
+  },
+  {
+   "title": "Invest some of it before you decide what to spend on",
+   "summary": "A restatement of the pay-yourself-first rule: put some away and invest some first, and only then decide what to spend the rest on.",
+   "start": 29.0,
+   "end": 41.0,
+   "weight": "secondary",
+   "evidence": "Remember we talked about we should put some away, we should invest some before we decide what we want to spend our money on.",
+   "search_terms": [
+    "invest before you spend",
+    "salary"
+   ]
+  },
+  {
+   "title": "The NAV has moved, so the new money buys in at the new price",
+   "summary": "Working the exercise forward, the facilitator raises the NAV from 1 rupee to 2 and clarifies that the monthly contribution is extra money invested on top of what the students already hold.",
+   "start": 50.0,
+   "end": 71.3,
+   "weight": "secondary",
+   "evidence": "So you already have what you have. Now this is extra money that you invest.",
+   "search_terms": [
+    "nav",
+    "mutual funds"
+   ]
+  }
+ ]
+}

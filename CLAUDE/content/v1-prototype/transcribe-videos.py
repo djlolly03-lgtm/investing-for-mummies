@@ -98,27 +98,69 @@ def rclone(args, timeout):
         capture_output=True, text=True, timeout=timeout)
 
 
+def list_folder(fid):
+    """Every video inside a Drive folder, or None if the LISTING ITSELF failed.
+
+    None and [] are different answers and conflating them wrote a lie into the store. On the
+    20 Sep run, IFM-274/334/340/374 were all recorded as "no video in folder" -- and a preview
+    clip had already been built from each of those same four folders, so they demonstrably
+    contain video. The listing had timed out and returned empty stdout, which the old code
+    could not tell apart from an empty folder. An error must never be recorded as a fact.
+    """
+    for attempt in (1, 2):
+        try:
+            r = rclone(['lsf', '-R', '--drive-root-folder-id', fid, 'gdrive:'], 900)
+        except subprocess.TimeoutExpired:
+            continue
+        if r.returncode != 0:
+            continue
+        return [n for n in r.stdout.splitlines() if n.lower().endswith(('.mp4', '.mov', '.m4v'))]
+    return None
+
+
 def fetch(job, dest):
+    """Returns (error_or_None, provenance_dict)."""
+    prov = {}
     if job['kind'] == 'folder':
-        # A catch-all row: one representative video is the honest thing to index.
-        r = rclone(['lsf', '-R', '--drive-root-folder-id', job['fid'], 'gdrive:'], 600)
-        vids = [n for n in r.stdout.splitlines() if n.lower().endswith(('.mp4', '.mov', '.m4v'))]
+        vids = list_folder(job['fid'])
+        if vids is None:
+            return 'folder listing failed', prov
         if not vids:
-            return 'no video in folder'
+            return 'folder genuinely holds no video', prov
+        # A catch-all row cannot be one transcript. Record how many videos are really in
+        # there and which one this transcript is of, so the gap is visible in the data
+        # instead of being implied by a comment.
+        vids.sort()
+        prov = {'folder_videos': len(vids), 'of_file': vids[0]}
         root, path = job['fid'], vids[0]
     else:
         root, path = job['root'], job['path']
+        prov = {'of_file': os.path.basename(path)}
     try:
         rclone(['copyto', '--drive-root-folder-id', root, 'gdrive:' + path, dest], 3600)
     except subprocess.TimeoutExpired:
-        return 'fetch timed out'
-    return None if os.path.exists(dest) and os.path.getsize(dest) else 'fetch failed'
+        return 'fetch timed out', prov
+    if os.path.exists(dest) and os.path.getsize(dest):
+        return None, prov
+    return 'fetch failed', prov
 
 
 def main():
     os.makedirs(STORE, exist_ok=True)
     q, unreachable = queue()
-    todo = [j for j in q if not os.path.exists(os.path.join(STORE, j['id'] + '.json'))]
+    prior = {}
+    for f in glob.glob(os.path.join(STORE, '*.json')):
+        try:
+            r = json.load(open(f, encoding='utf-8'))
+            prior[r['id']] = r
+        except Exception:
+            pass
+    def outstanding(j):
+        r = prior.get(j['id'])
+        if r is None:
+            return True
+        return bool(r.get('retryable')) and r.get('attempts', 0) < 3
+    todo = [j for j in q if outstanding(j)]
     gb = sum(j['size'] for j in todo) / 2 ** 30
     print('%d videos in the Library queue | %d already transcribed | %d to do (%.1f GB) | '
           '%d have no fetchable link' % (len(q), len(q) - len(todo), len(todo), gb,
@@ -141,10 +183,18 @@ def main():
             if os.path.exists(p):
                 os.remove(p)
         t0 = time.time()
-        err = fetch(j, src)
+        err, prov = fetch(j, src)
         if err:
-            json.dump({'id': j['id'], 'error': err}, open(os.path.join(STORE, j['id'] + '.json'), 'w'))
-            print('  %-9s %s' % (j['id'], err), flush=True)
+            # A transient failure is not a fact about the asset. Recording "fetch failed" as
+            # a permanent store entry made the next run skip it forever, which is how 6 rows
+            # stayed untranscribed across three runs. Retryable errors are marked so `todo`
+            # picks them up again; only a settled answer ("holds no video", "no audio track")
+            # is final.
+            retryable = err in ('fetch failed', 'fetch timed out', 'folder listing failed')
+            rec = {'id': j['id'], 'error': err, 'retryable': retryable,
+                   'attempts': (prior.get(j['id'], {}).get('attempts', 0) + 1), **prov}
+            json.dump(rec, open(os.path.join(STORE, j['id'] + '.json'), 'w'))
+            print('  %-9s %s%s' % (j['id'], err, ' (will retry)' if retryable else ''), flush=True)
             continue
         # Audio only, and the master goes immediately. Whisper wants 16kHz mono anyway, and
         # a wav of it is ~2MB a minute against hundreds of MB of video.
@@ -157,9 +207,18 @@ def main():
             print('  %-9s no audio track' % j['id'], flush=True)
             continue
         segs, info = model.transcribe(wav, language='en', vad_filter=True)
-        segs = [{'t': round(s.start, 1), 'x': s.text.strip()} for s in segs]
+        # `e` (end) is stored as well as `t` (start). Moments need a span, and deriving the
+        # end from the next segment's start is wrong wherever there is a pause -- which in a
+        # Q&A testimonial is exactly at the interesting boundaries.
+        segs = [{'t': round(s.start, 1), 'e': round(s.end, 1), 'x': s.text.strip()}
+                for s in segs]
         os.remove(wav)
-        rec = {'id': j['id'], 'dur': round(info.duration, 1), 'model': MODEL,
+        # info.duration is the TRUE audio duration, verified 20 Sep against ffprobe on three
+        # files: 8.00/8.00, 8.00/8.00, 1.49/1.49, including one where VAD stripped 93% of it.
+        # `duration_after_vad` is the separate post-VAD figure. So `dur` proves completeness.
+        rec = {'id': j['id'], 'dur': round(info.duration, 1),
+               'speech_dur': round(getattr(info, 'duration_after_vad', 0) or 0, 1),
+               'model': MODEL, 'source': 'master', **prov,
                'segments': segs, 'text': ' '.join(s['x'] for s in segs)}
         json.dump(rec, open(os.path.join(STORE, j['id'] + '.json'), 'w'), ensure_ascii=False)
         done += 1

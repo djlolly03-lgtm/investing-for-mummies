@@ -1,1 +1,1 @@
-{"id": "IFM-407", "dur": 8.6, "model": "small", "segments": [{"t": 0.0, "x": "I don't see a second"}], "text": "I don't see a second"}
+{"id": "IFM-407", "dur": 8.6, "model": "small", "segments": [{"t": 0.0, "x": "I don't see a second", "e": 8.6}], "text": "I don't see a second", "e_derived": true}

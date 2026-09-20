@@ -1,1 +1,1 @@
-{"id": "IFM-417", "dur": 5.7, "model": "small", "segments": [{"t": 0.0, "x": "What are the red flags? Zero emission."}, {"t": 4.0, "x": "Okay, we know that..."}], "text": "What are the red flags? Zero emission. Okay, we know that..."}
+{"id": "IFM-417", "dur": 5.7, "model": "small", "segments": [{"t": 0.0, "x": "What are the red flags? Zero emission.", "e": 4.0}, {"t": 4.0, "x": "Okay, we know that...", "e": 5.7}], "text": "What are the red flags? Zero emission. Okay, we know that...", "e_derived": true}

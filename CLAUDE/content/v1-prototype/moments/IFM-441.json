@@ -1,0 +1,33 @@
+{
+ "id": "IFM-441",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Favourite game: choosing what to do with money and watching happiness or stress move",
+   "summary": "Asked for his favourite game, a teenage participant picks the first one they played — you are given a scenario, you choose which financial thing to do, and you see the effect on happiness or stress.",
+   "start": 0.0,
+   "end": 19.0,
+   "weight": "primary",
+   "evidence": "the one we played first where we had to like choose which financial thing we do and we were given a scenario and then we had like that happiness or stress",
+   "search_terms": [
+    "workshop games",
+    "happiness or stress",
+    "student comment on games"
+   ]
+  },
+  {
+   "title": "The board game showed which choices are better in the long run",
+   "summary": "A second teenage participant picks the game where you go to the board and pick what you want to do, and says what he enjoyed was that it shows you which ideas are better in the long run.",
+   "start": 21.0,
+   "end": 36.3,
+   "weight": "secondary",
+   "evidence": "It's just that it shows you what ideas are better in the long run",
+   "search_terms": [
+    "workshop games",
+    "long run",
+    "student comment on games"
+   ]
+  }
+ ]
+}

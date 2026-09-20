@@ -1,1 +1,1 @@
-{"id": "IFM-428", "error": "fetch failed"}
+{"id": "IFM-428", "dur": 10.5, "speech_dur": 10.5, "model": "small", "source": "master", "of_file": "IMG_2855.MOV", "segments": [{"t": 0.0, "e": 7.2, "x": "The gold is the timeless one technically, it's meant to take you through all the terms"}, {"t": 7.2, "e": 9.2, "x": "of all kinds of crisis."}, {"t": 9.2, "e": 10.4, "x": "Anyways."}], "text": "The gold is the timeless one technically, it's meant to take you through all the terms of all kinds of crisis. Anyways."}

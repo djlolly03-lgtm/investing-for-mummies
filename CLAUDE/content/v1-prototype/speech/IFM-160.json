@@ -1,1 +1,1 @@
-{"id": "IFM-160", "error": "fetch failed"}
+{"id": "IFM-160", "error": "fetch failed", "retryable": true, "attempts": 1}

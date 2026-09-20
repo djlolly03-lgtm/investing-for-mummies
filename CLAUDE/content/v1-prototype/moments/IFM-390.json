@@ -1,0 +1,33 @@
+{
+ "id": "IFM-390",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "The trading account is linked to your bank account, which funds it",
+   "summary": "The facilitator explains that a trading account is always connected to a bank account, and that you transfer whatever amount you choose — say two lakh — from the bank into the trading account, which then holds that money for you.",
+   "start": 0.0,
+   "end": 22.7,
+   "weight": "primary",
+   "evidence": "your trading account will always be connected to your bank account because your bank account will help transfer funds into your trading account.",
+   "search_terms": [
+    "trading account",
+    "bank account",
+    "dmat account"
+   ]
+  },
+  {
+   "title": "The demat account is an electronic statement of your stocks — you need both",
+   "summary": "The demat account is described as an electronic statement of your shareholdings, like an electronic bank statement, and both accounts are required before you can start trading.",
+   "start": 22.7,
+   "end": 45.0,
+   "weight": "primary",
+   "evidence": "Your DMAT account as I mentioned is just like an electronic statement of your stocks. It's like an electronic bank statement that we have. You need both these accounts to start trading.",
+   "search_terms": [
+    "dmat account",
+    "stock market",
+    "how to start trading"
+   ]
+  }
+ ]
+}

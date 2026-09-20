@@ -1,0 +1,44 @@
+{
+ "id": "IFM-485",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "The king and the chessboard — one grain of rice, doubled on every square",
+   "summary": "The facilitator tells the chessboard story to a class: the inventor asks for one grain of rice on the first square and double on every subsequent square, and by the fifth or sixteenth square it is still only about 512 grains, but eventually every granary in the kingdom is empty and there is not enough rice to pay him.",
+   "start": 0.0,
+   "end": 66.8,
+   "weight": "primary",
+   "evidence": "the inventor said that I will place one green of rice on the first square and for every subsequent square, I want you to double the amount of grains of rice.",
+   "search_terms": [
+    "compounding",
+    "chessboard",
+    "grains of rice"
+   ]
+  },
+  {
+   "title": "That is the magic of compounding — money grows exponentially over time",
+   "summary": "The story is named as the mechanism of compounding: money grows exponentially over time.",
+   "start": 66.8,
+   "end": 74.8,
+   "weight": "primary",
+   "evidence": "That's actually the magic of compounding and the way it works. It grows your money exponentially over time.",
+   "search_terms": [
+    "compounding",
+    "grows your money"
+   ]
+  },
+  {
+   "title": "Riddle — who will make more money, a 15-year-old or a 25-year-old",
+   "summary": "The facilitator sets the class a riddle comparing a 15-year-old and a 25-year-old. The clip cuts off as the setup is being stated, so the answer is not in this video.",
+   "start": 74.8,
+   "end": 87.9,
+   "weight": "secondary",
+   "evidence": "Who do you think will make more money? A 15-year-old or a 25-year-old.",
+   "search_terms": [
+    "riddle",
+    "make more money"
+   ]
+  }
+ ]
+}

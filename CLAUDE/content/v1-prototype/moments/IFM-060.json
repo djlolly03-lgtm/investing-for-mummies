@@ -1,0 +1,34 @@
+{
+ "id": "IFM-060",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "How you actually make money from a mutual fund",
+   "summary": "The facilitator works through why NAV rises: when the things the fund has invested in go up in price, the value of the basket goes up, and so does the price per unit. Stated as the mechanism by which a mutual fund makes money.",
+   "start": 0.0,
+   "end": 38.8,
+   "weight": "primary",
+   "evidence": "This basket, because the things inside your basket, their prices increase. So, then this is going to increase, right? That's how you make money from a mutual fund, okay?",
+   "search_terms": [
+    "nav",
+    "net asset value",
+    "mutual funds",
+    "price per unit"
+   ]
+  },
+  {
+   "title": "Worked example: two people, different amounts, different profit",
+   "summary": "A live worked example with the room. Each unit moves from 1 rupee to 1 rupee 50, and the group works out each person's holding and profit, landing on one participant making more because she invested more.",
+   "start": 38.8,
+   "end": 89.8,
+   "weight": "primary",
+   "evidence": "So, what is your profit? 1 rupee. What is your profit? 5 rupees. 5 rupees.",
+   "search_terms": [
+    "profit",
+    "units",
+    "profit per unit"
+   ]
+  }
+ ]
+}

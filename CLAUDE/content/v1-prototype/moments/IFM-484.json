@@ -1,0 +1,33 @@
+{
+ "id": "IFM-484",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "You don't need large amounts — you need to give your money time",
+   "summary": "The facilitator reads the compounding chart to a teens session: growth is exponential the longer you stay invested, so every year matters and you do not need to start with large amounts to build a large corpus.",
+   "start": 0.0,
+   "end": 27.0,
+   "weight": "primary",
+   "evidence": "So every year matters and you don't need to start with large amounts of money to build large corpses. You just need to give your money time.",
+   "search_terms": [
+    "compounding",
+    "give your money time",
+    "every year matters"
+   ]
+  },
+  {
+   "title": "Why your parents sent you to this class early",
+   "summary": "She tells the teenagers this is why their parents wanted them in the class now: the earlier you start, the longer your money's growth potential runs.",
+   "start": 21.0,
+   "end": 34.0,
+   "weight": "secondary",
+   "evidence": "Which is why today your parents really wanted you to do this class early because the earlier you start the longer your money's growth potential is.",
+   "search_terms": [
+    "start early",
+    "starting to invest",
+    "parents"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "id": "IFM-488",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Cash is the emergency response specialist — quick, accessible and liquid",
+   "summary": "Working through the money-personality cards, the facilitator asks the teens for the characteristics of cash as an asset class and lands on the answer: best for emergencies, because it is quick, accessible and liquid.",
+   "start": 9.0,
+   "end": 36.0,
+   "weight": "primary",
+   "evidence": "That cash is best for emergencies, right? Because it's quick, it's accessible, and it's liquid.",
+   "search_terms": [
+    "cash as an asset class",
+    "emergency fund",
+    "liquid"
+   ]
+  },
+  {
+   "title": "\"Kash Khan\" — need me at 2 a.m. and already downstairs",
+   "summary": "The card's bio and green flags as a teaching device: cash always available at the drop of a hat, no waiting, no drama, no questions asked.",
+   "start": 24.0,
+   "end": 49.0,
+   "weight": "secondary",
+   "evidence": "Bio of Kash Khan is need me at 2 a.m. and already downstairs.",
+   "search_terms": [
+    "Kash Khan",
+    "green flags",
+    "always available"
+   ]
+  }
+ ]
+}

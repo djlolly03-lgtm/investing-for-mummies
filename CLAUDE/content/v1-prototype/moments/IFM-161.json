@@ -1,0 +1,32 @@
+{
+ "id": "IFM-161",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Absolute return tells you the gain but not how long it took",
+   "summary": "The facilitator defines absolute rate of return: 10 lakhs growing to 13 lakhs is a 3 lakh gain shown as a percentage, and the number says nothing about whether it took five years or ten.",
+   "start": 0.0,
+   "end": 24.8,
+   "weight": "primary",
+   "evidence": "it doesn't matter if the return to 5 years to grow, 10 years to grow none of that it's only giving you an absolute rate of return",
+   "search_terms": [
+    "absolute rate of return",
+    "rate of return",
+    "percentage"
+   ]
+  },
+  {
+   "title": "Same 10 to 13 lakhs in one year or in five — which is better?",
+   "summary": "The class is asked to compare two investments with identical absolute gains over different periods, and answers the one-year one, making the point that the time you stayed invested matters and absolute return ignores it.",
+   "start": 24.8,
+   "end": 44.0,
+   "weight": "primary",
+   "evidence": "investment grew from 10 lakhs to 13 lakhs within one year versus if that same another investment to gain from 10 lakhs to 13 lakhs within 5 years which one is a better one?",
+   "search_terms": [
+    "time matters",
+    "rate of return"
+   ]
+  }
+ ]
+}

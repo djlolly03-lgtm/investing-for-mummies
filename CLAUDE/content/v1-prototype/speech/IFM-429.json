@@ -1,1 +1,1 @@
-{"id": "IFM-429", "dur": 7.0, "model": "small", "segments": [{"t": 0.0, "x": "I shot the time for going out."}, {"t": 4.0, "x": "What do you want?"}, {"t": 6.0, "x": "A lot of..."}], "text": "I shot the time for going out. What do you want? A lot of..."}
+{"id": "IFM-429", "dur": 7.0, "model": "small", "segments": [{"t": 0.0, "x": "I shot the time for going out.", "e": 4.0}, {"t": 4.0, "x": "What do you want?", "e": 6.0}, {"t": 6.0, "x": "A lot of...", "e": 7.0}], "text": "I shot the time for going out. What do you want? A lot of...", "e_derived": true}

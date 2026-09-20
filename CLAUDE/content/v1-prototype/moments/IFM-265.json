@@ -1,0 +1,33 @@
+{
+ "id": "IFM-265",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Every asset has its own personality — cash, debt, real estate, gold and equity as five friends",
+   "summary": "A One Minute Investing School lesson that gives each asset class a character: cash the cautious friend, debt the predictable one, real estate the slow and steady one, gold the crisis friend, equity the ambitious and dramatic one.",
+   "start": 0.0,
+   "end": 44.3,
+   "weight": "primary",
+   "evidence": "Not every asset is the same. In fact, every asset has its own personality.",
+   "search_terms": [
+    "asset personality",
+    "gold",
+    "real estate",
+    "equity"
+   ]
+  },
+  {
+   "title": "No asset class is \"the best\" — that is what asset allocation is",
+   "summary": "The payoff of the lesson: no personality is best because different situations need different friends, and that is the foundation of asset allocation.",
+   "start": 44.3,
+   "end": 58.7,
+   "weight": "primary",
+   "evidence": "No personality is the best because different situations need different friends. And that's the foundation of something called asset allocation.",
+   "search_terms": [
+    "asset allocation",
+    "different situations need different friends"
+   ]
+  }
+ ]
+}

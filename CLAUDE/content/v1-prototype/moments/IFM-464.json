@@ -1,0 +1,31 @@
+{
+ "id": "IFM-464",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "The games were fun and she learned while playing them",
+   "summary": "A student, prompted by the facilitator, says the games were fun and that she learned through playing them.",
+   "start": 0.0,
+   "end": 9.0,
+   "weight": "primary",
+   "evidence": "The games were fun and I learned to learn playing them.",
+   "search_terms": [
+    "workshop games",
+    "games",
+    "student comment on games"
+   ]
+  },
+  {
+   "title": "A student names diversification and explains it in her own words",
+   "summary": "Pushed by the facilitator to be specific, she names diversification, then explains it as not putting all your money in one place because you can't use everything.",
+   "start": 13.0,
+   "end": 46.4,
+   "weight": "primary",
+   "evidence": "I learned that we should not like put all our money in pocket.",
+   "search_terms": [
+    "diversification"
+   ]
+  }
+ ]
+}

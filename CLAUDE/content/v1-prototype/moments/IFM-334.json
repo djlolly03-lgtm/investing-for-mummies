@@ -1,0 +1,34 @@
+{
+ "id": "IFM-334",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Asset allocation is your lunch thali",
+   "summary": "The analogy is set up: everyone eats rice, dal, sabzi and rotis in different proportions, and a portfolio works the same way — the obsession is with what to buy rather than how much.",
+   "start": 0.0,
+   "end": 18.7,
+   "weight": "primary",
+   "evidence": "Just like how everyone eats rice, dal, sabzi, rotis in different proportions, your portfolio works the same way.",
+   "search_terms": [
+    "asset allocation",
+    "thali",
+    "portfolio"
+   ]
+  },
+  {
+   "title": "It's not what you choose, it's how you divide it",
+   "summary": "How much goes into equity, debt, gold or cash is said to depend on age, goals, time horizon and risk appetite — so the question to ask is how much of each, not what to put on the plate.",
+   "start": 18.7,
+   "end": 36.1,
+   "weight": "primary",
+   "evidence": "How much goes into equity, debt, gold or cash depends on your age, goals, time horizon and risk appetite.",
+   "search_terms": [
+    "asset allocation",
+    "risk appetite",
+    "time horizon",
+    "gold"
+   ]
+  }
+ ]
+}

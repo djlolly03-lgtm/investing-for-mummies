@@ -473,6 +473,27 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
   color:var(--display);letter-spacing:-.005em}
 .dtext .ctx{font-size:12.5px;color:var(--muted);margin:0 0 16px}
 .dtext .desc{font-size:13.5px;color:var(--ink-2);line-height:1.62;margin:0 0 24px}
+/* WHAT'S SAID. Sits ABOVE the description on purpose: for a video the transcript is the
+   content and the description is the packaging. Scrolls rather than growing, so a
+   four-minute testimonial does not push "Open in Drive" off the first screen -- the whole
+   point of this modal's layout. */
+.says{margin:0 0 18px;border:1px solid var(--line);border-radius:10px;background:var(--bg-2,#fbfaf8)}
+.says>summary{cursor:pointer;list-style:none;padding:10px 13px;font-size:12.5px;font-weight:600;
+  color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.says>summary::-webkit-details-marker{display:none}
+.says>summary::after{content:'▾';font-size:11px;color:var(--ink-3,#8a8a86);transition:transform .15s}
+.says[open]>summary::after{transform:rotate(180deg)}
+.says .n{font-weight:400;color:var(--ink-3,#8a8a86);font-size:11.5px;margin-left:auto;margin-right:6px}
+.saylist{list-style:none;margin:0;padding:0 13px 12px;max-height:290px;overflow-y:auto}
+.saylist li{display:flex;gap:9px;padding:3px 0;font-size:13px;line-height:1.55;color:var(--ink-2)}
+.ts{flex:none;font-size:11.5px;font-variant-numeric:tabular-nums;color:var(--ink-3,#a8a8a4);
+  font-weight:600;min-width:34px;text-align:right;padding-top:1px}
+.saylist li.seek{cursor:pointer;border-radius:5px;margin:0 -5px;padding-left:5px;padding-right:5px}
+.saylist li.seek .ts{color:var(--teal,#2a9d8f)}
+.saylist li.seek:hover{background:rgba(42,157,143,.09)}
+.saylist li.on{background:rgba(42,157,143,.16)}
+.saynote{margin:0;padding:9px 13px 12px;font-size:11.5px;line-height:1.5;color:var(--ink-3,#8a8a86);
+  border-top:1px solid var(--line)}
 .dl{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:start;align-content:start;
   gap:11px 16px;font-size:13px;margin:0 0 28px}
 .dl.two{grid-template-columns:76px minmax(0,1fr) 76px minmax(0,1fr);gap:11px 20px}
@@ -715,6 +736,16 @@ const STOP=new Set(['find','me','a','an','the','of','for','show','get','to','on'
   // occurs in exactly 1 of 378 assets, so it scores an IDF of 27.8 against 'gold' at 6.1 —
   // a meaningless word outweighing the subject 4x and starving the coverage test.
   'was','were','do','does','did','we','have','has','had','there','here','be','been',
+  // QUERY SCAFFOLDING. How people phrase a request, not what they are asking for. Added
+  // 20 Sep 2026 with cause: "testimonial where SOMEONE TALKS about BEING scared of
+  // investing" excluded the one correct answer. Coverage is IDF mass capped at
+  // COVER_CAP=8, so `scared` -- which occurs in exactly one asset and is the whole
+  // point of the query -- counted no more than `someone`. IFM-398 covered 2 of 5 words
+  // (0.40) and fell under the 0.45 floor, while two testimonials that never mention
+  // fear at all passed on the filler. This is the same class as 'was' and 'moments'
+  // above and uses the same mechanism; the scoring maths is untouched.
+  'someone','somebody','anyone','talks','talking','being','says','saying','said',
+
   'good','nice','great','best','really','just','actually','maybe','some','somewhere',
   'that','those','these','my','your','their','am','are','then','when','while','got']);
 
@@ -758,6 +789,13 @@ const FIELDS=[
   // description does not. At weight 1 a spoken phrase is findable and a stray spoken word
   // cannot outrank a real one. It was briefly folded into search_terms (weight 3) instead,
   // which ranked an aside above a description and pushed the right SIP clip from #1 to #4.
+  // CONTENT MOMENTS -- the useful spans of a long talking video, authored against the full
+  // transcript and machine-proved against it (moments.py --validate). Deliberately LOW, so
+  // they supplement the existing metadata rather than overwhelm it: a moment is curated, so
+  // it earns more than raw `speech`, but it must not outrank a title, a topic or a curated
+  // description. Indexed as the flat `moment_text`; the `moments` array itself is objects
+  // and is for the UI only -- textOf() would stringify it to "[object Object]".
+  ['moment_text',2],
   ['speech',1],
 ];
 
@@ -1213,6 +1251,11 @@ function render(){
   $('results').innerHTML=html;
 }
 
+// 0:54, not 54. A timestamp is only useful if you can read it off the player's own clock.
+// media-map stores duration as "4:21", because it is rendered on the card. Parse it back.
+function secsOf(x){ if(!x)return 0; const p=String(x).split(':').map(Number);
+  return p.length===2?p[0]*60+p[1]:(p[0]||0); }
+function mmss(t){ t=Math.max(0,Math.round(t||0)); return Math.floor(t/60)+':'+String(t%60).padStart(2,'0'); }
 function openDetail(id){
   const a=ASSETS.find(x=>x.id===id); if(!a)return;
   const m=media(a); state.openId=id;
@@ -1254,8 +1297,31 @@ function openDetail(id){
       ${row('Session',esc(a.session||''),true)}
       ${row('Source',a.source&&a.source!=='Unknown'?esc(a.source):'',true)}
       ${row('Status',esc(a.status||''),true)}</dl>`;
+  // WHAT THE PERSON ACTUALLY SAYS. This is the point of the panel. The description under it
+  // reports the room -- "a blue chambray shirt patterned with small hearts ... a phone rests
+  // on the table at her elbow" -- which tells you nothing about whether this testimonial is
+  // the one where she explains she did not know PPF was open to non-employees. The user,
+  // 20 Sep 2026: "this gives no real context of what we're trying to pull here ... how can I
+  // find anything contextual?" Every line is a seek: click it and the player jumps there.
+  // The player is the 12s PREVIEW; the transcript is of the full master. So most timestamps
+  // have nowhere to seek to, and a timecode that silently does nothing is worse than no
+  // timecode. Lines are rendered inert and only the ones inside the preview's real duration
+  // are upgraded to seek buttons, once the video reports how long it actually is.
+  let says='';
+  if(a.speech_at&&a.speech_at.length){
+    const lines=a.speech_at.map(([t,x])=>
+      `<li data-t="${t}"><span class="ts">${mmss(t)}</span><span>${esc(x)}</span></li>`).join('');
+    says=`<details class="says" ${a.speech_at.length<=14?'open':''}>
+        <summary>What's said
+          <span class="n">${a.speech_at.length} lines · ${mmss(a.speech_dur||0)} of audio</span></summary>
+        <ol class="saylist">${lines}</ol>
+        <p class="saynote">Transcribed from the full video on Drive. The player above is a
+          ${m.playable?'short preview':'still'} &mdash; open it in Drive to watch it all.</p>
+      </details>`;
+  }
   const text=`<div class="dtext"><h2>${esc(titleOf(a))}</h2>
       <p class="ctx">${esc(context(a))}</p>
+      ${says}
       ${a.description?`<p class="desc">${esc(a.description)}</p>`:''}
       ${meta}
       <div class="acts">${a.drive
@@ -1268,7 +1334,7 @@ function openDetail(id){
   // Always two columns. The `single` variant collapsed every non-playable asset — the large
   // majority of the library — back into the stacked layout this pass exists to remove.
   $('dbody').innerHTML=`<div class="dgrid">${visual}${text}</div>`;
-  $('detail').classList.add('open'); $('detail').setAttribute('aria-hidden','false');
+  $('detail').classList.add('open'); $('detail').setAttribute('aria-hidden','false'); armSeeks(secsOf(m.dur));
   $('scrim').classList.add('open');
   if(m.playable&&m.url) buildStrip(m.url,id);
 }
@@ -1362,6 +1428,36 @@ document.addEventListener('click',e=>{
   if(a==='copy'){const h=act.dataset.href; if(!h)return;
     const lbl=act.querySelector('.lbl')||act;
     navigator.clipboard?.writeText(h).then(()=>{lbl.textContent='Copied';setTimeout(()=>lbl.textContent='Copy link',1400);});}
+});
+// Click a spoken line, the player jumps to it. Delegated on the modal body because the
+// transcript is rebuilt on every open.
+// Only the lines that are actually INSIDE the preview become seek targets, and only once
+// the file has told us its duration. Everything past the preview's end stays plain text --
+// a timecode you can click that goes nowhere is the exact "I found it but I can't use it"
+// frustration this whole visibility pass exists to remove.
+function armSeeks(dur){
+  const v=$('dbody').querySelector('video'), list=$('dbody').querySelector('.saylist');
+  if(!v||!list)return;
+  // media-audit.py already MEASURED every preview with ffprobe and put it in media-map as
+  // `dur`. Use that, not video.duration: the element reports null until the file downloads,
+  // so waiting on it meant the transcript rendered with nothing clickable and stayed that
+  // way on a slow connection. A number we already know beats a number we have to wait for.
+  const d=dur||0;
+  if(!d)return;
+  let n=0;
+  list.querySelectorAll('li').forEach(li=>{
+    if(parseFloat(li.dataset.t)<d-0.4){ li.classList.add('seek'); n++; }
+  });
+  const note=$('dbody').querySelector('.saynote');
+  if(note&&n) note.insertAdjacentHTML('afterbegin',
+    `<strong>${n} line${n>1?'s':''}</strong> fall inside this ${mmss(d)} preview and can be clicked. `);
+}
+$('dbody').addEventListener('click',e=>{
+  const li=e.target.closest('.saylist li.seek'); if(!li)return;
+  const v=$('dbody').querySelector('video'); if(!v)return;
+  v.currentTime=parseFloat(li.dataset.t)||0; v.play();
+  $('dbody').querySelectorAll('.saylist li.on').forEach(x=>x.classList.remove('on'));
+  li.classList.add('on');
 });
 buildFilters(); buildKitRow(); buildThemes(); buildRecent(); render();
 </script>

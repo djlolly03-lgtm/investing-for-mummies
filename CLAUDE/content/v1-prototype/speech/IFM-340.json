@@ -1,1 +1,1 @@
-{"id": "IFM-340", "error": "no video in folder"}
+{"id": "IFM-340", "error": "folder listing failed", "retryable": true, "attempts": 2}

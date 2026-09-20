@@ -1,0 +1,61 @@
+{
+ "id": "IFM-271",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Disclaimer before the ranking: risk varies from product to product",
+   "summary": "Before ranking anything, the speaker flags that risk varies from product to product, so what follows is a broad ranking rather than a hard and fast rule.",
+   "start": 4.0,
+   "end": 11.1,
+   "weight": "secondary",
+   "evidence": "Okay, but a quick disclaimer, risk can vary from product to product. So these are just broad rankings, not hard and fast rules.",
+   "search_terms": [
+    "risk",
+    "broad rankings",
+    "disclaimer"
+   ]
+  },
+  {
+   "title": "Eight investments ranked by risk, from savings account to crypto",
+   "summary": "A run through savings account (very low), real estate (moderate), gold (low to moderate), fixed deposit (low), equity mutual funds (moderate to high), debt mutual funds (low to moderate) and crypto (very high), each with a one-line reason.",
+   "start": 11.1,
+   "end": 50.0,
+   "weight": "primary",
+   "evidence": "Crypto. Very high. Prices can move dramatically, so the risk can also be very high.",
+   "search_terms": [
+    "risk",
+    "crypto",
+    "fixed deposit",
+    "gold",
+    "mutual funds"
+   ]
+  },
+  {
+   "title": "Not all stocks carry the same risk — smaller companies are more volatile",
+   "summary": "Stocks are placed at moderate to high, with the caveat that a single ranking for all stocks is wrong: smaller companies are more volatile than larger ones, and the individual stock matters.",
+   "start": 50.0,
+   "end": 61.0,
+   "weight": "secondary",
+   "evidence": "I wouldn't give all stocks the same ranking. Smaller companies are more volatile than the larger ones.",
+   "search_terms": [
+    "stocks",
+    "volatile stocks",
+    "smaller companies"
+   ]
+  },
+  {
+   "title": "The trade-off: protect your money and you accept low expected returns",
+   "summary": "The closing principle — higher expected returns come with higher risk, and if protecting your money is the top priority you have to accept low expected returns.",
+   "start": 61.0,
+   "end": 73.0,
+   "weight": "primary",
+   "evidence": "In investing, there's a trade-off between risk and return. Higher expected returns come with higher risk.",
+   "search_terms": [
+    "risk",
+    "risk and return trade-off",
+    "expected returns"
+   ]
+  }
+ ]
+}

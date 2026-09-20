@@ -31,6 +31,7 @@ import json, re, sys, os, glob, collections, subprocess
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SPEECH = {}
+MOMENTS = {}
 DATA = os.path.join(HERE, '..', 'data.js')
 OUT  = os.path.join(HERE, 'v1-catalogue.js')
 
@@ -230,7 +231,18 @@ def blob(r, *fields):
 SERIES_NOISE = re.compile(r'wealth conversation(s)?', re.I)
 
 def topics_for(r):
-    """Topics from the controlled vocabulary only. Never invents a value."""
+    """Topics from the controlled vocabulary only. Never invents a value.
+
+    WHAT IS SAID COUNTS AS EVIDENCE, and for a video it is usually the best evidence there
+    is. IFM-398 was tagged with ZERO topics: its description is "a blue chambray shirt
+    patterned with small hearts ... a phone rests on the table at her elbow", so there was
+    nothing to match. The video is four minutes of a participant explaining that she did not
+    know PPF was open to non-employees, what term insurance actually means, and that she has
+    told her husband they need to look at their investments together. All of that is topic
+    evidence; none of it was in a field the matcher could see. The user, 20 Sep 2026: "you're
+    speaking about the blue shirt ... this gives no real context of what we're trying to pull
+    here ... how can I find anything contextual?"
+    """
     text = blob(r, 'title', 'description', 'keywords')
     # Strip series names before matching. 'Wealth Conversation Ch.4' is not about
     # wealth or about conversations; it is the name of the series it belongs to.
@@ -347,6 +359,25 @@ def source_for(r):
     return 'Unknown'
 
 
+def load_moments():
+    """Content moments: the useful spans of a long talking video, with timestamps.
+
+    Authored against the full transcript and proved by `moments.py --validate`, which checks
+    that every moment's `evidence` is a verbatim substring of that video's transcript and
+    sits inside the span it claims. Nothing reaches the catalogue that the transcript does
+    not say.
+    """
+    out = {}
+    for f in glob.glob(os.path.join(HERE, 'moments', '*.json')):
+        try:
+            d = json.load(open(f, encoding='utf-8'))
+        except Exception:
+            continue
+        if d.get('moments'):
+            out[d['id']] = d['moments']
+    return out
+
+
 def load_speech():
     """What each video actually SAYS, from transcribe-videos.py's per-video store.
 
@@ -420,8 +451,9 @@ def search_terms_for(r, topics):
 
 
 def main():
-    global SPEECH
+    global SPEECH, MOMENTS
     SPEECH = load_speech()
+    MOMENTS = load_moments()
     data = load_rows()
     rows = data['catalogue']
     out, stats = [], collections.Counter()
@@ -487,6 +519,41 @@ def main():
         # place a line lives at all: "if this resonates with you, follow investing for
         # mummies and join our workshops" is 54 seconds into IFM-342 and appears in no
         # title, description, keyword or caption anywhere in the project.
+        # CONTENT MOMENTS. Two fields on purpose:
+        #   `moments`     an array of objects -- for the UI, NOT in the engine's FIELDS list,
+        #                 because textOf() would stringify objects to "[object Object]".
+        #   `moment_text` a flat string of titles + summaries + search terms -- this is the
+        #                 one the engine indexes, at a deliberately LOW weight so moments
+        #                 supplement the existing metadata instead of overwhelming it.
+        # `evidence` is deliberately NOT copied into moment_text: the verbatim words are
+        # already searchable through `speech`, and duplicating them would let one passage
+        # score twice.
+        ms = MOMENTS.get(v1['id'])
+        if ms:
+            v1['moments'] = [{'t': m['start'], 'e': m['end'], 'title': m['title'],
+                              'summary': m['summary'], 'w': m['weight'],
+                              'terms': m.get('search_terms', [])} for m in ms]
+            # Terms are DEDUPED across the video's moments. Without this, a term repeated
+            # on nine moments appears nine times and a video with more moments outranks the
+            # video with the RIGHT moment -- measured, and it inverted the "scared of
+            # investing" query on 20 Sep. Titles and summaries stay as written: they are
+            # distinct per moment and carry the actual content.
+            seen_t, terms = set(), []
+            for m in ms:
+                for t in m.get('search_terms', []):
+                    if t.lower() not in seen_t:
+                        seen_t.add(t.lower()); terms.append(t)
+            # SUMMARIES ARE NOT INDEXED. They are prose written for a human to read in the
+            # detail panel, and prose carries generic words -- "explains", "participant",
+            # "the speaker" -- that match the scaffolding of a query rather than its subject.
+            # Indexing them cost two tests immediately: "find the clip where Hiral explains
+            # SIP" returned an inflation clip that never says SIP (its summaries say
+            # "explains"), and "gold jewellery" returned a central-bank gold reel at #1.
+            # The searchable surface is the curated part -- titles and search terms.
+            v1['moment_text'] = ' '.join([m['title'] for m in ms] + terms)
+            stats['has_moments'] += 1
+            stats['moments_total'] += len(ms)
+
         sp = SPEECH.get(v1['id'])
         if sp:
             v1['speech'] = sp['text']

@@ -1,1 +1,1 @@
-{"id": "IFM-419", "dur": 2.8, "model": "small", "segments": [{"t": 0.3, "x": "Okay, now let's repeat that next."}], "text": "Okay, now let's repeat that next."}
+{"id": "IFM-419", "dur": 2.8, "model": "small", "segments": [{"t": 0.3, "x": "Okay, now let's repeat that next.", "e": 2.8}], "text": "Okay, now let's repeat that next.", "e_derived": true}

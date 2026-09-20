@@ -1,0 +1,46 @@
+{
+ "id": "IFM-330",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "The RBI is the country's money manager, answering one question six times a year",
+   "summary": "The speaker introduces the Reserve Bank of India as the money manager of the country, meeting six times a year to decide whether borrowing money should become cheaper or more expensive.",
+   "start": 9.7,
+   "end": 28.8,
+   "weight": "primary",
+   "evidence": "The RBI or the Reserve Bank of India is like the money manager of our country and it needs six times a year to answer one big question.",
+   "search_terms": [
+    "rbi",
+    "reserve bank of india",
+    "borrowing"
+   ]
+  },
+  {
+   "title": "Why cheap borrowing pushes prices up — and what the RBI does about it",
+   "summary": "The mechanism explained: cheap borrowing means people buy more homes, cars and businesses, too much spending pushes prices up, so the RBI makes borrowing more expensive to slow things down. Every such decision is announced as the monetary policy.",
+   "start": 22.9,
+   "end": 49.7,
+   "weight": "primary",
+   "evidence": "But when everyone starts spending too much, prices can shoot up.",
+   "search_terms": [
+    "inflation",
+    "monetary policy",
+    "borrowing"
+   ]
+  },
+  {
+   "title": "One number — the repo rate — moves your EMI, FD rates and the stock market",
+   "summary": "The hook into part two: the RBI makes borrowing cheaper or more expensive by changing a single number, the repo rate, which influences EMIs, FD rates, businesses and even the stock market.",
+   "start": 44.2,
+   "end": 62.1,
+   "weight": "secondary",
+   "evidence": "How does the RBI make borrowing cheaper or more expensive? By changing one single number, the repo rate.",
+   "search_terms": [
+    "repo rate",
+    "emi",
+    "stock market"
+   ]
+  }
+ ]
+}

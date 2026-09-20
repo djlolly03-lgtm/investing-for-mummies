@@ -1,0 +1,32 @@
+{
+ "id": "IFM-411",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "She used to stay quiet because she could not speak the language",
+   "summary": "A participant says she used to be quiet because she could not speak the language of these conversations. The surrounding transcript is badly garbled, so only this sentence is claimed.",
+   "start": 0.0,
+   "end": 19.2,
+   "weight": "secondary",
+   "evidence": "I think I was quiet actually. I couldn't speak the language and I wouldn't stand out.",
+   "search_terms": [
+    "couldn't speak the language",
+    "personal experience"
+   ]
+  },
+  {
+   "title": "She told her husband there was no point going — now she regrets skipping the talk",
+   "summary": "A participant recounts an organisation she belongs to hosting speakers, and how she kept telling her husband there was no point in her going because she would not understand anything. She now regrets it, because she feels she would have followed some of it.",
+   "start": 31.2,
+   "end": 49.1,
+   "weight": "primary",
+   "evidence": "And I kept telling my husband why would I come? I wouldn't understand anything.",
+   "search_terms": [
+    "talking to spouse about money",
+    "husband",
+    "personal experience"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+ "id": "IFM-487",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "One rupee doubled every day for 30 days — the magic of compounding",
+   "summary": "The facilitator sets up the doubling exercise and names it the magic of compounding, then walks the class through the arithmetic: 1 rupee on day 1, 16 rupees by day 5, 512 by day 10 and over 16,000 by day 15.",
+   "start": 0.0,
+   "end": 42.4,
+   "weight": "primary",
+   "evidence": "And that's what we call as the magic of compounding.",
+   "search_terms": [
+    "compounding",
+    "magic of compounding",
+    "1 rupee doubled"
+   ]
+  }
+ ]
+}

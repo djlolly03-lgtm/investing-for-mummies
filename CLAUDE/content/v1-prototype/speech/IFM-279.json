@@ -1,1 +1,1 @@
-{"id": "IFM-279", "dur": 14.1, "model": "small", "segments": [{"t": 2.1, "x": "How much money did you lose a month?"}, {"t": 9.1, "x": "Oh my God."}, {"t": 13.1, "x": "So you remember"}], "text": "How much money did you lose a month? Oh my God. So you remember"}
+{"id": "IFM-279", "dur": 14.1, "model": "small", "segments": [{"t": 2.1, "x": "How much money did you lose a month?", "e": 9.1}, {"t": 9.1, "x": "Oh my God.", "e": 13.1}, {"t": 13.1, "x": "So you remember", "e": 14.1}], "text": "How much money did you lose a month? Oh my God. So you remember", "e_derived": true}

@@ -1,0 +1,46 @@
+{
+ "id": "IFM-490",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Equity as a dating profile: founder and CEO who has public breakdowns",
+   "summary": "The facilitator runs equity as a personality profile for a teens class — occupation founder and CEO, big dreams, occasional public breakdowns — and draws the answer out of the room: the public breakdowns are the share price fluctuating and sometimes crashing.",
+   "start": 0.7,
+   "end": 32.7,
+   "weight": "primary",
+   "evidence": "Exactly, right? The share price generally tends to fluctuate and sometimes it tends to crash, yeah?",
+   "search_terms": [
+    "share price",
+    "founder and ceo",
+    "public breakdowns"
+   ]
+  },
+  {
+   "title": "Green flags: equity is the wealth creator in your portfolio",
+   "summary": "The green flags in the profile are ambition and growth: equity is described as the thing that actually creates wealth in a portfolio, a long-term winner that generates great amounts of money if held for a long period.",
+   "start": 32.7,
+   "end": 50.7,
+   "weight": "primary",
+   "evidence": "Green flags, they're ambitious, their equity is the one that's actually going to create wealth in your portfolio. So it's a wealth creator, it's a long-term winner.",
+   "search_terms": [
+    "equity",
+    "wealth creator",
+    "long-term winner"
+   ]
+  },
+  {
+   "title": "Red flags: mood swings and an emotional rollercoaster",
+   "summary": "The red flag is that equity has mood swings — the share price fluctuates over time, so it is an emotional rollercoaster because you have no idea how the shares will perform.",
+   "start": 50.7,
+   "end": 71.7,
+   "weight": "primary",
+   "evidence": "So very often it's an emotional rollercoaster because you have no idea how the shares are going to perform.",
+   "search_terms": [
+    "emotional rollercoaster",
+    "red flags",
+    "share price"
+   ]
+  }
+ ]
+}

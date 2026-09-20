@@ -1,0 +1,21 @@
+{
+ "id": "IFM-058",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Why NAV is the number that decides whether you made money",
+   "summary": "The facilitator explains that NAV is the key figure in a mutual fund because it determines whether you have made money, and that it rises when the stocks, gold or debt instruments the fund holds rise in price, lifting the value of the whole basket and so the price per unit.",
+   "start": 4.0,
+   "end": 41.6,
+   "weight": "primary",
+   "evidence": "So this NAV, okay, that we talk about in mutual funds that is one of the most important things you need to know because that's going to determine whether you've made money or not.",
+   "search_terms": [
+    "nav",
+    "net asset value",
+    "mutual funds",
+    "price per unit"
+   ]
+  }
+ ]
+}

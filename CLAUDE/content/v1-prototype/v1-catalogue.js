@@ -1369,6 +1369,22 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "office youth workshop hiral explaining clip raw gesturing concept snack prop box table goel teaching boardroom mutual funds",
+"moments": [
+{
+"t": 4.0,
+"e": 41.6,
+"title": "Why NAV is the number that decides whether you made money",
+"summary": "The facilitator explains that NAV is the key figure in a mutual fund because it determines whether you have made money, and that it rises when the stocks, gold or debt instruments the fund holds rise in price, lifting the value of the whole basket and so the price per unit.",
+"w": "primary",
+"terms": [
+"nav",
+"net asset value",
+"mutual funds",
+"price per unit"
+]
+}
+],
+"moment_text": "Why NAV is the number that decides whether you made money nav net asset value mutual funds price per unit",
 "speech": "55. Exactly. Right. Okay. So this NAV, okay, that we talk about in mutual funds that is one of the most important things you need to know because that's going to determine whether you've made money or not. The NAV needs to increase and the way the NAV increases if that the stocks that the mutual fund has bought or the gold that the mutual fund has bought or the debt instruments that the mutual fund has bought, if those increase in price, right, the entire value of the basket goes up. And that means the price per unit will also go up. Yeah. Does that make sense? Okay. Yeah. Anjali, did you understand that? Okay. One second. Keep your money. Okay. Okay.",
 "speech_dur": 53.9,
 "speech_at": [
@@ -1482,6 +1498,43 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "office youth workshop teaching prop box helper clip raw hiral young participant standing beside her assisting goel woman hands boardroom",
+"moments": [
+{
+"t": 8.0,
+"e": 50.0,
+"title": "Starting a monthly investment the moment your salary lands",
+"summary": "The facilitator walks the room through setting up a recurring monthly investment: salary hits the bank account on the first, and a fixed amount goes in every month before anything else.",
+"w": "primary",
+"terms": [
+"sip",
+"investing every month",
+"salary"
+]
+},
+{
+"t": 29.0,
+"e": 41.0,
+"title": "Invest some of it before you decide what to spend on",
+"summary": "A restatement of the pay-yourself-first rule: put some away and invest some first, and only then decide what to spend the rest on.",
+"w": "secondary",
+"terms": [
+"invest before you spend",
+"salary"
+]
+},
+{
+"t": 50.0,
+"e": 71.3,
+"title": "The NAV has moved, so the new money buys in at the new price",
+"summary": "Working the exercise forward, the facilitator raises the NAV from 1 rupee to 2 and clarifies that the monthly contribution is extra money invested on top of what the students already hold.",
+"w": "secondary",
+"terms": [
+"nav",
+"mutual funds"
+]
+}
+],
+"moment_text": "Starting a monthly investment the moment your salary lands Invest some of it before you decide what to spend on The NAV has moved, so the new money buys in at the new price sip investing every month salary invest before you spend nav mutual funds",
 "speech": "about something, you have your money, so you have to use your money. You can't use yours. You can't use yours. Okay, now we are going to do what if you decide that I want to put in 1 rupee every month. Okay, I get a salary on the first of every month. Okay, the salary hits my bank account. And now I want to start investing. Every time my salary comes in I want to put some away. Remember we talked about we should put some away, we should invest some before we decide what we want to spend our money on. Right? Okay, so the minute the salary hits the account you decide that I want to start putting in some money away every month. Okay? So tell me, how much are you guys going to put in every month? The NAV is still 1 rupee. Okay, let's go back to the original NAV. Or should we increase it? Okay, it's now 2 bucks. Okay, the NAV is 2 bucks. How much do you want to put in every month? So wait, do I already have 5 then? So you already have what you have. Now this is extra money that you invest.",
 "speech_dur": 71.3,
 "speech_at": [
@@ -1562,6 +1615,90 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "props snack packets demo activity investing lesson raw clip behind the scenes",
+"moments": [
+{
+"t": 0.0,
+"e": 38.8,
+"title": "How you actually make money from a mutual fund",
+"summary": "The facilitator works through why NAV rises: when the things the fund has invested in go up in price, the value of the basket goes up, and so does the price per unit. Stated as the mechanism by which a mutual fund makes money.",
+"w": "primary",
+"terms": [
+"nav",
+"net asset value",
+"mutual funds",
+"price per unit"
+]
+},
+{
+"t": 38.8,
+"e": 89.8,
+"title": "Worked example: two people, different amounts, different profit",
+"summary": "A live worked example with the room. Each unit moves from 1 rupee to 1 rupee 50, and the group works out each person's holding and profit, landing on one participant making more because she invested more.",
+"w": "primary",
+"terms": [
+"profit",
+"units",
+"profit per unit"
+]
+}
+],
+"moment_text": "How you actually make money from a mutual fund Worked example: two people, different amounts, different profit nav net asset value mutual funds price per unit profit units profit per unit",
+"speech": "to 19, what is going to happen to the NAV, the price per unit? Yes, yeah, it will increase, right? This basket, because the things inside your basket, their prices increase. So, then this is going to increase, right? That's how you make money from a mutual fund, okay? When the, whatever the mutual fund has invested in, that price increases, right? The price per unit will also increase, okay? Right? So, now this was for 1 rupees, how much do you think each unit has gone up to? Let's assume. Okay. Say to a 1 rupee 50 cents, we are more likely. Okay? So, suppose now each unit is 1 rupees 50 paisa. Now, she has 5 million units. No, she can buy it. She has to buy it. But how much will each, now, before she has 10, now she has 10 rupees. Yes, yes. Earlier you paid 10 rupees for it. Yeah, I was worth 15 now. Now it's worth 15. How much is yours worth? 1 rupee worth 3. Yours is both your investments are worth 3 rupees. So, they've gone up. So, what is your profit? 1 rupee. What is your profit? 5 rupees. 5 rupees. So, she's made more profit because she invested and it went down. Now, what is...",
+"speech_dur": 90.1,
+"speech_at": [
+[
+0.0,
+"to 19, what is going to happen to the NAV, the price per unit? Yes, yeah, it will increase,"
+],
+[
+9.3,
+"right? This basket, because the things inside your basket, their prices increase. So, then"
+],
+[
+15.9,
+"this is going to increase, right? That's how you make money from a mutual fund, okay?"
+],
+[
+22.8,
+"When the, whatever the mutual fund has invested in, that price increases, right? The price per"
+],
+[
+31.8,
+"unit will also increase, okay? Right? So, now this was for 1 rupees, how much do you think"
+],
+[
+38.8,
+"each unit has gone up to? Let's assume. Okay. Say to a 1 rupee 50 cents, we are more likely."
+],
+[
+46.8,
+"Okay? So, suppose now each unit is 1 rupees 50 paisa."
+],
+[
+50.8,
+"Now, she has 5 million units. No, she can buy it. She has to buy it. But how much will"
+],
+[
+59.8,
+"each, now, before she has 10, now she has 10 rupees. Yes, yes. Earlier you paid 10 rupees"
+],
+[
+64.8,
+"for it. Yeah, I was worth 15 now. Now it's worth 15. How much is yours worth?"
+],
+[
+69.8,
+"1 rupee worth 3. Yours is both your investments are worth 3 rupees. So, they've gone up. So,"
+],
+[
+77.8,
+"what is your profit? 1 rupee. What is your profit? 5 rupees. 5 rupees. So, she's made"
+],
+[
+85.8,
+"more profit because she invested and it went down. Now, what is..."
+]
+],
 "kit": "teaching",
 "kit_rank": 3
 },
@@ -1994,6 +2131,33 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "b-roll cutaway establishing supporting footage context clip hiral presenting inflation simplified wide shot standing lounge style workshop gesturing beside screen reading patterned wallpaper bookshelves orange pendant lamp seated audience cream sleeveless outfit goel speaking founder event video",
+"moments": [
+{
+"t": 0.0,
+"e": 19.4,
+"title": "There is a different rate of inflation for every industry",
+"summary": "The facilitator explains that the headline inflation number is not one number: India runs at roughly 5-6% across the country, but individual industries experience their own rates.",
+"w": "primary",
+"terms": [
+"inflation rate",
+"different industries",
+"sector"
+]
+},
+{
+"t": 19.4,
+"e": 31.5,
+"title": "Medical inflation is 14-15%, compounding every year",
+"summary": "The concrete example: medical inflation runs at 14-15%, which means medical bills rise by that much every year on a compounded basis.",
+"w": "primary",
+"terms": [
+"medical inflation",
+"medical bills",
+"compounded"
+]
+}
+],
+"moment_text": "There is a different rate of inflation for every industry Medical inflation is 14-15%, compounding every year inflation rate different industries sector medical inflation medical bills compounded",
 "speech": "interesting thing is there is a different rate of inflation for every industry or sector. So currently India experiences about a 5-6% inflation rate and that is across the country but different industries they have they experience different inflation rates. So for example medical inflation today is 14-15% so that means every year our medical bills are going to increase by 14-15% on a compounded basis.",
 "speech_dur": 31.5,
 "speech_at": [
@@ -2043,6 +2207,22 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "b-roll cutaway establishing supporting footage context clip hiral teaching inflation analogy wide shot standing speaking workshop hands gesturing beside screen showing balanced supply demand slide patterned wallpaper bookshelves orange lamp seated audience cream sleeveless outfit goel presenting lounge founder event video",
+"moments": [
+{
+"t": 0.0,
+"e": 43.0,
+"title": "Why inflation exists, explained with 20 families and one baker",
+"summary": "The facilitator works an analogy with the class: the population doubles to 20 families but the baker can still only bake 10 loaves, so the price rises. More demand chasing the same limited resources is why inflation exists.",
+"w": "primary",
+"terms": [
+"inflation",
+"demand",
+"limited resources",
+"price of bread"
+]
+}
+],
+"moment_text": "Why inflation exists, explained with 20 families and one baker inflation demand limited resources price of bread",
 "speech": "The population increases to 20 families, but the baker can still only bake 10 loads of bread. What do you think would happen that the price of the bread will go higher? Yeah, why? Because demand is more for the same limited amount of resources. So the baker will say that I will charge more or people will say that no I really want it, I will pay more, you give it to me at a higher price. So that's why inflation actually exists. So basically the population contributes to it. Yes, because population contributes, there are limited resources for the same for higher demand. But now let's look...",
 "speech_dur": 44.5,
 "speech_at": [
@@ -2600,6 +2780,45 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "candid warm natural unposed relaxed friendly celebration clip hiral smiling piece camera founder goel stands front branded investing mummies slide multitasking mum graphic addressing directly intro welcome segment video branding presenter workshop host",
+"moments": [
+{
+"t": 14.8,
+"e": 31.8,
+"title": "She knew nothing about insurance or mutual funds when she started",
+"summary": "A participant who introduces herself in the transcript as Malika Singhamia says she knew nothing about basic things like insurance and mutual funds when she began, and that her girlfriends think they know but do not.",
+"w": "primary",
+"terms": [
+"mutual funds",
+"insurance",
+"starting to invest"
+]
+},
+{
+"t": 31.8,
+"e": 43.8,
+"title": "She understands financial terms so much better now",
+"summary": "She says the course opened up what had felt like a closed world, and that she now understands financial terms and her own financial literacy far better.",
+"w": "primary",
+"terms": [
+"financial literacy",
+"financial terms",
+"jargon"
+]
+},
+{
+"t": 43.8,
+"e": 51.8,
+"title": "Taking control of her own money, and her husband's",
+"summary": "She says that once she finishes the course she expects to be able to take control of her money, and her husband's money too.",
+"w": "primary",
+"terms": [
+"take control of my money",
+"talking to spouse about money",
+"husband"
+]
+}
+],
+"moment_text": "She knew nothing about insurance or mutual funds when she started She understands financial terms so much better now Taking control of her own money, and her husband's mutual funds insurance starting to invest financial literacy financial terms jargon take control of my money talking to spouse about money husband",
 "speech": "Are you ready? Are you ready? Hi guys, this is Malika Singhamia and I'm here at Herald's office where she teaches us investing for mummies. It's just the most amazing course. When I started I didn't know anything about basic things like insurance, mutual funds. I'm sure you can relate to it. I speak to a lot of my girlfriends and while we might think we know, we actually don't know and we really don't even know how to take care of our money. Then I signed up for this course and I learnt that there's a whole big, not so bad world out there anymore for me because I truly feel like I understand financial terms so much better, my financial literacy so much better. I feel like once I finish this course I'm going to be able to take control of my money and also my husband's money very soon. So you must sign up and I'm sure it's going to be a huge, huge value add in your life. Thank you.",
 "speech_dur": 59.7,
 "speech_at": [
@@ -2730,6 +2949,33 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "Unknown",
 "search_terms": "sgb sovereign gold bond gold funds gold etf digital gold physical gold safe haven hedge portfolio allocation five to ten percent rbi ways to invest in gold bullion explaining teaching",
+"moments": [
+{
+"t": 5.2,
+"e": 34.8,
+"title": "Digital gold and gold funds are meant to be backed by physical gold held for you",
+"summary": "The speaker explains that when you buy a rupee of digital gold, the company is buying and storing physical gold against it, and that gold mutual funds work the same way.",
+"w": "primary",
+"terms": [
+"digital gold",
+"gold",
+"gold mutual funds"
+]
+},
+{
+"t": 34.8,
+"e": 51.0,
+"title": "You pay roughly a one percent premium for the storing, and the price still tracks gold",
+"summary": "On cost: if gold is a hundred rupees you pay about a one percent premium because someone is doing the buying and storing, but the holding still follows the trend of gold prices.",
+"w": "secondary",
+"terms": [
+"gold price",
+"premium",
+"digital gold"
+]
+}
+],
+"moment_text": "Digital gold and gold funds are meant to be backed by physical gold held for you You pay roughly a one percent premium for the storing, and the price still tracks gold digital gold gold gold mutual funds gold price premium",
 "speech": "But there are those companies that exist and you can either buy shares of those companies right or these are companies who are actually selling you this digital gold okay and the thing is it's always backed by physical gold so when they are saying they are meant to it's meant to be backed by physical gold so when you are buying one rupee worth of gold today on your dad technically they are buying it in the back and it's stored right same thing with gold mutual funds right they are actually storing it so if say this our digital gold of these others say if the gold price is hundred rupees you'll obviously pay like of that one percent premium because they're doing the storing buying whatever you know yeah yeah but it will follow the trend of gold prices right so once the same standard",
 "speech_dur": 51.0,
 "speech_at": [
@@ -3941,6 +4187,44 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "clip hiral making point her hands leans forward open palm gesture while speaking group several women watching attentively across table emphasising key teaching video explaining boardroom workshop investing session emphasis",
+"moments": [
+{
+"t": 0.0,
+"e": 18.7,
+"title": "A worked NAV problem: equity 850, debt 50, cash 20, liability 15, 40 units",
+"summary": "The facilitator reads out a fund statement and asks the room to calculate the NAV from it.",
+"w": "primary",
+"terms": [
+"nav",
+"units outstanding",
+"liability"
+]
+},
+{
+"t": 24.7,
+"e": 43.7,
+"title": "\"Debt\" on a fund statement means the fund's debt investments",
+"summary": "A clarification during the exercise: the debt line is not borrowing, it is the fund's debt investments, held alongside its equity investments.",
+"w": "secondary",
+"terms": [
+"debt investment",
+"equity investments"
+]
+},
+{
+"t": 49.7,
+"e": 61.7,
+"title": "The NAV formula recalled: total assets minus liabilities, divided by units outstanding",
+"summary": "When the room stalls, the facilitator gives the hint that unlocks it — the formula itself.",
+"w": "primary",
+"terms": [
+"nav formula",
+"total assets minus liabilities",
+"units outstanding"
+]
+}
+],
+"moment_text": "A worked NAV problem: equity 850, debt 50, cash 20, liability 15, 40 units \"Debt\" on a fund statement means the fund's debt investments The NAV formula recalled: total assets minus liabilities, divided by units outstanding nav units outstanding liability debt investment equity investments nav formula total assets minus liabilities",
 "speech": "Ganga blue chip fund statement, it shows that equity is 850 rupees, debt is 50 rupees, cash is 20 rupees, liability is 15 and the units outstanding are 40. Can you help calculate the NAV? I can't help. I can't help. Calculator. On the form? Sorry. That's my issue. When we are referring to debt, it refers to debt investment. So the fund basically has 850 rupees worth of equity investments, 50 plus the cash minus the liability is. Yes, so do it. Do it. Right? The units outstanding 40 means what? Remember, what was, okay, I am going to ask for a hint. Remember, the formula to calculate the NAV was total assets minus liabilities divided by units outstanding. Okay. 919. 919. 919. 919. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay.",
 "speech_dur": 68.6,
 "speech_at": [
@@ -4544,6 +4828,20 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "Unknown",
 "search_terms": "clip intro evaluating investments presenter beige gestures beside why need different measures slide laptops bottles table opening returns evaluation module video presentation boardroom workshop investing session teaching",
+"moments": [
+{
+"t": 0.0,
+"e": 51.8,
+"title": "Why two investments cannot be compared like for like without standard metrics",
+"summary": "The speaker explains that investments with different features — one left to grow ten years, another with money taken out and put back in — cannot be compared fairly unless the same measurement assumptions are used, which is why the financial world developed standard metrics.",
+"w": "primary",
+"terms": [
+"compare two investments",
+"metrics"
+]
+}
+],
+"moment_text": "Why two investments cannot be compared like for like without standard metrics compare two investments metrics",
 "speech": "So, all these kinds of different situations actually have specific metrics that take into consideration all these situations plus very often you want to compare two investments that you have made. But if they have completely different features or in one you have let it grow for 10 years, in the others you have taken some out then you put some extra money in, then it is not fair to compare them like to like unless they have metrics that actually use the same sort of assumptions to measure them. Therefore, you know the financial world is quite efficient and has actually come up with metrics to actually be able to do all of this, okay.",
 "speech_dur": 51.8,
 "speech_at": [
@@ -4731,6 +5029,32 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "Unknown",
 "search_terms": "clip absolute rate return explained presenter points toward simple interest slide worked ₹10 lakh example participants follow open workbooks teaching how returns measured video workbook boardroom workshop investing session",
+"moments": [
+{
+"t": 0.0,
+"e": 24.8,
+"title": "Absolute return tells you the gain but not how long it took",
+"summary": "The facilitator defines absolute rate of return: 10 lakhs growing to 13 lakhs is a 3 lakh gain shown as a percentage, and the number says nothing about whether it took five years or ten.",
+"w": "primary",
+"terms": [
+"absolute rate of return",
+"rate of return",
+"percentage"
+]
+},
+{
+"t": 24.8,
+"e": 44.0,
+"title": "Same 10 to 13 lakhs in one year or in five — which is better?",
+"summary": "The class is asked to compare two investments with identical absolute gains over different periods, and answers the one-year one, making the point that the time you stayed invested matters and absolute return ignores it.",
+"w": "primary",
+"terms": [
+"time matters",
+"rate of return"
+]
+}
+],
+"moment_text": "Absolute return tells you the gain but not how long it took Same 10 to 13 lakhs in one year or in five — which is better? absolute rate of return rate of return percentage time matters",
 "speech": "will be 13 lakhs minus 10 lakhs right, 3 lakhs shown as a percentage yeah okay, but it doesn't matter if the return to 5 years to grow, 10 years to grow none of that it's only giving you an absolute rate of return okay, do you understand? But now the thing is if an investment grew from 10 lakhs to 13 lakhs within one year versus if that same another investment to gain from 10 lakhs to 13 lakhs within 5 years which one is a better one? The one year in the one year right, so time matters time matters this rate of return that this rate of return doesn't take into account the time period okay, that you have stayed invested for therefore it is, so I have just given an analogy just if you think about going on a road trip right okay, how it basically will",
 "speech_dur": 66.8,
 "speech_at": [
@@ -5292,6 +5616,21 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "clip your corporate health plan enough hiral stands beside slide addressing seated group insurance gaps covering why employer cover may insufficient video presenter boardroom women workshop protection session coverage",
+"moments": [
+{
+"t": 2.2,
+"e": 31.2,
+"title": "Your existing health cover probably does not cover you internationally",
+"summary": "The facilitator warns that an existing Indian policy will not necessarily cover treatment abroad unless it is a comprehensive international plan, and tells the room to check their coverage amount.",
+"w": "primary",
+"terms": [
+"international coverage",
+"insurance abroad",
+"comprehensive cover"
+]
+}
+],
+"moment_text": "Your existing health cover probably does not cover you internationally international coverage insurance abroad comprehensive cover",
 "speech": "I have not reached that stage yet But when they go abroad, they have to get a set Our current insurance is not necessarily going to cover But international coverage will be different Do you understand? Your coverage amount, they are not covering you internationally Unless you have a great comprehensive cover So you also have to check on that Then maybe at that point it might not make sense The hospitals that you don't recognise So I definitely know that the NHS in London does not recognise",
 "speech_dur": 39.5,
 "speech_at": [
@@ -5366,6 +5705,22 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "clip health cover participant hiral stands your corporate plan enough slide while woman pink responds asks question others listening interactive discussion insurance video boardroom women workshop session",
+"moments": [
+{
+"t": 0.0,
+"e": 27.0,
+"title": "Her father-in-law's travel insurance claim in London paid out nothing",
+"summary": "A participant recounts a live example: her father-in-law was treated in London with travel and medical insurance in place, but when the claim papers went in they were told to pay the whole amount, and nothing was reimbursed.",
+"w": "primary",
+"terms": [
+"travel insurance",
+"insurance claim",
+"not reimbursed",
+"personal experience"
+]
+}
+],
+"moment_text": "Her father-in-law's travel insurance claim in London paid out nothing travel insurance insurance claim not reimbursed personal experience",
 "speech": "If you are in a hospital, I know because it's happened to my father-in-law right now, when he went to London, he had his travel insurance, medical, all of that. The NHS did everything, let him go. They didn't take any payment immediately. But when we had to put in the papers for the claim, they said, sorry, you have to pay the world amount. So it doesn't apply in some way. So you paid a world amount and then you came with me? We did not get reimbursed for it at all. Nothing? Nothing. So travel insurance, baby, we can tell if you are going to travel insurance or not. Travel insurance. I honestly don't like the combination here. But it's easier to do that here.",
 "speech_dur": 39.1,
 "speech_at": [
@@ -6271,6 +6626,45 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "b-roll cutaway establishing supporting footage context july ever wondered reel hiral against gold bar backdrop why central banks own much hook aakara production video",
+"moments": [
+{
+"t": 0.0,
+"e": 21.0,
+"title": "Central banks own thousands of tons of gold bars",
+"summary": "The speaker opens by defining a central bank as the bank that manages a country's money — the RBI in India — and points out that the RBI, the US and countries worldwide hold thousands of tons of actual gold bars, held as bars rather than as jewellery.",
+"w": "primary",
+"terms": [
+"gold",
+"central banks",
+"rbi"
+]
+},
+{
+"t": 21.0,
+"e": 38.0,
+"title": "Gold as a shock absorber when markets get bumpy",
+"summary": "The explanation of why: when markets become uncertain, economies slow and currencies come under pressure, gold behaves differently from other assets — not the fastest or most exciting asset, but one that cushions the ride.",
+"w": "primary",
+"terms": [
+"gold",
+"shock absorber",
+"uncertain markets"
+]
+},
+{
+"t": 38.0,
+"e": 55.0,
+"title": "Gold pays no interest and no dividends, yet countries still own it",
+"summary": "The closing argument: gold pays neither interest nor dividends, but countries still choose to hold it, because sometimes an asset's job is to protect you rather than to make you rich.",
+"w": "primary",
+"terms": [
+"gold",
+"dividends",
+"memorable statement"
+]
+}
+],
+"moment_text": "Central banks own thousands of tons of gold bars Gold as a shock absorber when markets get bumpy Gold pays no interest and no dividends, yet countries still own it gold central banks rbi shock absorber uncertain markets dividends memorable statement",
 "speech": "Ever wondered why do central banks own so much gold? And before you ask, a central bank is a bank that manages a country's money. In India's case, that's the RBI. Now here's the surprising part. The RBI owns gold. The US owns gold. Countries around the world own thousands of tons of gold, not jewelry, actual gold bars locked away in walls. Why? When markets become uncertain, economies slow down, and currencies come under pressure, gold often behaves differently from other assets. Think of it as a shock absorber. Not the fastest asset, not the most exciting one, but one that can help cushion the ride when things get bumpy. But here's the really interesting part. Gold doesn't pay interest. It doesn't pay dividends. But yet countries around the world still choose to own it. And that tells you, sometimes an asset's job isn't to make you rich. It's to help protect you when other things aren't going according to plan. Is there anything you've ever wondered about gold? I'd love to hear about it. Drop a comment. Follow investing for mummies for more such content.",
 "speech_dur": 64.9,
 "speech_at": [
@@ -7523,6 +7917,46 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "august assets class part what asset reel one minute investing school hiral seated black houses composited behind her series finance terms made simple aakara",
+"moments": [
+{
+"t": 0.0,
+"e": 7.6,
+"title": "Stocks are just one room in a much bigger house",
+"summary": "The opening line of the lesson: most people equate investing with stocks, and the speaker reframes stocks as one room in a much bigger house.",
+"w": "secondary",
+"terms": [
+"stocks",
+"stock market",
+"memorable statement"
+]
+},
+{
+"t": 13.1,
+"e": 36.6,
+"title": "An asset is simply where your money lives",
+"summary": "The definition given in the lesson: when you invest, your money has to live somewhere, and that somewhere is an asset — a savings account, a bond, gold, a stock or real estate.",
+"w": "primary",
+"terms": [
+"what is an asset",
+"asset",
+"real estate",
+"gold"
+]
+},
+{
+"t": 40.9,
+"e": 52.6,
+"title": "Every asset has a different personality",
+"summary": "The lesson closes on the idea that assets behave differently — some favour stability, some chase growth, some are highly unpredictable, and some become popular in uncertain times.",
+"w": "secondary",
+"terms": [
+"asset personality",
+"stability",
+"growth"
+]
+}
+],
+"moment_text": "Stocks are just one room in a much bigger house An asset is simply where your money lives Every asset has a different personality stocks stock market memorable statement what is an asset asset real estate gold asset personality stability growth",
 "speech": "When most people hear the word investing, they think of one thing, stocks. But stocks are just one room in a much bigger house. Welcome to the One Minute Investing School where we break down investing into simple bite-size lessons. Today's lesson, what is an asset? When you invest, your money has to live somewhere. That somewhere is an asset. Think of assets as different homes you can choose for your money to help it grow. A savings account is an asset. A bond is an asset. Gold is an asset. A stock is an asset. Even real estate is an asset. They're all different places you can choose to park your money. And investing is really about choosing from a whole neighborhood of assets. The interesting part, every asset has a different personality. Some love stability, some chase growth and some are highly unpredictable. And some become everyone's best friends during uncertain times. Follow investing for mummies and let's meet them in part two of the One Minute Investing School.",
 "speech_dur": 59.0,
 "speech_at": [
@@ -7628,6 +8062,33 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "august assets class part types reel one minute investing school hiral black four family member cutouts behind her cash debt real estate gold equity aakara",
+"moments": [
+{
+"t": 0.0,
+"e": 44.3,
+"title": "Every asset has its own personality — cash, debt, real estate, gold and equity as five friends",
+"summary": "A One Minute Investing School lesson that gives each asset class a character: cash the cautious friend, debt the predictable one, real estate the slow and steady one, gold the crisis friend, equity the ambitious and dramatic one.",
+"w": "primary",
+"terms": [
+"asset personality",
+"gold",
+"real estate",
+"equity"
+]
+},
+{
+"t": 44.3,
+"e": 58.7,
+"title": "No asset class is \"the best\" — that is what asset allocation is",
+"summary": "The payoff of the lesson: no personality is best because different situations need different friends, and that is the foundation of asset allocation.",
+"w": "primary",
+"terms": [
+"asset allocation",
+"different situations need different friends"
+]
+}
+],
+"moment_text": "Every asset has its own personality — cash, debt, real estate, gold and equity as five friends No asset class is \"the best\" — that is what asset allocation is asset personality gold real estate equity asset allocation different situations need different friends",
 "speech": "Not every asset is the same. In fact, every asset has its own personality. Welcome to the One Minute Investing School and this is part two of the lesson, What is an Asset? And if you've ever wondered why investors own different assets, this is why. Cash is a cautious friend. Always available, always dependable, never the life of the party. Debt is a predictable friend. Likes routines, keeps promises, prefers stability over surprises. Real estate is the slow and steady friend. Takes commitment, needs patience, but likes to stick around for the long haul. Gold is the crisis friend. When everyone else is panicking, gold often keeps its cool. Equity is the ambitious friend. Dreams big can achieve amazing things that can be a little dramatic along the way. And here's the important part. No personality is the best because different situations need different friends. And that's the foundation of something called asset allocation. Follow Investing for Mummies for more such lessons from the One Minute Investing School and join our workshops where we explain financial concepts using simple language and everyday analogy.",
 "speech_dur": 67.9,
 "speech_at": [
@@ -7820,6 +8281,59 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "september ranking reel hiral beside high low risk board these investments risky ranks five investment types workshops placeholder shot list format aakara",
+"moments": [
+{
+"t": 4.0,
+"e": 11.1,
+"title": "Disclaimer before the ranking: risk varies from product to product",
+"summary": "Before ranking anything, the speaker flags that risk varies from product to product, so what follows is a broad ranking rather than a hard and fast rule.",
+"w": "secondary",
+"terms": [
+"risk",
+"broad rankings",
+"disclaimer"
+]
+},
+{
+"t": 11.1,
+"e": 50.0,
+"title": "Eight investments ranked by risk, from savings account to crypto",
+"summary": "A run through savings account (very low), real estate (moderate), gold (low to moderate), fixed deposit (low), equity mutual funds (moderate to high), debt mutual funds (low to moderate) and crypto (very high), each with a one-line reason.",
+"w": "primary",
+"terms": [
+"risk",
+"crypto",
+"fixed deposit",
+"gold",
+"mutual funds"
+]
+},
+{
+"t": 50.0,
+"e": 61.0,
+"title": "Not all stocks carry the same risk — smaller companies are more volatile",
+"summary": "Stocks are placed at moderate to high, with the caveat that a single ranking for all stocks is wrong: smaller companies are more volatile than larger ones, and the individual stock matters.",
+"w": "secondary",
+"terms": [
+"stocks",
+"volatile stocks",
+"smaller companies"
+]
+},
+{
+"t": 61.0,
+"e": 73.0,
+"title": "The trade-off: protect your money and you accept low expected returns",
+"summary": "The closing principle — higher expected returns come with higher risk, and if protecting your money is the top priority you have to accept low expected returns.",
+"w": "primary",
+"terms": [
+"risk",
+"risk and return trade-off",
+"expected returns"
+]
+}
+],
+"moment_text": "Disclaimer before the ranking: risk varies from product to product Eight investments ranked by risk, from savings account to crypto Not all stocks carry the same risk — smaller companies are more volatile The trade-off: protect your money and you accept low expected returns risk broad rankings disclaimer crypto fixed deposit gold mutual funds stocks volatile stocks smaller companies risk and return trade-off expected returns",
 "speech": "Hey, hero, can you rank these investments in terms of risk from low to high? Okay, but a quick disclaimer, risk can vary from product to product. So these are just broad rankings, not hard and fast rules. Let's go. Savings account. Very low. Your money is safe and easily accessible. Real estate. Moderate. Property values can rise or fall and selling isn't always quick or easy. Gold. Low to moderate. Gold has stood the test of time, but gold prices can still move up and down. Fixed deposit? Low. Returns are predictable and your money doesn't swing with the market. Equity mutual funds. Moderate to high. But again, it depends on the fund. One thing you need to remember is that your money is linked to the stock market. Debt mutual funds. Low to moderate, but your returns can vary depending on the fund. Crypto. Very high. Prices can move dramatically, so the risk can also be very high. Stocks. Moderate to high. But again, this is a broad ranking. I wouldn't give all stocks the same ranking. Smaller companies are more volatile than the larger ones. But the individual stock matters too. In investing, there's a trade-off between risk and return. Higher expected returns come with higher risk. And if you want to protect your money and that's your top priority, then you have to accept low expected returns. Follow investing for mummies for more such learning.",
 "speech_dur": 76.4,
 "speech_at": [
@@ -8033,7 +8547,23 @@ window.IFM_V1 =
 "No Person"
 ],
 "source": "Aakara",
-"search_terms": "candid warm natural unposed relaxed friendly celebration september teachers day delivered reel built baa black sheep nursery rhyme hook opens animated ifm presenter avatar long dark hair navy button down shirt slight smile framed against white wall carrying green investing mummies money tree logo topical workshops aakara"
+"search_terms": "candid warm natural unposed relaxed friendly celebration september teachers day delivered reel built baa black sheep nursery rhyme hook opens animated ifm presenter avatar long dark hair navy button down shirt slight smile framed against white wall carrying green investing mummies money tree logo topical workshops aakara",
+"speech": "Ba ba black sheep have you any well sir but not on one shelf One for stocks and one for saving safe too is best Black sheep watch us right if one back that's black sheep",
+"speech_dur": 45.8,
+"speech_at": [
+[
+3.2,
+"Ba ba black sheep have you any well sir but not on one shelf"
+],
+[
+9.4,
+"One for stocks and one for saving safe too is best"
+],
+[
+22.0,
+"Black sheep watch us right if one back that's black sheep"
+]
+]
 },
 {
 "id": "IFM-275",
@@ -9385,6 +9915,57 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "july hiral expertise reel camera blue gradient finance pages confuse you founder positioning files folder aakara finished delivered",
+"moments": [
+{
+"t": 0.0,
+"e": 20.5,
+"title": "She wrote about wealth creation for years without knowing how to manage her own money",
+"summary": "The speaker — who later in the clip says she started Investing for Mummies — recounts spending years writing about wealth creation while not knowing how to manage her own money, and concluding you do not need to love spreadsheets or be great with numbers.",
+"w": "primary",
+"terms": [
+"you don't need to be a finance expert",
+"wealth creation",
+"personal experience"
+]
+},
+{
+"t": 20.5,
+"e": 28.7,
+"title": "So many women want to understand money but feel overwhelmed",
+"summary": "She says she realised she was not alone: many women want to understand money but are put off by how complicated finance appears.",
+"w": "secondary",
+"terms": [
+"women and money",
+"overwhelmed",
+"complicated finance"
+]
+},
+{
+"t": 28.7,
+"e": 48.7,
+"title": "What the workshops are — simple language, games, no intimidating jargon",
+"summary": "She describes the workshops as breaking investing down in simple language using interactive games and relatable analogies, in a space with no judgement, no intimidating jargon and no pretending to know things you don't.",
+"w": "primary",
+"terms": [
+"workshop games",
+"jargon",
+"safe space"
+]
+},
+{
+"t": 48.7,
+"e": 58.7,
+"title": "If you can manage a career, a family and a household, you can manage your money",
+"summary": "The closing line, addressed to anyone who has felt intimidated by finance.",
+"w": "secondary",
+"terms": [
+"memorable statement",
+"fear of investing",
+"manage your money"
+]
+}
+],
+"moment_text": "She wrote about wealth creation for years without knowing how to manage her own money So many women want to understand money but feel overwhelmed What the workshops are — simple language, games, no intimidating jargon If you can manage a career, a family and a household, you can manage your money you don't need to be a finance expert wealth creation personal experience women and money overwhelmed complicated finance workshop games jargon safe space memorable statement fear of investing manage your money",
 "speech": "So you don't need to be a finance expert to understand investing. So in the last video I shared about how I spent years writing about wealth creation but I didn't know how to manage my own money myself. And that's when I realized you don't need to love spreadsheets or be great with numbers. All you need is to understand the key concept and they're far simpler than most people think. I also realized I wasn't alone. So many women want to understand money but feel overwhelmed by how complicated finance seems. That's why I started investing for mummies where we run workshops that break down investing in simple language using interactive games and relatable analogy. A space with no judgement, no intimidating jargon and no pretending to know things you don't. Just a safe space to learn, ask questions and build confidence. If you've ever felt intimidated by finance, you're not alone. If you're smart enough to manage a career, a family, a household, you're smart enough to manage your money too. Follow investing for mummies and join our workshops where we build financial confidence.",
 "speech_dur": 65.1,
 "speech_at": [
@@ -9612,6 +10193,45 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "rbi repo rate central bank august rbi part reel hiral green striped shirt mid sentence honest screen explainer aakara finished delivered",
+"moments": [
+{
+"t": 9.7,
+"e": 28.8,
+"title": "The RBI is the country's money manager, answering one question six times a year",
+"summary": "The speaker introduces the Reserve Bank of India as the money manager of the country, meeting six times a year to decide whether borrowing money should become cheaper or more expensive.",
+"w": "primary",
+"terms": [
+"rbi",
+"reserve bank of india",
+"borrowing"
+]
+},
+{
+"t": 22.9,
+"e": 49.7,
+"title": "Why cheap borrowing pushes prices up — and what the RBI does about it",
+"summary": "The mechanism explained: cheap borrowing means people buy more homes, cars and businesses, too much spending pushes prices up, so the RBI makes borrowing more expensive to slow things down. Every such decision is announced as the monetary policy.",
+"w": "primary",
+"terms": [
+"inflation",
+"monetary policy",
+"borrowing"
+]
+},
+{
+"t": 44.2,
+"e": 62.1,
+"title": "One number — the repo rate — moves your EMI, FD rates and the stock market",
+"summary": "The hook into part two: the RBI makes borrowing cheaper or more expensive by changing a single number, the repo rate, which influences EMIs, FD rates, businesses and even the stock market.",
+"w": "secondary",
+"terms": [
+"repo rate",
+"emi",
+"stock market"
+]
+}
+],
+"moment_text": "The RBI is the country's money manager, answering one question six times a year Why cheap borrowing pushes prices up — and what the RBI does about it One number — the repo rate — moves your EMI, FD rates and the stock market rbi reserve bank of india borrowing inflation monetary policy repo rate emi stock market",
 "speech": "Be honest, have you ever heard the RBI has announced its monetary policy and wondered, okay, but why should I care? That's exactly what we're going to answer today. The RBI or the Reserve Bank of India is like the money manager of our country and it needs six times a year to answer one big question. Should borrowing money become cheaper or more expensive? Why does that matter? Because when borrowing money is cheap, people buy more homes, cars and businesses in Westmore. But when everyone starts spending too much, prices can shoot up. That's all in place. So RBI makes borrowing a little more expensive to slow things down and keep prices under control. And every decision they make is announced in something that's called the monetary policy. But here's the interesting part. How does the RBI make borrowing cheaper or more expensive? By changing one single number, the repo rate. And that one number can influence your EMI, FD rates, businesses and even the stock market. So what exactly is the repo rate? Let's make it ridiculously simple in part two.",
 "speech_dur": 66.9,
 "speech_at": [
@@ -9719,6 +10339,34 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "august woman equality reel hiral white lace second presenter composited who says money conversations aren you women day topical aakara finished delivered",
+"moments": [
+{
+"t": 0.0,
+"e": 24.7,
+"title": "\"Our husband will handle it\" — and why that answer does not hold",
+"summary": "The argument of the piece: women run the house, the kids and the calendar but defer on mutual funds, and if they help build the life then the family's wealth is theirs too.",
+"w": "primary",
+"terms": [
+"women and money",
+"mutual funds",
+"family wealth",
+"unpaid labour"
+]
+},
+{
+"t": 24.7,
+"e": 37.5,
+"title": "You don't have to become a finance expert — just take part in the decisions",
+"summary": "The ask is deliberately small: not becoming a finance expert overnight, but participating in the decisions and conversations that shape your future, and the closing line that finance feels less scary when it is explained simply.",
+"w": "primary",
+"terms": [
+"finance experts",
+"participating in decisions",
+"finance feels less scary"
+]
+}
+],
+"moment_text": "\"Our husband will handle it\" — and why that answer does not hold You don't have to become a finance expert — just take part in the decisions women and money mutual funds family wealth unpaid labour finance experts participating in decisions finance feels less scary",
 "speech": "Women know where every document in the house is, except the investing document. We manage the house, the kids, the schedules, the family calendar, half the time the family itself. But when someone says, mutual funds, we say our husband will handle it. And honestly, why? If we are helping build this life to our work, our sacrifices, our unpaid labour, then this is our family's wealth too. So no, we don't need to become finance experts overnight. But we do need to start participating in decisions and conversations that shape our future. Finance feels less scary when someone explains it to us simply. Follow investing for mummies for bigger, friendly lessons.",
 "speech_dur": 41.9,
 "speech_at": [
@@ -9806,7 +10454,83 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "september thali asset allocation hiral sits wooden dining table talking straight camera steel front her rice chana sabzi dal roti salad pickle separate compartments glass water alongside bright red green printed placemat white graphic tee modern home interior behind balanced"
+"search_terms": "september thali asset allocation hiral sits wooden dining table talking straight camera steel front her rice chana sabzi dal roti salad pickle separate compartments glass water alongside bright red green printed placemat white graphic tee modern home interior behind balanced",
+"moments": [
+{
+"t": 0.0,
+"e": 18.7,
+"title": "Asset allocation is your lunch thali",
+"summary": "The analogy is set up: everyone eats rice, dal, sabzi and rotis in different proportions, and a portfolio works the same way — the obsession is with what to buy rather than how much.",
+"w": "primary",
+"terms": [
+"asset allocation",
+"thali",
+"portfolio"
+]
+},
+{
+"t": 18.7,
+"e": 36.1,
+"title": "It's not what you choose, it's how you divide it",
+"summary": "How much goes into equity, debt, gold or cash is said to depend on age, goals, time horizon and risk appetite — so the question to ask is how much of each, not what to put on the plate.",
+"w": "primary",
+"terms": [
+"asset allocation",
+"risk appetite",
+"time horizon",
+"gold"
+]
+}
+],
+"moment_text": "Asset allocation is your lunch thali It's not what you choose, it's how you divide it asset allocation thali portfolio risk appetite time horizon gold",
+"speech": "Think of asset allocation as your lunch thali. We keep asking which stock should I buy, which mutual fund is best, gold or ETF. We're obsessed with what to buy. But forget to ask how much to buy. Just like how everyone eats rice, dal, sabzi, rotis in different proportions, your portfolio works the same way. How much goes into equity, debt, gold or cash depends on your age, goals, time horizon and risk appetite. So don't just ask what should I put on my plate. Ask how much of each should I have because investing, it's not what you choose. It's how you divide it. That's what matters. Join our workshops where we help you understand your investment thali.",
+"speech_dur": 41.6,
+"speech_at": [
+[
+0.0,
+"Think of asset allocation as your lunch thali."
+],
+[
+2.7,
+"We keep asking which stock should I buy, which mutual fund is best, gold or ETF."
+],
+[
+7.3,
+"We're obsessed with what to buy."
+],
+[
+9.3,
+"But forget to ask how much to buy."
+],
+[
+11.8,
+"Just like how everyone eats rice, dal, sabzi, rotis in different proportions,"
+],
+[
+16.7,
+"your portfolio works the same way."
+],
+[
+18.7,
+"How much goes into equity, debt, gold or cash depends on your age, goals, time horizon and risk appetite."
+],
+[
+26.0,
+"So don't just ask what should I put on my plate."
+],
+[
+28.7,
+"Ask how much of each should I have because investing, it's not what you choose."
+],
+[
+33.5,
+"It's how you divide it. That's what matters."
+],
+[
+36.1,
+"Join our workshops where we help you understand your investment thali."
+]
+]
 },
 {
 "id": "IFM-335",
@@ -10002,6 +10726,57 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "Aakara",
 "search_terms": "testimonial review feedback social proof word of mouth september brand awareness can stop apologizing single mp4 sampled frame extreme motion blurred close woman speaking camera only mouth chin neck gold hoop earring dark hair denim blue collared shirt caption white box across lower third handheld fast moving reel",
+"moments": [
+{
+"t": 0.0,
+"e": 18.4,
+"title": "Can we stop apologizing for not knowing about money",
+"summary": "The speaker opens with the phrases she hears constantly — I don't know too much about investing, I'm really bad with numbers, I'm sorry but this is a silly question — and says the apology treats not knowing finance as a measure of how capable we are.",
+"w": "primary",
+"terms": [
+"apologizing about money",
+"bad with numbers",
+"silly question"
+]
+},
+{
+"t": 18.4,
+"e": 27.3,
+"title": "We were taught math, science, even baking — but not how to invest",
+"summary": "The argument for why the apology is misplaced: not knowing something you were never taught is not a failure.",
+"w": "primary",
+"terms": [
+"not taught how to invest",
+"we were never taught",
+"memorable statement"
+]
+},
+{
+"t": 27.3,
+"e": 43.4,
+"title": "Ask the stupid question, and ask again",
+"summary": "She tells the viewer not to pretend to understand out of fear of judgement, to ask the question and ask again, because confidence comes from knowing you can learn rather than from knowing everything.",
+"w": "primary",
+"terms": [
+"asking questions",
+"investing confidence",
+"stupid question"
+]
+},
+{
+"t": 43.4,
+"e": 55.4,
+"title": "No judgment, no jargon, no embarrassment",
+"summary": "She names that as what Investing for Mummies is trying to be: a space where you can say you don't know and ask to be taught.",
+"w": "secondary",
+"terms": [
+"safe space",
+"jargon",
+"no judgment"
+]
+}
+],
+"moment_text": "Can we stop apologizing for not knowing about money We were taught math, science, even baking — but not how to invest Ask the stupid question, and ask again No judgment, no jargon, no embarrassment apologizing about money bad with numbers silly question not taught how to invest we were never taught memorable statement asking questions investing confidence stupid question safe space jargon no judgment",
 "speech": "Can we stop apologizing about not knowing about money? Because I hear this all the time. I don't know too much about investing. I'm really bad with numbers. I'm sorry, but this is a really silly question. And often it comes with an apology. As if not knowing about finance, somehow is a reflection about how capable we are. Think about it. We were taught math, science, even baking. But we weren't taught how to invest. Not knowing something you were never taught is not a failure. You certainly don't need to pretend that you understand something just because you're afraid that someone else might judge you. Ask the question. Ask the stupid question. And if you don't understand it, ask again. Because confidence doesn't come from knowing everything. It comes from knowing that you can learn. And that's exactly what we want to start at investing for mummies. No judgment, no jargon, no embarrassment. Just a safe space for you to say, I don't know, teach me. If this resonates with you, follow investing for mummies and join our workshops.",
 "speech_dur": 60.0,
 "speech_at": [
@@ -10716,6 +11491,45 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "why ifm founder piece camera talking head brand video hiral sits cream sofa holding printed mug white blue textured knit top skirt speaking potted areca palm sheer sunlit curtains fill background soft natural daylight clean vertical framing",
+"moments": [
+{
+"t": 0.0,
+"e": 10.5,
+"title": "A business journalist who did not understand her own money",
+"summary": "The speaker says that even working as a business journalist she did not fully understand how to manage her money, and that nobody ever taught her what Nifty, PE ratios, SIPs or mutual funds meant.",
+"w": "primary",
+"terms": [
+"sip",
+"mutual funds",
+"nobody taught us"
+]
+},
+{
+"t": 10.5,
+"e": 29.3,
+"title": "Why she created Investing for Mums",
+"summary": "The speaker — who says in this clip that she created Investing for Mums — explains that intelligent women tune out of money conversations not because they are incapable but because nobody explained it in simple language, and describes the result as a safe space using games, analogies and everyday examples.",
+"w": "primary",
+"terms": [
+"women and money",
+"safe space",
+"money conversations"
+]
+},
+{
+"t": 29.3,
+"e": 42.0,
+"title": "Not about becoming a financial expert overnight",
+"summary": "The closing statement: the aim is not to turn women into financial experts overnight but to build the confidence to slowly take charge of their financial future.",
+"w": "secondary",
+"terms": [
+"investing confidence",
+"women and money",
+"memorable statement"
+]
+}
+],
+"moment_text": "A business journalist who did not understand her own money Why she created Investing for Mums Not about becoming a financial expert overnight sip mutual funds nobody taught us women and money safe space money conversations investing confidence memorable statement",
 "speech": "Even as a business journalist, I didn't fully understand how to manage my money. Nifty, PE ratios, SIPs, mutual funds, nobody taught us what these meant. And I realised how many incredibly intelligent women quietly feel this way. We tune out of money conversations not because we're incapable, but nobody taught us these in simple language. That's why I created Investing for Mums, a safe space where finances explain through games, analogies and everyday examples. No judgement, no pretending to understand. This is not about turning women into financial experts overnight. It's about building the confidence to slowly take charge of your financial future.",
 "speech_dur": 42.0,
 "speech_at": [
@@ -10962,7 +11776,107 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "september designer hand bag asset investment aakara topic folder designed graphic shows neon yellow studded handbag white 995 price tag hanging off handle grey speech bubble reading above second below inside scalloped border base footage hiral sitting cross legged cream"
+"search_terms": "september designer hand bag asset investment aakara topic folder designed graphic shows neon yellow studded handbag white 995 price tag hanging off handle grey speech bubble reading above second below inside scalloped border base footage hiral sitting cross legged cream",
+"moments": [
+{
+"t": 0.0,
+"e": 21.5,
+"title": "A designer handbag can be an asset, an investment or consumption",
+"summary": "The speaker separates three cases: owning something with resale value makes it an asset, buying it expecting the value to rise treats it as an investment, and buying it because you love it is consumption.",
+"w": "primary",
+"terms": [
+"asset or investment",
+"resale value",
+"consumption",
+"designer handbag"
+]
+},
+{
+"t": 21.5,
+"e": 31.5,
+"title": "The three questions that decide whether something is an investment",
+"summary": "Beyond whether it can rise in value, the speaker says an investment has to answer what return you can make, what risk you are taking, and how easily you can get your money back.",
+"w": "primary",
+"terms": [
+"risk",
+"return",
+"what return can i make",
+"what risk am i taking"
+]
+},
+{
+"t": 31.5,
+"e": 42.2,
+"title": "Two very different jobs for your money",
+"summary": "The closing argument: ask whether you are buying something because you love it or because you want your money to grow, because those are two different jobs for the money.",
+"w": "secondary",
+"terms": [
+"jobs for your money",
+"memorable statement"
+]
+}
+],
+"moment_text": "A designer handbag can be an asset, an investment or consumption The three questions that decide whether something is an investment Two very different jobs for your money asset or investment resale value consumption designer handbag risk return what return can i make what risk am i taking jobs for your money memorable statement",
+"speech": "Is your designer handbag an asset in investment or just a really expensive handbag? Here's the thing, it can actually be all three. If you own it and it has resale value, then it's an asset. If you bought it, expecting its value to increase, then you're treating it as an investment. But if you bought it because you absolutely love it, it's consumption and that's okay. But an investment isn't just something that can go up in value. You also want to ask, what return can I make? What risk am I taking? And how easily I can get my money back? So before you call something in investment, ask, are you buying it because you absolutely love it? Or you want your money to grow? Because those are two very different jobs for your money. These are the sort of analogies we use in our workshops. Follow us to learn more.",
+"speech_dur": 48.4,
+"speech_at": [
+[
+0.0,
+"Is your designer handbag an asset in investment or just a really expensive handbag?"
+],
+[
+5.3,
+"Here's the thing, it can actually be all three."
+],
+[
+8.1,
+"If you own it and it has resale value, then it's an asset."
+],
+[
+11.6,
+"If you bought it, expecting its value to increase, then you're treating it as an investment."
+],
+[
+16.3,
+"But if you bought it because you absolutely love it, it's consumption and that's okay."
+],
+[
+21.5,
+"But an investment isn't just something that can go up in value."
+],
+[
+24.9,
+"You also want to ask, what return can I make?"
+],
+[
+27.7,
+"What risk am I taking?"
+],
+[
+29.2,
+"And how easily I can get my money back?"
+],
+[
+31.5,
+"So before you call something in investment, ask, are you buying it because you absolutely love it?"
+],
+[
+36.9,
+"Or you want your money to grow?"
+],
+[
+38.9,
+"Because those are two very different jobs for your money."
+],
+[
+42.2,
+"These are the sort of analogies we use in our workshops."
+],
+[
+45.1,
+"Follow us to learn more."
+]
+]
 },
 {
 "id": "IFM-375",
@@ -11189,6 +12103,21 @@ window.IFM_V1 =
 ],
 "source": "Sakshi",
 "search_terms": "candid warm natural unposed relaxed friendly celebration aug 2026 corporate workshop table applauding older participant yellow kurta several participants around clap hands raised mid applause turned toward woman bright seated foreground her back half camera bookshelves framed art wall behind august boardroom office women ifm workbook live",
+"moments": [
+{
+"t": 7.6,
+"e": 29.7,
+"title": "US home and car buying runs on loans; a lot of us work on savings",
+"summary": "A participant contrasts the American credit-driven housing and car market with an Indian habit of buying out of savings. The audio is a fragment of a larger table discussion and the sentence is not completed.",
+"w": "secondary",
+"terms": [
+"home buying",
+"loans",
+"savings"
+]
+}
+],
+"moment_text": "US home and car buying runs on loans; a lot of us work on savings home buying loans savings",
 "speech": "flash of headlines, federal reserve reduces rates or federal reserve because even now part of the stock market even now affects the Indian market but like the way the home buying business, the home buying business and the car business works in the US is not so caught up like and we don't take loans a lot of us work on savings and the US works only on the ones and more because I don't think yeah exactly so yeah",
 "speech_dur": 33.9,
 "speech_at": [
@@ -11442,6 +12371,21 @@ window.IFM_V1 =
 ],
 "source": "Sakshi",
 "search_terms": "aug 2026 corporate workshop older man pink shirt joining discussion salmon sits his back camera boardroom table facing two women mid conversation across from him only male participant visible shoot august office participants ifm workbook live game stock market content",
+"moments": [
+{
+"t": 0.0,
+"e": 53.4,
+"title": "Why India capped foreign money after the tiger economies crashed",
+"summary": "A participant explains that European and American FIIs pushed up prices in the so-called tiger economies — Vietnam, Singapore, the Philippines — then pulled their money out in the late 90s and those economies crashed, and that India learned from it by capping how much FII money could come in and how fast it could be withdrawn.",
+"w": "primary",
+"terms": [
+"fii",
+"tiger economies",
+"fii caps"
+]
+}
+],
+"moment_text": "Why India capped foreign money after the tiger economies crashed fii tiger economies fii caps",
 "speech": "They would invest in countries like Vietnam Singapore Which are the Philippines all these other countries what happened is they were known as tiger economies Was all these European and American FII's would invest Pushed up their prices on the Hong Kong exchange this exchange that exchange right? Then what happened is? It happened in the late 90s then they Said okay these economies of the great and they pulled they drew out their money. So these economies kind of crashed So India learning from that had like at that time set these caps that you know only so much FII money will be allowed in and it will not be allowed to be withdrawn That quickly all that stuff",
 "speech_dur": 53.4,
 "speech_at": [
@@ -11552,6 +12496,33 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "Sakshi",
 "search_terms": "aug 2026 corporate workshop teaching how stock market works slide facilitator green kurta set stands beside wall mounted screen one hand raised toward illustrated about addressing seated table august boardroom office women participants ifm workbook live game content library sakshi",
+"moments": [
+{
+"t": 0.0,
+"e": 22.7,
+"title": "The trading account is linked to your bank account, which funds it",
+"summary": "The facilitator explains that a trading account is always connected to a bank account, and that you transfer whatever amount you choose — say two lakh — from the bank into the trading account, which then holds that money for you.",
+"w": "primary",
+"terms": [
+"trading account",
+"bank account",
+"dmat account"
+]
+},
+{
+"t": 22.7,
+"e": 45.0,
+"title": "The demat account is an electronic statement of your stocks — you need both",
+"summary": "The demat account is described as an electronic statement of your shareholdings, like an electronic bank statement, and both accounts are required before you can start trading.",
+"w": "primary",
+"terms": [
+"dmat account",
+"stock market",
+"how to start trading"
+]
+}
+],
+"moment_text": "The trading account is linked to your bank account, which funds it The demat account is an electronic statement of your stocks — you need both trading account bank account dmat account stock market how to start trading",
 "speech": "a DMAT and a trading account. Now your trading account will always be connected to your bank account because your bank account will help transfer funds into your trading account. So your bank account will be whatever you can decide to transfer say 2 lakh or whatever amount of money you want into your trading account and your trading account will hold that money for you. Your DMAT account as I mentioned is just like an electronic statement of your stocks. It's like an electronic bank statement that we have. You need both these accounts to start trading. Now when as an investor say you decide to buy or sell or share what you will do is you will put in this order into your blocking account.",
 "speech_dur": 50.3,
 "speech_at": [
@@ -11770,6 +12741,112 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "testimonial review feedback social proof word of mouth testimonial woman black balmain tee seated camera long wavy hair paris shirt jeans sits dark sofa against wood panelled wall hands folded her lap speaking someone just off clean evenly lit single speaker framing proper sit down not grabbed clip",
+"moments": [
+{
+"t": 7.5,
+"e": 19.9,
+"title": "More confident after eight sessions, but still a long way to go",
+"summary": "A participant, greeted in the clip as Malika, says she is much more confident than when she started but still has a way to go, which is why the course is being extended.",
+"w": "primary",
+"terms": [
+"investing confidence",
+"extending the course"
+]
+},
+{
+"t": 23.3,
+"e": 30.3,
+"title": "What surprised her was how little she actually knew",
+"summary": "Asked what surprised her most, she answers that it was how little she knew — and that the more you learn, the more you realise how little you know.",
+"w": "primary",
+"terms": [
+"how little I knew",
+"the more you learn"
+]
+},
+{
+"t": 33.9,
+"e": 44.3,
+"title": "The concept that stuck: gold, the dollar and the economy",
+"summary": "Asked for one concept she learned, she names the relationship between gold, the dollar and the economy as the thing she found most interesting.",
+"w": "primary",
+"terms": [
+"gold",
+"gold and the dollar",
+"economy"
+]
+},
+{
+"t": 44.3,
+"e": 63.3,
+"title": "Nightly conversations with her husband about their mutual funds and life insurance",
+"summary": "Asked what she has discussed with her husband, she says it has become a running joke that she tells him what she learned that night, and that they now discuss the different mutual funds they are invested in and life insurance.",
+"w": "primary",
+"terms": [
+"talking to spouse about money",
+"mutual funds",
+"life insurance"
+]
+},
+{
+"t": 63.3,
+"e": 73.2,
+"title": "Not yet in control of her money, but definitely more confident",
+"summary": "Asked whether she feels more in control of her money, she declines to overclaim: she has not started controlling it yet, but she does feel more confident.",
+"w": "secondary",
+"terms": [
+"investing confidence"
+]
+},
+{
+"t": 76.7,
+"e": 87.0,
+"title": "She can now follow finance articles in the newspaper",
+"summary": "Asked what she will do differently, she says she can understand newspaper articles about finance better, and calls that a daily change in her life.",
+"w": "primary",
+"terms": [
+"newspaper articles",
+"finance",
+"transformation"
+]
+},
+{
+"t": 87.0,
+"e": 95.9,
+"title": "Completely comfortable asking questions in the sessions",
+"summary": "Asked whether she felt comfortable asking questions, she says absolutely, and describes the teacher as the nicest, sweetest and most informative. The transcript renders the pronoun as \"He\".",
+"w": "secondary",
+"terms": [
+"asking questions",
+"teaching style",
+"safe space"
+]
+},
+{
+"t": 99.1,
+"e": 106.2,
+"title": "The most fun part was doing the course with her friends",
+"summary": "Asked for the most fun part, she says doing it with her friends, and recommends taking the course with friends so you can laugh in the middle of it.",
+"w": "primary",
+"terms": [
+"doing the course with friends",
+"friends"
+]
+},
+{
+"t": 106.2,
+"e": 119.5,
+"title": "Nothing was too embarrassing to ask",
+"summary": "Asked what question she had always been too embarrassed to ask, she says they asked every smallest detail question and were never embarrassed.",
+"w": "secondary",
+"terms": [
+"asking questions",
+"embarrassed to ask",
+"beginner question"
+]
+}
+],
+"moment_text": "More confident after eight sessions, but still a long way to go What surprised her was how little she actually knew The concept that stuck: gold, the dollar and the economy Nightly conversations with her husband about their mutual funds and life insurance Not yet in control of her money, but definitely more confident She can now follow finance articles in the newspaper Completely comfortable asking questions in the sessions The most fun part was doing the course with her friends Nothing was too embarrassing to ask investing confidence extending the course how little I knew the more you learn gold gold and the dollar economy talking to spouse about money mutual funds life insurance newspaper articles finance transformation asking questions teaching style safe space doing the course with friends friends embarrassed to ask beginner question",
 "speech": "Hi Malika. Hi. Can we ask you a few questions? Of course. How confident do you feel about investing now? You know, we've just finished the first eight sessions and while I'm much more confident from where I started I still think I have a little bit of a long way to go which is why we're extending the course. What surprised you the most in this workshop? How little I actually knew. I knew I knew very little but I think the more you learn the more you realize how little you know. And what's the one concept you learned during the workshop? I really, I think, noticed the relationship between gold and the dollar and the economy and that was very interesting to me. What discussion or question statement have you made to your husband? So many. It's a joke now he tells me. I tell me what he learned at night. I'd love to learn from you but so many things that I've learned and I discuss with him all about the different mutual funds that we've invested in, life insurance, etc. Lots of fun stuff. That's great. Do you feel more in control of your money now? I've not yet started controlling my money but I definitely feel more confident. What's one thing you'll start doing differently after this? I think when I read newspaper articles on things related to finance I can understand better and I think that's been a daily sort of change in my life. Did you feel comfortable asking questions in the sessions? Absolutely. He really is just the nicest, sweetest and most informative teacher and very helpful. What was the most fun part of the workshop? Doing it with my friends. I would highly recommend doing this course with your friends because you can also laugh in the middle of it which is great. And what was the question you were always too embarrassed to ask before this? I think we've asked every smallest detail question so I don't think we were embarrassed but lots of learnings like I said. Thank you. Thank you so much for your time.",
 "speech_dur": 122.0,
 "speech_at": [
@@ -11891,6 +12968,133 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "testimonial review feedback social proof word of mouth testimonial woman blue heart print shirt wooden table chambray patterned small hearts sits polished against wood panelling hands loosely clasped looking straight down lens phone rests her elbow steady well exposed camera feedback video single speaker sept 2026 content library",
+"moments": [
+{
+"t": 18.7,
+"e": 46.8,
+"title": "Why finance felt out of reach",
+"summary": "A participant says she had heard men and working professionals discuss these concepts but never understood what they actually meant, and that the course gave her clarity on the terminology.",
+"w": "primary",
+"terms": [
+"jargon",
+"terminology",
+"never understood the terms"
+]
+},
+{
+"t": 46.8,
+"e": 71.9,
+"title": "Honest answer on how confident she now feels",
+"summary": "Asked how confident she feels about investing, she declines to overclaim: not super confident, but she knows the terminology, knows what to expect, and is more aware of what not to do.",
+"w": "primary",
+"terms": [
+"investing confidence",
+"what not to do"
+]
+},
+{
+"t": 71.9,
+"e": 95.8,
+"title": "Investing is not rocket science",
+"summary": "Asked what surprised her most, she names the fear of investing and the assumption that it is rocket science, and says it turned out to be decoded and simplified.",
+"w": "primary",
+"terms": [
+"fear of investing",
+"scared of investing",
+"scared",
+"investing is not rocket science",
+"overcoming fear"
+]
+},
+{
+"t": 111.0,
+"e": 130.9,
+"title": "She did not know PPF was open to non-employees",
+"summary": "A specific misconception corrected: she had always believed the Provident Fund was only for salaried employees, and learned it is available to anyone.",
+"w": "primary",
+"terms": [
+"ppf",
+"provident fund",
+"ppf eligibility",
+"misconception corrected"
+]
+},
+{
+"t": 130.9,
+"e": 151.5,
+"title": "Term and life insurance, and buying it for the right reason",
+"summary": "She says she learned the actual meaning behind term and life insurance and whether it is necessary for her, rather than buying it out of herd mentality.",
+"w": "primary",
+"terms": [
+"term insurance",
+"life insurance",
+"herd mentality"
+]
+},
+{
+"t": 151.5,
+"e": 182.1,
+"title": "Telling her husband they need to look at their investments together",
+"summary": "She describes going to her husband to say they should review their investments together, and wanting to understand what he, her parents and her in-laws have already done.",
+"w": "primary",
+"terms": [
+"talking to spouse about money",
+"family money conversation",
+"husband",
+"investments together"
+]
+},
+{
+"t": 182.1,
+"e": 205.5,
+"title": "Aware, with a clear pathway, rather than in control",
+"summary": "Asked whether she feels in control of her money, she says not fully in control but aware, and that the course gave her a clear pathway of what to do next.",
+"w": "secondary",
+"terms": [
+"investing confidence",
+"clear pathway",
+"awareness"
+]
+},
+{
+"t": 205.5,
+"e": 225.5,
+"title": "No hesitation in asking questions",
+"summary": "She says Hiral gave in-depth answers repeatedly when something was not understood, so she never felt any hesitation in asking.",
+"w": "secondary",
+"terms": [
+"asking questions",
+"safe space",
+"teaching style"
+]
+},
+{
+"t": 225.5,
+"e": 240.8,
+"title": "The games were the best part",
+"summary": "Asked for the most fun part of the workshop she names the games, and describes the teaching as easy and welcoming enough that she did not feel inhibited.",
+"w": "primary",
+"terms": [
+"workshop games",
+"games",
+"welcoming",
+"student comment on games"
+]
+},
+{
+"t": 240.8,
+"e": 255.4,
+"title": "The question she was too embarrassed to ask",
+"summary": "Asked what she had been too embarrassed to ask before, she answers simply: how do I invest, can you start.",
+"w": "secondary",
+"terms": [
+"starting to invest",
+"embarrassed to ask",
+"beginner question"
+]
+}
+],
+"moment_text": "Why finance felt out of reach Honest answer on how confident she now feels Investing is not rocket science She did not know PPF was open to non-employees Term and life insurance, and buying it for the right reason Telling her husband they need to look at their investments together Aware, with a clear pathway, rather than in control No hesitation in asking questions The games were the best part The question she was too embarrassed to ask jargon terminology never understood the terms investing confidence what not to do fear of investing scared of investing scared investing is not rocket science overcoming fear ppf provident fund ppf eligibility misconception corrected term insurance life insurance herd mentality talking to spouse about money family money conversation husband investments together clear pathway awareness asking questions safe space teaching style workshop games games welcoming student comment on games starting to invest embarrassed to ask beginner question",
 "speech": "Hi, I'm Sakshi Jivrajka and I have joined, signed up for this amazing investing for Mummy's course by Heral. She is absolutely fabulous. I am really enjoying myself. Basically learning about a lot of concepts that you've heard, you know, the men or working professionals talk about stuff, but you've never quite understood the in-depth meaning and how it impacts us as individual investors and detailers. So that I think has given me a little bit more clarity in terms of, you know, what terminology and job ends are. Thank you Sakshi. We'll start with a quick Q&A session. So how confident do you feel about investing now? I wouldn't say super confident, but yes, I feel I know the terminology. I know what to expect and I'm more aware of what not to do as opposed to, you know, what to do. And what surprised you the most in the workshop? The fear of investing or the fear of not knowing or thinking it's rocket science, at least I thought it was, but it's not that. It's pretty decoded, simplified. If you just use logic to it and if you have your eye on the ball and if you participate or keep your eyes and ears open as you see, it's not that hard. Is there any one new concept that you learned? Oh lots. I mean, I think I am, you know, surprisingly the basic fundamentals of investing, what we think is taken for granted is actually not, you know, something you were like, oh, who's going to do this? Like the PPF, I did not know the Providence Fund was, I mean, I always thought it was only for employees, but turns out no, it is for any of us. Things like term insurance, life insurance, the actual meaning behind these terms and if it's necessary for us, not just because of herd mentality, we should be doing it. So that I think really brought out a lot of awareness and sparked a lot of like, wow, I didn't know this. What discussion or question statement have you made to your husband? I have gone and told him that we need to start looking together into what investments we're doing. Tell me what you have. Now I'm keen on to kind of understand what he's done so far, what my parents have done so far, what my in-laws have done, what opportunities are there on the table, what can he bring more to add value to our bucket. So yeah, these are the conversations. Do you feel more in control of your money now? I wouldn't say fully in control, but yes, I'm aware. I think this course in a nutshell has brought about a lot of awareness and a clear pathway that this, this, this, this is what we should be doing or these are the opportunities we could look at. What is the one thing you'll start doing differently after this? Definitely invest more smartly. Do you feel comfortable asking questions here? Absolutely. I mean, Heeral has given us such comfortable, in-depth answers repeatedly over and over again if you've not understood something. So yes, I've not felt any hesitation in asking her questions. What was the most fun part of the workshop? The games. She has some lovely games and her personality, it's so easy, so welcoming. So, you know, you don't feel inhibited with her. What question were you always too embarrassed to ask before this? How do I invest? Can you start? Everything, I mean, I was not embarrassed, but I did no much. That's it. That's it. Thank you. Thank you, Sakshi.",
 "speech_dur": 261.3,
 "speech_at": [
@@ -12068,6 +13272,104 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "testimonial review feedback social proof word of mouth testimonial woman black tee hands clasped boardroom table long dark hair shirt sits her under chin talking directly camera book paytm standee sit front framed artwork light switch panel wall behind feedback video single speaker july 2026 content library ifm",
+"moments": [
+{
+"t": 0.0,
+"e": 9.0,
+"title": "\"The number of years with the compounding just multiplies your money\"",
+"summary": "A participant, mid-answer as the recording starts, names time and compounding as the thing that amazed her.",
+"w": "secondary",
+"terms": [
+"compounding",
+"multiplies your money"
+]
+},
+{
+"t": 18.0,
+"e": 45.0,
+"title": "She now wakes up with 100 questions about ETFs and equities for her husband",
+"summary": "A participant says she had no interest in reading the Economic Times before; now she questions her husband every morning, he is impressed, and he is more interested in talking to her about it.",
+"w": "primary",
+"terms": [
+"economic times",
+"ETFs",
+"equities"
+]
+},
+{
+"t": 45.0,
+"e": 65.0,
+"title": "She opened 20 years of insurance and financial papers and started questioning her accountant",
+"summary": "Another participant describes going to her office, opening all the insurance and financial documents, and asking her accountant so many questions that he remarked she had never come in 20 years.",
+"w": "primary",
+"terms": [
+"insurance papers",
+"accountant",
+"financial documents"
+]
+},
+{
+"t": 65.0,
+"e": 93.0,
+"title": "Investing with understanding instead of blindly following someone",
+"summary": "Asked whether she feels more in control of her money, a participant says the difference is investing with an understanding rather than blindly doing it or following what somebody tells her.",
+"w": "primary",
+"terms": [
+"investing confidence",
+"in control of my money",
+"understanding"
+]
+},
+{
+"t": 94.0,
+"e": 111.0,
+"title": "She can now counter-question her financial planner",
+"summary": "A participant says that even sitting with her financial planner she will now understand what he is explaining and can counter-question him about it.",
+"w": "primary",
+"terms": [
+"financial planner",
+"counter question",
+"asking questions"
+]
+},
+{
+"t": 111.0,
+"e": 126.0,
+"title": "The class gave her an interest in the subject first, confidence second",
+"summary": "A participant says the biggest change was developing an interest in the subject, and that her confidence and understanding followed from the class being interesting.",
+"w": "secondary",
+"terms": [
+"investing confidence",
+"interest in the subject",
+"teaching style"
+]
+},
+{
+"t": 138.0,
+"e": 174.6,
+"title": "Planning the portfolio, not just investing for the sake of investing",
+"summary": "Asked what she will do differently, an already-investing participant names long term planning — planning her portfolio rather than investing for its own sake — and says she will sit with her family to review how well they have planned.",
+"w": "primary",
+"terms": [
+"long term planning",
+"portfolio planning",
+"family money conversation"
+]
+},
+{
+"t": 184.6,
+"e": 197.6,
+"title": "The most fun part was the games, especially the stock market one",
+"summary": "Asked for the most fun part of the session, the table answers the games immediately and singles out the stock market game.",
+"w": "secondary",
+"terms": [
+"workshop games",
+"student comment on games",
+"stock market"
+]
+}
+],
+"moment_text": "\"The number of years with the compounding just multiplies your money\" She now wakes up with 100 questions about ETFs and equities for her husband She opened 20 years of insurance and financial papers and started questioning her accountant Investing with understanding instead of blindly following someone She can now counter-question her financial planner The class gave her an interest in the subject first, confidence second Planning the portfolio, not just investing for the sake of investing The most fun part was the games, especially the stock market one compounding multiplies your money economic times ETFs equities insurance papers accountant financial documents investing confidence in control of my money understanding financial planner counter question asking questions interest in the subject teaching style long term planning portfolio planning family money conversation workshop games student comment on games stock market",
 "speech": "That's like number of years with the compounding just multiplies your money and how. That was amazing. Okay, what discussion or question or statement have you made to your husband since this class? Can I answer this actually? I think I had no interest in reading the economic times or knowing what the market was about and now every morning I wake up and I have 100 questions for him and I think he's fed up. He's like suddenly what's going on and you're asking me about ETFs and about equities and he's actually impressed and I think now he's getting more interested to speak to me so I am very proud of that for sure. That's awesome. But actually the same thing for me, I would say that I have gone to my office, opened all the insurance papers and all the financial documents and I'm asking so many questions to my accountant. He's like, what is up in 20 years you've never come and now suddenly you're asking so many questions. I've made a lot of changes. I'm yet in process of making the changes. Quite excited about it. That's awesome. Okay, so this is probably for all you guys. Do you feel more in control of your money now? Absolutely. I think the understanding of how smartly and efficiently I can invest my money with an understanding, not blindly doing it or following somebody telling me, me getting an understanding and asking the questions to understand, I think that's made a difference in the entire course. Anything else? Even if I'm sitting with my financial planner, at least I'll have an understanding of what he's talking to me and what he's explaining to me, I can counter question him about the stuff he's talking to me. So I think that is a great understanding. I think for me, it has helped me develop an interest in the subject first. And obviously now I'm more confident and the understanding has increased, but I think that interest levels have gone up because you made it so interesting in the class. Thank you. Thank you. I think we're just doing a quick thing. I'm going to ask you questions. Please. So yeah, maybe this is for you considering you've already been investing. So what's one thing you will start doing differently after this class? I think what I'm going to do differently is going through long term planning because you've made me understand planning not just for investing, for the sake of investing and understanding my portfolio, but planning my portfolio. I think that's the one very big takeaway and also the planning which I'm going to go back to my family. I'm going to sit with them and understand how well have we planned it. That's the one huge takeaway there are people doing. Questions here? I really don't think that is... Not for you for sure. No, but totally okay. What was the most fun part of the session? The games. The games were just fantastic. Especially the stock market. We should later get the repeat. Imagine what I really, really, really enjoyed. What was the most maximum that I could find? And you were number three. That was an unfair game. I know what Dixon and H... You know, all these asian tech and all of that is done. Yeah, but it's true.",
 "speech_dur": 216.3,
 "speech_at": [
@@ -12301,6 +13603,58 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "candid warm natural unposed relaxed friendly celebration testimonial review feedback social proof word of mouth woman pale blue lace top smiling camera govt schemes whiteboard behind sits long boardroom table her filled hand drawn government savings map saving secs ppf sukanya samriddhi bills dated bonds next three bucket liquidity safety growth diagram pens tissues workbooks",
+"moments": [
+{
+"t": 10.6,
+"e": 33.8,
+"title": "Learning what inflation was, and going home to talk about it",
+"summary": "Asked what she had been too embarrassed to ask, a participant says she was embarrassed about everything because she had no clue what she was getting into, and that learning about inflation on day one — and realising she has to invest today to sustain her lifestyle in ten years — was her aha moment.",
+"w": "primary",
+"terms": [
+"inflation",
+"aha moment",
+"embarrassed to ask"
+]
+},
+{
+"t": 34.8,
+"e": 52.8,
+"title": "She thought investing meant standing in the trading pit shouting",
+"summary": "A participant says her picture of investing came from films — crowds in a stock exchange yelling and holding slips — and she wondered whether she had to be in the middle of that to invest, but never wanted to ask.",
+"w": "primary",
+"terms": [
+"stock exchange",
+"stock market",
+"misconception corrected"
+]
+},
+{
+"t": 54.8,
+"e": 77.8,
+"title": "Too embarrassed to ask what PE and EPS actually mean",
+"summary": "A participant addressed in the room as Madhuri says she was very embarrassed to ask how to understand PE and EPS, because it is taken for granted that anyone investing in the markets knows — she didn't, and went home and studied it further.",
+"w": "primary",
+"terms": [
+"pe and eps",
+"eps",
+"embarrassed to ask",
+"beginner question"
+]
+},
+{
+"t": 79.8,
+"e": 94.8,
+"title": "Didn't know the basic terminology, and feels more confident now",
+"summary": "A participant says she did not know the difference between the basic terms and was embarrassed at the start, but the terminology was made simple enough that she feels more confident today.",
+"w": "primary",
+"terms": [
+"jargon",
+"terminology",
+"investing confidence"
+]
+}
+],
+"moment_text": "Learning what inflation was, and going home to talk about it She thought investing meant standing in the trading pit shouting Too embarrassed to ask what PE and EPS actually mean Didn't know the basic terminology, and feels more confident now inflation aha moment embarrassed to ask stock exchange stock market misconception corrected pe and eps eps beginner question jargon terminology investing confidence",
 "speech": "Okay so this lets go around the room and what was the one question you always had but you were too embarrassed to ask before this class. I was embarrassed of everything because I had no clue what I was getting into. The first day even when I got to know about inflation I have gone home and spoken about it like oh my god I discovered something new how I need to invest money today to sustain my lifestyle after 10 years how I need to plan the money that I am able to live my life the way I am living was a was an aha moment for me actually. What about you? I always see in movies the stock exchange with these large number of people standing and yelling at the top of their voices holding some little slips and I wondered if I have to invest or I have to be there in the middle of those people and I grew thankfully no. So I never wanted to ask that question. What about you Madhuri? I think I don't know like this. I was very embarrassed to ask how to understand the PE and the EPS and all of that. It was just taken for granted that when you are investing in the markets you know that. I didn't. So yesterday I actually understood a lot of that. I have gone back home studied it also a little bit more and I have come back today. Awesome. What about you? I think I just didn't know the difference between the basic solutions for insecurity, ETS, terminology and I was obviously embarrassed initially but I think you just made it really simple to understand this and I am more confident today. Thank you. That was it.",
 "speech_dur": 97.0,
 "speech_at": [
@@ -12611,6 +13965,38 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "Unknown",
 "search_terms": "woman leopard print shirt gesturing both hands raised same holds near her face mid explanation checked handbag hanging from chair arm open ifm workbooks printed booklet spread table front sharing experience small group workbook boardroom sept 2026 content library",
+"speech": "At that time to date, you need the money spender. What do you mean? Yes, why not? Nizhi, you chose debt even then. Yeah, I won this stability from the beginning. That's awesome. I'm both...",
+"speech_dur": 16.7,
+"speech_at": [
+[
+0.0,
+"At that time to date, you need the money spender."
+],
+[
+5.0,
+"What do you mean?"
+],
+[
+6.0,
+"Yes, why not?"
+],
+[
+8.0,
+"Nizhi, you chose debt even then."
+],
+[
+10.0,
+"Yeah, I won this stability from the beginning."
+],
+[
+14.0,
+"That's awesome."
+],
+[
+16.0,
+"I'm both..."
+]
+],
 "kit": "candid",
 "kit_rank": 3
 },
@@ -12834,6 +14220,32 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "woman black leading table ifm workbook foreground sleeveless top sits head boardroom holding red bottle open front her pull down projector screen behind investing mummies lies face illustrated cover clearly visible attendee pink back camera teaching discussion branded sept 2026",
+"moments": [
+{
+"t": 0.0,
+"e": 19.2,
+"title": "She used to stay quiet because she could not speak the language",
+"summary": "A participant says she used to be quiet because she could not speak the language of these conversations. The surrounding transcript is badly garbled, so only this sentence is claimed.",
+"w": "secondary",
+"terms": [
+"couldn't speak the language",
+"personal experience"
+]
+},
+{
+"t": 31.2,
+"e": 49.1,
+"title": "She told her husband there was no point going — now she regrets skipping the talk",
+"summary": "A participant recounts an organisation she belongs to hosting speakers, and how she kept telling her husband there was no point in her going because she would not understand anything. She now regrets it, because she feels she would have followed some of it.",
+"w": "primary",
+"terms": [
+"talking to spouse about money",
+"husband",
+"personal experience"
+]
+}
+],
+"moment_text": "She used to stay quiet because she could not speak the language She told her husband there was no point going — now she regrets skipping the talk couldn't speak the language personal experience talking to spouse about money husband",
 "speech": "you know like this game and the it's just that the understanding is like on another level. A language is changing about the entire thing. I don't think I can talk about it. I think I was quiet actually. I couldn't speak the language and I wouldn't stand out. There is a certain talk about it. Otherwise everything is used to turn. I am part of an organization and today we are having Ramdev and Varvar come and talk. And I kept telling my husband why would I come? I wouldn't understand anything. And now I am so happy I have to go to Pune for ISI. I am actually regretting because I feel like maybe I would have understood a bit. I would have, yeah.",
 "speech_dur": 49.1,
 "speech_at": [
@@ -12900,6 +14312,42 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "corporate boardroom session presenter wall screen out focus badly frame yellow top stands beside mounted showing slide while attendee cream sits her back camera long table usable only record happened nothing sharp workshop blurry raw backup sept 2026 content library",
+"moments": [
+{
+"t": 0.0,
+"e": 23.0,
+"title": "In these classes she actually feels like asking questions",
+"summary": "A participant says she told her mother and cousin that in these classes she feels like asking questions, feels like going back and reading, and tried to read the book she was given.",
+"w": "primary",
+"terms": [
+"asking questions",
+"safe space"
+]
+},
+{
+"t": 29.1,
+"e": 39.8,
+"title": "Other explanations never went into her head — this one does",
+"summary": "She contrasts this teaching with previous attempts: whatever she did before did not go into her head, maybe because of the way it was explained, but this does and she understands it.",
+"w": "primary",
+"terms": [
+"teaching style"
+]
+},
+{
+"t": 58.6,
+"e": 73.4,
+"title": "She has written down the questions to ask her husband when he is back",
+"summary": "She has written down her questions about insurance and funds and plans to put them to her husband when he returns from travelling, because she wants to understand things.",
+"w": "primary",
+"terms": [
+"talking to spouse about money",
+"insurance",
+"asking questions"
+]
+}
+],
+"moment_text": "In these classes she actually feels like asking questions Other explanations never went into her head — this one does She has written down the questions to ask her husband when he is back asking questions safe space teaching style talking to spouse about money insurance",
 "speech": "I was just telling my mom and my cousin that at least in these two classes, at least I feel like asking questions. I'm written down, but I said, when will you come? I feel like going back and reading, and I actually tried to read the book that you've given. That's why I asked you. I asked you also because I wanted to read that article. I feel like doing it. I mean, I hope it will take me forward also, but at least I feel like doing it. I never felt like also whatever I did because maybe the way they explained or something, it didn't go into the head, but this goes. It's you understand it. Like, they would say there was an article in the Times of India that they were insurance class. We were talking that boom makers don't need the insurance. Yes, you can start an article one day. That article. And I felt like taking a picture and sharing what it was. That's an article. I've actually written down those questions that my husband is traveling. So once he's back, I'm going to ask him, insurance, funds, I don't know what to say. I've actually written it down. I want to understand things. Didn't I never feel like even understanding it? Maybe because they did not explain it very well or whatever. Whatever.",
 "speech_dur": 80.7,
 "speech_at": [
@@ -13472,6 +14920,33 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Sakshi",
 "search_terms": "hiral game results list back camera stands square her reading down coloured entries screen round swayamvar session workshop mums sept 2026 content library ifm games leaderboard",
+"moments": [
+{
+"t": 8.0,
+"e": 21.0,
+"title": "The one participant who picked debt: she wanted stability in her portfolio",
+"summary": "Going through the game results, the facilitator singles out the only player who chose debt — named in the audio as Shruti — and she says she would prefer more stability.",
+"w": "primary",
+"terms": [
+"debt",
+"stability",
+"portfolio"
+]
+},
+{
+"t": 21.0,
+"e": 33.0,
+"title": "Why most of the room chose equity: potential for growth, and excitement",
+"summary": "Asked why they picked equity, the players answer potential for growth, liquidity and excitement, and the facilitator repeats each answer back.",
+"w": "primary",
+"terms": [
+"equity",
+"potential for growth",
+"excitement"
+]
+}
+],
+"moment_text": "The one participant who picked debt: she wanted stability in her portfolio Why most of the room chose equity: potential for growth, and excitement debt stability portfolio equity potential for growth excitement",
 "speech": "Right? Why? No, not stable. More like... No debt? No. Yeah, debt was... Shruti was the only one who chose debt. I should start with you. Why did you choose debt? I am in. I would prefer more of stability. Okay. So at this point if she had to marry, she would look for stability in her portfolio. Right? What about the rest? Why did most of you choose equity? Potential for growth. Potential for growth. I'm literally mad at the liquidity. Potential for growth. Yes. Right? And excitement. Excitement. Yeah? Right? So...",
 "speech_dur": 34.9,
 "speech_at": [
@@ -13653,7 +15128,23 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "room wide towards door participants along table shot lengthwise wooden window curtains seated green kurta peach sleeve near foreground swayamvar game session workshop mums sept 2026 content library ifm games venue boardroom"
+"search_terms": "room wide towards door participants along table shot lengthwise wooden window curtains seated green kurta peach sleeve near foreground swayamvar game session workshop mums sept 2026 content library ifm games venue boardroom",
+"speech": "The gold is the timeless one technically, it's meant to take you through all the terms of all kinds of crisis. Anyways.",
+"speech_dur": 10.5,
+"speech_at": [
+[
+0.0,
+"The gold is the timeless one technically, it's meant to take you through all the terms"
+],
+[
+7.2,
+"of all kinds of crisis."
+],
+[
+9.2,
+"Anyways."
+]
+]
 },
 {
 "id": "IFM-429",
@@ -14087,6 +15578,33 @@ window.IFM_V1 =
 ],
 "source": "Sakshi",
 "search_terms": "teen boy black talking his arms folded teenage tee sits table group yellow booklet phone plastic cup sit front him ift teens youth workshop aug 2026 content library discussion",
+"moments": [
+{
+"t": 0.0,
+"e": 19.0,
+"title": "Favourite game: choosing what to do with money and watching happiness or stress move",
+"summary": "Asked for his favourite game, a teenage participant picks the first one they played — you are given a scenario, you choose which financial thing to do, and you see the effect on happiness or stress.",
+"w": "primary",
+"terms": [
+"workshop games",
+"happiness or stress",
+"student comment on games"
+]
+},
+{
+"t": 21.0,
+"e": 36.3,
+"title": "The board game showed which choices are better in the long run",
+"summary": "A second teenage participant picks the game where you go to the board and pick what you want to do, and says what he enjoyed was that it shows you which ideas are better in the long run.",
+"w": "secondary",
+"terms": [
+"workshop games",
+"long run",
+"student comment on games"
+]
+}
+],
+"moment_text": "Favourite game: choosing what to do with money and watching happiness or stress move The board game showed which choices are better in the long run workshop games happiness or stress student comment on games long run",
 "speech": "What about you? What was your favorite game? I think the one we played first where we had to like choose which financial thing we do and we were given a scenario and then we had like that happiness or stress Yeah, the broke by friendship Yeah What about you? The one where you had to go to the board and pick the things you wanted to do What did you enjoy most about that game? It's just that it shows you what ideas are better in the long run",
 "speech_dur": 36.3,
 "speech_at": [
@@ -14265,7 +15783,19 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Sakshi",
-"search_terms": "two teen boys across table one leaning teenage sit pale blue tee black third teal near foreground back head camera laptop open end ift teens youth workshop aug 2026 content library"
+"search_terms": "two teen boys across table one leaning teenage sit pale blue tee black third teal near foreground back head camera laptop open end ift teens youth workshop aug 2026 content library",
+"speech": "investing for mummy's shares it's currently thousand prices what it's showing but she says that no I'm not going to pay more than 950 rupees for that share okay so that's her bid that's what she's bid the",
+"speech_dur": 14.7,
+"speech_at": [
+[
+0.0,
+"investing for mummy's shares it's currently thousand prices what it's showing but she says that no I'm"
+],
+[
+7.3,
+"not going to pay more than 950 rupees for that share okay so that's her bid that's what she's bid the"
+]
+]
 },
 {
 "id": "IFM-446",
@@ -14461,6 +15991,43 @@ window.IFM_V1 =
 ],
 "source": "Sakshi",
 "search_terms": "meeting room wide before feedback round two participants table seen from doorway end older woman lilac striped shirt left green checked top across her laptop water glasses snack bowls tissue box between them august corporate sept 2026 content library ifm",
+"moments": [
+{
+"t": 0.0,
+"e": 13.5,
+"title": "Better equipped to take decisions, at least in smaller quantities",
+"summary": "A participant says she feels better equipped to take investment decisions, at least in smaller amounts, and is trying to understand how her decisions work. The clip starts mid-sentence.",
+"w": "primary",
+"terms": [
+"investing confidence",
+"better equipped"
+]
+},
+{
+"t": 13.5,
+"e": 34.7,
+"title": "60-70% more confident, and framing financial goals with her mother",
+"summary": "She quantifies the change as 60-70% more confident, and says she has started framing her questions and her financial goals, helping her mother frame goals too, and asking why she would invest in one thing versus another.",
+"w": "primary",
+"terms": [
+"investing confidence",
+"financial goals",
+"asking questions"
+]
+},
+{
+"t": 34.7,
+"e": 48.6,
+"title": "Who the course is really for",
+"summary": "She recommends the course specifically for someone already at the point of wanting to get started.",
+"w": "secondary",
+"terms": [
+"starting to invest",
+"great course"
+]
+}
+],
+"moment_text": "Better equipped to take decisions, at least in smaller quantities 60-70% more confident, and framing financial goals with her mother Who the course is really for investing confidence better equipped financial goals asking questions starting to invest great course",
 "speech": "are confident and I feel I'm better equipped to take decisions at least in smaller quantities and at least trying to understand how my decisions work. I started framing my questions, so I would say I'm 60-70% more confident and I started framing my questions, I started like before the questions, I started framing my financial goals, helping my mom frame financial goals and you know I'm beginning to ask questions of why would I invest in this versus that. So I would say that this is really a great course especially if you're already in that process of like I want to get started, yeah.",
 "speech_dur": 48.6,
 "speech_at": [
@@ -14518,6 +16085,30 @@ window.IFM_V1 =
 ],
 "source": "Sakshi",
 "search_terms": "testimonial review feedback social proof word of mouth participant green checked top gives her feedback camera shirt over white sits meeting room table facing speaking code card propped front next tissue box plate august corporate sept 2026 content library ifm testimonial",
+"moments": [
+{
+"t": 0.0,
+"e": 25.0,
+"title": "The things you cannot find online as a layman",
+"summary": "A participant says the time-related return concept the transcript renders as \"TWR\" was interesting precisely because it is not something a layman can find answers to online, and that the course gives a deeper perspective on things that are not readily available.",
+"w": "primary",
+"terms": [
+"twr",
+"deeper perspective"
+]
+},
+{
+"t": 28.0,
+"e": 57.0,
+"title": "IPOs were the standout, because one may be coming up for her",
+"summary": "Asked what she found most interesting, she names IPOs, says it is something she had been looking forward to, and that with one possibly coming up she wants to go into much more detail.",
+"w": "primary",
+"terms": [
+"ipo"
+]
+}
+],
+"moment_text": "The things you cannot find online as a layman IPOs were the standout, because one may be coming up for her twr deeper perspective ipo",
 "speech": "I think the Rohingya Rituals is very interesting for me and even this, the TWR or TWR, the time, that was very interesting because that's something even as a layman or if you look online, you don't get all of these answers. So it definitely gives us a deeper perspective when it comes to some things that might not be available readily. Anything? What is the one thing you found interesting? The IPO thing was interesting for me because that is something that I was looking forward for and that's what I have mentioned also in the scan, the thing that looks in me. IPO is something which maybe we are coming up with one so then I would like to go in much detail also and I will try to get into it. That's awesome.",
 "speech_dur": 58.2,
 "speech_at": [
@@ -14571,6 +16162,21 @@ window.IFM_V1 =
 ],
 "source": "Sakshi",
 "search_terms": "testimonial review feedback social proof word of mouth older participant lilac shirt gives her feedback gesturing close seated shot striped speaking directly camera one hand raised mid gesture phone notebook table front august corporate sept 2026 content library ifm testimonial",
+"moments": [
+{
+"t": 5.5,
+"e": 37.4,
+"title": "Her strategy is to balance out her husband's risk by owning the stability bucket",
+"summary": "A participant says her husband already takes a lot of risk, so her plan is to work the stability bucket — maximising returns within it and keeping more liquidity — and she jokes that she now has a little arsenal with him.",
+"w": "primary",
+"terms": [
+"stability bucket",
+"talking to spouse about money",
+"liquidity"
+]
+}
+],
+"moment_text": "Her strategy is to balance out her husband's risk by owning the stability bucket stability bucket talking to spouse about money liquidity",
 "speech": "about like learning about the various types of mutual funds or those are the kinds of things I have invested more but like now I see myself wanting, my husband already does a lot of hydro stuff and my strategy to balance him out now is to really look at the stability bucket. There is one version isn't there? Yeah, look at the stability bucket but still try to maximize returns on the stability bucket and giving us a lot more liquidity so that's and I mean now I have a little arsenal with my husband.",
 "speech_dur": 37.4,
 "speech_at": [
@@ -14671,6 +16277,45 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "Sakshi",
 "search_terms": "participant leaning back whiteboard end table lilac shirted sits right her chair both hands behind head plates glasses tissue box bin fill foreground nobody addressing camera feedback august corporate sept 2026 content library ifm room wide between takes",
+"moments": [
+{
+"t": 0.0,
+"e": 38.0,
+"title": "What they want next: taxation, because wills and trusts are a one-off",
+"summary": "Participants ask for more depth on mutual funds and on how to evaluate IPOs, and argue taxation should come ahead of wills or trusts because tax is a recurring decision where you end up at the mercy of the CA, while a trust is a one-off.",
+"w": "primary",
+"terms": [
+"taxation",
+"wills and trusts",
+"mutual funds",
+"ipo"
+]
+},
+{
+"t": 38.0,
+"e": 62.0,
+"title": "Request for an alumni mixer across batches",
+"summary": "A participant proposes a mixer for alumni of these batches who are actively interested, so people can learn from what others have taken away and grown with. The facilitator replies that an alumni session is already planned.",
+"w": "primary",
+"terms": [
+"alumni",
+"alumni mixer"
+]
+},
+{
+"t": 65.0,
+"e": 110.1,
+"title": "The out-of-the-box investment themes were the memorable part",
+"summary": "A participant praises the less obvious investment themes raised in the session — electrification is named — saying she would never have thought of them, versus the growth story everybody already knows about.",
+"w": "secondary",
+"terms": [
+"out of the box",
+"electrification",
+"portfolio"
+]
+}
+],
+"moment_text": "What they want next: taxation, because wills and trusts are a one-off Request for an alumni mixer across batches The out-of-the-box investment themes were the memorable part taxation wills and trusts mutual funds ipo alumni alumni mixer out of the box electrification portfolio",
 "speech": "I would like to go more into detail and mutual funds Taxis, I would like to In case you come up with something like IPO in detail, I don't mind Just how to evaluate IPOs and stuff But would anything with also But it's more on taxation because I think that's what we do every day Versus wills or trusts would be like One-off thing Like your trust is that your tax is something you base on every six months Or you have so many different limitations and combinations to it And then eventually you're at the mercy of the CA And he says this is a good option Okay, we go with that I think it would be fun to have a mixer for people who are alumni of these batches Who are genuinely interested and actively looking at developing them And learning also from what they've taken from here and grown with And what they want to share with each other I'm an alumni session I'm planning to have But I just Give it to us six months Yeah, I know I don't know what I should do Yeah, I'm doing detail and then I might The other thing I think was like really Would be nice is like how she brought up These really interesting investment Opportunism Right, like this real way thing I would have never thought of that I know the margin thing Oh no, sorry You brought that brutal electrification So to like bring up these really These things that you don't really think of They're very out of the box Versus what we already know You know like this growth stuff Okay, everybody knows about this growth stuff It's like a big thing But you don't have like something Interesting in your portfolio like this And how it works It's how It's how it works And it makes some more money for you Yeah",
 "speech_dur": 110.1,
 "speech_at": [
@@ -15175,6 +16820,31 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "teen girl pink thinking through her answer teenage top sits table hand near mouth mid thought she answers whiteboard behind covered session written notes laptop open foreground teens youth workshop student speaking camera june 2026 jun boardroom aakara reel talking",
+"moments": [
+{
+"t": 0.0,
+"e": 9.0,
+"title": "The games were fun and she learned while playing them",
+"summary": "A student, prompted by the facilitator, says the games were fun and that she learned through playing them.",
+"w": "primary",
+"terms": [
+"workshop games",
+"games",
+"student comment on games"
+]
+},
+{
+"t": 13.0,
+"e": 46.4,
+"title": "A student names diversification and explains it in her own words",
+"summary": "Pushed by the facilitator to be specific, she names diversification, then explains it as not putting all your money in one place because you can't use everything.",
+"w": "primary",
+"terms": [
+"diversification"
+]
+}
+],
+"moment_text": "The games were fun and she learned while playing them A student names diversification and explains it in her own words workshop games games student comment on games diversification",
 "speech": "And I learned to learn playing them. How? How do you put your hand up? The games were fun and I learned to learn playing them. What did you learn? What is the one concept that you learned? Investing. Be specific. Diversification. Say it louder. Huh? Say it? What you just said, just say it louder. I learned that we should not like put all our money in pocket. One store. Because we can't use everything. Yeah, that's fine.",
 "speech_dur": 46.4,
 "speech_at": [
@@ -15717,6 +17387,21 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "two teens side near end table close teenagers sitting together boardroom one white printed shirt leaning towards other glasses water phone open laptop sit polished wood front them teen youth workshop june 2026 jun whiteboard activity group students aakara reel",
+"moments": [
+{
+"t": 0.0,
+"e": 58.7,
+"title": "A teen's dad asked him how the stock market works",
+"summary": "Asked what conversation he had with a parent after the class, a reluctant teenage participant eventually answers that his dad asked him how the stock market works. Most of the span is the facilitator coaxing an answer out of the room.",
+"w": "secondary",
+"terms": [
+"family money conversation",
+"stock market",
+"conversation with parents"
+]
+}
+],
+"moment_text": "A teen's dad asked him how the stock market works family money conversation stock market conversation with parents",
 "speech": "What is the one conversation you had with either of your parents as a result of this class? Raise your hands whoever has something to say. It can't be the same person answering. Come on. Ahaan, do you want to? Me? Yes. I'm fine. No, I'm not offering you. I'm asking you, what is the conversation you had with your father or whoever? I'm a capital shy. That's fine. Okay, fine. Assume that there's no camera on. I can't. Let's say, okay, what is the one thing that your dad asked you that you could answer? The one thing he asked me was about how the stock market works and what does it do with each class? Why? Did you put out noise? Yes. You know, sir, we get jobs. Very bad. Not cool. Ahaan, sorry. You're not cool. Ahaan, that's disrespectful, that's not cool. Disrespective. You're not cool. Ahaan, you're not. Okay, sorry. No. No, no. Don't. Did you not see this one? Here, though. What? Say. Ugh. What do you say? What? What do you say? It's your answer. I can't say yours. Come on, Ahaan. What did you learn at the end of this class? I learned how the stock market works. Leave it. Leave it. I said leave it.",
 "speech_dur": 103.5,
 "speech_at": [
@@ -16162,6 +17847,33 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Sakshi",
 "search_terms": "teens session hiral screen time secret ingredient compounding stands wall mounted her arm stretched out slide headed why reading line about starting early students dark green school uniform sit along near side boardroom table printed worksheets water bottles front them",
+"moments": [
+{
+"t": 0.0,
+"e": 27.0,
+"title": "You don't need large amounts — you need to give your money time",
+"summary": "The facilitator reads the compounding chart to a teens session: growth is exponential the longer you stay invested, so every year matters and you do not need to start with large amounts to build a large corpus.",
+"w": "primary",
+"terms": [
+"compounding",
+"give your money time",
+"every year matters"
+]
+},
+{
+"t": 21.0,
+"e": 34.0,
+"title": "Why your parents sent you to this class early",
+"summary": "She tells the teenagers this is why their parents wanted them in the class now: the earlier you start, the longer your money's growth potential runs.",
+"w": "secondary",
+"terms": [
+"start early",
+"starting to invest",
+"parents"
+]
+}
+],
+"moment_text": "You don't need large amounts — you need to give your money time Why your parents sent you to this class early compounding give your money time every year matters start early starting to invest parents",
 "speech": "a much larger proportion of the yellow part. This is to show you visually how compounding works. It grows exponentially the longer you stay at best at work. So every year matters and you don't need to start with large amounts of money to build large corpses. You just need to give your money time. Which is why today your parents really wanted you to do this class early because the earlier you start the longer your money's growth potential is. Yes, exactly. It's what compound interest does.",
 "speech_dur": 40.3,
 "speech_at": [
@@ -16216,6 +17928,43 @@ window.IFM_V1 =
 ],
 "source": "Sakshi",
 "search_terms": "teens session king chessboard slide class watching screen shows illustrated grain doubling square rising curve uniformed students around table turned towards one leaning forward her elbows compounding story attention classroom",
+"moments": [
+{
+"t": 0.0,
+"e": 66.8,
+"title": "The king and the chessboard — one grain of rice, doubled on every square",
+"summary": "The facilitator tells the chessboard story to a class: the inventor asks for one grain of rice on the first square and double on every subsequent square, and by the fifth or sixteenth square it is still only about 512 grains, but eventually every granary in the kingdom is empty and there is not enough rice to pay him.",
+"w": "primary",
+"terms": [
+"compounding",
+"chessboard",
+"grains of rice"
+]
+},
+{
+"t": 66.8,
+"e": 74.8,
+"title": "That is the magic of compounding — money grows exponentially over time",
+"summary": "The story is named as the mechanism of compounding: money grows exponentially over time.",
+"w": "primary",
+"terms": [
+"compounding",
+"grows your money"
+]
+},
+{
+"t": 74.8,
+"e": 87.9,
+"title": "Riddle — who will make more money, a 15-year-old or a 25-year-old",
+"summary": "The facilitator sets the class a riddle comparing a 15-year-old and a 25-year-old. The clip cuts off as the setup is being stated, so the answer is not in this video.",
+"w": "secondary",
+"terms": [
+"riddle",
+"make more money"
+]
+}
+],
+"moment_text": "The king and the chessboard — one grain of rice, doubled on every square That is the magic of compounding — money grows exponentially over time Riddle — who will make more money, a 15-year-old or a 25-year-old compounding chessboard grains of rice grows your money riddle make more money",
 "speech": "inventor and told him that I would like to reward you for the game that you've created. So we asked him what would you like as a reward. The inventor said that, first of all, does anybody know how many squares are on a chessboard? 64. 64. Exactly. So the inventor said that I will place one green of rice on the first square and for every subsequent square, I want you to double the amount of grains of rice. So he started with one green of rice. On the second square, it went to two grains of rice, right? Cut to the, I think it was the fifth square or the 16th square, which was about 512 grains of rice and that was still a really small amount. But eventually it got to a point where all the granaries in the kingdom were empty and there was not enough grains of rice to reward this chess player. That's actually the magic of compounding and the way it works. It grows your money exponentially over time. So I have a riddle for you. Who do you think will make more money? A 15-year-old or a 25-year-old. The 15-year-old is putting in...",
 "speech_dur": 87.9,
 "speech_at": [
@@ -16348,6 +18097,21 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "Sakshi",
 "search_terms": "teens session over back row towards screen mid lesson handheld from behind heads shoulders seated students foreground standing presenter small slightly blown out end room shoulder roll",
+"moments": [
+{
+"t": 0.0,
+"e": 42.4,
+"title": "One rupee doubled every day for 30 days — the magic of compounding",
+"summary": "The facilitator sets up the doubling exercise and names it the magic of compounding, then walks the class through the arithmetic: 1 rupee on day 1, 16 rupees by day 5, 512 by day 10 and over 16,000 by day 15.",
+"w": "primary",
+"terms": [
+"compounding",
+"magic of compounding",
+"1 rupee doubled"
+]
+}
+],
+"moment_text": "One rupee doubled every day for 30 days — the magic of compounding compounding magic of compounding 1 rupee doubled",
 "speech": "Actually, 1 rupee doubled for every day for 30 days is actually amounts to over 5,000. And that's what we call as the magic of compounding. Now, let's see what the math is. So, on day 1, we start with 1 rupee, by day 5 it amounts to 16 rupees. Can anybody tell me how we get to 16? On the second day, 1 rupee will be, on the third day it will be, on the fourth day it will be, and on the fifth day it will be 16, right? By day 10, that's going to be 512 rupees. By day 15, it's going to be over 16,000.",
 "speech_dur": 42.4,
 "speech_at": [
@@ -16410,6 +18174,33 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Sakshi",
 "search_terms": "candid warm natural unposed relaxed friendly celebration teens session hiral presenting money personality cards stands left screen black sleeveless top long tan skirt smiling towards group slide behind her holds two red character portraits bullet lists activity teaching",
+"moments": [
+{
+"t": 9.0,
+"e": 36.0,
+"title": "Cash is the emergency response specialist — quick, accessible and liquid",
+"summary": "Working through the money-personality cards, the facilitator asks the teens for the characteristics of cash as an asset class and lands on the answer: best for emergencies, because it is quick, accessible and liquid.",
+"w": "primary",
+"terms": [
+"cash as an asset class",
+"emergency fund",
+"liquid"
+]
+},
+{
+"t": 24.0,
+"e": 49.0,
+"title": "\"Kash Khan\" — need me at 2 a.m. and already downstairs",
+"summary": "The card's bio and green flags as a teaching device: cash always available at the drop of a hat, no waiting, no drama, no questions asked.",
+"w": "secondary",
+"terms": [
+"Kash Khan",
+"green flags",
+"always available"
+]
+}
+],
+"moment_text": "Cash is the emergency response specialist — quick, accessible and liquid \"Kash Khan\" — need me at 2 a.m. and already downstairs cash as an asset class emergency fund liquid Kash Khan green flags always available",
 "speech": "class. Of course, I hope it's self-explanatory that Mr. or Ms. Kash Khan represents cash as an asset class. What are the features of characteristics of cash as an asset class? Emergency response specialist. What did we talk about? That cash is best for emergencies, right? Because it's quick, it's accessible, and it's liquid. Bio of Kash Khan is need me at 2 a.m. and already downstairs. When you need cash, it's always available to you at the drop of a hat. There's no waiting, no dramas, no questions asked. Green flags, Kash Khan is always available, extremely dependable, loves emergencies and...",
 "speech_dur": 49.0,
 "speech_at": [
@@ -16486,6 +18277,45 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Sakshi",
 "search_terms": "teens session hiral reading slide her back class stands square screen camera character card aloud empty chairs student shoulder foreground roll",
+"moments": [
+{
+"t": 0.7,
+"e": 32.7,
+"title": "Equity as a dating profile: founder and CEO who has public breakdowns",
+"summary": "The facilitator runs equity as a personality profile for a teens class — occupation founder and CEO, big dreams, occasional public breakdowns — and draws the answer out of the room: the public breakdowns are the share price fluctuating and sometimes crashing.",
+"w": "primary",
+"terms": [
+"share price",
+"founder and ceo",
+"public breakdowns"
+]
+},
+{
+"t": 32.7,
+"e": 50.7,
+"title": "Green flags: equity is the wealth creator in your portfolio",
+"summary": "The green flags in the profile are ambition and growth: equity is described as the thing that actually creates wealth in a portfolio, a long-term winner that generates great amounts of money if held for a long period.",
+"w": "primary",
+"terms": [
+"equity",
+"wealth creator",
+"long-term winner"
+]
+},
+{
+"t": 50.7,
+"e": 71.7,
+"title": "Red flags: mood swings and an emotional rollercoaster",
+"summary": "The red flag is that equity has mood swings — the share price fluctuates over time, so it is an emotional rollercoaster because you have no idea how the shares will perform.",
+"w": "primary",
+"terms": [
+"emotional rollercoaster",
+"red flags",
+"share price"
+]
+}
+],
+"moment_text": "Equity as a dating profile: founder and CEO who has public breakdowns Green flags: equity is the wealth creator in your portfolio Red flags: mood swings and an emotional rollercoaster share price founder and ceo public breakdowns equity wealth creator long-term winner emotional rollercoaster red flags",
 "speech": "His occupation or his occupation is founder and CEO. Their bio reads that they have big dreams, they think big, but occasionally they have public breakdowns. What do I mean by occasionally have public breakdowns? What am I referring to? What happens, you know? Listen to a stable. Exactly, right? The share price generally tends to fluctuate and sometimes it tends to crash, yeah? Green flags, they're ambitious, their equity is the one that's actually going to create wealth in your portfolio. So it's a wealth creator, it's a long-term winner. If you hold it for a long period of time, it's going to generate you great amounts of money. It loves growth, but the red flags are it has moong swings. What do I mean by moong swings? Yes, the share price tends to fluctuate over time. So very often it's an emotional rollercoaster because you have no idea how the shares are going to perform. So it's definitely not...",
 "speech_dur": 71.7,
 "speech_at": [
@@ -16575,6 +18405,32 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Sakshi",
 "search_terms": "teens session hiral working through spreadsheet her laptop group sits head table behind open showing green white hand raised mid explanation talking across students whiteboard covered flow diagrams from earlier explaining seated teaching",
+"moments": [
+{
+"t": 0.0,
+"e": 24.0,
+"title": "Why your mother would pick gold — timeless, classic, survives crisis",
+"summary": "In an exercise about what a parent would choose, the facilitator sums up gold as the popular answer for what your mother would pick: something timeless with classic appeal that survives a crisis.",
+"w": "primary",
+"terms": [
+"gold",
+"survives crisis"
+]
+},
+{
+"t": 24.0,
+"e": 46.0,
+"title": "Our parents and grandparents saw equity as gambling",
+"summary": "The facilitator explains that for the previous generations putting money into the stock market was treated as akin to gambling, which is why they favoured gold, and says that is no longer the case.",
+"w": "primary",
+"terms": [
+"stock market",
+"equity as gambling",
+"family money conversation"
+]
+}
+],
+"moment_text": "Why your mother would pick gold — timeless, classic, survives crisis Our parents and grandparents saw equity as gambling gold survives crisis stock market equity as gambling family money conversation",
 "speech": "Wow, there is a lot of gold manhutras in the picture. Yes, because it's stable. He picked it for you. He picked it for you. I want to pick gold. Gold. Okay, so your mom would mostly pick something that is timeless, classic appeal, survives crisis. Yeah. Yes. So that's generally your popular choice for who your mom would pick. Additionally, our parents, our grandparents, equity was oftentimes looked as a way of gambling money. Putting money into the stock market was very often akin to gambling back in the day. But now that's no longer the case. Back in the day people tended to put their money in gold because it was",
 "speech_dur": 46.0,
 "speech_at": [
@@ -16664,6 +18520,33 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "Sakshi",
 "search_terms": "teens session cohort around table their worksheets wide lighter end room eight nine students seated printed handouts laptop mugs potted cacti sill behind them presenter right frame group",
+"moments": [
+{
+"t": 0.0,
+"e": 12.0,
+"title": "Almost everyone picked cash, because cash is liquid",
+"summary": "Debriefing the asset-class game, the facilitator asks why most of the room picked cash and the answer comes back that cash is liquid and available wherever you want it.",
+"w": "primary",
+"terms": [
+"cash",
+"liquid",
+"cash is liquid"
+]
+},
+{
+"t": 26.0,
+"e": 51.5,
+"title": "Picking cash is a fair answer — closing the asset class game",
+"summary": "The facilitator confirms that everybody picking cash is a fair response because it is what will be available whenever you need it, and closes the game saying it was meant to reinforce the characteristics of each asset class.",
+"w": "secondary",
+"terms": [
+"asset class",
+"workshop games",
+"cash"
+]
+}
+],
+"moment_text": "Almost everyone picked cash, because cash is liquid Picking cash is a fair answer — closing the asset class game cash liquid cash is liquid asset class workshop games",
 "speech": "Yes, so most people make cash. Why cash? Because cash is liquid. It's available everywhere. Exactly, it's available wherever you want it. And there are two people who picked debt. What was the reason they picked debt? She was speechless. Because you wanted me to pick it for you. Who is the unidentified cash? So everybody picked a cash and that's a fair response because that's the thing that's going to be available to you whenever you need it. So that is the end of the game, guys. I hope you enjoyed this game and I hope it reinforced all the characteristics of each asset class. Yes, it would be nice for you to give me more feedback.",
 "speech_dur": 51.5,
 "speech_at": [
@@ -16815,7 +18698,27 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "boardroom shoot room under world map video wide wood panelled women seated along far side table papers water bottles big framed political filling wall behind them one participant blue mid point corporate workshop canon"
+"search_terms": "boardroom shoot room under world map video wide wood panelled women seated along far side table papers water bottles big framed political filling wall behind them one participant blue mid point corporate workshop canon",
+"speech": "So, the wrong question to ask is which is the best mutual fund, that's pretty much what we tend to ask, which is the best mutual fund to invest in, which is the one that's going to give me the best returns, right, those are the questions we ask, that's like asking what is the best pair of shoes, okay, running shoes or heels or breaking boots or fit",
+"speech_dur": 24.8,
+"speech_at": [
+[
+0.0,
+"So, the wrong question to ask is which is the best mutual fund, that's pretty much what"
+],
+[
+5.7,
+"we tend to ask, which is the best mutual fund to invest in, which is the one that's going"
+],
+[
+10.3,
+"to give me the best returns, right, those are the questions we ask, that's like asking"
+],
+[
+16.0,
+"what is the best pair of shoes, okay, running shoes or heels or breaking boots or fit"
+]
+]
 },
 {
 "id": "IFM-497",
@@ -17727,6 +19630,33 @@ window.IFM_V1 =
 ],
 "source": "IFM / In-house",
 "search_terms": "certificate completion graduation proud achievement social proof august feedback participant green camera woman kurta sits table talking snacks tissues front her framed art behind own account session certificate graduation teens workshop",
+"moments": [
+{
+"t": 0.0,
+"e": 19.2,
+"title": "Insurance as a first lesson: what kinds exist, and that some of it returns money",
+"summary": "A participant names insurance as the thing she learned first — the kinds of insurance available, that an insurance product can carry an investment or some form of return, and life and term insurance and how they split.",
+"w": "primary",
+"terms": [
+"kind of insurance",
+"term insurance",
+"insurance and investment"
+]
+},
+{
+"t": 41.8,
+"e": 84.6,
+"title": "Her husband went from \"go figure it out yourself\" to showing her his analysis",
+"summary": "A participant describes the change at home: when she first asked for the insurance funds he told her to do it herself, and now he answers her detailed questions with more respect and offers to show her his analysis so she can evaluate it.",
+"w": "primary",
+"terms": [
+"talking to spouse about money",
+"husband",
+"asking questions"
+]
+}
+],
+"moment_text": "Insurance as a first lesson: what kinds exist, and that some of it returns money Her husband went from \"go figure it out yourself\" to showing her his analysis kind of insurance term insurance insurance and investment talking to spouse about money husband asking questions",
 "speech": "the things that I had learned in the beginning it was about the insurance and what kind of insurance is there and also that you can have an investment with your you can have some form of return with the insurance and your life term insurance and you know the whole bivocation in it. Yeah. That was a big discussion we had when we started off and then there was obviously the ETF and the gold and the different kinds of funds linked to gold. What about you? No not yet come on. Come on. Now you can feel Brad. I can I can but he's like not now you know you come to office and then we'll talk not here. So I've told my husband initially he actually when I said can I please have all our insurance funds he was like go do it yourself you go the unit right I mean I still have to have to evaluate it on Claude but now when I'm asking him questions he has a lot more respect and he is willing to answer my detailed questions whereas earlier he kind of was like oh you just read that somewhere and that's why he was asking me don't ask me these questions go figure it out yourself whereas now he's like okay I'm gonna show you my analysis and then you evaluate for yourself whether this makes sense so that was good yes",
 "speech_dur": 84.6,
 "speech_at": [
@@ -17873,6 +19803,57 @@ window.IFM_V1 =
 ],
 "source": "IFM / In-house",
 "search_terms": "certificate completion graduation proud achievement social proof august feedback older participant lilac woman shirt sits boardroom table notebook phone front her speaking camera about session certificate graduation teens workshop",
+"moments": [
+{
+"t": 0.0,
+"e": 29.0,
+"title": "She pushed back on her CA friend's fund picks and suggested flexi-caps",
+"summary": "A participant describes telling a close friend who is a CA and an MBA to look at particular flexi-caps rather than the ones being suggested — funds her husband had evaluated — and to check the rates of return on them.",
+"w": "primary",
+"terms": [
+"flexi-caps",
+"rates of return",
+"personal experience"
+]
+},
+{
+"t": 29.0,
+"e": 49.0,
+"title": "Confident she can see herself doing well with the family's money",
+"summary": "She says the course has made her more confident that in a few years she will be doing really well with the money she and her family have, and describes it as an energetic shift.",
+"w": "primary",
+"terms": [
+"investing confidence",
+"family money conversation",
+"energetic shift"
+]
+},
+{
+"t": 61.0,
+"e": 86.0,
+"title": "Cross-learning from the group, not just from the instructor",
+"summary": "A participant says her group asked a lot of questions and there was real back-and-forth, so there was learning from the instructor — named in the room as Hiral — but also from each other, which made the session more informative and enjoyable.",
+"w": "primary",
+"terms": [
+"cross-learning",
+"learning from each other",
+"teaching style"
+]
+},
+{
+"t": 87.0,
+"e": 120.9,
+"title": "The games showed them they don't have to play the way they usually do",
+"summary": "Asked for the most fun part, several participants immediately say the games, and one adds that the games make you see how you play and give you the chance to change — that she does not need to use that kind of mindset anymore.",
+"w": "primary",
+"terms": [
+"workshop games",
+"mindset",
+"student comment on games"
+]
+}
+],
+"moment_text": "She pushed back on her CA friend's fund picks and suggested flexi-caps Confident she can see herself doing well with the family's money Cross-learning from the group, not just from the instructor The games showed them they don't have to play the way they usually do flexi-caps rates of return personal experience investing confidence family money conversation energetic shift cross-learning learning from each other teaching style workshop games mindset student comment on games",
 "speech": "One of my really close friends was a CA and an MBA and it was great that I told her. You might want to look at these flexi-caps, not the ones that you are suggesting. But these are the ones that my husband actually evaluated and look at the rates of return on them, look at the K-girls on these and see if those work for you. But honestly speaking, it's just making me more confident that I can see myself in a few years doing really well with the money we have for myself and my family. So that's what I'm excited about. There's an energetic shift. I'm an energy healer and there's an energetic shift. Okay. Do you feel comfortable asking questions? Absolutely. Absolutely. I have to add what was inspiring and I have one too. What was really also fun was I think my group was really great and there were a lot of questions and a lot of back-and-forthing and which was like, you know, there was also some cross-learning. So there was learning from the instructor, Hiral, but there's also learning from each other and that makes it a much more informative and enjoyable session. Thank you. Thank you. What was the most fun part? The games. Oh my God. The games were so fun. The games were a lot of fun. Yeah. There were games. There were some more games. Yeah. You keep a session with everyone. And then you understand, you know, the games also really help you understand the way you play. Exactly. And therefore also change. Yeah. Yeah, you get the opportunity to change. Oh, you know what? I don't need to play like how I typically do. I don't need to use that kind of mindset anymore.",
 "speech_dur": 120.9,
 "speech_at": [
@@ -18044,6 +20025,115 @@ window.IFM_V1 =
 ],
 "source": "IFM / In-house",
 "search_terms": "certificate completion graduation proud achievement social proof august feedback participant reading from her notes woman deep red top seen profile holds printed sheet speaks back what she took session rather than speaking off cuff certificate graduation teens workshop",
+"moments": [
+{
+"t": 6.9,
+"e": 25.5,
+"title": "The realization — being a disciplined investor pays off more than you imagined",
+"summary": "Asked for the moment that struck her, a participant in the group names the time value idea: that being a disciplined investor gives benefits she could not previously have imagined.",
+"w": "primary",
+"terms": [
+"time value",
+"disciplined investor"
+]
+},
+{
+"t": 25.5,
+"e": 44.0,
+"title": "The retirement and education calculators were the shock",
+"summary": "A participant says what shocked her was the app showing how much she should be investing now versus what she will need later; the facilitator confirms she means the retirement calculator and the education calculator.",
+"w": "primary",
+"terms": [
+"retirement calculator",
+"education calculator",
+"how much to invest"
+]
+},
+{
+"t": 50.9,
+"e": 78.9,
+"title": "CAGR and XIRR — now they can read their own statement",
+"summary": "Asked for a new concept that will be useful, a participant names CAGR and XIRR, and says they can now understand their statement better.",
+"w": "primary",
+"terms": [
+"cagr",
+"xirr",
+"understand the statement"
+]
+},
+{
+"t": 93.9,
+"e": 129.9,
+"title": "Compartmentalizing money — an education fund, and a travel fund for after retirement",
+"summary": "Asked what she would do differently, a participant describes splitting her money into separate pots so that paying for education does not eat into anything else, including an income set aside for travel after her steady income stops.",
+"w": "primary",
+"terms": [
+"education fund",
+"compartmentalize",
+"travel expense"
+]
+},
+{
+"t": 140.9,
+"e": 155.9,
+"title": "She is going home to start a SIP today because it takes so little money",
+"summary": "A younger participant says she is going home to set up SIPs right away, because you do not need much money to start one and she can test it and see what happens.",
+"w": "primary",
+"terms": [
+"sip",
+"you don't need so much money"
+]
+},
+{
+"t": 155.9,
+"e": 172.9,
+"title": "She only just realised her own SIPs debit every Monday",
+"summary": "Another participant says she recently worked out that her SIPs have been going out every Monday without her being aware of it, and now reads the message when it arrives.",
+"w": "secondary",
+"terms": [
+"sip",
+"every monday",
+"personal experience"
+]
+},
+{
+"t": 207.9,
+"e": 235.9,
+"title": "Take me with you to the next meeting with the PMS person",
+"summary": "Asked what conversation she had at home after the workshop, a participant says she asked to be taken along to the next meeting with the PMS person, and is glad she now knows enough not to sit there lost.",
+"w": "primary",
+"terms": [
+"talking to spouse about money",
+"pms",
+"husband"
+]
+},
+{
+"t": 235.9,
+"e": 255.9,
+"title": "The conversation they had never had — sitting down together to set goals",
+"summary": "A participant says the change at home has been sitting together and working out what their goals actually are for their children's education and their retirement, a conversation they had never really had.",
+"w": "primary",
+"terms": [
+"family money conversation",
+"kids education",
+"goals"
+]
+},
+{
+"t": 255.9,
+"e": 281.9,
+"title": "We know we have health insurance, but not what it covers",
+"summary": "The group agrees they know they hold health insurance but not what they signed for, how much cover it carries or whether it is a family policy, and say they are becoming more informed about what they own.",
+"w": "primary",
+"terms": [
+"health insurance",
+"insurance cover",
+"becoming more informed"
+]
+}
+],
+"moment_text": "The realization — being a disciplined investor pays off more than you imagined The retirement and education calculators were the shock CAGR and XIRR — now they can read their own statement Compartmentalizing money — an education fund, and a travel fund for after retirement She is going home to start a SIP today because it takes so little money She only just realised her own SIPs debit every Monday Take me with you to the next meeting with the PMS person The conversation they had never had — sitting down together to set goals We know we have health insurance, but not what it covers time value disciplined investor retirement calculator education calculator how much to invest cagr xirr understand the statement education fund compartmentalize travel expense sip you don't need so much money every monday personal experience talking to spouse about money pms husband family money conversation kids education goals health insurance insurance cover becoming more informed",
 "speech": "moment or any realization you had throughout the workshop anything that really struck you. I think the time value you know being a disciplined investor will always give you good benefits which you couldn't imagine previously. Anything that shocked you that you learned. The app was showing us how much you should invest now and then how much you have to play in the money. So that shocked me. So you're talking about the retirement calculator. Yes, yes. And the education calculator. And education calculator. Now you can buy young investors. And make and sell them. Okay what's one new concept or any new concept that you learned which you think will be useful for you? Read. Read or feel. Read or feel. Now looking at that CAGR, looking at XIRR. Now we can understand the statement better. Okay what's one thing you would start doing differently? Start it today. No tax free. I want to compartmentalize it like an education fund. Like in my head I will want to put in this much for the expense. I want to put in this much for my travel expense after I retire. After my steady income flow stops. I want to have a certain income for travel for myself. I want to help everybody think though. But in that also I want to have it compartmentalized so I'm not dipping into other or lessening some of my other things for having to pay for education or having to pay for something else. Awesome. Anything you would do differently or the youngest so? Wedding fund. Education fund. Leave the medical side. I'm so into the SIPs, I was like I'm going to go home and do this thing right now. Because you don't need so much money to put it into SIPs. And I was like okay I can test and see what happens. And you have time on your hands. Compared to all of us. I recently figured this SIP thing because I've decided that So for me the SIPs have been happening every Monday. Which I was not aware of. And now when I get the message and I read it I'm like oh yeah. I'm glad that happens. Did you feel comfortable asking questions? Yes very much. What was the most fun part? The KPCO. Especially this talk of the past. The KPCO. I love this one. I love this one. Awesome. Any question you were too embarrassed to ask before this? Okay so one last one. What is the question or discussion you had with your husband or your father or anybody else after this workshop? Give me some money to know. Give me some money. Take me with you to the next meeting with the PMS person. I'm glad I could say that. And I'm glad that I know I'll not be a dumpo sitting there. Anybody you've showed off to your husbands or not? I think for us it's been sitting together and maybe focusing on what our goals are. Because we've not really had that conversation is what is this that we want. You know for our kids education, for our retirement. So I think as a team now we need to set our goals. Understanding what is our health insurance? What have we signed that for? You know you don't know. I just know I have health insurance. What do you say Prashit? Exactly what we don't know. We just know we have. How much is our health insurance? What is the cover? Is it a family photo? You know now we are becoming more informed about what we own and what we can make better. That's pretty much it. Thank you girls so much. Have a nice day. Stay safe. Bye.",
 "speech_dur": 289.9,
 "speech_at": [

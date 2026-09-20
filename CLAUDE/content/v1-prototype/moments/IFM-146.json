@@ -1,0 +1,45 @@
+{
+ "id": "IFM-146",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "A worked NAV problem: equity 850, debt 50, cash 20, liability 15, 40 units",
+   "summary": "The facilitator reads out a fund statement and asks the room to calculate the NAV from it.",
+   "start": 0.0,
+   "end": 18.7,
+   "weight": "primary",
+   "evidence": "Ganga blue chip fund statement, it shows that equity is 850 rupees, debt is 50 rupees, cash is 20 rupees, liability is 15 and the units outstanding are 40.",
+   "search_terms": [
+    "nav",
+    "units outstanding",
+    "liability"
+   ]
+  },
+  {
+   "title": "\"Debt\" on a fund statement means the fund's debt investments",
+   "summary": "A clarification during the exercise: the debt line is not borrowing, it is the fund's debt investments, held alongside its equity investments.",
+   "start": 24.7,
+   "end": 43.7,
+   "weight": "secondary",
+   "evidence": "When we are referring to debt, it refers to debt investment.",
+   "search_terms": [
+    "debt investment",
+    "equity investments"
+   ]
+  },
+  {
+   "title": "The NAV formula recalled: total assets minus liabilities, divided by units outstanding",
+   "summary": "When the room stalls, the facilitator gives the hint that unlocks it — the formula itself.",
+   "start": 49.7,
+   "end": 61.7,
+   "weight": "primary",
+   "evidence": "Remember, the formula to calculate the NAV was total assets minus liabilities divided by units outstanding.",
+   "search_terms": [
+    "nav formula",
+    "total assets minus liabilities",
+    "units outstanding"
+   ]
+  }
+ ]
+}

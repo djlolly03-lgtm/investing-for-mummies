@@ -1,0 +1,47 @@
+{
+ "id": "IFM-264",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Stocks are just one room in a much bigger house",
+   "summary": "The opening line of the lesson: most people equate investing with stocks, and the speaker reframes stocks as one room in a much bigger house.",
+   "start": 0.0,
+   "end": 7.6,
+   "weight": "secondary",
+   "evidence": "When most people hear the word investing, they think of one thing, stocks. But stocks are just one room in a much bigger house.",
+   "search_terms": [
+    "stocks",
+    "stock market",
+    "memorable statement"
+   ]
+  },
+  {
+   "title": "An asset is simply where your money lives",
+   "summary": "The definition given in the lesson: when you invest, your money has to live somewhere, and that somewhere is an asset — a savings account, a bond, gold, a stock or real estate.",
+   "start": 13.1,
+   "end": 36.6,
+   "weight": "primary",
+   "evidence": "When you invest, your money has to live somewhere. That somewhere is an asset.",
+   "search_terms": [
+    "what is an asset",
+    "asset",
+    "real estate",
+    "gold"
+   ]
+  },
+  {
+   "title": "Every asset has a different personality",
+   "summary": "The lesson closes on the idea that assets behave differently — some favour stability, some chase growth, some are highly unpredictable, and some become popular in uncertain times.",
+   "start": 40.9,
+   "end": 52.6,
+   "weight": "secondary",
+   "evidence": "every asset has a different personality. Some love stability, some chase growth and some are highly unpredictable.",
+   "search_terms": [
+    "asset personality",
+    "stability",
+    "growth"
+   ]
+  }
+ ]
+}

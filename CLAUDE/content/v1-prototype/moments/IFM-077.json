@@ -1,0 +1,33 @@
+{
+ "id": "IFM-077",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "There is a different rate of inflation for every industry",
+   "summary": "The facilitator explains that the headline inflation number is not one number: India runs at roughly 5-6% across the country, but individual industries experience their own rates.",
+   "start": 0.0,
+   "end": 19.4,
+   "weight": "primary",
+   "evidence": "interesting thing is there is a different rate of inflation for every industry or sector. So currently India experiences about a 5-6% inflation rate and that is across the country but different industries they have they experience different inflation rates.",
+   "search_terms": [
+    "inflation rate",
+    "different industries",
+    "sector"
+   ]
+  },
+  {
+   "title": "Medical inflation is 14-15%, compounding every year",
+   "summary": "The concrete example: medical inflation runs at 14-15%, which means medical bills rise by that much every year on a compounded basis.",
+   "start": 19.4,
+   "end": 31.5,
+   "weight": "primary",
+   "evidence": "So for example medical inflation today is 14-15% so that means every year our medical bills are going to increase by 14-15% on a compounded basis.",
+   "search_terms": [
+    "medical inflation",
+    "medical bills",
+    "compounded"
+   ]
+  }
+ ]
+}

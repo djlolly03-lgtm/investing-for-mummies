@@ -1,0 +1,43 @@
+{
+ "id": "IFM-412",
+ "authored": "2026-09-20",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "In these classes she actually feels like asking questions",
+   "summary": "A participant says she told her mother and cousin that in these classes she feels like asking questions, feels like going back and reading, and tried to read the book she was given.",
+   "start": 0.0,
+   "end": 23.0,
+   "weight": "primary",
+   "evidence": "at least in these two classes, at least I feel like asking questions.",
+   "search_terms": [
+    "asking questions",
+    "safe space"
+   ]
+  },
+  {
+   "title": "Other explanations never went into her head — this one does",
+   "summary": "She contrasts this teaching with previous attempts: whatever she did before did not go into her head, maybe because of the way it was explained, but this does and she understands it.",
+   "start": 29.1,
+   "end": 39.8,
+   "weight": "primary",
+   "evidence": "I never felt like also whatever I did because maybe the way they explained or something, it didn't go into the head, but this goes.",
+   "search_terms": [
+    "teaching style"
+   ]
+  },
+  {
+   "title": "She has written down the questions to ask her husband when he is back",
+   "summary": "She has written down her questions about insurance and funds and plans to put them to her husband when he returns from travelling, because she wants to understand things.",
+   "start": 58.6,
+   "end": 73.4,
+   "weight": "primary",
+   "evidence": "I've actually written down those questions that my husband is traveling. So once he's back, I'm going to ask him, insurance, funds, I don't know what to say.",
+   "search_terms": [
+    "talking to spouse about money",
+    "insurance",
+    "asking questions"
+   ]
+  }
+ ]
+}
