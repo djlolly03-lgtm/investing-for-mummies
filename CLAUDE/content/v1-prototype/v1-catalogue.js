@@ -11519,5 +11519,710 @@ window.IFM_V1 =
 ],
 "source": "Aakara",
 "search_terms": "boardroom shoot second row office chairs woman pink striped shirt sits wheeled chair set back from table notepad her lap pen hand listening more participants seated behind same shows room had attendees than world map workshop raw cr3 canon"
+},
+{
+"id": "IFM-484",
+"title": "Teens session — Hiral at the screen on 'Time is the secret ingredient of compounding'",
+"date": "2026-06-23",
+"thumb": "../thumbs/IFM-484.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1-SQXPqmL6IJm52nc-w3h2J4YeI1OelxO/view",
+"description": "Hiral stands at the wall-mounted screen with her arm stretched out to the slide headed 'Why? Time is the secret ingredient of Compounding', reading the line about starting early. Students in dark-green school uniform sit along the near side of the boardroom table with printed worksheets and water bottles in front of them.",
+"session": "IYA / IFT teens programme — 23–25 Jun 2026",
+"slide_text": "Why? Time is the secret ingredient of Compounding",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Compounding",
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "teens session hiral screen time secret ingredient compounding stands wall mounted her arm stretched out slide headed why reading line about starting early students dark green school uniform sit along near side boardroom table printed worksheets water bottles front them"
+},
+{
+"id": "IFM-485",
+"title": "Teens session — 'The King and the Chessboard' slide with the class watching",
+"date": "2026-06-23",
+"thumb": "../thumbs/IFM-485.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1K6cj9acxfjF9xDYSgbBlF1EtRu6BeIIg/view",
+"description": "The screen shows the illustrated 'The King and the Chessboard' slide — a chessboard with grain doubling square by square and a rising curve. Uniformed students around the table are turned towards it, one leaning forward on her elbows.",
+"session": "IYA / IFT teens programme — 23–25 Jun 2026",
+"slide_text": "The King and the Chessboard",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Compounding",
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "teens session king chessboard slide class watching screen shows illustrated grain doubling square rising curve uniformed students around table turned towards one leaning forward her elbows compounding story attention classroom"
+},
+{
+"id": "IFM-486",
+"title": "Teens session — room wide from the back of the boardroom",
+"date": "2026-06-23",
+"thumb": "../thumbs/IFM-486.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1IjQZ4c3u8aJGZQylsDh9Y-Dc2Vo-Ya5e/view",
+"description": "Shot over the back chairs down the length of the dark wood boardroom table: roughly a dozen students in green school uniform on both sides, laptops and worksheets out, all facing the lit screen at the far end.",
+"session": "IYA / IFT teens programme — 23–25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "b-roll cutaway establishing supporting footage context teens session room wide from back boardroom shot over chairs down length dark wood table roughly dozen students green school uniform both sides laptops worksheets out all facing lit screen far end cohort venue establishing"
+},
+{
+"id": "IFM-487",
+"title": "Teens session — over the back row towards the screen mid-lesson",
+"date": "2026-06-23",
+"thumb": "../thumbs/IFM-487.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/15obGQxp1cKQcrKC2_JrcrbYkSWL4lfEM/view",
+"description": "Handheld from behind the back row: heads and shoulders of seated students in the foreground, the screen and the standing presenter small and slightly blown out at the end of the room.",
+"session": "IYA / IFT teens programme — 23–25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "Sakshi",
+"search_terms": "teens session over back row towards screen mid lesson handheld from behind heads shoulders seated students foreground standing presenter small slightly blown out end room shoulder roll"
+},
+{
+"id": "IFM-488",
+"title": "Teens session — Hiral presenting the money-personality cards",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-488.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1wMpLmW7DECQNHSiqSePwoN18tcr9M3kf/view",
+"description": "Hiral stands to the left of the screen in a black sleeveless top and long tan skirt, smiling towards the group. The slide behind her holds two red character cards with portraits and bullet lists — the money-personality activity.",
+"session": "IYA / IFT teens programme — 23–25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money",
+"Stock Market"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "candid warm natural unposed relaxed friendly celebration teens session hiral presenting money personality cards stands left screen black sleeveless top long tan skirt smiling towards group slide behind her holds two red character portraits bullet lists activity teaching"
+},
+{
+"id": "IFM-489",
+"title": "Teens session — Hiral pointing out a character card on the slide",
+"date": "2026-06-23",
+"thumb": "../thumbs/IFM-489.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1roGWrh2lvsyQ97hXfixLznvN1Kmpgf_M/view",
+"description": "Hiral turns back towards the screen and points at the left-hand character card while talking to the group. Clean three-quarter view, face visible, the IFM slide well lit behind her; the backs of two students frame the bottom of the shot.",
+"session": "IYA / IFT teens programme — 23–25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "portrait headshot founder press media kit agency bio teens session hiral pointing out character card slide turns back towards screen points left hand while talking group clean three quarter view face visible ifm well lit behind her backs two students frame bottom shot teaching portrait"
+},
+{
+"id": "IFM-490",
+"title": "Teens session — Hiral reading the slide with her back to the class",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-490.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1C5DcUMmwxwSnpdF2164nVO-z1nf2mGS1/view",
+"description": "Hiral stands square to the screen with her back to the camera, reading the character-card slide aloud. Empty chairs and a student's shoulder in the foreground.",
+"session": "IYA / IFT teens programme — 23–25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "teens session hiral reading slide her back class stands square screen camera character card aloud empty chairs student shoulder foreground roll"
+},
+{
+"id": "IFM-491",
+"title": "Teens session — Hiral working through a spreadsheet on her laptop with the group",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-491.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1p7WcgswtHqxSlQYNEqFRs-C--Q2RCkyX/view",
+"description": "Hiral sits at the head of the table behind an open laptop showing a green-and-white spreadsheet, hand raised mid-explanation and talking across to the students. The whiteboard behind is covered in flow diagrams from earlier in the session.",
+"session": "IYA / IFT teens programme — 23–25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "teens session hiral working through spreadsheet her laptop group sits head table behind open showing green white hand raised mid explanation talking across students whiteboard covered flow diagrams from earlier explaining seated teaching"
+},
+{
+"id": "IFM-492",
+"title": "Teens session — the cohort around the table with their worksheets",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-492.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1FqTBsbS7aaVEt2PMyYG4Gjq0TwaEHddz/view",
+"description": "Wide of the lighter end of the room: eight or nine students seated around the table with printed handouts, a laptop and mugs, potted cacti on the sill behind them, the presenter seated at the right of frame.",
+"session": "IYA / IFT teens programme — 23–25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "Sakshi",
+"search_terms": "teens session cohort around table their worksheets wide lighter end room eight nine students seated printed handouts laptop mugs potted cacti sill behind them presenter right frame group"
+},
+{
+"id": "IFM-493",
+"title": "Teens programme — group certificate photo (25 Jun 2026)",
+"date": "2026-06-25",
+"thumb": "../thumbs/IFM-493.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1Na3VlHuk9A60qXMzVK8i1o3oExm0xqPb/view",
+"description": "Ten teenagers stand shoulder to shoulder in the corridor outside the boardroom, each holding a white IFM certificate up to the camera, grinning. Framed artwork and a dark cabinet behind them.",
+"session": "IYA / IFT teens programme — 23–25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Certificate",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "funny fun laughing humour lively certificate completion graduation proud achievement social proof teens programme group certificate photo jun 2026 ten teenagers stand shoulder corridor outside boardroom each holding white ifm camera grinning framed artwork dark cabinet behind them handover graduation completion"
+},
+{
+"id": "IFM-494",
+"title": "Women's workshop — group certificate photo (24 Jun 2026)",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-494.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1_SpsbxtmN1Nzq8lDrgIF7bWTv5EdEW7i/view",
+"description": "Seven women stand in a row in front of the boardroom table, most in white and black, each holding a white IFM certificate at chest height and smiling to camera. A projector and a water glass sit on the table in front of them.",
+"session": "Women's workshop — 24 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Certificate",
+"topic": [],
+"person": [
+"Other Person"
+],
+"source": "Unknown",
+"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof women workshop group certificate photo jun 2026 seven stand row front boardroom table most white black each holding ifm chest height smiling camera projector water glass sit them handover completion mums"
+},
+{
+"id": "IFM-495",
+"title": "Boardroom shoot — participant speaking to the room (video)",
+"date": "2026-07-03",
+"thumb": "../thumbs/IFM-495.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1LuFUU322gEx7DdeG75Mz9rd3bPMc3tPT/view",
+"description": "A participant in a pink top sits turned away from the table on a wheeled office chair, talking and gesturing to the rest of the group; four or five others are seated behind her along the wall listening.",
+"session": "Corporate workshop boardroom shoot — 3 Jul 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "boardroom shoot participant speaking room video pink top sits turned away from table wheeled office chair talking gesturing rest group four five others seated behind her along wall listening discussion corporate canon"
+},
+{
+"id": "IFM-496",
+"title": "Boardroom shoot — the room under the world map (video)",
+"date": "2026-07-03",
+"thumb": "../thumbs/IFM-496.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1DL6PcZkuH5RVXJU6RZeH8Y_zyiNM86Oh/view",
+"description": "Wide of the wood-panelled boardroom: women seated along the far side of the table with papers and water bottles, the big framed political world map filling the wall behind them, one participant in blue mid-point.",
+"session": "Corporate workshop boardroom shoot — 3 Jul 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "boardroom shoot room under world map video wide wood panelled women seated along far side table papers water bottles big framed political filling wall behind them one participant blue mid point corporate workshop canon"
+},
+{
+"id": "IFM-497",
+"title": "Boardroom shoot — 'The Wrong Question' mutual-fund slide on the projector",
+"date": "2026-07-03",
+"thumb": "../thumbs/IFM-497.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1NcRgVetnKOatlbem43xMVX_TSoA_70ua/view",
+"description": "Close on the projected slide: 'The Wrong Question — Which is the BEST Mutual Fund?' answered with 'That's like asking… What's the best pair of shoes?' over a list of running shoes, heels, hiking boots, football shoes and flip flops, and the line 'It depends on where you're going.'",
+"session": "Corporate workshop boardroom shoot — 3 Jul 2026",
+"slide_text": "The Wrong Question — Which is the BEST Mutual Fund? s like asking… What over a list of running shoes, heels, hiking boots, football shoes and flip flops, and the line",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Money Conversations",
+"Mutual Funds"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": false,
+"source": "Unknown",
+"search_terms": "boardroom shoot wrong question mutual fund slide projector close projected which best answered like asking what pair shoes over list running heels hiking boots football flip flops line depends where you going analogy teaching content detail"
+},
+{
+"id": "IFM-498",
+"title": "July: 'Gold is the best investment' — static (in progress)",
+"date": "2026-06-15",
+"thumb": "../thumbs/IFM-498.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1Xgj1MOQGN7LK5aNOKZl0aKLdgKzLbwAK/view",
+"description": "Cream grid-paper static with the IFM wordmark top right. A woman in a pale blazer sits at the bottom with an open, questioning gesture; above her the copy reads 'We were often told: Gold is the best investment' and goes on that most women were never taught about stocks, mutual funds, or wealth creation beyond jewellery.",
+"session": "Aakara July delivery",
+"slide_text": "We were often told: Gold is the best investment",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "",
+"topic": [
+"Wealth",
+"Money Mindset",
+"Stocks / Equity",
+"Mutual Funds"
+],
+"person": [
+"No Person"
+],
+"source": "Unknown",
+"search_terms": "july gold best investment static progress cream grid paper ifm wordmark top right woman pale blazer sits bottom open questioning gesture above her copy reads were often told goes most women never taught about stocks mutual funds wealth creation beyond"
+},
+{
+"id": "IFM-499",
+"title": "Teens session — the group listening to a student's answer",
+"date": "2026-06-23",
+"thumb": "../thumbs/IFM-499.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/12XYzYhxy1Vpfg9MrgEgdJuDuLq2mtFjY/view",
+"description": "A boy in a cream t-shirt sits turned in the foreground looking up as he answers; four classmates across the table and Hiral, seated at the right with her arms folded behind her laptop, are all watching him and smiling. Potted cacti and a coffee machine on the credenza behind.",
+"session": "IYA / IFT teens programme — 23–25 Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations",
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "candid warm natural unposed relaxed friendly celebration teens session group listening student answer boy cream shirt sits turned foreground looking answers four classmates across table hiral seated right her arms folded behind laptop all watching him smiling potted cacti coffee machine credenza answering reaction discussion warm candid"
+},
+{
+"id": "IFM-484",
+"title": "Youth workshop — boardroom session in progress",
+"date": "2026-08-01",
+"thumb": "../thumbs/IFM-484.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1UGr9gk4hJosyR5b2voubp53WRWTr0ATQ/view",
+"description": "Wide of a long boardroom table with teenage participants either side, printed worksheets and water bottles in front of them, a facilitator standing at the far end. Warm overhead strip lighting, wood-panelled walls.",
+"session": "Workshop Pictures — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "youth workshop boardroom session progress wide long table teenage participants either side printed worksheets water bottles front them facilitator standing far end warm overhead strip lighting wood panelled walls wealth conversation venue games whiteboard",
+"kit": "teaching",
+"kit_rank": 3
+},
+{
+"id": "IFM-485",
+"title": "Women’s cohort — full group photo on the venue steps",
+"date": "2026-08-07",
+"thumb": "../thumbs/IFM-485.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1ochr5gEbRgQYN9ge85eMW7wXbIHOu95s/view",
+"description": "Around twenty women stand and crouch in three rows on a carpeted venue staircase for a full-cohort group photo, most in kurtas and summer dresses, several holding IFM workbooks.",
+"session": "Workshop Pictures — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "women cohort full group photo venue steps around twenty stand crouch three rows carpeted staircase most kurtas summer dresses several holding ifm workbooks wealth conversation workshop games whiteboard"
+},
+{
+"id": "IFM-486",
+"title": "The Wealth Conversation — title slide and presenter",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-486.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1x-jvZs9hX6DrWfQ6NZChNwoM5p6AflRe/view",
+"description": "A presenter in a pale patterned kurta stands beside a wall-mounted screen showing the navy \"THE WEALTH CONVERSATION\" title card, a laptop open on the console beside her. Wood-paneled venue wall, warm downlights.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "THE WEALTH CONVERSATION",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "wealth conversation title slide presenter pale patterned kurta stands beside wall mounted screen showing navy card laptop open console her wood paneled venue warm downlights workshop games whiteboard"
+},
+{
+"id": "IFM-487",
+"title": "The Wealth Conversation — venue wide from the back",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-487.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1gmQPRL5eZ09xz-PEF9wxnLoobFYG6uJc/view",
+"description": "Wide of the venue from behind the seating: patterned wallpaper, a bookshelf wall, a hanging pendant lamp, and the presenter small at the front beside the screen with a laptop on a stand.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "B-roll",
+"topic": [],
+"person": [
+"Hiral"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "wealth conversation venue wide from back behind seating patterned wallpaper bookshelf wall hanging pendant lamp presenter small front beside screen laptop stand workshop games whiteboard"
+},
+{
+"id": "IFM-488",
+"title": "The Wealth Conversation — presenter at the laptop stand",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-488.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1Y2o9VRvoN4D4vvdXpO4ImGLw6fXoySUw/view",
+"description": "The presenter stands at a laptop on a tall stand, one hand raised, an illustrated slide on the screen behind her. Upholstered chairs and a patterned wall frame the shot.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "wealth conversation presenter laptop stand stands tall one hand raised illustrated slide screen behind her upholstered chairs patterned wall frame shot workshop venue games whiteboard"
+},
+{
+"id": "IFM-489",
+"title": "The Wealth Conversation — addressing the seated room",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-489.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1yuCtZVc-h9MXi2QnXFc6KC-Rz7sLR-ic/view",
+"description": "Shot from behind the presenter in a blue-and-white patterned kurta as she addresses a room of seated women, hands mid-gesture. The audience fills the frame in front of her.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "wealth conversation addressing seated room shot from behind presenter blue white patterned kurta she addresses women hands mid gesture audience fills frame front her workshop venue games whiteboard",
+"kit": "teaching",
+"kit_rank": 3
+},
+{
+"id": "IFM-490",
+"title": "The Wealth Conversation — the room listening",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-490.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1N6frdGS80_ll25OoTCNGBeWQDYALe6kd/view",
+"description": "The presenter in the patterned kurta stands at the side of a long conference table lined with women, papers and glasses in front of them, all turned toward her.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "wealth conversation room listening presenter patterned kurta stands side long conference table lined women papers glasses front them all turned toward her workshop venue games whiteboard"
+},
+{
+"id": "IFM-491",
+"title": "Swayamvar game on the venue screen — “Meet the Suitors”",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-491.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1Qzv7qodDT7VspOlSWH1aOsXqprBr906I/view",
+"description": "A wall-mounted screen showing the Swayamvar game’s \"Meet the Suitors\" panel with two candidate cards side by side, a participant in black standing watching it from the foreground.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "Meet the Suitors",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "B-roll",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "candid warm natural unposed relaxed friendly celebration swayamvar game venue screen meet suitors wall mounted showing panel two candidate cards side participant black standing watching from foreground wealth conversation workshop games whiteboard"
+},
+{
+"id": "IFM-492",
+"title": "IFM games menu — “Pick a Game to Start!”",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-492.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/14WcxpUBrs0VK8cTXYGfVlrw-TKp564bj/view",
+"description": "Screenshot of the IFM games launcher: a dark green header reading \"Pick a Game to Start!\" above a grid of nine game tiles — Money Map, Lifestyle Time Machine, Need/Want/Value, Stock Rush, Asset Race, Swipe Right on SIP, Swipe Right LIVE and Broke by Friday LIVE.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "Pick a Game to Start!",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "",
+"topic": [
+"Managing Money",
+"Stocks / Equity"
+],
+"person": [
+"No Person"
+],
+"source": "IFM / In-house",
+"search_terms": "sip systematic investment plan monthly investing ifm games menu pick game start screenshot launcher dark green header reading above grid nine tiles money map lifestyle time machine need want value stock rush asset race swipe right sip live broke friday wealth conversation workshop venue whiteboard"
+},
+{
+"id": "IFM-493",
+"title": "Whiteboard working session — writing up the group’s answers",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-493.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1sv14TlqfLO7_AyAPV2Xly6vAy1Ti9dGI/view",
+"description": "A facilitator in a white top and red trousers stands at a whiteboard mid-sentence, marker in hand, boxes and arrows already drawn up. Taken from the back of the room over a participant’s shoulder.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "whiteboard working session writing group answers facilitator white top red trousers stands mid sentence marker hand boxes arrows already drawn taken from back room over participant shoulder wealth conversation workshop venue games"
+},
+{
+"id": "IFM-494",
+"title": "Whiteboard working session — the board filling up",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-494.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1goU9m2rAgIO5k5Gdi13BsDjQq5sVwwYO/view",
+"description": "Same whiteboard session from a lower angle: the facilitator in red trousers reaching up to add to a diagram, the board now carrying several linked boxes of the group’s answers.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "whiteboard working session board filling same from lower angle facilitator red trousers reaching add diagram now carrying several linked boxes group answers wealth conversation workshop venue games"
+},
+{
+"id": "IFM-495",
+"title": "Participant playing an IFM game on her laptop",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-495.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1kzTB4zYq-bJ0F8LAoQVVrx0NVaejXl9U/view",
+"description": "Over-the-shoulder of a participant in a yellow knit top working an IFM game on her laptop at the boardroom table, the same game mirrored on the wall screen ahead of her.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "participant playing ifm game her laptop over shoulder yellow knit top working boardroom table same mirrored wall screen ahead wealth conversation workshop venue games whiteboard"
+},
+{
+"id": "IFM-496",
+"title": "Participant at the laptop, game screen ahead",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-496.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1PAKUE7vPkwSdTgtTW3EUiuF5k3sCEIWC/view",
+"description": "A participant in a yellow knit top at the boardroom table with her laptop open on an IFM game, the wall-mounted screen in front of her showing a red-and-green choice panel.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "participant laptop game screen ahead yellow knit top boardroom table her open ifm wall mounted front showing red green choice panel wealth conversation workshop venue games whiteboard"
+},
+{
+"id": "IFM-497",
+"title": "The Wealth Conversation — closing at the title screen",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-497.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/10sx3DII1LgEP7jI72WfY_Ui40iwIeLWK/view",
+"description": "The presenter stands beside the wall screen showing \"THE WEALTH CONVERSATION\" title card, addressing the room with one hand open. Console table and warm venue lighting.",
+"session": "The Wealth Conversation — 14 Aug 2026",
+"slide_text": "THE WEALTH CONVERSATION",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "wealth conversation closing title screen presenter stands beside wall showing card addressing room one hand open console table warm venue lighting workshop games whiteboard"
 }
 ];
