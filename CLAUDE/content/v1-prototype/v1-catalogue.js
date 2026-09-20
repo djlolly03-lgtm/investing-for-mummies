@@ -12224,5 +12224,621 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "IFM / In-house",
 "search_terms": "wealth conversation closing title screen presenter stands beside wall showing card addressing room one hand open console table warm venue lighting workshop games whiteboard"
+},
+{
+"id": "IFM-514",
+"title": "Teens cohort with their certificates — standing group",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-514.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1Kj0Hvaz2yHhHVBBfqM5lepSKKK1DK6sV/view",
+"description": "Eight or nine teenagers stand in a line in the office holding their \"Investing for Mummies\" Certificates of Completion, a potted plant and framed art behind them. Everyone facing camera, certificates held at chest height.",
+"session": "Teens programme — Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Certificate",
+"topic": [
+"Family & Money",
+"Investing"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof teens cohort their certificates standing group eight nine teenagers stand line office holding investing mummies completion potted plant framed art behind them everyone facing camera held chest height certificate graduation feedback workshop"
+},
+{
+"id": "IFM-515",
+"title": "Graduate holding her Certificate of Completion",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-515.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/13NFAjpNfsxs9suwwapGgq7TGqfHSiuax/view",
+"description": "An older woman in a lilac shirt sits at the boardroom table holding her framed-style \"Certificate of Completion\" up to camera with both hands, smiling. Her name is legible on the certificate. Warm, direct, the strongest single graduation frame in the library.",
+"session": "Flagship graduation — Aug 2026",
+"slide_text": "Certificate of Completion",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Certificate",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof graduate holding her certificate completion older woman lilac shirt sits boardroom table framed style camera both hands smiling name legible warm direct strongest single graduation frame library teens feedback workshop"
+},
+{
+"id": "IFM-516",
+"title": "Three graduates with certificates at the boardroom table",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-516.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1wSQYoQaNuvDrRLxMBUr9btq04L3Jdy1G/view",
+"description": "Three women around the dark wood boardroom table each holding a Certificate of Completion — an older woman in lilac seated front, two younger women behind in a red floral print and a green stripe. All smiling to camera.",
+"session": "Flagship graduation — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Certificate",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof three graduates certificates boardroom table women around dark wood each holding certificate completion older woman lilac seated front two younger behind red floral print green stripe all smiling camera graduation teens feedback workshop"
+},
+{
+"id": "IFM-517",
+"title": "Graduation group portrait — four, no certificates in frame",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-517.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1eakYm-YngsekAz8Sxsr4lr06GcyvboY7/view",
+"description": "The same four people posed around the boardroom table without the certificates — an older man in a lilac shirt seated centre, three women behind him. A relaxed after-the-photo group shot.",
+"session": "Flagship graduation — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof portrait headshot founder press media kit agency bio graduation group portrait four certificates frame same people posed around boardroom table without older man lilac shirt seated centre three women behind him relaxed after photo shot certificate teens feedback workshop"
+},
+{
+"id": "IFM-518",
+"title": "Women’s cohort with certificates — boardroom",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-518.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1bThlfPO2lMiqJvDnTfQUbQm7nmYZ1746/view",
+"description": "Around ten women stand in two rows behind the boardroom table, each holding a Certificate of Completion, framed art and a window behind them. Glasses and workbooks still on the table in front.",
+"session": "Flagship graduation — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Certificate",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof women cohort certificates boardroom around ten stand two rows behind table each holding certificate completion framed art window them glasses workbooks still front graduation teens feedback workshop"
+},
+{
+"id": "IFM-519",
+"title": "Young women’s cohort with certificates",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-519.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1JMHnIKrc758VIIFcgCq3MohbErF2CZYb/view",
+"description": "A cohort of younger women stand together holding their certificates, two at the front in white, the rest in darker tops. Taken in the same boardroom, table and glasses visible at the edge of frame.",
+"session": "Flagship graduation — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Certificate",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof young women cohort certificates younger stand together holding their two front white rest darker tops taken same boardroom table glasses visible edge frame certificate graduation teens feedback workshop"
+},
+{
+"id": "IFM-520",
+"title": "Two graduates in white with their certificates",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-520.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1TeYEdLhotLQr3lLszD5CeYOfk3AeWZZ2/view",
+"description": "Two women in white outfits stand side by side holding their Certificates of Completion, smiling to camera, the boardroom table and a framed picture behind them.",
+"session": "Flagship graduation — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Certificate",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "candid warm natural unposed relaxed friendly celebration certificate completion graduation proud achievement social proof two graduates white their certificates women outfits stand side holding completion smiling camera boardroom table framed picture behind them certificate graduation teens feedback workshop"
+},
+{
+"id": "IFM-521",
+"title": "Hiral at the laptop before the session",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-521.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1aXl_zvOSM7Cl-n8kNVC9rFeeR55nSc_z/view",
+"description": "Hiral in a red sleeveless top sits at the boardroom table with her MacBook open, looking at the screen, papers and a water glass beside her. Taken before the room filled.",
+"session": "Workshop Pictures — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof hiral laptop before session red sleeveless top sits boardroom table her macbook open looking screen papers water glass beside taken room filled certificate graduation teens feedback workshop"
+},
+{
+"id": "IFM-522",
+"title": "Hiral presenting in red at the front of the room",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-522.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1_QtxL9vK0WLk67QhqgshPufHWvKm9exS/view",
+"description": "Hiral in a red top stands at the front of the boardroom beside the table, mid-explanation, a laptop and printed sheets on the table in front of her.",
+"session": "Workshop Pictures — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof hiral presenting red front room top stands boardroom beside table mid explanation laptop printed sheets her certificate graduation teens feedback workshop"
+},
+{
+"id": "IFM-523",
+"title": "Teens with certificates in the boardroom",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-523.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/11USxbNBVTH5bzILTUQCZgrgMuFykLS00/view",
+"description": "Five teenagers stand in a row in the boardroom holding their Certificates of Completion, a world map and framed art on the wall behind them, office chairs pushed back.",
+"session": "Workshop Pictures — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Certificate",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof teens certificates boardroom five teenagers stand row holding their completion world map framed art wall behind them office chairs pushed back certificate graduation feedback workshop"
+},
+{
+"id": "IFM-524",
+"title": "Presenting to the hall — screen and seated audience",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-524.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1PQT29Izy6rUDIIg1dlOGeVTBdNwG7GNf/view",
+"description": "Wide of a lecture-style room: a presenter stands small at the front beside a large projected slide about inflation, rows of seated attendees in the foreground with notebooks.",
+"session": "Workshop Pictures — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "B-roll",
+"topic": [
+"Family & Money",
+"Inflation & Interest Rates"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof presenting hall screen seated audience wide lecture style room presenter stands small front beside large projected slide about inflation rows attendees foreground notebooks certificate graduation teens feedback workshop"
+},
+{
+"id": "IFM-525",
+"title": "Standing at the window, city skyline behind",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-525.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1efu32vGfgB5b3N3Udmz29BYKoyI_YRF4/view",
+"description": "A woman in a khaki sleeveless outfit stands at a floor-to-ceiling window looking out over a hazy Mumbai skyline, seen in profile from behind. Unusual for this library: daylight, glass and a city view rather than a boardroom.",
+"session": "Workshop Pictures — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Certificate",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof standing window city skyline behind woman khaki sleeveless outfit stands floor ceiling looking out over hazy mumbai seen profile from unusual library daylight glass view rather than boardroom certificate graduation teens feedback workshop"
+},
+{
+"id": "IFM-526",
+"title": "Working at the laptop by the window",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-526.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1d9SatM51Z6R9xFf0K1Snv1DSM0Za_b7r/view",
+"description": "The same woman seated at a granite counter by the window, working on a laptop with the city skyline filling the glass behind her.",
+"session": "Workshop Pictures — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Certificate",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof working laptop window same woman seated granite counter city skyline filling glass behind her certificate graduation teens feedback workshop"
+},
+{
+"id": "IFM-527",
+"title": "IYA/IFT teens session — the room at the screen",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-527.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1VuSPOesDRH6s51THfVWEW3o2RFFSQ-uG/view",
+"description": "Teenagers around the boardroom table facing a wall-mounted screen showing a pink-and-red slide, a presenter standing to the left of it. Laptops, printed sheets and water bottles across the table.",
+"session": "IYA / IFT teens programme — Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof iya ift teens session room screen teenagers around boardroom table facing wall mounted showing pink red slide presenter standing left laptops printed sheets water bottles across certificate graduation feedback workshop"
+},
+{
+"id": "IFM-528",
+"title": "IYA/IFT teens session — working through the slide",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-528.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/15zKdMWV2HVYqmyPUdQ6CLZyt-LorjW3V/view",
+"description": "Session footage from the back of the boardroom: the group watching the screen while the presenter talks through it, students turning between the screen and their sheets.",
+"session": "IYA / IFT teens programme — Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof iya ift teens session working through slide footage from back boardroom group watching screen while presenter talks students turning between their sheets certificate graduation feedback workshop"
+},
+{
+"id": "IFM-529",
+"title": "IYA/IFT teens — the lighter meeting room",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-529.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1uNJNcXzWMmBJJMOh0cHePMqBOIeW5Yyg/view",
+"description": "A different, brighter room: participants seated around a pale table with laptops and papers, daylight from the side, a more informal working setup than the main boardroom.",
+"session": "IYA / IFT teens programme — Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof iya ift teens lighter meeting room different brighter participants seated around pale table laptops papers daylight from side more informal working setup than main boardroom certificate graduation feedback workshop"
+},
+{
+"id": "IFM-530",
+"title": "IYA/IFT teens — cohort at the long table",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-530.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/16nlteZBGeDcl0oKX4-ukDecK8P3h6rTS/view",
+"description": "The teens cohort seated down both sides of the long boardroom table with the session slide on the screen at the far end, taken from the back of the room.",
+"session": "IYA / IFT teens programme — Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof iya ift teens cohort long table seated down both sides boardroom session slide screen far end taken from back room certificate graduation feedback workshop"
+},
+{
+"id": "IFM-531",
+"title": "IYA/IFT teens — presenter at the screen",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-531.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1Rkn83TJNxDe5Cz0-w0PmUTAXE_Ag3Vhg/view",
+"description": "The presenter stands beside the wall screen addressing the seated teens, one hand raised toward a slide, water bottles and worksheets along the table.",
+"session": "IYA / IFT teens programme — Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof iya ift teens presenter screen stands beside wall addressing seated one hand raised toward slide water bottles worksheets along table certificate graduation feedback workshop"
+},
+{
+"id": "IFM-532",
+"title": "IYA/IFT teens — session wide with the slide up",
+"date": "2026-06-24",
+"thumb": "../thumbs/IFM-532.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1Qhhyhyl0KcOjXoS9ITi9zdlUunPdO_Qz/view",
+"description": "Wide of the whole teens session: screen lit at the front, the group seated around the table in profile, the room’s framed art and window along the far wall.",
+"session": "IYA / IFT teens programme — Jun 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Ready",
+"format": "B-roll",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof iya ift teens session wide slide whole screen lit front group seated around table profile room framed art window along far wall certificate graduation feedback workshop"
+},
+{
+"id": "IFM-533",
+"title": "August feedback — participant in green, to camera",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-533.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1-BG7aF4xPcmSOch9QyJEr6HUS0gQql96/view",
+"description": "A woman in a green kurta sits at the table talking to camera, snacks and tissues on the table in front of her, framed art behind. Her own account of the session.",
+"session": "IFM August feedback — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Testimonial",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof august feedback participant green camera woman kurta sits table talking snacks tissues front her framed art behind own account session certificate graduation teens workshop"
+},
+{
+"id": "IFM-534",
+"title": "August feedback — participant in green, second take",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-534.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1us-3DflkJSPKhneQMfvRfFon6gefPeuE/view",
+"description": "The same participant in green from a closer angle, mid-sentence with one hand raised, speaking directly to camera.",
+"session": "IFM August feedback — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Testimonial",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof august feedback participant green second take same from closer angle mid sentence one hand raised speaking directly camera certificate graduation teens workshop"
+},
+{
+"id": "IFM-535",
+"title": "August feedback — older participant in lilac",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-535.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1NcimFLhJXBBDHh0WOYmZqfS4L44Gq8IU/view",
+"description": "An older woman in a lilac shirt sits at the boardroom table with a notebook and phone in front of her, speaking to camera about the session.",
+"session": "IFM August feedback — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Testimonial",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof august feedback older participant lilac woman shirt sits boardroom table notebook phone front her speaking camera about session certificate graduation teens workshop"
+},
+{
+"id": "IFM-536",
+"title": "August feedback — participant reading from her notes",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-536.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1ggPf-mHcMv_qxb2qHntunXTIV_hlAVzj/view",
+"description": "A woman in a deep red top, seen in profile, holds a printed sheet and speaks — reading back what she took from the session rather than speaking off the cuff.",
+"session": "IFM August feedback — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Testimonial",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof august feedback participant reading from her notes woman deep red top seen profile holds printed sheet speaks back what she took session rather than speaking off cuff certificate graduation teens workshop"
+},
+{
+"id": "IFM-537",
+"title": "IFT Aug 2026 — teens working at the table",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-537.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1T0P1HiC1uF9gsxA86pGB895gpU85sQoV/view",
+"description": "Teenagers around the boardroom table working through printed activity sheets together, several leaning in over the same page.",
+"session": "IFT teens workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof ift aug 2026 teens working table teenagers around boardroom through printed activity sheets together several leaning over same page certificate graduation feedback workshop"
+},
+{
+"id": "IFM-538",
+"title": "IFT Aug 2026 — the room and the screen",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-538.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1OCoaajTbjVh9ixmWNvlX_lNb6CJWiUHB/view",
+"description": "Short clip from the back of the teens session: the group seated facing the wall screen with the slide up, chairs and worksheets in the foreground.",
+"session": "IFT teens workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof ift aug 2026 room screen short clip from back teens session group seated facing wall slide chairs worksheets foreground certificate graduation feedback workshop"
+},
+{
+"id": "IFM-539",
+"title": "IFT Aug 2026 — hands over the printed activity sheet",
+"date": "2026-08-19",
+"thumb": "../thumbs/IFM-539.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1C1cUFkML4zTh9C_bygIcbLhf-2TuKO3i/view",
+"description": "Close over a participant’s shoulder: hands moving across a colourful printed activity sheet on the boardroom table, no faces in frame.",
+"session": "IFT teens workshop — Aug 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof ift aug 2026 hands over printed activity sheet close participant shoulder moving across colourful boardroom table faces frame certificate graduation teens feedback workshop"
 }
 ];
