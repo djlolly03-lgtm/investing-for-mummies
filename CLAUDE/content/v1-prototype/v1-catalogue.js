@@ -1502,7 +1502,7 @@ window.IFM_V1 =
 "source": "IFM / In-house",
 "search_terms": "candid warm natural unposed relaxed friendly celebration hiral table under branded title slide seated boardroom open laptop smiling softly wall screen behind shows investing mummies white eyelet blouse pale blue skirt goel founder about",
 "kit": "teaching",
-"kit_rank": 2
+"kit_rank": 3
 },
 {
 "id": "IFM-065",
@@ -1553,8 +1553,8 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration hiral laughing table under branded screen seated boardroom warmly laptop book front investing mummies slide wall behind white eyelet blouse blue skirt goel candid joyful founder warm",
-"kit": "candid",
-"kit_rank": 1
+"kit": "portrait",
+"kit_rank": 3
 },
 {
 "id": "IFM-067",
@@ -1602,7 +1602,7 @@ window.IFM_V1 =
 "source": "IFM / In-house",
 "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio b-roll cutaway establishing supporting footage context hiral standing portrait soft smile wood backdrop three quarter arms crossed against panel wall natural white eyelet blouse pale blue skirt goel founder headshot about",
 "kit": "portrait",
-"kit_rank": 1
+"kit_rank": 3
 },
 {
 "id": "IFM-069",
@@ -1626,7 +1626,7 @@ window.IFM_V1 =
 "source": "IFM / In-house",
 "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio b-roll cutaway establishing supporting footage context hiral standing portrait broad smile wood backdrop arms crossed open against panel wall white eyelet sleeve shirt pale blue striped skirt goel smiling founder profile photo friendly about",
 "kit": "portrait",
-"kit_rank": 2
+"kit_rank": 3
 },
 {
 "id": "IFM-070",
@@ -1651,8 +1651,8 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "candid warm natural unposed relaxed friendly celebration hiral seated beside branded screen smiling boardroom table laptop camera investing mummies multi armed mother slide fills wall her left white eyelet blouse blue skirt goel founder workshop about",
-"kit": "teaching",
-"kit_rank": 2
+"kit": "portrait",
+"kit_rank": 3
 },
 {
 "id": "IFM-071",
@@ -1704,7 +1704,7 @@ window.IFM_V1 =
 "source": "IFM / In-house",
 "search_terms": "candid warm natural unposed relaxed friendly celebration hiral pointing book her desk seated wooden gesturing toward investing mummies framed monochrome folk artwork behind white eyelet blouse relaxed smile goel madhubani art office founder promotional indian about",
 "kit": "portrait",
-"kit_rank": 2
+"kit_rank": 3
 },
 {
 "id": "IFM-073",
@@ -1755,8 +1755,8 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "candid warm natural unposed relaxed friendly celebration hiral working laptop under branded slide seated wooden table her macbook smiling camera book propped beside investing mummies wall screen behind white eyelet blouse goel founder about",
-"kit": "teaching",
-"kit_rank": 1
+"kit": "portrait",
+"kit_rank": 3
 },
 {
 "id": "IFM-075",
@@ -1781,8 +1781,8 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio hiral seated hands table branded screen wooden folded surface smiling camera investing mummies slide fills behind her white eyelet sleeve blouse goel founder portrait warm workshop about",
-"kit": "teaching",
-"kit_rank": 2
+"kit": "portrait",
+"kit_rank": 3
 },
 {
 "id": "IFM-076",
@@ -1806,7 +1806,9 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "IFM / In-house",
-"search_terms": "candid warm natural unposed relaxed friendly celebration clip hiral reading book table candid side profile glasses open spread colourful illustrated investing mummies boardroom branded slide screen above white eyelet blouse goel founder behind scenes video"
+"search_terms": "candid warm natural unposed relaxed friendly celebration clip hiral reading book table candid side profile glasses open spread colourful illustrated investing mummies boardroom branded slide screen above white eyelet blouse goel founder behind scenes video",
+"kit": "candid",
+"kit_rank": 3
 },
 {
 "id": "IFM-077",
@@ -3326,7 +3328,9 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "founder laptop attendees engaged hiral black pink works macbook foreground while four women behind her watch presentation attentively asset classes whiteboard visible left coffee mug water glasses sit nearby workshop attentive financial literacy boardroom investing session"
+"search_terms": "founder laptop attendees engaged hiral black pink works macbook foreground while four women behind her watch presentation attentively asset classes whiteboard visible left coffee mug water glasses sit nearby workshop attentive financial literacy boardroom investing session",
+"kit": "candid",
+"kit_rank": 3
 },
 {
 "id": "IFM-140",
@@ -3375,7 +3379,9 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Unknown",
-"search_terms": "clip hiral leading from laptop founder black top pink trousers sits head table her addressing room attentive women front note filled whiteboard teaching moment mid session video workshop boardroom investing"
+"search_terms": "clip hiral leading from laptop founder black top pink trousers sits head table her addressing room attentive women front note filled whiteboard teaching moment mid session video workshop boardroom investing",
+"kit": "candid",
+"kit_rank": 3
 },
 {
 "id": "IFM-142",
@@ -6070,7 +6076,9 @@ window.IFM_V1 =
 "Hiral"
 ],
 "source": "Unknown",
-"search_terms": "emergency fund rainy day safety net contingency months of expenses buffer goa workshop presenting laptop screen"
+"search_terms": "emergency fund rainy day safety net contingency months of expenses buffer goa workshop presenting laptop screen",
+"kit": "teaching",
+"kit_rank": 2
 },
 {
 "id": "IFM-253",
@@ -8372,7 +8380,9 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Aakara",
-"search_terms": "stree dhan workshop expense sorting activity slide interactive asking which these expenses you think three photo cards takeaway coffee cup card swipe machine food delivery bag participants sort facilitator stands whiteboard beside screen women boardroom table look one holding phone"
+"search_terms": "stree dhan workshop expense sorting activity slide interactive asking which these expenses you think three photo cards takeaway coffee cup card swipe machine food delivery bag participants sort facilitator stands whiteboard beside screen women boardroom table look one holding phone",
+"kit": "teaching",
+"kit_rank": 3
 },
 {
 "id": "IFM-350",
@@ -8423,7 +8433,9 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Aakara",
-"search_terms": "stree dhan workshop ifm game screens projector facilitator demonstrating live web tools big screen investing mummies dashboard coloured tiles calculator showing rupee figure she faces room mid explanation printed roll banner stands beside demo tool"
+"search_terms": "stree dhan workshop ifm game screens projector facilitator demonstrating live web tools big screen investing mummies dashboard coloured tiles calculator showing rupee figure she faces room mid explanation printed roll banner stands beside demo tool",
+"kit": "teaching",
+"kit_rank": 2
 },
 {
 "id": "IFM-352",
@@ -8500,7 +8512,9 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Aakara",
-"search_terms": "stree dhan workshop ifm course pricing slide pitch facilitator cream block print kurta presenting line three cards investing mummies flagship session ₹16 000 introductory 500 young adults foundation june batch dates register now buttons registration"
+"search_terms": "stree dhan workshop ifm course pricing slide pitch facilitator cream block print kurta presenting line three cards investing mummies flagship session ₹16 000 introductory 500 young adults foundation june batch dates register now buttons registration",
+"kit": "teaching",
+"kit_rank": 3
 },
 {
 "id": "IFM-355",
@@ -8525,7 +8539,9 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Aakara",
-"search_terms": "stree dhan workshop two facilitators presenting women together front room one block print kurta second cream dupatta standing either side pricing slide other clips cluster working flip chart leaning over table talking participants team balsabha"
+"search_terms": "stree dhan workshop two facilitators presenting women together front room one block print kurta second cream dupatta standing either side pricing slide other clips cluster working flip chart leaning over table talking participants team balsabha",
+"kit": "teaching",
+"kit_rank": 3
 },
 {
 "id": "IFM-356",
@@ -9245,7 +9261,9 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "aug 2026 corporate workshop teaching from why businesses need cash slide facilitator sits end boardroom table laptop open front her one hand raised mid explanation talking through headed screen behind august office women participants ifm workbook live game stock market"
+"search_terms": "aug 2026 corporate workshop teaching from why businesses need cash slide facilitator sits end boardroom table laptop open front her one hand raised mid explanation talking through headed screen behind august office women participants ifm workbook live game stock market",
+"kit": "teaching",
+"kit_rank": 3
 },
 {
 "id": "IFM-387",
@@ -9425,7 +9443,9 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "aug 2026 corporate workshop teaching market order limit facilitator red striped dress stands profile beside screen both hands raised mid gesture explaining two column slide headed august boardroom office women participants ifm workbook live game stock content library sakshi"
+"search_terms": "aug 2026 corporate workshop teaching market order limit facilitator red striped dress stands profile beside screen both hands raised mid gesture explaining two column slide headed august boardroom office women participants ifm workbook live game stock content library sakshi",
+"kit": "teaching",
+"kit_rank": 3
 },
 {
 "id": "IFM-394",
@@ -9453,7 +9473,9 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "aug 2026 corporate workshop teaching understanding stock valuation basics facilitator red striped dress stands beside screen showing headed slide list questions mapped words profit price quality risk discount glasses bottles premier stationery table foreground august boardroom office women participants ifm"
+"search_terms": "aug 2026 corporate workshop teaching understanding stock valuation basics facilitator red striped dress stands beside screen showing headed slide list questions mapped words profit price quality risk discount glasses bottles premier stationery table foreground august boardroom office women participants ifm",
+"kit": "teaching",
+"kit_rank": 3
 },
 {
 "id": "IFM-395",
@@ -9704,7 +9726,9 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "woman leopard print shirt gesturing both hands raised same holds near her face mid explanation checked handbag hanging from chair arm open ifm workbooks printed booklet spread table front sharing experience small group workbook boardroom sept 2026 content library"
+"search_terms": "woman leopard print shirt gesturing both hands raised same holds near her face mid explanation checked handbag hanging from chair arm open ifm workbooks printed booklet spread table front sharing experience small group workbook boardroom sept 2026 content library",
+"kit": "candid",
+"kit_rank": 3
 },
 {
 "id": "IFM-406",
@@ -9810,7 +9834,9 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "presenter yellow shirt making point finger raised woman bright red framed glasses stands beside open laptop boardroom table index eyes closed mid whiteboard fills wall behind her ribbed glass tumbler sits teaching sept 2026 content library"
+"search_terms": "presenter yellow shirt making point finger raised woman bright red framed glasses stands beside open laptop boardroom table index eyes closed mid whiteboard fills wall behind her ribbed glass tumbler sits teaching sept 2026 content library",
+"kit": "candid",
+"kit_rank": 2
 },
 {
 "id": "IFM-411",
@@ -10105,7 +10131,9 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "hiral reacting suitor screen hand face stands one her card she talks room through swayamvar game session workshop mums sept 2026 content library ifm games reaction"
+"search_terms": "hiral reacting suitor screen hand face stands one her card she talks room through swayamvar game session workshop mums sept 2026 content library ifm games reaction",
+"kit": "teaching",
+"kit_rank": 3
 },
 {
 "id": "IFM-424",
@@ -10284,7 +10312,9 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Sakshi",
-"search_terms": "participant green mid gesture during discussion bright kurta sits hand raised near her face she makes point cream hoodie foreground two more sit behind swayamvar game session workshop mums sept 2026 content library ifm games making"
+"search_terms": "participant green mid gesture during discussion bright kurta sits hand raised near her face she makes point cream hoodie foreground two more sit behind swayamvar game session workshop mums sept 2026 content library ifm games making",
+"kit": "candid",
+"kit_rank": 3
 },
 {
 "id": "IFM-432",
@@ -10959,7 +10989,7 @@ window.IFM_V1 =
 "source": "Unknown",
 "search_terms": "hiral piece camera teens reel takes jun 2026 records vertical day june workshop standing front framed panel green grey artwork dark teal top nine consecutive same short direct address shot she alone frame throughout framing does not change between goel",
 "kit": "portrait",
-"kit_rank": 2
+"kit_rank": 3
 },
 {
 "id": "IFM-461",
@@ -11400,7 +11430,7 @@ window.IFM_V1 =
 "source": "Aakara",
 "search_terms": "candid warm natural unposed relaxed friendly celebration boardroom shoot hiral working laptop same table looking down her macbook mid work glasses hand trackpad orange red sleeveless top unposed candid rather than camera cabling runs across towards floor box foreground world map workshop raw cr3 canon",
 "kit": "candid",
-"kit_rank": 2
+"kit_rank": 3
 },
 {
 "id": "IFM-480",
