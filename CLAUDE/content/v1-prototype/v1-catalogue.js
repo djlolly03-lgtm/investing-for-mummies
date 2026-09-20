@@ -11544,7 +11544,9 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "teens session hiral screen time secret ingredient compounding stands wall mounted her arm stretched out slide headed why reading line about starting early students dark green school uniform sit along near side boardroom table printed worksheets water bottles front them"
+"search_terms": "teens session hiral screen time secret ingredient compounding stands wall mounted her arm stretched out slide headed why reading line about starting early students dark green school uniform sit along near side boardroom table printed worksheets water bottles front them",
+"kit": "teaching",
+"kit_rank": 3
 },
 {
 "id": "IFM-485",
@@ -11667,7 +11669,9 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Sakshi",
-"search_terms": "portrait headshot founder press media kit agency bio teens session hiral pointing out character card slide turns back towards screen points left hand while talking group clean three quarter view face visible ifm well lit behind her backs two students frame bottom shot teaching portrait"
+"search_terms": "portrait headshot founder press media kit agency bio teens session hiral pointing out character card slide turns back towards screen points left hand while talking group clean three quarter view face visible ifm well lit behind her backs two students frame bottom shot teaching portrait",
+"kit": "teaching",
+"kit_rank": 3
 },
 {
 "id": "IFM-490",
@@ -11910,10 +11914,10 @@ window.IFM_V1 =
 "search_terms": "candid warm natural unposed relaxed friendly celebration teens session group listening student answer boy cream shirt sits turned foreground looking answers four classmates across table hiral seated right her arms folded behind laptop all watching him smiling potted cacti coffee machine credenza answering reaction discussion warm candid"
 },
 {
-"id": "IFM-484",
+"id": "IFM-500",
 "title": "Youth workshop — boardroom session in progress",
 "date": "2026-08-01",
-"thumb": "../thumbs/IFM-484.jpg",
+"thumb": "../thumbs/IFM-500.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1UGr9gk4hJosyR5b2voubp53WRWTr0ATQ/view",
 "description": "Wide of a long boardroom table with teenage participants either side, printed worksheets and water bottles in front of them, a facilitator standing at the far end. Warm overhead strip lighting, wood-panelled walls.",
@@ -11932,15 +11936,13 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "youth workshop boardroom session progress wide long table teenage participants either side printed worksheets water bottles front them facilitator standing far end warm overhead strip lighting wood panelled walls wealth conversation venue games whiteboard",
-"kit": "teaching",
-"kit_rank": 3
+"search_terms": "youth workshop boardroom session progress wide long table teenage participants either side printed worksheets water bottles front them facilitator standing far end warm overhead strip lighting wood panelled walls wealth conversation venue games whiteboard"
 },
 {
-"id": "IFM-485",
+"id": "IFM-501",
 "title": "Women’s cohort — full group photo on the venue steps",
 "date": "2026-08-07",
-"thumb": "../thumbs/IFM-485.jpg",
+"thumb": "../thumbs/IFM-501.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1ochr5gEbRgQYN9ge85eMW7wXbIHOu95s/view",
 "description": "Around twenty women stand and crouch in three rows on a carpeted venue staircase for a full-cohort group photo, most in kurtas and summer dresses, several holding IFM workbooks.",
@@ -11958,10 +11960,10 @@ window.IFM_V1 =
 "search_terms": "women cohort full group photo venue steps around twenty stand crouch three rows carpeted staircase most kurtas summer dresses several holding ifm workbooks wealth conversation workshop games whiteboard"
 },
 {
-"id": "IFM-486",
+"id": "IFM-502",
 "title": "The Wealth Conversation — title slide and presenter",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-486.jpg",
+"thumb": "../thumbs/IFM-502.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1x-jvZs9hX6DrWfQ6NZChNwoM5p6AflRe/view",
 "description": "A presenter in a pale patterned kurta stands beside a wall-mounted screen showing the navy \"THE WEALTH CONVERSATION\" title card, a laptop open on the console beside her. Wood-paneled venue wall, warm downlights.",
@@ -11980,10 +11982,10 @@ window.IFM_V1 =
 "search_terms": "wealth conversation title slide presenter pale patterned kurta stands beside wall mounted screen showing navy card laptop open console her wood paneled venue warm downlights workshop games whiteboard"
 },
 {
-"id": "IFM-487",
+"id": "IFM-503",
 "title": "The Wealth Conversation — venue wide from the back",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-487.jpg",
+"thumb": "../thumbs/IFM-503.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1gmQPRL5eZ09xz-PEF9wxnLoobFYG6uJc/view",
 "description": "Wide of the venue from behind the seating: patterned wallpaper, a bookshelf wall, a hanging pendant lamp, and the presenter small at the front beside the screen with a laptop on a stand.",
@@ -12002,10 +12004,10 @@ window.IFM_V1 =
 "search_terms": "wealth conversation venue wide from back behind seating patterned wallpaper bookshelf wall hanging pendant lamp presenter small front beside screen laptop stand workshop games whiteboard"
 },
 {
-"id": "IFM-488",
+"id": "IFM-504",
 "title": "The Wealth Conversation — presenter at the laptop stand",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-488.jpg",
+"thumb": "../thumbs/IFM-504.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1Y2o9VRvoN4D4vvdXpO4ImGLw6fXoySUw/view",
 "description": "The presenter stands at a laptop on a tall stand, one hand raised, an illustrated slide on the screen behind her. Upholstered chairs and a patterned wall frame the shot.",
@@ -12024,10 +12026,10 @@ window.IFM_V1 =
 "search_terms": "wealth conversation presenter laptop stand stands tall one hand raised illustrated slide screen behind her upholstered chairs patterned wall frame shot workshop venue games whiteboard"
 },
 {
-"id": "IFM-489",
+"id": "IFM-505",
 "title": "The Wealth Conversation — addressing the seated room",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-489.jpg",
+"thumb": "../thumbs/IFM-505.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1yuCtZVc-h9MXi2QnXFc6KC-Rz7sLR-ic/view",
 "description": "Shot from behind the presenter in a blue-and-white patterned kurta as she addresses a room of seated women, hands mid-gesture. The audience fills the frame in front of her.",
@@ -12044,15 +12046,13 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "wealth conversation addressing seated room shot from behind presenter blue white patterned kurta she addresses women hands mid gesture audience fills frame front her workshop venue games whiteboard",
-"kit": "teaching",
-"kit_rank": 3
+"search_terms": "wealth conversation addressing seated room shot from behind presenter blue white patterned kurta she addresses women hands mid gesture audience fills frame front her workshop venue games whiteboard"
 },
 {
-"id": "IFM-490",
+"id": "IFM-506",
 "title": "The Wealth Conversation — the room listening",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-490.jpg",
+"thumb": "../thumbs/IFM-506.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1N6frdGS80_ll25OoTCNGBeWQDYALe6kd/view",
 "description": "The presenter in the patterned kurta stands at the side of a long conference table lined with women, papers and glasses in front of them, all turned toward her.",
@@ -12072,10 +12072,10 @@ window.IFM_V1 =
 "search_terms": "wealth conversation room listening presenter patterned kurta stands side long conference table lined women papers glasses front them all turned toward her workshop venue games whiteboard"
 },
 {
-"id": "IFM-491",
+"id": "IFM-507",
 "title": "Swayamvar game on the venue screen — “Meet the Suitors”",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-491.jpg",
+"thumb": "../thumbs/IFM-507.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1Qzv7qodDT7VspOlSWH1aOsXqprBr906I/view",
 "description": "A wall-mounted screen showing the Swayamvar game’s \"Meet the Suitors\" panel with two candidate cards side by side, a participant in black standing watching it from the foreground.",
@@ -12093,10 +12093,10 @@ window.IFM_V1 =
 "search_terms": "candid warm natural unposed relaxed friendly celebration swayamvar game venue screen meet suitors wall mounted showing panel two candidate cards side participant black standing watching from foreground wealth conversation workshop games whiteboard"
 },
 {
-"id": "IFM-492",
+"id": "IFM-508",
 "title": "IFM games menu — “Pick a Game to Start!”",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-492.jpg",
+"thumb": "../thumbs/IFM-508.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/14WcxpUBrs0VK8cTXYGfVlrw-TKp564bj/view",
 "description": "Screenshot of the IFM games launcher: a dark green header reading \"Pick a Game to Start!\" above a grid of nine game tiles — Money Map, Lifestyle Time Machine, Need/Want/Value, Stock Rush, Asset Race, Swipe Right on SIP, Swipe Right LIVE and Broke by Friday LIVE.",
@@ -12117,10 +12117,10 @@ window.IFM_V1 =
 "search_terms": "sip systematic investment plan monthly investing ifm games menu pick game start screenshot launcher dark green header reading above grid nine tiles money map lifestyle time machine need want value stock rush asset race swipe right sip live broke friday wealth conversation workshop venue whiteboard"
 },
 {
-"id": "IFM-493",
+"id": "IFM-509",
 "title": "Whiteboard working session — writing up the group’s answers",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-493.jpg",
+"thumb": "../thumbs/IFM-509.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1sv14TlqfLO7_AyAPV2Xly6vAy1Ti9dGI/view",
 "description": "A facilitator in a white top and red trousers stands at a whiteboard mid-sentence, marker in hand, boxes and arrows already drawn up. Taken from the back of the room over a participant’s shoulder.",
@@ -12140,10 +12140,10 @@ window.IFM_V1 =
 "search_terms": "whiteboard working session writing group answers facilitator white top red trousers stands mid sentence marker hand boxes arrows already drawn taken from back room over participant shoulder wealth conversation workshop venue games"
 },
 {
-"id": "IFM-494",
+"id": "IFM-510",
 "title": "Whiteboard working session — the board filling up",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-494.jpg",
+"thumb": "../thumbs/IFM-510.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1goU9m2rAgIO5k5Gdi13BsDjQq5sVwwYO/view",
 "description": "Same whiteboard session from a lower angle: the facilitator in red trousers reaching up to add to a diagram, the board now carrying several linked boxes of the group’s answers.",
@@ -12162,10 +12162,10 @@ window.IFM_V1 =
 "search_terms": "whiteboard working session board filling same from lower angle facilitator red trousers reaching add diagram now carrying several linked boxes group answers wealth conversation workshop venue games"
 },
 {
-"id": "IFM-495",
+"id": "IFM-511",
 "title": "Participant playing an IFM game on her laptop",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-495.jpg",
+"thumb": "../thumbs/IFM-511.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1kzTB4zYq-bJ0F8LAoQVVrx0NVaejXl9U/view",
 "description": "Over-the-shoulder of a participant in a yellow knit top working an IFM game on her laptop at the boardroom table, the same game mirrored on the wall screen ahead of her.",
@@ -12183,10 +12183,10 @@ window.IFM_V1 =
 "search_terms": "participant playing ifm game her laptop over shoulder yellow knit top working boardroom table same mirrored wall screen ahead wealth conversation workshop venue games whiteboard"
 },
 {
-"id": "IFM-496",
+"id": "IFM-512",
 "title": "Participant at the laptop, game screen ahead",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-496.jpg",
+"thumb": "../thumbs/IFM-512.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1PAKUE7vPkwSdTgtTW3EUiuF5k3sCEIWC/view",
 "description": "A participant in a yellow knit top at the boardroom table with her laptop open on an IFM game, the wall-mounted screen in front of her showing a red-and-green choice panel.",
@@ -12204,10 +12204,10 @@ window.IFM_V1 =
 "search_terms": "participant laptop game screen ahead yellow knit top boardroom table her open ifm wall mounted front showing red green choice panel wealth conversation workshop venue games whiteboard"
 },
 {
-"id": "IFM-497",
+"id": "IFM-513",
 "title": "The Wealth Conversation — closing at the title screen",
 "date": "2026-08-14",
-"thumb": "../thumbs/IFM-497.jpg",
+"thumb": "../thumbs/IFM-513.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/10sx3DII1LgEP7jI72WfY_Ui40iwIeLWK/view",
 "description": "The presenter stands beside the wall screen showing \"THE WEALTH CONVERSATION\" title card, addressing the room with one hand open. Console table and warm venue lighting.",
