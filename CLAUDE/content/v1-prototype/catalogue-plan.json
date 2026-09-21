@@ -1,0 +1,1610 @@
+[
+ {
+  "folder": "IFM (Aakara delivery tree)/September/Reels/Teachers Day",
+  "treatment": "row-per-reel",
+  "rows": 4,
+  "why": "4 finished reels plus 1 cover image. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".mp4": 4,
+   ".png": 1
+  },
+  "names": [
+   "baa-baa-black-sheep-CAPTIONED.mp4",
+   "baa-baa-black-sheep-SHORT-CAPTIONED.mp4",
+   "baa-baa-black-sheep-SHORT.mp4"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Reels/Hiral expertise ",
+  "treatment": "row-per-reel",
+  "rows": 2,
+  "why": "2 finished reels plus 2 cover images. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 4,
+  "B": 4,
+  "C": 0,
+  "ext": {
+   ".png": 2,
+   ".mp4": 2
+  },
+  "names": [
+   "ABOUT HIRAL 2.png",
+   "Hiral Expeties 1.mp4",
+   "Hiral expertise 2.mp4"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/September/Reels/Brand awareness",
+  "treatment": "row-per-reel",
+  "rows": 2,
+  "why": "2 finished reels plus 1 cover image. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 3,
+  "B": 3,
+  "C": 0,
+  "ext": {
+   ".mp4": 2,
+   ".png": 1
+  },
+  "names": [
+   "6B7F606F-3B2E-4512-8A45-A28AB0719295.mp4",
+   "Brand Awareness .mp4",
+   "brand awareness.png"
+  ]
+ },
+ {
+  "folder": "Pictures",
+  "treatment": "catch-all-new",
+  "rows": 1,
+  "why": "121 camera-serial files. A session dump: the frames are interchangeable and nobody searches for a specific serial. Catch-all is correct, and one row per frame is the clutter the moments rule exists to prevent. No catch-all row exists for it yet, so one is needed.",
+  "files": 121,
+  "B": 0,
+  "C": 121,
+  "ext": {
+   ".jpg": 99,
+   ".mov": 21,
+   ".mp4": 1
+  },
+  "names": [
+   "1cf64ea4-adb6-4b42-9c66-ae33f577d4a4.jpg",
+   "6690077e-5c22-4f18-bfc5-118c11cd6db3.jpg",
+   "775d04a5-a65d-4f27-9760-37534f922cea.jpg"
+  ]
+ },
+ {
+  "folder": "Sakshi uploads",
+  "treatment": "catch-all-new",
+  "rows": 1,
+  "why": "16 camera-serial files. A session dump: the frames are interchangeable and nobody searches for a specific serial. Catch-all is correct, and one row per frame is the clutter the moments rule exists to prevent. No catch-all row exists for it yet, so one is needed.",
+  "files": 16,
+  "B": 0,
+  "C": 16,
+  "ext": {
+   ".mov": 7,
+   ".heic": 6,
+   ".jpg": 3
+  },
+  "names": [
+   "IMG_4223.MOV",
+   "IMG_4225.HEIC",
+   "IMG_4227.HEIC"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/S4 Finance Myths",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "12 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 12,
+  "B": 0,
+  "C": 12,
+  "ext": {
+   ".png": 12
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 1.png",
+   "Artboard 2.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/S5 finance word game",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "12 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 12,
+  "B": 0,
+  "C": 12,
+  "ext": {
+   ".png": 12
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 1.png",
+   "Artboard 2.png"
+  ]
+ },
+ {
+  "folder": "Workshop Pictures",
+  "treatment": "catch-all-small-new",
+  "rows": 1,
+  "why": "11 camera-serial files — a small dump. Catch-all, but small enough that moments could be pulled out later if the content warrants it. No catch-all row exists for it yet, so one is needed.",
+  "files": 11,
+  "B": 0,
+  "C": 11,
+  "ext": {
+   ".jpg": 6,
+   ".jpeg": 3,
+   ".heic": 2
+  },
+  "names": [
+   "IMG_4249.HEIC",
+   "IMG_4256.HEIC",
+   "IMG_6155.JPG"
+  ]
+ },
+ {
+  "folder": "Hiral Goel",
+  "treatment": "catch-all-small-new",
+  "rows": 1,
+  "why": "10 camera-serial files — a small dump. Catch-all, but small enough that moments could be pulled out later if the content warrants it. No catch-all row exists for it yet, so one is needed.",
+  "files": 10,
+  "B": 0,
+  "C": 10,
+  "ext": {
+   ".jpg": 9,
+   ".mov": 1
+  },
+  "names": [
+   "IMG_6512.JPG",
+   "IMG_6619.JPG",
+   "IMG_6620.JPG"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/S6 saving investing",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "10 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 10,
+  "B": 0,
+  "C": 10,
+  "ext": {
+   ".png": 10
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 1.png",
+   "Artboard 2.png"
+  ]
+ },
+ {
+  "folder": "Space x (IFM carousel artboards)/carousel 1",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "9 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 9,
+  "B": 9,
+  "C": 0,
+  "ext": {
+   ".jpg": 9
+  },
+  "names": [
+   "Space-X-carousel-1_01.jpg",
+   "Space-X-carousel-1_02.jpg",
+   "Space-X-carousel-1_03.jpg"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Space x (IPO carousel)",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "9 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 9,
+  "B": 0,
+  "C": 9,
+  "ext": {
+   ".jpg": 9
+  },
+  "names": [
+   "Space-X-carousel-1_01.jpg",
+   "Space-X-carousel-1_02.jpg",
+   "Space-X-carousel-1_03.jpg"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Carousels/headline news",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "7 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 8,
+  "B": 8,
+  "C": 0,
+  "ext": {
+   ".png": 7,
+   ".psd": 1
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/September/Carousels/JIO IPO",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "8 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 8,
+  "B": 8,
+  "C": 0,
+  "ext": {
+   ".png": 8
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Carousels/IPO News Item",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "8 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 8,
+  "B": 8,
+  "C": 0,
+  "ext": {
+   ".png": 8
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "Space x (IFM carousel artboards)/Carousel 2",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "7 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 7,
+  "B": 7,
+  "C": 0,
+  "ext": {
+   ".jpg": 7
+  },
+  "names": [
+   "Space-X-carousel-2_01.jpg",
+   "Space-X-carousel-2_02.jpg",
+   "Space-X-carousel-2_03.jpg"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Carousels/Why IFM Exists",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "6 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 7,
+  "B": 7,
+  "C": 0,
+  "ext": {
+   ".png": 6,
+   ".psd": 1
+  },
+  "names": [
+   "Frame 1.png",
+   "Frame 2.png",
+   "Frame 3.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Space x — Carousel 2",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "7 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 7,
+  "B": 0,
+  "C": 7,
+  "ext": {
+   ".jpg": 7
+  },
+  "names": [
+   "Space-X-carousel-2_01.jpg",
+   "Space-X-carousel-2_02.jpg",
+   "Space-X-carousel-2_03.jpg"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Why IFM Exists",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "6 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 7,
+  "B": 0,
+  "C": 7,
+  "ext": {
+   ".png": 6,
+   ".psd": 1
+  },
+  "names": [
+   "Frame 1.png",
+   "Frame 2.png",
+   "Frame 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/Carousels/10 minute money",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "6 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 6,
+  "C": 0,
+  "ext": {
+   ".png": 6
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/Carousels/Asset class",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "6 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 6,
+  "C": 0,
+  "ext": {
+   ".jpg": 6
+  },
+  "names": [
+   "asset-classes-Recovered_01.jpg",
+   "asset-classes-Recovered_02.jpg",
+   "asset-classes-Recovered_03.jpg"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Carousels/TCS QResults News",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "6 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 6,
+  "C": 0,
+  "ext": {
+   ".jpg": 6
+  },
+  "names": [
+   "01.jpg",
+   "02.jpg",
+   "03.jpg"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Carousels/parents day national",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "6 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 6,
+  "C": 0,
+  "ext": {
+   ".png": 6
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Carousels/News NSE BSE",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "6 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 6,
+  "C": 0,
+  "ext": {
+   ".png": 6
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Carousels/Power of Compounding",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "6 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 6,
+  "C": 0,
+  "ext": {
+   ".jpg": 6
+  },
+  "names": [
+   "power-of-compounding-finale_01.jpg",
+   "power-of-compounding-finale_02.jpg",
+   "power-of-compounding-finale_03.jpg"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Carousels/What IFM is Not",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 6,
+  "C": 0,
+  "ext": {
+   ".png": 5,
+   ".psd": 1
+  },
+  "names": [
+   "Frame 1.png",
+   "Frame 2.png",
+   "Frame 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Stories/S1 Finance was not made easy",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 6,
+  "C": 0,
+  "ext": {
+   ".png": 5,
+   ".psd": 1
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Stories/S2 Words people secretly Google",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 6,
+  "C": 0,
+  "ext": {
+   ".png": 5,
+   ".psd": 1
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Stories/S4 Finance Myths",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "6 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 6,
+  "C": 0,
+  "ext": {
+   ".png": 6
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Stories/S5 finance word game",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "6 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 6,
+  "C": 0,
+  "ext": {
+   ".png": 6
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/S1 Finance was not made easy",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 0,
+  "C": 6,
+  "ext": {
+   ".png": 5,
+   ".psd": 1
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Website game",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "6 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 0,
+  "C": 6,
+  "ext": {
+   ".png": 6
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 1.png",
+   "Artboard 2.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/What IFM is Not",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 6,
+  "B": 0,
+  "C": 6,
+  "ext": {
+   ".png": 5,
+   ".psd": 1
+  },
+  "names": [
+   "Frame 1.png",
+   "Frame 2.png",
+   "Frame 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/Carousels/Green flag ",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/Stories/MML 2",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/Stories/asset ",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Carousels/Money myths believing",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Carousels/Rich people money gene",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".jpg": 5
+  },
+  "names": [
+   "magic-money-gene_01.jpg",
+   "magic-money-gene_02.jpg",
+   "magic-money-gene_03.jpg"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Carousels/Savings-Expense Formula",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".jpg": 5
+  },
+  "names": [
+   "savings-expense_01.jpg",
+   "savings-expense_02.jpg",
+   "savings-expense_03.jpg"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Carousels/Self Care Day",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Carousels/starbucks coffee",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Stories/Finance pages confuse you",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Stories/mini money lesson",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/September/Carousels/Reviews",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Carousels/Savings vs Investing",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Carousels/School",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".jpg": 5
+  },
+  "names": [
+   "School_01.jpg",
+   "School_02.jpg",
+   "School_03.jpg"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Carousels/Why Women Feel Left Out",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 4,
+   ".psd": 1
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Stories/S6 saving investing",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 5,
+  "C": 0,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Power of Compounding",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 0,
+  "C": 5,
+  "ext": {
+   ".jpg": 5
+  },
+  "names": [
+   "power-of-compounding---Copy_01.jpg",
+   "power-of-compounding---Copy_02.jpg",
+   "power-of-compounding---Copy_03.jpg"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Savings vs Investing",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 0,
+  "C": 5,
+  "ext": {
+   ".png": 5
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/School",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "5 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 0,
+  "C": 5,
+  "ext": {
+   ".jpg": 5
+  },
+  "names": [
+   "School_01.jpg",
+   "School_02.jpg",
+   "School_03.jpg"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Why Women Feel Left Out",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 5,
+  "B": 0,
+  "C": 5,
+  "ext": {
+   ".png": 4,
+   ".psd": 1
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Workshops — Women's",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 4,
+  "B": 4,
+  "C": 0,
+  "ext": {
+   ".png": 4
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/Stories/invest bucket game",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 4,
+  "B": 4,
+  "C": 0,
+  "ext": {
+   ".png": 4
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Stories/meet richa",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 4,
+  "B": 4,
+  "C": 0,
+  "ext": {
+   ".png": 4
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Carousels/Join IFM now",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 4,
+  "B": 4,
+  "C": 0,
+  "ext": {
+   ".png": 3,
+   ".mp4": 1
+  },
+  "names": [
+   "Join Investing for Mummies.mp4",
+   "join ifm now_real-01.png",
+   "join ifm now_real-02.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Carousels/Learning with IFM",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 4,
+  "B": 4,
+  "C": 0,
+  "ext": {
+   ".png": 4
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Stories/Hiral intro",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 4,
+  "B": 4,
+  "C": 0,
+  "ext": {
+   ".png": 4
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Hiral intro",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 4,
+  "B": 0,
+  "C": 4,
+  "ext": {
+   ".png": 4
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Join IFM now",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 4,
+  "B": 0,
+  "C": 4,
+  "ext": {
+   ".png": 3,
+   ".mp4": 1
+  },
+  "names": [
+   "Join Investing for Mummies.mp4",
+   "join ifm now_real-01.png",
+   "join ifm now_real-02.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Learning with IFM",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 4,
+  "B": 0,
+  "C": 4,
+  "ext": {
+   ".png": 4
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Workshops/Women's",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "4 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 4,
+  "B": 0,
+  "C": 4,
+  "ext": {
+   ".png": 4
+  },
+  "names": [
+   "1.png",
+   "2.png",
+   "3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/Stories/youth day",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "3 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 3,
+  "B": 3,
+  "C": 0,
+  "ext": {
+   ".png": 3
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/reels/ever wondered gold",
+  "treatment": "row-per-reel",
+  "rows": 1,
+  "why": "1 finished reel plus 2 cover images. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 3,
+  "B": 3,
+  "C": 0,
+  "ext": {
+   ".png": 2,
+   ".mp4": 1
+  },
+  "names": [
+   "BD3C84F8-553A-487A-8A71-B5F1648B345C.MP4",
+   "gold.png",
+   "gold1.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/July/Stories/hidden fortune game story",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "3 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 3,
+  "B": 3,
+  "C": 0,
+  "ext": {
+   ".png": 3
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/September/Reels/Designer Hand Bag",
+  "treatment": "row-per-reel",
+  "rows": 1,
+  "why": "1 finished reel plus 1 cover image. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 3,
+  "B": 3,
+  "C": 0,
+  "ext": {
+   ".psd": 1,
+   ".mp4": 1,
+   ".png": 1
+  },
+  "names": [
+   "Asset or invest.psd",
+   "Base.mp4",
+   "designer handbag.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/September/Reels/Thali",
+  "treatment": "row-per-reel",
+  "rows": 1,
+  "why": "1 finished reel plus 1 cover image. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 3,
+  "B": 3,
+  "C": 0,
+  "ext": {
+   ".mp4": 1,
+   ".psd": 1,
+   ".png": 1
+  },
+  "names": [
+   "E08219A4-26B0-4E4F-B01B-014C872241CC.mp4",
+   "Food 2.psd",
+   "thaali.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Stories/Website game",
+  "treatment": "row-per-set",
+  "rows": 1,
+  "why": "3 sequential artboards. Finished creative, but the SET is one post — one row for the topic folder, never one per slide.",
+  "files": 3,
+  "B": 3,
+  "C": 0,
+  "ext": {
+   ".png": 3
+  },
+  "names": [
+   "Artboard 1.png",
+   "Artboard 2.png",
+   "Artboard 3.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/reels/1x1",
+  "treatment": "row-per-reel",
+  "rows": 1,
+  "why": "1 finished reel plus 1 cover image. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 2,
+  "B": 2,
+  "C": 0,
+  "ext": {
+   ".png": 1,
+   ".mp4": 1
+  },
+  "names": [
+   "1x1 ratio1.png",
+   "7CD1EB77-0824-48F7-A4C6-86920B8255CF.mp4"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/reels/Asset Class 2",
+  "treatment": "row-per-reel",
+  "rows": 1,
+  "why": "1 finished reel plus 1 cover image. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 2,
+  "B": 2,
+  "C": 0,
+  "ext": {
+   ".mp4": 1,
+   ".png": 1
+  },
+  "names": [
+   "CC2023BB-5A96-4769-BC7D-45DC7F409DBE.MP4",
+   "asset class2_.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/reels/Asset class 1",
+  "treatment": "row-per-reel",
+  "rows": 1,
+  "why": "1 finished reel plus 1 cover image. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 2,
+  "B": 2,
+  "C": 0,
+  "ext": {
+   ".mp4": 1,
+   ".png": 1
+  },
+  "names": [
+   "C1D1E80C-B2BF-4DBE-AED8-8BCC646D3A2F.MP4",
+   "asset class 1.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/reels/Woman's equality ",
+  "treatment": "row-per-reel",
+  "rows": 1,
+  "why": "1 finished reel plus 1 cover image. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 2,
+  "B": 2,
+  "C": 0,
+  "ext": {
+   ".mp4": 1,
+   ".png": 1
+  },
+  "names": [
+   "Woman's equality day.mp4",
+   "women equality.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/September/Reels/Ranking reel",
+  "treatment": "row-per-reel",
+  "rows": 1,
+  "why": "1 finished reel plus 1 cover image. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 2,
+  "B": 2,
+  "C": 0,
+  "ext": {
+   ".mp4": 1,
+   ".png": 1
+  },
+  "names": [
+   "Ranking Video.mp4",
+   "ranking reel.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/reels/RBI (part 1)",
+  "treatment": "row-per-reel",
+  "rows": 1,
+  "why": "1 finished reel. A reel is the deliverable; its cover art is the thumbnail, not a separate asset.",
+  "files": 1,
+  "B": 1,
+  "C": 0,
+  "ext": {
+   ".mp4": 1
+  },
+  "names": [
+   "D578CA7A-989F-4619-9699-06CA2A3ADD3D.MP4"
+  ]
+ },
+ {
+  "folder": "Content Library/IFM feedback videos",
+  "treatment": "row-per-file",
+  "rows": 1,
+  "why": "1 finished video, individually distinct.",
+  "files": 1,
+  "B": 0,
+  "C": 1,
+  "ext": {
+   ".mov": 1
+  },
+  "names": [
+   "IMG_4248.MOV"
+  ]
+ },
+ {
+  "folder": "Hiral Goel/Teens video/Teens reel",
+  "treatment": "row-per-file",
+  "rows": 1,
+  "why": "1 finished video, individually distinct.",
+  "files": 1,
+  "B": 0,
+  "C": 1,
+  "ext": {
+   ".mov": 1
+  },
+  "names": [
+   "IMG_4254.MOV"
+  ]
+ },
+ {
+  "folder": "Rakshita",
+  "treatment": "catch-all",
+  "rows": 0,
+  "why": "170 camera-serial files. A session dump: the frames are interchangeable and nobody searches for a specific serial. Catch-all is correct, and one row per frame is the clutter the moments rule exists to prevent.",
+  "files": 170,
+  "B": 170,
+  "C": 0,
+  "ext": {
+   ".mov": 165,
+   ".jpg": 5
+  },
+  "names": [
+   "IMG_5996.MOV",
+   "IMG_5997.MOV",
+   "IMG_5998.MOV"
+  ]
+ },
+ {
+  "folder": "Content Library/IFM Aug 2026",
+  "treatment": "catch-all",
+  "rows": 0,
+  "why": "101 camera-serial files. A session dump: the frames are interchangeable and nobody searches for a specific serial. Catch-all is correct, and one row per frame is the clutter the moments rule exists to prevent.",
+  "files": 101,
+  "B": 101,
+  "C": 0,
+  "ext": {
+   ".mov": 66,
+   ".heic": 20,
+   ".jpg": 14,
+   ".mp4": 1
+  },
+  "names": [
+   "1787030215204471.mp4",
+   "IMG_0880.MOV",
+   "IMG_0891.MOV"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/workshop/RSS workshop",
+  "treatment": "catch-all",
+  "rows": 0,
+  "why": "87 camera-serial files. A session dump: the frames are interchangeable and nobody searches for a specific serial. Catch-all is correct, and one row per frame is the clutter the moments rule exists to prevent.",
+  "files": 87,
+  "B": 87,
+  "C": 0,
+  "ext": {
+   ".mp4": 85,
+   ".jpg": 2
+  },
+  "names": [
+   "07F6DB39-5773-4393-91E7-ED1F088150D6.MP4",
+   "0A91119F-7D21-466D-A865-A2C432C98DE3.MP4",
+   "0A9835D8-C8E6-41E9-B087-FF7537B260DC.MP4"
+  ]
+ },
+ {
+  "folder": "Content Library/IFM Games",
+  "treatment": "catch-all",
+  "rows": 0,
+  "why": "25 camera-serial files. A session dump: the frames are interchangeable and nobody searches for a specific serial. Catch-all is correct, and one row per frame is the clutter the moments rule exists to prevent.",
+  "files": 25,
+  "B": 25,
+  "C": 0,
+  "ext": {
+   ".mov": 16,
+   ".heic": 8,
+   ".jpg": 1
+  },
+  "names": [
+   "IMG_2350.HEIC",
+   "IMG_2351.HEIC",
+   "IMG_2356.JPG"
+  ]
+ },
+ {
+  "folder": "Rakshita/camera",
+  "treatment": "catch-all",
+  "rows": 0,
+  "why": "12 camera-serial files. A session dump: the frames are interchangeable and nobody searches for a specific serial. Catch-all is correct, and one row per frame is the clutter the moments rule exists to prevent.",
+  "files": 17,
+  "B": 17,
+  "C": 0,
+  "ext": {
+   ".jpg": 11,
+   ".cr3": 5,
+   ".mp4": 1
+  },
+  "names": [
+   "4E7A5748.CR3",
+   "4E7A5748.JPG",
+   "4E7A5749.CR3"
+  ]
+ },
+ {
+  "folder": "Content Library/AI Videos — Jun 2026 (Claude)",
+  "treatment": "relink",
+  "rows": 0,
+  "why": "Already catalogued as IFM-040..053. Those rows point at our own hosted copies (ifm-deploy.vercel.app/ifm-logo-pizza-slices...), not at the Drive originals, so the Drive files read as uncatalogued. Relink the existing rows to the Drive originals. NOT 17 new rows.",
+  "files": 17,
+  "B": 0,
+  "C": 17,
+  "ext": {
+   ".mp4": 17
+  },
+  "names": [
+   "ifm-3d-pizza-nike-8s.mp4",
+   "ifm-3d-pizza-nike-kling.mp4",
+   "ifm-hero-lockup-9s.mp4"
+  ]
+ },
+ {
+  "folder": "Certificates",
+  "treatment": "exclude-consent",
+  "rows": 0,
+  "why": "Certificate images. CLAUDE.md records these show minors and need written parental consent under the DPDP Act. Excluded pending verification — not catalogued, not copied, not published.",
+  "files": 9,
+  "B": 0,
+  "C": 9,
+  "ext": {
+   ".heic": 9
+  },
+  "names": [
+   "Copy of IMG_4256.HEIC",
+   "Copy of IMG_4258.HEIC",
+   "IMG_1847.HEIC"
+  ]
+ },
+ {
+  "folder": "Hiral Goel/Teens video",
+  "treatment": "relink",
+  "rows": 0,
+  "why": "IFM-460 is titled \"Hiral piece-to-camera for the teens reel -- 9 takes\" and links ONE file, leaving the other 8 unreachable. It is already a catch-all by its own description; it just points at a file instead of at its folder. Relink IFM-460 to the folder. NOT 8 new rows.",
+  "files": 8,
+  "B": 0,
+  "C": 8,
+  "ext": {
+   ".mp4": 8
+  },
+  "names": [
+   "20260625_141723.mp4",
+   "20260625_141732.mp4",
+   "20260625_141939.mp4"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/reels/RBI pt2",
+  "treatment": "unclear",
+  "rows": 0,
+  "why": "1 files, no recognisable set shape. Needs a human look before any row is written.",
+  "files": 1,
+  "B": 1,
+  "C": 0,
+  "ext": {
+   ".png": 1
+  },
+  "names": [
+   "rbi 2.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/reels/indp day",
+  "treatment": "unclear",
+  "rows": 0,
+  "why": "1 files, no recognisable set shape. Needs a human look before any row is written.",
+  "files": 1,
+  "B": 1,
+  "C": 0,
+  "ext": {
+   ".png": 1
+  },
+  "names": [
+   "ind day.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/August/reels/jackson hole",
+  "treatment": "unclear",
+  "rows": 0,
+  "why": "1 files, no recognisable set shape. Needs a human look before any row is written.",
+  "files": 1,
+  "B": 1,
+  "C": 0,
+  "ext": {
+   ".png": 1
+  },
+  "names": [
+   "jackson hole.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/September/Reels/GDP",
+  "treatment": "unclear",
+  "rows": 0,
+  "why": "1 files, no recognisable set shape. Needs a human look before any row is written.",
+  "files": 1,
+  "B": 1,
+  "C": 0,
+  "ext": {
+   ".png": 1
+  },
+  "names": [
+   "gdp.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Carousels/Right time to learn",
+  "treatment": "unclear",
+  "rows": 0,
+  "why": "1 files, no recognisable set shape. Needs a human look before any row is written.",
+  "files": 1,
+  "B": 1,
+  "C": 0,
+  "ext": {
+   ".png": 1
+  },
+  "names": [
+   "Artboard 2.png"
+  ]
+ },
+ {
+  "folder": "IFM (Aakara delivery tree)/June/Social media /Reels/Inflation",
+  "treatment": "unclear",
+  "rows": 0,
+  "why": "1 files, no recognisable set shape. Needs a human look before any row is written.",
+  "files": 1,
+  "B": 1,
+  "C": 0,
+  "ext": {
+   ".png": 1
+  },
+  "names": [
+   "500 rupee shrinks.png"
+  ]
+ },
+ {
+  "folder": "Content Library",
+  "treatment": "unclear",
+  "rows": 0,
+  "why": "1 files, no recognisable set shape. Needs a human look before any row is written.",
+  "files": 1,
+  "B": 0,
+  "C": 1,
+  "ext": {
+   ".png": 1
+  },
+  "names": [
+   "TEST — join ifm now_real-01.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Inflation (reel)",
+  "treatment": "unclear",
+  "rows": 0,
+  "why": "1 files, no recognisable set shape. Needs a human look before any row is written.",
+  "files": 1,
+  "B": 0,
+  "C": 1,
+  "ext": {
+   ".png": 1
+  },
+  "names": [
+   "500 rupee shrinks.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/Right time to learn",
+  "treatment": "unclear",
+  "rows": 0,
+  "why": "1 files, no recognisable set shape. Needs a human look before any row is written.",
+  "files": 1,
+  "B": 0,
+  "C": 1,
+  "ext": {
+   ".png": 1
+  },
+  "names": [
+   "Artboard 2.png"
+  ]
+ },
+ {
+  "folder": "Content Library/Aakara — June 2026/S2 Words people secretly Google",
+  "treatment": "exclude-working",
+  "rows": 0,
+  "why": "Nothing but design sources (1 PSD) and/or RAW masters duplicating their own JPEG (0). Not browsable assets.",
+  "files": 1,
+  "B": 0,
+  "C": 1,
+  "ext": {
+   ".psd": 1
+  },
+  "names": [
+   "S2 words people google.psd"
+  ]
+ }
+]
