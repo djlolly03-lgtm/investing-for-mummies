@@ -850,14 +850,14 @@ window.IFM_V1 =
 "id": "IFM-028",
 "title": "Story S2 — Words people secretly Google",
 "date": "2026-06-11",
-"thumb": "",
+"thumb": "../thumbs/IFM-028.jpg",
 "video": "",
 "drive": "https://drive.google.com/drive/folders/17U-InCX9Lwgf-PYS7lSsDA6HGB-_Ayzp",
 "description": "(Not yet analysed — only a .psd source file delivered.)",
 "session": "",
 "slide_text": "",
 "silent": false,
-"type": "Video",
+"type": "Image",
 "status": "Raw",
 "format": "",
 "topic": [],
@@ -1050,7 +1050,7 @@ window.IFM_V1 =
 "date": "2026-06-13",
 "thumb": "../thumbs/IFM-037.jpg",
 "video": "",
-"drive": "https://ifm-deploy.vercel.app/ifm-hero-lockup-9s.mp4",
+"drive": "https://drive.google.com/file/d/1LdsPLgUt8FqprAosINrxs5UgMt_MrBsa/view",
 "description": "9s 16:9 premium homepage-hero reveal: the metallic IFM tree emblem (brushed gunmetal + obsidian glass) does one slow 360-degree rotation beside a static 'Investing for Mummies' serif wordmark; dark cinematic environment with volumetric fog and god-rays. Higgsfield seedance_2_0 animated from a nano-banana lockup frame.",
 "session": "",
 "slide_text": "Investing for Mummies",
@@ -1112,7 +1112,7 @@ window.IFM_V1 =
 "date": "2026-06-14",
 "thumb": "../thumbs/IFM-040.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-040.mp4",
-"drive": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-kling.mp4",
+"drive": "https://drive.google.com/file/d/1msT8fswsGC94T1ZH8uNNIij9ABfzhovA/view",
 "description": "The round 'Investing for Mummies' tree badge sits on a plain white background and splits like a pizza into 5 wedge slices that drift gently apart. Square 1:1, ~5s, silent.",
 "session": "",
 "slide_text": "",
@@ -1133,7 +1133,7 @@ window.IFM_V1 =
 "date": "2026-06-14",
 "thumb": "../thumbs/IFM-041.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-041.mp4",
-"drive": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-seedance.mp4",
+"drive": "https://drive.google.com/file/d/1MELNrR71y1fAZ9omNfJUHPWY-bhBNDY0/view",
 "description": "Same concept as IFM-040 — the round IFM tree badge splitting into 5 pizza wedges on white — rendered with Seedance 2.0; softer motion, smaller file. 1:1, ~5s, silent.",
 "session": "",
 "slide_text": "",
@@ -1152,7 +1152,7 @@ window.IFM_V1 =
 "date": "2026-06-14",
 "thumb": "../thumbs/IFM-042.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-042.mp4",
-"drive": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-kling.mp4",
+"drive": "https://drive.google.com/file/d/1r_09_kUDq7wOxW_f7ZgDAudd2jpHSKfu/view",
 "description": "The metallic 3D IFM medallion splits into 5 thick wedge 'slices' that float apart while the camera orbits the circumference; dark moody studio, rim light, glossy reflections, premium commercial grade. 16:9, 5s, silent.",
 "session": "",
 "slide_text": "",
@@ -1171,7 +1171,7 @@ window.IFM_V1 =
 "date": "2026-06-14",
 "thumb": "../thumbs/IFM-043.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-043.mp4",
-"drive": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-8s.mp4",
+"drive": "https://drive.google.com/file/d/1B_cp-dP8spI_xkTpX9J8gdwnys2F6U7f/view",
 "description": "Longer 8s cut of the metallic IFM medallion breaking into 5 fully-separated floating wedges with a dramatic orbit; the 5 pieces read clearly before the reveal. 16:9, silent.",
 "session": "",
 "slide_text": "",
@@ -1190,7 +1190,7 @@ window.IFM_V1 =
 "date": "2026-06-14",
 "thumb": "../thumbs/IFM-050.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-050.mp4",
-"drive": "https://ifm-deploy.vercel.app/pizza-5slices-clean-5s.mp4",
+"drive": "https://drive.google.com/file/d/1-ly7ePKBiKqXMXTlvBv_pyhCdr2ut3A_/view",
 "description": "A plain cheese deep-dish pizza cut into exactly 5 equal slices that separate as the camera arcs and zooms out; clean white-disc IFM badge top-right, no other branding. Top-down, 9:16, 5s, silent.",
 "session": "",
 "slide_text": "",
@@ -9801,7 +9801,7 @@ window.IFM_V1 =
 "date": "2026-08-18",
 "thumb": "../thumbs/IFM-314.jpg",
 "video": "game-assets/ifm-hero-logo.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/game-assets/ifm-hero-logo.mp4",
+"drive": "https://drive.google.com/file/d/1qigjHCFsVrg76LYI_XYs9_Vx_BtAw8e0/view",
 "description": "9s animated logo reveal — the polished 3D metallic IFM medallion rotating into place on a dark smoky ground beside 'Investing for Mummies · nurturing financially confident women'. 1280×720. Used as the intro/outro on reels and as game-screen branding.",
 "session": "",
 "slide_text": "Investing for Mummies · nurturing financially confident women",
@@ -16774,7 +16774,7 @@ window.IFM_V1 =
 "date": "2026-06-25",
 "thumb": "../thumbs/IFM-460.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-460.mp4",
-"drive": "https://drive.google.com/file/d/1ZXDwgT_oLHxzPWl3zbkmRWxo40q1PjrB/view",
+"drive": "https://drive.google.com/drive/folders/1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N",
 "description": "Hiral records a vertical piece-to-camera on the day of the June teens workshop, standing in front of a framed panel of green and grey artwork in a dark teal top. Nine consecutive takes of the same short direct-address piece, shot 14:17–14:22; she is alone in frame throughout and the framing does not change between takes.",
 "session": "Teens workshop — 25 Jun 2026",
 "slide_text": "",
@@ -20917,5 +20917,167 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "hiral presenting inflation simplified seated room wide handheld view caf library venue patterned wallpaper orange pendant lamp stands lectern height side table pale blue outfit speaking audience while screen beside her shows slide illustrated family graphic attendees water bottles low"
+},
+{
+"id": "IFM-548",
+"title": "IFM workshop photo library — full folder (123 files)",
+"date": "2026-09-21",
+"thumb": "../thumbs/IFM-548.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/17XRWi56C7Er-Rywm9rUxu3HZjCG6cada",
+"description": "Catch-all for the shared \"Pictures\" folder: 123 workshop and session photographs from March to August 2026, including group shots of participants around the table with IFM workbooks. Opens the folder, not a single file. Individual moments have not been pulled out of this shoot yet.",
+"session": "",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "ifm workshop photo library full folder 123 files catch all shared pictures session photographs from march august 2026 including group shots participants around table workbooks opens not single file individual moments have been pulled out shoot yet photos raw"
+},
+{
+"id": "IFM-549",
+"title": "Sakshi uploads — the files not yet catalogued (16 of 56)",
+"date": "2026-09-21",
+"thumb": "../thumbs/IFM-549.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/11MncEXMdZy3sP2pTt0zfibLbEn30ldOO",
+"description": "Catch-all for the 16 files in Sakshi's upload folder that have no row of their own — iPhone video and HEIC stills from the 23-25 June 2026 teens sessions. The other 40 files in the folder are catalogued individually.",
+"session": "",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "sakshi uploads files not yet catalogued catch all upload folder have row their own iphone video heic stills from june 2026 teens sessions other individually workshop raw"
+},
+{
+"id": "IFM-550",
+"title": "Workshop Pictures — the files not yet catalogued (11 of 31)",
+"date": "2026-09-21",
+"thumb": "../thumbs/IFM-550.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1kW1Gpwq1TM3PUHQvd_XXJ-tXPZNaRlqF",
+"description": "Catch-all for the 11 files in the shared \"Workshop Pictures\" folder with no row of their own, mostly HEIC stills and WhatsApp images from the August 2026 workshops. The other 20 are catalogued individually.",
+"session": "",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "workshop pictures files not yet catalogued catch all shared folder row their own mostly heic stills whatsapp images from august 2026 workshops other individually photos raw"
+},
+{
+"id": "IFM-551",
+"title": "Hiral Goel shoot folder — the files not yet catalogued (10 of 18)",
+"date": "2026-09-21",
+"thumb": "../thumbs/IFM-551.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI",
+"description": "Catch-all for the 10 files in the shared \"Hiral Goel\" folder that have no row of their own. The inflation-session master and the teens-reel takes in the same folder are catalogued separately.",
+"session": "",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money",
+"Inflation & Interest Rates"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "hiral goel shoot folder files not yet catalogued catch all shared have row their own inflation session master teens reel takes same separately raw 2026"
+},
+{
+"id": "IFM-552",
+"title": "June: Women's workshop — carousel",
+"date": "2026-09-21",
+"thumb": "../thumbs/IFM-552.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1CIzSDS1uy5Vx0fLQVdcJF3FuJMMD67kF",
+"description": "Aakara's June 2026 carousel for the women's workshop: four finished artboards delivered as one Instagram post. One row for the set, which is the deliverable.",
+"session": "",
+"slide_text": "s June 2026 carousel for the women",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Women & Money"
+],
+"person": [
+"Student"
+],
+"source": "Aakara",
+"search_terms": "june women workshop carousel aakara 2026 four finished artboards delivered one instagram post row set which deliverable money"
+},
+{
+"id": "IFM-553",
+"title": "Feedback video — IMG_4248 (24 Jun 2026, not yet described)",
+"date": "2026-09-21",
+"thumb": "../thumbs/IFM-553.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-553.mp4",
+"drive": "https://drive.google.com/file/d/1BoBZ4i1FrZzzXeZSCUmVrE3SPDbShcWF/view",
+"description": "A participant feedback video from the 24 June 2026 session, the one file in the IFM feedback videos folder with no row of its own. Not yet transcribed or described — the speaker and the content of the piece are unverified.",
+"session": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [
+"Fixed Income"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "testimonial review feedback social proof word of mouth feedback video img 4248 jun 2026 not yet described participant from june session one file ifm videos folder row own transcribed speaker content piece unverified testimonial camera"
+},
+{
+"id": "IFM-554",
+"title": "Teens reel — IMG_4254 (25 Jun 2026)",
+"date": "2026-09-21",
+"thumb": "../thumbs/IFM-554.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-554.mp4",
+"drive": "https://drive.google.com/file/d/1PAC3ggrylxYnOD0IoNQeMMvWSAeTa4dj/view",
+"description": "The finished teens reel from 25 June 2026, held in its own \"Teens reel\" subfolder. The nine raw takes that produced it are catalogued separately as IFM-460.",
+"session": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "teens reel img 4254 jun 2026 finished from june held own subfolder nine raw takes produced catalogued separately ifm 460 hiral camera"
 }
 ];

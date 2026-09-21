@@ -1,0 +1,845 @@
+{
+ "_README": [
+  "Per-asset findings from the Phase 2 vision pass, 16 Sep 2026. Merged by backfill.py",
+  "AFTER the rules run, so these win over any rule-derived value.",
+  "",
+  "Only assets actually LOOKED AT are listed. Every value here came from inspecting the",
+  "image, not from re-reading the description. Where looking still did not establish a",
+  "value (the identity of an unnamed presenter, for instance) the field is omitted, not guessed.",
+  "",
+  "slide_text is transcribed from what is legible on a screen, projector or graphic.",
+  "Nothing is inferred from a blurred or partially visible slide."
+ ],
+ "IFM-251": {
+  "format": "Hiral Speaking",
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "description": "Open-air Goa venue: women seated at cafe tables listening while Hiral presents from the far side in a blue dress. A dog sleeps on the floor in the foreground — an unusually relaxed, non-corporate setting.",
+  "search_terms": "goa workshop offsite retreat open air cafe relaxed informal casual dog seated audience listening destination blue dress",
+  "_seen": "Boilerplate description replaced. Hiral confirmed by the blue dress matching IFM-252/253 the same day."
+ },
+ "IFM-252": {
+  "format": "Hiral Speaking",
+  "topic": [
+   "Financial Planning",
+   "Saving",
+   "Managing Money"
+  ],
+  "person": [
+   "Hiral"
+  ],
+  "description": "Hiral presenting from a laptop beside a large screen showing an emergency-fund diagram — a safety net catching a falling figure.",
+  "slide_text": "Secure Your Emergency Fund. Financial Safety Net.",
+  "search_terms": "emergency fund rainy day safety net contingency months of expenses buffer goa workshop presenting laptop screen",
+  "_seen": "Three topics came from reading the screen. The row's own text had none.",
+  "kit": "teaching",
+  "kit_rank": 2,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-253": {
+  "format": "Classroom Moment",
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "description": "Group photo on the steps of the Goa venue — around eight women with Hiral, several holding IFM workbooks, greenery and a tiled roof behind.",
+  "search_terms": "group photo goa cohort batch together posed steps outdoors workbooks smiling alumni",
+  "_seen": "Posed cohort photo — Classroom Moment per the agreed rule."
+ },
+ "IFM-254": {
+  "format": "Classroom Moment",
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "description": "Goa cohort on the cafe steps holding up IFM course material, Hiral in the blue dress among them. Stone pillars and a chalkboard menu behind.",
+  "search_terms": "goa group photo cohort batch holding certificates workbooks steps cafe posed proud",
+  "_seen": ""
+ },
+ "IFM-255": {
+  "format": "Classroom Moment",
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "description": "Tighter group shot of the Goa cohort on the steps, several women holding up their IFM material to camera.",
+  "search_terms": "goa group photo cohort batch holding certificates workbooks posed smiling",
+  "_seen": ""
+ },
+ "IFM-256": {
+  "format": "B-roll",
+  "person": [
+   "Student"
+  ],
+  "description": "Wide panorama of the open-air Goa venue — tiled roof, plants and garden seating, with the small group gathered at the far end.",
+  "search_terms": "goa venue wide panorama establishing location outdoor garden cafe setting context",
+  "_seen": "Establishing wide with no specific moment — B-roll, not Classroom Moment."
+ },
+ "IFM-144": {
+  "format": "Classroom Moment",
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "search_terms": "founder smiling to camera boardroom session attendees watching presentation candid warm",
+  "_seen": "'The founder' is Hiral — IFM has one. Confirmed visually against the reference photo."
+ },
+ "IFM-302": {
+  "format": "Social / Promotional",
+  "slide_text": "Stock Rush Pro. A decade of India's markets in 30 minutes. FBAP. Start Game with 15 Players.",
+  "search_terms": "stock rush pro join screen qr code scan to join room code lobby players classroom game markets decade",
+  "_seen": "Slide text read off the join screen."
+ },
+ "IFM-295": {
+  "slide_text": "Waiting for the 'perfect time' usually means... Class answers 67% correct. Prize Ladder. Scan to join.",
+  "_seen": "Read from the host screen."
+ },
+ "IFM-026": {
+  "person": [
+   "Hiral"
+  ],
+  "slide_text": "Hi, I'm Hiral Goel. Business Journalist for 10+ years at Business India magazine. Organised and led the magazine's prestigious Businessman of the Year property. Mother of 2.",
+  "search_terms": "founder intro about hiral goel business journalist business india credentials bio mother of two personal brand",
+  "_seen": "Hiral confirmed visually; credential text read off the story card.",
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 4 image(s), no video."
+ },
+ "IFM-021": {
+  "format": "Social Graphic",
+  "topic": [
+   "Money Mindset",
+   "Family & Money"
+  ],
+  "slide_text": "Crazy that school taught us trigonometry but not about taxes, investing or credit cards.",
+  "search_terms": "school education gap trigonometry taxes credit cards financial literacy relatable hook notebook flat lay",
+  "_seen": "Full on-image copy read."
+ },
+ "IFM-030": {
+  "format": "Social Graphic",
+  "slide_text": "Guess the Finance Term. Ready? Tap to test your finance knowledge!",
+  "search_terms": "quiz game guess the finance term jargon glossary interactive story tap engagement",
+  "_seen": "Gold coins in frame are decorative — deliberately NOT tagged Gold.",
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 6 image(s), no video."
+ },
+ "IFM-R02": {
+  "slide_text": "A chaotic money sim. Survive the month on Rs 10,000? 28 days. Surprise bills. Pure chaos.",
+  "_seen": "Hook copy read off the opening frame.",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R02.mp4"
+ },
+ "IFM-037": {
+  "library": false,
+  "_seen": "BRAND ASSET. A 9-second animated logo reveal — the same class as IFM-312/313/314, which were excluded by decision. Excluding it too keeps the Library to actual content."
+ },
+ "IFM-003": {
+  "format": "Classroom Moment",
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "search_terms": "collaborating budgeting worksheet pointing pen working together small group hands on activity",
+  "_seen": "Presenter is not identifiable as Hiral, so Person stays Other Person."
+ },
+ "IFM-004": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_seen": "Raw unclipped 365MB session video. Format left blank — nothing establishes what it shows."
+ },
+ "IFM-059": {
+  "format": "Classroom Moment",
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_seen": "Green-top presenter with tied-back hair and glasses; NOT confirmable as Hiral, so left as Other Person."
+ },
+ "IFM-060": {
+  "format": "Hiral Speaking",
+  "person": [
+   "Hiral"
+  ],
+  "search_terms": "props snack packets demo activity investing lesson raw clip behind the scenes",
+  "_seen": "Row text names Hiral explicitly.",
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-114": {
+  "format": "B-roll",
+  "person": [
+   "Other Person"
+  ],
+  "_seen": "Over-the-shoulder screen shot — contextual, no identifiable moment."
+ },
+ "IFM-115": {
+  "format": "B-roll",
+  "person": [
+   "Other Person"
+  ],
+  "_seen": "Session set-up, not a moment."
+ },
+ "IFM-134": {
+  "format": "Classroom Moment",
+  "person": [
+   "Student"
+  ],
+  "search_terms": "group discussion whiteboard mind map investment planning boardroom engaged talking",
+  "_seen": ""
+ },
+ "IFM-080": {
+  "format": "Classroom Moment",
+  "person": [
+   "Student"
+  ],
+  "_seen": "Posed cohort group photo. Was wrongly Testimonial before the 'review' rule was tightened."
+ },
+ "IFM-081": {
+  "format": "Classroom Moment",
+  "person": [
+   "Student"
+  ],
+  "_seen": "As IFM-080."
+ },
+ "IFM-101": {
+  "format": "Hiral Speaking",
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "topic": [
+   "Gold",
+   "Asset Allocation",
+   "Mutual Funds",
+   "ETFs"
+  ],
+  "slide_text": "Gold: Your Portfolio's Safe Haven. Ways to invest in gold: SGBs (best way to invest in gold, for low risk long term investors, backed by RBI); Gold Mutual Funds (invest into ETFs, gold mining and gold-related assets); ETFs (highly liquid, traded on the stock exchange); Digital Gold; Physical Gold (low liquidity, high risk of theft, making and storage costs). 5-10% of portfolio.",
+  "search_terms": "sgb sovereign gold bond gold funds gold etf digital gold physical gold safe haven hedge portfolio allocation five to ten percent rbi ways to invest in gold bullion explaining teaching",
+  "_seen": "Hiral confirmed from a 1200px frame against the founder reference. Slide read directly — it yielded four topics the row's own text never mentioned. ('jewellery' removed from search terms — the slide says 'Physical Gold', not jewellery; that word was my inference, not evidence.)"
+ },
+ "IFM-099": {
+  "format": "Hiral Speaking",
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "topic": [
+   "Gold",
+   "Asset Allocation",
+   "Mutual Funds",
+   "ETFs"
+  ],
+  "slide_text": "Gold: Your Portfolio's Safe Haven. Ways to invest in gold: SGBs, Gold Mutual Funds, ETFs, Digital Gold, Physical Gold. 5-10% of portfolio.",
+  "search_terms": "gold safe haven pie chart allocation sgb sovereign gold bond gold funds etf portfolio hedge presenting pointing",
+  "_seen": "Same session and slide as IFM-101."
+ },
+ "IFM-100": {
+  "format": "Hiral Speaking",
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "topic": [
+   "Gold",
+   "Asset Allocation"
+  ],
+  "search_terms": "ways to invest in gold sgb gold funds allocation safe haven portfolio",
+  "_seen": "Same 6 Apr session."
+ },
+ "IFM-088": {
+  "format": "Student Question",
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "_seen": "Same 6 Apr session; Hiral confirmed by session match."
+ },
+ "IFM-179": {
+  "format": "Hiral Speaking",
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "_seen": "Same 6 Apr session; Hiral confirmed by session match."
+ },
+ "IFM-007": {
+  "format": "B-roll",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-007.mp4"
+ },
+ "IFM-050": {
+  "format": "B-roll",
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-050.mp4"
+ },
+ "IFM-163": {
+  "format": "Classroom Moment"
+ },
+ "IFM-218": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-219": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-220": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-221": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-222": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-223": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-224": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-225": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-226": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-227": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-228": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-229": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-230": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-231": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-232": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-233": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-234": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-235": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-236": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-237": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-238": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-239": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-240": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-241": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-242": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-243": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-244": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-245": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-246": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-247": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-248": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-249": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-250": {
+  "format": "Classroom Moment",
+  "library": false
+ },
+ "IFM-287": {
+  "format": "Classroom Moment"
+ },
+ "IFM-328": {
+  "format": "Social Graphic"
+ },
+ "IFM-R01": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R01.mp4"
+ },
+ "IFM-R03": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R03.mp4"
+ },
+ "IFM-R04": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R04.mp4"
+ },
+ "IFM-R05": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R05.mp4"
+ },
+ "IFM-R06": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R06.mp4"
+ },
+ "IFM-R07": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R07.mp4"
+ },
+ "IFM-R08": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R08.mp4"
+ },
+ "IFM-R09": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R09.mp4"
+ },
+ "IFM-R10": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R10.mp4"
+ },
+ "IFM-R11": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R11.mp4"
+ },
+ "IFM-006": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-006.mp4"
+ },
+ "IFM-008": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-008.mp4"
+ },
+ "IFM-009": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-009.mp4"
+ },
+ "IFM-010": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-010.mp4"
+ },
+ "IFM-011": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-011.mp4"
+ },
+ "IFM-012": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-012.mp4"
+ },
+ "IFM-013": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-013.mp4"
+ },
+ "IFM-014": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-014.mp4"
+ },
+ "IFM-015": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-015.mp4"
+ },
+ "IFM-040": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-040.mp4"
+ },
+ "IFM-041": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-041.mp4"
+ },
+ "IFM-042": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-042.mp4"
+ },
+ "IFM-043": {
+  "video": "https://ifm-deploy.vercel.app/content/clips/IFM-043.mp4"
+ },
+ "IFM-410": {
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "format": "Hiral Speaking",
+  "_why": "Presenter identified as Hiral by the user from the thumbnail, 18 Sep 2026. The backfill rule only credits her on explicit textual evidence and the description just said \"presenter in yellow shirt\", so she was Other Person.",
+  "kit": "candid",
+  "kit_rank": 2,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-412": {
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "format": "Hiral Speaking",
+  "_why": "Presenter identified as Hiral by the user from the thumbnail, 18 Sep 2026. The backfill rule only credits her on explicit textual evidence and the description just said \"presenter in yellow shirt\", so she was Other Person."
+ },
+ "IFM-411": {
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "format": "Hiral Speaking",
+  "_why": "Presenter identified as Hiral by the user from the thumbnail, 18 Sep 2026. The backfill rule only credits her on explicit textual evidence and the description just said \"presenter in yellow shirt\", so she was Other Person."
+ },
+ "IFM-204": {
+  "type": "Image",
+  "_why": "Typed Video but the file is a still: July/Reels/one minute investing.png. Corrected 18 Sep 2026 after the user said \"if anything is a pic, then tag it as a pic ... this will frustrate the users\". These are Aakara REEL COVERS — the finished reel does not exist in the tree, so the row promised a video that could never play."
+ },
+ "IFM-343": {
+  "type": "Image",
+  "_why": "Typed Video but the file is a still: July/Reels/news reel2.png. Corrected 18 Sep 2026 after the user said \"if anything is a pic, then tag it as a pic ... this will frustrate the users\". These are Aakara REEL COVERS — the finished reel does not exist in the tree, so the row promised a video that could never play."
+ },
+ "IFM-321": {
+  "type": "Image",
+  "_why": "Typed Video but the file is a still: nse bse.png (image/png, confirmed via Drive metadata). Corrected 18 Sep 2026 after the user said \"if anything is a pic, then tag it as a pic ... this will frustrate the users\". These are Aakara REEL COVERS — the finished reel does not exist in the tree, so the row promised a video that could never play."
+ },
+ "IFM-375": {
+  "type": "Image",
+  "_why": "Typed Video but the file is a still: tata group.png (image/png, confirmed via Drive metadata). Corrected 18 Sep 2026 after the user said \"if anything is a pic, then tag it as a pic ... this will frustrate the users\". These are Aakara REEL COVERS — the finished reel does not exist in the tree, so the row promised a video that could never play."
+ },
+ "IFM-067": {
+  "kit": "portrait",
+  "kit_rank": 1,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-068": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-478": {
+  "kit": "portrait",
+  "kit_rank": 1,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-069": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-071": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times. | TIGHTENED 20 Sep 2026: the cap is now ONE FRAME PER SETUP, not per shoot. A setup is outfit + framing + room. Capping per shoot still let two seated-at-the-same-table frames in the same white lace top sit side by side, and two seated red-top boardroom frames as well. The user counted five near-identical frames in the visible set and was right. Demoted: seated white-lace setup — IFM-073 is the stronger frame of it."
+ },
+ "IFM-072": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-098": {
+  "title": "Testimonial — participant to camera in front of the IFM slide",
+  "person": [
+   "Student"
+  ],
+  "format": "Testimonial",
+  "description": "A workshop participant stands smiling in front of the branded \"Investing for Mummies\" slide with its multitasking-mum graphic, speaking directly to camera — her own account of the session, not a presenter segment.",
+  "_why": "CORRECTED 19 Sep 2026. The user spotted this in the Media Kit: it is a STUDENT giving a testimonial, not Hiral. The original description asserted \"Founder Hiral Goel stands smiling\", so every automatic check agreed -- including hiral_named, which looks for her name in the text. The name was there; the text was simply wrong. This is the failure mode no rule catches: a confident, specific, incorrect description. Removed from the kit; person and format corrected."
+ },
+ "IFM-319": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times. | TIGHTENED 20 Sep 2026: the cap is now ONE FRAME PER SETUP, not per shoot. A setup is outfit + framing + room. Capping per shoot still let two seated-at-the-same-table frames in the same white lace top sit side by side, and two seated red-top boardroom frames as well. The user counted five near-identical frames in the visible set and was right. Demoted: seated red-top boardroom setup — IFM-478 is the stronger frame of it."
+ },
+ "IFM-330": {
+  "kit": "portrait",
+  "kit_rank": 2,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-367": {
+  "kit": "portrait",
+  "kit_rank": 2,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-460": {
+  "kit": "portrait",
+  "kit_rank": 2,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times. | TIGHTENED 20 Sep 2026: the cap is now ONE FRAME PER SETUP, not per shoot. A setup is outfit + framing + room. Capping per shoot still let two seated-at-the-same-table frames in the same white lace top sit side by side, and two seated red-top boardroom frames as well. The user counted five near-identical frames in the visible set and was right. Promoted: a close-up to camera, a setup nothing else in the kit has."
+ },
+ "IFM-073": {
+  "kit": "teaching",
+  "kit_rank": 1,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-074": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-376": {
+  "kit": "teaching",
+  "kit_rank": 1,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-058": {
+  "kit": "teaching",
+  "kit_rank": 2,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-064": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-070": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-075": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-353": {
+  "kit": "teaching",
+  "kit_rank": 2,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-392": {
+  "kit": "teaching",
+  "kit_rank": 2,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-057": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-065": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-335": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-336": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-347": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-418": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-066": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-147": {
+  "kit": "candid",
+  "kit_rank": 2,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-479": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-146": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-148": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-149": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-354": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-394": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-393": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-349": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-351": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times. | TIGHTENED 20 Sep 2026: the cap is now ONE FRAME PER SETUP, not per shoot. A setup is outfit + framing + room. Capping per shoot still let two seated-at-the-same-table frames in the same white lace top sit side by side, and two seated red-top boardroom frames as well. The user counted five near-identical frames in the visible set and was right. Demoted: BALSABHA hall setup — IFM-353 is the stronger frame of it."
+ },
+ "IFM-355": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-390": {},
+ "IFM-386": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-405": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-431": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-076": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-139": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-141": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-423": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Media Kit, REBUILT PROPERLY 20 Sep 2026. Two earlier passes were shortcuts and the user called both out. Pass 1 judged only 69 of 202 rows, pre-filtered BY TAG when the whole point was that tags do not say who the subject is. Pass 2 looked at the rest but at 210px, 20 to a sheet -- fine for \"is she large in frame\", useless for ranking -- and then asserted shoot clusters from ID adjacency without reading the session field (IFM-067..075 are ONE shoot, not two). This pass: all 202 triaged, then every one of the 50 survivors viewed at 400px, and shoots derived from session/date. Cap: at most 2-3 frames per shoot above rank 3, so the shelves show different days, outfits and venues rather than one sitting four times."
+ },
+ "IFM-489": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Assessed 20 Sep 2026 as part of the daily run, from the IYA/IFT teens shoot staged the same day. She is clearly the subject here and the frame is a good one, but every frame in this shoot has identifiable school students in it (consent: Minors visible), which under the standing rule bars rank 1 and bars 'portrait' outright. Held at rank 3 so it is discoverable internally without being one click from an agency. Identity is by eye plus the standing presenter-is-Hiral inference across a consistent shoot -- not confirmed by name anywhere in the source, so per the IFM-098 lesson it must not be promoted on this evidence alone. To promote: clear consent for the minors in frame AND confirm the presenter's identity. Cleanest still of her teaching in the shoot -- three-quarter view, face visible, slide lit behind her."
+ },
+ "IFM-484": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "Assessed 20 Sep 2026 as part of the daily run, from the IYA/IFT teens shoot staged the same day. She is clearly the subject here and the frame is a good one, but every frame in this shoot has identifiable school students in it (consent: Minors visible), which under the standing rule bars rank 1 and bars 'portrait' outright. Held at rank 3 so it is discoverable internally without being one click from an agency. Identity is by eye plus the standing presenter-is-Hiral inference across a consistent shoot -- not confirmed by name anywhere in the source, so per the IFM-098 lesson it must not be promoted on this evidence alone. To promote: clear consent for the minors in frame AND confirm the presenter's identity. Mid-gesture at the compounding slide; reads well for a proposal or event listing if consent clears."
+ },
+ "IFM-025": {
+  "type": "Image",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 1 image(s), no video."
+ },
+ "IFM-027": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-029": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 6 image(s), no video."
+ },
+ "IFM-031": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-032": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 3 image(s), no video."
+ },
+ "IFM-202": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-205": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-214": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 4 image(s), no video."
+ },
+ "IFM-259": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 3 image(s), no video."
+ },
+ "IFM-260": {
+  "type": "Image",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 1 image(s), no video."
+ },
+ "IFM-261": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 6 image(s), no video."
+ },
+ "IFM-262": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-266": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 4 image(s), no video."
+ },
+ "IFM-267": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 3 image(s), no video."
+ },
+ "IFM-322": {
+  "type": "Image",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 1 image(s), no video."
+ },
+ "IFM-329": {
+  "type": "Image",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 1 image(s), no video."
+ },
+ "IFM-331": {
+  "type": "Image",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 1 image(s), no video."
+ },
+ "IFM-333": {
+  "type": "Carousel",
+  "_why": "Typed Video but the folder behind it holds ONLY still images — artboard sets delivered by Aakara as Stories/carousels. Corrected 20 Sep 2026 after the user ruled that nothing should appear in the Library without a working file AND a preview: these rows were drawing a play button over a set of PNGs, so they read as broken video rather than as the usable image sets they are. check-types.py had skipped them because it deliberately ignores folder rows — that exemption is what let 20 mislabels through, and it is now closed. Folder holds 5 image(s), no video."
+ },
+ "IFM-459": {
+  "library": false,
+  "_why": "Byte-identical re-upload of IMG_2847.MOV (both 26,026,062 bytes, same filename). It was already described as rejected but was still sitting in the library with no thumb and no preview. A duplicate is not an asset; keep the row as a record, hide it."
+ }
+}

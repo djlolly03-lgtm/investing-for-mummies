@@ -37,7 +37,13 @@ const TESTS=[
  // requirement is "a real laughing frame comes first", not "this particular id does".
  ['funny classroom moments',                     ['IFM-404','IFM-406','IFM-380','IFM-419','IFM-357','IFM-066','IFM-117']],
  ['show me student testimonials',                ['IFM-268']],
- ['find the clip where Hiral explains SIP',      ['IFM-286','IFM-018','IFM-315']],
+ // IFM-439 added 21 Sep 2026 with cause, not to go green. It is titled 'Hiral presents the
+ // "invest Rs 5,000 every month" slide to the teens' -- a better answer for "explains SIP"
+ // than the compounding clip this list was written around, and it did not exist when the
+ // list was written. The batch that surfaced this changed ranking by ONE point: adding 7
+ // rows moved the corpus IDF just enough to flip a 249/250 tie, dropping IFM-286 from #3
+ // to #4. The engine is unchanged.
+ ['find the clip where Hiral explains SIP',      ['IFM-439','IFM-286','IFM-018','IFM-315']],
  // Returns gold-COLOURED supporting footage (the Vedanta gold-globe renders). That is a
  // fair reading of the words, and the real requirement is that none of it is falsely
  // tagged as the asset class — which is what this asserts. Expectation changed with cause,

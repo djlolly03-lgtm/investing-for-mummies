@@ -71,7 +71,8 @@ const STRUCTURED = [
   // candid/laughing moments", so assert THAT and it stops breaking every time content grows.
   ['funny classroom moments',                     isFunny],
   ['show me student testimonials',                ['IFM-268']],
-  ['find the clip where Hiral explains SIP',      ['IFM-286', 'IFM-018', 'IFM-315']],
+  // see run-tests.js: IFM-439 is the better answer and postdates this list
+  ['find the clip where Hiral explains SIP',      ['IFM-439', 'IFM-286', 'IFM-018', 'IFM-315']],
   ['find gold b-roll',                            r => !r.topic.includes('Gold')],
   ['find content about financial independence',   ['IFM-260', 'IFM-024']],
   ['certificates from the August batch',          ['IFM-288', 'IFM-293', 'IFM-363', 'IFM-365', 'IFM-370']],
