@@ -1,0 +1,290 @@
+{
+ "1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl": {
+  "verdict": "ifm",
+  "why": "Aakara delivery tree. Registered root; 64 files individually catalogued."
+ },
+ "1t7NxPEc54Aw_UxJXyzZ0jK_sw7WzQrji": {
+  "verdict": "ifm",
+  "why": "IFM Content Hub. PARENT of the Content Library root we already index; 286 files catalogued; also holds the Content Catalogue, Creator Tracker, Outbound Log sheets and the START HERE docs."
+ },
+ "1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY": {
+  "verdict": "ifm",
+  "why": "Content Library. Registered root."
+ },
+ "11MncEXMdZy3sP2pTt0zfibLbEn30ldOO": {
+  "verdict": "ifm",
+  "why": "Sakshi uploads. Registered root; 40 of 56 catalogued."
+ },
+ "1CasigFU-SKr_X__0d7ywpjTE9-jmDcgA": {
+  "verdict": "ifm",
+  "why": "Certificates. Registered root. Contains 22 HEIC of minors -- DPDP consent applies."
+ },
+ "1mwN-stIOLrCabOP8Vjhp6ZG_6ARzWiiL": {
+  "verdict": "ifm",
+  "why": "IFM Content Drop. Registered root, currently empty."
+ },
+ "1tYW_y3F5Sl6AQJbKXD6JWTJn_023Ud7-": {
+  "verdict": "ifm",
+  "why": "_Trash buffer inside the Content Drop. Empty."
+ },
+ "1FrE-A4xMaPFv-zjo61cWcG9Ea6ZsaccJ": {
+  "verdict": "ifm",
+  "why": "Rakshita. Linked by IFM-315 (4 Jul corporate session). 200 real files; 176 of the 376 listed are macOS ._ resource forks, not media."
+ },
+ "17XRWi56C7Er-Rywm9rUxu3HZjCG6cada": {
+  "verdict": "ifm",
+  "why": "Pictures. VERIFIED BY EYE: eight women in an IFM workshop with workbooks. Mar-Aug 2026. 26 of 166 catalogued. Also the parent of Hiral Goel / Teens video."
+ },
+ "1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI": {
+  "verdict": "ifm",
+  "why": "Hiral Goel. 24 of 43 catalogued; holds IMG_8010.MOV (inflation session) and the Teens video folder."
+ },
+ "1kW1Gpwq1TM3PUHQvd_XXJ-tXPZNaRlqF": {
+  "verdict": "ifm",
+  "why": "Workshop Pictures. 20 of 31 catalogued; WhatsApp images from Aug 2026 workshops."
+ },
+ "1oAeY4FH9IjpuddkfzKwdNU5i1XO_VXN0": {
+  "verdict": "ifm",
+  "why": "Space x. CORRECTED -- I first excluded this on the name. It holds Space-X-carousel-1_*.png and -2_*.jpg: IFM carousel artboards about the SpaceX IPO as a finance topic."
+ },
+ "152_v76R684SsMdI-QBaLAcdPJZCuD3BK": {
+  "verdict": "ifm",
+  "why": "Asset Class 2. Linked by IFM-265."
+ },
+ "17EErsy4pp7huiMwSLU8lGcWr2OQxifvE": {
+  "verdict": "ifm",
+  "why": "Inflation. Linked by a row."
+ },
+ "1eVutEOYaeP5f1oxyIQsmxwmxBNs-mrx3": {
+  "verdict": "ifm",
+  "why": "Join IFM now. Linked by IFM-016; carousel artboards."
+ },
+ "1wt2XSJk5gDVZQTI8jibW2DZKWmtA9Brw": {
+  "verdict": "ifm",
+  "why": "MML 2. Linked by a row; artboards."
+ },
+ "17U-InCX9Lwgf-PYS7lSsDA6HGB-_Ayzp": {
+  "verdict": "ifm",
+  "why": "S2 Words people secretly Google. Linked by IFM-028; artboards."
+ },
+ "1l7miwiXG526HdJae1KxIylCVP_3BG7A1": {
+  "verdict": "ifm",
+  "why": "S6 saving investing. Linked by a row; artboards."
+ },
+ "1ps-zDRJLzehGV5ugmAWD_Fo-rD4gLP42": {
+  "verdict": "ifm",
+  "why": "Teachers Day. Linked by IFM-274."
+ },
+ "1UsqgAdCafw_Qu0HIPNi_JmzIctr-qNN-": {
+  "verdict": "ifm",
+  "why": "Why Women Feel Left Out. Linked by IFM-024."
+ },
+ "1YpTsB0We548H-WFlEZJFbhMfZS9iotnp": {
+  "verdict": "ifm",
+  "why": "IFM handbook. 2 documents, no media."
+ },
+ "1UIAjLy61ifB3wQUJCou9v7VFX5yinmuO": {
+  "verdict": "ifm",
+  "why": "delhi workshop 16th sept. 5 files, no media -- docs only."
+ },
+ "1cT-JCKhCvrdnkaFls5KFfaH7Zr7-VsyS": {
+  "verdict": "ifm",
+  "why": "Delhi work Shop. Verified empty on direct retry."
+ },
+ "1c2n-puASb7UjRy-kQU_3_3J0TBXJvDMP": {
+  "verdict": "mirror",
+  "why": "IFM Content Archive. Our renamed copies; filenames carry the original filename. Counting them would double count."
+ },
+ "1OPOAbJ_MsKxrz7Ijq6tLaxdA6eMr6Vw4": {
+  "verdict": "mirror",
+  "why": "Hiral - Media Kit. Agency-facing copies; filenames carry IFM ids (IFM-544/545/546, IFM-439, IFM-392)."
+ },
+ "1GZKWhdkLbQGoRWnB5Huj898Nhw1-ujHS": {
+  "verdict": "excluded",
+  "why": "IFM Machine Backup. The documented rclone backup of this Mac (CLAUDE.md). 1,547 media, all copies of local files."
+ },
+ "1AycliNg-Ny-Y7rNrW9GbyqXEu3h_CMYQ": {
+  "verdict": "non-ifm",
+  "why": "27th Feb 28th Feb 1st March. VERIFIED BY EYE x2: outdoor event marquees, and a scoresheet reading \"IPT SPPL 2.0 - Tie Sheet / Men's Doubles\". Padel tournament. 3,055 JPGs, 22.2 GB."
+ },
+ "14MGA1sLI2QQFJ8ikla-g3dqCTvk_F8MN": {
+  "verdict": "non-ifm",
+  "why": "12.09.2026. VERIFIED BY EYE: a \"THE PADEL TRAIL - SPAIN\" brochure."
+ },
+ "11Ua2v96LSSsyjnvhFNhkMmngVmabV_oH": {
+  "verdict": "non-ifm",
+  "why": "26.07.2026. VERIFIED BY EYE: a padel court with \"INDIAN Padel\" branding."
+ },
+ "1EG61qxMSdX36e7MeIqGtVH5fB8AktKqV": {
+  "verdict": "non-ifm",
+  "why": "Edited Pictures. 76 PNGs from MAY 2025 -- a year before the earliest IFM content -- named \"ms shalini\", \"Amyra and parents\", \"Aditya tiger\", \"Navroz Sir\". Personal portrait composites. Verified by eye."
+ },
+ "10dbeHK1KTKpfBDof2Wsk-I1HFv27j83n": {
+  "verdict": "non-ifm",
+  "why": "Tadoba 2021. Wildlife trip photos, 2021."
+ },
+ "1AJKkSjBHaSMepMWlJiXALy0Ym-mK4k-O": {
+  "verdict": "non-ifm",
+  "why": "Ganpati's Case study. finq.com policy PDFs, risk disclosures and an account statement. A broker case study, not IFM content."
+ },
+ "1VQzYUiSUI294fXtoY8EviH3gDv9XH4YX": {
+  "verdict": "non-ifm",
+  "why": "Mumbai_January 2020. Startup pitch videos (STEMpedia, GetNatty, Cool Story). Accelerator cohort."
+ },
+ "1UqkrsmMYYlj8bOT3NW794P0aEraPR12S": {
+  "verdict": "non-ifm",
+  "why": "Infinity Feedback form. Quarterly feedback for a different organisation (FY2023)."
+ },
+ "1XtWjZ4FWWaD2a_7DBSf2IYelXWtRFAyH": {
+  "verdict": "non-ifm",
+  "why": "Brighton Goel ID/Passports. Personal identity documents."
+ },
+ "1NPsczlTjOshzwxenJRwlWZdsef_0zCE2": {
+  "verdict": "non-ifm",
+  "why": "All Chapters_August 2023. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1cmcKiJoS6HRwtIj3o6nuzz5iZqAi0WMV": {
+  "verdict": "non-ifm",
+  "why": "All Chapters_September 2022. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1lbZC-f6dltCDkLimVpHiLh6V9Fgz74wa": {
+  "verdict": "non-ifm",
+  "why": "Alumni Notes - Jan 2023. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1ivEFZ4q_MB_mI9GCp9DOFiRR32HLrrhp": {
+  "verdict": "non-ifm",
+  "why": "A Toddler Thing- Information. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1hgqaMAlRR8plLnxAG327CNEFeGLII1_J": {
+  "verdict": "non-ifm",
+  "why": "Avenue Growth. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1owuBLWiSKme6MMYOXvTT-9_k60QQ2fh3": {
+  "verdict": "non-ifm",
+  "why": "Awarathon. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "189CDiTvAO367NsvDqD27aLSpRIFXRSKJ": {
+  "verdict": "non-ifm",
+  "why": "Credit card statements. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1D2XMoi-Fd09GzDsbUWbBpj8yq4YuESgI": {
+  "verdict": "non-ifm",
+  "why": "Degpeg. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1wtlx-j5f2a7Ot6sum3ivs31oX8gjW32G": {
+  "verdict": "non-ifm",
+  "why": "Fineoteric. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1FXTsWzVUrudge4ioejGj87m3QrUgFqMQ": {
+  "verdict": "non-ifm",
+  "why": "Folder1. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1nfwUAafxROGE-i7s_l_hFsKKvRYoCDMt": {
+  "verdict": "non-ifm",
+  "why": "Foreign Admits. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1VY-DErPyUzWT_BmA_r0CSF1PmcqYjU_2": {
+  "verdict": "non-ifm",
+  "why": "June 2024 Vacation. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1i0XV09VIFts1NuAu_Cc-4wXaN8vUWGR9": {
+  "verdict": "non-ifm",
+  "why": "Net Worth Reports. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "16nI6fUuYphf_At4YD7FcBHnS9Nh8rspn": {
+  "verdict": "non-ifm",
+  "why": "Net Worth Reports (2). Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1c4OtN3z39FysAA9Jykqw-V0hvI8WLgqj": {
+  "verdict": "non-ifm",
+  "why": "Nitro. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1rkFET5WEjiWIUkGwXfcJRjkrSwnugsrC": {
+  "verdict": "non-ifm",
+  "why": "Nitro Commerce. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "14tIQAd3GjdQwPoSzxeut8Mc_aPxPUKuK": {
+  "verdict": "non-ifm",
+  "why": "Organik Truck. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1PkyQWrYH5bBgjmNio3NeJz8S7l0hZubP": {
+  "verdict": "non-ifm",
+  "why": "Panache Docs. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1sLmYcgaR82WBRqwE2WhRkoJ_Z3k-_KlU": {
+  "verdict": "non-ifm",
+  "why": "Performance Report. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1ALeuk547itgoZMiRJv-aQB84BZKH6-3E": {
+  "verdict": "non-ifm",
+  "why": "Reservations/Tickets. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1O_InACUkzMVsRmD_6QJ7ISrMEHOdenqZ": {
+  "verdict": "non-ifm",
+  "why": "Roei Gavish travel. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1wRbohRI2H6H_K7GHweU19HqRAjwgbbPO": {
+  "verdict": "non-ifm",
+  "why": "Sapphire. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1RBHPazCEsG1PulMAxmENTvHDBy_GvXzy": {
+  "verdict": "non-ifm",
+  "why": "SkyeAir. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1N1X8FoZsEwVXxm1m6dkIbhpz_NRrJtjB": {
+  "verdict": "non-ifm",
+  "why": "Slate_Tech_CVs. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1RPKtGdUs8wwrfv9ngs6jEljDJWOqMv9z": {
+  "verdict": "non-ifm",
+  "why": "SLC. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1C48YJYQxV0niskv9l25u1kLv1dVaratf": {
+  "verdict": "non-ifm",
+  "why": "VC Database. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1O_l2elK04gPxb8VGAF6mWbcDnEMI01re": {
+  "verdict": "non-ifm",
+  "why": "WeSkill. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1Y4ynOGMHYX28LbuNLgzU6Q3GJeka2X8v": {
+  "verdict": "non-ifm",
+  "why": "White.Inc Pre-Series A. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1yLrmBq8zlhzNnU2A4MOkahAzZhiZiC5v": {
+  "verdict": "non-ifm",
+  "why": "Dubai Residancy Documents. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1TmNbKjaAlbI4tT-oJv-AwhI0EmC35q-9": {
+  "verdict": "non-ifm",
+  "why": "Karan CV AI test. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "16YGu4AyDf9tZ-qJwsaWRwweMkMif-mZm": {
+  "verdict": "non-ifm",
+  "why": "Market Pulse/Punch. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1NbIVMHUnVvg80wZTq0yYX259IeIiepG6": {
+  "verdict": "non-ifm",
+  "why": "Parabolic 2.0. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1mUIRI2-lhFCSTnWiAMDSL1ebqgSLwpU-": {
+  "verdict": "non-ifm",
+  "why": "Rumble. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1j3yG1joPRQtuyC6SfSzjJxw7hH0gXhHW": {
+  "verdict": "non-ifm",
+  "why": "SRE internal. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1pVyM4m3IJR0ITMS7dLQLPZtbrqsmjv69": {
+  "verdict": "non-ifm",
+  "why": "Third Eye Check-Ins. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "17AnviMuoa5pr5COf39BzY9HWJMiXlEuU": {
+  "verdict": "non-ifm",
+  "why": "Google AI Studio. Another business or personal: startup/client/investor material, no IFM content in the sampled filenames."
+ },
+ "1XtWjZ4FWWaD2a_7DBSf2IYelXWtRFAyH\t1O2toBka4oL6dMNW78iddL1-eihxesJT3": {
+  "verdict": "non-ifm",
+  "why": "Brighton Goel ID/Passports. Personal identity documents (driving licence, family photos)."
+ }
+}
