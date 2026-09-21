@@ -841,5 +841,25 @@
  "IFM-459": {
   "library": false,
   "_why": "Byte-identical re-upload of IMG_2847.MOV (both 26,026,062 bytes, same filename). It was already described as rejected but was still sitting in the library with no thumb and no preview. A duplicate is not an asset; keep the row as a record, hide it."
+ },
+ "IFM-543": {
+  "kit": "teaching",
+  "kit_rank": 2,
+  "_kit_why": "Assessed 21 Sep 2026 from the new Aakara 'Hiral Goel' batch (18 previously uncatalogued files). Identity is confirmed, not inferred: the standing-portrait frames match IFM-067 -- a human-verified rank-1 kit portrait -- on wall, outfit, pose and face, so the whole 24 Mar 2026 shoot is established as Hiral rather than read off a description. Teaching: seated beside the IFM title slide, brand clearly visible. Rank 2, not 1 -- she is small in a wide boardroom frame."
+ },
+ "IFM-544": {
+  "kit": "teaching",
+  "kit_rank": 2,
+  "_kit_why": "Assessed 21 Sep 2026 from the new Aakara 'Hiral Goel' batch (18 previously uncatalogued files). Identity is confirmed, not inferred: the standing-portrait frames match IFM-067 -- a human-verified rank-1 kit portrait -- on wall, outfit, pose and face, so the whole 24 Mar 2026 shoot is established as Hiral rather than read off a description. Teaching: square to camera under the IFM slide, clear face, clean table. Rank 2 because IFM-073 is the same setup from this shoot and already leads at rank 1."
+ },
+ "IFM-545": {
+  "kit": "portrait",
+  "kit_rank": 2,
+  "_kit_why": "Assessed 21 Sep 2026 from the new Aakara 'Hiral Goel' batch (18 previously uncatalogued files). Identity is confirmed, not inferred: the standing-portrait frames match IFM-067 -- a human-verified rank-1 kit portrait -- on wall, outfit, pose and face, so the whole 24 Mar 2026 shoot is established as Hiral rather than read off a description. Portrait: the smiling version of IFM-067 -- same wall, same outfit, same pose. Held at rank 2 on purpose so the lead strip does not show the same backdrop twice; a human may well prefer this smiling frame over IFM-067's closed-mouth one, and swapping the two ranks is the right call to make by eye."
+ },
+ "IFM-546": {
+  "kit": "portrait",
+  "kit_rank": 2,
+  "_kit_why": "Assessed 21 Sep 2026 from the new Aakara 'Hiral Goel' batch (18 previously uncatalogued files). Identity is confirmed, not inferred: the standing-portrait frames match IFM-067 -- a human-verified rank-1 kit portrait -- on wall, outfit, pose and face, so the whole 24 Mar 2026 shoot is established as Hiral rather than read off a description. Portrait: seated at the head of the table with the workbook, framed artwork behind -- reads as authority rather than backdrop, and is the only frame in the shoot with that composition. Rank 2; strong but the artwork behind is busy for a press lead."
  }
 }

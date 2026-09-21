@@ -1,55 +1,25 @@
 {
- "generated_by": "daily-content-processor 2026-09-19",
- "note": "Updated 19 Sep 2026 after a full Drive re-audit against every registered root. ~707 media files reachable; all but 25 are catalogued, covered by a folder/topic row, or skipped by a documented rule. The 25 are the Hiral Goel gap at the top of this list.",
- "count": 8,
+ "generated_by": "daily-content-processor 2026-09-21",
+ "note": "Coverage method changed this run, and it matters. A recursive rclone walk of the Aakara root returned 762 files today but 346 yesterday, with each listing containing files the other lacked -- including finished reel masters that a naive diff read as DELETED. They were not deleted: listing September/Reels and August/reels directly returned every one of them. A top-down -R walk under-reports non-deterministically even within a single root, so coverage is now established by an explicit breadth-first walk that lists every folder by its own id with retries (125 folders, 1,198 distinct files, 0 listing failures). That BFS was a strict superset of all five -R walks combined. Genuinely uncatalogued after this run: 18 files in the Aakara 'Hiral Goel' folder, now staged as IFM-540..547. CORRECTION to the 20 Sep entry: the 17 IMG_42xx/84xx files in Sakshi uploads and Certificates are NOT uncatalogued. That claim came from matching Drive ids, which misses copies. Matching by filename shows every one of them is already named in an existing row (IFM-484..500, 514, 527..532) as the backup frame of a moment whose lead frame is a neighbouring file in the same folder. No rows are owed for them, and the 'ignore IMG_42xx/IMG_84xx' filter in the task file is harmless after all -- it should still be deleted, but as tidying, not as a fix.",
+ "count": 3,
  "items": [
   {
    "source": "Aakara tree / Hiral Goel",
-   "title": "9 uncatalogued files remain in Aakara's \"Hiral Goel\" folder: 8 x 20260625_14xxxx.mp4 (tail of the 25 Jun teens session) and IMG_4254.MOV. Was reported as 25 on 18 Sep -- the processor catalogued 16 on 19 Sep, and 18 of the rest are TRUE duplicates (same filename AND same byte size as an already-catalogued file). A name-only comparison is not sufficient.",
+   "title": "Two staged rows are invisible in the Library until a preview clip exists: IFM-542 (IMG_6602.MOV, 75MB -- Hiral leafing through the workbook) and IFM-547 (IMG_8010.MOV, 143MB -- the 12 Jun inflation session). Both have thumbnails and real Drive file links; they fail only the Video 'playable' half of the visibility rule. Needs scripts/ifm-make-previews.sh then media-audit.py, and both need a deploy first, so they light up on the second deploy.",
+   "folder_url": "https://drive.google.com/drive/folders/1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI",
+   "status": "needs_review"
+  },
+  {
+   "source": "Hiral Media Kit",
+   "title": "IFM-545 is the smiling frame of the identical wall, outfit and pose as IFM-067, which is an existing rank-1 kit portrait with a closed-mouth expression. IFM-545 was deliberately held at rank 2 so the lead strip does not show the same backdrop twice, but the smiling frame may well be the better press lead. A human should look at the two side by side and decide which one leads.",
+   "folder_url": "https://drive.google.com/drive/folders/1OPOAbJ_MsKxrz7Ijq6tLaxdA6eMr6Vw4",
+   "status": "needs_review"
+  },
+  {
+   "source": "Aakara tree / month roots",
+   "title": "Five 'IFM Internal_<Month>.pptx' decks (June, July, August, October) plus IFM_June Content.pptx and IFM_June Creatives.pptx are uncatalogued. These are Aakara's internal planning decks, not deliverables, so no rows were created. Worth a decision: catalogue them as planning documents, or add them to a permanent skip list so they stop surfacing here. Note there is an October Internal deck but no October Creatives deck yet.",
    "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
    "status": "needs_review"
-  },
-  {
-   "source": "Aakara delivery tree — workshop/Rakshita/camera (1iZye0DSRAsi8WgQIYApMNhx45GcVNswF)",
-   "title": "IFM-319 covers 26 DSLR files with ONE folder-level row — needs splitting into moment rows",
-   "folder_url": "https://drive.google.com/drive/folders/1iZye0DSRAsi8WgQIYApMNhx45GcVNswF",
-   "status": "needs_review"
-  },
-  {
-   "source": "Content Library — Aakara — July 2026 (in progress)",
-   "title": "Artboard 3.png — lone artboard of an unfinished July carousel; no row created until the set lands",
-   "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
-   "status": "needs_review"
-  },
-  {
-   "source": "Content Library — root",
-   "title": "TEST — join ifm now_real-01.png — looks like a test export, not a deliverable; confirm then delete or catalogue",
-   "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
-   "status": "needs_review"
-  },
-  {
-   "source": "Aakara delivery tree — October",
-   "title": "October has only IFM Internal_October.pptx — no IFM Creatives_October deck yet, so no October planned topics could be read",
-   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
-   "status": "needs_review"
-  },
-  {
-   "source": "Aakara delivery tree — month roots",
-   "title": "Internal planning decks (IFM Internal_June/July/August/October, IFM_June Content) are not catalogued — confirm they are internal-only and should stay out",
-   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
-   "status": "needs_review"
-  },
-  {
-   "source": "Catalogue hygiene — IFM-396",
-   "title": "IFM-396 (Aug corporate 'rest of the shoot') has no thumbnail, so the catch-all row is invisible in the V1 Library",
-   "folder_url": "https://drive.google.com/drive/folders/1Ehyg9SAPjcNfBiu1Q5cf2kPi_-EBaOxt",
-   "status": "needs_review"
-  },
-  {
-   "source": "Aakara / workshop",
-   "status": "needs_review",
-   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
-   "title": "RAW and source files are invisible to every scan. 11 .CR3 were found only by accident on 19 Sep and are now IFM-478..483. Still uncounted by the scanners: 11 .psd (580MB of editable carousel sources) and 6 internal .pptx decks. Any future scan must declare which extensions it ignores rather than silently dropping them."
   }
  ]
 }

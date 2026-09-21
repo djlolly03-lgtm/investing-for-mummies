@@ -5036,11 +5036,11 @@ window.IFM_V1 =
 "terms": [
 "absolute rate of return",
 "simple interest",
-"ignores time"
+"regardless of the time invested"
 ]
 }
 ],
-"moment_text": "Why one fund's advertised return may not be comparable to yours The return metrics this class will cover — CAGR, IRR, XIRR Absolute rate of return is simple interest, and it ignores time absolute rate of return mutual funds xirr what these terms mean simple interest ignores time",
+"moment_text": "Why one fund's advertised return may not be comparable to yours The return metrics this class will cover — CAGR, IRR, XIRR Absolute rate of return is simple interest, and it ignores time absolute rate of return mutual funds xirr what these terms mean simple interest regardless of the time invested",
 "speech": "So like very often they will say oh this mutual fund is giving this much return and you look at your mutual fund and it is giving you something lower and you are like this one is you know saying that it is giving us this much then why should I not switch to that, right? But you have to verify to ensure that are they like what metric that you are looking at if that is a category or like a compounded group rate of return right and if they are actually the rate of return that they are publishing is an absolute rate of return then it is very different, right? So what is the difference? The difference is what? So what is the difference? So that is what why it is important for you to understand what each of these returns mean and what they are actually used for right and that is what we are going to do in this class. Yes, what are these metrics? What does absolute rate of return means? What does CAGA mean? Yeah, yeah. What does IRR mean? What does XIRR mean? There are all these terms that are used right to measure investments. What do they mean and which sort of investments are they useful for or situations are they useful for, right? So we will start with the simplest one what in school all of us have heard of this term simple interest right and it is also called the absolute rate of return and it is basically the total percentage loss or gain of an investment regardless of the time that you have stayed invested in. There you go. Yeah. Absolutely.",
 "speech_dur": 101.7,
 "speech_at": [
@@ -20717,5 +20717,205 @@ window.IFM_V1 =
 ],
 "source": "IFM / In-house",
 "search_terms": "certificate completion graduation proud achievement social proof ift aug 2026 hands over printed activity sheet close participant shoulder moving across colourful boardroom table faces frame certificate graduation teens feedback workshop"
+},
+{
+"id": "IFM-540",
+"title": "Hiral maps where debt mutual fund money actually goes — whiteboard",
+"date": "2026-03-24",
+"thumb": "../thumbs/IFM-540.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/11cI1Zh3PzOvahIDzZxr5wwvOiQApESD7/view",
+"description": "Hiral stands at a whiteboard, red marker in hand, filling in a hand-drawn map of where debt mutual fund money travels — boxes for BANKS, GOVERNMENT and COMPANIES branch off a red-circled BORROWER, with fixed deposits, recurring deposits, G-secs, T-bills and state development loans written underneath. She is back to camera in a white eyelet-sleeve blouse and red trousers.",
+"session": "Founder/brand shoot — 24 Mar 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Mutual Funds",
+"Fixed Income"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "hiral maps where debt mutual fund money actually goes whiteboard stands red marker hand filling drawn map travels boxes banks government companies branch off circled borrower fixed deposits recurring secs bills state development loans written underneath she back camera white"
+},
+{
+"id": "IFM-541",
+"title": "Hands holding the Investing for Mummies workbook — detail",
+"date": "2026-03-24",
+"thumb": "../thumbs/IFM-541.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1ZIyHwesRcGTn_fqV0mRN128WJ16_N7bG/view",
+"description": "Close overhead detail of two hands resting on the closed Investing for Mummies workbook on a dark wood boardroom table — the illustrated cover with the multi-armed woman figure fills the frame. White eyelet cuffs, no face in shot.",
+"session": "Founder/brand shoot — 24 Mar 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Investing"
+],
+"person": [
+"No Person"
+],
+"source": "IFM / In-house",
+"search_terms": "hands holding investing mummies workbook detail close overhead two resting closed dark wood boardroom table illustrated cover multi armed woman figure fills frame white eyelet cuffs face shot book product brand"
+},
+{
+"id": "IFM-542",
+"title": "Hiral leafing through the workbook at the boardroom table",
+"date": "2026-03-24",
+"thumb": "../thumbs/IFM-542.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1XXVdz31JioPyWG_NHc8jxXk-IUyOZ5cd/view",
+"description": "Hiral sits at the boardroom table in glasses and a white eyelet blouse, turning through the illustrated inner pages of the Investing for Mummies workbook; the IFM title slide glows on the wall-mounted screen behind her.",
+"session": "Founder/brand shoot — 24 Mar 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Investing"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "hiral leafing through workbook boardroom table sits glasses white eyelet blouse turning illustrated inner pages investing mummies ifm title slide glows wall mounted screen behind her goel flipping teaching founder video"
+},
+{
+"id": "IFM-543",
+"title": "Hiral seated beside the IFM title slide — full boardroom view",
+"date": "2026-03-24",
+"thumb": "../thumbs/IFM-543.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1u4CwO6a0BZ1UCV90Ins30TilGNI8GWWk/view",
+"description": "Wider view of the boardroom: Hiral sits sideways at the long wood table with an open laptop, smiling to camera, while the Investing for Mummies title slide and its illustrated woman figure fill the screen on the wall behind her.",
+"session": "Founder/brand shoot — 24 Mar 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Investing"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "candid warm natural unposed relaxed friendly celebration hiral seated beside ifm title slide full boardroom view wider sits sideways long wood table open laptop smiling camera while investing mummies illustrated woman figure fill screen wall behind her goel wide founder event listing speaker teaching",
+"kit": "teaching",
+"kit_rank": 2
+},
+{
+"id": "IFM-544",
+"title": "Hiral to camera under the IFM slide, hands folded",
+"date": "2026-03-24",
+"thumb": "../thumbs/IFM-544.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/16DzIB3qyqz64Y-5Js0ImD4Ouuoi5ENCM/view",
+"description": "Hiral sits square to camera at the boardroom table with her hands folded in front of her, the Investing for Mummies slide filling the screen just above her shoulder. White eyelet blouse, closed-mouth smile, nothing else on the table.",
+"session": "Founder/brand shoot — 24 Mar 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Investing"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio b-roll cutaway establishing supporting footage context hiral camera under ifm slide hands folded sits square boardroom table her front investing mummies filling screen just above shoulder white eyelet blouse closed mouth smile nothing else goel founder seated portrait brand backdrop proposal speaker bio credibility teaching hero",
+"kit": "teaching",
+"kit_rank": 2
+},
+{
+"id": "IFM-545",
+"title": "Hiral standing portrait, smiling — wood backdrop",
+"date": "2026-03-24",
+"thumb": "../thumbs/IFM-545.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1s4nIk-X4cdbTnJ8zxMtmbZdQ_4Mv7N2_/view",
+"description": "Three-quarter standing portrait of Hiral against the warm wood-panel wall, arms crossed, in a broad open smile. White eyelet-sleeve blouse and pale blue skirt, nothing else in frame.",
+"session": "Founder/brand shoot — 24 Mar 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Portrait",
+"topic": [],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio b-roll cutaway establishing supporting footage context hiral standing portrait smiling wood backdrop three quarter against warm panel wall arms crossed broad open smile white eyelet sleeve blouse pale blue skirt nothing else frame goel founder press headshot profile photo about",
+"kit": "portrait",
+"kit_rank": 2
+},
+{
+"id": "IFM-546",
+"title": "Hiral at the head of the table with the workbook, artwork behind",
+"date": "2026-03-24",
+"thumb": "../thumbs/IFM-546.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/11pYK5NkFqS1TxzDMqhiqhObX7COuAoRp/view",
+"description": "Hiral sits in the high-backed chair at the head of the boardroom table, one hand resting on the open Investing for Mummies workbook, looking straight to camera with a soft smile. A large framed black-and-white artwork hangs on the wall behind her.",
+"session": "Founder/brand shoot — 24 Mar 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Portrait",
+"topic": [
+"Investing"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio hiral head table workbook artwork behind sits high backed chair boardroom one hand resting open investing mummies looking straight camera soft smile large framed black white hangs wall her goel founder seated portrait press bio authority office hero",
+"kit": "portrait",
+"kit_rank": 2
+},
+{
+"id": "IFM-547",
+"title": "Hiral presenting \"Inflation Simplified\" to a seated room",
+"date": "2026-06-12",
+"thumb": "../thumbs/IFM-547.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/15YMNNvsvJlO2Tzvf3XzyjbSMxFlqBZW1/view",
+"description": "Wide handheld view of a café-library venue with patterned wallpaper and an orange pendant lamp: Hiral stands at a lectern-height side table in a pale blue outfit, speaking to a seated audience, while a screen beside her shows an \"Inflation Simplified\" slide with an illustrated family graphic. Attendees, water bottles and low armchairs fill the foreground.",
+"session": "Inflation session — 12 Jun 2026",
+"slide_text": "Inflation Simplified",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money",
+"Inflation & Interest Rates"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Unknown",
+"search_terms": "hiral presenting inflation simplified seated room wide handheld view caf library venue patterned wallpaper orange pendant lamp stands lectern height side table pale blue outfit speaking audience while screen beside her shows slide illustrated family graphic attendees water bottles low"
 }
 ];
