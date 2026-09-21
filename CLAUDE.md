@@ -141,14 +141,52 @@ a human decision that the rules would otherwise undo on the next run.
 
 ### Drive folders
 
-| Folder | ID |
-|---|---|
-| **IFM Content Drop** (everyone dumps here) | `1mwN-stIOLrCabOP8Vjhp6ZG_6ARzWiiL` |
-| `_Trash` (30-day buffer inside it) | `1tYW_y3F5Sl6AQJbKXD6JWTJn_023Ud7-` |
-| **Hiral — Media Kit** (agency link) | `1OPOAbJ_MsKxrz7Ijq6tLaxdA6eMr6Vw4` |
-| Sakshi uploads | `11MncEXMdZy3sP2pTt0zfibLbEn30ldOO` |
-| Certificates | `1CasigFU-SKr_X__0d7ywpjTE9-jmDcgA` |
-| Aakara delivery tree | `1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl` |
+⚠️ **This list was wrong until 21 Sep 2026 and is now generated, not hand-kept.** The
+authoritative copy is `ROOTS` in `content/v1-prototype/ingest-scan.py`; this table mirrors it.
+The old list pointed at `Content Library` instead of its parent `IFM Content Hub` — **565
+media files in My Drive that nothing had ever walked** — and omitted `Pictures`,
+`Workshop Pictures`, `Hiral Goel`, `Space x` and `Rakshita` entirely. The Drive holds 68
+top-level folders; only 8 were ever scanned. Every folder now has a written verdict in
+`content/v1-prototype/corpus-verdicts.json`.
+
+| Folder | ID | |
+|---|---|---|
+| **IFM Content Hub** (parent of Content Library; also holds the sheets) | `1t7NxPEc54Aw_UxJXyzZ0jK_sw7WzQrji` | added 21 Sep |
+| Content Library | `1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY` | |
+| **IFM Content Drop** (everyone dumps here) | `1mwN-stIOLrCabOP8Vjhp6ZG_6ARzWiiL` | |
+| `_Trash` (30-day buffer inside it) | `1tYW_y3F5Sl6AQJbKXD6JWTJn_023Ud7-` | |
+| Sakshi uploads | `11MncEXMdZy3sP2pTt0zfibLbEn30ldOO` | |
+| Certificates | `1CasigFU-SKr_X__0d7ywpjTE9-jmDcgA` | minors — DPDP consent |
+| Aakara delivery tree (shared as "IFM") | `1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl` | |
+| **Pictures** | `17XRWi56C7Er-Rywm9rUxu3HZjCG6cada` | added 21 Sep |
+| **Workshop Pictures** | `1kW1Gpwq1TM3PUHQvd_XXJ-tXPZNaRlqF` | added 21 Sep |
+| **Hiral Goel** | `1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI` | added 21 Sep |
+| **Rakshita** (IFM-315's 4 Jul session) | `1FrE-A4xMaPFv-zjo61cWcG9Ea6ZsaccJ` | added 21 Sep |
+| **Space x** (IFM carousel artboards) | `1oAeY4FH9IjpuddkfzKwdNU5i1XO_VXN0` | added 21 Sep |
+| IFM handbook · delhi workshop 16th sept · Delhi work Shop | docs only / empty | |
+
+**Hiral — Media Kit** `1OPOAbJ_MsKxrz7Ijq6tLaxdA6eMr6Vw4` and **IFM Content Archive**
+`1c2n-puASb7UjRy-kQU_3_3J0TBXJvDMP` are deliberately NOT scan roots: they hold our own
+renamed copies of already-catalogued assets, so scanning them would double count.
+
+### Scanning: never `rclone lsjson -R`
+
+Use `ingest-scan.py`. It walks one folder at a time, breadth first, and records a failed
+listing as an ERROR against that folder rather than as "empty". `-R` is not stable on this
+Drive — three runs of the identical recursive listing returned 1,325, 1,196 and 1,304 files
+for the same question, and an earlier `-R` scan missed an entire event. A recursive listing
+gives one answer for a whole subtree, so when it under-reports there is nothing to compare
+against and no way to notice.
+
+`ingest-scan.py --validate` runs three consecutive passes and reconciles by file id. It
+refuses to report success unless all three produce the identical set. **Validated 21 Sep 2026:
+1,340 / 1,340 / 1,340, zero unstable ids, zero errors, 136 folders, 45.5 GB.**
+
+Formats: HEIC, HEIF and PSD are included. They were not, and 86 files — 73 HEIC and 13 PSD —
+were invisible to every previous scan; `.heic` appeared nowhere in the catalogue. Same defect
+as the `.CR3` bug found on 19 Sep, which was fixed while HEIC was never checked. RAW formats
+are listed for the same reason. macOS `._` AppleDouble stubs are excluded globally: 176 of the
+376 files under `Rakshita` were stubs, and they inflated every count in the 20 Sep audit.
 
 **Aakara gotcha:** they deliver *finished files* in `Month → Carousels|Reels|Stories → Topic`.
 The "IFM Creatives_<Month>" Slides deck is a **planning calendar only**. A sync pointed at
