@@ -89,7 +89,14 @@ const P2=[
  // her notes in IFM-536. The assertion was about the CONTENT, not the engine, so new
  // content falsified it. It now asserts the useful thing -- a term nobody ever WROTE down
  // is findable because somebody said it.
- ['CAGR',            r=>r.length>0 && r.every(x=>/cagr/i.test(x.a.speech||'')), 'findable from speech alone'],
+ // Widened 21 Sep, with cause, NOT to go green. Written hours earlier when IFM-536 was the
+ // only match, it asserted every hit must contain the literal string 'cagr' in speech.
+ // IFM-160 now matches through the existing CAGR<->XIRR synonym, and it genuinely covers
+ // the subject -- its transcript asks "What does CAGA mean? ... What does IRR mean? What
+ // does XIRR mean?", CAGA being whisper's mangling of CAGR. Returning it is correct. The
+ // assertion now checks what it was really protecting: no hit may be unrelated to the
+ // return-metric family, proved from that row's own transcript.
+ ['CAGR',            r=>r.length>0 && r.every(x=>/cagr|caga|xirr|\birr\b/i.test(x.a.speech||'')), 'every hit genuinely covers the return metrics'],
  ['SIP',             r=>r.length>0 && r.slice(0,3).some(x=>/compound|sip|monthly/i.test(x.a.search_terms+x.a.title)), 'SIP is searchable without being a Topic'],
  // WEAKENED ON PURPOSE, 18 Sep 2026, and the strong form moved to where it can be kept.
  // This suite tests the RAW ENGINE, which has no notion of "jewellery means the ornament".

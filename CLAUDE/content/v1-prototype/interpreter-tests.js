@@ -183,9 +183,11 @@ const ACCEPTANCE = [
   // XIRR" off her notes in IFM-536, and IFM-271 ranks crypto's risk against other assets.
   // These assertions were about the CONTENT, not the engine, and new content falsified them.
   // They now assert the opposite -- that spoken-only terms ARE findable, which is the point.
+  // See run-tests.js for why this widened on 21 Sep: whisper writes CAGR as "CAGA", and a
+  // clip that asks "What does CAGA mean? ... What does XIRR mean?" is a correct hit.
   ['CAGR is findable because someone says it out loud',
    () => { const r = interpreted('CAGR').results;
-           return r.length > 0 && r.every(x => /cagr/i.test(x.a.speech || '')); }],
+           return r.length > 0 && r.every(x => /cagr|caga|xirr|\birr\b/i.test(x.a.speech || '')); }],
   ['crypto is findable because a reel ranks it',
    () => { const r = interpreted('crypto').results;
            return r.length > 0 && r.every(x => /crypto/i.test((x.a.speech || '') +

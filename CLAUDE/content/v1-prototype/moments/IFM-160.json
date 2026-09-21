@@ -1,0 +1,45 @@
+{
+ "id": "IFM-160",
+ "authored": "2026-09-21",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Why one fund's advertised return may not be comparable to yours",
+   "summary": "The facilitator warns that a fund advertising a higher return may be quoting a different metric, so before switching you have to check whether the published figure is a compounded rate or an absolute rate — because those are very different.",
+   "start": 0.0,
+   "end": 38.7,
+   "weight": "primary",
+   "evidence": "if they are actually the rate of return that they are publishing is an absolute rate of return then it is very different",
+   "search_terms": [
+    "absolute rate of return",
+    "mutual funds"
+   ]
+  },
+  {
+   "title": "The return metrics this class will cover — CAGR, IRR, XIRR",
+   "summary": "She lists the measures the session will work through and why each matters: absolute rate of return, CAGR (rendered CAGA by the transcript), IRR and XIRR, and which situations each is useful for.",
+   "start": 54.8,
+   "end": 75.8,
+   "weight": "primary",
+   "evidence": "What does absolute rate of return means? What does CAGA mean?",
+   "search_terms": [
+    "xirr",
+    "absolute rate of return",
+    "what these terms mean"
+   ]
+  },
+  {
+   "title": "Absolute rate of return is simple interest, and it ignores time",
+   "summary": "The definition given in the clip: the simplest measure is simple interest, also called the absolute rate of return, which is the total percentage gain or loss regardless of how long you stayed invested.",
+   "start": 75.8,
+   "end": 97.2,
+   "weight": "primary",
+   "evidence": "this term simple interest right and it is also called the absolute rate of return and it is basically the total percentage loss or gain of an investment regardless of the time that you have stayed invested in",
+   "search_terms": [
+    "absolute rate of return",
+    "simple interest",
+    "regardless of the time invested"
+   ]
+  }
+ ]
+}

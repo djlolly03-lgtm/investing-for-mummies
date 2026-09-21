@@ -5002,7 +5002,165 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "Unknown",
-"search_terms": "clip why evaluation concepts matter presenter mid explanation beside evaluating investments these slide while two women follow along workbooks open deeper dive into investment metrics video workbook boardroom workshop investing session"
+"search_terms": "clip why evaluation concepts matter presenter mid explanation beside evaluating investments these slide while two women follow along workbooks open deeper dive into investment metrics video workbook boardroom workshop investing session",
+"moments": [
+{
+"t": 0.0,
+"e": 38.7,
+"title": "Why one fund's advertised return may not be comparable to yours",
+"summary": "The facilitator warns that a fund advertising a higher return may be quoting a different metric, so before switching you have to check whether the published figure is a compounded rate or an absolute rate — because those are very different.",
+"w": "primary",
+"terms": [
+"absolute rate of return",
+"mutual funds"
+]
+},
+{
+"t": 54.8,
+"e": 75.8,
+"title": "The return metrics this class will cover — CAGR, IRR, XIRR",
+"summary": "She lists the measures the session will work through and why each matters: absolute rate of return, CAGR (rendered CAGA by the transcript), IRR and XIRR, and which situations each is useful for.",
+"w": "primary",
+"terms": [
+"xirr",
+"absolute rate of return",
+"what these terms mean"
+]
+},
+{
+"t": 75.8,
+"e": 97.2,
+"title": "Absolute rate of return is simple interest, and it ignores time",
+"summary": "The definition given in the clip: the simplest measure is simple interest, also called the absolute rate of return, which is the total percentage gain or loss regardless of how long you stayed invested.",
+"w": "primary",
+"terms": [
+"absolute rate of return",
+"simple interest",
+"ignores time"
+]
+}
+],
+"moment_text": "Why one fund's advertised return may not be comparable to yours The return metrics this class will cover — CAGR, IRR, XIRR Absolute rate of return is simple interest, and it ignores time absolute rate of return mutual funds xirr what these terms mean simple interest ignores time",
+"speech": "So like very often they will say oh this mutual fund is giving this much return and you look at your mutual fund and it is giving you something lower and you are like this one is you know saying that it is giving us this much then why should I not switch to that, right? But you have to verify to ensure that are they like what metric that you are looking at if that is a category or like a compounded group rate of return right and if they are actually the rate of return that they are publishing is an absolute rate of return then it is very different, right? So what is the difference? The difference is what? So what is the difference? So that is what why it is important for you to understand what each of these returns mean and what they are actually used for right and that is what we are going to do in this class. Yes, what are these metrics? What does absolute rate of return means? What does CAGA mean? Yeah, yeah. What does IRR mean? What does XIRR mean? There are all these terms that are used right to measure investments. What do they mean and which sort of investments are they useful for or situations are they useful for, right? So we will start with the simplest one what in school all of us have heard of this term simple interest right and it is also called the absolute rate of return and it is basically the total percentage loss or gain of an investment regardless of the time that you have stayed invested in. There you go. Yeah. Absolutely.",
+"speech_dur": 101.7,
+"speech_at": [
+[
+0.0,
+"So like very often they will say oh this mutual fund is giving this much return and you look"
+],
+[
+8.4,
+"at your mutual fund and it is giving you something lower and you are like this one is you know"
+],
+[
+14.3,
+"saying that it is giving us this much then why should I not switch to that, right?"
+],
+[
+19.4,
+"But you have to verify to ensure that are they like what metric that you are looking"
+],
+[
+25.2,
+"at if that is a category or like a compounded group rate of return right and if they are actually"
+],
+[
+32.8,
+"the rate of return that they are publishing is an absolute rate of return then it is very"
+],
+[
+37.7,
+"different, right?"
+],
+[
+38.7,
+"So what is the difference?"
+],
+[
+39.7,
+"The difference is what?"
+],
+[
+40.7,
+"So what is the difference?"
+],
+[
+41.7,
+"So that is what why it is important for you to understand what each of these returns"
+],
+[
+47.8,
+"mean and what they are actually used for right and that is what we are going to"
+],
+[
+52.8,
+"do in this class."
+],
+[
+54.8,
+"Yes, what are these metrics?"
+],
+[
+57.4,
+"What does absolute rate of return means?"
+],
+[
+59.4,
+"What does CAGA mean?"
+],
+[
+61.4,
+"Yeah, yeah."
+],
+[
+62.4,
+"What does IRR mean?"
+],
+[
+63.4,
+"What does XIRR mean?"
+],
+[
+64.4,
+"There are all these terms that are used right to measure investments."
+],
+[
+68.7,
+"What do they mean and which sort of investments are they useful for or situations are they"
+],
+[
+74.8,
+"useful for, right?"
+],
+[
+75.8,
+"So we will start with the simplest one what in school all of us have heard of"
+],
+[
+81.2,
+"this term simple interest right and it is also called the absolute rate of return and it is"
+],
+[
+87.2,
+"basically the total percentage loss or gain of an investment regardless of the time that"
+],
+[
+95.2,
+"you have stayed invested in."
+],
+[
+97.2,
+"There you go."
+],
+[
+98.2,
+"Yeah."
+],
+[
+99.2,
+"Absolutely."
+]
+]
 },
 {
 "id": "IFM-161",
