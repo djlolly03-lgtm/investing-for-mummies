@@ -85,3 +85,22 @@ content/v1-prototype/references/
 # nothing the page fetches: the text is already folded into v1-catalogue.js as each row's
 # `speech` field. Publishing it would be 160 public URLs for no reader.
 content/v1-prototype/speech/
+
+# ── Deploy-size cuts, 22 Sep 2026. Vercel storage hit 100% of 10 GB. ──────────
+# Each deploy shipped 427 MB; these three folders were 103 MB of it (24%) and
+# NOTHING on the site loads any of them. Verified before removing, not assumed:
+
+# Source archive for the Slash the Scam icons — 56 MB across 18 files at up to
+# 5.6 MB each. Zero references to "game-icons/raw/" anywhere in the codebase.
+# slash-the-scam.html loads the FLAT optimised set (game-icons/aidbox.png etc,
+# 15 files totalling 1.9 MB), which stays shipped. raw/ is the working master.
+game-icons/raw/
+
+# 36.9 MB in TWO files (gold_war_crisis.png 29.9 MB, gold_low_rates.png 7 MB).
+# Zero references. Wheel-of-Gold/Silver artwork that was never wired up.
+game-icons/wog-wos-new/
+
+# gstack QA tool output — browse-console.log, browse-network.log, qa-reports/.
+# 10.5 MB, zero references, and it is debug output from the testing harness that
+# should never have been web-accessible in the first place.
+.gstack/
