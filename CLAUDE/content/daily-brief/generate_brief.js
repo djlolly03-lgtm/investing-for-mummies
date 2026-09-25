@@ -25,10 +25,44 @@ const trkStatic = window.IFM_DATA.tracker;
 const posts = ifmPub.posts.filter(p => p.likes != null);
 const reels = posts.filter(p => p.type === 'reel');
 const other = posts.filter(p => p.type !== 'reel');
-const avg = a => a.length ? Math.round(a.reduce((s, p) => s + p.likes, 0) / a.length) : 0;
+
+// RANK BY VIEWS, NOT LIKES (#34, 25 Sep 2026).
+// Likes systematically undersell reels: a reel can be seen by thousands and liked by
+// dozens, so ranking on likes makes the format that is working look like the one that is
+// not -- and this brief's headline claim is precisely a reels-vs-carousels comparison.
+//
+// Views are used the moment they exist. They do not exist yet: there is no
+// ig-insights.json, no Graph token in the Keychain, and a logged-out fetch of a reel
+// returns only "110 likes, 4 comments" in og:description -- verified 25 Sep. Instagram
+// does not expose a play count to a logged-out request at all, which is the same wall
+// CLAUDE.md records for reach.
+//
+// So the brief is views-first with a stated fallback, and it SAYS which one it used.
+// Silently showing likes under a "top by views" heading would be worse than either.
+const viewsOf = p => (p.views != null ? p.views : (p.plays != null ? p.plays : null));
+const withViews = posts.filter(p => viewsOf(p) != null);
+// One or two stray values cannot carry the ranking: require most of the set.
+const RANK_BY_VIEWS = withViews.length >= Math.max(3, Math.ceil(posts.length * 0.6));
+const METRIC = RANK_BY_VIEWS ? 'views' : 'engagement';
+const METRIC_LABEL = RANK_BY_VIEWS ? 'views' : 'likes + comments';
+const METRIC_MARK = RANK_BY_VIEWS ? '\u25b6' : '\u2665';
+const scoreOf = p => RANK_BY_VIEWS ? viewsOf(p) : (p.likes + (p.comments || 0));
+
+const avg = a => a.length ? Math.round(a.reduce((s, p) => s + scoreOf(p), 0) / a.length) : 0;
 const reelsAvg = avg(reels), otherAvg = avg(other);
 const mult = otherAvg ? (reelsAvg / otherAvg).toFixed(1) : null;
-const ranked = [...posts].sort((a, b) => (b.likes + (b.comments || 0)) - (a.likes + (a.comments || 0)));
+// The comparison only exists when BOTH formats are in the captured sample. Instagram's
+// headless grid caps at ~12 posts, and on 25 Sep 2026 all 12 were reels -- so otherAvg was
+// 0, mult was null, and the hero line was shipping the literal words "outperforming
+// carousels null× right now (♥44 vs ♥0 avg)" into the inbox. Say what is true instead.
+const fmtN = n => Number(n || 0).toLocaleString('en-IN');
+const heroClaim = mult
+  ? `Reels are outperforming carousels <b style="color:#fff">${mult}×</b> right now `
+    + `(${METRIC_MARK}${fmtN(reelsAvg)} vs ${METRIC_MARK}${fmtN(otherAvg)} avg ${METRIC_LABEL})`
+  : `All ${posts.length} of the last posts captured were reels, averaging `
+    + `<b style="color:#fff">${METRIC_MARK}${fmtN(reelsAvg)}</b> ${METRIC_LABEL} `
+    + `(no carousels in the sample to compare against)`;
+const ranked = [...posts].sort((a, b) => scoreOf(b) - scoreOf(a));
 const top3 = ranked.slice(0, 3);
 const bottom3 = ranked.slice(-3);
 
@@ -103,7 +137,7 @@ function thumbStrip(list, tone) {
     return `<td width="33%" style="padding:0 5px" valign="top">
       <a href="${esc(p.u)}" style="text-decoration:none">
         <img src="${esc(img)}" width="100%" style="display:block;border-radius:8px;aspect-ratio:1;object-fit:cover;background:${LINE}" alt="">
-        <div style="font-size:13px;font-weight:800;color:${color};margin-top:5px;font-variant-numeric:tabular-nums">♥ ${p.likes}${p.type === 'reel' ? ' · reel' : ' · carousel'}</div>
+        <div style="font-size:13px;font-weight:800;color:${color};margin-top:5px;font-variant-numeric:tabular-nums">${METRIC_MARK} ${scoreOf(p).toLocaleString('en-IN')}${p.type === 'reel' ? ' · reel' : ' · carousel'}</div>
         <div style="font-size:11px;color:${MUTED};line-height:1.35">${snippet}…</div>
       </a>
     </td>`;
@@ -144,14 +178,14 @@ const html = `<!doctype html>
   <div style="background:${NAVY};border-radius:12px;padding:18px 20px 20px">
     <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#4fd0bb">Do this today</div>
     <div style="font-family:Georgia,serif;color:#fff;font-size:19px;font-weight:700;margin-top:4px;line-height:1.25">Post 2 reels from your ${readyCount}-piece backlog.</div>
-    <div style="font-size:13px;color:#c9dfda;margin-top:6px;line-height:1.5">Reels are outperforming carousels <b style="color:#fff">${mult}×</b> right now (♥${reelsAvg} vs ♥${otherAvg} avg) — and you're sitting on ${readyCount} ready-to-post pieces while still shipping mostly carousels. This is the single highest-leverage move available today.</div>
+    <div style="font-size:13px;color:#c9dfda;margin-top:6px;line-height:1.5">${heroClaim} — and you're sitting on ${readyCount} ready-to-post pieces while still shipping mostly carousels. This is the single highest-leverage move available today.</div>
     ${button('Open the ready-to-post queue', HUB_URL, '#4fd0bb', '#0e2a24')}
   </div>
 
   <!-- WINNER vs LOSER — visual proof, not prose -->
   <div style="margin-top:22px;margin-bottom:8px">
     <span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:${GOOD}">▲ Winning</span>
-    <span style="font-size:11px;color:${MUTED}"> — top 3 this month</span>
+    <span style="font-size:11px;color:${MUTED}"> — top 3 this month by ${METRIC_LABEL}${RANK_BY_VIEWS ? '' : ' (views unavailable)'}</span>
   </div>
   ${thumbStrip(top3, 'good')}
 
