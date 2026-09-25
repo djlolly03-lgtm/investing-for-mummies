@@ -46,9 +46,18 @@ const RANK_BY_VIEWS = withViews.length >= Math.max(3, Math.ceil(posts.length * 0
 const METRIC = RANK_BY_VIEWS ? 'views' : 'engagement';
 const METRIC_LABEL = RANK_BY_VIEWS ? 'views' : 'likes + comments';
 const METRIC_MARK = RANK_BY_VIEWS ? '\u25b6' : '\u2665';
-const scoreOf = p => RANK_BY_VIEWS ? viewsOf(p) : (p.likes + (p.comments || 0));
+// A post with no view count is UNKNOWN, not zero, so it is left out of a views ranking
+// rather than sorted to the bottom as if nobody watched it. Found the hard way: the first
+// real capture matched 10 of 12 posts (two are older than the grid's 12-post window) and
+// the missing two threw on .toLocaleString of null. The earlier test injected views on
+// every post, so this path never ran.
+const scoreOf = p => RANK_BY_VIEWS ? (viewsOf(p) || 0) : (p.likes + (p.comments || 0));
+const rankPool = RANK_BY_VIEWS ? withViews : posts;
+const unranked = posts.length - rankPool.length;
 
-const avg = a => a.length ? Math.round(a.reduce((s, p) => s + scoreOf(p), 0) / a.length) : 0;
+// Averages are over posts that actually carry the metric, for the same reason.
+const avg = a => { const v = RANK_BY_VIEWS ? a.filter(p => viewsOf(p) != null) : a;
+  return v.length ? Math.round(v.reduce((s, p) => s + scoreOf(p), 0) / v.length) : 0; };
 const reelsAvg = avg(reels), otherAvg = avg(other);
 const mult = otherAvg ? (reelsAvg / otherAvg).toFixed(1) : null;
 // The comparison only exists when BOTH formats are in the captured sample. Instagram's
@@ -62,7 +71,7 @@ const heroClaim = mult
   : `All ${posts.length} of the last posts captured were reels, averaging `
     + `<b style="color:#fff">${METRIC_MARK}${fmtN(reelsAvg)}</b> ${METRIC_LABEL} `
     + `(no carousels in the sample to compare against)`;
-const ranked = [...posts].sort((a, b) => scoreOf(b) - scoreOf(a));
+const ranked = [...rankPool].sort((a, b) => scoreOf(b) - scoreOf(a));
 const top3 = ranked.slice(0, 3);
 const bottom3 = ranked.slice(-3);
 
@@ -185,7 +194,7 @@ const html = `<!doctype html>
   <!-- WINNER vs LOSER — visual proof, not prose -->
   <div style="margin-top:22px;margin-bottom:8px">
     <span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:${GOOD}">▲ Winning</span>
-    <span style="font-size:11px;color:${MUTED}"> — top 3 this month by ${METRIC_LABEL}${RANK_BY_VIEWS ? '' : ' (views unavailable)'}</span>
+    <span style="font-size:11px;color:${MUTED}"> — top 3 this month by ${METRIC_LABEL}${RANK_BY_VIEWS ? (unranked ? ` (${unranked} older post${unranked > 1 ? 's' : ''} without a view count)` : '') : ' (views unavailable)'}</span>
   </div>
   ${thumbStrip(top3, 'good')}
 
