@@ -41,8 +41,13 @@ const other = posts.filter(p => p.type !== 'reel');
 // Silently showing likes under a "top by views" heading would be worse than either.
 const viewsOf = p => (p.views != null ? p.views : (p.plays != null ? p.plays : null));
 const withViews = posts.filter(p => viewsOf(p) != null);
-// One or two stray values cannot carry the ranking: require most of the set.
-const RANK_BY_VIEWS = withViews.length >= Math.max(3, Math.ceil(posts.length * 0.6));
+// CAROUSELS HAVE NO VIEW COUNT AND NEVER WILL -- they are not video. Measured 28 Sep 2026:
+// all 37 reels carried views, all 31 carousels carried none. So the gate is "do most REELS
+// have views", not "most posts": a share-of-all-posts test can never pass while a third of
+// the grid is carousels, and it would have pinned this to likes forever.
+const reelsAll = posts.filter(p => p.type === 'reel');
+const reelsWithViews = reelsAll.filter(p => viewsOf(p) != null);
+const RANK_BY_VIEWS = reelsWithViews.length >= Math.max(3, Math.ceil(reelsAll.length * 0.6));
 const METRIC = RANK_BY_VIEWS ? 'views' : 'engagement';
 const METRIC_LABEL = RANK_BY_VIEWS ? 'views' : 'likes + comments';
 const METRIC_MARK = RANK_BY_VIEWS ? '\u25b6' : '\u2665';
@@ -55,21 +60,26 @@ const scoreOf = p => RANK_BY_VIEWS ? (viewsOf(p) || 0) : (p.likes + (p.comments 
 const rankPool = RANK_BY_VIEWS ? withViews : posts;
 const unranked = posts.length - rankPool.length;
 
-// Averages are over posts that actually carry the metric, for the same reason.
-const avg = a => { const v = RANK_BY_VIEWS ? a.filter(p => viewsOf(p) != null) : a;
-  return v.length ? Math.round(v.reduce((s, p) => s + scoreOf(p), 0) / v.length) : 0; };
+// The reels-vs-carousels comparison stays on likes+comments ON PURPOSE: it is the only
+// metric BOTH formats have. Dividing a reel's views by a carousel's likes would be a
+// made-up multiple. Views rank the top 3; engagement compares the formats.
+const engOf = p => (p.likes || 0) + (p.comments || 0);
+const avg = a => a.length ? Math.round(a.reduce((s, p) => s + engOf(p), 0) / a.length) : 0;
 const reelsAvg = avg(reels), otherAvg = avg(other);
+const reelViewAvg = reelsWithViews.length
+  ? Math.round(reelsWithViews.reduce((s, p) => s + viewsOf(p), 0) / reelsWithViews.length) : 0;
 const mult = otherAvg ? (reelsAvg / otherAvg).toFixed(1) : null;
 // The comparison only exists when BOTH formats are in the captured sample. Instagram's
 // headless grid caps at ~12 posts, and on 25 Sep 2026 all 12 were reels -- so otherAvg was
 // 0, mult was null, and the hero line was shipping the literal words "outperforming
 // carousels null× right now (♥44 vs ♥0 avg)" into the inbox. Say what is true instead.
 const fmtN = n => Number(n || 0).toLocaleString('en-IN');
+const viewsBit = RANK_BY_VIEWS ? `, and average <b style="color:#fff">\u25b6${fmtN(reelViewAvg)}</b> views` : '';
 const heroClaim = mult
-  ? `Reels are outperforming carousels <b style="color:#fff">${mult}×</b> right now `
-    + `(${METRIC_MARK}${fmtN(reelsAvg)} vs ${METRIC_MARK}${fmtN(otherAvg)} avg ${METRIC_LABEL})`
+  ? `Reels are outperforming carousels <b style="color:#fff">${mult}\u00d7</b> right now `
+    + `(\u2665${fmtN(reelsAvg)} vs \u2665${fmtN(otherAvg)} avg likes+comments)${viewsBit}`
   : `All ${posts.length} of the last posts captured were reels, averaging `
-    + `<b style="color:#fff">${METRIC_MARK}${fmtN(reelsAvg)}</b> ${METRIC_LABEL} `
+    + `<b style="color:#fff">\u2665${fmtN(reelsAvg)}</b> likes+comments${viewsBit} `
     + `(no carousels in the sample to compare against)`;
 const ranked = [...rankPool].sort((a, b) => scoreOf(b) - scoreOf(a));
 const top3 = ranked.slice(0, 3);
@@ -194,7 +204,7 @@ const html = `<!doctype html>
   <!-- WINNER vs LOSER — visual proof, not prose -->
   <div style="margin-top:22px;margin-bottom:8px">
     <span style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:${GOOD}">▲ Winning</span>
-    <span style="font-size:11px;color:${MUTED}"> — top 3 this month by ${METRIC_LABEL}${RANK_BY_VIEWS ? (unranked ? ` (${unranked} older post${unranked > 1 ? 's' : ''} without a view count)` : '') : ' (views unavailable)'}</span>
+    <span style="font-size:11px;color:${MUTED}"> — top 3 this month by ${METRIC_LABEL}${RANK_BY_VIEWS ? (unranked ? ` (${unranked} carousel${unranked > 1 ? 's' : ''} excluded — carousels have no view count)` : '') : ' (views unavailable)'}</span>
   </div>
   ${thumbStrip(top3, 'good')}
 

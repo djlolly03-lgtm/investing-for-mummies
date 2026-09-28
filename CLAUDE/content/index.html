@@ -553,6 +553,7 @@ footer a{color:var(--teal)}
           <th data-k="date">Date</th>
           <th data-k="type">Type</th>
           <th>Post</th>
+          <th data-k="views" class="num">▶ Views</th>
           <th data-k="likes" class="num">♥ Likes</th>
           <th data-k="comments" class="num">💬 Comments</th>
           <th data-k="eng" class="num">Engagement</th>
@@ -1102,26 +1103,52 @@ function growthCard(hist){
 }
 function renderPublished(){
   const posts=(ifmPub.posts||[]), meta=(ifmPub.meta||{});
+  // RANK BY VIEWS, NOT LIKES (#34, 28 Sep 2026).
+  // Likes systematically undersell reels. Measured on this account the same day: the top reel
+  // had 13,300 views and 109 likes -- 122 to 1 -- and across the top five the ratio ran 25x to
+  // 122x. Because that ratio is not constant, ranking on likes was not merely understating
+  // reels, it was REORDERING them: a reel with 1,767 views and 29 likes sat below one with
+  // fewer views and more likes.
+  // Views come from the reels grid via the weekly refresh; older posts fall outside its
+  // 12-post window and carry none. A post without a view count is UNKNOWN, not zero, so it is
+  // left out of the ranking rather than sorted to the bottom as if nobody watched it.
+  const viewsOf=p=>(p.views!=null?p.views:(p.plays!=null?p.plays:null));
+  const withViews=posts.filter(p=>viewsOf(p)!=null);
+  // CAROUSELS HAVE NO VIEW COUNT AND NEVER WILL -- they are not video. Measured 28 Sep 2026:
+  // all 37 reels carried views, all 31 carousels carried none. So the gate is "do most REELS
+  // have views", not "most posts": a share-of-all-posts test can never pass while a third of
+  // the grid is carousels, and it would have left the table sorted by likes forever.
+  const reelsAll=posts.filter(p=>p.type==='reel');
+  const reelsWithViews=reelsAll.filter(p=>viewsOf(p)!=null);
+  const BY_VIEWS=reelsWithViews.length>=Math.max(3,Math.ceil(reelsAll.length*0.6));
+  const MARK=BY_VIEWS?'▶':'♥', MLABEL=BY_VIEWS?'views':'likes + comments';
+  const fmtN=n=>Number(n||0).toLocaleString('en-IN');
   const fHist=(ifmFollowers.history||[]);
   const latestFol=fHist.length?fHist[fHist.length-1].followers:(meta.followers??null);
   const pg=document.getElementById('pub-growth'); if(pg)pg.innerHTML=growthCard(fHist);
   const s=document.getElementById('pub-summary'); if(!s)return;
   s.innerHTML=`<div class="stat"><div class="num">${meta.total_posts||posts.length}</div><div class="lbl">Live on Instagram</div></div>`+
     `<div class="stat"><div class="num">${latestFol??'—'}</div><div class="lbl">Followers</div></div>`+
-    `<div class="stat"><div class="num">♥ ${meta.avg_likes??'—'}</div><div class="lbl">Avg likes / post</div></div>`+
+    (BY_VIEWS
+      ? `<div class="stat"><div class="num">▶ ${fmtN(Math.round(reelsWithViews.reduce((a,p)=>a+viewsOf(p),0)/reelsWithViews.length))}</div><div class="lbl">Avg views / reel</div></div>`
+      : `<div class="stat"><div class="num">♥ ${meta.avg_likes??'—'}</div><div class="lbl">Avg likes / post</div></div>`)+
     `<div class="stat"><div class="num">${posts.length}</div><div class="lbl">Shown (recent)</div></div>`;
   const cn=document.getElementById('pub-cat-n'); if(cn)cn.textContent=items.length||228;
   const ln=document.getElementById('pub-live-n'); if(ln)ln.textContent=meta.total_posts||posts.length;
   // "What's working" — computed live from the posts (auto-updates when the weekly refresh reloads this file)
   const ins=document.getElementById('pub-insights');
   if(ins){
+    // Reels vs carousels stays on likes+comments ON PURPOSE. It is the only metric BOTH
+    // formats have: comparing a reel's views to a carousel's likes would be a made-up
+    // multiple. Views rank the table; engagement compares the formats.
     const wl=posts.filter(p=>p.likes!=null);
     const reels=wl.filter(p=>p.type==='reel'), stat=wl.filter(p=>p.type!=='reel');
-    const avg=a=>a.length?Math.round(a.reduce((s,p)=>s+p.likes,0)/a.length):0;
+    const mOf=p=>(p.likes+(p.comments||0));
+    const avg=a=>a.length?Math.round(a.reduce((s,p)=>s+mOf(p),0)/a.length):0;
     const rAvg=avg(reels), sAvg=avg(stat);
     if(wl.length>=4 && reels.length && stat.length){
       const mult=sAvg?(rAvg/sAvg).toFixed(1):null;
-      const top=[...wl].sort((a,b)=>((b.likes+(b.comments||0))-(a.likes+(a.comments||0))))[0];
+      const top=[...wl].sort((a,b)=>mOf(b)-mOf(a))[0];
       const reelsWin=rAvg>sAvg;
       const cap=(top.caption||'').replace(/\s+/g,' ').trim().slice(0,58);
       // V2: bold, blunt directive first — the number-crunching moves to supporting text below it, not the headline.
@@ -1129,40 +1156,47 @@ function renderPublished(){
         ins.innerHTML=`<div class="pub-punch">
           <div class="pub-punch-eyebrow">📊 What's working — auto-updated weekly from your live posts</div>
           <div class="pub-punch-head">🎬 REELS WIN ${mult}× — LEAN INTO VIDEO</div>
-          <div class="pub-punch-sub">Reels avg <b>♥${rAvg}</b> vs carousels <b>♥${sAvg}</b>. Top post: “${esc(cap)}…” (♥${top.likes}${top.comments?` · ${top.comments} comments`:''}). Workshop clips + founder on camera win. <span class="lowreach">Generic educational carousels average just ♥${sAvg}</span> — skip evergreen tip-decks unless they decode something timely.</div>
+          <div class="pub-punch-sub">Reels avg <b>♥${fmtN(rAvg)}</b> vs carousels <b>♥${fmtN(sAvg)}</b> likes+comments${BY_VIEWS?` · reels also average <b>▶${fmtN(Math.round(reelsWithViews.reduce((a,p)=>a+viewsOf(p),0)/reelsWithViews.length))}</b> views (carousels have no view count)`:''}. Top post: “${esc(cap)}…” (♥${fmtN(top.likes)}${top.comments?` · ${top.comments} comments`:''}${viewsOf(top)!=null?` · ▶${fmtN(viewsOf(top))} views`:''}). Workshop clips + founder on camera win. <span class="lowreach">Generic educational carousels average just ${MARK}${fmtN(sAvg)}</span> — skip evergreen tip-decks unless they decode something timely.</div>
         </div>`;
       }else{
         ins.innerHTML=`<div class="pub-ins"><h4>📊 What's working <span style="font-weight:600;color:var(--muted);font-size:.72rem">— auto-updated weekly from your live posts</span></h4>
           <div class="pub-ins-row">
-            <div class="pub-ins-stat"><b>♥ ${rAvg}</b><span>Reels avg (${reels.length})</span></div>
-            <div class="pub-ins-stat"><b>♥ ${sAvg}</b><span>Carousels avg (${stat.length})</span></div>
+            <div class="pub-ins-stat"><b>♥ ${fmtN(rAvg)}</b><span>Reels avg likes+comments (${reels.length})</span></div>
+            <div class="pub-ins-stat"><b>♥ ${fmtN(sAvg)}</b><span>Carousels avg (${stat.length})</span></div>
           </div>
-          <div class="pub-ins-take">Top post: “${esc(cap)}…” (♥${top.likes}). Reels avg ♥${rAvg} vs carousels ♥${sAvg} — keep testing formats.</div>
+          <div class="pub-ins-take">Top post: “${esc(cap)}…” (♥${fmtN(mOf(top))}). Reels avg ♥${fmtN(rAvg)} vs carousels ♥${fmtN(sAvg)} likes+comments — keep testing formats.</div>
         </div>`;
       }
     } else ins.innerHTML='';
   }
   if(!document.getElementById('pub-tbody'))return;
   // verdict tiers: rank posts with engagement, top third = worked, bottom third = flopped
-  const scored=posts.map(p=>({p,s:(p.likes||0)+(p.comments||0),has:p.likes!=null}));
+  const scored=posts.map(p=>BY_VIEWS
+    ? {p, s:viewsOf(p)||0, has:viewsOf(p)!=null}
+    : {p, s:(p.likes||0)+(p.comments||0), has:p.likes!=null});
   const ranked=scored.filter(x=>x.has).sort((a,b)=>b.s-a.s);
   const nn=ranked.length, cut=Math.max(1,Math.ceil(nn/3));
   ranked.forEach((x,i)=>{x.p._tier=(i<cut)?'hit':((i>=nn-cut)?'low':'ok');});
   const fol=latestFol||meta.followers||0;
   pubPosts=scored.map(x=>{
     const p=x.p, er=(fol&&p.likes!=null)?Math.round(100*(p.likes+(p.comments||0))/fol):null;
-    return {...p, _eng:x.has?x.s:null, _er:er, _tier:p._tier||''};
+    return {...p, _eng:(p.likes!=null)?((p.likes||0)+(p.comments||0)):null,
+            _views:viewsOf(p), _rank:x.has?x.s:null, _er:er, _tier:p._tier||''};
   });
+  if(!pubSortPinned) pubSort={key:BY_VIEWS?'views':'eng',dir:'desc'};
   renderPubTable();
   const e=document.getElementById('pub-empty');
   if(!posts.length){e.classList.remove('hidden');e.innerHTML='<h2>No published posts loaded yet</h2><p>Ask Claude to scan the Instagram grid.</p>';}else e.classList.add('hidden');
 }
-let pubPosts=[], pubSort={key:'eng',dir:'desc'};
+// Default sort is VIEWS once the data carries them (#34). Falls back to engagement so the
+// table is never sorted by a column that is entirely em-dashes.
+let pubPosts=[], pubSort={key:'eng',dir:'desc'}, pubSortPinned=false;
 function renderPubTable(){
   const tb=document.getElementById('pub-tbody'); if(!tb)return;
   const {key,dir}=pubSort, mult=dir==='asc'?1:-1;
   const val=(p,k)=>{
     if(k==='date')return new Date(p.date||0).getTime()||0;
+    if(k==='views')return p._views??-1;
     if(k==='likes')return p.likes??-1;
     if(k==='comments')return p.comments??-1;
     if(k==='eng')return p._eng??-1;
@@ -1189,6 +1223,7 @@ function renderPubTable(){
       <td style="white-space:nowrap;color:var(--muted);font-size:.76rem">${esc(p.date||'—')}</td>
       <td><span class="pub-type-pill ${typeCls}">${esc(TYPE_LABEL[p.type]||p.type||'—')}</span></td>
       <td class="pub-cap-cell" title="${esc(p.caption||'')}">${esc(p.caption||'')}</td>
+      <td class="num">${p._views!=null?p._views.toLocaleString('en-IN'):'<span title="older than the 12-post grid window the weekly refresh reads" style="color:var(--muted)">—</span>'}</td>
       <td class="num">${p.likes??'—'}</td>
       <td class="num">${p.comments??'—'}</td>
       <td class="num">${p._eng??'—'}</td>
@@ -1205,6 +1240,7 @@ function renderPubTable(){
 document.querySelector('#pub-table thead')?.addEventListener('click',e=>{
   const th=e.target.closest('th[data-k]'); if(!th)return;
   const k=th.dataset.k;
+  pubSortPinned=true;   // a click is a choice; stop re-applying the default on re-render
   if(pubSort.key===k)pubSort.dir=pubSort.dir==='asc'?'desc':'asc';
   else pubSort={key:k,dir:(k==='date'||k==='type'||k==='tier')?'desc':'desc'};
   renderPubTable();
