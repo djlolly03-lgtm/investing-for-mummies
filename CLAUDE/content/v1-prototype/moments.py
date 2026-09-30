@@ -90,6 +90,24 @@ SYNONYM_OK = {
     'where do i start':       ['how do i', 'can you start', 'where to start', 'first step'],
     # licensed by the substance, not the word: "only for employees" -> "for any of us"
     'ppf eligibility':        ['only for employees', 'for any of us', 'anyone can'],
+    # NEWS EXPLAINERS, added 30 Sep 2026 with the three HG reel cuts. These exist because
+    # the transcript is an automatic one and a proper noun is exactly what it gets wrong:
+    # whisper renders "Tata Sons" as "TataSans" every single time across two reels, so a
+    # moment quoting it verbatim can never carry the term a person would actually type.
+    # Licensing the real spelling by the misheard one is the whole purpose of this table --
+    # the alternative is silently correcting the evidence, which would break the one
+    # mechanical guard against invention.
+    'tata sons':             ['tatasans', 'tata sons', 'tata'],
+    'holding company':       ['mothership', 'sits at the top', 'holding company'],
+    'nbfc':                  ['nbfc', 'non-banking'],
+    'non-banking financial company': ['nbfc', 'non-banking'],
+    'stock market listing':  ['list', 'listing', 'go public'],
+    'insurance commission':  ['commission', 'distributor', 'payout'],
+    'bundling':              ['bundl'],
+    'mis-selling':           ['bundl', 'commission', 'distributors who actually sell'],
+    'irdai':                 ['irdai'],
+    'insurance premium':     ['premium'],
+    'liability':             ['liability', 'liabilities', 'debt', 'loan'],
 }
 
 

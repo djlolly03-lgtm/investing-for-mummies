@@ -21079,5 +21079,1650 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "teens reel img 4254 jun 2026 finished from june held own subfolder nine raw takes produced catalogued separately ifm 460 hiral camera"
+},
+{
+"id": "IFM-555",
+"title": "End-of-course feedback — confidence, the aha moment, the conversation at home (3 min)",
+"date": "2026-09-29",
+"thumb": "../thumbs/IFM-555.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-555.mp4",
+"drive": "https://drive.google.com/file/d/1_78kiGiQLvqPyooKATf5otuM706Lnh_B/view",
+"description": "The fullest feedback recording of the September 2026 course — three minutes in which Hiral puts three questions to the group and the answers are quotable throughout. Asked how confident they feel, one participant says \"I am literally thinking differently\" and describes asking the person who manages her assets, that same morning, for the full trajectory since she began, because she now wants to understand it and diversify. Another says she was afraid of investing and never wanted to learn, and that the big shift was \"I understand — it is not that tough\". Asked for the biggest aha moment, the answer is the compounding of an SIP: she felt she had \"missed the bus\", then realised she can start for her children. SWP and judging a fund by benchmarking it against the index rather than in absolute terms also come up. The last question — what they have since said to a husband or father — produces the strongest line: when family money is already being managed \"you feel like those are more able hands, so you don't really step in\", and the change is wanting to be part of the conversation.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [
+"Compounding",
+"Money Conversations",
+"Family & Money",
+"Diversification"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "sip systematic investment plan monthly investing testimonial review feedback social proof word of mouth end course feedback confidence aha moment conversation home min fullest recording september 2026 three minutes which hiral puts questions group answers quotable throughout asked how confident they feel one participant says literally thinking differently describes asking person who manages her",
+"moments": [
+{
+"t": 26.0,
+"e": 43.0,
+"title": "She asked the man who manages her assets for the full history, the same morning",
+"summary": "Asked how confident she feels after the course, a participant says she has already acted on it: that morning she asked the person who manages her assets for the whole trajectory since she began, because she now wants to see what has been done, understand it, make changes, and diversify. She says she never thought about it in all this time.",
+"w": "primary",
+"terms": [
+"diversification",
+"assets",
+"personal experience"
+]
+},
+{
+"t": 48.0,
+"e": 62.0,
+"title": "She was afraid of investing; the shift was realising it is not that tough",
+"summary": "A second participant says she was really afraid of investing and never wanted to learn anything about it, and that the big change is simply understanding — she repeats \"I understand\" three times and lands on \"it is not that tough\".",
+"w": "primary",
+"terms": [
+"fear of investing",
+"scared of investing",
+"overcoming fear",
+"transformation"
+]
+},
+{
+"t": 77.4,
+"e": 95.4,
+"title": "The aha moment: how an SIP compounds, and that she can still start for her kids",
+"summary": "Asked for the biggest aha moment, the answer is compounding — she felt she had missed the bus, then realised she can start for her children instead, and says it is crazy how it compounds and that she never realised it was like that. The transcript renders compounding as \"bounding of the SIP\".",
+"w": "primary",
+"terms": [
+"sip",
+"compounding",
+"starting to invest",
+"memorable statement"
+]
+},
+{
+"t": 103.4,
+"e": 120.4,
+"title": "Judging a fund against the index instead of in absolute terms",
+"summary": "A participant says the useful shift was in how to evaluate: people look at returns in quite absolute terms, and benchmarking properly against the index gives a deeper view of what is working and what is not.",
+"w": "secondary",
+"terms": [
+"benchmarking",
+"index",
+"misconception corrected"
+]
+},
+{
+"t": 150.4,
+"e": 175.4,
+"title": "Family money felt like it was in \"more able hands\", so she never stepped in",
+"summary": "Asked what she has since said to her husband or father, a participant describes the default she is leaving behind: when family money is already being managed you assume those are more able hands and so you do not get involved at all. What has changed is wanting to treat it as a unit, be aware, and be part of the conversation.",
+"w": "primary",
+"terms": [
+"family money conversation",
+"investing confidence",
+"memorable statement"
+]
+}
+],
+"moment_text": "She asked the man who manages her assets for the full history, the same morning She was afraid of investing; the shift was realising it is not that tough The aha moment: how an SIP compounds, and that she can still start for her kids Judging a fund against the index instead of in absolute terms Family money felt like it was in \"more able hands\", so she never stepped in diversification assets personal experience fear of investing scared of investing overcoming fear transformation sip compounding starting to invest memorable statement benchmarking index misconception corrected family money conversation investing confidence",
+"speech": "of feedback. Okay so one is how confident do you feel after this? More than it is much better than, I mean I am asking, I am thinking differently. I am literally thinking differently. I mean I have had conversations about so much already and I actually have already been planning to re look at it, re look at everything, like seriously. I have actually this morning I asked my guy who manages my assets and we are full trajectory from the day I began. Actually I want to see what I have been doing. I want to understand also and then make changes and I am actually thinking of diversifying and investing differently. I never thought about it all this while. Okay great. Didi? I mean for me I think it was just something I was really afraid of, like investing never wanted to learn anything but yeah this is really made it. I mean I feel like I can understand. I think big learning for me has been like oh I understand, I understand, I understand. It is not that tough. So I think that confidence. Yeah. Yeah. What was your biggest aha moment in your like something that blew your mind which you didn't know about? I mean I think I was just the bounding of the SIP. Yeah. And you know it was just wow. Like the longer you called it I just felt like I missed the bus. But no for our kids we can start, it's just crazy how it compounds. Never realized it was like that, you know. That much. Yeah. I wasn't aware. I have to take what comes to mind. And the SWP both Yeah. I think ways to evaluate maybe because I think that we look at it in quite absolute terms but I think when you're benchmarking in the right way against the index it gives you a slightly deeper perspective on what's voting and what's not. Okay. I think this is what surprised, okay so that was kind of what surprised you. What discussion or question or statements have you made to your husband or your father post this class? This is very interesting to hear from you. From you especially. Yeah. I think just the ability to have a more in-depth conversation. You know I think because when typically money you have as a family is being managed. You feel like those are more able hands so then you don't really step in or get involved at all. But I think it is important to look at it still as a unit and be aware and part of the conversation if nothing else. You? I don't know. Nothing's going to be coming to our minds. Any crazy mad conversation or discussion you had? Not yet. Don't yet.",
+"speech_dur": 187.6,
+"speech_at": [
+[
+0.0,
+"of feedback. Okay so one is how confident do you feel after this? More than it is much"
+],
+[
+7.0,
+"better than, I mean I am asking, I am thinking differently. I am literally thinking differently."
+],
+[
+12.0,
+"I mean I have had conversations about so much already and I actually have already been"
+],
+[
+18.0,
+"planning to re look at it, re look at everything, like seriously. I have actually this morning"
+],
+[
+26.0,
+"I asked my guy who manages my assets and we are full trajectory from the day I began."
+],
+[
+32.0,
+"Actually I want to see what I have been doing. I want to understand also and then make changes"
+],
+[
+38.0,
+"and I am actually thinking of diversifying and investing differently. I never thought about"
+],
+[
+43.0,
+"it all this while. Okay great. Didi? I mean for me I think it was just something"
+],
+[
+48.0,
+"I was really afraid of, like investing never wanted to learn anything but yeah this"
+],
+[
+53.0,
+"is really made it. I mean I feel like I can understand. I think big learning for me has"
+],
+[
+57.0,
+"been like oh I understand, I understand, I understand. It is not that tough. So I think"
+],
+[
+62.0,
+"that confidence. Yeah. Yeah. What was your biggest aha moment in your like something"
+],
+[
+70.0,
+"that blew your mind which you didn't know about? I mean I think I was just the"
+],
+[
+77.4,
+"bounding of the SIP. Yeah. And you know it was just wow. Like the longer you called"
+],
+[
+84.4,
+"it I just felt like I missed the bus. But no for our kids we can start, it's just"
+],
+[
+90.4,
+"crazy how it compounds. Never realized it was like that, you know. That much."
+],
+[
+95.4,
+"Yeah. I wasn't aware. I have to take what comes to mind. And the SWP both"
+],
+[
+103.4,
+"Yeah. I think ways to evaluate maybe because I think that we look at it in quite"
+],
+[
+110.4,
+"absolute terms but I think when you're benchmarking in the right way against the"
+],
+[
+114.4,
+"index it gives you a slightly deeper perspective on what's voting and what's not."
+],
+[
+120.4,
+"Okay. I think this is what surprised, okay so that was kind of what surprised you."
+],
+[
+128.4,
+"What discussion or question or statements have you made to your husband"
+],
+[
+134.4,
+"or your father post this class? This is very interesting to hear from you."
+],
+[
+141.4,
+"From you especially. Yeah. I think just the ability to have a more in-depth"
+],
+[
+150.4,
+"conversation. You know I think because when typically money you have as a family"
+],
+[
+157.4,
+"is being managed. You feel like those are more able hands so then you don't"
+],
+[
+162.4,
+"really step in or get involved at all. But I think it is important to look at it"
+],
+[
+168.4,
+"still as a unit and be aware and part of the conversation if nothing else."
+],
+[
+175.4,
+"You? I don't know. Nothing's going to be coming to our minds."
+],
+[
+180.4,
+"Any crazy mad conversation or discussion you had? Not yet."
+],
+[
+186.4,
+"Don't yet."
+]
+]
+},
+{
+"id": "IFM-556",
+"title": "Feedback session — 6-second fragment, no usable speech",
+"date": "2026-09-29",
+"thumb": "../thumbs/IFM-556.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-556.mp4",
+"drive": "https://drive.google.com/file/d/1cQ47fPSccwH-ZS76oh4PZKilGtLSDQAc/view",
+"description": "A six-second offcut from the September 2026 feedback recording. The transcript is three broken half-sentences of crosstalk with no recoverable meaning. Kept for completeness so the file is reachable, hidden from the Library because there is nothing here anyone could use.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [
+"Fixed Income"
+],
+"person": [],
+"source": "IFM / In-house",
+"search_terms": "feedback session second fragment usable speech six offcut from september 2026 recording transcript three broken half sentences crosstalk recoverable meaning kept completeness file reachable hidden library because there nothing here anyone could use unusable",
+"speech": "I haven't put this. I have to know. I don't see all the tones.",
+"speech_dur": 5.5,
+"speech_at": [
+[
+0.0,
+"I haven't put this. I have to know."
+],
+[
+3.1,
+"I don't see all the tones."
+]
+],
+"library": false
+},
+{
+"id": "IFM-557",
+"title": "Feedback — the workbook as the thing to go back to, and being able to ask anything (96s)",
+"date": "2026-09-29",
+"thumb": "../thumbs/IFM-557.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-557.mp4",
+"drive": "https://drive.google.com/file/d/1Ya9fouSHGidwKnXGBTi3jPXkC9jbE0by/view",
+"description": "⚠️ DO NOT PUBLISH WITHOUT ASKING HER FIRST — at 1:04 and again at 1:24 the speaker says \"and don't put this on\" and \"please don't put that on\". The restriction is hers, not a policy, and it is only known because the clip was transcribed. Ninety-six seconds on what the course left behind. The speaker says she can now ask sensible questions and understands the terms, and — more than once — that what matters is having the workbook to go back to, because with brain fog she expects to forget: \"it is amazing that this is there to go back to\". She repeats \"I feel more aware\". Asked what the most fun part was, she answers that it was being able to ask any question at all, and credits Hiral with being consistently patient about answering them. She mentions switching into the Monday class after seeing another participant there.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [
+"Money Conversations",
+"Fixed Income"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "testimonial review feedback social proof word of mouth feedback workbook thing back being able ask anything 96s not publish without asking her first again speaker says don put please restriction hers policy only known because clip was transcribed ninety six seconds what course left behind she can now",
+"moments": [
+{
+"t": 1.0,
+"e": 17.0,
+"title": "She can ask sensible questions now, and understands the terms",
+"summary": "The speaker opens by saying she understands more, can actually ask sensible questions, and now recognises the terminology — and repeats that she feels more aware.",
+"w": "primary",
+"terms": [
+"asking questions",
+"jargon",
+"investing confidence"
+]
+},
+{
+"t": 23.0,
+"e": 33.0,
+"title": "The book is what she can go back to when the brain fog takes the rest",
+"summary": "She says the workbook is the part that lasts: with brain fog she expects to forget everything, and what matters is that the book is there to go back to.",
+"w": "primary",
+"terms": [
+"book",
+"brain fog",
+"personal experience"
+]
+},
+{
+"t": 46.0,
+"e": 64.1,
+"title": "The most fun part was being able to ask anything at all",
+"summary": "Asked what the most fun part of the workshop was, she answers that it was being able to ask any question, and credits the facilitator with being consistently patient about answering them.",
+"w": "primary",
+"terms": [
+"asking questions",
+"teaching style",
+"safe space"
+]
+},
+{
+"t": 64.1,
+"e": 84.1,
+"title": "RESTRICTED — the speaker asks twice that this passage not be published",
+"summary": "From about 1:04 to 1:24 the speaker twice asks for what she is saying not to be used: \"and don't put this on\", then \"please don't put that on\". The passage covers her having had a lot of questions and switching into the Monday class after seeing another participant there. Recorded as a moment so that anyone cutting this clip can see exactly where the restriction begins and ends. Do not publish this span without going back to her.",
+"w": "secondary",
+"terms": [
+"monday class"
+]
+}
+],
+"moment_text": "She can ask sensible questions now, and understands the terms The book is what she can go back to when the brain fog takes the rest The most fun part was being able to ask anything at all RESTRICTED — the speaker asks twice that this passage not be published asking questions jargon investing confidence book brain fog personal experience teaching style safe space monday class",
+"speech": "More like, more understanding, I can actually ask sensible questions and before when I understand some terms, I almost importantly have something that I can go back to. I feel more aware, I just feel more aware. Even mentally, as a person, I forget a lot of things but I have this book as a mindset. Yeah, I think the book is really good because at the end of the day, I know with my brain fog, I'm going to forget everything. But the point is it's amazing that this is there to give, I mean to go back. Two plus, it's as simple as when you tell, you know, when you've explained everything. Yes. So, did you feel comfortable asking questions? Yeah, very much. What was the most fun part of this workshop? I think being able to ask any question and the fact that you've always been extremely patient about answering all. And don't put this on, I actually came on a Monday class. There's someone who has so many questions and you're so patient, it's amazing. So, at that point, I saw Sheetal there and I was like, oh maybe I can switch to this timing but then please don't put that on. But I was like, I was so many questions. You didn't have the patience. No, I didn't have the patience but it's amazing that you didn't have.",
+"speech_dur": 96.0,
+"speech_at": [
+[
+1.0,
+"More like, more understanding, I can actually ask sensible questions and before when I understand some terms, I almost importantly have something that I can go back to."
+],
+[
+13.0,
+"I feel more aware, I just feel more aware."
+],
+[
+17.0,
+"Even mentally, as a person, I forget a lot of things but I have this book as a mindset."
+],
+[
+23.0,
+"Yeah, I think the book is really good because at the end of the day, I know with my brain fog, I'm going to forget everything."
+],
+[
+29.0,
+"But the point is it's amazing that this is there to give, I mean to go back."
+],
+[
+33.0,
+"Two plus, it's as simple as when you tell, you know, when you've explained everything."
+],
+[
+38.0,
+"Yes. So, did you feel comfortable asking questions?"
+],
+[
+44.0,
+"Yeah, very much."
+],
+[
+46.0,
+"What was the most fun part of this workshop?"
+],
+[
+49.0,
+"I think being able to ask any question and the fact that you've always been extremely patient about answering all."
+],
+[
+64.1,
+"And don't put this on, I actually came on a Monday class."
+],
+[
+70.1,
+"There's someone who has so many questions and you're so patient, it's amazing."
+],
+[
+76.1,
+"So, at that point, I saw Sheetal there and I was like, oh maybe I can switch to this timing but then please don't put that on."
+],
+[
+84.1,
+"But I was like, I was so many questions."
+],
+[
+88.1,
+"You didn't have the patience."
+],
+[
+90.1,
+"No, I didn't have the patience but it's amazing that you didn't have."
+]
+]
+},
+{
+"id": "IFM-558",
+"title": "Feedback — attendance, and \"you are one of the few\" (26s)",
+"date": "2026-09-29",
+"thumb": "../thumbs/IFM-558.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-558.mp4",
+"drive": "https://drive.google.com/file/d/1uuyQOn7YwtMxzUeDNsYrU_1Xn-kU1HPN/view",
+"description": "Twenty-six seconds of overlapping conversation about turning up. A participant says she attended every class and normally would not have, and Hiral replies \"that is awesome, you are one of the few\". Several people speak at once and the automatic transcript garbles the middle of the exchange badly enough that no other line in it should be quoted without listening back.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [
+"Money Conversations",
+"Fixed Income"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "feedback attendance you one few 26s twenty six seconds overlapping conversation about turning participant says she attended every class normally would not have hiral replies awesome several people speak once automatic transcript garbles middle exchange badly enough other line should",
+"speech": "I think because we've asked a lot of things. No, it was the contrary. No, we didn't trust you. You're not good for the Monday business. That's okay, you're not a good business. No, I met one day, I met one day, but I was like, never, I'm never going to be happy. No, I never attended every class, I usually quite a bunker. Yeah, come on, I've come to every class. That's awesome, you are one of the few. Yeah, that's not typically... Yeah, but I think we might be one of the few. Yeah, we might be one of the few.",
+"speech_dur": 25.7,
+"speech_at": [
+[
+0.0,
+"I think because we've asked a lot of things."
+],
+[
+1.6,
+"No, it was the contrary."
+],
+[
+3.1,
+"No, we didn't trust you."
+],
+[
+4.6,
+"You're not good for the Monday business."
+],
+[
+6.6,
+"That's okay, you're not a good business."
+],
+[
+8.6,
+"No, I met one day, I met one day, but I was like, never, I'm never going to be happy."
+],
+[
+12.6,
+"No, I never attended every class, I usually quite a bunker."
+],
+[
+15.6,
+"Yeah, come on, I've come to every class."
+],
+[
+17.6,
+"That's awesome, you are one of the few."
+],
+[
+19.6,
+"Yeah, that's not typically..."
+],
+[
+21.6,
+"Yeah, but I think we might be one of the few."
+],
+[
+23.6,
+"Yeah, we might be one of the few."
+]
+]
+},
+{
+"id": "IFM-559",
+"title": "Feedback session — 2-second fragment, no usable speech",
+"date": "2026-09-29",
+"thumb": "../thumbs/IFM-559.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-559.mp4",
+"drive": "https://drive.google.com/file/d/1fFpUqiM4jVzI-Jei15PjpToYTpZaatc9/view",
+"description": "Two seconds of the room agreeing with something said off-camera — the entire transcript is \"You guys? Yeah! Awesome!\". Reachable for completeness, hidden from the Library because it carries no content.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [
+"Fixed Income"
+],
+"person": [],
+"source": "IFM / In-house",
+"search_terms": "feedback session second fragment usable speech two seconds room agreeing something said off camera entire transcript you guys yeah awesome reachable completeness hidden from library because carries content september 2026 offcut unusable",
+"speech": "You guys? Yeah! Awesome!",
+"speech_dur": 2.1,
+"speech_at": [
+[
+0.0,
+"You guys? Yeah! Awesome!"
+]
+],
+"library": false
+},
+{
+"id": "IFM-560",
+"title": "Feedback — the ask: a two-hour session on mutual funds alone (28s)",
+"date": "2026-09-29",
+"thumb": "../thumbs/IFM-560.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-560.mp4",
+"drive": "https://drive.google.com/file/d/1EyJBenAPOarfAH1qsYNq_O29Wjukicff/view",
+"description": "Hiral asks what people would want next — other topics, a different format — and gets a specific answer worth acting on: a short standalone session, \"just a two-hour thing, maybe just mutual funds\", which the speaker says she would come back for. She raises it in the context of an organisation she has mentioned earlier, so it reads as both a personal and a corporate ask. Twenty-eight seconds, and the clearest product signal in the September feedback.",
+"session": "",
+"slide_text": "just a two-hour thing, maybe just mutual funds",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [
+"Mutual Funds"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "feedback ask two hour session mutual funds alone 28s hiral asks what people would want next other topics different format gets specific answer worth acting short standalone just thing maybe which speaker says she come back raises context organisation has",
+"moments": [
+{
+"t": 14.8,
+"e": 25.7,
+"title": "The ask: a standalone two-hour session on mutual funds alone",
+"summary": "Asked what people would want next, a participant asks for a short standalone session — a two-hour thing on just mutual funds — and says she would really come back for that. She raises it in the context of an organisation discussed earlier, so it reads as a corporate ask as well as a personal one.",
+"w": "primary",
+"terms": [
+"mutual funds",
+"two-hour"
+]
+}
+],
+"moment_text": "The ask: a standalone two-hour session on mutual funds alone mutual funds two-hour",
+"speech": "in terms of other topics or a different format or what do you think I can do or what you guys would like to now take this forward right? So one thing is that again for that organization that are you talking about I would love if you know you had something like a just a two-hour thing maybe just mutual funds yeah I would really come back for that for the mutual funds I was actually",
+"speech_dur": 28.1,
+"speech_at": [
+[
+0.0,
+"in terms of other topics or a different format or what do you think I can do or what you guys"
+],
+[
+9.0,
+"would like to now take this forward right? So one thing is that again for that organization that"
+],
+[
+14.8,
+"are you talking about I would love if you know you had something like a just a two-hour thing"
+],
+[
+19.8,
+"maybe just mutual funds yeah I would really come back for that for the mutual funds I was actually"
+]
+]
+},
+{
+"id": "IFM-561",
+"title": "Feedback session — 2-second fragment, sign-off only",
+"date": "2026-09-29",
+"thumb": "../thumbs/IFM-561.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-561.mp4",
+"drive": "https://drive.google.com/file/d/10OMG28LEeYb-C8L6wkkAVCLBUx4g78Ql/view",
+"description": "Two seconds of someone saying they are happy to catch up and will see the group at the end. Housekeeping, not content. Reachable, hidden from the Library.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [],
+"person": [],
+"source": "IFM / In-house",
+"search_terms": "feedback session second fragment sign off only two seconds someone saying they happy catch will see group end housekeeping not content reachable hidden from library september 2026 offcut unusable",
+"speech": "I'm happy to catch up. See you at the end.",
+"speech_dur": 1.7,
+"speech_at": [
+[
+0.0,
+"I'm happy to catch up."
+],
+[
+1.0,
+"See you at the end."
+]
+],
+"library": false
+},
+{
+"id": "IFM-562",
+"title": "\"It is very empowering\" — and having nowhere to ask questions before (39s)",
+"date": "2026-09-29",
+"thumb": "../thumbs/IFM-562.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-562.mp4",
+"drive": "https://drive.google.com/file/d/1PHwBbKE5Uc4XoBDI2qBNNg5nzZsXi_CP/view",
+"description": "Thirty-nine seconds of participants comparing notes on how the course felt. The line to use is \"I think it is very empowering\", followed immediately by \"I feel like I did it by myself\" — the shift from being taught to being able. The reason it lands is the admission just after it: before this, \"I feel lost, and I don't have a place to ask questions\", with the alternative being waiting for a man in the family to come round and explain basic things. One speaker also says she wishes there were something next. Several voices overlap, so quote the two clear lines and listen back before using the rest.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [
+"Money Conversations",
+"Family & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "testimonial review feedback social proof word of mouth very empowering having nowhere ask questions before 39s thirty nine seconds participants comparing notes how course felt line use think followed immediately feel like did myself shift from being taught able reason lands admission just after lost don have place",
+"moments": [
+{
+"t": 14.0,
+"e": 22.0,
+"title": "\"It is very empowering\" — and \"I feel like I did it by myself\"",
+"summary": "The clearest line in the clip: a participant calls the programme very empowering, and the reason lands in the sentence just after — she feels like she did it by herself, rather than having been carried through it.",
+"w": "primary",
+"terms": [
+"empowering",
+"did it by myself",
+"transformation"
+]
+},
+{
+"t": 26.0,
+"e": 29.5,
+"title": "Before this she felt lost, with nowhere to ask questions",
+"summary": "The admission that gives the empowerment line its weight: she says she feels lost and has no place to ask questions, and the alternative described just after is waiting for a man in the family to come round and explain basic things.",
+"w": "primary",
+"terms": [
+"asking questions",
+"lost",
+"personal experience"
+]
+}
+],
+"moment_text": "\"It is very empowering\" — and \"I feel like I did it by myself\" Before this she felt lost, with nowhere to ask questions empowering did it by myself transformation asking questions lost personal experience",
+"speech": "So for me, it's like, oh, I wish there was something next. But actually, I do want to know. It's just that this is something very different. Really? That's how the program here makes me happy. Yeah. Oh, yeah. This is something unusual for me. And I'm so happy that you're here. So I think it's very empowering. That's why you feel like, oh, my god, you know. I know. I feel like I did it by myself. Like, it's just things. I really, it was really nice. I feel lost. And I don't have a place to ask questions. Yeah, actually, whenever he comes, I find him to do basic stuff. Few things like that. Yeah. So for then, we do.",
+"speech_dur": 39.0,
+"speech_at": [
+[
+0.0,
+"So for me, it's like, oh, I wish there was something next."
+],
+[
+3.4,
+"But actually, I do want to know."
+],
+[
+5.0,
+"It's just that this is something very different."
+],
+[
+6.5,
+"Really?"
+],
+[
+7.0,
+"That's how the program here makes me happy."
+],
+[
+8.5,
+"Yeah."
+],
+[
+9.0,
+"Oh, yeah."
+],
+[
+10.0,
+"This is something unusual for me."
+],
+[
+12.0,
+"And I'm so happy that you're here."
+],
+[
+14.0,
+"So I think it's very empowering."
+],
+[
+16.5,
+"That's why you feel like, oh, my god, you know."
+],
+[
+20.0,
+"I know."
+],
+[
+20.5,
+"I feel like I did it by myself."
+],
+[
+22.0,
+"Like, it's just things."
+],
+[
+23.5,
+"I really, it was really nice."
+],
+[
+26.0,
+"I feel lost."
+],
+[
+27.0,
+"And I don't have a place to ask questions."
+],
+[
+30.5,
+"Yeah, actually, whenever he comes, I find him to do basic stuff."
+],
+[
+36.5,
+"Few things like that."
+],
+[
+37.5,
+"Yeah."
+],
+[
+38.0,
+"So for then, we do."
+]
+]
+},
+{
+"id": "IFM-563",
+"title": "On commitment, attention span, and Hiral committing to a refresher (23s)",
+"date": "2026-09-29",
+"thumb": "../thumbs/IFM-563.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-563.mp4",
+"drive": "https://drive.google.com/file/d/1c9GRGg1_T1f_lTdddempO2xpWEDQuzR0/view",
+"description": "Twenty-three seconds about why a long intense course is the wrong shape for some audiences: attention span is short and \"they don't want more commitment, they don't want something so intense\", so it has to be delivered one way rather than demanding much back. Hiral answers that she is \"definitely doing one refresher, maybe a few months down the line\". Read together with the two-hour mutual-funds ask in IFM-560, it is the same signal twice: shorter formats, and a way back in after the course ends.",
+"session": "",
+"slide_text": "t want more commitment, they don , so it has to be delivered one way rather than demanding much back. Hiral answers that she is",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "commitment attention span hiral committing refresher 23s twenty three seconds about why long intense course wrong shape some audiences short they don want more something has delivered one way rather than demanding much back answers she definitely doing maybe few",
+"moments": [
+{
+"t": 7.0,
+"e": 22.0,
+"title": "They will not commit to something intense — and a refresher is coming",
+"summary": "On why a long intense course is the wrong shape for some audiences: they do not want more commitment or anything so intense, so it has to be delivered one way rather than demanding much back. The facilitator answers that she is definitely doing one refresher, maybe a few months down the line.",
+"w": "primary",
+"terms": [
+"refresher",
+"commitment",
+"teaching style"
+]
+}
+],
+"moment_text": "They will not commit to something intense — and a refresher is coming refresher commitment teaching style",
+"speech": "And attention span is also not the best No but they, yes, so it has to be one way because they don't commit They don't want more commitment, they don't want something so intense or something Exactly, so I'm doing it for them and what I was saying is I'm definitely doing one refresher Maybe like a few months down the line Oh my god, see",
+"speech_dur": 23.1,
+"speech_at": [
+[
+0.0,
+"And attention span is also not the best"
+],
+[
+2.8,
+"No but they, yes, so it has to be one way because they don't commit"
+],
+[
+7.0,
+"They don't want more commitment, they don't want something so intense or something"
+],
+[
+11.0,
+"Exactly, so I'm doing it for them and what I was saying is I'm definitely doing one refresher"
+],
+[
+19.0,
+"Maybe like a few months down the line"
+],
+[
+22.0,
+"Oh my god, see"
+]
+]
+},
+{
+"id": "IFM-564",
+"title": "Tata Sons listing — the consolidated cut: Trusts, philanthropy and the boardroom (2 min)",
+"date": "2026-09-29",
+"thumb": "../thumbs/IFM-564.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-564.mp4",
+"drive": "https://drive.google.com/file/d/1iJjGFJyhVQrGfcIMf2e9WljgU_aBe6Nw/view",
+"description": "A two-minute news explainer, piece to camera, on why the RBI is pushing Tata Sons towards a listing. It opens on one number — roughly ₹2 lakh crore of assets — then explains that listing would force disclosure and make Tata Sons answerable to public shareholders. The heart of it is why this matters to an ordinary investor: today you can only buy a listed Tata company such as Tata Motors or Tata Steel, whereas Tata Sons sits at the top and also owns unlisted businesses including Air India and Tata Electronics, so a listing would let people buy into the holding company itself. It then covers the opposition — Tata Trusts, which holds about 66%, argues public shareholders would change how the group balances business against philanthropy — and Noel Tata's counter-proposal to split Tata Sons into smaller entities. It closes on a boardroom question about a chairman reappointment. Ends with the founder sign-off.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Wealth",
+"Money Conversations",
+"IPOs",
+"Markets & Economy"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "rbi repo rate central bank tata sons listing consolidated cut trusts philanthropy boardroom min two minute news explainer piece camera why rbi pushing towards opens one number roughly lakh crore assets then explains would force disclosure make answerable public shareholders heart matters ordinary investor today",
+"moments": [
+{
+"t": 0.0,
+"e": 21.0,
+"title": "Why the RBI is pushing Tata Sons to list: it starts with ₹2 lakh crore",
+"summary": "The opening frames the whole story on one number — roughly ₹2 lakh crore of assets. Tata Sons has been private all these years, and it is the size of the balance sheet plus its stakes across the group that brings the RBI in.",
+"w": "primary",
+"terms": [
+"tata sons",
+"rbi",
+"2 lakh crore",
+"stock market listing"
+]
+},
+{
+"t": 21.0,
+"e": 32.9,
+"title": "What listing would change: disclosure, and answering to public shareholders",
+"summary": "The mechanism, in one line: once it lists, more about what the company does and earns becomes public, and it acquires public shareholders it has to answer to.",
+"w": "primary",
+"terms": [
+"tata sons",
+"public shareholders",
+"stock market listing"
+]
+},
+{
+"t": 48.2,
+"e": 69.2,
+"title": "Why an investor should care: today you cannot buy the parent, only the pieces",
+"summary": "The part aimed at the viewer. Tata Sons sits at the top and owns pieces of TCS, Tata Motors and Tata Steel, plus unlisted businesses including Air India and Tata Electronics. Today you can only buy a listed Tata company; a listing would let people buy into the parent itself.",
+"w": "primary",
+"terms": [
+"tata sons",
+"holding company",
+"air india",
+"tcs"
+]
+},
+{
+"t": 69.2,
+"e": 91.3,
+"title": "Tata Trusts opposes it — public shareholders versus philanthropy",
+"summary": "The objection, and it is the most quotable part: Tata Trusts, which owns about 66%, argues that bringing in public shareholders could change how the group balances business against philanthropy. Noel Tata has proposed splitting Tata Sons into smaller entities instead.",
+"w": "primary",
+"terms": [
+"tata trust",
+"philanthropy",
+"noel tata",
+"tata sons"
+]
+},
+{
+"t": 91.3,
+"e": 107.6,
+"title": "A boardroom question over a chairman reappointment — names unverified",
+"summary": "The closing item raises a question about someone's role in the reappointment of the Tata Sons chairman, and about business links to his family. The automatic transcript garbles both surnames here, so the substance is recorded but no name from this passage should be quoted or published without listening back to the audio first.",
+"w": "secondary",
+"terms": [
+"boardroom",
+"tata sons"
+]
+}
+],
+"moment_text": "Why the RBI is pushing Tata Sons to list: it starts with ₹2 lakh crore What listing would change: disclosure, and answering to public shareholders Why an investor should care: today you cannot buy the parent, only the pieces Tata Trusts opposes it — public shareholders versus philanthropy A boardroom question over a chairman reappointment — names unverified tata sons rbi 2 lakh crore stock market listing public shareholders holding company air india tcs tata trust philanthropy noel tata boardroom",
+"speech": "Why is the RBI pushing TataSans towards the listing? The answer starts with one number, rupees 2 lakh crore. That's roughly the size of TataSans assets. TataSans has been a private company all these years, but with assets over rupees 2 lakh crores and stakes across the wider business group, the RBI wants it to list. The idea is simple. Once TataSans list, more information about what TataSans does, earns will be made available to the public. And TataSans will have the public shareholders to answer to. Why does this matter? Because TataSans isn't just any old company. It's the mothership of the Tata Group. Today, if you want to invest in Tata, you would have to buy one of its listed companies like Tata Motors, Tata Chemicals or TVS. TataSans sits at the top of the Tata Group and it owns pieces of many listed companies like TCS, Tata Motors or Tata Steel. If TataSans list, investors could get a chance to buy a piece of the mothership which not only owns these listed companies but some unlisted ones like Air India and Tata Electron. The Tata Trust which own about 66% of TataSans is against listing for this very reason. Their argument is bringing public shareholders into TataSans could change the way TataSans balances business with philanthropy. So Noel Tata, the chairman of the Tata Trust has proposed splitting TataSans into smaller entities. And there's another development inside the TataSans boardroom. Questions have been raised about Minu Srinivasan's role in the reappointment of TataSans chairman N. Chandrasekharan given that there are business links between TVS and Chandrasekharan's family. One thing is for certain, whichever direction the group decides to take the structure of the Tata Group could look very different. I'm Hiral Goyal, founder of Investing for Mommies. Follow me for more such insights.",
+"speech_dur": 119.6,
+"speech_at": [
+[
+0.0,
+"Why is the RBI pushing TataSans towards the listing?"
+],
+[
+3.5,
+"The answer starts with one number, rupees 2 lakh crore."
+],
+[
+7.6,
+"That's roughly the size of TataSans assets."
+],
+[
+11.2,
+"TataSans has been a private company all these years,"
+],
+[
+14.0,
+"but with assets over rupees 2 lakh crores"
+],
+[
+16.5,
+"and stakes across the wider business group,"
+],
+[
+19.2,
+"the RBI wants it to list."
+],
+[
+21.0,
+"The idea is simple."
+],
+[
+22.4,
+"Once TataSans list,"
+],
+[
+24.0,
+"more information about what TataSans does,"
+],
+[
+26.7,
+"earns will be made available to the public."
+],
+[
+29.1,
+"And TataSans will have the public shareholders to answer to."
+],
+[
+32.9,
+"Why does this matter?"
+],
+[
+34.3,
+"Because TataSans isn't just any old company."
+],
+[
+37.4,
+"It's the mothership of the Tata Group."
+],
+[
+40.4,
+"Today, if you want to invest in Tata,"
+],
+[
+42.6,
+"you would have to buy one of its listed companies"
+],
+[
+44.6,
+"like Tata Motors, Tata Chemicals or TVS."
+],
+[
+48.2,
+"TataSans sits at the top of the Tata Group"
+],
+[
+51.0,
+"and it owns pieces of many listed companies"
+],
+[
+54.1,
+"like TCS, Tata Motors or Tata Steel."
+],
+[
+57.7,
+"If TataSans list,"
+],
+[
+59.6,
+"investors could get a chance to buy a piece of the mothership"
+],
+[
+63.6,
+"which not only owns these listed companies"
+],
+[
+66.1,
+"but some unlisted ones like Air India and Tata Electron."
+],
+[
+69.2,
+"The Tata Trust which own about 66% of TataSans"
+],
+[
+72.8,
+"is against listing for this very reason."
+],
+[
+75.6,
+"Their argument is bringing public shareholders into TataSans"
+],
+[
+79.4,
+"could change the way TataSans balances business with philanthropy."
+],
+[
+84.1,
+"So Noel Tata, the chairman of the Tata Trust"
+],
+[
+86.9,
+"has proposed splitting TataSans into smaller entities."
+],
+[
+91.3,
+"And there's another development inside the TataSans boardroom."
+],
+[
+95.2,
+"Questions have been raised about"
+],
+[
+96.9,
+"Minu Srinivasan's role in the reappointment"
+],
+[
+99.4,
+"of TataSans chairman N. Chandrasekharan"
+],
+[
+102.8,
+"given that there are business links between TVS"
+],
+[
+105.6,
+"and Chandrasekharan's family."
+],
+[
+107.6,
+"One thing is for certain,"
+],
+[
+108.8,
+"whichever direction the group decides to take"
+],
+[
+111.1,
+"the structure of the Tata Group could look very different."
+],
+[
+114.7,
+"I'm Hiral Goyal, founder of Investing for Mommies."
+],
+[
+117.2,
+"Follow me for more such insights."
+]
+]
+},
+{
+"id": "IFM-565",
+"title": "Tata Sons listing — the NBFC cut: why the RBI rejected the plea to stay private (105s)",
+"date": "2026-09-24",
+"thumb": "../thumbs/IFM-565.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-565.mp4",
+"drive": "https://drive.google.com/file/d/1LBhg0EzDK-YA9wT_3-enfrGCLlf96O0e/view",
+"description": "The regulatory version of the Tata Sons story, and the clearer of the two cuts on the mechanism. It explains what Tata Sons actually is — an NBFC, which can provide financial services like a bank but cannot take deposits — and that the RBI sorts NBFCs into four layers, base, middle, upper and top, regulating the bigger ones harder. Tata Sons sits in the upper layer because it manages over ₹2 lakh crore against a ₹1 lakh crore threshold, and for an upper-layer NBFC listing is a regulatory requirement rather than a choice. It notes that Tata Sons applied about two years ago to surrender its NBFC registration and the RBI rejected it, then covers why buying the holding company would matter and Noel Tata's proposal to split it. Ends with the founder sign-off.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Wealth",
+"IPOs",
+"Markets & Economy"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "rbi repo rate central bank tata sons listing nbfc cut why rbi rejected plea stay private 105s regulatory version story clearer two cuts mechanism explains what actually which can provide financial services like bank but cannot take deposits sorts nbfcs into four layers base middle",
+"moments": [
+{
+"t": 3.9,
+"e": 30.6,
+"title": "What an NBFC actually is, and the four layers the RBI sorts them into",
+"summary": "The clearest explanation across both Tata cuts: an NBFC can provide financial services like a bank but cannot take savings or fixed deposits, and the RBI sorts NBFCs into four layers — base, middle, upper and top — regulating the bigger ones harder.",
+"w": "primary",
+"terms": [
+"nbfc",
+"non-banking financial company",
+"rbi"
+]
+},
+{
+"t": 30.6,
+"e": 52.9,
+"title": "In the upper layer, listing is a regulatory requirement rather than a choice",
+"summary": "Why the obligation exists at all: Tata Sons manages over ₹2 lakh crore against a ₹1 lakh crore threshold, which puts it in the upper layer, and for an upper-layer NBFC listing becomes part of the regulatory requirement.",
+"w": "primary",
+"terms": [
+"nbfc",
+"stock market listing",
+"2 lakh crore",
+"tata sons"
+]
+},
+{
+"t": 77.7,
+"e": 92.9,
+"title": "It asked to give up its NBFC registration two years ago and the RBI refused",
+"summary": "The fact that makes the story current: about two years ago Tata Sons applied to surrender its NBFC registration and the RBI rejected the application. Noel Tata's proposal to split the company is the response, and is only a proposal.",
+"w": "primary",
+"terms": [
+"nbfc",
+"rbi",
+"noel tata",
+"tata sons"
+]
+}
+],
+"moment_text": "What an NBFC actually is, and the four layers the RBI sorts them into In the upper layer, listing is a regulatory requirement rather than a choice It asked to give up its NBFC registration two years ago and the RBI refused nbfc non-banking financial company rbi stock market listing 2 lakh crore tata sons noel tata",
+"speech": "Why does the RBI want TataSans to list on the stock market? The answer starts with what TataSans actually is. TataSans is an NBFC or a non-banking financial. In simple terms, an NBFC can provide financial services like a bank, but it cannot take savings or fixed deposit. Now, the RBI doesn't treat every NBFC the same. It puts them into four layers, base, middle, upper and top. The bigger and more important the NBFC, the more RBI regulates it. TataSans sits in the upper layer. Why? Because TataSans manages assets over 2 lakh crore, well about the 1 lakh crore threshold for this category. And once an NBFC enters the upper layer, listing becomes part of its regulatory requirement. Because listing means more information has to be made to the public, more disclosures and more accountability to public shareholders. And TataSans isn't just any old company. It's the mothership of the Tata Group. Today if you want to invest in Tata, you would have to invest in one of its listed companies like TCS, Titan, Tata Motors or Tata Chemical. But you can't buy TataSans itself. So if TataSans list, investors could get a chance to buy the mothership itself. And TataSans owns some listed as well as unlisted companies like Air India and Tata Electronics. About 2 years ago, TataSans made an application to the RBI to give up its NBFC registration. But the RBI just rejected it. Now Noel Tata has proposed splitting TataSans into smaller entities. It's only a proposal at this stage. But what is certain is whatever direction the Tata Group decides to take, the structure of the Tata Group could look very different. This is Heryal Goyal, founder of Investing for Mummies. Follow us for more such insights.",
+"speech_dur": 105.4,
+"speech_at": [
+[
+0.0,
+"Why does the RBI want TataSans to list on the stock market?"
+],
+[
+3.9,
+"The answer starts with what TataSans actually is."
+],
+[
+7.2,
+"TataSans is an NBFC or a non-banking financial."
+],
+[
+11.1,
+"In simple terms, an NBFC can provide financial services like a bank, but it cannot take savings"
+],
+[
+16.7,
+"or fixed deposit."
+],
+[
+17.7,
+"Now, the RBI doesn't treat every NBFC the same."
+],
+[
+21.4,
+"It puts them into four layers, base, middle, upper and top."
+],
+[
+25.9,
+"The bigger and more important the NBFC, the more RBI regulates it."
+],
+[
+30.6,
+"TataSans sits in the upper layer."
+],
+[
+32.8,
+"Why?"
+],
+[
+33.8,
+"Because TataSans manages assets over 2 lakh crore, well about the 1 lakh crore threshold for"
+],
+[
+38.8,
+"this category."
+],
+[
+40.1,
+"And once an NBFC enters the upper layer, listing becomes part of its regulatory requirement."
+],
+[
+45.5,
+"Because listing means more information has to be made to the public, more disclosures"
+],
+[
+49.8,
+"and more accountability to public shareholders."
+],
+[
+52.9,
+"And TataSans isn't just any old company."
+],
+[
+55.5,
+"It's the mothership of the Tata Group."
+],
+[
+57.6,
+"Today if you want to invest in Tata, you would have to invest in one of its listed companies"
+],
+[
+61.5,
+"like TCS, Titan, Tata Motors or Tata Chemical."
+],
+[
+65.0,
+"But you can't buy TataSans itself."
+],
+[
+67.1,
+"So if TataSans list, investors could get a chance to buy the mothership itself."
+],
+[
+71.6,
+"And TataSans owns some listed as well as unlisted companies like Air India and"
+],
+[
+76.7,
+"Tata Electronics."
+],
+[
+77.7,
+"About 2 years ago, TataSans made an application to the RBI to give up its NBFC registration."
+],
+[
+84.1,
+"But the RBI just rejected it."
+],
+[
+86.4,
+"Now Noel Tata has proposed splitting TataSans into smaller entities."
+],
+[
+90.7,
+"It's only a proposal at this stage."
+],
+[
+92.9,
+"But what is certain is whatever direction the Tata Group decides to take, the structure"
+],
+[
+97.5,
+"of the Tata Group could look very different."
+],
+[
+100.4,
+"This is Heryal Goyal, founder of Investing for Mummies."
+],
+[
+103.6,
+"Follow us for more such insights."
+]
+]
+},
+{
+"id": "IFM-566",
+"title": "Where your insurance premium actually goes — the IRDAI commission proposals (79s)",
+"date": "2026-09-28",
+"thumb": "../thumbs/IFM-566.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-566.mp4",
+"drive": "https://drive.google.com/file/d/195imef2vt6KqtEVQahsLL5XhtEZMi1Gp/view",
+"description": "A 79-second explainer that breaks a ₹100 premium into where the money actually goes: paying claims, the insurer's own costs, and commissions to the distributors who sold the policy. It gives the numbers — about ₹22 of every ₹100 for private insurers, about ₹32 for general insurers — and then the statistic the piece turns on: between 2023 and 2025 new life insurance business grew 28% while distributor payouts grew 125%, so the cost of selling grew more than four times as fast as the business. That is why the IRDAI is proposing tighter limits on commissions and overall expenses. It closes on bundling — being told to buy insurance alongside a loan — which the proposals would stop. It is careful to say these are proposals, not final rules.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Managing Money",
+"Insurance"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "where your insurance premium actually goes irdai commission proposals 79s second explainer breaks ₹100 into money paying claims insurer own costs commissions distributors who sold policy gives numbers about ₹22 every private insurers ₹32 general then statistic piece turns between",
+"moments": [
+{
+"t": 0.0,
+"e": 25.8,
+"title": "Where ₹100 of your insurance premium actually goes",
+"summary": "The premise, broken into three parts: some of every ₹100 pays claims, some covers the insurer's own costs, and some pays commission to the distributor who sold the policy. The cost of doing business is about ₹22 per ₹100 for private insurers and about ₹32 for general insurers.",
+"w": "primary",
+"terms": [
+"insurance premium",
+"insurance commission",
+"claims"
+]
+},
+{
+"t": 25.8,
+"e": 51.7,
+"title": "Business grew 28%, distributor payouts grew 125% — so IRDAI wants limits",
+"summary": "The statistic the whole piece turns on: between 2023 and 2025 new life insurance business grew 28% while distributor payouts grew 125%, meaning the cost of selling grew more than four times as fast as the business. That is why the IRDAI is proposing tighter limits on commissions and overall expenses.",
+"w": "primary",
+"terms": [
+"irdai",
+"insurance commission",
+"life insurance"
+]
+},
+{
+"t": 51.7,
+"e": 68.0,
+"title": "Bundling — being told to buy insurance along with your loan",
+"summary": "Defines bundling in plain terms: you take a loan and are told here is the insurance you have to buy with it. The proposals would stop loans being bundled with insurance. The piece is explicit that these are proposals and not final rules.",
+"w": "primary",
+"terms": [
+"bundling",
+"mis-selling",
+"loan"
+]
+}
+],
+"moment_text": "Where ₹100 of your insurance premium actually goes Business grew 28%, distributor payouts grew 125% — so IRDAI wants limits Bundling — being told to buy insurance along with your loan insurance premium insurance commission claims irdai life insurance bundling mis-selling loan",
+"speech": "You pay a premium for your insurance but how much of your money actually goes towards your insurance? Let's break down 100 rupees to understand where it goes. Some goes towards paying claims, some goes towards the insurance company's costs and some goes towards paying commissions to distributors who actually sell you the policy. Today for private insurers the overall cost of doing business is about 22 rupees out of 100. For general insurers it's about 32 rupees. The IRDAI which is the regulatory authority of insurance in India noticed that between 2023 and 2025 new life insurance business grew by 28% but distributor payouts grew 125%. So the business grew but the cost of selling it grew more than four times as fast. So the IRDAI is proposing tighter limits on commissions as well as overall expenses. Then there's the concept of bundling. When you take a loan and you're told that here's your loan and here's the insurance you need to buy with it that's called bundling. The proposal aims to make sure that loans are no longer bundled with insurance. These are just proposals yet not final rules. If implemented these could mean lower costs and potentially far more value for customers and here are Goyal's founder of Investing for Mammies follow me to understand news more simply.",
+"speech_dur": 78.6,
+"speech_at": [
+[
+0.0,
+"You pay a premium for your insurance but how much of your money actually goes towards your insurance?"
+],
+[
+5.2,
+"Let's break down 100 rupees to understand where it goes."
+],
+[
+8.1,
+"Some goes towards paying claims, some goes towards the insurance company's costs"
+],
+[
+12.8,
+"and some goes towards paying commissions to distributors who actually sell you the policy."
+],
+[
+17.5,
+"Today for private insurers the overall cost of doing business is about 22 rupees out of 100."
+],
+[
+23.2,
+"For general insurers it's about 32 rupees."
+],
+[
+25.8,
+"The IRDAI which is the regulatory authority of insurance in India noticed that between 2023"
+],
+[
+32.3,
+"and 2025 new life insurance business grew by 28% but distributor payouts grew 125%."
+],
+[
+41.1,
+"So the business grew but the cost of selling it grew more than four times as fast."
+],
+[
+46.0,
+"So the IRDAI is proposing tighter limits on commissions as well as overall expenses."
+],
+[
+51.7,
+"Then there's the concept of bundling."
+],
+[
+54.1,
+"When you take a loan and you're told that here's your loan and here's the insurance"
+],
+[
+58.2,
+"you need to buy with it that's called bundling."
+],
+[
+61.1,
+"The proposal aims to make sure that loans are no longer bundled with insurance."
+],
+[
+65.4,
+"These are just proposals yet not final rules."
+],
+[
+68.0,
+"If implemented these could mean lower costs and potentially far more value for customers"
+],
+[
+73.3,
+"and here are Goyal's founder of Investing for Mammies follow me to understand news more simply."
+]
+]
+},
+{
+"id": "IFM-567",
+"title": "HG reel — the 14 raw takes (24 Sep 2026)",
+"date": "2026-09-24",
+"thumb": "../thumbs/IFM-567.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-567.mp4",
+"drive": "https://drive.google.com/drive/folders/1NGomuJJ2kfPN9Rqou0icaWTYGNJyVHHC",
+"description": "Catch-all for the fourteen raw takes shot on 24 September 2026 in the HG reel folder — IMG_7691 through IMG_7724, 1.5 GB in total. Opens the folder, not a single file. The three finished cuts that came out of this shoot are catalogued separately. Individual takes have not been pulled out, and would only be worth doing if a specific line is wanted.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "reel raw takes sep 2026 catch all fourteen shot september folder img 7691 through 7724 total opens not single file three finished cuts came out shoot catalogued separately individual have been pulled would only worth doing specific line wanted hiral"
+},
+{
+"id": "IFM-568",
+"title": "September: Testimonials — reel artboards",
+"date": "2026-09-28",
+"thumb": "../thumbs/IFM-568.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1ABTg7El-H4i7bAX2c_ds-LcgRf_tBs7a",
+"description": "Two finished testimonial artboards delivered by Aakara in the September Reels tree on 28 September 2026. Delivered as artwork only — there is no video file in the folder, so this is the graphic set rather than a cut reel.",
+"session": "",
+"slide_text": "",
+"silent": false,
+"type": "Carousel",
+"status": "Ready",
+"format": "Testimonial",
+"topic": [],
+"person": [],
+"source": "Aakara",
+"search_terms": "testimonial review feedback social proof word of mouth september testimonials reel artboards two finished testimonial delivered aakara reels tree 2026 artwork only there video file folder graphic set rather than cut reviews social proof"
+},
+{
+"id": "IFM-569",
+"title": "September: Asset or liability? — the rapid-fire game reel",
+"date": "2026-09-22",
+"thumb": "../thumbs/IFM-569.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-569.mp4",
+"drive": "https://drive.google.com/file/d/1e1msLyWlh9yAx1mtsbRwqaEzlSbEesiI/view",
+"description": "A 37-second call-and-response game rather than an explainer: \"I'll name something and you tell me asset or liability.\" It runs through stocks, credit card debt, gold, a home loan, mutual funds, a house, a car, a car loan, a designer bag and a luxury watch, and the teaching point lands on the two that surprise people — the bag and the watch are assets, followed by \"an asset doesn't have to be a good investment\". It ends on a joke: asked about \"your husband\", the answer is \"good one\". Delivered by Aakara as a finished MP4 with its own cover artboard; the row links the video and the thumbnail comes from the cover.",
+"session": "",
+"slide_text": "ll name something and you tell me asset or liability. an asset doesn . It ends on a joke: asked about , the answer is",
+"silent": true,
+"type": "Video",
+"status": "Ready",
+"format": "Social / Promotional",
+"topic": [
+"Wealth",
+"Stocks / Equity",
+"Mutual Funds",
+"Fixed Income",
+"Gold"
+],
+"person": [],
+"source": "Aakara",
+"search_terms": "funny fun laughing humour lively september asset liability rapid fire game reel second call response rather than explainer name something you tell runs through stocks credit card debt gold home loan mutual funds house car designer bag luxury watch teaching point lands two surprise people",
+"moments": [
+{
+"t": 7.4,
+"e": 31.4,
+"title": "The twist: a designer bag is an asset, and an asset need not be a good buy",
+"summary": "The rapid-fire round runs through stocks, credit card debt, gold, a home loan, mutual funds, a house, a car and a car loan, then lands on the two that catch people out — a designer bag and a luxury watch are both assets — and makes the actual teaching point: an asset does not have to be a good investment.",
+"w": "primary",
+"terms": [
+"designer bag",
+"luxury watch",
+"asset",
+"misconception corrected"
+]
+}
+],
+"moment_text": "The twist: a designer bag is an asset, and an asset need not be a good buy designer bag luxury watch asset misconception corrected",
+"speech": "Hey Hero, let's play a game. I'll name something and you tell me asset or liability. Ready? Okay, let's go. Stocks. Asset. Credit card debt. Liability. Gold. Asset. Home loan. Liability. Mutual funds. Asset. House. Asset. Car. Asset. Car loan. Liability. Designer bag. Asset. Okay then. Luxury watch. Asset. An asset doesn't have to be a good investment. Your husband? Good one.",
+"speech_dur": 36.8,
+"speech_at": [
+[
+0.0,
+"Hey Hero, let's play a game."
+],
+[
+2.4,
+"I'll name something and you tell me asset or liability."
+],
+[
+5.4,
+"Ready?"
+],
+[
+6.4,
+"Okay, let's go."
+],
+[
+7.4,
+"Stocks."
+],
+[
+8.4,
+"Asset."
+],
+[
+9.4,
+"Credit card debt."
+],
+[
+10.4,
+"Liability."
+],
+[
+11.4,
+"Gold."
+],
+[
+12.4,
+"Asset."
+],
+[
+13.4,
+"Home loan."
+],
+[
+14.4,
+"Liability."
+],
+[
+15.4,
+"Mutual funds."
+],
+[
+16.4,
+"Asset."
+],
+[
+17.4,
+"House."
+],
+[
+18.4,
+"Asset."
+],
+[
+19.4,
+"Car."
+],
+[
+20.4,
+"Asset."
+],
+[
+21.4,
+"Car loan."
+],
+[
+22.4,
+"Liability."
+],
+[
+23.4,
+"Designer bag."
+],
+[
+24.4,
+"Asset."
+],
+[
+25.4,
+"Okay then."
+],
+[
+26.4,
+"Luxury watch."
+],
+[
+27.4,
+"Asset."
+],
+[
+28.4,
+"An asset doesn't have to be a good investment."
+],
+[
+31.4,
+"Your husband?"
+],
+[
+32.4,
+"Good one."
+]
+]
+},
+{
+"id": "IFM-570",
+"title": "September: Gold stocks — cover artboard (reel not delivered)",
+"date": "2026-09-25",
+"thumb": "../thumbs/IFM-570.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1DouEf6ETmRNV6AURKDD8gWPCtBtnIbw3",
+"description": "The cover artboard for a September reel on gold stocks, delivered 25 September 2026. The reel itself is not in the folder — the artboard is the only file present, so this row is the cover and the video is still outstanding from Aakara. Typed as artwork rather than video on purpose: there is nothing to play.",
+"session": "",
+"slide_text": "",
+"silent": false,
+"type": "Carousel",
+"status": "Raw",
+"format": "Social Graphic",
+"topic": [
+"Stocks / Equity"
+],
+"person": [],
+"source": "Aakara",
+"search_terms": "september gold stocks cover artboard reel not delivered 2026 itself folder only file present row video still outstanding from aakara typed artwork rather than purpose there nothing play incomplete awaiting"
+},
+{
+"id": "IFM-571",
+"title": "September 2026 session shoot — full folder (102 files, 10.2 GB)",
+"date": "2026-09-22",
+"thumb": "../thumbs/IFM-571.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-571.mp4",
+"drive": "https://drive.google.com/drive/folders/1ZnW5JSgSZ-nIwstX5Y28u4kySjf9E2aQ",
+"description": "Catch-all for the September 2026 session shoot: 102 video files totalling 10.2 GB, filmed between 21 and 29 September 2026. Nothing in the catalogue reached this folder before today, which is why 102 files showed as unreachable in the 30 September scan. Opens the folder, not a single file. The individual teaching moments have not been pulled out of this shoot yet — that is a transcription-and-moments pass, and it is the next piece of work on this folder.",
+"session": "",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Fixed Income"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "september 2026 session shoot full folder 102 files catch all video totalling filmed between nothing catalogue reached before today which why showed unreachable scan opens not single file individual teaching moments have been pulled out yet transcription pass next piece"
 }
 ];

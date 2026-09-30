@@ -1,0 +1,48 @@
+{
+ "id": "IFM-565",
+ "authored": "2026-09-30",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "What an NBFC actually is, and the four layers the RBI sorts them into",
+   "summary": "The clearest explanation across both Tata cuts: an NBFC can provide financial services like a bank but cannot take savings or fixed deposits, and the RBI sorts NBFCs into four layers — base, middle, upper and top — regulating the bigger ones harder.",
+   "start": 3.9,
+   "end": 30.6,
+   "weight": "primary",
+   "evidence": "TataSans is an NBFC or a non-banking financial. In simple terms, an NBFC can provide financial services like a bank, but it cannot take savings or fixed deposit. Now, the RBI doesn't treat every NBFC the same. It puts them into four layers, base, middle, upper and top.",
+   "search_terms": [
+    "nbfc",
+    "non-banking financial company",
+    "rbi"
+   ]
+  },
+  {
+   "title": "In the upper layer, listing is a regulatory requirement rather than a choice",
+   "summary": "Why the obligation exists at all: Tata Sons manages over ₹2 lakh crore against a ₹1 lakh crore threshold, which puts it in the upper layer, and for an upper-layer NBFC listing becomes part of the regulatory requirement.",
+   "start": 30.6,
+   "end": 52.9,
+   "weight": "primary",
+   "evidence": "Because TataSans manages assets over 2 lakh crore, well about the 1 lakh crore threshold for this category. And once an NBFC enters the upper layer, listing becomes part of its regulatory requirement.",
+   "search_terms": [
+    "nbfc",
+    "stock market listing",
+    "2 lakh crore",
+    "tata sons"
+   ]
+  },
+  {
+   "title": "It asked to give up its NBFC registration two years ago and the RBI refused",
+   "summary": "The fact that makes the story current: about two years ago Tata Sons applied to surrender its NBFC registration and the RBI rejected the application. Noel Tata's proposal to split the company is the response, and is only a proposal.",
+   "start": 77.7,
+   "end": 92.9,
+   "weight": "primary",
+   "evidence": "About 2 years ago, TataSans made an application to the RBI to give up its NBFC registration. But the RBI just rejected it. Now Noel Tata has proposed splitting TataSans into smaller entities. It's only a proposal at this stage.",
+   "search_terms": [
+    "nbfc",
+    "rbi",
+    "noel tata",
+    "tata sons"
+   ]
+  }
+ ]
+}

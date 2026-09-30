@@ -861,5 +861,17 @@
   "kit": "portrait",
   "kit_rank": 2,
   "_kit_why": "Assessed 21 Sep 2026 from the new Aakara 'Hiral Goel' batch (18 previously uncatalogued files). Identity is confirmed, not inferred: the standing-portrait frames match IFM-067 -- a human-verified rank-1 kit portrait -- on wall, outfit, pose and face, so the whole 24 Mar 2026 shoot is established as Hiral rather than read off a description. Portrait: seated at the head of the table with the workbook, framed artwork behind -- reads as authority rather than backdrop, and is the only frame in the shoot with that composition. Rank 2; strong but the artwork behind is busy for a press lead."
+ },
+ "IFM-556": {
+  "library": false,
+  "_why": "6-second fragment, no usable speech — nothing a search could usefully return. Row kept so the file stays reachable from the hub; hidden from the Library because a result nobody can use is the thing the visibility rule exists to prevent."
+ },
+ "IFM-559": {
+  "library": false,
+  "_why": "2-second fragment, entire transcript is four words of agreement. Row kept so the file stays reachable from the hub; hidden from the Library because a result nobody can use is the thing the visibility rule exists to prevent."
+ },
+ "IFM-561": {
+  "library": false,
+  "_why": "2-second fragment, housekeeping sign-off only. Row kept so the file stays reachable from the hub; hidden from the Library because a result nobody can use is the thing the visibility rule exists to prevent."
  }
 }

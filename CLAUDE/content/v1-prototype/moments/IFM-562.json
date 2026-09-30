@@ -1,0 +1,33 @@
+{
+ "id": "IFM-562",
+ "authored": "2026-09-30",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "\"It is very empowering\" — and \"I feel like I did it by myself\"",
+   "summary": "The clearest line in the clip: a participant calls the programme very empowering, and the reason lands in the sentence just after — she feels like she did it by herself, rather than having been carried through it.",
+   "start": 14.0,
+   "end": 22.0,
+   "weight": "primary",
+   "evidence": "So I think it's very empowering. That's why you feel like, oh, my god, you know. I know. I feel like I did it by myself.",
+   "search_terms": [
+    "empowering",
+    "did it by myself",
+    "transformation"
+   ]
+  },
+  {
+   "title": "Before this she felt lost, with nowhere to ask questions",
+   "summary": "The admission that gives the empowerment line its weight: she says she feels lost and has no place to ask questions, and the alternative described just after is waiting for a man in the family to come round and explain basic things.",
+   "start": 26.0,
+   "end": 29.5,
+   "weight": "primary",
+   "evidence": "I feel lost. And I don't have a place to ask questions.",
+   "search_terms": [
+    "asking questions",
+    "lost",
+    "personal experience"
+   ]
+  }
+ ]
+}

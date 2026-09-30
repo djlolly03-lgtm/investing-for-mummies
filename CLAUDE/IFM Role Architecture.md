@@ -89,7 +89,7 @@ The first two moves run in parallel. The room is being rebuilt now for **18–20
 |---|---|
 | **Hiral** | Teaching, curriculum, founder brand — **including her own story as a recurring content pillar** (losing her father, the years of depending on someone else, finding her own footing). Nobody else can tell it, and the account's top posts say it works. **Plus the alumni relationship** — the 116 past students came through her personally or via her network, and re-engagement, referrals and testimonials stay with her. |
 | **Content agency** | Main Instagram feed against their own calendar |
-| **Ketaki** — Head of HR | LinkedIn support to Sakshi; sourcing the book-launch consultant |
+| **Ketaki** Vaidya — Head of HR — ketaki@pixelmintmedia.com | LinkedIn support to Sakshi; sourcing the book-launch consultant |
 | **Suraj / Aniket** | N8N — the automation layer the SOP feeds into |
 | **Book consultant** | To hire, project-scoped |
 

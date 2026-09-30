@@ -1,0 +1,46 @@
+{
+ "id": "IFM-566",
+ "authored": "2026-09-30",
+ "by": "claude, from the full transcript",
+ "moments": [
+  {
+   "title": "Where ₹100 of your insurance premium actually goes",
+   "summary": "The premise, broken into three parts: some of every ₹100 pays claims, some covers the insurer's own costs, and some pays commission to the distributor who sold the policy. The cost of doing business is about ₹22 per ₹100 for private insurers and about ₹32 for general insurers.",
+   "start": 0.0,
+   "end": 25.8,
+   "weight": "primary",
+   "evidence": "You pay a premium for your insurance but how much of your money actually goes towards your insurance? Let's break down 100 rupees to understand where it goes. Some goes towards paying claims, some goes towards the insurance company's costs and some goes towards paying commissions to distributors who actually sell you the policy.",
+   "search_terms": [
+    "insurance premium",
+    "insurance commission",
+    "claims"
+   ]
+  },
+  {
+   "title": "Business grew 28%, distributor payouts grew 125% — so IRDAI wants limits",
+   "summary": "The statistic the whole piece turns on: between 2023 and 2025 new life insurance business grew 28% while distributor payouts grew 125%, meaning the cost of selling grew more than four times as fast as the business. That is why the IRDAI is proposing tighter limits on commissions and overall expenses.",
+   "start": 25.8,
+   "end": 51.7,
+   "weight": "primary",
+   "evidence": "between 2023 and 2025 new life insurance business grew by 28% but distributor payouts grew 125%. So the business grew but the cost of selling it grew more than four times as fast. So the IRDAI is proposing tighter limits on commissions as well as overall expenses.",
+   "search_terms": [
+    "irdai",
+    "insurance commission",
+    "life insurance"
+   ]
+  },
+  {
+   "title": "Bundling — being told to buy insurance along with your loan",
+   "summary": "Defines bundling in plain terms: you take a loan and are told here is the insurance you have to buy with it. The proposals would stop loans being bundled with insurance. The piece is explicit that these are proposals and not final rules.",
+   "start": 51.7,
+   "end": 68.0,
+   "weight": "primary",
+   "evidence": "Then there's the concept of bundling. When you take a loan and you're told that here's your loan and here's the insurance you need to buy with it that's called bundling. The proposal aims to make sure that loans are no longer bundled with insurance.",
+   "search_terms": [
+    "bundling",
+    "mis-selling",
+    "loan"
+   ]
+  }
+ ]
+}
