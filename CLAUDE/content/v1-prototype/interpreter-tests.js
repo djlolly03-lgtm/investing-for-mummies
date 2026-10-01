@@ -71,8 +71,10 @@ const STRUCTURED = [
   // candid/laughing moments", so assert THAT and it stops breaking every time content grows.
   ['funny classroom moments',                     isFunny],
   ['show me student testimonials',                ['IFM-268']],
-  // see run-tests.js: IFM-439 is the better answer and postdates this list
-  ['find the clip where Hiral explains SIP',      ['IFM-439', 'IFM-286', 'IFM-018', 'IFM-315']],
+  // see run-tests.js: IFM-439 is the better answer and postdates this list, and IFM-239
+  // (Goa, the 7-year SIP horizon answered to the room) was added 1 Oct 2026 for the same
+  // reason. The known weakness about IFM-226 taking #1 is documented on the run-tests copy.
+  ['find the clip where Hiral explains SIP',      ['IFM-439', 'IFM-286', 'IFM-018', 'IFM-315', 'IFM-239']],
   ['find gold b-roll',                            r => !r.topic.includes('Gold')],
   ['find content about financial independence',   ['IFM-260', 'IFM-024']],
   ['certificates from the August batch',          ['IFM-288', 'IFM-293', 'IFM-363', 'IFM-365', 'IFM-370']],
@@ -98,8 +100,13 @@ const fmt    = (...f) => a => f.includes(a.format);
 const NATURAL = [
   ['I need something nice for an Instagram post about women and money',
    ['IFM-023', 'IFM-024', 'IFM-035', 'IFM-207', 'IFM-346'], 'Women & Money assets'],
+  // IFM-239 added 1 Oct 2026 with the Goa recovery. The note on this case asks for
+  // "SIP/compounding teaching clips", and IFM-239 is exactly that — the Goa clip that
+  // answers, to the room, what time horizon an SIP needs (over seven years) and explains
+  // that this is the bucket which outpaces inflation by compounding. It is the only new row
+  // added to this list, and the list's intent is unchanged.
   ['Find that video where Hiral explains SIP',
-   ['IFM-286', 'IFM-018', 'IFM-315', 'IFM-289', 'IFM-292'], 'SIP/compounding teaching clips'],
+   ['IFM-286', 'IFM-018', 'IFM-315', 'IFM-289', 'IFM-292', 'IFM-239'], 'SIP/compounding teaching clips'],
   ['Give me a nice photo of Hiral teaching',
    a => isImg(a) && (a.format === 'Hiral Speaking' || hiral(a)), 'an image of Hiral, not a video'],
   ['Something funny from the classroom',

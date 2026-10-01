@@ -451,8 +451,34 @@ Not scheduled. Run it by hand after a batch of new media, or add a launchd job a
   `~/Documents`. Neither GitHub nor this script touches them.
 - **Time Machine has never run on this Mac.** It remains the only thing that would cover
   the whole machine, and it is still unconfigured. A folder-level Drive sync is not a
-  substitute. A real loss already happened once: the "Goa Workshop 18 Jul 2026 — raw
-  video masters" Drive folder was emptied by mistake and no copy exists anywhere.
+  substitute.
+
+### The Goa footage was NOT lost — corrected 1 Oct 2026
+
+This file claimed for six weeks that the "Goa Workshop 18 Jul 2026 — raw video masters"
+Drive folder "was emptied by mistake and no copy exists anywhere". **The second half was
+wrong.** The Drive folder was indeed emptied, and was still empty on 1 Oct — but a complete
+copy had been sitting in Dropbox the whole time, at
+`~/Library/CloudStorage/Dropbox/IFM - Goa Workshop 18 Jul 2026`: 33 video masters, 6 photos
+in both HEIC and JPEG, and 11 cuts of the promo reel. **3.34 GB, not the 1.1 GB that `du`
+reports** — most of it is online-only Dropbox placeholders, so `du -sh` measures what is
+materialised locally and understates the folder by three times. Use
+`find … -exec stat -f%z` to size a Dropbox folder, and `stat -f%b` to spot a placeholder:
+0 blocks with a non-zero byte count means the bytes are not on this machine.
+
+Restored into the original (still-empty) Drive folder `1nBRaMdgkFEK93yeDp7vAhsylGntHRSBj`
+on 1 Oct 2026 with `rclone copy`, **not** `move` — the Dropbox copy stays where it is, so
+the footage now exists in two places instead of one.
+
+**The lesson is not "check Dropbox".** It is that a loss was recorded as fact, written into
+the operating notes, and used to justify hiding 33 catalogue rows (`library:false`, with
+`drive link` pointing at a local `clips/…` path because there was believed to be no file to
+link). Nothing ever re-tested the claim. Before recording something as unrecoverable, search
+every store that exists — and when a file says data is gone, treat that as a claim with a
+date on it, not a fact.
+
+Those 33 rows carried the recovery key all along: each one's `notes` says
+`Master in Dropbox: IMG_7829.MOV`. All 39 mapped cleanly, no duplicates, every file present.
 
 ## ⚠️ `~/Documents` IS iCloud-synced — and it corrupts git
 

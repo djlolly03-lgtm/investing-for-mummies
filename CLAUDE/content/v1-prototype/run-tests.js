@@ -43,7 +43,17 @@ const TESTS=[
  // list was written. The batch that surfaced this changed ranking by ONE point: adding 7
  // rows moved the corpus IDF just enough to flip a 249/250 tie, dropping IFM-286 from #3
  // to #4. The engine is unchanged.
- ['find the clip where Hiral explains SIP',      ['IFM-439','IFM-286','IFM-018','IFM-315']],
+ // IFM-239 added 1 Oct 2026, again with cause. It is "Goa — the bucket that outpaces
+ // inflation, and the 7-year SIP horizon", and it answers a question from the room about the
+ // right time horizon for an SIP. That is Hiral explaining SIP, so it belongs in this list;
+ // IFM-439 is still returned, at #4.
+ // KNOWN WEAKNESS, recorded rather than hidden: #1 for this query is now IFM-226, the
+ // "anybody understands what compounding is?" clip, which does NOT mention SIP. It wins on
+ // topic + person + type alone, because neither it nor IFM-239 contains the literal token
+ // and the query maps SIP onto the Compounding topic. The engine is deliberately unchanged
+ // here — this is scoring behaviour, not data — but a SIP query whose top hit never says SIP
+ // is worth fixing when the scoring maths is next opened.
+ ['find the clip where Hiral explains SIP',      ['IFM-439','IFM-286','IFM-018','IFM-315','IFM-239']],
  // Returns gold-COLOURED supporting footage (the Vedanta gold-globe renders). That is a
  // fair reading of the words, and the real requirement is that none of it is falsely
  // tagged as the asset class — which is what this asserts. Expectation changed with cause,
@@ -89,7 +99,15 @@ console.log(`\n${'='.repeat(62)}\n${pass}/${TESTS.length} passed`);
  * list, which is what most of these actually need.
  */
 const P2=[
- ['XIRR',            r=>r.length>0 && r.slice(0,3).every(x=>x.a.topic.includes('Risk & Returns')), 'NO asset literally contains XIRR; the synonym maps it to Risk & Returns, which is the honest best answer'],
+ // Rewritten 1 Oct 2026. The old assertion required every top-3 hit to carry the Risk &
+ // Returns topic, and its stated reason was "NO asset literally contains XIRR". That has
+ // been false since the transcription pass: IFM-160 SAYS "what does CAGA mean? ... what
+ // does IRR mean? What does XIRR mean?" out loud, which makes it the single best answer to
+ // this query and not a near-miss to be tolerated via a topic synonym. It is topic
+ // [Investing], so the old rule failed the moment the Goa rows re-ranked it into the top 3 —
+ // the test was punishing the engine for returning the right answer. Same correction as the
+ // CAGR line below took on 20 Sep for the same cause.
+ ['XIRR',            r=>r.length>0 && r.slice(0,3).every(x=>/xirr|\birr\b|cagr/i.test(x.a.title+x.a.description+x.a.slide_text+x.a.search_terms+(x.a.speech||'')) || x.a.topic.includes('Risk & Returns')), 'a hit either says XIRR/IRR/CAGR out loud or carries the Risk & Returns topic'],
  // Was `r.length===0`, on the ground that CAGR appeared nowhere. Transcription made that
  // false on 20 Sep 2026: a participant reads "looking at that CAGR, looking at XIRR" off
  // her notes in IFM-536. The assertion was about the CONTENT, not the engine, so new
@@ -122,8 +140,14 @@ const P2=[
  // (IFM-327) and two testimonials naming ETFs are real hits that this test called false
  // only because it was not looking at what the video says.
  ['ETF',             r=>r.every(x=>/etf|exchange traded/i.test(x.a.title+x.a.description+x.a.slide_text+x.a.search_terms+(x.a.speech||''))), 'no false ETF hits'],
- ['REIT',            r=>r.every(x=>/reit|real estate/i.test(x.a.title+x.a.description+x.a.slide_text+x.a.search_terms)), ''],
- ['RBI',             r=>r.every(x=>/\brbi\b|central bank|repo/i.test(x.a.title+x.a.description+x.a.slide_text+x.a.search_terms)), ''],
+ // REIT and RBI now read `speech` too, which the ETF line above was already corrected to do
+ // on 20 Sep for exactly this reason: a video that SAYS the word is a true hit, and a test
+ // that only reads the written fields calls it false. Caught 1 Oct 2026 when the Goa rows
+ // landed: IFM-241 was reported as a false RBI hit, but its transcript says "for government
+ // bonds there is a portal that the RBI has come up with ... RBI retail direct". It is the
+ // most useful RBI result in the library and the test was wrong about it.
+ ['REIT',            r=>r.every(x=>/reit|real estate/i.test(x.a.title+x.a.description+x.a.slide_text+x.a.search_terms+(x.a.speech||''))), ''],
+ ['RBI',             r=>r.every(x=>/\brbi\b|central bank|repo/i.test(x.a.title+x.a.description+x.a.slide_text+x.a.search_terms+(x.a.speech||''))), ''],
  ['funny classroom', r=>r.length>0 && r.slice(0,3).some(x=>/laugh|candid|smil|celebrat|fist/i.test(x.a.description+x.a.search_terms)), ''],
  ['portrait',        r=>r.length>0 && r.every(x=>x.a.format==='Portrait'), 'constraint-only query returns that format'],
  ['certificates',    r=>r.length>0 && r.slice(0,3).every(x=>x.a.format==='Certificate'), ''],

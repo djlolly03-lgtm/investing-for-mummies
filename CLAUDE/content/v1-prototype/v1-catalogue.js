@@ -6959,13 +6959,13 @@ window.IFM_V1 =
 },
 {
 "id": "IFM-218",
-"title": "Goa Workshop — clip 1",
+"title": "Goa — Hiral's own story: a business journalist who could not manage her money",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-218.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-218.mp4",
-"drive": "clips/IFM-218.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1aTcEMTo0HBNqFNOrl3edVG0QUDZUEatw/view",
+"description": "Hiral's origin story, told to the room: ten years as a business journalist at Business India, and \"despite being a business journalist, I didn't know how to manage my money\". She draws the distinction the whole business rests on — she was exposed to markets and P/E ratios, and \"managing money is a very different skill than writing about businesses\". 24 seconds, and the clearest statement of why IFM exists in any Goa clip.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
@@ -6975,779 +6975,3059 @@ window.IFM_V1 =
 "Women & Money"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": true,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa hiral own story business journalist who could not manage her money origin told room ten years india despite being didn know how she draws distinction whole rests was exposed markets ratios managing very different skill than writing about businesses",
+"speech": "and I joined Business India magazine and I was a business journalist for 10 years. I realized, despite being a business journalist, I didn't know how to manage my money. Even though I was exposed to talks about markets, P ratios and stuff, but I didn't, managing money is a very different skill than writing about businesses. And after the,",
+"speech_dur": 24.3,
+"speech_at": [
+[
+0.0,
+"and I joined Business India magazine"
+],
+[
+2.0,
+"and I was a business journalist for 10 years."
+],
+[
+5.9,
+"I realized, despite being a business journalist,"
+],
+[
+8.6,
+"I didn't know how to manage my money."
+],
+[
+10.2,
+"Even though I was exposed to talks about markets,"
+],
+[
+14.3,
+"P ratios and stuff,"
+],
+[
+16.6,
+"but I didn't, managing money is a very different skill"
+],
+[
+20.2,
+"than writing about businesses."
+],
+[
+22.9,
+"And after the,"
+]
+]
 },
 {
 "id": "IFM-219",
-"title": "Goa Workshop — clip 2",
+"title": "Goa — a participant on being low-risk and leaving it to the family planner",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-219.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-219.mp4",
-"drive": "clips/IFM-219.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1OCidP7J54TqpB00vpdvm8Sw1eCOxyc2e/view",
+"description": "A participant answers what she actually does with her money: \"I'm a low-risk person, I don't like it\", so she tells her financial planner where her limit is and has not gone beyond it. She adds that the SIPs sit with the family's financial planning people rather than with her. A plain example of the delegation pattern the course is trying to change.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Financial Planning",
+"Family & Money",
+"Risk & Returns"
 ],
 "person": [
-"Other Person"
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "sip systematic investment plan monthly investing goa participant being low risk leaving family planner answers what she actually does her money person don like tells financial where limit has not gone beyond adds sips sit planning people rather than plain example delegation pattern course trying change",
+"speech": "And I'm a low-risk person, I don't like it. That's how I ask my financial planner to then be like, okay, this is where I'm okay with. And not anymore. And I don't think I've ventured into far more beyond that. Okay, yeah. Anybody else? I can do some of the side-leaning questions. As well? Yeah. Okay. So on your own or through a financial plan? So the SIP stuff is with my family's financial planning people. And I have a small portfolio that I, like when I have a little extra money and I don't want to like, or what I do with the sort of thing, I put it, but I both, I don't know my own district, I just ask around, I have a few friends and family, and then I, but long-term, low-risk, medium-risk kind of thing, but I'm equally. Okay. You guys? Yeah. Okay. That's fine. Okay. Okay.",
+"speech_dur": 57.4,
+"speech_at": [
+[
+0.0,
+"And I'm a low-risk person, I don't like it."
+],
+[
+4.2,
+"That's how I ask my financial planner to then be like,"
+],
+[
+7.5,
+"okay, this is where I'm okay with."
+],
+[
+9.8,
+"And not anymore."
+],
+[
+11.5,
+"And I don't think I've ventured into far more beyond that."
+],
+[
+15.6,
+"Okay, yeah."
+],
+[
+16.5,
+"Anybody else?"
+],
+[
+17.7,
+"I can do some of the side-leaning questions."
+],
+[
+20.0,
+"As well?"
+],
+[
+20.8,
+"Yeah."
+],
+[
+21.7,
+"Okay."
+],
+[
+22.5,
+"So on your own or through a financial plan?"
+],
+[
+25.0,
+"So the SIP stuff is with my family's"
+],
+[
+27.4,
+"financial planning people."
+],
+[
+29.7,
+"And I have a small portfolio that I,"
+],
+[
+34.0,
+"like when I have a little extra money"
+],
+[
+35.6,
+"and I don't want to like,"
+],
+[
+36.5,
+"or what I do with the sort of thing, I put it,"
+],
+[
+38.3,
+"but I both, I don't know my own district,"
+],
+[
+40.5,
+"I just ask around, I have a few friends and family,"
+],
+[
+43.4,
+"and then I, but long-term, low-risk,"
+],
+[
+46.4,
+"medium-risk kind of thing, but I'm equally."
+],
+[
+49.6,
+"Okay."
+],
+[
+50.4,
+"You guys?"
+],
+[
+51.7,
+"Yeah."
+],
+[
+52.6,
+"Okay."
+],
+[
+53.4,
+"That's fine."
+],
+[
+55.8,
+"Okay."
+],
+[
+56.7,
+"Okay."
+]
+]
 },
 {
 "id": "IFM-220",
-"title": "Goa Workshop — clip 3",
+"title": "Goa — what the money is actually for: peace of mind, choices, freedom",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-220.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-220.mp4",
-"drive": "clips/IFM-220.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/13BLpw3e8GiKg-g2T_4Ffv3ZIv2glQThT/view",
+"description": "Twenty-two seconds that answer \"why bother\". Not returns — \"it's about peace of mind, it's about having enough choices to do whatever you want, it's about financial security, it's about freedom\", and then the concrete version: money to take a sabbatical, to do a course abroad, to travel. Short, quotable, and the best standalone piece of the Goa footage for social.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Women & Money",
+"Risk & Returns"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa what money actually peace mind choices freedom twenty two seconds answer why bother not returns about having enough whatever you want financial security then concrete version take sabbatical course abroad travel short quotable best standalone piece footage social invest",
+"speech": "It's about peace of mind. It's about having enough choices to do whatever you want. It's about financial security. It's about freedom. Today, if you want to take a sabbatical, if you want money to do a course abroad, if you want money to travel.",
+"speech_dur": 22.1,
+"speech_at": [
+[
+0.7,
+"It's about peace of mind."
+],
+[
+3.8,
+"It's about having enough choices to do whatever you want."
+],
+[
+8.5,
+"It's about financial security."
+],
+[
+10.9,
+"It's about freedom."
+],
+[
+12.1,
+"Today, if you want to take a sabbatical,"
+],
+[
+14.7,
+"if you want money to do a course abroad,"
+],
+[
+20.4,
+"if you want money to travel."
+]
+]
 },
 {
 "id": "IFM-221",
-"title": "Goa Workshop — clip 4",
+"title": "Goa — the worksheet exercise: what life do you want the money to buy?",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-221.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-221.mp4",
-"drive": "clips/IFM-221.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1sBJDxrg8paCJxmSkifr9Ey6ZFqxOatP0/view",
+"description": "Setting up the worksheet exercise. She asks the room to look at the top of the sheet and think about the kind of life they want the money to pay for — what goal would you want that money to achieve, what would you like to do with it — and says they can think it through more extensively later. The transcript garbles a phrase mid-way; the instruction itself is clear.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Fixed Income"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa worksheet exercise what life you want money buy setting she asks room look top sheet think about kind they pay goal would achieve like says can through more extensively later transcript garbles phrase mid way instruction itself clear goals",
+"speech": "So, if you guys look at your worksheet, there at the top part, there is my wire and I want you to and you can obviously think through it more extensively much later, but what is the person that comes to your mind? What is the kind of life you want to lead with the money, imagine money who is absolutely no livid, patient, what kind of life or what goal would you want that money to achieve? What would you like to do with that money?",
+"speech_dur": 36.9,
+"speech_at": [
+[
+0.7,
+"So, if you guys look at your worksheet, there at the top part, there is my wire and I want"
+],
+[
+13.8,
+"you to and you can obviously think through it more extensively much later, but what"
+],
+[
+19.4,
+"is the person that comes to your mind?"
+],
+[
+21.4,
+"What is the kind of life you want to lead with the money, imagine money who is absolutely"
+],
+[
+27.7,
+"no livid, patient, what kind of life or what goal would you want that money to achieve?"
+],
+[
+34.7,
+"What would you like to do with that money?"
+]
+]
 },
 {
 "id": "IFM-222",
-"title": "Goa Workshop — clip 5",
+"title": "Goa — \"no pressure, you can think through it\" (9s)",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-222.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-222.mp4",
-"drive": "clips/IFM-222.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1637vk_UB7dkzbRjwKMoa4_LmE6oO4TH-/view",
+"description": "Nine seconds of the room being told there is no pressure and they can think it through. An aside between exercises, not a teaching point. Kept because it is part of the shoot, but there is nothing here to use on its own.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
-"topic": [
-"Women & Money"
-],
+"topic": [],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa pressure you can think through nine seconds room being told there they aside between exercises not teaching point kept because part shoot but nothing here use own workshop pacing july 2026",
+"speech": "No pressure, you can think through it.",
+"speech_dur": 9.4,
+"speech_at": [
+[
+1.9,
+"No pressure, you can think through it."
+]
+]
 },
 {
 "id": "IFM-223",
-"title": "Goa Workshop — clip 6",
+"title": "Goa — inflation is different for every industry, and medical runs about 15%",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-223.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-223.mp4",
-"drive": "clips/IFM-223.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1cnX4zbqO3uRyaNUD2FXpl33ub1oBsB4b/view",
+"description": "The point most people miss about inflation: it is not one number. \"Inflation is different for different industries\", and medical inflation is running at about 15% a year, meaning medical care becomes 15% more expensive year on year. Thirty seconds and a specific, usable figure.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Inflation & Interest Rates"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa inflation different every industry medical runs about point most people miss not one number industries running year meaning care becomes more expensive thirty seconds specific usable figure healthcare costs prices rising percent july 2026",
+"speech": "of overtime. The one thing you need to understand about inflation is that inflation is different for different industries. So when we talk about the price of things rising over time, today medical inflation is growing at about 15% per year. That means every year medical care is becoming more and more expensive by 15% year on year",
+"speech_dur": 29.5,
+"speech_at": [
+[
+0.0,
+"of overtime."
+],
+[
+3.6,
+"The one thing you need to understand about inflation"
+],
+[
+7.0,
+"is that inflation is different for different industries."
+],
+[
+11.9,
+"So when we talk about the price of things rising over time,"
+],
+[
+16.6,
+"today medical inflation is growing at about 15% per year."
+],
+[
+21.6,
+"That means every year medical care"
+],
+[
+24.5,
+"is becoming more and more expensive by 15% year on year"
+]
+]
 },
 {
 "id": "IFM-224",
-"title": "Goa Workshop — clip 7",
+"title": "Goa — why prices rise: population up, resources finite",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-224.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-224.mp4",
-"drive": "clips/IFM-224.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1nF6XMQ7pVCnALmCmEQAlLUxzt9F44TnC/view",
+"description": "The room works through why prices rise over time. More people means more demand, supply has to rise to match, and it generally does not: \"as a planet we have limited resources, our population is growing\". Conversational and overlapping in places.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Money Conversations",
+"Markets & Economy",
+"Inflation & Interest Rates"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa why prices rise population resources finite room works through over time more people means demand supply has match generally does not planet have limited our growing conversational overlapping places inflation economics july 2026",
+"speech": "is to rise over time yes that's one of the reasons one of the things why would increase in population force things to rise over time demand is more so that supply has to be more but so that's the other part right supply generally isn't more today as a planet we have limited resources our population is growing so that",
+"speech_dur": 28.9,
+"speech_at": [
+[
+0.0,
+"is to rise over time yes that's one of the reasons one of the things why would"
+],
+[
+10.3,
+"increase in population force things to rise over time"
+],
+[
+14.3,
+"demand is more so that supply has to be more"
+],
+[
+17.3,
+"but so that's the other part right supply generally isn't more"
+],
+[
+22.3,
+"today as a planet we have limited resources our population is growing"
+],
+[
+28.3,
+"so that"
+]
+]
 },
 {
 "id": "IFM-225",
-"title": "Goa Workshop — clip 8",
+"title": "Goa — resource inequality: the money is held by a small share of the world",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-225.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-225.mp4",
-"drive": "clips/IFM-225.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1gTRtlvzZ_cWllnltCjRHQqoyyAINdPId/view",
+"description": "A minute on distribution rather than scarcity. \"We have a resource inequality, an unequal distribution of financial resources — much of the money is owned by a small percentage of the population of the world\", and the follow-through: those holding it can pay more, which pulls prices up for everyone else. The most political passage in the Goa set.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Wealth",
+"Stocks / Equity",
+"Markets & Economy",
+"Inflation & Interest Rates"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa resource inequality money held small share world minute distribution rather than scarcity have unequal financial resources much owned percentage population follow through those holding can pay more which pulls prices everyone else most political passage set wealth purchasing power",
+"speech": "Now I think it's clear that we have a resource inequality, an unequal distribution of financial resources. Much of the money is owned by a small percentage of the population of the world. So rather than a claim of population problem, could it also be that the people who are in possession of so much money are willing to pay for things and because they are in possession of that money and they can pay more, everyone else also has to pay more. Is that related to this? So yes, partly it does drive the price of things up. But companies also, as a business philosophy, they raise prices by 2% every year. The reason they do it, because that's what drives their business. That's why because somewhere we are conditioned to think.",
+"speech_dur": 60.8,
+"speech_at": [
+[
+1.4,
+"Now I think it's clear that we have a resource inequality, an unequal distribution of financial resources."
+],
+[
+13.4,
+"Much of the money is owned by a small percentage of the population of the world."
+],
+[
+19.4,
+"So rather than a claim of population problem, could it also be that the people who are in possession of so much money"
+],
+[
+27.4,
+"are willing to pay for things and because they are in possession of that money"
+],
+[
+31.4,
+"and they can pay more, everyone else also has to pay more."
+],
+[
+35.4,
+"Is that related to this?"
+],
+[
+37.4,
+"So yes, partly it does drive the price of things up."
+],
+[
+43.4,
+"But companies also, as a business philosophy, they raise prices by 2% every year."
+],
+[
+52.4,
+"The reason they do it, because that's what drives their business."
+],
+[
+56.4,
+"That's why because somewhere we are conditioned to think."
+]
+]
 },
 {
 "id": "IFM-226",
-"title": "Goa Workshop — clip 9",
+"title": "Goa — \"anybody understands what compounding is?\" and a participant explains it",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-226.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-226.mp4",
-"drive": "clips/IFM-226.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1TuWSIJPwHcxfWs-v3fn7minRjExKWsP2/view",
+"description": "The compounding segment opens with the question put to the room, and a participant answers it herself: you take a percentage and add it to the principal, so the principal grows for the next year. She is right, and the reply — \"in school we don't...\" — sets up the point that nobody was taught this. Good footage of a learner getting there unaided.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Compounding",
+"Money Conversations",
+"Family & Money"
 ],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa anybody understands what compounding participant explains segment opens question put room answers herself you take percentage add principal grows next year she right reply school don sets point nobody was taught good footage learner getting there unaided interest answer",
+"speech": "more money to maintain your life. There is a silver lining to this. Anybody understands what compounding is? Yes? Sure. Can I explain it? That's a good question. But from what I understand it is you take up a percentage or something and add it to the principal amount in the net. So the principal amount grows for the next year? Yes. So in school we don't...",
+"speech_dur": 27.8,
+"speech_at": [
+[
+0.0,
+"more money to maintain your life. There is a silver lining to this. Anybody understands"
+],
+[
+8.1,
+"what compounding is? Yes? Sure. Can I explain it? That's a good question. But from what"
+],
+[
+17.1,
+"I understand it is you take up a percentage or something and add it to the principal"
+],
+[
+21.2,
+"amount in the net. So the principal amount grows for the next year? Yes. So in school we don't..."
+]
+]
 },
 {
 "id": "IFM-227",
-"title": "Goa Workshop — clip 10",
+"title": "Goa — savings versus investing, and what \"capital\" means",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-227.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-227.mp4",
-"drive": "clips/IFM-227.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1Atzqpl0a_AwEVaMBXj7D9Is1I52pX7sH/view",
+"description": "The cleanest definition in the whole shoot. Saving protects your money — \"if you put in 100 rupees, it will remain 100 rupees\". Investing is making it grow. And capital is simply the money you start with, so ₹100 into an SIP is your capital. Thirty-three seconds, no jargon left unexplained.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Saving vs Investing",
+"Saving"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "sip systematic investment plan monthly investing goa savings versus investing what capital means cleanest definition whole shoot saving protects your money you put 100 rupees will remain making grow simply start ₹100 into sip thirty three seconds jargon left unexplained principal bank account basics july 2026",
+"speech": "it protects your money. It ensures that nothing happens to it. So if you put in 100 rupees, it will remain 100 rupees. Investing is when you make your money grow. So in investing, capital, what we call capital is the money that you start with. So if you put in 100 rupees into an SIP, that's considered your capital. Savings ensures that your capital is preserved. So if you put 100 rupees into a bank account,",
+"speech_dur": 32.6,
+"speech_at": [
+[
+0.0,
+"it protects your money. It ensures that nothing happens to it. So if you put in 100 rupees,"
+],
+[
+5.0,
+"it will remain 100 rupees. Investing is when you make your money grow. So in investing,"
+],
+[
+14.0,
+"capital, what we call capital is the money that you start with. So if you put in 100"
+],
+[
+21.0,
+"rupees into an SIP, that's considered your capital. Savings ensures that your capital"
+],
+[
+28.0,
+"is preserved. So if you put 100 rupees into a bank account,"
+]
+]
 },
 {
 "id": "IFM-228",
-"title": "Goa Workshop — clip 11",
+"title": "Goa — the choice: one lakh today, or one rupee doubled every day for 30 days",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-228.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-228.mp4",
-"drive": "clips/IFM-228.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1cqnjMJN6nfSdJOL54h_0RQOEK9toPVL6/view",
+"description": "The set-up for the demonstration. A show of hands on whether the room would take the lump sum today or one rupee doubled daily for thirty days, with people pushing back and asking her to repeat the terms before they commit. The payoff is in the next clip. The automatic transcript renders the lump sum as \"one cloth\"; the context is unambiguous.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Compounding",
+"Fixed Income"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa choice one lakh today rupee doubled every day days set demonstration show hands whether room would take lump sum daily thirty people pushing back asking her repeat terms before they commit payoff next clip automatic transcript renders cloth context",
+"speech": "Anybody else? Okay, show of hands, who would prefer to have one cloth today? Okay. For 30 days. Just for 30 days. One rupee doubled for 30 days. But after 30 days, one rupee doubled. No, that day. You get it. But today, I mean... Yeah? And who would prefer... I don't understand. That's why I want the ones here. Yeah. I'm going to ask again, who would want one cloth today? Yeah. Okay. And who would want one rupee doubled every day for 30 days? Yeah, but it's not reaching... Rithi wants none. No, no, I want to know what is the amount you end up with. That's what I'm asking.",
+"speech_dur": 41.7,
+"speech_at": [
+[
+0.2,
+"Anybody else? Okay, show of hands, who would prefer to have one cloth today?"
+],
+[
+5.2,
+"Okay."
+],
+[
+8.2,
+"For 30 days. Just for 30 days. One rupee doubled for 30 days."
+],
+[
+12.2,
+"But after 30 days, one rupee doubled."
+],
+[
+14.2,
+"No, that day. You get it. But today, I mean..."
+],
+[
+18.2,
+"Yeah?"
+],
+[
+19.2,
+"And who would prefer..."
+],
+[
+20.2,
+"I don't understand. That's why I want the ones here."
+],
+[
+22.2,
+"Yeah."
+],
+[
+23.2,
+"I'm going to ask again, who would want one cloth today?"
+],
+[
+26.2,
+"Yeah."
+],
+[
+28.2,
+"Okay."
+],
+[
+30.2,
+"And who would want one rupee doubled every day for 30 days?"
+],
+[
+34.2,
+"Yeah, but it's not reaching..."
+],
+[
+36.2,
+"Rithi wants none."
+],
+[
+37.2,
+"No, no, I want to know what is the amount you end up with."
+],
+[
+39.2,
+"That's what I'm asking."
+]
+]
 },
 {
 "id": "IFM-229",
-"title": "Goa Workshop — clip 12",
+"title": "Goa — the doubling table: day 15 is ₹16,000, day 20 is over ₹5 lakh",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-229.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-229.mp4",
-"drive": "clips/IFM-229.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1xqN5bB0G4zi1lleX-eh6W2Y8d5f_RcKY/view",
+"description": "The payoff, and the best single teaching moment in the Goa footage. She walks the table out loud, day by day: by day ten it is over 500, by day fifteen over 16,000, by day twenty over 5 lakh. The room's reaction is audible. This is the clip to cut for social if only one is cut.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Compounding",
+"Family & Money"
 ],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa doubling table day ₹16 000 over lakh payoff best single teaching moment footage she walks out loud ten 500 fifteen twenty room reaction audible clip cut social only one compounding rupee doubled exponential numbers demonstration july 2026 aha",
+"speech": "Okay, so guys, one rupee doubled every day for 30 days is over 5 o'clock. What? Okay, fine. And what? And what? Okay, let's do the match. Let me show it to you guys. Okay, we start with one with eight. They do, we have four. They three, we have four. They four, we have eight. They five, we have sixteen. They ten, that becomes over 500. They fifteen, it becomes over 16,000. They twenty, it becomes over 5 lakhs. They twenty-five, it becomes over 16 lakhs. And they thirty, it becomes over 5 crores. It's about 5.3 crores. On the insulin. So, how did you get a 100% return to fiction? That's...",
+"speech_dur": 59.7,
+"speech_at": [
+[
+0.0,
+"Okay, so guys, one rupee doubled every day for 30 days is over 5 o'clock."
+],
+[
+12.9,
+"What?"
+],
+[
+13.9,
+"Okay, fine."
+],
+[
+14.9,
+"And what?"
+],
+[
+15.9,
+"And what?"
+],
+[
+16.9,
+"Okay, let's do the match."
+],
+[
+17.9,
+"Let me show it to you guys."
+],
+[
+18.9,
+"Okay, we start with one with eight."
+],
+[
+19.9,
+"They do, we have four."
+],
+[
+20.9,
+"They three, we have four."
+],
+[
+21.9,
+"They four, we have eight."
+],
+[
+28.9,
+"They five, we have sixteen."
+],
+[
+32.9,
+"They ten, that becomes over 500."
+],
+[
+35.9,
+"They fifteen, it becomes over 16,000."
+],
+[
+39.9,
+"They twenty, it becomes over 5 lakhs."
+],
+[
+43.9,
+"They twenty-five, it becomes over 16 lakhs."
+],
+[
+47.9,
+"And they thirty, it becomes over 5 crores."
+],
+[
+50.9,
+"It's about 5.3 crores."
+],
+[
+53.9,
+"On the insulin."
+],
+[
+54.9,
+"So, how did you get a 100% return to fiction?"
+],
+[
+58.9,
+"That's..."
+]
+]
 },
 {
 "id": "IFM-230",
-"title": "Goa Workshop — clip 13",
+"title": "Goa — \"you are technically lending your money to the bank\"",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-230.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-230.mp4",
-"drive": "clips/IFM-230.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1LjcH8N6sIU2j8YWtVpr2fuh34EUwP31S/view",
+"description": "A participant asks the question underneath the whole topic — why does the bank pay me interest at all, what does the system get out of it, \"I can't wrap my head around it\". The answer reframes it: the bank is using your money, so putting it into an FD or a savings account is lending it to them.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Saving",
+"Money Mindset",
+"Money Conversations",
+"Fixed Income"
 ],
 "person": [
-"Other Person"
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa you technically lending your money bank participant asks question underneath whole topic why does pay interest all what system get out can wrap head around answer reframes using putting into savings account them fixed deposit how banks work july",
+"speech": "money for my little money like that's how I'm just like how why did this happen why did they give me this interest like what benefit is it to the system I don't I can't wrap it up so today when you put your money okay the bank is actually using that money you are technically lending your money to the bank when you put your money in an FD or a savings",
+"speech_dur": 30.0,
+"speech_at": [
+[
+0.0,
+"money for my little money like that's how I'm just like how why did this happen"
+],
+[
+6.3,
+"why did they give me this interest like what benefit is it to the system I don't"
+],
+[
+12.3,
+"I can't wrap it up so today when you put your money okay the bank is actually"
+],
+[
+22.5,
+"using that money you are technically lending your money to the bank when you"
+],
+[
+27.1,
+"put your money in an FD or a savings"
+]
+]
 },
 {
 "id": "IFM-231",
-"title": "Goa Workshop — clip 14",
+"title": "Goa — the money in your account is a number, not notes in a drawer",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-231.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-231.mp4",
-"drive": "clips/IFM-231.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/14GpuAkvRW0nP6ZVEcJUwhjwJkO60pmZk/view",
+"description": "A short, strange, effective reframe: your statement says ten thousand rupees, but there is no physical money sitting in an account anywhere — \"it's just digital, you could just add another zero technically\". Twenty-six seconds, and it visibly lands.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Money Mindset"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa money your account number not notes drawer short strange effective reframe statement says ten thousand rupees but there physical sitting anywhere just digital you could add another zero technically twenty six seconds visibly lands bank balance abstraction mindset july",
+"speech": "So does it hurt to imagine that it's just a number? So today in your bank account, your bank account statement might show you, might show that you have 10,000 rupees in the bank account, but actually that's not a physical money line in your account. Right? That money, yes. It's technically, it's just digital. You could just add another zero technically.",
+"speech_dur": 25.8,
+"speech_at": [
+[
+0.1,
+"So does it hurt to imagine that it's just a number?"
+],
+[
+4.1,
+"So today in your bank account, your bank account statement might show you,"
+],
+[
+8.1,
+"might show that you have 10,000 rupees in the bank account,"
+],
+[
+11.1,
+"but actually that's not a physical money line in your account."
+],
+[
+15.1,
+"Right? That money, yes."
+],
+[
+18.1,
+"It's technically, it's just digital."
+],
+[
+21.1,
+"You could just add another zero technically."
+]
+]
 },
 {
 "id": "IFM-232",
-"title": "Goa Workshop — clip 15",
+"title": "Goa — the spending game: totting up salon, Swiggy and Zomato for the month (4 min)",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-232.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-232.mp4",
-"drive": "clips/IFM-232.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1QLZxIG8qfUUcEafD5TwsmdsUpBsDINGW/view",
+"description": "Four minutes of the room playing the spending game together — calling out what they actually spend a month on salon visits, on Swiggy and Zomato, and adding it up as a group. She mentions the game is on the IFM website so they can play it themselves. The longest participation sequence in the shoot and the best footage of the room doing something rather than listening.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Managing Money"
 ],
 "person": [
-"Other Person"
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa spending game totting salon swiggy zomato month min four minutes room playing together calling out what they actually spend visits adding group she mentions ifm website can play themselves longest participation sequence shoot best footage doing something rather than",
+"speech": "to invest. We're going to play this game and we're going to see, okay guys. So now if we can as a group, let's talk about how much do we pay for salon visits in a month. You guys can go to our website and pay this game on your own, but let's just take a round of 3,000. 3,000? 3,000? 3,000? 5 to 7, okay that's 2. No, 5 is okay. Okay, how much do we spend for Manton, Swiggy and Zaman? Okay, let's do that. I did 3,000, 3,000, 3,000, 3,000, 3,000, 3,000, I did this batch for 22,003 months ago. Oh my god. But somewhere there too. Yeah, I did this batch. 3,000, 3,000, Okay, you're going to have to pay this on your own, it's such a pressure. Okay, but you want to know if we can shop here or not? I have shopped here. I have 6,000, I have stopped. Are you just... No, I did this a couple of months ago. Oh, you did this? Yeah. OK. OK. I have stopped. Does anyone pay for coffee? Yeah. All the money goes to coffee. OK. I mean, my coffee pot is also $20, $10 to $20. That was half. It could be $10 to $20. OK. That's OK. It's free. I mean, my coffee pot is also $20. OK. We are only buying coffee pots, girls. Yeah. Stella? Yeah. What's up, Missy? What's up, Missy? Let's go to the machine. OK. But that's one time in long time. Beauty has skincare products. How much are we paying for that? For beauty. Beauty has skincare. And I'm not talking about, look. We can apply my skin to other people's shampoo now. So like that. Exactly, right? We can make it with regular shampoo, but no. Yeah. We are not doing that. We're not doing that. We're starting later. Yeah. Exactly. Exactly. So how much should I put down here? Right. Five. OK. Let's do five. Let's do one less. And what about movies and eating out? How much are we spending on that? A ton. And what are we doing? I'll put it on the screen. So it needs to be on the screen. Yeah. I'll put it on the separate page. That's the thing. Oh, here's the. Come on. Here's the. Here's the. OK. Let's do another team, people. OK. Let's stop at the movie theater. Let's stop at the movie theater. So funny. OK. So that's about 63,000 rupees a month. That we're spending on all these guilty pleasures of us. Now let's see what that can amount. OK. What if you put that amount into an SIP? Let's see what that amounts to. So 10 years. That amounts to 1.4 crore. Right? Invest that for 20 years. It'll be worth 6.2 crores. But then I'm feeling like I'm in college. And 30 years? 22 crores. Yes. You're saying if I don't spend that money and I say, put it in my SIP, I'll have this much money. This is how much that it will be worth. Come on now. But that was so. The stressful thing about investing for me so far, that we have been doing, is that we know, and then I'm like, oh, I need a little money, maybe 5,000 rupees. So just take it out. I open it. And when the market is crashed, I have lost 15,000 rupees. So I'm just like. Just take it out. Ignore it. Ignore it. So that's the worst thing you can do with an SIP is. Check it.",
+"speech_dur": 242.2,
+"speech_at": [
+[
+0.0,
+"to invest. We're going to play this game and we're going to see, okay guys. So now if we"
+],
+[
+11.6,
+"can as a group, let's talk about how much do we pay for salon visits in a month. You"
+],
+[
+20.0,
+"guys can go to our website and pay this game on your own, but let's just take a round"
+],
+[
+27.0,
+"of 3,000."
+],
+[
+29.0,
+"3,000?"
+],
+[
+31.0,
+"3,000?"
+],
+[
+33.0,
+"3,000?"
+],
+[
+35.0,
+"5 to 7, okay that's 2."
+],
+[
+37.0,
+"No, 5 is okay."
+],
+[
+39.0,
+"Okay, how much do we spend for"
+],
+[
+41.0,
+"Manton, Swiggy and Zaman?"
+],
+[
+43.0,
+"Okay, let's do that."
+],
+[
+45.0,
+"I did 3,000,"
+],
+[
+47.0,
+"3,000,"
+],
+[
+49.0,
+"3,000,"
+],
+[
+51.0,
+"3,000,"
+],
+[
+53.0,
+"3,000,"
+],
+[
+55.0,
+"3,000,"
+],
+[
+57.0,
+"I did this batch for 22,003 months ago."
+],
+[
+59.0,
+"Oh my god."
+],
+[
+61.0,
+"But somewhere there too."
+],
+[
+63.0,
+"Yeah, I did this batch."
+],
+[
+65.0,
+"3,000,"
+],
+[
+67.0,
+"3,000,"
+],
+[
+69.0,
+"Okay, you're going to have to pay this on your own, it's such a pressure."
+],
+[
+71.0,
+"Okay, but you want to know if we can shop here or not?"
+],
+[
+75.0,
+"I have shopped here."
+],
+[
+77.0,
+"I have 6,000,"
+],
+[
+79.0,
+"I have stopped."
+],
+[
+81.0,
+"Are you just..."
+],
+[
+83.0,
+"No, I did this a couple of months ago."
+],
+[
+84.6,
+"Oh, you did this?"
+],
+[
+85.4,
+"Yeah."
+],
+[
+85.9,
+"OK."
+],
+[
+89.3,
+"OK."
+],
+[
+89.8,
+"I have stopped."
+],
+[
+90.7,
+"Does anyone pay for coffee?"
+],
+[
+93.3,
+"Yeah."
+],
+[
+93.8,
+"All the money goes to coffee."
+],
+[
+95.3,
+"OK."
+],
+[
+96.3,
+"I mean, my coffee pot is also $20, $10 to $20."
+],
+[
+101.8,
+"That was half."
+],
+[
+103.3,
+"It could be $10 to $20."
+],
+[
+105.3,
+"OK."
+],
+[
+105.8,
+"That's OK."
+],
+[
+106.3,
+"It's free."
+],
+[
+107.3,
+"I mean, my coffee pot is also $20."
+],
+[
+111.3,
+"OK."
+],
+[
+111.8,
+"We are only buying coffee pots, girls."
+],
+[
+113.8,
+"Yeah."
+],
+[
+114.3,
+"Stella?"
+],
+[
+114.8,
+"Yeah."
+],
+[
+115.3,
+"What's up, Missy?"
+],
+[
+116.2,
+"What's up, Missy?"
+],
+[
+116.7,
+"Let's go to the machine."
+],
+[
+118.2,
+"OK."
+],
+[
+118.7,
+"But that's one time in long time."
+],
+[
+120.2,
+"Beauty has skincare products."
+],
+[
+122.2,
+"How much are we paying for that?"
+],
+[
+123.7,
+"For beauty."
+],
+[
+124.7,
+"Beauty has skincare."
+],
+[
+125.2,
+"And I'm not talking about, look."
+],
+[
+126.7,
+"We can apply my skin to other people's shampoo now."
+],
+[
+130.2,
+"So like that."
+],
+[
+131.2,
+"Exactly, right?"
+],
+[
+133.7,
+"We can make it with regular shampoo, but no."
+],
+[
+136.2,
+"Yeah."
+],
+[
+136.7,
+"We are not doing that."
+],
+[
+137.7,
+"We're not doing that."
+],
+[
+138.7,
+"We're starting later."
+],
+[
+139.7,
+"Yeah."
+],
+[
+140.2,
+"Exactly."
+],
+[
+141.2,
+"Exactly."
+],
+[
+142.2,
+"So how much should I put down here?"
+],
+[
+144.7,
+"Right."
+],
+[
+145.3,
+"Five."
+],
+[
+146.3,
+"OK."
+],
+[
+146.8,
+"Let's do five."
+],
+[
+147.3,
+"Let's do one less."
+],
+[
+150.1,
+"And what about movies and eating out?"
+],
+[
+152.4,
+"How much are we spending on that?"
+],
+[
+153.9,
+"A ton."
+],
+[
+155.4,
+"And what are we doing?"
+],
+[
+156.4,
+"I'll put it on the screen."
+],
+[
+157.4,
+"So it needs to be on the screen."
+],
+[
+158.4,
+"Yeah."
+],
+[
+158.9,
+"I'll put it on the separate page."
+],
+[
+160.9,
+"That's the thing."
+],
+[
+162.4,
+"Oh, here's the."
+],
+[
+163.4,
+"Come on."
+],
+[
+163.9,
+"Here's the."
+],
+[
+164.4,
+"Here's the."
+],
+[
+165.6,
+"OK."
+],
+[
+166.1,
+"Let's do another team, people."
+],
+[
+168.9,
+"OK."
+],
+[
+169.4,
+"Let's stop at the movie theater."
+],
+[
+171.4,
+"Let's stop at the movie theater."
+],
+[
+172.9,
+"So funny."
+],
+[
+174.9,
+"OK."
+],
+[
+175.4,
+"So that's about 63,000 rupees a month."
+],
+[
+179.4,
+"That we're spending on all these guilty pleasures of us."
+],
+[
+185.4,
+"Now let's see what that can amount."
+],
+[
+187.4,
+"OK."
+],
+[
+188.4,
+"What if you put that amount into an SIP?"
+],
+[
+191.4,
+"Let's see what that amounts to."
+],
+[
+195.4,
+"So 10 years."
+],
+[
+197.4,
+"That amounts to 1.4 crore."
+],
+[
+200.4,
+"Right?"
+],
+[
+201.4,
+"Invest that for 20 years."
+],
+[
+203.4,
+"It'll be worth 6.2 crores."
+],
+[
+206.4,
+"But then I'm feeling like I'm in college."
+],
+[
+208.4,
+"And 30 years?"
+],
+[
+209.4,
+"22 crores."
+],
+[
+210.4,
+"Yes."
+],
+[
+211.4,
+"You're saying if I don't spend that money and I say,"
+],
+[
+213.4,
+"put it in my SIP, I'll have this much money."
+],
+[
+216.4,
+"This is how much that it will be worth."
+],
+[
+219.4,
+"Come on now."
+],
+[
+220.4,
+"But that was so."
+],
+[
+221.4,
+"The stressful thing about investing for me so far,"
+],
+[
+224.4,
+"that we have been doing, is that we know,"
+],
+[
+226.4,
+"and then I'm like, oh, I need a little money,"
+],
+[
+227.4,
+"maybe 5,000 rupees."
+],
+[
+228.4,
+"So just take it out."
+],
+[
+229.4,
+"I open it."
+],
+[
+230.4,
+"And when the market is crashed, I have lost 15,000 rupees."
+],
+[
+233.4,
+"So I'm just like."
+],
+[
+234.4,
+"Just take it out."
+],
+[
+235.4,
+"Ignore it."
+],
+[
+236.4,
+"Ignore it."
+],
+[
+237.4,
+"So that's the worst thing you can do with an SIP is."
+],
+[
+241.4,
+"Check it."
+]
+]
 },
 {
 "id": "IFM-233",
-"title": "Goa Workshop — clip 16",
+"title": "Goa — income minus expenses, and the Warren Buffett flip",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-233.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-233.mp4",
-"drive": "clips/IFM-233.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
+"drive": "https://drive.google.com/file/d/1BXCfBnqr1mXK3G1Riec93pAspQQ7tThH/view",
+"description": "She asks the room for the formula for savings, gets \"income minus expenses\", confirms it — and then flips it, as Warren Buffett said you should. Twenty-three seconds covering the single most repeated idea in personal finance, with the room supplying the first half.",
+"session": "Goa — 18 Jul 2026",
+"slide_text": "income minus expenses",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Saving",
+"Managing Money"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa income minus expenses warren buffett flip she asks room formula savings gets confirms then flips said you should twenty three seconds covering single most repeated idea personal finance supplying first half pay yourself budgeting july 2026",
+"speech": "may ask you, what is the formula for savings? What do you deduct from what to get savings? It's a very simple formula. Income minus expenses. Exactly, your income minus expenses give you your savings, right? What Warren Buffett said that you should flip this.",
+"speech_dur": 23.1,
+"speech_at": [
+[
+0.0,
+"may ask you, what is the formula for savings? What do you deduct from what to get savings?"
+],
+[
+7.0,
+"It's a very simple formula. Income minus expenses."
+],
+[
+14.0,
+"Exactly, your income minus expenses give you your savings, right? What Warren Buffett"
+],
+[
+20.0,
+"said that you should flip this."
+]
+]
 },
 {
 "id": "IFM-234",
-"title": "Goa Workshop — clip 17",
+"title": "Goa — what counts as an emergency: job loss, medical bills, repairs",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-234.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-234.mp4",
-"drive": "clips/IFM-234.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1Z2cYUWngkWIRm9-xV9Z3XHcfySidYdIF/view",
+"description": "Defining the thing an emergency fund is for, with examples: losing a job, a medical bill, unforeseen repairs, property damage, a downturn. The framing is the useful part — these have a low probability of happening but they cost a lot when they do.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Saving",
+"Financial Planning",
+"Risk & Returns",
+"Real Estate / REITs"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa what counts emergency job loss medical bills repairs defining thing fund examples losing bill unforeseen property damage downturn framing useful part these have low probability happening but they cost lot when emergencies risk july 2026",
+"speech": "for any emergencies that may have happened in your life, like a loss in job, a medical bill, unforeseen repairs that you may have to do, any sort of property damage that you need to repair, downturn in the market, like she said, right? These are emergencies that happen in your life. They have a low probability of taking place, but they end up costing you a lot of money. And what a lot of us end up doing",
+"speech_dur": 30.4,
+"speech_at": [
+[
+0.0,
+"for any emergencies that may have happened in your life,"
+],
+[
+4.0,
+"like a loss in job, a medical bill,"
+],
+[
+8.0,
+"unforeseen repairs that you may have to do,"
+],
+[
+11.4,
+"any sort of property damage that you need to repair,"
+],
+[
+15.9,
+"downturn in the market, like she said, right?"
+],
+[
+19.0,
+"These are emergencies that happen in your life."
+],
+[
+21.5,
+"They have a low probability of taking place,"
+],
+[
+24.2,
+"but they end up costing you a lot of money."
+],
+[
+27.4,
+"And what a lot of us end up doing"
+]
+]
 },
 {
 "id": "IFM-235",
-"title": "Goa Workshop — clip 18",
+"title": "Goa — an emergency fund is not supposed to earn you a great rate",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-235.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-235.mp4",
-"drive": "clips/IFM-235.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1JEt4uxc8kB4eZdFYrYanWKKrO5xqLHPQ/view",
+"description": "The correction people need: an emergency fund is money you must put away in a savings account, and its goal is not to get a great rate. Eighteen seconds, and it pre-empts the most common objection to holding cash.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Saving",
+"Financial Planning",
+"Family & Money",
+"Risk & Returns"
 ],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa emergency fund not supposed earn you great rate correction people need money must put away savings account goal get eighteen seconds pre empts most common objection holding cash liquidity returns misconception july 2026",
+"speech": "investing, emergency fund is money that you must save, you must put away into a savings account, right? The goal of an emergency fund is not to really, you know, get a great rate",
+"speech_dur": 17.9,
+"speech_at": [
+[
+0.0,
+"investing, emergency fund is money that you must save, you must put away into a savings"
+],
+[
+7.3,
+"account, right? The goal of an emergency fund is not to really, you know, get a great rate"
+]
+]
 },
 {
 "id": "IFM-236",
-"title": "Goa Workshop — clip 19",
+"title": "Goa — three to six months of salary, and why that rule is only a starting point",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-236.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-236.mp4",
-"drive": "clips/IFM-236.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1autEmI2bN4hKfNb_ftqWG98n1ExYxf7j/view",
+"description": "The number, and immediately the caveat: three to six months of salary is a common rule, \"but every person is different\". It ends by introducing liquid funds as the next step up from a savings account.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Saving",
+"Financial Planning",
+"Family & Money"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa three six months salary why rule only starting point number immediately caveat common but every person different ends introducing liquid funds next step from savings account emergency fund thumb july 2026",
+"speech": "Yes, it's money that you put away in a savings account which is three to six months of your salary. Now also understand this number, I say three to six months that's a common rule. But every person is different, so far. Exactly, yes. So there is something called a liquid fund.",
+"speech_dur": 23.8,
+"speech_at": [
+[
+0.0,
+"Yes, it's money that you put away in a savings account which is three to six months of your salary."
+],
+[
+8.0,
+"Now also understand this number, I say three to six months that's a common rule."
+],
+[
+13.0,
+"But every person is different, so far."
+],
+[
+18.0,
+"Exactly, yes."
+],
+[
+20.0,
+"So there is something called a liquid fund."
+]
+]
 },
 {
 "id": "IFM-237",
-"title": "Goa Workshop — clip 20",
+"title": "Goa — the \"R\" test: is this relevant to the life you actually want?",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-237.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-237.mp4",
-"drive": "clips/IFM-237.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
+"drive": "https://drive.google.com/file/d/1rPWiZyblwrhGoFyhbLKt4wVLqgVAth6t/view",
+"description": "Part of a named framework she walks through on screen. The letter covered here is relevance: decide an amount that will not hurt you or take from your life, then ask whether this will genuinely improve your life and align with your values and priorities — \"or am I doing this just because somebody else is\".",
+"session": "Goa — 18 Jul 2026",
+"slide_text": "or am I doing this just because somebody else is",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
-"topic": [
-"Women & Money"
-],
+"topic": [],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa test relevant life you actually want part named framework she walks through screen letter covered here relevance decide amount will not hurt take from your then ask whether genuinely improve align values priorities doing just because somebody else goal",
+"speech": "put that money in, then you need to think through what is the amount that I am comfortable with. That's not going to hurt me or take away from my life. Okay, art stands for is it relevant? You need to ask yourself, will this really help improve my life? Does it align with my values and priorities? Or am I doing this just with the somebody?",
+"speech_dur": 28.8,
+"speech_at": [
+[
+0.4,
+"put that money in, then you need to think through what is the amount that I am comfortable with."
+],
+[
+7.1,
+"That's not going to hurt me or take away from my life."
+],
+[
+13.6,
+"Okay, art stands for is it relevant? You need to ask yourself, will this really"
+],
+[
+21.6,
+"help improve my life? Does it align with my values and priorities? Or am I doing this just"
+],
+[
+28.0,
+"with the somebody?"
+]
+]
 },
 {
 "id": "IFM-238",
-"title": "Goa Workshop — clip 21",
+"title": "Goa — goal examples, starting with \"I want to travel business class\" (31s)",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-238.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-238.mp4",
-"drive": "clips/IFM-238.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1igUQCJR7BTmPIqxZVuPx2kCzFROxoIsP/view",
+"description": "The start of a round of goal examples, opening on wanting to travel business class. The automatic transcript sticks and repeats that one phrase for most of the clip, so what the rest of the examples were is not recoverable from the text — the audio would need a listen before this is used.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Fixed Income"
 ],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa goal examples starting want travel business class 31s start round opening wanting automatic transcript sticks repeats one phrase most clip what rest were not recoverable from text audio would need listen before used goals aspiration setting july 2026",
+"speech": "So now, examples from I want to travel business class to I want to travel business class to I want to travel business",
+"speech_dur": 30.8,
+"speech_at": [
+[
+0.0,
+"So now, examples from I want to travel business class to I want to travel business class to"
+],
+[
+28.9,
+"I want to travel business"
+]
+]
 },
 {
 "id": "IFM-239",
-"title": "Goa Workshop — clip 22",
+"title": "Goa — the bucket that outpaces inflation, and the 7-year SIP horizon",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-239.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-239.mp4",
-"drive": "clips/IFM-239.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/18jz_N49QySFel9CI2gTYV0RtJ_86BzTJ/view",
+"description": "Short and dense: this is the bucket meant to outpace inflation because it compounds over time, and in answer to a question from the room, the horizon for an SIP is anywhere over seven years. The transcript writes SIP as \"SIT\" once.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Compounding",
+"Money Conversations",
+"3-Bucket Investing",
+"Fixed Income",
+"Inflation & Interest Rates"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "sip systematic investment plan monthly investing goa bucket outpaces inflation year sip horizon short dense meant outpace because compounds over time answer question from room anywhere seven years transcript writes sit once buckets three compounding july 2026",
+"speech": "This is the bucket which is going to outpace inflation because it compounds your money over time. So somebody asked me what is the best time horizon for an SIT anywhere over 7 years.",
+"speech_dur": 17.8,
+"speech_at": [
+[
+0.6,
+"This is the bucket which is going to outpace inflation because it compounds your money over time."
+],
+[
+9.6,
+"So somebody asked me what is the best time horizon for an SIT anywhere over 7 years."
+]
+]
 },
 {
 "id": "IFM-240",
-"title": "Goa Workshop — clip 23",
+"title": "Goa — setting up the three-buckets game: match the product to its bucket",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-240.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-240.mp4",
-"drive": "clips/IFM-240.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1Sm_g9SCvUgUuVyxmIjlB7yDm83dKBFih/view",
+"description": "She sets up the exercise that closes the teaching: each investment option comes up with a short description, and the description itself hints which of the three buckets it belongs in. The stated purpose is to reinforce the buckets so nobody gets overwhelmed or confused by the product names.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"3-Bucket Investing",
+"Asset Allocation"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa setting three buckets game match product bucket she sets exercise closes teaching each investment option comes short description itself hints which belongs stated purpose reinforce nobody gets overwhelmed confused names options products workshop activity asset allocation july 2026",
+"speech": "to reinforce the three buckets and don't get overwhelmed or confused by the product. I am going to basically going to, each product is going to come up which is an investment option. There is a bit of a description of what that product is but that description will give you a hint as to which bucket it belongs in, these are different investment options or situations in life and you tell me which bucket it belongs to, just to reinforce this framework. Let's start, this is the red is the emergency bucket, blue is the stability and green is the growth. So a liquid mutual fund, it's a mutual fund that lends to companies or government for very short periods up to 91 days and you can withdraw your money in one working day. Which bucket will it belong to, emergency, yes, yes, liquid funds offer better returns than savings account while keeping money available within one day, so it's the smarter emergency bucket choice.",
+"speech_dur": 83.1,
+"speech_at": [
+[
+0.0,
+"to reinforce the three buckets and don't get overwhelmed or confused by the product."
+],
+[
+9.5,
+"I am going to basically going to, each product is going to come up which is an investment"
+],
+[
+14.7,
+"option."
+],
+[
+15.7,
+"There is a bit of a description of what that product is but that description will give"
+],
+[
+21.0,
+"you a hint as to which bucket it belongs in, these are different investment options"
+],
+[
+27.3,
+"or situations in life and you tell me which bucket it belongs to, just to reinforce this"
+],
+[
+33.6,
+"framework."
+],
+[
+34.6,
+"Let's start, this is the red is the emergency bucket, blue is the stability and green is"
+],
+[
+47.9,
+"the growth."
+],
+[
+50.5,
+"So a liquid mutual fund, it's a mutual fund that lends to companies or government for"
+],
+[
+56.2,
+"very short periods up to 91 days and you can withdraw your money in one working day."
+],
+[
+63.3,
+"Which bucket will it belong to, emergency, yes, yes, liquid funds offer better returns"
+],
+[
+74.4,
+"than savings account while keeping money available within one day, so it's the smarter emergency"
+],
+[
+82.0,
+"bucket choice."
+]
+]
 },
 {
 "id": "IFM-241",
-"title": "Goa Workshop — clip 24",
+"title": "Goa — playing the buckets game: car down payment, small-cap fund, post office",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-241.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-241.mp4",
-"drive": "clips/IFM-241.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1N-3xPvw9lDTv824QBcE40A9xutQhHNkw/view",
+"description": "The game in play, and the most concrete minute and a half in the shoot. The room is given a product and places it: money saved for a car down payment in three to four years; a small-cap equity fund investing in smaller newer Indian companies with high growth and higher risk; a post office product; and an instrument priced against coal, where the risk is what coal costs eight years from now.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"3-Bucket Investing",
+"Asset Allocation",
+"Risk & Returns",
+"Stocks / Equity"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa playing buckets game car down payment small cap fund post office play most concrete minute half shoot room given product places money saved three four years equity investing smaller newer indian companies high growth higher risk instrument priced against",
+"speech": "is that it was denominated to the price of coal. So it depended on what the price of coal would be 8 years from now and that is the risk that you are taking. So it belongs to the coal farm. Car down payment in 3 to 4 years. Money you are saving now for a car down payment. Yes. Yes. Small cap equity fund. A mutual fund investing in smaller newer Indian companies with high growth potential but also higher risk. Yes. Post office time deposit of government. It's a government backed scheme where you lock a lump sum for 3 years at a fixed interest rate guaranteed by the government. So when you find all these things this government is offering. So very often your bank distributes these products but for government bonds there is a portal that the RBI has come up with to all the RBI retail direct on direct retail or something where they do advertise the new government bonds and does it work? No. I don't know. I have never walked through that. I have always been sovereign gold bond also you could buy through your bank.",
+"speech_dur": 101.1,
+"speech_at": [
+[
+0.0,
+"is that it was denominated to the price of coal. So it depended on what the price of"
+],
+[
+7.4,
+"coal would be 8 years from now and that is the risk that you are taking. So it belongs"
+],
+[
+14.0,
+"to the coal farm. Car down payment in 3 to 4 years. Money you are saving now for a car"
+],
+[
+20.9,
+"down payment. Yes. Yes. Small cap equity fund. A mutual fund investing in smaller newer"
+],
+[
+34.9,
+"Indian companies with high growth potential but also higher risk. Yes. Post office time"
+],
+[
+52.2,
+"deposit of government. It's a government backed scheme where you lock a lump sum for 3 years"
+],
+[
+58.6,
+"at a fixed interest rate guaranteed by the government. So when you find all these things"
+],
+[
+65.6,
+"this government is offering. So very often your bank distributes these products but for government"
+],
+[
+74.6,
+"bonds there is a portal that the RBI has come up with to all the RBI retail direct on direct"
+],
+[
+85.6,
+"retail or something where they do advertise the new government bonds and does it work? No."
+],
+[
+93.6,
+"I don't know. I have never walked through that. I have always been sovereign gold bond also"
+],
+[
+99.6,
+"you could buy through your bank."
+]
+]
 },
 {
 "id": "IFM-242",
-"title": "Goa Workshop — clip 25",
+"title": "Goa — the close: you do not have to become a financial expert overnight",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-242.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-242.mp4",
-"drive": "clips/IFM-242.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1OUXPfdhM-SbXNFNm11s-OKse8lxKnAcU/view",
+"description": "Nearly two minutes closing the session. She returns to the goal people named at the start and says she hopes they now see a clear path to it, then takes the pressure off: starting to invest, or even just starting to learn, does not require becoming a financial expert overnight.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Risk & Returns",
+"Investing"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa close you not have become financial expert overnight nearly two minutes closing session she returns goal people named start says hopes they now see clear path then takes pressure off starting invest even just learn does require becoming reassurance",
+"speech": "at the beginning of the class. I hope that now you see a clear path to achieving it. What happens next? What you need to understand, even if you start your investing journey, or even if you start learning about investing, you don't need to become a financial expert overnight. You don't need to necessarily try to predict the markets. It's not about knowing everything. You just need to begin. And this sheet that I've given you is a great starting point for you guys to do that. Investing isn't necessarily about finding the best investment. It's about a building a plan, sticking to it, and giving some founding all the time it needs to do its best. For anybody I have an Instagram account, if you can please scan and follow us. We started different properties, like the one minute investing school, where we try and explain financial concepts within a minute. We've also started an ever-wondered series. As you were talking about that, lots of questions we've wondered about, but we don't really understand what they are, so we try and explain that. And every week we try and do a topical post about something that's happening, which is topical. And I try and explain it through analogies and simple language the way I've done it. So please follow us. It would be great to have you guys as following us. And after you guys are done, if you guys are done, can I move on from the next slide? Yeah. If you can please scan this.",
+"speech_dur": 113.5,
+"speech_at": [
+[
+0.0,
+"at the beginning of the class."
+],
+[
+2.1,
+"I hope that now you see a clear path to achieving it."
+],
+[
+9.1,
+"What happens next?"
+],
+[
+11.1,
+"What you need to understand, even if you"
+],
+[
+13.0,
+"start your investing journey, or even if you"
+],
+[
+16.1,
+"start learning about investing, you"
+],
+[
+19.0,
+"don't need to become a financial expert overnight."
+],
+[
+23.0,
+"You don't need to necessarily try to predict the markets."
+],
+[
+27.9,
+"It's not about knowing everything."
+],
+[
+32.1,
+"You just need to begin."
+],
+[
+34.4,
+"And this sheet that I've given you"
+],
+[
+36.5,
+"is a great starting point for you guys to do that."
+],
+[
+40.5,
+"Investing isn't necessarily about finding the best investment."
+],
+[
+44.9,
+"It's about a building a plan, sticking to it,"
+],
+[
+48.4,
+"and giving some founding all the time it needs to do its best."
+],
+[
+53.9,
+"For anybody I have an Instagram account,"
+],
+[
+57.9,
+"if you can please scan and follow us."
+],
+[
+60.9,
+"We started different properties, like the one minute"
+],
+[
+65.9,
+"investing school, where we try and explain"
+],
+[
+68.9,
+"financial concepts within a minute."
+],
+[
+71.9,
+"We've also started an ever-wondered series."
+],
+[
+75.9,
+"As you were talking about that, lots of questions"
+],
+[
+77.9,
+"we've wondered about, but we don't really understand"
+],
+[
+80.9,
+"what they are, so we try and explain that."
+],
+[
+83.9,
+"And every week we try and do a topical post"
+],
+[
+87.9,
+"about something that's happening, which is topical."
+],
+[
+90.9,
+"And I try and explain it through analogies and simple language"
+],
+[
+94.9,
+"the way I've done it."
+],
+[
+95.9,
+"So please follow us."
+],
+[
+96.9,
+"It would be great to have you guys as following us."
+],
+[
+101.9,
+"And after you guys are done, if you guys are done,"
+],
+[
+104.9,
+"can I move on from the next slide?"
+],
+[
+107.9,
+"Yeah."
+],
+[
+110.9,
+"If you can please scan this."
+]
+]
 },
 {
 "id": "IFM-243",
-"title": "Goa Workshop — clip 26",
+"title": "Goa — \"all those abbreviations make my brain go nope\"",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-243.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-243.mp4",
-"drive": "clips/IFM-243.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1SPP_7lxl-UTYYRKD16cmWKmeJEGXwkr9/view",
+"description": "A participant describes exactly how jargon shuts people out — the abbreviations make her brain \"go nope\", she gets shut down, \"I can't process these English things\". It is the clearest statement in the footage of the problem the whole course is built to solve, and it comes from a participant rather than from the front of the room.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Money Mindset",
+"Women & Money",
+"Mutual Funds"
 ],
 "person": [
-"Other Person"
+"Student"
 ],
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa all those abbreviations make brain nope participant describes exactly how jargon shuts people out her she gets shut down can process these english things clearest statement footage problem whole course built solve comes from rather than front room intimidation",
+"speech": "And all those abbreviations make my brain go, nope. I get shut down in a way, but I'm like, I'm three years old. Like, I really, I can't process these English things. It's very simple. Then attend my mutual fund. Yeah, I just take that on your hand. So we do one for mutual fund. So when I do it in my flagship course, I do two sessions on mutual fund. And that's for us, right? For us, and we just dedicate to mutual funds, because yes, there's a lot of jarion related to mutual funds, but it allows you to understand what you currently own, and also understand how to select the right kinds for different kinds of financial points, right? Again, I'm not. And then you can stop shop to feel like, oh, let me peruse what the options are. So you will understand what each one of them is. So even within each category, different fund houses. So for example, to give you an example, if it's a large cap mutual fund, there will be Kotaku who will offer a large cap, there will be Nippon who will offer a large cap, Parak who will offer a large cap, ICICI. So for one product as well, you will have lots of fund houses offering the same one. So it's also difficult to understand how to select the right fund house offering that option.",
+"speech_dur": 87.1,
+"speech_at": [
+[
+1.1,
+"And all those abbreviations make my brain go, nope."
+],
+[
+5.3,
+"I get shut down in a way, but I'm like, I'm three years old."
+],
+[
+8.5,
+"Like, I really, I can't process these English things."
+],
+[
+11.3,
+"It's very simple."
+],
+[
+12.3,
+"Then attend my mutual fund."
+],
+[
+13.9,
+"Yeah, I just take that on your hand."
+],
+[
+16.4,
+"So we do one for mutual fund."
+],
+[
+19.0,
+"So when I do it in my flagship course,"
+],
+[
+21.1,
+"I do two sessions on mutual fund."
+],
+[
+23.8,
+"And that's for us, right?"
+],
+[
+25.5,
+"For us, and we just dedicate to mutual funds,"
+],
+[
+27.4,
+"because yes, there's a lot of jarion related"
+],
+[
+31.1,
+"to mutual funds, but it allows you to understand"
+],
+[
+34.5,
+"what you currently own, and also understand"
+],
+[
+37.7,
+"how to select the right kinds for different kinds"
+],
+[
+42.1,
+"of financial points, right?"
+],
+[
+45.1,
+"Again, I'm not."
+],
+[
+46.1,
+"And then you can stop shop to feel like, oh, let me peruse"
+],
+[
+48.2,
+"what the options are."
+],
+[
+49.0,
+"So you will understand what each one of them is."
+],
+[
+52.1,
+"So even within each category, different fund houses."
+],
+[
+58.4,
+"So for example, to give you an example,"
+],
+[
+60.4,
+"if it's a large cap mutual fund, there"
+],
+[
+63.6,
+"will be Kotaku who will offer a large cap,"
+],
+[
+65.6,
+"there will be Nippon who will offer a large cap,"
+],
+[
+67.5,
+"Parak who will offer a large cap, ICICI."
+],
+[
+70.3,
+"So for one product as well, you will have lots of fund houses"
+],
+[
+75.2,
+"offering the same one."
+],
+[
+77.1,
+"So it's also difficult to understand"
+],
+[
+80.2,
+"how to select the right fund house offering that option."
+]
+]
 },
 {
 "id": "IFM-244",
-"title": "Goa Workshop — clip 27",
+"title": "Goa — why inflation and compounding come first, and \"a step ladder\" (4 min)",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-244.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-244.mp4",
-"drive": "clips/IFM-244.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1GNVv5B5yVvc8tp_sUndN1ZyjcvmFjQkm/view",
+"description": "Four minutes on how the course is built, useful for anyone explaining or selling it. Inflation and compounding come first because once you understand how inflation hits future goals and what compounding does, everything else can be built on top. A participant reflects it back — \"for the first time I've seen like a step ladder\".",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Compounding",
+"Inflation & Interest Rates"
 ],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa why inflation compounding come first step ladder min four minutes how course built useful anyone explaining selling because once you understand hits future goals what does everything else can top participant reflects back time seen like teaching method curriculum",
+"speech": "other workshops that we do we first start this is the fundamental thing that we start right because once you understand inflation how it affects your future goals you understand the power of compounding right then it's easy for me to build on that. For the first time I've seen like a step ladder and an organization of various schools because those are constantly conflicting with each other so to be able to segregate them and plan them separately and it's helping me visualize my own whatever I thought was a big problem map is now beginning to feel like I'm looking forward to this exercise this whole thing we don't have a nice weekend about I mean it's scary to even put these dreams down because you're like what do I do with these numbers right so I can sync with my goals now so I really appreciate it. Thank you. What about you? I have I just want you to know because I'm going to start investing tomorrow. So when you said that the investments out of the income should be like 20 percent, yeah, the 20 percent should be distributed in these three buckets at a degree or else. So the thing, the way you would always start okay what most financial planners will tell you when you start and you have that 20 percent available to you. First you ensure that you have an emergency fund available to you. Okay, again everybody thinks of an emergency fund differently. Okay, for example my husband told me hey I have money in my business which is available to us in case of an emergency. So in that case I didn't necessarily need to put money aside in a bank account or in a liquid fund available to me. But if so everybody's emergency fund can look different. The point is to have some money set aside in case any emergency takes place. And the point of it is to ensure that it doesn't take away from your other investments to fund your emergencies. So when you start ideally ensure that you have an emergency fund or something available to you for emergencies. Okay, make sure you have health insurance so that's taken care of too. Ensure that you have no high interest loans that you need to pay off. If you have any of these then use your 20 percent first to ensure that all these are taken care of. Once all these are taken care of then you start using that 20 percent to start building your financial plan. And the way you would do it is first you would start listing out all your financial goals. Anything that's coming up in one year, three years you would probably fund first. Or you would put some part away towards it and then some part away towards your goals that are coming up in the future. And you decide what takes more priority over the other. But the point is you take your 20 percent first for all these things then start listing out your goals. Put priorities on them. And if you think that this is a more priority than for someone in your 20 percent. And that 20 percent figure as your income grows in life is also going to grow. So at some point you can say, hey now I'm okay putting only this much and I want to put some part towards this goal. Or whatever it is.",
+"speech_dur": 242.6,
+"speech_at": [
+[
+0.6,
+"other workshops that we do we first start this is the fundamental thing that we"
+],
+[
+5.9,
+"start right because once you understand inflation how it affects your future"
+],
+[
+11.6,
+"goals you understand the power of compounding right then it's easy for me"
+],
+[
+17.1,
+"to build on that. For the first time I've seen like a step ladder and an"
+],
+[
+24.8,
+"organization of various schools because those are constantly conflicting"
+],
+[
+29.7,
+"with each other so to be able to segregate them and plan them separately and it's"
+],
+[
+39.0,
+"helping me visualize my own whatever I thought was a big problem map is now"
+],
+[
+43.7,
+"beginning to feel like I'm looking forward to this exercise this whole thing"
+],
+[
+50.0,
+"we don't have a nice weekend about I mean it's scary to even put these dreams"
+],
+[
+56.4,
+"down because you're like what do I do with these numbers right so I can sync with my"
+],
+[
+61.7,
+"goals now so I really appreciate it. Thank you. What about you? I have I just want you to know because I'm going to start investing tomorrow."
+],
+[
+73.2,
+"So when you said that the investments out of the income should be like 20 percent, yeah, the 20 percent should be distributed in these three buckets at a degree or else."
+],
+[
+93.2,
+"So the thing, the way you would always start okay what most financial planners will tell you when you start and you have that 20 percent available to you."
+],
+[
+102.2,
+"First you ensure that you have an emergency fund available to you. Okay, again everybody thinks of an emergency fund differently."
+],
+[
+111.2,
+"Okay, for example my husband told me hey I have money in my business which is available to us in case of an emergency."
+],
+[
+121.2,
+"So in that case I didn't necessarily need to put money aside in a bank account or in a liquid fund available to me."
+],
+[
+131.2,
+"But if so everybody's emergency fund can look different. The point is to have some money set aside in case any emergency takes place."
+],
+[
+143.2,
+"And the point of it is to ensure that it doesn't take away from your other investments to fund your emergencies."
+],
+[
+151.2,
+"So when you start ideally ensure that you have an emergency fund or something available to you for emergencies."
+],
+[
+160.2,
+"Okay, make sure you have health insurance so that's taken care of too."
+],
+[
+166.2,
+"Ensure that you have no high interest loans that you need to pay off."
+],
+[
+173.2,
+"If you have any of these then use your 20 percent first to ensure that all these are taken care of."
+],
+[
+179.2,
+"Once all these are taken care of then you start using that 20 percent to start building your financial plan."
+],
+[
+185.2,
+"And the way you would do it is first you would start listing out all your financial goals."
+],
+[
+190.2,
+"Anything that's coming up in one year, three years you would probably fund first."
+],
+[
+195.2,
+"Or you would put some part away towards it and then some part away towards your goals that are coming up in the future."
+],
+[
+203.2,
+"And you decide what takes more priority over the other."
+],
+[
+210.2,
+"But the point is you take your 20 percent first for all these things then start listing out your goals."
+],
+[
+217.2,
+"Put priorities on them."
+],
+[
+219.2,
+"And if you think that this is a more priority than for someone in your 20 percent."
+],
+[
+226.2,
+"And that 20 percent figure as your income grows in life is also going to grow."
+],
+[
+233.2,
+"So at some point you can say, hey now I'm okay putting only this much and I want to put some part towards this goal."
+],
+[
+239.2,
+"Or whatever it is."
+]
+]
 },
 {
 "id": "IFM-245",
-"title": "Goa Workshop — clip 28",
+"title": "Goa — how often to review your investments: every six months to a year",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-245.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-245.mp4",
-"drive": "clips/IFM-245.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1-9PycjJUMbRM8LvENL4R3A_Q_0Ois8na/view",
+"description": "A practical answer to a practical question: she reviews her own investments about every six months to a year, and the point of the review is to check they are performing and to act with a planner if they are not.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Financial Planning",
+"Money Conversations"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "testimonial review feedback social proof word of mouth goa how often review your investments every six months year practical answer question she reviews her own about point check they performing act planner not reviewing portfolio performance financial july 2026",
+"speech": "every six months or a year? So I look at my investments pretty much every six months or a year, and at that point, when you review them, you see how they're doing. So you come see to ensure that they're performing well. If they've not been performing well, you know, we do it through a financial planner, so of course I ask questions. Do I need to switch my investments from this to this? I also do a review of the goals, right? So some goals change, the timeline changes, the amount changes, right? So that's what you would also probably do. So even if you do it once a year, I think it's pretty much enough for you to engage. It's amazing, actually, it's like making your, like we've written personal diaries, but we've never had a financial diary that evolves every six months. And it's so nice to look back at three years ago, what I thought was the most important goal has completely vanished, and it's earlier. But yeah, I mean, this is also really nice that you're pegging your goals against your investments. So guys, this is really baseless, because this is what I'm doing it for. So yeah, I stand for doing the best. Thank you. Where do you find a financial planner? I don't know.",
+"speech_dur": 83.8,
+"speech_at": [
+[
+0.4,
+"every six months or a year?"
+],
+[
+3.8,
+"So I look at my investments pretty much every six months"
+],
+[
+8.8,
+"or a year, and at that point, when you review them,"
+],
+[
+13.8,
+"you see how they're doing."
+],
+[
+15.3,
+"So you come see to ensure that they're performing well."
+],
+[
+19.9,
+"If they've not been performing well,"
+],
+[
+22.6,
+"you know, we do it through a financial planner,"
+],
+[
+24.6,
+"so of course I ask questions."
+],
+[
+26.4,
+"Do I need to switch my investments"
+],
+[
+28.4,
+"from this to this?"
+],
+[
+30.9,
+"I also do a review of the goals, right?"
+],
+[
+34.4,
+"So some goals change, the timeline changes,"
+],
+[
+37.5,
+"the amount changes, right?"
+],
+[
+39.9,
+"So that's what you would also probably do."
+],
+[
+43.0,
+"So even if you do it once a year,"
+],
+[
+44.6,
+"I think it's pretty much enough for you to engage."
+],
+[
+49.4,
+"It's amazing, actually, it's like making your,"
+],
+[
+51.5,
+"like we've written personal diaries,"
+],
+[
+53.4,
+"but we've never had a financial diary"
+],
+[
+55.2,
+"that evolves every six months."
+],
+[
+58.1,
+"And it's so nice to look back at three years ago,"
+],
+[
+60.5,
+"what I thought was the most important goal"
+],
+[
+63.0,
+"has completely vanished, and it's earlier."
+],
+[
+65.7,
+"But yeah, I mean, this is also really nice"
+],
+[
+69.7,
+"that you're pegging your goals against your investments."
+],
+[
+72.3,
+"So guys, this is really baseless,"
+],
+[
+74.6,
+"because this is what I'm doing it for."
+],
+[
+76.4,
+"So yeah, I stand for doing the best."
+],
+[
+79.0,
+"Thank you."
+],
+[
+79.8,
+"Where do you find a financial planner?"
+],
+[
+81.8,
+"I don't know."
+]
+]
 },
 {
 "id": "IFM-246",
-"title": "Goa Workshop — clip 29",
+"title": "Goa — a financial planner is not a CA, and smaller independent ones exist",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-246.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-246.mp4",
-"drive": "clips/IFM-246.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1G5pNSyBRht0snsu0FvMo7pSAKfy-CiMU/view",
+"description": "A distinction people get wrong constantly, asked and answered in the room. A financial planner is not a chartered accountant: a CA is largely mapping your current expenses and handling tax. She also makes the access point — advisers do not have to be the big firms, there are smaller independent ones.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Managing Money",
+"Financial Planning",
+"Financial Independence"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa financial planner not smaller independent ones exist distinction people get wrong constantly asked answered room chartered accountant largely mapping your current expenses handling tax she also makes access point advisers have big firms there difference advice who hire july",
+"speech": "But there are lots available and they don't have to be the large companies, there are smaller independent ones that can help. Is that a CA? No, that is not a CA. Completely different. A chartered accountant is pretty much mapping your current expenses and telling you how to pay your tax and save tax. A financial planner is mapping your goals and your money. Your CA is mapping your money that you have spent. Right? So it makes me feel bad versus many goals. But when you Google financial planner, what are they called? Yeah, they're financial. So there are, in financial planners also there's a whole range of people. There will be somebody who will do financial planning for all your wealth. There will be some people who are mutual fund distributors. They have only a license to distribute all kinds of mutual funds. Right? There are some planners that, I mean it gets more and more complicated. Yes. Sometimes I feel like just people selling products but in the guise of a financial planner. Yes. Yes. But it's very hard then to figure. That is very often the case. They're very often the case. Not everybody is so far off. To be a financial planner, you need something called an RAI license. That's helpful. RAI license. Yes. It's RIA license. RIA, sorry. RIA license. It's a registered investment advisor. They've studied to suggest these things and explain them to you. Yeah, and they do it. When you get an RIA license, they're looking it in a holistic manner. A mutual fund distribu...",
+"speech_dur": 111.5,
+"speech_at": [
+[
+0.0,
+"But there are lots available and they don't have to be the large companies, there are smaller"
+],
+[
+8.0,
+"independent ones that can help."
+],
+[
+10.0,
+"Is that a CA?"
+],
+[
+11.0,
+"No, that is not a CA."
+],
+[
+14.0,
+"Completely different."
+],
+[
+16.0,
+"A chartered accountant is pretty much mapping your current expenses and telling you how"
+],
+[
+23.0,
+"to pay your tax and save tax."
+],
+[
+26.0,
+"A financial planner is mapping your goals and your money."
+],
+[
+31.0,
+"Your CA is mapping your money that you have spent."
+],
+[
+36.0,
+"Right?"
+],
+[
+38.0,
+"So it makes me feel bad versus many goals."
+],
+[
+41.0,
+"But when you Google financial planner, what are they called?"
+],
+[
+45.0,
+"Yeah, they're financial."
+],
+[
+47.0,
+"So there are, in financial planners also there's a whole range of people."
+],
+[
+51.0,
+"There will be somebody who will do financial planning for all your wealth."
+],
+[
+55.0,
+"There will be some people who are mutual fund distributors."
+],
+[
+59.0,
+"They have only a license to distribute all kinds of mutual funds."
+],
+[
+64.0,
+"Right?"
+],
+[
+65.0,
+"There are some planners that, I mean it gets more and more complicated."
+],
+[
+70.0,
+"Yes."
+],
+[
+71.0,
+"Sometimes I feel like just people selling products but in the guise of a financial planner."
+],
+[
+76.0,
+"Yes."
+],
+[
+77.0,
+"Yes."
+],
+[
+78.0,
+"But it's very hard then to figure."
+],
+[
+80.0,
+"That is very often the case."
+],
+[
+83.0,
+"They're very often the case."
+],
+[
+85.0,
+"Not everybody is so far off."
+],
+[
+87.0,
+"To be a financial planner, you need something called an RAI license."
+],
+[
+92.0,
+"That's helpful."
+],
+[
+93.0,
+"RAI license."
+],
+[
+95.0,
+"Yes."
+],
+[
+96.0,
+"It's RIA license."
+],
+[
+97.0,
+"RIA, sorry."
+],
+[
+98.0,
+"RIA license."
+],
+[
+99.0,
+"It's a registered investment advisor."
+],
+[
+100.0,
+"They've studied to suggest these things and explain them to you."
+],
+[
+104.0,
+"Yeah, and they do it."
+],
+[
+105.0,
+"When you get an RIA license, they're looking it in a holistic manner."
+],
+[
+110.0,
+"A mutual fund distribu..."
+]
+]
 },
 {
 "id": "IFM-247",
-"title": "Goa Workshop — clip 30",
+"title": "Goa — commission-led advice, and checking for an RIA licence",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-247.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-247.mp4",
-"drive": "clips/IFM-247.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1YgCKHMIu_zQ5j8-J9DwL6PMU6iUfxQSu/view",
+"description": "The conflict-of-interest answer: some advisers only recommend the products they are paid to recommend, and the room asks how you check — whether someone holds a licence. The transcript renders the licence as \"IA\"; it is almost certainly RIA, and the audio should be checked before this is quoted.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Fixed Income"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa commission led advice checking ria licence conflict interest answer some advisers only recommend products they paid room asks how you check whether someone holds transcript renders almost certainly audio should checked before quoted regulation mis selling july 2026",
+"speech": "So they're only recommending those products to you. Anyone except big sponsorships is not what I'm looking for right now. Yeah, got it. So someone did an IA license? Yes. Okay, thank you. Hope that works. Natasha, I hope that was not the case. Yeah. She was very... I understood things. And there was no happy moment. Yeah. Just a little bit. But one double, 30 times. That will work. Yeah. But also... That was really helpful. Thank you guys. Thank you. Thank you.",
+"speech_dur": 45.0,
+"speech_at": [
+[
+0.0,
+"So they're only recommending those products to you."
+],
+[
+4.0,
+"Anyone except big sponsorships is not what I'm looking for right now."
+],
+[
+8.0,
+"Yeah, got it."
+],
+[
+10.0,
+"So someone did an IA license?"
+],
+[
+12.0,
+"Yes."
+],
+[
+13.0,
+"Okay, thank you."
+],
+[
+15.0,
+"Hope that works."
+],
+[
+17.0,
+"Natasha, I hope that was not the case."
+],
+[
+19.0,
+"Yeah."
+],
+[
+21.0,
+"She was very..."
+],
+[
+22.0,
+"I understood things."
+],
+[
+24.0,
+"And there was no happy moment."
+],
+[
+26.0,
+"Yeah."
+],
+[
+27.0,
+"Just a little bit."
+],
+[
+29.0,
+"But one double, 30 times."
+],
+[
+32.0,
+"That will work."
+],
+[
+34.0,
+"Yeah."
+],
+[
+36.0,
+"But also..."
+],
+[
+38.0,
+"That was really helpful."
+],
+[
+39.0,
+"Thank you guys."
+],
+[
+40.0,
+"Thank you."
+],
+[
+41.0,
+"Thank you."
+]
+]
 },
 {
 "id": "IFM-248",
-"title": "Goa Workshop — clip 31",
+"title": "Goa — \"we learned some money, now let's go make some money\" (10s)",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-248.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-248.mp4",
-"drive": "clips/IFM-248.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1nEsIgZIBgh0VbPBfbwfYHHnUJ69_EkmB/view",
+"description": "Ten seconds of the room cheering at the end — \"we learned some money, now let's go make some money\". Pure energy with no teaching content, which makes it the natural closing shot of any edit of this day.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
-"topic": [
-"Women & Money"
-],
+"topic": [],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "candid warm natural unposed relaxed friendly celebration goa learned some money now let make 10s ten seconds room cheering end pure energy teaching content which makes natural closing shot any edit day celebration sign off group july 2026",
+"speech": "Woohoo! We learned some money! We learned some money! Now let's go make some money!",
+"speech_dur": 9.9,
+"speech_at": [
+[
+0.5,
+"Woohoo!"
+],
+[
+2.5,
+"We learned some money!"
+],
+[
+4.5,
+"We learned some money!"
+],
+[
+6.5,
+"Now let's go make some money!"
+]
+]
 },
 {
 "id": "IFM-249",
-"title": "Goa Workshop — clip 32",
+"title": "Goa — inflation and compounding are the foundation everything else sits on",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-249.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-249.mp4",
-"drive": "clips/IFM-249.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
+"drive": "https://drive.google.com/file/d/1bIP25y8FICpLBAks7ZkXDYUll8xwt_02/view",
+"description": "The same argument as the longer clip, in eighteen seconds: you need inflation, compounding, the three buckets and a plan first, and after that it is easy to build on mutual funds, stocks or other assets. The compact version, and the more quotable one.",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Compounding",
+"Family & Money",
+"3-Bucket Investing",
+"Stocks / Equity",
+"Mutual Funds"
 ],
 "person": [
-"Other Person"
+"Hiral",
+"Student"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa inflation compounding foundation everything else sits same argument longer clip eighteen seconds you need three buckets plan first after easy build mutual funds stocks other assets compact version more quotable one teaching method foundations curriculum july 2026",
+"speech": "So you need to understand inflation and compounding before I can build on anything and the three buckets and how you need to have a plan. But after this, it's easy for me then to build on a mutual fund or to build on stocks or to build on assets.",
+"speech_dur": 17.6,
+"speech_at": [
+[
+0.1,
+"So you need to understand inflation and compounding before I can build on anything and the three buckets and how you need to have a plan."
+],
+[
+10.1,
+"But after this, it's easy for me then to build on a mutual fund or to build on stocks or to build on assets."
+]
+]
 },
 {
 "id": "IFM-250",
-"title": "Goa Workshop — clip 33",
+"title": "Goa — real estate, gold and silver, and \"two hours doesn't even cut it\"",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-250.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-250.mp4",
-"drive": "clips/IFM-250.mp4",
-"description": "Raw video from the IFM women’s money workshop in Goa (18 Jul 2026). Candidate footage for reels.",
-"session": "Goa — 17 Jul 2026",
-"slide_text": "",
+"drive": "https://drive.google.com/file/d/17_DYt5Ig_0NjSUXY4rPhfNabHyHvG1-6/view",
+"description": "Running through the asset classes that were not covered: real estate, and commodities meaning largely gold or silver. She flags gold as needing a session of its own — \"that in itself is a two-hour market, and two hours doesn't even cut it\" — and raises the question of a home as a place of residence versus an investment.",
+"session": "Goa — 18 Jul 2026",
+"slide_text": "that in itself is a two-hour market, and two hours doesn",
 "silent": true,
 "type": "Video",
 "status": "Raw",
 "format": "Classroom Moment",
 "topic": [
-"Women & Money"
+"Money Conversations",
+"Real Estate / REITs",
+"Gold",
+"Silver"
 ],
 "person": [
-"Other Person"
+"Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
-"search_terms": "candid warm natural unposed relaxed friendly celebration goa workshop clip raw video from ifm women money jul 2026 candidate footage reels financial literacy session event july live",
-"library": false
+"search_terms": "goa real estate gold silver two hours doesn even cut running through asset classes were not covered commodities meaning largely she flags needing session own itself hour market raises question home place residence versus investment property scope july 2026",
+"speech": "In real estate, commodities is largely gold or silver. And then we do trade, and that in itself is a two-hour market. And two hours doesn't even cut it, honestly. There's just so much in gold. But I think before that, they see a native land as place of residence. Then would you be in a position to be able to do it in them? We understand the chapters and modalities I need to kind of explore. It's not based on yours. So what I'll teach is not based on yours. It's just based on...",
+"speech_dur": 40.8,
+"speech_at": [
+[
+0.2,
+"In real estate, commodities is largely gold or silver."
+],
+[
+5.2,
+"And then we do trade, and that in itself is a two-hour market."
+],
+[
+11.2,
+"And two hours doesn't even cut it, honestly."
+],
+[
+15.2,
+"There's just so much in gold."
+],
+[
+18.2,
+"But I think before that, they see a native land as place of residence."
+],
+[
+23.2,
+"Then would you be in a position to be able to do it in them?"
+],
+[
+27.2,
+"We understand the chapters and modalities I need to kind of explore."
+],
+[
+32.2,
+"It's not based on yours."
+],
+[
+35.2,
+"So what I'll teach is not based on yours."
+],
+[
+37.2,
+"It's just based on..."
+]
+]
 },
 {
 "id": "IFM-251",
@@ -7755,9 +10035,9 @@ window.IFM_V1 =
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-251.jpg",
 "video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-251.jpg",
+"drive": "https://drive.google.com/file/d/1EXh6bTUDyQfIZ9ElVnjdjmcy6TWszA_u/view",
 "description": "Open-air Goa venue: women seated at cafe tables listening while Hiral presents from the far side in a blue dress. A dog sleeps on the floor in the foreground — an unusually relaxed, non-corporate setting.",
-"session": "Goa — 17 Jul 2026",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": false,
 "type": "Image",
@@ -7770,6 +10050,7 @@ window.IFM_V1 =
 "Hiral",
 "Student"
 ],
+"hiral_named": false,
 "source": "Unknown",
 "search_terms": "goa workshop offsite retreat open air cafe relaxed informal casual dog seated audience listening destination blue dress"
 },
@@ -7779,9 +10060,9 @@ window.IFM_V1 =
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-252.jpg",
 "video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-252.jpg",
+"drive": "https://drive.google.com/file/d/16QmiNeeNwiZPyLf0i-8zjhvt-If4m_yh/view",
 "description": "Hiral presenting from a laptop beside a large screen showing an emergency-fund diagram — a safety net catching a falling figure.",
-"session": "Goa — 17 Jul 2026",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "Secure Your Emergency Fund. Financial Safety Net.",
 "silent": false,
 "type": "Image",
@@ -7795,6 +10076,7 @@ window.IFM_V1 =
 "person": [
 "Hiral"
 ],
+"hiral_named": false,
 "source": "Unknown",
 "search_terms": "emergency fund rainy day safety net contingency months of expenses buffer goa workshop presenting laptop screen",
 "kit": "teaching",
@@ -7806,9 +10088,9 @@ window.IFM_V1 =
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-253.jpg",
 "video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-253.jpg",
+"drive": "https://drive.google.com/file/d/1eSPxaBzkTLJmcYNQMF6RF--6aiP4rCCS/view",
 "description": "Group photo on the steps of the Goa venue — around eight women with Hiral, several holding IFM workbooks, greenery and a tiled roof behind.",
-"session": "Goa — 17 Jul 2026",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": false,
 "type": "Image",
@@ -7830,9 +10112,9 @@ window.IFM_V1 =
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-254.jpg",
 "video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-254.jpg",
+"drive": "https://drive.google.com/file/d/1bHKRTdHLJjiz91OtbFTV2Ir1IiV677Ps/view",
 "description": "Goa cohort on the cafe steps holding up IFM course material, Hiral in the blue dress among them. Stone pillars and a chalkboard menu behind.",
-"session": "Goa — 17 Jul 2026",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": false,
 "type": "Image",
@@ -7854,9 +10136,9 @@ window.IFM_V1 =
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-255.jpg",
 "video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-255.jpg",
+"drive": "https://drive.google.com/file/d/1IakAt6xFViFqiz0_OPuDElLGmtpDolp1/view",
 "description": "Tighter group shot of the Goa cohort on the steps, several women holding up their IFM material to camera.",
-"session": "Goa — 17 Jul 2026",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": false,
 "type": "Image",
@@ -7878,9 +10160,9 @@ window.IFM_V1 =
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-256.jpg",
 "video": "",
-"drive": "https://ifm-deploy.vercel.app/content/photos/IFM-256.jpg",
+"drive": "https://drive.google.com/file/d/1vJvb920Ox4RDTQlJLzMI2-cq3az08WQf/view",
 "description": "Wide panorama of the open-air Goa venue — tiled roof, plants and garden seating, with the small group gathered at the far end.",
-"session": "Goa — 17 Jul 2026",
+"session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": false,
 "type": "Image",
@@ -22724,5 +25006,31 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "IFM / In-house",
 "search_terms": "september 2026 session shoot full folder 102 files catch all video totalling filmed between nothing catalogue reached before today which why showed unreachable scan opens not single file individual teaching moments have been pulled out yet transcription pass next piece"
+},
+{
+"id": "IFM-572",
+"title": "Goa promo reel — the version set (v1–v8, 9 cuts)",
+"date": "2026-07-18",
+"thumb": "../thumbs/IFM-572.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-572.mp4",
+"drive": "https://drive.google.com/drive/folders/1eNqoq7rqjpsKg1t81DRnuWcXx8Y-CY83",
+"description": "Nine cuts of the Goa workshop promo reel, delivered as a version set rather than a single finished file — v1 through v8, with two different v8s, plus two superseded v5/v6 cuts kept in a subfolder. They differ in length and in approach: a 60-second cinematic opening, a story cut with music and a call to action, one built around the compounding wake-up, one on real teaching with a zoom on a student question, one framed for the @dotinthepark location with voice over music, and a greenery-and-signage montage. No cut is marked final anywhere, so this row opens the folder rather than asserting a choice that was never recorded. ⚠️ One v8 is deliberately SILENT, named for adding Coldplay in-app — the track was never baked in, and it must not be, because licensed music in an exported file is a copyright problem the in-app route avoids.",
+"session": "Goa — 18 Jul 2026",
+"slide_text": "",
+"silent": true,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Compounding",
+"Money Conversations"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "goa promo reel version set cuts nine workshop delivered rather than single finished file through two different v8s plus superseded kept subfolder they differ length approach second cinematic opening story cut music call action one built around compounding wake real"
 }
 ];
