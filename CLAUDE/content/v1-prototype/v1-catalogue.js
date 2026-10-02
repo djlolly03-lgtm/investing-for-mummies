@@ -25009,28 +25009,24 @@ window.IFM_V1 =
 },
 {
 "id": "IFM-572",
-"title": "Goa promo reel — the version set (v1–v8, 9 cuts)",
+"title": "Goa promo reel — FINAL cut v8 (silent master, published 24 Jul 2026)",
 "date": "2026-07-18",
 "thumb": "../thumbs/IFM-572.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-572.mp4",
-"drive": "https://drive.google.com/drive/folders/1eNqoq7rqjpsKg1t81DRnuWcXx8Y-CY83",
-"description": "Nine cuts of the Goa workshop promo reel, delivered as a version set rather than a single finished file — v1 through v8, with two different v8s, plus two superseded v5/v6 cuts kept in a subfolder. They differ in length and in approach: a 60-second cinematic opening, a story cut with music and a call to action, one built around the compounding wake-up, one on real teaching with a zoom on a student question, one framed for the @dotinthepark location with voice over music, and a greenery-and-signage montage. No cut is marked final anywhere, so this row opens the folder rather than asserting a choice that was never recorded. ⚠️ One v8 is deliberately SILENT, named for adding Coldplay in-app — the track was never baked in, and it must not be, because licensed music in an exported file is a copyright problem the in-app route avoids.",
+"drive": "https://drive.google.com/file/d/1Vz_F70f_j62xrLbJuUCNRJTCMqiw9qJC/view",
+"description": "The finished Goa workshop promo reel — 30 seconds, 1080×1920, the greenery-and-signage montage. This row now points at the SILENT master, which is the file to publish from: the soundtrack was deliberately never baked in so that licensed music can be added inside Instagram instead. ⚠️ Do not export a version with the track burned in. A second, frame-identical v8 carrying the music sits beside it in the folder and is the reference for the intended pacing and audio, not a publishing master. The eight earlier cuts and two superseded ones remain in the same folder as the working history.",
 "session": "Goa — 18 Jul 2026",
 "slide_text": "",
 "silent": true,
 "type": "Video",
-"status": "Raw",
+"status": "Published",
 "format": "Hiral Speaking",
-"topic": [
-"Compounding",
-"Money Conversations"
-],
+"topic": [],
 "person": [
-"Hiral",
-"Student"
+"Hiral"
 ],
-"hiral_named": true,
+"hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "goa promo reel version set cuts nine workshop delivered rather than single finished file through two different v8s plus superseded kept subfolder they differ length approach second cinematic opening story cut music call action one built around compounding wake real"
+"search_terms": "goa promo reel final cut silent master published jul 2026 finished workshop seconds 1080 1920 greenery signage montage row now points which file publish from soundtrack was deliberately never baked licensed music can added inside instagram instead not export version"
 }
 ];
