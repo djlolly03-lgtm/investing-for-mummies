@@ -378,6 +378,40 @@ def load_moments():
     return out
 
 
+_PH_CACHE = {}
+
+
+def phash_of(rid):
+    """64-bit difference hash of thumbs/<id>.jpg, or None when there is no thumbnail.
+
+    dHash compares each pixel with its right-hand neighbour on a 9x8 greyscale resize, so it
+    describes the IMAGE rather than the bytes: two exports of the same photo at different
+    compression land on the same value, which an md5 never would.
+
+    It is NOT a duplicate test on its own. On this library a distance of 0-4 reliably means
+    the same moment, and most of those pairs turn out to be consecutive camera frames --
+    IMG_1845 and IMG_1846, five seconds apart, both real and both worth keeping. So the page
+    uses this to GROUP near-identical results under one card, never to hide or delete a row.
+    """
+    if rid in _PH_CACHE:
+        return _PH_CACHE[rid]
+    p = os.path.join(HERE, '..', 'thumbs', '%s.jpg' % rid)
+    val = None
+    if os.path.exists(p):
+        try:
+            from PIL import Image
+            im = Image.open(p).convert('L').resize((9, 8), Image.LANCZOS)
+            px = list(im.getdata())
+            val = 0
+            for y in range(8):
+                for x in range(8):
+                    val = (val << 1) | (1 if px[y * 9 + x] > px[y * 9 + x + 1] else 0)
+        except Exception:
+            val = None
+    _PH_CACHE[rid] = val
+    return val
+
+
 def load_speech():
     """What each video actually SAYS, from transcribe-videos.py's per-video store.
 
@@ -566,6 +600,17 @@ def main():
             # a phrase is still findable, but half a nonsense query landing on an idiom ("at
             # the drop of a hat") cannot drag a result to the top. Folding it into
             # search_terms was measurably worse: it pushed the right SIP clip from #1 to #4.
+
+        # A perceptual hash of the row's own thumbnail, so the page can tell that six results
+        # are six frames of ONE moment. Nothing textual can see that: a burst gets six
+        # different titles and six different Drive ids, and the only thing the frames share
+        # is what they look like. Computed here rather than in the browser because the
+        # thumbnails are not fetchable as pixels from the page without canvas-tainting work,
+        # and because it is a property of the asset, not of a search.
+        ph = phash_of(v1['id'])
+        if ph is not None:
+            v1['phash'] = '%016x' % ph
+            stats['has_phash'] += 1
 
         for k in ('type', 'format', 'source', 'session'):
             if v1.get(k): stats['has_' + k] += 1

@@ -300,6 +300,32 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
    itself and its own context line, on most cards, in every view. The slack belongs at the
    BOTTOM of the card, not inside it: stretched to the row's height, each card can hug its
    own text and still land its tag pills on one shared baseline (see .tags below). */
+/* A card is a <button>, so nothing clickable can live inside it — "+3 similar" and the
+   not-relevant control are siblings laid over it. The wrapper takes the grid cell and
+   stays a stretched flex column so .tags keeps landing on the shared baseline. */
+.cardwrap{position:relative;display:flex;flex-direction:column;min-width:0}
+.cardwrap>.cardx{flex:1}
+.cgrp{position:absolute;left:8px;top:8px;z-index:2;border:0;cursor:pointer;
+  font:600 11.5px/1 'Inter',system-ui,sans-serif;letter-spacing:.01em;
+  padding:6px 9px;border-radius:999px;background:rgba(21,38,63,.82);color:#fff;
+  backdrop-filter:blur(3px);transition:background .18s}
+.cgrp:hover{background:rgba(21,38,63,.95)}
+.cgrp.on{background:var(--gold);color:var(--display)}
+.cfb{position:absolute;right:8px;top:8px;z-index:2;border:0;cursor:pointer;width:26px;height:26px;
+  border-radius:999px;background:rgba(255,255,255,.86);color:var(--ink-2);opacity:0;
+  display:flex;align-items:center;justify-content:center;transition:opacity .18s,background .18s}
+.cardwrap:hover .cfb{opacity:1}
+.cfb:hover{background:#fff;color:#b3261e}
+.cfb svg{width:14px;height:14px}
+.cfb.done{opacity:1;background:#b3261e;color:#fff}
+.fbmenu{position:absolute;right:8px;top:38px;z-index:5;background:#fff;border-radius:12px;
+  box-shadow:0 10px 30px -12px rgba(21,38,63,.5),inset 0 0 0 1px rgba(21,38,63,.08);
+  padding:6px;min-width:168px}
+.fbmenu button{display:block;width:100%;text-align:left;border:0;background:none;cursor:pointer;
+  font:500 12.5px/1.2 'Inter',system-ui,sans-serif;color:var(--ink);padding:8px 10px;border-radius:8px}
+.fbmenu button:hover{background:var(--stone-2)}
+.fbmenu .hd{font:600 11px/1 'Inter',system-ui,sans-serif;color:var(--ink-2);padding:7px 10px 5px;
+  text-transform:uppercase;letter-spacing:.06em}
 .cardx{text-align:left;padding:0;display:flex;flex-direction:column;width:100%;background:none}
 /* display:block matters. As an inline span, aspect-ratio and width:100% were both
    ignored, every thumbnail rendered at its natural size and the cards ran 718px tall. */
@@ -986,7 +1012,8 @@ const media=a=>MEDIA[a.id]||{kind:'image',playable:false};
 const RELEVANT=0.7;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const state={q:'',filters:{},showWeak:false,openId:null,engaged:false,browse:false,sort:'relevance',kit:false};
+const state={q:'',filters:{},showWeak:false,openId:null,engaged:false,browse:false,sort:'relevance',kit:false,
+  openGroups:new Set()};
 
 const FILTERS=[['type','Type',T.type],['format','Format',T.format],['topic','Topic',null],
   ['person','Person',T.person],['source','Source',T.source],['session','Session',null],['status','Status',T.status]];
@@ -1084,13 +1111,117 @@ function card(x){
     : a.type==='Video'    ? '<span class="nopv">No preview</span>'
     : '';
   // Spans throughout: <h3>/<p> are flow content and are not valid inside a <button>.
-  return `<button class="cardx" data-id="${esc(a.id)}">
+  const n=x.dupes?x.dupes.length:0;
+  const open=n&&state.openGroups.has(a.id);
+  const grp=n?`<button class="cgrp${open?' on':''}" data-act="grp" data-id="${esc(a.id)}" title="${open?'Hide the other frames of this moment':`${n+1} frames of this same moment — show the others`}">${open?`− Hide ${n}`:`+${n} similar`}</button>`:'';
+  const down=FB.has(a.id);
+  const fb=`<button class="cfb${down?' done':''}" data-act="fb" data-id="${esc(a.id)}" title="${down?'Marked not relevant':'Not relevant to this search'}" aria-label="Not relevant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-2"/><path d="M17 13l-4.5 7.5a2 2 0 0 1-3-.5V15H5a2 2 0 0 1-2-2.4l1.2-6A2 2 0 0 1 6.2 5H17z"/></svg></button>`;
+  return `<span class="cardwrap"><button class="cardx" data-id="${esc(a.id)}">
     <span class="shot"><span class="none">no preview</span>${a.thumb?`<img loading="lazy" src="${esc(a.thumb)}" alt="" onerror="this.remove()">`:''}${badge}</span>
     <span class="ttl">${esc(titleOf(a))}</span>
     <span class="ctx">${esc(context(a))||'&nbsp;'}</span>
     <span class="tags">${pills}</span>
-  </button>`;
+  </button>${grp}${fb}</span>`;
 }
+
+/* ===================== BURST GROUPING =======================================
+ * A search for "certificate" was returning six cards that are six photographs of the SAME
+ * moment — IMG_1845 and IMG_1846 are five seconds apart, IMG_2388 and IMG_2391 are the same
+ * group shot. Every one is a real, distinct file with its own Drive id and its own title, so
+ * nothing textual can see the relationship. The only thing they share is what they look like.
+ *
+ * So the grouping is done on `phash`, the perceptual hash backfill.py stores per row, and it
+ * GROUPS rather than hides: the lead frame takes the slot, the rest sit behind "+N similar".
+ * Nothing is dropped from the result set and nothing is deleted from the catalogue — the
+ * second-best frame of a moment is often the one you actually want, and which frame that is
+ * is not a judgement this page gets to make.
+ *
+ * Same MONTH as well as same picture. Two cohorts photographed in the same boardroom against
+ * the same wall can land close together, and collapsing August's graduates into June's would
+ * be worse than showing one card too many. The guard is the month and not the `session`
+ * string, because the same shoot carries three different session labels in this catalogue —
+ * "Investing for Mummies Flagship graduation — Aug 2026", "Flagship graduation — Aug 2026"
+ * and "Flagship workshop — certificate day (uploaded 7 Sep 2026)" are all the same day. An
+ * exact session match therefore never fires on the very pairs this exists to catch.
+ *
+ * 12 bits was measured, not guessed: across the 536 hashed assets the pair count per distance
+ * is flat and small from 0 to 12 (1-14 pairs each) and then climbs — 13, 17, 20, 40 at
+ * distances 13 to 16. 12 sits on that knee. The two pairs from the reported "certificate"
+ * search are 6 and 11 apart, and a visibly unrelated pair in the same result set is 26.
+ * A first guess of 4 grouped nothing at all, which is how this got measured. */
+const BURST_BITS=12;
+const BURST_BITS_UNDATED=6;   // no month to corroborate, so demand a closer picture
+const MONKEY=/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{4})/i;
+function monthKey(a){
+  const m=MONKEY.exec(a.session||'');
+  if(m) return (m[1].slice(0,3)+' '+m[2]).toLowerCase();
+  if(a.date){ const d=new Date(a.date); if(!isNaN(d)) return (MON[d.getMonth()]+' '+d.getFullYear()).toLowerCase(); }
+  return '';
+}
+function popcount(n){let c=0;while(n){n&=n-1n;c++;}return c;}
+function phDist(a,b){
+  try{ return popcount(BigInt('0x'+a)^BigInt('0x'+b)); }catch(e){ return 64; }
+}
+function groupBursts(list){
+  const out=[], taken=new Set();
+  for(let i=0;i<list.length;i++){
+    const x=list[i]; if(taken.has(x.a.id)) continue;
+    taken.add(x.a.id);
+    const ph=x.a.phash, mk=monthKey(x.a), dupes=[];
+    if(ph){
+      for(let j=i+1;j<list.length;j++){
+        const y=list[j];
+        if(taken.has(y.a.id)||!y.a.phash) continue;
+        const mky=monthKey(y.a);
+        // Both months known and different: never group, however alike they look.
+        if(mk&&mky&&mk!==mky) continue;
+        const limit=(mk&&mky)?BURST_BITS:BURST_BITS_UNDATED;
+        if(phDist(ph,y.a.phash)<=limit){ dupes.push(y); taken.add(y.a.id); }
+      }
+    }
+    out.push(dupes.length?Object.assign({},x,{dupes}):x);
+  }
+  return out;
+}
+/* Expanding a group splices its frames in right after the lead, so they read as one run
+ * rather than being appended to the end of the page where the connection is lost. */
+function withExpanded(groups){
+  const out=[];
+  for(const g of groups){
+    out.push(g);
+    if(g.dupes&&state.openGroups.has(g.a.id)) for(const d of g.dupes) out.push(d);
+  }
+  return out;
+}
+
+/* ===================== NOT-RELEVANT FEEDBACK ================================
+ * The point is not the score, it is the REASON, and above all the QUERY that was on screen.
+ * "Not relevant: IFM-526" says little. "Not relevant: IFM-526, searching `certificate`,
+ * wrong content" says the row's format is wrong — and it was: IFM-526 is a woman at a laptop
+ * carrying format `Certificate`, which injected "certificate completion graduation proud
+ * achievement" into its search terms. One mis-set field, and it outranks real certificates.
+ *
+ * Stored in localStorage and exported as a file, deliberately. The Library is a static page
+ * with no backend, so the honest options were a per-browser store you can export or a
+ * silently-lost POST. There is a shared Apps Script endpoint on the OLD hub, but the standing
+ * rule on this project is one Apps Script project per tool and whoami before any write, so
+ * pointing the Library at the competitor-tracker's endpoint is exactly the mistake that rule
+ * exists to prevent. Export, send, and it gets fixed in the catalogue. */
+const FB_KEY='ifm_v1_feedback';
+function fbLoad(){ try{ return JSON.parse(localStorage.getItem(FB_KEY)||'[]'); }catch(e){ return []; } }
+function fbSave(v){ try{ localStorage.setItem(FB_KEY,JSON.stringify(v)); }catch(e){} }
+let FBLIST=fbLoad();
+let FB=new Set(FBLIST.map(f=>f.id));
+const FB_REASONS=['Wrong content','Not what I searched for','Bad quality',
+                  'Wrong person','Can\'t use it (no file / no preview)','Duplicate of another result'];
+function fbAdd(id,reason){
+  const a=ASSETS.find(z=>z.id===id);
+  FBLIST=FBLIST.filter(f=>!(f.id===id&&f.query===state.q));
+  FBLIST.push({id,title:a?a.title:'',query:state.q,reason,
+               at:new Date().toISOString()});
+  FB.add(id); fbSave(FBLIST);
+}
+function fbClear(id){ FBLIST=FBLIST.filter(f=>f.id!==id); FB.delete(id); fbSave(FBLIST); }
 
 /* BROWSE — the library grouped by Format, which the ablation showed is the strongest
  * dimension in the catalogue by a distance (removing it costs five queries; removing
@@ -1226,8 +1357,14 @@ function render(){
   // assistant persona starts, and this is a library that understood her, not a chatbot.
   const n=strong.length, piece=`${n} piece${n===1?'':'s'} of content`;
   const nf=activeFilters();
+  // Take-away controls. The Library could already find the 24 certificate photos and then
+  // left you to copy 24 Drive links by hand, one card at a time — which is where the whole
+  // point of a searchable library quietly fell over.
+  const grab=`<button class="refine" data-act="links" title="Copy every Drive link in these results to the clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span class="lbl">Copy links</span></button>`+
+    `<button class="refine" data-act="csv" title="Download these results as a spreadsheet, with every Drive link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12"/><path d="M7.5 11.5L12 16l4.5-4.5"/><path d="M4 20h16"/></svg>CSV</button>`;
+  const fbn=FBLIST.length?`<button class="refine on" data-act="fbx" title="Download the not-relevant notes you have flagged, to send on">Feedback · ${FBLIST.length}</button>`:'';
   $('summary').innerHTML=`<h2>${searching?`Found ${piece}`:piece}</h2>
-    <span class="sumright"><button class="refine${state.sort==='newest'?' on':''}" data-act="sort" title="${state.sort==='newest'?'Showing newest uploads first — tap for best matches':'Showing best matches first — tap for newest uploads'}">${state.sort==='newest'?'Newest first':'Most relevant'}</button><button class="refine${nf?' on':''}" data-act="filters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M6 12h12M10 18h4"/></svg>Filters${nf?` · ${nf}`:''}</button></span>`;
+    <span class="sumright">${grab}${fbn}<button class="refine${state.sort==='newest'?' on':''}" data-act="sort" title="${state.sort==='newest'?'Showing newest uploads first — tap for best matches':'Showing best matches first — tap for newest uploads'}">${state.sort==='newest'?'Newest first':'Most relevant'}</button><button class="refine${nf?' on':''}" data-act="filters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M6 12h12M10 18h4"/></svg>Filters${nf?` · ${nf}`:''}</button></span>`;
   /* Newest first is applied AFTER the engine has ranked, and only when she asks for it.
    * The default stays relevance, so the validated ordering is what you get unless you
    * choose otherwise — the frontend is not quietly re-ranking anything. Undated assets
@@ -1243,8 +1380,12 @@ function render(){
      inside whichever section it belongs to and there is no way to see it. "Newest first"
      has to mean ONE list in date order — that is the whole question it answers. */
   if(state.browse&&!searching&&state.sort!=='newest'){ $('results').innerHTML=groupByFormat(strong); return; }
-  let html='<div class="grid">'+strong.map(card).join('');
-  if(weak.length&&state.showWeak) html+='<div class="sep">Weaker matches</div>'+weak.map(card).join('');
+  // Collapse burst frames into one card each. Done AFTER ranking and sorting, so it never
+  // changes which asset wins — only how many slots one moment is allowed to occupy.
+  const gStrong=withExpanded(groupBursts(strong));
+  const gWeak=withExpanded(groupBursts(weak));
+  let html='<div class="grid">'+gStrong.map(card).join('');
+  if(weak.length&&state.showWeak) html+='<div class="sep">Weaker matches</div>'+gWeak.map(card).join('');
   html+='</div>';
   if(weak.length&&!state.showWeak)
     html+=`<button class="weak" data-act="weak">Show ${weak.length} weaker match${weak.length===1?'':'es'} ↓</button>`;
@@ -1428,7 +1569,77 @@ document.addEventListener('click',e=>{
   if(a==='copy'){const h=act.dataset.href; if(!h)return;
     const lbl=act.querySelector('.lbl')||act;
     navigator.clipboard?.writeText(h).then(()=>{lbl.textContent='Copied';setTimeout(()=>lbl.textContent='Copy link',1400);});}
+  if(a==='grp'){const id=act.dataset.id;
+    if(state.openGroups.has(id))state.openGroups.delete(id); else state.openGroups.add(id);
+    render();}
+  if(a==='links'){
+    const rows=exportRows(), links=rows.map(r=>r.drive).filter(Boolean);
+    const lbl=act.querySelector('.lbl')||act;
+    if(!links.length){lbl.textContent='No links';setTimeout(()=>lbl.textContent='Copy links',1600);return;}
+    navigator.clipboard?.writeText(links.join('\n')).then(
+      ()=>{lbl.textContent=`${links.length} copied`;setTimeout(()=>lbl.textContent='Copy links',1800);},
+      ()=>{lbl.textContent='Blocked';setTimeout(()=>lbl.textContent='Copy links',1800);});}
+  if(a==='csv') downloadCSV();
+  if(a==='fbx') downloadFeedback();
+  if(a==='fb'){ openFbMenu(act); }
+  if(a==='fbpick'){
+    const id=act.dataset.id, reason=act.dataset.reason;
+    if(reason==='__clear') fbClear(id); else fbAdd(id,reason);
+    closeFbMenu(); render();}
 });
+// Clicking anywhere else closes the reason menu, including a second click on the same card.
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.fbmenu')&&!e.target.closest('.cfb')) closeFbMenu();
+},true);
+
+/* ===================== TAKE-AWAY ============================================
+ * What leaves the page is exactly what is on it: the same result set, in the same order,
+ * after the same filters — including the frames hidden behind "+N similar", because a
+ * person asking for "all the certificate photos" means all of them, not one per moment.
+ * A row with no Drive link is still written to the CSV, with the cell empty, so a gap in
+ * the catalogue shows up in the export instead of silently shrinking the count. */
+function exportRows(){
+  const {strong,weak}=currentResults();
+  const list=strong.concat(state.showWeak?weak:[]);
+  return list.map(x=>({id:x.a.id,title:String(x.a.title||''),type:x.a.type||'',
+    format:x.a.format||'',session:x.a.session||'',date:x.a.date||'',
+    drive:/^https?:/.test(String(x.a.drive||''))?x.a.drive:''}));
+}
+function dl(name,text,mime){
+  const b=new Blob([text],{type:mime}),u=URL.createObjectURL(b),a=document.createElement('a');
+  a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(u),2000);
+}
+const csvCell=v=>`"${String(v==null?'':v).replace(/"/g,'""')}"`;
+function slug(s){return (s||'all').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'all';}
+function downloadCSV(){
+  const rows=exportRows();
+  // ﻿ so Excel opens UTF-8 correctly — without it the em dashes in every title arrive
+  // as mojibake, which is how a working export gets reported as broken.
+  const head=['id','title','type','format','session','date','drive_link'];
+  const body=rows.map(r=>[r.id,r.title,r.type,r.format,r.session,r.date,r.drive].map(csvCell).join(','));
+  dl(`ifm-${slug(state.q)}-${rows.length}.csv`,'﻿'+head.join(',')+'\n'+body.join('\n'),
+     'text/csv;charset=utf-8');
+}
+function downloadFeedback(){
+  dl(`ifm-feedback-${FBLIST.length}.csv`,'﻿'+
+    ['asset_id','title','query_on_screen','reason','flagged_at'].join(',')+'\n'+
+    FBLIST.map(f=>[f.id,f.title,f.query,f.reason,f.at].map(csvCell).join(',')).join('\n'),
+    'text/csv;charset=utf-8');
+}
+function closeFbMenu(){ const m=document.querySelector('.fbmenu'); if(m)m.remove(); }
+function openFbMenu(btn){
+  const id=btn.dataset.id, had=FB.has(id);
+  const existing=document.querySelector('.fbmenu');
+  closeFbMenu();
+  if(existing&&existing.dataset.for===id) return;   // second click on the same card closes
+  const m=document.createElement('div');
+  m.className='fbmenu'; m.dataset.for=id;
+  m.innerHTML='<div class="hd">Not relevant because</div>'+
+    FB_REASONS.map(r=>`<button data-act="fbpick" data-id="${esc(id)}" data-reason="${esc(r)}">${esc(r)}</button>`).join('')+
+    (had?`<button data-act="fbpick" data-id="${esc(id)}" data-reason="__clear">↩ Undo this flag</button>`:'');
+  btn.parentElement.appendChild(m);
+}
 // Click a spoken line, the player jumps to it. Delegated on the modal body because the
 // transcript is rebuilt on every open.
 // Only the lines that are actually INSIDE the preview become seek targets, and only once

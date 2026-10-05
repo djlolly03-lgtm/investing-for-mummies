@@ -873,5 +873,28 @@
  "IFM-561": {
   "library": false,
   "_why": "2-second fragment, housekeeping sign-off only. Row kept so the file stays reachable from the hub; hidden from the Library because a result nobody can use is the thing the visibility rule exists to prevent."
+ },
+ "IFM-573": {
+  "kit": "portrait",
+  "kit_rank": 2,
+  "_kit_why": "Identity checked by eye on 3 Oct 2026, not read off a description: the face matches IFM-067 (human-verified rank-1 kit portrait), and the same red sleeveless top appears in the 1 Oct corporate-workshop frames where she is the presenter. Portrait: tight head-and-shoulders to camera, face clear, simple plant-and-curtain backdrop. Held at 2, not 1: neutral unsmiling expression and a lav mic clipped on the top. A human may promote it."
+ },
+ "IFM-574": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "Identity checked by eye on 3 Oct 2026, not read off a description: the face matches IFM-067 (human-verified rank-1 kit portrait), and the same red sleeveless top appears in the 1 Oct corporate-workshop frames where she is the presenter. Candid: relaxed on the sofa, looking away from camera. Rank 3 — pleasant but not a lead image."
+ },
+ "IFM-576": {
+  "kit": "teaching",
+  "kit_rank": 2,
+  "_kit_why": "Identity checked by eye on 3 Oct 2026, not read off a description: the face matches IFM-067 (human-verified rank-1 kit portrait), and the same red sleeveless top appears in the 1 Oct corporate-workshop frames where she is the presenter. Teaching: smiling mid-explanation beside a legible SMART-goals slide, workbooks in front — reads as a corporate session. Adults only. Rank 2."
+ },
+ "IFM-525": {
+  "format": "B-roll",
+  "_why": "Reported from the Library on 5 Oct 2026 as an irrelevant hit for the query `certificate` — the frame is a woman at a laptop by a window, with no certificate in it. The cause was NOT this row alone: 26 rows catalogued in one run on 20 Sep shared the identical keyword string \"certificate graduation teens feedback workshop\", batch boilerplate that had nothing to do with 18 of the pictures. backfill expands those words into search_terms, so all 18 competed for every certificate and graduation query. Fixed at source in data.js by rebuilding each row's keywords from its own title, description and session; this entry pins the format, which the boilerplate had also driven to Certificate."
+ },
+ "IFM-526": {
+  "format": "B-roll",
+  "_why": "Reported from the Library on 5 Oct 2026 as an irrelevant hit for the query `certificate` — the frame is a woman at a laptop by a window, with no certificate in it. The cause was NOT this row alone: 26 rows catalogued in one run on 20 Sep shared the identical keyword string \"certificate graduation teens feedback workshop\", batch boilerplate that had nothing to do with 18 of the pictures. backfill expands those words into search_terms, so all 18 competed for every certificate and graduation query. Fixed at source in data.js by rebuilding each row's keywords from its own title, description and session; this entry pins the format, which the boilerplate had also driven to Certificate."
  }
 }
