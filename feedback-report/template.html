@@ -1,0 +1,385 @@
+<meta charset="utf-8">
+<title>IFM Feedback Insights</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500;1,600&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: one 1040px column of stacked sections; summary first, evidence next, actions, then the raw table. */
+:root{
+  --bg:#f7faf9; --surface:#ffffff; --fg:#1a3a5c; --muted:#5a7d8a; --line:#d9e6e3;
+  --teal:#2a9d8f; --teal-soft:#e0f3f0; --navy:#1a3a5c; --mint:#bde9e4;
+  --warn-bg:#fdf3e1; --warn-fg:#8a5a00; --warn-line:#f0d49a;
+  --bar:#2a9d8f; --bar-dim:#bde9e4; --quote:#f0f7f5;
+  --bad:#c0392b; --bad-bg:#fbe9e7; --bad-dim:#f3c9c4; --amber:#c47a00; --amber-bg:#fff4df; --amber-dim:#f6dca8; --good:#2a9d8f;
+  --display:'Lora',Georgia,'Times New Roman',serif;
+  --body:'Nunito','Segoe UI',Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0f1f2e; --surface:#172b3d; --fg:#e8f1f0; --muted:#9db7bf; --line:#2b4457;
+  --teal:#4cc3b4; --teal-soft:#1d3f44; --navy:#e8f1f0; --mint:#2d5e5a;
+  --warn-bg:#3a2d12; --warn-fg:#f3cf80; --warn-line:#6a5120;
+  --bar:#4cc3b4; --bar-dim:#2d5e5a; --quote:#1c3344;
+  --bad:#ff7b6b; --bad-bg:#3b1f1c; --bad-dim:#5a2b26; --amber:#f0b35a; --amber-bg:#3a2d12; --amber-dim:#5c4418; --good:#4cc3b4; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0f1f2e; --surface:#172b3d; --fg:#e8f1f0; --muted:#9db7bf; --line:#2b4457;
+  --teal:#4cc3b4; --teal-soft:#1d3f44; --navy:#e8f1f0; --mint:#2d5e5a;
+  --warn-bg:#3a2d12; --warn-fg:#f3cf80; --warn-line:#6a5120;
+  --bar:#4cc3b4; --bar-dim:#2d5e5a; --quote:#1c3344;
+  --bad:#ff7b6b; --bad-bg:#3b1f1c; --bad-dim:#5a2b26; --amber:#f0b35a; --amber-bg:#3a2d12; --amber-dim:#5c4418; --good:#4cc3b4; color-scheme:dark }
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-block:32px 64px;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:2.1rem}
+h2{font-size:1.5rem;margin-bottom:6px}
+h3{font-size:1.15rem}
+p{margin:0}
+.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.sub{color:var(--muted);max-width:66ch}
+section{margin-top:48px}
+.lede{max-width:66ch;color:var(--muted);margin-top:8px}
+a{color:var(--teal)}
+
+/* header */
+header{display:flex;flex-direction:column;gap:6px}
+header .meta{color:var(--muted);font-size:.9rem}
+
+/* stat tiles */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:22px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;min-width:0}
+.tile .n{font-family:var(--display);font-size:2.2rem;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.tile .l{color:var(--muted);font-size:.9rem;margin-top:6px}
+.tile .d{font-size:.8rem;margin-top:6px;color:var(--muted)}
+.tile .d b{color:var(--teal);font-weight:800}
+
+/* correction box */
+.callout{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-fg);border-radius:12px;padding:16px 18px;margin-top:20px}
+.callout h3{color:inherit;margin-bottom:8px}
+.callout table{width:100%;border-collapse:collapse;font-size:.92rem}
+.callout th,.callout td{text-align:left;padding:5px 8px 5px 0;border-bottom:1px solid var(--warn-line);vertical-align:top}
+.callout th{font-weight:800;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.callout td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.callout .ok{font-weight:800}
+
+/* question blocks */
+.q{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;margin-top:22px;align-items:start}
+@media (max-width:760px){.q{grid-template-columns:1fr}}
+.qhead{display:flex;align-items:baseline;gap:12px;margin-top:36px;border-top:1px solid var(--line);padding-top:22px}
+.qhead .num{font-family:var(--display);font-style:italic;color:var(--teal);font-size:1.3rem}
+.insight{margin-top:10px;max-width:66ch}
+.insight b{font-weight:800}
+
+/* bars */
+.bars{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.bar{display:grid;grid-template-columns:minmax(0,190px) 1fr 36px;gap:10px;align-items:center;font-size:.92rem}
+.bar .lab{min-width:0;line-height:1.25}
+button.bar{width:100%;font:inherit;color:inherit;background:none;border:0;padding:4px 0;text-align:left;cursor:pointer;border-radius:6px}
+button.bar:hover .lab,button.bar[aria-expanded="true"] .lab{color:var(--teal);font-weight:700}
+button.bar:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+button.bar .lab::after{content:" \25B8";color:var(--muted);font-size:.8em}
+button.bar[aria-expanded="true"] .lab::after{content:" \25BE"}
+.panel{margin:4px 0 10px 0;padding:10px 12px;background:var(--quote);border-radius:8px;display:flex;flex-direction:column;gap:8px}
+.panel p{font-size:.9rem}
+.panel p span{display:block;color:var(--muted);font-size:.78rem}
+.panel.empty p{color:var(--muted);font-style:italic}
+.hint{font-size:.78rem;color:var(--muted);margin-top:6px}
+.bar .track{height:14px;background:var(--bar-dim);border-radius:0 4px 4px 0;position:relative;min-width:0}
+.bar .fill{height:100%;background:var(--bar);border-radius:0 4px 4px 0}
+.bar .val{font-variant-numeric:tabular-nums;color:var(--muted);text-align:right;font-weight:700}
+.bar.dim .fill{background:var(--muted)}
+.bar.bad .fill{background:var(--bad)} .bar.bad .track{background:var(--bad-dim)} .bar.bad .val{color:var(--bad)}
+.bar.warn .fill{background:var(--amber)} .bar.warn .track{background:var(--amber-dim)} .bar.warn .val{color:var(--amber)}
+.chip{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.chip.bad{background:var(--bad-bg);color:var(--bad)} .chip.warn{background:var(--amber-bg);color:var(--amber)} .chip.good{background:var(--teal-soft);color:var(--teal)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.8rem;color:var(--muted);margin-top:10px}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.legend .lb::before{background:var(--bad)} .legend .lw::before{background:var(--amber)} .legend .lg::before{background:var(--teal)}
+.tile.bad{border-color:var(--bad);border-left-width:5px} .tile.bad .n{color:var(--bad)}
+.tile.warn{border-color:var(--amber);border-left-width:5px} .tile.warn .n{color:var(--amber)}
+.tile.good{border-left:5px solid var(--teal)}
+.alert{background:var(--bad-bg);border:1px solid var(--bad-dim);border-radius:12px;padding:16px 18px;margin-top:20px}
+.alert h3{color:var(--bad);margin-bottom:8px}
+.alert ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:.95rem}
+.alert li b{font-weight:800}
+.rec .tag.bad{color:var(--bad)} .rec .tag.warn{color:var(--amber)}
+.chart-title{font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.chart-note{font-size:.82rem;color:var(--muted);margin-top:8px}
+
+/* quotes */
+.quotes{display:flex;flex-direction:column;gap:10px}
+blockquote{margin:0;background:var(--quote);border-left:3px solid var(--teal);padding:10px 14px;border-radius:0 8px 8px 0;font-size:.95rem}
+blockquote cite{display:block;font-style:normal;color:var(--muted);font-size:.8rem;margin-top:6px}
+
+/* batch chart */
+.batches{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+.batches .bar{grid-template-columns:minmax(0,150px) 1fr 90px}
+.batches .val{white-space:nowrap}
+
+/* recommendations */
+.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:20px}
+.rec{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.rec .tag{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.rec h3{font-size:1.1rem}
+.rec .ev{font-size:.88rem;color:var(--muted)}
+.rec .ev b{color:var(--fg);font-weight:800}
+.rec .do{font-size:.95rem}
+.rec .do b{font-weight:800}
+.rec.lead{border-color:var(--teal);background:var(--teal-soft)}
+.rec.lead .ev{color:var(--fg);opacity:.85}
+
+/* fixes list */
+ol.fixes{padding-left:22px;margin:12px 0 0;display:flex;flex-direction:column;gap:8px;max-width:72ch}
+ol.fixes b{font-weight:800}
+
+/* table */
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center}
+.controls button{font:inherit;font-weight:700;font-size:.85rem;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:6px 12px;border-radius:999px;cursor:pointer}
+.controls button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.controls input{font:inherit;font-size:.9rem;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:7px 12px;border-radius:8px;min-width:0;flex:1 1 200px}
+.controls button:focus-visible,.controls input:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.tablewrap{overflow-x:auto;margin-top:12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table.resp{border-collapse:collapse;width:100%;min-width:900px;font-size:.86rem}
+table.resp th,table.resp td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.resp th{position:sticky;top:0;background:var(--surface);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:800}
+table.resp td.who{white-space:nowrap}
+table.resp td.who small{display:block;color:var(--muted);font-weight:400}
+table.resp td.rec{white-space:nowrap;font-weight:700}
+table.resp tr.shift td.who::after{content:"column-shifted in sheet, corrected here";display:block;font-size:.7rem;color:var(--warn-fg);font-weight:600;white-space:normal}
+.count{color:var(--muted);font-size:.85rem}
+.pill{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.06em;padding:2px 8px;border-radius:999px;background:var(--teal-soft);color:var(--teal)}
+footer{margin-top:48px;color:var(--muted);font-size:.82rem;max-width:72ch}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Investing for Mummies · course feedback</span>
+  <h1>What 44 students told us, and what to do about it</h1>
+  <p class="meta">Source: the Feedback tab of the admin dashboard, pulled {{GENERATED}}. Four test entries removed, 18 column-shifted rows corrected. Every response is in the table at the bottom.</p>
+</header>
+
+<div class="tiles">
+  <div class="tile warn"><div class="n">{{N_REAL}}</div><div class="l">Real responses</div><div class="d">{{N_IFM}} mummies · {{N_TEEN}} teens. The dashboard says {{DASH_TOTAL}}; <b>{{N_TESTS}} are test entries</b>.</div></div>
+  <div class="tile good"><div class="n">{{HR}}<span style="font-size:1.1rem;color:var(--muted)"> / {{N_IFM}}</span></div><div class="l">Mummies who would "highly recommend"</div><div class="d">{{REC_OTHERS}}</div></div>
+  <div class="tile good"><div class="n">{{TEEN_AVG}}<span style="font-size:1.1rem;color:var(--muted)"> / 5</span></div><div class="l">Teen rating (IYA + IFT)</div><div class="d">{{TEEN_SPLIT}} <b>{{TEEN_AGAIN}} of {{N_TEEN}}</b> would come back.</div></div>
+  <div class="tile {{RATE_CLASS}}"><div class="n">{{RATE}}%</div><div class="l">Response rate</div><div class="d">{{N_REAL}} of {{ENROLLED}} enrolled. <b>{{PENDING}} pending</b>, mostly mummies from April to September.</div></div>
+</div>
+
+<div class="alert">
+  <h3>Needs attention</h3>
+  <ul>
+    <li><b>Response rate is 31%.</b> 97 of 141 students have never answered. Two in three opinions are missing.</li>
+    <li><b>September: 4 of 15 answered. April: 4 of 15. March and June: nobody.</b> Four of the eight cohort months are effectively unmeasured.</li>
+    <li><b>The dashboard's Feedback numbers are wrong</b> (see below). Anyone reading it today sees 8 "maybe" and 0 WhatsApp sign-ups. Both are 0 and 13 in reality.</li>
+    <li><b>Two people said the pace was too fast</b> (vidya, Priya Khatau) and one said mutual funds went too deep (Ashima). Small, but these are the only friction signals in 31 responses, so do not lose them.</li>
+    <li><b>One "Likely" instead of "Highly recommend"</b>: Deepika Agarwal, August B1. Worth a call to ask why.</li>
+  </ul>
+</div>
+<div class="callout">
+  <h3>The dashboard's Feedback KPIs are wrong, and here is by how much</h3>
+  <p style="margin-bottom:10px">From August the form gained a column but the sheet headers did not move, so every later answer sits one column to the left. The dashboard reads the recommendation out of the "enjoyed most" column, and so on. Corrected figures below.</p>
+  <table>
+    <tr><th>Metric</th><th>Dashboard shows</th><th>Actual</th></tr>
+    <tr><td>Responses</td><td class="num">{{DASH_TOTAL}}</td><td class="num ok">{{N_REAL}}</td></tr>
+    <tr><td>Highly recommend</td><td class="num">{{DASH_HR}}</td><td class="num ok">{{HR}}</td></tr>
+    <tr><td>Maybe</td><td class="num">{{DASH_MAYBE}}</td><td class="num ok">{{MAYBE}}</td></tr>
+    <tr><td>Want to join the WhatsApp community</td><td class="num">0</td><td class="num ok">{{WA}}</td></tr>
+  </table>
+</div>
+
+<section>
+  <span class="eyebrow">The four questions</span>
+  <h2>IFM Flagship, 31 mummies</h2>
+  <p class="lede">Each answer was read and tagged by theme. One answer can hit more than one theme, so counts do not add to 31.</p>
+
+  <div class="qhead"><span class="num">Q1</span><h3>What was your biggest learning?</h3></div>
+  <div class="q">
+    <div>
+      <div class="chart-title">Themes · mentions</div><div class="bars" id="c-q1"></div><p class="hint">Click a bar to read every comment behind it.</p>
+      <p class="insight">The course is being bought for <b>confidence</b>, not for a specific instrument. That is the headline for every landing page and proposal. The named aha moments are compounding and SWP.</p>
+    </div>
+    <div class="quotes">
+      <blockquote>"After having worked 20 years with a bank, and truly never having understood what most departments did, this course has been able to change all of that."<cite>Shahin Dastur, May B1</cite></blockquote>
+      <blockquote>"I no longer fear or feel that all the terms and investment products are overwhelming to understand."<cite>Shruti Sahil Doshi, April B3</cite></blockquote>
+      <blockquote>"I came in not knowing anything about investing and it seemed so daunting but SWP was a big aha moment."<cite>Nidhi Mundhra, September B1</cite></blockquote>
+      <blockquote>"Money and gold at home in the safe is not working for us, but diminishing in value."<cite>Priya Khatau, August B1</cite></blockquote>
+    </div>
+  </div>
+
+  <div class="qhead"><span class="num">Q2</span><h3>Would you recommend the course?</h3></div>
+  <div class="q">
+    <div>
+      <div class="chart-title">Answers · people</div><div class="bars" id="c-q2"></div><p class="hint">Click a bar to read every comment behind it.</p>
+      <p class="insight">97% at the top box is a great number to quote and a useless one to learn from. Everyone who fills in a form after a course they liked ticks the top option. <b>Switch to a 0 to 10 scale</b> (NPS) and the spread between a 7 and a 10 starts telling you which batch or which session is slipping.</p>
+    </div>
+    <div class="quotes">
+      <blockquote>"Hiral was very patient, she answered all the questions no matter how silly it was."<cite>Shruti Jatia, September B2</cite></blockquote>
+      <blockquote>"One of my best decisions in a super long time."<cite>Shahin Dastur, May B1</cite></blockquote>
+      <blockquote>"Fantastically designed and flawlessly delivered."<cite>Ridhi Varun Loyalka, September B2</cite></blockquote>
+    </div>
+  </div>
+
+  <div class="qhead"><span class="num">Q3</span><h3>What did you enjoy most?</h3></div>
+  <div class="q">
+    <div>
+      <div class="chart-title">Themes · mentions</div><div class="bars" id="c-q3"></div><p class="hint">Click a bar to read every comment behind it.</p>
+      <div class="chart-title" style="margin-top:22px">Games mentioned · by batch window</div><div class="bars" id="c-q3b"></div><p class="hint">Click a bar to read every comment behind it.</p>
+      <p class="insight">Three assets carry the course: the explanations, <b>the book</b>, and Hiral herself. The games barely existed in the April and May answers and are now the fourth most-loved thing. The book is mentioned by 12 people unprompted; two of them want a digital copy.</p>
+    </div>
+    <div class="quotes">
+      <blockquote>"I love how she talks like she is your friend. It feels more relatable and understandable when a peer talks to you about things."<cite>Nikita Zaveri, August B1</cite></blockquote>
+      <blockquote>"The book !!! It's so easy to understand. It's not too much, it's just enough."<cite>Bharati Sundesha, May B2</cite></blockquote>
+      <blockquote>"The interactive games to reinforce the concepts."<cite>Amrita Merchant, August B1</cite></blockquote>
+      <blockquote>"Meeting, discussing and sharing with other women was most enjoyable."<cite>Shruti Sahil Doshi, April B3</cite></blockquote>
+    </div>
+  </div>
+
+  <div class="qhead"><span class="num">Q4</span><h3>What should we add or improve?</h3></div>
+  <div class="q">
+    <div>
+      <div class="chart-title">Asks · mentions</div><div class="bars" id="c-q4"></div><p class="hint">Click a bar to read every comment behind it.</p>
+      <div class="chart-title" style="margin-top:22px">Future interest tick-boxes · people</div><div class="bars" id="c-q4b"></div><p class="hint">Click a bar to read every comment behind it.</p>
+      <p class="insight"><b>Nobody asked for the core course to change.</b> Every ask is for what comes after it. 20 of 31 want a specific topic and the two topics named by name are wills/trusts/tax and balance sheets. That is a second product with demand already on record.</p>
+    </div>
+    <div class="quotes">
+      <blockquote>"I would like follow up sessions on balance sheets, wills, trusts etc."<cite>Shahin Dastur, May B1</cite></blockquote>
+      <blockquote>"I would love it if we could do a one day class when the new budget comes up."<cite>Nikita Zaveri, August B1</cite></blockquote>
+      <blockquote>"Taking this knowledge to step 2. Actually investing."<cite>Shilpa Dalmia, May B1</cite></blockquote>
+      <blockquote>"I feel we might need 10 sessions. The pace was a bit fast to grasp in detail."<cite>Priya Khatau, August B1</cite></blockquote>
+      <blockquote>"Add an alumni group to share information and learning."<cite>Hetal Sheth, August B2</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Coverage</span>
+  <h2>Who has answered, by batch</h2>
+  <p class="lede">Responses against students enrolled, by cohort month. March and June never received the form. April is nearly silent because it went out after the batches ended. Both October batches are still running.</p>
+  <div class="legend"><span class="lb">Under 25% answered</span><span class="lw">25 to 50%</span><span class="lg">Over 50%</span></div>
+  <div class="batches" id="batches"></div>
+  <p class="chart-note">All 13 teen responses arrived in one two-minute window on 30 July: the form was filled in the room, on phones, before anyone left. That is why the teen rate is the best of the lot.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Teens</span>
+  <h2>IYA and IFT, 13 teenagers, 27 to 30 July</h2>
+  <p class="lede">A different form: a rating out of 5 and a games question instead of "would you recommend".</p>
+  <div class="q">
+    <div>
+      <div class="chart-title">Favourite game · mentions</div><div class="bars" id="c-tg"></div><p class="hint">Click a bar to read every comment behind it.</p>
+      <div class="chart-title" style="margin-top:22px">Would you attend again · people</div><div class="bars" id="c-ta"></div><p class="hint">Click a bar to read every comment behind it.</p>
+      <p class="insight">Ask a teenager what interested them most and <b>10 of 13 say stocks</b>. Not SIPs, not budgeting. 11 of 13 "loved" the games. Sell the teen courses on the stock game and Broke by Friday, because that is what they tell their friends about.</p>
+    </div>
+    <div class="quotes">
+      <blockquote>"Once we get money from our allowance or gifts, what do we do?"<cite>IFT student, 30 July (name left blank)</cite></blockquote>
+      <blockquote>"The games were really fun. Introducing more real life examples in the class would make things more relevant."<cite>Aeshna Shah, IYA B3</cite></blockquote>
+      <blockquote>"I found inflation really interesting so I would like to learn that more in detail."<cite>Saisha Dalmia, IFT B4</cite></blockquote>
+      <blockquote>"Understanding which stocks to invest in and when to buy or sell depending on world events."<cite>Ranveer Kothari, IFT B4</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">What to do with this</span>
+  <h2>Nine moves the data supports</h2>
+  <p class="lede">Ordered by how much the responses point at them. The first three are revenue; the rest are hygiene that makes the next report sharper.</p>
+  <div class="recs">
+    <div class="rec lead"><span class="tag">New product</span><h3>Launch "IFM Level 2": wills, trusts and tax, then balance sheets</h3><p class="ev"><b>Evidence:</b> 10 asked for depth, 5 named wills/trusts/tax, 5 named balance sheets, 19 ticked Guest Lecturer, 16 ticked Refresher. Nikita asked for a Budget-day class.</p><p class="do"><b>Do:</b> two half-day sessions, priced as add-ons, offered first to the 31 respondents by name. A guest CA covers tax; Hiral covers balance sheets using a company the class already knows. Run the Budget-day session on 1 February.</p></div>
+    <div class="rec lead"><span class="tag">Community</span><h3>Open the alumni WhatsApp group this week</h3><p class="ev"><b>Evidence:</b> 13 of the 14 people asked said "Yes, add me!". Hetal asked for it unprompted. The dashboard shows 0 because of the column shift.</p><p class="do"><b>Do:</b> one group for all batches, Hiral posts one news-led explainer a week (the reel topics already in the pipeline). It is also the channel that sells Level 2 and fills October B2's 5 empty seats by referral.</p></div>
+    <div class="rec lead"><span class="tag">Marketing</span><h3>Harvest 16 ready testimonials, then ask the other 15</h3><p class="ev"><b>Evidence:</b> every mummy asked up to May said "happy to be quoted". The question was dropped from the form in August, so nobody from Aug or Sep has been asked.</p><p class="do"><b>Do:</b> put the quotes on this page straight onto the website and proposals, credited by first name and batch. Send the 15 August and September respondents a one-line WhatsApp asking for consent. Put the question back on the form.</p></div>
+    <div class="rec"><span class="tag bad">Fix now · response rate</span><h3>Collect feedback in the room, on the last day</h3><p class="ev"><b>Evidence:</b> the teens hit 30% in two minutes with the form on their phones in class. Mummies, chased by WhatsApp afterwards, sit at 32% after six months, and April is at 4 of 15.</p><p class="do"><b>Do:</b> the last 10 minutes of session 8 is the form, QR on screen. Target 80%. Still chase April's 11 pending now while they remember the course.</p></div>
+    <div class="rec"><span class="tag warn">Measurement</span><h3>Replace "would you recommend" with a 0 to 10 score</h3><p class="ev"><b>Evidence:</b> 30 of 31 picked the top option. That cannot tell you which batch, which day or which topic landed worse.</p><p class="do"><b>Do:</b> NPS question plus one line: "which session was the hardest to follow?". Then batch-to-batch comparison becomes meaningful.</p></div>
+    <div class="rec"><span class="tag">Product</span><h3>Sell the book as its own thing, and make a digital edition</h3><p class="ev"><b>Evidence:</b> 12 people named the book unprompted as the best part. Urvi and Shruti SD asked for a digital version.</p><p class="do"><b>Do:</b> a PDF edition for alumni, and a paid standalone for people who will not do the course. It is the most-praised asset you have and it currently exists only as a classroom handout.</p></div>
+    <div class="rec"><span class="tag warn">Pace</span><h3>Offer an optional ninth session, not a slower course</h3><p class="ev"><b>Evidence:</b> 2 asked for more time (one said "we might need 10 sessions"), 1 asked for less detail on mutual funds, 7 said it was perfect. The pace is right for most.</p><p class="do"><b>Do:</b> keep 8 sessions. Add an optional "bring your statements" clinic after session 8 for those who want the hands-on step that Shilpa and Prachi asked for.</p></div>
+    <div class="rec"><span class="tag">Teens</span><h3>Lead teen marketing with the stock game and Broke by Friday</h3><p class="ev"><b>Evidence:</b> 10 of 13 teens said stocks interested them most; the two games take 11 of 13 favourite-game votes; 12 of 13 would come back.</p><p class="do"><b>Do:</b> the IYA and IFT flyers open with the game, not the syllabus. Answer the allowance question in the course: "you got ₹5,000 for Diwali, now what?"</p></div>
+    <div class="rec"><span class="tag">Parked idea</span><h3>A basic course for seniors</h3><p class="ev"><b>Evidence:</b> one ask (Ashima). Not a signal yet.</p><p class="do"><b>Do:</b> nothing now. Add a "who else in your family should do this?" question to the form and let the data decide.</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow" style="color:var(--bad)">Data hygiene · fix before the next report</span>
+  <h2>Six fixes before the next report</h2>
+  <ol class="fixes">
+    <li><b>Realign the Feedback sheet.</b> From August the answers are one column left of their headers. Insert the missing column in the sheet or map the new layout in the dashboard. Until then every KPI on the Feedback tab is wrong.</li>
+    <li><b>Delete the four test rows:</b> Rupali ("Test"), Test User, Test Feedback, Deploy Test. Two use asba@moogaworld.com. The "Clean Test Entries" button does not catch them.</li>
+    <li><b>Two emails have typos</b> and will never match a student: prerna@jatia.con and zahaansiddiqui@gmail.com@.</li>
+    <li><b>One IFT response has name "." and email w@gmail.com.</b> It holds the best teen question of the lot and cannot be attributed.</li>
+    <li><b>Three teen responses match no batch</b> (Aashay, devarjun, the "." entry). Their registration emails differ from the ones they typed.</li>
+    <li><b>Use one form for all programmes</b> or at least the same four questions. Right now the mummies and teens cannot be compared on anything except free text.</li>
+  </ol>
+</section>
+
+<section>
+  <span class="eyebrow">Every response</span>
+  <h2>All {{N_REAL}}, word for word</h2>
+  <div class="controls">
+    <button type="button" data-f="all" aria-pressed="true" id="f-all">All {{N_REAL}}</button>
+    <button type="button" data-f="IFM" aria-pressed="false" id="f-ifm">IFM {{N_IFM}}</button>
+    <button type="button" data-f="IYA" aria-pressed="false" id="f-iya">IYA {{N_IYA}}</button>
+    <button type="button" data-f="IFT" aria-pressed="false" id="f-ift">IFT {{N_IFT}}</button>
+    <input type="search" id="search" placeholder="Search names, batches or answers" aria-label="Search responses">
+    <span class="count" id="count"></span>
+  </div>
+  <div class="tablewrap">
+    <table class="resp">
+      <thead><tr><th>Who</th><th>Q1 Biggest learning</th><th>Q2 Recommend</th><th>Q3 Enjoyed most</th><th>Q4 Add or improve</th><th>Future</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+</section>
+
+<footer>Theme counts are a human reading of free text, so treat them as ±1. Enrolment numbers per batch come from the dashboard's Overview. Emails are omitted from this page on purpose; they are in the CSV on the Desktop.</footer>
+</div>
+
+<script>
+const DATA = __DATA__;
+const COVERAGE = __COVERAGE__;
+(function(){
+  const host=document.getElementById('batches');
+  COVERAGE.forEach(c=>{
+    const pct=c.e?Math.round(c.n/c.e*100):0, st=pct<25?'bad':pct<50?'warn':'';
+    const row=document.createElement('div'); row.className='bar'+(st?' '+st:'');
+    row.innerHTML='<span class="lab">'+c.label+'</span><div class="track"><div class="fill" style="width:'+pct+'%"></div></div><span class="val">'+c.n+' / '+c.e+' &middot; '+pct+'%'+(st==='bad'?'<span class="chip bad">low</span>':'')+'</span>';
+    host.appendChild(row);
+  });
+})();
+const THEMES = __THEMES__;
+const PROG = {q1:'IFM',q2:'IFM',q3:'IFM',q3b:'IFM',q4:'IFM',q4b:'IFM',tg:'TEEN',ta:'TEEN'};
+function escT(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function pick(key, field, sel){
+  const pool = DATA.filter(r=>PROG[key]==='IFM'?r.programme==='IFM':r.programme!=='IFM');
+  if(Array.isArray(sel)) return sel.map(n=>pool.find(r=>r.name===n)).filter(Boolean);
+  if(sel[0]==='=') return pool.filter(r=>r[field]===sel.slice(1));
+  if(sel[0]==='~') return pool.filter(r=>(r[field]||'').includes(sel.slice(1)));
+  return [];
+}
+Object.keys(THEMES).forEach(key=>{
+  const host=document.getElementById('c-'+key); if(!host) return;
+  const items=THEMES[key].map(([label,field,sel,st])=>({label,field,st:st||'',people:pick(key,field,sel)}));
+  const max=Math.max(1,...items.map(i=>i.people.length));
+  items.forEach((it,idx)=>{
+    const n=it.people.length;
+    const b=document.createElement('button'); b.type='button'; b.className='bar'+(it.st&&n?' '+it.st:(n===0?' dim':'')); b.setAttribute('aria-expanded','false'); b.id='bar-'+key+'-'+idx;
+    b.innerHTML='<span class="lab">'+escT(it.label)+'</span><div class="track"><div class="fill" style="width:'+Math.round(n/max*100)+'%"></div></div><span class="val">'+n+'</span>';
+    const p=document.createElement('div'); p.className='panel'+(n?'':' empty'); p.hidden=true;
+    p.innerHTML = n ? (it.label===(it.people[0]||{})[it.field] ? '<p>'+it.people.map(r=>escT(r.name==='.'?'Name left blank':r.name)+' <span style="display:inline">('+escT(r.batch)+')</span>').join(', ')+'</p>' : it.people.map(r=>'<p>'+escT(r[it.field]||'(blank)')+'<span>'+escT(r.name==='.'?'Name left blank':r.name)+' &middot; '+escT(r.batch)+'</span></p>').join('')) : '<p>No one gave this answer.</p>';
+    b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')==='true'; b.setAttribute('aria-expanded',String(!open)); p.hidden=open;});
+    host.appendChild(b); host.appendChild(p);
+  });
+});
+
+(function(){
+  const tbody=document.getElementById('rows'), count=document.getElementById('count'), search=document.getElementById('search');
+  const btns=[...document.querySelectorAll('.controls button')];
+  let filter='all';
+  function esc(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+  function render(){
+    const q=search.value.trim().toLowerCase();
+    const rows=DATA.filter(r=>(filter==='all'||r.programme===filter)&&(!q||Object.values(r).join(' ').toLowerCase().includes(q)));
+    tbody.innerHTML=rows.map(r=>'<tr'+(r.shifted?' class="shift"':'')+'><td class="who"><span class="pill">'+esc(r.programme)+'</span> '+esc(r.name)+'<small>'+esc(r.batch)+'</small></td><td>'+esc(r.q1_learning)+'</td><td class="rec">'+esc(r.q2_recommend)+'</td><td>'+esc(r.q3_enjoyed)+'</td><td>'+esc(r.q4_improve)+'</td><td>'+esc(r.future)+(r.wa?'<br><small>WhatsApp: '+esc(r.wa)+'</small>':'')+(r.testimonial?'<br><small>Quote: yes</small>':'')+'</td></tr>').join('');
+    count.textContent=rows.length+' shown';
+  }
+  btns.forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.f;btns.forEach(x=>x.setAttribute('aria-pressed',x===b));render();}));
+  search.addEventListener('input',render);
+  render();
+})();
+</script>
