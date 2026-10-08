@@ -40,6 +40,7 @@ OUT  = os.path.join(HERE, 'v1-catalogue.js')
 # would ever search for as content, and forcing them into a Type or Format would distort
 # the taxonomy. This is an internal flag, never a filter in the UI.
 EXCLUDE = {'IFM-312', 'IFM-313', 'IFM-314',   # logo lockup / round mark / animated logo
+           'IFM-632',                         # Aakara colour-palette swatch image (8 Oct 2026)
            'IFM-038', 'IFM-039'}              # Crorepati Lane, KBC — playable web games
 
 TYPE_MAP = {

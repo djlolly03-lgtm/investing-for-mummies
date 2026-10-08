@@ -14065,7 +14065,7 @@ window.IFM_V1 =
 "date": "2026-06-04",
 "thumb": "../thumbs/IFM-359.jpg",
 "video": "",
-"drive": "https://drive.google.com/file/d/1IBTsvlvZbnesjDOYt12pczVMzN9A8b61/view",
+"drive": "https://drive.google.com/file/d/1FgWlN8LJvFV5oR8ExZb1ZC7-6_uMUpmF/view",
 "description": "End-of-session group photo: nine women posed in two rows — five standing, four kneeling — in front of the BALSABHA roll-up banner ('Where Values Take Root & Young Hearts Blossom'), all smiling at the camera in the hotel conference room.",
 "session": "BALSABHA women’s workshop — 4 Jun 2026",
 "slide_text": "",
@@ -26350,5 +26350,684 @@ window.IFM_V1 =
 "source": "Aakara",
 "search_terms": "candid warm natural unposed relaxed friendly celebration october gandhi jayanti let rethink what enough really means reel cover two artboards hiral smiling holds currency note beside sketch under line versions differ only background beige blue grid artwork video file folder yet contentment money mindset aakara topical",
 "phash": "33ccd031e4e90923"
+},
+{
+"id": "IFM-605",
+"title": "Corporate workshop — two participants in conversation at the table (long clip)",
+"date": "2026-10-01",
+"thumb": "../thumbs/IFM-605.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/11shGLTo-Qx_Q4WBBxEgvp8Bov6Z1XbA8/view",
+"description": "Two participants seated at the boardroom table: one in a sage-green top with her hands clasped, the other in a white blouse with blue floral embroidery mid-sentence, gesturing and laughing. 325 MB, so several minutes long.",
+"session": "Corporate women’s workshop — 1 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "funny fun laughing humour lively corporate workshop two participants conversation table long clip seated boardroom one sage green top her hands clasped other white blouse blue floral embroidery mid sentence gesturing laughing 325 several minutes sharing feedback women october 2026",
+"phash": "79e9eecec3cf1e3c"
+},
+{
+"id": "IFM-606",
+"title": "Corporate workshop — participant in the embroidered blouse speaking, seen past the group",
+"date": "2026-10-01",
+"thumb": "../thumbs/IFM-606.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1dTnis3RvAROW8HhgsJS0zg1MvGpi_y5S/view",
+"description": "Side view of the participant in the white blouse with blue floral embroidery as she speaks, the backs of two other participants’ heads in the foreground, a coffee machine and neon cactus sign on the sideboard behind her. 322 MB, so a long take.",
+"session": "Corporate women’s workshop — 1 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "corporate workshop participant embroidered blouse speaking seen past group side view white blue floral embroidery she speaks backs two other participants heads foreground coffee machine neon cactus sign sideboard behind her 322 long take sharing feedback profile women boardroom october",
+"phash": "42024666387626e3"
+},
+{
+"id": "IFM-607",
+"title": "Corporate workshop (day 2) — Hiral opening with the “Introduction” slide",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-607.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1WAGynTPhYzsso2ckLzR24TMyLlqXirPi/view",
+"description": "Hiral, in a yellow ruffle-shoulder top and black skirt, stands beside the screen showing her “Introduction” slide (handbook author, Bachelor’s in Communication Studies from the University of Michigan, ten years as a writer, mother of two) and speaks to the table; a participant’s back is in the foreground.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "Introduction",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "corporate workshop day hiral opening introduction slide yellow ruffle shoulder top black skirt stands beside screen showing her handbook author bachelor communication studies from university michigan ten years writer mother two speaks table participant back foreground about bio october 2026",
+"phash": "cbd56733332e277b",
+"kit": "teaching",
+"kit_rank": 3
+},
+{
+"id": "IFM-608",
+"title": "Corporate workshop (day 2) — Hiral teaching “Power of Compounding”",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-608.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1pY3UA8F_eGUqx_wy3ZhFGZrplKoVgV30/view",
+"description": "Hiral at the screen titled “Power of Compounding”, mid-explanation with a hand raised, participants with workbooks and coffee cups at the table in front of her. The fullest take of this segment at 253 MB.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "Power of Compounding",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Compounding"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "corporate workshop day hiral teaching power compounding screen titled mid explanation hand raised participants workbooks coffee cups table front her fullest take segment 253 presenting yellow top october 2026",
+"phash": "30bb3371617978fb"
+},
+{
+"id": "IFM-609",
+"title": "Corporate workshop (day 2) — room wide, Hiral at the compounding slide",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-609.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1ztS1m1gUkepTxSSarjtxzTQM1LX_Gogh/view",
+"description": "Wide view of the boardroom from the back: Hiral in yellow at the “Power of Compounding” screen, six participants around the long table with IFM workbooks, water bottles and a laptop, the whiteboard mind-map on the right wall.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "Power of Compounding",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Compounding"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "b-roll cutaway establishing supporting footage context corporate workshop day room wide hiral compounding slide view boardroom from back yellow power screen six participants around long table ifm workbooks water bottles laptop whiteboard mind map right wall venue october 2026",
+"phash": "396929a6a3c3d3f9"
+},
+{
+"id": "IFM-610",
+"title": "Corporate workshop (day 2) — two participants at the table before the session, whiteboard behind",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-610.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1exylV5Vls4MlnQoC7gz5N_xdr1z7MSG3/view",
+"description": "Two participants, one in an orange kurta and one in beige, seated at the boardroom table with workbooks, water bottles and glasses in front of them and the whiteboard mind-map behind.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "corporate workshop day two participants table before session whiteboard behind one orange kurta beige seated boardroom workbooks water bottles glasses front them mind map waiting women october 2026",
+"phash": "18496edf39710bcd"
+},
+{
+"id": "IFM-611",
+"title": "Corporate workshop (day 2) — participants listening at the table",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-611.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1qw7_Pl8f0DCdINMUzooi4kRvACl_DDi1/view",
+"description": "Three participants — beige kurta, black top, white shirt — listen from the table with workbooks and newspapers open in front of them, the whiteboard behind.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "corporate workshop day participants listening table three beige kurta black top white shirt listen from workbooks newspapers open front them whiteboard behind attentive audience women october 2026",
+"phash": "0c059899391c7e0e"
+},
+{
+"id": "IFM-612",
+"title": "Corporate workshop (day 2) — Hiral at the laptop with the Hidden Fortunes game on screen",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-612.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1WkY_aznnUxJxrrGcBey17n7sU_nsIYUB/view",
+"description": "Hiral, seated at the laptop with her back to the camera, runs the IFM “Hidden Fortunes” game on the wall screen — the board of lifestyle cards is visible — while participants watch from the table.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "Hidden Fortunes",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Wealth"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "corporate workshop day hiral laptop hidden fortunes game screen seated her back camera runs ifm wall board lifestyle cards visible while participants watch from table gamified playing october 2026",
+"phash": "c3e6ce66e2f3637c"
+},
+{
+"id": "IFM-613",
+"title": "Corporate workshop (day 2) — two participants writing in their workbooks and laughing",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-613.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1mRCFA5hzDiuf9y0_J4e1V5zYwjf4DaVG/view",
+"description": "Close on two participants at the table: the one in beige smiles with arms folded while the one in black writes in her workbook; glasses, water and the “Investing for Mummies” workbook on the table, the whiteboard mind-map behind.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "Investing for Mummies",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Investing"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration corporate workshop day two participants writing their workbooks laughing close table one beige smiles arms folded while black writes her workbook glasses water investing mummies whiteboard mind map behind candid activity women october 2026",
+"phash": "010748fce74f610d"
+},
+{
+"id": "IFM-614",
+"title": "Corporate workshop (day 2) — participants laughing across the table, workbooks open",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-614.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1hne_9NJB3R_o-KCFqLUBryOHWi7G_x2T/view",
+"description": "Three participants laugh together across the boardroom table — beige kurta in the centre, black top at right, orange kurta at left — with the “Investing for Mummies” workbook cover in the foreground.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "Investing for Mummies",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Investing"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration corporate workshop day participants laughing across table workbooks open three laugh together boardroom beige kurta centre black top right orange left investing mummies workbook cover foreground candid fun women october 2026",
+"phash": "80e7b99bd361f068"
+},
+{
+"id": "IFM-615",
+"title": "Corporate workshop (day 2) — participant in white laughing, turned to the speaker",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-615.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1BD6jUzkYMLz6aHIbrXaAwvetgXELqezb/view",
+"description": "Close side-profile of a participant in a white shirt laughing as she turns toward the speaker, another participant’s hair in the foreground.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration corporate workshop day participant white laughing turned speaker close side profile shirt she turns toward another hair foreground candid reaction women october 2026",
+"phash": "983471f1f45cfefc"
+},
+{
+"id": "IFM-616",
+"title": "Corporate workshop (day 2) — participants with the IFM workbook, one checking her phone",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-616.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1C6sOUioMquCo8AxvGSQq33gEP-4m3lyO/view",
+"description": "Two participants at the table: the one in black points at her phone while the one in white holds the “Investing for Mummies” workbook open, its illustrated cover facing the camera.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "Investing for Mummies",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Investing"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "corporate workshop day participants ifm workbook one checking her phone two table black points while white holds investing mummies open illustrated cover facing camera detail october 2026",
+"phash": "13336164c70f7871"
+},
+{
+"id": "IFM-617",
+"title": "Corporate workshop (day 2) — two participants talking across the table",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-617.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1FPfAZ8DQjFFY8zjCqyn7-E77Irlaj8gO/view",
+"description": "The participant in beige and the one in black talk to each other across the table, a workbook and water glass between them, whiteboard behind.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "corporate workshop day two participants talking across table participant beige one black talk each other workbook water glass between them whiteboard behind discussion pair women october 2026",
+"phash": "0f0cdcccdb55c388"
+},
+{
+"id": "IFM-618",
+"title": "Corporate workshop (day 2) — Hiral at the laptop with an investment calculator on screen",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-618.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1CZjuR8KgX-dj9FFjWjD0wiJIO0b2i8wX/view",
+"description": "Hiral, seated at the laptop in profile, drives an investment calculator on the wall screen — ₹1,35,000 at the top, three coloured value buttons and a growth curve — with a participant beside her.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Investing"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "sip systematic investment plan monthly investing corporate workshop day hiral laptop investment calculator screen seated profile drives wall 000 top three coloured value buttons growth curve participant beside her sip chart october 2026",
+"phash": "391938e266b63cbe"
+},
+{
+"id": "IFM-619",
+"title": "Corporate workshop (day 2) — Hiral on the “which expenses quietly eat the most money” slide",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-619.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1PyDi6FD2ft85V8HxxWiXLiazVIfO8aT9/view",
+"description": "Hiral at the laptop, in profile, with the screen asking “Which of these expenses do you think quietly eats the most money today?” — weekly coffee, OTT subscriptions, salon, impulse shopping, food delivery — and “What if a small portion of that became an investment instead?”",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "Which of these expenses do you think quietly eats the most money today? What if a small portion of that became an investment instead?",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Managing Money",
+"Investing"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "corporate workshop day hiral which expenses quietly eat most money slide laptop profile screen asking these you think eats today weekly coffee ott subscriptions salon impulse shopping food delivery what small portion became investment instead spending starbucks invest october 2026",
+"phash": "39f8e1630e8c229f"
+},
+{
+"id": "IFM-620",
+"title": "Corporate workshop (day 2) — participant in the red print dress speaking to the group",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-620.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1cONULluZhsGCQsgp_QA9XKQs5Jw3pXTP/view",
+"description": "A participant in a red-and-white print dress speaks across the table to the participant in beige, hands open mid-sentence; the whiteboard mind-map of asset classes behind them. 129 MB.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "Sakshi",
+"search_terms": "corporate workshop day participant red print dress speaking group white speaks across table beige hands open mid sentence whiteboard mind map asset classes behind them 129 sharing feedback women october 2026",
+"phash": "1e093333731d1cd1"
+},
+{
+"id": "IFM-621",
+"title": "Corporate workshop (day 2) — participant in grey speaking at the table, whiteboard behind",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-621.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1g-mJ29Mh876inL3VDBazpnyT8j-Qe27V/view",
+"description": "A participant in a grey T-shirt smiles as she speaks from the table, water glasses in front of her, the whiteboard behind covered in the session’s hand-drawn mind-map (“BORROWER” circled, banks, companies, government). 111 MB.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "candid warm natural unposed relaxed friendly celebration corporate workshop day participant grey speaking table whiteboard behind shirt smiles she speaks from water glasses front her covered session hand drawn mind map borrower circled banks companies government 111 sharing feedback women october 2026",
+"phash": "e060a4b9d15c1888"
+},
+{
+"id": "IFM-622",
+"title": "Corporate workshop (day 2) — participant in black speaking, Hiral listening behind",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-622.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1ahS5U3bIl4rx4aMBxSmlXt96F_snPpJc/view",
+"description": "A participant in a black top and glasses speaks from the near end of the table while Hiral, in yellow, listens and smiles from the far end. 167 MB, the longest of the sharing clips.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "candid warm natural unposed relaxed friendly celebration corporate workshop day participant black speaking hiral listening behind top glasses speaks from near end table while yellow listens smiles far 167 longest sharing clips feedback women october 2026",
+"phash": "2b87870606e6e4e0"
+},
+{
+"id": "IFM-623",
+"title": "Corporate workshop (day 2) — participant in white speaking, her neighbour taking notes",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-623.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1KAPU2mHkB98xq2fbGJTCVs9aMDPxK-de/view",
+"description": "A participant in a white shirt speaks from across the table while the participant in grey beside her writes; tissue boxes and water glasses in front. A short 7 MB clip.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "corporate workshop day participant white speaking her neighbour taking notes shirt speaks from across table while grey beside writes tissue boxes water glasses front short clip women october 2026",
+"phash": "561663abcbd91919"
+},
+{
+"id": "IFM-624",
+"title": "Corporate workshop (day 2) — Hiral presenting “Types of Insurance”, room wide",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-624.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1vw3CGCxWAvRx9R07y-ltoaa2qXnG_ADp/view",
+"description": "Wide shot of the full room: Hiral in yellow gestures at the “Types of Insurance” slide (pink header, red-and-blue arrows) while seven participants at the long table follow with newspapers and workbooks; the whiteboard mind-map fills the right wall.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "Types of Insurance",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Insurance"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "b-roll cutaway establishing supporting footage context corporate workshop day hiral presenting types insurance room wide shot full yellow gestures slide pink header red blue arrows while seven participants long table follow newspapers workbooks whiteboard mind map fills right wall venue october 2026",
+"phash": "080c22088c6667d3"
+},
+{
+"id": "IFM-625",
+"title": "Corporate workshop (day 2) — Hiral on the “Insurance” slide, participants in the foreground",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-625.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1dtR0T_8MRcPmjQygoBTKpiLm_hrSRyjK/view",
+"description": "Hiral at the screen showing an “Insurance” slide with a pink-and-blue illustration, the participant in the red print dress and the one in black in the foreground, newspapers on the table.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Image",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Insurance"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "corporate workshop day hiral insurance slide participants foreground screen showing pink blue illustration participant red print dress one black newspapers table presenting room wide october 2026",
+"phash": "0e2e2a0cce4a0f16"
+},
+{
+"id": "IFM-626",
+"title": "Corporate workshop (day 2) — Hiral teaching “Types of Insurance” (video)",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-626.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1kVq193KZwpffIzZEtx1dWaCVXwTijrko/view",
+"description": "Hiral, in yellow, points to the “Types of Insurance” slide with its red-and-blue arrows while the participants at the table follow along with newspapers and workbooks.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "Types of Insurance",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Insurance"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "corporate workshop day hiral teaching types insurance video yellow points slide red blue arrows while participants table follow along newspapers workbooks presenting top october 2026",
+"phash": "2d92981e3703e121"
+},
+{
+"id": "IFM-627",
+"title": "Corporate workshop (day 2) — rest of the shoot (folder)",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-627.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1TYulg-Wlp-48FF1p9ueLg_yzPMTgNBZY",
+"description": "Catch-all for the 6 Oct session frames that are not a moment of their own: a blank-screen pause, two from-behind clips and a one-second fragment. Opens the shared IFM Oct 2026 folder, which also holds the 1 Oct session.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [],
+"person": [],
+"source": "Sakshi",
+"search_terms": "corporate workshop day rest shoot folder catch all oct session frames not moment their own blank screen pause two from behind clips one second fragment opens shared ifm 2026 which also holds backups october",
+"phash": "148901282ad03878"
+},
+{
+"id": "IFM-628",
+"title": "IPO vs stocks reel — 16 piece-to-camera takes by Hiral (folder)",
+"date": "2026-10-05",
+"thumb": "../thumbs/IFM-628.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1s42C9DDDi-r5c4p5mDtsv8FT288hMChZ",
+"description": "Catch-all for the takes Hiral recorded for the “struggling stock market vs booming IPOs” reel: seated in the wood-panelled boardroom in a yellow ruffle-shoulder top and black skirt, speaking to camera. 16 clips from 21 MB to 567 MB, 2.8 GB in all. Opens the folder.",
+"session": "IPO vs stocks reel takes — 5 Oct 2026",
+"slide_text": "struggling stock market vs booming IPOs",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "ipo stocks reel piece camera takes hiral folder catch all recorded struggling stock market booming ipos seated wood panelled boardroom yellow ruffle shoulder top black skirt speaking clips from 567 opens talking head raw october 2026",
+"phash": "c8cd6b2307359c38"
+},
+{
+"id": "IFM-629",
+"title": "October: Navratri — reel takes (15 raw clips, finished reel not yet delivered)",
+"date": "2026-10-05",
+"thumb": "../thumbs/IFM-629.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1fbaKCxWfNGEqO2PYg1dqJKQvYnHfefTk",
+"description": "Fifteen takes of Hiral for a Navratri reel: seated on a beige sofa at a wooden table in a green printed kurta, a brass diya lamp and bowl beside her, speaking to camera. Clips from 12 MB to 200 MB, 838 MB in all. No finished reel or cover in the folder yet. Opens the folder.",
+"session": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "october navratri reel takes raw clips finished not yet delivered fifteen hiral seated beige sofa wooden table green printed kurta brass diya lamp bowl beside her speaking camera from 200 838 all cover folder opens festival home aakara topical",
+"phash": "081230ed69488e68"
+},
+{
+"id": "IFM-630",
+"title": "October: Understanding the 5 types of risk — one-minute reel, part 2",
+"date": "2026-10-07",
+"thumb": "../thumbs/IFM-630.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1lQLjpW89owr6swiW2Ity8JX-KPpsSUf0",
+"description": "Finished one-minute reel (43 MB MP4, 6 Oct) plus its cover — Hiral in an orange-red tee under the headline “Understanding the 5 types of RISK” — and ten raw takes of her on a cream sofa in a red T-shirt and white trousers, grey curtains and a plant behind. Opens the folder.",
+"session": "",
+"slide_text": "Understanding the 5 types of RISK",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Risk & Returns",
+"Investing"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "october understanding types risk one minute reel part finished mp4 oct plus cover hiral orange red tee under headline ten raw takes her cream sofa shirt white trousers grey curtains plant behind opens folder min investing aakara",
+"phash": "1de0f47269e99147"
+},
+{
+"id": "IFM-631",
+"title": "October: Struggling stock market vs booming IPOs — reel cover (reel not yet delivered)",
+"date": "2026-10-07",
+"thumb": "../thumbs/IFM-631.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1hQDQnXqE3nye9PSCKdXbvXJK0p9enbJD",
+"description": "The cover artboard for the IPO-vs-stocks reel: Hiral in the yellow ruffle-shoulder top between the labels “Struggling Stock Market” and “Booming IPOs”, a red arrow down to a building and a green arrow up to a bell. Artwork only — no video file in the folder yet.",
+"session": "",
+"slide_text": "Struggling Stock Market Booming IPOs",
+"silent": false,
+"type": "Carousel",
+"status": "Raw",
+"format": "Portrait",
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "october struggling stock market booming ipos reel cover not yet delivered artboard ipo stocks hiral yellow ruffle shoulder top between labels red arrow down building green bell artwork only video file folder aakara topical",
+"phash": "4db2d4f2e8e20636"
+},
+{
+"id": "IFM-632",
+"title": "Aakara brand colour palette — primary, secondary and accent swatches",
+"date": "2026-10-05",
+"thumb": "../thumbs/IFM-632.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1-5KEPRhW1MCjiQQWMX_RzyOT4RYY5vjs/view",
+"description": "A small reference image of the IFM colour system as Aakara uses it: cream base, primary teal, navy and mustard, three rows of secondary tints, and coral and dark-green accents, each row labelled.",
+"session": "",
+"slide_text": "",
+"silent": false,
+"library": false,
+"type": "",
+"format": "",
+"topic": [],
+"person": [],
+"source": "Aakara",
+"status": "Ready",
+"search_terms": ""
 }
 ];

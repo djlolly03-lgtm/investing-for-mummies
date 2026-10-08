@@ -896,5 +896,16 @@
  "IFM-526": {
   "format": "B-roll",
   "_why": "Reported from the Library on 5 Oct 2026 as an irrelevant hit for the query `certificate` — the frame is a woman at a laptop by a window, with no certificate in it. The cause was NOT this row alone: 26 rows catalogued in one run on 20 Sep shared the identical keyword string \"certificate graduation teens feedback workshop\", batch boilerplate that had nothing to do with 18 of the pictures. backfill expands those words into search_terms, so all 18 competed for every certificate and graduation query. Fixed at source in data.js by rebuilding each row's keywords from its own title, description and session; this entry pins the format, which the boilerplate had also driven to Certificate."
+ },
+ "IFM-607": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "8 Oct 2026, daily-content-processor. Video frame, not a still: Hiral large in frame beside her own Introduction slide, face clear, mid-word. Rank 3 because it is a video frame and she is speaking; a human may promote it or pull a still. Identity checked by eye against IFM-576 (same room, 1 Oct) and the IPO reel takes (IFM-628), not from the description."
+ },
+ "IFM-629": {
+  "person": [
+   "Hiral"
+  ],
+  "_why": "8 Oct 2026: backfill inferred Student for a folder of Hiral piece-to-camera takes shot at home; nobody else is in frame."
  }
 }
