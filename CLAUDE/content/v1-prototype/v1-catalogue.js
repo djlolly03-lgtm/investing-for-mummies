@@ -25632,7 +25632,7 @@ window.IFM_V1 =
 "Hiral"
 ],
 "hiral_named": true,
-"source": "Unknown",
+"source": "Sakshi",
 "search_terms": "candid warm natural unposed relaxed friendly celebration corporate workshop hiral teaching smart goals time bound slide red top smiles mid explanation beside screen reading turn your dreams into plans use framework when will need money boardroom table laptop ifm workbooks water bottles front goal setting women october",
 "phash": "79d25a68e5e1a1e1",
 "kit": "teaching",
@@ -25660,7 +25660,7 @@ window.IFM_V1 =
 "Student"
 ],
 "hiral_named": true,
-"source": "Unknown",
+"source": "Sakshi",
 "search_terms": "corporate workshop participant raises her hand during smart goals slide foreground while hiral standing turn your dreams into plans framework explains laptop workbooks table question raised engagement women october 2026",
 "phash": "b9795b494f656061"
 },
@@ -25684,7 +25684,7 @@ window.IFM_V1 =
 "Student"
 ],
 "hiral_named": true,
-"source": "Unknown",
+"source": "Sakshi",
 "search_terms": "b-roll cutaway establishing supporting footage context corporate workshop room wide hiral presenting boardroom table shot down about six women seated workbooks standing far end screen speakers whiteboard walls october 2026 venue",
 "phash": "2d21270f454949cc"
 },
@@ -25709,7 +25709,7 @@ window.IFM_V1 =
 "Hiral"
 ],
 "hiral_named": true,
-"source": "Unknown",
+"source": "Sakshi",
 "search_terms": "corporate workshop hiral opening beside investing mummies title screen stands head room red top hands together next showing slide laptop side table introduction october 2026",
 "phash": "3c4ecee02741e0f1"
 },
@@ -25731,7 +25731,7 @@ window.IFM_V1 =
 "person": [
 "Student"
 ],
-"source": "Unknown",
+"source": "Sakshi",
 "search_terms": "candid warm natural unposed relaxed friendly celebration corporate workshop participant smiling table whiteboard behind long clip white shirt sits boardroom toward camera glasses water workbooks front diagrams 302 women october 2026",
 "phash": "fe8f3330ac3b59fc"
 },
@@ -25753,7 +25753,7 @@ window.IFM_V1 =
 "person": [
 "Student"
 ],
-"source": "Unknown",
+"source": "Sakshi",
 "search_terms": "corporate workshop participant listening intently close profile side sage green kurta towards front room women october 2026",
 "phash": "5723f1e4a4f0e747"
 },
@@ -25775,7 +25775,7 @@ window.IFM_V1 =
 "person": [
 "Student"
 ],
-"source": "Unknown",
+"source": "Sakshi",
 "search_terms": "funny fun laughing humour lively candid warm natural unposed relaxed friendly celebration corporate workshop participant laughing table light blue shirt laughs hand her face boardroom water glasses workbook front candid women october 2026",
 "phash": "863e47c949637139"
 },
@@ -25799,7 +25799,7 @@ window.IFM_V1 =
 "Student"
 ],
 "hiral_named": true,
-"source": "Unknown",
+"source": "Sakshi",
 "search_terms": "corporate workshop participant reading workbook while hiral presents over shoulder shot ifm table red screen background october 2026",
 "phash": "969adba5c3cbe6e4"
 },
@@ -25821,7 +25821,7 @@ window.IFM_V1 =
 "person": [
 "Student"
 ],
-"source": "Unknown",
+"source": "Sakshi",
 "search_terms": "corporate workshop room from behind participants shot back corner boardroom past two seated towards wood panelled wall side table october 2026",
 "phash": "850011656c65f47e"
 },

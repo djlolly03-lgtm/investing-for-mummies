@@ -1,23 +1,71 @@
 {
- "generated_by": "daily-content-processor 2026-09-21",
- "note": "Coverage method changed this run, and it matters. A recursive rclone walk of the Aakara root returned 762 files today but 346 yesterday, with each listing containing files the other lacked -- including finished reel masters that a naive diff read as DELETED. They were not deleted: listing September/Reels and August/reels directly returned every one of them. A top-down -R walk under-reports non-deterministically even within a single root, so coverage is now established by an explicit breadth-first walk that lists every folder by its own id with retries (125 folders, 1,198 distinct files, 0 listing failures). That BFS was a strict superset of all five -R walks combined. Genuinely uncatalogued after this run: 18 files in the Aakara 'Hiral Goel' folder, now staged as IFM-540..547. CORRECTION to the 20 Sep entry: the 17 IMG_42xx/84xx files in Sakshi uploads and Certificates are NOT uncatalogued. That claim came from matching Drive ids, which misses copies. Matching by filename shows every one of them is already named in an existing row (IFM-484..500, 514, 527..532) as the backup frame of a moment whose lead frame is a neighbouring file in the same folder. No rows are owed for them, and the 'ignore IMG_42xx/IMG_84xx' filter in the task file is harmless after all -- it should still be deleted, but as tidying, not as a fix.",
- "count": 3,
+ "generated_by": "daily-content-processor 2026-10-02 (finished 2026-10-08)",
+ "note": "Staged IFM-573..604 (32 rows) from the 2 Oct scan. A separate session's 5 Oct commit 4aa17cd swept those staged rows into its own commit, and they are already LIVE on ifm-deploy without having been reviewed.",
+ "count": 11,
  "items": [
   {
-   "source": "Aakara tree / Hiral Goel",
-   "title": "Two staged rows are invisible in the Library until a preview clip exists: IFM-542 (IMG_6602.MOV, 75MB -- Hiral leafing through the workbook) and IFM-547 (IMG_8010.MOV, 143MB -- the 12 Jun inflation session). Both have thumbnails and real Drive file links; they fail only the Video 'playable' half of the visibility rule. Needs scripts/ifm-make-previews.sh then media-audit.py, and both need a deploy first, so they light up on the second deploy.",
-   "folder_url": "https://drive.google.com/drive/folders/1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI",
+   "source": "Run gap — scan is stale",
+   "title": "This run started 2 Oct and could not finish until 8 Oct: the Mac kept sleeping, which hung Drive listings, and the session paused. Its rows reflect a Drive snapshot from 2 Oct. Anything added 2–8 Oct has NOT been checked; the next run needs a fresh scan. Example: IFM Oct 2026 grew from 12 files to 65 over that time.",
+   "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
+   "status": "needs_review"
+  },
+  {
+   "source": "Content Library / IFM Oct 2026",
+   "title": "53 files added after the 2 Oct scan are uncatalogued: IMG_3699, IMG_3706, IMG_3791–3816, IMG_8033–8058, 03b394fd….mp4. The 12 earlier files are IFM-576..584.",
+   "folder_url": "https://drive.google.com/drive/folders/1TYulg-Wlp-48FF1p9ueLg_yzPMTgNBZY",
+   "status": "needs_review"
+  },
+  {
+   "source": "Scan errors",
+   "title": "Two folders failed to list in the 2 Oct scan, so their coverage is unverified: 'IFM (Aakara delivery tree)/August/reels' and 'Content Library/Aakara — June 2026/Power of Compounding'.",
+   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "status": "needs_review"
+  },
+  {
+   "source": "Preview clips owed",
+   "title": "26 new Video rows are invisible in the Library until preview clips exist: IFM-575, IFM-579..603. Also still owed: IFM-542 and IFM-547. Needs scripts/ifm-make-previews.sh then media-audit.py, both after a deploy.",
+   "folder_url": "https://drive.google.com/drive/folders/1Syi9U1cbeNZKNhM4UM3EZC_osyM8vg8n",
+   "status": "needs_review"
+  },
+  {
+   "source": "Corporate deck video — takes untranscribed",
+   "title": "IFM-575 is a catch-all for 15 piece-to-camera takes by Hiral (1 Oct). Transcribe them and split out the usable takes, as was done for the HG reel takes. IFM-580 (302 MB participant clip) may be a feedback piece; listen before using it.",
+   "folder_url": "https://drive.google.com/drive/folders/1t3BUKP9VnPBwOrSxlJsJwlrjYOqwbBEq",
+   "status": "needs_review"
+  },
+  {
+   "source": "Hiral Media Kit — new entries to glance at",
+   "title": "IFM-573 portrait (rank 2: close to camera, neutral expression, lav mic visible), IFM-576 teaching (rank 2: SMART-goals slide), IFM-574 candid (rank 3). Identity was checked by eye against IFM-067. A human may want to promote IFM-573.",
+   "folder_url": "https://drive.google.com/drive/folders/1OPOAbJ_MsKxrz7Ijq6tLaxdA6eMr6Vw4",
+   "status": "needs_review"
+  },
+  {
+   "source": "Hiral Media Kit — stray copy to remove",
+   "title": "The kit folder holds a mistaken copy of IMG_7880 (the IFM-574 candid), file 1Hi0p2aDf4AIvr0rP8FcEKi1nRVrrOeGg, renamed '…copied here by mistake…'. It was not deleted because deletion needs your say-so; remove it by hand if you agree.",
+   "folder_url": "https://drive.google.com/drive/folders/1OPOAbJ_MsKxrz7Ijq6tLaxdA6eMr6Vw4",
+   "status": "needs_review"
+  },
+  {
+   "source": "IFM-275 placeholder",
+   "title": "'September: Asset vs Liability' (In Production, points at the deck) has been delivered: it is the finished reel IFM-569. The new 'Asset vs liab/asset liability.png' is that reel's cover and got no row of its own. Decide whether to mark IFM-275 Published/superseded.",
+   "folder_url": "https://drive.google.com/drive/folders/1TPnSDMaSNO5xLd3e2d-H382XgdZl5PR-",
+   "status": "needs_review"
+  },
+  {
+   "source": "Certificates",
+   "title": "8 certificate images and clips (Aug–29 Sep) remain uncatalogued on purpose: minors with names visible, under the DPDP consent hold.",
+   "folder_url": "https://drive.google.com/drive/folders/1CasigFU-SKr_X__0d7ywpjTE9-jmDcgA",
    "status": "needs_review"
   },
   {
    "source": "Hiral Media Kit",
-   "title": "IFM-545 is the smiling frame of the identical wall, outfit and pose as IFM-067, which is an existing rank-1 kit portrait with a closed-mouth expression. IFM-545 was deliberately held at rank 2 so the lead strip does not show the same backdrop twice, but the smiling frame may well be the better press lead. A human should look at the two side by side and decide which one leads.",
+   "title": "Carried over: IFM-545 (smiling) vs IFM-067 (closed mouth), same wall and pose. Which one leads?",
    "folder_url": "https://drive.google.com/drive/folders/1OPOAbJ_MsKxrz7Ijq6tLaxdA6eMr6Vw4",
    "status": "needs_review"
   },
   {
    "source": "Aakara tree / month roots",
-   "title": "Five 'IFM Internal_<Month>.pptx' decks (June, July, August, October) plus IFM_June Content.pptx and IFM_June Creatives.pptx are uncatalogued. These are Aakara's internal planning decks, not deliverables, so no rows were created. Worth a decision: catalogue them as planning documents, or add them to a permanent skip list so they stop surfacing here. Note there is an October Internal deck but no October Creatives deck yet.",
+   "title": "Carried over: the 'IFM Internal_<Month>.pptx' planning decks are uncatalogued. Catalogue them as planning documents, or add them to a skip list.",
    "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
    "status": "needs_review"
   }
