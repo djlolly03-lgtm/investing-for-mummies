@@ -1,67 +1,103 @@
 {
- "generated_by": "daily-content-processor 2026-10-08",
- "note": "Fresh single-pass scan of all 15 registered roots: 161 folders, 1,813 media files, 0 listing errors (the two folders that failed on 2 Oct listed cleanly). Staged IFM-605..632 (28 rows); relinked IFM-359 to its still. The 2 Oct review item about a stale scan is resolved.",
- "count": 10,
+ "generated_by": "daily-content-processor 2026-10-12",
+ "note": "Fresh breadth-first scan of all 15 registered roots: 164 folders, 1,850 media files, 0 listing errors. Staged IFM-633..641 (9 rows); updated IFM-630 (Aakara re-delivered the 5-types-of-risk reel as a final cut on 9 Oct, so the row now opens that file instead of the takes folder), IFM-631, IFM-629 and IFM-275. Mirrored 28 third-party masters into IFM Content Archive. RESOLVED and dropped from this queue: the 'Content Library / IFM Games 32 files' item — the 20 Aakara June topic folders mirrored into Content Library were diffed file-by-file against the whole Drive and 19 of 20 are byte-identical copies of already-catalogued folders; the one real gap is now IFM-641. Also corrected the long-carried 'preview clips owed' item: the tool it named cannot handle Drive-hosted masters at all, which is why that backlog never moved. check-types.py --strict: 0 mislabelled, 0 over-broad links. Acceptance suite 14/14.",
+ "count": 16,
  "items": [
   {
-   "source": "Preview clips owed",
-   "title": "50 Video rows are invisible in the Library until preview clips exist: today’s IFM-605..608, 610..623, 626..630 (24), plus the carried IFM-575, IFM-579..603, IFM-542 and IFM-547. Needs scripts/ifm-make-previews.sh then media-audit.py, both after a deploy; masters total ~6 GB so this is an hours-long job.",
+   "source": "Preview clips owed — and the tool for it does not exist yet",
+   "title": "61 Video rows are catalogued, thumbnailed and linked but invisible in the Library because no preview clip exists: today's IFM-633..640 (8), plus IFM-605..608, 610..623, 626..630, IFM-575, IFM-579..603, IFM-542, IFM-547, IFM-315, IFM-328. CORRECTED 12 Oct 2026 — earlier notes (2 and 8 Oct) said the fix was scripts/ifm-make-previews.sh then media-audit.py and framed it as an hours-long transcode. That is wrong and it is why this item has carried for weeks without moving. ifm-make-previews.sh only selects rows whose video/drive field is an ifm-deploy.vercel.app URL resolving to a file already inside the repo; every one of these 61 rows points at Google Drive, so the script finds nothing. Verified by running it: 'Nothing to build — no unplayable video has a local master.' THE MISSING STEP is fetching the master from Drive (rclone copy by file id) before the existing ffmpeg step. Write that and the rest of the path already works. Once clips exist, two deploys are still needed: media-audit.py decides playability by HEAD-requesting the live URL, so deploy one ships the clips and deploy two ships the regenerated media-map.js.",
    "folder_url": "https://drive.google.com/drive/folders/1TYulg-Wlp-48FF1p9ueLg_yzPMTgNBZY",
    "status": "needs_review"
   },
   {
-   "source": "Content Library / IFM Games",
-   "title": "32 files added 18–29 Sep (after the 21 Sep scan) are not referenced by any row; the folder-level rows predate them. Verify the 30 Sep/2 Oct runs assessed them, or catalogue the new moments.",
-   "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
+   "source": "Aakara — two October reel topics were invisible for three weeks",
+   "title": "Staged today as IFM-633 (Confession of a shopaholic, 17 takes) and IFM-634 (Ever Wondered — why losing money hurts more than making it, cover + 9 takes). Neither folder had ever been reached by any catalogue row. They were delivered 18 Sep and the covers on 8 Oct; the 8 Oct run worked the 5–7 Oct date window and missed both. WORTH A LOOK AT THE METHOD, not just the rows: a recency filter silently defeats the id-not-in-data.js test that the task is built on. Both are takes-only — no finished reel has been delivered for either.",
+   "folder_url": "https://drive.google.com/drive/folders/1mfHO720Q3OKXUQrUJd5LKEHKrCvICjR7",
    "status": "needs_review"
   },
   {
-   "source": "Takes untranscribed",
-   "title": "Three catch-all folders of Hiral piece-to-camera takes have no transcripts, so which take says what is not searchable: IFM-575 (corporate deck, 15 takes), IFM-628 (IPO vs stocks, 16 takes, 2.8 GB), IFM-629 (Navratri, 15 takes). Transcribe and split out the usable takes, as was done for the HG reel.",
+   "source": "Aakara — October: which reels are still owed",
+   "title": "Six October reel topics, and only two have a finished cut. DELIVERED: One min part 2 / 5 types of risk (IFM-630, final re-delivered 9 Oct) and Gandhi Jayanti artwork (IFM-604). TAKES OR ARTWORK ONLY: IFM-628/631 IPO vs stocks (16 takes + cover, no reel), IFM-629 Dussehra/Navratri (15 takes, no cover, no reel), IFM-633 shopaholic (17 takes, nothing else), IFM-634 Ever Wondered (cover + 9 takes, no reel). There is still no 'IFM Creatives_October' planning deck in Drive, so there is no forward calendar to reconcile against — worth asking Aakara for one.",
+   "folder_url": "https://drive.google.com/drive/folders/1mfHO720Q3OKXUQrUJd5LKEHKrCvICjR7",
+   "status": "needs_review"
+  },
+  {
+   "source": "IFM-629 — the folder is called Dussehra, the row says Navratri",
+   "title": "IFM-629 is titled 'October: Navratri' and its notes record the path October/Reels/Navratri, but the Drive folder is named 'Dussehra'. The folder id is unchanged and still correct; only the name is wrong. Either Aakara renamed it or the festival was misread at the time. Notes corrected today; the title left as delivered because which festival the takes are actually for is a human call.",
+   "folder_url": "https://drive.google.com/drive/folders/1fbaKCxWfNGEqO2PYg1dqJKQvYnHfefTk",
+   "status": "needs_review"
+  },
+  {
+   "source": "IFM-273 vs IFM-634 — reconcile or retire the September placeholder",
+   "title": "IFM-273 'September: Ever Wondered? (topic TBC)' is a deck placeholder with no thumbnail, pointing at the September planning deck. The topic now exists and has been delivered as IFM-634 (October). A new row was created rather than reconciled, per the conservative-match rule — a September row against an October delivery. Decide whether IFM-273 should be marked superseded. Same shape as the carried IFM-275 item below.",
+   "folder_url": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+   "status": "needs_review"
+  },
+  {
+   "source": "IFM-275 placeholder (carried)",
+   "title": "'September: Asset vs Liability' is still In Production and still points at the planning deck, but the topic was delivered as IFM-569 ('September: Asset or liability? — the rapid-fire game reel', Ready, 22 Sep). A cross-reference was added to IFM-275's notes today; the status was left unchanged because marking it Published or superseded is a human call. Thirteen other 'Month: Topic' deck placeholders sit in the same state — IFM-200, 201, 209, 210, 212, 258, 263, 269, 270, 272, 273, 276, 277, 278, 320, 372, 373 — and they are most of the 16 rows with no thumbnail and the 4 with no fetchable link. Worth one sweep rather than one row at a time.",
+   "folder_url": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
+   "status": "needs_review"
+  },
+  {
+   "source": "Takes untranscribed (carried, now five folders)",
+   "title": "Five catch-all folders of Hiral piece-to-camera takes have no transcripts, so which take says what is not searchable: IFM-575 (corporate deck, 15 takes), IFM-628 (IPO vs stocks, 16 takes, 2.8 GB), IFM-629 (Dussehra/Navratri, 15 takes), and today's IFM-633 (shopaholic, 17 takes) and IFM-634 (Ever Wondered, 9 takes). Transcribe and split out the usable takes, as was done for the HG reel. That is 72 takes in all.",
    "folder_url": "https://drive.google.com/drive/folders/1s42C9DDDi-r5c4p5mDtsv8FT288hMChZ",
    "status": "needs_review"
   },
   {
-   "source": "Possible feedback clips — listen before using",
+   "source": "Possible feedback clips — listen before using (carried)",
    "title": "Six long participant clips from the corporate workshop look like sharing or feedback pieces but are untranscribed: IFM-580, IFM-605, IFM-606 (1 Oct) and IFM-620, IFM-621, IFM-622 (6 Oct). If they are testimonials they should be tagged Testimonial — video and considered for social.",
    "folder_url": "https://drive.google.com/drive/folders/1TYulg-Wlp-48FF1p9ueLg_yzPMTgNBZY",
    "status": "needs_review"
   },
   {
-   "source": "Aakara — October",
-   "title": "Two October reels are delivered as artwork or takes only: IFM-631 “Struggling stock market vs booming IPOs” has a cover but no reel (the raw takes are IFM-628); IFM-629 Navratri has 15 takes and no cut. There is no “IFM Creatives_October” planning deck in Drive, so there is no forward calendar to reconcile against this month.",
-   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
-   "status": "needs_review"
-  },
-  {
-   "source": "Hiral Media Kit — new entry to glance at",
-   "title": "IFM-607 entered the kit at teaching rank 3 (a video frame of Hiral beside her Introduction slide, 6 Oct). Rank 3 is not shown by default; promote it or pull a still if it is wanted. Carried: IFM-573 (rank 2 portrait) may deserve rank 1; IFM-545 vs IFM-067, which leads?; a stray copy of IMG_7880 (file 1Hi0p2aDf4AIvr0rP8FcEKi1nRVrrOeGg) sits in the kit folder awaiting your say-so to delete.",
+   "source": "Hiral Media Kit — three new entries to glance at",
+   "title": "IFM-635, IFM-636 and IFM-637 entered the kit today at teaching rank 3. All three are video frames and all three identify Hiral by the standing/presenting convention rather than from a named source, which is why they are rank 3 — rank 3 is not shown by default, so an error there costs nothing. Promote or pull stills if any are wanted; IFM-637 is the strongest (the health-insurance checklist is legible behind her). Carried: IFM-607 (rank 3), IFM-573 (rank 2 portrait) may deserve rank 1, and IFM-545 vs IFM-067 — which leads? There are 4 rank-1 assets across 644.",
    "folder_url": "https://drive.google.com/drive/folders/1OPOAbJ_MsKxrz7Ijq6tLaxdA6eMr6Vw4",
    "status": "needs_review"
   },
   {
-   "source": "Goa Workshop 18 Jul 2026 — raw video masters",
-   "title": "The folder is no longer empty (restored from Dropbox 1 Oct). Its Photos subfolder holds 3 photos as HEIC+JPEG pairs and REELS (Claude) holds 10 cuts, none referenced by id except the v8 master (IFM-572). The task file still says SKIP this folder because the masters were deleted; that reason no longer holds. Decide whether the 3 photos get rows.",
+   "source": "9 Oct boardroom session — whose session is it?",
+   "title": "IFM-636..640 cover a 9 Oct session in the same boardroom as the 1 and 6 Oct corporate workshops, but with only three women at the table and a health-insurance checklist on screen rather than the IFM deck. It has been labelled 'Boardroom workshop — 9 Oct 2026' rather than assigned to the corporate series, because the evidence does not settle it. Confirm the client and the date and the session label can be tightened. Note the date is the upload date; the files were created 9 Oct 09:50–10:10 UTC.",
+   "folder_url": "https://drive.google.com/drive/folders/1TYulg-Wlp-48FF1p9ueLg_yzPMTgNBZY",
+   "status": "needs_review"
+  },
+  {
+   "source": "Goa Workshop 18 Jul 2026 — the task file still says SKIP, and that reason is gone",
+   "title": "The scan task still instructs 'SKIP Goa, the masters were deleted and 33 rows point at nothing'. The masters were restored from Dropbox on 1 Oct 2026 and the 41 Goa rows now carry live Drive file links and thumbnails. The folder also holds a Photos subfolder (3 photos as HEIC+JPEG pairs) and REELS (Claude) with 10 cuts plus a _superseded subfolder, none of them referenced by id except the v8 master (IFM-572). The skip instruction in ~/.claude/scheduled-tasks/daily-content-processor/SKILL.md should be rewritten before a future run uses it to justify ignoring live content.",
    "folder_url": "https://drive.google.com/drive/folders/1nBRaMdgkFEK93yeDp7vAhsylGntHRSBj",
    "status": "needs_review"
   },
   {
-   "source": "IFM-275 placeholder",
-   "title": "Carried: “September: Asset vs Liability” (In Production, points at the deck) has been delivered as the finished reel IFM-569; the “Asset vs liab/asset liability.png” cover has no row. Decide whether to mark IFM-275 Published/superseded.",
-   "folder_url": "https://drive.google.com/drive/folders/1TPnSDMaSNO5xLd3e2d-H382XgdZl5PR-",
-   "status": "needs_review"
-  },
-  {
-   "source": "Certificates",
-   "title": "9 certificate images and clips in the Certificates folder remain uncatalogued on purpose: minors with names visible, under the DPDP consent hold.",
+   "source": "Certificates (carried)",
+   "title": "9 certificate images and clips in the Certificates folder remain uncatalogued on purpose: minors with names visible, under the DPDP consent hold. No action — recorded so the gap is not mistaken for an oversight.",
    "folder_url": "https://drive.google.com/drive/folders/1CasigFU-SKr_X__0d7ywpjTE9-jmDcgA",
    "status": "needs_review"
   },
   {
-   "source": "Aakara tree / Brand Assets and month roots",
-   "title": "Not media, not catalogued: Brand Assets/IFM Language.pdf and the DM Serif Display + Poppins font folders (added 5 Oct), and the carried “IFM Internal_<Month>.pptx” planning decks. Catalogue them as documents, or add them to a skip list.",
-   "folder_url": "https://drive.google.com/drive/folders/1YCqMvT-PkOAeEIlYQNU_eangCq8rimho",
+   "source": "Aakara tree — non-media still not catalogued (carried)",
+   "title": "Not media, not catalogued, no decision yet: Brand Assets/IFM Language.pdf and the DM Serif Display + Poppins font folders (added 5 Oct), and the 'IFM Internal_<Month>.pptx' planning decks. Catalogue them as documents or add them to an explicit skip list so they stop being re-reported.",
+   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
    "status": "needs_review"
+  },
+  {
+   "source": "ingest-scan.py --scan does not save its result",
+   "title": "The snapshot the scanner is supposed to leave behind, content/v1-prototype/.ingest-scan.json, is still dated 21 Sep 2026 — three weeks stale — because only --validate writes it; --scan prints its counts and throws the result away. Every run since has had to re-walk Drive and keep the result in a scratch file, and there is no on-disk record to diff one day against the next. Two passes 22 minutes apart today returned 1,833 and 1,850 media files across 163 and 164 folders, both with 0 errors, and they cannot be reconciled because the first was not kept — it is either the known Drive listing instability or 17 files genuinely arriving mid-scan, and there is no way to tell. Three lines in scan() would fix it.",
+   "folder_url": "https://drive.google.com/drive/folders/1t7NxPEc54Aw_UxJXyzZ0jK_sw7WzQrji",
+   "status": "needs_review"
+  },
+  {
+   "source": "Monthly WhatsApp trailer — a recurring job with no owner in the system",
+   "title": "Raised by Aditya 12 Oct 2026: \"month on month we make videos for IFM trailer to share on WhatsApp\". It is a RECURRING need and nothing in the repo treats it as one — there is no skill, no scheduled task and no checklist, so each month it is rebuilt from memory. WHAT ALREADY EXISTS: the approved cut IFM-workshop-whatsapp.mp4 (54s vertical 1080x1920, ~12MB, built 20 Aug 2026, signed off), its build directory highlight-reel-assets/whatsapp-build/ (render.js, audioV.py, node_modules present), and a written method in the project-whatsapp-workshop-video memory: live clip audio ducked under music (1.0 -> 0.18, 0.35s ramps), speech windows picked by scoring 0.25s frames on 300-3400Hz energy, 9:16 crops centred on an OpenCV face centroid, ends holding 6s on the flyer. RAW MATERIAL IS READY: 136 adult assets dated Sep 2026 or later (102 video, 22 photo), the biggest blocks being Corporate women's workshop session 2 on 6 Oct (22), the Swayamvar game session on 8 Sep (20), the small-group Sep session (9) and Corporate women's workshop 1 Oct (9). NOT STARTED — Aditya was asked whether to cut October now or build the monthly skill and chose neither for the moment, so this is parked rather than in progress. TWO RULES THAT MUST SURVIVE INTO ANY MONTHLY VERSION: the workshop is for adult women, so no teen/Gen-Z footage may be used to promote it; and the speech-window scorer finds CLEAR speech, not appropriate speech, so a human has to listen before anything is sent.",
+   "folder_url": "",
+   "status": "pending"
+  },
+  {
+   "source": "Sakshi's videos and stories — confirm they reach the hub, and whether they feed the trailer",
+   "title": "Raised by Aditya 12 Oct 2026, recorded as pending only at his request — no action taken. He noted that Sakshi is making videos and stories. Two things are unverified and both matter: (1) whether everything she produces actually reaches the Content Hub, or whether stories in particular are published and then lost because nobody downloads them before they expire; (2) whether her output is meant to be a source for the monthly WhatsApp trailer above, which would change where that trailer draws its footage from. WHAT IS KNOWN: 139 catalogue rows mention Sakshi, and 'Sakshi uploads' (11MncEXMdZy3sP2pTt0zfibLbEn30ldOO) is an established scan root with a catch-all row, so her UPLOADS are being reached. Whether that is the same thing as everything she MAKES has not been checked. Stories are the likely gap: nothing in the pipeline captures an Instagram story before it expires at 24 hours. Ask Aditya which of the two questions he actually wants answered before doing any work here.",
+   "folder_url": "",
+   "status": "pending"
   }
  ]
 }

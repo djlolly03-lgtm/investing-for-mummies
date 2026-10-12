@@ -26959,28 +26959,28 @@ window.IFM_V1 =
 },
 {
 "id": "IFM-630",
-"title": "October: Understanding the 5 types of risk — one-minute reel, part 2",
+"title": "October: Understanding the 5 types of risk — one-minute reel, part 2 (final cut)",
 "date": "2026-10-07",
 "thumb": "../thumbs/IFM-630.jpg",
 "video": "",
-"drive": "https://drive.google.com/drive/folders/1lQLjpW89owr6swiW2Ity8JX-KPpsSUf0",
-"description": "Finished one-minute reel (43 MB MP4, 6 Oct) plus its cover — Hiral in an orange-red tee under the headline “Understanding the 5 types of RISK” — and ten raw takes of her on a cream sofa in a red T-shirt and white trousers, grey curtains and a plant behind. Opens the folder.",
+"drive": "https://drive.google.com/file/d/1GcSIKAnIbSLDK9cq2KlQKoWtPKClFmTB/view",
+"description": "The finished one-minute reel on the five types of risk: Hiral to camera in an orange-red tee against grey curtains and a plant, opening on the caption “Think you know what risk is?”. Aakara re-delivered it on 9 Oct 2026 as VID_20261009_021149_287_bsl.mp4 into a new Final Video subfolder, alongside its cover — Hiral under the headline “Understanding the 5 types of RISK”. The ten raw takes and the 6 Oct edit remain in the parent folder.",
 "session": "",
-"slide_text": "Understanding the 5 types of RISK",
+"slide_text": "Think you know what risk is? Understanding the 5 types of RISK",
 "silent": false,
 "type": "Video",
 "status": "Ready",
 "format": "Hiral Speaking",
 "topic": [
-"Risk & Returns",
-"Investing"
+"Family & Money",
+"Risk & Returns"
 ],
 "person": [
 "Hiral"
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "october understanding types risk one minute reel part finished mp4 oct plus cover hiral orange red tee under headline ten raw takes her cream sofa shirt white trousers grey curtains plant behind opens folder min investing aakara",
+"search_terms": "october understanding types risk one minute reel part final cut finished five hiral camera orange red tee against grey curtains plant opening caption think you know what aakara delivered oct 2026 vid 20261009 021149 287 bsl mp4 into new video",
 "phash": "1de0f47269e99147"
 },
 {
@@ -26989,7 +26989,7 @@ window.IFM_V1 =
 "date": "2026-10-07",
 "thumb": "../thumbs/IFM-631.jpg",
 "video": "",
-"drive": "https://drive.google.com/drive/folders/1hQDQnXqE3nye9PSCKdXbvXJK0p9enbJD",
+"drive": "https://drive.google.com/file/d/1AGxmhe3xHFtVxfe72SJ8uWMwVq2eRTjx/view",
 "description": "The cover artboard for the IPO-vs-stocks reel: Hiral in the yellow ruffle-shoulder top between the labels “Struggling Stock Market” and “Booming IPOs”, a red arrow down to a building and a green arrow up to a bell. Artwork only — no video file in the folder yet.",
 "session": "",
 "slide_text": "Struggling Stock Market Booming IPOs",
@@ -27029,5 +27029,234 @@ window.IFM_V1 =
 "source": "Aakara",
 "status": "Ready",
 "search_terms": ""
+},
+{
+"id": "IFM-633",
+"title": "October: Confession of a shopaholic — 17 reel takes (folder)",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-633.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/116UrpXeRaOL9xV7A55fpikkWscZzrFOC",
+"description": "Seventeen takes of Hiral for a “confession of a shopaholic” reel: seated on a brown leather sofa in a green-and-white floral print short dress, legs crossed, a bright pink carrier bag and a cream striped shopping bag propped either side of her, geometric green and teal wall art above. She speaks straight to camera. Clips from 15 MB to 66 MB, 446 MB in all. No cover and no finished reel in the folder. Opens the folder.",
+"session": "Aakara reel shoot — 18 Sep 2026",
+"slide_text": "confession of a shopaholic",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Managing Money",
+"Family & Money"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "october confession shopaholic reel takes folder seventeen hiral seated brown leather sofa green white floral print short dress legs crossed bright pink carrier bag cream striped shopping propped either side her geometric teal wall art above she speaks straight camera",
+"phash": "6e24303269993834"
+},
+{
+"id": "IFM-634",
+"title": "October: Why losing money hurts more than making it — “Ever Wondered” reel, cover + 9 takes (folder)",
+"date": "2026-10-08",
+"thumb": "../thumbs/IFM-634.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1jz38gUazvDhwdO6cBmyXLnVtqAmh23nr",
+"description": "The October instalment of the recurring “Ever Wondered” series, on loss aversion. The cover reads “Why Losing money hurts way more than Making” over green and red arrows and banknotes. The nine takes are Hiral standing in a black satin shirt and cream wide-leg trousers in front of a large blue-and-white abstract painting, talking to camera with open-handed gestures. Clips from 11 MB to 295 MB, 502 MB in all. No finished reel in the folder yet. Opens the folder.",
+"session": "Aakara reel shoot — 18 Sep 2026",
+"slide_text": "Ever Wondered Why Losing money hurts way more than Making",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "october why losing money hurts more than making ever wondered reel cover takes folder instalment recurring series loss aversion reads way over green red arrows banknotes nine hiral standing black satin shirt cream wide leg trousers front large blue white",
+"phash": "1ef0d43268c8c4e0"
+},
+{
+"id": "IFM-635",
+"title": "Corporate workshop (day 2) — Hiral opening against the “Investing for Mummies” title slide",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-635.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1t0TswmKZNOLwOFFd6vP6GFSpVzIeHQ-g/view",
+"description": "Hiral, in the yellow ruffle-shoulder top and black skirt, stands beside the wall screen showing the “Investing for Mummies” title slide with its supermom illustration, one hand raised mid-sentence; two participants’ backs fill the foreground and a laptop is open on the table.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"slide_text": "Investing for Mummies",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Investing"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Unknown",
+"search_terms": "corporate workshop day hiral opening against investing mummies title slide yellow ruffle shoulder top black skirt stands beside wall screen showing supermom illustration one hand raised mid sentence two participants backs fill foreground laptop open table boardroom october 2026",
+"phash": "6063f3b998f0f8f9",
+"kit": "teaching",
+"kit_rank": 3
+},
+{
+"id": "IFM-636",
+"title": "Boardroom workshop (9 Oct) — Hiral standing at the screen, mid-explanation",
+"date": "2026-10-09",
+"thumb": "../thumbs/IFM-636.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1qMKjmRyxvwAK3vIZZGM5AERT6GbCNSL-/view",
+"description": "Hiral stands beside the wall-mounted screen in a cream sleeveless textured top and red trousers, smiling mid-sentence with one hand raised. A participant in a mauve kurta sits in the foreground with the “Investing for Mummies” handbook open on the table in front of her, next to a laptop and a cup.",
+"session": "Boardroom workshop — 9 Oct 2026",
+"slide_text": "Investing for Mummies",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Investing"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Unknown",
+"search_terms": "candid warm natural unposed relaxed friendly celebration boardroom workshop oct hiral standing screen mid explanation stands beside wall mounted cream sleeveless textured top red trousers smiling sentence one hand raised participant mauve kurta sits foreground investing mummies handbook open table front her next laptop cup teaching presenting",
+"phash": "f473f736e3c38889",
+"kit": "teaching",
+"kit_rank": 3
+},
+{
+"id": "IFM-637",
+"title": "Boardroom workshop (9 Oct) — Hiral on the health-insurance checklist: what to avoid in a policy",
+"date": "2026-10-09",
+"thumb": "../thumbs/IFM-637.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1cWPp1k0PiHdRg-HTCemZSovgzHNtCNq5/view",
+"description": "Hiral, seated in a cream sleeveless top and red trousers, explains with both hands open while the screen behind her shows a “Checklist” slide: red crosses against “Co-payments & Deductibles”, “Sub Limits”, “Restrictions for Pre-existing Diseases” and “Long Waiting Periods”, with a pink AVOID arrow. A participant in a mauve kurta listens in the foreground, an open workbook on the table.",
+"session": "Boardroom workshop — 9 Oct 2026",
+"slide_text": "Co-payments & Deductibles Restrictions for Pre-existing Diseases Long Waiting Periods",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Insurance"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Unknown",
+"search_terms": "boardroom workshop oct hiral health insurance checklist what avoid policy seated cream sleeveless top red trousers explains both hands open while screen behind her shows slide crosses against payments deductibles sub limits restrictions pre existing diseases long waiting periods pink",
+"phash": "f9d9682799422638",
+"kit": "teaching",
+"kit_rank": 3
+},
+{
+"id": "IFM-638",
+"title": "Boardroom workshop (9 Oct) — Hiral mid-explanation at the table with two participants",
+"date": "2026-10-09",
+"thumb": "../thumbs/IFM-638.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1x8hf5bxjFmr4kJxKdYONrMhLUq0TsRN2/view",
+"description": "Three women at the dark wood boardroom table under the “Investing for Mummies” title slide: Hiral at the centre in a cream top, fingers raised as she counts a point off, a participant in a mauve kurta at the left edge and another in a pink shirt at a laptop on the right. Water bottles, glasses and jars across the table.",
+"session": "Boardroom workshop — 9 Oct 2026",
+"slide_text": "Investing for Mummies",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations",
+"Investing"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Unknown",
+"search_terms": "boardroom workshop oct hiral mid explanation table two participants three women dark wood under investing mummies title slide centre cream top fingers raised she counts point off participant mauve kurta left edge another pink shirt laptop right water bottles glasses",
+"phash": "d199d2c284055b1b"
+},
+{
+"id": "IFM-639",
+"title": "Boardroom workshop (9 Oct) — the room, with the IFM title slide up",
+"date": "2026-10-09",
+"thumb": "../thumbs/IFM-639.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1y2huwfIJlHVF0S_1W6GD6R1Zf9aZhc1B/view",
+"description": "A wide of the boardroom from the far end: the long dark table running away to the screen, which carries the “Investing for Mummies” title slide, high-backed black chairs along both sides, cream walls and a whiteboard. An establishing shot of the venue rather than of anyone in it.",
+"session": "Boardroom workshop — 9 Oct 2026",
+"slide_text": "Investing for Mummies",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Investing"
+],
+"person": [],
+"source": "Unknown",
+"search_terms": "b-roll cutaway establishing supporting footage context boardroom workshop oct room ifm title slide wide from far end long dark table running away screen which carries investing mummies high backed black chairs along both sides cream walls whiteboard establishing shot venue rather than anyone empty setting october",
+"phash": "2f14b096159b191f"
+},
+{
+"id": "IFM-640",
+"title": "Boardroom workshop (9 Oct) — a participant listening, hand to her chin",
+"date": "2026-10-09",
+"thumb": "../thumbs/IFM-640.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1-ouJiCtO1bgbr8DlOubFxgwzmoHSJKdW/view",
+"description": "A participant in a pale pink shirt sits at the boardroom table with her hand to her chin, listening; a water bottle, notebook and glass in front of her and the whiteboard on the wall behind. The attentive-listener frame of the session.",
+"session": "Boardroom workshop — 9 Oct 2026",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "boardroom workshop oct participant listening hand her chin pale pink shirt sits table water bottle notebook glass front whiteboard wall behind attentive listener frame session thinking october 2026 students",
+"phash": "c711859374b633dd"
+},
+{
+"id": "IFM-641",
+"title": "June: The Power of Compounding — the earlier five-slide version of the carousel",
+"date": "2026-06-11",
+"thumb": "../thumbs/IFM-641.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1VoNdnS-aLrL1FiexC1v-bN_uTKS0tlru",
+"description": "A five-slide mint-green IFM carousel on starting early. It opens “Wanna end up RICHER than someone investing WAAAAAYYYYY more money than you?” over a fist of ₹500 notes, and its central slide sets two phone notifications side by side: Sakshi started at 35 at ₹15k a month, invested ₹45L over 25 years and ended with ₹2.55 crore; Ahana started at 25 at ₹5k a month, invested ₹21L over 35 years and ended with ₹2.75 crore — more money from less, by starting ten years earlier. Opens the folder.",
+"session": "",
+"slide_text": "Wanna end up RICHER than someone investing WAAAAAYYYYY more money than you?",
+"silent": false,
+"type": "Carousel",
+"status": "Raw",
+"format": "Social Graphic",
+"topic": [
+"Compounding",
+"Wealth"
+],
+"person": [
+"No Person"
+],
+"source": "Aakara",
+"search_terms": "sip systematic investment plan monthly investing june power compounding earlier five slide version carousel mint green ifm starting early opens wanna end richer than someone investing waaaaayyyyy more money you over fist ₹500 notes central sets two phone notifications side sakshi started ₹15k month invested ₹45l",
+"phash": "a68488a0781199d9"
 }
 ];

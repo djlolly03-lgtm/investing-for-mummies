@@ -1,36 +1,31 @@
 {
- "generated": "2026-09-14",
- "based_on": "23 tracked accounts — 7 direct rivals, 8 content creators, 7 international benchmarks, 1 platform",
+ "generated": "2026-09-28",
+ "based_on": "23 tracked accounts — 7 direct rivals, 8 content creators, 7 international benchmarks, 1 platform; 11 with live post-level data this week",
  "patterns": [
   {
-   "icon": "🎯",
-   "title": "The white space nobody has taken",
-   "text": "Re-checked all 23 tracked accounts this week: not one targets mums specifically. Every one chases \"women\" broadly (LXME, Ellevest, Her First $100K) or personal finance generally (Anushka, Rachana). It stays IFM's most ownable and least contested position, and no new entrant this week moved into it."
+   "icon": "📰",
+   "title": "News-peg reels are what's working, and IFM's own view counts now prove it",
+   "text": "IFM now has real view counts for all 37 reels. In the last 30 days the top 3 of 15 reels were all news pegs: Tata Sons IPO (13,700 views), the Tata boardroom story (2,887) and the NSE IPO (2,044). The median reel got 1,048. Anushka Rathod's one countable post this week was also a news-decoded reel (20K likes). Make one news-peg reel a week a fixed slot rather than something that happens when there's time."
+  },
+  {
+   "icon": "📌",
+   "title": "Pinned hits still flatter the big accounts. Measured on current posts, IFM leads.",
+   "text": "CA Rachana Ranade's headline is 46.4K likes, but her 3 September posts average 1,461 (32x lower). For Vinita it's 583 against 16 (36x). Using current posts only, IFM gets 35 likes on 535 followers (6.5%). Anushka gets 2.0% on her one countable post, Her Money Talks 0.33%, LXME 0.27%, Rachana 0.15% and Monika Halan 0.1%. Read avg_likes_recent, not avg_likes."
+  },
+  {
+   "icon": "🔒",
+   "title": "A third account now hides its likes, so views and growth have to carry the tracker",
+   "text": "Shreyaa Kapoor hides likes on 6 of 6 posts for the third week. Ellevest hides them on 4 of its 5 own posts. New this week: Anushka Rathod, the biggest account in the set, hides them on 2 of her 3 September posts. That makes 3 of the 11 scraped handles partly or wholly unmeasurable, up from 2. IFM's own reporting has already moved to views. The Competitors tab should do the same and switch to follower growth and cadence before likes stop working as a measure."
   },
   {
    "icon": "📉",
-   "title": "The direct rivals have followers but no attention",
-   "text": "This week's scrape: LXME converts 123K followers into 56 likes a post (0.05%). Her Money Talks manages 2 likes on 3,639 followers (0.05%). Monika Halan, 37 on 21K (0.18%). Every direct women's-money rival sits at or below 0.2% engagement — the lane is commercially crowded but attention-empty. IFM's own 28 likes on 400 followers is 7.0%, higher than every single account tracked."
-  },
-  {
-   "icon": "🙂",
-   "title": "A face beats a logo, and the gap is widening",
-   "text": "The two accounts clearing real engagement at scale are both one person on camera: Rachana Ranade 48.4K avg (4.84% of 1M), Anushka Rathod 17.4K (1.74%). The two big institutional brand handles are the worst in the set — Ellevest 817 on 423K (0.19%), LXME 0.05%. Hiral's face is the asset; branded template posts are the thing to cut."
-  },
-  {
-   "icon": "🌏",
-   "title": "Borrow the US framing, ignore the US numbers",
-   "text": "Her First $100K (2M) averages 3.5K likes — 0.17%. Ellevest 0.19%. Both are reach-rich and engagement-poor, while India-facing creators run 10-25x hotter: Rachana 4.84%, Vinita 3.89%, Anushka 1.74%. Steal Tori Dunlap's rallying-POV framing and Ellevest's ownable-stat play, but benchmark IFM's performance against the Indian set only."
-  },
-  {
-   "icon": "🔬",
-   "title": "Small and specific already beats big and broad",
-   "text": "Vinita (@vinitashares) holds 3.89% on just 15K followers — within striking distance of Rachana's 4.84% at 1/66th the size, and 78x LXME's rate at 1/8th the size. Engagement in this niche does not require scale, which means IFM's 400-follower base is not the constraint on proving the content works; distribution is."
+   "title": "Posting more doesn't help without a hook, and not even LXME's reels are landing",
+   "text": "Her Money Talks posted 6 times between 19 and 27 Sep and averaged 12 likes (0.33%). Monika Halan posted 5 times between 20 and 27 Sep and averaged 23 likes on 21K followers. The surprise this week is LXME, a High-threat account: its two latest reels got 10 and 51 likes, while its static posts got 1,041 and 544. Posting often and choosing reels both fail without a reason to stop scrolling. That supports putting IFM's effort into hooks and news pegs rather than volume."
   },
   {
    "icon": "🎮",
-   "title": "The uncontested moat",
-   "text": "Still zero of the 23 accounts run an interactive game — re-verified across every content and formats field in the sheet this week. Stock Rush, the live quizzes and Mutual Fund Manager remain a structural differentiator nobody in the set has moved toward. LakshMe's take-home Family Record Book is the only comparable 'artefact' play, and it is paper."
+   "title": "The gap is still open: nobody targets mums and nobody makes games",
+   "text": "All 23 accounts were checked again. None targets mums specifically, and none runs an interactive game. The two accounts closest to IFM's model, Her Money Talks and Dhan Diksha, are still small on Instagram. Female Invest's Playvest is the only practice tool in the set, and it's only available inside a paid subscription. Stock Rush, the live quizzes and Mutual Fund Manager are still unmatched, so each reel that routes viewers to a game is using an advantage no other account has."
   }
  ]
 }

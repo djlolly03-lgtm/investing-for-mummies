@@ -907,5 +907,26 @@
    "Hiral"
   ],
   "_why": "8 Oct 2026: backfill inferred Student for a folder of Hiral piece-to-camera takes shot at home; nobody else is in frame."
+ },
+ "IFM-635": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "12 Oct 2026, daily-content-processor. Video frame, not a still. Identified as Hiral by the standing/presenting convention, not by a named source, so rank 3 on principle: rank 3 is not shown by default, and an error there costs nothing while an error at rank 1 is what an agency gets sent. Hiral beside the IFM title slide in the yellow top; mid-gesture with participants' backs across the lower frame, which is what keeps it off rank 2."
+ },
+ "IFM-636": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "12 Oct 2026, daily-content-processor. Video frame, not a still. Identified as Hiral by the standing/presenting convention, not by a named source, so rank 3 on principle: rank 3 is not shown by default, and an error there costs nothing while an error at rank 1 is what an agency gets sent. Standing at the screen, smiling, face clear; a participant's head is large in the foreground."
+ },
+ "IFM-637": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "12 Oct 2026, daily-content-processor. Video frame, not a still. Identified as Hiral by the standing/presenting convention, not by a named source, so rank 3 on principle: rank 3 is not shown by default, and an error there costs nothing while an error at rank 1 is what an agency gets sent. Seated mid-explanation with the health-insurance checklist legible behind her — the most useful teaching frame of the 9 Oct session, but she is three-quarters turned and a participant is in front."
+ },
+ "IFM-633": {
+  "person": [
+   "Hiral"
+  ],
+  "_why": "12 Oct 2026: backfill inferred Student as well as Hiral for a folder of Hiral piece-to-camera takes shot on a sofa; she is alone in every frame. Same correction as IFM-629."
  }
 }
