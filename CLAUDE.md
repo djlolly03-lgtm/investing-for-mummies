@@ -197,7 +197,16 @@ the deck missed 29 finished posts for two months. Scan the folder tree, not the 
 ## ⚠️ Asset size budget — exceed it and deploys bloat until they break
 
 - Thumbnails **≤25KB** — `ffmpeg -nostdin -y -i <src> -vf "scale='min(400,iw)':-1" -q:v 5`
-- Preview clips **≤200KB** — `ffmpeg -nostdin -y -t 12 -i <src> -vf "scale='min(480,iw)':-2" -c:v libx264 -crf 30 -preset veryfast -an -movflags +faststart`
+- Preview clips **≤400KB** — `ffmpeg -nostdin -y -t 12 -i <src> -vf "scale='min(640,iw)':-2" -c:v libx264 -crf 26 -preset veryfast -c:a aac -b:a 64k -ac 1 -movflags +faststart`
+  Raised from 200KB on 12 Oct 2026 on the user's instruction. 36 clips were pinned at
+  190–200KB, i.e. degraded to fit, and 39 built before the cap was enforced already sat
+  between 200 and 400KB. Raising the ceiling alone would have changed nothing — most clips
+  land inside it on the first attempt — so the starting quality went up with it, from
+  crf 30 at 480px to crf 26 at 640px.
+  **Audio is KEPT.** The `-an` in the thumbnail recipe is right for a silent b-roll tile and
+  wrong here: these are people talking, and a preview that drops the voice is why 27 clips
+  were once flagged silent when they were not. `backfill.py`'s `is_silent()` probes each
+  file with ffprobe, so the flag follows the file rather than the recipe.
 - **Masters never enter the repo.** Full-res photos, finished reels and raw footage live on
   Drive and are linked via the row's `drive link`.
 - `.vercelignore` blocks all `*.mp4/mov/pdf/md/py/gs`; only `content/{thumbs,clips,teasers,game-assets,comp-thumbs,ifm-posts}` are whitelisted back in.

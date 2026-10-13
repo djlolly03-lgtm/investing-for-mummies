@@ -2,8 +2,7 @@
 // The dashboard merges the Google Sheet on top: human-owned fields (status, dates, IG link, metrics, notes)
 // from the sheet override these rows; machine fields (descriptions, keywords, thumbnails) live here.
 // Thumbnails are self-hosted in content/thumbs/ (Drive image endpoints don't load for anonymous viewers).
-window.IFM_DATA =
-{
+window.IFM_DATA ={
  "catalogue": [
   {
    "id": "IFM-R01",
@@ -9179,7 +9178,8 @@ window.IFM_DATA =
    "keywords": "hiral goel, workbook, flipping pages, inner pages, boardroom, ifm slide, teaching, founder, glasses, video",
    "thumbnail": "thumbs/IFM-542.jpg",
    "drive link": "https://drive.google.com/file/d/1XXVdz31JioPyWG_NHc8jxXk-IUyOZ5cd/view",
-   "notes": "File: IMG_6602.MOV (75MB). No preview clip built yet, so this row is staged but will NOT appear in the V1 Library until a clip exists and media-map.js marks it playable. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1fzM-ApT_5GvTTF7cXJoClKyJ53SvypIp"
+   "notes": "File: IMG_6602.MOV (75MB). No preview clip built yet, so this row is staged but will NOT appear in the V1 Library until a clip exists and media-map.js marks it playable. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1fzM-ApT_5GvTTF7cXJoClKyJ53SvypIp",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-542.mp4"
   },
   {
    "id": "IFM-543",
@@ -9279,7 +9279,8 @@ window.IFM_DATA =
    "keywords": "hiral goel, inflation, inflation simplified, workshop, presenting, venue wide, audience, offsite, cafe library, pendant lamp, session video, june 2026",
    "thumbnail": "thumbs/IFM-547.jpg",
    "drive link": "https://drive.google.com/file/d/15YMNNvsvJlO2Tzvf3XzyjbSMxFlqBZW1/view",
-   "notes": "File: IMG_8010.MOV (143MB) — the fuller of two takes of the same moment; backup IMG_7983.mov (102MB, a text-only slide, less of the room). Shot 12 Jun 2026, a different day and venue from the rest of this folder. She is small in a wide room, so deliberately NOT Media Kit material. No preview clip built yet, so this row will NOT appear in the V1 Library until one exists. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1pgOVhzPyvodslmgBfc_rYfZFTTeojBzI"
+   "notes": "File: IMG_8010.MOV (143MB) — the fuller of two takes of the same moment; backup IMG_7983.mov (102MB, a text-only slide, less of the room). Shot 12 Jun 2026, a different day and venue from the rest of this folder. She is small in a wide room, so deliberately NOT Media Kit material. No preview clip built yet, so this row will NOT appear in the V1 Library until one exists. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1pgOVhzPyvodslmgBfc_rYfZFTTeojBzI",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-547.mp4"
   },
   {
    "id": "IFM-548",
@@ -9913,7 +9914,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-579.mp4",
    "thumbnail": "thumbs/IFM-579.jpg"
   },
   {
@@ -9933,7 +9934,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-580.mp4",
    "thumbnail": "thumbs/IFM-580.jpg"
   },
   {
@@ -9953,7 +9954,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-581.mp4",
    "thumbnail": "thumbs/IFM-581.jpg"
   },
   {
@@ -9973,7 +9974,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-582.mp4",
    "thumbnail": "thumbs/IFM-582.jpg"
   },
   {
@@ -9993,7 +9994,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-583.mp4",
    "thumbnail": "thumbs/IFM-583.jpg"
   },
   {
@@ -10013,7 +10014,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-584.mp4",
    "thumbnail": "thumbs/IFM-584.jpg"
   },
   {
@@ -10033,7 +10034,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-585.mp4",
    "thumbnail": "thumbs/IFM-585.jpg"
   },
   {
@@ -10053,7 +10054,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-586.mp4",
    "thumbnail": "thumbs/IFM-586.jpg"
   },
   {
@@ -10073,7 +10074,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-587.mp4",
    "thumbnail": "thumbs/IFM-587.jpg"
   },
   {
@@ -10093,7 +10094,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-588.mp4",
    "thumbnail": "thumbs/IFM-588.jpg"
   },
   {
@@ -10113,7 +10114,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-589.mp4",
    "thumbnail": "thumbs/IFM-589.jpg"
   },
   {
@@ -10133,7 +10134,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-590.mp4",
    "thumbnail": "thumbs/IFM-590.jpg"
   },
   {
@@ -10153,7 +10154,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-591.mp4",
    "thumbnail": "thumbs/IFM-591.jpg"
   },
   {
@@ -10173,7 +10174,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-592.mp4",
    "thumbnail": "thumbs/IFM-592.jpg"
   },
   {
@@ -10193,7 +10194,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-593.mp4",
    "thumbnail": "thumbs/IFM-593.jpg"
   },
   {
@@ -10213,7 +10214,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-594.mp4",
    "thumbnail": "thumbs/IFM-594.jpg"
   },
   {
@@ -10233,7 +10234,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-595.mp4",
    "thumbnail": "thumbs/IFM-595.jpg"
   },
   {
@@ -10253,7 +10254,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-596.mp4",
    "thumbnail": "thumbs/IFM-596.jpg"
   },
   {
@@ -10273,7 +10274,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-597.mp4",
    "thumbnail": "thumbs/IFM-597.jpg"
   },
   {
@@ -10293,7 +10294,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-598.mp4",
    "thumbnail": "thumbs/IFM-598.jpg"
   },
   {
@@ -10313,7 +10314,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-599.mp4",
    "thumbnail": "thumbs/IFM-599.jpg"
   },
   {
@@ -10333,7 +10334,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-600.mp4",
    "thumbnail": "thumbs/IFM-600.jpg"
   },
   {
@@ -10353,7 +10354,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-601.mp4",
    "thumbnail": "thumbs/IFM-601.jpg"
   },
   {
@@ -10373,7 +10374,7 @@ window.IFM_DATA =
    "consent": "Minors visible",
    "session": "IYA teens programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-602.mp4",
    "thumbnail": "thumbs/IFM-602.jpg"
   },
   {
@@ -10433,7 +10434,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop — 1 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-605.mp4",
    "thumbnail": "thumbs/IFM-605.jpg"
   },
   {
@@ -10453,7 +10454,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop — 1 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-606.mp4",
    "thumbnail": "thumbs/IFM-606.jpg"
   },
   {
@@ -10473,7 +10474,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-607.mp4",
    "thumbnail": "thumbs/IFM-607.jpg"
   },
   {
@@ -10493,7 +10494,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-608.mp4",
    "thumbnail": "thumbs/IFM-608.jpg"
   },
   {
@@ -10533,7 +10534,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-610.mp4",
    "thumbnail": "thumbs/IFM-610.jpg"
   },
   {
@@ -10553,7 +10554,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-611.mp4",
    "thumbnail": "thumbs/IFM-611.jpg"
   },
   {
@@ -10573,7 +10574,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-612.mp4",
    "thumbnail": "thumbs/IFM-612.jpg"
   },
   {
@@ -10593,7 +10594,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-613.mp4",
    "thumbnail": "thumbs/IFM-613.jpg"
   },
   {
@@ -10613,7 +10614,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "Yes",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-614.mp4",
    "thumbnail": "thumbs/IFM-614.jpg"
   },
   {
@@ -10633,7 +10634,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-615.mp4",
    "thumbnail": "thumbs/IFM-615.jpg"
   },
   {
@@ -10653,7 +10654,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-616.mp4",
    "thumbnail": "thumbs/IFM-616.jpg"
   },
   {
@@ -10673,7 +10674,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-617.mp4",
    "thumbnail": "thumbs/IFM-617.jpg"
   },
   {
@@ -10693,7 +10694,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-618.mp4",
    "thumbnail": "thumbs/IFM-618.jpg"
   },
   {
@@ -10713,7 +10714,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-619.mp4",
    "thumbnail": "thumbs/IFM-619.jpg"
   },
   {
@@ -10733,7 +10734,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-620.mp4",
    "thumbnail": "thumbs/IFM-620.jpg"
   },
   {
@@ -10753,7 +10754,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-621.mp4",
    "thumbnail": "thumbs/IFM-621.jpg"
   },
   {
@@ -10773,7 +10774,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-622.mp4",
    "thumbnail": "thumbs/IFM-622.jpg"
   },
   {
@@ -10793,7 +10794,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-623.mp4",
    "thumbnail": "thumbs/IFM-623.jpg"
   },
   {
@@ -10853,7 +10854,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-626.mp4",
    "thumbnail": "thumbs/IFM-626.jpg"
   },
   {
@@ -10933,7 +10934,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "",
    "social": "Yes",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-630.mp4",
    "thumbnail": "thumbs/IFM-630.jpg"
   },
   {
@@ -11033,7 +11034,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-635.mp4",
    "thumbnail": "thumbs/IFM-635.jpg"
   },
   {
@@ -11053,7 +11054,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Boardroom workshop — 9 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-636.mp4",
    "thumbnail": "thumbs/IFM-636.jpg"
   },
   {
@@ -11073,7 +11074,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Boardroom workshop — 9 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-637.mp4",
    "thumbnail": "thumbs/IFM-637.jpg"
   },
   {
@@ -11093,7 +11094,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Boardroom workshop — 9 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-638.mp4",
    "thumbnail": "thumbs/IFM-638.jpg"
   },
   {
@@ -11113,7 +11114,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Boardroom workshop — 9 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-639.mp4",
    "thumbnail": "thumbs/IFM-639.jpg"
   },
   {
@@ -11133,7 +11134,7 @@ window.IFM_DATA =
    "consent": "Adults only",
    "session": "Boardroom workshop — 9 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-640.mp4",
    "thumbnail": "thumbs/IFM-640.jpg"
   },
   {

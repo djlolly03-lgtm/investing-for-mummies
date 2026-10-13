@@ -513,10 +513,15 @@ def main():
             'description': r.get('description') or '',
             'session': (r.get('session') or '').strip(),
             'slide_text': slide_text_for(r),
-            # Preview clips are built with ffmpeg -an to hit the <=200KB asset budget, so
-            # they carry no audio at all; the AI chapter renders are silent too. Only the
-            # game reels have a music bed. Flagged so the player can say so — a video that
-            # plays with no sound and no explanation just reads as broken.
+            # Flagged so the player can say so — a video that plays with no sound and no
+            # explanation just reads as broken.
+            # CORRECTED 12 Oct 2026. This used to claim previews "are built with ffmpeg -an
+            # ... they carry no audio at all", which stopped being true the moment previews
+            # started being built for talking-head footage: ifm-make-previews.sh,
+            # ifm-previews-from-drive.sh and ifm-fetch-previews.py all keep audio at 64k
+            # mono, deliberately, because dropping the voice is what made 27 clips read as
+            # broken. The comment was wrong but the code never was — is_silent() has always
+            # asked ffprobe whether an audio stream exists rather than assuming it.
             'silent': is_silent(r),
         }
         if r['id'] in EXCLUDE:

@@ -1,5 +1,5 @@
 #!/usr/bin/env /usr/bin/python3
-"""Bring any thumbnail over 25KB or preview clip over 200KB back inside budget.
+"""Bring any thumbnail over 25KB or preview clip over 400KB back inside budget.
 
     /usr/bin/python3 tighten-media.py            # report what is over, change nothing
     /usr/bin/python3 tighten-media.py --fix      # re-encode the offenders in place
@@ -24,7 +24,7 @@ import os, subprocess, sys, glob
 HERE = os.path.dirname(os.path.abspath(__file__))
 THUMBS = os.path.join(HERE, '..', 'thumbs')
 CLIPS = os.path.join(HERE, '..', 'clips')
-TCAP, CCAP = 25 * 1024, 200 * 1024
+TCAP, CCAP = 25 * 1024, 400 * 1024
 
 
 def sh(a, t=900):

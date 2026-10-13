@@ -57,7 +57,7 @@ MAP = os.path.join(CONTENT, 'v1-prototype', 'media-map.js')
 CLIPS = os.path.join(CONTENT, 'clips')
 FAILS = os.path.join(CONTENT, 'v1-prototype', '.preview-failures.json')
 TMP = '/tmp/_ifm_prev'
-CAP = 200 * 1024
+CAP = 400 * 1024
 SECS = 12
 FILE_RX = re.compile(r'/file/d/([A-Za-z0-9_-]+)')
 
@@ -135,7 +135,7 @@ def first_audio_stream(src):
 
 
 def encode(src, dst):
-    """12s preview, <=200KB, audio kept where there is a usable track.
+    """12s preview, <=400KB, audio kept where there is a usable track.
 
     Quality steps down only as far as the cap requires, rather than starting harsh: the
     first version of this logic gave the BUSIEST clips the worst compression, which is
@@ -147,7 +147,7 @@ def encode(src, dst):
     was losing the clip entirely.
     """
     ai = first_audio_stream(src)
-    for crf, w, ab in ((30, 480, '64k'), (32, 426, '64k'), (34, 384, '48k'), (36, 320, '48k')):
+    for crf, w, ab in ((26, 640, '64k'), (28, 560, '64k'), (30, 480, '64k'), (33, 400, '48k')):
         cmd = ['ffmpeg', '-nostdin', '-y', '-t', str(SECS), '-i', src, '-map', '0:v:0']
         if ai is not None:
             cmd += ['-map', '0:a:%d' % ai, '-c:a', 'aac', '-b:a', ab, '-ac', '1']
@@ -160,6 +160,41 @@ def encode(src, dst):
         if os.path.exists(dst) and 0 < os.path.getsize(dst) <= CAP:
             return True
     return os.path.exists(dst) and os.path.getsize(dst) > 0
+
+
+def link_clips():
+    """Point every row that now has a clip on disk at that clip, in data.js.
+
+    WITHOUT THIS THE WHOLE RUN IS WASTED, and silently. media-audit.py probes the URL in a
+    row's `video` or `drive` field and deliberately refuses a Drive viewer link, because that
+    is a web page and can never play inline. These rows have an empty `video` and a Drive
+    viewer `drive`, so candidate_url() returns None, the clip is never probed, media-map
+    never learns it plays, and the row stays hidden no matter how many times it is deployed.
+
+    Caught by checking rather than assuming: 52 clips were built, shipped and would have
+    changed nothing. The two-deploy ritual would have run and the rows would still have been
+    invisible, which looks exactly like the tool not working.
+
+    data.js is edited by parsing the JSON between `window.IFM_DATA = ` and the trailing `;`,
+    per CLAUDE.md — never by substituting text in place.
+    """
+    data = os.path.join(CONTENT, 'data.js')
+    s = open(data, encoding='utf-8').read()
+    a = s.index('window.IFM_DATA =') + len('window.IFM_DATA =')
+    b = s.rindex(';')
+    head, d, tail = s[:a], json.loads(s[a:b]), s[b:]
+    n = 0
+    for r in d['catalogue']:
+        if str(r.get('video') or '').strip():
+            continue
+        if not os.path.exists(os.path.join(CLIPS, '%s.mp4' % r['id'])):
+            continue
+        r['video'] = 'https://ifm-deploy.vercel.app/content/clips/%s.mp4' % r['id']
+        n += 1
+    if n:
+        open(data, 'w', encoding='utf-8').write(
+            head + json.dumps(d, ensure_ascii=False, indent=1) + tail)
+    return n
 
 
 def main():
@@ -228,7 +263,8 @@ def main():
                 os.remove(src)
 
     json.dump(fails, open(FAILS, 'w'), indent=1)
-    print('\n%d built, %d failed.' % (ok, bad))
+    linked = link_clips()
+    print('\n%d built, %d failed, %d rows pointed at their new clip.' % (ok, bad, linked))
     if ok:
         print('These are on disk but still INVISIBLE in the Library. media-map.js only '
               'believes the live server, so finish with:\n'

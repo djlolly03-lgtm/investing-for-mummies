@@ -33,7 +33,7 @@ DEPLOY="$ROOT/CLAUDE"
 OUT="$DEPLOY/content/clips"
 TODO="${TODO_JSON:-/tmp/todo.json}"
 LIB_ID="1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY"
-BUDGET_KB=200
+BUDGET_KB=400
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT INT TERM
 

@@ -16,7 +16,7 @@ WHY ALL THREE IN ONE PASS
     when ffmpeg fails, so a crashed run cannot leave gigabytes behind.
 
 BUDGET, enforced not assumed
-    thumb <=25KB, clip <=200KB. Both are re-encoded harder if the first attempt overshoots,
+    thumb <=25KB, clip <=400KB. Both are re-encoded harder if the first attempt overshoots,
     and a file that still overshoots is reported rather than silently shipped.
 
 HEIC
@@ -69,7 +69,7 @@ def shrink_jpeg(out, cap=25 * 1024):
     return os.path.getsize(out) <= cap
 
 
-def clip(src, out, cap=200 * 1024):
+def clip(src, out, cap=400 * 1024):
     for crf, scale in ((30, 480), (34, 400), (38, 360)):
         sh(['ffmpeg', '-nostdin', '-y', '-t', '12', '-i', src,
             '-vf', "scale='min(%d,iw)':-2" % scale, '-c:v', 'libx264', '-crf', str(crf),
@@ -161,7 +161,7 @@ def main():
     json.dump(out, open('/tmp/rowmedia-result.json', 'w'), indent=1)
     bad = [r for r in out if not r['thumb']]
     over = [r for r in out if isinstance(r['thumb'], int) and r['thumb'] > 25 * 1024] + \
-           [r for r in out if r['clip'] and r['clip'] > 200 * 1024]
+           [r for r in out if r['clip'] and r['clip'] > 400 * 1024]
     print('\n%d jobs, %d without a thumbnail, %d over budget' % (len(out), len(bad), len(over)))
     for r in bad:
         print('  no thumb: %s (%s)' % (r['id'], r['cover']))

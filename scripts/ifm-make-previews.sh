@@ -34,7 +34,7 @@ MODE="${1:---build}"
 ROOT=$(git -C "$(dirname "$0")" rev-parse --show-toplevel)
 DEPLOY="$ROOT/CLAUDE"
 OUT="$DEPLOY/content/clips"
-BUDGET_KB=200
+BUDGET_KB=400
 
 command -v ffmpeg  >/dev/null || { echo "ffmpeg not found (brew install ffmpeg)" >&2; exit 1; }
 command -v ffprobe >/dev/null || { echo "ffprobe not found" >&2; exit 1; }
