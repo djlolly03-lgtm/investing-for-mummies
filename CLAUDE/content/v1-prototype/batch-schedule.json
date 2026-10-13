@@ -1,0 +1,39 @@
+{
+ "_source": "Read off the IFM admin dashboard (ifm-dashboard-iota.vercel.app/ifm-admin-portal, Batch-wise) on 13 Oct 2026. This is the authority for which audience a session belongs to; the session LABELS in the catalogue are not — several say 'teens' for young-adult batches and carry upload dates rather than class dates.",
+ "_timezone": "Asia/Kolkata (+0530). iPhone capture times are recorded with this offset, so they compare directly.",
+ "_how_to_use": "Each video master carries com.apple.quicktime.creationdate in its moov atom. Match that datetime to a window below to get the audience. Date alone is NOT enough — see _collisions.",
+ "_collisions": [
+  "18-22 May 2026: IYA B1 (16:00-18:00) and IFT Batch 1 (14:00-15:30) ran on the SAME DAYS. Time of day separates them cleanly; date alone would merge two audiences, one of which is minors.",
+  "27-30 Jul 2026: IYA B3 (14:30-16:30) and IFT Batch 4 (14:00-15:30) ran on the same days AND their times OVERLAP between 14:30 and 15:30. A clip captured in that hour cannot be assigned by timestamp alone and must be judged by eye or left unassigned. This is the one window the method cannot resolve."
+ ],
+ "batches": [
+  {"id": "IYA-B1", "audience": "Young Adults", "label": "IYA — B1",
+   "from": "2026-05-18", "to": "2026-05-22", "start": "16:00", "end": "18:00"},
+  {"id": "IYA-B2", "audience": "Young Adults", "label": "IYA — B2",
+   "from": "2026-06-15", "to": "2026-06-18", "start": "16:00", "end": "18:00"},
+  {"id": "IYA-B3", "audience": "Young Adults", "label": "IYA — B3",
+   "from": "2026-07-27", "to": "2026-07-30", "start": "14:30", "end": "16:30"},
+
+  {"id": "IFT-1", "audience": "Teens", "label": "IFT — Batch 1",
+   "from": "2026-05-18", "to": "2026-05-22", "start": "14:00", "end": "15:30"},
+  {"id": "IFT-2", "audience": "Teens", "label": "IFT — Batch 2",
+   "from": "2026-06-09", "to": "2026-06-12", "start": "14:00", "end": "15:30"},
+  {"id": "IFT-3", "audience": "Teens", "label": "IFT — Batch 3",
+   "from": "2026-06-22", "to": "2026-06-25", "start": "14:00", "end": "15:30"},
+  {"id": "IFT-4", "audience": "Teens", "label": "IFT — Batch 4",
+   "from": "2026-07-27", "to": "2026-07-30", "start": "14:00", "end": "15:30"}
+ ],
+ "_default_audience": "Mummies",
+ "_default_rule": "Confirmed by Aditya 13 Oct 2026: 'these were the only non-mummies batches so far'. So the seven windows below are the COMPLETE set of non-mummies teaching, and anything shot outside them is Mummies. That makes the default safe rather than a guess — the risk of a wrong default is showing adult women's footage as adult women's footage.",
+
+ "_matching_rule": [
+  "Match on DATE first, then use time ONLY to separate the two date ranges where both audiences ran.",
+  "Strict time windows do not work. The IYA B3 clips were captured 16:05-17:44 against a scheduled 14:30-16:30, so a strict window discarded 70 of 113 real clips as 'outside every class'. Sessions run over, and the dashboard times are nominal.",
+  "15-18 Jun is IYA only. 9-12 Jun and 22-25 Jun are IFT only. Date alone settles those three.",
+  "18-22 May ran IYA (16:00-18:00) and IFT (14:00-15:30). The gap between them is clean, so split at 15:45.",
+  "27-30 Jul ran IYA (14:30-16:30) and IFT (14:00-15:30) and these OVERLAP. Split at 15:45 as well, but anything captured between 14:30 and 15:45 on those dates is genuinely undecidable and must be left for a human. Measured: zero clips in the folder examined fall in that gap, so the overlap may never bite in practice.",
+  "Everything else is Mummies."
+ ],
+ "_split_minute": "15:45",
+ "_undecidable_window": {"from": "2026-07-27", "to": "2026-07-30", "start": "14:30", "end": "15:45"}
+}

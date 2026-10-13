@@ -224,5 +224,16 @@ if __name__ == '__main__':
         r = scan()
         print('%d folders, %d media files, %d errors'
               % (len(r['folders']), len(r['files']), len(r['errors'])))
+        # --scan used to print these counts and throw the result away, so .ingest-scan.json
+        # only ever advanced when someone ran the slower --validate. It sat three weeks stale
+        # while every run re-walked Drive and kept the answer in a scratch file, and anything
+        # needing an id-to-path map (preview building, capture-time reads) silently covered
+        # only the files the last --validate happened to see. A single pass is weaker evidence
+        # than three, so it is recorded as such rather than being passed off as validated.
+        r['stable'] = False
+        r['passes'] = 1
+        r['scanned_at'] = __import__('time').strftime('%Y-%m-%dT%H:%M:%S')
+        json.dump(r, open(OUT, 'w'), ensure_ascii=False)
+        print('wrote %s  (single pass — marked stable:false)' % os.path.basename(OUT))
     else:
         report()

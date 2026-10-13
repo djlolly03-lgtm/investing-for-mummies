@@ -82,7 +82,12 @@ const STRUCTURED = [
   ['Hiral portrait for an agency',                ['IFM-067', 'IFM-068', 'IFM-069', 'IFM-319']],
   ['compounding',                                 ['IFM-009', 'IFM-018', 'IFM-286', 'IFM-R07', 'IFM-R11']],
   ['savings vs investing',                        ['IFM-020']],
-  ['classroom moment from the teens workshop',    ['IFM-279', 'IFM-288', 'IFM-291', 'IFM-293']],
+  // Rewritten 13 Oct 2026. IFM-279 was in this list as a teens result and it is not one:
+  // its master was captured 27-30 Jul after 16:00, when IFT Batch 4 had finished at 15:30
+  // and IYA B3 (young adults) was in the room, so `audience` now reads Young Adults and it
+  // has correctly fallen to rank 44. The other three were certificate group photos rather
+  // than classroom moments. The query now returns six genuine Teens classroom frames.
+  ['classroom moment from the teens workshop',    ['IFM-280','IFM-284','IFM-287','IFM-432','IFM-435','IFM-438']],
   // Was `null` — "none exist". True at 328 assets; falsified on 18 Sep 2026 when Sakshi's
   // testimonial folders were catalogued one row per person. The content changed, not the engine.
   ['testimonial video',                           ['IFM-398', 'IFM-399', 'IFM-397', 'IFM-402']],

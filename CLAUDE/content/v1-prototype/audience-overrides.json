@@ -1,0 +1,236 @@
+{
+ "_what": "Rows whose audience was decided by a human, not by the clock. assign-audience.py applies this LAST, so it beats the schedule match and survives every re-run.",
+ "_why_this_file_exists": "Capture time cannot separate IYA B3 from IFT Batch 4 on 27-30 Jul: the two batches overlapped between 14:30 and 15:45 and one of them is minors. Rather than guess, those rows were shown to Aditya as thumbnails and he ruled on them.",
+ "rows": {
+  "IFM-432": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-433": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-434": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-435": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-282": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-436": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-437": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-438": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-538": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-286": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-445": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-446": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-447": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-448": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-449": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-539": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-450": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-280": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-284": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-451": {
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "_why": "Confirmed by Aditya 13 Oct 2026 from the contact sheet. Captured 27-30 Jul between 14:30 and 15:45, when IYA B3 and IFT Batch 4 overlapped, so the timestamp alone could not decide. The frames are unambiguously school-age."
+  },
+  "IFM-288": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-289": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-290": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-291": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-292": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-293": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-294": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-439": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-440": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-461": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-462": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-463": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-464": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-465": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-466": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-467": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-468": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-469": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-470": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-471": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-472": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-523": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-537": {
+   "audience": "Teens",
+   "batch": "",
+   "_why": "No capture time survives in the file (re-export stripped it), so it would have defaulted to Mummies and lost the minors protection. The frames are plainly school-age. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-602": {
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "_why": "Its own on-screen overlay reads 'Join us in our Investing for Young Adults session'. Filed under the self-contradictory label 'IYA teens programme'. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-603": {
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "_why": "Catch-all for the 114-clip Aug shoot. Every one of its 113 readable clips was captured 16:05-17:44 on 27-30 Jul, hours after IFT Batch 4 ended at 15:30, so it cannot be teens. Its own description says 'IYA (Investing for Young Adults)' and then calls it a teens session. Confirmed by Aditya 13 Oct 2026."
+  },
+  "IFM-460": {
+   "audience": "Mummies",
+   "batch": "",
+   "_why": "Hiral's piece-to-camera, recorded on the day of the June teens workshop. The SESSION was teens but the only person in frame is an adult, so tagging it Teens would block usable founder footage under the minors rule without protecting any child. Confirmed by Aditya 13 Oct 2026."
+  }
+ }
+}

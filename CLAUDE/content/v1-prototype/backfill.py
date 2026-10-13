@@ -512,6 +512,18 @@ def main():
             'drive': r.get('drive link') or r.get('video') or '',
             'description': r.get('description') or '',
             'session': (r.get('session') or '').strip(),
+            # Which of the three batches this belongs to, and when it was actually shot.
+            # Carried straight through from data.js rather than re-derived: `audience` is
+            # set by assign-audience.py from the capture time in the master, or by a human
+            # ruling where two batches overlapped. It must NOT be inferred from the session
+            # text — that text is what caused the problem, with 19 rows filed under "IYA
+            # teens programme" when IYA is young adults.
+            # `captured_at` is the real shoot time. It is deliberately separate from `date`,
+            # which is mostly the upload moment: the IYA August footage carries 2026-10-01
+            # for classes held in July.
+            'audience': (r.get('audience') or '').strip(),
+            'batch': (r.get('batch') or '').strip(),
+            'captured_at': (r.get('captured_at') or '').strip(),
             'slide_text': slide_text_for(r),
             # Flagged so the player can say so — a video that plays with no sound and no
             # explanation just reads as broken.

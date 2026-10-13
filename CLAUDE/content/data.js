@@ -17,7 +17,8 @@ window.IFM_DATA ={
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R01.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R01.mp4",
-   "drive link": "https://ifm-deploy.vercel.app/content/reels/moneymap-15s.mp4"
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/moneymap-15s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-R02",
@@ -32,7 +33,8 @@ window.IFM_DATA ={
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R02.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R02.mp4",
-   "drive link": "https://ifm-deploy.vercel.app/content/reels/bbf-15s.mp4"
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/bbf-15s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-R03",
@@ -47,7 +49,8 @@ window.IFM_DATA ={
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R03.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R03.mp4",
-   "drive link": "https://ifm-deploy.vercel.app/content/reels/nwv-15s.mp4"
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/nwv-15s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-R04",
@@ -62,7 +65,8 @@ window.IFM_DATA ={
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R04.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R04.mp4",
-   "drive link": "https://ifm-deploy.vercel.app/content/reels/buckets-15s.mp4"
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/buckets-15s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-R05",
@@ -77,7 +81,8 @@ window.IFM_DATA ={
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R05.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R05.mp4",
-   "drive link": "https://ifm-deploy.vercel.app/content/reels/stockrush-15s.mp4"
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/stockrush-15s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-R06",
@@ -96,7 +101,8 @@ window.IFM_DATA ={
    "comments": 0,
    "ig link": "https://www.instagram.com/investingformummies/p/DZ6XcJziGOw/",
    "published date": "June 22, 2026",
-   "drive link": "https://ifm-deploy.vercel.app/content/reels/srpro-15s.mp4"
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/srpro-15s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-R07",
@@ -111,7 +117,8 @@ window.IFM_DATA ={
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R07.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R07.mp4",
-   "drive link": "https://ifm-deploy.vercel.app/content/reels/hidden-15s.mp4"
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/hidden-15s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-R08",
@@ -126,7 +133,8 @@ window.IFM_DATA ={
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R08.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R08.mp4",
-   "drive link": "https://ifm-deploy.vercel.app/content/reels/swayamvar-15s.mp4"
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/swayamvar-15s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-R09",
@@ -141,7 +149,8 @@ window.IFM_DATA ={
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R09.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R09.mp4",
-   "drive link": "https://ifm-deploy.vercel.app/content/reels/fundgoal-15s.mp4"
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/fundgoal-15s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-R10",
@@ -156,7 +165,8 @@ window.IFM_DATA ={
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R10.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R10.mp4",
-   "drive link": "https://ifm-deploy.vercel.app/content/reels/wealth-15s.mp4"
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/wealth-15s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-R11",
@@ -171,7 +181,8 @@ window.IFM_DATA ={
    "notes": "Auto-built game promo reel (Seedance 2.0 + real screens + IFM branding). 15s 9:16.",
    "thumbnail": "thumbs/IFM-R11.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-R11.mp4",
-   "drive link": "https://ifm-deploy.vercel.app/content/reels/lifestyle-time-machine-15s.mp4"
+   "drive link": "https://ifm-deploy.vercel.app/content/reels/lifestyle-time-machine-15s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-001",
@@ -185,7 +196,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1lOaOhLWBhSwNsRQy8DvPYMDT6G5_2T8c/view",
    "date created": "2026-03-12",
    "notes": "Suggested use: session recap carousel",
-   "thumbnail": "thumbs/IFM-001.jpg"
+   "thumbnail": "thumbs/IFM-001.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-12T11:53:36+0530"
   },
   {
    "id": "IFM-002",
@@ -199,7 +213,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1uEgijIwl8oxfKcIL-j-MPTQtoWLFE6cP/view",
    "date created": "2026-03-12",
    "notes": "Suggested use: community proof post",
-   "thumbnail": "thumbs/IFM-002.jpg"
+   "thumbnail": "thumbs/IFM-002.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-003",
@@ -213,7 +228,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1g132C_jP_gspHXNRz2ai91SZGBp6CxYz/view",
    "date created": "2026-03-12",
    "notes": "Suggested use: engagement reel b-roll, behind-the-scenes post",
-   "thumbnail": "thumbs/IFM-003.jpg"
+   "thumbnail": "thumbs/IFM-003.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-12T11:53:42+0530"
   },
   {
    "id": "IFM-004",
@@ -228,7 +246,8 @@ window.IFM_DATA ={
    "date created": "2026-03-12",
    "notes": "Trim into reels / highlight clips · Hover-play preview hosted (first 30s); Download still gets the full original.",
    "thumbnail": "thumbs/IFM-004.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-004.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-004.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-005",
@@ -242,7 +261,8 @@ window.IFM_DATA ={
    "date created": "2026-06-09",
    "notes": "On IG grid 11 Jun. Two visual variants on site",
    "thumbnail": "https://ifm-deploy.vercel.app/carousel_spacex_higgsfield/slide_01.png",
-   "download url": "https://ifm-deploy.vercel.app/carousel_spacex_higgsfield/spacex-carousel.zip"
+   "download url": "https://ifm-deploy.vercel.app/carousel_spacex_higgsfield/spacex-carousel.zip",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-006",
@@ -255,7 +275,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter1-why-saving-isnt-enough/chap1hero.mp4",
    "date created": "2026-06-11",
    "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap1.png",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-006.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-006.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-007",
@@ -269,7 +290,8 @@ window.IFM_DATA ={
    "date created": "2026-06-11",
    "notes": "chap2test1 = duplicate of Ch.1; hero pending",
    "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap2.png",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-007.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-007.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-008",
@@ -282,7 +304,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter3-purchasing-power/chap3hero.mp4",
    "date created": "2026-06-11",
    "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap3.png",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-008.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-008.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-009",
@@ -295,7 +318,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter4-magic-of-compounding/chap4hero.mp4",
    "date created": "2026-06-11",
    "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap4.png",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-009.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-009.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-010",
@@ -308,7 +332,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter5-small-amounts-matter/chap5hero.mp4",
    "date created": "2026-06-11",
    "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap5.png",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-010.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-010.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-011",
@@ -321,7 +346,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter6-growing-with-income/chap6hero.mp4",
    "date created": "2026-06-11",
    "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap6.png",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-011.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-011.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-012",
@@ -334,7 +360,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter7-cost-of-waiting/chap7hero.mp4",
    "date created": "2026-06-11",
    "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap7.png",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-012.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-012.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-013",
@@ -347,7 +374,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter8-hidden-treasures/chap8hero.mp4",
    "date created": "2026-06-11",
    "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap8.png",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-013.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-013.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-014",
@@ -360,7 +388,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter9-goals-first/chap9hero.mp4",
    "date created": "2026-06-11",
    "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap9.png",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-014.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-014.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-015",
@@ -373,7 +402,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/wealth-conversation-videos/chapter10-three-buckets/chap10hero.mp4",
    "date created": "2026-06-11",
    "thumbnail": "https://ifm-deploy.vercel.app/wealth-conversation-videos/thumbs/chap10.png",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-015.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-015.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-016",
@@ -386,7 +416,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1eVutEOYaeP5f1oxyIQsmxwmxBNs-mrx3",
    "date created": "2026-06-11",
    "notes": "4 slides — includes motion .mp4 (Join Investing for Mummies.mp4)",
-   "thumbnail": "thumbs/IFM-016.jpg"
+   "thumbnail": "thumbs/IFM-016.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-017",
@@ -403,7 +434,8 @@ window.IFM_DATA ={
    "likes": 5,
    "comments": 0,
    "ig link": "https://www.instagram.com/investingformummies/p/DaCGJT2iCgx/",
-   "published date": "June 25, 2026"
+   "published date": "June 25, 2026",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-018",
@@ -416,7 +448,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1a17dQ-OiJ479dcYTNbyLQm7JYPWSCpn5",
    "date created": "2026-06-11",
    "notes": "5 slides",
-   "thumbnail": "thumbs/IFM-018.jpg"
+   "thumbnail": "thumbs/IFM-018.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-019",
@@ -429,7 +462,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1YuNP75eJAwlot448jHgzS8XS5NmJV3V0",
    "date created": "2026-06-11",
    "notes": "1 file only — confirm full set with Aakara",
-   "thumbnail": "thumbs/IFM-019.jpg"
+   "thumbnail": "thumbs/IFM-019.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-020",
@@ -442,7 +476,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1uMZq13u1Hf_nvMX6WMqPcAs2fjII7mB9",
    "date created": "2026-06-11",
    "notes": "5 slides",
-   "thumbnail": "thumbs/IFM-020.jpg"
+   "thumbnail": "thumbs/IFM-020.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-021",
@@ -459,7 +494,8 @@ window.IFM_DATA ={
    "likes": 9,
    "comments": 0,
    "ig link": "https://www.instagram.com/investingformummies/p/DZwE3DRmINY/",
-   "published date": "June 18, 2026"
+   "published date": "June 18, 2026",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-022",
@@ -472,7 +508,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1amkwMb8xJ15ucjtkq6AqDLiqX6NB4vuv",
    "date created": "2026-06-11",
    "notes": "On IG grid 11 Jun; 6 files incl. .psd source",
-   "thumbnail": "thumbs/IFM-022.jpg"
+   "thumbnail": "thumbs/IFM-022.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-023",
@@ -485,7 +522,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1L9ushgmQ3pmO3JF5yL-UdtwQT3xCli8-",
    "date created": "2026-06-11",
    "notes": "On IG grid 11 Jun; 7 slides",
-   "thumbnail": "thumbs/IFM-023.jpg"
+   "thumbnail": "thumbs/IFM-023.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-024",
@@ -498,7 +536,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1UsqgAdCafw_Qu0HIPNi_JmzIctr-qNN-",
    "date created": "2026-06-11",
    "notes": "On IG grid 11 Jun; 5 slides",
-   "thumbnail": "thumbs/IFM-024.jpg"
+   "thumbnail": "thumbs/IFM-024.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-025",
@@ -511,7 +550,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/17EErsy4pp7huiMwSLU8lGcWr2OQxifvE",
    "date created": "2026-06-11",
    "notes": "On IG grid 11 Jun",
-   "thumbnail": "thumbs/IFM-025.jpg"
+   "thumbnail": "thumbs/IFM-025.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-026",
@@ -524,7 +564,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1YuwVgssHrbwh6eyLtgiBYtbWqOkP9lQS",
    "date created": "2026-06-11",
    "notes": "4 artboards",
-   "thumbnail": "thumbs/IFM-026.jpg"
+   "thumbnail": "thumbs/IFM-026.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-027",
@@ -541,7 +582,8 @@ window.IFM_DATA ={
    "likes": 54,
    "comments": 1,
    "ig link": "https://www.instagram.com/investingformummies/reel/DaIiEeBopt1/",
-   "published date": "June 28, 2026"
+   "published date": "June 28, 2026",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-028",
@@ -554,7 +596,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/17U-InCX9Lwgf-PYS7lSsDA6HGB-_Ayzp",
    "date created": "2026-06-11",
    "notes": "PSD source only — ask Aakara for PNG exports Repaired 21 Sep 2026: typed as a video but its folder holds five PNG artboards and no video at all, so it had no playable preview and no thumbnail and was invisible in the Library. Retyped to a static story set and given a cover from Artboard 1.",
-   "thumbnail": "thumbs/IFM-028.jpg"
+   "thumbnail": "thumbs/IFM-028.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-029",
@@ -567,7 +610,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1Zs1ITTOI-euFdNcuTpXaW7FZ9qZB-r9W",
    "date created": "2026-06-11",
    "notes": "6 artboards — S3 appears missing from batch",
-   "thumbnail": "thumbs/IFM-029.jpg"
+   "thumbnail": "thumbs/IFM-029.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-030",
@@ -580,7 +624,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1MG3bdcOqnbOENYgv9CfI1Ij3X_dd9ZWX",
    "date created": "2026-06-11",
    "notes": "6 artboards",
-   "thumbnail": "thumbs/IFM-030.jpg"
+   "thumbnail": "thumbs/IFM-030.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-031",
@@ -593,7 +638,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1l7miwiXG526HdJae1KxIylCVP_3BG7A1",
    "date created": "2026-06-11",
    "notes": "5 artboards",
-   "thumbnail": "thumbs/IFM-031.jpg"
+   "thumbnail": "thumbs/IFM-031.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-032",
@@ -606,7 +652,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1SDPRVmszXMKjkqkpPhuAoKSHEJxihmIM",
    "date created": "2026-06-11",
    "notes": "3 artboards — drives traffic to website game",
-   "thumbnail": "thumbs/IFM-032.jpg"
+   "thumbnail": "thumbs/IFM-032.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-033",
@@ -619,7 +666,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/117PQmNIpH-dDe_KBtS6EQO1YtFTdmIcY",
    "date created": "2026-06-11",
    "notes": "On IG grid alongside the Buzz variant (IFM-005)",
-   "thumbnail": "thumbs/IFM-033.jpg"
+   "thumbnail": "thumbs/IFM-033.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-034",
@@ -630,7 +678,8 @@ window.IFM_DATA ={
    "keywords": "inflation, rising costs, future expenses, rupee notes, hands exchanging money, mint palette, hook, urgency",
    "description": "Mint-green cover with hands exchanging a fan of ₹500 notes and falling currency: 'Your future is getting expensive Faaast!'",
    "date created": "2026-06-11",
-   "notes": "On IG grid but source files NOT in the Drive June folder — ask Aakara to upload"
+   "notes": "On IG grid but source files NOT in the Drive June folder — ask Aakara to upload",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-035",
@@ -643,7 +692,8 @@ window.IFM_DATA ={
    "date created": "2026-06-11",
    "notes": "Source carousel now in Drive (Aakara → Workshops → Women's, 4 slides) — was missing in June. On IG grid. Aakara delivery copy of the same 4 slides also lives at folder 1CIzSDS1uy5Vx0fLQVdcJF3FuJMMD67kF (June/Workshops/Women's); primary drive link left as-is.",
    "drive link": "https://drive.google.com/drive/folders/1uR_OTMYRvv2J_AWQfhyEqKnghNUvGe9R",
-   "thumbnail": "thumbs/IFM-035.jpg"
+   "thumbnail": "thumbs/IFM-035.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-036",
@@ -656,7 +706,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/content/teasers/swayamvar-teaser.mp4",
    "date created": "2026-06-12",
    "notes": "v3 photoreal vertical after team feedback. Silent — add audio in IG editor (Fa9la by Shehnai Guy from 0:09)",
-   "thumbnail": "thumbs/IFM-036.jpg"
+   "thumbnail": "thumbs/IFM-036.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-037",
@@ -670,7 +721,8 @@ window.IFM_DATA ={
    "date created": "2026-06-13",
    "notes": "Also rendered: badge-only cuts ifm-hero-logo.mp4 (5s, 1 spin) & ifm-hero-logo-9s.mp4 (9s, 2 spins); poster still ifm-hero-lockup-still.png. Embed with autoplay muted loop playsinline + poster. Tagline 'Nurturing financially confident women' is AI-added, not official. Relinked 21 Sep 2026: the row pointed at our own hosted copy, so the Drive original read as uncatalogued in the corpus reconciliation. drive link now targets the Drive master; the hosted copy remains the playable preview.",
    "thumbnail": "thumbs/IFM-037.jpg",
-   "video url": "https://ifm-deploy.vercel.app/ifm-hero-lockup-9s.mp4"
+   "video url": "https://ifm-deploy.vercel.app/ifm-hero-lockup-9s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-038",
@@ -683,7 +735,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/crorepati-lane.html",
    "date created": "2026-06-13",
    "notes": "Standalone on Vercel; not embedded on the homepage yet (awaiting play-test).",
-   "thumbnail": "thumbs/IFM-038.jpg"
+   "thumbnail": "thumbs/IFM-038.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-039",
@@ -696,7 +749,8 @@ window.IFM_DATA ={
    "drive link": "https://ifm-deploy.vercel.app/quiz.html?role=host",
    "date created": "2026-06-14",
    "notes": "Teacher-run tool, opened directly (not a homepage card). Players auto-join via the QR.",
-   "thumbnail": "thumbs/IFM-039.jpg"
+   "thumbnail": "thumbs/IFM-039.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-040",
@@ -711,7 +765,8 @@ window.IFM_DATA ={
    "notes": "First experiment in the pizza-split series. Higgsfield Kling 3.0 from the round logo. Needs manual drag into Drive Content Library. Relinked 21 Sep 2026: the row pointed at our own hosted copy, so the Drive original read as uncatalogued in the corpus reconciliation. drive link now targets the Drive master; the hosted copy remains the playable preview.",
    "thumbnail": "thumbs/IFM-040.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-040.mp4",
-   "video url": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-kling.mp4"
+   "video url": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-kling.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-041",
@@ -726,7 +781,8 @@ window.IFM_DATA ={
    "notes": "Alternate render of IFM-040; pick one. Needs manual drag into Drive Content Library. Relinked 21 Sep 2026: the row pointed at our own hosted copy, so the Drive original read as uncatalogued in the corpus reconciliation. drive link now targets the Drive master; the hosted copy remains the playable preview.",
    "thumbnail": "thumbs/IFM-041.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-041.mp4",
-   "video url": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-seedance.mp4"
+   "video url": "https://ifm-deploy.vercel.app/ifm-logo-pizza-slices-seedance.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-042",
@@ -741,7 +797,8 @@ window.IFM_DATA ={
    "notes": "Reusable cinematic brand sting. Needs manual drag into Drive Content Library. Relinked 21 Sep 2026: the row pointed at our own hosted copy, so the Drive original read as uncatalogued in the corpus reconciliation. drive link now targets the Drive master; the hosted copy remains the playable preview.",
    "thumbnail": "thumbs/IFM-042.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-042.mp4",
-   "video url": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-kling.mp4"
+   "video url": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-kling.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-043",
@@ -756,7 +813,8 @@ window.IFM_DATA ={
    "notes": "8s extension of IFM-042 with cleaner 5-piece separation. Needs manual drag into Drive Content Library. Relinked 21 Sep 2026: the row pointed at our own hosted copy, so the Drive original read as uncatalogued in the corpus reconciliation. drive link now targets the Drive master; the hosted copy remains the playable preview.",
    "thumbnail": "thumbs/IFM-043.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-043.mp4",
-   "video url": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-8s.mp4"
+   "video url": "https://ifm-deploy.vercel.app/ifm-3d-pizza-nike-8s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-050",
@@ -771,7 +829,8 @@ window.IFM_DATA ={
    "notes": "Generic 'one becomes five' splitter — drop any topic's logo on the pizza to reuse. Needs manual drag into Drive Content Library. Relinked 21 Sep 2026: the row pointed at our own hosted copy, so the Drive original read as uncatalogued in the corpus reconciliation. drive link now targets the Drive master; the hosted copy remains the playable preview.",
    "thumbnail": "thumbs/IFM-050.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-050.mp4",
-   "video url": "https://ifm-deploy.vercel.app/pizza-5slices-clean-5s.mp4"
+   "video url": "https://ifm-deploy.vercel.app/pizza-5slices-clean-5s.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-052",
@@ -789,7 +848,8 @@ window.IFM_DATA ={
    "likes": 49,
    "comments": 4,
    "ig link": "https://www.instagram.com/investingformummies/p/DZnCYwBCFBS/",
-   "published date": "June 15, 2026"
+   "published date": "June 15, 2026",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-054",
@@ -803,7 +863,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Oz3ezoKAyFzh-mny3Oz-0n3-pT8h1KVn/view",
    "date created": "2026-06-15",
    "notes": "Office youth workshop, 15 Jun. Use: session recap / community proof",
-   "thumbnail": "thumbs/IFM-054.jpg"
+   "thumbnail": "thumbs/IFM-054.jpg",
+   "audience": "Teens",
+   "batch": "IFT-2",
+   "captured_at": "2026-06-12T14:43:36+0530"
   },
   {
    "id": "IFM-055",
@@ -817,7 +880,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1SrKEVM1gtUELmu1cNSoSYQk6bvj6_yVE/view",
    "date created": "2026-06-15",
    "notes": "Office youth workshop, 15 Jun. Use: engagement post",
-   "thumbnail": "thumbs/IFM-055.jpg"
+   "thumbnail": "thumbs/IFM-055.jpg",
+   "audience": "Teens",
+   "batch": "IFT-2",
+   "captured_at": "2026-06-12T14:43:39+0530"
   },
   {
    "id": "IFM-056",
@@ -831,7 +897,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/17ent--UAPlEJFczBd0ytUoprEwTYdKOL/view",
    "date created": "2026-06-15",
    "notes": "Office youth workshop, 15 Jun. Use: proof-of-session carousel",
-   "thumbnail": "thumbs/IFM-056.jpg"
+   "thumbnail": "thumbs/IFM-056.jpg",
+   "audience": "Teens",
+   "batch": "IFT-2",
+   "captured_at": "2026-06-12T15:33:45+0530"
   },
   {
    "id": "IFM-057",
@@ -846,7 +915,10 @@ window.IFM_DATA ={
    "date created": "2026-06-15",
    "notes": "82 MB raw .MOV — trim into a reel · Hover-play preview hosted (first 30s); Download still gets the full original.",
    "thumbnail": "thumbs/IFM-057.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-057.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-057.mp4",
+   "audience": "Teens",
+   "batch": "IFT-2",
+   "captured_at": "2026-06-12T14:35:33+0530"
   },
   {
    "id": "IFM-058",
@@ -861,7 +933,10 @@ window.IFM_DATA ={
    "date created": "2026-06-15",
    "notes": "244 MB raw .MOV — trim into a reel · Hover-play preview hosted (first 30s); Download still gets the full original.",
    "thumbnail": "thumbs/IFM-058.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-058.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-058.mp4",
+   "audience": "Teens",
+   "batch": "IFT-2",
+   "captured_at": "2026-06-12T14:36:04+0530"
   },
   {
    "id": "IFM-059",
@@ -876,7 +951,10 @@ window.IFM_DATA ={
    "date created": "2026-06-15",
    "notes": "323 MB raw .MOV — trim into a reel · Hover-play preview hosted (first 30s); Download still gets the full original.",
    "thumbnail": "thumbs/IFM-059.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-059.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-059.mp4",
+   "audience": "Teens",
+   "batch": "IFT-2",
+   "captured_at": "2026-06-12T14:37:03+0530"
   },
   {
    "id": "IFM-060",
@@ -891,7 +969,10 @@ window.IFM_DATA ={
    "date created": "2026-06-15",
    "notes": "407 MB raw .MOV — trim into a reel · Hover-play preview hosted (first 30s); Download still gets the full original.",
    "thumbnail": "thumbs/IFM-060.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-060.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-060.mp4",
+   "audience": "Teens",
+   "batch": "IFT-2",
+   "captured_at": "2026-06-12T14:33:56+0530"
   },
   {
    "id": "IFM-061",
@@ -905,7 +986,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1KZf0Y7UI_UDHg6-fr7UBb_IX9W1iwyDK/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-061.jpg"
+   "thumbnail": "thumbs/IFM-061.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-23T10:53:49+0530"
   },
   {
    "id": "IFM-062",
@@ -919,7 +1003,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1qCKGgFLQUtFYO_FhbMMsXQqieKuojrtk/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-062.jpg"
+   "thumbnail": "thumbs/IFM-062.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-23T10:53:57+0530"
   },
   {
    "id": "IFM-063",
@@ -933,7 +1020,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Kwes1SHtYOhbHbEbfZP1KyXmiQp9xSmv/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-063.jpg"
+   "thumbnail": "thumbs/IFM-063.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:23:32+0530"
   },
   {
    "id": "IFM-064",
@@ -947,7 +1037,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/15UeP1UzVtRDN5sCL7RIkk0S3LKISSdTu/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-064.jpg"
+   "thumbnail": "thumbs/IFM-064.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:26:13+0530"
   },
   {
    "id": "IFM-065",
@@ -961,7 +1054,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1DvDOcKKzWgzpo16JZU86MbIQ8mmzh0vm/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-065.jpg"
+   "thumbnail": "thumbs/IFM-065.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:26:17+0530"
   },
   {
    "id": "IFM-066",
@@ -975,7 +1071,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1fnVbCJI8dIxqhSLxuS3NBSg4mrHReeGm/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-066.jpg"
+   "thumbnail": "thumbs/IFM-066.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:26:30+0530"
   },
   {
    "id": "IFM-067",
@@ -990,7 +1089,10 @@ window.IFM_DATA ={
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
    "thumbnail": "thumbs/IFM-067.jpg",
-   "shot": "Hiral — portrait"
+   "shot": "Hiral — portrait",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:28:17+0530"
   },
   {
    "id": "IFM-068",
@@ -1005,7 +1107,10 @@ window.IFM_DATA ={
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
    "thumbnail": "thumbs/IFM-068.jpg",
-   "shot": "Hiral — portrait"
+   "shot": "Hiral — portrait",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:28:18+0530"
   },
   {
    "id": "IFM-069",
@@ -1020,7 +1125,10 @@ window.IFM_DATA ={
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
    "thumbnail": "thumbs/IFM-069.jpg",
-   "shot": "Hiral — portrait"
+   "shot": "Hiral — portrait",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:28:26+0530"
   },
   {
    "id": "IFM-070",
@@ -1034,7 +1142,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1B9QhEt_qnPFCFgw9czDLmO3La7KMZqxX/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-070.jpg"
+   "thumbnail": "thumbs/IFM-070.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:34:04+0530"
   },
   {
    "id": "IFM-071",
@@ -1048,7 +1159,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/10Eu51jQ5uEA2tw_VR4g81rGKHyoW4i9c/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-071.jpg"
+   "thumbnail": "thumbs/IFM-071.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:37:51+0530"
   },
   {
    "id": "IFM-072",
@@ -1062,7 +1176,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1bKmybgb0uzW260qf3pCKcOZktiHvMXfV/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-072.jpg"
+   "thumbnail": "thumbs/IFM-072.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:38:17+0530"
   },
   {
    "id": "IFM-073",
@@ -1076,7 +1193,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1yetYTzgxIBfRLe912fmRTPPe8V4BFbqA/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-073.jpg"
+   "thumbnail": "thumbs/IFM-073.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:40:53+0530"
   },
   {
    "id": "IFM-074",
@@ -1090,7 +1210,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1PCxgmUXE67sck7GJ48VINkTYOy4pzO24/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-074.jpg"
+   "thumbnail": "thumbs/IFM-074.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:40:55+0530"
   },
   {
    "id": "IFM-075",
@@ -1104,7 +1227,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1FHb952-62GIinZgbl8KxBMLkOvfUl9FM/view",
    "date created": "2026-03-24",
    "notes": "From the Hiral Goel founder/brand shoot",
-   "thumbnail": "thumbs/IFM-075.jpg"
+   "thumbnail": "thumbs/IFM-075.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:42:04+0530"
   },
   {
    "id": "IFM-076",
@@ -1119,7 +1245,10 @@ window.IFM_DATA ={
    "date created": "2026-03-24",
    "notes": "75 MB raw .MOV — trim into a reel · Hover-play preview hosted (first 30s); Download still gets the full original.",
    "thumbnail": "thumbs/IFM-076.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-076.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-076.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:22:17+0530"
   },
   {
    "id": "IFM-077",
@@ -1134,7 +1263,8 @@ window.IFM_DATA ={
    "date created": "2026-06-12",
    "notes": "101 MB raw .MOV — trim into a reel · Hover-play preview hosted (first 30s); Download still gets the full original.",
    "thumbnail": "thumbs/IFM-077.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-077.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-077.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-078",
@@ -1149,7 +1279,8 @@ window.IFM_DATA ={
    "date created": "2026-06-12",
    "notes": "143 MB raw .MOV — trim into a reel · Hover-play preview hosted (first 30s); Download still gets the full original.",
    "thumbnail": "thumbs/IFM-078.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-078.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-078.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-079",
@@ -1163,7 +1294,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/190anJw9_VhvExeUfyrQlf5Zzga8ppGeu",
    "date created": "2026-06-15",
    "notes": "7-slide variant of the same Rocket-or-Rollercoaster cover as IFM-033 (9-slide). Check which version to post. Reconciled 7 Sep 2026: drive link repointed from a personal copy (folder 1P5XeOE6…, created 15 Jun by djlolly03) to the canonical Aakara delivery folder June/Social media/Carousels/Space x/Carousel 2. Both folders hold the identical 7 files (Space-X-carousel-2_01–07.jpg, byte-identical: _01 is 135,611 bytes in both); the delivery copy is the Aakara original. No new row created — this is the same post.",
-   "thumbnail": "thumbs/IFM-079.jpg"
+   "thumbnail": "thumbs/IFM-079.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-080",
@@ -1177,7 +1309,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1ZZ0V14vZHgVh1IjcFpW2F2JTxII8du5K/view",
    "date created": "2026-04-06",
    "notes": "From the 6 Apr women's workshop. Use: community/testimonial post",
-   "thumbnail": "thumbs/IFM-080.jpg"
+   "thumbnail": "thumbs/IFM-080.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-081",
@@ -1191,7 +1324,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1_xooXBzgca-0ab3u0YDnwUL6HB5kaWJi/view",
    "date created": "2026-04-06",
    "notes": "From the 6 Apr women's workshop. Use: community/testimonial post",
-   "thumbnail": "thumbs/IFM-081.jpg"
+   "thumbnail": "thumbs/IFM-081.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-082",
@@ -1205,7 +1339,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1zwqvM8_rY3miD1m2NKM3aw3oOGbg1X6h/view",
    "date created": "2026-04-06",
    "notes": "From the 6 Apr women's workshop. Use: session recap / community proof",
-   "thumbnail": "thumbs/IFM-082.jpg"
+   "thumbnail": "thumbs/IFM-082.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-083",
@@ -1219,7 +1354,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1xhyTa-7ms0_VAXT2CNUXG4wEHk85bRV_/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-083.jpg"
+   "thumbnail": "thumbs/IFM-083.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-084",
@@ -1233,7 +1369,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1wvV05sgORwNU2-BBTAidXNbRqg1XoJtS/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-084.jpg"
+   "thumbnail": "thumbs/IFM-084.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-085",
@@ -1247,7 +1384,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1sfZ3qn_hcBTfwwaBGdzSq_omrotBFLCN/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-085.jpg"
+   "thumbnail": "thumbs/IFM-085.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-086",
@@ -1261,7 +1399,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1SWmjkjKDaskAA50t2LmyVSNlkC8MOnEq/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-086.jpg"
+   "thumbnail": "thumbs/IFM-086.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-087",
@@ -1275,7 +1414,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1LQI8RCoEl8_SM4cQoElNy8vqzqSPIrj2/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-087.jpg"
+   "thumbnail": "thumbs/IFM-087.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-088",
@@ -1290,7 +1430,8 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-088.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-088.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-088.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-089",
@@ -1304,7 +1445,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1u_yRjVnHiHPzbP1LQQii7sS5lHXitXMb/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-089.jpg"
+   "thumbnail": "thumbs/IFM-089.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-12T11:55:39+0530"
   },
   {
    "id": "IFM-090",
@@ -1318,7 +1462,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1W3YUt2ZSM-Fe9MWDlnoMiAGwPwcon5wX/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-090.jpg"
+   "thumbnail": "thumbs/IFM-090.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-12T11:56:22+0530"
   },
   {
    "id": "IFM-091",
@@ -1332,7 +1479,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1610w4gnUwSaNFR7NZhK-j41-HTCLUKHQ/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-091.jpg"
+   "thumbnail": "thumbs/IFM-091.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-12T11:56:26+0530"
   },
   {
    "id": "IFM-092",
@@ -1346,7 +1496,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1vMx4rnBuo7UBKY_xFpjMfD7BS1oTYscN/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-092.jpg"
+   "thumbnail": "thumbs/IFM-092.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-12T11:57:09+0530"
   },
   {
    "id": "IFM-093",
@@ -1361,7 +1514,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-093.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-093.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-093.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-12T11:58:15+0530"
   },
   {
    "id": "IFM-094",
@@ -1375,7 +1531,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1M8rq7WSWP7Ol6FosXp-pBFRznFCf4xPZ/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-094.jpg"
+   "thumbnail": "thumbs/IFM-094.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-12T11:58:51+0530"
   },
   {
    "id": "IFM-095",
@@ -1389,7 +1548,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1_X2_yxXrLgoxbP_s7NDs2J3Y0mGyNjOo/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-095.jpg"
+   "thumbnail": "thumbs/IFM-095.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-12T12:00:41+0530"
   },
   {
    "id": "IFM-096",
@@ -1403,7 +1565,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1UoSKxPR6SePVuMMpKSrOR3SQ7FqlJk3L/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-096.jpg"
+   "thumbnail": "thumbs/IFM-096.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-12T12:00:45+0530"
   },
   {
    "id": "IFM-097",
@@ -1417,7 +1582,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1pRD11xC6CLJ0PmSuYWkyg3axbRScqXyB/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-097.jpg"
+   "thumbnail": "thumbs/IFM-097.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-12T12:04:10+0530"
   },
   {
    "id": "IFM-098",
@@ -1432,7 +1600,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-098.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-098.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-098.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-23T11:11:53+0530"
   },
   {
    "id": "IFM-099",
@@ -1446,7 +1617,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1qYxKCBvl_bfa7Bh1_KZ-wShkF1kJhmPD/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-099.jpg"
+   "thumbnail": "thumbs/IFM-099.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-23T11:25:22+0530"
   },
   {
    "id": "IFM-100",
@@ -1460,7 +1634,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1-7p1qVMylbxt2L_sawOmrDJqE1-9nwCl/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-100.jpg"
+   "thumbnail": "thumbs/IFM-100.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-23T11:25:22+0530"
   },
   {
    "id": "IFM-101",
@@ -1475,7 +1652,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-101.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-101.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-101.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-23T11:26:26+0530"
   },
   {
    "id": "IFM-102",
@@ -1489,7 +1669,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1elNMG02koaIfopOIhlPia2XEbY-ZivXz/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-102.jpg"
+   "thumbnail": "thumbs/IFM-102.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-23T11:28:00+0530"
   },
   {
    "id": "IFM-103",
@@ -1503,7 +1686,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/13xZs8dbTkov3BHIFwHZxFuwJxHHpC8EM/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-103.jpg"
+   "thumbnail": "thumbs/IFM-103.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-23T11:28:00+0530"
   },
   {
    "id": "IFM-104",
@@ -1517,7 +1703,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/13I9xqbk-F35jqX0ovaqSii7V2lPciQ9W/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-104.jpg"
+   "thumbnail": "thumbs/IFM-104.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-23T11:28:02+0530"
   },
   {
    "id": "IFM-105",
@@ -1531,7 +1720,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1vZviu5hHQfOcirY5sDF9dpd_C61l-eIp/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-105.jpg"
+   "thumbnail": "thumbs/IFM-105.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-23T11:28:02+0530"
   },
   {
    "id": "IFM-106",
@@ -1545,7 +1737,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1_2Jyh4yOjkz30j52IqKfuTb4Xr4zIexP/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-106.jpg"
+   "thumbnail": "thumbs/IFM-106.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T11:57:05+0530"
   },
   {
    "id": "IFM-107",
@@ -1559,7 +1754,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1z1KuyEwo5_dpM_esYkhJHa1nDOm-mcav/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-107.jpg"
+   "thumbnail": "thumbs/IFM-107.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T12:01:20+0530"
   },
   {
    "id": "IFM-108",
@@ -1573,7 +1771,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1HL33ecHSAg74Zst5e5plEme8B96PBS3I/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-108.jpg"
+   "thumbnail": "thumbs/IFM-108.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T12:01:51+0530"
   },
   {
    "id": "IFM-109",
@@ -1587,7 +1788,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Ta2WjIwekIaFQTcyaBaTA6b3NjfrDlaa/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-109.jpg"
+   "thumbnail": "thumbs/IFM-109.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T12:02:13+0530"
   },
   {
    "id": "IFM-110",
@@ -1601,7 +1805,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1YF87jsMLuJBBWuBe4HVVoVXaCaiK79pv/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-110.jpg"
+   "thumbnail": "thumbs/IFM-110.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T13:37:27+0530"
   },
   {
    "id": "IFM-111",
@@ -1615,7 +1822,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1ZD_QluuKdtCyZCUArfer7eAdy_LKsjPT/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-111.jpg"
+   "thumbnail": "thumbs/IFM-111.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T13:37:30+0530"
   },
   {
    "id": "IFM-112",
@@ -1629,7 +1839,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/10zkyD2AbJ57BvIg523pP3-tqn0pzsQaJ/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-112.jpg"
+   "thumbnail": "thumbs/IFM-112.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T13:38:38+0530"
   },
   {
    "id": "IFM-113",
@@ -1643,7 +1856,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1VS_GuL8UGSCqyqe_c4BEPUTAOw8BbkAC/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-113.jpg"
+   "thumbnail": "thumbs/IFM-113.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T13:38:38+0530"
   },
   {
    "id": "IFM-114",
@@ -1658,7 +1874,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-114.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-114.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-114.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T14:06:06+0530"
   },
   {
    "id": "IFM-115",
@@ -1672,7 +1891,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1S1hwDY2Ns7KGtnGkvXnt-EUOkbaQJ57i/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-115.jpg"
+   "thumbnail": "thumbs/IFM-115.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T14:06:51+0530"
   },
   {
    "id": "IFM-116",
@@ -1686,7 +1908,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1f2088XEWI6wqDFSzOct-XmFGP1Y-gQsQ/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-116.jpg"
+   "thumbnail": "thumbs/IFM-116.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T14:08:49+0530"
   },
   {
    "id": "IFM-117",
@@ -1700,7 +1925,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Q-76NSnL6swYrTMcByxawPJcGqPpt17i/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-117.jpg"
+   "thumbnail": "thumbs/IFM-117.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T14:08:53+0530"
   },
   {
    "id": "IFM-118",
@@ -1714,7 +1942,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1HxJPdbznonczEWi9l_x-9IlxrkiCleMZ/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-118.jpg"
+   "thumbnail": "thumbs/IFM-118.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T14:09:46+0530"
   },
   {
    "id": "IFM-119",
@@ -1728,7 +1959,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1zV8XPkyB83UWWXIKP-dw3pGy_ar7ETKB/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-119.jpg"
+   "thumbnail": "thumbs/IFM-119.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:02:05+0530"
   },
   {
    "id": "IFM-120",
@@ -1742,7 +1976,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1CxQere1EeAtMGu0dxcvpj9X3kfozziJU/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-120.jpg"
+   "thumbnail": "thumbs/IFM-120.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:04:43+0530"
   },
   {
    "id": "IFM-121",
@@ -1756,7 +1993,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1DcpoDCkkZWD5_Do-K0bGXQ9OILEsZ1CD/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-121.jpg"
+   "thumbnail": "thumbs/IFM-121.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:04:57+0530"
   },
   {
    "id": "IFM-122",
@@ -1770,7 +2010,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1CBA9wjn5K7mLBG8LXC-GjR3xnpbT2Atr/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-122.jpg"
+   "thumbnail": "thumbs/IFM-122.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:05:02+0530"
   },
   {
    "id": "IFM-123",
@@ -1784,7 +2027,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1ZG7JqLBLGT7NzkMx7ashvsRycPSma-jX/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-123.jpg"
+   "thumbnail": "thumbs/IFM-123.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:05:13+0530"
   },
   {
    "id": "IFM-124",
@@ -1798,7 +2044,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/147oDZGeKKqdJ02LsWvs1RyXt2l4z-jsG/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-124.jpg"
+   "thumbnail": "thumbs/IFM-124.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:05:16+0530"
   },
   {
    "id": "IFM-125",
@@ -1812,7 +2061,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/19Rl3h8oBUZD2LImii4pRAz8kRDR3e-Ww/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-125.jpg"
+   "thumbnail": "thumbs/IFM-125.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:05:28+0530"
   },
   {
    "id": "IFM-126",
@@ -1826,7 +2078,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1YbiH_qZjZD_xM9R0kNO0VdJe8-O7_2Ox/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-126.jpg"
+   "thumbnail": "thumbs/IFM-126.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:05:35+0530"
   },
   {
    "id": "IFM-127",
@@ -1840,7 +2095,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/13x-FN70-kQcYLx1gSdO-ynvJ8AV4Z5eu/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-127.jpg"
+   "thumbnail": "thumbs/IFM-127.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:05:38+0530"
   },
   {
    "id": "IFM-128",
@@ -1854,7 +2112,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1YbQ5BJrOxuZPJesqrUMEAsVuN-upuhcA/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-128.jpg"
+   "thumbnail": "thumbs/IFM-128.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:06:18+0530"
   },
   {
    "id": "IFM-129",
@@ -1868,7 +2129,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1GT1Fh5y-1jlZQZnzz5j6rSPwVwu70snO/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-129.jpg"
+   "thumbnail": "thumbs/IFM-129.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:06:19+0530"
   },
   {
    "id": "IFM-130",
@@ -1882,7 +2146,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1hWJIJ7LatIPV84b7YC9u5xM_ioyY4Na6/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-130.jpg"
+   "thumbnail": "thumbs/IFM-130.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:06:21+0530"
   },
   {
    "id": "IFM-131",
@@ -1896,7 +2163,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1EACUzBd3XPEYHJ3qmBwlMgPS3mRJ6RE6/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-131.jpg"
+   "thumbnail": "thumbs/IFM-131.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:06:33+0530"
   },
   {
    "id": "IFM-132",
@@ -1910,7 +2180,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1xO3CWTSP_BAcD_iqFwLqbgMuud_bDhnm/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-132.jpg"
+   "thumbnail": "thumbs/IFM-132.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:06:40+0530"
   },
   {
    "id": "IFM-133",
@@ -1925,7 +2198,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-133.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-133.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-133.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:06:53+0530"
   },
   {
    "id": "IFM-134",
@@ -1939,7 +2215,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1-ypRi0GEzfcgXLTkQQn0d_5_fQxvbl8y/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-134.jpg"
+   "thumbnail": "thumbs/IFM-134.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:55:53+0530"
   },
   {
    "id": "IFM-135",
@@ -1953,7 +2232,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/15fbUeBhROvme2OXCBSQ_P3IfWDiQjY3u/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-135.jpg"
+   "thumbnail": "thumbs/IFM-135.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:55:56+0530"
   },
   {
    "id": "IFM-136",
@@ -1967,7 +2249,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1tEQliYYrv920pJVwI_cfEX6RiC_knZiM/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-136.jpg"
+   "thumbnail": "thumbs/IFM-136.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:56:00+0530"
   },
   {
    "id": "IFM-137",
@@ -1981,7 +2266,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1RcvO1-RTUEXYFhYd69rv-EgUgJbvC-JT/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-137.jpg"
+   "thumbnail": "thumbs/IFM-137.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:56:14+0530"
   },
   {
    "id": "IFM-138",
@@ -1995,7 +2283,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1urYn9tM8ebwB2lQ-UNEluUVsRFbcdTZf/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-138.jpg"
+   "thumbnail": "thumbs/IFM-138.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:56:47+0530"
   },
   {
    "id": "IFM-139",
@@ -2009,7 +2300,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1zq-0snNeO3No_dOXZiF0kzXln_jmtKU7/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-139.jpg"
+   "thumbnail": "thumbs/IFM-139.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:58:42+0530"
   },
   {
    "id": "IFM-140",
@@ -2023,7 +2317,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1-EUQ8Um0WuGWukJou3RT8CwAePIt59qh/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-140.jpg"
+   "thumbnail": "thumbs/IFM-140.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:58:44+0530"
   },
   {
    "id": "IFM-141",
@@ -2038,7 +2335,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-141.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-141.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-141.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:58:50+0530"
   },
   {
    "id": "IFM-142",
@@ -2053,7 +2353,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-142.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-142.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-142.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T12:59:43+0530"
   },
   {
    "id": "IFM-143",
@@ -2067,7 +2370,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1TQZoL7CY9WGE6axe0duKqt3QZT1Oro88/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-143.jpg"
+   "thumbnail": "thumbs/IFM-143.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T13:00:24+0530"
   },
   {
    "id": "IFM-144",
@@ -2081,7 +2387,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/18oLJZDhxLKIyZPBMQKzDjgKvSXGY3Plo/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-144.jpg"
+   "thumbnail": "thumbs/IFM-144.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T13:00:26+0530"
   },
   {
    "id": "IFM-145",
@@ -2096,7 +2405,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-145.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-145.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-145.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T13:00:43+0530"
   },
   {
    "id": "IFM-146",
@@ -2111,7 +2423,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-146.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-146.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-146.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T13:01:50+0530"
   },
   {
    "id": "IFM-147",
@@ -2125,7 +2440,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1IGRYq4M6njcvwuqQdYlVEXgiSNhImspx/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-147.jpg"
+   "thumbnail": "thumbs/IFM-147.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T13:03:03+0530"
   },
   {
    "id": "IFM-148",
@@ -2139,7 +2457,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1wNethHWzuXnwCmzSjFg6xIQZ6UwkVQrU/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-148.jpg"
+   "thumbnail": "thumbs/IFM-148.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T13:03:05+0530"
   },
   {
    "id": "IFM-149",
@@ -2153,7 +2474,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/16pY-9ynUaTXbIf2MN92zp_DzN0ivYzmc/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-149.jpg"
+   "thumbnail": "thumbs/IFM-149.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T13:03:12+0530"
   },
   {
    "id": "IFM-150",
@@ -2167,7 +2491,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1KGKRRa9o5asLKk5zjHncKB_vjawF_VFN/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-150.jpg"
+   "thumbnail": "thumbs/IFM-150.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T13:03:28+0530"
   },
   {
    "id": "IFM-151",
@@ -2182,7 +2509,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-151.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-151.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-151.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T13:03:30+0530"
   },
   {
    "id": "IFM-152",
@@ -2196,7 +2526,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/13Y2SRtLMd9LsQywe-dx2_AiX9Fh2_z7I/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-152.jpg"
+   "thumbnail": "thumbs/IFM-152.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-25T13:03:56+0530"
   },
   {
    "id": "IFM-153",
@@ -2211,7 +2544,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-153.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-153.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-153.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-26T11:54:06+0530"
   },
   {
    "id": "IFM-154",
@@ -2226,7 +2562,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-154.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-154.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-154.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-26T11:54:41+0530"
   },
   {
    "id": "IFM-155",
@@ -2241,7 +2580,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-155.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-155.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-155.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-26T11:59:00+0530"
   },
   {
    "id": "IFM-156",
@@ -2255,7 +2597,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1QOBaisDyZUFcaL33MQhq5P6zytRi9Vqu/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-156.jpg"
+   "thumbnail": "thumbs/IFM-156.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-26T12:00:15+0530"
   },
   {
    "id": "IFM-157",
@@ -2269,7 +2614,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1x6FUgWMBLfgiRxoGbGp76i33b-N8oUan/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-157.jpg"
+   "thumbnail": "thumbs/IFM-157.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-26T12:00:18+0530"
   },
   {
    "id": "IFM-158",
@@ -2283,7 +2631,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1hHrb8tnvz8Y5HpOAWRsQsa2fmQFoGcCq/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-158.jpg"
+   "thumbnail": "thumbs/IFM-158.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-26T12:00:30+0530"
   },
   {
    "id": "IFM-159",
@@ -2297,7 +2648,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Uz-bvChoy6-7sOlnU51V7k1oh3Q4Jd6E/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-159.jpg"
+   "thumbnail": "thumbs/IFM-159.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-26T12:00:41+0530"
   },
   {
    "id": "IFM-160",
@@ -2312,7 +2666,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-160.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-160.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-160.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-26T12:00:55+0530"
   },
   {
    "id": "IFM-161",
@@ -2327,7 +2684,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-161.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-161.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-161.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-26T12:03:00+0530"
   },
   {
    "id": "IFM-162",
@@ -2342,7 +2702,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-162.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-162.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-162.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-26T15:40:38+0530"
   },
   {
    "id": "IFM-163",
@@ -2356,7 +2719,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1mQ_RKYhWKLdvwKpaUDoTvp1NPRNplz7I/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-163.jpg"
+   "thumbnail": "thumbs/IFM-163.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-01T10:44:38+0530"
   },
   {
    "id": "IFM-164",
@@ -2370,7 +2736,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/192tkBqjqDnfnpZ1tE6HHcM4OLqclChjc/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-164.jpg"
+   "thumbnail": "thumbs/IFM-164.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-01T10:44:44+0530"
   },
   {
    "id": "IFM-165",
@@ -2384,7 +2753,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1escFRvm00lwsDRVQGRebeDSoBweHgtMF/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-165.jpg"
+   "thumbnail": "thumbs/IFM-165.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-01T10:44:53+0530"
   },
   {
    "id": "IFM-166",
@@ -2398,7 +2770,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/12pfVkVVSHMUQgOFFnWRwHmokw7JoUUz3/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-166.jpg"
+   "thumbnail": "thumbs/IFM-166.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-01T10:44:59+0530"
   },
   {
    "id": "IFM-167",
@@ -2412,7 +2787,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1reE4q5jpN0yQ-iXpBaicsJ7K95Tl3Iw0/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-167.jpg"
+   "thumbnail": "thumbs/IFM-167.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-01T10:45:05+0530"
   },
   {
    "id": "IFM-168",
@@ -2426,7 +2804,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/13w0dtfVB8u3Jc4ii122zmX39dc_xGHMP/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-168.jpg"
+   "thumbnail": "thumbs/IFM-168.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:23:09+0530"
   },
   {
    "id": "IFM-169",
@@ -2441,7 +2822,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-169.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-169.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-169.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:23:17+0530"
   },
   {
    "id": "IFM-170",
@@ -2455,7 +2839,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/10SZJ5-1AjHGzFTcUtqr4xe9PSkaOqQo2/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-170.jpg"
+   "thumbnail": "thumbs/IFM-170.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:23:38+0530"
   },
   {
    "id": "IFM-171",
@@ -2469,7 +2856,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1zUksnhwTpTi-q88DTkFrHeGJmE8PogZ-/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-171.jpg"
+   "thumbnail": "thumbs/IFM-171.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:23:59+0530"
   },
   {
    "id": "IFM-172",
@@ -2484,7 +2874,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-172.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-172.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-172.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:25:33+0530"
   },
   {
    "id": "IFM-173",
@@ -2498,7 +2891,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1TtgKogwSFLusT_wZImLAb5Y0yVGFAW6P/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-173.jpg"
+   "thumbnail": "thumbs/IFM-173.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:25:55+0530"
   },
   {
    "id": "IFM-174",
@@ -2512,7 +2908,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1MRXbYCrU53EtdFuj27n4LJUiYHr6kZ2c/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-174.jpg"
+   "thumbnail": "thumbs/IFM-174.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:26:20+0530"
   },
   {
    "id": "IFM-175",
@@ -2526,7 +2925,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1oOxuTtXHIp5jUkO-AtlwEyaP9_jb9ELZ/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-175.jpg"
+   "thumbnail": "thumbs/IFM-175.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:26:22+0530"
   },
   {
    "id": "IFM-176",
@@ -2540,7 +2942,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1CV8kUjGu6FHJx3pAcGohCER2IvAEkGkY/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-176.jpg"
+   "thumbnail": "thumbs/IFM-176.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:26:30+0530"
   },
   {
    "id": "IFM-177",
@@ -2554,7 +2959,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/13XsQbMz0l5YLtDhAv5rRroATVmqHRVJL/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-177.jpg"
+   "thumbnail": "thumbs/IFM-177.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:26:35+0530"
   },
   {
    "id": "IFM-178",
@@ -2568,7 +2976,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1zgpkOnO7ULZStkkidT-Hu2H84TOf0j7W/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-178.jpg"
+   "thumbnail": "thumbs/IFM-178.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:26:46+0530"
   },
   {
    "id": "IFM-179",
@@ -2582,7 +2993,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/193E3rVDPJyZbX35xq2NLLzcgeBnk91Vt/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-179.jpg"
+   "thumbnail": "thumbs/IFM-179.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T10:26:53+0530"
   },
   {
    "id": "IFM-180",
@@ -2597,7 +3011,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-180.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-180.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-180.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T12:07:57+0530"
   },
   {
    "id": "IFM-181",
@@ -2612,7 +3029,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-181.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-181.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-181.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T12:09:08+0530"
   },
   {
    "id": "IFM-182",
@@ -2626,7 +3046,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1xNAUtkPWuAgA6VLDTLGN9S1MVBsJnm66/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-182.jpg"
+   "thumbnail": "thumbs/IFM-182.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-06T12:10:51+0530"
   },
   {
    "id": "IFM-183",
@@ -2640,7 +3063,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1lpQVrbyuzje915u0IEJ5kDJiEBJo20TQ/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-183.jpg"
+   "thumbnail": "thumbs/IFM-183.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-07T12:35:29+0530"
   },
   {
    "id": "IFM-184",
@@ -2654,7 +3080,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/16pnkEliG_6-jBTSD0XKaEMolwgnuJCYM/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-184.jpg"
+   "thumbnail": "thumbs/IFM-184.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-07T12:35:48+0530"
   },
   {
    "id": "IFM-185",
@@ -2668,7 +3097,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1US0pDnQEf0lkt5C5ys9sWB54v2cJjh4z/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-185.jpg"
+   "thumbnail": "thumbs/IFM-185.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-07T12:35:52+0530"
   },
   {
    "id": "IFM-186",
@@ -2683,7 +3115,10 @@ window.IFM_DATA ={
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026) · Hover-play preview hosted (first 30s); Download gets the full original.",
    "thumbnail": "thumbs/IFM-186.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-186.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-186.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-07T12:37:09+0530"
   },
   {
    "id": "IFM-187",
@@ -2697,7 +3132,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1WFL6L7qbp9gEu2uzJieLp35qc4YHnA-a/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-187.jpg"
+   "thumbnail": "thumbs/IFM-187.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-07T12:37:14+0530"
   },
   {
    "id": "IFM-188",
@@ -2711,7 +3149,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/177l6g5PsOHpMc7F67gf57qZ6czh9D6sw/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-188.jpg"
+   "thumbnail": "thumbs/IFM-188.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-07T12:39:56+0530"
   },
   {
    "id": "IFM-189",
@@ -2725,7 +3166,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1MxcmXT2JFfj9dLeJMaZx40-fnQmZf2Ut/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-189.jpg"
+   "thumbnail": "thumbs/IFM-189.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-07T12:40:00+0530"
   },
   {
    "id": "IFM-190",
@@ -2739,7 +3183,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1hyRSNBlgmkCpyl9yBRr_s6wMzwn6RNsn/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-190.jpg"
+   "thumbnail": "thumbs/IFM-190.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-07T12:40:10+0530"
   },
   {
    "id": "IFM-191",
@@ -2753,7 +3200,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1IKSiKVAyr84X6u3K3hyHS9iN4Pnia2Vk/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-191.jpg"
+   "thumbnail": "thumbs/IFM-191.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-07T12:40:15+0530"
   },
   {
    "id": "IFM-192",
@@ -2767,7 +3217,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1b8NAOt5L8u8J0OwQn0_e7L8GVKa8b2-D/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-192.jpg"
+   "thumbnail": "thumbs/IFM-192.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-07T12:40:18+0530"
   },
   {
    "id": "IFM-193",
@@ -2781,7 +3234,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1WzXqJeJrnS6gPMwSnyvWIMW4TfHNbG3y/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-193.jpg"
+   "thumbnail": "thumbs/IFM-193.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-13T10:44:15+0530"
   },
   {
    "id": "IFM-194",
@@ -2795,7 +3251,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1fkKrxrEpmr_dHdYiud-HgvJ5e1KXWKL8/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-194.jpg"
+   "thumbnail": "thumbs/IFM-194.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-13T10:45:00+0530"
   },
   {
    "id": "IFM-195",
@@ -2809,7 +3268,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1-bwbfrLtcFxOmXKw5Ib-vJeN1vHI2Uoa/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-195.jpg"
+   "thumbnail": "thumbs/IFM-195.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-13T10:45:06+0530"
   },
   {
    "id": "IFM-196",
@@ -2823,7 +3285,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1idAfr5Shu-qZUrnl6R3Pfk8Te8UsZ3E3/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-196.jpg"
+   "thumbnail": "thumbs/IFM-196.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-13T10:45:14+0530"
   },
   {
    "id": "IFM-197",
@@ -2837,7 +3302,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/14QHomDDUiEzGbCDYw8knhtfr3QsJ0DY0/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-197.jpg"
+   "thumbnail": "thumbs/IFM-197.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-13T10:47:54+0530"
   },
   {
    "id": "IFM-198",
@@ -2851,7 +3319,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1WaHQ95b4b0OUqvUStv8LxbFzd1Y3fvid/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-198.jpg"
+   "thumbnail": "thumbs/IFM-198.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-13T10:48:57+0530"
   },
   {
    "id": "IFM-199",
@@ -2865,7 +3336,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1hma254KiSQI1RlxEALsz4hVmH8UECUKN/view",
    "date created": "2026-04-06",
    "notes": "IFM office workshop session (Mar–Apr 2026)",
-   "thumbnail": "thumbs/IFM-199.jpg"
+   "thumbnail": "thumbs/IFM-199.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-04-13T10:49:00+0530"
   },
   {
    "id": "IFM-200",
@@ -2877,7 +3351,8 @@ window.IFM_DATA ={
    "description": "Reel introducing founder Hiral Goel — video in production by Aakara (placeholder in the July deck).",
    "drive link": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
    "date created": "2026-07-01",
-   "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck."
+   "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-201",
@@ -2889,7 +3364,8 @@ window.IFM_DATA ={
    "description": "Second 'About Hiral' founder-intro reel — video in production by Aakara.",
    "drive link": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
    "date created": "2026-07-02",
-   "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck."
+   "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-202",
@@ -2902,7 +3378,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/16m3DN9FMY9keFaUU_cplbIR1MgtO01Ec",
    "date created": "2026-07-02",
    "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck. | Finished files delivered by Aakara in the Drive tree (July/Storys/Finance pages confuse you). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-202.jpg"
+   "thumbnail": "thumbs/IFM-202.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-203",
@@ -2921,7 +3398,8 @@ window.IFM_DATA ={
    "quality": "Usable",
    "consent": "No identifiable people",
    "session": "Aakara July delivery",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-204",
@@ -2940,7 +3418,8 @@ window.IFM_DATA ={
    "quality": "Usable",
    "consent": "Adults only",
    "session": "Aakara July delivery",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-205",
@@ -2953,7 +3432,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1yYpS3-In5sLtbspbQhxu055hBgYvoY_a",
    "date created": "2026-07-08",
    "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck. | Finished files delivered by Aakara in the Drive tree (July/Storys/mini money lesson). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-205.jpg"
+   "thumbnail": "thumbs/IFM-205.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-206",
@@ -2966,7 +3446,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1qDvAz_R1jLO27sUEuFEpiTrfaL94cy5X",
    "date created": "2026-07-09",
    "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck. | Finished files delivered by Aakara in the Drive tree (July/Carousels/Savings-Expense Formula). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-206.jpg"
+   "thumbnail": "thumbs/IFM-206.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-207",
@@ -2983,7 +3464,8 @@ window.IFM_DATA ={
    "likes": 7,
    "comments": 0,
    "ig link": "https://www.instagram.com/investingformummies/p/Dat8_ZPmIQe/",
-   "published date": "July 12, 2026"
+   "published date": "July 12, 2026",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-208",
@@ -3000,7 +3482,8 @@ window.IFM_DATA ={
    "likes": 11,
    "comments": 0,
    "ig link": "https://www.instagram.com/investingformummies/p/DaweeFzGJkF/",
-   "published date": "July 13, 2026"
+   "published date": "July 13, 2026",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-209",
@@ -3012,7 +3495,8 @@ window.IFM_DATA ={
    "description": "'You Can't Buy Twice' reel — video in production by Aakara.",
    "drive link": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
    "date created": "2026-07-17",
-   "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck."
+   "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-210",
@@ -3025,7 +3509,8 @@ window.IFM_DATA ={
    "drive link": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
    "date created": "2026-07-19",
    "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck.",
-   "thumbnail": "thumbs/IFM-210.jpg"
+   "thumbnail": "thumbs/IFM-210.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-211",
@@ -3038,7 +3523,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1jJlezELTMwFTlIUygb_SXR8RVVfd7IpQ",
    "date created": "2026-07-20",
    "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck. | Finished files delivered by Aakara in the Drive tree (July/Carousels/Rich people money gene). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-211.jpg"
+   "thumbnail": "thumbs/IFM-211.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-212",
@@ -3051,7 +3537,8 @@ window.IFM_DATA ={
    "drive link": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
    "date created": "2026-07-21",
    "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck.",
-   "thumbnail": "thumbs/IFM-212.jpg"
+   "thumbnail": "thumbs/IFM-212.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-213",
@@ -3068,7 +3555,8 @@ window.IFM_DATA ={
    "likes": 9,
    "comments": 0,
    "ig link": "https://www.instagram.com/investingformummies/p/DbKnb2eiMSe/",
-   "published date": "July 23, 2026"
+   "published date": "July 23, 2026",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-214",
@@ -3081,7 +3569,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1malSLw2effKQR7QkmQdWXJhTKRyzhkGb",
    "date created": "2026-07-25",
    "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck. | Finished files delivered by Aakara in the Drive tree (July/Storys/meet richa). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-214.jpg"
+   "thumbnail": "thumbs/IFM-214.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-215",
@@ -3094,7 +3583,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1AL94xlrYVnbb9uXea4QrSkFPKUgXReEt",
    "date created": "2026-07-26",
    "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck. | Finished files delivered by Aakara in the Drive tree (July/Carousels/parents day national). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-215.jpg"
+   "thumbnail": "thumbs/IFM-215.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-216",
@@ -3108,7 +3598,8 @@ window.IFM_DATA ={
    "date created": "2026-07-28",
    "notes": "From Aakara's 'IFM July Creatives' deck (July content calendar). Open = the deck. | Finished files delivered by Aakara in the Drive tree (August/Reels/ever wondered gold). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
    "thumbnail": "thumbs/IFM-216.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-216.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-216.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-217",
@@ -3124,7 +3615,8 @@ window.IFM_DATA ={
    "likes": 55,
    "comments": 10,
    "ig link": "https://www.instagram.com/investingformummies/reel/DaXDJGZShNE/",
-   "published date": "July 3, 2026"
+   "published date": "July 3, 2026",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-218",
@@ -3144,7 +3636,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1aTcEMTo0HBNqFNOrl3edVG0QUDZUEatw/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:12:09+0530"
   },
   {
    "id": "IFM-219",
@@ -3164,7 +3659,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1OCidP7J54TqpB00vpdvm8Sw1eCOxyc2e/view",
    "consent": "Adults only",
    "shot": "Students",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:15:23+0530"
   },
   {
    "id": "IFM-220",
@@ -3184,7 +3682,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/13BLpw3e8GiKg-g2T_4Ffv3ZIv2glQThT/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:18:11+0530"
   },
   {
    "id": "IFM-221",
@@ -3204,7 +3705,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1sBJDxrg8paCJxmSkifr9Ey6ZFqxOatP0/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:18:44+0530"
   },
   {
    "id": "IFM-222",
@@ -3224,7 +3728,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1637vk_UB7dkzbRjwKMoa4_LmE6oO4TH-/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Raw-backup"
+   "quality": "Raw-backup",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:19:55+0530"
   },
   {
    "id": "IFM-223",
@@ -3244,7 +3751,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1cnX4zbqO3uRyaNUD2FXpl33ub1oBsB4b/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:21:22+0530"
   },
   {
    "id": "IFM-224",
@@ -3264,7 +3774,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1nF6XMQ7pVCnALmCmEQAlLUxzt9F44TnC/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:29:40+0530"
   },
   {
    "id": "IFM-225",
@@ -3284,7 +3797,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1gTRtlvzZ_cWllnltCjRHQqoyyAINdPId/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:33:30+0530"
   },
   {
    "id": "IFM-226",
@@ -3304,7 +3820,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1TuWSIJPwHcxfWs-v3fn7minRjExKWsP2/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:35:33+0530"
   },
   {
    "id": "IFM-227",
@@ -3324,7 +3843,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Atzqpl0a_AwEVaMBXj7D9Is1I52pX7sH/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:36:41+0530"
   },
   {
    "id": "IFM-228",
@@ -3344,7 +3866,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1cqnjMJN6nfSdJOL54h_0RQOEK9toPVL6/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:42:38+0530"
   },
   {
    "id": "IFM-229",
@@ -3364,7 +3889,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1xqN5bB0G4zi1lleX-eh6W2Y8d5f_RcKY/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:43:38+0530"
   },
   {
    "id": "IFM-230",
@@ -3384,7 +3912,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1LjcH8N6sIU2j8YWtVpr2fuh34EUwP31S/view",
    "consent": "Adults only",
    "shot": "Students",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:48:48+0530"
   },
   {
    "id": "IFM-231",
@@ -3404,7 +3935,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/14GpuAkvRW0nP6ZVEcJUwhjwJkO60pmZk/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:51:45+0530"
   },
   {
    "id": "IFM-232",
@@ -3424,7 +3958,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1QLZxIG8qfUUcEafD5TwsmdsUpBsDINGW/view",
    "consent": "Adults only",
    "shot": "Students",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:52:32+0530"
   },
   {
    "id": "IFM-233",
@@ -3444,7 +3981,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1BXCfBnqr1mXK3G1Riec93pAspQQ7tThH/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T12:11:59+0530"
   },
   {
    "id": "IFM-234",
@@ -3464,7 +4004,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Z2cYUWngkWIRm9-xV9Z3XHcfySidYdIF/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T12:15:55+0530"
   },
   {
    "id": "IFM-235",
@@ -3484,7 +4027,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1JEt4uxc8kB4eZdFYrYanWKKrO5xqLHPQ/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T12:16:52+0530"
   },
   {
    "id": "IFM-236",
@@ -3504,7 +4050,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1autEmI2bN4hKfNb_ftqWG98n1ExYxf7j/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T12:17:12+0530"
   },
   {
    "id": "IFM-237",
@@ -3524,7 +4073,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1rPWiZyblwrhGoFyhbLKt4wVLqgVAth6t/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T12:23:56+0530"
   },
   {
    "id": "IFM-238",
@@ -3544,7 +4096,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1igUQCJR7BTmPIqxZVuPx2kCzFROxoIsP/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Raw-backup"
+   "quality": "Raw-backup",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T12:25:12+0530"
   },
   {
    "id": "IFM-239",
@@ -3564,7 +4119,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/18jz_N49QySFel9CI2gTYV0RtJ_86BzTJ/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T12:36:40+0530"
   },
   {
    "id": "IFM-240",
@@ -3584,7 +4142,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Sm_g9SCvUgUuVyxmIjlB7yDm83dKBFih/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T12:40:18+0530"
   },
   {
    "id": "IFM-241",
@@ -3604,7 +4165,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1N-3xPvw9lDTv824QBcE40A9xutQhHNkw/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T12:47:53+0530"
   },
   {
    "id": "IFM-242",
@@ -3624,7 +4188,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1OUXPfdhM-SbXNFNm11s-OKse8lxKnAcU/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T12:54:14+0530"
   },
   {
    "id": "IFM-243",
@@ -3644,7 +4211,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1SPP_7lxl-UTYYRKD16cmWKmeJEGXwkr9/view",
    "consent": "Adults only",
    "shot": "Students",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:00:07+0530"
   },
   {
    "id": "IFM-244",
@@ -3664,7 +4234,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1GNVv5B5yVvc8tp_sUndN1ZyjcvmFjQkm/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:04:13+0530"
   },
   {
    "id": "IFM-245",
@@ -3684,7 +4257,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1-9PycjJUMbRM8LvENL4R3A_Q_0Ois8na/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:08:19+0530"
   },
   {
    "id": "IFM-246",
@@ -3704,7 +4280,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1G5pNSyBRht0snsu0FvMo7pSAKfy-CiMU/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:09:46+0530"
   },
   {
    "id": "IFM-247",
@@ -3724,7 +4303,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1YgCKHMIu_zQ5j8-J9DwL6PMU6iUfxQSu/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:11:45+0530"
   },
   {
    "id": "IFM-248",
@@ -3744,7 +4326,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1nEsIgZIBgh0VbPBfbwfYHHnUJ69_EkmB/view",
    "consent": "Adults only",
    "shot": "Students",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:16:29+0530"
   },
   {
    "id": "IFM-249",
@@ -3764,7 +4349,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1bIP25y8FICpLBAks7ZkXDYUll8xwt_02/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:17:51+0530"
   },
   {
    "id": "IFM-250",
@@ -3784,7 +4372,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/17_DYt5Ig_0NjSUXY4rPhfNabHyHvG1-6/view",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:18:11+0530"
   },
   {
    "id": "IFM-251",
@@ -3803,7 +4394,10 @@ window.IFM_DATA ={
    "session": "Goa — 18 Jul 2026",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T11:14:34+0530"
   },
   {
    "id": "IFM-252",
@@ -3822,7 +4416,10 @@ window.IFM_DATA ={
    "session": "Goa — 18 Jul 2026",
    "consent": "Adults only",
    "shot": "Hiral — teaching",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T12:15:52+0530"
   },
   {
    "id": "IFM-253",
@@ -3841,7 +4438,10 @@ window.IFM_DATA ={
    "session": "Goa — 18 Jul 2026",
    "consent": "Adults only",
    "shot": "Students",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:16:00+0530"
   },
   {
    "id": "IFM-254",
@@ -3860,7 +4460,10 @@ window.IFM_DATA ={
    "session": "Goa — 18 Jul 2026",
    "consent": "Adults only",
    "shot": "Students",
-   "quality": "Hero"
+   "quality": "Hero",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:16:01+0530"
   },
   {
    "id": "IFM-255",
@@ -3879,7 +4482,10 @@ window.IFM_DATA ={
    "session": "Goa — 18 Jul 2026",
    "consent": "Adults only",
    "shot": "Students",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:16:04+0530"
   },
   {
    "id": "IFM-256",
@@ -3898,7 +4504,10 @@ window.IFM_DATA ={
    "session": "Goa — 18 Jul 2026",
    "consent": "Adults only",
    "shot": "Room/venue wide",
-   "quality": "Usable"
+   "quality": "Usable",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-18T13:16:12+0530"
   },
   {
    "id": "IFM-257",
@@ -3911,7 +4520,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1p6vkIou0fwyp-iMnYJPY2Y-BdTI-XDPH",
    "date created": "2026-08-01",
    "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Carousel rework of the July story IFM-210. Date from the deck's August calendar slide (Aug 1). | Finished files delivered by Aakara in the Drive tree (August/Carousels/Green flag). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-257.jpg"
+   "thumbnail": "thumbs/IFM-257.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-258",
@@ -3924,7 +4534,8 @@ window.IFM_DATA ={
    "drive link": "https://docs.google.com/presentation/d/1BILbOjh-gBDTEPsccDBDRQpjalt8ds0AaQWyATdtuxQ/edit",
    "date created": "2026-08-06",
    "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Date from the deck's August calendar slide (Aug 6, 'Asset class carousel').",
-   "thumbnail": "thumbs/IFM-258.jpg"
+   "thumbnail": "thumbs/IFM-258.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-259",
@@ -3937,7 +4548,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/148mY1w9gmo-xLYe7JjvsrkNChZYiyRzQ",
    "date created": "2026-08-11",
    "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Date from the deck's August calendar slide (Aug 11, 'Story 1 Intnl youth day'). | Finished files delivered by Aakara in the Drive tree (August/Storys/youth day). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-259.jpg"
+   "thumbnail": "thumbs/IFM-259.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-260",
@@ -3950,7 +4562,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1ZZDRU07DRsYI_jxCpcFnl7ShEp8eV8ue",
    "date created": "2026-08-15",
    "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Copy-only slide — frames not yet designed by Aakara. Date from the deck's August calendar slide (Aug 15, 'Story 2'). | Finished files delivered by Aakara in the Drive tree (August/Reels/indp day). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-260.jpg"
+   "thumbnail": "thumbs/IFM-260.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-261",
@@ -3963,7 +4576,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1lK16tUvwut8tG6r5CPKeaH9aOv8sSHbY",
    "date created": "2026-08-21",
    "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Date inferred from the deck's August calendar slide ('Story 3', Aug 21) — the slide itself carries no date. | Finished files delivered by Aakara in the Drive tree (August/Carousels/Asset class). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-261.jpg"
+   "thumbnail": "thumbs/IFM-261.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-262",
@@ -3976,7 +4590,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1wt2XSJk5gDVZQTI8jibW2DZKWmtA9Brw",
    "date created": "2026-08-24",
    "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Part 2 of the Mini Money Lesson series (Part 1 = IFM-205). Date inferred from the deck's August calendar slide ('Story 4', Aug 24) — the slide itself carries no date. | Finished files delivered by Aakara in the Drive tree (August/Storys/MML 2). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-262.jpg"
+   "thumbnail": "thumbs/IFM-262.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-263",
@@ -3988,7 +4603,8 @@ window.IFM_DATA ={
    "description": "'Top 5 things to look at' weekly news reel — recurring news-roundup format, placeholder slide with no frames designed yet.",
    "drive link": "https://docs.google.com/presentation/d/1e5_VoULGk739OukI9znV0K7_E7OItR49P7j_vzfBzO4/edit",
    "date created": "2026-07-22",
-   "notes": "From Aakara's 'IFM July Creatives' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Label-only placeholder slide for the recurring weekly news format — video in production by Aakara. Date taken from the July calendar slide ('News reel', Jul 22)."
+   "notes": "From Aakara's 'IFM July Creatives' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Label-only placeholder slide for the recurring weekly news format — video in production by Aakara. Date taken from the July calendar slide ('News reel', Jul 22).",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-264",
@@ -4002,7 +4618,8 @@ window.IFM_DATA ={
    "date created": "2026-08-03",
    "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Designed reel — video frames shown in the deck. Date from the deck's August calendar slide (Aug 3, 'Assets class - reel'). | Finished files delivered by Aakara in the Drive tree (August/Reels/Asset class 1). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
    "thumbnail": "thumbs/IFM-264.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-264.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-264.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-265",
@@ -4016,7 +4633,8 @@ window.IFM_DATA ={
    "date created": "2026-08-07",
    "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Designed reel — cover frame plus Aakara's execution note on the character casting per asset class. Date from the deck's August calendar slide (Aug 7, 'Asset class reel - 2'). | Finished files delivered by Aakara in the Drive tree (August/Reels/Asset Class 2). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
    "thumbnail": "thumbs/IFM-265.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-265.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-265.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-266",
@@ -4029,7 +4647,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/18rRcmZbv7WmkGF_oJd2xgXQmYQEvFShO",
    "date created": "2026-08-21",
    "notes": "From Aakara's 'IFM Creatives_August' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Promotes the existing 3-buckets asset-allocation game on the IFM site. Date from the deck's August calendar slide (Aug 21, 'Story 3 - game'). | Finished files delivered by Aakara in the Drive tree (August/Storys/invest bucket game). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-266.jpg"
+   "thumbnail": "thumbs/IFM-266.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-267",
@@ -4042,7 +4661,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/10sqI-QqaD8JG637mBx93shzQ5iEc83OM",
    "date created": "2026-07-21",
    "notes": "From Aakara's 'IFM July Creatives' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. | Finished files delivered by Aakara in the Drive tree (July/Storys/hidden fortune game story). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
-   "thumbnail": "thumbs/IFM-267.jpg"
+   "thumbnail": "thumbs/IFM-267.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-268",
@@ -4056,7 +4676,8 @@ window.IFM_DATA ={
    "date created": "2026-09-01",
    "notes": "Finished files delivered by Aakara in the Drive tree (September/Carousels/Reviews) — 5 PNG artboards. Reconciled from the planning-deck row to the delivery folder on 2 Sep 2026; drive link now points at the topic folder, not the deck. Thumbnail refreshed from the delivered cover artboard.",
    "thumbnail": "thumbs/IFM-268.jpg",
-   "shot": "Testimonial — text"
+   "shot": "Testimonial — text",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-269",
@@ -4069,7 +4690,8 @@ window.IFM_DATA ={
    "drive link": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
    "date created": "2026-09-01",
    "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Designed — full 4-frame carousel. Pillar: Learning With IFM. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot.",
-   "thumbnail": "thumbs/IFM-269.jpg"
+   "thumbnail": "thumbs/IFM-269.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-270",
@@ -4081,7 +4703,8 @@ window.IFM_DATA ={
    "description": "Placeholder slide — a Ganesh Chaturthi festival tie-in carousel is planned but no frames have been designed yet. The slide carries only the label 'Topic: Ganesh Chaturthi related · Pillar: Topical · Format: Carousel'.",
    "drive link": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
    "date created": "2026-09-01",
-   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank placeholder in the deck — concept and artwork still to come from Aakara. Pillar: Topical. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot."
+   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank placeholder in the deck — concept and artwork still to come from Aakara. Pillar: Topical. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-271",
@@ -4095,7 +4718,8 @@ window.IFM_DATA ={
    "date created": "2026-09-01",
    "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot. | Finished files delivered by Aakara in the Drive tree (September/Reels/Ranking reel). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
    "thumbnail": "thumbs/IFM-271.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-271.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-271.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-272",
@@ -4107,7 +4731,8 @@ window.IFM_DATA ={
    "description": "Placeholder slide for a one-minute asset-allocation explainer reel, continuing the 'One Minute Investing School' strand from August's asset-class reels. Label only — no frames designed yet.",
    "drive link": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
    "date created": "2026-09-01",
-   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot."
+   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-273",
@@ -4119,7 +4744,8 @@ window.IFM_DATA ={
    "description": "Placeholder slide for the next instalment of the recurring 'Ever Wondered?' reel series. The deck notes the topic itself has yet to be decided — label reads 'Topic has to come'.",
    "drive link": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
    "date created": "2026-09-01",
-   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder; topic still undecided per the deck. Follows July's 'Ever Wondered' reel (IFM-216). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot."
+   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder; topic still undecided per the deck. Follows July's 'Ever Wondered' reel (IFM-216). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-274",
@@ -4135,7 +4761,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-274.jpg",
    "shot": "No people",
    "ig link": "https://www.instagram.com/investingformummies/reel/Dc48lXDSNl0/",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-274.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-274.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-275",
@@ -4147,7 +4774,8 @@ window.IFM_DATA ={
    "description": "Placeholder slide for an asset-vs-liability explainer reel, extending the August asset-class series. Label only — no frames designed yet.",
    "drive link": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
    "date created": "2026-09-01",
-   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot. | 12 Oct 2026: this topic was delivered as IFM-569 (“September: Asset or liability? — the rapid-fire game reel”, Ready, 22 Sep). This placeholder was never reconciled against it, so the hub still shows the topic as In Production. Status left unchanged — whether to mark it Published or superseded is a human call, carried in the review queue. "
+   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot. | 12 Oct 2026: this topic was delivered as IFM-569 (“September: Asset or liability? — the rapid-fire game reel”, Ready, 22 Sep). This placeholder was never reconciled against it, so the hub still shows the topic as In Production. Status left unchanged — whether to mark it Published or superseded is a human call, carried in the review queue. ",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-276",
@@ -4159,7 +4787,8 @@ window.IFM_DATA ={
    "description": "Placeholder slide for a 'cups' reel — presumably footage of the cups activity used in IFM workshops. Label only; no script or frames in the deck.",
    "drive link": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
    "date created": "2026-09-01",
-   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot."
+   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-277",
@@ -4171,7 +4800,8 @@ window.IFM_DATA ={
    "description": "Placeholder slide for a reel built around a '₹1,00,000 a day' reference — a scale/perspective hook on large sums. Label only; no frames yet.",
    "drive link": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
    "date created": "2026-09-01",
-   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot."
+   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reel not yet produced). Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-278",
@@ -4183,11 +4813,12 @@ window.IFM_DATA ={
    "description": "Placeholder slide for three news-topical reels — the September continuation of the weekly news strand (cf. July's 'Top 5 Things To Look At', IFM-263). Label only; no frames yet.",
    "drive link": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
    "date created": "2026-09-01",
-   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reels not yet produced); the deck bundles three news topicals into one slide. Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot."
+   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Blank label-only placeholder (reels not yet produced); the deck bundles three news topicals into one slide. Pillar: Workshops. The September deck carries no per-post dates and its calendar slide is blank — date is a month placeholder (Sep 1), not a scheduled slot.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-279",
-   "title": "Teens workshop — celebration moment (Aug 2026)",
+   "title": "Young adults workshop — celebration moment (Aug 2026)",
    "type": "Session Video",
    "source": "Event",
    "venue": "Teens investing workshop — office boardroom, Aug 2026",
@@ -4200,8 +4831,11 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-279.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-279.mp4"
+   "session": "Young adults — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-279.mp4",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-30T17:33:57+0530"
   },
   {
    "id": "IFM-280",
@@ -4219,11 +4853,14 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
    "session": "Teens — Aug 2026",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-280.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-280.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-30T15:23:22+0530"
   },
   {
    "id": "IFM-281",
-   "title": "Teens workshop — table activity (Aug 2026)",
+   "title": "Young adults workshop — table activity (Aug 2026)",
    "type": "Session Video",
    "source": "Event",
    "venue": "Teens investing workshop — office boardroom, Aug 2026",
@@ -4236,8 +4873,11 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-281.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-281.mp4"
+   "session": "Young adults — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-281.mp4",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-30T17:40:04+0530"
   },
   {
    "id": "IFM-282",
@@ -4255,11 +4895,14 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
    "session": "Teens — Aug 2026",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-282.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-282.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-27T14:43:48+0530"
   },
   {
    "id": "IFM-283",
-   "title": "Teens workshop — IFM game on laptop (Aug 2026)",
+   "title": "Young adults workshop — IFM game on laptop (Aug 2026)",
    "type": "Session Video",
    "source": "Event",
    "venue": "Teens investing workshop — office boardroom, Aug 2026",
@@ -4272,8 +4915,11 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-283.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-283.mp4"
+   "session": "Young adults — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-283.mp4",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-30T17:33:42+0530"
   },
   {
    "id": "IFM-284",
@@ -4291,11 +4937,14 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
    "session": "Teens — Aug 2026",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-284.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-284.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-30T15:33:54+0530"
   },
   {
    "id": "IFM-285",
-   "title": "Teens workshop — animated answer (Aug 2026)",
+   "title": "Young adults workshop — animated answer (Aug 2026)",
    "type": "Session Video",
    "source": "Event",
    "venue": "Teens investing workshop — office boardroom, Aug 2026",
@@ -4308,8 +4957,11 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-285.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-285.mp4"
+   "session": "Young adults — Aug 2026",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-285.mp4",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-30T17:30:11+0530"
   },
   {
    "id": "IFM-286",
@@ -4328,7 +4980,10 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens — Aug 2026",
    "shot": "Hiral — teaching",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-286.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-286.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-28T14:43:30+0530"
   },
   {
    "id": "IFM-287",
@@ -4346,7 +5001,10 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
    "session": "Teens — Aug 2026",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-287.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-287.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-30T14:26:58+0530"
   },
   {
    "id": "IFM-288",
@@ -4364,7 +5022,9 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
    "session": "Teens — Aug 2026",
-   "shot": "Certificate moment"
+   "shot": "Certificate moment",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-289",
@@ -4381,7 +5041,9 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-289.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-290",
@@ -4398,7 +5060,9 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-290.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-291",
@@ -4416,7 +5080,9 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
    "session": "Teens — Aug 2026",
-   "shot": "Room/venue wide"
+   "shot": "Room/venue wide",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-292",
@@ -4433,7 +5099,9 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-292.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-293",
@@ -4451,7 +5119,9 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
    "session": "Teens — Aug 2026",
-   "shot": "Certificate moment"
+   "shot": "Certificate moment",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-294",
@@ -4468,7 +5138,9 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-294.jpg",
    "setting": "Workshop — youth/teens",
    "consent": "Minors visible",
-   "session": "Teens — Aug 2026"
+   "session": "Teens — Aug 2026",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-295",
@@ -4483,7 +5155,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-295.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-296",
@@ -4498,7 +5171,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-296.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-297",
@@ -4513,7 +5187,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-297.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-298",
@@ -4528,7 +5203,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-298.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-299",
@@ -4543,7 +5219,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-299.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-300",
@@ -4558,7 +5235,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-300.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-301",
@@ -4573,7 +5251,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-301.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-302",
@@ -4588,7 +5267,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-302.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-303",
@@ -4603,7 +5283,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-303.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-304",
@@ -4618,7 +5299,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-304.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-305",
@@ -4633,7 +5315,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-305.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-306",
@@ -4648,7 +5331,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-306.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-307",
@@ -4663,7 +5347,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-307.jpg",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-308",
@@ -4679,7 +5364,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-308.jpg",
    "video": "teasers/kbc-teaser.mp4",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-309",
@@ -4695,7 +5381,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-309.jpg",
    "video": "teasers/ltm-teaser.mp4",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-310",
@@ -4711,7 +5398,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-310.jpg",
    "video": "teasers/stockrush-teaser.mp4",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-311",
@@ -4727,7 +5415,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-311.jpg",
    "download url": "https://ifm-deploy.vercel.app/content/game-assets/swayamvar-suitor-cards.zip",
    "setting": "Screen/Projector",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-312",
@@ -4742,7 +5431,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-312.jpg",
    "setting": "Not applicable",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-313",
@@ -4757,7 +5447,8 @@ window.IFM_DATA ={
    "notes": "Self-hosted on ifm-deploy. Added from the assets drop, 18 Aug 2026.",
    "thumbnail": "thumbs/IFM-313.jpg",
    "setting": "Not applicable",
-   "consent": "No identifiable people"
+   "consent": "No identifiable people",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-314",
@@ -4774,7 +5465,8 @@ window.IFM_DATA ={
    "video": "game-assets/ifm-hero-logo.mp4",
    "setting": "Not applicable",
    "consent": "No identifiable people",
-   "video url": "https://ifm-deploy.vercel.app/content/game-assets/ifm-hero-logo.mp4"
+   "video url": "https://ifm-deploy.vercel.app/content/game-assets/ifm-hero-logo.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-315",
@@ -4791,7 +5483,8 @@ window.IFM_DATA ={
    "notes": "Shot 4 Jul 2026 by the videographer (Drive owner toocrafty1595@gmail.com); folder shared with IFM 20 Aug 2026. Masters stay in Drive — only the thumbnail is self-hosted. Attendees are identifiable adult employees; get the client company’s sign-off before posting any of this publicly. Open = the Drive folder; browse the clip grid there rather than in the hub. The 3x3 thumbnail is a contact sheet of 8 sample frames.",
    "setting": "Workshop — corporate",
    "session": "Corporate — 4 Jul 2026",
-   "consent": "Adults only"
+   "consent": "Adults only",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-316",
@@ -4810,7 +5503,10 @@ window.IFM_DATA ={
    "setting": "Workshop — corporate",
    "session": "Corporate — 4 Jul 2026",
    "quality": "Hero",
-   "consent": "Adults only"
+   "consent": "Adults only",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-04T14:45:41+0530"
   },
   {
    "id": "IFM-317",
@@ -4829,7 +5525,10 @@ window.IFM_DATA ={
    "setting": "Workshop — corporate",
    "session": "Corporate — 4 Jul 2026",
    "quality": "Hero",
-   "consent": "Adults only"
+   "consent": "Adults only",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-04T11:23:03+0530"
   },
   {
    "id": "IFM-318",
@@ -4848,7 +5547,10 @@ window.IFM_DATA ={
    "setting": "Workshop — corporate",
    "session": "Corporate — 4 Jul 2026",
    "quality": "Hero",
-   "consent": "Adults only"
+   "consent": "Adults only",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-04T10:44:43+0530"
   },
   {
    "id": "IFM-319",
@@ -4868,7 +5570,8 @@ window.IFM_DATA ={
    "session": "Corporate — 4 Jul 2026",
    "quality": "Hero",
    "consent": "No identifiable people beyond Hiral",
-   "social": "Yes"
+   "social": "Yes",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-320",
@@ -4880,7 +5583,8 @@ window.IFM_DATA ={
    "description": "Copy-only slide for a 'kinda chic' trend carousel — no frames designed yet, just the six lines the carousel will use: kinda chic to start learning finance after 2 kids; to understand finance; to create a community with other women; to be able to discuss finance with confidence; to be able to take charge of your own financial future; to start Investing for Mummies.",
    "drive link": "https://docs.google.com/presentation/d/17bf34kZelPlCtFUfScBiLiuafTU6WqPuP1P7BkEHy-E/edit",
    "date created": "2026-09-01",
-   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Copy-only slide — the six carousel lines are written but no frames have been designed. Pillar: Topical. The September deck carries no per-post dates — date is a month placeholder (Sep 1), not a scheduled slot."
+   "notes": "From Aakara's 'IFM Creatives_September' deck (monthly content calendar). Open = the deck. STAGED — not yet deployed. Copy-only slide — the six carousel lines are written but no frames have been designed. Pillar: Topical. The September deck carries no per-post dates — date is a month placeholder (Sep 1), not a scheduled slot.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-321",
@@ -4893,7 +5597,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1kQ6SlHjUjlPYgYaNb66LlvXkqJBypA2_/view",
    "date created": "2026-09-01",
    "notes": "Originally a blank label-only placeholder from Aakara's 'IFM Creatives_September' deck. Aakara delivered the artwork on 16 Sep 2026 as 'nse bse.png', sitting loose in September/Reels rather than in a topic folder — this row was updated in place rather than duplicated. ⚠️ Only the COVER GRAPHIC has been delivered; the reel video itself is not in the folder, so 'Ready' means the cover art is final, not that the reel is cut. Same treatment as the other loose reel covers (cf. IFM-204, IFM-343, IFM-366). Pillar: Workshops. September deck carries no per-post dates — date stays the month placeholder (Sep 1). Mirrored to our own Drive (IFM Content Archive → From Aakara): archive: 1Y2m_etZIWxd4KKpCstyw2UO4-F5dNG3A. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-321.jpg"
+   "thumbnail": "thumbs/IFM-321.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-322",
@@ -4912,7 +5617,8 @@ window.IFM_DATA ={
    "quality": "Hero",
    "consent": "Adults only",
    "session": "Aakara September delivery",
-   "social": "Yes"
+   "social": "Yes",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-323",
@@ -4926,7 +5632,8 @@ window.IFM_DATA ={
    "video": "",
    "description": "Carousel cover: two mock 'World News' front pages — 'Elon Musk gains $18 billion overnight' and 'Mukesh Ambani's wealth jumps after Reliance shares rise' — under the headline 'Headlines we see all the time', closing with 'So… where did all that money come from?'",
    "keywords": "aakara, july, carousel, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (July/Carousels/headline news). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders."
+   "notes": "Finished files delivered by Aakara in the Drive tree (July/Carousels/headline news). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-324",
@@ -4940,7 +5647,8 @@ window.IFM_DATA ={
    "video": "",
    "description": "Carousel cover: a school report card graded A+/A- on Revenue, Net Profit and Earnings Per Share — 'The Stock Market's Report Card Season Starts Thursday! And yes, it affects your wallet.' (TCS quarterly results topical.)",
    "keywords": "aakara, july, carousel, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (July/Carousels/TCS QResults News). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders."
+   "notes": "Finished files delivered by Aakara in the Drive tree (July/Carousels/TCS QResults News). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-325",
@@ -4955,7 +5663,8 @@ window.IFM_DATA ={
    "description": "Reel: Hiral to camera on a blue gradient — 'If finance pages confuse you, this is for you!' Founder-expertise positioning reel, 4 files in the folder.",
    "keywords": "aakara, july, reel, finished, delivered",
    "notes": "Finished files delivered by Aakara in the Drive tree (July/Reels/Hiral expertise). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "shot": "Hiral — portrait"
+   "shot": "Hiral — portrait",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-326",
@@ -4969,7 +5678,8 @@ window.IFM_DATA ={
    "video": "",
    "description": "Carousel cover: 'The 10-minute money job you should do this week' in bold serif on cream — a do-one-thing-now actionable carousel.",
    "keywords": "aakara, august, carousel, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (August/Carousels/10 minute money). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders."
+   "notes": "Finished files delivered by Aakara in the Drive tree (August/Carousels/10 minute money). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-327",
@@ -4983,7 +5693,8 @@ window.IFM_DATA ={
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-327.mp4",
    "description": "Reel: Hiral in blue holding a gold bar in one hand and a boxed necklace in the other — 'This simple Money Rule will change your life!'",
    "keywords": "aakara, august, reel, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/1x1). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library."
+   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/1x1). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-328",
@@ -4997,7 +5708,8 @@ window.IFM_DATA ={
    "video": "",
    "description": "Reel: a woman counting ₹500 notes amid faded family scenes — 'The Hidden Cost of neglecting your finances.'",
    "keywords": "aakara, august, reel, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/hidden cost). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders."
+   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/hidden cost). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-329",
@@ -5012,7 +5724,8 @@ window.IFM_DATA ={
    "description": "Reel: Hiral in a blue blazer pointing at the camera beside a 'Jackson Hole' road sign — 'Why you should keep an eye on this Secret Meeting.' Fed symposium topical.",
    "keywords": "aakara, august, reel, finished, delivered",
    "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/jackson hole). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. | Status corrected 7 Sep 2026: was \"Ready\" but verified live on the IFM grid.",
-   "ig link": "https://www.instagram.com/investingformummies/reel/DcSdrOkSpLV/"
+   "ig link": "https://www.instagram.com/investingformummies/reel/DcSdrOkSpLV/",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-330",
@@ -5026,7 +5739,8 @@ window.IFM_DATA ={
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-330.mp4",
    "description": "Reel: Hiral in a green striped shirt mid-sentence, 'Be honest.' on-screen — RBI explainer part 1.",
    "keywords": "aakara, august, reel, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/RBI (part 1)). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library."
+   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/RBI (part 1)). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-331",
@@ -5040,7 +5754,8 @@ window.IFM_DATA ={
    "video": "",
    "description": "Reel: Hiral on a sofa holding an AC-style remote with the RBI seal behind — 'Why you shouldn't ignore the Repo Rate.' RBI part 2.",
    "keywords": "aakara, august, reel, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/RBI pt2). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders."
+   "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/RBI pt2). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-332",
@@ -5055,7 +5770,8 @@ window.IFM_DATA ={
    "description": "Reel: Hiral in white lace with a second presenter composited — 'Who says Money Conversations aren't for you?' Women's Equality Day topical.",
    "keywords": "aakara, august, reel, finished, delivered",
    "notes": "Finished files delivered by Aakara in the Drive tree (August/Reels/Woman's equality). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders. | Status corrected 7 Sep 2026: was \"Ready\" but verified live on the IFM grid. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "ig link": "https://www.instagram.com/investingformummies/reel/DcfK8mvhUkQ/"
+   "ig link": "https://www.instagram.com/investingformummies/reel/DcfK8mvhUkQ/",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-333",
@@ -5069,7 +5785,8 @@ window.IFM_DATA ={
    "video": "",
    "description": "Story: postage-stamp frame on coral — 'Confused about assets? WE'VE GOT YOU!' Teaser for the assets series.",
    "keywords": "aakara, august, story, finished, delivered",
-   "notes": "Finished files delivered by Aakara in the Drive tree (August/Storys/asset). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders."
+   "notes": "Finished files delivered by Aakara in the Drive tree (August/Storys/asset). Reconciled 31 Aug 2026 — the sync had been reading the planning deck, not the delivery folders.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-334",
@@ -5089,7 +5806,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "Aakara September delivery",
    "social": "Yes",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-334.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-334.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-335",
@@ -5108,7 +5826,8 @@ window.IFM_DATA ={
    "quality": "Hero",
    "consent": "Adults only",
    "session": "RSS workshop (Balsabha) — 4 Jun 2026",
-   "social": "Yes"
+   "social": "Yes",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-336",
@@ -5127,7 +5846,8 @@ window.IFM_DATA ={
    "quality": "Hero",
    "consent": "Adults only",
    "session": "RSS workshop (Balsabha) — 4 Jun 2026",
-   "social": "Yes"
+   "social": "Yes",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-337",
@@ -5146,7 +5866,8 @@ window.IFM_DATA ={
    "quality": "Hero",
    "consent": "Adults only",
    "session": "RSS workshop (Balsabha) — 4 Jun 2026",
-   "social": "Yes"
+   "social": "Yes",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-338",
@@ -5165,7 +5886,8 @@ window.IFM_DATA ={
    "quality": "Hero",
    "consent": "Adults only",
    "session": "RSS workshop (Balsabha) — 4 Jun 2026",
-   "social": "Yes"
+   "social": "Yes",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-339",
@@ -5184,7 +5906,8 @@ window.IFM_DATA ={
    "quality": "Usable",
    "consent": "Adults only",
    "session": "RSS workshop (Balsabha) — 4 Jun 2026",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-340",
@@ -5204,7 +5927,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "RSS workshop (Balsabha) — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-340.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-340.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-341",
@@ -5223,7 +5947,8 @@ window.IFM_DATA ={
    "quality": "Hero",
    "consent": "No identifiable people",
    "session": "Aakara September delivery",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-342",
@@ -5243,7 +5968,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "Aakara September delivery",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-342.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-342.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-343",
@@ -5262,7 +5988,8 @@ window.IFM_DATA ={
    "quality": "Usable",
    "consent": "Adults only",
    "session": "Aakara July delivery",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-344",
@@ -5282,7 +6009,8 @@ window.IFM_DATA ={
    "quality": "Hero",
    "consent": "No identifiable people",
    "session": "Aakara June delivery",
-   "social": "Yes"
+   "social": "Yes",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-345",
@@ -5302,7 +6030,8 @@ window.IFM_DATA ={
    "quality": "Hero",
    "consent": "No identifiable people",
    "session": "Aakara June delivery",
-   "social": "Yes"
+   "social": "Yes",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-346",
@@ -5323,7 +6052,10 @@ window.IFM_DATA ={
    "consent": "No identifiable people",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-346.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-346.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T17:17:00+0530"
   },
   {
    "id": "IFM-347",
@@ -5344,7 +6076,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-347.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-347.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T17:13:29+0530"
   },
   {
    "id": "IFM-348",
@@ -5365,7 +6100,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-348.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-348.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T17:32:44+0530"
   },
   {
    "id": "IFM-349",
@@ -5386,7 +6124,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-349.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-349.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T17:54:55+0530"
   },
   {
    "id": "IFM-350",
@@ -5407,7 +6148,10 @@ window.IFM_DATA ={
    "consent": "No identifiable people",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-350.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-350.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T17:37:02+0530"
   },
   {
    "id": "IFM-351",
@@ -5428,7 +6172,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-351.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-351.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T17:27:21+0530"
   },
   {
    "id": "IFM-352",
@@ -5449,7 +6196,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-352.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-352.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T18:28:49+0530"
   },
   {
    "id": "IFM-353",
@@ -5470,7 +6220,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-353.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-353.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T17:15:19+0530"
   },
   {
    "id": "IFM-354",
@@ -5491,7 +6244,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-354.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-354.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T18:37:36+0530"
   },
   {
    "id": "IFM-355",
@@ -5512,7 +6268,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-355.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-355.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T18:39:12+0530"
   },
   {
    "id": "IFM-356",
@@ -5533,7 +6292,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-356.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-356.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T18:20:09+0530"
   },
   {
    "id": "IFM-357",
@@ -5554,7 +6316,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-357.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-357.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T18:15:32+0530"
   },
   {
    "id": "IFM-358",
@@ -5575,7 +6340,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-358.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-358.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T17:19:49+0530"
   },
   {
    "id": "IFM-359",
@@ -5595,7 +6363,8 @@ window.IFM_DATA ={
    "quality": "Hero",
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
-   "social": "Yes"
+   "social": "Yes",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-360",
@@ -5616,7 +6385,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-360.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-360.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T16:54:00+0530"
   },
   {
    "id": "IFM-361",
@@ -5637,7 +6409,10 @@ window.IFM_DATA ={
    "consent": "No identifiable people",
    "session": "BALSABHA women’s workshop — 4 Jun 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-361.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-361.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-06-03T17:49:11+0530"
   },
   {
    "id": "IFM-362",
@@ -5657,7 +6432,10 @@ window.IFM_DATA ={
    "quality": "Usable",
    "consent": "Certificates with names visible",
    "session": "Investing for Mummies Flagship graduation — Aug 2026",
-   "social": ""
+   "social": "",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T14:01:07+0530"
   },
   {
    "id": "IFM-363",
@@ -5677,7 +6455,8 @@ window.IFM_DATA ={
    "quality": "Usable",
    "consent": "Certificates with names visible",
    "session": "Investing for Mummies Flagship graduation — Aug 2026",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-364",
@@ -5697,7 +6476,10 @@ window.IFM_DATA ={
    "quality": "Usable",
    "consent": "Certificates with names visible",
    "session": "Investing for Mummies Flagship graduation — Aug 2026",
-   "social": ""
+   "social": "",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T14:02:01+0530"
   },
   {
    "id": "IFM-365",
@@ -5717,7 +6499,8 @@ window.IFM_DATA ={
    "quality": "Usable",
    "consent": "Certificates with names visible",
    "session": "Investing for Mummies Flagship graduation — Aug 2026",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-366",
@@ -5736,7 +6519,8 @@ window.IFM_DATA ={
    "quality": "Usable",
    "consent": "Adults only",
    "session": "Aakara June delivery",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-367",
@@ -5756,7 +6540,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "Aakara June delivery",
    "social": "Yes",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-367.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-367.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-368",
@@ -5776,7 +6561,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
    "social": "Yes",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-368.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-368.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T14:00:57+0530"
   },
   {
    "id": "IFM-369",
@@ -5796,7 +6584,10 @@ window.IFM_DATA ={
    "consent": "Certificates with names visible",
    "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-369.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-369.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-31T13:26:08+0530"
   },
   {
    "id": "IFM-370",
@@ -5815,7 +6606,8 @@ window.IFM_DATA ={
    "quality": "Hero",
    "consent": "Certificates with names visible",
    "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-371",
@@ -5834,7 +6626,10 @@ window.IFM_DATA ={
    "quality": "Raw-backup",
    "consent": "Certificates with names visible",
    "session": "Flagship workshop — certificate day (uploaded 7 Sep 2026)",
-   "social": ""
+   "social": "",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-31T15:21:34+0530"
   },
   {
    "id": "IFM-372",
@@ -5846,7 +6641,8 @@ window.IFM_DATA ={
    "description": "Label-only placeholder slide for a brand-awareness carousel on the rules for mastering personal finance. No frames, copy or references on the slide yet — topic and pillar only.",
    "drive link": "https://docs.google.com/presentation/d/1j88loWk4b_yUlDu_CokLLigpPdvyQKU1sKj6QxJ5gVQ/edit",
    "date created": "2026-09-01",
-   "notes": "From Aakara's 'IFM Internal_September' deck — a SECOND September deck, separate from 'IFM Creatives_September' (17bf34k…) which IFM-269…IFM-278 were built from. The Internal deck carries two topics the Creatives deck does not, and this row is one of them. Open = the deck. STAGED — not yet deployed. ⚠️ 'IFM Internal_October' (added 6 Sep 2026) is an unedited copy of this deck — same 13 topic slides, only the title slide and the calendar were changed, and its overview slide still reads 'Content Plan for August'. So there is NO October-specific plan yet; no October rows were created. Worth asking Aakara for the real October slate. No per-post dates in the deck — date is a month placeholder (Sep 1), not a scheduled slot. Pillar: Brand Awareness. Mirrored to our own Drive (IFM Content Archive → From Aakara): archive: 1jA0iQvr7es9xvbau5BUJYenPuvbMwhG4rj-JfCh95_s (September Internal deck); the October carry-forward is archived too as archive: 1_WaaZGiTbg-z5tvx3wWES5MoVlaqbhyTDVc4J3IJ20I."
+   "notes": "From Aakara's 'IFM Internal_September' deck — a SECOND September deck, separate from 'IFM Creatives_September' (17bf34k…) which IFM-269…IFM-278 were built from. The Internal deck carries two topics the Creatives deck does not, and this row is one of them. Open = the deck. STAGED — not yet deployed. ⚠️ 'IFM Internal_October' (added 6 Sep 2026) is an unedited copy of this deck — same 13 topic slides, only the title slide and the calendar were changed, and its overview slide still reads 'Content Plan for August'. So there is NO October-specific plan yet; no October rows were created. Worth asking Aakara for the real October slate. No per-post dates in the deck — date is a month placeholder (Sep 1), not a scheduled slot. Pillar: Brand Awareness. Mirrored to our own Drive (IFM Content Archive → From Aakara): archive: 1jA0iQvr7es9xvbau5BUJYenPuvbMwhG4rj-JfCh95_s (September Internal deck); the October carry-forward is archived too as archive: 1_WaaZGiTbg-z5tvx3wWES5MoVlaqbhyTDVc4J3IJ20I.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-373",
@@ -5858,7 +6654,8 @@ window.IFM_DATA ={
    "description": "Label-only placeholder slide for news-focused carousels — the carousel counterpart to the news-topical reel strand (cf. IFM-278, IFM-323, IFM-324). No specific stories named on the slide.",
    "drive link": "https://docs.google.com/presentation/d/1j88loWk4b_yUlDu_CokLLigpPdvyQKU1sKj6QxJ5gVQ/edit",
    "date created": "2026-09-01",
-   "notes": "From Aakara's 'IFM Internal_September' deck — a SECOND September deck, separate from 'IFM Creatives_September' (17bf34k…) which IFM-269…IFM-278 were built from. The Internal deck carries two topics the Creatives deck does not, and this row is one of them. Open = the deck. STAGED — not yet deployed. ⚠️ 'IFM Internal_October' (added 6 Sep 2026) is an unedited copy of this deck — same 13 topic slides, only the title slide and the calendar were changed, and its overview slide still reads 'Content Plan for August'. So there is NO October-specific plan yet; no October rows were created. Worth asking Aakara for the real October slate. No per-post dates in the deck — date is a month placeholder (Sep 1), not a scheduled slot. Pillar: News focused. Distinct from IFM-278 (reels) — this is the carousel slot. Mirrored to our own Drive (IFM Content Archive → From Aakara): archive: 1jA0iQvr7es9xvbau5BUJYenPuvbMwhG4rj-JfCh95_s (September Internal deck); the October carry-forward is archived too as archive: 1_WaaZGiTbg-z5tvx3wWES5MoVlaqbhyTDVc4J3IJ20I."
+   "notes": "From Aakara's 'IFM Internal_September' deck — a SECOND September deck, separate from 'IFM Creatives_September' (17bf34k…) which IFM-269…IFM-278 were built from. The Internal deck carries two topics the Creatives deck does not, and this row is one of them. Open = the deck. STAGED — not yet deployed. ⚠️ 'IFM Internal_October' (added 6 Sep 2026) is an unedited copy of this deck — same 13 topic slides, only the title slide and the calendar were changed, and its overview slide still reads 'Content Plan for August'. So there is NO October-specific plan yet; no October rows were created. Worth asking Aakara for the real October slate. No per-post dates in the deck — date is a month placeholder (Sep 1), not a scheduled slot. Pillar: News focused. Distinct from IFM-278 (reels) — this is the carousel slot. Mirrored to our own Drive (IFM Content Archive → From Aakara): archive: 1jA0iQvr7es9xvbau5BUJYenPuvbMwhG4rj-JfCh95_s (September Internal deck); the October carry-forward is archived too as archive: 1_WaaZGiTbg-z5tvx3wWES5MoVlaqbhyTDVc4J3IJ20I.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-374",
@@ -5878,7 +6675,8 @@ window.IFM_DATA ={
    "social": "",
    "notes": "NEW topic folder delivered by Aakara overnight 17 Sep 2026 (02:03–04:01). Holds 'Asset or invest.psd' (the graphic) and 'Base.mp4' (132MB base footage of Hiral with the bag). One row for the topic folder per the Aakara rule. Status Raw, not Ready: the .psd is a working design file and the reel is not cut. ⚠️ POSSIBLE DUPLICATE OF IFM-275 'September: Asset vs Liability', which is still a label-only In Production placeholder from the Creatives deck. The concept is the same asset/liability handbag trope, but the delivered artwork pairs ASSET with INVESTMENT, not with LIABILITY, so this was staged as a NEW row rather than closing IFM-275 — per the 'match conservatively, when unsure create a new row and say so' rule. If Aakara confirms these are one post, merge IFM-374 into IFM-275 and delete this row. Mirrored to our own Drive (IFM Content Archive -> From Aakara): archive: 1WdIW2aBT9TU_2603ckeMPjbw7wl2sMDM (psd), archive: 1DsPYHYgCo5pmXGcNsMjPgUFfJN_HOPUI (Base.mp4). STAGED — not yet deployed. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
    "thumbnail": "thumbs/IFM-374.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-374.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-374.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-375",
@@ -5897,7 +6695,8 @@ window.IFM_DATA ={
    "session": "Aakara September delivery — 17 Sep 2026",
    "social": "Yes",
    "notes": "Delivered by Aakara overnight 17 Sep 2026 (01:09) as 'tata group.png', sitting loose in September/Reels rather than in a topic folder — same pattern as 'nse bse.png' (IFM-321). ⚠️ Only the COVER GRAPHIC exists; the reel video itself has not been delivered, so 'Ready' means the cover art is final, not that the reel is cut. No matching September placeholder row existed, so this was staged as a NEW row; it may be one of the three reels bundled under IFM-278 'September: 3 News Topicals', in which case fold it in there. Note the repo also has in-house Tata Sons reel work in progress (reel_tata_sons/) — check the two are not building the same post twice. Mirrored to our own Drive (IFM Content Archive -> From Aakara): archive: 157vvlXPt4FQlvj4Lswvk8SsmEk1OhxpM. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-375.jpg"
+   "thumbnail": "thumbs/IFM-375.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-376",
@@ -5917,7 +6716,10 @@ window.IFM_DATA ={
    "social": "Yes",
    "notes": "Presenter identity was not confirmed from the frame, so the description says 'the facilitator' rather than naming anyone; shot is tagged Hiral — teaching because she leads this series. Correct the tag if this is a guest speaker. Source file: IMG_0916.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1eatyB42DpyUssrXJOO76iBTiXq-WdmEZ. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-376.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-376.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-376.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-04T11:25:26+0530"
   },
   {
    "id": "IFM-377",
@@ -5937,7 +6739,10 @@ window.IFM_DATA ={
    "social": "Yes",
    "notes": "Participant faces are identifiable — confirm workshop consent before posting. Source file: IMG_0895.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1LqKcGhVg7ufx9XbARcV-0mvE1xRKUW9I. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-377.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-377.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-377.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-03T11:19:46+0530"
   },
   {
    "id": "IFM-378",
@@ -5957,7 +6762,10 @@ window.IFM_DATA ={
    "social": "",
    "notes": "Source file: IMG_0897.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1AEQvj4L3YkkIEStqI6Gl8l5kyDbVbyYp. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-378.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-378.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-378.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-03T11:20:23+0530"
   },
   {
    "id": "IFM-379",
@@ -5977,7 +6785,10 @@ window.IFM_DATA ={
    "social": "",
    "notes": "Source file: IMG_0911.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1BJmhRfvG1fPN3IXzOoN8P8F2GjQI9uOI. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-379.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-379.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-379.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-04T11:23:00+0530"
   },
   {
    "id": "IFM-380",
@@ -5997,7 +6808,10 @@ window.IFM_DATA ={
    "social": "Yes",
    "notes": "Participant faces are identifiable — confirm workshop consent before posting. Source file: IMG_1073.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1I1-1dTOboQK74ACeyYWvLdEuq9TdRpe6. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-380.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-380.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-380.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-13T12:23:04+0530"
   },
   {
    "id": "IFM-381",
@@ -6017,7 +6831,10 @@ window.IFM_DATA ={
    "social": "Yes",
    "notes": "Near-dupe backups of this moment in the same folder: IMG_1078.MOV (the same participant in yellow raising a cup). Participant faces are identifiable — confirm workshop consent before posting. Source file: IMG_1070.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 17xNISrFv7zbSUSNV4obfweDM8B5kQ7-X. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-381.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-381.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-381.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-13T12:20:09+0530"
   },
   {
    "id": "IFM-382",
@@ -6037,7 +6854,10 @@ window.IFM_DATA ={
    "social": "",
    "notes": "Byte-identical duplicate of this clip also sits in the folder (id 10f_CdDBOY0SeO15ZGQGlZXUGl3GOChux, re-uploaded 1 Sep 2026, same 18,952,334 bytes) — the copy is rejected and this row points at the 24 Aug original. Participant faces are identifiable — confirm workshop consent before posting. Source file: IMG_1578.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1Cs8XT60uNhcnZUghUAvTs7eUC9NcMTAo. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-382.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-382.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-382.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-24T10:59:33+0530"
   },
   {
    "id": "IFM-383",
@@ -6057,7 +6877,10 @@ window.IFM_DATA ={
    "social": "Yes",
    "notes": "Source file: IMG_1585.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1j7xm_uwYq_WGJpSKjb4wXQBkmsz_BWY-. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-383.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-383.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-383.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-24T11:08:13+0530"
   },
   {
    "id": "IFM-384",
@@ -6076,7 +6899,10 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "Yes",
    "notes": "The clearest frame of the phone-side of the live classroom game; near-dupe backup IMG_1597.HEIC shows the same phone a moment later on the scoring screen. Source file: IMG_1595.HEIC in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1O0pGdNxT97leVAVdPmQVYb9NfQn7FbzB. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-384.jpg"
+   "thumbnail": "thumbs/IFM-384.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-24T11:13:05+0530"
   },
   {
    "id": "IFM-385",
@@ -6095,7 +6921,10 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "Source file: IMG_1601.HEIC in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1PuWegbDbOuJFc2t8nl03K2WIMS-DzTal. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-385.jpg"
+   "thumbnail": "thumbs/IFM-385.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-24T11:13:27+0530"
   },
   {
    "id": "IFM-386",
@@ -6115,7 +6944,10 @@ window.IFM_DATA ={
    "social": "",
    "notes": "Presenter identity was not confirmed from the frame, so the description says 'the facilitator' rather than naming anyone; shot is tagged Hiral — teaching because she leads this series. Correct the tag if this is a guest speaker. Source file: IMG_1627.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 169E2_PvlTaPu2voYy8BnC_75f1ia08gj. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-386.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-386.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-386.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-24T11:25:11+0530"
   },
   {
    "id": "IFM-387",
@@ -6134,7 +6966,10 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "This moment runs long — roughly twenty near-identical frames (IMG_1640 to IMG_1657) cover the same seat and screen through the game. They stay in the folder as backups; this is the cleanest frame. Source file: IMG_1642.JPG in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1bSEsBnUAr0VBEU-YXAFJjZDvnjN314OD. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-387.jpg"
+   "thumbnail": "thumbs/IFM-387.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-25T11:38:54+0530"
   },
   {
    "id": "IFM-388",
@@ -6154,7 +6989,10 @@ window.IFM_DATA ={
    "social": "",
    "notes": "Participant faces are identifiable — confirm workshop consent before posting. Source file: IMG_1667.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 10l8UPRYU8a8rm4hiaBZuJ1dAquh8NX5b. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-388.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-388.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-388.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-25T12:46:14+0530"
   },
   {
    "id": "IFM-389",
@@ -6174,7 +7012,10 @@ window.IFM_DATA ={
    "social": "Yes",
    "notes": "Source file: IMG_1671.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1IAZV9HPLs_jF1ZKUahuZ8_UkOFOCZiuJ. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-389.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-389.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-389.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-25T12:50:05+0530"
   },
   {
    "id": "IFM-390",
@@ -6194,7 +7035,10 @@ window.IFM_DATA ={
    "social": "",
    "notes": "Presenter identity was not confirmed from the frame, so the description says 'the facilitator' rather than naming anyone; shot is tagged Hiral — teaching because she leads this series. Correct the tag if this is a guest speaker. Near-dupe backup: IMG_1668.MOV from the same position. Source file: IMG_1672.MOV in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1Ix-8OXTHMbfJR6EOC5XKFA0WkvjkedHr. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-390.jpg",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-390.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-390.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-25T12:50:40+0530"
   },
   {
    "id": "IFM-391",
@@ -6213,7 +7057,10 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "Yes",
    "notes": "Near-dupe backup: IMG_4880.JPG, the same wide a second later. Participant faces are identifiable — confirm workshop consent before posting. Source file: IMG_4879.JPG in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 11S1lmVsFBwO_ihttV3b_rMYkvZdzq_Gj. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-391.jpg"
+   "thumbnail": "thumbs/IFM-391.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-31T10:29:54+0530"
   },
   {
    "id": "IFM-392",
@@ -6232,7 +7079,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "Yes",
    "notes": "Presenter identity was not confirmed from the frame, so the description says 'the facilitator' rather than naming anyone; shot is tagged Hiral — teaching because she leads this series. Correct the tag if this is a guest speaker. Near-dupe backups: IMG_4884, IMG_4885, IMG_4886, IMG_4889 — the same slide from the same position. Source file: IMG_4882.HEIC in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1QbE-193hHgv5Hact0_TGQdMabmFjGCWa. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-392.jpg"
+   "thumbnail": "thumbs/IFM-392.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-393",
@@ -6251,7 +7099,10 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "Presenter identity was not confirmed from the frame, so the description says 'the facilitator' rather than naming anyone; shot is tagged Hiral — teaching because she leads this series. Correct the tag if this is a guest speaker. Near-dupe backups: IMG_4900, IMG_4902, IMG_4903, IMG_4905 on the same slide. Source file: IMG_4899.HEIC in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1vw6_JIICvlPway4s5bTk0mijPXizvXo8. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-393.jpg"
+   "thumbnail": "thumbs/IFM-393.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-31T10:36:10+0530"
   },
   {
    "id": "IFM-394",
@@ -6270,7 +7121,10 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "Presenter identity was not confirmed from the frame, so the description says 'the facilitator' rather than naming anyone; shot is tagged Hiral — teaching because she leads this series. Correct the tag if this is a guest speaker. Near-dupe backups: IMG_4931, IMG_4932, IMG_4933, IMG_4934. Source file: IMG_4930.JPG in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1KRtFoNbEEqm7eLvoAgl0W8CWm7KL2WSK. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-394.jpg"
+   "thumbnail": "thumbs/IFM-394.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-31T11:09:10+0530"
   },
   {
    "id": "IFM-395",
@@ -6289,7 +7143,10 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "Near-dupe backup: IMG_4897.JPG. Source file: IMG_4896.JPG in Content Library -> IFM Aug 2026. One moment = one row (121 raw files in that folder grouped into 20 moments plus a catch-all). Mirrored to our own Drive (IFM Content Archive -> From Sakshi), because the Content Library is owned by sakshi@investingformummies.com, not by us: archive: 1iEUCrVXq0aMST5gGWsBDI3CGkCxWbSEm. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-395.jpg"
+   "thumbnail": "thumbs/IFM-395.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-31T10:35:35+0530"
   },
   {
    "id": "IFM-396",
@@ -6308,7 +7165,8 @@ window.IFM_DATA ={
    "session": "IFM corporate boardroom workshop — Aug 2026",
    "social": "",
    "notes": "This is the only row in this shoot that links to the folder rather than to one file — by design. Five byte-identical duplicate pairs were found in the folder (IMG_1576, 1577, 1578, 1579, 1580 each uploaded twice); IMG_1578 was confirmed identical by size and the other four match the same pattern — a 1 Sep 2026 re-upload of five 24 Aug clips. The copies are rejected, not catalogued. STAGED — not yet deployed.",
-   "thumbnail": "thumbs/IFM-396.jpg"
+   "thumbnail": "thumbs/IFM-396.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-397",
@@ -6328,7 +7186,10 @@ window.IFM_DATA ={
    "session": "IFM testimonial recordings — 9 Sep 2026",
    "social": "Yes",
    "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 551 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1x6dgj8tGHqzCFXjUfE-dpzDrmnDcQs1U",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-397.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-397.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-27T11:09:57+0530"
   },
   {
    "id": "IFM-398",
@@ -6348,7 +7209,10 @@ window.IFM_DATA ={
    "session": "IFM testimonial recordings — 9 Sep 2026",
    "social": "Yes",
    "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 1182 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1JbE0iUE26r7p8VZGY0qpja6iyG18VFac",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-398.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-398.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-27T11:15:50+0530"
   },
   {
    "id": "IFM-399",
@@ -6368,7 +7232,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — 17 Jul 2026",
    "social": "Yes",
    "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 1449 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1rBbqLRTOPm_KeF1W3dNxYtYUJanTb_2s",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-399.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-399.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-24T11:11:41+0530"
   },
   {
    "id": "IFM-400",
@@ -6388,7 +7255,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — 24 Jun 2026",
    "social": "",
    "notes": "Byte-identical duplicate rejected: file 1BoBZ4i1FrZzzXeZSCUmVrE3SPDbShcWF, same name IMG_4248.MOV and same size 628374179, re-uploaded 14 Jul 2026 into the same folder. This row points at the 24 Jun 2026 original. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 628 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 12DTTzOFEbiaHpOgq0TY6FFtgOzh-RALf",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-400.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-400.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-24T11:15:31+0530"
   },
   {
    "id": "IFM-401",
@@ -6408,7 +7278,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — 24 Jun 2026",
    "social": "",
    "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 148 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1sPbAt5cNrQQA9gAFkkZDI3DJAnmfXBAT. STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-401.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-401.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-24T11:11:13+0530"
   },
   {
    "id": "IFM-402",
@@ -6428,7 +7301,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — 24 Jun 2026",
    "social": "",
    "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 210 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1rRyKRigEB0AIdwr-wG-WynzoSloPtZVV",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-402.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-402.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-24T11:10:39+0530"
   },
   {
    "id": "IFM-403",
@@ -6448,7 +7324,10 @@ window.IFM_DATA ={
    "session": "IFM small-group session — Sep 2026",
    "social": "",
    "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 101 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1fxV7iM62sj7V6xQkrdZXN5qNEhs4YrMd. STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-403.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-403.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-09T10:57:55+0530"
   },
   {
    "id": "IFM-404",
@@ -6468,7 +7347,10 @@ window.IFM_DATA ={
    "session": "IFM small-group session — Sep 2026",
    "social": "",
    "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 199 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 16Ax0M5WFxN3dDuKU8P0QIxMtlL7iacvX. STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-404.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-404.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-09T10:58:22+0530"
   },
   {
    "id": "IFM-405",
@@ -6488,7 +7370,10 @@ window.IFM_DATA ={
    "session": "IFM small-group session — Sep 2026",
    "social": "",
    "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 110 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 18wg-aZGmHYWHLkRpVqHW_V1HQwa8L6Ae. STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-405.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-405.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-09T12:07:25+0530"
   },
   {
    "id": "IFM-406",
@@ -6508,7 +7393,10 @@ window.IFM_DATA ={
    "session": "IFM small-group session — Sep 2026",
    "social": "Yes",
    "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 130 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1-9fnzO_V_vuRVRyjD2HLatfMBDz7KLGV. STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-406.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-406.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-09T12:07:45+0530"
   },
   {
    "id": "IFM-407",
@@ -6528,7 +7416,10 @@ window.IFM_DATA ={
    "session": "IFM small-group session — Sep 2026",
    "social": "Yes",
    "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 56 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1PNvRRcV8JAVVm5U7dHwZdquJr01KpQO-. STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-407.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-407.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-09T12:08:11+0530"
   },
   {
    "id": "IFM-408",
@@ -6548,7 +7439,10 @@ window.IFM_DATA ={
    "session": "IFM small-group session — Sep 2026",
    "social": "",
    "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 77 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1IJ5jC1OIDKoeOKjY6X9q6HoY8Bs1nwWZ. STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-408.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-408.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-09T12:08:37+0530"
   },
   {
    "id": "IFM-409",
@@ -6568,7 +7462,10 @@ window.IFM_DATA ={
    "session": "IFM small-group session — Sep 2026",
    "social": "Yes",
    "notes": "Part of one small-group sitting in the wood-paneled boardroom — the same four women recur across IFM-403 to IFM-409, so these are different moments of the same conversation rather than separate people's testimonials. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 33 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1PajD-8dfOCCAsNg4kV8x4t1sgwu6mNfU. STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-409.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-409.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-09T12:09:02+0530"
   },
   {
    "id": "IFM-410",
@@ -6588,7 +7485,10 @@ window.IFM_DATA ={
    "session": "IFM small-group session — Sep 2026",
    "social": "",
    "notes": "Presenter identity NOT confirmed — this may be Hiral or another facilitator. Shot tagged conservatively rather than as 'Hiral — teaching'; confirm before using for the Media Kit. Same yellow-shirted presenter appears in IFM-412. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 160 MB — within the mirror cap; mirrored to the IFM Content Archive as archive: 1QzJl4fJrkiwY0vzMAD_5IYkv8ECOa4Vc. STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-410.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-410.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-09T12:09:28+0530"
   },
   {
    "id": "IFM-411",
@@ -6608,7 +7508,10 @@ window.IFM_DATA ={
    "session": "IFM small-group session — Sep 2026",
    "social": "",
    "notes": "Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 369 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1q3kFATEmjXLbySu-hSzDEij6R8dYwF9z",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-411.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-411.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-10T13:35:41+0530"
   },
   {
    "id": "IFM-412",
@@ -6628,7 +7531,10 @@ window.IFM_DATA ={
    "session": "IFM corporate session — Sep 2026",
    "social": "",
    "notes": "Filed in the 'IFM (sharing experience)' folder but this is not a testimonial — it is a room shot of a corporate session, and it is out of focus throughout the cover frame. Kept as a Raw-backup record rather than dropped. Same yellow-shirted presenter as IFM-410. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video's cover frame. Search will match the person and the room, not the words. Master is 538 MB and stays on Drive; not mirrored into the IFM Content Archive (over the ~200MB cap). STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1VR0sjkdUm3_IghcdTV-_90GrnArc-eYu",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-412.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-412.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-09T10:56:14+0530"
   },
   {
    "id": "IFM-413",
@@ -6647,7 +7553,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "Yes",
-   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2836.MOV (1xQzjhklHxQ_TMv42QZBjB45E-rIPS_3K). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. archive: 1kh9_KqLwucQCd62lzXqzYQEn8XnsgP_x (mirrored into IFM Content Archive / From Sakshi). In the Hiral Media Kit (copy 1Jj9f3gx0_btrH8qjE0X-6FUsd9TgX2G6). STAGED — not yet deployed."
+   "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2836.MOV (1xQzjhklHxQ_TMv42QZBjB45E-rIPS_3K). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. archive: 1kh9_KqLwucQCd62lzXqzYQEn8XnsgP_x (mirrored into IFM Content Archive / From Sakshi). In the Hiral Media Kit (copy 1Jj9f3gx0_btrH8qjE0X-6FUsd9TgX2G6). STAGED — not yet deployed.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:20:09+0530"
   },
   {
    "id": "IFM-414",
@@ -6666,7 +7575,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. archive: 1Jx3AB4ny9oCWMLRSNMftl7jjEYoS7KJS (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. archive: 1Jx3AB4ny9oCWMLRSNMftl7jjEYoS7KJS (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:21:09+0530"
   },
   {
    "id": "IFM-415",
@@ -6686,7 +7598,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1aalaR4Y7Jx8vkfxW5_RTxRZb_g7O415L (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-415.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-415.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:19:35+0530"
   },
   {
    "id": "IFM-416",
@@ -6706,7 +7621,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2861.MOV (15LHmfSf1B7WW8ZZNccC6kE-36cwNKkUE); IMG_2860.MOV (1bMiB19skyVEvOO6TG93huMHg9t-rQT-N). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Rjkg-hwhQqatA-I1eyovE8uvAL8WahNg (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-416.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-416.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:21:20+0530"
   },
   {
    "id": "IFM-417",
@@ -6726,7 +7644,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1IteSLJONqZgN-NjtIii9Qr_rtk9Py9mK (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-417.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-417.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:21:49+0530"
   },
   {
    "id": "IFM-418",
@@ -6746,7 +7667,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "Yes",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2841.MOV (1pB7vFX3GLw0cSoN9cn0FJPwpx_LTZ4NO); IMG_2866.MOV (1NlJTU-lXx3hJyammOhxX8LOFWzp6BjlZ). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1zT2f61MQki1-Y04GQTY7FmCvMBzAjSvT (mirrored into IFM Content Archive / From Sakshi). In the Hiral Media Kit (copy 1wBaD4NzGa6poQezeZ0Af05ja_JAtHkbT). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-418.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-418.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:22:13+0530"
   },
   {
    "id": "IFM-419",
@@ -6766,7 +7690,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "Yes",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2851.MOV (1Si-N_KDbmrDn5cLENlj6dVJTnVVao2X6). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1xtkrrAdFB9ob8I1JnRKWAorgXlkdzdu6 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-419.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-419.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:23:44+0530"
   },
   {
    "id": "IFM-420",
@@ -6786,7 +7713,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2852.MOV (1NdeUwZXPJyaurHVjqFFHF3AYTGr6vat9); IMG_2853.MOV (1nIjsO8SKUcYtYNApKgHuR8BHTyzk_OBP); IMG_2859.MOV (1yOsFWRByBzsf559-eeLXUEFJVsta8X8Q). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1P7QH7QVYEixJ3t52SDOdQVB87hItjdjp (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-420.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-420.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:23:59+0530"
   },
   {
    "id": "IFM-421",
@@ -6806,7 +7736,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1_abThzJ_X_LxZCvOmEI37P66otOKnL-R (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-421.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-421.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:24:52+0530"
   },
   {
    "id": "IFM-422",
@@ -6826,7 +7759,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "Yes",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2846.MOV (1EEfw2oBVf1-5UGMgDsE9f8WNF5dRjjfW). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 14_MCcyXz_dRDz5ZiejLtJ_yhaf9iC1ER (mirrored into IFM Content Archive / From Sakshi). In the Hiral Media Kit (copy 19BC-WGBeCifbxI-nYVri6zLyL5b_PG4B). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-422.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-422.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:25:06+0530"
   },
   {
    "id": "IFM-423",
@@ -6846,7 +7782,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 10rRJWYi-6FZ_9vucvz_ofHdhzs2xFsBN (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-423.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-423.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:27:19+0530"
   },
   {
    "id": "IFM-424",
@@ -6866,7 +7805,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 18zUck3s0AoJ2Y8bQNM5G3c_AhHLMSmrZ (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-424.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-424.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:27:59+0530"
   },
   {
    "id": "IFM-425",
@@ -6886,7 +7828,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2863.MOV (1XnIi0uzx49fEbVdo5E2shEj6zM6FZT0l); IMG_2864.MOV (1R_R42INhRbzDVm1PIesNkl8Ara7LAwJW). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1gyhMjPv_bnDfm_t5clCxKcji6BP08qjS (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-425.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-425.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:28:19+0530"
   },
   {
    "id": "IFM-426",
@@ -6906,7 +7851,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 254 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1YobcsPcsC6FLBnUHi5n98MJthnvH-bm1",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-426.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-426.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:29:44+0530"
   },
   {
    "id": "IFM-427",
@@ -6926,7 +7874,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1vBIHFuCn-0_Forftef_quunyfqJYYoG4 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-427.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-427.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:32:29+0530"
   },
   {
    "id": "IFM-428",
@@ -6946,7 +7897,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1VUXazyJxL9nsLzFKILRph9bqgMH345bD (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-428.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-428.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:32:38+0530"
   },
   {
    "id": "IFM-429",
@@ -6966,7 +7920,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Mu7lAPjsoOtAClJUJpOa4qGymkryzZhU (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-429.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-429.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:33:10+0530"
   },
   {
    "id": "IFM-430",
@@ -6986,7 +7943,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1YmTNJLdr--oepxFr7KjKaFFLaP9IxIqi (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-430.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-430.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:33:24+0530"
   },
   {
    "id": "IFM-431",
@@ -7006,7 +7966,10 @@ window.IFM_DATA ={
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2856.MOV (1Nvf6HFliGLzhxzUqxrPjqOtaC9ws3NeN). From the Content Library folder \"IFM Games\" (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1dd0VKgolqMq7fuY0gqtfM_fxjT2DlIy7 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-431.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-431.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:36:09+0530"
   },
   {
    "id": "IFM-432",
@@ -7026,7 +7989,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: 1785216806801662.mp4 (1T0P1HiC1uF9gsxA86pGB895gpU85sQoV). From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1mj2k95Feb2D02gWJDoh5BivX2d7JJ6Wt (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-432.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-432.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-27T14:43:00+0530"
   },
   {
    "id": "IFM-433",
@@ -7046,7 +8012,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1ah8v8In0qKeBX9-3UZM4u71j2zQMzEjU (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-433.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-433.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-27T14:43:00+0530"
   },
   {
    "id": "IFM-434",
@@ -7066,7 +8035,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 19At9DwQS_v1WSExSYPvJ47rCLgRHWEFT (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-434.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-434.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-27T14:43:15+0530"
   },
   {
    "id": "IFM-435",
@@ -7086,7 +8058,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 11iMRPeRqQ41UMceQlRnQaXZUaatCSTSJ (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-435.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-435.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-27T14:43:15+0530"
   },
   {
    "id": "IFM-436",
@@ -7106,7 +8081,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_0423.mov (5.3MB take) (1OCoaajTbjVh9ixmWNvlX_lNb6CJWiUHB). From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1FjkifgTqDpJPve-n7ABMAnWj92DKu9gA (mirrored into IFM Content Archive / From Sakshi). Qualifies for the Hiral Media Kit by the Hero + Hiral-teaching rule, but HELD BACK: minors are in frame and the Media Kit is shared with the agency. Copy it only on the user's say-so. STAGED — not yet deployed. | In the Hiral Media Kit — added 18 Sep 2026 on the user's explicit decision, knowing minors are in frame: the teens material is wanted for proposals to young-adult audiences. social stays blank and consent stays \"Minors visible\"; this covers the agency media kit only, NOT social publication. media-kit copy: 1j2zw_aEiZkYEOXenPfJqj4Cb5K518wiW",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-436.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-436.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-27T14:43:48+0530"
   },
   {
    "id": "IFM-437",
@@ -7126,7 +8104,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Bfq7eTFaTb00OsnstBXtp2if0c-IRMmL (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-437.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-437.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-27T14:43:48+0530"
   },
   {
    "id": "IFM-438",
@@ -7146,7 +8127,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1zM-Be-c1TZDV_MWKnd99YaLIe7qD4bM0 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-438.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-438.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-27T14:43:48+0530"
   },
   {
    "id": "IFM-439",
@@ -7165,7 +8149,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. archive: 1rPAMTH_XWdDrjJBot79KvkmkRHrCQX6s (mirrored into IFM Content Archive / From Sakshi). Qualifies for the Hiral Media Kit by the Hero + Hiral-teaching rule, but HELD BACK: minors are in frame and the Media Kit is shared with the agency. Copy it only on the user's say-so. STAGED — not yet deployed. | In the Hiral Media Kit — added 18 Sep 2026 on the user's explicit decision, knowing minors are in frame: the teens material is wanted for proposals to young-adult audiences. social stays blank and consent stays \"Minors visible\"; this covers the agency media kit only, NOT social publication. media-kit copy: 1rj2vzF9UI6AtKTMqbaVzYzKYzeoA5TUA"
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. archive: 1rPAMTH_XWdDrjJBot79KvkmkRHrCQX6s (mirrored into IFM Content Archive / From Sakshi). Qualifies for the Hiral Media Kit by the Hero + Hiral-teaching rule, but HELD BACK: minors are in frame and the Media Kit is shared with the agency. Copy it only on the user's say-so. STAGED — not yet deployed. | In the Hiral Media Kit — added 18 Sep 2026 on the user's explicit decision, knowing minors are in frame: the teens material is wanted for proposals to young-adult audiences. social stays blank and consent stays \"Minors visible\"; this covers the agency media kit only, NOT social publication. media-kit copy: 1rj2vzF9UI6AtKTMqbaVzYzKYzeoA5TUA",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-440",
@@ -7184,7 +8170,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. archive: 1hW96xvdoOMQmDeCCbqoEodlNsRAhqTUy (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. archive: 1hW96xvdoOMQmDeCCbqoEodlNsRAhqTUy (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-441",
@@ -7204,7 +8192,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1R2hXMhHzfoJdRG2yBKFIoul7I1xk0N0h (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-441.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-441.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-29T14:08:26+0530"
   },
   {
    "id": "IFM-442",
@@ -7224,7 +8215,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1Sw6xR7TqMHTu4hWQZZtx7u0xtjI1-98B (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-442.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-442.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-29T14:18:41+0530"
   },
   {
    "id": "IFM-443",
@@ -7244,7 +8238,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_0562.MOV (1C1cUFkML4zTh9C_bygIcbLhf-2TuKO3i). From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 18ZjazBqw0m9-uQBoR0uWN3WD-oA57YJ6 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-443.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-443.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-29T14:21:43+0530"
   },
   {
    "id": "IFM-444",
@@ -7264,7 +8261,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1gmmnMV0NwgblXDA8pqkMmsA4LrpaQ_3W (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-444.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-444.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-29T14:26:09+0530"
   },
   {
    "id": "IFM-445",
@@ -7284,7 +8284,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1njR7syHSovw-nn7OzAbugb_ZiUDLnDhB (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-445.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-445.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-29T14:30:24+0530"
   },
   {
    "id": "IFM-446",
@@ -7304,7 +8307,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1FUClNPLMgOVfP5k46PN8JMC3JNoIu2x2 (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-446.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-446.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-29T14:42:18+0530"
   },
   {
    "id": "IFM-447",
@@ -7324,7 +8330,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1uN8FrHD-I1HHyp6tbx14ZWLpoijPnLZO (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-447.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-447.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-29T14:44:21+0530"
   },
   {
    "id": "IFM-448",
@@ -7344,7 +8353,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1p1gSmEFWVCsaOyOESpAjr62dQBUhsLmt (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-448.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-448.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-29T14:54:23+0530"
   },
   {
    "id": "IFM-449",
@@ -7364,7 +8376,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1zP3rP2ebGw_dZeTu4KAHC5a449aqzwSw (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-449.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-449.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-29T15:01:25+0530"
   },
   {
    "id": "IFM-450",
@@ -7384,7 +8399,10 @@ window.IFM_DATA ={
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1d6Kxq5G-KwbgjpApWFFy3v2Fry9u_Ghq (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-450.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-450.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-29T15:05:40+0530"
   },
   {
    "id": "IFM-451",
@@ -7403,7 +8421,10 @@ window.IFM_DATA ={
    "consent": "Certificates with names visible",
    "session": "IFT teens workshop — 19 Aug 2026",
    "social": "",
-   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. archive: 1tlJ-MLl_ojRYK7rPLFnhWJZ0jXK-m4ot (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "From the Content Library folder \"IFT Aug 2026\" (1Da3gg9pSi3QVZEB9_DHRvuAFRwlgyr8p) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Minors visible — consent pending, not social-ready. archive: 1tlJ-MLl_ojRYK7rPLFnhWJZ0jXK-m4ot (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-30T15:41:46+0530"
   },
   {
    "id": "IFM-452",
@@ -7423,7 +8444,10 @@ window.IFM_DATA ={
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 363 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1MlZD4lVwla-SKGUe813aEEsFy55Qcfk6",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-452.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-452.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T13:50:56+0530"
   },
   {
    "id": "IFM-453",
@@ -7443,7 +8467,10 @@ window.IFM_DATA ={
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "Yes",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_1838.MOV (1-BG7aF4xPcmSOch9QyJEr6HUS0gQql96); IMG_1839.MOV (1us-3DflkJSPKhneQMfvRfFon6gefPeuE). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 605 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1fAinP4eMt1al-t2E5KCM4wNPaQuu5s6z",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-453.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-453.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T13:51:51+0530"
   },
   {
    "id": "IFM-454",
@@ -7463,7 +8490,10 @@ window.IFM_DATA ={
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "Yes",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_1841.MOV (1NcimFLhJXBBDHh0WOYmZqfS4L44Gq8IU). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 255 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 14oli2iNAaq8fhHRlcspUijWRYXlEGHry",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-454.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-454.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T13:52:55+0530"
   },
   {
    "id": "IFM-455",
@@ -7483,7 +8513,10 @@ window.IFM_DATA ={
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "Yes",
    "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1xtq9g2H2jLQNDkAeh6TwqchpCKkLjYhj (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-455.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-455.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T13:55:34+0530"
   },
   {
    "id": "IFM-456",
@@ -7503,7 +8536,10 @@ window.IFM_DATA ={
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. NOT mirrored — master is 735 MB, over the ~200MB archive cap; it stays only in Sakshi's folder and the row links to the source. Flagged for the user to decide. STAGED — not yet deployed. | MIRRORED 18 Sep 2026 after the user raised the size cap: this master is now owned by djlolly03@ and survives the source account. archive: 1lFZNwu1JIHvuP-UrLr_F7ZDDGz-xgPEb",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-456.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-456.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T13:58:24+0530"
   },
   {
    "id": "IFM-457",
@@ -7523,7 +8559,10 @@ window.IFM_DATA ={
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "",
    "notes": "From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1-_V_yQ61t-o4np3h5kqsXuAWvbORJYWL (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-457.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-457.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T14:00:24+0530"
   },
   {
    "id": "IFM-458",
@@ -7543,7 +8582,10 @@ window.IFM_DATA ={
    "session": "IFM August feedback round — 2 Sep 2026",
    "social": "",
    "notes": "Near-dupes of this same moment kept on Drive as backups, not catalogued separately: IMG_2386.MOV (1ggPf-mHcMv_qxb2qHntunXTIV_hlAVzj). From the Content Library folder \"IFM August feedback\" (1Gc64U1Z1gA7eMlvA0N7dCs8cndebHcoT) — the shoot was grouped into moment rows, and this row points at its own file, not the folder. Spoken content is not transcribed — this row describes who is on screen and the setting, taken from the video cover frame. archive: 1BFdlaA2Zvjs3R6NSqR4jIfvWOV5WPZjH (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-458.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-458.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-31T13:20:36+0530"
   },
   {
    "id": "IFM-459",
@@ -7562,7 +8604,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM workshop — Swayamvar game session — 8 Sep 2026",
    "social": "",
-   "notes": "Byte-identical copy (26,026,062 bytes) of the file catalogued above from the same folder; uploaded 8 min later. Auto-rejected per the dupe rule. No thumbnail on purpose — it is not an asset. STAGED — not yet deployed."
+   "notes": "Byte-identical copy (26,026,062 bytes) of the file catalogued above from the same folder; uploaded 8 min later. Auto-rejected per the dupe rule. No thumbnail on purpose — it is not an asset. STAGED — not yet deployed.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-08T12:27:19+0530"
   },
   {
    "id": "IFM-460",
@@ -7582,7 +8627,9 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Nine takes of ONE moment — this row points at the last take (20260625_142206.mp4), which is the cleanest. Backup takes in the same folder: 20260625_141723, _141732, _141939, _142018, _142052, _142120, _142142, _142200. Near-dupes, deliberately NOT auto-rejected. From the Aakara delivery tree, \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N), reached via a Drive shortcut. Raw takes, not a finished cut — quality Usable, so not auto-copied to the Hiral Media Kit. archive: 1Zwoog2t4oub0lwIM011XwT7rrm53NQal (mirrored into IFM Content Archive / From Aakara). All nine takes were mirrored (takes 1-8 archive ids: 1Hj3_JM-PpN3exJN9tHZWsy5sUkKuMCx7, 15HdCeDQPGV_4OdnQWq3tewtOE5QbqHOo, 1vL8yAWHFdps4V2F33WqJRBytPRFGIas0, 1lXQWCsnkQ8h2pg2uzLPNhEB8TdlfxGUw, 1hKI5bDa582ZtIDYk-TjJvtelpVPtLbQf, 1sR9vVwdU0Ueh3UmpvuTiL9pZ0FSJ3vBw, 1iWYPNqdQx9-k0_bThdgjV8ZHYXCiXA02, 1_JOTM2GjrBI3fh5YbzgnbIv3ep8ym1Ta). STAGED — not yet deployed. Relinked 21 Sep 2026 from a single file to the \"Teens video\" folder. The row is titled \"9 takes\" and is a catch-all by its own description; pointing at one file left the other eight takes unreachable."
+   "notes": "Nine takes of ONE moment — this row points at the last take (20260625_142206.mp4), which is the cleanest. Backup takes in the same folder: 20260625_141723, _141732, _141939, _142018, _142052, _142120, _142142, _142200. Near-dupes, deliberately NOT auto-rejected. From the Aakara delivery tree, \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N), reached via a Drive shortcut. Raw takes, not a finished cut — quality Usable, so not auto-copied to the Hiral Media Kit. archive: 1Zwoog2t4oub0lwIM011XwT7rrm53NQal (mirrored into IFM Content Archive / From Aakara). All nine takes were mirrored (takes 1-8 archive ids: 1Hj3_JM-PpN3exJN9tHZWsy5sUkKuMCx7, 15HdCeDQPGV_4OdnQWq3tewtOE5QbqHOo, 1vL8yAWHFdps4V2F33WqJRBytPRFGIas0, 1lXQWCsnkQ8h2pg2uzLPNhEB8TdlfxGUw, 1hKI5bDa582ZtIDYk-TjJvtelpVPtLbQf, 1sR9vVwdU0Ueh3UmpvuTiL9pZ0FSJ3vBw, 1iWYPNqdQx9-k0_bThdgjV8ZHYXCiXA02, 1_JOTM2GjrBI3fh5YbzgnbIv3ep8ym1Ta). STAGED — not yet deployed. Relinked 21 Sep 2026 from a single file to the \"Teens video\" folder. The row is titled \"9 takes\" and is a catch-all by its own description; pointing at one file left the other eight takes unreachable.",
+   "audience": "Mummies",
+   "batch": ""
   },
   {
    "id": "IFM-461",
@@ -7602,7 +8649,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1wYEbGPopJYgAQPGG7yYx1KpGol2wOMfU (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1wYEbGPopJYgAQPGG7yYx1KpGol2wOMfU (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-462",
@@ -7622,7 +8671,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1hZ2RPcFMYZCmF85B28jPXPtIoSA9KVaa (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1hZ2RPcFMYZCmF85B28jPXPtIoSA9KVaa (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-463",
@@ -7642,7 +8693,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1jHcTWU8cY_gYcmU98-lyDERbuW3ElZd_ (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1jHcTWU8cY_gYcmU98-lyDERbuW3ElZd_ (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-464",
@@ -7662,7 +8715,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 12mhpiJw-p5dwg8r53pjLLmhi-27QimQU (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 12mhpiJw-p5dwg8r53pjLLmhi-27QimQU (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-465",
@@ -7682,7 +8737,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1UmbBEAOZQw9Zu0J-9bwvfflcE4h57FDr (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1UmbBEAOZQw9Zu0J-9bwvfflcE4h57FDr (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-466",
@@ -7702,7 +8759,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1JM3v3oDyd9BStlzolutgSZfEerbn3YOG (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1JM3v3oDyd9BStlzolutgSZfEerbn3YOG (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-467",
@@ -7722,7 +8781,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1ZW8G-0SQ3QQZAetzaT69luM9VQzRyTft (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 1ZW8G-0SQ3QQZAetzaT69luM9VQzRyTft (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-468",
@@ -7742,7 +8803,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 19DCvgs3I7Tq2VsqhkxNm5duNpi22-ZDK (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. One of eight teens filmed answering one after another between 13:21 and 13:29 — each clip is a different young person, so each gets its own row. archive: 19DCvgs3I7Tq2VsqhkxNm5duNpi22-ZDK (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-469",
@@ -7762,7 +8825,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 11QD2sNbHMqhYqTl1hHt0G8eJs83XYn35 (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 11QD2sNbHMqhYqTl1hHt0G8eJs83XYn35 (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-470",
@@ -7782,7 +8847,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 1ae6tAK9_DZJtDZpIvTUFv45AQQP1Vvhs (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 1ae6tAK9_DZJtDZpIvTUFv45AQQP1Vvhs (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-471",
@@ -7802,7 +8869,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 1e_Ijj1SrK6FgtGbQ77kLdavA1b6T_5-d (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 1e_Ijj1SrK6FgtGbQ77kLdavA1b6T_5-d (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-472",
@@ -7822,7 +8891,9 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 1o6R2CngzQ_nb44Z405TkIXLQ3LyM2ZZO (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 1o6R2CngzQ_nb44Z405TkIXLQ3LyM2ZZO (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-473",
@@ -7842,7 +8913,10 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. Near-dupe backup of the same wide: IMG_4254.MOV. archive: 1fgVJj1MzEIeQ-LMiWojBclSsPMmrW5lo (mirrored into IFM Content Archive / From Aakara). Backup wide IMG_4254.MOV also mirrored, archive: 1lDeaw45UUrFmTmi32ArrZdmpL3EjALuj. STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. Near-dupe backup of the same wide: IMG_4254.MOV. archive: 1fgVJj1MzEIeQ-LMiWojBclSsPMmrW5lo (mirrored into IFM Content Archive / From Aakara). Backup wide IMG_4254.MOV also mirrored, archive: 1lDeaw45UUrFmTmi32ArrZdmpL3EjALuj. STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-25T13:31:12+0530"
   },
   {
    "id": "IFM-474",
@@ -7862,7 +8936,10 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 1H48e3iBeoHFsOHCvJK4Pilbpt2zRW78B (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 1H48e3iBeoHFsOHCvJK4Pilbpt2zRW78B (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-25T13:22:15+0530"
   },
   {
    "id": "IFM-475",
@@ -7882,7 +8959,10 @@ window.IFM_DATA ={
    "consent": "Minors visible",
    "session": "Teens workshop — 25 Jun 2026",
    "social": "",
-   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 1ATruBF0PTCReEMC9S2VGte-opkPe4PTJ (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed."
+   "notes": "Minors visible — consent pending, NOT social-ready. From the Aakara delivery tree, folder \"Hiral Goel / Teens video\" (1wP57mF7SgHyI1DB2YqWNKHIKCt0pXH3N) — reached via a Drive shortcut. Row points at its own file, not the folder. archive: 1ATruBF0PTCReEMC9S2VGte-opkPe4PTJ (mirrored into IFM Content Archive / From Aakara). STAGED — not yet deployed.",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-25T13:21:56+0530"
   },
   {
    "id": "IFM-476",
@@ -7902,7 +8982,10 @@ window.IFM_DATA ={
    "consent": "No identifiable people",
    "session": "IFM corporate Swayamvar game session — Aug 2026",
    "social": "",
-   "notes": "The one frame in the Content Library \"IFM Games\" folder (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) that is a different thing from the twenty moment rows IFM-413..IFM-431 — a clean capture of the game UI itself rather than the room. Row points at its own file. archive: 11PbZ-HYB7ltVFBg0MapKR0obv-VGF87t (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed."
+   "notes": "The one frame in the Content Library \"IFM Games\" folder (1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n) that is a different thing from the twenty moment rows IFM-413..IFM-431 — a clean capture of the game UI itself rather than the room. Row points at its own file. archive: 11PbZ-HYB7ltVFBg0MapKR0obv-VGF87t (mirrored into IFM Content Archive / From Sakshi). STAGED — not yet deployed.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-31T13:07:12+0530"
   },
   {
    "id": "IFM-477",
@@ -7922,7 +9005,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "IFM corporate Swayamvar game session — Aug 2026",
    "social": "",
-   "notes": "Covers IMG_2350, 2351, 2356, 2360, 2361, 2362, 2363, 2365, 2371, 2372, 2376, 2378. This is the only row for this shoot that links to the folder rather than one file — by design, same pattern as IFM-396. Given a thumbnail so it is actually visible in the V1 Library. All twelve frames mirrored into IFM Content Archive / From Sakshi (archive ids: IMG_2378 11aDATLRNewscWOdC_v3eYh_g8DH2eeXs, IMG_2376 1oHty-uudAAvbNeu4I7Gnr9pVpTXEXlXg, IMG_2365 1XDMNmE9gZoyL0nNooWB8KG17E-0R-Lrk, IMG_2350 1WUZgkPNfL5tmOksMdkLq7xsi2Iw_a51F, IMG_2351 1Jx3e8IikAJWuxLA97aGFYrSLO8T3vWQs, IMG_2371 1FiebjTO_CFmR2RvYh7WBOKaCnd8f3crL, IMG_2363 1QXGAsIzEVNh9FeIYj68M5OI3HKZJwtw_, IMG_2362 1UNSi1Zf8PL_t3OHQsAYGE0hdKGEsFBD4, IMG_2361 11yWf0vmaT_ZHaxZCCiA8NXG_Wn98SPQx, IMG_2360 1iinIgbxE5SsskrKwquzV0qS_RnG3DdQc, IMG_2356 1XX2grTzQSYVD-W0Yw90MGxRZ6eFB_qtL, IMG_2372 1ZJyUFxL8BeAGM1iOl2NO9boSOWu1TT3s). STAGED — not yet deployed. Re-checked 30 Sep 2026: the folder has since grown to 32 files (through IMG_2384, to 29 Sep 2026). It keeps ONE row — the folder is the deliverable and a second row on the same folder would be a duplicate."
+   "notes": "Covers IMG_2350, 2351, 2356, 2360, 2361, 2362, 2363, 2365, 2371, 2372, 2376, 2378. This is the only row for this shoot that links to the folder rather than one file — by design, same pattern as IFM-396. Given a thumbnail so it is actually visible in the V1 Library. All twelve frames mirrored into IFM Content Archive / From Sakshi (archive ids: IMG_2378 11aDATLRNewscWOdC_v3eYh_g8DH2eeXs, IMG_2376 1oHty-uudAAvbNeu4I7Gnr9pVpTXEXlXg, IMG_2365 1XDMNmE9gZoyL0nNooWB8KG17E-0R-Lrk, IMG_2350 1WUZgkPNfL5tmOksMdkLq7xsi2Iw_a51F, IMG_2351 1Jx3e8IikAJWuxLA97aGFYrSLO8T3vWQs, IMG_2371 1FiebjTO_CFmR2RvYh7WBOKaCnd8f3crL, IMG_2363 1QXGAsIzEVNh9FeIYj68M5OI3HKZJwtw_, IMG_2362 1UNSi1Zf8PL_t3OHQsAYGE0hdKGEsFBD4, IMG_2361 11yWf0vmaT_ZHaxZCCiA8NXG_Wn98SPQx, IMG_2360 1iinIgbxE5SsskrKwquzV0qS_RnG3DdQc, IMG_2356 1XX2grTzQSYVD-W0Yw90MGxRZ6eFB_qtL, IMG_2372 1ZJyUFxL8BeAGM1iOl2NO9boSOWu1TT3s). STAGED — not yet deployed. Re-checked 30 Sep 2026: the folder has since grown to 32 files (through IMG_2384, to 29 Sep 2026). It keeps ONE row — the folder is the deliverable and a second row on the same folder would be a duplicate.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-478",
@@ -7941,7 +9025,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/17mr1P9-cCt5qCjGb-w4CdoaAWO1HICrd/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5753.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5753.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-03T22:38:52+0530"
   },
   {
    "id": "IFM-479",
@@ -7960,7 +9047,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1tQi8ijWBa-hD2-i_TZqlin_-tjRx3Nd_/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5750.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5750.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-03T22:38:45+0530"
   },
   {
    "id": "IFM-480",
@@ -7979,7 +9069,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/17ZvbkU7EWfYPLAdalZXxds-Yv2EUPumt/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5754.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5754.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-03T23:53:47+0530"
   },
   {
    "id": "IFM-481",
@@ -7998,7 +9091,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1PF54-47tfJ-0M6Cj1Dfewf0EVO5Y4x46/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5758.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5758.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-03T23:54:58+0530"
   },
   {
    "id": "IFM-482",
@@ -8017,7 +9113,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/10iYnu5sqoO-XExamvwxAg0-2dkpk_H1g/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5759.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5759.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-03T23:55:00+0530"
   },
   {
    "id": "IFM-483",
@@ -8036,7 +9135,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1UGT2e4h2_4LILf6BZqLM8P0_yjeJHwul/view",
    "date created": "2026-07-03",
    "keywords": "boardroom world map workshop raw cr3 canon",
-   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5755.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file."
+   "notes": "Canon RAW (.CR3) shoot in Aakara's workshop/Rakshita/camera folder, 11 frames. Never catalogued because every scan filtered on common photo/video extensions and silently dropped RAW -- found 19 Sep 2026 when the user challenged a file count. The browser cannot display a CR3, so the thumbnail here is a JPG derived from the RAW with sips; the RAW itself is the master and is mirrored to IFM Content Archive / From Aakara / \"RAW — corporate workshop boardroom shoot\". Frame: 4E7A5755.CR3. Relinked 20 Sep 2026 to the CR3 itself: the row pointed at the Aakara delivery tree root, so clicking one moment opened 761 files. One moment, one file.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-07-03T23:53:58+0530"
   },
   {
    "id": "IFM-484",
@@ -8049,14 +9151,17 @@ window.IFM_DATA ={
    "social": "",
    "status": "Raw",
    "source": "Event",
-   "session": "IYA / IFT teens programme — 23–25 Jun 2026",
+   "session": "IFT teens programme — 23–25 Jun 2026",
    "description": "Hiral stands at the wall-mounted screen with her arm stretched out to the slide headed 'Why? Time is the secret ingredient of Compounding', reading the line about starting early. Students in dark-green school uniform sit along the near side of the boardroom table with printed worksheets and water bottles in front of them.",
    "thumbnail": "thumbs/IFM-484.jpg",
    "drive link": "https://drive.google.com/file/d/1-SQXPqmL6IJm52nc-w3h2J4YeI1OelxO/view",
    "date created": "2026-06-23",
    "keywords": "teens school uniform compounding slide boardroom presenting worksheets",
    "notes": "Best teaching frame in this shoot — the slide is legible and she is mid-gesture. Backups of the same moment: IMG_8428.MOV (wider, whole room), IMG_8415.MOV (from the far corner). Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1KnjMjcpkpyHahpxJoCDwVLSCnpRH4n5E Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-484.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-484.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T14:46:39+0530"
   },
   {
    "id": "IFM-485",
@@ -8069,14 +9174,17 @@ window.IFM_DATA ={
    "social": "",
    "status": "Raw",
    "source": "Event",
-   "session": "IYA / IFT teens programme — 23–25 Jun 2026",
+   "session": "IFT teens programme — 23–25 Jun 2026",
    "description": "The screen shows the illustrated 'The King and the Chessboard' slide — a chessboard with grain doubling square by square and a rising curve. Uniformed students around the table are turned towards it, one leaning forward on her elbows.",
    "thumbnail": "thumbs/IFM-485.jpg",
    "drive link": "https://drive.google.com/file/d/1K6cj9acxfjF9xDYSgbBlF1EtRu6BeIIg/view",
    "date created": "2026-06-23",
    "keywords": "chessboard compounding story teens attention slide classroom",
    "notes": "Backups of the same moment: IMG_8432.JPG, IMG_8433.JPG. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1NqcnBqRD1nInem2kK6ls1R2DhWT7GPvs Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-485.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-485.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T14:42:57+0530"
   },
   {
    "id": "IFM-486",
@@ -8089,13 +9197,16 @@ window.IFM_DATA ={
    "social": "",
    "status": "Raw",
    "source": "Event",
-   "session": "IYA / IFT teens programme — 23–25 Jun 2026",
+   "session": "IFT teens programme — 23–25 Jun 2026",
    "description": "Shot over the back chairs down the length of the dark wood boardroom table: roughly a dozen students in green school uniform on both sides, laptops and worksheets out, all facing the lit screen at the far end.",
    "thumbnail": "thumbs/IFM-486.jpg",
    "drive link": "https://drive.google.com/file/d/1IjQZ4c3u8aJGZQylsDh9Y-Dc2Vo-Ya5e/view",
    "date created": "2026-06-23",
    "keywords": "room wide boardroom teens cohort venue establishing shot",
-   "notes": "Establishing shot for the teens programme. Near-identical frames of the same moment, kept as backups: IMG_8412.JPG, IMG_8413.JPG, IMG_8424.JPG, IMG_8434.JPG. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1zMx-1nWq0JEy7h7odA-78NEspNcJt2J0"
+   "notes": "Establishing shot for the teens programme. Near-identical frames of the same moment, kept as backups: IMG_8412.JPG, IMG_8413.JPG, IMG_8424.JPG, IMG_8434.JPG. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1zMx-1nWq0JEy7h7odA-78NEspNcJt2J0",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T14:37:57+0530"
   },
   {
    "id": "IFM-487",
@@ -8108,14 +9219,17 @@ window.IFM_DATA ={
    "social": "",
    "status": "Raw",
    "source": "Event",
-   "session": "IYA / IFT teens programme — 23–25 Jun 2026",
+   "session": "IFT teens programme — 23–25 Jun 2026",
    "description": "Handheld from behind the back row: heads and shoulders of seated students in the foreground, the screen and the standing presenter small and slightly blown out at the end of the room.",
    "thumbnail": "thumbs/IFM-487.jpg",
    "drive link": "https://drive.google.com/file/d/15obGQxp1cKQcrKC2_JrcrbYkSWL4lfEM/view",
    "date created": "2026-06-23",
    "keywords": "over the shoulder back row teens handheld b-roll",
    "notes": "B-roll only — the presenter is small and backlit. No near-dupes. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 17FrSz5fK5kgWLT3QFYgfGPwimFjVsd8l Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-487.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-487.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T14:40:29+0530"
   },
   {
    "id": "IFM-488",
@@ -8128,14 +9242,17 @@ window.IFM_DATA ={
    "social": "",
    "status": "Raw",
    "source": "Event",
-   "session": "IYA / IFT teens programme — 23–25 Jun 2026",
+   "session": "IFT teens programme — 23–25 Jun 2026",
    "description": "Hiral stands to the left of the screen in a black sleeveless top and long tan skirt, smiling towards the group. The slide behind her holds two red character cards with portraits and bullet lists — the money-personality activity.",
    "thumbnail": "thumbs/IFM-488.jpg",
    "drive link": "https://drive.google.com/file/d/1wMpLmW7DECQNHSiqSePwoN18tcr9M3kf/view",
    "date created": "2026-06-24",
    "keywords": "money personality character cards activity teaching teens",
    "notes": "Backup of the same moment: IMG_4223.MOV (from further back, laptop in shot). Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1hpHaNkkLJDoKfEnN6IQ4Z8U5GW29v471 Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-488.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-488.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T15:11:24+0530"
   },
   {
    "id": "IFM-489",
@@ -8148,13 +9265,16 @@ window.IFM_DATA ={
    "social": "",
    "status": "Raw",
    "source": "Event",
-   "session": "IYA / IFT teens programme — 23–25 Jun 2026",
+   "session": "IFT teens programme — 23–25 Jun 2026",
    "description": "Hiral turns back towards the screen and points at the left-hand character card while talking to the group. Clean three-quarter view, face visible, the IFM slide well lit behind her; the backs of two students frame the bottom of the shot.",
    "thumbnail": "thumbs/IFM-489.jpg",
    "drive link": "https://drive.google.com/file/d/1roGWrh2lvsyQ97hXfixLznvN1Kmpgf_M/view",
    "date created": "2026-06-23",
    "keywords": "hiral teaching pointing slide character card teens portrait",
-   "notes": "The cleanest still of her teaching in this shoot. Near-dupes of the same moment kept as backups: IMG_4225, IMG_4226, IMG_4227, IMG_4228 (all .HEIC). Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1lqqKuq_oLUIlQ10H1Ebv0LyOY9p60Kyc"
+   "notes": "The cleanest still of her teaching in this shoot. Near-dupes of the same moment kept as backups: IMG_4225, IMG_4226, IMG_4227, IMG_4228 (all .HEIC). Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1lqqKuq_oLUIlQ10H1Ebv0LyOY9p60Kyc",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T15:14:37+0530"
   },
   {
    "id": "IFM-490",
@@ -8167,14 +9287,17 @@ window.IFM_DATA ={
    "social": "",
    "status": "Raw",
    "source": "Event",
-   "session": "IYA / IFT teens programme — 23–25 Jun 2026",
+   "session": "IFT teens programme — 23–25 Jun 2026",
    "description": "Hiral stands square to the screen with her back to the camera, reading the character-card slide aloud. Empty chairs and a student's shoulder in the foreground.",
    "thumbnail": "thumbs/IFM-490.jpg",
    "drive link": "https://drive.google.com/file/d/1C5DcUMmwxwSnpdF2164nVO-z1nf2mGS1/view",
    "date created": "2026-06-24",
    "keywords": "back to camera reading slide teens b-roll",
    "notes": "Back-to-camera, so deliberately not Media Kit material. Backups of the same moment: IMG_4232.MOV, IMG_4237.MOV. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1wsdxf4923ZKTXWZC5cNaIz2z1vAWuGHU Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-490.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-490.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T15:17:30+0530"
   },
   {
    "id": "IFM-491",
@@ -8187,14 +9310,17 @@ window.IFM_DATA ={
    "social": "",
    "status": "Raw",
    "source": "Event",
-   "session": "IYA / IFT teens programme — 23–25 Jun 2026",
+   "session": "IFT teens programme — 23–25 Jun 2026",
    "description": "Hiral sits at the head of the table behind an open laptop showing a green-and-white spreadsheet, hand raised mid-explanation and talking across to the students. The whiteboard behind is covered in flow diagrams from earlier in the session.",
    "thumbnail": "thumbs/IFM-491.jpg",
    "drive link": "https://drive.google.com/file/d/1p7WcgswtHqxSlQYNEqFRs-C--Q2RCkyX/view",
    "date created": "2026-06-24",
    "keywords": "laptop spreadsheet whiteboard explaining seated teaching teens",
    "notes": "IMG_4240/4241/4242.HEIC were first filed here as backups and then split out as IFM-499 on the same run -- they are the group reacting to a student, not her at the laptop, and someone would ask for them separately. No backups of this exact moment. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1SC9EIJHb0czIy452QM8D96uNVHMc-jJo Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-491.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-491.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T15:25:15+0530"
   },
   {
    "id": "IFM-492",
@@ -8207,14 +9333,17 @@ window.IFM_DATA ={
    "social": "",
    "status": "Raw",
    "source": "Event",
-   "session": "IYA / IFT teens programme — 23–25 Jun 2026",
+   "session": "IFT teens programme — 23–25 Jun 2026",
    "description": "Wide of the lighter end of the room: eight or nine students seated around the table with printed handouts, a laptop and mugs, potted cacti on the sill behind them, the presenter seated at the right of frame.",
    "thumbnail": "thumbs/IFM-492.jpg",
    "drive link": "https://drive.google.com/file/d/1FqTBsbS7aaVEt2PMyYG4Gjq0TwaEHddz/view",
    "date created": "2026-06-24",
    "keywords": "cohort table worksheets cacti room wide teens group",
    "notes": "Backups of the same moment: IMG_4239.MOV, IMG_4234.MOV, IMG_4236.MOV. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1HL0Lkcj-4MR0IXAfYZioz7-tjEb3NRv2 Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-492.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-492.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T15:26:47+0530"
   },
   {
    "id": "IFM-493",
@@ -8227,13 +9356,16 @@ window.IFM_DATA ={
    "social": "",
    "status": "Raw",
    "source": "Event",
-   "session": "IYA / IFT teens programme — 23–25 Jun 2026",
+   "session": "IFT teens programme — 23–25 Jun 2026",
    "description": "Ten teenagers stand shoulder to shoulder in the corridor outside the boardroom, each holding a white IFM certificate up to the camera, grinning. Framed artwork and a dark cabinet behind them.",
    "thumbnail": "thumbs/IFM-493.jpg",
    "drive link": "https://drive.google.com/file/d/1Na3VlHuk9A60qXMzVK8i1o3oExm0xqPb/view",
    "date created": "2026-06-25",
    "keywords": "certificate handover group photo teens graduation completion",
-   "notes": "CONSENT PENDING — the subjects are minors and they are holding named certificates, so this stays off social until a human clears it, however good the photo is. Backups of the same moment: IMG_4257.HEIC, IMG_4258.HEIC. The registered Certificates folder also holds three duplicates of these same three frames, uploaded 17 Aug 2026 as 'Copy of IMG_4256/4257/4258.HEIC' — same Drive content, no separate rows. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 10H02W1FNUCasp6IFMeiRP4EG93R5W8l4"
+   "notes": "CONSENT PENDING — the subjects are minors and they are holding named certificates, so this stays off social until a human clears it, however good the photo is. Backups of the same moment: IMG_4257.HEIC, IMG_4258.HEIC. The registered Certificates folder also holds three duplicates of these same three frames, uploaded 17 Aug 2026 as 'Copy of IMG_4256/4257/4258.HEIC' — same Drive content, no separate rows. Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 10H02W1FNUCasp6IFMeiRP4EG93R5W8l4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-25T13:34:36+0530"
   },
   {
    "id": "IFM-494",
@@ -8252,7 +9384,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1_SpsbxtmN1Nzq8lDrgIF7bWTv5EdEW7i/view",
    "date created": "2026-06-24",
    "keywords": "certificate handover women group photo completion workshop mums",
-   "notes": "The strongest certificate-moment frame IFM has for the mums audience, and it was sitting uncatalogued in the registered Certificates folder the whole time — the standing IMG_42xx June-batch filter skipped it. CONSENT PENDING only because the certificates carry names and I cannot read them at thumbnail resolution to confirm they are illegible; adults only otherwise, so this is a quick human yes/no away from being social-ready. Backup of the same moment: IMG_4250.HEIC. Owner asba@moogaworld.com. archive: 1LpWkNonW6osopQb3rxWHoS_1V26AWXQa"
+   "notes": "The strongest certificate-moment frame IFM has for the mums audience, and it was sitting uncatalogued in the registered Certificates folder the whole time — the standing IMG_42xx June-batch filter skipped it. CONSENT PENDING only because the certificates carry names and I cannot read them at thumbnail resolution to confirm they are illegible; adults only otherwise, so this is a quick human yes/no away from being social-ready. Backup of the same moment: IMG_4250.HEIC. Owner asba@moogaworld.com. archive: 1LpWkNonW6osopQb3rxWHoS_1V26AWXQa",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-24T13:29:21+0530"
   },
   {
    "id": "IFM-495",
@@ -8272,7 +9407,8 @@ window.IFM_DATA ={
    "date created": "2026-07-03",
    "keywords": "participant speaking discussion boardroom corporate video canon",
    "notes": "Canon video from Aakara's workshop/Rakshita/camera folder — the same 3 Jul 2026 session as the CR3 stills catalogued as IFM-478..483. The 19 Sep run catalogued the 11 RAW frames and missed the four .MP4 clips beside them; found 20 Sep 2026. Drive's thumbnailer renders these clips sideways, so the thumbnail here is rotated 90° clockwise to sit upright — worth confirming against the master before anyone cuts with it. Owner toocrafty1595@gmail.com. archive: 1XK5-76pa5iMz1YMcA1dpZk5p825EvAJE Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-495.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-495.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-496",
@@ -8292,7 +9428,8 @@ window.IFM_DATA ={
    "date created": "2026-07-03",
    "keywords": "world map boardroom room wide corporate workshop video canon",
    "notes": "Backup of the same moment: 4E7A5761.MP4 (tighter down the table). Same 3 Jul 2026 session as IFM-478..483; see IFM-495 for why these four clips were missed and for the thumbnail-rotation caveat. Owner toocrafty1595@gmail.com. archive: 1KlZYQzcgQn9wvByNXXZ6t-iV7K2EqMOl Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-496.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-496.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-497",
@@ -8312,7 +9449,8 @@ window.IFM_DATA ={
    "date created": "2026-07-03",
    "keywords": "slide projector mutual fund best shoes analogy teaching content detail",
    "notes": "Useful on its own as teaching content — the shoes analogy is one of the clearer explanations in the deck and nothing in the catalogue captured it before. No people in frame. Same 3 Jul 2026 session as IFM-478..483; see IFM-495 for the thumbnail-rotation caveat. Owner toocrafty1595@gmail.com. archive: 1iKTKp5FD5mVALPlSpkq2CFq1Rl23PBOx Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-497.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-497.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-498",
@@ -8331,7 +9469,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Xgj1MOQGN7LK5aNOKZl0aKLdgKzLbwAK/view",
    "date created": "2026-06-15",
    "keywords": "gold jewellery myth women static aakara july in progress",
-   "notes": "The only file in the Content Library's 'Aakara — July 2026 (in progress)' folder, and no existing July row covers a gold topic — so it is a loose in-progress deliverable rather than part of a catalogued set. The woman in the frame may or may not be Hiral; it is a designed graphic with copy baked into the image either way, so it is not Media Kit material and the row does not claim an identity. archive: 131OEK385Rsi73J1wWzdXhbhBXLqZxQzX"
+   "notes": "The only file in the Content Library's 'Aakara — July 2026 (in progress)' folder, and no existing July row covers a gold topic — so it is a loose in-progress deliverable rather than part of a catalogued set. The woman in the frame may or may not be Hiral; it is a designed graphic with copy baked into the image either way, so it is not Media Kit material and the row does not claim an identity. archive: 131OEK385Rsi73J1wWzdXhbhBXLqZxQzX",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-499",
@@ -8344,13 +9483,16 @@ window.IFM_DATA ={
    "social": "",
    "status": "Raw",
    "source": "Event",
-   "session": "IYA / IFT teens programme — 23–25 Jun 2026",
+   "session": "IFT teens programme — 23–25 Jun 2026",
    "description": "A boy in a cream t-shirt sits turned in the foreground looking up as he answers; four classmates across the table and Hiral, seated at the right with her arms folded behind her laptop, are all watching him and smiling. Potted cacti and a coffee machine on the credenza behind.",
    "thumbnail": "thumbs/IFM-499.jpg",
    "drive link": "https://drive.google.com/file/d/12XYzYhxy1Vpfg9MrgEgdJuDuLq2mtFjY/view",
    "date created": "2026-06-23",
    "keywords": "student answering group reaction smiling teens discussion warm candid",
-   "notes": "The warmest frame in the shoot and the closest thing it has to a 'students laughing' moment -- they are smiling and engaged rather than laughing, which is worth knowing before anyone searches for laughter and expects to find it here. Backups of the same moment: IMG_4240.HEIC (an instant earlier, fewer smiles), IMG_4242.HEIC (wider, from further down the table). Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1KnjMjcpkpyHahpxJoCDwVLSCnpRH4n5E"
+   "notes": "The warmest frame in the shoot and the closest thing it has to a 'students laughing' moment -- they are smiling and engaged rather than laughing, which is worth knowing before anyone searches for laughter and expects to find it here. Backups of the same moment: IMG_4240.HEIC (an instant earlier, fewer smiles), IMG_4242.HEIC (wider, from further down the table). Source: Content Library / 'IFM feedback videos' / 'IYA／ IFT Photo gallery' — a subfolder that had never been scanned (it is not one of the 14 subfolders in the 17 Sep audit). The same files also sit in Sakshi's registered uploads folder, where the standing IMG_42xx/IMG_84xx 'June batch, catalogued elsewhere' filter has been skipping them since the scanner was built. Checked 20 Sep 2026: neither these filenames nor these Drive ids appear anywhere in data.js, so 'catalogued elsewhere' was not true. Owner asba@moogaworld.com — a third-party account, hence the archive mirror. archive: 1KnjMjcpkpyHahpxJoCDwVLSCnpRH4n5E",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T15:26:33+0530"
   },
   {
    "id": "IFM-500",
@@ -8369,7 +9511,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1UGr9gk4hJosyR5b2voubp53WRWTr0ATQ/view",
    "date created": "2026-08-01",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: IMG_4242.HEIC."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: IMG_4242.HEIC.",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T15:26:39+0530"
   },
   {
    "id": "IFM-501",
@@ -8388,7 +9533,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1ochr5gEbRgQYN9ge85eMW7wXbIHOu95s/view",
    "date created": "2026-08-07",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-07 at 5.23.19 PM (1).jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-07 at 5.23.19 PM (1).jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-502",
@@ -8407,7 +9553,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1x-jvZs9hX6DrWfQ6NZChNwoM5p6AflRe/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 2.43.55 PM.jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 2.43.55 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-503",
@@ -8426,7 +9573,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1gmQPRL5eZ09xz-PEF9wxnLoobFYG6uJc/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 2.44.50 PM.jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 2.44.50 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-504",
@@ -8445,7 +9593,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Y2o9VRvoN4D4vvdXpO4ImGLw6fXoySUw/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 2.47.18 PM.jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 2.47.18 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-505",
@@ -8464,7 +9613,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1yuCtZVc-h9MXi2QnXFc6KC-Rz7sLR-ic/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 2.59.28 PM (1).jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 2.59.28 PM (1).jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-506",
@@ -8483,7 +9633,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1N6frdGS80_ll25OoTCNGBeWQDYALe6kd/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 2.59.28 PM.jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 2.59.28 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-507",
@@ -8502,7 +9653,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Qzv7qodDT7VspOlSWH1aOsXqprBr906I/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.40.50 PM.jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.40.50 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-508",
@@ -8521,7 +9673,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/14WcxpUBrs0VK8cTXYGfVlrw-TKp564bj/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.44.42 PM.jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.44.42 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-509",
@@ -8540,7 +9693,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1sv14TlqfLO7_AyAPV2Xly6vAy1Ti9dGI/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.46.03 PM (1).jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.46.03 PM (1).jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-510",
@@ -8559,7 +9713,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1goU9m2rAgIO5k5Gdi13BsDjQq5sVwwYO/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.46.03 PM.jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.46.03 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-511",
@@ -8578,7 +9733,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1kzTB4zYq-bJ0F8LAoQVVrx0NVaejXl9U/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.57.03 PM (1).jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.57.03 PM (1).jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-512",
@@ -8597,7 +9753,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1PAKUE7vPkwSdTgtTW3EUiuF5k3sCEIWC/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.57.03 PM.jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 3.57.03 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-513",
@@ -8616,7 +9773,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/10sx3DII1LgEP7jI72WfY_Ui40iwIeLWK/view",
    "date created": "2026-08-14",
    "keywords": "wealth conversation workshop venue games whiteboard",
-   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 7.41.41 PM.jpeg."
+   "notes": "From the shared Drive folder \"Workshop Pictures\" — found 20 Sep 2026 by a FULL-DRIVE scan (3,805 files across My Drive and Shared-with-me). Every previous audit only walked the five registered source folders, so this one was never seen. 4 of its 18 files were name+size duplicates of rows we already had; these 14 are new. Source file: WhatsApp Image 2026-08-14 at 7.41.41 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-514",
@@ -8635,7 +9793,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1Kj0Hvaz2yHhHVBBfqM5lepSKKK1DK6sV/view",
    "date created": "2026-08-19",
    "keywords": "certificate, teens, cohort, certificates, standing, group, jun 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: Copy of IMG_4257.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: Copy of IMG_4258.HEIC."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: Copy of IMG_4257.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: Copy of IMG_4258.HEIC.",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-25T13:34:44+0530"
   },
   {
    "id": "IFM-515",
@@ -8654,7 +9815,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/13NFAjpNfsxs9suwwapGgq7TGqfHSiuax/view",
    "date created": "2026-08-19",
    "keywords": "certificate, graduation, graduate, holding, completion, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1846.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_1847.HEIC."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1846.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_1847.HEIC.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T14:01:08+0530"
   },
   {
    "id": "IFM-516",
@@ -8673,7 +9837,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1wSQYoQaNuvDrRLxMBUr9btq04L3Jdy1G/view",
    "date created": "2026-08-19",
    "keywords": "certificate, graduation, three, graduates, certificates, boardroom, table, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1849.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_1850.HEIC."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1849.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_1850.HEIC.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-517",
@@ -8692,7 +9857,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1eakYm-YngsekAz8Sxsr4lr06GcyvboY7/view",
    "date created": "2026-08-19",
    "keywords": "certificate, graduation, group, portrait, four, certificates, frame, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1852.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_1853.HEIC."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1852.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_1853.HEIC.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-518",
@@ -8711,7 +9877,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1bThlfPO2lMiqJvDnTfQUbQm7nmYZ1746/view",
    "date created": "2026-08-19",
    "keywords": "certificate, graduation, women, cohort, certificates, boardroom, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_2389.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_2390.HEIC."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_2389.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_2390.HEIC.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-519",
@@ -8730,7 +9897,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1JMHnIKrc758VIIFcgCq3MohbErF2CZYb/view",
    "date created": "2026-08-19",
    "keywords": "certificate, graduation, young, women, cohort, certificates, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_2395.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_2392.HEIC, IMG_2393.HEIC, IMG_2394.HEIC."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_2395.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_2392.HEIC, IMG_2393.HEIC, IMG_2394.HEIC.",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-31T13:27:30+0530"
   },
   {
    "id": "IFM-520",
@@ -8749,7 +9919,10 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1TeYEdLhotLQr3lLszD5CeYOfk3AeWZZ2/view",
    "date created": "2026-08-19",
    "keywords": "certificate, graduation, two, graduates, white, certificates, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_4250.HEIC."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_4250.HEIC.",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-24T13:29:23+0530"
   },
   {
    "id": "IFM-521",
@@ -8768,7 +9941,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1aXl_zvOSM7Cl-n8kNVC9rFeeR55nSc_z/view",
    "date created": "2026-08-14",
    "keywords": "workshop, hiral, laptop, session, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-07 at 5.23.19 PM.jpeg."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-07 at 5.23.19 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-522",
@@ -8787,7 +9961,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1_QtxL9vK0WLk67QhqgshPufHWvKm9exS/view",
    "date created": "2026-08-14",
    "keywords": "workshop, hiral, presenting, red, front, room, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-14 at 1.03.46 PM.jpeg."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-14 at 1.03.46 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-523",
@@ -8806,7 +9981,9 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/11USxbNBVTH5bzILTUQCZgrgMuFykLS00/view",
    "date created": "2026-08-14",
    "keywords": "certificate, teens, workshop, certificates, boardroom, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-14 at 1.04.36 PM.jpeg."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-14 at 1.04.36 PM.jpeg.",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-524",
@@ -8825,7 +10002,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1PQT29Izy6rUDIIg1dlOGeVTBdNwG7GNf/view",
    "date created": "2026-08-14",
    "keywords": "workshop, presenting, hall, screen, seated, audience, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-14 at 4.21.29 PM.jpeg. Backups of the same moment, kept on Drive and not catalogued separately: WhatsApp Image 2026-08-14 at 4.21.30 PM.jpeg, WhatsApp Image 2026-08-14 at 4.22.18 PM.jpeg."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-14 at 4.21.29 PM.jpeg. Backups of the same moment, kept on Drive and not catalogued separately: WhatsApp Image 2026-08-14 at 4.21.30 PM.jpeg, WhatsApp Image 2026-08-14 at 4.22.18 PM.jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-525",
@@ -8844,7 +10022,8 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1efu32vGfgB5b3N3Udmz29BYKoyI_YRF4/view",
    "date created": "2026-08-14",
    "keywords": "workshop, standing, window, city, skyline, behind, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-14 at 7.40.46 PM.jpeg. Backups of the same moment, kept on Drive and not catalogued separately: WhatsApp Image 2026-08-14 at 7.40.46 PM (1).jpeg."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-14 at 7.40.46 PM.jpeg. Backups of the same moment, kept on Drive and not catalogued separately: WhatsApp Image 2026-08-14 at 7.40.46 PM (1).jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-526",
@@ -8863,11 +10042,12 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/file/d/1d9SatM51Z6R9xFf0K1Snv1DSM0Za_b7r/view",
    "date created": "2026-08-14",
    "keywords": "workshop, working, laptop, window, aug 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-14 at 7.40.46 PM (2).jpeg."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: WhatsApp Image 2026-08-14 at 7.40.46 PM (2).jpeg.",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-527",
-   "title": "IYA/IFT teens session — the room at the screen",
+   "title": "IFT teens session — the room at the screen",
    "type": "Photo",
    "shot": "Students",
    "setting": "Workshop — mums",
@@ -8876,17 +10056,20 @@ window.IFM_DATA ={
    "social": "",
    "status": "Ready",
    "source": "In-house",
-   "session": "IYA / IFT teens programme — Jun 2026",
+   "session": "IFT teens programme — Jun 2026",
    "description": "Teenagers around the boardroom table facing a wall-mounted screen showing a pink-and-red slide, a presenter standing to the left of it. Laptops, printed sheets and water bottles across the table.",
    "thumbnail": "thumbs/IFM-527.jpg",
    "drive link": "https://drive.google.com/file/d/1VuSPOesDRH6s51THfVWEW3o2RFFSQ-uG/view",
    "date created": "2026-06-24",
    "keywords": "teens, iya, ift, session, room, screen, jun 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_4226.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_4225.HEIC, IMG_4227.HEIC, IMG_4228.HEIC, IMG_4223.MOV."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_4226.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_4225.HEIC, IMG_4227.HEIC, IMG_4228.HEIC, IMG_4223.MOV.",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T15:13:35+0530"
   },
   {
    "id": "IFM-528",
-   "title": "IYA/IFT teens session — working through the slide",
+   "title": "IFT teens session — working through the slide",
    "type": "Session Video",
    "shot": "Students",
    "setting": "Workshop — mums",
@@ -8895,18 +10078,21 @@ window.IFM_DATA ={
    "social": "",
    "status": "Ready",
    "source": "In-house",
-   "session": "IYA / IFT teens programme — Jun 2026",
+   "session": "IFT teens programme — Jun 2026",
    "description": "Session footage from the back of the boardroom: the group watching the screen while the presenter talks through it, students turning between the screen and their sheets.",
    "thumbnail": "thumbs/IFM-528.jpg",
    "drive link": "https://drive.google.com/file/d/15zKdMWV2HVYqmyPUdQ6CLZyt-LorjW3V/view",
    "date created": "2026-06-24",
    "keywords": "teens, iya, ift, session, working, through, slide, jun 2026",
    "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_4236.MOV. Backups of the same moment, kept on Drive and not catalogued separately: IMG_4232.MOV, IMG_4234.MOV, IMG_4237.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-528.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-528.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T15:22:50+0530"
   },
   {
    "id": "IFM-529",
-   "title": "IYA/IFT teens — the lighter meeting room",
+   "title": "IFT teens — the lighter meeting room",
    "type": "Photo",
    "shot": "Students",
    "setting": "Workshop — mums",
@@ -8915,17 +10101,20 @@ window.IFM_DATA ={
    "social": "",
    "status": "Ready",
    "source": "In-house",
-   "session": "IYA / IFT teens programme — Jun 2026",
+   "session": "IFT teens programme — Jun 2026",
    "description": "A different, brighter room: participants seated around a pale table with laptops and papers, daylight from the side, a more informal working setup than the main boardroom.",
    "thumbnail": "thumbs/IFM-529.jpg",
    "drive link": "https://drive.google.com/file/d/1uNJNcXzWMmBJJMOh0cHePMqBOIeW5Yyg/view",
    "date created": "2026-06-24",
    "keywords": "teens, iya, ift, lighter, meeting, room, jun 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_4240.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_4239.MOV."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_4240.HEIC. Backups of the same moment, kept on Drive and not catalogued separately: IMG_4239.MOV.",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T15:26:31+0530"
   },
   {
    "id": "IFM-530",
-   "title": "IYA/IFT teens — cohort at the long table",
+   "title": "IFT teens — cohort at the long table",
    "type": "Photo",
    "shot": "Students",
    "setting": "Workshop — mums",
@@ -8934,17 +10123,20 @@ window.IFM_DATA ={
    "social": "",
    "status": "Ready",
    "source": "In-house",
-   "session": "IYA / IFT teens programme — Jun 2026",
+   "session": "IFT teens programme — Jun 2026",
    "description": "The teens cohort seated down both sides of the long boardroom table with the session slide on the screen at the far end, taken from the back of the room.",
    "thumbnail": "thumbs/IFM-530.jpg",
    "drive link": "https://drive.google.com/file/d/16nlteZBGeDcl0oKX4-ukDecK8P3h6rTS/view",
    "date created": "2026-06-24",
    "keywords": "teens, iya, ift, cohort, long, table, jun 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_8413.JPG. Backups of the same moment, kept on Drive and not catalogued separately: IMG_8412.JPG."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_8413.JPG. Backups of the same moment, kept on Drive and not catalogued separately: IMG_8412.JPG.",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T14:38:11+0530"
   },
   {
    "id": "IFM-531",
-   "title": "IYA/IFT teens — presenter at the screen",
+   "title": "IFT teens — presenter at the screen",
    "type": "Photo",
    "shot": "Hiral — teaching",
    "setting": "Workshop — mums",
@@ -8953,17 +10145,20 @@ window.IFM_DATA ={
    "social": "",
    "status": "Ready",
    "source": "In-house",
-   "session": "IYA / IFT teens programme — Jun 2026",
+   "session": "IFT teens programme — Jun 2026",
    "description": "The presenter stands beside the wall screen addressing the seated teens, one hand raised toward a slide, water bottles and worksheets along the table.",
    "thumbnail": "thumbs/IFM-531.jpg",
    "drive link": "https://drive.google.com/file/d/1Rkn83TJNxDe5Cz0-w0PmUTAXE_Ag3Vhg/view",
    "date created": "2026-06-24",
    "keywords": "teens, iya, ift, presenter, screen, jun 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_8424.JPG. Backups of the same moment, kept on Drive and not catalogued separately: IMG_8415.MOV."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_8424.JPG. Backups of the same moment, kept on Drive and not catalogued separately: IMG_8415.MOV.",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T14:44:40+0530"
   },
   {
    "id": "IFM-532",
-   "title": "IYA/IFT teens — session wide with the slide up",
+   "title": "IFT teens — session wide with the slide up",
    "type": "Photo",
    "shot": "Room/venue wide",
    "setting": "Workshop — mums",
@@ -8972,13 +10167,16 @@ window.IFM_DATA ={
    "social": "",
    "status": "Ready",
    "source": "In-house",
-   "session": "IYA / IFT teens programme — Jun 2026",
+   "session": "IFT teens programme — Jun 2026",
    "description": "Wide of the whole teens session: screen lit at the front, the group seated around the table in profile, the room’s framed art and window along the far wall.",
    "thumbnail": "thumbs/IFM-532.jpg",
    "drive link": "https://drive.google.com/file/d/1Qhhyhyl0KcOjXoS9ITi9zdlUunPdO_Qz/view",
    "date created": "2026-06-24",
    "keywords": "teens, iya, ift, session, wide, slide, jun 2026",
-   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_8433.JPG. Backups of the same moment, kept on Drive and not catalogued separately: IMG_8432.JPG, IMG_8434.JPG, IMG_8428.MOV."
+   "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_8433.JPG. Backups of the same moment, kept on Drive and not catalogued separately: IMG_8432.JPG, IMG_8434.JPG, IMG_8428.MOV.",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-23T14:49:23+0530"
   },
   {
    "id": "IFM-533",
@@ -8998,7 +10196,10 @@ window.IFM_DATA ={
    "date created": "2026-08-19",
    "keywords": "feedback, august, participant, green, camera, aug 2026",
    "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1838.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-533.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-533.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T13:53:42+0530"
   },
   {
    "id": "IFM-534",
@@ -9018,7 +10219,10 @@ window.IFM_DATA ={
    "date created": "2026-08-19",
    "keywords": "feedback, august, participant, green, second, take, aug 2026",
    "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1839.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-534.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-534.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T13:55:12+0530"
   },
   {
    "id": "IFM-535",
@@ -9038,7 +10242,10 @@ window.IFM_DATA ={
    "date created": "2026-08-19",
    "keywords": "feedback, august, older, participant, lilac, aug 2026",
    "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_1841.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-535.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-535.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-27T13:55:48+0530"
   },
   {
    "id": "IFM-536",
@@ -9058,7 +10265,10 @@ window.IFM_DATA ={
    "date created": "2026-08-19",
    "keywords": "feedback, august, participant, reading, notes, aug 2026",
    "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_2386.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-536.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-536.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-08-31T13:21:05+0530"
   },
   {
    "id": "IFM-537",
@@ -9078,7 +10288,9 @@ window.IFM_DATA ={
    "date created": "2026-08-19",
    "keywords": "teens, workshop, ift, aug, working, table, aug 2026",
    "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: 1785216806801662.mp4. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-537.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-537.mp4",
+   "audience": "Teens",
+   "batch": ""
   },
   {
    "id": "IFM-538",
@@ -9098,7 +10310,10 @@ window.IFM_DATA ={
    "date created": "2026-08-19",
    "keywords": "teens, workshop, ift, aug, room, screen, aug 2026",
    "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_0423.mov. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-538.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-538.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-27T14:43:48+0530"
   },
   {
    "id": "IFM-539",
@@ -9118,7 +10333,10 @@ window.IFM_DATA ={
    "date created": "2026-08-19",
    "keywords": "teens, workshop, ift, aug, hands, printed, activity, sheet, aug 2026",
    "notes": "Found 20 Sep 2026 by a two-agent Drive audit. A first pass missed it; an independent second pass caught it after proving that the recursive Drive listing everyone had been using under-reports non-deterministically (nine passes over one folder returned 61 to 793 files, every time exiting successfully). Enumerated instead folder-by-folder by ID with retries. Frame: IMG_0562.MOV. Preview clip built 20 Sep 2026 from the Drive master; the row now names it in `video` so media-audit.py can probe it. A clip on disk that no row points at is invisible to the audit and therefore to the Library.",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-539.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-539.mp4",
+   "audience": "Teens",
+   "batch": "IFT-4",
+   "captured_at": "2026-07-29T15:02:58+0530"
   },
   {
    "id": "IFM-540",
@@ -9138,7 +10356,10 @@ window.IFM_DATA ={
    "keywords": "hiral goel, whiteboard, debt mutual funds, where the money goes, borrower, banks, government, g-secs, t-bills, state development loans, teaching, explainer, founder, back to camera",
    "thumbnail": "thumbs/IFM-540.jpg",
    "drive link": "https://drive.google.com/file/d/11cI1Zh3PzOvahIDzZxr5wwvOiQApESD7/view",
-   "notes": "Frame: IMG_6514.JPG. Backup of the same moment: IMG_6512.JPG (a step earlier, less of the board filled in). She is back to camera, so the identity is inferred from the shoot folder and the matching eyelet blouse rather than read off the face — deliberately NOT Media Kit material for that reason. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1gJvKERY-nMCzmSwqt3Daw6jocKAv58qO"
+   "notes": "Frame: IMG_6514.JPG. Backup of the same moment: IMG_6512.JPG (a step earlier, less of the board filled in). She is back to camera, so the identity is inferred from the shoot folder and the matching eyelet blouse rather than read off the face — deliberately NOT Media Kit material for that reason. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1gJvKERY-nMCzmSwqt3Daw6jocKAv58qO",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-23T10:53:57+0530"
   },
   {
    "id": "IFM-541",
@@ -9158,7 +10379,10 @@ window.IFM_DATA ={
    "keywords": "workbook, investing for mummies, book cover, detail, hands, product shot, brand, boardroom table, close up",
    "thumbnail": "thumbs/IFM-541.jpg",
    "drive link": "https://drive.google.com/file/d/1ZIyHwesRcGTn_fqV0mRN128WJ16_N7bG/view",
-   "notes": "Frame: IMG_6605.JPG. The cleanest product shot of the printed workbook in the whole catalogue — no face, so it is social-safe without a consent question. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1JzfAnbyIjRn7IGmaK-87oYQ4KXSxuSv9"
+   "notes": "Frame: IMG_6605.JPG. The cleanest product shot of the printed workbook in the whole catalogue — no face, so it is social-safe without a consent question. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1JzfAnbyIjRn7IGmaK-87oYQ4KXSxuSv9",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:23:32+0530"
   },
   {
    "id": "IFM-542",
@@ -9179,7 +10403,10 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-542.jpg",
    "drive link": "https://drive.google.com/file/d/1XXVdz31JioPyWG_NHc8jxXk-IUyOZ5cd/view",
    "notes": "File: IMG_6602.MOV (75MB). No preview clip built yet, so this row is staged but will NOT appear in the V1 Library until a clip exists and media-map.js marks it playable. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1fzM-ApT_5GvTTF7cXJoClKyJ53SvypIp",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-542.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-542.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:22:17+0530"
   },
   {
    "id": "IFM-543",
@@ -9199,7 +10426,10 @@ window.IFM_DATA ={
    "keywords": "hiral goel, boardroom, ifm title slide, laptop, seated, wide, founder, event listing, speaker, teaching",
    "thumbnail": "thumbs/IFM-543.jpg",
    "drive link": "https://drive.google.com/file/d/1u4CwO6a0BZ1UCV90Ins30TilGNI8GWWk/view",
-   "notes": "Frame: IMG_6621.JPG — the warmest of three near-identical frames. Backups of the same moment: IMG_6619.JPG and IMG_6620.JPG. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1zPjyzXJpPIBPVyLt-VWr67CmKWwj9d8-"
+   "notes": "Frame: IMG_6621.JPG — the warmest of three near-identical frames. Backups of the same moment: IMG_6619.JPG and IMG_6620.JPG. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1zPjyzXJpPIBPVyLt-VWr67CmKWwj9d8-",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:26:30+0530"
   },
   {
    "id": "IFM-544",
@@ -9219,7 +10449,10 @@ window.IFM_DATA ={
    "keywords": "hiral goel, founder, seated portrait, ifm slide, brand backdrop, proposal, speaker bio, credibility, teaching, hero",
    "thumbnail": "thumbs/IFM-544.jpg",
    "drive link": "https://drive.google.com/file/d/16DzIB3qyqz64Y-5Js0ImD4Ouuoi5ENCM/view",
-   "notes": "Frame: IMG_6669.JPG — the cleanest of this setup: closer than the others and the table is clear. Backups of the same moment: IMG_6666.JPG and IMG_6667.JPG (laptop and workbook on the table), IMG_6644.JPG (wider, from the left). IFM-073 is the same seated-under-the-slide setup from this shoot and is already a rank-1 Media Kit teaching frame. In the Hiral Media Kit. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1N2bHbLOsdjsYxpwsnjaP12yCwS2z4iSe media-kit copy: 1bUhtnMTIy4WE-1F09Axy-hEeHqV3asrM"
+   "notes": "Frame: IMG_6669.JPG — the cleanest of this setup: closer than the others and the table is clear. Backups of the same moment: IMG_6666.JPG and IMG_6667.JPG (laptop and workbook on the table), IMG_6644.JPG (wider, from the left). IFM-073 is the same seated-under-the-slide setup from this shoot and is already a rank-1 Media Kit teaching frame. In the Hiral Media Kit. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1N2bHbLOsdjsYxpwsnjaP12yCwS2z4iSe media-kit copy: 1bUhtnMTIy4WE-1F09Axy-hEeHqV3asrM",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:42:04+0530"
   },
   {
    "id": "IFM-545",
@@ -9239,7 +10472,10 @@ window.IFM_DATA ={
    "keywords": "hiral goel, standing portrait, arms crossed, smiling, wood backdrop, white blouse, blue skirt, founder, press, headshot, profile photo, about",
    "thumbnail": "thumbs/IFM-545.jpg",
    "drive link": "https://drive.google.com/file/d/1s4nIk-X4cdbTnJ8zxMtmbZdQ_4Mv7N2_/view",
-   "notes": "Frame: IMG_6633.JPG. Backups of the same moment: IMG_6629.JPG and IMG_6630.JPG (both closed-mouth). This is the SMILING version of IFM-067, which is already a rank-1 Media Kit portrait from the identical wall, outfit and pose — kept as a separate row because the expression is materially different, and ranked 2 rather than 1 so the lead strip does not show the same backdrop twice. Worth a human call on which of the two should lead. In the Hiral Media Kit. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1wNchnHYaOHvPsDskIadpdAKZIYKI2I_Y media-kit copy: 16zdy6NbUvN3-67i1lsWqjHzJXpE7wp7H"
+   "notes": "Frame: IMG_6633.JPG. Backups of the same moment: IMG_6629.JPG and IMG_6630.JPG (both closed-mouth). This is the SMILING version of IFM-067, which is already a rank-1 Media Kit portrait from the identical wall, outfit and pose — kept as a separate row because the expression is materially different, and ranked 2 rather than 1 so the lead strip does not show the same backdrop twice. Worth a human call on which of the two should lead. In the Hiral Media Kit. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1wNchnHYaOHvPsDskIadpdAKZIYKI2I_Y media-kit copy: 16zdy6NbUvN3-67i1lsWqjHzJXpE7wp7H",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:28:26+0530"
   },
   {
    "id": "IFM-546",
@@ -9259,7 +10495,10 @@ window.IFM_DATA ={
    "keywords": "hiral goel, founder, seated portrait, head of table, workbook, framed artwork, press, bio, authority, office, hero",
    "thumbnail": "thumbs/IFM-546.jpg",
    "drive link": "https://drive.google.com/file/d/11pYK5NkFqS1TxzDMqhiqhObX7COuAoRp/view",
-   "notes": "Frame: IMG_6657.JPG — closer and warmer than its backup IMG_6655.JPG (same moment, wider, more of the chair). The only frame in the shoot that puts her at the head of the table, which reads differently from the slide-backdrop frames. In the Hiral Media Kit. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1qvLRa3U_p2vl4AkPA_5cMNvjveMrW4_H media-kit copy: 1Q2Fzm4k289deksViRwgnEWnXuI0_-00K"
+   "notes": "Frame: IMG_6657.JPG — closer and warmer than its backup IMG_6655.JPG (same moment, wider, more of the chair). The only frame in the shoot that puts her at the head of the table, which reads differently from the slide-backdrop frames. In the Hiral Media Kit. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1qvLRa3U_p2vl4AkPA_5cMNvjveMrW4_H media-kit copy: 1Q2Fzm4k289deksViRwgnEWnXuI0_-00K",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-03-24T15:38:17+0530"
   },
   {
    "id": "IFM-547",
@@ -9280,7 +10519,8 @@ window.IFM_DATA ={
    "thumbnail": "thumbs/IFM-547.jpg",
    "drive link": "https://drive.google.com/file/d/15YMNNvsvJlO2Tzvf3XzyjbSMxFlqBZW1/view",
    "notes": "File: IMG_8010.MOV (143MB) — the fuller of two takes of the same moment; backup IMG_7983.mov (102MB, a text-only slide, less of the room). Shot 12 Jun 2026, a different day and venue from the rest of this folder. She is small in a wide room, so deliberately NOT Media Kit material. No preview clip built yet, so this row will NOT appear in the V1 Library until one exists. Aakara delivery tree / \"Hiral Goel\" folder (1z-rLgGvpYD3Hns_ZakWO_0iLR_3aPwsI). Found 21 Sep 2026: the folder holds 43 files, 25 already catalogued, these 18 never were. archive: 1pgOVhzPyvodslmgBfc_rYfZFTTeojBzI",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-547.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-547.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-548",
@@ -9299,7 +10539,8 @@ window.IFM_DATA ={
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-549",
@@ -9318,7 +10559,8 @@ window.IFM_DATA ={
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-550",
@@ -9337,7 +10579,8 @@ window.IFM_DATA ={
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-551",
@@ -9356,7 +10599,8 @@ window.IFM_DATA ={
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-552",
@@ -9375,7 +10619,8 @@ window.IFM_DATA ={
    "quality": "Hero",
    "consent": "Adults only",
    "session": "",
-   "social": ""
+   "social": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-553",
@@ -9395,7 +10640,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-553.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-553.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-24T11:15:31+0530"
   },
   {
    "id": "IFM-554",
@@ -9415,7 +10663,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-554.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-554.mp4",
+   "audience": "Teens",
+   "batch": "IFT-3",
+   "captured_at": "2026-06-25T13:29:55+0530"
   },
   {
    "id": "IFM-555",
@@ -9435,7 +10686,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-555.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-555.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-29T13:25:34+0530"
   },
   {
    "id": "IFM-556",
@@ -9455,7 +10709,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-556.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-556.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-29T13:28:47+0530"
   },
   {
    "id": "IFM-557",
@@ -9475,7 +10732,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-557.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-557.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-29T13:28:55+0530"
   },
   {
    "id": "IFM-558",
@@ -9495,7 +10755,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-558.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-558.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-29T13:30:35+0530"
   },
   {
    "id": "IFM-559",
@@ -9515,7 +10778,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-559.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-559.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-29T13:31:05+0530"
   },
   {
    "id": "IFM-560",
@@ -9535,7 +10801,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-560.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-560.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-29T13:31:23+0530"
   },
   {
    "id": "IFM-561",
@@ -9555,7 +10824,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-561.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-561.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-29T13:33:24+0530"
   },
   {
    "id": "IFM-562",
@@ -9575,7 +10847,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-562.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-562.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-29T13:34:30+0530"
   },
   {
    "id": "IFM-563",
@@ -9595,7 +10870,10 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-563.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-563.mp4",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-09-29T13:35:12+0530"
   },
   {
    "id": "IFM-564",
@@ -9615,7 +10893,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-564.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-564.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-565",
@@ -9635,7 +10914,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-565.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-565.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-566",
@@ -9655,7 +10935,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-566.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-566.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-567",
@@ -9675,7 +10956,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-567.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-567.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-568",
@@ -9695,7 +10977,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": ""
+   "video": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-569",
@@ -9715,7 +10998,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-569.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-569.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-570",
@@ -9735,7 +11019,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": ""
+   "video": "",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-571",
@@ -9755,7 +11040,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-571.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-571.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-572",
@@ -9775,7 +11061,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "Goa — 18 Jul 2026",
    "social": "",
-   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-572.mp4"
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-572.mp4",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-573",
@@ -9795,7 +11082,10 @@ window.IFM_DATA ={
    "session": "Corporate deck video shoot — 1 Oct 2026",
    "social": "Yes",
    "video": "",
-   "thumbnail": "thumbs/IFM-573.jpg"
+   "thumbnail": "thumbs/IFM-573.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T09:50:31+0530"
   },
   {
    "id": "IFM-574",
@@ -9815,7 +11105,10 @@ window.IFM_DATA ={
    "session": "Corporate deck video shoot — 1 Oct 2026",
    "social": "Yes",
    "video": "",
-   "thumbnail": "thumbs/IFM-574.jpg"
+   "thumbnail": "thumbs/IFM-574.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T09:49:41+0530"
   },
   {
    "id": "IFM-575",
@@ -9835,7 +11128,8 @@ window.IFM_DATA ={
    "session": "Corporate deck video shoot — 1 Oct 2026",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-575.jpg"
+   "thumbnail": "thumbs/IFM-575.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-576",
@@ -9855,7 +11149,10 @@ window.IFM_DATA ={
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "Yes",
    "video": "",
-   "thumbnail": "thumbs/IFM-576.jpg"
+   "thumbnail": "thumbs/IFM-576.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T12:33:18+0530"
   },
   {
    "id": "IFM-577",
@@ -9875,7 +11172,10 @@ window.IFM_DATA ={
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-577.jpg"
+   "thumbnail": "thumbs/IFM-577.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T12:33:09+0530"
   },
   {
    "id": "IFM-578",
@@ -9895,7 +11195,10 @@ window.IFM_DATA ={
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-578.jpg"
+   "thumbnail": "thumbs/IFM-578.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T11:51:16+0530"
   },
   {
    "id": "IFM-579",
@@ -9915,7 +11218,8 @@ window.IFM_DATA ={
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-579.mp4",
-   "thumbnail": "thumbs/IFM-579.jpg"
+   "thumbnail": "thumbs/IFM-579.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-580",
@@ -9935,7 +11239,10 @@ window.IFM_DATA ={
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-580.mp4",
-   "thumbnail": "thumbs/IFM-580.jpg"
+   "thumbnail": "thumbs/IFM-580.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T11:32:28+0530"
   },
   {
    "id": "IFM-581",
@@ -9955,7 +11262,10 @@ window.IFM_DATA ={
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-581.mp4",
-   "thumbnail": "thumbs/IFM-581.jpg"
+   "thumbnail": "thumbs/IFM-581.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T11:29:19+0530"
   },
   {
    "id": "IFM-582",
@@ -9975,7 +11285,10 @@ window.IFM_DATA ={
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-582.mp4",
-   "thumbnail": "thumbs/IFM-582.jpg"
+   "thumbnail": "thumbs/IFM-582.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T11:33:18+0530"
   },
   {
    "id": "IFM-583",
@@ -9995,7 +11308,10 @@ window.IFM_DATA ={
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-583.mp4",
-   "thumbnail": "thumbs/IFM-583.jpg"
+   "thumbnail": "thumbs/IFM-583.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T11:33:26+0530"
   },
   {
    "id": "IFM-584",
@@ -10015,11 +11331,14 @@ window.IFM_DATA ={
    "session": "Corporate women's workshop — 1 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-584.mp4",
-   "thumbnail": "thumbs/IFM-584.jpg"
+   "thumbnail": "thumbs/IFM-584.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T11:51:30+0530"
   },
   {
    "id": "IFM-585",
-   "title": "IYA teens — opening wide: the cohort around the boardroom table",
+   "title": "IYA — young adults — opening wide: the cohort around the boardroom table",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10032,14 +11351,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-585.mp4",
-   "thumbnail": "thumbs/IFM-585.jpg"
+   "thumbnail": "thumbs/IFM-585.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-27T16:50:48+0530"
   },
   {
    "id": "IFM-586",
-   "title": "IYA teens — \"Understanding Your Options: where do I even start?\" slide",
+   "title": "IYA — young adults — \"Understanding Your Options: where do I even start?\" slide",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10052,14 +11374,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-586.mp4",
-   "thumbnail": "thumbs/IFM-586.jpg"
+   "thumbnail": "thumbs/IFM-586.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-28T16:18:31+0530"
   },
   {
    "id": "IFM-587",
-   "title": "IYA teens — a participant listening, arms crossed (close)",
+   "title": "IYA — young adults — a participant listening, arms crossed (close)",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10072,14 +11397,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-587.mp4",
-   "thumbnail": "thumbs/IFM-587.jpg"
+   "thumbnail": "thumbs/IFM-587.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-28T16:15:30+0530"
   },
   {
    "id": "IFM-588",
-   "title": "IYA teens — two participants leaning in at the table",
+   "title": "IYA — young adults — two participants leaning in at the table",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10092,14 +11420,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-588.mp4",
-   "thumbnail": "thumbs/IFM-588.jpg"
+   "thumbnail": "thumbs/IFM-588.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-28T16:19:53+0530"
   },
   {
    "id": "IFM-589",
-   "title": "IYA teens — presenter explaining \"Session 3: Understanding Stock Basics\" from her laptop",
+   "title": "IYA — young adults — presenter explaining \"Session 3: Understanding Stock Basics\" from her laptop",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10112,14 +11443,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Hero",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-589.mp4",
-   "thumbnail": "thumbs/IFM-589.jpg"
+   "thumbnail": "thumbs/IFM-589.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-29T16:14:00+0530"
   },
   {
    "id": "IFM-590",
-   "title": "IYA teens — presenter at the \"What is Actually Happening?\" order-book slide",
+   "title": "IYA — young adults — presenter at the \"What is Actually Happening?\" order-book slide",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10132,14 +11466,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Hero",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-590.mp4",
-   "thumbnail": "thumbs/IFM-590.jpg"
+   "thumbnail": "thumbs/IFM-590.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-29T16:23:34+0530"
   },
   {
    "id": "IFM-591",
-   "title": "IYA teens — the \"Stop Loss\" slide, presenter talking with the group",
+   "title": "IYA — young adults — the \"Stop Loss\" slide, presenter talking with the group",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10152,14 +11489,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-591.mp4",
-   "thumbnail": "thumbs/IFM-591.jpg"
+   "thumbnail": "thumbs/IFM-591.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-29T16:24:38+0530"
   },
   {
    "id": "IFM-592",
-   "title": "IYA teens — a participant reading the IFM workbook",
+   "title": "IYA — young adults — a participant reading the IFM workbook",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10172,14 +11512,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-592.mp4",
-   "thumbnail": "thumbs/IFM-592.jpg"
+   "thumbnail": "thumbs/IFM-592.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-29T16:12:56+0530"
   },
   {
    "id": "IFM-593",
-   "title": "IYA teens — filling in the workbook (close on writing)",
+   "title": "IYA — young adults — filling in the workbook (close on writing)",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10192,14 +11535,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-593.mp4",
-   "thumbnail": "thumbs/IFM-593.jpg"
+   "thumbnail": "thumbs/IFM-593.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-29T16:20:57+0530"
   },
   {
    "id": "IFM-594",
-   "title": "IYA teens — a participant answering, hands mid-gesture",
+   "title": "IYA — young adults — a participant answering, hands mid-gesture",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10212,14 +11558,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-594.mp4",
-   "thumbnail": "thumbs/IFM-594.jpg"
+   "thumbnail": "thumbs/IFM-594.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-29T16:21:50+0530"
   },
   {
    "id": "IFM-595",
-   "title": "IYA teens — the class playing a quiz on their phones",
+   "title": "IYA — young adults — the class playing a quiz on their phones",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10232,14 +11581,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-595.mp4",
-   "thumbnail": "thumbs/IFM-595.jpg"
+   "thumbnail": "thumbs/IFM-595.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-29T17:03:32+0530"
   },
   {
    "id": "IFM-596",
-   "title": "IYA teens — quiz \"Final results\" leaderboard on the screen",
+   "title": "IYA — young adults — quiz \"Final results\" leaderboard on the screen",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10252,14 +11604,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-596.mp4",
-   "thumbnail": "thumbs/IFM-596.jpg"
+   "thumbnail": "thumbs/IFM-596.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-29T17:24:50+0530"
   },
   {
    "id": "IFM-597",
-   "title": "IYA teens — \"What is a Mutual Fund?\" slide, presenter at the front",
+   "title": "IYA — young adults — \"What is a Mutual Fund?\" slide, presenter at the front",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10272,14 +11627,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Hero",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-597.mp4",
-   "thumbnail": "thumbs/IFM-597.jpg"
+   "thumbnail": "thumbs/IFM-597.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-30T16:15:06+0530"
   },
   {
    "id": "IFM-598",
-   "title": "IYA teens — room wide from the back during the mutual-fund session",
+   "title": "IYA — young adults — room wide from the back during the mutual-fund session",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10292,14 +11650,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-598.mp4",
-   "thumbnail": "thumbs/IFM-598.jpg"
+   "thumbnail": "thumbs/IFM-598.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-30T16:29:54+0530"
   },
   {
    "id": "IFM-599",
-   "title": "IYA teens — presenter walking the class through a trading-platform screen",
+   "title": "IYA — young adults — presenter walking the class through a trading-platform screen",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10312,14 +11673,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-599.mp4",
-   "thumbnail": "thumbs/IFM-599.jpg"
+   "thumbnail": "thumbs/IFM-599.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-30T17:22:05+0530"
   },
   {
    "id": "IFM-600",
-   "title": "IYA teens — presenter reading out from a sheet at the close",
+   "title": "IYA — young adults — presenter reading out from a sheet at the close",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10332,14 +11696,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-600.mp4",
-   "thumbnail": "thumbs/IFM-600.jpg"
+   "thumbnail": "thumbs/IFM-600.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-30T17:41:33+0530"
   },
   {
    "id": "IFM-601",
-   "title": "IYA teens — group certificate photo with the presenter",
+   "title": "IYA — young adults — group certificate photo with the presenter",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10352,14 +11719,17 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Hero",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-601.mp4",
-   "thumbnail": "thumbs/IFM-601.jpg"
+   "thumbnail": "thumbs/IFM-601.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3",
+   "captured_at": "2026-07-30T17:44:59+0530"
   },
   {
    "id": "IFM-602",
-   "title": "IYA teens — promo story: \"Today's knowledge, tomorrow's wealth\"",
+   "title": "IYA — young adults — promo story: \"Today's knowledge, tomorrow's wealth\"",
    "type": "Story",
    "source": "In-house",
    "status": "Ready",
@@ -10372,14 +11742,16 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Usable",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-602.mp4",
-   "thumbnail": "thumbs/IFM-602.jpg"
+   "thumbnail": "thumbs/IFM-602.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3"
   },
   {
    "id": "IFM-603",
-   "title": "IYA teens Aug 2026 — rest of the shoot (114 clips, folder)",
+   "title": "IYA — young adults Aug 2026 — rest of the shoot (114 clips, folder)",
    "type": "Session Video",
    "source": "Event",
    "status": "Raw",
@@ -10392,10 +11764,12 @@ window.IFM_DATA ={
    "setting": "Workshop — youth/teens",
    "quality": "Raw-backup",
    "consent": "Minors visible",
-   "session": "IYA teens programme — Aug 2026",
+   "session": "IYA — young adults programme — Aug 2026",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-603.jpg"
+   "thumbnail": "thumbs/IFM-603.jpg",
+   "audience": "Young Adults",
+   "batch": "IYA-B3"
   },
   {
    "id": "IFM-604",
@@ -10415,7 +11789,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-604.jpg"
+   "thumbnail": "thumbs/IFM-604.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-605",
@@ -10435,7 +11810,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop — 1 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-605.mp4",
-   "thumbnail": "thumbs/IFM-605.jpg"
+   "thumbnail": "thumbs/IFM-605.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T11:29:54+0530"
   },
   {
    "id": "IFM-606",
@@ -10455,7 +11833,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop — 1 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-606.mp4",
-   "thumbnail": "thumbs/IFM-606.jpg"
+   "thumbnail": "thumbs/IFM-606.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-01T11:39:20+0530"
   },
   {
    "id": "IFM-607",
@@ -10475,7 +11856,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-607.mp4",
-   "thumbnail": "thumbs/IFM-607.jpg"
+   "thumbnail": "thumbs/IFM-607.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T11:08:49+0530"
   },
   {
    "id": "IFM-608",
@@ -10495,7 +11879,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-608.mp4",
-   "thumbnail": "thumbs/IFM-608.jpg"
+   "thumbnail": "thumbs/IFM-608.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T12:36:11+0530"
   },
   {
    "id": "IFM-609",
@@ -10515,7 +11902,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-609.jpg"
+   "thumbnail": "thumbs/IFM-609.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T12:31:11+0530"
   },
   {
    "id": "IFM-610",
@@ -10535,7 +11925,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-610.mp4",
-   "thumbnail": "thumbs/IFM-610.jpg"
+   "thumbnail": "thumbs/IFM-610.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T11:02:28+0530"
   },
   {
    "id": "IFM-611",
@@ -10555,7 +11948,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-611.mp4",
-   "thumbnail": "thumbs/IFM-611.jpg"
+   "thumbnail": "thumbs/IFM-611.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T12:38:08+0530"
   },
   {
    "id": "IFM-612",
@@ -10575,7 +11971,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-612.mp4",
-   "thumbnail": "thumbs/IFM-612.jpg"
+   "thumbnail": "thumbs/IFM-612.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T12:40:43+0530"
   },
   {
    "id": "IFM-613",
@@ -10595,7 +11994,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-613.mp4",
-   "thumbnail": "thumbs/IFM-613.jpg"
+   "thumbnail": "thumbs/IFM-613.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T12:40:59+0530"
   },
   {
    "id": "IFM-614",
@@ -10615,7 +12017,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "Yes",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-614.mp4",
-   "thumbnail": "thumbs/IFM-614.jpg"
+   "thumbnail": "thumbs/IFM-614.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T12:44:27+0530"
   },
   {
    "id": "IFM-615",
@@ -10635,7 +12040,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-615.mp4",
-   "thumbnail": "thumbs/IFM-615.jpg"
+   "thumbnail": "thumbs/IFM-615.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T12:41:52+0530"
   },
   {
    "id": "IFM-616",
@@ -10655,7 +12063,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-616.mp4",
-   "thumbnail": "thumbs/IFM-616.jpg"
+   "thumbnail": "thumbs/IFM-616.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T12:43:33+0530"
   },
   {
    "id": "IFM-617",
@@ -10675,7 +12086,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-617.mp4",
-   "thumbnail": "thumbs/IFM-617.jpg"
+   "thumbnail": "thumbs/IFM-617.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T12:45:24+0530"
   },
   {
    "id": "IFM-618",
@@ -10695,7 +12109,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-618.mp4",
-   "thumbnail": "thumbs/IFM-618.jpg"
+   "thumbnail": "thumbs/IFM-618.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T12:45:13+0530"
   },
   {
    "id": "IFM-619",
@@ -10715,7 +12132,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-619.mp4",
-   "thumbnail": "thumbs/IFM-619.jpg"
+   "thumbnail": "thumbs/IFM-619.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T12:46:46+0530"
   },
   {
    "id": "IFM-620",
@@ -10735,7 +12155,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-620.mp4",
-   "thumbnail": "thumbs/IFM-620.jpg"
+   "thumbnail": "thumbs/IFM-620.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-06T11:24:24+0530"
   },
   {
    "id": "IFM-621",
@@ -10755,7 +12178,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-621.mp4",
-   "thumbnail": "thumbs/IFM-621.jpg"
+   "thumbnail": "thumbs/IFM-621.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-06T11:24:54+0530"
   },
   {
    "id": "IFM-622",
@@ -10775,7 +12201,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-622.mp4",
-   "thumbnail": "thumbs/IFM-622.jpg"
+   "thumbnail": "thumbs/IFM-622.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-06T11:25:40+0530"
   },
   {
    "id": "IFM-623",
@@ -10795,7 +12224,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-623.mp4",
-   "thumbnail": "thumbs/IFM-623.jpg"
+   "thumbnail": "thumbs/IFM-623.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-06T11:25:15+0530"
   },
   {
    "id": "IFM-624",
@@ -10815,7 +12247,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-624.jpg"
+   "thumbnail": "thumbs/IFM-624.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-06T11:36:01+0530"
   },
   {
    "id": "IFM-625",
@@ -10835,7 +12270,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-625.jpg"
+   "thumbnail": "thumbs/IFM-625.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-06T11:33:24+0530"
   },
   {
    "id": "IFM-626",
@@ -10855,7 +12293,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-626.mp4",
-   "thumbnail": "thumbs/IFM-626.jpg"
+   "thumbnail": "thumbs/IFM-626.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-06T11:44:49+0530"
   },
   {
    "id": "IFM-627",
@@ -10875,7 +12316,8 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-627.jpg"
+   "thumbnail": "thumbs/IFM-627.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-628",
@@ -10895,7 +12337,8 @@ window.IFM_DATA ={
    "session": "IPO vs stocks reel takes — 5 Oct 2026",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-628.jpg"
+   "thumbnail": "thumbs/IFM-628.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-629",
@@ -10915,7 +12358,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-629.jpg"
+   "thumbnail": "thumbs/IFM-629.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-630",
@@ -10935,7 +12379,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "Yes",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-630.mp4",
-   "thumbnail": "thumbs/IFM-630.jpg"
+   "thumbnail": "thumbs/IFM-630.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-631",
@@ -10955,7 +12400,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-631.jpg"
+   "thumbnail": "thumbs/IFM-631.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-632",
@@ -10975,7 +12421,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-632.jpg"
+   "thumbnail": "thumbs/IFM-632.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-633",
@@ -10995,7 +12442,8 @@ window.IFM_DATA ={
    "session": "Aakara reel shoot — 18 Sep 2026",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-633.jpg"
+   "thumbnail": "thumbs/IFM-633.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-634",
@@ -11015,7 +12463,8 @@ window.IFM_DATA ={
    "session": "Aakara reel shoot — 18 Sep 2026",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-634.jpg"
+   "thumbnail": "thumbs/IFM-634.jpg",
+   "audience": "Mummies"
   },
   {
    "id": "IFM-635",
@@ -11035,7 +12484,10 @@ window.IFM_DATA ={
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-635.mp4",
-   "thumbnail": "thumbs/IFM-635.jpg"
+   "thumbnail": "thumbs/IFM-635.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-05T11:01:36+0530"
   },
   {
    "id": "IFM-636",
@@ -11055,7 +12507,10 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 9 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-636.mp4",
-   "thumbnail": "thumbs/IFM-636.jpg"
+   "thumbnail": "thumbs/IFM-636.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-07T11:13:30+0530"
   },
   {
    "id": "IFM-637",
@@ -11075,7 +12530,10 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 9 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-637.mp4",
-   "thumbnail": "thumbs/IFM-637.jpg"
+   "thumbnail": "thumbs/IFM-637.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-07T12:15:28+0530"
   },
   {
    "id": "IFM-638",
@@ -11095,7 +12553,10 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 9 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-638.mp4",
-   "thumbnail": "thumbs/IFM-638.jpg"
+   "thumbnail": "thumbs/IFM-638.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-07T11:06:32+0530"
   },
   {
    "id": "IFM-639",
@@ -11115,7 +12576,10 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 9 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-639.mp4",
-   "thumbnail": "thumbs/IFM-639.jpg"
+   "thumbnail": "thumbs/IFM-639.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-07T11:05:34+0530"
   },
   {
    "id": "IFM-640",
@@ -11135,7 +12599,10 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 9 Oct 2026",
    "social": "",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-640.mp4",
-   "thumbnail": "thumbs/IFM-640.jpg"
+   "thumbnail": "thumbs/IFM-640.jpg",
+   "audience": "Mummies",
+   "batch": "",
+   "captured_at": "2026-10-07T11:14:49+0530"
   },
   {
    "id": "IFM-641",
@@ -11155,7 +12622,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "video": "",
-   "thumbnail": "thumbs/IFM-641.jpg"
+   "thumbnail": "thumbs/IFM-641.jpg",
+   "audience": "Mummies"
   }
  ],
  "tracker": [

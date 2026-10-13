@@ -806,6 +806,11 @@ const SYN={
 
 // Field weights. Topic and title dominate; description is support, not signal.
 const FIELDS=[
+  // `audience` at 5, level with topic. It is the answer to "which batch was this", and it
+  // is measured from the capture time in the master rather than inferred from prose. Typing
+  // IYA used to return the teens programme because the only thing holding the segment was
+  // the session string "IYA / IFT teens programme", which contains both names.
+  ['audience',5],
   ['title',5],['topic',5],['format',4],['person',4],['search_terms',3],
   ['slide_text',3],['session',3],['source',2],['type',2],['description',2],
   // What the video actually SAYS, at the lowest weight there is. Speech is the only field
@@ -1015,7 +1020,8 @@ const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;',
 const state={q:'',filters:{},showWeak:false,openId:null,engaged:false,browse:false,sort:'relevance',kit:false,
   openGroups:new Set()};
 
-const FILTERS=[['type','Type',T.type],['format','Format',T.format],['topic','Topic',null],
+const FILTERS=[['audience','Audience',['Mummies','Young Adults','Teens']],
+  ['type','Type',T.type],['format','Format',T.format],['topic','Topic',null],
   ['person','Person',T.person],['source','Source',T.source],['session','Session',null],['status','Status',T.status]];
 function buildFilters(){
   const sessions=[...new Set(ASSETS.map(a=>a.session).filter(Boolean))].sort();
