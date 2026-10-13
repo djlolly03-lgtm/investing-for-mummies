@@ -928,5 +928,40 @@
    "Hiral"
   ],
   "_why": "12 Oct 2026: backfill inferred Student as well as Hiral for a folder of Hiral piece-to-camera takes shot on a sofa; she is alone in every frame. Same correction as IFM-629."
+ },
+ "IFM-642": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "format": "Classroom Moment",
+  "_why": "13 Oct 2026, daily-content-processor. THE PRESENTER IN THE 8 OCT BOARDROOM SET IS NOT HIRAL. backfill.py's presenter-inference rule tagged her as Hiral (hiral_named false — inferred, never named in the text). Checked by eye against the known Hiral portraits IFM-067/068/069 and IFM-367, against the 6 Oct session (IFM-635) and against footage shot four days later (IFM-646): different face, hair tied back, no glasses. She is a woman in a teal V-neck top and she has not been identified, so `person` is Other Person and the row text calls her 'the speaker'. Do not let a later pass promote these to Hiral or into the Media Kit on the strength of the framing alone — a presenter at the head of an IFM room is not automatically the founder, which is the IFM-098 lesson in its other direction."
+ },
+ "IFM-643": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "format": "Classroom Moment",
+  "_why": "13 Oct 2026, daily-content-processor. THE PRESENTER IN THE 8 OCT BOARDROOM SET IS NOT HIRAL. backfill.py's presenter-inference rule tagged her as Hiral (hiral_named false — inferred, never named in the text). Checked by eye against the known Hiral portraits IFM-067/068/069 and IFM-367, against the 6 Oct session (IFM-635) and against footage shot four days later (IFM-646): different face, hair tied back, no glasses. She is a woman in a teal V-neck top and she has not been identified, so `person` is Other Person and the row text calls her 'the speaker'. Do not let a later pass promote these to Hiral or into the Media Kit on the strength of the framing alone — a presenter at the head of an IFM room is not automatically the founder, which is the IFM-098 lesson in its other direction."
+ },
+ "IFM-644": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "format": "Classroom Moment",
+  "_why": "13 Oct 2026, daily-content-processor. THE PRESENTER IN THE 8 OCT BOARDROOM SET IS NOT HIRAL. backfill.py's presenter-inference rule tagged her as Hiral (hiral_named false — inferred, never named in the text). Checked by eye against the known Hiral portraits IFM-067/068/069 and IFM-367, against the 6 Oct session (IFM-635) and against footage shot four days later (IFM-646): different face, hair tied back, no glasses. She is a woman in a teal V-neck top and she has not been identified, so `person` is Other Person and the row text calls her 'the speaker'. Do not let a later pass promote these to Hiral or into the Media Kit on the strength of the framing alone — a presenter at the head of an IFM room is not automatically the founder, which is the IFM-098 lesson in its other direction."
+ },
+ "IFM-645": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "format": "Classroom Moment",
+  "_why": "13 Oct 2026, daily-content-processor. THE PRESENTER IN THE 8 OCT BOARDROOM SET IS NOT HIRAL. backfill.py's presenter-inference rule tagged her as Hiral (hiral_named false — inferred, never named in the text). Checked by eye against the known Hiral portraits IFM-067/068/069 and IFM-367, against the 6 Oct session (IFM-635) and against footage shot four days later (IFM-646): different face, hair tied back, no glasses. She is a woman in a teal V-neck top and she has not been identified, so `person` is Other Person and the row text calls her 'the speaker'. Do not let a later pass promote these to Hiral or into the Media Kit on the strength of the framing alone — a presenter at the head of an IFM room is not automatically the founder, which is the IFM-098 lesson in its other direction."
+ },
+ "IFM-646": {
+  "_kit_why": "13 Oct 2026: assessed for the Media Kit and deliberately kept OUT. Hiral is the subject and the frame is clean, but the row is a catch-all folder of 11 raw takes — its link opens 1.83 GB of footage, not that frame. A kit entry has to hand someone the asset. Same call as IFM-575 and IFM-628, the two other takes folders. If a single frame or the finished reel is cut out of this shoot, THAT row is the kit candidate, as teaching."
  }
 }
