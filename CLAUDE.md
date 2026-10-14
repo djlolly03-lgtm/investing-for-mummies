@@ -432,6 +432,23 @@ Dropbox was installed but held 0 B, and no external drive was mounted.
 highlight-reel-assets 1147, brand 72, Nursery Rhymes 396, documents 17. Zero missing.
 Log: `~/.local/state/media-backup.log`.
 
+**Second run 13 Oct 2026, 21:14** — 36 days later, and only 9 files had changed: the new
+`IFM-workshop-whatsapp.mp4` plus 7 `whatsapp-build/` files. Re-verified 14 Oct, all seven
+folders, **0 differences**: deliverables 51, ai-generations 74, course-docs 11,
+highlight-reel-assets 1147, brand 72, Nursery Rhymes 396, documents 16.
+
+Two things that run is worth remembering for:
+
+  - **`documents` went 17 → 16 and nothing was lost.** A local file was deleted some time
+    after 7 Sep; Drive still holds it, because the script uses `copy`. The survivor is
+    `course-content/Game content for 3 buckets of investing - …Gmail.html`. Check a count
+    that DROPS against the remote before treating it as a gap: `--one-way` only asserts
+    every local file reached Drive, so it is silent about anything the local side lost.
+  - **`aud/L2.wav` failed attempt 1** with `can't copy - source file is being updated`,
+    over a mod time that moved by 4 nanoseconds (…749 → …745). That is iCloud touching the
+    file mid-upload, not corruption, and rclone's attempt 2 succeeded. Expect it
+    occasionally for as long as this repo lives under `~/Documents`.
+
 The set was trimmed from 3.56 GB to **2.55 GB** by three exclusions, all verified before
 being applied — don't undo them without re-checking:
 
@@ -448,10 +465,17 @@ Two deliberate choices: it uses `rclone copy`, **never `sync`** — a file delet
 is kept on Drive, because a backup that deletes what the source lost is not a backup.
 And an interrupted run costs nothing: rclone skips what is already uploaded, so just
 re-run it. That was exercised for real — the first attempt died with the session at 49
-files and resumed with zero rework.
+files and resumed with zero rework. `copy` then earned itself a second time on 13 Oct:
+see the `documents` 17 → 16 note above, where the only copy of a deleted file is the
+one on Drive.
 
-Not scheduled. Run it by hand after a batch of new media, or add a launchd job alongside
-`com.lollyg.gitautobackup` if it proves worth automating.
+**Not scheduled**, and nothing has ever scheduled it. Until 14 Oct 2026 the script's own
+header claimed `Runs daily at 22:15 via ~/Library/LaunchAgents/com.lollyg.mediabackup.plist`
+— that plist has never existed, so the line read as a promise of nightly backups that
+nothing kept. The 36-day gap between the only two runs is what that cost. The header now
+states it is manual. Run it by hand after a batch of new media, or write the plist
+alongside `com.lollyg.gitautobackup`; at 9 changed files per 36 days a nightly run is
+close to free.
 
 ### What is still NOT backed up
 
