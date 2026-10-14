@@ -12,7 +12,7 @@
 :root{
   --teal:#2a9d8f;--teal-d:#1f7d72;--navy:#1a3a5c;--ink:#1a3a5c;--muted:#5a7d8a;
   --cream:#f7faf9;--mint:#bde9e4;--mint-lt:#e0f3f0;--white:#fff;--gold:#c8900a;--gold-lt:#fff5d6;
-  --teal-bright:#2dd4bf;--gold-bright:#f5c451;--red:#e05a47;
+  --teal-bright:#2dd4bf;--gold-bright:#f5c451;--red:#e05a47;--wa:#25d366;
   --shadow:0 6px 24px rgba(26,58,92,.14);--shadow-lg:0 16px 48px rgba(26,58,92,.28);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -154,6 +154,9 @@ body.player-bg{background:var(--cream)}
 .p-btn:disabled{opacity:.45}
 .p-btn.gold{background:var(--gold)}
 .p-btn.ghost{background:transparent;color:var(--teal-d);box-shadow:none;border:2px solid var(--mint);margin-top:10px;padding:12px}
+a.p-btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;box-sizing:border-box}
+.p-btn.wa{background:var(--wa);box-shadow:0 8px 20px rgba(37,211,102,.35);margin-top:12px}
+.p-btn.wa svg{width:22px;height:22px;flex:none}
 .p-center{text-align:center;padding:30px 10px}
 .p-center .av{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-size:2.4rem;color:#fff;margin:0 auto 12px}
 .p-locked{background:var(--mint-lt);border-radius:14px;padding:16px;text-align:center}
@@ -646,7 +649,7 @@ function renderPlayer(){
   }
   if(ph==='pledge'){
     const locked=myLockedNonce.pledge===state.nonce||p.pledge>0; const val=myLocal.pledge||p.pledge||0;
-    if(locked) return el.innerHTML=shell(`<div class="p-card p-center"><div class="p-kick">Your pledge</div><h2>${fmtMoney(val)} a month. <em>Starting this month.</em></h2><p>By ${s.flipAge} that's <b style="color:var(--teal-d)">${fmtMoney(fvOf(val,calc(p,s).flipYrs,s.rate))}</b>. It's on the wall.</p><button class="p-btn ghost" onclick="myLockedNonce.pledge=-1;p.pledge=0;renderPlayer()">Change amount</button></div>`);
+    if(locked) return el.innerHTML=shell(`<div class="p-card p-center"><div class="p-kick">Your pledge</div><h2>${fmtMoney(val)} a month. <em>Starting this month.</em></h2><p>By ${s.flipAge} that's <b style="color:var(--teal-d)">${fmtMoney(fvOf(val,calc(p,s).flipYrs,s.rate))}</b>. It's on the wall.</p>${waBtn(pledgeText(p,s,val),'Forward my pledge on WhatsApp')}<button class="p-btn ghost" onclick="myLockedNonce.pledge=-1;p.pledge=0;renderPlayer()">Change amount</button></div>`);
     return el.innerHTML=shell(`<div class="p-card"><div class="p-kick">Make it real</div><h2>I will start a SIP of <em>₹ ____</em> this month.</h2><p>Any amount. The number matters less than the month.</p>
       <div class="chips">${PLEDGE_CHIPS.map(v=>`<button class="chip" onclick="pickChip(${v})">${fmtMoney(v)}</button>`).join('')}</div>
       <div class="field"><label>Per month</label><div class="inp-wrap"><span class="rs">₹</span><input id="moneyInput" class="inp money" inputmode="numeric" placeholder="0" oninput="onMoney(this)"></div><span class="sh-badge" id="shBadge"></span></div>
@@ -661,10 +664,15 @@ function renderPlayer(){
         <div class="row"><span>${fmtMoney(s.flipSip)}/mo until ${s.flipAge}</span><b>${fmtMoney(k.flip)}</b></div>
         <div class="row"><span>Your pledge</span><b>${p.pledge?fmtMoney(p.pledge)+'/mo':'—'}</b></div>
         ${p.pledge?`<div class="row"><span>…by ${s.flipAge}</span><b>${fmtMoney(fvOf(p.pledge,k.flipYrs,s.rate))}</b></div>`:''}
-      </div><p style="margin-top:14px;text-align:center">Screenshot this. Then open a SIP before the month ends.</p></div>`);
+      </div>${waBtn(numbersText(p,s),'Send my numbers on WhatsApp')}<p style="margin-top:14px;text-align:center">Then open a SIP before the month ends.</p></div>`);
   }
   el.innerHTML=shell('<div class="p-card p-center"><h2>Eyes on the screen</h2></div>');
 }
+// WhatsApp forward: wa.me opens the app on a phone with the text prefilled; the person picks who gets it.
+const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>';
+function waBtn(text,label){ return `<a class="p-btn wa" href="https://wa.me/?text=${encodeURIComponent(text)}" target="_blank" rel="noopener">${WA_ICON}<span>${label}</span></a>`; }
+function pledgeText(p,s,val){ return `🌱 ${p.name}, ${p.age}: I'm starting a SIP of ${fmtMoney(val)} a month — starting THIS month.\n\nAt ${s.rate}% a year that's ${fmtMoney(fvOf(val,calc(p,s).flipYrs,s.rate))} by ${s.flipAge}.\n\nStart early. Investing for Mummies · investingformummies.com`; }
+function numbersText(p,s){ const k=calc(p,s); return `📊 ${p.name}, ${p.age} — my numbers from Start Early:\n\n• ${fmtMoney(s.target)} by ${s.targetAge}, start now: ${fmtMoney(k.now)}/month\n• Start ${k.delay} years late: ${fmtMoney(k.late)}/month\n• ${fmtMoney(s.flipSip)}/month until ${s.flipAge} becomes: ${fmtMoney(k.flip)}${p.pledge?`\n• My pledge: ${fmtMoney(p.pledge)}/month → ${fmtMoney(fvOf(p.pledge,k.flipYrs,s.rate))} by ${s.flipAge}`:''}\n\nAssumes ${s.rate}% a year. Investing for Mummies · investingformummies.com`; }
 function shell(inner){ return `<div class="p-wrap"><div class="p-top"><img src="${LOGO}" alt=""><span class="t">Start Early</span><span class="r">Room ${esc(ROOM)}</span></div>${inner}<div class="p-foot">Investing for Mummies · assumes ${state&&state.settings?state.settings.rate:12}% a year, not a promise</div></div>`; }
 
 if(isHost) initHost(); else initPlayer();
