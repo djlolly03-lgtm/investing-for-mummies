@@ -12734,6 +12734,27 @@ window.IFM_DATA ={
    "video": "",
    "thumbnail": "thumbs/IFM-646.jpg",
    "audience": "Mummies"
+  },
+  {
+   "id": "IFM-647",
+   "title": "FD vs inflation reel — \"Safe, certain, guaranteed\" (v5)",
+   "type": "Reel",
+   "source": "In-house",
+   "status": "Ready",
+   "keywords": "fixed deposit,fd,inflation,real return,purchasing power,grocery basket,atta,chai,passbook,bank receipt,line chart,cash stacks,ai generated,motion graphics,explainer,vertical,reel,no people,october 2026,educational not advice",
+   "description": "A 64-second AI-made vertical explainer on what inflation does to a fixed deposit, with no people in it. Opens on a steel tumbler of chai steaming beside an old bank passbook and yellowed FD receipts on a wooden table, captioned \"We all love a fixed deposit\" and \"Safe, certain, guaranteed.\" It cuts to gold coins tumbling past a passbook (\"But look closer\"), then to a line chart where a pale line labelled \"Your FD - rises slowly\" is swamped by a coral one labelled \"Prices - rise much faster\", the widening gap filled in red. A grocery basket of atta, pulses and tomatoes sits beside growing stacks of rupee notes under \"Same basket costs more every year\" and \"The gap keeps widening\". Two stacks of notes then compare \"What prices did\" against \"What your FD earns\", the shortfall marked \"The gap = the quiet loss\", over the line \"You're losing what your money can buy.\" It ends on the Investing for Mummies tree logo in gold cloud light, asking \"Is your FD safe, or quietly losing to inflation?\" and closing on \"Worth a conversation at home.\" Both end cards carry the disclaimer \"Educational content, not financial advice.\" Dark navy and teal throughout with coral and gold accents.",
+   "drive link": "https://drive.google.com/file/d/1jOtF6y6d75C9excOWNepHNjG0R1nU0jk/view",
+   "date created": "2026-10-15",
+   "notes": "Delivered as IFM_FD_inflation_reel.zip (17.8 MB), a single file IFM_FD_inflation_reel_v5.mp4, sitting loose at My Drive root. Extracted and uploaded to Content Library -> IFM Oct 2026 on 15 Oct 2026 so the scan can see it; a .zip is invisible to the catalogue because it has no thumbnail and nothing playable. The original zip was left where it was, not deleted. 1080x1920, 30fps, stereo AAC, 64s.",
+   "shot": "",
+   "setting": "",
+   "quality": "Hero",
+   "consent": "No identifiable people",
+   "session": "",
+   "social": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-647.mp4",
+   "thumbnail": "thumbs/IFM-647.jpg",
+   "audience": "Mummies"
   }
  ],
  "tracker": [

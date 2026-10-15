@@ -29334,5 +29334,35 @@ window.IFM_V1 =
 "source": "IFM / In-house",
 "search_terms": "starlink jio reel piece camera takes hiral folder catch all eleven recorded news elon musk arriving india against reliance standing white sleeveless top clip lapel mic red framed glasses thread her wrist front large black line art mural hook take",
 "phash": "5632216425339687"
+},
+{
+"id": "IFM-647",
+"title": "FD vs inflation reel — \"Safe, certain, guaranteed\" (v5)",
+"date": "2026-10-15",
+"thumb": "../thumbs/IFM-647.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-647.mp4",
+"drive": "https://drive.google.com/file/d/1jOtF6y6d75C9excOWNepHNjG0R1nU0jk/view",
+"description": "A 64-second AI-made vertical explainer on what inflation does to a fixed deposit, with no people in it. Opens on a steel tumbler of chai steaming beside an old bank passbook and yellowed FD receipts on a wooden table, captioned \"We all love a fixed deposit\" and \"Safe, certain, guaranteed.\" It cuts to gold coins tumbling past a passbook (\"But look closer\"), then to a line chart where a pale line labelled \"Your FD - rises slowly\" is swamped by a coral one labelled \"Prices - rise much faster\", the widening gap filled in red. A grocery basket of atta, pulses and tomatoes sits beside growing stacks of rupee notes under \"Same basket costs more every year\" and \"The gap keeps widening\". Two stacks of notes then compare \"What prices did\" against \"What your FD earns\", the shortfall marked \"The gap = the quiet loss\", over the line \"You're losing what your money can buy.\" It ends on the Investing for Mummies tree logo in gold cloud light, asking \"Is your FD safe, or quietly losing to inflation?\" and closing on \"Worth a conversation at home.\" Both end cards carry the disclaimer \"Educational content, not financial advice.\" Dark navy and teal throughout with coral and gold accents.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "We all love a fixed deposit Safe, certain, guaranteed. But look closer Your FD - rises slowly Prices - rise much faster Same basket costs more every year The gap keeps widening What prices did What your FD earns The gap = the quiet loss re losing what your money can buy. Is your FD safe, or quietly losing to inflation? Worth a conversation at home. Educational content, not financial advice.",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [
+"Money Conversations",
+"Risk & Returns",
+"Fixed Income",
+"Inflation & Interest Rates"
+],
+"person": [
+"No Person"
+],
+"source": "IFM / In-house",
+"search_terms": "inflation reel safe certain guaranteed second made vertical explainer what does fixed deposit people opens steel tumbler chai steaming beside old bank passbook yellowed receipts wooden table captioned all love cuts gold coins tumbling past but look closer then line",
+"phash": "eccbf367968e830f"
 }
 ];
