@@ -1085,7 +1085,16 @@ const retrieve=q=>INT?INT.run(q,search).results:search(q);
 function currentResults(){
   let list=state.q.trim()?retrieve(state.q):ASSETS.map(a=>({a,score:0}));
   const f=state.filters;
-  list=list.filter(({a})=>(!f.type||a.type===f.type)&&(!f.format||a.format===f.format)&&
+  /* `audience` belongs in this chain like any other facet, and was missing from it until
+     15 Oct 2026. It had been added to FILTERS (so the dropdown rendered), to FIELDS (so
+     the words were searchable) and written onto every row by assign-audience.py -- but
+     never to this predicate. Picking "Teens" set state.filters.audience and NOTHING read
+     it: "workshop" returned the same 185 results filtered or not. The one feature built
+     to keep the teens programme separate from the young-adults one silently did nothing,
+     and because the control looked like it worked, the result was worse than not having
+     it. Minors are the rows this most needed to be right about. */
+  list=list.filter(({a})=>(!f.audience||a.audience===f.audience)&&
+    (!f.type||a.type===f.type)&&(!f.format||a.format===f.format)&&
     (!f.topic||(a.topic||[]).includes(f.topic))&&(!f.person||(a.person||[]).includes(f.person))&&
     (!f.source||a.source===f.source)&&(!f.session||a.session===f.session)&&(!f.status||a.status===f.status));
   if(!state.q.trim()) return {strong:list,weak:[]};
