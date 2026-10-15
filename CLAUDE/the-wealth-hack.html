@@ -47,6 +47,13 @@ body.host-bg{background:linear-gradient(180deg,rgba(6,16,28,.30) 0%,rgba(6,16,28
 .btn.big{font-size:1.1rem;padding:15px 34px}
 .btn.gold{background:linear-gradient(135deg,var(--gold),#a8862f)}
 
+body.host-bg.end-bg{background:linear-gradient(180deg,rgba(6,16,28,.15) 0%,rgba(6,16,28,.35) 100%),url('wealth-hack-hero.jpg') center/cover fixed no-repeat}
+/* closing screen: content lives in the dark gap between the two jars */
+.end-stage{max-width:520px;gap:12px}
+.end-stage .title{font-size:clamp(1.7rem,2.9vw,2.4rem)}
+.end-stage .end-grid{grid-template-columns:1fr;gap:10px;max-width:none}
+.end-stage .end-grid .stat{padding:12px 16px}
+.end-stage .tag{font-size:.95rem}
 /* lobby */
 .lobby-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%;max-width:980px;align-items:stretch}
 .lobby-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 18px}
@@ -162,7 +169,7 @@ body.host-bg{background:linear-gradient(180deg,rgba(6,16,28,.30) 0%,rgba(6,16,28
 /* ════════ PLAYER · phone (Brand Guidelines §5–§8) ════════ */
 body.player-bg{background:var(--cream)}
 .wrap{max-width:480px;margin:0 auto;padding:10px 14px 36px;min-height:100vh;display:flex;flex-direction:column;gap:12px}
-.game-hero{position:relative;overflow:hidden;border-radius:16px;padding:18px 20px 18px 95px;color:#fff;background:linear-gradient(135deg,var(--navy),var(--teal))}
+.game-hero{position:relative;overflow:hidden;border-radius:16px;padding:18px 20px 18px 95px;color:#fff;background:linear-gradient(90deg,rgba(10,24,40,.82) 0%,rgba(10,24,40,.6) 62%,rgba(10,24,40,.05) 100%),url('wealth-hack-banner.jpg') right center/cover no-repeat,linear-gradient(135deg,var(--navy),var(--teal))}
 .hero-logo-wide{position:absolute;top:50%;left:12px;transform:translateY(-50%);height:62px;width:auto;max-width:140px;object-fit:contain;border-radius:8px;z-index:2;background:#fff}
 .game-hero .pill{display:inline-block;background:rgba(255,255,255,.2);border-radius:10px;padding:2px 9px;font-size:.58rem;font-weight:900;letter-spacing:1px;text-transform:uppercase}
 .game-hero h1{font-size:1.35rem;line-height:1.15;margin:5px 0 3px}
@@ -459,6 +466,7 @@ function renderHost(){
   const lobby=ph==='lobby';
   document.getElementById('joinCorner').style.display=lobby?'none':'flex';
   h.classList.toggle('has-corner',!lobby);
+  document.body.classList.toggle('end-bg',ph==='end');
   const kh=document.getElementById('keyHint'); kh.innerHTML=lobby?'<b>Space</b> starts once someone has joined':'<b>Space</b> / <b>→</b> next · <b>←</b> back'; kh.style.display=/_(reveal|whatif)$/.test(ph)?'none':'block';
   document.getElementById('hostBack').style.display=lobby?'none':'block';
   const nx=document.getElementById('hostNext'); nx.textContent=NEXT_LABEL[ph]||''; nx.style.display=(lobby||!NEXT_LABEL[ph])?'none':'block';
@@ -670,7 +678,7 @@ function tplEnd(){
   const total=pl.reduce((a,p)=>a+p.pledge,0);
   const grows=pl.reduce((a,p)=>a+fvOf(p.pledge,calc(p,s).flipYrs,PR()),0);
   const b=bestEstimator();
-  return `<div class="stage">
+  return `<div class="stage end-stage">
     <div class="presents">${GAME_NAME} · that's the whole lesson</div>
     <h1 class="title">The best month to start is <em>this one.</em></h1>
     <div class="end-grid">
