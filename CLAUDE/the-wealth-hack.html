@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Start Early — Investing for Mummies</title>
+<title>The Wealth Hack — Investing for Mummies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
@@ -218,13 +218,14 @@ body.player-bg{background:var(--cream)}
 <div id="qrFull" class="hide" onclick="closeQRFull()"></div>
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   START EARLY — IFM young-adults opener
+   THE WEALTH HACK — IFM young-adults opener
    "By 40, ₹10 Cr. How much a month?" Everyone in the room is a different age,
    so everyone has a different number. Guess → reveal → shock → pledge.
    Reuses the Stock Rush / KBC Supabase project (games table) — no setup.
    Host = projector (?role=host, default). Players = phones (?role=player&room=PIN).
    ═══════════════════════════════════════════════════════════════ */
-const GAME_NAME='Start Early';
+const GAME_NAME='The Wealth Hack';
+const TAGLINE='One started early. One started “soon”. Only one of them is rich.';
 const SUPABASE_URL='https://gkfldkytzfngwnkrwrga.supabase.co';
 const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrZmxka3l0emZuZ3dua3J3cmdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5MzI4NDksImV4cCI6MjA5NDUwODg0OX0.wwyFY0bhbGhCKCpAjgZ0oCS8gda21FHcvDdvlg9xCmU';
 const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
@@ -303,7 +304,7 @@ function roundOf(phase){ const m=/^(r\d)_/.exec(phase||''); return m?m[1]:null; 
 const params=new URLSearchParams(location.search);
 let ROLE=params.get('role')||'host';
 let ROOM=params.get('room')||null;
-const MY_ID=(function(){let id=localStorage.getItem('se_pid');if(!id){id=(crypto.randomUUID?crypto.randomUUID():'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,10));localStorage.setItem('se_pid',id);}return id;})();
+const MY_ID=(function(){let id=localStorage.getItem('wh_pid');if(!id){id=(crypto.randomUUID?crypto.randomUUID():'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,10));localStorage.setItem('wh_pid',id);}return id;})();
 let isHost=(ROLE==='host');
 let state=null;
 function freshState(){
@@ -477,11 +478,12 @@ function tplLobby(){
     <div>
       <div class="presents">Investing for Mummies presents</div>
       <h1 class="title">${GAME_NAME}</h1>
-      <p class="tag">Point your phone camera at the QR. Type your name and your age. Then wait for the first question.</p>
+      <p class="tag">${TAGLINE}</p>
     </div>
     <div class="lobby-grid">
       <div class="panel lobby-card">
         <h2>📲 Scan to join</h2>
+        <p class="kicker" style="margin:-6px 0 10px">Point your phone camera at the QR · type your name and age</p>
         <div id="lobbyQr" onclick="openQRFull()" title="Tap to enlarge"></div>
         <div class="qr-hint" onclick="openQRFull()">⛶ Tap the QR to enlarge for the room</div>
         <div class="pin-label">or enter Game PIN</div>
@@ -636,7 +638,7 @@ function tplEnd(){
 }
 
 /* ═══════════════════ PLAYER ═══════════════════ */
-let myName=localStorage.getItem('se_name')||'', myAge=localStorage.getItem('se_age')||'';
+let myName=localStorage.getItem('wh_name')||'', myAge=localStorage.getItem('wh_age')||'';
 let joinSent=false, myLocal={}, myLockedNonce={}, _pendingVal=0, _lastPhase=null;
 async function initPlayer(){
   document.getElementById('player').classList.remove('hide');
@@ -666,7 +668,7 @@ function doJoin(){
   const n=(document.getElementById('nameInput').value||'').trim(); const a=parseInt(document.getElementById('ageInput').value,10)||0;
   if(!n){document.getElementById('nameInput').focus();return;}
   if(a<10||a>70){document.getElementById('ageInput').focus();return;}
-  myName=n; myAge=a; localStorage.setItem('se_name',n); localStorage.setItem('se_age',a);
+  myName=n; myAge=a; localStorage.setItem('wh_name',n); localStorage.setItem('wh_age',a);
   joinSent=true; sendAction({type:'join',id:MY_ID,name:n,age:a}); renderPlayer();
 }
 function onMoney(inp){ // Indian grouping on every keystroke; shorthand badge is a separate element (§9)
@@ -685,7 +687,7 @@ function ifmShare(msg){ window.open('https://wa.me/?text='+encodeURIComponent(ms
 const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>';
 let _shareMsg='';
 function waBtn(msg,label){ _shareMsg=msg; return `<button class="p-btn wa" onclick="ifmShare(_shareMsg)">${WA_ICON}<span>${label}</span></button>`; }
-function pledgeText(p,s,val){ return `🌱 ${p.name}, ${p.age}: I'm starting a SIP of ${fmtMoney(val)} a month — starting THIS month.\n\nAt ${s.rate}% a year that's ${fmtMoney(fvOf(val,calc(p,s).flipYrs,s.rate))} by ${s.flipAge}.\n\nStart early. Investing for Mummies`; }
+function pledgeText(p,s,val){ return `🌱 ${p.name}, ${p.age}: I'm starting a SIP of ${fmtMoney(val)} a month — starting THIS month.\n\nAt ${s.rate}% a year that's ${fmtMoney(fvOf(val,calc(p,s).flipYrs,s.rate))} by ${s.flipAge}.\n\nThe Wealth Hack · Investing for Mummies`; }
 function numbersText(p,s){ const k=calc(p,s); return `📊 ${p.name}, ${p.age} — my numbers from ${GAME_NAME}:\n\n• ${fmtMoney(s.target)} by ${k.horizon}, start now: ${fmtMoney(k.now)}/month\n• Start ${k.delay} years late: ${fmtMoney(k.late)}/month\n• ${fmtMoney(s.flipSip)}/month until ${s.flipAge} becomes: ${fmtMoney(k.flip)}${p.pledge?`\n• My pledge: ${fmtMoney(p.pledge)}/month → ${fmtMoney(fvOf(p.pledge,k.flipYrs,s.rate))} by ${s.flipAge}`:''}\n\nAssumes ${s.rate}% a year. Investing for Mummies`; }
 
 function renderPlayer(){
@@ -744,7 +746,7 @@ function renderPlayer(){
 }
 function shell(inner){ const rate=state&&state.settings?state.settings.rate:12;
   return `<div class="wrap">
-    <div class="game-hero" data-logo><img class="hero-logo-wide" src="${PRINT_LOGO_SRC}" alt="Investing for Mummies"><span class="pill">Live game · room ${esc(ROOM||'')}</span><h1>${GAME_NAME}</h1><p>One question. Everyone gets a different answer.</p></div>
+    <div class="game-hero" data-logo><img class="hero-logo-wide" src="${PRINT_LOGO_SRC}" alt="Investing for Mummies"><span class="pill">Live game · room ${esc(ROOM||'')}</span><h1>${GAME_NAME}</h1><p>${TAGLINE}</p></div>
     ${inner}
     <div class="foot">Investing for Mummies · assumes ${rate}% a year, not a promise</div></div>`; }
 
