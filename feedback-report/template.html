@@ -148,9 +148,44 @@ table.resp tr.shift td.who::after{content:"column-shifted in sheet, corrected he
 .count{color:var(--muted);font-size:.85rem}
 .pill{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.06em;padding:2px 8px;border-radius:999px;background:var(--teal-soft);color:var(--teal)}
 footer{margin-top:48px;color:var(--muted);font-size:.82rem;max-width:72ch}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:28px;overflow-x:auto}
+.tabs button{font:inherit;font-weight:700;font-size:.95rem;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:10px 14px;cursor:pointer;white-space:nowrap;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:var(--teal);border-bottom-color:var(--teal)}
+.tabs button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.lanes{width:100%;border-collapse:collapse;margin-top:16px;font-size:.93rem}
+.lanes th,.lanes td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.lanes th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.lanes tr.me td{background:var(--teal-soft);font-weight:600}
+.lanes td:first-child{font-weight:800;white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;min-width:0}
+.card h3{font-size:1.05rem;margin-bottom:8px}
+.card ul,.card ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:.93rem}
+.card.no{border-color:var(--bad-dim)} .card.no h3{color:var(--bad)}
+.card.yes{border-color:var(--teal)} .card.yes h3{color:var(--teal)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px}
+.step{border-top:3px solid var(--teal);padding-top:10px;min-width:0}
+.step .when{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);font-weight:800}
+.step h3{font-size:1.05rem;margin:4px 0 6px}
+.step p{font-size:.92rem;color:var(--muted)}
+.kv{width:100%;border-collapse:collapse;font-size:.93rem;margin-top:10px}
+.kv td{padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.kv td:first-child{color:var(--muted);width:38%}
+.kv td.num{font-variant-numeric:tabular-nums}
+.agenda{counter-reset:a;list-style:none;padding:0;margin:16px 0 0;display:flex;flex-direction:column;gap:10px;max-width:72ch}
+.agenda li{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start}
+.agenda li::before{counter-increment:a;content:counter(a);font-family:var(--display);font-style:italic;color:var(--teal);font-size:1.3rem;line-height:1}
+.agenda b{font-weight:800}
+.ask{background:var(--amber-bg);border:1px solid var(--amber-line,var(--amber-dim));border-radius:12px;padding:14px 18px;margin-top:20px;color:var(--amber)}
+.ask ul{margin:6px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:.93rem;color:var(--fg)}
 </style>
 
 <div class="wrap">
+<div class="tabs" role="tablist">
+  <button type="button" role="tab" id="tabbtn-feedback" aria-selected="true" aria-controls="view-feedback" data-tab="feedback">Student feedback</button>
+  <button type="button" role="tab" id="tabbtn-wendy" aria-selected="false" aria-controls="view-wendy" data-tab="wendy">Wendy · onboarding</button>
+</div>
+<div id="view-feedback" role="tabpanel">
 <header>
   <span class="eyebrow">Investing for Mummies · course feedback</span>
   <h1>What 44 students told us, and what to do about it</h1>
@@ -327,6 +362,118 @@ footer{margin-top:48px;color:var(--muted);font-size:.82rem;max-width:72ch}
   </div>
 </section>
 
+</div>
+<div id="view-wendy" role="tabpanel" hidden>
+<header>
+  <span class="eyebrow">Sales lane · joined 15 October 2026</span>
+  <h1>Wendy: the role, the pipeline, the first 90 days</h1>
+  <p class="meta">Built from the 17 August role review, the Enrolment &amp; Growth JD (18 August) and the day-one conversation on 15 October. For the Monday 19 October sit-down.</p>
+</header>
+
+<section style="margin-top:28px">
+  <span class="eyebrow">Where she sits</span>
+  <h2>Three lanes, hard boundaries</h2>
+  <p class="lede">Follow-ups belong to nobody else any more. Wendy owns everything between an enquiry arriving and the money clearing.</p>
+  <table class="lanes">
+    <tr><th>Lane</th><th>Owner</th><th>Boundary</th><th>The job</th></tr>
+    <tr><td>Broadcast</td><td>Sakshi</td><td>Everything before interest</td><td>Get IFM in front of people. Fill the top of the funnel. Measured in followers, not seats.</td></tr>
+    <tr class="me"><td>Sales</td><td>Wendy</td><td>Interest → payment</td><td>Follow up, pitch, close. Owns the pipeline, the waitlist, Zoho and attribution. The only role measured in rupees.</td></tr>
+    <tr><td>Retention &amp; Ops</td><td>Asba</td><td>Payment → completion and beyond</td><td>Everything after the swipe: logistics, invoicing, certificates, feedback, testimonials.</td></tr>
+  </table>
+  <p class="insight"><b>The two handoffs define the job.</b> Sakshi passes every enquiry to Wendy the same day it arrives and does not chase it. When payment clears, the auto-email fires and the student is Asba's. Wendy lives entirely in between.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Scope</span>
+  <h2>What is hers, and what is not</h2>
+  <div class="two">
+    <div class="card yes"><h3>Wendy owns</h3><ul>
+      <li><b>The pipeline.</b> Every prospect from first interest to payment. Nobody else touches it.</li>
+      <li><b>The backlog.</b> The prospects pending on the admin dashboard. Warm, and ageing.</li>
+      <li><b>All fresh leads.</b> Comments, DMs, enquiries from Sakshi, Meta-ad near-misses, and the registration-page waitlist.</li>
+      <li><b>Zoho Bigin.</b> The CRM. If the data is wrong, that is on her.</li>
+      <li><b>Closing.</b> Calls, WhatsApp, objections, follow-through to payment.</li>
+      <li><b>Attribution.</b> Coupon codes and source tagging. The coupon field already exists on the registration page.</li>
+      <li><b>Individual buyers across all three programmes.</b> A mum for herself, a parent for a teen (IFT), a young adult for themselves (IYA).</li>
+    </ul></div>
+    <div class="card no"><h3>Wendy does not touch</h3><ul>
+      <li><b>Past students and Hiral's network.</b> The alumni came through Hiral personally. A call from a stranger costs more than a seat. Spot an opportunity, tell Hiral, do not call.</li>
+      <li><b>Institutional sales.</b> Schools, colleges, corporates. Long-cycle, relationship-led. Stays with Hiral and Asba, opportunistically, no target.</li>
+      <li><b>Content, Stories, Instagram, LinkedIn.</b> Sakshi's.</li>
+      <li><b>Anything after payment.</b> Batch logistics, scheduling, invoicing, feedback. Asba's.</li>
+      <li><b>Curriculum, pricing, teaching, dates.</b> Hiral's.</li>
+      <li><b>Partner referrals</b> (Dezerv). Hiral's relationship; students are told she earns a referral.</li>
+    </ul></div>
+  </div>
+  <p class="insight">The line is drawn by the <b>buyer, not the product</b>. A parent enrolling one teen is Wendy's sale. A school buying thirty IFT seats is not.</p>
+</section>
+
+<section>
+  <span class="eyebrow">The plan</span>
+  <h2>First 90 days</h2>
+  <div class="steps">
+    <div class="step"><span class="when">Days 1 to 2 · done</span><h3>Sit in the room</h3><p>15 and 16 October: watch the live classes. Hear the fear and the objections first-hand before touching a phone.</p></div>
+    <div class="step"><span class="when">Days 3 to 14</span><h3>Work the backlog</h3><p>Call every pending prospect. Not email. Find out why each one did not convert. This teaches the objections faster than any briefing and should produce the first seats.</p></div>
+    <div class="step"><span class="when">Days 15 to 45</span><h3>Build the fresh-lead motion</h3><p>Every enquiry from Sakshi reaches her the same day. Set the response-time standard, the follow-up cadence, the objection handling. Speed is the whole advantage.</p></div>
+    <div class="step"><span class="when">Days 46 to 90</span><h3>Make it repeatable</h3><p>Zoho clean and current. Written cadence. Attribution codes live. Inbound converting at a rate that can be measured.</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">The numbers</span>
+  <h2>What she is selling, and the targets</h2>
+  <div class="two">
+    <div class="card"><h3>The product, right now</h3><table class="kv">
+      <tr><td>Next batch to pitch</td><td>November B1, starts 16 November (Mon to Thu &amp; Sat, 11:30 to 1:30)</td></tr>
+      <tr><td>Price (mums)</td><td class="num">₹19,000 early bird · ₹21,000 standard, incl. GST</td></tr>
+      <tr><td>Format</td><td>8 sessions × 2 hours, two parallel batches (Mon/Wed and Tue/Thu)</td></tr>
+      <tr><td>Registration page</td><td>investingformummies.com/ifm: live seat counts, payment, coupon field, waitlist</td></tr>
+      <tr><td>Dates published</td><td>Rolling two-month window, first Friday of each month. Mums do not commit three months out.</td></tr>
+      <tr><td>Seat values to date</td><td class="num">IFM ₹14,754 · IYA ₹9,500 · IFT ₹7,407. A mum's seat is worth roughly two teens'.</td></tr>
+    </table></div>
+    <div class="card"><h3>Targets</h3><table class="kv">
+      <tr><td>Month 1</td><td class="num">3 to 5 seats, from the backlog and the waitlist</td></tr>
+      <tr><td>Months 2 to 3</td><td class="num">8 to 12 seats a month</td></tr>
+      <tr><td>Months 4 to 6</td><td class="num">30 to 40 a month: both batches full. That is the trigger for hiring a co-teacher.</td></tr>
+      <tr><td>Break-even</td><td class="num">About two seats a month covers the role.</td></tr>
+      <tr><td>Measured in</td><td>Revenue as well as seats, so the role does not drift to whatever is easiest to sell.</td></tr>
+      <tr><td>Review</td><td>3 months against the seat targets</td></tr>
+    </table></div>
+  </div>
+  <div class="two">
+    <div class="card"><h3>Pay, said plainly</h3><ul>
+      <li>Fixed salary only to begin with.</li>
+      <li>An incentive scheme is designed from real data once <b>20 enrolments</b> land on the main course. A commitment with a trigger, not a maybe.</li>
+      <li>When it lands: paid on cleared payment, uncapped, fresh leads only. Hiral's network is never commissionable.</li>
+    </ul></div>
+    <div class="card"><h3>Sales material from the feedback</h3><ul>
+      <li>Students buy <b>confidence</b>, not an instrument. Lead with that.</li>
+      <li>The three things they praise: the simple explanations, the book, Hiral herself.</li>
+      <li>30 of 31 mums would highly recommend. 16 have agreed in writing to be quoted. The quotes are on the Student feedback tab.</li>
+      <li>The disqualifier in her JD: <b>pressure</b>. Push a mum and she tells other mums. Test for every call: would you want your own mother to receive it?</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Monday 19 October</span>
+  <h2>Agenda for the sit-down</h2>
+  <ol class="agenda">
+    <li><span><b>What she saw in the room.</b> Ten minutes on the two classes. Which moments made the women lean in, which questions came up, what she would say to a prospect now that she could not have said on Thursday.</span></li>
+    <li><span><b>The pipeline, line by line.</b> Open the admin dashboard Prospects tab together. For each pending prospect: where they came from, when they last heard from us, what batch fits. Agree the order she calls them in.</span></li>
+    <li><span><b>The handoff from Sakshi.</b> Sakshi has been the interim closer. Agree the format and the channel for "new enquiry, yours now", and the same-day rule. Sakshi stops chasing from Monday.</span></li>
+    <li><span><b>The handoff to Asba.</b> Payment clears, auto-email fires, Asba takes over. Walk through one real recent enrolment end to end so both of them see the seam.</span></li>
+    <li><span><b>Tools.</b> Zoho Bigin login and whether the onboarding call ever happened. Coupon codes: create WENDY01 and a source code per channel. Confirm the Instagram bio link points at the registration page.</span></li>
+    <li><span><b>The Momentum Board.</b> Show her the Open Topics and Rituals tabs. Add a Sales row: seats this month, calls made, pipeline count. She updates it weekly.</span></li>
+    <li><span><b>Her numbers and the review date.</b> Month 1 target in writing. 3-month review date in the calendar. The 20-enrolment incentive trigger explained once, clearly.</span></li>
+  </ol>
+  <div class="ask"><b>Decide before Monday</b><ul>
+    <li>Who Wendy reports to day to day (the JD says Hiral).</li>
+    <li>Whether she sells IYA and IFT seats from day one or starts with mums only.</li>
+    <li>Whether the Meta ad spend (₹20 to 30k a month, planned from September) is running, since those near-misses are her leads.</li>
+  </ul></div>
+</section>
+
 <footer>Theme counts are a human reading of free text, so treat them as ±1. Enrolment numbers per batch come from the dashboard's Overview. Emails are omitted from this page on purpose; they are in the CSV on the Desktop.</footer>
 </div>
 
@@ -381,5 +528,17 @@ Object.keys(THEMES).forEach(key=>{
   btns.forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.f;btns.forEach(x=>x.setAttribute('aria-pressed',x===b));render();}));
   search.addEventListener('input',render);
   render();
+})();
+
+(function(){
+  const btns=[...document.querySelectorAll('.tabs button')];
+  function show(name){
+    btns.forEach(b=>{const on=b.dataset.tab===name; b.setAttribute('aria-selected',String(on)); document.getElementById('view-'+b.dataset.tab).hidden=!on;});
+    try{history.replaceState(null,'','#'+name)}catch(e){}
+    window.scrollTo(0,0);
+  }
+  btns.forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
+  const h=(location.hash||'').replace('#','');
+  if(h==='wendy'||h==='feedback') show(h);
 })();
 </script>
