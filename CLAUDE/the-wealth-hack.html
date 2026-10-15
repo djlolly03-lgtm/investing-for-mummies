@@ -179,6 +179,10 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 #qrFull .panel{text-align:center;padding:28px 30px}
 #qrFull .pin{font-size:3.6rem}
 .net{position:fixed;left:50%;bottom:44px;transform:translateX(-50%);z-index:96;background:var(--gold-lt);color:#6b4e00;border:2px solid var(--gold);border-radius:12px;padding:9px 16px;font-weight:800;font-size:.9rem}
+/* when embedded in the games portal, its own floating Menu / Suggest buttons sit bottom-left and bottom-right — lift ours clear of them */
+body.framed .host-back,body.framed .host-next,body.framed .key-hint{bottom:70px}
+body.framed .net{bottom:112px}
+body.framed #host{padding-bottom:120px}
 @media(max-width:1000px){.join-corner,.key-hint{display:none!important}.lobby-grid,.rv{grid-template-columns:1fr}.end-grid{grid-template-columns:1fr}#host.has-corner{padding-top:14px}}
 
 /* ════════ PLAYER · phone (Brand Guidelines §5–§8) ════════ */
@@ -398,6 +402,7 @@ function bump(){ _lastActivity=Date.now(); }
 function postLive(){ try{ const live=state.phase!=='lobby'&&state.phase!=='end'; window.parent.postMessage({type:live?'stock-rush-live':'stock-rush-idle'},'*'); }catch(e){} }
 
 async function initHost(){
+  try{ if(window.self!==window.top) document.body.classList.add('framed'); }catch(e){ document.body.classList.add('framed'); }
   document.getElementById('host').classList.remove('hide');
   document.body.classList.add('host-bg');
   if(!ROOM){ ROOM='E'+(1000+Math.floor(Math.random()*9000));   // E-prefix: never collides with KBC's 4-digit PINs in the shared table

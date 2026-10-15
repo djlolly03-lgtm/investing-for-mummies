@@ -1842,6 +1842,12 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
       <div class="gp-name">Double or Nothing</div>
       <div class="gp-desc">Rule of 72 rapid fire — 5 rounds, beat the clock</div>
     </div>
+    <!-- The Wealth Hack — LIVE classroom game (added 16 Oct 2026) -->
+    <div class="gp-card gp-bg" style="background-image:linear-gradient(to top, rgba(5,12,21,0.96) 6%, rgba(5,12,21,0.55) 46%, rgba(5,12,21,0.05) 85%), url('https://ifm-deploy.vercel.app/wealth-hack-card.jpg');background-size:cover;background-position:center;border:2px solid rgba(233,191,98,0.55);" onclick="showGame('wealthhack')" onmouseover="this.style.boxShadow='0 12px 36px rgba(233,191,98,0.3)'" onmouseout="this.style.boxShadow=''">
+      <span class="gp-tag" style="background:rgba(5,12,21,0.62);color:#f7dea0;border:1px solid rgba(233,191,98,0.6);">Host</span>
+      <div class="gp-name" style="color:#f7dea0;text-shadow:0 1px 8px rgba(0,0,0,0.65);">The Wealth Hack</div>
+      <div class="gp-desc" style="color:rgba(255,255,255,0.85);text-shadow:0 1px 6px rgba(0,0,0,0.7);">Live classroom game — what does ₹10 Cr really cost you every month? Everyone plays on their phone. 📱</div>
+    </div>
   </div>
 
   <!-- ── INVESTMENT ALLOCATION ─────────────────────── -->
@@ -22627,6 +22633,14 @@ ask();
   </iframe>
 </div>
 
+<div class="game-screen" id="wealthhack" style="padding:0;background:#050c15;">
+  <iframe id="wealthhack_frame" src=""
+    style="width:100%;height:100vh;border:none;display:block;"
+    title="The Wealth Hack — Classroom Mode"
+    allow="autoplay; fullscreen">
+  </iframe>
+</div>
+
 <script>
 function switchBeta(tab){
   document.getElementById('beta_rp').style.display = tab==='rp'?'block':'none';
@@ -30722,6 +30736,24 @@ ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(
       bbfliveInited = true;
       var frame = document.getElementById('bbflive_frame');
       if (frame) frame.src = 'https://ifm-deploy.vercel.app/broke-by-friday-live.html?role=host';
+    }
+  };
+})();
+// ── THE WEALTH HACK (classroom) ───────────────────────────
+// Relative src on purpose: the game then loads from whichever domain the portal was opened on
+// (games.investingformummies.com), so the QR it shows for phones carries that branded address.
+(function() {
+  var whInited = false;
+  var _sgWh = window.showGame;
+  window.showGame = function(n) {
+    _sgWh(n);
+    if (n === 'wealthhack' && !whInited) {
+      whInited = true;
+      var frame = document.getElementById('wealthhack_frame');
+      if (frame) {
+        frame.onload = function(){ try { frame.contentWindow.focus(); } catch(e) {} };  // so Space / arrows work without a first click
+        frame.src = '/the-wealth-hack.html?role=host';
+      }
     }
   };
 })();

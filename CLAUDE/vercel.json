@@ -139,6 +139,10 @@
     {
       "source": "/asset-boss",
       "destination": "/asset-boss.html"
+    },
+    {
+      "source": "/the-wealth-hack",
+      "destination": "/the-wealth-hack.html"
     }
   ],
   "redirects": [
