@@ -15,6 +15,7 @@ requirements.txt
 *.bak
 *.orig
 !3b-hero.mp4
+!wealth-hack-loop.mp4
 !ifm-logo-gold-coins-spin.mp4
 
 # Content-hub videos that MUST ship, or their catalogue rows 404 on the live site.

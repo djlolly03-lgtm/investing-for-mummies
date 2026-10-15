@@ -48,6 +48,12 @@ body.host-bg{background:linear-gradient(180deg,rgba(6,16,28,.30) 0%,rgba(6,16,28
 .btn.gold{background:linear-gradient(135deg,var(--gold),#a8862f)}
 
 body.host-bg.end-bg{background:linear-gradient(180deg,rgba(6,16,28,.15) 0%,rgba(6,16,28,.35) 100%),url('wealth-hack-hero.jpg') center/cover fixed no-repeat}
+/* live backdrop: the looping rooftop video sits behind everything on the projector; the closing screen swaps to the still jars */
+.bgv,.bgshade{display:none;position:fixed;inset:0;width:100%;height:100%}
+.bgv{object-fit:cover;z-index:-2}
+.bgshade{z-index:-1;background:linear-gradient(180deg,rgba(6,16,28,.30) 0%,rgba(6,16,28,.55) 55%,rgba(6,16,28,.82) 100%)}
+body.host-bg .bgv,body.host-bg .bgshade{display:block}
+body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 /* closing screen: content lives in the dark gap between the two jars */
 .end-stage{max-width:520px;gap:12px}
 .end-stage .title{font-size:clamp(1.7rem,2.9vw,2.4rem)}
@@ -224,6 +230,8 @@ body.player-bg{background:var(--cream)}
 </style>
 </head>
 <body>
+<video id="bgv" class="bgv" src="wealth-hack-loop.mp4" poster="wealth-hack-stage.jpg" autoplay muted loop playsinline></video>
+<div id="bgShade" class="bgshade"></div>
 <div id="host" class="hide"></div>
 <div id="player" class="hide"></div>
 <div id="qrFull" class="hide" onclick="closeQRFull()"></div>

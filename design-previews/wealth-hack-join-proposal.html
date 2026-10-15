@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>The Wealth Hack — join screen proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#060e17;--night:#0a1a26;--gold:#e9bf62;--gold-hi:#f6dc9a;--gold-lo:#d79f34;--ivory:#f5f0e6;--mist:#9db2b0;--line:rgba(255,255,255,.14)}
+*{box-sizing:border-box;margin:0}
+body{background:#1b232b;display:grid;place-items:center;min-height:100vh;font-family:'Manrope',sans-serif}
+.phone{width:390px;height:844px;border-radius:44px;overflow:hidden;position:relative;background:var(--ink);color:var(--ivory);box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08)}
+.hero{position:absolute;inset:0 0 auto 0;height:420px;background:url('../CLAUDE/wealth-hack-banner.jpg') 80% 40%/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,14,23,.0) 0%,rgba(6,14,23,.0) 45%,var(--ink) 100%),linear-gradient(90deg,rgba(6,14,23,.85) 0%,rgba(6,14,23,.25) 70%,rgba(6,14,23,0) 100%)}
+.bar{position:absolute;top:26px;left:24px;right:24px;display:flex;align-items:center;gap:11px;z-index:2}
+.mark{width:36px;height:36px;border-radius:50%;background:#fff;padding:3px;box-shadow:0 0 0 1px rgba(255,255,255,.25),0 0 22px rgba(233,191,98,.28)}
+.mark img{width:100%;height:100%;object-fit:contain;display:block}
+.brand{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ivory);opacity:.85;line-height:1.35}
+.room{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--gold);border:1px solid rgba(233,191,98,.45);padding:6px 11px;border-radius:999px;background:rgba(233,191,98,.07)}
+.title{position:absolute;top:118px;left:24px;right:24px;z-index:2}
+.eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.eyebrow i{width:26px;height:1px;background:var(--gold);display:block}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:46px;line-height:1;letter-spacing:-.01em;color:#fff;font-variation-settings:'opsz' 144}
+.tag{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:16.5px;line-height:1.4;color:var(--mist);margin-top:14px;max-width:285px}
+.card{position:absolute;left:18px;right:18px;top:372px;z-index:2;padding:24px 22px 22px;border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid rgba(233,191,98,.22);backdrop-filter:blur(14px);box-shadow:0 20px 60px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.08)}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:25px;line-height:1.15;color:var(--ivory)}
+h2 em{font-style:italic;color:var(--gold-hi)}
+.sub{font-size:13.5px;font-weight:500;color:var(--mist);margin:8px 0 20px;line-height:1.5}
+label{display:block;font-size:10.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-bottom:8px}
+.field{margin-bottom:16px}
+.inp{width:100%;padding:16px 16px;border-radius:14px;background:rgba(255,255,255,.055);border:1px solid var(--line);color:var(--ivory);font:600 17px 'Manrope',sans-serif}
+.inp.ph{color:rgba(157,178,176,.6)}
+.inp.focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(233,191,98,.14)}
+.cta{width:100%;margin-top:6px;padding:17px;border:0;border-radius:14px;background:linear-gradient(135deg,var(--gold-hi),var(--gold-lo));color:#1b1304;font:800 16px 'Manrope',sans-serif;letter-spacing:.02em;box-shadow:0 10px 30px rgba(233,191,98,.32),inset 0 1px 0 rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;gap:10px}
+.foot{position:absolute;left:0;right:0;bottom:26px;text-align:center;font-size:11.5px;font-weight:600;color:var(--mist);opacity:.8;z-index:2}
+</style></head><body>
+<div class="phone">
+  <div class="hero"></div>
+  <div class="bar"><div class="mark"><img src="../CLAUDE/IFM round logo for watermark.png" alt=""></div><div class="brand">Investing<br>for Mummies</div><div class="room">ROOM E0001</div></div>
+  <div class="title">
+    <div class="eyebrow"><i></i>A live game</div>
+    <h1>The Wealth<br>Hack</h1>
+    <p class="tag">One started early. One started “soon”. Only one of them is rich.</p>
+  </div>
+  <div class="card">
+    <h2>Your name and <em>your age</em></h2>
+    <p class="sub">Your age decides your number, so be honest.</p>
+    <div class="field"><label>Name</label><div class="inp ph focus">First name</div></div>
+    <div class="field"><label>Age</label><div class="inp ph">e.g. 22</div></div>
+    <button class="cta">Join the game <span>→</span></button>
+  </div>
+  <div class="foot">Assumes 12% a year. Not a promise.</div>
+</div>
+</body></html>
