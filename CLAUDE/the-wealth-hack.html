@@ -116,6 +116,7 @@ body.host-bg{background:radial-gradient(125% 95% at 50% -5%,rgba(14,38,48,.42),r
 .rv-row .off{font-size:.72rem;font-weight:900;border-radius:10px;padding:4px 9px;text-align:center;background:rgba(45,212,191,.15);color:var(--teal-bright);white-space:nowrap}
 .rv-row .off.low{background:rgba(255,138,118,.16);color:var(--coral)}
 .rv-row .off.high{background:rgba(245,196,81,.16);color:var(--gold-bright)}
+.rv-row .off.up{background:rgba(45,212,191,.18);color:var(--teal-bright)}
 .rv-row .extra{font-family:'Lora',serif;font-size:1.25rem;font-weight:700;color:var(--coral)}
 .side{display:flex;flex-direction:column;gap:12px}
 .stat{padding:12px 16px}
@@ -271,14 +272,14 @@ function calc(p,S){
 function realFor(p,rk,S){ const c=calc(p,S); return rk==='r1'?c.now:rk==='r2'?c.late:c.flip; }
 function offBy(guess,real){
   if(!guess||guess<=0) return {cls:'',txt:'no guess',err:99};
-  const k=guess/real, err=Math.abs(Math.log(k));
-  if(k>=0.9&&k<=1.1) return {cls:'',txt:'spot on',err};
-  if(k<1) return {cls:'low',txt:(1/k).toFixed(1)+'× too low',err};
-  return {cls:'high',txt:k.toFixed(1)+'× too high',err};
+  const k=guess/real, err=Math.abs(Math.log(k)), d=Math.abs(real-guess);
+  if(k>=0.95&&k<=1.05) return {cls:'',txt:'spot on',err};
+  if(k<1) return {cls:'low',txt:fmtMoney(d)+' short',err};
+  return {cls:'high',txt:fmtMoney(d)+' over',err};
 }
 
 /* ── rounds ───────────────────────────────────────────────────── */
-const PHASES=['lobby','r1_ask','r1_reveal','r2_ask','r2_reveal','r3_ask','r3_reveal','pledge','end'];
+const PHASES=['lobby','r1_ask','r1_reveal','r1_whatif','r2_ask','r2_reveal','r2_whatif','r3_ask','r3_reveal','r3_whatif','pledge','end'];
 const SIP_CHIPS=[2000,5000,10000,25000,50000,100000,200000,500000];
 const FV_CHIPS=[1000000,2500000,5000000,10000000,20000000,50000000,100000000];
 const PLEDGE_CHIPS=[500,1000,2000,5000,10000];
@@ -315,6 +316,7 @@ function freshState(){
     players:{},hostId:MY_ID,updatedAt:Date.now()};
 }
 const S=()=>state.settings;
+const W=()=>Object.assign({},state.settings,state.whatif||{});   // the sandbox rules shown on a what-if screen
 const PR=()=>S().pledgeRate||10;   // pledges are projected at a cautious 10%, not the game's 12%
 const playersSorted=()=>Object.values(state.players).sort((a,b)=>a.age-b.age||a.name.localeCompare(b.name));
 const av=p=>`<span class="av" style="background:${p.color}">${p.av}</span>`;
@@ -384,7 +386,7 @@ async function initHost(){
   if(params.get('demo')&&/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){
     const D=[['Aanya',21,25000,100000,5000000,2000],['Rohan',24,50000,200000,2500000,1000],['Meera',27,150000,500000,10000000,5000],['Kabir',29,100000,300000,20000000,0],['Zoya',22,10000,50000,1000000,500],['Dev',31,200000,600000,50000000,2000]];
     D.forEach((d,i)=>{ state.players['d'+i]={id:'d'+i,name:d[0],age:d[1],av:AV_EMOJI[i],color:AV_COLOR[i],guess:{r1:d[2],r2:d[3],r3:d[4]},pledge:d[5]}; });
-    state.phase=params.get('phase')||'lobby';
+    state.phase=params.get('phase')||'lobby'; if(/_whatif$/.test(state.phase)) state.whatif={targetAge:60};
   }
   const rb=document.createElement('button'); rb.className='host-reset'; rb.textContent='↺ New game'; rb.onclick=hostReset; document.body.appendChild(rb);
   const jw=document.createElement('div'); jw.className='join-corner'; jw.id='joinCorner'; jw.title='Scan to join or rejoin';
@@ -419,13 +421,14 @@ function openQRFull(){ const q=document.getElementById('qrFull'); q.classList.re
 function closeQRFull(){ document.getElementById('qrFull').classList.add('hide'); }
 function hostReset(){ if(!confirm('Start a fresh game in this room? Everyone will need to rejoin.')) return; bump(); clearTimers(); state=freshState(); saveNow(); renderHost(); }
 
-function setSetting(k,v){ if(!/_reveal$/.test(state.phase)) return; bump(); state.settings[k]=v; save(); renderHost(); }
+function setSetting(k,v){ if(!/_whatif$/.test(state.phase)) return; bump(); state.whatif=state.whatif||{}; state.whatif[k]=v; save(); renderHost(); }
+function resetWhatIf(){ bump(); state.whatif={}; save(); renderHost(); }
 function hostAdvance(){
   const i=PHASES.indexOf(state.phase); if(i<0||i>=PHASES.length-1) return;
   if(state.phase==='lobby'&&!Object.keys(state.players).length) return;
-  bump(); state.phase=PHASES[i+1]; state.nonce++; save(); renderHost();
+  bump(); state.phase=PHASES[i+1]; state.nonce++; if(/_whatif$/.test(state.phase)) state.whatif={}; save(); renderHost();
 }
-function hostBack(){ const i=PHASES.indexOf(state.phase); if(i<=0) return; bump(); state.phase=PHASES[i-1]; state.nonce++; save(); renderHost(); }
+function hostBack(){ const i=PHASES.indexOf(state.phase); if(i<=0) return; bump(); state.phase=PHASES[i-1]; state.nonce++; if(/_whatif$/.test(state.phase)) state.whatif={}; save(); renderHost(); }
 
 function hostHandleAction(a){
   if(!a||!a.type||!state) return; bump();
@@ -449,14 +452,14 @@ function hostHandleAction(a){
 }
 
 /* ── host render ──────────────────────────────────────────────── */
-const NEXT_LABEL={lobby:'Start · Round 1 →',r1_ask:'Reveal →',r1_reveal:'Round 2 →',r2_ask:'Reveal →',r2_reveal:'Round 3 →',r3_ask:'Reveal →',r3_reveal:'Make it real →',pledge:'Wrap up →',end:''};
+const NEXT_LABEL={lobby:'Start · Round 1 →',r1_ask:'Reveal →',r1_reveal:'What if…? →',r1_whatif:'Round 2 →',r2_ask:'Reveal →',r2_reveal:'What if…? →',r2_whatif:'Round 3 →',r3_ask:'Reveal →',r3_reveal:'What if…? →',r3_whatif:'Make it real →',pledge:'Wrap up →',end:''};
 function renderHost(){
   clearTimers(); postLive();
   const h=document.getElementById('host'); const ph=state.phase;
   const lobby=ph==='lobby';
   document.getElementById('joinCorner').style.display=lobby?'none':'flex';
   h.classList.toggle('has-corner',!lobby);
-  const kh=document.getElementById('keyHint'); kh.innerHTML=lobby?'<b>Space</b> starts once someone has joined':'<b>Space</b> / <b>→</b> next · <b>←</b> back'; kh.style.display=/_reveal$/.test(ph)?'none':'block';
+  const kh=document.getElementById('keyHint'); kh.innerHTML=lobby?'<b>Space</b> starts once someone has joined':'<b>Space</b> / <b>→</b> next · <b>←</b> back'; kh.style.display=/_(reveal|whatif)$/.test(ph)?'none':'block';
   document.getElementById('hostBack').style.display=lobby?'none':'block';
   const nx=document.getElementById('hostNext'); nx.textContent=NEXT_LABEL[ph]||''; nx.style.display=(lobby||!NEXT_LABEL[ph])?'none':'block';
   if(lobby) h.innerHTML=tplLobby();
@@ -464,6 +467,7 @@ function renderHost(){
   else if(ph==='r1_reveal') h.innerHTML=tplReveal1();
   else if(ph==='r2_reveal') h.innerHTML=tplReveal2();
   else if(ph==='r3_reveal') h.innerHTML=tplReveal3();
+  else if(/_whatif$/.test(ph)) h.innerHTML=tplWhatIf(roundOf(ph));
   else if(ph==='pledge') h.innerHTML=tplPledge();
   else if(ph==='end') h.innerHTML=tplEnd();
   if(lobby) makeQR(document.getElementById('lobbyQr'),210);
@@ -473,13 +477,14 @@ function renderHost(){
 // every phone — the room watches ₹1.15 L a month become ₹8.5k when the finish line moves from 40 to 60.
 function whatIf(rk){
   const parts=[`<span class="grp"><span class="wl">By age</span>${chipRow('targetAge',[40,50,60],v=>v)}</span>`,
-               `<span class="grp"><span class="wl">Return</span><input type="range" class="rate" min="6" max="18" step="0.5" value="${S().rate}" oninput="document.getElementById('rateV').textContent=(+this.value)+'%'" onchange="setSetting('rate',+this.value)"><b class="rate-v" id="rateV">${S().rate}%</b></span>`];
+               `<span class="grp"><span class="wl">Return</span><input type="range" class="rate" min="6" max="18" step="0.5" value="${W().rate}" oninput="document.getElementById('rateV').textContent=(+this.value)+'%'" onchange="setSetting('rate',+this.value)"><b class="rate-v" id="rateV">${W().rate}%</b></span>`];
   if(rk==='r2') parts.push(`<span class="grp"><span class="wl">Wait</span>${chipRow('delayYears',[3,5,10],v=>v+' yrs')}</span>`);
   if(rk==='r3') parts.push(`<span class="grp"><span class="wl">A month</span>${chipRow('flipSip',[2000,5000,10000],fmtMoney)}</span>`);
   if(rk!=='r3') parts.push(`<span class="grp"><span class="wl">Target</span>${chipRow('target',[10000000,50000000,100000000],fmtMoney)}</span>`);
+  parts.push(`<button class="chip" onclick="resetWhatIf()" title="Back to the rules the room played">↺ as played</button>`);
   return `<div class="glass whatif"><span class="wk">What if…</span>${parts.join('')}</div>`;
 }
-function chipRow(k,opts,fmtf){ return opts.map(v=>`<button class="chip ${S()[k]===v?'on':''}" onclick="setSetting('${k}',${v})">${fmtf(v)}</button>`).join(''); }
+function chipRow(k,opts,fmtf){ return opts.map(v=>`<button class="chip ${W()[k]===v?'on':''}" onclick="setSetting('${k}',${v})">${fmtf(v)}</button>`).join(''); }
 function tplLobby(){
   const ps=playersSorted(), s=S(), n=ps.length;
   return `<div class="stage">
@@ -556,11 +561,10 @@ function tplReveal1(){
         ${c?`<div class="glass stat"><div class="kicker">🎯 Closest guess</div><div class="big teal">${esc(c.p.name)}</div><div class="sm">guessed ${fmtMoney(c.p.guess.r1)} · real ${fmtMoney(realFor(c.p,'r1',s))}</div></div>`:''}
       </div>
     </div>
-    ${whatIf('r1')}
     <p class="punch" style="animation-delay:${n*STEP+500}ms">Nobody in this room is too young to start. Everyone is getting too old to wait.</p>
   </div>`;
 }
-function chart1(ps,s){
+function chart1(ps,s,label){
   const onCurve=ps.filter(p=>horizonFor(p,s)===s.targetAge); const ages=(onCurve.length?onCurve:ps).map(p=>p.age);
   const a0=Math.max(15,Math.min(...ages)-2), a1=Math.min(s.targetAge-4,Math.max(...ages)+8);
   const W=440,H=250,L=66,R=14,T=16,B=34; const pts=[]; for(let a=a0;a<=a1;a+=0.5) pts.push([a,sipFor(s.target,s.targetAge-a,s.rate)]);
@@ -570,7 +574,7 @@ function chart1(ps,s){
   const ticks=[0.25,0.5,0.75,1].map(f=>`<text x="${L-8}" y="${Y(ymax*f/1.05)+4}" text-anchor="end" font-size="10" font-weight="800" fill="#9fc2bb">${fmtMoney(ymax*f/1.05)}</text><line x1="${L}" x2="${W-R}" y1="${Y(ymax*f/1.05)}" y2="${Y(ymax*f/1.05)}" stroke="rgba(255,255,255,.08)"/>`).join('');
   const xs=[]; for(let a=Math.ceil(a0/2)*2;a<=a1;a+=2) xs.push(`<text x="${X(a)}" y="${H-B+16}" text-anchor="middle" font-size="10" font-weight="800" fill="#9fc2bb">${a}</text>`);
   const dots=onCurve.map((p,i)=>{const v=calc(p,s).now; return `<g style="opacity:0;animation:rise .4s ease-out ${i*STEP+200}ms forwards"><circle cx="${X(p.age)}" cy="${Y(v)}" r="6.5" fill="${p.color}" stroke="#fff" stroke-width="2"/><text x="${X(p.age)}" y="${Y(v)+(i%2?20:-11)}" text-anchor="middle" font-size="10" font-weight="900" fill="#fff">${esc(p.name.split(' ')[0])}</text></g>`;}).join('');
-  return `<div class="kicker">Monthly SIP needed, by the age you start</div>
+  return `<div class="kicker">${label||'Monthly SIP needed, by the age you start'}</div>
   <svg class="chart" viewBox="0 0 ${W} ${H}">${ticks}${xs.join('')}<path d="${path}" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-linecap="round"/>${dots}<text x="${W-R}" y="${H-3}" text-anchor="end" font-size="9" font-weight="800" fill="#9fc2bb">age you start →</text></svg>`;
 }
 function tplReveal2(){
@@ -590,7 +594,6 @@ function tplReveal2(){
         ${c?`<div class="glass stat"><div class="kicker">🎯 Closest guess</div><div class="big teal">${esc(c.p.name)}</div><div class="sm">guessed ${fmtMoney(c.p.guess.r2)} · real ${fmtMoney(realFor(c.p,'r2',s))}</div></div>`:''}
       </div>
     </div>
-    ${whatIf('r2')}
     <p class="punch" style="animation-delay:${n*STEP+500}ms">Every year you wait, the number goes up. It never comes back down.</p>
   </div>`;
 }
@@ -611,8 +614,37 @@ function tplReveal3(){
         ${c?`<div class="glass stat"><div class="kicker">🎯 Closest guess</div><div class="big teal">${esc(c.p.name)}</div><div class="sm">guessed ${fmtMoney(c.p.guess.r3)} · real ${fmtMoney(realFor(c.p,'r3',s))}</div></div>`:''}
       </div>
     </div>
-    ${whatIf('r3')}
     <p class="punch" style="animation-delay:${n*STEP+500}ms">Time does most of the work. You only have to start.</p>
+  </div>`;
+}
+// 1B / 2B / 3B — Hiral's sandbox. Left column: the number each person got under the rules the room played
+// (frozen), next to the number under the rules on the lever bar. The guesses are not shown: the rules moved,
+// so "off by" would be meaningless here. Nothing on this screen changes the real game.
+function whatIfRow(p,rk,s,w,i){
+  const a=realFor(p,rk,s), b=realFor(p,rk,w), d=b-a, k=calc(p,w);
+  const chg=Math.abs(d)<1?'<span class="off">same</span>':`<span class="off ${d>0?'low':'up'}">${d>0?'+':'−'}${fmtMoney(Math.abs(d))}</span>`;
+  return `<div class="rv-row" style="animation-delay:${i*120}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${ageCell(p,k,w)}<span class="guess">${fmtMoney(a)}</span>${cu(b,'real'+(b>a?' hot':''),i*120+100)}${chg}</div>`;
+}
+function tplWhatIf(rk){
+  const ps=playersSorted(), s=S(), w=W(); const R=ROUNDS[rk];
+  const changed=JSON.stringify(state.whatif||{})!=='{}';
+  const unit=rk==='r3'?'it becomes':'per month';
+  const played=rk==='r3'?`${fmtMoney(s.flipSip)}/mo to ${s.flipAge} at ${s.rate}%`:rk==='r2'?`${fmtMoney(s.target)} by ${s.targetAge}, ${s.delayYears} yrs late, ${s.rate}%`:`${fmtMoney(s.target)} by ${s.targetAge} at ${s.rate}%`;
+  const now=rk==='r3'?`${fmtMoney(w.flipSip)}/mo to ${w.flipAge} at ${w.rate}%`:rk==='r2'?`${fmtMoney(w.target)} by ${w.targetAge}, ${w.delayYears} yrs late, ${w.rate}%`:`${fmtMoney(w.target)} by ${w.targetAge} at ${w.rate}%`;
+  const rows=ps.map((p,i)=>whatIfRow(p,rk,s,w,i)).join('');
+  const avgA=ps.reduce((a,p)=>a+realFor(p,rk,s),0)/ps.length, avgB=ps.reduce((a,p)=>a+realFor(p,rk,w),0)/ps.length;
+  return `<div class="stage">
+    <div class="presents">Round ${R.n}B · what if…?</div>
+    <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">Change one thing. <em>Watch every number move.</em></h2>
+    ${whatIf(rk)}
+    <div class="rv">
+      <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Age</span><span>As played</span><span>What if · ${unit}</span><span>Change</span></div>${rows}</div>
+      <div class="side">
+        ${rk==='r1'?`<div class="glass stat">${chart1(ps,w,'Monthly SIP needed, by the age you start · what-if rules')}</div>`:''}
+        <div class="glass stat"><div class="kicker">As played</div><div class="sm" style="color:var(--stage-ink)">${played}</div><div class="big" style="font-size:1.4rem">${fmtMoney(avgA)} <span style="font:800 .8rem 'Nunito',sans-serif;color:var(--stage-sub)">room average</span></div></div>
+        <div class="glass stat" style="border-color:${changed?'rgba(45,212,191,.45)':'var(--glass-edge)'}"><div class="kicker">What if</div><div class="sm" style="color:var(--stage-ink)">${now}</div><div class="big ${avgB<avgA?'teal':'gold'}" style="font-size:1.4rem">${fmtMoney(avgB)} <span style="font:800 .8rem 'Nunito',sans-serif;color:var(--stage-sub)">room average</span></div>${changed?`<div class="sm">${avgB<avgA?'↓':'↑'} ${fmtMoney(Math.abs(avgB-avgA))} ${rk==='r3'?'':'a month'} ${avgB<avgA?'less':'more'} than as played</div>`:'<div class="sm">Tap a lever above. The phones change with it.</div>'}</div>
+      </div>
+    </div>
   </div>`;
 }
 function tplPledge(){
@@ -708,6 +740,7 @@ function renderPlayer(){
   const el=document.getElementById('player'); if(!state){ el.innerHTML=shell('<div class="card center"><h2>Finding the game…</h2><p>Room '+esc(ROOM)+'</p></div>'); return; }
   const p=me(); const ph=state.phase, rk=roundOf(ph), s=state.settings;
   if(ph!==_lastPhase){ _pendingVal=0; _lastPhase=ph; }
+  if(!state.whatif) state.whatif={};
   if(!p){
     if(joinSent&&ph==='lobby') return el.innerHTML=shell(`<div class="card center"><h2>Joining…</h2><p>${esc(myName)}, ${esc(myAge)}</p></div>`);
     joinSent=false;
@@ -736,6 +769,12 @@ function renderPlayer(){
     if(rk==='r3') line=`<div class="fb good">You put in ${fmtMoney(s.flipSip*12*k.flipYrs)} in total. Growth does the rest. Had you started 5 years earlier: <b>${fmtMoney(k.flipEarly)}</b>.</div>`;
     return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n} · the real number</div>
       <div class="real"><div class="lbl">${rk==='r3'?`${fmtMoney(s.flipSip)} a month until ${s.flipAge} becomes`:`You need, every month`}</div><div class="v ${rk==='r2'?'red':''}">${fmtMoney(real)}</div><div class="g">you guessed ${g?fmtMoney(g):'—'}</div><span class="off ${o.cls}">${o.txt}</span></div>${line}</div>`);
+  }
+  if(rk&&/_whatif$/.test(ph)){
+    const w=Object.assign({},s,state.whatif||{}); const a=realFor(p,rk,s), b=realFor(p,rk,w); const R=ROUNDS[rk];
+    const rule=rk==='r3'?`${fmtMoney(w.flipSip)} a month until ${w.flipAge}, at ${w.rate}%`:rk==='r2'?`${fmtMoney(w.target)} by ${horizonFor(p,w)}, starting ${calc(p,w).delay} years late, at ${w.rate}%`:`${fmtMoney(w.target)} by ${horizonFor(p,w)}, at ${w.rate}%`;
+    return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n}B · what if…?</div><h2>The rules on screen are changing. <em>So is your number.</em></h2><p>${rule}</p>
+      <div class="real"><div class="lbl">${rk==='r3'?'it becomes':'you need, every month'}</div><div class="v ${b>a?'red':''}">${fmtMoney(b)}</div><div class="g">as played: ${fmtMoney(a)}</div>${Math.abs(b-a)>=1?`<span class="off ${b>a?'low':''}">${b>a?'+':'−'}${fmtMoney(Math.abs(b-a))}</span>`:''}</div></div>`);
   }
   if(ph==='pledge'){
     const locked=myLockedNonce.pledge===state.nonce||p.pledge>0; const val=myLocal.pledge||p.pledge||0;
