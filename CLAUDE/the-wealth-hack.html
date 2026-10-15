@@ -161,6 +161,7 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 .stat .sm{color:var(--stage-sub);font-weight:700;margin-top:4px;font-size:.88rem;line-height:1.45}
 .stat .sm b{color:var(--stage-ink)}
 .chart{width:100%;height:auto;display:block}
+.past-note{margin:-6px 0 2px;font-family:'Fraunces',serif;font-style:italic;font-size:1rem;color:var(--stage-sub);text-align:center}
 .punch{margin-bottom:10px;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(1.15rem,2vw,1.6rem);color:var(--gold-bright);text-align:center;max-width:1000px;line-height:1.35;opacity:0;animation:rise .6s ease-out forwards}
 
 /* life bar — today → (wait) → finish line */
@@ -178,6 +179,9 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 .lb-t.n{transform:translateX(-85%)}
 .lb-t.s{transform:translateX(-10%);color:#ff8a76}
 .lb-t.f{transform:translateX(-50%);color:var(--gold-hi)}
+.lb-t.l{transform:translateX(-50%);color:var(--stage-sub);font-weight:700;opacity:.75}
+.lb-line{position:absolute;top:-9px;bottom:-9px;width:0;border-left:2px dashed rgba(255,255,255,.45);transform:translateX(-1px)}
+.lb-c .past{color:var(--stage-sub);font-weight:700}
 /* what-if control room */
 .wi-stage{gap:12px}
 .wi-grid{display:grid;grid-template-columns:400px minmax(0,1fr);gap:16px;width:100%;align-items:start}
@@ -741,13 +745,16 @@ const STEP=380; // ms between rows on a reveal — youngest first, so the number
 // the gold stretch is the years the money gets to grow. It is rebuilt from calc() on every render, so every lever on
 // a what-if screen visibly stretches or shrinks it. Fixed 16–66 scale so rows stay comparable.
 const LB0=16, LB1=66;
-function lifeBar(p,k,rk){
+function lifeBar(p,k,rk,line){
   const pos=a=>Math.max(0,Math.min(100,(a-LB0)/(LB1-LB0)*100));
   const now=p.age, fin=rk==='r3'?k.flipHorizon:k.horizon, wait=rk==='r2'?k.delay:0, start=now+wait;
   const xn=pos(now), xs=pos(start), xf=pos(fin), grow=fin-start;
+  const past=line!=null&&fin>line;           // this person is already past the room's line, so they were given their own
+  const xl=pos(line||0);
   const showStart=wait&&(xf-xs)>=13&&(xs-xn)>=6;   // labels only when they have room; the caption always says it in words
-  const cap=wait?`<span class="lost">${wait} yrs lost</span> · <span class="grow">${grow} yr${grow===1?'':'s'} to grow</span>`:`<span class="grow">${grow} yrs to grow</span>`;
+  const cap=(past?`<span class="past">${now>=line?'past '+line:MIN_YEARS+'-yr minimum'}</span> · `:'')+(wait?`<span class="lost">${wait} yrs lost</span> · <span class="grow">${grow} yr${grow===1?'':'s'} to grow</span>`:`<span class="grow">${grow} yrs to grow</span>`);
   return `<div class="lb"><div class="lb-c">${cap}</div><div class="lb-track">
+    ${past?`<i class="lb-line" style="left:${xl}%"></i>`:''}
     ${wait?`<i class="lb-seg lb-wait" style="left:${xn}%;width:${Math.max(0,xs-xn)}%"></i>`:''}
     <i class="lb-seg lb-inv" style="left:${xs}%;width:${Math.max(1.5,xf-xs)}%"></i>
     <b class="lb-dot" style="left:${xn}%;background:${p.color}"></b>
@@ -755,19 +762,22 @@ function lifeBar(p,k,rk){
     <b class="lb-flag" style="left:${xf}%"></b></div>
     <span class="lb-t n" style="left:${xn}%">${now}</span>
     ${showStart?`<span class="lb-t s" style="left:${xs}%">${start}</span>`:''}
+    ${past&&Math.abs(fin-line)>=4?`<span class="lb-t l" style="left:${xl}%">${line}</span>`:''}
     <span class="lb-t f" style="left:${xf}%">${fin}</span></div>`;
 }
+// If anyone in the room is already past the room's line, say so in plain words so their bar is never a mystery.
+function pastNote(ps,line){ const n=ps.filter(p=>p.age+MIN_YEARS>line).length; return n?`<p class="past-note">Anyone past ${line}, or within ${MIN_YEARS} years of it, gets ${MIN_YEARS} years from today instead.</p>`:''; }
 function tplReveal1(){
   const ps=playersSorted(), s=S(); const c=closest('r1');
   const guessed=ps.filter(p=>p.guess.r1>0);
   const avgGuess=guessed.length?guessed.reduce((a,p)=>a+p.guess.r1,0)/guessed.length:0;
   const avgReal=ps.length?ps.reduce((a,p)=>a+calc(p,s).now,0)/ps.length:0;
   const rows=ps.map((p,i)=>{ const k=calc(p,s); const o=offBy(p.guess.r1,k.now);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r1')}<span class="guess">${p.guess.r1>0?fmtMoney(p.guess.r1):'—'}</span>${cu(k.now,'real'+(k.now>=200000?' hot':''),i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
+    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r1',s.targetAge)}<span class="guess">${p.guess.r1>0?fmtMoney(p.guess.r1):'—'}</span>${cu(k.now,'real'+(k.now>=200000?' hot':''),i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
   const n=ps.length;
   return `<div class="stage">
     <div class="presents">Round 1 · the real numbers</div>
-    <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">${fmtMoney(s.target)} by ${s.targetAge} · what each of you needs <em>every month</em></h2>
+    <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">${fmtMoney(s.target)} by ${s.targetAge} · what each of you needs <em>every month</em></h2>${pastNote(ps,s.targetAge)}
     <div class="rv">
       <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Today → finish line</span><span>Guessed</span><span>Real · per month</span><span>Off by</span></div>${rows}</div>
       <div class="side">
@@ -796,11 +806,11 @@ function tplReveal2(){
   const ps=playersSorted(), s=S(); const c=closest('r2');
   const extra=ps.reduce((a,p)=>{const k=calc(p,s);return a+(k.late-k.now);},0);
   const rows=ps.map((p,i)=>{ const k=calc(p,s);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r2')}<span class="guess">now <b style="color:var(--stage-ink)">${fmtMoney(k.now)}</b></span>${cu(k.late,'real hot',i*STEP+150)}<span class="extra" data-cu="${Math.round(k.late-k.now)}" data-delay="${i*STEP+150}">₹0</span></div>`; }).join('');
+    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r2',s.targetAge)}<span class="guess">now <b style="color:var(--stage-ink)">${fmtMoney(k.now)}</b></span>${cu(k.late,'real hot',i*STEP+150)}<span class="extra" data-cu="${Math.round(k.late-k.now)}" data-delay="${i*STEP+150}">₹0</span></div>`; }).join('');
   const n=ps.length;
   return `<div class="stage">
     <div class="presents">Round 2 · the cost of waiting</div>
-    <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">Start <em>${s.delayYears} years later</em> and the monthly number becomes…</h2>
+    <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">Start <em>${s.delayYears} years later</em> and the monthly number becomes…</h2>${pastNote(ps,s.targetAge)}
     <div class="rv">
       <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Today → wait → finish line</span><span>Start now</span><span>Start ${s.delayYears} yrs late</span><span>Extra · every month</span></div>${rows}</div>
       <div class="side">
@@ -816,7 +826,7 @@ function tplReveal3(){
   const ps=playersSorted(), s=S(); const c=closest('r3');
   const young=ps[0], old=ps[ps.length-1];
   const rows=ps.map((p,i)=>{ const k=calc(p,s); const o=offBy(p.guess.r3,k.flip);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r3')}<span class="guess">${p.guess.r3>0?fmtMoney(p.guess.r3):'—'}</span>${cu(k.flip,'real',i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
+    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r3',s.flipAge)}<span class="guess">${p.guess.r3>0?fmtMoney(p.guess.r3):'—'}</span>${cu(k.flip,'real',i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
   const n=ps.length; const totalIn=p=>s.flipSip*12*calc(p,s).flipYrs;
   return `<div class="stage">
     <div class="presents">Round 3 · the flip</div>
@@ -841,7 +851,7 @@ function whatIfRow(p,rk,s,w,i){
   const pastLine=rk!=='r3'&&p.age+MIN_YEARS>w.targetAge&&Math.abs(d)<1;
   const chg=Math.abs(d)<1?`<span class="wi-chg same">no change${pastLine?'<small>past this line</small>':''}</span>`
     :`<span class="wi-chg ${good?'good':'bad'}">${d>0?'▲ +':'▼ −'}${fmtMoney(Math.abs(d))}</span>`;
-  return `<div class="rv-row wi-row" style="animation-delay:${i*90}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,rk)}<span class="guess">${fmtMoney(a)}</span>${cu(b,'wi-real'+(good?' good':Math.abs(d)<1?'':' bad'),i*90+100)}${chg}</div>`;
+  return `<div class="rv-row wi-row" style="animation-delay:${i*90}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,rk,rk==='r3'?w.flipAge:w.targetAge)}<span class="guess">${fmtMoney(a)}</span>${cu(b,'wi-real'+(good?' good':Math.abs(d)<1?'':' bad'),i*90+100)}${chg}</div>`;
 }
 function tplWhatIf(rk){
   const ps=playersSorted(), s=S(), w=W(), R=ROUNDS[rk], n=ps.length;
@@ -1038,7 +1048,7 @@ function renderPlayer(){
     const rule=rk==='r3'?`${fmtMoney(w.flipSip)} a month until ${kw.flipHorizon}, at ${w.rate}%`:rk==='r2'?`${fmtMoney(w.target)} by ${kw.horizon}, starting ${kw.delay} years late, at ${w.rate}%`:`${fmtMoney(w.target)} by ${kw.horizon}, at ${w.rate}%`;
     return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n}B · what if…?</div><h2>The rules on screen are changing. <em>So is your number.</em></h2><p>${rule}</p>
       <div class="real big"><div class="lbl">${rk==='r3'?'it becomes':'you need, every month'}</div><div class="v ${Math.abs(b-a)<1?'':good?'good':'bad'}">${fmtMoney(b)}</div><div class="g">as played: ${fmtMoney(a)}</div>${Math.abs(b-a)>=1?`<span class="off ${good?'':'low'}">${b>a?'▲ +':'▼ −'}${fmtMoney(Math.abs(b-a))}</span>`:'<span class="off high">no change</span>'}</div>
-      <div class="phone-lb">${lifeBar(p,kw,rk)}</div></div>`);
+      <div class="phone-lb">${lifeBar(p,kw,rk,rk==='r3'?w.flipAge:w.targetAge)}</div></div>`);
   }
   if(ph==='poll'){
     const mine=(p.vote!=null)?p.vote:(myLocal.vote!=null?myLocal.vote:null);
