@@ -29,14 +29,14 @@ button{cursor:pointer}
 
 /* ════════ HOST · projector ════════ */
 body.host-bg{background:radial-gradient(125% 95% at 50% -5%,rgba(14,38,48,.42),rgba(5,15,20,.94) 78%),url('quiz-studio.jpg') center/cover fixed no-repeat;color:var(--stage-ink);min-height:100vh}
-#host{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:14px 32px 52px}
+#host{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:14px 32px 70px}
 .stage{width:100%;max-width:1240px;display:flex;flex-direction:column;align-items:center;gap:14px;margin:auto}
 .presents{font-size:.72rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--stage-sub);text-align:center}
 .title{font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.1;text-align:center;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.45)}
 .title em{font-style:italic;color:var(--gold-bright)}
 .tag{font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:700;color:var(--stage-sub);text-align:center;margin:0;max-width:820px;line-height:1.45}
-.hero-video{display:block;width:300px;max-width:70%;max-height:18vh;object-fit:cover;border-radius:16px;box-shadow:0 26px 60px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.22);background:#fff}
-@media(max-height:760px){.hero-video{max-height:11vh}}
+.hero-mark{display:block;width:118px;height:118px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 0 0 1px rgba(255,255,255,.25),0 0 60px rgba(45,212,191,.35),0 20px 50px rgba(0,0,0,.5)}
+@media(max-height:760px){.hero-mark{width:88px;height:88px}}
 .glass{background:var(--glass);border:1px solid var(--glass-edge);border-radius:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:var(--shadow-lg)}
 .panel{background:#fff;color:var(--navy);border-radius:16px;box-shadow:var(--shadow-lg)}
 .kicker{font-size:.66rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
@@ -54,10 +54,11 @@ body.host-bg{background:radial-gradient(125% 95% at 50% -5%,rgba(14,38,48,.42),r
 .count-big{display:inline-grid;place-items:center;min-width:30px;height:30px;padding:0 9px;border-radius:999px;background:var(--mint-lt);color:var(--teal-d);font:900 .95rem 'Nunito',sans-serif}
 #lobbyQr{cursor:zoom-in}
 .qr-hint{font-size:.72rem;font-weight:800;color:var(--teal-d);margin-top:10px;cursor:pointer}
+.scan-how{margin:-4px 0 12px;font-size:.84rem;font-weight:600;color:var(--muted);max-width:300px;line-height:1.4}
 .pin-label{font-size:.62rem;text-transform:uppercase;letter-spacing:1.6px;font-weight:900;margin-top:10px;color:var(--muted)}
 .pin{font-family:'Lora',serif;font-size:2.8rem;font-weight:700;letter-spacing:.3rem;line-height:1.1;color:var(--navy)}
 .joinurl{font-size:.7rem;word-break:break-all;font-weight:700;margin-top:6px;color:var(--muted);opacity:.8}
-.players{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%;min-height:52px;max-height:22vh;overflow:auto;padding:2px}
+.players{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:flex-start;align-content:flex-start;width:100%;min-height:52px;max-height:22vh;overflow:auto;padding:2px}
 .pl{display:inline-flex;align-items:center;gap:7px;background:var(--mint-lt);border-radius:999px;padding:5px 12px 5px 5px;font-weight:800;font-size:.9rem;color:var(--navy);animation:pop .3s ease-out}
 .pl .av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.95rem;color:#fff;flex:none}
 .pl .age{color:var(--muted);font-size:.8rem;font-weight:900}
@@ -65,8 +66,10 @@ body.host-bg{background:radial-gradient(125% 95% at 50% -5%,rgba(14,38,48,.42),r
 @keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
 .lobby-card .btn{width:100%;margin-top:auto}
 .lobby-card .players{flex:1}
-.notice{max-width:980px;width:100%;padding:11px 18px;font-size:.88rem;font-weight:700;color:var(--stage-ink);text-align:center;line-height:1.5}
-.notice b{color:var(--gold-bright)}
+.plan{width:100%;text-align:left;margin:14px 0 4px;border-top:1px solid var(--mint-lt);padding-top:12px}
+.plan .row{display:grid;grid-template-columns:26px 1fr;gap:8px;align-items:baseline;padding:5px 0;font-size:.86rem;font-weight:600;color:var(--muted)}
+.plan .row b{font-family:'Lora',serif;color:var(--navy);font-weight:700;font-size:.95rem}
+.plan .row i{font-style:normal;font:900 .72rem 'Nunito',sans-serif;color:var(--teal);letter-spacing:.08em}
 .whatif{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;align-items:center;padding:9px 18px;border-radius:999px}
 .whatif .wk{font-family:'Lora',serif;font-style:italic;font-weight:600;color:var(--gold-bright);font-size:1rem}
 .whatif .wl{font-size:.62rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--stage-sub);margin-right:3px}
@@ -99,7 +102,7 @@ body.host-bg{background:radial-gradient(125% 95% at 50% -5%,rgba(14,38,48,.42),r
 /* reveal */
 .rv{display:grid;grid-template-columns:1fr 440px;gap:16px;width:100%;align-items:start}
 .rv-table{padding:8px 16px 6px}
-.rv-head,.rv-row{display:grid;grid-template-columns:1.6fr .7fr 1fr 1.25fr 1.05fr;align-items:center;gap:10px;padding:9px 6px}
+.rv-head,.rv-row{display:grid;grid-template-columns:1.6fr .7fr 1fr 1.25fr 1.05fr;align-items:center;gap:10px;padding:7px 6px}
 .rv-head{font-size:.62rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--stage-sub);border-bottom:1px solid var(--glass-edge)}
 .rv-row{border-bottom:1px solid rgba(255,255,255,.07);font-weight:700;color:var(--stage-ink);opacity:0;animation:rise .4s ease-out forwards}
 .rv-row:last-child{border-bottom:0}
@@ -115,7 +118,7 @@ body.host-bg{background:radial-gradient(125% 95% at 50% -5%,rgba(14,38,48,.42),r
 .rv-row .off.high{background:rgba(245,196,81,.16);color:var(--gold-bright)}
 .rv-row .extra{font-family:'Lora',serif;font-size:1.25rem;font-weight:700;color:var(--coral)}
 .side{display:flex;flex-direction:column;gap:12px}
-.stat{padding:14px 18px}
+.stat{padding:12px 16px}
 .stat .big{font-family:'Lora',serif;font-size:1.9rem;font-weight:700;color:#fff;line-height:1.1;margin-top:4px}
 .stat .big.gold{color:var(--gold-bright)}
 .stat .big.coral{color:var(--coral)}
@@ -231,7 +234,6 @@ const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYm
 const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
 const LOGO='IFM round logo for watermark.png';            // QR centre + round slots (§18)
 const PRINT_LOGO_SRC='IFM logo white background.png';     // hero banners via .hero-logo-wide (§8, §18)
-const LOBBY_VIDEO='ifm-logo-gold-coins-spin.mp4';          // the only logo loop .vercelignore lets through
 const AV_EMOJI=['🦊','🐯','🦄','🐼','🦁','🐨','🐸','🦋','🐝','🦉','🐙','🦖','🌸','🍀','⭐','🚀','💎','🎯','🍰','🦚'];
 const AV_COLOR=['#e05a47','#3a78c9','#2a9d8f','#c8900a','#8e44ad','#e0699a','#16a085','#d97a34','#5a7d8a','#6c5ce7'];
 
@@ -309,10 +311,11 @@ let isHost=(ROLE==='host');
 let state=null;
 function freshState(){
   return {phase:'lobby',nonce:0,
-    settings:{target:100000000,targetAge:40,rate:12,delayYears:5,flipSip:5000,flipAge:60},
+    settings:{target:100000000,targetAge:40,rate:12,delayYears:5,flipSip:5000,flipAge:60,pledgeRate:10},
     players:{},hostId:MY_ID,updatedAt:Date.now()};
 }
 const S=()=>state.settings;
+const PR=()=>S().pledgeRate||10;   // pledges are projected at a cautious 10%, not the game's 12%
 const playersSorted=()=>Object.values(state.players).sort((a,b)=>a.age-b.age||a.name.localeCompare(b.name));
 const av=p=>`<span class="av" style="background:${p.color}">${p.av}</span>`;
 
@@ -377,6 +380,12 @@ async function initHost(){
     if(s&&recent&&s.settings&&s.phase!=='lobby'&&s.phase!=='end'&&Object.keys(s.players||{}).length>0){ state=s; state.hostId=MY_ID; resumed=true; }
   }catch(e){}
   if(!resumed){ state=freshState(); await saveNow(); }
+  // Local design QA only: ?demo=1&phase=r1_reveal seeds a room so every screen can be screenshotted.
+  if(params.get('demo')&&/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){
+    const D=[['Aanya',21,25000,100000,5000000,2000],['Rohan',24,50000,200000,2500000,1000],['Meera',27,150000,500000,10000000,5000],['Kabir',29,100000,300000,20000000,0],['Zoya',22,10000,50000,1000000,500],['Dev',31,200000,600000,50000000,2000]];
+    D.forEach((d,i)=>{ state.players['d'+i]={id:'d'+i,name:d[0],age:d[1],av:AV_EMOJI[i],color:AV_COLOR[i],guess:{r1:d[2],r2:d[3],r3:d[4]},pledge:d[5]}; });
+    state.phase=params.get('phase')||'lobby';
+  }
   const rb=document.createElement('button'); rb.className='host-reset'; rb.textContent='↺ New game'; rb.onclick=hostReset; document.body.appendChild(rb);
   const jw=document.createElement('div'); jw.className='join-corner'; jw.id='joinCorner'; jw.title='Scan to join or rejoin';
   jw.innerHTML='<div class="jc-qr" id="jcQr"></div><div class="jc-txt"><div class="jc-lbl">Scan to (re)join</div><div class="jc-pin">'+ROOM+'</div><div class="jc-tap">tap to enlarge ⛶</div></div>';
@@ -447,7 +456,7 @@ function renderHost(){
   const lobby=ph==='lobby';
   document.getElementById('joinCorner').style.display=lobby?'none':'flex';
   h.classList.toggle('has-corner',!lobby);
-  document.getElementById('keyHint').innerHTML=lobby?'<b>Space</b> starts once someone has joined':'<b>Space</b> / <b>→</b> next · <b>←</b> back';
+  const kh=document.getElementById('keyHint'); kh.innerHTML=lobby?'<b>Space</b> starts once someone has joined':'<b>Space</b> / <b>→</b> next · <b>←</b> back'; kh.style.display=/_reveal$/.test(ph)?'none':'block';
   document.getElementById('hostBack').style.display=lobby?'none':'block';
   const nx=document.getElementById('hostNext'); nx.textContent=NEXT_LABEL[ph]||''; nx.style.display=(lobby||!NEXT_LABEL[ph])?'none':'block';
   if(lobby) h.innerHTML=tplLobby();
@@ -474,7 +483,7 @@ function chipRow(k,opts,fmtf){ return opts.map(v=>`<button class="chip ${S()[k]=
 function tplLobby(){
   const ps=playersSorted(), s=S(), n=ps.length;
   return `<div class="stage">
-    <video class="hero-video" src="${LOBBY_VIDEO}" autoplay muted loop playsinline poster="${PRINT_LOGO_SRC}"></video>
+    <img class="hero-mark" src="${LOGO}" alt="">
     <div>
       <div class="presents">Investing for Mummies presents</div>
       <h1 class="title">${GAME_NAME}</h1>
@@ -483,7 +492,7 @@ function tplLobby(){
     <div class="lobby-grid">
       <div class="panel lobby-card">
         <h2>📲 Scan to join</h2>
-        <p class="kicker" style="margin:-6px 0 10px">Point your phone camera at the QR · type your name and age</p>
+        <p class="scan-how">Point your phone camera at the code, then type your name and age.</p>
         <div id="lobbyQr" onclick="openQRFull()" title="Tap to enlarge"></div>
         <div class="qr-hint" onclick="openQRFull()">⛶ Tap the QR to enlarge for the room</div>
         <div class="pin-label">or enter Game PIN</div>
@@ -493,10 +502,15 @@ function tplLobby(){
       <div class="panel lobby-card">
         <h2>🪑 In the room <span class="count-big">${n}</span></h2>
         <div class="players">${n?ps.map(p=>`<span class="pl">${av(p)}${esc(p.name)} <span class="age">${p.age}</span></span>`).join(''):'<p class="waiting">Waiting for the first scan…</p>'}</div>
+        <div class="plan">
+          <div class="row"><i>R1</i><span><b>The big number.</b> ${fmtMoney(s.target)} by ${s.targetAge} — what each person needs a month.</span></div>
+          <div class="row"><i>R2</i><span><b>The cost of waiting.</b> Same target, start ${s.delayYears} years late.</span></div>
+          <div class="row"><i>R3</i><span><b>The flip.</b> ${fmtMoney(s.flipSip)} a month until ${s.flipAge} becomes…</span></div>
+          <div class="row"><i>✓</i><span><b>Make it real.</b> Everyone picks a SIP to start this month.</span></div>
+        </div>
         <button class="btn big" style="margin-top:14px" onclick="hostAdvance()" ${n?'':'disabled'}>${n?'Start · Round 1 →':'Start (waiting for a scan)'}</button>
       </div>
     </div>
-    <div class="glass notice">3 rounds · about 12 minutes — <b>the big number</b> (${fmtMoney(s.target)} by ${s.targetAge}: what each person needs a month), <b>the cost of waiting</b> (start ${s.delayYears} years late), and <b>the flip</b> (${fmtMoney(s.flipSip)} a month until ${s.flipAge}). Then everyone picks a SIP to start this month.</div>
   </div>`;
 }
 function tplAsk(rk){
@@ -555,7 +569,7 @@ function chart1(ps,s){
   const path=pts.map((q,i)=>(i?'L':'M')+X(q[0]).toFixed(1)+' '+Y(q[1]).toFixed(1)).join(' ');
   const ticks=[0.25,0.5,0.75,1].map(f=>`<text x="${L-8}" y="${Y(ymax*f/1.05)+4}" text-anchor="end" font-size="10" font-weight="800" fill="#9fc2bb">${fmtMoney(ymax*f/1.05)}</text><line x1="${L}" x2="${W-R}" y1="${Y(ymax*f/1.05)}" y2="${Y(ymax*f/1.05)}" stroke="rgba(255,255,255,.08)"/>`).join('');
   const xs=[]; for(let a=Math.ceil(a0/2)*2;a<=a1;a+=2) xs.push(`<text x="${X(a)}" y="${H-B+16}" text-anchor="middle" font-size="10" font-weight="800" fill="#9fc2bb">${a}</text>`);
-  const dots=onCurve.map((p,i)=>{const v=calc(p,s).now; return `<g style="opacity:0;animation:rise .4s ease-out ${i*STEP+200}ms forwards"><circle cx="${X(p.age)}" cy="${Y(v)}" r="6.5" fill="${p.color}" stroke="#fff" stroke-width="2"/><text x="${X(p.age)}" y="${Y(v)-11}" text-anchor="middle" font-size="10" font-weight="900" fill="#fff">${esc(p.name.split(' ')[0])}</text></g>`;}).join('');
+  const dots=onCurve.map((p,i)=>{const v=calc(p,s).now; return `<g style="opacity:0;animation:rise .4s ease-out ${i*STEP+200}ms forwards"><circle cx="${X(p.age)}" cy="${Y(v)}" r="6.5" fill="${p.color}" stroke="#fff" stroke-width="2"/><text x="${X(p.age)}" y="${Y(v)+(i%2?20:-11)}" text-anchor="middle" font-size="10" font-weight="900" fill="#fff">${esc(p.name.split(' ')[0])}</text></g>`;}).join('');
   return `<div class="kicker">Monthly SIP needed, by the age you start</div>
   <svg class="chart" viewBox="0 0 ${W} ${H}">${ticks}${xs.join('')}<path d="${path}" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-linecap="round"/>${dots}<text x="${W-R}" y="${H-3}" text-anchor="end" font-size="9" font-weight="800" fill="#9fc2bb">age you start →</text></svg>`;
 }
@@ -604,14 +618,14 @@ function tplReveal3(){
 function tplPledge(){
   const ps=playersSorted(), s=S(); const pl=ps.filter(p=>p.pledge>0);
   const total=pl.reduce((a,p)=>a+p.pledge,0);
-  const grows=pl.reduce((a,p)=>a+fvOf(p.pledge,calc(p,s).flipYrs,s.rate),0);
+  const grows=pl.reduce((a,p)=>a+fvOf(p.pledge,calc(p,s).flipYrs,PR()),0);
   return `<div class="stage">
     <div class="presents">Make it real</div>
     <h1 class="title">I will start a SIP of <em>₹ ____</em> this month.</h1>
     <p class="tag">Any amount. ₹500 counts. Type it on your phone and it goes up on the wall.</p>
     <div class="prog"><b>${pl.length}</b> / ${ps.length} have pledged</div>
     <div class="wall">${pl.map(p=>`<span class="pledge-tag">${av(p)}${esc(p.name)} <span class="amt">${fmtMoney(p.pledge)}/mo</span></span>`).join('')||'<p class="tag">waiting for the first pledge…</p>'}</div>
-    ${pl.length?`<div class="glass stat" style="text-align:center;min-width:360px"><div class="kicker">Together · ${fmtMoney(total)} a month</div><div class="big gold">${fmtMoney(grows)}</div><div class="sm">is what this room's pledges become by ${s.flipAge}, at ${s.rate}%</div></div>`:''}
+    ${pl.length?`<div class="glass stat" style="text-align:center;min-width:360px"><div class="kicker">Together · ${fmtMoney(total)} a month</div><div class="big gold">${fmtMoney(grows)}</div><div class="sm">is what this room's pledges become by ${s.flipAge}, at a cautious ${PR()}% a year</div></div>`:''}
   </div>`;
 }
 function bestEstimator(){
@@ -622,18 +636,18 @@ function bestEstimator(){
 function tplEnd(){
   const ps=playersSorted(), s=S(); const pl=ps.filter(p=>p.pledge>0);
   const total=pl.reduce((a,p)=>a+p.pledge,0);
-  const grows=pl.reduce((a,p)=>a+fvOf(p.pledge,calc(p,s).flipYrs,s.rate),0);
+  const grows=pl.reduce((a,p)=>a+fvOf(p.pledge,calc(p,s).flipYrs,PR()),0);
   const b=bestEstimator();
   return `<div class="stage">
-    <video class="hero-video" src="${LOBBY_VIDEO}" autoplay muted loop playsinline poster="${PRINT_LOGO_SRC}"></video>
+    <img class="hero-mark" src="${LOGO}" alt="">
     <div class="presents">${GAME_NAME} · that's the whole lesson</div>
     <h1 class="title">The best month to start is <em>this one.</em></h1>
     <div class="end-grid">
       <div class="glass stat"><div class="kicker">Pledged, together</div><div class="big teal">${fmtMoney(total)}<span style="font:800 .9rem 'Nunito',sans-serif;color:var(--stage-sub)"> /month</span></div><div class="sm">${pl.length} of ${ps.length} in the room</div></div>
-      <div class="glass stat"><div class="kicker">Which becomes, by ${s.flipAge}</div><div class="big gold">${fmtMoney(grows)}</div><div class="sm">at ${s.rate}% a year, nothing else changed</div></div>
+      <div class="glass stat"><div class="kicker">Which becomes, by ${s.flipAge}</div><div class="big gold">${fmtMoney(grows)}</div><div class="sm">at a cautious ${PR()}% a year, nothing else changed</div></div>
       <div class="glass stat"><div class="kicker">🎯 Best estimator</div><div class="big">${b?esc(b.p.name):'—'}</div><div class="sm">${b?'closest across the rounds':'needs two guesses'}</div></div>
     </div>
-    <p class="tag">Three things to carry out of this room: your number, your cost of waiting, and the SIP you just promised yourself.</p>
+    <p class="tag">Your numbers are on your phone. Send them to yourself on WhatsApp before you leave.</p>
   </div>`;
 }
 
@@ -687,8 +701,8 @@ function ifmShare(msg){ window.open('https://wa.me/?text='+encodeURIComponent(ms
 const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>';
 let _shareMsg='';
 function waBtn(msg,label){ _shareMsg=msg; return `<button class="p-btn wa" onclick="ifmShare(_shareMsg)">${WA_ICON}<span>${label}</span></button>`; }
-function pledgeText(p,s,val){ return `🌱 ${p.name}, ${p.age}: I'm starting a SIP of ${fmtMoney(val)} a month — starting THIS month.\n\nAt ${s.rate}% a year that's ${fmtMoney(fvOf(val,calc(p,s).flipYrs,s.rate))} by ${s.flipAge}.\n\nThe Wealth Hack · Investing for Mummies`; }
-function numbersText(p,s){ const k=calc(p,s); return `📊 ${p.name}, ${p.age} — my numbers from ${GAME_NAME}:\n\n• ${fmtMoney(s.target)} by ${k.horizon}, start now: ${fmtMoney(k.now)}/month\n• Start ${k.delay} years late: ${fmtMoney(k.late)}/month\n• ${fmtMoney(s.flipSip)}/month until ${s.flipAge} becomes: ${fmtMoney(k.flip)}${p.pledge?`\n• My pledge: ${fmtMoney(p.pledge)}/month → ${fmtMoney(fvOf(p.pledge,k.flipYrs,s.rate))} by ${s.flipAge}`:''}\n\nAssumes ${s.rate}% a year. Investing for Mummies`; }
+function pledgeText(p,s,val){ return `🌱 ${p.name}, ${p.age}: I'm starting a SIP of ${fmtMoney(val)} a month — starting THIS month.\n\nAt a cautious ${PR()}% a year that's ${fmtMoney(fvOf(val,calc(p,s).flipYrs,PR()))} by ${s.flipAge}.\n\nThe Wealth Hack · Investing for Mummies`; }
+function numbersText(p,s){ const k=calc(p,s); return `📊 ${p.name}, ${p.age} — my numbers from ${GAME_NAME}:\n\n• ${fmtMoney(s.target)} by ${k.horizon}, start now: ${fmtMoney(k.now)}/month\n• Start ${k.delay} years late: ${fmtMoney(k.late)}/month\n• ${fmtMoney(s.flipSip)}/month until ${s.flipAge} becomes: ${fmtMoney(k.flip)}${p.pledge?`\n• My pledge: ${fmtMoney(p.pledge)}/month → ${fmtMoney(fvOf(p.pledge,k.flipYrs,PR()))} by ${s.flipAge} (at ${PR()}%)`:''}\n\nAssumes ${s.rate}% a year. Investing for Mummies`; }
 
 function renderPlayer(){
   const el=document.getElementById('player'); if(!state){ el.innerHTML=shell('<div class="card center"><h2>Finding the game…</h2><p>Room '+esc(ROOM)+'</p></div>'); return; }
@@ -725,7 +739,7 @@ function renderPlayer(){
   }
   if(ph==='pledge'){
     const locked=myLockedNonce.pledge===state.nonce||p.pledge>0; const val=myLocal.pledge||p.pledge||0;
-    if(locked) return el.innerHTML=shell(`<div class="card center"><div class="lbl">Your pledge</div><h2>${fmtMoney(val)} a month. <em>Starting this month.</em></h2><p>By ${s.flipAge} that's <b style="color:var(--teal-d)">${fmtMoney(fvOf(val,calc(p,s).flipYrs,s.rate))}</b>. It's on the wall.</p>${waBtn(pledgeText(p,s,val),'Share via WhatsApp')}<button class="p-btn outline" onclick="myLockedNonce.pledge=-1;p.pledge=0;renderPlayer()">Change amount</button></div>`);
+    if(locked) return el.innerHTML=shell(`<div class="card center"><div class="lbl">Your pledge</div><h2>${fmtMoney(val)} a month. <em>Starting this month.</em></h2><p>By ${s.flipAge} that's <b style="color:var(--teal-d)">${fmtMoney(fvOf(val,calc(p,s).flipYrs,PR()))}</b> at a cautious ${PR()}%. It's on the wall.</p>${waBtn(pledgeText(p,s,val),'Share via WhatsApp')}<button class="p-btn outline" onclick="myLockedNonce.pledge=-1;p.pledge=0;renderPlayer()">Change amount</button></div>`);
     return el.innerHTML=shell(`<div class="card"><div class="lbl">Make it real</div><h2>I will start a SIP of <em>₹ ____</em> this month.</h2><p>Any amount. The number matters less than the month.</p>
       <div class="chips">${PLEDGE_CHIPS.map(v=>`<button class="chip" data-v="${v}" onclick="pickChip(${v})">${fmtMoney(v)}</button>`).join('')}</div>
       <div class="field"><div class="lbl">Per month</div><div class="inp-wrap"><span class="rs">₹</span><input id="moneyInput" class="inp money" inputmode="numeric" placeholder="0" oninput="onMoney(this)"></div><span class="sh-badge" id="shBadge"></span></div>
@@ -739,7 +753,7 @@ function renderPlayer(){
         <div class="row"><span>…start ${k.delay} years late</span><b class="red">${fmtMoney(k.late)}/mo</b></div>
         <div class="row"><span>${fmtMoney(s.flipSip)}/mo until ${s.flipAge}</span><b>${fmtMoney(k.flip)}</b></div>
         <div class="row"><span>Your pledge</span><b>${p.pledge?fmtMoney(p.pledge)+'/mo':'—'}</b></div>
-        ${p.pledge?`<div class="row"><span>…by ${s.flipAge}</span><b>${fmtMoney(fvOf(p.pledge,k.flipYrs,s.rate))}</b></div>`:''}
+        ${p.pledge?`<div class="row"><span>…by ${s.flipAge} at ${PR()}%</span><b>${fmtMoney(fvOf(p.pledge,k.flipYrs,PR()))}</b></div>`:''}
       </div>${waBtn(numbersText(p,s),'Share via WhatsApp')}<p style="margin:12px 0 0;text-align:center">Then open a SIP before the month ends.</p></div>`);
   }
   el.innerHTML=shell('<div class="card center"><h2>Eyes on the screen</h2></div>');
