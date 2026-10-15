@@ -382,6 +382,32 @@ def load_moments():
 _PH_CACHE = {}
 
 
+def require_pillow():
+    """Stop the run if Pillow is missing, instead of silently shipping zero hashes.
+
+    Found 15 Oct 2026: every row in the live catalogue had NO phash, so burst grouping
+    collapsed nothing and had been dead for an unknown stretch. Cause: backfill.py had
+    been run with Homebrew's python3, which has no Pillow. `phash_of` caught the
+    ImportError in its bare `except` and returned None for all 621 thumbnails, the
+    generator wrote a complete-looking catalogue, every test passed, and the page simply
+    stopped grouping. Nothing anywhere said why.
+
+    A missing interpreter library is not a per-image failure, so it must not be handled
+    once per image. Checked up front and loudly: this costs one import and removes a
+    whole class of silent, invisible degradation. The real fix is to run the documented
+    interpreter -- /usr/bin/python3, which has Pillow; Homebrew's does not.
+    """
+    try:
+        from PIL import Image  # noqa: F401
+    except ImportError:
+        sys.exit(
+            'FATAL: Pillow is not installed for %s\n'
+            '  Perceptual hashes drive burst grouping in the Library. Without Pillow every\n'
+            '  row silently loses its phash and near-identical frames stop collapsing.\n'
+            '  Re-run with the documented interpreter:\n'
+            '      /usr/bin/python3 backfill.py' % sys.executable)
+
+
 def phash_of(rid):
     """64-bit difference hash of thumbs/<id>.jpg, or None when there is no thumbnail.
 
@@ -487,6 +513,7 @@ def search_terms_for(r, topics):
 
 def main():
     global SPEECH, MOMENTS
+    require_pillow()          # before any work, so a wrong interpreter fails in one second
     SPEECH = load_speech()
     MOMENTS = load_moments()
     data = load_rows()
