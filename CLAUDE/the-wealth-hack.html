@@ -30,7 +30,7 @@ button{cursor:pointer}
 
 /* ════════ HOST · projector ════════ */
 body.host-bg{background:linear-gradient(180deg,rgba(6,16,28,.30) 0%,rgba(6,16,28,.55) 55%,rgba(6,16,28,.82) 100%),url('wealth-hack-stage.jpg') center/cover fixed no-repeat;color:var(--stage-ink);min-height:100vh}
-#host{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:14px 32px 70px}
+#host{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:14px 32px 110px}
 .stage{width:100%;max-width:1240px;display:flex;flex-direction:column;align-items:center;gap:14px;margin:auto}
 .presents{font-size:.72rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--stage-ink);text-align:center;text-shadow:0 1px 12px rgba(0,0,0,.7)}
 .title{font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.1;text-align:center;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.45)}
@@ -134,9 +134,9 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 .pl-wall .pl.lit{opacity:1;border-color:rgba(233,191,98,.7)}
 
 /* reveal */
-.rv{display:grid;grid-template-columns:1fr 440px;gap:16px;width:100%;align-items:start}
+.rv{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:16px;width:100%;align-items:start}
 .rv-table{padding:8px 16px 6px}
-.rv-head,.rv-row{display:grid;grid-template-columns:1.6fr .7fr 1fr 1.25fr 1.05fr;align-items:center;gap:10px;padding:7px 6px}
+.rv-head,.rv-row{display:grid;grid-template-columns:1.35fr 2.2fr .95fr 1.2fr 1.05fr;align-items:center;gap:12px;padding:8px 6px}
 .rv-head{font-size:.62rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--stage-sub);border-bottom:1px solid var(--glass-edge)}
 .rv-row{border-bottom:1px solid rgba(255,255,255,.07);font-weight:700;color:var(--stage-ink);opacity:0;animation:rise .4s ease-out forwards}
 .rv-row:last-child{border-bottom:0}
@@ -161,8 +161,67 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 .stat .sm{color:var(--stage-sub);font-weight:700;margin-top:4px;font-size:.88rem;line-height:1.45}
 .stat .sm b{color:var(--stage-ink)}
 .chart{width:100%;height:auto;display:block}
-.punch{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(1.15rem,2vw,1.6rem);color:var(--gold-bright);text-align:center;max-width:1000px;line-height:1.35;opacity:0;animation:rise .6s ease-out forwards}
+.punch{margin-bottom:10px;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(1.15rem,2vw,1.6rem);color:var(--gold-bright);text-align:center;max-width:1000px;line-height:1.35;opacity:0;animation:rise .6s ease-out forwards}
 
+/* life bar — today → (wait) → finish line */
+.lb{position:relative;height:58px;min-width:180px}
+.lb-c{position:absolute;left:0;right:0;top:0;text-align:center;font:700 .74rem 'Manrope',sans-serif;color:var(--stage-sub);white-space:nowrap}
+.lb-c .lost{color:#ff8a76;font-weight:800}.lb-c .grow{color:var(--gold-hi);font-weight:700}
+.lb-track{position:absolute;left:0;right:0;top:24px;height:9px;border-radius:99px;background:rgba(255,255,255,.1)}
+.lb-seg{position:absolute;top:0;height:100%;border-radius:99px;transition:left .5s ease,width .5s ease}
+.lb-inv{background:linear-gradient(90deg,#d79f34,#f7dea0);box-shadow:0 0 14px rgba(233,191,98,.35)}
+.lb-wait{background:repeating-linear-gradient(135deg,rgba(255,138,118,.95) 0 5px,rgba(255,138,118,.35) 5px 10px)}
+.lb-dot{position:absolute;top:-4px;width:17px;height:17px;border-radius:50%;transform:translateX(-50%);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.5);transition:left .5s ease}
+.lb-dot.s{background:#ff8a76}
+.lb-flag{position:absolute;top:-3px;width:15px;height:15px;transform:translateX(-50%) rotate(45deg);background:var(--gold-hi);border:2px solid #1a1203;border-radius:3px;transition:left .5s ease}
+.lb-t{position:absolute;top:38px;font:800 .82rem 'Manrope',sans-serif;color:var(--stage-ink);white-space:nowrap;transition:left .5s ease}
+.lb-t.n{transform:translateX(-85%)}
+.lb-t.s{transform:translateX(-10%);color:#ff8a76}
+.lb-t.f{transform:translateX(-50%);color:var(--gold-hi)}
+/* what-if control room */
+.wi-stage{gap:12px}
+.wi-grid{display:grid;grid-template-columns:400px minmax(0,1fr);gap:16px;width:100%;align-items:start}
+.wi-left{display:flex;flex-direction:column;gap:14px}
+.wi-score{padding:18px 20px;text-align:center}
+.wi-score.on{border-color:rgba(233,191,98,.55);box-shadow:0 0 0 1px rgba(233,191,98,.25),0 0 60px rgba(233,191,98,.18),var(--shadow-lg)}
+.wi-sc{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+.wi-n{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:2.7rem;line-height:1.05;color:var(--gold-hi);margin:6px 0 2px;text-shadow:0 0 36px rgba(233,191,98,.3)}
+.wi-n.dim{color:var(--stage-sub);font-size:1.9rem;text-shadow:none}
+.wi-n.good{color:#6fe3d0}.wi-n.bad{color:#ff8a76}
+.wi-arrow{font-family:'Fraunces',serif;font-size:2rem;color:var(--gold)}
+.wi-s{font-size:.72rem;font-weight:600;color:var(--stage-sub);line-height:1.3}
+.wi-delta{margin-top:12px;padding:9px 12px;border-radius:12px;font-weight:800;font-size:1rem}
+.wi-delta.good{background:rgba(111,227,208,.14);color:#6fe3d0}.wi-delta.bad{background:rgba(255,138,118,.14);color:#ff8a76}
+.wi-delta.idle{background:rgba(255,255,255,.06);color:var(--stage-sub);font-weight:600;font-size:.9rem}
+.wi-ctl{padding:18px 20px 20px}
+.wi-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.wi-h span{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.6rem;color:var(--gold-hi)}
+.wi-g{margin-bottom:16px}
+.wi-g:last-child{margin-bottom:0}
+.wi-l{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--stage-sub);margin-bottom:9px;display:flex;justify-content:space-between;align-items:baseline}
+.wi-v{font-family:'Fraunces',serif;font-size:1.6rem;letter-spacing:0;text-transform:none;color:var(--gold-hi)}
+.wi-chips{display:flex;flex-wrap:wrap;gap:8px}
+.wi-ctl .chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:var(--stage-ink);border-radius:14px;padding:11px 20px;font:700 1.08rem 'Manrope',sans-serif;transition:background .2s,transform .15s}
+.wi-ctl .chip:hover{background:rgba(255,255,255,.14);transform:translateY(-1px)}
+.wi-ctl .chip.on{background:linear-gradient(135deg,var(--gold-hi),#d79f34);border-color:transparent;color:#1a1203;box-shadow:0 8px 22px rgba(233,191,98,.3)}
+.wi-h .chip{padding:7px 14px;font-size:.85rem;border-radius:999px}
+.wi-ctl .rate{width:100%;height:7px;margin:6px 0 2px;-webkit-appearance:none;appearance:none;border-radius:4px;background:rgba(255,255,255,.2);outline:none;cursor:pointer}
+.wi-ctl .rate::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:var(--gold-hi);border:3px solid #fff;box-shadow:0 3px 12px rgba(0,0,0,.5);cursor:grab}
+.wi-ctl .rate::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--gold-hi);border:3px solid #fff;cursor:grab}
+.wi-table{padding:10px 18px 8px}
+.wi-table .rv-head{font-size:.7rem;padding-bottom:10px}
+.wi-row{padding:12px 6px;min-height:68px}
+.wi-row .nm{font-size:1.3rem;font-weight:700}
+.wi-row .nm .av{width:36px;height:36px;font-size:1.1rem}
+.wi-row .guess{font-size:1.2rem;color:var(--stage-sub);font-weight:600}
+.wi-real{font-family:'Fraunces',serif;font-size:2.05rem;font-weight:600;color:var(--gold-hi);line-height:1;white-space:nowrap}
+.wi-real.good{color:#6fe3d0}.wi-real.bad{color:#ff8a76}
+.wi-chg{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 12px;border-radius:12px;font-weight:800;font-size:1.02rem;white-space:nowrap}
+.wi-chg small{font-size:.62rem;font-weight:600;opacity:.8}
+.wi-chg.good{background:rgba(111,227,208,.15);color:#6fe3d0}.wi-chg.bad{background:rgba(255,138,118,.15);color:#ff8a76}.wi-chg.same{background:rgba(255,255,255,.07);color:var(--stage-sub);font-weight:600;font-size:.9rem}
+.wi-table.dense .wi-row{padding:7px 6px;min-height:52px}.wi-table.dense .wi-real{font-size:1.6rem}.wi-table.dense .wi-row .nm{font-size:1.05rem}
+.wi-table .rv-head,.wi-table .rv-row{grid-template-columns:1.15fr 1.95fr .9fr 1.4fr 1.15fr}
+@media(max-height:900px){.rv-row{padding:5px 6px}.lb{height:52px}.punch{font-size:1.1rem;margin-bottom:6px}.wi-chart{display:none}.wi-n{font-size:2.3rem}.wi-ctl{padding:14px 18px 16px}.wi-g{margin-bottom:12px}.wi-ctl .chip{padding:9px 17px;font-size:1rem}.wi-score{padding:14px 18px}.wi-row{padding:9px 6px;min-height:60px}.wi-real{font-size:1.9rem}}
 /* poll / end */
 .bars{width:100%;max-width:760px;display:grid;gap:10px}
 .bar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 20px;border-radius:14px;background:rgba(10,26,34,.72);border:1px solid var(--glass-edge);overflow:hidden;font-weight:700;font-size:1.05rem;color:var(--stage-ink)}
@@ -190,10 +249,11 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 .join-corner .jc-lbl{color:var(--stage-sub);font-size:.6rem;font-weight:900;text-transform:uppercase;letter-spacing:.6px}
 .join-corner .jc-pin{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;letter-spacing:.16rem;color:var(--gold-hi)}
 .join-corner .jc-tap{color:var(--gold);font-size:.62rem;font-weight:800}
-.key-hint{position:fixed;bottom:7px;left:50%;transform:translateX(-50%);z-index:95;color:var(--stage-sub);font-size:.72rem;font-weight:800;background:rgba(10,26,34,.72);border:1px solid var(--glass-edge);padding:5px 14px;border-radius:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap}
+.key-hint{position:fixed;bottom:14px;right:16px;z-index:95;color:var(--stage-sub);font-size:.72rem;font-weight:800;background:rgba(10,26,34,.72);border:1px solid var(--glass-edge);padding:5px 14px;border-radius:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap}
 .key-hint b{color:var(--stage-ink)}
-.host-back{position:fixed;bottom:7px;left:14px;z-index:95;color:var(--stage-ink);font:800 .76rem 'Manrope',sans-serif;background:rgba(10,26,34,.74);border:1px solid rgba(255,255,255,.15);padding:6px 15px;border-radius:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.host-next{position:fixed;bottom:7px;right:14px;z-index:95;font:800 .8rem 'Manrope',sans-serif;color:#1a1203;background:linear-gradient(135deg,var(--gold-hi),#d79f34);border:0;padding:8px 18px;border-radius:20px;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.host-back{position:fixed;bottom:22px;left:16px;z-index:95;color:var(--stage-ink);font:800 .76rem 'Manrope',sans-serif;background:rgba(10,26,34,.74);border:1px solid rgba(255,255,255,.15);padding:6px 15px;border-radius:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.host-next{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:95;min-width:340px;font:800 1.2rem 'Manrope',sans-serif;color:#1a1203;background:linear-gradient(135deg,var(--gold-hi),#d79f34);border:0;padding:17px 44px;border-radius:18px;box-shadow:0 16px 44px rgba(233,191,98,.38),0 6px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.55);transition:box-shadow .2s,transform .2s}
+.host-next:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 20px 54px rgba(233,191,98,.5),0 6px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.55)}
 /* the fixed corner pills reserve their own band — nothing centred ever runs underneath them */
 #host.has-corner{padding-top:62px}
 #qrFull{position:fixed;inset:0;z-index:100;background:rgba(5,15,20,.92);display:grid;place-items:center;cursor:pointer}
@@ -202,15 +262,16 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 .net{position:fixed;left:50%;bottom:44px;transform:translateX(-50%);z-index:96;background:#f5f0e0;color:#6b4e00;border:2px solid var(--gold);border-radius:12px;padding:9px 16px;font-weight:800;font-size:.9rem}
 /* when embedded in the games portal, its own floating Menu / Suggest buttons sit bottom-left and bottom-right — lift ours clear of them */
 body.framed .host-back,body.framed .host-next,body.framed .key-hint{bottom:70px}
+body.framed .host-next{bottom:76px}
 body.framed .net{bottom:112px}
-body.framed #host{padding-bottom:120px}
+body.framed #host{padding-bottom:170px}
 @media(max-height:900px){.lobby-stage{gap:9px}.hero-mark{width:44px;height:44px}.hero-title{font-size:clamp(2.6rem,5vw,3.9rem)}.sz-xl .pl{padding:5px 20px 5px 5px}.players.sz-xl{gap:8px}.lcard .room-head{margin-bottom:10px}.lcard{padding:20px 24px 18px}.qr-tile{margin:14px 0 10px;padding:12px}.plan{margin:12px 0 12px;gap:8px}.plan>div{padding:10px 12px}.plan span{font-size:.74rem}.pin{font-size:2.6rem}.joinurl{margin-top:6px}.players{min-height:80px}.scan-how{font-size:.8rem}}
 @media(max-width:1000px){.join-corner,.key-hint{display:none!important}.lobby-grid,.rv{grid-template-columns:1fr}.end-grid{grid-template-columns:1fr}#host.has-corner{padding-top:14px}}
 
 /* ════════ PLAYER · phone — midnight & gold ════════ */
 body.player-bg{--navy:#f6f1e7;--ink:#f6f1e7;--muted:#9bb0ae;--mint:rgba(255,255,255,.14);--mint-lt:rgba(255,255,255,.06);--teal:#e9bf62;--teal-d:#f7dea0;--danger:#ff8a76;--cream:#050c15;background:#050c15;color:#f6f1e7;font-family:'Manrope',sans-serif}
 body.player-bg::after{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
-.wrap{position:relative;max-width:480px;margin:0 auto;padding:24px 16px 32px;min-height:100vh;display:flex;flex-direction:column;gap:16px;overflow:hidden}
+.wrap{position:relative;max-width:480px;margin:0 auto;padding:22px 16px 28px;min-height:100vh;display:flex;flex-direction:column;gap:14px;overflow-x:clip}
 .wrap>*:not(.p-hero){position:relative;z-index:1}
 .p-hero{position:absolute;left:0;right:0;top:0;height:310px;background:url('wealth-hack-banner.jpg') calc(100% + 44px) 0/auto 300px no-repeat;z-index:0}
 .p-hero.full{height:440px;background-size:auto 330px;background-position:calc(100% + 50px) 0}
@@ -286,6 +347,46 @@ body.player-bg::after{content:"";position:fixed;inset:0;z-index:5;pointer-events
 .crowd p{margin:0;font-size:12.5px;font-weight:600;color:#9bb0ae;line-height:1.4}
 .crowd p b{color:#f6f1e7;font-weight:700}
 .foot{margin-top:auto;text-align:center;font-size:11px;color:#9bb0ae;font-weight:600;opacity:.7;padding-top:8px}
+.card.ask{flex:1;display:flex;flex-direction:column}
+.ask-note{margin:0 0 6px!important}
+.amt{margin:4px 0 14px}
+.amt-l{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#9bb0ae;margin-bottom:10px;text-align:center}
+.amt-box{position:relative;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);transition:border-color .2s,box-shadow .2s}
+.amt-box:focus-within{border-color:#e9bf62;box-shadow:0 0 0 4px rgba(233,191,98,.14)}
+.amt-box .rs{position:absolute;left:20px;top:50%;transform:translateY(-50%);font:600 2.2rem 'Fraunces',serif;color:#9bb0ae}
+.amt-in{width:100%;background:transparent;border:0;outline:0;color:#f6f1e7;font:600 2.9rem 'Fraunces',serif;text-align:center;padding:14px 18px 14px 48px;letter-spacing:.01em}
+.amt-in::placeholder{color:rgba(155,176,174,.35)}
+.amt-sh{margin:10px auto 0;width:fit-content;font:700 1.15rem 'Manrope',sans-serif;color:#f7dea0;background:rgba(233,191,98,.12);border:1px solid rgba(233,191,98,.32);padding:4px 16px;border-radius:999px;min-height:1.9rem}
+.amt-sh:empty{visibility:hidden}
+.chips.big{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:auto 0 14px}
+.chips.big .chip{padding:15px 4px;font-size:1.06rem;border-radius:15px;text-align:center;font-weight:700;letter-spacing:-.01em}
+.p-btn.big{height:64px;font-size:1.2rem;border-radius:18px;position:sticky;bottom:14px;z-index:6;box-shadow:0 14px 36px rgba(233,191,98,.4),0 0 0 6px rgba(5,12,21,.85)}
+.p-btn.big:disabled{box-shadow:0 0 0 6px rgba(5,12,21,.85)}
+.ctx{margin:2px 0 12px;padding:12px 14px 10px;border-radius:18px;background:rgba(233,191,98,.07);border:1px solid rgba(233,191,98,.25)}
+.ctx-h{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#f7dea0;margin-bottom:10px}
+.ctx-row{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:start}
+.ctx-n{font:600 1.7rem 'Fraunces',serif;color:#f7dea0;line-height:1.1}
+.ctx-n.q{color:#9bb0ae}
+.ctx-s{font-size:.78rem;font-weight:600;color:#9bb0ae;line-height:1.4;margin-top:4px}
+.ctx-s b{color:#f6f1e7;font-weight:800}.ctx-s b.red{color:#ff8a76}
+.ctx-arrow{font:600 1.6rem 'Fraunces',serif;color:#e9bf62;padding-top:6px}
+.ctx-t{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1);font-size:.84rem;font-weight:600;color:#e7e2d6;line-height:1.4}
+.ctx-t b{color:#ff8a76}
+.proj{margin-top:14px;padding:14px 15px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.proj.over{border-color:rgba(111,227,208,.4);background:rgba(111,227,208,.07)}
+.proj.under{border-color:rgba(255,138,118,.35);background:rgba(255,138,118,.06)}
+.proj.close{border-color:rgba(233,191,98,.5);background:rgba(233,191,98,.08)}
+.proj-h{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#9bb0ae;margin-bottom:8px}
+.proj-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.proj-row span{font-size:.86rem;font-weight:600;color:#d6e2df;line-height:1.35}
+.proj-row b{font:600 1.9rem 'Fraunces',serif;color:#f7dea0;white-space:nowrap}
+.proj.over .proj-row b{color:#6fe3d0}.proj.under .proj-row b{color:#ff8a76}
+.proj-t{margin-top:8px;font-size:.86rem;font-weight:600;color:#e7e2d6;line-height:1.45}
+.proj-t b{color:#fff}
+.real.big .v{font-size:3.6rem}
+.real .v.good{color:#6fe3d0;text-shadow:none}.real .v.bad{color:#ff8a76;text-shadow:none}
+.phone-lb{margin-top:14px;padding:12px 8px 0}
+.solo-note{margin-top:14px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.05);font-size:.82rem;font-weight:600;color:#9bb0ae;line-height:1.5;text-align:center}
 .rejoin{position:fixed;inset:0;z-index:200;background:rgba(5,12,21,.94);display:grid;place-items:center;color:#f6f1e7;text-align:center;padding:30px;cursor:pointer}
 .rejoin h2{color:#f7dea0;font-size:1.6rem;margin-bottom:8px}
 </style>
@@ -330,21 +431,26 @@ function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;'
 /* ── the maths ────────────────────────────────────────────────── */
 function sipFor(fv,years,ratePct){ const r=ratePct/1200, n=Math.round(years*12); if(n<=0) return fv; return fv*r/(Math.pow(1+r,n)-1); }
 function fvOf(p,years,ratePct){ const r=ratePct/1200, n=Math.round(years*12); if(n<=0) return 0; return p*(Math.pow(1+r,n)-1)/r; }
-// Someone older than the target age (the teacher at 46, a parent in the room) can't be asked about
-// '₹10 Cr by 40'. Anyone within 5 years of the target gets their own finish line instead: 60, or
-// age+10 if they are past 55. Every screen reads the horizon from here, never from S.targetAge.
-function horizonFor(p,S){ return (S.targetAge-p.age>=5)?S.targetAge:Math.max(S.flipAge,p.age+10); }
+// Everyone gets at least MIN_YEARS to invest. Someone already past (or near) the finish line — a parent in the
+// room, the teacher at 46 — is not asked about "₹10 Cr by 40"; their finish line is simply age + 10 until the
+// lever moves beyond that. Every screen reads horizons from here, never from S.targetAge directly.
+const MIN_YEARS=10;
+function horizonFor(p,S){ return Math.max(S.targetAge,p.age+MIN_YEARS); }
+function flipHorizonFor(p,S){ return Math.max(S.flipAge,p.age+MIN_YEARS); }
 function calc(p,S){
   const horizon=horizonFor(p,S); const yrs=Math.max(1,horizon-p.age);
   const now=sipFor(S.target,yrs,S.rate);
   const plus1=sipFor(S.target,Math.max(1,yrs-1),S.rate);
   const delay=Math.min(S.delayYears,Math.max(0,yrs-1));
-  const late=sipFor(S.target,Math.max(1,yrs-delay),S.rate);
-  const flipYrs=Math.max(1,S.flipAge-p.age);
+  const yrsLate=Math.max(1,yrs-delay);
+  const late=sipFor(S.target,yrsLate,S.rate);
+  const flipHorizon=flipHorizonFor(p,S); const flipYrs=Math.max(1,flipHorizon-p.age);
   const flip=fvOf(S.flipSip,flipYrs,S.rate);
   const flipEarly=fvOf(S.flipSip,flipYrs+5,S.rate);
-  return {horizon,yrs,now,plus1,delay,late,flipYrs,flip,flipEarly};
+  return {horizon,yrs,now,plus1,delay,yrsLate,lateStart:p.age+delay,late,flipHorizon,flipYrs,flip,flipEarly};
 }
+// What a guessed monthly SIP would actually have grown to over the years this round gives you.
+function guessBecomes(p,rk,S,g){ const k=calc(p,S); if(rk==='r1') return fvOf(g,k.yrs,S.rate); if(rk==='r2') return fvOf(g,k.yrsLate,S.rate); return null; }
 function realFor(p,rk,S){ const c=calc(p,S); return rk==='r1'?c.now:rk==='r2'?c.late:c.flip; }
 function offBy(guess,real){
   if(!guess||guess<=0) return {cls:'',txt:'no guess',err:99};
@@ -358,6 +464,8 @@ function offBy(guess,real){
 const PHASES=['lobby','r1_ask','r1_reveal','r1_whatif','r2_ask','r2_reveal','r2_whatif','r3_ask','r3_reveal','r3_whatif','poll','end'];
 const SIP_CHIPS=[2000,5000,10000,25000,50000,100000,200000,500000];
 const FV_CHIPS=[1000000,2500000,5000000,10000000,20000000,50000000,100000000];
+const FLIP_CHIPS=[25000,50000,100000,150000,250000];   // the round-3 what-if: only the monthly amount moves
+const SHARE_URL='https://games.investingformummies.com/the-wealth-hack';
 const BLOCKERS=[
   {k:'how',  txt:'I didn’t know how to start',     short:'Not knowing how',   fix:'That is exactly what the next few days are for.'},
   {k:'money',txt:'I don’t have spare money yet',   short:'No spare money yet',fix:'₹500 a month is a real start. You have just seen the maths.'},
@@ -370,24 +478,26 @@ const ROUNDS={
       hostQ:S=>`To have <em>${fmtMoney(S.target)}</em> by the time you turn <em>${S.targetAge}</em>, how much would you need to invest <em>every month</em>?`,
       hostWhy:S=>`Assume ${S.rate}% a year — what a plain equity mutual fund has done over long stretches. Your age decides your number. Every phone in this room has a different answer.`,
       phoneQ:(p,S)=>{const h=horizonFor(p,S);return `You're ${p.age}. To have <em>${fmtMoney(S.target)}</em> by ${h}, how much would you need to invest every month?`;},
-      phoneNote:(p,S)=>{const h=horizonFor(p,S);return h!==S.targetAge?`The room is playing to ${S.targetAge}. At ${p.age} your finish line is ${h}.`:'';},
+      phoneNote:(p,S)=>{const h=horizonFor(p,S);return h!==S.targetAge?`The room is playing to ${S.targetAge}. At ${p.age} you get ${MIN_YEARS} years, so your finish line is ${h}.`:`That's ${h-p.age} years to build it.`;},
       chips:SIP_CHIPS, unit:'per month'},
   r2:{n:2,title:'The cost of waiting',
       hostQ:S=>`Same target. But you do nothing for <em>${S.delayYears} years</em> and start then. How much a month <em>now</em>?`,
       hostWhy:S=>`Same ${fmtMoney(S.target)}, same ${S.rate}%, same finish line. You just start later.`,
-      phoneQ:(p,S)=>{const c=calc(p,S);return `Same ${fmtMoney(S.target)} by ${c.horizon}. But you wait <em>${c.delay} years</em> and start at ${p.age+c.delay}. How much a month then?`;},
+      phoneQ:(p,S)=>{const c=calc(p,S);return `Same ${fmtMoney(S.target)} by ${c.horizon}. But you wait <em>${c.delay} years</em> and start at ${c.lateStart}. How much a month now?`;},
       phoneNote:()=>'', chips:SIP_CHIPS, unit:'per month'},
   r3:{n:3,title:'The flip',
       hostQ:S=>`Forget ${fmtMoney(S.target)}. You invest just <em>${fmtMoney(S.flipSip)} a month</em> from today until you're <em>${S.flipAge}</em>. What does it become?`,
       hostWhy:S=>`Same ${S.rate}% a year. No increases, no top-ups. Just ${fmtMoney(S.flipSip)} every month, left to grow.`,
-      phoneQ:(p,S)=>`You're ${p.age}. You invest <em>${fmtMoney(S.flipSip)} a month</em> from today until you're ${S.flipAge}. What does it grow to?`,
+      phoneQ:(p,S)=>`You're ${p.age}. You invest <em>${fmtMoney(S.flipSip)} a month</em> from today until you're ${flipHorizonFor(p,S)}. What does it grow to?`,
       phoneNote:()=>'', chips:FV_CHIPS, unit:'in total'},
 };
 function roundOf(phase){ const m=/^(r\d)_/.exec(phase||''); return m?m[1]:null; }
 
 /* ── role / room ──────────────────────────────────────────────── */
 const params=new URLSearchParams(location.search);
-let ROLE=params.get('role')||'host';
+// A link shared on WhatsApp has no ?role. On a phone that should be a friendly "find your number" page, not the teacher screen.
+const _soloDetect=()=>{ try{ return matchMedia('(pointer:coarse)').matches&&innerWidth<700; }catch(e){ return false; } };
+let ROLE=params.get('role')||(_soloDetect()?'solo':'host');
 let ROOM=params.get('room')||null;
 const MY_ID=(function(){let id=localStorage.getItem('wh_pid');if(!id){id=(crypto.randomUUID?crypto.randomUUID():'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,10));localStorage.setItem('wh_pid',id);}return id;})();
 let isHost=(ROLE==='host');
@@ -468,7 +578,8 @@ async function initHost(){
   if(params.get('demo')&&/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){
     const D=[['Aanya',21,25000,100000,5000000,0],['Rohan',24,50000,200000,2500000,1],['Meera',27,150000,500000,10000000,0],['Kabir',29,100000,300000,20000000,3],['Zoya',22,10000,50000,1000000,4],['Dev',31,200000,600000,50000000,0]];
     D.forEach((d,i)=>{ state.players['d'+i]={id:'d'+i,name:d[0],age:d[1],av:AV_EMOJI[i],color:AV_COLOR[i],guess:{r1:d[2],r2:d[3],r3:d[4]},vote:d[5]}; });
-    state.phase=params.get('phase')||'lobby'; if(/_whatif$/.test(state.phase)) state.whatif={targetAge:60};
+    state.phase=params.get('phase')||'lobby'; if(/_whatif$/.test(state.phase)){ const rk=state.phase.slice(0,2); state.whatif=rk==='r1'?{targetAge:60}:rk==='r2'?{delayYears:10}:{flipSip:100000}; }
+    if(params.get('old')){ state.players.d6={id:'d6',name:'Aditya',age:46,av:'🦊',color:'#e05a47',guess:{r1:50000,r2:200000,r3:5000000},vote:0}; }
   }
   const rb=document.createElement('button'); rb.className='host-reset'; rb.textContent='↺ New game'; rb.onclick=hostReset; document.body.appendChild(rb);
   const jw=document.createElement('div'); jw.className='join-corner'; jw.id='joinCorner'; jw.title='Scan to join or rejoin';
@@ -535,7 +646,7 @@ function hostHandleAction(a){
 }
 
 /* ── host render ──────────────────────────────────────────────── */
-const NEXT_LABEL={lobby:'Start · Round 1 →',r1_ask:'Reveal →',r1_reveal:'What if…? →',r1_whatif:'Round 2 →',r2_ask:'Reveal →',r2_reveal:'What if…? →',r2_whatif:'Round 3 →',r3_ask:'Reveal →',r3_reveal:'What if…? →',r3_whatif:'One last question →',poll:'Wrap up →',end:''};
+const NEXT_LABEL={lobby:'Start · Round 1 →',r1_ask:'Reveal the real numbers →',r1_reveal:'Now… what if? →',r1_whatif:'On to Round 2 →',r2_ask:'Reveal the real numbers →',r2_reveal:'Now… what if? →',r2_whatif:'On to Round 3 →',r3_ask:'Reveal the real numbers →',r3_reveal:'Now… what if? →',r3_whatif:'One last question →',poll:'Wrap up →',end:''};
 function renderHost(){
   clearTimers(); postLive();
   const h=document.getElementById('host'); const ph=state.phase;
@@ -543,7 +654,7 @@ function renderHost(){
   document.getElementById('joinCorner').style.display=lobby?'none':'flex';
   h.classList.toggle('has-corner',!lobby);
   document.body.classList.toggle('end-bg',ph==='end');
-  const kh=document.getElementById('keyHint'); kh.innerHTML='<b>Space</b> / <b>→</b> next · <b>←</b> back'; kh.style.display=(lobby||/_(reveal|whatif)$/.test(ph))?'none':'block';
+  const kh=document.getElementById('keyHint'); kh.innerHTML='<b>Space</b> / <b>→</b> next · <b>←</b> back'; kh.style.display=lobby?'none':'block';
   document.getElementById('hostBack').style.display=lobby?'none':'block';
   const nx=document.getElementById('hostNext'); nx.textContent=NEXT_LABEL[ph]||''; nx.style.display=(lobby||!NEXT_LABEL[ph])?'none':'block';
   if(lobby) h.innerHTML=tplLobby();
@@ -557,16 +668,20 @@ function renderHost(){
   if(lobby) makeQR(document.getElementById('lobbyQr'),innerHeight<900?196:224);
   runCountUps();
 }
-// Live "what if" levers on the reveal screens. Flipping one re-runs every number on the projector AND on
-// every phone — the room watches ₹1.15 L a month become ₹8.5k when the finish line moves from 40 to 60.
+// The "what if" control panel (1B / 2B / 3B). Big controls on the left of the screen, big results on the right.
+// Flipping a control re-runs every number on the projector AND on every phone. Nothing here touches the real game.
 function whatIf(rk){
-  const parts=[`<span class="grp"><span class="wl">By age</span>${chipRow('targetAge',[40,50,60],v=>v)}</span>`,
-               `<span class="grp"><span class="wl">Return</span><input type="range" class="rate" min="6" max="18" step="0.5" value="${W().rate}" oninput="document.getElementById('rateV').textContent=(+this.value)+'%'" onchange="setSetting('rate',+this.value)"><b class="rate-v" id="rateV">${W().rate}%</b></span>`];
-  if(rk==='r2') parts.push(`<span class="grp"><span class="wl">Wait</span>${chipRow('delayYears',[3,5,10],v=>v+' yrs')}</span>`);
-  if(rk==='r3') parts.push(`<span class="grp"><span class="wl">A month</span>${chipRow('flipSip',[2000,5000,10000],fmtMoney)}</span>`);
-  if(rk!=='r3') parts.push(`<span class="grp"><span class="wl">Target</span>${chipRow('target',[10000000,50000000,100000000],fmtMoney)}</span>`);
-  parts.push(`<button class="chip" onclick="resetWhatIf()" title="Back to the rules the room played">↺ as played</button>`);
-  return `<div class="glass whatif"><span class="wk">What if…</span>${parts.join('')}</div>`;
+  const grp=(label,html)=>`<div class="wi-g"><div class="wi-l">${label}</div>${html}</div>`;
+  const g=[];
+  if(rk==='r3'){
+    g.push(grp('Monthly amount',`<div class="wi-chips">${chipRow('flipSip',FLIP_CHIPS,fmtMoney)}</div>`));
+  }else{
+    g.push(grp('Finish line',`<div class="wi-chips">${chipRow('targetAge',[40,50,60],v=>'by '+v)}</div>`));
+    if(rk==='r2') g.push(grp('Years you wait',`<div class="wi-chips">${chipRow('delayYears',[3,5,10],v=>v+' yrs')}</div>`));
+    g.push(grp('Target',`<div class="wi-chips">${chipRow('target',[10000000,50000000,100000000],fmtMoney)}</div>`));
+  }
+  g.push(grp(`Return <b class="wi-v" id="rateV">${W().rate}%</b>`,`<input type="range" class="rate" min="6" max="18" step="0.5" value="${W().rate}" oninput="document.getElementById('rateV').textContent=(+this.value)+'%'" onchange="setSetting('rate',+this.value)">`));
+  return `<div class="glass wi-ctl"><div class="wi-h"><span>What if…</span><button class="chip" onclick="resetWhatIf()" title="Back to the rules the room played">↺ as played</button></div>${g.join('')}</div>`;
 }
 function chipRow(k,opts,fmtf){ return opts.map(v=>`<button class="chip ${W()[k]===v?'on':''}" onclick="setSetting('${k}',${v})">${fmtf(v)}</button>`).join(''); }
 const sizeClass=n=>n<=8?'sz-xl':n<=16?'sz-lg':'';   // names stay big in small rooms, shrink gracefully in big ones
@@ -608,7 +723,6 @@ function tplAsk(rk){
     <div class="live"><i></i> Live · guess on your phone</div>
     <div class="prog"><b>${done}</b> / ${ps.length} locked in</div>
     <div class="pl-wall ${sizeClass(ps.length)}">${ps.map(p=>`<span class="pl ${p.guess[rk]>0?'lit':'dim'}">${av(p)}${esc(p.name)} <span class="age">${p.age}</span></span>`).join('')}</div>
-    <button class="btn gold big" onclick="hostAdvance()">Reveal the real numbers →</button>
   </div>`;
 }
 function closest(rk){
@@ -623,20 +737,39 @@ function runCountUps(){
   });
 }
 const STEP=380; // ms between rows on a reveal — youngest first, so the number visibly climbs
-const ageCell=(p,k,s)=>`<span>${p.age}${k.horizon!==s.targetAge?` <small>→${k.horizon}</small>`:''}</span>`;
+// One timeline per person: today → (wait) → start → finish line. The coral hatched stretch is the years lost to waiting;
+// the gold stretch is the years the money gets to grow. It is rebuilt from calc() on every render, so every lever on
+// a what-if screen visibly stretches or shrinks it. Fixed 16–66 scale so rows stay comparable.
+const LB0=16, LB1=66;
+function lifeBar(p,k,rk){
+  const pos=a=>Math.max(0,Math.min(100,(a-LB0)/(LB1-LB0)*100));
+  const now=p.age, fin=rk==='r3'?k.flipHorizon:k.horizon, wait=rk==='r2'?k.delay:0, start=now+wait;
+  const xn=pos(now), xs=pos(start), xf=pos(fin), grow=fin-start;
+  const showStart=wait&&(xf-xs)>=13&&(xs-xn)>=6;   // labels only when they have room; the caption always says it in words
+  const cap=wait?`<span class="lost">${wait} yrs lost</span> · <span class="grow">${grow} yr${grow===1?'':'s'} to grow</span>`:`<span class="grow">${grow} yrs to grow</span>`;
+  return `<div class="lb"><div class="lb-c">${cap}</div><div class="lb-track">
+    ${wait?`<i class="lb-seg lb-wait" style="left:${xn}%;width:${Math.max(0,xs-xn)}%"></i>`:''}
+    <i class="lb-seg lb-inv" style="left:${xs}%;width:${Math.max(1.5,xf-xs)}%"></i>
+    <b class="lb-dot" style="left:${xn}%;background:${p.color}"></b>
+    ${wait?`<b class="lb-dot s" style="left:${xs}%"></b>`:''}
+    <b class="lb-flag" style="left:${xf}%"></b></div>
+    <span class="lb-t n" style="left:${xn}%">${now}</span>
+    ${showStart?`<span class="lb-t s" style="left:${xs}%">${start}</span>`:''}
+    <span class="lb-t f" style="left:${xf}%">${fin}</span></div>`;
+}
 function tplReveal1(){
   const ps=playersSorted(), s=S(); const c=closest('r1');
   const guessed=ps.filter(p=>p.guess.r1>0);
   const avgGuess=guessed.length?guessed.reduce((a,p)=>a+p.guess.r1,0)/guessed.length:0;
   const avgReal=ps.length?ps.reduce((a,p)=>a+calc(p,s).now,0)/ps.length:0;
   const rows=ps.map((p,i)=>{ const k=calc(p,s); const o=offBy(p.guess.r1,k.now);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${ageCell(p,k,s)}<span class="guess">${p.guess.r1>0?fmtMoney(p.guess.r1):'—'}</span>${cu(k.now,'real'+(k.now>=200000?' hot':''),i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
+    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r1')}<span class="guess">${p.guess.r1>0?fmtMoney(p.guess.r1):'—'}</span>${cu(k.now,'real'+(k.now>=200000?' hot':''),i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
   const n=ps.length;
   return `<div class="stage">
     <div class="presents">Round 1 · the real numbers</div>
     <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">${fmtMoney(s.target)} by ${s.targetAge} · what each of you needs <em>every month</em></h2>
     <div class="rv">
-      <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Age</span><span>Guessed</span><span>Real · per month</span><span>Off by</span></div>${rows}</div>
+      <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Today → finish line</span><span>Guessed</span><span>Real · per month</span><span>Off by</span></div>${rows}</div>
       <div class="side">
         <div class="glass stat">${chart1(ps,s)}</div>
         <div class="glass stat"><div class="kicker">The room guessed, on average</div><div class="big">${avgGuess?fmtMoney(avgGuess):'—'}</div><div class="sm">Real average <b>${fmtMoney(avgReal)}</b> a month${avgGuess&&avgReal>avgGuess?` · <b style="color:var(--coral)">${(avgReal/avgGuess).toFixed(1)}× more than you thought</b>`:''}</div></div>
@@ -663,13 +796,13 @@ function tplReveal2(){
   const ps=playersSorted(), s=S(); const c=closest('r2');
   const extra=ps.reduce((a,p)=>{const k=calc(p,s);return a+(k.late-k.now);},0);
   const rows=ps.map((p,i)=>{ const k=calc(p,s);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${ageCell(p,k,s)}<span class="guess">now <b style="color:var(--stage-ink)">${fmtMoney(k.now)}</b></span>${cu(k.late,'real hot',i*STEP+150)}<span class="extra" data-cu="${Math.round(k.late-k.now)}" data-delay="${i*STEP+150}">₹0</span></div>`; }).join('');
+    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r2')}<span class="guess">now <b style="color:var(--stage-ink)">${fmtMoney(k.now)}</b></span>${cu(k.late,'real hot',i*STEP+150)}<span class="extra" data-cu="${Math.round(k.late-k.now)}" data-delay="${i*STEP+150}">₹0</span></div>`; }).join('');
   const n=ps.length;
   return `<div class="stage">
     <div class="presents">Round 2 · the cost of waiting</div>
     <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">Start <em>${s.delayYears} years later</em> and the monthly number becomes…</h2>
     <div class="rv">
-      <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Age</span><span>Start now</span><span>Start ${s.delayYears} yrs late</span><span>Extra · every month</span></div>${rows}</div>
+      <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Today → wait → finish line</span><span>Start now</span><span>Start ${s.delayYears} yrs late</span><span>Extra · every month</span></div>${rows}</div>
       <div class="side">
         <div class="glass stat"><div class="kicker">Waiting ${s.delayYears} years costs this room</div><div class="big coral">${fmtMoney(extra)}</div><div class="sm">more, every single month, for the same ${fmtMoney(s.target)}</div></div>
         <div class="glass stat"><div class="kicker">Why it hurts so much</div><div class="sm" style="font-size:.95rem;color:var(--stage-ink)">The first years are the cheapest ones you will ever get. Money invested at ${Math.min(...ps.map(p=>p.age))} has the longest run to grow. Skip those years and you replace them with your own cash later.</div></div>
@@ -683,13 +816,13 @@ function tplReveal3(){
   const ps=playersSorted(), s=S(); const c=closest('r3');
   const young=ps[0], old=ps[ps.length-1];
   const rows=ps.map((p,i)=>{ const k=calc(p,s); const o=offBy(p.guess.r3,k.flip);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span><span>${p.age}</span><span class="guess">${p.guess.r3>0?fmtMoney(p.guess.r3):'—'}</span>${cu(k.flip,'real',i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
+    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r3')}<span class="guess">${p.guess.r3>0?fmtMoney(p.guess.r3):'—'}</span>${cu(k.flip,'real',i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
   const n=ps.length; const totalIn=p=>s.flipSip*12*calc(p,s).flipYrs;
   return `<div class="stage">
     <div class="presents">Round 3 · the flip</div>
     <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">${fmtMoney(s.flipSip)} a month until ${s.flipAge} becomes…</h2>
     <div class="rv">
-      <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Age</span><span>Guessed</span><span>It becomes</span><span>Off by</span></div>${rows}</div>
+      <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Today → age ${s.flipAge}</span><span>Guessed</span><span>It becomes</span><span>Off by</span></div>${rows}</div>
       <div class="side">
         ${young?`<div class="glass stat"><div class="kicker">${esc(young.name)}, ${young.age} · puts in ${fmtMoney(totalIn(young))} in total</div><div class="big teal">${fmtMoney(calc(young,s).flip)}</div><div class="sm">${(calc(young,s).flip/totalIn(young)).toFixed(0)}× what went in. The rest is growth.</div></div>`:''}
         ${old&&old!==young?`<div class="glass stat"><div class="kicker">${esc(old.name)}, ${old.age} · puts in ${fmtMoney(totalIn(old))} in total</div><div class="big">${fmtMoney(calc(old,s).flip)}</div><div class="sm">Same ${fmtMoney(s.flipSip)}. ${old.age-young.age} years less time. ${(calc(young,s).flip/calc(old,s).flip).toFixed(1)}× less money.</div></div>`:''}
@@ -699,32 +832,42 @@ function tplReveal3(){
     <p class="punch" style="animation-delay:${n*STEP+500}ms">Time does most of the work. You only have to start.</p>
   </div>`;
 }
-// 1B / 2B / 3B — Hiral's sandbox. Left column: the number each person got under the rules the room played
-// (frozen), next to the number under the rules on the lever bar. The guesses are not shown: the rules moved,
-// so "off by" would be meaningless here. Nothing on this screen changes the real game.
+// 1B / 2B / 3B — Hiral's sandbox, and the main learning tool of the game. Left: the room average as played next to
+// the room average under the controls, then the controls themselves. Right: every person, with their timeline.
+// The guesses are not shown here (the rules moved, so "off by" would mean nothing).
 function whatIfRow(p,rk,s,w,i){
   const a=realFor(p,rk,s), b=realFor(p,rk,w), d=b-a, k=calc(p,w);
-  const chg=Math.abs(d)<1?'<span class="off">same</span>':`<span class="off ${d>0?'low':'up'}">${d>0?'+':'−'}${fmtMoney(Math.abs(d))}</span>`;
-  return `<div class="rv-row" style="animation-delay:${i*120}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${ageCell(p,k,w)}<span class="guess">${fmtMoney(a)}</span>${cu(b,'real'+(b>a?' hot':''),i*120+100)}${chg}</div>`;
+  const good=rk==='r3'?d>0:d<0;   // a smaller monthly number is good news; a bigger final amount is good news
+  const pastLine=rk!=='r3'&&p.age+MIN_YEARS>w.targetAge&&Math.abs(d)<1;
+  const chg=Math.abs(d)<1?`<span class="wi-chg same">no change${pastLine?'<small>past this line</small>':''}</span>`
+    :`<span class="wi-chg ${good?'good':'bad'}">${d>0?'▲ +':'▼ −'}${fmtMoney(Math.abs(d))}</span>`;
+  return `<div class="rv-row wi-row" style="animation-delay:${i*90}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,rk)}<span class="guess">${fmtMoney(a)}</span>${cu(b,'wi-real'+(good?' good':Math.abs(d)<1?'':' bad'),i*90+100)}${chg}</div>`;
 }
 function tplWhatIf(rk){
-  const ps=playersSorted(), s=S(), w=W(); const R=ROUNDS[rk];
+  const ps=playersSorted(), s=S(), w=W(), R=ROUNDS[rk], n=ps.length;
   const changed=JSON.stringify(state.whatif||{})!=='{}';
-  const unit=rk==='r3'?'it becomes':'per month';
-  const played=rk==='r3'?`${fmtMoney(s.flipSip)}/mo to ${s.flipAge} at ${s.rate}%`:rk==='r2'?`${fmtMoney(s.target)} by ${s.targetAge}, ${s.delayYears} yrs late, ${s.rate}%`:`${fmtMoney(s.target)} by ${s.targetAge} at ${s.rate}%`;
-  const now=rk==='r3'?`${fmtMoney(w.flipSip)}/mo to ${w.flipAge} at ${w.rate}%`:rk==='r2'?`${fmtMoney(w.target)} by ${w.targetAge}, ${w.delayYears} yrs late, ${w.rate}%`:`${fmtMoney(w.target)} by ${w.targetAge} at ${w.rate}%`;
+  const played=rk==='r3'?`${fmtMoney(s.flipSip)} a month to ${s.flipAge} · ${s.rate}%`:rk==='r2'?`${fmtMoney(s.target)} by ${s.targetAge} · ${s.delayYears} yrs late · ${s.rate}%`:`${fmtMoney(s.target)} by ${s.targetAge} · ${s.rate}%`;
+  const now=rk==='r3'?`${fmtMoney(w.flipSip)} a month to ${w.flipAge} · ${w.rate}%`:rk==='r2'?`${fmtMoney(w.target)} by ${w.targetAge} · ${w.delayYears} yrs late · ${w.rate}%`:`${fmtMoney(w.target)} by ${w.targetAge} · ${w.rate}%`;
   const rows=ps.map((p,i)=>whatIfRow(p,rk,s,w,i)).join('');
-  const avgA=ps.reduce((a,p)=>a+realFor(p,rk,s),0)/ps.length, avgB=ps.reduce((a,p)=>a+realFor(p,rk,w),0)/ps.length;
-  return `<div class="stage">
+  const avgA=ps.reduce((a,p)=>a+realFor(p,rk,s),0)/n, avgB=ps.reduce((a,p)=>a+realFor(p,rk,w),0)/n;
+  const unit=rk==='r3'?'it becomes':'a month';
+  const good=rk==='r3'?avgB>avgA:avgB<avgA;
+  const hdrTl=rk==='r2'?'Today → wait → finish line':rk==='r3'?`Today → age ${w.flipAge}`:'Today → finish line';
+  return `<div class="stage wi-stage">
     <div class="presents">Round ${R.n}B · what if…?</div>
-    <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">Change one thing. <em>Watch every number move.</em></h2>
-    ${whatIf(rk)}
-    <div class="rv">
-      <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Age</span><span>As played</span><span>What if · ${unit}</span><span>Change</span></div>${rows}</div>
-      <div class="side">
-        ${rk==='r1'?`<div class="glass stat">${chart1(ps,w,'Monthly SIP needed, by the age you start · what-if rules')}</div>`:''}
-        <div class="glass stat"><div class="kicker">As played</div><div class="sm" style="color:var(--stage-ink)">${played}</div><div class="big" style="font-size:1.4rem">${fmtMoney(avgA)} <span style="font:800 .8rem 'Manrope',sans-serif;color:var(--stage-sub)">room average</span></div></div>
-        <div class="glass stat" style="border-color:${changed?'rgba(45,212,191,.45)':'var(--glass-edge)'}"><div class="kicker">What if</div><div class="sm" style="color:var(--stage-ink)">${now}</div><div class="big ${avgB<avgA?'teal':'gold'}" style="font-size:1.4rem">${fmtMoney(avgB)} <span style="font:800 .8rem 'Manrope',sans-serif;color:var(--stage-sub)">room average</span></div>${changed?`<div class="sm">${avgB<avgA?'↓':'↑'} ${fmtMoney(Math.abs(avgB-avgA))} ${rk==='r3'?'':'a month'} ${avgB<avgA?'less':'more'} than as played</div>`:'<div class="sm">Tap a lever above. The phones change with it.</div>'}</div>
+    <div class="wi-grid">
+      <div class="wi-left">
+        <div class="glass wi-score ${changed?'on':''}">
+          <div class="wi-sc"><div><div class="kicker">As played · room average</div><div class="wi-n dim">${fmtMoney(avgA)}</div><div class="wi-s">${played}</div></div>
+          <div class="wi-arrow">→</div>
+          <div><div class="kicker">What if</div>${cu(avgB,'wi-n '+(changed?(good?'good':'bad'):''),0)}<div class="wi-s">${now}</div></div></div>
+          ${changed&&Math.abs(avgB-avgA)>=1?`<div class="wi-delta ${good?'good':'bad'}">${avgB<avgA?'▼':'▲'} ${fmtMoney(Math.abs(avgB-avgA))} ${avgB<avgA?'less':'more'} ${unit==='a month'?'every month':'in the end'}</div>`:`<div class="wi-delta idle">Tap a control below. Every number moves.</div>`}
+        </div>
+        ${whatIf(rk)}
+        ${rk==='r1'?`<div class="glass stat wi-chart">${chart1(ps,w,'The curve · what-if rules')}</div>`:''}
+      </div>
+      <div class="glass rv-table wi-table ${n>8?'dense':''}">
+        <div class="rv-head"><span>Name</span><span>${hdrTl}</span><span>As played</span><span>What if</span><span>Change</span></div>${rows}
       </div>
     </div>
   </div>`;
@@ -816,12 +959,35 @@ function pLock(rk){ if(!(_pendingVal>0)) return; myLocal[rk]=_pendingVal; myLock
 function pChange(rk){ myLockedNonce[rk]=-1; renderPlayer(); }
 function pVote(i){ myLocal.vote=i; sendAction({type:'vote',id:MY_ID,value:i}); renderPlayer(); }
 // WhatsApp share (§20): one function, message encoded at runtime, app URL appended — never a bare wa.me href.
-function ifmShare(msg){ window.open('https://wa.me/?text='+encodeURIComponent(msg+'\n\n👉 https://ifm-deploy.vercel.app'),'_blank'); }
+function ifmShare(msg){ window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank'); }   // the message already ends on SHARE_URL (games.investingformummies.com) — nothing else is appended
 const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>';
 let _shareMsg='';
 function waBtn(msg,label){ _shareMsg=msg; return `<button class="p-btn wa" onclick="ifmShare(_shareMsg)">${WA_ICON}<span>${label}</span></button>`; }
-function numbersText(p,s){ const k=calc(p,s); return `📊 ${p.name}, ${p.age} — my numbers from ${GAME_NAME}:\n\n• ${fmtMoney(s.target)} by ${k.horizon}, start now: ${fmtMoney(k.now)}/month\n• Start ${k.delay} years late: ${fmtMoney(k.late)}/month\n• ${fmtMoney(s.flipSip)}/month until ${s.flipAge} becomes: ${fmtMoney(k.flip)}${p.vote!=null&&BLOCKERS[p.vote]?`
-• What held me back: ${BLOCKERS[p.vote].short}`:''}\n\nAssumes ${s.rate}% a year. Investing for Mummies`; }
+// The WhatsApp message people forward to friends. WhatsApp renders *bold* and _italic_. It ends on the games link only.
+function numbersText(p,s,blocker){
+  const k=calc(p,s); const L=[];
+  L.push('💰 *The Wealth Hack*','_my numbers, straight from class_','');
+  L.push(`🙋 *${p.name}${p.age?', '+p.age:''}*`,'');
+  L.push(`🎯 *${fmtMoney(s.target)} by ${k.horizon}*`);
+  L.push(`▸ Start today: *${fmtMoney(k.now)} a month*`);
+  L.push(`▸ Start ${k.delay} years late: *${fmtMoney(k.late)} a month*`);
+  L.push(`   _that's ${fmtMoney(k.late-k.now)} more, every single month_`,'');
+  L.push(`🔁 *${fmtMoney(s.flipSip)} a month until ${k.flipHorizon}*`);
+  L.push(`▸ Becomes *${fmtMoney(k.flip)}*`);
+  L.push(`   _${fmtMoney(s.flipSip*12*k.flipYrs)} put in. The rest is growth._`);
+  if(blocker) L.push('',`🧠 What held me back: _${blocker}_`);
+  L.push('','_One started early. One started "soon". Only one of them is rich._',`_(assumes ${s.rate}% a year, not a promise)_`,'','Find your number 👇',SHARE_URL);
+  return L.join('\n');
+}
+// What the player's own guess would actually have become, for the reveal screen.
+function projHtml(p,rk,s,g){
+  if(!g||rk==='r3') return '';
+  const k=calc(p,s), yrs=rk==='r1'?k.yrs:k.yrsLate, big=guessBecomes(p,rk,s,g), gap=big-s.target;
+  const close=Math.abs(gap)/s.target<0.05, over=gap>0;
+  return `<div class="proj ${close?'close':over?'over':'under'}"><div class="proj-h">Your guess, put to work</div>
+    <div class="proj-row"><span>${fmtMoney(g)} a month<br>for ${yrs} years</span><b>→ ${fmtMoney(big)}</b></div>
+    <div class="proj-t">${close?`Right on the money. That is almost exactly your ${fmtMoney(s.target)} goal.`:over?`That is <b>${fmtMoney(gap)} past</b> your ${fmtMoney(s.target)} goal. You would have got there early.`:`That is <b>${fmtMoney(-gap)} short</b> of your ${fmtMoney(s.target)} goal.`}</div></div>`;
+}
 
 function renderPlayer(){
   const el=document.getElementById('player'); if(!state){ el.innerHTML=shell('<div class="card center"><h2>Finding the game…</h2><p>Room '+esc(ROOM)+'</p></div>'); return; }
@@ -840,29 +1006,39 @@ function renderPlayer(){
   if(ph==='lobby') return el.innerHTML=shell(`<div class="card center"><div class="av" style="background:${p.color}">${p.av}</div><h2>You're in, ${esc(p.name)}.</h2><p>Age ${p.age}. Eyes on the screen. The teacher starts the game.</p></div>`,true);
   if(rk&&/_ask$/.test(ph)){
     const R=ROUNDS[rk]; const locked=myLockedNonce[rk]===state.nonce||(p.guess[rk]>0&&myLockedNonce[rk]!==-1);
-    const val=myLocal[rk]||p.guess[rk]||0; const note=R.phoneNote(p,s);
-    if(locked) return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(p,s)}</h2>
+    const val=myLocal[rk]||p.guess[rk]||0; const note=R.phoneNote(p,s); const k=calc(p,s);
+    // Round 2 gives the Round 1 answer as context, and does the years maths for them.
+    const ctx=rk!=='r2'?'':`<div class="ctx"><div class="ctx-h">For reference · Round 1</div>
+      <div class="ctx-row"><div><div class="ctx-n">${fmtMoney(k.now)}</div><div class="ctx-s">a month, starting at ${p.age}<br><b>${k.yrs} years</b> to build</div></div>
+      <div class="ctx-arrow">→</div>
+      <div><div class="ctx-n q">₹ ?</div><div class="ctx-s">a month, starting at ${k.lateStart}<br><b class="red">${k.yrsLate} years</b> to build</div></div></div>
+      <div class="ctx-t"><b>${k.delay} fewer years</b>, same goal. Each month has to work harder.</div></div>`;
+    if(locked) return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(p,s)}</h2>${ctx}
       <div class="locked"><div class="lbl">Locked in ✓</div><div class="v">${fmtMoney(val)}</div><div class="u">${R.unit}</div></div>
       <p style="margin:0 0 4px">Watch the screen for the reveal.</p><button class="p-btn outline" onclick="pChange('${rk}')">Change my guess</button></div>`);
-    return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(p,s)}</h2><p>${note||'Guess. Nobody gets it right first time.'}</p>
-      <div class="chips">${R.chips.map(v=>`<button class="chip ${v===val?'on':''}" data-v="${v}" onclick="pickChip(${v})">${fmtMoney(v)}</button>`).join('')}</div>
-      <div class="field"><div class="lbl">Your guess · ${R.unit}</div><div class="inp-wrap"><span class="rs">₹</span><input id="moneyInput" class="inp money" inputmode="numeric" placeholder="0" oninput="onMoney(this)" value="${val?indianFormat(val):''}"></div><span class="sh-badge" id="shBadge">${val?fmtMoney(val):''}</span></div>
-      <button class="p-btn" id="lockBtn" onclick="pLock('${rk}')" ${val?'':'disabled'}>Lock it in →</button></div>`);
+    return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(p,s)}</h2>${ctx}<p class="ask-note">${note||'Guess. Nobody gets it right first time.'}</p>
+      <div class="amt"><div class="amt-l">Your guess · ${R.unit}</div>
+        <div class="amt-box"><span class="rs">₹</span><input id="moneyInput" class="amt-in" inputmode="numeric" placeholder="0" oninput="onMoney(this)" value="${val?indianFormat(val):''}"></div>
+        <div class="amt-sh" id="shBadge">${val?fmtMoney(val):''}</div></div>
+      <div class="chips big">${R.chips.map(v=>`<button class="chip ${v===val?'on':''}" data-v="${v}" onclick="pickChip(${v})">${fmtMoney(v)}</button>`).join('')}</div>
+      <button class="p-btn big" id="lockBtn" onclick="pLock('${rk}')" ${val?'':'disabled'}>Lock it in →</button></div>`);
   }
   if(rk&&/_reveal$/.test(ph)){
     const k=calc(p,s); const real=realFor(p,rk,s); const g=p.guess[rk]||0; const o=offBy(g,real); const R=ROUNDS[rk];
     let line='';
     if(rk==='r1') line=`<div class="fb">Wait just <b>one year</b> and your number becomes <b>${fmtMoney(k.plus1)}</b> a month — <b>${fmtMoney(k.plus1-k.now)}</b> more, every month, for the rest of the way.</div>`;
-    if(rk==='r2') line=`<div class="fb">Starting at ${p.age}: <b style="color:var(--teal-d)">${fmtMoney(k.now)}</b>. Starting at ${p.age+k.delay}: <b>${fmtMoney(k.late)}</b>. Those ${k.delay} years cost you <b>${fmtMoney(k.late-k.now)}</b> every month.</div>`;
+    if(rk==='r2') line=`<div class="fb">Starting at ${p.age}: <b style="color:var(--teal-d)">${fmtMoney(k.now)}</b>. Starting at ${k.lateStart}: <b>${fmtMoney(k.late)}</b>. Those ${k.delay} years cost you <b>${fmtMoney(k.late-k.now)}</b> every month.</div>`;
     if(rk==='r3') line=`<div class="fb good">You put in ${fmtMoney(s.flipSip*12*k.flipYrs)} in total. Growth does the rest. Had you started 5 years earlier: <b>${fmtMoney(k.flipEarly)}</b>.</div>`;
     return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n} · the real number</div>
-      <div class="real"><div class="lbl">${rk==='r3'?`${fmtMoney(s.flipSip)} a month until ${s.flipAge} becomes`:`You need, every month`}</div><div class="v ${rk==='r2'?'red':''}">${fmtMoney(real)}</div><div class="g">you guessed ${g?fmtMoney(g):'—'}</div><span class="off ${o.cls}">${o.txt}</span></div>${line}</div>`);
+      <div class="real"><div class="lbl">${rk==='r3'?`${fmtMoney(s.flipSip)} a month until ${k.flipHorizon} becomes`:`You need, every month`}</div><div class="v ${rk==='r2'?'red':''}">${fmtMoney(real)}</div><div class="g">you guessed ${g?fmtMoney(g):'—'}</div><span class="off ${o.cls}">${o.txt}</span></div>${projHtml(p,rk,s,g)}${line}</div>`);
   }
   if(rk&&/_whatif$/.test(ph)){
-    const w=Object.assign({},s,state.whatif||{}); const a=realFor(p,rk,s), b=realFor(p,rk,w); const R=ROUNDS[rk];
-    const rule=rk==='r3'?`${fmtMoney(w.flipSip)} a month until ${w.flipAge}, at ${w.rate}%`:rk==='r2'?`${fmtMoney(w.target)} by ${horizonFor(p,w)}, starting ${calc(p,w).delay} years late, at ${w.rate}%`:`${fmtMoney(w.target)} by ${horizonFor(p,w)}, at ${w.rate}%`;
+    const w=Object.assign({},s,state.whatif||{}); const a=realFor(p,rk,s), b=realFor(p,rk,w), kw=calc(p,w); const R=ROUNDS[rk];
+    const good=rk==='r3'?b>a:b<a;
+    const rule=rk==='r3'?`${fmtMoney(w.flipSip)} a month until ${kw.flipHorizon}, at ${w.rate}%`:rk==='r2'?`${fmtMoney(w.target)} by ${kw.horizon}, starting ${kw.delay} years late, at ${w.rate}%`:`${fmtMoney(w.target)} by ${kw.horizon}, at ${w.rate}%`;
     return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n}B · what if…?</div><h2>The rules on screen are changing. <em>So is your number.</em></h2><p>${rule}</p>
-      <div class="real"><div class="lbl">${rk==='r3'?'it becomes':'you need, every month'}</div><div class="v ${b>a?'red':''}">${fmtMoney(b)}</div><div class="g">as played: ${fmtMoney(a)}</div>${Math.abs(b-a)>=1?`<span class="off ${b>a?'low':''}">${b>a?'+':'−'}${fmtMoney(Math.abs(b-a))}</span>`:''}</div></div>`);
+      <div class="real big"><div class="lbl">${rk==='r3'?'it becomes':'you need, every month'}</div><div class="v ${Math.abs(b-a)<1?'':good?'good':'bad'}">${fmtMoney(b)}</div><div class="g">as played: ${fmtMoney(a)}</div>${Math.abs(b-a)>=1?`<span class="off ${good?'':'low'}">${b>a?'▲ +':'▼ −'}${fmtMoney(Math.abs(b-a))}</span>`:'<span class="off high">no change</span>'}</div>
+      <div class="phone-lb">${lifeBar(p,kw,rk)}</div></div>`);
   }
   if(ph==='poll'){
     const mine=(p.vote!=null)?p.vote:(myLocal.vote!=null?myLocal.vote:null);
@@ -871,14 +1047,14 @@ function renderPlayer(){
       ${mine!=null?`<div class="fb good" style="margin-top:12px"><b>Locked in.</b> ${BLOCKERS[mine].fix} Tap another to change it.</div>`:''}</div>`);
   }
   if(ph==='end'){
-    const k=calc(p,s);
+    const k=calc(p,s); const bl=(p.vote!=null&&BLOCKERS[p.vote])?BLOCKERS[p.vote].short:'';
     return el.innerHTML=shell(`<div class="card"><div class="lbl">Your numbers · keep these</div><h2>${esc(p.name)}, ${p.age}</h2>
       <div class="sum">
         <div class="row"><span>${fmtMoney(s.target)} by ${k.horizon}, start now</span><b>${fmtMoney(k.now)}/mo</b></div>
         <div class="row"><span>…start ${k.delay} years late</span><b class="red">${fmtMoney(k.late)}/mo</b></div>
-        <div class="row"><span>${fmtMoney(s.flipSip)}/mo until ${s.flipAge}</span><b>${fmtMoney(k.flip)}</b></div>
-        ${p.vote!=null&&BLOCKERS[p.vote]?`<div class="row"><span>What held you back</span><b style="font-size:.85rem">${BLOCKERS[p.vote].short}</b></div>`:''}
-      </div>${waBtn(numbersText(p,s),'Share via WhatsApp')}<p style="margin:12px 0 0;text-align:center">The best month to start is this one.</p></div>`);
+        <div class="row"><span>${fmtMoney(s.flipSip)}/mo until ${k.flipHorizon}</span><b>${fmtMoney(k.flip)}</b></div>
+        ${bl?`<div class="row"><span>What held you back</span><b style="font-size:.85rem">${bl}</b></div>`:''}
+      </div>${waBtn(numbersText(p,s,bl),'Share on WhatsApp')}<p style="margin:12px 0 0;text-align:center">The best month to start is this one.</p></div>`);
   }
   el.innerHTML=shell('<div class="card center"><h2>Eyes on the screen</h2></div>');
 }
@@ -890,16 +1066,44 @@ function crowdRow(){
   const text=more>0?`<b>${names.join(', ')}</b> and ${more} other${more>1?'s':''}`:`<b>${names.join(' and ')}</b>`;
   return `<div class="crowd"><div class="stack">${show.map(p=>`<span style="background:${p.color}">${p.av}</span>`).join('')}${rest>0?`<span style="background:#3b4650;font-size:11px">+${rest}</span>`:''}</div><p>${text}<br>${others.length>1?'are':'is'} already in.</p></div>`;
 }
-function shell(inner,full){ const rate=state&&state.settings?state.settings.rate:12;
+function shell(inner,full,solo){ const rate=state&&state.settings?state.settings.rate:12;
   return `<div class="wrap">
     <div class="p-hero ${full?'full':''}"></div>
-    <div class="p-bar"><div class="mark"><img src="${LOGO}" alt=""></div><div class="brand">Investing<br>for Mummies</div><div class="room"><i></i>ROOM ${esc(ROOM||'')}</div></div>
+    <div class="p-bar"><div class="mark"><img src="${LOGO}" alt=""></div><div class="brand">Investing<br>for Mummies</div><div class="room"><i></i>${solo?'FIND YOUR NUMBER':'ROOM '+esc(ROOM||'')}</div></div>
     ${full?`<div class="p-title"><div class="the">The</div><h1>Wealth Hack</h1><p class="tag">One started early. One started “soon”. <b>Only one of them is rich.</b></p></div>`:`<div class="p-title compact"><h1>The Wealth Hack</h1></div>`}
     ${inner}
     ${full?crowdRow():''}
     <div class="foot">Investing for Mummies · assumes ${rate}% a year, not a promise</div></div>`; }
 
-if(isHost) initHost(); else initPlayer();
+let soloName='', soloAge=0, soloGo=false;
+function initSolo(){
+  document.getElementById('player').classList.remove('hide'); document.body.classList.add('player-bg');
+  state={phase:'solo',settings:freshState().settings,players:{},whatif:{}}; renderSolo();
+}
+function soloCheck(){ const a=parseInt((document.getElementById('soloAge')||{}).value,10)||0; const b=document.getElementById('soloBtn'); if(b) b.disabled=!(a>=10&&a<=70); }
+function soloShow(){ soloAge=parseInt(document.getElementById('soloAge').value,10)||0; soloName=(document.getElementById('soloName').value||'').trim().slice(0,16); if(soloAge<10||soloAge>70) return; soloGo=true; renderSolo(); }
+function soloReset(){ soloGo=false; renderSolo(); }
+function renderSolo(){
+  const el=document.getElementById('player'); const s=state.settings;
+  if(!soloGo){
+    el.innerHTML=shell(`<div class="card"><h2>Find your <em>number</em></h2><p>Tell us your age. We will show you what ${fmtMoney(s.target)} really costs a month, and what waiting does to it.</p>
+      <div class="field"><div class="lbl">Name · optional</div><input id="soloName" class="inp" maxlength="16" placeholder="First name" autocomplete="off"></div>
+      <div class="field"><div class="lbl">Age</div><div class="inp-wrap"><input id="soloAge" class="inp" type="number" inputmode="numeric" min="10" max="70" placeholder="e.g. 24" oninput="soloCheck()"><span class="suf">years</span></div></div>
+      <button class="p-btn" id="soloBtn" onclick="soloShow()" disabled>Show me my number →</button></div>
+      <div class="solo-note">Playing in a class? Ask your teacher for the game code and scan their QR.</div>`,true,true);
+    soloCheck(); return;
+  }
+  const p={name:soloName||'Me',age:soloAge}, k=calc(p,s);
+  el.innerHTML=shell(`<div class="card"><div class="lbl">Your numbers</div><h2>${esc(soloName||'You')}, ${soloAge}</h2>
+    <div class="sum">
+      <div class="row"><span>${fmtMoney(s.target)} by ${k.horizon}, start now</span><b>${fmtMoney(k.now)}/mo</b></div>
+      <div class="row"><span>…start ${k.delay} years late</span><b class="red">${fmtMoney(k.late)}/mo</b></div>
+      <div class="row"><span>${fmtMoney(s.flipSip)}/mo until ${k.flipHorizon}</span><b>${fmtMoney(k.flip)}</b></div>
+    </div>
+    <div class="fb">Wait one year and your number becomes <b>${fmtMoney(k.plus1)}</b> a month. The best month to start is this one.</div>
+    ${waBtn(numbersText(p,s,''),'Share on WhatsApp')}<button class="p-btn outline" onclick="soloReset()">Try a different age</button></div>`,true,true);
+}
+if(isHost) initHost(); else if(ROLE==='solo') initSolo(); else initPlayer();
 </script>
 </body>
 </html>
