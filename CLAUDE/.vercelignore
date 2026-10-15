@@ -105,3 +105,9 @@ game-icons/wog-wos-new/
 # 10.5 MB, zero references, and it is debug output from the testing harness that
 # should never have been web-accessible in the first place.
 .gstack/
+
+# Internal client documents — NEVER publish (user decision 15 Oct 2026).
+# The Dezerv proposal HTML (+ preview) was being served publicly at /proposals/… because
+# HTML is not blocked by the rules above and this folder is the deploy root. It is an
+# internal document; the PDF was already blocked by *.pdf.
+proposals/*Dezerv*
