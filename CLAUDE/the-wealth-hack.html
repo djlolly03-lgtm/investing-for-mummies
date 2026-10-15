@@ -28,15 +28,15 @@ button{cursor:pointer}
 .hide{display:none!important}
 
 /* ════════ HOST · projector ════════ */
-body.host-bg{background:radial-gradient(125% 95% at 50% -5%,rgba(14,38,48,.42),rgba(5,15,20,.94) 78%),url('quiz-studio.jpg') center/cover fixed no-repeat;color:var(--stage-ink);min-height:100vh}
+body.host-bg{background:linear-gradient(180deg,rgba(6,16,28,.30) 0%,rgba(6,16,28,.55) 55%,rgba(6,16,28,.82) 100%),url('wealth-hack-stage.jpg') center/cover fixed no-repeat;color:var(--stage-ink);min-height:100vh}
 #host{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:14px 32px 70px}
 .stage{width:100%;max-width:1240px;display:flex;flex-direction:column;align-items:center;gap:14px;margin:auto}
-.presents{font-size:.72rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--stage-sub);text-align:center}
+.presents{font-size:.72rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--stage-ink);text-align:center;text-shadow:0 1px 12px rgba(0,0,0,.7)}
 .title{font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.1;text-align:center;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.45)}
 .title em{font-style:italic;color:var(--gold-bright)}
-.tag{font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:700;color:var(--stage-sub);text-align:center;margin:0;max-width:820px;line-height:1.45}
-.hero-mark{display:block;width:118px;height:118px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 0 0 1px rgba(255,255,255,.25),0 0 60px rgba(45,212,191,.35),0 20px 50px rgba(0,0,0,.5)}
-@media(max-height:760px){.hero-mark{width:88px;height:88px}}
+.tag{font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:700;color:var(--stage-ink);text-align:center;margin:0;max-width:820px;line-height:1.45;text-shadow:0 1px 14px rgba(0,0,0,.75)}
+.hero-mark{display:block;width:76px;height:76px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 0 0 1px rgba(255,255,255,.25),0 0 60px rgba(45,212,191,.35),0 20px 50px rgba(0,0,0,.5)}
+@media(max-height:760px){.hero-mark{width:64px;height:64px}}
 .glass{background:var(--glass);border:1px solid var(--glass-edge);border-radius:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:var(--shadow-lg)}
 .panel{background:#fff;color:var(--navy);border-radius:16px;box-shadow:var(--shadow-lg)}
 .kicker{font-size:.66rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
@@ -671,7 +671,6 @@ function tplEnd(){
   const grows=pl.reduce((a,p)=>a+fvOf(p.pledge,calc(p,s).flipYrs,PR()),0);
   const b=bestEstimator();
   return `<div class="stage">
-    <img class="hero-mark" src="${LOGO}" alt="">
     <div class="presents">${GAME_NAME} · that's the whole lesson</div>
     <h1 class="title">The best month to start is <em>this one.</em></h1>
     <div class="end-grid">
