@@ -63,19 +63,17 @@ body.host-bg{background:radial-gradient(125% 95% at 50% -5%,rgba(14,38,48,.42),r
 .pl .age{color:var(--muted);font-size:.8rem;font-weight:900}
 .waiting{color:var(--muted);font-weight:700;font-style:italic;font-size:.9rem;margin:14px 0}
 @keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
-.pick-label{font-size:.62rem;text-transform:uppercase;letter-spacing:1.6px;font-weight:900;color:var(--muted);margin:14px 0 8px}
-.pick{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}
-.pick button{border:2px solid var(--mint);background:#fff;border-radius:12px;padding:10px 12px;text-align:left;color:var(--navy);transition:border-color .2s,background .2s}
-.pick button b{display:block;font-size:1rem;font-weight:900}
-.pick button span{font-size:.72rem;color:var(--muted);font-weight:700}
-.pick button.on{border-color:var(--teal);background:var(--mint-lt)}
 .lobby-card .btn{width:100%;margin-top:auto}
+.lobby-card .players{flex:1}
 .notice{max-width:980px;width:100%;padding:11px 18px;font-size:.88rem;font-weight:700;color:var(--stage-ink);text-align:center;line-height:1.5}
 .notice b{color:var(--gold-bright)}
-.advanced{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;align-items:center;font-size:.78rem;font-weight:800;color:var(--stage-sub)}
-.advanced .chip{background:rgba(255,255,255,.08);border:1px solid var(--glass-edge);color:var(--stage-ink);border-radius:10px;padding:4px 10px;font:800 .74rem 'Nunito',sans-serif;transition:background .2s}
-.advanced .chip.on{background:var(--teal);border-color:var(--teal);color:#fff}
-.advanced .grp{display:flex;align-items:center;gap:5px}
+.whatif{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;align-items:center;padding:9px 18px;border-radius:999px}
+.whatif .wk{font-family:'Lora',serif;font-style:italic;font-weight:600;color:var(--gold-bright);font-size:1rem}
+.whatif .wl{font-size:.62rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--stage-sub);margin-right:3px}
+.whatif .grp{display:flex;align-items:center;gap:5px}
+.whatif .chip{background:rgba(255,255,255,.08);border:1px solid var(--glass-edge);color:var(--stage-ink);border-radius:10px;padding:4px 10px;font:800 .76rem 'Nunito',sans-serif;transition:background .2s}
+.whatif .chip:hover{background:rgba(255,255,255,.16)}
+.whatif .chip.on{background:var(--teal);border-color:var(--teal);color:#fff}
 
 /* ask */
 .q-panel{width:100%;max-width:1000px;padding:28px 36px;text-align:center;border-color:rgba(45,212,191,.45);animation:qpulse 2.6s ease-in-out infinite}
@@ -407,7 +405,7 @@ function openQRFull(){ const q=document.getElementById('qrFull'); q.classList.re
 function closeQRFull(){ document.getElementById('qrFull').classList.add('hide'); }
 function hostReset(){ if(!confirm('Start a fresh game in this room? Everyone will need to rejoin.')) return; bump(); clearTimers(); state=freshState(); saveNow(); renderHost(); }
 
-function setSetting(k,v){ if(state.phase!=='lobby') return; bump(); state.settings[k]=v; save(); renderHost(); }
+function setSetting(k,v){ if(!/_reveal$/.test(state.phase)) return; bump(); state.settings[k]=v; save(); renderHost(); }
 function hostAdvance(){
   const i=PHASES.indexOf(state.phase); if(i<0||i>=PHASES.length-1) return;
   if(state.phase==='lobby'&&!Object.keys(state.players).length) return;
@@ -457,6 +455,16 @@ function renderHost(){
   if(lobby) makeQR(document.getElementById('lobbyQr'),210);
   runCountUps();
 }
+// Live "what if" levers on the reveal screens. Flipping one re-runs every number on the projector AND on
+// every phone — the room watches ₹1.15 L a month become ₹8.5k when the finish line moves from 40 to 60.
+function whatIf(rk){
+  const parts=[`<span class="grp"><span class="wl">By age</span>${chipRow('targetAge',[40,50,60],v=>v)}</span>`,
+               `<span class="grp"><span class="wl">Return</span>${chipRow('rate',[10,12,15],v=>v+'%')}</span>`];
+  if(rk==='r2') parts.push(`<span class="grp"><span class="wl">Wait</span>${chipRow('delayYears',[3,5,10],v=>v+' yrs')}</span>`);
+  if(rk==='r3') parts.push(`<span class="grp"><span class="wl">A month</span>${chipRow('flipSip',[2000,5000,10000],fmtMoney)}</span>`);
+  if(rk!=='r3') parts.push(`<span class="grp"><span class="wl">Target</span>${chipRow('target',[10000000,50000000,100000000],fmtMoney)}</span>`);
+  return `<div class="glass whatif"><span class="wk">What if…</span>${parts.join('')}</div>`;
+}
 function chipRow(k,opts,fmtf){ return opts.map(v=>`<button class="chip ${S()[k]===v?'on':''}" onclick="setSetting('${k}',${v})">${fmtf(v)}</button>`).join(''); }
 function tplLobby(){
   const ps=playersSorted(), s=S(), n=ps.length;
@@ -479,20 +487,10 @@ function tplLobby(){
       <div class="panel lobby-card">
         <h2>🪑 In the room <span class="count-big">${n}</span></h2>
         <div class="players">${n?ps.map(p=>`<span class="pl">${av(p)}${esc(p.name)} <span class="age">${p.age}</span></span>`).join(''):'<p class="waiting">Waiting for the first scan…</p>'}</div>
-        <div class="pick-label">Play to</div>
-        <div class="pick">
-          <button class="${s.targetAge===40?'on':''}" onclick="setSetting('targetAge',40)"><b>${fmtMoney(s.target)} by 40</b><span>The jaw-drop. Six-figure monthly numbers.</span></button>
-          <button class="${s.targetAge===60?'on':''}" onclick="setSetting('targetAge',60)"><b>${fmtMoney(s.target)} by 60</b><span>The "I can actually do this" version.</span></button>
-        </div>
         <button class="btn big" style="margin-top:14px" onclick="hostAdvance()" ${n?'':'disabled'}>${n?'Start · Round 1 →':'Start (waiting for a scan)'}</button>
       </div>
     </div>
-    <div class="glass notice">3 rounds · about 12 minutes — <b>the big number</b> (what each person needs a month), <b>the cost of waiting</b> (start ${s.delayYears} years late), and <b>the flip</b> (${fmtMoney(s.flipSip)} a month until ${s.flipAge}). Then everyone picks a SIP to start this month.</div>
-    <div class="advanced">
-      <span class="grp">Target ${chipRow('target',[10000000,50000000,100000000],fmtMoney)}</span>
-      <span class="grp">Return ${chipRow('rate',[10,12,15],v=>v+'%')}</span>
-      <span class="grp">Wait ${chipRow('delayYears',[3,5,10],v=>v+' yrs')}</span>
-    </div>
+    <div class="glass notice">3 rounds · about 12 minutes — <b>the big number</b> (${fmtMoney(s.target)} by ${s.targetAge}: what each person needs a month), <b>the cost of waiting</b> (start ${s.delayYears} years late), and <b>the flip</b> (${fmtMoney(s.flipSip)} a month until ${s.flipAge}). Then everyone picks a SIP to start this month.</div>
   </div>`;
 }
 function tplAsk(rk){
@@ -538,6 +536,7 @@ function tplReveal1(){
         ${c?`<div class="glass stat"><div class="kicker">🎯 Closest guess</div><div class="big teal">${esc(c.p.name)}</div><div class="sm">guessed ${fmtMoney(c.p.guess.r1)} · real ${fmtMoney(realFor(c.p,'r1',s))}</div></div>`:''}
       </div>
     </div>
+    ${whatIf('r1')}
     <p class="punch" style="animation-delay:${n*STEP+500}ms">Nobody in this room is too young to start. Everyone is getting too old to wait.</p>
   </div>`;
 }
@@ -571,6 +570,7 @@ function tplReveal2(){
         ${c?`<div class="glass stat"><div class="kicker">🎯 Closest guess</div><div class="big teal">${esc(c.p.name)}</div><div class="sm">guessed ${fmtMoney(c.p.guess.r2)} · real ${fmtMoney(realFor(c.p,'r2',s))}</div></div>`:''}
       </div>
     </div>
+    ${whatIf('r2')}
     <p class="punch" style="animation-delay:${n*STEP+500}ms">Every year you wait, the number goes up. It never comes back down.</p>
   </div>`;
 }
@@ -591,6 +591,7 @@ function tplReveal3(){
         ${c?`<div class="glass stat"><div class="kicker">🎯 Closest guess</div><div class="big teal">${esc(c.p.name)}</div><div class="sm">guessed ${fmtMoney(c.p.guess.r3)} · real ${fmtMoney(realFor(c.p,'r3',s))}</div></div>`:''}
       </div>
     </div>
+    ${whatIf('r3')}
     <p class="punch" style="animation-delay:${n*STEP+500}ms">Time does most of the work. You only have to start.</p>
   </div>`;
 }
