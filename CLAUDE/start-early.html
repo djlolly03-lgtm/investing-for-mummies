@@ -24,8 +24,8 @@ button{font-family:inherit;cursor:pointer}
 input{font-family:inherit}
 
 /* ════════ HOST (projector) ════════ */
-body.host-bg{background:radial-gradient(1400px 800px at 18% -12%,#2b5c86 0%,var(--navy) 55%,#122a44 100%);color:#fff;height:100vh;overflow:hidden}
-.stage{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px 48px 28px;gap:18px}
+body.host-bg{background:radial-gradient(1400px 800px at 18% -12%,#2b5c86 0%,var(--navy) 55%,#122a44 100%) fixed;color:#fff;min-height:100vh;overflow:auto}
+.stage{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px 48px 28px;gap:18px}
 .stage.top{justify-content:flex-start;padding-top:22px}
 .kicker{font-size:.95rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-bright);text-align:center}
 .h-title{font-family:'Lora',serif;font-weight:700;font-size:clamp(2rem,4.4vw,3.6rem);line-height:1.12;text-align:center;margin:0;max-width:1100px}
@@ -61,6 +61,11 @@ body.host-bg{background:radial-gradient(1400px 800px at 18% -12%,#2b5c86 0%,var(
 .empty{color:var(--muted);font-weight:700;font-style:italic;padding:14px 4px}
 .lobby-players{min-height:200px}
 
+.how{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.how .st{background:var(--mint-lt);border-radius:12px;padding:10px 12px;font-size:.88rem;font-weight:700;color:var(--navy);line-height:1.35}
+.how .st b{display:block;color:var(--teal-d);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px}
+.set-note{font-size:.8rem;color:var(--muted);font-weight:700;margin:-2px 0 8px 162px}
+@media(max-width:1100px){.how{grid-template-columns:1fr 1fr}.set-note{margin-left:0}}
 /* ask */
 .q-card{max-width:1100px;width:100%;text-align:center;padding:30px 40px}
 .q-card .q{font-family:'Lora',serif;font-size:clamp(1.8rem,3.6vw,3rem);line-height:1.2;font-weight:700;margin:0}
@@ -101,7 +106,7 @@ body.host-bg{background:radial-gradient(1400px 800px at 18% -12%,#2b5c86 0%,var(
 .stat .sm{color:var(--muted);font-weight:700;margin-top:4px;font-size:.95rem}
 .chart{width:100%;height:auto;display:block}
 .punch{font-family:'Lora',serif;font-size:clamp(1.3rem,2.3vw,1.9rem);font-style:italic;color:var(--gold-bright);text-align:center;margin:0;max-width:1100px;line-height:1.3}
-.rv-table.scroll{max-height:calc(100vh - 250px);overflow:auto}
+
 
 /* pledge wall */
 .wall{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:1200px}
@@ -220,8 +225,12 @@ const parseNum=v=>parseInt(String(v).replace(/\D/g,''),10)||0;
 function sipFor(fv,years,ratePct){ const r=ratePct/1200, n=Math.round(years*12); if(n<=0) return fv; return fv*r/(Math.pow(1+r,n)-1); }
 // What a monthly SIP `p` grows to in `years`.
 function fvOf(p,years,ratePct){ const r=ratePct/1200, n=Math.round(years*12); if(n<=0) return 0; return p*(Math.pow(1+r,n)-1)/r; }
+// Someone older than the target age (the teacher at 46, a parent in the room) can't be asked about
+// '₹10 Cr by 40'. Anyone within 5 years of the target gets their own finish line instead: 60, or
+// age+10 if they are past 55. Every screen reads the horizon from here, never from S.targetAge.
+function horizonFor(p,S){ return (S.targetAge-p.age>=5)?S.targetAge:Math.max(S.flipAge,p.age+10); }
 function calc(p,S){
-  const yrs=Math.max(1,S.targetAge-p.age);
+  const horizon=horizonFor(p,S); const yrs=Math.max(1,horizon-p.age);
   const now=sipFor(S.target,yrs,S.rate);
   const plus1=sipFor(S.target,Math.max(1,yrs-1),S.rate);
   const delay=Math.min(S.delayYears,Math.max(0,yrs-1));
@@ -229,7 +238,7 @@ function calc(p,S){
   const flipYrs=Math.max(1,S.flipAge-p.age);
   const flip=fvOf(S.flipSip,flipYrs,S.rate);
   const flipEarly=fvOf(S.flipSip,flipYrs+5,S.rate);
-  return {yrs,now,plus1,delay,late,flipYrs,flip,flipEarly};
+  return {horizon,yrs,now,plus1,delay,late,flipYrs,flip,flipEarly};
 }
 function realFor(p,rk,S){ const c=calc(p,S); return rk==='r1'?c.now:rk==='r2'?c.late:c.flip; }
 // How far off a guess was. Returns {cls,txt,err} — err is |ln(guess/real)| so 2× low and 2× high tie.
@@ -250,12 +259,12 @@ const ROUNDS={
   r1:{n:1,title:'The big number',
       hostQ:S=>`To have <em>${fmtMoney(S.target)}</em> by the time you turn <em>${S.targetAge}</em>, how much would you need to invest <em>every month</em>?`,
       hostWhy:S=>`Assume ${S.rate}% a year, which is what a plain equity mutual fund has done over long stretches. Your age decides your number — every phone in this room has a different answer.`,
-      phoneQ:(p,S)=>`You're ${p.age}. To have <em>${fmtMoney(S.target)}</em> by ${S.targetAge}, how much would you need to invest every month?`,
+      phoneQ:(p,S)=>{const h=horizonFor(p,S);return `You're ${p.age}. To have <em>${fmtMoney(S.target)}</em> by ${h}, how much would you need to invest every month?${h!==S.targetAge?` <small style="display:block;font-size:.8rem;color:var(--muted);margin-top:6px">The room is playing to ${S.targetAge}. At ${p.age} your finish line is ${h}.</small>`:''}`;},
       chips:SIP_CHIPS, unit:'per month'},
   r2:{n:2,title:'The cost of waiting',
       hostQ:S=>`Same target. But you do nothing for <em>${S.delayYears} years</em> and start then. How much a month <em>now</em>?`,
       hostWhy:S=>`Same ${fmtMoney(S.target)}, same ${S.rate}%, same finish line at ${S.targetAge}. You just start later.`,
-      phoneQ:(p,S)=>{const c=calc(p,S);return `Same ${fmtMoney(S.target)} by ${S.targetAge}. But you wait <em>${c.delay} years</em> and start at ${p.age+c.delay}. How much a month then?`;},
+      phoneQ:(p,S)=>{const c=calc(p,S);return `Same ${fmtMoney(S.target)} by ${c.horizon}. But you wait <em>${c.delay} years</em> and start at ${p.age+c.delay}. How much a month then?`;},
       chips:SIP_CHIPS, unit:'per month'},
   r3:{n:3,title:'The flip',
       hostQ:S=>`Forget ${fmtMoney(S.target)}. You invest just <em>${fmtMoney(S.flipSip)} a month</em> from today until you're <em>${S.flipAge}</em>. What does it become?`,
@@ -269,7 +278,7 @@ function roundOf(phase){ const m=/^(r\d)_/.exec(phase||''); return m?m[1]:null; 
 const params=new URLSearchParams(location.search);
 let ROLE=params.get('role')||'host';
 let ROOM=params.get('room')||null;
-const MY_ID=(function(){let id=localStorage.getItem('se_pid');if(!id){id=crypto.randomUUID();localStorage.setItem('se_pid',id);}return id;})();
+const MY_ID=(function(){let id=localStorage.getItem('se_pid');if(!id){id=(crypto.randomUUID?crypto.randomUUID():'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,10));localStorage.setItem('se_pid',id);}return id;})();
 let isHost=(ROLE==='host');
 let state=null;
 
@@ -424,18 +433,35 @@ function tplLobby(){
         <div class="pin-lbl" style="margin-top:12px">Game PIN</div><div class="pin">${ROOM}</div><div class="url">${playerUrl().replace(/^https?:\/\//,'')}</div></div>
       <div>
         <div class="card" style="margin-bottom:16px">
-          <div class="set-row"><span class="set-lbl">Target</span>${chipRow('target',[10000000,50000000,100000000],fmtMoney)}</div>
-          <div class="set-row"><span class="set-lbl">By age</span>${chipRow('targetAge',[40,50,60],v=>v)}</div>
-          <div class="set-row"><span class="set-lbl">Return</span>${chipRow('rate',[10,12,15],v=>v+'% a year')}</div>
-          <div class="set-row"><span class="set-lbl">Wait (round 2)</span>${chipRow('delayYears',[3,5,10],v=>v+' years')}</div>
+          <div class="pin-lbl" style="margin-bottom:10px">How this works · about 12 minutes</div>
+          <div class="how">
+            <div class="st"><b>1 · Join</b>Everyone scans the QR, types name + age. Names appear below as they land.</div>
+            <div class="st"><b>2 · Three guesses</b>Each round: a question on this screen, a guess on every phone, then you reveal. Youngest first.</div>
+            <div class="st"><b>3 · Reveal = the lesson</b>Same ₹10 Cr, different ages, wildly different monthly numbers. Let the room react before moving on.</div>
+            <div class="st"><b>4 · Driving</b>Press <kbd style="background:var(--mint-lt)">Space</kbd> to move forward, <kbd style="background:var(--mint-lt)">←</kbd> to go back. Nothing advances until you press.</div>
+          </div>
+          <div class="step-btn" style="justify-content:space-between;flex-wrap:wrap">
+            <button class="btn" onclick="hostAdvance()" ${ps.length?'':'disabled'}>${ps.length?`Start · Round 1 →`:'Start (waiting for someone to join)'}</button>
+            <span class="hint" style="color:var(--muted);text-align:left">Settings below are optional. The defaults are the game as designed.</span>
+          </div>
         </div>
-        <div class="card lobby-players"><div class="pin-lbl">In the room · ${ps.length}</div>
+        <div class="card lobby-players" style="margin-bottom:16px"><div class="pin-lbl">In the room · ${ps.length}</div>
           <div class="players">${ps.length?ps.map(p=>`<span class="pl">${av(p)}${esc(p.name)} <span class="age">${p.age}</span></span>`).join(''):'<div class="empty">Waiting for the first scan…</div>'}</div>
+        </div>
+        <div class="card">
+          <div class="pin-lbl" style="margin-bottom:8px">Settings · optional, lock once you start</div>
+          <div class="set-row"><span class="set-lbl">Target</span>${chipRow('target',[10000000,50000000,100000000],fmtMoney)}</div>
+          <div class="set-note">The amount everyone is asked to reach.</div>
+          <div class="set-row"><span class="set-lbl">By age</span>${chipRow('targetAge',[40,50,60],v=>v)}</div>
+          <div class="set-note">40 is the jaw-drop (six-figure monthly numbers). 60 is the "I can do this" version. Anyone within 5 years of this age gets 60 as their own finish line.</div>
+          <div class="set-row"><span class="set-lbl">Return</span>${chipRow('rate',[10,12,15],v=>v+'% a year')}</div>
+          <div class="set-note">12% is the standard equity-fund assumption.</div>
+          <div class="set-row"><span class="set-lbl">Wait (round 2)</span>${chipRow('delayYears',[3,5,10],v=>v+' years')}</div>
+          <div class="set-note">How long round 2 makes everyone delay before starting.</div>
         </div>
       </div>
     </div>
-    <div class="step-btn"><button class="btn" onclick="hostAdvance()" ${ps.length?'':'disabled'}>Start · Round 1 →</button></div>
-    <div class="hint"><kbd>Space</kbd> next · <kbd>←</kbd> back · settings lock once you start</div>
+    <div class="hint"><kbd>Space</kbd> next · <kbd>←</kbd> back</div>
   </div>`;
 }
 function tplAsk(rk){
@@ -467,7 +493,7 @@ function tplReveal1(){
   const avgGuess=guessed.length?guessed.reduce((a,p)=>a+p.guess.r1,0)/guessed.length:0;
   const avgReal=ps.length?ps.reduce((a,p)=>a+calc(p,s).now,0)/ps.length:0;
   const rows=ps.map((p,i)=>{ const k=calc(p,s); const o=offBy(p.guess.r1,k.now);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span><span>${p.age}</span><span class="guess">${p.guess.r1>0?fmtMoney(p.guess.r1):'—'}</span>${cu(k.now,'real'+(k.now>=200000?' hot':''),i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
+    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span><span>${p.age}${k.horizon!==s.targetAge?` <small style="color:var(--muted)">→${k.horizon}</small>`:''}</span><span class="guess">${p.guess.r1>0?fmtMoney(p.guess.r1):'—'}</span>${cu(k.now,'real'+(k.now>=200000?' hot':''),i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
   const n=ps.length;
   return `<div class="stage top">
     <div class="kicker">Round 1 · The real numbers</div>
@@ -485,14 +511,14 @@ function tplReveal1(){
   </div>`;
 }
 function chart1(ps,s){
-  const ages=ps.map(p=>p.age); const a0=Math.max(15,Math.min(...ages)-2), a1=Math.min(s.targetAge-4,Math.max(...ages)+8);
+  const onCurve=ps.filter(p=>horizonFor(p,s)===s.targetAge); const ages=(onCurve.length?onCurve:ps).map(p=>p.age); const a0=Math.max(15,Math.min(...ages)-2), a1=Math.min(s.targetAge-4,Math.max(...ages)+8);
   const W=520,H=300,L=78,R=16,T=18,B=40; const pts=[]; for(let a=a0;a<=a1;a+=0.5) pts.push([a,sipFor(s.target,s.targetAge-a,s.rate)]);
   const ymax=Math.max(...pts.map(q=>q[1]))*1.05;
   const X=a=>L+(a-a0)/(a1-a0)*(W-L-R), Y=v=>T+(1-v/ymax)*(H-T-B);
   const path=pts.map((q,i)=>(i?'L':'M')+X(q[0]).toFixed(1)+' '+Y(q[1]).toFixed(1)).join(' ');
   const ticks=[0.25,0.5,0.75,1].map(f=>`<text x="${L-8}" y="${Y(ymax*f/1.05)+4}" text-anchor="end" font-size="11" font-weight="800" fill="#5a7d8a">${fmtMoney(ymax*f/1.05)}</text><line x1="${L}" x2="${W-R}" y1="${Y(ymax*f/1.05)}" y2="${Y(ymax*f/1.05)}" stroke="#e0f3f0"/>`).join('');
   const xs=[]; for(let a=Math.ceil(a0/2)*2;a<=a1;a+=2) xs.push(`<text x="${X(a)}" y="${H-B+18}" text-anchor="middle" font-size="11" font-weight="800" fill="#5a7d8a">${a}</text>`);
-  const dots=ps.map((p,i)=>{const v=calc(p,s).now; return `<g style="opacity:0;animation:rise .4s ease-out ${i*STEP+200}ms forwards"><circle cx="${X(p.age)}" cy="${Y(v)}" r="7" fill="${p.color}" stroke="#fff" stroke-width="2"/><text x="${X(p.age)}" y="${Y(v)-12}" text-anchor="middle" font-size="10.5" font-weight="900" fill="#1a3a5c">${esc(p.name.split(' ')[0])}</text></g>`;}).join('');
+  const dots=ps.filter(p=>horizonFor(p,s)===s.targetAge).map((p,i)=>{const v=calc(p,s).now; return `<g style="opacity:0;animation:rise .4s ease-out ${i*STEP+200}ms forwards"><circle cx="${X(p.age)}" cy="${Y(v)}" r="7" fill="${p.color}" stroke="#fff" stroke-width="2"/><text x="${X(p.age)}" y="${Y(v)-12}" text-anchor="middle" font-size="10.5" font-weight="900" fill="#1a3a5c">${esc(p.name.split(' ')[0])}</text></g>`;}).join('');
   return `<div class="lbl" style="font-size:.74rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)">Monthly SIP needed, by the age you start</div>
   <svg class="chart" viewBox="0 0 ${W} ${H}">${ticks}${xs.join('')}<path d="${path}" fill="none" stroke="#2a9d8f" stroke-width="3.5" stroke-linecap="round"/>${dots}<text x="${W-R}" y="${H-4}" text-anchor="end" font-size="10" font-weight="800" fill="#5a7d8a">age you start →</text></svg>`;
 }
@@ -500,7 +526,7 @@ function tplReveal2(){
   const ps=playersSorted(), s=S(); const c=closest('r2');
   const extra=ps.reduce((a,p)=>{const k=calc(p,s);return a+(k.late-k.now);},0);
   const rows=ps.map((p,i)=>{ const k=calc(p,s); const o=offBy(p.guess.r2,k.late);
-    return `<div class="rv-row r5" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span><span>${p.age}</span><span class="guess">start at ${p.age}: <b style="color:var(--navy)">${fmtMoney(k.now)}</b></span>${cu(k.late,'real hot',i*STEP+150)}<span class="extra" data-cu="${Math.round(k.late-k.now)}" data-delay="${i*STEP+150}">₹0</span></div>`; }).join('');
+    return `<div class="rv-row r5" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span><span>${p.age}${k.horizon!==s.targetAge?` <small style="color:var(--muted)">→${k.horizon}</small>`:''}</span><span class="guess">start at ${p.age}: <b style="color:var(--navy)">${fmtMoney(k.now)}</b></span>${cu(k.late,'real hot',i*STEP+150)}<span class="extra" data-cu="${Math.round(k.late-k.now)}" data-delay="${i*STEP+150}">₹0</span></div>`; }).join('');
   const n=ps.length;
   return `<div class="stage top">
     <div class="kicker">Round 2 · The cost of waiting</div>
@@ -659,7 +685,7 @@ function renderPlayer(){
     const k=calc(p,s);
     return el.innerHTML=shell(`<div class="p-card"><div class="p-kick">Your numbers · keep these</div><h2>${esc(p.name)}, ${p.age}</h2>
       <div class="p-sum">
-        <div class="row"><span>${fmtMoney(s.target)} by ${s.targetAge}, start now</span><b>${fmtMoney(k.now)}/mo</b></div>
+        <div class="row"><span>${fmtMoney(s.target)} by ${k.horizon}, start now</span><b>${fmtMoney(k.now)}/mo</b></div>
         <div class="row"><span>…start ${k.delay} years late</span><b style="color:var(--red)">${fmtMoney(k.late)}/mo</b></div>
         <div class="row"><span>${fmtMoney(s.flipSip)}/mo until ${s.flipAge}</span><b>${fmtMoney(k.flip)}</b></div>
         <div class="row"><span>Your pledge</span><b>${p.pledge?fmtMoney(p.pledge)+'/mo':'—'}</b></div>
@@ -672,7 +698,7 @@ function renderPlayer(){
 const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>';
 function waBtn(text,label){ return `<a class="p-btn wa" href="https://wa.me/?text=${encodeURIComponent(text)}" target="_blank" rel="noopener">${WA_ICON}<span>${label}</span></a>`; }
 function pledgeText(p,s,val){ return `🌱 ${p.name}, ${p.age}: I'm starting a SIP of ${fmtMoney(val)} a month — starting THIS month.\n\nAt ${s.rate}% a year that's ${fmtMoney(fvOf(val,calc(p,s).flipYrs,s.rate))} by ${s.flipAge}.\n\nStart early. Investing for Mummies · investingformummies.com`; }
-function numbersText(p,s){ const k=calc(p,s); return `📊 ${p.name}, ${p.age} — my numbers from Start Early:\n\n• ${fmtMoney(s.target)} by ${s.targetAge}, start now: ${fmtMoney(k.now)}/month\n• Start ${k.delay} years late: ${fmtMoney(k.late)}/month\n• ${fmtMoney(s.flipSip)}/month until ${s.flipAge} becomes: ${fmtMoney(k.flip)}${p.pledge?`\n• My pledge: ${fmtMoney(p.pledge)}/month → ${fmtMoney(fvOf(p.pledge,k.flipYrs,s.rate))} by ${s.flipAge}`:''}\n\nAssumes ${s.rate}% a year. Investing for Mummies · investingformummies.com`; }
+function numbersText(p,s){ const k=calc(p,s); return `📊 ${p.name}, ${p.age} — my numbers from Start Early:\n\n• ${fmtMoney(s.target)} by ${k.horizon}, start now: ${fmtMoney(k.now)}/month\n• Start ${k.delay} years late: ${fmtMoney(k.late)}/month\n• ${fmtMoney(s.flipSip)}/month until ${s.flipAge} becomes: ${fmtMoney(k.flip)}${p.pledge?`\n• My pledge: ${fmtMoney(p.pledge)}/month → ${fmtMoney(fvOf(p.pledge,k.flipYrs,s.rate))} by ${s.flipAge}`:''}\n\nAssumes ${s.rate}% a year. Investing for Mummies · investingformummies.com`; }
 function shell(inner){ return `<div class="p-wrap"><div class="p-top"><img src="${LOGO}" alt=""><span class="t">Start Early</span><span class="r">Room ${esc(ROOM)}</span></div>${inner}<div class="p-foot">Investing for Mummies · assumes ${state&&state.settings?state.settings.rate:12}% a year, not a promise</div></div>`; }
 
 if(isHost) initHost(); else initPlayer();
