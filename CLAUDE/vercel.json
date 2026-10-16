@@ -143,6 +143,10 @@
     {
       "source": "/the-wealth-hack",
       "destination": "/the-wealth-hack.html"
+    },
+    {
+      "source": "/inflation-calculator",
+      "destination": "/inflation-calculator.html"
     }
   ],
   "redirects": [

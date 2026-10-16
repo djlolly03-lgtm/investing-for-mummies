@@ -73,3 +73,7 @@ deck-build/node_modules/
 # third-party email addresses, and zero course content. Copy the text instead.
 *- Gmail.html
 *- Outlook.html
+
+# Games homepage artwork (16 Oct 2026) — four small files the live / page needs; keep them in git.
+!CLAUDE/assets/*.webp
+!CLAUDE/assets/*.jpg
