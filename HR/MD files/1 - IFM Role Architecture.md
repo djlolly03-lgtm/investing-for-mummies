@@ -17,7 +17,7 @@ Three lanes, hard boundaries, one owner each. The boundary is **the payment**.
 
 > **Hire sales while the room is rebuilt → fill both batches to 36–40 mothers a month → then hire a co-teacher.**
 
-The first two moves run in parallel. The room is being rebuilt now for **18–20 students**, taking a full cycle across both batches to **36–40** — roughly **₹6.8L–₹7.6L a month** at current pricing. **From September, ₹20–30k/month of Meta ads** support the sales lane, optimised to sign-ups on the batch page.
+The first two moves run in parallel. The room is being rebuilt now for **18–20 students**, taking a full cycle across both batches to **36–40** — roughly **₹6.8L–₹7.6L a month** at current pricing.
 
 **The co-teacher is triggered by full batches, not by a date.** Until then, teaching capacity is whatever Hiral alone can deliver, and that — not sales — is the ceiling.
 

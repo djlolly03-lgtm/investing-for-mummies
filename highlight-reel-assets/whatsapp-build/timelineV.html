@@ -27,13 +27,6 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#0C548E}
   box-shadow:0 26px 70px rgba(0,0,0,.35)}
 #otag{font-family:'Lora',serif;font-size:56px;color:#fff;font-weight:600;letter-spacing:.5px}
 #otag i{color:#F2C75C}
-#qrbadge{position:absolute;left:64px;right:64px;bottom:88px;display:flex;align-items:center;gap:30px;
-  background:#fff;border-radius:28px;padding:26px 32px;opacity:0;
-  box-shadow:0 22px 60px rgba(0,0,0,.34), 0 0 0 3px rgba(12,84,142,.10)}
-#qrbadge img{width:300px;height:300px;flex:0 0 auto;border-radius:10px}
-#qrbadge .qt{display:flex;flex-direction:column;gap:10px;text-align:left}
-#qrbadge .l1{font-family:'Nunito',sans-serif;font-weight:900;font-size:48px;color:#0C548E;line-height:1.05}
-#qrbadge .l2{font-family:'Nunito',sans-serif;font-weight:700;font-size:31px;color:#C08A1E}
 #flyimg{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover}
 #fade{position:absolute;inset:0;background:#0C548E;opacity:0}
 </style></head><body><div id="stage">
@@ -42,10 +35,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#0C548E}
   <div class="lyr" id="slamL"><div id="slam"><div id="sw"></div></div></div>
   <div class="lyr" id="openL"><div id="openWrap">
     <img id="olog" src="img/logo.png"><div id="otag">Investing <i>for</i> Mummies</div></div></div>
-  <div class="lyr" id="flyerL"><img id="flyimg" src="img/flyer.jpg">
-    <div id="qrbadge"><img src="img/qr_raw.png">
-      <div class="qt"><span class="l1">SCAN TO REGISTER</span><span class="l2">investingformummies.com</span></div>
-    </div></div>
+  <div class="lyr" id="flyerL"><img id="flyimg" src="img/flyer.jpg"></div>
   <div id="fade"></div>
 </div>
 <script>
@@ -53,11 +43,11 @@ const FPS=30;
 const cl=(v,a,b)=>Math.max(a,Math.min(b,v)),lp=(a,b,t)=>a+(b-a)*t;
 const eo=t=>1-Math.pow(1-t,3), eq=t=>1-Math.pow(1-t,5);
 const sg=(t,a,b)=>cl((t-a)/(b-a),0,1);
-const SEQ={T1:240,L1:108,L2:105,c2:420,G21:78};
-const IMGS=['hiral','hiral_exp','hiral_bid','engaged','certs','bigroup','g_kbc','g4b','g10b','flyer'];
+const SEQ={T1:195,L1:75,L2:75,c2:240,GS:75,GW:45};
+const IMGS=['hiral','hiral_exp','hiral_bid','engaged','certs','bigroup','g_kbc','g4b','flyer'];
 const src={},pre=[];
 const P=s=>{const i=new Image();i.src=s;pre.push(i);return new Promise(r=>{i.onload=r;i.onerror=r})};
-async function load(){const ps=[P('img/logo.png'),P('img/qr_raw.png')];
+async function load(){const ps=[P('img/logo.png')];
  for(const n of IMGS)ps.push(P(`img/${n}.jpg`));
  for(const[k,c]of Object.entries(SEQ)){src[k]=[];
   for(let i=1;i<=c;i++){const s=`seq/${k}/${String(i).padStart(3,'0')}.jpg`;src[k].push(s);ps.push(P(s))}}
@@ -69,28 +59,28 @@ const SL=(a,b,html,sz)=>{
   else S.push({a,b,k:'slam',html,sz});
 };
 const SH=(a,b,o)=>S.push(Object.assign({a,b,k:'shot'},o));
-S.push({a:0.0,b:2.6,k:'open'});
-SH(2.6, 5.8,{img:'hiral',     cap:'Meet <b>Hiral Goel</b><br>Founder, Investing for Mummies'});
-SL(5.8, 9.2,'New to<br>investing?<br><span class="g">Start here.</span><span class="sub">Here’s a peek into our workshops</span>','sm');
-SH(9.2, 12.8,{seq:'L1', cap:'', live:1});
-SH(12.8,26.8,{seq:'c2', cap:'', live:1});
-SH(26.8,29.6,{img:'hiral_exp',cap:'We start at the basics<br>and <b>build a solid foundation</b>.'});
-SH(29.6,32.4,{img:'engaged',  cap:'Ask anything.<br><b>Nothing is a silly question.</b>'});
-SL(32.4,35.2,'We don’t just teach.<br><span class="g">We learn through<br>interactive games<br>and simulations.</span>','xs');
-SH(35.2,37.8,{img:'g_kbc', flat:1, cap:'<b>Live quizzes.</b><br>Real-time leaderboard.'});
-SH(37.8,40.4,{img:'g4b',   flat:1, cap:'<b>Simulate a Mutual Fund.</b>'});
-SH(40.4,43.0,{seq:'G21',   flat:1, cap:'Fake money.<br><b>Real market conditions.</b>'});
-SH(43.0,45.6,{img:'g10b',  flat:1, cap:'Play the<br><b>asset class Swayamvar.</b>'});
-SH(45.6,49.1,{seq:'L2', cap:'', live:1});
-SH(49.1,51.9,{img:'hiral_bid',cap:'Every concept,<br><b>broken down simply</b>.'});
-SH(51.9,55.1,{img:'bigroup',  cap:'Batch after batch,<br><b>the room keeps filling.</b>'});
-SH(55.1,63.1,{seq:'T1', cap:'', live:1, pill:'IN HER WORDS'});
-SL(63.1,66.2,'8 sessions.<br><span class="g">2 hours each.</span><span class="sub">Small batches · Nariman Point</span>','sm');
-SL(66.2,69.2,'We cover Insurance,<br>stocks, mutual funds{{DELAY}}<span class="g">and every asset class<br>in between.</span>','xs');
-SH(69.2,72.4,{img:'certs',    cap:'You finish <b>financially empowered</b><br>with a certificate — and a handbook<br>to refer to.'});
-SL(72.4,75.4,'No finance<br>background<br><span class="g">required.</span><span class="sub">Just bring your questions.</span>','sm');
-S.push({a:75.4,b:81.2,k:'flyer'});
-const TOT=81.2; window.TOTAL=Math.round(TOT*FPS);
+S.push({a:0.0,b:2.0,k:'open'});
+SH(2.0, 4.5,{img:'hiral',     cap:'Meet <b>Hiral Goel</b><br>Founder, Investing for Mummies'});
+SL(4.5, 7.0,'New to<br>investing?<br><span class="g">Start here.</span><span class="sub">Here’s a peek into our workshops</span>','sm');
+SH(7.0, 9.5,{seq:'L1', cap:'', live:1});
+SH(9.5, 17.5,{seq:'c2', cap:'', live:1});
+SH(17.5,19.5,{img:'hiral_exp',cap:'We start at the basics<br>and <b>build a solid foundation</b>.'});
+SH(19.5,21.5,{img:'engaged',  cap:'Ask anything.<br><b>Nothing is a silly question.</b>'});
+SL(21.5,24.0,'We don’t just teach.<br><span class="g">We learn through<br>interactive games<br>and simulations.</span>','xs');
+SH(24.0,26.0,{img:'g_kbc', flat:1, cap:'<b>Live quizzes.</b><br>Real-time leaderboard.'});
+SH(26.0,28.0,{img:'g4b',   flat:1, cap:'<b>Simulate a Mutual Fund.</b>'});
+SH(28.0,30.5,{seq:'GS',    flat:1, cap:'Fake money.<br><b>Real market conditions.</b>'});
+SH(30.5,32.0,{seq:'GW',    flat:1, cap:'', notint:1});
+SH(32.0,34.5,{seq:'L2', cap:'', live:1});
+SH(34.5,36.5,{img:'hiral_bid',cap:'Every concept,<br><b>broken down simply</b>.'});
+SH(36.5,38.5,{img:'bigroup',  cap:'Batch after batch,<br><b>the room keeps filling.</b>'});
+SH(38.5,45.0,{seq:'T1', cap:'', live:1, pill:'IN HER WORDS'});
+SL(45.0,47.5,'8 sessions.<br><span class="g">2 hours each.</span><span class="sub">Small batches · Nariman Point</span>','sm');
+SL(47.5,50.5,'We cover Insurance,<br>stocks, mutual funds{{DELAY}}<span class="g">and every asset class<br>in between.</span>','xs');
+SH(50.5,52.5,{img:'certs',    cap:'You finish <b>financially empowered</b><br>with a certificate — and a handbook<br>to refer to.'});
+SL(52.5,55.0,'No finance<br>background<br><span class="g">required.</span><span class="sub">Just bring your questions.</span>','sm');
+S.push({a:55.0,b:59.0,k:'flyer'});
+const TOT=59.0; window.TOTAL=Math.round(TOT*FPS);
 const $=i=>document.getElementById(i);
 const L={shot:$('shot'),slam:$('slamL'),flyer:$('flyerL'),open:$('openL')};
 const hide=()=>{for(const k in L)L[k].style.display='none'};
@@ -103,8 +93,8 @@ window.SEEK=function(f){
  hide();
  if(sh.k==='open'){
    L.open.style.display='block';
-   const k=eq(sg(loc,0,1.5)); const w=$('openWrap');
-   w.style.opacity=Math.min(k,1-sg(loc,2.2,2.6));
+   const k=eq(sg(loc,0,1.15)); const w=$('openWrap');
+   w.style.opacity=Math.min(k,1-sg(loc,1.62,2.0));
    w.style.transform=`translate(-50%,-50%) scale(${lp(.90,1,k)})`;
  } else if(sh.k==='slam'){
    L.slam.style.display='block';
@@ -114,35 +104,34 @@ window.SEEK=function(f){
      w.innerHTML=`<span id="swA" style="display:block">${sh.htmlA}</span><span id="swB" style="display:block">${sh.htmlB}</span>`;
      w.style.opacity=1; w.style.transform='none';
      const eA=w.querySelector('#swA'), eB=w.querySelector('#swB');
-     const kA=eq(sg(loc,0,.5));
-     const kB=eq(sg(loc,1.0,1.5));
+     const kA=eq(sg(loc,0,.34));
+     const kB=eq(sg(loc,.80,1.14));
      eA.style.opacity=kA; eA.style.transform=`translateY(${lp(26,0,kA)}px)`;
      eB.style.opacity=kB; eB.style.transform=`translateY(${lp(20,0,kB)}px)`;
    } else {
      w.innerHTML=sh.html;
-     const k=eq(sg(loc,0,.5));
+     const k=eq(sg(loc,0,.34));
      w.style.opacity=k; w.style.transform=`translateY(${lp(26,0,k)}px)`;
    }
  } else if(sh.k==='flyer'){
    L.flyer.style.display='block';
-   const k=eq(sg(loc,0,.55));
+   const k=eq(sg(loc,0,.40));
    L.flyer.style.opacity=k;
    $('flyimg').style.transform=`scale(${lp(1.05,1,k)})`;
-   const qk=eq(sg(loc,0.9,1.9)); const qb=$('qrbadge');
-   qb.style.opacity=qk; qb.style.transform=`translateY(${lp(34,0,qk)}px)`;
  } else {
    L.shot.style.display='block';
    const img=$('simg');
    if(sh.seq) seqAt(img,sh.seq,loc);
    else { const s=`img/${sh.img}.jpg`; if(img.getAttribute('src')!==s) img.setAttribute('src',s); }
-   img.style.transform=`scale(${sh.flat?1.0:lp(1.07,1.01,eo(sg(loc,0,1.15)))})`;
+   img.style.transform=`scale(${sh.flat?1.0:lp(1.09,1.01,eo(sg(loc,0,1.9)))})`;
+   $('tint').style.opacity = sh.notint ? 0 : 1;
    const c=$('cap'); c.innerHTML=sh.cap||'';
    c.classList.toggle('sm',(sh.cap||'').length>52);
-   const k=eo(sg(loc,.15,.75)); c.style.opacity=sh.cap?k:0;
+   const k=eo(sg(loc,.06,.42)); c.style.opacity=sh.cap?k:0;
    c.style.transform=`translateY(${lp(20,0,k)}px)`;
    $('live').style.display = sh.live ? 'flex' : 'none';
    if(sh.live){ $('livetxt').textContent = sh.pill || 'LIVE FROM CLASS';
-     $('live').style.opacity = eo(sg(loc,.1,.6))*(1-sg(loc,(sh.b-sh.a)-.5,sh.b-sh.a)); }
+     $('live').style.opacity = eo(sg(loc,.06,.40))*(1-sg(loc,(sh.b-sh.a)-.5,sh.b-sh.a)); }
  }
  let fo=0; if(t<.25) fo=1-sg(t,0,.25); if(t>TOT-.6) fo=sg(t,TOT-.6,TOT-.02);
  $('fade').style.opacity=fo;

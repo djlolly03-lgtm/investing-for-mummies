@@ -1073,11 +1073,11 @@
           </div>
           <span class="habit-emoji">💅</span>
         </div>
-        <input type="range" min="0" max="50000" step="500" value="3000"
+        <input type="range" min="0" max="100000" step="1000" value="3000"
           id="stc2_slider_salon" class="habit-slider"
           oninput="stc2SliderChange('salon',this.value)"
           onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
-        <div class="slider-range">₹0 — ₹50k</div>
+        <div class="slider-range">₹0 — ₹1L</div>
       </div>
 
       <div class="habit-card" id="stc2_h_delivery" onclick="stc2Toggle('delivery')">
@@ -1085,15 +1085,15 @@
         <div class="habit-top">
           <div class="habit-left">
             <div class="habit-name">Swiggy / Zomato</div>
-            <div class="habit-amt" id="stc2_amt_delivery"><span class="amt-num" id="stc2_num_delivery">₹4,200</span><span class="amt-unit">/ Month</span></div>
+            <div class="habit-amt" id="stc2_amt_delivery"><span class="amt-num" id="stc2_num_delivery">₹4,000</span><span class="amt-unit">/ Month</span></div>
           </div>
           <span class="habit-emoji">🛵</span>
         </div>
-        <input type="range" min="0" max="50000" step="500" value="4200"
+        <input type="range" min="0" max="100000" step="1000" value="4000"
           id="stc2_slider_delivery" class="habit-slider"
           oninput="stc2SliderChange('delivery',this.value)"
           onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
-        <div class="slider-range">₹0 — ₹50k</div>
+        <div class="slider-range">₹0 — ₹1L</div>
       </div>
 
       <div class="habit-card" id="stc2_h_shopping" onclick="stc2Toggle('shopping')">
@@ -1105,11 +1105,11 @@
           </div>
           <span class="habit-emoji">🛍️</span>
         </div>
-        <input type="range" min="0" max="50000" step="500" value="3000"
+        <input type="range" min="0" max="300000" step="1000" value="3000"
           id="stc2_slider_shopping" class="habit-slider"
           oninput="stc2SliderChange('shopping',this.value)"
           onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
-        <div class="slider-range">₹0 — ₹50k</div>
+        <div class="slider-range">₹0 — ₹3L</div>
       </div>
 
       <div class="habit-card" id="stc2_h_coffee" onclick="stc2Toggle('coffee')">
@@ -1121,7 +1121,7 @@
           </div>
           <span class="habit-emoji">☕</span>
         </div>
-        <input type="range" min="0" max="50000" step="500" value="6000"
+        <input type="range" min="0" max="50000" step="1000" value="6000"
           id="stc2_slider_coffee" class="habit-slider"
           oninput="stc2SliderChange('coffee',this.value)"
           onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
@@ -1133,15 +1133,15 @@
         <div class="habit-top">
           <div class="habit-left">
             <div class="habit-name">Beauty &amp; Skincare</div>
-            <div class="habit-amt" id="stc2_amt_skincare"><span class="amt-num" id="stc2_num_skincare">₹2,500</span><span class="amt-unit">/ Month</span></div>
+            <div class="habit-amt" id="stc2_amt_skincare"><span class="amt-num" id="stc2_num_skincare">₹3,000</span><span class="amt-unit">/ Month</span></div>
           </div>
           <span class="habit-emoji">💄</span>
         </div>
-        <input type="range" min="0" max="50000" step="500" value="2500"
+        <input type="range" min="0" max="200000" step="1000" value="3000"
           id="stc2_slider_skincare" class="habit-slider"
           oninput="stc2SliderChange('skincare',this.value)"
           onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
-        <div class="slider-range">₹0 — ₹50k</div>
+        <div class="slider-range">₹0 — ₹2L</div>
       </div>
 
       <div class="habit-card" id="stc2_h_weekend" onclick="stc2Toggle('weekend')">
@@ -1153,11 +1153,11 @@
           </div>
           <span class="habit-emoji">🎬</span>
         </div>
-        <input type="range" min="0" max="50000" step="500" value="2000"
+        <input type="range" min="0" max="300000" step="1000" value="2000"
           id="stc2_slider_weekend" class="habit-slider"
           oninput="stc2SliderChange('weekend',this.value)"
           onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
-        <div class="slider-range">₹0 — ₹50k</div>
+        <div class="slider-range">₹0 — ₹3L</div>
       </div>
 
     </div>
@@ -1254,10 +1254,10 @@
 // ─────────────────────────────────────────────────────
 var stc2Data = {
   salon:    { monthly: 3000 },
-  delivery: { monthly: 4200 },
+  delivery: { monthly: 4000 },
   shopping: { monthly: 3000 },
   coffee:   { monthly: 6000 },
-  skincare: { monthly: 2500 },
+  skincare: { monthly: 3000 },
   weekend:  { monthly: 2000 }
 };
 var stc2Sel = { salon:false, delivery:false, shopping:false, coffee:false, skincare:false, weekend:false };
@@ -1498,8 +1498,13 @@ function stc2Toggle(id) {
 // ─────────────────────────────────────────────────────
 //  SLIDER
 // ─────────────────────────────────────────────────────
-function stc2SliderChange(id, val) {
-  val = parseInt(val);
+function stc2SliderChange(id, rawVal) {
+  var raw = parseInt(rawVal);
+  // Tiered snapping: <1L → 1k, 1-2L → 2k, 2L+ → 5k
+  var step = raw <= 100000 ? 1000 : raw <= 200000 ? 2000 : 5000;
+  var val = Math.round(raw / step) * step;
+  // Sync slider thumb to snapped value
+  document.getElementById('stc2_slider_' + id).value = val;
   stc2Data[id].monthly = val;
   document.getElementById('stc2_num_' + id).textContent = '₹' + val.toLocaleString('en-IN');
   stc2UpdateFuture(id);

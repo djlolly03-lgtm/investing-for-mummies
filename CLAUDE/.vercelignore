@@ -111,3 +111,22 @@ game-icons/wog-wos-new/
 # HTML is not blocked by the rules above and this folder is the deploy root. It is an
 # internal document; the PDF was already blocked by *.pdf.
 proposals/*Dezerv*
+
+# ── Deploy size: added 16 Oct 2026 after Vercel reported the project full ──────
+# The deploy was 8,027 files / 2.4 GB. scam-slingshot alone was 5,852 files /
+# 1.9 GB of that — 79% — and it is linked from NOWHERE: zero references in
+# index.html, zero in content/data.js. The game is still in development and its
+# build scratch was shipping with it:
+#     _shots/      5,226 files, 1.1 GB   build screenshots
+#     _reference/     66 files,  76 MB   AI art refs incl. _rejected/
+# Those were also publicly fetchable. Every mention of _shots/_reference inside
+# src/ is a CODE COMMENT citing where a tuning number came from — nothing is
+# fetched at runtime, so excluding them cannot break the game.
+#
+# Nothing is deleted: the files stay on disk and in git. To preview the game on
+# Vercel again, comment out the scam-slingshot line below and redeploy.
+scam-slingshot/
+scam-slingshot-progress.html
+
+# game-reels build output — renders are published from content/, not from here.
+game-reels/out/

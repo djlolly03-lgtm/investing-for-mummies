@@ -64,7 +64,6 @@ Until now sales has been smeared across people who neither wanted it nor took up
 
 ## Paid support from September
 
-From September, IFM runs **₹20–30k/month of Meta ads**, optimised to **completed registrations** on the batch page — not reach, not followers. At the ₹19,000 early-bird price, ₹30k breaks even at roughly 1.5 seats.
 
 **This role is the reason the spend is worth making.** Ads produce near-misses — people who click, start the form, or land on the waitlist and don't finish. Those are yours to work, and a paid lead nobody follows up is money burnt twice.
 

@@ -1,0 +1,113 @@
+*.pdf
+*.mp4
+*.mov
+*.avi
+api/
+requirements.txt
+
+# Internal docs, build scripts and Apps Script source. 93 of these were being served
+# publicly at ifm-deploy.vercel.app (verified 200 on 7 Sep 2026) — build briefs, sheet
+# IDs, sync scripts. Nothing the site renders fetches a .md/.py/.gs, so blocking them
+# costs nothing. Add a "!" exception below if a page ever genuinely needs one.
+*.md
+*.py
+*.gs
+*.bak
+*.orig
+!3b-hero.mp4
+!wealth-hack-loop.mp4
+!ifm-logo-gold-coins-spin.mp4
+
+# Content-hub videos that MUST ship, or their catalogue rows 404 on the live site.
+# The blanket *.mp4 above exists to keep ~778MB of raw footage out of the deploy;
+# these are the small, already-compressed DERIVATIVES the hub actually links to.
+# SIZE BUDGET (keep it, or this problem comes back): thumbs <=25KB, preview clips <=200KB.
+# Masters (full-res photos, finished reels) belong on Drive, never here.
+!content/teasers/*.mp4
+!content/game-assets/*.mp4
+!content/clips/*.mp4
+
+# Saanp Seedhi test harness — puppeteer probes, a node_modules symlink and throwaway
+# agent scripts. None of it is part of the game; shipping it would drag puppeteer into
+# the deploy.
+snakes-ladders/tests/
+
+# HR, brand and tracker documents. Verified publicly readable on 7 Sep 2026 — including
+# "Organization Chart/HR/3 - Sakshi Role Definition (internal).docx", a document about a
+# named employee that says "internal" in its own filename. Nothing the site renders fetches
+# a .docx/.xlsx/.csv (checked: zero references), so blocking them costs nothing.
+*.docx
+*.xlsx
+*.csv
+*.env
+*.key
+
+# Sync-tool conflict copies ("... 2.html", "... 2.docx"). 650 of these appeared in the tree;
+# 394 were not covered by the rules above and would each have become a live public URL.
+* 2.*
+*\ 2.*
+
+# Scam Slingshot dev-only folders — MUST NOT SHIP.
+# _reference holds real Angry Birds screenshots used privately as a critique baseline;
+# publishing them would put Rovio's copyrighted art on the live site. _shots/_state/_tools
+# are build scratch, capture harness and progress state — none of it belongs on the web.
+scam-slingshot/_reference
+scam-slingshot/_shots
+scam-slingshot/_state
+scam-slingshot/_tools
+scam-slingshot/BUILDING-ELSEWHERE.md
+
+# V1 Library prototype — ship only what the page needs. The rest is build tooling and
+# review material that would otherwise each become a public URL.
+content/v1-prototype/run-tests.js
+content/v1-prototype/sample10.js
+content/v1-prototype/tagged20.js
+content/v1-prototype/storyboard.html
+content/v1-prototype/enrichment.json
+# Added 17 Sep 2026. Same reason as the five above, and the same trap: this list is
+# per-file, so anything added to the prototype later is public by default until it is
+# named here. The page loads taxonomy.js, v1-catalogue.js, media-map.js, transcripts.js
+# and — since the §8 interpretation layer was wired in — interpreter.js, so that one is
+# deliberately NOT listed below. The three that remain are test harness and internal
+# audit material, carrying commentary and asset IDs never meant to be read off the
+# open web.
+content/v1-prototype/interpreter-tests.js
+content/v1-prototype/nl-diagnostic.js
+content/v1-prototype/semantic-experiment.js
+# Dot-files are uploaded like any other file; this one is the HEAD-probe cache written by
+# media-audit.py.
+.media-probe.json
+# The spec's reference pack. *.md above already blocks SPEC.md, but *.png is NOT blocked
+# anywhere in this file, so without this line the approved storyboard and the current-state
+# screenshots would each become a public URL on ifm-deploy. They are internal design
+# material and nothing the site renders fetches them.
+content/v1-prototype/references/
+# The per-video transcript store written by transcribe-videos.py. 160 files, ~660KB, and
+# nothing the page fetches: the text is already folded into v1-catalogue.js as each row's
+# `speech` field. Publishing it would be 160 public URLs for no reader.
+content/v1-prototype/speech/
+
+# ── Deploy-size cuts, 22 Sep 2026. Vercel storage hit 100% of 10 GB. ──────────
+# Each deploy shipped 427 MB; these three folders were 103 MB of it (24%) and
+# NOTHING on the site loads any of them. Verified before removing, not assumed:
+
+# Source archive for the Slash the Scam icons — 56 MB across 18 files at up to
+# 5.6 MB each. Zero references to "game-icons/raw/" anywhere in the codebase.
+# slash-the-scam.html loads the FLAT optimised set (game-icons/aidbox.png etc,
+# 15 files totalling 1.9 MB), which stays shipped. raw/ is the working master.
+game-icons/raw/
+
+# 36.9 MB in TWO files (gold_war_crisis.png 29.9 MB, gold_low_rates.png 7 MB).
+# Zero references. Wheel-of-Gold/Silver artwork that was never wired up.
+game-icons/wog-wos-new/
+
+# gstack QA tool output — browse-console.log, browse-network.log, qa-reports/.
+# 10.5 MB, zero references, and it is debug output from the testing harness that
+# should never have been web-accessible in the first place.
+.gstack/
+
+# Internal client documents — NEVER publish (user decision 15 Oct 2026).
+# The Dezerv proposal HTML (+ preview) was being served publicly at /proposals/… because
+# HTML is not blocked by the rules above and this folder is the deploy root. It is an
+# internal document; the PDF was already blocked by *.pdf.
+proposals/*Dezerv*

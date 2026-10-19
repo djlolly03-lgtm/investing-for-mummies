@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>The Wealth Hack — brag</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+/* ── fonts (local woff2; ₹ lives in the latin-ext files) ─────────────────── */
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:600;src:url('assets/fonts/fraunces-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:600;src:url('assets/fonts/fraunces-latin-ext-600-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:700;src:url('assets/fonts/fraunces-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:700;src:url('assets/fonts/fraunces-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:600;src:url('assets/fonts/fraunces-latin-600-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:600;src:url('assets/fonts/fraunces-latin-ext-600-italic.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:600;src:url('assets/fonts/manrope-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:600;src:url('assets/fonts/manrope-latin-ext-600-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:700;src:url('assets/fonts/manrope-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:700;src:url('assets/fonts/manrope-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:800;src:url('assets/fonts/manrope-latin-800-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:800;src:url('assets/fonts/manrope-latin-ext-800-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  --bass:0;
+  --gold-hi:#f7dea0;--gold:#d79f34;--coral:#ff8a76;--teal:#2dd4bf;
+  --ink:#eaf6f3;--sub:#9fc2bb;--ivory:#f6f1e7;--night:#050c15;
+  --glass:rgba(10,26,34,.78);--edge:rgba(255,255,255,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#050c15}
+#root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Manrope',sans-serif;color:var(--ink);background:#050c15}
+.abs{position:absolute}
+.scene{position:absolute;left:0;top:0;width:1920px;height:1080px}
+.fill{position:absolute;left:0;top:0;width:1920px;height:1080px}
+em{font-style:italic;color:var(--gold-hi);font-weight:600}
+
+/* ── layers ─────────────────────────────────────────────────────────────── */
+#roof{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:1}
+#roof-shade{z-index:2;background:linear-gradient(180deg,rgba(6,16,28,.46) 0%,rgba(6,16,28,.66) 55%,rgba(6,16,28,.9) 100%)}
+#s2,#s3{z-index:4}
+#s1{z-index:6}
+#s4{z-index:7}
+#bug{z-index:5}
+
+/* ── jar scenes ─────────────────────────────────────────────────────────── */
+.jar-wrap{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden}
+.jimg{position:absolute;left:0;top:0;width:1920px;height:1080px;background:url('assets/img/jars.jpg') center/cover no-repeat;transform-origin:50% 58%}
+.dim{position:absolute;top:0;height:1080px;background:#050c15}
+#dimS{left:0;width:960px;background:linear-gradient(90deg,rgba(5,12,21,.92) 0%,rgba(5,12,21,.8) 70%,rgba(5,12,21,0) 100%)}
+#dimT{left:960px;width:960px;background:linear-gradient(270deg,rgba(5,12,21,.92) 0%,rgba(5,12,21,.8) 70%,rgba(5,12,21,0) 100%)}
+.spot{position:absolute;left:1180px;top:340px;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(247,201,106,.5) 0%,rgba(247,201,106,0) 68%);mix-blend-mode:screen;opacity:calc(.12 + .5 * var(--bass))}
+.vig{position:absolute;left:0;top:0;width:1920px;height:1080px;background:radial-gradient(ellipse 75% 70% at 50% 52%,rgba(5,12,21,0) 40%,rgba(5,12,21,.55) 100%)}
+.pool{position:absolute;left:0;top:0;width:1920px;height:1080px;background:radial-gradient(ellipse 600px 600px at 870px 540px,rgba(5,12,21,.78) 0%,rgba(5,12,21,.5) 55%,rgba(5,12,21,0) 100%)}
+
+/* S1 tagline */
+#tag{position:absolute;left:520px;top:500px;width:760px;text-align:center}
+.tl{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:60px;line-height:1.22;color:#fff;text-shadow:0 4px 26px rgba(0,0,0,.7)}
+.tl.soon{color:var(--ivory)}
+.tl.rich{color:var(--gold-hi);font-style:italic}
+
+/* S4 closing */
+#hl{position:absolute;left:470px;top:196px;width:800px;text-align:center;font-family:'Fraunces',serif;font-weight:700;color:#fff;text-shadow:0 6px 34px rgba(0,0,0,.6)}
+#hl .a,#hl .b{display:block;font-size:72px;line-height:1.08}
+#hl .c{display:block;font-size:108px;line-height:1.12;font-style:italic;font-weight:600;color:var(--gold-hi);
+  text-shadow:0 0 calc(24px + 46px * var(--bass)) rgba(233,191,98,calc(.28 + .3 * var(--bass))),0 6px 34px rgba(0,0,0,.6)}
+#lock{position:absolute;left:470px;top:600px;width:800px;text-align:center}
+#lock .logo{display:block;width:112px;height:112px;margin:0 auto 18px;border-radius:50%;box-shadow:0 8px 36px rgba(0,0,0,.55),0 0 0 3px rgba(247,222,160,.55)}
+#lock .ttl{font-family:'Fraunces',serif;font-weight:700;font-size:64px;line-height:1.1;color:#fff}
+#lock .ifm{margin-top:12px;font-weight:800;font-size:21px;letter-spacing:.28em;color:var(--gold-hi)}
+#lock .url{margin-top:22px;font-weight:700;font-size:25px;color:var(--ink);letter-spacing:.01em}
+
+/* ── S2 · the question ──────────────────────────────────────────────────── */
+.kick{position:absolute;left:0;width:1920px;text-align:center;font-weight:800;font-size:22px;letter-spacing:.24em;color:var(--ink);text-shadow:0 1px 14px rgba(0,0,0,.8)}
+#s2 .kick{top:176px}
+#qpanel{position:absolute;left:280px;top:218px;width:1360px;height:384px;border-radius:22px;background:var(--glass);border:1.5px solid rgba(233,191,98,.55);
+  box-shadow:0 22px 64px rgba(0,0,0,.5),0 0 60px rgba(233,191,98,.12);backdrop-filter:blur(10px)}
+#q{position:absolute;left:44px;top:34px;width:1272px;text-align:center;font-family:'Fraunces',serif;font-weight:700;font-size:66px;line-height:1.16;color:#fff}
+#q span{display:block}
+#qsub{position:absolute;left:100px;top:296px;width:1160px;text-align:center;font-weight:700;font-size:30px;line-height:1.4;color:var(--sub)}
+#live{position:absolute;left:0;top:648px;width:1920px;text-align:center;font-weight:800;font-size:20px;letter-spacing:.2em;color:var(--teal)}
+#live i{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--teal);margin-right:12px;vertical-align:1px;box-shadow:0 0 14px var(--teal)}
+#cnt{position:absolute;left:0;top:684px;width:1920px;height:80px;text-align:center;font-weight:800;font-size:40px;color:#fff;line-height:80px;white-space:nowrap}
+#cnt .nw{display:inline-block;position:relative;width:48px;height:80px;vertical-align:top;margin-right:10px}
+#cnt .n{position:absolute;left:0;top:0;width:48px;text-align:center;font-family:'Fraunces',serif;font-weight:700;font-size:64px;color:var(--gold-bright,#f5c451);opacity:0}
+#pills{position:absolute;left:0;top:798px;width:1920px;display:flex;justify-content:center;gap:18px}
+.pill{display:flex;align-items:center;gap:14px;height:72px;padding:0 24px 0 8px;border-radius:36px;background:rgba(10,26,34,.78);border:1.5px solid rgba(233,191,98,.45);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.pav{color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;line-height:1}
+.pn{font-weight:800;font-size:31px;color:#fff}
+.pa{font-weight:800;font-size:23px;color:var(--sub)}
+#btn{position:absolute;left:660px;top:948px;width:600px;height:80px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:29px;color:#1a1203;background:linear-gradient(135deg,var(--gold-hi),#d79f34);box-shadow:0 14px 40px rgba(233,191,98,.34),inset 0 1px 0 rgba(255,255,255,.5)}
+.ring{position:absolute;left:910px;top:938px;width:100px;height:100px;border-radius:50%;border:3px solid var(--gold-hi);opacity:0}
+#cursor{position:absolute;left:0;top:0;width:46px;height:46px}
+
+/* ── S3 · the table ─────────────────────────────────────────────────────── */
+.h-blk{position:absolute;left:0;top:70px;width:1920px;height:170px;text-align:center}
+.h-blk .kick{top:0}
+.h-ttl{position:absolute;left:0;top:50px;width:1920px;text-align:center;font-family:'Fraunces',serif;font-weight:700;font-size:62px;line-height:1.12;color:#fff;text-shadow:0 4px 26px rgba(0,0,0,.5)}
+#panel{position:absolute;left:150px;top:268px;width:1620px;height:570px;border-radius:22px;background:var(--glass);border:1px solid var(--edge);box-shadow:0 24px 70px rgba(0,0,0,.5);backdrop-filter:blur(10px)}
+.hd{position:absolute;top:26px;font-weight:800;font-size:17px;letter-spacing:.2em;color:var(--sub);white-space:nowrap}
+.hd-sw{opacity:0}
+.hline{position:absolute;left:30px;top:66px;width:1560px;height:1px;background:rgba(255,255,255,.12)}
+.row{position:absolute;left:0;width:1620px;height:100px}
+.av{color:#fff;position:absolute;left:36px;top:22px;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;line-height:1}
+.nm{position:absolute;left:108px;top:26px;font-weight:800;font-size:34px;color:#fff;line-height:48px}
+.bar{position:absolute;left:310px;top:0;width:500px;height:100px}
+.b-lbl{position:absolute;left:0;top:5px;width:500px;text-align:center;font-weight:700;font-size:21px;color:var(--sub);white-space:nowrap}
+.b-lbl.l2{opacity:0}
+.lost{color:var(--coral);font-weight:800}
+.b-track{position:absolute;left:0;top:44px;width:500px;height:12px;border-radius:6px;background:rgba(255,255,255,.1)}
+.b-gold{position:absolute;top:44px;height:12px;border-radius:6px;background:linear-gradient(90deg,#d79f34,#f7dea0);box-shadow:0 0 16px rgba(233,191,98,.4);transform-origin:0 50%}
+.b-wait{position:absolute;top:44px;height:12px;border-radius:6px;background:repeating-linear-gradient(135deg,rgba(255,138,118,.98) 0 5px,rgba(255,138,118,.38) 5px 10px);transform-origin:0 50%}
+.b-dot{position:absolute;top:38px;width:24px;height:24px;border-radius:50%;background:var(--coral);border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.55)}
+.b-flag{position:absolute;top:41px;width:18px;height:18px;transform:rotate(45deg);background:var(--gold-hi);border:2px solid #1a1203;border-radius:4px}
+.b-t{position:absolute;top:64px;width:40px;text-align:center;font-weight:800;font-size:19px;color:var(--ink)}
+.g{position:absolute;left:850px;top:28px;font-weight:700;font-size:38px;line-height:44px;color:#c4d9d4;font-variant-numeric:tabular-nums;white-space:nowrap}
+.g2{opacity:0;color:#8fa9a4}
+.real{position:absolute;left:1042px;top:18px;font-family:'Fraunces',serif;font-weight:600;font-size:58px;line-height:64px;color:var(--teal);font-variant-numeric:tabular-nums;white-space:nowrap;
+  text-shadow:0 0 calc(10px + 26px * var(--bass)) rgba(45,212,191,calc(.12 + .3 * var(--bass)));opacity:0}
+.chip{position:absolute;left:1346px;top:25px;height:50px;padding:0 20px;border-radius:14px;display:flex;align-items:center;font-weight:800;font-size:25px;white-space:nowrap;opacity:0}
+.chip.c1{background:rgba(255,138,118,.16);color:var(--coral);border:1px solid rgba(255,138,118,.32)}
+.chip .sm{font-weight:700;font-size:20px;margin-left:9px;opacity:.9}
+.chip.c2{background:rgba(255,138,118,.16);color:var(--coral);border:1px solid rgba(255,138,118,.32)}
+
+/* brand bug */
+#bug{position:absolute;left:56px;top:986px;height:60px;display:flex;align-items:center;gap:14px}
+#bug img{width:54px;height:54px;border-radius:50%;box-shadow:0 0 0 2px rgba(247,222,160,.5)}
+#bug span{font-weight:800;font-size:15px;letter-spacing:.24em;color:var(--ink);text-shadow:0 1px 10px rgba(0,0,0,.8)}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="23" data-width="1920" data-height="1080">
+
+  <!-- rooftop backdrop under scenes 2 + 3 -->
+  <video id="roof" class="clip" data-start="4.6" data-duration="13.3" data-track-index="0" src="assets/video/rooftop-18s.mp4" muted playsinline></video>
+  <div id="roof-shade" class="clip fill" data-start="4.6" data-duration="13.3" data-track-index="1"></div>
+
+  <!-- SCENE 1 · the two jars -->
+  <div id="s1" class="clip scene" data-start="0" data-duration="5.3" data-track-index="2">
+    <div id="s1in" class="scene">
+      <div class="jar-wrap"><div id="jars1" class="jimg"></div></div>
+      <div class="spot s1spot"></div>
+      <div id="dimS" class="dim"></div>
+      <div id="dimT" class="dim"></div>
+      <div class="vig"></div>
+      <div id="tag">
+        <span id="t1" class="tl">One started early.</span>
+        <span id="t2" class="tl soon">One started “soon”.</span>
+        <span id="t3" class="tl rich">Only one of them is rich.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 2 · the question -->
+  <div id="s2" class="clip scene" data-start="4.7" data-duration="6.4" data-track-index="3">
+    <div id="s2in" class="scene">
+      <div id="s2kick" class="kick">ROUND 1 OF 3 · THE BIG NUMBER</div>
+      <div id="qpanel">
+        <div id="q">
+          <span id="q1">To have <em>₹10 Cr</em> by the time you turn <em>40</em>,</span>
+          <span id="q2">how much would you need to invest</span>
+          <span id="q3"><em>every month</em>?</span>
+        </div>
+        <div id="qsub">Your age decides your number. Every phone in this room has a different answer.</div>
+      </div>
+      <div id="live"><i></i>LIVE · GUESS ON YOUR PHONE</div>
+      <div id="cnt"><span class="nw"><span class="n" id="n0">0</span><span class="n" id="n1">1</span><span class="n" id="n2">2</span><span class="n" id="n3">3</span><span class="n" id="n4">4</span><span class="n" id="n5">5</span></span>/ 5 locked in</div>
+      <div id="pills"><div class="pill" id="pill0"><span class="pav" style="background:#d6452e">🦊</span><span class="pn">Aanya</span><span class="pa">21</span></div><div class="pill" id="pill1"><span class="pav" style="background:#7d3a9c">🦁</span><span class="pn">Zoya</span><span class="pa">22</span></div><div class="pill" id="pill2"><span class="pav" style="background:#2f66bd">🐯</span><span class="pn">Rohan</span><span class="pa">24</span></div><div class="pill" id="pill3"><span class="pav" style="background:#157f78">🦄</span><span class="pn">Meera</span><span class="pa">27</span></div><div class="pill" id="pill4"><span class="pav" style="background:#a87a10">🐼</span><span class="pn">Kabir</span><span class="pa">29</span></div></div>
+      <div id="btn">Reveal the real numbers →</div>
+      <div id="ring" class="ring"></div>
+      <svg id="cursor" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg"><path d="M6 4 L6 36 L14 29 L20 42 L26 39.5 L20 27 L31 26 Z" fill="#fff" stroke="#0b1620" stroke-width="2.4" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+
+  <!-- SCENE 3 · the real numbers, then the cost of waiting -->
+  <div id="s3" class="clip scene" data-start="10.8" data-duration="6.9" data-track-index="4">
+    <div id="s3in" class="scene">
+      <div id="h1" class="h-blk">
+        <div class="kick">ROUND 1 · THE REAL NUMBERS</div>
+        <div class="h-ttl">₹10 Cr by 40 · what each of you needs <em>every month</em></div>
+      </div>
+      <div id="h2" class="h-blk" style="opacity:0">
+        <div class="kick">ROUND 2 · THE COST OF WAITING</div>
+        <div class="h-ttl">Same target. But you do nothing for <em>5 years</em>.</div>
+      </div>
+      <div id="panel">
+        <div class="hd" style="left:36px">NAME</div>
+        <div class="hd" style="left:310px">TODAY → FINISH LINE</div>
+        <div class="hd hd-a" style="left:850px">GUESSED</div>
+        <div class="hd hd-b hd-sw" style="left:850px">START NOW</div>
+        <div class="hd" style="left:1044px">REAL · PER MONTH</div>
+        <div class="hd hd-c" style="left:1348px">OFF BY</div>
+        <div class="hd hd-d hd-sw" style="left:1348px">CHANGE</div>
+        <div class="hline"></div>
+        
+      <div class="row" id="row0" style="top:84px">
+        <div class="av" style="background:#d6452e">🦊</div>
+        <div class="nm">Aanya</div>
+        <div class="bar">
+          <div class="b-lbl l1">19 yrs to grow</div>
+          <div class="b-lbl l2"><span class="lost">5 yrs lost</span> · 14 yrs to grow</div>
+          <div class="b-track"></div>
+          <div class="b-gold" style="left:62.5px;width:395.8px"></div>
+          <div class="b-wait" style="left:62.5px;width:104.2px"></div>
+          <div class="b-dot" style="left:50.5px"></div>
+          <div class="b-flag" style="left:449.3px"></div>
+          <div class="b-t" style="left:42.5px">21</div>
+          <div class="b-t" style="left:438.3px">40</div>
+        </div>
+        <div class="g g1">₹25k</div>
+        <div class="g g2">₹1.15 L</div>
+        <div class="real" id="real0">₹1.15 L</div>
+        <div class="chip c1">₹90.4k short</div>
+        <div class="chip c2">+₹1.16 L<span class="sm">a month</span></div>
+      </div>
+      <div class="row" id="row1" style="top:196px">
+        <div class="av" style="background:#7d3a9c">🦁</div>
+        <div class="nm">Zoya</div>
+        <div class="bar">
+          <div class="b-lbl l1">18 yrs to grow</div>
+          <div class="b-lbl l2"><span class="lost">5 yrs lost</span> · 13 yrs to grow</div>
+          <div class="b-track"></div>
+          <div class="b-gold" style="left:83.3px;width:375.0px"></div>
+          <div class="b-wait" style="left:83.3px;width:104.2px"></div>
+          <div class="b-dot" style="left:71.3px"></div>
+          <div class="b-flag" style="left:449.3px"></div>
+          <div class="b-t" style="left:63.3px">22</div>
+          <div class="b-t" style="left:438.3px">40</div>
+        </div>
+        <div class="g g1">₹10k</div>
+        <div class="g g2">₹1.32 L</div>
+        <div class="real" id="real1">₹1.32 L</div>
+        <div class="chip c1">₹1.22 L short</div>
+        <div class="chip c2">+₹1.37 L<span class="sm">a month</span></div>
+      </div>
+      <div class="row" id="row2" style="top:308px">
+        <div class="av" style="background:#2f66bd">🐯</div>
+        <div class="nm">Rohan</div>
+        <div class="bar">
+          <div class="b-lbl l1">16 yrs to grow</div>
+          <div class="b-lbl l2"><span class="lost">5 yrs lost</span> · 11 yrs to grow</div>
+          <div class="b-track"></div>
+          <div class="b-gold" style="left:125.0px;width:333.3px"></div>
+          <div class="b-wait" style="left:125.0px;width:104.2px"></div>
+          <div class="b-dot" style="left:113.0px"></div>
+          <div class="b-flag" style="left:449.3px"></div>
+          <div class="b-t" style="left:105.0px">24</div>
+          <div class="b-t" style="left:438.3px">40</div>
+        </div>
+        <div class="g g1">₹50k</div>
+        <div class="g g2">₹1.74 L</div>
+        <div class="real" id="real2">₹1.74 L</div>
+        <div class="chip c1">₹1.24 L short</div>
+        <div class="chip c2">+₹1.94 L<span class="sm">a month</span></div>
+      </div>
+      <div class="row" id="row3" style="top:420px">
+        <div class="av" style="background:#157f78">🦄</div>
+        <div class="nm">Meera</div>
+        <div class="bar">
+          <div class="b-lbl l1">13 yrs to grow</div>
+          <div class="b-lbl l2"><span class="lost">5 yrs lost</span> · 8 yrs to grow</div>
+          <div class="b-track"></div>
+          <div class="b-gold" style="left:187.5px;width:270.8px"></div>
+          <div class="b-wait" style="left:187.5px;width:104.2px"></div>
+          <div class="b-dot" style="left:175.5px"></div>
+          <div class="b-flag" style="left:449.3px"></div>
+          <div class="b-t" style="left:167.5px">27</div>
+          <div class="b-t" style="left:438.3px">40</div>
+        </div>
+        <div class="g g1">₹1.50 L</div>
+        <div class="g g2">₹2.69 L</div>
+        <div class="real" id="real3">₹2.69 L</div>
+        <div class="chip c1">₹1.19 L short</div>
+        <div class="chip c2">+₹3.57 L<span class="sm">a month</span></div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- brand bug over scenes 2 + 3 -->
+  <div id="bug" class="clip" data-start="5.0" data-duration="12.4" data-track-index="5"><img src="assets/img/ifm-logo.png" alt="" /><span>THE WEALTH HACK · INVESTING FOR MUMMIES</span></div>
+
+  <!-- SCENE 4 · the best month -->
+  <div id="s4" class="clip scene" data-start="17.3" data-duration="5.7" data-track-index="6">
+    <div id="s4in" class="scene">
+      <div class="jar-wrap"><div id="jars4" class="jimg"></div></div>
+      <div class="spot s4spot"></div>
+      <div class="vig"></div>
+      <div class="pool"></div>
+      <div id="hl">
+        <span id="ha" class="a">The best month</span>
+        <span id="hb" class="b">to start is</span>
+        <span id="hc" class="c">this one.</span>
+      </div>
+      <div id="lock">
+        <img id="lglogo" class="logo" src="assets/img/ifm-logo.png" alt="" />
+        <div id="lgttl" class="ttl">The Wealth Hack</div>
+        <div id="lgifm" class="ifm">INVESTING FOR MUMMIES</div>
+        <div id="lgurl" class="url">games.investingformummies.com/the-wealth-hack</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- audio: music bed + sparse soft accents -->
+  <audio id="bed" data-start="0" data-duration="23" data-track-index="20" data-volume="0.4" src="assets/music/bed.mp3"></audio>
+  <audio id="sfx01" data-start="0.56" data-duration="0.01" data-track-index="11" data-volume="0.45" src="assets/sfx/click_003.wav"></audio>
+  <audio id="sfx02" data-start="1.64" data-duration="0.01" data-track-index="11" data-volume="0.45" src="assets/sfx/click_003.wav"></audio>
+  <audio id="sfx03" data-start="2.73" data-duration="0.01" data-track-index="11" data-volume="0.45" src="assets/sfx/click_003.wav"></audio>
+  <audio id="sfx04" data-start="5.05" data-duration="0.6" data-track-index="12" data-volume="0.35" src="assets/sfx/card-slide-1.wav"></audio>
+  <audio id="sfx05" data-start="7.09" data-duration="0.01" data-track-index="11" data-volume="0.5" src="assets/sfx/click_002.wav"></audio>
+  <audio id="sfx06" data-start="7.64" data-duration="0.01" data-track-index="11" data-volume="0.5" src="assets/sfx/click_002.wav"></audio>
+  <audio id="sfx07" data-start="8.19" data-duration="0.01" data-track-index="11" data-volume="0.5" src="assets/sfx/click_002.wav"></audio>
+  <audio id="sfx08" data-start="8.74" data-duration="0.01" data-track-index="11" data-volume="0.5" src="assets/sfx/click_002.wav"></audio>
+  <audio id="sfx09" data-start="9.29" data-duration="0.01" data-track-index="11" data-volume="0.5" src="assets/sfx/click_002.wav"></audio>
+  <audio id="sfx10" data-start="10.37" data-duration="0.01" data-track-index="11" data-volume="0.7" src="assets/sfx/click_005.wav"></audio>
+  <audio id="sfx11" data-start="10.93" data-duration="0.15" data-track-index="12" data-volume="0.45" src="assets/sfx/impactSoft_medium_004.wav"></audio>
+  <audio id="sfx12" data-start="11.46" data-duration="0.6" data-track-index="13" data-volume="0.3" src="assets/sfx/card-slide-1.wav"></audio>
+  <audio id="sfx13" data-start="13.11" data-duration="0.19" data-track-index="12" data-volume="0.7" src="assets/sfx/impactSoft_medium_001.wav"></audio>
+  <audio id="sfx14" data-start="14.73" data-duration="0.15" data-track-index="12" data-volume="0.6" src="assets/sfx/impactSoft_medium_004.wav"></audio>
+  <audio id="sfx15" data-start="17.47" data-duration="0.12" data-track-index="12" data-volume="0.35" src="assets/sfx/bong_001.wav"></audio>
+  <audio id="sfx16" data-start="19.66" data-duration="1.48" data-track-index="14" data-volume="0.55" src="assets/sfx/impactBell_heavy_000.wav"></audio>
+</div>
+
+<script>
+(function () {
+  var D = {"rows": [{"now": 115386, "late": 231430}, {"now": 131950, "late": 268666}, {"now": 173725, "late": 367788}, {"now": 268666, "late": 625284}], "bass": [0.004, 0.014, 0.026, 0.037, 0.038, 0.028, 0.018, 0.011, 0.008, 0.006, 0.004, 0.003, 0.004, 0.003, 0.002, 0.002, 0.003, 0.003, 0.004, 0.003, 0.003, 0.002, 0.002, 0.001, 0.003, 0.003, 0.003, 0.002, 0.004, 0.006, 0.005, 0.003, 0.002, 0.002, 0.001, 0.001, 0.002, 0.003, 0.002, 0.002, 0.001, 0.002, 0.003, 0.002, 0.004, 0.006, 0.005, 0.004, 0.004, 0.004, 0.004, 0.004, 0.004, 0.003, 0.002, 0.001, 0.001, 0.003, 0.003, 0.002, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.003, 0.006, 0.004, 0.003, 0.004, 0.004, 0.003, 0.002, 0.002, 0.002, 0.002, 0.001, 0.003, 0.003, 0.003, 0.002, 0.001, 0.001, 0.001, 0.001, 0.003, 0.006, 0.006, 0.005, 0.004, 0.003, 0.003, 0.002, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.003, 0.003, 0.002, 0.002, 0.004, 0.004, 0.003, 0.003, 0.002, 0.002, 0.002, 0.002, 0.003, 0.005, 0.004, 0.003, 0.002, 0.002, 0.001, 0.001, 0.006, 0.057, 0.123, 0.151, 0.161, 0.137, 0.088, 0.052, 0.032, 0.02, 0.013, 0.008, 0.005, 0.004, 0.003, 0.002, 0.002, 0.003, 0.002, 0.002, 0.001, 0.001, 0.001, 0.001, 0.001, 0.002, 0.002, 0.002, 0.001, 0.003, 0.004, 0.004, 0.003, 0.002, 0.001, 0.001, 0.001, 0.003, 0.005, 0.003, 0.002, 0.002, 0.003, 0.003, 0.002, 0.002, 0.004, 0.004, 0.003, 0.004, 0.006, 0.005, 0.004, 0.002, 0.002, 0.002, 0.002, 0.001, 0.003, 0.003, 0.003, 0.002, 0.001, 0.001, 0.001, 0.001, 0.002, 0.003, 0.002, 0.002, 0.005, 0.007, 0.004, 0.003, 0.004, 0.004, 0.002, 0.002, 0.004, 0.005, 0.003, 0.003, 0.003, 0.003, 0.002, 0.001, 0.001, 0.001, 0.001, 0.0, 0.004, 0.008, 0.006, 0.005, 0.005, 0.009, 0.007, 0.004, 0.003, 0.002, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.004, 0.004, 0.003, 0.002, 0.003, 0.005, 0.006, 0.004, 0.003, 0.002, 0.002, 0.002, 0.003, 0.004, 0.003, 0.002, 0.001, 0.001, 0.001, 0.001, 0.031, 0.299, 0.527, 0.54, 0.372, 0.252, 0.201, 0.181, 0.177, 0.168, 0.166, 0.165, 0.165, 0.169, 0.171, 0.171, 0.171, 0.325, 0.551, 0.606, 0.471, 0.328, 0.242, 0.197, 0.179, 0.167, 0.165, 0.155, 0.149, 0.154, 0.15, 0.144, 0.145, 0.149, 0.441, 0.59, 0.531, 0.332, 0.243, 0.221, 0.201, 0.18, 0.167, 0.159, 0.158, 0.161, 0.157, 0.148, 0.147, 0.166, 0.32, 0.535, 0.558, 0.397, 0.269, 0.208, 0.177, 0.155, 0.095, 0.081, 0.087, 0.096, 0.112, 0.121, 0.118, 0.122, 0.292, 0.568, 0.636, 0.517, 0.311, 0.184, 0.107, 0.065, 0.038, 0.022, 0.013, 0.009, 0.009, 0.008, 0.006, 0.006, 0.059, 0.313, 0.479, 0.472, 0.304, 0.179, 0.101, 0.057, 0.034, 0.021, 0.014, 0.01, 0.007, 0.006, 0.006, 0.006, 0.02, 0.265, 0.543, 0.588, 0.433, 0.252, 0.142, 0.08, 0.045, 0.028, 0.017, 0.011, 0.009, 0.009, 0.007, 0.007, 0.007, 0.139, 0.44, 0.564, 0.475, 0.287, 0.16, 0.09, 0.051, 0.032, 0.02, 0.013, 0.009, 0.006, 0.005, 0.004, 0.004, 0.045, 0.315, 0.507, 0.509, 0.346, 0.236, 0.191, 0.175, 0.165, 0.161, 0.163, 0.167, 0.17, 0.175, 0.176, 0.175, 0.177, 0.353, 0.574, 0.614, 0.454, 0.317, 0.238, 0.203, 0.184, 0.168, 0.166, 0.16, 0.155, 0.154, 0.155, 0.151, 0.145, 0.175, 0.466, 0.602, 0.522, 0.319, 0.23, 0.184, 0.165, 0.155, 0.15, 0.143, 0.14, 0.141, 0.138, 0.139, 0.139, 0.159, 0.35, 0.544, 0.552, 0.378, 0.262, 0.206, 0.187, 0.172, 0.107, 0.098, 0.105, 0.113, 0.123, 0.134, 0.141, 0.153, 0.322, 0.569, 0.619, 0.479, 0.288, 0.17, 0.096, 0.055, 0.033, 0.019, 0.012, 0.009, 0.007, 0.006, 0.004, 0.004, 0.093, 0.431, 0.535, 0.511, 0.363, 0.218, 0.123, 0.07, 0.042, 0.029, 0.02, 0.013, 0.01, 0.011, 0.009, 0.007, 0.025, 0.28, 0.521, 0.548, 0.388, 0.222, 0.125, 0.072, 0.043, 0.028, 0.019, 0.013, 0.01, 0.013, 0.013, 0.013, 0.016, 0.021, 0.028, 0.028, 0.035, 0.035, 0.027, 0.018, 0.012, 0.008, 0.007, 0.004, 0.003, 0.002, 0.003, 0.003, 0.002, 0.081, 0.342, 0.553, 0.472, 0.368, 0.351, 0.324, 0.261, 0.174, 0.1, 0.056, 0.032, 0.019, 0.012, 0.007, 0.004, 0.025, 0.292, 0.588, 0.597, 0.448, 0.268, 0.153, 0.085, 0.048, 0.029, 0.019, 0.011, 0.007, 0.005, 0.004, 0.003, 0.006, 0.165, 0.505, 0.613, 0.487, 0.292, 0.162, 0.091, 0.052, 0.055, 0.11, 0.133, 0.155, 0.163, 0.168, 0.176, 0.182, 0.244, 0.492, 0.649, 0.57, 0.379, 0.253, 0.208, 0.189, 0.192, 0.236, 0.235, 0.233, 0.224, 0.215, 0.229, 0.24, 0.234, 0.311, 0.596, 0.597, 0.443, 0.357, 0.331, 0.329, 0.332, 0.311, 0.225, 0.131, 0.074, 0.043, 0.027, 0.017, 0.013, 0.167, 0.542, 0.655, 0.545, 0.339, 0.191, 0.108, 0.061, 0.062, 0.125, 0.148, 0.142, 0.136, 0.128, 0.118, 0.109, 0.109, 0.352, 0.607, 0.538, 0.367, 0.216, 0.126, 0.073, 0.054, 0.109, 0.136, 0.148, 0.145, 0.141, 0.136, 0.137, 0.136, 0.268, 0.511, 0.53, 0.412, 0.253, 0.169, 0.125, 0.102, 0.097, 0.122, 0.134, 0.136, 0.126, 0.087, 0.059, 0.043, 0.107, 0.324, 0.438, 0.354, 0.248, 0.205, 0.185, 0.171, 0.167, 0.148, 0.109, 0.069, 0.04, 0.023, 0.013, 0.007, 0.017, 0.126, 0.224, 0.208, 0.148, 0.085, 0.048, 0.027, 0.015, 0.009, 0.006, 0.003, 0.002, 0.001, 0.001, 0.001, 0.001, 0.008, 0.018, 0.015]};
+  var tl = gsap.timeline({ paused: true });
+  var root = document.getElementById("root");
+  var Q = function (s) { return document.querySelector(s); };
+  var QA = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+
+  /* ── SCENE 1 · the two jars (0 – 5.3) ──────────────────────────────────── */
+  tl.fromTo("#s1in", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 0);
+  tl.fromTo("#jars1", { scale: 1.0 }, { scale: 1.07, duration: 5.3, ease: "none" }, 0);
+  tl.fromTo("#dimS, #dimT", { opacity: 1 }, { opacity: 1, duration: 0.01 }, 0);
+  // beat-grid: line 1 at 0.56s, line 2 at 1.64s, line 3 at 2.73s (every other beat so each line can be read)
+  tl.fromTo("#t1", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.56);
+  tl.fromTo("#t2", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 1.64);
+  tl.fromTo("#t3", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 2.73);
+  // spotlight follows the line: tree jar (right) = early, sprout jar (left) = "soon"
+  tl.to("#dimT", { opacity: 0, duration: 0.9, ease: "power2.out" }, 0.56);
+  tl.to("#dimT", { opacity: 1, duration: 0.7, ease: "power2.inOut" }, 1.64);
+  tl.to("#dimS", { opacity: 0, duration: 0.9, ease: "power2.out" }, 1.64);
+  tl.to("#dimS", { opacity: 0.35, duration: 0.9, ease: "power2.out" }, 2.73);
+  tl.to("#dimT", { opacity: 0.2, duration: 0.9, ease: "power2.out" }, 2.73);
+  // hand over to the question
+  tl.to("#s1in", { opacity: 0, duration: 0.5, ease: "power1.inOut" }, 4.75);
+
+  /* ── SCENE 2 · the question (4.7 – 11.1) ───────────────────────────────── */
+  tl.fromTo("#s2kick", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 4.95);
+  tl.fromTo("#qpanel", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 5.05);
+  tl.fromTo("#q1", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 5.3);
+  tl.fromTo("#q2", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 5.55);
+  tl.fromTo("#q3", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 5.8);
+  tl.fromTo("#qsub", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }, 6.35);
+  tl.fromTo("#live", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 6.6);
+  tl.fromTo("#cnt", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 6.6);
+  tl.set("#n0", { opacity: 1 }, 6.6);
+  // beat-grid: five phones lock in on consecutive beats 7.09 / 7.64 / 8.19 / 8.74 / 9.29
+  var lockT = [7.09, 7.64, 8.19, 8.74, 9.29]; // 8.74 is a strong cue (beat-locked: 8.74s)
+  lockT.forEach(function (t, i) {
+    tl.fromTo("#pill" + i, { opacity: 0, scale: 0.78, y: 16 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.7)" }, t);
+    tl.set("#n" + i, { opacity: 0 }, t);
+    tl.set("#n" + (i + 1), { opacity: 1 }, t);
+  });
+  tl.fromTo("#btn", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 9.45);
+  // simulated click on "Reveal the real numbers →"
+  tl.fromTo("#cursor", { x: 1560, y: 760, opacity: 0 }, { x: 1010, y: 976, opacity: 1, duration: 0.7, ease: "power3.inOut" }, 9.7);
+  tl.to("#cursor", { scale: 0.86, duration: 0.09, ease: "power2.in", yoyo: true, repeat: 1, transformOrigin: "6px 4px" }, 10.37);
+  tl.to("#btn", { scale: 0.965, duration: 0.09, ease: "power2.in", yoyo: true, repeat: 1 }, 10.37);
+  tl.fromTo("#ring", { scale: 0.4, opacity: 0.9 }, { scale: 2.4, opacity: 0, duration: 0.6, ease: "power2.out", immediateRender: false }, 10.4);
+  // cut to the reveal on strong cue 10.93
+  tl.to("#s2in", { opacity: 0, y: -12, duration: 0.3, ease: "power1.in" }, 10.7);
+
+  /* ── SCENE 3 · real numbers, then the cost of waiting (10.8 – 17.7) ────── */
+  tl.fromTo("#h1", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 10.95); // beat-locked: 10.93s
+  tl.fromTo("#panel", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 11.1);
+  for (var i = 0; i < 4; i++) {
+    var rt = 11.46 + i * 0.12;
+    tl.fromTo("#row" + i, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, rt);
+    tl.fromTo("#row" + i + " .b-gold", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, rt + 0.1);
+    tl.fromTo("#row" + i + " .b-dot", { scale: 0 }, { scale: 1, duration: 0.4, ease: "back.out(2)" }, rt + 0.1);
+    tl.fromTo("#row" + i + " .b-flag", { scale: 0 }, { scale: 1, duration: 0.4, ease: "back.out(2)" }, rt + 0.5);
+    tl.set("#row" + i + " .b-wait", { scaleX: 0 }, 0);
+  }
+
+  // the real numbers roll up on strong cue 13.11 (beat-locked: 13.11s)
+  var proxies = D.rows.map(function (r) { return { v: 0 }; });
+  function fmt(v) {
+    if (v >= 1e5) return "₹" + (v / 1e5).toFixed(2) + " L";
+    if (v >= 1e3) return "₹" + (v / 1e3).toFixed(1) + "k";
+    return "₹" + Math.round(v);
+  }
+  D.rows.forEach(function (r, i) {
+    var el = document.getElementById("real" + i);
+    el.textContent = fmt(0);
+    tl.fromTo(el, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 13.11 + i * 0.07);
+    tl.to(proxies[i], { v: r.now, duration: 0.95, ease: "power2.out", onUpdate: function () { el.textContent = fmt(proxies[i].v); } }, 13.11 + i * 0.07);
+    tl.fromTo("#row" + i + " .c1", { opacity: 0, scale: 0.85, x: 12 }, { opacity: 1, scale: 1, x: 0, duration: 0.4, ease: "back.out(1.6)" }, 13.7 + i * 0.07);
+  });
+
+  // beat 14.20 · Round 2 headline replaces Round 1
+  tl.to("#h1", { opacity: 0, y: -14, duration: 0.35, ease: "power2.in" }, 14.2);
+  tl.fromTo("#h2", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 14.4);
+  tl.to(".hd-a", { opacity: 0, duration: 0.3 }, 14.25);
+  tl.to(".hd-b", { opacity: 1, duration: 0.3 }, 14.4);
+  tl.to(".hd-c", { opacity: 0, duration: 0.3 }, 14.25);
+  tl.to(".hd-d", { opacity: 1, duration: 0.3 }, 14.4);
+  tl.to(".g1", { opacity: 0, duration: 0.3 }, 14.25);
+  tl.to(".g2", { opacity: 1, duration: 0.4 }, 14.4);
+  tl.to(".chip.c1", { opacity: 0, scale: 0.9, duration: 0.3 }, 14.4);
+  // five years of nothing grow as coral hatching on every life-bar
+  D.rows.forEach(function (r, i) {
+    var o = 14.45 + i * 0.06;
+    tl.fromTo("#row" + i + " .b-wait", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out" }, o);
+    tl.to("#row" + i + " .l1", { opacity: 0, duration: 0.25 }, o + 0.1);
+    tl.to("#row" + i + " .l2", { opacity: 1, duration: 0.35 }, o + 0.25);
+  });
+  // beat 14.73 · the numbers roll up to the "wait 5 years" figures
+  D.rows.forEach(function (r, i) {
+    var el = document.getElementById("real" + i);
+    var px = { v: r.now };
+    tl.to(px, { v: r.late, duration: 0.85, ease: "power2.inOut", onUpdate: function () { el.textContent = fmt(px.v); } }, 14.73 + i * 0.06);
+    tl.to(el, { color: "#f7dea0", duration: 0.6 }, 14.73 + i * 0.06);
+    tl.fromTo("#row" + i + " .c2", { opacity: 0, scale: 0.85, x: 12 }, { opacity: 1, scale: 1, x: 0, duration: 0.4, ease: "back.out(1.6)" }, 15.5 + i * 0.07);
+  });
+
+  /* ── SCENE 4 · the best month (17.3 – 23.0) ────────────────────────────── */
+  tl.fromTo("#s4in", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, 17.3);
+  tl.fromTo("#jars4", { scale: 1.0 }, { scale: 1.06, duration: 5.7, ease: "none" }, 17.3);
+  tl.fromTo("#ha", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 17.47); // beat-locked: 17.47s
+  tl.fromTo("#hb", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 18.02);
+  tl.fromTo("#hc", { opacity: 0, y: 18, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power3.out" }, 18.56); // beat-locked: 18.56s
+  // lockup lands on 19.66 (strong cue) and the headline lifts to make room
+  tl.to("#hl", { y: -40, duration: 0.8, ease: "power2.inOut" }, 19.4);
+  tl.fromTo("#lglogo", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.5)" }, 19.66);
+  tl.fromTo("#lgttl", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 19.78);
+  tl.fromTo("#lgifm", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 20.2);
+  tl.fromTo("#lgurl", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 20.6);
+  tl.to("#s4in", { opacity: 0, duration: 0.5, ease: "power1.inOut" }, 22.5);
+
+  /* ── audio-reactive: bass breathes the gold glow (subtle, never on layout) ── */
+  var BASS = D.bass;
+  for (var f = 0; f < BASS.length; f++) {
+    tl.call((function (v) { return function () { root.style.setProperty("--bass", v); }; })(BASS[f]), [], f / 30);
+  }
+
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+})();
+</script>
+</body>
+</html>

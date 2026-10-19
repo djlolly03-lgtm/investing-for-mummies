@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>IFM Games brag</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Nunito:wght@400;600;700;800;900&display=block" rel="stylesheet"/>
+<style>
+:root{--teal:#2a9d8f;--teal-dk:#1f7d72;--navy:#1a3a5c;--navy-dk:#0f2740;--gold:#c9a84c;--cream:#f7faf9;--mint:#bde9e4;--mint-lt:#e6f4f1;--muted:#5a7d8a;--line:#dfe9e6;--serif:'Lora',Georgia,serif;--sans:'Nunito',system-ui,sans-serif;--shadow:0 8px 24px rgba(26,58,92,.08)}
+*{box-sizing:border-box}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--cream);color:var(--navy);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+.stage{position:absolute;inset:0;overflow:hidden;background:var(--cream)}
+.scene{position:absolute;inset:0;will-change:transform,opacity}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:20px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-dk)}
+.eyebrow::before{content:"";width:30px;height:3px;background:var(--gold);border-radius:2px}
+em{font-style:italic;color:var(--teal)}
+.w{display:inline-block;will-change:transform,opacity}
+
+/* soft backdrop texture */
+.glow{position:absolute;border-radius:50%;filter:blur(80px);opacity:.55}
+
+/* S1 hook */
+#s1{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#s1 .q{font-family:var(--serif);font-style:italic;font-weight:600;font-size:118px;line-height:1.08;margin-top:34px;max-width:1500px}
+#s1 .q .l2{color:var(--teal)}
+.ghost{position:absolute;font-family:var(--serif);font-style:italic;font-weight:600;font-size:30px;color:var(--navy);background:#fff;border:2px solid var(--line);border-radius:18px;padding:16px 22px;box-shadow:var(--shadow);white-space:nowrap}
+
+/* S2 reveal */
+#s2{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#s2 img{width:210px;height:auto;margin-bottom:26px}
+#s2 h1{font-family:var(--serif);font-weight:600;font-size:96px;line-height:1.06;margin:0;max-width:1500px}
+#s2 p{font-size:38px;font-weight:700;color:var(--muted);margin:34px 0 0}
+#s2 p b{color:var(--navy)}
+
+/* S3 picker: the site's own CSS, zoomed */
+#s3 .z{position:absolute;left:50%;top:70px;width:1240px;margin-left:-620px;zoom:1.42;transform-origin:top center}
+#s3 .z{left:0;top:72px;margin-left:0;width:1352px;padding:0 56px}
+.pick-head{text-align:center;margin-bottom:20px}
+.pick-head .eyebrow{font-size:11.5px;gap:8px}.pick-head .eyebrow::before{width:18px;height:2px}
+.pick-head h2{font-family:var(--serif);font-weight:600;font-size:44px;margin:10px 0 0}
+.qchips{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:24px}
+.qchip{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:10px;min-height:136px;padding:14px 14px 12px;border-radius:16px;border:2px solid var(--line);background:#fff;font-family:var(--serif);font-style:italic;font-weight:600;font-size:17px;line-height:1.22;color:var(--navy);text-align:left;box-shadow:var(--shadow)}
+.qchip::after{content:"";position:absolute;left:50%;bottom:-11px;width:18px;height:18px;background:var(--navy);transform:translateX(-50%) rotate(45deg) scale(var(--arrow,0));border-radius:3px}
+.qchip .qe{font-size:36px;line-height:1;display:block;margin-bottom:2px;font-style:normal;filter:saturate(1.2) drop-shadow(0 4px 8px rgba(15,39,64,.18))}
+.qchip small{font-family:var(--sans);font-style:normal;font-size:12px;font-weight:800;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.qchip.teen{background:linear-gradient(135deg,#f6edff,#e6f4f1)}
+.qchip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.qchip.on small{color:var(--mint)}
+.qchip.on small::after{content:" →"}
+.shelfbox{position:relative;height:330px}
+.shelf{position:absolute;inset:0;background:var(--mint-lt);border-radius:20px;padding:14px}
+.shelf-lead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:2px 4px 10px;font-size:14px;color:var(--muted)}
+.shelf-lead b{font-family:var(--serif);font-style:italic;font-weight:600;font-size:24px;color:var(--navy)}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.tile{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);color:var(--navy)}
+.tile-art{aspect-ratio:16/9;display:grid;place-items:center;font-size:118px;line-height:1;position:relative;overflow:hidden;background:linear-gradient(160deg,#e9f6f3,#c9ebe5)}
+.tile-art>*{position:relative;transform:translateY(6%) rotate(-6deg);filter:saturate(1.25) contrast(1.05) drop-shadow(0 10px 18px rgba(15,39,64,.3))}
+.tile-art.t-navy{background:linear-gradient(160deg,#2c5a8a,#1a3a5c)}
+.tile-art.t-gold{background:linear-gradient(160deg,#f7e9b8,#e8c96a)}
+.tile-art.t-teal{background:linear-gradient(160deg,#9fdcd3,#2a9d8f)}
+.tile-body{padding:10px 12px 10px;display:flex;flex-direction:column;gap:3px;flex:1}
+.tile-body b{font-family:var(--serif);font-weight:600;font-size:17px;line-height:1.2}
+.tile-body p{margin:0;font-size:13px;line-height:1.35;color:var(--muted);flex:1}
+.tile-meta{display:flex;align-items:center;justify-content:space-between;margin-top:4px;font-size:12px;font-weight:800;color:var(--teal-dk)}
+.tile-meta .min{background:var(--mint-lt);border-radius:100px;padding:3px 9px}
+.cursor{position:absolute;left:0;top:0;width:54px;height:54px;z-index:50;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(15,39,64,.35))}
+.ripple{position:absolute;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--gold);z-index:49;opacity:0}
+
+/* S4 room */
+#s4{background:var(--navy);color:#fff}
+#s4 .head{position:absolute;left:150px;top:118px;width:1620px}
+#s4 .eyebrow{color:var(--mint)}
+#s4 h2{text-wrap:balance;font-family:var(--serif);font-weight:600;font-size:84px;line-height:1.08;margin:18px 0 0;color:#fff}
+#s4 h2 em{color:var(--mint)}
+.card{position:absolute;top:470px;width:520px;border-radius:22px;overflow:hidden;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.card .shot{width:100%;aspect-ratio:16/10;overflow:hidden}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.card div.c{padding:16px 20px 20px}
+.card .lock{display:block;font-size:14px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.card b{font-family:var(--serif);font-weight:600;font-size:28px;display:block}
+.card span.d{font-size:18px;color:var(--mint);display:block;margin-top:4px}
+
+/* wipes */
+.wipe{position:absolute;left:-5%;width:110%;height:120%;z-index:40}
+#wipeN{background:var(--navy)}
+#wipeC{background:var(--cream)}
+
+/* S5 outro */
+#s5{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#s5 img{width:300px;height:auto}
+#s5 h1{font-family:var(--serif);font-weight:600;font-size:110px;line-height:1.04;margin:30px 0 0}
+#s5 .pill{display:inline-flex;align-items:center;gap:14px;margin-top:44px;background:var(--gold);color:var(--navy);font-weight:900;font-size:40px;padding:22px 44px;border-radius:100px;box-shadow:0 18px 40px rgba(201,168,76,.35)}
+#s5 .sub{margin-top:28px;font-size:28px;font-weight:700;color:var(--muted)}
+#s5 .sub b{color:var(--teal-dk)}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="glow" style="width:900px;height:900px;left:-300px;top:-380px;background:#bde9e4"></div>
+  <div class="glow" style="width:800px;height:800px;right:-300px;bottom:-400px;background:#f3e3b0"></div>
+
+  <!-- S1 -->
+  <section class="scene" id="s1">
+    <div class="ghost" style="left:120px;top:130px">🪙 Gold, FDs, property. What’s really safe?</div>
+    <div class="ghost" style="right:110px;top:190px">📄 We have a SIP. I’ve never seen the statement.</div>
+    <div class="ghost" style="left:170px;bottom:150px">📈 Everyone talks about stocks. I nod along.</div>
+    <div class="ghost" style="right:150px;bottom:120px">🎒 My teenager thinks money grows on UPI.</div>
+    <span class="eyebrow">Start with the thought you came in with</span>
+    <div class="q"><span class="l1"></span><br/><span class="l2"></span></div>
+  </section>
+
+  <!-- S2 -->
+  <section class="scene" id="s2">
+    <img src="ifm-round-t.png" alt=""/>
+    <h1 id="h2line"></h1>
+    <p id="s2p">Forty small games. <b>No sign-up, no jargon.</b></p>
+  </section>
+
+  <!-- S3 -->
+  <section class="scene" id="s3">
+    <div class="z" id="zoombox">
+      <div class="pick-head"><span class="eyebrow">Start with the thought you came in with</span><h2 id="s3h">Tap the one you’ve <em>actually said out loud.</em></h2></div>
+      <div class="qchips">
+        <div class="qchip" data-q="savings"><span class="qe">🏦</span><span>My savings just sit there. Is that bad?</span><small>6 games</small></div>
+        <div class="qchip" data-q="fund"><span class="qe">📄</span><span>We have a SIP. I’ve never seen the statement.</span><small>4 games</small></div>
+        <div class="qchip" data-q="shares"><span class="qe">📈</span><span>Everyone talks about stocks. I nod along.</span><small>5 games</small></div>
+        <div class="qchip" data-q="safe"><span class="qe">🪙</span><span>Gold, FDs, property. What’s really safe?</span><small>6 games</small></div>
+        <div class="qchip teen" data-q="teen"><span class="qe">🎒</span><span>My teenager thinks money grows on UPI.</span><small>Gen Next · 5 games</small></div>
+      </div>
+      <div class="shelfbox">
+        <div class="shelf" id="shA">
+          <div class="shelf-lead"><b>Not bad. Just unemployed.</b><span>These show what idle money could be doing.</span></div>
+          <div class="tiles">
+            <div class="tile"><div class="tile-art t-teal"><span>🪣</span></div><div class="tile-body"><b>3 Buckets</b><p>Sort each product into Emergency, Stability or Growth.</p><div class="tile-meta"><span class="min">5 min</span><span>Play →</span></div></div></div>
+            <div class="tile"><div class="tile-art t-gold"><span>🪜</span></div><div class="tile-body"><b>₹1 Crore Ladder</b><p>Watch ₹10K a month climb towards a crore.</p><div class="tile-meta"><span class="min">4 min</span><span>Play →</span></div></div></div>
+            <div class="tile"><div class="tile-art t-navy"><span>💎</span></div><div class="tile-body"><b>Hidden Fortunes</b><p>What your daily latte is really costing your future.</p><div class="tile-meta"><span class="min">4 min</span><span>Play →</span></div></div></div>
+            <div class="tile"><div class="tile-art t-navy"><span>⏱️</span></div><div class="tile-body"><b>Double or Nothing</b><p>Rule of 72, rapid fire. Five rounds, beat the clock.</p><div class="tile-meta"><span class="min">3 min</span><span>Play →</span></div></div></div>
+          </div>
+        </div>
+        <div class="shelf" id="shB">
+          <div class="shelf-lead"><b>Pocket money, with a plan.</b><span>Short games made for Gen Next.</span></div>
+          <div class="tiles">
+            <div class="tile"><div class="tile-art t-teal"><span>🗺️</span></div><div class="tile-body"><b>Money Map</b><p>Track your allowance. See it, own it.</p><div class="tile-meta"><span class="min">3 min</span><span>Play →</span></div></div></div>
+            <div class="tile"><div class="tile-art"><span>🛡️</span></div><div class="tile-body"><b>Need / Want / Value</b><p>Sort real spending into three buckets, then argue about it.</p><div class="tile-meta"><span class="min">4 min</span><span>Play →</span></div></div></div>
+            <div class="tile"><div class="tile-art t-gold"><span>💚</span></div><div class="tile-body"><b>Swipe Right on SIP</b><p>Your feed is full of fund advice. Swipe the keepers.</p><div class="tile-meta"><span class="min">4 min</span><span>Play →</span></div></div></div>
+            <div class="tile"><div class="tile-art t-teal"><span>🧭</span></div><div class="tile-body"><b>Asset Boss</b><p>Split ₹10L across six assets and find your investor DNA.</p><div class="tile-meta"><span class="min">6 min</span><span>Play →</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ripple" id="ripple"></div>
+    <svg class="cursor" id="cursor" viewBox="0 0 24 24"><path d="M4 2.5l15 8.2-6.6 1.6 3.9 7.3-2.7 1.4-3.9-7.3L4.8 18z" fill="#1a3a5c" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
+  </section>
+
+  <!-- S4 -->
+  <section class="scene" id="s4">
+    <div class="head"><span class="eyebrow">Played in the room</span><h2 id="s4h"></h2></div>
+    <div class="card" id="c1" style="left:150px"><div class="shot"><img src="swayamvar-voting.webp" alt=""/></div><div class="c"><span class="lock">● Host runs it</span><b>Swayamvar</b><span class="d">Marry, maybe or run. The room votes.</span></div></div>
+    <div class="card" id="c2" style="left:700px"><div class="shot"><img src="kbc-live-question.webp" alt=""/></div><div class="c"><span class="lock">● Host runs it</span><b>The IFM Crorepati</b><span class="d">Phones as buzzers, one champion.</span></div></div>
+    <div class="card" id="c3" style="left:1250px"><div class="shot"><img src="stockrush-results.jpg" alt="" style="object-position:top"/></div><div class="c"><span class="lock">● Host runs it</span><b>Stock Rush</b><span class="d">Real headlines, one live leaderboard.</span></div></div>
+  </section>
+
+  <!-- S5 -->
+  <section class="scene" id="s5">
+    <img src="ifm-logo-color-t.png" alt="" style="width:620px"/>
+    <h1 id="s5h">Play one in <em>four minutes.</em></h1>
+    <div class="pill" id="s5pill">games.investingformummies.com <span>→</span></div>
+    <div class="sub" id="s5sub">Then play it live with us: <b>register.investingformummies.com</b></div>
+  </section>
+
+  <div class="wipe" id="wipeN"></div>
+  <div class="wipe" id="wipeC"></div>
+</div>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);                 // ease out cubic
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c=1.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+
+// split headline text into word spans
+function words(el,html){
+  el.innerHTML=html.replace(/(<em>)?([^\s<]+)(<\/em>)?/g,(m,o,w,c)=>`<span class="w">${o||''}${w}${c||''}</span>`)
+    .replace(/<span class="w"><em>([^<]*)<\/span>/g,'<span class="w"><em>$1</em></span>');
+  return [...el.querySelectorAll('.w')];
+}
+const W1=words($('#s1 .l1'),'My savings just sit there.');
+const W1b=words($('#s1 .l2'),'Is that bad?');
+const H2=words($('#h2line'),'Learn money the way we teach it: <em>by</em> <em>playing.</em>');
+const H4=words($('#s4h'),'Some games need <em>twelve</em> <em>women</em> <em>and</em> <em>a</em> <em>big</em> <em>screen.</em>');
+
+function rise(list,t,start,step,dur=.45,dy=40){
+  list.forEach((w,i)=>{const p=eo(seg(t,start+i*step,start+i*step+dur));w.style.opacity=p;w.style.transform=`translateY(${(1-p)*dy}px)`;});
+}
+function show(el,on){el.style.visibility=on?'visible':'hidden'}
+
+let rects=null;
+function measure(){
+  const s3=$('#s3');const prev=s3.style.cssText;s3.style.visibility='visible';s3.style.opacity=1;s3.style.transform='none';
+  const r=el=>{const b=el.getBoundingClientRect();return{x:b.left+b.width*.55,y:b.top+b.height*.55}};
+  const chips=$$('.qchip');rects={c0:r(chips[0]),c4:r(chips[4])};
+  s3.style.cssText=prev;
+}
+
+window.render=function(t){
+  if(!rects)measure();
+  // ---------- S1: 0 - 3.5 ----------
+  const s1=$('#s1');const s1out=eio(seg(t,3.28,3.62));
+  show(s1,t<3.7);
+  s1.style.opacity=1-s1out;s1.style.transform=`translateY(${-60*s1out}px)`;
+  $('#s1 .eyebrow').style.opacity=eo(seg(t,0,.4));
+  rise(W1,t,.1,.1,.45,50);rise(W1b,t,.6,.11,.45,50);
+  $$('.ghost').forEach((g,i)=>{const p=eo(seg(t,1.9+i*.14,2.5+i*.14));g.style.opacity=p*.55;g.style.transform=`translateY(${(1-p)*24+Math.sin(t*1.3+i)*6}px) rotate(${[-3,2.5,2,-2.5][i]}deg)`;});
+  // ---------- S2: 3.5 - 7.5 ----------
+  const s2=$('#s2');show(s2,t>3.3&&t<7.8);
+  const s2out=eio(seg(t,7.2,7.6));
+  s2.style.opacity=1-s2out;s2.style.transform=`scale(${1-.04*s2out})`;
+  const lg=back(seg(t,3.45,4.0));$('#s2 img').style.transform=`scale(${lg})`;$('#s2 img').style.opacity=seg(t,3.45,3.7);
+  rise(H2,t,3.75,.09,.5,46);
+  const pp=eo(seg(t,4.9,5.4));$('#s2p').style.opacity=pp;$('#s2p').style.transform=`translateY(${(1-pp)*24}px)`;
+  // ---------- S3: 7.5 - 13 ----------
+  const s3=$('#s3');show(s3,t>7.35&&t<13.4);
+  const s3in=eo(seg(t,7.45,7.85));s3.style.opacity=s3in;
+  $('.pick-head').style.transform=`translateY(${(1-s3in)*20}px)`;
+  const chips=$$('.qchip');
+  chips.forEach((c,i)=>{const p=back(seg(t,7.6+i*.08,8.05+i*.08));c.style.opacity=clamp(p);c.style.transform=`translateY(${(1-p)*40}px)`;});
+  const tapA=8.5,tapB=11.0;
+  chips[0].classList.toggle('on',t>=tapA&&t<tapB);chips[4].classList.toggle('on',t>=tapB);
+  chips.forEach((c,i)=>{const a=(i===0&&t>=tapA&&t<tapB)?eo(seg(t,tapA,tapA+.2)):(i===4&&t>=tapB)?eo(seg(t,tapB,tapB+.2)):0;c.style.setProperty('--arrow',a);});
+  // press squish
+  [[0,tapA],[4,tapB]].forEach(([i,tp])=>{const d=t-tp;if(d>-.08&&d<.18){const s=1-.05*Math.sin(clamp((d+.08)/.26)*Math.PI);chips[i].style.transform=`scale(${s})`;}});
+  // shelves
+  const shA=$('#shA'),shB=$('#shB');
+  const aIn=eo(seg(t,tapA+.05,tapA+.4)),aOut=eio(seg(t,tapB+.02,tapB+.25));
+  shA.style.opacity=aIn*(1-aOut);shA.style.transform=`translateY(${(1-aIn)*16}px)`;
+  const bIn=eo(seg(t,tapB+.2,tapB+.55));shB.style.opacity=bIn;shB.style.transform=`translateY(${(1-bIn)*16}px)`;
+  $$('#shA .tile').forEach((el,i)=>{const p=back(seg(t,tapA+.2+i*.1,tapA+.62+i*.1));el.style.opacity=clamp(p*1.4);el.style.transform=`translateY(${(1-p)*36}px)`;});
+  $$('#shB .tile').forEach((el,i)=>{const p=back(seg(t,tapB+.35+i*.1,tapB+.77+i*.1));el.style.opacity=clamp(p*1.4);el.style.transform=`translateY(${(1-p)*36}px)`;});
+  // cursor path
+  const cur=$('#cursor');const off={x:1500,y:1180};
+  let cx,cy;
+  const m1=eio(seg(t,7.9,8.42)), m2=eio(seg(t,10.15,10.92)), m3=eio(seg(t,11.6,12.3));
+  cx=lerp(off.x,rects.c0.x,m1);cy=lerp(off.y,rects.c0.y,m1);
+  cx=lerp(cx,rects.c4.x,m2);cy=lerp(cy,rects.c4.y,m2)-Math.sin(m2*Math.PI)*90;
+  cx=lerp(cx,1700,m3);cy=lerp(cy,1200,m3);
+  const press=[tapA,tapB].some(tp=>t>tp-.06&&t<tp+.1)?.86:1;
+  cur.style.transform=`translate(${cx-10}px,${cy-6}px) scale(${press})`;
+  const rp=$('#ripple');let rip=null;[tapA,tapB].forEach((tp,k)=>{if(t>=tp&&t<tp+.5)rip={p:seg(t,tp,tp+.5),c:k?rects.c4:rects.c0}});
+  if(rip){rp.style.left=rip.c.x+'px';rp.style.top=rip.c.y+'px';rp.style.opacity=(1-rip.p)*.9;rp.style.transform=`scale(${.3+rip.p*1.1})`;}else rp.style.opacity=0;
+  // ---------- S4: 13 - 17 ----------
+  const wn=$('#wipeN');const wIn=eio(seg(t,12.75,13.2)),wOut=eio(seg(t,13.2,13.55));
+  // navy wipe rises to cover, then S4 (navy bg) sits under it and the wipe simply stays as S4 background
+  wn.style.top=(lerp(110,-10,wIn))+'%';wn.style.opacity=t<13.55?1:0;show(wn,t>12.7&&t<13.6);
+  const s4=$('#s4');show(s4,t>=13.2&&t<17.5);
+  rise(H4,t,13.35,.08,.5,44);$('#s4 .eyebrow').style.opacity=eo(seg(t,13.25,13.6));
+  ['#c1','#c2','#c3'].forEach((id,i)=>{const p=back(seg(t,13.9+i*.18,14.5+i*.18));const el=$(id);const drift=(t-14)*6;
+    el.style.opacity=clamp(p*1.3);el.style.transform=`translateY(${(1-p)*120 - drift*(i===1?1.4:1)}px) rotate(${[-2.5,1.2,-1.2][i]*(1-p*.4)}deg)`;
+    el.querySelector('img').style.transform=`scale(${1.04+ (t-13.9)*.012})`;});
+  // ---------- S5: 17 - 21 ----------
+  const wc=$('#wipeC');const cIn=eio(seg(t,16.75,17.2));
+  wc.style.top=(lerp(-120,-10,cIn))+'%';show(wc,t>16.7&&t<17.25);
+  const s5=$('#s5');show(s5,t>=17.2);
+  const lg5=back(seg(t,17.25,17.8));$('#s5 img').style.opacity=seg(t,17.25,17.5);$('#s5 img').style.transform=`scale(${lg5})`;
+  const h5=eo(seg(t,17.5,18.0));$('#s5h').style.opacity=h5;$('#s5h').style.transform=`translateY(${(1-h5)*40}px)`;
+  const pl=back(seg(t,18.05,18.55));$('#s5pill').style.opacity=clamp(pl*1.5);$('#s5pill').style.transform=`scale(${.7+.3*pl})`;
+  const sb=eo(seg(t,18.6,19.0));$('#s5sub').style.opacity=sb;
+  // whole stage background stays cream except under S4
+  $('#stage').style.background=(t>=13.2&&t<17.2)?'var(--navy)':'var(--cream)';
+};
+window.ready=Promise.all([document.fonts.ready,...[...document.images].map(i=>i.complete?1:new Promise(r=>{i.onload=i.onerror=r}))]).then(()=>{measure();render(0);return true;});
+</script>
+</body>
+</html>

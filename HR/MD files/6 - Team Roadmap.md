@@ -48,19 +48,11 @@ A dedicated IFM room is being built in the office, sized for **18–20 students*
 
 ---
 
-### 🟢 SEPTEMBER — Meta ads, ₹20–30k/month *(spend, not a hire)*
+### 🟢 NOW — the room rebuild *(in progress, not a hire)*
 
-**Goal: sign-ups on the batch page. Not followers, not reach.** At the ₹19k early-bird price, break-even on ₹30k is ~1.5 seats; a modest 4–6 seats/month is a 3–4× return.
+A dedicated IFM room is being built in the office, sized for **18–20 students**. It runs in parallel with the sales hire and neither waits for the other.
 
-**Homework before a rupee is spent:**
-- **Meta Pixel on the registration page** — count sign-ups, not clicks
-- **A persuasion layer above the form** — ads land cold, and today the page is a checkout
-- **Creative from what already works** — faces: workshop footage, certificate photos (consent done first)
-- **Geo-target Mumbai** — classes are in person at Nariman Point
-- **A META coupon code** — every ad seat traceable, same pattern as ASBA001
-- **A named owner** — agency scope or freelancer, decided before September
-
-> Ads amplify whatever they land on. Pointed at a page that can convert and a pixel that can count, ₹30k is 4–6 seats. Pointed at today's setup, it's just reach.
+**Why it matters here:** it raises the ceiling from ~15–18 a batch to 18–20 — roughly **36–40 mothers a month across both batches** — and it does so before the sales hire is at full productivity. **The capacity arrives just as the demand does.**
 
 ---
 

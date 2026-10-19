@@ -17,6 +17,12 @@ cd "/Users/lollyg/Documents/investing for Mummies/CLAUDE" && vercel deploy --pro
 and 404s every live URL — including the WordPress iframes that point at these files.
 Never reorganise `CLAUDE/` either: moving a file there changes its public URL.
 
+**The repo root is no longer linked to Vercel (19 Oct 2026).** It used to be — `.vercel/` at the
+root pointed at `ifm-deploy`, with a root `.vercelignore` that blocked only pdf/mp4/mov/avi, so a
+stray `vercel deploy` from the parent would have uploaded ~7.7 GB and replaced the live site. That
+folder is now `.vercel.DISABLED-root-link/` (see `WHY.txt` inside). A deploy from the root will now
+ask to create a *new* project instead of overwriting `ifm-deploy`. Do not re-link the root.
+
 **Do not deploy without the user's explicit approval.** The single standing exception is
 the `weekly-competitor-refresh` scheduled task (see below), and note that its
 auto-deploy ships *the whole working tree*, not just its own files.
@@ -211,6 +217,33 @@ the deck missed 29 finished posts for two months. Scan the folder tree, not the 
   Drive and are linked via the row's `drive link`.
 - `.vercelignore` blocks all `*.mp4/mov/pdf/md/py/gs`; only `content/{thumbs,clips,teasers,game-assets,comp-thumbs,ifm-posts}` are whitelisted back in.
 
+## ⚠️ Deploy size — what Vercel was actually full of (16 Oct 2026)
+
+Vercel reported the project full. The deploy was **8,027 files / 2.4 GB**, and
+**`scam-slingshot/` was 5,852 files / 1.9 GB of it — 79%** — while being linked from
+**nowhere**: zero references in `index.html`, zero in `content/data.js`. The game is still
+in development; what shipped with it was mostly build scratch:
+
+| | Files | Size |
+|---|---:|---:|
+| the actual game (`src` + `levels` + `assets` + `index.html`) | 260 | 11 MB |
+| `_shots/` build screenshots | 5,226 | 1.1 GB |
+| `_reference/` AI art refs, incl. `_rejected/` | 66 | 76 MB |
+
+All of it was publicly fetchable. Every mention of `_shots`/`_reference` inside `src/` is a
+**code comment** citing where a tuning number came from — nothing is fetched at runtime.
+
+**Fixed in `.vercelignore`** (backup: `.vercelignore.bak-16oct2026`): excluded
+`scam-slingshot/`, `scam-slingshot-progress.html` and `game-reels/out/`.
+Result: **2,175 files / 512 MB.** Nothing was deleted — the files stay on disk and in git.
+To preview the game on Vercel again, comment out the `scam-slingshot/` line and redeploy.
+
+**The rule this gives you:** `.vercelignore` blocks by *extension* (`*.mp4`, `*.md`, `*.docx`)
+and had no rule for underscore-prefixed build directories. Any game or pipeline that writes
+`_shots/`, `_reference/`, `out/`, `diag/` or `seq/` into `CLAUDE/` will ship it to the public
+web unless it is named here. Check the deploy payload — not the folder size — after adding a
+build that generates intermediates.
+
 ## Tooling gotchas
 
 - Use `/usr/bin/python3` for anything touching images or JSON — it has Pillow. Homebrew's
@@ -370,6 +403,20 @@ Two things that do **not** work here, so don't burn time on them:
     `/settings/*` and `/new` alike. Creating a repo or adding a key is a manual step.
 
 ### The nightly job
+
+> ⚠️ **Corrected 19 Oct 2026 — it had never worked.** From the day it was set up (7 Sep) to
+> 18 Oct the launchd job skipped all three repos every night — macOS blocks launchd from
+> reading `~/Documents`, `git` failed, the script hid the error (`2>/dev/null`), read the empty
+> answer as "detached HEAD", and then logged **"✓ all repos backed up"**. GitHub's copy was 4
+> weeks and 44 commits stale when this was found. Two fixes:
+> - **It now runs as the Claude scheduled task `nightly-git-backup`** (21:30), which has folder
+>   access and secret-scans before every push. The launchd plist is parked as
+>   `com.lollyg.gitautobackup.plist.DISABLED-19oct2026`. Claude tasks run only while the app is
+>   open; a missed run happens on next launch.
+> - **The script now fails loudly**: a repo git cannot read is FAILED, not skipped, and "✓" is
+>   only logged when every repo is confirmed pushed — otherwise a "⚠️ Git backup FAILED"
+>   notification. Backup of the old script: `git-autobackup.sh.bak-19oct2026`.
+> The table below describes the original design; the launchd row is historical.
 
 | | |
 |---|---|

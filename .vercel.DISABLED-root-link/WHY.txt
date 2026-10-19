@@ -1,0 +1,5 @@
+Disabled 19 Oct 2026. This folder linked the REPO ROOT to the ifm-deploy Vercel project.
+A deploy from the root would upload the whole ~7.7 GB folder (filling the 10 GB storage
+limit) AND replace the live site with the wrong folder, 404-ing every URL.
+The correct, still-working link is CLAUDE/.vercel — always deploy from inside CLAUDE/.
+To undo: rename this folder back to ".vercel".

@@ -1,17 +1,7 @@
 {
   "version": "0.0.1",
   "configurations": [
-    {
-      "name": "carousel-preview",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "7890"],
-      "port": 7890
-    },
-    {
-      "name": "stock-rush",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "7891", "--directory", "stock-rush"],
-      "port": 7891
-    }
+    { "name": "ifm-content", "runtimeExecutable": "/usr/bin/python3",
+      "runtimeArgs": ["-m","http.server","8791"], "port": 8791 }
   ]
 }
