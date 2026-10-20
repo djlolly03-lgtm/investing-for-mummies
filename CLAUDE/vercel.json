@@ -147,6 +147,10 @@
     {
       "source": "/inflation-calculator",
       "destination": "/inflation-calculator.html"
+    },
+    {
+      "source": "/classic",
+      "destination": "/classic.html"
     }
   ],
   "redirects": [

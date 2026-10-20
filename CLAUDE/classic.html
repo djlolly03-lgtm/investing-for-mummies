@@ -41892,11 +41892,7 @@ function App() {
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 <\/script>
-<!-- deep-link handler (16 Oct 2026) --><script>
-(function(){var h=location.hash.slice(1),g=/^g=([\w-]+)$/.exec(h),r=/^r=(\w+)$/.exec(h);if(!g&&!r)return;
-function go(){try{if(g){var id=g[1];showGame(/^\d+$/.test(id)?+id:id);if(id==='r72'&&typeof r72Start==='function')r72Start();}else showResource(r[1]);}catch(e){}}
-if(document.readyState==='complete')setTimeout(go,150);else window.addEventListener('load',function(){setTimeout(go,150)});})();
-</script>
+
 </body>
 </html>`;
 
