@@ -237,7 +237,165 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 .wi-chg.good{background:rgba(111,227,208,.15);color:#6fe3d0}.wi-chg.bad{background:rgba(255,138,118,.15);color:#ff8a76}.wi-chg.same{background:rgba(255,255,255,.07);color:var(--stage-sub);font-weight:600;font-size:.9rem}
 .wi-table.dense .wi-row{padding:7px 6px;min-height:52px}.wi-table.dense .wi-real{font-size:1.6rem}.wi-table.dense .wi-row .nm{font-size:1.05rem}
 .wi-table .rv-head,.wi-table .rv-row{grid-template-columns:1.15fr 1.95fr .9fr 1.4fr 1.15fr}
-@media(max-height:900px){.rv-row{padding:5px 6px}.lb{height:52px}.punch{font-size:1.1rem;margin-bottom:6px}.wi-chart{display:none}.wi-n{font-size:2.3rem}.wi-ctl{padding:14px 18px 16px}.wi-g{margin-bottom:12px}.wi-ctl .chip{padding:9px 17px;font-size:1rem}.wi-score{padding:14px 18px}.wi-row{padding:9px 6px;min-height:60px}.wi-real{font-size:1.9rem}}
+
+/* ════════ HOST type scale (20 Oct 2026) ════════
+   The projector is read from the back of a room and the old type was tuned for a laptop. fitHost() sets the root
+   font size from the screen — 16px on a 1440-wide laptop, ~21px on a 1080p projector — so every rem below scales with the room.
+   Everything is scoped to body.host-bg so the phone, which shares some class names, is untouched. */
+body.host-bg .stage{max-width:84rem}
+body.host-bg .end-stage{max-width:31rem}
+body.host-bg .presents{font-size:1.05rem;letter-spacing:.2em}
+body.host-bg .kicker{font-size:.9rem;letter-spacing:.16em}
+body.host-bg .tag{font-size:clamp(1.1rem,1.7vw,1.5rem)}
+body.host-bg .live{font-size:1rem}
+body.host-bg .prog{font-size:1.5rem}
+body.host-bg .prog b{font-size:2.4rem}
+body.host-bg .q-panel{max-width:64rem}
+body.host-bg .q-panel .q{font-size:clamp(1.8rem,3.2vw,3rem)}
+body.host-bg .q-panel .why{font-size:1.25rem;max-width:52rem}
+body.host-bg .pl-wall{max-width:70rem}
+body.host-bg .pl{font-size:1.12rem}
+body.host-bg .pl .age{font-size:.95rem}
+body.host-bg .lk{font-size:.92rem}
+body.host-bg .scan-how{font-size:1.05rem;max-width:21rem}
+body.host-bg .pin-label{font-size:.88rem}
+body.host-bg .joinurl{font-size:.92rem}
+body.host-bg .lobby-grid{max-width:68rem}
+body.host-bg .plan b{font-size:1.3rem}
+body.host-bg .plan span{font-size:1rem}
+body.host-bg .waiting{font-size:1.25rem}
+body.host-bg .rv{grid-template-columns:minmax(0,1fr) 28rem}
+body.host-bg .wi-grid{grid-template-columns:28rem minmax(0,1fr)}
+body.host-bg .rv-head{font-size:.9rem}
+body.host-bg .rv-row{font-size:1.15rem}
+body.host-bg .rv-row .nm{font-size:1.3rem}
+body.host-bg .rv-row .guess{font-size:1.3rem}
+body.host-bg .rv-row .real{font-size:2.1rem}
+body.host-bg .rv-row .extra{font-size:1.8rem}
+body.host-bg .rv-row .off{font-size:1.05rem}
+body.host-bg .stat .big{font-size:2.6rem}
+body.host-bg .stat .sm{font-size:1.15rem}
+body.host-bg .punch{font-size:clamp(1.3rem,2.2vw,1.9rem);max-width:64rem}
+body.host-bg .past-note{font-size:1.2rem}
+body.host-bg .lb{height:4.5rem;min-width:12rem}
+body.host-bg .lb-c{font-size:1.02rem}
+body.host-bg .lb-track{top:1.9rem;height:.75rem}
+body.host-bg .lb-dot{top:-.35rem;width:1.35rem;height:1.35rem}
+body.host-bg .lb-flag{top:-.25rem;width:1.15rem;height:1.15rem}
+body.host-bg .lb-t{top:2.9rem;font-size:1.08rem}
+body.host-bg .wi-s{font-size:1rem}
+body.host-bg .wi-l{font-size:.95rem}
+body.host-bg .wi-n{font-size:3.2rem}
+body.host-bg .wi-n.dim{font-size:2.3rem}
+body.host-bg .wi-delta{font-size:1.25rem}
+body.host-bg .wi-delta.idle{font-size:1.08rem}
+body.host-bg .wi-h span{font-size:1.9rem}
+body.host-bg .wi-ctl .chip{font-size:1.2rem}
+body.host-bg .wi-h .chip{font-size:1rem}
+body.host-bg .wi-row .nm{font-size:1.5rem}
+body.host-bg .wi-row .guess{font-size:1.35rem}
+body.host-bg .wi-real{font-size:2.4rem}
+body.host-bg .wi-chg{font-size:1.2rem}
+body.host-bg .wi-chg small{font-size:.8rem}
+body.host-bg .wi-table .rv-head{font-size:.92rem}
+body.host-bg .bars{max-width:52rem}
+body.host-bg .bar{font-size:1.4rem}
+body.host-bg .bar .bn{font-size:1.7rem}
+body.host-bg .end-grid{max-width:64rem}
+body.host-bg .host-reset,body.host-bg .host-back{font-size:.98rem}
+body.host-bg .key-hint{font-size:.92rem}
+body.host-bg .join-corner .jc-lbl{font-size:.8rem}
+body.host-bg .join-corner .jc-pin{font-size:1.4rem}
+body.host-bg .join-corner .jc-tap{font-size:.8rem}
+body.host-bg .net{font-size:1.1rem}
+
+/* age rows — the projector shows groups, never people */
+body.host-bg .agecell{display:flex;flex-direction:column;line-height:1.1}
+body.host-bg .agecell b{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:600;color:#fff}
+body.host-bg .agecell small{font-size:.95rem;font-weight:700;color:var(--stage-sub);margin-top:.2rem}
+body.host-bg .rv-agg3 .rv-head,body.host-bg .rv-agg3 .rv-row{grid-template-columns:.9fr 3fr 1.5fr}
+body.host-bg .rv-agg5 .rv-head,body.host-bg .rv-agg5 .rv-row{grid-template-columns:.9fr 2.3fr 1fr 1.3fr 1.35fr}
+body.host-bg .rv-agg5 .rv-head{font-size:.8rem;letter-spacing:.09em}
+body.host-bg .gsplit{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.8rem}
+body.host-bg .gs{padding:.55rem .3rem;border-radius:12px;text-align:center;font-size:.95rem;font-weight:800;line-height:1.25}
+body.host-bg .gs b{display:block;font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;line-height:1.1}
+body.host-bg .gs.low{background:rgba(255,138,118,.14);color:var(--coral)}
+body.host-bg .gs.ok{background:rgba(45,212,191,.14);color:var(--teal-bright)}
+body.host-bg .gs.high{background:rgba(245,196,81,.14);color:var(--gold-bright)}
+
+/* play screen: the clock, then the discussion prompt */
+body.host-bg .ask-stage{gap:1rem}
+body.host-bg .askbar{display:flex;align-items:stretch;justify-content:center;gap:1.2rem;width:100%;max-width:58rem}
+body.host-bg .clockbox{flex:1.25;display:flex;align-items:center;gap:1.4rem;padding:.9rem 1.5rem;border-radius:18px}
+body.host-bg .clock{font-family:'Fraunces',serif;font-weight:600;font-size:4.6rem;line-height:1;color:var(--gold-hi);font-variant-numeric:tabular-nums;text-shadow:0 0 44px rgba(233,191,98,.3)}
+body.host-bg .clock.low,body.host-bg .clock.done{color:var(--coral);text-shadow:0 0 44px rgba(255,138,118,.3)}
+body.host-bg .clock.done{animation:blink 1.2s infinite}
+body.host-bg .clockbox .kicker{margin-top:.35rem}
+body.host-bg .clock-btns{display:flex;flex-direction:column;gap:.45rem;margin-left:auto}
+body.host-bg .cbtn{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:var(--stage-ink);border-radius:12px;padding:.5rem 1rem;font:800 1.05rem 'Manrope',sans-serif}
+body.host-bg .cbtn:hover{background:rgba(255,255,255,.18)}
+body.host-bg .progbox{flex:1;display:flex;flex-direction:column;justify-content:center;gap:.45rem;padding:.9rem 1.5rem;border-radius:18px}
+body.host-bg .discuss{display:none;margin:0;padding:.9rem 1.8rem;border-radius:16px;background:rgba(10,26,34,.78);border:1px solid rgba(233,191,98,.45);font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.55rem;line-height:1.35;color:var(--gold-hi);text-align:center;max-width:60rem}
+body.host-bg .discuss.show{display:block;animation:rise .5s ease-out both}
+body.host-bg .host-next.pulse{animation:nextpulse 1.4s ease-in-out infinite}
+@keyframes nextpulse{0%,100%{box-shadow:0 16px 44px rgba(233,191,98,.38),0 6px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.55)}50%{box-shadow:0 16px 64px rgba(233,191,98,.85),0 6px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.55)}}
+
+/* demo: the teacher plays one guess on the big screen, exactly as it looks on a phone */
+body.host-bg .demo-stage{gap:1rem}
+body.host-bg .demo-grid{display:grid;grid-template-columns:minmax(0,1fr) 25rem;gap:2rem;width:100%;max-width:64rem;align-items:center}
+body.host-bg .demo-steps{display:grid;gap:.85rem}
+body.host-bg .demo-steps>div{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.3rem;border-radius:16px;background:rgba(10,26,34,.74);border:1px solid var(--glass-edge);backdrop-filter:blur(8px)}
+body.host-bg .demo-steps i{flex:none;display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;background:linear-gradient(135deg,var(--gold-hi),#d79f34);color:#1a1203;font:800 1.2rem 'Manrope',sans-serif;font-style:normal}
+body.host-bg .demo-steps p{margin:0}
+body.host-bg .demo-steps b{display:block;font-family:'Fraunces',serif;font-size:1.5rem;color:#fff;font-weight:600;line-height:1.2}
+body.host-bg .demo-steps span{display:block;margin-top:.25rem;font-size:1.1rem;font-weight:600;color:var(--stage-sub);line-height:1.4}
+body.host-bg .demo-phone{border-radius:2.2rem;border:2px solid rgba(255,255,255,.22);background:#050c15;padding:1.2rem 1.2rem 1.4rem;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 6px rgba(255,255,255,.04),0 0 70px rgba(233,191,98,.16)}
+body.host-bg .dp-tag{text-align:center;font-size:.82rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-hi);margin-bottom:.7rem}
+body.host-bg .dp-note{margin:.2rem 0 .6rem;text-align:center;font-weight:700;font-size:1.1rem;color:var(--gold-hi)}
+body.host-bg .demo-phone .amt{margin:0 0 .7rem}
+body.host-bg .demo-phone .amt-in{font-size:2.3rem;padding:.7rem 1rem .7rem 2.6rem}
+body.host-bg .demo-phone .amt-box .rs{font-size:1.8rem}
+body.host-bg .demo-phone .amt-sh{font-size:1rem}
+body.host-bg .demo-phone .chips.big{margin:0 0 .8rem}
+body.host-bg .demo-phone .chips.big .chip{padding:.7rem .2rem;font-size:1rem}
+body.host-bg .demo-phone .p-btn.big{position:static;height:3.4rem;font-size:1.15rem;box-shadow:0 12px 30px rgba(233,191,98,.35)}
+body.host-bg .demo-phone .p-btn.big:disabled{box-shadow:none}
+body.host-bg .demo-phone .p-btn.outline{height:3rem;font-size:1rem}
+body.host-bg .demo-phone .locked{text-align:center;padding:1.1rem 1rem;margin-bottom:.6rem}
+body.host-bg .demo-phone .locked .v{font-size:2.4rem}
+body.host-bg .demo-phone .locked .lbl{font-size:.85rem}
+body.host-bg .demo-phone .locked .u{font-size:1rem}
+
+/* short screens (effective height under ~57rem) */
+body.hc.host-bg .rv-row{padding:.15rem .4rem}
+body.hc.host-bg .lb{height:3.45rem}
+body.hc.host-bg .lb-c{font-size:.95rem}
+body.hc.host-bg .lb-track{top:1.5rem}
+body.hc.host-bg .lb-t{top:2.3rem;font-size:1rem}
+body.hc.host-bg .agecell b{font-size:1.8rem}
+body.hc.host-bg .agecell small{font-size:.82rem;margin-top:.05rem}
+body.hc.host-bg .rv-table{padding:.3rem 1rem .2rem}
+body.hc.host-bg .punch{font-size:1.2rem;margin-bottom:.3rem}
+body.hc.host-bg .wi-chart{display:none}
+body.hc.host-bg .rv .chart{max-height:12.5rem}
+body.hc.host-bg .wide-only{display:none}
+body.hc.host-bg .stage{gap:.7rem}
+body.hc.host-bg .q-panel{padding:1rem 1.6rem}
+body.hc.host-bg .q-panel .why{font-size:1.05rem;margin-top:.5rem}
+body.hc.host-bg .q-panel .q{font-size:clamp(1.6rem,2.8vw,2.5rem)}
+body.hc.host-bg .clock{font-size:3.6rem}
+body.hc.host-bg .demo-steps>div{padding:.7rem 1.1rem}
+body.hc.host-bg .demo-steps span{font-size:1rem}
+body.hc.host-bg .demo-phone{padding:.9rem 1rem 1.1rem}
+body.hc.host-bg .stat .big{font-size:2.2rem}
+body.hc.host-bg .wi-n{font-size:2.5rem}
+body.hc.host-bg .wi-ctl{padding:.9rem 1.1rem 1rem}
+body.hc.host-bg .wi-g{margin-bottom:.7rem}
+body.hc.host-bg .wi-ctl .chip{padding:.5rem 1rem;font-size:1.05rem}
+body.hc.host-bg .wi-score{padding:.8rem 1.1rem}
+body.hc.host-bg .wi-row{padding:.4rem .4rem;min-height:3.6rem}
+body.hc.host-bg .wi-real{font-size:1.9rem}
+
 /* poll / end */
 .bars{width:100%;max-width:760px;display:grid;gap:10px}
 .bar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 20px;border-radius:14px;background:rgba(10,26,34,.72);border:1px solid var(--glass-edge);overflow:hidden;font-weight:700;font-size:1.05rem;color:var(--stage-ink)}
@@ -281,7 +439,22 @@ body.framed .host-back,body.framed .host-next,body.framed .key-hint{bottom:70px}
 body.framed .host-next{bottom:76px}
 body.framed .net{bottom:112px}
 body.framed #host{padding-bottom:170px}
-@media(max-height:900px){.lobby-stage{gap:9px}.hero-mark{width:44px;height:44px}.hero-title{font-size:clamp(2.6rem,5vw,3.9rem)}.sz-xl .pl{padding:5px 20px 5px 5px}.players.sz-xl{gap:8px}.lcard .room-head{margin-bottom:10px}.lcard{padding:20px 24px 18px}.qr-tile{margin:14px 0 10px;padding:12px}.plan{margin:12px 0 12px;gap:8px}.plan>div{padding:10px 12px}.plan span{font-size:.74rem}.pin{font-size:2.6rem}.joinurl{margin-top:6px}.players{min-height:80px}.scan-how{font-size:.8rem}}
+/* short screens (effective height under ~57rem): tighten the lobby */
+body.hc .lobby-stage{gap:9px}
+body.hc .hero-mark{width:44px;height:44px}
+body.hc .hero-title{font-size:clamp(2.6rem,5vw,3.9rem)}
+body.hc .sz-xl .pl{padding:5px 20px 5px 5px}
+body.hc .players.sz-xl{gap:8px}
+body.hc .lcard .room-head{margin-bottom:10px}
+body.hc .lcard{padding:20px 24px 18px}
+body.hc .qr-tile{margin:14px 0 10px;padding:12px}
+body.hc .plan{margin:12px 0 12px;gap:8px}
+body.hc .plan>div{padding:10px 12px}
+body.hc .plan span{font-size:.74rem}
+body.hc .pin{font-size:2.6rem}
+body.hc .joinurl{margin-top:6px}
+body.hc .players{min-height:80px}
+body.hc .scan-how{font-size:.8rem}
 @media(max-width:1000px){.join-corner,.key-hint{display:none!important}.lobby-grid,.rv{grid-template-columns:1fr}.end-grid{grid-template-columns:1fr}#host.has-corner{padding-top:14px}}
 
 /* ════════ PLAYER · phone — midnight & gold ════════ */
@@ -472,12 +645,20 @@ function offBy(guess,real){
   if(!guess||guess<=0) return {cls:'',txt:'no guess',err:99};
   const k=guess/real, err=Math.abs(Math.log(k)), d=Math.abs(real-guess);
   if(k>=0.95&&k<=1.05) return {cls:'',txt:'spot on',err};
-  if(k<1) return {cls:'low',txt:fmtMoney(d)+' short',err};
-  return {cls:'high',txt:fmtMoney(d)+' over',err};
+  if(k<1) return {cls:'low',txt:fmtMoney(d)+' too low',err};
+  return {cls:'high',txt:fmtMoney(d)+' too high',err};
 }
 
 /* ── rounds ───────────────────────────────────────────────────── */
-const PHASES=['lobby','r1_ask','r1_reveal','r1_whatif','r2_ask','r2_reveal','r2_whatif','r3_ask','r3_reveal','r3_whatif','poll','end'];
+const PHASES=['lobby','r1_demo','r1_ask','r1_reveal','r1_whatif','r2_demo','r2_ask','r2_reveal','r2_whatif','r3_demo','r3_ask','r3_reveal','r3_whatif','poll','end'];
+// Minutes the room gets on their phones before the reveal (the teacher can add or take a minute on the clock).
+const ASK_MINS={r1:5,r2:3,r3:3};
+// A prompt for the teacher to put to the room once the clock runs out, before the numbers go up.
+const DISCUSS={
+  r1:S=>`Before we reveal: how did you land on your number? Gut feel, or maths?`,
+  r2:S=>`Before we reveal: will waiting ${S.delayYears} years cost you a little, or a lot? Why?`,
+  r3:S=>`Before we reveal: is ${fmtMoney(S.flipSip)} a month a lot, or a little, for you right now?`
+};
 const SIP_CHIPS=[2000,5000,10000,25000,50000,100000,200000,500000];
 const FV_CHIPS=[1000000,2500000,5000000,10000000,20000000,50000000,100000000];
 const FLIP_CHIPS=[25000,50000,100000,150000,250000];   // the round-3 what-if: only the monthly amount moves
@@ -521,7 +702,7 @@ let state=null;
 function freshState(){
   return {phase:'lobby',nonce:0,
     settings:{target:100000000,targetAge:40,rate:12,delayYears:5,flipSip:5000,flipAge:60},
-    players:{},hostId:MY_ID,updatedAt:Date.now()};
+    players:{},askEnds:{},hostId:MY_ID,updatedAt:Date.now()};
 }
 const S=()=>state.settings;
 const W=()=>Object.assign({},state.settings,state.whatif||{});   // the sandbox rules shown on a what-if screen
@@ -579,6 +760,7 @@ async function initHost(){
   try{ if(window.self!==window.top) document.body.classList.add('framed'); }catch(e){ document.body.classList.add('framed'); }
   document.getElementById('host').classList.remove('hide');
   document.body.classList.add('host-bg');
+  fitHost(); let _rz=null; addEventListener('resize',()=>{ clearTimeout(_rz); _rz=setTimeout(()=>{ fitHost(); if(state) renderHost(); },150); });
   if(!ROOM){ ROOM='E'+(1000+Math.floor(Math.random()*9000));   // E-prefix: never collides with KBC's 4-digit PINs in the shared table
     const p=new URLSearchParams(location.search);p.set('role','host');p.set('room',ROOM);history.replaceState(null,'','?'+p.toString()); }
   joinChannel();
@@ -594,13 +776,13 @@ async function initHost(){
   if(params.get('demo')&&/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){
     const D=[['Aanya',21,25000,100000,5000000,0],['Rohan',24,50000,200000,2500000,1],['Meera',27,150000,500000,10000000,0],['Kabir',29,100000,300000,20000000,3],['Zoya',22,10000,50000,1000000,4],['Dev',31,200000,600000,50000000,0]];
     D.forEach((d,i)=>{ state.players['d'+i]={id:'d'+i,name:d[0],age:d[1],av:AV_EMOJI[i],color:AV_COLOR[i],guess:{r1:d[2],r2:d[3],r3:d[4]},vote:d[5]}; });
-    state.phase=params.get('phase')||'lobby'; if(/_whatif$/.test(state.phase)){ const rk=state.phase.slice(0,2); state.whatif=rk==='r1'?{targetAge:60}:rk==='r2'?{delayYears:10}:{flipSip:100000}; }
+    state.phase=params.get('phase')||'lobby'; if(params.get('timesup')) state.askEnds={r1:Date.now()-1000,r2:Date.now()-1000,r3:Date.now()-1000}; if(/_whatif$/.test(state.phase)){ const rk=state.phase.slice(0,2); state.whatif=rk==='r1'?{targetAge:60}:rk==='r2'?{delayYears:10}:{flipSip:100000}; }
     if(params.get('old')){ state.players.d6={id:'d6',name:'Aditya',age:46,av:'🦊',color:'#e05a47',guess:{r1:50000,r2:200000,r3:5000000},vote:0}; }
   }
   const rb=document.createElement('button'); rb.className='host-reset'; rb.textContent='↺ New game'; rb.onclick=hostReset; document.body.appendChild(rb);
   const jw=document.createElement('div'); jw.className='join-corner'; jw.id='joinCorner'; jw.title='Scan to join or rejoin';
   jw.innerHTML='<div class="jc-qr" id="jcQr"></div><div class="jc-txt"><div class="jc-lbl">Scan to (re)join</div><div class="jc-pin">'+ROOM+'</div><div class="jc-tap">tap to enlarge ⛶</div></div>';
-  jw.onclick=openQRFull; document.body.appendChild(jw); makeQR(document.getElementById('jcQr'),44);
+  jw.onclick=openQRFull; document.body.appendChild(jw); makeQR(document.getElementById('jcQr'),56);
   const kh=document.createElement('div'); kh.className='key-hint'; kh.id='keyHint'; document.body.appendChild(kh);
   const bk=document.createElement('button'); bk.className='host-back'; bk.id='hostBack'; bk.textContent='← Back'; bk.onclick=hostBack; document.body.appendChild(bk);
   const nx=document.createElement('button'); nx.className='host-next'; nx.id='hostNext'; nx.onclick=hostAdvance; document.body.appendChild(nx);
@@ -628,16 +810,29 @@ function openQRFull(){ const q=document.getElementById('qrFull'); q.classList.re
   q.innerHTML=`<div class="lcard"><div class="lk"><i></i>Scan to join</div><div class="qr-tile" style="cursor:pointer"><div id="qrBig"></div></div><div class="pin-row"><span class="pin-label">game pin</span><span class="pin">${ROOM}</span></div><div class="joinurl">${playerUrl()}</div><div class="pin-label" style="margin-top:14px;opacity:.7">tap anywhere to close</div></div>`;
   makeQR(document.getElementById('qrBig'),Math.min(500,Math.round(innerHeight*0.56))); }
 function closeQRFull(){ document.getElementById('qrFull').classList.add('hide'); }
-function hostReset(){ if(!confirm('Start a fresh game in this room? Everyone will need to rejoin.')) return; bump(); clearTimers(); state=freshState(); saveNow(); renderHost(); }
+function hostReset(){ if(!confirm('Start a fresh game in this room? Everyone will need to rejoin.')) return; bump(); clearTimers(); _demo={rk:null,v:0,locked:false}; state=freshState(); saveNow(); renderHost(); }
 
 function setSetting(k,v){ if(!/_whatif$/.test(state.phase)) return; bump(); state.whatif=state.whatif||{}; state.whatif[k]=v; save(); renderHost(); }
 function resetWhatIf(){ bump(); state.whatif={}; save(); renderHost(); }
+function enterPhase(ph){
+  state.phase=ph; state.nonce++;
+  if(/_whatif$/.test(ph)) state.whatif={};
+  if(/_demo$/.test(ph)){ state.askEnds=state.askEnds||{}; delete state.askEnds[roundOf(ph)]; }   // the clock starts when the phones open, not before
+}
 function hostAdvance(){
   const i=PHASES.indexOf(state.phase); if(i<0||i>=PHASES.length-1) return;
   if(state.phase==='lobby'&&!Object.keys(state.players).length) return;
-  bump(); state.phase=PHASES[i+1]; state.nonce++; if(/_whatif$/.test(state.phase)) state.whatif={}; save(); renderHost();
+  bump(); enterPhase(PHASES[i+1]); save(); renderHost();
 }
-function hostBack(){ const i=PHASES.indexOf(state.phase); if(i<=0) return; bump(); state.phase=PHASES[i-1]; state.nonce++; if(/_whatif$/.test(state.phase)) state.whatif={}; save(); renderHost(); }
+function hostBack(){ const i=PHASES.indexOf(state.phase); if(i<=0) return; bump(); enterPhase(PHASES[i-1]); save(); renderHost(); }
+// The room is read from the back, so the whole host UI scales with the screen: 16px root on a laptop, ~21px on a 1080p projector.
+// `hc` marks a short screen (under ~57rem of height) so the tighter layouts kick in at the same point on every size.
+function fitHost(){
+  const px=Math.max(16,Math.min(22,innerWidth/90,innerHeight/50.6));
+  document.documentElement.style.fontSize=px+'px';
+  document.body.classList.toggle('hc',innerHeight/px<57);
+  return px;
+}
 
 function hostHandleAction(a){
   if(!a||!a.type||!state) return; bump();
@@ -662,9 +857,9 @@ function hostHandleAction(a){
 }
 
 /* ── host render ──────────────────────────────────────────────── */
-const NEXT_LABEL={lobby:'Start · Round 1 →',r1_ask:'Reveal the real numbers →',r1_reveal:'Now… what if? →',r1_whatif:'On to Round 2 →',r2_ask:'Reveal the real numbers →',r2_reveal:'Now… what if? →',r2_whatif:'On to Round 3 →',r3_ask:'Reveal the real numbers →',r3_reveal:'Now… what if? →',r3_whatif:'One last question →',poll:'Wrap up →',end:''};
+const NEXT_LABEL={lobby:'Start · Round 1 →',r1_demo:'Your turn: open it on phones →',r1_ask:'Reveal the room’s numbers →',r1_reveal:'Now… what if? →',r1_whatif:'Next: the cost of delay →',r2_demo:'Your turn: open it on phones →',r2_ask:'Reveal the room’s numbers →',r2_reveal:'Now… what if? →',r2_whatif:'Next: the flip →',r3_demo:'Your turn: open it on phones →',r3_ask:'Reveal the room’s numbers →',r3_reveal:'Now… what if? →',r3_whatif:'One last question →',poll:'Wrap up →',end:''};
 function renderHost(){
-  clearTimers(); postLive();
+  clearTimers(); postLive(); const rootPx=fitHost();
   const h=document.getElementById('host'); const ph=state.phase;
   const lobby=ph==='lobby';
   document.getElementById('joinCorner').style.display=lobby?'none':'flex';
@@ -674,14 +869,18 @@ function renderHost(){
   document.getElementById('hostBack').style.display=lobby?'none':'block';
   const nx=document.getElementById('hostNext'); nx.textContent=NEXT_LABEL[ph]||''; nx.style.display=(lobby||!NEXT_LABEL[ph])?'none':'block';
   if(lobby) h.innerHTML=tplLobby();
-  else if(/_ask$/.test(ph)) h.innerHTML=tplAsk(roundOf(ph));
+  else if(/_demo$/.test(ph)) h.innerHTML=tplDemo(roundOf(ph));
+  else if(/_ask$/.test(ph)){ askEnd(roundOf(ph)); h.innerHTML=tplAsk(roundOf(ph)); }
   else if(ph==='r1_reveal') h.innerHTML=tplReveal1();
   else if(ph==='r2_reveal') h.innerHTML=tplReveal2();
   else if(ph==='r3_reveal') h.innerHTML=tplReveal3();
   else if(/_whatif$/.test(ph)) h.innerHTML=tplWhatIf(roundOf(ph));
   else if(ph==='poll') h.innerHTML=tplPoll();
   else if(ph==='end') h.innerHTML=tplEnd();
-  if(lobby) makeQR(document.getElementById('lobbyQr'),innerHeight<900?196:224);
+  nx.classList.remove('pulse');
+  if(lobby) makeQR(document.getElementById('lobbyQr'),Math.round(rootPx*(document.body.classList.contains('hc')?12.25:14)));
+  if(/_ask$/.test(ph)) tickClock();
+  if(/_demo$/.test(ph)&&!_demo.locked) later(()=>{ const i=document.getElementById('dmInput'); if(i) i.focus(); },60);
   runCountUps();
 }
 // The "what if" control panel (1B / 2B / 3B). Big controls on the left of the screen, big results on the right.
@@ -703,7 +902,7 @@ function chipRow(k,opts,fmtf){ return opts.map(v=>`<button class="chip ${W()[k]=
 const sizeClass=n=>n<=8?'sz-xl':n<=16?'sz-lg':'';   // names stay big in small rooms, shrink gracefully in big ones
 function tplLobby(){
   const ps=playersSorted(), s=S(), n=ps.length;
-  const chips=n?ps.map(p=>`<span class="pl">${av(p)}${esc(p.name)} <span class="age">${p.age}</span></span>`).join(''):`<div style="width:100%;text-align:center"><div class="slots"><span></span><span></span><span></span><span></span></div><p class="waiting">Waiting for the first scan…</p></div>`;
+  const chips=n?ps.map(p=>`<span class="pl">${av(p)}${esc(p.name)}</span>`).join(''):`<div style="width:100%;text-align:center"><div class="slots"><span></span><span></span><span></span><span></span></div><p class="waiting">Waiting for the first scan…</p></div>`;
   return `<div class="stage lobby-stage">
     <img class="hero-mark" src="${LOGO}" alt="">
     <div class="presents">Investing for Mummies presents</div>
@@ -731,19 +930,75 @@ function tplLobby(){
     </div>
   </div>`;
 }
-function tplAsk(rk){
-  const R=ROUNDS[rk], ps=playersSorted(), done=ps.filter(p=>p.guess[rk]>0).length;
-  return `<div class="stage">
+// The teacher plays one guess on the big screen, exactly as it looks on a phone, so nobody has to be told how it works.
+// Phones show "eyes on the screen" for this phase. The demo guess is never stored and never counted.
+let _demo={rk:null,v:0,locked:false};
+function tplDemo(rk){
+  const R=ROUNDS[rk], s=S(); if(_demo.rk!==rk) _demo={rk,v:0,locked:false};
+  const d=_demo, mins=ASK_MINS[rk];
+  const phone=d.locked
+    ?`<div class="locked"><div class="lbl">Locked in ✓</div><div class="v">${fmtMoney(d.v)}</div><div class="u">${R.unit}</div></div>
+      <p class="dp-note">That is all it takes. Now you, on your phone.</p><button class="p-btn outline" onclick="demoChange()">Change my guess</button>`
+    :`<div class="amt"><div class="amt-l">Your guess · ${R.unit}</div>
+        <div class="amt-box"><span class="rs">₹</span><input id="dmInput" class="amt-in" inputmode="numeric" placeholder="0" oninput="demoMoney(this)" onkeydown="if(event.key==='Enter')demoLock()" value="${d.v?indianFormat(d.v):''}"></div>
+        <div class="amt-sh" id="dmBadge">${d.v?fmtMoney(d.v):''}</div></div>
+      <div class="chips big">${R.chips.slice(0,8).map(v=>`<button class="chip ${v===d.v?'on':''}" data-v="${v}" onclick="demoChip(${v})">${fmtMoney(v)}</button>`).join('')}</div>
+      <button class="p-btn big" id="dmLock" onclick="demoLock()" ${d.v?'':'disabled'}>Lock it in →</button>`;
+  return `<div class="stage demo-stage">
     <div class="presents">Round ${R.n} of 3 · ${R.title}</div>
-    <div class="glass q-panel"><p class="q">${R.hostQ(S())}</p><p class="why">${R.hostWhy(S())}</p></div>
-    <div class="live"><i></i> Live · guess on your phone</div>
-    <div class="prog"><b>${done}</b> / ${ps.length} locked in</div>
-    <div class="pl-wall ${sizeClass(ps.length)}">${ps.map(p=>`<span class="pl ${p.guess[rk]>0?'lit':'dim'}">${av(p)}${esc(p.name)} <span class="age">${p.age}</span></span>`).join('')}</div>
+    <div class="glass q-panel"><p class="q">${R.hostQ(s)}</p><p class="why">${R.hostWhy(s)}</p></div>
+    <div class="demo-grid">
+      <div class="demo-steps">
+        <div><i>1</i><p><b>Type a guess</b><span>Use the keyboard or tap a quick amount. No wrong answers yet.</span></p></div>
+        <div><i>2</i><p><b>Tap “Lock it in”</b><span>That is all there is to it. You can change it until the reveal.</span></p></div>
+        <div><i>3</i><p><b>Then we look at the room</b><span>${mins} minutes on your phones, then group numbers only. Nobody’s guess goes on the screen.</span></p></div>
+      </div>
+      <div class="demo-phone"><div class="dp-tag">This is your phone</div>${phone}</div>
+    </div>
   </div>`;
 }
-function closest(rk){
-  const ps=playersSorted().filter(p=>p.guess[rk]>0).map(p=>({p,o:offBy(p.guess[rk],realFor(p,rk,S()))})).sort((a,b)=>a.o.err-b.o.err);
-  return ps[0]||null;
+function demoMoney(inp){
+  const dg=inp.value.replace(/\D/g,'').slice(0,11); inp.value=indianFormat(dg); _demo.v=parseNum(inp.value);
+  const b=document.getElementById('dmBadge'); if(b) b.textContent=_demo.v>0?fmtMoney(_demo.v):'';
+  const btn=document.getElementById('dmLock'); if(btn) btn.disabled=!(_demo.v>0);
+  document.querySelectorAll('.demo-phone .chip').forEach(c=>c.classList.toggle('on',+c.dataset.v===_demo.v));
+}
+function demoChip(v){ const i=document.getElementById('dmInput'); i.value=indianFormat(v); demoMoney(i); i.focus(); }
+function demoLock(){ if(!(_demo.v>0)) return; _demo.locked=true; renderHost(); }
+function demoChange(){ _demo.locked=false; renderHost(); }
+
+// The play phase: phones are open, the clock runs. The room sees who has locked in (names only) and how many, never what they typed.
+function askEnd(rk){ state.askEnds=state.askEnds||{}; if(!state.askEnds[rk]){ state.askEnds[rk]=Date.now()+ASK_MINS[rk]*60000; save(); } return state.askEnds[rk]; }
+function adjustClock(mins){
+  const rk=roundOf(state.phase); if(!rk||!/_ask$/.test(state.phase)) return; bump();
+  const now=Date.now(), cur=askEnd(rk);
+  state.askEnds[rk]=mins>0?Math.max(cur,now)+mins*60000:Math.max(now,cur+mins*60000);
+  save(); renderHost();
+}
+const fmtClock=ms=>{ const s=Math.ceil(ms/1000); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); };
+function tickClock(){
+  const el=document.getElementById('clock'); if(!el||!state) return;
+  const rk=roundOf(state.phase), left=Math.max(0,askEnd(rk)-Date.now());
+  el.textContent=fmtClock(left); el.classList.toggle('done',left===0); el.classList.toggle('low',left>0&&left<=30000);
+  const lb=document.getElementById('clockLbl'); if(lb) lb.textContent=left===0?'Time’s up':'left on the clock';
+  const ps=playersSorted(), all=ps.length>0&&ps.every(p=>p.guess[rk]>0);
+  const dq=document.getElementById('discuss'); if(dq) dq.classList.toggle('show',left===0||all);
+  document.getElementById('hostNext').classList.toggle('pulse',left===0||all);
+  later(tickClock,250);
+}
+function tplAsk(rk){
+  const R=ROUNDS[rk], ps=playersSorted(), s=S(), done=ps.filter(p=>p.guess[rk]>0).length;
+  return `<div class="stage ask-stage">
+    <div class="presents">Round ${R.n} of 3 · ${R.title}</div>
+    <div class="glass q-panel"><p class="q">${R.hostQ(s)}</p><p class="why">${R.hostWhy(s)}</p></div>
+    <div class="askbar">
+      <div class="glass clockbox"><div><div class="clock" id="clock">0:00</div><div class="kicker" id="clockLbl">left on the clock</div></div>
+        <div class="clock-btns"><button class="cbtn" onclick="adjustClock(1)">+1 min</button><button class="cbtn" onclick="adjustClock(-1)">−1 min</button></div></div>
+      <div class="glass progbox"><div class="live"><i></i> Live · guess on your phone</div><div class="prog"><b>${done}</b> / ${ps.length} locked in</div></div>
+    </div>
+    <div class="pl-wall ${sizeClass(ps.length)}">${ps.map(p=>`<span class="pl ${p.guess[rk]>0?'lit':'dim'}">${av(p)}${esc(p.name)}</span>`).join('')}</div>
+    <p class="discuss" id="discuss">${DISCUSS[rk](s)}</p>
+  </div>`;
 }
 function cu(val,cls,delay){ return `<span class="${cls||''}" data-cu="${Math.round(val)}" data-delay="${delay||0}">₹0</span>`; }
 function runCountUps(){
@@ -779,98 +1034,114 @@ function lifeBar(p,k,rk,line){
 }
 // If anyone in the room is already past the room's line, say so in plain words so their bar is never a mystery.
 function pastNote(ps,line){ const n=ps.filter(p=>p.age+MIN_YEARS>line).length; return n?`<p class="past-note">Anyone past ${line}, or within ${MIN_YEARS} years of it, gets ${MIN_YEARS} years from today instead.</p>`:''; }
+// The projector shows the ROOM, never a person: one row per age (a few people can share one), no names, no guesses, no "off by".
+// Each phone still shows its owner how close they were — privately.
+function ageGroups(ps,max){
+  max=max||6; const m=new Map(); ps.forEach(p=>m.set(p.age,(m.get(p.age)||0)+1));
+  let ages=[...m.keys()].sort((a,b)=>a-b);
+  if(ages.length>max){ const pick=[]; for(let i=0;i<max;i++) pick.push(ages[Math.round(i*(ages.length-1)/(max-1))]); ages=[...new Set(pick)]; }   // youngest, oldest and an even spread between
+  return ages.map(a=>({age:a,n:m.get(a),p:{age:a,color:'#f5c451'}}));
+}
+const agecell=g=>`<span class="agecell"><b>${g.age}</b><small>${g.n===1?'1 person':g.n+' people'}</small></span>`;
+function guessStats(rk){
+  const s=S(), ps=playersSorted().filter(p=>p.guess[rk]>0); let low=0,ok=0,high=0,sg=0,sr=0;
+  ps.forEach(p=>{ const r=realFor(p,rk,s), k=p.guess[rk]/r; if(k<0.95) low++; else if(k>1.05) high++; else ok++; sg+=p.guess[rk]; sr+=r; });
+  const n=ps.length; return {n,low,ok,high,avgGuess:n?sg/n:0,avgReal:n?sr/n:0};
+}
+function guessCard(rk,unit){
+  const g=guessStats(rk); if(!g.n) return '';
+  const ratio=g.avgReal/g.avgGuess;
+  const verdict=ratio>=1.05?`<b style="color:var(--coral)">${ratio.toFixed(1)}× too low</b>`:ratio<=0.95?`<b style="color:var(--gold-bright)">${(1/ratio).toFixed(1)}× too high</b>`:`<b style="color:var(--teal-bright)">about right</b>`;
+  return `<div class="glass stat"><div class="kicker">The room guessed, on average</div><div class="big">${fmtMoney(g.avgGuess)}</div><div class="sm">Real average <b>${fmtMoney(g.avgReal)}</b>${unit} · ${verdict}</div>
+    <div class="gsplit"><span class="gs low"><b>${g.low}</b>too low</span><span class="gs ok"><b>${g.ok}</b>about right</span><span class="gs high"><b>${g.high}</b>too high</span></div></div>`;
+}
 function tplReveal1(){
-  const ps=playersSorted(), s=S(); const c=closest('r1');
-  const guessed=ps.filter(p=>p.guess.r1>0);
-  const avgGuess=guessed.length?guessed.reduce((a,p)=>a+p.guess.r1,0)/guessed.length:0;
-  const avgReal=ps.length?ps.reduce((a,p)=>a+calc(p,s).now,0)/ps.length:0;
-  const rows=ps.map((p,i)=>{ const k=calc(p,s); const o=offBy(p.guess.r1,k.now);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r1',s.targetAge)}<span class="guess">${p.guess.r1>0?fmtMoney(p.guess.r1):'—'}</span>${cu(k.now,'real'+(k.now>=200000?' hot':''),i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
-  const n=ps.length;
+  const ps=playersSorted(), s=S(), gr=ageGroups(ps);
+  const rows=gr.map((g,i)=>{ const k=calc(g.p,s);
+    return `<div class="rv-row" style="animation-delay:${i*STEP}ms">${agecell(g)}${lifeBar(g.p,k,'r1',s.targetAge)}${cu(k.now,'real'+(k.now>=200000?' hot':''),i*STEP+150)}</div>`; }).join('');
   return `<div class="stage">
     <div class="presents">Round 1 · the real numbers</div>
-    <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">${fmtMoney(s.target)} by ${s.targetAge} · what each of you needs <em>every month</em></h2>${pastNote(ps,s.targetAge)}
+    <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">${fmtMoney(s.target)} by ${s.targetAge} · what a person of each age needs <em>every month</em></h2>${pastNote(ps,s.targetAge)}
     <div class="rv">
-      <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Today → finish line</span><span>Guessed</span><span>Real · per month</span><span>Off by</span></div>${rows}</div>
+      <div class="glass rv-table rv-agg3"><div class="rv-head"><span>Age</span><span>Today → finish line</span><span>Real · per month</span></div>${rows}</div>
       <div class="side">
         <div class="glass stat">${chart1(ps,s)}</div>
-        <div class="glass stat"><div class="kicker">The room guessed, on average</div><div class="big">${avgGuess?fmtMoney(avgGuess):'—'}</div><div class="sm">Real average <b>${fmtMoney(avgReal)}</b> a month${avgGuess&&avgReal>avgGuess?` · <b style="color:var(--coral)">${(avgReal/avgGuess).toFixed(1)}× more than you thought</b>`:''}</div></div>
-        ${c?`<div class="glass stat"><div class="kicker">🎯 Closest guess</div><div class="big teal">${esc(c.p.name)}</div><div class="sm">guessed ${fmtMoney(c.p.guess.r1)} · real ${fmtMoney(realFor(c.p,'r1',s))}</div></div>`:''}
+        ${guessCard('r1',' a month')}
       </div>
     </div>
-    <p class="punch" style="animation-delay:${n*STEP+500}ms">Nobody in this room is too young to start. Everyone is getting too old to wait.</p>
+    <p class="punch" style="animation-delay:${gr.length*STEP+500}ms">Nobody in this room is too young to start. Everyone is getting too old to wait.</p>
   </div>`;
 }
 function chart1(ps,s,label){
   const onCurve=ps.filter(p=>horizonFor(p,s)===s.targetAge); const ages=(onCurve.length?onCurve:ps).map(p=>p.age);
   const a0=Math.max(15,Math.min(...ages)-2), a1=Math.min(s.targetAge-4,Math.max(...ages)+8);
-  const W=440,H=250,L=66,R=14,T=16,B=34; const pts=[]; for(let a=a0;a<=a1;a+=0.5) pts.push([a,sipFor(s.target,s.targetAge-a,s.rate)]);
+  const W=440,H=260,L=92,R=14,T=16,B=42; const pts=[]; for(let a=a0;a<=a1;a+=0.5) pts.push([a,sipFor(s.target,s.targetAge-a,s.rate)]);
   const ymax=Math.max(...pts.map(q=>q[1]))*1.05;
   const X=a=>L+(a-a0)/(a1-a0)*(W-L-R), Y=v=>T+(1-v/ymax)*(H-T-B);
   const path=pts.map((q,i)=>(i?'L':'M')+X(q[0]).toFixed(1)+' '+Y(q[1]).toFixed(1)).join(' ');
-  const ticks=[0.25,0.5,0.75,1].map(f=>`<text x="${L-8}" y="${Y(ymax*f/1.05)+4}" text-anchor="end" font-size="10" font-weight="800" fill="#9fc2bb">${fmtMoney(ymax*f/1.05)}</text><line x1="${L}" x2="${W-R}" y1="${Y(ymax*f/1.05)}" y2="${Y(ymax*f/1.05)}" stroke="rgba(255,255,255,.08)"/>`).join('');
-  const xs=[]; for(let a=Math.ceil(a0/2)*2;a<=a1;a+=2) xs.push(`<text x="${X(a)}" y="${H-B+16}" text-anchor="middle" font-size="10" font-weight="800" fill="#9fc2bb">${a}</text>`);
-  const dots=onCurve.map((p,i)=>{const v=calc(p,s).now; return `<g style="opacity:0;animation:rise .4s ease-out ${i*STEP+200}ms forwards"><circle cx="${X(p.age)}" cy="${Y(v)}" r="6.5" fill="${p.color}" stroke="#fff" stroke-width="2"/><text x="${X(p.age)}" y="${Y(v)+(i%2?20:-11)}" text-anchor="middle" font-size="10" font-weight="900" fill="#fff">${esc(p.name.split(' ')[0])}</text></g>`;}).join('');
+  const ticks=[0.25,0.5,0.75,1].map(f=>`<text x="${L-8}" y="${Y(ymax*f/1.05)+5}" text-anchor="end" font-size="18" font-weight="800" fill="#9fc2bb">${fmtMoney(ymax*f/1.05)}</text><line x1="${L}" x2="${W-R}" y1="${Y(ymax*f/1.05)}" y2="${Y(ymax*f/1.05)}" stroke="rgba(255,255,255,.08)"/>`).join('');
+  const xs=[]; for(let a=Math.ceil(a0/2)*2;a<=a1;a+=2) xs.push(`<text x="${X(a)}" y="${H-B+20}" text-anchor="middle" font-size="18" font-weight="800" fill="#9fc2bb">${a}</text>`);
+  const dotAges=[...new Set(onCurve.map(p=>p.age))];
+  const dots=dotAges.map((a,i)=>`<circle cx="${X(a)}" cy="${Y(sipFor(s.target,s.targetAge-a,s.rate))}" r="8" fill="#f5c451" stroke="#fff" stroke-width="2.5" style="opacity:0;animation:rise .4s ease-out ${i*STEP+200}ms forwards"/>`).join('');
   return `<div class="kicker">${label||'Monthly SIP needed, by the age you start'}</div>
-  <svg class="chart" viewBox="0 0 ${W} ${H}">${ticks}${xs.join('')}<path d="${path}" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-linecap="round"/>${dots}<text x="${W-R}" y="${H-3}" text-anchor="end" font-size="9" font-weight="800" fill="#9fc2bb">age you start →</text></svg>`;
+  <svg class="chart" viewBox="0 0 ${W} ${H}">${ticks}${xs.join('')}<path d="${path}" fill="none" stroke="#2dd4bf" stroke-width="3.5" stroke-linecap="round"/>${dots}<text x="${W-R}" y="${H-4}" text-anchor="end" font-size="16" font-weight="800" fill="#9fc2bb">age you start →</text></svg>`;
 }
 function tplReveal2(){
-  const ps=playersSorted(), s=S(); const c=closest('r2');
-  const extra=ps.reduce((a,p)=>{const k=calc(p,s);return a+(k.late-k.now);},0);
-  const rows=ps.map((p,i)=>{ const k=calc(p,s);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r2',s.targetAge)}<span class="guess">now <b style="color:var(--stage-ink)">${fmtMoney(k.now)}</b></span>${cu(k.late,'real hot',i*STEP+150)}<span class="extra" data-cu="${Math.round(k.late-k.now)}" data-delay="${i*STEP+150}">₹0</span></div>`; }).join('');
-  const n=ps.length;
+  const ps=playersSorted(), s=S(), gr=ageGroups(ps);
+  const avgExtra=ps.length?ps.reduce((a,p)=>{const k=calc(p,s);return a+(k.late-k.now);},0)/ps.length:0;
+  const rows=gr.map((g,i)=>{ const k=calc(g.p,s);
+    return `<div class="rv-row" style="animation-delay:${i*STEP}ms">${agecell(g)}${lifeBar(g.p,k,'r2',s.targetAge)}<span class="guess"><b style="color:var(--stage-ink)">${fmtMoney(k.now)}</b></span>${cu(k.late,'real hot',i*STEP+150)}<span class="extra" data-cu="${Math.round(k.late-k.now)}" data-delay="${i*STEP+150}">₹0</span></div>`; }).join('');
   return `<div class="stage">
     <div class="presents">Round 2 · the cost of waiting</div>
     <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">Start <em>${s.delayYears} years later</em> and the monthly number becomes…</h2>${pastNote(ps,s.targetAge)}
     <div class="rv">
-      <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Today → wait → finish line</span><span>Start now</span><span>Start ${s.delayYears} yrs late</span><span>Extra · every month</span></div>${rows}</div>
+      <div class="glass rv-table rv-agg5"><div class="rv-head"><span>Age</span><span>Today → wait → finish line</span><span>Start now</span><span>Start ${s.delayYears} yrs late</span><span>Extra · every month</span></div>${rows}</div>
       <div class="side">
-        <div class="glass stat"><div class="kicker">Waiting ${s.delayYears} years costs this room</div><div class="big coral">${fmtMoney(extra)}</div><div class="sm">more, every single month, for the same ${fmtMoney(s.target)}</div></div>
-        <div class="glass stat"><div class="kicker">Why it hurts so much</div><div class="sm" style="font-size:.95rem;color:var(--stage-ink)">The first years are the cheapest ones you will ever get. Money invested at ${Math.min(...ps.map(p=>p.age))} has the longest run to grow. Skip those years and you replace them with your own cash later.</div></div>
-        ${c?`<div class="glass stat"><div class="kicker">🎯 Closest guess</div><div class="big teal">${esc(c.p.name)}</div><div class="sm">guessed ${fmtMoney(c.p.guess.r2)} · real ${fmtMoney(realFor(c.p,'r2',s))}</div></div>`:''}
+        <div class="glass stat"><div class="kicker">Waiting ${s.delayYears} years costs the average person here</div><div class="big coral">${fmtMoney(avgExtra)}</div><div class="sm">more, every single month, for the same ${fmtMoney(s.target)}</div></div>
+        <div class="glass stat wide-only"><div class="kicker">Why it hurts so much</div><div class="sm" style="color:var(--stage-ink)">The first years are the cheapest ones you will ever get. Money invested at ${Math.min(...ps.map(p=>p.age))} has the longest run to grow. Skip those years and you replace them with your own cash later.</div></div>
+        ${guessCard('r2',' a month')}
       </div>
     </div>
-    <p class="punch" style="animation-delay:${n*STEP+500}ms">Every year you wait, the number goes up. It never comes back down.</p>
+    <p class="punch" style="animation-delay:${gr.length*STEP+500}ms">Every year you wait, the number goes up. It never comes back down.</p>
   </div>`;
 }
 function tplReveal3(){
-  const ps=playersSorted(), s=S(); const c=closest('r3');
+  const ps=playersSorted(), s=S(), gr=ageGroups(ps);
   const young=ps[0], old=ps[ps.length-1];
-  const rows=ps.map((p,i)=>{ const k=calc(p,s); const o=offBy(p.guess.r3,k.flip);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,'r3',s.flipAge)}<span class="guess">${p.guess.r3>0?fmtMoney(p.guess.r3):'—'}</span>${cu(k.flip,'real',i*STEP+150)}<span class="off ${o.cls}">${o.txt}</span></div>`; }).join('');
-  const n=ps.length; const totalIn=p=>s.flipSip*12*calc(p,s).flipYrs;
+  const rows=gr.map((g,i)=>{ const k=calc(g.p,s);
+    return `<div class="rv-row" style="animation-delay:${i*STEP}ms">${agecell(g)}${lifeBar(g.p,k,'r3',s.flipAge)}${cu(k.flip,'real',i*STEP+150)}</div>`; }).join('');
+  const totalIn=p=>s.flipSip*12*calc(p,s).flipYrs;
   return `<div class="stage">
     <div class="presents">Round 3 · the flip</div>
     <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">${fmtMoney(s.flipSip)} a month until ${s.flipAge} becomes…</h2>
     <div class="rv">
-      <div class="glass rv-table"><div class="rv-head"><span>Name</span><span>Today → age ${s.flipAge}</span><span>Guessed</span><span>It becomes</span><span>Off by</span></div>${rows}</div>
+      <div class="glass rv-table rv-agg3"><div class="rv-head"><span>Age</span><span>Today → age ${s.flipAge}</span><span>It becomes</span></div>${rows}</div>
       <div class="side">
-        ${young?`<div class="glass stat"><div class="kicker">${esc(young.name)}, ${young.age} · puts in ${fmtMoney(totalIn(young))} in total</div><div class="big teal">${fmtMoney(calc(young,s).flip)}</div><div class="sm">${(calc(young,s).flip/totalIn(young)).toFixed(0)}× what went in. The rest is growth.</div></div>`:''}
-        ${old&&old!==young?`<div class="glass stat"><div class="kicker">${esc(old.name)}, ${old.age} · puts in ${fmtMoney(totalIn(old))} in total</div><div class="big">${fmtMoney(calc(old,s).flip)}</div><div class="sm">Same ${fmtMoney(s.flipSip)}. ${old.age-young.age} years less time. ${(calc(young,s).flip/calc(old,s).flip).toFixed(1)}× less money.</div></div>`:''}
-        ${c?`<div class="glass stat"><div class="kicker">🎯 Closest guess</div><div class="big teal">${esc(c.p.name)}</div><div class="sm">guessed ${fmtMoney(c.p.guess.r3)} · real ${fmtMoney(realFor(c.p,'r3',s))}</div></div>`:''}
+        ${young?`<div class="glass stat"><div class="kicker">Age ${young.age} · puts in ${fmtMoney(totalIn(young))} in total</div><div class="big teal">${fmtMoney(calc(young,s).flip)}</div><div class="sm">${(calc(young,s).flip/totalIn(young)).toFixed(0)}× what went in. The rest is growth.</div></div>`:''}
+        ${old&&old.age!==young.age?`<div class="glass stat"><div class="kicker">Age ${old.age} · puts in ${fmtMoney(totalIn(old))} in total</div><div class="big">${fmtMoney(calc(old,s).flip)}</div><div class="sm">Same ${fmtMoney(s.flipSip)}. ${old.age-young.age} years less time. ${(calc(young,s).flip/calc(old,s).flip).toFixed(1)}× less money.</div></div>`:''}
+        ${guessCard('r3','')}
       </div>
     </div>
-    <p class="punch" style="animation-delay:${n*STEP+500}ms">Time does most of the work. You only have to start.</p>
+    <p class="punch" style="animation-delay:${gr.length*STEP+500}ms">Time does most of the work. You only have to start.</p>
   </div>`;
 }
 // 1B / 2B / 3B — Hiral's sandbox, and the main learning tool of the game. Left: the room average as played next to
 // the room average under the controls, then the controls themselves. Right: every person, with their timeline.
 // The guesses are not shown here (the rules moved, so "off by" would mean nothing).
-function whatIfRow(p,rk,s,w,i){
-  const a=realFor(p,rk,s), b=realFor(p,rk,w), d=b-a, k=calc(p,w);
+function whatIfRow(g,rk,s,w,i){
+  const p=g.p, a=realFor(p,rk,s), b=realFor(p,rk,w), d=b-a, k=calc(p,w);
   const good=rk==='r3'?d>0:d<0;   // a smaller monthly number is good news; a bigger final amount is good news
   const pastLine=rk!=='r3'&&p.age+MIN_YEARS>w.targetAge&&Math.abs(d)<1;
   const chg=Math.abs(d)<1?`<span class="wi-chg same">no change${pastLine?'<small>past this line</small>':''}</span>`
     :`<span class="wi-chg ${good?'good':'bad'}">${d>0?'▲ +':'▼ −'}${fmtMoney(Math.abs(d))}</span>`;
-  return `<div class="rv-row wi-row" style="animation-delay:${i*90}ms"><span class="nm">${av(p)}${esc(p.name)}</span>${lifeBar(p,k,rk,rk==='r3'?w.flipAge:w.targetAge)}<span class="guess">${fmtMoney(a)}</span>${cu(b,'wi-real'+(good?' good':Math.abs(d)<1?'':' bad'),i*90+100)}${chg}</div>`;
+  return `<div class="rv-row wi-row" style="animation-delay:${i*90}ms">${agecell(g)}${lifeBar(p,k,rk,rk==='r3'?w.flipAge:w.targetAge)}<span class="guess">${fmtMoney(a)}</span>${cu(b,'wi-real'+(good?' good':Math.abs(d)<1?'':' bad'),i*90+100)}${chg}</div>`;
 }
 function tplWhatIf(rk){
   const ps=playersSorted(), s=S(), w=W(), R=ROUNDS[rk], n=ps.length;
   const changed=JSON.stringify(state.whatif||{})!=='{}';
   const played=rk==='r3'?`${fmtMoney(s.flipSip)} a month to ${s.flipAge} · ${s.rate}%`:rk==='r2'?`${fmtMoney(s.target)} by ${s.targetAge} · ${s.delayYears} yrs late · ${s.rate}%`:`${fmtMoney(s.target)} by ${s.targetAge} · ${s.rate}%`;
   const now=rk==='r3'?`${fmtMoney(w.flipSip)} a month to ${w.flipAge} · ${w.rate}%`:rk==='r2'?`${fmtMoney(w.target)} by ${w.targetAge} · ${w.delayYears} yrs late · ${w.rate}%`:`${fmtMoney(w.target)} by ${w.targetAge} · ${w.rate}%`;
-  const rows=ps.map((p,i)=>whatIfRow(p,rk,s,w,i)).join('');
+  const gr=ageGroups(ps); const rows=gr.map((g,i)=>whatIfRow(g,rk,s,w,i)).join('');
   const avgA=ps.reduce((a,p)=>a+realFor(p,rk,s),0)/n, avgB=ps.reduce((a,p)=>a+realFor(p,rk,w),0)/n;
   const unit=rk==='r3'?'it becomes':'a month';
   const good=rk==='r3'?avgB>avgA:avgB<avgA;
@@ -888,8 +1159,8 @@ function tplWhatIf(rk){
         ${whatIf(rk)}
         ${rk==='r1'?`<div class="glass stat wi-chart">${chart1(ps,w,'The curve · what-if rules')}</div>`:''}
       </div>
-      <div class="glass rv-table wi-table ${n>8?'dense':''}">
-        <div class="rv-head"><span>Name</span><span>${hdrTl}</span><span>As played</span><span>What if</span><span>Change</span></div>${rows}
+      <div class="glass rv-table wi-table ${gr.length>5?'dense':''}">
+        <div class="rv-head"><span>Age</span><span>${hdrTl}</span><span>As played</span><span>What if</span><span>Change</span></div>${rows}
       </div>
     </div>
   </div>`;
@@ -913,13 +1184,8 @@ function tplPoll(){
     ${t.lead>=0?`<p class="punch" style="animation-delay:0ms;opacity:1;animation:none">${BLOCKERS[t.lead].fix}</p>`:''}
   </div>`;
 }
-function bestEstimator(){
-  const s=S(); const scored=playersSorted().map(p=>{ const errs=['r1','r2','r3'].filter(rk=>p.guess[rk]>0).map(rk=>offBy(p.guess[rk],realFor(p,rk,s)).err);
-    return {p,n:errs.length,avg:errs.length?errs.reduce((a,b)=>a+b,0)/errs.length:99}; }).filter(x=>x.n>=2).sort((a,b)=>a.avg-b.avg);
-  return scored[0]||null;
-}
 function tplEnd(){
-  const ps=playersSorted(), s=S(); const t=tally(); const b=bestEstimator();
+  const ps=playersSorted(), s=S(); const t=tally(); const avgX=ps.length?ps.reduce((a,p)=>{const k=calc(p,s);return a+(k.late-k.now);},0)/ps.length:0;
   const g=ps.filter(p=>p.guess.r1>0); const avgG=g.length?g.reduce((a,p)=>a+p.guess.r1,0)/g.length:0;
   const avgR=ps.length?ps.reduce((a,p)=>a+calc(p,s).now,0)/ps.length:0; const gap=avgG&&avgR>avgG?(avgR/avgG).toFixed(1):null;
   return `<div class="stage end-stage">
@@ -928,7 +1194,7 @@ function tplEnd(){
     <div class="end-grid">
       <div class="glass stat"><div class="kicker">Biggest thing in the way</div><div class="big teal" style="font-size:1.5rem">${t.lead>=0?BLOCKERS[t.lead].short:'—'}</div><div class="sm">${t.lead>=0?`${t.c[t.lead]} of ${t.total} in the room`:'nobody answered'}</div></div>
       <div class="glass stat"><div class="kicker">How far off the room guessed</div><div class="big gold">${gap?gap+'× too low':'—'}</div><div class="sm">on what ${fmtMoney(s.target)} by ${s.targetAge} really takes</div></div>
-      <div class="glass stat"><div class="kicker">🎯 Best estimator</div><div class="big">${b?esc(b.p.name):'—'}</div><div class="sm">${b?'closest across the rounds':'needs two guesses'}</div></div>
+      <div class="glass stat"><div class="kicker">What waiting ${s.delayYears} years costs</div><div class="big coral">${fmtMoney(avgX)}</div><div class="sm">more, every month, for the average person here</div></div>
     </div>
     <p class="tag">Your numbers are on your phone. Send them to yourself on WhatsApp before you leave.</p>
   </div>`;
@@ -1026,6 +1292,8 @@ function renderPlayer(){
     joinCheck(); return;
   }
   if(ph==='lobby') return el.innerHTML=shell(`<div class="card center"><div class="av" style="background:${p.color}">${p.av}</div><h2>You're in, ${esc(p.name)}.</h2><p>Age ${p.age}. Eyes on the screen. The teacher starts the game.</p></div>`,true);
+  if(rk&&/_demo$/.test(ph)){ const R=ROUNDS[rk];
+    return el.innerHTML=shell(`<div class="card center"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>Eyes on the <em>screen</em></h2><p>Your teacher is showing how it works. Your turn is next, and this phone opens in a moment.</p></div>`); }
   if(rk&&/_ask$/.test(ph)){
     const R=ROUNDS[rk]; const locked=myLockedNonce[rk]===state.nonce||(p.guess[rk]>0&&myLockedNonce[rk]!==-1);
     const val=myLocal[rk]||p.guess[rk]||0; const note=R.phoneNote(p,s); const k=calc(p,s);
@@ -1037,8 +1305,8 @@ function renderPlayer(){
       <div class="ctx-t"><b>${k.delay} fewer years</b>, same goal. Each month has to work harder.</div></div>`;
     if(locked) return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(p,s)}</h2>${ctx}
       <div class="locked"><div class="lbl">Locked in ✓</div><div class="v">${fmtMoney(val)}</div><div class="u">${R.unit}</div></div>
-      <p style="margin:0 0 4px">Watch the screen for the reveal.</p><button class="p-btn outline" onclick="pChange('${rk}')">Change my guess</button></div>`);
-    return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(p,s)}</h2>${ctx}<p class="ask-note">${note||'Guess. Nobody gets it right first time.'}</p>
+      <p style="margin:0 0 4px">Watch the screen. The room only sees group numbers, never yours.</p><button class="p-btn outline" onclick="pChange('${rk}')">Change my guess</button></div>`);
+    return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(p,s)}</h2>${ctx}<p class="ask-note">${note?note+' ':''}Guess. Nobody gets it right first time. The clock is on the big screen.</p>
       <div class="amt"><div class="amt-l">Your guess · ${R.unit}</div>
         <div class="amt-box"><span class="rs">₹</span><input id="moneyInput" class="amt-in" inputmode="numeric" placeholder="0" oninput="onMoney(this)" value="${val?indianFormat(val):''}"></div>
         <div class="amt-sh" id="shBadge">${val?fmtMoney(val):''}</div></div>
@@ -1052,7 +1320,7 @@ function renderPlayer(){
     if(rk==='r2') line=`<div class="fb">Starting at ${p.age}: <b style="color:var(--teal-d)">${fmtMoney(k.now)}</b>. Starting at ${k.lateStart}: <b>${fmtMoney(k.late)}</b>. Those ${k.delay} years cost you <b>${fmtMoney(k.late-k.now)}</b> every month.</div>`;
     if(rk==='r3') line=`<div class="fb good">You put in ${fmtMoney(s.flipSip*12*k.flipYrs)} in total. Growth does the rest. Had you started 5 years earlier: <b>${fmtMoney(k.flipEarly)}</b>.</div>`;
     return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n} · the real number</div>
-      <div class="real"><div class="lbl">${rk==='r3'?`${fmtMoney(s.flipSip)} a month until ${k.flipHorizon} becomes`:`You need, every month`}</div><div class="v ${rk==='r2'?'red':''}">${fmtMoney(real)}</div><div class="g">you guessed ${g?fmtMoney(g):'—'}</div><span class="off ${o.cls}">${o.txt}</span></div>${projHtml(p,rk,s,g)}${line}</div>`);
+      <div class="real"><div class="lbl">${rk==='r3'?`${fmtMoney(s.flipSip)} a month until ${k.flipHorizon} becomes`:`You need, every month`}</div><div class="v ${rk==='r2'?'red':''}">${fmtMoney(real)}</div><div class="g">you guessed ${g?fmtMoney(g):'—'}</div><span class="off ${o.cls}">${o.txt}</span></div>${projHtml(p,rk,s,g)}${line}<div class="solo-note">Only you can see how close you were. The room sees group numbers.</div></div>`);
   }
   if(rk&&/_whatif$/.test(ph)){
     const w=Object.assign({},s,state.whatif||{}); const a=realFor(p,rk,s), b=realFor(p,rk,w), kw=calc(p,w); const R=ROUNDS[rk];
