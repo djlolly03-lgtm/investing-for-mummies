@@ -963,5 +963,32 @@
  },
  "IFM-646": {
   "_kit_why": "13 Oct 2026: assessed for the Media Kit and deliberately kept OUT. Hiral is the subject and the frame is clean, but the row is a catch-all folder of 11 raw takes — its link opens 1.83 GB of footage, not that frame. A kit entry has to hand someone the asset. Same call as IFM-575 and IFM-628, the two other takes folders. If a single frame or the finished reel is cut out of this shoot, THAT row is the kit candidate, as teaching."
+ },
+ "IFM-648": {
+  "_kit_why": "20 Oct 2026: assessed for the Media Kit and kept OUT. Hiral is the subject and identifies herself on camera, but this is a finished reel with captions and cut-out graphics baked in, not a still or clean frame. If a clean frame of the sea-balcony or laptop setup is pulled from the takes, THAT is a candidate (candid / teaching).",
+  "format": "Hiral Speaking"
+ },
+ "IFM-649": {
+  "_kit_why": "20 Oct 2026: assessed and kept OUT — finished explainer reel with captions and animated cards baked in; the link opens a video, not a portrait."
+ },
+ "IFM-650": {
+  "_kit_why": "20 Oct 2026: assessed and kept OUT — catch-all folder of 26 raw takes (Jenga); a kit entry must hand someone the asset, not a folder of footage. Same call as IFM-646/628/575."
+ },
+ "IFM-651": {
+  "_kit_why": "20 Oct 2026: assessed and kept OUT — catch-all folder of 14 raw takes; most frames are her looking down at a phone, not to camera."
+ },
+ "IFM-653": {
+  "_kit_why": "20 Oct 2026: assessed and kept OUT — loose folder of raw takes. Note IMG_6449.HEIC is a single still of her to camera in a denim jacket; if it is catalogued as its own row it is a possible portrait at rank 2–3 after a human looks at the full-res file."
+ },
+ "IFM-654": {
+  "_kit_why": "20 Oct 2026: assessed and kept OUT — catch-all folder of 76 raw takes. Same call as IFM-646.",
+  "person": [
+   "Hiral"
+  ],
+  "_why": "20 Oct 2026: every take is Hiral alone (or her hand on the IFM ad); the generated rule added Student from the word 'takes'/session context. No students in frame."
+ },
+ "IFM-652": {
+  "person": [],
+  "_why": "20 Oct 2026: hands-only b-roll, no faces — keep the presenter-inference rule from tagging Hiral."
  }
 }

@@ -1,8 +1,14 @@
 {
- "generated_by": "daily-content-processor 2026-10-13",
- "note": "Fresh breadth-first scan of all 15 registered roots: 166 folders, 1,881 media files, 0 listing errors. Staged IFM-642..646 (5 rows: four moments from an 8 Oct boardroom session, and the Starlink vs Jio reel takes); updated IFM-633, which Aakara delivered as a finished reel this morning. 20 third-party files mirrored into IFM Content Archive. Corrected two rows the presenter-inference rule had tagged as Hiral when she is demonstrably someone else. RESOLVED and dropped from this queue: 'ingest-scan.py --scan does not save its result' — it does now, and this run's snapshot is on disk with a scanned_at stamp. Library 604 → 608 assets (the four new photographs; the two video rows stay hidden until a preview clip exists).",
+ "generated_by": "daily-content-processor 2026-10-20",
+ "note": "Fresh breadth-first scan of all 15 registered roots: 180 folders, 2,126 media files, 0 listing errors (single pass, 76 min). 172 files reached no row; all are now covered. Staged IFM-648..654 (7 rows) and updated IFM-629 (Dussehra cover arrived; title Navratri → Dussehra on the cover's evidence). 66 Aakara files mirrored into IFM Content Archive server-side; the Jio IPO OFS takes and the v4 IPO reel are ours and need no mirror. Library 608 → 608: all seven new rows are Video and stay hidden until preview clips are built. check-types --strict: 0 mislabelled. Both test suites pass.",
  "count": 17,
  "items": [
+  {
+   "source": "Oct Brand awareness takes were mirrored but never catalogued",
+   "title": "Found 20 Oct: the 14 takes in Aakara's October/Reels/Brand awareness (IMG_5963–5976, dated 18 Sep) were already copied into IFM Content Archive by an earlier run, yet NO row in data.js referenced them or their folder. They are now covered by IFM-648 (the finished reel). The mirror step and the catalogue step got out of step once — worth a one-off check that every 'archive:' id in the archive folder is named in some row's notes (207 files in From Aakara today).",
+   "folder_url": "https://drive.google.com/drive/folders/1Pnzb-uCc3xaMb8u7gVVB1Z9eOmVLXsO8",
+   "status": "needs_review"
+  },
   {
    "source": "Who is the speaker in the 8 Oct boardroom set?",
    "title": "IFM-642..645 are a session shot 8 Oct 2026 and uploaded 13 Oct, and the person presenting is NOT Hiral — checked frame by frame against IFM-067/068/069, IFM-367, the 6 Oct session (IFM-635) and footage shot four days later (IFM-646). She is a woman in a teal V-neck top, hair tied back, no glasses, teaching IFM's own “Gold: Your Portfolio's Safe Haven” slide (the same deck as IFM-099) to about seven women in the October boardroom. backfill.py's presenter-inference rule had already tagged two of the rows person:Hiral; that is corrected in enrichment.json and will survive regeneration. WHAT IS NEEDED FROM A HUMAN: her name, and whether this is the same client as the 1/6/9 Oct series. Until then `shot` is empty, `person` is Other Person, and the rows say “the speaker”. Nothing here is social-ready, including IFM-645, which is the strongest frame of the four.",
@@ -22,20 +28,20 @@
    "status": "needs_review"
   },
   {
-   "source": "Preview clips owed — 62 Video rows still invisible in the Library",
-   "title": "A Video row needs a preview clip that actually plays before it appears at all. Still owed: today's IFM-646 (Starlink vs Jio takes) and IFM-633 (shopaholic — now a finished 47s reel, so this one is worth doing first), plus IFM-634, IFM-605..608, 610..623, 626..632, IFM-575, IFM-579..603, IFM-542, IFM-547, IFM-315, IFM-328. The route is scripts/ifm-make-previews.sh then media-audit.py, and BOTH need a deploy first because the audit probes the live server — so a new clip only lights up on the SECOND deploy. Not run here: fetching masters runs at 1.3–2 MB/s and these are hours of transcode, not an inline step. IFM-642..645 are photographs and need none of this; they are in the Library the moment this deploys.",
+   "source": "Preview clips owed — 69 Video rows still invisible in the Library",
+   "title": "A Video row needs a preview clip that actually plays before it appears at all. Do FIRST, they are finished reels: IFM-648 (Brand awareness, 35 MB) and IFM-649 (Jio IPO explainer, 52 MB) — both masters are small, so this is minutes not hours — and IFM-633. Then the takes folders: today's IFM-650, 651, 652, 653, 654, plus IFM-646, IFM-634, IFM-605..608, 610..623, 626..632, IFM-575, IFM-579..603, IFM-542, IFM-547, IFM-315, IFM-328. Route: scripts/ifm-make-previews.sh then media-audit.py; BOTH need a deploy first (the audit probes the live server), so a new clip lights up on the SECOND deploy. Not run here.",
    "folder_url": "",
    "status": "needs_review"
   },
   {
    "source": "Aakara — October: which reels are still owed",
-   "title": "Updated today. DELIVERED, finished cut in hand: One min part 2 / 5 types of risk (IFM-630), Gandhi Jayanti artwork (IFM-604), and as of this morning Confession of a Shopaholic (IFM-633, 46.8s, delivered into a new 'final Video' subfolder — the row now opens the reel rather than the takes and has moved to Ready). STILL TAKES OR ARTWORK ONLY: IFM-628/631 IPO vs stocks (16 takes + cover, no reel), IFM-629 Dussehra/Navratri (15 takes, no cover, no reel), IFM-634 Ever Wondered (cover + 9 takes, no reel). Two of six were owed a fortnight ago; three of six are now done. Worth asking Aakara for the remaining three.",
+   "title": "Updated 20 Oct. DELIVERED, finished cut in hand: 5 types of risk (IFM-630), Gandhi Jayanti (IFM-604), Confession of a Shopaholic (IFM-633), and NEW since 13 Oct: Brand awareness “Why are we so terrified to invest?” (IFM-648, 46s, delivered 19 Oct) and the Jio IPO ad explainer (IFM-649, 66s — the file is our own “reworked v4”, built from 13 Aakara segment clips). Dussehra now has its COVER (“This Dussehra, conquer your financial blind spots”, 19 Oct) but still no reel (IFM-629). STILL TAKES ONLY: IPO vs stocks (IFM-628/631), Ever Wondered (IFM-634), and three new folders — Jenga (IFM-650, 26 takes, 16 Oct), Girl math (IFM-651, 14 takes dated 4 Sep, folder first seen today), Rock paper scissors (IFM-652, one hands-only b-roll clip). Plus 10 untitled takes loose in the November root (IFM-653) — ask Aakara which topic they are for.",
    "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
    "status": "needs_review"
   },
   {
-   "source": "Takes untranscribed (carried, now six folders)",
-   "title": "Six catch-all folders of Hiral piece-to-camera takes have no transcripts, so which take says what is not searchable: IFM-575 (corporate deck, 15), IFM-628 (IPO vs stocks, 16, 2.8 GB), IFM-629 (Dussehra/Navratri, 15), IFM-633 (shopaholic, 17 — now less urgent, the finished reel IS transcribed), IFM-634 (Ever Wondered, 9) and today's IFM-646 (Starlink vs Jio, 11, 1.83 GB). Three of IFM-646's takes were transcribed by hand today to establish what the reel is actually about — the folder is named “Elon musk reel” and the content is Starlink versus Jio's IPO risk factors — but the other eight are unread. 83 takes in all; transcribe-videos.py already does this end to end.",
+   "source": "Takes untranscribed (carried, now ten folders)",
+   "title": "Catch-all folders of piece-to-camera takes with no transcripts, so which take says what is not searchable: IFM-575 (15), IFM-628 (16), IFM-629 (15), IFM-633 (17, reel IS transcribed), IFM-634 (9), IFM-646 (11, three done by hand), and new today: IFM-654 Jio IPO OFS (76 takes, ~5 GB — the biggest yet; the topic is inferred from the folder name and the IPO ad on screen, not from what she says), IFM-650 Jenga (26), IFM-651 Girl math (14), IFM-653 November (10 — topic unknown until transcribed). ~210 takes in all; transcribe-videos.py does this end to end. The two finished reels catalogued today (IFM-648/649) WERE transcribed and their descriptions quote them.",
    "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
    "status": "needs_review"
   },
@@ -52,12 +58,6 @@
    "status": "needs_review"
   },
   {
-   "source": "IFM-629 — the folder is called Dussehra, the row says Navratri",
-   "title": "Carried. The folder id is unchanged and still correct; only the name differs. Which festival the takes are actually for is a human call, so the title is left as delivered and the notes record the discrepancy.",
-   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
-   "status": "needs_review"
-  },
-  {
    "source": "Possible feedback clips — listen before using (carried)",
    "title": "Six long participant clips from the corporate workshop look like sharing or feedback pieces but are untranscribed: IFM-580, IFM-605, IFM-606 (1 Oct) and IFM-620, IFM-621, IFM-622 (6 Oct). If they are testimonials they should be tagged Testimonial — video and considered for social.",
    "folder_url": "https://drive.google.com/drive/folders/1TYulg-Wlp-48FF1p9ueLg_yzPMTgNBZY",
@@ -65,7 +65,7 @@
   },
   {
    "source": "Hiral Media Kit — nothing new entered today",
-   "title": "One new row carried person:Hiral this run — IFM-646, the Starlink vs Jio takes — and it was assessed and deliberately kept OUT. She is the subject and the frame is clean, but the row links a folder of 11 raw takes: a kit entry has to hand someone the asset, not 1.83 GB of footage. Same call as IFM-575 and IFM-628. If a single frame or the finished reel is cut from this shoot, that row is the kit candidate. CARRIED from 12 Oct: IFM-635, IFM-636 and IFM-637 entered at teaching rank 3 and still want a human glance — all three identify Hiral by the standing/presenting convention rather than from a named source. IFM-637 is the strongest. Note that the same convention produced a wrong answer today on IFM-642..645, where the presenter is someone else entirely.",
+   "title": "Six new rows carried person:Hiral today — IFM-648, 649, 650, 651, 653, 654 — and all six were assessed and kept OUT: two are finished reels with captions baked in, four are folders of raw takes. Reasons are in enrichment.json `_kit_why`. One lead worth a human glance: IMG_6449.HEIC in Aakara's November folder is a single still of Hiral to camera in a denim jacket; if catalogued as its own row it may be a portrait at rank 2–3. Not promoted without seeing the full-resolution file.",
    "folder_url": "",
    "status": "needs_review"
   },

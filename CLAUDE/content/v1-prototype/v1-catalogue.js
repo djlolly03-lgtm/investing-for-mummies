@@ -28827,17 +28827,17 @@ window.IFM_V1 =
 },
 {
 "id": "IFM-629",
-"title": "October: Navratri — reel takes (15 raw clips, finished reel not yet delivered)",
+"title": "October: Dussehra — reel cover + 15 raw takes (finished reel not yet delivered)",
 "date": "2026-10-05",
 "thumb": "../thumbs/IFM-629.jpg",
 "video": "",
 "drive": "https://drive.google.com/drive/folders/1fbaKCxWfNGEqO2PYg1dqJKQvYnHfefTk",
-"description": "Fifteen takes of Hiral for a Navratri reel: seated on a beige sofa at a wooden table in a green printed kurta, a brass diya lamp and bowl beside her, speaking to camera. Clips from 12 MB to 200 MB, 838 MB in all. No finished reel or cover in the folder yet. Opens the folder.",
+"description": "Fifteen takes of Hiral for a Dussehra reel: seated on a beige sofa at a wooden table in a green printed kurta, a brass diya lamp and bowl beside her, speaking to camera. Since 19 Oct the folder also holds the reel cover, “dussehra final.png”: “This Dussehra, conquer your financial blind spots”, Hiral cut out over a sky-blue band with two Ravan-mask illustrations and the diya and marigolds in front. Takes from 12 MB to 200 MB, 838 MB in all. No finished reel yet. Opens the folder.",
 "session": "",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
-"slide_text": "",
+"slide_text": "dussehra final.png This Dussehra, conquer your financial blind spots",
 "silent": false,
 "type": "Video",
 "status": "Raw",
@@ -28850,8 +28850,8 @@ window.IFM_V1 =
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "october navratri reel takes raw clips finished not yet delivered fifteen hiral seated beige sofa wooden table green printed kurta brass diya lamp bowl beside her speaking camera from 200 838 all cover folder opens festival home aakara topical",
-"phash": "081230ed69488e68"
+"search_terms": "october dussehra reel cover raw takes finished not yet delivered fifteen hiral seated beige sofa wooden table green printed kurta brass diya lamp bowl beside her speaking camera since oct folder also holds final png conquer your financial blind spots",
+"phash": "17f0f231a4e8c89a"
 },
 {
 "id": "IFM-630",
@@ -29364,5 +29364,203 @@ window.IFM_V1 =
 "source": "IFM / In-house",
 "search_terms": "inflation reel safe certain guaranteed second made vertical explainer what does fixed deposit people opens steel tumbler chai steaming beside old bank passbook yellowed receipts wooden table captioned all love cuts gold coins tumbling past but look closer then line",
 "phash": "eccbf367968e830f"
+},
+{
+"id": "IFM-648",
+"title": "October: Brand awareness — “Why are we so terrified to invest?” (finished reel)",
+"date": "2026-10-19",
+"thumb": "../thumbs/IFM-648.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1kQz30uOvUsxMIU6D8XfnDkkAd4OYiDvy/view",
+"description": "The finished 46-second brand reel. Hiral, in a sage-green top, opens on a sea-view balcony asking “Why are we so terrified to invest? What's really holding us back?” — the fear of losing money, of not knowing enough, of getting it wrong — intercut with cut-out stock graphics (“FEAR OF LOSING MONEY”, “EVERYTHING”, “MISTAKES”). It moves to her at a wooden table with a laptop and glasses: “we women are too hard on ourselves… nobody gets everything right, not men, not women, nobody”, “let's give ourselves a little more grace”, “just don't let the fear of getting it wrong stop you from taking charge of your money”. Closes on her naming herself as founder of Investing for Mummies and the IFM tree logo.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Women & Money",
+"Stocks / Equity"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "october brand awareness why terrified invest finished reel second hiral sage green top opens sea view balcony asking what really holding back fear losing money not knowing enough getting wrong intercut cut out stock graphics everything mistakes moves her wooden",
+"phash": "8d62e1e8e5302060"
+},
+{
+"id": "IFM-649",
+"title": "October: Jio IPO — how to read an IPO ad (finished reel, reworked v4)",
+"date": "2026-10-18",
+"thumb": "../thumbs/IFM-649.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1apP3xmYFTY1jCfvCVgfpdQ2Mr_-zSFAg/view",
+"description": "A 66-second explainer that uses the Jio Platforms IPO newspaper ad to teach how to read any IPO ad. Hiral, in a tan cowl-neck top at a table, holds up the Economic Times ad (“Let's decode it together”), then a pen traces the ad's price band of ₹1,065–₹1,119 and its 21–23 Oct 2026 bidding window. Animated cards contrast a fixed-price IPO (“₹1,092, one price upfront”) with a book-built one, explain why companies use book building to discover demand and the final issue price, and show “your bid vs the final price” — bid above and you are considered but pay the final price, bid below and your bid doesn't qualify — before covering the retail cut-off price and that it does not guarantee allotment. Ends with Hiral naming herself as founder, inviting viewers to workshops that simulate the IPO process, and an “IPO series” end card.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "s decode it together s price band of ₹1,065–₹1,119 and its 21–23 Oct 2026 bidding window. Animated cards contrast a fixed-price IPO (“₹1,092, one price upfront your bid vs the final price",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"IPOs",
+"Markets & Economy"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "october jio ipo how read finished reel reworked second explainer uses platforms newspaper teach any hiral tan cowl neck top table holds economic times let decode together then pen traces price band 065 119 oct 2026 bidding window animated cards",
+"phash": "4661195c7133c8f8"
+},
+{
+"id": "IFM-650",
+"title": "October: Jenga — reel takes (26 raw clips: 18 camera + 8 phone, finished reel not yet delivered)",
+"date": "2026-10-16",
+"thumb": "../thumbs/IFM-650.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1givcQmL-5w2Fq_wBB6ZyDLFBuVlsprGj",
+"description": "Raw takes for a Jenga-themed reel: Hiral in a navy lace sleeveless top seated at a wooden table in front of a taupe sofa, a wooden Jenga tower beside her. Across the camera takes she pulls blocks until the tower topples, and later takes show her speaking over the collapsed pile; the eight phone takes are close-ups with the tower in the foreground, partly hiding her face. Untranscribed, so the script is not known. 26 clips, 2.00 GB in all. The VO subfolder is empty. Opens the folder.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Risk & Returns",
+"Fixed Income"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "october jenga reel takes raw clips camera phone finished not yet delivered themed hiral navy lace sleeveless top seated wooden table front taupe sofa tower beside her across she pulls blocks until topples later show speaking over collapsed pile eight",
+"phash": "0e11706cc9d16c60"
+},
+{
+"id": "IFM-651",
+"title": "October: Girl math — reel takes (14 raw clips, finished reel not yet delivered)",
+"date": "2026-09-04",
+"thumb": "../thumbs/IFM-651.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1RDLamvZyVwsFg6H9m45MwueUAAI_nK6n",
+"description": "Raw takes for a “girl math” reel: Hiral in a lime-green sleeveless top and light jeans lounging on a brown sofa, scrolling a shopping app on her phone, with over-the-shoulder close-ups of the screen showing clothing listings. The last take (MVI_0209) has her seated upright to camera in a white shirt under green geometric wall art. Two phone clips (IMG_5386/5387) are black-frame, likely audio only. Untranscribed. 14 clips, 3.73 GB in all. Opens the folder.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Managing Money",
+"Fixed Income"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "october girl math reel takes raw clips finished not yet delivered hiral lime green sleeveless top light jeans lounging brown sofa scrolling shopping app her phone over shoulder close ups screen showing clothing listings last take mvi 0209 has seated",
+"phash": "006b9835634e4c80"
+},
+{
+"id": "IFM-652",
+"title": "October: Rock paper scissors — hands-only b-roll take (1 clip)",
+"date": "2026-10-16",
+"thumb": "../thumbs/IFM-652.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1TY1MK7O0-x9EMV98reBJ6aQ52lMsiM1O/view",
+"description": "A single 101-second b-roll take: two people's hands play rounds of rock, paper, scissors in front of grey curtains in a living room, with a gold charm bracelet on one wrist and a green-faced watch on the other. No faces in frame and no speech. 192 MB. Opens the file.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [],
+"person": [],
+"source": "Aakara",
+"search_terms": "october rock paper scissors hands only roll take clip single 101 second two people play rounds front grey curtains living room gold charm bracelet one wrist green faced watch other faces frame speech 192 opens file game aakara reel raw",
+"phash": "463e3cf834e7e0c8"
+},
+{
+"id": "IFM-653",
+"title": "November — 10 raw takes of Hiral in a denim jacket (topic not yet filed)",
+"date": "2026-10-16",
+"thumb": "../thumbs/IFM-653.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1drDb3FpSVqkfy08HqrKkoYkNY8ESueVX",
+"description": "Nine piece-to-camera takes and one still of Hiral in a light denim jacket against a teal sofa, delivered loose in Aakara's November folder with no topic subfolder yet; expressions range from speaking to camera to thoughtful, hand-on-chin. Untranscribed, so the topic is not known. 10 files, 520 MB in all. Opens the folder.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Fixed Income"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "november raw takes hiral denim jacket topic not yet filed nine piece camera one still light against teal sofa delivered loose aakara folder subfolder expressions range from speaking thoughtful hand chin untranscribed known files 520 all opens reel catch",
+"phash": "71ccc6ccceca5b17"
+},
+{
+"id": "IFM-654",
+"title": "Jio IPO OFS reel — 76 takes by Hiral plus newspaper-ad inserts (folder)",
+"date": "2026-10-19",
+"thumb": "../thumbs/IFM-654.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1N3_FWrMaP8DfwzGdfNWcli1BVe_OeKsJ",
+"description": "Catch-all for a reel on the Jio Platforms IPO's offer for sale: about sixty takes of Hiral seated in a black leather chair in an office with a bookshelf behind her, in a green-and-white striped sleeveless shirt with a lapel mic, a printed IPO document on the armrest; plus around sixteen overhead inserts of a hand with a red pen tracing the printed Jio Platforms IPO ad — the price band, the bidding dates and the “Risk to investors” box. Untranscribed. 76 clips, 5.79 GB in all. Opens the folder.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [
+"Family & Money",
+"Risk & Returns",
+"Fixed Income",
+"IPOs"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "jio ipo ofs reel takes hiral plus newspaper inserts folder catch all platforms offer sale about sixty seated black leather chair office bookshelf behind her green white striped sleeveless shirt lapel mic printed document armrest around sixteen overhead hand red",
+"phash": "c6502c2d69eec38b"
 }
 ];
