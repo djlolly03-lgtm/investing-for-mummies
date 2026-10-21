@@ -1866,3 +1866,14 @@ h1.hx-lines{margin:0;font-weight:inherit;font-size:inherit;line-height:inherit;d
 /* W1: an open batch on a light "soon" card — .bt-status.open is styled for the dark flagship card */
 .bt-soon .bt-status.open{background:#d9f2ee;color:#155e55}
 .bt-soon .bt-status.open i{background:#1f9e8f}
+/* CLS fix, 21 Oct 2026: the JS pin swapped .story-stick between absolute and fixed while
+   scrolling, and each swap counted as a whole-screen layout shift (PostHog CLS 0.75, measured 1.0).
+   position:sticky gives the same pinned effect with no layout shift. The pin-* classes stay
+   harmless. */
+.story-stick,.story-stick.pin-fixed,.story-stick.pin-bottom{position:sticky;top:0;bottom:auto}
+/* LCP fix, 21 Oct 2026: the hero lines started at opacity:0, and browsers don't count an
+   invisible element as painted — so "largest content" waited for the whole fade (~1.2 s).
+   Starting faintly visible keeps the same slide-up entrance but counts from the first frame. */
+@keyframes hxInVisible{from{opacity:.15;transform:translateY(60px)}to{opacity:1;transform:none}}
+.hx-line{opacity:.15;animation-name:hxInVisible}
+@media (prefers-reduced-motion:reduce){.hx-line{opacity:1;transform:none;animation:none}}

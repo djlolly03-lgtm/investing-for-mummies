@@ -20,7 +20,8 @@
 <meta name="twitter:image" content="https://www.investingformummies.com/og-home-v2.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap"/></noscript>
 <link rel="stylesheet" href="home.css"/>
 <link rel="stylesheet" href="arcade.css"/>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -64,8 +65,8 @@ document.addEventListener('click', function (e) {
 }, true);
 </script>
 
-<script src="image-slot.js"></script>
-<script src="vendor-react.js"></script>
+<script src="image-slot.js" defer></script>
+<script src="vendor-react.js" defer></script>
 <script src="app.js" defer></script>
 <script>
 (function(){
