@@ -1863,3 +1863,6 @@ h1.hx-lines{margin:0;font-weight:inherit;font-size:inherit;line-height:inherit;d
 /* W13: the flex nav squeezed the logo to 29×40; keep its 180:198 shape */
 .nav-brand picture{flex:none;display:block;line-height:0}
 .nav-brand img{width:auto;max-width:none;object-fit:contain}
+/* W1: an open batch on a light "soon" card — .bt-status.open is styled for the dark flagship card */
+.bt-soon .bt-status.open{background:#d9f2ee;color:#155e55}
+.bt-soon .bt-status.open i{background:#1f9e8f}

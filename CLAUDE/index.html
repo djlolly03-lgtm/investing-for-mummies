@@ -30,7 +30,7 @@ a{color:var(--teal-dk);text-decoration:none}a:hover{color:var(--navy)}
 .brand img{width:38px;height:42px}
 .brand small{display:block;font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-dk)}
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:100px;font-weight:800;font-size:15px;border:0;cursor:pointer;white-space:nowrap}
-.btn-primary{background:var(--teal);color:#fff}.btn-primary:hover{background:var(--teal-dk);color:#fff}
+.btn-primary{background:#1f7a70;color:#fff}.btn-primary:hover{background:#175e56;color:#fff}
 .btn-gold{background:var(--gold);color:var(--navy)}.btn-gold:hover{background:#d9b85a;color:var(--navy)}
 .btn-ghost{background:transparent;color:var(--navy);border:2px solid var(--mint)}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-dk)}
@@ -51,7 +51,7 @@ h1 em,h2 em{font-style:italic;color:var(--teal)}
 .feat-in{position:absolute;inset:0;padding:26px;display:flex;flex-direction:column;justify-content:space-between}
 .feat-tag{align-self:flex-start;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:6px 12px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
 .feat-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
-.feat-bottom h3{font-size:30px;color:#fff}
+.feat-bottom h2{font-size:30px;color:#fff}
 .feat-bottom span{display:block;font-size:14px;color:var(--mint);margin-top:4px}
 .feat .play{width:64px;height:64px;border-radius:50%;background:var(--gold);display:inline-grid;place-items:center;flex:none;box-shadow:0 10px 24px rgba(0,0,0,.3)}
 .play svg{margin-left:4px}
@@ -109,7 +109,7 @@ h1 em,h2 em{font-style:italic;color:var(--teal)}
 .room p{font-size:17px;line-height:1.55;color:rgba(224,243,240,.85);margin:0 0 18px}
 .room-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .room-card{display:block;color:#fff;border-radius:18px;overflow:hidden;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
-.room-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.room-card img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}
 .room-art{aspect-ratio:16/10;display:grid;place-items:center;font-size:96px;background:linear-gradient(135deg,#3a2e12,#6b5520)}
 .room-card div{padding:14px 16px 16px}
 .room-card:hover{background:rgba(255,255,255,.1);color:#fff}.room-card b{font-family:var(--serif);font-weight:600;font-size:18px;display:block}
@@ -135,7 +135,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;font-size:13.5px;color:va
   .pick-head h2{font-size:28px}
   .nav-in{height:58px}.brand span{display:none}
   .hero{padding:26px 0 36px}.hero h1{font-size:34px}.hero p{font-size:16.5px}
-  .feat{aspect-ratio:1/1}.feat-bottom h3{font-size:24px}
+  .feat{aspect-ratio:1/1}.feat-bottom h2{font-size:24px}
   .tiles{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 10px;scrollbar-width:none}
   .tiles::-webkit-scrollbar{display:none}
   .tile{flex:0 0 72%;scroll-snap-align:start}
@@ -154,7 +154,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;font-size:13.5px;color:va
 </head>
 <body>
 <nav class="nav"><div class="wrap nav-in">
-<a class="brand" href="https://games.investingformummies.com/"><img src="/assets/logo-round-clear.webp" alt="Investing for Mummies"/><span>Investing for Mummies<small>Games</small></span></a>
+<a class="brand" href="https://games.investingformummies.com/"><img src="/assets/logo-round-clear.webp" alt="Investing for Mummies" width="38" height="42"/><span>Investing for Mummies<small>Games</small></span></a>
 <a class="btn btn-primary" href="https://register.investingformummies.com">Find your batch →</a>
 </div></nav>
 
@@ -165,10 +165,10 @@ footer{border-top:1px solid var(--line);padding:28px 0;font-size:13.5px;color:va
 <p>Over fifty small games and tools, each one a lesson from the course. No sign-up, no jargon, nothing to lose. Start with this one.</p>
 <div class="hero-cta"><a class="btn btn-gold" href="https://games.investingformummies.com/hidden-fortunes">Play Hidden Fortunes →</a><span class="hero-note"><b>What is your daily latte</b> costing your future self?</span></div>
 </div>
-<a class="feat" href="https://games.investingformummies.com/hidden-fortunes" aria-label="Play Hidden Fortunes">
+<a class="feat" href="https://games.investingformummies.com/hidden-fortunes">
 <div class="feat-art" aria-hidden="true">💎</div>
 <div class="feat-in"><span class="feat-tag">Today's game</span>
-<div class="feat-bottom"><div><h3>Hidden Fortunes</h3><span>Pick your guilty pleasures. Watch small habits turn into big numbers.</span></div><span class="play"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 5.5v13l11-6.5z" fill="#1a3a5c"/></svg></span></div>
+<div class="feat-bottom"><div><h2>Hidden Fortunes</h2><span>Pick your guilty pleasures. Watch small habits turn into big numbers.</span></div><span class="play"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 5.5v13l11-6.5z" fill="#1a3a5c"/></svg></span></div>
 </div></a>
 </div></header>
 
@@ -187,9 +187,9 @@ document.querySelectorAll('.qchip').forEach(b=>b.addEventListener('click',()=>{d
 <div><p>These run live in class: phones as buzzers, one leaderboard, the room arguing over every answer. You can't play them alone, which is rather the point.</p><a class="btn btn-gold" href="https://register.investingformummies.com">Find your batch →</a></div>
 </div>
 <div class="room-grid">
-<a class="room-card" href="/swayamvar/" target="_blank" rel="noopener"><img src="/assets/swayamvar-voting.webp" alt="Swayamvar on the classroom screen"/><div><span class="room-lock">● Host runs it →</span><b>Swayamvar</b><span>Marry, maybe or run. The room votes on every suitor.</span></div></a>
-<a class="room-card" href="/stock-rush-pro/" target="_blank" rel="noopener"><img src="/assets/stockrush-results.jpg" alt="Stock Rush leaderboard"/><div><span class="room-lock">● Host runs it →</span><b>Stock Rush</b><span>Eight rounds of real headlines, one live leaderboard.</span></div></a>
-<a class="room-card" href="/quiz" target="_blank" rel="noopener"><img src="/assets/kbc-live-question.webp" alt="The IFM Crorepati live question"/><div><span class="room-lock">● Host runs it →</span><b>The IFM Crorepati</b><span>Sixteen questions, phones as buzzers, one champion.</span></div></a>
+<a class="room-card" href="/swayamvar/" target="_blank" rel="noopener"><img src="/assets/swayamvar-voting.webp" alt="Swayamvar on the classroom screen" width="1400" height="875" loading="lazy"/><div><span class="room-lock">● Host runs it →</span><b>Swayamvar</b><span>Marry, maybe or run. The room votes on every suitor.</span></div></a>
+<a class="room-card" href="/stock-rush-pro/" target="_blank" rel="noopener"><img src="/assets/stockrush-results.jpg" alt="Stock Rush leaderboard" width="1440" height="900" loading="lazy"/><div><span class="room-lock">● Host runs it →</span><b>Stock Rush</b><span>Eight rounds of real headlines, one live leaderboard.</span></div></a>
+<a class="room-card" href="/quiz" target="_blank" rel="noopener"><img src="/assets/kbc-live-question.webp" alt="The IFM Crorepati live question" width="1400" height="788" loading="lazy"/><div><span class="room-lock">● Host runs it →</span><b>The IFM Crorepati</b><span>Sixteen questions, phones as buzzers, one champion.</span></div></a>
 <a class="room-card" href="/the-wealth-hack" target="_blank" rel="noopener"><div class="room-art" aria-hidden="true">🌳</div><div><span class="room-lock">● Host runs it →</span><b>The Wealth Hack</b><span>What does ₹10 Cr really cost you every month? Everyone plays on their phone.</span></div></a>
 </div>
 </div></section>
