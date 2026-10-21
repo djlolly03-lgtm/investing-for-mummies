@@ -19,9 +19,9 @@
 4. Deploy, from inside this folder: `vercel deploy --prod --yes` (linked to Vercel project `ifm-website-oct26`).
 5. Verify on https://www.investingformummies.com.
 
-## If you still want to design in Claude Design
-Fine for trying ideas — but never export it over this folder. Export to a separate folder
-and ask Claude to carry the specific change across into `app.js`, so nothing made here is lost.
+## Workflow (user preference, 21 Oct 2026)
+All site changes are made by asking Claude in the desktop app, in this repo. No Claude Design,
+no Terminal — the user found that round-trip hectic. Claude edits, previews, commits and deploys.
 
 ## Don't touch without checking
 - The tracking tags in `index.html` (PostHog, Vercel Analytics, GA) and the
