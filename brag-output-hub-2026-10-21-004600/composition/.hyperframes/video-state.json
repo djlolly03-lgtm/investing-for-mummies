@@ -1,0 +1,380 @@
+{
+  "version": 1,
+  "historyId": "e35f4e5d-5dea-43a1-a7b3-908f706cbd08",
+  "currentRevision": "c80743c8-e90e-48f5-88a6-d6117cc9ded1",
+  "pendingChanges": false,
+  "files": {
+    "assets/fonts/lora-600-italic.woff2": {
+      "hash": "ea0a8550d9ffbe7d296a7b6d3f75c686a82a22ec921dd5d993bdae4f12d8782f",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/ea/ea0a8550d9ffbe7d296a7b6d3f75c686a82a22ec921dd5d993bdae4f12d8782f"
+    },
+    "assets/fonts/lora-600-normal.woff2": {
+      "hash": "b136a75b9f6d1513eaba6fe3525b31121f0de35c7c52c42c97d0dbe19633cc60",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/b1/b136a75b9f6d1513eaba6fe3525b31121f0de35c7c52c42c97d0dbe19633cc60"
+    },
+    "assets/fonts/nunito-700-normal.woff2": {
+      "hash": "20fc9b6fc618e7c3c68d3ac750a2a5dfbceb8521675458d2cea580b5693e4798",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/20/20fc9b6fc618e7c3c68d3ac750a2a5dfbceb8521675458d2cea580b5693e4798"
+    },
+    "assets/fonts/nunito-800-normal.woff2": {
+      "hash": "20fc9b6fc618e7c3c68d3ac750a2a5dfbceb8521675458d2cea580b5693e4798",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/20/20fc9b6fc618e7c3c68d3ac750a2a5dfbceb8521675458d2cea580b5693e4798"
+    },
+    "assets/img/all.jpg": {
+      "hash": "907ccaed762df303e19d0afa652c272bd1c51e21f5b56ee89f48c6264d72a5ac",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/90/907ccaed762df303e19d0afa652c272bd1c51e21f5b56ee89f48c6264d72a5ac"
+    },
+    "assets/img/burst.jpg": {
+      "hash": "b5d285742da826e347fbfca90016041d4d52a495da773c682ab5c1333feff62f",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/b5/b5d285742da826e347fbfca90016041d4d52a495da773c682ab5c1333feff62f"
+    },
+    "assets/img/detail.jpg": {
+      "hash": "6f25e38b00df250701e08e251647b1136fd17e131d677a82674757440bdd87db",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/6f/6f25e38b00df250701e08e251647b1136fd17e131d677a82674757440bdd87db"
+    },
+    "assets/img/hero.jpg": {
+      "hash": "ef78a905386fde37d46e8a5c28512097b74b8637e52370543f683b6d842813fd",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/ef/ef78a905386fde37d46e8a5c28512097b74b8637e52370543f683b6d842813fd"
+    },
+    "assets/img/logo-round-clear.png": {
+      "hash": "d53b7d123580e8d90de215ad3ee91fd79953e0f9f2eb69c167ba56acf45def0b",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/d5/d53b7d123580e8d90de215ad3ee91fd79953e0f9f2eb69c167ba56acf45def0b"
+    },
+    "assets/img/pick.jpg": {
+      "hash": "1ce638ff1fe5153dab51496677bd31b3092c86ca9985f85f4424b63c02e40409",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/1c/1ce638ff1fe5153dab51496677bd31b3092c86ca9985f85f4424b63c02e40409"
+    },
+    "assets/img/plain.jpg": {
+      "hash": "a018279887291618db766e9f7dfce3e2e939e7b836fbb5178e5629143f1a2a8b",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/a0/a018279887291618db766e9f7dfce3e2e939e7b836fbb5178e5629143f1a2a8b"
+    },
+    "assets/img/speech.jpg": {
+      "hash": "ed4cbf97382cfe0b00185806e1ac0c9018157ea46815f58f5de7694736e8b38b",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/ed/ed4cbf97382cfe0b00185806e1ac0c9018157ea46815f58f5de7694736e8b38b"
+    },
+    "assets/sfx/card-place-1.ogg": {
+      "hash": "d8f26c33a665dcbdcc6f632f6050bc9dd548feb0d4942d4547615926d3926810",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/d8/d8f26c33a665dcbdcc6f632f6050bc9dd548feb0d4942d4547615926d3926810"
+    },
+    "assets/sfx/card-slide-1.ogg": {
+      "hash": "006cf9822d15d7063f8899e56041f41646df30adb6fbd8b974ee5d5420012690",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/00/006cf9822d15d7063f8899e56041f41646df30adb6fbd8b974ee5d5420012690"
+    },
+    "assets/sfx/click_001.ogg": {
+      "hash": "ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/cc/ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9"
+    },
+    "assets/sfx/drop_001.ogg": {
+      "hash": "692ee3a6f1821402ca649ff735bee9591dc4846c8098fc7d6a90fd15fa57c1af",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/69/692ee3a6f1821402ca649ff735bee9591dc4846c8098fc7d6a90fd15fa57c1af"
+    },
+    "assets/sfx/impactSoft_medium_001.ogg": {
+      "hash": "7642a4fd43e547afe4f7adfadb3dabb681c0ff512f52c1674bae30a726841faf",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/76/7642a4fd43e547afe4f7adfadb3dabb681c0ff512f52c1674bae30a726841faf"
+    },
+    "index.html": {
+      "hash": "09ffbde63dc4644a01da66eafbefde970e6b83b5e2afa9bfb584d1093a207236",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/09/09ffbde63dc4644a01da66eafbefde970e6b83b5e2afa9bfb584d1093a207236"
+    },
+    "assets/music/happy-beats-business-moves-vol-10-by-ende-dot-app.mp3": {
+      "hash": "f9912f2c962ada1e579f5ccc5a7d854d67e5e81ee96a7dd8c885a8480ae58d09",
+      "content": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/f9/f9912f2c962ada1e579f5ccc5a7d854d67e5e81ee96a7dd8c885a8480ae58d09"
+    }
+  },
+  "revisions": {
+    "c80743c8-e90e-48f5-88a6-d6117cc9ded1": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792524392550,
+      "endedAt": 1792524392590,
+      "files": {
+        "assets/img/pick.jpg": {
+          "before": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/95/95e1af7199594739d3d46a8672a75185cf9a8a8b01033b9260ad45e89eb3daeb",
+          "after": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/1c/1ce638ff1fe5153dab51496677bd31b3092c86ca9985f85f4424b63c02e40409"
+        },
+        "assets/img/speech.jpg": {
+          "before": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/45/452535c658f5d02947c3f3e2ff1d5b777a3b49d7ea1ad4090422cd9c9adbe61b",
+          "after": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/ed/ed4cbf97382cfe0b00185806e1ac0c9018157ea46815f58f5de7694736e8b38b"
+        },
+        "index.html": {
+          "before": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/66/66a2ca83a3f8acf75ad052a3be6e10e5ceb33fbe6dfeb5239cdf25b388ad67e7",
+          "after": "/Users/lollyg/.cache/hyperframes/history/e35f4e5d-5dea-43a1-a7b3-908f706cbd08/blobs/09/09ffbde63dc4644a01da66eafbefde970e6b83b5e2afa9bfb584d1093a207236"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "c80743c8-e90e-48f5-88a6-d6117cc9ded1",
+      "id": "2a4f33ea-fc55-4633-92d0-3b573ae6aefd"
+    },
+    "revisions": {
+      "c80743c8-e90e-48f5-88a6-d6117cc9ded1": [
+        {
+          "id": "2a4f33ea-fc55-4633-92d0-3b573ae6aefd",
+          "scope": "project",
+          "report": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/composition/.hyperframes/artifacts/checks/2a4f33ea-fc55-4633-92d0-3b573ae6aefd.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792524394628,
+          "contentHash": "3ac6ba6b8c35be649c2024936040fe641ac42e49fde6532a73247cbc984590a1",
+          "revision": "c80743c8-e90e-48f5-88a6-d6117cc9ded1",
+          "inputFingerprint": "a37e07620c2fc804f53b5296a44e333b9072eea5d1513402c51dd41c219cbbef",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "c1d26122-daba-4c0e-bd93-8fe4bc142c37",
+        "scope": "project",
+        "report": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/composition/.hyperframes/artifacts/checks/c1d26122-daba-4c0e-bd93-8fe4bc142c37.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792524342788,
+        "contentHash": "3ac6ba6b8c35be649c2024936040fe641ac42e49fde6532a73247cbc984590a1",
+        "revision": null,
+        "inputFingerprint": "f9b34e5c9eb5f373f4dc9aadd226cfd4daab2e279c837b21e40c77db7e3ef0e3",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "c80743c8-e90e-48f5-88a6-d6117cc9ded1",
+      "id": "224223f3-b30e-4827-b421-06cf56b4e10c-2"
+    },
+    "revisions": {
+      "c80743c8-e90e-48f5-88a6-d6117cc9ded1": [
+        {
+          "scope": "full",
+          "id": "224223f3-b30e-4827-b421-06cf56b4e10c-0",
+          "image": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/composition/.hyperframes/artifacts/snapshots/4afaf091-a73c-4491-b1e1-18021c1a60e8/frame-00-at-11.4s.png",
+          "time": 11.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792524402722,
+          "contentHash": "b97fc344ae5ed390f10290a1ea7a57614b1e6f4f325a9a5947aaf53c95afabe1",
+          "revision": "c80743c8-e90e-48f5-88a6-d6117cc9ded1",
+          "inputFingerprint": "a37e07620c2fc804f53b5296a44e333b9072eea5d1513402c51dd41c219cbbef",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "224223f3-b30e-4827-b421-06cf56b4e10c-1",
+          "image": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/composition/.hyperframes/artifacts/snapshots/4afaf091-a73c-4491-b1e1-18021c1a60e8/frame-01-at-19.6s.png",
+          "time": 19.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792524402722,
+          "contentHash": "4fb2ecbda1a49225055919ef0f4e8a9246d60757ba659e9226c6993c9a5d7c32",
+          "revision": "c80743c8-e90e-48f5-88a6-d6117cc9ded1",
+          "inputFingerprint": "a37e07620c2fc804f53b5296a44e333b9072eea5d1513402c51dd41c219cbbef",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "224223f3-b30e-4827-b421-06cf56b4e10c-2",
+          "image": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/composition/.hyperframes/artifacts/snapshots/4afaf091-a73c-4491-b1e1-18021c1a60e8/frame-02-at-20.37s.png",
+          "time": 20.37,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792524402722,
+          "contentHash": "4fb2ecbda1a49225055919ef0f4e8a9246d60757ba659e9226c6993c9a5d7c32",
+          "revision": "c80743c8-e90e-48f5-88a6-d6117cc9ded1",
+          "inputFingerprint": "a37e07620c2fc804f53b5296a44e333b9072eea5d1513402c51dd41c219cbbef",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "7edb51f2-4640-4dfa-906a-19c1f8843000-0",
+        "image": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/composition/.hyperframes/artifacts/snapshots/f3ac9f78-69b7-4d1a-997a-81e9577dc0c2/frame-00-at-2.6s.png",
+        "time": 2.6,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792524351115,
+        "contentHash": "3db6c6b0ccd0525d95cec79864579a3f6849d4653b7801cbeac31d930196eed9",
+        "revision": null,
+        "inputFingerprint": "f9b34e5c9eb5f373f4dc9aadd226cfd4daab2e279c837b21e40c77db7e3ef0e3",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "7edb51f2-4640-4dfa-906a-19c1f8843000-1",
+        "image": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/composition/.hyperframes/artifacts/snapshots/f3ac9f78-69b7-4d1a-997a-81e9577dc0c2/frame-01-at-6.4s.png",
+        "time": 6.4,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792524351115,
+        "contentHash": "3be643e870999aacb9ed2dc84d336137e8bff73601ebb1679d5a9ba05d0081a4",
+        "revision": null,
+        "inputFingerprint": "f9b34e5c9eb5f373f4dc9aadd226cfd4daab2e279c837b21e40c77db7e3ef0e3",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "7edb51f2-4640-4dfa-906a-19c1f8843000-2",
+        "image": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/composition/.hyperframes/artifacts/snapshots/f3ac9f78-69b7-4d1a-997a-81e9577dc0c2/frame-02-at-11s.png",
+        "time": 11,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792524351115,
+        "contentHash": "7e5b63661113e01124310633d59722b156a84fffb40b9e7bc0bef6480dcfcee7",
+        "revision": null,
+        "inputFingerprint": "f9b34e5c9eb5f373f4dc9aadd226cfd4daab2e279c837b21e40c77db7e3ef0e3",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "7edb51f2-4640-4dfa-906a-19c1f8843000-3",
+        "image": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/composition/.hyperframes/artifacts/snapshots/f3ac9f78-69b7-4d1a-997a-81e9577dc0c2/frame-03-at-15.6s.png",
+        "time": 15.6,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792524351115,
+        "contentHash": "4fa5202321261ed3ae385ab725ce4af779faed5e92c8015b3ebfd7451fb1e932",
+        "revision": null,
+        "inputFingerprint": "f9b34e5c9eb5f373f4dc9aadd226cfd4daab2e279c837b21e40c77db7e3ef0e3",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "7edb51f2-4640-4dfa-906a-19c1f8843000-4",
+        "image": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/composition/.hyperframes/artifacts/snapshots/f3ac9f78-69b7-4d1a-997a-81e9577dc0c2/frame-04-at-19.6s.png",
+        "time": 19.6,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792524351115,
+        "contentHash": "e019ee213d4c92fda03aad5855853d088b4a92b4eb5a1ca215f5f82bb66edb29",
+        "revision": null,
+        "inputFingerprint": "f9b34e5c9eb5f373f4dc9aadd226cfd4daab2e279c837b21e40c77db7e3ef0e3",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "7edb51f2-4640-4dfa-906a-19c1f8843000-5",
+        "image": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/composition/.hyperframes/artifacts/snapshots/f3ac9f78-69b7-4d1a-997a-81e9577dc0c2/frame-05-at-20.37s.png",
+        "time": 20.37,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792524351115,
+        "contentHash": "e019ee213d4c92fda03aad5855853d088b4a92b4eb5a1ca215f5f82bb66edb29",
+        "revision": null,
+        "inputFingerprint": "f9b34e5c9eb5f373f4dc9aadd226cfd4daab2e279c837b21e40c77db7e3ef0e3",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "53987d20-0155-4bdf-8783-220190198ab9",
+      "completedAt": 1792524437164,
+      "output": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-2026-10-21-004600/brag.mp4",
+      "status": "completed",
+      "revision": "c80743c8-e90e-48f5-88a6-d6117cc9ded1"
+    },
+    "retainedRevisions": [
+      "c80743c8-e90e-48f5-88a6-d6117cc9ded1"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

@@ -1,0 +1,435 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 10,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 0 has 9 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-long-2026-10-21-010113/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s1\"> is a timeline element that contains nested <div id=\"s1-shot\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s1",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-long-2026-10-21-010113/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s1\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s2\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s2",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-long-2026-10-21-010113/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s2\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s3\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s3",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-long-2026-10-21-010113/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s3\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s4\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s4",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-long-2026-10-21-010113/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s4\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s5\"> is a timeline element that contains nested <div id=\"s5-shot\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s5",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-long-2026-10-21-010113/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s5\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s6\"> is a timeline element that contains nested <div id=\"s6-shot\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s6",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-long-2026-10-21-010113/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s6\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s7\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s7",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-long-2026-10-21-010113/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s7\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s8\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s8",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-long-2026-10-21-010113/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s8\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s9\"> is a timeline element that contains nested <div id=\"s9-shot\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s9",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-hub-long-2026-10-21-010113/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s9\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 3,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "warning",
+        "time": 31.732,
+        "selector": "#s7-pair",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 533.45,
+          "top": 411.67,
+          "right": 1386.53,
+          "bottom": 528.67,
+          "width": 853.08,
+          "height": 117
+        },
+        "containerSelector": "#s8-n1 > b:nth-of-type(1)",
+        "text": "179 rows said Video. 33 could play.",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 533.45,
+          "y": 411.67,
+          "width": 853.08,
+          "height": 117
+        },
+        "firstSeen": 31.732,
+        "lastSeen": 31.955,
+        "occurrences": 2,
+        "heldMs": 222.99999999999898,
+        "times": [
+          31.732,
+          31.955
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "warning",
+        "time": 31.732,
+        "selector": "span.dim",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 676.94,
+          "top": 513.14,
+          "right": 1243.03,
+          "bottom": 630.14,
+          "width": 566.09,
+          "height": 117
+        },
+        "containerSelector": "#s8-n1 > span:nth-of-type(1)",
+        "text": "33 could play.",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 676.94,
+          "y": 513.14,
+          "width": 566.09,
+          "height": 117
+        },
+        "firstSeen": 31.732,
+        "lastSeen": 31.955,
+        "occurrences": 2,
+        "heldMs": 222.99999999999898,
+        "times": [
+          31.732,
+          31.955
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 9.609,
+        "selector": "#s2-eyebrow",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 814,
+          "top": 395.41,
+          "right": 1105.98,
+          "bottom": 425.41,
+          "width": 291.98,
+          "height": 30
+        },
+        "containerSelector": "#s3-before",
+        "text": "WHY IT INTERPRETS",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 814,
+          "y": 395.41,
+          "width": 291.98,
+          "height": 30
+        },
+        "firstSeen": 9.609,
+        "lastSeen": 9.609,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          9.609
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 13.855,
+        "selector": "#s3-before",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 358.3,
+          "top": 394.5,
+          "right": 1561.7,
+          "bottom": 445.5,
+          "width": 1203.4,
+          "height": 51
+        },
+        "containerSelector": "#s4-eyebrow",
+        "text": "“a photo I can use on the website showing a workshop in progress”",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 358.3,
+          "y": 394.5,
+          "width": 1203.4,
+          "height": 51
+        },
+        "firstSeen": 13.855,
+        "lastSeen": 13.855,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          13.855
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 26.369,
+        "selector": "#s6-lede",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 866,
+          "top": 471.42,
+          "right": 1540.03,
+          "bottom": 667.86,
+          "width": 674.03,
+          "height": 196.44
+        },
+        "containerSelector": "span.dim",
+        "text": "Near-identical frames fold into one card. Nothing is deleted.",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 866,
+          "y": 471.42,
+          "width": 674.03,
+          "height": 196.44
+        },
+        "firstSeen": 26.369,
+        "lastSeen": 26.369,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          26.369
+        ]
+      }
+    ],
+    "duration": 40,
+    "samples": [
+      2.222,
+      6.667,
+      11.111,
+      15.556,
+      20,
+      24.444,
+      28.889,
+      33.333,
+      37.778
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 5,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.25:1; WCAG AA requires 3:1.",
+        "text": "↓",
+        "fg": "rgb(189,233,228)",
+        "bg": "rgb(247,250,249)",
+        "ratio": 1.25,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(122,150,147)",
+        "large": true,
+        "selector": "#s3-arrow",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 944.03125,
+          "y": 471.5,
+          "width": 31.9375,
+          "height": 38
+        },
+        "time": 11.111,
+        "times": [
+          11.111
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      2.222,
+      11.111,
+      20,
+      28.889,
+      37.778
+    ],
+    "checked": 13,
+    "passed": 12
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

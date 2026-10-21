@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>IFM Content Hub — the tour</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family:'Lora'; font-style:normal; font-weight:600;
+        src:url('assets/fonts/lora-600-normal.woff2') format('woff2'); font-display:block; }
+      @font-face { font-family:'Lora'; font-style:italic; font-weight:600;
+        src:url('assets/fonts/lora-600-italic.woff2') format('woff2'); font-display:block; }
+      @font-face { font-family:'Nunito'; font-style:normal; font-weight:700;
+        src:url('assets/fonts/nunito-700-normal.woff2') format('woff2'); font-display:block; }
+      @font-face { font-family:'Nunito'; font-style:normal; font-weight:800;
+        src:url('assets/fonts/nunito-800-normal.woff2') format('woff2'); font-display:block; }
+
+      :root {
+        --navy:#1a3a5c; --teal:#2a9d8f; --gold-ink:#9d8138;
+        --muted:#5a7d8a; --cream:#f7faf9; --mint-lt:#e0f3f0; --mint:#bde9e4;
+        --serif:'Lora',Georgia,serif; --sans:'Nunito',system-ui,sans-serif;
+      }
+      body { margin:0; background:var(--cream); color:var(--navy); }
+      #root { position:relative; width:100%; height:100%; overflow:hidden; background:var(--cream); }
+      .clip { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+              flex-direction:column; padding:0 150px; box-sizing:border-box; }
+
+      .eyebrow { font-family:var(--sans); font-weight:700; font-size:22px; letter-spacing:.19em;
+                 text-transform:uppercase; color:var(--muted); margin:0 0 30px; }
+      .lede { font-family:var(--serif); font-weight:600; font-size:62px; line-height:1.18;
+              color:var(--navy); margin:0; }
+      .shot { border-radius:16px; overflow:hidden; border:1px solid var(--mint);
+              box-shadow:0 28px 70px -30px rgba(26,58,92,.45); background:#fff; }
+      .shot img { display:block; width:100%; }
+      .ctr { text-align:center; }
+
+      #s1 .shot { width:1120px; margin-bottom:44px; }
+      #s1 .lede { font-size:70px; }
+
+      /* S2 — the failure that justifies the whole interpretation layer */
+      #s2 .q { font-family:var(--serif); font-style:italic; font-weight:600; font-size:52px;
+               line-height:1.3; color:var(--navy); margin:0 0 42px; max-width:1420px; }
+      #s2 .res { font-family:var(--sans); font-weight:800; font-size:40px; color:var(--gold-ink);
+                 margin:0; line-height:1.3; }
+
+      /* S3 — before / after, the real interpreter output */
+      #s3 .ba { display:flex; flex-direction:column; gap:26px; align-items:center; margin-bottom:38px; }
+      #s3 .before { font-family:var(--serif); font-style:italic; font-weight:600; font-size:40px;
+                    color:var(--muted); margin:0; }
+      #s3 .arrow { font-family:var(--sans); font-weight:800; font-size:28px; color:var(--muted);
+                   margin:0; letter-spacing:.3em; }
+      #s3 .after { font-family:var(--sans); font-weight:800; font-size:52px; color:var(--teal);
+                   margin:0; }
+      #s3 .cap { font-family:var(--sans); font-weight:700; font-size:30px; color:var(--muted); margin:0; }
+
+      /* S4 — vocabulary gap */
+      #s4 .rows { display:flex; flex-direction:column; gap:20px; margin-bottom:38px; }
+      #s4 .row { display:flex; align-items:baseline; gap:26px; font-family:var(--sans);
+                 font-weight:800; font-size:60px; color:var(--navy); line-height:1.1; }
+      #s4 .row .who { font-family:var(--sans); font-weight:700; font-size:21px; letter-spacing:.14em;
+                      text-transform:uppercase; color:var(--muted); width:165px; text-align:right; }
+      #s4 .row .word { font-family:var(--serif); font-style:italic; font-weight:600; }
+      #s4 .row .n { color:var(--teal); font-variant-numeric:tabular-nums; }
+      #s4 .lede { font-size:52px; }
+
+      /* S5 — speech */
+      #s5 .shot { width:760px; margin-bottom:34px; }
+      #s5 .q { font-family:var(--serif); font-style:italic; font-weight:600; font-size:56px;
+               color:var(--navy); margin:0 0 14px; }
+      #s5 .note { font-family:var(--sans); font-weight:700; font-size:30px; color:var(--gold-ink); margin:0; }
+
+      /* S6 — burst folding */
+      #s6 { flex-direction:row; gap:90px; }
+      #s6 .shot { flex:0 0 480px; }
+      #s6 .col { flex:0 1 760px; }
+      #s6 .lede { font-size:54px; }
+
+      /* S7 — the refusal */
+      #s7 .pair { font-family:var(--sans); font-weight:800; font-size:86px; line-height:1.18;
+                  color:var(--navy); margin:0 0 34px; }
+      #s7 .pair .dim { color:var(--muted); }
+      #s7 .lede { font-size:54px; }
+
+      /* S8 — the probe, in numbers */
+      #s8 .nums { display:flex; gap:120px; margin-bottom:34px; }
+      #s8 .num { text-align:center; }
+      #s8 .num b { display:block; font-family:var(--sans); font-weight:800; font-size:92px;
+                   color:var(--navy); line-height:1; font-variant-numeric:tabular-nums; }
+      #s8 .num.bad b { color:var(--gold-ink); }
+      #s8 .num span { display:block; font-family:var(--sans); font-weight:700; font-size:22px;
+                      letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-top:16px; }
+      #s8 .cap { font-family:var(--serif); font-weight:600; font-size:44px; margin:0; }
+
+      /* S9 — take it */
+      #s9 .shot { width:1420px; margin-bottom:36px; }
+      #s9 .row { display:flex; align-items:center; gap:26px; }
+      #s9 .logo { width:92px; height:92px; display:block; }
+      #s9 .take { font-family:var(--serif); font-weight:600; font-size:52px; margin:0; }
+      #s9 .url { font-family:var(--sans); font-weight:700; font-size:28px; color:var(--teal); margin:14px 0 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0"
+         data-width="1920" data-height="1080" data-duration="40">
+
+      <!-- S1 · what it is · 0 → 4.10 -->
+      <section id="s1" class="clip" data-start="0" data-duration="4.45" data-track-index="0" data-layout-allow-occlusion>
+        <div class="shot" id="s1-shot"><img src="assets/img/hero.jpg" alt="The Content Hub search screen" /></div>
+        <div class="ctr" data-layout-allow-overlap>
+          <p class="eyebrow" id="s1-eyebrow">The Content Hub</p>
+          <p class="lede" id="s1-lede">608 things. One search box.</p>
+        </div>
+      </section>
+
+      <!-- S2 · the failure that started it · 4.10 → 9.29 -->
+      <section id="s2" class="clip" data-start="4.10" data-duration="5.54" data-track-index="0" data-layout-allow-occlusion>
+        <div class="ctr" data-layout-allow-overlap>
+          <p class="eyebrow" id="s2-eyebrow">Why it interprets</p>
+          <p class="q" id="s2-q">“I need something nice for an Instagram post about women and money”</p>
+          <p class="res" id="s2-res">It returned a screenshot of Instagram’s story composer.</p>
+        </div>
+      </section>
+
+      <!-- S3 · 13 words in, 6 out · 9.29 → 13.64 -->
+      <section id="s3" class="clip" data-start="9.29" data-duration="4.70" data-track-index="0" data-layout-allow-occlusion>
+        <div class="ctr" data-layout-allow-overlap>
+          <div class="ba">
+            <p class="before" id="s3-before">“a photo I can use on the website showing a workshop in progress”</p>
+            <p class="arrow" id="s3-arrow">↓</p>
+            <p class="after" id="s3-after">photo showing workshop progress Classroom Moment</p>
+          </div>
+          <p class="cap" id="s3-cap">Thirteen words in. Six out.</p>
+        </div>
+      </section>
+
+      <!-- S4 · it translates · 13.64 → 18.01 -->
+      <section id="s4" class="clip" data-start="13.64" data-duration="4.72" data-track-index="0" data-layout-allow-occlusion>
+        <div class="ctr" data-layout-allow-overlap>
+          <p class="eyebrow" id="s4-eyebrow">Nobody searches the way a catalogue writes</p>
+          <div class="rows">
+            <div class="row" id="s4-r1"><span class="who">you type</span><span class="word">“enjoying”</span><span class="n">1</span></div>
+            <div class="row" id="s4-r2"><span class="who">it says</span><span class="word">“candid”</span><span class="n">103</span></div>
+          </div>
+          <p class="lede" id="s4-lede">So it translates before it searches.</p>
+        </div>
+      </section>
+
+      <!-- S5 · it heard it · 18.01 → 22.37 -->
+      <section id="s5" class="clip" data-start="18.01" data-duration="4.71" data-track-index="0" data-layout-allow-occlusion>
+        <div class="shot" id="s5-shot"><img src="assets/img/speech.jpg" alt="One result for the query comprehensive cover" /></div>
+        <div class="ctr" data-layout-allow-overlap>
+          <p class="q" id="s5-q">“comprehensive cover”</p>
+          <p class="note" id="s5-note">In no title. Only in the audio.</p>
+        </div>
+      </section>
+
+      <!-- S6 · it folds duplicates · 22.37 → 26.19 -->
+      <section id="s6" class="clip" data-start="22.37" data-duration="4.17" data-track-index="0" data-layout-allow-occlusion>
+        <div class="shot" id="s6-shot"><img src="assets/img/burst.jpg" alt="A result card showing a plus one similar pill" /></div>
+        <div class="col" data-layout-allow-overlap>
+          <p class="eyebrow" id="s6-eyebrow">Same moment, different files</p>
+          <p class="lede" id="s6-lede">Near-identical frames fold into one card. Nothing is deleted.</p>
+        </div>
+      </section>
+
+      <!-- S7 · it refuses · 26.19 → 31.65 -->
+      <section id="s7" class="clip" data-start="26.19" data-duration="5.81" data-track-index="0" data-layout-allow-occlusion>
+        <div class="ctr" data-layout-allow-overlap>
+          <p class="eyebrow" id="s7-eyebrow">And the part that hides things</p>
+          <p class="pair" id="s7-pair">179 rows said Video.<br /><span class="dim">33 could play.</span></p>
+          <p class="lede" id="s7-lede">Now it asks the server, never the field.</p>
+        </div>
+      </section>
+
+      <!-- S8 · the probe, in numbers · 31.65 → 35.47 -->
+      <section id="s8" class="clip" data-start="31.65" data-duration="4.17" data-track-index="0" data-layout-allow-occlusion>
+        <div class="ctr" data-layout-allow-overlap>
+          <div class="nums">
+            <div class="num" id="s8-n1"><b>342</b><span>URLs asked</span></div>
+            <div class="num" id="s8-n2"><b>307</b><span>answered</span></div>
+            <div class="num bad" id="s8-n3"><b>35</b><span>did not</span></div>
+          </div>
+          <p class="cap" id="s8-cap">The 35 never reach you.</p>
+        </div>
+      </section>
+
+      <!-- S9 · take it · 35.47 → 40.00 -->
+      <section id="s9" class="clip" data-start="35.47" data-duration="4.53" data-track-index="0">
+        <div class="shot" id="s9-shot"><img src="assets/img/pick.jpg" alt="Three results ticked, toolbar reading Copy 3 links" /></div>
+        <div class="row" id="s9-row">
+          <img class="logo" id="s9-logo" src="assets/img/logo-round-clear.png" alt="" />
+          <div>
+            <p class="take" id="s9-take">Tick three. Take the links.</p>
+            <p class="url" id="s9-url">ifm-deploy.vercel.app/content/v1-prototype</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Audio: low under the opening, lifts from S2, fades over the last 1.4s -->
+      <audio id="music" src="assets/music/happy-beats-business-moves-vol-10-by-ende-dot-app.mp3"
+             data-start="0" data-duration="40" data-track-index="4" data-volume="0.5"
+             data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.30},{"t":3.90,"v":0.30},{"t":4.60,"v":0.50},{"t":38.40,"v":0.50},{"t":40,"v":0}]}]}'></audio>
+
+      <audio id="sfx-s1" src="assets/sfx/card-place-1.ogg" data-start="0.27"  data-duration="0.70" data-track-index="5" data-volume="0.28"></audio>
+      <audio id="sfx-s2" src="assets/sfx/click_001.ogg"   data-start="6.28"  data-duration="0.10" data-track-index="7" data-volume="0.20"></audio>
+      <audio id="sfx-s3" src="assets/sfx/drop_001.ogg"    data-start="10.93" data-duration="0.11" data-track-index="6" data-volume="0.18"></audio>
+      <audio id="sfx-r1" src="assets/sfx/drop_001.ogg"    data-start="14.18" data-duration="0.11" data-track-index="6" data-volume="0.18"></audio>
+      <audio id="sfx-r2" src="assets/sfx/drop_001.ogg"    data-start="15.28" data-duration="0.11" data-track-index="6" data-volume="0.18"></audio>
+      <audio id="sfx-s5" src="assets/sfx/card-slide-1.ogg" data-start="18.01" data-duration="0.62" data-track-index="5" data-volume="0.28"></audio>
+      <audio id="sfx-s6" src="assets/sfx/card-place-1.ogg" data-start="22.37" data-duration="0.70" data-track-index="5" data-volume="0.26"></audio>
+      <audio id="sfx-s7" src="assets/sfx/click_001.ogg"   data-start="26.19" data-duration="0.10" data-track-index="7" data-volume="0.20"></audio>
+      <audio id="sfx-n1" src="assets/sfx/drop_001.ogg"    data-start="31.65" data-duration="0.11" data-track-index="6" data-volume="0.18"></audio>
+      <audio id="sfx-n2" src="assets/sfx/drop_001.ogg"    data-start="32.19" data-duration="0.11" data-track-index="6" data-volume="0.18"></audio>
+      <audio id="sfx-n3" src="assets/sfx/drop_001.ogg"    data-start="32.74" data-duration="0.11" data-track-index="6" data-volume="0.18"></audio>
+      <audio id="sfx-s9" src="assets/sfx/card-place-1.ogg" data-start="35.47" data-duration="0.70" data-track-index="5" data-volume="0.26"></audio>
+      <audio id="sfx-logo" src="assets/sfx/impactSoft_medium_001.ogg" data-start="36.01" data-duration="0.18" data-track-index="7" data-volume="0.20"></audio>
+    </div>
+
+    <script>
+      /* One paused timeline. All transforms via fromTo. Times are global seconds.
+         Beat source: happy-beats-business-moves-vol-10 cue preset, 110 BPM
+         (beat = 0.545s; every-other-beat = 1.09s, which clears the ~0.8s readable floor). */
+      const tl = gsap.timeline({ paused: true });
+      const E = "power3.out";
+      const IN = (sel, t, y) => tl.fromTo(sel, { opacity: 0, y: y === undefined ? 22 : y },
+        { opacity: 1, y: 0, duration: 0.5, ease: E }, t);
+      const OUT = (sel, t) => tl.to(sel, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+
+      /* S1 */
+      // beat-locked: 0.27s (strongCue)
+      tl.fromTo("#s1-shot", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 0.27);
+      IN("#s1-eyebrow", 1.37, 10); IN("#s1-lede", 1.90);
+      OUT("#s1 > *", 4.10);
+
+      /* S2 — the 12-word query needs ~3.6s settled, so it lands first and holds */
+      IN("#s2-eyebrow", 4.20, 10);
+      // beat-locked: 4.10s (strongCue)
+      IN("#s2-q", 4.10);
+      IN("#s2-res", 6.28);
+      OUT("#s2 > *", 9.29);
+
+      /* S3 — before / after, real interpreter output */
+      IN("#s3-before", 9.29);
+      tl.fromTo("#s3-arrow", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: E }, 9.83);
+      IN("#s3-after", 10.38);
+      IN("#s3-cap", 11.47, 14);
+      OUT("#s3 > *", 13.64);
+
+      /* S4 — beat-grid: 14.18 / 15.28, every other beat */
+      IN("#s4-eyebrow", 13.70, 10);
+      tl.fromTo("#s4-r1", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.45, ease: E }, 14.18);
+      tl.fromTo("#s4-r2", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.45, ease: E }, 15.28);
+      IN("#s4-lede", 16.37);
+      OUT("#s4 > *", 18.01);
+
+      /* S5 */
+      // beat-locked: 18.01s (strongCue)
+      tl.fromTo("#s5-shot", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.55, ease: E }, 18.01);
+      IN("#s5-q", 18.55, 16); IN("#s5-note", 19.64, 12);
+      OUT("#s5 > *", 22.37);
+
+      /* S6 */
+      // beat-locked: 22.37s (strongCue)
+      tl.fromTo("#s6-shot", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.6, ease: E }, 22.37);
+      IN("#s6-eyebrow", 22.92, 10); IN("#s6-lede", 23.46);
+      OUT("#s6 > *", 26.19);
+
+      /* S7 */
+      IN("#s7-eyebrow", 26.25, 10);
+      // beat-locked: 26.19s (strongCue) — the pair arrives as one unit
+      tl.fromTo("#s7-pair", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.55, ease: E }, 26.19);
+      IN("#s7-lede", 28.37);
+      OUT("#s7 > *", 31.65);
+
+      /* S8 — beat-grid: 31.65 / 32.19 / 32.74, consecutive beats. These are NUMBERS, not
+         sentences: three short glyphs read fine at 0.545s apart where prose would not. */
+      IN("#s8-n1", 31.65, 18); IN("#s8-n2", 32.19, 18); IN("#s8-n3", 32.74, 18);
+      IN("#s8-cap", 33.84, 14);
+      OUT("#s8 > *", 35.47);
+
+      /* S9 */
+      // beat-locked: 35.47s (strongCue)
+      tl.fromTo("#s9-shot", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.55, ease: E }, 35.47);
+      IN("#s9-row", 36.01, 18);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

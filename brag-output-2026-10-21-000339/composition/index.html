@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Investing for Mummies — brag</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      /* Brand fonts shipped locally (latin subset) — a Google Fonts <link> alone
+         trips font_family_without_font_face and would not be guaranteed at render. */
+      @font-face { font-family: 'Lora'; font-style: normal; font-weight: 600;
+        src: url('assets/fonts/lora-600-normal.woff2') format('woff2'); font-display: block; }
+      @font-face { font-family: 'Lora'; font-style: italic; font-weight: 600;
+        src: url('assets/fonts/lora-600-italic.woff2') format('woff2'); font-display: block; }
+      @font-face { font-family: 'Nunito'; font-style: normal; font-weight: 700;
+        src: url('assets/fonts/nunito-700-normal.woff2') format('woff2'); font-display: block; }
+      @font-face { font-family: 'Nunito'; font-style: normal; font-weight: 800;
+        src: url('assets/fonts/nunito-800-normal.woff2') format('woff2'); font-display: block; }
+
+      /* Tokens lifted verbatim from ifm_website_oct26/home.css :root */
+      :root {
+        --navy: #1a3a5c;
+        --teal: #2a9d8f;
+        --gold: #c9a84c;
+        --muted: #5a7d8a;
+        --cream: #f7faf9;
+        --mint-lt: #e0f3f0;
+        --mint: #bde9e4;
+        --serif: 'Lora', Georgia, serif;
+        --sans: 'Nunito', system-ui, sans-serif;
+      }
+
+      body { margin: 0; background: var(--cream); color: var(--navy); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden;
+              background: var(--cream); }
+
+      .clip { position: absolute; inset: 0; display: flex; align-items: center;
+              justify-content: center; }
+
+      /* Shared type */
+      .eyebrow { font-family: var(--sans); font-weight: 700; font-size: 23px;
+                 letter-spacing: .20em; text-transform: uppercase; color: var(--muted);
+                 margin: 0 0 36px; }
+      .eyebrow.teal { color: var(--teal); }
+      .quote { font-family: var(--serif); font-weight: 600; font-style: italic;
+               font-size: 86px; line-height: 1.18; color: var(--navy); margin: 0;
+               max-width: 1360px; }
+      .headline { font-family: var(--serif); font-weight: 600; font-size: 76px;
+                  line-height: 1.16; color: var(--navy); margin: 0; }
+
+      /* S1 */
+      #s1 { flex-direction: column; text-align: center; padding: 0 180px; }
+      #s1 .quote + .quote { margin-top: 28px; }
+
+      /* S2 — text left, portrait photo card right */
+      #s2 { gap: 96px; padding: 0 140px; }
+      #s2 .col { flex: 0 1 820px; }
+      #s2 .shot { flex: 0 0 505px; height: 880px; border-radius: 22px; overflow: hidden;
+                  box-shadow: 0 26px 70px -28px rgba(26,58,92,.45); background: var(--mint-lt); }
+      #s2 .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+      /* S3 — the real game screen */
+      #s3 { flex-direction: column; padding: 0 160px; }
+      #s3 .screen { width: 1060px; border-radius: 18px; overflow: hidden;
+                    box-shadow: 0 30px 80px -30px rgba(26,58,92,.5);
+                    border: 1px solid var(--mint); background: #fff; }
+      #s3 .screen img { width: 100%; display: block; }
+      #s3 .line { font-family: var(--sans); font-weight: 800; font-size: 50px;
+                  color: var(--navy); margin: 44px 0 0; text-align: center;
+                  max-width: 1320px; line-height: 1.24; }
+      /* --gold #c9a84c is a 2.18:1 contrast against cream at this size and fails the
+         audit. Darkened to --gold-ink for small type; the brand gold stays on the
+         S5 hairline, where it is a rule rather than something to read. */
+      #s3 .tag { font-family: var(--sans); font-weight: 700; font-size: 21px;
+                 letter-spacing: .16em; text-transform: uppercase; color: #9d8138;
+                 margin: 20px 0 0; }
+
+      /* S4 — the syllabus */
+      #s4 { flex-direction: column; }
+      #s4 .names { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+      #s4 .name { font-family: var(--sans); font-weight: 800; font-size: 72px;
+                  color: var(--navy); line-height: 1.1; position: relative;
+                  padding-bottom: 10px; }
+      #s4 .name span.rule { position: absolute; left: 50%; bottom: 0; width: 56px;
+                            height: 3px; margin-left: -28px; background: var(--teal);
+                            border-radius: 2px; display: block; }
+
+      /* S5 — the offer */
+      #s5 { flex-direction: column; text-align: center; }
+      #s5 .hair { width: 90px; height: 3px; background: var(--gold); border-radius: 2px;
+                  margin: 0 0 46px; }
+      #s5 .logo { width: 150px; height: 150px; margin: 0 0 38px; display: block; }
+      #s5 .url { font-family: var(--sans); font-weight: 700; font-size: 40px;
+                 color: var(--teal); margin: 44px 0 0; letter-spacing: .01em; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-width="1920"
+      data-height="1080"
+      data-duration="21"
+    >
+      <!-- ───────────── Scene 1 · The admission · 0 → 4.10 ───────────── -->
+      <section id="s1" class="clip" data-start="0" data-duration="4.45" data-track-index="0">
+        <div>
+          <p class="eyebrow" id="s1-eyebrow">From a student, in her own words</p>
+          <p class="quote" id="s1-l1">“Twenty years working at a bank.”</p>
+          <p class="quote" id="s1-l2">“I never understood what most departments did.”</p>
+        </div>
+      </section>
+
+      <!-- ───────────── Scene 2 · The room · 4.10 → 7.92 ───────────── -->
+      <!-- The 0.35s tail past S3's start is the crossfade; S2's text sits under the
+           incoming game screen for those frames on purpose, hence allow-occlusion. -->
+      <section id="s2" class="clip" data-start="4.10" data-duration="4.17" data-track-index="0"
+               data-layout-allow-occlusion>
+        <div class="col">
+          <p class="eyebrow teal" id="s2-eyebrow">So we stopped explaining it</p>
+          <p class="headline" id="s2-head">Every lesson is a game first.</p>
+        </div>
+        <div class="shot" id="s2-shot">
+          <img src="assets/img/room-bidask.jpg" alt="An Investing for Mummies class in progress" />
+        </div>
+      </section>
+
+      <!-- ───────────── Scene 3 · The game · 7.92 → 11.46 ───────────── -->
+      <section id="s3" class="clip" data-start="7.92" data-duration="3.89" data-track-index="0">
+        <div class="screen" id="s3-screen">
+          <img src="assets/img/swayamvar-suitors.jpg" alt="The Swayamvar game — Meet the Suitors" />
+        </div>
+        <p class="line" id="s3-line">Should you marry this investment, keep it as a maybe, or run?</p>
+        <p class="tag" id="s3-tag">Swayamvar · played on your phone, debated in the room</p>
+      </section>
+
+      <!-- ───────────── Scene 4 · The syllabus · 11.46 → 17.70 ───────────── -->
+      <section id="s4" class="clip" data-start="11.46" data-duration="6.59" data-track-index="0">
+        <div>
+          <p class="eyebrow" id="s4-eyebrow" style="text-align:center">The syllabus</p>
+          <div class="names">
+            <div class="name" id="n1">NAV Pizza<span class="rule"></span></div>
+            <div class="name" id="n2">Debt Detective<span class="rule"></span></div>
+            <div class="name" id="n3">ChaiBoss Ltd<span class="rule"></span></div>
+            <div class="name" id="n4">Wheel of Gold<span class="rule"></span></div>
+            <div class="name" id="n5">Hidden Fortunes<span class="rule"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── Scene 5 · The offer · 17.70 → 21.00 ───────────── -->
+      <section id="s5" class="clip" data-start="17.70" data-duration="3.30" data-track-index="0">
+        <div style="display:flex;flex-direction:column;align-items:center">
+          <img class="logo" id="s5-logo" src="assets/img/logo-round-clear.png" alt="Investing for Mummies" />
+          <div class="hair" id="s5-hair"></div>
+          <p class="headline" id="s5-line">Forty of them. Free to play.</p>
+          <p class="url" id="s5-url">investingformummies.com</p>
+        </div>
+      </section>
+
+      <!-- ───────────── Audio ─────────────
+           Music sits low under the opening quote so the lines read as speech,
+           lifts once the room appears, and fades over the last 1.2s. -->
+      <audio
+        id="music"
+        src="assets/music/happy-beats-business-moves-vol-10-by-ende-dot-app.mp3"
+        data-start="0"
+        data-duration="21"
+        data-track-index="4"
+        data-volume="0.5"
+        data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.30},{"t":3.90,"v":0.30},{"t":4.60,"v":0.52},{"t":19.80,"v":0.52},{"t":21,"v":0}]}]}'
+      ></audio>
+
+      <!-- Soft marks under each quote line (not a typing effect — it is a quote) -->
+      <audio id="sfx-q1" src="assets/sfx/click_001.ogg" data-start="0.27" data-duration="0.10" data-track-index="5" data-volume="0.18"></audio>
+      <audio id="sfx-q2" src="assets/sfx/click_001.ogg" data-start="1.90" data-duration="0.10" data-track-index="5" data-volume="0.18"></audio>
+      <!-- Card arrivals -->
+      <audio id="sfx-shot" src="assets/sfx/card-place-1.ogg" data-start="4.10" data-duration="0.70" data-track-index="5" data-volume="0.30"></audio>
+      <audio id="sfx-screen" src="assets/sfx/card-slide-1.ogg" data-start="7.92" data-duration="0.62" data-track-index="5" data-volume="0.30"></audio>
+      <!-- One light tick per syllabus name, fired with the visual -->
+      <audio id="sfx-n1" src="assets/sfx/drop_001.ogg" data-start="12.56" data-duration="0.11" data-track-index="6" data-volume="0.16"></audio>
+      <audio id="sfx-n2" src="assets/sfx/drop_001.ogg" data-start="13.64" data-duration="0.11" data-track-index="6" data-volume="0.16"></audio>
+      <audio id="sfx-n3" src="assets/sfx/drop_001.ogg" data-start="14.73" data-duration="0.11" data-track-index="6" data-volume="0.16"></audio>
+      <audio id="sfx-n4" src="assets/sfx/drop_001.ogg" data-start="15.82" data-duration="0.11" data-track-index="6" data-volume="0.16"></audio>
+      <audio id="sfx-n5" src="assets/sfx/drop_001.ogg" data-start="16.91" data-duration="0.11" data-track-index="6" data-volume="0.16"></audio>
+      <!-- Quiet settle under the logo. Deliberately not a bell: a stinger would read as an ad. -->
+      <audio id="sfx-logo" src="assets/sfx/impactSoft_medium_001.ogg" data-start="18.00" data-duration="0.18" data-track-index="5" data-volume="0.22"></audio>
+    </div>
+
+    <script>
+      /* One paused timeline. All transforms use fromTo so no CSS initial transform
+         fights a tween (gsap_css_transform_conflict). Times are global seconds.
+         Beat source: happy-beats-business-moves-vol-10 cue preset, 110 BPM. */
+      const tl = gsap.timeline({ paused: true });
+      const E = "power3.out";
+
+      /* ── Scene 1 · the admission ───────────────────────────────── */
+      tl.fromTo("#s1-eyebrow", { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.5, ease: E }, 0.05);
+      // beat-locked: 0.27s (strongCue) — the first line lands on the first beat
+      tl.fromTo("#s1-l1", { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.45, ease: E }, 0.27);
+      // beat-locked: 1.90s (beat) — line 2 early enough to hold its full read
+      tl.fromTo("#s1-l2", { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.45, ease: E }, 1.90);
+      tl.to("#s1 > div", { opacity: 0, duration: 0.35, ease: "power2.in" }, 4.10);
+
+      /* ── Scene 2 · the room ────────────────────────────────────── */
+      // beat-locked: 4.10s (strongCue) — the photo card arrives on the cut
+      tl.fromTo("#s2-shot", { opacity: 0, x: 70 },
+        { opacity: 1, x: 0, duration: 0.6, ease: E }, 4.10);
+      tl.fromTo("#s2-eyebrow", { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.45, ease: E }, 4.64);
+      tl.fromTo("#s2-head", { opacity: 0, y: 26 },
+        { opacity: 1, y: 0, duration: 0.55, ease: E }, 5.74);
+      tl.to("#s2 .col, #s2 .shot", { opacity: 0, duration: 0.35, ease: "power2.in" }, 7.92);
+
+      /* ── Scene 3 · the game ────────────────────────────────────── */
+      // beat-locked: 7.92s (strongCue) — real game UI scales up on the cut
+      tl.fromTo("#s3-screen", { opacity: 0, scale: 0.94 },
+        { opacity: 1, scale: 1, duration: 0.6, ease: E }, 7.92);
+      // The longest read in the film (12 words) — in early, holds ~3.5s
+      tl.fromTo("#s3-line", { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.5, ease: E }, 8.22);
+      tl.fromTo("#s3-tag", { opacity: 0 },
+        { opacity: 1, duration: 0.45, ease: E }, 8.73);
+      tl.to("#s3 > *", { opacity: 0, duration: 0.35, ease: "power2.in" }, 11.46);
+
+      /* ── Scene 4 · the syllabus ────────────────────────────────── */
+      tl.fromTo("#s4-eyebrow", { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.4, ease: E }, 11.46);
+      // beat-grid: every OTHER beat at 110 BPM = 1.09s apart, which clears the
+      // ~0.8s readable floor. Consecutive beats (0.545s) would outrun reading.
+      // n1 12.56 · n2 13.64 · n3 14.73 · n4 15.82 · n5 16.91
+      [["#n1", 12.56], ["#n2", 13.64], ["#n3", 14.73], ["#n4", 15.82], ["#n5", 16.91]]
+        .forEach(function (pair) {
+          tl.fromTo(pair[0], { opacity: 0, y: 22 },
+            { opacity: 1, y: 0, duration: 0.4, ease: E }, pair[1]);
+        });
+      tl.to("#s4 > div", { opacity: 0, duration: 0.35, ease: "power2.in" }, 17.70);
+
+      /* ── Scene 5 · the offer ───────────────────────────────────── */
+      tl.fromTo("#s5-logo", { opacity: 0, scale: 0.9 },
+        { opacity: 1, scale: 1, duration: 0.55, ease: E }, 17.80);
+      tl.fromTo("#s5-hair", { opacity: 0, scaleX: 0 },
+        { opacity: 1, scaleX: 1, duration: 0.45, ease: E }, 18.00);
+      tl.fromTo("#s5-line", { opacity: 0, y: 22 },
+        { opacity: 1, y: 0, duration: 0.5, ease: E }, 18.10);
+      // beat-locked: 18.55s (strongCue) — the URL is the last thing to land
+      tl.fromTo("#s5-url", { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.5, ease: E }, 18.55);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+Our content hub holds 657 photos and clips and will only show you 608. The 49 it hides are the ones you could not actually have opened — because "playable" is not a field it reads, it's a question it asks the server. Type the sentence you'd say out loud; it translates before it searches, and it searches what people said on camera too.

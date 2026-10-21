@@ -31,9 +31,20 @@
     {
       "name": "ifm-os-prototype",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["scripts/dev-serve-content.js"],
+      "runtimeArgs": [
+        "scripts/dev-serve-content.js"
+      ],
       "port": 8899,
       "url": "http://localhost:8899"
+    },
+    {
+      "name": "ifm-www",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd '/Users/lollyg/Documents/investing for Mummies/ifm_website_oct26' && npx --yes serve -l 8760 --no-clipboard ."
+      ],
+      "port": 8760
     }
   ]
 }

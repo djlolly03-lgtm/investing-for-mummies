@@ -1,0 +1,592 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 26,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 0 has 5 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-2026-10-21-000339/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s1\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s1",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-2026-10-21-000339/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s1\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s2\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s2",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-2026-10-21-000339/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s2\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s3\"> is a timeline element that contains nested <div id=\"s3-screen\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s3",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-2026-10-21-000339/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s3\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s4\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s4",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-2026-10-21-000339/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s4\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"s5\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#s5",
+        "dataAttributes": {},
+        "sourceFile": "/Users/lollyg/Documents/investing for Mummies/brag-output-2026-10-21-000339/composition/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"s5\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 5 overlap (assets/sfx/click_003.ogg at 0.27-ends, assets/sfx/click_003.ogg at 1.9-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 5 overlap (assets/sfx/click_003.ogg at 0.27-ends, assets/sfx/card-place-1.ogg at 4.1-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 5 overlap (assets/sfx/click_003.ogg at 0.27-ends, assets/sfx/card-slide-1.ogg at 7.92-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 5 overlap (assets/sfx/click_003.ogg at 0.27-ends, assets/sfx/impactSoft_medium_001.ogg at 18-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 5 overlap (assets/sfx/click_003.ogg at 1.9-ends, assets/sfx/card-place-1.ogg at 4.1-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 5 overlap (assets/sfx/click_003.ogg at 1.9-ends, assets/sfx/card-slide-1.ogg at 7.92-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 5 overlap (assets/sfx/click_003.ogg at 1.9-ends, assets/sfx/impactSoft_medium_001.ogg at 18-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 5 overlap (assets/sfx/card-place-1.ogg at 4.1-ends, assets/sfx/card-slide-1.ogg at 7.92-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 5 overlap (assets/sfx/card-place-1.ogg at 4.1-ends, assets/sfx/impactSoft_medium_001.ogg at 18-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 5 overlap (assets/sfx/card-slide-1.ogg at 7.92-ends, assets/sfx/impactSoft_medium_001.ogg at 18-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 6 overlap (assets/sfx/click_002.ogg at 12.56-ends, assets/sfx/click_002.ogg at 13.64-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 6 overlap (assets/sfx/click_002.ogg at 12.56-ends, assets/sfx/click_002.ogg at 14.73-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 6 overlap (assets/sfx/click_002.ogg at 12.56-ends, assets/sfx/click_002.ogg at 15.82-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 6 overlap (assets/sfx/click_002.ogg at 12.56-ends, assets/sfx/click_002.ogg at 16.91-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 6 overlap (assets/sfx/click_002.ogg at 13.64-ends, assets/sfx/click_002.ogg at 14.73-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 6 overlap (assets/sfx/click_002.ogg at 13.64-ends, assets/sfx/click_002.ogg at 15.82-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 6 overlap (assets/sfx/click_002.ogg at 13.64-ends, assets/sfx/click_002.ogg at 16.91-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 6 overlap (assets/sfx/click_002.ogg at 14.73-ends, assets/sfx/click_002.ogg at 15.82-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 6 overlap (assets/sfx/click_002.ogg at 14.73-ends, assets/sfx/click_002.ogg at 16.91-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple audible <audio>/<video> elements on track 6 overlap (assets/sfx/click_002.ogg at 15.82-ends, assets/sfx/click_002.ogg at 16.91-ends). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 2,
+    "findings": [
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 8.167,
+        "selector": "#s2-eyebrow",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 260,
+          "top": 418.34,
+          "right": 746.64,
+          "bottom": 449.34,
+          "width": 486.64,
+          "height": 31
+        },
+        "containerSelector": "#s3-screen > img:nth-of-type(1)",
+        "text": "So we stopped explaining it",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.56,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 260,
+          "y": 418.34,
+          "width": 486.64,
+          "height": 31
+        },
+        "firstSeen": 8.167,
+        "lastSeen": 8.167,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.167
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 8.167,
+        "selector": "#s2-head",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 260,
+          "top": 480.34,
+          "right": 1063.09,
+          "bottom": 665.5,
+          "width": 803.09,
+          "height": 185.16
+        },
+        "containerSelector": "#s3-screen > img:nth-of-type(1)",
+        "text": "Every lesson is a game first.",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.33,
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 260,
+          "y": 480.34,
+          "width": 803.09,
+          "height": 185.16
+        },
+        "firstSeen": 8.167,
+        "lastSeen": 8.167,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.167
+        ]
+      }
+    ],
+    "duration": 21,
+    "samples": [
+      1.167,
+      3.5,
+      5.833,
+      8.167,
+      10.5,
+      12.833,
+      15.167,
+      17.5,
+      19.833
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 2,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.18:1; WCAG AA requires 3:1.",
+        "text": "Swayamvar · played on your phone, debated in the r",
+        "fg": "rgb(201,168,76)",
+        "bg": "rgb(247,250,249)",
+        "ratio": 2.18,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(170,142,64)",
+        "large": true,
+        "selector": "#s3-tag",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 533.5625,
+          "y": 952.25,
+          "width": 852.875,
+          "height": 28
+        },
+        "time": 10.5,
+        "times": [
+          10.5
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      1.167,
+      5.833,
+      10.5,
+      15.167,
+      19.833
+    ],
+    "checked": 12,
+    "passed": 11
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}
