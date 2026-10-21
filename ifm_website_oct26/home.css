@@ -1856,3 +1856,10 @@ h1.hx-lines{margin:0;font-weight:inherit;font-size:inherit;line-height:inherit;d
 .footer-disclaimer{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:rgba(224,243,240,.7)}
 .cw-lead{font-family:var(--serif);font-weight:600;font-size:20px;line-height:1.35;color:var(--navy);margin:0 0 10px}
 @media (max-width:640px){.gal-game img,.cw-card img,.frame img,.tv-tile img,.ar-big img{object-fit:cover}img{max-width:100%;height:auto}.gal-card img,.gal-game img,.cw-card img,.tv-tile img,.frame img{height:100%}}
+
+/* ── Audit fixes, 21 Oct 2026 ── */
+/* W9: "₹10,000 / month" ran off the right edge on phones (463px of text in a 354px column) */
+@media (max-width:480px){.story-big{font-size:9vw}}
+/* W13: the flex nav squeezed the logo to 29×40; keep its 180:198 shape */
+.nav-brand picture{flex:none;display:block;line-height:0}
+.nav-brand img{width:auto;max-width:none;object-fit:contain}

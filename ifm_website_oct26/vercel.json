@@ -52,6 +52,26 @@
   ],
   "redirects": [
     {
+      "source": "/registernow",
+      "destination": "https://register.investingformummies.com/",
+      "permanent": false
+    },
+    {
+      "source": "/register",
+      "destination": "https://register.investingformummies.com/",
+      "permanent": false
+    },
+    {
+      "source": "/batches",
+      "destination": "/#batches",
+      "permanent": false
+    },
+    {
+      "source": "/games",
+      "destination": "https://games.investingformummies.com/",
+      "permanent": false
+    },
+    {
       "source": "/:path*",
       "has": [
         {
