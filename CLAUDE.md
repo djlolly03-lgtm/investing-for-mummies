@@ -36,6 +36,7 @@ auto-deploy ships *the whole working tree*, not just its own files.
 | `CLAUDE/` | The live site + all games. Deploy root. See `CLAUDE/MANIFEST.md`. |
 | `CLAUDE/content/` | The **Content Hub** — the internal catalogue app at `/content/`. |
 | `deck-build/` | Rebuilds the team operating-guide deck. Self-contained; `node build_guide.js`. |
+| `ifm_website_oct26/` | **www.investingformummies.com** — its own Vercel project (`ifm-website-oct26`); deploy from inside it. **`app.js` is the source of truth**, not Claude Design and not the old `.jsx` files (parked in `_superseded-source-15oct/`). See its `README.md`. |
 | everything else | Assets, deliverables, docs. See `README.md` for the folder map. |
 
 ---

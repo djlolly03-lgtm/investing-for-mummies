@@ -1,0 +1,8 @@
+These are the Claude Design source files from 15 Oct 2026. They are OLDER than the live site.
+
+The live site is built from ../app.js (plus ../index.html and ../home.css). app.js was
+exported on 16 Oct and has had further fixes since (21 Oct audit: copy, YouTube, etc.).
+None of these files is loaded by the page.
+
+Do NOT rebuild app.js from these files or re-export from Claude Design over the folder:
+it would silently undo every change made since 15 Oct. Kept for reference only.
