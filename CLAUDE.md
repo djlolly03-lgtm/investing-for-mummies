@@ -551,6 +551,11 @@ Restored into the original (still-empty) Drive folder `1nBRaMdgkFEK93yeDp7vAhsyl
 on 1 Oct 2026 with `rclone copy`, **not** `move` — the Dropbox copy stays where it is, so
 the footage now exists in two places instead of one.
 
+**Update 21 Oct 2026 — Drive is now the ONLY copy.** On the user's instruction the Dropbox
+folder was moved to the Mac Trash, after the Drive folder was verified to hold all 56 files with
+identical names and sizes (3.58 GB). Once the Trash is emptied and Dropbox's deleted-file window
+lapses, `1nBRaMdgkFEK93yeDp7vAhsylGntHRSBj` is the single copy — do not empty or move it.
+
 **The lesson is not "check Dropbox".** It is that a loss was recorded as fact, written into
 the operating notes, and used to justify hiding 33 catalogue rows (`library:false`, with
 `drive link` pointing at a local `clips/…` path because there was believed to be no file to
