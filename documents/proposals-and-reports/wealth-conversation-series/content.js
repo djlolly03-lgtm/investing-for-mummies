@@ -3,9 +3,9 @@
 // set in sentence case, and trailing full stops dropped from item subtitles (they are headings).
 // Short navigation labels (eyebrows, "MODULE", "SUGGESTED DURATION") are deck furniture, not copy.
 //
-// Module ORDER follows the numbered module pages (01–05). The email's "Workshop Series"
-// paragraph lists them in a different order (Blueprint, Asset Classes, Stock Market,
-// Insurance, Mutual Funds) — flagged for Hiral to confirm.
+// Module ORDER follows the email's "Workshop Series" paragraph (Blueprint, Asset Classes,
+// Stock Market, Insurance, Mutual Funds), chosen by the user on 25 Oct 2026. The email's own
+// module pages had numbered Insurance 02; it is 04 here, and the deck is numbered to match.
 // Game names are deliberately absent: Hiral wants them unnamed in case they change.
 
 module.exports = {
@@ -44,7 +44,7 @@ module.exports = {
     title: 'The Learning Experience',
     chipsLabel: 'IN EVERY WORKSHOP',
     // the four activity types named in the first paragraph, with pill widths in inches
-    chips: [['Games', 0.95], ['Simulations', 1.32], ['Real-life scenarios', 1.78], ['Discussions', 1.32]],
+    chips: [['Games', 0.95], ['Simulations', 1.3], ['Real-life scenarios', 1.76], ['Discussions', 1.3]],
     blocks: [
       { icon: 'le-games', runs: [
         ['Every workshop combines practical learning with '],
@@ -62,6 +62,22 @@ module.exports = {
       ['engaging, accessible and relevant', true],
       [' to real-life decisions.'],
     ] },
+  },
+
+  // Added 25 Oct 2026 at the user's request: real corporate / forum sessions, with the words the
+  // "Wealth Conversations" section of investingformummies.com (#corporate) already uses, verbatim.
+  // Not part of Hiral's 23 Oct email — delete the slide if she prefers the deck without it.
+  corporate: {
+    eyebrow: 'WEALTH CONVERSATIONS',
+    title: ['Workshops for corporates, communities', 'and entrepreneurs’ forums.'],
+    intro: 'Past sessions for organisations, professional networks and curated groups, each adapted to the audience’s context and experience level. Same warmth, same games, tailored to your room.',
+    sessions: [
+      { img: 'past-stree-dhan.png', name: 'Stree Dhan', kind: 'Financial awareness workshop' },          // IFM-338
+      { img: 'past-k-phyto.png', name: 'K-Phyto Extraction', kind: 'Mutual funds and investing workshop' }, // IFM-316
+      { img: 'past-goa.png', name: 'Money Blueprint, Goa', kind: 'Introduction to investing' },          // IFM-253
+      { img: 'past-eo-forum.png', name: 'EO Forum', kind: 'Closed-room financial learning' },            // website only
+    ],
+    alsoHosted: [['Also hosted by '], ['Ascent Group', true], [', '], ['Pixel Mint Media', true], [' and several closed forums.']],
   },
 
   series: {
@@ -117,7 +133,7 @@ module.exports = {
 
   modules: [
     {
-      num: '01', hours: 3, icon: 'm1-blueprint',
+      num: '01', panelAlt: 'Hiral teaching the power of compounding at a corporate workshop', hours: 3, icon: 'm1-blueprint',
       title: 'The Money Blueprint',
       subtitle: 'Build the foundation for smarter money decisions.',
       seriesLine: 'Money Blueprint gives you the foundation — goals, time, risk and a framework for thinking about your money.',
@@ -140,43 +156,14 @@ module.exports = {
       takeaways: [
         'Set clear, measurable financial goals',
         'Use a framework to evaluate investing decisions',
-        'Organise money into Protect, Stabilise & Grow',
+        'Organise money into Protect, Stabilise &\u00A0Grow',
         'Understand what your portfolio is doing',
         'Ask the right questions before investing',
       ],
     },
     {
-      num: '02', hours: 3, icon: 'm2-shield',
-      title: 'Insurance Decoded',
-      subtitle: 'Protect your wealth before you build it.',
-      seriesLine: 'Insurance Decoded helps you understand how to protect your wealth and the people who depend on you.',
-      intro: [
-        'Building wealth isn’t just about growing your money; it’s also about protecting it from unexpected events. Insurance plays a crucial role in safeguarding your finances, your family and the wealth you build over time.',
-        'This workshop cuts through the jargon to help you understand what insurance is designed to do, which types of cover matter and how to assess whether you have the right protection in place. From understanding life insurance to navigating health insurance policies, you’ll learn to distinguish genuine protection from products that combine insurance with investment.',
-      ],
-      coverHeading: 'What we’ll cover',
-      items: [
-        { icon: 'i-umbrella', title: 'Understanding Insurance', sub: 'Protection or Investment?',
-          desc: 'Understand the purpose of insurance, the different types of cover and why protection should be distinguished from investing.' },
-        { icon: 'i-home-heart', title: 'Term Insurance', sub: 'Protecting Your Family’s Future',
-          desc: 'Discover who needs term insurance, how to estimate the right cover and policy term, and which features matter when choosing a policy. Compare term insurance with ULIPs and endowment plans.' },
-        { icon: 'i-heart-pulse', title: 'Health Insurance', sub: 'Preparing for the Unexpected',
-          desc: 'Understand who needs health insurance, how much cover may be appropriate, what to look for in a policy and which exclusions and pitfalls to watch out for.' },
-        { icon: 'i-topup', title: 'Top-Ups & Super Top-Ups', sub: 'Extending Your Protection',
-          desc: 'Learn how these plans work, how they differ and how they can help increase health insurance coverage cost-effectively.' },
-      ],
-      walkHeading: 'What you’ll walk away with',
-      takeaways: [
-        'Know what insurance is meant to protect',
-        'Distinguish protection from investment',
-        'Understand how to estimate the right life cover',
-        'Know what to look for in health insurance',
-        'Make more informed decisions about your insurance coverage',
-      ],
-    },
-    {
-      num: '03', hours: 4, icon: 'm3-blocks',
-      title: 'Asset Classes: The Building Blocks',
+      num: '02', panelAlt: 'Hiral drawing the bond-market diagram on the whiteboard', hours: 4, icon: 'm3-blocks',
+      title: 'Asset Classes: The\u00A0Building Blocks',
       subtitle: 'Understand the landscape of investing and the role each asset can play.',
       seriesLine: 'Asset Classes: The Building Blocks helps you understand the different places your money can go and the role each can play in a portfolio.',
       intro: [
@@ -208,7 +195,7 @@ module.exports = {
       ],
     },
     {
-      num: '04', hours: 4, icon: 'm4-candles',
+      num: '03', panelAlt: 'Hiral teaching “How to Buy/Sell a Share?” at a corporate workshop', hours: 4, icon: 'm4-candles',
       title: 'The Stock Market Demystified',
       subtitle: 'Understand how the stock market works, from IPOs and exchanges to buying, selling and corporate actions.',
       seriesLine: 'The Stock Market Demystified takes you behind the scenes of the stock market — from IPOs and exchanges to buying, selling and corporate actions.',
@@ -240,7 +227,36 @@ module.exports = {
       ],
     },
     {
-      num: '05', hours: 4, icon: 'm5-map',
+      num: '04', panelAlt: 'Hiral teaching “Types of Insurance” to a corporate group', hours: 3, icon: 'm2-shield',
+      title: 'Insurance Decoded',
+      subtitle: 'Protect your wealth before you build it.',
+      seriesLine: 'Insurance Decoded helps you understand how to protect your wealth and the people who depend on you.',
+      intro: [
+        'Building wealth isn’t just about growing your money; it’s also about protecting it from unexpected events. Insurance plays a crucial role in safeguarding your finances, your family and the wealth you build over time.',
+        'This workshop cuts through the jargon to help you understand what insurance is designed to do, which types of cover matter and how to assess whether you have the right protection in place. From understanding life insurance to navigating health insurance policies, you’ll learn to distinguish genuine protection from products that combine insurance with investment.',
+      ],
+      coverHeading: 'What we’ll cover',
+      items: [
+        { icon: 'i-umbrella', title: 'Understanding Insurance', sub: 'Protection or Investment?',
+          desc: 'Understand the purpose of insurance, the different types of cover and why protection should be distinguished from investing.' },
+        { icon: 'i-home-heart', title: 'Term Insurance', sub: 'Protecting Your Family’s Future',
+          desc: 'Discover who needs term insurance, how to estimate the right cover and policy term, and which features matter when choosing a policy. Compare term insurance with ULIPs and endowment plans.' },
+        { icon: 'i-heart-pulse', title: 'Health Insurance', sub: 'Preparing for the Unexpected',
+          desc: 'Understand who needs health insurance, how much cover may be appropriate, what to look for in a policy and which exclusions and pitfalls to watch out for.' },
+        { icon: 'i-topup', title: 'Top-Ups & Super Top-Ups', sub: 'Extending Your Protection',
+          desc: 'Learn how these plans work, how they differ and how they can help increase health insurance coverage cost-effectively.' },
+      ],
+      walkHeading: 'What you’ll walk away with',
+      takeaways: [
+        'Know what insurance is meant to protect',
+        'Distinguish protection from investment',
+        'Understand how to estimate the right life cover',
+        'Know what to look for in health insurance',
+        'Make more informed decisions about your insurance coverage',
+      ],
+    },
+    {
+      num: '05', panelAlt: 'Hiral teaching NAV to a workshop group', hours: 4, icon: 'm5-map',
       title: 'The Mutual Fund Map',
       subtitle: 'Navigate the vast world of mutual funds and learn what really matters when choosing one.',
       seriesLine: 'The Mutual Fund Map teaches you how to navigate the vast world of mutual funds and understand what really matters when choosing one.',
