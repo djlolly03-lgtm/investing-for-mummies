@@ -163,13 +163,13 @@ if __name__ == '__main__':
         ('past-eo-forum.png', C + 'EO-forum-website.jpg', (0.5, 0.5)),
     ]:
         caption_card(src, out, 2.88, 3.45, focus)
-    # Module panels, in module order (01 Blueprint, 02 Asset Classes, 03 Stock Market,
-    # 04 Insurance, 05 Mutual Funds): a topic-matched session photo across the top of each.
+    # Module panels, in module order (01 Blueprint, 02 Insurance, 03 Asset Classes,
+    # 04 Stock Market, 05 Mutual Funds): a topic-matched session photo across the top of each.
     for i, (src, focus) in enumerate([
         (C + 'IFM-609-IMG_3797.jpg', (0.5, 0.4)),     # Power of Compounding (576 is the Mission photo's moment)
+        (C + 'IFM-624-IMG_8049.jpg', (0.5, 0.45)),    # "Types of Insurance"
         (C + 'IFM-062-IMG_6514.JPG', (0.5, 0.3)),     # the bond-market BORROWER diagram
         (C + 'IFM-392-IMG_4882.jpg', (0.5, 0.33)),    # "How to Buy/Sell a Share?"
-        (C + 'IFM-624-IMG_8049.jpg', (0.5, 0.45)),    # "Types of Insurance"
         (C + 'IFM-130-IMG_6694.JPG', (0.5, 0.35)),    # teaching NAV
     ], start=1):
         header_panel(src, f'panel-m{i}.jpg', 4.2, 7.5, 3.45, focus)

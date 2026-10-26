@@ -12,15 +12,18 @@ Both sit outside `CLAUDE/` on purpose. `CLAUDE/.vercelignore` does **not** block
 copy under `CLAUDE/proposals/` would go public on the next deploy (the weekly refresh deploys
 the whole tree).
 
-## The 14 slides
+## The 15 slides
 
-1 Cover · 2 Why The Wealth Conversation? · 3 The Questions That Matter · 4 The Learning
-Experience · 5 Workshops for corporates, communities and entrepreneurs’ forums (past sessions) ·
-6 The Workshop Series (staircase, durations) · 7 The Value of the Full Series
-(goals → risk → asset allocation → investment choices → portfolio) · 8–12 one page per module,
-identical layout · 13 Our Mission · 14 Franklin quote + Hiral's sign-off.
+1 Cover · 2 Why The Wealth Conversation? · 3 Who it’s for (added 26 Oct from the user's note) ·
+4 The Questions That Matter · 5 The Learning Experience · 6 Workshops for corporates, communities
+and entrepreneurs’ forums (past sessions) · 7 The Workshop Series (staircase, durations) ·
+8 The Value of the Full Series (goals → risk → asset allocation → investment choices → portfolio) ·
+9–13 one page per module, identical layout · 14 Our Mission · 15 Franklin quote + Hiral's sign-off.
 
-Slide 5 was added on 25 Oct at the user's request. It is **not** in Hiral's email: its words are
+Slide 3's body text is the user's own note (26 Oct), lightly tidied; its title "Built for beginners.
+Deep enough for everyone." and the two card labels are new. `audience.include` in content.js turns it off.
+
+Slide 6 (past sessions) was added on 25 Oct at the user's request. It is **not** in Hiral's email: its words are
 the website's own "Wealth Conversations" section (investingformummies.com/#corporate), verbatim,
 including the four past-session captions and the "Also hosted by" line. Delete it if Hiral prefers.
 
@@ -34,7 +37,7 @@ Full-size originals pulled from Drive on 25 Oct via the Content Hub rows (`asset
 | Learning Experience | IFM-384 · IFM-395 | live game on a phone · notes in the workbook |
 | Past sessions | IFM-338 · IFM-316 · IFM-253 | Stree Dhan · K-Phyto Extraction · Money Blueprint, Goa |
 | Past sessions | — | **EO Forum: not in the Content Hub.** Uses the website's 480 px copy (`ifm_website_oct26/assets/site/corp-eo-forum.jpg`). Swap in the original if it turns up. |
-| Module panels 01–05 | IFM-609 · 062 · 392 · 624 · 130 | Power of Compounding · bond diagram · How to Buy/Sell a Share · Types of Insurance · NAV |
+| Module panels 01–05 | IFM-609 · 624 · 062 · 392 · 130 | Power of Compounding · Types of Insurance · bond diagram · How to Buy/Sell a Share · NAV |
 | Mission | IFM-073 | Hiral at the table under the IFM title screen (Media Kit rank 1) |
 | Closing | `hiral-goel.jpg` | the headshot used in earlier proposals |
 
@@ -71,7 +74,7 @@ soffice --headless --convert-to pdf "../IFM Wealth Conversation Series — Propo
 
 | | |
 |---|---|
-| `content.js` | All copy. Module order = the email's Workshop Series paragraph (Insurance is 04). |
+| `content.js` | All copy. Module order = numbered pages 01–05 (Insurance is 02). |
 | `build.js` | pptxgenjs layout: theme, six slide layouts, every slide. |
 | `prep_assets.py` | Crops, rounds and duotones the photos into `assets/`. |
 | `assets/src/` | Local copies of the source photos and logos (`corp/` = Drive originals). Several files in `workshop-photos-aug2026/` carry a Dropbox `com.apple.macl` lock and become unreadable mid-session, so the build never reads originals in place. |
@@ -80,13 +83,13 @@ soffice --headless --convert-to pdf "../IFM Wealth Conversation Series — Propo
 
 ## Open points for Hiral (as of 25 Oct 2026)
 
-1. **Module order — decided 25 Oct 2026: the email's "Workshop Series" order.** 01 Money Blueprint,
-   02 Asset Classes, 03 Stock Market, 04 Insurance Decoded, 05 Mutual Fund Map. Hiral's own module
-   pages had numbered Insurance 02; the deck renumbers it 04. The corporate deck may need to match.
+1. **Module order — confirmed 26 Oct 2026: the numbered pages.** 01 Money Blueprint, 02 Insurance
+   Decoded, 03 Asset Classes, 04 Stock Market, 05 Mutual Fund Map. The email's "Workshop Series"
+   paragraph lists them differently; the deck does not follow that paragraph.
 2. **Module 01 item titles** were ALL CAPS in the email; the deck sets them in sentence case
    ("Why should my money work?"), matching the other modules' headings.
 3. **Contact line** on the last slide (hiral@investingformummies.com · +91 98670 26583 ·
    investingformummies.com) comes from the 31 July 2026 Wealth Conversation proposal, not this email.
-4. **"18 hours in total"** on slide 6 is the sum of the suggested durations (3+3+4+4+4).
+4. **"18 hours in total"** on slide 7 is the sum of the suggested durations (3+3+4+4+4).
 5. No game names anywhere, per Hiral's note.
-6. **Slide 5 names past clients** (Stree Dhan, K-Phyto Extraction, EO Forum, Ascent Group, Pixel Mint Media) exactly as the public website does. Confirm she is happy to show them to a prospect.
+6. **Slide 6 names past clients** (Stree Dhan, K-Phyto Extraction, EO Forum, Ascent Group, Pixel Mint Media) exactly as the public website does. Confirm she is happy to show them to a prospect.

@@ -16,7 +16,8 @@ const { applyTheme } = require('./apply_theme.js');
 const COPY = require('./content.js');
 
 const HERE = __dirname;
-const OUT = path.join(HERE, '..', 'IFM Wealth Conversation Series — Proposal.pptx');
+// WC_OUT renders a preview somewhere else, so a draft slide never touches the real deck.
+const OUT = process.env.WC_OUT || path.join(HERE, '..', 'IFM Wealth Conversation Series — Proposal.pptx');
 const A = f => path.join(HERE, 'assets', f);
 const ICON = (id, v = 'light') => path.join(HERE, 'icons', 'png', `${id}-${v}.png`);
 
@@ -180,6 +181,40 @@ T(s, why.aim, { x: M + 1.08, y: 5.42, w: 4.72, h: 1.2, fontFace: HEAD, fontSize:
 }
 
 // =====================================================================
+// 2b. WHO IT'S FOR — draft, only built when COPY.audience.include is true (or WC_AUDIENCE=1)
+// =====================================================================
+if (COPY.audience.include || process.env.WC_AUDIENCE) {
+  s = pres.addSlide({ masterName: 'IFM Cream', sectionTitle: 'Introduction' });
+  const au = COPY.audience;
+  label(s, au.eyebrow, M, 0.42, 6, C.teal);
+  s.addText(au.title, { placeholder: 'title' });
+  // left: the two audiences
+  const LW = 4.55;
+  au.who.forEach((w, i) => {
+    const h = (6.81 - 1.72 - 0.2) / 2, y = 1.72 + i * (h + 0.2);
+    card(s, M, y, LW, h, { shadow: shadow(), fill: { color: i ? C.white : C.mintLt } });
+    bubble(s, w.icon, 'teal', M + 0.28, y + 0.28, 0.84, C.teal);
+    T(s, w.label, { x: M + 1.3, y: y + 0.28, w: LW - 1.42, h: 0.84, fontFace: HEAD, fontSize: 18, bold: true, valign: 'middle' });
+    T(s, keep(w.text), { x: M + 0.3, y: y + 1.25, w: LW - 0.5, h: h - 1.35, fontSize: 14.5, lineSpacingMultiple: 1.08 });
+  });
+  // right: how deep the workshops go, one card per point
+  const RX = M + LW + 0.4, RW = W - M - RX;
+  T(s, au.deepLead, { x: RX, y: 1.66, w: RW, h: 0.7, fontFace: HEAD, fontSize: 17, bold: true, valign: 'top', lineSpacingMultiple: 1.05 });
+  au.deep.forEach((d, i) => {
+    const ch = 0.8, y = 2.42 + i * (ch + 0.12);
+    card(s, RX, y, RW, ch, { shadow: shadow() });
+    bubble(s, d.icon, 'teal', RX + 0.14, y + 0.1, ch - 0.2, C.teal);
+    T(s, keep(d.text), { x: RX + 0.92, y: y + 0.04, w: RW - 1.08, h: ch - 0.08, fontSize: 14.5, valign: 'middle', lineSpacingMultiple: 1.05 });
+  });
+  // the visual promise, as a navy band
+  const by = 6.1, bh = 0.71;
+  s.addShape(SH.ROUNDED_RECTANGLE, { x: RX, y: by, w: RW, h: bh, rectRadius: 0.14, fill: { color: C.navy }, line: { type: 'none' } });
+  bubble(s, au.visual.icon, 'teal', RX + 0.16, by + (bh - 0.52) / 2, 0.52, C.teal);
+  T(s, au.visual.runs.map(([t, hl]) => ({ text: t, options: hl ? { color: C.gold, bold: true } : {} })),
+    { x: RX + 0.86, y: by + 0.04, w: RW - 1.0, h: bh - 0.08, fontSize: 14, color: C.white, valign: 'middle', lineSpacingMultiple: 1.08 });
+}
+
+// =====================================================================
 // 3. THE QUESTIONS THAT MATTER
 // =====================================================================
 s = pres.addSlide({ masterName: 'IFM Dark', sectionTitle: 'Introduction' });
@@ -262,16 +297,32 @@ T(s, cw.alsoHosted.map(([t, b]) => ({ text: t, options: b ? { bold: true, color:
 // 6. THE WORKSHOP SERIES — the staircase
 // =====================================================================
 pres.addSection({ title: 'The Series' });
-s = pres.addSlide({ masterName: 'IFM Cream', sectionTitle: 'The Series' });
 const ws = COPY.series;
-label(s, ws.eyebrow, M, 0.42, 6, C.teal);
+// Backdrop: the IFM tree, large and faint, centred behind the staircase.
+// 'centre' = navy tree on the cream slide; 'dark' = the slide turns navy with a white tree.
+const seriesBg = process.env.WC_SERIES_BG || ws.backdrop;
+const dk = seriesBg === 'dark';
+s = pres.addSlide({ masterName: dk ? 'IFM Dark' : 'IFM Cream', sectionTitle: 'The Series' });
+if (seriesBg) {
+  const L = 7.6, lw = L * 560 / 616;
+  s.addImage({ path: A(dk ? 'logo-round-white.png' : 'logo-round-navy.png'), x: (W - lw) / 2 + 0.6, y: 0.05, w: lw, h: L,
+    transparency: dk ? 92 : 95, altText: '' });
+}
+label(s, ws.eyebrow, M, 0.42, 6, dk ? C.mint : C.teal);
 s.addText(ws.title, { placeholder: 'title' });
-T(s, ws.intro, { x: M, y: 1.5, w: 7.6, h: 0.8, fontSize: 13.5, lineSpacingMultiple: 1.15 });
+T(s, ws.intro, { x: M, y: 1.5, w: 7.6, h: 0.8, fontSize: 13.5, lineSpacingMultiple: 1.15, color: dk ? C.ice : C.navy });
+// flexibility callout: the full series, or only the modules a group needs
+{
+  const bx = M, by = 2.36, bw = 4.75, bh = 0.64;
+  s.addShape(SH.ROUNDED_RECTANGLE, { x: bx, y: by, w: bw, h: bh, rectRadius: 0.14, fill: { color: C.goldLt }, line: { color: C.gold, width: 1 } });
+  bubble(s, 'ui-check', 'gold', bx + 0.13, by + (bh - 0.44) / 2, 0.44, C.white);
+  T(s, keep(ws.choice), { x: bx + 0.7, y: by + 0.04, w: bw - 0.82, h: bh - 0.08, fontSize: 12, bold: true, valign: 'middle', lineSpacingMultiple: 1.05 });
+}
 // stat callouts
 [['5', 'workshops'], [String(COPY.modules.reduce((t, m) => t + m.hours, 0)), 'hours in total']].forEach(([n, l], i) => {
   const x = W - M - 1.5 - (1 - i) * 1.62;
-  T(s, n, { x, y: 1.05, w: 1.5, h: 0.62, fontFace: HEAD, fontSize: 36, bold: true, color: C.teal, align: 'right' });
-  T(s, l, { x, y: 1.66, w: 1.5, h: 0.3, fontSize: 10.5, bold: true, color: C.muted, align: 'right' });
+  T(s, n, { x, y: 1.05, w: 1.5, h: 0.62, fontFace: HEAD, fontSize: 36, bold: true, color: dk ? C.mintTxt : C.teal, align: 'right' });
+  T(s, l, { x, y: 1.66, w: 1.5, h: 0.3, fontSize: 10.5, bold: true, color: dk ? C.ice : C.muted, align: 'right' });
 });
 COPY.modules.forEach((m, i) => {
   const x = M + i * 2.455, w = 2.3, top = 3.5 - i * 0.32, ch = 2.68, base = 6.9;
@@ -284,9 +335,26 @@ COPY.modules.forEach((m, i) => {
     { text: m.title, options: { fontFace: HEAD, fontSize: 13, bold: true, breakLine: true, paraSpaceAfter: 5, lineSpacingMultiple: 0.98 } },
     { text: keep(m.seriesLine), options: { fontSize: 10.5, lineSpacingMultiple: 1.1 } },
   ], { x: x + 0.2, y: top + 0.8, w: w - 0.36, h: ch - 0.92 });
-  s.addShape(SH.ROUNDED_RECTANGLE, { x, y: rTop, w, h: base - rTop, rectRadius: 0.1, fill: { color: C.teal }, line: { type: 'none' } });
+  const stairArt = process.env.WC_STAIR_ART || ws.stairArt;   // 'giant' | 'pattern' | undefined
+  if (!stairArt) s.addShape(SH.ROUNDED_RECTANGLE, { x, y: rTop, w, h: base - rTop, rectRadius: 0.1, fill: { color: C.teal }, line: { type: 'none' } });
+  else if (i === 0) {
+    // all five steps as one image (stair_backdrop.py), so the IFM mark can run across them
+    const top0 = 3.5 - 4 * 0.32 + ch + 0.15;
+    s.addImage({ path: A(`stairs-${stairArt}.png`), x: M, y: top0, w: 4 * 2.455 + 2.3, h: base - top0, altText: '' });
+  }
   icon(s, 'ui-clock', 'teal', x + 0.2, rTop + 0.12, 0.28);
   T(s, `${m.hours} hours`, { x: x + 0.55, y: rTop + 0.08, w: 1.6, h: 0.36, fontFace: HEAD, fontSize: 14, bold: true, color: C.white, valign: 'middle' });
+  // IFM mark in the teal steps. 'each' = a faint watermark in every step, sized to the step; 'top' = one solid white mark crowning the last, tallest step.
+  const mode = process.env.WC_STAIR_LOGO || ws.logo || 'none';
+  const LA = 560 / 616, rh = base - rTop;
+  if (mode === 'each') {
+    const L = Math.min(rh - 0.12, 1.55), lw = L * LA;
+    s.addImage({ path: A('logo-round-white.png'), x: x + w - lw - 0.1, y: base - L - 0.06, w: lw, h: L, transparency: 75, altText: '' });
+  }
+  if (mode === 'top' && i === COPY.modules.length - 1) {
+    const L = Math.min(1.25, rh - 0.6), lw = L * LA;
+    s.addImage({ path: A('logo-round-white.png'), x: x + (w - lw) / 2, y: rTop + 0.52 + (rh - 0.6 - L) / 2, w: lw, h: L, altText: 'Investing for Mummies logo' });
+  }
 });
 
 // =====================================================================
@@ -300,14 +368,14 @@ T(s, [{ text: v.lead[0] }, { text: v.lead[1], options: { color: C.gold, italic: 
   { x: M, y: 1.55, w: 11.3, h: 0.85, fontFace: HEAD, fontSize: 19, color: C.white, lineSpacingMultiple: 1.1 });
 T(s, v.connect, { x: M, y: 2.45, w: 12.1, h: 0.5, fontSize: 13, color: C.ice });
 {
-  const n = v.flow.length, gap = 2.6, d = 1.18, cy = 3.18;
+  const n = v.flow.length, gap = 2.6, d = 1.45, cy = 2.98;
   const x0 = (W - gap * (n - 1)) / 2;
   v.flow.forEach((f, i) => {
     const cx = x0 + i * gap;
     if (i < n - 1) s.addShape(SH.LINE, { x: cx + d / 2 + 0.14, y: cy + d / 2, w: gap - d - 0.28, h: 0,
       line: { color: C.mint, width: 2, endArrowType: 'triangle' } });
-    bubble(s, f.icon, 'light', cx - d / 2, cy, d, i === n - 1 ? C.gold : C.white, { iconScale: 0.56 });
-    T(s, f.label, { x: cx - 1.15, y: cy + d + 0.14, w: 2.3, h: 0.36, fontSize: 14, bold: true, color: C.white, align: 'center' });
+    bubble(s, f.icon, 'light', cx - d / 2, cy, d, i === n - 1 ? C.gold : C.white, { iconScale: 0.66 });
+    T(s, f.label, { x: cx - 1.15, y: cy + d + 0.1, w: 2.3, h: 0.36, fontSize: 14, bold: true, color: C.white, align: 'center' });
   });
 }
 label(s, v.knowLabel, M, 5.12, 6, C.mint);

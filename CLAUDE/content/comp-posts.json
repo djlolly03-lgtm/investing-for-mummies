@@ -4,8 +4,8 @@
    "u": "https://www.instagram.com/theimagecode/reel/DaAw9tJtxbf/",
    "t": "comp-thumbs/posts/anjalipiramal-0.jpg",
    "type": "reel",
-   "likes": 371,
-   "likes_str": "371",
+   "likes": 369,
+   "likes_str": "369",
    "comments": 42,
    "owner": "theimagecode",
    "date": "June 25, 2026"
@@ -14,8 +14,8 @@
    "u": "https://www.instagram.com/theimagecode/reel/DZsCJojtbaR/",
    "t": "comp-thumbs/posts/anjalipiramal-1.jpg",
    "type": "reel",
-   "likes": 314,
-   "likes_str": "314",
+   "likes": 312,
+   "likes_str": "312",
    "comments": 26,
    "owner": "theimagecode",
    "date": "June 17, 2026"
@@ -66,6 +66,7 @@
    "u": "https://www.instagram.com/anushkarathod98/p/C3W3bTWNFfP/",
    "t": "comp-thumbs/posts/anushkarathod98-0.jpg",
    "type": "post",
+   "pinned": true,
    "likes": 29000,
    "likes_str": "29K",
    "comments": 659,
@@ -76,6 +77,7 @@
    "u": "https://www.instagram.com/anushkarathod98/p/C89yXf6BfQm/",
    "t": "comp-thumbs/posts/anushkarathod98-1.jpg",
    "type": "post",
+   "pinned": true,
    "likes": 15000,
    "likes_str": "15K",
    "comments": 273,
@@ -86,41 +88,42 @@
    "u": "https://www.instagram.com/anushkarathod98/p/C7EsAfYBf_5/",
    "t": "comp-thumbs/posts/anushkarathod98-2.jpg",
    "type": "post",
+   "pinned": true,
    "likes": 14000,
    "likes_str": "14K",
-   "comments": 422,
+   "comments": 421,
    "owner": "anushkarathod98",
    "date": "May 17, 2024"
   },
   {
-   "u": "https://www.instagram.com/anushkarathod98/reel/DeRoTL1BZOL/",
+   "u": "https://www.instagram.com/anushkarathod98/reel/De19NG1t1Ql/",
    "t": "comp-thumbs/posts/anushkarathod98-3.jpg",
    "type": "reel",
-   "likes": 2445,
-   "likes_str": "2.4K",
-   "comments": 1537,
+   "likes": 5856,
+   "likes_str": "5.9K",
+   "comments": 34,
    "owner": "anushkarathod98",
-   "date": "October 9, 2026"
+   "date": "October 23, 2026"
   },
   {
-   "u": "https://www.instagram.com/anushkarathod98/reel/DePCYJUP38P/",
+   "u": "https://www.instagram.com/anushkarathod98/p/DezFdosGbQf/",
    "t": "comp-thumbs/posts/anushkarathod98-4.jpg",
-   "type": "reel",
-   "likes": 1101,
-   "likes_str": "1.1K",
-   "comments": 12,
+   "type": "post",
+   "likes": 2322,
+   "likes_str": "2.3K",
+   "comments": 74,
    "owner": "anushkarathod98",
-   "date": "October 8, 2026"
+   "date": "October 22, 2026"
   },
   {
-   "u": "https://www.instagram.com/anushkarathod98/p/DeMenAiGTJo/",
+   "u": "https://www.instagram.com/anushkarathod98/reel/DewkWI_sVZJ/",
    "t": "comp-thumbs/posts/anushkarathod98-5.jpg",
-   "type": "post",
-   "likes": 24000,
-   "likes_str": "24K",
-   "comments": 396,
+   "type": "reel",
+   "likes": 2291,
+   "likes_str": "2.3K",
+   "comments": 20,
    "owner": "anushkarathod98",
-   "date": "October 7, 2026"
+   "date": "October 21, 2026"
   }
  ],
  "ca_rachanaranade": [
@@ -128,9 +131,10 @@
    "u": "https://www.instagram.com/ca_rachanaranade/reel/Cg1ae7iDxA6/",
    "t": "comp-thumbs/posts/ca_rachanaranade-0.jpg",
    "type": "reel",
+   "pinned": true,
    "likes": 80000,
    "likes_str": "80K",
-   "comments": 565,
+   "comments": 568,
    "owner": "ca_rachanaranade",
    "date": "August 4, 2022"
   },
@@ -138,6 +142,7 @@
    "u": "https://www.instagram.com/ca_rachanaranade/p/DCTcfAnI7O_/",
    "t": "comp-thumbs/posts/ca_rachanaranade-1.jpg",
    "type": "post",
+   "pinned": true,
    "likes": 96000,
    "likes_str": "96K",
    "comments": 556,
@@ -148,41 +153,42 @@
    "u": "https://www.instagram.com/ca_rachanaranade/reel/DLzqgPwo3t7/",
    "t": "comp-thumbs/posts/ca_rachanaranade-2.jpg",
    "type": "reel",
+   "pinned": true,
    "likes": 98000,
    "likes_str": "98K",
-   "comments": 1504,
+   "comments": 1508,
    "owner": "ca_rachanaranade",
    "date": "July 7, 2025"
   },
   {
-   "u": "https://www.instagram.com/ca_rachanaranade/p/DeYhzkKCCm_/",
+   "u": "https://www.instagram.com/ca_rachanaranade/reel/DeyaTMNMoMJ/",
    "t": "comp-thumbs/posts/ca_rachanaranade-3.jpg",
-   "type": "post",
-   "likes": 38,
-   "likes_str": "38",
-   "comments": 6,
-   "owner": "ca_rachanaranade",
-   "date": "October 11, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/ca_rachanaranade/p/DeV0e0qH5gh/",
-   "t": "comp-thumbs/posts/ca_rachanaranade-4.jpg",
-   "type": "post",
-   "likes": 146,
-   "likes_str": "146",
-   "comments": 20,
-   "owner": "ca_rachanaranade",
-   "date": "October 10, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/ca_rachanaranade/reel/DeTs8IWoPeH/",
-   "t": "comp-thumbs/posts/ca_rachanaranade-5.jpg",
    "type": "reel",
-   "likes": 402,
-   "likes_str": "402",
-   "comments": 6,
+   "likes": 241,
+   "likes_str": "241",
+   "comments": 13,
    "owner": "ca_rachanaranade",
-   "date": "October 10, 2026"
+   "date": "October 22, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/ca_rachanaranade/reel/DewNETYo8m0/",
+   "t": "comp-thumbs/posts/ca_rachanaranade-4.jpg",
+   "type": "reel",
+   "likes": 376,
+   "likes_str": "376",
+   "comments": 7,
+   "owner": "ca_rachanaranade",
+   "date": "October 21, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/ca_rachanaranade/p/DetCLYoB7-j/",
+   "t": "comp-thumbs/posts/ca_rachanaranade-5.jpg",
+   "type": "post",
+   "likes": 158,
+   "likes_str": "158",
+   "comments": 3,
+   "owner": "ca_rachanaranade",
+   "date": "October 19, 2026"
   }
  ],
  "ellevest": [
@@ -190,55 +196,68 @@
    "u": "https://www.instagram.com/ellevest/p/Dcwwm8eILi_/",
    "t": "comp-thumbs/posts/ellevest-0.jpg",
    "type": "post",
+   "pinned": true,
+   "likes": null,
+   "likes_str": null,
+   "comments": null,
    "owner": "ellevest",
    "date": "September 1, 2026",
-   "likes": null
+   "counts_hidden": true
   },
   {
    "u": "https://www.instagram.com/ellevest/p/DSkhgRBkqXT/",
    "t": "comp-thumbs/posts/ellevest-1.jpg",
    "type": "post",
+   "pinned": true,
+   "likes": null,
+   "likes_str": null,
+   "comments": null,
    "owner": "ellevest",
    "date": "December 22, 2025",
-   "likes": null
+   "counts_hidden": true
   },
   {
    "u": "https://www.instagram.com/ellevest/p/DV6c2wqkiAQ/",
    "t": "comp-thumbs/posts/ellevest-2.jpg",
    "type": "post",
-   "likes": 1256,
+   "pinned": true,
+   "likes": 1259,
    "likes_str": "1.3K",
    "comments": 13,
    "owner": "ellevest",
    "date": "March 15, 2026"
   },
   {
-   "u": "https://www.instagram.com/ellevest/reel/DeSlqMvPjWt/",
+   "u": "https://www.instagram.com/bymichelletoh/reel/De0YyJtlWUS/",
    "t": "comp-thumbs/posts/ellevest-3.jpg",
    "type": "reel",
-   "likes": 583,
-   "likes_str": "583",
-   "comments": 4,
-   "owner": "ellevest",
-   "date": "October 9, 2026"
+   "likes": null,
+   "likes_str": null,
+   "comments": null,
+   "owner": "bymichelletoh",
+   "date": "October 22, 2026",
+   "counts_hidden": true
   },
   {
-   "u": "https://www.instagram.com/whatiwishiknew_/reel/DePwhAuSkbf/",
+   "u": "https://www.instagram.com/thegrand.world/p/DesMCV_GEGB/",
    "t": "comp-thumbs/posts/ellevest-4.jpg",
-   "type": "reel",
-   "likes": 25,
-   "likes_str": "25",
-   "comments": 8,
-   "owner": "whatiwishiknew_",
-   "date": "October 8, 2026"
+   "type": "post",
+   "likes": null,
+   "likes_str": null,
+   "comments": null,
+   "owner": "thegrand.world",
+   "date": "October 19, 2026",
+   "counts_hidden": true
   },
   {
-   "u": "https://www.instagram.com/ellevest/p/DeH4o_viRu4/",
+   "u": "https://www.instagram.com/whatiwishiknew_/p/DehbTuDoEMA/",
    "t": "comp-thumbs/posts/ellevest-5.jpg",
    "type": "post",
-   "owner": "ellevest",
-   "date": "October 5, 2026",
-   "likes": null
+   "likes": 838,
+   "likes_str": "838",
+   "comments": 17,
+   "owner": "whatiwishiknew_",
+   "date": "October 15, 2026"
   }
  ],
  "herfirst100k": [
@@ -246,9 +265,10 @@
    "u": "https://www.instagram.com/herfirst100k/p/Ddzwjs6j5KR/",
    "t": "comp-thumbs/posts/herfirst100k-0.jpg",
    "type": "post",
-   "likes": 4061,
-   "likes_str": "4.1K",
-   "comments": 1244,
+   "pinned": true,
+   "likes": 4211,
+   "likes_str": "4.2K",
+   "comments": 1401,
    "owner": "herfirst100k",
    "date": "September 27, 2026"
   },
@@ -256,9 +276,10 @@
    "u": "https://www.instagram.com/herfirst100k/p/DU4KmBPD6-7/",
    "t": "comp-thumbs/posts/herfirst100k-1.jpg",
    "type": "post",
-   "likes": 2173,
+   "pinned": true,
+   "likes": 2211,
    "likes_str": "2.2K",
-   "comments": 1773,
+   "comments": 1794,
    "owner": "herfirst100k",
    "date": "February 17, 2026"
   },
@@ -266,339 +287,361 @@
    "u": "https://www.instagram.com/herfirst100k/p/CnSWF70pRlk/",
    "t": "comp-thumbs/posts/herfirst100k-2.jpg",
    "type": "post",
+   "pinned": true,
    "likes": 12000,
    "likes_str": "12K",
-   "comments": 1283,
+   "comments": 1282,
    "owner": "herfirst100k",
    "date": "January 11, 2023"
   },
   {
-   "u": "https://www.instagram.com/the_human_design_coach/reel/DeXms1QTb2t/",
+   "u": "https://www.instagram.com/herfirst100k/p/De7nAT_k1Uk/",
    "t": "comp-thumbs/posts/herfirst100k-3.jpg",
-   "type": "reel",
-   "likes": 257,
-   "likes_str": "257",
-   "comments": 8,
-   "owner": "the_human_design_coach",
-   "date": "October 11, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/herfirst100k/p/DeUdhX4mzWv/",
-   "t": "comp-thumbs/posts/herfirst100k-4.jpg",
    "type": "post",
-   "likes": 2536,
-   "likes_str": "2.5K",
-   "comments": 159,
+   "likes": 131,
+   "likes_str": "131",
+   "comments": 165,
    "owner": "herfirst100k",
-   "date": "October 10, 2026"
+   "date": "October 25, 2026"
   },
   {
-   "u": "https://www.instagram.com/herfirst100k/reel/DeSgIEdBN5c/",
-   "t": "comp-thumbs/posts/herfirst100k-5.jpg",
+   "u": "https://www.instagram.com/herfirst100k/reel/De46oiOhYMK/",
+   "t": "comp-thumbs/posts/herfirst100k-4.jpg",
    "type": "reel",
-   "likes": 281,
-   "likes_str": "281",
-   "comments": 174,
+   "likes": 3059,
+   "likes_str": "3.1K",
+   "comments": 86,
    "owner": "herfirst100k",
-   "date": "October 9, 2026"
+   "date": "October 24, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/herfirst100k/p/Dezh3LrGA-0/",
+   "t": "comp-thumbs/posts/herfirst100k-5.jpg",
+   "type": "post",
+   "likes": 377,
+   "likes_str": "377",
+   "comments": 1593,
+   "owner": "herfirst100k",
+   "date": "October 22, 2026"
   }
  ],
  "hermoneytalks": [
   {
-   "u": "https://www.instagram.com/hermoneytalks/p/DeTdUt4gtY6/",
+   "u": "https://www.instagram.com/mathrubhumiwealth/reel/De1nw6EjzDz/",
    "t": "comp-thumbs/posts/hermoneytalks-0.jpg",
-   "type": "post",
-   "likes": 3,
-   "likes_str": "3",
-   "comments": 2,
-   "owner": "hermoneytalks",
-   "date": "October 9, 2026"
+   "type": "reel",
+   "likes": 59,
+   "likes_str": "59",
+   "comments": 0,
+   "owner": "mathrubhumiwealth",
+   "date": "October 23, 2026"
   },
   {
-   "u": "https://www.instagram.com/hermoneytalks/p/DeOwMMaAgAt/",
+   "u": "https://www.instagram.com/inherinterest/p/DewOINZiW-j/",
    "t": "comp-thumbs/posts/hermoneytalks-1.jpg",
    "type": "post",
-   "likes": 1,
-   "likes_str": "1",
-   "comments": 2,
-   "owner": "hermoneytalks",
-   "date": "October 8, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/hermoneytalks/p/DeJaQEHApNt/",
-   "t": "comp-thumbs/posts/hermoneytalks-2.jpg",
-   "type": "post",
-   "likes": 1,
-   "likes_str": "1",
+   "likes": 22,
+   "likes_str": "22",
    "comments": 1,
-   "owner": "hermoneytalks",
-   "date": "October 6, 2026"
+   "owner": "inherinterest",
+   "date": "October 21, 2026"
   },
   {
-   "u": "https://www.instagram.com/hermoneytalks/reel/Dd55Y4HofGj/",
-   "t": "comp-thumbs/posts/hermoneytalks-3.jpg",
+   "u": "https://www.instagram.com/hermoneytalks/reel/Des-q68IHjv/",
+   "t": "comp-thumbs/posts/hermoneytalks-2.jpg",
    "type": "reel",
    "likes": 1,
    "likes_str": "1",
    "comments": 0,
    "owner": "hermoneytalks",
-   "date": "September 30, 2026"
+   "date": "October 19, 2026"
   },
   {
-   "u": "https://www.instagram.com/hermoneytalks/p/Dd3UJ9vgt8G/",
+   "u": "https://www.instagram.com/hermoneytalks/reel/Dei8ktNBGFX/",
+   "t": "comp-thumbs/posts/hermoneytalks-3.jpg",
+   "type": "reel",
+   "likes": 0,
+   "likes_str": "0",
+   "comments": 1,
+   "owner": "hermoneytalks",
+   "date": "October 15, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/hermoneytalks/p/Degr6n3F7Y-/",
    "t": "comp-thumbs/posts/hermoneytalks-4.jpg",
    "type": "post",
    "likes": 4,
    "likes_str": "4",
-   "comments": 1,
+   "comments": 0,
    "owner": "hermoneytalks",
-   "date": "September 29, 2026"
+   "date": "October 15, 2026"
   },
   {
-   "u": "https://www.instagram.com/hermoneytalks/reel/DdyjzvRgvU6/",
+   "u": "https://www.instagram.com/hermoneytalks/p/DebvhEaF9SZ/",
    "t": "comp-thumbs/posts/hermoneytalks-5.jpg",
-   "type": "reel",
-   "likes": 5,
-   "likes_str": "5",
-   "comments": 1,
+   "type": "post",
+   "likes": 2,
+   "likes_str": "2",
+   "comments": 3,
    "owner": "hermoneytalks",
-   "date": "September 27, 2026"
+   "date": "October 13, 2026"
   }
  ],
  "lxmeofficial": [
   {
-   "u": "https://www.instagram.com/lxmeofficial/reel/Dd30Z_BiVMw/",
+   "u": "https://www.instagram.com/lxmeofficial/p/Devx3FjDmg9/",
    "t": "comp-thumbs/posts/lxmeofficial-0.jpg",
-   "type": "reel",
-   "likes": 128,
-   "likes_str": "128",
-   "comments": 57,
+   "type": "post",
+   "pinned": true,
+   "likes": 328,
+   "likes_str": "328",
+   "comments": 22,
    "owner": "lxmeofficial",
-   "date": "September 29, 2026"
+   "date": "October 20, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/lxmeofficial/reel/DehBI6hjJY3/",
+   "t": "comp-thumbs/posts/lxmeofficial-1.jpg",
+   "type": "reel",
+   "pinned": true,
+   "likes": 49,
+   "likes_str": "49",
+   "comments": 0,
+   "owner": "lxmeofficial",
+   "date": "October 15, 2026"
   },
   {
    "u": "https://www.instagram.com/lxmeofficial/p/Dd8HcKFDAzK/",
-   "t": "comp-thumbs/posts/lxmeofficial-1.jpg",
+   "t": "comp-thumbs/posts/lxmeofficial-2.jpg",
    "type": "post",
-   "likes": 14,
-   "likes_str": "14",
+   "pinned": true,
+   "likes": 18,
+   "likes_str": "18",
    "comments": 0,
    "owner": "lxmeofficial",
    "date": "September 30, 2026"
   },
   {
-   "u": "https://www.instagram.com/lxmeofficial/p/DdGFryxjBbX/",
-   "t": "comp-thumbs/posts/lxmeofficial-2.jpg",
-   "type": "post",
-   "likes": 589,
-   "likes_str": "589",
-   "comments": 17,
-   "owner": "lxmeofficial",
-   "date": "September 9, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/lxmeofficial/p/DeYgSt7Dgp-/",
+   "u": "https://www.instagram.com/lxmeofficial/reel/De6xA7ngcVJ/",
    "t": "comp-thumbs/posts/lxmeofficial-3.jpg",
-   "type": "post",
-   "likes": 9,
-   "likes_str": "9",
+   "type": "reel",
+   "likes": 10,
+   "likes_str": "10",
    "comments": 0,
    "owner": "lxmeofficial",
-   "date": "October 11, 2026"
+   "date": "October 25, 2026"
   },
   {
-   "u": "https://www.instagram.com/lxmeofficial/p/DeVs_aZCNtx/",
+   "u": "https://www.instagram.com/lxmeofficial/reel/De4MOHwj3qL/",
    "t": "comp-thumbs/posts/lxmeofficial-4.jpg",
-   "type": "post",
-   "likes": 54,
-   "likes_str": "54",
+   "type": "reel",
+   "likes": 18,
+   "likes_str": "18",
    "comments": 0,
    "owner": "lxmeofficial",
-   "date": "October 10, 2026"
+   "date": "October 24, 2026"
   },
   {
-   "u": "https://www.instagram.com/lxmeofficial/reel/DeUJK0SgWRq/",
+   "u": "https://www.instagram.com/lxmeofficial/reel/De1nbv-Ce0z/",
    "t": "comp-thumbs/posts/lxmeofficial-5.jpg",
    "type": "reel",
-   "likes": 19,
-   "likes_str": "19",
-   "comments": 1,
+   "likes": 14,
+   "likes_str": "14",
+   "comments": 0,
    "owner": "lxmeofficial",
-   "date": "October 10, 2026"
+   "date": "October 23, 2026"
   }
  ],
  "monikahalan": [
   {
-   "u": "https://www.instagram.com/monikahalan/p/DeYQ5BFzLtF/",
+   "u": "https://www.instagram.com/monikahalan/reel/De6vfRJTUgj/",
    "t": "comp-thumbs/posts/monikahalan-0.jpg",
-   "type": "post",
+   "type": "reel",
    "likes": 6,
    "likes_str": "6",
-   "comments": 0,
-   "owner": "monikahalan",
-   "date": "October 11, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/monikahalan/p/DeWDQhyTBA3/",
-   "t": "comp-thumbs/posts/monikahalan-1.jpg",
-   "type": "post",
-   "likes": 5,
-   "likes_str": "5",
-   "comments": 0,
-   "owner": "monikahalan",
-   "date": "October 10, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/monikahalan/p/DeURTobTogM/",
-   "t": "comp-thumbs/posts/monikahalan-2.jpg",
-   "type": "post",
-   "likes": 9,
-   "likes_str": "9",
-   "comments": 0,
-   "owner": "monikahalan",
-   "date": "October 10, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/monikahalan/p/DeUFFkfT7yb/",
-   "t": "comp-thumbs/posts/monikahalan-3.jpg",
-   "type": "post",
-   "likes": 17,
-   "likes_str": "17",
-   "comments": 0,
-   "owner": "monikahalan",
-   "date": "October 10, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/monikahalan/p/DeTuBEdE7kJ/",
-   "t": "comp-thumbs/posts/monikahalan-4.jpg",
-   "type": "post",
-   "likes": 20,
-   "likes_str": "20",
-   "comments": 0,
-   "owner": "monikahalan",
-   "date": "October 10, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/monikahalan/p/DeTK7KdzTQ-/",
-   "t": "comp-thumbs/posts/monikahalan-5.jpg",
-   "type": "post",
-   "likes": 9,
-   "likes_str": "9",
    "comments": 1,
    "owner": "monikahalan",
-   "date": "October 9, 2026"
+   "date": "October 25, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/monikahalan/reel/De4J6BFztsy/",
+   "t": "comp-thumbs/posts/monikahalan-1.jpg",
+   "type": "reel",
+   "likes": 19,
+   "likes_str": "19",
+   "comments": 0,
+   "owner": "monikahalan",
+   "date": "October 24, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/monikahalan/p/DeyxkN5kzEt/",
+   "t": "comp-thumbs/posts/monikahalan-2.jpg",
+   "type": "post",
+   "likes": 16,
+   "likes_str": "16",
+   "comments": 0,
+   "owner": "monikahalan",
+   "date": "October 22, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/monikahalan/reel/DewMb__zbUD/",
+   "t": "comp-thumbs/posts/monikahalan-3.jpg",
+   "type": "reel",
+   "likes": 8,
+   "likes_str": "8",
+   "comments": 0,
+   "owner": "monikahalan",
+   "date": "October 21, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/monikahalan/p/DetoeK6k5dV/",
+   "t": "comp-thumbs/posts/monikahalan-4.jpg",
+   "type": "post",
+   "likes": 13,
+   "likes_str": "13",
+   "comments": 2,
+   "owner": "monikahalan",
+   "date": "October 20, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/monikahalan/reel/DerC4jMz46Y/",
+   "t": "comp-thumbs/posts/monikahalan-5.jpg",
+   "type": "reel",
+   "likes": 16,
+   "likes_str": "16",
+   "comments": 0,
+   "owner": "monikahalan",
+   "date": "October 19, 2026"
   }
  ],
  "nehanagar": [
   {
-   "u": "https://www.instagram.com/nehanagar/p/Dd8yjdQE0W5/",
+   "u": "https://www.instagram.com/nehanagar/p/DeqluIlEfQJ/",
    "t": "comp-thumbs/posts/nehanagar-0.jpg",
    "type": "post",
-   "likes": 548,
-   "likes_str": "548",
+   "likes": 678,
+   "likes_str": "678",
+   "comments": 31,
+   "owner": "nehanagar",
+   "date": "October 18, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/priyankanagar/reel/Deb9acQRtu1/",
+   "t": "comp-thumbs/posts/nehanagar-1.jpg",
+   "type": "reel",
+   "likes": 249,
+   "likes_str": "249",
+   "comments": 13,
+   "owner": "priyankanagar",
+   "date": "October 13, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/nehanagar/p/Dd8yjdQE0W5/",
+   "t": "comp-thumbs/posts/nehanagar-2.jpg",
+   "type": "post",
+   "likes": 565,
+   "likes_str": "565",
    "comments": 38,
    "owner": "nehanagar",
    "date": "October 1, 2026"
   },
   {
    "u": "https://www.instagram.com/nehanagar/p/Ddy31HPE4Gp/",
-   "t": "comp-thumbs/posts/nehanagar-1.jpg",
+   "t": "comp-thumbs/posts/nehanagar-3.jpg",
    "type": "post",
-   "likes": 384,
-   "likes_str": "384",
+   "likes": 400,
+   "likes_str": "400",
    "comments": 27,
    "owner": "nehanagar",
    "date": "September 27, 2026"
   },
   {
    "u": "https://www.instagram.com/priyankanagar/p/DdvwpHrGZN0/",
-   "t": "comp-thumbs/posts/nehanagar-2.jpg",
+   "t": "comp-thumbs/posts/nehanagar-4.jpg",
    "type": "post",
-   "likes": 355,
-   "likes_str": "355",
-   "comments": 19,
+   "likes": 363,
+   "likes_str": "363",
+   "comments": 20,
    "owner": "priyankanagar",
    "date": "September 26, 2026"
   },
   {
    "u": "https://www.instagram.com/priyankanagar/p/DdlvIvSDSok/",
-   "t": "comp-thumbs/posts/nehanagar-3.jpg",
-   "type": "post",
-   "likes": 371,
-   "likes_str": "371",
-   "comments": 15,
-   "owner": "priyankanagar",
-   "date": "September 22, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/priyankanagar/p/DdggQQbDYo7/",
-   "t": "comp-thumbs/posts/nehanagar-4.jpg",
-   "type": "post",
-   "likes": 228,
-   "likes_str": "228",
-   "comments": 12,
-   "owner": "priyankanagar",
-   "date": "September 20, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/nehanagar/p/DdWV-EUAb0g/",
    "t": "comp-thumbs/posts/nehanagar-5.jpg",
    "type": "post",
-   "likes": 378,
-   "likes_str": "378",
-   "comments": 31,
-   "owner": "nehanagar",
-   "date": "September 16, 2026"
+   "likes": 379,
+   "likes_str": "379",
+   "comments": 17,
+   "owner": "priyankanagar",
+   "date": "September 22, 2026"
   }
  ],
  "shreyaakapoor_": [
   {
-   "u": "https://www.instagram.com/shreyaakapoor_/reel/DdwTdC0sNPr/",
+   "u": "https://www.instagram.com/shreyaakapoor_/reel/DeyEeUuJtE8/",
    "t": "comp-thumbs/posts/shreyaakapoor_-0.jpg",
    "type": "reel",
+   "likes": null,
+   "likes_str": null,
+   "comments": null,
+   "owner": "shreyaakapoor_",
+   "date": "October 21, 2026",
+   "counts_hidden": true
+  },
+  {
+   "u": "https://www.instagram.com/shreyaakapoor_/reel/DeuFRx1hMxa/",
+   "t": "comp-thumbs/posts/shreyaakapoor_-1.jpg",
+   "type": "reel",
+   "likes": null,
+   "likes_str": null,
+   "comments": null,
+   "owner": "shreyaakapoor_",
+   "date": "October 20, 2026",
+   "counts_hidden": true
+  },
+  {
+   "u": "https://www.instagram.com/shreyaakapoor_/reel/DemMihHOgi8/",
+   "t": "comp-thumbs/posts/shreyaakapoor_-2.jpg",
+   "type": "reel",
+   "likes": null,
+   "likes_str": null,
+   "comments": null,
+   "owner": "shreyaakapoor_",
+   "date": "October 17, 2026",
+   "counts_hidden": true
+  },
+  {
+   "u": "https://www.instagram.com/shreyaakapoor_/reel/DdwTdC0sNPr/",
+   "t": "comp-thumbs/posts/shreyaakapoor_-3.jpg",
+   "type": "reel",
+   "likes": null,
+   "likes_str": null,
+   "comments": null,
    "owner": "shreyaakapoor_",
    "date": "September 26, 2026",
-   "likes": null
+   "counts_hidden": true
   },
   {
    "u": "https://www.instagram.com/shreyaakapoor_/reel/DdHJGbuy5KL/",
-   "t": "comp-thumbs/posts/shreyaakapoor_-1.jpg",
+   "t": "comp-thumbs/posts/shreyaakapoor_-4.jpg",
    "type": "reel",
+   "likes": null,
+   "likes_str": null,
+   "comments": null,
    "owner": "shreyaakapoor_",
    "date": "September 10, 2026",
-   "likes": null
+   "counts_hidden": true
   },
   {
    "u": "https://www.instagram.com/shreyaakapoor_/reel/Dc6K_ERN8w1/",
-   "t": "comp-thumbs/posts/shreyaakapoor_-2.jpg",
-   "type": "reel",
-   "owner": "shreyaakapoor_",
-   "date": "September 5, 2026",
-   "likes": null
-  },
-  {
-   "u": "https://www.instagram.com/shreyaakapoor_/reel/DcBhLHPv6rr/",
-   "t": "comp-thumbs/posts/shreyaakapoor_-3.jpg",
-   "type": "reel",
-   "owner": "shreyaakapoor_",
-   "date": "August 14, 2026",
-   "likes": null
-  },
-  {
-   "u": "https://www.instagram.com/shreyaakapoor_/reel/Dbirbmkvkd8/",
-   "t": "comp-thumbs/posts/shreyaakapoor_-4.jpg",
-   "type": "reel",
-   "owner": "shreyaakapoor_",
-   "date": "August 2, 2026",
-   "likes": null
-  },
-  {
-   "u": "https://www.instagram.com/shreyaakapoor_/reel/Dba6CyXhaJQ/",
    "t": "comp-thumbs/posts/shreyaakapoor_-5.jpg",
    "type": "reel",
+   "likes": null,
+   "likes_str": null,
+   "comments": null,
    "owner": "shreyaakapoor_",
-   "date": "July 30, 2026",
-   "likes": null
+   "date": "September 5, 2026",
+   "counts_hidden": true
   }
  ],
  "vinitashares": [
@@ -606,9 +649,10 @@
    "u": "https://www.instagram.com/vinitashares/p/DX_DcAWj1fS/",
    "t": "comp-thumbs/posts/vinitashares-0.jpg",
    "type": "post",
-   "likes": 2723,
+   "pinned": true,
+   "likes": 2726,
    "likes_str": "2.7K",
-   "comments": 120,
+   "comments": 119,
    "owner": "vinitashares",
    "date": "May 5, 2026"
   },
@@ -616,8 +660,9 @@
    "u": "https://www.instagram.com/vinitashares/reel/DQopGlkjyak/",
    "t": "comp-thumbs/posts/vinitashares-1.jpg",
    "type": "reel",
-   "likes": 696,
-   "likes_str": "696",
+   "pinned": true,
+   "likes": 697,
+   "likes_str": "697",
    "comments": 15,
    "owner": "vinitashares",
    "date": "November 4, 2025"
@@ -626,6 +671,7 @@
    "u": "https://www.instagram.com/vinitashares/p/DN7p1-tj1SL/",
    "t": "comp-thumbs/posts/vinitashares-2.jpg",
    "type": "post",
+   "pinned": true,
    "likes": 34,
    "likes_str": "34",
    "comments": 7,
@@ -633,34 +679,34 @@
    "date": "August 29, 2025"
   },
   {
-   "u": "https://www.instagram.com/vinitashares/p/DeV-83qD_G6/",
+   "u": "https://www.instagram.com/vinitashares/reel/De6uVXCPAE0/",
    "t": "comp-thumbs/posts/vinitashares-3.jpg",
-   "type": "post",
-   "likes": 14,
-   "likes_str": "14",
-   "comments": 0,
-   "owner": "vinitashares",
-   "date": "October 10, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/vinitashares/p/DeL5EQbD1Vs/",
-   "t": "comp-thumbs/posts/vinitashares-4.jpg",
-   "type": "post",
-   "likes": 18,
-   "likes_str": "18",
-   "comments": 0,
-   "owner": "vinitashares",
-   "date": "October 7, 2026"
-  },
-  {
-   "u": "https://www.instagram.com/vinitashares/p/DeJt4Huj9cs/",
-   "t": "comp-thumbs/posts/vinitashares-5.jpg",
-   "type": "post",
-   "likes": 28,
-   "likes_str": "28",
+   "type": "reel",
+   "likes": 10,
+   "likes_str": "10",
    "comments": 2,
    "owner": "vinitashares",
-   "date": "October 6, 2026"
+   "date": "October 25, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/vinitashares/reel/De4W0xivXDN/",
+   "t": "comp-thumbs/posts/vinitashares-4.jpg",
+   "type": "reel",
+   "likes": 13,
+   "likes_str": "13",
+   "comments": 0,
+   "owner": "vinitashares",
+   "date": "October 24, 2026"
+  },
+  {
+   "u": "https://www.instagram.com/vinitashares/p/De2KSyAPjAA/",
+   "t": "comp-thumbs/posts/vinitashares-5.jpg",
+   "type": "post",
+   "likes": 83,
+   "likes_str": "83",
+   "comments": 1,
+   "owner": "vinitashares",
+   "date": "October 23, 2026"
   }
  ],
  "_meta": {
@@ -676,82 +722,83 @@
    "foreign_posts": 5
   },
   "anushkarathod98": {
-   "avg_likes": 14258,
-   "avg_likes_str": "14.3K",
+   "avg_likes": 11412,
+   "avg_likes_str": "11.4K",
    "top_likes_str": "29K",
    "n": 6,
-   "avg_likes_recent": 9182,
-   "avg_likes_recent_str": "9.2K",
+   "avg_likes_recent": 3490,
+   "avg_likes_recent_str": "3.5K",
    "recent_n": 3,
    "pinned_old_posts": 3
   },
   "ca_rachanaranade": {
-   "avg_likes": 45764,
+   "avg_likes": 45796,
    "avg_likes_str": "45.8K",
    "top_likes_str": "98K",
    "n": 6,
-   "avg_likes_recent": 195,
-   "avg_likes_recent_str": "195",
+   "avg_likes_recent": 258,
+   "avg_likes_recent_str": "258",
    "recent_n": 3,
    "pinned_old_posts": 3
   },
   "ellevest": {
-   "avg_likes": 920,
-   "avg_likes_str": "920",
+   "avg_likes": 1259,
+   "avg_likes_str": "1.3K",
    "top_likes_str": "1.3K",
-   "n": 2,
-   "avg_likes_recent": 583,
-   "avg_likes_recent_str": "583",
-   "recent_n": 1,
-   "pinned_old_posts": 1,
-   "foreign_posts": 1,
-   "counts_hidden": 3
+   "n": 1,
+   "avg_likes_recent": null,
+   "recent_n": 0,
+   "pinned_old_posts": 3,
+   "thin_sample": true,
+   "foreign_posts": 3,
+   "counts_hidden": 2
   },
   "herfirst100k": {
-   "avg_likes": 4210,
-   "avg_likes_str": "4.2K",
+   "avg_likes": 3665,
+   "avg_likes_str": "3.7K",
    "top_likes_str": "12K",
-   "n": 5,
-   "avg_likes_recent": 2293,
-   "avg_likes_recent_str": "2.3K",
+   "n": 6,
+   "avg_likes_recent": 1189,
+   "avg_likes_recent_str": "1.2K",
    "recent_n": 3,
-   "pinned_old_posts": 2,
-   "foreign_posts": 1
+   "pinned_old_posts": 3
   },
   "hermoneytalks": {
    "avg_likes": 2,
    "avg_likes_str": "2",
-   "top_likes_str": "5",
-   "n": 6,
+   "top_likes_str": "4",
+   "n": 4,
    "avg_likes_recent": 2,
    "avg_likes_recent_str": "2",
-   "recent_n": 6
+   "recent_n": 4,
+   "foreign_posts": 2
   },
   "lxmeofficial": {
-   "avg_likes": 136,
-   "avg_likes_str": "136",
-   "top_likes_str": "589",
+   "avg_likes": 73,
+   "avg_likes_str": "73",
+   "top_likes_str": "328",
    "n": 6,
-   "avg_likes_recent": 45,
-   "avg_likes_recent_str": "45",
-   "recent_n": 5
+   "avg_likes_recent": 14,
+   "avg_likes_recent_str": "14",
+   "recent_n": 3,
+   "pinned_old_posts": 3
   },
   "monikahalan": {
-   "avg_likes": 11,
-   "avg_likes_str": "11",
-   "top_likes_str": "20",
+   "avg_likes": 13,
+   "avg_likes_str": "13",
+   "top_likes_str": "19",
    "n": 6,
-   "avg_likes_recent": 11,
-   "avg_likes_recent_str": "11",
+   "avg_likes_recent": 13,
+   "avg_likes_recent_str": "13",
    "recent_n": 6
   },
   "nehanagar": {
-   "avg_likes": 437,
-   "avg_likes_str": "437",
-   "top_likes_str": "548",
+   "avg_likes": 548,
+   "avg_likes_str": "548",
+   "top_likes_str": "678",
    "n": 3,
-   "avg_likes_recent": 437,
-   "avg_likes_recent_str": "437",
+   "avg_likes_recent": 548,
+   "avg_likes_recent_str": "548",
    "recent_n": 3,
    "foreign_posts": 3
   },
@@ -762,15 +809,15 @@
    "counts_hidden": 6
   },
   "vinitashares": {
-   "avg_likes": 586,
-   "avg_likes_str": "586",
+   "avg_likes": 594,
+   "avg_likes_str": "594",
    "top_likes_str": "2.7K",
    "n": 6,
-   "avg_likes_recent": 20,
-   "avg_likes_recent_str": "20",
+   "avg_likes_recent": 35,
+   "avg_likes_recent_str": "35",
    "recent_n": 3,
    "pinned_old_posts": 3
   },
-  "_captured_at": "2026-10-12"
+  "_captured_at": "2026-10-26"
  }
 }
