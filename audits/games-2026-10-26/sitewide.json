@@ -1,0 +1,46 @@
+{"group":"sitewide","games":[
+{"slug":"_every-game","title":"Every game (one shared change, applied everywhere)","url":"https://games.investingformummies.com/","file":"all game pages","kind":"site","audience":"Both",
+ "verdict":"Every game is a dead end today: none of the 21 checked game pages links back to the games homepage, to the IFM site, or to booking, and none can be shared.",
+ "load":"—","share_idea":"","share_moment":"",
+ "items":[
+  {"area":"Navigation","priority":"High","effort":"M","text":"Add one slim shared top bar to every game: IFM logo (goes to the games homepage), 'All games' and 'investingformummies.com' links — built once and dropped into every page so it never drifts."},
+  {"area":"Share","priority":"High","effort":"M","text":"Add one shared 'Share on WhatsApp' button component that every game can call with its own message (the player's result + a hook + the game's link); per-game wording is listed under each game below."},
+  {"area":"Conversion","priority":"High","effort":"M","text":"Add one shared end-of-game card: 'That was a few minutes of the course' + 'Find your batch' (register.investingformummies.com) + 'Play another' — gentle, after the result, never mid-game."},
+  {"area":"Navigation","priority":"Med","effort":"S","text":"Stop opening games in a new browser tab from the homepage once every game has its own way back; new tabs pile up on phones."},
+  {"area":"Speed","priority":"High","effort":"L","text":"Pre-build the 9 games that compile their code on the visitor's phone (Inflation Calculator, Market Pulse, IPO Bonanza, My First Trade, Debt Boss, Asset Boss, Swayamvar, Stock Rush PRO, Stock Rush) and switch off the slow 'developer' React build."},
+  {"area":"Speed","priority":"Med","effort":"S","text":"Turn on browser caching for the games site (images, scripts, styles), so returning players don't re-download everything — www already does this."},
+  {"area":"Share","priority":"Med","effort":"M","text":"Give each game its own share picture (a screenshot of the game) instead of the one generic games image, so WhatsApp previews show the actual game."},
+  {"area":"Conversion","priority":"Med","effort":"M","text":"Track game_started, game_completed and share_clicked in PostHog for every game, so you can see which games people finish and which ones lead to bookings."},
+  {"area":"Compliance","priority":"High","effort":"S","text":"Wherever a game projects future money, show the assumed return on screen (e.g. 'assumes 12% a year — illustrative, not guaranteed'); the general disclaimer line alone isn't enough."}
+ ]},
+{"slug":"_old-address","title":"Old ifm-deploy.vercel.app address","url":"https://games.investingformummies.com/","file":"several","kind":"site","audience":"Both",
+ "verdict":"The old Vercel address still reaches players in share messages and the Swayamvar join code; it works, but looks unbranded and untrustworthy on a phone.",
+ "load":"—","share_idea":"","share_moment":"",
+ "items":[
+  {"area":"Bug","priority":"High","effort":"S","text":"Swayamvar's join QR code sends players to ifm-deploy.vercel.app/swayamvar — switch it to games.investingformummies.com/swayamvar (file swayamvar/ui-common.js)."},
+  {"area":"Bug","priority":"High","effort":"S","text":"Fund YOUR Goal, Goal Tracker and the classic hub's share messages say 'Plan yours free: ifm-deploy.vercel.app' — change to the games address."},
+  {"area":"Bug","priority":"Med","effort":"S","text":"The classic hub loads its embedded games from ifm-deploy.vercel.app — switch to relative links so they load from the same site."},
+  {"area":"Bug","priority":"Low","effort":"S","text":"Move the images still pulled from ifm-deploy.vercel.app (Crorepati Lane, Money Map, Quiz, Sapno Ka Ghar, Slash the Scam, MF Manager art) to relative paths."}
+ ]},
+{"slug":"_games-home","title":"Games homepage + All games","url":"https://games.investingformummies.com/","file":"index.html, all-games.html","kind":"site","audience":"Both",
+ "verdict":"Three different 'homes' (homepage, All games, classic hub), emoji instead of real game art, and leftover mockup text on the live page.",
+ "load":"31 KB page; fast","share_idea":"","share_moment":"",
+ "items":[
+  {"area":"Bug","priority":"High","effort":"S","text":"Remove the leftover design-file text 'After every game, one line (sample)' from the live homepage."},
+  {"area":"Layout","priority":"High","effort":"L","text":"Redo the homepage as ONE hub with three sections — Play (solo games), Tools (calculators), In class (host screens) — replacing both the homepage and the All games page; show 2–3 design options first."},
+  {"area":"Layout","priority":"High","effort":"M","text":"Replace the emoji on game tiles with real screenshots or illustrations of each game, so people can see what they're about to play."},
+  {"area":"Layout","priority":"Med","effort":"M","text":"Add filters people actually think in: topic, time to play (2 / 5 / 10 min), Mums or Gen Next, play alone or in class."},
+  {"area":"Layout","priority":"Med","effort":"S","text":"Pick a finished, polished game as 'Today's game' and rotate it weekly, instead of a fixed one."},
+  {"area":"Copy","priority":"Low","effort":"S","text":"Make the game count consistent everywhere ('50+ games and tools') across www, the games homepage and All games."},
+  {"area":"Navigation","priority":"Med","effort":"L","text":"Retire the classic hub once its calculators and beta games have their own pages; redirect /classic to the new hub."}
+ ]},
+{"slug":"_tools","title":"Tools section (calculators)","url":"https://games.investingformummies.com/tools","file":"new","kind":"site","audience":"Mummies",
+ "verdict":"The calculators are the pages people search Google for, but they're buried inside the 3 MB classic hub. Give them their own section.",
+ "load":"—","share_idea":"","share_moment":"",
+ "items":[
+  {"area":"Layout","priority":"High","effort":"L","text":"Create games.investingformummies.com/tools with one fast page per calculator (SIP, SWP, retirement, education, holiday, budget, asset allocation, dividend, goal planner, goal tracker) — a section, not a new subdomain, so it's one site, one analytics, one Google ranking."},
+  {"area":"Conversion","priority":"Med","effort":"S","text":"Give each tool a 'Learn this properly in class' link and a WhatsApp 'share my plan' button."},
+  {"area":"Speed","priority":"Med","effort":"S","text":"Add the tools to the sitemap with their own titles and descriptions so Google can find 'SIP calculator' etc."},
+  {"area":"Navigation","priority":"Med","effort":"S","text":"Link 'Free money tools' from www's menu and footer as well as from the games hub."}
+ ]}
+]}

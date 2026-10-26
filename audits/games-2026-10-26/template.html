@@ -1,0 +1,234 @@
+<title>IFM Games Fix List</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: one working column — sticky progress + filters, then a card per game with tickable rows. IFM brand: navy / teal / gold, Lora + Nunito. */
+:root{
+  --bg:#f5f8f7; --surface:#ffffff; --ink:#1a3a5c; --muted:#5a7480; --line:#dbe6e3;
+  --teal:#1f7a70; --teal-soft:#e2f2ef; --gold:#a8822a; --gold-soft:#f6eed9;
+  --hi:#b4372f; --hi-soft:#f8e4e1; --med:#9a6a10; --med-soft:#f6ecd6; --lo:#4d6b78; --lo-soft:#e6eef1;
+  --done:#8aa0a8; --wa:#1f9d57;
+  --serif:'Lora',Georgia,'Times New Roman',serif; --sans:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1c27; --surface:#162736; --ink:#e4eef2; --muted:#9db3bd; --line:#26394a;
+  --teal:#5fc4b6; --teal-soft:#183a3a; --gold:#d9b85a; --gold-soft:#3a3220;
+  --hi:#f08a80; --hi-soft:#43231f; --med:#e2b55a; --med-soft:#3c3018; --lo:#9fbac6; --lo-soft:#203342;
+  --done:#5f7682; --wa:#4cc983; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1c27; --surface:#162736; --ink:#e4eef2; --muted:#9db3bd; --line:#26394a;
+  --teal:#5fc4b6; --teal-soft:#183a3a; --gold:#d9b85a; --gold-soft:#3a3220;
+  --hi:#f08a80; --hi-soft:#43231f; --med:#e2b55a; --med-soft:#3c3018; --lo:#9fbac6; --lo-soft:#203342;
+  --done:#5f7682; --wa:#4cc983; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2{font-family:var(--serif);font-weight:700;margin:0;text-wrap:balance}
+h1{font-size:clamp(26px,4vw,36px);line-height:1.15}
+.lede{color:var(--muted);margin:8px 0 0;max-width:64ch}
+.status{font-size:13px;color:var(--muted);margin-top:6px;min-height:1.4em}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:14px 12px;border-bottom:1px solid var(--line);margin-top:18px}
+.prog{display:flex;align-items:center;gap:12px}
+.prog-track{flex:1;height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.prog-fill{height:100%;background:var(--teal);width:0;transition:width .4s ease}
+.prog-num{font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;align-items:center}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:6px 12px;font:700 13px var(--sans);cursor:pointer;min-height:34px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip:focus-visible,.cb:focus-visible,input[type=search]:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.sep{width:1px;height:22px;background:var(--line);margin:0 2px}
+select#jump{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:7px 10px;font:700 13px var(--sans);min-height:36px;max-width:100%}
+input[type=search]{flex:1 1 180px;min-width:0;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 12px;font:600 14px var(--sans);min-height:36px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:20px}
+.sum{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.sum b{display:block;font-size:22px;font-variant-numeric:tabular-nums}
+.sum span{font-size:12.5px;color:var(--muted);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.group-h{font-family:var(--sans);font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:34px 0 10px}
+.game{scroll-margin-top:150px;background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-top:12px;overflow:hidden}
+.game-h{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;padding:16px 18px 10px;flex-wrap:wrap}
+.game-h h2{font-size:20px}
+.game-h a{color:var(--teal);font-weight:800;font-size:13.5px;text-decoration:none;white-space:nowrap}
+.game-h a:hover{text-decoration:underline}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.tag{font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:6px;background:var(--teal-soft);color:var(--teal)}
+.tag.k-classroom{background:var(--gold-soft);color:var(--gold)}
+.tag.k-site{background:var(--ink);color:var(--bg)}
+.tag.count{background:transparent;color:var(--muted);padding-left:0}
+.meta{padding:0 18px 12px;display:grid;gap:6px;font-size:14px}
+.meta p{margin:0;max-width:75ch}
+.meta .verdict{color:var(--ink)}
+.meta .load,.meta .moment{color:var(--muted);font-size:13.5px}
+.share{display:flex;gap:8px;align-items:flex-start;background:var(--teal-soft);border-radius:10px;padding:9px 12px;margin:2px 0 0}
+.share svg{flex:none;margin-top:2px}
+.share q{font-style:italic}
+.items{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:12px 18px;border-top:1px solid var(--line);align-items:start}
+.item:first-child{border-top:0}
+.cb{appearance:none;width:24px;height:24px;border:2px solid var(--muted);border-radius:7px;margin:1px 0 0;cursor:pointer;display:grid;place-items:center;background:var(--surface)}
+.cb:checked{background:var(--teal);border-color:var(--teal)}
+.cb:checked::after{content:"";width:6px;height:11px;border:solid var(--bg);border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.cb:disabled{cursor:default;opacity:.6}
+.it-body{min-width:0}
+.it-text{margin:0}
+.it-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px;font-size:12px;font-weight:800}
+.p{padding:1px 7px;border-radius:5px}
+.p-High{background:var(--hi-soft);color:var(--hi)} .p-Med{background:var(--med-soft);color:var(--med)} .p-Low{background:var(--lo-soft);color:var(--lo)}
+.area,.eff{color:var(--muted)}
+.when{color:var(--teal)}
+.item.is-done .it-text{text-decoration:line-through;text-decoration-thickness:1.5px;color:var(--done)}
+.item.is-done .p{opacity:.55}
+.rec{margin:0 18px 12px;font-size:13.5px;font-weight:700;color:var(--gold)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+@media (max-width:560px){.game-h,.meta,.item{padding-left:14px;padding-right:14px}.item{gap:10px}.sep{display:none}}
+@media (prefers-reduced-motion:reduce){.prog-fill{transition:none}}
+</style>
+
+<div class="wrap">
+  <h1>IFM Games Fix List</h1>
+  <p class="lede">Every game on games.investingformummies.com, audited as a game designer and a web designer. Tick an item when it's done; ticks are saved for everyone who opens this page.</p>
+  <p class="status" id="status" role="status">Loading saved ticks…</p>
+
+  <div class="bar">
+    <div class="prog"><div class="prog-track" aria-hidden="true"><div class="prog-fill" id="fill"></div></div><div class="prog-num" id="pnum">0 / 0 done</div></div>
+    <div class="filters" role="group" aria-label="Filters">
+      <button class="chip" data-f="prio" data-v="High" aria-pressed="false">High priority</button>
+      <button class="chip" data-f="eff" data-v="S" aria-pressed="false">Quick wins (S)</button>
+      <button class="chip" data-f="hide" data-v="1" aria-pressed="false">Hide done</button>
+      <span class="sep"></span>
+      <button class="chip" data-f="kind" data-v="site" aria-pressed="false">Site-wide</button>
+      <button class="chip" data-f="kind" data-v="solo" aria-pressed="false">Solo games</button>
+      <button class="chip" data-f="kind" data-v="classroom" aria-pressed="false">Classroom</button>
+      <button class="chip" data-f="kind" data-v="tool" aria-pressed="false">Tools</button>
+      <select id="jump" aria-label="Jump to a game"><option value="">Jump to a game…</option></select>
+      <input type="search" id="q" placeholder="Search games or fixes" aria-label="Search games or fixes">
+    </div>
+  </div>
+
+  <div class="summary" id="summary"></div>
+  <div id="list"></div>
+</div>
+
+<script id="audit-data" type="application/json">/*DATA*/</script>
+<script>
+(function(){
+  const DATA = JSON.parse(document.getElementById('audit-data').textContent);
+  const GROUP_NAMES = {sitewide:'Site-wide (do once, fixes every game)', 'solo-a':'Solo games — Mummies (1)', 'solo-b':'Solo games — Mummies (2)', 'solo-c':'Gen Next, simulations & tools', 'class-a':'Classroom games (1)', 'class-b':'Classroom games (2)', classic:'Inside the classic hub (to be moved out)'};
+  const done = new Map();          // itemId -> {at}
+  const f = {prio:null, eff:null, hide:false, kind:null, q:''};
+  try { const s = JSON.parse(localStorage.getItem('ifm-fix-filters')||'null'); if (s) Object.assign(f, s); } catch(e){}
+  let db = null, canWrite = true;
+
+  const WA = '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--wa)" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>';
+  const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const fmtDate = iso => { try { return new Date(iso).toLocaleDateString(undefined,{day:'numeric',month:'short'}); } catch(e){ return ''; } };
+
+  function visible(g, it){
+    if (f.kind && g.kind !== f.kind) return false;
+    if (f.prio && it.priority !== f.prio) return false;
+    if (f.eff && it.effort !== f.eff) return false;
+    if (f.hide && done.has(it.id)) return false;
+    if (f.q){ const q=f.q.toLowerCase(); if(!(g.title+' '+it.text+' '+it.area).toLowerCase().includes(q)) return false; }
+    return true;
+  }
+
+  function render(){
+    const all = DATA.groups.flatMap(gr => gr.games.flatMap(g => g.items));
+    const nDone = all.filter(i => done.has(i.id)).length;
+    document.getElementById('pnum').textContent = nDone + ' / ' + all.length + ' done';
+    document.getElementById('fill').style.width = (all.length ? (100*nDone/all.length) : 0) + '%';
+    const left = all.filter(i => !done.has(i.id));
+    const games = DATA.groups.reduce((n,gr)=>n+gr.games.length,0);
+    document.getElementById('summary').innerHTML =
+      '<div class="sum"><b>'+games+'</b><span>Pages audited</span></div>'+
+      '<div class="sum"><b>'+left.filter(i=>i.priority==='High').length+'</b><span>High priority left</span></div>'+
+      '<div class="sum"><b>'+left.filter(i=>i.effort==='S').length+'</b><span>Under an hour each</span></div>'+
+      '<div class="sum"><b>'+nDone+'</b><span>Done</span></div>';
+    let html = '';
+    for (const gr of DATA.groups){
+      let gHtml = '';
+      for (const g of gr.games){
+        const its = g.items.filter(it => visible(g,it));
+        if (!its.length) continue;
+        const gd = g.items.filter(i=>done.has(i.id)).length;
+        gHtml += '<article class="game" id="g-'+esc(g.key)+'">'+
+          '<div class="game-h"><div><h2>'+esc(g.title)+'</h2><div class="tags">'+
+            '<span class="tag k-'+esc(g.kind)+'">'+esc(g.kind==='site'?'site-wide':g.kind)+'</span>'+
+            (g.audience?'<span class="tag">'+esc(g.audience)+'</span>':'')+
+            '<span class="tag count">'+gd+' / '+g.items.length+' done</span></div></div>'+
+            (g.url && g.kind!=='site' ? '<a href="'+esc(g.url)+'" target="_blank" rel="noopener">Open game ↗</a>' : '')+
+          '</div>'+
+          '<div class="meta">'+
+            (g.verdict?'<p class="verdict">'+esc(g.verdict)+'</p>':'')+
+            (g.load && g.load!=='—'?'<p class="load">Load: '+esc(g.load)+'</p>':'')+
+            (g.share_idea?'<p class="share">'+WA+'<span><b>WhatsApp share:</b> <q>'+esc(g.share_idea)+'</q>'+(g.share_moment?' <span class="moment">— '+esc(g.share_moment)+'</span>':'')+'</span></p>':'')+
+          '</div>'+
+          (g.recommendation?'<p class="rec">Plan: '+esc(g.recommendation)+'</p>':'')+
+          '<ul class="items">'+its.map(it => {
+            const d = done.get(it.id);
+            return '<li class="item'+(d?' is-done':'')+'"><input type="checkbox" class="cb" id="cb-'+esc(it.id)+'" data-id="'+esc(it.id)+'"'+(d?' checked':'')+(canWrite?'':' disabled')+' aria-label="Mark done: '+esc(it.text)+'">'+
+              '<div class="it-body"><label for="cb-'+esc(it.id)+'" class="it-text">'+esc(it.text)+'</label>'+
+              '<div class="it-tags"><span class="p p-'+esc(it.priority)+'">'+esc(it.priority)+'</span><span class="area">'+esc(it.area)+'</span><span class="eff">· effort '+esc(it.effort)+'</span>'+(d&&d.at?'<span class="when">· done '+esc(fmtDate(d.at))+'</span>':'')+'</div></div></li>';
+          }).join('')+'</ul></article>';
+      }
+      if (gHtml) html += '<h3 class="group-h">'+esc(GROUP_NAMES[gr.group]||gr.group)+'</h3>'+gHtml;
+    }
+    document.getElementById('list').innerHTML = html || '<p class="empty">Nothing matches these filters.</p>';
+    document.querySelectorAll('.chip').forEach(c => {
+      const k=c.dataset.f, v=c.dataset.v;
+      c.setAttribute('aria-pressed', String(k==='hide' ? !!f.hide : f[k]===v));
+    });
+  }
+
+  function saveFilters(){ try { localStorage.setItem('ifm-fix-filters', JSON.stringify(f)); } catch(e){} }
+  document.querySelector('.filters').addEventListener('click', e => {
+    const c = e.target.closest('.chip'); if (!c) return;
+    const k=c.dataset.f, v=c.dataset.v;
+    if (k==='hide') f.hide = !f.hide; else f[k] = (f[k]===v ? null : v);
+    saveFilters(); render();
+  });
+  const q = document.getElementById('q'); q.value = f.q||'';
+  q.addEventListener('input', () => { f.q = q.value.trim(); saveFilters(); render(); });
+
+  const status = document.getElementById('status');
+  document.getElementById('list').addEventListener('change', async e => {
+    const cb = e.target.closest('.cb'); if (!cb) return;
+    const id = cb.dataset.id, on = cb.checked;
+    if (on) done.set(id, {at:new Date().toISOString()}); else done.delete(id);
+    render();
+    if (!db) { status.textContent = 'This view can’t save ticks, so this one will be lost when you leave.'; return; }
+    try {
+      if (on) await db.doc('done/'+id).set({done:true, at:done.get(id).at});
+      else await db.doc('done/'+id).delete();
+      status.textContent = 'Saved.';
+    } catch(err){
+      if (on) done.delete(id); else done.set(id,{at:new Date().toISOString()});
+      if (err && err.code==='invalid_argument'){ canWrite=false; status.textContent='You can view this list but not tick items.'; }
+      else status.textContent = 'Couldn’t save that tick. Try again in a moment.';
+      render();
+    }
+  });
+
+  const jump = document.getElementById('jump');
+  DATA.groups.forEach(gr => gr.games.forEach(g => { const o=document.createElement('option'); o.value=g.key; o.textContent=g.title; jump.appendChild(o); }));
+  jump.addEventListener('change', () => { const k=jump.value; if(!k) return;
+    if (f.kind||f.prio||f.eff||f.hide||f.q){ f.kind=f.prio=f.eff=null; f.hide=false; f.q=''; q.value=''; saveFilters(); render(); }
+    const el=document.getElementById('g-'+k); if(el) el.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth', block:'start'}); jump.value=''; });
+  render();
+  (async () => {
+    try {
+      db = await (window.claude && window.claude.use ? window.claude.use('db') : null);
+      const user = await (window.claude && window.claude.use ? window.claude.use('user') : null);
+      if (user && typeof user.can === 'function'){ const w = await user.can('data.write'); if (w === false) canWrite = false; }
+    } catch(e){ db = null; }
+    if (!db){ status.textContent = 'Ticks can’t be saved in this view.'; render(); return; }
+    status.textContent = canWrite ? 'Ticks are saved for everyone.' : 'You can view this list but not tick items.';
+    db.collection('done').onSnapshot(snap => {
+      done.clear();
+      snap.docs.forEach(d => { const v=d.data(); if (v && v.done) done.set(d.id, {at:v.at}); });
+      render();
+    }, err => { status.textContent = 'Lost the connection to saved ticks; reload to see the latest.'; });
+  })();
+})();
+</script>

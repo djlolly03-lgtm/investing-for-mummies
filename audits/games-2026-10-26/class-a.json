@@ -1,0 +1,108 @@
+{"group":"class-a","games":[
+{
+ "slug":"swipe-right-live","title":"Swipe Right on SIP LIVE","url":"https://games.investingformummies.com/swipe-right-live",
+ "file":"swipe-right-sip-live.html","kind":"classroom","audience":"Gen Next",
+ "verdict":"A tight, funny format: fake finfluencer posts on the projector, students swipe on phones, then a dramatic '5 years later' receipts reveal that names who fell for what. What holds it back: every class shares one fixed room, and much of the projector text is too small to read from the back.",
+ "load":"67 KB page + Supabase live library (~218 KB) + QR library + 3 Google fonts; no images — fast on any phone",
+ "share_idea":"\"I got BORING GENIUS — my ₹10,000 became ₹16,450 and I dodged 5 of 6 scammy finfluencers in Swipe Right on SIP. Can you spot the red flags?\" + link",
+ "share_moment":"On the student's phone, on the final 'Your verdict' card, right under the ₹ total and rank.",
+ "items":[
+  {"area":"Bug","priority":"High","effort":"S","text":"Every class plays in the same fixed room, MF101: two teachers running it at once end up in one game, and opening the host screen shows the last class's players and scores until someone presses Reset. Give each new host screen its own random room code, as Broke by Friday already does."},
+  {"area":"Layout","priority":"High","effort":"S","text":"Key projector text is only about 9px: the lobby rules ('₹10,000 · 10 funds · max 5 investments · right = invest'), the bottom-bar hints and the 'swipes locked in' labels. Make the rules line at least three times bigger so the back row can read it."},
+  {"area":"Bug","priority":"Med","effort":"M","text":"A swipe made in the last second can be lost. When the teacher taps 'Next fund', the host saves its own copy of the game, which can overwrite a vote a phone saved a moment earlier. Re-check the latest votes, or pause for a second, before moving on."},
+  {"area":"Game design","priority":"Med","effort":"S","text":"Each ₹2,000 a player doesn't invest quietly grows to ₹2,150 (a savings-account rate) and counts toward their score, but nobody is ever told. Say this in the lobby rules and on the final card so 'skipping everything' is a visible, fair choice."},
+  {"area":"Mobile","priority":"Med","effort":"S","text":"The 'I'm playing' button on the landing page sends phones to the default room, and there's nowhere to type a room code. Add a room-code box, so a student whose camera won't scan the QR can still join."},
+  {"area":"Game design","priority":"Med","effort":"S","text":"The teacher can't remove a player, so a prank name stays on the projector for the whole game. Let the host tap a name in the lobby to remove it."},
+  {"area":"Compliance","priority":"Med","effort":"S","text":"Receipts show '₹2,000 → ₹3,600 in 5 years' on the big screen with no caveat (the page's disclaimer sits below the fixed control bar, out of view). Add a small line on the receipt screen: 'Made-up 5-year outcomes to show the pattern, not real fund data.'"},
+  {"area":"Conversion","priority":"Med","effort":"S","text":"The phone's final screen ends with 'Leaderboard on the big screen'. Add one soft line and link under the lesson, e.g. 'Want to pick real funds this calmly? Find your batch' → register.investingformummies.com."},
+  {"area":"Layout","priority":"Low","effort":"S","text":"The forest-green, lime and Anton look carries no IFM logo on the host screens, and the final board says 'Screenshot the board 📸'. Add the IFM logo and web address to the lobby and final board so shared screenshots credit IFM."},
+  {"area":"Accessibility","priority":"Low","effort":"S","text":"The page blocks pinch-to-zoom, so players with weak eyesight can't enlarge text. Allow zoom. The same setting is on all five games in this group."},
+  {"area":"Speed","priority":"Low","effort":"S","text":"The live library is loaded as 'whatever the latest version 2 is' (it is 2.118 today), so an upstream update could break a class mid-session. Lock it to one tested version. This applies to all four live games here."}
+ ]
+},
+{
+ "slug":"broke-by-friday","title":"Broke by Friday LIVE","url":"https://games.investingformummies.com/broke-by-friday",
+ "file":"broke-by-friday-live.html","kind":"classroom","audience":"Gen Next",
+ "verdict":"The richest classroom game here: 30 sharp, very Indian-teen scenarios, real peer-to-peer borrowing between students, teacher notes and a lovely 'disciplined twin' ending. What holds it back is joining: the bare link opens a teacher screen, there's no real place to type the room code, and refreshing the projector in the lobby kicks everyone out.",
+ "load":"148 KB page + Supabase library (~218 KB) + QR library; light, but the phone join screen's hero image is missing on the live site (404)",
+ "share_idea":"\"I finished Broke by Friday THRIVING ✨ with ₹6,200 left and my AirPods goal fully saved. Could you survive a month on ₹15,000?\" + link",
+ "share_moment":"On the student's phone end screen, right after the verdict title and the 'disciplined twin' comparison.",
+ "items":[
+  {"area":"Bug","priority":"High","effort":"S","text":"The plain link (from WhatsApp or the games page) always opens the teacher screen, so a phone that taps it creates an empty room and never joins the class. Make the plain link ask 'I'm the teacher / Join with a code'. The code box already exists but only appears with ?role=player in the address."},
+  {"area":"Bug","priority":"High","effort":"S","text":"The lobby tells students 'on the IFM site → enter room', but no such place exists. Show the exact short address to type next to the code, and make that address open the code box."},
+  {"area":"Bug","priority":"High","effort":"S","text":"Refreshing the projector during the lobby wipes everyone who has already joined. Their phones go back to the join screen and they have to pick their dream again. Keep the lobby on refresh, the same way it already survives mid-game."},
+  {"area":"Bug","priority":"Med","effort":"S","text":"Students' names go onto the projector unescaped, so a name typed with angle-bracket code (e.g. <marquee>) can break or deface the big screen and the borrow lists on other phones. Show names as plain text only, as Quiz and Fund Manager already do."},
+  {"area":"Bug","priority":"Med","effort":"M","text":"'Lock it in' and each choice are sent once with no confirmation. On shaky venue wifi a tap can vanish and the student isn't told. Show 'sending…' and send again automatically if the projector hasn't confirmed within 3 seconds."},
+  {"area":"Copy","priority":"Med","effort":"S","text":"Several prices don't match their own story: café ₹1,300 vs ₹1,800 on the button, hoodie ₹5,600 vs ₹6,800, chef dinner ₹4,000 vs ₹5,000, IMAX ₹2,000 vs ₹2,500, jacket ₹3,800 vs ₹4,500. The Coldplay lesson also says ₹6,500 is '32% of your month' when it is 43% of ₹15,000. Students will check the maths, so fix the numbers."},
+  {"area":"Bug","priority":"Med","effort":"S","text":"The goal moment and the final screen disagree. 'You saved enough! Claim it' counts wallet plus jar, but the final screen and the class banner count only the jar, so a student who just claimed can be told they reached 40%. Use one rule everywhere."},
+  {"area":"Game design","priority":"Med","effort":"S","text":"The life score barely rewards money: an extra ₹10,000 is worth only 20 points, the same as 10 mood points, and mood alone can earn 200. A splurger can top the board and blur the lesson. Give money more weight, or name a separate 'Best saver' winner."},
+  {"area":"Bug","priority":"Med","effort":"S","text":"The phone join screen's background art (assets/bbf-live-hero.png) isn't on the live site (404), leaving an empty band at the top. Upload the image or remove the reference."},
+  {"area":"Layout","priority":"Med","effort":"S","text":"The lobby QR is only 172px, too small to scan from the back of a classroom unless the teacher knows to tap the corner pill. Show it about 300px wide by default."},
+  {"area":"Copy","priority":"Low","effort":"S","text":"The lobby asks 'can your class make it to day 28?' but scenarios run to day 30. The pop-up dinner also names a real chef (Ranveer Brar) and wrongly calls him 'Michelin'. Make the day number consistent and use a fictional chef."},
+  {"area":"Conversion","priority":"Med","effort":"S","text":"The end screen closes with 'next month: flip the spend-vs-save ratio'. Add one line for the parent or teacher watching, e.g. 'IFM runs money workshops for teens: Find your batch' → register.investingformummies.com."}
+ ]
+},
+{
+ "slug":"quiz","title":"The IFM Crorepati (KBC-style quiz)","url":"https://games.investingformummies.com/quiz",
+ "file":"quiz.html","kind":"classroom","audience":"Both",
+ "verdict":"The most polished host experience: a studio backdrop, prize ladder, streaks, fastest-finger, wagers, keyboard control, undo, 'game recovered' after a refresh, and a superb 'teach the tricky ones' ending. What holds it back: the lobby video doesn't load on the live site, a 1 MB logo from the old domain loads on every phone, and players have nowhere to type the PIN the screen tells them to enter.",
+ "load":"158 KB page + Supabase + QR library; host also loads 672 KB + 595 KB studio JPGs and a 1 MB logo PNG from ifm-deploy.vercel.app (phones load that logo too). The 2.8 MB lobby video returns 404 live, so it isn't actually downloading.",
+ "share_idea":"\"I won ₹18.5 Lakh and finished #2 of 24 in the IFM Crorepati money quiz 🏆 Think you know mutual funds better?\" + link",
+ "share_moment":"On the player's phone end screen (rank + winnings), shown once the podium is on the projector.",
+ "items":[
+  {"area":"Bug","priority":"High","effort":"S","text":"The lobby and podium video (ifm-hero-lockup-9s.mp4) returns 'not found' on the live site because video files are excluded from deploys, so a cropped logo shows instead. Allow just this file through (it is 2.8 MB, so ideally shrink it) or drop the video."},
+  {"area":"Speed","priority":"High","effort":"S","text":"The IFM logo is a 1 MB PNG pulled from the old ifm-deploy.vercel.app address. It loads on every student's join screen, in the QR centre and as the video poster. Use a small local logo on the new domain (e.g. /ifm-round.png); join screens will open noticeably faster on cheap phones."},
+  {"area":"Bug","priority":"High","effort":"S","text":"The projector says 'or enter Game PIN', but there's nowhere to type one. The plain link opens a new host screen, and a phone without a room only says 'Scan the QR'. Add a PIN box for phones and make the plain link ask 'Host or join?'."},
+  {"area":"Bug","priority":"Med","effort":"S","text":"A mistyped or old PIN leaves the phone on 'Connecting…' forever. Show 'Room not found: check the PIN on the big screen' with a retry box."},
+  {"area":"Bug","priority":"Med","effort":"M","text":"Joining and answering are each sent once with no confirmation. If one gets lost, the phone still says 'You're in!' or 'Answer locked ✓', but the projector never counted it and scores the player as 'Too slow'. Resend automatically until the host confirms."},
+  {"area":"Bug","priority":"Med","effort":"S","text":"Refreshing the projector during the lobby wipes everyone who joined (refresh mid-game is handled well). Keep lobby players on refresh too."},
+  {"area":"Compliance","priority":"Med","effort":"S","text":"The screen title is 'Kaun Banega Crorepati', the trademarked name of the Sony TV show, while the browser tab already says 'The IFM Crorepati'. Use the IFM name on screen to avoid a takedown risk."},
+  {"area":"Accessibility","priority":"Med","effort":"M","text":"Phones show only A/B/C/D, so anyone at the back or with weak eyesight can't play fairly. Add a 'show the question on my phone' option; the option text is already sent to the phones."},
+  {"area":"Layout","priority":"Med","effort":"S","text":"The Round 3 (Risk & Reward) briefing is one dense 70-word paragraph on the projector. Turn it into 3 short lines: 'Invest before you see the question · Right = it grows, wrong = it's gone · Your one 50:50 is now live'."},
+  {"area":"Conversion","priority":"Med","effort":"S","text":"The player's end screen only says 'now go invest like a pro'. Show the 2–3 questions they got wrong with the right answer (the host already works out the room's 'tricky ones'), then a soft 'Learn this properly: Find your batch' link."},
+  {"area":"Copy","priority":"Low","effort":"S","text":"Round 1 says 'trust what you learned this week', which is wrong for one-off talks and the teens set. The podium also shouts 'Crorepati!' even when the winner has ₹6 Lakh. Reword both."},
+  {"area":"Bug","priority":"Low","effort":"S","text":"The correct answers are included in the data sent to every phone, so a tech-savvy student could peek. Send only the current question's options, and the answer only after the reveal."}
+ ]
+},
+{
+ "slug":"crorepati-lane","title":"Crorepati Lane","url":"https://games.investingformummies.com/crorepati-lane",
+ "file":"crorepati-lane.html","kind":"classroom","audience":"Mummies",
+ "verdict":"An on-brand, smoothly built Monopoly for mums with nice touches (Market Crash jail, Dividend Pool, SIP top-ups). What holds it back: the game has no end short of bankrupting everyone, and its rules teach the wrong money lesson (other investors pay you 'returns', and an FD behaves exactly like an IPO).",
+ "load":"54 KB page, no libraries; the only weight is a 1 MB logo PNG loaded from ifm-deploy.vercel.app for a 62px icon",
+ "share_idea":"\"I won Crorepati Lane with a ₹48 Lakh portfolio built on index funds and gold 👑 Play the IFM money board game with your friends\" + link",
+ "share_moment":"In the winner pop-up, under the final net-worth ranking, beside 'Play Again'.",
+ "items":[
+  {"area":"Game design","priority":"High","effort":"M","text":"The only ending is when everyone but one player is bankrupt, which can take 1–2 hours, yet the tagline promises 'the richest mum wins'. Let the group pick a length at setup (e.g. 20 minutes or 5 laps), then the highest net worth wins."},
+  {"area":"Game design","priority":"High","effort":"M","text":"The money lesson is upside down. Landing on another mum's Index Fund makes you 'pay her returns' like rent, and every asset pays the same 10% of its price, so an FD carries the same risk as a small-cap and the IPO is the board's premium square. Pay returns from the market, not from other players. Make FD/PPF small but steady, and stocks bigger but hit by Market Event cards."},
+  {"area":"Mobile","priority":"High","effort":"M","text":"On a phone the board text is about 8px and names are cut off ('Fixed', 'Govt', 'Small-'), and on a projector it's unreadable from a chair. Use bigger icons with short names, let players tap a square for details, and use the large empty board centre to show the current card or event."},
+  {"area":"Bug","priority":"Med","effort":"S","text":"The 'Advance to PAYDAY' card pays the salary twice (₹4 Lakh instead of ₹2 Lakh): once for passing PAYDAY and again for landing on it."},
+  {"area":"Bug","priority":"Med","effort":"S","text":"A page refresh or an accidental back-swipe wipes the whole game with no warning. Save the game on the device after every turn and offer 'Resume game' on reopening."},
+  {"area":"Speed","priority":"Med","effort":"S","text":"The logo is a 1 MB PNG from the old ifm-deploy.vercel.app address, shown at 62px on setup and again on the board. Swap in a small local copy; it is most of this page's download."},
+  {"area":"Game design","priority":"Med","effort":"S","text":"The rules say a frozen player 'needs doubles or ₹50,000', but there is no button to pay ₹50,000 and leave early. Players must fail three turns first. Add a 'Pay ₹50,000 to recover' button."},
+  {"area":"Copy","priority":"Med","effort":"S","text":"The goal is stated two ways ('the richest mum wins' vs 'be the last mum standing'). Some cards also blur real terms: 'Your SIP matured' (SIPs don't mature), and 'top-up your SIP' only after owning a whole colour set. Pick one goal and rename the build step (e.g. 'Grow this holding')."},
+  {"area":"Conversion","priority":"Med","effort":"S","text":"The winner pop-up only offers 'Play Again'. Add a one-line takeaway (e.g. 'The winner spread her money across safe and growth assets') and a gentle 'Learn to do this for real: Find your batch' link."},
+  {"area":"Game design","priority":"Low","effort":"S","text":"The rules hide behind a small 'How to play' link and most mums will skip them. Add a 3-step coach on the first turn (roll → buy or pass → end turn)."},
+  {"area":"Mobile","priority":"Low","effort":"S","text":"The token picker icons are 34px with tight gaps, below the 44px comfortable tap size. Enlarge them or show fewer per row."}
+ ]
+},
+{
+ "slug":"mutual-fund-manager","title":"Mutual Fund Manager LIVE","url":"https://games.investingformummies.com/mutual-fund-manager",
+ "file":"fund-manager.html","kind":"classroom","audience":"Both",
+ "verdict":"A genuinely clever teaching sim: the class becomes the investors of a fund the teacher builds, and AUM, units, NAV, market months and withdrawals are all shown live with the class's own money. What holds it back: a projector refresh wipes the whole session, half the lessons it contains can't be reached, and it names real stocks and shows rosy, unexplained returns.",
+ "load":"207 KB page + Supabase + QR library; plus a 1 MB logo and 13 art JPGs (90–275 KB each, ~2.2 MB total, loaded as screens appear), all from ifm-deploy.vercel.app",
+ "share_idea":"\"Our class just ran a real-style mutual fund: I put in ₹2 Lakh by SIP and watched the NAV go ₹10 → ₹22. Learn how funds really work with IFM\" + link",
+ "share_moment":"On the student's phone, on the final 'Your mutual fund journey' card.",
+ "items":[
+  {"area":"Bug","priority":"High","effort":"S","text":"Refreshing the projector wipes the whole session. The host screen always starts a blank fund on load, so every investor is removed and all phones go back to 'join'. Resume the existing room on refresh, as Quiz and Broke by Friday do."},
+  {"area":"Game design","priority":"High","effort":"M","text":"About half the lessons are built but unreachable: NAV myth, Feezilla (fees), SIP vs lump sum, STP, SWP, diversification, compounding and the factsheet quiz. Nothing in the step bar leads to them, and the host screen has no case to display them. Add them to the flow as optional 'bonus' steps, or remove the dead weight."},
+  {"area":"Compliance","priority":"High","effort":"S","text":"The fund's holdings are real companies (Reliance, HDFC Bank, Infosys, TCS, ITC, Asian Paints), which can read as stock picks from an educator who isn't SEBI-registered. Use made-up names (e.g. 'Big Bank Ltd', 'Tech Co') or label them clearly 'names for illustration only'."},
+  {"area":"Compliance","priority":"High","effort":"S","text":"The fast-forward jumps the NAV to ₹22 in 4 years (roughly doubling, about 19% a year) with 'your money's about to be worth a lot more' and no assumption shown. State the assumption on screen, use a modest figure, and mention it could have been lower."},
+  {"area":"Compliance","priority":"Med","effort":"S","text":"Market months are weighted to rise, and the SIP screen announces 'SIP wins, it's the smart default' based on a dip-then-recover path. Add one honest line: 'In a steadily rising market a lump sum usually ends ahead; SIP's real win is discipline and smoother buying.'"},
+  {"area":"Layout","priority":"Med","effort":"S","text":"Most explanations on the projector use the 'tiny' style (about 12px) and the step bar is about 11px, too small from the back of a room. Raise body text on host screens to at least 18–20px."},
+  {"area":"Bug","priority":"Med","effort":"S","text":"Students can't type the PIN shown on the projector. The plain link opens a new host room, a phone without a room only says 'Scan the QR', and a wrong PIN sits on 'Connecting…' forever. Add a PIN box and a 'Room not found' message."},
+  {"area":"Bug","priority":"Med","effort":"M","text":"Joining and investing are sent once with no confirmation. If a message is lost, the phone says 'You're in!' forever while the student is missing from the projector. Resend automatically until the host confirms."},
+  {"area":"Speed","priority":"Med","effort":"S","text":"The logo and all 13 artworks load from the old ifm-deploy.vercel.app address, but the same art already exists on the games site at /art/. Switch to the local copies so the game keeps working if the old address is retired, and replace the 1 MB logo with a small one."},
+  {"area":"Conversion","priority":"Med","effort":"S","text":"The phone's final 'Your mutual fund journey' card has no next step. Add a soft line and link: 'Ready to try this with your own money, step by step? Find your batch' → register.investingformummies.com."}
+ ]
+}
+]}

@@ -1,0 +1,775 @@
+{
+ "group": "solo-c",
+ "games": [
+  {
+   "slug": "money-map",
+   "title": "Money Map",
+   "url": "https://games.investingformummies.com/money-map",
+   "file": "teen-budget.html",
+   "kind": "tool",
+   "audience": "Gen Next",
+   "verdict": "A bright, phone-friendly allowance tracker with nice live feedback (the shaking balance, the coloured split bar). What holds it back: it opens with no title or explanation, it quietly changes numbers teens type, and its existing share button sends friends to a page that no longer exists.",
+   "load": "44 KB page + Google font; fast. Only the saved-report page pulls the logo from the old ifm-deploy address.",
+   "share_idea": "\"I saved ₹[saved] out of my ₹[income] this month 🫙 — that's ₹[yearly] by next year. Map your money in 1 minute: games.investingformummies.com/money-map\"",
+   "share_moment": "Under the savings insight card, once income and at least one spend are filled in (replace the current generic 'Share with friends' button).",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "The 'Share with friends' button sends people to www.investingformummies.com/moneymap, which now shows a 'page not found' error — point it at games.investingformummies.com/money-map so every share actually lands on the game."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "The page starts straight on 'Money in' tiles with no title, no goal and no one-line instruction — add a small header ('Money Map: where does your pocket money really go?') and a 3-step hint so a teen arriving from WhatsApp knows what to do in the first second."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The hint under the balance says 'Add your money below 👇' but the money-in boxes are above it — change it to 'above 👆' (the very first frame already says 'above', then it flips to the wrong arrow)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "When a teen types more spending than they have, the number they typed is silently cut down (only a quick red flash) — instead let them overspend, show the balance go red with 'BROKE 🚨', and explain why; going broke is the lesson, and right now that message can almost never appear."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The insight cards talk in percentages ('62% spent · 8% saved', 'the 50/30/20 rule') — for first-timers lead with rupees ('You saved ₹200 of your ₹2,500') and explain 50/30/20 in plain words or drop it."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Add a tiny 'challenge' layer so it feels like a game, not a form — e.g. a 'Can you save ₹500 this month?' target with a badge when the savings jar hits it, or a sample 'Riya's month' to fix."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "In the saved PDF the first box is labelled 'Allowance' but shows total income (allowance + parents + job) — relabel it 'Money in'."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The saved PDF loads the IFM logo from the old ifm-deploy.vercel.app address — switch it to the games site so the report doesn't break if that old address goes away."
+    },
+    {
+     "area": "Layout",
+     "priority": "Low",
+     "effort": "S",
+     "text": "On a laptop or projector the tiles stretch edge-to-edge across the whole 1440px screen — cap the page at about 480px wide and centre it so it looks like the phone app it is."
+    },
+    {
+     "area": "Accessibility",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Many labels are 9–11px (stat labels, insight text, section headings at 30% white) — bump them to at least 12–13px and raise the contrast so they're readable on a cheap phone in daylight."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The footer disclaimer talks about 'Illustrative returns' but this tool shows no returns — use a line that fits ('Just a practice tracker — your numbers stay on your phone')."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "After the insights, add a soft line for parents ('Want your teen to learn this properly? See our Gen Next batches') linking to register.investingformummies.com."
+    }
+   ]
+  },
+  {
+   "slug": "lifestyle-time-machine",
+   "title": "Lifestyle Time Machine",
+   "url": "https://games.investingformummies.com/lifestyle-time-machine",
+   "file": "lifestyle-time-machine.html",
+   "kind": "classroom",
+   "audience": "Gen Next",
+   "verdict": "A genuinely fun pass-the-laptop class game — the 'Japan Trip → Lonavala Weekend' downgrade gag lands the inflation lesson beautifully. What holds it back: the budget says ₹25L on screen but the game uses ₹15L, and the payoff round (where savers buy back their dreams) is built but unreachable, so the game ends on 'for now' instead of the investing punchline.",
+   "load": "92 KB page + 1 MB hero image (ltm-hero.png) + 11 meme sound clips (~350 KB, loaded on demand); first screen is heavy on mobile data.",
+   "share_idea": "\"Inflation turned my Japan trip into a Lonavala weekend 😭 — play the Lifestyle Time Machine and see what 10 years does to your dreams: games.investingformummies.com/lifestyle-time-machine\"",
+   "share_moment": "On the final scoreboard (after Round 4, once it's reachable), next to Play Again — and a teacher-friendly 'share with parents' variant on the Round 3 summary.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "The budget is inconsistent: the game actually gives everyone ₹15L, but the screen says 'Total budget: ₹25L', 'Remove items until you're within ₹25L', and Round 4 says 'everyone had the same ₹25L' — pick one number and use it everywhere so students' maths adds up."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Round 4 (the investor reveal and buy-back round) is fully built but nothing on screen leads to it — Round 3 ends with 'That's the end — for now' and only Play Again. Add a 'Round 4 — The Payoff →' button so the class actually sees savers win; that is the whole point of the game."
+    },
+    {
+     "area": "Copy",
+     "priority": "High",
+     "effort": "S",
+     "text": "Students are never told how fast prices rise — the banner just says 'Prices have gone up'. Add one plain line per round ('Prices rose about 7% a year, so a ₹1L trip now costs ₹1.4L') so inflation is explained, not just felt."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Round 4 grows savings at 14% a year ('grew to 4×') — label it clearly as an assumption ('if invested in a fund that averaged 14% a year — real returns go up and down and are not guaranteed') and consider a more cautious 10–12%."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Words like 'corpus', 'purchasing power' and '14% × 10 yrs' appear in Round 4 — swap for teen language ('your savings pot', 'what your money can buy', 'growing about 14% a year for 10 years')."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "The 6-student cap on the setup screen is too small for a real class — allow up to ~12 names (or team names) on the setup screen rather than relying on the hidden mid-game '+ Add student' prompt."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The setup screen is pre-filled with six sample names (Maya, Sofía…) that teachers must delete one by one — show them as grey placeholders instead so the teacher just types."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The red pulsing 'OVER' badge is pinned to the top-left and pulses forever while a student is over budget — on a phone or small laptop it covers item cards; place it inside the budget bar and stop the endless pulse after a few seconds."
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Round 3 skips the big 'your turn' name card that Rounds 1 and 2 show between students — add it back so the class always knows whose turn it is on the projector."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Typo: 'Lonawala Weekend' should be 'Lonavala Weekend'."
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The 1 MB background picture on the first screen slows the start on school Wi-Fi and phones, and on a phone only a thin strip of it peeks out above the names card — compress it to under 150 KB or hide it on small screens."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Several sound effects are well-known meme/brand clips (Mario coin, Among Us) — swap for royalty-free equivalents so a public IFM page doesn't carry copyrighted audio, and double-check the fart sound suits school sessions."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Round 3's 'We'll come back to this story when we talk about compounding' is a perfect bridge — link it to the Gen Next batch page at register.investingformummies.com for teachers and parents."
+    }
+   ]
+  },
+  {
+   "slug": "need-want-value",
+   "title": "Need. Want. Value.",
+   "url": "https://games.investingformummies.com/need-want-value",
+   "file": "nwv.html",
+   "kind": "solo",
+   "audience": "Gen Next",
+   "verdict": "A quick, well-written sorting game with great 'discuss' prompts and honest 'it can be both' answers. What holds it back: some items are judged on a price the player never sees, so fair answers get marked wrong, and with only 11 fixed items there's little reason to play twice.",
+   "load": "29 KB page + Google font; very fast.",
+   "share_idea": "\"I scored 8/11 on Need. Want. Value. 🛡️✨📈 — is therapy a NEED or a VALUE? Argue with me: games.investingformummies.com/need-want-value\"",
+   "share_moment": "Results screen, directly under the score and before the recap list.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Items like 'Sneakers' are marked WANT-only, yet the explanation says 'footwear is a NEED — but a ₹15,000 limited drop is a WANT'. Put the detail on the card itself ('₹15,000 limited-drop sneakers', '₹1.2L gaming laptop') — the empty hint line under each item is already there for it — so players aren't marked wrong for a fair answer."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Only 11 items, the same every game — add a pool of 25–30 everyday Indian-teen items (Zomato order, coaching class, bike EMI, Spotify, concert ticket, phone recharge) and draw 10 per round so replays feel fresh."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "'Tuition / Uni' will confuse Indian teens — 'tuition' means coaching classes here and 'Uni' is British; use 'College fees' (and maybe a separate 'Coaching classes' card)."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Explanations use money jargon ('compounds like interest', 'pays dividends') — replace with plain words ('pays you back for years')."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Swap less-relatable examples for Indian ones — the '₹600 açaí bowl' discuss prompt could be '₹400 café cold coffee'; 'trade qualification vs degree' could be 'diploma vs degree'."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The results screen gives a score but no takeaway — add a one-line personal insight ('You called most things NEEDs — try the 30-day wait test before your next buy') so the money lesson sticks."
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "M",
+     "text": "Add a little juice when you answer — a quick card flip or colour burst for 'Nailed it' and a gentle shake for 'Not quite' — it's currently a static text panel."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The footer disclaimer mentions 'Illustrative returns' but the game shows none — use a disclaimer that fits a spending game."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Add a soft line on the results screen for parents/teachers ('Run this with your class or teen batch → register.investingformummies.com')."
+    }
+   ]
+  },
+  {
+   "slug": "swipe-right-sip",
+   "title": "Swipe Right on SIP",
+   "url": "https://games.investingformummies.com/swipe-right-sip",
+   "file": "swipe-right-sip.html",
+   "kind": "solo",
+   "audience": "Gen Next",
+   "verdict": "The strongest Gen Next game in this group: a sharp, funny Tinder-style feed with tap-to-explain jargon chips, real red-flag lessons and a satisfying 'boring genius vs hype victim' finish. What holds it back: tiny text, a running money total that jumps around confusingly, and the made-up fund returns aren't labelled as assumptions.",
+   "load": "47 KB page + 3 Google fonts; fast.",
+   "share_idea": "\"My ₹10,000 became ₹[corpus] and I dodged [x]/[y] red flags 🚩 — grade: [BORING GENIUS]. Can your feed fool you? games.investingformummies.com/swipe-right-sip\"",
+   "share_moment": "Results screen — the existing 'Share your score' button is in the right place; just fix where its link points (see items).",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The existing 'Share your score' text links to investingformummies.com (the homepage) instead of the game — use games.investingformummies.com/swipe-right-sip so friends land straight in the feed."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "During the reveal, 'YOUR MONEY SO FAR' starts low and jumps around (it counts unspent cash but leaves out picks not yet revealed), and its last value doesn't match the final score — show a simple running 'invested picks so far' total, or the full ₹10,000 picture from the first card."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Reveals say an index fund turned ₹2,000 into ₹3,600 in 5 years (about 12% a year) with no stated assumption — add a small line on the reveal screen ('Made-up results to show the idea; real funds go up and down and nothing is guaranteed')."
+    },
+    {
+     "area": "Accessibility",
+     "priority": "High",
+     "effort": "S",
+     "text": "Lots of text is 7–9px (stat labels, HUD labels, post footers, the 'drag the card' hint, bench labels) — raise the minimum to about 12px; first-timers on budget phones can't read it."
+    },
+    {
+     "area": "Layout",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The background grid lines run straight through the big 'SWIPE RIGHT ON SIP' title, and the grey-on-green 'SWIPE' word is low-contrast — fade the grid behind headings and brighten the title so the first screen reads instantly."
+    },
+    {
+     "area": "Layout",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The 'FLAGS DODGED' box in the top bar always shows '?' — either hide it until the reveal or call it 'Flags: revealed at the end' so it doesn't look broken."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Every post, including the honest low-like ones, is tagged 'sponsored · finance' — tag the hype posts 'sponsored' and the good ones something like 'friend' so the feed itself teaches 'sponsored = someone is paid'."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The intro strip says 'MF · 101' and 'STAKE ₹2K' — say 'Mutual funds 101' and 'Each swipe: ₹2,000' so the first screen has zero jargon."
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "S",
+     "text": "On the results screen, list the 1–2 red flags the player fell for with their tell ('Fake urgency: \"closes Friday\"') — the lesson is there per card but not summarised at the end."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Each new card adds another set of drag listeners to the whole page and never removes them — harmless now, but on long sessions it can make dragging feel laggy on older phones; clean them up when a card leaves."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Med",
+     "effort": "S",
+     "text": "After 'The lesson: good funds are boring', add one soft line — 'Want to learn the checklist properly? Find your batch' → register.investingformummies.com — this is the most natural sales moment in the Gen Next set."
+    }
+   ]
+  },
+  {
+   "slug": "asset-boss",
+   "title": "Asset Boss",
+   "url": "https://games.investingformummies.com/asset-boss",
+   "file": "asset-boss.html",
+   "kind": "classroom",
+   "audience": "Both",
+   "verdict": "A solid classroom flow — allocate ₹10L, discuss why, then live through a boom, crash and recovery — with good teacher prompts. What holds it back: it's the heaviest page in this group (in-browser code compiling plus a 1 MB logo), the market always plays out the same way so 'boring wins' is rigged, and the end is a dead stop with no replay.",
+   "load": "148 KB page (about 100 KB of it unused styling) + React + Babel compiler (~1 MB, compiles the game in the browser) + 1 MB watermark PNG shown at 60px; slow on phones.",
+   "share_idea": "\"I'm a 🎢 Risk Chaser — my ₹10L became ₹[final] after a boom, a crash and a recovery. What's your investor DNA? games.investingformummies.com/asset-boss\"",
+   "share_moment": "Results screen, right under the 'Your Investor DNA' badge.",
+   "items": [
+    {
+     "area": "Speed",
+     "priority": "High",
+     "effort": "M",
+     "text": "The game compiles its own code inside the visitor's browser (React + the Babel compiler) and loads a 1 MB logo just to sit in the middle of a small donut — pre-build the game once and use a 20 KB logo; phones will open it several seconds faster."
+    },
+    {
+     "area": "Speed",
+     "priority": "Low",
+     "effort": "S",
+     "text": "About 100 KB of leftover styling copied from the old main site is loaded but unused — strip it out."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "The three years are identical every time (boom, crash, small recovery), so 'Gold and FD beat stocks' is always the answer — add 2–3 different market stories (e.g. a long bull run where stocks win) picked at random, so the real lesson becomes 'spread your money because you can't know' rather than 'boring always wins'."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "'That's why every portfolio needs some gold!' and the hard-coded 'Big Lesson' read as advice — soften to 'Many investors keep a little gold because it often holds up in crashes' and make clear the returns are made up for the game."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The end (reflection screen) has no 'Play again' or 'Try a different mix' button — add one so players can test whether a different split would have done better."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "On the results screen, show 2 comparison mixes (e.g. 'All FD' and 'Even split') next to the player's number so they can see how their choice stacked up."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The + / − buttons are 32px and move ₹25,000 at a time, so filling ₹10L takes 40 taps — make the buttons 44px and add quick-fill chips (₹1L / ₹2.5L) or a slider."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Solo visitors hit a 'Teacher Checkpoint — your class has locked in…' screen that makes no sense at home — reword it for both ('Playing at home? Tap Run the simulation') or skip it outside class mode."
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The Year 1 question ('which asset gave the highest return?') is answered by the table right above it — replace with a thinking question ('Would you move money into crypto now?')."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "'REITs', 'asset classes' and 'not liquid' are unexplained for beginners — add a one-line plain meaning ('REITs: owning a slice of big buildings that pay rent')."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The final 'You have completed Asset Boss!' card is a good moment for a soft 'Learn how to build your real mix → Find your batch' link to register.investingformummies.com."
+    }
+   ]
+  },
+  {
+   "slug": "short-squeeze",
+   "title": "The Short Squeeze",
+   "url": "https://games.investingformummies.com/short-squeeze",
+   "file": "short-squeeze-sim.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "A clear, well-paced 5-scene explainer — the gold-bangles analogy and the hold-or-cut moment are excellent teaching. What holds it back: it presents a named real company and real hedge funds with specific prices as fact with no source, the quiz answers are all option B, and a couple of small bugs undercut the key 'you lost $7,500' moment.",
+   "load": "53 KB page + 1 MB logo PNG in the header (shown at ~44px); the logo is most of the weight.",
+   "share_idea": "\"I'd have lost $7,500 on a $1,000 bet 😱 — learn why a 'short squeeze' is the most dangerous trade in 5 quick scenes: games.investingformummies.com/short-squeeze\"",
+   "share_moment": "Scene 5, after the quiz score and the '3 things to take away' card.",
+   "items": [
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "S",
+     "text": "The story names Avis, SRS Investment and Pentwater Capital with exact 2026 dates, ownership splits and prices — check every number against a news source and cite it ('Source: …, April 2026'), or clearly label the chart as 'simplified'. A wrong fact about named firms is a credibility and legal risk."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "All three quiz answers are option B — shuffle the correct positions so players can't guess the pattern."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "In Scene 3, losses are shown as '$1,000' in red with no minus sign — show '−$1,000' so the meaning doesn't rely on colour alone."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "If you choose 'Hold', the text says the broker forced you out at $850 for a $7,500 loss, but the chart keeps playing down to $200 and the P&L box ends at only −$1,000 — stop the chart (or freeze the loss) at the forced exit so the screen matches the story."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "After you make the hold/cut decision once, going back to Scene 3 shows '▶ Play the squeeze' but the button only resets and never plays again — make it restart the animation."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Everything is in dollars and uses 'float', 'P&L', 'short interest', 'margin account' — add a one-line rupee translation at the start ('$100 ≈ ₹8,300') and plain meanings for those words for mums new to markets."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The header says '$100 to $850 in 3 weeks' but the timeline runs 20 March to 22 April (about 5 weeks) — make them agree."
+    },
+    {
+     "area": "Layout",
+     "priority": "Low",
+     "effort": "S",
+     "text": "In 'The brutal asymmetry' chart the −$4,000 bar is drawn at 88% of the −$7,500 bar — size the bars in proportion so the picture tells the truth."
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Replace the 1 MB header logo with a small (~20 KB) version — it's the single biggest thing slowing the first screen."
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "M",
+     "text": "Bring it home for Indian investors — add a final card on 'Could this happen to me?' (Indian retail investors can't easily short; the real takeaway is 'don't chase a stock that's suddenly flying')."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Takeaway 3 ('short selling is not for regular investors… long-term investing is kinder to your sleep') is a natural spot for 'Learn the calm way → Find your batch' linking to register.investingformummies.com."
+    }
+   ]
+  },
+  {
+   "slug": "market-madness-2",
+   "title": "Market Madness 2",
+   "url": "https://games.investingformummies.com/market-madness-2",
+   "file": "mm2_content.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "A rich, on-brand trading sim with lovely emotional prompts ('did your stomach drop?') and three AI investors to race. What holds it back: it uses six real listed stocks, and the built-in 'Stock Picker' (60% Reliance, 40% HDFC Bank) beats the 'Safe whole-market' investor — so the game quietly contradicts its own lesson and looks like a stock tip.",
+   "load": "65 KB page + Google fonts; fast, no heavy assets.",
+   "share_idea": "\"I stayed calm through a crash and finished with ₹[final] from ₹10L — did you panic-sell? Race 3 investors through 6 market rounds: games.investingformummies.com/market-madness-2\"",
+   "share_moment": "Final screen, under the 4-investor leaderboard and before 'Try Again'.",
+   "items": [
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "M",
+     "text": "The game trades real companies (Reliance, HDFC Bank, Tata Power, Zomato, Suzlon, Yes Bank) with made-up price moves, and calls Yes Bank 'a bank that ran into trouble' — replace with fictional names (e.g. 'Bharat Mega Industries', 'Desi Delivery Co.') so nothing reads as a tip or a comment on a real company."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "With the fixed price moves, the 'Stock Picker' (two big companies) always finishes about +22% and beats the 'Safe' investor (+15%), yet the closing message says 'a simple, diversified approach usually beats clever trading' — rebalance the moves (or the Safe investor's mix) so the calm, spread-out investor actually wins, or change the lesson to match."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The 'Safe' investor is described as 'invests in the whole market' but actually buys equal amounts of six stocks including the two riskiest — call it 'Even Spreader' or make it behave like an index fund."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The Market / Limit / Stop Loss tabs in the buy and sell window change the description but do nothing to the trade — either make Stop Loss actually sell when the price falls, or label the tabs 'What these mean' so players aren't misled."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Players can make only one trade per round (one buy or one sell), so they can't build a spread-out portfolio like the AI 'Safe' investor — allow several buys per round, or add a one-tap 'buy a bit of everything' option."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Every replay has exactly the same price path, so the 'see if it was skill' invitation just rewards memory — add 2–3 alternative market stories picked at random."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "'Bid / Ask', 'large/mid/small cap', 'rotation' and 'divergence' round titles are heavy for beginners — keep the plain sub-labels and drop or explain the jargon headings."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The investor commentaries for the last round ('Held to the end', 'Finished ahead. Boring and effective.') are written but never shown because the lists are one line too long — show them on the final screen."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The final 'In the stock market…' teaching card is the right place for a soft 'Ready to invest calmly for real? Find your batch' link to register.investingformummies.com."
+    }
+   ]
+  },
+  {
+   "slug": "slash-the-scam.html",
+   "title": "Slash the Scam",
+   "url": "https://games.investingformummies.com/slash-the-scam.html",
+   "file": "slash-the-scam.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The most polished arcade game here — rich art, sound, combos, hearts and a gentle speed curve make it genuinely fun on a phone. What holds it back: the lessons whizz past in a ticker mid-swipe and are never recapped, one 'good' item (diamonds) teaches a shaky money idea, and the logo loads from the old domain.",
+   "load": "72 KB page + ~14 small game-icon PNGs + 1 MB logo from ifm-deploy.vercel.app; logo is the heaviest piece.",
+   "share_idea": "\"I protected ₹[score] from scams in 75 seconds ✂️ — verdict: [SCAM-PROOF SUPERMOM]. Can you beat me? games.investingformummies.com/slash-the-scam.html\"",
+   "share_moment": "End screen, right under the score and verdict, above 'Play again'.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "The logo loads from ifm-deploy.vercel.app (and is a 1 MB file) — serve a small logo from the games site so it doesn't break or slow the game if the old address changes."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "The game already remembers up to 4 lessons you met during play, but the end screen never shows them — add a 'What you learned' strip with those 3–4 scams and their one-line tell, since nobody can read the ticker while swiping."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "'Diamonds — precious things hold their value for years' is shaky advice (diamonds usually resell for far less than you paid) — swap the diamond for something solid like 'SIP' or 'Term insurance', or reword it as 'family jewellery — don't panic-sell'."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The opening ticker says 'Read the labels…' but the flying items have no labels (by design) — change it to 'Know the shapes: ✂️ slash the tricks, let the good ones land'."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Before the first round, show the 8 symbols with their names for 2 seconds (e.g. 'top hat = magic money scheme') — first-time mums otherwise slash by colour and guesswork."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Tapping 'End round' after a few seconds can award 'SCAM-PROOF SUPERMOM' and say 'protected from scams in 75 seconds' — give quitters a neutral verdict ('Round ended early')."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "This page has no Google Analytics tag (every other game has one) and no browser-tab icon — add both so its traffic shows up in the games report."
+    },
+    {
+     "area": "Accessibility",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Losing a heart is signalled mostly by red flashes and sound — add a short vibration on phones and keep the 'X hearts left' banner, which helps players who play muted."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Under 'The lesson' on the end screen add a soft 'Learn to spot money traps with other mums → Find your batch' link to register.investingformummies.com."
+    }
+   ]
+  },
+  {
+   "slug": "fundgoal.html",
+   "title": "Fund Your Goal",
+   "url": "https://games.investingformummies.com/fundgoal.html",
+   "file": "fundgoal.html",
+   "kind": "tool",
+   "audience": "Mummies",
+   "verdict": "A genuinely useful goal planner — multi-goal, inflation-adjusted, with a 'cost of delay' view and PDF/WhatsApp export. What holds it back: the 12% return default isn't explained, the 'start today' message is garbled, and every share and PDF still advertises the old ifm-deploy.vercel.app address.",
+   "load": "35 KB page + 1 MB logo from ifm-deploy.vercel.app; logo is most of the weight.",
+   "share_idea": "\"To fund [Child's education] in [10] years I need ₹[SIP]/month — waiting just 1 year adds ₹[extra]/month 😳 Plan your goal free: games.investingformummies.com/fundgoal.html\"",
+   "share_moment": "Under the 'Your Full Picture' totals, where the WhatsApp button already sits (fix its text/link).",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "The WhatsApp message ends 'Plan yours free: ifm-deploy.vercel.app' and the PDF footer says the same — change both to games.investingformummies.com/fundgoal.html so every share brings people back to the right site."
+    },
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "S",
+     "text": "'Expected return' defaults to 12% with no explanation — add a short note next to it ('12% is an assumption, roughly what equity funds have averaged over long periods; it can be lower and is not guaranteed') and show a safer 8% result alongside for comparison."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The yellow 'Start today' banner reads 'Every year you delay costs you an extra ₹X — actually, waiting even 1 year means paying ₹Y more every month, forever' — the first number is meaningless and 'forever' is wrong; replace with one clear line: 'Waiting 1 year means ₹Y more every month until your goal.'"
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "'Corpus', 'SIP' and 'Lump sum' are never explained — add tiny helper text ('Corpus = total you'll need', 'SIP = a fixed amount invested every month')."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The summary table has four money columns that get cramped on a 390px phone — stack each goal as a small card on phones instead of a wide table."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Percentage boxes use a number-only keypad, so on iPhones you can't type '6.5%' — allow a decimal keypad for inflation and return."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The 'All goals combined' totals are rebuilt from the rounded '₹12.34 L' text on screen, so they can be slightly off — add up the real numbers instead."
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Header logo (and PDF logo) is the 1 MB watermark file from the old domain — swap for a small local logo."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Once a goal has a monthly amount, add a gentle 'Want help picking where to put this ₹X/month? Find your batch' link to register.investingformummies.com — this is the highest-intent moment on the whole games site."
+    }
+   ]
+  },
+  {
+   "slug": "goal-tracker.html",
+   "title": "Goal Tracker",
+   "url": "https://games.investingformummies.com/goal-tracker.html",
+   "file": "goal-tracker.html",
+   "kind": "tool",
+   "audience": "Mummies",
+   "verdict": "A tidy short/medium/long-term goal board with a clear funded-vs-gap donut, good on a laptop. What holds it back: on a phone the page spills sideways and the 'Funded so far' box is hidden entirely, so the main thing the tool does can't be done on the device most visitors use.",
+   "load": "31 KB page + Chart.js (~200 KB) for a single donut; fine, could be lighter.",
+   "share_idea": "\"My family goals are [42]% funded 🎯 — ₹[gap] to go. Map yours in 2 minutes: games.investingformummies.com/goal-tracker.html\"",
+   "share_moment": "Under the Overall Summary donut, where the WhatsApp button already sits (fix its text/link).",
+   "items": [
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "On phones the 'Funded so far' and 'Gap' columns are hidden and the column labels disappear, so mums can't enter what they've saved and see unlabelled boxes — on small screens show each goal as a stacked card with labelled fields (Goal, Years, Target, Saved so far)."
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "S",
+     "text": "Each goal row is wider than the screen (the page is about 462px wide on a 390px phone), causing sideways scrolling — let the row wrap or stack as above."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "The WhatsApp message and the downloaded plan both say 'ifm-deploy.vercel.app' — change to games.investingformummies.com/goal-tracker.html."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "The tool shows the gap but not what to do about it — add 'To close this gap in [Years], you'd need about ₹X a month' (or a 'Plan this goal →' link into Fund Your Goal) so a gap turns into an action."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The 'Yrs' box is collected but used nowhere, and a 10-year goal can sit under 'Short term' — use the years to place or warn, and in the monthly-amount maths above."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "S",
+     "text": "'Download My Plan' saves a plain .txt file, which feels unfinished next to Fund Your Goal's branded PDF — reuse that branded print layout here."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "'People who write down goals are 42% more likely to achieve them' is an unsourced stat — cite it or soften it ('Writing a goal down with a number and a date makes it far more likely to happen')."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "'Target corpus' is jargon — say 'Amount needed'; also close the 4–5 year gap between 'Medium (1–4 years)' and 'Long (5+ years)'."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The faint IFM watermark only works when the page sits inside the old site, so on its own it's an empty image — point it at a small local logo or remove it."
+    },
+    {
+     "area": "Speed",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Chart.js is loaded just to draw one two-colour ring — a simple CSS ring would do the same and save ~200 KB on phones."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Under the summary add a soft 'Not sure how to close the gap? Find your batch' link to register.investingformummies.com."
+    }
+   ]
+  }
+ ]
+}

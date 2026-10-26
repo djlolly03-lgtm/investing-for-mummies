@@ -1,0 +1,192 @@
+{"group":"solo-b","games":[
+{
+  "slug":"wheel-of-gold","title":"Wheel of Gold","url":"https://games.investingformummies.com/wheel-of-gold",
+  "file":"wheel-of-gold.html","kind":"solo","audience":"Mummies",
+  "verdict":"Beautiful gold-medallion wheel and clear one-line explanations after every answer. What holds it back: it's heavy to load, cramped on phones, and the content has no Indian (rupee) angle and never says how mums should actually hold gold.",
+  "load":"145 KB page (33 KB zipped) plus about 2.1 MB of logo PNGs: 1.1 MB on open (white and black logos, one of them for a hidden Silver screen) and the 1 MB round logo when you press Start. About 150 KB of wheel art, plus an extra font (Cinzel).",
+  "share_idea":"\"I called 7 out of 8 gold price moves on Wheel of Gold 🪙 Does gold go up or down when the rupee falls? Try it: games.investingformummies.com/wheel-of-gold\"",
+  "share_moment":"On the final screen, right under the score ring (before the badges)",
+  "items":[
+    {"area":"Speed","priority":"High","effort":"S","text":"Replace the three full-size logo PNGs (about 550 KB and 1 MB each) with small web-sized versions of about 20 KB, and drop the logo that only exists for the hidden Silver screen. The page would open several times faster on mobile data."},
+    {"area":"Mobile","priority":"High","effort":"M","text":"On a phone the wheel shrinks to about 220 px. The Up/Down wax seals get squeezed into 58 px strips with roughly 9 px captions, and the scenario text is crammed inside the wheel. On phones, show the scenario as a card under the wheel and put two big full-width 'Gold goes UP' / 'Gold goes DOWN' buttons beneath it."},
+    {"area":"Accessibility","priority":"Med","effort":"S","text":"The Up/Down choices are pictures of seals with no words on them (the tiny caption sits underneath). Put 'UP' and 'DOWN' in large text on the buttons themselves so nobody has to guess which seal is which."},
+    {"area":"Game design","priority":"Med","effort":"S","text":"Every spin takes 6.5 seconds and the result is random anyway, so a player spends about 50 seconds just waiting over 8 rounds. Shorten the spin to about 3 seconds and let a tap skip it."},
+    {"area":"Copy","priority":"High","effort":"S","text":"Add the India angle. For a mum buying in rupees, a weaker rupee, import-duty changes and wedding/festival-season demand move gold prices as much as the dollar does. Add cards like 'Rupee falls against the dollar' and 'Government cuts import duty on gold'."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"Two answers are taught as firm rules that recent years broke. Gold rose to records in 2024–25 while stocks were also at all-time highs, and central banks have been big gold BUYERS, not sellers. Add 'usually' to the explanations and swap 'Central banks sell gold' for 'Central banks buy record amounts of gold'."},
+    {"area":"Game design","priority":"Med","effort":"M","text":"It's the same 8 cards every time, and once you learn 'bad news = gold up' you score 8/8 on the second try. Build a pool of 15–20 cards (including a few trick cards) and draw 8 at random so replays still teach something."},
+    {"area":"Game design","priority":"Med","effort":"S","text":"The ending doesn't connect to what mums actually do with gold. Add a takeaway comparing jewellery (making charges, purity, GST, resale cut) with paper/digital ways of owning gold in general terms, without naming any product. The 'Jewellery is not an investment' insight currently sits only on the Silver page."},
+    {"area":"Layout","priority":"Low","effort":"S","text":"The final screen shows correct answers, accuracy % and points, and points are just correct × 10, so that's three ways of saying the same thing. Show one score plus the best streak, and use the space for the takeaway."},
+    {"area":"Copy","priority":"Low","effort":"S","text":"The lowest-score message says 'Come back after reviewing the material!' but there is no material to review. Replace it with something warm like 'Spin again — you'll spot the pattern fast'."},
+    {"area":"Conversion","priority":"Med","effort":"S","text":"After the insight box, add one gentle line, for example 'Gold is one of the three buckets we unpack in the IFM workshop — see upcoming batches', linking to register.investingformummies.com."}
+  ]
+},
+{
+  "slug":"wheel-of-silver","title":"Wheel of Silver","url":"https://games.investingformummies.com/wheel-of-silver",
+  "file":"wheel-of-silver.html","kind":"solo","audience":"Mummies",
+  "verdict":"Same polished wheel as Gold, with a good 'double life' angle (silver is both a precious and an industrial metal). But the page skips its own intro and drops players straight into the wheel, so that hook is never explained, and the phone layout is cramped.",
+  "load":"141 KB page plus about 2.1 MB of logo PNGs, all loaded on open because the game auto-starts (white 543 KB, black 556 KB for a hidden screen, round logo 1 MB)",
+  "share_idea":"\"Silver has a double life 🥈 Jewellery AND solar panels. I scored 6/8 predicting its price on Wheel of Silver. Can you beat me? games.investingformummies.com/wheel-of-silver\"",
+  "share_moment":"On the final screen under the score ring",
+  "items":[
+    {"area":"Game design","priority":"High","effort":"S","text":"The page jumps straight into the spinning wheel with no 'How it works' and no explanation of silver's 'double life' (precious metal + industrial metal), which is the whole lesson. The silver intro card already exists in the page but is never shown, so show it first."},
+    {"area":"Speed","priority":"High","effort":"S","text":"About 2 MB of logo images load the moment the page opens, including a 1 MB round logo for the middle of the wheel and a logo for a hidden screen. On the phone screenshot the wheel centre was still blank while it loaded. Use small web-sized logos."},
+    {"area":"Accessibility","priority":"Med","effort":"S","text":"The 'SPIN THE WHEEL' button is white text on light grey, which is very low contrast and hard to read outdoors on a phone. Use navy text or a darker silver button."},
+    {"area":"Mobile","priority":"High","effort":"M","text":"On a 390 px phone the wheel is only about 180 px wide with unlabelled emoji icons, the Up/Down buttons are 64 px strips with roughly 10 px labels, and the '8' round marker wraps alone onto a second line. Use full-width Up/Down buttons under the wheel, smaller round markers, and a bigger wheel."},
+    {"area":"Game design","priority":"Med","effort":"S","text":"Each spin takes 6.5 seconds of waiting, about 50 seconds per game. Cut it to about 3 seconds and allow tap-to-skip."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"Add the points mums most need about silver: its price swings much more than gold's (it isn't just 'cheap gold'), and a weaker rupee pushes the Indian price up. Add a card or two on each."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"The end insight 'Jewellery is NOT an investment!' feels like a scolding. Rephrase it kindly with the reason (making charges, purity, resale cut) and mention in general terms that there are other ways to own silver, without naming products."},
+    {"area":"Game design","priority":"Low","effort":"M","text":"Same 8 cards every play. Add a larger pool and draw 8 so a second play isn't a memory test."},
+    {"area":"Conversion","priority":"Med","effort":"S","text":"Under the insight, add a soft link: 'Where do gold and silver fit in a family plan? We cover it in the IFM workshop — see batches' → register.investingformummies.com."}
+  ]
+},
+{
+  "slug":"reit-or-real","title":"REIT or Real?","url":"https://games.investingformummies.com/reit-or-real",
+  "file":"reit-or-real.html","kind":"solo","audience":"Mummies",
+  "verdict":"A quick, clear 2-minute True/False with genuinely useful facts (rental yield is only 2–3%). It names two real REITs in a way that reads like a recommendation, it's one-sided against owning property, and the text is very small on phones.",
+  "load":"123 KB page, no images or libraries. Fast, though most of the page is styling for other games.",
+  "share_idea":"\"Myth or fact: a ₹1 crore flat earns 8–10% rent a year? 🏠 I busted 7/8 property myths on REIT or Real? — try it: games.investingformummies.com/reit-or-real\"",
+  "share_moment":"On the final screen, right under the score bar (before the question recap)",
+  "items":[
+    {"area":"Compliance","priority":"High","effort":"S","text":"Q1's answer says 'Embassy REIT and Mindspace REIT are popular options in India'. From an unregistered educator that reads like a recommendation. Remove the names, or say 'India has a handful of listed REITs that own office parks and malls'."},
+    {"area":"Compliance","priority":"Med","effort":"S","text":"Soften the promises. Q3 calls REITs 'reliable income-generating investments' and Q8 says you can sell 'instantly at market price'. Payouts can go down, unit prices can fall, and some REITs trade thinly, so say so in one line."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"Q3 says REITs pay 90% 'as dividends'. In reality the payout is a mix of dividend, interest and part-repayment, and each is taxed differently, which is something mums will run into. Reword to 'distribute at least 90% of their cash to unitholders'."},
+    {"area":"Game design","priority":"High","effort":"M","text":"All 8 answers point the same way: REIT good, property bad. Mums who own or dream of a home may feel lectured. Add 2–3 balanced statements where property has a real point (security of your own home, a loan lets you buy something bigger) and one where REITs disappoint (unit prices fall in market crashes)."},
+    {"area":"Game design","priority":"Med","effort":"S","text":"The questions come in the same order every time, so the answer pattern is fixed. Shuffle the order and, ideally, draw 8 from a pool of 12–15 so replays are worth it."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"The word REIT isn't explained until after the first answer, and the intro shows 'Direct RE'. Add one plain line on the start screen ('A REIT lets you own a small slice of big office buildings and malls through the stock market') and write 'Buying a flat' instead of 'Direct RE'."},
+    {"area":"Copy","priority":"Low","effort":"S","text":"Q1 says 'You need ₹50 Lakhs or more to invest in commercial real estate' and the answer is False, which only holds if REITs count. Reword to 'to earn rent from offices or malls', and change 'from as low as ₹500' to 'the price of one unit — a few hundred rupees'."},
+    {"area":"Mobile","priority":"Med","effort":"S","text":"Most reading text is tiny on phones: explanations about 13 px, takeaways about 12 px, the disclaimer about 11 px. Raise the body text to at least 15–16 px so mums don't have to pinch-zoom."},
+    {"area":"Bug","priority":"Low","effort":"S","text":"The score bar during the game shows an empty grey circle on the left where a logo was meant to go (the image has no picture set). Add the small logo or remove the circle."},
+    {"area":"Layout","priority":"Low","effort":"S","text":"The orange banner and purple takeaway cards are off-brand, and on phones the banner text sits off-centre because space is reserved for a logo that isn't there. Switch to navy/teal/gold and centre the banner text."},
+    {"area":"Conversion","priority":"Med","effort":"S","text":"After the Key Takeaways, add 'Property, REITs, gold, mutual funds — we compare them side by side in the IFM workshop. See batches' → register.investingformummies.com."}
+  ]
+},
+{
+  "slug":"debt-detective","title":"Debt Detective","url":"https://games.investingformummies.com/debt-detective",
+  "file":"debt-detective.html","kind":"solo","audience":"Mummies",
+  "verdict":"A great core idea: 'you are the lender, so who's borrowing your money?'. The reveal card (borrower, risk, liquidity) is excellent. But each product's description gives the answer away, and it leaves out the products mums actually get confused by.",
+  "load":"134 KB page, no images or libraries; fast",
+  "share_idea":"\"When you open an FD, who are you actually lending to? 🕵️ I spotted 7/8 borrowers on Debt Detective — try it: games.investingformummies.com/debt-detective\"",
+  "share_moment":"On the final screen, right under the 'x/8 borrowers spotted' number",
+  "items":[
+    {"area":"Game design","priority":"High","effort":"S","text":"The small description under each product gives the answer away ('government savings scheme', 'issued by individual state governments', 'deposit with a bank', 'issued by a company'), so it's reading, not detecting. Hide those giveaway words until the reveal."},
+    {"area":"Game design","priority":"High","effort":"M","text":"Add the products where the detective twist really lives: a company/NBFC fixed deposit (the borrower is a company, not a bank, and it is NOT covered by the ₹5 lakh deposit insurance), a small-finance-bank FD, Post Office schemes (NSC, Senior Citizens' scheme, Monthly Income), and a debt mutual fund (many borrowers at once)."},
+    {"area":"Copy","priority":"High","effort":"S","text":"The SSY card says it 'matures when the girl turns 21'. It actually matures 21 years after the account is opened. Fix it, because parents plan around this date."},
+    {"area":"Compliance","priority":"Med","effort":"S","text":"PPF 7.1% and SSY 8.2% are shown as fixed facts, but the government resets these rates every quarter. Add 'rate as of Oct–Dec 2026, revised quarterly'. Also change 'zero default risk' to 'practically no default risk', and drop 'AA+ equivalent' for state loans (they aren't rated)."},
+    {"area":"Game design","priority":"Med","effort":"S","text":"A 30-second timer bar counts down and then just says 'Take your time'. It adds stress and does nothing. Remove it, or make it an optional 'speed round'."},
+    {"area":"Mobile","priority":"High","effort":"S","text":"The key question 'Who is borrowing your money?' is about 10 px text, and the reveal text is 11–12 px. Make the question the biggest text on the card and raise all reading text to at least 15 px."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"Replace jargon with plain words: 'Sovereign' → 'Backed by the Government of India', 'Liquidity' → 'How fast can you get your money back?', drop 'NDS-OM', 'fiscal deficit' and 'EEE' (or explain EEE as 'tax-free going in, growing and coming out')."},
+    {"area":"Accessibility","priority":"Med","effort":"S","text":"The four borrower tiles aren't real buttons, so they can't be reached with a keyboard or read out properly by a screen reader. Make them proper buttons."},
+    {"area":"Bug","priority":"Low","effort":"S","text":"The score shows '0/0' before the first answer, and the score bar has an empty grey logo circle on the left. Start at '0 of 8' and add or remove the logo."},
+    {"area":"Layout","priority":"Low","effort":"S","text":"Pink, purple and orange product colours are off-brand. Use the navy/teal/gold palette (for example, teal for government, navy for banks, gold for companies) so colour itself teaches the safety ladder."},
+    {"area":"Conversion","priority":"Med","effort":"S","text":"After 'The Big Picture', add 'Want to know which of these suits your family's goals? That's Session 2 of the IFM workshop — see batches' → register.investingformummies.com."}
+  ]
+},
+{
+  "slug":"debt-boss","title":"Debt Boss","url":"https://games.investingformummies.com/debt-boss",
+  "file":"debt-boss.html","kind":"solo","audience":"Mummies",
+  "verdict":"The richest debt lesson on the site: a rate shock, a default and inflation each hit a ₹10 lakh portfolio differently, with a nice real-vs-nominal ending. Pinch-zoom works. But the score ignores your portfolio, tax (the biggest mum lesson) isn't counted, and one takeaway contradicts what the player just saw.",
+  "load":"201 KB page plus React and Babel (about 650 KB zipped, 3 MB unzipped) that compile the game on the phone each visit. About 1.5 MB of logos are used inside the game.",
+  "share_idea":"\"My ₹10 lakh survived a rate hike, a company default and inflation — and ended at ₹X (worth ₹Y in today's money). Can your mix do better? games.investingformummies.com/debt-boss\"",
+  "share_moment":"On the results screen, right under the Nominal / Real totals",
+  "items":[
+    {"area":"Game design","priority":"High","effort":"M","text":"The score only counts the four quiz answers (25 points each). Your allocation, which is the whole game, doesn't affect it, so a player who lost lakhs can still be crowned 'Debt Master!'. Score the portfolio too, for example 'beat inflation?' and 'beat a plain FD?'."},
+    {"area":"Game design","priority":"High","effort":"M","text":"Returns are shown before tax even though each card says 'Tax-Free' or 'Taxable'. In the game a 7.5% FD beats 7.1% PPF, but for someone in the 30% bracket the FD is only about 5.25%. Add a simple 'my tax slab' choice and show after-tax results, which is the most useful debt lesson for working mums."},
+    {"area":"Bug","priority":"High","effort":"S","text":"The inflation pop-up's takeaway says 'Only Corporate Bonds meaningfully beat inflation', moments after the player watched corporate bonds lose about 35% in the default. That contradicts the lesson and nudges people toward risky bonds. The same list also shows a 'Gold Bond' that isn't in the game and leaves out Debt MF."},
+    {"area":"Game design","priority":"Med","effort":"S","text":"The allocation screen starts pre-filled to exactly ₹10 lakh, so a player can press 'Simulate' without making a single decision. Start with everything unplaced and ask them to choose."},
+    {"area":"Game design","priority":"Med","effort":"M","text":"The four events are always the same, in the same order, so the 'best' mix can be memorised. Shuffle the order and occasionally swap in a 'rate cut' year (when bonds do well) so no single answer always wins."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"Debt MF is labelled 'LTCG' (the long-term gains tax treatment). Since April 2023, gains on debt funds are taxed at your normal slab rate, with no long-term benefit. Fix the label."},
+    {"area":"Compliance","priority":"Low","effort":"S","text":"Add an 'as of' date to the rates (PPF 7.1%, SSY 8.2%, FD 7.5%), because they change. Also state the inflation assumption clearly: results use 7% for all four years, but the game only mentions inflation (7.5%) in Year 4."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"Fix three slips: 'Your class has ₹10,00,000' (it's a solo game, so say 'You have'), the 'Balanced Borrower' profile (the player is the lender), and the mix of 'Rs' and '₹' on the results screen."},
+    {"area":"Mobile","priority":"High","effort":"M","text":"The 'what is this instrument?' explanations only appear when a mouse hovers over a card, so phone users never see them. Add a tap-able ⓘ. The event pop-up text is also 9–11 px on phones; raise it to at least 14 px."},
+    {"area":"Layout","priority":"Low","effort":"S","text":"The title appears twice on open: the page banner 'Debt Boss' and then another 'Debt Boss' card. This pushes 'Start Allocating' well below the fold on phones, so keep one."},
+    {"area":"Speed","priority":"Med","effort":"M","text":"The game is translated into runnable code inside the visitor's phone every visit (Babel, about 600 KB). On slow phones mums see 'Loading Debt Boss… Connecting to CDN'. Pre-build it once so it opens instantly."},
+    {"area":"Conversion","priority":"Med","effort":"S","text":"The results already end on 'long-term wealth needs growth assets beyond debt'. Follow it with 'That's exactly what we build in the IFM workshop — see batches', linking to register.investingformummies.com, above the Play Again button."}
+  ]
+},
+{
+  "slug":"cap-climber","title":"Cap Climber","url":"https://games.investingformummies.com/cap-climber",
+  "file":"cap-climber.html","kind":"solo","audience":"Mummies",
+  "verdict":"Fast and simple, but several answers are out of date or wrong, and with only a company name and 6 seconds it's guesswork, not learning. It needs a clue to reason from.",
+  "load":"121 KB page, no images or libraries; fast",
+  "share_idea":"\"Is Asian Paints a large, mid or small cap? 🏔️ I scored 80/100 on Cap Climber — beat me: games.investingformummies.com/cap-climber\"",
+  "share_moment":"On the final screen, right under the 'x / 100' score",
+  "items":[
+    {"area":"Bug","priority":"High","effort":"S","text":"Several answers look wrong or out of date. Hindustan Zinc (worth about ₹2 lakh crore) is a Large cap, not Mid. Jubilant FoodWorks and MCX have recently sat in the Mid-cap band, not Small. MCX's fact says 'smaller than NSE', but NSE isn't even listed. Check all 10 against AMFI's latest half-yearly list and show 'as of <month year>' on screen."},
+    {"area":"Game design","priority":"High","effort":"M","text":"With only a company name and 6 seconds, players can only guess. Show a clue, such as the company's total value in ₹ crore or 'bigger or smaller than Asian Paints?', so they learn that 'cap' simply means size."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"'Market cap' is never explained. Add one line on the start screen: 'Market cap = what the whole company is worth on the stock market (share price × number of shares)'. Also drop trader jargon in the facts ('telecom play', 'QSR', 'consumer discretionary')."},
+    {"area":"Compliance","priority":"Med","effort":"S","text":"The end lesson promises too much: 'Large caps are stable wealth preservers', 'small caps can be multi-baggers', 'A diversified portfolio holds all three!'. Rephrase neutrally, for example 'large companies have usually swung less; small ones can rise or fall much more'."},
+    {"area":"Mobile","priority":"Med","effort":"S","text":"After each answer the explanation (about 11 px text) disappears after 2 seconds, which is too fast to read on a phone. Add a 'Next' button and bigger text."},
+    {"area":"Game design","priority":"Med","effort":"S","text":"Same 10 companies in the same order every time (the three easy Large caps come first). Shuffle the order and draw from a bigger pool of 20–25 well-known brands mums buy from."},
+    {"area":"Accessibility","priority":"Med","effort":"S","text":"The 6-second timer can't be turned off, which is stressful for first-timers. Offer a 'relaxed mode' without the clock."},
+    {"area":"Game design","priority":"Low","effort":"S","text":"The final list shows the right answers but not what the player picked. Show 'You said Mid · Actually Large' so mistakes stick."},
+    {"area":"Layout","priority":"Low","effort":"S","text":"The bright blue banner and purple 'Small cap' colour are off-brand, and on phones the banner text is pushed off-centre by space reserved for a missing logo. Use brand colours and centre the text."},
+    {"area":"Conversion","priority":"Med","effort":"S","text":"After the lesson, add: 'Large, mid or small — which fits your goals? We explain simply in the IFM workshop — see batches' → register.investingformummies.com."}
+  ]
+},
+{
+  "slug":"market-pulse","title":"Market Pulse","url":"https://games.investingformummies.com/market-pulse",
+  "file":"market-pulse.html","kind":"solo","audience":"Mummies",
+  "verdict":"Exciting 'predict the reaction' format with great lessons (priced in, splits change nothing, pledges are red flags). But it pretends to be a LIVE NSE feed, attaches invented events to real companies, never stops growing the page, overflows on phones, and is the heaviest page in this group.",
+  "load":"187 KB page plus the React DEVELOPMENT build and Babel: about 920 KB zipped, 4.3 MB unzipped, compiled on the phone. It also re-draws every second forever.",
+  "share_idea":"\"I called 7/10 market reactions — including the one where GOOD news made a stock fall 📉 Try Market Pulse: games.investingformummies.com/market-pulse\"",
+  "share_moment":"On the summary screen, right under the Hits / Misses / Accuracy boxes",
+  "items":[
+    {"area":"Compliance","priority":"High","effort":"S","text":"The game looks like a live market feed. It shows a red 'LIVE' badge, 'NSE · BSE · INTRADAY', 'SESSION OPEN', a real-time IST clock, moving prices and a boot log saying 'connecting to NSE feed … OK'. Under SEBI's 2025 rule unregistered educators may only use market data at least 3 months old, so this look invites the wrong reading. Relabel it 'Replay of past market moments' and show the month and year on every event. None of the events are from the last 3 months (the newest is early 2025), so this is about how it looks."},
+    {"area":"Compliance","priority":"High","effort":"M","text":"The hero says 'Real headlines', but several events look invented and are attached to real company names: an abrupt HDFC Bank CEO resignation, a 78% promoter pledge at Paytm, a TCS guidance cut, a ₹26,000 crore L&T export order, a 1:10 Bajaj Finance split. Either use genuine past events with dates, or anonymise them ('a large private bank')."},
+    {"area":"Bug","priority":"High","effort":"S","text":"The page keeps getting taller by itself. Measured on a phone, it grew from 1,201 px to 1,801 px in 15 seconds and never stops, leaving a huge empty dark band (the start card floats far down the page on desktop). The game frame should only resize when the screen changes."},
+    {"area":"Mobile","priority":"High","effort":"M","text":"At phone width the start card and top bar run off the right edge, and the 'ENTER TRADING FLOOR' button is cut off. Make the terminal fit 390 px: stack the top bar and shrink the start card."},
+    {"area":"Speed","priority":"High","effort":"M","text":"It loads React's large DEVELOPMENT version (meant only for programmers testing) plus Babel, which compiles the game on the phone. That's about 920 KB to download and several seconds of phone work, the main reason for the score of 56. Pre-build it with the small production version."},
+    {"area":"Bug","priority":"Med","effort":"S","text":"The Fed rate-cut event marks a +3.4% move as 'Sharp rise', but the game's own buttons say sharp means '+5% or more'. Players who follow the rules get marked wrong. Change the answer to 'Slight rise'."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"The circuit-breaker flash says 'TRADING HALTED · 20% LIMIT BREACHED' on moves of +12% and −18%. Also, big F&O stocks like Adani Enterprises and L&T don't have fixed circuit limits, so this teaches a wrong rule. Match the wording to the actual move and pick a stock where a circuit really applies."},
+    {"area":"Accessibility","priority":"High","effort":"S","text":"The pandemic event flashes the whole screen red about 5 times a second for 2.5 seconds, which is a seizure risk (the safe limit is 3 flashes a second). Remove the strobe. Klaxon and alarm sounds also play with no mute button, so add one: many mums play in public or at night."},
+    {"area":"Copy","priority":"High","effort":"M","text":"The language is written for traders: 'read the tape', 'breadth', 'rotation', 'front-running', 're-rates', 'bps', 'P/E', 'FII', 'F8 BUY · F9 SELL'. Add a one-line plain-English 'What this means for you' to each reveal, and remove the fake BUY/SELL key hints (they do nothing and suggest trading)."},
+    {"area":"Layout","priority":"Med","effort":"M","text":"The neon black terminal in Inter/JetBrains fonts feels like a different company and uses 10–12 px labels. Bring it onto the brand: navy background, Nunito/Lora, teal for up, and a muted red for down. Keep the drama but make it readable."},
+    {"area":"Game design","priority":"Med","effort":"S","text":"The summary gives only a rank ('Fresh Intern' … 'Portfolio Manager'). Add the three lessons the player just met, for example 'markets react to surprises, not news', 'if everyone expects it, it's priced in' and 'a low share price isn't cheap', so the payoff is learning, not a job title."},
+    {"area":"Bug","priority":"Low","effort":"S","text":"The start-up text log skips the 'NSE feed' line and repeats 'loading circuit thresholds' twice (visible on the desktop screenshot). Minor, but it looks broken."},
+    {"area":"Conversion","priority":"Med","effort":"S","text":"Under the summary, add 'Don't try to predict the market — learn how to invest through it. See IFM workshop batches' → register.investingformummies.com."}
+  ]
+},
+{
+  "slug":"ipo-bonanza","title":"IPO Bonanza","url":"https://games.investingformummies.com/ipo-bonanza",
+  "file":"ipo-bonanza.html","kind":"solo","audience":"Mummies",
+  "verdict":"An impressively thorough walk through the real Zomato IPO, from the red-flag hunt and annotated newspaper notice to the lottery and listing. But leftover text from an older fictional company ('NEXAFIN', 30-share lots, December dates) contradicts the case, and it always ends in a big listing-day profit.",
+  "load":"245 KB page plus React (no fixed version) and Babel: about 700 KB zipped, 3.3 MB unzipped, compiled on the phone",
+  "share_idea":"\"I read Zomato's IPO papers, spotted the red flags and bid in the lottery — and got rated 'Prudent Bidder' 📊 Would you have applied? games.investingformummies.com/ipo-bonanza\"",
+  "share_moment":"On the Final Report, right under the investor persona and XP",
+  "items":[
+    {"area":"Bug","priority":"High","effort":"S","text":"Leftover text from an older made-up company shows on screen and contradicts the Zomato case: 'ISSUE LIVE · NEXAFIN', 'Blocked for NEXAFIN' and '× NEXAFIN' shares, '1 LOT ALLOTTED · 30 SHARES' and 'lottery in lots of 30' (Zomato's lot was 195), December dates in the money timeline (the IPO was July 2021), '₹25 SPREAD' (the band was ₹72–76), and registrar 'KFinTech' (the notice correctly says Link Intime). Clean them all up."},
+    {"area":"Bug","priority":"High","effort":"S","text":"The 'Allocation buckets' panel and the final recap say QIB 50% · HNI 15% · Retail 35%, but the newspaper notice in the same game correctly says 75% / 15% / 10% for Zomato, because it was loss-making. Show Zomato's split and mention that 35% retail is the usual case."},
+    {"area":"Game design","priority":"High","effort":"M","text":"The banner promises 'decide if you'd invest', but there's no way to NOT apply: after the red-flag hunt you must bid. Add an 'Apply or Skip?' choice and reward a well-reasoned skip as well. Deciding whether to apply at all is the real lesson for mums."},
+    {"area":"Compliance","priority":"High","effort":"M","text":"Listing day is fixed as a +50–66% jump, with confetti and a 'Five-Figure Flex' badge for making ₹10,000+. Everyone who gets shares profits, which teaches 'IPO = quick money' even though the text says about 40% list at a loss. Randomly draw a second real case that flopped (e.g. a 2021 fintech IPO that listed −27%) and replace the 'flex' badge with one for good decisions."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"The chance of winning shares at cut-off is set to 32%, but the game's own explanation says about 1 in 7 (7.45× retail demand). Align the odds with what you teach."},
+    {"area":"Bug","priority":"Med","effort":"S","text":"'↻ NEW IPO · NEXT COMPANY' just reloads the same Zomato case, and three 'SOON' cards on the start screen promise modes that don't exist. Rename the button 'Play again' and hide the 'SOON' cards until they're built."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"Tone and jargon: 'Pray for allotment', 'Greater Fool' and 'Hype-pilled' may put mums off, and QIB, NII, ASBA, DRHP, GMP and cut-off come thick and fast. Add a small tap-to-open glossary, warm up the persona names, and say 'Savings account' instead of the American 'Chequing'."},
+    {"area":"Compliance","priority":"Low","effort":"S","text":"'BID AT CUT-OFF — Recommended for retail' and 'retail almost always wins by selecting cut-off' read like advice. Rephrase as 'Most retail investors choose cut-off because…'."},
+    {"area":"Mobile","priority":"Med","effort":"M","text":"On phones the dark terminal style uses 10–12 px labels, a cramped top bar and a giant headline that fills the first screen. Raise the smallest text to 13–14 px, simplify the top bar, and shift towards brand colours/fonts."},
+    {"area":"Speed","priority":"Med","effort":"M","text":"Babel (about 650 KB) compiles the game on the phone, and React is loaded without a fixed version (it can silently change and break the game). Pre-build it and pin the version."},
+    {"area":"Copy","priority":"Low","effort":"S","text":"Add a note that Zomato is now called Eternal (renamed in 2025), so mums who look it up aren't confused."},
+    {"area":"Conversion","priority":"Med","effort":"S","text":"On the Final Report, add 'IPOs are exciting — but they're one small slice of a family plan. See IFM workshop batches' → register.investingformummies.com."}
+  ]
+},
+{
+  "slug":"my-first-trade","title":"My First Trade","url":"https://games.investingformummies.com/my-first-trade",
+  "file":"my-first-trade.html","kind":"solo","audience":"Mummies",
+  "verdict":"A friendly, well-built 5-round journey that makes dividends, splits, bonuses, buybacks and rights issues feel concrete, and it's the most on-brand of the stock games. But it's sold as 'real market history' when many prices and dates are invented, the split maths contradicts its own lesson, and a 'go back in time' button can be exploited.",
+  "load":"216 KB page plus React and Babel (about 650 KB zipped, 3 MB unzipped) compiled on the phone, plus the 1 MB round logo",
+  "share_idea":"\"I turned ₹2 lakh into ₹X over 9 years in My First Trade 📈 (and learned what a bonus share is). Beat my portfolio: games.investingformummies.com/my-first-trade\"",
+  "share_moment":"On the results screen, right under 'Total Return' (next to the index-fund comparison, once added)",
+  "items":[
+    {"area":"Compliance","priority":"High","effort":"M","text":"It promises '9 years of real market history', but many prices and events don't match reality. DMart and Dixon weren't listed until 2017 yet can be bought in 2016. Zomato's IPO is placed in 2020 (it was July 2021). The Titan 1:5 split in 2018 and Trent 1:1 bonus in 2023 don't match the record. 'Dixon gave 100×' comes from a made-up ₹160 starting price. Use true prices and dates, or say clearly 'inspired by real events — prices simplified'."},
+    {"area":"Bug","priority":"High","effort":"S","text":"The '← Go back to <earlier year> — sell holdings' button lets players travel back a round. Dividends, splits and bonuses then apply a second time, and you can trade with hindsight, which breaks the result. Remove time travel, or reset the round properly."},
+    {"area":"Bug","priority":"High","effort":"S","text":"The Titan split gives you 5× the shares, but the price only drops from ₹420 to ₹180, so your holding more than doubles. That's right next to a lesson saying 'the total value stays the same'. Set the post-split price to one-fifth so the maths matches the lesson."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"The Zomato IPO always gives you about 32% of what you applied for (at least one lot). For retail investors a popular IPO is a lottery for one lot, which is exactly what IPO Bonanza teaches. Make the two games agree."},
+    {"area":"Game design","priority":"High","effort":"M","text":"The ending celebrates lucky stock picks ('Dixon gave 100×'). Add a comparison: 'If you'd simply put ₹2 lakh into a Nifty 50 index fund in 2016, you'd have about ₹X today (assumption: index returns 2016–2025, before tax)'. That's the real IFM takeaway for mums."},
+    {"area":"Compliance","priority":"Med","effort":"S","text":"The IPO banner uses fear-of-missing-out language: '🔥 LIVE', 'First-Ever IPO Opportunity', 'Close soon', 'Apply now!'. Tone it down to a neutral 'Zomato IPO — would you apply?'."},
+    {"area":"Copy","priority":"Med","effort":"S","text":"'Buyback: instant profit' and 'Rights issue — exclusive to you!' oversell. Add that only part of your shares may be accepted in a buyback, and that skipping a rights issue shrinks your share of the company."},
+    {"area":"Mobile","priority":"High","effort":"S","text":"Many labels are 0.48–0.58 rem (about 8–9 px), including the KPI labels (Cash/Holdings/Net Worth) and the IPO tiles. These are unreadable for many mums, so raise them to at least 12–13 px."},
+    {"area":"Layout","priority":"Med","effort":"S","text":"The game's name appears three times on open: the page banner, the game's own header, and the welcome card. The header's logo circle is also empty while a 1 MB logo loads. Keep one title and use a small logo."},
+    {"area":"Speed","priority":"Med","effort":"M","text":"The game is compiled on the visitor's phone by Babel (about 600 KB) every visit. Pre-build it so it opens instantly from WhatsApp links."},
+    {"area":"Conversion","priority":"Med","effort":"S","text":"Under 'The Big Lesson', add 'Ready to do this for real, calmly? Join an IFM workshop batch' → register.investingformummies.com, above Play Again."}
+  ]
+}
+]}

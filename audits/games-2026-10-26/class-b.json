@@ -1,0 +1,405 @@
+{
+ "group": "class-b",
+ "games": [
+  {
+   "slug": "the-wealth-hack",
+   "title": "The Wealth Hack",
+   "url": "https://games.investingformummies.com/the-wealth-hack",
+   "file": "the-wealth-hack.html",
+   "kind": "classroom",
+   "audience": "Gen Next",
+   "verdict": "The most polished classroom game in this group: projector text scales to the room, guesses stay private, the 12% assumption is printed everywhere, phones opened from WhatsApp get a solo 'find your number' page, and the end screen already has a WhatsApp share. What holds it back is the join path (a game PIN with nowhere to type it, a lobby that empties if the host refreshes) and a heavy phone page.",
+   "load": "123 KB page + Supabase + QR library; phones also pull a 1 MB logo PNG for a 30px badge; projector adds a 400 KB looping video + 215 KB backdrop",
+   "share_idea": "A share already exists and is good. Keep the personal numbers ('₹X a month from today vs ₹Y if I wait 5 years') and the '12% a year, not a promise' line, then add one soft line before the link: 'Want to actually start? Next IFM batch → register.investingformummies.com'.",
+   "share_moment": "Already in the right places (phone end screen after 'Your numbers · keep these', and the solo result). Also add the button to the Round 2 reveal on the phone, which is the peak shock moment.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "The projector says 'or enter game PIN E1234', but the phone has nowhere to type a PIN: opening the game on a phone shows the solo page, which only says 'ask your teacher for the game code'. Add a 'Have a game PIN?' box to the solo page so people who can't scan the QR can still join."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "If the host refreshes while still in the lobby, everyone who already joined disappears and has to join again. The game only picks up where it left off once Round 1 has started. Keep the joined players when the lobby is reloaded, the same way a mid-game reload does."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "A wrong or expired room link leaves the phone on 'Finding the game…' forever. After about 8 seconds with no game found, show 'We can't find this game. Check the PIN on the big screen' with a box to type it again."
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Every phone downloads a 1 MB logo picture just to show a small round badge in the top bar. A 20 KB version would look the same and makes the join screen appear much faster on slow classroom Wi-Fi."
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The phone screen lays a full-screen grain texture and several blurred glass panels over everything. These make scrolling stutter on cheap Android phones. Turn the grain and blur off on phones and keep them for the projector."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The game ends on 'The best month to start is this one' and one excuse card even promises 'that is exactly what the next few days are for', but there's no next step. Add a gentle 'Find your batch' link under the WhatsApp button on the phone end screen and at the bottom of the shared message."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Nobody mentions that ₹10 Cr in 15–20 years buys much less than ₹10 Cr today. Add one line to the Round 1 reveal, e.g. 'at 6% inflation, ₹10 Cr at 40 is roughly ₹3.5 Cr in today's money'. This keeps the big number honest and makes the 'start now' point stronger."
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Round 1 gives phones 5 minutes on the clock to type one number. Most people lock in within a minute, and the room goes flat while they wait. Start the clock at 2 minutes (the host can still add time) and let the 'Reveal' button pulse as soon as everyone has locked in."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The Round 3 reveal says things like '1.6× less money', which is hard to read. Say 'about 60% as much' or 'less than two-thirds'."
+    },
+    {
+     "area": "Layout",
+     "priority": "Low",
+     "effort": "M",
+     "text": "The headings use Fraunces and Manrope, not the brand's Lora and Nunito. This is the only game here in a different type family. Decide whether the midnight-and-gold look is now the standard. If not, switch the fonts when you do the phone and lobby redesign that's already planned."
+    },
+    {
+     "area": "Speed",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The projector's background video is hidden on phones, but because it is set to autoplay, some phones may still download its 400 KB. Only add the video to the page in host mode."
+    }
+   ]
+  },
+  {
+   "slug": "swayamvar/",
+   "title": "Swayamvar",
+   "url": "https://games.investingformummies.com/swayamvar/",
+   "file": "swayamvar/ (index.html, engine.js, game-data.js, ui-common.js, host-view.js, player-view.js; edit the .jsx then run build-jsx.sh)",
+   "kind": "classroom",
+   "audience": "Mummies",
+   "verdict": "A lovely, very on-brand-for-the-audience idea (asset classes as rishta prospects), with gorgeous art, precompiled code, and a host refresh that keeps the room. But the whole world shares one room (1995), any visitor opens it as the host with a Reset button, and the join address printed on the projector doesn't exist.",
+   "load": "6 KB page + ~120 KB own JS (precompiled, no Babel) + React production + Supabase; portraits are 30–70 KB WebPs loaded per screen (1.7 MB folder). Fast",
+   "share_idea": "'My money Swayamvar: I'd marry Mr. Equity, date Mr. Gold, and call Mr. Cash at 2 AM 💍 Who would you pick for your savings? → games.investingformummies.com/swayamvar/'",
+   "share_moment": "On the phone's 'Your Report Card' screen at the finale, just under the four picks and the 'Welcome to Asset Allocation' quote.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "M",
+     "text": "Every class uses the same fixed room code (1995), and anyone who opens the game link gets the teacher screen for that room, including the 'Reset game' button. A visitor from the games page can see a live class and wipe it, and two workshops on the same day would clash. Give each teacher a new room code when they open the game, as Sapno Ka Ghar and The Wealth Hack already do."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "The projector prints 'ifm.game/swayamvar' as the join address, but that domain doesn't exist. Anyone who types it instead of scanning gets an error page. Print the real address plus the room code instead, or remove the line."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Confirmed: the QR code sends phones to the old address ifm-deploy.vercel.app/swayamvar/ (built in swayamvar/ui-common.jsx and the compiled ui-common.js). It works today, but students see an unfamiliar web address and it will break if that old project name ever changes. Point it at games.investingformummies.com, then rebuild with build-jsx.sh."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Someone opening the link on a phone (from the games page or WhatsApp) lands on the projector lobby, which is cut off on a phone and shows a QR they can't scan with the same phone. A friendly 'host or join?' landing page already exists in app.jsx but can never appear, because the game always starts as host. Show it on phones."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "One tap on a suitor casts the vote straight away, with no undo. On a two-column grid of small cards, a mis-tap or a scroll that turns into a tap locks in the wrong answer. Make the first tap select the suitor, then add a 'Confirm' button, or allow changes until the host closes voting."
+    },
+    {
+     "area": "Accessibility",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Lots of labels are tiny: phone captions such as 'YOUR NAME', 'Waiting for others…' and the return figures on the vote cards are about 7–9px, and projector captions are about 8–10px. Set the smallest text to about 12px on phones and 18px on the projector so the back row and older eyes can read them."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The finale bucket screen and the phone report card show '12–15% returns', '8–12%+' and '8–10%' with no note. Add 'long-term past averages, not guaranteed' next to these numbers on both screens. The footer disclaimer is too far away and too small to count."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The phone finale ends on the quote and nothing else, and the projector only offers 'Play Again'. Add a soft 'Want your own portfolio built like this? Find your batch' link on the phone report card."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "M",
+     "text": "Each vote re-saves the whole game. If the host taps 'close voting' at the same moment someone votes, the saved game can slip back to 'voting', and phones may flip back to the vote screen for a few seconds until the host's next tap. Make votes save only the vote."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "If the host refreshes during the finale, the bucket reveal starts again from the first step because the step number is only kept in the browser. Save the reveal step with the rest of the game."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "'est. 1995' and 'Finding the Perfect Match for your savings since 1995' read like a real founding date, but IFM wasn't around then. Either make the joke obvious ('Aunty-approved since 1995') or drop it."
+    },
+    {
+     "area": "Speed",
+     "priority": "Low",
+     "effort": "S",
+     "text": "React and Supabase load from addresses that only say 'version 18' and 'version 2', with no exact number. A surprise update on the CDN could break the live game during a class. Fix them to the exact versions that work today."
+    }
+   ]
+  },
+  {
+   "slug": "stock-rush/",
+   "title": "Stock Rush (teen)",
+   "url": "https://games.investingformummies.com/stock-rush/",
+   "file": "stock-rush/ (index.html + engine.js, game-data.js, ui-common.jsx, host-view.jsx, player-view.jsx compiled in the browser)",
+   "kind": "classroom",
+   "audience": "Gen Next",
+   "verdict": "The game itself is deep: real Indian market history, lock-to-finish rounds, recaps, a counterfactual and an exit quiz. But the bare link puts everyone in one shared room, the printed join address leads to the teacher screen, and phones have to download and compile about 1 MB of development-mode code before anything appears. Every item here needs the owner's call because of the don't-edit rule.",
+   "load": "14 KB page, but every phone downloads ~650 KB of Babel plus ~260 KB of React development builds, then compiles ~330 KB of JSX (including the teacher screen it never uses); slow on a cheap Android",
+   "share_idea": "'I finished #2 in Stock Rush with ₹1.38L from ₹1L, trading 10 years of real Indian market news in 20 minutes 📈 Think you'd beat me? → games.investingformummies.com/stock-rush/'",
+   "share_moment": "On the student's phone end screen, right after their final rank and net worth, above the counterfactual.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "M",
+     "text": "Opening the plain link /stock-rush/ (no '?role=host') shows the teacher screen, but for one shared room called TEEN. Anyone else who opens the same link gets 'There's already a game here' with Resume and Start Fresh buttons for that room, so a curious student or a games-page visitor can take over or wipe a live class. A random room code is only created when the link includes ?role=host. (teen version — owner rule: don't edit; decide)"
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "The projector prints 'ifm-deploy.vercel.app/stock-rush' as the join address. That is the old domain, and it has no room code, so a student who types it lands on the teacher screen for the shared TEEN room, not the join form. Print the real address including the room code, or drop it and rely on the QR. (teen version — owner rule: don't edit; decide)"
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "Typing the room code by hand never works. The join form only accepts the built-in code 'TEEN', not the teacher's random 4-letter code, so the Join button stays greyed out. Only scanning the QR gets students in. (teen version — owner rule: don't edit; decide)"
+    },
+    {
+     "area": "Speed",
+     "priority": "High",
+     "effort": "M",
+     "text": "Every phone downloads the in-browser compiler (Babel) plus the slow development versions of React, then compiles about 330 KB of code before showing anything. On a cheap Android that takes several seconds, and the development builds keep the game slower while it runs. Precompiling, as was done for Swayamvar, removes all of this. (teen version — owner rule: don't edit; decide)"
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "A student's identity is kept only for the life of the browser tab. On cheap Androids, switching to WhatsApp or the camera often reloads the tab, and the student lands back on the join screen mid-game. Stock Rush Pro already fixed this by saving identity more permanently. (teen version — owner rule: don't edit; decide)"
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "With a wrong or expired room link, the phone says 'Waiting for your teacher. Your phone is connected' forever, even though there's no game. After a few seconds, show 'No game found with this code'. (teen version — owner rule: don't edit; decide)"
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "About 90 bits of projector text are fixed at 9–13px, so the leaderboard details and the activity feed can't be read from the back of a classroom. Scale the projector text to the screen size, the way The Wealth Hack does. (teen version — owner rule: don't edit; decide)"
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The end screen ranks real companies by 'what if you'd put all your money in one stock in 2016', which for teens reads like 'pick the winner'. Add a line under the best result, e.g. 'that's hindsight; nobody knew this in 2016', and show a 'spread across all 8' result as the sensible line. (teen version — owner rule: don't edit; decide)"
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The link preview (WhatsApp/Google text) says 'eight rounds of real headlines', but the game plays 5 rounds. Change it to five. (teen version — owner rule: don't edit; decide)"
+    },
+    {
+     "area": "Layout",
+     "priority": "Low",
+     "effort": "M",
+     "text": "The look is black-and-white Geist type, with none of the IFM navy, teal, gold, Lora or Nunito, so teens don't connect it to the brand they'll see on posters and Instagram. Add the brand colours and logo, at least on the join and end screens. (teen version — owner rule: don't edit; decide)"
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The student end screen has no share and no next step. For teens the natural next step is 'Tell your parents about IFM's workshops', with a link. (teen version — owner rule: don't edit; decide)"
+    }
+   ]
+  },
+  {
+   "slug": "stock-rush-pro/",
+   "title": "Stock Rush Pro",
+   "url": "https://games.investingformummies.com/stock-rush-pro/",
+   "file": "stock-rush-pro/ (index.html + engine.js, game-data.js, ui-common.jsx, host-view.jsx, player-view.jsx compiled in the browser)",
+   "kind": "classroom",
+   "audience": "Both",
+   "verdict": "The richest classroom game: IPOs, splits, buybacks and rights issues over real Indian history, a resume-or-restart choice when the host reloads, rejoin-safe phones and a shareable result card. It is held back by a broken manual join (typed codes and the printed address both fail), every phone compiling about 340 KB of JSX, and a share link that 404s.",
+   "load": "9 KB page, but every phone downloads ~650 KB of Babel and compiles ~345 KB of JSX (React production build), plus Supabase, QR and html2canvas; several seconds on a cheap Android",
+   "share_idea": "Fix the existing share text, which ends on a dead link: 'I finished #3 of 24 in Stock Rush Pro, ₹2L → ₹3.1L through 12 years of real Indian markets (IPOs, splits, Yes Bank…) 📈 Play it → games.investingformummies.com/stock-rush-pro/'",
+   "share_moment": "On the player's end screen, on the existing result card, after rank and net worth and before the 'what if' comparison.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "Typing a room code never works. If a phone opens the player page without a code in the link, the join form only accepts the built-in code 'GO25', so the teacher's real code (e.g. 'KQWT') keeps the Join button greyed out with no explanation. Only scanning the QR gets people in."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "The projector prints 'ifm-deploy.vercel.app/stock-rush-pro' as the join address (in two places). That is the old domain, and the plain link opens a new teacher screen, not the join form. A student who types it starts their own empty game. Print a working join link, or 'scan the QR' only."
+    },
+    {
+     "area": "Speed",
+     "priority": "High",
+     "effort": "M",
+     "text": "Every phone downloads the in-browser compiler (Babel, about 650 KB) and compiles about 340 KB of code, including the teacher screens it never uses, before showing the join form. On a cheap Android that's a long blank wait while the room watches. Precompile it, as was done for Swayamvar."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The 'Share my result' message ends with https://investingformummies.com/stock-rush-pro, which is a 404 page. Change it to games.investingformummies.com/stock-rush-pro/."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Someone who taps Stock Rush Pro on the games page from a phone lands on 'Go Live: project this screen', which is meaningless on a phone. On phones, show 'This is a live classroom game. Join with a room code, or see how it works', the way The Wealth Hack's phone page does."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "About 80 bits of projector text are fixed at 9–13px (leaderboard sub-lines, activity feed, chips), too small for the back of a room. Scale the projector text with the screen size, as The Wealth Hack does."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Real listed companies carry labels like 'low risk' (Infosys, HDFC Bank, TCS), and the end screen compares 'what if you'd held X'. Add one clear line on the end screen and the stock cards: 'real companies, used as a history lesson, not a recommendation; past prices don't predict future ones'."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The game describes its own length five different ways: 'A decade', '9 years' (share text), 'twelve years 2014→2026' (landing), 'five real market eras' (link preview) and '6 rounds' (description). Pick one, e.g. '6 rounds, 2014 to 2026', and use it everywhere."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The end screen has a share button but no next step. Add a quiet 'Liked managing a portfolio? Learn to do it for real: find your batch' link under the share button."
+    },
+    {
+     "area": "Layout",
+     "priority": "Low",
+     "effort": "M",
+     "text": "Like the teen version, it uses black-and-white Geist type with none of the IFM colours or fonts, so it doesn't look like an IFM product on the projector. Add the navy, teal and gold and the logo, at least on the lobby and end screens."
+    }
+   ]
+  },
+  {
+   "slug": "sapno-ka-ghar.html",
+   "title": "Sapno Ka Ghar",
+   "url": "https://games.investingformummies.com/sapno-ka-ghar.html",
+   "file": "sapno-ka-ghar.html",
+   "kind": "classroom",
+   "audience": "Mummies",
+   "verdict": "A brilliant metaphor that lands: a 90-second shopping panic, bought ratings, a designer who is secretly a fund manager, and a 'you've been investing all along' reveal. It is fully on-brand and gives each class its own room. It is held back by phones that redraw all 116 items whenever anyone buys anything (exactly during the 90-second rush), small buy buttons, and a lobby that empties if the host refreshes.",
+   "load": "128 KB single page + Supabase + QR library; the projector also loads a 1 MB logo PNG from the old ifm-deploy domain. Phones are light on download but heavy on redrawing",
+   "share_idea": "'My dream-home score went from 41 (DIY) to 88 (with a designer) in Sapno Ka Ghar 🏡 Turns out I'd been learning mutual funds the whole time. Try it → games.investingformummies.com/sapno-ka-ghar.html'",
+   "share_moment": "On the phone finale ('Your dream home got built'), right under the DIY → today score card.",
+   "items": [
+    {
+     "area": "Speed",
+     "priority": "High",
+     "effort": "M",
+     "text": "During the 90-second shopping rush, every purchase by anyone in the room makes every phone redraw the whole 116-item catalogue (the host saves after each buy, and phones also redraw on a 2.5-second check). With 25–30 people on cheap Androids, the list stutters, the category strip jumps back and taps miss, at the one moment speed matters. Update only the budget and the item that changed."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The 'Add to home' button is about 30px tall, below the comfortable 44px. The same button instantly turns into 'tap to return', so a nervous double-tap buys and then returns the item. Make it taller, and make returning a separate small link or a confirm."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "If the host reloads during the lobby, or more than 30 minutes after the last action, the game starts fresh and everyone who joined disappears from the projector. Phones fall back to the join screen. Keep the lobby and its players on reload, and allow a longer gap for long discussions."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "A wrong or old PIN leaves the phone on 'Connecting…' forever. After a few seconds, show 'No game found with this PIN. Check the big screen'. Joining also waits silently on 'Unlocking your door…' if the host screen is offline; add a 'still trying…' message."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The projector's logo is a 1 MB PNG loaded from the old address ifm-deploy.vercel.app. Use a small copy from games.investingformummies.com so it loads fast and survives if the old address goes."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Opening the link on a phone (e.g. from a WhatsApp forward) shows the projector screen, with overlapping panels and its own QR. On phones, show 'This is a live class game. Enter the PIN from the big screen' with a PIN box, the way The Wealth Hack does."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The phone finale ends on the closing quote and no next step, though this is the exact moment a mum is thinking 'I want a designer for my money'. Add a gentle 'Want help building yours? Find your batch' link."
+    },
+    {
+     "area": "Layout",
+     "priority": "Low",
+     "effort": "S",
+     "text": "On the projector, the '↺ New game' button sits on top of the logo and the 'Investing for Mummies' label in the top-left corner. Move it to a bottom corner."
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The phase strip at the top lets the host jump to any step (including back to Lobby) with one click, which is easy to do by accident mid-class. Ask 'Jump back to Lobby?' before going backwards."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The designer (the fund) always lands every home at 82–90, which suggests funds never have a bad year. Add one line to 'The Secret' screen: 'Real funds also have bad years and different fees; check the fund's track record, and past returns aren't promises.'"
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "SALE items say '20% OFF TODAY', but the crossed-out price makes them about 37% off. One shopping 'noise' message names a real brand (Natuzzi) while every catalogue brand is made up. Match the numbers and use a made-up brand name."
+    }
+   ]
+  }
+ ]
+}

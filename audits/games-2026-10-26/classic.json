@@ -1,0 +1,1029 @@
+{
+ "group": "classic",
+ "notes": "All items live inside classic.html (3.1 MB raw, about 0.9 MB compressed). Opening any deep link loads every calculator frame (6 separate copies of Chart.js) plus the 190 KB chat bot. Lead-capture box: the third different screen opened on the hub (any calculator counts, including from a WhatsApp deep link) is covered by a sign-up box asking for name, mobile and email; there is no visible close button, though tapping outside closes it. Seen in testing on a phone-size viewport. On the classic hub, the third different screen a visitor opens (any calculator counts) is covered by a sign-up box asking for name, mobile and email. It has no visible close button; tapping outside it is the only way out. On the new standalone page, drop this box and use a soft 'Find your batch' link after the result instead. Every calculator's 'Share via WhatsApp' button already exists but shares the old ifm-deploy.vercel.app address with no result. On desktop every tool sits in a narrow centre column. Phone screenshots: Claude browser pane at 390x844, because headless Chrome at 390 laid pages out wider than a real phone. Desktop screenshots: headless Chrome at 1440x900, in audit/shots/classic/.",
+ "games": [
+  {
+   "slug": "tools-budget",
+   "title": "Budget Tracker",
+   "url": "https://games.investingformummies.com/classic?open=resources&tab=budget",
+   "file": "classic.html (#res_budget)",
+   "kind": "tool",
+   "audience": "Mummies",
+   "verdict": "A thorough monthly budget with a 50/30/20 health check and emergency-fund targets. Two things hold it back: it comes pre-filled with ₹1.24 lakh of sample expenses but no income, and on a phone it sits in a box that scrolls separately from the page.",
+   "load": "99 KB frame + its own copy of Chart.js; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "My family's money in 3 numbers: ₹X needs, ₹Y wants, ₹Z left to save. See where your money goes in 2 minutes: <link>",
+   "share_moment": "On the dashboard, right under 'Money Remaining' and the 50/30/20 scorecard",
+   "recommendation": "Move to /tools as its own page — it is the most useful everyday tool here and nothing else on the site duplicates it (Money Map is the teen version).",
+   "items": [
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "On a 390px phone the calculator sits in a fixed 1,400px-tall box while its content is 2,300px tall and 447px wide, so the results scroll inside a box inside the page, and long labels are cut off ('Salary (…', 'Business…', 'Rental In…'). As its own page, let it grow to full height and stack each label above its input."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "All expense fields start filled with sample numbers (₹15,000 EMI, ₹16,000 groceries and more, ₹1.24 lakh a month in total) but income starts at zero. A mum who fills in only her salary gets a scary 'you're spending more than you earn' verdict built on made-up costs. Start every field empty with grey example text, or ask 'Use a sample family?' first."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "In the 'Where does your money go' doughnut, 'Fixed Expenses' and 'Essentials' share the same navy colour, and so do the Income and Essentials bars, so the two biggest slices can't be told apart. Give every category its own colour."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "The results stop at 'Consider moving it into savings'. Add one step that turns the surplus into action: 'Your ₹X left over could be an emergency fund in N months, then a ₹Y SIP'. Link it to the SIP Calculator and the emergency-fund target already on the page."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The 'Share via WhatsApp' button sends a generic line ('I just used the free ... on Investing for Mummies') plus the old ifm-deploy.vercel.app address. Change it to the new games.investingformummies.com/tools address and include the person's own result."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "After the health check, add one gentle line: 'Want help building this into a plan? Find your batch' linking to register.investingformummies.com."
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Shrink the frame on its own page: drop the second, duplicate Google Fonts load and the unused empty script blocks, and load Chart.js only when 'Show Me My Budget Picture' is tapped."
+    }
+   ]
+  },
+  {
+   "slug": "tools-sip",
+   "title": "SIP Calculator",
+   "url": "https://games.investingformummies.com/classic?open=resources&tab=sip",
+   "file": "classic.html (#res_sip)",
+   "kind": "tool",
+   "audience": "Both",
+   "verdict": "A strong step-up SIP calculator with a year-by-year table and a 'cost of starting 5 years later' card. But its starting numbers (₹1 lakh a month at 12%) are far from a first-time investor's reality, and some 'real-life' comparisons overpromise.",
+   "load": "85 KB frame, hand-drawn chart, no libraries; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "If I step up my ₹X SIP by 10% a year, I could have ₹Y in Z years instead of ₹W (assuming 12%). Try your number: <link>",
+   "share_moment": "Below the 'Extra Wealth Created' result card",
+   "recommendation": "Move to /tools as its own page — it is the core calculator, and it is the natural next step from Budget and Goal tools.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "The default SIP is ₹1,00,000 a month with an 11% step-up, while the explainer underneath talks about ₹10,000 a month. Start at ₹5,000–₹10,000 and a 10% step-up so the first result feels reachable for a mum starting out."
+    },
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "S",
+     "text": "The 'real-life equivalent' lines claim things like 'That's 1.2 crore — enough to retire on' and '₹X/month — a nice salary boost' (that one is the lump sum divided by 12, which is not a monthly income). Remove the retirement claim, fix or drop the salary line, and show the return assumption next to every result ('at 12% a year, not guaranteed')."
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "On a phone it shows in a 900px-tall box while its content is 3,070px tall, so you see only the inputs and must scroll inside the box to reach any result. As its own page, let it run full height and put the two result cards first."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The title says 'SIP Step-Up Calculator', but there is no line explaining what a step-up is. Add one: 'Step-up = raising your SIP a little every year, usually when your salary goes up.' The custom-return box also reads '0 %'; leave it blank with a placeholder."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Add a 'show in today's money' switch that removes 6% inflation, so ₹2 crore in 25 years is also shown as roughly ₹46 lakh in today's money. This is the honest version of the big number."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The 'Share via WhatsApp' button sends a generic line ('I just used the free ... on Investing for Mummies') plus the old ifm-deploy.vercel.app address. Change it to the new games.investingformummies.com/tools address and include the person's own result."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Under 'The Cost of Starting 5 Years Later', add a soft 'Ready to start your first SIP with guidance? Find your batch' link."
+    }
+   ]
+  },
+  {
+   "slug": "tools-swp",
+   "title": "SWP Calculator",
+   "url": "https://games.investingformummies.com/classic?open=resources&tab=swp",
+   "file": "classic.html (#res_swp)",
+   "kind": "tool",
+   "audience": "Mummies",
+   "verdict": "A clear 'can your money pay you a salary' calculator with an honest 'money runs out in year 5' warning and safe, moderate and danger withdrawal bands. The 'historical real data' mode names real mutual funds and tells people which plan to pick, which is a compliance risk.",
+   "load": "35 KB built into the hub page (no frame); historical mode calls the free mfapi.in fund database; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "Can ₹X give me ₹Y a month for 25 years? This calculator says my money lasts N years. Check yours: <link>",
+   "share_moment": "Directly under the remaining-corpus result and the 'money runs out' banner",
+   "recommendation": "Move to /tools as its own page — it is the only withdrawal tool, and it pairs with the Retirement Planner.",
+   "items": [
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "S",
+     "text": "The historical mode's helper text names real funds ('Parag Parikh Flexi Cap', 'HDFC Top 100') and says 'Pick the Direct option for lower fees'. That reads as a recommendation from an unregistered educator. Use neutral wording ('type any mutual fund name'), drop the advice, and add 'past performance is not a guide to future returns'."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The default (₹50 lakh corpus, ₹1 lakh a month, so 24% withdrawn a year) runs out in year 5. That is a dramatic lesson, but it opens on a red failure with no explanation. Either start at a sustainable 5–6% and invite people to push it, or label the default 'What happens if you withdraw too much?'"
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "S",
+     "text": "On desktop the IFM logo watermark sits inside the doughnut, behind the 'Remaining Corpus ₹0' figure, and makes the key number hard to read. Remove the watermark from the chart centre."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "'SWP' is never spelled out. Add 'SWP = Systematic Withdrawal Plan, a fixed monthly amount paid to you from your investments' under the title, and explain 'step-up' as 'raise the withdrawal each year to keep up with prices'."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The 'Share via WhatsApp' button sends a generic line ('I just used the free ... on Investing for Mummies') plus the old ifm-deploy.vercel.app address. Change it to the new games.investingformummies.com/tools address and include the person's own result."
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "M",
+     "text": "Add a 'what if markets fall in year 1?' toggle to the simple mode. Showing the same plan with a bad first year teaches sequence risk, the real danger for retirees, far better than a flat 8%."
+    }
+   ]
+  },
+  {
+   "slug": "tools-retire",
+   "title": "Retirement Planner",
+   "url": "https://games.investingformummies.com/classic?open=resources&tab=retire",
+   "file": "classic.html (#res_retire)",
+   "kind": "tool",
+   "audience": "Mummies",
+   "verdict": "The most complete planner here: inflation, life expectancy, per-asset existing savings, the gap, the SIP or lump sum to close it, and a disclaimer. It is too technical for beginners (a methodology essay for financial planners) and breaks on phones.",
+   "load": "143 KB frame + its own copy of Chart.js; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "I need about ₹X to retire at 60 and I'm Y% of the way there. Here's the monthly SIP that closes my gap: <link>",
+   "share_moment": "After the 'Monthly SIP to Bridge the Gap' card",
+   "recommendation": "Move to /tools as its own page — keep this one, retire the beta Retirement Planner and the Chat Bot, and borrow the beta's per-investment step-up field.",
+   "items": [
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "On a 390px phone the content is 620px wide in a 362px box, so the input boxes and section badges are cut off on the right, and the existing-savings table needs sideways scrolling inside a box that also scrolls up and down. Stack the savings rows as cards on phones, one asset per card."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The 'Note for Financial Planners — Methodology' block (annuity formulas, 'end-of-period', Excel comparison) sits in the main flow. Fold it behind a 'How we calculate' link so a mum isn't confronted with formulas after her result."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The defaults are aimed at a high earner (₹1 lakh a month spending, retire at 65). Use ₹50,000 and 60, the common Indian retirement age, and label the cryptic 'M' and 'Cont. yrs' columns in plain words ('Monthly top-up', 'For how many years')."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Per-asset return defaults (stocks 13%, mutual funds 12%, NPS 10%) appear as plain numbers. Add a small 'assumed, not guaranteed' note beside the returns rows, not only in the footer disclaimer."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The 'Share via WhatsApp' button sends a generic line ('I just used the free ... on Investing for Mummies') plus the old ifm-deploy.vercel.app address. Change it to the new games.investingformummies.com/tools address and include the person's own result."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Under the gap result, add 'Not sure how to close a ₹X gap? This is exactly what our course covers — find your batch' linking to register.investingformummies.com."
+    }
+   ]
+  },
+  {
+   "slug": "tools-edu",
+   "title": "Education Planner",
+   "url": "https://games.investingformummies.com/classic?open=resources&tab=edu",
+   "file": "classic.html (#res_edu)",
+   "kind": "tool",
+   "audience": "Mummies",
+   "verdict": "A genuinely useful multi-child planner with India/abroad costs, education inflation and a monthly SIP to close the gap. The phone layout is the main problem: labels cut off and a table wider than the screen.",
+   "load": "115 KB frame + its own copy of Chart.js; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "My child's college will cost about ₹X by 2040. Starting ₹Y a month now covers it (assuming 11%). Plan yours: <link>",
+   "share_moment": "After the 'Monthly SIP Needed to Bridge the Gap' card",
+   "recommendation": "Move to /tools as its own page — it is a top worry for the core audience, and nothing else covers it.",
+   "items": [
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "On a phone the content is 634px wide in a 362px box. Labels are truncated ('Age When Edu…', 'Duration of Edu…', 'Annua…') and the investments table needs sideways scrolling. Put each label above its field and turn the table rows into stacked cards."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The savings row 'Sukanya / PPF / SSY' lists Sukanya twice (SSY is Sukanya Samriddhi Yojana). Rename it 'Sukanya Samriddhi (SSY) / PPF'."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "For 'Abroad', the dollar rate is a hidden assumption. Show it next to the cost ('at ₹90 per $; the rupee has historically weakened about 3% a year') so parents see why overseas costs grow faster."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Add a simple 'what if I start 3 years later?' line next to the SIP result. The jump in monthly SIP is the emotional hook that makes a parent act today."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The 'Share via WhatsApp' button sends a generic line ('I just used the free ... on Investing for Mummies') plus the old ifm-deploy.vercel.app address. Change it to the new games.investingformummies.com/tools address and include the person's own result."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "After the result, add a soft link: 'Want a plan for every goal, not just this one? Find your batch'."
+    }
+   ]
+  },
+  {
+   "slug": "tools-holiday",
+   "title": "Holiday Budget",
+   "url": "https://games.investingformummies.com/classic?open=resources&tab=holiday",
+   "file": "classic.html (#res_holiday)",
+   "kind": "tool",
+   "audience": "Mummies",
+   "verdict": "A friendly trip budget with per-person and per-night costs and a monthly savings target. It shows two headers at the top, compiles its code in the browser, and misses the money lesson about where to keep the holiday savings.",
+   "load": "57 KB frame + React + Babel compiling the page in the browser (about 1.5 MB of scripts before it can be used); the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "Our 7-night family trip = ₹X. Saving ₹Y a month gets us there by <month> with no credit card hangover: <link>",
+   "share_moment": "On the summary screen, under the 'Save / Month' and 'Save / Week' chips",
+   "recommendation": "Move to /tools as its own page — a light, fun entry point to budgeting, and nothing else covers it.",
+   "items": [
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "S",
+     "text": "The first screen shows two stacked banners, 'Holiday Budget Planner' and then 'Family Travel Budget Planner', which push the trip form below the fold on phones. Keep one banner."
+    },
+    {
+     "area": "Speed",
+     "priority": "High",
+     "effort": "M",
+     "text": "It is the only calculator that downloads React and the Babel compiler and translates its own code on every visit, adding seconds on a mid-range phone. Pre-build it to plain JavaScript when moving it to its own page."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Two tips are risky for this audience: 'Pay big-ticket items with a rewards card' (credit-card debt) and 'Book flights on Tue/Wed — 10–15% cheaper' (unproven). Replace them with 'Keep the trip fund in a separate savings account or recurring deposit' and 'Book early and set a fare alert'."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "If no month is picked, or a past month is picked, the whole 'Save per month' section silently disappears. Default to a month 6 months ahead and block past months."
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Add one line on where to park the monthly savings ('a recurring deposit or a liquid fund, not equity, for money needed within a year'). This turns a trip planner into a money lesson."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The 'Share via WhatsApp' button sends a generic line ('I just used the free ... on Investing for Mummies') plus the old ifm-deploy.vercel.app address. Change it to the new games.investingformummies.com/tools address and include the person's own result."
+    }
+   ]
+  },
+  {
+   "slug": "tools-alloc",
+   "title": "Asset Allocation",
+   "url": "https://games.investingformummies.com/classic?open=resources&tab=alloc",
+   "file": "classic.html (#res_alloc)",
+   "kind": "tool",
+   "audience": "Mummies",
+   "verdict": "A quick age-plus-risk slider that gives a five-asset mix. Its explanation contradicts its own table, and words like 'Recommended' and 'the right mix' read as personal advice.",
+   "load": "18 KB frame, no libraries; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "At 35 with a moderate appetite, the 100-minus-age rule suggests about X% equity. What's your mix? <link>",
+   "share_moment": "Under the allocation bar and table",
+   "recommendation": "Merge with Mix My Portfolio — it uses exactly the same age-band table; the game teaches the rule without telling a real person what to buy. Keep a 'try your own age' final round there.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "At age 30 it says '100 − 30 = 70% base equity' but the table shows 55% equity, and the text says 'your moderate profile keeps it close to 55%'. The rule and the numbers disagree. Either use the rule or drop the rule label."
+    },
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "S",
+     "text": "The heading 'Recommended Allocation' and the subtitle 'the right mix of Equity, Bonds, Real Estate, Gold & Cash' sound like personal advice. Use 'A common rule-of-thumb mix for your age' and keep the SEBI disclaimer visible next to the result."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "It suggests 10% in 'Real Estate' for a 30-year-old, which a beginner can't buy in small amounts. Say 'Real estate (for example via REITs)' or fold it into equity, and explain bonds as 'debt funds / FDs'."
+    },
+    {
+     "area": "Layout",
+     "priority": "Low",
+     "effort": "S",
+     "text": "It uses a purple theme, unlike the navy, teal and gold of every other IFM tool, and on desktop a large empty area sits below the button before you calculate. Restyle to brand colours."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "There are two 'Download My Plan' buttons, one inside the calculator and one under it, plus the WhatsApp button that shares the old ifm-deploy.vercel.app address. Keep one download button and fix the share address."
+    }
+   ]
+  },
+  {
+   "slug": "tools-divplan",
+   "title": "Dividend Income Planner",
+   "url": "https://games.investingformummies.com/classic?open=resources&tab=divplan",
+   "file": "classic.html (#res_divplan)",
+   "kind": "tool",
+   "audience": "Mummies",
+   "verdict": "A small dividend-reinvest-versus-cash projector with a chart and a disclaimer. Its jargon (DRIP), optimistic example yield and missing tax make it the weakest of the calculators for beginners.",
+   "load": "14 KB frame + a second, different copy of Chart.js (4.4.0 from jsdelivr, unlike every other tool); the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "₹5 lakh could pay me about ₹X a month in dividends (assuming Y% yield). See what yours could pay: <link>",
+   "share_moment": "Under the 'Monthly Dividend Income (Year 1)' result",
+   "recommendation": "Move to /tools as its own page — useful for retirees, but low priority; fix the copy first.",
+   "items": [
+    {
+     "area": "Copy",
+     "priority": "High",
+     "effort": "S",
+     "text": "'DRIP' is an American term. In Indian mutual funds this is 'IDCW reinvestment' versus 'IDCW payout'. Rename it and add one line of explanation."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The example yield '3.5%' sits above the Nifty's typical 1–1.5%, and dividends are taxed at your slab rate in India, which the tool ignores. Use a 1.5% example, add a tax-slab field or note, and keep the disclaimer next to the result."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "On a phone the content is 415px wide in a 362px box, so the 'Price Growth % p.a.' field is cut off on the right. Stack the two fields."
+    },
+    {
+     "area": "Layout",
+     "priority": "Low",
+     "effort": "S",
+     "text": "It uses an orange theme unlike other IFM tools, and starts with empty inputs, so first-time users see nothing until they guess numbers. Pre-fill a realistic example and restyle to brand colours."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "There are two 'Download My Plan' buttons, and the WhatsApp share uses the old ifm-deploy.vercel.app address. Keep one button and fix the address."
+    }
+   ]
+  },
+  {
+   "slug": "tools-goals",
+   "title": "Financial Goal Planner (beta)",
+   "url": "https://games.investingformummies.com/classic?open=resources&tab=goals",
+   "file": "classic.html (#res_goals)",
+   "kind": "tool",
+   "audience": "Mummies",
+   "verdict": "A careful 4-step goal planner (goals, inflated targets, current investments, shortfall and SIP). It overlaps heavily with the standalone Fund YOUR Goal and Goal Tracker, has no disclaimer, and contradicts its own tip by applying one 12% return to every goal.",
+   "load": "96 KB frame + its own copy of Chart.js; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "My 3 goals need ₹X in total; ₹Y a month gets me there (assuming 12%). Map your goals: <link>",
+   "share_moment": "Step 4, under the 'Total Monthly SIP to Fund All Goals' card",
+   "recommendation": "Merge with Fund YOUR Goal — the standalone Fund YOUR Goal and Goal Tracker pages already cover single goals; fold this tool's multi-goal buckets and per-bucket inflation into them rather than shipping a third goal tool.",
+   "items": [
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "S",
+     "text": "It applies one 12% return to every goal, including short-term goals 1–3 years away, while its own tip says short-term money should sit in liquid funds or FDs. Use a separate return per bucket (for example 6% short, 9% medium, 12% long) and add the missing 'estimates, not guaranteed' disclaimer."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "M",
+     "text": "On a phone it shows in an 1,100px box while its content is 1,685px tall (taller after each step), so steps 2–4 scroll inside a box. Goal names are cut off ('Home Down Paym'). As a page, let it grow and stack goal name, amount and years."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Its four steps each need a button press, with no way to go back and tweak one goal and see the SIP change. Recalculate live once all goals are entered."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The 'beta' label and three goal tools (Goal Planner, Fund Goal, Goal Tracker) side by side in the tab bar confuse visitors. Whichever survives the merge, name it plainly: 'Plan all my goals'."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The WhatsApp share sends the old ifm-deploy.vercel.app address with no result in the text. Fix it in the merged tool."
+    }
+   ]
+  },
+  {
+   "slug": "classic-mixport",
+   "title": "Mix My Portfolio",
+   "url": "https://games.investingformummies.com/classic?open=mixport",
+   "file": "classic.html (#mixport)",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "A neat persona game (Neha 25 … Kavita 60): set five sliders and get scored against an 'ideal' mix with side-by-side pies. Scoring to the exact percent against one 'correct' answer teaches false precision.",
+   "load": "12 KB of markup + about 8 KB of script inside the hub; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "I scored 410/500 matching portfolios to 5 women's life stages. Can you beat me? <link>",
+   "share_moment": "Final 'Portfolio Master' screen after the total score",
+   "recommendation": "Move to games as its own page — unique persona framing. Absorb the Asset Allocation calculator as a last 'now try your own age' round.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Each persona has one exact 'ideal' mix and you lose a point for every 1% away, so 65% equity for Neha loses points even though any of 60–75% is sensible. Score by bands (within 10% = full marks) and show the ideal as a range."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Neha's hint says '100 minus age = equity %' (75%) and her tip says '~75', yet her 'ideal' equity is 70%. Make the hint, tip and answer agree."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The sliders are 3px thin tracks with small thumbs, hard to drag on a phone, and moving one slider silently shifts the others. Make the tracks taller, enlarge the thumbs to 44px, and use +/− buttons as an alternative."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Calling one mix the 'ideal' for a real-sounding person edges toward advice. Use 'a typical rule-of-thumb mix for someone like Neha', and add one line that real choices depend on goals and risk comfort."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "On the final screen add 'Want to work out the right mix for your own goals? Find your batch'."
+    }
+   ]
+  },
+  {
+   "slug": "classic-rollercoaster",
+   "title": "Market Rollercoaster",
+   "url": "https://games.investingformummies.com/classic?open=game1",
+   "file": "classic.html (#game1)",
+   "kind": "solo",
+   "audience": "Both",
+   "verdict": "A short, well-paced lesson on rupee-cost averaging, with Vikram's year-by-year units reveal. It gives away its own quiz answer and overclaims ('markets always recover').",
+   "load": "6.5 KB of markup + about 5 KB of script inside the hub; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "Markets crashed 20% and I kept my SIP. Vikram got his most units in the crash year. Would you panic? <link>",
+   "share_moment": "After Step 4, next to the closing quote",
+   "recommendation": "Move to games as its own page — the clearest rupee-cost-averaging lesson on the site, and short enough for a WhatsApp click. Link onward to The Timing Trap.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "When Step 2 finishes, the chips already show 'Final Value ₹68,016', and then Step 3B asks 'what do you think his investment is worth now?'. Hide the final value until after that question is answered."
+    },
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "S",
+     "text": "Answer C reads 'Continue my SIP — markets always recover', and the feedback calls rupee-cost averaging 'the most powerful tool'. Say 'markets have historically recovered over time, though not always quickly' and drop the superlative."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Vikram invests '₹10,000 every year' yet it's called a SIP, which is monthly. Make it ₹10,000 a month, or call it a yearly investment, so beginners don't learn the wrong idea of a SIP."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Each year row packs five things (year, bar, %, NAV, units) into one line. On a phone the bar is squeezed to a few pixels. Put NAV and units on a second line under the bar."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Points are counted but never shown. There is no end screen. Add a small result card ('4/4 — you've got the crash-proof mindset') before 'Play again' so the lesson has a payoff."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Under the closing quote add 'Learn to build a SIP you won't panic-sell: find your batch'."
+    }
+   ]
+  },
+  {
+   "slug": "classic-chaiboss",
+   "title": "ChaiBoss Ltd",
+   "url": "https://games.investingformummies.com/classic?open=game7",
+   "file": "classic.html (#game7)",
+   "kind": "solo",
+   "audience": "Both",
+   "verdict": "A charming 8-quarter story that teaches EPS, P/E and price = EPS × P/E with a chai brand. The answer is almost always option A, and the hint shown before you answer gives it away.",
+   "load": "6 KB of markup + about 25 KB of scenario script inside the hub; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "I scored 7/8 reading ChaiBoss's stock like a pro (EPS, P/E and all). Can you? <link>",
+   "share_moment": "Results screen, beside 'Points Earned' and 'Correct Answers'",
+   "recommendation": "Move to games as its own page — the best plain-English P/E lesson here. Fold Fair or Fleeced in as its bonus round.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "The correct choice is option A in 7 of 8 quarters (only Quarter 3 is B), so players learn to tap A. Shuffle the order of the choices each round."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "The hint box sits above the choices and states the answer (for example 'EPS jumped… investors get excited'). Hide it behind a 'Need a hint?' button, as Rollercoaster does."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Quarter 3's headline says an analyst calls ChaiBoss 'Overvalued', but the story says its P/E of 9 is well below the industry's 15, which is undervalued. Change the headline to 'Undervalued — or in trouble?'."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "The intro promises 'you'll run a fictional chai company', but your answers never change the stock price. Make it honest ('predict how the market reacts'), or let a correct call earn the player a share bonus so choices matter."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "On a phone the price, EPS, P/E and points chips stack in a tall navy block, and 'Price: ₹' wraps. Put the four stats in one compact row."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "On the results screen add 'Want to read a real company's numbers with confidence? Find your batch'."
+    }
+   ]
+  },
+  {
+   "slug": "classic-divdash",
+   "title": "Dividend or Dash?",
+   "url": "https://games.investingformummies.com/classic?open=divdash",
+   "file": "classic.html (#divdash)",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "A good idea (match income or growth to a life stage). Its simulation bars contradict its own correct answers and explanations, and it names a real PSU stock.",
+   "load": "3.6 KB of markup + about 6 KB of script inside the hub; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "I matched 5 life stages to dividend or growth stocks and scored 40/50. Which would you pick at 58? <link>",
+   "share_moment": "Final score card",
+   "recommendation": "Move to games as its own page — but only after fixing the numbers below; otherwise retire it.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "Round 4's explanation says '₹1L becomes ₹32L in 20 years vs ₹3.9L', but the bars on screen show ₹75.1L vs ₹7.4L. Make the text use the same calculation as the bars."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "In the three rounds where 'dividend' is the correct answer, the bars still show the growth stock ending 4–10× richer (for example ₹86.7L vs ₹9.3L), which undercuts the lesson. For income rounds, show monthly income received and risk of a fall, not 20-year wealth."
+    },
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "S",
+     "text": "'PowerGrid Corp — Steady 5.1% yield, PSU stock' is a real listed company presented as the right pick for a near-retiree. Use fictional names only, as the other rounds do (StableBank, TechRocket)."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Growth rates of 22–25% a year for 20 years and yields of 4–6.5% are unrealistic and presented without any 'assumed' label. Use toned-down rates (12–15% growth, 1.5–4% yield) and label them assumed."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The title 'Dividend or Dash?' doesn't say what 'dash' means. Use 'Income Now or Growth Later?' or add a subtitle; also note that in India dividends are taxed at your slab rate."
+    }
+   ]
+  },
+  {
+   "slug": "classic-fairfl",
+   "title": "Fair or Fleeced?",
+   "url": "https://games.investingformummies.com/classic?open=fairfl",
+   "file": "classic.html (#fairfl)",
+   "kind": "solo",
+   "audience": "Both",
+   "verdict": "A clean 5-round P/E drill (cheap, fair or pricey against the sector) with a strong closing takeaway. It is thin on its own, and repeats ChaiBoss's subject.",
+   "load": "6.6 KB of markup + about 4 KB of script inside the hub; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "I spotted which 4/5 stocks were cheap or pricey just from their P/E. Fair or fleeced — can you tell? <link>",
+   "share_moment": "Final score card under the 'P/E is a relative tool' takeaway",
+   "recommendation": "Merge with ChaiBoss Ltd — it is the natural 'level 2' after ChaiBoss teaches what P/E is; five rounds is too thin for a page of its own.",
+   "items": [
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "One fictional company is called 'Sahara Power'. Sahara is a real group linked to a well-known investor scandal. Rename it (for example 'Surya Power') to avoid confusion."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Players must divide 420 by 21 in their heads. Many beginners will guess. Add a 'Show me the maths' tap that reveals the P/E before they choose, and score the verdict, not the arithmetic."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The explanations call stocks 'potentially undervalued!' and 'a hidden gem'. Add one line that a low P/E alone is not a reason to buy, which ChaiBoss already teaches as a 'value trap'."
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "S",
+     "text": "With five fixed rounds, every replay is identical. Shuffle the order and add 3–5 more companies so a replay feels fresh."
+    }
+   ]
+  },
+  {
+   "slug": "classic-timing-trap",
+   "title": "The Timing Trap",
+   "url": "https://games.investingformummies.com/classic?open=nifty26",
+   "file": "classic.html (#nifty26)",
+   "kind": "solo",
+   "audience": "Both",
+   "verdict": "A strong, real-data story: three investors, 26 years of Nifty, and perfect versus worst timing barely differ. The data stops in 2021, some wording overclaims, and two versions of the game load on every visit.",
+   "load": "36 KB game + an older 27 KB version that loads first and is then replaced, both compiled in the browser by React + Babel; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "Even the investor who bought at the worst moment every year for 26 years ended with ₹X. Timing barely matters: <link>",
+   "share_moment": "Result screen, under the CAGR comparison",
+   "recommendation": "Move to games as its own page — the most convincing 'time in the market' lesson on the site (real Nifty history). Point Three Investors and Rollercoaster to it.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "The simulation ends in 2021 while it is now late 2026. Extend it to 2025 (or reframe as 2000–2025) so the result includes the 2022 dip and recent years."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Event notes say 'markets always recover from macro shocks', and 2014 is labelled 'Modi Wave'. Say 'markets have historically recovered', rename the event '2014 election rally', and note that the figures are the Nifty price index, past returns only."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Steady Sunita invests once a year on 1 January but the takeaway calls this 'a boring SIP'. Also the worst-timer is 'Worried Waris' on the cards and 'Unlucky Waris' in the story. Use 'invests every January' and one name throughout."
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Both the old and the new version are set up on every open, so the browser compiles two React apps and throws one away. Ship only the new version, pre-built without Babel."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Low",
+     "effort": "S",
+     "text": "On a phone the three investor cards stack to almost three screens before the start button. Show them as a compact row of three or a swipeable strip."
+    }
+   ]
+  },
+  {
+   "slug": "classic-market-madness-1",
+   "title": "Market Madness 1",
+   "url": "https://games.investingformummies.com/classic?open=marketmad",
+   "file": "classic.html (#marketmad)",
+   "kind": "solo",
+   "audience": "Both",
+   "verdict": "A 6-round buy, hold or sell race against a Reactive, a Smart Picker and a Safe investor. Market Madness 2 (live at /market-madness-2) already does the same and more, and both use real stock names with fictional returns.",
+   "load": "39 KB plain-JavaScript frame; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "I raced a panic seller and an index investor over 6 crazy market years and ended at ₹X. Did you beat the Nifty? <link>",
+   "share_moment": "Final standings screen",
+   "recommendation": "Retire — Market Madness 2 already has its own page and reuses the same assets, opponents and behaviour stats.",
+   "items": [
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "S",
+     "text": "It labels real single stocks with risk levels (Reliance Industries and HDFC Bank 'Low risk', Yes Bank and Suzlon 'High risk') and gives them invented returns. If anything is kept, use fictional company names. The same applies to Market Madness 2."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "'Zomato' was renamed Eternal in 2025, so the list already looks dated. Another reason not to use real names."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Before retiring it, check that MM2 keeps the one strong feature here: the end-of-game 'Your behaviour' panel (trades made, panic sells, late buys)."
+    }
+   ]
+  },
+  {
+   "slug": "classic-investopia",
+   "title": "Investopia",
+   "url": "https://games.investingformummies.com/classic?open=investopia",
+   "file": "classic.html (#investopia)",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "An 8-world map, but only World 1 ('Clean House') exists, and the other seven are locked forever. Its content overlaps Module 1 and IFM Course.",
+   "load": "43 KB frame + React + Babel compiling in the browser; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "I cleaned up my money house in World 1 of Investopia: emergency fund, insurance, debt. Start yours: <link>",
+   "share_moment": "World 1 completion screen",
+   "recommendation": "Retire — World 1 is the same 'Clean House' material as Module 1 (/module-1) and IFM Course; the other 7 worlds were never built.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Seven of eight worlds show a lock and 'Coming Soon', which reads as abandoned. If it isn't retired, show only World 1 and drop the empty map."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Lost hearts are saved in the browser and never refill, so a player who loses all five stays at zero forever, and nothing happens at zero. Remove hearts or refill them daily."
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "S",
+     "text": "It downloads React and the Babel compiler for one world of quizzes. If any of it is reused in Module 1, pre-build it."
+    }
+   ]
+  },
+  {
+   "slug": "classic-investopia-2",
+   "title": "Investopia 2",
+   "url": "https://games.investingformummies.com/classic?open=investopia2",
+   "file": "classic.html (#investopia2)",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "Byte-for-byte the same file as 'IFM Course' (same 72 KB, same title 'Investopia 2'), shown under a second name.",
+   "load": "72 KB frame + React + Babel compiling in the browser; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "Same as IFM Course: 'I finished World 1: 9 stages, 80+ questions, ₹X coins. Ready to clean your money house?' <link>",
+   "share_moment": "World 1 completion screen",
+   "recommendation": "Retire — it is an exact duplicate of IFM Course; keep one copy at most.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "Investopia 2 and IFM Course load the identical file, so the hub lists the same game twice under two names, and progress is shared between them. Remove one entry."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Six of seven worlds say 'Coming Soon'. Whichever copy survives, hide unbuilt worlds rather than showing a wall of locks."
+    }
+   ]
+  },
+  {
+   "slug": "classic-ifm-course",
+   "title": "IFM Course",
+   "url": "https://games.investingformummies.com/classic?open=ifmcourse",
+   "file": "classic.html (#ifmcourse)",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "A rich 9-stage 'Clean House' journey (myths, vocabulary, insurance, Rule of 72, a boss stage) with coins and hearts. It is titled 'Investopia 2' on screen, uses a dark purple theme, and repeats Module 1.",
+   "load": "72 KB frame + React + Babel compiling in the browser; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "I finished World 1 of the IFM money course: 9 stages, 80+ questions. Ready to clean your money house? <link>",
+   "share_moment": "World 1 completion screen",
+   "recommendation": "Merge with Module 1 (/module-1) — same topic. Move its best stages (Insurance IQ, Rule of 72, Quick Fire) into Module 1 and drop the rest.",
+   "items": [
+    {
+     "area": "Copy",
+     "priority": "High",
+     "effort": "S",
+     "text": "The screen opened from 'IFM Course' is titled 'Investopia 2', so a visitor can't tell which course they're in. If it is kept, name it consistently."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "The dark purple and violet theme ignores the navy, teal and gold brand used by Module 1–6, so the two 'courses' look like different products. Restyle any stages moved into Module 1."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Hearts drop on wrong answers, are saved forever, never refill, and nothing happens at zero. That punishes learners for no benefit. Drop hearts, or refill them daily and explain what they do."
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "S",
+     "text": "It compiles React in the browser on every open. Module 1 is plain JavaScript and much lighter; another reason to merge into it."
+    }
+   ]
+  },
+  {
+   "slug": "classic-ifm-course-2",
+   "title": "IFM Course 2 (module hub)",
+   "url": "https://games.investingformummies.com/classic?open=ifmcourse2",
+   "file": "classic.html (#ifmcourse2)",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "A clean menu of the six course modules (Before You Invest → Measuring Returns). The modules already exist as standalone pages (/module-1 … /module-6), but this hub opens the older copies built into the classic page.",
+   "load": "4 KB menu; each module 56–91 KB of plain JavaScript inside the hub; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "I'm working through the free 6-module Investing for Mummies course and just finished Module 2. Join me: <link>",
+   "share_moment": "At the bottom of each finished module, and on the hub once a module shows as complete",
+   "recommendation": "Move to games as its own page — make it a light '/course' landing page that links to the existing /module-1 … /module-6 pages.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "The module tiles open the copies built into the classic hub, which have drifted from the standalone /module-1 … /module-6 pages (every one differs by about 3–4 KB). Point each tile at its standalone page so there is one version to maintain."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "The hub shows no progress. Add a tick and 'done' badge for finished modules (the modules already save progress in the browser) and a 'Continue where you left off' button."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "'IFM Course 2' means nothing to a visitor. Call it 'The free 6-step money course' and give each module a time estimate (for example '15 min')."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Med",
+     "effort": "S",
+     "text": "This is the warmest page for sign-ups: after Module 6, or on the hub, add 'Liked the course? Learn it live with Hiral — find your batch'."
+    }
+   ]
+  },
+  {
+   "slug": "classic-ifm-chatbot",
+   "title": "IFM Chat Bot",
+   "url": "https://games.investingformummies.com/classic?open=ifmchat",
+   "file": "classic.html (#ifmchat)",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "A scripted chat that walks through retirement, education, holiday, savings-goal and SIP sums. It repeats five calculators, its photo-upload does nothing, and on phones the reply box sits under the floating buttons.",
+   "load": "189 KB frame (including the same 23 KB logo image embedded 5 times); loads on every hub visit; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "I planned my retirement just by chatting: I need ₹X, that's ₹Y a month. Try it: <link>",
+   "share_moment": "After the bot's final plan summary",
+   "recommendation": "Retire — it duplicates the Retirement, Education, Holiday, Goal and SIP calculators. If a chat-style entry is wanted later, build it as a 'guided mode' that hands off to the /tools pages.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "It offers 'Upload a photo of your portfolio statement', but the photo is never read; only the file name is echoed back. It invites people to share a sensitive financial document for nothing. Remove the option."
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "S",
+     "text": "On a phone the 'Your answer…' box and send button sit under the floating 'Menu' and 'Suggest' buttons, so the main control is covered. Keep the floating buttons away from the chat's bottom bar."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The banner says 'we'll build your retirement plan', but the bot first asks you to pick from five goals. Make the promise match ('plan any money goal by chatting')."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "An older copy of the same bot sits in the Beta screen's 'Chat Planner' tab with the same page ID, so there are two chat bots to maintain and they can clash. Remove the beta copy."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Low",
+     "effort": "S",
+     "text": "It states 'good equity MFs return ~11% p.a. over the long run'. Add 'historically, not guaranteed' to that line."
+    }
+   ]
+  },
+  {
+   "slug": "classic-news-agency",
+   "title": "IFM News Agency",
+   "url": "https://games.investingformummies.com/classic?open=newsagency",
+   "file": "classic.html (#newsagency)",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "Billed as a 'Daily Digest', but its live news feed is gone (the Vercel deployment returns 'not found'), so it shows six articles from 4 May 2026, including one twice, plus a public 'Admin only' panel.",
+   "load": "7.5 KB markup; fetches a dead news feed and then a small backup file; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "Today's money news in plain English, simplified for mums: <article title> <link>",
+   "share_moment": "On each article card, after 'Read simplified version'",
+   "recommendation": "Retire — the scanner behind it is offline and the content is six months old. If news returns, publish it on the main website or Instagram, not inside the games site.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "The live feed (ifm-news-agency.vercel.app/api/news) returns 'DEPLOYMENT_NOT_FOUND', and the 'Open the newsroom' button links to the same dead address. Remove the screen, or the link at least."
+    },
+    {
+     "area": "Copy",
+     "priority": "High",
+     "effort": "S",
+     "text": "It says 'Daily Digest' while every article is dated 2026-05-04, two are near-duplicates ('Save Tax and Grow Money'), and most show no source. Stale news hurts trust more than no news."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "'Copy for WhatsApp' does nothing: the page fills its article list through a different path than the one the copy button reads, so it always finds no article. Fix this if the screen survives."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "The public panel reads 'Admin only · scans, mummifies and files to Google Drive', internal wording visitors shouldn't see. Hide it from public visitors."
+    }
+   ]
+  },
+  {
+   "slug": "classic-retirement-beta",
+   "title": "Retirement Planner (beta)",
+   "url": "https://games.investingformummies.com/classic?open=beta",
+   "file": "classic.html (#beta)",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "A React rebuild of the Retirement Planner with a nice per-investment step-up field. It is a second retirement planner, it breaks on phones, and it compiles in the browser.",
+   "load": "45 KB frame + React + Babel compiling in the browser; the classic hub page (3.1 MB, about 0.9 MB compressed) loads all 11 calculator frames and the 190 KB chat bot at once, whichever one you open",
+   "share_idea": "Same as Retirement Planner: 'I'm X% funded for retirement at 60; ₹Y a month closes the gap' <link>",
+   "share_moment": "Under the funded-percentage bar",
+   "recommendation": "Merge with Retirement Planner — two retirement planners confuse people; move the beta's per-investment 'step-up' field and 'income replacement %' into the main planner, then retire this.",
+   "items": [
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "S",
+     "text": "On a phone it keeps its two-column layout, so the right column (Expenses, Current investments) runs off the screen and the 'Retire at' box shows '6' instead of '60'. This settles which version to keep."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The header badge overlaps its own text ('MU CLASSROOM' printed over 'INVESTING FOR MUMMIES'), and the outer 'Beta Tools' banner plus the inner banner fill the first phone screen."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Worth keeping in the main planner: a step-up % per investment and the 'income replacement %' figure. Move both over before retiring this screen."
+    },
+    {
+     "area": "Speed",
+     "priority": "Low",
+     "effort": "S",
+     "text": "It loads React and the Babel compiler only to show a form the main planner already shows without them."
+    }
+   ]
+  }
+ ]
+}
