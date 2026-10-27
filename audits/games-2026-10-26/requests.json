@@ -1,0 +1,13 @@
+{"group":"requests","games":[
+{"slug":"_hiral-requests","title":"Hiral's requests (27 Oct)","url":"https://games.investingformummies.com/","file":"classic.html + all-games","kind":"tool","audience":"Mummies",
+ "verdict":"Requests from Hiral on 27 Oct 2026. The Education Planner change is her stated priority. A tested draft exists (audits/games-2026-10-26/drafts/education-planner-per-child.html) but nothing is live.",
+ "load":"—","share_idea":"","share_moment":"",
+ "items":[
+  {"area":"Game design","priority":"High","effort":"M","text":"Education Planner: let each child have their own expected SIP return, instead of one rate applied to all children. Children of different ages need different assumptions."},
+  {"area":"Game design","priority":"High","effort":"M","text":"Education Planner: let each child have their own existing investments (amount, return %, amount still being added each month), instead of one shared pot for all children."},
+  {"area":"Game design","priority":"High","effort":"M","text":"Education Planner: show, for each child, the monthly SIP (from now until that child's education starts) AND the one-time lump sum needed today to bridge that child's funding gap, plus a family total. Today there's one SIP figure, timed to the eldest child."},
+  {"area":"Layout","priority":"Med","effort":"S","text":"Move the Dividend Income Planner out of the games list and into a separate Resources / Tools tab."},
+  {"area":"Layout","priority":"Med","effort":"S","text":"Move Asset Allocation out of the games list and into the Resources / Tools tab."},
+  {"area":"Layout","priority":"Med","effort":"S","text":"Remove the Financial Goal Planner from the listings (Fund YOUR Goal and Goal Tracker already cover it)."}
+ ]}
+]}

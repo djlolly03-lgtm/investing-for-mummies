@@ -114,7 +114,7 @@ input[type=search]{flex:1 1 180px;min-width:0;border:1px solid var(--line);backg
 <script>
 (function(){
   const DATA = JSON.parse(document.getElementById('audit-data').textContent);
-  const GROUP_NAMES = {sitewide:'Site-wide (do once, fixes every game)', 'solo-a':'Solo games — Mummies (1)', 'solo-b':'Solo games — Mummies (2)', 'solo-c':'Gen Next, simulations & tools', 'class-a':'Classroom games (1)', 'class-b':'Classroom games (2)', classic:'Inside the classic hub (to be moved out)'};
+  const GROUP_NAMES = {requests:'Hiral\u2019s requests \u2014 priority', sitewide:'Site-wide (do once, fixes every game)', 'solo-a':'Solo games — Mummies (1)', 'solo-b':'Solo games — Mummies (2)', 'solo-c':'Gen Next, simulations & tools', 'class-a':'Classroom games (1)', 'class-b':'Classroom games (2)', classic:'Inside the classic hub (to be moved out)'};
   const done = new Map();          // itemId -> {at}
   const f = {prio:null, eff:null, hide:false, kind:null, q:''};
   try { const s = JSON.parse(localStorage.getItem('ifm-fix-filters')||'null'); if (s) Object.assign(f, s); } catch(e){}
