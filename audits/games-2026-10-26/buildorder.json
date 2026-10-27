@@ -1,0 +1,21 @@
+{"group":"buildorder","games":[
+{"slug":"_build-order","title":"Build order: agreed 27 Oct","url":"https://www.investingformummies.com/","file":"www + games + register","kind":"site","audience":"Both",
+ "verdict":"Agreed structure: www is the shop front, with the free tools at www/tools; games. is the play area, with two tabs (Play and In class) and Gen Next as a filter; register. is the till (unchanged). Every game and tool leads back to IFM or on to 'Find your batch'. Work top to bottom. The detailed items further down this page are the checklist for each step.",
+ "load":"—","share_idea":"","share_moment":"",
+ "items":[
+  {"area":"Compliance","priority":"High","effort":"S","text":"Step 1 · Foundations: hide course material and the never-launched betas from the public All games page; mark the /module-1…6 pages noindex."},
+  {"area":"Bug","priority":"High","effort":"S","text":"Step 2 · Foundations: stop strangers opening classroom host screens (Swayamvar, teen Stock Rush), so the bare link no longer gives a Reset button to anyone."},
+  {"area":"Bug","priority":"High","effort":"S","text":"Step 3 · Foundations: replace every old ifm-deploy.vercel.app link players see (Swayamvar join QR first, then share messages and images)."},
+  {"area":"Navigation","priority":"High","effort":"M","text":"Step 4 · Foundations: build the one shared bar (All games · IFM home), WhatsApp share and end card ('Find your batch'), and put it on every game."},
+  {"area":"Layout","priority":"High","effort":"M","text":"Step 5 · Tools on www: create www.investingformummies.com/tools with an index page, and add Tools to the www menu and footer."},
+  {"area":"Game design","priority":"High","effort":"M","text":"Step 6 · Tools on www: launch the per-child Education Planner (Hiral's priority) as the first tool page. The tested draft is ready."},
+  {"area":"Layout","priority":"High","effort":"L","text":"Step 7 · Tools on www: move SIP, SWP, Retirement, Education, Holiday, Budget, Fund YOUR Goal, Goal Tracker, Dividend Income Planner and Asset Allocation to their own www/tools pages; drop the Financial Goal Planner."},
+  {"area":"Conversion","priority":"Med","effort":"S","text":"Step 8 · Tools on www: add the 'Free money tools' strip to the www homepage and add the tool pages to www's sitemap."},
+  {"area":"Game design","priority":"High","effort":"M","text":"Step 9 · Games hub: beta deep-dive. One decision card per beta game; you choose keep, fix, merge or retire."},
+  {"area":"Layout","priority":"High","effort":"L","text":"Step 10 · Games hub: one hub with Play and In class tabs, the Gen Next filter, the question chips and real game screenshots. It replaces the homepage and All games pages; the classic hub is retired and redirected."},
+  {"area":"Game design","priority":"Med","effort":"L","text":"Step 11 · Games hub: In class tab as a showcase, plus a 'play on your own' mode for the classroom games people open alone."},
+  {"area":"Speed","priority":"High","effort":"L","text":"Step 12 · Speed: pre-build the 9 slow games, turn on caching, and shrink heavy media (3 Buckets, the quiz video, the 1 MB logos)."},
+  {"area":"Game design","priority":"Med","effort":"L","text":"Step 13 · Per game: work through each game's own fixes below, High priority first."},
+  {"area":"Conversion","priority":"Med","effort":"M","text":"Step 14 · Measure: PostHog events for game started, finished, shared and 'Find your batch' clicked; review which games and tools lead to bookings."}
+ ]}
+]}

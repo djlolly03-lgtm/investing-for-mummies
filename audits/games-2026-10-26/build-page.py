@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import json,re,os,sys
 S=os.path.dirname(os.path.abspath(__file__))
-order=['requests','sitewide','solo-a','solo-b','solo-c','class-a','class-b','classic']
+order=['buildorder','requests','sitewide','solo-a','solo-b','solo-c','class-a','class-b','classic']
 groups=[]; total=0; seen=set()
 def key(s): return re.sub(r'[^A-Za-z0-9_-]+','-',s).strip('-') or 'x'
 for g in order:
