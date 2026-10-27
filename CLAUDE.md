@@ -23,9 +23,9 @@ stray `vercel deploy` from the parent would have uploaded ~7.7 GB and replaced t
 folder is now `.vercel.DISABLED-root-link/` (see `WHY.txt` inside). A deploy from the root will now
 ask to create a *new* project instead of overwriting `ifm-deploy`. Do not re-link the root.
 
-**Never deploy between 11:00 and 14:00 IST.** Hiral teaches live classes 11–2 every day and runs
+**Never deploy between 11:00 and 14:00 IST, Saturday to Thursday.** Hiral teaches live classes 11–2 every day except Friday and runs
 the games in class (quiz, Swayamvar, Stock Rush PRO, MF Manager, The Wealth Hack, Broke by Friday).
-Check `TZ=Asia/Kolkata date` first. After any deploy, open the classroom games' host screens and join
+Check `TZ=Asia/Kolkata date` first. Friday has no class, so it's the safest day for bigger deploys. After any deploy, open the classroom games' host screens and join
 links to confirm they work; if anything is broken, roll back at once (`vercel rollback` from inside the
 project folder). This applies to every session and every scheduled task (user rule, 27 Oct 2026).
 
