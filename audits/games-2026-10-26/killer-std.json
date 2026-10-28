@@ -1,0 +1,487 @@
+{
+ "group": "killer-std",
+ "games": [
+  {
+   "slug": "_old-address-full-scan",
+   "title": "Old ifm-deploy.vercel.app address: complete scan (27 Oct)",
+   "url": "https://games.investingformummies.com/",
+   "file": "18 files across CLAUDE/",
+   "kind": "site",
+   "audience": "Both",
+   "verdict": "Full read-only scan after the old address showed on the projector in Stock Rush PRO on 27 Oct. 3 places print it in the code, and 10 classroom games build their QR from whatever address the host opened, so old bookmarks put it on every projector. The complete fix: change the 3 written-in addresses, add one redirect from the old address to games.investingformummies.com, and update Hiral's bookmarks.",
+   "load": "—",
+   "share_idea": "",
+   "share_moment": "",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "Stock Rush PRO: the projector's 'Join on your phone' box prints ifm-deploy.vercel.app/stock-rush-pro, written into the code (stock-rush-pro/host-view.jsx). Show games.investingformummies.com/stock-rush-pro."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "Teen Stock Rush: the same box prints ifm-deploy.vercel.app/stock-rush (stock-rush/host-view.jsx). Change it to the games address (teen version: owner rule says don't edit, so decide first)."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "Swayamvar: the join QR is built from ifm-deploy.vercel.app/swayamvar (swayamvar/ui-common.js and .jsx). Build it from the games address."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "Add one redirect rule: anyone opening ifm-deploy.vercel.app goes to games.investingformummies.com, same page. 10 classroom games (Quiz, Wealth Hack, MF Manager, Sapno Ka Ghar, Broke by Friday, Swipe Right LIVE, Lifestyle Time Machine LIVE, both Stock Rushes) build their QR from the address the host opened, so this one rule fixes every QR and every old bookmark at once."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "Update Hiral's browser bookmarks and class slides to games.investingformummies.com links (and the host links once rooms are per-session)."
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Share messages and printed PDF footers in Fund YOUR Goal, Goal Tracker and the classic hub say 'ifm-deploy.vercel.app' (5 places). Change them to the right address (www/tools once the tools move)."
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "S",
+     "text": "The classic hub loads 9 embedded games from ifm-deploy.vercel.app. Switch to same-site links (moot once the classic hub is retired)."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "18 logo and image references load from ifm-deploy.vercel.app (Crorepati Lane, MF Manager art, Fund YOUR Goal, Goal Tracker, Quiz, Sapno Ka Ghar, Slash the Scam, Money Map, Snakes & Ladders, classic hub). Switch to relative paths, and shrink the 1 MB round logo while at it."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Stock Rush PRO activity feed shows a broken question-mark-in-a-diamond symbol before 'Suraj locked in' on the projector (seen in class 27 Oct). Fix the lock line's emoji."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Tidy-ups: Snakes & Ladders page meta points at the old address; the unused WordPress publish scripts (bbflive/g8/swayamvar _wp_ commands) and game-reels content links still mention it."
+    }
+   ]
+  },
+  {
+   "slug": "_rooms-topic",
+   "title": "Classroom rooms: one fixed room, or a new room each session?",
+   "url": "https://games.investingformummies.com/",
+   "file": "swayamvar/, stock-rush/, stock-rush-pro/, swipe-right-sip-live.html (fixed) · quiz, the-wealth-hack, fund-manager, sapno-ka-ghar, broke-by-friday-live (per session)",
+   "kind": "classroom",
+   "audience": "Both",
+   "verdict": "Recommendation: a NEW room every session, everywhere, made as easy as a fixed room. Fixed rooms (Swayamvar 1995, Swipe Right MF101, Stock Rush TEEN, Stock Rush PRO's GO25 fallback) are simple and printable, but two classes collide, old scores show when the screen opens, and anyone with the link can watch or reset a live class. Per-session rooms (Quiz, Wealth Hack, MF Manager, Sapno, BBF) keep classes apart and safe, and they gave us the usage data (1,044 rooms). Players never need a fixed code anyway: they scan the QR on the projector.",
+   "load": "—",
+   "share_idea": "",
+   "share_moment": "",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Move Swayamvar, Swipe Right LIVE, Stock Rush teen and Stock Rush PRO to a new room per session, like the quiz and Wealth Hack, so two classes can never collide and old scores never appear."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Give Hiral one bookmarkable host link per game that always opens or resumes HER latest room. That keeps the convenience of a fixed room, without a shared room strangers can reach."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "Make every host screen survive a refresh: remember the host's room on that device and offer 'Resume or start fresh' (Stock Rush PRO already does this; the quiz, Wealth Hack, Sapno and BBF lose the lobby today)."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "text": "Only the host's own device sees host controls (Reset, Next, Reveal). A plain player link should never show them."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Use one room-code style everywhere: 4 characters, no look-alike letters (no O/0, I/1), shown big beside the QR, with a typed-code join box on the phone that actually works."
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Build one shared 'rooms' module that all 9 classroom games use (create, join, resume, expire after 6 hours), instead of nine slightly different versions."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Tag each room with game name and date so the room history becomes a simple usage report: which games Hiral runs, how many players, and how far each got."
+    }
+   ]
+  },
+  {
+   "slug": "_killer-standard",
+   "title": "The IFM killer standard (applies to every game)",
+   "url": "https://games.investingformummies.com/",
+   "file": "killer/quality-bar.md",
+   "kind": "site",
+   "audience": "Both",
+   "verdict": "What IFM's newest work does well, written as rules every game should meet. Build it once as a shared kit (one CSS and one JS file), then upgrade each game against it. The full checklist with examples is in audits/games-2026-10-26/killer/quality-bar.md.",
+   "load": "—",
+   "share_idea": "",
+   "share_moment": "",
+   "items": [
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "S",
+     "text": "The game title is the hero: a 40-54px serif on the page with exactly one italic accent word in the accent colour, a tracked-caps kicker above it, and a one-sentence hook ending on a twist. (Why: It turns a form into a moment and gives a reason to care before explaining mechanics; it is the single most visible difference between old and new.)"
+    },
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "S",
+     "text": "Two themes, two font pairs, recorded in Brand Guidelines §4: Daylight = Lora + Nunito; Midnight (live/projector and premium payoffs) = one agreed pair. No new font pair per game. (Why: Six display faces now exist across one brand (Lora, Fraunces, Sora, Poppins, Cormorant, Cinzel); a fixed pair keeps the family recognisable and cuts font weight.)"
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "S",
+     "text": "Phone type floor: body 15-17px, inputs 16-17px, labels 12-13px; only caps kickers may be 10-11px. Replace the Brand Guidelines §4 type scale (0.55-0.92rem) accordingly. (Why: Small text is why old games read as cramped; the guideline itself prescribes it.)"
+    },
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "S",
+     "text": "Short palette with fixed meanings: gold/mint = money that grows, coral = money that hurts, navy/ivory neutral. All colours from tokens, no inline hex. (Why: Consistent colour meaning teaches without words; colour sprawl looks amateur and drifts off-brand.)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "Primary buttons use dark text on gold (>=4.5:1); WhatsApp button uses dark text on #25D366. (Why: White on brand gold is 2.3:1 and white on WhatsApp green is 1.98:1, both failing WCAG 1.4.3 (4.5:1). It is the Start button of every old game.)"
+    },
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "S",
+     "text": "Depth through layers: one glass card with a gold hairline for the screen's key content, a faint grain overlay, glow on hero numbers, and one atmospheric image fading into the background. (Why: Flat white cards on a near-white page make nothing feel important.)"
+    },
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "S",
+     "text": "Each game owns one signature illustration or photo; emoji are seasoning, not the artwork or the trophy. (Why: Brand Guidelines §24 asks for editorial illustration and rounded outline icons; emoji-as-art reads as a prototype.)"
+    },
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "S",
+     "text": "Fix the empty logo gutter: remove data-logo from .game-hero (it reserves 112px with no logo) and show the small round mark in a consistent top bar. (Why: On phones the title is squeezed into the right two-thirds of the banner next to an empty hole; REIT's in-game header shows an empty logo circle.)"
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "S",
+     "text": "Phone layout: one column max 480px, 16px gutters, no sideways scroll; title + hook + primary button visible in 390x844 without scrolling; primary button >=56px, in the thumb zone (sticky where there is an input). (Why: Most visitors arrive on phones from Instagram/WhatsApp; a below-the-fold Start button loses them.)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "Every live/projector game has a solo phone path for visitors who arrive from a shared link without a room code. (Why: Without it, WhatsApp visitors see a squeezed projector lobby or a dead-end 'Scan the QR' screen.)"
+    },
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "S",
+     "text": "Intro shape: top bar, kicker with length ('3 MINUTES'), title, one-line hook, one input or one button that names the reward, optional social proof, assumption footer. No 'How It Works' card — the first round is the tutorial. (Why: It earns curiosity before asking for effort.)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Feedback shows the player's own consequence (a number or picture about them) plus one bold-number sentence of why, max ~35 words; 'Not quite — here's the twist', never 'Wrong'. (Why: Personal consequence is what people remember and retell; long paragraphs are skipped on phones.)"
+    },
+    {
+     "area": "Accessibility",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Scores and money count up (about 900ms ease-out); under reduce-motion they jump straight to the value. (Why: A counting number makes the payoff land; an instant swap feels like a spreadsheet.)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Light synthesised sound: chime for correct, soft thud for wrong, coin on reveal, arpeggio on finish; visible mute button; unlocked on the first tap. (Why: Cheapest 'this is a game' upgrade; no audio files needed.)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Result card: player's name, hero number/verdict in serif, max 3 meaning rows, one tailored line, one call to act; full recap behind a tap; confetti only for a real win. (Why: The payoff is the screenshot and the share; a long recap list and a score out of 80 are neither.)"
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Copy voice: smart friend, sentence case, rupees not percentages, buttons say what you get, assumption next to every projection; no patronising grades. (Why: Brand Guidelines §11 ('never patronising'); compliance needs the assumption beside the number.)"
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Every result screen has Share on WhatsApp as the primary button: WhatsApp-formatted text (*bold*, _italic_) with name, result, one teaching line, the assumption and the game's own link; image card via navigator.share where possible. (Why: Most traffic is WhatsApp/Instagram; a share is free distribution and must stay compliant once forwarded.)"
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Each game has its own 1200x630 og:image and title so a forwarded link previews that game. (Why: Every game currently previews the same og-games.jpg.)"
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "S",
+     "text": "End-card buttons, in order: Share on WhatsApp · Play again · More games like this. One disclaimer line only. (Why: Old games end at 'Play again' or 'Back to Main Menu' and stack a yellow disclaimer box on top of the footer disclaimer.)"
+    },
+    {
+     "area": "Speed",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Performance budget: game's own first-screen payload <=500KB (excl. analytics), logo <=15KB, hero image <=120KB WebP, icons <=30KB WebP, video <=400KB and only where shown; LCP <2.5s on 4G, INP <200ms, CLS <=0.1; no in-browser Babel; pinned CDN versions. (Why: Measured: the 1MB round-logo PNG is the heaviest file on most new games; 3 Buckets is 7.8MB on a phone; Wealth Hack phones download a 394KB projector video they never show.)"
+    },
+    {
+     "area": "Accessibility",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Never disable zoom: viewport is width=device-width, initial-scale=1 only. (Why: WCAG 1.4.4; low-vision users must be able to pinch-zoom. Lighthouse flags user-scalable=no.)"
+    },
+    {
+     "area": "Accessibility",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Honour prefers-reduced-motion: count-ups jump, confetti skipped, pulses stopped. (Why: WCAG 2.3.3; motion can cause nausea. Zero games do this today.)"
+    },
+    {
+     "area": "Accessibility",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Keyboard and screen-reader basics: real <button>s (no clickable divs), visible :focus-visible rings, aria-live on reveals, alt on images, colour never the only signal, tap targets >=44px. (Why: WCAG 2.2; Apple HIG 44pt targets.)"
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Build upgrades from one shared kit (ifm-kit.css + ifm-kit.js) instead of copying code into each game. (Why: There is no shared CSS/JS in CLAUDE/ today; 40+ hand-copied versions drift (dead --purple/--pink tokens in every old game).)"
+    }
+   ]
+  },
+  {
+   "slug": "_killer-playbook",
+   "title": "Games playbook: what the best money games do",
+   "url": "https://games.investingformummies.com/",
+   "file": "killer/games-benchmark.json",
+   "kind": "site",
+   "audience": "Both",
+   "verdict": "Patterns from 24 of the best money and learning games (Spent, Wordle, NYT 'You Draw It', Duolingo, Nicky Case, Zogo and others), ranked by impact for IFM. Gaps found: rivals break on phones, and no Indian product offers an always-on, 2-minute money game for mums with WhatsApp sharing.",
+   "load": "—",
+   "share_idea": "",
+   "share_moment": "",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Guess first, then reveal: Before every big reveal (what Rs 5,000 a month becomes in 25 years, or what a 2% fee costs over a lifetime), make the player drag a slider to guess, then animate the real number over their guess with the gap labelled, for example 'You were Rs 38 lakh short'. (Inspired by NYT Upshot 'You Draw It: How Family Income Predicts Children's College Chances' )"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Spoiler-free result card built for the chat: End every game with two share options: a one-tap WhatsApp text (game name, an emoji line and a score, with no personal money figures) and a 1080x1920 card in navy, teal and gold for Instagram Stories, both linking straight back into the game. (Inspired by Wordle share grid, and ; Spotify Wrapped 9:16 format,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "First tap is the first decision: Remove name entry, rules pages and 'choose a mode' screens from solo games, so the landing screen shows the hook question and a single big 'Start (2 min)' button that opens straight onto choice number one. (Inspired by SPENT, played first-hand, ; Wordle,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Link preview as the cover: Give every game URL its own og:image (under 300KB, about 1200x630) carrying the hook question in Lora, for example 'Could you survive a month on Rs 25,000?', and check it by pasting the link into a WhatsApp chat before launch. (Inspired by WhatsApp link-preview requirements, ; 300KB practical limit,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "A dare that challenges the player's self-image: Phrase each game's opening line and share text as a dare a mum would forward to her group, such as 'Think you'd spot a fake SEBI-registered advisor? Prove it in 90 seconds.' (Inspired by SPENT by McKinney for Urban Ministries of Durham, played first-hand, ; reach fig)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "One live number you can't stop watching: Pin one large, always-visible meter to the top of every money game (balance left, days to payday, or corpus at 60) and animate it after every choice, red when it falls and gold when it grows. (Inspired by SPENT balance meter and calendar, played first-hand,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Teach in the result, not before the choice: After every choice, show a two-line 'What just happened' bubble with one concrete rupee figure and one plain-English reason, and keep jargon to a tappable chip such as 'What's an expense ratio?'. (Inspired by SPENT result bubbles, played first-hand, ; The Evolution of Trust,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Compress decades into minutes: Run 'age 28 to 60 in 3 minutes' rounds where each tap is a year, a market fall happens on screen and the player chooses to stay or stop the SIP. Show the assumption (for example '10% a year average, not guaranteed') beside the growing number. (Inspired by NGPF STAX, and)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Play the villain: Build a 'Be the scammer' round for Slash the Scam where the player writes a fake 'guaranteed 3% a month' WhatsApp pitch from tiles (urgency, fake SEBI badge, celebrity photo), then sees each trick flagged as a red flag to watch for. (Inspired by NGPF Shady Sam, ; Slick Wheels, ; NSE Scambush,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "End on an identity, not a score: Give each game three to five warm, flattering money archetypes, such as 'The Gullak Guardian' or 'The Calm Compounder', each with a one-line strength and one 'next step'. The archetype becomes the headline of the share card. (Inspired by BitLife ribbons, ; Sorted money-personality quiz, ; How Bad Is Your Spotify,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Compare me with everyone else: Store anonymous guesses (the Stock Rush Supabase already exists) and show one line on the reveal, such as '7 in 10 mums guessed lower than you', with no names and no personal amounts. (Inspired by NYT 'You Draw It' crowd overlay,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Juice: numbers that roll, coins that land: Make the reveal number count up from zero over about 1.2 seconds with easing, drop a coin into a gullak on every good choice, and add a short phone vibration (navigator.vibrate) on a loss. Keep sound off until the player taps it on, because most people play in public. (Inspired by Juice it or lose it (GDC Europe 2012), ; Duolingo streak animation result,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Say how long it takes, then show progress: Put the real time on the start button ('2 min') and a row of 5 to 8 progress dots at the top of every solo game, and design to that time on a mid-range Android phone. (Inspired by The Evolution of Trust, played first-hand, ; NGPF Arcade time labels,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Desperate lifelines with a hidden price: In Broke by Friday and any budget game, add an always-visible 'Instant loan app' or 'Break the FD' button that solves today's problem, then charges interest, a penalty or stress two rounds later, with a callout explaining why. (Inspired by SPENT 'Need cash?' lifelines, played first-hand,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Same game, one variable changed: replay to see the difference: On every end screen, offer one specific replay button, such as 'Replay starting 5 years earlier' or 'Replay without the loan app', then show both runs' endings side by side. (Inspired by NGPF PAYBACK, and worksheet)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "M",
+     "text": "End with a sandbox: After the scripted rounds, unlock a single-screen what-if panel with two or three sliders (monthly amount, start age, assumed return, shown as an assumption) and a line chart that redraws live, as the Wealth Hack sandbox already starts to do. (Inspired by Parable of the Polygons, played first-hand, ; The Evolution of Trust,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "M",
+     "text": "One personal sentence as the answer: Make every IFM calculator headline one sentence in the player's own numbers, such as 'Start Rs 3,000 a month now and Riya's college fund is ready by 2041, assuming 10% a year', with the detailed table folded below. (Inspired by NYT Upshot 'Is It Better to Rent or Buy?' (2014; page not opened, because nytime)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "M",
+     "text": "Show your sources and assumptions inside the game: Add a small 'Where do these numbers come from?' link on every reveal that opens a sheet listing each assumption (return rate, inflation, fee) and its source, with 'Education only, not investment advice' on the result card. (Inspired by SPENT sources PDF, ; Parable of the Polygons footnotes,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "M",
+     "text": "A small daily ritual for return visits: Run a 'Paisa Puzzle of the Day': one same-for-everyone money question at a fixed time, with a localStorage streak counter, so it needs no login, and a Wordle-style share line such as 'Paisa Puzzle #42 ✅✅❌ streak 5'. (Inspired by Duolingo streak data, ; Zerodha Varsity app,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "M",
+     "text": "Local life events, local money: Build scenarios around Indian mums' real moments (school-fee season, Diwali shopping, a sister's wedding, gold vs SIP, a WhatsApp 'stock tip' group), and add one real-world action such as 'check this advisor on SEBI's site' as the final step. (Inspired by SEBI Check QR game at Kolkata Book Fair 2026, ; Financial Football Georgia,)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Avoid: Heavy game engine and a long loader. Visa's Financial Football web version loads a Unity WebGL build. In testing on desktop broadband it was still on the Unity loading bar after about 25 seconds. On a mid-range phone opened from WhatsApp, most people would leave first. IFM games should be plain HTML/CSS/JS that is playable within about 2 seconds."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Avoid: A fixed landscape stage that breaks in portrait. Played in a 375px portrait viewport, the title card of The Evolution of Trust did not fit on screen, and SPENT's opening interstitial was cropped off the right edge. Both are excellent on desktop and lose phone players at the very first screen. IFM traffic is mostly portrait phones."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Avoid: Sign-up, access code or teacher gate before play. Zogo needs a partner credit union's access code. The SIFMA Stock Market Game and Investopedia's simulator need accounts. That suits classrooms and loyalty schemes, but it kills cold traffic from a shared link. Ask for a name or number only after the payoff, if ever."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Avoid: Trivia dressed up as a game. Financial Football moves a ball down the field for each correct multiple-choice answer, so the football is decoration and the learning is recall. The best examples (SPENT, STAX, Shady Sam) teach through decisions that have consequences. If the theme can be swapped without changing what is learned, it is not doing any teaching."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Avoid: Punishing mistakes so hard that people stop experimenting. A qualitative study of Duolingo describes hearts as a punitive mechanic that pushes learners towards avoiding errors rather than learning from them. In a money game the wrong choice is where the lesson is, so let players fail, see why, and replay instantly."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Avoid: Prizes as the main reason to play. NSE's investor-week games gave Rs 500 vouchers to 50 winners a day, Zogo pays gift cards, and CRED runs jackpots. Prizes attract prize-hunters whose interest ends with the prize, and they add cost and legal complexity. IFM's reward should be the insight and the share card."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Avoid: Leaderboards for the highest short-term portfolio. In the SIFMA Stock Market Game and Investopedia-style contests, the highest portfolio after about 10 weeks wins, which rewards concentrated gambling, the opposite of IFM's message. Naming real stocks would also breach IFM's no-specific-securities rule. Use generic asset types and reward staying invested."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Avoid: A lecture or pre-test before the fun. Banzai starts with a pre-test, which is good for teachers' data but means a cold visitor's first experience is an exam. The Evolution of Trust's text intro works only because it is about 100 words and ends in 'let's play a game'. Put any check-what-you-learned step after the payoff and make it optional."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Avoid: A share that spoils the game or exposes the player. Wordle's grid succeeded because it 'just leaves the colours', with no answer and no private data. A money-game share card that prints someone's salary, debt or savings is embarrassing to post and will not be shared. Share the archetype, the score and the dare, never the player's real numbers."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Avoid: Doom with no way forward. Poverty and debt simulations can end on a gut-punch (SPENT's 'I can't do this' button leads to a donation page). That works for a charity appeal, but for mums who may already feel money anxiety, ending on shame drives them away. This one is a judgement call; there is no hard evidence either way. Always end with one doable next step and a replay."
+    }
+   ]
+  }
+ ]
+}

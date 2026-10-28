@@ -1,0 +1,817 @@
+{
+ "group": "killer-a",
+ "games": [
+  {
+   "slug": "killer-hidden-fortunes",
+   "title": "Hidden Fortunes — killer upgrade",
+   "url": "https://games.investingformummies.com/hidden-fortunes",
+   "file": "hidden-fortunes-2.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The killer version turns her real spending into a guessing game and then a printed 'future receipt', with each habit as a line item that rings up its 30-year value on a cash-register sound. The moment she screenshots is the receipt's last line: her Swiggy-and-coffee habit totalled as one big gold number, stamped 'assumes 12% a year, not a promise'. She forwards the archetype it gives her, 'The Café Crorepati-in-waiting', not her rupees.",
+   "load": "",
+   "share_idea": "💎 *Hidden Fortunes*\nMy biggest hidden fortune is sitting in my *café coffee* ☕. Turns out I'm a _Café Crorepati-in-waiting_ 😄\nWhich of your habits is secretly a fortune? Tap and find out 👇\n_(assumes 12% a year for 30 years, not a promise)_\ngames.investingformummies.com/hidden-fortunes\n[Assumption: the habit name comes from her largest selected habit. No rupee amounts are shared.]",
+   "share_moment": "Your Swiggy order is hiding a fortune. Tap your habits. Guess what they become. Then see the receipt.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Make it guess-first. After she taps her habits, she drags one slider ('What does this become in 30 years?' from ₹5 L to ₹5 Cr) before anything is revealed. The real number then counts up and stops past her guess, with an 'off by' pill: 'You guessed ₹40 L. It's ₹3.5 Cr.' This is the one change that makes it stick. (reuse: Wealth Hack count-up + off-by pill). Inspired by benchmark #1 Guess first, then reveal (NYT 'You Draw It': https://flowingdata.com/2015/05/28/compare-your-curve-to-reality-for-income-percentile-versus-college-attendance/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Replace the 3-column result with a 'future receipt': a long paper bill, one line per selected habit (☕ Café coffee ₹6,000/mo → ₹2.1 Cr in 30 yrs), each printing in turn with a till 'ka-ching', then a dashed line and a TOTAL in a big Lora gold figure. The receipt footer carries the assumption line. It is the most screenshot-able format there is, because everyone knows what a bill looks like. (reuse: Wealth Hack count-up, Slash the Scam sound kit). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/); benchmark #17 One personal sentence (NYT rent-or-buy: https://www.ngpf.org/blog/interactive/is-it-better-to-rent-or-buy-a-financial-calculator/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Every habit tap should do something. A coin drops into a painted gullak at the top of the screen, the 'found per month' number ticks up with a soft clink, and the phone gives a 10 ms buzz. That replaces the 50 drifting emoji in the background with one object that fills as she plays, so the first tap already feels like progress. (reuse: Slash the Scam sound kit + mute, Wealth Hack count-up). Inspired by benchmark #3 First tap is the first decision (SPENT: https://playspent.org/html/); benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Add a 'keep the joy' dial on the receipt (keep all / keep half / skip once a week) that redraws every line live. The message changes from 'give it up' to 'even half your coffee is ₹1 Cr', which suits mums who are tired of being told to stop spending, and it gives her a reason to play the result twice. Inspired by benchmark #16 End with a sandbox (Parable of the Polygons: https://ncase.me/polygons/)."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Swap in habits Indian mums actually recognise. Keep Swiggy/Zomato and salon, and add 'Online sale-day shopping', 'OTT subscriptions', 'Kids' party return-gifts', 'Chai-samosa runs' and a '+ My own habit' card with a typed name. A habit she recognises as her own beats any illustration. Inspired by benchmark #20 Local life events (SEBI Check QR game: https://www.nism.ac.in/wp-content/uploads/2026/02/SEBI-Investor-Awareness-Stall-at-IKBF-2026-Crosses-100000-Visitors-1.pdf)."
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "End on an identity, not a number: her largest habit becomes the archetype ('The Café Crorepati-in-waiting', 'The Swiggy Saver', 'The Sale-Day Strategist'), one line on what it means, and one next step. The archetype is the share headline. The current share text sends her personal monthly figure and does not state the assumption, so replace it with the line in share_idea. (reuse: Wealth Hack WhatsApp share). Inspired by benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify)."
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Make a 1080×1920 Story card of the receipt with the rupee lines blurred into a 'redacted' bar, so only the habit names, the archetype and '9.7× what you put in' show. 9.7× is the same for everyone at 12% over 30 years, so it gives nothing away. On phones it goes through the native share sheet. (reuse: Hidden Fortunes image share card). Inspired by benchmark #2 9:16 card (Spotify Wrapped: https://nogood.io/blog/spotify-wrapped-marketing-strategy/)."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Add a challenge link: 'Dare a friend' builds games.investingformummies.com/hidden-fortunes?from=Priya&type=cafe. The friend lands on 'Priya found a fortune hiding in her coffee. What's hiding in yours?' It needs no backend and carries no amounts. Inspired by benchmark #5 A dare (SPENT 'Prove it': https://playspent.org/html/)."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Phone first screen: kicker 'A 60-SECOND MONEY X-RAY', title 'Hidden *Fortunes*' (drop '2.0'), the hook line, then a 2-up habit grid with the found-per-month bar fixed in the thumb zone and the gold 'Show my receipt →' button inside it. (reuse: Wealth Hack top bar + intro shape, sticky CTA)."
+    },
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "S",
+     "text": "Print '12% a year assumed, not guaranteed, not a recommendation' on the receipt footer, the Story card and the WhatsApp text, and add a 'Where does 12% come from?' sheet. A forwarded screenshot has to stay compliant once it leaves the page. (reuse: assumption footer). Inspired by benchmark #18 Show your assumptions (SPENT sources: https://playspent.org/html/files/sources/umd_spent_sources-2.pdf)."
+    }
+   ]
+  },
+  {
+   "slug": "killer-3-buckets",
+   "title": "3 Buckets — killer upgrade",
+   "url": "https://games.investingformummies.com/3-buckets",
+   "file": "3-buckets.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The killer version teaches the real rule: the bucket depends on WHEN you need the money, not WHAT the product is. It ends with her sorting her own family's money, with no amounts, just ticks. The screenshot moment is her three painted buckets filled to the shape of her real savings, with a verdict like 'The Fortress Builder: Growth bucket nearly empty'.",
+   "load": "",
+   "share_idea": "🪣 *3 Buckets*\nI sorted 11 of 12 🎯, then sorted my *own* money: I'm a _Fortress Builder_ 🛡️ (Growth bucket nearly empty 👀).\nWhat shape are your 3 buckets? 👇\ngames.investingformummies.com/3-buckets\n[No amounts: the shape comes from ticking which products she holds.]",
+   "share_moment": "Same ₹2 lakh. Three different buckets. It all depends on when you'll need it. Can you sort 12 in 2 minutes?",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Make time the clue. Every item card shows a 'Needed in…' chip (tomorrow / 3 years / 15 years), and add 'twin cards' where the same product appears twice for different goals: '₹2 L in a liquid fund for a hospital emergency' (Emergency) vs '₹2 L in a liquid fund for a car in 3 years' (Stability). That twist is what turns it from a product-name quiz into the actual IFM lesson. Inspired by benchmark #7 Teach in the result (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add a finale, 'Now sort YOUR money'. She ticks what her family actually holds (savings account, FD, PPF, SIP, gold, flat, insurance-linked plan…), with no amounts, and the three painted buckets fill to that shape. A one-sentence verdict follows ('Your safety net is strong; your Growth bucket is nearly empty'), plus one next step. Inspired by benchmark #17 One personal sentence (NYT rent-or-buy: https://www.ngpf.org/blog/interactive/is-it-better-to-rent-or-buy-a-financial-calculator/); benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify)."
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "Make it a flick game on phones. The item card sits mid-screen and the three buckets sit side by side along the bottom (thumb zone). She flicks or drags the card into a bucket, or taps one. The card arcs into the bucket in under 600 ms, the water or coin level visibly rises, and the bucket squashes. Correct gives a rising chime; wrong gives a soft thud and the card hops to the right bucket. (reuse: Slash the Scam sound kit + mute). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Add a 'speed sort' replay mode: 60 seconds, as many cards as she can sort, with a personal best on the start screen. The 12-card teaching run stays as round 1, and the timed mode gives a reason to come back. (reuse: Slash the Scam personal best). Inspired by benchmark #15 Same game, one variable changed (NGPF PAYBACK: https://www.ngpf.org/blog/paying-for-college/ngpf-launches-payback/)."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Rewrite the start screen to the new intro shape: kicker '12 CARDS · 3 MINUTES', title '3 *Buckets*', hook 'Same ₹2 lakh. Three different buckets. It depends on when you'll need it.', one gold button 'Sort the first one →'. Drop the How-It-Works card, the 'Earn badges' pill and 'discuss with your group'. (reuse: Wealth Hack intro shape). Inspired by benchmark #3 First tap is the first decision (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Keep feedback to 35 words: 'Not quite. Needed in 3 years → Stability. A market dip right before you buy the car would hurt.' Put the longer 'why' behind 'More ▸'. Remove the popup's ✕ and the tap-to-close; one gold 'Next card →' sits in the thumb zone."
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Build a result card with her three painted buckets at their fill levels, the archetype in Lora, '11/12 sorted' and no amounts, rendered as a 1080×1920 image plus the WhatsApp line. (reuse: Hidden Fortunes image share card, Wealth Hack WhatsApp share). Inspired by benchmark #2 Spoiler-free result card (Wordle: https://www.smithsonianmag.com/smart-news/heres-why-the-word-game-wordle-went-viral-180979439/); benchmark #2 9:16 card (Spotify Wrapped: https://nogood.io/blog/spotify-wrapped-marketing-strategy/)."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Visuals: keep the painted buckets as the game's signature image, re-exported at about 30 KB WebP, and drop the hero video on phones. On the result screen the buckets become the trophy, replacing the emoji 🏆/🌱/📚 trophies and 'Just Getting Started!' grades."
+    }
+   ]
+  },
+  {
+   "slug": "killer-one-crore-ladder",
+   "title": "₹1 Crore Ladder — killer upgrade",
+   "url": "https://games.investingformummies.com/one-crore-ladder",
+   "file": "one-crore-ladder.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The killer version is a draw-your-guess climb. She drags a marker up an empty ladder to guess where ₹10,000 a month gets to in 25 years, then taps through the years one rung at a time and feels the slow start, a scary market dip and the explosive end, with a gold flash when the ladder breaks ₹1 crore. The screenshot is her little guess-marker far below the real top of the ladder.",
+   "load": "",
+   "share_idea": "🪜 *The ₹1 Crore Ladder*\nI guessed *₹60 L* for ₹10k a month over 25 years… the real answer is *3× bigger* 🤯\nBet you guess low too 👇\n_(assumes 12% a year, not a promise)_\ngames.investingformummies.com/one-crore-ladder\n[The guess is filled in from her drag. It is the game's example, not her own money.]",
+   "share_moment": "₹10,000 a month for 25 years. Drag the marker: how high does the ladder go?",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Replace the 3 multiple-choice options with a drag-to-guess on an empty vertical ladder (₹30 L to ₹3 Cr). Her marker stays on the ladder for the rest of the game, so every rung she climbs past it is a small shock, and the final 'off by' pill says 'You were ₹1.3 Cr short'. (reuse: Wealth Hack off-by pill). Inspired by benchmark #1 Guess first, then reveal (NYT 'You Draw It': https://flowingdata.com/2015/05/28/compare-your-curve-to-reality-for-income-percentile-versus-college-attendance/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Turn the ladder into one tap per year (25 taps, with a 'hold to fast-forward' for the impatient). Years 1–8 crawl, with copy borrowed from the www compounding story ('Year 5. It feels slow. Most people quit here.'). From year 15 the rungs visibly widen and the counter accelerates. (reuse: Wealth Hack count-up; www ScrollStory ticker copy). Inspired by benchmark #8 Compress decades into minutes (NGPF STAX: https://www.ngpf.org/arcade/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add the one real decision. At year 6 a red 'Markets fall 20%' card drops and she chooses 'Pause my SIP' or 'Keep going'. If she pauses, the ladder greys out for 2 years and the cost is shown at the end ('Pausing for 2 years cost ₹X at year 25'). Label it 'illustrative path averaging 12%'. Inspired by benchmark #8 Compress decades into minutes (NGPF STAX: https://www.ngpf.org/arcade/); benchmark #14 Lifelines with a hidden price (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Make the payoff land. When the ladder crosses ₹1 Cr (just after year 20), it rings a four-note arpeggio, fires gold confetti once and shows a 'CRORE' stamp, and the final 5 years then add more than the first 15 did. Say exactly that in one line. (reuse: www ConfettiBurst, Slash the Scam sound kit). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Replace the bar chart with a 'twin ladders' race: replay the same climb next to 'your sister who started 5 years later'. Both ladders climb on the same taps and hers ends far lower, which makes the cost of waiting physical rather than a chart. (reuse: Wealth Hack life bar). Inspired by benchmark #15 Same game, one variable changed (NGPF PAYBACK: https://www.ngpf.org/blog/paying-for-college/ngpf-launches-payback/)."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Phone layout: the ladder fills the screen height, the running total sits large in the serif at the top, and one sticky 'Next year →' button sits in the thumb zone. Chart.js (about 200 KB) goes, because CSS rungs do the job. (reuse: Wealth Hack sticky CTA)."
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Result card: her guess-marker vs the real top, the 'off by' gap as a multiple ('3× higher than I guessed'), the assumption, and 'Bet you guess low too'. The WhatsApp text is the line in share_idea. (reuse: Wealth Hack WhatsApp share, Hidden Fortunes image share card). Inspired by benchmark #2 Spoiler-free result card (Wordle: https://www.smithsonianmag.com/smart-news/heres-why-the-word-game-wordle-went-viral-180979439/)."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Put an always-visible chip under the counter: '12% a year assumed · not guaranteed'. Add a 'Where does 12% come from?' sheet explaining it is an assumption for equity over long periods, with no fund named. (reuse: assumption footer). Inspired by benchmark #18 Show your assumptions (SPENT sources: https://playspent.org/html/files/sources/umd_spent_sources-2.pdf)."
+    }
+   ]
+  },
+  {
+   "slug": "killer-double-or-nothing",
+   "title": "Double or Nothing — killer upgrade",
+   "url": "https://games.investingformummies.com/double-or-nothing",
+   "file": "double-or-nothing.html",
+   "kind": "solo",
+   "audience": "Both",
+   "verdict": "The killer version is a 60-second Rule-of-72 reflex test that ends on a genuine double-or-nothing gamble: stake your score on one last question about how fast credit-card debt doubles. The share is a Wordle-style row of ⚡✅❌ with a time, the same daily set for everyone, so friends compare scores without any money in the message.",
+   "load": "",
+   "share_idea": "⏱️ *Double or Nothing* #12\n⚡⚡✅⚡❌⚡✅⚡ · 41s\nStaked it all on the last one… and *doubled* 🎉\nHow fast is your money maths? 👇\ngames.investingformummies.com/double-or-nothing\n[No money figures. The # is the daily set number.]",
+   "share_moment": "72 ÷ rate = years to double. You have 60 seconds. No calculator. Prove it.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Turn the 5 fixed questions into a question generator plus a 60-second sprint. Each card is random: 'money at 9%', 'prices at 6% inflation', 'what rate doubles in 6 years?', 'loan at 24%'. She answers on a big 1–24 year number pad instead of 3 options, so there is no answer position to spot and replays never repeat. Inspired by benchmark #8 Compress decades into minutes (NGPF STAX: https://www.ngpf.org/arcade/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Make the name pay off. After the sprint, a 'Double or nothing?' card offers to stake her whole score on one hard question, such as 'A credit-card balance at an assumed 36% a year doubles in about…' (2 years). Win and the score doubles with a coin-split animation; lose and it resets to zero, with the lesson that debt compounds against you just as fast. Inspired by benchmark #14 Lifelines with a hidden price (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Juice: on each correct answer one gold coin splits into two with a rising two-note chime. The timer is a burning diya-wick fuse along the top, and the streak counter stacks coins. A wrong answer gets a soft thud and the formula flashes ('72 ÷ 9 = 8'), with no buzzer. (reuse: Slash the Scam sound kit + mute, Wealth Hack count-up). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/)."
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "Add a Wordle-style share: one emoji per answer (⚡ under 3 s, ✅ correct, ❌ wrong), total time and whether she won the gamble. It contains no money and no spoilers, so a family group can compare scores. (reuse: Wealth Hack WhatsApp share). Inspired by benchmark #2 Spoiler-free result card (Wordle: https://www.smithsonianmag.com/smart-news/heres-why-the-word-game-wordle-went-viral-180979439/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Add a daily set: the same 8 questions for everyone that day (generator seeded from the date), a '#N' number and a localStorage streak ('3 days in a row'). It needs no login and no backend, and gives a reason to come back tomorrow. (reuse: Slash the Scam personal best). Inspired by benchmark #19 Daily ritual (Duolingo streaks: https://blog.duolingo.com/how-duolingo-streak-builds-habit/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "End on one personal sentence. Ask only her child's age (optional), then show: 'At 6% inflation, prices double about once before Riya turns 18. A savings account at 3% doubles once in 24 years.' State the assumption and give no product advice. Inspired by benchmark #17 One personal sentence (NYT rent-or-buy: https://www.ngpf.org/blog/interactive/is-it-better-to-rent-or-buy-a-financial-calculator/)."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Intro: kicker '60 SECONDS · NO CALCULATOR', title 'Double or *Nothing*', hook '72 ÷ rate = years to double. Prove you can do it faster than your kids.', button 'Start the clock →'. Show the formula once on the intro, then only behind a 'Hint (−1)' chip. (reuse: Wealth Hack intro shape). Inspired by benchmark #5 A dare (SPENT 'Prove it': https://playspent.org/html/); benchmark #3 First tap is the first decision (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Never name an index in a question. Use generic labels ('equity fund at an assumed 12%', 'FD at an assumed 7%') and add 'the rule is an approximation; returns aren't guaranteed' to the result card."
+    }
+   ]
+  },
+  {
+   "slug": "killer-rice-and-chessboard",
+   "title": "The Rice & the Chessboard — killer upgrade",
+   "url": "https://games.investingformummies.com/rice-and-chessboard",
+   "file": "chess-compounding.html",
+   "kind": "solo",
+   "audience": "Both",
+   "verdict": "The killer version opens on India's own version of the legend, a sage, a king and a chessboard at Ambalappuzha, and makes her decide: ₹1 crore today, or one grain doubled on each of 64 squares? She then holds a button to double and watches a single grain become a bowl, a sack, an auto-rickshaw, a truck, a warehouse and a ship. The screenshot moment: square 64 alone holds more rice than all 63 squares before it combined.",
+   "load": "",
+   "share_idea": "🌾 *The Rice & the Chessboard*\nThe king offered me ₹1 crore or 1 grain of rice doubled 64 times. I took the crore 😅… the rice would outlast the world's harvest for *900+ years*.\nWould you take the deal? 👇\ngames.investingformummies.com/rice-and-chessboard",
+   "share_moment": "₹1 crore today, or 1 grain of rice doubled on every square of a chessboard? The king chose wrong. Will you?",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Open on a wager: '₹1 crore today, or 1 grain on square 1, doubled on every square?' (two big buttons). Then add a quick guess: 'On which square does the rice first fill a 13 kg sack?' (slider 1–64; the answer is 20). Both choices stay pinned in a corner while she plays, so the reveal lands on something she said. Inspired by benchmark #5 A dare (SPENT 'Prove it': https://playspent.org/html/); benchmark #1 Guess first, then reveal (NYT 'You Draw It': https://flowingdata.com/2015/05/28/compare-your-curve-to-reality-for-income-percentile-versus-college-attendance/)."
+    },
+    {
+     "area": "Copy",
+     "priority": "High",
+     "effort": "S",
+     "text": "Tell the Indian legend in about 60 words with a painted card: a sage plays the king at chess in Ambalappuzha, Kerala, asks for rice doubling on each square, and the king, unable to pay, serves paal payasam to pilgrims ever after (source: https://en.wikipedia.org/wiki/Ambalappuzha_Sri_Krishna_Temple). It is local, it is a story mums can retell at dinner, and it is free. Inspired by benchmark #20 Local life events (SEBI Check QR game: https://www.nism.ac.in/wp-content/uploads/2026/02/SEBI-Investor-Awareness-Stall-at-IKBF-2026-Crosses-100000-Visitors-1.pdf)."
+    },
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "M",
+     "text": "Visuals: replace the log-scale % bar (which reads '33%' when it is a tiny fraction) with a stage of painted containers that swap as she passes milestones: grain → bowl → katori pile → 13 kg sack (sq 20) → auto-rickshaw → truck (sq 30) → warehouse → cargo ship → 'the whole world's harvest' (sq 55). Each is ≤30 KB WebP, with a lakh/crore caption."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Use 'hold to double' as the core verb. Holding the thumb button speeds the doubling up (one square per 400 ms falling to 60 ms), with a grain-pour sound rising in pitch and a buzz at each container milestone. Releasing it lets her stop and read. It replaces Next / Auto-play / speed-slider / Reset with one gesture. (reuse: Slash the Scam sound kit + mute). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/); benchmark #8 Compress decades into minutes (NGPF STAX: https://www.ngpf.org/arcade/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Make the exponential twist the payoff. On square 64 the board lights all 63 earlier squares in grey and square 64 in gold: 'This one square holds more than all 63 before it combined.' Then bridge to money: 'Your SIP's last few years work the same way.' Doubling is not the lesson; the last doubling is."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Add one personal sentence: ask her age only, then 'At an assumed 12% a year, money doubles about every 6 years (Rule of 72). At 34, that's about 4 doublings left before 60, and each is bigger than all the ones before it.' It uses no rupee figures and states the assumption. Inspired by benchmark #17 One personal sentence (NYT rent-or-buy: https://www.ngpf.org/blog/interactive/is-it-better-to-rent-or-buy-a-financial-calculator/)."
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Result card: her wager choice ('I took the crore 😅' / 'I took the rice 🌾'), the 900-years-of-world-harvest line and the dare, as a Story card plus WhatsApp text. The wager is a far better forward than a score. (reuse: Wealth Hack WhatsApp share, Hidden Fortunes image share card). Inspired by benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify); benchmark #2 Spoiler-free result card (Wordle: https://www.smithsonianmag.com/smart-news/heres-why-the-word-game-wordle-went-viral-180979439/)."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Phone layout: board on top as a heat-map with no numbers in the squares, the big lakh/crore counter and container illustration below, and the hold button fixed in the thumb zone. Keep it as a Midnight-theme payoff piece but use brand gold #c9a84c and the IFM top bar. (reuse: Wealth Hack top bar, Midnight tokens)."
+    }
+   ]
+  },
+  {
+   "slug": "killer-nav-pizza",
+   "title": "NAV Pizza — killer upgrade",
+   "url": "https://games.investingformummies.com/nav-pizza",
+   "file": "nav-pizza.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The killer version makes the myth physical. She drags a knife across one real-looking pizza to cut it into 10 fat slices or 50 thin ones and sees that the pizza never changes size. Then she bakes both funds for a year in an oven and watches which pizza actually grows. The screenshot moment is two identical pizzas, one in slivers and one in wedges, captioned 'Same pizza. Different knife.'",
+   "load": "",
+   "share_idea": "🍕 *NAV Pizza*\nI almost fell for the ₹10 'bargain' fund 🙈. Turns out NAV is just how thin the pizza is sliced, not how big it grows.\nCan you spot the trap? 👇\ngames.investingformummies.com/nav-pizza",
+   "share_moment": "Two funds. One costs ₹20 a slice, one ₹100. Which is the bargain? (It's a trick question.)",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "First tap is the bet: '₹1,000 to invest. Fund A ₹20 a slice, Fund B ₹100 a slice. Which is the bargain?' Two illustrated pizzas, two big buttons, and she is playing before reading a word of explanation. Her pick stays pinned for the payoff ('You picked the ₹20 slice, like most people'). Inspired by benchmark #3 First tap is the first decision (SPENT: https://playspent.org/html/); benchmark #1 Guess first, then reveal (NYT 'You Draw It': https://flowingdata.com/2015/05/28/compare-your-curve-to-reality-for-income-percentile-versus-college-attendance/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add the knife slider: one SVG pizza, and she drags to cut it into 5–100 slices. Price per slice changes live (₹200 → ₹10) while the whole-pizza value stays fixed at ₹1,000, in big serif type. Ten seconds of play teaches the idea that the current two-card text explanation tries to explain. Inspired by benchmark #16 End with a sandbox (Parable of the Polygons: https://ncase.me/polygons/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add an oven fast-forward. She taps 'Bake one year' and both pizzas grow by their return (10% vs 15%), with the slice counts unchanged and the values counting up. Run it twice: same return gives the same pizza, different return means the ₹100 one wins, and add one flip line ('if the ₹20 fund earned 15%, it would win: NAV never decides'). (reuse: Wealth Hack count-up). Inspired by benchmark #8 Compress decades into minutes (NGPF STAX: https://www.ngpf.org/arcade/); benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Collapse the five scenario cards (NFO ₹10, IDCW payout, Growth vs IDCW plan, crash, SIP dip) into a 'Spot the trap' swipe deck: one 10-second card each, with a mini pizza animation as the answer. The IDCW payout shows a slice cut from the pizza and handed over, and the pizza shrinks by exactly that slice. The SIP dip shows 25 extra slices sliding onto her plate. Inspired by benchmark #7 Teach in the result (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "M",
+     "text": "Visuals: commission one painted pizza (top view, ≤40 KB WebP) and draw the cuts in SVG on top, replacing the 🍕 emoji in circles. Use a warm wooden-board background card. The pizza is this game's signature image and the source of its og:image."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Juice: knife 'shk' on each cut, oven ding when baking finishes, slices sliding with a little bounce, and the score as a filling pizza at the top (one slice per correct answer, 8 slices). (reuse: Slash the Scam sound kit + mute). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/)."
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "S",
+     "text": "End on an identity: 'You can't be fooled by a price tag' (all right) / 'You'd have bought the ₹10 NFO, like most first-timers' (some wrong), followed by three takeaway rows. Share the 'Same pizza. Different knife.' card plus the WhatsApp line. (reuse: Wealth Hack result rows, Hidden Fortunes image share card). Inspired by benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify); benchmark #2 Spoiler-free result card (Wordle: https://www.smithsonianmag.com/smart-news/heres-why-the-word-game-wordle-went-viral-180979439/)."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Soften the advice-sounding lines ('the Growth option is almost always better', 'Pausing your SIP in a dip is the worst thing you can do') to education: 'IDCW pays out your own money; many long-term investors choose Growth', 'Pausing in a dip means fewer units bought cheap'. No fund named, and state the assumed returns on every bake."
+    }
+   ]
+  },
+  {
+   "slug": "killer-radhas-mission",
+   "title": "Radha's Money Mission — killer upgrade",
+   "url": "https://games.investingformummies.com/radhas-mission",
+   "file": "radhas-mission.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The killer version is a WhatsApp-style story. Radha messages you for help over one year (the bank RM's form, a market crash, Meena Aunty's retirement), and every reply moves a live meter showing her daughter Ananya's college fund at 18. The moment she forwards is the ending, when she learns she is 'the Amisha of her friend group', the friend everyone asks about money.",
+   "load": "",
+   "share_idea": "🎯 *Radha's Money Mission*\nI helped Radha spot the commission box and keep her SIP through a crash. Turns out I'm the _Amisha_ of my friend group 💁‍♀️\nAre you the Amisha or the Radha? 👇\ngames.investingformummies.com/radhas-mission\n[Radha and her numbers are fictional; nothing about the player is shared.]",
+   "share_moment": "Radha, 32, Mumbai, has ₹2 lakh and one daughter. She just messaged you for help. Reply wisely.",
+   "items": [
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "M",
+     "text": "Re-skin the case study as a WhatsApp-style chat. Radha's messages arrive with typing dots, and the choices are reply bubbles she taps ('Ask her to tick Direct' / 'Trust the RM'). Mums live in WhatsApp, so the format needs no tutorial and each scene is one screen with a progress dot. Inspired by benchmark #20 Local life events (SEBI Check QR game: https://www.nism.ac.in/wp-content/uploads/2026/02/SEBI-Investor-Awareness-Stall-at-IKBF-2026-Crosses-100000-Visitors-1.pdf); benchmark #13 Say how long, show progress (The Evolution of Trust: https://ncase.me/trust/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add one live number: 'Ananya's college fund at 18' pinned in the chat header, which moves after every choice (Regular vs Direct costs, pausing the SIP in a dip, idle bonus money). Rising is gold, falling is coral, it counts up, and it is labelled 'illustrative, assumes 12% a year'. (reuse: Wealth Hack count-up, assumption footer). Inspired by benchmark #6 One live number (SPENT balance meter: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add a 'Play the RM' scene: for one scene she sits on the other side of the desk with a 'your commission this year' meter and chooses which plan box to tick. Then it flips back to show what that tick costs Radha over 18 years. Keep it fair: 'Distributors are paid for advice through Regular plans; the point is to know what you pay.' Inspired by benchmark #9 Play the villain (NGPF Shady Sam: https://www.ngpf.org/blog/just-one-resource/just-one-resource-interactive-shady-sam/)."
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "Replace the typed number boxes with tactile maths. The NAV question becomes 'drag the ₹ coins for equity, bonds and cash into the jar, drag the liabilities out', and the jar divides itself into 40 units. The SIP table becomes four taps ('buy this month') with units filling a glass. Inputs on phones are where players drop off. Move the maths scenes to the middle of the story. Inspired by benchmark #7 Teach in the result (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Before the end, a 'Replay as Radha-who-listened-to-the-RM' button runs the same year with the other choices and shows both endings side by side: two college-fund numbers and one sentence on the difference. Inspired by benchmark #15 Same game, one variable changed (NGPF PAYBACK: https://www.ngpf.org/blog/paying-for-college/ngpf-launches-payback/)."
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "End on an identity rather than '90/120': 'You're the Amisha of your group' / 'You're getting there, Radha' / 'Ask Amisha to coffee 😄', one warm line on her strongest moment, then a share card with the title and the chat-bubble look. (reuse: Wealth Hack WhatsApp share, Hidden Fortunes image share card). Inspired by benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify)."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Use the intro's unused setup for real. Ananya (3) and the ₹2 lakh bonus drive the story, Amisha is introduced in the first message ('my friend Amisha did the IFM course'), and every scene ends on a 2-line 'what just happened' with one rupee figure. Inspired by benchmark #7 Teach in the result (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Add juice and pacing: a message 'whoosh' as bubbles arrive, a tiny celebration when the fund meter crosses a milestone ('Engineering fees covered ✓'), and a 7-dot progress bar with '~4 min' on the start button. (reuse: Slash the Scam sound kit + mute). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/); benchmark #13 Say how long, show progress (The Evolution of Trust: https://ncase.me/trust/)."
+    }
+   ]
+  },
+  {
+   "slug": "killer-three-investors",
+   "title": "The Three Investors — killer upgrade",
+   "url": "https://games.investingformummies.com/three-investors",
+   "file": "three-investors.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The killer version makes her the market timer for real. For 12 years she reads scary and giddy headlines and decides to invest or wait, while two friends' results stay hidden. At the reveal, her line is drawn against the friend who invested the same amount every year without looking, and an archetype names her habit ('The Headline Chaser'). The moment she shares is losing to the friend who never checked.",
+   "load": "",
+   "share_idea": "📉 *The Three Investors*\nI tried to time the market for 12 years… and lost to my friend who never even looked 😅. My style: _The Headline Chaser_.\nThink you can beat a boring SIP? 👇\n_(illustrative market, not real returns)_\ngames.investingformummies.com/three-investors",
+   "share_moment": "₹12 lakh. 12 years. You read the news and decide when to invest. Can you beat the friend who never looks?",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Core loop: each year shows one headline card ('Markets crash 30%. Experts warn worse to come', 'Index at record high. Your colleague doubled her money') and one price on a mini chart. She taps 'Invest ₹1 L', 'Invest ₹3 L' or 'Wait', and her unspent budget shows as a 'cash under the mattress' stack. The decisions are hers, which the random presets never allowed. Inspired by benchmark #6 One live number (SPENT balance meter: https://playspent.org/html/); benchmark #7 Teach in the result (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Add a fear mechanic: during crash years the Invest button trembles and needs a 1-second press-and-hold ('Are you sure?'), while in boom years it glows and invites a tap. Players feel why people buy high and sell low instead of being told. Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Run several market paths with honest outcomes: crash-early, steady-rise and late-crash, picked at random and named at the end. In the steady-rise path the lump-sum friend wins, and the game says so ('In a steadily rising market, investing early in one go usually wins. SIP wins on discipline'). It replaces the 'You timed the market perfectly' preset. Inspired by benchmark #15 Same game, one variable changed (NGPF PAYBACK: https://www.ngpf.org/blog/paying-for-college/ngpf-launches-payback/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Reveal: draw her line, then the SIP friend's and the lump-sum friend's lines on top, then one hero number, 'Your average price ₹96 vs her ₹85' (her ₹85 is the real figure from this game's price path), with the 3 rows below. Name the archetype from her actual choices: 'The Headline Chaser', 'The Waiter', 'The Brave Buyer', 'The Steady One'. (reuse: Wealth Hack count-up, Wealth Hack result rows). Inspired by benchmark #1 Guess first, then reveal (NYT 'You Draw It': https://flowingdata.com/2015/05/28/compare-your-curve-to-reality-for-income-percentile-versus-college-attendance/); benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Offer one specific replay: 'Same market, but this time invest ₹1 L every year no matter what', which auto-plays in 5 seconds and puts both endings side by side. Seeing her own run next to the boring one is the lesson. Inspired by benchmark #15 Same game, one variable changed (NGPF PAYBACK: https://www.ngpf.org/blog/paying-for-college/ngpf-launches-payback/)."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Phone layout: a compact chart on top (inline SVG, drop Chart.js), the headline card in the middle, three thumb buttons at the bottom, and no auto-scrolling. The page never moves on its own; one year is one screen. (reuse: Wealth Hack sticky CTA)."
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Share the archetype and the 'lost to the friend who never looked' line, never her rupees, as a Story card of the three lines with no axis values plus the WhatsApp text in share_idea. (reuse: Wealth Hack WhatsApp share, Hidden Fortunes image share card). Inspired by benchmark #2 Spoiler-free result card (Wordle: https://www.smithsonianmag.com/smart-news/heres-why-the-word-game-wordle-went-viral-180979439/); benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify)."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Label the market 'An illustrative 12-year path, not a real index' on the chart, the result and the share card. Keep every headline generic (no company or index names) and end on 'This doesn't predict any future market'. Inspired by benchmark #18 Show your assumptions (SPENT sources: https://playspent.org/html/files/sources/umd_spent_sources-2.pdf)."
+    }
+   ]
+  },
+  {
+   "slug": "killer-inflation-calculator",
+   "title": "Inflation Calculator — killer upgrade",
+   "url": "https://games.investingformummies.com/inflation-calculator",
+   "file": "inflation-calculator.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The killer version turns a three-tab calculator into a 'Price Time Machine'. She guesses what her kitchen basket and her child's school fee will cost when her child turns 18, then watches the price tags flip like a railway departure board while her ₹100 note visibly shrinks. The screenshot moment is the shrunken note: '₹100 today buys what ₹56 will in 2036'.",
+   "load": "",
+   "share_idea": "🛒 *Price Time Machine*\nI guessed rice would cost ₹75 a kilo in 2036… the time machine says about *₹107* 😳 My ₹100 note will feel like *₹56*.\nGuess yours 👇\n_(assumes 6% inflation a year, not a forecast)_\ngames.investingformummies.com/inflation-calculator\n[Prices are the game's example basket, not her spending.]",
+   "share_moment": "Your ₹60 kilo of rice. Your child's school fee. Guess what they cost when your child turns 18.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Make it guess-first. Show five everyday items using the BASKET already in the code (rice, milk, petrol, auto ride, movie ticket) plus 'school fee'. She drags a price guess on each for '10 years from now', then the real projection flips in, with an off-by pill per item. (reuse: Wealth Hack off-by pill + money input quick chips). Inspired by benchmark #1 Guess first, then reveal (NYT 'You Draw It': https://flowingdata.com/2015/05/28/compare-your-curve-to-reality-for-income-percentile-versus-college-attendance/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Add a departure-board reveal: each price tag flips digit by digit like a railway split-flap board, with a soft clatter sound, then the basket total. It is the most satisfying animation in the set for about 40 lines of CSS. (reuse: Slash the Scam sound kit + mute). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "One live object: a ₹100 note at the top of the screen that physically shrinks and fades as the years slider moves (₹100 → ₹56 at 10 years, 6%). It is the single image people remember, and the share card. (reuse: Wealth Hack count-up). Inspired by benchmark #6 One live number (SPENT balance meter: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Anchor to her life instead of to 'years'. Ask her child's age (optional) and label the timeline in milestones ('when Riya starts college · 2041'). The headline becomes one sentence: 'When Riya starts college, ₹10,000 of today's groceries will cost about ₹24,000 (assumes 6% a year).' Inspired by benchmark #17 One personal sentence (NYT rent-or-buy: https://www.ngpf.org/blog/interactive/is-it-better-to-rent-or-buy-a-financial-calculator/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Give each item its own assumed rate, editable and shown on the tag (for example groceries 6%, school fees 10%). Explain under 'Why different?' that education costs have often risen faster than general prices, labelled as an assumption she can change. Inspired by benchmark #18 Show your assumptions (SPENT sources: https://playspent.org/html/files/sources/umd_spent_sources-2.pdf)."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Restructure the three tabs into one flow: Guess → Reveal → '…and how much would I need?' as an optional sandbox at the end. The current 'How much will I need / What will my money buy / How much lump sum' tabs become the sandbox's sliders. Inspired by benchmark #16 End with a sandbox (Parable of the Polygons: https://ncase.me/polygons/)."
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Story card: the shrunken ₹100 note, the 'rice ₹60 → ₹107' tag and the assumption, plus the WhatsApp line. Every number in it is the game's example basket, not her spending. (reuse: Hidden Fortunes image share card, Wealth Hack WhatsApp share). Inspired by benchmark #2 9:16 card (Spotify Wrapped: https://nogood.io/blog/spotify-wrapped-marketing-strategy/)."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Rename from 'Inflation Calculator (Resource)' to 'The Price *Time Machine*', with kicker '6 PRICES · 2 MINUTES' and hook 'Your ₹60 kilo of rice. Guess what it costs when your child turns 18.' The calculator becomes a game without losing its use. (reuse: Wealth Hack intro shape). Inspired by benchmark #5 A dare (SPENT 'Prove it': https://playspent.org/html/)."
+    }
+   ]
+  },
+  {
+   "slug": "killer-wheel-of-gold",
+   "title": "Wheel of Gold — killer upgrade",
+   "url": "https://games.investingformummies.com/wheel-of-gold",
+   "file": "wheel-of-gold.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The killer version keeps the beautiful medallion wheel but makes each spin a newspaper headline that moves a live gold-price line, with a confidence bet on every call. It ends on a twist every Indian mum needs: she 'sells' a bangle after gold rose 10% and still gets back less than she paid, because of making charges. The screenshot is that bill: 'Gold went UP. My bangle still lost money.'",
+   "load": "",
+   "share_idea": "🪙 *Wheel of Gold* 7/8\n🟨🟨⬛🟨🟨🟨🟨🟨\nI read gold's mood right 7 times, and still learned my bangle loses money at resale even when gold goes UP 😳\nCan you read gold? 👇\ngames.investingformummies.com/wheel-of-gold",
+   "share_moment": "War, rupee, interest rates: spin a headline and call it. Does gold go up or down?",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Add a confidence bet: before revealing, she stakes 1, 2 or 3 gold coins on her call. Wrong-but-cautious costs little; overconfident-and-wrong costs a lot. Add 2 'trick' headlines where gold did the unexpected (record highs alongside record stocks). It teaches that gold's behaviour is a 'usually', not a law, so this is not trivia. Inspired by benchmark #7 Teach in the result (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Add one live number: an illustrative gold-price line across the bottom that takes a step after each headline (labelled 'illustrative, not real prices'), so by the end she sees a year of gold's mood as one wiggly line made by her 8 headlines. (reuse: Wealth Hack count-up). Inspired by benchmark #6 One live number (SPENT balance meter: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "New finale, 'Sell your bangle'. She bought a ₹1,00,000 bangle and gold has since risen 10%. The jeweller's bill animates: gold value, minus the making charge she can't get back, minus GST, minus the buyback deduction, giving about ₹92,000. One line: 'Gold went up, and your bangle still came back lower.' Show every assumption on the bill (illustrative 12% making charge, 3% GST, 2% buyback deduction; these vary by jeweller and rates change). No product named. Inspired by benchmark #7 Teach in the result (SPENT: https://playspent.org/html/); benchmark #20 Local life events (SEBI Check QR game: https://www.nism.ac.in/wp-content/uploads/2026/02/SEBI-Investor-Awareness-Stall-at-IKBF-2026-Crosses-100000-Visitors-1.pdf)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Juice: synthesised peg-ticks as the wheel passes each segment (slowing with the wheel), a soft 'thunk' and buzz on landing, a rising chime for a right call and a coin pour onto her pile. Shorten the spin to about 3 s and let a tap skip it. (reuse: Slash the Scam sound kit + mute). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/)."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Show headlines as newspaper clippings: each scenario is a torn newsprint clipping in serif type ('RUPEE SLIPS TO RECORD LOW') over the wheel, with India-angle headlines in the mix (rupee, import duty, wedding-season demand). It looks like the real world and suits the medallion art. Inspired by benchmark #20 Local life events (SEBI Check QR game: https://www.nism.ac.in/wp-content/uploads/2026/02/SEBI-Investor-Awareness-Stall-at-IKBF-2026-Crosses-100000-Visitors-1.pdf)."
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "Wordle-style result: 🟨 right, ⬛ wrong, in spin order, plus '7/8' and the bangle line. Replace the emoji trophy, the locked badges and the Benjamin Franklin quote with one tailored verdict ('You read fear well; rates fooled you') and the share. (reuse: Wealth Hack WhatsApp share, Hidden Fortunes image share card). Inspired by benchmark #2 Spoiler-free result card (Wordle: https://www.smithsonianmag.com/smart-news/heres-why-the-word-game-wordle-went-viral-180979439/); benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify)."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Phone layout: wheel on top (about 300 px), the headline clipping under it, and two full-width 'Gold UP ↑' / 'Gold DOWN ↓' buttons with words on them in the thumb zone. The spin button becomes a swipe-down on the wheel. (reuse: Wealth Hack sticky CTA)."
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Link the finale to the next game: 'Silver has a day job. Try the Wheel of Silver →', with a combined 'Metals' badge if she plays both, via localStorage. (reuse: Slash the Scam personal best)."
+    }
+   ]
+  },
+  {
+   "slug": "killer-wheel-of-silver",
+   "title": "Wheel of Silver — killer upgrade",
+   "url": "https://games.investingformummies.com/wheel-of-silver",
+   "file": "wheel-of-silver.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The killer version is about silver's double life. Every headline asks two things, up or down and whether the jewel side or the factory side moved it, and every answer shows silver swinging further than gold on the same news. It ends on a Dhanteras silver coin. The moment she screenshots is the rollercoaster card: 'Silver is gold with a day job, and it swings twice as hard.'",
+   "load": "",
+   "share_idea": "🥈 *Wheel of Silver* 6/8\n🟦⬛🟦🟦🟦⬛🟦🟦\nSilver turns out to be _gold with a day job_ 🏭💍, and it swings twice as hard.\nCan you read its mood? 👇\ngames.investingformummies.com/wheel-of-silver",
+   "share_moment": "Silver lives two lives: jewellery box and factory floor. Spin a headline. Which one moves the price?",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Use a two-tap call: after 'Up or Down?', a second quick tap asks 'Why: 💍 jewel side (fear, safe haven) or 🏭 factory side (solar panels, electronics)?'. Getting the why right earns the bonus. That second tap teaches the game's whole premise, which the current version only states in a hidden intro. Inspired by benchmark #7 Teach in the result (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "After each answer, show two bars for the same headline, gold and silver, with silver's bar longer both ways (labelled 'illustrative: silver has typically swung more than gold'). By the 8th headline she has seen volatility rather than read about it. Inspired by benchmark #6 One live number (SPENT balance meter: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Rollercoaster finale: plot both metals' illustrative paths across her 8 headlines on one chart, silver's line wilder, then a local closer: 'You bought a silver coin on Dhanteras.' Show what affects its resale (purity, the seller's cut), with assumptions shown and no products named. Inspired by benchmark #20 Local life events (SEBI Check QR game: https://www.nism.ac.in/wp-content/uploads/2026/02/SEBI-Investor-Awareness-Stall-at-IKBF-2026-Crosses-100000-Visitors-1.pdf); benchmark #7 Teach in the result (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "M",
+     "text": "Visuals: commission 8 silver relief icons to match the gold medallion wheel (≤30 KB WebP each). Silver currently falls back to emoji, which is why it looks a tier below Gold. Use cool moonlit tones and the same wheel engine."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Juice (same as Gold): peg-ticks, landing buzz, a 3 s spin with tap-to-skip, and a chime or thud. Add a combined 'Metals' run that unlocks after Gold, where a mixed wheel asks 'Gold or Silver: which moves more on this headline?'. (reuse: Slash the Scam sound kit + mute, Slash the Scam personal best). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/)."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Intro to the new shape: kicker '8 HEADLINES · 3 MINUTES', title 'Wheel of *Silver*', hook 'Silver lives two lives: jewellery box and factory floor. Which one moves the price?', button 'Spin the first headline →'. The jewellery takeaway becomes a kind, reasoned line in place of 'Jewellery is NOT an investment!'. (reuse: Wealth Hack intro shape). Inspired by benchmark #3 First tap is the first decision (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "Wordle-style 🟦/⬛ grid plus '6/8' and the 'gold with a day job' line. The verdict replaces the trophy: 'You spotted the factory side every time', and so on. (reuse: Wealth Hack WhatsApp share, Hidden Fortunes image share card). Inspired by benchmark #2 Spoiler-free result card (Wordle: https://www.smithsonianmag.com/smart-news/heres-why-the-word-game-wordle-went-viral-180979439/); benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify)."
+    }
+   ]
+  },
+  {
+   "slug": "killer-reit-or-real",
+   "title": "REIT or Real? — killer upgrade",
+   "url": "https://games.investingformummies.com/reit-or-real",
+   "file": "reit-or-real.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The killer version lets her be a landlord for ten fast years. A ₹1 crore flat's ₹25,000 rent arrives as a receipt that gets chipped away by an empty month, society maintenance, a leaking bathroom and property tax, while a slice of an office park quietly pays out next to it. The moment she screenshots is the shrunken rent receipt ('About 2% a year, in hand'), with a warm note that a home you live in is worth more than its yield.",
+   "load": "",
+   "share_idea": "🏢 *REIT or Real?*\nI was a landlord for 10 years (in a game 😅). After the empty months and the leaking bathroom, my 'rent' shrank to about *2% a year* 🫠\nOwn the flat or a slice of the mall? 👇\n_(illustrative numbers)_\ngames.investingformummies.com/reit-or-real",
+   "share_moment": "You just bought a ₹1 crore flat to rent out. Guess how much it really earns you each year.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Open with a guess: 'Your ₹1 Cr flat rents for ₹25,000 a month. What % of its price does it earn you each year after costs?' (slider 1–12%). Most people guess 6–10%. Reveal about 2% with an off-by pill. That one gap is the lesson of the game. (reuse: Wealth Hack off-by pill). Inspired by benchmark #1 Guess first, then reveal (NYT 'You Draw It': https://flowingdata.com/2015/05/28/compare-your-curve-to-reality-for-income-percentile-versus-college-attendance/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Run a landlord simulator: 10 years, one tap each. A rent receipt (₹3 L a year) takes event cards (an empty 2 months, a maintenance hike, a leaking bathroom ₹40,000, property tax, a rent rise) and the in-hand figure in the receipt's corner counts down in coral. All numbers are labelled illustrative. Inspired by benchmark #6 One live number (SPENT balance meter: https://playspent.org/html/); benchmark #7 Teach in the result (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Run a twin lane: next to the flat, 'a slice of an office park' (a REIT unit priced like a family dinner, about a few hundred rupees) pays its distributions each year. Show that they can also fall ('payouts aren't fixed; unit prices move'). The two lanes end side by side, with no product named. Inspired by benchmark #15 Same game, one variable changed (NGPF PAYBACK: https://www.ngpf.org/blog/paying-for-college/ngpf-launches-payback/)."
+    },
+    {
+     "area": "Copy",
+     "priority": "High",
+     "effort": "S",
+     "text": "Before the simulator, ask 'Is this flat to live in or to earn from?'. If 'to live in', the game says warmly 'A home is security and memories, not just a yield. This game is about property bought to earn' and plays on. That fixes the one-sided tone without diluting the lesson."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Keep the 8 True/False myths as a fast 'Myth or Fact?' swipe warm-up (1 minute) with a 'how sure are you?' tap. The landlord years are the main course. The final screen shows 3 takeaway rows and the full recap behind 'See all answers ▸'. (reuse: Wealth Hack result rows). Inspired by benchmark #7 Teach in the result (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Visuals: one painted Mumbai-highrise flat and one office park (≤40 KB WebP each) as the two lanes. The office park visibly splits into thousands of tiny glowing units when she 'buys a slice', which replaces the 🏠 vs 🏢 emoji tiles."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Juice: a coin clink when rent lands, a drip sound for the leak, a 'thunk' for the tax stamp, and the receipt tearing a strip off for each cost. Archetype at the end: 'The Rent Realist' / 'The Brick Believer'. (reuse: Slash the Scam sound kit + mute). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/); benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify)."
+    },
+    {
+     "area": "Share",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Story card: the shrunken rent receipt with '≈2% a year in hand, illustrative' and the dare 'Own the flat or a slice of the mall?', plus the WhatsApp line. No personal property values. (reuse: Hidden Fortunes image share card, Wealth Hack WhatsApp share). Inspired by benchmark #2 9:16 card (Spotify Wrapped: https://nogood.io/blog/spotify-wrapped-marketing-strategy/)."
+    }
+   ]
+  },
+  {
+   "slug": "killer-debt-detective",
+   "title": "Debt Detective — killer upgrade",
+   "url": "https://games.investingformummies.com/debt-detective",
+   "file": "debt-detective.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The killer version is a detective case board. Each product arrives as a stamped case file, she questions three clues to find out who is really borrowing her money, and each solved case is pinned onto a wall that builds the safety ladder from Government down to Company. The twist case is an 'FD' that turns out to be a company, not a bank, and isn't covered by deposit insurance. The screenshot is her finished case board with that impostor circled in red.",
+   "load": "",
+   "share_idea": "🔍 *Debt Detective* 7/8\n🟩🟩🟩🟥🟩🟩🟩🟩\nSolved 7 cases, and caught the 'FD' that isn't from a bank 🕵️‍♀️\nWho's really borrowing your money? 👇\ngames.investingformummies.com/debt-detective",
+   "share_moment": "Every FD, bond and PPF is a loan, and you're the lender. 8 case files. Find out who's really borrowing your money.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Clues instead of descriptions: each case file opens with its name only. She taps 2 of 3 clue chips ('Who pays your interest?', 'Who guarantees it?', 'What if they can't pay?') to reveal a one-line clue, then names the borrower. The giveaway descriptions become detective work, and fewer clues used earns a bonus magnifier. Inspired by benchmark #7 Teach in the result (SPENT: https://playspent.org/html/)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Add an impostor case, 'Company Fixed Deposit': it looks like a bank FD but the borrower is a company, and company deposits are not covered by the ₹5 lakh bank-deposit insurance (DICGC covers bank deposits: https://www.dicgc.org.in/). The reveal stamps 'NOT A BANK' across the file. That twist is the most useful thing a mum can learn here. Inspired by benchmark #20 Local life events (SEBI Check QR game: https://www.nism.ac.in/wp-content/uploads/2026/02/SEBI-Investor-Awareness-Stall-at-IKBF-2026-Crosses-100000-Visitors-1.pdf)."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Build a case board as the payoff: each solved file is pinned to a corkboard in its safety tier (Central Govt → State Govt → Bank → Company), joined by red string. At the end the full board is the safety ladder she built herself, with any case she got wrong circled in red. It replaces the plain 'By borrower type' list. Inspired by benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify)."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Add a yield line-up round: drag 4 case files into order of 'who pays you the most interest?'. The answer mirrors the safety board upside down, so 'higher interest = more risk' becomes something she sees. Rates are shown with 'as of' dates. Inspired by benchmark #1 Guess first, then reveal (NYT 'You Draw It': https://flowingdata.com/2015/05/28/compare-your-curve-to-reality-for-income-percentile-versus-college-attendance/)."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Visuals: manila case-file cards with a CASE #04 stamp, a typewriter font only for the file number (Lora/Nunito everywhere else), a red rubber stamp for the verdict and a magnifier icon. Use brand colours by tier: teal for government, navy for banks, gold for companies, so the colour teaches the ladder."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Juice: a stamp 'thunk' plus a buzz when she names the borrower, a paper rustle as a file opens, and a short red-string draw animation on the board. Retire the 30-second timer bar entirely; detectives take their time. (reuse: Slash the Scam sound kit + mute). Inspired by benchmark #12 Juice (Juice it or lose it: https://roblog.co.uk/2024/03/juicy-games/)."
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "Wordle-style 🟩/🟥 grid plus '7/8' plus 'caught the impostor FD ✓', with a detective rank as the headline ('Inspector', 'Constable', 'Rookie' rather than 'Keep Studying!'). Story card of her case board. (reuse: Wealth Hack WhatsApp share, Hidden Fortunes image share card). Inspired by benchmark #2 Spoiler-free result card (Wordle: https://www.smithsonianmag.com/smart-news/heres-why-the-word-game-wordle-went-viral-180979439/); benchmark #10 End on an identity (How Bad Is Your Spotify: https://mikelacher.com/work/how-bad-is-your-spotify)."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Intro to the new shape: kicker '8 CASE FILES · NO TIMER', title 'Who's borrowing *your* money?', hook 'Every FD, bond and PPF is a loan, and you're the lender.', button 'Open case #1 →'. (reuse: Wealth Hack intro shape). Inspired by benchmark #3 First tap is the first decision (SPENT: https://playspent.org/html/); benchmark #5 A dare (SPENT 'Prove it': https://playspent.org/html/)."
+    }
+   ]
+  }
+ ]
+}

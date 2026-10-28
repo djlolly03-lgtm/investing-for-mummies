@@ -1,0 +1,270 @@
+{
+ "standard": [
+  {
+   "rule": "The game title is the hero: a 40-54px serif on the page with exactly one italic accent word in the accent colour, a tracked-caps kicker above it, and a one-sentence hook ending on a twist.",
+   "why": "It turns a form into a moment and gives a reason to care before explaining mechanics; it is the single most visible difference between old and new.",
+   "new_example": "CLAUDE/the-wealth-hack.html .p-title (lines 474-480): italic 'The' + 54px Fraunces 'Wealth Hack' + 'Only one of them is rich.'; www home.css .hx-line em / .eyebrow",
+   "old_gap": "nav-pizza, reit-or-real, debt-detective (18-24px title boxed in a coloured banner); wheel-of-gold (Cinzel 'How It Works'); 3-buckets title over video"
+  },
+  {
+   "rule": "Two themes, two font pairs, recorded in Brand Guidelines §4: Daylight = Lora + Nunito; Midnight (live/projector and premium payoffs) = one agreed pair. No new font pair per game.",
+   "why": "Six display faces now exist across one brand (Lora, Fraunces, Sora, Poppins, Cormorant, Cinzel); a fixed pair keeps the family recognisable and cuts font weight.",
+   "new_example": "ifm_website_oct26/index.html + home.css (Lora+Nunito, premium); CLAUDE/the-wealth-hack.html line 20 (Fraunces+Manrope midnight)",
+   "old_gap": "wheel-of-gold (adds Cinzel); also new games fund-manager (Sora+Inter), quiz (Poppins), swayamvar (Cormorant) — owner decision needed"
+  },
+  {
+   "rule": "Phone type floor: body 15-17px, inputs 16-17px, labels 12-13px; only caps kickers may be 10-11px. Replace the Brand Guidelines §4 type scale (0.55-0.92rem) accordingly.",
+   "why": "Small text is why old games read as cramped; the guideline itself prescribes it.",
+   "new_example": "the-wealth-hack.html: .card p 13.5px, .inp 17px, .card h2 24px, .real .v 2.8rem",
+   "old_gap": "reit-or-real (68 declarations at 0.6-0.74rem incl. result takeaways), debt-detective (79), nav-pizza, 3-buckets, wheel-of-gold"
+  },
+  {
+   "rule": "Short palette with fixed meanings: gold/mint = money that grows, coral = money that hurts, navy/ivory neutral. All colours from tokens, no inline hex.",
+   "why": "Consistent colour meaning teaches without words; colour sprawl looks amateur and drifts off-brand.",
+   "new_example": "the-wealth-hack.html: 41 unique hex values; .real .v.red / .good, .off.low/.high, .sum .row b.red",
+   "old_gap": "reit-or-real (purple #7c3aed takeaways, #FF9800->#5c3a1a bars, Material #4CAF50/#ef4444); 106-168 unique hex values in nav-pizza, 3-buckets, reit-or-real, debt-detective, wheel-of-gold"
+  },
+  {
+   "rule": "Primary buttons use dark text on gold (>=4.5:1); WhatsApp button uses dark text on #25D366.",
+   "why": "White on brand gold is 2.3:1 and white on WhatsApp green is 1.98:1, both failing WCAG 1.4.3 (4.5:1). It is the Start button of every old game.",
+   "new_example": "the-wealth-hack.html .p-btn (#1a1203 on gold gradient, 10.7:1) and .p-btn.wa (#04210f on #25D366, 8.6:1), lines 500-506",
+   "old_gap": ".btn-gold color:#fff in all five: nav-pizza, 3-buckets, reit-or-real, debt-detective, wheel-of-gold (line ~124); also www home.css .btn-gold line 132 and Brand Guidelines §20 spec"
+  },
+  {
+   "rule": "Depth through layers: one glass card with a gold hairline for the screen's key content, a faint grain overlay, glow on hero numbers, and one atmospheric image fading into the background.",
+   "why": "Flat white cards on a near-white page make nothing feel important.",
+   "new_example": "the-wealth-hack.html .card + .card::before (481-482), body.player-bg::after grain (462), .p-hero fade (465-467)",
+   "old_gap": "debt-detective and reit-or-real (white rectangles on white), nav-pizza"
+  },
+  {
+   "rule": "Each game owns one signature illustration or photo; emoji are seasoning, not the artwork or the trophy.",
+   "why": "Brand Guidelines §24 asks for editorial illustration and rounded outline icons; emoji-as-art reads as a prototype.",
+   "new_example": "slash-the-scam.html game-icons medallions; the-wealth-hack gold coin-tree banner; swayamvar suitor art; quiz studio set",
+   "old_gap": "reit-or-real/debt-detective/nav-pizza (📦🤔🍕 chips, ✅❌), wheel-of-gold (72px emoji trophy + Franklin quote)"
+  },
+  {
+   "rule": "Fix the empty logo gutter: remove data-logo from .game-hero (it reserves 112px with no logo) and show the small round mark in a consistent top bar.",
+   "why": "On phones the title is squeezed into the right two-thirds of the banner next to an empty hole; REIT's in-game header shows an empty logo circle.",
+   "new_example": "the-wealth-hack.html .p-bar/.mark/.brand/.room (468-473)",
+   "old_gap": "nav-pizza (line 1625), reit-or-real (line 1714), debt-detective (line 1713)"
+  },
+  {
+   "rule": "Phone layout: one column max 480px, 16px gutters, no sideways scroll; title + hook + primary button visible in 390x844 without scrolling; primary button >=56px, in the thumb zone (sticky where there is an input).",
+   "why": "Most visitors arrive on phones from Instagram/WhatsApp; a below-the-fold Start button loses them.",
+   "new_example": "the-wealth-hack.html .wrap (463), .p-btn.big sticky 64px (552), .chips.big 4-up grid (550)",
+   "old_gap": "3-buckets and wheel-of-gold (Start below/at fold), nav-pizza (no intro), reit-or-real ('Back to Main Menu' under the question during play)"
+  },
+  {
+   "rule": "Every live/projector game has a solo phone path for visitors who arrive from a shared link without a room code.",
+   "why": "Without it, WhatsApp visitors see a squeezed projector lobby or a dead-end 'Scan the QR' screen.",
+   "new_example": "the-wealth-hack.html _soloDetect/initSolo/renderSolo (700-702, 1373-1400)",
+   "old_gap": "swayamvar (QR cropped on phone), quiz.html (host lobby on phone), fund-manager.html ('Scan the QR on the screen' only)"
+  },
+  {
+   "rule": "Intro shape: top bar, kicker with length ('3 MINUTES'), title, one-line hook, one input or one button that names the reward, optional social proof, assumption footer. No 'How It Works' card — the first round is the tutorial.",
+   "why": "It earns curiosity before asking for effort.",
+   "new_example": "the-wealth-hack.html renderSolo ('Show me my number →'); slash-the-scam.html Do-this/Not-this demo tiles; CLAUDE/index.html 'PLAY ONE NOW · 4 MINUTES'",
+   "old_gap": "reit-or-real, debt-detective, wheel-of-gold, 3-buckets (banner + 'How It Works' emoji chips + rules paragraph); nav-pizza (no intro)"
+  },
+  {
+   "rule": "Feedback shows the player's own consequence (a number or picture about them) plus one bold-number sentence of why, max ~35 words; 'Not quite — here's the twist', never 'Wrong'.",
+   "why": "Personal consequence is what people remember and retell; long paragraphs are skipped on phones.",
+   "new_example": "the-wealth-hack.html projHtml 'Your guess, put to work' (1276-1283), .fb callout, .off pill; slash-the-scam floatText/combo; quiz streaks",
+   "old_gap": "reit-or-real ('Wrong — here's why:' + 70-word paragraph, line 1887), debt-detective, nav-pizza, wheel-of-gold"
+  },
+  {
+   "rule": "Scores and money count up (about 900ms ease-out); under reduce-motion they jump straight to the value.",
+   "why": "A counting number makes the payoff land; an instant swap feels like a spreadsheet.",
+   "new_example": "the-wealth-hack.html line 1012 (rAF, cubic ease-out); www ScrollStory rupee ticker",
+   "old_gap": "all five (nav-pizza, 3-buckets, reit-or-real, debt-detective, wheel-of-gold), e.g. reit-or-real rr_scoreDisplay.textContent=rr_score"
+  },
+  {
+   "rule": "Light synthesised sound: chime for correct, soft thud for wrong, coin on reveal, arpeggio on finish; visible mute button; unlocked on the first tap.",
+   "why": "Cheapest 'this is a game' upgrade; no audio files needed.",
+   "new_example": "slash-the-scam.html tone/noiseFx/sfx (636-691), muteBtn, AC.resume on Start (1326)",
+   "old_gap": "all five (nav-pizza, 3-buckets, reit-or-real, debt-detective, wheel-of-gold) and every other new game except Slash"
+  },
+  {
+   "rule": "Result card: player's name, hero number/verdict in serif, max 3 meaning rows, one tailored line, one call to act; full recap behind a tap; confetti only for a real win.",
+   "why": "The payoff is the screenshot and the share; a long recap list and a score out of 80 are neither.",
+   "new_example": "the-wealth-hack.html end/solo cards (.sum .row, 1346-1352, 1392-1399); slash-the-scam endGame verdict + lesson + personal best (1268-1310)",
+   "old_gap": "reit-or-real (score/80 + 8-row recap + purple takeaways + yellow box), debt-detective, wheel-of-gold (badges + Franklin quote), nav-pizza, 3-buckets"
+  },
+  {
+   "rule": "Copy voice: smart friend, sentence case, rupees not percentages, buttons say what you get, assumption next to every projection; no patronising grades.",
+   "why": "Brand Guidelines §11 ('never patronising'); compliance needs the assumption beside the number.",
+   "new_example": "the-wealth-hack.html 'Your age decides your number, so be honest.', 'The best month to start is this one.', footer 'assumes 12% a year, not a promise'",
+   "old_gap": "reit-or-real 'Lots to Learn!' (1917), debt-detective 'Keep Studying!' (2113), wheel-of-gold 'Come back after reviewing the material!' (2367); Title Case + stacked '!' in all five"
+  },
+  {
+   "rule": "Every result screen has Share on WhatsApp as the primary button: WhatsApp-formatted text (*bold*, _italic_) with name, result, one teaching line, the assumption and the game's own link; image card via navigator.share where possible.",
+   "why": "Most traffic is WhatsApp/Instagram; a share is free distribution and must stay compliant once forwarded.",
+   "new_example": "the-wealth-hack.html ifmShare/waBtn/numbersText (1254-1274); hidden-fortunes-2.html stc2Capture/stc2ShareWhatsApp image share (1603-1660)",
+   "old_gap": "no share in nav-pizza, 3-buckets, reit-or-real, debt-detective, wheel-of-gold, slash-the-scam, quiz, fund-manager, swayamvar; hidden-fortunes-2 share text lacks its assumption"
+  },
+  {
+   "rule": "Each game has its own 1200x630 og:image and title so a forwarded link previews that game.",
+   "why": "Every game currently previews the same og-games.jpg.",
+   "new_example": "ifm-seo block present on all pages (og:image tags) — needs per-game images",
+   "old_gap": "all games incl. the new ones"
+  },
+  {
+   "rule": "End-card buttons, in order: Share on WhatsApp · Play again · More games like this. One disclaimer line only.",
+   "why": "Old games end at 'Play again' or 'Back to Main Menu' and stack a yellow disclaimer box on top of the footer disclaimer.",
+   "new_example": "the-wealth-hack.html solo result: WhatsApp primary + 'Try a different age' outline + single footer",
+   "old_gap": "reit-or-real, debt-detective (double disclaimer), wheel-of-gold, nav-pizza, 3-buckets"
+  },
+  {
+   "rule": "Performance budget: game's own first-screen payload <=500KB (excl. analytics), logo <=15KB, hero image <=120KB WebP, icons <=30KB WebP, video <=400KB and only where shown; LCP <2.5s on 4G, INP <200ms, CLS <=0.1; no in-browser Babel; pinned CDN versions.",
+   "why": "Measured: the 1MB round-logo PNG is the heaviest file on most new games; 3 Buckets is 7.8MB on a phone; Wealth Hack phones download a 394KB projector video they never show.",
+   "new_example": "www uses WebP photos <=85KB and lazy-loads its video wall with IntersectionObserver (app.js)",
+   "old_gap": "3-buckets (2.6MB MP4 + 3x650KB PNG), wheel-of-gold (two 530KB logos); also new: the-wealth-hack, slash-the-scam, quiz, fund-manager (1MB logo), slash (16x~130KB PNG icons), swayamvar (React from unpkg)"
+  },
+  {
+   "rule": "Never disable zoom: viewport is width=device-width, initial-scale=1 only.",
+   "why": "WCAG 1.4.4; low-vision users must be able to pinch-zoom. Lighthouse flags user-scalable=no.",
+   "new_example": "www index.html and the older games already do this correctly",
+   "old_gap": "new games regress: fund-manager, quiz, slash-the-scam, swayamvar (user-scalable=no), the-wealth-hack (maximum-scale=1.0)"
+  },
+  {
+   "rule": "Honour prefers-reduced-motion: count-ups jump, confetti skipped, pulses stopped.",
+   "why": "WCAG 2.3.3; motion can cause nausea. Zero games do this today.",
+   "new_example": "www home.css lines 296, 717, 882, 1879 and app.js Hero/Intro checks",
+   "old_gap": "every game, new and old"
+  },
+  {
+   "rule": "Keyboard and screen-reader basics: real <button>s (no clickable divs), visible :focus-visible rings, aria-live on reveals, alt on images, colour never the only signal, tap targets >=44px.",
+   "why": "WCAG 2.2; Apple HIG 44pt targets.",
+   "new_example": "the-wealth-hack.html chips/options are <button>s; .inp:focus gold ring (490) to extend to buttons",
+   "old_gap": "no :focus-visible anywhere; clickable divs in 3-buckets (3), the-wealth-hack (2), fund-manager (4), quiz (4)"
+  },
+  {
+   "rule": "Build upgrades from one shared kit (ifm-kit.css + ifm-kit.js) instead of copying code into each game.",
+   "why": "There is no shared CSS/JS in CLAUDE/ today; 40+ hand-copied versions drift (dead --purple/--pink tokens in every old game).",
+   "new_example": "see reusable_kit",
+   "old_gap": "all games"
+  }
+ ],
+ "reusable_kit": [
+  {
+   "piece": "Daylight tokens (palette, shadows, serif/sans, 135° gradient)",
+   "source": "ifm_website_oct26/home.css :root lines 7-48",
+   "use": "Base variables for every single-player game"
+  },
+  {
+   "piece": "Midnight tokens (midnight/ivory/mist/gold/coral/mint, glass)",
+   "source": "CLAUDE/the-wealth-hack.html :root lines 25-34 + body.player-bg line 461",
+   "use": "Live/projector games and premium payoff screens"
+  },
+  {
+   "piece": "Font links",
+   "source": "ifm_website_oct26/index.html (Lora+Nunito); CLAUDE/the-wealth-hack.html line 20 (Fraunces+Manrope)",
+   "use": "One correct <link> per theme, display=swap, add gstatic preconnect"
+  },
+  {
+   "piece": "Kicker / eyebrow",
+   "source": "ifm_website_oct26/home.css .eyebrow lines 93-106; the-wealth-hack.html .lbl, .lk",
+   "use": "Tracked-caps label with leading rule above every heading"
+  },
+  {
+   "piece": "Title block",
+   "source": "the-wealth-hack.html .p-title lines 474-480",
+   "use": "Italic pre-title + big serif + italic tagline with gold bold"
+  },
+  {
+   "piece": "Top bar",
+   "source": "the-wealth-hack.html .p-bar/.mark/.brand/.room lines 468-473",
+   "use": "Consistent logo + brand + status pill; replaces banner logos and in-play 'Back to Main Menu'"
+  },
+  {
+   "piece": "Glass card with gold hairline",
+   "source": "the-wealth-hack.html .card + .card::before lines 481-485",
+   "use": "The one card that matters on each screen"
+  },
+  {
+   "piece": "Grain overlay",
+   "source": "the-wealth-hack.html body.player-bg::after line 462",
+   "use": "Depth for ~300 bytes"
+  },
+  {
+   "piece": "Buttons: primary, sticky big, outline, WhatsApp",
+   "source": "the-wealth-hack.html .p-btn/.p-btn.big/.p-btn.outline/.p-btn.wa lines 500-506, 552",
+   "use": "Accessible dark-on-gold CTA, thumb-zone sticky CTA, compliant WhatsApp button"
+  },
+  {
+   "piece": "Money input + shorthand badge + quick chips",
+   "source": "the-wealth-hack.html .amt-box/.amt-in/.amt-sh/.chips.big lines 541-551, onMoney/pickChip",
+   "use": "Any 'enter an amount' step"
+  },
+  {
+   "piece": "Money formatting (₹k / ₹L / ₹Cr, Indian commas)",
+   "source": "the-wealth-hack.html fmtMoney/indianFormat/parseNum lines 613-622; www app.js ScrollStory inr()",
+   "use": "One formatter in every game"
+  },
+  {
+   "piece": "Count-up",
+   "source": "the-wealth-hack.html line 1012 (900ms cubic ease-out via requestAnimationFrame)",
+   "use": "ifmCountUp(el,to) for scores and money; add reduce-motion jump"
+  },
+  {
+   "piece": "Feedback callout, off-by pill, 'your guess, put to work' projection",
+   "source": "the-wealth-hack.html .fb/.off/.proj + projHtml() lines 517-522, 564-574, 1276-1283",
+   "use": "Personal-consequence feedback moment"
+  },
+  {
+   "piece": "Sound engine (no audio files) + mute",
+   "source": "CLAUDE/slash-the-scam.html tone/noiseFx/sfx/ITEM_SFX lines 636-691, muteBtn, AC.resume line 1326",
+   "use": "Correct/wrong/coin/win sounds in any game"
+  },
+  {
+   "piece": "Confetti",
+   "source": "ifm_website_oct26/app.js ConfettiBurst in GameNight (brand colours); CLAUDE/hidden-fortunes-2.html canvas confetti lines 1332-1370",
+   "use": "Celebrate real wins only; skip under reduce-motion"
+  },
+  {
+   "piece": "Personal best",
+   "source": "slash-the-scam.html BEST_KEY lines 701, 1273-1275, 1369-1372",
+   "use": "'Your best' on intro and end card"
+  },
+  {
+   "piece": "Result rows card",
+   "source": "the-wealth-hack.html .sum .row lines 528-531; end card 1346-1352",
+   "use": "3-row 'your numbers' payoff"
+  },
+  {
+   "piece": "WhatsApp share text",
+   "source": "the-wealth-hack.html ifmShare/waBtn/numbersText lines 1254-1274",
+   "use": "WhatsApp-formatted, compliant forwardable message ending on the game link"
+  },
+  {
+   "piece": "Share image card",
+   "source": "CLAUDE/hidden-fortunes-2.html stc2Capture/stc2ShareWhatsApp lines 1603-1660 (html2canvas + navigator.share files, wa.me fallback)",
+   "use": "Result card as an image on phones; add the assumption line"
+  },
+  {
+   "piece": "Solo-on-phone fallback",
+   "source": "the-wealth-hack.html _soloDetect/initSolo/renderSolo lines 700-702, 1373-1400",
+   "use": "Live games opened from a shared link"
+  },
+  {
+   "piece": "Reveal-on-scroll with reduce-motion",
+   "source": "ifm_website_oct26/app.js App IntersectionObserver + home.css line 882",
+   "use": "Calm staggered entrances"
+  },
+  {
+   "piece": "Life bar / timeline",
+   "source": "the-wealth-hack.html .lb* lines 179-196",
+   "use": "Today → wait → finish-line visual for time-based lessons"
+  },
+  {
+   "piece": "Assumption footer",
+   "source": "the-wealth-hack.html shell() .foot line 1371",
+   "use": "'assumes X, not a promise' on every projection screen"
+  },
+  {
+   "piece": "Streak + room stats",
+   "source": "CLAUDE/quiz.html streak logic (~line 1208), '✓ Correct answer — n/total got it' (1543)",
+   "use": "Classroom feedback beats"
+  }
+ ]
+}

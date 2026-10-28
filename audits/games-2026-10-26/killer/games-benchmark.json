@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "written": "2026-10-27",
+    "scope": "Benchmark of financial-literacy games, gamified learning apps and explorable explanations, turned into a playbook for IFM's 2-10 minute solo browser games (phone-first, traffic from Instagram and WhatsApp).",
+    "ranking": "Playbook is ranked by expected impact for IFM: first how many people start and finish a game from a shared link, then how much they learn, then how often they share it.",
+    "examples_studied": 24,
+    "played_first_hand": ["SPENT (playspent.org)", "The Evolution of Trust (ncase.me/trust)", "Parable of the Polygons (ncase.me/polygons)", "NGPF Arcade index (ngpf.org/arcade)", "Visa Financial Football / Financial Soccer (financialsoccer.com)"],
+    "compliance_note": "Every pattern below is written to fit IFM's education-only position: no specific funds or stocks, no guaranteed returns, and every projection states its assumption on screen.",
+    "notes_file": "games-benchmark-notes.md"
+  },
+  "playbook": [
+    {
+      "rank": 1,
+      "pattern": "Guess first, then reveal",
+      "why": "Asking for a guess before showing the real number gives each player a personal gap between their guess and the truth, and that surprise is what they remember. The NYT asked readers to draw a curve before showing the data. Hundreds of thousands drew one, and many were visibly wrong, which is why the piece worked.",
+      "how_ifm_could_use": "Before every big reveal (what Rs 5,000 a month becomes in 25 years, or what a 2% fee costs over a lifetime), make the player drag a slider to guess, then animate the real number over their guess with the gap labelled, for example 'You were Rs 38 lakh short'.",
+      "example": "NYT Upshot 'You Draw It: How Family Income Predicts Children's College Chances' (2015), https://flowingdata.com/2015/05/28/compare-your-curve-to-reality-for-income-percentile-versus-college-attendance/"
+    },
+    {
+      "rank": 2,
+      "pattern": "Spoiler-free result card built for the chat",
+      "why": "Wordle's coloured-square grid let people brag or commiserate without spoiling the answer. Every share was a free ad, and the game grew from 90 players to over 2 million. Spotify Wrapped makes 9:16 cards that look good in a Story without cropping.",
+      "how_ifm_could_use": "End every game with two share options: a one-tap WhatsApp text (game name, an emoji line and a score, with no personal money figures) and a 1080x1920 card in navy, teal and gold for Instagram Stories, both linking straight back into the game.",
+      "example": "Wordle share grid, https://thespinoff.co.nz/media/13-01-2022/those-coloured-boxes-on-twitter-are-new-zealands-fault and https://www.smithsonianmag.com/smart-news/heres-why-the-word-game-wordle-went-viral-180979439/ ; Spotify Wrapped 9:16 format, https://nogood.io/blog/spotify-wrapped-marketing-strategy/"
+    },
+    {
+      "rank": 3,
+      "pattern": "First tap is the first decision",
+      "why": "Visitors from Instagram or WhatsApp give a link a few seconds. Wordle has no account, no tutorial and no menu. SPENT's opening screen is a dare plus one button, and the next screen is already a choice. Every extra screen before the first real choice loses players.",
+      "how_ifm_could_use": "Remove name entry, rules pages and 'choose a mode' screens from solo games, so the landing screen shows the hook question and a single big 'Start (2 min)' button that opens straight onto choice number one.",
+      "example": "SPENT, played first-hand, https://playspent.org/html/ ; Wordle, https://www.smithsonianmag.com/smart-news/heres-why-the-word-game-wordle-went-viral-180979439/"
+    },
+    {
+      "rank": 4,
+      "pattern": "Link preview as the cover",
+      "why": "On WhatsApp the link preview is the whole advert. WhatsApp only draws the preview image if it is under about 600KB (and under about 300KB to be safe), at least 300px wide, and given as an absolute og:image URL inside the first 300KB of the HTML. A bare link with no picture gets ignored.",
+      "how_ifm_could_use": "Give every game URL its own og:image (under 300KB, about 1200x630) carrying the hook question in Lora, for example 'Could you survive a month on Rs 25,000?', and check it by pasting the link into a WhatsApp chat before launch.",
+      "example": "WhatsApp link-preview requirements, https://developers.facebook.com/documentation/business-messaging/whatsapp/link-previews/ ; 300KB practical limit, https://support.wix.com/en/article/wix-editor-recommended-ogimage-size"
+    },
+    {
+      "rank": 5,
+      "pattern": "A dare that challenges the player's self-image",
+      "why": "SPENT opens with 'you'd never need help, right? PROVE IT', which turns a poverty lesson into a personal challenge. It has been played more than 4 million times by almost 2 million people in 218 countries. A dare also makes a much better forwarded message than 'learn about budgeting'.",
+      "how_ifm_could_use": "Phrase each game's opening line and share text as a dare a mum would forward to her group, such as 'Think you'd spot a fake SEBI-registered advisor? Prove it in 90 seconds.'",
+      "example": "SPENT by McKinney for Urban Ministries of Durham, played first-hand, https://playspent.org/html/ ; reach figures, https://www.planadviser.com/online-game-challenges-player-to-live-in-poverty/"
+    },
+    {
+      "rank": 6,
+      "pattern": "One live number you can't stop watching",
+      "why": "SPENT keeps a big Balance figure top-left and a 30-day calendar down the right with paydays marked. Every choice visibly moves the money, so the cost of a decision is felt and does not have to be explained.",
+      "how_ifm_could_use": "Pin one large, always-visible meter to the top of every money game (balance left, days to payday, or corpus at 60) and animate it after every choice, red when it falls and gold when it grows.",
+      "example": "SPENT balance meter and calendar, played first-hand, https://playspent.org/html/"
+    },
+    {
+      "rank": 7,
+      "pattern": "Teach in the result, not before the choice",
+      "why": "SPENT never gives a rule up front. After each choice a circle explains what just happened in two sentences: the cheapest health plan 'is no free ride' at almost $76 a paycheck. A lesson that arrives right after a decision answers a question the player now has.",
+      "how_ifm_could_use": "After every choice, show a two-line 'What just happened' bubble with one concrete rupee figure and one plain-English reason, and keep jargon to a tappable chip such as 'What's an expense ratio?'.",
+      "example": "SPENT result bubbles, played first-hand, https://playspent.org/html/ ; The Evolution of Trust, https://ncase.me/trust/"
+    },
+    {
+      "rank": 8,
+      "pattern": "Compress decades into minutes",
+      "why": "Compounding is invisible in real time. NGPF's STAX advertises 'the consequences of 20 years of investing decisions in just 20 minutes', complete with bull and bear markets. BitLife ages you a year per tap. Fast-forwarding lets a player feel what patience pays.",
+      "how_ifm_could_use": "Run 'age 28 to 60 in 3 minutes' rounds where each tap is a year, a market fall happens on screen and the player chooses to stay or stop the SIP. Show the assumption (for example '10% a year average, not guaranteed') beside the growing number.",
+      "example": "NGPF STAX, https://www.ngpf.org/arcade/ and https://njcfe.org/a-new-stock-market-game-that-rewards-patience-and-diversification/"
+    },
+    {
+      "rank": 9,
+      "pattern": "Play the villain",
+      "why": "In NGPF's Shady Sam you are the loan shark, and in Slick Wheels you are the car dealer, squeezing profit out of borrowers and buyers. Running the trick from the inside makes people remember it better than being warned about it. Shady Sam won a D&AD Wood Pencil, and Slick Wheels won a 2026 MAIA award. NSE's Scambush applies the same idea to investor scams.",
+      "how_ifm_could_use": "Build a 'Be the scammer' round for Slash the Scam where the player writes a fake 'guaranteed 3% a month' WhatsApp pitch from tiles (urgency, fake SEBI badge, celebrity photo), then sees each trick flagged as a red flag to watch for.",
+      "example": "NGPF Shady Sam, https://www.ngpf.org/blog/just-one-resource/just-one-resource-interactive-shady-sam/ ; Slick Wheels, https://www.maiawards.org/?p=5251 ; NSE Scambush, https://www.nseindia.com/static/invest/world-investor-week-2025"
+    },
+    {
+      "rank": 10,
+      "pattern": "End on an identity, not a score",
+      "why": "People share who they are more readily than how they scored. BitLife awards one ribbon per life (Rich, Loaded, Mooch). NZ's Sorted money-personality quiz shows tarot-style cards. 'How Bad Is Your Spotify' gave each person a named flavour and went to #1 trending on Twitter as people posted screenshots.",
+      "how_ifm_could_use": "Give each game three to five warm, flattering money archetypes, such as 'The Gullak Guardian' or 'The Calm Compounder', each with a one-line strength and one 'next step'. The archetype becomes the headline of the share card.",
+      "example": "BitLife ribbons, https://primagames.com/tips/bitlife-ribbons-list-how-to-get-all-ribbons-in-bitlife ; Sorted money-personality quiz, https://retirement.govt.nz/news/latest-news/sorted-and-aut-collaborate-to-create-money-personality-quiz-driven-by-new-nz-research ; How Bad Is Your Spotify, https://mikelacher.com/work/how-bad-is-your-spotify"
+    },
+    {
+      "rank": 11,
+      "pattern": "Compare me with everyone else",
+      "why": "After drawing their guess, NYT readers saw other readers' guesses shaded in red, and Wordle shows a guess-distribution chart. Learning where you stand among peers is satisfying in itself and gives a reason to talk about the result.",
+      "how_ifm_could_use": "Store anonymous guesses (the Stock Rush Supabase already exists) and show one line on the reveal, such as '7 in 10 mums guessed lower than you', with no names and no personal amounts.",
+      "example": "NYT 'You Draw It' crowd overlay, https://flowingdata.com/2015/05/28/compare-your-curve-to-reality-for-income-percentile-versus-college-attendance/"
+    },
+    {
+      "rank": 12,
+      "pattern": "Juice: numbers that roll, coins that land",
+      "why": "Jonasson and Purho's 'Juice it or lose it' talk showed that tweening, squash-and-stretch and screen shake make a plain game feel alive. Duolingo measured that a milestone streak animation alone raised new learners' 7-day retention by 1.7%.",
+      "how_ifm_could_use": "Make the reveal number count up from zero over about 1.2 seconds with easing, drop a coin into a gullak on every good choice, and add a short phone vibration (navigator.vibrate) on a loss. Keep sound off until the player taps it on, because most people play in public.",
+      "example": "Juice it or lose it (GDC Europe 2012), https://roblog.co.uk/2024/03/juicy-games/ ; Duolingo streak animation result, https://blog.duolingo.com/how-duolingo-streak-builds-habit/"
+    },
+    {
+      "rank": 13,
+      "pattern": "Say how long it takes, then show progress",
+      "why": "The Evolution of Trust prints its playing time on the title card and shows progress dots throughout. NGPF lists 5, 10, 15 or 20 minutes on every game. Knowing the time up front makes it easier to start, and visible progress makes people finish.",
+      "how_ifm_could_use": "Put the real time on the start button ('2 min') and a row of 5 to 8 progress dots at the top of every solo game, and design to that time on a mid-range Android phone.",
+      "example": "The Evolution of Trust, played first-hand, https://ncase.me/trust/ ; NGPF Arcade time labels, https://www.ngpf.org/arcade/"
+    },
+    {
+      "rank": 14,
+      "pattern": "Desperate lifelines with a hidden price",
+      "why": "SPENT's 'Need cash?' sidebar offers smashing your kid's piggy bank ($16.23), donating plasma ($25) or a payday loan ($50). Players feel the pull of quick money, and the cost lands later. That teaches predatory credit better than a definition would.",
+      "how_ifm_could_use": "In Broke by Friday and any budget game, add an always-visible 'Instant loan app' or 'Break the FD' button that solves today's problem, then charges interest, a penalty or stress two rounds later, with a callout explaining why.",
+      "example": "SPENT 'Need cash?' lifelines, played first-hand, https://playspent.org/html/"
+    },
+    {
+      "rank": 15,
+      "pattern": "Same game, one variable changed: replay to see the difference",
+      "why": "In NGPF's PAYBACK, one student's out-of-state college run ended at $84,635 of debt, and a replay choosing in-state ended at $11,317. Seeing two endings side by side is the lesson. BitLife works the same way: every life is different, so 'one more' is easy.",
+      "how_ifm_could_use": "On every end screen, offer one specific replay button, such as 'Replay starting 5 years earlier' or 'Replay without the loan app', then show both runs' endings side by side.",
+      "example": "NGPF PAYBACK, https://www.ngpf.org/blog/paying-for-college/ngpf-launches-payback/ and worksheet https://www.scribd.com/document/536593499/College-Payback-Worksheet"
+    },
+    {
+      "rank": 16,
+      "pattern": "End with a sandbox",
+      "why": "Both Nicky Case pieces finish with an open playground where the reader changes the rules and watches the outcome. Parable of the Polygons gives a bias slider and then a 'big ol' sandbox'. Once someone has played the story, they want to test it themselves.",
+      "how_ifm_could_use": "After the scripted rounds, unlock a single-screen what-if panel with two or three sliders (monthly amount, start age, assumed return, shown as an assumption) and a line chart that redraws live, as the Wealth Hack sandbox already starts to do.",
+      "example": "Parable of the Polygons, played first-hand, https://ncase.me/polygons/ ; The Evolution of Trust, https://ncase.me/trust/"
+    },
+    {
+      "rank": 17,
+      "pattern": "One personal sentence as the answer",
+      "why": "The NYT's rent-or-buy calculator takes 20+ inputs but answers in a single personal sentence: a break-even monthly rent. Each input sits beside a small chart showing how the answer moves. One sentence can be screenshotted and shared, and a results table cannot.",
+      "how_ifm_could_use": "Make every IFM calculator headline one sentence in the player's own numbers, such as 'Start Rs 3,000 a month now and Riya's college fund is ready by 2041, assuming 10% a year', with the detailed table folded below.",
+      "example": "NYT Upshot 'Is It Better to Rent or Buy?' (2014; page not opened, because nytimes.com is blocked from this browser), https://www.ngpf.org/blog/interactive/is-it-better-to-rent-or-buy-a-financial-calculator/"
+    },
+    {
+      "rank": 18,
+      "pattern": "Show your sources and assumptions inside the game",
+      "why": "SPENT links a sources PDF from its footer, and the polygons piece ends by citing Schelling's 1971 paper. For a money brand this builds trust. For IFM it is also a compliance requirement: every projection must state its assumption.",
+      "how_ifm_could_use": "Add a small 'Where do these numbers come from?' link on every reveal that opens a sheet listing each assumption (return rate, inflation, fee) and its source, with 'Education only, not investment advice' on the result card.",
+      "example": "SPENT sources PDF, https://playspent.org/html/files/sources/umd_spent_sources-2.pdf ; Parable of the Polygons footnotes, https://ncase.me/polygons/"
+    },
+    {
+      "rank": 19,
+      "pattern": "A small daily ritual for return visits",
+      "why": "Duolingo learners who reach a 7-day streak are 3.6 times more likely to finish their course. Wordle's single daily puzzle, the same for everyone, made the share comparable and gave people a reason to come back tomorrow. Zerodha Varsity copies daily goals and streaks for Indian learners.",
+      "how_ifm_could_use": "Run a 'Paisa Puzzle of the Day': one same-for-everyone money question at a fixed time, with a localStorage streak counter, so it needs no login, and a Wordle-style share line such as 'Paisa Puzzle #42 ✅✅❌ streak 5'.",
+      "example": "Duolingo streak data, https://blog.duolingo.com/how-duolingo-streak-builds-habit/ ; Zerodha Varsity app, https://zerodha.com/z-connect/featured/introducing-the-varsity-mobile-app"
+    },
+    {
+      "rank": 20,
+      "pattern": "Local life events, local money",
+      "why": "Visa localises Financial Football for each market (a 2026 Georgian version, a FIFA-team soccer edition), and SEBI's book-fair game had visitors scan real QR codes to check whether an intermediary is registered. Familiar situations remove the 'this isn't about me' feeling.",
+      "how_ifm_could_use": "Build scenarios around Indian mums' real moments (school-fee season, Diwali shopping, a sister's wedding, gold vs SIP, a WhatsApp 'stock tip' group), and add one real-world action such as 'check this advisor on SEBI's site' as the final step.",
+      "example": "SEBI Check QR game at Kolkata Book Fair 2026, https://www.nism.ac.in/wp-content/uploads/2026/02/SEBI-Investor-Awareness-Stall-at-IKBF-2026-Crosses-100000-Visitors-1.pdf ; Financial Football Georgia, https://nbg.gov.ge/en/media/news/financial-literacy-through-football-national-bank-of-georgia-and-visa-launch-financial-f"
+    }
+  ],
+  "anti_patterns": [
+    {
+      "pattern": "Heavy game engine and a long loader",
+      "why": "Visa's Financial Football web version loads a Unity WebGL build. In testing on desktop broadband it was still on the Unity loading bar after about 25 seconds. On a mid-range phone opened from WhatsApp, most people would leave first. IFM games should be plain HTML/CSS/JS that is playable within about 2 seconds."
+    },
+    {
+      "pattern": "A fixed landscape stage that breaks in portrait",
+      "why": "Played in a 375px portrait viewport, the title card of The Evolution of Trust did not fit on screen, and SPENT's opening interstitial was cropped off the right edge. Both are excellent on desktop and lose phone players at the very first screen. IFM traffic is mostly portrait phones."
+    },
+    {
+      "pattern": "Sign-up, access code or teacher gate before play",
+      "why": "Zogo needs a partner credit union's access code. The SIFMA Stock Market Game and Investopedia's simulator need accounts. That suits classrooms and loyalty schemes, but it kills cold traffic from a shared link. Ask for a name or number only after the payoff, if ever."
+    },
+    {
+      "pattern": "Trivia dressed up as a game",
+      "why": "Financial Football moves a ball down the field for each correct multiple-choice answer, so the football is decoration and the learning is recall. The best examples (SPENT, STAX, Shady Sam) teach through decisions that have consequences. If the theme can be swapped without changing what is learned, it is not doing any teaching."
+    },
+    {
+      "pattern": "Punishing mistakes so hard that people stop experimenting",
+      "why": "A qualitative study of Duolingo describes hearts as a punitive mechanic that pushes learners towards avoiding errors rather than learning from them. In a money game the wrong choice is where the lesson is, so let players fail, see why, and replay instantly."
+    },
+    {
+      "pattern": "Prizes as the main reason to play",
+      "why": "NSE's investor-week games gave Rs 500 vouchers to 50 winners a day, Zogo pays gift cards, and CRED runs jackpots. Prizes attract prize-hunters whose interest ends with the prize, and they add cost and legal complexity. IFM's reward should be the insight and the share card."
+    },
+    {
+      "pattern": "Leaderboards for the highest short-term portfolio",
+      "why": "In the SIFMA Stock Market Game and Investopedia-style contests, the highest portfolio after about 10 weeks wins, which rewards concentrated gambling, the opposite of IFM's message. Naming real stocks would also breach IFM's no-specific-securities rule. Use generic asset types and reward staying invested."
+    },
+    {
+      "pattern": "A lecture or pre-test before the fun",
+      "why": "Banzai starts with a pre-test, which is good for teachers' data but means a cold visitor's first experience is an exam. The Evolution of Trust's text intro works only because it is about 100 words and ends in 'let's play a game'. Put any check-what-you-learned step after the payoff and make it optional."
+    },
+    {
+      "pattern": "A share that spoils the game or exposes the player",
+      "why": "Wordle's grid succeeded because it 'just leaves the colours', with no answer and no private data. A money-game share card that prints someone's salary, debt or savings is embarrassing to post and will not be shared. Share the archetype, the score and the dare, never the player's real numbers."
+    },
+    {
+      "pattern": "Doom with no way forward",
+      "why": "Poverty and debt simulations can end on a gut-punch (SPENT's 'I can't do this' button leads to a donation page). That works for a charity appeal, but for mums who may already feel money anxiety, ending on shame drives them away. This one is a judgement call; there is no hard evidence either way. Always end with one doable next step and a replay."
+    }
+  ]
+}

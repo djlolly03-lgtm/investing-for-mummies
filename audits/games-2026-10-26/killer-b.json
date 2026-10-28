@@ -1,0 +1,1183 @@
+{
+ "group": "killer-b",
+ "games": [
+  {
+   "slug": "killer-debt-boss",
+   "title": "Debt Boss — killer upgrade",
+   "url": "https://games.investingformummies.com/debt-boss",
+   "file": "debt-boss.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "Turn Debt Boss into 'You are the moneylender': borrowers queue at your door (the Government, a bank, a company in a hard hat, a flashy finance firm promising 12%), you hand out ten ₹1 lakh coins, and four years of shocks play out on one live 'buying power' meter. The moment people screenshot is the Shrink Ray: the paper total counts up, then the same pile of coins visibly shrinks to what it buys in today's prices, with the line 'Your money grew. Your shopping trolley didn't.' It is the 'safe money' lesson every mum with an FD needs, in one picture.",
+   "load": "",
+   "share_idea": "🪙 I played moneylender with ₹10 lakh of 'safe' money — it grew on paper and still lost buying power 😳 Can yours beat inflation? games.investingformummies.com/debt-boss  _(Game uses made-up returns and assumes 7% inflation a year. Education only.)_",
+   "share_moment": "FDs, PPF, bonds: all 'safe', right? Lend ₹10 lakh and see what's left after 4 years. 3 minutes.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Rebuild the core loop around lending, not filling boxes. Replace the six-card grid of ₹25,000 steppers with ten big ₹1 lakh gold coins: tap a borrower to hand them a coin, tap their coin stack to take one back. Each borrower card is a character with one line ('Government of India: I always pay, but slowly', 'Bluestone Builders Ltd (BBB): I pay 11% because I might not pay at all'). Ten taps instead of forty, and every tap is a real decision. (Benchmark #3 First tap is the first decision — SPENT)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Feedback callout + off-by pill + \"your guess, put to work\"] Add the Shrink Ray reveal as the finale. Step 1: 'Your ₹10 lakh is now ₹12.1 lakh on paper. Drag the slider: what will it buy in today's prices?' Step 2: reveal the real figure over their guess with an off-by pill ('You guessed ₹11.5 L — it buys ₹9.2 L'). Step 3: the coin pile shrinks on screen, and a shopping trolley loses two items. Show '(assumes 7% inflation a year)' under the number. (Benchmark #1 Guess first, then reveal — NYT You Draw It)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add a desperate-yield lure in Year 2: a WhatsApp-style message slides in from 'Sunshine Finance (fictional): 12% FD, limited period, today only!'. The player can move coins into it. In Year 3 it freezes withdrawals, and a callout explains what happened: higher rate means higher risk, and DICGC insurance covers bank deposits only, not company deposits. This turns the default round from a fact into a felt mistake. (Benchmark #14 Desperate lifelines with a hidden price — SPENT 'Need cash?')"
+    },
+    {
+     "area": "Layout",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Count-up] [Kit: Top bar] Pin one live 'Buying power' meter to the top bar for the whole game, showing the paper total and a thinner gold 'in today's prices' bar under it. Both count up or down after every event, and the gap between them widens year by year, so inflation is visible every round, not only in Year 4. Add Year 1 to Year 4 dots as the progress row. (Benchmark #6 One live number you can't stop watching — SPENT balance meter)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Sound] [Kit: Confetti] Juice the shocks. Rate hike: bond coins wobble and slide down a little with a low thud. Default: the Bluestone Builders door slams and its coins crack, with one short vibration on phones that support it. Inflation: the trolley icon sheds items. Use confetti only if the player's buying power ends above where it started, and skip all motion for reduce-motion users. (Benchmark #12 Juice — Juice it or lose it)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Result rows] [Kit: Personal best] End on an identity, not 'Debt Master 100/100'. Pick one of four lender archetypes from how they lent: 'The Locker Guardian' (mostly PPF/SSY), 'The Yield Chaser' (mostly corporate/Sunshine), 'The Ladder Builder' (spread across all), 'The Gullak Saver' (parked in FD). Show three result rows: paper total (gold), buying power (coral if below ₹10 L), and the one borrower who hurt most. Add one tailored line, for example 'Your money was safe from default, but not from inflation.' (Benchmark #10 End on an identity — BitLife ribbons)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Replace 'Play again' with one specific replay: 'Same 4 years, but tax at 30%' or 'Same 4 years, without Sunshine Finance'. Then show both endings side by side ('Run 1: ₹9.2 L buying power · Run 2: ₹8.4 L'). The tax replay is where the PPF-vs-FD lesson lands for working mums, without adding a tax screen up front. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK)"
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Rewrite the event pop-ups into a 'what just happened' bubble of no more than 35 words, with a rupee figure about the player's own coins first ('Your 2 Govt Bond coins dropped ₹4,000 — when rates rise, old bonds get cheaper'). Put the longer classroom paragraph (Year 2 is about 150 words today) behind 'Why? ▸'. Use 'Not quite — here's the twist' for wrong answers. (Benchmark #7 Teach in the result, not before the choice — SPENT result bubbles)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text)] [Kit: Share image card] Make WhatsApp the primary end button, sending the share line above with the archetype name added. Offer a 1080×1920 Story card on navy: the Shrink Ray picture (big coin pile and smaller coin pile), the archetype, 'Your money grew. Your trolley didn't.', the assumption line and the game URL. No rupee totals on the card. (Benchmark #2 Spoiler-free result card — Wordle / Spotify Wrapped)"
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Assumption footer] Keep every lender character generic: 'Government of India', 'A big bank', 'Bluestone Builders (fictional company)', 'Sunshine Finance (fictional)'. Never name a real NBFC, bank or bond issuer, even for the default. On the Shrink Ray and the share card, print 'Made-up returns · 7% inflation assumed · not a promise'. Add a 'Where do these numbers come from?' sheet listing the PPF, SSY and FD rates with their 'as of' date. (Benchmark #18 Show your sources and assumptions — SPENT sources PDF)"
+    }
+   ]
+  },
+  {
+   "slug": "killer-cap-climber",
+   "title": "Cap Climber — killer upgrade",
+   "url": "https://games.investingformummies.com/cap-climber",
+   "file": "cap-climber.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "Rebuild Cap Climber around the one insight beginners always get wrong: a pricey share is not a big company. Each round puts two or three fictional companies on a mountain, each with a share price and a number of shares, and the player drags them to the summit (large), the slopes (mid) or the foothills (small). The screenshot-and-forward moment is the reveal where the ₹4,000 share slides down to the foothills while the ₹250 share climbs to the summit, under the line 'Price fooled you. Size is price × shares.'",
+   "load": "",
+   "share_idea": "🏔️ I thought the ₹4,000 share was the big company. It wasn't 😅 3-minute game on how 'large cap' really works: games.investingformummies.com/cap-climber  _(Fictional companies, education only.)_",
+   "share_moment": "Which company is bigger: the ₹4,000 share or the ₹250 share? Most people pick wrong. 2 minutes.",
+   "items": [
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "M",
+     "text": "Decision: switch to fictional companies, and drop real names entirely. Sorting real listed companies by size is factual, but it breaks three ways. The large/mid/small lists are reshuffled every six months, so answers go stale (the earlier audit found three already wrong). A list of real names next to 'small caps can be multi-baggers' reads like a tip sheet. And IFM's rule is no real stocks as picks. Keep it relatable with fictional brands from everyday life: 'Rangoli Paints', 'Chaiwala Chain', 'Ghar Ghar Gas', 'Dabba Delivery', each with a one-line 'what they do'."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Change the core loop from 'name, then guess within 6 seconds' to 'reason, then place'. Each card shows share price and number of shares ('₹250 × 400 crore shares'), and the player drags it onto the mountain. Round 1 is a gimme (a huge company with a huge share count). Round 3 is the trap: a ₹4,000 share with only 2 crore shares, so it is a small company. Show 'market cap = price × shares' as a tappable chip, never as a rules paragraph. (Benchmark #3 First tap is the first decision — SPENT)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Count-up] [Kit: Feedback callout + off-by pill + \"your guess, put to work\"] Turn each placement into guess-then-reveal: after the drop, a coin tower rises beside the company to its real value ('₹1,00,000 crore'), counting up, and the company slides to its true band if the player misplaced it. The callout leads with the trap in one line: 'The ₹4,000 share is worth ₹8,000 crore in total — smaller than the ₹250 one.' (Benchmark #1 Guess first, then reveal — NYT You Draw It)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Add a 'Who's bigger?' bonus round between bands: two fictional brands side by side, and the player taps the bigger company before the towers rise. A correct call earns a climbing step. Make the timer optional: 'relaxed mode' should be the default, and a 'beat the clock' toggle is for people replaying. (Benchmark #12 Juice — Juice it or lose it)"
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "Make the mountain the whole phone screen: summit, slopes and foothills as three tappable bands filling the top 60% of the viewport, the company card docked in the thumb zone at the bottom, and drag-or-tap to place. A tiny climber figure moves up one ledge per correct answer, as the progress indicator for all 8 rounds. Remove the 'How It Works' card and the 'Back to Main Menu' button from the play screen. (Benchmark #13 Say how long it takes, then show progress — The Evolution of Trust)"
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Tokens: Daylight] Replace emoji logos (⛽ 💻 🏦) and the off-brand blue/purple with one illustrated mountain (navy summit, teal slopes, gold foothills) and simple outline icons for each fictional brand. Colour-code the bands, but always label them in words too (LARGE / MID / SMALL), and keep icon files at or under 30 KB each."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Result rows] End with an identity and one sentence: 'The Size Spotter: you saw past the price tag 7 times out of 8' or 'The Price-Tag Trusted: you picked the expensive share as the big company — most people do.' Three result rows: traps spotted, the biggest company you sized right, and one sentence on why size matters for risk, worded neutrally ('bigger companies have usually moved less than smaller ones; not always'). (Benchmark #10 End on an identity — BitLife ribbons)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Personal best] Add a daily 'Size-up of the day': three fictional companies picked by the date (the same for everyone, no backend needed), a localStorage streak, and a Wordle-style result line ('Cap Climber #12 🟢🟢🔴 · streak 4'). This gives a short, endlessly replayable format a reason to come back. (Benchmark #19 A small daily ritual — Wordle / Duolingo)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text)] [Kit: Share image card] The primary end button sends the share line above, built around the trap rather than the score. The Story card shows the mountain with the two trap companies, the player's archetype, and 'Size = price × shares', plus the URL. Give this game its own og:image with the hook question 'Which is the bigger company: the ₹4,000 share or the ₹250 one?' (Benchmark #4 Link preview as the cover — WhatsApp link-preview requirements)"
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Rewrite the whole page voice for a first-timer: kicker 'MARKET CAP · 2 MINUTES'; title 'Cap *Climber*'; hook 'A ₹4,000 share or a ₹250 share: which company is bigger? Most people get this wrong.'; button 'Start climbing →'. Drop 'telecom play', 'blue-chip', 'QSR', 'multi-baggers' and the 'Top 100 / 101–250' rank rules from the intro, and put the rank bands in the end-screen 'Learn more ▸' instead."
+    }
+   ]
+  },
+  {
+   "slug": "killer-market-pulse",
+   "title": "Market Pulse — killer upgrade",
+   "url": "https://games.investingformummies.com/market-pulse",
+   "file": "market-pulse.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "Market Pulse becomes a 3-minute 'read the market's mood' game: a headline drops, you draw with your finger where you think the price goes next, and the real line draws over yours. The moment people screenshot is the plot twist: a headline about good news, the player's line going up, the real line going down, and a stamp saying 'The market disagreed'. It ends on a Wordle-style row of coloured squares and an archetype, not a trader rank.",
+   "load": "",
+   "share_idea": "📈 *Market Pulse* — I read 10 headlines and guessed the market's mood 6 times. 🟩🟩🟥🟨🟩🟥🟩🟩🟨🟥 Good news doesn't always mean a rising price. Can you beat me? 👇 games.investingformummies.com/market-pulse _(made-up companies, practice only, not investment advice)_",
+   "share_moment": "Good news, price falls. Bad news, price rises. Can you read the market's mood? 10 headlines · 3 minutes",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "L",
+     "text": "[Kit: Feedback callout + off-by pill + \"your guess, put to work\"] Replace the five Sharp-rise to Sharp-fall buttons with a 'draw it' pad. Under each headline sits an empty chart. The player drags a finger to sketch the next session, taps 'Lock my line', and the real line animates over theirs, with a pill such as 'Right way, too timid: you drew +1%, it moved +7%'. Score 2 points for the right direction and 1 for getting the size roughly right, so the five-way guess becomes a drawing that feels personal. (Benchmark #1 Guess first, then reveal — NYT 'You Draw It')"
+    },
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "M",
+     "text": "Build a recurring cast of 12 fictional companies with painted logo tiles of 30 KB or less each, such as 'Chai & Co.' (FMCG), 'Swift Bank', 'Desi Wheels Motors', 'RocketPay' (fintech), 'Bharat Infra' and 'Circuit Makers'. Call the indices 'the whole market'. On each reveal add a small 'Inspired by a real moment: the 2019 corporate tax cut' line, so the lesson stays real without attaching invented events to listed companies. Players get to know the characters across rounds, which also makes daily replays work (see the daily headline item). (Benchmark #18 Show your sources and assumptions — SPENT sources PDF)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Curate the 30-headline pool so that about 4 in 10 are twists: good news where the price falls ('priced in'), splits that change nothing, and bad news that was already expected. Stamp each twist with a gold 'PLOT TWIST' seal and one line in the player's terms: 'You drew it up. Everyone already knew, so it fell.' The twists are what people talk about, so deal at least three into every 10-headline game."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Top bar] Pin one live element to the top bar: a row of 10 empty squares that fill green (called it), yellow (right direction, wrong size) or coral (wrong way) after each headline. It is the progress bar, the score and the future share line in one, and it replaces the CALLS / HITS / ACCURACY / STREAK status bar and its keyboard hints. (Benchmark #6 One live number you can't stop watching — SPENT balance meter)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Count-up + Sound] Reveal juice on the brand palette: the real line draws in about 1.2 seconds while the % change counts up beside it, a soft bell plays for a hit and a low thud for a miss (both already synthesised in the file), and a phone without reduce-motion gives a short buzz on a big miss. Replace the full-screen circuit flash with one rubber-stamp card ('TRADING PAUSED: the exchange hit the brakes'). Then show at most three lines: what happened, why, and a 'What this means for you' line in plain words. (Benchmark #12 Juice — 'Juice it or lose it'; #7 Teach in the result — SPENT)"
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Tokens: Midnight + Primary / sticky / outline / WhatsApp buttons] Rebuild the phone screen as one card per step on the Midnight theme, keeping the drama but on-brand: the headline card on top (serif, 22 px), the 358 px-wide drawing pad in the middle, and a sticky 'Lock my line →' button in the thumb zone. Move the 23-row market-depth grid behind a 'See the whole market ▸' sheet on phones. Nothing should need sideways scrolling at 390 px, and the headline, pad and button must fit in one 844 px screen."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Result rows + Personal best] End on an identity instead of 'Fresh Intern … Portfolio Manager'. Choose from four warm archetypes based on how they played: 'The Priced-In Pro' (caught most twists), 'The Optimist' (drew every good headline up), 'The Calm Reader' (mostly right on size) and 'The Headline Chaser'. Under it put three rows of the lessons they actually met, then the closing line: 'Headlines a long-term investor needed to act on today: 0.' (Benchmark #10 End on an identity, not a score — BitLife ribbons / Sorted quiz)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Add a 'Headline of the day': the same headline for everyone each day, picked from the pool by date with no backend, plus a localStorage streak ('Pulse #23 · streak 4 🔥'). It turns a one-off game into a 20-second daily habit that suits a WhatsApp group. Keep the 10-headline game as the main mode. (Benchmark #19 A small daily ritual — Wordle / Duolingo streaks)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text) + Share image card] The share is the coloured-square row plus the archetype: no money and no spoilers. Also offer a 1080×1920 Story card showing the best plot-twist chart (their line against the real one) under the headline. Give the page its own 1200×630 og:image reading 'Good news. Price falls. Why?' so a forwarded link previews this game rather than the generic games card. (Benchmark #2 Spoiler-free result card — Wordle grid; #4 Link preview as the cover)"
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Kicker + Title block] Rewrite the intro as a dare with no boot log and no rules list. Kicker '10 HEADLINES · 3 MINUTES', title 'Market *Pulse*', hook 'Good news, price falls. Bad news, price rises. Can you read the market's mood?', and one button, 'Read the first headline →', that opens straight onto headline 1. The rules become a three-second animated hint on the first drawing pad. (Benchmark #3 First tap is the first decision — SPENT; #5 A dare — SPENT 'PROVE IT')"
+    }
+   ]
+  },
+  {
+   "slug": "killer-ipo-bonanza",
+   "title": "IPO Bonanza — killer upgrade",
+   "url": "https://games.investingformummies.com/ipo-bonanza",
+   "file": "ipo-bonanza.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "IPO Bonanza becomes a 4-minute case file: one of three made-up IPOs is dealt at random (one pops, one flops, one goes nowhere). You swipe through the fine print, guess your odds, decide to apply or walk away, and only then learn how it listed. The screenshot moment is the lottery drum: seven application slips shuffle, one turns gold, and the screen says 'Not allotted, like 6 in 7 people who applied. Your money is back in 6 days.' Next to it, a two-timeline ending shows what happened to the path you didn't take.",
+   "load": "",
+   "share_idea": "📜 *IPO Bonanza* — I read the fine print on a hyped IPO, caught 3 of 4 red flags 🚩🚩🚩⬜ and decided to SKIP. Guess how it listed? Play the case 👇 games.investingformummies.com/ipo-bonanza _(made-up company built from real IPO patterns; education only, not advice)_",
+   "share_moment": "Everyone's applying. The grey market says +20%. Would you? Read the fine print first. · 4 minutes",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "L",
+     "text": "Turn the single fixed case into three fictional case files dealt at random, each built from real Indian IPO patterns. 'TiffinTap Ltd' is a loss-making food app with heavy hype, and lists high. 'Sharma Pipes' is a profitable, boring maker with little hype, and lists flat then grows slowly. 'ZapPay Fintech' is priced at the top of its band and lists about 25% below issue. Because the endings differ, 'IPO = quick money' can no longer be learnt by replaying. The real 2021 Zomato story moves to a closing 'Based on a true story' card. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK; anti-pattern: rewarding short-term gambling)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Make the apply-or-skip choice (already planned) pay off with a two-timeline ending. Whatever the player chose, the end screen shows both paths side by side: 'You: skipped, money free all week' next to 'If you'd applied: 1 in 7 chance of one lot, which listed −24%'. Both outcomes are always shown, so a good skip feels as rewarding as a lucky allotment. (Benchmark #15 Replay to see the difference — NGPF PAYBACK)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Feedback callout + off-by pill + \"your guess, put to work\"] Add two guesses before the reveals. Before the subscription bars climb: 'How many times over will ordinary investors bid?', on a slider from 1× to 50×. Before the lottery: 'Your chance of getting shares?', with chips '1 in 2 · 1 in 7 · 1 in 20'. The bars then count past the player's pin, and an off-by pill says 'You guessed 1 in 2, it was 1 in 7.' Retire the separate explanation paragraph, because the guess teaches it. (Benchmark #1 Guess first, then reveal — NYT 'You Draw It')"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Sound + Count-up] Make the lottery the drama beat. A full-screen drum of 7 paper slips (one is 'YOUR PAN') shuffles for 2 seconds with a ticking sound, and one slip lifts out and turns gold. If it's not theirs: 'Not allotted, like 6 in 7 applicants. Your ₹14,820 unblocks in 6 days', with the bank meter counting back up. If it is theirs: a short coin chime and no confetti, because the listing is still unknown. This replaces the random-letter scramble. (Benchmark #12 Juice — 'Juice it or lose it')"
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "Turn the red-flag hunt into a swipe deck on phones. Each disclosure is one card with the original line on the front and the plain-English line under it. Swipe left for '🚩 Worries me' or right for '👍 Fine', or use two 56 px buttons. The card flips to show the one-line reason straight away, instead of waiting for a Submit at the end. Eight cards take about 60 seconds and fit on one screen, unlike today's long list of 13 px rows. (Benchmark #7 Teach in the result — SPENT)"
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Top bar + Life bar / timeline] Compress the 8-stage stepper into 4 beats: Meet the company → Read the fine print → Bidding week → Listing day. Pin one live number to the top bar: 'In your bank: ₹2,50,000 · blocked: ₹14,820', which turns gold when money is blocked and mint when it comes back, so ASBA ('your money is held, not taken') is something the player watches happen rather than reads about. Put '4 min' on the start button. (Benchmark #6 One live number — SPENT; #13 Say how long it takes — Evolution of Trust)"
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Tokens: Daylight + Glass card + gold hairline] Move from the neon trading terminal to a daylight 'case file' look built around the game's best asset, the newspaper public notice. Use a manila-folder header stamped 'RED HERRING', serif headings, flags that land as rubber-stamp animations, and the notice as the hero image of the 'Read the fine print' beat. One signature look, on brand, and calmer for mums."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Result rows + Personal best] Replace the XP total and the 'Greater Fool' tier with an archetype plus one personal sentence. The archetypes: 'The Fine-Print Reader', 'The Patient Skipper', 'The Lottery Optimist', 'The Hype Follower (we've all been there)'. The sentence names what they did: 'You spotted 3 of 4 warning signs and walked away. It listed 24% below its price.' Below that, three rows at most, with the full recap behind 'See all 7 lessons ▸'. (Benchmark #10 End on an identity — BitLife / Sorted; #17 One personal sentence — NYT rent-or-buy)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text) + Share image card] Build the share from the flag row (🚩 for each flag caught, ⬜ for each missed), the decision (APPLIED or SKIPPED) and a teaser, 'Guess how it listed?', so it never spoils the ending or shows the player's money. Add a Story-size card in the case-file look and a page-specific og:image: 'Would you apply? Read the fine print first.' (Benchmark #2 Spoiler-free result card — Wordle; #4 Link preview as the cover)"
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Finish with one real-world step: 'Before any real IPO, open its offer document on SEBI's website and read Risk Factor #1. That's the line you just learned to spot.' Add a link to SEBI's public-issues page. That turns the game into a habit, and it is pure education with no pick. (Benchmark #20 Local life events, one real-world action — SEBI Check QR game)"
+    }
+   ]
+  },
+  {
+   "slug": "killer-my-first-trade",
+   "title": "My First Trade — killer upgrade",
+   "url": "https://games.investingformummies.com/my-first-trade",
+   "file": "my-first-trade.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "My First Trade becomes 'nine years in four minutes, with one crash in the middle'. Every round you race a ghost, 'Do-Nothing Didi', who spread the same ₹2 lakh across all eight made-up companies and never touched it. In 2020 a big red 'Sell everything' button pulses while your portfolio counts down. The screenshot moment is the final chart: your line against Didi's, with a red dot reading 'You panicked here' or a gold dot reading 'You held here'.",
+   "load": "",
+   "share_idea": "📊 *My First Trade* — 9 years of investing in 4 minutes. 2016 🟢 2018 🟢 2020 🔴➡️💪 2023 🟢 2025 🏁 I held through the crash and finished as 'The Steady Holder'. Would you have panic-sold? 👇 games.investingformummies.com/my-first-trade _(made-up companies and prices, education only, not advice)_",
+   "share_moment": "It's 2016. You have ₹2 lakh. Nine years, one crash. Will you hold your nerve? · 4 minutes",
+   "items": [
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "M",
+     "text": "Replace the eight real listed companies with eight fictional ones that keep the same personalities and corporate actions: 'Chai & Co.' (steady FMCG, pays dividends), 'Bharat Energy & Telecom' (price-war disruptor), 'InfoBridge' (IT, buyback), 'Sunrise Bank' (risky lender that collapses), 'Sona Jewellers' (split), 'Trendy Retail' (bonus), 'Circuit Makers' (small electronics, rights issue) and 'Apna Mart' (supermarket). Label rounds by era ('a telecom price war', 'the 2020 crash') rather than by real tickers. This also removes the dated-history problem for good, because the prices no longer claim to be real."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Top bar + Count-up + Money formatting] Add the ghost race. 'Do-Nothing Didi' puts the same ₹2,00,000 equally into all eight companies in 2016 and never trades. Her net worth sits beside yours in the top bar every round ('You ₹2.31 L · Didi ₹2.44 L'), counting up on each year flip. The question the game asks shifts from 'which stock?' to 'did all my clicking beat doing nothing?' State on screen: 'Didi's basket uses the same made-up prices as yours.' (Benchmark #6 One live number — SPENT; #8 Compress decades into minutes — NGPF STAX)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Turn the 2020 crash into the game's big decision. The year opens with the portfolio counting down for 2 seconds, a soft heartbeat sound, and a big pulsing 'Sell everything' button beside a calm 'Hold' button. Pressing sell locks the loss and records a red dot on the timeline. Holding, or buying more, records a gold dot. Nothing scolds the player at the time; the cost shows up on the final chart. (Benchmark #14 Desperate lifelines with a hidden price — SPENT 'Need cash?')"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Feedback callout + off-by pill + \"your guess, put to work\"] Before each corporate action, ask one quick guess about the player's own holding. Split: 'Your 100 Sona shares become 500. Is your holding worth more, the same, or less?' Bonus, buyback and rights issue get the same treatment. Then reveal it with their real numbers ('Same: ₹42,000 before, ₹42,000 after'). Five guess-and-reveal beats teach the corporate actions better than the current 'Key lesson' boxes. (Benchmark #1 Guess first, then reveal — NYT 'You Draw It')"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Sound + Confetti] Give each event a small piece of juice. Dividend: coins drop into a gullak icon on the holding card, with a chime. Split: a scissor snip and the share count multiplying while the ₹ value stays still. Bonus: a gift box pops and the count doubles. Crash: cards shake once. Keep confetti for the final screen only, and only if the player beat or matched Didi. Turn all of it off under reduce-motion. (Benchmark #12 Juice — 'Juice it or lose it')"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Result rows + Personal best] Build the payoff around the race chart: two lines from 2016 to 2025 (you in gold, Didi in mist), the crash decision marked with a red or gold dot, and one personal sentence ('You traded 14 times and finished ₹18,000 behind Didi, who traded zero times'). Then give an archetype: 'The Steady Holder', 'The Crash Bargain-Hunter', 'The Panic Seller (most people are)' or 'The All-In Gambler'. This replaces the 'Dixon gave 100×' lesson, which celebrates lucky picks. (Benchmark #10 End on an identity — BitLife; #17 One personal sentence — NYT rent-or-buy)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Offer two specific replay buttons on the end screen: 'Replay without the panic button' and 'Replay as Didi: buy everything, then just watch'. Show the new ending next to the previous one, which gives a reason to play a second time, something the 'Play again — try a different strategy' button never does. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK)"
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Primary / sticky / outline / WhatsApp buttons] On phones, show each year as a newspaper front page: a flip animation from 2016 to 2018, one headline and one picture, then the 8-card company grid. Draw each fictional company as a painted 30 KB WebP logo tile in IFM style, not initials in coloured squares. Keep 'Done trading → 2018' sticky in the thumb zone, and show the year on the button so the player always knows how far they've come."
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text) + Share image card] The share is the year-by-year emoji timeline plus the archetype, with no rupee figures. The Story card is the race chart with the red or gold crash dot and the line 'Would you have held?'. Give the page its own og:image: 'Nine years. One crash. Would you hold?' (Benchmark #2 Spoiler-free result card — Wordle; #4 Link preview as the cover)"
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Kicker + Title block] Rewrite the intro as a dare and cut the six-row 'What you'll experience' list, since the game will teach those as it goes. Kicker '9 YEARS · 4 MINUTES', title 'My first *trade*', hook 'It's 2016. You have ₹2 lakh. Nine years, one crash. Will you hold your nerve?', and button 'Open 2016 →'. Add the assumption line in the footer: 'Made-up companies and prices, shaped like real market years. Not a prediction.' (Benchmark #5 A dare — SPENT; #13 Say how long it takes)"
+    }
+   ]
+  },
+  {
+   "slug": "killer-money-map",
+   "title": "Money Map — killer upgrade",
+   "url": "https://games.investingformummies.com/money-map",
+   "file": "teen-budget.html",
+   "kind": "solo",
+   "audience": "Gen Next",
+   "verdict": "Turn the blank allowance form into 'Survive the Month': you get ₹2,500 of pocket money on day 1, and 30 days of real teen life (a friend's birthday, a cracked phone screen, a Zomato craving, a concert drop) fly at you one tap at a time while a big balance number falls in real time. The moment people forward is the end card: a coloured strip of emoji blocks showing where the month went, with a money-personality title like 'The Jar Guardian' or 'The Weekend Spender' on top and no rupee amounts. The current tracker stays as the 'Track my real month' tool you unlock after playing.",
+   "load": "",
+   "share_idea": "I survived the month on Money Map 🫙 🫙🍕🍕🎮🎬🚌📚🫙🫙🫙 — I'm *The Jar Guardian*. Think you can last 30 days on ₹2,500 of pocket money without going broke? 👇 https://games.investingformummies.com/money-map  (₹2,500 is the game's pocket money, not mine)",
+   "share_moment": "₹2,500 pocket money. 30 days. One cracked phone screen. Can you make it to the 1st with something left in the jar?",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "L",
+     "text": "Replace the empty form with a 30-day story mode, 'Survive the Month'. Start the player with ₹2,500, then show about 12 event cards, one at a time ('Day 4: Riya's birthday. Gift? ₹0 card / ₹300 gift / ₹800 gift', 'Day 11: your screen cracks, ₹1,200 to fix or live with it', 'Day 19: concert tickets drop, ₹1,500'). Every tap moves the money right away, so the player feels each choice instead of filling in boxes. Keep the current tracker as a 'Now track your real month →' screen at the end. (Benchmark #8 Compress decades into minutes — NGPF STAX; #20 Local life events — Visa Financial Football)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Count-up] Pin one huge 'Left for the month' number and a 30-day calendar strip to the top of the screen. The number rolls down after each card, turns coral when it falls below ₹500, and the calendar shows how many days are still left before the next pocket money. That gap between the days left and the money left is the lesson. (Benchmark #6 One live number you can't stop watching — SPENT)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Feedback callout + off-by pill] Ask for one guess before the month starts: 'How much do you spend on snacks and cold coffee in a month? Drag to guess.' At the end, show the real total from their own choices against the guess, for example 'You guessed ₹300. You actually spent ₹950 — ₹650 more than you thought.' Most teens underestimate, and that surprise is the take-away. (Benchmark #1 Guess first, then reveal — NYT 'You Draw It')"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Add one tempting lifeline button that is always on screen, 'Borrow from Didi 🙏' (₹500 now), which quietly takes ₹600 back on day 28. A 'Buy now, pay later' card on day 15 does the same with a ₹100 late fee. Explain in one line when it bites: 'Borrowing feels free on the day and costs you at the end of the month.' (Benchmark #14 Desperate lifelines with a hidden price — SPENT 'Need cash?')"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Result rows + Personal best] End on an identity, not a percentage: 'The Jar Guardian' (finished with savings), 'The Weekend Spender' (fine until day 20, then broke), 'The Treat-Yo-Self Legend' (spent it all on fun), 'The Planner' (paid the jar first on day 1). Under it, three rupee rows: 'Saved ₹400', 'Biggest leak: food, ₹950', 'Days broke: 0', plus one doable next step ('Put ₹250 in the jar on the day the money comes in, before anything else'). Store the best finish on the phone as '🏆 Your best: ₹400 left'. (Benchmark #10 End on an identity, not a score — BitLife ribbons)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Add a specific replay button: 'Replay — jar first'. It locks ₹250 into the savings jar on day 1 and replays the same 30 days, then shows both endings side by side ('Run 1: broke on day 24 · Run 2: made it with ₹310'). Paying yourself first is the main lesson here, so let the player see the difference it makes. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK)"
+    },
+    {
+     "area": "Copy",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Kicker + Title block] Rewrite the first screen to the new shape. Kicker: 'POCKET MONEY · 3 MINUTES'. Title: 'Survive the *month*'. Hook: '₹2,500. 30 days. Your friends have plans.' One button: 'Start day 1 →'. Talk only in rupees all the way through ('You spent ₹950 on food', not '38% spent'), and turn the 50/30/20 card into plain words: 'A simple split: about half on must-haves, a bit less on fun, and some saved first.' (Benchmark #3 First tap is the first decision — SPENT; #5 A dare — SPENT 'PROVE IT')"
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Tokens: Midnight + Glass card + gold hairline + Sound] Keep the bright teen energy, but move it onto IFM's midnight tokens. Event cards become glass cards with a gold hairline and a painted icon (≤30 KB WebP) instead of a flat emoji tile. Add sound: a coin chime when money goes into the jar, a soft thud when the balance drops below ₹500, and a short phone buzz (navigator.vibrate) when you go broke, with the mute button always visible. Choices sit as two or three 56 px buttons in the thumb zone so the month can be played one-handed. (Benchmark #12 Juice — 'Juice it or lose it')"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Share image card + WhatsApp share (text)] Make the end card a Wordle-style strip of 10 emoji blocks, each block standing for one tenth of the month's money (🫙 jar, 🍕 food, 🎮 games, 🎬 fun, 🚌 travel), with the archetype title above it. The share shows the shape of the month and never the rupees. Send it as a 1080×1920 Story image through the phone's share sheet, and as WhatsApp text with the game link. Give the page its own 1200×630 link preview showing the dare 'Could you survive a month on ₹2,500?'. (Benchmark #2 Spoiler-free result card — Wordle; #4 Link preview as the cover)"
+    },
+    {
+     "area": "Conversion",
+     "priority": "Low",
+     "effort": "S",
+     "text": "After the result, add one parent-facing line under the share button: 'Parents: this is week 1 of our Gen Next money course. See batches →'. Also add a 'Play it as a parent: could you survive on your teen's pocket money?' link that reopens the same game, because a parent-and-teen challenge is the most natural forward in a family WhatsApp group. (Benchmark #5 A dare that challenges the player's self-image — SPENT)"
+    }
+   ]
+  },
+  {
+   "slug": "killer-lifestyle-time-machine",
+   "title": "Lifestyle Time Machine — killer upgrade",
+   "url": "https://games.investingformummies.com/lifestyle-time-machine",
+   "file": "lifestyle-time-machine.html",
+   "kind": "solo",
+   "audience": "Gen Next",
+   "verdict": "Make it a 3-minute solo phone game that still runs as a class game: build your ₹15 lakh dream life in 2026, choose how much to set aside for 'future you', then pull a time-machine lever and watch 2036 prices eat your list, card by card, as Japan Trip becomes Lonavala Weekend and the Dream Car becomes a Second-hand Scooty. The moment people forward is the 'Your 2036 life' receipt: a stack of before-and-after downgrades signed 'Thanks, inflation 🙃'. The second card next to it shows what the saver version of you bought back.",
+   "load": "",
+   "share_idea": "My dream life, 10 years later 🕰️ ✈️→🏕️ 🚗→🛵 👜→👡 — inflation took 3 of my 5 dreams. Can yours survive the time machine? 👇 https://games.investingformummies.com/lifestyle-time-machine  (game assumes prices rise about 7% a year; savings growth is an illustration, not a promise)",
+   "share_moment": "You've got ₹15 lakh and a dream list. In 2036 the same list costs almost double. What survives?",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Solo-on-phone fallback] Make solo the default. A phone opening the link skips the class-names screen and asks one question, 'What should we call you?' (optional), then goes straight into building a dream list. Keep the current six-name class setup behind a small link, 'Teacher? Run it for a class →', just as The Wealth Hack detects a phone visitor and gives them a solo path. (Benchmark #3 First tap is the first decision — Wordle, SPENT)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Money input] Make saving an active choice instead of whatever is left over. After picking dreams, the player drags a 'Future-you jar' slider ('Set aside ₹0 … ₹5 lakh — it comes out of your dream budget'). Every rupee set aside visibly greys out a dream card, so the trade-off is felt on day one and the payoff round has something real to pay off. Phrase it for first-timers: 'This money goes into an investment and sits there for 10 years.'"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Feedback callout + off-by pill] Before the time jump, ask for one guess: 'Your ₹2.5 lakh Japan trip — what will it cost in 2036? Drag to guess.' Then reveal ₹4.9 lakh rising over the guess, with an off-by pill such as 'You guessed ₹3 lakh — ₹1.9 lakh short'. One line of plain-English explanation follows: 'Prices went up about 7% every year. That's called inflation: the same thing costs more later.' (Benchmark #1 Guess first, then reveal — NYT 'You Draw It')"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Count-up + Life bar / timeline + Sound] Turn the jump into a lever moment. Show a big year counter spinning 2026 → 2031 → 2036 along the life-bar timeline while every price on the list counts up live (₹2.5L … ₹3.5L … ₹4.9L) and the budget bar overflows in coral. Each forced cut flips the card into its downgrade (keep the excellent 'Lonavala Weekend' and 'Fastrack (₹999)' gags) with a whoosh-and-thud sound built from the kit's synthesised sounds. (Benchmark #8 Compress decades into minutes — NGPF STAX, BitLife; #12 Juice — 'Juice it or lose it')"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Result rows + Assumption footer] End on two futures side by side. Left: 'Spend-it-all you, 2036' (the downgrade list). Right: 'Future-you-jar you, 2036', where the money set aside has grown and buys back two of the lost dreams. Use one personal sentence as the headline, for example 'Setting aside ₹3 lakh in 2026 would buy back your Japan trip in 2036.' Print the growth assumption on the card ('if the investment grew about 10% a year; real returns go up and down and are not guaranteed'). (Benchmark #17 One personal sentence as the answer — NYT rent-or-buy; #18 Show your assumptions)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Add one replay button that changes one thing: 'Replay with ₹3 lakh in the jar'. It keeps the same dream list, saves ₹3 lakh, and shows the two endings next to each other ('Run 1: kept 2 of 5 dreams · Run 2: kept 4 of 5'). End with a small 2-slider sandbox (amount set aside, years in the time machine) that redraws the 2036 list live. (Benchmark #15 Replay one variable — NGPF PAYBACK; #16 End with a sandbox — Parable of the Polygons)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Result rows] Give the player an archetype to keep: 'The Time Traveller' (kept every dream thanks to the jar), 'The YOLO Dreamer' (spent it all, lost the most to inflation), 'The Balanced Planner' (cut one dream, saved, bought it back). Show the title on the receipt above the downgrades, with one warm next step ('Next birthday money: put a slice in the jar before you spend'). (Benchmark #10 End on an identity, not a score — BitLife, How Bad Is Your Spotify)"
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "Rebuild the phone layout. Dream cards go in a 2-column grid with a sticky budget strip at the top ('₹6.5L left of ₹15L') and a sticky 'Lock my dream life →' button in the thumb zone. The over-budget warning lives inside the budget strip instead of floating over the cards, and the downgrade flip plays in place on the card itself, not as a full-screen overlay. A solo run should need no scrolling past the first screen to understand what to do. (Benchmark #13 Say how long it takes, then show progress — The Evolution of Trust)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Share image card + WhatsApp share (text)] Make the share card a 9:16 'Your 2036 life' receipt: kicker 'TIME MACHINE · 2026 → 2036', the archetype, then each dream as 'emoji → downgrade emoji' with no rupee amounts, and the line 'Thanks, inflation 🙃'. Share it through the native share sheet (image plus text) with a wa.me fallback, and give the page its own link preview, 'Will your dream life survive 2036?'. (Benchmark #2 Spoiler-free result card — Spotify Wrapped 9:16; #4 Link preview as the cover)"
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Kicker + Title block] Rewrite every round banner for first-timers in rupees. Use 'Your ₹2.5L trip now costs ₹3.5L' instead of 'Prices have gone up'. Make 'inflation' a tappable chip ('Inflation: prices slowly going up every year, so the same money buys less'). Retire 'corpus' and 'purchasing power' in favour of 'your savings pot' and 'what your money can buy'. Replace brand-name luxury items (Louis Vuitton, Rolex, Disney World) with generic ones ('Designer bag', 'Luxury watch', 'Theme-park trip abroad') so the game shows no brand as a goal. (Benchmark #7 Teach in the result, not before the choice — SPENT)"
+    }
+   ]
+  },
+  {
+   "slug": "killer-need-want-value",
+   "title": "Need. Want. Value. — killer upgrade",
+   "url": "https://games.investingformummies.com/need-want-value",
+   "file": "nwv.html",
+   "kind": "solo",
+   "audience": "Gen Next",
+   "verdict": "Turn the 11-card quiz into a fast 10-card swipe sort where every card shows a real price and its 'hours of work' cost, so a ₹15,000 sneaker drop reads as '75 hours at a ₹200-an-hour job'. Add a 'You vs Mum' mode: the teen and a parent sort the same cards on one phone, then the game reveals where they disagree. The moment people forward is that disagreement card, 'We disagreed on 4 of 10 — Netflix started a family fight 😅', or the solo money-personality badge ('The Value Hunter').",
+   "load": "",
+   "share_idea": "Me vs Mum on Need. Want. Value. 🛡️✨📈 We agreed on 6 of 10. Netflix = WANT says Mum, NEED says me 😅 Sort the same 10 things and see if your family agrees 👇 https://games.investingformummies.com/need-want-value",
+   "share_moment": "Is a ₹1,20,000 gaming laptop a need? Your mum has an opinion. Sort 10 things, then compare.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Make the core loop a swipe sort. Each card shows the item, a real price and a short context line ('Phone recharge ₹299/month', 'Limited-drop sneakers ₹15,000', 'Coaching classes ₹4,000/month'). Swipe left for WANT, right for NEED and up for VALUE, with the three buttons kept underneath for anyone who prefers tapping. Draw 10 cards from a pool of about 30 Indian-teen items, so a round takes about 90 seconds and the next one is different. (Benchmark #3 First tap is the first decision — Wordle)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Money formatting] Turn every price into 'hours of work' on the card: 'At ₹200 an hour of part-time work, these sneakers = 75 hours'. After the sort, ask one guess-first question on a big-ticket item: 'Your ₹199-a-month streaming subscription — what does it cost over a year?' Drag to guess, then reveal ₹2,388. This is the one number a teen remembers. State the ₹200-an-hour assumption on screen. (Benchmark #1 Guess first, then reveal — NYT 'You Draw It'; #17 One personal sentence)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add a 'You vs Mum' (or 'You vs your friend') mode that works on one phone with no backend. Player 1 sorts 10 cards, passes the phone, and Player 2 sorts the same 10. The reveal walks through the disagreements one by one ('You: NEED · Mum: WANT — Netflix'), each with the existing 'discuss' prompt as the debate starter. The discuss prompts are the best writing in the game, and this gives them a real person to argue with. (Benchmark #11 Compare me with everyone else — NYT crowd overlay, done locally)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Feedback callout + off-by pill] Keep 'it can be both' as the twist, but make it feel like a reward. When an item is genuinely two things, the card splits in half with both colours and a '2-in-1 card!' tag, and a correct pick earns a bonus. Feedback stays at two sentences or fewer with the rupee figure in bold: 'Footwear is a NEED. A *₹15,000* limited drop is a WANT.' (Benchmark #7 Teach in the result, not before the choice — SPENT)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Result rows + Personal best] Replace 'Done! 4/11' with a money personality based on the pattern of choices: 'The Value Hunter' (spots future-you spending), 'The Honest Wanter' (calls fun spending what it is), 'The Need Stretcher' (calls most things needs, which most people do). Show three rows underneath: 'You called 6 things NEEDs', 'Most hours of work: sneakers, 75 hrs', 'Your tricky one: gym membership'. Add one doable next step: 'Before your next WANT over ₹1,000, wait 3 days.' (Benchmark #10 End on an identity, not a score — Sorted money-personality quiz)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Add a 'Paisa Sort of the Day': five cards picked by today's date, so everyone gets the same five, with a streak counter saved on the phone. The share line works like Wordle ('Need. Want. Value. #42 🛡️✨📈✨🛡️ · streak 3'), which gives teens a reason to come back and compare tomorrow. (Benchmark #19 A small daily ritual for return visits — Wordle, Duolingo)"
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Tokens: Midnight + Glass card + gold hairline + Sound] Swap emoji-as-art for one illustrated card per item (≤30 KB WebP, same painted style as Slash the Scam's medallions). Card feedback gets juice: the card flies into its bucket, a rising chime plays for a correct sort, a soft low thud for 'not quite', and the bucket count ticks up. Keep the sort buttons 64 px tall in the thumb zone, and keep the whole card plus buttons inside one 390×844 screen with no scrolling. (Benchmark #12 Juice — 'Juice it or lose it')"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text) + Share image card] Two shares. Solo: the personality badge plus the 10-emoji sort strip (🛡️✨📈…), with no answers spoiled. Duel: 'We agreed on 6 of 10 — Netflix started a fight', which is the natural forward into a family group. Both link straight back to the game, and the page gets its own preview image asking 'Is a ₹1.2 lakh gaming laptop a NEED?'. (Benchmark #2 Spoiler-free result card — Wordle; #4 Link preview as the cover)"
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Kicker + Title block] New first screen. Kicker: '10 THINGS · 90 SECONDS'. Title: 'Need. Want. *Value.*' Hook: 'Is a ₹1,20,000 gaming laptop a need? Sort 10 things — then argue with your mum.' Two buttons: 'Play solo →' and 'Me vs Mum →'. Define VALUE in plain words on the first card ('VALUE = spending that keeps paying you back, like a course that gets you a better job'), and keep every example Indian (cutting chai, Zomato order, coaching class, bike EMI, concert ticket). (Benchmark #5 A dare that challenges the player's self-image — SPENT; #20 Local life events)"
+    }
+   ]
+  },
+  {
+   "slug": "killer-swipe-right-sip",
+   "title": "Swipe Right on SIP — killer upgrade",
+   "url": "https://games.investingformummies.com/swipe-right-sip",
+   "file": "swipe-right-sip.html",
+   "kind": "solo",
+   "audience": "Gen Next",
+   "verdict": "Keep the hilarious finfluencer feed, and add a crunchy 'receipts' reveal: before each reveal the player guesses whether their ₹2,000 grew or shrank. The end is a 'Likes vs Results' chart where the 120K-like posts sit at the bottom and the 47-like index-fund post sits at the top. That chart is the moment people forward, along with a Wordle-style row of 💚🚩 squares and the title 'BORING GENIUS'. A same-for-everyone 'Today's Feed' and a bonus round where you write the scam post yourself give a reason to play again and challenge friends.",
+   "load": "",
+   "share_idea": "Swipe Right on SIP — Today's Feed #12 🚩 💚🚩🚩💚⬜💚🚩⬜💚⬜ Red-flag radar 5/5 · BORING GENIUS 😴📈 Your feed is lying to you. Can you spot all the red flags? 👇 https://games.investingformummies.com/swipe-right-sip  (made-up funds and results to show the idea)",
+   "share_moment": "Your first salary just dropped. So did 10 'investment tips'. Swipe right on the keepers. Dodge the red flags.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Feedback callout + off-by pill] Add guess-then-reveal to the receipts. Before each card's 5-years-later result, the player taps 'Grew 📈' or 'Shrank 📉' for that ₹2,000, then the number rolls out. Score this guess separately as 'Gut check: 7/10'. The surprise that the 47-like post won and the 120K-like post went to ₹0 lands harder when the player bet on it first. (Benchmark #1 Guess first, then reveal — NYT 'You Draw It')"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Count-up] Make the payoff a 'Likes vs Results' chart. Plot all 10 posts as dots, likes along the bottom and what ₹2,000 became going up, with the player's picks ringed. It should show at a glance that the loudest posts did worst. Headline it with one sentence: 'The most-liked post in your feed turned ₹2,000 into ₹0. The least-liked turned it into ₹3,650.' This becomes the screenshot. (Benchmark #17 One personal sentence as the answer — NYT; #11 Compare me with everyone else)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Personal best] Add 'Today's Feed #N': the 10 posts are picked by today's date, so every player gets the same feed that day and shares can be compared. Save a streak and a best radar score on the phone ('🏆 Best: 5/5 · streak 3'). Keep the random feed as 'Endless scroll' for replays. (Benchmark #19 A small daily ritual for return visits — Wordle)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add a bonus round, 'Be the Finfluencer'. The player builds a hype post from tiles (a fake 'guaranteed' claim, a countdown, 'DM me', a screenshot of profits, a celebrity-style photo) and watches the fake likes climb. Then every tile is stamped with the red flag it plants in a real viewer's head. Writing the trick yourself is the strongest way to remember it, and the post the player makes is funny enough to forward. (Benchmark #9 Play the villain — NGPF Shady Sam, NSE Scambush)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Feedback callout + off-by pill] End with one specific replay: 'Run it back with the red-flag goggles'. It replays the same feed with the tells highlighted on each post ('🚩 deadline', '🚩 guaranteed', '🚩 send to my UPI') and then shows both runs' results side by side, so the player sees how much the checklist alone changes the outcome. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK)"
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Sound + Tokens: Midnight] Keep the feed look, but put it on the IFM midnight-and-gold family so a shared screenshot clearly reads as IFM: gold for 'grew', coral for 'shrank', and the IFM round mark in the top bar. Add juice: a whoosh on each swipe, a coin chime when a receipt is green, a deflating thud and a short buzz (navigator.vibrate) for a ₹0 scam, and confetti only for a perfect 5/5 radar. The mute button is always visible. (Benchmark #12 Juice — 'Juice it or lose it')"
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Tighten the phone flow so the first screen holds only the title, the one-line dare, the '2 MIN' tag and 'Open your feed →'. Move 'How to play' into a 3-second animated demo card that wiggles left and right on the first post. On the swipe screen keep the card and both buttons inside 844 px, with the buttons at least 56 px tall in the thumb zone. (Benchmark #3 First tap is the first decision — SPENT; #13 Say how long it takes — The Evolution of Trust)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text) + Share image card] Replace 'My ₹10,000 became X' in the share with a spoiler-free row of 10 squares (💚 good pick, 🚩 fell for a flag, ⬜ skipped), the radar score and the title. Offer a 9:16 Story card of the 'Likes vs Results' chart. Both carry the line 'made-up funds and results to show the idea' and link to the game, and the page gets its own preview image: 'Your feed vs your future — 120K likes, ₹0 left.' (Benchmark #2 Spoiler-free result card — Wordle; #4 Link preview as the cover)"
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "text": "Make the result titles warmer and more personal: 'BORING GENIUS', 'STEADY HAND', 'HYPE CURIOUS' and 'ALGORITHM'S FAVOURITE' (instead of 'HYPE VICTIM', which reads as an insult to forward). Each gets one tailored line naming the exact flag that caught the player, for example 'The countdown timer got you twice. Real investing never has a Friday deadline.' (Benchmark #10 End on an identity, not a score — How Bad Is Your Spotify)"
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Keep every fund fictional and generic, and make sure the bonus round and share card never name a real fund house, scheme or influencer handle. Add a tappable 'Where do these numbers come from?' sheet on the receipts screen: 'Made-up 5-year results to show the idea, loosely based on how these fund types have behaved. Real funds go up and down, and nothing is guaranteed.' (Benchmark #18 Show your sources and assumptions inside the game — SPENT sources PDF)"
+    }
+   ]
+  },
+  {
+   "slug": "killer-asset-boss",
+   "title": "Asset Boss — killer upgrade",
+   "url": "https://games.investingformummies.com/asset-boss",
+   "file": "asset-boss.html",
+   "kind": "solo",
+   "audience": "Both",
+   "verdict": "Make Asset Boss the 'one mix, three futures' game. The player drops ten ₹1 lakh coins into six jars, guesses where their mix ends up, then watches the same mix run through three different 3-year market stories at once (boom-crash-recovery, a long steady rise, a slow grind). It ends on a money-DNA card. The screenshot moment is the Mix Mirror: their mix's range of outcomes drawn as a short calm bar next to the 'all-in crypto' mix's wild bar, under their archetype name, which shows that diversification buys a narrower range of outcomes rather than the top score.",
+   "load": "",
+   "share_idea": "🧺 My money DNA: The Calm Spreader — my mix survived a boom, a crash AND a slow year without blowing up. What's yours? games.investingformummies.com/asset-boss  _(Made-up returns in three invented market stories. Not a promise, education only.)_",
+   "share_moment": "Same ₹10 lakh, three different futures. Build one mix and see if it survives all three. 4 minutes.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Core loop: ten ₹1 lakh coins, six jars (Stocks, Mutual fund, Gold, FD, Real estate, Crypto). Tap a jar to drop a coin in, with a clink. That replaces the 40 taps of ₹25,000 with ten decisions, and the donut fills as coins land. Move the 'Teacher Checkpoint' and discussion screens to a ?mode=class link, so a WhatsApp visitor goes straight from coins to the simulation. (Benchmark #3 First tap is the first decision — SPENT)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Feedback callout + off-by pill + \"your guess, put to work\"] [Kit: Money input] Add two guesses. Before Year 1: 'Where will your ₹10 lakh be after 3 years?' as a slider from ₹5 L to ₹20 L. Before the big lesson: 'Which jar did best over the 3 years?' Reveal each over the guess with an off-by pill. The 'Gold and FD beat Stocks and Crypto' surprise lands far harder when the player had just bet on crypto. (Benchmark #1 Guess first, then reveal — NYT You Draw It)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "L",
+     "text": "Build the Mix Mirror finale: run the player's exact mix through three invented market stories (boom-crash-recovery as today, 'steady climb', 'slow grind'), and draw each mix's outcome range as a horizontal bar. Show the player's mix next to 'All FD', 'Even split' and 'All-in crypto'. The lesson becomes visible: no mix wins every story, and spread-out mixes have the narrowest range. This builds on the earlier audit's 'different market stories' fix. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Count-up] [Kit: Sound] [Kit: Life bar / timeline] Make each year a 10-second beat, not a table: a timeline across the top (Year 1 · 2 · 3), the jars rise or drain with a count-up of the total, crypto's jar visibly overflows in the bull run and then cracks in the crash, and gold glows in the crash. Show one 'what just happened' line with a rupee figure for the player's biggest jar, then the year's question. (Benchmark #12 Juice — Juice it or lose it)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Result rows] [Kit: Personal best] Upgrade 'Investor DNA' into a share-ready identity card with five warm archetypes: The Calm Spreader, The Gullak Guardian (FD-heavy), The Gold Keeper, The Thrill Seeker, The Basket Believer (mutual-fund-heavy). Each gets one strength, one blind spot and one next step ('Try the same mix with 3 coins moved from FD to a mutual fund'). Store the best (narrowest-range) mix in localStorage as a personal best. (Benchmark #10 End on an identity — BitLife ribbons / Sorted money personality quiz)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "End with a sandbox: after the archetype, unlock 'Play with it', with six coin jars still editable and the three-story range bars redrawing live as coins move. That is the natural replay, because people will try 'what if I'd skipped crypto?' on their own. Label the sandbox 'Invented market stories, not forecasts'. (Benchmark #16 End with a sandbox — Parable of the Polygons)"
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Top bar] [Kit: Primary / sticky / outline / WhatsApp buttons] Fit each stage into one 390×844 screen: the jars in a 3×2 grid in the top half, a sticky coin tray and 'Run 3 years →' button in the thumb zone, and the 'remaining' figure turned into the coin tray itself (coins left = money left). Drop the duplicated page banner above the game frame and the 'PART 1 / PART 2' pills for solo players."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Replace emoji jars (📈 🧺 🥇 ₿) with one set of illustrated glass jars in brand colours, each with a small outline icon and a written label. Keep the jar art at or under 30 KB each as WebP. The coins are the only gold; use coral for loss and teal for growth, as in the Wealth Hack. (Quality bar §1.4 Imagery)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text)] [Kit: Share image card] The end screen's primary button is 'Share my money DNA' with the line above. The Story card shows the archetype name in Lora, the six-jar mix as a small donut (percentages only, no rupees), the Mix Mirror bar, and 'Invented market stories · education only'. A secondary button, 'Dare a friend to beat my range', opens the same text with 'Can your mix stay calmer?' added. (Benchmark #2 Spoiler-free result card — Wordle / Spotify Wrapped)"
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Assumption footer] Add a 'What's crypto?' chip: 'Not regulated like shares or mutual funds in India; included here to show what big swings feel like.' Make sure no archetype or 'next step' says any asset is needed ('every portfolio needs some gold' becomes 'many families keep a little gold because it has often held up in crashes'). Print 'Invented returns, not a forecast' on every year screen, not only in the footer."
+    }
+   ]
+  },
+  {
+   "slug": "killer-short-squeeze",
+   "title": "The Short Squeeze — killer upgrade",
+   "url": "https://games.investingformummies.com/short-squeeze",
+   "file": "short-squeeze-sim.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "The Short Squeeze becomes a 3-minute push-your-luck game. Your friend swears a stock will crash; you bet against it (or wisely don't); then the price ticks up in front of you, your loss counts in rupees, and one big 'Get me out' button sits under your thumb until the margin call drags you out. The screenshot moment is the final meter: 'You held until it was 6× your bet. The most you could ever have won was 1×.' That is the asymmetry of short selling, felt rather than read.",
+   "load": "",
+   "share_idea": "📉 *The Short Squeeze* — I bet a 'sure-fire loser' stock would fall... and got squeezed at 6× my bet 😱 (the most I could ever win was 1×). How long would YOU hold? 👇 games.investingformummies.com/short-squeeze _(made-up company and prices, education only, not advice)_",
+   "share_moment": "Your friend swears this stock will crash. Bet against it? Most people can't let go in time. · 3 minutes",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Open on the decision, not the lesson. Screen 1 is a WhatsApp-style message from a friend ('This Rent-a-Ride stock is going to crash, bet against it!') with two buttons: 'Bet ₹10,000 it falls' and 'Stay out'. Staying out is a real path: the player watches the squeeze as a spectator and earns 'The Calm Spectator' ending. The current Scene 1 explainer (steps, slider, bangles) moves behind a 'How does betting against a stock work? ▸' sheet that the game offers right after the choice. (Benchmark #3 First tap is the first decision — SPENT; #5 A dare — SPENT 'PROVE IT')"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Count-up + Sound] Replace the 'Hold / Cut at $200' pause with a live push-your-luck loop. The price ticks up every 0.6 seconds along a squeeze curve, a big loss counter counts in rupees ('You owe ₹38,000 more than you got'), a rising tick sound speeds up, and one 64 px 'Get me out' button sits in the thumb zone. At 5× the bet a 'MARGIN CALL' stamp slams down and closes the bet for them. Randomise the peak each run (sometimes it fizzles at 1.8×), so holding can't be memorised and the lesson is the risk, not the script. (Benchmark #6 One live number — SPENT; #12 Juice — 'Juice it or lose it')"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Feedback callout + off-by pill + \"your guess, put to work\"] Retire the 3-question end quiz and fold it into two guesses during play. Before betting: 'You bet ₹10,000 that it falls. What's the most you could lose?', with chips '₹10,000 · ₹50,000 · No limit'. After the squeeze: 'Drag the pin to where you think the price peaked', then the real peak animates and an off-by pill appears. The asymmetry bar chart then confirms what they just guessed. (Benchmark #1 Guess first, then reveal — NYT 'You Draw It'; anti-pattern: trivia dressed up as a game)"
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Swap the named real company and hedge funds for a fictional cast: 'Rent-a-Ride Ltd' with two big holders, 'Banyan Capital' and 'Peacock Partners', who refuse to lend their shares. Price everything in rupees, so the gold-bangles analogy and the game use the same currency. Add a 'Where does this come from?' sheet that cites a well-documented real squeeze (GameStop, January 2021) as the inspiration, so no unverified dated claims remain on screen. (Benchmark #18 Show your sources and assumptions — SPENT sources PDF)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Show the chain reaction as falling dominoes. Five short-seller avatars stand on a price thermometer; the player taps to push the first margin call, and each forced buy tips the next one while the thermometer climbs (₹200 → ₹350 → ₹600 → ₹850) with a thud per domino. Then the ending: the panic buying stops and the price slides back down. It replaces six text rows revealed by a 'What happens next?' button, and makes 'scarce shares make it worse' something people see. (Benchmark #12 Juice — 'Juice it or lose it')"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Result rows + Personal best] End on an archetype plus one sentence in multiples, not money. The archetypes: 'The Quick Cutter' (out before 2×), 'The Hold-On Hoper' (squeezed at the margin call), 'The Lucky Survivor' (a fizzled run) and 'The Calm Spectator' (stayed out, the wisest). The sentence: 'You held until it was 6× your bet. The most you could ever have won was 1×.' Then three takeaways at most, and 'Your best: cut at 1.4×' stored on the device. (Benchmark #10 End on an identity — BitLife; #17 One personal sentence — NYT rent-or-buy)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Offer one specific replay: 'Replay with a safety net: set your exit at 1.5× before it starts'. Then show the two runs side by side ('No net: squeezed at 5× · With net: out at 1.5×'). This teaches stop-losses through the player's own runs rather than a definition. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK)"
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Primary / sticky / outline / WhatsApp buttons + Top bar] One beat per screen on phones. The live price and loss sit in the top bar, the chart is full-bleed at 358 px wide, and the single action ('Bet', 'Get me out', 'Push the first domino') is sticky in the bottom third. Replace the 'Scene 1 of 5' dots with '3 min' plus progress dots, and remove the Back buttons during the live squeeze so there is exactly one choice on screen. (Benchmark #13 Say how long it takes — Evolution of Trust)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text) + Share image card] Share in multiples and emoji, never rupees: '😱 squeezed at 6×', '✂️ cut at 1.4×' or '🧘 stayed out', with the dare 'How long would YOU hold?'. The Story card shows the squeeze curve with the player's exit dot and the line 'Most you could win: 1×'. Give the page its own og:image: 'Would you hold? Most people can't let go.' (Benchmark #2 Spoiler-free result card — Wordle; #4 Link preview as the cover)"
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Kicker + Title block + Assumption footer] Rework the intro as kicker 'A 3-MINUTE NERVE TEST', title 'The short *squeeze*' and the friend's-message dare as the hook. Close every ending with one calm line for mums: 'Betting against shares is a professional's game with no ceiling on losses. Long-term investing lets you sleep.' The footer reads 'Made-up company and prices, inspired by real squeezes. Education only.'"
+    }
+   ]
+  },
+  {
+   "slug": "killer-market-madness-2",
+   "title": "Market Madness 2 — killer upgrade",
+   "url": "https://games.investingformummies.com/market-madness-2",
+   "file": "mm2_content.html",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "Make Market Madness 2 a game about feelings, not stock picking. Six rounds on a fictional bazaar of companies, while a family WhatsApp group pings panic and FOMO at you. All along, a ghost 'Do-Nothing Twin' quietly holds whatever you bought in Round 1. The screenshot-and-forward moment is the Feelings Receipt at the end: a shop-style bill listing each emotional move ('Panic sale, Round 2 · FOMO buy, Round 3'), what each one cost against your twin, and the punchline 'Your twin did nothing. Your twin won.'",
+   "load": "",
+   "share_idea": "🧾 I raced my own do-nothing twin through a market crash… and my feelings lost 😅 Can you beat yours? games.investingformummies.com/market-madness-2  _(Fictional companies and a made-up price path. Education only.)_",
+   "share_moment": "Your twin does nothing for 6 rounds. You get to react. Bet you can't beat your twin.",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add the Do-Nothing Twin. After the player's first move, a faded twin avatar appears in the top bar and simply holds that first portfolio for all six rounds. Show both live numbers side by side every round, so the cost of each later trade is visible as it happens. This replaces the three abstract AI investors as the main rival, and keeps them as a secondary 'How others played' row. (Benchmark #6 One live number you can't stop watching — SPENT balance meter)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Result rows] [Kit: Count-up] Build the Feelings Receipt as the payoff: a printed-bill card that lists every trade the player made, tagged by emotion (Panic sale / FOMO buy / Chasing / Calm hold), each with its rupee cost or gain against the twin, counting up line by line to a 'Total cost of feelings' row. End with one tailored sentence ('Your one panic sale cost more than all your good calls earned'). (Benchmark #17 One personal sentence as the answer — NYT rent-or-buy)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add the family WhatsApp group as the pressure mechanic: before each round, one or two chat bubbles slide in from 'Pinky Aunty', 'Rohan (cousin, trader)' and 'Office group' ('Sell everything!! Market will go to zero 😱', 'Dabba Delivery doubling, last chance'). The messages are fictional and pinned to the round's mood. Each one is a nudge the player can follow or ignore, and the Receipt later credits which nudges they obeyed. (Benchmark #20 Local life events, local money — SEBI Check QR game)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Feedback callout + off-by pill + \"your guess, put to work\"] Add guess-then-reveal at both ends. On the intro, ask the player to bet on who will finish first (You, Twin, Panicky Pinky, Picker Priya, Do-Nothing Didi). Before the final board, ask: 'Will you beat your twin? Yes / No'. Reveal the podium over their bet with one line: 'You bet on yourself. Your twin won by doing nothing.' (Benchmark #1 Guess first, then reveal — NYT You Draw It)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Offer a tempting lifeline in the bull round: 'Borrow ₹2 lakh from QuickPaisa app (fictional) to buy more?'. In the crash it doubles the loss and adds interest, and a callout explains why borrowing to invest magnifies the fall. It is optional, but it is the move the Receipt highlights in red. (Benchmark #14 Desperate lifelines with a hidden price — SPENT 'Need cash?')"
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Top bar] [Kit: Primary / sticky / outline / WhatsApp buttons] Collapse the dashboard to one phone screen (today it is about 1.6 screens). Show a top bar with the IFM mark, round dots, You vs Twin; one event card; a horizontally swipeable strip of six company cards with sparkline and price; and a sticky bottom bar with Buy · Sell · Hold, all at least 56 px tall. Move the bid/ask box and the order-type tabs behind a 'Learn the buttons ▸' chip, so the first screen holds no jargon."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Tokens: Daylight] Replace the plain list of names with a painted 'bazaar' of six fictional companies, each a shopfront character with its own personality: 'Bharat Mega Industries' (big, steady), 'Ghar Ghar Gas', 'Dabba Delivery', 'Hawa Wind Power' (small, wild), and others. Use the same art on the share card. Keep each shopfront at or under 30 KB, and label every size band in words as well as colour. This builds on the earlier audit's swap to fictional names."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Sound] [Kit: Confetti] Add juice in the rounds: in the crash, prices flash coral with a soft low thud (no strobe) and the phone buzzes once; in the recovery, a coin chime plays and the twin's number glows gold. Confetti only if the player beats the twin. Each round's 'How did this feel?' prompt gets three one-tap mood chips (😰 / 😐 / 😎), which feed the Receipt's emotion tags. (Benchmark #12 Juice — Juice it or lose it)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text)] [Kit: Share image card] The end screen's primary button is 'Share my receipt'. The text is the share line above. The Story card shows the Feelings Receipt with emotion tags and win/lose ticks but no rupee amounts, the 'Your twin won' (or 'You beat your twin!') stamp, and the URL. Secondary button: 'Replay — no WhatsApp group this time', which reruns the same price path without the nudges so they can compare. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK)"
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Assumption footer] Put 'Fictional companies · made-up price path · not a forecast' on the Receipt and in the share text. Write the WhatsApp-group messages as red-flag lessons ('guaranteed', 'last chance', 'my friend's tip'), with a tap-to-reveal 'Red flag' tag, and never as tips that pay off. No real company, app or person is named anywhere, including in the chat bubbles."
+    }
+   ]
+  },
+  {
+   "slug": "killer-mix-portfolio",
+   "title": "Mix My Portfolio — killer upgrade",
+   "url": "https://games.investingformummies.com/classic?open=mixport",
+   "file": "classic.html#mixport",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "Five women, five stages of life, one money mix each. You drop 20 coins into five jars for Neha (25) through Kavita (60), then fast-forward her life through a smooth market and a rough one and see whether her goal is met: school fees ready, retirement income lasting. The screenshot moment is the 'Five lives' card, with five illustrated portraits each stamped Sorted, Close call or Rethink under an archetype such as 'The Life-Stage Whisperer'.",
+   "load": "",
+   "share_idea": "🥧 *Mix My Portfolio*: I set the money mix for 5 women aged 25 to 60 🟢🟢🟡🟢🟢 and I'm *The Life-Stage Whisperer*. Can you match a mix to a life? 👇 games.investingformummies.com/classic?open=mixport _(rule-of-thumb ranges and made-up market stories, education only, not advice)_",
+   "share_moment": "Neha is 25. Kavita is 60. Should their money look the same? Set five money mixes · 4 minutes",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Replace the five 3 px sliders, which silently push each other around, with 20 coins (each is 5% of her money) that you tap into five jars: Growth (shares), Safe (FD and bonds), Property, Gold and Cash. A counter says '6 coins left', the jars fill visibly, and 'Lock in Meera's mix →' only appears once all 20 are placed. Every tap is a deliberate choice, and nothing moves on its own. Build the jar component once and share it with the killer Asset Boss (its ten-coin jars) so the two games feel like one family. (Benchmark #3 First tap is the first decision — SPENT)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Feedback callout + off-by pill + \"your guess, put to work\"] After lock-in, fast-forward her life instead of only scoring the mix. First the player guesses: 'Meera needs ₹6 lakh for school fees in 5 years. The market crashes in year 4. Will the fees be ready? Yes / Close / No.' Then her goal bar plays out under two made-up stories, 'smooth years' and 'crash just before she needs it'. Anita (retiring in 5 years) sees the same crash-at-the-wrong-time risk, and Kavita (60) sees whether her monthly income lasts 25 years. The lesson that money needed soon should be safe is felt, not told. (Benchmark #1 Guess first, then reveal — NYT You Draw It; #8 Compress decades into minutes — NGPF STAX)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Count-up + Sound] Reveal jar by jar instead of the You / Ideal / +/- table in 10 px type. Each jar's rule-of-thumb range slides in as a green zone beside her coins. A rising chime plays for each jar inside the zone and a soft thud for each one outside, then the round score counts up. Mark misses with a word as well as a colour ('2 coins too many in Growth for a goal 5 years away'). (Benchmark #12 Juice: numbers that roll, coins that land — Juice it or lose it)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Result rows + Personal best] End on a 'Five lives' card: five portraits in a row, each stamped Sorted, Close call or Rethink, then one tailored line from the player's most common miss ('You gave the women near retirement too much growth money. Money you need within 5 years should mostly be safe'), and an archetype as the headline: The Life-Stage Whisperer (5 in range), The Bold Planner (too much growth for the older women), The Careful Guardian (too little growth for the young ones), or The Balancer. This replaces the hard-coded 'Portfolio Master! 🏆', which today shows even at 250/500 with one star (seen live). (Benchmark #10 End on an identity, not a score — BitLife ribbons, Sorted quiz)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "Add a 'same age, different life' twist round and a bigger persona pool. In round 3, two 40-year-olds appear side by side: Lakshmi, whose daughter's wedding is in 2 years, and Farah, who is saving for retirement in 20. Most players give them the same mix, and the reveal shows why the goal date matters more than age ('100 minus age' fails for Lakshmi). On replay, draw 5 from a pool of about 10 Indian-life personas (a freelancer with uneven income, a widow living on a pension, a couple saving a home deposit in 3 years) so each play feels new. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK; #20 Local life events — Visa Financial Football)"
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Tokens: Daylight] Replace the emoji personas (👩‍💼 👵 🧓) with five painted portrait cards in the house illustration style (like Slash the Scam's medallions), each ≤30 KB WebP. Draw five simple jar illustrations, and move the purple/blue/orange Material gradient and slider colours onto brand colours: Growth teal, Safe navy, Gold gold, Property terracotta, Cash mist grey. The jars should read as five objects you fill, not a chart legend in 9 px type."
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Top bar + Title block + Primary / sticky / outline / WhatsApp buttons] On its own page, use the intro shape: kicker '5 WOMEN · 4 MINUTES', title 'One mix for *every age?*', the hook, and 'Meet Neha →'. In play, one screen holds the persona card at the top, the five jars in a row at thumb height, and a sticky 56 px 'Lock in →' button. Drop today's double header (a big 'Mix My Portfolio' banner, then a second compact banner with the same name), and leave the classic page's floating Menu / Suggest pills behind, since they cover the Lock button on a 390 px screen."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Write each persona as a moment with a rupee goal rather than a profile: 'Meera, 40: ₹6 lakh of school fees due in 2031. Two kids. Can't afford a bad year right before.' Put the asset words behind tap chips ('Growth = shares of companies: grows most over long periods, can drop a lot in a year'; 'Safe = FDs and bonds: steadier, grows slowly'). Present '100 minus age' as a rule your aunt swears by, to be tested, not as the hint, so the twist round has something to overturn."
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text) + Share image card] The WhatsApp line is the five coloured stamps plus the archetype, with no money and no mix percentages, and it links straight back to the game. A 1080×1920 card shows the five portraits with their stamps under the archetype name. Once the game has its own page, point the link and an own og:image ('Neha is 25. Kavita is 60. Same money mix?') at that page instead of classic?open=mixport. (Benchmark #2 Spoiler-free result card — Wordle; #4 Link preview as the cover — WhatsApp link-preview rules)"
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Assumption footer] The fast-forward must print its made-up numbers on screen: 'Smooth story: Growth +11% a year, Safe 7%, Gold 8%. Rough story: Growth −30% in the crash year. Made-up to show the idea; real returns vary and nothing is guaranteed.' Use asset types only, never a fund name. The final card should say 'a rule-of-thumb range for someone in Meera's situation, not advice for you'. Do not add a 'set your own mix' round, because that would be personal allocation advice."
+    }
+   ]
+  },
+  {
+   "slug": "killer-rollercoaster",
+   "title": "The Market Rollercoaster — killer upgrade",
+   "url": "https://games.investingformummies.com/classic?open=game1",
+   "file": "classic.html#game1",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "Put the player in the front seat. A rollercoaster car rides Vikram's six-year price track, and at each of the two drops it stops at the bottom and asks: stay on, pause the SIP, or get off. Each purchase drops a 'units' coin into a jar, and the crash-year coin is visibly the fattest. The screenshot moment is the finish line: your ride against 'Stayed-on Vikram', with the track showing exactly where you jumped off, under the line 'Getting off at the bottom cost ₹11,216.'",
+   "load": "",
+   "share_idea": "🎢 *The Market Rollercoaster*: 2 crashes, and I stayed on both times ✅✅. I'm *The Steady Rider*. Would you have jumped off at the bottom? 👇 games.investingformummies.com/classic?open=game1 _(made-up fund prices, education only, not advice)_",
+   "share_moment": "Your money just dropped 20%. Your sister is selling. Stay on the ride, or get off? · 2 minutes",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Turn the four-question quiz into a ride with consequences. The six years become a drawn track, and the car stops at the bottom of Year 3 (−20%) and Year 5 (−10%) with three big buttons: 'Stay on (keep investing)', 'Pause my SIP' and 'Get off (sell everything)', plus an optional 'Top up ₹10,000'. The ride then finishes with your choices applied. Using the game's own prices: stay on ends at ₹68,016 from ₹60,000; pause from Year 3 to 5 ends at about ₹62,300; get off in Year 3 ends at about ₹56,800; topping up in both dips ends at about ₹93,100 from ₹80,000. (Benchmark #8 Compress decades into minutes — NGPF STAX; anti-pattern 'Trivia dressed up as a game')"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Feedback callout + off-by pill + \"your guess, put to work\"] Before the finish, ask the player to drag a slider to guess Vikram's total: 'He put in ₹60,000 through two crashes. What's it worth now?' (range ₹40,000 to ₹1,00,000). Then the real ₹68,016 rolls in over their guess with an off-by pill ('You guessed ₹55,000, ₹13,016 short. The crash years helped him'). This replaces the three-option question, which the stat chips answer before it is asked. (Benchmark #1 Guess first, then reveal — NYT You Draw It)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Count-up + Sound] Make units something you can see. Each purchase drops a coin into a 'units jar', with the coin sized by units bought, so the Year 3 coin (98.8 units) lands fat with a clink and a gold flash: 'Sale! Same ₹10,000, more units.' One live number sits at the top showing 'units owned · worth now'. It turns coral when it falls and gold when it rises. This replaces the five-column table row (year, bar, %, price, units) that is cramped on a phone. (Benchmark #6 One live number you can't stop watching — SPENT; #12 Juice — Duolingo streak animation)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Result rows + Count-up] End on a finish-line card with three rows: 'Stayed on: ₹68,016', 'Your ride: ₹X' (highlighted), and 'Got off at the bottom: ₹56,800'. Beside them, the track carries a pin that says 'You got off here' or 'You held on here'. Under that goes a kind archetype with one next step: The Steady Rider, The Bargain Hunter (topped up), The Nervous Passenger (paused) or The Early Exit (sold). For example: 'Next time markets drop, set a 30-day do-nothing reminder before you touch anything.' This replaces the generic quote box. (Benchmark #10 End on an identity — BitLife; anti-pattern 'Doom with no way forward')"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Add one-tap replays that change one thing: 'Ride again, but don't get off' shows both endings side by side. After the first ride, a 'Rough ride' track unlocks, with a 35% drop in Year 2 and a slow three-year climb that ends with only a small gain. Players then learn that staying on is about not locking in a loss, not a guaranteed win. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK)"
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Tokens: Daylight] Draw the track as one SVG generated from the six prices, so the ride is the chart: navy rails, a gold car with a mum and child in it, coral dips and teal climbs, and six station flags labelled with years. On a 390 px phone it fits one screen width with a fixed 220 px-high stage. Keep it under 30 KB, with no image files."
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Top bar + Title block + Primary / sticky / outline / WhatsApp buttons] On its own page, use the intro shape: kicker '6 YEARS · 2 CRASHES · 2 MINUTES', title 'The Market *Rollercoaster*', the hook, and 'Get on the ride →'. Play goes one stop per screen, with the three decision buttons stacked 56 px tall in the thumb zone. That removes today's long scroll of greyed 'locked' step cards and the floating Menu / Suggest pills, which sit over the 'Reveal Next Year' button on a phone (seen live)."
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Make the first stop feel real: 'Your ₹30,000 is now ₹26,800. The family WhatsApp group is saying sell. Your sister already has.' Explain jargon as you go: 'price per unit (called NAV)', and 'your ₹10,000 buys more units when prices are low. That's called rupee-cost averaging.' Use buttons that say what you get ('Stay on →'), and use 'Not quite, here's the twist' instead of 'costly mistake!'. (Benchmark #20 Local life events, local money — SEBI Check QR game)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text) + Share image card] The WhatsApp line shows one emoji per drop (✅ stayed on, ⏸️ paused, 🚪 got off, ➕ topped up) plus the archetype, with no rupee figures. The 9:16 card shows the track with the player's pins on it. Link to the game's own page once it is promoted, and give that page its own og:image ('Stay on the ride, or get off?'). (Benchmark #2 Spoiler-free result card — Wordle)"
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Assumption footer] Label the track 'a made-up fund's prices, to show the idea', and under every ending write '(made-up prices; real markets can fall further and take longer to recover; nothing is guaranteed)'. Frame the top-up choice as 'only if you have spare money and an emergency fund already in place', not as the winning move. Never show a fund name."
+    }
+   ]
+  },
+  {
+   "slug": "killer-chaiboss",
+   "title": "ChaiBoss Ltd — killer upgrade",
+   "url": "https://games.investingformummies.com/classic?open=game7",
+   "file": "classic.html#game7",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "You don't watch ChaiBoss, you run it. Each quarter you make a boss decision (launch a ₹10 kulhad chai, open five cities, pay the first dividend, quietly cut the milk), then drag a needle to predict what the market does to your share price. The reveal pours the answer into a chai glass: the tea level is profit per share and the steam is market mood. The screenshot moment is the twist quarter, 'Profits up 20%. Share price DOWN 6%. The market expected 30%.', with your needle pointing the wrong way.",
+   "load": "",
+   "share_idea": "☕ *ChaiBoss Ltd*: I ran a chai company for 8 quarters and called the share price 🎯🎯☕🎯❌🎯☕❌. Profits went UP and the price went DOWN. Can you work out why? 👇 games.investingformummies.com/classic?open=game7 _(made-up company, education only, not advice)_",
+   "share_moment": "Your chai company just made record profits. So why did the share price fall? Run ChaiBoss for 8 quarters · 4 minutes",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "L",
+     "text": "Make the intro's promise true: you run the company. Each quarter has two beats. First, a boss decision with a trade-off, for example Q2 when a rival launches cheaper chai: 'Cut your price to ₹8' (profit per share falls) or 'Stay premium and advertise' (costs now, mood holds). Second, the market reacts. Some quarters are news you cannot control (a rate cut, milk prices). The decisions change your share's path, and the greedy choice can backfire: cutting milk quality lifts this quarter's profit, then a viral complaint crushes mood the next quarter. (Anti-pattern 'Trivia dressed up as a game'; Benchmark #7 Teach in the result, not before the choice — SPENT)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Feedback callout + off-by pill + \"your guess, put to work\"] Replace the A/B/C answers with a price needle. After each headline, the player drags a needle on a ₹50 to ₹250 dial to predict the new share price. The real price swings in over it with an off-by pill: within ₹10 is 🎯, within ₹25 is ☕, further off is ❌. A needle cannot show 'always option A', so the answer-position problem goes away by design, and every guess teaches the size of the move, not just its direction. (Benchmark #1 Guess first, then reveal — NYT You Draw It)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "Add the 'priced in' twist quarter that the whole game builds towards: 'Record quarter: profit per share up 20%!' Most players drag the needle up. Then the reveal: analysts had expected 30%, mood drops from 14 to 11, and the price falls about 6% (₹168 to ₹158). A two-line callout explains why ('the share price already contained the good news everyone expected'). This is the counter-intuitive moment people will forward, and it is the share hook. (Benchmark #5 A dare that challenges the player's self-image — SPENT)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Count-up + Sound] Show Price = Profit per share × Mood as a chai glass, not four number tiles. The tea level is profit per share in ₹, the steam height is the mood multiplier, and the price label on the glass counts up or down as both change. A pour animates when profit rises, steam puffs when mood rises and fades when it falls, and a kettle whistle plays on big moves. The formula line under it ('₹12 × 11 = ₹132') stays, but now the picture explains it. (Benchmark #12 Juice — Juice it or lose it)"
+    },
+    {
+     "area": "Copy",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Rename the jargon on screen: EPS becomes 'Profit per share (EPS)' and P/E becomes 'Mood multiplier (P/E): investors pay ₹11 for every ₹1 of yearly profit'. Keep the four 'What is…?' chips, but attach each to the number it explains instead of a row above the story. Use sentence case and buttons that say what you get ('Set my price →', 'Next quarter →'). Retire 'Let's Brew Some Profits ☕ →' and the grade titles ('Stock Market Star!', 'Growing Your Knowledge!')."
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Result rows + Personal best] End on an 'Annual report' card styled like a company report: the 8-quarter price line with the player's needle guesses as dots, and three rows. 'Mood moved your price more than profit in 5 of 8 quarters.' 'Best call: the rate-cut rally.' 'The one that fooled you: record profits, falling price.' Headline it with an archetype: The Mood Reader, The Numbers Purist (followed profit, missed mood) or The Eternal Optimist (always guessed up). Add one tailored line and a personal best. (Benchmark #10 End on an identity — How Bad Is Your Spotify)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "For replay, deal one of three made-up companies at random: ChaiBoss, DosaDost Foods and Kulfi Cart Co. Each has a different order of events and a different twist (for example, bad news everyone expected, so the price rises; or a dividend quarter where the price dips on the payout date). 'Good news means up' then stops being a winning strategy, and a second play teaches something new. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK)"
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Top bar + Title block + Primary / sticky / outline / WhatsApp buttons] On its own page, use the intro shape: kicker '8 QUARTERS · 4 MINUTES', title 'Chai*Boss* Ltd', the hook, and 'Open the shop →'. Play goes one screen per beat (headline → decision → needle → reveal), with Price · Profit/share · Mood in one slim sticky row in the top bar instead of the tall stacked navy pills seen live on a phone. Remove the doubled 'The ChaiBoss Challenge' header and the classic page's floating Menu / Suggest pills."
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text) + Share image card] The WhatsApp line is the 8-symbol row of calls (🎯 ☕ ❌) plus the twist as a question, with no player money involved. The 9:16 card shows the chai glass and the 8-quarter price line under the archetype. Link to the game's own page once promoted, and give it an og:image reading 'Profits up. Price down. Why?' (Benchmark #2 Spoiler-free result card — Wordle; #4 Link preview as the cover)"
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Assumption footer] The 'NSE: CBOSS' ticker makes a made-up company look listed. Change it to 'Fictional company, not listed anywhere'. The 'Market Cap' explainer names TCS and Reliance as examples of 'generally safer' large caps. Replace them with made-up names, and drop 'safer' in favour of 'usually swing less'. The player only ever predicts a price, and nothing on screen says buy or sell."
+    }
+   ]
+  },
+  {
+   "slug": "killer-timing-trap",
+   "title": "The Timing Trap — killer upgrade",
+   "url": "https://games.investingformummies.com/classic?open=nifty26",
+   "file": "classic.html#nifty26",
+   "kind": "solo",
+   "audience": "Mummies",
+   "verdict": "Make the player the fourth investor. Lucky, Steady and Worried race through 26 real years of the Nifty 50 index, and you race beside them with the same ₹1 lakh a year. At each crash (2000, 2008, 2011, 2020) you choose: keep going, skip a year, or sell everything for an FD. The screenshot moment is the four-lane finish: Worried Waris, who bought at the top every single year, ends on about ₹1.49 crore, while someone who sold once in 2008 ends on about ₹94 lakh. The unluckiest investor beats the panic seller by more than ₹50 lakh.",
+   "load": "",
+   "share_idea": "📅 *The Timing Trap*: 26 years of the Nifty 50 in 3 minutes. I sat through 4 crashes ✅✅✅✅ and finished ahead of Worried Waris, who bought at the top every year. Could you sit still through 2008? 👇 games.investingformummies.com/classic?open=nifty26 _(real Nifty 50 index levels 1996–2021, price only, before tax and costs; past returns are not a promise)_",
+   "share_moment": "The unluckiest investor bought at the top every year for 26 years, and still ended with crores. Can you beat him? · 3 minutes",
+   "items": [
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "Add a fourth lane: 'You'. Today the player only watches. The killer version gives you the same ₹1 lakh every January, and each crash card (2000, 2008, 2011, 2020) asks 'Your money just fell 30%. What do you do?' with three big buttons: 'Keep investing', 'Skip next year (keep it in savings)' and 'Sell everything, move to an FD'. With the game's own data, staying in ends at about ₹1.88 Cr (same as Steady). Selling once at the end of 2008 (sold money and the 2009 instalment into an FD at 7%, investing again from 2010) ends at about ₹94 L. Skipping the year after every down year (that money kept in savings at 4%) ends at about ₹1.40 Cr. (Benchmark #8 Compress decades into minutes — NGPF STAX; #14 Desperate lifelines with a hidden price — SPENT)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Feedback callout + off-by pill + \"your guess, put to work\"] Before the result, ask for a guess: 'Lucky bought at every year's lowest point. Waris bought at every year's highest. Drag to guess how much more Lucky ended with.' The slider runs from ₹0 to ₹2 Cr. Then reveal about ₹74 L more (₹2.22 Cr vs ₹1.49 Cr), and a second line: 'Steady, who just invested every January with zero effort, was about ₹34 L behind perfect, and nobody can actually do what Lucky did.' That makes the realistic choice Steady versus panic, which is the honest lesson. (Benchmark #1 Guess first, then reveal — NYT You Draw It)"
+    },
+    {
+     "area": "Copy",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Money formatting + Count-up] Talk in rupees, not CAGR. Every card, the chart axis (today labelled 5.8%, 10.1%, 12.5%, 14.2%) and the result heroes show only annualised % returns, which most mums cannot picture. Lead with the rupee value counting up ('₹1.88 Cr from ₹26 L put in') and show the % as a quiet second line ('about 12.7% a year'). The current headline 'the CAGR gap is just 2.3% per year' should become 'Perfect timing vs worst timing: about ₹74 L apart. Panicking once: about ₹94 L behind staying put.'"
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "S",
+     "text": "Rebuild the crash card for a phone. Today it lays out the title, three investor cards, 'Why this matters' and the button side by side, so on a 390 px screen the lesson is squeezed into a column about one word wide and runs off the card (seen live on the 2000 Dot-com card). Stack it instead: headline and one line on what happened, the four lane values, a two-line lesson, then the three decision buttons, 56 px tall, in the thumb zone. Raise the 0.42–0.5 rem (7–8 px) labels to at least 12 px."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "text": "[Kit: Sound + Count-up] Turn the line chart into a four-lane race. Each investor is a token (🍀 Lucky, 📅 Steady, 😰 Waris, ⭐ You) climbing a lane whose height is the portfolio's value, with a year ticker from 1996 to 2021 and a newspaper headline that flips for each event. Crash years shake the lanes with a soft low thud, recoveries chime, and a faint dashed fifth lane shows 'all 26 lakh in an FD at 7%: about ₹74 L', so 'the real risk is not being invested' is finally visible rather than just asserted. Keep the whole run to about 60 seconds by default. (Benchmark #6 One live number you can't stop watching — SPENT; #12 Juice)"
+    },
+    {
+     "area": "Game design",
+     "priority": "High",
+     "effort": "M",
+     "text": "[Kit: Result rows + Life bar / timeline] End on a 'four lanes' card: rupee totals for all four investors with yours highlighted, and a timeline strip marking the years you skipped or sold, each labelled with what it cost compared with staying in. Head it with a kind archetype and one next step: The Statue (never flinched), The Skipper, or The Bailout ('Write down today what you'll do in the next crash, then wait 30 days before acting on a scary headline'). Replace the three takeaway paragraphs in 10 px type. (Benchmark #10 End on an identity — BitLife; #17 One personal sentence as the answer — NYT rent-or-buy)"
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "text": "Add replays that change one thing. 'Replay without selling' reruns the same 26 years with your sells turned into stays and shows both lanes side by side. 'Start in 2007' begins at the peak just before the 2008 crash, the scariest possible start. Using the game's data to 2021, ₹1 lakh every January from 2007 (₹15 L in total) still reaches about ₹41 L for Steady and about ₹33 L for Waris, against about ₹27 L in a 7% FD. (Benchmark #15 Same game, one variable changed — NGPF PAYBACK)"
+    },
+    {
+     "area": "Mobile",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: Top bar + Title block + Primary / sticky / outline / WhatsApp buttons] On its own page, use the intro shape: kicker '26 YEARS · 4 CRASHES · 3 MINUTES', title 'The Timing *Trap*', the hook as a dare, the three rivals as small tokens, and 'Take your seat →'. That way the first tap is a seat in the race, not a setup table. Leave behind the classic page's banner and the floating Menu / Suggest pills that cover the controls. (Benchmark #3 First tap is the first decision — SPENT, Wordle)"
+    },
+    {
+     "area": "Share",
+     "priority": "High",
+     "effort": "S",
+     "text": "[Kit: WhatsApp share (text) + Share image card] The WhatsApp line is one emoji per crash (✅ stayed, ⏭️ skipped, 🏃 sold) plus where you finished against Waris, with no rupee amounts. The 9:16 card shows the four lanes as a podium. Link to the game's own page once promoted, and give it an og:image reading 'The unluckiest investor still made crores. Can you beat him?' (Benchmark #2 Spoiler-free result card — Wordle; #4 Link preview as the cover)"
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "text": "[Kit: Assumption footer] A market index (not a single stock or fund) is fine to use, but every rupee figure needs its basis on screen and in the share: 'Nifty 50 price index, excludes dividends, before tax and costs; FD assumed 7% a year; past returns are not a promise.' Rename the takeaway 'Crashes are the best buying opportunities' to 'In these 26 years, every crash was followed by a recovery, so staying put mattered more than timing'. Tag Lucky 'Nobody can do this. He's here to measure the gap.' Recompute every number above when the data is extended past 2021."
+    }
+   ]
+  }
+ ]
+}
