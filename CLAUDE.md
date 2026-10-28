@@ -29,9 +29,33 @@ Check `TZ=Asia/Kolkata date` first. Friday has no class, so it's the safest day 
 links to confirm they work; if anything is broken, roll back at once (`vercel rollback` from inside the
 project folder). This applies to every session and every scheduled task (user rule, 27 Oct 2026).
 
-**Do not deploy without the user's explicit approval.** The single standing exception is
-the `weekly-competitor-refresh` scheduled task (see below), and note that its
-auto-deploy ships *the whole working tree*, not just its own files.
+### Deploying: it depends on whether you changed DATA or CODE (user rule, 28 Oct 2026)
+
+**Pulling data on a schedule → deploy it yourself, don't wait to be asked.** New content is
+worth nothing sitting staged on a laptop; the point of the hub is that the team can see it.
+This now covers:
+
+| Routine | What it pulls |
+|---|---|
+| `daily-content-processor` (Tue + Fri 6pm) | new media from the Drive roots → catalogue |
+| `weekly-competitor-refresh` (Mon) | competitor + own-grid numbers |
+
+Both ship *the whole working tree*, not just their own files — so check `git status` before
+deploying and say in the report what else went out with it.
+
+**Changing code or the system → still ask first.** Anything that edits `index.html`, a game,
+the interpreter, a build script, `.vercelignore`, or the shape of the data model needs the
+user's explicit go-ahead, however small it looks.
+
+**The class window still wins over both.** Never deploy 11:00–14:00 IST Sat–Thu, even for a
+data pull. A scan that finishes inside that window **waits** and deploys after 14:00 — Hiral
+is running the games live and a mid-class deploy can break the room. Check
+`TZ=Asia/Kolkata date` before every deploy, scheduled or not.
+
+**Videos need two deploys, not one.** A new `type: Video` row stays invisible until
+`media-map.js` says it plays, and that map is written by probing the *live* server. So:
+deploy the clips → run `media-audit.py` → deploy the updated map. One deploy leaves new
+videos hidden and the report will wrongly say they are live.
 
 ---
 
