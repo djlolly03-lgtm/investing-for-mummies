@@ -990,5 +990,175 @@
  "IFM-652": {
   "person": [],
   "_why": "20 Oct 2026: hands-only b-roll, no faces — keep the presenter-inference rule from tagging Hiral."
+ },
+ "IFM-655": {
+  "_kit_why": "28 Oct 2026: assessed and kept OUT — finished reel with the title baked into the frame; same call as IFM-649.",
+  "person": [
+   "Hiral"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: Hiral alone in frame; nothing else identifiable."
+ },
+ "IFM-656": {
+  "_kit_why": "28 Oct 2026: assessed and kept OUT — catch-all folder of raw takes. Same call as IFM-646/654.",
+  "person": [
+   "Hiral"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: Hiral alone in frame; nothing else identifiable."
+ },
+ "IFM-657": {
+  "_kit_why": "28 Oct 2026: assessed and kept OUT — finished explainer with burned-in captions; same call as IFM-649.",
+  "person": [
+   "Hiral"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: Hiral alone in frame; nothing else identifiable."
+ },
+ "IFM-658": {
+  "_kit_why": "28 Oct 2026: assessed and kept OUT — catch-all folder of raw takes. Same call as IFM-646/654.",
+  "person": [
+   "Hiral"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: Hiral alone in frame; nothing else identifiable."
+ },
+ "IFM-659": {
+  "_kit_why": "28 Oct 2026: assessed and kept OUT — finished reel; the link opens an edit, not a frame."
+ },
+ "IFM-660": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "28 Oct 2026: Hiral is the subject and the game screen explains the frame, but she is in profile at the edge — rank 3, behind a click. Identity checked by face against IFM-655."
+ },
+ "IFM-667": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "28 Oct 2026: Hiral is clearly the subject, face visible, unposed and mid-sentence — kit-worthy. Rank 3 rather than 2 because it is a phone-video frame and only this run has checked the identity (by face against IFM-655); a human glance can promote it."
+ },
+ "IFM-671": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the green-top speaker in the late-Oct boardroom set is unconfirmed — possibly Hiral, but the teal-top speaker in the same room (IFM-642..645) was judged not to be. Left as Other Person until a human settles it; do not promote to Hiral or the Media Kit on framing alone."
+ },
+ "IFM-672": {
+  "person": [
+   "Other Person"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the green-top speaker in the late-Oct boardroom set is unconfirmed — possibly Hiral, but the teal-top speaker in the same room (IFM-642..645) was judged not to be. Left as Other Person until a human settles it; do not promote to Hiral or the Media Kit on framing alone."
+ },
+ "IFM-673": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the green-top speaker in the late-Oct boardroom set is unconfirmed — possibly Hiral, but the teal-top speaker in the same room (IFM-642..645) was judged not to be. Left as Other Person until a human settles it; do not promote to Hiral or the Media Kit on framing alone."
+ },
+ "IFM-674": {
+  "person": [
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the green-top speaker in the late-Oct boardroom set is unconfirmed — possibly Hiral, but the teal-top speaker in the same room (IFM-642..645) was judged not to be. Left as Other Person until a human settles it; do not promote to Hiral or the Media Kit on framing alone."
+ },
+ "IFM-675": {
+  "person": [
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the green-top speaker in the late-Oct boardroom set is unconfirmed — possibly Hiral, but the teal-top speaker in the same room (IFM-642..645) was judged not to be. Left as Other Person until a human settles it; do not promote to Hiral or the Media Kit on framing alone."
+ },
+ "IFM-676": {
+  "person": [
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the green-top speaker in the late-Oct boardroom set is unconfirmed — possibly Hiral, but the teal-top speaker in the same room (IFM-642..645) was judged not to be. Left as Other Person until a human settles it; do not promote to Hiral or the Media Kit on framing alone."
+ },
+ "IFM-678": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-679": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-680": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-681": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-682": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-683": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-684": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-685": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-686": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-687": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-688": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-689": {
+  "person": [
+   "Other Person",
+   "Student"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: the IYA facilitator is a young woman, NOT Hiral; stops the presenter-inference rule tagging her."
+ },
+ "IFM-690": {
+  "_kit_why": "28 Oct 2026: assessed and kept OUT — finished reel with captions and camcorder overlay baked in.",
+  "person": [
+   "Hiral"
+  ],
+  "_why": "28 Oct 2026, daily-content-processor: Hiral alone in frame; nothing else identifiable."
  }
 }

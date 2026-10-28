@@ -1,17 +1,23 @@
 {
- "generated_by": "daily-content-processor 2026-10-20",
- "note": "Fresh breadth-first scan of all 15 registered roots: 180 folders, 2,126 media files, 0 listing errors (single pass, 76 min). 172 files reached no row; all are now covered. Staged IFM-648..654 (7 rows) and updated IFM-629 (Dussehra cover arrived; title Navratri → Dussehra on the cover's evidence). 66 Aakara files mirrored into IFM Content Archive server-side; the Jio IPO OFS takes and the v4 IPO reel are ours and need no mirror. Library 608 → 608: all seven new rows are Video and stay hidden until preview clips are built. check-types --strict: 0 mislabelled. Both test suites pass.",
- "count": 17,
+ "generated_by": "daily-content-processor 2026-10-28",
+ "note": "Fresh breadth-first scan of all 15 registered roots: 183 folders, 2,106 media files, 0 listing errors. 179 new files plus 10 moved files: staged IFM-655..690 (36 rows) and updated IFM-651 and IFM-653. 14 third-party files (1.6 GB) mirrored into IFM Content Archive, all verified by size. ALARM: the videographer’s Rakshita folder went from 199 files to 0, see the first item. Library 608 → 612: the four new photo rows show now; the 32 new Video rows stay hidden until their preview clips are built. check-types --strict: 0 mislabelled. Both test suites pass.",
+ "count": 21,
  "items": [
   {
+   "source": "⚠️ The videographer’s 4 Jul corporate-shoot folder is now EMPTY — 199 files gone, only 4 ever mirrored",
+   "title": "Found 28 Oct. The Rakshita folder (1FrE-A4x…, owner toocrafty1595@gmail.com, shared with IFM 20 Aug) listed 199 media files on 20 Oct and lists ZERO today. Zero is a real answer, not a failed listing: the scan logged no errors, and the Drive connector now returns “not found” for both the folder and IMG_6067. Either the owner deleted the files or stopped sharing them. We cannot tell which from here. ROWS NOW POINTING AT NOTHING: IFM-315 (the 165-clip folder), IFM-316, 317, 318 (photos) and IFM-478..483 (boardroom stills). Rows that SURVIVE because they were mirrored: IFM-495, 496, 497 (+1 clip) — 459 MB in IFM Content Archive/From videographers; their links still point at the dead originals and could be repointed to the archive copies. ACTION: ask the videographer whether the files were moved or deleted, and for a fresh share or a download. Do not mark the rows Do Not Use or delete them; nothing has been changed on them.",
+   "folder_url": "https://drive.google.com/drive/folders/1FrE-A4xMaPFv-zjo61cWcG9Ea6ZsaccJ",
+   "status": "needs_review"
+  },
+  {
    "source": "Oct Brand awareness takes were mirrored but never catalogued",
-   "title": "Found 20 Oct: the 14 takes in Aakara's October/Reels/Brand awareness (IMG_5963–5976, dated 18 Sep) were already copied into IFM Content Archive by an earlier run, yet NO row in data.js referenced them or their folder. They are now covered by IFM-648 (the finished reel). The mirror step and the catalogue step got out of step once — worth a one-off check that every 'archive:' id in the archive folder is named in some row's notes (207 files in From Aakara today).",
+   "title": "Found 20 Oct: the 14 takes in Aakara's October/Reels/Brand awareness (IMG_5963–5976, dated 18 Sep) were already copied into IFM Content Archive by an earlier run, yet NO row in data.js referenced them or their folder. They are now covered by IFM-648 (the finished reel). The mirror step and the catalogue step got out of step once — worth a one-off check that every 'archive:' id in the archive folder is named in some row's notes (207 files in From Aakara today). Still open 28 Oct.",
    "folder_url": "https://drive.google.com/drive/folders/1Pnzb-uCc3xaMb8u7gVVB1Z9eOmVLXsO8",
    "status": "needs_review"
   },
   {
-   "source": "Who is the speaker in the 8 Oct boardroom set?",
-   "title": "IFM-642..645 are a session shot 8 Oct 2026 and uploaded 13 Oct, and the person presenting is NOT Hiral — checked frame by frame against IFM-067/068/069, IFM-367, the 6 Oct session (IFM-635) and footage shot four days later (IFM-646). She is a woman in a teal V-neck top, hair tied back, no glasses, teaching IFM's own “Gold: Your Portfolio's Safe Haven” slide (the same deck as IFM-099) to about seven women in the October boardroom. backfill.py's presenter-inference rule had already tagged two of the rows person:Hiral; that is corrected in enrichment.json and will survive regeneration. WHAT IS NEEDED FROM A HUMAN: her name, and whether this is the same client as the 1/6/9 Oct series. Until then `shot` is empty, `person` is Other Person, and the rows say “the speaker”. Nothing here is social-ready, including IFM-645, which is the strongest frame of the four.",
+   "source": "Who is the speaker in the October boardroom sets? (now two of them)",
+   "title": "IFM-642..645 are a session shot 8 Oct 2026 and uploaded 13 Oct, and the person presenting is NOT Hiral — checked frame by frame against IFM-067/068/069, IFM-367, the 6 Oct session (IFM-635) and footage shot four days later (IFM-646). She is a woman in a teal V-neck top, hair tied back, no glasses, teaching IFM's own “Gold: Your Portfolio's Safe Haven” slide (the same deck as IFM-099) to about seven women in the October boardroom. backfill.py's presenter-inference rule had already tagged two of the rows person:Hiral; that is corrected in enrichment.json and will survive regeneration. WHAT IS NEEDED FROM A HUMAN: her name, and whether this is the same client as the 1/6/9 Oct series. Until then `shot` is empty, `person` is Other Person, and the rows say “the speaker”. Nothing here is social-ready, including IFM-645, which is the strongest frame of the four. UPDATED 28 Oct: a second unconfirmed speaker appears in the same room, a woman in a GREEN short-sleeved top with her hair tied back (IFM-671..673, uploaded 23–28 Oct). To this run’s eye she looks like Hiral, which reopens the 13 Oct call on the teal-top speaker as well. Both sets are left as “the speaker” / Other Person and kept out of the Media Kit. One human look at IFM-645 against IFM-672 settles both.",
    "folder_url": "https://drive.google.com/drive/folders/1TYulg-Wlp-48FF1p9ueLg_yzPMTgNBZY",
    "status": "needs_review"
   },
@@ -28,20 +34,20 @@
    "status": "needs_review"
   },
   {
-   "source": "Preview clips owed — 69 Video rows still invisible in the Library",
-   "title": "A Video row needs a preview clip that actually plays before it appears at all. Do FIRST, they are finished reels: IFM-648 (Brand awareness, 35 MB) and IFM-649 (Jio IPO explainer, 52 MB) — both masters are small, so this is minutes not hours — and IFM-633. Then the takes folders: today's IFM-650, 651, 652, 653, 654, plus IFM-646, IFM-634, IFM-605..608, 610..623, 626..632, IFM-575, IFM-579..603, IFM-542, IFM-547, IFM-315, IFM-328. Route: scripts/ifm-make-previews.sh then media-audit.py; BOTH need a deploy first (the audit probes the live server), so a new clip lights up on the SECOND deploy. Not run here.",
+   "source": "Preview clips owed — 101 Video rows still invisible in the Library",
+   "title": "A Video row needs a preview clip that plays before it appears at all. Do FIRST, the finished reels, all small masters (minutes, not hours): IFM-648, IFM-649, IFM-633 carried, and new 28 Oct: IFM-655 Buffett mistake (41 MB), IFM-657 Jio IPO Day 3 (40 MB), IFM-659 IFM Games reel (19 MB), IFM-671 and IFM-672 boardroom reels (7 and 10 MB), IFM-690 Girl math “The Sale Trap” (28 MB). Then today’s moment clips: IFM-660..669, 673..676, 678, 680, 681, 684..688; and the takes folders IFM-656, 658, 670, 689. Carried: IFM-650..654, 646, 634, 605..608, 610..623, 626..632, 575, 579..603, 542, 547, 315, 328. Route: scripts/ifm-make-previews.sh then media-audit.py; BOTH need a deploy first (the audit probes the live server), so a new clip lights up on the SECOND deploy. Not run here.",
    "folder_url": "",
    "status": "needs_review"
   },
   {
    "source": "Aakara — October: which reels are still owed",
-   "title": "Updated 20 Oct. DELIVERED, finished cut in hand: 5 types of risk (IFM-630), Gandhi Jayanti (IFM-604), Confession of a Shopaholic (IFM-633), and NEW since 13 Oct: Brand awareness “Why are we so terrified to invest?” (IFM-648, 46s, delivered 19 Oct) and the Jio IPO ad explainer (IFM-649, 66s — the file is our own “reworked v4”, built from 13 Aakara segment clips). Dussehra now has its COVER (“This Dussehra, conquer your financial blind spots”, 19 Oct) but still no reel (IFM-629). STILL TAKES ONLY: IPO vs stocks (IFM-628/631), Ever Wondered (IFM-634), and three new folders — Jenga (IFM-650, 26 takes, 16 Oct), Girl math (IFM-651, 14 takes dated 4 Sep, folder first seen today), Rock paper scissors (IFM-652, one hands-only b-roll clip). Plus 10 untitled takes loose in the November root (IFM-653) — ask Aakara which topic they are for.",
+   "title": "Updated 28 Oct. DELIVERED, finished cut in hand: 5 types of risk (IFM-630), Gandhi Jayanti (IFM-604), Confession of a Shopaholic (IFM-633), Brand awareness (IFM-648), Jio IPO ad explainer (IFM-649), and NEW: Girl math “The Sale Trap” (IFM-690, 48s, delivered 26 Oct). Dussehra still cover only (IFM-629). STILL TAKES ONLY: IPO vs stocks (IFM-628/631), Ever Wondered (IFM-634), Jenga (IFM-650), Rock paper scissors (IFM-652). RESOLVED: the 10 loose November takes (IFM-653) were moved by Aakara into a new November/“Brand awareness ” folder (trailing space in the name) — row relinked. Is it a second Brand awareness reel or a re-cut of IFM-648? Worth asking.",
    "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
    "status": "needs_review"
   },
   {
    "source": "Takes untranscribed (carried, now ten folders)",
-   "title": "Catch-all folders of piece-to-camera takes with no transcripts, so which take says what is not searchable: IFM-575 (15), IFM-628 (16), IFM-629 (15), IFM-633 (17, reel IS transcribed), IFM-634 (9), IFM-646 (11, three done by hand), and new today: IFM-654 Jio IPO OFS (76 takes, ~5 GB — the biggest yet; the topic is inferred from the folder name and the IPO ad on screen, not from what she says), IFM-650 Jenga (26), IFM-651 Girl math (14), IFM-653 November (10 — topic unknown until transcribed). ~210 takes in all; transcribe-videos.py does this end to end. The two finished reels catalogued today (IFM-648/649) WERE transcribed and their descriptions quote them.",
+   "title": "Catch-all folders of piece-to-camera takes with no transcripts, so which take says what is not searchable: IFM-575 (15), IFM-628 (16), IFM-629 (15), IFM-633 (17, reel IS transcribed), IFM-634 (9), IFM-646 (11, three done by hand), and new today: IFM-654 Jio IPO OFS (76 takes, ~5 GB — the biggest yet; the topic is inferred from the folder name and the IPO ad on screen, not from what she says), IFM-650 Jenga (26), IFM-651 Girl math (14), IFM-653 November (10 — topic unknown until transcribed). ~210 takes in all; transcribe-videos.py does this end to end. The two finished reels catalogued today (IFM-648/649) WERE transcribed and their descriptions quote them. Added 28 Oct: IFM-656 (Buffett, 5 takes), IFM-658 (Jio Day 3, 30 takes).",
    "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
    "status": "needs_review"
   },
@@ -64,8 +70,8 @@
    "status": "needs_review"
   },
   {
-   "source": "Hiral Media Kit — nothing new entered today",
-   "title": "Six new rows carried person:Hiral today — IFM-648, 649, 650, 651, 653, 654 — and all six were assessed and kept OUT: two are finished reels with captions baked in, four are folders of raw takes. Reasons are in enrichment.json `_kit_why`. One lead worth a human glance: IMG_6449.HEIC in Aakara's November folder is a single still of Hiral to camera in a denim jacket; if catalogued as its own row it may be a portrait at rank 2–3. Not promoted without seeing the full-resolution file.",
+   "source": "Hiral Media Kit — two new rank-3 entries to glance at",
+   "title": "28 Oct: 15 new rows carry Hiral. Two entered the kit at RANK 3 (hidden behind a click, so an error costs nothing): IFM-667 candid — Hiral face-on at her chair in a magenta kurta talking to the room; IFM-660 teaching — Hiral in profile under the game lobby screen. Identity was checked by face against the Buffett reel (IFM-655), not taken from any description. IFM-667 is the stronger frame and could go to rank 2 after a human look. Kept OUT with reasons in `_kit_why`: four finished reels (IFM-655, 657, 659, 690) and two takes folders (IFM-656, 658). The Buffett takes are clean full-length portraits to camera — if a still is pulled from IMG_8570, that frame is a rank-1 candidate.",
    "folder_url": "",
    "status": "needs_review"
   },
@@ -104,6 +110,24 @@
    "title": "Carried from 12 Oct, raised by Aditya and recorded as pending at his request — no action taken. Two things unverified: (1) whether everything she produces actually reaches the Content Hub, or whether stories in particular are published and then lost because nobody downloads them before they expire; (2) whether that material should feed the monthly WhatsApp trailer. TODAY ADDS WEIGHT TO (1): 19 photographs she shot on 8 October only reached Drive on 13 October, five days later, and would have been invisible to every run in between. Nothing is wrong with the pipeline — but the lag means a scan is never a statement about what was shot, only about what has been uploaded.\n\nANSWERED 14 Oct 2026 for part (1), and the answer is that stories are unrecoverable, not merely untagged. Three stores were checked. ifm-published.json holds 74 posts typed 43 reel / 31 post and ZERO stories, because it is built from the profile grid and the grid never contained them. ig-insights.json does not exist, so the Graph route has never run. And the Graph route would not help retrospectively even once the token is set up: fetch_ig.py reads media_product_type (which does have a STORY value) off the /media edge, but /media does not return stories — those live on a separate /stories edge that lists only what is live in the last 24 hours. There is no archive endpoint. So a story posted yesterday is already gone from every machine-readable source we have or could add.\n\nWhat that rules out: there is no way to look back and label which of her clips were posted as stories. Of 649 rows exactly one has 'story' in its title, and the Story type is used by 19 rows, all Aakara's. All 18 Stories folders in Drive are Aakara's delivery tree. She has no folder convention, so the catalogue has nothing to read.\n\nWhat is NOT wrong: her uploads folder is fully accounted for. 'Sakshi uploads' holds 56 files; 40 are catalogued and the other 16 are each named in some row's notes as a deliberate near-dupe skip. Nothing of hers is silently missing. Also correcting an earlier claim made in this session: there is no `source: Sakshi` field. `source` holds Event/In-house/Aakara/Workshop/Certificates, and her attribution is free text in `notes` — 36 rows assert she uploaded the file, 104 more mention her incidentally. Attribution is prose, not queryable.\n\nThe only fix is forward-looking and needs a human decision: either she saves each story to her camera roll and drops it in a Stories/ folder the way Aakara already does, or stories stay permanently uncatalogued. Capture at post time is the only moment the data exists.",
    "folder_url": "https://drive.google.com/drive/folders/1TYulg-Wlp-48FF1p9ueLg_yzPMTgNBZY",
    "status": "part (1) answered 14 Oct — stories are unrecoverable; needs a convention decision"
+  },
+  {
+   "source": "IYA young-adults workshop — name the facilitator and confirm ages",
+   "title": "New folder 28 Oct: Content Library/IYA Oct & Nov 2026, 78 files, catalogued as IFM-678..689 (11 moments + catch-all). The facilitator is a young woman in a neon-yellow top, NOT Hiral; enrichment pins person to Other Person so the presenter-inference rule cannot tag her as Hiral. Needed from a human: (1) her name; (2) the participants look college-age and are set Adults only on appearance. Confirm nobody is under 18 before anything here goes social; (3) the session date, since the rows carry upload dates (24–27 Oct).",
+   "folder_url": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "status": "needs_review"
+  },
+  {
+   "source": "Buffett reel has two exports — which one is final?",
+   "title": "Content Library/Berkshire Hathway stock holds both “IFM_Buffett_Mistake_reel_final_share.mp4” (41.97 MB, catalogued as IFM-655) and “… split.mp4” (40.78 MB), same opening frame. Both are mirrored. If “split” is the one that was posted, swap IFM-655’s link to it. (The folder name also misspells Hathaway.)",
+   "folder_url": "https://drive.google.com/drive/folders/18HUK83_2Y93bgW-T9SkeLDLpXAgTq6FZ",
+   "status": "needs_review"
+  },
+  {
+   "source": "Mirror step: rclone `backend copyid` silently copied nothing",
+   "title": "28 Oct: all 14 `rclone backend copyid … --drive-root-folder-id <archive>` calls returned exit 0 and wrote nothing to the archive folder. The copies were redone with the Drive connector’s copy_file and verified by size, 14/14. Any script that mirrors with copyid is reporting success it did not achieve. Check the copy exists before writing `archive:` into a row.",
+   "folder_url": "",
+   "status": "needs_review"
   }
  ]
 }
