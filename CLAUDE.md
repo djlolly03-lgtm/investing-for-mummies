@@ -291,10 +291,10 @@ build that generates intermediates.
 
 | Task | When | Deploys? |
 |---|---|---|
-| `daily-content-processor` | 07:38 daily | No — stages only |
+| `daily-content-processor` | Tue + Fri 18:00 | **Yes** — data pull, see the DATA/CODE rule above |
 | `ifm-daily-brief-email` | 08:07 daily | No |
 | `ifm-followers-daily` | 20:08 daily | No |
-| `weekly-competitor-refresh` | Mon 09:39 | **Yes** — the one standing exception |
+| `weekly-competitor-refresh` | Mon 09:39 | **Yes** — data pull |
 | `weekly-aakara-refresh` | *disabled* | superseded by daily-content-processor |
 
 ## Credentials — machine-local, and how to rebuild them
