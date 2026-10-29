@@ -7,7 +7,7 @@ Contents: 57 pages · 90 loose assets · 22 folders
 
 ## Findings at a glance
 
-- **One file is 96% of the dead weight.** `Investing 101- handbook-3, mar 31, 2026.pdf` is **778 MB**. It is excluded from deploys by `.vercelignore`, so it is not slowing the site — but it dominates this folder's size. Best home is Drive, not here.
+- ~~One file was 96% of the dead weight~~ — `Investing 101- handbook-3, mar 31, 2026.pdf` (778 MB) was replaced on 29 Oct 2026 by `Investing 101- handbook version4.pdf`, which lives in the **repo root**, not in `CLAUDE/`. The old file went to the Trash. PDFs are blocked from deploys by `.vercelignore` either way.
 - **7 pages are embedded on the homepage; 49 are deployed standalone.** Standalone pages still have live URLs and may be linked from WordPress or shared directly — the "Embedded" column below tells you which is which before you touch anything.
 - **9 folders have no code references at all** — the safest archive candidates: `game-reels/` (395 MB), `LOGO testing/` (37 MB), `proposals/` (29 MB), `carousel_spacex_images/` (5 MB).
 - **Excluding that one PDF, the loose orphan assets total under 30 MB** — not worth the risk of moving. Leave them; this manifest is the catalogue.
@@ -163,7 +163,7 @@ These are not referenced by any HTML/JS/JSON in this folder. They may still be l
 | `IFM Momentum Board.xlsx` | 31 KB | 2026-08-11 |
 | `IFM Website Feedback - Designer Brief June 2026.docx` | 18 KB | 2026-06-29 |
 | `IFM logo (TM) round.png` | 60 KB | 2026-04-08 |
-| `Investing 101- handbook-3, mar 31, 2026.pdf` | 778.5 MB | 2026-04-03 |
+| ~~`Investing 101- handbook-3, mar 31, 2026.pdf`~~ | 778.5 MB | removed 2026-10-29 — v4 is in the repo root |
 | `ifm-base-D.png` | 403 KB | 2026-07-20 |
 | `ifm-kpatel-morph.mp4` | 907 KB | 2026-07-03 |
 | `ifm-logo-blank-B-FULL.png` | 395 KB | 2026-07-20 |

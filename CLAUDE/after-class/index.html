@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IFM · After-class quiz</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../IFM%20logo%20(TM)%20round.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<style>
+:root{
+  --teal:#2a9d8f; --navy:#1a3a5c; --ink:#1a3a5c; --muted:#5a7d8a; --cream:#f7faf9;
+  --mint:#bde9e4; --mint-lt:#e0f3f0; --white:#ffffff;
+  --ok:#2a9d8f; --warn:#e9a23b; --bad:#d9534f; --line:#dfe9e6;
+  --r:14px; --shadow:0 6px 20px rgba(26,58,92,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Nunito,sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;line-height:1.45}
+.wrap{max-width:520px;margin:0 auto;padding:16px 16px 40px}
+header{display:flex;align-items:center;gap:12px;padding:6px 0 14px}
+header img{width:44px;height:44px;border-radius:50%;object-fit:cover;box-shadow:var(--shadow)}
+header .t{font-family:Lora,serif;font-style:italic;font-weight:600;font-size:1.05rem;line-height:1.1}
+header .s{font-size:.78rem;color:var(--muted);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.card{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow);padding:20px 18px;margin-bottom:14px}
+h1{font-family:Lora,serif;font-weight:600;font-size:1.5rem;line-height:1.2;margin-bottom:8px}
+h2{font-family:Lora,serif;font-weight:600;font-size:1.15rem;margin-bottom:8px}
+p{color:var(--muted);font-weight:600}
+p.lead{color:var(--ink);font-weight:600}
+label{display:block;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:14px 0 6px}
+input[type=text]{width:100%;font:inherit;font-weight:700;font-size:1.05rem;padding:12px 14px;border:2px solid var(--line);border-radius:12px;background:var(--white);color:var(--ink);outline:none}
+input[type=text]:focus{border-color:var(--teal)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;font:inherit;font-weight:800;font-size:1.02rem;padding:14px 18px;border-radius:12px;border:0;background:var(--teal);color:#fff;cursor:pointer;margin-top:14px;transition:transform .08s}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:var(--mint-lt);color:var(--navy)}
+.btn[disabled]{opacity:.5;cursor:default}
+.pill{display:inline-block;background:var(--mint-lt);color:var(--navy);font-size:.74rem;font-weight:800;padding:4px 10px;border-radius:999px;letter-spacing:.03em}
+.prog{display:flex;gap:6px;margin:4px 0 16px}
+.prog i{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.prog i.on{background:var(--teal)}
+.prog i.wrong{background:var(--bad)}
+.qtxt{font-size:1.12rem;font-weight:800;line-height:1.35;margin:6px 0 16px}
+.opt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;font:inherit;font-weight:700;font-size:1rem;padding:13px 14px;border-radius:12px;border:2px solid var(--line);background:var(--white);color:var(--ink);margin-bottom:10px;cursor:pointer}
+.opt b{flex:0 0 28px;height:28px;border-radius:50%;background:var(--mint-lt);display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--navy)}
+.opt.right{border-color:var(--ok);background:#eaf7f4}
+.opt.right b{background:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--bad);background:#fdf0ef}
+.opt.wrong b{background:var(--bad);color:#fff}
+.opt.dim{opacity:.55}
+.why{border-left:4px solid var(--teal);background:var(--mint-lt);padding:12px 14px;border-radius:0 10px 10px 0;margin-top:6px;font-weight:600;color:var(--ink)}
+.why .pg{display:block;font-size:.78rem;color:var(--muted);font-weight:800;margin-top:6px}
+.score{font-family:Lora,serif;font-weight:600;font-size:3.4rem;line-height:1;color:var(--teal);margin:10px 0 4px}
+.score small{font-size:1.2rem;color:var(--muted)}
+ul.reread{list-style:none;margin-top:10px}
+ul.reread li{padding:10px 12px;border:2px solid var(--line);border-radius:10px;margin-bottom:8px;font-weight:700;display:flex;justify-content:space-between;gap:10px}
+ul.reread li span.pg{color:var(--muted);font-weight:800;white-space:nowrap}
+.foot{font-size:.74rem;color:var(--muted);text-align:center;margin-top:18px;font-weight:600}
+.hide{display:none!important}
+.err{color:var(--bad);font-weight:800;font-size:.9rem;margin-top:8px}
+
+/* teacher view */
+.tw .wrap{max-width:760px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.kpi{background:var(--mint-lt);border-radius:12px;padding:12px}
+.kpi .n{font-family:Lora,serif;font-weight:600;font-size:1.7rem;line-height:1.1}
+.kpi .l{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:2px}
+.qrow{padding:12px 0;border-bottom:1px solid var(--line)}
+.qrow:last-child{border-bottom:0}
+.qrow .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.qrow .c{font-weight:800}
+.qrow .pct{font-family:Lora,serif;font-weight:600;font-size:1.3rem;white-space:nowrap}
+.bar{height:10px;border-radius:5px;background:var(--line);margin:8px 0 6px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:5px}
+.verdict{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+.bg-ok{background:var(--ok)} .bg-warn{background:var(--warn)} .bg-bad{background:var(--bad)}
+.wrongpick{font-size:.82rem;color:var(--muted);font-weight:600;margin-top:2px}
+table{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:6px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+td.r,th.r{text-align:right}
+td .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:middle}
+pre.msg{white-space:pre-wrap;font:inherit;font-weight:600;font-size:.92rem;background:var(--cream);border:2px solid var(--line);border-radius:12px;padding:14px;margin-top:10px;color:var(--ink)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:480px){.row2{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="../IFM%20logo%20(TM)%20round.png" alt="Investing for Mummies">
+    <div><div class="t">Investing for Mummies</div><div class="s" id="hdrSub">After-class quiz</div></div>
+  </header>
+  <div id="app"></div>
+  <div class="foot">Purely educational · not investment advice · investingformummies.com</div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   IFM AFTER-CLASS QUIZ
+   Student:  /after-class/?s=1&b=nov26            (5 questions, ~2 min)
+   Teacher:  /after-class/?s=1&b=nov26&teacher=1  (per-question grasp + WhatsApp summary)
+
+   Storage: the Stock Rush / KBC Supabase project, `games` table, one row per student per
+   session: room_code = "AQ-s<session>-<batch>-<name-slug>", state = the attempt.
+   The FIRST attempt is what we measure (that is what they grasped in class); later
+   attempts are kept as `latest` so a student can practise without moving the needle.
+   ═══════════════════════════════════════════════════════════════ */
+const SUPABASE_URL='https://gkfldkytzfngwnkrwrga.supabase.co';
+const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrZmxka3l0emZuZ3dua3J3cmdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5MzI4NDksImV4cCI6MjA5NDUwODg0OX0.wwyFY0bhbGhCKCpAjgZ0oCS8gda21FHcvDdvlg9xCmU';
+const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+
+/* Calibration — per QUESTION, not per student. Change here, the teacher view follows. */
+const CAL={ ok:80, warn:60 };           // ≥80 fine · 60–79 one-line reminder · <60 recap · <40 re-teach
+const RETEACH=40;
+const STRUGGLING=2;                     // a student at ≤2/5 gets a personal check-in
+
+/* ─────────── QUESTION BANK ───────────
+   Every question maps to one concept and one handbook page (Investing 101 handbook v4).
+   mix: 2 recall · 2 apply · 1 trap. `v` is the version of the set — bump it if a question
+   changes so old results are not compared with new ones. */
+const BANK={
+ 1:{ v:1, title:'Session 1 · Before you invest', pages:'14–30',
+  qs:[
+   {c:'50 / 30 / 20 rule', k:'apply', pg:14,
+    q:'Your family takes home ₹1,00,000 a month. Using the 50/30/20 rule, how much is your investible surplus?',
+    o:['₹10,000','₹20,000','₹30,000','₹50,000'], a:1,
+    why:'20% is the Savings & Investments jar — set it aside FIRST, then spend the rest. 50% Needs, 30% Wants.'},
+   {c:'Toxic debt', k:'recall', pg:14,
+    q:'Before you start investing seriously, which of these should you clear first?',
+    o:['Home loan','Credit card dues','Both — all debt is bad','Neither — invest first, repay later'], a:1,
+    why:'Credit cards and high-interest personal loans charge more than your investments can earn. A home loan is "OK debt" — low cost, builds an asset.'},
+   {c:'Emergency fund', k:'apply', pg:15,
+    q:'Meera wants to build her emergency fund. What should it look like?',
+    o:['3–6 months of essential expenses, in a savings account or liquid fund','12 months of income, in an equity mutual fund','1 month of expenses, in gold','3–6 months of expenses, in a 5-year fixed deposit'], a:0,
+    why:'3–6 months of ESSENTIAL expenses, somewhere you can reach in a day. Returns don\'t matter here — access does.'},
+   {c:'Inflation', k:'recall', pg:17,
+    q:'Priya keeps ₹5 lakh in a savings account earning 3.5%. Inflation is 6%. After 5 years, her money has…',
+    o:['Grown — she earned interest','Stayed the same','Lost buying power','Doubled'], a:2,
+    why:'Inflation is the invisible tax. If your money grows slower than prices, it buys LESS every year, even though the number went up.'},
+   {c:'Time beats amount', k:'trap', pg:29,
+    q:'Asha invests ₹10,000 a month from age 30. Bina invests ₹20,000 a month from age 40. Both earn 10% and stop at 60. Who has more at 60?',
+    o:['Bina — she invested double','Asha — she started 10 years earlier','About the same','Depends on the market'], a:1,
+    why:'Asha ends with about ₹2.08 Cr, Bina with ₹1.45 Cr — even though Bina put in ₹12 lakh more. Time is the secret ingredient of compounding.'},
+  ]}
+};
+
+/* ─────────── helpers ─────────── */
+const P=new URLSearchParams(location.search);
+const S=parseInt(P.get('s')||'1',10);
+const BATCH=(P.get('b')||'guest').toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,20)||'guest';
+const TEACHER=P.get('teacher')==='1';
+const SET=BANK[S];
+const slug=s=>s.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,24);
+const key=name=>`AQ-s${S}-${BATCH}-${slug(name)}`;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const app=document.getElementById('app');
+const pct=(n,d)=>d?Math.round(100*n/d):0;
+const verdict=p=>p>=CAL.ok?['ok','Fine']:p>=CAL.warn?['warn','One-line reminder']:p>=RETEACH?['bad','Recap next class']:['bad','Re-teach'];
+function studentLink(){ return location.origin+location.pathname+`?s=${S}&b=${BATCH}`; }
+
+if(!SET){ app.innerHTML=`<div class="card"><h1>No quiz yet</h1><p>Session ${S} hasn't been set up. Ask Hiral for the right link.</p></div>`; }
+else if(TEACHER) initTeacher(); else initStudent();
+
+/* ═══════════════════ STUDENT ═══════════════════ */
+let name='', answers=[], cur=0, startedAt=0;
+function initStudent(){
+  document.getElementById('hdrSub').textContent=SET.title;
+  const saved=sessionStorage.getItem('aq-name')||'';
+  app.innerHTML=`
+  <div class="card">
+    <span class="pill">${SET.qs.length} questions · 2 minutes</span>
+    <h1 style="margin-top:10px">How much stayed with you?</h1>
+    <p>A quick check on today's class, straight from your handbook (pages ${SET.pages}). No marks, no judgement — it just tells Hiral what to go over tomorrow.</p>
+    <label for="nm">Your first name</label>
+    <input id="nm" type="text" autocomplete="given-name" maxlength="24" placeholder="e.g. Priya" value="${esc(saved)}">
+    <div class="err hide" id="nmErr">Please type your first name so Hiral knows who answered.</div>
+    <button class="btn" id="go">Start</button>
+  </div>`;
+  const inp=document.getElementById('nm');
+  const go=()=>{ const v=inp.value.trim(); if(v.length<2){document.getElementById('nmErr').classList.remove('hide');return;}
+    name=v; sessionStorage.setItem('aq-name',v); answers=[]; cur=0; startedAt=Date.now(); renderQ(); };
+  document.getElementById('go').onclick=go; inp.addEventListener('keydown',e=>{if(e.key==='Enter')go();});
+}
+function renderQ(){
+  const q=SET.qs[cur], n=SET.qs.length;
+  app.innerHTML=`
+  <div class="card">
+    <div class="prog">${SET.qs.map((_,i)=>`<i class="${i<cur?(answers[i].ok?'on':'wrong'):''}"></i>`).join('')}</div>
+    <span class="pill">${cur+1} of ${n} · ${esc(q.c)}</span>
+    <div class="qtxt">${esc(q.q)}</div>
+    <div id="opts">${q.o.map((t,i)=>`<button class="opt" data-i="${i}"><b>${'ABCD'[i]}</b><span>${esc(t)}</span></button>`).join('')}</div>
+    <div id="why" class="hide"></div>
+    <button class="btn hide" id="next">${cur+1<n?'Next':'See my result'}</button>
+  </div>`;
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(parseInt(b.dataset.i,10)));
+}
+function pick(i){
+  const q=SET.qs[cur]; const ok=i===q.a;
+  answers[cur]={pick:i,ok};
+  document.querySelectorAll('.opt').forEach(b=>{ const j=parseInt(b.dataset.i,10); b.disabled=true;
+    if(j===q.a)b.classList.add('right'); else if(j===i)b.classList.add('wrong'); else b.classList.add('dim'); });
+  const w=document.getElementById('why');
+  w.className='why'; w.innerHTML=`<strong>${ok?'Yes!':'Not quite.'}</strong> ${esc(q.why)}<span class="pg">Handbook page ${q.pg}</span>`;
+  const nx=document.getElementById('next'); nx.classList.remove('hide');
+  nx.onclick=()=>{ cur++; if(cur<SET.qs.length)renderQ(); else finish(); };
+}
+async function finish(){
+  const score=answers.filter(a=>a.ok).length, n=SET.qs.length;
+  const miss=SET.qs.filter((q,i)=>!answers[i].ok);
+  app.innerHTML=`
+  <div class="card" style="text-align:center">
+    <span class="pill">${esc(SET.title)}</span>
+    <div class="score">${score}<small>/${n}</small></div>
+    <p class="lead">${score===n?'Everything landed. Lovely.':score>=n-1?'Nearly all of it stayed with you.':score>=3?'Good — a couple of pages worth a second look.':'Tomorrow\'s recap is for you — and that is exactly why we ask.'}</p>
+    <div id="saveMsg" class="foot">Saving…</div>
+  </div>
+  ${miss.length?`<div class="card"><h2>Worth a re-read tonight</h2><ul class="reread">${miss.map(q=>`<li><span>${esc(q.c)}</span><span class="pg">p. ${q.pg}</span></li>`).join('')}</ul></div>`:''}
+  <div class="card">
+    <h2>Know a friend who should be in this class?</h2>
+    <p>Send her the quiz — it's a 2-minute taste of what we do.</p>
+    <a class="btn ghost" id="share" href="https://wa.me/?text=${encodeURIComponent(`I just did the Investing for Mummies after-class quiz — try it: ${location.origin+location.pathname}?s=${S}&b=guest`)}" target="_blank" rel="noopener">Share on WhatsApp</a>
+  </div>`;
+  // save: first attempt is the measurement; later attempts are kept as `latest`
+  const row={ kind:'after-class', v:SET.v, session:S, batch:BATCH, name, secs:Math.round((Date.now()-startedAt)/1000),
+              picks:answers.map(a=>a.pick), score, ts:new Date().toISOString(), attempts:1 };
+  try{
+    const {data}=await db.from('games').select('state').eq('room_code',key(name)).maybeSingle();
+    let state=row;
+    if(data&&data.state&&data.state.kind==='after-class'){ const first=data.state; state={...first, attempts:(first.attempts||1)+1, latest:row}; }
+    const {error}=await db.from('games').upsert({room_code:key(name),state,updated_at:new Date().toISOString()});
+    if(error)throw error;
+    document.getElementById('saveMsg').textContent='Saved. Hiral will see this before tomorrow\'s class.';
+  }catch(e){ console.warn(e); document.getElementById('saveMsg').innerHTML='<span class="err">Could not save — screenshot this and send it to the group.</span>'; }
+}
+
+/* ═══════════════════ TEACHER ═══════════════════ */
+async function initTeacher(){
+  document.body.classList.add('tw');
+  document.getElementById('hdrSub').textContent='Teacher view · '+SET.title;
+  app.innerHTML=`<div class="card"><p>Loading responses for batch <b>${esc(BATCH)}</b>…</p></div>`;
+  let rows=[];
+  try{ const {data,error}=await db.from('games').select('room_code,state,updated_at').like('room_code',`AQ-s${S}-${BATCH}-%`).order('updated_at',{ascending:false}); if(error)throw error; rows=(data||[]).map(r=>r.state).filter(s=>s&&s.kind==='after-class'&&Array.isArray(s.picks)); }
+  catch(e){ app.innerHTML=`<div class="card"><h2>Could not load</h2><p class="err">${esc(e.message||e)}</p></div>`; return; }
+  const n=SET.qs.length, N=rows.length;
+  const perQ=SET.qs.map((q,i)=>{ const right=rows.filter(r=>r.picks&&r.picks[i]===q.a).length;
+    const wrongCounts={}; rows.forEach(r=>{ if(r.picks&&r.picks[i]!==q.a){ wrongCounts[r.picks[i]]=(wrongCounts[r.picks[i]]||0)+1; } });
+    const topWrong=Object.entries(wrongCounts).sort((a,b)=>b[1]-a[1])[0];
+    return {q,i,right,p:pct(right,N),topWrong}; });
+  const avg=N?(rows.reduce((s,r)=>s+r.score,0)/N):0;
+  const struggling=rows.filter(r=>r.score<=STRUGGLING).sort((a,b)=>a.score-b.score);
+  const recap=perQ.filter(x=>x.p<CAL.warn);
+  const remind=perQ.filter(x=>x.p>=CAL.warn&&x.p<CAL.ok);
+  const sorted=[...rows].sort((a,b)=>a.name.localeCompare(b.name));
+  const link=studentLink();
+  const dateStr=new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short'});
+
+  const summary=
+`*${SET.title} — after-class quiz* (${dateStr})
+${N} answered · average ${avg.toFixed(1)}/${n}
+`+(recap.length?`\n*Recap tomorrow (under ${CAL.warn}% got it):*\n`+recap.map(x=>`• ${x.q.c} — ${x.p}% right${x.p<RETEACH?' — RE-TEACH':''} (p. ${x.q.pg})`).join('\n')+'\n':'\n*Nothing needs a recap.* 🎉\n')
+ +(remind.length?`\n*One-line reminder:* ${remind.map(x=>`${x.q.c} (${x.p}%)`).join(', ')}\n`:'')
+ +(struggling.length?`\n*Check in personally (${STRUGGLING}/${n} or less):* ${struggling.map(r=>`${r.name} ${r.score}/${n}`).join(', ')}\n`:'')
+ +`\nFull view: ${location.href}`;
+
+  const groupMsg=
+`Hi mummies 👋 Today's 2-minute after-class quiz is here — ${n} quick questions on what we covered. No marks, it just tells me what to go over tomorrow.
+
+${link}
+
+Do it tonight while it's fresh 🌱`;
+
+  app.innerHTML=`
+  <div class="card">
+    <span class="pill">Batch ${esc(BATCH)} · set v${SET.v}</span>
+    <h1 style="margin-top:10px">${N?`${N} answered`:'No responses yet'}</h1>
+    <div class="kpis">
+      <div class="kpi"><div class="n">${N}</div><div class="l">Answered</div></div>
+      <div class="kpi"><div class="n">${N?avg.toFixed(1):'–'}</div><div class="l">Avg / ${n}</div></div>
+      <div class="kpi"><div class="n ${recap.length?'bad':'ok'}">${recap.length}</div><div class="l">To recap</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>What landed, question by question</h2>
+    <p style="font-size:.85rem">Green ≥${CAL.ok}% · amber ${CAL.warn}–${CAL.ok-1}% say it once · red &lt;${CAL.warn}% recap, &lt;${RETEACH}% re-teach. First attempts only.</p>
+    ${perQ.map(x=>{ const [cls,txt]=verdict(x.p); return `
+    <div class="qrow">
+      <div class="top"><div><div class="c">Q${x.i+1} · ${esc(x.q.c)} <span class="pill">${x.q.k}</span></div><div class="wrongpick">${esc(x.q.q)}</div></div><div class="pct ${cls}">${N?x.p+'%':'–'}</div></div>
+      <div class="bar"><i class="bg-${cls}" style="width:${x.p}%"></i></div>
+      <div class="verdict ${cls}">${N?txt:'waiting'}</div>
+      ${x.topWrong?`<div class="wrongpick">Most common wrong answer: “${esc(x.q.o[x.topWrong[0]])}” (${x.topWrong[1]})</div>`:''}
+    </div>`;}).join('')}
+  </div>
+
+  <div class="card">
+    <h2>Morning message for Hiral</h2>
+    <p>Copy, paste into WhatsApp. Written so it reads in 20 seconds on a phone.</p>
+    <pre class="msg" id="sum">${esc(summary)}</pre>
+    <button class="btn" onclick="copyText('sum',this)">Copy summary</button>
+  </div>
+
+  <div class="card">
+    <h2>Who answered</h2>
+    ${N?`<table><thead><tr><th>Name</th><th class="r">Score</th><th class="r">Time</th><th class="r">Tries</th></tr></thead><tbody>
+    ${sorted.map(r=>`<tr><td><span class="dot bg-${r.score<=STRUGGLING?'bad':r.score===n?'ok':'warn'}"></span>${esc(r.name)}</td><td class="r"><b>${r.score}</b>/${n}</td><td class="r">${r.secs?Math.round(r.secs/60)+'m '+(r.secs%60)+'s':'–'}</td><td class="r">${r.attempts||1}</td></tr>`).join('')}
+    </tbody></table>`:'<p>Nobody yet. Send the link below to the batch group.</p>'}
+  </div>
+
+  <div class="card">
+    <h2>Message for the batch group</h2>
+    <p>Send at 5–6 pm the same day, while it's fresh.</p>
+    <pre class="msg" id="grp">${esc(groupMsg)}</pre>
+    <div class="row2">
+      <button class="btn" onclick="copyText('grp',this)">Copy message</button>
+      <a class="btn ghost" href="https://wa.me/?text=${encodeURIComponent(groupMsg)}" target="_blank" rel="noopener">Open in WhatsApp</a>
+    </div>
+  </div>`;
+}
+function copyText(id,btn){ const t=document.getElementById(id).textContent;
+  navigator.clipboard.writeText(t).then(()=>{ const o=btn.textContent; btn.textContent='Copied ✓'; setTimeout(()=>btn.textContent=o,1600); })
+  .catch(()=>{ const r=document.createRange(); r.selectNodeContents(document.getElementById(id)); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }); }
+</script>
+</body>
+</html>
