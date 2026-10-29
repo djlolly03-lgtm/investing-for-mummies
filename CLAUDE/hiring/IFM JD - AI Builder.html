@@ -1,0 +1,353 @@
+<meta charset="utf-8">
+<title>IFM — AI Builder</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1a3a5c; --navy-lt:#264d78; --teal:#2a9d8f; --teal-deep:#1f7a70;
+  --muted:#5a7d8a; --cream:#f7faf9; --mint:#bde9e4; --mint-lt:#e0f3f0;
+  --gold:#c9a84c; --gold-lt:#f5f0e0; --danger:#c0392b; --line:#dfe9e7;
+  --r-sec:16px; --r-card:14px; --r-pill:10px;
+}
+@page{ size:A4; margin:0; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#fff;color:var(--navy);
+  font-family:"Nunito","Avenir Next",system-ui,sans-serif;
+  font-size:10pt;line-height:1.62;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+p{margin:0 0 3.2mm}
+strong,b{font-weight:700}
+em{font-style:italic}
+
+.sheet{width:210mm;height:297mm;padding:13mm 17mm 9mm;position:relative;overflow:hidden;
+  display:flex;flex-direction:column}
+.sheet+.sheet{break-before:page;page-break-before:always}
+.sheet.cream{background:var(--cream)}
+.sheet.lead{padding-top:0}
+.sheet>.body{flex:1 1 auto;min-height:0}
+
+h2{font-family:Lora,Georgia,serif;font-size:19pt;font-weight:700;color:var(--navy);
+  margin:0 0 1.5mm;letter-spacing:-.01em;line-height:1.18}
+h3{font-family:Lora,Georgia,serif;font-size:12.5pt;font-weight:600;color:var(--teal-deep);
+  margin:6.5mm 0 2.4mm}
+.eyebrow{font-size:7.6pt;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--teal);font-weight:700;margin:0 0 2.5mm}
+.rule{width:26mm;height:1.1mm;background:var(--gold);border-radius:1mm;margin:3mm 0 5.5mm}
+
+/* ══ HERO ══ */
+.hero{margin:0 -17mm 8mm;padding:14mm 17mm 11mm;color:#fff;position:relative;overflow:hidden;
+  background:
+    radial-gradient(115% 80% at 82% 4%, rgba(189,233,228,.30) 0%, rgba(189,233,228,0) 55%),
+    linear-gradient(135deg, var(--teal) 0%, var(--navy-lt) 50%, var(--navy) 100%)}
+.hero::after{content:"";position:absolute;right:-44mm;bottom:-46mm;width:132mm;height:132mm;
+  background:url('assets/ifm-logo-round.png') center/contain no-repeat;opacity:.055}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8mm;
+  position:relative;z-index:2}
+.hero-logo{background:#fff;border-radius:var(--r-card);padding:3mm 4.5mm;
+  box-shadow:0 2mm 7mm rgba(0,0,0,.18)}
+.hero-logo img{height:11mm;width:auto;display:block}
+.hero-meta{text-align:right;font-size:8.2pt;line-height:1.75;color:#cfe6e3}
+.hero-meta b{color:#fff;font-weight:700}
+.hero .eyebrow{color:#8fd8cd;margin:10mm 0 0;position:relative;z-index:2}
+.hero h1{font-family:Lora,Georgia,serif;font-size:34pt;line-height:1.06;font-weight:700;
+  margin:3mm 0 0;letter-spacing:-.015em;position:relative;z-index:2}
+.hero .goldrule{width:30mm;height:1.3mm;background:var(--gold);border-radius:1mm;
+  margin:6mm 0 0;position:relative;z-index:2}
+.hero .lede{font-size:11pt;line-height:1.55;color:#dbe7ee;max-width:126mm;font-weight:300;
+  margin:5mm 0 0;position:relative;z-index:2}
+
+/* ══ CALLOUT ══ */
+.callout{background:var(--mint-lt);border-left:1.4mm solid var(--teal);
+  border-radius:0 var(--r-card) var(--r-card) 0;padding:5mm 6.5mm;margin:0 0 6mm}
+.callout .k{font-size:7.6pt;letter-spacing:.26em;text-transform:uppercase;color:var(--teal-deep);
+  font-weight:700;display:block;margin-bottom:2.4mm}
+.callout p:last-child{margin-bottom:0}
+.callout .big{font-family:Lora,Georgia,serif;font-size:13pt;line-height:1.42;color:var(--navy);
+  font-weight:600;margin-bottom:3mm}
+.gold{background:var(--gold-lt);border-left:1.4mm solid var(--gold)}
+.gold .k{color:#8a6d1f}
+
+/* ══ STATS ══ */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:3.4mm;margin:7mm 0 0}
+.stat{background:var(--cream);border:.25mm solid var(--line);border-radius:var(--r-card);
+  padding:5mm}
+.stat .v{font-family:Lora,Georgia,serif;font-size:21pt;font-weight:700;color:var(--teal-deep);
+  line-height:1.05;display:block}
+.stat b{display:block;font-size:9.4pt;color:var(--navy);margin:2mm 0 .8mm}
+.stat p{margin:0;font-size:8.6pt;line-height:1.48;color:var(--muted)}
+
+/* ══ DUTIES ══ */
+.duties{display:grid;grid-template-columns:1fr;gap:2.8mm}
+.duty{background:#fff;border:.25mm solid var(--line);border-radius:var(--r-card);
+  padding:4mm 5mm;display:flex;gap:4.4mm;align-items:flex-start;
+  box-shadow:0 1mm 3mm rgba(26,58,92,.04)}
+.duty .n{flex:0 0 8mm;height:8mm;border-radius:50%;background:var(--teal);color:#fff;
+  font-weight:800;font-size:10pt;display:flex;align-items:center;justify-content:center;
+  margin-top:.4mm}
+.duty .tx{flex:1}
+.duty b{display:block;font-size:10.4pt;color:var(--navy);margin-bottom:.8mm}
+.duty p{margin:0;color:#4a6572;font-size:9.1pt;line-height:1.5}
+
+/* ══ TABLE ══ */
+table{width:100%;border-collapse:collapse;margin:0 0 6mm}
+th{background:var(--navy);color:#fff;text-align:left;font-size:8pt;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:700;padding:2.8mm 4.5mm}
+td{padding:2.9mm 4.5mm;border-bottom:.25mm solid var(--line);font-size:9.5pt;
+  vertical-align:top;line-height:1.52}
+tr:nth-child(even) td{background:var(--cream)}
+td:first-child{font-weight:700;color:var(--navy);width:52mm}
+td:last-child{color:#4a6572}
+
+/* ══ CHIP BOXES ══ */
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin:0 0 5mm}
+.chipbox{border-radius:var(--r-card);padding:4mm 5mm}
+.chipbox.no{background:#fdf0ee;border:.25mm solid #f2cfc9}
+.chipbox.yes{background:#edf8f1;border:.25mm solid #c9e8d5}
+.chipbox h4{margin:0 0 2.6mm;font-size:9.6pt;font-weight:800;letter-spacing:.02em}
+.chipbox.no h4{color:var(--danger)}
+.chipbox.yes h4{color:#1e7a46}
+.chipbox ul{margin:0;padding-left:4.4mm}
+.chipbox li{font-size:9.1pt;line-height:1.5;margin-bottom:1.6mm;color:#4a6572}
+
+/* ══ TASK ══ */
+.task{background:#fff;border:.5mm solid var(--teal);border-radius:var(--r-sec);
+  padding:6mm 7mm;margin:0 0 5mm;box-shadow:0 2mm 8mm rgba(42,157,143,.10)}
+.task .hdr{font-family:Lora,Georgia,serif;font-size:13.5pt;font-weight:700;
+  color:var(--teal-deep);margin:0 0 3.2mm}
+.task ol{margin:3.2mm 0;padding-left:6mm}
+.task ol li{font-size:10pt;line-height:1.55;margin-bottom:2mm;padding-left:1mm}
+.task ol li::marker{font-weight:800;color:var(--teal)}
+.task .punch{background:var(--navy);color:#fff;border-radius:var(--r-pill);
+  padding:3.4mm 5mm;font-size:9.8pt;font-weight:600;margin-top:1mm}
+.task .punch b{color:var(--mint)}
+
+/* ══ PROCESS ══ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:3.4mm;margin:0 0 5.5mm}
+.step{background:#fff;border:.25mm solid var(--line);border-radius:var(--r-card);
+  padding:4.2mm 3.8mm;text-align:center}
+.step .k{width:7.5mm;height:7.5mm;border-radius:50%;background:var(--mint);color:var(--navy);
+  font-weight:800;font-size:9.4pt;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 2.4mm}
+.step b{display:block;font-size:9.4pt;color:var(--navy);margin-bottom:1mm}
+.step p{margin:0;font-size:8.4pt;line-height:1.45;color:var(--muted)}
+
+/* ══ PERKS ══ */
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:3.2mm}
+.perk{background:var(--mint-lt);border-radius:var(--r-card);padding:3.8mm 4.6mm}
+.perk b{display:block;font-size:9.6pt;color:var(--navy);margin-bottom:.8mm}
+.perk p{margin:0;font-size:8.9pt;line-height:1.5;color:#4a6572}
+.sheet.cream .perk{background:#fff;border:.25mm solid var(--line)}
+
+/* ══ TERMS ══ */
+.terms{background:var(--navy);color:#fff;border-radius:var(--r-sec);padding:5.5mm 6.5mm;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:6mm;margin:0 0 5mm}
+.terms .t .k{font-size:7.4pt;letter-spacing:.24em;text-transform:uppercase;color:var(--mint);
+  font-weight:700;display:block;margin-bottom:1.6mm}
+.terms .t .v{font-family:Lora,Georgia,serif;font-size:14pt;font-weight:700;line-height:1.2}
+.terms .t .s{font-size:8.2pt;color:#aec8d2;margin-top:1mm;line-height:1.45;display:block}
+
+.foot{border-top:.25mm solid var(--line);padding-top:3mm;display:flex;
+  justify-content:space-between;align-items:center;font-size:8pt;color:var(--muted)}
+.foot img{height:7mm;width:auto;opacity:.8}
+</style>
+
+<!-- ══════════ PAGE 1 ══════════ -->
+<div class="sheet lead">
+  <div class="body">
+    <div class="hero">
+      <div class="hero-top">
+        <div class="hero-logo"><img src="assets/ifm-logo-wide.png" alt="Investing for Mummies"></div>
+        <div class="hero-meta">
+          <b>Nariman Point, Mumbai</b><br>
+          Full time · In office<br>
+          Junior · first or second job<br>
+          <b>₹25,000 – ₹40,000</b> / month
+        </div>
+      </div>
+      <p class="eyebrow">We're hiring</p>
+      <h1>AI Builder</h1>
+      <div class="goldrule"></div>
+      <p class="lede">We teach people money by making them play, not sit through slides.
+      Help us build the games, tools and sites that do it — with AI, and we'll teach you how.
+      No degree, no experience, no coding needed.</p>
+    </div>
+
+    <p class="eyebrow">Read this first</p>
+    <h2>This is not a developer role</h2>
+    <div class="rule"></div>
+
+    <div class="callout">
+      <span class="k">Screen it like a dev job and you'll send us the wrong people</span>
+      <p class="big">We describe what we want, AI writes it — and then the real work starts.</p>
+      <p>Checking whether what came back actually works. Finding the bit that's subtly wrong.
+      Then saying precisely enough what's wrong that the next attempt is right.
+      <strong>That loop is the job.</strong></p>
+    </div>
+
+    <p>It needs curiosity, stubbornness and taste — not a computer science degree. We're happy
+    to teach, and we've set aside real time to do it. What we can't teach is wanting to know
+    how things work, or caring whether the person on the other end understood.</p>
+
+    <div class="stats">
+      <div class="stat"><span class="v">50+</span><b>Interactive builds</b>
+        <p>Games, calculators and tools that teach by being played.</p></div>
+      <div class="stat"><span class="v">4</span><b>Audiences</b>
+        <p>Mums, teenagers, young adults — plus corporate and call-centre training builds.</p></div>
+      <div class="stat"><span class="v">0</span><b>Lines of code required</b>
+        <p>On day one. You'll pick plenty up — but not as an entry requirement.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>AI Builder · Investing for Mummies</span>
+    <img src="assets/ifm-logo-wide.png" alt=""></div>
+</div>
+
+<!-- ══════════ PAGE 2 ══════════ -->
+<div class="sheet cream">
+  <div class="body">
+    <p class="eyebrow">The work</p>
+    <h2>What you'd actually do</h2>
+    <div class="rule"></div>
+
+    <div class="duties">
+      <div class="duty"><div class="n">1</div><div class="tx">
+        <b>Turn an idea into something people can play</b>
+        <p>Someone needs to explain compounding, or a scam, or a company's own training module.
+        You build the thing that teaches it — a game round, a calculator, an interactive page.
+        Supervised at first, then not. Real work on day one, not a training month.</p></div></div>
+      <div class="duty"><div class="n">2</div><div class="tx">
+        <b>Check that it actually teaches</b>
+        <p>Open it on a real phone and play it to the end as a first-timer would. Not just
+        "does the button work" — does the idea land? Our last audit found over five hundred
+        things to fix, and the ones that matter are the ones that break understanding.</p></div></div>
+      <div class="duty"><div class="n">3</div><div class="tx">
+        <b>Run the pipelines we've already built</b>
+        <p>We have written recipes for turning session footage into Instagram reels, slides into
+        videos, data into dashboards. You run them, spot where they break, and tell us.</p></div></div>
+      <div class="duty"><div class="n">4</div><div class="tx">
+        <b>Keep the catalogue honest</b>
+        <p>Thumbnails, descriptions, links that actually open. We once published a photo as a
+        founder portrait because its description said it was — and it wasn't. Catching that is
+        rare and valuable.</p></div></div>
+      <div class="duty"><div class="n">5</div><div class="tx">
+        <b>Write things down</b>
+        <p>When you work out how something is done, the next person shouldn't have to work it
+        out again.</p></div></div>
+    </div>
+
+    <h3>What you get out of it</h3>
+    <div class="perks">
+      <div class="perk"><b>Real responsibility, fast</b>
+        <p>Work that goes live in front of real students, not a sandbox.</p></div>
+      <div class="perk"><b>Taught properly</b>
+        <p>Close teaching from someone doing this full time — not a course.</p></div>
+      <div class="perk"><b>A scarce skill set</b>
+        <p>Rare today, and getting more valuable every month.</p></div>
+      <div class="perk"><b>Sane hours</b>
+        <p>Nariman Point office, normal hours, five days a week.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>AI Builder · Investing for Mummies</span>
+    <img src="assets/ifm-logo-wide.png" alt=""></div>
+</div>
+
+<!-- ══════════ PAGE 3 ══════════ -->
+<div class="sheet">
+  <div class="body">
+    <p class="eyebrow">The person</p>
+    <h2>What we're looking for</h2>
+    <div class="rule"></div>
+
+    <table>
+      <tr><th>Trait</th><th>What it looks like</th></tr>
+      <tr><td>Genuinely into AI</td><td>You already use it for your own things, unprompted. Not a course certificate — curiosity.</td></tr>
+      <tr><td>Notices when something's off</td><td>A misaligned button, a number that can't be right, a sentence that doesn't match the picture. <strong>This is the core skill.</strong></td></tr>
+      <tr><td>Says what's wrong precisely</td><td>"It's broken" is no use. "The Next button does nothing on round 3 if you skip the first question" is gold.</td></tr>
+      <tr><td>Doesn't quit at failure one</td><td>Most of this work is the third and fourth attempt.</td></tr>
+      <tr><td>Writes clear plain English</td><td>Half of working with AI is describing things well.</td></tr>
+      <tr><td>Comfortable on a computer</td><td>Files, folders, spreadsheets, browsers. Enough not to be slowed down by the machine itself.</td></tr>
+    </table>
+
+    <div class="twocol">
+      <div class="chipbox no">
+        <h4>✕ Not required — please don't filter on these</h4>
+        <ul>
+          <li>A computer science or engineering degree</li>
+          <li>Any programming experience</li>
+          <li>Prior work experience in tech</li>
+          <li>Specific tools or software</li>
+        </ul>
+      </div>
+      <div class="chipbox yes">
+        <h4>✓ Good signals</h4>
+        <ul>
+          <li>Has built <em>something</em> — a game, a site, a spreadsheet model, an edited video, a Discord bot, an AI workflow for something boring in their life. Scrappy counts.</li>
+          <li>Can explain something they got wrong and what they changed</li>
+          <li>Plays games, makes videos, or takes things apart</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout gold">
+      <span class="k">Be wary of</span>
+      <p>"Prompt engineering expert" on the CV with nothing built to show · a list of AI tool names
+      and no example of using one for anything real · wants to do strategy rather than hands-on work.</p>
+    </div>
+  </div>
+  <div class="foot"><span>AI Builder · Investing for Mummies</span>
+    <img src="assets/ifm-logo-wide.png" alt=""></div>
+</div>
+
+<!-- ══════════ PAGE 4 ══════════ -->
+<div class="sheet cream">
+  <div class="body">
+    <p class="eyebrow">For the recruiter</p>
+    <h2>Use this instead of CV screening</h2>
+    <div class="rule"></div>
+
+    <p>CVs will not tell us who is right for this — "AI" is on every CV now and means almost
+    nothing. <strong>Please send this task to every candidate before any interview.</strong></p>
+
+    <div class="task">
+      <p class="hdr">The filter task</p>
+      <p><strong>Use any free AI tool to make something small and real</strong> — a web page, a
+      little game, a calculator, a quiz. Then send us:</p>
+      <ol>
+        <li>A link, screenshot or screen recording of it</li>
+        <li>Roughly what you asked the AI to do</li>
+        <li><strong>One thing it got wrong, and how you fixed it</strong></li>
+      </ol>
+      <p>It does not need to be good.</p>
+      <div class="punch">Point 3 is the part we actually read.
+        <b>Answer it thoughtfully and you get an interview — whatever your background.</b></div>
+    </div>
+
+    <h3>Process</h3>
+    <div class="steps">
+      <div class="step"><div class="k">1</div><b>Filter task</b><p>Sent with the role, before any interview</p></div>
+      <div class="step"><div class="k">2</div><b>30-min chat</b><p>About what they built and what went wrong</p></div>
+      <div class="step"><div class="k">3</div><b>Paid half-day</b><p>Working on something real with us</p></div>
+      <div class="step"><div class="k">4</div><b>Offer</b><p>Quickly, if it's a yes</p></div>
+    </div>
+
+    <div class="callout">
+      <span class="k">Why the paid half-day</span>
+      <p>For a role this hard to read on paper, half a day of real work next to us tells us more
+      than a third interview would. We'd rather pay for that than guess. Anything unclear, come
+      back to us before you start sourcing — getting this brief right matters more than speed.</p>
+    </div>
+
+    <h3>The role in one line</h3>
+    <div class="terms">
+      <div class="t"><span class="k">Compensation</span><span class="v">₹25k – ₹40k</span>
+        <span class="s">per month. The top of the band is live for the right person with no
+        formal background.</span></div>
+      <div class="t"><span class="k">Where</span><span class="v">Nariman Point</span>
+        <span class="s">Mumbai, in office, five days. Reports to Aditya.</span></div>
+      <div class="t"><span class="k">Level</span><span class="v">Junior</span>
+        <span class="s">First or second job. No degree requirement of any kind.</span></div>
+    </div>
+
+  </div>
+  <div class="foot"><span>AI Builder · Investing for Mummies · Nariman Point, Mumbai</span>
+    <img src="assets/ifm-logo-wide.png" alt=""></div>
+</div>
