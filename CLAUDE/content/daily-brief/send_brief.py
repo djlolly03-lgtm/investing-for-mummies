@@ -13,7 +13,8 @@ from datetime import datetime
 
 FROM_ADDR = "djlolly03@gmail.com"
 TO_ADDRS = [
-    "aditya@vantageservices.in",
+    "aditya@pixelmintmedia.com",          # was aditya@vantageservices.in until 30 Oct 2026
+    "wendy@investingformummies.com",      # added 30 Oct 2026 (Sales lane, Monday board review)
     "hiral.sheth@gmail.com",
     "sakshi@investingformummies.com",
     "asba@moogaworld.com",
