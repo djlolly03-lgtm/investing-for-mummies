@@ -1160,5 +1160,55 @@
    "Hiral"
   ],
   "_why": "28 Oct 2026, daily-content-processor: Hiral alone in frame; nothing else identifiable."
+ },
+ "IFM-725": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "30 Oct 2026, daily-content-processor: Hiral mid-question at the quiz TV, face clear in profile, brand UI visible. Phone footage, so rank 3 — a usable teaching frame, not a lead."
+ },
+ "IFM-730": {
+  "kit": "candid",
+  "kit_rank": 3,
+  "_kit_why": "30 Oct 2026, daily-content-processor: Hiral laughing, seated, reasonably large in frame. Phone footage and a side angle, so rank 3."
+ },
+ "IFM-734": {
+  "person": [
+   "Student"
+  ],
+  "_why": "30 Oct 2026, daily-content-processor: the speaker is a participant, not Hiral — Hiral is at the TV in the same minute (IMG_8662). Keep the presenter rule off this row."
+ },
+ "IFM-735": {
+  "person": [
+   "Student"
+  ],
+  "_why": "30 Oct 2026, daily-content-processor: a participant, not Hiral (see IMG_8639 row)."
+ },
+ "IFM-741": {
+  "_kit_why": "30 Oct 2026: assessed and kept OUT — finished reel with copy baked in."
+ },
+ "IFM-744": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "30 Oct 2026, daily-content-processor: clean Canon frame of Hiral to camera against the mural, face clear, minimal distraction. It is a raw take, not a finished portrait, so rank 3 until someone pulls a still."
+ },
+ "IFM-745": {
+  "person": [
+   "Hiral",
+   "Student"
+  ],
+  "_why": "30 Oct 2026, daily-content-processor: first cut mixes Hiral to camera with classroom b-roll of participants."
+ },
+ "IFM-746": {
+  "person": [
+   "No Person"
+  ],
+  "_why": "30 Oct 2026, daily-content-processor: a bundle of project sources; the one logo thumbnail has no one in it."
+ },
+ "IFM-747": {
+  "_kit_why": "30 Oct 2026: assessed and kept OUT — finished reel, captions baked in."
+ },
+ "IFM-748": {
+  "library": false,
+  "_why": "30 Oct 2026, daily-content-processor: byte-identical re-upload of IMG_8610.MOV (both 60,921,698 bytes). Kept as a record, hidden from the Library."
  }
 }
