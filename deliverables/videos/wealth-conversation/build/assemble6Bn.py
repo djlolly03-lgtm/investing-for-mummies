@@ -29,6 +29,7 @@ def nframes(p):
 # tighten the pause after "No boring lectures.": end H2 just after the word (179 of 183 frames), drop 4 silent frames off the games shot
 for src, dst, flt in (('H2_fB6_f', 'H2_fB6_t', 'trim=end_frame=179'), ('HG3_fB6_f', 'HG3_fB6_t', 'trim=start_frame=4,setpts=PTS-STARTPTS')):
     run('trim ' + dst, ['-i', f'{SEG}/{src}.mp4', '-vf', flt, '-c:v', 'libx264', '-preset', 'medium', '-crf', '16', '-g', '30', '-pix_fmt', 'yuv420p', '-an', f'{SEG}/{dst}.mp4'])
+run('trim H4_noEO', ['-i', f'{SEG}/H4_fB6n_f.mp4', '-vf', 'trim=end_frame=437', '-c:v', 'libx264', '-preset', 'medium', '-crf', '16', '-g', '30', '-pix_fmt', 'yuv420p', '-an', f'{SEG}/H4_noEO.mp4'])   # ends on the cut before the EO credit take
 starts = {}; t = 0.0
 for p in ORDER: starts[p] = t; t += nframes(f'{SEG}/{p}.mp4') / 30
 print('starts:', {k: round(v, 3) for k, v in starts.items()}, flush=True)

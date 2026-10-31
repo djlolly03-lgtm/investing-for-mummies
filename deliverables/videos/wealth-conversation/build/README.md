@@ -81,3 +81,7 @@ especially by EO New Mumbai") is cut, Hiral ends on "Start with your money bluep
 Voice mix (both versions, same day): each spoken line is levelled on its own (loudnorm I=-18 per chunk; the opening
 lines were ~10 dB quieter than the rest at source) and the music ducks to 0.08 under every line, 0.9 in the gaps.
 Measured voice-over-music: +16 to +29 dB on every line (was +7 to +14). `STEMS=1 python3 assemble6Bn.py` writes the stems for this check.
+
+Closing line (both versions, 31 Oct 2026): the iPhone toggles card is replaced by three falling stickers at the top,
+per the user's reference — "Ask the right questions." (cream) / "Make your voice heard." (gold) / "Take an active role." (slate),
+Lora 70, each on its word (H4 local 4.7 / 6.4 / 7.8), cleared before the LED sign.

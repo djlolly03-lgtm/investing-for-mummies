@@ -79,7 +79,7 @@ build bars (3.90–7.78) rather than delaying the start. Duck to ~0.35 under voi
 | `orbit` | game screens around her head: `speed 0.9, size 0.3, count 6` (default 1.9 is too fast) |
 | `match-cut` | newspaper flash on "economy" (body text is filler, blurred) |
 | `messages` | notification cascade, `y 0.92` (default 0.61 covers her face) |
-| `apple-toggles` | rows ≤ ~19 chars; `ticks` are relative to effect start |
+| `apple-toggles` | REPLACED in the final by three falling stickers (user preferred them); rows ≤ ~19 chars, `ticks` relative to effect start |
 | `spotlight`, `moody`, `locked-on`, `lean-in`, `todo` | earlier versions; `todo` ticks are true video seconds; `lean-in`/`locked-on` snap back |
 | `dot-reveal`, `pause-point`, `countdown-flip`, `scribble`, `lineup`, `cover-star`, `phone-fan`, `swipe`, `the-bill`, `headline-box` | v5 "Warm-Up Round" cut (`wu_build.py`). `cover-star`: lines ≤ ~19 chars and always set `right` (default filler text otherwise). `phone-fan` draws exactly 4 images |
 

@@ -19,7 +19,7 @@ JOBS = {
     'C6_fx':   ('C6_smile', [{'fx': 'red-collage', 'start': 0.0, 'end': 1.10, 'text': 'BORING?', 'lines': 'NO LECTURES.|NO JARGON.|JUST GAMES.', 'tag': 'THE WEALTH CONVERSATION'}]),
     # push first, LED sign after it, so the sign stays sharp instead of being blurred with the room
     'H4_fxB6': ('H4',       [{'fx': 'messages', 'start': 0.2, 'end': 3.95, 'y': 0.92, 'title': 'Your money', 'text': 'Your FD matures tomorrow|SIP of ₹10,000 debited|Markets down 1.8% today|Policy renewal due in 7 days'},
-                             {'fx': 'apple-toggles', 'start': 4.2, 'end': 10.9, 'text': 'Ask the right Qs|Make yourself heard|Take an active role', 'ticks': '0.5|2.2|3.6'},
+                             # (apple-toggles removed 31 Oct: the user wants the three outcomes as falling stickers, see captions6B)
                              {'fx': 'slow-push', 'start': 10.98, 'end': 14.567, 'zoom': 1.5},
                              {'fx': 'led-sign', 'start': 11.0, 'end': 14.4, 'text': 'JOIN THE|CONVERSATION'}]),
     # CHALLENGE bigger and bolder: Anton (heavy, condensed) fills the width ~1.7x taller than Archivo; gold

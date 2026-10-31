@@ -200,7 +200,13 @@ o = 42.60; f80 = lora(80)
 credit = [Item(sticker('Brought to you by', nun(46), CREAM, SLATE, pad=(26, 16)), 70, 150, 57.30 - 0.22 - o, -1.5, drop=300),
           Item(sticker('EO New Mumbai', f80, SLATE, CREAM), 110, 150 + 92, 58.60 - 0.22 - o, 1.5)]
 composite('H4_fA', f'{SEG}/H4_fx.mp4', credit, 17.133)
-composite('H4_fB6', f'{SEG}/H4_fxB6.mp4', credit, 17.133)
+# v6B closing: the three outcomes as falling stickers, each on its word (H4 local 4.7 / 6.4 / 7.8), gone before the LED sign
+f66 = lora(70)   # sized to the user's reference: stickers span most of the width
+closing = [Item(sticker('Ask the right questions.', f66, CREAM, SLATE, pad=(32, 16)), 36, 120, 4.70 - 0.22, -1.5, drop=260, t_out=10.7),
+           Item(sticker('Make your voice heard.', f66, GOLD, SLATE, pad=(32, 16)), 66, 120 + 104, 6.40 - 0.22, 1.5, drop=260, t_out=10.7),
+           Item(sticker('Take an active role.', f66, SLATE, CREAM, pad=(32, 16)), 96, 120 + 208, 7.80 - 0.22, -1.0, drop=260, t_out=10.7)]
+composite('H4_fB6', f'{SEG}/H4_fxB6.mp4', closing + credit, 17.133)
+composite('H4_fB6n', f'{SEG}/H4_fxB6.mp4', closing, 17.133)      # no-EO version: same stickers, no credit
 
 # AB_fB: the cinematic hook — moody-graded footage, same word stack in gold/cream
 items = [Item(sticker('earn.', f130, GOLD, SLATE), 360, 1150, 0.30, -3.0),
