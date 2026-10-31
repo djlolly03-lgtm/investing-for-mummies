@@ -21,7 +21,9 @@ Reference build: `deliverables/videos/wealth-conversation/` — final `WealthCon
 - Name caption when she first talks: **"Hiral Goel" / "Founder, Investing for Mummies"**.
 - Credit **"Brought to you by EO New Mumbai"** and end on the user's logo animation (BEOND → The Wealth
   Conversation wordmark, `Logo_transforming_into_text_graphic_a92d50fd.mp4`) + IFM logo.
-- Her voice must sound clear from the first line: duck the music the moment she starts talking.
+- **Her voice is the hero.** Level each line on its own (per-chunk loudnorm — takes differ by ~10 dB at source), duck
+  music to ~0.08 under every line (0.9 in gaps), and measure with stems: voice must clear music by ≥15 dB on every line.
+- A no-EO version exists (`FINAL_v6B_noEO.mp4`, `assemble6Bn.py`): credit take cut, ending = IFM emblem animation.
 - Avoid snap-zooms (`lean-in` snapping back read as a glitch); prefer one slow push across a whole shot.
 - Short silent beats feel like dead air — keep pauses between lines ≤ ~1.2s.
 - Answer short, tables over essays; the user reviews on a phone.

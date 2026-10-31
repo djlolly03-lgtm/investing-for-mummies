@@ -12,8 +12,8 @@ MUSIC = '/Users/lollyg/Library/CloudStorage/Dropbox/My Mac (Adityas-MacBook-Pro.
 FINAL = '/Users/lollyg/Documents/investing for Mummies/deliverables/videos/wealth-conversation/WealthConversation_corp_v6B_cinematic-plus-fx.mp4'
 os.environ['PATH'] = '/opt/homebrew/bin:' + os.environ['PATH']
 ORDER = ['S0_fx', 'AB_fB_f', 'Q_fxB', 'C_f', 'H2_fB6_t', 'C6_fx', 'HG3_fB6_t', 'H5B6_f', 'M6W_f', 'H4_fB6_f', 'END']
-VOS = [('Hook.m4a', 4.97, 10.69, 'AB_fB_f', 0.0, 2), ('Rungtha Lane 5 2.m4a', 12.77, 21.32, 'C_f', 0.31),
-       ('Rungtha Lane 6.m4a', 2.92, 4.42, 'C_f', 8.86, -5), ('After no boring lecture.m4a', 2.64, 9.41, 'HG3_fB6_t', 0.16 - 4 / 30),
+VOS = [('Hook.m4a', 4.97, 10.69, 'AB_fB_f', 0.0), ('Rungtha Lane 5 2.m4a', 12.77, 21.32, 'C_f', 0.31),
+       ('Rungtha Lane 6.m4a', 2.92, 4.42, 'C_f', 8.86), ('After no boring lecture.m4a', 2.64, 9.41, 'HG3_fB6_t', 0.16 - 4 / 30),
        ('Walsingham House School.m4a', 36.80, 46.25, 'H5B6_f', -0.09),
        ('Rungtha Lane 9.m4a', 16.62, 27.85, 'H4_fB6_f', -0.25), ('Rungtha Lane 10.m4a', 29.15, 32.74, 'H4_fB6_f', 10.98), ('Rungtha Lane 11.m4a', 11.42, 13.95, 'H4_fB6_f', 14.57)]
 
@@ -40,10 +40,12 @@ ins, fc, chunks = [], [], []
 for i, v in enumerate(VOS):
     f, a, b, seg, off = v[:5]; g = v[5] if len(v) > 5 else 0; T = starts[seg] + off; chunks.append((f, a, b, round(T, 3)))
     ins += ['-i', f'{VO}/{f}']
-    fc.append(f'[{i}:a]aformat=sample_rates=48000:channel_layouts=stereo,atrim={a}:{b},asetpts=PTS-STARTPTS,'
+    fc.append(f'[{i}:a]aformat=sample_rates=48000:channel_layouts=stereo,atrim={a}:{b},asetpts=PTS-STARTPTS,highpass=f=90,afftdn=nf=-36:nr=10,loudnorm=I=-18:TP=-3:LRA=7,aresample=48000,'
               f'afade=t=in:st=0:d=0.05,afade=t=out:st={b-a-0.08:.3f}:d=0.08,volume={g}dB,adelay={int(T*1000)}|{int(T*1000)}[v{i}]')
 n = len(VOS); mi = n
-fc.append(''.join(f'[v{i}]' for i in range(n)) + f'amix=inputs={n}:normalize=0:dropout_transition=0,highpass=f=90,afftdn=nf=-36:nr=10,loudnorm=I=-16:TP=-2:LRA=9[vo]')
+fc.append(''.join(f'[v{i}]' for i in range(n)) + f'amix=inputs={n}:normalize=0:dropout_transition=0,loudnorm=I=-16:TP=-2:LRA=9[vo]')
+# voice is the hero (user, 31 Oct): music ducks to 0.08 under every line, each line levelled on its own, back to 0.9 only in the gaps
+DUCK = '+'.join(f'(min(max((t-{T-0.3:.2f})/0.3,0),1)-min(max((t-{T+(b-a)+0.1:.2f})/0.7,0),1))' for (f, a, b, T) in chunks)
 # music: drop (31.06) on tM1.  Repeat 2 bars of the build at bar 4 (3.90-7.78) and delay the rest.
 BAR = 1.94; REP = 2 * BAR; lead = tM1 - 31.06 - REP
 assert lead >= 0, lead
@@ -51,7 +53,7 @@ loops = max(1, math.ceil((TOTAL - (58.22 + REP + lead)) / 3.88) + 1)
 fc.append(f'[{mi}:a]asplit=3[ma][mb][mc];[ma]atrim=0:7.78,asetpts=PTS-STARTPTS[m1];[mb]atrim=3.90:58.22,asetpts=PTS-STARTPTS[m2];'
           f'[mc]atrim=54.34:58.22,asetpts=PTS-STARTPTS,asplit={loops}' + ''.join(f'[l{k}]' for k in range(loops)) + ';'
           f'[m1][m2]' + ''.join(f'[l{k}]' for k in range(loops)) + f'concat=n={loops+2}:v=0:a=1,adelay={int(lead*1000)}|{int(lead*1000)},'
-          f"volume='0.32+0.48*(1-min(max((t-{t0-0.4:.2f})/0.6,0),1))+0.68*(min(max((t-{tM1-4.3:.2f})/3.6,0),1)-min(max((t-{tH4-0.4:.2f})/0.5,0),1))+0.45*min(max((t-{tEND-0.3:.2f})/0.5,0),1)':eval=frame,"
+          f"volume='0.9-0.82*min(1,{DUCK})':eval=frame,"
           f'afade=t=out:st={TOTAL-2.2:.3f}:d=2.2,atrim=0:{TOTAL:.3f}[mus]')
 fc.append('[vo][mus]amix=inputs=2:normalize=0:dropout_transition=0,loudnorm=I=-14:TP=-1:LRA=11[aout]')
 run('audio', ins + ['-i', MUSIC, '-filter_complex', ';'.join(fc), '-map', '[aout]', '-ar', '48000', '-c:a', 'pcm_s16le', f'{S}/mix_6B.wav'])

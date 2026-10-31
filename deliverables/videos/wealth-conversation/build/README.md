@@ -72,3 +72,12 @@ File name kept as FINAL_v6B_64s.mp4 although it now runs 66s.
 Opening, final form (31 Oct 2026, user picked option B): card grows but stays above her head (finish=top), room dims 30%;
 label stays "Uninstalling: fear of investing"; at 100% a blue tick pops in with "Done" (app-style, no green message).
 Opening clip now starts at cam 0.12s so her mouth stays closed for all 3.4s. Option previews: opening-option-black.mp4 / -top.mp4.
+
+## No-EO version (31 Oct 2026)
+`WealthConversation_corp_FINAL_v6B_noEO.mp4` (63.3s) = FINAL_v6B without EO: the credit take (MVI_0285, "Brought to you
+especially by EO New Mumbai") is cut, Hiral ends on "Start with your money blueprint", and the ending is the user's
+`Text_transforming_into_logo_emblem_f10d3e62.mp4` (The Wealth Conversation wordmark → IFM emblem), held 1.2s. `assemble6Bn.py`.
+
+Voice mix (both versions, same day): each spoken line is levelled on its own (loudnorm I=-18 per chunk; the opening
+lines were ~10 dB quieter than the rest at source) and the music ducks to 0.08 under every line, 0.9 in the gaps.
+Measured voice-over-music: +16 to +29 dB on every line (was +7 to +14). `STEMS=1 python3 assemble6Bn.py` writes the stems for this check.
