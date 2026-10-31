@@ -3,7 +3,13 @@
 Promo for The Wealth Conversation / The Money Blueprint (corporate, brought to you by EO New Mumbai).
 Built entirely from the raw shoot and our own assets — nothing from the agency's MAIN_Comp.mp4 edit is reused.
 
-## Final
+## Final — the two files to send
+| File | Send to |
+|---|---|
+| `TWC Money Blueprint - Corporate EO New Mumbai.mp4` | EO New Mumbai (credits EO, ends on the BEOND animation) — built by `assemble6B.py` |
+| `TWC Money Blueprint.mp4` | everyone else — no EO, ends on the IFM emblem animation — built by `assemble6Bn.py` |
+TWC = The Wealth Conversation. Renamed 31 Oct 2026 from FINAL_v6B_64s / FINAL_v6B_noEO. Older history below.
+
 **`WealthConversation_corp_FINAL_v6B_64s.mp4`** = v6B (B + effects, all revisions), signed off by the user on 31 Oct 2026.
 Last change: music ducks as her first line starts and that line is +2 dB (it sounded muted under the intro).
 `WealthConversation_corp_FINAL_60s.mp4` (plain B, approved 30 Oct) is kept as the earlier final.

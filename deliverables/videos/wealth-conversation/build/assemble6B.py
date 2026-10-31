@@ -9,7 +9,7 @@ import subprocess, os, sys, shlex, time, json, math
 S = '/private/tmp/claude-501/-Users-lollyg-Documents-investing-for-Mummies/3aa00bba-4ee2-4992-adfd-27934d926b77/scratchpad/maincomp'
 SEG = S + '/seg'; VO = S + "/../raw/VO's/unzipped/Vo"
 MUSIC = '/Users/lollyg/Library/CloudStorage/Dropbox/My Mac (Adityas-MacBook-Pro.local)/Downloads/Sunset Rooft Lounge.mp3'
-FINAL = '/Users/lollyg/Documents/investing for Mummies/deliverables/videos/wealth-conversation/WealthConversation_corp_v6B_cinematic-plus-fx.mp4'
+FINAL = '/Users/lollyg/Documents/investing for Mummies/deliverables/videos/wealth-conversation/TWC Money Blueprint - Corporate EO New Mumbai.mp4'
 os.environ['PATH'] = '/opt/homebrew/bin:' + os.environ['PATH']
 ORDER = ['S0_fx', 'AB_fB_f', 'Q_fxB', 'C_f', 'H2_fB6_t', 'C6_fx', 'HG3_fB6_t', 'H5B6_f', 'M6W_f', 'H4_fB6_f', 'END']
 VOS = [('Hook.m4a', 4.97, 10.69, 'AB_fB_f', 0.0), ('Rungtha Lane 5 2.m4a', 12.77, 21.32, 'C_f', 0.31),
@@ -67,6 +67,6 @@ if abs(I + 14) > 0.3:          # one-pass loudnorm can land ~1 dB off: trim the 
     os.replace(S + '/tmp6B.mp4', FINAL)
     r = subprocess.run(['ffmpeg', '-nostdin', '-i', FINAL, '-vn', '-af', 'ebur128=peak=true', '-f', 'null', '-'], capture_output=True, text=True)
 print('final:', info['format'], '| music lead', round(lead, 3), '|', ' '.join(l.strip() for l in r.stderr.splitlines() if l.strip().startswith(('I:', 'Peak:'))), flush=True)
-run('sheet', ['-i', FINAL, '-vf', 'fps=1,scale=180:320,tile=11x6:padding=3:margin=3:color=white', '-frames:v', '1', FINAL.replace('.mp4', '_contact-sheet.jpg')])
+run('sheet', ['-i', FINAL, '-vf', 'fps=1,scale=180:320,tile=11x6:padding=3:margin=3:color=white', '-frames:v', '1', FINAL.replace('.mp4', ' - contact sheet.jpg')])
 json.dump({'starts': starts, 'chunks': chunks}, open(f'{S}/meta_6B.json', 'w'), indent=1)
 print('FINAL:', FINAL, flush=True)

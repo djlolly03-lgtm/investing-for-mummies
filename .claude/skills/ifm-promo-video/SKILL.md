@@ -5,8 +5,8 @@ description: Build or re-cut an IFM promo / workshop video (vertical 1080x1920, 
 
 # IFM promo video — how the Wealth Conversation promo was built
 
-Reference build: `deliverables/videos/wealth-conversation/` — final `WealthConversation_corp_FINAL_v6B_64s.mp4`
-(66s; the name is stale), every script in `build/`, history in `build/README.md`. Read that README first.
+Reference build: `deliverables/videos/wealth-conversation/` — finals `TWC Money Blueprint - Corporate EO New Mumbai.mp4` (EO only, 66s)
+and `TWC Money Blueprint.mp4` (no EO, 63s, for everyone else), every script in `build/`, history in `build/README.md`. Read that README first.
 
 ## The user's rules (each one was a correction — do not relearn them)
 - **Beginners & corporates: lead with games, class energy, people.** Never RBI/macro/"the economy" as a hook.
@@ -23,7 +23,7 @@ Reference build: `deliverables/videos/wealth-conversation/` — final `WealthCon
   Conversation wordmark, `Logo_transforming_into_text_graphic_a92d50fd.mp4`) + IFM logo.
 - **Her voice is the hero.** Level each line on its own (per-chunk loudnorm — takes differ by ~10 dB at source), duck
   music to ~0.08 under every line (0.9 in gaps), and measure with stems: voice must clear music by ≥15 dB on every line.
-- A no-EO version exists (`FINAL_v6B_noEO.mp4`, `assemble6Bn.py`): credit take cut, ending = IFM emblem animation.
+- A no-EO version exists (`TWC Money Blueprint.mp4`, `assemble6Bn.py`): credit take cut, ending = IFM emblem animation.
 - Avoid snap-zooms (`lean-in` snapping back read as a glitch); prefer one slow push across a whole shot.
 - Short silent beats feel like dead air — keep pauses between lines ≤ ~1.2s.
 - Answer short, tables over essays; the user reviews on a phone.
