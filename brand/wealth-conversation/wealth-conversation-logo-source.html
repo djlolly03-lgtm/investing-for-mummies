@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+  html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+  body.bg{background:radial-gradient(900px 1300px at 50% 42%,#f7f6f1 0%,#efeee8 55%,#e4e6e3 100%)}
+  body.flat{background:transparent}
+  svg{position:absolute;inset:0}
+  text{font-family:'Montserrat';font-weight:900;fill:#0F2C5C;letter-spacing:0}
+</style></head>
+<body class="BGCLASS">
+<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <!-- shallow upward arcs: the original wordmark bows gently -->
+  <path id="arcW" d="M 60 1010 Q 540 978 1020 1010"/>
+  <path id="arcC" d="M 40 1178 Q 540 1156 1040 1178"/>
+  <path id="arcT" d="M 300 800 Q 540 788 780 800"/>
+  <linearGradient id="ul" x1="0" x2="1"><stop offset="0" stop-color="#2E78C8" stop-opacity="0"/><stop offset=".25" stop-color="#2E78C8"/><stop offset=".75" stop-color="#2E78C8"/><stop offset="1" stop-color="#2E78C8" stop-opacity="0"/></linearGradient>
+  <radialGradient id="sh"><stop offset="0" stop-color="#000" stop-opacity=".16"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+ </defs>
+ <ellipse class="shadow" cx="540" cy="1330" rx="330" ry="34" fill="url(#sh)"/>
+ <text font-size="118"><textPath href="#arcT" startOffset="50%" text-anchor="middle" textLength="330" lengthAdjust="spacingAndGlyphs">THE</textPath></text>
+ <text font-size="236"><textPath href="#arcW" startOffset="50%" text-anchor="middle" textLength="800" lengthAdjust="spacingAndGlyphs">WEALTH</textPath></text>
+ <text font-size="130"><textPath href="#arcC" startOffset="50%" text-anchor="middle" textLength="960" lengthAdjust="spacingAndGlyphs">CONVERSATION</textPath></text>
+ <!-- speed lines either side of WEALTH -->
+ <g stroke="#0F2C5C" stroke-width="11" stroke-linecap="round" fill="none">
+  <path d="M 72 900 L 112 915"/><path d="M 58 950 L 106 950"/><path d="M 72 1000 L 112 985"/>
+  <path d="M 1008 900 L 968 915"/><path d="M 1022 950 L 974 950"/><path d="M 1008 1000 L 968 985"/>
+ </g>
+ <!-- blue underline under CONVERSATION -->
+ <path d="M 200 1220 Q 540 1206 880 1220" stroke="url(#ul)" stroke-width="7" stroke-linecap="round" fill="none"/>
+</svg>
+</body></html>

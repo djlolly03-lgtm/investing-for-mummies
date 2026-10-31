@@ -13,7 +13,7 @@ across folders.)
 
 | Use | File |
 |---|---|
-| Print / anything large | `IFM-logo-round-MASTER-2464px.png` |
+| Print / anything large | `IFM-logo-round-1119px-transparent-TM.png` (⚠️ NOT the MASTER file — see below) |
 | Video overlay, transparent | `IFM-logo-round-1119px-transparent-TM.png` |
 | Video overlay, no ™ | `IFM-logo-round-1119px-transparent-no-TM.png` |
 | Web / deck, horizontal | `IFM-logo-wide-1668px-transparent-colour.png` |
@@ -41,3 +41,10 @@ in this folder. Different company — moved out so the IFM library stays clean.
 Animation sprite sheets (`LOGO-sheet`, `LOGO2-sheet`, `LOGO-hits`, `LOGO-fine`)
 are **not logos** — they are frame strips, and stay in
 `Nursery Rhymes/Twinkle Twinkle Little SIP/v2-avatar/strips/` where the build reads them.
+
+## ⚠️ Do not send `IFM-logo-round-MASTER-2464px.png`
+
+Found 30 Oct 2026: despite the name, it has a **grey-and-white "transparency" checkerboard
+baked into the pixels** (alpha is 255 everywhere). It looks transparent in a preview and
+prints as a checkerboard. Use `IFM-logo-round-1119px-transparent-TM.png` (real alpha) until a
+clean high-res master is re-exported.

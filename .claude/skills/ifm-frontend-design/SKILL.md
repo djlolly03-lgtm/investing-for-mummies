@@ -1,3 +1,8 @@
+---
+name: ifm-frontend-design
+description: Visual design direction for IFM OS, the Investing for Mummies content-discovery interface (the Content Hub / V1 Library) - layout, search and results, asset detail, typography, colour, imagery, media integrity, mobile and visual QA against the approved storyboard. Use when designing, restyling or reviewing the IFM content library UI or any IFM content-browsing screen.
+---
+
 # IFM OS — Frontend Design Skill
 
 ## ROLE
