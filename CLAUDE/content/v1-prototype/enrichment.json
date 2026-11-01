@@ -1216,5 +1216,10 @@
  "IFM-748": {
   "library": false,
   "_why": "30 Oct 2026, daily-content-processor: byte-identical re-upload of IMG_8610.MOV (both 60,921,698 bytes). Kept as a record, hidden from the Library."
+ },
+ "IFM-757": {
+  "kit": "teaching",
+  "kit_rank": 3,
+  "_kit_why": "1 Nov 2026, daily-content-processor. Video frame, not a still: Hiral large in frame beside her own Introduction (bio) slide, face clear, mid-explanation — the same moment as IFM-607, which is also teaching/rank 3. Rank 3 because it is a video frame and she is speaking; a human may promote it or pull a still from the long take. Identity checked by eye against IFM-607/635 (same yellow ruffle top, same camera roll two files on), not from the description."
  }
 }

@@ -32434,5 +32434,61 @@ window.IFM_V1 =
 "person": [],
 "source": "Aakara",
 "search_terms": "november every week once month year money check ins planned habits nobody talks about post from aakara deck three tasks format reference reel linked slide points not yet written nothing delivered routine weekly monthly yearly each internal placeholder"
+},
+{
+"id": "IFM-757",
+"title": "Hiral's full introduction at her bio slide — long take (yellow ruffle top)",
+"date": "2026-10-05",
+"thumb": "../thumbs/IFM-757.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1U43zJ63SZqbqsE8T2ZGTQFYRdPaYFZe5/view",
+"description": "Hiral, in a yellow ruffle top and black skirt, stands beside the boardroom TV showing her “Introduction” slide — the cartoon avatar with her bio points (University of Michigan, ten years writing for Business India, mother of 2, the handbook and net-worth sheet she built) — and talks the room through it with her hands. A participant in blue sits at the table in the foreground with her laptop open.",
+"session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "2026-10-05T11:11:22+0530",
+"slide_text": "Introduction",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "hiral full introduction her bio slide long take yellow ruffle top black skirt stands beside boardroom showing cartoon avatar points university michigan ten years writing business india mother handbook net worth sheet she built talks room through hands participant blue",
+"phash": "c7dfecd87171b879",
+"kit": "teaching",
+"kit_rank": 3
+},
+{
+"id": "IFM-758",
+"title": "Boardroom workshop (8 Oct) — participants following the gold “safe haven” slide, whiteboard mind-map behind",
+"date": "2026-10-08",
+"thumb": "../thumbs/IFM-758.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1fe4PNvHVGX2QPFxmncgeJcl3GmTIc4Z3/view",
+"description": "Shot from the side of the boardroom table: participants turned towards the TV, which shows a gold “Safe Haven” slide, two of them listening with chin in hand. Open IFM workbooks, tea cups and a phone on the table; the right-hand whiteboard carries a mind map centred on “Borrower” (banks, companies, government). The speaker is out of frame.",
+"session": "Boardroom workshop — 8 Oct 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "2026-10-08T13:17:44+0530",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Gold"
+],
+"person": [
+"Student"
+],
+"source": "Sakshi",
+"search_terms": "boardroom workshop oct participants following gold safe haven slide whiteboard mind map behind shot from side table turned towards which shows two them listening chin hand open ifm workbooks tea cups phone right carries centred borrower banks companies government speaker",
+"phash": "eca4a73bcf4c3a56"
 }
 ];

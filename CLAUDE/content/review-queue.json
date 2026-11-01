@@ -1,8 +1,14 @@
 {
- "generated_by": "daily-content-processor 2026-10-30",
- "note": "Fresh breadth-first scan of all 15 registered roots: 204 folders, 2,367 media files, 0 listing errors — 261 new files since 28 Oct. Staged IFM-691..756 (66 rows): 22 Oct Stock Rush PRO session (21 moment rows), 27 Oct class (5), 28 Oct morning class (5), 28 Oct KBC quiz on mutual funds (17), two Hiral-reading clips, Jio listing-day reel + takes, SEBI/AMC takes, Aakara’s corporate video (takes, first cut, AE sources), the finished Jenga reel, one rejected duplicate and 8 November planning rows. IFM-650 updated. Library 637 → 641: the three new photos and the AE-sources row show now; the 53 new Video rows stay hidden until their preview clips are built. check-types --strict: 0 mislabelled; 14/14 tests pass. Deployed 30 Oct (Friday, no class).",
- "count": 25,
+ "generated_by": "daily-content-processor 2026-11-01",
+ "note": "Fresh breadth-first scan of all 15 registered roots: 204 folders, 2,369 media files, 0 listing errors — 2 files new since 30 Oct, both Sakshi uploads of 31 Oct. Staged IFM-757 (Hiral's long-take introduction, 5 Oct capture) and IFM-758 (8 Oct gold session, participants listening). Both are Videos without preview clips, so the Library stays at 643 until previews are built. check-types --strict: 0 mislabelled; 14/14 tests pass. Whole-tree mirror topped up (80 files copied); Rakshita shortcut still dangling.",
+ "count": 26,
  "items": [
+  {
+   "source": "Session date for the yellow-top Hiral series may be 5 Oct, not 6 Oct",
+   "title": "Found 1 Nov. The QuickTime creation date of IMG_3792 (IFM-607) is 5 Oct 2026 11:08 IST and of IMG_3794 (new IFM-757) is 5 Oct 11:11 IST — but IFM-607..627 and IFM-635 are labelled “Corporate women’s workshop, session 2 — 6 Oct 2026”, a date that was inferred from upload timestamps on 8 Oct, not read from the files. Nothing was relabelled; IFM-757 carries the 6 Oct label so it groups with its siblings and records captured_at 5 Oct. ACTION: confirm which day the class ran, then relabel the session in one pass (data.js session field + backfill).",
+   "folder_url": "https://drive.google.com/drive/folders/1TYulg-Wlp-48FF1p9ueLg_yzPMTgNBZY",
+   "status": "needs_review"
+  },
   {
    "source": "⚠️ The videographer’s 4 Jul corporate-shoot folder is now EMPTY — 199 files gone, only 4 ever mirrored",
    "title": "Found 28 Oct. The Rakshita folder (1FrE-A4x…, owner toocrafty1595@gmail.com, shared with IFM 20 Aug) listed 199 media files on 20 Oct and lists ZERO today. Zero is a real answer, not a failed listing: the scan logged no errors, and the Drive connector now returns “not found” for both the folder and IMG_6067. Either the owner deleted the files or stopped sharing them. We cannot tell which from here. ROWS NOW POINTING AT NOTHING: IFM-315 (the 165-clip folder), IFM-316, 317, 318 (photos) and IFM-478..483 (boardroom stills). Rows that SURVIVE because they were mirrored: IFM-495, 496, 497 (+1 clip) — 459 MB in IFM Content Archive/From videographers; their links still point at the dead originals and could be repointed to the archive copies. ACTION: ask the videographer whether the files were moved or deleted, and for a fresh share or a download. Do not mark the rows Do Not Use or delete them; nothing has been changed on them. UPDATE 30 Oct: the whole-tree mirror of Aakara’s folder reported “Dangling shortcut \"Rakshita\" detected” — the shortcut inside Aakara’s tree points at the same folder and its target is gone, so this is a deletion or unshare on the owner’s side, not a listing glitch.",
