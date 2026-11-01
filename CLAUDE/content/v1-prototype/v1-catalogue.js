@@ -23877,12 +23877,12 @@ window.IFM_V1 =
 },
 {
 "id": "IFM-525",
-"title": "Standing at the window, city skyline behind",
+"title": "Hiral working on her laptop in a hotel lobby",
 "date": "2026-08-14",
 "thumb": "../thumbs/IFM-525.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1efu32vGfgB5b3N3Udmz29BYKoyI_YRF4/view",
-"description": "A woman in a khaki sleeveless outfit stands at a floor-to-ceiling window looking out over a hazy Mumbai skyline, seen in profile from behind. Unusual for this library: daylight, glass and a city view rather than a boardroom.",
+"description": "Hiral sits alone at a round black-and-gold marble table in a bright hotel lobby lounge, typing on a grey Lenovo laptop, in an olive-beige short-sleeved linen wrap dress. A magenta shopping bag and a potted plant sit beside her; pendant lights, a glass display cabinet and a high bar table are behind. Solo working portrait, not a workshop.",
 "session": "Workshop Pictures — Aug 2026",
 "audience": "Mummies",
 "batch": "",
@@ -23891,7 +23891,7 @@ window.IFM_V1 =
 "silent": false,
 "type": "Image",
 "status": "Ready",
-"format": "B-roll",
+"format": "Portrait",
 "topic": [],
 "person": [
 "Hiral"
@@ -23899,16 +23899,18 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "IFM / In-house",
 "search_terms": "standing window city skyline behind woman khaki sleeveless outfit stands floor ceiling looking out over hazy mumbai seen profile from unusual library daylight glass view rather than boardroom workshop aug 2026",
-"phash": "e7fbc7c7ce6ec5d3"
+"phash": "e7fbc7c7ce6ec5d3",
+"kit": "candid",
+"kit_rank": 2
 },
 {
 "id": "IFM-526",
-"title": "Working at the laptop by the window",
+"title": "Hiral at the window, Mumbai skyline behind her",
 "date": "2026-08-14",
 "thumb": "../thumbs/IFM-526.jpg",
 "video": "",
 "drive": "https://drive.google.com/file/d/1d9SatM51Z6R9xFf0K1Snv1DSM0Za_b7r/view",
-"description": "The same woman seated at a granite counter by the window, working on a laptop with the city skyline filling the glass behind her.",
+"description": "Hiral stands side-on at a floor-to-ceiling window in the same olive-beige linen wrap dress, hand in her pocket, looking out over a wide Mumbai skyline of high-rises and construction cranes under an overcast sky. Shot from behind and to the side; her face is mostly turned away.",
 "session": "Workshop Pictures — Aug 2026",
 "audience": "Mummies",
 "batch": "",
@@ -23917,14 +23919,16 @@ window.IFM_V1 =
 "silent": false,
 "type": "Image",
 "status": "Ready",
-"format": "B-roll",
+"format": "Portrait",
 "topic": [],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
 "search_terms": "working laptop window same woman seated granite counter city skyline filling glass behind her workshop aug 2026",
-"phash": "ec6eb6b66fafd206"
+"phash": "ec6eb6b66fafd206",
+"kit": "candid",
+"kit_rank": 3
 },
 {
 "id": "IFM-527",

@@ -890,12 +890,18 @@
   "_kit_why": "Identity checked by eye on 3 Oct 2026, not read off a description: the face matches IFM-067 (human-verified rank-1 kit portrait), and the same red sleeveless top appears in the 1 Oct corporate-workshop frames where she is the presenter. Teaching: smiling mid-explanation beside a legible SMART-goals slide, workbooks in front — reads as a corporate session. Adults only. Rank 2."
  },
  "IFM-525": {
-  "format": "B-roll",
-  "_why": "Reported from the Library on 5 Oct 2026 as an irrelevant hit for the query `certificate` — the frame is a woman at a laptop by a window, with no certificate in it. The cause was NOT this row alone: 26 rows catalogued in one run on 20 Sep shared the identical keyword string \"certificate graduation teens feedback workshop\", batch boilerplate that had nothing to do with 18 of the pictures. backfill expands those words into search_terms, so all 18 competed for every certificate and graduation query. Fixed at source in data.js by rebuilding each row's keywords from its own title, description and session; this entry pins the format, which the boilerplate had also driven to Certificate."
+  "title": "Hiral working on her laptop in a hotel lobby",
+  "description": "Hiral sits alone at a round black-and-gold marble table in a bright hotel lobby lounge, typing on a grey Lenovo laptop, in an olive-beige short-sleeved linen wrap dress. A magenta shopping bag and a potted plant sit beside her; pendant lights, a glass display cabinet and a high bar table are behind. Solo working portrait, not a workshop.",
+  "kit": "candid",
+  "kit_rank": 2,
+  "_why": "29 Oct/1 Nov 2026: the generated title said 'Standing at the window, city skyline behind' -- that is IFM-526's picture, not this one. The two rows' titles and descriptions were swapped, so searching 'laptop' returned the window shot and this lobby frame was unfindable. Also added the vocabulary a person would actually type: hotel, lobby, lounge, marble, Lenovo, olive, beige, linen, solo."
  },
  "IFM-526": {
-  "format": "B-roll",
-  "_why": "Reported from the Library on 5 Oct 2026 as an irrelevant hit for the query `certificate` — the frame is a woman at a laptop by a window, with no certificate in it. The cause was NOT this row alone: 26 rows catalogued in one run on 20 Sep shared the identical keyword string \"certificate graduation teens feedback workshop\", batch boilerplate that had nothing to do with 18 of the pictures. backfill expands those words into search_terms, so all 18 competed for every certificate and graduation query. Fixed at source in data.js by rebuilding each row's keywords from its own title, description and session; this entry pins the format, which the boilerplate had also driven to Certificate."
+  "title": "Hiral at the window, Mumbai skyline behind her",
+  "description": "Hiral stands side-on at a floor-to-ceiling window in the same olive-beige linen wrap dress, hand in her pocket, looking out over a wide Mumbai skyline of high-rises and construction cranes under an overcast sky. Shot from behind and to the side; her face is mostly turned away.",
+  "kit": "candid",
+  "kit_rank": 3,
+  "_why": "Swapped with IFM-525 -- see that entry. Rank 3 not 1: she is turned away from camera, which the Media Kit rules exclude from lead frames."
  },
  "IFM-607": {
   "kit": "teaching",
