@@ -1,0 +1,51 @@
+<!doctype html>
+<!-- The music drop: what the course is, one fact per cut (registry mk-specs-list, dark scheme, IFM gold, vertical).
+     Transparent: rendered as ProRes 4444 and laid over K (4 cuts, 233 frames) by hf_overlays.py. Cuts at 0 / 1.933 /
+     3.867 / 5.8s; the scrim darkens the top half so the rows read over the classroom. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Lora"; src: url("assets/fonts/Lora.ttf"); font-weight: 400 700; }
+      @font-face { font-family: "IFM Nunito"; src: url("assets/fonts/fixed-Nunito-Bold.ttf"); font-weight: 700; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+      #sl-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 22, 32, 0.78) 0%, rgba(10, 22, 32, 0.55) 42%, rgba(10, 22, 32, 0) 70%); }
+      #sl-kicker { position: absolute; left: 72px; top: 210px; font-family: "Lora"; font-weight: 700; font-size: 84px; color: #fcc536; line-height: 1; }
+      #sl-col { position: absolute; left: 72px; top: 360px; display: flex; flex-direction: column; gap: 44px; }
+      .sl-text { display: flex; align-items: baseline; gap: 20px; white-space: nowrap; }
+      .sl-label { font-family: "IFM Nunito"; font-weight: 700; font-size: 60px; color: #fff; letter-spacing: -0.01em; }
+      .sl-value { font-family: "IFM Nunito"; font-weight: 700; font-size: 40px; color: rgba(244, 241, 230, 0.8); }
+      .sl-line { position: relative; margin-top: 20px; width: 900px; height: 4px; background: rgba(255, 255, 255, 0.2); border-radius: 2px; overflow: hidden; }
+      .sl-fill { position: absolute; inset: 0; background: #fcc536; transform-origin: left center; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="specs" data-start="0" data-duration="7.767" data-width="1080" data-height="1920">
+      <div id="sl" class="clip" data-start="0" data-duration="7.767" data-track-index="0">
+        <div id="sl-scrim"></div>
+        <div id="sl-kicker">The Flagship Course</div>
+        <div id="sl-col">
+          <div class="sl-row" id="r0"><div class="sl-text"><span class="sl-label">16 hours</span><span class="sl-value">8 sessions × 2 hrs</span></div><div class="sl-line"><div class="sl-fill" id="f0"></div></div></div>
+          <div class="sl-row" id="r1"><div class="sl-text"><span class="sl-label">10–12 women</span><span class="sl-value">one table</span></div><div class="sl-line"><div class="sl-fill" id="f1"></div></div></div>
+          <div class="sl-row" id="r2"><div class="sl-text"><span class="sl-label">In person</span><span class="sl-value">Nariman Point</span></div><div class="sl-line"><div class="sl-fill" id="f2"></div></div></div>
+          <div class="sl-row" id="r3"><div class="sl-text"><span class="sl-label">Stocks, mutual funds</span><span class="sl-value">insurance &amp; more</span></div><div class="sl-line"><div class="sl-fill" id="f3"></div></div></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#sl-scrim", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0);
+      tl.fromTo("#sl-kicker", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.15);
+      [0, 1.933, 3.867, 5.8].forEach((c, i) => {
+        tl.fromTo("#r" + i, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, c + 0.2);
+        tl.fromTo("#f" + i, { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, c + 0.35);
+      });
+      tl.to({}, { duration: 0.01 }, 7.75);
+      window.__timelines["specs"] = tl;
+    </script>
+  </body>
+</html>

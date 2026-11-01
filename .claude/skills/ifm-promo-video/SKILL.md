@@ -83,6 +83,13 @@ build bars (3.90–7.78) rather than delaying the start. Duck to ~0.35 under voi
 | `spotlight`, `moody`, `locked-on`, `lean-in`, `todo` | earlier versions; `todo` ticks are true video seconds; `lean-in`/`locked-on` snap back |
 | `dot-reveal`, `pause-point`, `countdown-flip`, `scribble`, `lineup`, `cover-star`, `phone-fan`, `swipe`, `the-bill`, `headline-box` | v5 "Warm-Up Round" cut (`wu_build.py`). `cover-star`: lines ≤ ~19 chars and always set `right` (default filler text otherwise). `phone-fan` draws exactly 4 images |
 
+**HyperFrames graphics beat the effects skill for titles/lists/transitions** (flagship v8, user's verdict "these are not
+looking great… we'll do better"): build them in a HyperFrames project, render transparent (`--format mov`) and overlay
+in ffmpeg so the footage and lip-sync are untouched — see `deliverables/videos/flagship-course/build/hf_overlays.py`.
+User-approved: lt-stack-bars name bars, mk-specs-list checklist, organic-light-leak-overlay on section cuts.
+User-rejected effects-skill picks: the-bill, comment-box, countdown-flip, split-headline, cover-star editorial.
+Always show stills of 2–3 options before implementing.
+
 Not used yet, with verdicts: good fits `tier-list`, `check-pills`, `carousel-spin`, `noise`, `split-headline`,
 `broll-split`, `rabbit-hole`; Instagram-only `comment-box`, `tap`, `reel-frame`, `pastel-word`, `place-in-grid`;
 need real numbers `liquid-glass-graph`, `over-the-shoulder-zoom`, `profile-wall`, `headline-wall`; skip
@@ -93,7 +100,17 @@ need real numbers `liquid-glass-graph`, `over-the-shoulder-zoom`, `profile-wall`
 - iPhone clips are HLG 10-bit: `avconvert --preset Preset1920x1080 --source in.mov --output out.mov` first.
 - Shot lengths round to whole frames — measure starts with `nb_read_frames` before placing voice (ffprobe may print "115,").
 - `xfade` once dropped the end segment silently — use concat; re-encode deliverables (copy-concat mis-samples sheets).
+- **Never join segments with the concat demuxer + `-c copy`.** Parts cut with `-ss` can start at 0.033s; the copy-concat
+  then makes the final encoder drop frames, and every later shot runs behind its voice (flagship v2: 4 frames = 133 ms,
+  user saw "lip sync is off"). Join with the concat *filter*: `setpts=PTS-STARTPTS,setsar=1` per input,
+  `concat=n=N:v=1:a=0,setpts=N/30/TB`, `-fps_mode passthrough`, and assert the frame total. The audio cross-correlation
+  check (+24/25 ms) cannot catch this — it only proves the voice landed where it was placed. Also frame-match each shot
+  in the final against its segment (see `deliverables/videos/flagship-course/build/`).
 - Lora is a variable font (`set_variation_by_name('Bold')`); fonts live in `~/Library/Fonts/`.
 - Use `/usr/bin/python3` (has Pillow); `export PATH=/opt/homebrew/bin:$PATH` for ffmpeg.
 - Effect options can't reuse the window keys `start`/`end` (that's why the custom option is `finish`).
+- **Lip-sync must be checked by eye, not just by audio.** The +24/25 ms audio check only proves a voice landed where it
+  was placed. The AAC encoder adds 25 ms and 25->30 fps conversion shifts a shot by up to ±20 ms, so a Hiral line can run
+  ~45 ms late and the user sees it. Measure each cut against its source (`flagship-course/build/measure_sync.py`), place
+  each voice at −offset −0.025, then look at mouth strips at the exact waveform onset of an m/b word after a pause.
 - Masters never go in the repo; working files live in the session scratchpad and vanish with it — re-download raw takes from Drive.
