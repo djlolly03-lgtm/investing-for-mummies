@@ -31,12 +31,14 @@ module.exports = {
   audience: {
     include: true,  // approved by the user 26 Oct 2026
     eyebrow: 'WHO IT’S FOR',
-    title: 'Built for beginners. Deep enough for everyone.',
+    // 1 Nov 2026: reframed on the user's instruction. Feedback is that people see the course as
+    // "too basic", so the slide leads with investors and no longer says "complete beginners".
+    title: 'Built for investors. Clear for everyone.',
     who: [
-      { icon: 'i-grow', label: 'Complete beginners',
-        text: 'It’s meant for beginners. We start at the absolute beginning level.' },
-      { icon: 'ui-layers', label: 'Those with prior knowledge',  // Hiral 26 Oct: not 'a little'
-        text: 'It is also very relevant for anybody who has knowledge about these things but has never learned it in a progressive, structured manner.' },
+      { icon: 'ui-layers', label: 'Active investors',  // Hiral 26 Oct: people WITH knowledge
+        text: 'For anybody who already invests but has never learned it in a progressive, structured manner. It gives a framework to the decisions you already make.' },
+      { icon: 'i-grow', label: 'Those newer to investing',
+        text: 'Equally useful if you are just starting: every concept is built up from the foundations.' },
     ],
     deepLead: 'These workshops not only explain what the concepts are, but go deep into:',
     deep: [
@@ -154,7 +156,7 @@ module.exports = {
     name: 'Hiral Goel',
     role: 'Founder | Investing for Mummies',
     // Contact line as used on the 31 July 2026 Wealth Conversation proposal.
-    contact: 'hiral@investingformummies.com   ·   +91 98670 26583   ·   investingformummies.com',
+    contact: 'hiral@investingformummies.com   ·   +91 88987 03415   ·   investingformummies.com',
   },
 
   modules: [

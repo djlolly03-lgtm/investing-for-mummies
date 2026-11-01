@@ -1,0 +1,473 @@
+<!doctype html>
+<!-- Module 01 · The Money Blueprint, PHONE edition (1 Nov 2026). General, not customised for any client.
+     Pages are 135 x 240 mm (9:16) so a phone shows each one full-width; body text is 14pt, which a
+     phone displays at about 14px. One column, little text per page, no "Let's make it practical" boxes.
+     Render: node render-pdf.js money-blueprint-phone.html "IFM Wealth Conversation — 01 The Money Blueprint (phone).pdf" -->
+<html lang="en"><head><meta charset="utf-8">
+<title>The Money Blueprint — The Wealth Conversation</title>
+<style>
+  :root{--navy:#1a3a5c;--navy-lt:#264d78;--teal:#2a9d8f;--muted:#5a7d8a;--cream:#f7faf9;
+        --mint:#bde9e4;--mint-lt:#e0f3f0;--gold:#c9a84c;--gold-dk:#9a7a2a;--gold-lt:#f5f0e0;--ice:#d3e2ec}
+  @page{size:135mm 240mm;margin:0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Nunito,Arial,sans-serif;color:var(--navy);font-size:14pt;line-height:1.42;
+       -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:135mm;height:240mm;position:relative;overflow:hidden;page-break-after:always;background:#fff;padding:0 9mm}
+  .page:last-child{page-break-after:auto}
+  h1,h2,h3{font-family:Lora,Georgia,serif}
+  .eyebrow{font-size:10pt;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+  .foot{position:absolute;left:9mm;right:9mm;bottom:5mm;display:flex;justify-content:space-between;font-size:8.5pt;font-weight:800;letter-spacing:.12em;color:var(--muted)}
+  h2{font-size:23pt;line-height:1.15;margin-top:11mm}
+  h2 + .rule{height:.8mm;width:16mm;background:var(--gold);border-radius:1mm;margin:3mm 0 5mm}
+  p + p{margin-top:3mm}
+
+  /* opening screen */
+  .opener{background:var(--navy);color:#fff;padding-top:10mm}
+  .opener .logo{height:13mm}
+  .opener .mark{font-family:Lora,serif;font-size:90pt;line-height:.8;color:var(--gold);margin-top:22mm;height:20mm}
+  .opener blockquote{font-family:Lora,serif;font-style:italic;font-size:27pt;line-height:1.28;margin-top:4mm}
+  .opener blockquote em{color:var(--gold)}
+  .opener .by{display:flex;gap:4mm;align-items:center;margin-top:12mm}
+  .opener .by img{width:20mm;height:20mm;border-radius:50%;object-fit:cover;object-position:30% 18%;border:.8mm solid var(--gold)}
+  .opener .by b{display:block;font-size:15pt}
+  .opener .by span{font-size:11.5pt;color:var(--mint);font-weight:700}
+  .opener .next{position:absolute;left:9mm;bottom:16mm;font-size:11pt;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
+  .opener .next i{font-style:normal;color:var(--gold)}
+  .opener .foot{color:var(--ice)}
+  /* cover */
+  .cover{background:var(--navy);color:#fff;padding-top:10mm}
+  .cover .logo{height:14mm}
+  .cover .eyebrow{color:var(--mint);margin-top:9mm}
+  .cover h1{font-size:34pt;line-height:1.06;margin-top:2.5mm}
+  .cover h1 span{color:var(--gold);display:block}
+  .cover .tag{font-family:Lora,serif;font-style:italic;font-size:16pt;line-height:1.3;color:var(--mint);margin-top:4mm}
+  .cover .photo{width:100%;height:92mm;object-fit:cover;border-radius:5mm;margin-top:7mm;display:block}
+  .cover .meta{display:flex;gap:2.4mm;margin-top:6mm;flex-wrap:wrap}
+  .cover .meta span{background:var(--gold);color:var(--navy);font-weight:800;font-size:12pt;border-radius:20mm;padding:1.6mm 4.4mm}
+  .cover .meta span.o{background:transparent;color:var(--ice);border:.4mm solid rgba(211,226,236,.45)}
+  .cover .foot{color:var(--ice)}
+
+  /* why */
+  .lead{font-family:Lora,serif;font-weight:600;font-size:19pt;line-height:1.28}
+  .qs{list-style:none;margin-top:5mm}
+  .qs li{display:grid;grid-template-columns:8mm 1fr;gap:3mm;align-items:start;margin-top:3.4mm}
+  .qs li b{width:8mm;height:8mm;border-radius:50%;background:var(--mint-lt);color:var(--teal);display:grid;place-items:center;font-size:12pt}
+  .box{background:var(--mint-lt);border-radius:4mm;padding:4.4mm 5mm;font-weight:700;margin-top:7mm}
+  .steps{list-style:none}
+  .steps li{display:grid;grid-template-columns:13mm 1fr;gap:4mm;align-items:center;margin-top:4mm}
+  .steps .b{width:13mm;height:13mm;border-radius:50%;background:var(--teal);display:grid;place-items:center}
+  .steps .b img{width:8mm;height:8mm}
+  .steps small{display:block;font-size:9.5pt;font-weight:800;letter-spacing:.14em;color:var(--teal)}
+  .steps strong{font-family:Lora,serif;font-size:15pt;line-height:1.2}
+
+  /* conversation cards */
+  .conv{background:var(--cream);border-radius:5mm;padding:5mm 5mm 5mm;margin-top:6mm}
+  .conv .top{display:flex;gap:3.4mm;align-items:center}
+  .conv .bub{width:13mm;height:13mm;border-radius:50%;background:var(--teal);display:grid;place-items:center;flex:none}
+  .conv .bub img{width:8mm;height:8mm}
+  .conv .n{font-size:9.5pt;font-weight:800;letter-spacing:.16em;color:var(--teal)}
+  .conv h3{font-size:17pt;line-height:1.15}
+  .conv .kick{font-family:Lora,serif;font-style:italic;color:var(--teal);font-size:14pt;margin:3mm 0 2mm;line-height:1.3}
+  .tags{display:flex;flex-wrap:wrap;gap:2mm;margin-top:3.4mm}
+  .tags span{background:#fff;border:.35mm solid var(--mint);border-radius:10mm;padding:1mm 3.4mm;font-weight:700;font-size:11.5pt}
+  .take{background:var(--navy);color:#fff;border-radius:3.4mm;padding:3.2mm 4mm;margin-top:4mm;font-size:13pt;line-height:1.35}
+  .take b{color:var(--gold)}
+  .bk{margin-top:3.4mm}
+  .bk div{background:#fff;border-radius:3mm;padding:2.4mm 3.4mm;border-left:2.2mm solid var(--teal);font-size:12.5pt;line-height:1.3}
+  .bk div + div{margin-top:2mm}
+  .bk div:nth-child(2){border-left-color:var(--navy-lt)}
+  .bk div:nth-child(3){border-left-color:var(--gold)}
+  .bk b{font-size:10.5pt;letter-spacing:.12em;display:block}
+
+  /* conversation pages */
+  .ch{display:flex;gap:4mm;align-items:center;margin-top:7mm}
+  .ch .bub{width:16mm;height:16mm;border-radius:50%;background:var(--teal);display:grid;place-items:center;flex:none}
+  .ch .bub img{width:10mm;height:10mm}
+  .ch .n{font-size:9.5pt;font-weight:800;letter-spacing:.16em;color:var(--teal)}
+  .ch h3{font-size:20pt;line-height:1.15}
+  .page > .kick{font-family:Lora,serif;font-style:italic;color:var(--teal);font-size:15pt;line-height:1.3;margin-top:4mm}
+  .intro{margin-top:2.4mm;font-size:13pt;line-height:1.4}
+  .lbl{font-size:9.5pt;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin:4mm 0 1mm}
+  .exl{list-style:none}
+  .exl li{display:grid;grid-template-columns:9mm 1fr;gap:3mm;align-items:center;font-weight:700;font-size:13pt;padding:.7mm 0;border-bottom:.3mm solid var(--mint-lt)}
+  .exl li:last-child{border-bottom:0}
+  .exl .ic{width:9mm;height:9mm;border-radius:50%;background:var(--mint-lt);display:grid;place-items:center}
+  .exl .ic img{width:5.6mm;height:5.6mm}
+  ul.bk{list-style:none}
+  ul.bk li{background:var(--cream);border-radius:3mm;padding:2.4mm 3.6mm;border-left:2.4mm solid var(--teal);font-size:12.5pt;line-height:1.3}
+  ul.bk li + li{margin-top:2mm}
+  ul.bk li:nth-child(2){border-left-color:var(--navy-lt)}
+  ul.bk li:nth-child(3){border-left-color:var(--gold)}
+  ul.bk b{font-size:10pt;letter-spacing:.12em;display:block}
+  .prac{background:var(--gold-lt);border-radius:4mm;padding:3mm 4.2mm;margin-top:4mm}
+  .prac .pt{display:flex;gap:2.4mm;align-items:center;font-size:9.5pt;font-weight:800;letter-spacing:.16em;color:var(--gold-dk)}
+  .prac .pt img{width:7mm;height:7mm}
+  .prac ul{list-style:none;margin-top:1.6mm}
+  .prac li{padding-left:5mm;position:relative;font-size:12.5pt;line-height:1.35;font-weight:600}
+  .prac li + li{margin-top:1.2mm}
+  .prac li:before{content:"›";position:absolute;left:0;top:-.4mm;color:var(--gold-dk);font-weight:800;font-size:15pt;line-height:1.2}
+  .scr{margin:3.6mm 0 0}
+  .scr img{width:100%;height:34mm;object-fit:cover;object-position:50% 0;border-radius:4mm;display:block;box-shadow:0 .8mm 2.4mm rgba(26,58,92,.22)}
+  .scr figcaption{font-size:10pt;font-weight:700;color:var(--muted);margin-top:1.6mm}
+  .page > .take{margin-top:3.4mm}
+  .steps li{grid-template-columns:15mm 1fr!important;align-items:start!important;margin-top:5mm!important}
+  .steps .b{width:15mm!important;height:15mm!important}
+  .steps em{display:block;font-family:Lora,serif;font-style:italic;color:var(--teal);font-size:12.5pt;margin-top:.6mm}
+  /* game screens: one navy "in the room" panel, same 2.3:1 frame everywhere */
+  .room{margin:3.6mm 0 0;background:var(--navy);border-radius:4mm;padding:2.4mm 2.8mm 2.6mm}
+  .room .rl{font-size:8.5pt;font-weight:800;letter-spacing:.16em;color:var(--gold);margin:0 0 1.6mm .4mm}
+  .room .dev{background:#0d1f33;border-radius:2.4mm;padding:1mm}
+  .room img{width:100%;aspect-ratio:2.5/1;object-fit:cover;display:block;border-radius:1.6mm}
+  .room figcaption{color:var(--ice);font-size:10.5pt;font-weight:700;margin-top:1.6mm;line-height:1.3}
+  /* workshop photos: fill whatever height is left on the page, caption on the photo */
+  .fillfig{position:relative;margin-top:6mm;border-radius:5mm;overflow:hidden}
+  .fillfig img{width:100%;height:50mm;object-fit:cover;display:block}
+  .fillfig figcaption{position:absolute;left:0;right:0;bottom:0;padding:9mm 4.4mm 3.4mm;color:#fff;font-weight:800;font-size:12pt;
+                      background:linear-gradient(180deg,rgba(26,58,92,0) 0%,rgba(26,58,92,.88) 100%)}
+  /* game screens, whole and uncropped: a light browser window, each sized to about the same height */
+  .shot{margin:4mm 0 0;text-align:center}
+  .shot .sl{text-align:left;font-size:9.5pt;font-weight:800;letter-spacing:.16em;color:var(--teal);margin-bottom:1.6mm}
+  .shot .win{display:inline-block;width:100%;max-width:var(--w,100%);background:#fff;border:.35mm solid #d9e6ea;border-radius:3.4mm;overflow:hidden;
+             box-shadow:0 1.2mm 3.6mm rgba(26,58,92,.16);vertical-align:top}
+  .shot .bar{height:4.6mm;background:#eef4f5;border-bottom:.3mm solid #d9e6ea;display:flex;gap:1.3mm;align-items:center;padding-left:2.4mm}
+  .shot .bar i{width:1.7mm;height:1.7mm;border-radius:50%;background:#c3d3d8}
+  .shot img{display:block;width:100%;height:auto}
+  .shot figcaption{text-align:left;font-size:10.5pt;font-weight:700;color:var(--muted);margin-top:1.8mm;line-height:1.3}
+  .spread .exl li{font-size:14pt;padding:1.8mm 0}
+  .spread .exl .ic{width:10mm;height:10mm}
+  .spread ul.bk li{font-size:13.5pt;padding:3mm 4mm}
+  .spread .prac li{font-size:13.5pt}
+  .steps.mini li{grid-template-columns:11mm 1fr!important;align-items:center!important;margin-top:2.8mm!important}
+  .steps.mini .b{width:11mm!important;height:11mm!important}
+  .steps.mini .b img{width:6.6mm;height:6.6mm}
+  .steps.mini strong{font-size:14pt}
+  .stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4mm;margin-top:5mm}
+  .stats3 div{background:var(--mint-lt);border-radius:3mm;padding:2.6mm 2.4mm;text-align:center}
+  .stats3 b{display:block;font-family:Lora,serif;font-size:21pt;line-height:1;color:var(--teal)}
+  .stats3 span{display:block;font-weight:800;font-size:10pt;line-height:1.2;margin-top:1.2mm}
+  .mlab{display:block;font-family:Nunito,Arial,sans-serif;font-style:normal;font-size:9.5pt;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);margin-bottom:2mm}
+  /* lists */
+  .ticks{list-style:none}
+  .ticks li{display:grid;grid-template-columns:7mm 1fr;gap:3mm;align-items:center;background:var(--mint-lt);border-radius:3mm;padding:2.6mm 3.4mm;font-weight:700}
+  .ticks li + li{margin-top:2.2mm}
+  .ticks img{width:7mm;height:7mm}
+  .exp{display:grid;grid-template-columns:1fr 1fr;gap:4mm 4mm}
+  .exp div{display:grid;grid-template-columns:12mm 1fr;gap:2.6mm;align-items:center;font-weight:700;font-size:12.5pt;line-height:1.25}
+  .exp .b{width:12mm;height:12mm;border-radius:50%;background:var(--mint-lt);display:grid;place-items:center}
+  .exp .b img{width:7.5mm;height:7.5mm}
+  .who h2{font-size:26pt;font-weight:700;color:var(--navy)}
+  .who-card{background:var(--navy);color:#fff;border-radius:5mm;padding:5mm 5.4mm}
+  .who-card ul{list-style:none}
+  .who-card li{padding-left:6mm;position:relative}
+  .who-card li + li{margin-top:3.4mm}
+  .who-card li:before{content:"";position:absolute;left:0;top:2.4mm;width:2.8mm;height:2.8mm;border-radius:50%;background:var(--gold)}
+  .who-card b{color:var(--gold)}
+  .who-card .deep{margin-top:4mm;padding-top:3.4mm;border-top:.3mm solid rgba(189,233,228,.35);color:var(--mint);font-size:12.5pt;font-weight:700}
+  .bring{background:var(--cream);border-radius:4mm;padding:4mm 5mm;margin-top:5mm}
+  .bring ul{list-style:none;margin-top:1.6mm}
+  .bring li{padding-left:5mm;position:relative}
+  .bring li:before{content:"";position:absolute;left:0;top:2.2mm;width:2.4mm;height:2.4mm;border-radius:50%;background:var(--teal)}
+
+  /* facilitator */
+  .fac-photo{width:100%;height:80mm;object-fit:cover;object-position:50% 15%;border-radius:5mm;display:block;margin-top:9mm}
+  .fac-name{font-family:Lora,serif;font-weight:700;font-size:26pt;line-height:1.1;margin-top:5mm}
+  .fac-role{font-family:Lora,serif;font-style:italic;color:var(--teal);font-size:14pt;margin-top:1mm}
+  .creds{list-style:none;margin-top:4mm}
+  .creds li{display:flex;gap:2.6mm;align-items:center;font-weight:700;font-size:12.5pt}
+  .creds li + li{margin-top:1.8mm}
+  .creds li:before{content:"";width:2.4mm;height:2.4mm;border-radius:50%;background:var(--gold);flex:none}
+  .quote{background:var(--gold-lt);border-radius:4mm;padding:4.4mm 5mm;margin-top:6mm}
+  .quote small{display:block;font-size:9.5pt;font-weight:800;letter-spacing:.16em;color:var(--gold-dk);margin-bottom:1.4mm}
+  .quote div{font-family:Lora,serif;font-style:italic;font-size:17pt;line-height:1.32}
+  .stats{display:grid;gap:3mm;margin-top:6mm}
+  .stats div{background:var(--mint-lt);border-radius:3.4mm;padding:3mm 4.4mm;display:grid;grid-template-columns:30mm 1fr;align-items:center}
+  .stats b{font-family:Lora,serif;font-size:27pt;line-height:1;color:var(--teal)}
+  .stats span{font-weight:800;font-size:13pt;line-height:1.2}
+
+  /* series + mission */
+  .mission{background:var(--navy);color:#fff;border-radius:5mm;padding:5.4mm 5.4mm;margin-top:6mm}
+  .mission small{display:block;font-size:9.5pt;font-weight:800;letter-spacing:.16em;color:var(--mint);margin-bottom:2mm}
+  .mission div{font-family:Lora,serif;font-size:18pt;line-height:1.3}
+  .mission em{color:var(--gold)}
+  .mods{list-style:none;margin-top:2mm}
+  .mods li{display:grid;grid-template-columns:11mm 1fr;gap:3mm;align-items:center;background:var(--cream);border-radius:3mm;padding:2.6mm 3.4mm;font-weight:800}
+  .mods li + li{margin-top:2.2mm}
+  .mods li i{font-style:normal;font-family:Lora,serif;font-size:15pt;color:var(--teal)}
+  .mods li.here{background:var(--navy);color:#fff}
+  .mods li.here i{color:var(--gold)}
+  .mods li.here small{display:block;font-size:9pt;letter-spacing:.14em;color:var(--gold)}
+  .choice{margin-top:4mm;font-weight:700;color:var(--muted);font-size:12.5pt}
+
+  /* close */
+  .close{background:var(--navy);color:#fff}
+  .close .q{font-family:Lora,serif;font-style:italic;font-size:21pt;line-height:1.3;margin-top:8mm}
+  .close .q em{color:var(--gold)}
+  .close .begins{margin-top:5mm;font-weight:800;color:var(--mint)}
+  .close .ph{width:100%;height:58mm;object-fit:cover;border-radius:5mm;margin-top:14mm;display:block}
+  .close .contact{list-style:none;margin-top:7mm}
+  .close .contact li{font-weight:700;font-size:13pt}
+  .close .contact li + li{margin-top:1.8mm}
+  .close .contact small{display:inline-block;width:24mm;font-size:9pt;font-weight:800;letter-spacing:.14em;color:var(--mint)}
+  .close .badge{position:absolute;right:9mm;top:10mm;width:22mm}
+  .close .disc{margin-top:6mm;font-size:10pt;font-style:italic;color:var(--ice)}
+  .close .foot{color:var(--ice)}
+  .close .mods li{color:var(--navy)}
+  .close .mods li.here{background:var(--teal);color:#fff}
+  .close .mods li.here i,.close .mods li.here small{color:#fff}
+  .fill{width:100%;object-fit:cover;border-radius:5mm;display:block}
+  .who h2:first-child{font-size:31pt;font-weight:700;letter-spacing:-.01em}
+  .who h2:first-child + .rule{height:1.4mm;width:24mm}
+</style></head>
+<body>
+
+<!-- 0 · OPENING: Hiral's line, first thing anyone sees -->
+<section class="page opener">
+  <img class="logo" src="../assets/logo-lockup-dark.png" alt="Investing for Mummies">
+  <div class="mark">“</div>
+  <blockquote>A woman is never truly independent until she knows how to <em>manage her own money.</em></blockquote>
+  <div class="by">
+    <img src="mb-hiral-fs.jpg" alt="Hiral Goel">
+    <div><b>Hiral Goel</b><span>Founder, Investing for Mummies</span></div>
+  </div>
+  <div class="next">The Money Blueprint <i>→</i></div>
+  <div class="foot"><span>THE WEALTH CONVERSATION</span><span>01 / 11</span></div>
+</section>
+
+<!-- 1 · COVER -->
+<section class="page cover">
+  <img class="logo" src="../assets/logo-lockup-dark.png" alt="Investing for Mummies">
+  <div class="eyebrow">The Wealth Conversation · Module 01</div>
+  <h1><span>01</span>The Money Blueprint</h1>
+  <div class="tag">From being a money observer to becoming a money participant.</div>
+  <img class="photo" src="mb-hero.jpg" alt="Hiral teaching the SMART goals framework at a workshop">
+  <div class="meta"><span>3 hours</span><span class="o">Interactive · instructor-led</span></div>
+  <div class="foot"><span>INVESTING FOR MUMMIES</span><span>02 / 11</span></div>
+</section>
+
+<!-- 2 · WHY -->
+<section class="page">
+  <h2 style="margin-top:9mm">Why this workshop</h2><div class="rule"></div>
+  <p class="lead">Having money and knowing how to make it work are two very different things.</p>
+  <ul class="qs">
+    <li><b>?</b><span>How does inflation affect your money?</span></li>
+    <li><b>?</b><span>Why does the RBI change interest rates?</span></li>
+    <li><b>?</b><span>Are your investments working towards your goals?</span></li>
+  </ul>
+  <p class="box">Whether you already invest or are just getting started: a structured framework for the money decisions you make, and the confidence to question them.</p>
+  <div class="lbl" style="margin-top:7mm">Four conversations about money</div>
+  <ul class="steps mini">
+    <li><span class="b"><img src="../icons/png/i-grow-teal.png" alt=""></span><strong>Why should my money work?</strong></li>
+    <li><span class="b"><img src="../icons/png/i-compass-teal.png" alt=""></span><strong>How should I think about my money?</strong></li>
+    <li><span class="b"><img src="../icons/png/i-buckets-teal.png" alt=""></span><strong>How do I make sense of my money?</strong></li>
+    <li><span class="b"><img src="../icons/png/le-chat-teal.png" alt=""></span><strong>How do I join the conversation?</strong></li>
+  </ul>
+  <div class="foot"><span>THE MONEY BLUEPRINT</span><span>03 / 11</span></div>
+</section>
+
+<!-- CONVERSATION 01 -->
+<section class="page spread">
+  <header class="ch">
+    <span class="bub"><img src="../icons/png/i-grow-teal.png" alt=""></span>
+    <div><div class="n">CONVERSATION 01</div><h3>Why should my money work?</h3></div>
+  </header>
+  <div class="kick">Earning and saving is only the beginning.</div>
+  <div class="lbl">What we’ll explore</div>
+  <ul class="exl">
+      <li><span class="ic"><img src="../icons/png/i-wallet-light.png" alt=""></span>Saving vs investing</li>
+      <li><span class="ic"><img src="../icons/png/i-price-tag-light.png" alt=""></span>Inflation, the silent money eater</li>
+      <li><span class="ic"><img src="../icons/png/i-building-light.png" alt=""></span>The RBI and interest rates</li>
+      <li><span class="ic"><img src="../icons/png/i-trend-up-light.png" alt=""></span>The power of compounding</li>
+      <li><span class="ic"><img src="../icons/png/ui-clock-light.png" alt=""></span>The power of time</li>
+  </ul>
+  <div class="prac">
+    <div class="pt"><img src="../icons/png/le-games-gold.png" alt=""><span>LET’S MAKE IT PRACTICAL</span></div>
+    <ul>
+        <li>An inflation calculator for your goals</li>
+        <li>Your lifestyle spend as a monthly SIP</li>
+        <li>Live compounding exercises</li>
+    </ul>
+  </div>
+  <div class="take"><b>Takeaway:</b> Why your money needs to grow, and why time matters.</div>
+  <div class="foot"><span>THE MONEY BLUEPRINT</span><span>04 / 11</span></div>
+</section>
+
+<!-- CONVERSATION 02 -->
+<section class="page spread">
+  <header class="ch">
+    <span class="bub"><img src="../icons/png/i-compass-teal.png" alt=""></span>
+    <div><div class="n">CONVERSATION 02</div><h3>How should I think about my money?</h3></div>
+  </header>
+  <div class="kick">From investing randomly to investing with purpose.</div>
+  <div class="lbl">What we’ll explore</div>
+  <ul class="exl">
+      <li><span class="ic"><img src="../icons/png/q-target-light.png" alt=""></span>Defining financial goals</li>
+      <li><span class="ic"><img src="../icons/png/v-goals-light.png" alt=""></span>The SMART framework</li>
+      <li><span class="ic"><img src="../icons/png/ui-calendar-light.png" alt=""></span>Time horizon</li>
+      <li><span class="ic"><img src="../icons/png/q-scale-light.png" alt=""></span>Risk and return</li>
+      <li><span class="ic"><img src="../icons/png/q-puzzle-light.png" alt=""></span>Matching investments to goals</li>
+  </ul>
+  <div class="prac">
+    <div class="pt"><img src="../icons/png/v-goals-gold.png" alt=""><span>LET’S MAKE IT PRACTICAL</span></div>
+    <ul>
+        <li>Turn everyday wishes into clear, measurable goals</li>
+    </ul>
+  </div>
+  <div class="take"><b>Takeaway:</b> A simple framework to set goals and weigh decisions.</div>
+  <div class="foot"><span>THE MONEY BLUEPRINT</span><span>05 / 11</span></div>
+</section>
+
+<!-- CONVERSATION 03 -->
+<section class="page spread">
+  <header class="ch">
+    <span class="bub"><img src="../icons/png/i-buckets-teal.png" alt=""></span>
+    <div><div class="n">CONVERSATION 03</div><h3>How do I make sense of my money?</h3></div>
+  </header>
+  <div class="kick">Give every rupee a job.</div>
+  <div class="lbl">What we’ll explore</div>
+  <ul class="bk">
+    <li><b>PROTECT</b>Emergency fund, health and term insurance</li>
+    <li><b>STABILISE</b>Stable money for nearer-term needs</li>
+    <li><b>GROW</b>Long-term wealth that beats inflation</li>
+  </ul>
+  <div class="prac">
+    <div class="pt"><img src="../icons/png/le-games-gold.png" alt=""><span>LET’S MAKE IT PRACTICAL</span></div>
+    <ul>
+        <li>Play the 3 Bucket Game</li>
+        <li>Then look at what each of your own investments is doing for you</li>
+    </ul>
+  </div>
+  <div class="take"><b>Takeaway:</b> See your portfolio as investments with different jobs.</div>
+  <div class="foot"><span>THE MONEY BLUEPRINT</span><span>06 / 11</span></div>
+</section>
+
+<!-- CONVERSATION 04 -->
+<section class="page spread">
+  <header class="ch">
+    <span class="bub"><img src="../icons/png/le-chat-teal.png" alt=""></span>
+    <div><div class="n">CONVERSATION 04</div><h3>How do I join the conversation?</h3></div>
+  </header>
+  <div class="kick">Knowing what questions to ask.</div>
+  <div class="lbl">What we’ll explore</div>
+  <ul class="exl">
+      <li><span class="ic"><img src="../icons/png/i-book-light.png" alt=""></span>Financial language</li>
+      <li><span class="ic"><img src="../icons/png/v-portfolio-light.png" alt=""></span>Understanding what you own</li>
+      <li><span class="ic"><img src="../icons/png/le-chat-light.png" alt=""></span>Talking to your advisor</li>
+      <li><span class="ic"><img src="../icons/png/i-magnify-chart-light.png" alt=""></span>Asking the right questions</li>
+      <li><span class="ic"><img src="../icons/png/ui-users-light.png" alt=""></span>Taking an active role</li>
+  </ul>
+  <div class="prac">
+    <div class="pt"><img src="../icons/png/le-handout-gold.png" alt=""><span>LET’S MAKE IT PRACTICAL</span></div>
+    <ul>
+        <li>Questions to take to your advisor or family</li>
+        <li>Leave with your own Money Conversation Card</li>
+    </ul>
+  </div>
+  <div class="take"><b>Takeaway:</b> The confidence and vocabulary to question advice.</div>
+  <div class="foot"><span>THE MONEY BLUEPRINT</span><span>07 / 11</span></div>
+</section>
+
+<!-- 5 · WALK AWAY WITH -->
+<section class="page">
+  <h2>What you’ll walk away with</h2><div class="rule"></div>
+  <ul class="ticks">
+    <li><img src="../icons/png/ui-check-light.png" alt="">The impact of inflation</li>
+    <li><img src="../icons/png/ui-check-light.png" alt="">How the economy affects your money</li>
+    <li><img src="../icons/png/ui-check-light.png" alt="">The power of compounding</li>
+    <li><img src="../icons/png/ui-check-light.png" alt="">Clearer financial goals</li>
+    <li><img src="../icons/png/ui-check-light.png" alt="">A framework for investment decisions</li>
+    <li><img src="../icons/png/ui-check-light.png" alt="">Organised investments</li>
+    <li><img src="../icons/png/ui-check-light.png" alt="">A new view of your portfolio</li>
+    <li><img src="../icons/png/ui-check-light.png" alt="">Better questions for your advisor</li>
+    <li><img src="../icons/png/ui-check-light.png" alt="">An active role in your decisions</li>
+  </ul>
+  <figure class="fillfig"><img src="mb-end.jpg" alt="A full room at a corporate workshop"><figcaption>A full corporate room</figcaption></figure>
+  <div class="foot"><span>THE MONEY BLUEPRINT</span><span>08 / 11</span></div>
+</section>
+
+<!-- 6 · WHO IT'S FOR + EXPERIENCE -->
+<section class="page who">
+  <h2>Who it’s for</h2><div class="rule"></div>
+  <div class="who-card">
+    <ul>
+      <li><b>Active investors</b> who want a structured framework for the decisions they already make.</li>
+      <li><b>Business owners and professionals</b> who want the same clarity on their own money.</li>
+      <li><b>Those newer to investing</b> who want the right foundations.</li>
+    </ul>
+    <div class="deep">Every concept goes beyond the definition, to what it means for your own portfolio.</div>
+  </div>
+  <div class="bring"><span class="eyebrow">What to bring</span>
+    <ul><li>Your phone: the games run on it</li></ul>
+  </div>
+  <h2 style="font-size:20pt;margin-top:9mm">Not a lecture. Expect:</h2><div class="rule"></div>
+  <div class="exp">
+    <div><span class="b"><img src="../icons/png/le-spark-light.png" alt=""></span>Real-life analogies</div>
+    <div><span class="b"><img src="../icons/png/le-games-light.png" alt=""></span>Interactive games</div>
+    <div><span class="b"><img src="../icons/png/i-trend-up-light.png" alt=""></span>Live compounding exercises</div>
+    <div><span class="b"><img src="../icons/png/v-allocation-light.png" alt=""></span>Portfolio simulations</div>
+  </div>
+  <div class="foot"><span>THE MONEY BLUEPRINT</span><span>09 / 11</span></div>
+</section>
+
+<!-- 7 · FACILITATOR -->
+<section class="page">
+  <img class="fac-photo" src="mb-hiral-fs.jpg" alt="Hiral Goel at her laptop">
+  <div class="fac-name">Hiral Goel</div>
+  <div class="fac-role">Founder, Investing for Mummies</div>
+  <ul class="creds">
+    <li>University of Michigan, Ann Arbor</li>
+    <li>10+ years as a journalist, <i>Business India</i></li>
+    <li>Led the Businessman of the Year award</li>
+  </ul>
+  <p style="margin-top:5mm">Realising that understanding business did not mean understanding personal finance, she took what she had learned to other women, and Investing for Mummies was born.</p>
+  <p>Every month she runs a 16-hour workshop that teaches the full landscape of investing. She has also created workshops for young adults and for teens.</p>
+  <div class="stats3">
+    <div><b>200+</b><span>women taught</span></div>
+    <div><b>400+</b><span>hours of teaching</span></div>
+    <div><b>40+</b><span>money games, built in-house</span></div>
+  </div>
+  <div class="foot"><span>MEET YOUR FACILITATOR</span><span>10 / 11</span></div>
+</section>
+
+<!-- 9 · THE SERIES + CLOSE -->
+<section class="page close">
+  <img class="badge" src="../assets/logo-badge.png" alt="Investing for Mummies">
+  <div class="eyebrow" style="color:var(--mint);margin-top:12mm">The Wealth Conversation</div>
+  <div class="q"><small class="mlab">Our mission</small>Turning financial literacy into a <em>generational life skill</em>, by making wealth conversations <em>less intimidating.</em></div>
+  <div class="begins">The Money Blueprint is module 01 of five. Take the full series, or any module.</div>
+  <ul class="mods" style="margin-top:5mm">
+    <li class="here"><i>01</i><span><small>YOU ARE HERE</small>The Money Blueprint</span></li>
+    <li><i>02</i>Insurance Decoded</li>
+    <li><i>03</i>Asset Classes</li>
+    <li><i>04</i>The Stock Market Demystified</li>
+    <li><i>05</i>The Mutual Fund Map</li>
+  </ul>
+  <ul class="contact">
+    <li><small>EMAIL</small>hiral@investingformummies.com</li>
+    <li><small>PHONE</small>+91 88987 03415</li>
+    <li><small>WEB</small>investingformummies.com</li>
+  </ul>
+  <div class="disc">An educational session. Not investment advice.</div>
+  <div class="foot"><span>INVESTING FOR MUMMIES</span><span>11 / 11</span></div>
+</section>
+<script>
+// Each captioned workshop photo grows to fill the rest of its page, so pages end flush instead of in a gap.
+document.fonts.ready.then(() => {
+  const MM = 96 / 25.4;
+  document.querySelectorAll('.fillfig').forEach(fig => {
+    const pg = fig.closest('.page'), img = fig.querySelector('img');
+    const room = pg.getBoundingClientRect().bottom - 14 * MM - fig.getBoundingClientRect().top;
+    img.style.height = Math.max(40 * MM, Math.min(room, 120 * MM)) + 'px';
+  });
+  document.querySelectorAll('.page.spread').forEach(pg => {
+    const kids = [...pg.children].filter(el => getComputedStyle(el).position !== 'absolute');
+    const spare = pg.getBoundingClientRect().bottom - 16 * MM - kids[kids.length - 1].getBoundingClientRect().bottom;
+    if (spare <= 0) return;
+    // space opens only before a new block (label, practical box, takeaway), so a label stays with its list
+    const gaps = kids.filter(el => el.matches('.lbl, .prac, .take'));
+    const add = Math.min(spare / gaps.length, 14 * MM);
+    gaps.forEach(el => { el.style.marginTop = (parseFloat(getComputedStyle(el).marginTop) + add) + 'px'; });
+  });
+  document.body.dataset.laidOut = '1';
+});
+</script>
+</body></html>

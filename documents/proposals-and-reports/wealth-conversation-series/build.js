@@ -112,7 +112,7 @@ pres.defineSlideMaster({ title: 'IFM Mint', background: { color: C.mintLt },
   objects: [...footer(false), { image: { path: A('logo-colour.png'), x: W - M - 1.3, y: 0.4, w: 1.3, h: 0.524, altText: 'Investing for Mummies logo' } }, titlePh({})],
   slideNumber: slideNo(false) });
 pres.defineSlideMaster({ title: 'IFM Dark', background: { color: C.navy },
-  objects: [...footer(true), { image: { path: A('logo-white.png'), x: W - M - 1.3, y: 0.4, w: 1.3, h: 0.524, altText: 'Investing for Mummies logo' } },
+  objects: [...footer(true), { image: { path: A('logo-lockup-dark.png'), x: W - M - 1.4, y: 0.4, w: 1.4, h: 1.4 / 2.673, altText: 'Investing for Mummies logo' } },
     titlePh({ color: C.white })],
   slideNumber: slideNo(true) });
 pres.defineSlideMaster({ title: 'IFM Module', background: { color: C.white },
@@ -132,7 +132,7 @@ let s;
 pres.addSection({ title: 'Introduction' });
 s = pres.addSlide({ masterName: 'IFM Cover', sectionTitle: 'Introduction' });
 decoCircles(s, [[-1.9, 4.9, 5.0, 50], [10.9, -2.4, 4.8, 50]]);
-s.addImage({ path: A('logo-white.png'), x: M, y: 0.5, w: 1.8, h: 1.8 / 2.479, altText: 'Investing for Mummies logo' });
+s.addImage({ path: A('logo-lockup-dark.png'), x: M, y: 0.5, w: 2.1, h: 2.1 / 2.673, altText: 'Investing for Mummies logo' });
 label(s, COPY.cover.eyebrow, M + 0.02, 1.9, 5.6, C.mint);
 s.addText([
   { text: 'The Wealth', options: { breakLine: true } },
@@ -491,7 +491,7 @@ s.addShape(SH.OVAL, { x: M - 0.04, y: 4.68, w: 1.63, h: 1.63, fill: { type: 'non
 T(s, cl.name, { x: M + 1.9, y: 4.82, w: 6, h: 0.5, fontFace: HEAD, fontSize: 24, bold: true, color: C.white });
 T(s, cl.role, { x: M + 1.9, y: 5.32, w: 6, h: 0.36, fontSize: 14, bold: true, color: C.mint });
 T(s, cl.contact, { x: M + 1.9, y: 5.78, w: 7.5, h: 0.36, fontSize: 12, color: C.ice });
-s.addImage({ path: A('logo-white.png'), x: W - M - 2.2, y: 4.72 + 1.55 - 2.2 / 2.479, w: 2.2, h: 2.2 / 2.479, altText: 'Investing for Mummies logo' });
+s.addImage({ path: A('logo-lockup-dark.png'), x: W - M - 2.4, y: 4.72 + 1.55 - 2.4 / 2.673, w: 2.4, h: 2.4 / 2.673, altText: 'Investing for Mummies logo' });
 
 // ---------- write ----------
 (async () => {

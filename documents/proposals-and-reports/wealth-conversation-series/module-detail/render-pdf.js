@@ -13,6 +13,8 @@ const OUT = path.join(__dirname, '..', '..', out);
   const page = await browser.newPage();
   await page.goto('file://' + path.join(__dirname, src), { waitUntil: 'load' });
   await page.evaluateHandle('document.fonts.ready');
+  // pages may run a layout script after fonts load (money-blueprint-v3 spreads spare height)
+  await page.waitForFunction(() => !(document.querySelector('.page.spread') || document.querySelector('.fillfig')) || document.body.dataset.laidOut === '1', { timeout: 10000 });
   const report = await page.evaluate(() => {
     const issues = [];
     document.querySelectorAll('.page').forEach((pg, i) => {
@@ -23,7 +25,9 @@ const OUT = path.join(__dirname, '..', '..', out);
         if (r.height && r.bottom > pb.bottom - 32) issues.push(`page ${i + 1}: <${el.tagName.toLowerCase()} class="${el.className}"> overruns into the footer zone by ${Math.round(r.bottom - (pb.bottom - 32))}px`);
       });
     });
-    return { pages: document.querySelectorAll('.page').length, issues: issues.slice(0, 12) };
+    const worst = {};
+    issues.forEach(t => { const m = t.match(/^page (\d+):.* by (\d+)px/); if (m) worst[m[1]] = Math.max(worst[m[1]] || 0, +m[2]); });
+    return { pages: document.querySelectorAll('.page').length, worstOverrunPxByPage: worst, issues: issues.slice(0, 6) };
   });
   await page.pdf({ path: OUT, format: 'A4', printBackground: true, preferCSSPageSize: true });
   await browser.close();

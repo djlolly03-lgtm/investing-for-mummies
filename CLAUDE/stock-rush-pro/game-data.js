@@ -142,6 +142,77 @@ window.STOCK_POOL = [
     fun: "At its 2018 peak, Zee was worth ₹50,000 crore. Then the founder borrowed against his shares to fund unrelated infrastructure projects. The rest is a tragedy.",
     watch: "Promoter share pledging is the original red flag. When the founder's other companies borrow against Zee shares, every dip triggers a forced sale — and then another.",
   },
+
+  // ── Expansion batch Nov 2026 — 9 companies covering sectors the original pool
+  //    missed (pharma, FMCG beyond ITC, capital goods, hospitals, telecom-loser,
+  //    specialty chemicals, PSU defence, beverages, IPO-dip-then-rocket). Each
+  //    one is tied to a real corporate action in GAME_SLOTS. ──────────────────
+
+  // ── Dividend alternatives (slot C/D) ────────────────────────────────────────
+  {
+    id: 'HUL', name: 'Hindustan Unilever', sector: 'FMCG', cap: 'large', risk: 'low', emoji: '🧴', mono: '◆',
+    desc: "India's largest FMCG company. Soap, shampoo, tea, detergent — in every Indian home. The ultimate dividend-paying compounder.",
+    fun: "Owns Surf Excel, Lux, Dove, Lipton, Horlicks and over 40 other brands you've used this week without noticing.",
+    watch: "Young D2C brands (Mamaearth, BoAT, SUGAR) are quietly eating HUL's shelf space. Growth has slowed since 2020.",
+  },
+  {
+    id: 'APOLLOHOSP', name: 'Apollo Hospitals', sector: 'Consumer', cap: 'large', risk: 'medium', emoji: '🏥', mono: '●',
+    desc: "India's largest hospital chain. Riding the structural tailwinds of ageing India and rising insurance penetration.",
+    fun: "The pandemic turned every hospital into a trophy asset. Apollo's stock price went 4× in two years as investors realised India needs more hospital beds, not fewer.",
+    watch: "Healthcare is defensive but not immune — labour costs rising, insurance pricing battles with hospitals every quarter.",
+  },
+
+  // ── Split alternative (slot C) ──────────────────────────────────────────────
+  {
+    id: 'BEL', name: 'Bharat Electronics', sector: 'Defence', cap: 'large', risk: 'low', emoji: '📡', mono: '◉',
+    desc: "India's state-owned defence electronics giant. Radars, missile systems, electronic warfare. The one PSU that actually created wealth.",
+    fun: "Did a 1:10 stock split AND a 1:10 bonus simultaneously in 2017 — one of the most dramatic corporate action combos on the Nifty.",
+    watch: "Order book is enormous but execution is slow. 'Make in India' defence procurement is the entire investment thesis.",
+  },
+
+  // ── IPO alternative (slot C) ────────────────────────────────────────────────
+  {
+    id: 'KALYANKJIL', name: 'Kalyan Jewellers', sector: 'Consumer', cap: 'mid', risk: 'medium', emoji: '💍', mono: '◍',
+    desc: "India's second-largest jewellery chain, after Tanishq. IPO'd at ₹87 in March 2021, crashed 40% in weeks, then became a multibagger.",
+    fun: "The IPO was oversubscribed just 2.6× — bearish by Indian standards. Analysts hated it. Three years later it's up 6×.",
+    watch: "Gold price volatility, wedding-season dependency, and Tanishq's premium brand pulling market share upwards.",
+  },
+
+  // ── Bonus alternatives (slot C/D) ───────────────────────────────────────────
+  {
+    id: 'VBL', name: 'Varun Beverages', sector: 'Consumer', cap: 'large', risk: 'medium', emoji: '🥤', mono: '◆',
+    desc: "PepsiCo India's bottler. Puts Pepsi, Mountain Dew, and 7UP into bottles across India, Nepal, Sri Lanka, Zambia, Morocco. Boring. 15× in 7 years.",
+    fun: "Listed late 2016 and has issued bonus shares twice and split the stock twice since. Compounders love corporate actions.",
+    watch: "Monsoon affects beverage demand massively. One cold summer and the stock gives back a year of gains.",
+  },
+  {
+    id: 'DEEPAKNTR', name: 'Deepak Nitrite', sector: 'Chemicals', cap: 'small', risk: 'high', emoji: '🧪', mono: '◇',
+    desc: "Specialty chemicals maker. Rode the China+1 wave from ₹60 to ₹2,500 in 8 years — a textbook India multibagger.",
+    fun: "Most people couldn't tell you what Deepak Nitrite makes. Phenol, acetone, DASDA for dyes. Boring chemistry, generational wealth.",
+    watch: "China is coming back online with cheap exports. The China+1 trade isn't permanent.",
+  },
+
+  // ── Buyback alternatives (slot C/D) ─────────────────────────────────────────
+  {
+    id: 'LT', name: 'Larsen & Toubro', sector: 'Capital Goods', cap: 'large', risk: 'medium', emoji: '🏗️', mono: '▣',
+    desc: "India's largest engineering and construction conglomerate. Builds metros, refineries, defence systems, airports — the physical India.",
+    fun: "In 2022 L&T did its FIRST-EVER share buyback — ₹10,000 crore at ₹1,850 per share. A century-old company finally said 'our stock is cheap'.",
+    watch: "Order book depends on government capex continuing. A fiscal squeeze and L&T's growth slows overnight.",
+  },
+  {
+    id: 'SUNPHARMA', name: 'Sun Pharma', sector: 'Pharma', cap: 'large', risk: 'medium', emoji: '💊', mono: '◉',
+    desc: "India's largest pharma company. Generic medicines, specialty drugs, US + emerging markets. The pharma giant that got slapped by US FDA pricing.",
+    fun: "Lost nearly 50% of its value between 2014 and 2019 as US generic drug prices collapsed. Then quietly rebuilt and tripled.",
+    watch: "US generics is a brutal market. One FDA warning letter can wipe 15% in a day.",
+  },
+
+  // ── Rights alternative (slot C) ─────────────────────────────────────────────
+  {
+    id: 'VODAIDEA', name: 'Vodafone Idea', sector: 'Telecom', cap: 'mid', risk: 'high', emoji: '📶', mono: '▿',
+    desc: "India's third-largest telecom. Formed from the panic merger of Vodafone India and Idea Cellular in 2018 — because Jio was eating them both alive.",
+    fun: "Lost 94% of its value since 2014. Did a massive ₹18,000 crore follow-on offering in 2024 just to keep the lights on.",
+    watch: "Running out of cash is the risk. If AGR dues bite harder than cash flow improves, the stock can go to zero.",
+  },
 ];
 
 // ── Historical price snapshots — ALL 16 stocks, 6 rounds ─────────────────────
@@ -162,16 +233,25 @@ window.ROUND_PRICES_ALL = [
     COALINDIA: 355, HDFCBANK: 820, HCLTECH: 340, TCS: 1200,
     BHARTIARTL: 330, BAJFIN: 420,
     ONGC: 380, WIPRO: 540, ZEEL: 380,
+    // Nov 2026 expansion batch (Kalyan is IPO at R3, not listed here)
+    HUL: 700, APOLLOHOSP: 1080, BEL: 26, LT: 1460, SUNPHARMA: 820,
+    DEEPAKNTR: 55, VODAIDEA: 160,
+    // VBL listed Nov 2016 — using ₹80 as a pre-IPO proxy so R1 holdings don't
+    // break. Teacher can note VBL was pre-listing in 2014.
+    VBL: 80,
   },
-  // Round 2 — 2018  (TITAN 1:5 split OR HDFCBANK 1:2 split fires this round)
+  // Round 2 — 2018  (TITAN 1:5 split OR HDFCBANK 1:2 split OR BEL 1:10 split
+  //                  fires this round)
   {
     ITC: 280, RELIANCE: 1350, INFY: 1050, YESBK: 400,
     TITAN: 180, TRENT: 340, DIXON: 280, DMART: 1400,
     COALINDIA: 260, HDFCBANK: 1025, HCLTECH: 1020, TCS: 2000,
     BHARTIARTL: 350, BAJFIN: 2600,
     ONGC: 185, WIPRO: 295, ZEEL: 610,
+    HUL: 1800, APOLLOHOSP: 1180, BEL: 88, LT: 1400, SUNPHARMA: 440,
+    DEEPAKNTR: 220, VODAIDEA: 40, VBL: 550,
   },
-  // Round 3 — 2020  (ZOMATO IPO OR PAYTM IPO fires this round)
+  // Round 3 — 2020  (ZOMATO IPO OR PAYTM IPO OR KALYAN IPO fires this round)
   {
     ITC: 150, RELIANCE: 900, INFY: 700, YESBK: 12,
     TITAN: 200, TRENT: 600, DIXON: 4500, DMART: 2000,
@@ -179,34 +259,46 @@ window.ROUND_PRICES_ALL = [
     COALINDIA: 120, HDFCBANK: 600, HCLTECH: 640, TCS: 2300,
     BHARTIARTL: 460, BAJFIN: 2100,
     PAYTM: 2150,    // IPO price — added to state.stocks by the IPO event
+    KALYANKJIL: 87, // IPO price — added to state.stocks by the IPO event
     ONGC: 70, WIPRO: 200, ZEEL: 150,
+    HUL: 2400, APOLLOHOSP: 2350, BEL: 100, LT: 1290, SUNPHARMA: 600,
+    DEEPAKNTR: 650, VODAIDEA: 8, VBL: 820,
   },
-  // Round 4 — 2022  (TRENT 1:1 bonus OR HCLTECH 1:1 bonus fires this round)
+  // Round 4 — 2022  (TRENT 1:1 bonus OR HCLTECH 1:1 bonus OR VBL 1:2 bonus OR
+  //                  DEEPAKNTR 1:1 bonus fires this round)
   {
     ITC: 310, RELIANCE: 2380, INFY: 1450, YESBK: 15,
     TITAN: 495, TRENT: 1380, DIXON: 4720, DMART: 4250,
-    ZOMATO: 58, PAYTM: 420,
+    ZOMATO: 58, PAYTM: 420, KALYANKJIL: 85,
     COALINDIA: 235, HDFCBANK: 1550, HCLTECH: 1100, TCS: 3200,
     BHARTIARTL: 880, BAJFIN: 6200,
     ONGC: 155, WIPRO: 420, ZEEL: 225,
+    HUL: 2600, APOLLOHOSP: 4470, BEL: 100, LT: 2050, SUNPHARMA: 1000,
+    DEEPAKNTR: 2250, VODAIDEA: 8, VBL: 1100,
   },
-  // Round 5 — 2023  (INFY buyback OR TCS buyback fires this round)
+  // Round 5 — 2023  (INFY buyback OR TCS buyback OR L&T buyback OR SUN PHARMA
+  //                  buyback fires this round)
   {
     ITC: 450, RELIANCE: 2500, INFY: 1500, YESBK: 16,
     TITAN: 640, TRENT: 2100, DIXON: 4800, DMART: 3800,
-    ZOMATO: 120, PAYTM: 780,
+    ZOMATO: 120, PAYTM: 780, KALYANKJIL: 270,
     COALINDIA: 320, HDFCBANK: 1620, HCLTECH: 1360, TCS: 3500,
     BHARTIARTL: 1120, BAJFIN: 7600,
     ONGC: 180, WIPRO: 385, ZEEL: 220,
+    HUL: 2500, APOLLOHOSP: 5850, BEL: 190, LT: 3550, SUNPHARMA: 1230,
+    DEEPAKNTR: 1900, VODAIDEA: 13, VBL: 1400,
   },
-  // Round 6 — 2025  (DIXON rights OR BHARTIARTL rights fires this round)
+  // Round 6 — 2025  (DIXON rights OR BHARTIARTL rights OR VODAIDEA rights fires
+  //                  this round)
   {
     ITC: 330, RELIANCE: 2600, INFY: 1400, YESBK: 18,
     TITAN: 680, TRENT: 6300, DIXON: 15000, DMART: 3600,
-    ZOMATO: 220, PAYTM: 600,
+    ZOMATO: 220, PAYTM: 600, KALYANKJIL: 540,
     COALINDIA: 410, HDFCBANK: 1760, HCLTECH: 1680, TCS: 4200,
     BHARTIARTL: 1650, BAJFIN: 8800,
     ONGC: 270, WIPRO: 510, ZEEL: 135,
+    HUL: 2400, APOLLOHOSP: 7100, BEL: 290, LT: 3500, SUNPHARMA: 1700,
+    DEEPAKNTR: 1950, VODAIDEA: 8, VBL: 600,
   },
 ];
 
@@ -353,15 +445,128 @@ const _EVENTS_B = [
   },
 ];
 
-// ── Game slots — each slot has two options, one chosen randomly per game ──────
+// ── Expansion batch Nov 2026 — alternate corporate actions (C/D options) ─────
+// Nine new events tied to the nine new companies added above. Each slot now
+// has 2–4 options; pickGameStocks picks one at random per game. All actions
+// below reflect ACTUAL corporate decisions made by these companies 2014–2026.
+
+const _EVENTS_C = [
+
+  // ── Round 1: HUL Dividend (option C) · fires at END of round 1 ─────────────
+  {
+    round: 1,
+    fireAt: 'end',
+    type: 'dividend',
+    stockId: 'HUL',
+    headline: '💰 Hindustan Unilever declares ₹22 dividend per share',
+    body: "Hindustan Unilever has been paying dividends every single year for over three decades — one of the most consistent payouts in Indian equity history. The board announces ₹22 per share for every share you hold. HUL earns so much steady cash from soap, shampoo, tea and detergent that it returns a huge portion to shareholders instead of hoarding it. This is what a mature FMCG compounder looks like: slow revenue growth, high margins, and relentless cash distribution. If you held HUL for the last 20 years, the dividends alone paid back more than your original investment.",
+    perShare: 22,
+  },
+
+  // ── Round 2: BEL 1:10 Stock Split (option C) ────────────────────────────────
+  {
+    round: 2,
+    type: 'split',
+    stockId: 'BEL',
+    headline: '✂️ Bharat Electronics 1:10 stock split — one share becomes ten',
+    body: "Bharat Electronics — India's state-owned defence electronics giant — has climbed so hard on 'Make in India' defence contracts that its share price now excludes small retail investors. The company announces a 1:10 split: every 1 share you own becomes 10, each at one-tenth the price. BEL also issued a 1:10 bonus the same year, making it one of the most dramatic single-year corporate action combinations on the Nifty. For every share you held before, you now own 20. The total value doesn't change — but the stock becomes affordable to a much broader base of investors. PSUs almost never split. This one did, because its performance demanded it.",
+    ratio: 10,
+  },
+
+  // ── Round 3: Kalyan Jewellers IPO (option C) ───────────────────────────────
+  {
+    round: 3,
+    type: 'ipo',
+    stockId: 'KALYANKJIL',
+    headline: '💍 Kalyan Jewellers IPO opens at ₹87 — jewellery hits the market',
+    body: "Kalyan Jewellers, India's second-largest jewellery chain after Tanishq, is going public at ₹87 per share. The issue was only 2.6× oversubscribed — modest demand that reveals how nervous institutional investors are about the mid-market jewellery segment. An IPO tells you what the company is worth TODAY. The real question is what it will be worth in 5 years. Kalyan has a solid retail footprint but faces brutal competition from Tanishq pulling market share upwards. If you believe wedding-season gold demand will keep growing, you apply. If you don't, you pass — and watch what happens.",
+    ipoPrice: 87,
+    subscriptionX: 2.6,
+  },
+
+  // ── Round 4: Varun Beverages 1:2 Bonus (option C) ──────────────────────────
+  {
+    round: 4,
+    type: 'bonus',
+    stockId: 'VBL',
+    headline: '🎁 Varun Beverages issues 1:2 bonus shares — holdings grow 50%',
+    body: "Varun Beverages — the PepsiCo bottler nobody noticed became a 15× in 7 years — rewards loyal shareholders with a 1:2 bonus. For every 2 shares you own, you get 1 extra share completely free. The share count grows 50% and the price adjusts down proportionally. Your total holding value is the same the instant it happens — but you now own more of a company whose only business is putting Pepsi into bottles across India, Nepal, Sri Lanka, Zambia and Morocco. Boring distribution business, generational returns. Bonus shares are funded from retained profits: management is saying 'we've built reserves, here are more shares as a thank-you.'",
+    ratio: 0.5,
+  },
+
+  // ── Round 5: L&T Buyback (option C) ─────────────────────────────────────────
+  {
+    round: 5,
+    type: 'buyback',
+    stockId: 'LT',
+    headline: "🔄 L&T's FIRST-EVER buyback: sell up to 15% at a 12% premium",
+    body: "Larsen & Toubro — a 100-year-old infrastructure conglomerate — has NEVER done a buyback before. Until today. Management is signalling it believes the stock is undervalued after the Modi-infra rally. The company is offering ₹1,850 per share, a 12% premium to the market price of ₹1,650, buying back ₹10,000 crore of stock — the largest buyback in L&T's history. You can tender up to 15% of your holding and receive the premium in cash, or hold on and bet that India's capex cycle keeps running. This is a once-in-a-generation signal from one of India's most conservative companies: 'we think our own stock is a buy.'",
+    premium: 0.12,
+    maxPct: 0.15,
+  },
+
+  // ── Round 6: Vodafone Idea Rights (option C) ────────────────────────────────
+  {
+    round: 6,
+    type: 'rights',
+    stockId: 'VODAIDEA',
+    headline: "📬 Vodafone Idea rights issue: buy 1 share for every 2 you own, at 50% of market price",
+    body: "Vodafone Idea is in survival mode. Nearly ₹2 lakh crore of AGR dues to the government, bleeding subscribers to Jio and Airtel every month, running out of cash. The board announces a massive rights issue — 1 new share for every 2 you own, at a 50% discount to the market price. Unlike Airtel's growth-driven rights issue, this one is PURE SURVIVAL. If existing shareholders refuse, VI goes to zero. If they say yes, they're throwing good money after bad to buy time, not growth. This is the dark side of a rights issue: sometimes it's a distress call, not an opportunity. Students should weigh VERY carefully whether to accept.",
+    ratio: 0.5,
+    discount: 0.5,
+  },
+];
+
+// ── Expansion batch Nov 2026 — fourth options (D) where we have a clean
+// fourth candidate per slot. Only Dividend, Bonus and Buyback get a D option.
+
+const _EVENTS_D = [
+
+  // ── Round 1: Apollo Hospitals Dividend (option D) · fires at END of R1 ────
+  {
+    round: 1,
+    fireAt: 'end',
+    type: 'dividend',
+    stockId: 'APOLLOHOSP',
+    headline: '💰 Apollo Hospitals declares ₹6 dividend per share',
+    body: "Apollo Hospitals is still a growth company — reinvesting most of its profits into new hospitals, pharmacies and diagnostics centres. But it still pays a modest ₹6 per share to shareholders. This is what EARLY-stage dividends look like: small, growing with the business. Compare this to HUL (₹22) or Coal India (₹14) — more mature businesses that distribute much more because they have fewer places to deploy that capital productively. The dividend size tells you where the company is on its growth journey. A small dividend from a fast-growing hospital chain is often a better investment than a huge dividend from a stagnant one.",
+    perShare: 6,
+  },
+
+  // ── Round 4: Deepak Nitrite 1:1 Bonus (option D) ────────────────────────────
+  {
+    round: 4,
+    type: 'bonus',
+    stockId: 'DEEPAKNTR',
+    headline: '🎁 Deepak Nitrite issues 1:1 bonus shares — your holding doubles',
+    body: "Deepak Nitrite — a small-cap specialty chemicals company most Indians have never heard of — has delivered one of the greatest multibagger runs on the Nifty: ₹60 to ₹2,500 in 8 years. Riding the China+1 trade (global companies diversifying their chemicals supply chains away from China), Deepak's revenues and profits have exploded. Today the company issues a 1:1 bonus — for every share you own, you receive one free. The share count doubles. This is a confidence signal — bonus shares are funded by retained profits, so management is effectively saying 'our reserves are so strong, here's more equity.' Classic end-of-multibagger-run bonus. The question is whether the China+1 trade is here to stay.",
+    ratio: 1,
+  },
+
+  // ── Round 5: Sun Pharma Buyback (option D) ──────────────────────────────────
+  {
+    round: 5,
+    type: 'buyback',
+    stockId: 'SUNPHARMA',
+    headline: '🔄 Sun Pharma buyback: sell up to 10% of your holding at a 15% premium',
+    body: "Sun Pharma, India's largest pharma company, has had a brutal five years in US generics — collapsing prices, FDA warning letters, pricing lawsuits. The company has quietly rebuilt. Today it announces a ₹1,080 crore buyback at ₹500 per share — a 15% premium to the current market price. For a pharma company, a buyback is a defensive signal: 'we don't see enough acquisition targets or R&D opportunities to deploy this cash, so we'll shrink the share count instead.' Compare to L&T's buyback (confident growth-era signal) or Infosys/TCS (cash-dumping machine). Same corporate action, three totally different motives. Will you take the premium or hold on for the US specialty-drugs recovery?",
+    premium: 0.15,
+    maxPct: 0.10,
+  },
+];
+
+// ── Game slots — each slot has 2–4 options, one chosen randomly per game ─────
+// Expanded Nov 2026 from 2 options (A/B) to 2–4 options (A/B/C/D). The picker
+// in pickGameStocks reads whichever of a/b/c/d are present and picks uniformly.
+// Adding more options later = append `c` / `d` and extend _EVENTS_C/D above.
 
 window.GAME_SLOTS = [
-  { slotId: 'dividend', a: window.EVENT_SCRIPT[0], b: _EVENTS_B[0] },
-  { slotId: 'split',    a: window.EVENT_SCRIPT[1], b: _EVENTS_B[1] },
-  { slotId: 'ipo',      a: window.EVENT_SCRIPT[2], b: _EVENTS_B[2] },
-  { slotId: 'bonus',    a: window.EVENT_SCRIPT[3], b: _EVENTS_B[3] },
-  { slotId: 'buyback',  a: window.EVENT_SCRIPT[4], b: _EVENTS_B[4] },
-  { slotId: 'rights',   a: window.EVENT_SCRIPT[5], b: _EVENTS_B[5] },
+  { slotId: 'dividend', a: window.EVENT_SCRIPT[0], b: _EVENTS_B[0], c: _EVENTS_C[0], d: _EVENTS_D[0] },
+  { slotId: 'split',    a: window.EVENT_SCRIPT[1], b: _EVENTS_B[1], c: _EVENTS_C[1] },
+  { slotId: 'ipo',      a: window.EVENT_SCRIPT[2], b: _EVENTS_B[2], c: _EVENTS_C[2] },
+  { slotId: 'bonus',    a: window.EVENT_SCRIPT[3], b: _EVENTS_B[3], c: _EVENTS_C[3], d: _EVENTS_D[1] },
+  { slotId: 'buyback',  a: window.EVENT_SCRIPT[4], b: _EVENTS_B[4], c: _EVENTS_C[4], d: _EVENTS_D[2] },
+  { slotId: 'rights',   a: window.EVENT_SCRIPT[5], b: _EVENTS_B[5], c: _EVENTS_C[5] },
 ];
 
 // ── Round year labels ─────────────────────────────────────────────────────────
@@ -469,6 +674,9 @@ window.FINAL_PRICES_ALL = {
   COALINDIA: 395, HDFCBANK: 1880, PAYTM: 520,
   HCLTECH: 1760, TCS: 4600, BHARTIARTL: 1920, BAJFIN: 9200,
   ONGC: 290, WIPRO: 480, ZEEL: 110,
+  // Nov 2026 expansion batch
+  HUL: 2500, APOLLOHOSP: 7500, BEL: 320, LT: 3800, SUNPHARMA: 1800,
+  DEEPAKNTR: 2000, VODAIDEA: 10, VBL: 650, KALYANKJIL: 600,
 };
 
 // Alias for backward compat
@@ -661,10 +869,14 @@ window.GAME_CONFIG = {
 // where `stocks` = the 8 non-IPO active stocks for this session.
 
 window.pickGameStocks = function () {
-  // Pick one event per slot (A or B, 50/50)
-  const selectedEvents = window.GAME_SLOTS.map(slot =>
-    ({ ...(Math.random() < 0.5 ? slot.a : slot.b) })
-  );
+  // Pick one event per slot — uniform random across whichever of a/b/c/d
+  // are defined on that slot. Slots currently vary from 2 to 4 options; the
+  // filter lets us add more without touching this picker again.
+  const selectedEvents = window.GAME_SLOTS.map(slot => {
+    const options = [slot.a, slot.b, slot.c, slot.d].filter(Boolean);
+    const choice  = options[Math.floor(Math.random() * options.length)];
+    return { ...choice };
+  });
 
   // Background variable: one of 5 options (includes the 3 underperformers)
   const BG_POOL = ['DMART', 'BAJFIN', 'ONGC', 'WIPRO', 'ZEEL'];

@@ -20,8 +20,9 @@ and entrepreneurs’ forums (past sessions) · 7 The Workshop Series (staircase,
 8 The Value of the Full Series (goals → risk → asset allocation → investment choices → portfolio) ·
 9–13 one page per module, identical layout · 14 Our Mission · 15 Franklin quote + Hiral's sign-off.
 
-Slide 3's body text is the user's own note (26 Oct), lightly tidied; its title "Built for beginners.
-Deep enough for everyone." and the two card labels are new. `audience.include` in content.js turns it off.
+Slide 3's body text is the user's own note (26 Oct), lightly tidied. Reframed 1 Nov 2026 because people
+see the course as "too basic": the title is now "Built for investors. Clear for everyone.", the
+"Active investors" card comes first, and "complete beginners" is gone. `audience.include` in content.js turns it off.
 
 Slide 6 (past sessions) was added on 25 Oct at the user's request. It is **not** in Hiral's email: its words are
 the website's own "Wealth Conversations" section (investingformummies.com/#corporate), verbatim,
@@ -88,7 +89,7 @@ soffice --headless --convert-to pdf "../IFM Wealth Conversation Series — Propo
    paragraph lists them differently; the deck does not follow that paragraph.
 2. **Module 01 item titles** were ALL CAPS in the email; the deck sets them in sentence case
    ("Why should my money work?"), matching the other modules' headings.
-3. **Contact line** on the last slide (hiral@investingformummies.com · +91 98670 26583 ·
+3. **Contact line** on the last slide (hiral@investingformummies.com · +91 88987 03415 ·
    investingformummies.com) comes from the 31 July 2026 Wealth Conversation proposal, not this email.
 4. **"18 hours in total"** on slide 7 is the sum of the suggested durations (3+3+4+4+4).
 5. No game names anywhere, per Hiral's note.

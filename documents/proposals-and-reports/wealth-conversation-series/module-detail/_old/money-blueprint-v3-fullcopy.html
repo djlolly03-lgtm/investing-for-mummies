@@ -1,0 +1,472 @@
+<!doctype html>
+<!-- Module 01 detail sheet, DETAILED version (1 Nov 2026): Hiral's full copy, one page per
+     conversation, each with an illustration and a workshop photo. Illustrations are conceptual
+     (no figures). Short version: money-blueprint-v2.html · two-page full copy: money-blueprint.html
+     Render: node render-pdf.js money-blueprint-v3.html "IFM Wealth Conversation — 01 The Money Blueprint (detailed).pdf" -->
+<html lang="en"><head><meta charset="utf-8">
+<title>The Money Blueprint — The Wealth Conversation</title>
+<style>
+  :root{--navy:#1a3a5c;--navy-lt:#264d78;--teal:#2a9d8f;--muted:#5a7d8a;--cream:#f7faf9;
+        --mint:#bde9e4;--mint-lt:#e0f3f0;--gold:#c9a84c;--gold-dk:#9a7a2a;--gold-lt:#f5f0e0;--ice:#d3e2ec}
+  @page{size:A4;margin:0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Nunito,Arial,sans-serif;color:var(--navy);font-size:9.6pt;line-height:1.45;
+       -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;background:#fff}
+  .page:last-child{page-break-after:auto}
+  h1,h2,h3{font-family:Lora,Georgia,serif}
+  p + p{margin-top:2.2mm}
+  .eyebrow{font-size:7.2pt;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
+  .foot{position:absolute;left:14mm;right:14mm;bottom:6mm;display:flex;justify-content:space-between;font-size:6.6pt;font-weight:800;letter-spacing:.14em;color:var(--muted)}
+  .sec-head{display:flex;align-items:baseline;gap:4mm;margin:0 0 3mm}
+  .sec-head h2{font-size:14pt}
+  .sec-head .rule{flex:1;height:.3mm;background:var(--mint)}
+  .wrap{padding:0 14mm}
+
+  /* ---- page 1 ---- */
+  .hero{background:var(--navy);color:#fff;padding:9mm 14mm 11mm;display:grid;grid-template-columns:1fr 74mm;gap:9mm;position:relative}
+  .hero .logo{height:13mm;margin-bottom:4mm}
+  .hero .eyebrow{color:var(--mint)}
+  .hero h1{font-size:31pt;line-height:1.05;margin:2mm 0 3.5mm}
+  .hero h1 span{color:var(--gold);margin-right:3mm}
+  .hero .tag{font-family:Lora,serif;font-style:italic;font-size:14pt;color:var(--mint);line-height:1.28}
+  .hero .sub{font-size:10pt;font-weight:700;color:var(--ice);margin-top:3mm}
+  .hero .photo{width:74mm;height:58mm;border-radius:4.5mm;object-fit:cover}
+  .dur{position:absolute;right:14mm;bottom:-5.5mm;background:var(--gold);color:var(--navy);border-radius:20mm;
+       padding:2.2mm 5.5mm 2.2mm 2.6mm;display:flex;align-items:center;gap:2.2mm;box-shadow:0 1mm 3mm rgba(26,58,92,.25)}
+  .dur .clk{width:8mm;height:8mm;background:#fff;border-radius:50%;display:grid;place-items:center}
+  .dur .clk img{width:5.4mm;height:5.4mm}
+  .dur b{display:block;font-family:Lora,serif;font-size:12pt;line-height:1}
+  .dur small{display:block;font-size:6pt;font-weight:800;letter-spacing:.12em}
+  .intro{padding:10mm 14mm 0;display:grid;grid-template-columns:1fr 1fr;gap:9mm}
+  .intro .lead{font-family:Lora,serif;font-size:14.5pt;line-height:1.28;font-weight:600;margin-bottom:3mm}
+  .intro .q{display:grid;grid-template-columns:5.5mm 1fr;gap:2mm;margin-top:1.8mm}
+  .intro .q span{width:5.5mm;height:5.5mm;border-radius:50%;background:var(--mint-lt);color:var(--teal);font-weight:800;font-size:8pt;display:grid;place-items:center}
+  .intro .not{background:var(--mint-lt);border-radius:3mm;padding:3mm 3.8mm;font-weight:700;margin-top:3mm}
+  .journey{margin:7mm 14mm 0;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:4mm}
+  .journey:before{content:"";position:absolute;left:12%;right:12%;top:9mm;height:.5mm;background:var(--mint)}
+  .step{text-align:center;position:relative}
+  .step .b{width:18mm;height:18mm;border-radius:50%;background:var(--teal);display:grid;place-items:center;margin:0 auto 2.2mm;border:1.4mm solid #fff;box-shadow:0 0 0 .4mm var(--mint)}
+  .step .b img{width:10mm;height:10mm}
+  .step .n{font-size:6.8pt;font-weight:800;letter-spacing:.16em;color:var(--teal)}
+  .step .t{font-family:Lora,serif;font-weight:700;font-size:10.4pt;line-height:1.22;margin-top:.4mm}
+  .step .k{font-size:8.2pt;color:var(--muted);line-height:1.3;margin-top:1.2mm;font-style:italic}
+  .strip{margin:6mm 14mm 0;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:3mm}
+  .strip img{width:100%;height:34mm;object-fit:cover;border-radius:3mm;display:block}
+  .detstrip{margin:5mm 14mm 0;background:var(--gold-lt);border:.35mm solid var(--gold);border-radius:3.2mm;padding:3.2mm 4.5mm;
+            display:grid;grid-template-columns:auto 1fr 1fr 1.25fr .8fr;gap:5mm;align-items:center}
+  .detstrip .dh{font-family:Lora,serif;font-weight:700;font-size:11.5pt;padding-right:4mm;border-right:.3mm solid rgba(201,168,76,.6)}
+  .detstrip small{display:block;font-size:6.2pt;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .detstrip b{font-weight:800;font-size:9pt}
+
+  /* ---- conversation pages ---- */
+  .band{height:12mm;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 14mm;color:var(--mint)}
+  .band img{height:8.6mm}
+  .band span{font-size:7pt;font-weight:800;letter-spacing:.18em}
+  .chead{padding:5mm 14mm 0;display:grid;grid-template-columns:auto 1fr;gap:5mm;align-items:center}
+  .chead .big{width:22mm;height:22mm;border-radius:50%;background:var(--teal);display:grid;place-items:center;position:relative}
+  .chead .big img{width:12.5mm;height:12.5mm}
+  .chead .big i{position:absolute;right:-1.5mm;top:-1.5mm;background:var(--gold);color:var(--navy);font-style:normal;font-family:Lora,serif;font-weight:700;
+                font-size:9pt;width:8.5mm;height:8.5mm;border-radius:50%;display:grid;place-items:center;border:.8mm solid #fff}
+  .chead h2{font-size:22pt;line-height:1.1;margin:.8mm 0 1.6mm}
+  .chead .kick{font-family:Lora,serif;font-style:italic;color:var(--teal);font-size:12pt;line-height:1.3}
+  .cbody{padding:5mm 14mm 0;display:grid;grid-template-columns:1fr 68mm;gap:7mm;align-items:start}
+  .cbody img.ph{width:68mm;height:44mm;object-fit:cover;border-radius:3.5mm;display:block}
+  .cbody img.ph.tall{height:54mm}
+  .cbody .pull{font-family:Lora,serif;font-size:11.5pt;line-height:1.35;font-weight:600}
+  .visual{margin:5mm 14mm 0;background:var(--cream);border-radius:3.5mm;padding:3.6mm 5mm}
+  .visual .vh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2.4mm}
+  .visual .vh small{font-size:6.6pt;font-weight:700;color:var(--muted);letter-spacing:.06em}
+  .lbl{font-size:6.8pt;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+  .explore{margin:4.5mm 14mm 0}
+  .explore .grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4mm 6mm;margin-top:2.4mm}
+  .ex{display:grid;grid-template-columns:9mm 1fr;gap:2.6mm;align-items:start}
+  .ex .ic{width:9mm;height:9mm;border-radius:50%;background:var(--mint-lt);display:grid;place-items:center}
+  .ex .ic img{width:5.6mm;height:5.6mm}
+  .ex b{display:block;font-weight:800;font-size:9.8pt;line-height:1.25;margin-bottom:.4mm}
+  .ex div{font-size:8.8pt;line-height:1.36}
+  .prac{margin:4.5mm 14mm 0;display:grid;grid-template-columns:12mm 1fr;gap:4mm;background:var(--gold-lt);border-radius:3.5mm;padding:3.2mm 5mm;align-items:start}
+  .prac .ic{width:12mm;height:12mm;border-radius:50%;background:#fff;display:grid;place-items:center}
+  .prac .ic img{width:7.5mm;height:7.5mm}
+  .prac .t{font-size:7pt;font-weight:800;letter-spacing:.16em;color:var(--gold-dk);margin-bottom:1.2mm}
+  .prac ul{list-style:none}
+  .prac li{padding-left:4mm;position:relative}
+  .prac li + li{margin-top:1.4mm}
+  .prac li:before{content:"›";position:absolute;left:0;top:-.2mm;color:var(--gold-dk);font-weight:800;font-size:11pt;line-height:1.2}
+  .take{margin:4mm 14mm 0;background:var(--navy);color:#fff;border-radius:3.5mm;padding:3.2mm 5.5mm;display:grid;grid-template-columns:auto 1fr;gap:4mm;align-items:center}
+  .take .t{font-family:Lora,serif;font-weight:700;color:var(--gold);font-size:11pt;line-height:1.15}
+  .take div:last-child{font-size:10pt;line-height:1.4}
+  .after{margin:4mm 14mm 0}
+
+  /* buckets (conversation 03) */
+  .bk{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+  .bk > div{background:#fff;border-radius:3mm;padding:4mm 4mm 4mm;text-align:center;border-top:2mm solid var(--teal);font-size:9pt;line-height:1.4}
+  .bk > div:nth-child(2){border-top-color:var(--navy-lt)}
+  .bk > div:nth-child(3){border-top-color:var(--gold)}
+  .bk .ic{width:12mm;height:12mm;border-radius:50%;display:grid;place-items:center;margin-bottom:2mm;background:var(--teal)}
+  .bk > div:nth-child(2) .ic{background:var(--navy-lt)}
+  .bk > div:nth-child(3) .ic{background:var(--gold)}
+  .bk .ic img{width:7.5mm;height:7.5mm}
+  .bk b{display:block;font-size:8.6pt;letter-spacing:.14em;margin-bottom:1mm}
+  .flow{display:flex;align-items:center;justify-content:center;gap:3mm;margin-top:4mm;font-weight:800;font-size:8.8pt}
+  .flow span{background:#fff;border:.3mm solid var(--mint);border-radius:10mm;padding:1.4mm 4mm}
+  .flow span.mid{background:var(--teal);color:#fff;border-color:var(--teal)}
+  .flow i{font-style:normal;color:var(--teal);font-size:12pt}
+
+  /* SMART (conversation 02) */
+  .smart{display:grid;grid-template-columns:repeat(5,1fr);gap:2.6mm}
+  .smart div{background:#fff;border-radius:3mm;text-align:center;padding:3mm 1mm 2.6mm;border-bottom:1.2mm solid var(--teal)}
+  .smart b{display:block;font-family:Lora,serif;font-size:22pt;line-height:1;color:var(--teal)}
+  .smart span{font-weight:800;font-size:8.6pt}
+
+  /* card (conversation 04) */
+  .cardrow{display:grid;grid-template-columns:1fr 82mm;gap:6mm;align-items:center}
+  .mcard{color:var(--navy);background:#fff;border-radius:4mm;box-shadow:0 1.2mm 4mm rgba(26,58,92,.18);transform:rotate(-1.6deg);overflow:hidden}
+  .mcard .h{background:var(--navy);color:#fff;padding:3mm 4mm;display:flex;justify-content:space-between;align-items:center}
+  .mcard .h b{font-family:Lora,serif;font-size:11pt}
+  .mcard .h img{height:7mm}
+  .mcard .h small{display:block;font-size:6pt;letter-spacing:.16em;color:var(--mint);font-weight:800}
+  .mcard ul{list-style:none;padding:2.6mm 4mm 3.2mm}
+  .mcard li{display:flex;align-items:center;gap:2.4mm;padding:.9mm 0;border-bottom:.25mm dashed var(--mint);font-weight:800;font-size:9pt}
+  .mcard li:last-child{border-bottom:0}
+  .mcard li i{width:3.6mm;height:3.6mm;border:.4mm solid var(--teal);border-radius:.8mm;flex:none}
+  .mcard li em{font-style:normal;font-weight:600;color:var(--muted);margin-left:auto;font-size:8pt}
+  .asks{display:grid;grid-template-columns:1fr 1fr;gap:2.6mm}
+  .asks div{background:#fff;border-radius:2.6mm;padding:2.4mm 3mm;display:flex;gap:2.2mm;align-items:center;font-weight:800;font-size:9pt}
+  .asks img{width:6mm;height:6mm}
+
+  /* real screens from the games */
+  .screens{margin:4.5mm 14mm 0;background:linear-gradient(135deg,#1a3a5c 0%,#21486f 100%);border-radius:4mm;padding:3.8mm 5mm 4mm;color:#fff}
+  .screens .sh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3.2mm}
+  .screens .sh .lbl{color:var(--mint)}
+  .screens .sh small{font-size:6.6pt;font-weight:800;letter-spacing:.14em;color:var(--gold)}
+  .sgrid{display:grid;gap:5mm;align-items:end}
+  .dev{background:#0d1f33;border-radius:2.6mm;padding:1.3mm;box-shadow:0 1.4mm 4mm rgba(0,0,0,.35);position:relative}
+  .dev:before{content:"";display:block;height:2.4mm;margin:-.2mm 0 1mm;background:radial-gradient(circle at 1.6mm 50%,#e86a5c .55mm,transparent .6mm),radial-gradient(circle at 3.6mm 50%,#e3b34a .55mm,transparent .6mm),radial-gradient(circle at 5.6mm 50%,#55b37a .55mm,transparent .6mm)}
+  .dev img{display:block;width:100%;border-radius:1.4mm}
+  .dev.phone{border-radius:5mm;padding:1.8mm}
+  .dev.phone:before{width:9mm;height:1.3mm;border-radius:1mm;background:#2b3e55;margin:0 auto 1.4mm}
+  .dev.phone img{border-radius:3.4mm}
+  .cap{font-size:8.2pt;line-height:1.35;color:var(--ice);margin-top:2.2mm}
+  .cap b{color:#fff;display:block;font-size:8.6pt}
+  .smart-mini{display:grid;grid-template-columns:repeat(5,1fr);gap:1.6mm;margin-top:3.4mm}
+  .smart-mini div{background:rgba(255,255,255,.08);border:.3mm solid rgba(189,233,228,.35);border-radius:2mm;text-align:center;padding:1.6mm .4mm 1.3mm}
+  .smart-mini b{display:block;font-family:Lora,serif;font-size:15pt;line-height:1;color:var(--gold)}
+  .smart-mini span{font-size:6.6pt;font-weight:800;color:var(--ice)}
+  .bk .art{width:100%;height:23mm;object-fit:cover;display:block;border-radius:2.2mm;margin:0 0 2.6mm}
+
+  /* ---- last page ---- */
+  .walk-lead{font-size:10pt;margin-bottom:4mm}
+  .walk{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+  .walk > div{background:var(--mint-lt);border-radius:3mm;padding:3.2mm 3.4mm;font-size:8.6pt;line-height:1.38}
+  .walk .top{display:flex;gap:2.2mm;align-items:center;margin-bottom:1.4mm}
+  .walk .top img{width:6mm;height:6mm;flex:none}
+  .walk .top b{font-size:9.2pt;line-height:1.2}
+  .exp{display:grid;grid-template-columns:repeat(6,1fr);gap:3mm}
+  .exp div{text-align:center;font-weight:700;font-size:8.6pt;line-height:1.28}
+  .exp .b{width:14mm;height:14mm;border-radius:50%;background:var(--mint-lt);display:grid;place-items:center;margin:0 auto 2mm}
+  .exp .b img{width:8.5mm;height:8.5mm}
+  .exp-note{display:flex;justify-content:space-between;gap:6mm;font-size:9.6pt;margin-bottom:4mm}
+  .closing{margin:7mm 14mm 0;background:var(--navy);color:#fff;border-radius:4mm;overflow:hidden;display:grid;grid-template-columns:62mm 1fr}
+  .closing img.ph{width:100%;height:100%;object-fit:cover;display:block}
+  .closing .txt{padding:5.5mm 6mm;position:relative}
+  .closing .eyebrow{color:var(--mint)}
+  .closing p{color:var(--ice);margin-top:2mm;font-size:9.4pt}
+  .closing .q{font-family:Lora,serif;font-style:italic;font-size:12.5pt;line-height:1.32;color:#fff;margin-top:2.6mm}
+  .closing .q em{color:var(--gold)}
+  .closing .logo{position:absolute;right:5mm;top:4.5mm;width:16mm}
+</style></head>
+<body>
+
+<!-- =================== PAGE 1 · OVERVIEW =================== -->
+<section class="page">
+  <header class="hero">
+    <div>
+      <img class="logo" src="../../assets/logo-lockup-dark.png" alt="Investing for Mummies">
+      <div class="eyebrow">The Wealth Conversation · Module 01</div>
+      <h1><span>01</span>The Money Blueprint</h1>
+      <div class="tag">From being a money observer to becoming a money participant.</div>
+      <div class="sub">Build the foundations for smarter money decisions.</div>
+    </div>
+    <img class="photo" src="../mb-hero.jpg" alt="Hiral teaching the SMART goals framework at a workshop">
+    <div class="dur"><span class="clk"><img src="../../icons/png/ui-clock-light.png" alt=""></span><span><small>SUGGESTED DURATION</small><b>3 hours</b></span></div>
+  </header>
+
+  <div class="intro">
+    <div>
+      <p class="lead">Having money and knowing how to make it work are two very different things.</p>
+      <p>You may earn, save and invest. But do you understand…</p>
+      <div class="q"><span>?</span><div>how inflation affects your money?</div></div>
+      <div class="q"><span>?</span><div>why the RBI changes interest rates?</div></div>
+      <div class="q"><span>?</span><div>how compounding actually grows your investments?</div></div>
+      <div class="q"><span>?</span><div>whether your investments are working towards your goals?</div></div>
+    </div>
+    <div>
+      <p><b>The Money Blueprint is a practical, interactive workshop designed to help you connect these dots.</b></p>
+      <p>Through relatable analogies, real-life examples, games and hands-on exercises, we’ll explore how money works, how to think about financial goals, how to organise your investments and, most importantly, how to participate in conversations about your wealth.</p>
+      <p class="not">It’s not about learning complicated financial products or becoming an investment expert. It’s about understanding the fundamentals well enough to make more informed financial decisions.</p>
+    </div>
+  </div>
+
+  <div class="journey">
+    <div class="step"><div class="b"><img src="../../icons/png/i-grow-teal.png" alt=""></div><div class="n">CONVERSATION 01</div><div class="t">Why should my money work?</div><div class="k">Earning and saving is only the beginning.</div></div>
+    <div class="step"><div class="b"><img src="../../icons/png/i-compass-teal.png" alt=""></div><div class="n">CONVERSATION 02</div><div class="t">How should I think about my money?</div><div class="k">Investing with purpose.</div></div>
+    <div class="step"><div class="b"><img src="../../icons/png/i-buckets-teal.png" alt=""></div><div class="n">CONVERSATION 03</div><div class="t">How do I make sense of my money?</div><div class="k">Give every rupee a job.</div></div>
+    <div class="step"><div class="b"><img src="../../icons/png/le-chat-teal.png" alt=""></div><div class="n">CONVERSATION 04</div><div class="t">How do I join the conversation?</div><div class="k">Knowing what questions to ask.</div></div>
+  </div>
+
+  <div class="strip">
+    <img src="mb-s2.jpg" alt="Hiral teaching a corporate workshop">
+    <img src="mb-s1.jpg" alt="A participant answering a live game on her phone">
+    <img src="mb-s3.jpg" alt="Notes in a participant’s workbook">
+  </div>
+
+  <div class="detstrip">
+    <div class="dh">Workshop details</div>
+    <div><small>Workshop</small><b>The Money Blueprint</b></div>
+    <div><small>Part of</small><b>The Wealth Conversation</b></div>
+    <div><small>Format</small><b>Interactive, instructor-led workshop</b></div>
+    <div><small>Suggested duration</small><b>3 hours</b></div>
+  </div>
+  <div class="foot"><span>THE WEALTH CONVERSATION · INVESTING FOR MUMMIES</span><span>01 / 06</span></div>
+</section>
+
+<!-- =================== PAGE 2 · CONVERSATION 01 =================== -->
+<section class="page">
+  <div class="band"><img src="../../assets/logo-lockup-dark.png" alt="Investing for Mummies"><span>THE MONEY BLUEPRINT · CONVERSATION 01 OF 04</span></div>
+  <div class="chead">
+    <div class="big"><img src="../../icons/png/i-grow-teal.png" alt=""><i>01</i></div>
+    <div><div class="eyebrow">Conversation 01</div><h2>Why should my money work?</h2>
+      <div class="kick">Understand why earning and saving money is only the beginning.</div></div>
+  </div>
+  <div class="cbody" style="grid-template-columns:1fr 1fr">
+    <p class="pull">Money sitting in your bank account may look unchanged, but its purchasing power doesn’t stay the same.</p>
+    <p style="margin-top:0">In this conversation, we’ll explore why money needs to grow, what affects its value and how time can become one of your biggest allies in building wealth.</p>
+  </div>
+
+  <div class="screens">
+    <div class="sh"><span class="lbl">From the workshop · the two forces at work</span><small>REAL SCREENS FROM OUR GAMES</small></div>
+    <div class="sgrid" style="grid-template-columns:29mm 92mm 1fr;align-items:center;gap:4.5mm">
+      <div class="dev phone"><img src="gs-inflation.jpg" alt="Inflation exercise on a phone"></div>
+      <div class="dev"><img src="gs-compound.jpg" alt="Compounding exercise: what ₹5,000 a month until 60 grows to, by starting age"></div>
+      <div>
+        <div class="cap" style="margin-top:0"><b>Inflation, live</b>Type in what you spend today and watch its buying power shrink.</div>
+        <div class="cap" style="margin-top:4mm"><b>Compounding, live</b>₹5,000 a month until 60, for every age in the room. Time does most of the work.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="explore">
+    <div class="sec-head" style="margin:0"><h2>What we’ll explore</h2><span class="rule"></span></div>
+    <div class="grid">
+      <div class="ex"><span class="ic"><img src="../../icons/png/i-wallet-light.png" alt=""></span><div><b>Saving vs Investing</b>Understand the difference between keeping money aside and putting it to work.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/i-price-tag-light.png" alt=""></span><div><b>Inflation – The Silent Money Eater</b>Discover how inflation makes everyday things more expensive and how the cost of achieving your financial goals changes over time.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/i-building-light.png" alt=""></span><div><b>The RBI and Interest Rates</b>Understand what the repo rate is, why the RBI changes it and how interest rate decisions are used to influence inflation. See how these decisions can affect your savings, loans and investments.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/i-trend-up-light.png" alt=""></span><div><b>The Power of Compounding</b>Discover how your money can earn returns, and how those returns can generate further returns over time.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/ui-clock-light.png" alt=""></span><div><b>The Power of Time</b>Understand why starting early and staying invested can make a meaningful difference to long-term wealth creation.</div></div>
+    </div>
+  </div>
+
+  <div class="prac">
+    <span class="ic"><img src="../../icons/png/le-games-gold.png" alt=""></span>
+    <div><div class="t">LET’S MAKE IT PRACTICAL</div><ul>
+      <li>Use an inflation calculator to see how much more your future goals could cost.</li>
+      <li>Take everyday lifestyle spending and explore what investing that amount through a monthly SIP could potentially create over time.</li>
+      <li>Participate in live compounding exercises to see how money grows and how returns build upon returns.</li></ul></div>
+  </div>
+  <div class="take"><div class="t">Your<br>takeaway</div><div>Understand why your money needs to grow, how inflation affects your future goals and why time and compounding matter.</div></div>
+  <div class="foot"><span>THE WEALTH CONVERSATION · MODULE 01 · THE MONEY BLUEPRINT</span><span>02 / 06</span></div>
+</section>
+
+<!-- =================== PAGE 3 · CONVERSATION 02 =================== -->
+<section class="page">
+  <div class="band"><img src="../../assets/logo-lockup-dark.png" alt="Investing for Mummies"><span>THE MONEY BLUEPRINT · CONVERSATION 02 OF 04</span></div>
+  <div class="chead">
+    <div class="big"><img src="../../icons/png/i-compass-teal.png" alt=""><i>02</i></div>
+    <div><div class="eyebrow">Conversation 02</div><h2>How should I think about my money?</h2>
+      <div class="kick">Move from investing randomly to investing with purpose.</div></div>
+  </div>
+  <div class="cbody">
+    <div>
+      <p class="pull">Before choosing an investment, you need to know what you’re investing for.</p>
+      <p>A holiday, a child’s education, buying a home and retirement are very different goals. They have different timelines, different financial requirements and different levels of risk you may be comfortable taking.</p>
+      <p>In this conversation, we’ll introduce a simple framework to help you think through your financial goals before deciding where to invest.</p>
+    </div>
+    <img class="ph tall" src="mb-c2.jpg" alt="Hiral working through goals on a whiteboard" style="object-position:50% 30%;height:41mm">
+  </div>
+
+  <div class="screens">
+    <div class="sh"><span class="lbl">From the workshop · turning a wish into a goal</span><small>REAL SCREENS FROM OUR GAMES</small></div>
+    <div class="sgrid" style="grid-template-columns:49mm 1fr;align-items:start">
+      <div><div class="dev"><img src="gs-goals.jpg" alt="Goals organised into short, medium and long term"></div>
+        <div class="cap"><b>Goals by timeline</b>Short, medium and long term, each with its target and how much is already funded.</div></div>
+      <div><div class="dev"><img src="gs-fundgoal.jpg" alt="A child's education goal turned into a monthly SIP"></div>
+        <div class="cap"><b>From a wish to a number</b>A child’s education, 15 years away: today’s cost, inflation and the monthly SIP it needs.</div></div>
+    </div>
+  </div>
+
+  <div class="explore">
+    <div class="sec-head" style="margin:0"><h2>What we’ll explore</h2><span class="rule"></span></div>
+    <div class="grid">
+      <div class="ex"><span class="ic"><img src="../../icons/png/q-target-light.png" alt=""></span><div><b>Defining Financial Goals</b>Move beyond vague aspirations and identify what you want your money to achieve.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/v-goals-light.png" alt=""></span><div><b>The SMART Framework</b>Learn how to turn broad financial wishes into Specific, Measurable, Achievable, Relevant and Time-bound goals.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/ui-calendar-light.png" alt=""></span><div><b>Time Horizon</b>Understand why the time available to achieve a goal influences how you should approach your investments.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/q-scale-light.png" alt=""></span><div><b>Risk and Return</b>Explore the relationship between the risk you take and the returns you hope to earn.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/q-puzzle-light.png" alt=""></span><div><b>Matching Investments to Goals</b>Understand why the right investment depends on what you’re trying to achieve, when you need the money and how much risk you can take.</div></div>
+    </div>
+  </div>
+
+  <div class="prac">
+    <span class="ic"><img src="../../icons/png/v-goals-gold.png" alt=""></span>
+    <div><div class="t">LET’S MAKE IT PRACTICAL</div><ul>
+      <li>Work through examples and exercises to turn everyday financial aspirations into clearly defined, measurable goals.</li></ul></div>
+  </div>
+  <div class="take"><div class="t">Your<br>takeaway</div><div>A simple framework to evaluate financial decisions, set meaningful goals and think about investments in the context of your life.</div></div>
+  <div class="foot"><span>THE WEALTH CONVERSATION · MODULE 01 · THE MONEY BLUEPRINT</span><span>03 / 06</span></div>
+</section>
+
+<!-- =================== PAGE 4 · CONVERSATION 03 =================== -->
+<section class="page">
+  <div class="band"><img src="../../assets/logo-lockup-dark.png" alt="Investing for Mummies"><span>THE MONEY BLUEPRINT · CONVERSATION 03 OF 04</span></div>
+  <div class="chead">
+    <div class="big"><img src="../../icons/png/i-buckets-teal.png" alt=""><i>03</i></div>
+    <div><div class="eyebrow">Conversation 03</div><h2>How do I make sense of my money?</h2>
+      <div class="kick">Give every rupee a job.</div></div>
+  </div>
+  <div class="cbody">
+    <div>
+      <p class="pull">Once you know what you’re saving and investing for, the next question is: How do you organise your money?</p>
+      <p>Should everything be invested for growth? How much should remain accessible? What should protect you against unexpected events? And how do you bring all these investments together?</p>
+      <p>In this conversation, we’ll introduce the Protect, Stabilise &amp; Grow framework — a simple way to understand the different jobs your money needs to do.</p>
+    </div>
+    <div style="width:68mm"><div class="dev"><img src="gs-buckets.jpg" alt="The 3 Bucket Game: sort each product into a bucket"></div><div class="cap" style="color:var(--muted)"><b style="color:var(--navy)">The 3 Bucket Game</b>Each product appears on screen; the room decides which bucket it belongs in.</div></div>
+  </div>
+
+  <div class="visual">
+    <div class="vh"><span class="lbl">What we’ll explore · the three jobs your money does</span></div>
+    <div class="bk">
+      <div><img class="art" src="3b-emergency.png" alt=""><b>PROTECT</b>Understand the importance of financial protection through emergency funds, health insurance and term insurance.</div>
+      <div><img class="art" src="3b-stability.png" alt=""><b>STABILISE</b>Explore the role of relatively stable and accessible investments in providing financial security and meeting nearer-term needs.</div>
+      <div><img class="art" src="3b-growth.png" alt=""><b>GROW</b>Understand how growth-oriented investments can help build long-term wealth and combat inflation.</div>
+    </div>
+    <div class="flow"><span>Your goals</span><i>→</i><span class="mid">Protect · Stabilise · Grow</span><i>→</i><span>Investment products</span></div>
+  </div>
+
+  <div class="after">
+    <p>We’ll then connect these three buckets to financial goals and explore how different investment products can serve different purposes.</p>
+    <p class="pull" style="font-family:Lora,serif;font-size:11.5pt;font-weight:600;line-height:1.35;margin-top:3mm">The idea is to stop looking at investments as isolated products and start seeing them as parts of a larger financial picture.</p>
+  </div>
+
+  <div class="prac">
+    <span class="ic"><img src="../../icons/png/le-games-gold.png" alt=""></span>
+    <div><div class="t">LET’S MAKE IT PRACTICAL</div><ul>
+      <li><b>Play the 3 Bucket Game!</b> Through an interactive exercise, you’ll learn how to categorise different investments, allocate money to different needs and think about building a more balanced portfolio.</li>
+      <li>We’ll also explore how to look at your existing portfolio and understand what each investment is actually doing for you.</li></ul></div>
+  </div>
+  <div class="take"><div class="t">Your<br>takeaway</div><div>A simple framework to organise your investments, understand asset allocation and look at your portfolio as a collection of investments with different jobs.</div></div>
+  <div class="foot"><span>THE WEALTH CONVERSATION · MODULE 01 · THE MONEY BLUEPRINT</span><span>04 / 06</span></div>
+</section>
+
+<!-- =================== PAGE 5 · CONVERSATION 04 =================== -->
+<section class="page">
+  <div class="band"><img src="../../assets/logo-lockup-dark.png" alt="Investing for Mummies"><span>THE MONEY BLUEPRINT · CONVERSATION 04 OF 04</span></div>
+  <div class="chead">
+    <div class="big"><img src="../../icons/png/le-chat-teal.png" alt=""><i>04</i></div>
+    <div><div class="eyebrow">Conversation 04</div><h2>How do I join the conversation?</h2>
+      <div class="kick">Because understanding your money also means knowing what questions to ask.</div></div>
+  </div>
+  <div class="cbody">
+    <div>
+      <p class="pull">You don’t need to be a financial expert to participate in decisions about your wealth.</p>
+      <p>But you do need to know what to ask, what to look for and when to seek clarification.</p>
+      <p>In this final conversation, we’ll bring everything together and explore how to become a more informed participant in conversations about your finances.</p>
+    </div>
+    <img class="ph" src="mb-c4b.jpg" alt="Hiral leading a discussion at a corporate workshop" style="height:38mm">
+  </div>
+
+  <div class="explore">
+    <div class="sec-head" style="margin:0"><h2>What we’ll explore</h2><span class="rule"></span></div>
+    <div class="grid">
+      <div class="ex"><span class="ic"><img src="../../icons/png/i-book-light.png" alt=""></span><div><b>Understanding Financial Language</b>Get comfortable with commonly used financial terms and investment terminology.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/v-portfolio-light.png" alt=""></span><div><b>Understanding What You Own</b>Learn to look at your investments in the context of your goals and the role they play in your portfolio.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/le-chat-light.png" alt=""></span><div><b>Talking to Your Financial Advisor</b>Understand how to have meaningful conversations about your investments rather than simply accepting recommendations.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/i-magnify-chart-light.png" alt=""></span><div><b>Asking the Right Questions</b>Learn what to ask about risk, returns, costs, liquidity, time horizons and suitability.</div></div>
+      <div class="ex"><span class="ic"><img src="../../icons/png/ui-users-light.png" alt=""></span><div><b>Participating in Financial Decisions</b>Understand how to take a more active role in conversations and decisions that affect your financial future.</div></div>
+    </div>
+  </div>
+
+  <div class="screens">
+    <div class="sh"><span class="lbl">From the workshop · asking better questions</span><small>REAL SCREENS FROM OUR GAMES</small></div>
+    <div class="cardrow" style="grid-template-columns:1fr 74mm">
+      <div><div class="sgrid" style="grid-template-columns:1fr 17mm;gap:3mm">
+          <div class="dev"><img src="gs-quiz.jpg" alt="Live class quiz on the big screen"></div>
+          <div class="dev phone" style="padding:1.2mm"><img src="gs-quiz-phone.jpg" alt="A participant answering on her phone"></div></div>
+        <div class="cap"><b>The live class quiz</b>Everyone answers from their phone; the room sees how the class answered.</div></div>
+      <div class="mcard">
+        <div class="h"><div><small>YOURS TO KEEP</small><b>Money Conversation Card</b></div><img src="../../assets/logo-badge.png" alt=""></div>
+        <ul>
+          <li><i></i>Risk<em>How much could I lose?</em></li>
+          <li><i></i>Returns<em>What can I expect?</em></li>
+          <li><i></i>Costs<em>What am I paying?</em></li>
+          <li><i></i>Liquidity<em>When can I access it?</em></li>
+          <li><i></i>Time horizon<em>How long is it for?</em></li>
+          <li><i></i>Suitability<em>Is it right for my goal?</em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="prac">
+    <span class="ic"><img src="../../icons/png/le-handout-gold.png" alt=""></span>
+    <div><div class="t">LET’S MAKE IT PRACTICAL</div><ul>
+      <li>We’ll work through relevant questions you can take into your next conversation with your financial advisor or family.</li>
+      <li>We’ll bring everything together with your very own <b>Money Conversation Card</b> — a practical reference to help you start asking the right questions and stay engaged with your portfolio.</li></ul></div>
+  </div>
+  <div class="take"><div class="t">Your<br>takeaway</div><div>The confidence and vocabulary to participate in financial conversations, question recommendations and take a more active role in decisions about your wealth.</div></div>
+  <div class="foot"><span>THE WEALTH CONVERSATION · MODULE 01 · THE MONEY BLUEPRINT</span><span>05 / 06</span></div>
+</section>
+
+<!-- =================== PAGE 6 · OUTCOMES =================== -->
+<section class="page">
+  <div class="band"><img src="../../assets/logo-lockup-dark.png" alt="Investing for Mummies"><span>THE MONEY BLUEPRINT · WHAT YOU TAKE HOME</span></div>
+  <div class="wrap" style="padding-top:8mm">
+    <div class="sec-head"><h2>What you’ll walk away with</h2><span class="rule"></span></div>
+    <p class="walk-lead">This workshop is designed to give you more than financial information. You’ll leave with practical frameworks and tools that you can actually use. <b>By the end of the session, you’ll be able to:</b></p>
+    <div class="walk">
+      <div><div class="top"><img src="../../icons/png/i-price-tag-light.png" alt=""><b>Understand the impact of inflation</b></div>Recognise how rising prices affect your purchasing power and the future cost of your financial goals.</div>
+      <div><div class="top"><img src="../../icons/png/i-building-light.png" alt=""><b>Understand how the economy affects your money</b></div>Connect the RBI’s interest rate decisions to inflation, savings, borrowing and investments.</div>
+      <div><div class="top"><img src="../../icons/png/i-trend-up-light.png" alt=""><b>Recognise the power of compounding</b></div>Understand how returns build over time and why starting early matters.</div>
+      <div><div class="top"><img src="../../icons/png/q-target-light.png" alt=""><b>Set clearer financial goals</b></div>Use the SMART framework to turn aspirations into measurable financial targets.</div>
+      <div><div class="top"><img src="../../icons/png/q-signpost-light.png" alt=""><b>Think through investment decisions</b></div>Use goals, time horizon and risk as a framework before choosing investments.</div>
+      <div><div class="top"><img src="../../icons/png/i-buckets-light.png" alt=""><b>Organise your investments</b></div>Apply the Protect, Stabilise &amp; Grow framework to understand the different roles money plays in your financial life.</div>
+      <div><div class="top"><img src="../../icons/png/v-portfolio-light.png" alt=""><b>Look at your portfolio differently</b></div>Understand how individual investments fit together and what each one is meant to achieve.</div>
+      <div><div class="top"><img src="../../icons/png/le-chat-light.png" alt=""><b>Ask better questions</b></div>Know what to ask your financial advisor about recommendations, costs, risk and returns.</div>
+      <div><div class="top"><img src="../../icons/png/ui-users-light.png" alt=""><b>Take an active role in your financial decisions</b></div>Become a more informed participant in conversations that affect your wealth.</div>
+    </div>
+
+    <div class="sec-head" style="margin-top:7mm"><h2>Your workshop experience</h2><span class="rule"></span></div>
+    <div class="exp-note"><span><b>This isn’t a lecture where you sit back and take notes.</b> Expect a combination of:</span></div>
+    <div class="exp">
+      <div><span class="b"><img src="../../icons/png/le-spark-light.png" alt=""></span>Relatable real-life examples and analogies</div>
+      <div><span class="b"><img src="../../icons/png/le-games-light.png" alt=""></span>Interactive games and activities</div>
+      <div><span class="b"><img src="../../icons/png/i-trend-up-light.png" alt=""></span>Live inflation and compounding exercises</div>
+      <div><span class="b"><img src="../../icons/png/v-goals-light.png" alt=""></span>Practical goal-setting frameworks</div>
+      <div><span class="b"><img src="../../icons/png/v-allocation-light.png" alt=""></span>Portfolio-building simulations</div>
+      <div><span class="b"><img src="../../icons/png/le-chat-light.png" alt=""></span>Real-world financial conversations and question prompts</div>
+    </div>
+    <p style="text-align:center;margin-top:4mm;font-family:Lora,serif;font-style:italic;color:var(--teal);font-size:11pt">Every concept is designed to be simple, relatable and immediately useful.</p>
+  </div>
+
+  <div class="closing">
+    <img class="ph" src="../mb-end.jpg" alt="A full room at a corporate workshop">
+    <div class="txt">
+      <img class="logo" src="../../assets/logo-badge.png" alt="Investing for Mummies">
+      <div class="eyebrow">The bigger picture</div>
+      <p style="padding-right:14mm">You don’t have to become an expert in the stock market to understand your money. You do, however, need to understand what your money is doing, why it is invested the way it is, and whether it is helping you get closer to the life you want.</p>
+      <p><b style="color:#fff">The Money Blueprint is where that conversation begins.</b></p>
+      <div class="q">Because financial awareness isn’t just about knowing you have money. It’s about knowing what to do with it, what to ask about it and <em>how to make it work for you.</em></div>
+    </div>
+  </div>
+  <div class="foot"><span>THE MONEY BLUEPRINT · INTERACTIVE, INSTRUCTOR-LED · 3 HOURS · hiral@investingformummies.com</span><span>06 / 06</span></div>
+</section>
+</body></html>
