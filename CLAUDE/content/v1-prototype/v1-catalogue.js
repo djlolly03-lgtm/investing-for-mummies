@@ -32490,5 +32490,33 @@ window.IFM_V1 =
 "source": "Sakshi",
 "search_terms": "boardroom workshop oct participants following gold safe haven slide whiteboard mind map behind shot from side table turned towards which shows two them listening chin hand open ifm workbooks tea cups phone right carries centred borrower banks companies government speaker",
 "phash": "eca4a73bcf4c3a56"
+},
+{
+"id": "IFM-759",
+"title": "Hiral working on her laptop in a hotel lobby — to camera",
+"date": "2026-08-14",
+"thumb": "../thumbs/IFM-759.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1rdfdLJpjEooy96oUPWP3S0TZOitdWy0U/view",
+"description": "Hiral sits alone at a round black-and-gold marble table in a bright hotel lobby lounge, looking straight to camera with a small smile, hands resting on a grey Lenovo laptop. She wears an olive-beige short-sleeved linen wrap dress with a tie belt and gold hoop earrings. A magenta shopping bag and a green potted plant sit to her right; behind her are pendant lights, a glass display cabinet, a high bar table with stools and a man on the phone in the distance. Warm, premium, unposed-but-aware — a solo working portrait, not a workshop.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "",
+"status": "Ready",
+"format": "Portrait",
+"topic": [],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "candid warm natural unposed relaxed friendly celebration portrait headshot founder press media kit agency bio hiral working her laptop hotel lobby camera sits alone round black gold marble table bright lounge looking straight small smile hands resting grey lenovo she wears olive beige short sleeved linen wrap dress tie belt hoop earrings magenta shopping bag",
+"phash": "9ece4dc34666e6a3",
+"kit": "candid",
+"kit_rank": 2
 }
 ];

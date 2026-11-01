@@ -1221,5 +1221,13 @@
   "kit": "teaching",
   "kit_rank": 3,
   "_kit_why": "1 Nov 2026, daily-content-processor. Video frame, not a still: Hiral large in frame beside her own Introduction (bio) slide, face clear, mid-explanation — the same moment as IFM-607, which is also teaching/rank 3. Rank 3 because it is a video frame and she is speaking; a human may promote it or pull a still from the long take. Identity checked by eye against IFM-607/635 (same yellow ruffle top, same camera roll two files on), not from the description."
+ },
+ "IFM-759": {
+  "kit": "candid",
+  "kit_rank": 2,
+  "person": [
+   "Hiral"
+  ],
+  "_why": "1 Nov 2026: solo working portrait of Hiral, to camera, hotel lobby. kit_rank 2 not 1 -- she is clearly the subject and it is a strong warm frame, but it is a phone snap at 1500x2000, not a press-grade original, so it should not lead the Media Kit until the camera original turns up."
  }
 }

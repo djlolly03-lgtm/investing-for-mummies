@@ -15001,6 +15001,22 @@ window.IFM_DATA ={
    "video": "",
    "thumbnail": "thumbs/IFM-758.jpg",
    "audience": "Mummies"
+  },
+  {
+   "id": "IFM-759",
+   "title": "Hiral working on her laptop in a hotel lobby — to camera",
+   "type": "Image",
+   "source": "In-house",
+   "venue": "Hotel lobby",
+   "status": "Ready",
+   "audience": "Mummies",
+   "keywords": "hiral, founder, portrait, solo, hotel, lobby, lounge, laptop, working, candid, olive, beige, linen, marble, smiling, to camera, press, speaker bio",
+   "description": "Hiral sits alone at a round black-and-gold marble table in a bright hotel lobby lounge, looking straight to camera with a small smile, hands resting on a grey Lenovo laptop. She wears an olive-beige short-sleeved linen wrap dress with a tie belt and gold hoop earrings. A magenta shopping bag and a green potted plant sit to her right; behind her are pendant lights, a glass display cabinet, a high bar table with stools and a man on the phone in the distance. Warm, premium, unposed-but-aware — a solo working portrait, not a workshop.",
+   "date created": "2026-08-14",
+   "notes": "Same shoot as IFM-525 (same table, bag and plant) but the to-camera frame. Supplied by the user 1 Nov 2026 after he could not find it on the hub; it had never been uploaded to Drive. Uploaded to Content Library/Hiral portraits.",
+   "thumbnail": "thumbs/IFM-759.jpg",
+   "video": "",
+   "drive link": "https://drive.google.com/file/d/1rdfdLJpjEooy96oUPWP3S0TZOitdWy0U/view"
   }
  ],
  "tracker": [
