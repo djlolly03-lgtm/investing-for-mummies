@@ -1,8 +1,14 @@
 {
- "generated_by": "daily-content-processor 2026-11-01",
- "note": "Fresh breadth-first scan of all 15 registered roots: 204 folders, 2,369 media files, 0 listing errors — 2 files new since 30 Oct, both Sakshi uploads of 31 Oct. Staged IFM-757 (Hiral's long-take introduction, 5 Oct capture) and IFM-758 (8 Oct gold session, participants listening). Both are Videos without preview clips, so the Library stays at 643 until previews are built. check-types --strict: 0 mislabelled; 14/14 tests pass. Whole-tree mirror topped up (80 files copied); Rakshita shortcut still dangling.",
- "count": 26,
+ "generated_by": "daily-content-processor 2026-11-03",
+ "note": "3 Nov scan: 2,575 media files, 0 listing errors, 206 new since 1 Nov, none staged (needs visual cataloguing). Earlier items below unchanged.",
+ "count": 27,
  "items": [
+  {
+   "source": "206 new media files since 1 Nov are NOT yet catalogued",
+   "title": "Found 3 Nov scan (2,575 files, 0 listing errors; was 2,369). Content Library/IYA Oct & Nov 2026: 119 · Aakara November: Teen Patti Diwali 22, Dhanteras 21, Brand awareness-partner 13 · Certificates 12 (minors/consent guard applies) · Clear tax report 9 · IFM feedback videos 8 (one row per file, testimonials) · Hiral portraits 1 · Aakara October/Reels/Jenga 1. 192 videos, 14 images. Staging needs frame-by-frame viewing and thumbnails; not done in this unattended run. ACTION: run a full catalogue pass (Aakara November topics first: one row per topic folder).",
+   "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
+   "status": "needs_review"
+  },
   {
    "source": "Session date for the yellow-top Hiral series may be 5 Oct, not 6 Oct",
    "title": "Found 1 Nov. The QuickTime creation date of IMG_3792 (IFM-607) is 5 Oct 2026 11:08 IST and of IMG_3794 (new IFM-757) is 5 Oct 11:11 IST — but IFM-607..627 and IFM-635 are labelled “Corporate women’s workshop, session 2 — 6 Oct 2026”, a date that was inferred from upload timestamps on 8 Oct, not read from the files. Nothing was relabelled; IFM-757 carries the 6 Oct label so it groups with its siblings and records captured_at 5 Oct. ACTION: confirm which day the class ran, then relabel the session in one pass (data.js session field + backfill).",
