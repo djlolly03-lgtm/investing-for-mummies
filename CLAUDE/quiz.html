@@ -668,6 +668,8 @@ body.host-bg .pod .nm{color:#eaf6f3;text-shadow:0 2px 10px rgba(0,0,0,.6)}
 .hm-piece{position:absolute;top:-9%;font-size:1.5rem;animation-name:confFall;animation-timing-function:linear;animation-iteration-count:infinite}
 @keyframes confFall{0%{transform:translateY(-10%) rotate(0);opacity:0}12%{opacity:1}100%{transform:translateY(72vh) rotate(400deg);opacity:.15}}
 @media(max-width:640px){.hm-card{padding:26px 22px}.hm-title,.ri-sub{font-size:1.8rem}.hm-body,.ri-rules{font-size:1.1rem}}
+#netBanner{position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:400;max-width:min(900px,92vw);padding:12px 22px;border-radius:16px;
+  background:#7a1f2b;border:2px solid #ffb4a8;color:#fff;font-weight:800;font-size:1.05rem;text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.6)}
 </style>
 <!-- Google Analytics (GA4) — same property as investingformummies.com, so website + games
      report in one place. content_group:'Games' makes "how many reached the games" a one-line report. -->
@@ -917,17 +919,49 @@ function freshState(){
 }
 
 /* ── DB ───────────────────────────────────────────────────────── */
-async function save(){ // host only, throttled
-  state.updatedAt=Date.now();
-  clearTimeout(_saveTimer);
-  _saveTimer=setTimeout(async()=>{
-    try{await db.from('games').upsert({room_code:ROOM,state,host_id:MY_ID,updated_at:new Date().toISOString()});}
-    catch(e){console.warn('save failed',e);}
-  },60);
+/* Save-retry fix (2 Nov 2026, from the Infinity fork): one save in flight, latest state, direct fetch with a
+   6 s timeout, retried until it lands; host banner while failing; warning if hosted on two devices. */
+let _saveBusy=false, _saveDirty=false, _saveFails=0, _otherHostAt=0;
+function save(){ state.updatedAt=Date.now(); clearTimeout(_saveTimer); _saveTimer=setTimeout(flushSave,60); }   // host only, batched
+function saveNow(){ state.updatedAt=Date.now(); clearTimeout(_saveTimer); return flushSave(); }
+async function flushSave(){
+  _saveDirty=true; if(_saveBusy) return; _saveBusy=true;
+  try{
+    while(_saveDirty){ _saveDirty=false;
+      let ok=false;
+      try{ if(window.__forceSaveFail) throw new Error('forced');
+           // straight to the database with a 6 s limit: a supabase-js call was seen hanging forever in a
+           // 15-bot test (2 Nov), which froze every later save with no banner. A hung save now times out,
+           // counts as a failure and is retried with the latest state.
+           const ctl=new AbortController(), tm=setTimeout(()=>ctl.abort(),6000);
+           const r=await fetch(SUPABASE_URL+'/rest/v1/games?on_conflict=room_code',{method:'POST',signal:ctl.signal,keepalive:false,
+             headers:{apikey:SUPABASE_ANON_KEY,Authorization:'Bearer '+SUPABASE_ANON_KEY,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates,return=minimal'},
+             body:JSON.stringify({room_code:ROOM,state,host_id:MY_ID,updated_at:new Date().toISOString()})}).finally(()=>clearTimeout(tm));
+           ok=r.ok; if(!ok) console.warn('save failed — retrying',r.status); }
+      catch(e){ console.warn('save failed — retrying',e); }
+      if(ok){ _saveFails=0; }
+      else { _saveFails++; _saveDirty=true; netBanner(); await new Promise(r=>setTimeout(r,Math.min(4000,400*2**Math.min(_saveFails-1,4)))); }
+      netBanner();
+    }
+  } finally { _saveBusy=false; }
 }
-async function saveNow(){state.updatedAt=Date.now();
-  try{await db.from('games').upsert({room_code:ROOM,state,host_id:MY_ID,updated_at:new Date().toISOString()});}catch(e){console.warn(e);}
+function onRoomChange(p){
+  const row=p&&p.new, st=row&&row.state;
+  if(isHost){ if(row&&row.host_id&&row.host_id!==MY_ID){ _otherHostAt=Date.now(); netBanner(); } return; }
+  if(st){ state=st; renderPlayer(); }
 }
+function netBanner(){
+  if(!isHost) return;
+  let b=document.getElementById('netBanner');
+  const msg=(_saveFails>=2||navigator.onLine===false)
+      ? '⚠️ The phones can’t get this screen right now — retrying… <b>Don’t move on yet.</b>'
+      : (Date.now()-_otherHostAt<30000 ? '⚠️ This game is also open as the <b>host on another device</b>. Close it there, or the phones will jump between the two.' : '');
+  if(!msg){ if(b) b.remove(); return; }
+  if(!b){ b=document.createElement('div'); b.id='netBanner'; document.body.appendChild(b); }
+  b.innerHTML=msg;
+}
+addEventListener('online',()=>{ if(isHost){ netBanner(); saveNow(); } }); addEventListener('offline',()=>netBanner());
+setInterval(()=>{ if(isHost&&_otherHostAt) netBanner(); },5000);
 
 /* ── realtime ─────────────────────────────────────────────────── */
 let channel=null, _recovering=false, _history=[], _skipPush=false;
@@ -937,7 +971,7 @@ function hostBack(){ hideHostModal(); if(!_history.length)return; const h=_histo
 function joinChannel(){
   channel=db.channel('room:'+ROOM);
   channel.on('postgres_changes',{event:'*',schema:'public',table:'games',filter:'room_code=eq.'+ROOM},
-    (p)=>{const s=p.new&&p.new.state; if(s&&!isHost){state=s; renderPlayer();}})
+    onRoomChange)
     .on('broadcast',{event:'action'},({payload})=>{ if(isHost) hostHandleAction(payload); })
     .subscribe();
 }
