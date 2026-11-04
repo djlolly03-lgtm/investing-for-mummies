@@ -1,0 +1,141 @@
+<!doctype html>
+<!-- The Money Blueprint · Commercial Terms (4 Nov 2026). Re-design of the 23 Oct fee card in the
+     Wealth Conversation house style; wording kept as written, only layout changed.
+     Render: node render-pdf.js money-blueprint-terms.html "The Money Blueprint — Commercial Terms.pdf" -->
+<html lang="en"><head><meta charset="utf-8">
+<title>The Money Blueprint — Commercial Terms</title>
+<style>
+  :root{--navy:#1a3a5c;--navy-lt:#264d78;--teal:#2a9d8f;--muted:#5a7d8a;--cream:#f7faf9;
+        --mint:#bde9e4;--mint-lt:#e0f3f0;--gold:#c9a84c;--gold-dk:#9a7a2a;--gold-lt:#f5f0e0;--ice:#d3e2ec}
+  @page{size:A4;margin:0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Nunito,Arial,sans-serif;color:var(--navy);font-size:10pt;line-height:1.45;
+       -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;background:#fff}
+  .page:last-child{page-break-after:auto}
+  h1,h2,h3{font-family:Lora,Georgia,serif}
+  .eyebrow{font-size:7.6pt;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
+  .wrap{padding:0 15mm}
+  .sec{display:flex;align-items:baseline;gap:4mm;margin:9mm 0 4mm}
+  .sec h2{font-size:15pt}
+  .sec .rule{flex:1;height:.3mm;background:var(--mint)}
+  .foot{position:absolute;left:15mm;right:15mm;bottom:7mm;display:flex;justify-content:space-between;font-size:7pt;font-weight:800;letter-spacing:.14em;color:var(--muted)}
+
+  .hero{background:var(--navy);color:#fff;padding:11mm 15mm 13mm;position:relative}
+  .hero .top{display:flex;justify-content:space-between;align-items:center}
+  .hero .logo{height:13mm}
+  .hero .date{border:.35mm solid rgba(211,226,236,.5);color:var(--ice);border-radius:20mm;padding:1.4mm 4.2mm;font-weight:800;font-size:8.5pt;letter-spacing:.08em}
+  .hero .eyebrow{color:var(--mint);margin-top:12mm}
+  .hero h1{font-size:32pt;line-height:1.05;margin-top:2.5mm}
+  .hero h1 span{color:var(--gold)}
+  .hero .tag{font-family:Lora,serif;font-style:italic;font-size:12.5pt;line-height:1.35;color:var(--mint);margin-top:4mm;max-width:150mm}
+  .hero .badge{position:absolute;right:15mm;bottom:-6mm;background:var(--gold);color:var(--navy);border-radius:20mm;padding:2.4mm 6mm;font-family:Lora,serif;font-weight:700;font-size:12pt;box-shadow:0 1mm 3mm rgba(26,58,92,.25)}
+
+  .glance{display:grid;grid-template-columns:repeat(5,1fr);gap:3mm}
+  .glance div{background:var(--cream);border-radius:3.4mm;padding:3.4mm 3mm;text-align:center}
+  .glance .ic{width:11mm;height:11mm;border-radius:50%;background:var(--mint-lt);display:grid;place-items:center;margin:0 auto 2mm}
+  .glance .ic img{width:6.6mm;height:6.6mm}
+  .glance small{display:block;font-size:7pt;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .glance b{display:block;font-size:10pt;line-height:1.25;margin-top:.8mm}
+
+  .fee{display:grid;grid-template-columns:1fr 62mm;gap:5mm;align-items:stretch}
+  .fee table{width:100%;border-collapse:collapse;background:var(--cream);border-radius:3.4mm;overflow:hidden}
+  .fee th{font-size:7.2pt;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:left;padding:3mm 4.4mm 2mm}
+  .fee th:last-child,.fee td:last-child{text-align:right}
+  .fee td{padding:2.6mm 4.4mm;border-top:.3mm solid #e3ecee;font-weight:700;font-size:10.5pt}
+  .fee tr.total td{background:var(--navy);color:#fff;font-family:Lora,serif;font-size:13pt;border-top:0;padding:3.4mm 4.4mm}
+  .fee tr.total td:last-child{color:var(--gold)}
+  .fee .note{background:var(--gold-lt);border-radius:3.4mm;padding:4mm 4.4mm;font-size:9pt;line-height:1.45}
+  .fee .note b{display:block;font-family:Lora,serif;font-size:19pt;line-height:1;color:var(--navy);margin-bottom:2mm}
+  .fee .note b span{font-size:10pt;font-family:Nunito,Arial;color:var(--gold-dk);font-weight:800}
+
+  .incl{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:2.4mm 5mm}
+  .incl li{display:grid;grid-template-columns:6.4mm 1fr;gap:2.4mm;align-items:center;background:var(--mint-lt);border-radius:3mm;padding:2.6mm 3.4mm;font-weight:700}
+  .incl img{width:6.4mm;height:6.4mm}
+
+  .terms{display:grid;grid-template-columns:1fr 1fr;gap:3.6mm 5mm}
+  .term{background:var(--cream);border-radius:3.4mm;padding:3.6mm 4.2mm;font-size:9pt;line-height:1.45}
+  .term .h{display:flex;gap:2.4mm;align-items:center;margin-bottom:1.4mm}
+  .term .h i{font-style:normal;width:6.4mm;height:6.4mm;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;font-size:7.6pt;display:grid;place-items:center;flex:none}
+  .term .h b{font-family:Lora,serif;font-size:11pt}
+  .term.wide{grid-column:1 / -1}
+  .term.disc{background:#fff;border:.35mm solid var(--mint)}
+
+  .next{margin-top:7mm;background:var(--navy);color:#fff;border-radius:4mm;padding:5mm 6mm;display:grid;grid-template-columns:auto 1fr;gap:5mm;align-items:center}
+  .next .n{font-family:Lora,serif;font-weight:700;color:var(--gold);font-size:12pt;line-height:1.15}
+  .next div:last-child{font-size:10.5pt}
+  .next em{font-style:normal;color:var(--gold);font-weight:800}
+  .sign{margin-top:6mm;display:flex;gap:4mm;align-items:center}
+  .sign img{width:17mm;height:17mm;border-radius:50%;object-fit:cover;object-position:30% 18%;border:.7mm solid var(--gold)}
+  .sign b{display:block;font-family:Lora,serif;font-size:13pt}
+  .sign span{display:block;font-size:9pt;color:var(--muted);font-weight:700}
+</style></head>
+<body>
+
+<section class="page">
+  <header class="hero">
+    <div class="top"><img class="logo" src="../assets/logo-lockup-dark.png" alt="Investing for Mummies"><span class="date">OCTOBER 2026</span></div>
+    <div class="eyebrow">The Wealth Conversation · Commercial Terms</div>
+    <h1><span>01</span> Money Blueprint Workshop</h1>
+    <div class="tag">A hands-on financial literacy session — demystifying personal finance, investments, and money management in a practical, jargon-free format.</div>
+    <div class="badge">₹75,000 + GST</div>
+  </header>
+
+  <div class="wrap">
+    <div class="sec"><h2>At a glance</h2><span class="rule"></span></div>
+    <div class="glance">
+      <div><span class="ic"><img src="../icons/png/m1-blueprint-light.png" alt=""></span><small>Workshop</small><b>Money Blueprint</b></div>
+      <div><span class="ic"><img src="../icons/png/le-chat-light.png" alt=""></span><small>Facilitator</small><b>Hiral Goel</b></div>
+      <div><span class="ic"><img src="../icons/png/ui-clock-light.png" alt=""></span><small>Duration</small><b>3 hours</b></div>
+      <div><span class="ic"><img src="../icons/png/ui-users-light.png" alt=""></span><small>Group size</small><b>Up to 40 participants</b></div>
+      <div><span class="ic"><img src="../icons/png/le-spark-light.png" alt=""></span><small>Format</small><b>In-person, interactive</b></div>
+    </div>
+
+    <div class="sec"><h2>Fee</h2><span class="rule"></span></div>
+    <div class="fee">
+      <table>
+        <tr><th>Component</th><th>Amount</th></tr>
+        <tr><td>Workshop Fee</td><td>₹75,000</td></tr>
+        <tr><td>GST (18%)</td><td>₹13,500</td></tr>
+        <tr class="total"><td>Total</td><td>₹88,500</td></tr>
+      </table>
+      <div class="note"><b>₹75,000 <span>+ GST</span></b>A flat fee, payable in full before the workshop date. Tax invoice issued on confirmation. Fee as on October 2026.</div>
+    </div>
+
+    <div class="sec"><h2>Includes</h2><span class="rule"></span></div>
+    <ul class="incl">
+      <li><img src="../icons/png/ui-check-light.png" alt="">3-hour interactive session on personal finance and investing fundamentals</li>
+      <li><img src="../icons/png/ui-check-light.png" alt="">Practical frameworks participants can apply immediately</li>
+      <li><img src="../icons/png/ui-check-light.png" alt="">Tailored Q&amp;A segment</li>
+      <li><img src="../icons/png/ui-check-light.png" alt="">Digital resource kit shared post-session</li>
+      <li><img src="../icons/png/ui-check-light.png" alt="">A course-specific worksheet</li>
+    </ul>
+  </div>
+  <div class="foot"><span>THE WEALTH CONVERSATION · INVESTING FOR MUMMIES</span><span>01 / 02</span></div>
+</section>
+
+<section class="page">
+  <div class="wrap" style="padding-top:12mm">
+    <div class="sec" style="margin-top:0"><h2>Terms &amp; Conditions</h2><span class="rule"></span></div>
+    <div class="terms">
+      <div class="term"><div class="h"><i>1</i><b>Payment</b></div>The full fee of ₹75,000 + GST is payable before the workshop date. A tax invoice will be raised on confirmation.</div>
+      <div class="term"><div class="h"><i>2</i><b>Cancellation</b></div>Fees once paid are non-refundable. The client must inform Investing for Mummies of any changes to the schedule in advance. In unavoidable circumstances, the workshop may be rescheduled to a mutually agreed date within three months of the original booking.</div>
+      <div class="term"><div class="h"><i>3</i><b>Group Size &amp; Duration</b></div>This fee covers up to 40 participants for a 3-hour session. If the number of participants increases, the duration of the workshop will need to be extended, and additional charges may apply. Changes to group size must be communicated at least 5 business days in advance.</div>
+      <div class="term"><div class="h"><i>4</i><b>Venue</b></div>The client shall provide a suitable venue with the following AV setup: a projector with screen, a microphone, and a standing podium or lectern with space for a laptop. If the venue is outside Mumbai, travel and accommodation for the facilitator will be charged separately at actuals.</div>
+      <div class="term"><div class="h"><i>5</i><b>Intellectual Property</b></div>All content and materials are the IP of Investing for Mummies. Materials shared with participants are for personal use only and may not be reproduced or redistributed.</div>
+      <div class="term"><div class="h"><i>6</i><b>Confidentiality</b></div>Both parties will maintain confidentiality of proprietary information exchanged.</div>
+      <div class="term"><div class="h"><i>7</i><b>Photography &amp; Recording</b></div>Investing for Mummies may photograph and record portions of the workshop for marketing and promotional purposes. By participating, attendees consent to the use of such images and recordings across IFM’s marketing channels.</div>
+      <div class="term"><div class="h"><i>8</i><b>Data Privacy</b></div>Any participant information shared by the client (names, contact details) will be used solely for workshop coordination. Investing for Mummies does not sell, trade, or share personal data with third parties.</div>
+      <div class="term wide disc"><div class="h"><i>9</i><b>Disclaimer</b></div>This workshop is educational in nature and does not constitute personalised financial advice. Investing for Mummies does not provide SEBI-registered investment advisory services. Participants are advised to consult a SEBI-registered financial advisor for personalised guidance. Investing for Mummies shall not be held liable for any investment decisions made based on the workshop content.</div>
+    </div>
+
+    <div class="next"><div class="n">Next<br>step</div><div>Confirm the workshop date, venue, and group size. An invoice for <em>₹88,500</em> will be raised and payment secures the booking.</div></div>
+
+    <div class="sign">
+      <img src="mb-hiral-fs.jpg" alt="Hiral Goel">
+      <div><b>Hiral Goel</b><span>Founder, Investing for Mummies</span><span>hiral@investingformummies.com · +91 88987 03415</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>THE MONEY BLUEPRINT · COMMERCIAL TERMS</span><span>02 / 02</span></div>
+</section>
+</body></html>
