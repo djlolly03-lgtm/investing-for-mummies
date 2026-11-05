@@ -67,8 +67,8 @@
   .mods li i{font-style:normal;font-family:Lora,serif;font-size:14pt;color:var(--teal)}
 
   /* terms */
-  .term{background:var(--cream);border-radius:4mm;padding:3.8mm 4.4mm;font-size:11.5pt;line-height:1.42}
-  .term + .term{margin-top:3.4mm}
+  .term{background:var(--cream);border-radius:4mm;padding:3.2mm 4.2mm;font-size:11.5pt;line-height:1.4}
+  .term + .term{margin-top:2.6mm}
   .term .h{display:flex;gap:2.6mm;align-items:center;margin-bottom:1.4mm}
   .term .h i{font-style:normal;width:7.4mm;height:7.4mm;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;font-size:9pt;display:grid;place-items:center;flex:none}
   .term .h b{font-family:Lora,serif;font-size:14pt}
@@ -80,6 +80,20 @@
   .tbd{display:block;background:#fff3a6;color:#5a4300;border:.5mm dashed #d9534f;border-radius:2.4mm;padding:2mm 3mm;margin-top:2.4mm;font-size:10.5pt;font-weight:700;line-height:1.38}
   .tbd b{display:block;font-size:8.5pt;letter-spacing:.14em;color:#b3261e;margin-bottom:.6mm}
   .term.pending{background:#fffbe0;border:.5mm dashed #d9534f}
+  .intro2{font-size:13pt;line-height:1.4;margin-bottom:4mm}
+  .need{list-style:none;background:var(--navy);border-radius:5mm;padding:3mm 4mm}
+  .need li{display:grid;grid-template-columns:12mm 1fr;gap:3.4mm;align-items:center;padding:2.2mm 0;color:#fff}
+  .need li + li{border-top:.3mm solid rgba(189,233,228,.25)}
+  .need .ic{width:12mm;height:12mm;border-radius:50%;background:var(--teal);display:grid;place-items:center}
+  .need .ic img{width:7.4mm;height:7.4mm}
+  .need b{display:block;font-size:14pt;line-height:1.2}
+  .need span{display:block;font-size:11.5pt;color:var(--mint);font-weight:700}
+  .bring{margin-top:4.5mm;background:var(--gold-lt);border-radius:4mm;padding:4mm 4.6mm;font-weight:700;font-size:12.5pt;line-height:1.42}
+  .bring small{display:block;font-size:9.5pt;font-weight:800;letter-spacing:.16em;color:var(--gold-dk);margin-bottom:1mm}
+  .hl{background:#fff3a6;border-radius:1mm;padding:0 1mm}
+  .lbl2{font-size:9.5pt;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin:6mm 0 2mm}
+  .mods.mini li{padding:1.4mm 3.2mm;font-size:11.5pt}
+  .mods.mini li + li{margin-top:1.4mm}
   /* close */
   .close{background:var(--navy);color:#fff}
   .close .next{background:#fff;color:var(--navy);border-radius:5mm;padding:5mm 5.4mm;margin-top:38mm}
@@ -109,10 +123,10 @@
     <small>WORKSHOP FEE</small>
     <div class="amt">₹75,000 <span>+ GST</span></div>
     <div class="per">per module</div>
-    <div class="chips"><span>Up to 4 hours</span><span>Up to 40 participants</span><span>In-person, Mumbai</span></div>
+    <div class="chips"><span>4 hours</span><span>Up to 40 participants</span><span>In-person</span></div>
   </div>
-  <div class="out"><small>OUTSIDE MUMBAI</small>Flights, hotel and local transport for the facilitator are arranged and paid for by the client.<span class="tbd"><b>TO CONFIRM · HIRAL</b>Outstation fee: ₹90,000 + GST per module, or ₹75,000 + ₹15,000 per travel day?</span></div>
-  <div class="foot"><span>INVESTING FOR MUMMIES</span><span>01 / 08</span></div>
+  <div class="out"><small>OUTSIDE MUMBAI</small>Same fee. Travel, stay and local transport for Hiral and one IFM team member are charged at actuals.</div>
+  <div class="foot"><span>INVESTING FOR MUMMIES</span><span>01 / 07</span></div>
 </section>
 
 <!-- 2 · WHAT THE FEE COVERS -->
@@ -120,10 +134,10 @@
   <h2>What the fee covers</h2><div class="rule"></div>
   <ul class="covers">
     <li><span class="ic"><img src="../icons/png/m1-blueprint-teal.png" alt=""></span><div><b>One module</b><span>Any module of The Wealth Conversation</span></div></li>
-    <li><span class="ic"><img src="../icons/png/ui-clock-teal.png" alt=""></span><div><b>Up to 4 hours</b><span>Per module</span></div></li>
-    <li><span class="ic"><img src="../icons/png/ui-users-teal.png" alt=""></span><div><b>Up to 40 participants</b><span>Larger groups need more time; extra charges may apply</span><span class="tbd"><b>TO CONFIRM · HIRAL</b>Rate above 40 people or 4 hours: per extra person, per extra hour, or quoted case by case?</span></div></li>
-    <li><span class="ic"><img src="../icons/png/i-building-teal.png" alt=""></span><div><b>In-person, in Mumbai</b><span>This fee is for an in-person batch only</span></div></li>
-    <li class="warn"><span class="ic"><img src="../icons/png/i-wallet-teal.png" alt=""></span><div><b>Outside Mumbai</b><span>Flights, hotel and local transport arranged and paid for by the client</span></div></li>
+    <li><span class="ic"><img src="../icons/png/ui-clock-teal.png" alt=""></span><div><b>4 hours</b><span>Of session time per module. Lunch and tea breaks are on top.</span></div></li>
+    <li><span class="ic"><img src="../icons/png/ui-users-teal.png" alt=""></span><div><b>Up to 40 participants</b><span>The optimal size for the games. Larger groups: we run two sessions.</span></div></li>
+    <li><span class="ic"><img src="../icons/png/i-building-teal.png" alt=""></span><div><b>In-person, with Hiral + 1</b><span>Hiral and one IFM team member run every session</span></div></li>
+    <li class="warn"><span class="ic"><img src="../icons/png/i-wallet-teal.png" alt=""></span><div><b>Outside Mumbai</b><span>Same fee. Travel, stay and local transport for both, charged at actuals</span></div></li>
   </ul>
   <table class="fee">
     <tr><td>Workshop fee, per module<small class="sac">SAC 999293 · Commercial training &amp; coaching</small></td><td>₹75,000</td></tr>
@@ -131,66 +145,63 @@
     <tr class="total"><td>Total per module</td><td>₹88,500</td></tr>
   </table>
   <p class="feenote">Payable in full at least 7 working days before the session. Tax invoice issued on confirmation; bank details are on the invoice. Fee as on November 2026.</p>
-  <div class="foot"><span>COMMERCIAL TERMS</span><span>02 / 08</span></div>
+  <div class="foot"><span>COMMERCIAL TERMS</span><span>02 / 07</span></div>
 </section>
 
-<!-- 3 · INCLUDES + MODULES -->
+<!-- WHAT THE CLIENT ARRANGES -->
 <section class="page">
-  <h2>Every module includes</h2><div class="rule"></div>
-  <ul class="ticks">
-    <li><img src="../icons/png/ui-check-light.png" alt="">An interactive session of up to 4 hours</li>
-    <li><img src="../icons/png/ui-check-light.png" alt="">Practical frameworks participants can apply immediately</li>
-    <li><img src="../icons/png/ui-check-light.png" alt="">A tailored Q&amp;A segment</li>
-    <li><img src="../icons/png/ui-check-light.png" alt="">A digital resource kit shared post-session</li>
-    <li><img src="../icons/png/ui-check-light.png" alt="">A course-specific worksheet</li>
+  <h2>What you need to arrange</h2><div class="rule"></div>
+  <p class="intro2">The games run live on screen and on every participant’s phone. Without these, the session can’t run as designed.</p>
+  <ul class="need">
+    <li><span class="ic"><img src="../icons/png/le-spark-teal.png" alt=""></span><div><b>Projector and screen</b><span>Visible from every seat</span></div></li>
+    <li><span class="ic"><img src="../icons/png/m1-blueprint-teal.png" alt=""></span><div><b>Laptop connection</b><span>HDMI to the projector, with a power point at the front</span></div></li>
+    <li><span class="ic"><img src="../icons/png/le-games-teal.png" alt=""></span><div><b>Wi-Fi for every participant</b><span>Everyone joins the games from their phone</span></div></li>
+    <li><span class="ic"><img src="../icons/png/le-chat-teal.png" alt=""></span><div><b>Microphone</b><span>For rooms above 20 people</span></div></li>
   </ul>
-  <h2 style="font-size:19pt;margin-top:9mm">The five modules</h2><div class="rule"></div>
-  <ul class="mods">
+  <div class="bring"><small>IFM BRINGS</small>Hiral and one team member, who sets up the laptop and games, hands out handbooks and QR join cards, and helps anyone who can’t get into a game.</div>
+  <div class="lbl2">Applies to each of the five modules</div>
+  <ul class="mods mini">
     <li><i>01</i>The Money Blueprint</li>
     <li><i>02</i>Insurance Decoded</li>
     <li><i>03</i>Asset Classes</li>
     <li><i>04</i>The Stock Market Demystified</li>
     <li><i>05</i>The Mutual Fund Map</li>
   </ul>
-  <div class="foot"><span>COMMERCIAL TERMS</span><span>03 / 08</span></div>
+  <div class="foot"><span>COMMERCIAL TERMS</span><span>03 / 07</span></div>
 </section>
 
-<!-- TERMS 1–2 -->
+
+
+<!-- TERMS 1–3 -->
 <section class="page">
   <h2>Terms &amp; conditions</h2><div class="rule"></div>
-  <div class="term"><div class="h"><i>1</i><b>Payment</b></div>The full fee of ₹75,000 + GST per module is payable at least 7 working days before the session. A tax invoice will be raised on confirmation. The client shall provide its registered legal name, GSTIN (if applicable) and billing address for accurate invoicing. Where TDS is applicable, it may be deducted under the relevant provisions of the Income-tax Act; please share the TDS certificate.<span class="tbd"><b>TO CONFIRM · CA</b>Team draft cites “Section 393(1027)” at 10%. Confirm the correct section under the Income-tax Act 2025, and whether training falls under professional fees (10%) or contracts (2%).</span></div>
-  <div class="term"><div class="h"><i>2</i><b>Cancellation</b></div>Fees once paid are non-refundable. The client must inform Investing for Mummies of any changes to the schedule in advance. In unavoidable circumstances, the workshop may be rescheduled to a mutually agreed date within three months of the original booking.<span class="tbd"><b>TO CONFIRM · HIRAL</b>Add this IFM clause? “Rescheduling by IFM: in an emergency, IFM may request to reschedule the session to a mutually agreed date. If no mutually agreeable date is found, the full fee will be refunded.”</span></div>
-  <div class="foot"><span>COMMERCIAL TERMS</span><span>04 / 08</span></div>
+  <div class="term"><div class="h"><i>1</i><b>Payment</b></div>The full fee of ₹75,000 + GST per module is payable at least 7 working days before the session. A tax invoice will be raised on confirmation. The client shall provide its registered legal name, GSTIN (if applicable) and billing address for accurate invoicing. Where applicable, TDS may be deducted at 10% under the relevant provisions of the Income-tax Act; please share the TDS certificate.</div>
+  <div class="term"><div class="h"><i>2</i><b>Cancellation &amp; rescheduling</b></div>Fees once paid are non-refundable. To reschedule, the client must inform IFM at least 14 days before the session. The session must then be held on a mutually agreed date within three months of the original booking; if it is not, the fee is forfeited. For sessions outside Mumbai, any cancellation charges on travel and stay already booked are payable by the client.</div>
+  <div class="term"><div class="h"><i>3</i><b>Group size &amp; duration</b></div>The fee covers one 4-hour session for up to 40 participants. Lunch and tea breaks are in addition to the 4 hours. The games are designed for groups of up to 40; with more participants, one or two games may not be played, and the session length stays the same. For larger groups, we recommend two separate sessions, each charged at the full fee.</div>
+  <div class="foot"><span>COMMERCIAL TERMS</span><span>04 / 07</span></div>
 </section>
 
-<!-- TERMS 3–5 -->
+<!-- TERMS 4–8 -->
 <section class="page">
   <div style="height:10mm"></div>
-  <div class="term"><div class="h"><i>3</i><b>Group size &amp; duration</b></div>The fee covers up to 40 participants for a session of up to 4 hours. If the number of participants increases, the duration will need to be extended, and additional charges may apply.<span class="tbd"><b>TO CONFIRM · HIRAL</b>State the rate here once decided.</span> Changes to group size must be communicated at least 5 business days in advance.</div>
-  <div class="term"><div class="h"><i>4</i><b>Venue</b></div>The client shall arrange suitable venue facilities, including seating, audio-visual equipment, a projector and screen, a microphone, a podium or lectern with space for a laptop, and Wi-Fi / internet access for participants. Outside Mumbai, the client arranges and pays for the facilitator’s flights, hotel and local transport.</div>
+  <div class="term"><div class="h"><i>4</i><b>Venue &amp; travel</b></div>The client arranges the venue, seating and the equipment listed under “What you need to arrange”. Outside Mumbai, travel, stay and local transport for Hiral and one IFM team member are charged at actuals.</div>
   <div class="term"><div class="h"><i>5</i><b>Intellectual property</b></div>All content and materials are the IP of Investing for Mummies, for participants’ personal use only.</div>
-  <div class="foot"><span>COMMERCIAL TERMS</span><span>05 / 08</span></div>
-</section>
-
-<!-- TERMS 6–10 -->
-<section class="page">
-  <div style="height:10mm"></div>
   <div class="term"><div class="h"><i>6</i><b>Confidentiality</b></div>Both parties agree to keep confidential any proprietary or sensitive information shared during the engagement, including pricing, business data and participant information. This obligation survives the completion of the workshop.</div>
   <div class="term"><div class="h"><i>7</i><b>Photography &amp; recording</b></div>IFM may photograph or record portions of the session for its portfolio and marketing purposes. Any participant who prefers not to appear in photographs may inform the IFM team at any point during the session.</div>
   <div class="term"><div class="h"><i>8</i><b>Recording by client or third parties</b></div>No recording (audio, video or screen capture) of the session may be made by the client or any third party without prior written consent from IFM. Under no circumstances may a third party record the full session.</div>
-  <div class="term"><div class="h"><i>9</i><b>Data privacy</b></div>Participant data collected for the workshop (names, contact details, feedback) will be used solely for workshop delivery and follow-up.</div>
-  <div class="term"><div class="h"><i>10</i><b>Force majeure</b></div>Neither party shall be liable for delays or failure to perform due to events beyond their reasonable control, including natural disasters, pandemics, government actions or civil unrest. The session will be rescheduled at no additional cost.</div>
-  <div class="foot"><span>COMMERCIAL TERMS</span><span>06 / 08</span></div>
+  <div class="foot"><span>COMMERCIAL TERMS</span><span>05 / 07</span></div>
 </section>
 
-<!-- TERMS 11–14 -->
+<!-- TERMS 9–14 -->
 <section class="page">
-  <div style="height:10mm"></div>
+  <div style="height:7mm"></div>
+  <div class="term"><div class="h"><i>9</i><b>Data privacy</b></div>Participant data collected for the workshop (names, contact details, feedback) will be used solely for workshop delivery and follow-up.</div>
+  <div class="term"><div class="h"><i>10</i><b>Force majeure</b></div>Neither party shall be liable for delays or failure to perform due to events beyond their reasonable control, including natural disasters, pandemics, government actions or civil unrest. The session will be rescheduled at no additional cost.</div>
   <div class="term"><div class="h"><i>11</i><b>Limitation of liability</b></div>IFM’s total liability under these terms shall not exceed the fee paid for the specific module. Neither party shall be liable for any consequential, incidental or indirect damages.</div>
   <div class="term"><div class="h"><i>12</i><b>Governing law</b></div>These terms shall be governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts of Mumbai, Maharashtra.</div>
   <div class="term"><div class="h"><i>13</i><b>Acceptance</b></div>These terms are binding upon email confirmation of the workshop booking and payment of the fee. No separate signature is required.</div>
-  <div class="term pending"><div class="h"><i>14</i><b>Place of supply</b></div>If the workshop is delivered in Maharashtra: CGST (9%) + SGST (9%) applies. If delivered outside Maharashtra: IGST (18%) applies. The client shall provide its GSTIN to ensure correct GST categorisation.<span class="tbd"><b>TO CONFIRM · CA</b>For a GST-registered client, place of supply is generally the client’s registered state, not the venue. Confirm before keeping this wording.</span></div>
-  <div class="foot"><span>COMMERCIAL TERMS</span><span>07 / 08</span></div>
+  <div class="term"><div class="h"><i>14</i><b>Place of supply</b></div>If the workshop is delivered in Maharashtra: CGST (9%) + SGST (9%) applies. If delivered outside Maharashtra: IGST (18%) applies. The client shall provide its GSTIN to ensure correct GST categorisation.</div>
+  <div class="foot"><span>COMMERCIAL TERMS</span><span>06 / 07</span></div>
 </section>
 
 <!-- 6 · DISCLAIMER + NEXT STEP -->
@@ -205,6 +216,6 @@
     <li><small>WEB</small>investingformummies.com</li>
   </ul>
   <div class="entity"><b>Mooga Tech Solutions India Private Limited</b>Investing for Mummies is a brand of Mooga Tech Solutions India Pvt Ltd · GSTIN 27AAECM9012F1ZM · PAN AAECM9012F<br>107/108, 10th Floor, Mittal Chambers, Nariman Point, Mumbai 400021</div>
-  <div class="foot"><span>INVESTING FOR MUMMIES</span><span>08 / 08</span></div>
+  <div class="foot"><span>INVESTING FOR MUMMIES</span><span>07 / 07</span></div>
 </section>
 </body></html>
