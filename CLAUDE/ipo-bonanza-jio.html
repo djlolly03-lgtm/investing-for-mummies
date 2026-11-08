@@ -1332,7 +1332,7 @@ const FLAGS=[
     text:'“Our business is dependent upon telecom licenses and spectrum allocated by the Department of Telecommunications and regulated by TRAI. Licenses require periodic renewal, and levies — including spectrum usage charges and AGR-linked dues — may change materially and adversely affect our results.”',
     cls:'miss', verdict:'⚠ FLAG — BUT EVERY TELECOM CARRIES IT',
     teach:'A telecom lives on a government license. One regulation, one court order, and the economics of the whole business are repriced overnight — remember the AGR shock. Not a deal-breaker, but always check who really controls the tap.'},
-  { sec:'USE OF PROCEEDS · CAPITAL EXPENDITURE',
+  { sec:'RISK FACTORS · CAPITAL EXPENDITURE',
     text:'“We expect to continue to incur substantial capital expenditure in connection with the rollout and densification of our 5G network. Our capital expenditure requirements may exceed our estimates, and we may require additional financing.”',
     cls:'miss', verdict:'⚠ FLAG — GROWTH THAT EATS CASH',
     teach:'5G towers are not free. Heavy ongoing capex eats the free cash flow for years — profits on paper can coexist with money constantly going OUT. Ask: when does the spending stop?'},
@@ -1340,10 +1340,10 @@ const FLAGS=[
     text:'“A significant portion of our revenues, purchases, and borrowings are transactions with our Promoter, Reliance Industries Limited, and its subsidiaries and affiliates, and such transactions will continue after the Offer.”',
     cls:'bad', verdict:'🚩 RED FLAG — THE FAMILY SETS THE PRICES',
     teach:'The parent is the supplier, the customer AND the promoter. Prices between family members are set inside the family — and you, the new shareholder, are not family. Watch this line in every DRHP.'},
-  { sec:'THE OFFER · STRUCTURE',
-    text:'“The Offer comprises predominantly an Offer for Sale by existing shareholders and our Promoter. The Company will not receive any proceeds from the Offer for Sale portion.”',
-    cls:'bad', verdict:'🚩 RED FLAG — FOLLOW THE MONEY',
-    teach:'An OFS-heavy issue means the money goes to the sellers, not into the business. Early investors and the promoter are cashing out at this price — ask yourself why they are selling, and what the company itself gets: here, very little.'},
+  { sec:'OBJECTS OF THE OFFER · USE OF PROCEEDS',
+    text:'“The Offer is a Fresh Issue of up to 27 crore Equity Shares; there is no Offer for Sale. We propose to utilise a substantial majority of the Net Proceeds towards repayment or prepayment of certain borrowings availed by our Subsidiary, Reliance Jio Infocomm Limited.”',
+    cls:'miss', verdict:'⚠ FINE — BUT FOLLOW THE MONEY',
+    teach:'Good news first: 100% fresh issue, so no one is cashing out and every rupee goes to the company. But roughly ₹27,500 Cr of the ₹30,213 Cr goes to paying off old loans — not new towers or growth. Less debt means less interest and better profits, so that’s fine. Just know your money is clearing a loan, not building something new.'},
 ];
 
 function playerCount(){ return Object.keys(state.players||{}).length; }
