@@ -449,32 +449,50 @@ const CONFIG = {
   IPO: {
     name:        'JIO PLATFORMS',
     fullName:    'Jio Platforms Limited',
-    caseLabel:   'LIVE CASE · INDIA’S BIGGEST IPO',
+    caseLabel:   'LIVE CASE · INDIA’S LARGEST IPO EVER',
     sector:      'Telecom · Digital Services',
     parent:      'Reliance Industries',
-    founded:     '2016',
-    subscribers: '~48 Cr subscribers',
+    /* Every figure below is sourced (checked 8 Nov 2026):
+       SEBI abridged prospectus (RHP 14 Oct 2026) + chittorgarh.com/ipo/jio-platforms-ipo/3152
+       Subscription/total bids = NSE final bid data (22.19×), as reported by Upstox. */
+    founded:     '2016',                 // Jio services launched Sep 2016; Jio Platforms Ltd incorporated 2019
+    incorporated:'2019',
+    subscribers: '53.33 Cr subscribers', // as of 30 Jun 2026 (prospectus KPI table)
+    fy26Revenue: '₹1,46,885 Cr',
+    fy26Profit:  '₹30,049 Cr',
+    rilStakePre: '66.43%',
+    rilStakePost:'64.48%',
     profitLine:  'PROFITABLE',           // the Zomato contrast
-    issueSizeCr: 30213,                  // ₹30,213 Cr issue
-    priceLow:    1070,
+    issueSizeLabel:'₹30,187.65 Cr',
+    issueSizeCr: 30187.65,               // 27 Cr fresh shares, net of ₹54 employee discount (chittorgarh)
+    priceLow:    1065,
     priceHigh:   1119,
     issuePrice:  1119,                   // final issue price
     lotShares:   12,                     // 1 lot = 12 shares
     lotCost:     13428,                  // 12 × ₹1,119
-    windowLabel: 'OCT 2026',
+    windowLabel: '21–23 OCT 2026',
     listPrice:   1358,                   // listing day
     gainPerShare:239,                    // 1358 − 1119
-    gainPct:     21.4,                   // listing pop %
+    gainPct:     21.36,                  // listing pop % (₹1,358 vs ₹1,119)
     sub: { retail:2.72, hni:14.00, qib:70.55, overall:22.19 },
     totalBidsCr: 490414,                 // ₹4,90,414 Cr of national bids
-    retailWinPct:0.37,                   // ~37% of retail applicants got 1 lot
-    retailLosePctLabel:'63%',            // the teaching line on losing phones
-    hniDivisor:  14,                     // HNI proportional: bid ÷ 14 ÷ issuePrice
+    /* Allotment odds — calculated from chittorgarh's figures (no official ratio published):
+       retail 70,86,443 lots ÷ 98,26,897 applications ≈ 72%;
+       sNII 67,489 minimum-size winners ÷ 5,81,899 applications ≈ 11.6%. */
+    retailWinPct:0.72,
+    retailLosePctLabel:'28%',
+    retailOddsLabel:'about 7 in 10',
+    hniWinPct:   0.116,
+    hniOddsLabel:'about 1 in 9',
+    hniWinLots:  15,                     // SEBI (from 1 Apr 2022): each NII winner gets the minimum NII application
+    objectsDebtCr:'₹27,500 Cr',          // prepay Reliance Jio Infocomm borrowings
+    objectsGcpCr: '₹2,217.90 Cr',
   },
   PLAYER_CASH: 1000000,                  // every student starts with ₹10,00,000
   RETAIL: { minLots:1,  maxLots:14 },    // 14 × 13,428 = ₹1,87,992  (≤ ₹2L SEBI cap)
   HNI:    { minLots:15, maxLots:74 },    // ₹2,01,420 – ₹9,93,672
-  KAMATH: { applied:'₹500 Crore', received:'₹25 Crore', source:'CNBC-TV18' },
+  KAMATH: { applied:'₹500 crore', received:'₹25 crore', source:'CNBC-TV18 · 21 OCT 2026',
+            quote:'We were trying to get ₹500 crore of exposure, and we have gotten ₹25 crore.' },
   ROOM_PREFIX: 'IF',                     // room codes IF#### — never collides with other IFM games
   STALE_GAME_MS: 30*60*1000,
 };
@@ -657,34 +675,32 @@ function recomputeTotals(){
 }
 
 /* ───────────────────────── allotment math ─────────────────────────
-   Retail  = lottery: exactly round(0.37 × applicants) winners (min 1 if any),
-             each winner gets 1 lot (12 shares) regardless of lots applied.
-   HNI     = no lottery: shares = floor(bid ÷ 14 ÷ 1119), ≈7% of bid converts.
-   Listing = shares × ₹239 gain per share.                                   */
+   Both categories are lotteries when oversubscribed (SEBI ICDR, NII rule from 1 Apr 2022):
+   Retail = round(72% × applicants) winners, each gets 1 lot (12 shares).
+   HNI    = round(11.6% × applicants) winners, each gets the minimum NII
+            application: 15 lots (180 shares). Everyone else gets nothing.
+   A category with applicants always produces at least one winner, so the room
+   sees both outcomes. Listing = shares × ₹239 gain per share.               */
+function drawWinners(list,pct){
+  const order=list.slice();
+  for(let i=order.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=order[i]; order[i]=order[j]; order[j]=t; }
+  const n=list.length?Math.max(1,Math.round(pct*list.length)):0;
+  return {order,n};
+}
 function runAllotment(){
+  const I=CONFIG.IPO;
   const ps=Object.values(state.players||{});
   const retail=ps.filter(p=>p.cat==='RETAIL'&&p.bid>0);
   const hni=ps.filter(p=>p.cat==='HNI'&&p.bid>0);
-  const order=retail.slice();
-  for(let i=order.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=order[i]; order[i]=order[j]; order[j]=t; }
-  const winN=retail.length?Math.max(1,Math.round(CONFIG.IPO.retailWinPct*retail.length)):0;
-  order.forEach((p,i)=>{
-    p.win=i<winN;
-    p.shares=p.win?CONFIG.IPO.lotShares:0;
-    p.cost=p.shares*CONFIG.IPO.issuePrice;
-    p.refund=p.bid-p.cost;
-  });
-  hni.forEach(p=>{
-    p.shares=Math.floor(p.bid/CONFIG.IPO.hniDivisor/CONFIG.IPO.issuePrice);
-    p.win=p.shares>0;
-    p.cost=p.shares*CONFIG.IPO.issuePrice;
-    p.refund=p.bid-p.cost;
-  });
+  const R=drawWinners(retail,I.retailWinPct), H=drawWinners(hni,I.hniWinPct);
+  const settle=(p,win,lots)=>{ p.win=win; p.shares=win?lots*I.lotShares:0; p.cost=p.shares*I.issuePrice; p.refund=p.bid-p.cost; };
+  R.order.forEach((p,i)=>settle(p,i<R.n,1));
+  H.order.forEach((p,i)=>settle(p,i<H.n,I.hniWinLots));
   ps.forEach(p=>{
     if(!(p.bid>0)){ p.win=null; p.shares=0; p.cost=0; p.refund=0; }
-    p.gain=(p.shares||0)*CONFIG.IPO.gainPerShare;
+    p.gain=(p.shares||0)*I.gainPerShare;
   });
-  state.allotment={retailApplicants:retail.length,retailWinners:winN,hniApplicants:hni.length,ts:Date.now()};
+  state.allotment={retailApplicants:retail.length,retailWinners:R.n,hniApplicants:hni.length,hniWinners:H.n,ts:Date.now()};
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -932,17 +948,35 @@ const DotMoment=(function(){
     amount(L.hni,'₹'+fmtIN(opts.hniTotal));
     ctx.textAlign='left';
 
+    /* class stats under each bar */
+    const st=opts.stats||{};
+    ctx.letterSpacing='0.16em';
+    ctx.font='700 '+Math.max(11,Math.min(14,W*0.0075))+'px Nunito';
+    ctx.fillStyle=MINT;
+    ctx.globalAlpha=alpha*0.7;
+    if(st.retailLine) ctx.fillText(st.retailLine,L.retail.x,L.retail.y+L.retail.h+24);
+    if(st.hniLine)    ctx.fillText(st.hniLine,L.hni.x,L.hni.y+L.hni.h+24);
+    ctx.globalAlpha=alpha;
+
     ctx.textAlign='center';
     ctx.letterSpacing='0.34em';
     ctx.font='700 '+Math.max(11,Math.min(14,W*0.0075))+'px Nunito';
     ctx.fillStyle=MINT;
     ctx.globalAlpha=alpha*0.65;
-    ctx.fillText('TOTAL',W/2,L.hni.y+L.hni.h+58);
+    ctx.fillText('TOTAL',W/2,L.hni.y+L.hni.h+74);
     ctx.globalAlpha=alpha;
     ctx.letterSpacing='0.04em';
     ctx.font='800 '+Math.max(24,Math.min(34,W*0.018))+'px Nunito';
     ctx.fillStyle=CREAM;
-    ctx.fillText('₹'+fmtIN(classTotal()),W/2,L.hni.y+L.hni.h+98);
+    ctx.fillText('₹'+fmtIN(classTotal()),W/2,L.hni.y+L.hni.h+114);
+    if(st.roomLine){
+      ctx.letterSpacing='0.16em';
+      ctx.font='700 '+Math.max(11,Math.min(14,W*0.0075))+'px Nunito';
+      ctx.fillStyle=MINT;
+      ctx.globalAlpha=alpha*0.7;
+      ctx.fillText(st.roomLine,W/2,L.hni.y+L.hni.h+148);
+      ctx.globalAlpha=alpha;
+    }
 
     /* IPO CLOSED stamp */
     const sx=L.x+L.bw-8, sy=L.retail.y-86;
@@ -1267,7 +1301,7 @@ const DotMoment=(function(){
   }
 
   function init(o){
-    opts={retailTotal:Math.max(0,+o.retailTotal||0),hniTotal:Math.max(0,+o.hniTotal||0),onDone:o.onDone||null};
+    opts={retailTotal:Math.max(0,+o.retailTotal||0),hniTotal:Math.max(0,+o.hniTotal||0),stats:o.stats||null,onDone:o.onDone||null};
     mount.classList.remove('hide');
     resize();
     try{ document.fonts.load('900 17px Nunito'); document.fonts.load('700 15px Nunito'); }catch(e){}
@@ -1328,22 +1362,24 @@ function openQRFull(){
 
 /* S2 content: 4 DRHP excerpts, discussion format (no devices) */
 const FLAGS=[
-  { sec:'RISK FACTORS · GOVERNMENT & REGULATION',
-    text:'“Our business is dependent upon telecom licenses and spectrum allocated by the Department of Telecommunications and regulated by TRAI. Licenses require periodic renewal, and levies — including spectrum usage charges and AGR-linked dues — may change materially and adversely affect our results.”',
+  /* Verbatim from the SEBI abridged prospectus (refers to Jio's RHP dated 14 Oct 2026):
+     risk factors #1-#3 and section 4, objects of the offer. Do not paraphrase inside the quotes. */
+  { sec:'RISK FACTOR #1 · LICENCE & SPECTRUM',
+    text:'“RJIL holds telecommunication licence and spectrum which are critical for operations; inability to maintain or renew such licence or successfully bid for spectrum could materially and adversely impact our business.”',
     cls:'miss', verdict:'⚠ FLAG — BUT EVERY TELECOM CARRIES IT',
-    teach:'A telecom lives on a government license. One regulation, one court order, and the economics of the whole business are repriced overnight — remember the AGR shock. Not a deal-breaker, but always check who really controls the tap.'},
-  { sec:'RISK FACTORS · CAPITAL EXPENDITURE',
-    text:'“We expect to continue to incur substantial capital expenditure in connection with the rollout and densification of our 5G network. Our capital expenditure requirements may exceed our estimates, and we may require additional financing.”',
-    cls:'miss', verdict:'⚠ FLAG — GROWTH THAT EATS CASH',
-    teach:'5G towers are not free. Heavy ongoing capex eats the free cash flow for years — profits on paper can coexist with money constantly going OUT. Ask: when does the spending stop?'},
-  { sec:'RELATED PARTY TRANSACTIONS',
-    text:'“A significant portion of our revenues, purchases, and borrowings are transactions with our Promoter, Reliance Industries Limited, and its subsidiaries and affiliates, and such transactions will continue after the Offer.”',
-    cls:'bad', verdict:'🚩 RED FLAG — THE FAMILY SETS THE PRICES',
-    teach:'The parent is the supplier, the customer AND the promoter. Prices between family members are set inside the family — and you, the new shareholder, are not family. Watch this line in every DRHP.'},
-  { sec:'OBJECTS OF THE OFFER · USE OF PROCEEDS',
-    text:'“The Offer is a Fresh Issue of up to 27 crore Equity Shares; there is no Offer for Sale. We propose to utilise a substantial majority of the Net Proceeds towards repayment or prepayment of certain borrowings availed by our Subsidiary, Reliance Jio Infocomm Limited.”',
+    teach:'RJIL is Reliance Jio Infocomm, the company that actually runs the network. A telecom lives on a government licence and on spectrum it has to win at auction. Lose either and the business stops. Not a deal-breaker — every telecom carries it — but always check who controls the tap.'},
+  { sec:'RISK FACTOR #3 · ONE DISTRIBUTOR',
+    text:'“Disruption in our arrangement with RRL, the sole distributor of our pre-paid connectivity services, (which constituted 76.37%, 77.88%, 77.08%, 78.57% and 79.35% of our consolidated Revenue from Operations…)”',
+    cls:'bad', verdict:'🚩 RED FLAG — ONE PIPE FOR MOST OF THE MONEY',
+    teach:'RRL is Reliance Retail — a sister company. Around 77–79% of Jio’s revenue comes through that ONE distributor. If that single arrangement is disrupted, most of the revenue pipe is disrupted. That is concentration risk, and it sits inside the family.'},
+  { sec:'RISK FACTOR #2 · RELATED PARTIES',
+    text:'“We have various agreements with the Promoter, Reliance Retail Limited and other Reliance Group entities pertaining to our business; disruption in services under these agreements could adversely impact our business.”',
+    cls:'miss', verdict:'⚠ FLAG — ONE FAMILY, MANY CONTRACTS',
+    teach:'The promoter (Reliance Industries) and its group companies sit on the other side of many of Jio’s contracts. Terms between family members are agreed inside the family — and you, the new shareholder, are not family. Watch for this line in every DRHP.'},
+  { sec:'OBJECTS OF THE OFFER · WHERE YOUR MONEY GOES',
+    text:'“(i) Prepayment, in full or in part, of certain outstanding borrowings availed by the Material Subsidiary, namely, RJIL; and (ii) General corporate purposes.”',
     cls:'miss', verdict:'⚠ FINE — BUT FOLLOW THE MONEY',
-    teach:'Good news first: 100% fresh issue, so no one is cashing out and every rupee goes to the company. But roughly ₹27,500 Cr of the ₹30,213 Cr goes to paying off old loans — not new towers or growth. Less debt means less interest and better profits, so that’s fine. Just know your money is clearing a loan, not building something new.'},
+    teach:'Good news first: this is a 100% fresh issue — Offer for Sale is “Not applicable” — so no one is cashing out and the money goes to the company. But ₹27,500 Cr of it prepays Jio’s debt; ₹2,217.90 Cr is for general purposes. Less debt means less interest and better profits — fine. Just know your money clears a loan, it doesn’t build something new.'},
 ];
 
 function playerCount(){ return Object.keys(state.players||{}).length; }
@@ -1413,14 +1449,14 @@ function hostS1(){
     '<div>'+
       '<span class="hero-tag"><span class="logo-dot" style="width:7px;height:7px"></span> '+I.caseLabel+'</span>'+
       '<h1>India’s biggest IPO.<br><span class="accent">This room plays it live.</span></h1>'+
-      '<p class="hero-lede">'+esc(I.fullName)+' — '+esc(I.subscribers)+', India’s largest telecom. Founded '+esc(I.founded)+
-      ', promoted by '+esc(I.parent)+'. And unlike the loss-making unicorns you’ve seen before: <b style="color:var(--up)">it makes money.</b> '+
+      '<p class="hero-lede">'+esc(I.fullName)+' — '+esc(I.subscribers)+', India’s largest wireless operator. Jio launched in '+esc(I.founded)+
+      ', promoted by '+esc(I.parent)+'. And unlike the loss-making unicorns you’ve seen before: <b style="color:var(--up)">it makes money</b> — '+esc(I.fy26Profit)+' profit in FY26. '+
       'Today everyone in this room gets ₹10,00,000 and a decision to make.</p>'+
       '<div class="stat-row" style="max-width:520px;margin-top:22px">'+
         '<div class="stat-cell"><span class="l">SUBSCRIBERS</span><span class="v">'+esc(I.subscribers)+'</span></div>'+
-        '<div class="stat-cell"><span class="l">BOTTOM LINE</span><span class="v up">'+esc(I.profitLine)+' — unlike Zomato ’21</span></div>'+
-        '<div class="stat-cell"><span class="l">PROMOTER</span><span class="v">'+esc(I.parent)+'</span></div>'+
-        '<div class="stat-cell"><span class="l">FOUNDED</span><span class="v">'+esc(I.founded)+'</span></div>'+
+        '<div class="stat-cell"><span class="l">FY26 PROFIT</span><span class="v up">'+esc(I.fy26Profit)+' — unlike Zomato ’21</span></div>'+
+        '<div class="stat-cell"><span class="l">PROMOTER</span><span class="v">'+esc(I.parent)+' · '+esc(I.rilStakePre)+'</span></div>'+
+        '<div class="stat-cell"><span class="l">LAUNCHED</span><span class="v">'+esc(I.founded)+' · company formed '+esc(I.incorporated)+'</span></div>'+
       '</div>'+
     '</div>'+
     '<div><div class="ipo-card">'+
@@ -1430,7 +1466,7 @@ function hostS1(){
         '<h3>'+esc(I.fullName).toUpperCase()+'</h3><div class="sector">'+esc(I.sector)+'</div></div>'+
       '</div>'+
       '<div class="ipo-meta">'+
-        '<div><div class="l">ISSUE SIZE</div><div class="v">₹'+fmtIN(I.issueSizeCr)+' Cr</div></div>'+
+        '<div><div class="l">ISSUE SIZE</div><div class="v">'+esc(I.issueSizeLabel)+'</div></div>'+
         '<div><div class="l">PRICE BAND</div><div class="v">₹'+fmtIN(I.priceLow)+' – ₹'+fmtIN(I.priceHigh)+'</div></div>'+
         '<div><div class="l">LOT SIZE</div><div class="v">'+I.lotShares+' shares</div></div>'+
         '<div><div class="l">LOT COST</div><div class="v">'+rup(I.lotCost)+'</div></div>'+
@@ -1453,7 +1489,7 @@ function hostS2(){
   }
   const f=FLAGS[i];
   const live='<div class="drhp-row live"><div style="flex:1">'+
-    '<div class="drhp-section">DRHP EXCERPT · '+f.sec+'</div>'+
+    '<div class="drhp-section">FROM THE JIO PROSPECTUS · '+f.sec+'</div>'+
     '<div class="drhp-text big">'+f.text+'</div>'+
     (open
       ?'<span class="drhp-verdict '+f.cls+'">'+f.verdict+'</span><div class="drhp-teach">'+f.teach+'</div>'
@@ -1462,7 +1498,7 @@ function hostS2(){
   return '<div class="stage">'+
     '<div class="stage-head"><span class="stage-num">THE DRHP · FLAG '+(i+1)+' / '+FLAGS.length+'</span></div>'+
     '<div class="stage-title">Red flag hunt.</div>'+
-    '<p class="stage-sub">Four real clauses from the draft prospectus. For each one, the room votes: red flag, or fine? Then the verdict.</p>'+
+    '<p class="stage-sub">Four real clauses, word for word, from Jio’s offer document (RHP, 14 Oct 2026). For each one, the room votes: red flag, or fine? Then the verdict.</p>'+
     '<div class="drhp">'+done+live+'</div>'+
   '</div>';
 }
@@ -1488,11 +1524,11 @@ function hostS3(){
           '<div class="r"><span class="l">ALLOTMENT</span><span class="v">LOTTERY · winners get 1 lot</span></div>'+
         '</div></div>'+
       '<div class="cat-panel hni"><div class="cat-name">HNI / NII</div>'+
-        '<div class="cat-desc">The big-money door. Above ₹2 lakh, up to your full ₹10 lakh. No lottery — allotment is <b style="color:var(--ink)">PROPORTIONAL</b>: everyone gets the same slice of what they asked for.</div>'+
+        '<div class="cat-desc">The big-money door: above ₹2 lakh, up to ₹10 lakh (SEBI calls this “small NII”). Since 2022 this is a <b style="color:var(--ink)">LOTTERY</b> too — but every winner gets the minimum HNI application: <b style="color:var(--ink)">15 lots, 180 shares</b>. Everyone else gets nothing back but their money.</div>'+
         '<div class="cat-rows">'+
           '<div class="r"><span class="l">APPLY</span><span class="v">'+CONFIG.HNI.minLots+' – '+CONFIG.HNI.maxLots+' lots ('+rup(CONFIG.HNI.minLots*CONFIG.IPO.lotCost)+' – '+rup(CONFIG.HNI.maxLots*CONFIG.IPO.lotCost)+')</span></div>'+
-          '<div class="r"><span class="l">SHOWN AS</span><span class="v">above ₹2L · up to ₹10L</span></div>'+
-          '<div class="r"><span class="l">ALLOTMENT</span><span class="v">PROPORTIONAL · no luck involved</span></div>'+
+          '<div class="r"><span class="l">SEBI RULE</span><span class="v">since 1 Apr 2022</span></div>'+
+          '<div class="r"><span class="l">ALLOTMENT</span><span class="v">LOTTERY · winners get 15 lots</span></div>'+
         '</div></div>'+
     '</div>'+
     '<div class="terms-closer">Everyone gets <b>₹10 Lakh</b>. Choose your category wisely.</div>'+
@@ -1542,6 +1578,20 @@ function hostS5(){
     '<div style="text-align:center;margin-top:34px"><button class="btn danger big" id="btnCloseIPO">CLOSE THE IPO  ■</button></div>'+
   '</div>';
 }
+/* Class-level numbers for the live bars and the frozen IPO-CLOSED frame. */
+function classStats(){
+  const ps=Object.values(state.players||{});
+  const cat=c=>{ const b=ps.filter(p=>p.cat===c&&p.bid>0).map(p=>p.bid);
+    const tot=b.reduce((a,x)=>a+x,0);
+    return {n:b.length,total:tot,avg:b.length?Math.round(tot/b.length):0,max:b.length?Math.max.apply(null,b):0}; };
+  const R=cat('RETAIL'),H=cat('HNI'),applied=R.n+H.n,total=R.total+H.total;
+  return {R,H,players:ps.length,applied,total,avg:applied?Math.round(total/applied):0,
+          retailShare:applied?Math.round(R.n/applied*100):0};
+}
+function catLine(c){
+  if(!c.n) return 'NO APPLICATIONS YET';
+  return c.n+' APPLICANT'+(c.n===1?'':'S')+'  ·  AVG ₹'+fmtIN(c.avg)+'  ·  BIGGEST ₹'+fmtIN(c.max);
+}
 function updateBiddingBars(){
   if(state.phase!=='bidding') return;
   const fR=document.getElementById('lbRetailFill'); if(!fR) return;
@@ -1551,12 +1601,14 @@ function updateBiddingBars(){
   document.getElementById('lbRetailAmt').textContent='₹'+fmtIN(r);
   document.getElementById('lbHniAmt').textContent='₹'+fmtIN(h);
   document.getElementById('lbTotal').textContent='₹'+fmtIN(r+h);
-  const ps=Object.values(state.players||{});
-  const nR=ps.filter(p=>p.cat==='RETAIL'&&p.bid>0).length, nH=ps.filter(p=>p.cat==='HNI'&&p.bid>0).length;
-  document.getElementById('lbRetailSub').textContent=nR+' APPLICATION'+(nR===1?'':'S');
-  document.getElementById('lbHniSub').textContent=nH+' APPLICATION'+(nH===1?'':'S');
+  const cs=classStats();
+  document.getElementById('lbRetailSub').textContent=catLine(cs.R);
+  document.getElementById('lbHniSub').textContent=catLine(cs.H);
   document.getElementById('lbStats').innerHTML=
-    '<span>'+ps.length+' PLAYERS</span><span>'+(state.bidsCount||0)+' BIDS IN</span><span>'+(ps.length-(state.bidsCount||0))+' DECIDING…</span>';
+    '<span>'+cs.applied+' OF '+cs.players+' APPLIED</span>'+
+    '<span>AVG APPLICATION ₹'+fmtIN(cs.avg)+'</span>'+
+    (cs.applied?'<span>'+cs.retailShare+'% RETAIL · '+(100-cs.retailShare)+'% HNI</span>':'')+
+    '<span>'+Math.max(0,cs.players-cs.applied)+' STILL DECIDING…</span>';
   renderTape();
 }
 function biddingTick(cat,amt){
@@ -1583,7 +1635,10 @@ function closeIPO(){
 /* ── S6: the dot moment (full-screen canvas takeover) ── */
 function startDot(){
   if(dmHandle) return;
-  dmHandle=DotMoment.init({retailTotal:state.retailTotal||0,hniTotal:state.hniTotal||0,onDone:dotDone});
+  const cs=classStats();
+  dmHandle=DotMoment.init({retailTotal:state.retailTotal||0,hniTotal:state.hniTotal||0,onDone:dotDone,
+    stats:{retailLine:catLine(cs.R),hniLine:catLine(cs.H),
+           roomLine:cs.applied+' OF '+cs.players+' IN THE ROOM APPLIED  ·  AVG APPLICATION ₹'+fmtIN(cs.avg)}});
 }
 function dotDone(){
   DotMoment.destroy(); dmHandle=null;
@@ -1621,22 +1676,22 @@ function hostS8(){
   if(st==='idle'){
     return '<div class="stage"><div class="stage-head"><span class="stage-num">ALLOTMENT</span></div>'+
       '<div class="stage-title">Who actually gets shares?</div>'+
-      '<p class="stage-sub">Retail is a lottery — every applicant is one ticket in the hat, however many lots they applied for. HNI is pure math — everyone gets their bid ÷ 14. No drama, no luck.</p>'+
+      '<p class="stage-sub">Both doors are lotteries when an IPO is oversubscribed. Retail: one ticket per applicant, winners get 1 lot. HNI: one ticket per applicant too (SEBI rule since 2022), but winners get 15 lots. In the real Jio IPO, '+esc(CONFIG.IPO.retailOddsLabel)+' retail applicants won — and only '+esc(CONFIG.IPO.hniOddsLabel)+' HNI applicants.</p>'+
       '<div class="lottery"><div class="lottery-label">REGISTRAR READY · '+((state.allotment&&state.allotment.retailApplicants)||Object.values(state.players||{}).filter(p=>p.cat==='RETAIL'&&p.bid>0).length)+' RETAIL · '+Object.values(state.players||{}).filter(p=>p.cat==='HNI'&&p.bid>0).length+' HNI</div>'+
       '<button class="btn amber big" id="btnRunAllot">RUN ALLOTMENT  →</button></div></div>';
   }
   if(st==='suspense'){
     return '<div class="stage"><div class="stage-head"><span class="stage-num">ALLOTMENT</span></div>'+
-      '<div class="stage-title">Randomising the retail lottery…</div>'+
+      '<div class="stage-title">Running both lotteries…</div>'+
       '<div class="lottery"><div class="lottery-label">SHUFFLING APPLICATIONS · DO NOT ADJUST YOUR SET</div>'+
       '<div class="lottery-pan spinning" id="lotPan">• • •</div></div></div>';
   }
   /* board */
   const ps=Object.values(state.players||{});
   const retail=ps.filter(p=>p.cat==='RETAIL'&&p.bid>0).sort((a,b)=>(b.win?1:0)-(a.win?1:0)||a.name.localeCompare(b.name));
-  const hni=ps.filter(p=>p.cat==='HNI'&&p.bid>0).sort((a,b)=>b.shares-a.shares);
+  const hni=ps.filter(p=>p.cat==='HNI'&&p.bid>0).sort((a,b)=>(b.win?1:0)-(a.win?1:0)||a.name.localeCompare(b.name));
   const sat=ps.filter(p=>!(p.bid>0));
-  const al=state.allotment||{retailApplicants:retail.length,retailWinners:retail.filter(p=>p.win).length};
+  const al=state.allotment||{retailApplicants:retail.length,retailWinners:retail.filter(p=>p.win).length,hniApplicants:hni.length,hniWinners:hni.filter(p=>p.win).length};
   return '<div class="stage">'+
     '<div class="stage-head"><span class="stage-num">ALLOTMENT · RESULT</span></div>'+
     '<div class="stage-title">The hat has spoken.</div>'+
@@ -1645,12 +1700,13 @@ function hostS8(){
         '<div class="panel-body"><div class="pgrid">'+
           (retail.length?retail.map(p=>chipHTML(p,p.win?'won':'lost',p.win?' <span class="shn">+'+CONFIG.IPO.lotShares+' SH</span>':' <span class="shn" style="color:var(--ink-3)">—</span>')).join(''):'<span class="dim">No retail applicants.</span>')+
         '</div>'+
-        '<div class="allot-note">Winners get <b style="color:var(--ink)">1 lot each ('+CONFIG.IPO.lotShares+' shares)</b> — no matter how many lots they applied for. Bigger retail applications barely improve the odds: one applicant, one ticket.</div>'+
+        '<div class="allot-note">Winners get <b style="color:var(--ink)">1 lot each ('+CONFIG.IPO.lotShares+' shares)</b> — no matter how many lots they applied for. Applying for more lots doesn’t improve your odds at all: one applicant, one ticket.</div>'+
         '</div></div>'+
-      '<div class="panel"><div class="panel-head"><span>HNI · PROPORTIONAL</span><span class="mono dim">SHARES = BID ÷ 14</span></div>'+
-        '<div class="panel-body">'+
-          (hni.length?hni.map(p=>'<div class="hni-row"><span>'+p.av+' '+esc(p.name)+'</span><span class="sh">'+p.shares+' SHARES · of '+fmtIN(Math.round(p.bid/CONFIG.IPO.issuePrice))+' asked</span></div>').join(''):'<div class="dim" style="font-size:13.5px">No HNI applicants.</div>')+
-          '<div class="allot-note" style="border-color:var(--amber)">No lottery here — everyone converts ≈ 7% of their bid into shares. More money in = more shares, but the same thin slice for all.</div>'+
+      '<div class="panel"><div class="panel-head"><span>HNI · LOTTERY</span><span class="mono dim">'+(al.hniWinners||0)+' OF '+(al.hniApplicants||0)+' GOT 15 LOTS</span></div>'+
+        '<div class="panel-body"><div class="pgrid">'+
+          (hni.length?hni.map(p=>chipHTML(p,p.win?'won':'lost',p.win?' <span class="shn">+'+(CONFIG.IPO.hniWinLots*CONFIG.IPO.lotShares)+' SH</span>':' <span class="shn" style="color:var(--ink-3)">—</span>')).join(''):'<span class="dim">No HNI applicants.</span>')+
+        '</div>'+
+          '<div class="allot-note" style="border-color:var(--amber)">Winners get the minimum HNI application: <b style="color:var(--ink)">15 lots ('+(CONFIG.IPO.hniWinLots*CONFIG.IPO.lotShares)+' shares)</b>. Everyone else gets nothing — their whole ₹2–10 lakh just sat blocked for the week.</div>'+
         '</div></div>'+
     '</div>'+
     (sat.length?'<p class="stage-sub" style="margin-top:14px">Sat out: '+sat.map(p=>esc(p.name)).join(', ')+' — ₹10,00,000 intact, zero shares.</p>':'')+
@@ -1682,13 +1738,15 @@ function vsExamples(){
   const I=CONFIG.IPO;
   const ps=Object.values(state.players||{});
   const rw=ps.filter(p=>p.cat==='RETAIL'&&p.win).sort((a,b)=>a.bid-b.bid)[0];
-  const hb=ps.filter(p=>p.cat==='HNI'&&p.bid>0).sort((a,b)=>b.bid-a.bid)[0];
-  const canonH={gain:Math.floor(CONFIG.HNI.maxLots*I.lotCost/I.hniDivisor/I.issuePrice)*I.gainPerShare,blocked:CONFIG.HNI.maxLots*I.lotCost};
+  const hw=ps.filter(p=>p.cat==='HNI'&&p.win).sort((a,b)=>b.bid-a.bid)[0];
+  const hniAll=ps.filter(p=>p.cat==='HNI'&&p.bid>0), hniLost=hniAll.filter(p=>!p.win);
+  const hwinGain=I.hniWinLots*I.lotShares*I.gainPerShare;
   const r=rw?{name:rw.name,gain:rw.gain,blocked:rw.bid}:{name:null,gain:I.lotShares*I.gainPerShare,blocked:I.lotCost};
-  const h=hb?{name:hb.name,gain:hb.gain,blocked:hb.bid}:{name:null,gain:canonH.gain,blocked:canonH.blocked};
+  const h=hw?{name:hw.name,gain:hw.gain,blocked:hw.bid}:{name:null,gain:hwinGain,blocked:CONFIG.HNI.maxLots*I.lotCost};
   r.pct=r.blocked?r.gain/r.blocked*100:0;
   h.pct=h.blocked?h.gain/h.blocked*100:0;
-  return {r,h};
+  const lost={n:hniLost.length,of:hniAll.length,blocked:hniLost.reduce((t,p)=>t+p.bid,0)};
+  return {r,h,lost};
 }
 function hostS9(){
   const I=CONFIG.IPO, ls=state.listStep;
@@ -1724,11 +1782,12 @@ function hostS9(){
       '<div class="vs-card winr"><div class="vs-tag">RETAIL WINNER'+(vx.r.name?' · '+esc(vx.r.name).toUpperCase():' · TEXTBOOK CASE')+'</div>'+
         '<div class="vs-big">+'+pct1(vx.r.pct)+'%</div>'+
         '<div class="vs-line">+'+rup(vx.r.gain)+' made on just <b>'+rup(vx.r.blocked)+'</b> blocked. Small ticket, full listing pop.</div></div>'+
-      '<div class="vs-card hnir"><div class="vs-tag">HNI ALL-IN'+(vx.h.name?' · '+esc(vx.h.name).toUpperCase():' · TEXTBOOK CASE')+'</div>'+
+      '<div class="vs-card hnir"><div class="vs-tag">HNI WINNER'+(vx.h.name?' · '+esc(vx.h.name).toUpperCase():' · TEXTBOOK CASE')+'</div>'+
         '<div class="vs-big">+'+pct1(vx.h.pct)+'%</div>'+
-        '<div class="vs-line">+'+rup(vx.h.gain)+' made — but <b>'+rup(vx.h.blocked)+'</b> sat frozen under ASBA to earn it. Big ticket, thin slice.</div></div>'+
+        '<div class="vs-line">Won the HNI lottery: '+(CONFIG.IPO.hniWinLots*CONFIG.IPO.lotShares)+' shares, +'+rup(vx.h.gain)+' — on <b>'+rup(vx.h.blocked)+'</b> blocked under ASBA.</div></div>'+
     '</div>'+
-    '<p class="stage-sub" style="margin-top:18px">The listing pop was identical for every share: +'+CONFIG.IPO.gainPct+'%. What differed was how much money had to stand still to catch it.</p>'+
+    (vx.lost.n?'<p class="stage-sub" style="margin-top:18px"><b style="color:var(--amber)">'+vx.lost.n+' of '+vx.lost.of+' HNI applicants won nothing</b> — '+rup(vx.lost.blocked)+' sat blocked for a week and earned ₹0.</p>':'')+
+    '<p class="stage-sub" style="margin-top:10px">The listing pop was identical for every share: +'+CONFIG.IPO.gainPct+'%. What differed was the odds of getting any — and how much money had to stand still to try.</p>'+
   '</div>';
 }
 
@@ -1736,9 +1795,9 @@ function hostS9(){
 function hostS10(){
   return '<div class="quiet">'+
     '<div class="kicker">A TRUE STORY · '+esc(CONFIG.KAMATH.source)+'</div>'+
-    '<h2>Nikhil Kamath applied for<br><span class="hl-amber">'+esc(CONFIG.KAMATH.applied)+'</span> of exposure.<br>He received <span class="hl-up">'+esc(CONFIG.KAMATH.received)+'</span>.</h2>'+
-    '<div class="sub2">“A little disappointed.”</div>'+
-    '<div class="attr">EVEN THE BIGGEST PLAYERS CAN’T BUY THEIR WAY INTO AN OVERSUBSCRIBED IPO.</div>'+
+    '<h2>“We were trying to get <span class="hl-amber">'+esc(CONFIG.KAMATH.applied)+'</span> of exposure, and we have gotten <span class="hl-up">'+esc(CONFIG.KAMATH.received)+'</span>.”</h2>'+
+    '<div class="sub2">— Nikhil Kamath, Zerodha co-founder. His firm Rainmatter took part in Jio’s anchor book — the big-institution queue.</div>'+
+    '<div class="attr">EVEN INSTITUTIONAL MONEY GOT A FRACTION OF WHAT IT ASKED FOR.</div>'+
   '</div>';
 }
 
@@ -1750,11 +1809,14 @@ function hostS11(){
     '<h2>More money <span class="hl-dn">≠</span> better return.</h2>'+
     '<div class="sub2">The question is what your money earned <b style="color:var(--ink)">while it was blocked</b>.</div>'+
     '<div class="lesson-stats">'+
+      '<div class="lesson-stat"><div class="l">REAL JIO ODDS · RETAIL</div><div class="v up">'+esc(CONFIG.IPO.retailOddsLabel)+'</div></div>'+
+      '<div class="lesson-stat"><div class="l">REAL JIO ODDS · HNI</div><div class="v amber">'+esc(CONFIG.IPO.hniOddsLabel)+'</div></div>'+
       '<div class="lesson-stat"><div class="l">RETAIL WINNER · ON BLOCKED ₹</div><div class="v up">+'+pct1(vx.r.pct)+'%</div></div>'+
-      '<div class="lesson-stat"><div class="l">HNI ALL-IN · ON BLOCKED ₹</div><div class="v amber">+'+pct1(vx.h.pct)+'%</div></div>'+
-      '<div class="lesson-stat"><div class="l">RETAIL APPLICANTS WHO GOT NOTHING</div><div class="v dim">'+esc(CONFIG.IPO.retailLosePctLabel)+'</div></div>'+
     '</div>'+
-    '<div style="margin-top:44px"><button class="btn big" id="btnNewGame">↺  NEW GAME</button></div>'+
+    '<div style="margin-top:44px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap">'+
+      '<a class="btn big" href="/ipo-bonanza" style="text-decoration:none">←  BACK TO IPO BONANZA</a>'+
+      '<button class="btn big ghost" id="btnNewGame">↺  PLAY JIO AGAIN</button>'+
+    '</div>'+
   '</div>';
 }
 
@@ -1914,7 +1976,7 @@ function catExplainers(disabled){
       '<div class="cn">RETAIL</div><div class="cd">The small door. Up to ₹2,00,000. Allotment by <b>lottery</b> — win and you get exactly 1 lot.</div>'+
       '<div class="cm">1–'+CONFIG.RETAIL.maxLots+' LOTS · MAX '+rup(CONFIG.RETAIL.maxLots*CONFIG.IPO.lotCost)+'</div></div>'+
     '<div class="catcard hnic" style="pointer-events:none;opacity:'+(disabled?'0.8':'1')+'">'+
-      '<div class="cn">HNI</div><div class="cd">The big door. Above ₹2L, up to ₹10L. No lottery — allotment is <b>proportional</b> to your bid.</div>'+
+      '<div class="cn">HNI</div><div class="cd">The big door. Above ₹2L, up to ₹10L. Since 2022 it’s a <b>lottery</b> too — winners get 15 lots, everyone else gets nothing.</div>'+
       '<div class="cm">'+CONFIG.HNI.minLots+'–'+CONFIG.HNI.maxLots+' LOTS · '+rup(CONFIG.HNI.minLots*CONFIG.IPO.lotCost)+' – '+rup(CONFIG.HNI.maxLots*CONFIG.IPO.lotCost)+'</div></div>';
 }
 
@@ -1973,10 +2035,10 @@ function renderPlayer(force){
       '<div class="pkicker">BIDDING OPEN · YOUR ₹10,00,000</div>'+
       '<h2>Choose your door.</h2>'+
       '<button class="catcard retc" id="pickRET"><div class="cn">RETAIL</div>'+
-        '<div class="cd">Lottery allotment. Max ₹2,00,000 (SEBI cap). Win → exactly 1 lot of '+I.lotShares+' shares.</div>'+
+        '<div class="cd">Lottery for 1 lot of '+I.lotShares+' shares — real Jio odds: about 7 in 10. Max ₹2,00,000 (SEBI cap).</div>'+
         '<div class="cm">1–'+CONFIG.RETAIL.maxLots+' LOTS · '+rup(I.lotCost)+' – '+rup(CONFIG.RETAIL.maxLots*I.lotCost)+'</div></button>'+
       '<button class="catcard hnic" id="pickHNI"><div class="cn">HNI</div>'+
-        '<div class="cd">Proportional allotment — no lottery. Above ₹2L, up to your full ₹10L.</div>'+
+        '<div class="cd">Lottery for 15 lots (180 shares) — real Jio odds: about 1 in 9. Above ₹2L, up to ₹10L.</div>'+
         '<div class="cm">'+CONFIG.HNI.minLots+'–'+CONFIG.HNI.maxLots+' LOTS · '+rup(CONFIG.HNI.minLots*I.lotCost)+' – '+rup(CONFIG.HNI.maxLots*I.lotCost)+'</div></button>'+
       '<p class="psub" style="margin-top:14px;text-align:center">Money you don’t apply stays in your pocket — that matters later.</p>'+
     '</div>';
@@ -2136,19 +2198,27 @@ function playerResultCard(p){
     return '<div class="pcard" style="text-align:center">'+
       '<div class="pkicker">RETAIL LOTTERY · RESULT</div>'+
       '<div class="presult-big lostc">NOT ALLOTTED</div>'+
-      '<p class="psub"><b style="color:var(--ink)">'+rup(p.bid)+' released back to you.</b><br>'+I.retailLosePctLabel+' of retail applicants got nothing. Your money was never at risk — ASBA just unfroze it.</p>'+
+      '<p class="psub"><b style="color:var(--ink)">'+rup(p.bid)+' released back to you.</b><br>In the real Jio IPO, '+I.retailLosePctLabel+' of retail applicants got nothing too. Your money was never at risk — ASBA just unfroze it.</p>'+
     '</div>';
   }
-  /* HNI */
-  const asked=Math.round(p.bid/I.issuePrice);
+  /* HNI — a lottery too (SEBI, since 1 Apr 2022); winners get the minimum NII application */
+  const alH=state.allotment||{};
+  if(p.win){
+    return '<div class="pcard" style="text-align:center">'+
+      '<div class="pkicker">HNI LOTTERY · RESULT</div>'+
+      '<div class="presult-big won">ALLOTTED — '+p.shares+' SHARES</div>'+
+      '<p class="psub">You won the HNI lottery: the minimum HNI application, '+I.hniWinLots+' lots'+(p.lots>I.hniWinLots?' — even though you applied for '+p.lots+'.':'.')+' In the real Jio IPO only '+esc(I.hniOddsLabel)+' HNI applicants won.</p>'+
+      '<div style="text-align:left;margin-top:14px">'+
+      '<div class="prow"><span class="l">STAYS INVESTED</span><span class="v">'+rup(p.cost)+'</span></div>'+
+      '<div class="prow"><span class="l">RELEASED BACK TO YOU</span><span class="v up">'+rup(p.refund)+'</span></div>'+
+      (alH.hniApplicants?'<div class="prow"><span class="l">YOUR ODDS</span><span class="v">'+(alH.hniWinners||0)+' OF '+alH.hniApplicants+' WON</span></div>':'')+
+      '</div></div>';
+  }
   return '<div class="pcard" style="text-align:center">'+
-    '<div class="pkicker">HNI · PROPORTIONAL · NO LOTTERY</div>'+
-    '<div class="presult-big won">ALLOTTED — '+p.shares+' SHARES</div>'+
-    '<p class="psub">You asked for '+fmtIN(asked)+' shares. At 14× oversubscription you get ≈ your bid ÷ 14. Pure math, no luck.</p>'+
-    '<div style="text-align:left;margin-top:14px">'+
-    '<div class="prow"><span class="l">STAYS INVESTED</span><span class="v">'+rup(p.cost)+'</span></div>'+
-    '<div class="prow"><span class="l">RELEASED BACK TO YOU</span><span class="v up">'+rup(p.refund)+'</span></div>'+
-    '</div></div>';
+    '<div class="pkicker">HNI LOTTERY · RESULT</div>'+
+    '<div class="presult-big lostc">NOT ALLOTTED</div>'+
+    '<p class="psub"><b style="color:var(--ink)">'+rup(p.bid)+' released back to you.</b><br>Big ticket, no shares. In the real Jio IPO only '+esc(I.hniOddsLabel)+' HNI applicants won anything — your money sat blocked for the week and earned ₹0.</p>'+
+  '</div>';
 }
 
 /* J6 — personal listing P&L */
@@ -2167,7 +2237,7 @@ function playerPnlCard(p){
       '<div class="prow"><span class="l">YOUR ₹10,00,000 IS NOW</span><span class="v up">'+rup(finalTotal)+'</span></div>'+
       '<p class="psub" style="margin-top:14px">'+(p.cat==='RETAIL'
         ?'Small ticket, full +'+I.gainPct+'% pop — the lottery winner’s prize.'
-        :'The pop was +'+I.gainPct+'% per share — but look how much money stood frozen to catch your slice.')+'</p>'+
+        :'You beat the HNI odds. The pop was +'+I.gainPct+'% per share — compare your return on blocked money with a small retail winner’s.')+'</p>'+
     '</div>';
   }
   if(p.bid>0){
