@@ -1,0 +1,155 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IPO Bonanza audit — 8 Nov 2026</title>
+<style>
+:root{--bg:#f6f8fa;--card:#fff;--ink:#1a2433;--ink2:#4a5a6e;--line:#dfe5ec;--ok:#14804a;--bad:#c62f45;--warn:#a86400}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1722;--card:#172231;--ink:#e6edf5;--ink2:#9fb0c3;--line:#26364a;--ok:#3ccf87;--bad:#ff6b81;--warn:#f2b45c}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,system-ui,Segoe UI,Roboto,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:28px 16px 60px} h1{font-size:28px;margin:0 0 4px} h2{font-size:20px;margin:34px 0 10px}
+.sub{color:var(--ink2)} .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:12px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:16px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px} .kpi b{display:block;font-size:24px} .kpi span{color:var(--ink2);font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:14px} th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top} th{color:var(--ink2);font-weight:600}
+.ok{color:var(--ok);font-weight:700} .bad{color:var(--bad);font-weight:700} .warn{color:var(--warn);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.shot{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;color:var(--ink);text-decoration:none}
+.shot img{width:100%;height:170px;object-fit:cover;object-position:top;display:block;background:#0b1320}
+.shot span{display:block;padding:7px 10px;font-size:13px;text-transform:capitalize}
+.shot.after{border-color:var(--ok)} .shot.before{border-color:var(--bad);opacity:.85}
+</style></head><body><main>
+<h1>IPO Bonanza — full audit</h1>
+<div class="sub">Sunday 8 Nov 2026 · Jio IPO (live multiplayer) + Zomato (solo) · tested like a classroom: one teacher screen, 59 players</div>
+
+<div class="kpis">
+<div class="kpi"><b class="ok">59 / 59</b><span>players joined, none dropped</span></div>
+<div class="kpi"><b class="ok">56 / 56</b><span>bids counted to the rupee</span></div>
+<div class="kpi"><b class="ok">43 / 43</b><span>screens fit with no scrolling, at 3 window sizes</span></div>
+<div class="kpi"><b class="ok">0</b><span>script errors across both games</span></div>
+<div class="kpi"><b>17</b><span>issues found — 17 fixed &amp; live</span></div>
+<div class="kpi"><b class="warn">6</b><span>open items (data to source / decisions)</span></div>
+</div>
+
+<h2>How it was tested</h2>
+<div class="card">
+<b>Jio, live multiplayer:</b> one teacher screen at TV size (1920×1080) · <b>2 real phone screens</b> (Priya retail, Kavita HNI) · <b>56 scripted players</b> joining and bidding through the same live connection real phones use, staggered like a real room · plus a late joiner and someone joining after close.<br>
+<b>Zomato:</b> played start to finish through the real buttons at TV size.<br>
+<b>Fit:</b> every screen of both games measured at 1000×547 (your laptop window), 1440×800 and 1920×1080 — including the after-animation and after-draw states.
+</div>
+
+<h2>Jio — multiplayer checks</h2>
+<div class="card"><table>
+<tr><th>Check</th><th>Expected</th><th>Result</th></tr>
+<tr><td>Players joining (56 scripted + 2 phones + 1 late)</td><td>59</td><td class="ok">59 ✓</td></tr>
+<tr><td>Bids received</td><td>56 (3 never bid)</td><td class="ok">56 ✓ — Usha, Vandana, Zoya listed as "sat out"</td></tr>
+<tr><td>Retail / HNI totals vs what was sent</td><td>₹38,40,408 / ₹1,11,18,384</td><td class="ok">exact ✓</td></tr>
+<tr><td>Retail bid over the ₹2L cap (20 lots)</td><td>rejected</td><td class="ok">rejected, her valid bid counted ✓</td></tr>
+<tr><td>Same person bidding twice</td><td>second ignored</td><td class="ok">✓</td></tr>
+<tr><td>Phone limits (retail 1–14, HNI 15–74 lots)</td><td>can't go outside</td><td class="ok">✓ both</td></tr>
+<tr><td>Bid after the IPO closed / join after close</td><td>bid rejected, can still watch</td><td class="ok">✓</td></tr>
+<tr><td>Lottery: retail 72%, HNI 11.6%</td><td>27 of 37 · 2 of 19</td><td class="ok">✓ (and phones got their own result)</td></tr>
+<tr><td>P&amp;L / side-by-side arithmetic</td><td>hand-checked</td><td class="ok">✓ e.g. 2×₹43,020 + 26×₹2,868 = ₹1,60,608</td></tr>
+<tr><td>Phone refresh mid-game</td><td>comes back where it was</td><td class="ok">✓</td></tr>
+<tr><td>Teacher laptop refresh mid-game</td><td>resumes, nothing lost</td><td class="ok">✓ 60 players, 56 bids, results intact</td></tr>
+<tr><td>Play Jio again</td><td>every phone back to join</td><td class="ok">✓</td></tr>
+</table></div>
+
+<h2>Found and fixed (all live)</h2>
+<div class="card"><table>
+<tr><th>#</th><th>Issue</th><th>Fix</th></tr>
+<tr><td>1</td><td>Lobby hint said "tap QR top-right" — that QR is hidden on the lobby</td><td>"Click the QR to enlarge" + the big QR now enlarges</td></tr>
+<tr><td>2</td><td>Allotment board with 59 names shrank to 1.0× on a TV</td><td>Retail panel wider → 1.13×</td></tr>
+<tr><td>3</td><td>P&amp;L with 60 rows: tiny text, 27 identical rows</td><td>Big classes see outcome groups (HNI winners / retail winners / got nothing / didn't apply) → 1.28×</td></tr>
+<tr><td>4</td><td>Phone showed +21.4%, TV showed +21.36%</td><td>Phone now shows +21.36%</td></tr>
+<tr><td>5</td><td><b>X embed sometimes drew 0 px tall → blank hole on the Kamath screen</b></td><td>Text card always visible; live post swaps in only once really drawn</td></tr>
+<tr><td>6</td><td>P&amp;L button said "The lesson →" but went to the side-by-side</td><td>"Who made money? →"</td></tr>
+<tr><td>7</td><td>Zomato start / company card used the old green "Z"</td><td>Real Zomato logo</td></tr>
+<tr><td>8</td><td>Zomato: lottery "in lots of <b>30</b>", "1 lot · <b>30 shares</b>"</td><td>195 shares (Zomato's real lot)</td></tr>
+<tr><td>9</td><td>Zomato: registrar named <b>KFinTech</b> (twice)</td><td>Link Intime (Zomato's registrar)</td></tr>
+<tr><td>10</td><td>Zomato money timeline dated <b>Dec 04 → Dec 13</b></td><td>Real dates: 14, 16, 22, 23 July 2021</td></tr>
+<tr><td>11</td><td>Zomato: "NEXAFIN" leftovers in 4 places</td><td>Zomato</td></tr>
+<tr><td>12</td><td>Zomato: buckets showed generic 50/15/35 ("35% — that's you")</td><td>Zomato's real 75/15/10</td></tr>
+<tr><td>13</td><td>Zomato: "roughly 1 in 7 retail applicants" = 1 ÷ 7.45 (same wrong maths as Jio's old 37%)</td><td>Removed — no fake odds</td></tr>
+<tr><td>14</td><td>Zomato: unsourced "~40% of IPOs list at a discount" (2 places)</td><td>Removed</td></tr>
+<tr><td>15</td><td>Zomato final: red flags "x / 4" hard-coded</td><td>Counted from the data</td></tr>
+<tr><td>16</td><td>Zomato stage 6 overflowed on a TV during its 8-second animation</td><td>Fit re-checks during animations</td></tr>
+<tr><td>17</td><td>Zomato stages 2, 3, 4, 7, 8, 9 needed scrolling</td><td>One-at-a-time red flags, notice in 4 parts, allotment in 2 steps, tighter layouts</td></tr>
+</table></div>
+
+<h2>Still open — needs a decision or a sourcing pass</h2>
+<div class="card"><table>
+<tr><th>#</th><th>Item</th><th>Why it matters</th></tr>
+<tr><td>A</td><td class="warn">Zomato street ticker: grey-market ₹13/₹18/₹17, "1.05× day 1", "4.8× day 2", "₹2,30,000+ Cr bid"</td><td>Not sourced. Same rule as Jio — should be checked against Chittorgarh.</td></tr>
+<tr><td>B</td><td class="warn">Zomato bid screen "live demand curve" (4.9L / 12.7L / 17.6L, "D2 · 14:42 IST")</td><td>Illustrative, but looks like real data. Label it "illustrative" or replace.</td></tr>
+<tr><td>C</td><td class="warn">Zomato listing price is randomised around +51–55%</td><td>Real: NSE opened ₹116 (+52.6%). Should be locked to the real path.</td></tr>
+<tr><td>D</td><td class="warn">Zomato lottery win chance 32% (and shares-bid figures on stage 6)</td><td>Not sourced.</td></tr>
+<tr><td>E</td><td>Live X post may not load on some networks</td><td>Safe now — the text card shows instead.</td></tr>
+<tr><td>F</td><td>Test rooms left in the database (IF7800, IF2392, IF5711 …)</td><td>Harmless. Not deleted — say if you want them cleared.</td></tr>
+</table></div>
+
+<h2>Jio — screenshots (42)</h2>
+<div class="grid"><a class="shot" href="shots/01-jio-host-S1-snapshot.jpg" target="_blank"><img loading="lazy" src="shots/01-jio-host-S1-snapshot.jpg" alt=""><span>jio host snapshot</span></a>
+<a class="shot" href="shots/02-jio-host-S2-warning1-question.jpg" target="_blank"><img loading="lazy" src="shots/02-jio-host-S2-warning1-question.jpg" alt=""><span>jio host S2 warning1 question</span></a>
+<a class="shot" href="shots/03-jio-host-S2-warning1-verdict.jpg" target="_blank"><img loading="lazy" src="shots/03-jio-host-S2-warning1-verdict.jpg" alt=""><span>jio host S2 warning1 verdict</span></a>
+<a class="shot" href="shots/04-jio-host-S2-warning2-verdict.jpg" target="_blank"><img loading="lazy" src="shots/04-jio-host-S2-warning2-verdict.jpg" alt=""><span>jio host S2 warning2 verdict</span></a>
+<a class="shot" href="shots/05-jio-host-S2-warning3-verdict.jpg" target="_blank"><img loading="lazy" src="shots/05-jio-host-S2-warning3-verdict.jpg" alt=""><span>jio host S2 warning3 verdict</span></a>
+<a class="shot" href="shots/06-jio-host-S2-warning4-verdict.jpg" target="_blank"><img loading="lazy" src="shots/06-jio-host-S2-warning4-verdict.jpg" alt=""><span>jio host S2 warning4 verdict</span></a>
+<a class="shot" href="shots/07-jio-host-S3-terms.jpg" target="_blank"><img loading="lazy" src="shots/07-jio-host-S3-terms.jpg" alt=""><span>jio host S3 terms</span></a>
+<a class="shot" href="shots/08-jio-host-S4-lobby-empty.jpg" target="_blank"><img loading="lazy" src="shots/08-jio-host-S4-lobby-empty.jpg" alt=""><span>jio host S4 lobby empty</span></a>
+<a class="shot" href="shots/09-jio-phone-J1-join.jpg" target="_blank"><img loading="lazy" src="shots/09-jio-phone-J1-join.jpg" alt=""><span>jio phone J1 join</span></a>
+<a class="shot" href="shots/10-jio-phone-J2-waiting.jpg" target="_blank"><img loading="lazy" src="shots/10-jio-phone-J2-waiting.jpg" alt=""><span>jio phone J2 waiting</span></a>
+<a class="shot" href="shots/11-jio-host-S4-lobby-58-players.jpg" target="_blank"><img loading="lazy" src="shots/11-jio-host-S4-lobby-58-players.jpg" alt=""><span>jio host S4 lobby 58 players</span></a>
+<a class="shot" href="shots/12-jio-phone-J3-choose-door.jpg" target="_blank"><img loading="lazy" src="shots/12-jio-phone-J3-choose-door.jpg" alt=""><span>jio phone J3 choose door</span></a>
+<a class="shot" href="shots/13-jio-phone-J3-retail-picker.jpg" target="_blank"><img loading="lazy" src="shots/13-jio-phone-J3-retail-picker.jpg" alt=""><span>jio phone J3 retail picker</span></a>
+<a class="shot" href="shots/14-jio-phone-J3-retail-confirm.jpg" target="_blank"><img loading="lazy" src="shots/14-jio-phone-J3-retail-confirm.jpg" alt=""><span>jio phone J3 retail confirm</span></a>
+<a class="shot" href="shots/15-jio-phone-J4-blocked.jpg" target="_blank"><img loading="lazy" src="shots/15-jio-phone-J4-blocked.jpg" alt=""><span>jio phone J4 blocked</span></a>
+<a class="shot" href="shots/16-jio-phone-J3-hni-picker.jpg" target="_blank"><img loading="lazy" src="shots/16-jio-phone-J3-hni-picker.jpg" alt=""><span>jio phone J3 hni picker</span></a>
+<a class="shot" href="shots/17-jio-host-S5-bidding-live.jpg" target="_blank"><img loading="lazy" src="shots/17-jio-host-S5-bidding-live.jpg" alt=""><span>jio host S5 bidding live</span></a>
+<a class="shot" href="shots/18-jio-host-S5-bidding-final-59.jpg" target="_blank"><img loading="lazy" src="shots/18-jio-host-S5-bidding-final-59.jpg" alt=""><span>jio host S5 bidding final 59</span></a>
+<a class="shot" href="shots/19-jio-host-close-ipo-popup.jpg" target="_blank"><img loading="lazy" src="shots/19-jio-host-close-ipo-popup.jpg" alt=""><span>jio host close ipo popup</span></a>
+<a class="shot" href="shots/20-jio-host-S6-ipo-closed-frame.jpg" target="_blank"><img loading="lazy" src="shots/20-jio-host-S6-ipo-closed-frame.jpg" alt=""><span>jio host S6 ipo closed frame</span></a>
+<a class="shot" href="shots/21-jio-phone-J4-ipo-closed.jpg" target="_blank"><img loading="lazy" src="shots/21-jio-phone-J4-ipo-closed.jpg" alt=""><span>jio phone J4 ipo closed</span></a>
+<a class="shot" href="shots/22-jio-host-S6-the-dot.jpg" target="_blank"><img loading="lazy" src="shots/22-jio-host-S6-the-dot.jpg" alt=""><span>jio host S6 the dot</span></a>
+<a class="shot" href="shots/23-jio-host-S6-flood-first-squares.jpg" target="_blank"><img loading="lazy" src="shots/23-jio-host-S6-flood-first-squares.jpg" alt=""><span>jio host S6 flood first squares</span></a>
+<a class="shot" href="shots/24-jio-host-S6-flood-building.jpg" target="_blank"><img loading="lazy" src="shots/24-jio-host-S6-flood-building.jpg" alt=""><span>jio host S6 flood building</span></a>
+<a class="shot" href="shots/25-jio-host-S6-flood-final.jpg" target="_blank"><img loading="lazy" src="shots/25-jio-host-S6-flood-final.jpg" alt=""><span>jio host S6 flood final</span></a>
+<a class="shot" href="shots/26-jio-host-S7-subscription.jpg" target="_blank"><img loading="lazy" src="shots/26-jio-host-S7-subscription.jpg" alt=""><span>jio host S7 subscription</span></a>
+<a class="shot" href="shots/27-jio-host-S8-allotment-ready.jpg" target="_blank"><img loading="lazy" src="shots/27-jio-host-S8-allotment-ready.jpg" alt=""><span>jio host S8 allotment ready</span></a>
+<a class="shot" href="shots/28-jio-host-S8-lottery-running.jpg" target="_blank"><img loading="lazy" src="shots/28-jio-host-S8-lottery-running.jpg" alt=""><span>jio host S8 lottery running</span></a>
+<a class="shot" href="shots/29-jio-host-S8-allotment-board-59.jpg" target="_blank"><img loading="lazy" src="shots/29-jio-host-S8-allotment-board-59.jpg" alt=""><span>jio host S8 allotment board 59</span></a>
+<a class="shot" href="shots/30-jio-phone-J5-retail-won.jpg" target="_blank"><img loading="lazy" src="shots/30-jio-phone-J5-retail-won.jpg" alt=""><span>jio phone J5 retail won</span></a>
+<a class="shot" href="shots/31-jio-phone-J5-hni-lost.jpg" target="_blank"><img loading="lazy" src="shots/31-jio-phone-J5-hni-lost.jpg" alt=""><span>jio phone J5 hni lost</span></a>
+<a class="shot" href="shots/32-jio-host-S9-listing.jpg" target="_blank"><img loading="lazy" src="shots/32-jio-host-S9-listing.jpg" alt=""><span>jio host S9 listing</span></a>
+<a class="shot before" href="shots/33-jio-host-S9-pnl-table-60-BEFORE-FIX.jpg" target="_blank"><img loading="lazy" src="shots/33-jio-host-S9-pnl-table-60-BEFORE-FIX.jpg" alt=""><span>jio host S9 pnl table 60 BEFORE FIX</span></a>
+<a class="shot" href="shots/34-jio-host-S9-side-by-side.jpg" target="_blank"><img loading="lazy" src="shots/34-jio-host-S9-side-by-side.jpg" alt=""><span>jio host S9 side by side</span></a>
+<a class="shot" href="shots/35-jio-host-S10-kamath-tweet-fallback.jpg" target="_blank"><img loading="lazy" src="shots/35-jio-host-S10-kamath-tweet-fallback.jpg" alt=""><span>jio host S10 kamath tweet fallback</span></a>
+<a class="shot" href="shots/36-jio-host-S11-lesson.jpg" target="_blank"><img loading="lazy" src="shots/36-jio-host-S11-lesson.jpg" alt=""><span>jio host S11 lesson</span></a>
+<a class="shot" href="shots/37-jio-phone-J6-pnl-winner.jpg" target="_blank"><img loading="lazy" src="shots/37-jio-phone-J6-pnl-winner.jpg" alt=""><span>jio phone J6 pnl winner</span></a>
+<a class="shot" href="shots/38-jio-phone-J6-pnl-no-shares.jpg" target="_blank"><img loading="lazy" src="shots/38-jio-phone-J6-pnl-no-shares.jpg" alt=""><span>jio phone J6 pnl no shares</span></a>
+<a class="shot after" href="shots/39-jio-host-S4-lobby-AFTER-FIX.jpg" target="_blank"><img loading="lazy" src="shots/39-jio-host-S4-lobby-AFTER-FIX.jpg" alt=""><span>jio host S4 lobby AFTER FIX</span></a>
+<a class="shot after" href="shots/40-jio-host-S8-allotment-board-AFTER-FIX.jpg" target="_blank"><img loading="lazy" src="shots/40-jio-host-S8-allotment-board-AFTER-FIX.jpg" alt=""><span>jio host S8 allotment board AFTER FIX</span></a>
+<a class="shot after" href="shots/41-jio-host-S9-pnl-grouped-AFTER-FIX.jpg" target="_blank"><img loading="lazy" src="shots/41-jio-host-S9-pnl-grouped-AFTER-FIX.jpg" alt=""><span>jio host S9 pnl grouped AFTER FIX</span></a>
+<a class="shot after" href="shots/42-jio-host-S10-kamath-AFTER-FIX.jpg" target="_blank"><img loading="lazy" src="shots/42-jio-host-S10-kamath-AFTER-FIX.jpg" alt=""><span>jio host S10 kamath AFTER FIX</span></a></div>
+<h2>Zomato — screenshots (22)</h2>
+<div class="grid"><a class="shot" href="shots/43-zomato-choice-screen.jpg" target="_blank"><img loading="lazy" src="shots/43-zomato-choice-screen.jpg" alt=""><span>zomato choice screen</span></a>
+<a class="shot" href="shots/44-zomato-start.jpg" target="_blank"><img loading="lazy" src="shots/44-zomato-start.jpg" alt=""><span>zomato start</span></a>
+<a class="shot after" href="shots/44b-zomato-start-AFTER-LOGO-FIX.jpg" target="_blank"><img loading="lazy" src="shots/44b-zomato-start-AFTER-LOGO-FIX.jpg" alt=""><span>zomato start AFTER LOGO FIX</span></a>
+<a class="shot" href="shots/45-zomato-S1-company.jpg" target="_blank"><img loading="lazy" src="shots/45-zomato-S1-company.jpg" alt=""><span>zomato company</span></a>
+<a class="shot" href="shots/46-zomato-S2-statement-question.jpg" target="_blank"><img loading="lazy" src="shots/46-zomato-S2-statement-question.jpg" alt=""><span>zomato S2 statement question</span></a>
+<a class="shot" href="shots/47-zomato-S2-statement-verdict.jpg" target="_blank"><img loading="lazy" src="shots/47-zomato-S2-statement-verdict.jpg" alt=""><span>zomato S2 statement verdict</span></a>
+<a class="shot" href="shots/48-zomato-S2-score.jpg" target="_blank"><img loading="lazy" src="shots/48-zomato-S2-score.jpg" alt=""><span>zomato S2 score</span></a>
+<a class="shot" href="shots/49-zomato-S3-notice-part1.jpg" target="_blank"><img loading="lazy" src="shots/49-zomato-S3-notice-part1.jpg" alt=""><span>zomato S3 notice part1</span></a>
+<a class="shot" href="shots/50-zomato-S3-notice-part2.jpg" target="_blank"><img loading="lazy" src="shots/50-zomato-S3-notice-part2.jpg" alt=""><span>zomato S3 notice part2</span></a>
+<a class="shot" href="shots/51-zomato-S3-notice-part3.jpg" target="_blank"><img loading="lazy" src="shots/51-zomato-S3-notice-part3.jpg" alt=""><span>zomato S3 notice part3</span></a>
+<a class="shot" href="shots/52-zomato-S3-notice-part4.jpg" target="_blank"><img loading="lazy" src="shots/52-zomato-S3-notice-part4.jpg" alt=""><span>zomato S3 notice part4</span></a>
+<a class="shot" href="shots/53-zomato-S3-price-band.jpg" target="_blank"><img loading="lazy" src="shots/53-zomato-S3-price-band.jpg" alt=""><span>zomato S3 price band</span></a>
+<a class="shot" href="shots/54-zomato-S3-allocation-buckets.jpg" target="_blank"><img loading="lazy" src="shots/54-zomato-S3-allocation-buckets.jpg" alt=""><span>zomato S3 allocation buckets</span></a>
+<a class="shot" href="shots/55-zomato-S4-bid.jpg" target="_blank"><img loading="lazy" src="shots/55-zomato-S4-bid.jpg" alt=""><span>zomato S4 bid</span></a>
+<a class="shot" href="shots/56-zomato-S5-asba.jpg" target="_blank"><img loading="lazy" src="shots/56-zomato-S5-asba.jpg" alt=""><span>zomato S5 asba</span></a>
+<a class="shot" href="shots/57-zomato-S6-subscription.jpg" target="_blank"><img loading="lazy" src="shots/57-zomato-S6-subscription.jpg" alt=""><span>zomato S6 subscription</span></a>
+<a class="shot" href="shots/58-zomato-S7-lottery-ready.jpg" target="_blank"><img loading="lazy" src="shots/58-zomato-S7-lottery-ready.jpg" alt=""><span>zomato S7 lottery ready</span></a>
+<a class="shot" href="shots/59-zomato-S7-result.jpg" target="_blank"><img loading="lazy" src="shots/59-zomato-S7-result.jpg" alt=""><span>zomato S7 result</span></a>
+<a class="shot before" href="shots/60-zomato-S7-money-timeline-BEFORE-DATE-FIX.jpg" target="_blank"><img loading="lazy" src="shots/60-zomato-S7-money-timeline-BEFORE-DATE-FIX.jpg" alt=""><span>zomato S7 money timeline BEFORE DATE FIX</span></a>
+<a class="shot after" href="shots/60b-zomato-S7-money-timeline-AFTER-FIX.jpg" target="_blank"><img loading="lazy" src="shots/60b-zomato-S7-money-timeline-AFTER-FIX.jpg" alt=""><span>zomato S7 money timeline AFTER FIX</span></a>
+<a class="shot" href="shots/61-zomato-S8-listing.jpg" target="_blank"><img loading="lazy" src="shots/61-zomato-S8-listing.jpg" alt=""><span>zomato S8 listing</span></a>
+<a class="shot" href="shots/62-zomato-S9-final.jpg" target="_blank"><img loading="lazy" src="shots/62-zomato-S9-final.jpg" alt=""><span>zomato S9 final</span></a></div>
+<p class="sub" style="margin-top:24px">Green border = after a fix · red border = before the fix (kept for comparison). Click any image for full size.</p>
+</main></body></html>

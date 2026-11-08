@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Dot Moment — IPO Frenzy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;background:#04070d;overflow:hidden;cursor:default;
+    -webkit-font-smoothing:antialiased;user-select:none}
+  #cv{position:fixed;inset:0;display:block}
+
+  .ov{position:fixed;left:0;right:0;text-align:center;opacity:0;
+      pointer-events:none;transition:opacity .35s ease}
+
+  #capB{top:calc(50% + 92px);
+    font-family:'Lora',serif;font-weight:400;
+    font-size:clamp(17px,1.65vw,26px);letter-spacing:.13em;
+    color:#f7faf9;transform:translateY(10px);
+    transition:opacity .35s ease, transform .35s ease}
+  #capB.show{opacity:.92;transform:translateY(0);
+    transition:opacity 1.5s ease, transform 1.5s ease}
+  #capB.show.dim{opacity:.24;transition:opacity 2.4s ease, transform 1.5s ease}
+
+  #counter{top:6.5vh;font-family:'Nunito',sans-serif;
+    text-shadow:0 2px 26px rgba(4,7,13,.95)}
+  #counter.show{opacity:1;transition:opacity 1s ease}
+  #counterLabel{font-size:clamp(11px,.85vw,14px);font-weight:700;
+    letter-spacing:.34em;color:#bde9e4;opacity:.72;margin-bottom:.55em}
+  #counterNum{font-size:clamp(40px,4.6vw,78px);font-weight:900;color:#f7faf9;
+    line-height:1;font-variant-numeric:tabular-nums}
+  #counterNum .cr{font-size:.36em;font-weight:800;letter-spacing:.2em;
+    color:#c9a84c;margin-left:.4em;vertical-align:.22em}
+
+  #magnote{bottom:13.5vh;font-family:'Nunito',sans-serif;font-weight:600;
+    font-size:clamp(11px,.9vw,14px);letter-spacing:.06em;color:#bde9e4;
+    text-shadow:0 1px 16px rgba(4,7,13,.95),0 0 4px rgba(4,7,13,.9)}
+  #magnote.show{opacity:.55;transition:opacity 1.8s ease}
+
+  #closing{bottom:7.5vh;font-family:'Lora',serif;font-style:italic;
+    font-size:clamp(18px,1.8vw,29px);letter-spacing:.09em;color:#f7faf9;
+    text-shadow:0 2px 20px rgba(4,7,13,.95),0 0 6px rgba(4,7,13,.9)}
+  #closing.show{opacity:.82;transition:opacity 2.6s ease}
+
+  #hint{bottom:3vh;font-family:'Nunito',sans-serif;font-weight:700;
+    font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#f7faf9}
+  #hint.show{opacity:.3;transition:opacity 1.4s ease;
+    animation:hintpulse 3.2s ease-in-out infinite}
+  @keyframes hintpulse{0%,100%{opacity:.16}50%{opacity:.36}}
+
+  #sceneTag{position:fixed;left:18px;bottom:14px;
+    font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;
+    letter-spacing:.2em;color:#f7faf9;opacity:.1;pointer-events:none}
+</style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+
+<div class="ov" id="capB">₹82.5 LAKH — everything this room applied</div>
+
+<div class="ov" id="counter">
+  <div id="counterLabel">TOTAL BIDS RECEIVED · JIO PLATFORMS IPO</div>
+  <div id="counterNum"><span id="cnum">₹0</span><span class="cr">CRORE</span></div>
+</div>
+
+<div class="ov" id="magnote">(your dot is magnified ~1,000× so you can still see it)</div>
+<div class="ov" id="closing">₹82.5 Lakh of ₹4,90,414 Crore</div>
+<div class="ov" id="hint">press SPACE</div>
+<div id="sceneTag">A</div>
+
+<script>
+'use strict';
+/* ============================================================
+   THE DOT MOMENT — classroom projector animation
+   Scenes: A (frozen bids) -> collapse -> B (the dot, loops)
+           -> C flood (camera pull-back over a city-grid of bids)
+   SPACE / click advances. After the final hold, restarts at A.
+   ============================================================ */
+
+const GOLD='#c9a84c', TEAL='#2a9d8f', MINT='#bde9e4', CREAM='#f7faf9', NAVY='#1a3a5c';
+
+const TOTAL_CR   = 490414;   // ₹4,90,414 Crore of national bids
+const CR_PER_CELL= 100;      // each grid cell = ₹100 Crore
+const CELL_TOTAL = 4904;     // honest count: 490414 / 100 ≈ 4904 cells
+
+const COLLAPSE_DUR = 2.2;    // s
+const FLOOD_DUR    = 4.6;    // s (counter easing window)
+const T_RING  = 5.3;         // gold ring + "Your classroom"
+const T_MAG   = 5.9;         // magnification note
+const T_CLOSE = 6.4;         // closing line
+const T_INPUT = 6.6;         // restart allowed
+const T_HINTC = 7.3;         // hint in scene C
+
+/* ---------- canvas ---------- */
+const cv  = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+let W=0, H=0, DPR=1;
+function resize(){
+  DPR = Math.min(window.devicePixelRatio||1, 2.5);
+  W = window.innerWidth; H = window.innerHeight;
+  cv.width  = Math.round(W*DPR);
+  cv.height = Math.round(H*DPR);
+  cv.style.width  = W+'px';
+  cv.style.height = H+'px';
+}
+window.addEventListener('resize', resize);
+resize();
+
+/* ---------- DOM refs ---------- */
+const elCapB   = document.getElementById('capB');
+const elCount  = document.getElementById('counter');
+const elCnum   = document.getElementById('cnum');
+const elMag    = document.getElementById('magnote');
+const elClose  = document.getElementById('closing');
+const elHint   = document.getElementById('hint');
+const elTag    = document.getElementById('sceneTag');
+
+/* ---------- helpers ---------- */
+const clamp01 = v => v<0?0:(v>1?1:v);
+const lerp = (a,b,u) => a+(b-a)*u;
+const easeInCubic    = u => u*u*u;
+const easeOutCubic   = u => 1-Math.pow(1-u,3);
+const easeInOutCubic = u => u<0.5 ? 4*u*u*u : 1-Math.pow(-2*u+2,3)/2;
+
+function mulberry32(a){
+  return function(){
+    a|=0; a=a+0x6D2B79F5|0;
+    let t=Math.imul(a^a>>>15,1|a);
+    t=t+Math.imul(t^t>>>7,61|t)^t;
+    return ((t^t>>>14)>>>0)/4294967296;
+  };
+}
+
+/* Indian number formatting: last 3 digits, then groups of 2 */
+function fmtIN(n){
+  n = Math.floor(n);
+  let s = String(n);
+  if (s.length<=3) return s;
+  const last = s.slice(-3);
+  const rest = s.slice(0,-3).replace(/\B(?=(\d{2})+(?!\d))/g, ',');
+  return rest + ',' + last;
+}
+
+function rr(c,x,y,w,h,r){
+  r = Math.min(r, h/2, w/2);
+  c.beginPath();
+  c.moveTo(x+r,y);
+  c.arcTo(x+w,y,  x+w,y+h,r);
+  c.arcTo(x+w,y+h,x,  y+h,r);
+  c.arcTo(x,  y+h,x,  y,  r);
+  c.arcTo(x,  y,  x+w,y,  r);
+  c.closePath();
+}
+
+/* ---------- flood cells: square spiral out from centre ---------- */
+/* centre cell (0,0) is deliberately left empty — the class dot lives there */
+const BUCKETS = [
+  {c:'rgba(31,110,100,0.80)', w:22},  // deep teal
+  {c:'rgba(42,157,143,0.85)', w:26},  // teal
+  {c:'rgba(42,157,143,0.52)', w:16},  // dim teal
+  {c:'rgba(100,188,174,0.85)',w:14},  // light teal
+  {c:'rgba(189,233,228,0.85)',w:9 },  // mint
+  {c:'rgba(189,233,228,0.48)',w:7 },  // faint mint
+  {c:'rgba(247,250,249,0.92)',w:4 },  // cream (hot cells)
+  {c:'rgba(26,58,92,0.9)',    w:2 },  // navy (dark cells)
+];
+const CELLS = [];                 // spawn-ordered {gx,gy,ring}
+const BL = BUCKETS.map(()=>[]);   // per-bucket lists of {i,gx,gy}
+const TW = [];                    // twinkling subset {i,gx,gy,ph}
+(function buildCells(){
+  const rnd = mulberry32(20261108);
+  const wsum = BUCKETS.reduce((a,b)=>a+b.w,0);
+  function pickBucket(){
+    let r = rnd()*wsum;
+    for (let b=0;b<BUCKETS.length;b++){ r-=BUCKETS[b].w; if(r<=0) return b; }
+    return 0;
+  }
+  let ring = 1;
+  while (CELLS.length < CELL_TOTAL){
+    const r = ring, pts = [];
+    for (let x=-r;x<=r;x++){ pts.push([x,-r]); pts.push([x,r]); }
+    for (let y=-r+1;y<=r-1;y++){ pts.push([-r,y]); pts.push([r,y]); }
+    for (let i=pts.length-1;i>0;i--){           // shuffle within the ring
+      const j = (rnd()*(i+1))|0;
+      const tmp = pts[i]; pts[i]=pts[j]; pts[j]=tmp;
+    }
+    for (const p of pts){
+      if (CELLS.length >= CELL_TOTAL) break;
+      const i = CELLS.length;
+      CELLS.push({gx:p[0], gy:p[1], ring:r});
+      BL[pickBucket()].push({i, gx:p[0], gy:p[1]});
+      if (i % 17 === 0) TW.push({i, gx:p[0], gy:p[1], ph:rnd()*Math.PI*2});
+    }
+    ring++;
+  }
+})();
+function ringForCount(c){ return Math.ceil((Math.sqrt(c+1)-1)/2); }
+
+/* magnitude markers that fly past during the pull-back */
+const MARKER_DEFS = [
+  {th:1000,   label:'₹1,000 Cr'},
+  {th:50000,  label:'₹50,000 Cr'},
+  {th:200000, label:'₹2,00,000 Cr'},
+];
+
+/* ---------- state machine ---------- */
+const S = {
+  scene:'A',                 // 'A' | 'COLLAPSE' | 'B' | 'FLOOD'
+  t0: performance.now(),
+  snap: null,                // bar rects captured at collapse start
+  trail: [],                 // collapse motion trails
+  markers: [],               // live magnitude markers
+  markerIdx: 0,
+  logS: Math.log(110),       // camera scale (log space, px per cell)
+  frontier: 0,
+  lastNum: '',
+  prev: performance.now(),
+};
+
+function setScene(s){
+  S.scene = s;
+  S.t0 = performance.now();
+  if (s==='COLLAPSE') S.trail.length = 0;
+  if (s==='FLOOD'){
+    S.markers.length = 0; S.markerIdx = 0;
+    S.logS = Math.log(110); S.frontier = 0; S.lastNum='';
+  }
+}
+function resetShow(){
+  elCapB.classList.remove('show','dim');
+  elCount.classList.remove('show');
+  elMag.classList.remove('show');
+  elClose.classList.remove('show');
+  elHint.classList.remove('show');
+  setScene('A');
+}
+
+function advance(){
+  const t = (performance.now()-S.t0)/1000;
+  if (S.scene==='A'){ S.snap = captureBars(); setScene('COLLAPSE'); }
+  else if (S.scene==='B'){ setScene('FLOOD'); }
+  else if (S.scene==='FLOOD' && t>T_INPUT){ resetShow(); }
+  /* COLLAPSE and the flood animation itself ignore input */
+}
+window.addEventListener('keydown', e=>{
+  if (e.code==='Space' && !e.repeat){ e.preventDefault(); advance(); }
+});
+window.addEventListener('pointerdown', ()=> advance());
+
+/* ---------- scene A: frozen bidding screen ---------- */
+function barLayout(){
+  const bw = Math.min(W*0.60, 940);
+  const bh = Math.max(32, Math.min(52, H*0.048));
+  const x  = (W-bw)/2;
+  const cy = H*0.47;
+  const gap = bh*2.4;
+  return {
+    bw, bh, x, cy,
+    retail:{x, y:cy-gap,    w:bw*(30/52.5), h:bh},
+    hni:   {x, y:cy+gap-bh, w:bw,           h:bh},
+  };
+}
+function captureBars(){
+  const L = barLayout();
+  return {retail:{...L.retail}, hni:{...L.hni}};
+}
+
+function drawBG(darken){
+  const g = ctx.createRadialGradient(W/2, H*0.45, 0, W/2, H*0.45, Math.max(W,H)*0.75);
+  g.addColorStop(0, '#0a1626');
+  g.addColorStop(1, '#04070d');
+  ctx.fillStyle = g;
+  ctx.fillRect(0,0,W,H);
+  if (darken>0){
+    ctx.fillStyle = 'rgba(2,4,8,'+(darken*0.72)+')';
+    ctx.fillRect(0,0,W,H);
+  }
+}
+
+function drawBarFill(r, kind){
+  let g;
+  if (kind==='retail'){
+    g = ctx.createLinearGradient(r.x, 0, r.x+r.w, 0);
+    g.addColorStop(0, '#1f7367');
+    g.addColorStop(1, TEAL);
+  } else {
+    g = ctx.createLinearGradient(r.x, 0, r.x+r.w, 0);
+    g.addColorStop(0, '#9a7d33');
+    g.addColorStop(1, GOLD);
+  }
+  ctx.fillStyle = g;
+  rr(ctx, r.x, r.y, r.w, r.h, 6);
+  ctx.fill();
+  /* top sheen */
+  ctx.fillStyle = 'rgba(247,250,249,0.08)';
+  rr(ctx, r.x, r.y, r.w, Math.max(3, r.h*0.22), 6);
+  ctx.fill();
+}
+
+function drawSceneAText(L, alpha){
+  if (alpha<=0) return;
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.textBaseline = 'alphabetic';
+
+  /* labels above each bar */
+  ctx.textAlign = 'left';
+  ctx.letterSpacing = '0.28em';
+  ctx.font = '800 '+Math.max(13, Math.min(17, W*0.009))+'px Nunito';
+  ctx.fillStyle = MINT;
+  ctx.globalAlpha = alpha*0.8;
+  ctx.fillText('RETAIL', L.retail.x, L.retail.y-13);
+  ctx.fillText('HNI',    L.hni.x,    L.hni.y-13);
+  ctx.globalAlpha = alpha;
+  ctx.letterSpacing = '0.02em';
+
+  /* amounts at each bar's end (fall inside the bar if they would clip) */
+  const amtF = '700 '+Math.max(17, Math.min(24, W*0.0125))+'px Nunito';
+  ctx.font = amtF;
+  const amount = (bar, txt)=>{
+    const mw = ctx.measureText(txt).width;
+    if (bar.x + bar.w + 16 + mw <= W - 14){
+      ctx.textAlign = 'left';
+      ctx.fillStyle = CREAM;
+      ctx.fillText(txt, bar.x+bar.w+16, bar.y+bar.h*0.68);
+    } else {
+      ctx.textAlign = 'right';
+      ctx.fillStyle = 'rgba(4,7,13,0.82)';
+      ctx.fillText(txt, bar.x+bar.w-14, bar.y+bar.h*0.68);
+    }
+  };
+  amount(L.retail, '₹30,00,000');
+  amount(L.hni,    '₹52,50,000');
+  ctx.textAlign = 'left';
+
+  /* total beneath */
+  ctx.textAlign = 'center';
+  ctx.letterSpacing = '0.34em';
+  ctx.font = '700 '+Math.max(11, Math.min(14, W*0.0075))+'px Nunito';
+  ctx.fillStyle = MINT;
+  ctx.globalAlpha = alpha*0.65;
+  ctx.fillText('TOTAL', W/2, L.hni.y+L.hni.h+58);
+  ctx.globalAlpha = alpha;
+  ctx.letterSpacing = '0.04em';
+  ctx.font = '800 '+Math.max(24, Math.min(34, W*0.018))+'px Nunito';
+  ctx.fillStyle = CREAM;
+  ctx.fillText('₹82,50,000', W/2, L.hni.y+L.hni.h+98);
+
+  /* IPO CLOSED stamp */
+  const sx = L.x + L.bw - 8, sy = L.retail.y - 86;
+  ctx.save();
+  ctx.translate(sx, sy);
+  ctx.rotate(-0.12);
+  ctx.globalAlpha = alpha*0.9;
+  ctx.strokeStyle = GOLD;
+  ctx.lineWidth = 2;
+  const stw = 176, sth = 46;
+  rr(ctx, -stw, -sth/2, stw, sth, 5); ctx.stroke();
+  ctx.lineWidth = 1;
+  ctx.globalAlpha = alpha*0.45;
+  rr(ctx, -stw+5, -sth/2+5, stw-10, sth-10, 3); ctx.stroke();
+  ctx.globalAlpha = alpha*0.95;
+  ctx.fillStyle = GOLD;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.letterSpacing = '0.3em';
+  ctx.font = '900 17px Nunito';
+  ctx.fillText('IPO CLOSED', -stw/2+3, 1);
+  ctx.restore();
+
+  ctx.restore();
+  ctx.letterSpacing = '0px';
+}
+
+function drawSceneA(){
+  drawBG(0);
+  const L = barLayout();
+  drawBarFill(L.retail, 'retail');
+  drawBarFill(L.hni, 'hni');
+  drawSceneAText(L, 1);
+}
+
+/* ---------- collapse transition ---------- */
+function lerpRect(a,b,u){
+  return {x:lerp(a.x,b.x,u), y:lerp(a.y,b.y,u), w:lerp(a.w,b.w,u), h:lerp(a.h,b.h,u)};
+}
+function collapseRect(start, slabDY, p){
+  const cx=W/2, cy=H/2;
+  const slab  = {x:cx-95, y:cy+slabDY, w:190, h:22};
+  const merge = {x:cx-44, y:cy-15,     w:88,  h:30};
+  const dot   = {x:cx-5,  y:cy-5,      w:10,  h:10};
+  if (p < 0.52){
+    return lerpRect(start, slab, easeInCubic(p/0.52));
+  }
+  if (p < 0.80){
+    const u = easeInOutCubic((p-0.52)/0.28);
+    const r = lerpRect(slab, merge, u);
+    const sq = Math.sin(u*Math.PI);           // squash as the slabs slam together
+    r.w *= 1 + 0.10*sq;  r.h *= 1 - 0.16*sq;
+    r.x -= (r.w-(r.w/(1+0.10*sq)))/2;
+    return r;
+  }
+  return lerpRect(merge, dot, easeInCubic((p-0.80)/0.20));
+}
+
+function drawCollapse(t){
+  const p = clamp01(t/COLLAPSE_DUR);
+  drawBG(p);
+  const L = barLayout();
+  drawSceneAText(L, Math.max(0, 1-p*4));
+
+  const r1 = collapseRect(S.snap.retail, -30, p);
+  const r2 = collapseRect(S.snap.hni,      8, p);
+  S.trail.push({a:r1, b:r2});
+  if (S.trail.length>14) S.trail.shift();
+
+  /* light trails */
+  ctx.save();
+  ctx.globalCompositeOperation = 'lighter';
+  for (let k=0;k<S.trail.length;k++){
+    const al = ((k+1)/S.trail.length)*0.055;
+    const s = S.trail[k];
+    ctx.globalAlpha = al;
+    ctx.fillStyle = TEAL; rr(ctx, s.a.x, s.a.y, s.a.w, s.a.h, 6); ctx.fill();
+    ctx.fillStyle = GOLD; rr(ctx, s.b.x, s.b.y, s.b.w, s.b.h, 6); ctx.fill();
+  }
+  ctx.restore();
+
+  /* the moving bodies — turn gold as they fuse */
+  const goldify = clamp01((p-0.6)/0.25);
+  ctx.save();
+  if (goldify<1){
+    ctx.globalAlpha = 1-goldify;
+    drawBarFill(r1, 'retail');
+    ctx.globalAlpha = 1;
+  }
+  if (goldify>0){
+    ctx.globalAlpha = goldify;
+    drawBarFill(r1, 'hni');
+    ctx.globalAlpha = 1;
+  }
+  drawBarFill(r2, 'hni');
+  ctx.restore();
+
+  /* birth flash */
+  if (p>0.86){
+    const f = (p-0.86)/0.14;
+    const rad = 26 + 150*easeOutCubic(f);
+    const g = ctx.createRadialGradient(W/2,H/2,0, W/2,H/2,rad);
+    g.addColorStop(0, 'rgba(255,233,176,'+(0.55*f)+')');
+    g.addColorStop(0.4,'rgba(201,168,76,'+(0.30*f)+')');
+    g.addColorStop(1, 'rgba(201,168,76,0)');
+    ctx.save();
+    ctx.globalCompositeOperation='lighter';
+    ctx.fillStyle=g;
+    ctx.beginPath(); ctx.arc(W/2,H/2,rad,0,Math.PI*2); ctx.fill();
+    ctx.restore();
+  }
+
+  if (t >= COLLAPSE_DUR) setScene('B');
+}
+
+/* ---------- the dot ---------- */
+function drawDot(cx, cy, now, coreR, glowR, glowA){
+  const g = ctx.createRadialGradient(cx,cy,0, cx,cy,glowR);
+  g.addColorStop(0,  'rgba(255,233,176,'+(0.75*glowA)+')');
+  g.addColorStop(0.35,'rgba(201,168,76,'+(0.35*glowA)+')');
+  g.addColorStop(1,  'rgba(201,168,76,0)');
+  ctx.save();
+  ctx.globalCompositeOperation = 'lighter';
+  ctx.fillStyle = g;
+  ctx.beginPath(); ctx.arc(cx,cy,glowR,0,Math.PI*2); ctx.fill();
+  ctx.restore();
+  const c = ctx.createRadialGradient(cx,cy,0, cx,cy,coreR);
+  c.addColorStop(0, '#ffeecb');
+  c.addColorStop(1, GOLD);
+  ctx.fillStyle = c;
+  ctx.beginPath(); ctx.arc(cx,cy,coreR,0,Math.PI*2); ctx.fill();
+}
+
+function drawSceneB(t, now){
+  /* near-black stage */
+  const g = ctx.createRadialGradient(W/2,H/2,0, W/2,H/2,Math.max(W,H)*0.7);
+  g.addColorStop(0, '#060b14');
+  g.addColorStop(1, '#02040a');
+  ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+
+  /* fading birth burst (first moments after the collapse) */
+  if (t<0.7){
+    const f = 1-t/0.7;
+    const rad = 170*(1-f*0.4);
+    const bg2 = ctx.createRadialGradient(W/2,H/2,0, W/2,H/2,rad);
+    bg2.addColorStop(0,'rgba(201,168,76,'+(0.22*f)+')');
+    bg2.addColorStop(1,'rgba(201,168,76,0)');
+    ctx.save(); ctx.globalCompositeOperation='lighter';
+    ctx.fillStyle=bg2;
+    ctx.beginPath(); ctx.arc(W/2,H/2,rad,0,Math.PI*2); ctx.fill();
+    ctx.restore();
+  }
+
+  /* hypnotic ~2s breathing */
+  const ph = Math.sin(now/1000 * Math.PI);        // 2 s cycle
+  const core = 5.5*(1+0.10*ph);
+  const glow = 34*(1+0.16*ph);
+  drawDot(W/2, H/2, now, core, glow, 0.95);
+}
+
+/* ---------- scene C: the flood (camera pull-back) ---------- */
+function drawFlood(t, now, dt){
+  const p = clamp01(t/FLOOD_DUR);
+  const e = 1 - Math.pow(1-p, 4);                 // fast start, agonizing finish
+  const v = TOTAL_CR * e;
+  const spawn = Math.min(CELL_TOTAL, Math.floor(v/CR_PER_CELL));
+  if (spawn>0) S.frontier = Math.max(S.frontier, CELLS[spawn-1].ring);
+
+  /* camera: fit the frontier, smoothed in log space */
+  const minD = Math.min(W,H);
+  const target = Math.min(110, (minD*0.42)/(S.frontier+2));
+  S.logS += (Math.log(target)-S.logS)*Math.min(1, dt*2.4);
+  const scale = Math.exp(S.logS);
+  const cx=W/2, cy=H/2;
+
+  /* stage */
+  const g = ctx.createRadialGradient(cx,cy,0, cx,cy,Math.max(W,H)*0.7);
+  g.addColorStop(0, '#050a12');
+  g.addColorStop(1, '#02040a');
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+
+  /* luminous haze under the city */
+  if (spawn>0){
+    const ext = (S.frontier+1.5)*scale;
+    const hz = ctx.createRadialGradient(cx,cy,0, cx,cy,Math.max(40,ext));
+    hz.addColorStop(0, 'rgba(42,157,143,0.10)');
+    hz.addColorStop(0.7,'rgba(42,157,143,0.05)');
+    hz.addColorStop(1, 'rgba(42,157,143,0)');
+    ctx.fillStyle=hz;
+    ctx.beginPath(); ctx.arc(cx,cy,Math.max(40,ext),0,Math.PI*2); ctx.fill();
+  }
+
+  /* faint grid lines over the populated square */
+  if (spawn>0 && scale>5){
+    const R = S.frontier+1;
+    const n = Math.max(1, Math.ceil((2*R+1)/90));
+    ctx.strokeStyle = 'rgba(42,157,143,'+Math.min(0.07, scale*0.004)+')';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (let i=-R; i<=R+1; i+=n){
+      const o = (i-0.5)*scale;
+      ctx.moveTo(cx+o, cy-(R+0.5)*scale); ctx.lineTo(cx+o, cy+(R+0.5)*scale);
+      ctx.moveTo(cx-(R+0.5)*scale, cy+o); ctx.lineTo(cx+(R+0.5)*scale, cy+o);
+    }
+    ctx.stroke();
+  }
+
+  /* cells — batched by colour bucket */
+  const cs  = scale*0.86, cs2 = cs/2;
+  for (let b=0;b<BL.length;b++){
+    const arr = BL[b];
+    ctx.fillStyle = BUCKETS[b].c;
+    for (let k=0;k<arr.length;k++){
+      const c = arr[k];
+      if (c.i >= spawn) continue;
+      ctx.fillRect(cx + c.gx*scale - cs2, cy + c.gy*scale - cs2, cs, cs);
+    }
+  }
+
+  /* pop: the newest cells flash bright for a beat */
+  const POP = 420;
+  ctx.fillStyle = CREAM;
+  for (let i=Math.max(0, spawn-POP); i<spawn; i++){
+    const c = CELLS[i];
+    ctx.globalAlpha = (1-(spawn-1-i)/POP)*0.5;
+    ctx.fillRect(cx + c.gx*scale - cs2, cy + c.gy*scale - cs2, cs, cs);
+  }
+  ctx.globalAlpha = 1;
+
+  /* twinkle layer */
+  ctx.fillStyle = MINT;
+  for (let k=0;k<TW.length;k++){
+    const c = TW[k];
+    if (c.i >= spawn) continue;
+    ctx.globalAlpha = 0.14 + 0.14*Math.sin(now/700 + c.ph);
+    ctx.fillRect(cx + c.gx*scale - cs2, cy + c.gy*scale - cs2, cs, cs);
+  }
+  ctx.globalAlpha = 1;
+
+  /* magnitude markers flying past */
+  while (S.markerIdx < MARKER_DEFS.length && v >= MARKER_DEFS[S.markerIdx].th){
+    const d = MARKER_DEFS[S.markerIdx];
+    S.markers.push({label:d.label, r:ringForCount(d.th/CR_PER_CELL)+0.5, t0:now});
+    S.markerIdx++;
+  }
+  ctx.lineWidth = 1;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  ctx.font = '600 13px Nunito';
+  for (const m of S.markers){
+    const age = (now-m.t0)/1000;
+    const a = Math.max(0, 0.5*(1-age/2.2));
+    if (a<=0) continue;
+    const half = m.r*scale;
+    ctx.strokeStyle = 'rgba(189,233,228,'+a+')';
+    ctx.strokeRect(cx-half, cy-half, half*2, half*2);
+    ctx.save();
+    ctx.shadowColor = 'rgba(3,6,10,0.9)';
+    ctx.shadowBlur  = 8;
+    ctx.fillStyle = 'rgba(189,233,228,'+Math.min(0.85, a*1.6)+')';
+    ctx.fillText(m.label, cx, cy-half-8);
+    ctx.restore();
+  }
+
+  /* the class dot — fixed point, fixed size, at centre */
+  ctx.fillStyle = 'rgba(3,6,10,0.55)';
+  ctx.beginPath(); ctx.arc(cx,cy,13,0,Math.PI*2); ctx.fill();
+  const ph2 = Math.sin(now/1000*Math.PI);
+  drawDot(cx, cy, now, 4.5*(1+0.05*ph2), 18, 0.9);
+
+  /* after settle: gold ring + pointer + "Your classroom" */
+  const ra = clamp01((t-T_RING)/0.9);
+  if (ra>0){
+    const rad = 13 + 9*easeOutCubic(ra);
+    ctx.strokeStyle = 'rgba(201,168,76,'+(0.9*ra)+')';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(cx,cy,rad,0,Math.PI*2); ctx.stroke();
+    const k = Math.SQRT1_2;
+    ctx.strokeStyle = 'rgba(201,168,76,'+(0.6*ra)+')';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(cx+rad*k, cy-rad*k);
+    ctx.lineTo(cx+84, cy-62);
+    ctx.stroke();
+    ctx.save();
+    ctx.shadowColor = 'rgba(3,6,10,0.95)';
+    ctx.shadowBlur  = 10;
+    ctx.fillStyle = 'rgba(247,250,249,'+(0.95*ra)+')';
+    ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+    ctx.font = '700 15px Nunito';
+    ctx.fillText('Your classroom', cx+92, cy-64);
+    ctx.fillText('Your classroom', cx+92, cy-64);
+    ctx.restore();
+  }
+
+  /* counter */
+  const num = '₹'+fmtIN(v);
+  if (num !== S.lastNum){ elCnum.textContent = num; S.lastNum = num; }
+}
+
+/* ---------- DOM text choreography (driven from the loop) ---------- */
+function cls(el, name, on){ el.classList.toggle(name, on); }
+function syncDOM(t){
+  elTag.textContent = S.scene==='FLOOD' ? 'C' : (S.scene==='B' ? 'B' : 'A');
+  cls(elCapB,  'show', S.scene==='B' && t>0.45);
+  cls(elCapB,  'dim',  S.scene==='B' && t>4.4);
+  cls(elCount, 'show', S.scene==='FLOOD');
+  cls(elMag,   'show', S.scene==='FLOOD' && t>T_MAG);
+  cls(elClose, 'show', S.scene==='FLOOD' && t>T_CLOSE);
+  const hintOn = (S.scene==='A'     && t>1.2)
+              || (S.scene==='B'     && t>5.0)
+              || (S.scene==='FLOOD' && t>T_HINTC);
+  cls(elHint, 'show', hintOn);
+}
+
+/* ---------- main loop ---------- */
+function frame(now){
+  const dt = Math.min(0.05, (now-S.prev)/1000);
+  S.prev = now;
+  const t = (now-S.t0)/1000;
+
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  ctx.clearRect(0,0,W,H);
+
+  if      (S.scene==='A')        drawSceneA();
+  else if (S.scene==='COLLAPSE') drawCollapse(t);
+  else if (S.scene==='B')        drawSceneB(t, now);
+  else if (S.scene==='FLOOD')    drawFlood(t, now, dt);
+
+  syncDOM((now-S.t0)/1000);      // re-read: COLLAPSE may have become B this frame
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>The Dot Moment — IPO Frenzy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1a3a5c; --teal:#2a9d8f; --mint:#bde9e4; --gold:#c9a84c; --cream:#f7faf9;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ width:100%; height:100%; overflow:hidden; }
+  body{
+    background: radial-gradient(120% 90% at 50% 42%, #0a1626 0%, #060d18 55%, #03060c 100%);
+    font-family:'Nunito',sans-serif;
+    -webkit-user-select:none; user-select:none;
+    -webkit-tap-highlight-color:transparent;
+  }
+  canvas{ position:fixed; inset:0; width:100%; height:100%; display:block; }
+  #tide{ z-index:1; }
+  #stage{ z-index:2; }
+  #overlay{ position:fixed; inset:0; z-index:3; pointer-events:none; }
+  #overlay > *{ position:absolute; opacity:0; will-change:opacity; }
+
+  /* Scene B caption */
+  #capB{
+    left:50%; top:calc(50% + clamp(54px, 8vh, 96px));
+    transform:translateX(-50%);
+    text-align:center; white-space:nowrap;
+    color:var(--cream);
+  }
+  #capB .amt{
+    font-family:'Nunito',sans-serif; font-weight:800;
+    font-size:clamp(20px, 2.4vw, 34px); letter-spacing:0.06em;
+    color:var(--gold);
+  }
+  #capB .rest{
+    font-family:'Lora',serif; font-style:italic; font-weight:400;
+    font-size:clamp(18px, 2.1vw, 30px);
+    color:var(--cream);
+  }
+
+  /* Scene C counter block */
+  #flood{
+    left:50%; top:clamp(42px, 8vh, 110px);
+    transform:translateX(-50%);
+    text-align:center; white-space:nowrap;
+  }
+  #floodLabel{
+    font-family:'Nunito',sans-serif; font-weight:700;
+    font-size:clamp(11px, 1.05vw, 16px);
+    letter-spacing:0.34em; text-indent:0.34em;
+    color:var(--mint); opacity:0.85;
+    margin-bottom:clamp(8px, 1.2vh, 16px);
+  }
+  #counter{
+    font-family:'Nunito',sans-serif; font-weight:900;
+    font-size:clamp(44px, 6.4vw, 104px);
+    line-height:1;
+    color:var(--cream);
+    text-shadow:0 0 28px rgba(3,7,13,.9), 0 2px 14px rgba(3,7,13,.85);
+    font-variant-numeric:tabular-nums;
+  }
+  #counter .cr{
+    font-weight:800; font-size:0.38em; letter-spacing:0.18em;
+    color:var(--mint); vertical-align:0.12em; margin-left:0.3em;
+  }
+
+  /* Final hold lines */
+  #closing{
+    left:50%; bottom:clamp(54px, 10vh, 120px);
+    transform:translateX(-50%);
+    font-family:'Lora',serif; font-weight:500;
+    font-size:clamp(20px, 2.3vw, 34px);
+    color:var(--cream); white-space:nowrap;
+    text-shadow:0 0 24px rgba(3,7,13,.9), 0 2px 12px rgba(3,7,13,.85);
+  }
+  #magnote{
+    left:50%; bottom:clamp(28px, 5.4vh, 66px);
+    transform:translateX(-50%);
+    font-family:'Nunito',sans-serif; font-weight:400;
+    font-size:clamp(11px, 1vw, 15px); letter-spacing:0.04em;
+    color:var(--mint); white-space:nowrap;
+    text-shadow:0 0 16px rgba(3,7,13,.9);
+  }
+
+  /* Hint + scene tag */
+  #hint{
+    right:clamp(16px, 2vw, 36px); bottom:clamp(14px, 2.2vh, 30px);
+    font-family:'Nunito',sans-serif; font-weight:600;
+    font-size:clamp(10px, 0.85vw, 13px);
+    letter-spacing:0.3em; text-indent:0.3em;
+    color:var(--cream);
+  }
+  #sceneTag{
+    left:clamp(16px, 2vw, 36px); bottom:clamp(14px, 2.2vh, 30px);
+    font-family:'Nunito',sans-serif; font-weight:800;
+    font-size:clamp(11px, 0.95vw, 14px); letter-spacing:0.2em;
+    color:var(--cream); opacity:0.1;
+  }
+</style>
+</head>
+<body>
+<canvas id="tide"></canvas>
+<canvas id="stage"></canvas>
+<div id="overlay">
+  <div id="capB"><span class="amt">&#8377;82.5 LAKH</span><span class="rest"> — everything this room applied</span></div>
+  <div id="flood">
+    <div id="floodLabel">TOTAL BIDS RECEIVED &middot; JIO PLATFORMS IPO</div>
+    <div id="counter"><span id="counterNum">&#8377;0</span><span class="cr">CRORE</span></div>
+  </div>
+  <div id="closing">&#8377;82.5 Lakh of &#8377;4,90,414 Crore</div>
+  <div id="magnote">(your dot is magnified ~1,000&times; so you can still see it)</div>
+  <div id="hint">press SPACE</div>
+  <div id="sceneTag">A</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* ============================== constants ============================== */
+var COL = {
+  navy:'#1a3a5c', teal:'#2a9d8f', mint:'#bde9e4', gold:'#c9a84c', cream:'#f7faf9',
+  bg:'#04070d'
+};
+var TARGET_CRORE = 490414;          // ₹4,90,414 Crore of national bids
+var N_PARTICLES  = 4904;            // one particle per ₹100 Crore (honest scale)
+var COLLAPSE_DUR = 2.25;            // seconds
+var FLOOD_DUR    = 4.6;             // seconds (counter + main tide-in)
+
+/* ============================== dom / canvas ============================== */
+var tideC  = document.getElementById('tide');
+var stageC = document.getElementById('stage');
+var tcx = tideC.getContext('2d');
+var scx = stageC.getContext('2d');
+
+var els = {
+  capB:     document.getElementById('capB'),
+  flood:    document.getElementById('flood'),
+  counter:  document.getElementById('counterNum'),
+  closing:  document.getElementById('closing'),
+  magnote:  document.getElementById('magnote'),
+  hint:     document.getElementById('hint'),
+  sceneTag: document.getElementById('sceneTag')
+};
+
+var W = 0, H = 0, DPR = 1, S = 1;   // S = overall scale factor vs 1920x1080
+
+function resize(){
+  W = window.innerWidth; H = window.innerHeight;
+  DPR = Math.min(window.devicePixelRatio || 1, 2);
+  S = Math.max(0.5, Math.min(1.6, Math.min(W/1920, H/1080) * (W/H < 1.1 ? 1.25 : 1)));
+  [tideC, stageC].forEach(function(c){
+    c.width  = Math.round(W * DPR);
+    c.height = Math.round(H * DPR);
+  });
+  tcx.setTransform(DPR,0,0,DPR,0,0);
+  scx.setTransform(DPR,0,0,DPR,0,0);
+  tcx.clearRect(0,0,W,H);
+}
+window.addEventListener('resize', resize);
+resize();
+
+/* ============================== helpers ============================== */
+function clamp01(t){ return t<0?0:(t>1?1:t); }
+function lerp(a,b,t){ return a+(b-a)*t; }
+function easeOutCubic(t){ return 1-Math.pow(1-t,3); }
+function easeInOutCubic(t){ return t<0.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+function easeOutQuint(t){ return 1-Math.pow(1-t,5); }
+
+/* Indian number formatting: 490414 -> "4,90,414" */
+function inr(n){
+  n = Math.round(n);
+  var s = String(n);
+  if (s.length <= 3) return s;
+  var last3 = s.slice(-3), rest = s.slice(0,-3);
+  rest = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',');
+  return rest + ',' + last3;
+}
+var RUP = '₹';
+
+function roundRect(ctx,x,y,w,h,r){
+  r = Math.min(r, h/2, w/2);
+  if (r < 0) r = 0;
+  ctx.beginPath();
+  ctx.moveTo(x+r,y);
+  ctx.arcTo(x+w,y,  x+w,y+h,r);
+  ctx.arcTo(x+w,y+h,x,  y+h,r);
+  ctx.arcTo(x,  y+h,x,  y,  r);
+  ctx.arcTo(x,  y,  x+w,y,  r);
+  ctx.closePath();
+}
+
+/* ============================== glow sprites ============================== */
+function makeSprite(r,g,b){
+  var sz = 64, c = document.createElement('canvas');
+  c.width = sz; c.height = sz;
+  var x = c.getContext('2d');
+  var gr = x.createRadialGradient(sz/2,sz/2,0, sz/2,sz/2,sz/2);
+  gr.addColorStop(0.00,'rgba('+r+','+g+','+b+',0.95)');
+  gr.addColorStop(0.18,'rgba('+r+','+g+','+b+',0.65)');
+  gr.addColorStop(0.45,'rgba('+r+','+g+','+b+',0.18)');
+  gr.addColorStop(1.00,'rgba('+r+','+g+','+b+',0)');
+  x.fillStyle = gr;
+  x.fillRect(0,0,sz,sz);
+  return c;
+}
+var sprites = [
+  makeSprite(42,157,143),    // teal
+  makeSprite(189,233,228),   // mint
+  makeSprite(247,250,249)    // cream-white
+];
+
+/* ============================== particles (the tide) ============================== */
+/* Anchors on a jittered grid (normalized 0..1) for an even sea; spawn params
+   regenerated at each flood entry so every rehearsal flows differently. */
+var P = {
+  ax:new Float32Array(N_PARTICLES), ay:new Float32Array(N_PARTICLES),
+  sx:new Float32Array(N_PARTICLES), sy:new Float32Array(N_PARTICLES),
+  delay:new Float32Array(N_PARTICLES), dur:new Float32Array(N_PARTICLES),
+  amp:new Float32Array(N_PARTICLES), ph:new Float32Array(N_PARTICLES),
+  ph2:new Float32Array(N_PARTICLES), size:new Float32Array(N_PARTICLES),
+  col:new Uint8Array(N_PARTICLES)
+};
+
+(function initAnchors(){
+  var cols = Math.ceil(Math.sqrt(N_PARTICLES * 16/9));
+  var rows = Math.ceil(N_PARTICLES / cols);
+  for (var i=0;i<N_PARTICLES;i++){
+    var cxg = i % cols, cyg = Math.floor(i / cols);
+    var ax = (cxg + 0.1 + Math.random()*0.8) / cols;
+    var ay = (cyg + 0.1 + Math.random()*0.8) / rows;
+    // keep a small clearing around the class dot (screen centre)
+    var dx = ax-0.5, dy = ay-0.5;
+    var dpx = Math.sqrt(dx*dx*16/9*16/9 + dy*dy);  // rough aspect-aware dist
+    if (dpx < 0.045){
+      var k = (0.045 + 0.004) / (dpx || 0.001);
+      ax = 0.5 + dx*k; ay = 0.5 + dy*k;
+    }
+    P.ax[i]=ax; P.ay[i]=ay;
+    var r = Math.random();
+    P.col[i] = r < 0.55 ? 0 : (r < 0.86 ? 1 : 2);
+    P.size[i] = 4.5 + Math.random()*5.5;
+    P.ph[i]  = Math.random()*Math.PI*2;
+    P.ph2[i] = Math.random()*Math.PI*2;
+  }
+})();
+
+function seedFlood(){
+  for (var i=0;i<N_PARTICLES;i++){
+    var ax=P.ax[i], ay=P.ay[i];
+    // nearest edge (with a dash of randomness so streams come from everywhere)
+    var edge;
+    if (Math.random() < 0.22){ edge = (Math.random()*4)|0; }
+    else {
+      var dL=ax, dR=1-ax, dT=ay, dB=1-ay;
+      var m = Math.min(dL,dR,dT,dB);
+      edge = m===dL?0 : m===dR?1 : m===dT?2 : 3;
+    }
+    var along = (Math.random()-0.5)*0.3;
+    var out   = 0.03 + Math.random()*0.09;   // spawn beyond the edge
+    if (edge===0){ P.sx[i] = -out;  P.sy[i] = clamp01(ay+along); }
+    else if (edge===1){ P.sx[i] = 1+out; P.sy[i] = clamp01(ay+along); }
+    else if (edge===2){ P.sx[i] = clamp01(ax+along); P.sy[i] = -out; }
+    else { P.sx[i] = clamp01(ax+along); P.sy[i] = 1+out; }
+    P.delay[i] = Math.pow(Math.random(),0.85) * 3.0;
+    P.dur[i]   = 1.0 + Math.random()*1.3;
+    P.amp[i]   = (26 + Math.random()*70) * S;
+  }
+}
+
+function drawTide(tf, now){
+  // trail-fade erase (keeps canvas transparent; trails decay to zero)
+  tcx.globalCompositeOperation = 'destination-out';
+  tcx.fillStyle = 'rgba(0,0,0,' + (tf > FLOOD_DUR ? 0.28 : 0.20) + ')';
+  tcx.fillRect(0,0,W,H);
+  tcx.globalCompositeOperation = 'lighter';
+
+  var waveT = now*0.7;
+  for (var i=0;i<N_PARTICLES;i++){
+    var t = (tf - P.delay[i]) / P.dur[i];
+    if (t <= 0) continue;
+    var X, Y, a, sz = P.size[i]*S;
+    if (t < 1){
+      var k = easeOutCubic(t);
+      var sx = P.sx[i]*W, sy = P.sy[i]*H;
+      var axp = P.ax[i]*W, ayp = P.ay[i]*H;
+      var dx = axp-sx, dy = ayp-sy;
+      var len = Math.sqrt(dx*dx+dy*dy) || 1;
+      // perpendicular curl: paths bend like currents, strongest mid-journey
+      var bend = Math.sin(P.ph[i] + t*3.2 + (axp+ayp)*0.004) * P.amp[i] * (1-k)*k*3.2;
+      X = sx + dx*k + (-dy/len)*bend;
+      Y = sy + dy*k + ( dx/len)*bend;
+      a = 0.55 + 0.45*Math.min(1, t*5);
+      sz *= 1.25 - 0.25*k;              // slightly hotter while moving
+    } else {
+      // the sea: anchored, undulating with a slow travelling swell
+      var st = t-1;
+      var axp2 = P.ax[i]*W, ayp2 = P.ay[i]*H;
+      X = axp2 + Math.sin(P.ph[i]  + now*0.5 + P.ay[i]*7.0) * 5.5*S
+               + Math.sin(P.ph2[i] + now*0.23) * 3.0*S;
+      Y = ayp2 + Math.sin(P.ph2[i] + waveT + P.ax[i]*6.0) * 4.5*S
+               + Math.cos(P.ph[i]  + now*0.31) * 2.5*S;
+      a = 0.62 + 0.38*Math.sin(P.ph[i]*1.7 + now*(0.6+0.25*Math.sin(P.ph2[i])));
+      a *= Math.min(1, 0.75 + st*0.1);
+    }
+    tcx.globalAlpha = a;
+    tcx.drawImage(sprites[P.col[i]], X-sz, Y-sz, sz*2, sz*2);
+  }
+  tcx.globalAlpha = 1;
+  tcx.globalCompositeOperation = 'source-over';
+}
+
+/* ============================== scene A layout + draw ============================== */
+var RETAIL = 3000000, HNI = 5250000;
+
+function layoutA(){
+  var maxW = Math.min(W*0.5, 860*S);
+  var barH = 44*S;
+  var x0 = (W - maxW)/2 - 40*S;
+  var cy = H*0.45;
+  var gapY = barH*2.3;
+  return {
+    maxW:maxW, barH:barH, x0:x0,
+    rows:[
+      { label:'RETAIL', amt:RUP+'30,00,000', frac:RETAIL/HNI, y: cy - gapY },
+      { label:'HNI',    amt:RUP+'52,50,000', frac:1,          y: cy }
+    ],
+    totalY: cy + barH + 64*S,
+    cy: cy
+  };
+}
+
+function drawStampIPO(L, alpha){
+  var x = L.x0 + L.maxW*0.92, y = L.rows[0].y - 86*S;
+  scx.save();
+  scx.translate(x,y);
+  scx.rotate(-0.09);
+  scx.globalAlpha = alpha*0.92;
+  var tw = 150*S, th = 46*S;
+  scx.strokeStyle = COL.gold;
+  scx.lineWidth = 2.5*S;
+  roundRect(scx, -tw/2, -th/2, tw, th, 6*S);
+  scx.stroke();
+  scx.fillStyle = COL.gold;
+  scx.font = '800 ' + Math.round(17*S) + 'px Nunito, sans-serif';
+  scx.textAlign = 'center'; scx.textBaseline = 'middle';
+  if ('letterSpacing' in scx) scx.letterSpacing = (3*S)+'px';
+  scx.fillText('IPO CLOSED', 2*S, 1*S);
+  if ('letterSpacing' in scx) scx.letterSpacing = '0px';
+  scx.restore();
+}
+
+function drawSceneA(ts){
+  var L = layoutA();
+  var intro = easeOutCubic(clamp01(ts/0.9));
+  var fade  = easeOutCubic(clamp01(ts/0.6));
+  scx.globalAlpha = fade;
+
+  var barCols = [COL.teal, COL.gold];
+  for (var i=0;i<2;i++){
+    var row = L.rows[i];
+    var grow = easeOutCubic(clamp01((ts - 0.25 - i*0.3)/0.9));
+    var bw = row.frac * L.maxW * grow;
+
+    // label above the bar
+    scx.fillStyle = COL.mint;
+    scx.font = '700 ' + Math.round(14*S) + 'px Nunito, sans-serif';
+    scx.textAlign = 'left'; scx.textBaseline = 'alphabetic';
+    if ('letterSpacing' in scx) scx.letterSpacing = (4*S)+'px';
+    scx.globalAlpha = fade*0.8;
+    scx.fillText(row.label, L.x0, row.y - 12*S);
+    if ('letterSpacing' in scx) scx.letterSpacing = '0px';
+    scx.globalAlpha = fade;
+
+    // track
+    scx.fillStyle = 'rgba(247,250,249,0.06)';
+    roundRect(scx, L.x0, row.y, row.frac*L.maxW, L.barH, 8*S);
+    scx.fill();
+
+    // bar
+    if (bw > 2){
+      var g = scx.createLinearGradient(L.x0, 0, L.x0+bw, 0);
+      g.addColorStop(0, barCols[i]);
+      g.addColorStop(1, i===0 ? '#3fc4b3' : '#e2c879');
+      scx.fillStyle = g;
+      scx.shadowColor = barCols[i];
+      scx.shadowBlur = 18*S;
+      roundRect(scx, L.x0, row.y, bw, L.barH, 8*S);
+      scx.fill();
+      scx.shadowBlur = 0;
+    }
+
+    // amount at the bar end
+    scx.fillStyle = COL.cream;
+    scx.font = '800 ' + Math.round(24*S) + 'px Nunito, sans-serif';
+    scx.textAlign = 'left'; scx.textBaseline = 'middle';
+    scx.globalAlpha = fade * clamp01((ts-0.5-i*0.3)/0.5);
+    scx.fillText(row.amt, L.x0 + row.frac*L.maxW + 26*S, row.y + L.barH/2 + 1*S);
+    scx.globalAlpha = fade;
+  }
+
+  // total beneath
+  var tAl = fade * clamp01((ts-1.1)/0.6);
+  if (tAl > 0){
+    scx.globalAlpha = tAl;
+    scx.strokeStyle = 'rgba(247,250,249,0.18)';
+    scx.lineWidth = 1;
+    scx.beginPath();
+    scx.moveTo(L.x0, L.totalY - 34*S);
+    scx.lineTo(L.x0 + L.maxW, L.totalY - 34*S);
+    scx.stroke();
+
+    scx.textAlign = 'center'; scx.textBaseline = 'alphabetic';
+    scx.fillStyle = COL.mint;
+    scx.font = '700 ' + Math.round(13*S) + 'px Nunito, sans-serif';
+    if ('letterSpacing' in scx) scx.letterSpacing = (4*S)+'px';
+    scx.globalAlpha = tAl*0.75;
+    scx.fillText('TOTAL APPLIED', L.x0 + L.maxW/2, L.totalY - 10*S);
+    if ('letterSpacing' in scx) scx.letterSpacing = '0px';
+    scx.globalAlpha = tAl;
+    scx.fillStyle = COL.cream;
+    scx.font = '900 ' + Math.round(34*S) + 'px Nunito, sans-serif';
+    scx.fillText(RUP+'82,50,000', L.x0 + L.maxW/2, L.totalY + 30*S);
+  }
+
+  drawStampIPO(L, fade * clamp01((ts-1.3)/0.6) * (0.9 + 0.1*intro));
+  scx.globalAlpha = 1;
+}
+
+/* ============================== collapse ============================== */
+function collapseRects(u){
+  var L = layoutA();
+  var cx = W/2, cy = H/2;
+  var p1 = easeInOutCubic(clamp01(u/0.5));
+  var p2 = easeInOutCubic(clamp01((u-0.42)/0.34));
+  var p3 = easeInOutCubic(clamp01((u-0.74)/0.26));
+  var rects = [];
+  for (var i=0;i<2;i++){
+    var row = L.rows[i];
+    var w0 = row.frac*L.maxW, h0 = L.barH;
+    var x0c = L.x0 + w0/2, y0c = row.y + h0/2;
+    var w = lerp(w0, 150*S, p1); w = lerp(w, 11*S, p3);
+    var h = lerp(h0, 20*S, p2);
+    // a touch of squash as it compresses into the dot
+    h *= 1 + 0.45*Math.sin(p3*Math.PI)*(1-p3*0.5);
+    h = lerp(h, 11*S, p3);
+    var xc = lerp(x0c, cx, p1);
+    var yc = lerp(y0c, cy, p2);
+    rects.push({ x:xc-w/2, y:yc-h/2, w:w, h:h });
+  }
+  return { rects:rects, p1:p1, p2:p2, p3:p3, L:L };
+}
+
+function drawCollapse(ts){
+  var u = clamp01(ts / COLLAPSE_DUR);
+
+  // labels / amounts / stamp fade out fast (re-draw scene A geometry fading)
+  var textA = 1 - easeOutCubic(clamp01(u/0.26));
+  if (textA > 0.01){
+    var L = layoutA();
+    scx.globalAlpha = textA;
+    // bar labels + amounts fade with the rest
+    for (var li=0; li<2; li++){
+      var lrow = L.rows[li];
+      scx.fillStyle = COL.mint;
+      scx.font = '700 ' + Math.round(14*S) + 'px Nunito, sans-serif';
+      scx.textAlign = 'left'; scx.textBaseline = 'alphabetic';
+      if ('letterSpacing' in scx) scx.letterSpacing = (4*S)+'px';
+      scx.fillText(lrow.label, L.x0, lrow.y - 12*S);
+      if ('letterSpacing' in scx) scx.letterSpacing = '0px';
+      scx.fillStyle = COL.cream;
+      scx.font = '800 ' + Math.round(24*S) + 'px Nunito, sans-serif';
+      scx.textBaseline = 'middle';
+      scx.fillText(lrow.amt, L.x0 + lrow.frac*L.maxW + 26*S, lrow.y + L.barH/2 + 1*S);
+    }
+    scx.fillStyle = COL.mint;
+    scx.textAlign = 'center'; scx.textBaseline = 'alphabetic';
+    scx.font = '700 ' + Math.round(13*S) + 'px Nunito, sans-serif';
+    scx.fillText('TOTAL APPLIED', L.x0 + L.maxW/2, L.totalY - 10*S);
+    scx.fillStyle = COL.cream;
+    scx.font = '900 ' + Math.round(34*S) + 'px Nunito, sans-serif';
+    scx.fillText(RUP+'82,50,000', L.x0 + L.maxW/2, L.totalY + 30*S);
+    drawStampIPO(L, textA);
+    scx.globalAlpha = 1;
+  }
+
+  // ghost trails then the bars themselves
+  var ghosts = [ {du:-0.06, a:0.10}, {du:-0.03, a:0.22}, {du:0, a:1} ];
+  var cols = ['#2a9d8f', '#c9a84c'];
+  for (var g=0; g<ghosts.length; g++){
+    var gu = clamp01(u + ghosts[g].du);
+    var R = collapseRects(gu);
+    for (var i=0;i<2;i++){
+      var r = R.rects[i];
+      var goldness = R.p2;  // both bars turn gold as they merge
+      scx.globalAlpha = ghosts[g].a;
+      scx.fillStyle = (i===0 && goldness < 0.5) ? cols[0] : cols[1];
+      if (ghosts[g].a === 1){
+        scx.shadowColor = COL.gold;
+        scx.shadowBlur = (14 + 30*R.p3)*S;
+      }
+      roundRect(scx, r.x, r.y, r.w, r.h, Math.min(r.h/2, 10*S));
+      scx.fill();
+      scx.shadowBlur = 0;
+    }
+  }
+  scx.globalAlpha = 1;
+}
+
+/* ============================== the dot ============================== */
+function drawDot(now, mode, modeTs){
+  var cx = W/2, cy = H/2;
+  var baseR = 5.5*S;
+  var pulseAmp = (mode==='B') ? 0.14 : 0.07;
+  var r = baseR * (1 + pulseAmp*Math.sin(now*Math.PI));   // ~2s breathing cycle
+  var glow = 0.75 + 0.25*Math.sin(now*Math.PI);
+
+  // in the sea: locally dim the tide so the dot reads
+  if (mode==='C'){
+    var dg = scx.createRadialGradient(cx,cy,0, cx,cy, 34*S);
+    dg.addColorStop(0,'rgba(3,7,13,0.65)');
+    dg.addColorStop(1,'rgba(3,7,13,0)');
+    scx.fillStyle = dg;
+    scx.beginPath(); scx.arc(cx,cy,34*S,0,Math.PI*2); scx.fill();
+  }
+
+  // birth bloom (first moments of Scene B)
+  if (mode==='B' && modeTs < 0.55){
+    var bt = modeTs/0.55;
+    var br = lerp(12*S, 110*S, easeOutCubic(bt));
+    scx.strokeStyle = 'rgba(201,168,76,' + (0.5*(1-bt)) + ')';
+    scx.lineWidth = 1.5*S;
+    scx.beginPath(); scx.arc(cx,cy,br,0,Math.PI*2); scx.stroke();
+  }
+
+  // halo
+  var hg = scx.createRadialGradient(cx,cy,0, cx,cy, r*7);
+  hg.addColorStop(0,   'rgba(201,168,76,' + (0.5*glow) + ')');
+  hg.addColorStop(0.35,'rgba(201,168,76,' + (0.16*glow) + ')');
+  hg.addColorStop(1,   'rgba(201,168,76,0)');
+  scx.fillStyle = hg;
+  scx.beginPath(); scx.arc(cx,cy,r*7,0,Math.PI*2); scx.fill();
+
+  // core
+  var cg = scx.createRadialGradient(cx,cy,0, cx,cy, r);
+  cg.addColorStop(0,'#fff6dd');
+  cg.addColorStop(0.55, COL.gold);
+  cg.addColorStop(1,'#a3843a');
+  scx.fillStyle = cg;
+  scx.beginPath(); scx.arc(cx,cy,r,0,Math.PI*2); scx.fill();
+}
+
+function drawClassMarker(alpha, now){
+  if (alpha <= 0) return;
+  var cx = W/2, cy = H/2;
+  scx.globalAlpha = alpha;
+
+  // thin gold ring
+  scx.strokeStyle = COL.gold;
+  scx.lineWidth = 1.4*S;
+  scx.beginPath(); scx.arc(cx, cy, 17*S, 0, Math.PI*2); scx.stroke();
+
+  // vertical pointer line
+  scx.strokeStyle = 'rgba(201,168,76,0.85)';
+  scx.lineWidth = 1.2*S;
+  scx.beginPath();
+  scx.moveTo(cx, cy - 22*S);
+  scx.lineTo(cx, cy - 72*S);
+  scx.stroke();
+
+  // label
+  scx.fillStyle = COL.gold;
+  scx.font = '700 ' + Math.round(15*S) + 'px Nunito, sans-serif';
+  scx.textAlign = 'center'; scx.textBaseline = 'alphabetic';
+  if ('letterSpacing' in scx) scx.letterSpacing = (2*S)+'px';
+  scx.fillText('Your classroom', cx, cy - 84*S);
+  if ('letterSpacing' in scx) scx.letterSpacing = '0px';
+  scx.globalAlpha = 1;
+}
+
+/* ============================== vignette / wash ============================== */
+function drawVignette(extra){
+  var vg = scx.createRadialGradient(W/2, H/2, Math.min(W,H)*0.25, W/2, H/2, Math.max(W,H)*0.72);
+  vg.addColorStop(0, 'rgba(2,5,10,0)');
+  vg.addColorStop(1, 'rgba(2,5,10,' + (0.45 + 0.4*extra) + ')');
+  scx.fillStyle = vg;
+  scx.fillRect(0,0,W,H);
+  if (extra > 0){
+    scx.fillStyle = 'rgba(2,5,10,' + (0.35*extra) + ')';
+    scx.fillRect(0,0,W,H);
+  }
+}
+
+function drawSeaWash(k){
+  if (k <= 0) return;
+  scx.fillStyle = 'rgba(42,157,143,' + (0.05*k) + ')';
+  scx.fillRect(0,0,W,H);
+}
+
+/* ============================== state machine ============================== */
+/* A -> collapse -> B -> flood -> holdC -> (restart) A */
+var state = 'A';
+var stateStart = performance.now()/1000;
+var floodStart = 0;
+var lastAdvance = -1;
+var shownCount = -1;
+var capBAtFlood = 0;
+
+function setState(s){
+  state = s;
+  stateStart = performance.now()/1000;
+  if (s === 'flood'){
+    floodStart = stateStart;
+    capBAtFlood = parseFloat(els.capB.style.opacity) || 0;
+    seedFlood();
+    tcx.clearRect(0,0,W,H);
+    shownCount = -1;
+  }
+  if (s === 'A'){
+    tcx.clearRect(0,0,W,H);
+    els.counter.textContent = RUP + '0';
+  }
+}
+
+function advance(){
+  var now = performance.now()/1000;
+  if (now - lastAdvance < 0.35) return;      // debounce double taps
+  lastAdvance = now;
+  var ts = now - stateStart;
+  switch(state){
+    case 'A':       if (ts > 0.5) setState('collapse'); break;
+    case 'collapse': break;                   // runs once, no input
+    case 'B':       if (ts > 0.8) setState('flood'); break;
+    case 'flood':   break;                    // let the tide land
+    case 'holdC':   if (ts > 0.6) setState('A'); break;
+  }
+}
+
+window.addEventListener('keydown', function(e){
+  if (e.code === 'Space' || e.key === ' '){
+    e.preventDefault();
+    if (!e.repeat) advance();
+  }
+});
+window.addEventListener('pointerdown', function(){ advance(); });
+
+/* ============================== overlay opacities ============================== */
+function setOp(el, v){
+  v = clamp01(v);
+  var vs = v.toFixed(3);
+  if (el.style.opacity !== vs) el.style.opacity = vs;
+}
+
+function updateOverlay(ts){
+  var capB=0, flood=0, closing=0, magnote=0, hint=0, tag='A';
+  switch(state){
+    case 'A':
+      hint = ts > 1.8 ? clamp01((ts-1.8)/0.8) : 0;
+      tag = 'A';
+      break;
+    case 'collapse':
+      tag = 'A';
+      break;
+    case 'B':
+      capB = ts < 0.7 ? 0 : clamp01((ts-0.7)/0.9);
+      if (ts > 3.8) capB = lerp(1, 0.22, clamp01((ts-3.8)/1.1));  // dim: the dot owns the screen
+      hint = ts > 4.9 ? clamp01((ts-4.9)/0.8) : 0;
+      tag = 'B';
+      break;
+    case 'flood':
+      capB = capBAtFlood * (1 - clamp01(ts/0.4));
+      flood = clamp01((ts-0.15)/0.6);
+      tag = 'C';
+      break;
+    case 'holdC':
+      flood = 1;
+      closing = clamp01((ts-0.5)/1.0);
+      magnote = 0.6 * clamp01((ts-1.2)/0.9);
+      hint = ts > 2.2 ? clamp01((ts-2.2)/0.8) : 0;
+      tag = 'C';
+      break;
+  }
+  setOp(els.capB, capB);
+  setOp(els.flood, flood);
+  setOp(els.closing, closing);
+  setOp(els.magnote, magnote);
+  setOp(els.hint, hint * 0.38);
+  if (els.sceneTag.textContent !== tag) els.sceneTag.textContent = tag;
+}
+
+/* ============================== counter ============================== */
+function updateCounter(ts){
+  var t = clamp01(ts / FLOOD_DUR);
+  // explosive start, agonizing finish
+  var u = (1 - Math.pow(2, -10*t)) / (1 - Math.pow(2, -10));
+  var v = (t >= 1) ? TARGET_CRORE : TARGET_CRORE * u;
+  var shown = Math.floor(v);
+  if (shown !== shownCount){
+    shownCount = shown;
+    els.counter.textContent = RUP + inr(shown);
+  }
+}
+
+/* ============================== main loop ============================== */
+function frame(){
+  var now = performance.now()/1000;
+  var ts = now - stateStart;
+
+  scx.clearRect(0,0,W,H);
+
+  switch(state){
+    case 'A':
+      drawVignette(0);
+      drawSceneA(ts);
+      break;
+
+    case 'collapse': {
+      var u = clamp01(ts / COLLAPSE_DUR);
+      drawVignette(easeInOutCubic(u)*0.9);
+      drawCollapse(ts);
+      if (ts >= COLLAPSE_DUR) setState('B');
+      break;
+    }
+
+    case 'B':
+      drawVignette(0.9);
+      drawDot(now, 'B', ts);
+      break;
+
+    case 'flood': {
+      var tf = now - floodStart;
+      drawTide(tf, now);
+      drawSeaWash(clamp01(tf/FLOOD_DUR));
+      drawVignette(lerp(0.9, 0.25, clamp01(tf/2)));
+      drawDot(now, 'C', ts);
+      updateCounter(ts);
+      if (ts >= FLOOD_DUR) setState('holdC');
+      break;
+    }
+
+    case 'holdC': {
+      var tf2 = now - floodStart;
+      drawTide(tf2, now);
+      drawSeaWash(1);
+      drawVignette(0.25);
+      drawDot(now, 'C', ts);
+      drawClassMarker(easeOutCubic(clamp01((ts-0.15)/0.7)), now);
+      break;
+    }
+  }
+
+  updateOverlay(now - stateStart);
+  requestAnimationFrame(frame);
+}
+
+/* wait for fonts so canvas text never flashes a fallback face */
+var started = false;
+function start(){
+  if (started) return;
+  started = true;
+  stateStart = performance.now()/1000;
+  requestAnimationFrame(frame);
+}
+if (document.fonts && document.fonts.ready){
+  Promise.all([
+    document.fonts.load('800 24px Nunito'),
+    document.fonts.load('900 34px Nunito'),
+    document.fonts.load('700 14px Nunito'),
+    document.fonts.load('italic 400 24px Lora')
+  ]).then(start, start);
+  setTimeout(start, 1500);   // never block on a CDN
+} else {
+  start();
+}
+
+})();
+</script>
+</body>
+</html>
