@@ -268,7 +268,7 @@ input{font-family:inherit}
 @keyframes popin{from{transform:scale(0.6);opacity:0}to{transform:scale(1);opacity:1}}
 
 /* ── S5 live bidding ── */
-.livewrap{max-width:1180px;margin:0 auto;padding:12px 130px 84px}
+.livewrap{max-width:1200px;margin:0 auto;padding:12px 150px 84px}
 @media(max-width:900px){.livewrap{padding:12px 24px 84px}}
 .lb-row{margin:14px 0;position:relative}
 .lb-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:800;letter-spacing:3px;color:var(--ink-2);display:flex;justify-content:space-between;align-items:baseline}
@@ -325,7 +325,7 @@ input{font-family:inherit}
 .allot-note{margin-top:14px;font-size:13.5px;color:var(--ink-2);line-height:1.5;border-left:2px solid var(--up);padding-left:12px}
 
 /* ── S9 listing ── */
-.listing-flash{text-align:center;padding:60px 20px}
+.listing-flash{text-align:center;padding:120px 20px 60px}
 .listing-px-l{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-3);letter-spacing:3px;font-weight:700}
 .listing-px{font-family:'JetBrains Mono',monospace;font-size:clamp(64px,9vw,120px);font-weight:900;letter-spacing:-3px;line-height:1;margin-top:12px;color:var(--ink);animation:slam 0.5s cubic-bezier(.2,1.5,.4,1)}
 .listing-chg{font-family:'JetBrains Mono',monospace;font-size:clamp(20px,2.6vw,30px);font-weight:800;margin-top:14px;letter-spacing:0.5px;color:var(--up);text-shadow:0 0 18px rgba(0,255,149,0.45)}
@@ -338,6 +338,11 @@ input{font-family:inherit}
 .pnl-table td:first-child{font-family:'Inter',sans-serif;font-weight:700;font-size:13.5px}
 .pnl-table tr:last-child td{border-bottom:0}
 .pnl-cols{overflow-x:auto}
+.pnl-table td,.pnl-table th{white-space:nowrap}
+.pnl-cols.two .pnl-table td,.pnl-cols.two .pnl-table th{padding:4px 6px;font-size:11.5px}
+.pnl-door{font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:800;letter-spacing:1px;padding:1px 6px;border-radius:4px;margin-left:4px;vertical-align:1px}
+.pnl-door.r{color:var(--teal-ifm);border:1px solid rgba(42,157,143,0.5)}
+.pnl-door.h{color:var(--gold-ifm);border:1px solid rgba(201,168,76,0.5)}
 .pnl-cols.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
 @media(max-width:820px){.vs-grid{grid-template-columns:1fr}}
@@ -352,13 +357,13 @@ input{font-family:inherit}
 .vs-line b{color:var(--ink)}
 
 /* ── S10 Kamath / S11 lesson ── */
-.quiet{max-width:900px;margin:0 auto;padding:10vh 24px 90px;text-align:center}
+.quiet{max-width:1180px;margin:0 auto;padding:5vh 24px 84px;text-align:center}
 .quiet .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:4px;color:var(--ink-3);font-weight:700}
 .quiet h2{font-size:clamp(28px,4vw,52px);font-weight:900;letter-spacing:-1.5px;line-height:1.15;margin:26px 0 0;color:var(--ink)}
 .quiet h2 .hl-up{color:var(--up)} .quiet h2 .hl-amber{color:var(--amber)} .quiet h2 .hl-dn{color:var(--dn)}
 .quiet .sub2{font-size:clamp(15px,1.7vw,20px);color:var(--ink-2);line-height:1.6;margin-top:26px}
 .quiet .attr{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--ink-3);font-weight:700;margin-top:30px}
-.lesson-stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.lesson-stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:10px}
 .lesson-stat{background:var(--panel);border:1px solid var(--line-2);border-radius:6px;padding:14px 20px;min-width:200px}
 .lesson-stat .l{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:1.5px;color:var(--ink-3);font-weight:700}
 .lesson-stat .v{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;margin-top:6px}
@@ -367,6 +372,63 @@ input{font-family:inherit}
 #hostCtrls{position:fixed;right:18px;bottom:16px;z-index:150;display:flex;gap:10px;align-items:center}
 #hostHints{position:fixed;left:18px;bottom:18px;z-index:150;font-family:'JetBrains Mono',monospace;font-size:10.5px;
   letter-spacing:1.5px;color:var(--ink-3);font-weight:700;user-select:none}
+body.has-qr .stage{padding-right:140px}
+body.has-qr .quiet{padding-left:140px;padding-right:140px}
+@media(max-width:900px){body.has-qr .stage,body.has-qr .quiet{padding-left:24px;padding-right:24px}}
+/* Kamath card */
+.kam-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center;margin-top:8px}
+@media(max-width:900px){.kam-grid{grid-template-columns:1fr}}
+.kam-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:3px solid var(--amber);box-shadow:0 8px 30px rgba(0,0,0,0.4)}
+.kam-quote{margin-top:16px;font-size:clamp(24px,2.4vw,34px);font-weight:900;line-height:1.25;color:var(--ink);letter-spacing:-0.5px}
+.kam-who{margin-top:12px;font-size:15px;line-height:1.5;color:var(--ink-2)}
+.kam-punch{margin-top:16px;padding:12px 16px;border-left:3px solid var(--amber);background:rgba(255,182,72,0.08);font-size:17px;color:var(--ink-2)}
+.kam-punch b{color:var(--amber)}
+.kam-credit{margin-top:14px;font-size:10.5px;color:var(--ink-3);letter-spacing:0.5px}
+.kam-src{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;letter-spacing:2px;color:var(--ink-3);margin-bottom:10px;text-align:center}
+#kamTweet blockquote.twitter-tweet{margin:0 auto;max-width:520px;background:var(--panel-2);border:1px solid var(--line-2);border-radius:12px;padding:18px 20px;
+  font-size:15px;line-height:1.5;color:var(--ink-2)}
+#kamTweet blockquote.twitter-tweet p{color:var(--ink);margin:0 0 10px}
+#kamTweet blockquote.twitter-tweet a{color:#5aa9ff}
+#kamTweet .twitter-tweet-rendered{margin:0 auto!important}
+/* side-by-side doors */
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px}
+@media(max-width:860px){.doors{grid-template-columns:1fr}}
+.door{border-radius:12px;padding:18px 20px;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line-2)}
+.door.ret{border-color:rgba(42,157,143,0.6)} .door.hni{border-color:rgba(201,168,76,0.6)}
+.door-h{display:flex;align-items:baseline;gap:10px;font-family:'JetBrains Mono',monospace;font-weight:800;letter-spacing:2px;font-size:15px}
+.door.ret .door-h span{color:var(--teal-ifm)} .door.hni .door-h span{color:var(--gold-ifm)}
+.door-h small{font-size:11px;letter-spacing:1px;color:var(--ink-3);font-weight:700}
+.door-big{margin:10px 0 12px;font-size:20px;color:var(--ink-2);display:flex;align-items:baseline;gap:8px}
+.door-big b{font-size:52px;line-height:1;font-weight:900;color:var(--ink)} .door-big span{font-size:16px}
+.door-people{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.dp{padding:5px 10px;border-radius:999px;font-size:13px;font-weight:700;border:1px solid var(--line-2)}
+.dp.won{background:rgba(0,255,149,0.12);border-color:rgba(0,255,149,0.5);color:var(--ink)}
+.dp.won i{font-style:normal;color:var(--up);font-family:'JetBrains Mono',monospace;font-size:11px}
+.dp.lost{color:var(--ink-3);opacity:0.6}
+.door-rows{display:grid;gap:6px;border-top:1px solid var(--line-2);padding-top:12px}
+.door-rows div{display:flex;justify-content:space-between;font-size:15px;color:var(--ink-2)}
+.door-rows b{font-family:'JetBrains Mono',monospace;color:var(--ink)} .door-rows b.up{color:var(--up)}
+.door-empty{margin-top:16px;color:var(--ink-3);font-size:15px}
+.door-foot{margin-top:16px;font-size:16px;line-height:1.5;color:var(--ink-2);text-align:center}
+.door-foot b{color:var(--ink)} .door-foot b.up{color:var(--up)}
+.lesson-k{margin-top:26px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;letter-spacing:2.5px;color:var(--amber)}
+.lesson-stat .l2{margin-top:6px;font-size:14px;color:var(--ink-2);line-height:1.35}
+#ifmModal{position:fixed;inset:0;z-index:500;background:rgba(4,8,14,0.78);backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;padding:24px;animation:fadeup .2s ease}
+#ifmModal .m-card{width:min(640px,100%);background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line-2);
+  border-radius:14px;padding:30px 32px 22px;box-shadow:0 30px 80px rgba(0,0,0,0.55);text-align:center;animation:flagPop .35s cubic-bezier(.2,.9,.3,1.15)}
+#ifmModal .m-card.danger{border-color:rgba(255,51,102,0.55);box-shadow:0 0 0 1px rgba(255,51,102,0.25),0 30px 80px rgba(0,0,0,0.55)}
+#ifmModal .m-card.go{border-color:rgba(0,255,149,0.4)}
+#ifmModal .m-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;letter-spacing:2.5px;color:var(--amber);margin-bottom:8px}
+#ifmModal .m-title{font-size:32px;font-weight:900;letter-spacing:-0.5px;color:var(--ink);line-height:1.15}
+#ifmModal .m-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 4px}
+#ifmModal .m-stat{background:rgba(4,8,14,0.35);border:1px solid var(--line-2);border-radius:8px;padding:12px 8px}
+#ifmModal .m-stat .v{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;color:var(--ink)}
+#ifmModal .m-stat .l{font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:1.5px;color:var(--ink-3);margin-top:4px}
+#ifmModal .m-body{margin-top:16px;font-size:16px;line-height:1.5;color:var(--ink-2)}
+#ifmModal .m-body b{color:var(--amber)}
+#ifmModal .m-btns{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap}
+#ifmModal .m-keys{margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--ink-3)}
 #cornerQR{position:fixed;right:18px;top:64px;z-index:150;background:var(--panel);border:1px solid var(--line-2);border-radius:6px;
   padding:8px;cursor:pointer;text-align:center;transition:transform 0.12s}
 #cornerQR:hover{transform:scale(1.05)}
@@ -804,12 +866,16 @@ const DotMoment=(function(){
   const CELL_TOTAL = 4904;     // honest count: 490414 / 100 ≈ 4904 cells
 
   const COLLAPSE_DUR = 2.2;    // s
-  const FLOOD_DUR    = 4.6;    // s (counter easing window)
-  const T_RING  = 5.3;         // gold ring + "Your classroom"
-  const T_MAG   = 5.9;         // magnification note
-  const T_CLOSE = 6.4;         // closing line
-  const T_INPUT = 6.6;         // advance allowed → onDone gate
-  const T_HINTC = 7.3;         // hint in scene C
+  const FLOOD_DUR    = 15;     // s — slow build from the class total, then the flood
+  const T_RING  = 0.3;         // gold ring + "Your classroom" (on from the start)
+  const T_MAG   = 15.6;        // magnification note
+  const T_CLOSE = 16.1;        // closing line
+  const T_INPUT = 16.3;        // advance allowed → onDone gate
+  const T_HINTC = 17.0;        // hint in scene C
+  /* Value keyframes [seconds, ₹ crore]. Interpolated in log space, so each stretch grows
+     exponentially: hold on the class total, first ₹100 Cr square at 3s, then 10 / 100 /
+     1,000 squares, and the full ₹4,90,414 Cr flood at 15s. `null` = the class's own total. */
+  const FLOOD_KEYS=[[0,null],[1.2,null],[3.0,100],[5.5,1000],[8.5,10000],[12,100000],[15,490414]];
 
   const mount=document.getElementById('dmMount');
   const cv=document.getElementById('dmCv');
@@ -827,6 +893,7 @@ const DotMoment=(function(){
   const elCapB=document.getElementById('dmCapB');
   const elCount=document.getElementById('dmCounter');
   const elCnum=document.getElementById('dmCnum');
+  const elCunit=document.querySelector('#dmCounterNum .cr');
   const elMag=document.getElementById('dmMag');
   const elClose=document.getElementById('dmClose');
   const elHint=document.getElementById('dmHint');
@@ -927,7 +994,7 @@ const DotMoment=(function(){
     const ct=classTotal();
     if(ct<=0){ elMag.textContent=''; return; }
     const minD=Math.min(W,H)||1000;
-    const finalScale=Math.min(110,(minD*0.42)/37);          // frontier settles at ring ~35
+    const finalScale=Math.min(110,(minD*0.33)/37);          // frontier settles at ring ~35
     const trueCells=ct/1e9;                                 // one cell = ₹100 Cr = ₹1e9
     const trueArea=Math.max(trueCells*finalScale*finalScale,1e-9);
     const drawnArea=Math.PI*22*22;                          // ring settles at radius 22px
@@ -948,12 +1015,15 @@ const DotMoment=(function(){
   }
 
   /* scene A: frozen bidding screen — LIVE totals, bars normalised against the max */
+  /* projector scale — same rule as the host screens' fit */
+  function kScale(){ return Math.max(1,Math.min(2.4,Math.min(W/1200,H/700))); }
   function barLayout(){
-    const bw=Math.min(W*0.60,940);
-    const bh=Math.max(32,Math.min(52,H*0.048));
+    const k=kScale();
+    const bw=Math.min(W*0.72,1100*k);
+    const bh=40*k;
     const x=(W-bw)/2;
-    const cy=H*0.47;
-    const gap=bh*2.4;
+    const cy=H*0.53;
+    const gap=bh*2.35;
     const rT=opts?opts.retailTotal:0, hT=opts?opts.hniTotal:0;
     const maxT=Math.max(rT,hT,1);
     const wR=Math.max(bw*0.02,bw*(rT/maxT));
@@ -1002,88 +1072,95 @@ const DotMoment=(function(){
 
   function drawSceneAText(L,alpha){
     if(alpha<=0) return;
+    const k=kScale();
+    const st=opts.stats||{};
     ctx.save();
     ctx.globalAlpha=alpha;
     ctx.textBaseline='alphabetic';
 
+    /* headline */
+    ctx.textAlign='center';
+    ctx.letterSpacing='0.3em';
+    ctx.font='800 '+Math.round(13*k)+'px Nunito';
+    ctx.fillStyle=GOLD;
+    ctx.fillText('BIDDING CLOSED',W/2,L.retail.y-118*k);
+    ctx.letterSpacing='-0.01em';
+    ctx.font='900 '+Math.round(38*k)+'px Nunito';
+    ctx.fillStyle=CREAM;
+    ctx.fillText('Here’s what this room applied.',W/2,L.retail.y-70*k);
+
+    /* category labels */
     ctx.textAlign='left';
     ctx.letterSpacing='0.28em';
-    ctx.font='800 '+Math.max(13,Math.min(17,W*0.009))+'px Nunito';
+    ctx.font='800 '+Math.round(15*k)+'px Nunito';
     ctx.fillStyle=MINT;
-    ctx.globalAlpha=alpha*0.8;
-    ctx.fillText('RETAIL',L.retail.x,L.retail.y-13);
-    ctx.fillText('HNI',L.hni.x,L.hni.y-13);
+    ctx.globalAlpha=alpha*0.85;
+    ctx.fillText('RETAIL',L.retail.x,L.retail.y-12*k);
+    ctx.fillText('HNI',L.hni.x,L.hni.y-12*k);
     ctx.globalAlpha=alpha;
-    ctx.letterSpacing='0.02em';
 
-    const amtF='700 '+Math.max(17,Math.min(24,W*0.0125))+'px Nunito';
-    ctx.font=amtF;
+    /* amounts: right of the bar, or inside it when there's no room */
+    ctx.letterSpacing='0.02em';
+    ctx.font='800 '+Math.round(26*k)+'px Nunito';
     const amount=(bar,txt)=>{
       const mw=ctx.measureText(txt).width;
-      if(bar.x+bar.w+16+mw<=W-14){
-        ctx.textAlign='left';
-        ctx.fillStyle=CREAM;
-        ctx.fillText(txt,bar.x+bar.w+16,bar.y+bar.h*0.68);
-      }else{
-        ctx.textAlign='right';
-        ctx.fillStyle='rgba(4,7,13,0.82)';
-        ctx.fillText(txt,bar.x+bar.w-14,bar.y+bar.h*0.68);
-      }
+      if(bar.x+bar.w+16*k+mw<=W-14){ ctx.textAlign='left'; ctx.fillStyle=CREAM; ctx.fillText(txt,bar.x+bar.w+16*k,bar.y+bar.h*0.7); }
+      else{ ctx.textAlign='right'; ctx.fillStyle='rgba(4,7,13,0.85)'; ctx.fillText(txt,bar.x+bar.w-16*k,bar.y+bar.h*0.7); }
     };
     amount(L.retail,'₹'+fmtIN(opts.retailTotal));
     amount(L.hni,'₹'+fmtIN(opts.hniTotal));
-    ctx.textAlign='left';
 
     /* class stats under each bar */
-    const st=opts.stats||{};
-    ctx.letterSpacing='0.16em';
-    ctx.font='700 '+Math.max(11,Math.min(14,W*0.0075))+'px Nunito';
+    ctx.textAlign='left';
+    ctx.letterSpacing='0.14em';
+    ctx.font='700 '+Math.round(13*k)+'px Nunito';
     ctx.fillStyle=MINT;
-    ctx.globalAlpha=alpha*0.7;
-    if(st.retailLine) ctx.fillText(st.retailLine,L.retail.x,L.retail.y+L.retail.h+24);
-    if(st.hniLine)    ctx.fillText(st.hniLine,L.hni.x,L.hni.y+L.hni.h+24);
+    ctx.globalAlpha=alpha*0.75;
+    if(st.retailLine) ctx.fillText(st.retailLine,L.retail.x,L.retail.y+L.retail.h+24*k);
+    if(st.hniLine)    ctx.fillText(st.hniLine,L.hni.x,L.hni.y+L.hni.h+24*k);
     ctx.globalAlpha=alpha;
 
+    /* total */
     ctx.textAlign='center';
     ctx.letterSpacing='0.34em';
-    ctx.font='700 '+Math.max(11,Math.min(14,W*0.0075))+'px Nunito';
+    ctx.font='700 '+Math.round(13*k)+'px Nunito';
     ctx.fillStyle=MINT;
-    ctx.globalAlpha=alpha*0.65;
-    ctx.fillText('TOTAL',W/2,L.hni.y+L.hni.h+74);
+    ctx.globalAlpha=alpha*0.7;
+    ctx.fillText('TOTAL APPLIED',W/2,L.hni.y+L.hni.h+72*k);
     ctx.globalAlpha=alpha;
-    ctx.letterSpacing='0.04em';
-    ctx.font='800 '+Math.max(24,Math.min(34,W*0.018))+'px Nunito';
+    ctx.letterSpacing='0.02em';
+    ctx.font='900 '+Math.round(44*k)+'px Nunito';
     ctx.fillStyle=CREAM;
-    ctx.fillText('₹'+fmtIN(classTotal()),W/2,L.hni.y+L.hni.h+114);
+    ctx.fillText('₹'+fmtIN(classTotal()),W/2,L.hni.y+L.hni.h+118*k);
     if(st.roomLine){
-      ctx.letterSpacing='0.16em';
-      ctx.font='700 '+Math.max(11,Math.min(14,W*0.0075))+'px Nunito';
+      ctx.letterSpacing='0.14em';
+      ctx.font='700 '+Math.round(13*k)+'px Nunito';
       ctx.fillStyle=MINT;
-      ctx.globalAlpha=alpha*0.7;
-      ctx.fillText(st.roomLine,W/2,L.hni.y+L.hni.h+148);
+      ctx.globalAlpha=alpha*0.75;
+      ctx.fillText(st.roomLine,W/2,L.hni.y+L.hni.h+150*k);
       ctx.globalAlpha=alpha;
     }
 
-    /* IPO CLOSED stamp */
-    const sx=L.x+L.bw-8, sy=L.retail.y-86;
+    /* IPO CLOSED stamp — top-right of the bars */
+    const sx=L.x+L.bw, sy=L.retail.y-44*k;
     ctx.save();
     ctx.translate(sx,sy);
     ctx.rotate(-0.12);
     ctx.globalAlpha=alpha*0.9;
     ctx.strokeStyle=GOLD;
-    ctx.lineWidth=2;
-    const stw=176,sth=46;
-    rr(ctx,-stw,-sth/2,stw,sth,5); ctx.stroke();
-    ctx.lineWidth=1;
+    ctx.lineWidth=2*k;
+    const stw=176*k,sth=46*k;
+    rr(ctx,-stw,-sth/2,stw,sth,5*k); ctx.stroke();
+    ctx.lineWidth=1*k;
     ctx.globalAlpha=alpha*0.45;
-    rr(ctx,-stw+5,-sth/2+5,stw-10,sth-10,3); ctx.stroke();
+    rr(ctx,-stw+5*k,-sth/2+5*k,stw-10*k,sth-10*k,3*k); ctx.stroke();
     ctx.globalAlpha=alpha*0.95;
     ctx.fillStyle=GOLD;
     ctx.textAlign='center';
     ctx.textBaseline='middle';
     ctx.letterSpacing='0.3em';
-    ctx.font='900 17px Nunito';
-    ctx.fillText('IPO CLOSED',-stw/2+3,1);
+    ctx.font='900 '+Math.round(17*k)+'px Nunito';
+    ctx.fillText('IPO CLOSED',-stw/2+3*k,1);
     ctx.restore();
 
     ctx.restore();
@@ -1218,16 +1295,32 @@ const DotMoment=(function(){
   }
 
   /* scene C: the flood (camera pull-back) */
+  function floodValue(t){
+    const start=Math.max(0.01,classTotal()/1e7);          // class total in ₹ crore (≥ ₹1 lakh)
+    const K=FLOOD_KEYS.map(k=>[k[0],k[1]===null?start:Math.max(start,k[1])]);
+    if(t>=K[K.length-1][0]) return TOTAL_CR;
+    for(let i=1;i<K.length;i++){
+      if(t<=K[i][0]){
+        const a=K[i-1],b=K[i],u=(t-a[0])/(b[0]-a[0]);
+        return Math.exp(Math.log(a[1])+(Math.log(b[1])-Math.log(a[1]))*u);
+      }
+    }
+    return TOTAL_CR;
+  }
+  function fmtFlood(v){
+    if(v<1)   return {n:'₹'+(v*100).toFixed(1),u:'LAKH'};
+    if(v<10)  return {n:'₹'+v.toFixed(2),u:'CRORE'};
+    if(v<100) return {n:'₹'+v.toFixed(1),u:'CRORE'};
+    return {n:'₹'+fmtIN(v),u:'CRORE'};
+  }
   function drawFlood(t,now,dt){
-    const p=clamp01(t/FLOOD_DUR);
-    const e=1-Math.pow(1-p,4);                 // fast start, agonizing finish
-    const v=TOTAL_CR*e;
+    const v=floodValue(t);
     const spawn=Math.min(CELL_TOTAL,Math.floor(v/CR_PER_CELL));
     if(spawn>0) S.frontier=Math.max(S.frontier,CELLS[spawn-1].ring);
 
     /* camera: fit the frontier, smoothed in log space */
     const minD=Math.min(W,H);
-    const target=Math.min(110,(minD*0.42)/(S.frontier+2));
+    const target=Math.min(110,(minD*0.33)/(S.frontier+2));
     S.logS+=(Math.log(target)-S.logS)*Math.min(1,dt*2.4);
     const scale=Math.exp(S.logS);
     const cx=W/2,cy=H/2;
@@ -1301,7 +1394,7 @@ const DotMoment=(function(){
     }
     ctx.lineWidth=1;
     ctx.textAlign='center'; ctx.textBaseline='alphabetic';
-    ctx.font='600 13px Nunito';
+    ctx.font='600 '+Math.round(13*kScale())+'px Nunito';
     for(const m of S.markers){
       const age=(now-m.t0)/1000;
       const a=Math.max(0,0.5*(1-age/2.2));
@@ -1342,15 +1435,22 @@ const DotMoment=(function(){
       ctx.shadowBlur=10;
       ctx.fillStyle='rgba(247,250,249,'+(0.95*ra)+')';
       ctx.textAlign='left'; ctx.textBaseline='middle';
-      ctx.font='700 15px Nunito';
-      ctx.fillText('Your classroom',cx+92,cy-64);
-      ctx.fillText('Your classroom',cx+92,cy-64);   /* double draw strengthens the glyph — deliberate */
+      const ck=kScale(), ctot=classTotal()/1e7;
+      const lbl='Your classroom · '+(ctot<1?'₹'+(ctot*100).toFixed(1)+' Lakh':'₹'+ctot.toFixed(2)+' Cr');
+      ctx.font='700 '+Math.round(15*ck)+'px Nunito';
+      const lw=ctx.measureText(lbl).width, lh=26*ck;
+      ctx.shadowBlur=0;
+      ctx.fillStyle='rgba(3,6,10,'+(0.88*ra)+')';
+      rr(ctx,cx+84,cy-64-lh/2,lw+18*ck,lh,6*ck); ctx.fill();
+      ctx.strokeStyle='rgba(201,168,76,'+(0.55*ra)+')'; ctx.lineWidth=1; ctx.stroke();
+      ctx.fillStyle='rgba(247,250,249,'+(0.95*ra)+')';
+      ctx.fillText(lbl,cx+92,cy-64);
       ctx.restore();
     }
 
-    /* counter (dirty-checked DOM write) */
-    const num='₹'+fmtIN(v);
-    if(num!==S.lastNum){ elCnum.textContent=num; S.lastNum=num; }
+    /* counter (dirty-checked DOM write) — lakh while small, crore after */
+    const f=fmtFlood(v), num=f.n+'|'+f.u;
+    if(num!==S.lastNum){ elCnum.textContent=f.n; if(elCunit) elCunit.textContent=f.u; S.lastNum=num; }
   }
 
   /* DOM text choreography (driven from the loop) */
@@ -1524,7 +1624,10 @@ function renderChrome(){
   const br=document.getElementById('btnReset'); if(br) br.onclick=hostReset;
   hints.textContent=state.phase==='dot'?'SPACE · ADVANCE THE STORY':'SPACE next · ← back';
   /* persistent corner QR from the lobby onwards */
-  if(state.phase!=='slides'){
+  /* corner QR from bidding onwards — the lobby already shows the big QR */
+  const showQR=state.phase!=='slides'&&state.phase!=='lobby';
+  document.body.classList.toggle('has-qr',showQR);
+  if(showQR){
     if(corner.classList.contains('hide')||!corner.dataset.room||corner.dataset.room!==ROOM){
       corner.classList.remove('hide'); corner.dataset.room=ROOM;
       corner.innerHTML='<div class="qc" id="cornerQRBox"></div><div class="ql">SCAN TO (RE)JOIN<br>'+esc(ROOM)+'</div>';
@@ -1753,12 +1856,21 @@ function biddingTick(cat,amt){
 }
 function closeIPO(){
   if(state.phase!=='bidding') return;
-  const n=state.bidsCount||0;
-  if(!confirm('Close the IPO?\n\n'+n+' bid'+(n===1?'':'s')+' received. No more applications will be accepted, and the reveal begins.')) return;
-  pushHistory();
-  recomputeTotals();
-  state.phase='dot';
-  saveNow(); renderHost();
+  const cs=classStats(), waiting=Math.max(0,cs.players-cs.applied);
+  askConfirm({
+    kicker:'BIDDING WINDOW', tone:'danger',
+    title:'Close the IPO?',
+    stats:[['APPLICATIONS',cs.applied+' of '+cs.players],['APPLIED',rup(cs.total)],['STILL DECIDING',String(waiting)]],
+    body:(waiting?'<b>'+waiting+' '+(waiting===1?'person hasn’t':'people haven’t')+' applied yet</b> — they’ll miss out. ':'Everyone has applied. ')+
+         'Once closed, no more bids are accepted and the reveal begins.',
+    ok:'CLOSE THE IPO  ■', cancel:'KEEP BIDDING OPEN'
+  },()=>{
+    if(state.phase!=='bidding') return;
+    pushHistory();
+    recomputeTotals();
+    state.phase='dot';
+    saveNow(); renderHost();
+  });
 }
 
 /* ── S6: the dot moment (full-screen canvas takeover) ── */
@@ -1872,8 +1984,10 @@ function vsExamples(){
   const hwinGain=I.hniWinLots*I.lotShares*I.gainPerShare;
   const r=rw?{name:rw.name,gain:rw.gain,blocked:rw.bid}:{name:null,gain:I.lotShares*I.gainPerShare,blocked:I.lotCost};
   const h=hw?{name:hw.name,gain:hw.gain,blocked:hw.bid}:{name:null,gain:hwinGain,blocked:CONFIG.HNI.maxLots*I.lotCost};
-  r.pct=r.blocked?r.gain/r.blocked*100:0;
-  h.pct=h.blocked?h.gain/h.blocked*100:0;
+  r.invested=rw?rw.cost:I.lotCost;
+  h.invested=hw?hw.cost:I.hniWinLots*I.lotCost;
+  r.pct=r.invested?r.gain/r.invested*100:0;
+  h.pct=h.invested?h.gain/h.invested*100:0;
   const lost={n:hniLost.length,of:hniAll.length,blocked:hniLost.reduce((t,p)=>t+p.bid,0)};
   return {r,h,lost};
 }
@@ -1891,47 +2005,87 @@ function hostS9(){
   if(ls===1){
     const rows=ps.map(p=>{
       const cat=p.bid>0?p.cat:'—';
-      const roi=(p.bid>0&&p.gain>0)?('+'+pct1(p.gain/p.bid*100)+'%'):(p.bid>0?'0%':'—');
-      return '<tr><td>'+p.av+' '+esc(p.name)+'</td><td>'+(cat==='RETAIL'?'RET':cat)+'</td>'+
+      const roi=(p.cost>0)?('+'+pct1(p.gain/p.cost*100)+'%'):'—';
+      return '<tr><td>'+p.av+' '+esc(p.name)+(p.bid>0?' <span class="pnl-door '+(cat==='HNI'?'h':'r')+'">'+(cat==='HNI'?'HNI':'RETAIL')+'</span>':'')+'</td>'+
         '<td>'+(p.bid>0?rup(p.bid):'—')+'</td><td>'+(p.shares||0)+'</td>'+
+        '<td>'+(p.cost>0?rup(p.cost):'₹0')+'</td>'+
         '<td class="'+(p.gain>0?'up':'dim')+'">'+(p.gain>0?'+'+rup(p.gain):'₹0')+'</td>'+
         '<td class="'+(p.gain>0?'up':'dim')+'">'+roi+'</td></tr>';
     });
     const rowList=rows;
     return '<div class="stage"><div class="stage-head"><span class="stage-num">LISTING DAY · P&L</span></div>'+
       '<div class="stage-title">What everyone actually made.</div>'+
-      '<p class="stage-sub">Gain = shares × ₹'+I.gainPerShare+'. The last column is the one that matters: return on the money that was BLOCKED.</p>'+
+      '<p class="stage-sub">Applied = money locked during the IPO. Invested = what your shares actually cost. Every winner made the same <b style="color:var(--up)">+'+I.gainPct+'%</b> on what they invested.</p>'+
       '<div class="panel"><div class="panel-head"><span>CLASS P&L · '+esc(ROOM)+'</span><span class="mono dim">LISTED +'+I.gainPct+'%</span></div>'+
       '<div class="panel-body pnl-cols'+(rowList.length>10?' two':'')+'">'+
         (rowList.length>10?[rowList.slice(0,Math.ceil(rowList.length/2)),rowList.slice(Math.ceil(rowList.length/2))]:[rowList])
-          .map(part=>'<table class="pnl-table"><thead><tr><th>PLAYER</th><th>DOOR</th><th>BLOCKED</th><th>SHARES</th><th>GAIN</th><th>ON BLOCKED ₹</th></tr></thead><tbody>'+part.join('')+'</tbody></table>').join('')+
+          .map(part=>'<table class="pnl-table"><thead><tr><th>PLAYER</th><th>APPLIED</th><th>SHARES</th><th>INVESTED</th><th>GAIN</th><th>RETURN</th></tr></thead><tbody>'+part.join('')+'</tbody></table>').join('')+
       '</div></div>'+
     '</div>';
   }
-  const vx=vsExamples();
-  return '<div class="stage"><div class="stage-head"><span class="stage-num">THE SIDE-BY-SIDE</span></div>'+
-    '<div class="stage-title">Same IPO. Same pop. Very different returns.</div>'+
-    '<div class="vs-grid">'+
-      '<div class="vs-card winr"><div class="vs-tag">RETAIL WINNER'+(vx.r.name?' · '+esc(vx.r.name).toUpperCase():' · TEXTBOOK CASE')+'</div>'+
-        '<div class="vs-big">+'+pct1(vx.r.pct)+'%</div>'+
-        '<div class="vs-line">+'+rup(vx.r.gain)+' made on just <b>'+rup(vx.r.blocked)+'</b> blocked. Small ticket, full listing pop.</div></div>'+
-      '<div class="vs-card hnir"><div class="vs-tag">HNI WINNER'+(vx.h.name?' · '+esc(vx.h.name).toUpperCase():' · TEXTBOOK CASE')+'</div>'+
-        '<div class="vs-big">+'+pct1(vx.h.pct)+'%</div>'+
-        '<div class="vs-line">Won the HNI lottery: '+(CONFIG.IPO.hniWinLots*CONFIG.IPO.lotShares)+' shares, +'+rup(vx.h.gain)+' — on <b>'+rup(vx.h.blocked)+'</b> blocked under ASBA.</div></div>'+
+  /* the side-by-side: this room's two doors, person by person */
+  const door=cat=>{
+    const ps2=Object.values(state.players||{}).filter(p=>p.cat===cat&&p.bid>0)
+      .sort((a,b)=>(b.win?1:0)-(a.win?1:0)||a.name.localeCompare(b.name));
+    const sum=k=>ps2.reduce((t,p)=>t+(p[k]||0),0);
+    return {ps:ps2,n:ps2.length,won:ps2.filter(p=>p.win).length,locked:sum('bid'),invested:sum('cost'),profit:sum('gain')};
+  };
+  const R=door('RETAIL'),H=door('HNI');
+  const panel=(d,cls,name,sub,lotsWon)=>{
+    if(!d.n) return '<div class="door '+cls+'"><div class="door-h"><span>'+name+'</span><small>'+sub+'</small></div>'+
+      '<div class="door-empty">Nobody in this room chose this door.</div></div>';
+    return '<div class="door '+cls+'">'+
+      '<div class="door-h"><span>'+name+'</span><small>'+sub+'</small></div>'+
+      '<div class="door-big"><b>'+d.won+'</b> of '+d.n+'<span>got shares</span></div>'+
+      '<div class="door-people">'+d.ps.map(p=>'<span class="dp '+(p.win?'won':'lost')+'">'+p.av+' '+esc(p.name)+(p.win?' <i>+'+(lotsWon*CONFIG.IPO.lotShares)+'</i>':'')+'</span>').join('')+'</div>'+
+      '<div class="door-rows">'+
+        '<div><span>Money locked to apply</span><b>'+rup(d.locked)+'</b></div>'+
+        '<div><span>Money actually invested</span><b>'+rup(d.invested)+'</b></div>'+
+        '<div><span>Profit on listing day</span><b class="up">+'+rup(d.profit)+'</b></div>'+
+      '</div></div>';
+  };
+  return '<div class="stage"><div class="stage-head"><span class="stage-num">THE SIDE-BY-SIDE · THIS ROOM</span></div>'+
+    '<div class="stage-title">Who actually made money?</div>'+
+    '<div class="doors">'+
+      panel(R,'ret','RETAIL','small investors · up to ₹2 lakh',1)+
+      panel(H,'hni','HNI','big investors · ₹2–10 lakh',I.hniWinLots)+
     '</div>'+
-    (vx.lost.n?'<p class="stage-sub" style="margin-top:18px"><b style="color:var(--amber)">'+vx.lost.n+' of '+vx.lost.of+' HNI applicants won nothing</b> — '+rup(vx.lost.blocked)+' sat blocked for a week and earned ₹0.</p>':'')+
-    '<p class="stage-sub" style="margin-top:10px">The listing pop was identical for every share: +'+CONFIG.IPO.gainPct+'%. What differed was the odds of getting any — and how much money had to stand still to try.</p>'+
+    '<div class="door-foot">Every share that was allotted made the same <b class="up">+'+I.gainPct+'%</b>. '+
+      'The difference was who got shares at all. In the real Jio IPO, <b>'+esc(I.retailOddsLabel)+'</b> retail applicants got shares — and only <b>'+esc(I.hniOddsLabel)+'</b> HNI applicants.</div>'+
   '</div>';
 }
 
-/* ── S10: the Kamath card ── */
+/* ── S10: the Kamath card — the real quote, the real post ──
+   Photo: Wikimedia Commons, "Nikhil Kamath at World Economic Forum" by SP2904, CC BY-SA 4.0
+   (attribution shown on screen, as the licence requires). Post: embedded live from X. */
+const KAMATH_PHOTO='https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Nikhil_Kamath_at_World_Economic_Forum.png/330px-Nikhil_Kamath_at_World_Economic_Forum.png';
+const KAMATH_TWEET='https://twitter.com/Nigel__DSouza/status/2112797072068096202';
 function hostS10(){
-  return '<div class="quiet">'+
-    '<div class="kicker">A TRUE STORY · '+esc(CONFIG.KAMATH.source)+'</div>'+
-    '<h2>“We were trying to get <span class="hl-amber">'+esc(CONFIG.KAMATH.applied)+'</span> of exposure, and we have gotten <span class="hl-up">'+esc(CONFIG.KAMATH.received)+'</span>.”</h2>'+
-    '<div class="sub2">— Nikhil Kamath, Zerodha co-founder. His firm Rainmatter took part in Jio’s anchor book — the big-institution queue.</div>'+
-    '<div class="attr">EVEN INSTITUTIONAL MONEY GOT A FRACTION OF WHAT IT ASKED FOR.</div>'+
+  return '<div class="stage kamath">'+
+    '<div class="stage-head"><span class="stage-num">A TRUE STORY · '+esc(CONFIG.KAMATH.source)+'</span></div>'+
+    '<div class="kam-grid">'+
+      '<div class="kam-left">'+
+        '<img class="kam-photo" src="'+KAMATH_PHOTO+'" alt="Nikhil Kamath" onerror="this.style.display=\'none\'">'+
+        '<div class="kam-quote">“We were trying to get <span class="hl-amber">'+esc(CONFIG.KAMATH.applied)+'</span> of exposure, and we have gotten <span class="hl-up">'+esc(CONFIG.KAMATH.received)+'</span>.”</div>'+
+        '<div class="kam-who">— Nikhil Kamath, Zerodha co-founder, on CNBC-TV18. His firm Rainmatter bid in Jio’s anchor book — the big-institution queue.</div>'+
+        '<div class="kam-punch">Even big institutional money got <b>1 rupee for every 20</b> it asked for.</div>'+
+        '<div class="kam-credit">Photo: SP2904 · CC BY-SA 4.0 · Wikimedia Commons</div>'+
+      '</div>'+
+      '<div class="kam-right">'+
+        '<div id="kamTweet"><blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none" data-align="center">'+
+          '<p lang="en" dir="ltr">Nikhil Kamath on the Jio Platforms IPO on @CNBCTV18News @CNBCTV18Live @ShereenBhan<br><br>We’ve all benefited from cheap internet<br><br>Wanted ₹500 crore worth of exposure to Jio Platforms but got just ₹25 cr, leaving him “a little disappointed”<br><br>#JioPlatforms</p>'+
+          '— Nigel D’Souza, Senior Editor, CNBC-TV18 (@Nigel__DSouza) <a href="'+KAMATH_TWEET+'">21 October 2026</a></blockquote></div>'+
+      '</div>'+
+    '</div>'+
   '</div>';
+}
+function loadTweet(){
+  const box=document.getElementById('kamTweet'); if(!box) return;
+  if(window.twttr&&window.twttr.widgets){ window.twttr.widgets.load(box); return; }
+  if(document.getElementById('twttrJs')) return;
+  const sc=document.createElement('script'); sc.id='twttrJs'; sc.async=true; sc.charset='utf-8';
+  sc.src='https://platform.twitter.com/widgets.js';
+  document.head.appendChild(sc);
 }
 
 /* ── S11: the lesson ── */
@@ -1940,11 +2094,12 @@ function hostS11(){
   return '<div class="quiet">'+
     '<div class="kicker">THE LESSON</div>'+
     '<h2>More money <span class="hl-dn">≠</span> better return.</h2>'+
-    '<div class="sub2">The question is what your money earned <b style="color:var(--ink)">while it was blocked</b>.</div>'+
+    '<div class="sub2">Everyone who got shares made the same profit. Big money only changed two things: <b style="color:var(--ink)">your chances</b>, and <b style="color:var(--ink)">how much cash sat locked up</b>.</div>'+
+    '<div class="lesson-k">IN THE REAL JIO IPO</div>'+
     '<div class="lesson-stats">'+
-      '<div class="lesson-stat"><div class="l">REAL JIO ODDS · RETAIL</div><div class="v up">'+esc(CONFIG.IPO.retailOddsLabel)+'</div></div>'+
-      '<div class="lesson-stat"><div class="l">REAL JIO ODDS · HNI</div><div class="v amber">'+esc(CONFIG.IPO.hniOddsLabel)+'</div></div>'+
-      '<div class="lesson-stat"><div class="l">RETAIL WINNER · ON BLOCKED ₹</div><div class="v up">+'+pct1(vx.r.pct)+'%</div></div>'+
+      '<div class="lesson-stat"><div class="v up">7 out of 10</div><div class="l2">small investors (retail) got shares</div></div>'+
+      '<div class="lesson-stat"><div class="v amber">1 out of 9</div><div class="l2">big investors (HNI) got shares</div></div>'+
+      '<div class="lesson-stat"><div class="v up">+'+CONFIG.IPO.gainPct+'%</div><div class="l2">profit for everyone who got shares</div></div>'+
     '</div>'+
     '<div style="margin-top:44px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap">'+
       '<a class="btn big" href="/ipo-bonanza" style="text-decoration:none">←  BACK TO IPO BONANZA</a>'+
@@ -1969,7 +2124,7 @@ function renderHost(){
   else if(ph==='allot'){ m.innerHTML=hostS8();
     const b=document.getElementById('btnRunAllot'); if(b) b.onclick=startAllotment; }
   else if(ph==='listing'){ m.innerHTML=hostS9(); }
-  else if(ph==='kamath'){ m.innerHTML=hostS10(); }
+  else if(ph==='kamath'){ m.innerHTML=hostS10(); loadTweet(); }
   else if(ph==='lesson'){ m.innerHTML=hostS11();
     const b=document.getElementById('btnNewGame'); if(b) b.onclick=hostReset; }
   if(ph!=='dot'&&dmHandle){ DotMoment.destroy(); dmHandle=null; }
@@ -1977,11 +2132,40 @@ function renderHost(){
 }
 
 /* ── advance / back / reset ── */
+/* In-game confirm pop-up — replaces the browser's grey confirm() box.
+   askConfirm({kicker,title,body,stats:[[label,value]],ok,cancel,tone:'danger'|'go'}, onYes) */
+let _modalOpen=false;
+function askConfirm(o,onYes){
+  if(_modalOpen) return;
+  _modalOpen=true;
+  const wrap=document.createElement('div'); wrap.id='ifmModal';
+  const stats=(o.stats||[]).map(x=>'<div class="m-stat"><div class="v">'+x[1]+'</div><div class="l">'+x[0]+'</div></div>').join('');
+  wrap.innerHTML='<div class="m-card '+(o.tone||'go')+'">'+
+    (o.kicker?'<div class="m-kicker">'+o.kicker+'</div>':'')+
+    '<div class="m-title">'+o.title+'</div>'+
+    (stats?'<div class="m-stats">'+stats+'</div>':'')+
+    (o.body?'<div class="m-body">'+o.body+'</div>':'')+
+    '<div class="m-btns"><button class="btn ghost big" id="mNo">'+(o.cancel||'NOT YET')+'</button>'+
+    '<button class="btn big '+(o.tone==='danger'?'danger':'')+'" id="mYes">'+(o.ok||'YES')+'</button></div>'+
+    '<div class="m-keys">ENTER = yes · ESC = cancel</div></div>';
+  const host=document.getElementById('host'); if(host&&host.style.zoom) wrap.firstChild.style.zoom=host.style.zoom;
+  document.body.appendChild(wrap);
+  const close=yes=>{ removeEventListener('keydown',onKey,true); wrap.remove(); _modalOpen=false; if(yes) onYes(); };
+  const onKey=e=>{ if(e.key==='Escape'){ e.preventDefault(); e.stopPropagation(); close(false); }
+    else if(e.key==='Enter'){ e.preventDefault(); e.stopPropagation(); close(true); }
+    else { e.stopPropagation(); } };
+  addEventListener('keydown',onKey,true);
+  wrap.onclick=e=>{ if(e.target===wrap) close(false); };
+  document.getElementById('mNo').onclick=()=>close(false);
+  document.getElementById('mYes').onclick=()=>close(true);
+  setTimeout(()=>{ const y=document.getElementById('mYes'); if(y) y.focus(); },30);
+}
+
 function pushHistory(){
   try{ _history.push(JSON.stringify(state)); if(_history.length>40) _history.shift(); }catch(e){}
 }
-function hostAdvance(){
-  if(!isHost) return;
+function hostAdvance(confirmed){
+  if(!isHost||_modalOpen) return;
   const st=state;
   if(st.phase==='bidding') return;                     // CLOSE IPO button only — no accidental close
   if(st.phase==='dot'){ if(dmHandle) DotMoment.advance(); return; }
@@ -1990,8 +2174,11 @@ function hostAdvance(){
     if(st.allotStep==='suspense') return;
   }
   if(st.phase==='lesson') return;                      // only NEW GAME from here
-  if(st.phase==='lobby'&&playerCount()===0){
-    if(!confirm('No players have joined yet.\n\nOpen bidding anyway?')) return;
+  if(st.phase==='lobby'&&playerCount()===0&&confirmed!==true){
+    askConfirm({kicker:'THE ROOM', title:'Nobody has joined yet.',
+      body:'Phones can still scan the QR and join after bidding opens. Open bidding anyway?',
+      ok:'OPEN BIDDING  →', cancel:'WAIT FOR PHONES'},()=>hostAdvance(true));
+    return;
   }
   pushHistory();
   if(st.phase==='slides'){
@@ -2025,7 +2212,11 @@ function hostBack(){
   saveNow(); renderHost();
 }
 function hostReset(){
-  if(!confirm('Start a brand-new game?\n\nThis clears ALL players, bids and results, and sends every phone back to the join screen.')) return;
+  askConfirm({kicker:'NEW GAME', tone:'danger', title:'Start a brand-new game?',
+    body:'This clears <b>all players, bids and results</b>, and sends every phone back to the join screen.',
+    ok:'YES, START OVER', cancel:'CANCEL'},doHostReset);
+}
+function doHostReset(){
   clearTimeout(_suspenseTimer); clearInterval(_suspenseSpin);
   if(dmHandle){ DotMoment.destroy(); dmHandle=null; }
   const nonce=(state.bidNonce||1)+1;
@@ -2360,17 +2551,18 @@ function playerPnlCard(p){
   const shares=p.shares||0, gain=p.gain||0;
   const finalTotal=CONFIG.PLAYER_CASH+gain;
   if(shares>0){
-    const roi=p.bid>0?gain/p.bid*100:0;
+    const roi=p.cost>0?gain/p.cost*100:0;
     return '<div class="pcard">'+
       '<div class="pkicker">LISTING DAY · ₹'+fmtIN(I.issuePrice)+' → ₹'+fmtIN(I.listPrice)+'</div>'+
       '<div class="presult-big won" style="text-align:center">+'+rup(gain)+'</div>'+
       '<div class="prow"><span class="l">YOUR SHARES</span><span class="v">'+shares+' × +₹'+fmtIN(I.gainPerShare)+'</span></div>'+
-      '<div class="prow"><span class="l">MONEY THAT WAS BLOCKED</span><span class="v">'+rup(p.bid)+'</span></div>'+
-      '<div class="prow"><span class="l">RETURN ON BLOCKED ₹</span><span class="v '+(roi>=5?'up':'amber')+'">+'+pct1(roi)+'%</span></div>'+
+      '<div class="prow"><span class="l">YOU INVESTED</span><span class="v">'+rup(p.cost)+'</span></div>'+
+      '<div class="prow"><span class="l">YOUR RETURN</span><span class="v up">+'+pct1(roi)+'%</span></div>'+
+      '<div class="prow"><span class="l">LOCKED DURING THE IPO</span><span class="v">'+rup(p.bid)+'</span></div>'+
       '<div class="prow"><span class="l">YOUR ₹10,00,000 IS NOW</span><span class="v up">'+rup(finalTotal)+'</span></div>'+
       '<p class="psub" style="margin-top:14px">'+(p.cat==='RETAIL'
         ?'Small ticket, full +'+I.gainPct+'% pop — the lottery winner’s prize.'
-        :'You beat the HNI odds. The pop was +'+I.gainPct+'% per share — compare your return on blocked money with a small retail winner’s.')+'</p>'+
+        :'You beat the HNI odds (about 1 in 9). Same +'+I.gainPct+'% as a retail winner — just on a bigger ticket.')+'</p>'+
     '</div>';
   }
   if(p.bid>0){
