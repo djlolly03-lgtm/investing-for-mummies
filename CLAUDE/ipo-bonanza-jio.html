@@ -224,6 +224,7 @@ input{font-family:inherit}
 .fv-bar .c,.fv-legend i.c{background:var(--ink-3)}
 .fv-legend{margin-top:14px;display:grid;gap:7px;text-align:left;font-size:14px;color:var(--ink-2)}
 .fv-legend b{color:var(--ink)}
+.fv-total{margin-top:10px;font-size:13px;color:var(--ink-3)}
 .fv-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:-1px}
 @keyframes slam{from{transform:scale(1.7);opacity:0}to{transform:scale(1);opacity:1}}
 @keyframes fadeup{from{transform:translateY(8px);opacity:0}to{transform:translateY(0);opacity:1}}
@@ -1469,7 +1470,7 @@ const FLAGS=[
     simple:'Most of the money raised will pay off Jio’s old loans. A small part is for general company needs. No existing owner is selling shares.',
     legal:'“(i) Prepayment, in full or in part, of certain outstanding borrowings availed by the Material Subsidiary, namely, RJIL; and (ii) General corporate purposes.”',
     cls:'miss', verdict:'⚠ FINE — JUST KNOW WHERE IT GOES',
-    teach:'₹27,500 Cr of the money clears old loans. Less loan means less interest and more profit — good. But your money isn’t building new towers; it’s paying off a loan. And nobody is cashing out, which is a good sign.'},
+    teach:'₹91 of every ₹100 clears old loans. Less loan means less interest and more profit — good. But your money isn’t building new towers; it’s paying off a loan. And nobody is cashing out, which is a good sign.'},
 ];
 
 function playerCount(){ return Object.keys(state.players||{}).length; }
@@ -1598,13 +1599,14 @@ function flagVisual(i){
     '</div>';
   }
   return '<div class="fv fv-money">'+
-    '<div class="fv-cap-top">WHERE ₹30,187.60 CR GOES</div>'+
-    '<div class="fv-bar"><span class="a" style="flex:27500">₹27,500 Cr</span><span class="b" style="flex:2217.9"></span><span class="c" style="flex:469.7"></span></div>'+
+    '<div class="fv-cap-top">OUT OF EVERY ₹100 RAISED</div>'+
+    '<div class="fv-bar"><span class="a" style="flex:91">₹91</span><span class="b" style="flex:7">₹7</span><span class="c" style="flex:2"></span></div>'+
     '<div class="fv-legend">'+
-      '<div><i class="a"></i><b>₹27,500 Cr</b> pays off Jio’s old loans</div>'+
-      '<div><i class="b"></i><b>₹2,217.90 Cr</b> general company needs</div>'+
-      '<div><i class="c"></i><b>₹469.70 Cr</b> costs of running the IPO</div>'+
+      '<div><i class="a"></i><b>₹91</b> pays off Jio’s old loans</div>'+
+      '<div><i class="b"></i><b>₹7</b> general company needs</div>'+
+      '<div><i class="c"></i><b>₹2</b> cost of running the IPO</div>'+
     '</div>'+
+    '<div class="fv-total">Total raised: about ₹30,000 Cr</div>'+
     '<div class="fv-cap">Nobody is selling their own shares</div>'+
   '</div>';
 }
