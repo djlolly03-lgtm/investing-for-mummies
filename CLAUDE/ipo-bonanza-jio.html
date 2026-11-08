@@ -543,30 +543,58 @@ input[type=range].lotslider::-moz-range-thumb{width:30px;height:30px;border-radi
 <div id="player" class="hide"></div>
 
 <script>
-/* Projector fit (host only): scale the teacher screens up to fill big displays so the back
-   row can read them. + / - nudges the size (remembered), 0 resets. Phones and the dot
-   moment are not scaled — the dot canvas already sizes itself to the screen. */
+/* Projector fit (host only): every teacher screen scales to fill the window without
+   scrolling. + / - nudges the size (remembered), 0 resets. Phones and the dot moment are
+   not scaled — the dot canvas already sizes itself to the screen. */
 (function(){
   if((new URLSearchParams(location.search).get('role')||'host')!=='host') return;
-  var KEY='ifm-ipo-scale', BASE_W=1200, BASE_H=640, IDS=['host','hostCtrls','hostHints','cornerQR'];
+  var KEY='ifm-ipo-scale', BASE_W=1200, MAX=2.4, MIN=0.42, busy=false, queued=false;
   function adj(){ try{ return parseFloat(localStorage.getItem(KEY))||1; }catch(e){ return 1; } }
+  /* Fit = as big as the width allows (capped), then shrink until the screen's content
+     bottom sits inside the window. Repeat: a narrower effective width makes content taller. */
   function fit(){
-    var z=Math.max(1,Math.min(2.4,Math.min(innerWidth/BASE_W,innerHeight/BASE_H)))*adj();
-    z=Math.max(0.6,Math.min(3,z));
-    IDS.forEach(function(id){ var el=document.getElementById(id); if(el) el.style.zoom=z; });
+    if(busy){ queued=true; return; }
+    busy=true;
+    var z=Math.min(MAX,Math.max(MIN,innerWidth/BASE_W))*adj();
+    setZ(z);
+    for(var i=0;i<6;i++){
+      var b=contentBottom();
+      if(!b||b<=innerHeight+1) break;
+      z=Math.max(MIN,z*(innerHeight/b)*0.995);
+      setZ(z);
+      if(z<=MIN) break;
+    }
+    busy=false;
+    if(queued){ queued=false; requestAnimationFrame(fit); }
   }
-  addEventListener('resize',fit); fit();
-  addEventListener('keydown',function(e){
-    var t=e.target, tag=t&&t.tagName;
-    if(tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT'||(t&&t.isContentEditable)||e.metaKey||e.ctrlKey||e.altKey) return;
+  var t=null; function soon(){ clearTimeout(t); t=setTimeout(fit,60); }
+  addEventListener('resize',soon);
+  function scaleKey(k){
     var a=adj();
-    if(e.key==='+'||e.key==='=') a=Math.min(1.8,a+0.1);
-    else if(e.key==='-'||e.key==='_') a=Math.max(0.6,a-0.1);
-    else if(e.key==='0') a=1;
-    else return;
+    if(k==='+'||k==='=') a=Math.min(1.8,a+0.1);
+    else if(k==='-'||k==='_') a=Math.max(0.6,a-0.1);
+    else if(k==='0') a=1;
+    else return false;
     try{ localStorage.setItem(KEY,String(Math.round(a*10)/10)); }catch(_){}
-    fit();
+    fit(); return true;
+  }
+  window.__ifmScaleKey=scaleKey;
+  addEventListener('keydown',function(e){
+    var tg=e.target, tag=tg&&tg.tagName;
+    if(tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT'||(tg&&tg.isContentEditable)||e.metaKey||e.ctrlKey||e.altKey) return;
+    scaleKey(e.key);
   });
+
+  var IDS=['host','hostCtrls','hostHints','cornerQR'];
+  function setZ(z){ IDS.forEach(function(id){ var el=document.getElementById(id); if(el) el.style.zoom=z; }); }
+  function contentBottom(){
+    var m=document.getElementById('hostMain'); if(!m||!m.lastElementChild) return 0;
+    var r=m.getBoundingClientRect(); return r.bottom+(window.scrollY||0);
+  }
+  var hm=document.getElementById('hostMain');
+  try{ new MutationObserver(soon).observe(hm,{childList:true,subtree:true,characterData:true}); }catch(_){}
+  window.__ifmFit=fit;
+  fit();
 })();
 </script>
 

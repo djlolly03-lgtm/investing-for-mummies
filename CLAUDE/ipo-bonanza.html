@@ -1709,7 +1709,9 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
   .container{max-width:none!important;padding:0!important;margin:0!important}
   #ipobonanza .game-hero{display:none!important}
   #ipobonanza > div{border-radius:0!important;box-shadow:none!important;background:#1a2e45!important}
-  #ipobonanza iframe{height:100vh;height:100dvh;min-height:0!important}
+  #ipobonanza iframe{height:calc(100vh - 30px);height:calc(100dvh - 30px);min-height:0!important}
+  html,body{overflow:hidden;height:100%}
+  p[data-ifm-disclaimer], body > p:last-of-type{padding:7px 16px!important;font-size:11px!important;line-height:16px!important}
 </style>
 <script>
 addEventListener('keydown',function(e){
@@ -2787,20 +2789,36 @@ addEventListener('keydown',function(e){
 &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;style&gt;
   /* Projector: Back/Next always on screen */
-  .footer-bar { position: sticky; bottom: 0; z-index: 40; padding: 14px 0 16px;
+  .app { min-height: 0 !important; }
+  /* if a stage still can&#x27;t fit at a readable size, it scrolls — with Back/Next pinned */
+  .footer-bar { position: sticky; bottom: 0; z-index: 40; padding: 12px 0 14px;
     background: linear-gradient(180deg, rgba(26,46,69,0), var(--bg) 38%); }
 &lt;/style&gt;
 &lt;script&gt;
-/* Fit to screen: scale the whole game up on big displays so the back row can read it.
+/* Fit to screen: every stage scales to fill the window without scrolling.
    + / - nudges the size (remembered), 0 resets. Browser zoom breaks the layout; this doesn&#x27;t. */
 (function(){
-  var KEY=&#x27;ifm-ipo-scale&#x27;, BASE_W=1200, BASE_H=640;
+  var KEY=&#x27;ifm-ipo-scale&#x27;, BASE_W=1200, MAX=2.4, MIN=0.6, busy=false, queued=false;
   function adj(){ try{ return parseFloat(localStorage.getItem(KEY))||1; }catch(e){ return 1; } }
+  /* Fit = as big as the width allows (capped), then shrink until the screen&#x27;s content
+     bottom sits inside the window. Repeat: a narrower effective width makes content taller. */
   function fit(){
-    var z=Math.max(1,Math.min(2.4,Math.min(innerWidth/BASE_W,innerHeight/BASE_H)))*adj();
-    document.documentElement.style.zoom=Math.max(0.6,Math.min(3,z));
+    if(busy){ queued=true; return; }
+    busy=true;
+    var z=Math.min(MAX,Math.max(MIN,innerWidth/BASE_W))*adj();
+    setZ(z);
+    for(var i=0;i&lt;6;i++){
+      var b=contentBottom();
+      if(!b||b&lt;=innerHeight+1) break;
+      z=Math.max(MIN,z*(innerHeight/b)*0.995);
+      setZ(z);
+      if(z&lt;=MIN) break;
+    }
+    busy=false;
+    if(queued){ queued=false; requestAnimationFrame(fit); }
   }
-  addEventListener(&#x27;resize&#x27;,fit); fit();
+  var t=null; function soon(){ clearTimeout(t); t=setTimeout(fit,60); }
+  addEventListener(&#x27;resize&#x27;,soon);
   function scaleKey(k){
     var a=adj();
     if(k===&#x27;+&#x27;||k===&#x27;=&#x27;) a=Math.min(1.8,a+0.1);
@@ -2812,10 +2830,18 @@ addEventListener('keydown',function(e){
   }
   window.__ifmScaleKey=scaleKey;
   addEventListener(&#x27;keydown&#x27;,function(e){
-    var t=e.target, tag=t&amp;&amp;t.tagName;
-    if(tag===&#x27;INPUT&#x27;||tag===&#x27;TEXTAREA&#x27;||tag===&#x27;SELECT&#x27;||(t&amp;&amp;t.isContentEditable)||e.metaKey||e.ctrlKey||e.altKey) return;
+    var tg=e.target, tag=tg&amp;&amp;tg.tagName;
+    if(tag===&#x27;INPUT&#x27;||tag===&#x27;TEXTAREA&#x27;||tag===&#x27;SELECT&#x27;||(tg&amp;&amp;tg.isContentEditable)||e.metaKey||e.ctrlKey||e.altKey) return;
     scaleKey(e.key);
   });
+
+  function setZ(z){ document.documentElement.style.zoom=z; }
+  function contentBottom(){
+    var a=document.querySelector(&#x27;.app&#x27;); if(!a) return 0;
+    var r=a.getBoundingClientRect(); return r.bottom+(window.scrollY||0);
+  }
+  try{ new MutationObserver(soon).observe(document.documentElement,{childList:true,subtree:true,characterData:true}); }catch(_){}
+  addEventListener(&#x27;load&#x27;,fit); fit();
 })();
 &lt;/script&gt;
 &lt;/head&gt;
@@ -3069,12 +3095,12 @@ function IpoChoice({ logo, logoBg, label, name, sector, meta, windowText, mode, 
         border:&#x27;1px solid &#x27;+modeColor,background:&#x27;rgba(255,255,255,0.03)&#x27;}}&gt;
         &lt;span style={{width:7,height:7,borderRadius:&#x27;50%&#x27;,background:modeColor,boxShadow:&#x27;0 0 8px &#x27;+modeColor}}&gt;&lt;/span&gt;{mode}
       &lt;/div&gt;
-      &lt;p style={{fontSize:14.5,color:&#x27;var(--ink-2)&#x27;,lineHeight:1.5,margin:&#x27;12px 0 0&#x27;}}&gt;{how}&lt;/p&gt;
-      &lt;div className=&quot;ipo-meta&quot;&gt;
-        {meta.map(([l, v]) =&gt; &lt;div key={l}&gt;&lt;div className=&quot;l&quot;&gt;{l}&lt;/div&gt;&lt;div className=&quot;v&quot;&gt;{v}&lt;/div&gt;&lt;/div&gt;)}
+      &lt;p style={{fontSize:15,color:&#x27;var(--ink-2)&#x27;,lineHeight:1.45,margin:&#x27;10px 0 0&#x27;}}&gt;{how}&lt;/p&gt;
+      &lt;div style={{marginTop:14,display:&#x27;flex&#x27;,flexWrap:&#x27;wrap&#x27;,gap:&#x27;6px 18px&#x27;,fontFamily:&quot;&#x27;JetBrains Mono&#x27;, monospace&quot;,fontSize:13,color:&#x27;var(--ink-2)&#x27;}}&gt;
+        {meta.map(([l, v]) =&gt; &lt;span key={l}&gt;&lt;span style={{color:&#x27;var(--ink-3)&#x27;,fontSize:10.5,letterSpacing:&#x27;1.2px&#x27;}}&gt;{l} &lt;/span&gt;&lt;b style={{color:&#x27;var(--ink)&#x27;}}&gt;{v}&lt;/b&gt;&lt;/span&gt;)}
+        &lt;span&gt;&lt;span style={{color:&#x27;var(--amber)&#x27;,fontSize:10.5,letterSpacing:&#x27;1.2px&#x27;}}&gt;WINDOW &lt;/span&gt;&lt;b style={{color:&#x27;var(--ink)&#x27;}}&gt;{windowText}&lt;/b&gt;&lt;/span&gt;
       &lt;/div&gt;
-      &lt;div className=&quot;ipo-window&quot;&gt;&lt;span className=&quot;l&quot;&gt;BIDDING WINDOW&lt;/span&gt;&lt;span className=&quot;r&quot;&gt;{windowText}&lt;/span&gt;&lt;/div&gt;
-      &lt;div style={{marginTop:&#x27;auto&#x27;,paddingTop:20}}&gt;
+      &lt;div style={{marginTop:&#x27;auto&#x27;,paddingTop:16}}&gt;
         &lt;button className={&#x27;btn&#x27; + (ctaClass ? &#x27; &#x27; + ctaClass : &#x27;&#x27;)} style={{width:&#x27;100%&#x27;}}
           onClick={e =&gt; { e.stopPropagation(); onPick(); }}&gt;{cta}&lt;/button&gt;
       &lt;/div&gt;
@@ -3087,7 +3113,7 @@ function Start({ ctx }) {
   if (pick === &#x27;zomato&#x27;) return &lt;ZomatoStart ctx={ctx} onBack={() =&gt; setPick(null)} /&gt;;
   const goJio = () =&gt; { try { window.top.location.href = JIO_URL; } catch (e) { window.location.href = JIO_URL; } };
   return (
-    &lt;div style={{padding:&#x27;40px clamp(14px,4vw,24px) 80px&#x27;,maxWidth:1200,margin:&#x27;0 auto&#x27;,width:&#x27;100%&#x27;,boxSizing:&#x27;border-box&#x27;}}&gt;
+    &lt;div style={{padding:&#x27;24px clamp(14px,4vw,24px) 28px&#x27;,maxWidth:1200,margin:&#x27;0 auto&#x27;,width:&#x27;100%&#x27;,boxSizing:&#x27;border-box&#x27;}}&gt;
       &lt;div className=&quot;hero-l&quot;&gt;
         &lt;span className=&quot;hero-tag&quot;&gt;&lt;span className=&quot;logo-dot&quot; style={{width:7,height:7}}&gt;&lt;/span&gt; IPO BONANZA · PICK YOUR IPO&lt;/span&gt;
         &lt;h1 style={{fontSize:&#x27;clamp(36px,7vw,56px)&#x27;}}&gt;Two real IPOs. &lt;span className=&quot;accent&quot;&gt;Pick one.&lt;/span&gt;&lt;/h1&gt;
