@@ -317,7 +317,7 @@ input{font-family:inherit}
   padding:18px 22px;border-radius:6px;background:var(--panel-2);border:1px solid var(--line-2);color:var(--ink);
   margin:0 auto;display:inline-block;min-width:min(340px,86vw);transition:all 0.18s}
 .lottery-pan.spinning{color:var(--amber);border-color:var(--amber);box-shadow:0 0 0 1px rgba(255,182,72,0.4), 0 0 30px rgba(255,182,72,0.25)}
-.board-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.board-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;margin-top:14px}
 @media(max-width:860px){.board-grid{grid-template-columns:1fr}}
 .hni-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 12px;background:var(--panel-2);
   border:1px solid var(--line-2);border-radius:4px;font-size:13.5px;font-weight:700;margin-bottom:8px}
@@ -390,6 +390,19 @@ body.has-qr .quiet{padding-left:140px;padding-right:140px}
 #kamTweet blockquote.twitter-tweet p{color:var(--ink);margin:0 0 10px}
 #kamTweet blockquote.twitter-tweet a{color:#5aa9ff}
 #kamTweet .twitter-tweet-rendered{margin:0 auto!important}
+/* grouped P&L (big classes) */
+.pg-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:860px){.pg-grid{grid-template-columns:1fr}}
+.pg{border-radius:12px;padding:14px 16px;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line-2)}
+.pg.hni{border-color:rgba(201,168,76,0.6)} .pg.ret{border-color:rgba(42,157,143,0.6)}
+.pg-h{display:flex;justify-content:space-between;align-items:baseline;font-family:'JetBrains Mono',monospace;font-weight:800;letter-spacing:1.5px;font-size:13px;color:var(--ink-2);text-transform:uppercase}
+.pg.hni .pg-h span{color:var(--gold-ifm)} .pg.ret .pg-h span{color:var(--teal-ifm)}
+.pg-h b{font-size:26px;color:var(--ink)}
+.pg-nums{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 10px;font-size:14px;color:var(--ink-2)}
+.pg-nums b{color:var(--ink)} .pg-nums .up{color:var(--up);font-weight:700}
+#kamTweetCard{max-width:520px;margin:0 auto;background:var(--panel-2);border:1px solid var(--line-2);border-radius:12px;padding:16px 20px;font-size:15px;line-height:1.5;color:var(--ink)}
+.kam-card-h{margin-bottom:10px;font-size:15px} .kam-card-h span{color:var(--ink-3);font-size:13px}
+#kamTweetCard p{margin:0 0 8px} .kam-card-f{color:var(--ink-3);font-size:13px;margin-top:10px!important}
 /* side-by-side doors */
 .doors{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px}
 @media(max-width:860px){.doors{grid-template-columns:1fr}}
@@ -567,7 +580,8 @@ input[type=range].lotslider::-moz-range-thumb{width:30px;height:30px;border-radi
     busy=false;
     if(queued){ queued=false; requestAnimationFrame(fit); }
   }
-  var t=null; function soon(){ clearTimeout(t); t=setTimeout(fit,60); }
+  /* throttle, not debounce: during long animations changes never 'settle', so refit at most every 120ms */
+  var t=null; function soon(){ if(t) return; t=setTimeout(function(){ t=null; fit(); },120); }
   addEventListener('resize',soon);
   function scaleKey(k){
     var a=adj();
@@ -1631,7 +1645,7 @@ function nextLabel(){
   if(st.phase==='lobby') return 'OPEN BIDDING  →';
   if(st.phase==='subs') return st.subsStep<4?'REVEAL  →':'TO ALLOTMENT  →';
   if(st.phase==='allot'&&st.allotStep==='board') return 'LISTING DAY  →';
-  if(st.phase==='listing') return st.listStep===0?'THE P&L BOARD  →':(st.listStep===1?'THE LESSON  →':'ONE MORE THING  →');
+  if(st.phase==='listing') return st.listStep===0?'THE P&L BOARD  →':(st.listStep===1?'WHO MADE MONEY?  →':'ONE MORE THING  →');
   if(st.phase==='kamath') return 'THE TAKEAWAY  →';
   return null;
 }
@@ -1684,7 +1698,7 @@ function hostS1(){
     '</div>'+
     '<div><div class="ipo-card">'+
       '<div style="display:flex;align-items:center;gap:14px">'+
-        '<div class="ipo-logo">J</div>'+
+        '<div class="ipo-logo" style="background:#fff;box-shadow:0 6px 24px rgba(15,60,201,0.35)"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg" alt="Jio logo" style="width:38px;height:38px"></div>'+
         '<div><div class="mono dim" style="font-size:11px;letter-spacing:1.5px">'+I.caseLabel+'</div>'+
         '<h3>'+esc(I.fullName).toUpperCase()+'</h3><div class="sector">'+esc(I.sector)+'</div></div>'+
       '</div>'+
@@ -1809,7 +1823,7 @@ function hostS4(){
         '<div class="qr-big"><div id="lobbyQR"></div></div>'+
         '<div class="join-url">'+esc(playerUrl())+'</div>'+
       '</div>'+
-      '<div class="panel"><div class="panel-head"><span>PLAYERS JOINED · LIVE</span><span class="mono dim">TAP QR TOP-RIGHT TO ENLARGE</span></div>'+
+      '<div class="panel"><div class="panel-head"><span>PLAYERS JOINED · LIVE</span><span class="mono dim">CLICK THE QR TO ENLARGE</span></div>'+
         '<div class="panel-body">'+
           '<div class="pcount">'+ps.length+' <span class="cap">IN THE ROOM</span></div>'+
           '<div class="pgrid">'+(ps.length?ps.map(p=>chipHTML(p)).join(''):'<span class="dim" style="font-size:13.5px">Waiting for the first phone…</span>')+'</div>'+
@@ -2030,6 +2044,31 @@ function hostS9(){
     '</div></div>';
   }
   const ps=Object.values(state.players||{}).slice().sort((a,b)=>(b.gain||0)-(a.gain||0)||(b.bid||0)-(a.bid||0));
+  if(ls===1&&ps.length>16){
+    /* Big class: group by outcome. Everyone in a group has identical numbers
+       (retail winners always get 1 lot, HNI winners always 15), so one line per group is exact. */
+    const g=(f)=>ps.filter(f);
+    const groups=[
+      {key:'hw', title:'HNI winners', ps:g(p=>p.cat==='HNI'&&p.win), cls:'hni', shares:I.hniWinLots*I.lotShares},
+      {key:'rw', title:'Retail winners', ps:g(p=>p.cat==='RETAIL'&&p.win), cls:'ret', shares:I.lotShares},
+      {key:'no', title:'Applied — got nothing', ps:g(p=>p.bid>0&&!p.win), cls:'none', shares:0},
+      {key:'sat', title:'Didn’t apply', ps:g(p=>!(p.bid>0)), cls:'none', shares:0},
+    ].filter(x=>x.ps.length);
+    const chips=list=>'<div class="door-people">'+list.map(p=>'<span class="dp '+(p.win?'won':'lost')+'">'+p.av+' '+esc(p.name)+'</span>').join('')+'</div>';
+    const card=x=>{
+      const inv=x.shares*I.issuePrice, gain=x.shares*I.gainPerShare;
+      const nums=x.shares
+        ? '<div class="pg-nums"><span><b>'+x.shares+'</b> shares each</span><span>invested <b>'+rup(inv)+'</b></span><span class="up">+'+rup(gain)+' each · +'+I.gainPct+'%</span></div>'
+        : '<div class="pg-nums"><span>'+(x.key==='no'?'Money returned in full · <b>₹0</b> made':'Kept their ₹10 lakh · <b>₹0</b> made')+'</span></div>';
+      return '<div class="pg '+x.cls+'"><div class="pg-h"><span>'+x.title+'</span><b>'+x.ps.length+'</b></div>'+nums+chips(x.ps)+'</div>';
+    };
+    const totalGain=ps.reduce((t,p)=>t+(p.gain||0),0), winners=ps.filter(p=>p.win).length;
+    return '<div class="stage"><div class="stage-head"><span class="stage-num">LISTING DAY · P&L</span></div>'+
+      '<div class="stage-title">What everyone actually made.</div>'+
+      '<p class="stage-sub">'+winners+' of '+ps.length+' people got shares. Every one of them made the same <b style="color:var(--up)">+'+I.gainPct+'%</b> on what they invested — the room made <b style="color:var(--up)">+'+rup(totalGain)+'</b> in total.</p>'+
+      '<div class="pg-grid">'+groups.map(card).join('')+'</div>'+
+    '</div>';
+  }
   if(ls===1){
     const rows=ps.map(p=>{
       const cat=p.bid>0?p.cat:'—';
@@ -2100,20 +2139,37 @@ function hostS10(){
         '<div class="kam-credit">Photo: SP2904 · CC BY-SA 4.0 · Wikimedia Commons</div>'+
       '</div>'+
       '<div class="kam-right">'+
-        '<div id="kamTweet"><blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none" data-align="center">'+
-          '<p lang="en" dir="ltr">Nikhil Kamath on the Jio Platforms IPO on @CNBCTV18News @CNBCTV18Live @ShereenBhan<br><br>We’ve all benefited from cheap internet<br><br>Wanted ₹500 crore worth of exposure to Jio Platforms but got just ₹25 cr, leaving him “a little disappointed”<br><br>#JioPlatforms</p>'+
-          '— Nigel D’Souza, Senior Editor, CNBC-TV18 (@Nigel__DSouza) <a href="'+KAMATH_TWEET+'">21 October 2026</a></blockquote></div>'+
+        /* the text card is always shown; X's live post replaces it only once it has really drawn */
+        '<div id="kamTweetCard" class="kam-card">'+
+          '<div class="kam-card-h"><b>Nigel D’Souza</b> <span>@Nigel__DSouza · Senior Editor, CNBC-TV18</span></div>'+
+          '<p>Nikhil Kamath on the Jio Platforms IPO on @CNBCTV18News @CNBCTV18Live @ShereenBhan</p>'+
+          '<p>We’ve all benefited from cheap internet</p>'+
+          '<p>Wanted ₹500 crore worth of exposure to Jio Platforms but got just ₹25 cr, leaving him “a little disappointed”</p>'+
+          '<p class="kam-card-f">#JioPlatforms · 12:14 PM · 21 Oct 2026 · Post on X</p>'+
+        '</div>'+
+        '<div id="kamTweet" style="height:0;overflow:hidden"><blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none" data-align="center">'+
+          '<p lang="en" dir="ltr">Nikhil Kamath on the Jio Platforms IPO</p><a href="'+KAMATH_TWEET+'">21 October 2026</a></blockquote></div>'+
       '</div>'+
     '</div>'+
   '</div>';
 }
 function loadTweet(){
   const box=document.getElementById('kamTweet'); if(!box) return;
-  if(window.twttr&&window.twttr.widgets){ window.twttr.widgets.load(box); return; }
-  if(document.getElementById('twttrJs')) return;
-  const sc=document.createElement('script'); sc.id='twttrJs'; sc.async=true; sc.charset='utf-8';
-  sc.src='https://platform.twitter.com/widgets.js';
-  document.head.appendChild(sc);
+  const kick=()=>{ if(window.twttr&&window.twttr.widgets&&window.twttr.widgets.load) window.twttr.widgets.load(box); };
+  if(!document.getElementById('twttrJs')){
+    const sc=document.createElement('script'); sc.id='twttrJs'; sc.async=true; sc.charset='utf-8';
+    sc.src='https://platform.twitter.com/widgets.js'; sc.onload=kick;
+    document.head.appendChild(sc);
+  } else kick();
+  /* swap in the live post only when X has drawn it at a real size; otherwise keep the card */
+  let tries=0;
+  const t=setInterval(()=>{
+    const b=document.getElementById('kamTweet'), card=document.getElementById('kamTweetCard');
+    if(!b||!card){ clearInterval(t); return; }
+    const f=b.querySelector('iframe');
+    if(f&&f.offsetHeight>150){ b.style.height=''; b.style.overflow=''; card.style.display='none'; clearInterval(t); }
+    else if(++tries>40) clearInterval(t);
+  },250);
 }
 
 /* ── S11: the lesson ── */
@@ -2144,7 +2200,7 @@ function renderHost(){
   const m=document.getElementById('hostMain');
   const ph=state.phase;
   if(ph==='slides'){ m.innerHTML=state.slide===1?hostS1():(state.slide===2?hostS2():hostS3()); }
-  else if(ph==='lobby'){ m.innerHTML=hostS4(); makeQR(document.getElementById('lobbyQR'),240); }
+  else if(ph==='lobby'){ m.innerHTML=hostS4(); const lq=document.getElementById('lobbyQR'); makeQR(lq,240); lq.style.cursor='zoom-in'; lq.onclick=openQRFull; }
   else if(ph==='bidding'){ m.innerHTML=hostS5(); updateBiddingBars();
     const b=document.getElementById('btnCloseIPO'); if(b) b.onclick=closeIPO; }
   else if(ph==='dot'){ m.innerHTML=''; startDot(); }
@@ -2585,7 +2641,7 @@ function playerPnlCard(p){
       '<div class="presult-big won" style="text-align:center">+'+rup(gain)+'</div>'+
       '<div class="prow"><span class="l">YOUR SHARES</span><span class="v">'+shares+' × +₹'+fmtIN(I.gainPerShare)+'</span></div>'+
       '<div class="prow"><span class="l">YOU INVESTED</span><span class="v">'+rup(p.cost)+'</span></div>'+
-      '<div class="prow"><span class="l">YOUR RETURN</span><span class="v up">+'+pct1(roi)+'%</span></div>'+
+      '<div class="prow"><span class="l">YOUR RETURN</span><span class="v up">+'+(Math.round(roi*100)/100).toFixed(2)+'%</span></div>'+
       '<div class="prow"><span class="l">LOCKED DURING THE IPO</span><span class="v">'+rup(p.bid)+'</span></div>'+
       '<div class="prow"><span class="l">YOUR ₹10,00,000 IS NOW</span><span class="v up">'+rup(finalTotal)+'</span></div>'+
       '<p class="psub" style="margin-top:14px">'+(p.cat==='RETAIL'

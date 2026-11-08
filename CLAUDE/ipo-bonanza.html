@@ -1857,6 +1857,14 @@ addEventListener('keydown',function(e){
 
 /* latin */
 
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  /* final score: compact so the debrief fits one screen */
+  .score-hero .stat-row { grid-template-columns: repeat(4, 1fr) !important; }
+  .score-hero .stat-row .stat-cell { padding: 8px 10px; }
+  .badge-grid { display: flex !important; flex-wrap: wrap; gap: 6px !important; }
+  .badge-grid .badge { padding: 5px 10px !important; }
+  .recap-list .recap-row { padding-top: 6px !important; padding-bottom: 6px !important; }
+  .recap-list .recap-text { font-size: 12.5px !important; line-height: 1.4 !important; }
 &lt;/style&gt;
 &lt;style&gt;
   :root {
@@ -2817,7 +2825,8 @@ addEventListener('keydown',function(e){
     busy=false;
     if(queued){ queued=false; requestAnimationFrame(fit); }
   }
-  var t=null; function soon(){ clearTimeout(t); t=setTimeout(fit,60); }
+  /* throttle, not debounce: during long animations changes never &#x27;settle&#x27;, so refit at most every 120ms */
+  var t=null; function soon(){ if(t) return; t=setTimeout(function(){ t=null; fit(); },120); }
   addEventListener(&#x27;resize&#x27;,soon);
   function scaleKey(k){
     var a=adj();
@@ -3004,6 +3013,7 @@ function App() {
   const back = () =&gt; { setStage(s =&gt; Math.max(0, s - 1)); scrollTop(); };
 
   const ctx = { stage, setStage, xp, addXp, game, setGame, grantBadge, next, back };
+  window.__ipoStage = setStage;   /* QA hook: jump straight to a stage when checking layouts */
 
   return (
     &lt;div className=&quot;app&quot;&gt;
@@ -3037,7 +3047,7 @@ function TopTape({ xp, stage }) {
       &lt;/div&gt;
       &lt;div className=&quot;tape-r&quot;&gt;
         {stage &gt; 0 &amp;&amp; stage &lt; 9 &amp;&amp; (
-          &lt;span className=&quot;tape-pill&quot;&gt;&lt;span className=&quot;dot&quot;&gt;&lt;/span&gt; ISSUE LIVE · NEXAFIN&lt;/span&gt;
+          &lt;span className=&quot;tape-pill&quot;&gt;&lt;span className=&quot;dot&quot;&gt;&lt;/span&gt; ISSUE LIVE · ZOMATO&lt;/span&gt;
         )}
         &lt;span className=&quot;xp-pill&quot;&gt;★ {xp.toLocaleString(&#x27;en-IN&#x27;)} XP&lt;/span&gt;
         &lt;span className=&quot;tape-meta&quot;&gt;SESSION 01&lt;/span&gt;
@@ -3075,15 +3085,19 @@ function Stepper({ stage }) {
    ============================================================ */
 const JIO_URL = &#x27;/ipo-bonanza-jio&#x27;;
 
-function IpoChoice({ logo, logoBg, label, name, sector, meta, windowText, mode, modeColor, how, cta, ctaClass, onPick }) {
+/* Brand-coloured IPO cards: Zomato red #E23744, Jio blue #0F3CC9. The badges echo each
+   brand (lowercase red wordmark / round blue mark) without reproducing the actual logo files. */
+function IpoChoice({ badge, brand, label, name, sector, meta, windowText, mode, how, cta, onPick }) {
   return (
     &lt;div className=&quot;ipo-card&quot; role=&quot;button&quot; tabIndex={0} onClick={onPick}
       onKeyDown={e =&gt; { if (e.key === &#x27;Enter&#x27; || e.key === &#x27; &#x27;) { e.preventDefault(); onPick(); } }}
-      style={{cursor:&#x27;pointer&#x27;,display:&#x27;flex&#x27;,flexDirection:&#x27;column&#x27;,minWidth:0,transition:&#x27;transform .15s, border-color .15s&#x27;}}
-      onMouseEnter={e =&gt; { e.currentTarget.style.transform=&#x27;translateY(-3px)&#x27;; e.currentTarget.style.borderColor=modeColor; }}
-      onMouseLeave={e =&gt; { e.currentTarget.style.transform=&#x27;&#x27;; e.currentTarget.style.borderColor=&#x27;&#x27;; }}&gt;
+      style={{cursor:&#x27;pointer&#x27;,display:&#x27;flex&#x27;,flexDirection:&#x27;column&#x27;,minWidth:0,transition:&#x27;transform .15s, box-shadow .15s&#x27;,
+        borderColor:brand+&#x27;88&#x27;,borderTop:&#x27;4px solid &#x27;+brand,
+        background:&#x27;linear-gradient(180deg,&#x27;+brand+&#x27;1f 0%, var(--panel-2) 38%, var(--panel) 100%)&#x27;}}
+      onMouseEnter={e =&gt; { e.currentTarget.style.transform=&#x27;translateY(-3px)&#x27;; e.currentTarget.style.boxShadow=&#x27;0 14px 40px &#x27;+brand+&#x27;40&#x27;; }}
+      onMouseLeave={e =&gt; { e.currentTarget.style.transform=&#x27;&#x27;; e.currentTarget.style.boxShadow=&#x27;&#x27;; }}&gt;
       &lt;div style={{display:&#x27;flex&#x27;,alignItems:&#x27;center&#x27;,gap:14}}&gt;
-        &lt;div className=&quot;ipo-logo&quot; style={logoBg ? {background:logoBg,color:&#x27;#fff&#x27;,boxShadow:&#x27;0 6px 24px rgba(59,130,246,0.3)&#x27;} : null}&gt;{logo}&lt;/div&gt;
+        {badge}
         &lt;div style={{flex:1,minWidth:0}}&gt;
           &lt;div className=&quot;mono dim&quot; style={{fontSize:11,letterSpacing:&#x27;1.5px&#x27;}}&gt;{label}&lt;/div&gt;
           &lt;h3 style={{margin:&#x27;4px 0 2px&#x27;}}&gt;{name}&lt;/h3&gt;
@@ -3091,22 +3105,30 @@ function IpoChoice({ logo, logoBg, label, name, sector, meta, windowText, mode, 
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div style={{marginTop:16,display:&#x27;inline-flex&#x27;,alignSelf:&#x27;flex-start&#x27;,alignItems:&#x27;center&#x27;,gap:8,padding:&#x27;5px 10px&#x27;,borderRadius:4,
-        fontFamily:&quot;&#x27;JetBrains Mono&#x27;, monospace&quot;,fontSize:11,fontWeight:800,letterSpacing:&#x27;1.5px&#x27;,color:modeColor,
-        border:&#x27;1px solid &#x27;+modeColor,background:&#x27;rgba(255,255,255,0.03)&#x27;}}&gt;
-        &lt;span style={{width:7,height:7,borderRadius:&#x27;50%&#x27;,background:modeColor,boxShadow:&#x27;0 0 8px &#x27;+modeColor}}&gt;&lt;/span&gt;{mode}
+        fontFamily:&quot;&#x27;JetBrains Mono&#x27;, monospace&quot;,fontSize:11,fontWeight:800,letterSpacing:&#x27;1.5px&#x27;,color:&#x27;#fff&#x27;,
+        background:brand}}&gt;
+        &lt;span style={{width:7,height:7,borderRadius:&#x27;50%&#x27;,background:&#x27;#fff&#x27;}}&gt;&lt;/span&gt;{mode}
       &lt;/div&gt;
       &lt;p style={{fontSize:15,color:&#x27;var(--ink-2)&#x27;,lineHeight:1.45,margin:&#x27;10px 0 0&#x27;}}&gt;{how}&lt;/p&gt;
       &lt;div style={{marginTop:14,display:&#x27;flex&#x27;,flexWrap:&#x27;wrap&#x27;,gap:&#x27;6px 18px&#x27;,fontFamily:&quot;&#x27;JetBrains Mono&#x27;, monospace&quot;,fontSize:13,color:&#x27;var(--ink-2)&#x27;}}&gt;
         {meta.map(([l, v]) =&gt; &lt;span key={l}&gt;&lt;span style={{color:&#x27;var(--ink-3)&#x27;,fontSize:10.5,letterSpacing:&#x27;1.2px&#x27;}}&gt;{l} &lt;/span&gt;&lt;b style={{color:&#x27;var(--ink)&#x27;}}&gt;{v}&lt;/b&gt;&lt;/span&gt;)}
-        &lt;span&gt;&lt;span style={{color:&#x27;var(--amber)&#x27;,fontSize:10.5,letterSpacing:&#x27;1.2px&#x27;}}&gt;WINDOW &lt;/span&gt;&lt;b style={{color:&#x27;var(--ink)&#x27;}}&gt;{windowText}&lt;/b&gt;&lt;/span&gt;
+        &lt;span&gt;&lt;span style={{color:&#x27;var(--ink-3)&#x27;,fontSize:10.5,letterSpacing:&#x27;1.2px&#x27;}}&gt;WINDOW &lt;/span&gt;&lt;b style={{color:&#x27;var(--ink)&#x27;}}&gt;{windowText}&lt;/b&gt;&lt;/span&gt;
       &lt;/div&gt;
       &lt;div style={{marginTop:&#x27;auto&#x27;,paddingTop:16}}&gt;
-        &lt;button className={&#x27;btn&#x27; + (ctaClass ? &#x27; &#x27; + ctaClass : &#x27;&#x27;)} style={{width:&#x27;100%&#x27;}}
+        &lt;button className=&quot;btn&quot; style={{width:&#x27;100%&#x27;,background:brand,color:&#x27;#fff&#x27;,boxShadow:&#x27;0 6px 24px &#x27;+brand+&#x27;55&#x27;}}
           onClick={e =&gt; { e.stopPropagation(); onPick(); }}&gt;{cta}&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   );
 }
+/* Logos: Wikimedia Commons, public domain (text logos below the threshold of originality);
+   both remain trademarks of their owners — used here only to identify the companies. */
+const ZOMATO_RED=&#x27;#E23744&#x27;, JIO_BLUE=&#x27;#0F3CC9&#x27;;
+const ZOMATO_LOGO=&#x27;https://upload.wikimedia.org/wikipedia/commons/b/bd/Zomato_Logo.svg&#x27;;
+const JIO_LOGO=&#x27;https://upload.wikimedia.org/wikipedia/commons/b/bf/Reliance_Jio_Logo.svg&#x27;;
+const logoTile={width:64,height:64,borderRadius:14,background:&#x27;#fff&#x27;,display:&#x27;flex&#x27;,alignItems:&#x27;center&#x27;,justifyContent:&#x27;center&#x27;,flexShrink:0,boxShadow:&#x27;0 6px 22px rgba(0,0,0,0.35)&#x27;};
+const ZomatoBadge=&lt;div style={logoTile}&gt;&lt;img src={ZOMATO_LOGO} alt=&quot;Zomato logo&quot; style={{width:52}} /&gt;&lt;/div&gt;;
+const JioBadge=&lt;div style={logoTile}&gt;&lt;img src={JIO_LOGO} alt=&quot;Jio logo&quot; style={{width:46,height:46}} /&gt;&lt;/div&gt;;
 
 function Start({ ctx }) {
   const [pick, setPick] = useState(null);
@@ -3123,20 +3145,21 @@ function Start({ ctx }) {
       &lt;/div&gt;
       &lt;div style={{display:&#x27;grid&#x27;,gridTemplateColumns:&#x27;repeat(auto-fit,minmax(min(320px,100%),1fr))&#x27;,gap:20}}&gt;
         &lt;IpoChoice
-          logo=&quot;Z&quot; label=&quot;INDIA’S FIRST UNICORN IPO · 2021&quot; name=&quot;Zomato Limited&quot; sector=&quot;ONLINE FOOD DELIVERY · CONSUMER TECH&quot;
-          mode=&quot;SOLO · ON YOUR OWN&quot; modeColor=&quot;var(--up)&quot;
+          badge={ZomatoBadge} brand={ZOMATO_RED} label=&quot;INDIA’S FIRST UNICORN IPO · 2021&quot; name=&quot;Zomato Limited&quot; sector=&quot;ONLINE FOOD DELIVERY · CONSUMER TECH&quot;
+          mode=&quot;SOLO · ON YOUR OWN&quot;
           how=&quot;Play it yourself, at your own pace. A loss-making startup: hunt the red flags, place your bid, survive the lottery.&quot;
           meta={[[&#x27;PRICE BAND&#x27;, COMPANY.ipoMeta.priceBand], [&#x27;LOT SIZE&#x27;, COMPANY.ipoMeta.lotSize], [&#x27;ISSUE SIZE&#x27;, COMPANY.ipoMeta.issueSize], [&#x27;FRESH / OFS&#x27;, COMPANY.ipoMeta.freshIssue + &#x27; / &#x27; + COMPANY.ipoMeta.ofs]]}
           windowText={COMPANY.ipoMeta.window}
           cta=&quot;PLAY ZOMATO  →&quot; onPick={() =&gt; setPick(&#x27;zomato&#x27;)} /&gt;
         &lt;IpoChoice
-          logo=&quot;J&quot; logoBg=&quot;linear-gradient(135deg,#3b82f6,#1e40af)&quot; label=&quot;INDIA’S LARGEST IPO EVER · 2026&quot; name=&quot;Jio Platforms Limited&quot; sector=&quot;TELECOM · DIGITAL SERVICES&quot;
-          mode=&quot;LIVE · WHOLE CLASS ON PHONES&quot; modeColor=&quot;var(--amber)&quot;
+          badge={JioBadge} brand={JIO_BLUE} label=&quot;INDIA’S LARGEST IPO EVER · 2026&quot; name=&quot;Jio Platforms Limited&quot; sector=&quot;TELECOM · DIGITAL SERVICES&quot;
+          mode=&quot;LIVE · WHOLE CLASS ON PHONES&quot;
           how=&quot;Run it on the big screen. Everyone gets ₹10 lakh, applies as Retail or HNI from their phone — then watch who actually gets allotment.&quot;
           meta={[[&#x27;PRICE BAND&#x27;, &#x27;₹1,065 – ₹1,119&#x27;], [&#x27;LOT SIZE&#x27;, &#x27;12 shares&#x27;], [&#x27;ISSUE SIZE&#x27;, &#x27;₹30,187.65 Cr&#x27;], [&#x27;LOT COST&#x27;, &#x27;₹13,428&#x27;]]}
           windowText=&quot;21 – 23 Oct 2026&quot;
-          cta=&quot;RUN JIO LIVE  →&quot; ctaClass=&quot;amber&quot; onPick={goJio} /&gt;
+          cta=&quot;RUN JIO LIVE  →&quot; onPick={goJio} /&gt;
       &lt;/div&gt;
+      &lt;div style={{marginTop:10,fontSize:10.5,color:&#x27;var(--ink-3)&#x27;,textAlign:&#x27;center&#x27;}}&gt;Zomato and Jio logos are trademarks of their owners, shown only to identify the companies.&lt;/div&gt;
     &lt;/div&gt;
   );
 }
@@ -3165,7 +3188,7 @@ function ZomatoStart({ ctx, onBack }) {
       &lt;div&gt;
         &lt;div className=&quot;ipo-card&quot;&gt;
           &lt;div style={{display:&#x27;flex&#x27;,alignItems:&#x27;center&#x27;,gap:14}}&gt;
-            &lt;div className=&quot;ipo-logo&quot;&gt;Z&lt;/div&gt;
+            &lt;div className=&quot;ipo-logo&quot; style={{background:&#x27;#fff&#x27;,boxShadow:&#x27;0 6px 24px rgba(226,55,68,0.35)&#x27;}}&gt;&lt;img src={ZOMATO_LOGO} alt=&quot;Zomato logo&quot; style={{width:40}} /&gt;&lt;/div&gt;
             &lt;div&gt;
               &lt;div className=&quot;mono dim&quot; style={{fontSize:11,letterSpacing:&#x27;1.5px&#x27;}}&gt;{COMPANY.caseLabel}&lt;/div&gt;
               &lt;h3&gt;{COMPANY.name}&lt;/h3&gt;
@@ -3208,7 +3231,7 @@ function CompanyIntro({ ctx }) {
           &lt;div className=&quot;panel-head&quot;&gt;&lt;span&gt;ZOMATO · COMPANY SNAPSHOT&lt;/span&gt;&lt;span className=&quot;mono dim&quot;&gt;{COMPANY.caseLabel}&lt;/span&gt;&lt;/div&gt;
           &lt;div style={{padding:&#x27;16px 18px&#x27;}}&gt;
             &lt;div style={{display:&#x27;flex&#x27;,alignItems:&#x27;center&#x27;,gap:14, marginBottom:14}}&gt;
-              &lt;div className=&quot;ipo-logo&quot;&gt;Z&lt;/div&gt;
+              &lt;div className=&quot;ipo-logo&quot; style={{background:&#x27;#fff&#x27;,boxShadow:&#x27;0 6px 24px rgba(226,55,68,0.35)&#x27;}}&gt;&lt;img src={ZOMATO_LOGO} alt=&quot;Zomato logo&quot; style={{width:40}} /&gt;&lt;/div&gt;
               &lt;div&gt;
                 &lt;div style={{fontSize:18,fontWeight:800}}&gt;{COMPANY.name}&lt;/div&gt;
                 &lt;div className=&quot;mono dim&quot; style={{fontSize:11,letterSpacing:&#x27;1.5px&#x27;}}&gt;{COMPANY.sector}&lt;/div&gt;
@@ -3256,86 +3279,92 @@ function CompanyIntro({ ctx }) {
    STAGE 2 — DRHP RED-FLAG HUNT
    ============================================================ */
 function DRHPHunt({ ctx }) {
-  const [flagged, setFlagged] = useState(new Set());
-  const [submitted, setSubmitted] = useState(false);
+  /* One statement per screen so the whole stage fits a projector without scrolling. */
+  const [idx, setIdx] = useState(0);
+  const [answers, setAnswers] = useState({});          // i -&gt; true (flagged) | false (fine)
+  const [done, setDone] = useState(false);
+  const N = DRHP_ITEMS.length;
+  const d = DRHP_ITEMS[Math.min(idx, N - 1)];
+  const answered = Object.prototype.hasOwnProperty.call(answers, idx);
+  const realFlags = DRHP_ITEMS.map((x, i) =&gt; x.isFlag ? i : null).filter(x =&gt; x !== null);
+  const flaggedIdx = Object.keys(answers).filter(k =&gt; answers[k]).map(Number);
+  const correctCount = flaggedIdx.filter(i =&gt; DRHP_ITEMS[i].isFlag).length;
+  const wrongCount = flaggedIdx.filter(i =&gt; !DRHP_ITEMS[i].isFlag).length;
+  const missed = realFlags.filter(i =&gt; !answers[i]).length;
 
-  const toggle = (i) =&gt; {
-    if (submitted) return;
-    const s = new Set(flagged);
-    if (s.has(i)) s.delete(i); else s.add(i);
-    setFlagged(s);
-  };
-
-  const realFlags = DRHP_ITEMS.map((d, i) =&gt; d.isFlag ? i : null).filter(x =&gt; x !== null);
-  const correctCount = [...flagged].filter(i =&gt; DRHP_ITEMS[i].isFlag).length;
-  const wrongCount   = [...flagged].filter(i =&gt; !DRHP_ITEMS[i].isFlag).length;
-  const missed       = realFlags.filter(i =&gt; !flagged.has(i)).length;
-
-  const submit = () =&gt; {
-    setSubmitted(true);
-    const score = correctCount * 30 - wrongCount * 15;
-    ctx.addXp(Math.max(0, score));
-    ctx.setGame(g =&gt; ({ ...g, correctFlags: [...flagged].filter(i =&gt; DRHP_ITEMS[i].isFlag), wrongFlags: [...flagged].filter(i =&gt; !DRHP_ITEMS[i].isFlag) }));
+  const answer = (flag) =&gt; { if (!answered) setAnswers(a =&gt; ({ ...a, [idx]: flag })); };
+  const finish = () =&gt; {
+    setDone(true);
+    ctx.addXp(Math.max(0, correctCount * 30 - wrongCount * 15));
+    ctx.setGame(g =&gt; ({ ...g, correctFlags: flaggedIdx.filter(i =&gt; DRHP_ITEMS[i].isFlag), wrongFlags: flaggedIdx.filter(i =&gt; !DRHP_ITEMS[i].isFlag) }));
     if (correctCount === realFlags.length &amp;&amp; wrongCount === 0) ctx.grantBadge(&#x27;DD HOUND&#x27;);
   };
 
+  const dots = (
+    &lt;div style={{display:&#x27;flex&#x27;,gap:7}}&gt;
+      {DRHP_ITEMS.map((x, i) =&gt; {
+        const has = Object.prototype.hasOwnProperty.call(answers, i);
+        const right = has &amp;&amp; (answers[i] === x.isFlag);
+        return &lt;span key={i} style={{width:11,height:11,borderRadius:&#x27;50%&#x27;,
+          background: !has ? &#x27;var(--panel-3)&#x27; : (right ? &#x27;var(--up)&#x27; : &#x27;var(--dn)&#x27;),
+          boxShadow: i === idx &amp;&amp; !done ? &#x27;0 0 0 3px rgba(255,182,72,0.4)&#x27; : &#x27;none&#x27;}} /&gt;;
+      })}
+    &lt;/div&gt;
+  );
+
+  if (done) {
+    return (
+      &lt;div className=&quot;stage&quot;&gt;
+        &lt;div className=&quot;stage-head&quot; style={{display:&#x27;flex&#x27;,justifyContent:&#x27;space-between&#x27;,alignItems:&#x27;center&#x27;}}&gt;&lt;span className=&quot;stage-num&quot;&gt;STAGE 02 / 08 · RESULT&lt;/span&gt;{dots}&lt;/div&gt;
+        &lt;div className=&quot;stage-title&quot;&gt;Your red-flag score.&lt;/div&gt;
+        &lt;div style={{display:&#x27;grid&#x27;,gridTemplateColumns:&#x27;repeat(3,1fr)&#x27;,gap:12,margin:&#x27;14px 0 18px&#x27;}}&gt;
+          &lt;div className=&quot;drhp-row&quot; style={{display:&#x27;block&#x27;,textAlign:&#x27;center&#x27;}}&gt;&lt;div className=&quot;mono up&quot; style={{fontSize:30,fontWeight:800}}&gt;{correctCount}/{realFlags.length}&lt;/div&gt;&lt;div className=&quot;mono dim&quot; style={{fontSize:11,letterSpacing:1.5}}&gt;RED FLAGS CAUGHT&lt;/div&gt;&lt;/div&gt;
+          &lt;div className=&quot;drhp-row&quot; style={{display:&#x27;block&#x27;,textAlign:&#x27;center&#x27;}}&gt;&lt;div className=&quot;mono dn&quot; style={{fontSize:30,fontWeight:800}}&gt;{wrongCount}&lt;/div&gt;&lt;div className=&quot;mono dim&quot; style={{fontSize:11,letterSpacing:1.5}}&gt;FALSE ALARMS&lt;/div&gt;&lt;/div&gt;
+          &lt;div className=&quot;drhp-row&quot; style={{display:&#x27;block&#x27;,textAlign:&#x27;center&#x27;}}&gt;&lt;div className=&quot;mono amber&quot; style={{fontSize:30,fontWeight:800}}&gt;{missed}&lt;/div&gt;&lt;div className=&quot;mono dim&quot; style={{fontSize:11,letterSpacing:1.5}}&gt;MISSED&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div className=&quot;concept&quot;&gt;
+          &lt;span className=&quot;tag&quot;&gt;CONCEPT · DRHP&lt;/span&gt;
+          &lt;div className=&quot;text&quot;&gt;Investment bankers help draft the DRHP and file it with &lt;b&gt;SEBI&lt;/b&gt;. SEBI reviews it, and it becomes the &lt;b&gt;RHP&lt;/b&gt; once cleared. The disclosures are dense and dry — but every regrettable IPO of the last decade was foreshadowed in its DRHP.&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div className=&quot;footer-bar&quot;&gt;
+          &lt;button className=&quot;btn ghost&quot; onClick={() =&gt; { setDone(false); setIdx(N - 1); }}&gt;← BACK&lt;/button&gt;
+          &lt;button className=&quot;btn&quot; onClick={ctx.next}&gt;CONTINUE  →&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+
+  const right = answered &amp;&amp; answers[idx] === d.isFlag;
   return (
     &lt;div className=&quot;stage&quot;&gt;
-      &lt;div className=&quot;stage-head&quot;&gt;&lt;span className=&quot;stage-num&quot;&gt;STAGE 02 / 08&lt;/span&gt;&lt;/div&gt;
-      &lt;div className=&quot;stage-title&quot;&gt;Hunt the red flags in the DRHP.&lt;/div&gt;
-      &lt;p className=&quot;stage-sub&quot;&gt;
-        The &lt;b&gt;Draft Red Herring Prospectus&lt;/b&gt; is the company’s sworn pitch document. It also legally requires them to disclose ugly things. Tap every statement that should make you nervous — be picky, false alarms cost XP.
-      &lt;/p&gt;
-
-      &lt;div className=&quot;drhp&quot;&gt;
-        {DRHP_ITEMS.map((d, i) =&gt; {
-          const isOn = flagged.has(i);
-          const correct = isOn &amp;&amp; d.isFlag;
-          const wrong   = isOn &amp;&amp; !d.isFlag;
-          return (
-            &lt;div
-              key={i}
-              className={`drhp-row ${isOn ? &#x27;flagged&#x27; : &#x27;&#x27;} ${submitted &amp;&amp; correct ? &#x27;correct&#x27; : &#x27;&#x27;} ${submitted &amp;&amp; !isOn &amp;&amp; d.isFlag ? &#x27;missed&#x27; : &#x27;&#x27;}`}
-              onClick={() =&gt; toggle(i)}
-            &gt;
-              &lt;span className=&quot;drhp-check&quot;&gt;{isOn ? &#x27;⚑&#x27; : &#x27;&#x27;}&lt;/span&gt;
-              &lt;div className=&quot;drhp-body&quot;&gt;
-                &lt;div className=&quot;drhp-section&quot;&gt;{d.section}&lt;/div&gt;
-                &lt;div className=&quot;drhp-text&quot;&gt;{d.text}&lt;/div&gt;
-                {d.translation &amp;&amp; &lt;div style={{fontSize:12.5,color:&#x27;var(--ink-3)&#x27;,marginTop:6,fontStyle:&#x27;italic&#x27;,lineHeight:1.4}}&gt;{d.translation}&lt;/div&gt;}
-                {submitted &amp;&amp; (
-                  &lt;&gt;
-                    {d.isFlag &amp;&amp; isOn &amp;&amp; &lt;span className=&quot;drhp-verdict good&quot;&gt;🚩 RED FLAG CAUGHT · +30 XP&lt;/span&gt;}
-                    {d.isFlag &amp;&amp; !isOn &amp;&amp; &lt;span className=&quot;drhp-verdict miss&quot;&gt;⚠ RED FLAG MISSED · 0 XP&lt;/span&gt;}
-                    {!d.isFlag &amp;&amp; isOn &amp;&amp; &lt;span className=&quot;drhp-verdict bad&quot;&gt;✗ FALSE ALARM · –15 XP&lt;/span&gt;}
-                    {!d.isFlag &amp;&amp; !isOn &amp;&amp; &lt;span className=&quot;drhp-verdict ghost&quot;&gt;✓ CORRECTLY IGNORED&lt;/span&gt;}
-                    &lt;p style={{fontSize:12.5,lineHeight:1.5,color:&#x27;var(--ink-2)&#x27;,marginTop:8,marginBottom:0}}&gt;{d.why}&lt;/p&gt;
-                  &lt;/&gt;
-                )}
-              &lt;/div&gt;
-            &lt;/div&gt;
-          );
-        })}
+      &lt;div className=&quot;stage-head&quot; style={{display:&#x27;flex&#x27;,justifyContent:&#x27;space-between&#x27;,alignItems:&#x27;center&#x27;}}&gt;
+        &lt;span className=&quot;stage-num&quot;&gt;STAGE 02 / 08 · STATEMENT {idx + 1} OF {N}&lt;/span&gt;{dots}
       &lt;/div&gt;
-
-      &lt;div className=&quot;concept&quot;&gt;
-        &lt;span className=&quot;tag&quot;&gt;CONCEPT · DRHP&lt;/span&gt;
-        &lt;div className=&quot;text&quot;&gt;Investment bankers help draft the DRHP and file it with &lt;b&gt;SEBI&lt;/b&gt;. SEBI reviews, asks for clarifications, and the document becomes the &lt;b&gt;RHP&lt;/b&gt; when fully cleared. The disclosures are dense and dry — but every regrettable IPO of the last decade was foreshadowed in its DRHP.&lt;/div&gt;
+      &lt;div className=&quot;stage-title&quot;&gt;Red flag — or fine?&lt;/div&gt;
+      &lt;div className=&quot;drhp-row&quot; key={idx} style={{display:&#x27;block&#x27;,padding:&#x27;20px 22px&#x27;,cursor:&#x27;default&#x27;,animation:&#x27;fadeUp .35s ease&#x27;}}&gt;
+        &lt;div className=&quot;drhp-section&quot;&gt;FROM THE DRHP · {d.section}&lt;/div&gt;
+        &lt;div className=&quot;drhp-text&quot; style={{fontSize:19,lineHeight:1.45}}&gt;{d.text}&lt;/div&gt;
+        {d.translation &amp;&amp; &lt;div style={{fontSize:15,color:&#x27;var(--ink-2)&#x27;,marginTop:10,lineHeight:1.45}}&gt;{d.translation}&lt;/div&gt;}
+        {!answered ? (
+          &lt;div style={{display:&#x27;flex&#x27;,gap:12,marginTop:18,flexWrap:&#x27;wrap&#x27;}}&gt;
+            &lt;button className=&quot;btn&quot; style={{background:&#x27;linear-gradient(180deg,#ff6b8b,#ff3366)&#x27;,color:&#x27;#fff&#x27;,boxShadow:&#x27;0 6px 24px rgba(255,51,102,0.3)&#x27;}} onClick={() =&gt; answer(true)}&gt;🚩  RED FLAG&lt;/button&gt;
+            &lt;button className=&quot;btn ghost&quot; style={{borderColor:&#x27;var(--up)&#x27;,color:&#x27;var(--up)&#x27;}} onClick={() =&gt; answer(false)}&gt;✓  FINE&lt;/button&gt;
+          &lt;/div&gt;
+        ) : (
+          &lt;div style={{marginTop:16,animation:&#x27;fadeUp .35s ease&#x27;}}&gt;
+            {d.isFlag &amp;&amp; answers[idx] &amp;&amp; &lt;span className=&quot;drhp-verdict good&quot;&gt;🚩 RED FLAG CAUGHT · +30 XP&lt;/span&gt;}
+            {d.isFlag &amp;&amp; !answers[idx] &amp;&amp; &lt;span className=&quot;drhp-verdict miss&quot;&gt;⚠ THAT WAS A RED FLAG · 0 XP&lt;/span&gt;}
+            {!d.isFlag &amp;&amp; answers[idx] &amp;&amp; &lt;span className=&quot;drhp-verdict bad&quot;&gt;✗ FALSE ALARM · –15 XP&lt;/span&gt;}
+            {!d.isFlag &amp;&amp; !answers[idx] &amp;&amp; &lt;span className=&quot;drhp-verdict ghost&quot;&gt;✓ RIGHT — NOTHING TO WORRY ABOUT&lt;/span&gt;}
+            &lt;p style={{fontSize:15,lineHeight:1.5,color:&#x27;var(--ink-2)&#x27;,marginTop:10,marginBottom:0}}&gt;{d.why}&lt;/p&gt;
+          &lt;/div&gt;
+        )}
       &lt;/div&gt;
-
       &lt;div className=&quot;footer-bar&quot;&gt;
-        &lt;button className=&quot;btn ghost&quot; onClick={ctx.back}&gt;← BACK&lt;/button&gt;
-        {!submitted
-          ? &lt;button className=&quot;btn amber&quot; disabled={flagged.size === 0} onClick={submit}&gt;SUBMIT {flagged.size &gt; 0 &amp;&amp; `(${flagged.size} FLAGGED)`}&lt;/button&gt;
-          : (
-            &lt;div style={{display:&#x27;flex&#x27;,gap:14,alignItems:&#x27;center&#x27;}}&gt;
-              &lt;span className=&quot;mono&quot; style={{fontSize:12,letterSpacing:1.5}}&gt;
-                &lt;span className=&quot;up&quot;&gt;CAUGHT {correctCount}/{realFlags.length}&lt;/span&gt; · &lt;span className=&quot;dn&quot;&gt;{wrongCount} FALSE&lt;/span&gt; · &lt;span className=&quot;dim&quot;&gt;{missed} MISSED&lt;/span&gt;
-              &lt;/span&gt;
-              &lt;button className=&quot;btn&quot; onClick={ctx.next}&gt;CONTINUE  →&lt;/button&gt;
-            &lt;/div&gt;
-          )
-        }
+        &lt;button className=&quot;btn ghost&quot; onClick={() =&gt; idx === 0 ? ctx.back() : setIdx(idx - 1)}&gt;← BACK&lt;/button&gt;
+        {idx &lt; N - 1
+          ? &lt;button className=&quot;btn&quot; disabled={!answered} onClick={() =&gt; setIdx(idx + 1)}&gt;NEXT STATEMENT  →&lt;/button&gt;
+          : &lt;button className=&quot;btn amber&quot; disabled={!answered} onClick={finish}&gt;SEE MY SCORE  →&lt;/button&gt;}
       &lt;/div&gt;
     &lt;/div&gt;
   );
@@ -3345,45 +3374,59 @@ function DRHPHunt({ ctx }) {
    STAGE 3 — PRICE BAND + INVESTOR CATEGORIES
    ============================================================ */
 function PriceBand({ ctx }) {
+  /* Three short steps instead of one long page, so each fits a projector screen. */
+  const [step, setStep] = useState(0);
+  const LAST = NOTICE_PARTS.length + 1;                 // notice parts, then band, then buckets
+  const titles = [...NOTICE_PARTS.map((p, i) =&gt; &#x27;Read the price-band notice — part &#x27; + (i + 1) + &#x27; of &#x27; + NOTICE_PARTS.length + &#x27;.&#x27;),
+                  &#x27;The price band: a range, not a price.&#x27;, &#x27;Who gets what: Zomato’s allocation buckets.&#x27;];
+  const dots = &lt;div style={{display:&#x27;flex&#x27;,gap:7}}&gt;{titles.map((t, i) =&gt; &lt;span key={i} style={{width:11,height:11,borderRadius:&#x27;50%&#x27;,background:i&lt;=step?&#x27;var(--amber)&#x27;:&#x27;var(--panel-3)&#x27;}} /&gt;)}&lt;/div&gt;;
   return (
     &lt;div className=&quot;stage&quot;&gt;
-      &lt;div className=&quot;stage-head&quot;&gt;&lt;span className=&quot;stage-num&quot;&gt;STAGE 03 / 08&lt;/span&gt;&lt;/div&gt;
-      &lt;div className=&quot;stage-title&quot;&gt;Price band, allocation buckets, and who you actually are.&lt;/div&gt;
-      &lt;p className=&quot;stage-sub&quot;&gt;Two days before bidding, the company files the &lt;b&gt;price band&lt;/b&gt; with SEBI and runs a public notice in the financial dailies. Read it first — then decide your bid.&lt;/p&gt;
+      &lt;div className=&quot;stage-head&quot; style={{display:&#x27;flex&#x27;,justifyContent:&#x27;space-between&#x27;,alignItems:&#x27;center&#x27;}}&gt;&lt;span className=&quot;stage-num&quot;&gt;STAGE 03 / 08 · STEP {step + 1} OF {LAST + 1}&lt;/span&gt;{dots}&lt;/div&gt;
+      &lt;div className=&quot;stage-title&quot;&gt;{titles[step]}&lt;/div&gt;
 
-      &lt;NewspaperAnnouncement /&gt;
+      {step &lt; NOTICE_PARTS.length &amp;&amp; (
+        &lt;div key={&#x27;n&#x27; + step} style={{animation:&#x27;fadeUp .35s ease&#x27;}}&gt;
+          {step === 0 &amp;&amp; &lt;p className=&quot;stage-sub&quot;&gt;Two days before bidding, the company runs this public notice in the financial dailies. Read it before you bid.&lt;/p&gt;}
+          &lt;NoticePart part={step} /&gt;
+        &lt;/div&gt;
+      )}
 
-      &lt;p className=&quot;stage-sub&quot; style={{marginTop:24}}&gt;Now that you’ve seen the announcement, here’s how book-building actually works in a &lt;b&gt;book-built&lt;/b&gt; IPO: the company gives a &lt;b&gt;range&lt;/b&gt;, and demand inside the range sets the final price. Different investor classes get reserved slices of the issue.&lt;/p&gt;
-
-      &lt;div className=&quot;intro-grid&quot;&gt;
-        &lt;div className=&quot;panel&quot;&gt;
-          &lt;div className=&quot;panel-head&quot;&gt;&lt;span&gt;PRICE BAND · BOOK BUILDING&lt;/span&gt;&lt;span className=&quot;mono dim&quot;&gt;₹25 SPREAD&lt;/span&gt;&lt;/div&gt;
-          &lt;div style={{padding:22}}&gt;
-            &lt;BandViz /&gt;
-            &lt;p style={{fontSize:13,color:&#x27;var(--ink-2)&#x27;,lineHeight:1.5,marginTop:16,marginBottom:0}}&gt;
-              You can bid &lt;b&gt;at any price in the band, in ₹1 increments&lt;/b&gt;. Bid below the eventual cut-off and your bid is invalid — no shares for you. Bid &lt;b&gt;at cut-off&lt;/b&gt; and you accept whatever final price the book settles on.
-            &lt;/p&gt;
+      {step === NOTICE_PARTS.length &amp;&amp; (
+        &lt;div key=&quot;s1&quot; style={{animation:&#x27;fadeUp .35s ease&#x27;}}&gt;
+          &lt;p className=&quot;stage-sub&quot;&gt;In a &lt;b&gt;book-built&lt;/b&gt; IPO the company gives a &lt;b&gt;range&lt;/b&gt;, and demand inside the range sets the final price.&lt;/p&gt;
+          &lt;div className=&quot;panel&quot;&gt;
+            &lt;div className=&quot;panel-head&quot;&gt;&lt;span&gt;PRICE BAND · BOOK BUILDING&lt;/span&gt;&lt;span className=&quot;mono dim&quot;&gt;₹{PRICE_HIGH - PRICE_LOW} SPREAD&lt;/span&gt;&lt;/div&gt;
+            &lt;div style={{padding:22}}&gt;
+              &lt;BandViz /&gt;
+              &lt;p style={{fontSize:15,color:&#x27;var(--ink-2)&#x27;,lineHeight:1.5,marginTop:16,marginBottom:0}}&gt;
+                You can bid &lt;b&gt;at any price in the band, in ₹1 steps&lt;/b&gt;. Bid below the final cut-off and your bid is invalid — no shares. Bid &lt;b&gt;at cut-off&lt;/b&gt; and you accept whatever final price the book settles on.
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div className=&quot;concept&quot;&gt;
+            &lt;span className=&quot;tag&quot;&gt;CONCEPT · BOOK BUILDING&lt;/span&gt;
+            &lt;div className=&quot;text&quot;&gt;Bankers publish a band, collect bids across price points and watch demand. The highest price where the issue is fully subscribed becomes the cut-off. Retail tip: bidding at cut-off almost always makes sense — you commit to the top of the band but get refunded if it settles lower.&lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
+      )}
 
-        &lt;div className=&quot;panel&quot;&gt;
-          &lt;div className=&quot;panel-head&quot;&gt;&lt;span&gt;ALLOCATION BUCKETS&lt;/span&gt;&lt;span className=&quot;mono dim&quot;&gt;SEBI MANDATED&lt;/span&gt;&lt;/div&gt;
-          &lt;div style={{padding:18, display:&#x27;grid&#x27;, gap: 10}}&gt;
-            &lt;AllocRow color=&quot;var(--violet)&quot; pct={50} name=&quot;QIB&quot; full=&quot;Qualified Institutional Buyers&quot; desc=&quot;Mutual funds, insurance, FIIs. Bid in millions. Sets the smart-money tone.&quot; /&gt;
+      {step === LAST &amp;&amp; (
+        &lt;div key=&quot;s2&quot; style={{animation:&#x27;fadeUp .35s ease&#x27;}}&gt;
+          &lt;p className=&quot;stage-sub&quot;&gt;Each investor class gets a reserved slice of the issue. Usually it’s QIB 50% · HNI 15% · Retail 35% — but loss-making Zomato had to give QIBs &lt;b&gt;75%&lt;/b&gt;, leaving retail just &lt;b&gt;10%&lt;/b&gt;.&lt;/p&gt;
+          &lt;div style={{display:&#x27;grid&#x27;, gap:10}}&gt;
+            &lt;AllocRow color=&quot;var(--violet)&quot; pct={75} name=&quot;QIB&quot; full=&quot;Qualified Institutional Buyers&quot; desc=&quot;Mutual funds, insurance, FIIs. Bid in crores. Sets the smart-money tone.&quot; /&gt;
             &lt;AllocRow color=&quot;var(--amber)&quot; pct={15} name=&quot;NII / HNI&quot; full=&quot;Non-Institutional Investors&quot; desc=&quot;₹2L+ applications. Famous for taking loans to chase allotment.&quot; /&gt;
-            &lt;AllocRow color=&quot;var(--up)&quot; pct={35} name=&quot;RETAIL&quot; full=&quot;Retail Individual Investors&quot; desc=&quot;That’s you. Up to ₹2L per application. Allotment via lottery if oversubscribed.&quot; active /&gt;
+            &lt;AllocRow color=&quot;var(--up)&quot; pct={10} name=&quot;RETAIL&quot; full=&quot;Retail Individual Investors&quot; desc=&quot;That’s you. Up to ₹2L per application. Allotment by lottery when oversubscribed.&quot; active /&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;div className=&quot;concept&quot;&gt;
-        &lt;span className=&quot;tag&quot;&gt;CONCEPT · BOOK BUILDING&lt;/span&gt;
-        &lt;div className=&quot;text&quot;&gt;Bankers don’t magically know the right price. They publish a band, collect bids across price points, and observe demand. The price where the issue is &lt;b&gt;fully subscribed&lt;/b&gt; (or close to it) at the highest level becomes the cut-off. Retail-friendly tip: bidding at cut-off almost always makes sense — you commit to the top of band but get refunded if it settles lower.&lt;/div&gt;
-      &lt;/div&gt;
+      )}
 
       &lt;div className=&quot;footer-bar&quot;&gt;
-        &lt;button className=&quot;btn ghost&quot; onClick={ctx.back}&gt;← BACK&lt;/button&gt;
-        &lt;button className=&quot;btn&quot; onClick={() =&gt; { ctx.addXp(40); ctx.next(); }}&gt;PLACE YOUR BID  →&lt;/button&gt;
+        &lt;button className=&quot;btn ghost&quot; onClick={() =&gt; step === 0 ? ctx.back() : setStep(step - 1)}&gt;← BACK&lt;/button&gt;
+        {step &lt; LAST
+          ? &lt;button className=&quot;btn&quot; onClick={() =&gt; setStep(step + 1)}&gt;NEXT  →&lt;/button&gt;
+          : &lt;button className=&quot;btn&quot; onClick={() =&gt; { ctx.addXp(40); ctx.next(); }}&gt;PLACE YOUR BID  →&lt;/button&gt;}
       &lt;/div&gt;
     &lt;/div&gt;
   );
@@ -3439,15 +3482,12 @@ function Bidding({ ctx }) {
     &lt;div className=&quot;stage&quot;&gt;
       &lt;div className=&quot;stage-head&quot;&gt;&lt;span className=&quot;stage-num&quot;&gt;STAGE 04 / 08&lt;/span&gt;&lt;/div&gt;
       &lt;div className=&quot;stage-title&quot;&gt;Place your bid.&lt;/div&gt;
-      &lt;p className=&quot;stage-sub&quot;&gt;Pick how many lots and at what price. Retail bids are capped at ₹2,00,000 per PAN. The live book on the right is rebuilt every time you move the slider — see what the rest of the retail crowd is doing.&lt;/p&gt;
+      &lt;p className=&quot;stage-sub&quot;&gt;Pick how many lots and at what price. Retail is capped at ₹2,00,000 per person.&lt;/p&gt;
 
       &lt;div className=&quot;bid-grid&quot;&gt;
         &lt;div className=&quot;panel bid-form&quot;&gt;
           &lt;div className=&quot;bid-row&quot;&gt;
-            &lt;div className=&quot;bid-label&quot;&gt;&lt;span&gt;QUANTITY · LOTS&lt;/span&gt;&lt;span className=&quot;dim mono&quot;&gt;{shares} SHARES&lt;/span&gt;&lt;/div&gt;
-            &lt;div style={{fontSize:12,color:&#x27;var(--amber)&#x27;,marginBottom:8,padding:&#x27;6px 10px&#x27;,background:&#x27;rgba(255,182,72,0.08)&#x27;,borderRadius:4,border:&#x27;1px solid rgba(255,182,72,0.22)&#x27;}}&gt;
-              💡 &lt;b&gt;1 lot = {LOT} shares&lt;/b&gt; · that is the minimum you can apply for. You can buy more lots, but retail is capped at ₹2,00,000 total.
-            &lt;/div&gt;
+            &lt;div className=&quot;bid-label&quot;&gt;&lt;span&gt;QUANTITY · LOTS &lt;span className=&quot;amber&quot; style={{letterSpacing:0}}&gt;· 1 lot = {LOT} shares (the minimum)&lt;/span&gt;&lt;/span&gt;&lt;span className=&quot;dim mono&quot;&gt;{shares} SHARES&lt;/span&gt;&lt;/div&gt;
             &lt;div className=&quot;lot-bar&quot;&gt;
               {[1,2,3,5,8,13].map(n =&gt; (
                 &lt;button key={n} className={`lot-chip ${game.bidLots === n ? &#x27;active&#x27; : &#x27;&#x27;}`} onClick={() =&gt; setLots(n)}&gt;
@@ -3505,10 +3545,7 @@ function Bidding({ ctx }) {
             &lt;div&gt;BIDS AT CUT-OFF &lt;b className=&quot;amber&quot;&gt;12.7L&lt;/b&gt;&lt;/div&gt;
             &lt;div&gt;TOTAL RETAIL &lt;b&gt;17.6L&lt;/b&gt;&lt;/div&gt;
           &lt;/div&gt;
-          &lt;div className=&quot;concept&quot; style={{marginTop:14}}&gt;
-            &lt;span className=&quot;tag&quot;&gt;TIP&lt;/span&gt;
-            &lt;div className=&quot;text&quot;&gt;Notice how demand spikes at the upper band? Most retail bidders pile in at cut-off. If you bid &lt;b&gt;below ₹{PRICE_HIGH}&lt;/b&gt; (the cap), you risk being out of the book entirely if cut-off lands at the top.&lt;/div&gt;
-          &lt;/div&gt;
+          &lt;div style={{marginTop:12,fontSize:13,color:&#x27;var(--ink-2)&#x27;,lineHeight:1.45}}&gt;&lt;span className=&quot;amber&quot; style={{fontWeight:800}}&gt;TIP · &lt;/span&gt;Most retail bidders pile in at cut-off. Bid below ₹{PRICE_HIGH} and you could be left out entirely.&lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
 
@@ -3602,7 +3639,7 @@ function ASBABlock({ ctx }) {
         &lt;/div&gt;
         &lt;div className=&quot;asba-meter-key&quot;&gt;
           &lt;span&gt;&lt;span className=&quot;swatch&quot; style={{background:&#x27;rgba(0,255,149,0.4)&#x27;}}&gt;&lt;/span&gt; AVAILABLE  &lt;b className=&quot;up mono&quot; style={{marginLeft:6}}&gt;₹{available.toLocaleString(&#x27;en-IN&#x27;)}&lt;/b&gt;&lt;/span&gt;
-          &lt;span&gt;&lt;span className=&quot;swatch&quot; style={{background:&#x27;rgba(255,182,72,0.5)&#x27;}}&gt;&lt;/span&gt; BLOCKED FOR NEXAFIN  &lt;b className=&quot;amber mono&quot; style={{marginLeft:6}}&gt;₹{(animated ? game.blocked : 0).toLocaleString(&#x27;en-IN&#x27;)}&lt;/b&gt;&lt;/span&gt;
+          &lt;span&gt;&lt;span className=&quot;swatch&quot; style={{background:&#x27;rgba(255,182,72,0.5)&#x27;}}&gt;&lt;/span&gt; BLOCKED FOR ZOMATO  &lt;b className=&quot;amber mono&quot; style={{marginLeft:6}}&gt;₹{(animated ? game.blocked : 0).toLocaleString(&#x27;en-IN&#x27;)}&lt;/b&gt;&lt;/span&gt;
         &lt;/div&gt;
       &lt;/div&gt;
 
@@ -3676,7 +3713,7 @@ function Oversubscription({ ctx }) {
       {done &amp;&amp; (
         &lt;div className=&quot;concept&quot;&gt;
           &lt;span className=&quot;tag&quot;&gt;CONCEPT · OVERSUBSCRIPTION&lt;/span&gt;
-          &lt;div className=&quot;text&quot;&gt;When retail demand exceeds supply, &lt;b&gt;shares are allotted by lottery&lt;/b&gt; in lots of 30. At {FINAL_SUB.ret}× retail subscription, roughly &lt;b&gt;1 in {Math.round(FINAL_SUB.ret)} retail applicants&lt;/b&gt; get one lot. The size of your bid doesn’t increase your odds beyond one lot — a 1-lot bidder and a 6-lot bidder have similar chances of getting a single lot.&lt;/div&gt;
+          &lt;div className=&quot;text&quot;&gt;When retail demand exceeds supply, &lt;b&gt;shares are allotted by lottery&lt;/b&gt;: each winning applicant gets 1 lot ({LOT} shares). At {FINAL_SUB.ret}× retail subscription there were far more applications than lots — and applying for more lots doesn’t improve your odds: one applicant, one ticket.&lt;/div&gt;
         &lt;/div&gt;
       )}
 
@@ -3717,6 +3754,7 @@ function Allotment({ ctx }) {
   const [phase, setPhase] = useState(&#x27;idle&#x27;); // idle | spin | result
   const [panDisplay, setPanDisplay] = useState(&#x27;A B C D E · 0000 X&#x27;);
   const [forcedOutcome, setForcedOutcome] = useState(null); // null | &#x27;won&#x27; | &#x27;lost&#x27;
+  const [showMoney, setShowMoney] = useState(false);          // step 2: where the blocked money went
   const intervalRef = useRef(null);
 
   // Decide outcome based on the player&#x27;s bid behaviour &amp; retail oversubscription
@@ -3774,10 +3812,10 @@ function Allotment({ ctx }) {
     &lt;div className=&quot;stage&quot;&gt;
       &lt;div className=&quot;stage-head&quot;&gt;&lt;span className=&quot;stage-num&quot;&gt;STAGE 07 / 08&lt;/span&gt;&lt;/div&gt;
       &lt;div className=&quot;stage-title&quot;&gt;{phase === &#x27;result&#x27; ? (outcome.won ? &#x27;Allotment confirmed.&#x27; : &#x27;No allotment this time.&#x27;) : &#x27;Allotment lottery&#x27;}&lt;/div&gt;
-      &lt;p className=&quot;stage-sub&quot;&gt;For oversubscribed retail buckets, SEBI mandates a &lt;b&gt;random lottery&lt;/b&gt; in lots of 30. The registrar runs it on the basis-of-allotment date.&lt;/p&gt;
+      {!showMoney &amp;&amp; &lt;p className=&quot;stage-sub&quot;&gt;When retail is oversubscribed, SEBI requires a &lt;b&gt;random lottery&lt;/b&gt;: each winning applicant gets 1 lot ({LOT} shares). The registrar runs it on the basis-of-allotment date.&lt;/p&gt;}
 
-      &lt;div className=&quot;panel&quot;&gt;
-        &lt;div className=&quot;panel-head&quot;&gt;&lt;span&gt;BASIS OF ALLOTMENT · LOTTERY DRAW&lt;/span&gt;&lt;span className=&quot;mono dim&quot;&gt;REGISTRAR · KFinTech&lt;/span&gt;&lt;/div&gt;
+      {!showMoney &amp;&amp; &lt;div className=&quot;panel&quot;&gt;
+        &lt;div className=&quot;panel-head&quot;&gt;&lt;span&gt;BASIS OF ALLOTMENT · LOTTERY DRAW&lt;/span&gt;&lt;span className=&quot;mono dim&quot;&gt;REGISTRAR · LINK INTIME&lt;/span&gt;&lt;/div&gt;
         &lt;div className=&quot;lottery&quot;&gt;
           &lt;div className=&quot;lottery-label&quot;&gt;YOUR PAN APPLICATION ID&lt;/div&gt;
           &lt;div className={`lottery-pan mono ${phase}`}&gt;{panDisplay}&lt;/div&gt;
@@ -3794,7 +3832,7 @@ function Allotment({ ctx }) {
           {phase === &#x27;result&#x27; &amp;&amp; (
             &lt;&gt;
               &lt;div className={`lottery-result ${outcome.won ? &#x27;won&#x27; : &#x27;lost&#x27;}`}&gt;
-                {outcome.won ? &#x27;🎉 1 LOT ALLOTTED · 30 SHARES&#x27; : &#x27;NOT ALLOTTED · 0 SHARES&#x27;}
+                {outcome.won ? &#x27;🎉 1 LOT ALLOTTED · &#x27; + LOT + &#x27; SHARES&#x27; : &#x27;NOT ALLOTTED · 0 SHARES&#x27;}
               &lt;/div&gt;
               &lt;div className=&quot;lottery-detail&quot;&gt;
                 {outcome.won
@@ -3807,12 +3845,16 @@ function Allotment({ ctx }) {
             &lt;/&gt;
           )}
         &lt;/div&gt;
-      &lt;/div&gt;
+      &lt;/div&gt;}
 
-      {phase === &#x27;result&#x27; &amp;&amp; (
-        &lt;&gt;
+      {phase === &#x27;result&#x27; &amp;&amp; showMoney &amp;&amp; (
+        &lt;div style={{animation:&#x27;fadeUp .35s ease&#x27;}}&gt;
           &lt;AsbaTimeline blocked={game.blocked} cost={outcome.cost} refund={outcome.refund} bank={game.bankBalance} won={outcome.won} sharesAlloted={outcome.sharesAlloted}/&gt;
+        &lt;/div&gt;
+      )}
 
+      {phase === &#x27;result&#x27; &amp;&amp; !showMoney &amp;&amp; (
+        &lt;&gt;
           &lt;div style={{
             marginTop:14, padding:&#x27;14px 16px&#x27;,
             background:&#x27;rgba(180,140,255,0.06)&#x27;,
@@ -3840,14 +3882,16 @@ function Allotment({ ctx }) {
         &lt;/&gt;
       )}
 
-      &lt;div className=&quot;concept&quot;&gt;
+      {phase === &#x27;idle&#x27; &amp;&amp; &lt;div className=&quot;concept&quot;&gt;
         &lt;span className=&quot;tag&quot;&gt;CONCEPT · ALLOTMENT&lt;/span&gt;
-        &lt;div className=&quot;text&quot;&gt;Two allotment methods you’ll see: &lt;b&gt;Proportional&lt;/b&gt; (QIB/HNI — get a slice in proportion to your bid) and &lt;b&gt;Lottery&lt;/b&gt; (retail when oversubscribed — random draw of 1 lot per winning PAN). HNIs sometimes apply across family PANs to multiply their lottery chances; that’s why HNI subscription can look insane.&lt;/div&gt;
-      &lt;/div&gt;
+        &lt;div className=&quot;text&quot;&gt;In Zomato’s 2021 IPO there were two methods: &lt;b&gt;proportional&lt;/b&gt; for QIBs and HNIs (a slice in proportion to your bid) and a &lt;b&gt;lottery&lt;/b&gt; for retail (1 lot per winning applicant). Since April 2022, HNIs get a lottery too.&lt;/div&gt;
+      &lt;/div&gt;}
 
       &lt;div className=&quot;footer-bar&quot;&gt;
-        &lt;button className=&quot;btn ghost&quot; onClick={ctx.back}&gt;← BACK&lt;/button&gt;
-        &lt;button className=&quot;btn&quot; disabled={phase !== &#x27;result&#x27;} onClick={ctx.next}&gt;LISTING DAY  →&lt;/button&gt;
+        &lt;button className=&quot;btn ghost&quot; onClick={() =&gt; showMoney ? setShowMoney(false) : ctx.back()}&gt;← BACK&lt;/button&gt;
+        {phase === &#x27;result&#x27; &amp;&amp; !showMoney
+          ? &lt;button className=&quot;btn&quot; onClick={() =&gt; setShowMoney(true)}&gt;WHERE DID MY MONEY GO?  →&lt;/button&gt;
+          : &lt;button className=&quot;btn&quot; disabled={phase !== &#x27;result&#x27;} onClick={ctx.next}&gt;LISTING DAY  →&lt;/button&gt;}
       &lt;/div&gt;
     &lt;/div&gt;
   );
@@ -3858,23 +3902,23 @@ function AsbaTimeline({ blocked, cost, refund, bank, won, sharesAlloted }) {
   const finalBank = bank - cost;   // post-allotment bank balance
 
   const events = [
-    { day: &#x27;D-1&#x27;, date: &#x27;Dec 04&#x27;,  tag: &#x27;BID&#x27;,     color: &#x27;var(--amber)&#x27;, title: &#x27;Bid placed via ASBA&#x27;,     body: &lt;&gt;Bank flags &lt;b className=&quot;mono&quot;&gt;{fmt(blocked)}&lt;/b&gt; as &lt;b&gt;blocked&lt;/b&gt;. Money still in your account — but unusable.&lt;/&gt; },
-    { day: &#x27;D+0&#x27;, date: &#x27;Dec 06&#x27;,  tag: &#x27;CLOSE&#x27;,   color: &#x27;var(--ink-2)&#x27;, title: &#x27;Bidding window closes&#x27;,   body: &lt;&gt;Funds remain blocked. Interest continues to accrue (this is why ASBA replaced cheque-based bidding).&lt;/&gt; },
-    { day: &#x27;D+5&#x27;, date: &#x27;Dec 11&#x27;,  tag: &#x27;LOTTERY&#x27;, color: &#x27;var(--violet)&#x27;,title: &#x27;Basis of Allotment&#x27;,      body: &lt;&gt;Registrar (KFinTech) runs the lottery. Your PAN: &lt;b className={won ? &#x27;up&#x27; : &#x27;dn&#x27;}&gt;{won ? &#x27;WINNER&#x27; : &#x27;NOT DRAWN&#x27;}&lt;/b&gt;.&lt;/&gt; },
+    { day: &#x27;D-2&#x27;, date: &#x27;Jul 14&#x27;,  tag: &#x27;BID&#x27;,     color: &#x27;var(--amber)&#x27;, title: &#x27;Bid placed via ASBA&#x27;,     body: &lt;&gt;Bank flags &lt;b className=&quot;mono&quot;&gt;{fmt(blocked)}&lt;/b&gt; as &lt;b&gt;blocked&lt;/b&gt;. Money still in your account — but unusable.&lt;/&gt; },
+    { day: &#x27;D+0&#x27;, date: &#x27;Jul 16&#x27;,  tag: &#x27;CLOSE&#x27;,   color: &#x27;var(--ink-2)&#x27;, title: &#x27;Bidding window closes&#x27;,   body: &lt;&gt;Funds remain blocked. Interest continues to accrue (this is why ASBA replaced cheque-based bidding).&lt;/&gt; },
+    { day: &#x27;D+6&#x27;, date: &#x27;Jul 22&#x27;,  tag: &#x27;LOTTERY&#x27;, color: &#x27;var(--violet)&#x27;,title: &#x27;Basis of Allotment&#x27;,      body: &lt;&gt;Registrar (Link Intime) runs the lottery. Your PAN: &lt;b className={won ? &#x27;up&#x27; : &#x27;dn&#x27;}&gt;{won ? &#x27;WINNER&#x27; : &#x27;NOT DRAWN&#x27;}&lt;/b&gt;.&lt;/&gt; },
     won
-      ? { day: &#x27;D+6&#x27;, date: &#x27;Dec 12&#x27;,  tag: &#x27;DEBIT&#x27;,   color: &#x27;var(--dn)&#x27;,  title: &#x27;Allotment money debited&#x27;, body: &lt;&gt;Bank releases lien on full &lt;b className=&quot;mono&quot;&gt;{fmt(blocked)}&lt;/b&gt;, then debits &lt;b className=&quot;mono dn&quot;&gt;{fmt(cost)}&lt;/b&gt; for {sharesAlloted} shares × ₹{PRICE_HIGH}.&lt;/&gt; }
-      : { day: &#x27;D+6&#x27;, date: &#x27;Dec 12&#x27;,  tag: &#x27;UNBLOCK&#x27;, color: &#x27;var(--up)&#x27;,  title: &#x27;Full amount unblocked&#x27;,   body: &lt;&gt;Bank releases the lien on the entire &lt;b className=&quot;mono&quot;&gt;{fmt(blocked)}&lt;/b&gt;. Money is yours again, with interest earned during the block period.&lt;/&gt; },
+      ? { day: &#x27;D+6&#x27;, date: &#x27;Jul 22&#x27;,  tag: &#x27;DEBIT&#x27;,   color: &#x27;var(--dn)&#x27;,  title: &#x27;Allotment money debited&#x27;, body: &lt;&gt;Bank releases lien on full &lt;b className=&quot;mono&quot;&gt;{fmt(blocked)}&lt;/b&gt;, then debits &lt;b className=&quot;mono dn&quot;&gt;{fmt(cost)}&lt;/b&gt; for {sharesAlloted} shares × ₹{PRICE_HIGH}.&lt;/&gt; }
+      : { day: &#x27;D+6&#x27;, date: &#x27;Jul 22&#x27;,  tag: &#x27;UNBLOCK&#x27;, color: &#x27;var(--up)&#x27;,  title: &#x27;Full amount unblocked&#x27;,   body: &lt;&gt;Bank releases the lien on the entire &lt;b className=&quot;mono&quot;&gt;{fmt(blocked)}&lt;/b&gt;. Money is yours again, with interest earned during the block period.&lt;/&gt; },
     won
-      ? { day: &#x27;D+6&#x27;, date: &#x27;Dec 12&#x27;,  tag: &#x27;REFUND&#x27;,  color: &#x27;var(--up)&#x27;,  title: &#x27;Refund auto-credited&#x27;,    body: &lt;&gt;The un-utilised &lt;b className=&quot;mono up&quot;&gt;{fmt(refund)}&lt;/b&gt; is auto-unblocked back to spendable. Shares hit your Demat account.&lt;/&gt; }
+      ? { day: &#x27;D+6&#x27;, date: &#x27;Jul 22&#x27;,  tag: &#x27;REFUND&#x27;,  color: &#x27;var(--up)&#x27;,  title: &#x27;Refund auto-credited&#x27;,    body: &lt;&gt;The un-utilised &lt;b className=&quot;mono up&quot;&gt;{fmt(refund)}&lt;/b&gt; is auto-unblocked back to spendable. Shares hit your Demat account.&lt;/&gt; }
       : null,
-    { day: &#x27;D+7&#x27;, date: &#x27;Dec 13&#x27;,  tag: &#x27;LISTING&#x27;,color: &#x27;var(--amber)&#x27;, title: &#x27;Listing day&#x27;,              body: won ? &lt;&gt;Your {sharesAlloted} shares list on NSE/BSE — tomorrow you find out the listing price.&lt;/&gt; : &lt;&gt;You can still buy on the open market tomorrow — but at whatever price the listing settles on, not the issue price.&lt;/&gt; },
+    { day: &#x27;D+7&#x27;, date: &#x27;Jul 23&#x27;,  tag: &#x27;LISTING&#x27;,color: &#x27;var(--amber)&#x27;, title: &#x27;Listing day&#x27;,              body: won ? &lt;&gt;Your {sharesAlloted} shares list on NSE/BSE — tomorrow you find out the listing price.&lt;/&gt; : &lt;&gt;You can still buy on the open market tomorrow — but at whatever price the listing settles on, not the issue price.&lt;/&gt; },
   ].filter(Boolean);
 
   return (
     &lt;div className=&quot;panel&quot; style={{marginTop:18}}&gt;
       &lt;div className=&quot;panel-head&quot;&gt;
         &lt;span&gt;ASBA · FULL CYCLE&lt;/span&gt;
-        &lt;span className=&quot;mono dim&quot;&gt;{won ? `${sharesAlloted} SH ALLOTTED · ${fmt(refund)} REFUNDED` : `BLOCKED FOR 7 DAYS · ${fmt(blocked)} UNBLOCKED`}&lt;/span&gt;
+        &lt;span className=&quot;mono dim&quot;&gt;{won ? `${sharesAlloted} SH ALLOTTED · ${fmt(refund)} REFUNDED` : `BLOCKED FOR 8 DAYS · ${fmt(blocked)} UNBLOCKED`}&lt;/span&gt;
       &lt;/div&gt;
 
       &lt;div style={{padding:&#x27;18px 20px&#x27;, display:&#x27;grid&#x27;, gridTemplateColumns:&#x27;1fr 320px&#x27;, gap:24}}&gt;
@@ -3909,7 +3953,7 @@ function AsbaTimeline({ blocked, cost, refund, bank, won, sharesAlloted }) {
         {/* Bank card after */}
         &lt;div className=&quot;asba-card&quot; style={{padding:18}}&gt;
           &lt;div className=&quot;asba-head&quot; style={{marginBottom:14}}&gt;
-            &lt;div className=&quot;asba-bank&quot; style={{fontSize:11}}&gt;YOUR BANK · POST-ALLOTMENT&lt;div className=&quot;sub&quot; style={{fontSize:9.5}}&gt;{won ? &#x27;DEC 12 · SETTLED&#x27; : &#x27;DEC 12 · FULL UNBLOCK&#x27;}&lt;/div&gt;&lt;/div&gt;
+            &lt;div className=&quot;asba-bank&quot; style={{fontSize:11}}&gt;YOUR BANK · POST-ALLOTMENT&lt;div className=&quot;sub&quot; style={{fontSize:9.5}}&gt;{won ? &#x27;JUL 22 · SETTLED&#x27; : &#x27;JUL 22 · FULL UNBLOCK&#x27;}&lt;/div&gt;&lt;/div&gt;
           &lt;/div&gt;
           &lt;div className=&quot;asba-bal-l&quot;&gt;SPENDABLE BALANCE&lt;/div&gt;
           &lt;div className=&quot;asba-bal mono&quot; style={{fontSize:28, color: won ? &#x27;var(--up)&#x27; : &#x27;var(--ink)&#x27;}}&gt;{fmt(won ? finalBank : bank)}&lt;/div&gt;
@@ -3926,7 +3970,7 @@ function AsbaTimeline({ blocked, cost, refund, bank, won, sharesAlloted }) {
           &lt;div style={{marginTop:16, paddingTop:14, borderTop:&#x27;1px solid rgba(120,160,200,0.18)&#x27;, display:&#x27;grid&#x27;, gap:8}}&gt;
             &lt;div style={{display:&#x27;flex&#x27;, justifyContent:&#x27;space-between&#x27;, fontSize:12}}&gt;
               &lt;span style={{color:&#x27;var(--ink-3)&#x27;, letterSpacing:1, fontFamily:&quot;&#x27;JetBrains Mono&#x27;, monospace&quot;}}&gt;BLOCKED FOR&lt;/span&gt;
-              &lt;span className=&quot;mono&quot; style={{color:&#x27;var(--ink)&#x27;, fontWeight:700}}&gt;7 days&lt;/span&gt;
+              &lt;span className=&quot;mono&quot; style={{color:&#x27;var(--ink)&#x27;, fontWeight:700}}&gt;8 days&lt;/span&gt;
             &lt;/div&gt;
             &lt;div style={{display:&#x27;flex&#x27;, justifyContent:&#x27;space-between&#x27;, fontSize:12}}&gt;
               &lt;span style={{color:&#x27;var(--ink-3)&#x27;, letterSpacing:1, fontFamily:&quot;&#x27;JetBrains Mono&#x27;, monospace&quot;}}&gt;INTEREST EARNED&lt;/span&gt;
@@ -3935,7 +3979,7 @@ function AsbaTimeline({ blocked, cost, refund, bank, won, sharesAlloted }) {
             {won &amp;&amp; (
               &lt;div style={{display:&#x27;flex&#x27;, justifyContent:&#x27;space-between&#x27;, fontSize:12}}&gt;
                 &lt;span style={{color:&#x27;var(--ink-3)&#x27;, letterSpacing:1, fontFamily:&quot;&#x27;JetBrains Mono&#x27;, monospace&quot;}}&gt;SHARES IN DEMAT&lt;/span&gt;
-                &lt;span className=&quot;mono up&quot; style={{fontWeight:700}}&gt;{sharesAlloted} × NEXAFIN&lt;/span&gt;
+                &lt;span className=&quot;mono up&quot; style={{fontWeight:700}}&gt;{sharesAlloted} × ZOMATO&lt;/span&gt;
               &lt;/div&gt;
             )}
           &lt;/div&gt;
@@ -3951,6 +3995,67 @@ function AsbaTimeline({ blocked, cost, refund, bank, won, sharesAlloted }) {
    1–2 days before bidding opens. Every retail investor should read
    this before they decide a price band — not after.
    ============================================================ */
+/* The price-band notice, one numbered section at a time with its &quot;how to read this&quot; note.
+   Same content and newspaper styling as the full notice below, split so each part fits a screen. */
+const NOTICE_PARTS = [
+  { head:&#x27;Issue Timetable&#x27;,
+    body:&lt;table className=&quot;np-table&quot;&gt;&lt;tbody&gt;
+      &lt;tr&gt;&lt;td&gt;Anchor Investor Bid / Issue Period&lt;/td&gt;&lt;td&gt;&lt;b&gt;July 13, 2021&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Bid / Issue Opens On&lt;/td&gt;&lt;td&gt;&lt;b&gt;July 14, 2021 (Wednesday)&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Bid / Issue Closes On&lt;/td&gt;&lt;td&gt;&lt;b&gt;July 16, 2021 (Friday)&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Finalisation of Basis of Allotment&lt;/td&gt;&lt;td&gt;On or about July 22, 2021&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Commencement of Trading on BSE &amp; NSE&lt;/td&gt;&lt;td&gt;&lt;b&gt;On or about July 27, 2021&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;&lt;/table&gt;,
+    notes:[{label:&#x27;Bidding window = only 3 days&#x27;, body:&lt;&gt;Most IPOs are open &lt;b&gt;Wed–Fri&lt;/b&gt;. Bidding closes at &lt;b&gt;5pm sharp&lt;/b&gt; on the last day.&lt;/&gt;}] },
+  { head:&#x27;Bid Lot &amp; Investor Limits&#x27;,
+    body:&lt;table className=&quot;np-table&quot;&gt;&lt;tbody&gt;
+      &lt;tr&gt;&lt;td&gt;Minimum Bid Lot&lt;/td&gt;&lt;td&gt;&lt;b&gt;195 Equity Shares&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Minimum Application Amount (at ₹76)&lt;/td&gt;&lt;td&gt;₹14,820&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Maximum Retail Application&lt;/td&gt;&lt;td&gt;&lt;b&gt;₹2,00,000 (13 lots)&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Mode of Payment (mandatory)&lt;/td&gt;&lt;td&gt;&lt;b&gt;ASBA / UPI only&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;&lt;/table&gt;,
+    notes:[{label:&#x27;Lot size &amp; retail cap&#x27;, body:&lt;&gt;Minimum bid is &lt;b&gt;1 lot of 195 shares = ₹14,820&lt;/b&gt;, up to &lt;b&gt;13 lots&lt;/b&gt; under the ₹2L cap. A bigger bid doesn’t improve lottery odds — they’re per person, not per rupee.&lt;/&gt;},
+           {label:&#x27;ASBA / UPI only — plan the funds&#x27;, body:&lt;&gt;Your money gets &lt;b&gt;blocked&lt;/b&gt; in your bank for about a week. Don’t use money you need for EMIs or rent.&lt;/&gt;}] },
+  { head:&#x27;Categorical Allocation&#x27;,
+    body:&lt;&gt;&lt;table className=&quot;np-table&quot;&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Category&lt;/th&gt;&lt;th&gt;Allocation&lt;/th&gt;&lt;th&gt;Min. Application&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;QIBs (incl. Anchor)&lt;/td&gt;&lt;td&gt;Not less than &lt;b&gt;75%&lt;/b&gt;&lt;/td&gt;&lt;td&gt;₹100 Cr+&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Non-Institutional Investors&lt;/td&gt;&lt;td&gt;Not more than &lt;b&gt;15%&lt;/b&gt;&lt;/td&gt;&lt;td&gt;₹2,00,001+&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Retail Individual Investors&lt;/td&gt;&lt;td&gt;Not more than &lt;b&gt;10%&lt;/b&gt;&lt;/td&gt;&lt;td&gt;1 lot&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;&lt;/table&gt;
+      &lt;p className=&quot;np-para&quot; style={{fontSize:11, color:&#x27;#5a4520&#x27;, marginTop:6}}&gt;Higher QIB allocation (75%) is permitted because the Company is loss-making in the immediately preceding 3 financial years.&lt;/p&gt;&lt;/&gt;,
+    notes:[{label:&#x27;Only 10% reserved for retail&#x27;, body:&lt;&gt;QIBs get &lt;b&gt;75%&lt;/b&gt; here (usually 50%) — SEBI raises it when a company is loss-making, so big institutions do the price-discovery. Less for retail = harder to get allotment.&lt;/&gt;}] },
+  { head:&#x27;Risk Factor (Excerpt)&#x27;,
+    body:&lt;p className=&quot;np-para&quot; style={{fontStyle:&#x27;italic&#x27;,fontSize:15}}&gt;“We have a history of net losses and we anticipate increased expenses in the future. We may not be able to achieve or maintain profitability… our limited operating history in a rapidly evolving industry makes it difficult to evaluate our business and prospects.”&lt;/p&gt;,
+    notes:[{label:&#x27;Risk factor #1 = the headline&#x27;, body:&lt;&gt;The first risk in the document is the one the company’s lawyers worry about most. Here it’s the loss-making history. &lt;b&gt;Don’t skip it&lt;/b&gt; — it’s a legal confession.&lt;/&gt;}] },
+];
+function NoticePart({ part }) {
+  const p = NOTICE_PARTS[part];
+  return (
+    &lt;div className=&quot;newspaper&quot;&gt;
+      &lt;div className=&quot;np-stamp&quot;&gt;PUBLISHED · JUL 12, 2021&lt;/div&gt;
+      &lt;div className=&quot;np-masthead&quot;&gt;
+        &lt;div className=&quot;ed&quot;&gt;THE ECONOMIC DAILY · MUMBAI EDITION · PG 09&lt;/div&gt;
+        &lt;h2&gt;Public Announcement&lt;/h2&gt;
+        &lt;div className=&quot;sub&quot;&gt;ZOMATO LIMITED · PRICE BAND &lt;b&gt;₹72 – ₹76&lt;/b&gt; · ISSUE UP TO ₹9,375 CR&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;np-body&quot;&gt;
+        &lt;div className=&quot;np-ad&quot;&gt;
+          &lt;div className=&quot;np-sec-head&quot;&gt;&lt;span className=&quot;np-pointer&quot;&gt;{part + 1}&lt;/span&gt; {p.head}&lt;/div&gt;
+          {p.body}
+        &lt;/div&gt;
+        &lt;div className=&quot;np-annot&quot;&gt;
+          &lt;div className=&quot;np-annot-head&quot;&gt;HOW TO READ THIS&lt;/div&gt;
+          {p.notes.map((n, i) =&gt; (
+            &lt;div className=&quot;np-callout&quot; key={i}&gt;&lt;div className=&quot;num&quot;&gt;{part + 1}&lt;/div&gt;&lt;div className=&quot;label&quot;&gt;{n.label}&lt;/div&gt;&lt;div className=&quot;body&quot;&gt;{n.body}&lt;/div&gt;&lt;/div&gt;
+          ))}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
 function NewspaperAnnouncement() {
   return (
     &lt;div className=&quot;newspaper&quot;&gt;
@@ -4120,11 +4225,9 @@ function ListingDay({ ctx }) {
     &lt;div className=&quot;stage&quot;&gt;
       &lt;div className=&quot;stage-head&quot;&gt;&lt;span className=&quot;stage-num&quot;&gt;STAGE 08 / 08&lt;/span&gt;&lt;/div&gt;
       &lt;div className=&quot;stage-title&quot;&gt;Opening bell. The market votes.&lt;/div&gt;
-      &lt;p className=&quot;stage-sub&quot;&gt;The IPO price was discovered by the book. The listing price is discovered by everyone else — including those who didn’t get allotment and now want in.&lt;/p&gt;
-
       &lt;div className=&quot;listing&quot;&gt;
         &lt;div className=&quot;listing-head&quot;&gt;
-          &lt;span className=&quot;flag&quot;&gt;● LIVE · NSE · NEXAFIN&lt;/span&gt;
+          &lt;span className=&quot;flag&quot;&gt;● LIVE · NSE · ZOMATO&lt;/span&gt;
           &lt;span className=&quot;mono&quot; style={{fontSize:11,color:&#x27;var(--ink-3)&#x27;,letterSpacing:1.5}}&gt;LISTING SESSION · {done ? &#x27;CLOSE 15:30&#x27; : `T+${Math.floor(step/10)}m`}&lt;/span&gt;
         &lt;/div&gt;
         &lt;div className=&quot;listing-body&quot;&gt;
@@ -4172,7 +4275,7 @@ function ListingDay({ ctx }) {
 
       &lt;div className=&quot;concept&quot;&gt;
         &lt;span className=&quot;tag&quot;&gt;CONCEPT · LISTING DAY&lt;/span&gt;
-        &lt;div className=&quot;text&quot;&gt;Listing gains aren’t guaranteed. ~40% of recent Indian IPOs listed at a &lt;b&gt;discount&lt;/b&gt;. The 3 forces moving the price: &lt;b&gt;anchor lock-up&lt;/b&gt; (large holders can’t sell for 30/90 days), &lt;b&gt;grey market sentiment&lt;/b&gt; (informal pre-listing trading), and &lt;b&gt;flippers&lt;/b&gt; (allottees selling immediately). When all three align, you get a pop. When they don’t — buyer beware.&lt;/div&gt;
+        &lt;div className=&quot;text&quot;&gt;Listing gains aren’t guaranteed — plenty of IPOs list below their issue price. The book set the IPO price; on listing day &lt;b&gt;everyone else&lt;/b&gt; votes, including people who missed allotment and now want in.&lt;/div&gt;
       &lt;/div&gt;
 
       &lt;div className=&quot;footer-bar&quot;&gt;
@@ -4261,10 +4364,10 @@ const ALL_RECAP = [
   { tag: &#x27;LEARN&#x27;, text: &#x27;An &lt;b&gt;IPO&lt;/b&gt; raises capital by selling shares to the public for the first time.&#x27; },
   { tag: &#x27;LEARN&#x27;, text: &#x27;The &lt;b&gt;DRHP&lt;/b&gt; is the company’s sworn disclosure. Red flags hide in plain sight.&#x27; },
   { tag: &#x27;LEARN&#x27;, text: &#x27;&lt;b&gt;Book building&lt;/b&gt; uses a price band; demand sets the final cut-off.&#x27; },
-  { tag: &#x27;LEARN&#x27;, text: &#x27;Allocation buckets: &lt;b&gt;QIB 50% · HNI 15% · Retail 35%&lt;/b&gt;.&#x27; },
+  { tag: &#x27;LEARN&#x27;, text: &#x27;Allocation buckets: usually QIB 50% · HNI 15% · Retail 35% — loss-making Zomato gave QIBs &lt;b&gt;75%&lt;/b&gt; and retail just &lt;b&gt;10%&lt;/b&gt;.&#x27; },
   { tag: &#x27;LEARN&#x27;, text: &#x27;&lt;b&gt;ASBA&lt;/b&gt; blocks (not deducts) your bid amount; un-allotted portion auto-unblocks.&#x27; },
   { tag: &#x27;LEARN&#x27;, text: &#x27;Oversubscribed retail → &lt;b&gt;random lottery&lt;/b&gt;. Big bids don’t buy better odds.&#x27; },
-  { tag: &#x27;LEARN&#x27;, text: &#x27;Listing gains aren’t guaranteed. ~40% of recent Indian IPOs listed at a discount.&#x27; },
+  { tag: &#x27;LEARN&#x27;, text: &#x27;Listing gains aren’t guaranteed — plenty of IPOs list below their issue price.&#x27; },
 ];
 
 function FinalScore({ ctx }) {
@@ -4283,8 +4386,6 @@ function FinalScore({ ctx }) {
     &lt;div className=&quot;stage&quot;&gt;
       &lt;div className=&quot;stage-head&quot;&gt;&lt;span className=&quot;stage-num&quot;&gt;FINAL REPORT&lt;/span&gt;&lt;/div&gt;
       &lt;div className=&quot;stage-title&quot;&gt;Your IPO journey · debrief.&lt;/div&gt;
-      &lt;p className=&quot;stage-sub&quot;&gt;One IPO closed. Here’s what you learned, what you earned, and how to play smarter next round.&lt;/p&gt;
-
       &lt;div className=&quot;score-grid&quot;&gt;
         &lt;div className=&quot;score-hero&quot;&gt;
           &lt;span className=&quot;score-tag&quot;&gt;YOUR INVESTOR PERSONA&lt;/span&gt;
@@ -4296,7 +4397,7 @@ function FinalScore({ ctx }) {
           &lt;/div&gt;
 
           &lt;div className=&quot;stat-row&quot; style={{marginTop:18}}&gt;
-            &lt;div className=&quot;stat-cell&quot;&gt;&lt;span className=&quot;l&quot;&gt;DRHP RED FLAGS CAUGHT&lt;/span&gt;&lt;span className=&quot;v up&quot;&gt;{game.correctFlags.length} / 4&lt;/span&gt;&lt;/div&gt;
+            &lt;div className=&quot;stat-cell&quot;&gt;&lt;span className=&quot;l&quot;&gt;DRHP RED FLAGS CAUGHT&lt;/span&gt;&lt;span className=&quot;v up&quot;&gt;{game.correctFlags.length} / {DRHP_ITEMS.filter(d =&gt; d.isFlag).length}&lt;/span&gt;&lt;/div&gt;
             &lt;div className=&quot;stat-cell&quot;&gt;&lt;span className=&quot;l&quot;&gt;BID STRATEGY&lt;/span&gt;&lt;span className=&quot;v amber&quot;&gt;{game.useCutoff ? &#x27;CUT-OFF&#x27; : `₹${game.bidPrice}`}&lt;/span&gt;&lt;/div&gt;
             &lt;div className=&quot;stat-cell&quot;&gt;&lt;span className=&quot;l&quot;&gt;ALLOTMENT&lt;/span&gt;&lt;span className=&quot;v&quot; style={{color: allotted ? &#x27;var(--up)&#x27; : &#x27;var(--dn)&#x27;}}&gt;{allotted ? `${allotted} SH` : &#x27;NONE&#x27;}&lt;/span&gt;&lt;/div&gt;
             &lt;div className=&quot;stat-cell&quot;&gt;&lt;span className=&quot;l&quot;&gt;LISTING P&amp;amp;L&lt;/span&gt;&lt;span className=&quot;v&quot; style={{color: pnl &gt; 0 ? &#x27;var(--up)&#x27; : pnl &lt; 0 ? &#x27;var(--dn)&#x27; : &#x27;var(--ink-3)&#x27;}}&gt;
@@ -4308,9 +4409,8 @@ function FinalScore({ ctx }) {
             &lt;div className=&quot;mono dim&quot; style={{fontSize:11,letterSpacing:1.5,fontWeight:700,marginBottom:8}}&gt;BADGES&lt;/div&gt;
             &lt;div className=&quot;badge-grid&quot;&gt;
               {ALL_BADGES.map(b =&gt; (
-                &lt;div key={b.key} className={`badge ${game.badges.has(b.key) ? &#x27;earned&#x27; : &#x27;&#x27;}`}&gt;
+                &lt;div key={b.key} className={`badge ${game.badges.has(b.key) ? &#x27;earned&#x27; : &#x27;&#x27;}`} title={b.desc}&gt;
                   &lt;div className=&quot;name&quot;&gt;{game.badges.has(b.key) ? &#x27;★&#x27; : &#x27;○&#x27;} {b.name}&lt;/div&gt;
-                  &lt;div className=&quot;desc&quot;&gt;{b.desc}&lt;/div&gt;
                 &lt;/div&gt;
               ))}
             &lt;/div&gt;
@@ -4343,8 +4443,8 @@ function FinalScore({ ctx }) {
       &lt;/div&gt;
 
       &lt;div className=&quot;footer-bar&quot;&gt;
-        &lt;button className=&quot;btn ghost&quot; onClick={() =&gt; { window.location.reload(); }}&gt;↻ NEW IPO · NEXT COMPANY&lt;/button&gt;
-        &lt;button className=&quot;btn&quot; onClick={() =&gt; ctx.setStage(0)}&gt;BACK TO LOBBY&lt;/button&gt;
+        &lt;button className=&quot;btn ghost&quot; onClick={() =&gt; { window.location.reload(); }}&gt;↻ PLAY AGAIN&lt;/button&gt;
+        &lt;button className=&quot;btn&quot; onClick={() =&gt; ctx.setStage(0)}&gt;←  PICK ANOTHER IPO&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   );
