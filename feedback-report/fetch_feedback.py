@@ -14,6 +14,7 @@ GIDS = {'feedback':332313533,'iya':1183926362,'ift':1184692538,
         'ifmreg':855165962,'iyareg':1497102767,'iftreg':1875230536}
 RECS = ['Highly recommend!','Likely','Maybe','Not likely']
 TEST_EMAILS = {'test@example.com','asba@moogaworld.com'}
+TEST_NAMES = {'asba aga','test audit user'}   # staff test submissions that arrive with other emails (found 6 Nov 2026)
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE,'data')
 
@@ -98,6 +99,11 @@ def main():
                 'q3_enjoyed':(ge+(' — favourite: '+fav if fav else '')) if ge else '',
                 'q4_improve':col(r,'Improvement Ideas') or col(r,'Suggestions'),
                 'future':col(r,'Attend More'),'wa':'','testimonial':'','shifted':''})
+    keep=[]
+    for o in rows:
+        if o['name'].strip().lower() in TEST_NAMES: tests.append(o['name'])
+        else: keep.append(o)
+    rows=keep
     for o in rows:
         for k in ('q1_learning','q3_enjoyed','q4_improve'): o[k]=clean_text(o[k])
 
