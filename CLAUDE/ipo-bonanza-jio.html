@@ -1485,7 +1485,7 @@ function renderTape(){
       ?'<span class="tape-pill amberp"><span class="dot"></span>IPO CLOSED</span>':'';
   document.getElementById('hostTape').innerHTML=
     '<div class="tape"><div class="tape-l">'+
-      '<span class="logo-dot"></span><span class="brand">IPO BONANZA</span>'+
+      '<a href="/ipo-bonanza" title="Back to IPO Bonanza" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit"><span class="logo-dot"></span><span class="brand">IPO BONANZA</span></a>'+
       '<span class="tape-sep"></span><span class="brand-2">JIO PLATFORMS · LIVE CLASSROOM</span>'+
     '</div><div class="tape-r">'+pill+
       '<span class="tape-meta">ROOM '+esc(ROOM)+'</span>'+
@@ -1513,6 +1513,7 @@ function renderChrome(){
   ctrls.classList.remove('hide'); hints.classList.remove('hide');
   let h='';
   if(_history.length) h+='<button class="btn ghost" id="btnBack">← BACK</button>';
+  else h+='<a class="btn ghost" href="/ipo-bonanza" style="text-decoration:none">← IPO BONANZA</a>';
   h+='<button class="btn ghost" id="btnReset" title="Start a brand-new game">↺</button>';
   const nl=nextLabel();
   if(nl) h+='<button class="btn" id="btnNext">'+nl+'</button>';
