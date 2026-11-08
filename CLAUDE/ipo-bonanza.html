@@ -2999,7 +2999,75 @@ function Stepper({ stage }) {
 /* ============================================================
    STAGE 0 — START
    ============================================================ */
+const JIO_URL = &#x27;/ipo-bonanza-jio&#x27;;
+
+function IpoChoice({ logo, logoBg, label, name, sector, meta, windowText, mode, modeColor, how, cta, ctaClass, onPick }) {
+  return (
+    &lt;div className=&quot;ipo-card&quot; role=&quot;button&quot; tabIndex={0} onClick={onPick}
+      onKeyDown={e =&gt; { if (e.key === &#x27;Enter&#x27; || e.key === &#x27; &#x27;) { e.preventDefault(); onPick(); } }}
+      style={{cursor:&#x27;pointer&#x27;,display:&#x27;flex&#x27;,flexDirection:&#x27;column&#x27;,minWidth:0,transition:&#x27;transform .15s, border-color .15s&#x27;}}
+      onMouseEnter={e =&gt; { e.currentTarget.style.transform=&#x27;translateY(-3px)&#x27;; e.currentTarget.style.borderColor=modeColor; }}
+      onMouseLeave={e =&gt; { e.currentTarget.style.transform=&#x27;&#x27;; e.currentTarget.style.borderColor=&#x27;&#x27;; }}&gt;
+      &lt;div style={{display:&#x27;flex&#x27;,alignItems:&#x27;center&#x27;,gap:14}}&gt;
+        &lt;div className=&quot;ipo-logo&quot; style={logoBg ? {background:logoBg,color:&#x27;#fff&#x27;,boxShadow:&#x27;0 6px 24px rgba(59,130,246,0.3)&#x27;} : null}&gt;{logo}&lt;/div&gt;
+        &lt;div style={{flex:1,minWidth:0}}&gt;
+          &lt;div className=&quot;mono dim&quot; style={{fontSize:11,letterSpacing:&#x27;1.5px&#x27;}}&gt;{label}&lt;/div&gt;
+          &lt;h3 style={{margin:&#x27;4px 0 2px&#x27;}}&gt;{name}&lt;/h3&gt;
+          &lt;div className=&quot;sector&quot;&gt;{sector}&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div style={{marginTop:16,display:&#x27;inline-flex&#x27;,alignSelf:&#x27;flex-start&#x27;,alignItems:&#x27;center&#x27;,gap:8,padding:&#x27;5px 10px&#x27;,borderRadius:4,
+        fontFamily:&quot;&#x27;JetBrains Mono&#x27;, monospace&quot;,fontSize:11,fontWeight:800,letterSpacing:&#x27;1.5px&#x27;,color:modeColor,
+        border:&#x27;1px solid &#x27;+modeColor,background:&#x27;rgba(255,255,255,0.03)&#x27;}}&gt;
+        &lt;span style={{width:7,height:7,borderRadius:&#x27;50%&#x27;,background:modeColor,boxShadow:&#x27;0 0 8px &#x27;+modeColor}}&gt;&lt;/span&gt;{mode}
+      &lt;/div&gt;
+      &lt;p style={{fontSize:14.5,color:&#x27;var(--ink-2)&#x27;,lineHeight:1.5,margin:&#x27;12px 0 0&#x27;}}&gt;{how}&lt;/p&gt;
+      &lt;div className=&quot;ipo-meta&quot;&gt;
+        {meta.map(([l, v]) =&gt; &lt;div key={l}&gt;&lt;div className=&quot;l&quot;&gt;{l}&lt;/div&gt;&lt;div className=&quot;v&quot;&gt;{v}&lt;/div&gt;&lt;/div&gt;)}
+      &lt;/div&gt;
+      &lt;div className=&quot;ipo-window&quot;&gt;&lt;span className=&quot;l&quot;&gt;BIDDING WINDOW&lt;/span&gt;&lt;span className=&quot;r&quot;&gt;{windowText}&lt;/span&gt;&lt;/div&gt;
+      &lt;div style={{marginTop:&#x27;auto&#x27;,paddingTop:20}}&gt;
+        &lt;button className={&#x27;btn&#x27; + (ctaClass ? &#x27; &#x27; + ctaClass : &#x27;&#x27;)} style={{width:&#x27;100%&#x27;}}
+          onClick={e =&gt; { e.stopPropagation(); onPick(); }}&gt;{cta}&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
 function Start({ ctx }) {
+  const [pick, setPick] = useState(null);
+  if (pick === &#x27;zomato&#x27;) return &lt;ZomatoStart ctx={ctx} onBack={() =&gt; setPick(null)} /&gt;;
+  const goJio = () =&gt; { try { window.top.location.href = JIO_URL; } catch (e) { window.location.href = JIO_URL; } };
+  return (
+    &lt;div style={{padding:&#x27;40px clamp(14px,4vw,24px) 80px&#x27;,maxWidth:1200,margin:&#x27;0 auto&#x27;,width:&#x27;100%&#x27;,boxSizing:&#x27;border-box&#x27;}}&gt;
+      &lt;div className=&quot;hero-l&quot;&gt;
+        &lt;span className=&quot;hero-tag&quot;&gt;&lt;span className=&quot;logo-dot&quot; style={{width:7,height:7}}&gt;&lt;/span&gt; IPO BONANZA · PICK YOUR IPO&lt;/span&gt;
+        &lt;h1 style={{fontSize:&#x27;clamp(36px,7vw,56px)&#x27;}}&gt;Two real IPOs. &lt;span className=&quot;accent&quot;&gt;Pick one.&lt;/span&gt;&lt;/h1&gt;
+        &lt;p className=&quot;hero-lede&quot; style={{maxWidth:680}}&gt;
+          Same journey every time — the DRHP, the bid, ASBA, the allotment lottery, listing day. Two very different companies, and two very different ways to play.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div style={{display:&#x27;grid&#x27;,gridTemplateColumns:&#x27;repeat(auto-fit,minmax(min(320px,100%),1fr))&#x27;,gap:20}}&gt;
+        &lt;IpoChoice
+          logo=&quot;Z&quot; label=&quot;INDIA’S FIRST UNICORN IPO · 2021&quot; name=&quot;Zomato Limited&quot; sector=&quot;ONLINE FOOD DELIVERY · CONSUMER TECH&quot;
+          mode=&quot;SOLO · ON YOUR OWN&quot; modeColor=&quot;var(--up)&quot;
+          how=&quot;Play it yourself, at your own pace. A loss-making startup: hunt the red flags, place your bid, survive the lottery.&quot;
+          meta={[[&#x27;PRICE BAND&#x27;, COMPANY.ipoMeta.priceBand], [&#x27;LOT SIZE&#x27;, COMPANY.ipoMeta.lotSize], [&#x27;ISSUE SIZE&#x27;, COMPANY.ipoMeta.issueSize], [&#x27;FRESH / OFS&#x27;, COMPANY.ipoMeta.freshIssue + &#x27; / &#x27; + COMPANY.ipoMeta.ofs]]}
+          windowText={COMPANY.ipoMeta.window}
+          cta=&quot;PLAY ZOMATO  →&quot; onPick={() =&gt; setPick(&#x27;zomato&#x27;)} /&gt;
+        &lt;IpoChoice
+          logo=&quot;J&quot; logoBg=&quot;linear-gradient(135deg,#3b82f6,#1e40af)&quot; label=&quot;INDIA’S BIGGEST IPO · 2026&quot; name=&quot;Jio Platforms Limited&quot; sector=&quot;TELECOM · DIGITAL SERVICES&quot;
+          mode=&quot;LIVE · WHOLE CLASS ON PHONES&quot; modeColor=&quot;var(--amber)&quot;
+          how=&quot;Run it on the big screen. Everyone gets ₹10 lakh, applies as Retail or HNI from their phone — then watch who actually gets allotment.&quot;
+          meta={[[&#x27;PRICE BAND&#x27;, &#x27;₹1,070 – ₹1,119&#x27;], [&#x27;LOT SIZE&#x27;, &#x27;12 shares&#x27;], [&#x27;ISSUE SIZE&#x27;, &#x27;₹30,213 Cr&#x27;], [&#x27;LOT COST&#x27;, &#x27;₹13,428&#x27;]]}
+          windowText=&quot;Oct 2026&quot;
+          cta=&quot;RUN JIO LIVE  →&quot; ctaClass=&quot;amber&quot; onPick={goJio} /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+function ZomatoStart({ ctx, onBack }) {
   return (
     &lt;div className=&quot;hero&quot;&gt;
       &lt;div className=&quot;hero-l&quot;&gt;
@@ -3008,14 +3076,16 @@ function Start({ ctx }) {
         &lt;p className=&quot;hero-lede&quot;&gt;
           A live IPO is opening in Indian markets. You have ₹2.5 lakh in your bank account, a Demat, and a finite window to make a call. We’ll re-run a &lt;b style={{color:&#x27;var(--amber)&#x27;}}&gt;real Indian IPO&lt;/b&gt; end-to-end — the DRHP, the bidding, the lottery, the listing pop. Find out if you’re an &lt;b style={{color:&#x27;var(--ink)&#x27;}}&gt;IPO Guru&lt;/b&gt; or a &lt;b style={{color:&#x27;var(--dn)&#x27;}}&gt;Greater Fool&lt;/b&gt;.
         &lt;/p&gt;
-        &lt;div className=&quot;mono dim&quot; style={{fontSize:10.5,fontWeight:700,letterSpacing:&#x27;1.5px&#x27;,marginBottom:8}}&gt;PICK YOUR IPO&lt;/div&gt;
         &lt;div className=&quot;mode-grid&quot;&gt;
           &lt;div className=&quot;mode-card&quot;&gt;&lt;div className=&quot;mode-head&quot;&gt;&lt;span className=&quot;mode-pip&quot;&gt;&lt;/span&gt;&lt;span className=&quot;mode-name&quot;&gt;Be the Retail Investor&lt;/span&gt;&lt;/div&gt;&lt;p className=&quot;mode-desc&quot;&gt;Read the DRHP, place a bid, survive ASBA, hope for allotment, brave listing day.&lt;/p&gt;&lt;/div&gt;
           &lt;div className=&quot;mode-card locked&quot;&gt;&lt;div className=&quot;mode-head&quot;&gt;&lt;span className=&quot;mode-pip&quot;&gt;&lt;/span&gt;&lt;span className=&quot;mode-name&quot;&gt;Be the Company&lt;/span&gt;&lt;span className=&quot;mode-soon&quot;&gt;SOON&lt;/span&gt;&lt;/div&gt;&lt;p className=&quot;mode-desc&quot;&gt;Found a startup, pick your bankers, set the price band, run the roadshow.&lt;/p&gt;&lt;/div&gt;
           &lt;a className=&quot;mode-card&quot; href=&quot;/ipo-bonanza-jio.html&quot; target=&quot;_top&quot; style={{textDecoration:&#x27;none&#x27;,color:&#x27;inherit&#x27;,display:&#x27;block&#x27;,cursor:&#x27;pointer&#x27;}}&gt;&lt;div className=&quot;mode-head&quot;&gt;&lt;span className=&quot;mode-pip&quot;&gt;&lt;/span&gt;&lt;span className=&quot;mode-name&quot;&gt;Jio IPO · Live Multiplayer&lt;/span&gt;&lt;span className=&quot;mode-soon&quot; style={{color:&#x27;var(--up)&#x27;}}&gt;LIVE&lt;/span&gt;&lt;/div&gt;&lt;p className=&quot;mode-desc&quot;&gt;India’s biggest IPO. The whole class applies together — Retail or HNI. Who gets allotment?&lt;/p&gt;&lt;/a&gt;
           &lt;div className=&quot;mode-card locked&quot;&gt;&lt;div className=&quot;mode-head&quot;&gt;&lt;span className=&quot;mode-pip&quot;&gt;&lt;/span&gt;&lt;span className=&quot;mode-name&quot;&gt;Greatest Hits&lt;/span&gt;&lt;span className=&quot;mode-soon&quot;&gt;SOON&lt;/span&gt;&lt;/div&gt;&lt;p className=&quot;mode-desc&quot;&gt;Replay famous Indian IPOs. Could you have spotted the disasters?&lt;/p&gt;&lt;/div&gt;
         &lt;/div&gt;
-        &lt;button className=&quot;btn&quot; onClick={ctx.next}&gt;START THE JOURNEY  →&lt;/button&gt;
+        &lt;div style={{display:&#x27;flex&#x27;,gap:10,flexWrap:&#x27;wrap&#x27;}}&gt;
+          &lt;button className=&quot;btn&quot; onClick={ctx.next}&gt;START THE JOURNEY  →&lt;/button&gt;
+          &lt;button className=&quot;btn ghost&quot; onClick={onBack}&gt;← CHANGE IPO&lt;/button&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
 
       &lt;div&gt;
