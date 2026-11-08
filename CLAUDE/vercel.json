@@ -133,6 +133,10 @@
       "destination": "/ipo-bonanza.html"
     },
     {
+      "source": "/ipo-bonanza-jio",
+      "destination": "/ipo-bonanza-jio.html"
+    },
+    {
       "source": "/my-first-trade",
       "destination": "/my-first-trade.html"
     },
