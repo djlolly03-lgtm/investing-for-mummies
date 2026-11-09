@@ -2960,16 +2960,17 @@ const DRHP_ITEMS = [
   },
 ];
 
-/* News items — mirrors actual ticker around Zomato&#x27;s July 2021 issue */
+/* News items — every line sourced (9 Nov 2026):
+   Chittorgarh chittorgarh.com/ipo/zomato-ipo/1126/ · NSE issue information (as on 16-Jul-2021 17:00)
+   · official Basis of Allotment notice, nsearchives.nseindia.com/corporate/ADV_INE758T01015_22JUL2021.pdf
+   Grey-market (GMP) and day-by-day figures were removed: not on these sources. */
 const NEWS_FEED = [
-  { t: &#x27;JUL 13&#x27;, tag: &#x27;anchor&#x27;,  text: &#x27;Anchor investors (big institutions given shares 1 day early to signal confidence): 186 funds including Tiger Global, Fidelity &amp; BlackRock commit ₹4,196 Cr at ₹76.&#x27; },
-  { t: &#x27;JUL 14&#x27;, tag: &#x27;gmp&#x27;,     text: &#x27;Bidding opens. Unofficial pre-listing grey market price: ₹13 above issue price (+17%). Day 1 total bids just cover the full issue: 1.05×.&#x27; },
-  { t: &#x27;JUL 14&#x27;, tag: &#x27;broker&#x27;,  text: &#x27;Brokers divided: most say &quot;SUBSCRIBE for long-term&quot; but warn the shares look expensive vs. similar global companies.&#x27; },
-  { t: &#x27;JUL 15&#x27;, tag: &#x27;gmp&#x27;,     text: &#x27;Grey market (unofficial pre-listing) price rises to ₹18 above issue price (+23.7%). Day 2 total bids: 4.8× supply — big institutions (QIBs) still bidding cautiously.&#x27; },
-  { t: &#x27;JUL 16&#x27;, tag: &#x27;alert&#x27;,   text: &#x27;Final day: Big institution (QIB) bids flood in at the last minute. High net-worth bids (NII) hit 20× — many borrowing money just to apply for shares.&#x27; },
-  { t: &#x27;JUL 16&#x27;, tag: &#x27;gmp&#x27;,     text: &#x27;Grey market price holds at ₹17 above issue price going into close. Retail mood: nervous but excited — this is India\u2019s first big tech IPO.&#x27; },
-  { t: &#x27;JUL 16&#x27;, tag: &#x27;broker&#x27;,  text: &#x27;Bidding closed: 38.25× overall — that\u2019s 38× more money chasing shares than are available. ₹2,30,000+ Cr bid for a ₹9,375 Cr issue.&#x27; },
-  { t: &#x27;JUL 22&#x27;, tag: &#x27;anchor&#x27;,  text: &#x27;Winners announced — allotment list published. Blocked money auto-released for those not picked. Listing tomorrow on BSE &amp; NSE stock exchanges.&#x27; },
+  { t: &#x27;JUL 13&#x27;, tag: &#x27;anchor&#x27;,  text: &#x27;Anchor investors (big funds allowed to buy one day early): 144 of them put in ₹4,196 Cr at ₹76 a share.&#x27; },
+  { t: &#x27;JUL 14&#x27;, tag: &#x27;broker&#x27;,  text: &#x27;Bidding opens. Price band ₹72–₹76. One lot = 195 shares = ₹14,820. Retail can apply up to ₹2 lakh.&#x27; },
+  { t: &#x27;JUL 16&#x27;, tag: &#x27;alert&#x27;,   text: &#x27;Bidding closes. Big institutions (QIB) asked for 51.79× their share, HNIs 32.96×, retail 7.45×.&#x27; },
+  { t: &#x27;JUL 16&#x27;, tag: &#x27;alert&#x27;,   text: &#x27;38.25× overall. About ₹2.1 lakh Cr of bids chased a ₹9,375 Cr issue.&#x27; },
+  { t: &#x27;JUL 22&#x27;, tag: &#x27;anchor&#x27;,  text: &#x27;Allotment lottery done by the registrar (Link Intime). If you didn’t win, your blocked money is released.&#x27; },
+  { t: &#x27;JUL 23&#x27;, tag: &#x27;broker&#x27;,  text: &#x27;Listing day on BSE &amp; NSE.&#x27; },
 ];
 
 /* ============================================================
@@ -3536,16 +3537,15 @@ function Bidding({ ctx }) {
 
         &lt;div className=&quot;panel demand-panel&quot;&gt;
           &lt;div className=&quot;panel-head&quot; style={{padding:0, marginBottom:14, background:&#x27;transparent&#x27;, border:0}}&gt;
-            &lt;span&gt;RETAIL DEMAND CURVE · LIVE BOOK&lt;/span&gt;
-            &lt;span className=&quot;mono dim&quot;&gt;D2 · 14:42 IST&lt;/span&gt;
+            &lt;span&gt;HOW BIDS USUALLY STACK UP&lt;/span&gt;
+            &lt;span className=&quot;mono dim&quot;&gt;ILLUSTRATION · NOT ZOMATO DATA&lt;/span&gt;
           &lt;/div&gt;
           &lt;DemandCurve userPrice={game.useCutoff ? null : game.bidPrice} /&gt;
           &lt;div className=&quot;demand-legend&quot;&gt;
-            &lt;div&gt;BIDS AT FLOOR &lt;b className=&quot;up&quot;&gt;4.9L&lt;/b&gt;&lt;/div&gt;
-            &lt;div&gt;BIDS AT CUT-OFF &lt;b className=&quot;amber&quot;&gt;12.7L&lt;/b&gt;&lt;/div&gt;
-            &lt;div&gt;TOTAL RETAIL &lt;b&gt;17.6L&lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;FEW BIDS &lt;b className=&quot;up&quot;&gt;AT THE FLOOR&lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;MOST BIDS &lt;b className=&quot;amber&quot;&gt;AT CUT-OFF&lt;/b&gt;&lt;/div&gt;
           &lt;/div&gt;
-          &lt;div style={{marginTop:12,fontSize:13,color:&#x27;var(--ink-2)&#x27;,lineHeight:1.45}}&gt;&lt;span className=&quot;amber&quot; style={{fontWeight:800}}&gt;TIP · &lt;/span&gt;Most retail bidders pile in at cut-off. Bid below ₹{PRICE_HIGH} and you could be left out entirely.&lt;/div&gt;
+          &lt;div style={{marginTop:12,fontSize:13,color:&#x27;var(--ink-2)&#x27;,lineHeight:1.45}}&gt;&lt;span className=&quot;amber&quot; style={{fontWeight:800}}&gt;TIP · &lt;/span&gt;Most retail bidders tick cut-off. Zomato’s final price was ₹{PRICE_HIGH} — anyone who bid less was left out of the draw entirely.&lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
 
@@ -3659,7 +3659,12 @@ function ASBABlock({ ctx }) {
 /* ============================================================
    STAGE 6 — OVERSUBSCRIPTION FRENZY (animated)
    ============================================================ */
+// NSE issue information, consolidated BSE+NSE, as on 16-Jul-2021 17:00 (ex-anchor). VERIFIED 9 Nov 2026.
 const FINAL_SUB = { qib: 51.79, hni: 32.96, ret: 7.45 };
+const SHARES_BID_CR = { qib: 2013.79, hni: 640.56, ret: 96.52 };   // crore shares bid, same NSE source
+// Official Basis of Allotment (22 Jul 2021): 25,53,217 valid retail applications, 6,31,482 winners = 24.73%.
+// Same ratio at every lot size (116:469 and 23:93 both = 24.73%) — bigger bids did not buy better odds.
+const RETAIL_WIN_PCT = 631482 / 2553217;
 function Oversubscription({ ctx }) {
   const [t, setT] = useState(0);          // 0..1 progress
   const [newsCount, setNewsCount] = useState(0);
@@ -3693,9 +3698,9 @@ function Oversubscription({ ctx }) {
       &lt;p className=&quot;stage-sub&quot;&gt;A 1.0× bucket means it was fully subscribed. 10×, 20×, 50× means demand far outstripped supply — and your allotment odds drop with every multiple.&lt;/p&gt;
 
       &lt;div className=&quot;sub-grid&quot;&gt;
-        &lt;SubCard cls=&quot;qib&quot; name=&quot;QIB&quot; full=&quot;QUALIFIED INSTITUTIONAL&quot; target={FINAL_SUB.qib} t={t}/&gt;
-        &lt;SubCard cls=&quot;hni&quot; name=&quot;NII / HNI&quot; full=&quot;HIGH NET-WORTH&quot; target={FINAL_SUB.hni} t={t}/&gt;
-        &lt;SubCard cls=&quot;ret&quot; name=&quot;RETAIL&quot; full=&quot;INDIVIDUAL · YOU&quot; target={FINAL_SUB.ret} t={t}/&gt;
+        &lt;SubCard cls=&quot;qib&quot; name=&quot;QIB&quot; full=&quot;QUALIFIED INSTITUTIONAL&quot; target={FINAL_SUB.qib} bid={SHARES_BID_CR.qib} t={t}/&gt;
+        &lt;SubCard cls=&quot;hni&quot; name=&quot;NII / HNI&quot; full=&quot;HIGH NET-WORTH&quot; target={FINAL_SUB.hni} bid={SHARES_BID_CR.hni} t={t}/&gt;
+        &lt;SubCard cls=&quot;ret&quot; name=&quot;RETAIL&quot; full=&quot;INDIVIDUAL · YOU&quot; target={FINAL_SUB.ret} bid={SHARES_BID_CR.ret} t={t}/&gt;
       &lt;/div&gt;
 
       &lt;div className=&quot;news-feed&quot;&gt;
@@ -3725,7 +3730,7 @@ function Oversubscription({ ctx }) {
   );
 }
 
-function SubCard({ cls, name, full, target, t }) {
+function SubCard({ cls, name, full, target, bid, t }) {
   const value = (target * t).toFixed(1);
   const barPct = Math.min(100, (target * t / 80) * 100);
   return (
@@ -3740,7 +3745,7 @@ function SubCard({ cls, name, full, target, t }) {
       &lt;div className=&quot;sub-bar&quot;&gt;&lt;div className={`sub-fill ${cls}`} style={{width:`${barPct}%`}}&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;div className=&quot;sub-meta&quot;&gt;
         &lt;span&gt;SHARES BID&lt;/span&gt;
-        &lt;span&gt;{(target * t * 1.42).toFixed(1)} Cr&lt;/span&gt;
+        &lt;span&gt;{Math.round(bid * t).toLocaleString(&#x27;en-IN&#x27;)} Cr&lt;/span&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   );
@@ -3759,11 +3764,8 @@ function Allotment({ ctx }) {
 
   // Decide outcome based on the player&#x27;s bid behaviour &amp; retail oversubscription
   const naturalOutcome = useMemo(() =&gt; {
-    let pWin;
-    if (game.useCutoff || game.bidPrice &gt;= PRICE_HIGH) pWin = 0.32;
-    else if (game.bidPrice &gt;= 475) pWin = 0.18;
-    else if (game.bidPrice &gt;= 468) pWin = 0.05;
-    else pWin = 0.0;
+    // Bids below the final ₹76 were not in the draw (official notice: only bids at cut-off or ₹76 were allotted).
+    const pWin = (game.useCutoff || game.bidPrice &gt;= PRICE_HIGH) ? RETAIL_WIN_PCT : 0;
     const won = Math.random() &lt; pWin;
     return { won, eligible: pWin &gt; 0 };
   }, [game.useCutoff, game.bidPrice]);
@@ -3823,7 +3825,7 @@ function Allotment({ ctx }) {
           {phase === &#x27;idle&#x27; &amp;&amp; (
             &lt;div style={{marginTop:30}}&gt;
               {!outcome.eligible &amp;&amp; (
-                &lt;p style={{color:&#x27;var(--dn)&#x27;,fontSize:13.5,marginBottom:18,maxWidth:520,margin:&#x27;0 auto 18px&#x27;}}&gt;⚠ You bid at &lt;b&gt;₹{ctx.game.bidPrice}&lt;/b&gt;, below the indicative cut-off. Your application is &lt;b&gt;outside the book&lt;/b&gt; — the lottery won’t even include you. Run it to see.&lt;/p&gt;
+                &lt;p style={{color:&#x27;var(--dn)&#x27;,fontSize:13.5,marginBottom:18,maxWidth:520,margin:&#x27;0 auto 18px&#x27;}}&gt;⚠ You bid at &lt;b&gt;₹{ctx.game.bidPrice}&lt;/b&gt;, below the final price of ₹{PRICE_HIGH}. Your application is &lt;b&gt;outside the book&lt;/b&gt; — the lottery won’t even include you. Run it to see.&lt;/p&gt;
               )}
               &lt;button className=&quot;btn amber&quot; onClick={start}&gt;RUN THE LOTTERY  ⚂&lt;/button&gt;
             &lt;/div&gt;
@@ -3841,6 +3843,7 @@ function Allotment({ ctx }) {
                     ? &lt;&gt;Bid below cut-off, application invalid · full amount auto-unblocked.&lt;/&gt;
                     : &lt;&gt;Lottery is random · full amount auto-unblocked.&lt;/&gt;
                 }
+                {outcome.eligible &amp;&amp; &lt;div style={{marginTop:8,fontSize:13,color:&#x27;var(--ink-3)&#x27;}}&gt;Real Zomato draw: 25.5 lakh retail applications, 6.3 lakh winners — &lt;b style={{color:&#x27;var(--ink-2)&#x27;}}&gt;about 1 in 4&lt;/b&gt;.&lt;/div&gt;}
               &lt;/div&gt;
             &lt;/&gt;
           )}
@@ -4180,18 +4183,19 @@ function ListingDay({ ctx }) {
   const allotted = game.allotment?.sharesAlloted || 0;
   const issuePrice = PRICE_HIGH;
 
-  // Generate a listing-day path: open at premium, then volatile
+  // Listing day 23 Jul 2021, BSE — Chittorgarh: open ₹115, high ₹138, low ₹114, close ₹125.85. VERIFIED 9 Nov 2026.
+  // Open/high/low/close are real; the minute-by-minute wiggle between them is drawn, not recorded.
   const seed = useMemo(() =&gt; {
-    const openPct = 0.51 + (Math.random() - 0.5) * 0.08;   // ~+47% to +55% open (Zomato listed +51%)
-    const openPx = issuePrice * (1 + openPct);
-    const pts = [{ t: 0, p: openPx }];
-    let px = openPx;
-    for (let i = 1; i &lt; 60; i++) {
-      px = px + (Math.random() - 0.48) * px * 0.018;
-      // mild mean reversion to a final ~ +12-26%
-      const target = issuePrice * (1 + 0.66);   // Day-1 close was ~₹126 vs ₹76 issue
-      px += (target - px) * 0.012;
-      pts.push({ t: i, p: px });
+    const K = [[0,115],[3,114],[10,124],[22,138],[34,131],[46,127],[59,125.85]];
+    const pts = [];
+    for (let i = 0; i &lt; 60; i++) {
+      let j = 0; while (j &lt; K.length - 2 &amp;&amp; K[j+1][0] &lt;= i) j++;
+      const [t0,p0] = K[j], [t1,p1] = K[j+1];
+      const f = Math.min(1, (i - t0) / (t1 - t0));
+      const base = p0 + (p1 - p0) * (0.5 - Math.cos(Math.PI * f) / 2);
+      const isKey = K.some(k =&gt; k[0] === i);
+      const wig = isKey ? 0 : Math.sin(i * 1.7) * 0.9 + Math.sin(i * 0.63) * 0.6;
+      pts.push({ t: i, p: Math.min(138, Math.max(114, base + wig)) });
     }
     return pts;
   }, []);
@@ -4227,12 +4231,12 @@ function ListingDay({ ctx }) {
       &lt;div className=&quot;stage-title&quot;&gt;Opening bell. The market votes.&lt;/div&gt;
       &lt;div className=&quot;listing&quot;&gt;
         &lt;div className=&quot;listing-head&quot;&gt;
-          &lt;span className=&quot;flag&quot;&gt;● LIVE · NSE · ZOMATO&lt;/span&gt;
+          &lt;span className=&quot;flag&quot;&gt;● 23 JUL 2021 · BSE · ZOMATO&lt;/span&gt;
           &lt;span className=&quot;mono&quot; style={{fontSize:11,color:&#x27;var(--ink-3)&#x27;,letterSpacing:1.5}}&gt;LISTING SESSION · {done ? &#x27;CLOSE 15:30&#x27; : `T+${Math.floor(step/10)}m`}&lt;/span&gt;
         &lt;/div&gt;
         &lt;div className=&quot;listing-body&quot;&gt;
           &lt;div&gt;
-            &lt;div className=&quot;listing-px-l&quot;&gt;LIVE PRICE · NSE&lt;/div&gt;
+            &lt;div className=&quot;listing-px-l&quot;&gt;PRICE · BSE&lt;/div&gt;
             &lt;div className={`listing-px mono ${isUp ? &#x27;up&#x27; : &#x27;dn&#x27;}`}&gt;₹{currentPx.toFixed(2)}&lt;/div&gt;
             &lt;div className={`listing-chg mono ${isUp ? &#x27;up&#x27; : &#x27;dn&#x27;}`}&gt;{isUp ? &#x27;▲&#x27; : &#x27;▼&#x27;} {Math.abs(chgPct).toFixed(2)}% vs issue&lt;/div&gt;
             &lt;div className=&quot;listing-vs&quot;&gt;
@@ -4246,6 +4250,7 @@ function ListingDay({ ctx }) {
             &lt;div className=&quot;price-graph&quot;&gt;
               &lt;PriceLine path={seed.slice(0, step+1)} issuePrice={issuePrice} fullLen={seed.length}/&gt;
             &lt;/div&gt;
+            &lt;div className=&quot;mono&quot; style={{fontSize:10.5,color:&#x27;var(--ink-3)&#x27;,letterSpacing:1,marginTop:6}}&gt;OPEN · HIGH · LOW · CLOSE ARE ZOMATO’S REAL BSE PRICES. THE LINE BETWEEN THEM IS DRAWN.&lt;/div&gt;
             &lt;div style={{
               marginTop:14, padding:14, borderRadius:6,
               border: `1px solid ${allotted &gt; 0 ? (pnl &gt; 0 ? &#x27;rgba(0,255,149,0.4)&#x27; : &#x27;rgba(255,51,102,0.4)&#x27;) : &#x27;var(--line-2)&#x27;}`,
