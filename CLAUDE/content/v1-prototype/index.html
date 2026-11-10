@@ -393,6 +393,12 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 .kind svg{width:15px;height:15px}
 /* Deliberately not a circle like .play and .kind — this is an absence, and it should not
    read at a glance as another control you can press. */
+/* Sensitive marker. Deliberately on the thumbnail, not tucked in the detail panel:
+ * the point of the 29 Oct rule is that nobody downloads one of these by accident, and
+ * a label you only see after clicking through is a label that arrives too late. */
+.sensflag{position:absolute;left:6px;top:6px;z-index:3;background:rgba(173,20,87,.93);
+  color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.02em;padding:3px 6px;
+  border-radius:6px;line-height:1;white-space:nowrap}
 .nopv{position:absolute;left:12px;bottom:12px;background:rgba(14,22,34,.6);
   box-shadow:0 0 0 1.5px rgba(255,255,255,.55);backdrop-filter:blur(3px);color:rgba(255,255,255,.92);
   font-size:10px;font-weight:500;letter-spacing:.03em;padding:4px 9px;border-radius:4px;line-height:1.3}
@@ -714,6 +720,119 @@ input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance
 <!-- transcripts.js is no longer loaded: speech lives on the row as `speech`/`speech_at`,
      folded in by backfill.py. The file stays as the generated flat text for other tools. -->
 <script src="interpreter.js"></script>
+<!-- This block must stay ABOVE the app's own <script>. v1-prototype/run-tests.js
+     slices the engine out of the page with html.split('<script>').pop(), so any inline
+     script added after it silently becomes "the engine" and the whole acceptance suite
+     dies with "could not find the end-of-engine marker". Appending this at </body> is
+     exactly what happened on 10 Nov 2026. -->
+<!-- ───────────────────────────────────────────────────── sensitive download ──
+     "Be careful" warning before a sensitive file leaves the hub. User rule,
+     29 Oct 2026: "anything that is sensitive, add a pop up when someone is
+     downloading from the content hub (telling them be careful)" — scoped in
+     the same message to certificates and anything showing minors.
+
+     It fires on the DOWNLOAD / OPEN-IN-DRIVE click, not on view. Looking at a
+     thumbnail behind the hub's password is not the risk; the file landing on
+     someone's laptop, in a WhatsApp group or in a client deck is. So the
+     warning sits exactly where the data leaves, and nowhere else — a dialog in
+     front of every thumbnail would be dismissed unread within a day.
+
+     Which rows are sensitive is decided ONCE, by sensitive_for() in
+     backfill.py, and carried on the row as `sensitive`. Nothing here judges.
+
+     The interception is a single capture-phase listener keyed on [data-sens],
+     so a renderer opts an anchor in by setting one attribute and otherwise
+     knows nothing about this. It FAILS OPEN: anything unexpected lets the
+     click through, because a broken warning must never become a broken
+     download — the file is already approved for internal use.
+
+     Re-warns every 10 minutes rather than once per session: 23 dialogs for a
+     batch of certificates is how a warning gets muted, and a permanent mute is
+     how it stops existing. The row's own "minors" / "certificate" pill is
+     always visible regardless.
+  ─────────────────────────────────────────────────────────────────────────── -->
+<script>
+(function(){
+  var ACK_MS = 10*60*1000, acked = 0, bypass = null;
+
+  var st = document.createElement('style');
+  st.textContent =
+   '.sens-scrim{position:fixed;inset:0;z-index:4000;background:rgba(12,28,44,.62);'
+  +'display:flex;align-items:center;justify-content:center;padding:18px}'
+  +'.sens-box{background:#fff;border-radius:16px;max-width:470px;width:100%;padding:24px;'
+  +'box-shadow:0 24px 60px rgba(0,0,0,.32);text-align:left}'
+  +'.sens-box h3{margin:0 0 10px;font-size:1.1rem;line-height:1.3}'
+  +'.sens-box p{margin:0 0 12px;line-height:1.55;font-size:.93rem;color:#2c3e50}'
+  +'.sens-box ul{margin:0 0 18px;padding-left:20px;font-size:.9rem;line-height:1.65;color:#2c3e50}'
+  +'.sens-box .who{font-weight:700;color:#ad1457}'
+  +'.sens-acts{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}'
+  +'.sens-btn{border:0;border-radius:10px;padding:11px 17px;font:inherit;font-size:.93rem;'
+  +'font-weight:650;cursor:pointer}'
+  +'.sens-go{background:#ad1457;color:#fff}.sens-no{background:#eceff1;color:#37474f}'
+  +'@media(max-width:480px){.sens-acts{flex-direction:column-reverse}.sens-btn{width:100%}}';
+  document.head.appendChild(st);
+
+  // What the file actually contains, in the words that make someone stop.
+  function reason(flags){
+    var minor = flags.indexOf('minor') > -1, cert = flags.indexOf('cert') > -1;
+    if (minor && cert) return 'This file shows <span class="who">children</span>, and a '
+      + '<span class="who">certificate with a participant’s full name</span> on it.';
+    if (cert) return 'This carries a <span class="who">participant’s full name</span>, '
+      + 'printed on a certificate — sometimes a child’s.';
+    return 'There are <span class="who">children</span> identifiable in this file.';
+  }
+
+  function ask(flags, proceed){
+    var scrim = document.createElement('div');
+    scrim.className = 'sens-scrim';
+    scrim.innerHTML = '<div class="sens-box" role="alertdialog" aria-modal="true" '
+      + 'aria-labelledby="sens-h">'
+      + '<h3 id="sens-h">⚠️ Careful with this one</h3>'
+      + '<p>' + reason(flags) + '</p>'
+      + '<ul>'
+      + '<li>Don’t post it publicly or forward it outside IFM.</li>'
+      + '<li>A parent has to have said yes, in writing, before it goes anywhere.</li>'
+      + '<li>Crop or blur names and faces for anything social.</li>'
+      + '<li>Delete your local copy once you’re done with it.</li>'
+      + '</ul>'
+      + '<div class="sens-acts">'
+      + '<button class="sens-btn sens-no" type="button">Cancel</button>'
+      + '<button class="sens-btn sens-go" type="button">I understand — continue</button>'
+      + '</div></div>';
+    document.body.appendChild(scrim);
+
+    function close(){ scrim.remove(); document.removeEventListener('keydown', esc); }
+    function esc(e){ if (e.key === 'Escape') close(); }
+    document.addEventListener('keydown', esc);
+    scrim.addEventListener('click', function(e){
+      if (e.target === scrim || e.target.classList.contains('sens-no')) return close();
+      if (e.target.classList.contains('sens-go')) { close(); acked = Date.now(); proceed(); }
+    });
+    try { scrim.querySelector('.sens-go').focus(); } catch(_){}
+  }
+
+  // Exposed for the one caller that is not an anchor: the CSV export, which writes
+  // every picked row's Drive link into a file. Same dialog, same 10-minute ack, so a
+  // spreadsheet cannot become the quiet way around the warning.
+  window.IFM_SENS_WARN = function(flags, proceed){
+    if (!flags || !flags.length) { proceed(); return; }
+    if (Date.now() - acked < ACK_MS) { proceed(); return; }
+    ask(flags, proceed);
+  };
+
+  document.addEventListener('click', function(e){
+    var el;
+    try { el = e.target.closest && e.target.closest('[data-sens]'); } catch(_){ return; }
+    if (!el) return;
+    if (el === bypass) { bypass = null; return; }        // our own synthetic re-click
+    if (Date.now() - acked < ACK_MS) return;             // acknowledged a moment ago
+    var flags = (el.getAttribute('data-sens') || '').split(',').filter(Boolean);
+    if (!flags.length) return;                           // nothing to warn about
+    e.preventDefault(); e.stopPropagation();
+    ask(flags, function(){ bypass = el; el.click(); });
+  }, true);
+})();
+</script>
 <script>
 /* The Library is what Aakara can discover. `library:false` covers logos, playable games
  * and the 33 Goa clips whose masters were deleted; "Do Not Use" is the human's own verdict,
@@ -749,6 +868,16 @@ const T=window.IFM_TAXONOMY;
        * So both halves are required, and for a video "preview" means one that actually
        * plays — a thumbnail over a dead play button is the exact frustration described.
        * The old rule was `thumb OR playable`, which admitted both failure modes. */
+      /* Download warning (user rule, 29 Oct 2026). The verdict is on the row as
+       * `sensitive`, written by sensitive_for() in backfill.py; nothing here judges.
+       * A sensitive asset is NOT hidden -- it is ours, the team needs it, and the hub
+       * is password-gated. What the rule asks for is a warning at the moment it
+       * leaves, which is the download and the Drive link, so that is where it goes. */
+      window.sensAttr = a => (a && a.sensitive && a.sensitive.length)
+        ? ' data-sens="' + a.sensitive.join(',') + '"' : '';
+      window.sensBadge = a => (a && a.sensitive && a.sensitive.length)
+        ? '<span class="sensflag">' + (a.sensitive.indexOf('minor') > -1
+            ? '\u26a0\ufe0f shows children' : '\u26a0\ufe0f names on screen') + '</span>' : '';
       const PLAYS = r => (((window.IFM_MEDIA||{})[r.id])||{}).playable;
       const OPENS = r => {
         const u = (r.video || '') + ' ' + (r.drive || '');
@@ -1173,7 +1302,7 @@ function card(x){
   const on=state.sel.has(a.id);
   const pick=`<button class="csel${on?' on':''}" data-act="pick" data-id="${esc(a.id)}" aria-pressed="${on}" title="${on?'Picked — click to remove':'Pick this one'}" aria-label="${on?'Remove from picks':'Add to picks'}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></button>`;
   return `<span class="cardwrap${on?' picked':''}"><button class="cardx" data-id="${esc(a.id)}">
-    <span class="shot"><span class="none">no preview</span>${a.thumb?`<img loading="lazy" src="${esc(a.thumb)}" alt="" onerror="this.remove()">`:''}${badge}</span>
+    <span class="shot"><span class="none">no preview</span>${a.thumb?`<img loading="lazy" src="${esc(a.thumb)}" alt="" onerror="this.remove()">`:''}${badge}${sensBadge(a)}</span>
     <span class="ttl">${esc(titleOf(a))}</span>
     <span class="ctx">${esc(context(a))||'&nbsp;'}</span>
     <span class="tags">${pills}</span>
@@ -1524,13 +1653,18 @@ function openDetail(id){
       ${a.description?`<p class="desc">${esc(a.description)}</p>`:''}
       ${meta}
       <div class="acts">${a.drive
-        ? `<a class="btn" href="${esc(a.drive)}" target="_blank" rel="noopener">Open in Drive ↗</a>
-        <button class="btn ghost" data-act="copy" data-href="${esc(a.drive)}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span class="lbl">Copy link</span></button>
+        ? `<a class="btn" href="${esc(a.drive)}" target="_blank" rel="noopener"${sensAttr(a)}>Open in Drive ↗</a>
+        <button class="btn ghost" data-act="copy" data-href="${esc(a.drive)}"${sensAttr(a)}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span class="lbl">Copy link</span></button>
         ${dpick(a.id)}`
         // One asset in the library has no Drive link. Rendering Copy link anyway gave a
         // button that swallowed the click and did nothing — say so instead.
         : `<p class="nolink">No Drive link recorded for this asset.</p>`}
-      </div>${caveat}</div>`;
+      </div>${a.sensitive&&a.sensitive.length?note(
+          a.sensitive.indexOf('minor')>-1?'Children are identifiable in this file. '
+                                         :'A participant\u2019s name is on screen. ',
+          'Internal use only \u2014 don\u2019t post or forward it, and get a parent\u2019s '
+          +'written consent before it goes anywhere. You\u2019ll be reminded on download.'
+        ):''}${caveat}</div>`;
   // Always two columns. The `single` variant collapsed every non-playable asset — the large
   // majority of the library — back into the stacked layout this pass exists to remove.
   $('dbody').innerHTML=`<div class="dgrid">${visual}${text}</div>`;
@@ -1727,6 +1861,9 @@ function dpick(id){
 }
 const expRow=a=>({id:a.id,title:String(a.title||''),type:a.type||'',
   format:a.format||'',session:a.session||'',date:a.date||'',
+  // Carried for the warning only. It is NOT one of the CSV's columns — the file
+  // itself stays exactly as it was.
+  sensitive:a.sensitive||[],
   drive:/^https?:/.test(String(a.drive||''))?a.drive:''});
 function exportRows(){
   /* Picks win when there are any, and they are drawn from ASSETS rather than from the
@@ -1749,6 +1886,14 @@ const csvCell=v=>`"${String(v==null?'':v).replace(/"/g,'""')}"`;
 function slug(s){return (s||'all').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'all';}
 function downloadCSV(){
   const rows=exportRows();
+  // The CSV carries every Drive link, so exporting a set that contains a certificate
+  // or a child is the same act as downloading one -- warn once for the whole file
+  // rather than letting the spreadsheet be the quiet way around the dialog.
+  const flags=[...new Set(rows.flatMap(r=>r.sensitive||[]))];
+  if(flags.length && window.IFM_SENS_WARN && !window.__csvAck){
+    window.IFM_SENS_WARN(flags,()=>{ window.__csvAck=1; downloadCSV(); window.__csvAck=0; });
+    return;
+  }
   // ﻿ so Excel opens UTF-8 correctly — without it the em dashes in every title arrive
   // as mojibake, which is how a working export gets reported as broken.
   const head=['id','title','type','format','session','date','drive_link'];
