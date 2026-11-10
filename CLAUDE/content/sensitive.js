@@ -370,5 +370,8 @@ window.IFM_SENS =
 ],
 "IFM-1166": [
 "cert"
+],
+"IFM-1174": [
+"cert"
 ]
 };

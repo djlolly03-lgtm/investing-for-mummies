@@ -11125,14 +11125,14 @@ window.IFM_DATA ={
    "description": "Catch-all for the talking-head takes Hiral recorded for a corporate pitch-deck video: seated on a sofa in a red sleeveless top, speaking to camera, plant and curtains behind. 15 clips from 1 MB to 186 MB. Opens the folder. The takes have not been transcribed, so which take says what is not yet searchable.",
    "drive link": "https://drive.google.com/drive/folders/1t3BUKP9VnPBwOrSxlJsJwlrjYOqwbBEq",
    "date created": "2026-10-01",
-   "notes": "Catalogued 3 Oct 2026 by daily-content-processor from a Drive scan that found these files added 30 Sep–1 Oct with no catalogue row. Next step: transcribe the takes (as was done for the HG reel takes) and split out the ones worth finding. No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). ",
+   "notes": "Catalogued 3 Oct 2026 by daily-content-processor from a Drive scan that found these files added 30 Sep–1 Oct with no catalogue row. Next step: transcribe the takes (as was done for the HG reel takes) and split out the ones worth finding. No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). Preview clip cut from IMG_7887.MOV, the median-sized take in this folder (15 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "shot": "Hiral — teaching",
    "setting": "Studio/Posed",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "Corporate deck video shoot — 1 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-575.mp4",
    "thumbnail": "thumbs/IFM-575.jpg",
    "audience": "Mummies"
   },
@@ -11764,14 +11764,14 @@ window.IFM_DATA ={
    "description": "Catch-all for the IYA (Investing for Young Adults) August 2026 shoot: 114 short phone clips of the teens session in the boardroom — listening, workbook activities, phone quizzes, the trading-platform demo and the certificate close. Opens the folder; the distinct moments are rows of their own.",
    "drive link": "https://drive.google.com/drive/folders/1Syi9U1cbeNZKNhM4UM3EZC_osyM8vg8n",
    "date created": "2026-10-01",
-   "notes": "Catalogued 3 Oct 2026 by daily-content-processor from a Drive scan that found these files added 30 Sep–1 Oct with no catalogue row. CONSENT PENDING — teens programme, participants may be minors; stays off social until a human clears it. Overlap with existing rows: IMG_0765, 0768, 0770, 0779 here are byte-identical (same size) to the Sakshi-upload copies already catalogued as IFM-285, IFM-283, IFM-279 and IFM-281 — no new rows. IMG_0769/0775/0777 are further frames of those same moments. No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). ",
+   "notes": "Catalogued 3 Oct 2026 by daily-content-processor from a Drive scan that found these files added 30 Sep–1 Oct with no catalogue row. CONSENT PENDING — teens programme, participants may be minors; stays off social until a human clears it. Overlap with existing rows: IMG_0765, 0768, 0770, 0779 here are byte-identical (same size) to the Sakshi-upload copies already catalogued as IFM-285, IFM-283, IFM-279 and IFM-281 — no new rows. IMG_0769/0775/0777 are further frames of those same moments. No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). Preview clip cut from IMG_0644.MOV, the median-sized take in this folder (114 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "shot": "Students",
    "setting": "Workshop — youth/teens",
    "quality": "Raw-backup",
    "consent": "Minors visible",
    "session": "IYA — young adults programme — Aug 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-603.mp4",
    "thumbnail": "thumbs/IFM-603.jpg",
    "audience": "Young Adults",
    "batch": "IYA-B3"
@@ -12313,14 +12313,14 @@ window.IFM_DATA ={
    "description": "Catch-all for the 6 Oct session frames that are not a moment of their own: a blank-screen pause, two from-behind clips and a one-second fragment. Opens the shared IFM Oct 2026 folder, which also holds the 1 Oct session.",
    "drive link": "https://drive.google.com/drive/folders/1TYulg-Wlp-48FF1p9ueLg_yzPMTgNBZY",
    "date created": "2026-10-06",
-   "notes": "Catalogued 8 Oct 2026 by daily-content-processor from a fresh Drive scan (the 2 Oct snapshot was stale; these files were added 5–7 Oct). Dated 6 Oct from the upload timestamps: Sakshi’s files arrived between 10:12 and 12:25 IST on 6 Oct as they were shot, and the IMG_80xx set was uploaded in one batch at 15:30 IST the same day. Same boardroom as the 1 Oct session; Hiral is in a yellow ruffle top here, red on 1 Oct. The leftover frames of the session: IMG_3805 (1 MB, a one-second clip), IMG_8039–8041 (three HEICs of Hiral at a blank screen, participant in the red print dress in the foreground), IMG_8042 and IMG_8047 (two clips from behind the participants with Hiral small at the screen). Everything with its own moment is IFM-607..626. Mixed ownership: IMG_3805 is Sakshi’s (archive: 1_M8eF0zj5dtRYN24Go47ITpFUOArVXv7), the IMG_80xx files are ours. ",
+   "notes": "Catalogued 8 Oct 2026 by daily-content-processor from a fresh Drive scan (the 2 Oct snapshot was stale; these files were added 5–7 Oct). Dated 6 Oct from the upload timestamps: Sakshi’s files arrived between 10:12 and 12:25 IST on 6 Oct as they were shot, and the IMG_80xx set was uploaded in one batch at 15:30 IST the same day. Same boardroom as the 1 Oct session; Hiral is in a yellow ruffle top here, red on 1 Oct. The leftover frames of the session: IMG_3805 (1 MB, a one-second clip), IMG_8039–8041 (three HEICs of Hiral at a blank screen, participant in the red print dress in the foreground), IMG_8042 and IMG_8047 (two clips from behind the participants with Hiral small at the screen). Everything with its own moment is IFM-607..626. Mixed ownership: IMG_3805 is Sakshi’s (archive: 1_M8eF0zj5dtRYN24Go47ITpFUOArVXv7), the IMG_80xx files are ours. Preview clip cut from IMG_8559.MOV, the median-sized take in this folder (152 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "shot": "Room-venue wide",
    "setting": "Workshop — corporate",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-627.mp4",
    "thumbnail": "thumbs/IFM-627.jpg",
    "audience": "Mummies"
   },
@@ -12334,14 +12334,14 @@ window.IFM_DATA ={
    "description": "Catch-all for the takes Hiral recorded for the “struggling stock market vs booming IPOs” reel: seated in the wood-panelled boardroom in a yellow ruffle-shoulder top and black skirt, speaking to camera. 16 clips from 21 MB to 567 MB, 2.8 GB in all. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/1s42C9DDDi-r5c4p5mDtsv8FT288hMChZ",
    "date created": "2026-10-05",
-   "notes": "Catalogued 8 Oct 2026 by daily-content-processor from a fresh Drive scan (the 2 Oct snapshot was stale; these files were added 5–7 Oct). Uploaded 5 Oct 2026, 13:54–14:12 IST, as they were shot. The takes have not been transcribed, so which take says what is not yet searchable — same next step as IFM-575 (transcribe, split out the usable takes). Aakara’s cover for this reel is IFM-631; the finished reel is not in Drive yet. The folder is owned by djlolly03@gmail.com, so no archive mirror. Thumbnail is IMG_8027. No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). ",
+   "notes": "Catalogued 8 Oct 2026 by daily-content-processor from a fresh Drive scan (the 2 Oct snapshot was stale; these files were added 5–7 Oct). Uploaded 5 Oct 2026, 13:54–14:12 IST, as they were shot. The takes have not been transcribed, so which take says what is not yet searchable — same next step as IFM-575 (transcribe, split out the usable takes). Aakara’s cover for this reel is IFM-631; the finished reel is not in Drive yet. The folder is owned by djlolly03@gmail.com, so no archive mirror. Thumbnail is IMG_8027. No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). Preview clip cut from IMG_8031.MOV, the median-sized take in this folder (16 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "shot": "Hiral — teaching",
    "setting": "Studio/Posed",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "IPO vs stocks reel takes — 5 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-628.mp4",
    "thumbnail": "thumbs/IFM-628.jpg",
    "audience": "Mummies"
   },
@@ -12355,14 +12355,14 @@ window.IFM_DATA ={
    "description": "Fifteen takes of Hiral for a Dussehra reel: seated on a beige sofa at a wooden table in a green printed kurta, a brass diya lamp and bowl beside her, speaking to camera. Since 19 Oct the folder also holds the reel cover, “dussehra final.png”: “This Dussehra, conquer your financial blind spots”, Hiral cut out over a sky-blue band with two Ravan-mask illustrations and the diya and marigolds in front. Takes from 12 MB to 200 MB, 838 MB in all. No finished reel yet. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/1fbaKCxWfNGEqO2PYg1dqJKQvYnHfefTk",
    "date created": "2026-10-05",
-   "notes": "Catalogued 8 Oct 2026 by daily-content-processor from a fresh Drive scan (the 2 Oct snapshot was stale; these files were added 5–7 Oct). Delivered by Aakara 5 Oct 2026 into October/Reels/Navratri as raw takes only. One row for the topic folder, per the Aakara rule. No planning deck exists for October (no “IFM Creatives_October” in Drive), so there is no deck row to reconcile against. Thumbnail is IMG_5987. archive: 1fHGHWND5lnAVZWGQiPvekpaKdNgMFdTh (IMG_5977), 1Fb3MmdaAtLg3PGUfg5J-0rF77LAxpzJY (IMG_5978), 1thd1-j6x67W3xZodJJghnI3-GwpDRLH5 (IMG_5979), 1CJiyKh4xTwm4Vxnzze-iHdwpdRa6COCz (IMG_5980), 1P20TUBDhD6oiVAX2RYJyw1tHFcslYdmL (IMG_5981), 1RbEC_gteZ_j96hgThBVLjAJ1wUuD1W84 (IMG_5982), 1r3bSr5g2hO5fkansQ0jsG_d0_fcrVuKv (IMG_5983), 1AcG23jrtolV1YBl2S9IZdZ5xxhhBsG5Y (IMG_5984), 10y0JpB1FUSvEqsd93VhMuHgc556WySfM (IMG_5985), 15dslgu2H03qJo_oQ43V1S6Hj4GsCREmW (IMG_5986), 1ExQ4Kq8I8KlSB1WKe_m5Q0HHmSwZGqGM (IMG_5987), 1bLn8ZQ77tc80-FhHQH0CO6_X_coIx9LR (IMG_5988), 1X7IgQKXWlUblCEO1fnmruOTyoUMUiou- (IMG_5989), 1X5CoD1ZlXV8KnSNiPbIYJeJwDDLO17-O (IMG_5990), 1trQHq_9KLlZM-w5_zyl55lKW3nFO5R5W (IMG_5991). Source owned by aakaradesignstudios@gmail.com, hence the mirror. No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). | CORRECTED 12 Oct 2026: the Drive folder is named “Dussehra”, not “Navratri” — the path recorded above (October/Reels/Navratri) does not exist. Folder id is unchanged and still correct. The festival the takes are for is not settled by the folder name; the title is left as delivered and flagged for a human.  | 20 Oct 2026: Aakara added the cover “dussehra final.png” (file 1Kp5dsISCTlS2FEc-Oq23-iBr63LPVQO2) on 19 Oct; thumbnail switched to it. The cover reads “This Dussehra”, which settles the Navratri-vs-Dussehra question carried in the review queue — title changed from Navratri to Dussehra on that evidence. archive (cover): 1PTXt8DYT4o-n24oDmD_BYIDsMnjNGH4m",
+   "notes": "Catalogued 8 Oct 2026 by daily-content-processor from a fresh Drive scan (the 2 Oct snapshot was stale; these files were added 5–7 Oct). Delivered by Aakara 5 Oct 2026 into October/Reels/Navratri as raw takes only. One row for the topic folder, per the Aakara rule. No planning deck exists for October (no “IFM Creatives_October” in Drive), so there is no deck row to reconcile against. Thumbnail is IMG_5987. archive: 1fHGHWND5lnAVZWGQiPvekpaKdNgMFdTh (IMG_5977), 1Fb3MmdaAtLg3PGUfg5J-0rF77LAxpzJY (IMG_5978), 1thd1-j6x67W3xZodJJghnI3-GwpDRLH5 (IMG_5979), 1CJiyKh4xTwm4Vxnzze-iHdwpdRa6COCz (IMG_5980), 1P20TUBDhD6oiVAX2RYJyw1tHFcslYdmL (IMG_5981), 1RbEC_gteZ_j96hgThBVLjAJ1wUuD1W84 (IMG_5982), 1r3bSr5g2hO5fkansQ0jsG_d0_fcrVuKv (IMG_5983), 1AcG23jrtolV1YBl2S9IZdZ5xxhhBsG5Y (IMG_5984), 10y0JpB1FUSvEqsd93VhMuHgc556WySfM (IMG_5985), 15dslgu2H03qJo_oQ43V1S6Hj4GsCREmW (IMG_5986), 1ExQ4Kq8I8KlSB1WKe_m5Q0HHmSwZGqGM (IMG_5987), 1bLn8ZQ77tc80-FhHQH0CO6_X_coIx9LR (IMG_5988), 1X7IgQKXWlUblCEO1fnmruOTyoUMUiou- (IMG_5989), 1X5CoD1ZlXV8KnSNiPbIYJeJwDDLO17-O (IMG_5990), 1trQHq_9KLlZM-w5_zyl55lKW3nFO5R5W (IMG_5991). Source owned by aakaradesignstudios@gmail.com, hence the mirror. No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). | CORRECTED 12 Oct 2026: the Drive folder is named “Dussehra”, not “Navratri” — the path recorded above (October/Reels/Navratri) does not exist. Folder id is unchanged and still correct. The festival the takes are for is not settled by the folder name; the title is left as delivered and flagged for a human.  | 20 Oct 2026: Aakara added the cover “dussehra final.png” (file 1Kp5dsISCTlS2FEc-Oq23-iBr63LPVQO2) on 19 Oct; thumbnail switched to it. The cover reads “This Dussehra”, which settles the Navratri-vs-Dussehra question carried in the review queue — title changed from Navratri to Dussehra on that evidence. archive (cover): 1PTXt8DYT4o-n24oDmD_BYIDsMnjNGH4m Preview clip cut from IMG_5984.mov, the median-sized take in this folder (15 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "shot": "Hiral — teaching",
    "setting": "Studio/Posed",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-629.mp4",
    "thumbnail": "thumbs/IFM-629.jpg",
    "audience": "Mummies"
   },
@@ -12460,14 +12460,14 @@ window.IFM_DATA ={
    "description": "The October instalment of the recurring “Ever Wondered” series, on loss aversion. The cover reads “Why Losing money hurts way more than Making” over green and red arrows and banknotes. The nine takes are Hiral standing in a black satin shirt and cream wide-leg trousers in front of a large blue-and-white abstract painting, talking to camera with open-handed gestures. Clips from 11 MB to 295 MB, 502 MB in all. No finished reel in the folder yet. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/1jz38gUazvDhwdO6cBmyXLnVtqAmh23nr",
    "date created": "2026-10-08",
-   "notes": "Catalogued 12 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (164 folders, 1,850 media files, 0 listing errors). NOT NEW CONTENT — NEWLY VISIBLE. No catalogue row has ever reached this folder. The takes were delivered 18 Sep 2026 and the cover on 8 Oct 2026; the 8 Oct run worked the 5–7 Oct window and caught neither. Same shoot day as IFM-629, IFM-630 and IFM-633. The cover is cut from these takes — same black shirt and cream trousers. Follows July’s “Ever Wondered” gold reel (IFM-216); the September deck placeholder IFM-273 (“Ever Wondered?”, topic TBC) is almost certainly this post now that the topic exists, but it is a September row against an October delivery, so a new row was created rather than reconciled — flagged for a human in the review queue. One row for the topic folder, per the Aakara rule. Thumbnail is the cover. Owned by aakaradesignstudios, hence the mirror. archive: 1dKYl_uQSOrrOh6qU3PhQ-zFWUmgdITIm (Cover.png), 16Q3Qwh87KORG0D2Y5clefYOTPgDskeiP (IMG_5926), 1G8Cfw-S1V3uzZfiyuJx-42Bpx6L85D9_ (IMG_5927), 1GUDuU1ZUWtC9pUf5HdFAzrh9hEEPzJsO (IMG_5928), 1AArEwxVF8m5-eag3SH0PqPljZjY9wYsD (IMG_5929), 1NLRMWWiu02rc7eErGbuI875Zt6Fwk48A (IMG_5930), 1aqkD7JbngWVyXJldWgeFmnS9kK1RMJQs (IMG_5931), 1zzX5XmBE_TUl0wZySqkZflOG0DK_97YI (IMG_5932), 1doHmiIrHjCu4N7J_awDaBaTr4pmbBKKa (IMG_5933), 1ObkLIpGb6B4g5TkzSVVClUMitRxLoqMW (IMG_5994). No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). ",
+   "notes": "Catalogued 12 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (164 folders, 1,850 media files, 0 listing errors). NOT NEW CONTENT — NEWLY VISIBLE. No catalogue row has ever reached this folder. The takes were delivered 18 Sep 2026 and the cover on 8 Oct 2026; the 8 Oct run worked the 5–7 Oct window and caught neither. Same shoot day as IFM-629, IFM-630 and IFM-633. The cover is cut from these takes — same black shirt and cream trousers. Follows July’s “Ever Wondered” gold reel (IFM-216); the September deck placeholder IFM-273 (“Ever Wondered?”, topic TBC) is almost certainly this post now that the topic exists, but it is a September row against an October delivery, so a new row was created rather than reconciled — flagged for a human in the review queue. One row for the topic folder, per the Aakara rule. Thumbnail is the cover. Owned by aakaradesignstudios, hence the mirror. archive: 1dKYl_uQSOrrOh6qU3PhQ-zFWUmgdITIm (Cover.png), 16Q3Qwh87KORG0D2Y5clefYOTPgDskeiP (IMG_5926), 1G8Cfw-S1V3uzZfiyuJx-42Bpx6L85D9_ (IMG_5927), 1GUDuU1ZUWtC9pUf5HdFAzrh9hEEPzJsO (IMG_5928), 1AArEwxVF8m5-eag3SH0PqPljZjY9wYsD (IMG_5929), 1NLRMWWiu02rc7eErGbuI875Zt6Fwk48A (IMG_5930), 1aqkD7JbngWVyXJldWgeFmnS9kK1RMJQs (IMG_5931), 1zzX5XmBE_TUl0wZySqkZflOG0DK_97YI (IMG_5932), 1doHmiIrHjCu4N7J_awDaBaTr4pmbBKKa (IMG_5933), 1ObkLIpGb6B4g5TkzSVVClUMitRxLoqMW (IMG_5994). No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). Preview clip cut from IMG_5932.mov, the median-sized take in this folder (9 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "shot": "Hiral — teaching",
    "setting": "Studio/Posed",
    "quality": "Hero",
    "consent": "Adults only",
    "session": "Aakara reel shoot — 18 Sep 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-634.mp4",
    "thumbnail": "thumbs/IFM-634.jpg",
    "audience": "Mummies"
   },
@@ -12729,14 +12729,14 @@ window.IFM_DATA ={
    "drive link": "https://drive.google.com/drive/folders/1GtMlDQYs4dTSxFZ2eritwTt2RuvurFZ9",
    "date created": "2026-10-12",
    "captured_at": "2026-10-12T15:50:25+0530",
-   "notes": "Catalogued 13 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (166 folders, 1,881 media files, 0 listing errors). Shot and uploaded the same afternoon: captured 15:50–15:56 IST on 12 Oct, in Drive by 16:03. ⚠️ The folder is named “Elon musk reel (raw)” but the reel is about Starlink versus Jio — the content was established by transcribing three takes (IMG_8129, IMG_8133, IMG_8137), not from the folder name. Reads as the companion to IFM-628 (the IPO vs stocks takes, 5 Oct) and to IFM-341 (the Jio IPO carousel). The takes have not been fully transcribed, so which take says what is not yet searchable — the same next step as IFM-575 and IFM-628, and this is now the sixth such folder in the review queue. Thumbnail is IMG_8129, the hook take. The folder is owned by djlolly03@gmail.com (ours), so no archive mirror is needed. No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). ",
+   "notes": "Catalogued 13 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (166 folders, 1,881 media files, 0 listing errors). Shot and uploaded the same afternoon: captured 15:50–15:56 IST on 12 Oct, in Drive by 16:03. ⚠️ The folder is named “Elon musk reel (raw)” but the reel is about Starlink versus Jio — the content was established by transcribing three takes (IMG_8129, IMG_8133, IMG_8137), not from the folder name. Reads as the companion to IFM-628 (the IPO vs stocks takes, 5 Oct) and to IFM-341 (the Jio IPO carousel). The takes have not been fully transcribed, so which take says what is not yet searchable — the same next step as IFM-575 and IFM-628, and this is now the sixth such folder in the review queue. Thumbnail is IMG_8129, the hook take. The folder is owned by djlolly03@gmail.com (ours), so no archive mirror is needed. No preview clip yet, so as a Video it stays out of the Library until scripts/ifm-make-previews.sh + media-audit.py run (both need a deploy first). Preview clip cut from IMG_8134.MOV, the median-sized take in this folder (11 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "shot": "Hiral — teaching",
    "setting": "Studio/Posed",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "session": "Starlink vs Jio reel takes — 12 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-646.mp4",
    "thumbnail": "thumbs/IFM-646.jpg",
    "audience": "Mummies"
   },
@@ -12813,7 +12813,7 @@ window.IFM_DATA ={
    "description": "Raw takes for a Jenga-themed reel: Hiral in a navy lace sleeveless top seated at a wooden table in front of a taupe sofa, a wooden Jenga tower beside her. Across the camera takes she pulls blocks until the tower topples, and later takes show her speaking over the collapsed pile; the eight phone takes are close-ups with the tower in the foreground, partly hiding her face. Untranscribed, so the script is not known. 26 clips, 2.00 GB in all. The VO subfolder is empty. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/1givcQmL-5w2Fq_wBB6ZyDLFBuVlsprGj",
    "date created": "2026-10-16",
-   "notes": "Catalogued 20 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (180 folders, 2,126 media files, 0 listing errors). Delivered by Aakara 16 Oct 2026 into October/Reels/Jenga/{Camera,Phone,VO}. One row for the topic folder, per the Aakara rule. Thumbnail is MVI_0255 (tower collapsed). archive: 1srPtwYdsh6y4MWhicr1-uW7gTeDjAr5d (MVI_0243.MP4), 1j18o6Ct0DDOygZut90mwh_lWXdt4QBY5 (MVI_0244.MP4), 1bXmALFWCJvrHBDCI-2C1JImI58PuChzI (MVI_0245.MP4), 1t404Y0HyhdtPSl2UbVpEGE9On4oq02v4 (MVI_0246.MP4), 1NMG8hPIR98zgzkLLAwkqUB8cihUMUps2 (MVI_0247.MP4), 1QlCv3iTvUt3wXPKqqHt_XHNK9l_W5CWI (MVI_0248.MP4), 1jChk81xaPsqjSmtVVyOF7bjwH5qq73Gy (MVI_0249.MP4), 1vgIWh0ic5rebW5-Q2rENmP86NmVa04SV (MVI_0250.MP4), 1YrSO_pCTrUBe4rTScRCEjraBswkajKJL (MVI_0251.MP4), 1PeaTRQn4t8zcqLR8uJ8yNOL5bykvH0i9 (MVI_0252.MP4), 12clEvA5dujOnYP9S7Ab9r36fSWtqUOHX (MVI_0253.MP4), 1yUGkbKBAik3kx49OUXFo7YXyT6kj9SwV (MVI_0254.MP4), 1wmBT9payHO8lB5K8y3jDFPPDmxbz_gOU (MVI_0255.MP4), 1AxFrNL9hBQbnntcgbvGz2bAsq5Dg_ids (MVI_0256.MP4), 1a1R1YAP6g2-0_OBwGce4kaZt64FPrd29 (MVI_0258.MP4), 12UsJ06tR5cEqhy7zH_4g0-RttNxQFlW7 (MVI_0259.MP4), 1lkZ0Ra-LOp0P3SjdFPuRKaBEyDAZqCt7 (MVI_0260.MP4), 1w66LcbNm_nlunBNWc0rHdE10m2FYcivJ (MVI_0261.MP4), 152jczvl2eZ7xucSLUWQrmu3TB3Ny7uMW (IMG_6431.mov), 1q9uCQgkhGYGto0-YpvBNvog4N7AakP0W (IMG_6432.mov), 1EHVIXVwj8QN177oQtoNOmpj5tW2MGgOP (IMG_6433.mov), 1w49yri6vSnOpI0fprYvI1R_WWQgiWmJT (IMG_6435.mov), 1b5ZMnliAsR6ezW08EECtiYLWBR2-yeI1 (IMG_6436.mov), 16KGYqfsBK83C5Qi6RpzarZbzD3jT6L0B (IMG_6437.mov), 1OpHlW7DX8j80yFLcUjBomrdC0iPRoCCe (IMG_6438.mov), 1xhPWPAtINUwkY3jNHTaDgfT9QA5lpLBN (IMG_6440.mov) 30 Oct 2026: the finished reel was delivered 28 Oct and is catalogued as IFM-747.",
+   "notes": "Catalogued 20 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (180 folders, 2,126 media files, 0 listing errors). Delivered by Aakara 16 Oct 2026 into October/Reels/Jenga/{Camera,Phone,VO}. One row for the topic folder, per the Aakara rule. Thumbnail is MVI_0255 (tower collapsed). archive: 1srPtwYdsh6y4MWhicr1-uW7gTeDjAr5d (MVI_0243.MP4), 1j18o6Ct0DDOygZut90mwh_lWXdt4QBY5 (MVI_0244.MP4), 1bXmALFWCJvrHBDCI-2C1JImI58PuChzI (MVI_0245.MP4), 1t404Y0HyhdtPSl2UbVpEGE9On4oq02v4 (MVI_0246.MP4), 1NMG8hPIR98zgzkLLAwkqUB8cihUMUps2 (MVI_0247.MP4), 1QlCv3iTvUt3wXPKqqHt_XHNK9l_W5CWI (MVI_0248.MP4), 1jChk81xaPsqjSmtVVyOF7bjwH5qq73Gy (MVI_0249.MP4), 1vgIWh0ic5rebW5-Q2rENmP86NmVa04SV (MVI_0250.MP4), 1YrSO_pCTrUBe4rTScRCEjraBswkajKJL (MVI_0251.MP4), 1PeaTRQn4t8zcqLR8uJ8yNOL5bykvH0i9 (MVI_0252.MP4), 12clEvA5dujOnYP9S7Ab9r36fSWtqUOHX (MVI_0253.MP4), 1yUGkbKBAik3kx49OUXFo7YXyT6kj9SwV (MVI_0254.MP4), 1wmBT9payHO8lB5K8y3jDFPPDmxbz_gOU (MVI_0255.MP4), 1AxFrNL9hBQbnntcgbvGz2bAsq5Dg_ids (MVI_0256.MP4), 1a1R1YAP6g2-0_OBwGce4kaZt64FPrd29 (MVI_0258.MP4), 12UsJ06tR5cEqhy7zH_4g0-RttNxQFlW7 (MVI_0259.MP4), 1lkZ0Ra-LOp0P3SjdFPuRKaBEyDAZqCt7 (MVI_0260.MP4), 1w66LcbNm_nlunBNWc0rHdE10m2FYcivJ (MVI_0261.MP4), 152jczvl2eZ7xucSLUWQrmu3TB3Ny7uMW (IMG_6431.mov), 1q9uCQgkhGYGto0-YpvBNvog4N7AakP0W (IMG_6432.mov), 1EHVIXVwj8QN177oQtoNOmpj5tW2MGgOP (IMG_6433.mov), 1w49yri6vSnOpI0fprYvI1R_WWQgiWmJT (IMG_6435.mov), 1b5ZMnliAsR6ezW08EECtiYLWBR2-yeI1 (IMG_6436.mov), 16KGYqfsBK83C5Qi6RpzarZbzD3jT6L0B (IMG_6437.mov), 1OpHlW7DX8j80yFLcUjBomrdC0iPRoCCe (IMG_6438.mov), 1xhPWPAtINUwkY3jNHTaDgfT9QA5lpLBN (IMG_6440.mov) 30 Oct 2026: the finished reel was delivered 28 Oct and is catalogued as IFM-747. Preview clip cut from IMG_6432.mov, the median-sized take in this folder (28 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "",
@@ -12821,7 +12821,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-650.jpg"
+   "thumbnail": "thumbs/IFM-650.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-650.mp4"
   },
   {
    "id": "IFM-651",
@@ -12833,7 +12834,7 @@ window.IFM_DATA ={
    "description": "Raw takes for a “girl math” reel: Hiral in a lime-green sleeveless top and light jeans lounging on a brown sofa, scrolling a shopping app on her phone, with over-the-shoulder close-ups of the screen showing clothing listings. The last take (MVI_0209) has her seated upright to camera in a white shirt under green geometric wall art. Two phone clips (IMG_5386/5387) are black-frame, likely audio only. Untranscribed. 14 clips, 3.73 GB in all. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/1RDLamvZyVwsFg6H9m45MwueUAAI_nK6n",
    "date created": "2026-09-04",
-   "notes": "Catalogued 20 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (180 folders, 2,126 media files, 0 listing errors). NOT NEW CONTENT — NEWLY VISIBLE: files are dated 4 Sep 2026 but the folder October/Reels/Girl math first appeared in the scan today. Same wall art as the IFM-633 shopaholic shoot. Thumbnail is MVI_0201. archive: 1-HunG1EaYQYYyppLEefgkewfx80XiTRr (IMG_5386.MOV), 1DvqR2DylWQeMXc_LfX7aFlwvZJD9Rcv1 (IMG_5387.MOV), 1X4pQSNVADKKiL2Cu-5PSy8pehxYGIE5j (MVI_0198.MP4), 1VtSJEUsKWwgiHQlozzX6kFcEObU8DAS7 (MVI_0199.MP4), 1DcikfuI7lpnO_efP-n5QCE3ID0-Gwt7A (MVI_0200.MP4), 1vcTCAA7VNIbgLSF2GOBeEWvYWxprq_cG (MVI_0201.MP4), 1stGwWVzlNIaUN25dHNznua7aMUjYA2LZ (MVI_0202.MP4), 1vucIdSK4cowQJ52WjWTOAMUdG9DS3IH5 (MVI_0203.MP4), 1yH40gkfiDRLuWkAEFUdLvaJ_-Oqi7PnM (MVI_0204.MP4), 1LzZ4zOypwQ4rEEO6l1F7e35FGQBwa4kO (MVI_0205.MP4), 1n7A0XsI1VDVtLCwEW3JIE0lIcp8nGosm (MVI_0206.MP4), 1n-W2tXEGSiitS9pw9HsRmLMpWXQyoZPb (MVI_0207.MP4), 1AVIFQ37nqCOI_IA67cuzpkflhbTTvDiC (MVI_0208.MP4), 1RuQJdDPW4t7XP5tJLDzxWAXWErWXu9El (MVI_0209.MP4) 28 Oct 2026: Aakara delivered the finished reel (“The Sale Trap”, 26 Oct) into Girl math/Final Video — catalogued as IFM-690.",
+   "notes": "Catalogued 20 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (180 folders, 2,126 media files, 0 listing errors). NOT NEW CONTENT — NEWLY VISIBLE: files are dated 4 Sep 2026 but the folder October/Reels/Girl math first appeared in the scan today. Same wall art as the IFM-633 shopaholic shoot. Thumbnail is MVI_0201. archive: 1-HunG1EaYQYYyppLEefgkewfx80XiTRr (IMG_5386.MOV), 1DvqR2DylWQeMXc_LfX7aFlwvZJD9Rcv1 (IMG_5387.MOV), 1X4pQSNVADKKiL2Cu-5PSy8pehxYGIE5j (MVI_0198.MP4), 1VtSJEUsKWwgiHQlozzX6kFcEObU8DAS7 (MVI_0199.MP4), 1DcikfuI7lpnO_efP-n5QCE3ID0-Gwt7A (MVI_0200.MP4), 1vcTCAA7VNIbgLSF2GOBeEWvYWxprq_cG (MVI_0201.MP4), 1stGwWVzlNIaUN25dHNznua7aMUjYA2LZ (MVI_0202.MP4), 1vucIdSK4cowQJ52WjWTOAMUdG9DS3IH5 (MVI_0203.MP4), 1yH40gkfiDRLuWkAEFUdLvaJ_-Oqi7PnM (MVI_0204.MP4), 1LzZ4zOypwQ4rEEO6l1F7e35FGQBwa4kO (MVI_0205.MP4), 1n7A0XsI1VDVtLCwEW3JIE0lIcp8nGosm (MVI_0206.MP4), 1n-W2tXEGSiitS9pw9HsRmLMpWXQyoZPb (MVI_0207.MP4), 1AVIFQ37nqCOI_IA67cuzpkflhbTTvDiC (MVI_0208.MP4), 1RuQJdDPW4t7XP5tJLDzxWAXWErWXu9El (MVI_0209.MP4) 28 Oct 2026: Aakara delivered the finished reel (“The Sale Trap”, 26 Oct) into Girl math/Final Video — catalogued as IFM-690. Preview clip cut from MVI_0207.MP4, the median-sized take in this folder (15 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "",
@@ -12841,7 +12842,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-651.jpg"
+   "thumbnail": "thumbs/IFM-651.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-651.mp4"
   },
   {
    "id": "IFM-652",
@@ -12874,7 +12876,7 @@ window.IFM_DATA ={
    "description": "Nine piece-to-camera takes and one still of Hiral in a light denim jacket against a teal sofa, delivered for Aakara's November “Brand awareness” topic; expressions range from speaking to camera to thoughtful, hand-on-chin. Untranscribed. 10 files, 520 MB in all. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/1iUtR1z-rAe2VfVhKsC5w1tjCDG2O5o9p",
    "date created": "2026-10-16",
-   "notes": "Catalogued 20 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (180 folders, 2,126 media files, 0 listing errors). IMG_6446–6455 (IMG_6449 is a HEIC still), delivered 16 Oct into the root of IFM/November. When Aakara files them into a topic folder the link will move; relink this row then rather than creating a new one. Thumbnail is IMG_6446. archive: 1cOrql8o9vSsxQeBAmuDKZ0zjYhFNmcxS (IMG_6446.mov), 1Sjs17Zo2Mpu4PvEQSQKropGjUq_YkJgQ (IMG_6447.mov), 1MYsxGstuE6si71y0aAHyrXE5jKWE82Bb (IMG_6448.mov), 113YY2xoyto4Tnn1Wobd_k41KoFihHL-6 (IMG_6449.HEIC), 1h0hc5fg1G5KwpfwYZ7QVlYpxSUtTJaMV (IMG_6450.mov), 1afwrYoz3cKvhXDu-nywJp_zaa-F6Gx22 (IMG_6451.mov), 1vjtzN7lVj5jk_TO7dQgYKnGajltUMo4u (IMG_6452.mov), 1D1a0FP138flVzt-AIG7EIJXg4vswKqBZ (IMG_6453.mov), 1hAv4ptuGqHuBvij1csh7mHNNCyw-Pg8b (IMG_6454.mov), 1OUG7Yy4l8EE6CpqWojCPLywEp1vsItGg (IMG_6455.mov) 28 Oct 2026: Aakara moved these same 10 files (same Drive ids) into a new November/“Brand awareness ” subfolder (folder name has a trailing space); title and link updated to it. Not a new delivery — no new mirror needed.",
+   "notes": "Catalogued 20 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (180 folders, 2,126 media files, 0 listing errors). IMG_6446–6455 (IMG_6449 is a HEIC still), delivered 16 Oct into the root of IFM/November. When Aakara files them into a topic folder the link will move; relink this row then rather than creating a new one. Thumbnail is IMG_6446. archive: 1cOrql8o9vSsxQeBAmuDKZ0zjYhFNmcxS (IMG_6446.mov), 1Sjs17Zo2Mpu4PvEQSQKropGjUq_YkJgQ (IMG_6447.mov), 1MYsxGstuE6si71y0aAHyrXE5jKWE82Bb (IMG_6448.mov), 113YY2xoyto4Tnn1Wobd_k41KoFihHL-6 (IMG_6449.HEIC), 1h0hc5fg1G5KwpfwYZ7QVlYpxSUtTJaMV (IMG_6450.mov), 1afwrYoz3cKvhXDu-nywJp_zaa-F6Gx22 (IMG_6451.mov), 1vjtzN7lVj5jk_TO7dQgYKnGajltUMo4u (IMG_6452.mov), 1D1a0FP138flVzt-AIG7EIJXg4vswKqBZ (IMG_6453.mov), 1hAv4ptuGqHuBvij1csh7mHNNCyw-Pg8b (IMG_6454.mov), 1OUG7Yy4l8EE6CpqWojCPLywEp1vsItGg (IMG_6455.mov) 28 Oct 2026: Aakara moved these same 10 files (same Drive ids) into a new November/“Brand awareness ” subfolder (folder name has a trailing space); title and link updated to it. Not a new delivery — no new mirror needed. Preview clip cut from IMG_6446.mov, the median-sized take in this folder (9 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "",
@@ -12882,7 +12884,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-653.jpg"
+   "thumbnail": "thumbs/IFM-653.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-653.mp4"
   },
   {
    "id": "IFM-654",
@@ -12894,7 +12897,7 @@ window.IFM_DATA ={
    "description": "Catch-all for a reel on the Jio Platforms IPO's offer for sale: about sixty takes of Hiral seated in a black leather chair in an office with a bookshelf behind her, in a green-and-white striped sleeveless shirt with a lapel mic, a printed IPO document on the armrest; plus around sixteen overhead inserts of a hand with a red pen tracing the printed Jio Platforms IPO ad — the price band, the bidding dates and the “Risk to investors” box. Untranscribed. 76 clips, 5.79 GB in all. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/1N3_FWrMaP8DfwzGdfNWcli1BVe_OeKsJ",
    "date created": "2026-10-19",
-   "notes": "Catalogued 20 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (180 folders, 2,126 media files, 0 listing errors). Uploaded 19–20 Oct 2026 to Content Library/Jio IPO OFS (IMG_8219–8298), owned by djlolly03@ so no archive mirror is needed. Follow-on to IFM-649 (the Jio IPO ad explainer). One row for the folder, same as IFM-628 and IFM-646. Thumbnail is IMG_8219.",
+   "notes": "Catalogued 20 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (180 folders, 2,126 media files, 0 listing errors). Uploaded 19–20 Oct 2026 to Content Library/Jio IPO OFS (IMG_8219–8298), owned by djlolly03@ so no archive mirror is needed. Follow-on to IFM-649 (the Jio IPO ad explainer). One row for the folder, same as IFM-628 and IFM-646. Thumbnail is IMG_8219. Preview clip cut from IMG_8221.MOV, the median-sized take in this folder (76 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "",
@@ -12902,7 +12905,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-654.jpg"
+   "thumbnail": "thumbs/IFM-654.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-654.mp4"
   },
   {
    "id": "IFM-655",
@@ -12935,7 +12939,7 @@ window.IFM_DATA ={
    "description": "Catch-all for the raw takes behind the Buffett reel: Hiral standing to camera in a black sleeveless button-front dress, hands clasped, in front of the line-art mural, smiling between lines. Five clips (IMG_8570, 8571, 8585, 8587, 8591), about 420 MB. Untranscribed. Opens the folder, which also holds the finished reel (IFM-655).",
    "drive link": "https://drive.google.com/drive/folders/18HUK83_2Y93bgW-T9SkeLDLpXAgTq6FZ",
    "date created": "2026-10-27",
-   "notes": "Catalogued 28 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (183 folders, 2,106 media files, 0 listing errors). Five takes owned by djlolly03@, so no mirror needed. One row for the takes folder, same as IFM-646 and IFM-654. Thumbnail is IMG_8570. STAGED — not yet deployed.",
+   "notes": "Catalogued 28 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (183 folders, 2,106 media files, 0 listing errors). Five takes owned by djlolly03@, so no mirror needed. One row for the takes folder, same as IFM-646 and IFM-654. Thumbnail is IMG_8570. STAGED — not yet deployed. Preview clip cut from IMG_8570.MOV, the median-sized take in this folder (7 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "No identifiable people beyond Hiral",
    "shot": "",
@@ -12943,7 +12947,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-656.jpg"
+   "thumbnail": "thumbs/IFM-656.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-656.mp4"
   },
   {
    "id": "IFM-657",
@@ -12976,7 +12981,7 @@ window.IFM_DATA ={
    "description": "Catch-all for the takes behind the Jio IPO Day 3 reel: Hiral standing to camera in a pale-blue pintuck shirt and dark trousers with a lapel mic, in front of the line-art mural. The first four takes have her holding up the Economic Times front page; the rest are her speaking with hands clasped. 30 clips, about 2.6 GB. Untranscribed. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/130p6Hdbmm6V1E5WiAzq-cHGuYdrtVLIk",
    "date created": "2026-10-22",
-   "notes": "Catalogued 28 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (183 folders, 2,106 media files, 0 listing errors). IMG_4306–4336, owned by djlolly03@ so no mirror is needed. IMG_4316 has no Drive thumbnail (1.6 MB, probably a false start). Thumbnail is IMG_4307 (newspaper take). STAGED — not yet deployed.",
+   "notes": "Catalogued 28 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (183 folders, 2,106 media files, 0 listing errors). IMG_4306–4336, owned by djlolly03@ so no mirror is needed. IMG_4316 has no Drive thumbnail (1.6 MB, probably a false start). Thumbnail is IMG_4307 (newspaper take). STAGED — not yet deployed. Preview clip cut from IMG_4335.MOV, the median-sized take in this folder (31 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "No identifiable people beyond Hiral",
    "shot": "",
@@ -12984,7 +12989,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-658.jpg"
+   "thumbnail": "thumbs/IFM-658.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-658.mp4"
   },
   {
    "id": "IFM-659",
@@ -13227,7 +13233,7 @@ window.IFM_DATA ={
    "description": "Catch-all for the 21 Oct games session clips not given a row of their own: further table views, a participant at the far end in black resting her chin on her hand (IMG_8317/8322), two women chatting (IMG_8338). 49 clips in all, about 3 GB. Opens the IFM Games folder, which also holds the 8 Sep Swayamvar session (IFM-413..477).",
    "drive link": "https://drive.google.com/drive/folders/1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n",
    "date created": "2026-10-21",
-   "notes": "Catalogued 28 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (183 folders, 2,106 media files, 0 listing errors). Content Library/IFM Games, IMG_8309–8357, all shot 21 Oct 2026 and owned by djlolly03@ (no mirror needed). The host in the magenta kurta is Hiral — checked by eye against the Buffett reel (IFM-655) and the Jio takes (IFM-658), same face. The game on the TV is the corporate-actions market game: its lobby reads “One real event per round — Dividend, Split, IPO, Bonus, Buyback, Rights”, and its round cards run through real Indian market history (Demonetisation, Jio, Yes Bank, the COVID crash, the Zomato IPO, India at $4 trillion). Attendees are identifiable adult women; as with the rest of the October boardroom series, get sign-off before posting. Thumbnail is IMG_8317. STAGED — not yet deployed.",
+   "notes": "Catalogued 28 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (183 folders, 2,106 media files, 0 listing errors). Content Library/IFM Games, IMG_8309–8357, all shot 21 Oct 2026 and owned by djlolly03@ (no mirror needed). The host in the magenta kurta is Hiral — checked by eye against the Buffett reel (IFM-655) and the Jio takes (IFM-658), same face. The game on the TV is the corporate-actions market game: its lobby reads “One real event per round — Dividend, Split, IPO, Bonus, Buyback, Rights”, and its round cards run through real Indian market history (Demonetisation, Jio, Yes Bank, the COVID crash, the Zomato IPO, India at $4 trillion). Attendees are identifiable adult women; as with the rest of the October boardroom series, get sign-off before posting. Thumbnail is IMG_8317. STAGED — not yet deployed. Preview clip cut from IMG_2863.MOV, the median-sized take in this folder (317 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "",
@@ -13235,7 +13241,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, games session — 21 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-670.jpg"
+   "thumbnail": "thumbs/IFM-670.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-670.mp4"
   },
   {
    "id": "IFM-671",
@@ -13621,7 +13628,7 @@ window.IFM_DATA ={
    "description": "Catch-all for the rest of the IYA session: further wide and table views of the young adults and the facilitator at slides on spending, goals and investing. 78 files (69 videos, 9 photos), about 9.5 GB. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
    "date created": "2026-10-27",
-   "notes": "Catalogued 28 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (183 folders, 2,106 media files, 0 listing errors). New folder Content Library/IYA Oct & Nov 2026 (78 files, IMG_8477–8556, uploaded 24–27 Oct 2026, owned by djlolly03@ so no mirror is needed). The facilitator in the neon-yellow sleeveless top is a young woman, NOT Hiral; she is not identified here. The room is about seven young adults, one young man in a black hoodie among them. Consent is set Adults only on appearance — they read as college-age, but ages are not confirmed, so nothing here is social-ready. Dates are upload dates; the session date itself is not in the file names. Thumbnail is IMG_8514. STAGED — not yet deployed.",
+   "notes": "Catalogued 28 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (183 folders, 2,106 media files, 0 listing errors). New folder Content Library/IYA Oct & Nov 2026 (78 files, IMG_8477–8556, uploaded 24–27 Oct 2026, owned by djlolly03@ so no mirror is needed). The facilitator in the neon-yellow sleeveless top is a young woman, NOT Hiral; she is not identified here. The room is about seven young adults, one young man in a black hoodie among them. Consent is set Adults only on appearance — they read as college-age, but ages are not confirmed, so nothing here is social-ready. Dates are upload dates; the session date itself is not in the file names. Thumbnail is IMG_8514. STAGED — not yet deployed. Preview clip cut from IMG_8504.MOV, the median-sized take in this folder (184 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "",
@@ -13629,7 +13636,8 @@ window.IFM_DATA ={
    "session": "IYA young-adults workshop — Oct 2026",
    "social": "",
    "audience": "Young Adults",
-   "thumbnail": "thumbs/IFM-689.jpg"
+   "thumbnail": "thumbs/IFM-689.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-689.mp4"
   },
   {
    "id": "IFM-690",
@@ -14080,7 +14088,7 @@ window.IFM_DATA ={
    "description": "Catch-all for the 22 Oct Stock Rush PRO clips not given a row of their own: the room from behind the participant in yellow (IMG_8401, IMG_8404) and her fixing her hair between rounds (IMG_8446). 89 files in all, about 4.3 GB. Opens the IFM Games folder, which also holds the 8 Sep Swayamvar session (IFM-413..477), the 21 Oct session (IFM-659..670) and the 28 Oct quiz session.",
    "drive link": "https://drive.google.com/drive/folders/1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n",
    "date created": "2026-10-22",
-   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). Content Library/IFM Games, IMG_8358–8446, all shot 22 Oct 2026 between 12:57 and 13:27 IST (QuickTime creation dates read from the files) and uploaded 30 Oct by djlolly03@ — our own files, no mirror needed. Same boardroom and, by the participants' clothes (the yellow shirt with the red star, the purple blouse), the same cohort as the 21 Oct corporate-actions session (IFM-659..670), one day on. The game is Stock Rush PRO: the phones show its trading screen with a green \"Lock in my trades\" button and the TV shows its round leaderboard. The host in the white shirt and black trousers is Hiral — presenter rule, checked against the 28 Oct footage of her in the same room. Attendees are identifiable adult women; get sign-off before posting. Thumbnail is IMG_8404. Deployed 30 Oct 2026.",
+   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). Content Library/IFM Games, IMG_8358–8446, all shot 22 Oct 2026 between 12:57 and 13:27 IST (QuickTime creation dates read from the files) and uploaded 30 Oct by djlolly03@ — our own files, no mirror needed. Same boardroom and, by the participants' clothes (the yellow shirt with the red star, the purple blouse), the same cohort as the 21 Oct corporate-actions session (IFM-659..670), one day on. The game is Stock Rush PRO: the phones show its trading screen with a green \"Lock in my trades\" button and the TV shows its round leaderboard. The host in the white shirt and black trousers is Hiral — presenter rule, checked against the 28 Oct footage of her in the same room. Attendees are identifiable adult women; get sign-off before posting. Thumbnail is IMG_8404. Deployed 30 Oct 2026. Preview clip cut from IMG_8641.MOV, the median-sized take in this folder (317 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "",
@@ -14088,7 +14096,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-711.jpg"
+   "thumbnail": "thumbs/IFM-711.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-711.mp4"
   },
   {
    "id": "IFM-712",
@@ -14729,7 +14738,7 @@ window.IFM_DATA ={
    "description": "Ten piece-to-camera takes of Hiral in a black sleeveless top with a round brooch against the dark wood wall — the source footage for the listing-day reel. 1.2 GB in all; IMG_8707 alone is 411 MB. Untranscribed. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
    "date created": "2026-10-28",
-   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). Content Library/Jio opening day, created 28 Oct 2026 and owned by sakshi@investingformummies.com — a third-party account, so the whole folder was mirrored server-side into IFM Content Archive/From Sakshi/\"Jio opening day (28 Oct 2026, Sakshi)\" and verified by size, 11/11. Follows IFM-649 (how to read the IPO ad), IFM-654 (OFS takes) and IFM-657 (Day 3) in the Jio IPO series. Thumbnail is IMG_8694. archive: 1aRIrMekgGlNWRBsPcO-NtFVdFoQFONZv (IMG_8689.MOV) archive: 1n_cxjbe4chQZrE3B-jHynkE4Ko6MT1vN (IMG_8692.MOV) archive: 1SA6EQJCQpcOg_8AI_NLce6nlpL_1HXYK (IMG_8694.MOV) archive: 1Pr4zIUlkjKDsmNPrcmnSMYF-9khktE0K (IMG_8696.MOV) archive: 1VrhVSFezAnO25OjbwG1BBRmGaN_PxYH- (IMG_8699.MOV) archive: 19m9o7tkHjUVPSTp9TKWQyQFB5k5IstYk (IMG_8701.MOV) archive: 1sxPfP0AR7nXCtnM23viFEWsHEw3CxcR3 (IMG_8706.MOV) archive: 1ukiHgSbGKNTfNqBka-6CdwuaKUcMtFOX (IMG_8707.MOV) archive: 1k4pNNyHh3i6_j_A-UJfHjc-XiKZkE0tw (IMG_8708.MOV) archive: 1TtxlEmc0rWKWv33rK_7efXeOf9sKJ3cK (IMG_8712.MOV). Deployed 30 Oct 2026.",
+   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). Content Library/Jio opening day, created 28 Oct 2026 and owned by sakshi@investingformummies.com — a third-party account, so the whole folder was mirrored server-side into IFM Content Archive/From Sakshi/\"Jio opening day (28 Oct 2026, Sakshi)\" and verified by size, 11/11. Follows IFM-649 (how to read the IPO ad), IFM-654 (OFS takes) and IFM-657 (Day 3) in the Jio IPO series. Thumbnail is IMG_8694. archive: 1aRIrMekgGlNWRBsPcO-NtFVdFoQFONZv (IMG_8689.MOV) archive: 1n_cxjbe4chQZrE3B-jHynkE4Ko6MT1vN (IMG_8692.MOV) archive: 1SA6EQJCQpcOg_8AI_NLce6nlpL_1HXYK (IMG_8694.MOV) archive: 1Pr4zIUlkjKDsmNPrcmnSMYF-9khktE0K (IMG_8696.MOV) archive: 1VrhVSFezAnO25OjbwG1BBRmGaN_PxYH- (IMG_8699.MOV) archive: 19m9o7tkHjUVPSTp9TKWQyQFB5k5IstYk (IMG_8701.MOV) archive: 1sxPfP0AR7nXCtnM23viFEWsHEw3CxcR3 (IMG_8706.MOV) archive: 1ukiHgSbGKNTfNqBka-6CdwuaKUcMtFOX (IMG_8707.MOV) archive: 1k4pNNyHh3i6_j_A-UJfHjc-XiKZkE0tw (IMG_8708.MOV) archive: 1TtxlEmc0rWKWv33rK_7efXeOf9sKJ3cK (IMG_8712.MOV). Deployed 30 Oct 2026. Preview clip cut from IMG_8699.MOV, the median-sized take in this folder (11 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "No identifiable people beyond Hiral",
    "shot": "Hiral — portrait",
@@ -14737,7 +14746,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-742.jpg"
+   "thumbnail": "thumbs/IFM-742.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-742.mp4"
   },
   {
    "id": "IFM-743",
@@ -14749,7 +14759,7 @@ window.IFM_DATA ={
    "description": "Eight piece-to-camera takes of Hiral in a bright pink kurta with a tassel, in front of the black-and-white line-art mural, shot 29 Oct 2026 for a reel on SEBI and asset-management companies — the folder name is all that says so; untranscribed. 648 MB in all. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
    "date created": "2026-10-29",
-   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). Content Library/SEBI AMC, shot 29 Oct 2026 at 15:03 IST (QuickTime creation dates) and owned by djlolly03@ — our own files, no mirror needed. Thumbnail is IMG_8802. Deployed 30 Oct 2026.",
+   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). Content Library/SEBI AMC, shot 29 Oct 2026 at 15:03 IST (QuickTime creation dates) and owned by djlolly03@ — our own files, no mirror needed. Thumbnail is IMG_8802. Deployed 30 Oct 2026. Preview clip cut from IMG_8802.MOV, the median-sized take in this folder (8 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "No identifiable people beyond Hiral",
    "shot": "Hiral — portrait",
@@ -14757,7 +14767,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-743.jpg"
+   "thumbnail": "thumbs/IFM-743.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-743.mp4"
   },
   {
    "id": "IFM-744",
@@ -14769,7 +14780,7 @@ window.IFM_DATA ={
    "description": "Sixteen camera takes of Hiral in a black sleeveless vest top, hands clasped, in front of the black-and-white line-art mural — the piece-to-camera footage for the corporate \"Wealth Conversation\" video, shot on a Canon (MVI_ files) and delivered 29 Oct. 2.1 GB in all; MVI_0281 and MVI_0282 are the long ones. Untranscribed. Opens the folder.",
    "drive link": "https://drive.google.com/drive/folders/19iiLlv_Jd39-CoaAGwsyPewYC89gA_Bq",
    "date created": "2026-10-29",
-   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). Delivered by Aakara 29 Oct 2026 into October/Corporate video (owner aakaradesignstudios@). Mirrored by the whole-tree server-side copy of Aakara's IFM folder into IFM Content Archive/From Aakara/\"_tree-mirror of Aakara IFM folder\", run this day.  Thumbnail is MVI_0272. archive: 1F053yNQ_YfBM9WYoliFE1KtgcdJii_LV (MVI_0270.MP4) archive: 1pSE-plyTxB0qIVU4vV2ypgmx96xgrgZe (MVI_0271.MP4) archive: 1dCmew7hSvqAi30eBHL_mR5IjiI2HqruV (MVI_0272.MP4) archive: 1rlkk-ROrlFBoKGC5MDCV5d-ny3-B4rut (MVI_0273.MP4) archive: 12sht1cCdvHkxlN0S0h0o8mUm37Gs4wmT (MVI_0274.MP4) archive: 1qEGnOponuVKZ_rHZamsx3sLKcYNan2v1 (MVI_0275.MP4) archive: 1Rpi7rTECYfgbAf44vkHWRSmwiYf4_wGJ (MVI_0276.MP4) archive: 1Vy1AscZeTJ0tEGXtbpqTlQsfNH2Xjsul (MVI_0277.MP4) archive: 1P4bguutmJFRTDpt60XKi2UlGyW62eGmZ (MVI_0278.MP4) archive: 1cAN-0I3PUHabGwb8LuS8gMkorLzgRF-Y (MVI_0279.MP4) archive: 1gSptp_gyyPp5atL6cinLSKbW498rCA2k (MVI_0280.MP4) archive: 1s5uFFoNFX12_0lh9H88n9aVyW7HY3vN3 (MVI_0281.MP4) archive: 1dgRb7xrkTNzv1oJxnNEPSbgnlYm9xf5C (MVI_0282.MP4) archive: 1qURPY0p5gc0wpacLQYy_X2Qpsy4BhOIH (MVI_0283.MP4) archive: 1VbG6NN-EmXxDP48MKJMDynLhsDMxYdlm (MVI_0284.MP4) archive: 1QYv68AhrJgg71aObTEge9fjGFk38vUFD (MVI_0285.MP4). Deployed 30 Oct 2026.",
+   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). Delivered by Aakara 29 Oct 2026 into October/Corporate video (owner aakaradesignstudios@). Mirrored by the whole-tree server-side copy of Aakara's IFM folder into IFM Content Archive/From Aakara/\"_tree-mirror of Aakara IFM folder\", run this day.  Thumbnail is MVI_0272. archive: 1F053yNQ_YfBM9WYoliFE1KtgcdJii_LV (MVI_0270.MP4) archive: 1pSE-plyTxB0qIVU4vV2ypgmx96xgrgZe (MVI_0271.MP4) archive: 1dCmew7hSvqAi30eBHL_mR5IjiI2HqruV (MVI_0272.MP4) archive: 1rlkk-ROrlFBoKGC5MDCV5d-ny3-B4rut (MVI_0273.MP4) archive: 12sht1cCdvHkxlN0S0h0o8mUm37Gs4wmT (MVI_0274.MP4) archive: 1qEGnOponuVKZ_rHZamsx3sLKcYNan2v1 (MVI_0275.MP4) archive: 1Rpi7rTECYfgbAf44vkHWRSmwiYf4_wGJ (MVI_0276.MP4) archive: 1Vy1AscZeTJ0tEGXtbpqTlQsfNH2Xjsul (MVI_0277.MP4) archive: 1P4bguutmJFRTDpt60XKi2UlGyW62eGmZ (MVI_0278.MP4) archive: 1cAN-0I3PUHabGwb8LuS8gMkorLzgRF-Y (MVI_0279.MP4) archive: 1gSptp_gyyPp5atL6cinLSKbW498rCA2k (MVI_0280.MP4) archive: 1s5uFFoNFX12_0lh9H88n9aVyW7HY3vN3 (MVI_0281.MP4) archive: 1dgRb7xrkTNzv1oJxnNEPSbgnlYm9xf5C (MVI_0282.MP4) archive: 1qURPY0p5gc0wpacLQYy_X2Qpsy4BhOIH (MVI_0283.MP4) archive: 1VbG6NN-EmXxDP48MKJMDynLhsDMxYdlm (MVI_0284.MP4) archive: 1QYv68AhrJgg71aObTEge9fjGFk38vUFD (MVI_0285.MP4). Deployed 30 Oct 2026. Preview clip cut from MVI_0277.MP4, the median-sized take in this folder (32 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "No identifiable people beyond Hiral",
    "shot": "Hiral — portrait",
@@ -14777,7 +14788,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-744.jpg"
+   "thumbnail": "thumbs/IFM-744.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-744.mp4"
   },
   {
    "id": "IFM-745",
@@ -14870,7 +14882,7 @@ window.IFM_DATA ={
    "description": "Aakara’s Diwali reel: Hiral in an orange saree holds three playing cards and asks “is the stock market like a teen patti game?”, giving three money tips. Folder holds the finished video (Final Video/IFM_3P_V04.mp4, 456 MB), the cover, and 22 raw takes.",
    "drive link": "https://drive.google.com/drive/folders/1EO-P2VoEjxwVtgb91a7LkdE88s0TBXa2",
    "date created": "2026-11-01",
-   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). From Aakara's \"IFM Internal_November\" deck (1j88loWk…, last edited by Aakara 29 Oct 2026), which now carries 11 topic slides under the pillars 1-min investing, Ever Wondered, finance terms with analogies, Money habits / Women & Money, Brand awareness. The three TBD slides (1 Min investing school, Ever Wondered, News) were not given rows. Our own copy of the deck, made 29 Oct: 10YP7xWWlH0N7hsXI6YW03lljms3nq_Yi1SGsBPxH4Ro. Planning row — no file and no thumbnail yet, so it shows in the hub but not in the Library until Aakara delivers; relink to the topic folder then rather than creating a new row. Pillar: Topical. Deployed 30 Oct 2026. UPDATED 10 Nov 2026: Aakara delivered — IFM/November/Teen Patti Diwali: Cover.png (6 Nov), Final Video/IFM_3P_V04.mp4 (455.6 MB, 5 Nov, under the 1.5 GB mirror cap), IMG_6657–6681 raw takes (2 Nov). Relinked from the deck to the topic folder; thumbnail is the cover. Mirrored with the Aakara tree copy.",
+   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). From Aakara's \"IFM Internal_November\" deck (1j88loWk…, last edited by Aakara 29 Oct 2026), which now carries 11 topic slides under the pillars 1-min investing, Ever Wondered, finance terms with analogies, Money habits / Women & Money, Brand awareness. The three TBD slides (1 Min investing school, Ever Wondered, News) were not given rows. Our own copy of the deck, made 29 Oct: 10YP7xWWlH0N7hsXI6YW03lljms3nq_Yi1SGsBPxH4Ro. Planning row — no file and no thumbnail yet, so it shows in the hub but not in the Library until Aakara delivers; relink to the topic folder then rather than creating a new row. Pillar: Topical. Deployed 30 Oct 2026. UPDATED 10 Nov 2026: Aakara delivered — IFM/November/Teen Patti Diwali: Cover.png (6 Nov), Final Video/IFM_3P_V04.mp4 (455.6 MB, 5 Nov, under the 1.5 GB mirror cap), IMG_6657–6681 raw takes (2 Nov). Relinked from the deck to the topic folder; thumbnail is the cover. Mirrored with the Aakara tree copy. Preview clip cut from IMG_6674.MOV, the median-sized take in this folder (23 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Hero",
    "consent": "No identifiable people",
    "shot": "Hiral — portrait",
@@ -14878,7 +14890,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "Yes",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-749.jpg"
+   "thumbnail": "thumbs/IFM-749.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-749.mp4"
   },
   {
    "id": "IFM-750",
@@ -14890,7 +14903,7 @@ window.IFM_DATA ={
    "description": "Raw footage for Aakara’s “Luggage Tag” goal-attached investing post: Hiral seated in a white tee and jeans by a window with a plant, 9 camera takes plus 9 phone takes. No edited reel yet. Concept: tag each SIP with a concrete life goal.",
    "drive link": "https://drive.google.com/drive/folders/13A79UDKzPlE2wrOOMDJN6SRaFPgpkTDG",
    "date created": "2026-11-01",
-   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). From Aakara's \"IFM Internal_November\" deck (1j88loWk…, last edited by Aakara 29 Oct 2026), which now carries 11 topic slides under the pillars 1-min investing, Ever Wondered, finance terms with analogies, Money habits / Women & Money, Brand awareness. The three TBD slides (1 Min investing school, Ever Wondered, News) were not given rows. Our own copy of the deck, made 29 Oct: 10YP7xWWlH0N7hsXI6YW03lljms3nq_Yi1SGsBPxH4Ro. Planning row — no file and no thumbnail yet, so it shows in the hub but not in the Library until Aakara delivers; relink to the topic folder then rather than creating a new row. Pillar: Finance terms with analogies. Deployed 30 Oct 2026. UPDATED 10 Nov 2026: footage delivered — IFM/November/luggage tg (MVI_0305–0313) and luggage tg/iphone (IMG_6788–6796), 3 Nov. Folder name matches this deck topic, so relinked here instead of a new row; status stays In Production until the edit lands. Mirrored with the Aakara tree copy.",
+   "notes": "Catalogued 30 Oct 2026 by daily-content-processor from a fresh breadth-first Drive scan (204 folders, 2,367 media files, 0 listing errors). From Aakara's \"IFM Internal_November\" deck (1j88loWk…, last edited by Aakara 29 Oct 2026), which now carries 11 topic slides under the pillars 1-min investing, Ever Wondered, finance terms with analogies, Money habits / Women & Money, Brand awareness. The three TBD slides (1 Min investing school, Ever Wondered, News) were not given rows. Our own copy of the deck, made 29 Oct: 10YP7xWWlH0N7hsXI6YW03lljms3nq_Yi1SGsBPxH4Ro. Planning row — no file and no thumbnail yet, so it shows in the hub but not in the Library until Aakara delivers; relink to the topic folder then rather than creating a new row. Pillar: Finance terms with analogies. Deployed 30 Oct 2026. UPDATED 10 Nov 2026: footage delivered — IFM/November/luggage tg (MVI_0305–0313) and luggage tg/iphone (IMG_6788–6796), 3 Nov. Folder name matches this deck topic, so relinked here instead of a new row; status stays In Production until the edit lands. Mirrored with the Aakara tree copy. Preview clip cut from MVI_0307.MP4, the median-sized take in this folder (18 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "Hiral — portrait",
@@ -14898,7 +14911,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-750.jpg"
+   "thumbnail": "thumbs/IFM-750.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-750.mp4"
   },
   {
    "id": "IFM-751",
@@ -21212,7 +21226,7 @@ window.IFM_DATA ={
    "description": "Finished news reel: Hiral explains what the US midterm result (“Trump just lost Congress”) means for Indian investors. Cover shows the Sensex up 1.94% with gold and silver tags; the reel is Hiral to camera at her desk in a pink check sleeveless top, captions burned in.",
    "drive link": "https://drive.google.com/file/d/1DFUwFrzsxVVrmJPOnuMtlCh9JSlNhumm/view",
    "date created": "2026-11-05",
-   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). Content Library/Trump midterm setback/IFM_Trump_Midterm_v6_720p.mp4 (16.6 MB, uploaded 5 Nov by sakshi@). Thumbnail is the cover IFM_Trump_Midterm_cover_final.jpg (same folder). Owned by sakshi@, so mirrored: archive: 1Y5ikYas87KhkAoxwWlZ_04M3dgMwUZre (reel), 1UiFCNcfnfr4ZmGioPFHwYf9PlpTWl0lW (cover). Raw takes are a separate row.",
+   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). Content Library/Trump midterm setback/IFM_Trump_Midterm_v6_720p.mp4 (16.6 MB, uploaded 5 Nov by sakshi@). Thumbnail is the cover IFM_Trump_Midterm_cover_final.jpg (same folder). Owned by sakshi@, so mirrored: archive: 1Y5ikYas87KhkAoxwWlZ_04M3dgMwUZre (reel), 1UiFCNcfnfr4ZmGioPFHwYf9PlpTWl0lW (cover). Raw takes are a separate row. Preview clip cut from the finished 720p master so the reel actually plays in the Library; it was catalogued with a thumbnail and no clip, which the visibility rule reads as \"not a result\".",
    "quality": "Hero",
    "consent": "No identifiable people",
    "shot": "Hiral — portrait",
@@ -21220,7 +21234,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "Yes",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-1144.jpg"
+   "thumbnail": "thumbs/IFM-1144.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1144.mp4"
   },
   {
    "id": "IFM-1145",
@@ -21232,7 +21247,7 @@ window.IFM_DATA ={
    "description": "Thirteen raw piece-to-camera takes for the Trump midterm reel: Hiral seated at a wooden desk in a pink check sleeveless top, black skirt, office chair behind. Untranscribed. Opens the folder (also holds the finished reel and its cover).",
    "drive link": "https://drive.google.com/drive/folders/1JHcXscSI84LuZxmfUVi_xXfuA9c0TBMj",
    "date created": "2026-11-05",
-   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IMG_8976–9013, uploaded 5 Nov 2026 by djlolly03@ — our own files, no mirror needed. Thumbnail is IMG_8976. Finished reel is the row above.",
+   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IMG_8976–9013, uploaded 5 Nov 2026 by djlolly03@ — our own files, no mirror needed. Thumbnail is IMG_8976. Finished reel is the row above. Preview clip cut from IMG_9001.MOV, the median-sized take in this folder (14 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "Hiral — portrait",
@@ -21240,7 +21255,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-1145.jpg"
+   "thumbnail": "thumbs/IFM-1145.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1145.mp4"
   },
   {
    "id": "IFM-1146",
@@ -21252,7 +21268,7 @@ window.IFM_DATA ={
    "description": "Finished reel on direct versus regular mutual fund plans, opening on “Paying a hidden commission?” over a phone showing a fund statement, then Hiral at her desk in a black sleeveless top explaining the difference.",
    "drive link": "https://drive.google.com/file/d/19EsFapgIooXi3b1Z0pIhAspoI-_smurf/view",
    "date created": "2026-11-04",
-   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). Content Library/Regular or direct statement/IFM_DirectRegular_v5_720p.mp4 (9.2 MB, uploaded 4 Nov by sakshi@). Thumbnail is a frame of the reel. archive: 1CPivv4L_NBxn6mwa-quWdwqRbDnokyLF. Raw takes are a separate row.",
+   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). Content Library/Regular or direct statement/IFM_DirectRegular_v5_720p.mp4 (9.2 MB, uploaded 4 Nov by sakshi@). Thumbnail is a frame of the reel. archive: 1CPivv4L_NBxn6mwa-quWdwqRbDnokyLF. Raw takes are a separate row. Preview clip cut from the finished 720p master so the reel actually plays in the Library; it was catalogued with a thumbnail and no clip, which the visibility rule reads as \"not a result\".",
    "quality": "Hero",
    "consent": "No identifiable people",
    "shot": "Hiral — portrait",
@@ -21260,7 +21276,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "Yes",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-1146.jpg"
+   "thumbnail": "thumbs/IFM-1146.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1146.mp4"
   },
   {
    "id": "IFM-1147",
@@ -21272,7 +21289,7 @@ window.IFM_DATA ={
    "description": "Sixteen raw takes for the direct-vs-regular reel: Hiral at an office desk in a black sleeveless top, the Investing for Mummies book and a laptop in front of her. Untranscribed. Opens the folder (also holds the finished reel).",
    "drive link": "https://drive.google.com/drive/folders/1A_tMV2W0hI5-3f2kUNRe_TFfc6gqIVf3",
    "date created": "2026-11-04",
-   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IMG_4507–4535, uploaded 4 Nov 2026 by djlolly03@ — our own files, no mirror needed. Thumbnail is IMG_4507.",
+   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IMG_4507–4535, uploaded 4 Nov 2026 by djlolly03@ — our own files, no mirror needed. Thumbnail is IMG_4507. Preview clip cut from IMG_4513.MOV, the median-sized take in this folder (17 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "Hiral — portrait",
@@ -21280,7 +21297,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-1147.jpg"
+   "thumbnail": "thumbs/IFM-1147.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1147.mp4"
   },
   {
    "id": "IFM-1148",
@@ -21292,7 +21310,7 @@ window.IFM_DATA ={
    "description": "Nine raw piece-to-camera takes for a Nasdaq topic: Hiral in an office chair in a black sleeveless top and red skirt, pin board and TV behind her. Untranscribed; no edited reel in the folder yet.",
    "drive link": "https://drive.google.com/drive/folders/18DH8IQZo7DziLRxce4CMwuv0aToQ1co7",
    "date created": "2026-11-06",
-   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). Content Library/Nasdaq, IMG_4567–4585, uploaded 6 Nov 2026 by djlolly03@ — our own files. Thumbnail is IMG_4567. When the finished reel lands, give it its own row.",
+   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). Content Library/Nasdaq, IMG_4567–4585, uploaded 6 Nov 2026 by djlolly03@ — our own files. Thumbnail is IMG_4567. When the finished reel lands, give it its own row. Preview clip cut from IMG_4571.MOV, the median-sized take in this folder (9 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "Hiral — portrait",
@@ -21300,7 +21318,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-1148.jpg"
+   "thumbnail": "thumbs/IFM-1148.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1148.mp4"
   },
   {
    "id": "IFM-1149",
@@ -21312,7 +21331,7 @@ window.IFM_DATA ={
    "description": "Aakara’s Dhanteras topic: a cover reading “this dhanteras, explore gold investment options” with ETF, EGR and Digital Gold tags around Hiral in a pink kurta, plus 21 raw takes of her standing against a plain wall. No edited reel in the folder yet.",
    "drive link": "https://drive.google.com/drive/folders/1foFZJ2cNerw9ETNyGJT8Cysi3UsLTct4",
    "date created": "2026-11-02",
-   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IFM/November/Dhanteras: Dhanteras.png (cover, 4 Nov) + IMG_6684–6704 (21 takes, 2 Nov). Thumbnail is the cover. Not in the November deck rows, so a new row. Mirrored with the Aakara tree copy (From Aakara/_tree-mirror of Aakara IFM folder).",
+   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IFM/November/Dhanteras: Dhanteras.png (cover, 4 Nov) + IMG_6684–6704 (21 takes, 2 Nov). Thumbnail is the cover. Not in the November deck rows, so a new row. Mirrored with the Aakara tree copy (From Aakara/_tree-mirror of Aakara IFM folder). Preview clip cut from IMG_6684.MOV, the median-sized take in this folder (21 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Usable",
    "consent": "No identifiable people",
    "shot": "Hiral — portrait",
@@ -21320,7 +21339,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-1149.jpg"
+   "thumbnail": "thumbs/IFM-1149.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1149.mp4"
   },
   {
    "id": "IFM-1150",
@@ -21332,7 +21352,7 @@ window.IFM_DATA ={
    "description": "Raw footage for Aakara’s “After diwali” topic: Hiral seated in a beige armchair in a red top and black skirt, hands clasped, sheer curtains and a plant behind. 14 camera takes (MVI_0290–0303) plus 13 phone takes in an “Audio” subfolder. Untranscribed; no edited reel yet.",
    "drive link": "https://drive.google.com/drive/folders/1G1y6mX08fRlNaJqennTwhxDufgjUFnw9",
    "date created": "2026-11-03",
-   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IFM/November/After diwali (14 MVI files) and After diwali/Audio (IMG_6774–6786, 13 files), delivered 3 Nov. May be the footage for IFM-752 (“Balancing today’s joy with tomorrow’s security”) but nothing confirms it, so it is a new row rather than a relink. Mirrored with the Aakara tree copy.",
+   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IFM/November/After diwali (14 MVI files) and After diwali/Audio (IMG_6774–6786, 13 files), delivered 3 Nov. May be the footage for IFM-752 (“Balancing today’s joy with tomorrow’s security”) but nothing confirms it, so it is a new row rather than a relink. Mirrored with the Aakara tree copy. Preview clip cut from IMG_6780.MOV, the median-sized take in this folder (27 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "Hiral — portrait",
@@ -21340,7 +21360,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-1150.jpg"
+   "thumbnail": "thumbs/IFM-1150.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1150.mp4"
   },
   {
    "id": "IFM-1151",
@@ -21352,7 +21373,7 @@ window.IFM_DATA ={
    "description": "Thirteen raw takes for Aakara’s November “Brand awareness – partner” topic: Hiral seated on a beige sofa in a black-and-multicolour printed sleeveless top, green wall art above. Untranscribed; who the partner is is not visible.",
    "drive link": "https://drive.google.com/drive/folders/1tG61hwHbSd-MShCByX97m4TIeJYzk1kP",
    "date created": "2026-11-02",
-   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IFM/November/Brand awareness- partner, IMG_6640–6656, delivered 2 Nov. Mirrored with the Aakara tree copy.",
+   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IFM/November/Brand awareness- partner, IMG_6640–6656, delivered 2 Nov. Mirrored with the Aakara tree copy. Preview clip cut from IMG_6652.mov, the median-sized take in this folder (13 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "Hiral — portrait",
@@ -21360,7 +21381,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-1151.jpg"
+   "thumbnail": "thumbs/IFM-1151.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1151.mp4"
   },
   {
    "id": "IFM-1152",
@@ -21372,7 +21394,7 @@ window.IFM_DATA ={
    "description": "One raw take (IMG_6787, 47 MB) of Hiral standing against a white wall in a pink check sleeveless top and black skirt, for an Aakara November topic folder named “One’s a day”.",
    "drive link": "https://drive.google.com/drive/folders/13sJv_rYep-mZ-zSYH0KSwt-wgaUBPsGR",
    "date created": "2026-11-03",
-   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IFM/November/One’s a day, delivered 3 Nov. Topic not in the November deck rows. Mirrored with the Aakara tree copy.",
+   "notes": "Catalogued 10 Nov 2026 by daily-content-processor from a fresh breadth-first Drive scan (219 folders, 2,729 media files, 0 listing errors). IFM/November/One’s a day, delivered 3 Nov. Topic not in the November deck rows. Mirrored with the Aakara tree copy. Preview clip cut from IMG_6787.MOV, the median-sized take in this folder (1 video files). The row covers the whole shoot; the clip is one representative take, not the finished piece.",
    "quality": "Raw-backup",
    "consent": "Adults only",
    "shot": "Hiral — portrait",
@@ -21380,7 +21402,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-1152.jpg"
+   "thumbnail": "thumbs/IFM-1152.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1152.mp4"
   },
   {
    "id": "IFM-1153",
@@ -21689,6 +21712,189 @@ window.IFM_DATA ={
    "audience": "Mummies",
    "batch": "",
    "captured_at": "2026-10-29T13:45:04+0530"
+  },
+  {
+   "id": "IFM-1167",
+   "title": "Jio IPO reel — raw takes",
+   "type": "Reel",
+   "source": "Content Library",
+   "status": "Raw",
+   "keywords": "jio, ipo, reel, raw takes, piece to camera, shoot folder, jio ipo reel (raw)",
+   "description": "Raw piece-to-camera takes for the Jio IPO reel. A woman in a pale yellow embroidered kurta stands against a grey textured wall talking to camera, hands moving as she explains. Shot vertical on a phone; the takes run back to back with the usual restarts.",
+   "drive link": "https://drive.google.com/drive/folders/1Hny-BbGOQHhwteeIjt7icwXmxHkoSLgI",
+   "date created": "2026-10-15",
+   "notes": "Covers the whole shoot folder \"Content Library/Jio ipo reel (raw)\" — 18 video files, 1.8 GB, uploaded 2026-10-15 to 2026-10-15. Preview cut from IMG_8207.MOV, the median-sized file in the folder. One row per shoot, as daily-content-processor does it; the Drive link opens the whole set. Speaker not named from the folder — nobody has confirmed who is on camera in these.",
+   "thumbnail": "thumbs/IFM-1167.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1167.mp4",
+   "quality": "Usable",
+   "social": "",
+   "audience": "Mummies",
+   "batch": ""
+  },
+  {
+   "id": "IFM-1168",
+   "title": "Confession of a Shopaholic — October reel takes",
+   "type": "Reel",
+   "source": "Aakara",
+   "status": "Raw",
+   "keywords": "shopaholic, shopping, spending, october, aakara, reel, shoot folder, confession of a shopaholic",
+   "description": "Takes for Aakara’s October \"Confession of a Shopaholic\" reel: a woman in a green printed playsuit sits on a low couch with shopping bags stacked beside her, talking to camera. Geometric green and navy wall art behind, a pink cushion at her elbow.",
+   "drive link": "https://drive.google.com/drive/folders/116UrpXeRaOL9xV7A55fpikkWscZzrFOC",
+   "date created": "2026-09-18",
+   "notes": "Covers the whole shoot folder \"IFM (Aakara delivery tree)/October/Reels/Confession of a shopaholic\" — 17 video files, 0.4 GB, uploaded 2026-09-18 to 2026-09-18. Preview cut from IMG_5939.mov, the median-sized file in the folder. One row per shoot, as daily-content-processor does it; the Drive link opens the whole set. Speaker not named from the folder — nobody has confirmed who is on camera in these.",
+   "thumbnail": "thumbs/IFM-1168.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1168.mp4",
+   "quality": "Usable",
+   "social": "",
+   "audience": "Mummies",
+   "batch": ""
+  },
+  {
+   "id": "IFM-1169",
+   "title": "One-minute reel, part 2 — October takes",
+   "type": "Reel",
+   "source": "Aakara",
+   "status": "Raw",
+   "keywords": "one minute, october, aakara, reel, explainer, shoot folder, one min part 2",
+   "description": "Takes for the second part of Aakara’s one-minute October reel: a woman in a red top sits cross-legged in front of pale curtains and a black lattice screen, with a potted plant to one side, delivering straight to camera.",
+   "drive link": "https://drive.google.com/drive/folders/1lQLjpW89owr6swiW2Ity8JX-KPpsSUf0",
+   "date created": "2026-10-06",
+   "notes": "Covers the whole shoot folder \"IFM (Aakara delivery tree)/October/Reels/One min part 2\" — 11 video files, 0.3 GB, uploaded 2026-09-18 to 2026-10-06. Preview cut from IMG_5919.mov, the median-sized file in the folder. One row per shoot, as daily-content-processor does it; the Drive link opens the whole set. Speaker not named from the folder — nobody has confirmed who is on camera in these.",
+   "thumbnail": "thumbs/IFM-1169.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1169.mp4",
+   "quality": "Usable",
+   "social": "",
+   "audience": "Mummies",
+   "batch": ""
+  },
+  {
+   "id": "IFM-1170",
+   "title": "ClearTax report reel — raw takes",
+   "type": "Reel",
+   "source": "Content Library",
+   "status": "Raw",
+   "keywords": "cleartax, tax, report, itr, reel, raw takes, shoot folder, clear tax report",
+   "description": "Raw takes for a reel about the ClearTax report. A woman in a black sleeveless top and white striped trousers stands in front of two framed portrait paintings, talking to camera and gesturing. Shot vertical, full length.",
+   "drive link": "https://drive.google.com/drive/folders/1skpqT5LIXy3k3DUwYyyM1qDR_weunQu5",
+   "date created": "2026-11-03",
+   "notes": "Covers the whole shoot folder \"Content Library/Clear tax report\" — 10 video files, 1.2 GB, uploaded 2026-11-03 to 2026-11-03. Preview cut from IMG_4480.MOV, the median-sized file in the folder. One row per shoot, as daily-content-processor does it; the Drive link opens the whole set. Speaker not named from the folder — nobody has confirmed who is on camera in these.",
+   "thumbnail": "thumbs/IFM-1170.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1170.mp4",
+   "quality": "Usable",
+   "social": "",
+   "audience": "Mummies",
+   "batch": ""
+  },
+  {
+   "id": "IFM-1171",
+   "title": "AI-generated explainer clips — June 2026",
+   "type": "Reel",
+   "source": "Content Library",
+   "status": "Raw",
+   "keywords": "ai generated, explainer, pizza, diversification, asset allocation, june 2026, shoot folder, ai videos — jun 2026 (claude)",
+   "description": "Our own AI-generated explainer footage from June 2026. The representative clip is the diversification pizza: a steaming cheese pizza on a dark surface, its slices marked with IFM-branded asset-class wedges, with the IFM roundel in the top corner. Made in house, not shot.",
+   "drive link": "https://drive.google.com/drive/folders/1YNXKJV-NNP-ClpFwwwuHbzqGxDp72Cko",
+   "date created": "2026-06-15",
+   "notes": "Covers the whole shoot folder \"Content Library/AI Videos — Jun 2026 (Claude)\" — 10 video files, 0.1 GB, uploaded 2026-06-14 to 2026-06-15. Preview cut from vedanta-pizza-split-pro-10s.mp4, the median-sized file in the folder. One row per shoot, as daily-content-processor does it; the Drive link opens the whole set. Speaker not named from the folder — nobody has confirmed who is on camera in these.",
+   "thumbnail": "thumbs/IFM-1171.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1171.mp4",
+   "quality": "Usable",
+   "social": "",
+   "audience": "Mummies",
+   "batch": ""
+  },
+  {
+   "id": "IFM-1172",
+   "title": "Participant feedback clips",
+   "type": "Session Video",
+   "source": "Content Library",
+   "status": "Raw",
+   "keywords": "feedback, testimonial, participant, workshop, session, shoot folder, ifm feedback videos",
+   "description": "Clips kept as participant feedback. The representative frame is a woman in a bright pink shirt standing at a flipchart in the training room, back half to camera, reading from a sheet of paper. Faces are not all to camera across the set; treat these as session footage rather than clean testimonial takes until each is watched.",
+   "drive link": "https://drive.google.com/drive/folders/1NNiiIQYum3Ko_1LmkRVC29WBExQ64Iuz",
+   "date created": "2026-11-03",
+   "notes": "Covers the whole shoot folder \"Content Library/IFM feedback videos\" — 8 video files, 6.1 GB, uploaded 2026-11-03 to 2026-11-03. Preview cut from IMG_8728.MOV, the median-sized file in the folder. One row per shoot, as daily-content-processor does it; the Drive link opens the whole set. Speaker not named from the folder — nobody has confirmed who is on camera in these.",
+   "thumbnail": "thumbs/IFM-1172.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1172.mp4",
+   "quality": "Usable",
+   "social": "",
+   "audience": "Mummies",
+   "batch": "",
+   "consent": "Adults only"
+  },
+  {
+   "id": "IFM-1173",
+   "title": "Goa workshop reel — our cuts",
+   "type": "Reel",
+   "source": "Content Library",
+   "status": "Raw",
+   "keywords": "goa, workshop, reel, edit, july 2026, promo, shoot folder, reels (claude)",
+   "description": "The reel cuts we assembled from the Goa workshop footage (18 Jul 2026). Opens on a woman in a lilac dress presenting beside a screen, cuts to the open-air cafe venue with a dog asleep on the floor, then back to her at the screen. Voice and music under. These are finished edits, not rushes — the masters sit in the parent folder.",
+   "drive link": "https://drive.google.com/drive/folders/1eNqoq7rqjpsKg1t81DRnuWcXx8Y-CY83",
+   "date created": "2026-07-19",
+   "notes": "Covers the whole shoot folder \"Content Library/Goa Workshop 18 Jul 2026 — raw video masters/REELS (Claude)\" — 8 video files, 0.1 GB, uploaded 2026-07-18 to 2026-07-19. Preview cut from IFM Goa Reel - v7 (fill-crop, @dotinthepark location, voice+music).mp4, the median-sized file in the folder. One row per shoot, as daily-content-processor does it; the Drive link opens the whole set. Speaker not named from the folder — nobody has confirmed who is on camera in these.",
+   "thumbnail": "thumbs/IFM-1173.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1173.mp4",
+   "quality": "Usable",
+   "social": "",
+   "audience": "Mummies",
+   "batch": ""
+  },
+  {
+   "id": "IFM-1174",
+   "title": "Certificate handover — footage from the Certificates folder",
+   "type": "Session Video",
+   "source": "Content Library",
+   "status": "Raw",
+   "keywords": "certificate, handover, graduation, workshop, boardroom, shoot folder, certificates",
+   "description": "Video from the Certificates Drive folder: participants gathered standing around the boardroom table during a handover, mostly backs and three-quarters to camera, bags still on shoulders. Handheld. Certificates carry printed names.",
+   "drive link": "https://drive.google.com/drive/folders/1CasigFU-SKr_X__0d7ywpjTE9-jmDcgA",
+   "date created": "2026-11-03",
+   "notes": "Covers the whole shoot folder \"Certificates\" — 5 video files, 0.2 GB, uploaded 2026-09-29 to 2026-11-03. Preview cut from IMG_8688.MOV, the median-sized file in the folder. One row per shoot, as daily-content-processor does it; the Drive link opens the whole set. Speaker not named from the folder — nobody has confirmed who is on camera in these.",
+   "thumbnail": "thumbs/IFM-1174.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1174.mp4",
+   "quality": "Usable",
+   "social": "",
+   "audience": "Mummies",
+   "batch": "",
+   "consent": "Certificates with names visible",
+   "shot": "Certificate moment"
+  },
+  {
+   "id": "IFM-1175",
+   "title": "Budget/FM reel — raw takes",
+   "type": "Reel",
+   "source": "Content Library",
+   "status": "Raw",
+   "keywords": "budget, finance minister, nirmala sitharaman, policy, reel, raw takes, shoot folder, nirmala sitaraman feel (raw)",
+   "description": "Raw takes for a reel pegged to the Finance Minister. A woman in a pale green ribbed top and blue jeans stands in front of a large black-and-white botanical print, talking to camera with both hands moving.",
+   "drive link": "https://drive.google.com/drive/folders/1qRynNI5Y1ilAjrnlw7e8s009Emqynmb0",
+   "date created": "2026-10-14",
+   "notes": "Covers the whole shoot folder \"Content Library/Nirmala Sitaraman feel (raw)\" — 5 video files, 0.4 GB, uploaded 2026-10-14 to 2026-10-14. Preview cut from IMG_4085.MOV, the median-sized file in the folder. One row per shoot, as daily-content-processor does it; the Drive link opens the whole set. Speaker not named from the folder — nobody has confirmed who is on camera in these.",
+   "thumbnail": "thumbs/IFM-1175.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1175.mp4",
+   "quality": "Usable",
+   "social": "",
+   "audience": "Mummies",
+   "batch": ""
+  },
+  {
+   "id": "IFM-1176",
+   "title": "\"Join Investing for Mummies now\" — animated card",
+   "type": "Reel",
+   "source": "Content Library",
+   "status": "Raw",
+   "keywords": "join, call to action, sip, mutual funds, financial confidence, animated, shoot folder, join ifm now",
+   "description": "A short animated teal card: the IFM wordmark top right, then SIP and Mutual Funds tags popping in over the line \"and have the FINANCIAL CONFIDENCE you always wanted.\" A social sting, not footage.",
+   "drive link": "https://drive.google.com/drive/folders/1LIPjz_2pYn6IyGNzjFeaJpVMj0mbV3vV",
+   "date created": "2026-06-11",
+   "notes": "Covers the whole shoot folder \"Content Library/Aakara — June 2026/Join IFM now\" — 1 video files, 0.0 GB, uploaded 2026-06-11 to 2026-06-11. Preview cut from Join Investing for Mummies.mp4, the median-sized file in the folder. One row per shoot, as daily-content-processor does it; the Drive link opens the whole set. Speaker not named from the folder — nobody has confirmed who is on camera in these.",
+   "thumbnail": "thumbs/IFM-1176.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1176.mp4",
+   "quality": "Usable",
+   "social": "",
+   "audience": "Mummies",
+   "batch": ""
   }
  ],
  "tracker": [

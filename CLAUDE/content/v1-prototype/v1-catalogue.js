@@ -28084,7 +28084,7 @@ window.IFM_V1 =
 "title": "Corporate deck video — 15 piece-to-camera takes by Hiral (folder)",
 "date": "2026-10-01",
 "thumb": "../thumbs/IFM-575.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-575.mp4",
 "drive": "https://drive.google.com/drive/folders/1t3BUKP9VnPBwOrSxlJsJwlrjYOqwbBEq",
 "description": "Catch-all for the talking-head takes Hiral recorded for a corporate pitch-deck video: seated on a sofa in a red sleeveless top, speaking to camera, plant and curtains behind. 15 clips from 1 MB to 186 MB. Opens the folder. The takes have not been transcribed, so which take says what is not yet searchable.",
 "session": "Corporate deck video shoot — 1 Oct 2026",
@@ -28106,7 +28106,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "corporate deck video piece camera takes hiral folder catch all talking head recorded pitch seated sofa red sleeveless top speaking plant curtains behind clips from 186 opens have not been transcribed which take says what yet searchable october 2026 raw",
-"phash": "c7c3e9c9c9d9b8e0"
+"phash": "c7c3d9c9c9c9f854"
 },
 {
 "id": "IFM-576",
@@ -28946,7 +28946,7 @@ window.IFM_V1 =
 "title": "IYA — young adults Aug 2026 — rest of the shoot (114 clips, folder)",
 "date": "2026-10-01",
 "thumb": "../thumbs/IFM-603.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-603.mp4",
 "drive": "https://drive.google.com/drive/folders/1Syi9U1cbeNZKNhM4UM3EZC_osyM8vg8n",
 "description": "Catch-all for the IYA (Investing for Young Adults) August 2026 shoot: 114 short phone clips of the teens session in the boardroom — listening, workbook activities, phone quizzes, the trading-platform demo and the certificate close. Opens the folder; the distinct moments are rows of their own.",
 "session": "IYA — young adults programme — Aug 2026",
@@ -28970,7 +28970,7 @@ window.IFM_V1 =
 ],
 "source": "Sakshi",
 "search_terms": "certificate completion graduation proud achievement social proof iya young adults aug 2026 rest shoot 114 clips folder catch all investing august short phone teens session boardroom listening workbook activities quizzes trading platform demo certificate close opens distinct moments rows their own raw",
-"phash": "c3373b1e35d99209"
+"phash": "43339b9659e4c6e6"
 },
 {
 "id": "IFM-604",
@@ -29628,7 +29628,7 @@ window.IFM_V1 =
 "title": "Corporate workshop (day 2) — rest of the shoot (folder)",
 "date": "2026-10-06",
 "thumb": "../thumbs/IFM-627.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-627.mp4",
 "drive": "https://drive.google.com/drive/folders/1TYulg-Wlp-48FF1p9ueLg_yzPMTgNBZY",
 "description": "Catch-all for the 6 Oct session frames that are not a moment of their own: a blank-screen pause, two from-behind clips and a one-second fragment. Opens the shared IFM Oct 2026 folder, which also holds the 1 Oct session.",
 "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
@@ -29645,14 +29645,14 @@ window.IFM_V1 =
 "person": [],
 "source": "Sakshi",
 "search_terms": "corporate workshop day rest shoot folder catch all oct session frames not moment their own blank screen pause two from behind clips one second fragment opens shared ifm 2026 which also holds backups october",
-"phash": "148901282ad03878"
+"phash": "2c2a6c2e866666a6"
 },
 {
 "id": "IFM-628",
 "title": "IPO vs stocks reel — 16 piece-to-camera takes by Hiral (folder)",
 "date": "2026-10-05",
 "thumb": "../thumbs/IFM-628.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-628.mp4",
 "drive": "https://drive.google.com/drive/folders/1s42C9DDDi-r5c4p5mDtsv8FT288hMChZ",
 "description": "Catch-all for the takes Hiral recorded for the “struggling stock market vs booming IPOs” reel: seated in the wood-panelled boardroom in a yellow ruffle-shoulder top and black skirt, speaking to camera. 16 clips from 21 MB to 567 MB, 2.8 GB in all. Opens the folder.",
 "session": "IPO vs stocks reel takes — 5 Oct 2026",
@@ -29676,14 +29676,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "ipo stocks reel piece camera takes hiral folder catch all recorded struggling stock market booming ipos seated wood panelled boardroom yellow ruffle shoulder top black skirt speaking clips from 567 opens talking head raw october 2026",
-"phash": "c8cd6b2307359c38"
+"phash": "e8cd2b2307349c38"
 },
 {
 "id": "IFM-629",
 "title": "October: Dussehra — reel cover + 15 raw takes (finished reel not yet delivered)",
 "date": "2026-10-05",
 "thumb": "../thumbs/IFM-629.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-629.mp4",
 "drive": "https://drive.google.com/drive/folders/1fbaKCxWfNGEqO2PYg1dqJKQvYnHfefTk",
 "description": "Fifteen takes of Hiral for a Dussehra reel: seated on a beige sofa at a wooden table in a green printed kurta, a brass diya lamp and bowl beside her, speaking to camera. Since 19 Oct the folder also holds the reel cover, “dussehra final.png”: “This Dussehra, conquer your financial blind spots”, Hiral cut out over a sky-blue band with two Ravan-mask illustrations and the diya and marigolds in front. Takes from 12 MB to 200 MB, 838 MB in all. No finished reel yet. Opens the folder.",
 "session": "",
@@ -29705,7 +29705,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "october dussehra reel cover raw takes finished not yet delivered fifteen hiral seated beige sofa wooden table green printed kurta brass diya lamp bowl beside her speaking camera since oct folder also holds final png conquer your financial blind spots",
-"phash": "17f0f231a4e8c89a"
+"phash": "041832e76d48ce68"
 },
 {
 "id": "IFM-630",
@@ -29827,7 +29827,7 @@ window.IFM_V1 =
 "title": "October: Why losing money hurts more than making it — “Ever Wondered” reel, cover + 9 takes (folder)",
 "date": "2026-10-08",
 "thumb": "../thumbs/IFM-634.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-634.mp4",
 "drive": "https://drive.google.com/drive/folders/1jz38gUazvDhwdO6cBmyXLnVtqAmh23nr",
 "description": "The October instalment of the recurring “Ever Wondered” series, on loss aversion. The cover reads “Why Losing money hurts way more than Making” over green and red arrows and banknotes. The nine takes are Hiral standing in a black satin shirt and cream wide-leg trousers in front of a large blue-and-white abstract painting, talking to camera with open-handed gestures. Clips from 11 MB to 295 MB, 502 MB in all. No finished reel in the folder yet. Opens the folder.",
 "session": "Aakara reel shoot — 18 Sep 2026",
@@ -29847,7 +29847,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "october why losing money hurts more than making ever wondered reel cover takes folder instalment recurring series loss aversion reads way over green red arrows banknotes nine hiral standing black satin shirt cream wide leg trousers front large blue white",
-"phash": "1ef0d43268c8c4e0"
+"phash": "96b62269c9c68ee0"
 },
 {
 "id": "IFM-635",
@@ -30181,7 +30181,7 @@ window.IFM_V1 =
 "title": "Starlink vs Jio reel — 11 piece-to-camera takes by Hiral (folder)",
 "date": "2026-10-12",
 "thumb": "../thumbs/IFM-646.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-646.mp4",
 "drive": "https://drive.google.com/drive/folders/1GtMlDQYs4dTSxFZ2eritwTt2RuvurFZ9",
 "description": "Catch-all for the eleven takes Hiral recorded for a news reel on Elon Musk's Starlink arriving in India against Reliance Jio: standing to camera in a white sleeveless top with a clip-on lapel mic, red-framed glasses and a red thread on her wrist, in front of a large black-and-white line-art mural. The hook take opens “Elon Musk just walked into Ambani's biggest story — and the irony, Jio had already flagged this risk in its IPO document”; another gives Jio's answer, that its own wireless broadband could be the more cost-effective alternative; and the closing line, shot several times over, is “when you look at a DRHP, don't just focus on the IPO's growth story”. Clips from 6 MB to 361 MB, 1.83 GB in all. Opens the folder.",
 "session": "Starlink vs Jio reel takes — 12 Oct 2026",
@@ -30204,7 +30204,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "starlink jio reel piece camera takes hiral folder catch all eleven recorded news elon musk arriving india against reliance standing white sleeveless top clip lapel mic red framed glasses thread her wrist front large black line art mural hook take",
-"phash": "5632216425339687"
+"phash": "95326b48431b1c06"
 },
 {
 "id": "IFM-647",
@@ -30302,7 +30302,7 @@ window.IFM_V1 =
 "title": "October: Jenga — reel takes (26 raw clips: 18 camera + 8 phone)",
 "date": "2026-10-16",
 "thumb": "../thumbs/IFM-650.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-650.mp4",
 "drive": "https://drive.google.com/drive/folders/1givcQmL-5w2Fq_wBB6ZyDLFBuVlsprGj",
 "description": "Raw takes for a Jenga-themed reel: Hiral in a navy lace sleeveless top seated at a wooden table in front of a taupe sofa, a wooden Jenga tower beside her. Across the camera takes she pulls blocks until the tower topples, and later takes show her speaking over the collapsed pile; the eight phone takes are close-ups with the tower in the foreground, partly hiding her face. Untranscribed, so the script is not known. 26 clips, 2.00 GB in all. The VO subfolder is empty. Opens the folder.",
 "session": "",
@@ -30325,14 +30325,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "october jenga reel takes raw clips camera phone themed hiral navy lace sleeveless top seated wooden table front taupe sofa tower beside her across she pulls blocks until topples later show speaking over collapsed pile eight close ups foreground partly",
-"phash": "0e11706cc9d16c60"
+"phash": "e39a8d8d0d0d8d85"
 },
 {
 "id": "IFM-651",
 "title": "October: Girl math — reel takes (14 raw clips, finished reel not yet delivered)",
 "date": "2026-09-04",
 "thumb": "../thumbs/IFM-651.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-651.mp4",
 "drive": "https://drive.google.com/drive/folders/1RDLamvZyVwsFg6H9m45MwueUAAI_nK6n",
 "description": "Raw takes for a “girl math” reel: Hiral in a lime-green sleeveless top and light jeans lounging on a brown sofa, scrolling a shopping app on her phone, with over-the-shoulder close-ups of the screen showing clothing listings. The last take (MVI_0209) has her seated upright to camera in a white shirt under green geometric wall art. Two phone clips (IMG_5386/5387) are black-frame, likely audio only. Untranscribed. 14 clips, 3.73 GB in all. Opens the folder.",
 "session": "",
@@ -30355,7 +30355,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "october girl math reel takes raw clips finished not yet delivered hiral lime green sleeveless top light jeans lounging brown sofa scrolling shopping app her phone over shoulder close ups screen showing clothing listings last take mvi 0209 has seated",
-"phash": "006b9835634e4c80"
+"phash": "88a7d899973766c0"
 },
 {
 "id": "IFM-652",
@@ -30386,7 +30386,7 @@ window.IFM_V1 =
 "title": "November: Brand awareness — 10 raw takes of Hiral in a denim jacket",
 "date": "2026-10-16",
 "thumb": "../thumbs/IFM-653.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-653.mp4",
 "drive": "https://drive.google.com/drive/folders/1iUtR1z-rAe2VfVhKsC5w1tjCDG2O5o9p",
 "description": "Nine piece-to-camera takes and one still of Hiral in a light denim jacket against a teal sofa, delivered for Aakara's November “Brand awareness” topic; expressions range from speaking to camera to thoughtful, hand-on-chin. Untranscribed. 10 files, 520 MB in all. Opens the folder.",
 "session": "",
@@ -30408,14 +30408,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "november brand awareness raw takes hiral denim jacket nine piece camera one still light against teal sofa delivered aakara topic expressions range from speaking thoughtful hand chin untranscribed files 520 all opens folder reel catch",
-"phash": "71ccc6ccceca5b17"
+"phash": "0c73c9cccccc5216"
 },
 {
 "id": "IFM-654",
 "title": "Jio IPO OFS reel — 76 takes by Hiral plus newspaper-ad inserts (folder)",
 "date": "2026-10-19",
 "thumb": "../thumbs/IFM-654.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-654.mp4",
 "drive": "https://drive.google.com/drive/folders/1N3_FWrMaP8DfwzGdfNWcli1BVe_OeKsJ",
 "description": "Catch-all for a reel on the Jio Platforms IPO's offer for sale: about sixty takes of Hiral seated in a black leather chair in an office with a bookshelf behind her, in a green-and-white striped sleeveless shirt with a lapel mic, a printed IPO document on the armrest; plus around sixteen overhead inserts of a hand with a red pen tracing the printed Jio Platforms IPO ad — the price band, the bidding dates and the “Risk to investors” box. Untranscribed. 76 clips, 5.79 GB in all. Opens the folder.",
 "session": "",
@@ -30440,7 +30440,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "jio ipo ofs reel takes hiral plus newspaper inserts folder catch all platforms offer sale about sixty seated black leather chair office bookshelf behind her green white striped sleeveless shirt lapel mic printed document armrest around sixteen overhead hand red",
-"phash": "c6502c2d69eec38b"
+"phash": "8e286c6dd9f68b8b"
 },
 {
 "id": "IFM-655",
@@ -30477,7 +30477,7 @@ window.IFM_V1 =
 "title": "Buffett mistake reel — 5 piece-to-camera takes by Hiral (folder)",
 "date": "2026-10-27",
 "thumb": "../thumbs/IFM-656.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-656.mp4",
 "drive": "https://drive.google.com/drive/folders/18HUK83_2Y93bgW-T9SkeLDLpXAgTq6FZ",
 "description": "Catch-all for the raw takes behind the Buffett reel: Hiral standing to camera in a black sleeveless button-front dress, hands clasped, in front of the line-art mural, smiling between lines. Five clips (IMG_8570, 8571, 8585, 8587, 8591), about 420 MB. Untranscribed. Opens the folder, which also holds the finished reel (IFM-655).",
 "session": "",
@@ -30499,7 +30499,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "candid warm natural unposed relaxed friendly celebration buffett mistake reel piece camera takes hiral folder catch all raw behind standing black sleeveless button front dress hands clasped line art mural smiling between lines five clips img 8570 8571 8585 8587 8591 about 420 untranscribed opens which also",
-"phash": "123165ecccd0c4c4"
+"phash": "143165edccb061c0"
 },
 {
 "id": "IFM-657",
@@ -30537,7 +30537,7 @@ window.IFM_V1 =
 "title": "Jio IPO Day 3 reel — 30 piece-to-camera takes by Hiral (folder)",
 "date": "2026-10-22",
 "thumb": "../thumbs/IFM-658.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-658.mp4",
 "drive": "https://drive.google.com/drive/folders/130p6Hdbmm6V1E5WiAzq-cHGuYdrtVLIk",
 "description": "Catch-all for the takes behind the Jio IPO Day 3 reel: Hiral standing to camera in a pale-blue pintuck shirt and dark trousers with a lapel mic, in front of the line-art mural. The first four takes have her holding up the Economic Times front page; the rest are her speaking with hands clasped. 30 clips, about 2.6 GB. Untranscribed. Opens the folder.",
 "session": "",
@@ -30561,7 +30561,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "jio ipo day reel piece camera takes hiral folder catch all behind standing pale blue pintuck shirt dark trousers lapel mic front line art mural first four have her holding economic times page rest speaking hands clasped clips about untranscribed",
-"phash": "3460d2929b099992"
+"phash": "61cbc9599989c9f1"
 },
 {
 "id": "IFM-659",
@@ -30883,7 +30883,7 @@ window.IFM_V1 =
 "title": "IFM Games, 21 Oct corporate-actions session — rest of the shoot (folder)",
 "date": "2026-10-21",
 "thumb": "../thumbs/IFM-670.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-670.mp4",
 "drive": "https://drive.google.com/drive/folders/1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n",
 "description": "Catch-all for the 21 Oct games session clips not given a row of their own: further table views, a participant at the far end in black resting her chin on her hand (IMG_8317/8322), two women chatting (IMG_8338). 49 clips in all, about 3 GB. Opens the IFM Games folder, which also holds the 8 Sep Swayamvar session (IFM-413..477).",
 "session": "Boardroom workshop, games session — 21 Oct 2026",
@@ -30902,7 +30902,7 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "ifm games oct corporate actions session rest shoot folder catch all clips not given row their own further table views participant far end black resting her chin hand img 8317 8322 two women chatting 8338 about opens which also holds",
-"phash": "3c381133eb4518f9"
+"phash": "2de7d1b13c2e1eb0"
 },
 {
 "id": "IFM-671",
@@ -31416,7 +31416,7 @@ window.IFM_V1 =
 "title": "IYA young-adults workshop, Oct 2026 — rest of the shoot (folder)",
 "date": "2026-10-27",
 "thumb": "../thumbs/IFM-689.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-689.mp4",
 "drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "Catch-all for the rest of the IYA session: further wide and table views of the young adults and the facilitator at slides on spending, goals and investing. 78 files (69 videos, 9 photos), about 9.5 GB. Opens the folder.",
 "session": "IYA young-adults workshop — Oct 2026",
@@ -31440,7 +31440,7 @@ window.IFM_V1 =
 "hiral_named": false,
 "source": "Unknown",
 "search_terms": "iya young adults workshop oct 2026 rest shoot folder catch all session further wide table views facilitator slides spending goals investing files videos photos about opens boardroom raw october",
-"phash": "19191159b7a6c286"
+"phash": "e0c0797e2c0fe686"
 },
 {
 "id": "IFM-690",
@@ -32080,7 +32080,7 @@ window.IFM_V1 =
 "title": "IFM Games, 22 Oct Stock Rush PRO session — rest of the shoot (folder)",
 "date": "2026-10-22",
 "thumb": "../thumbs/IFM-711.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-711.mp4",
 "drive": "https://drive.google.com/drive/folders/1m9mUvlqRSjfnLKLLlip5tuW8M-w3oW6n",
 "description": "Catch-all for the 22 Oct Stock Rush PRO clips not given a row of their own: the room from behind the participant in yellow (IMG_8401, IMG_8404) and her fixing her hair between rounds (IMG_8446). 89 files in all, about 4.3 GB. Opens the IFM Games folder, which also holds the 8 Sep Swayamvar session (IFM-413..477), the 21 Oct session (IFM-659..670) and the 28 Oct quiz session.",
 "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
@@ -32102,7 +32102,7 @@ window.IFM_V1 =
 ],
 "source": "Unknown",
 "search_terms": "ifm games oct stock rush pro session rest shoot folder catch all clips not given row their own room from behind participant yellow img 8401 8404 her fixing hair between rounds 8446 files about opens which also holds sep swayamvar",
-"phash": "1b19dad84b199fbe"
+"phash": "999e36666c0e8ec4"
 },
 {
 "id": "IFM-712",
@@ -32997,7 +32997,7 @@ window.IFM_V1 =
 "title": "Jio listing day — 10 raw takes of Hiral (IMG_8689–8712)",
 "date": "2026-10-28",
 "thumb": "../thumbs/IFM-742.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-742.mp4",
 "drive": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
 "description": "Ten piece-to-camera takes of Hiral in a black sleeveless top with a round brooch against the dark wood wall — the source footage for the listing-day reel. 1.2 GB in all; IMG_8707 alone is 411 MB. Untranscribed. Opens the folder.",
 "session": "",
@@ -33020,14 +33020,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "jio listing day raw takes hiral img 8689 8712 ten piece camera black sleeveless top round brooch against dark wood wall source footage reel all 8707 alone 411 untranscribed opens folder ipo catch october 2026",
-"phash": "dfe9cdcd69c93f7e"
+"phash": "d7eded6d51692f5f"
 },
 {
 "id": "IFM-743",
 "title": "SEBI / AMC news — 8 raw takes of Hiral in a pink kurta (IMG_8802–8824, 29 Oct)",
 "date": "2026-10-29",
 "thumb": "../thumbs/IFM-743.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-743.mp4",
 "drive": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
 "description": "Eight piece-to-camera takes of Hiral in a bright pink kurta with a tassel, in front of the black-and-white line-art mural, shot 29 Oct 2026 for a reel on SEBI and asset-management companies — the folder name is all that says so; untranscribed. 648 MB in all. Opens the folder.",
 "session": "",
@@ -33050,14 +33050,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "IFM / In-house",
 "search_terms": "sebi amc news raw takes hiral pink kurta img 8802 8824 oct eight piece camera bright tassel front black white line art mural shot 2026 reel asset management companies folder name all says untranscribed 648 opens company mutual funds regulation",
-"phash": "1e30616dc8c7c5cd"
+"phash": "1e30636dc4cee6c7"
 },
 {
 "id": "IFM-744",
 "title": "October: Corporate video — 16 Canon takes of Hiral against the mural (MVI_0270–0285)",
 "date": "2026-10-29",
 "thumb": "../thumbs/IFM-744.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-744.mp4",
 "drive": "https://drive.google.com/drive/folders/19iiLlv_Jd39-CoaAGwsyPewYC89gA_Bq",
 "description": "Sixteen camera takes of Hiral in a black sleeveless vest top, hands clasped, in front of the black-and-white line-art mural — the piece-to-camera footage for the corporate \"Wealth Conversation\" video, shot on a Canon (MVI_ files) and delivered 29 Oct. 2.1 GB in all; MVI_0281 and MVI_0282 are the long ones. Untranscribed. Opens the folder.",
 "session": "",
@@ -33081,7 +33081,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "october corporate video canon takes hiral against mural mvi 0270 0285 sixteen camera black sleeveless vest top hands clasped front white line art piece footage wealth conversation shot files delivered oct all 0281 0282 long ones untranscribed opens folder raw",
-"phash": "99da326868c87161",
+"phash": "99d832e86cec7161",
 "kit": "portrait",
 "kit_rank": 3
 },
@@ -33208,7 +33208,7 @@ window.IFM_V1 =
 "title": "November: Is the stock market like a Teen Patti game? — Diwali reel",
 "date": "2026-11-01",
 "thumb": "../thumbs/IFM-749.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-749.mp4",
 "drive": "https://drive.google.com/drive/folders/1EO-P2VoEjxwVtgb91a7LkdE88s0TBXa2",
 "description": "Aakara’s Diwali reel: Hiral in an orange saree holds three playing cards and asks “is the stock market like a teen patti game?”, giving three money tips. Folder holds the finished video (Final Video/IFM_3P_V04.mp4, 456 MB), the cover, and 22 raw takes.",
 "session": "",
@@ -33233,14 +33233,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "november stock market like teen patti game diwali reel aakara hiral orange saree holds three playing cards asks giving money tips folder finished video final ifm v04 mp4 456 cover raw takes flash topical festival planned internal deck placeholder",
-"phash": "51a89279e4e4ecec"
+"phash": "6f1231e9e8c7c5cc"
 },
 {
 "id": "IFM-750",
 "title": "November: The “Luggage Tag” secret — 18 raw takes of Hiral (no edit yet)",
 "date": "2026-11-01",
 "thumb": "../thumbs/IFM-750.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-750.mp4",
 "drive": "https://drive.google.com/drive/folders/13A79UDKzPlE2wrOOMDJN6SRaFPgpkTDG",
 "description": "Raw footage for Aakara’s “Luggage Tag” goal-attached investing post: Hiral seated in a white tee and jeans by a window with a plant, 9 camera takes plus 9 phone takes. No edited reel yet. Concept: tag each SIP with a concrete life goal.",
 "session": "",
@@ -33262,7 +33262,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "sip systematic investment plan monthly investing november luggage tag secret raw takes hiral edit yet footage aakara goal attached investing post seated white tee jeans window plant camera plus phone edited reel concept each sip concrete life goals analogy finance terms analogies delayed gratification planned internal",
-"phash": "d1d2d0486567dc54",
+"phash": "41d2d04c65675e4c",
 "kit": "portrait",
 "kit_rank": 3
 },
@@ -44010,7 +44010,7 @@ window.IFM_V1 =
 "title": "Trump just lost Congress — good news for India? (finished reel)",
 "date": "2026-11-05",
 "thumb": "../thumbs/IFM-1144.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1144.mp4",
 "drive": "https://drive.google.com/file/d/1DFUwFrzsxVVrmJPOnuMtlCh9JSlNhumm/view",
 "description": "Finished news reel: Hiral explains what the US midterm result (“Trump just lost Congress”) means for Indian investors. Cover shows the Sensex up 1.94% with gold and silver tags; the reel is Hiral to camera at her desk in a pink check sleeveless top, captions burned in.",
 "session": "",
@@ -44033,14 +44033,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Sakshi",
 "search_terms": "trump just lost congress good news india finished reel hiral explains what midterm result means indian investors cover shows sensex gold silver tags camera her desk pink check sleeveless top captions burned midterms markets topical piece led",
-"phash": "0768ceb16d4c6053"
+"phash": "2090f766c7c7800a"
 },
 {
 "id": "IFM-1145",
 "title": "Trump midterm setback — 13 raw takes of Hiral at her desk",
 "date": "2026-11-05",
 "thumb": "../thumbs/IFM-1145.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1145.mp4",
 "drive": "https://drive.google.com/drive/folders/1JHcXscSI84LuZxmfUVi_xXfuA9c0TBMj",
 "description": "Thirteen raw piece-to-camera takes for the Trump midterm reel: Hiral seated at a wooden desk in a pink check sleeveless top, black skirt, office chair behind. Untranscribed. Opens the folder (also holds the finished reel and its cover).",
 "session": "",
@@ -44064,14 +44064,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "trump midterm setback raw takes hiral her desk thirteen piece camera reel seated wooden pink check sleeveless top black skirt office chair behind untranscribed opens folder also holds finished cover midterms news catch all",
-"phash": "10b62467c3c3fe76"
+"phash": "10b46c63d3d36e7b"
 },
 {
 "id": "IFM-1146",
 "title": "Paying a hidden commission? Direct vs regular mutual fund plans (finished reel)",
 "date": "2026-11-04",
 "thumb": "../thumbs/IFM-1146.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1146.mp4",
 "drive": "https://drive.google.com/file/d/19EsFapgIooXi3b1Z0pIhAspoI-_smurf/view",
 "description": "Finished reel on direct versus regular mutual fund plans, opening on “Paying a hidden commission?” over a phone showing a fund statement, then Hiral at her desk in a black sleeveless top explaining the difference.",
 "session": "",
@@ -44094,14 +44094,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Sakshi",
 "search_terms": "paying hidden commission direct regular mutual fund plans finished reel versus opening over phone showing statement then hiral her desk black sleeveless top explaining difference funds plan expense ratio distributor piece camera account",
-"phash": "4e19b68e4d2a6358"
+"phash": "b2b8a6884d2b6952"
 },
 {
 "id": "IFM-1147",
 "title": "Direct vs regular plans — 16 raw takes of Hiral with the IFM book",
 "date": "2026-11-04",
 "thumb": "../thumbs/IFM-1147.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1147.mp4",
 "drive": "https://drive.google.com/drive/folders/1A_tMV2W0hI5-3f2kUNRe_TFfc6gqIVf3",
 "description": "Sixteen raw takes for the direct-vs-regular reel: Hiral at an office desk in a black sleeveless top, the Investing for Mummies book and a laptop in front of her. Untranscribed. Opens the folder (also holds the finished reel).",
 "session": "",
@@ -44126,14 +44126,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "direct regular plans raw takes hiral ifm book sixteen reel office desk black sleeveless top investing mummies laptop front her untranscribed opens folder also holds finished piece camera plan mutual funds catch all",
-"phash": "30304a6e72543d90"
+"phash": "3028ca62721c1fd8"
 },
 {
 "id": "IFM-1148",
 "title": "Nasdaq — 9 raw takes of Hiral at her desk (no finished reel yet)",
 "date": "2026-11-06",
 "thumb": "../thumbs/IFM-1148.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1148.mp4",
 "drive": "https://drive.google.com/drive/folders/18DH8IQZo7DziLRxce4CMwuv0aToQ1co7",
 "description": "Nine raw piece-to-camera takes for a Nasdaq topic: Hiral in an office chair in a black sleeveless top and red skirt, pin board and TV behind her. Untranscribed; no edited reel in the folder yet.",
 "session": "",
@@ -44156,14 +44156,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Unknown",
 "search_terms": "nasdaq raw takes hiral her desk finished reel yet nine piece camera topic office chair black sleeveless top red skirt pin board behind untranscribed edited folder stocks international investing news catch all",
-"phash": "313aad6a72e69352"
+"phash": "312de952f2e42714"
 },
 {
 "id": "IFM-1149",
 "title": "November: This Dhanteras, explore gold investment options — ETF, EGR, digital gold",
 "date": "2026-11-02",
 "thumb": "../thumbs/IFM-1149.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1149.mp4",
 "drive": "https://drive.google.com/drive/folders/1foFZJ2cNerw9ETNyGJT8Cysi3UsLTct4",
 "description": "Aakara’s Dhanteras topic: a cover reading “this dhanteras, explore gold investment options” with ETF, EGR and Digital Gold tags around Hiral in a pink kurta, plus 21 raw takes of her standing against a plain wall. No edited reel in the folder yet.",
 "session": "",
@@ -44186,14 +44186,14 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "november dhanteras explore gold investment options etf egr digital aakara topic cover reading tags around hiral pink kurta plus raw takes her standing against plain wall edited reel folder yet diwali electronic receipt festival topical",
-"phash": "51a894b0e8e4d4d4"
+"phash": "8016b069ecd4c4c4"
 },
 {
 "id": "IFM-1150",
 "title": "November: After Diwali — 27 raw takes of Hiral in a red top",
 "date": "2026-11-03",
 "thumb": "../thumbs/IFM-1150.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1150.mp4",
 "drive": "https://drive.google.com/drive/folders/1G1y6mX08fRlNaJqennTwhxDufgjUFnw9",
 "description": "Raw footage for Aakara’s “After diwali” topic: Hiral seated in a beige armchair in a red top and black skirt, hands clasped, sheer curtains and a plant behind. 14 camera takes (MVI_0290–0303) plus 13 phone takes in an “Audio” subfolder. Untranscribed; no edited reel yet.",
 "session": "",
@@ -44215,7 +44215,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "november after diwali raw takes hiral red top footage aakara topic seated beige armchair black skirt hands clasped sheer curtains plant behind camera mvi 0290 0303 plus phone audio subfolder untranscribed edited reel yet post festival money habits piece catch",
-"phash": "299bb6ebe932b4dc",
+"phash": "4e776bebf3b4f879",
 "kit": "portrait",
 "kit_rank": 3
 },
@@ -44224,7 +44224,7 @@ window.IFM_V1 =
 "title": "November: Brand awareness — partner, 13 raw takes of Hiral on the sofa",
 "date": "2026-11-02",
 "thumb": "../thumbs/IFM-1151.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1151.mp4",
 "drive": "https://drive.google.com/drive/folders/1tG61hwHbSd-MShCByX97m4TIeJYzk1kP",
 "description": "Thirteen raw takes for Aakara’s November “Brand awareness – partner” topic: Hiral seated on a beige sofa in a black-and-multicolour printed sleeveless top, green wall art above. Untranscribed; who the partner is is not visible.",
 "session": "",
@@ -44248,7 +44248,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "november brand awareness partner raw takes hiral sofa thirteen aakara topic seated beige black multicolour printed sleeveless top green wall art above untranscribed who not visible partnership piece camera catch all",
-"phash": "74336969e1e1dad8",
+"phash": "39326169e061acf8",
 "kit": "portrait",
 "kit_rank": 3
 },
@@ -44257,7 +44257,7 @@ window.IFM_V1 =
 "title": "November: “One’s a day” — single raw take of Hiral standing",
 "date": "2026-11-03",
 "thumb": "../thumbs/IFM-1152.jpg",
-"video": "",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1152.mp4",
 "drive": "https://drive.google.com/drive/folders/13sJv_rYep-mZ-zSYH0KSwt-wgaUBPsGR",
 "description": "One raw take (IMG_6787, 47 MB) of Hiral standing against a white wall in a pink check sleeveless top and black skirt, for an Aakara November topic folder named “One’s a day”.",
 "session": "",
@@ -44277,7 +44277,7 @@ window.IFM_V1 =
 "hiral_named": true,
 "source": "Aakara",
 "search_terms": "november one day single raw take hiral standing img 6787 against white wall pink check sleeveless top black skirt aakara topic folder named ones piece camera",
-"phash": "e0032c58181878d8"
+"phash": "e0012cf8383878d8"
 },
 {
 "id": "IFM-1153",
@@ -44684,5 +44684,280 @@ window.IFM_V1 =
 "source": "Unknown",
 "search_terms": "certificate completion graduation proud achievement social proof graduation line last frame final certificate eight women against cream curtains their certificates completion sideboard boxes visible right handover group photo cohort workshop boardroom participants",
 "phash": "9911958ca4d2d3d3"
+},
+{
+"id": "IFM-1167",
+"title": "Jio IPO reel — raw takes",
+"date": "2026-10-15",
+"thumb": "../thumbs/IFM-1167.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1167.mp4",
+"drive": "https://drive.google.com/drive/folders/1Hny-BbGOQHhwteeIjt7icwXmxHkoSLgI",
+"description": "Raw piece-to-camera takes for the Jio IPO reel. A woman in a pale yellow embroidered kurta stands against a grey textured wall talking to camera, hands moving as she explains. Shot vertical on a phone; the takes run back to back with the usual restarts.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "",
+"topic": [
+"IPOs"
+],
+"person": [
+"Other Person"
+],
+"source": "Unknown",
+"search_terms": "jio ipo reel raw takes piece camera woman pale yellow embroidered kurta stands against grey textured wall talking hands moving she explains shot vertical phone run back usual restarts shoot folder",
+"phash": "16734949c39795c3"
+},
+{
+"id": "IFM-1168",
+"title": "Confession of a Shopaholic — October reel takes",
+"date": "2026-09-18",
+"thumb": "../thumbs/IFM-1168.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1168.mp4",
+"drive": "https://drive.google.com/drive/folders/116UrpXeRaOL9xV7A55fpikkWscZzrFOC",
+"description": "Takes for Aakara’s October \"Confession of a Shopaholic\" reel: a woman in a green printed playsuit sits on a low couch with shopping bags stacked beside her, talking to camera. Geometric green and navy wall art behind, a pink cushion at her elbow.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "",
+"topic": [
+"Managing Money"
+],
+"person": [
+"Other Person"
+],
+"source": "Aakara",
+"search_terms": "confession shopaholic october reel takes aakara woman green printed playsuit sits low couch shopping bags stacked beside her talking camera geometric navy wall art behind pink cushion elbow spending shoot folder",
+"phash": "6e243032e1993834"
+},
+{
+"id": "IFM-1169",
+"title": "One-minute reel, part 2 — October takes",
+"date": "2026-10-06",
+"thumb": "../thumbs/IFM-1169.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1169.mp4",
+"drive": "https://drive.google.com/drive/folders/1lQLjpW89owr6swiW2Ity8JX-KPpsSUf0",
+"description": "Takes for the second part of Aakara’s one-minute October reel: a woman in a red top sits cross-legged in front of pale curtains and a black lattice screen, with a potted plant to one side, delivering straight to camera.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "",
+"topic": [],
+"person": [
+"Other Person"
+],
+"source": "Aakara",
+"search_terms": "one minute reel part october takes second aakara woman red top sits cross legged front pale curtains black lattice screen potted plant side delivering straight camera explainer shoot folder min",
+"phash": "5253766e6ad1e584"
+},
+{
+"id": "IFM-1170",
+"title": "ClearTax report reel — raw takes",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-1170.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1170.mp4",
+"drive": "https://drive.google.com/drive/folders/1skpqT5LIXy3k3DUwYyyM1qDR_weunQu5",
+"description": "Raw takes for a reel about the ClearTax report. A woman in a black sleeveless top and white striped trousers stands in front of two framed portrait paintings, talking to camera and gesturing. Shot vertical, full length.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "Portrait",
+"topic": [],
+"person": [
+"Other Person"
+],
+"source": "Unknown",
+"search_terms": "rbi repo rate central bank portrait headshot founder press media kit agency bio cleartax report reel raw takes about woman black sleeveless top white striped trousers stands front two framed portrait paintings talking camera gesturing shot vertical full length tax itr shoot folder clear",
+"phash": "32ab69e9f0e03464"
+},
+{
+"id": "IFM-1171",
+"title": "AI-generated explainer clips — June 2026",
+"date": "2026-06-15",
+"thumb": "../thumbs/IFM-1171.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1171.mp4",
+"drive": "https://drive.google.com/drive/folders/1YNXKJV-NNP-ClpFwwwuHbzqGxDp72Cko",
+"description": "Our own AI-generated explainer footage from June 2026. The representative clip is the diversification pizza: a steaming cheese pizza on a dark surface, its slices marked with IFM-branded asset-class wedges, with the IFM roundel in the top corner. Made in house, not shot.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": true,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Asset Allocation",
+"Diversification"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "generated explainer clips june 2026 our own footage from representative clip diversification pizza steaming cheese dark surface slices marked ifm branded asset class wedges roundel top corner made house not shot allocation shoot folder videos jun claude",
+"phash": "c9edafab3bcffc3f"
+},
+{
+"id": "IFM-1172",
+"title": "Participant feedback clips",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-1172.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1172.mp4",
+"drive": "https://drive.google.com/drive/folders/1NNiiIQYum3Ko_1LmkRVC29WBExQ64Iuz",
+"description": "Clips kept as participant feedback. The representative frame is a woman in a bright pink shirt standing at a flipchart in the training room, back half to camera, reading from a sheet of paper. Faces are not all to camera across the set; treat these as session footage rather than clean testimonial takes until each is watched.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "testimonial review feedback social proof word of mouth participant feedback clips kept representative frame woman bright pink shirt standing flipchart training room back half camera reading from sheet paper faces not all across set treat these session footage rather than clean testimonial takes until each watched workshop shoot",
+"phash": "196160d1dba134e0"
+},
+{
+"id": "IFM-1173",
+"title": "Goa workshop reel — our cuts",
+"date": "2026-07-19",
+"thumb": "../thumbs/IFM-1173.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1173.mp4",
+"drive": "https://drive.google.com/drive/folders/1eNqoq7rqjpsKg1t81DRnuWcXx8Y-CY83",
+"description": "The reel cuts we assembled from the Goa workshop footage (18 Jul 2026). Opens on a woman in a lilac dress presenting beside a screen, cuts to the open-air cafe venue with a dog asleep on the floor, then back to her at the screen. Voice and music under. These are finished edits, not rushes — the masters sit in the parent folder.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "",
+"topic": [
+"Family & Money"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": false,
+"source": "Unknown",
+"search_terms": "goa workshop reel our cuts assembled from footage jul 2026 opens woman lilac dress presenting beside screen open air cafe venue dog asleep floor then back her voice music under these finished edits not rushes masters sit parent folder edit",
+"phash": "aa67e3e3e7cfadad"
+},
+{
+"id": "IFM-1174",
+"title": "Certificate handover — footage from the Certificates folder",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-1174.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1174.mp4",
+"drive": "https://drive.google.com/drive/folders/1CasigFU-SKr_X__0d7ywpjTE9-jmDcgA",
+"description": "Video from the Certificates Drive folder: participants gathered standing around the boardroom table during a handover, mostly backs and three-quarters to camera, bags still on shoulders. Handheld. Certificates carry printed names.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [
+"cert"
+],
+"type": "Video",
+"status": "Raw",
+"format": "Certificate",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "certificate completion graduation proud achievement social proof certificate handover footage from certificates folder video drive participants gathered standing around boardroom table during mostly backs three quarters camera bags still shoulders handheld carry printed names graduation workshop shoot",
+"phash": "80c092127213138b"
+},
+{
+"id": "IFM-1175",
+"title": "Budget/FM reel — raw takes",
+"date": "2026-10-14",
+"thumb": "../thumbs/IFM-1175.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1175.mp4",
+"drive": "https://drive.google.com/drive/folders/1qRynNI5Y1ilAjrnlw7e8s009Emqynmb0",
+"description": "Raw takes for a reel pegged to the Finance Minister. A woman in a pale green ribbed top and blue jeans stands in front of a large black-and-white botanical print, talking to camera with both hands moving.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "",
+"topic": [
+"Managing Money"
+],
+"person": [
+"Other Person"
+],
+"source": "Unknown",
+"search_terms": "budget reel raw takes pegged finance minister woman pale green ribbed top blue jeans stands front large black white botanical print talking camera both hands moving nirmala sitharaman policy shoot folder sitaraman feel",
+"phash": "ecf0e8e9c894b8d8"
+},
+{
+"id": "IFM-1176",
+"title": "\"Join Investing for Mummies now\" — animated card",
+"date": "2026-06-11",
+"thumb": "../thumbs/IFM-1176.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1176.mp4",
+"drive": "https://drive.google.com/drive/folders/1LIPjz_2pYn6IyGNzjFeaJpVMj0mbV3vV",
+"description": "A short animated teal card: the IFM wordmark top right, then SIP and Mutual Funds tags popping in over the line \"and have the FINANCIAL CONFIDENCE you always wanted.\" A social sting, not footage.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "and have the FINANCIAL CONFIDENCE you always wanted.",
+"silent": true,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "B-roll",
+"topic": [
+"Investing",
+"Mutual Funds"
+],
+"person": [],
+"source": "Unknown",
+"search_terms": "sip systematic investment plan monthly investing join investing mummies now animated card short teal ifm wordmark top right then sip mutual funds tags popping over line have financial confidence you always wanted social sting not footage call action shoot folder",
+"phash": "f6948e84e0808080"
 }
 ];
