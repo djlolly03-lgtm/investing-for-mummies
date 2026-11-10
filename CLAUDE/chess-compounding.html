@@ -337,6 +337,11 @@ body {
   margin-top: 3px;
 }
 
+/* Phones: the in-square numbers are too small to read; the big counter + milestone text carry the story */
+@media (max-width: 600px) {
+  .sq-num, .sq-val { display: none; }
+}
+
 </style>
 <!-- Google Analytics (GA4) — same property as investingformummies.com, so website + games
      report in one place. content_group:'Games' makes "how many reached the games" a one-line report. -->

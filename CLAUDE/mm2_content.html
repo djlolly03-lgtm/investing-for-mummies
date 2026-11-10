@@ -268,8 +268,8 @@ var EVENTS = [
   {kind:'bull',     tag:'Round 1 · Bull Run',        title:'Markets are going up',       story:'Good earnings everywhere. Headlines are cheerful. People are feeling rich \u2014 some are even borrowing to buy.',   mood:'Greed is in the air.'},
   {kind:'bear',     tag:'Round 2 · Panic',           title:'Bad global news',            story:'A sudden global shock triggers panic. Prices crash. Social media is full of doom. WhatsApp aunties are selling.',   mood:'Fear is at its peak.'},
   {kind:'recovery', tag:'Round 3 · Recovery',        title:'Markets bounce back',        story:'Economic data surprises positively. Prices recover quickly. Everyone who sold is now regretting it.',               mood:'Regret & confusion.'},
-  {kind:'mixed',    tag:'Round 4 · Divergence',      title:'Some rise, some fall',       story:'Not all stocks move together any more. Company-specific news drives the day. Winners and losers diverge.',              mood:'Confusion \u2014 no clear direction.'},
-  {kind:'mixed',    tag:'Round 5 · Rotation',        title:'Money shifts sectors',       story:'Investors rotate out of last year\u2019s winners into new themes. Small caps cool off. Large caps stay steady.',       mood:'Doubt & chasing.'},
+  {kind:'mixed',    tag:'Round 4 · Mixed Day',      title:'Some rise, some fall',       story:'Not all stocks move together any more. Company-specific news drives the day. Winners and losers drift apart.',              mood:'Confusion \u2014 no clear direction.'},
+  {kind:'mixed',    tag:'Round 5 · Money Moves',        title:'Money shifts sectors',       story:'Investors move money out of last year\u2019s winners into new themes. Small companies cool off. Large companies stay steady.',       mood:'Doubt & chasing.'},
   {kind:'bull',     tag:'Round 6 · The Long View',   title:'Markets grow steadily',      story:'The dust settles. The economy grows. Over the full cycle, most stocks end up higher than where they started.',         mood:'Calm returns.'}
 ];
 
@@ -754,8 +754,8 @@ function renderChartCard(s, r){
       '<circle cx="' + lastX.toFixed(1) + '" cy="' + lastY.toFixed(1) + '" r="3" fill="' + strokeCol + '"/>' +
     '</svg>' +
     '<div class="m2-bidask">' +
-      '<div class="m2-bidask-box"><div class="m2-bidask-label">Bid</div><div class="m2-bidask-val">\u20B9' + bid + '</div><div class="m2-bidask-sub">what buyers offer</div></div>' +
-      '<div class="m2-bidask-box"><div class="m2-bidask-label">Ask</div><div class="m2-bidask-val">\u20B9' + ask + '</div><div class="m2-bidask-sub">what sellers want</div></div>' +
+      '<div class="m2-bidask-box"><div class="m2-bidask-label">Buyers offer</div><div class="m2-bidask-val">\u20B9' + bid + '</div><div class="m2-bidask-sub">called the \u201Cbid\u201D</div></div>' +
+      '<div class="m2-bidask-box"><div class="m2-bidask-label">Sellers want</div><div class="m2-bidask-val">\u20B9' + ask + '</div><div class="m2-bidask-sub">called the \u201Cask\u201D</div></div>' +
     '</div>' +
   '</div>';
 }
@@ -814,7 +814,7 @@ function renderModal(){
       var price = prices[s.id];
       var sel = state.modalStock === s.id ? 'selected' : '';
       stocksHtml += '<div class="m2-modal-stock ' + sel + '" data-sid="' + s.id + '">' +
-        '<div class="m2-stock-left"><div class="m2-stock-name">' + s.name + '</div><div class="m2-stock-held" style="color:#8a98a4">' + s.group + ' cap</div></div>' +
+        '<div class="m2-stock-left"><div class="m2-stock-name">' + s.name + '</div><div class="m2-stock-held" style="color:#8a98a4">' + s.group + ' company</div></div>' +
         '<div class="m2-stock-right"><div class="m2-stock-price">' + fmtINR(price) + '</div></div>' +
       '</div>';
     });
@@ -993,28 +993,28 @@ function renderSummary(){
   // Investor moves per round
   var reactiveSummary = [
     'Waited on the sidelines. Cash stayed safe.',
-    'Greed kicked in. Bought small & mid caps near the top.',
+    'Greed kicked in. Bought small & medium companies near the top.',
     'Panicked after the crash. Sold everything for a loss.',
     'Saw the rebound, FOMO\u2019d in. Bought Suzlon near the new high.',
-    'Couldn\u2019t take the loss. Rotated into Zomato.',
+    'Couldn\u2019t take the loss. Switched into Zomato.',
     'Sat tight with Zomato.'
   ];
   var pickerSummary = [
     'Bought 60% Reliance, 40% HDFC Bank on day 1. Conviction bet on large, quality names.',
-    'Held through the bull run. Gains felt modest next to the small caps.',
+    'Held through the bull run. Gains felt modest next to the small companies.',
     'Stayed put in the crash. Paper loss, but didn\u2019t sell.',
     'Kept holding \u2014 the rebound repaired most of the damage.',
-    'Held. Diverging stock moves didn\u2019t hurt the portfolio much.',
-    'Held through the rotation. Large caps are doing fine.',
+    'Held. Some stocks up, some down \u2014 didn\u2019t hurt the portfolio much.',
+    'Held while money moved around. Large companies are doing fine.',
     'Held to the end. A calm, steady run.'
   ];
   var safeSummary = [
     'Bought an equal basket of all 6 stocks on day 1 \u2014 a simple \u201Cbuy the market\u201D approach.',
-    'Rode the wave up. Small caps pulled the basket up fast.',
+    'Rode the wave up. Small companies pulled the basket up fast.',
     'Took the crash on the chin. The basket fell hard but stayed intact.',
     'Rebound lifted the whole basket back up.',
     'Basket held steady \u2014 winners and losers cancel out.',
-    'Rotation shuffled things but the basket kept ticking.',
+    'Money moving around shuffled things but the basket kept ticking.',
     'Finished ahead. Boring and effective.'
   ];
 
@@ -1112,7 +1112,7 @@ function renderFinal(){
   var results = [
     {key:'you',      name:'You',              desc:'Your decisions',                    val:youVal,           emoji:'\uD83D\uDC64'},
     {key:'reactive', name:'Reactive Investor',desc:'Chased gains. Panicked on falls.',   val:AI_HIST.reactive[6], emoji:'\uD83D\uDE1F'},
-    {key:'smart',    name:'Stock Picker',     desc:'Backed 2 large caps. Held through.', val:AI_HIST.smart[6],    emoji:'\uD83E\uDDE0'},
+    {key:'smart',    name:'Stock Picker',     desc:'Backed 2 large companies. Held through.', val:AI_HIST.smart[6],    emoji:'\uD83E\uDDE0'},
     {key:'safe',     name:'Safe Investor',    desc:'Bought the whole basket. Did nothing.', val:AI_HIST.safe[6], emoji:'\uD83D\uDE0C'}
   ];
   results.sort(function(a,b){return b.val - a.val;});

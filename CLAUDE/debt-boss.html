@@ -2071,6 +2071,8 @@ function showGame(n){ if(n===0||n==='0'||n==='game0'){ location.href='/'; } }
     .db-intro-head::before{content:'';position:absolute;inset:0;opacity:0.07;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:24px 24px;pointer-events:none;}
     .db-intro-eyebrow{display:inline-block;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);font-size:0.62rem;font-weight:900;letter-spacing:1.5px;padding:4px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:10px;}
     .db-intro-title{font-family:'Lora',serif;font-size:1.5rem;font-weight:700;margin-bottom:8px;}
+    /* The page banner above already says "Debt Boss" — hide this second copy of the title */
+    .db-intro-title{display:none!important;}
     .db-intro-pitch{font-size:0.88rem;color:rgba(255,255,255,0.9);line-height:1.6;max-width:440px;margin:0 auto;}
     .db-intro-steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:22px 20px;}
     .db-intro-step{text-align:center;}
@@ -2101,7 +2103,7 @@ const INSTR = [
   { id:'fd',    name:'Bank FD',   full:'Fixed Deposit',            rate:7.5,  risk:'Low',      lock:'1-5 yrs',  tax:'Taxable',  col:'#1a3a5c', icon:'💳', desc:'Park money with a bank for a fixed term at a fixed rate. Simple and safe, but the interest earned is taxable.' },
   { id:'gbond', name:'Govt Bond', full:'Government Bond (AAA)',    rate:7.0,  risk:'Low',      lock:'Variable', tax:'Taxable',  col:'#6a1b9a', icon:'📜', desc:'A loan to the government. Very safe from default, but its market price can rise or fall as interest rates change.' },
   { id:'cbond', name:'Corp Bond', full:'Corporate Bond (BBB)',     rate:11.0, risk:'High',     lock:'Variable', tax:'Taxable',  col:'#1a3a5c', icon:'🏢', desc:'A loan to a company. Pays a higher rate to compensate for the real risk that the company could default.' },
-  { id:'dmf',   name:'Debt MF',   full:'Debt Mutual Fund',        rate:8.0,  risk:'Medium',   lock:'None',     tax:'LTCG',     col:'#b5600a', icon:'📊', desc:'A professionally managed basket of many bonds. Diversification spreads the risk of any single one out automatically.' },
+  { id:'dmf',   name:'Debt MF',   full:'Debt Mutual Fund',        rate:8.0,  risk:'Medium',   lock:'None',     tax:'Taxable',     col:'#b5600a', icon:'📊', desc:'A professionally managed basket of many bonds. Diversification spreads the risk of any single one out automatically.' },
 ];
 
 const EVENTS = [
@@ -2139,7 +2141,7 @@ const EVENTS = [
     explain:'Real Return = 7% - 7% = 0%. Nominally your money grew, but it buys the same amount as before. You are running to stand still! This "inflation risk" is why long-term investors need growth assets too.' },
 ];
 
-const fmt = n => 'Rs ' + Math.round(n).toLocaleString('en-IN');
+const fmt = n => '₹' + Math.round(n).toLocaleString('en-IN');
 const pctStr = n => (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
 const riskCol = r => r === 'Very Low' ? '#0e6050' : r === 'Low' ? '#1a3a5c' : r === 'Medium' ? '#b5600a' : '#b5474a';
 
@@ -2219,7 +2221,7 @@ function Welcome({ onNext }) {
           <div className="db-intro-head">
             <div className="db-intro-eyebrow">💰 Game</div>
             <div className="db-intro-title">Debt Boss</div>
-            <p className="db-intro-pitch">Your class has ₹10,00,000 to invest across 6 debt instruments. Rate hikes, a corporate default, inflation — survive all 4 and see how debt really works.</p>
+            <p className="db-intro-pitch">You have ₹10,00,000 to invest across 6 debt instruments. Rate hikes, a corporate default, inflation — survive all 4 and see how debt really works.</p>
           </div>
           <div className="db-intro-steps">
             {steps.map(function(s) {
@@ -2812,7 +2814,7 @@ function Results({ portfolio, alloc, score, onReplay }) {
     ? { name:'Safety First Investor', icon:'🛡️', col:'#1a3a5c', desc:'You prioritize capital protection. Great for stability, but inflation can quietly erode real returns over time.' }
     : riskAlloc >= TOTAL * 0.5
     ? { name:'Yield Hunter', icon:'🎯', col:'#1a3a5c', desc:'You chase higher returns and can handle volatility. Rewarding when markets behave — just remember to diversify!' }
-    : { name:'Balanced Borrower', icon:'🔮', col:'#1a3a5c', desc:'You balance safety and yield — the professional approach that weathers most market conditions.' };
+    : { name:'Balanced Lender', icon:'🔮', col:'#1a3a5c', desc:'You balance safety and yield — the professional approach that weathers most market conditions.' };
   return (
     <div className="db-page" style={{background:'#f7faf9',fontFamily:"Nunito,sans-serif"}}>
       <div className="db-res-hero" style={{background:'linear-gradient(160deg,#0d2744 0%,#1a3a5c 60%,#2a5272 100%)',padding:'12px 18px 14px',color:'#fff'}}>

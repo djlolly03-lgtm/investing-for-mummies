@@ -1590,6 +1590,9 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 #game8 .hw-s{background:linear-gradient(135deg,var(--mint-lt),var(--mint));color:var(--navy);border:1.5px solid var(--navy);}
 #game8 .hw-g{background:linear-gradient(135deg,#e8f5f2,#d4efe9);color:var(--success);border:1.5px solid var(--teal);}
 @media(max-width:640px){.game-hero{padding:14px 14px 14px 86px;}}
+/* Centre the hero text: no logo is shown in this hero, so drop the left space reserved for one */
+.game-hero[data-logo]{padding-left:20px !important;}
+@media(max-width:640px){.game-hero[data-logo]{padding-left:14px !important;}}
 @keyframes g8_popIn{0%{opacity:0;transform:translate(-50%,-50%) scale(0.85);}100%{opacity:1;transform:translate(-50%,-50%) scale(1);}}
 @keyframes g8_fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 @media(max-width:640px){

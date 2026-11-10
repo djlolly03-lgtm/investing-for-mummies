@@ -1591,6 +1591,9 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 #game8 .hw-s{background:linear-gradient(135deg,var(--mint-lt),var(--mint));color:var(--navy);border:1.5px solid var(--navy);}
 #game8 .hw-g{background:linear-gradient(135deg,#e8f5f2,#d4efe9);color:var(--success);border:1.5px solid var(--teal);}
 @media(max-width:640px){.game-hero{padding:14px 14px 14px 86px;}}
+/* Centre the hero text: no logo is shown in this hero, so drop the left space reserved for one */
+.game-hero[data-logo]{padding-left:20px !important;}
+@media(max-width:640px){.game-hero[data-logo]{padding-left:14px !important;}}
 @keyframes g8_popIn{0%{opacity:0;transform:translate(-50%,-50%) scale(0.85);}100%{opacity:1;transform:translate(-50%,-50%) scale(1);}}
 @keyframes g8_fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 @media(max-width:640px){
@@ -1708,8 +1711,8 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
 <body>
 <div class="container">
 <div class="game-screen active" id="inflation">
-  <div class="game-hero" style="background:linear-gradient(135deg,#0d1a26 0%,#0a1f14 55%,#142a08 100%);" data-logo="white">
-    <div class="gh-tag">📉 Resource</div>
+  <div class="game-hero" style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-lt) 50%,var(--teal) 100%);" data-logo="white">
+    <div class="gh-tag">📉 Calculator · Inflation</div>
     <h2>Inflation Calculator</h2>
     <p>See how inflation quietly erodes your purchasing power — and what to do about it.</p>
   </div>
@@ -2181,7 +2184,7 @@ function App() {
         {/* ── Insights ── */}
         <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10,marginBottom:12}}>
           <div style={{background:'rgba(189,233,228,0.18)',borderRadius:14,padding:'15px 13px',border:'1px solid rgba(26,58,92,0.12)'}}>
-            <div style={{fontSize:'0.84rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>⏱ RULE OF 72</div>
+            <div style={{fontSize:'0.84rem',color:'#1a3a5c',fontWeight:'800',letterSpacing:'0.5px',marginBottom:5}}>⏱ BUYING POWER HALVES IN</div>
             <div style={{fontSize:'2.22rem',fontWeight:'900',color:'#1a3a5c',lineHeight:1,marginBottom:6}}>{halvingYrs} yrs</div>
             <div style={{fontSize:'0.98rem',color:'#5a7d9a',lineHeight:1.6}}>At {rate}% inflation, buying power <strong style={{color:'#1a3a5c'}}>halves</strong> every {halvingYrs} years</div>
           </div>

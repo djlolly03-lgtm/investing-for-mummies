@@ -62,6 +62,16 @@ body{
 .kicker{color:var(--amber);font-size:0.66rem;margin:34px 2px 6px;}
 .title-1{font-size:clamp(64px,21vw,92px);line-height:0.88;color:var(--cream);letter-spacing:0.01em;}
 .title-2{font-size:clamp(64px,21vw,92px);line-height:0.88;color:var(--lime);margin-top:-10px;letter-spacing:0.01em;}
+/* first screen: brighter title, and the grid fades out behind the big heading */
+.title-1,.title-2 > span{color:#fff !important;}
+body:has(#scr-intro.on){
+  background-image:
+    radial-gradient(ellipse 300px 190px at 50% 195px,var(--forest) 55%,rgba(30,58,39,0) 100%),
+    linear-gradient(var(--line-soft) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+  background-size:100% 100%,260px 260px,260px 260px;
+  background-repeat:no-repeat,repeat,repeat;
+}
 .subtitle{color:var(--amber);font-size:clamp(22px,7vw,30px);margin:14px 0 12px;letter-spacing:0.04em;}
 .lede{color:rgba(236,230,215,0.85);font-size:0.95rem;line-height:1.5;max-width:360px;}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:22px 0 16px;}
@@ -212,7 +222,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
 
   <!-- ════ INTRO ════ -->
   <div class="scr on" id="scr-intro">
-    <div class="strip mono"><span>IFM · GEN NEXT</span><span>MF · 101</span></div>
+    <div class="strip mono"><span>IFM · GEN NEXT</span><span>Mutual funds 101</span></div>
     <div class="kicker mono">FIRST SALARY EDITION</div>
     <div class="anton title-1">SWIPE</div>
     <div class="anton title-2">RIGHT<span style="color:var(--cream);"> ON</span> SIP</div>
@@ -228,7 +238,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
 
     <div class="venue">
       <div class="v1"><div class="l mono">VENUE</div><div class="t">YOUR FEED, 9:02 AM</div></div>
-      <div class="v2"><div class="l mono">STAKE</div><div class="t">₹2K</div></div>
+      <div class="v2"><div class="l mono">Each swipe</div><div class="t">₹2,000</div></div>
     </div>
 
     <div class="sect mono">/ HOW TO PLAY</div>
@@ -250,7 +260,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
     <div class="hud">
       <div class="box"><div class="n" id="hud-cash">₹10,000</div><div class="l">CASH LEFT</div></div>
       <div class="box"><div class="n amber" id="hud-picks">0 / 5</div><div class="l">INVESTED</div></div>
-      <div class="box"><div class="n" id="hud-flags">0</div><div class="l">FLAGS DODGED</div></div>
+      <div class="box"><div class="n" id="hud-flags">0</div><div class="l">Flags: revealed at the end</div></div>
     </div>
     <div class="prog" id="prog"></div>
     <div class="stack" id="stack"></div>

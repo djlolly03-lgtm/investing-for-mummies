@@ -1687,6 +1687,15 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 .r72-btn-play-again:hover{background:var(--mint);}
 
 
+/* ── Phones only: readable body text + centred start banner (no logo is shown in it) ── */
+@media (max-width: 600px){
+  #rr_startScreen .game-hero[data-logo]{padding-left:14px !important;padding-right:14px !important;}
+  #rr_startScreen .rr-what{font-size:16px !important;}
+  #rr_startScreen .rr-body{font-size:15px !important;}
+  #rr_revealText{font-size:15px !important;}
+  #rr_finalScreen .rr-takeaway{font-size:15px !important;}
+  #rr_finalScreen .rr-disclaimer{font-size:15px !important;}
+}
 </style>
 <!-- Google Analytics (GA4) — same property as investingformummies.com, so website + games
      report in one place. content_group:'Games' makes "how many reached the games" a one-line report. -->
@@ -1711,7 +1720,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
 
   <!-- START SCREEN -->
   <div id="rr_startScreen">
-    <div class="game-hero" style="background:linear-gradient(135deg,#1a3a5c 0%,#5c3a1a 50%,#FF9800 100%);" data-logo="white">
+    <div class="game-hero" style="background:linear-gradient(135deg,#1a3a5c 0%,#24577a 50%,#2a9d8f 100%);" data-logo="white">
       <div class="gh-tag">🏢 Quiz · Real Estate</div>
       <h2>REIT or Real?</h2>
       <p>8 myth-busting True/False questions on real estate. Prepare to be surprised!</p>
@@ -1723,11 +1732,12 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
         <div class="chip"><div class="ch-val">✅❌</div><div class="ch-label">True / False</div></div>
         <div class="chip"><div class="ch-val">💡</div><div class="ch-label">Learn</div></div>
       </div>
-      <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;">Each round shows a bold statement about real estate or REITs. You pick <strong>True</strong> or <strong>False</strong>. After each answer, a short reveal explains the real facts. 8 questions, scored on accuracy!</p>
+      <p class="rr-what" style="font-size:0.9rem;color:#1a3a5c;line-height:1.55;margin-bottom:8px;">🏢 <strong>What's a REIT?</strong> A REIT lets you own a small slice of big office buildings and malls through the stock market.</p>
+      <p class="rr-body" style="font-size:0.82rem;color:var(--muted);line-height:1.6;">Each round shows a bold statement about real estate or REITs. You pick <strong>True</strong> or <strong>False</strong>. After each answer, a short reveal explains the real facts. 8 questions, scored on accuracy!</p>
       <div style="display:flex;gap:12px;margin-top:12px;justify-content:center;flex-wrap:wrap;">
         <div style="background:#f5ece0;padding:10px 16px;border-radius:10px;text-align:center;flex:1;min-width:100px;">
           <div style="font-size:1.4rem;">🏠</div>
-          <div style="font-size:0.7rem;font-weight:800;color:#1a3a5c;">Direct RE</div>
+          <div style="font-size:0.7rem;font-weight:800;color:#1a3a5c;">Buying a flat</div>
         </div>
         <div style="font-size:1.4rem;display:flex;align-items:center;color:#5a7d8a;font-weight:900;">vs</div>
         <div style="background:#f5ece0;padding:10px 16px;border-radius:10px;text-align:center;flex:1;min-width:100px;">
@@ -1809,9 +1819,9 @@ const fmtU = v => v.toFixed(2);
 // ── REIT OR REAL? ──
 (function(){
 var RR_QUESTIONS = [
-  {statement:'You need ₹50 Lakhs or more to invest in commercial real estate.', answer:false, reveal:'With REITs (Real Estate Investment Trusts), you can invest in premium commercial properties like office parks and malls starting from as low as ₹500 on stock exchanges. Embassy REIT and Mindspace REIT are popular options in India.'},
+  {statement:'You need ₹50 Lakhs or more to earn rent from offices or malls.', answer:false, reveal:'With REITs (Real Estate Investment Trusts), you can invest in premium commercial properties like office parks and malls for the price of one unit — a few hundred rupees — on stock exchanges. Embassy REIT and Mindspace REIT are popular options in India.'},
   {statement:'Rental yield on residential property in Indian metros is typically 8-10%.', answer:false, reveal:'Rental yields in Indian metros are typically only 2-3% of the property value. A ₹1 Crore flat might fetch just ₹20-25K/month rent. After maintenance, taxes, and vacancy, the effective yield is even lower.'},
-  {statement:'REITs in India must distribute at least 90% of their net distributable income as dividends.', answer:true, reveal:'By SEBI regulation, Indian REITs must distribute at least 90% of net distributable cash flows to unitholders. This makes REITs reliable income-generating investments.'},
+  {statement:'REITs in India must distribute at least 90% of their cash to unitholders.', answer:true, reveal:'By SEBI regulation, Indian REITs must distribute at least 90% of net distributable cash flows to unitholders. This makes REITs reliable income-generating investments.'},
   {statement:'Real estate always goes up in value — it never falls.', answer:false, reveal:'Property prices fell 10-30% in many Indian cities between 2014-2020. Markets like Noida, Gurgaon sectors, and parts of Mumbai saw significant corrections. Real estate is cyclical, just like stocks.'},
   {statement:'REITs are traded on the stock exchange just like shares.', answer:true, reveal:'Indian REITs are listed on BSE/NSE and can be bought/sold during market hours through your regular demat account, just like buying shares of Reliance or TCS.'},
   {statement:'Owning physical property has zero ongoing costs once you pay the EMI.', answer:false, reveal:'Property ownership comes with maintenance charges, property tax (annual), insurance, repair costs, society fees, and potential vacancy periods. These can add up to 1-2% of property value annually.'},
@@ -1937,13 +1947,13 @@ function rr_showFinal(){
 
   // Insight cards
   h+='<div class="card" style="padding:12px 14px;">';
-  h+='<div style="font-size:0.7rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#6c3fa0;margin-bottom:10px;">💡 Key Takeaways</div>';
-  h+='<div style="padding:10px 12px;border-radius:10px;font-size:0.74rem;line-height:1.55;color:#4a2d7a;background:linear-gradient(135deg,#f3effd,#ede6fb);border-left:4px solid #7c3aed;margin-bottom:8px;"><strong>REITs</strong> let you invest in premium real estate from just ₹500 — no need for crores or EMIs.</div>';
-  h+='<div style="padding:10px 12px;border-radius:10px;font-size:0.74rem;line-height:1.55;color:#4a2d7a;background:linear-gradient(135deg,#f3effd,#ede6fb);border-left:4px solid #7c3aed;margin-bottom:8px;"><strong>Rental yield</strong> in India is typically just 2-3%. After costs, physical property income is much lower than most people think.</div>';
-  h+='<div style="padding:10px 12px;border-radius:10px;font-size:0.74rem;line-height:1.55;color:#4a2d7a;background:linear-gradient(135deg,#f3effd,#ede6fb);border-left:4px solid #7c3aed;"><strong>Liquidity matters.</strong> You can sell REIT units in minutes, but selling a flat can take months. Consider this before locking all savings in property.</div>';
+  h+='<div style="font-size:0.7rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#1a3a5c;margin-bottom:10px;">💡 Key Takeaways</div>';
+  h+='<div class="rr-takeaway" style="padding:10px 12px;border-radius:10px;font-size:0.74rem;line-height:1.55;color:#1a3a5c;background:linear-gradient(135deg,#e8f5f2,#d4efe9);border-left:4px solid #2a9d8f;margin-bottom:8px;"><strong>REITs</strong> let you invest in premium real estate for the price of one unit — a few hundred rupees — no need for crores or EMIs.</div>';
+  h+='<div class="rr-takeaway" style="padding:10px 12px;border-radius:10px;font-size:0.74rem;line-height:1.55;color:#1a3a5c;background:linear-gradient(135deg,#e8f5f2,#d4efe9);border-left:4px solid #2a9d8f;margin-bottom:8px;"><strong>Rental yield</strong> in India is typically just 2-3%. After costs, physical property income is much lower than most people think.</div>';
+  h+='<div class="rr-takeaway" style="padding:10px 12px;border-radius:10px;font-size:0.74rem;line-height:1.55;color:#1a3a5c;background:linear-gradient(135deg,#e8f5f2,#d4efe9);border-left:4px solid #2a9d8f;"><strong>Liquidity matters.</strong> You can sell REIT units in minutes, but selling a flat can take months. Consider this before locking all savings in property.</div>';
   h+='</div>';
 
-  h+='<div style="background:#fff8e1;border-left:4px solid #f9a825;padding:10px 14px;border-radius:10px;margin-top:8px;font-size:0.68rem;color:#7a6000;line-height:1.5;">⚠️ Disclaimer: All information is for educational purposes only. REIT returns and property values are subject to market risks. Please consult a SEBI-registered financial advisor before making any investment decisions.</div>';
+  h+='<div class="rr-disclaimer" style="background:#fff8e1;border-left:4px solid #f9a825;padding:10px 14px;border-radius:10px;margin-top:8px;font-size:0.68rem;color:#7a6000;line-height:1.5;">⚠️ Disclaimer: All information is for educational purposes only. REIT returns and property values are subject to market risks. Please consult a SEBI-registered financial advisor before making any investment decisions.</div>';
 
   h+='<div class="card" style="text-align:center;padding:16px;margin-top:8px;"><button class="btn btn-gold" onclick="rr_start()" style="padding:12px 36px;border-radius:12px;">↺ Play Again</button></div>';
 

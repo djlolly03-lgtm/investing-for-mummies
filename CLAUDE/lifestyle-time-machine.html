@@ -625,7 +625,7 @@ body{
 .r4i-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.07)}
 .r4i-row:last-of-type,.r4i-row.last{border-bottom:none}
 .r4i-label{font-size:0.75rem;color:var(--muted);font-weight:600}
-.r4i-val{font-size:0.82rem;font-weight:800;color:var(--navy)}
+.r4i-val{font-size:0.82rem;font-weight:800;color:var(--navy);white-space:nowrap;margin-left:10px}
 .r4i-up{color:var(--teal) !important}
 .r4i-divider{border-top:2px dashed rgba(218,165,32,.3);margin:8px 0}
 .r4i-corpus{font-size:1.05rem;font-weight:900;color:#daa520}
@@ -863,7 +863,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
   <div class="sum-inner">
     <div class="r3-lesson">
       <div class="r2-lesson-eyebrow">10 Years of Inflation</div>
-      <div class="r2-lesson-title">"Same dreams. Half the purchasing power."</div>
+      <div class="r2-lesson-title">"Same dreams. Your money can buy only half as much."</div>
 
     </div>
     <span class="round-pill" style="display:inline-block;margin-bottom:16px;background:#0d3320;">Round 3 Complete</span>
@@ -1295,7 +1295,7 @@ function renderR2Items(){
 
 /* Downgrade map: item id → {emoji, name} for the "what you get instead" gag */
 var DOWNGRADE = {
-  'japan':    {was:'✈️', wasName:'Japan Trip',         emoji:'🏕️', name:'Lonawala Weekend'},
+  'japan':    {was:'✈️', wasName:'Japan Trip',         emoji:'🏕️', name:'Lonavala Weekend'},
   'vacation': {was:'🏝️', wasName:'Luxury Vacation',    emoji:'🏖️', name:'Alibaug Weekend'},
   'lv':       {was:'👜', wasName:'Louis Vuitton Haul',  emoji:'👡', name:'Bata Shoes'},
   'sneakers': {was:'👟', wasName:'Sneaker Collection',  emoji:'🩴', name:'Hawai Chappals'},
@@ -1865,7 +1865,7 @@ function buildR4Intro(){
     if(inv){
       body =
         '<div class="r4i-row"><span class="r4i-label">&#8377;25L income</span><span class="r4i-val">+' + fmtL(BUDGET) + '</span></div>' +
-        '<div class="r4i-row"><span class="r4i-label">Corpus (14% &times; 10 yrs)</span><span class="r4i-val r4i-up">+' + fmtL(corpus) + '</span></div>' +
+        '<div class="r4i-row"><span class="r4i-label">Your savings pot (grew about 14% a year for 10 years)</span><span class="r4i-val r4i-up">+' + fmtL(corpus) + '</span></div>' +
         '<div class="r4i-row"><span class="r4i-label">Items purchased (2026)</span><span class="r4i-val" style="color:var(--red)">&minus;' + fmtL(r1spent) + '</span></div>' +
         '<div class="r4i-divider"></div>' +
         '<div class="r4i-row last"><span class="r4i-label">Available to spend</span><span class="r4i-corpus">' + fmtL(budget) + '</span></div>' +
@@ -1921,7 +1921,7 @@ function loadR4Student(idx){
   var isSim   = r4SimSavings.some(function(x){ return x.idx===idx; });
   var r1spent = isSim ? (BUDGET - saved) : calcR1Spent(idx);
   document.getElementById('r4-savings-note').innerHTML =
-    '<span class="savings-note">&#8377;25L + ' + fmtL(corpus) + ' corpus &minus; ' + fmtL(r1spent) + ' (2026 items)</span>';
+    '<span class="savings-note">&#8377;25L + ' + fmtL(corpus) + ' savings pot &minus; ' + fmtL(r1spent) + ' (2026 items)</span>';
 
   renderR4Items();
   updateR4Status();
@@ -2090,7 +2090,7 @@ function showR4Summary(){
     var footer = '';
     if(grown > 0){
       var simNote = isSim ? ' <span style="font-size:0.72rem;opacity:.6">(simulated)</span>' : '';
-      footer += '<div class="scard-cuts" style="background:#fff4d0;color:#b8860b;">&#128200; ' + fmtL(saved) + ' saved &rarr; ' + fmtL(grown) + ' corpus' + simNote + '</div>';
+      footer += '<div class="scard-cuts" style="background:#fff4d0;color:#b8860b;">&#128200; ' + fmtL(saved) + ' saved &rarr; ' + fmtL(grown) + ' in your savings pot' + simNote + '</div>';
     }
     footer += '<div class="scard-kept-total" style="margin-left:' + (grown>0?'6':'0') + 'px;">Final: ' + fmtL(finalTotal) + '</div>';
     if(!rows) rows = '<div class="sempty">Nothing selected in Round 1</div>';
@@ -2155,7 +2155,7 @@ function showStudentTransition(name, idx, total, tag, callback){
   <div id="dg-arrow">↓</div>
   <div id="dg-now">
     <div id="dg-now-emoji">🏕️</div>
-    <div id="dg-now-name">Lonawala Weekend</div>
+    <div id="dg-now-name">Lonavala Weekend</div>
   </div>
   <div id="dg-tag">Thanks, inflation 🙃</div>
 </div>

@@ -152,6 +152,11 @@
       .game-hero { padding-left: 82px; }
       .hero-logo-wide { height: 38px; max-width: 76px; }
     }
+    /* Phones: let the hero subtitle wrap, and hide the QR button (they are already on their phone) */
+    @media (max-width: 600px) {
+      .game-hero p { white-space: normal; }
+      .game-hero .qr-btn { display: none; }
+    }
 
     @keyframes floatBob {
       0%, 100% { transform: translateY(0) rotate(-2deg); }
@@ -1044,7 +1049,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
   <div class="game-hero" style="background:linear-gradient(135deg,#1a3a5c 0%,#1e4a6e 60%,#2a6b60 100%);">
     
     <img src="/IFM%20logo%20white%20background.png" class="hero-logo-wide" alt="Investing for Mummies"/>
-    <h2>Hidden <span style="color:#f0c040">Fortunes</span> 2.0</h2>
+    <h2>Hidden <span style="color:#f0c040">Fortunes</span></h2>
     <p>Small daily splurges, redirected wisely, can grow into crores.</p>
     <button class="qr-btn" onclick="showQRModal()">📱 Scan to Play</button>
   </div>
@@ -1072,7 +1077,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
     <div class="sub-hero">
       <div class="sub-hero-icon">🛍️</div>
       <h3>Pick Your Guilty Pleasures</h3>
-      <p>Select the habits you spend on every month — then see what happens when even half goes into a SIP instead.</p>
+      <p>Select the habits you spend on every month — then see what happens when that money goes into a SIP instead.</p>
     </div>
 
     <div style="text-align:center;margin-bottom:6px;">
@@ -1180,7 +1185,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
     </div>
 
     <div class="tip-box">
-      💡 You don't need to give these up forever — just ask: <em>what if even half went into a SIP?</em>
+      💡 You don't need to give these up forever — just ask: <em>what if this money went into a SIP?</em>
     </div>
 
     <div class="total-bar">

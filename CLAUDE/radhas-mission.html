@@ -422,6 +422,8 @@ footer span{color:var(--teal);font-weight:700;}
 .rm-nav-table input{width:80px;padding:5px 8px;border:2px solid #cce0dc;border-radius:6px;text-align:center;font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:700;}
 .rm-nav-table input.correct{border-color:var(--success);background:#e8f5f2;}
 .rm-nav-table input.wrong{border-color:var(--danger);background:#fce8e8;}
+/* Phones: 16px answer boxes so iPhones don't zoom the page when tapped */
+@media(max-width:600px){.rm-calc-inp,.rm-nav-table input{font-size:16px;}}
 
 .rm-match-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 @media(max-width:600px){.rm-match-grid{grid-template-columns:1fr;}}
@@ -1662,9 +1664,9 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
       <div class="q-text">Calculate the NAV per unit. Fill in each step! 👇</div>
       <button class="rm-hint-btn" onclick="rmToggleHint('rmh1')">💡 Need a hint?</button>
       <div class="rm-hint-box" id="rmh1">Formula: NAV = (Total Assets − Liabilities) ÷ Units Outstanding<br>Total Assets = Equity + Debt + Cash</div>
-      <div class="rm-calc-row"><div class="rm-calc-label">Total Assets (₹)</div><div style="position:relative;flex:1;min-width:160px;"><span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;">₹</span><input class="rm-calc-inp" id="rmq1_assets" type="number" placeholder="___" step="any"></div></div>
-      <div class="rm-calc-row"><div class="rm-calc-label">Net Assets (after liabilities)</div><div style="position:relative;flex:1;min-width:160px;"><span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;">₹</span><input class="rm-calc-inp" id="rmq1_net" type="number" placeholder="___" step="any"></div></div>
-      <div class="rm-calc-row"><div class="rm-calc-label">NAV per Unit</div><div style="position:relative;flex:1;min-width:160px;"><span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;">₹</span><input class="rm-calc-inp" id="rmq1_nav" type="number" placeholder="___" step="any"></div></div>
+      <div class="rm-calc-row"><div class="rm-calc-label">Total Assets (₹)</div><div style="position:relative;flex:1;min-width:160px;"><span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;">₹</span><input class="rm-calc-inp" id="rmq1_assets" type="number" inputmode="decimal" placeholder="___" step="any"></div></div>
+      <div class="rm-calc-row"><div class="rm-calc-label">Net Assets (after liabilities)</div><div style="position:relative;flex:1;min-width:160px;"><span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;">₹</span><input class="rm-calc-inp" id="rmq1_net" type="number" inputmode="decimal" placeholder="___" step="any"></div></div>
+      <div class="rm-calc-row"><div class="rm-calc-label">NAV per Unit</div><div style="position:relative;flex:1;min-width:160px;"><span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;">₹</span><input class="rm-calc-inp" id="rmq1_nav" type="number" inputmode="decimal" placeholder="___" step="any"></div></div>
       <button class="rm-submit" onclick="rmCheckQ1()">Check My Answer ✅</button>
       <div class="rm-fb" id="rmq1_fb"></div>
     </div>
@@ -1681,14 +1683,14 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
       <table class="rm-nav-table">
         <thead><tr><th>Month</th><th>SIP Amount</th><th>NAV</th><th>Units Purchased</th></tr></thead>
         <tbody>
-          <tr><td>Month 1</td><td>₹10,000</td><td>₹200</td><td><input type="number" id="rmq2_m1" placeholder="?" step="any"></td></tr>
-          <tr><td>Month 2</td><td>₹10,000</td><td>₹180</td><td><input type="number" id="rmq2_m2" placeholder="?" step="any"></td></tr>
-          <tr><td>Month 3</td><td>₹10,000</td><td>₹220</td><td><input type="number" id="rmq2_m3" placeholder="?" step="any"></td></tr>
-          <tr><td>Month 4</td><td>₹10,000</td><td>₹240</td><td><input type="number" id="rmq2_m4" placeholder="?" step="any"></td></tr>
-          <tr><td><strong>Total</strong></td><td>₹40,000</td><td>—</td><td><input type="number" id="rmq2_total" placeholder="Total?" step="any"></td></tr>
+          <tr><td>Month 1</td><td>₹10,000</td><td>₹200</td><td><input type="number" id="rmq2_m1" inputmode="decimal" placeholder="?" step="any"></td></tr>
+          <tr><td>Month 2</td><td>₹10,000</td><td>₹180</td><td><input type="number" id="rmq2_m2" inputmode="decimal" placeholder="?" step="any"></td></tr>
+          <tr><td>Month 3</td><td>₹10,000</td><td>₹220</td><td><input type="number" id="rmq2_m3" inputmode="decimal" placeholder="?" step="any"></td></tr>
+          <tr><td>Month 4</td><td>₹10,000</td><td>₹240</td><td><input type="number" id="rmq2_m4" inputmode="decimal" placeholder="?" step="any"></td></tr>
+          <tr><td><strong>Total</strong></td><td>₹40,000</td><td>—</td><td><input type="number" id="rmq2_total" inputmode="decimal" placeholder="Total?" step="any"></td></tr>
         </tbody>
       </table>
-      <div class="rm-calc-row"><div class="rm-calc-label">Average Cost Per Unit</div><div style="position:relative;flex:1;min-width:160px;"><span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;">₹</span><input class="rm-calc-inp" id="rmq2_avg" type="number" placeholder="___" step="any"></div></div>
+      <div class="rm-calc-row"><div class="rm-calc-label">Average Cost Per Unit</div><div style="position:relative;flex:1;min-width:160px;"><span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;">₹</span><input class="rm-calc-inp" id="rmq2_avg" type="number" inputmode="decimal" placeholder="___" step="any"></div></div>
       <button class="rm-submit" onclick="rmCheckQ2()">Check My Answer ✅</button>
       <div class="rm-fb" id="rmq2_fb"></div>
     </div>
@@ -1808,7 +1810,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
         <div class="rm-friend-card" id="rmq8_fc1" onclick="rmQ8AssignFund(1)">
           <div class="rm-friend-avatar">👩‍💼</div>
           <div class="rm-friend-name">Priya</div>
-          <div class="rm-friend-need">"I want to save income tax this year! I'll invest directly — no middleman — and reinvest everything for long-term growth."</div>
+          <div class="rm-friend-need">"I want to save income tax this year under the old tax regime! I'll invest directly — no middleman — and reinvest everything for long-term growth."</div>
           <div class="rm-friend-slot" id="rmq8_fs1"><span class="rm-slot-placeholder">Select a fund below, then tap here</span></div>
         </div>
         <!-- Friend 2: Deepa -->
@@ -2118,7 +2120,7 @@ function rmCheckQ8() {
   var score = Math.round(pts / 3 * 15);
   rmScore += score;
   rmUpdateProgress();
-  var explain = '<br><br><strong>✅ Priya → Axis Long Term Equity – Direct – Growth</strong><br>"Long Term Equity" = ELSS = saves tax u/s 80C. Direct = no middleman cost. Growth = reinvests gains.<br><br><strong>✅ Deepa\'s Mum → HDFC Mid-Cap – Regular – IDCW</strong><br>Regular = via financial advisor. IDCW = regular income payouts for retirement. Mid-Cap = medium risk.<br><br><strong>✅ Neha → SBI Small Cap – Direct – Growth</strong><br>Small Cap = highest risk + reward, perfect for an aggressive young investor. Direct saves cost, Growth reinvests everything.<br><br>💡 <strong>Golden Rule:</strong> Direct > Regular (always saves money). Growth > IDCW (for long-term wealth). Match fund TYPE to your goal!';
+  var explain = '<br><br><strong>✅ Priya → Axis Long Term Equity – Direct – Growth</strong><br>"Long Term Equity" = ELSS = saves tax u/s 80C (old tax regime only). Direct = no middleman cost. Growth = reinvests gains.<br><br><strong>✅ Deepa\'s Mum → HDFC Mid-Cap – Regular – IDCW</strong><br>Regular = via financial advisor. IDCW = regular income payouts for retirement. Mid-Cap = medium risk.<br><br><strong>✅ Neha → SBI Small Cap – Direct – Growth</strong><br>Small Cap = highest risk + reward, perfect for an aggressive young investor. Direct saves cost, Growth reinvests everything.<br><br>💡 <strong>Golden Rule:</strong> Direct > Regular (always saves money). Growth > IDCW (for long-term wealth). Match fund TYPE to your goal!';
   if (pts === 3) {
     rmShowFB('rmq8_fb', true, 'Perfect! You matched all 3 friends! 🎯', 'You can now read ANY fund name AND match it to real needs!' + explain, score);
   } else if (pts >= 2) {

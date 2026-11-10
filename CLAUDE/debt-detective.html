@@ -1687,6 +1687,14 @@ transition:left 0.96s ease-in-out, top 0.96s cubic-bezier(0.2,-0.6,0.7,1.8), tra
 .r72-btn-play-again:hover{background:var(--mint);}
 
 
+/* ── Phones only: the key question is the biggest text on the card; reading text ≥15px ── */
+@media (max-width: 600px){
+  #dd_productCard .dd-q{font-size:20px !important;letter-spacing:0.3px !important;line-height:1.3;padding-top:6px !important;}
+  #dd_productCard .dd-name{font-size:17px !important;}
+  #dd_productCard .dd-read,#dd_choiceGrid .dd-read,#dd_revealPanel .dd-read{font-size:15px !important;}
+  #dd_revealPanel .dd-badge{font-size:14px !important;}
+  #dd_revealPanel .dd-lbl{font-size:12px !important;}
+}
 </style>
 <!-- Google Analytics (GA4) — same property as investingformummies.com, so website + games
      report in one place. content_group:'Games' makes "how many reached the games" a one-line report. -->
@@ -1722,11 +1730,11 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
         <div class="chip"><div class="ch-val">🕵️</div><div class="ch-label">Tap the Borrower</div></div>
         <div class="chip"><div class="ch-val">💡</div><div class="ch-label">See Full Picture</div></div>
       </div>
-      <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;margin-top:10px;">Every debt product is a loan — <em>you</em> are the lender. Tap who you think is borrowing your money, then discover their risk rating and liquidity.</p>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;margin-top:10px;">Every debt product is a loan — <em>you</em> are the lender. Tap who you think is borrowing your money, then discover their risk rating and how fast you can get your money back.</p>
       <div style="display:flex;gap:8px;margin-top:12px;">
         <div style="flex:1;background:var(--mint-lt);border-radius:10px;padding:8px 6px;text-align:center;font-size:0.7rem;font-weight:700;color:var(--navy);">👤<br><span style="color:var(--muted);font-weight:600;">Borrower</span></div>
         <div style="flex:1;background:var(--mint-lt);border-radius:10px;padding:8px 6px;text-align:center;font-size:0.7rem;font-weight:700;color:var(--navy);">🛡️<br><span style="color:var(--muted);font-weight:600;">Risk Rating</span></div>
-        <div style="flex:1;background:var(--mint-lt);border-radius:10px;padding:8px 6px;text-align:center;font-size:0.7rem;font-weight:700;color:var(--navy);">💧<br><span style="color:var(--muted);font-weight:600;">Liquidity</span></div>
+        <div style="flex:1;background:var(--mint-lt);border-radius:10px;padding:8px 6px;text-align:center;font-size:0.7rem;font-weight:700;color:var(--navy);">💧<br><span style="color:var(--muted);font-weight:600;">How fast can you get your money back?</span></div>
       </div>
     </div>
     <div class="card" style="text-align:center;padding:20px;">
@@ -1792,48 +1800,48 @@ const fmtU = v => v.toFixed(2);
 
 var DD_INSTRUMENTS = [
   {id:'ppf', name:'Public Provident Fund (PPF)', icon:'🏛️',
-   desc:'15-year government savings scheme — EEE tax status, 7.1% p.a., max ₹1.5L/year',
+   desc:'15-year government savings scheme — 7.1% p.a., max ₹1.5L/year, tax-free going in, growing and coming out',
    color:'#2a9d8f', bg:'#e0f3f0',
    borrower:'🏛️ Central Government',
    why:'PPF is a Central Government scheme. Your deposits go into the Consolidated Fund of India — India Post and banks are just the distribution channel.',
-   riskLabel:'Sovereign', riskColor:'#2a9d8f', riskBg:'#e0f3f0',
+   riskLabel:'Backed by the Government of India', riskColor:'#2a9d8f', riskBg:'#e0f3f0',
    riskNote:'Backed by the full faith of the Government of India — zero default risk.',
    liquidLabel:'Low', liquidColor:'#c62828', liquidBg:'#fce8e8',
    liquidNote:'15-year lock-in. Partial withdrawals allowed only after Year 7.'},
 
   {id:'ssy', name:'Sukanya Samriddhi Yojana (SSY)', icon:'👧',
-   desc:'Girl child savings scheme — highest govt rate (8.2% p.a.), 21-year maturity, EEE status',
-   color:'#E91E63', bg:'#fce4ec',
+   desc:'Girl child savings scheme — highest govt rate (8.2% p.a.), 21-year maturity, tax-free going in, growing and coming out',
+   color:'#2a9d8f', bg:'#e0f3f0',
    borrower:'🏛️ Central Government',
    why:'SSY is a Government of India scheme — not a bank product. India Post and authorised banks are agents, not the borrower.',
-   riskLabel:'Sovereign', riskColor:'#2a9d8f', riskBg:'#e0f3f0',
-   riskNote:'Same sovereign guarantee as G-Secs and PPF — Central Government stands behind it.',
+   riskLabel:'Backed by the Government of India', riskColor:'#2a9d8f', riskBg:'#e0f3f0',
+   riskNote:'Same government guarantee as G-Secs and PPF — Central Government stands behind it.',
    liquidLabel:'Low', liquidColor:'#c62828', liquidBg:'#fce8e8',
-   liquidNote:'Matures when the girl turns 21. Partial withdrawal for education allowed after age 18 only.'},
+   liquidNote:'Matures 21 years after the account is opened. Partial withdrawal for education allowed after age 18 only.'},
 
   {id:'gsec', name:'Government Securities (G-Secs)', icon:'📜',
-   desc:'Bonds issued by RBI on behalf of the Government of India to fund the fiscal deficit',
-   color:'#1a3a5c', bg:'#e0eaf5',
+   desc:'Bonds issued by RBI on behalf of the Government of India to cover the gap between what it spends and what it collects in taxes',
+   color:'#2a9d8f', bg:'#e0f3f0',
    borrower:'🏛️ Central Government',
    why:'G-Secs are direct IOUs from the Central Government. When you buy one, you are literally lending to India.',
-   riskLabel:'Sovereign', riskColor:'#2a9d8f', riskBg:'#e0f3f0',
-   riskNote:'The purest form of sovereign debt — RBI issues on behalf of the Government of India.',
+   riskLabel:'Backed by the Government of India', riskColor:'#2a9d8f', riskBg:'#e0f3f0',
+   riskNote:'The purest form of government debt — RBI issues on behalf of the Government of India.',
    liquidLabel:'High', liquidColor:'#2e7d32', liquidBg:'#e8f5e9',
-   liquidNote:'Traded on NDS-OM and stock exchanges — can be sold any business day.'},
+   liquidNote:'Traded on stock exchanges — can be sold any business day.'},
 
   {id:'sdl', name:'State Development Loans (SDLs)', icon:'🗺️',
    desc:'Bonds issued by individual state governments (Maharashtra, Tamil Nadu etc.) to fund state deficits',
-   color:'#4CAF50', bg:'#e8f5e9',
+   color:'#2a9d8f', bg:'#e0f3f0',
    borrower:'🏦 State Government',
    why:'SDLs are issued by state governments, NOT the Centre. Each state borrows independently to fund roads, schools, and local infrastructure.',
-   riskLabel:'Near-Sovereign', riskColor:'#26a69a', riskBg:'#e0f5f1',
+   riskLabel:'Backed by a State Government', riskColor:'#26a69a', riskBg:'#e0f5f1',
    riskNote:'State governments carry slightly more risk than the Centre — but still very safe (AA+ equivalent).',
    liquidLabel:'Medium', liquidColor:'#e65100', liquidBg:'#fff3e0',
    liquidNote:'Less liquid than G-Secs — the secondary market is thinner. Can be harder to sell quickly.'},
 
   {id:'fd', name:'Bank Fixed Deposit (FD)', icon:'🏦',
    desc:'Fixed-rate deposit with a bank — insured up to ₹5L by DICGC',
-   color:'#FF9800', bg:'#fff3e0',
+   color:'#1a3a5c', bg:'#e0eaf5',
    borrower:'🏧 Bank',
    why:'When you open an FD, the bank borrows your money. It lends it out at a higher rate — that spread is how banks profit.',
    riskLabel:'Low', riskColor:'#1a3a5c', riskBg:'#e0eaf5',
@@ -1843,7 +1851,7 @@ var DD_INSTRUMENTS = [
 
   {id:'rd', name:'Bank Recurring Deposit (RD)', icon:'💳',
    desc:'Monthly instalment deposit with a bank — same credit risk as a Fixed Deposit',
-   color:'#FF5722', bg:'#fbe9e7',
+   color:'#1a3a5c', bg:'#e0eaf5',
    borrower:'🏧 Bank',
    why:'An RD works identically to an FD — you lend to the bank monthly instead of in a lump sum. The borrower is exactly the same.',
    riskLabel:'Low', riskColor:'#1a3a5c', riskBg:'#e0eaf5',
@@ -1853,7 +1861,7 @@ var DD_INSTRUMENTS = [
 
   {id:'corpbond', name:'Corporate Bond', icon:'🏢',
    desc:'Bond issued by a company (AA+ rated) to raise long-term debt capital from investors',
-   color:'#795548', bg:'#efebe9',
+   color:'#c9a84c', bg:'#f5f0e0',
    borrower:'🏢 Company',
    why:'When a company issues a bond, it borrows money from you. You become its creditor — the company pays interest and returns your principal at maturity.',
    riskLabel:'Medium–High', riskColor:'#e65100', riskBg:'#fff3e0',
@@ -1863,7 +1871,7 @@ var DD_INSTRUMENTS = [
 
   {id:'ncd', name:'Non-Convertible Debenture (NCD)', icon:'📄',
    desc:'Listed company debt — cannot be converted to equity, traded on BSE/NSE',
-   color:'#9C27B0', bg:'#f3e5f5',
+   color:'#c9a84c', bg:'#f5f0e0',
    borrower:'🏢 Company',
    why:'NCDs are another way companies borrow from the public. "Non-convertible" means the company repays in cash — not shares.',
    riskLabel:'Medium–High', riskColor:'#e65100', riskBg:'#fff3e0',
@@ -1874,9 +1882,9 @@ var DD_INSTRUMENTS = [
 
 var DD_BORROWERS = [
   {label:'🏛️ Central Government', short:'Central Govt', tint:'#e0f3f0', border:'#2a9d8f'},
-  {label:'🏦 State Government',   short:'State Govt',   tint:'#e8f5e9', border:'#4CAF50'},
-  {label:'🏧 Bank',               short:'Bank',         tint:'#fff3e0', border:'#FF9800'},
-  {label:'🏢 Company',            short:'Company',      tint:'#f3e5f5', border:'#9C27B0'}
+  {label:'🏦 State Government',   short:'State Govt',   tint:'#e0f3f0', border:'#2a9d8f'},
+  {label:'🏧 Bank',               short:'Bank',         tint:'#e0eaf5', border:'#1a3a5c'},
+  {label:'🏢 Company',            short:'Company',      tint:'#f5f0e0', border:'#c9a84c'}
 ];
 
 var dd_idx=0, dd_correct=0, dd_results=[], dd_phase='idle', dd_order=[], dd_timer=null, dd_timeLeft=30;
@@ -1920,8 +1928,8 @@ function dd_showCard(){
       '<div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">'+
         '<div style="width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;border:3px solid '+inst.color+';background:'+inst.bg+';box-shadow:0 2px 8px rgba(26,58,92,0.08);">'+inst.icon+'</div>'+
         '<div style="flex:1;min-width:0;">'+
-          '<div style="font-family:Lora,serif;font-size:0.92rem;font-weight:700;color:var(--navy);margin-bottom:4px;">'+inst.name+'</div>'+
-          '<div style="font-family:Nunito,sans-serif;font-size:0.75rem;color:var(--muted);line-height:1.45;">'+inst.desc+'</div>'+
+          '<div class="dd-name" style="font-family:Lora,serif;font-size:0.92rem;font-weight:700;color:var(--navy);margin-bottom:4px;">'+inst.name+'</div>'+
+          '<div class="dd-read" style="font-family:Nunito,sans-serif;font-size:0.75rem;color:var(--muted);line-height:1.45;">'+inst.desc+'</div>'+
         '</div>'+
       '</div>'+
       '<div style="margin-bottom:8px;">'+
@@ -1933,7 +1941,7 @@ function dd_showCard(){
           '<span id="dd_timerNum" style="font-family:Nunito,sans-serif;font-size:0.6rem;font-weight:800;color:var(--muted);">30s</span>'+
         '</div>'+
       '</div>'+
-      '<div style="font-family:Nunito,sans-serif;font-size:0.62rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--teal);text-align:center;padding-top:2px;">🔍 Who is borrowing your money?</div>'+
+      '<div class="dd-q" style="font-family:Nunito,sans-serif;font-size:0.62rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--teal);text-align:center;padding-top:2px;">🔍 Who is borrowing your money?</div>'+
     '</div>';
 
   // Start 30s countdown — visual only, NEVER blocks answering
@@ -1985,7 +1993,7 @@ function dd_showCard(){
     card.style.transform='';
     card.innerHTML=
       '<div style="font-size:2rem;margin-bottom:6px;">'+b.label.split(' ')[0]+'</div>'+
-      '<div style="font-family:Nunito,sans-serif;font-size:0.78rem;font-weight:800;color:var(--navy);line-height:1.3;">'+b.short+'</div>';
+      '<div class="dd-read" style="font-family:Nunito,sans-serif;font-size:0.78rem;font-weight:800;color:var(--navy);line-height:1.3;">'+b.short+'</div>';
     card.onmouseover=function(){if(dd_phase==='choose'){this.style.borderColor=b.border;this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 16px rgba(26,58,92,0.12)';}};
     card.onmouseout=function(){if(dd_phase==='choose'){this.style.borderColor=b.border+'55';this.style.transform='';this.style.boxShadow='0 2px 8px rgba(26,58,92,0.05)';}};
     card.onclick=(function(lbl){return function(){dd_choose(lbl);};})(b.label);
@@ -2040,8 +2048,8 @@ function dd_choose(chosen){
   // Header
   h+='<div style="background:'+hdrBg+';border-left:4px solid '+hdrBorder+';padding:10px 14px;display:flex;align-items:center;gap:8px;">';
   h+='<span style="font-size:1.3rem;">'+icon+'</span>';
-  h+='<div><div style="font-family:Nunito,sans-serif;font-size:0.85rem;font-weight:900;color:'+hdrColor+';">'+msg+'</div>';
-  if(!ok) h+='<div style="font-family:Nunito,sans-serif;font-size:0.73rem;color:'+hdrColor+';font-weight:700;">The borrower is <strong>'+correct+'</strong></div>';
+  h+='<div><div class="dd-read" style="font-family:Nunito,sans-serif;font-size:0.85rem;font-weight:900;color:'+hdrColor+';">'+msg+'</div>';
+  if(!ok) h+='<div class="dd-read" style="font-family:Nunito,sans-serif;font-size:0.73rem;color:'+hdrColor+';font-weight:700;">The borrower is <strong>'+correct+'</strong></div>';
   h+='</div></div>';
 
   // 3 info rows
@@ -2051,27 +2059,27 @@ function dd_choose(chosen){
   h+='<div style="display:flex;align-items:flex-start;gap:10px;">'+
      '<span style="font-size:1.1rem;flex-shrink:0;margin-top:2px;">👤</span>'+
      '<div style="flex:1;">'+
-       '<div style="font-family:Nunito,sans-serif;font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:3px;">THE BORROWER</div>'+
-       '<div style="font-family:Nunito,sans-serif;font-size:0.82rem;font-weight:800;color:var(--navy);margin-bottom:4px;">'+inst.borrower+'</div>'+
-       '<div style="font-family:Nunito,sans-serif;font-size:0.72rem;color:var(--muted);line-height:1.5;">'+inst.why+'</div>'+
+       '<div style="font-family:Nunito,sans-serif;font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:3px;" class="dd-lbl">THE BORROWER</div>'+
+       '<div class="dd-read" style="font-family:Nunito,sans-serif;font-size:0.82rem;font-weight:800;color:var(--navy);margin-bottom:4px;">'+inst.borrower+'</div>'+
+       '<div class="dd-read" style="font-family:Nunito,sans-serif;font-size:0.72rem;color:var(--muted);line-height:1.5;">'+inst.why+'</div>'+
      '</div></div>';
 
   // Row 2: Risk Rating
   h+='<div style="display:flex;align-items:flex-start;gap:10px;">'+
      '<span style="font-size:1.1rem;flex-shrink:0;margin-top:2px;">🛡️</span>'+
      '<div style="flex:1;">'+
-       '<div style="font-family:Nunito,sans-serif;font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:3px;">RISK RATING</div>'+
-       '<div style="display:inline-block;padding:3px 10px;border-radius:10px;background:'+inst.riskBg+';color:'+inst.riskColor+';font-family:Nunito,sans-serif;font-size:0.72rem;font-weight:800;margin-bottom:4px;">'+inst.riskLabel+'</div>'+
-       '<div style="font-family:Nunito,sans-serif;font-size:0.72rem;color:var(--muted);line-height:1.5;">'+inst.riskNote+'</div>'+
+       '<div style="font-family:Nunito,sans-serif;font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:3px;" class="dd-lbl">RISK RATING</div>'+
+       '<div style="display:inline-block;padding:3px 10px;border-radius:10px;background:'+inst.riskBg+';color:'+inst.riskColor+';font-family:Nunito,sans-serif;font-size:0.72rem;font-weight:800;margin-bottom:4px;" class="dd-badge">'+inst.riskLabel+'</div>'+
+       '<div class="dd-read" style="font-family:Nunito,sans-serif;font-size:0.72rem;color:var(--muted);line-height:1.5;">'+inst.riskNote+'</div>'+
      '</div></div>';
 
   // Row 3: Liquidity
   h+='<div style="display:flex;align-items:flex-start;gap:10px;">'+
      '<span style="font-size:1.1rem;flex-shrink:0;margin-top:2px;">💧</span>'+
      '<div style="flex:1;">'+
-       '<div style="font-family:Nunito,sans-serif;font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:3px;">LIQUIDITY</div>'+
-       '<div style="display:inline-block;padding:3px 10px;border-radius:10px;background:'+inst.liquidBg+';color:'+inst.liquidColor+';font-family:Nunito,sans-serif;font-size:0.72rem;font-weight:800;margin-bottom:4px;">'+inst.liquidLabel+'</div>'+
-       '<div style="font-family:Nunito,sans-serif;font-size:0.72rem;color:var(--muted);line-height:1.5;">'+inst.liquidNote+'</div>'+
+       '<div style="font-family:Nunito,sans-serif;font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:3px;" class="dd-lbl">HOW FAST CAN YOU GET YOUR MONEY BACK?</div>'+
+       '<div style="display:inline-block;padding:3px 10px;border-radius:10px;background:'+inst.liquidBg+';color:'+inst.liquidColor+';font-family:Nunito,sans-serif;font-size:0.72rem;font-weight:800;margin-bottom:4px;" class="dd-badge">'+inst.liquidLabel+'</div>'+
+       '<div class="dd-read" style="font-family:Nunito,sans-serif;font-size:0.72rem;color:var(--muted);line-height:1.5;">'+inst.liquidNote+'</div>'+
      '</div></div>';
 
   h+='</div>'; // end info rows
@@ -2141,7 +2149,7 @@ function dd_showFinal(){
 
   h+='<div class="card" style="padding:14px;box-shadow:0 2px 12px rgba(26,58,92,0.06);">';
   h+='<div style="font-family:Nunito,sans-serif;font-size:0.65rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--teal);margin-bottom:10px;">💡 The Big Picture</div>';
-  h+='<div style="padding:10px 12px;border-radius:10px;font-family:Nunito,sans-serif;font-size:0.74rem;line-height:1.55;color:var(--navy);background:var(--mint-lt);margin-bottom:8px;"><strong>Sovereign borrowers</strong> (Central &amp; State Govt) offer the highest safety — they can raise taxes. That\'s why yields are lower.</div>';
+  h+='<div style="padding:10px 12px;border-radius:10px;font-family:Nunito,sans-serif;font-size:0.74rem;line-height:1.55;color:var(--navy);background:var(--mint-lt);margin-bottom:8px;"><strong>Government borrowers</strong> (Central &amp; State Govt) offer the highest safety — they can raise taxes. That\'s why yields are lower.</div>';
   h+='<div style="padding:10px 12px;border-radius:10px;font-family:Nunito,sans-serif;font-size:0.74rem;line-height:1.55;color:var(--navy);background:var(--mint-lt);margin-bottom:8px;"><strong>Banks</strong> are RBI-regulated + DICGC-insured to ₹5L — safer than companies, but not as safe as the government.</div>';
   h+='<div style="padding:10px 12px;border-radius:10px;font-family:Nunito,sans-serif;font-size:0.74rem;line-height:1.55;color:var(--navy);background:var(--mint-lt);"><strong>Companies</strong> carry the most risk — always check the credit rating. Higher yield = higher risk.</div>';
   h+='</div>';

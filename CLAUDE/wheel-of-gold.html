@@ -1749,10 +1749,13 @@ body{
 .wog-choice.correct{outline:4px solid var(--gold-hi)!important;transform:scale(1.12)!important;box-shadow:0 10px 28px rgba(244,221,148,0.6)!important;filter:brightness(1.08);}
 .wog-choice.wrong{opacity:0.4;transform:scale(0.92)!important;filter:grayscale(0.4) brightness(0.8);}
 .wog-seal-caption{font-family:'Nunito',sans-serif;font-size:0.66rem;font-weight:900;letter-spacing:0.4px;text-transform:uppercase;color:#3a2c18;text-align:center;line-height:1.25;max-width:96px;}
+/* UP / DOWN written on the seal itself so nobody has to guess which seal is which */
+.wog-seal-word{position:absolute;left:50%;bottom:13%;transform:translateX(-50%);pointer-events:none;font-family:'Nunito',sans-serif;font-size:1.15rem;font-weight:900;letter-spacing:0.5px;line-height:1;color:#fff;background:rgba(26,58,92,0.82);border-radius:999px;padding:3px 8px;white-space:nowrap;text-shadow:0 1px 2px rgba(0,0,0,0.4);}
 @media(max-width:640px){
   .wog-side-wrap{width:64px;}
   .wog-choice{width:min(58px,100%);}
   .wog-seal-caption{font-size:0.54rem;max-width:60px;}
+  .wog-seal-word{font-size:0.74rem;padding:2px 4px;letter-spacing:0;bottom:14%;}
 }
 
 /* ── SCENARIO CARD: parchment tablet over the wheel, wood + gold triple frame ── */
@@ -2253,11 +2256,11 @@ function showChoiceUI(){
   ov.classList.add('show');
   // UP button (left of wheel) — real cropped wax-seal photo, caption below like the concept card
   document.getElementById('upBtnWrap').innerHTML=`
-    <button class="wog-choice wog-up fade-up" onclick="makeChoice('up')" id="upBtn" aria-label="Price goes up"></button>
+    <button class="wog-choice wog-up fade-up" onclick="makeChoice('up')" id="upBtn" aria-label="Price goes up"><span class="wog-seal-word" aria-hidden="true">UP</span></button>
     <div class="wog-seal-caption">Price<br>Goes Up</div>`;
   // DOWN button (right of wheel)
   document.getElementById('dnBtnWrap').innerHTML=`
-    <button class="wog-choice wog-dn fade-up" onclick="makeChoice('down')" id="dnBtn" aria-label="Price goes down"></button>
+    <button class="wog-choice wog-dn fade-up" onclick="makeChoice('down')" id="dnBtn" aria-label="Price goes down"><span class="wog-seal-word" aria-hidden="true">DOWN</span></button>
     <div class="wog-seal-caption">Price<br>Goes Down</div>`;
 }
 
@@ -2364,7 +2367,7 @@ function showFinal(){
   if(pct>=88){trophy='🏆';title='Market Maven!';msg='You spun your way to investing mastery!';}
   else if(pct>=63){trophy='🌟';title='Rising Investor!';msg='A few more rounds to master the wheel.';}
   else if(pct>=38){trophy='🌱';title='Growing Learner!';msg='Spin again and watch your score climb.';}
-  else{trophy='📚';title='Just Getting Started!';msg='Come back after reviewing the material!';}
+  else{trophy='📚';title='Just Getting Started!';msg='Spin again — you\'ll spot the pattern fast.';}
 
   const b1=correct>=4,b2=correct>=6,b3=correct>=8;
 

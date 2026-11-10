@@ -293,6 +293,12 @@ body{
   .col-funded{display:none;}
   .col-gap{display:none;}
 }
+/* Phones: let each goal row wrap (goal name on its own line) instead of scrolling sideways */
+@media (max-width:600px){
+  .goal-row{flex-wrap:wrap;row-gap:6px;}
+  .goal-row .name-inp{flex:1 1 100%;min-width:0;}
+  .goal-row .inp-wrap.w148{width:auto;flex:1 1 100px;min-width:0;}
+}
 </style>
 <!-- Google Analytics (GA4) — same property as investingformummies.com, so website + games
      report in one place. content_group:'Games' makes "how many reached the games" a one-line report. -->
@@ -335,7 +341,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
   <div class="goals-thead">
     <div class="col-name">Goal</div>
     <div class="col-yrs">Yrs</div>
-    <div class="col-corpus">Target Corpus</div>
+    <div class="col-corpus">Amount Needed</div>
     <div class="col-funded">Funded So Far</div>
     <div class="col-pct">Progress</div>
     <div class="col-gap">Gap</div>
@@ -351,7 +357,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
     <span class="cat-icon">🎯</span>
     <div class="cat-title-group">
       <h2>Medium Term Goals</h2>
-      <span class="cat-sub">1 – 4 Years</span>
+      <span class="cat-sub">1 – 5 Years</span>
     </div>
     <div class="cat-mini">
       <div class="cmi"><span class="cmi-lbl">Goals</span><span class="cmi-val" id="medium_count">0</span></div>
@@ -362,7 +368,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
   <div class="goals-thead">
     <div class="col-name">Goal</div>
     <div class="col-yrs">Yrs</div>
-    <div class="col-corpus">Target Corpus</div>
+    <div class="col-corpus">Amount Needed</div>
     <div class="col-funded">Funded So Far</div>
     <div class="col-pct">Progress</div>
     <div class="col-gap">Gap</div>
@@ -378,7 +384,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
     <span class="cat-icon">🌟</span>
     <div class="cat-title-group">
       <h2>Long Term Goals</h2>
-      <span class="cat-sub">5+ Years</span>
+      <span class="cat-sub">Over 5 Years</span>
     </div>
     <div class="cat-mini">
       <div class="cmi"><span class="cmi-lbl">Goals</span><span class="cmi-val" id="long_count">0</span></div>
@@ -389,7 +395,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
   <div class="goals-thead">
     <div class="col-name">Goal</div>
     <div class="col-yrs">Yrs</div>
-    <div class="col-corpus">Target Corpus</div>
+    <div class="col-corpus">Amount Needed</div>
     <div class="col-funded">Funded So Far</div>
     <div class="col-pct">Progress</div>
     <div class="col-gap">Gap</div>
@@ -449,9 +455,9 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
 <!-- ── INSIGHT ── -->
 <div class="insight-box">
   <h3>🌟 Why Track Your Goals?</h3>
-  <p>Research shows that people who write down their goals with a <strong>specific number and a deadline</strong> are 42% more likely to achieve them. A goal without a corpus is just a wish.</p>
+  <p>Writing a goal down with a <strong>specific number and a date</strong> makes it far more likely to happen. A goal without an amount is just a wish.</p>
   <div class="quote">
-    <p>"A goal is a dream with a deadline — and a corpus."</p>
+    <p>"A goal is a dream with a deadline — and an amount."</p>
     <cite>— Investing for Mummies</cite>
   </div>
 </div>
@@ -699,8 +705,8 @@ function downloadPlan() {
   ];
   var cats = [
     {key:'short',  label:'SHORT TERM  (Under 1 Year)'},
-    {key:'medium', label:'MEDIUM TERM (1 – 4 Years)'},
-    {key:'long',   label:'LONG TERM   (5+ Years)'}
+    {key:'medium', label:'MEDIUM TERM (1 – 5 Years)'},
+    {key:'long',   label:'LONG TERM   (Over 5 Years)'}
   ];
   cats.forEach(function(c){
     lines.push(c.label);
@@ -711,7 +717,7 @@ function downloadPlan() {
       var gap = Math.max(0, g.corpus - g.funded);
       lines.push('  '+(i+1)+'. '+(g.name||'Unnamed Goal'));
       if(g.years) lines.push('     Years Required : '+g.years);
-      lines.push('     Target Corpus  : ₹'+indianFormat(g.corpus));
+      lines.push('     Amount Needed  : ₹'+indianFormat(g.corpus));
       lines.push('     Funded So Far  : ₹'+indianFormat(g.funded));
       lines.push('     % Funded       : '+pct.toFixed(0)+'%');
       lines.push('     Gap            : ₹'+indianFormat(gap));
@@ -759,7 +765,7 @@ function sharePlan() {
   m.push({id:'g'+rowCtr, name:'Home Down Payment', years:'3', corpus:2000000, funded:500000});
 
   var l = goals.long; rowCtr++;
-  l.push({id:'g'+rowCtr, name:'Retirement Corpus', years:'20', corpus:50000000, funded:2000000});
+  l.push({id:'g'+rowCtr, name:'Retirement Fund', years:'20', corpus:50000000, funded:2000000});
 
   renderRows('short');
   renderRows('medium');

@@ -1710,7 +1710,7 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
   <div class="game-hero" style="background:linear-gradient(135deg,#0d2137 0%,#1a3a5c 55%,#2a9d8f 100%);" data-logo="white">
     <div class="gh-tag">🎯 Game · Asset Allocation</div>
     <h2>Asset Boss</h2>
-    <p>You've got ₹10,00,000. Split it across 6 asset classes, survive 3 market events, and discover your investor DNA!</p>
+    <p>You've got ₹10,00,000. Split it across 6 asset classes (types of investment, like shares, gold and FDs), survive 3 market events, and discover your investor DNA!</p>
   </div>
   <iframe id="assetboss_frame" style="width:100%;min-height:200px;border:none;display:block;border-radius:0;" title="Asset Boss — ₹10L Asset Allocation Game"></iframe>
 </div>
@@ -1801,7 +1801,7 @@ const ASSETS = [
   { id:'mf',     name:'Mutual Fund',   icon:'🧺', col:'#2a9d8f', light:'#e0f3f0', risk:'Medium',  hint:'Experts spread your money across many stocks. Less wild than direct stocks.' },
   { id:'gold',   name:'Gold',          icon:'🥇', col:'#c9a84c', light:'#f5f0e0', risk:'Medium',  hint:'The classic safe haven. Often rises when everything else falls.' },
   { id:'fd',     name:'Fixed Deposit', icon:'🏦', col:'#5a7d8a', light:'#eaf0f2', risk:'Low',     hint:'Guaranteed return. Boring but predictable — the backbone of any portfolio.' },
-  { id:'re',     name:'Real Estate',   icon:'🏠', col:'#7a5090', light:'#f0eaf8', risk:'Low-Med', hint:'Property via REITs. Slow and steady, not liquid — hard to sell in a hurry.' },
+  { id:'re',     name:'Real Estate',   icon:'🏠', col:'#7a5090', light:'#f0eaf8', risk:'Low-Med', hint:'Property via REITs (owning a slice of big buildings that pay rent). Slow and steady, not liquid — hard to sell in a hurry.' },
   { id:'crypto', name:'Crypto',        icon:'₿',  col:'#e67e22', light:'#fef0e0', risk:'V.High',  hint:'Massive swings both ways. Thrilling in a bull run, brutal in a crash.' },
 ];
 
@@ -1821,7 +1821,7 @@ const EVENTS = [
     num:2, emoji:'💥', title:'Market Crash', year:'Year 2',
     headline:'Global recession fears. Markets crash. Investors panic and rush to safety.',
     returns:{ eq:-35, mf:-20, gold:18, fd:7, re:-5, crypto:-65 },
-    descs:{ eq:'Fear sells — market drops 35% from peak', mf:'Diversification softens the blow to -20%', gold:'Safe haven buying pushes gold up 18%', fd:'Untouched — your rate was locked in at the start', re:'Property illiquid and prices slip 5%', crypto:'Devastating: -65%. Many panic-sell at the bottom' },
+    descs:{ eq:'Fear sells — market drops 35% from peak', mf:'Diversification softens the blow to -20%', gold:'Safe haven buying pushes gold up 18%', fd:'Untouched — your rate was locked in at the start', re:'Property is hard to sell in a hurry, and prices slip 5%', crypto:'Devastating: -65%. Many panic-sell at the bottom' },
     classroom:"When fear hits, investors dump risky assets and rush to safety. Gold shines precisely when everything else crashes — that's its superpower. Notice how FD just kept earning 7% no matter what. Diversification (like a Mutual Fund) cut the loss from -35% to -20%.",
     q:'When stock markets crash, what typically happens to gold?',
     opts:['Gold also crashes — everything falls together', "Gold rises — it's a safe haven", 'Gold stays exactly flat', 'Gold is too small to matter'],
@@ -1856,7 +1856,7 @@ function getPersonality(alloc) {
   if ((pcts.mf||0) > 35)                  return { type:'MF Believer',      icon:'🧺', col:'#2a9d8f', desc:'You trust the experts to diversify for you. Solid choice — low effort, broad exposure, and smoother than picking individual stocks.' };
   var maxPct = Math.max.apply(null, ASSETS.map(function(a){return pcts[a.id]||0;}));
   if (maxPct < 28)                         return { type:'Smart Spreader',   icon:'⚖️', col:'#1a3a5c', desc:"No single big bet — you spread the risk across everything. Classic diversification. You'd make a good portfolio manager!" };
-  return                                          { type:'Balanced Builder', icon:'🏗️', col:'#2a9d8f', desc:"A thoughtful mix across multiple asset classes. You're thinking like a long-term investor." };
+  return                                          { type:'Balanced Builder', icon:'🏗️', col:'#2a9d8f', desc:"A thoughtful mix across many types of investment. You're thinking like a long-term investor." };
 }
 
 function getWhyQuestions(alloc) {
@@ -1989,7 +1989,7 @@ function App() {
       </div>
       <div className="card">
         <div style={{fontFamily:'Lora,serif',fontSize:'1.05rem',fontWeight:700,color:'#1a3a5c',marginBottom:4}}>You have ₹10,00,000 💰</div>
-        <div style={{fontSize:'0.8rem',color:'#5a7d8a',fontWeight:600}}>Split it across 6 asset classes. Use the + / − buttons to add ₹25,000 at a time.</div>
+        <div style={{fontSize:'0.8rem',color:'#5a7d8a',fontWeight:600}}>Split it across 6 asset classes — 6 different types of investment. Use the + / − buttons to add ₹25,000 at a time.</div>
       </div>
       <div className="card" style={{padding:'14px 16px 6px'}}>
         {ASSETS.map(function(a){
@@ -2264,7 +2264,7 @@ function App() {
         </div>
         <div className="why-q" style={{borderLeftColor:'#c9a84c'}}>
           <div style={{fontSize:'0.65rem',fontWeight:900,color:'#c9a84c',textTransform:'uppercase',letterSpacing:'0.5px',marginBottom:4}}>Question 3</div>
-          <div style={{fontSize:'0.9rem',fontWeight:800,color:'#1a3a5c',lineHeight:1.45}}>If you had to pick just 3 asset classes for the next 10 years, which would you pick now — and has the simulation changed your answer from Part 1?</div>
+          <div style={{fontSize:'0.9rem',fontWeight:800,color:'#1a3a5c',lineHeight:1.45}}>If you had to pick just 3 types of investment for the next 10 years, which would you pick now — and has the simulation changed your answer from Part 1?</div>
         </div>
         <div className="card" style={{background:'linear-gradient(135deg,#1a3a5c,#2a9d8f)',padding:'16px'}}>
           <div style={{color:'#fff',fontSize:'0.82rem',fontWeight:700,lineHeight:1.5}}>🏆 You have completed Asset Boss! Real investing is about making decisions with incomplete information — and learning from what happens next. That is exactly what you just did.</div>
