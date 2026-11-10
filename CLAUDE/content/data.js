@@ -722,7 +722,8 @@ window.IFM_DATA ={
    "notes": "Also rendered: badge-only cuts ifm-hero-logo.mp4 (5s, 1 spin) & ifm-hero-logo-9s.mp4 (9s, 2 spins); poster still ifm-hero-lockup-still.png. Embed with autoplay muted loop playsinline + poster. Tagline 'Nurturing financially confident women' is AI-added, not official. Relinked 21 Sep 2026: the row pointed at our own hosted copy, so the Drive original read as uncatalogued in the corpus reconciliation. drive link now targets the Drive master; the hosted copy remains the playable preview.",
    "thumbnail": "thumbs/IFM-037.jpg",
    "video url": "https://ifm-deploy.vercel.app/ifm-hero-lockup-9s.mp4",
-   "audience": "Mummies"
+   "audience": "Mummies",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-037.mp4"
   },
   {
    "id": "IFM-038",
@@ -3419,7 +3420,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "Aakara July delivery",
    "social": "",
-   "audience": "Mummies"
+   "audience": "Mummies",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-204.mp4"
   },
   {
    "id": "IFM-205",
@@ -5598,7 +5600,8 @@ window.IFM_DATA ={
    "date created": "2026-09-01",
    "notes": "Originally a blank label-only placeholder from Aakara's 'IFM Creatives_September' deck. Aakara delivered the artwork on 16 Sep 2026 as 'nse bse.png', sitting loose in September/Reels rather than in a topic folder — this row was updated in place rather than duplicated. ⚠️ Only the COVER GRAPHIC has been delivered; the reel video itself is not in the folder, so 'Ready' means the cover art is final, not that the reel is cut. Same treatment as the other loose reel covers (cf. IFM-204, IFM-343, IFM-366). Pillar: Workshops. September deck carries no per-post dates — date stays the month placeholder (Sep 1). Mirrored to our own Drive (IFM Content Archive → From Aakara): archive: 1Y2m_etZIWxd4KKpCstyw2UO4-F5dNG3A. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-321.jpg",
-   "audience": "Mummies"
+   "audience": "Mummies",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-321.mp4"
   },
   {
    "id": "IFM-322",
@@ -5989,7 +5992,8 @@ window.IFM_DATA ={
    "consent": "Adults only",
    "session": "Aakara July delivery",
    "social": "",
-   "audience": "Mummies"
+   "audience": "Mummies",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-343.mp4"
   },
   {
    "id": "IFM-344",
@@ -6696,7 +6700,8 @@ window.IFM_DATA ={
    "social": "Yes",
    "notes": "Delivered by Aakara overnight 17 Sep 2026 (01:09) as 'tata group.png', sitting loose in September/Reels rather than in a topic folder — same pattern as 'nse bse.png' (IFM-321). ⚠️ Only the COVER GRAPHIC exists; the reel video itself has not been delivered, so 'Ready' means the cover art is final, not that the reel is cut. No matching September placeholder row existed, so this was staged as a NEW row; it may be one of the three reels bundled under IFM-278 'September: 3 News Topicals', in which case fold it in there. Note the repo also has in-house Tata Sons reel work in progress (reel_tata_sons/) — check the two are not building the same post twice. Mirrored to our own Drive (IFM Content Archive -> From Aakara): archive: 157vvlXPt4FQlvj4Lswvk8SsmEk1OhxpM. STAGED — not yet deployed.",
    "thumbnail": "thumbs/IFM-375.jpg",
-   "audience": "Mummies"
+   "audience": "Mummies",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-375.mp4"
   },
   {
    "id": "IFM-376",
@@ -13685,7 +13690,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-692.jpg"
+   "thumbnail": "thumbs/IFM-692.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-692.mp4"
   },
   {
    "id": "IFM-693",
@@ -13725,7 +13731,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-694.jpg"
+   "thumbnail": "thumbs/IFM-694.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-694.mp4"
   },
   {
    "id": "IFM-695",
@@ -13745,7 +13752,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-695.jpg"
+   "thumbnail": "thumbs/IFM-695.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-695.mp4"
   },
   {
    "id": "IFM-696",
@@ -13765,7 +13773,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-696.jpg"
+   "thumbnail": "thumbs/IFM-696.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-696.mp4"
   },
   {
    "id": "IFM-697",
@@ -13785,7 +13794,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-697.jpg"
+   "thumbnail": "thumbs/IFM-697.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-697.mp4"
   },
   {
    "id": "IFM-698",
@@ -13805,7 +13815,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-698.jpg"
+   "thumbnail": "thumbs/IFM-698.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-698.mp4"
   },
   {
    "id": "IFM-699",
@@ -13825,7 +13836,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-699.jpg"
+   "thumbnail": "thumbs/IFM-699.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-699.mp4"
   },
   {
    "id": "IFM-700",
@@ -13845,7 +13857,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-700.jpg"
+   "thumbnail": "thumbs/IFM-700.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-700.mp4"
   },
   {
    "id": "IFM-701",
@@ -13865,7 +13878,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-701.jpg"
+   "thumbnail": "thumbs/IFM-701.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-701.mp4"
   },
   {
    "id": "IFM-702",
@@ -13885,7 +13899,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-702.jpg"
+   "thumbnail": "thumbs/IFM-702.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-702.mp4"
   },
   {
    "id": "IFM-703",
@@ -13905,7 +13920,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-703.jpg"
+   "thumbnail": "thumbs/IFM-703.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-703.mp4"
   },
   {
    "id": "IFM-704",
@@ -13925,7 +13941,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-704.jpg"
+   "thumbnail": "thumbs/IFM-704.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-704.mp4"
   },
   {
    "id": "IFM-705",
@@ -13945,7 +13962,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-705.jpg"
+   "thumbnail": "thumbs/IFM-705.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-705.mp4"
   },
   {
    "id": "IFM-706",
@@ -13965,7 +13983,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-706.jpg"
+   "thumbnail": "thumbs/IFM-706.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-706.mp4"
   },
   {
    "id": "IFM-707",
@@ -13985,7 +14004,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-707.jpg"
+   "thumbnail": "thumbs/IFM-707.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-707.mp4"
   },
   {
    "id": "IFM-708",
@@ -14005,7 +14025,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-708.jpg"
+   "thumbnail": "thumbs/IFM-708.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-708.mp4"
   },
   {
    "id": "IFM-709",
@@ -14025,7 +14046,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-709.jpg"
+   "thumbnail": "thumbs/IFM-709.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-709.mp4"
   },
   {
    "id": "IFM-710",
@@ -14045,7 +14067,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Stock Rush PRO game — 22 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-710.jpg"
+   "thumbnail": "thumbs/IFM-710.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-710.mp4"
   },
   {
    "id": "IFM-711",
@@ -14085,7 +14108,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 27 Oct 2026 (equity mutual funds class)",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-712.jpg"
+   "thumbnail": "thumbs/IFM-712.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-712.mp4"
   },
   {
    "id": "IFM-713",
@@ -14105,7 +14129,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 27 Oct 2026 (equity mutual funds class)",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-713.jpg"
+   "thumbnail": "thumbs/IFM-713.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-713.mp4"
   },
   {
    "id": "IFM-714",
@@ -14125,7 +14150,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 27 Oct 2026 (equity mutual funds class)",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-714.jpg"
+   "thumbnail": "thumbs/IFM-714.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-714.mp4"
   },
   {
    "id": "IFM-715",
@@ -14145,7 +14171,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 27 Oct 2026 (equity mutual funds class)",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-715.jpg"
+   "thumbnail": "thumbs/IFM-715.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-715.mp4"
   },
   {
    "id": "IFM-716",
@@ -14165,7 +14192,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 27 Oct 2026 (equity mutual funds class)",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-716.jpg"
+   "thumbnail": "thumbs/IFM-716.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-716.mp4"
   },
   {
    "id": "IFM-717",
@@ -14205,7 +14233,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 28 Oct 2026 (morning class)",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-718.jpg"
+   "thumbnail": "thumbs/IFM-718.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-718.mp4"
   },
   {
    "id": "IFM-719",
@@ -14225,7 +14254,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 28 Oct 2026 (morning class)",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-719.jpg"
+   "thumbnail": "thumbs/IFM-719.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-719.mp4"
   },
   {
    "id": "IFM-720",
@@ -14245,7 +14275,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 28 Oct 2026 (morning class)",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-720.jpg"
+   "thumbnail": "thumbs/IFM-720.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-720.mp4"
   },
   {
    "id": "IFM-721",
@@ -14265,7 +14296,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 28 Oct 2026 (morning class)",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-721.jpg"
+   "thumbnail": "thumbs/IFM-721.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-721.mp4"
   },
   {
    "id": "IFM-722",
@@ -14285,7 +14317,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-722.jpg"
+   "thumbnail": "thumbs/IFM-722.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-722.mp4"
   },
   {
    "id": "IFM-723",
@@ -14305,7 +14338,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-723.jpg"
+   "thumbnail": "thumbs/IFM-723.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-723.mp4"
   },
   {
    "id": "IFM-724",
@@ -14325,7 +14359,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-724.jpg"
+   "thumbnail": "thumbs/IFM-724.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-724.mp4"
   },
   {
    "id": "IFM-725",
@@ -14345,7 +14380,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-725.jpg"
+   "thumbnail": "thumbs/IFM-725.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-725.mp4"
   },
   {
    "id": "IFM-726",
@@ -14365,7 +14401,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-726.jpg"
+   "thumbnail": "thumbs/IFM-726.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-726.mp4"
   },
   {
    "id": "IFM-727",
@@ -14385,7 +14422,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-727.jpg"
+   "thumbnail": "thumbs/IFM-727.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-727.mp4"
   },
   {
    "id": "IFM-728",
@@ -14405,7 +14443,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-728.jpg"
+   "thumbnail": "thumbs/IFM-728.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-728.mp4"
   },
   {
    "id": "IFM-729",
@@ -14425,7 +14464,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-729.jpg"
+   "thumbnail": "thumbs/IFM-729.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-729.mp4"
   },
   {
    "id": "IFM-730",
@@ -14445,7 +14485,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-730.jpg"
+   "thumbnail": "thumbs/IFM-730.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-730.mp4"
   },
   {
    "id": "IFM-731",
@@ -14465,7 +14506,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-731.jpg"
+   "thumbnail": "thumbs/IFM-731.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-731.mp4"
   },
   {
    "id": "IFM-732",
@@ -14485,7 +14527,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-732.jpg"
+   "thumbnail": "thumbs/IFM-732.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-732.mp4"
   },
   {
    "id": "IFM-733",
@@ -14505,7 +14548,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-733.jpg"
+   "thumbnail": "thumbs/IFM-733.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-733.mp4"
   },
   {
    "id": "IFM-734",
@@ -14525,7 +14569,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-734.jpg"
+   "thumbnail": "thumbs/IFM-734.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-734.mp4"
   },
   {
    "id": "IFM-735",
@@ -14545,7 +14590,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-735.jpg"
+   "thumbnail": "thumbs/IFM-735.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-735.mp4"
   },
   {
    "id": "IFM-736",
@@ -14565,7 +14611,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-736.jpg"
+   "thumbnail": "thumbs/IFM-736.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-736.mp4"
   },
   {
    "id": "IFM-737",
@@ -14585,7 +14632,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-737.jpg"
+   "thumbnail": "thumbs/IFM-737.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-737.mp4"
   },
   {
    "id": "IFM-738",
@@ -14605,7 +14653,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop, Kaun Banega Crorepati quiz — 28 Oct 2026",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-738.jpg"
+   "thumbnail": "thumbs/IFM-738.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-738.mp4"
   },
   {
    "id": "IFM-739",
@@ -14625,7 +14674,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 28 Oct 2026 (morning class)",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-739.jpg"
+   "thumbnail": "thumbs/IFM-739.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-739.mp4"
   },
   {
    "id": "IFM-740",
@@ -14645,7 +14695,8 @@ window.IFM_DATA ={
    "session": "Boardroom workshop — 28 Oct 2026 (morning class)",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-740.jpg"
+   "thumbnail": "thumbs/IFM-740.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-740.mp4"
   },
   {
    "id": "IFM-741",
@@ -14665,7 +14716,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-741.jpg"
+   "thumbnail": "thumbs/IFM-741.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-741.mp4"
   },
   {
    "id": "IFM-742",
@@ -14745,7 +14797,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-745.jpg"
+   "thumbnail": "thumbs/IFM-745.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-745.mp4"
   },
   {
    "id": "IFM-746",
@@ -14785,7 +14838,8 @@ window.IFM_DATA ={
    "session": "",
    "social": "",
    "audience": "Mummies",
-   "thumbnail": "thumbs/IFM-747.jpg"
+   "thumbnail": "thumbs/IFM-747.jpg",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-747.mp4"
   },
   {
    "id": "IFM-748",
@@ -14976,7 +15030,7 @@ window.IFM_DATA ={
    "setting": "Workshop — corporate",
    "session": "Corporate women’s workshop, session 2 — 6 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-757.mp4",
    "thumbnail": "thumbs/IFM-757.jpg",
    "audience": "Mummies"
   },
@@ -14998,7 +15052,7 @@ window.IFM_DATA ={
    "setting": "Workshop — corporate",
    "session": "Boardroom workshop — 8 Oct 2026",
    "social": "",
-   "video": "",
+   "video": "https://ifm-deploy.vercel.app/content/clips/IFM-758.mp4",
    "thumbnail": "thumbs/IFM-758.jpg",
    "audience": "Mummies"
   },
