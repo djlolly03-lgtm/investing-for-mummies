@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Jio IPO · LIVE — IPO Bonanza Multiplayer | Investing for Mummies</title>
 <!-- ifm-seo -->
-<meta name="description" content="A live classroom IPO. Everyone gets ₹10 lakh, the room bids on the Jio Platforms IPO, and the allotment lottery teaches what money really earns while it is blocked."/>
+<meta name="description" content="A live classroom IPO. Everyone gets ₹10 lakh, the room bids on the Jio Platforms IPO, and the allotment lottery shows what happens to your money while it is blocked."/>
 <link rel="canonical" href="https://games.investingformummies.com/ipo-bonanza-jio.html"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Investing for Mummies"/>
@@ -761,7 +761,9 @@ let _saveTimer=null,_saveBusy=false,_saveDirty=false,_saveFails=0,_otherHostAt=0
 function save(){ state.updatedAt=Date.now(); clearTimeout(_saveTimer); _saveTimer=setTimeout(flushSave,60); }
 function saveNow(){ state.updatedAt=Date.now(); clearTimeout(_saveTimer); return flushSave(); }
 async function flushSave(){
-  _saveDirty=true; if(_saveBusy) return; _saveBusy=true;
+  _saveDirty=true;
+  if(isHost&&!_hostReady) return;   // room not known yet — never overwrite it (hostGoReady saves)
+  if(_saveBusy) return; _saveBusy=true;
   try{
     while(_saveDirty){ _saveDirty=false;
       let ok=false;
@@ -827,6 +829,7 @@ function onRoomChange(p){
 /* ───────────────────────── host: fold player actions into state ───────────────────────── */
 function hostHandleAction(a){
   if(!a||!a.type) return;
+  if(!_hostReady){ _pendingActions.push(a); return; }   // replayed once the room is loaded
   if(a.type==='join'){
     if(!a.id||!a.name) return;
     const ex=state.players[a.id];
@@ -1624,6 +1627,19 @@ function chipHTML(p,extra,inner){
   return '<span class="pchip'+(extra?' '+extra:'')+'"><span class="av" style="background:'+p.color+'">'+p.av+'</span>'+esc(p.name)+(inner||'')+'</span>';
 }
 
+/* Leaving the projector mid-game strands every phone in this room, and coming back
+   through the chooser opens a NEW room. Once anyone has joined or the slides have
+   moved on, ask first. (10 Nov 2026) */
+document.addEventListener('click',e=>{
+  const a=e.target.closest&&e.target.closest('a.leave-link');
+  if(!a||!isHost) return;
+  if(playerCount()===0&&state.phase==='slides'&&(state.slide||1)===1) return;
+  e.preventDefault();
+  askConfirm({kicker:'ROOM '+ROOM, tone:'danger', title:'Leave this game?',
+    body:'The phones stay in room <b>'+esc(ROOM)+'</b>. Coming back through IPO Bonanza opens a <b>new</b> room — use the browser’s back button to return to this one.',
+    ok:'LEAVE', cancel:'STAY'},()=>{ location.href=a.href; });
+});
+
 /* ── chrome: tape, next/back, corner QR, hints ── */
 function renderTape(){
   const live=state.phase==='bidding';
@@ -1632,7 +1648,7 @@ function renderTape(){
       ?'<span class="tape-pill amberp"><span class="dot"></span>IPO CLOSED</span>':'';
   document.getElementById('hostTape').innerHTML=
     '<div class="tape"><div class="tape-l">'+
-      '<a href="/ipo-bonanza" title="Back to IPO Bonanza" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit"><span class="logo-dot"></span><span class="brand">IPO BONANZA</span></a>'+
+      '<a href="/ipo-bonanza" class="leave-link" title="Back to IPO Bonanza" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit"><span class="logo-dot"></span><span class="brand">IPO BONANZA</span></a>'+
       '<span class="tape-sep"></span><span class="brand-2">JIO PLATFORMS · LIVE CLASSROOM</span>'+
     '</div><div class="tape-r">'+pill+
       '<span class="tape-meta">ROOM '+esc(ROOM)+'</span>'+
@@ -1660,7 +1676,7 @@ function renderChrome(){
   ctrls.classList.remove('hide'); hints.classList.remove('hide');
   let h='';
   if(_history.length) h+='<button class="btn ghost" id="btnBack">← BACK</button>';
-  else h+='<a class="btn ghost" href="/ipo-bonanza" style="text-decoration:none">← IPO BONANZA</a>';
+  else h+='<a class="btn ghost leave-link" href="/ipo-bonanza" style="text-decoration:none">← IPO BONANZA</a>';
   h+='<button class="btn ghost" id="btnReset" title="Start a brand-new game">↺</button>';
   const nl=nextLabel();
   if(nl) h+='<button class="btn" id="btnNext">'+nl+'</button>';
@@ -2001,6 +2017,7 @@ function hostS8(){
 }
 function startAllotment(){
   if(state.phase!=='allot'||state.allotStep!=='idle') return;
+  if(state.allotment){ state.allotStep='board'; saveNow(); renderHost(); return; }   // never re-draw winners
   pushHistory();
   state.allotStep='suspense';
   saveNow(); renderHost();
@@ -2182,7 +2199,7 @@ function hostS11(){
   return '<div class="quiet">'+
     '<div class="kicker">THE LESSON</div>'+
     '<h2>More money <span class="hl-dn">≠</span> better return.</h2>'+
-    '<div class="sub2">Everyone who got shares made the same profit. Big money only changed two things: <b style="color:var(--ink)">your chances</b>, and <b style="color:var(--ink)">how much cash sat locked up</b>.</div>'+
+    '<div class="sub2">Everyone who got shares made the same <i>percentage</i> return. Big money changed three things: <b style="color:var(--ink)">your chances</b>, <b style="color:var(--ink)">how much cash sat locked up</b>, and <b style="color:var(--ink)">the size of the win in rupees</b>.</div>'+
     '<div class="lesson-k">IN THE REAL JIO IPO</div>'+
     '<div class="lesson-stats">'+
       '<div class="lesson-stat"><div class="v up">7 out of 10</div><div class="l2">small investors (retail) got shares</div></div>'+
@@ -2223,7 +2240,7 @@ function renderHost(){
 /* In-game confirm pop-up — replaces the browser's grey confirm() box.
    askConfirm({kicker,title,body,stats:[[label,value]],ok,cancel,tone:'danger'|'go'}, onYes) */
 let _modalOpen=false;
-function askConfirm(o,onYes){
+function askConfirm(o,onYes,onNo){
   if(_modalOpen) return;
   _modalOpen=true;
   const wrap=document.createElement('div'); wrap.id='ifmModal';
@@ -2238,7 +2255,7 @@ function askConfirm(o,onYes){
     '<div class="m-keys">ENTER = yes · ESC = cancel</div></div>';
   const host=document.getElementById('host'); if(host&&host.style.zoom) wrap.firstChild.style.zoom=host.style.zoom;
   document.body.appendChild(wrap);
-  const close=yes=>{ removeEventListener('keydown',onKey,true); removeEventListener('keyup',onKey.space,true); wrap.remove(); _modalOpen=false; if(yes) onYes(); };
+  const close=yes=>{ removeEventListener('keydown',onKey,true); removeEventListener('keyup',onKey.space,true); wrap.remove(); _modalOpen=false; if(yes) onYes(); else if(onNo) onNo(); };
   /* SPACE is the teacher's "next" key all game, so inside a pop-up it must do
      nothing — never press YES. YES is ENTER or a click only (10 Nov 2026). */
   const onKey=e=>{ if(e.key==='Escape'){ e.preventDefault(); e.stopPropagation(); close(false); }
@@ -2258,7 +2275,7 @@ function pushHistory(){
   try{ _history.push(JSON.stringify(state)); if(_history.length>40) _history.shift(); }catch(e){}
 }
 function hostAdvance(confirmed){
-  if(!isHost||_modalOpen) return;
+  if(!isHost||_modalOpen||!_hostReady) return;
   const st=state;
   if(st.phase==='bidding') return;                     // CLOSE IPO button only — no accidental close
   if(st.phase==='dot'){ if(dmHandle) DotMoment.advance(); return; }
@@ -2286,7 +2303,7 @@ function hostAdvance(confirmed){
   else if(st.phase==='lobby'){ st.phase='bidding'; }
   else if(st.phase==='subs'){
     if(st.subsStep<4) st.subsStep++;
-    else { st.phase='allot'; st.allotStep='idle'; }
+    else { st.phase='allot'; st.allotStep=st.allotment?'board':'idle'; }   // a draw already made is never re-run
   }
   else if(st.phase==='allot'){ st.phase='listing'; st.listStep=0; }
   else if(st.phase==='listing'){
@@ -2296,15 +2313,32 @@ function hostAdvance(confirmed){
   else if(st.phase==='kamath'){ st.phase='lesson'; }
   saveNow(); renderHost();
 }
+/* BACK moves the SCREEN only. Who joined, every bid and the lottery result are
+   live data, not screen position, so they are carried forward from the current
+   state — going back never removes a player, a bid or a win (10 Nov 2026). */
 function hostBack(){
-  if(!isHost||!_history.length) return;
+  if(!isHost||!_hostReady||!_history.length) return;
   clearTimeout(_suspenseTimer); clearInterval(_suspenseSpin);
   if(dmHandle){ DotMoment.destroy(); dmHandle=null; }
-  try{ state=JSON.parse(_history.pop()); }catch(e){ return; }
+  const cur=state;
+  let prev=null;
+  try{ prev=JSON.parse(_history.pop()); }catch(e){ return; }
+  /* the "before the draw" snapshot of the allotment screen looks the same once the
+     draw is kept, so step over it to the screen before */
+  if(cur.allotment&&cur.phase==='allot'&&prev.phase==='allot'&&_history.length){
+    try{ prev=JSON.parse(_history.pop()); }catch(e){}
+  }
+  prev.players=cur.players;
+  prev.allotment=cur.allotment;
+  prev.bidNonce=cur.bidNonce;
+  if(prev.allotment&&prev.phase==='allot') prev.allotStep='board';
+  state=prev;
+  recomputeTotals();
   state.hostId=MY_ID;
   saveNow(); renderHost();
 }
 function hostReset(){
+  if(!_hostReady) return;
   askConfirm({kicker:'NEW GAME', tone:'danger', title:'Start a brand-new game?',
     body:'This clears <b>all players, bids and results</b>, and sends every phone back to the join screen.',
     ok:'YES, START OVER', cancel:'CANCEL'},doHostReset);
@@ -2328,28 +2362,78 @@ addEventListener('keydown',e=>{
   else if(e.code==='ArrowLeft'){ e.preventDefault(); if(!e.repeat) hostBack(); }
 });
 
-/* ── host boot + resume ── */
+/* ── host boot + resume ──
+   10 Nov 2026 rules, so a refresh or a wifi blip can never wipe a live room:
+   • A brand-new room has nothing to resume: slide 1 shows at once, no waiting on wifi.
+   • An existing room (the teacher refreshed) is READ before anything is shown or saved.
+     A failed read is retried with a "Reconnecting" screen — it is never taken to mean
+     "no room", which is what used to start a fresh game over the live one.
+   • Nothing is saved, and no phone action is applied, until the room is known
+     (_hostReady). Phone actions that arrive meanwhile are queued and replayed.
+   • A room idle for 30+ minutes asks "Resume?" instead of silently starting over;
+     "New game" opens a NEW room code, so the old room is never overwritten. */
+let _hostReady=false, _pendingActions=[];
+function hostSleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
+async function readRoom(){
+  try{
+    const ctl=new AbortController(), tm=setTimeout(()=>ctl.abort(),6000);
+    const r=await fetch(SUPABASE_URL+'/rest/v1/games?select=state,updated_at&room_code=eq.'+encodeURIComponent(ROOM),
+      {signal:ctl.signal,headers:{apikey:SUPABASE_ANON_KEY,Authorization:'Bearer '+SUPABASE_ANON_KEY}}).finally(()=>clearTimeout(tm));
+    if(!r.ok) return {ok:false};
+    const rows=await r.json();
+    return {ok:true,row:(Array.isArray(rows)&&rows[0])||null};
+  }catch(e){ return {ok:false}; }
+}
+function hostReconnecting(tries){
+  const m=document.getElementById('hostMain'); if(!m) return;
+  m.innerHTML='<div style="min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:40px">'+
+    '<div style="font-size:54px">📡</div>'+
+    '<div style="font-size:34px;font-weight:800;color:var(--ink)">Reconnecting to room '+esc(ROOM)+'…</div>'+
+    '<div style="font-size:19px;color:var(--ink-2,#5b6b7d);max-width:620px;line-height:1.5">Players and bids are safe. Keep this page open — the game comes back on its own as soon as the wifi does.'+
+    (tries>2?'<br><br><b>Still trying ('+tries+')…</b>':'')+'</div></div>';
+}
+function hostGoReady(){
+  _hostReady=true;
+  renderHost();
+  saveNow();
+  const q=_pendingActions; _pendingActions=[];
+  q.forEach(hostHandleAction);
+}
+function startNewRoom(){
+  ROOM=CONFIG.ROOM_PREFIX+(1000+Math.floor(Math.random()*9000));
+  const p=new URLSearchParams(location.search); p.set('role','host'); p.set('room',ROOM);
+  try{history.replaceState(null,'','?'+p.toString());}catch(e){}
+  state=freshState(); _history=[];
+  joinChannel();
+  hostGoReady();
+}
 async function initHost(){
   document.getElementById('host').classList.remove('hide');
-  if(!ROOM){
-    ROOM=CONFIG.ROOM_PREFIX+(1000+Math.floor(Math.random()*9000));
-    const p=new URLSearchParams(location.search); p.set('role','host'); p.set('room',ROOM);
-    try{history.replaceState(null,'','?'+p.toString());}catch(e){}
-  }
+  if(!ROOM){ startNewRoom(); return; }
+  hostReconnecting(0);
   joinChannel();
-  let resumed=false;
-  try{
-    const {data}=await db.from('games').select('state,updated_at').eq('room_code',ROOM).maybeSingle();
-    const s=data&&data.state;
-    const recent=data&&data.updated_at&&(Date.now()-new Date(data.updated_at).getTime()<CONFIG.STALE_GAME_MS);
-    if(s&&recent&&s.phase&&(Object.keys(s.players||{}).length>0||s.phase!=='slides'||(s.slide||1)>1)){
-      state=s; state.hostId=MY_ID; resumed=true;
-      if(state.allotStep==='suspense') state.allotStep='idle';   // timers don't survive a reload
-    }
-  }catch(e){}
-  if(!resumed){ state=freshState(); }
-  await saveNow();
-  renderHost();
+  let res=null, tries=0;
+  for(;;){
+    res=await readRoom();
+    if(res.ok) break;
+    tries++; hostReconnecting(tries);
+    await hostSleep(Math.min(5000,800*tries));
+  }
+  const row=res.row, s=row&&row.state;
+  const live=s&&s.phase&&(Object.keys(s.players||{}).length>0||s.phase!=='slides'||(s.slide||1)>1);
+  if(!live){ state=freshState(); hostGoReady(); return; }   // no room yet, or nothing happened in it
+  const adopt=()=>{
+    state=s; state.hostId=MY_ID;
+    if(state.allotStep==='suspense') state.allotStep='idle';   // timers don't survive a reload
+    hostGoReady();
+  };
+  const age=row.updated_at?Date.now()-new Date(row.updated_at).getTime():0;
+  if(age<CONFIG.STALE_GAME_MS){ adopt(); return; }
+  const n=Object.keys(s.players||{}).length;
+  askConfirm({kicker:'ROOM '+ROOM, title:'Carry on with this game?',
+    stats:[['PLAYERS',String(n)],['LAST USED',Math.round(age/60000)+' min ago']],
+    body:'Resume keeps everyone and their bids. New game opens a fresh room with a new code — this one is left untouched.',
+    ok:'RESUME  →', cancel:'NEW GAME'}, adopt, startNewRoom);
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -2634,7 +2718,7 @@ function playerResultCard(p){
   return '<div class="pcard" style="text-align:center">'+
     '<div class="pkicker">HNI LOTTERY · RESULT</div>'+
     '<div class="presult-big lostc">NOT ALLOTTED</div>'+
-    '<p class="psub"><b style="color:var(--ink)">'+rup(p.bid)+' released back to you.</b><br>Big ticket, no shares. In the real Jio IPO only '+esc(I.hniOddsLabel)+' HNI applicants won anything — your money sat blocked for the week and earned ₹0.</p>'+
+    '<p class="psub"><b style="color:var(--ink)">'+rup(p.bid)+' released back to you.</b><br>Big ticket, no shares. In the real Jio IPO only '+esc(I.hniOddsLabel)+' HNI applicants won anything — your money sat blocked for the week. It stayed in your bank earning savings interest — you just couldn’t use it for anything else.</p>'+
   '</div>';
 }
 
@@ -2665,7 +2749,7 @@ function playerPnlCard(p){
       '<div class="prow"><span class="l">SHARES</span><span class="v">0</span></div>'+
       '<div class="prow"><span class="l">BLOCKED, THEN RELEASED</span><span class="v">'+rup(p.bid)+'</span></div>'+
       '<div class="prow"><span class="l">YOUR ₹10,00,000 IS NOW</span><span class="v">'+rup(finalTotal)+'</span></div>'+
-      '<p class="psub" style="margin-top:14px">No shares, no loss — your money came back untouched. It just earned nothing while it was frozen. That’s the hidden cost of IPO season.</p>'+
+      '<p class="psub" style="margin-top:14px">No shares, no loss — your money came back untouched. It kept earning savings interest while it was blocked — you just couldn’t use it for anything else that week.</p>'+
     '</div>';
   }
   return '<div class="pcard">'+
