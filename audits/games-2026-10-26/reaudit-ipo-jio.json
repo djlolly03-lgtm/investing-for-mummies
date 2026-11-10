@@ -1,0 +1,222 @@
+{
+ "group": "reaudit-ipo-jio",
+ "games": [
+  {
+   "slug": "ipo-bonanza-jio",
+   "title": "Jio IPO · LIVE (IPO Bonanza)",
+   "url": "https://games.investingformummies.com/ipo-bonanza-jio",
+   "file": "ipo-bonanza-jio.html",
+   "kind": "classroom",
+   "audience": "Both",
+   "verdict": "A strong, well-sourced live lesson: the DRHP hunt, the dot moment and the side-by-side doors land the allotment-lottery idea clearly on both screens. What most holds it back is fragility in a live room: a blank projector on slow wifi, back/space/refresh paths that can wipe players or the room, and a plain link that makes anyone a host. Two lines also teach something untrue (ASBA money 'earns ₹0', winners 'made the same profit').",
+   "load": "163 KB single file + supabase-js (unpinned @2) + QR library + 4 Google Font families + GA/PostHog; X widget loads only on the Kamath screen. Light, but the projector waits for two database round-trips before drawing anything.",
+   "share_idea": "I got 12 Jio shares in our class IPO lottery (+₹2,868 on listing day). Only about 1 in 9 big-money applicants got any. Retail or HNI, which door would you pick? games.investingformummies.com/ipo-bonanza",
+   "share_moment": "On the student's phone, on the listing-day P&L card (after the result), linking to the IPO Bonanza chooser, not the host screen.",
+   "items": [
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "M",
+     "safe": false,
+     "text": "The projector shows a blank navy screen until the online database answers. On slow class wifi Hiral sees nothing, not even the intro slides, which need no internet. (Tested with the database blocked: the screen stayed empty.) Show slide 1 straight away and connect in the background."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "M",
+     "safe": false,
+     "text": "If the projector page is refreshed during a wifi blip, the game cannot read the room. It quietly starts a fresh game, and when the connection comes back it overwrites the live room, so every player and bid disappears. It also starts over if the room has had no change for 30 minutes, for example after a long discussion. Only start fresh when the room truly does not exist, and otherwise ask 'Resume room IF1234?'."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "safe": false,
+     "text": "The left-arrow key or the BACK button during the lobby or bidding rewinds to an older snapshot. Everyone who joined or bid after that point is wiped, and their phones bounce back to the join or choose screen. Going back after the lottery and running it again re-draws the winners, so a phone that showed 'Allotted' can flip to 'Not allotted'. Keep players, bids and the draw when going back, or ask before undoing past the lobby."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "S",
+     "safe": false,
+     "text": "In every pop-up (Start over, Close the IPO), pressing SPACE presses YES. Hiral uses SPACE for 'next' all game, so one habitual press after clicking the restart button wipes the whole room. Make SPACE do nothing inside pop-ups and keep YES on Enter or a click."
+    },
+    {
+     "area": "Bug",
+     "priority": "High",
+     "effort": "M",
+     "safe": false,
+     "text": "Anyone who opens the game link without the phone part of the address becomes the host. That includes a student who types the address plus the room code shown on the projector. They then become a second host of Hiral's room: phones jump between two screens, and they can press restart and wipe the room. Make the plain link and any room-code link open the phone join screen, and keep hosting behind a teacher-only start."
+    },
+    {
+     "area": "Compliance",
+     "priority": "High",
+     "effort": "S",
+     "safe": true,
+     "text": "Several lines say money blocked under ASBA 'earned ₹0' and that this is 'the hidden cost of IPO season'. That is wrong: blocked money stays in your bank account and keeps earning savings interest. It just can't be used for anything else. Fix the HNI not-allotted phone card, the no-shares listing card and the page description. Also change 'blocked for the week' to 'a few days', since money is now unblocked within about 3 working days of the close."
+    },
+    {
+     "area": "Copy",
+     "priority": "High",
+     "effort": "S",
+     "safe": true,
+     "text": "The final lesson says 'Everyone who got shares made the same profit'. But phones show an HNI winner made about ₹43,020 and a retail winner about ₹2,868. Say 'the same percentage return'. Also say big money changed three things, not two: your chances, how much cash sat locked, and the size of the win."
+    },
+    {
+     "area": "Layout",
+     "priority": "Med",
+     "effort": "S",
+     "safe": false,
+     "text": "In the lobby, every new join redraws the QR code, and the whole screen shrinks to fit the growing name list. With 40–60 people joining at once, the QR flickers and gets smaller while people are still scanning. Draw the QR once, keep the QR and room code a fixed size, and let only the name list shrink."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "safe": false,
+     "text": "The phone's 'Joining…' screen has no way out. If both join messages are lost on venue wifi, the student is stuck forever. Add a 'Tap to try again' button after about 6 seconds, like the bid screen already has."
+    },
+    {
+     "area": "Bug",
+     "priority": "Med",
+     "effort": "S",
+     "safe": false,
+     "text": "The 'IPO BONANZA' logo at top left and the '← IPO BONANZA' button leave the host screen mid-game without warning. Coming back through the chooser opens a brand-new room, and the phones are stranded in the old one. Once the room is open, ask before leaving, or reopen the same room."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "safe": false,
+     "text": "Presentation clickers send Page Down and Page Up, which the game ignores, so Hiral has to stay at the laptop. Accept Page Down as 'next'. Accept Page Up as 'back' only before the room opens."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "L",
+     "safe": false,
+     "text": "During the DRHP red-flag hunt, phones are not in the room yet, so only the loudest voices answer 'red flag or fine?'. Open the room before the hunt so every phone votes on each warning, and show the room's split before the verdict."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "M",
+     "safe": true,
+     "text": "Add a 'return on the money you locked' figure to each phone's listing card and to the P&L board. A retail player who locked 14 lots and one who locked 1 lot got the same 12 shares, and HNI losers locked lakhs for nothing. This makes 'more money ≠ better return' visible in rupees."
+    },
+    {
+     "area": "Game design",
+     "priority": "Med",
+     "effort": "S",
+     "safe": true,
+     "text": "Every share in this game made money on listing day, so the room may leave thinking 'IPOs = free money'. Add one line on the lesson screen that listings can open below the issue price, with one real example taken from Chittorgarh (to verify before adding)."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "safe": true,
+     "text": "Jio is a listed stock today, and the screens give it verdicts ('it makes money', 'FINE', 'a good sign'). The projector has no disclaimer at all; only the phones do. Add a small line on the host screens: 'A case study of a past IPO for learning, not a view on buying Jio shares. IFM is not SEBI-registered.'"
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "safe": true,
+     "text": "To verify: the 'India applied ₹4,90,414 Crore' total does not match 22.19× the ₹30,187.65 Cr issue, which comes to about ₹6.7 lakh Cr. It may use the issue minus the anchor portion. Confirm the figure and its basis on Chittorgarh before it is shown again, both in the dot moment and on the subscription screen."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "safe": true,
+     "text": "To verify: the 'real Jio odds' (retail about 7 in 10, HNI about 1 in 9) were worked out by hand from Chittorgarh numbers, as a code note admits; no official ratio was used. Check them against the registrar's basis-of-allotment notice. Also confirm that the 14.00× HNI figure is for the ₹2–10 lakh (small HNI) group the game uses, not all HNIs. The same odds are typed again in four places (phone choose screen, allotment, side-by-side, lesson), so fix all of them together."
+    },
+    {
+     "area": "Compliance",
+     "priority": "Med",
+     "effort": "S",
+     "safe": true,
+     "text": "To verify: 'His firm Rainmatter bid in Jio's anchor book'. The quoted post only says Kamath wanted ₹500 Cr of exposure, and names neither the firm nor the anchor book. Also confirm ₹1,358 was the NSE opening price. Check FY26 revenue (₹1,46,885 Cr), profit (₹30,049 Cr), 53.33 Cr subscribers and Reliance's stake (66.43% → 64.48%) against the offer document."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "safe": true,
+     "text": "The enlarged QR says 'or go to the URL and enter the code', but there is no place on the phone to enter a code. The plain URL actually makes you a host. Change it to 'Scan to join'."
+    },
+    {
+     "area": "Game design",
+     "priority": "Low",
+     "effort": "S",
+     "safe": false,
+     "text": "The corner 'Scan to (re)join' QR stays up after the IPO closes. Late scanners get 'You didn't apply this time' and are listed as 'sat out' on the projector. Hide the QR once bidding closes, or tell late joiners 'You joined after bidding closed — watch the screen'."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "M",
+     "safe": false,
+     "text": "There is no way to remove a player or fix a rude or duplicate name, and every name goes on the projector. Add tap-to-remove in the lobby, and number duplicates automatically ('Priya', 'Priya 2')."
+    },
+    {
+     "area": "Speed",
+     "priority": "Low",
+     "effort": "S",
+     "safe": false,
+     "text": "Every phone checks the database every 2.5 seconds for as long as the tab stays open, even after the game ends. With 60 phones that is about 24 requests a second on the shared Stock Rush database. Slow it down after the lesson screen. Also pin the database library to a fixed version so an update can't change it mid-class."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "safe": true,
+     "text": "Phone screens say 'Hiral's projector', 'Hiral's laptop' and 'When Hiral opens bidding'. That reads wrong when Wendy or a corporate trainer runs the session. Say 'the big screen'."
+    },
+    {
+     "area": "Accessibility",
+     "priority": "Low",
+     "effort": "S",
+     "safe": true,
+     "text": "Many projector labels are tiny (9.5–11px) in pale grey-blue on navy and wash out on classroom projectors. Make the small capital-letter labels larger and brighter."
+    },
+    {
+     "area": "Bug",
+     "priority": "Low",
+     "effort": "S",
+     "safe": true,
+     "text": "The QR-centre logo loads from the old ifm-deploy.vercel.app address. The Jio logo and Kamath photo load from Wikimedia, and the Jio logo did not appear in one phone-size test. Copy all three into our own assets so they always load."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "safe": true,
+     "text": "The subscription cards describe demand three different ways ('₹2.7 chasing every ₹1', '14 bids per share on offer', 'went berserk'). '14 bids per share' is not what 14× means. Use one plain form for all three: 'every ₹1 of shares had ₹X chasing it'."
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "safe": true,
+     "text": "Chooser: on a phone, 'RUN JIO LIVE' takes a solo visitor straight onto the teacher's projector screen. That screen is unreadable at phone size and opens a real room. Under the Jio card, add 'For teachers: needs a laptop + projector, about 25 min. Joining a class? Scan the QR on the big screen.'"
+    },
+    {
+     "area": "Mobile",
+     "priority": "Med",
+     "effort": "S",
+     "safe": true,
+     "text": "Chooser: at phone width the cards' price, lot and window lines shrink to about 8px and are hard to read. Let the chooser stack at full size on phones instead of scaling down."
+    },
+    {
+     "area": "Copy",
+     "priority": "Low",
+     "effort": "S",
+     "safe": true,
+     "text": "Chooser: the Jio card's price band, lot, issue size and dates are typed separately from the Jio game's own data. A correction in one place (like the 8 Nov OFS fix) won't reach the other. Take the numbers from the same source, or add a note to update both."
+    }
+   ]
+  }
+ ]
+}

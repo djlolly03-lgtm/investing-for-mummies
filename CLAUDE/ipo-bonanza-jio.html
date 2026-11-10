@@ -560,7 +560,8 @@ input[type=range].lotslider::-moz-range-thumb{width:30px;height:30px;border-radi
    scrolling. + / - nudges the size (remembered), 0 resets. Phones and the dot moment are
    not scaled — the dot canvas already sizes itself to the screen. */
 (function(){
-  if((new URLSearchParams(location.search).get('role')||'host')!=='host') return;
+  var _q=new URLSearchParams(location.search);
+  if((_q.get('role')||(_q.get('room')?'player':'host'))!=='host') return;   // same rule as ROLE below
   var KEY='ifm-ipo-scale', BASE_W=1200, MAX=2.4, MIN=0.42, busy=false, queued=false;
   function adj(){ try{ return parseFloat(localStorage.getItem(KEY))||1; }catch(e){ return 1; } }
   /* Fit = as big as the width allows (capped), then shrink until the screen's content
@@ -695,7 +696,10 @@ const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
 const MY_ID=(function(){let id=null;try{id=localStorage.getItem('ifj_pid');if(!id){id=crypto.randomUUID();localStorage.setItem('ifj_pid',id);}}catch(e){id=id||('tmp-'+Math.random().toString(36).slice(2));}return id;})();
 
 const params=new URLSearchParams(location.search);
-let ROLE=params.get('role')||'host';
+/* A link that carries a room code but no role (someone typing the address plus
+   the code from the projector) joins as a PLAYER. Only ?role=host — which the
+   teacher's own page writes into its address — can host. (10 Nov 2026) */
+let ROLE=params.get('role')||(params.get('room')?'player':'host');
 let ROOM=(params.get('room')||'').toUpperCase()||null;
 let isHost=(ROLE==='host');
 
@@ -1578,7 +1582,7 @@ function openQRFull(){
   let o=document.getElementById('qrOverlay');
   if(o){ o.remove(); return; }
   o=document.createElement('div'); o.id='qrOverlay';
-  o.innerHTML='<div class="ql">SCAN TO JOIN · OR GO TO THE URL AND ENTER THE CODE</div><div class="qc" id="qrFullBox"></div><div class="code">'+esc(ROOM)+'</div>';
+  o.innerHTML='<div class="ql">SCAN TO JOIN</div><div class="qc" id="qrFullBox"></div><div class="code">'+esc(ROOM)+'</div>';
   o.onclick=()=>o.remove();
   document.body.appendChild(o);
   makeQR(document.getElementById('qrFullBox'),Math.round(Math.min(innerWidth,innerHeight)*0.6));
@@ -2234,15 +2238,20 @@ function askConfirm(o,onYes){
     '<div class="m-keys">ENTER = yes · ESC = cancel</div></div>';
   const host=document.getElementById('host'); if(host&&host.style.zoom) wrap.firstChild.style.zoom=host.style.zoom;
   document.body.appendChild(wrap);
-  const close=yes=>{ removeEventListener('keydown',onKey,true); wrap.remove(); _modalOpen=false; if(yes) onYes(); };
+  const close=yes=>{ removeEventListener('keydown',onKey,true); removeEventListener('keyup',onKey.space,true); wrap.remove(); _modalOpen=false; if(yes) onYes(); };
+  /* SPACE is the teacher's "next" key all game, so inside a pop-up it must do
+     nothing — never press YES. YES is ENTER or a click only (10 Nov 2026). */
   const onKey=e=>{ if(e.key==='Escape'){ e.preventDefault(); e.stopPropagation(); close(false); }
     else if(e.key==='Enter'){ e.preventDefault(); e.stopPropagation(); close(true); }
+    else if(e.code==='Space'||e.key===' '){ e.preventDefault(); e.stopPropagation(); }
     else { e.stopPropagation(); } };
   addEventListener('keydown',onKey,true);
+  addEventListener('keyup',onKey.space=e=>{ if(e.code==='Space'||e.key===' '){ e.preventDefault(); e.stopPropagation(); } },true);
   wrap.onclick=e=>{ if(e.target===wrap) close(false); };
   document.getElementById('mNo').onclick=()=>close(false);
   document.getElementById('mYes').onclick=()=>close(true);
-  setTimeout(()=>{ const y=document.getElementById('mYes'); if(y) y.focus(); },30);
+  /* focus the card, not YES — a focused button is pressed by SPACE natively */
+  setTimeout(()=>{ const c=wrap.firstChild; if(c){ c.tabIndex=-1; c.style.outline='none'; c.focus(); } },30);
 }
 
 function pushHistory(){
