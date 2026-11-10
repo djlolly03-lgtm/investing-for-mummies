@@ -1477,5 +1477,20 @@
    "Hiral"
   ],
   "_why": "Backlog pass 1 Nov 2026, judged from the image after the EXIF rotation was corrected."
+ },
+ "IFM-1150": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "daily-content-processor 10 Nov 2026: Hiral is the subject, face clear, to camera. Raw-take video frame, not a designed cover. Rank 3 (not shown by default) because identity was judged by eye from one frame, not checked against a known portrait."
+ },
+ "IFM-750": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "daily-content-processor 10 Nov 2026: Hiral is the subject, face clear, to camera. Raw-take video frame, not a designed cover. Rank 3 (not shown by default) because identity was judged by eye from one frame, not checked against a known portrait."
+ },
+ "IFM-1151": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "daily-content-processor 10 Nov 2026: Hiral is the subject, face clear, to camera. Raw-take video frame, not a designed cover. Rank 3 (not shown by default) because identity was judged by eye from one frame, not checked against a known portrait."
  }
 }

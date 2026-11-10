@@ -1,12 +1,24 @@
 {
- "generated_by": "daily-content-processor 2026-11-03",
- "note": "3 Nov scan: 2,575 media files, 0 listing errors, 206 new since 1 Nov, none staged (needs visual cataloguing). Earlier items below unchanged.",
- "count": 27,
+ "generated_by": "daily-content-processor 2026-11-10",
+ "note": "10 Nov scan: 2,729 media files, 0 listing errors, 74 new since 5 Nov. 9 rows staged, 2 planned rows relinked. Earlier items below unchanged.",
+ "count": 29,
  "items": [
   {
-   "source": "206 new media files since 1 Nov are NOT yet catalogued",
-   "title": "Found 3 Nov scan (2,575 files, 0 listing errors; was 2,369). Content Library/IYA Oct & Nov 2026: 119 · Aakara November: Teen Patti Diwali 22, Dhanteras 21, Brand awareness-partner 13 · Certificates 12 (minors/consent guard applies) · Clear tax report 9 · IFM feedback videos 8 (one row per file, testimonials) · Hiral portraits 1 · Aakara October/Reels/Jenga 1. 192 videos, 14 images. Staging needs frame-by-frame viewing and thumbnails; not done in this unattended run. ACTION: run a full catalogue pass (Aakara November topics first: one row per topic folder).",
+   "source": "217 media files still have no row of their own or a folder row covering them",
+   "title": "Found 10 Nov scan (2,729 files, 0 listing errors). Today's catalogue passes plus this run staged everything that arrived since 5 Nov. What is left: Aakara October/Reels 28 · Pictures 22 · Certificates 21 (minors/consent guard applies) · Jio ipo reel (raw) 18 · Content Library/Aakara — June 2026 subfolders ~77 (most are copies of Aakara's own tree, which today's 16:38 commit catalogued once, so check before adding rows) · Clear tax report 10 · IFM feedback videos 8 (testimonials, one row per file) · Sakshi uploads 7 · Nirmala Sitharaman (raw) 5 · Hiral Goel 1. Skip on purpose: AI Videos — Jun 2026 (10) and Goa REELS (Claude) (10). ACTION: catalogue the 8 testimonials first, then Clear tax report and Jio ipo reel (raw).",
    "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
+   "status": "needs_review"
+  },
+  {
+   "source": "check-types: 4 reel-cover rows typed Image now have a playable clip (IFM-204, 321, 343, 375)",
+   "title": "enrichment.json types these four as Image, a human call made 18 Sep: they were Aakara reel COVERS and the finished reel did not exist. This morning's 'Rescue the stranded clips' commit (7db29a9) gave each one a /content/clips/ preview, so check-types --strict now reports them as Video. Not changed by the 10 Nov processor run because it would override the recorded decision. ACTION: if the clips really are the finished reels, delete the type:Image override (and the _why) for these four ids and re-run backfill.py.",
+   "folder_url": "https://drive.google.com/drive/folders/1G-T-sRyu57CaISGa2Et0_FyKzeSqclCl",
+   "status": "needs_review"
+  },
+  {
+   "source": "11 new video rows (IFM-1144..1152, IFM-749, IFM-750) wait on preview clips before the Library shows them",
+   "title": "Staged and deployed 10 Nov. They show in the Content Hub now. The V1 Library hides any Video row until media-map.js says it plays. ACTION: run scripts/ifm-make-previews.sh for these ids, deploy, run media-audit.py, deploy again. Masters: two finished reels are small (16.6 MB and 9.2 MB), Teen Patti final is 456 MB; the rest are raw-take folders, so use the thumbnail's file for the clip.",
+   "folder_url": "https://drive.google.com/drive/folders/1drDb3FpSVqkfy08HqrKkoYkNY8ESueVX",
    "status": "needs_review"
   },
   {

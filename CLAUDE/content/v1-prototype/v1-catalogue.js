@@ -32236,12 +32236,43 @@ window.IFM_V1 =
 },
 {
 "id": "IFM-749",
-"title": "November: Diwali — Teen Patti (Flash), 3 tips while holding cards 1, 2, 3 (planned)",
+"title": "November: Is the stock market like a Teen Patti game? — Diwali reel",
 "date": "2026-11-01",
-"thumb": "",
+"thumb": "../thumbs/IFM-749.jpg",
 "video": "",
-"drive": "https://docs.google.com/presentation/d/1j88loWk4b_yUlDu_CokLLigpPdvyQKU1sKj6QxJ5gVQ/edit",
-"description": "Planned topical Diwali reel from Aakara's November deck: Hiral holds playing cards 1, 2 and 3 and gives three Diwali money tips, riffing on the card game Teen Patti. Slide carries the concept only — no footage, cover or copy delivered yet.",
+"drive": "https://drive.google.com/drive/folders/1EO-P2VoEjxwVtgb91a7LkdE88s0TBXa2",
+"description": "Aakara’s Diwali reel: Hiral in an orange saree holds three playing cards and asks “is the stock market like a teen patti game?”, giving three money tips. Folder holds the finished video (Final Video/IFM_3P_V04.mp4, 456 MB), the cover, and 22 raw takes.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "is the stock market like a teen patti game?",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Portrait",
+"topic": [
+"Family & Money",
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "november stock market like teen patti game diwali reel aakara hiral orange saree holds three playing cards asks giving money tips folder finished video final ifm v04 mp4 456 cover raw takes flash topical festival planned internal deck placeholder",
+"phash": "51a89279e4e4ecec"
+},
+{
+"id": "IFM-750",
+"title": "November: The “Luggage Tag” secret — 18 raw takes of Hiral (no edit yet)",
+"date": "2026-11-01",
+"thumb": "../thumbs/IFM-750.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/13A79UDKzPlE2wrOOMDJN6SRaFPgpkTDG",
+"description": "Raw footage for Aakara’s “Luggage Tag” goal-attached investing post: Hiral seated in a white tee and jeans by a window with a plant, 9 camera takes plus 9 phone takes. No edited reel yet. Concept: tag each SIP with a concrete life goal.",
 "session": "",
 "audience": "Mummies",
 "batch": "",
@@ -32250,42 +32281,19 @@ window.IFM_V1 =
 "silent": false,
 "type": "Video",
 "status": "Raw",
-"format": "Social Graphic",
+"format": "Portrait",
 "topic": [
-"Family & Money"
+"Investing"
 ],
 "person": [
-"Hiral",
-"Student"
+"Hiral"
 ],
 "hiral_named": true,
 "source": "Aakara",
-"search_terms": "november diwali teen patti flash tips while holding cards planned topical reel from aakara deck hiral holds playing gives three money riffing card game slide carries concept only footage cover copy delivered yet festival internal placeholder"
-},
-{
-"id": "IFM-750",
-"title": "November: The “Luggage Tag” secret — goal-attached investing (planned)",
-"date": "2026-11-01",
-"thumb": "",
-"video": "",
-"drive": "https://docs.google.com/presentation/d/1j88loWk4b_yUlDu_CokLLigpPdvyQKU1sKj6QxJ5gVQ/edit",
-"description": "Planned ‘finance terms with analogies’ post from Aakara's November deck: a leather luggage tag with the destination written on it stands for tagging each SIP with a concrete life goal (“Amalfi Coast 2027”, “Studio expansion”) so saving stops feeling boring and getting spent. Concept slide only; nothing delivered yet.",
-"session": "",
-"audience": "Mummies",
-"batch": "",
-"captured_at": "",
-"slide_text": "finance terms with analogies s November deck: a leather luggage tag with the destination written on it stands for tagging each SIP with a concrete life goal (“Amalfi Coast 2027 Studio expansion",
-"silent": false,
-"type": "Video",
-"status": "Raw",
-"format": "Social Graphic",
-"topic": [
-"Saving",
-"Investing"
-],
-"person": [],
-"source": "Aakara",
-"search_terms": "sip systematic investment plan monthly investing november luggage tag secret goal attached investing planned finance terms analogies post from aakara deck leather destination written stands tagging each sip concrete life amalfi coast 2027 studio expansion saving stops feeling boring getting spent concept slide only nothing delivered"
+"search_terms": "sip systematic investment plan monthly investing november luggage tag secret raw takes hiral edit yet footage aakara goal attached investing post seated white tee jeans window plant camera plus phone edited reel concept each sip concrete life goals analogy finance terms analogies delayed gratification planned internal",
+"phash": "d1d2d0486567dc54",
+"kit": "portrait",
+"kit_rank": 3
 },
 {
 "id": "IFM-751",
@@ -42633,5 +42641,270 @@ window.IFM_V1 =
 "source": "Aakara",
 "search_terms": "june spacex carousel second set seven slide dark slate ifm style artboards folder instagram finished post aakara",
 "phash": "f6c4f07191580b0c"
+},
+{
+"id": "IFM-1144",
+"title": "Trump just lost Congress — good news for India? (finished reel)",
+"date": "2026-11-05",
+"thumb": "../thumbs/IFM-1144.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/1DFUwFrzsxVVrmJPOnuMtlCh9JSlNhumm/view",
+"description": "Finished news reel: Hiral explains what the US midterm result (“Trump just lost Congress”) means for Indian investors. Cover shows the Sensex up 1.94% with gold and silver tags; the reel is Hiral to camera at her desk in a pink check sleeveless top, captions burned in.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "Trump just lost Congress",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Portrait",
+"topic": [
+"Stocks / Equity",
+"Silver"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "trump just lost congress good news india finished reel hiral explains what midterm result means indian investors cover shows sensex gold silver tags camera her desk pink check sleeveless top captions burned midterms markets topical piece led",
+"phash": "0768ceb16d4c6053"
+},
+{
+"id": "IFM-1145",
+"title": "Trump midterm setback — 13 raw takes of Hiral at her desk",
+"date": "2026-11-05",
+"thumb": "../thumbs/IFM-1145.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1JHcXscSI84LuZxmfUVi_xXfuA9c0TBMj",
+"description": "Thirteen raw piece-to-camera takes for the Trump midterm reel: Hiral seated at a wooden desk in a pink check sleeveless top, black skirt, office chair behind. Untranscribed. Opens the folder (also holds the finished reel and its cover).",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Portrait",
+"topic": [
+"Family & Money",
+"Fixed Income"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Unknown",
+"search_terms": "trump midterm setback raw takes hiral her desk thirteen piece camera reel seated wooden pink check sleeveless top black skirt office chair behind untranscribed opens folder also holds finished cover midterms news catch all",
+"phash": "10b62467c3c3fe76"
+},
+{
+"id": "IFM-1146",
+"title": "Paying a hidden commission? Direct vs regular mutual fund plans (finished reel)",
+"date": "2026-11-04",
+"thumb": "../thumbs/IFM-1146.jpg",
+"video": "",
+"drive": "https://drive.google.com/file/d/19EsFapgIooXi3b1Z0pIhAspoI-_smurf/view",
+"description": "Finished reel on direct versus regular mutual fund plans, opening on “Paying a hidden commission?” over a phone showing a fund statement, then Hiral at her desk in a black sleeveless top explaining the difference.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Ready",
+"format": "Portrait",
+"topic": [
+"Managing Money",
+"Mutual Funds"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Sakshi",
+"search_terms": "paying hidden commission direct regular mutual fund plans finished reel versus opening over phone showing statement then hiral her desk black sleeveless top explaining difference funds plan expense ratio distributor piece camera account",
+"phash": "4e19b68e4d2a6358"
+},
+{
+"id": "IFM-1147",
+"title": "Direct vs regular plans — 16 raw takes of Hiral with the IFM book",
+"date": "2026-11-04",
+"thumb": "../thumbs/IFM-1147.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1A_tMV2W0hI5-3f2kUNRe_TFfc6gqIVf3",
+"description": "Sixteen raw takes for the direct-vs-regular reel: Hiral at an office desk in a black sleeveless top, the Investing for Mummies book and a laptop in front of her. Untranscribed. Opens the folder (also holds the finished reel).",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Portrait",
+"topic": [
+"Family & Money",
+"Mutual Funds",
+"Fixed Income"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Unknown",
+"search_terms": "direct regular plans raw takes hiral ifm book sixteen reel office desk black sleeveless top investing mummies laptop front her untranscribed opens folder also holds finished piece camera plan mutual funds catch all",
+"phash": "30304a6e72543d90"
+},
+{
+"id": "IFM-1148",
+"title": "Nasdaq — 9 raw takes of Hiral at her desk (no finished reel yet)",
+"date": "2026-11-06",
+"thumb": "../thumbs/IFM-1148.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/18DH8IQZo7DziLRxce4CMwuv0aToQ1co7",
+"description": "Nine raw piece-to-camera takes for a Nasdaq topic: Hiral in an office chair in a black sleeveless top and red skirt, pin board and TV behind her. Untranscribed; no edited reel in the folder yet.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Portrait",
+"topic": [
+"Stocks / Equity",
+"Fixed Income"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Unknown",
+"search_terms": "nasdaq raw takes hiral her desk finished reel yet nine piece camera topic office chair black sleeveless top red skirt pin board behind untranscribed edited folder stocks international investing news catch all",
+"phash": "313aad6a72e69352"
+},
+{
+"id": "IFM-1149",
+"title": "November: This Dhanteras, explore gold investment options — ETF, EGR, digital gold",
+"date": "2026-11-02",
+"thumb": "../thumbs/IFM-1149.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1foFZJ2cNerw9ETNyGJT8Cysi3UsLTct4",
+"description": "Aakara’s Dhanteras topic: a cover reading “this dhanteras, explore gold investment options” with ETF, EGR and Digital Gold tags around Hiral in a pink kurta, plus 21 raw takes of her standing against a plain wall. No edited reel in the folder yet.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "this dhanteras, explore gold investment options",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Portrait",
+"topic": [
+"ETFs",
+"Gold"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "november dhanteras explore gold investment options etf egr digital aakara topic cover reading tags around hiral pink kurta plus raw takes her standing against plain wall edited reel folder yet diwali electronic receipt festival topical",
+"phash": "51a894b0e8e4d4d4"
+},
+{
+"id": "IFM-1150",
+"title": "November: After Diwali — 27 raw takes of Hiral in a red top",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-1150.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1G1y6mX08fRlNaJqennTwhxDufgjUFnw9",
+"description": "Raw footage for Aakara’s “After diwali” topic: Hiral seated in a beige armchair in a red top and black skirt, hands clasped, sheer curtains and a plant behind. 14 camera takes (MVI_0290–0303) plus 13 phone takes in an “Audio” subfolder. Untranscribed; no edited reel yet.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Portrait",
+"topic": [
+"Fixed Income"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "november after diwali raw takes hiral red top footage aakara topic seated beige armchair black skirt hands clasped sheer curtains plant behind camera mvi 0290 0303 plus phone audio subfolder untranscribed edited reel yet post festival money habits piece catch",
+"phash": "299bb6ebe932b4dc",
+"kit": "portrait",
+"kit_rank": 3
+},
+{
+"id": "IFM-1151",
+"title": "November: Brand awareness — partner, 13 raw takes of Hiral on the sofa",
+"date": "2026-11-02",
+"thumb": "../thumbs/IFM-1151.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/1tG61hwHbSd-MShCByX97m4TIeJYzk1kP",
+"description": "Thirteen raw takes for Aakara’s November “Brand awareness – partner” topic: Hiral seated on a beige sofa in a black-and-multicolour printed sleeveless top, green wall art above. Untranscribed; who the partner is is not visible.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Portrait",
+"topic": [
+"Family & Money",
+"Fixed Income"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "november brand awareness partner raw takes hiral sofa thirteen aakara topic seated beige black multicolour printed sleeveless top green wall art above untranscribed who not visible partnership piece camera catch all",
+"phash": "74336969e1e1dad8",
+"kit": "portrait",
+"kit_rank": 3
+},
+{
+"id": "IFM-1152",
+"title": "November: “One’s a day” — single raw take of Hiral standing",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-1152.jpg",
+"video": "",
+"drive": "https://drive.google.com/drive/folders/13sJv_rYep-mZ-zSYH0KSwt-wgaUBPsGR",
+"description": "One raw take (IMG_6787, 47 MB) of Hiral standing against a white wall in a pink check sleeveless top and black skirt, for an Aakara November topic folder named “One’s a day”.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"type": "Video",
+"status": "Raw",
+"format": "Portrait",
+"topic": [],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "Aakara",
+"search_terms": "november one day single raw take hiral standing img 6787 against white wall pink check sleeveless top black skirt aakara topic folder named ones piece camera",
+"phash": "e0032c58181878d8"
 }
 ];
