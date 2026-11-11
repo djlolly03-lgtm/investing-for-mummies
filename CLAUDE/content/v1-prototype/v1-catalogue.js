@@ -37159,12 +37159,12 @@ window.IFM_V1 =
 {
 "id": "IFM-891",
 "title": "Presenter at the three-buckets slide",
-"date": "2026-11-01",
+"date": "2026-10-29",
 "thumb": "../thumbs/IFM-891.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-891.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-891.mp4",
+"drive": "https://drive.google.com/drive/folders/1zqkYjqdOPBMYDMXE8V_dQhbHZtLAnlfw",
 "description": "A presenter stands at the TV talking through the three-buckets slide - three coloured cups on screen - with the room watching from the table.",
-"session": "",
+"session": "Corporate video shoot — Oct 2026 (b-roll)",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37173,16 +37173,17 @@ window.IFM_V1 =
 "sensitive": [],
 "type": "Video",
 "status": "Ready",
-"format": "Social Graphic",
+"format": "B-roll",
 "topic": [
-"3-Bucket Investing"
+"3-Bucket Investing",
+"Investing"
 ],
 "person": [
 "Hiral"
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "presenter three buckets slide stands talking through coloured cups screen room watching from table presenting teaching",
+"search_terms": "presenter three buckets slide stands talking through coloured cups screen room watching from table presenting teaching bucket investing corporate video roll",
 "phash": "3e3d236e03191a17"
 },
 {
@@ -37216,12 +37217,12 @@ window.IFM_V1 =
 {
 "id": "IFM-893",
 "title": "Piece to camera in the pink kurta — take 1",
-"date": "2026-11-01",
+"date": "2026-10-29",
 "thumb": "../thumbs/IFM-893.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-893.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-893.mp4",
+"drive": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
 "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-"session": "",
+"session": "SEBI / AMC reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37231,23 +37232,25 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Mutual Funds"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head",
+"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head sebi amc asset management company regulation mutual funds",
 "phash": "706369e845c5c9c7"
 },
 {
 "id": "IFM-894",
 "title": "Piece to camera in the pink kurta — take 2",
-"date": "2026-11-01",
+"date": "2026-10-29",
 "thumb": "../thumbs/IFM-894.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-894.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-894.mp4",
+"drive": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
 "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-"session": "",
+"session": "SEBI / AMC reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37257,23 +37260,25 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Mutual Funds"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head",
+"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head sebi amc asset management company regulation mutual funds",
 "phash": "506249c8c589c987"
 },
 {
 "id": "IFM-895",
 "title": "Piece to camera in the pink kurta — take 3",
-"date": "2026-11-01",
+"date": "2026-10-29",
 "thumb": "../thumbs/IFM-895.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-895.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-895.mp4",
+"drive": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
 "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-"session": "",
+"session": "SEBI / AMC reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37283,23 +37288,25 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Mutual Funds"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head",
+"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head sebi amc asset management company regulation mutual funds",
 "phash": "70616dc527e1c687"
 },
 {
 "id": "IFM-896",
 "title": "Piece to camera in the pink kurta — take 4",
-"date": "2026-11-01",
+"date": "2026-10-29",
 "thumb": "../thumbs/IFM-896.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-896.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-896.mp4",
+"drive": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
 "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-"session": "",
+"session": "SEBI / AMC reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37309,23 +37316,25 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Mutual Funds"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head",
+"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head sebi amc asset management company regulation mutual funds",
 "phash": "5432696963d5c9c6"
 },
 {
 "id": "IFM-897",
 "title": "Piece to camera in the pink kurta — take 5",
-"date": "2026-11-01",
+"date": "2026-10-29",
 "thumb": "../thumbs/IFM-897.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-897.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-897.mp4",
+"drive": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
 "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-"session": "",
+"session": "SEBI / AMC reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37335,23 +37344,25 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Mutual Funds"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head",
+"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head sebi amc asset management company regulation mutual funds",
 "phash": "543369c9c5c1cac6"
 },
 {
 "id": "IFM-898",
 "title": "Piece to camera in the pink kurta — take 6",
-"date": "2026-11-01",
+"date": "2026-10-29",
 "thumb": "../thumbs/IFM-898.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-898.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-898.mp4",
+"drive": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
 "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-"session": "",
+"session": "SEBI / AMC reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37361,23 +37372,25 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Mutual Funds"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head",
+"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head sebi amc asset management company regulation mutual funds",
 "phash": "503269c9c7d1c9ce"
 },
 {
 "id": "IFM-899",
 "title": "Piece to camera in the pink kurta — take 7",
-"date": "2026-11-01",
+"date": "2026-10-29",
 "thumb": "../thumbs/IFM-899.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-899.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-899.mp4",
+"drive": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
 "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-"session": "",
+"session": "SEBI / AMC reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37387,23 +37400,25 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Mutual Funds"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head",
+"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head sebi amc asset management company regulation mutual funds",
 "phash": "543269edc3d7cdcf"
 },
 {
 "id": "IFM-900",
 "title": "Piece to camera in the pink kurta — take 8",
-"date": "2026-11-01",
+"date": "2026-10-29",
 "thumb": "../thumbs/IFM-900.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-900.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-900.mp4",
+"drive": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
 "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-"session": "",
+"session": "SEBI / AMC reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37413,23 +37428,25 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Mutual Funds"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head",
+"search_terms": "piece camera pink kurta take woman rose linen yellow green tassel tie speaks against grey hand drawn jungle pattern wallpaper gesturing both hands talking head sebi amc asset management company regulation mutual funds",
 "phash": "1c706369c9c5a5c5"
 },
 {
 "id": "IFM-901",
 "title": "Piece to camera at the wood panel — take 1",
-"date": "2026-11-01",
+"date": "2026-10-28",
 "thumb": "../thumbs/IFM-901.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-901.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-901.mp4",
+"drive": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
 "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-"session": "",
+"session": "Jio listing day reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37439,23 +37456,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head",
+"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head jio listing day ipo one pop stock market",
 "phash": "b7ebcd69597d3f1b"
 },
 {
 "id": "IFM-902",
 "title": "Piece to camera at the wood panel — take 2",
-"date": "2026-11-01",
+"date": "2026-10-28",
 "thumb": "../thumbs/IFM-902.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-902.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-902.mp4",
+"drive": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
 "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-"session": "",
+"session": "Jio listing day reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37465,23 +37486,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head",
+"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head jio listing day ipo one pop stock market",
 "phash": "b7cbc94b79693f3b"
 },
 {
 "id": "IFM-903",
 "title": "Piece to camera at the wood panel — take 3",
-"date": "2026-11-01",
+"date": "2026-10-28",
 "thumb": "../thumbs/IFM-903.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-903.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-903.mp4",
+"drive": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
 "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-"session": "",
+"session": "Jio listing day reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37491,23 +37516,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head",
+"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head jio listing day ipo one pop stock market",
 "phash": "b3edcd6979593f33"
 },
 {
 "id": "IFM-904",
 "title": "Piece to camera at the wood panel — take 4",
-"date": "2026-11-01",
+"date": "2026-10-28",
 "thumb": "../thumbs/IFM-904.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-904.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-904.mp4",
+"drive": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
 "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-"session": "",
+"session": "Jio listing day reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37517,23 +37546,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head",
+"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head jio listing day ipo one pop stock market",
 "phash": "b7ebcd4bd9eb3f3f"
 },
 {
 "id": "IFM-905",
 "title": "Piece to camera at the wood panel — take 5",
-"date": "2026-11-01",
+"date": "2026-10-28",
 "thumb": "../thumbs/IFM-905.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-905.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-905.mp4",
+"drive": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
 "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-"session": "",
+"session": "Jio listing day reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37543,23 +37576,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head",
+"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head jio listing day ipo one pop stock market",
 "phash": "d7ebc948cbcb3b7e"
 },
 {
 "id": "IFM-906",
 "title": "Piece to camera at the wood panel — take 6",
-"date": "2026-11-01",
+"date": "2026-10-28",
 "thumb": "../thumbs/IFM-906.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-906.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-906.mp4",
+"drive": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
 "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-"session": "",
+"session": "Jio listing day reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37569,23 +37606,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head",
+"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head jio listing day ipo one pop stock market",
 "phash": "f7edcd4bc9c93f6e"
 },
 {
 "id": "IFM-907",
 "title": "Piece to camera at the wood panel — take 7",
-"date": "2026-11-01",
+"date": "2026-10-28",
 "thumb": "../thumbs/IFM-907.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-907.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-907.mp4",
+"drive": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
 "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-"session": "",
+"session": "Jio listing day reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37595,23 +37636,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head",
+"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head jio listing day ipo one pop stock market",
 "phash": "b7dbd9cbebdb3f76"
 },
 {
 "id": "IFM-908",
 "title": "Piece to camera at the wood panel — take 8",
-"date": "2026-11-01",
+"date": "2026-10-28",
 "thumb": "../thumbs/IFM-908.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-908.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-908.mp4",
+"drive": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
 "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-"session": "",
+"session": "Jio listing day reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37621,23 +37666,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head",
+"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head jio listing day ipo one pop stock market",
 "phash": "d7edcdc9c9c93b7e"
 },
 {
 "id": "IFM-909",
 "title": "Piece to camera at the wood panel — take 9",
-"date": "2026-11-01",
+"date": "2026-10-28",
 "thumb": "../thumbs/IFM-909.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-909.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-909.mp4",
+"drive": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
 "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-"session": "",
+"session": "Jio listing day reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37647,23 +37696,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head",
+"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head jio listing day ipo one pop stock market",
 "phash": "f7edcdc9c9d93f7e"
 },
 {
 "id": "IFM-910",
 "title": "Piece to camera at the wood panel — take 10",
-"date": "2026-11-01",
+"date": "2026-10-28",
 "thumb": "../thumbs/IFM-910.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-910.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-910.mp4",
+"drive": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
 "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-"session": "",
+"session": "Jio listing day reel shoot",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37673,23 +37726,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "",
-"topic": [],
+"topic": [
+"Stocks / Equity",
+"Stock Market",
+"IPOs"
+],
 "person": [
 "Other Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head",
+"search_terms": "piece camera wood panel take woman black sleeveless top soft beige skirt speaks against boardroom panelled wall hands low moving she talks talking head jio listing day ipo one pop stock market",
 "phash": "b7cbcdc9c9f13b1b"
 },
 {
 "id": "IFM-911",
 "title": "Young adults workshop — shot from the near corner",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-911.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-911.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-911.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; shot from the near corner, two participants in the foreground.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37699,25 +37756,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "Classroom Moment",
-"topic": [],
+"topic": [
+"Wealth"
+],
 "person": [
 "Hiral",
 "Student"
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop shot from near corner presenter bright yellow top participants round boardroom table worksheets bottles tissue box two foreground session slide",
+"search_terms": "young adults workshop shot from near corner presenter bright yellow top participants round boardroom table worksheets bottles tissue box two foreground session slide iya youth cohort worksheet wealth equation",
 "phash": "8484241c32040e88"
 },
 {
 "id": "IFM-912",
 "title": "Young adults workshop — from the far end",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-912.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-912.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-912.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; from the far end, the table running away from camera.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37727,25 +37786,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "Classroom Moment",
-"topic": [],
+"topic": [
+"Wealth"
+],
 "person": [
 "Hiral",
 "Student"
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop from far end presenter bright yellow top participants round boardroom table worksheets bottles tissue box running away camera session slide",
+"search_terms": "young adults workshop from far end presenter bright yellow top participants round boardroom table worksheets bottles tissue box running away camera session slide iya youth cohort worksheet wealth equation",
 "phash": "02c22c3465193020"
 },
 {
 "id": "IFM-913",
 "title": "Young adults workshop — the presenter seated at the table",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-913.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-913.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-913.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the presenter seated at the table, slide on 'Overview of Smart Investing'.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37756,6 +37817,7 @@ window.IFM_V1 =
 "status": "Ready",
 "format": "Classroom Moment",
 "topic": [
+"Wealth",
 "Investing"
 ],
 "person": [
@@ -37764,18 +37826,18 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop presenter seated table from bright yellow top participants round boardroom worksheets bottles tissue box slide overview smart investing session",
+"search_terms": "young adults workshop presenter seated table from bright yellow top participants round boardroom worksheets bottles tissue box slide overview smart investing session iya youth cohort worksheet wealth equation",
 "phash": "73e7a6862cac80cf"
 },
 {
 "id": "IFM-914",
 "title": "Young adults workshop — the 'Principle of Smart Investing' slide lit on the TV",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-914.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-914.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-914.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the 'Principle of Smart Investing' slide lit on the TV.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -37786,6 +37848,7 @@ window.IFM_V1 =
 "status": "Ready",
 "format": "Classroom Moment",
 "topic": [
+"Wealth",
 "Investing"
 ],
 "person": [
@@ -37794,236 +37857,18 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop principle smart investing slide lit from presenter bright yellow top participants round boardroom table worksheets bottles tissue box session",
+"search_terms": "young adults workshop principle smart investing slide lit from presenter bright yellow top participants round boardroom table worksheets bottles tissue box session iya youth cohort worksheet wealth equation",
 "phash": "38f87053b8343233"
 },
 {
 "id": "IFM-915",
 "title": "Young adults workshop — participants down the side of the table",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-915.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-915.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-915.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; participants down the side of the table, the screen beyond.",
-"session": "",
-"audience": "Mummies",
-"batch": "",
-"captured_at": "",
-"slide_text": "",
-"silent": false,
-"sensitive": [],
-"type": "Video",
-"status": "Ready",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Hiral",
-"Student"
-],
-"hiral_named": false,
-"source": "IFM / In-house",
-"search_terms": "young adults workshop participants down side table from presenter bright yellow top round boardroom worksheets bottles tissue box screen beyond session slide",
-"phash": "5944cc292c496130"
-},
-{
-"id": "IFM-916",
-"title": "Young adults workshop — the one male participant at the whiteboard end (1 of 4)",
-"date": "2026-11-01",
-"thumb": "../thumbs/IFM-916.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-916.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-916.mp4",
-"description": "A young man in a black hoodie sits alone at the whiteboard end of the boardroom table, turned toward the board of handwritten working. The only male participant in this cohort.",
-"session": "",
-"audience": "Mummies",
-"batch": "",
-"captured_at": "",
-"slide_text": "",
-"silent": false,
-"sensitive": [],
-"type": "Video",
-"status": "Ready",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "young adults workshop one male participant whiteboard end man black hoodie sits alone boardroom table turned toward board handwritten working only cohort",
-"phash": "4c140c66747e3e33"
-},
-{
-"id": "IFM-917",
-"title": "Young adults workshop — wide from the door end",
-"date": "2026-11-01",
-"thumb": "../thumbs/IFM-917.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-917.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-917.mp4",
-"description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; wide from the door end, presenter standing at the screen.",
-"session": "",
-"audience": "Mummies",
-"batch": "",
-"captured_at": "",
-"slide_text": "",
-"silent": false,
-"sensitive": [],
-"type": "Video",
-"status": "Ready",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Hiral",
-"Student"
-],
-"hiral_named": false,
-"source": "IFM / In-house",
-"search_terms": "young adults workshop wide from door end presenter bright yellow top participants round boardroom table worksheets bottles tissue box standing screen session slide",
-"phash": "9b9918d49397cc1b"
-},
-{
-"id": "IFM-918",
-"title": "Young adults workshop — a participant listening",
-"date": "2026-11-01",
-"thumb": "../thumbs/IFM-918.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-918.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-918.mp4",
-"description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; a participant listening, hand to her chin, slide behind.",
-"session": "",
-"audience": "Mummies",
-"batch": "",
-"captured_at": "",
-"slide_text": "",
-"silent": false,
-"sensitive": [],
-"type": "Video",
-"status": "Ready",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Hiral",
-"Student"
-],
-"hiral_named": false,
-"source": "IFM / In-house",
-"search_terms": "young adults workshop participant listening from presenter bright yellow top participants round boardroom table worksheets bottles tissue box hand her chin slide behind session",
-"phash": "f377b59303334163"
-},
-{
-"id": "IFM-919",
-"title": "Young adults workshop — the one male participant at the whiteboard end (2 of 4)",
-"date": "2026-11-01",
-"thumb": "../thumbs/IFM-919.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-919.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-919.mp4",
-"description": "A young man in a black hoodie sits alone at the whiteboard end of the boardroom table, turned toward the board of handwritten working. The only male participant in this cohort.",
-"session": "",
-"audience": "Mummies",
-"batch": "",
-"captured_at": "",
-"slide_text": "",
-"silent": false,
-"sensitive": [],
-"type": "Video",
-"status": "Ready",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "young adults workshop one male participant whiteboard end man black hoodie sits alone boardroom table turned toward board handwritten working only cohort",
-"phash": "52493291f8f4f878"
-},
-{
-"id": "IFM-920",
-"title": "Young adults workshop — a participant writing while another listens",
-"date": "2026-11-01",
-"thumb": "../thumbs/IFM-920.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-920.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-920.mp4",
-"description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; a participant writing while another listens.",
-"session": "",
-"audience": "Mummies",
-"batch": "",
-"captured_at": "",
-"slide_text": "",
-"silent": false,
-"sensitive": [],
-"type": "Video",
-"status": "Ready",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Hiral",
-"Student"
-],
-"hiral_named": false,
-"source": "IFM / In-house",
-"search_terms": "young adults workshop participant writing while another listens from presenter bright yellow top participants round boardroom table worksheets bottles tissue box session slide",
-"phash": "3513214843133624"
-},
-{
-"id": "IFM-921",
-"title": "Young adults workshop — the empty end of the table with the group beyond",
-"date": "2026-11-01",
-"thumb": "../thumbs/IFM-921.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-921.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-921.mp4",
-"description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the empty end of the table with the group beyond.",
-"session": "",
-"audience": "Mummies",
-"batch": "",
-"captured_at": "",
-"slide_text": "",
-"silent": false,
-"sensitive": [],
-"type": "Video",
-"status": "Ready",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Hiral",
-"Student"
-],
-"hiral_named": false,
-"source": "IFM / In-house",
-"search_terms": "young adults workshop empty end table group beyond from presenter bright yellow top participants round boardroom worksheets bottles tissue box session slide",
-"phash": "3c3953199ba70fc9"
-},
-{
-"id": "IFM-922",
-"title": "Young adults workshop — the one male participant at the whiteboard end (3 of 4)",
-"date": "2026-11-01",
-"thumb": "../thumbs/IFM-922.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-922.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-922.mp4",
-"description": "A young man in a black hoodie sits alone at the whiteboard end of the boardroom table, turned toward the board of handwritten working. The only male participant in this cohort.",
-"session": "",
-"audience": "Mummies",
-"batch": "",
-"captured_at": "",
-"slide_text": "",
-"silent": false,
-"sensitive": [],
-"type": "Video",
-"status": "Ready",
-"format": "Classroom Moment",
-"topic": [],
-"person": [
-"Student"
-],
-"source": "IFM / In-house",
-"search_terms": "young adults workshop one male participant whiteboard end man black hoodie sits alone boardroom table turned toward board handwritten working only cohort",
-"phash": "cfdb793c3e3c3e71"
-},
-{
-"id": "IFM-923",
-"title": "Young adults workshop — two participants turned to the screen",
-"date": "2026-11-01",
-"thumb": "../thumbs/IFM-923.jpg",
-"video": "https://ifm-deploy.vercel.app/content/clips/IFM-923.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-923.mp4",
-"description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; two participants turned to the screen, 'Inflation' on the slide.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38034,6 +37879,241 @@ window.IFM_V1 =
 "status": "Ready",
 "format": "Classroom Moment",
 "topic": [
+"Wealth"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "young adults workshop participants down side table from presenter bright yellow top round boardroom worksheets bottles tissue box screen beyond session slide iya youth cohort worksheet wealth equation",
+"phash": "5944cc292c496130"
+},
+{
+"id": "IFM-916",
+"title": "Young adults workshop — the one male participant at the whiteboard end (1 of 4)",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-916.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-916.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+"description": "A young man in a black hoodie sits alone at the whiteboard end of the boardroom table, turned toward the board of handwritten working. The only male participant in this cohort.",
+"session": "IYA young adults workshop — Oct/Nov 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Wealth"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "young adults workshop one male participant whiteboard end man black hoodie sits alone boardroom table turned toward board handwritten working only cohort iya youth worksheet wealth equation",
+"phash": "4c140c66747e3e33"
+},
+{
+"id": "IFM-917",
+"title": "Young adults workshop — wide from the door end",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-917.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-917.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+"description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; wide from the door end, presenter standing at the screen.",
+"session": "IYA young adults workshop — Oct/Nov 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Wealth"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "young adults workshop wide from door end presenter bright yellow top participants round boardroom table worksheets bottles tissue box standing screen session slide iya youth cohort worksheet wealth equation",
+"phash": "9b9918d49397cc1b"
+},
+{
+"id": "IFM-918",
+"title": "Young adults workshop — a participant listening",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-918.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-918.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+"description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; a participant listening, hand to her chin, slide behind.",
+"session": "IYA young adults workshop — Oct/Nov 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Wealth"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "young adults workshop participant listening from presenter bright yellow top participants round boardroom table worksheets bottles tissue box hand her chin slide behind session iya youth cohort worksheet wealth equation",
+"phash": "f377b59303334163"
+},
+{
+"id": "IFM-919",
+"title": "Young adults workshop — the one male participant at the whiteboard end (2 of 4)",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-919.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-919.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+"description": "A young man in a black hoodie sits alone at the whiteboard end of the boardroom table, turned toward the board of handwritten working. The only male participant in this cohort.",
+"session": "IYA young adults workshop — Oct/Nov 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Wealth"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "young adults workshop one male participant whiteboard end man black hoodie sits alone boardroom table turned toward board handwritten working only cohort iya youth worksheet wealth equation",
+"phash": "52493291f8f4f878"
+},
+{
+"id": "IFM-920",
+"title": "Young adults workshop — a participant writing while another listens",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-920.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-920.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+"description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; a participant writing while another listens.",
+"session": "IYA young adults workshop — Oct/Nov 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Wealth"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "young adults workshop participant writing while another listens from presenter bright yellow top participants round boardroom table worksheets bottles tissue box session slide iya youth cohort worksheet wealth equation",
+"phash": "3513214843133624"
+},
+{
+"id": "IFM-921",
+"title": "Young adults workshop — the empty end of the table with the group beyond",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-921.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-921.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+"description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the empty end of the table with the group beyond.",
+"session": "IYA young adults workshop — Oct/Nov 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Wealth"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "IFM / In-house",
+"search_terms": "young adults workshop empty end table group beyond from presenter bright yellow top participants round boardroom worksheets bottles tissue box session slide iya youth cohort worksheet wealth equation",
+"phash": "3c3953199ba70fc9"
+},
+{
+"id": "IFM-922",
+"title": "Young adults workshop — the one male participant at the whiteboard end (3 of 4)",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-922.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-922.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+"description": "A young man in a black hoodie sits alone at the whiteboard end of the boardroom table, turned toward the board of handwritten working. The only male participant in this cohort.",
+"session": "IYA young adults workshop — Oct/Nov 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Wealth"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "young adults workshop one male participant whiteboard end man black hoodie sits alone boardroom table turned toward board handwritten working only cohort iya youth worksheet wealth equation",
+"phash": "cfdb793c3e3c3e71"
+},
+{
+"id": "IFM-923",
+"title": "Young adults workshop — two participants turned to the screen",
+"date": "2026-11-03",
+"thumb": "../thumbs/IFM-923.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-923.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+"description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; two participants turned to the screen, 'Inflation' on the slide.",
+"session": "IYA young adults workshop — Oct/Nov 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Classroom Moment",
+"topic": [
+"Wealth",
 "Inflation & Interest Rates"
 ],
 "person": [
@@ -38042,18 +38122,18 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop two participants turned screen from presenter bright yellow top round boardroom table worksheets bottles tissue box inflation slide session",
+"search_terms": "young adults workshop two participants turned screen from presenter bright yellow top round boardroom table worksheets bottles tissue box inflation slide session iya youth cohort worksheet wealth equation",
 "phash": "45a166463b3a7c4c"
 },
 {
 "id": "IFM-924",
 "title": "Young adults workshop — the presenter standing at the table talking to the group",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-924.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-924.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-924.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the presenter standing at the table talking to the group.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38063,25 +38143,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "Classroom Moment",
-"topic": [],
+"topic": [
+"Wealth"
+],
 "person": [
 "Hiral",
 "Student"
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop presenter standing table talking group from bright yellow top participants round boardroom worksheets bottles tissue box session slide",
+"search_terms": "young adults workshop presenter standing table talking group from bright yellow top participants round boardroom worksheets bottles tissue box session slide iya youth cohort worksheet wealth equation",
 "phash": "2127635033353460"
 },
 {
 "id": "IFM-925",
 "title": "Young adults workshop — the Warren Buffett quote slide up",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-925.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-925.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-925.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the Warren Buffett quote slide up, presenter mid-sentence.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38091,25 +38173,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "Classroom Moment",
-"topic": [],
+"topic": [
+"Wealth"
+],
 "person": [
 "Hiral",
 "Student"
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop warren buffett quote slide from presenter bright yellow top participants round boardroom table worksheets bottles tissue box mid sentence session",
+"search_terms": "young adults workshop warren buffett quote slide from presenter bright yellow top participants round boardroom table worksheets bottles tissue box mid sentence session iya youth cohort worksheet wealth equation",
 "phash": "71f0d00c50c0c9cd"
 },
 {
 "id": "IFM-926",
 "title": "Young adults workshop — the 'SAVINGS = INCOME - EXPENSES' slide on screen",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-926.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-926.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-926.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the 'SAVINGS = INCOME - EXPENSES' slide on screen.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38121,7 +38205,8 @@ window.IFM_V1 =
 "format": "Classroom Moment",
 "topic": [
 "Saving",
-"Managing Money"
+"Managing Money",
+"Wealth"
 ],
 "person": [
 "Hiral",
@@ -38129,18 +38214,18 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop savings income expenses slide screen from presenter bright yellow top participants round boardroom table worksheets bottles tissue box session",
+"search_terms": "young adults workshop savings income expenses slide screen from presenter bright yellow top participants round boardroom table worksheets bottles tissue box session iya youth cohort worksheet wealth equation",
 "phash": "f9f6b2682652d0c0"
 },
 {
 "id": "IFM-927",
 "title": "Young adults workshop — a participant in glasses at the table while the presenter talks",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-927.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-927.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-927.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; a participant in glasses at the table while the presenter talks.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38150,25 +38235,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "Classroom Moment",
-"topic": [],
+"topic": [
+"Wealth"
+],
 "person": [
 "Hiral",
 "Student"
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop participant glasses table while presenter talks from bright yellow top participants round boardroom worksheets bottles tissue box session slide",
+"search_terms": "young adults workshop participant glasses table while presenter talks from bright yellow top participants round boardroom worksheets bottles tissue box session slide iya youth cohort worksheet wealth equation",
 "phash": "252763b1918367c4"
 },
 {
 "id": "IFM-928",
 "title": "Young adults workshop — the 'His Monthly Expenses' slide with the icon grid",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-928.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-928.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-928.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the 'His Monthly Expenses' slide with the icon grid.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38179,7 +38266,8 @@ window.IFM_V1 =
 "status": "Ready",
 "format": "Classroom Moment",
 "topic": [
-"Managing Money"
+"Managing Money",
+"Wealth"
 ],
 "person": [
 "Hiral",
@@ -38187,18 +38275,18 @@ window.IFM_V1 =
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop his monthly expenses slide icon grid from presenter bright yellow top participants round boardroom table worksheets bottles tissue box session",
+"search_terms": "young adults workshop his monthly expenses slide icon grid from presenter bright yellow top participants round boardroom table worksheets bottles tissue box session iya youth cohort worksheet wealth equation",
 "phash": "98e6cbcbb89bc3c9"
 },
 {
 "id": "IFM-929",
 "title": "Hands filling in The Wealth Equation worksheet — 1",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-929.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-929.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-929.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "Close on a participant's hands writing on the printed 'The Wealth Equation' worksheet with a white pen, a bangle on her wrist, the boardroom table under it.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38207,7 +38295,7 @@ window.IFM_V1 =
 "sensitive": [],
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Wealth"
 ],
@@ -38215,18 +38303,18 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "IFM / In-house",
-"search_terms": "hands filling wealth equation worksheet close participant writing printed white pen bangle her wrist boardroom table under detail",
+"search_terms": "hands filling wealth equation worksheet close participant writing printed white pen bangle her wrist boardroom table under detail iya young adults youth workshop cohort",
 "phash": "785efad8d8521399"
 },
 {
 "id": "IFM-930",
 "title": "Hands filling in The Wealth Equation worksheet — 2",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-930.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-930.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-930.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "Close on a participant's hands writing on the printed 'The Wealth Equation' worksheet with a white pen, a bangle on her wrist, the boardroom table under it.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38235,7 +38323,7 @@ window.IFM_V1 =
 "sensitive": [],
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Wealth"
 ],
@@ -38243,18 +38331,18 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "IFM / In-house",
-"search_terms": "hands filling wealth equation worksheet close participant writing printed white pen bangle her wrist boardroom table under detail",
+"search_terms": "hands filling wealth equation worksheet close participant writing printed white pen bangle her wrist boardroom table under detail iya young adults youth workshop cohort",
 "phash": "7f7f0f764c241407"
 },
 {
 "id": "IFM-931",
 "title": "Hands filling in The Wealth Equation worksheet — 3",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-931.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-931.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-931.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "Close on a participant's hands writing on the printed 'The Wealth Equation' worksheet with a white pen, a bangle on her wrist, the boardroom table under it.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38263,7 +38351,7 @@ window.IFM_V1 =
 "sensitive": [],
 "type": "Video",
 "status": "Ready",
-"format": "",
+"format": "Classroom Moment",
 "topic": [
 "Wealth"
 ],
@@ -38271,18 +38359,18 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "IFM / In-house",
-"search_terms": "hands filling wealth equation worksheet close participant writing printed white pen bangle her wrist boardroom table under detail",
+"search_terms": "hands filling wealth equation worksheet close participant writing printed white pen bangle her wrist boardroom table under detail iya young adults youth workshop cohort",
 "phash": "91197bad7d0ce337"
 },
 {
 "id": "IFM-932",
 "title": "Young adults workshop — the presenter at the screen",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-932.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-932.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-932.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the presenter at the screen, group watching.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38292,25 +38380,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "Classroom Moment",
-"topic": [],
+"topic": [
+"Wealth"
+],
 "person": [
 "Hiral",
 "Student"
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop presenter screen from bright yellow top participants round boardroom table worksheets bottles tissue box group watching session slide",
+"search_terms": "young adults workshop presenter screen from bright yellow top participants round boardroom table worksheets bottles tissue box group watching session slide iya youth cohort worksheet wealth equation",
 "phash": "59183896503a2307"
 },
 {
 "id": "IFM-933",
 "title": "Young adults workshop — the presenter gesturing at the slide",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-933.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-933.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-933.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the presenter gesturing at the slide, arms open.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38320,25 +38410,27 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "Classroom Moment",
-"topic": [],
+"topic": [
+"Wealth"
+],
 "person": [
 "Hiral",
 "Student"
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop presenter gesturing slide from bright yellow top participants round boardroom table worksheets bottles tissue box arms open session",
+"search_terms": "young adults workshop presenter gesturing slide from bright yellow top participants round boardroom table worksheets bottles tissue box arms open session iya youth cohort worksheet wealth equation",
 "phash": "2cae1483c38cb5b1"
 },
 {
 "id": "IFM-934",
 "title": "Young adults workshop — the one male participant at the whiteboard end (4 of 4)",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-934.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-934.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-934.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "A young man in a black hoodie sits alone at the whiteboard end of the boardroom table, turned toward the board of handwritten working. The only male participant in this cohort.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38348,12 +38440,14 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "Classroom Moment",
-"topic": [],
+"topic": [
+"Wealth"
+],
 "person": [
 "Student"
 ],
 "source": "IFM / In-house",
-"search_terms": "young adults workshop one male participant whiteboard end man black hoodie sits alone boardroom table turned toward board handwritten working only cohort",
+"search_terms": "young adults workshop one male participant whiteboard end man black hoodie sits alone boardroom table turned toward board handwritten working only cohort iya youth worksheet wealth equation",
 "phash": "8cb7339999181849"
 },
 {
@@ -38489,12 +38583,12 @@ window.IFM_V1 =
 {
 "id": "IFM-940",
 "title": "Young adults workshop — a participant raising her hand toward the screen",
-"date": "2026-11-01",
+"date": "2026-11-03",
 "thumb": "../thumbs/IFM-940.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-940.mp4",
-"drive": "https://ifm-deploy.vercel.app/content/clips/IFM-940.mp4",
+"drive": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
 "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; a participant raising her hand toward the screen.",
-"session": "",
+"session": "IYA young adults workshop — Oct/Nov 2026",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -38504,14 +38598,16 @@ window.IFM_V1 =
 "type": "Video",
 "status": "Ready",
 "format": "Classroom Moment",
-"topic": [],
+"topic": [
+"Wealth"
+],
 "person": [
 "Hiral",
 "Student"
 ],
 "hiral_named": false,
 "source": "IFM / In-house",
-"search_terms": "young adults workshop participant raising her hand toward screen from presenter bright yellow top participants round boardroom table worksheets bottles tissue box session slide",
+"search_terms": "young adults workshop participant raising her hand toward screen from presenter bright yellow top participants round boardroom table worksheets bottles tissue box session slide iya youth cohort worksheet wealth equation",
 "phash": "8e9e4c819a0c1801"
 },
 {

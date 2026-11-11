@@ -17192,13 +17192,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "three buckets, slide, presenting, teaching",
+   "keywords": "three buckets, slide, presenting, teaching, 3 bucket investing, corporate video, b-roll",
    "description": "A presenter stands at the TV talking through the three-buckets slide - three coloured cups on screen - with the room watching from the table.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-29",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026: an EXACT perceptual-hash match (distance 0) to a b-roll frame in \"IFM (Aakara delivery tree)/October/Corporate video/After Effect File/IFM_MonCon_file/(Footage)/00_footage/Brolls\" (6 files, 2026-10-29..2026-10-29), confirmed on a side-by-side — same lilac dress, same three-bucket slide, same room. That folder is the After Effects b-roll bin inside the October Corporate video project. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-891.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-891.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1zqkYjqdOPBMYDMXE8V_dQhbHZtLAnlfw",
+   "session": "Corporate video shoot — Oct 2026 (b-roll)"
   },
   {
    "id": "IFM-892",
@@ -17224,13 +17225,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper",
+   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper, sebi, amc, asset management company, regulation, mutual funds",
    "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-29",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/SEBI AMC\" (8 files, uploaded 2026-10-29..2026-10-29) by perceptual hash over a reference-frame library, average distance 9.5, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-893.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-893.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
+   "session": "SEBI / AMC reel shoot"
   },
   {
    "id": "IFM-894",
@@ -17240,13 +17242,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper",
+   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper, sebi, amc, asset management company, regulation, mutual funds",
    "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-29",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/SEBI AMC\" (8 files, uploaded 2026-10-29..2026-10-29) by perceptual hash over a reference-frame library, average distance 9.5, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-894.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-894.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
+   "session": "SEBI / AMC reel shoot"
   },
   {
    "id": "IFM-895",
@@ -17256,13 +17259,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper",
+   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper, sebi, amc, asset management company, regulation, mutual funds",
    "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-29",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/SEBI AMC\" (8 files, uploaded 2026-10-29..2026-10-29) by perceptual hash over a reference-frame library, average distance 9.5, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-895.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-895.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
+   "session": "SEBI / AMC reel shoot"
   },
   {
    "id": "IFM-896",
@@ -17272,13 +17276,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper",
+   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper, sebi, amc, asset management company, regulation, mutual funds",
    "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-29",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/SEBI AMC\" (8 files, uploaded 2026-10-29..2026-10-29) by perceptual hash over a reference-frame library, average distance 9.5, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-896.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-896.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
+   "session": "SEBI / AMC reel shoot"
   },
   {
    "id": "IFM-897",
@@ -17288,13 +17293,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper",
+   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper, sebi, amc, asset management company, regulation, mutual funds",
    "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-29",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/SEBI AMC\" (8 files, uploaded 2026-10-29..2026-10-29) by perceptual hash over a reference-frame library, average distance 9.5, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-897.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-897.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
+   "session": "SEBI / AMC reel shoot"
   },
   {
    "id": "IFM-898",
@@ -17304,13 +17310,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper",
+   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper, sebi, amc, asset management company, regulation, mutual funds",
    "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-29",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/SEBI AMC\" (8 files, uploaded 2026-10-29..2026-10-29) by perceptual hash over a reference-frame library, average distance 9.5, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-898.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-898.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
+   "session": "SEBI / AMC reel shoot"
   },
   {
    "id": "IFM-899",
@@ -17320,13 +17327,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper",
+   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper, sebi, amc, asset management company, regulation, mutual funds",
    "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-29",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/SEBI AMC\" (8 files, uploaded 2026-10-29..2026-10-29) by perceptual hash over a reference-frame library, average distance 9.5, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-899.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-899.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
+   "session": "SEBI / AMC reel shoot"
   },
   {
    "id": "IFM-900",
@@ -17336,13 +17344,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper",
+   "keywords": "piece to camera, talking head, pink kurta, take, wallpaper, sebi, amc, asset management company, regulation, mutual funds",
    "description": "A woman in a rose-pink linen kurta with a yellow and green tassel tie speaks to camera against the grey hand-drawn jungle-pattern wallpaper, gesturing with both hands.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-29",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/SEBI AMC\" (8 files, uploaded 2026-10-29..2026-10-29) by perceptual hash over a reference-frame library, average distance 9.5, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-900.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-900.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1C2wCYXwG5NqWVBxGjhdpIGR9l8CObvkZ",
+   "session": "SEBI / AMC reel shoot"
   },
   {
    "id": "IFM-901",
@@ -17352,13 +17361,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, wood panel, beige skirt, take",
+   "keywords": "piece to camera, talking head, wood panel, beige skirt, take, jio, jio listing, listing day, ipo, day one pop, stock market",
    "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-28",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/Jio opening day\" (11 files, uploaded 2026-10-28..2026-10-28) by perceptual hash over a reference-frame library, average distance 10.0, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-901.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-901.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
+   "session": "Jio listing day reel shoot"
   },
   {
    "id": "IFM-902",
@@ -17368,13 +17378,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, wood panel, beige skirt, take",
+   "keywords": "piece to camera, talking head, wood panel, beige skirt, take, jio, jio listing, listing day, ipo, day one pop, stock market",
    "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-28",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/Jio opening day\" (11 files, uploaded 2026-10-28..2026-10-28) by perceptual hash over a reference-frame library, average distance 10.0, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-902.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-902.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
+   "session": "Jio listing day reel shoot"
   },
   {
    "id": "IFM-903",
@@ -17384,13 +17395,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, wood panel, beige skirt, take",
+   "keywords": "piece to camera, talking head, wood panel, beige skirt, take, jio, jio listing, listing day, ipo, day one pop, stock market",
    "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-28",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/Jio opening day\" (11 files, uploaded 2026-10-28..2026-10-28) by perceptual hash over a reference-frame library, average distance 10.0, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-903.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-903.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
+   "session": "Jio listing day reel shoot"
   },
   {
    "id": "IFM-904",
@@ -17400,13 +17412,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, wood panel, beige skirt, take",
+   "keywords": "piece to camera, talking head, wood panel, beige skirt, take, jio, jio listing, listing day, ipo, day one pop, stock market",
    "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-28",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/Jio opening day\" (11 files, uploaded 2026-10-28..2026-10-28) by perceptual hash over a reference-frame library, average distance 10.0, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-904.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-904.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
+   "session": "Jio listing day reel shoot"
   },
   {
    "id": "IFM-905",
@@ -17416,13 +17429,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, wood panel, beige skirt, take",
+   "keywords": "piece to camera, talking head, wood panel, beige skirt, take, jio, jio listing, listing day, ipo, day one pop, stock market",
    "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-28",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/Jio opening day\" (11 files, uploaded 2026-10-28..2026-10-28) by perceptual hash over a reference-frame library, average distance 10.0, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-905.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-905.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
+   "session": "Jio listing day reel shoot"
   },
   {
    "id": "IFM-906",
@@ -17432,13 +17446,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, wood panel, beige skirt, take",
+   "keywords": "piece to camera, talking head, wood panel, beige skirt, take, jio, jio listing, listing day, ipo, day one pop, stock market",
    "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-28",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/Jio opening day\" (11 files, uploaded 2026-10-28..2026-10-28) by perceptual hash over a reference-frame library, average distance 10.0, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-906.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-906.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
+   "session": "Jio listing day reel shoot"
   },
   {
    "id": "IFM-907",
@@ -17448,13 +17463,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, wood panel, beige skirt, take",
+   "keywords": "piece to camera, talking head, wood panel, beige skirt, take, jio, jio listing, listing day, ipo, day one pop, stock market",
    "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-28",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/Jio opening day\" (11 files, uploaded 2026-10-28..2026-10-28) by perceptual hash over a reference-frame library, average distance 10.0, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-907.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-907.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
+   "session": "Jio listing day reel shoot"
   },
   {
    "id": "IFM-908",
@@ -17464,13 +17480,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, wood panel, beige skirt, take",
+   "keywords": "piece to camera, talking head, wood panel, beige skirt, take, jio, jio listing, listing day, ipo, day one pop, stock market",
    "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-28",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/Jio opening day\" (11 files, uploaded 2026-10-28..2026-10-28) by perceptual hash over a reference-frame library, average distance 10.0, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-908.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-908.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
+   "session": "Jio listing day reel shoot"
   },
   {
    "id": "IFM-909",
@@ -17480,13 +17497,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, wood panel, beige skirt, take",
+   "keywords": "piece to camera, talking head, wood panel, beige skirt, take, jio, jio listing, listing day, ipo, day one pop, stock market",
    "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-28",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/Jio opening day\" (11 files, uploaded 2026-10-28..2026-10-28) by perceptual hash over a reference-frame library, average distance 10.0, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-909.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-909.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
+   "session": "Jio listing day reel shoot"
   },
   {
    "id": "IFM-910",
@@ -17496,13 +17514,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "piece to camera, talking head, wood panel, beige skirt, take",
+   "keywords": "piece to camera, talking head, wood panel, beige skirt, take, jio, jio listing, listing day, ipo, day one pop, stock market",
    "description": "A woman in a black sleeveless top and a soft beige skirt speaks to camera against the boardroom's wood-panelled wall, hands low and moving as she talks.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-10-28",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to the shoot folder \"Content Library/Jio opening day\" (11 files, uploaded 2026-10-28..2026-10-28) by perceptual hash over a reference-frame library, average distance 10.0, confirmed on a contact sheet. The link is to the FOLDER, not a file: takes within a shoot are indistinguishable by appearance. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-910.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-910.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/15fFDjE9ohVU2icU2kbo0DT9LUtPoXnYy",
+   "session": "Jio listing day reel shoot"
   },
   {
    "id": "IFM-911",
@@ -17512,13 +17531,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; shot from the near corner, two participants in the foreground.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-911.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-911.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-912",
@@ -17528,13 +17548,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; from the far end, the table running away from camera.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-912.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-912.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-913",
@@ -17544,13 +17565,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the presenter seated at the table, slide on 'Overview of Smart Investing'.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-913.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-913.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-914",
@@ -17560,13 +17582,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the 'Principle of Smart Investing' slide lit on the TV.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-914.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-914.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-915",
@@ -17576,13 +17599,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; participants down the side of the table, the screen beyond.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-915.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-915.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-916",
@@ -17592,13 +17616,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, participant, whiteboard, male participant",
+   "keywords": "young adults, workshop, participant, whiteboard, male participant, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "A young man in a black hoodie sits alone at the whiteboard end of the boardroom table, turned toward the board of handwritten working. The only male participant in this cohort.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-916.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-916.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-917",
@@ -17608,13 +17633,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; wide from the door end, presenter standing at the screen.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-917.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-917.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-918",
@@ -17624,13 +17650,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; a participant listening, hand to her chin, slide behind.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-918.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-918.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-919",
@@ -17640,13 +17667,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, participant, whiteboard, male participant",
+   "keywords": "young adults, workshop, participant, whiteboard, male participant, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "A young man in a black hoodie sits alone at the whiteboard end of the boardroom table, turned toward the board of handwritten working. The only male participant in this cohort.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-919.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-919.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-920",
@@ -17656,13 +17684,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; a participant writing while another listens.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-920.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-920.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-921",
@@ -17672,13 +17701,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the empty end of the table with the group beyond.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-921.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-921.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-922",
@@ -17688,13 +17718,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, participant, whiteboard, male participant",
+   "keywords": "young adults, workshop, participant, whiteboard, male participant, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "A young man in a black hoodie sits alone at the whiteboard end of the boardroom table, turned toward the board of handwritten working. The only male participant in this cohort.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-922.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-922.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-923",
@@ -17704,13 +17735,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; two participants turned to the screen, 'Inflation' on the slide.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-923.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-923.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-924",
@@ -17720,13 +17752,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the presenter standing at the table talking to the group.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-924.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-924.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-925",
@@ -17736,13 +17769,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the Warren Buffett quote slide up, presenter mid-sentence.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-925.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-925.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-926",
@@ -17752,13 +17786,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the 'SAVINGS = INCOME - EXPENSES' slide on screen.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-926.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-926.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-927",
@@ -17768,13 +17803,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; a participant in glasses at the table while the presenter talks.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-927.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-927.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-928",
@@ -17784,13 +17820,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the 'His Monthly Expenses' slide with the icon grid.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-928.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-928.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-929",
@@ -17800,13 +17837,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "worksheet, hands, close up, wealth equation, writing, detail",
+   "keywords": "worksheet, hands, close up, wealth equation, writing, detail, iya, young adults, youth, workshop, cohort, boardroom",
    "description": "Close on a participant's hands writing on the printed 'The Wealth Equation' worksheet with a white pen, a bangle on her wrist, the boardroom table under it.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-929.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-929.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-930",
@@ -17816,13 +17854,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "worksheet, hands, close up, wealth equation, writing, detail",
+   "keywords": "worksheet, hands, close up, wealth equation, writing, detail, iya, young adults, youth, workshop, cohort, boardroom",
    "description": "Close on a participant's hands writing on the printed 'The Wealth Equation' worksheet with a white pen, a bangle on her wrist, the boardroom table under it.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-930.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-930.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-931",
@@ -17832,13 +17871,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "worksheet, hands, close up, wealth equation, writing, detail",
+   "keywords": "worksheet, hands, close up, wealth equation, writing, detail, iya, young adults, youth, workshop, cohort, boardroom",
    "description": "Close on a participant's hands writing on the printed 'The Wealth Equation' worksheet with a white pen, a bangle on her wrist, the boardroom table under it.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-931.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-931.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-932",
@@ -17848,13 +17888,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the presenter at the screen, group watching.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-932.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-932.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-933",
@@ -17864,13 +17905,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; the presenter gesturing at the slide, arms open.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-933.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-933.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-934",
@@ -17880,13 +17922,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, participant, whiteboard, male participant",
+   "keywords": "young adults, workshop, participant, whiteboard, male participant, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "A young man in a black hoodie sits alone at the whiteboard end of the boardroom table, turned toward the board of handwritten working. The only male participant in this cohort.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-934.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-934.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-935",
@@ -17981,13 +18024,14 @@ window.IFM_DATA ={
    "venue": "IFM boardroom",
    "status": "Ready",
    "audience": "Mummies",
-   "keywords": "young adults, workshop, session, presenter, yellow top, slide",
+   "keywords": "young adults, workshop, session, presenter, yellow top, slide, iya, youth, cohort, boardroom, worksheet, wealth equation",
    "description": "From the young-adults workshop: a presenter in a bright yellow top at the TV, participants round the boardroom table with worksheets, bottles and a tissue box; a participant raising her hand toward the screen.",
-   "date created": "2026-11-01",
-   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group.",
+   "date created": "2026-11-03",
+   "notes": "Clip built by the nightly job on 1 Nov 2026; the job died before writing the row, so the Drive master id was never recorded. Catalogued 10 Nov from the clip itself. RELINK the master when a future scan matches it. Speaker deliberately not named: these are pieces to camera with no IFM slide in frame and the face does not match the confirmed Hiral portrait (IFM-763) in every group. Relinked 11 Nov 2026 to \"Content Library/IYA Oct & Nov 2026\" (184 files, 2026-10-26..2026-11-03). The hash put this at distance 20 and the matcher rejected it — room-wide framings vary too much for a perceptual hash. Confirmed BY EYE instead, on a side-by-side: same boardroom and dark wood table, the same presenter in a lime top, the same green cups, and IMG_8504 in that folder is frame-for-frame the worksheet close-up. Linked to the FOLDER, not a file. `date created` was 2026-11-01, the night the clip was built.",
    "thumbnail": "thumbs/IFM-940.jpg",
    "video": "https://ifm-deploy.vercel.app/content/clips/IFM-940.mp4",
-   "drive link": ""
+   "drive link": "https://drive.google.com/drive/folders/1GBag3eBJ1kFbiX8r7Irmbi3TatTPflOh",
+   "session": "IYA young adults workshop — Oct/Nov 2026"
   },
   {
    "id": "IFM-941",
