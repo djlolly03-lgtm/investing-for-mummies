@@ -504,20 +504,8 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
   .pc-total{grid-column:1/-1;background:linear-gradient(135deg,#1a3a5c,#245a7c);color:#fff;border-radius:18px;padding:16px 20px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;}
   .pc-total b{font-family:'Lora',serif;font-size:1.25rem;color:#f0d9a8;}
 
-  /* www site bar (tools pages, Nov 2026) */
-  .site-bar{background:#fff;border-bottom:1px solid #e3ece9;position:sticky;top:0;z-index:50;}
-  .site-bar-in{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:'Nunito',sans-serif;}
-  .site-bar a{color:#1a3a5c;text-decoration:none;font-weight:800;font-size:0.9rem;}
-  .site-bar .sb-brand{display:flex;align-items:center;gap:8px;margin-right:auto;}
-  .site-bar .sb-brand img{width:32px;height:35px;}
-  .site-bar .sb-link{color:#5a7d8a;}
-  .site-bar .sb-link:hover{color:#1a3a5c;}
-  .site-bar .sb-cta{background:#1f7a70;color:#fff;padding:8px 14px;border-radius:999px;}
-  @media (max-width:600px){ .site-bar .sb-brand b{display:none;} .site-bar-in{gap:10px;} .site-bar a{font-size:0.82rem;} }
-  .tool-class{max-width:760px;margin:6px auto 0;padding:16px 18px;border-radius:16px;background:#eef7f5;color:#1a3a5c;font-family:'Nunito',sans-serif;text-align:center;line-height:1.5;}
-  .tool-class a{color:#1f7a70;font-weight:800;}
-  .btn-dl-plan{display:inline-block;margin:6px auto 0;padding:13px 22px;border:none;border-radius:999px;background:#1a3a5c;color:#fff;font:800 0.95rem 'Nunito',sans-serif;cursor:pointer;}
 </style>
+<link rel="stylesheet" href="/tools/tools.css"/>
 </head>
 <body>
 <nav class="site-bar" aria-label="Site"><div class="site-bar-in"><a class="sb-brand" href="/"><img src="/assets/logo-round-clear.png" alt="" width="32" height="35"/><b>Investing for Mummies</b></a><a class="sb-link" href="/tools">← All free tools</a><a class="sb-cta" href="https://register.investingformummies.com">Find your batch →</a></div></nav>
@@ -660,7 +648,20 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
 
 </div>
 
-<div style="text-align:center;margin:8px 16px 4px;"><button class="btn-dl-plan" onclick="generateReport('/assets/logo-round-clear.png')">📄 Download my plan (PDF)</button></div>
+<div style="text-align:center;margin:8px 16px 4px;"><button class="btn-dl-plan" onclick="generateReport('/assets/logo-round-clear.png')">📄 Download my plan (PDF)</button> <button class="btn-dl-plan" style="background:#25a35a" onclick="shareEduWA()">💬 Share on WhatsApp</button></div>
+<script>
+/* WhatsApp share: each child's monthly SIP / one-time amount from the results cards, plus the planner link (Nov 2026) */
+function shareEduWA(){
+  var msg='\u{1F393} I planned my children\u2019s education with the free Investing for Mummies planner.\n';
+  var cards=document.querySelectorAll('#dashboard .pc-card');
+  cards.forEach(function(c){
+    var h=c.querySelector('h4'), v=c.querySelectorAll('.pc-need b');
+    if(h&&v.length) msg+='\n\u2022 '+h.textContent.trim()+': '+v[0].textContent.trim()+' a month'+(v[1]?' or '+v[1].textContent.trim()+' one-time':'');
+  });
+  msg+='\n\n\u{1F449} Plan yours free: https://www.investingformummies.com/tools/education-planner';
+  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
 <p class="tool-class">Want to know where to put this money, and how to pick the right fund for each goal? That’s what we cover in class. <a href="https://register.investingformummies.com">Find your batch →</a></p>
 <footer>Made with 💚 by <span>Investing for Mummies</span> — Nurturing Financially Confident Women · <a href="/tools" style="color:inherit">More free tools</a> · <a href="/" style="color:inherit">investingformummies.com</a><br>Educational only. Illustrative returns, not guaranteed. Not investment advice.</footer>
 

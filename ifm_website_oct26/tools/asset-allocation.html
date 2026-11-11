@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Asset Allocation Calculator — Investing for Mummies</title>
+<link rel="canonical" href="https://www.investingformummies.com/tools/asset-allocation"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Investing for Mummies"/>
+<meta property="og:url" content="https://www.investingformummies.com/tools/asset-allocation"/>
+<meta property="og:title" content="Asset Allocation Calculator — your mix by age and risk"/>
+<meta property="og:description" content="Free calculator: your age and risk appetite give a suggested mix of equity, bonds, real estate, gold and cash."/>
+<meta property="og:image" content="https://www.investingformummies.com/og-home-v2.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<meta name="theme-color" content="#1a3a5c"/>
+<meta name="description" content="Free asset allocation calculator: enter your age and risk appetite to see a suggested split across equity, bonds/FD, real estate, gold and cash."/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet"/>
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only',capture_pageview:true,capture_pageleave:true,autocapture:false,cross_subdomain_cookie:true});
+</script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { font-family:'Nunito',sans-serif; background:#f7f9fc; color:#1a3a5c; }
+.hero { background:linear-gradient(135deg,#5b2d8e 0%,#7c3aed 50%,#2563eb 100%); padding:18px 20px 14px 100px; color:#fff; position:relative; min-height:80px; display:flex; flex-direction:column; justify-content:center; }
+.hero h2 { font-size:1.25rem; font-weight:900; margin-bottom:4px; }
+.hero p { font-size:0.76rem; opacity:0.88; line-height:1.5; }
+.section { padding:14px 16px 4px; }
+.label { font-size:0.7rem; font-weight:800; color:#6c3fa0; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+.age-row { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.age-val { font-size:2rem; font-weight:900; color:#1a3a5c; min-width:48px; text-align:center; line-height:1; }
+.age-sub { font-size:0.62rem; color:#8a9fb0; font-weight:700; text-align:center; }
+input[type=range] { flex:1; height:6px; -webkit-appearance:none; appearance:none; background:linear-gradient(to right,#7c3aed,#2563eb); border-radius:3px; cursor:pointer; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:18px; height:18px; border-radius:50%; background:#fff; border:3px solid #7c3aed; cursor:pointer; box-shadow:0 2px 6px rgba(108,63,160,0.4); }
+.risk-row { display:flex; gap:8px; margin-bottom:14px; }
+.risk-btn { flex:1; padding:8px 4px; border:2px solid #e0d4f7; border-radius:10px; font-family:'Nunito',sans-serif; font-size:0.7rem; font-weight:800; cursor:pointer; background:#fff; color:#8a9fb0; transition:all 0.18s; text-align:center; line-height:1.3; }
+.risk-btn.active { border-color:#7c3aed; background:linear-gradient(135deg,#f0ebfa,#e4d8f8); color:#5b2d8e; }
+.calc-btn { width:100%; margin:14px 0 0; padding:12px; background:linear-gradient(135deg,#5b2d8e,#7c3aed); color:#fff; border:none; border-radius:12px; font-family:'Nunito',sans-serif; font-size:0.92rem; font-weight:900; cursor:pointer; letter-spacing:0.3px; box-shadow:0 4px 14px rgba(92,45,142,0.3); }
+.results { display:none; }
+.card { background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(26,58,92,0.07); padding:16px; margin:12px 16px; }
+.card-title { font-size:0.78rem; font-weight:900; color:#1a3a5c; margin-bottom:14px; text-transform:uppercase; letter-spacing:0.5px; }
+.alloc-bar { display:flex; height:54px; border-radius:12px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,0.12); margin-bottom:8px; }
+.bar-seg { display:flex; align-items:center; justify-content:center; color:#fff; font-weight:900; font-size:0.72rem; overflow:hidden; white-space:nowrap; }
+.bar-seg span { text-shadow:0 1px 2px rgba(0,0,0,0.25); padding:0 3px; }
+.bar-labels { display:flex; margin-bottom:14px; }
+.bar-lbl { font-size:0.6rem; text-align:center; font-weight:700; overflow:hidden; padding:0 2px; line-height:1.3; }
+.rule-chip { display:inline-block; background:linear-gradient(135deg,#e8f5e9,#c8e6c9); color:#2e7d32; font-size:0.65rem; font-weight:800; padding:2px 9px; border-radius:10px; margin-left:6px; vertical-align:middle; text-transform:none; letter-spacing:0; }
+table { width:100%; border-collapse:collapse; }
+th { font-size:0.62rem; font-weight:800; color:#8a9fb0; text-transform:uppercase; padding:2px 6px 6px; text-align:right; }
+th:first-child { text-align:left; }
+td { padding:7px 6px; font-size:0.84rem; font-weight:700; }
+td:not(:first-child) { text-align:right; }
+.dot { display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:4px; vertical-align:middle; }
+.row-eq { background:rgba(76,175,80,0.08); }
+.row-bd { background:rgba(33,150,243,0.08); }
+.row-re { background:rgba(255,152,0,0.08); }
+.row-au { background:rgba(201,168,76,0.08); }
+.row-ca { background:rgba(120,144,156,0.08); }
+.insight-row { display:flex; flex-direction:column; gap:8px; }
+.insight { padding:10px 12px; border-radius:10px; font-size:0.74rem; line-height:1.55; color:#4a2d7a; background:linear-gradient(135deg,#f3effd,#ede6fb); border-left:4px solid #7c3aed; }
+.insight b { color:#1a3a5c; }
+.dl-btn { display:flex; align-items:center; justify-content:center; gap:8px; width:calc(100% - 32px); margin:4px 16px 8px; padding:12px; background:linear-gradient(135deg,#c9a84c,#e6c86a); color:#1a3a5c; border:none; border-radius:12px; font-family:'Nunito',sans-serif; font-size:0.92rem; font-weight:900; cursor:pointer; box-shadow:0 4px 18px rgba(201,168,76,0.3); }
+.disclaimer { margin:0 16px 20px; padding:10px 14px; border-radius:10px; background:#fff8e1; border-left:3px solid #f9a825; font-size:0.68rem; color:#7a6000; line-height:1.6; }
+.alloc-page { max-width:760px; margin:0 auto; }
+.tool-foot{text-align:center;padding:24px;font-size:0.75rem;color:#5a7d8a;}
+.tool-foot span{color:#2a9d8f;}
+</style>
+<link rel="stylesheet" href="/tools/tools.css"/>
+</head>
+<body>
+<nav class="site-bar" aria-label="Site"><div class="site-bar-in"><a class="sb-brand" href="/"><img src="/assets/logo-round-clear.png" alt="" width="32" height="35"/><b>Investing for Mummies</b></a><a class="sb-link" href="/tools">← All free tools</a><a class="sb-cta" href="https://register.investingformummies.com">Find your batch →</a></div></nav>
+
+<div class="alloc-page">
+
+<div class="hero">
+  <div style="font-size:0.65rem;font-weight:800;opacity:0.8;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;">🥧 Resource · Asset Classes</div>
+  <h2>Asset Allocation Calculator</h2>
+  <p>Your age + risk appetite → the right mix of Equity, Bonds, Real Estate, Gold &amp; Cash.</p>
+</div>
+
+<div class="section">
+  <div class="label">Your Age</div>
+  <div class="age-row">
+    <div>
+      <div class="age-val" id="ageVal">30</div>
+      <div class="age-sub">years</div>
+    </div>
+    <input type="range" id="ageSlider" min="18" max="75" value="30" oninput="document.getElementById('ageVal').textContent=this.value"/>
+  </div>
+
+  <div class="label">Risk Appetite</div>
+  <div class="risk-row">
+    <button class="risk-btn" id="rb_cons" onclick="setRisk('conservative')">🛡️<br/>Conservative</button>
+    <button class="risk-btn active" id="rb_mod" onclick="setRisk('moderate')">🔮<br/>Moderate</button>
+    <button class="risk-btn" id="rb_agg" onclick="setRisk('aggressive')">🚀<br/>Aggressive</button>
+  </div>
+
+  <button class="calc-btn" onclick="calculate()">Calculate My Allocation →</button>
+</div>
+
+<div class="results" id="resultsDiv">
+  <div class="card">
+    <div class="card-title">📊 Recommended Allocation <span class="rule-chip" id="ruleLabel">100 − age</span></div>
+    <div class="alloc-bar" id="allocBar"></div>
+    <div class="bar-labels" id="barLabels"></div>
+    <table>
+      <thead><tr><th>Asset Class</th><th>Allocation</th></tr></thead>
+      <tbody id="allocTable"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">💡 Why This Mix?</div>
+    <div class="insight-row" id="insightRow"></div>
+  </div>
+
+  <button class="dl-btn" onclick="generateReport('/assets/logo-round-clear.png')">📄 Download My Plan</button>
+
+  <div class="disclaimer">
+    ⚠️ <strong>Disclaimer:</strong> All figures are theoretical estimates for educational purposes only. This is <strong>not financial advice</strong>. Asset allocation suggestions are based on general rules of thumb and do not account for your individual financial situation, tax position, or specific goals. Please consult a SEBI-registered financial advisor before making any investment decisions.
+  </div>
+</div>
+
+</div>
+<div style="display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;margin:8px 16px 4px;"><button onclick="ifmShare('I just found my ideal asset allocation with the free Asset Allocation Calculator on Investing for Mummies 📊')" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#25D366;color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:900;font-size:0.92rem;cursor:pointer;box-shadow:0 4px 18px rgba(37,211,102,0.35);letter-spacing:0.3px;">💬 Share via WhatsApp</button></div>
+<script>
+function ifmShare(msg) {
+  window.open('https://wa.me/?text=' + encodeURIComponent(msg + '\n\n👉 https://www.investingformummies.com/tools/asset-allocation'), '_blank');
+}
+</script>
+
+<p class="tool-class">Want to know which funds fill each slice of this mix? That’s what we cover in class. <a href="https://register.investingformummies.com">Find your batch →</a></p>
+<footer class="tool-foot">Made with 💚 by <span>Investing for Mummies</span> — Nurturing Financially Confident Women · <a href="/tools" style="color:inherit">More free tools</a> · <a href="/" style="color:inherit">investingformummies.com</a><br>Educational only. Illustrative returns, not guaranteed. Not investment advice.</footer>
+
+<script>
+var risk = 'moderate';
+var COLORS = ['#4CAF50','#2196F3','#FF9800','#c9a84c','#78909C'];
+var LABELS = ['Equity','Bonds/FD','Real Estate','Gold','Cash'];
+var ICONS  = ['📈','🏦','🏠','🪙','💵'];
+var ROWCLS = ['row-eq','row-bd','row-re','row-au','row-ca'];
+
+(function tryLogo(){
+  try {
+    var src = '/assets/logo-round-clear.png';
+    if(!src) return;
+    var hero = document.querySelector('.hero');
+    if(hero && !hero.querySelector('img[data-ifm-logo]')){
+      var img = document.createElement('img');
+      img.src = src;
+      img.setAttribute('data-ifm-logo','1');
+      img.style.cssText = 'position:absolute;top:50%;left:10px;transform:translateY(-50%);height:72px;width:72px;object-fit:cover;border-radius:10px;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,0.28);';
+      hero.insertBefore(img, hero.firstChild);
+    }
+  }catch(e){}
+})();
+
+function setRisk(r) {
+  risk = r;
+  ['cons','mod','agg'].forEach(function(k){ document.getElementById('rb_'+k).classList.remove('active'); });
+  var map = {conservative:'cons', moderate:'mod', aggressive:'agg'};
+  document.getElementById('rb_'+map[r]).classList.add('active');
+}
+
+function getAlloc(age) {
+  var eq, bd, re, au, ca;
+  if      (age <= 25) { eq=70; bd=10; re=5;  au=10; ca=5;  }
+  else if (age <= 35) { eq=55; bd=20; re=10; au=10; ca=5;  }
+  else if (age <= 45) { eq=45; bd=25; re=10; au=10; ca=10; }
+  else if (age <= 55) { eq=30; bd=35; re=10; au=15; ca=10; }
+  else if (age <= 65) { eq=20; bd=40; re=10; au=15; ca=15; }
+  else                { eq=15; bd=45; re=5;  au=15; ca=20; }
+  if (risk === 'conservative') { eq=Math.max(5,eq-10);  bd=Math.min(60,bd+7);  ca=Math.min(25,ca+3); }
+  if (risk === 'aggressive')   { eq=Math.min(80,eq+10); bd=Math.max(5,bd-7);   ca=Math.max(2,ca-3);  }
+  var total = eq+bd+re+au+ca;
+  var s = 100/total;
+  eq=Math.round(eq*s); bd=Math.round(bd*s); re=Math.round(re*s); au=Math.round(au*s);
+  ca=100-(eq+bd+re+au);
+  return [eq,bd,re,au,ca];
+}
+
+function calculate() {
+  var age = parseInt(document.getElementById('ageSlider').value);
+  var alloc = getAlloc(age);
+
+  document.getElementById('resultsDiv').style.display = 'block';
+  document.getElementById('ruleLabel').textContent = '100 − '+age+' = '+(100-age)+'% base equity';
+
+  var bar = document.getElementById('allocBar');
+  var lbls = document.getElementById('barLabels');
+  bar.innerHTML = ''; lbls.innerHTML = '';
+  alloc.forEach(function(pct, i) {
+    var seg = document.createElement('div');
+    seg.className = 'bar-seg';
+    seg.style.flex = pct+' 0 0';
+    seg.style.background = COLORS[i];
+    seg.innerHTML = '<span>'+pct+'%</span>';
+    bar.appendChild(seg);
+    var lbl = document.createElement('div');
+    lbl.className = 'bar-lbl';
+    lbl.style.flex = pct+' 0 0';
+    lbl.style.color = COLORS[i];
+    lbl.innerHTML = ICONS[i]+'<br/>'+LABELS[i].split('/')[0];
+    lbls.appendChild(lbl);
+  });
+
+  var tbody = document.getElementById('allocTable');
+  tbody.innerHTML = '';
+  alloc.forEach(function(pct, i) {
+    var tr = document.createElement('tr');
+    tr.className = ROWCLS[i];
+    tr.innerHTML = '<td><span class="dot" style="background:'+COLORS[i]+'"></span>'+ICONS[i]+' '+LABELS[i]+'</td><td><b>'+pct+'%</b></td>';
+    tbody.appendChild(tr);
+  });
+
+  var row = document.getElementById('insightRow');
+  row.innerHTML = buildInsights(age, alloc).map(function(t){ return '<div class="insight">'+t+'</div>'; }).join('');
+}
+
+function buildInsights(age, alloc) {
+  var eq=alloc[0], bd=alloc[1], au=alloc[3];
+  var riskDesc = risk==='aggressive'?'aggressive appetite boosts it':risk==='conservative'?'conservative stance reduces it':'moderate profile keeps it close';
+  var tips = [];
+  tips.push('<b>100-minus-age rule:</b> At age '+age+', the base equity allocation is '+(100-age)+'%. Your '+riskDesc+' to <b>'+eq+'%</b>.');
+  if(eq>=45){
+    tips.push('<b>Equity-heavy ('+eq+'%):</b> Time is your biggest asset. A higher equity weighting lets compounding work over your long horizon \u2014 short-term volatility smooths out over the years.');
+  } else {
+    tips.push('<b>Stability focus (Bonds '+bd+'%):</b> As the horizon shortens, capital preservation matters more. A higher fixed-income allocation reduces drawdown risk while still generating income.');
+  }
+  tips.push('<b>Gold ('+au+'%) as a hedge:</b> Gold tends to rise when markets fall. Paired with Real Estate ('+alloc[2]+'%), your real-asset exposure of '+(au+alloc[2])+'% protects against inflation and provides diversification.');
+  return tips;
+}
+
+function generateReport(logoSrc) {
+  var age = parseInt(document.getElementById('ageSlider').value);
+  var alloc = getAlloc(age);
+  var rLabel = {conservative:'Conservative', moderate:'Moderate', aggressive:'Aggressive'}[risk];
+  var rEmoji = {conservative:'&#x1F6E1;&#xFE0F;', moderate:'&#x2696;&#xFE0F;', aggressive:'&#x1F680;'}[risk];
+
+  var barSegs = alloc.map(function(p,i){
+    return '<div style="flex:'+p+' 0 0;background:'+COLORS[i]+';display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:0.72rem;overflow:hidden;min-width:0;"><span style="padding:0 4px;text-shadow:0 1px 2px rgba(0,0,0,0.25);">'+p+'%</span></div>';
+  }).join('');
+  var barLbls = alloc.map(function(p,i){
+    return '<div style="flex:'+p+' 0 0;font-size:0.6rem;text-align:center;font-weight:700;color:'+COLORS[i]+';overflow:hidden;padding:0 2px;line-height:1.4;">'+ICONS[i]+'<br/>'+LABELS[i].split('/')[0]+'</div>';
+  }).join('');
+
+  var rows = LABELS.map(function(l,i){
+    var bg = ['rgba(76,175,80,0.07)','rgba(33,150,243,0.07)','rgba(255,152,0,0.07)','rgba(201,168,76,0.07)','rgba(120,144,156,0.07)'][i];
+    return '<tr style="background:'+bg+'"><td style="padding:9px 14px;"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:'+COLORS[i]+';margin-right:7px;vertical-align:middle;"></span>'+ICONS[i]+' '+l+'</td><td style="text-align:right;padding:9px 14px;font-weight:900;font-size:1rem;">'+alloc[i]+'%</td></tr>';
+  }).join('');
+
+  var insightHtml = buildInsights(age, alloc).map(function(t){
+    return '<div style="padding:11px 14px;border-radius:10px;font-size:0.78rem;line-height:1.6;color:#4a2d7a;background:linear-gradient(135deg,#f3effd,#ede6fb);border-left:4px solid #7c3aed;margin-bottom:8px;">'+t+'</div>';
+  }).join('');
+
+  var logoHtml = logoSrc ? '<img src="'+logoSrc+'" style="height:56px;width:56px;border-radius:10px;object-fit:cover;margin-right:14px;vertical-align:middle;box-shadow:0 2px 8px rgba(0,0,0,0.18);" alt="IFM"/>' : '';
+
+  var w = window.open('', '_blank', 'width=900,height=800');
+  if (!w) return;
+  w.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"/><title>Asset Allocation Plan &mdash; IFM</title>');
+  w.document.write('<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>');
+  w.document.write('<style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:Nunito,sans-serif;background:#f7f9fc;color:#1a3a5c;padding:28px 32px;max-width:720px;margin:0 auto;}.st{font-size:0.72rem;font-weight:900;color:#1a3a5c;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:12px;}table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;}thead tr{background:linear-gradient(135deg,#5b2d8e,#7c3aed);}th{color:#fff;padding:10px 14px;text-align:left;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;}th:not(:first-child){text-align:right;}@media print{.no-print{display:none!important;}body{padding:16px;}}</style>');
+  w.document.write('</head><body>');
+  w.document.write('<div style="display:flex;align-items:center;margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid #e8e0f8;">'+logoHtml+'<div><div style="font-size:1.6rem;font-weight:900;color:#1a3a5c;">Asset Allocation Plan</div><p style="font-size:0.78rem;color:#8a9fb0;margin-top:3px;">Investing for Mummies &middot; investingformummies.com</p></div></div>');
+  w.document.write('<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">');
+  w.document.write('<div style="background:linear-gradient(135deg,#f0ebfa,#e4d8f8);border-radius:10px;padding:10px 16px;"><span style="font-size:0.65rem;font-weight:800;color:#8a9fb0;display:block;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px;">Age</span><b style="font-size:1rem;">'+age+' years</b></div>');
+  w.document.write('<div style="background:linear-gradient(135deg,#f0ebfa,#e4d8f8);border-radius:10px;padding:10px 16px;"><span style="font-size:0.65rem;font-weight:800;color:#8a9fb0;display:block;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px;">Risk Profile</span><b style="font-size:1rem;">'+rEmoji+' '+rLabel+'</b></div>');
+  w.document.write('<div style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-radius:10px;padding:10px 16px;"><span style="font-size:0.65rem;font-weight:800;color:#2e7d32;display:block;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px;">Base Equity (100&minus;age)</span><b style="font-size:1rem;color:#2e7d32;">'+(100-age)+'%</b></div>');
+  w.document.write('</div>');
+  w.document.write('<div style="margin-bottom:20px;"><div class="st">&#x1F4CA; Recommended Allocation</div>');
+  w.document.write('<div style="display:flex;height:52px;border-radius:12px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.12);margin-bottom:8px;">'+barSegs+'</div>');
+  w.document.write('<div style="display:flex;margin-bottom:14px;">'+barLbls+'</div>');
+  w.document.write('<table><thead><tr><th>Asset Class</th><th style="text-align:right;">Allocation</th></tr></thead><tbody>'+rows+'</tbody></table></div>');
+  w.document.write('<div style="margin-bottom:20px;"><div class="st">&#x1F4A1; Why This Mix?</div>'+insightHtml+'</div>');
+  w.document.write('<div style="padding:12px 14px;border-radius:10px;background:#fff8e1;border-left:4px solid #f9a825;font-size:0.7rem;color:#7a6000;line-height:1.6;margin-bottom:20px;"><strong>&#x26A0;&#xFE0F; Disclaimer:</strong> All figures are theoretical estimates for educational purposes only. This is <strong>not financial advice</strong>. Asset allocation suggestions are based on general rules of thumb and do not account for your individual financial situation, tax position, or specific goals. Please consult a SEBI-registered financial advisor before making any investment decisions.</div>');
+  w.document.write('<button class="no-print" onclick="window.print()" style="padding:11px 28px;background:linear-gradient(135deg,#5b2d8e,#7c3aed);color:#fff;border:none;border-radius:10px;font-family:Nunito,sans-serif;font-weight:800;font-size:0.88rem;cursor:pointer;box-shadow:0 4px 14px rgba(92,45,142,0.3);">&#x1F5A8;&#xFE0F; Print / Save as PDF</button>');
+  w.document.write('<div style="margin-top:32px;padding-top:16px;border-top:1px solid #e8e0f8;text-align:center;font-size:0.7rem;color:#8a9fb0;font-style:italic;">Made with ♥ by <strong style="color:#1a3a5c;">Investing for Mummies</strong> &mdash; Unlocking Your Financial Superpower</div>');
+  w.document.write('</body></html>');
+  w.document.close();
+}
+
+</script>
+</body>
+</html>

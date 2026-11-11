@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Inflation Calculator — Investing for Mummies</title>
+<meta name="description" content="See how inflation quietly erodes what your savings can buy, and what to do about it."/>
+<link rel="canonical" href="https://www.investingformummies.com/tools/inflation-calculator"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Investing for Mummies"/>
+<meta property="og:url" content="https://www.investingformummies.com/tools/inflation-calculator"/>
+<meta property="og:title" content="Inflation Calculator — what your money will really be worth"/>
+<meta property="og:description" content="See how inflation quietly erodes what your savings can buy, and what to do about it."/>
+<meta property="og:image" content="https://www.investingformummies.com/og-home-v2.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<meta name="theme-color" content="#1a3a5c"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,600;1,500&family=EB+Garamond:wght@700&display=swap" rel="stylesheet"/>
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only',capture_pageview:true,capture_pageleave:true,autocapture:false,cross_subdomain_cookie:true});
+</script>
+<link rel="stylesheet" href="/tools/tools.css"/>
+<style>
+:root{--mint:#bde9e4;--mint-lt:#e0f3f0;--teal:#2a9d8f;--navy:#1a3a5c;--navy-lt:#264d78;--cream:#f7faf9;--ink:#1a3a5c;--muted:#5a7d8a;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:12px;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;overflow-x:hidden;}
+/* Page frame (was .container + the full-width #inflation break-out on the games site) */
+.infl-page{padding:12px 24px 24px;}
+.game-hero{border-radius:16px;padding:18px 20px;color:#fff;text-align:center;margin-bottom:14px;position:relative;overflow:hidden;}
+.game-hero::before{content:'';position:absolute;inset:0;opacity:0.07;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
+.gh-tag{display:inline-block;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);font-size:0.6rem;font-weight:900;letter-spacing:1.5px;padding:3px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:4px;}
+.game-hero h1{font-family:'Lora',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);margin-bottom:4px;line-height:1.2;}
+.game-hero p{color:rgba(255,255,255,0.78);font-size:0.8rem;max-width:520px;margin:0 auto;}
+@media(max-width:640px){.game-hero{padding:14px;}}
+/* The calculator itself (was the srcdoc iframe's own stylesheet) */
+#infl-root{font-family:'Nunito',sans-serif;background:#f0f4f8;color:#1a3a5c;}
+#infl-root input[type=range]{-webkit-appearance:none;width:100%;height:6px;border-radius:3px;background:rgba(26,58,92,0.15);outline:none;cursor:pointer}
+#infl-root input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;cursor:pointer;box-shadow:0 2px 10px rgba(26,58,92,0.3)}
+#infl-root input[type=number]::-webkit-inner-spin-button,#infl-root input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none}
+#infl-root input[type=number]{-moz-appearance:textfield}
+footer{text-align:center;padding:24px;font-size:0.75rem;color:var(--muted);}
+footer span{color:var(--teal);}
+/* On the games site the calculator ran inside an iframe whose page had overflow-x:hidden; keep that clip here. */
+#infl-root{overflow-x:hidden;overflow-x:clip;}
+/* Phones only (www move, Nov 2026): wider content area, and two-up cards stack, so nothing runs off the right edge. */
+@media (max-width:600px){
+  .infl-page{padding:12px 10px 24px;}
+  #infl-root>div>div{padding:0 10px !important;}
+  #infl-root [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr !important;}
+  #infl-root input{min-width:0;}
+  #infl-root [style*="font-size: 4.1rem"]{font-size:clamp(1.9rem,9vw,4.1rem) !important;}
+  #infl-root [style*="grid-template-columns: 54px 1fr 112px 76px"]{grid-template-columns:40px minmax(0,1fr) 92px 50px !important;gap:6px !important;}
+}
+</style>
+</head>
+<body>
+<nav class="site-bar" aria-label="Site"><div class="site-bar-in"><a class="sb-brand" href="/"><img src="/assets/logo-round-clear.png" alt="" width="32" height="35"/><b>Investing for Mummies</b></a><a class="sb-link" href="/tools">← All free tools</a><a class="sb-cta" href="https://register.investingformummies.com">Find your batch →</a></div></nav>
+
+<main class="infl-page" id="inflation">
+  <div class="game-hero" style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-lt) 50%,var(--teal) 100%);">
+    <div class="gh-tag">📉 Calculator · Inflation</div>
+    <h1>Inflation Calculator</h1>
+    <p>See how inflation quietly erodes your purchasing power — and what to do about it.</p>
+  </div>
+  <div id="infl-root"></div>
+</main>
+
+<p class="tool-class">Want to know how to make your savings grow faster than prices rise? That’s what we cover in class. <a href="https://register.investingformummies.com">Find your batch →</a></p>
+<footer>Made with 💚 by <span>Investing for Mummies</span> — Nurturing Financially Confident Women · <a href="/tools" style="color:inherit">More free tools</a> · <a href="/" style="color:inherit">investingformummies.com</a><br>Educational only. Illustrative returns, not guaranteed. Not investment advice.</footer>
+
+<script src="/assets/vendor/react-18.2.0.min.js"></script>
+<script src="/assets/vendor/react-dom-18.2.0.min.js"></script>
+<script>
+/* Inflation Calculator app. Precompiled once from the games-site JSX (CLAUDE/inflation-calculator.html,
+   10 Nov 2026) with @babel/standalone 7.23.9, presets react+env — the same options the browser used.
+   Edit the JSX source and recompile; do not hand-edit this block. */
+(function(){
+"use strict";
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+var _React = React,
+  useState = _React.useState,
+  useEffect = _React.useEffect;
+var BASKET = [{
+  name: 'Coffee',
+  emoji: '☕',
+  price: 400
+}, {
+  name: 'Petrol 1L',
+  emoji: '⛽',
+  price: 95
+}, {
+  name: 'Onions 1kg',
+  emoji: '🧅',
+  price: 40
+}, {
+  name: 'Movie ticket',
+  emoji: '🎬',
+  price: 250
+}, {
+  name: 'Auto 5km',
+  emoji: '🛺',
+  price: 80
+}, {
+  name: 'Rice 1kg',
+  emoji: '🍚',
+  price: 60
+}];
+function fmtRs(n) {
+  var r = Math.round(Math.abs(n));
+  var s = String(r);
+  if (s.length <= 3) return '₹' + s;
+  var last3 = s.slice(-3);
+  var rest = s.slice(0, -3);
+  return '₹' + rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + last3;
+}
+
+/* ── Money card: clean financial card, NOT a fake note ── */
+function MoneyCard(_ref) {
+  var amount = _ref.amount,
+    label = _ref.label,
+    year = _ref.year,
+    pctLeft = _ref.pctLeft,
+    faded = _ref.faded;
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 232,
+      borderRadius: 20,
+      overflow: 'hidden',
+      flexShrink: 0,
+      background: faded ? 'linear-gradient(145deg,#1a1e1b,#141714)' : 'linear-gradient(145deg,#163520,#0e2416,#163520)',
+      border: '1.5px solid ' + (faded ? 'rgba(255,255,255,0.07)' : 'rgba(74,222,128,0.28)'),
+      boxShadow: faded ? '0 4px 20px rgba(0,0,0,0.55)' : '0 8px 32px rgba(0,0,0,0.6)',
+      position: 'relative'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      bottom: 0,
+      width: 4,
+      background: faded ? 'rgba(189,233,228,0.7)' : '#4ade80',
+      borderRadius: '20px 0 0 20px'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      right: -14,
+      bottom: -10,
+      fontSize: '7.5rem',
+      fontWeight: '900',
+      color: 'rgba(255,255,255,0.025)',
+      fontFamily: 'Georgia,serif',
+      lineHeight: 1,
+      userSelect: 'none',
+      pointerEvents: 'none'
+    }
+  }, "\u20B9"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '18px 18px 16px 20px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'flex-start',
+      marginBottom: 14
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.75rem',
+      fontWeight: '800',
+      letterSpacing: '1.8px',
+      textTransform: 'uppercase',
+      color: faded ? 'rgba(255,255,255,0.22)' : 'rgba(74,222,128,0.75)',
+      marginBottom: 3
+    }
+  }, year), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.6rem',
+      color: 'rgba(255,255,255,0.18)',
+      letterSpacing: '0.5px'
+    }
+  }, "\u092D\u093E\u0930\u0924\u0940\u092F \u0930\u093F\u091C\u093C\u0930\u094D\u0935 \u092C\u0948\u0902\u0915")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 28,
+      height: 28,
+      borderRadius: '50%',
+      background: faded ? 'rgba(255,255,255,0.04)' : 'rgba(74,222,128,0.1)',
+      border: '1px solid ' + (faded ? 'rgba(255,255,255,0.08)' : 'rgba(74,222,128,0.2)'),
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '1.26rem',
+      opacity: faded ? 0.4 : 1
+    }
+  }, "\u20B9")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: 'EB Garamond,Georgia,serif',
+      fontSize: '2.52rem',
+      fontWeight: '700',
+      color: faded ? 'rgba(255,255,255,0.28)' : 'rgba(255,255,255,0.95)',
+      lineHeight: 1,
+      marginBottom: 5,
+      letterSpacing: '-0.5px'
+    }
+  }, amount), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.8rem',
+      fontWeight: '700',
+      color: faded ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.45)',
+      letterSpacing: '0.5px',
+      textTransform: 'uppercase',
+      marginBottom: 14
+    }
+  }, label), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 4,
+      background: 'rgba(255,255,255,0.07)',
+      borderRadius: 2,
+      overflow: 'hidden',
+      marginBottom: 6
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: '100%',
+      width: (faded ? pctLeft : 100) + '%',
+      background: faded ? '#bde9e4' : '#4ade80',
+      borderRadius: 2,
+      transition: 'width 0.5s ease'
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.8rem',
+      fontWeight: '800',
+      color: faded ? '#bde9e4' : '#4ade80'
+    }
+  }, faded ? pctLeft.toFixed(0) + '% buying power remaining' : '100% buying power')));
+}
+function PowerChart(_ref2) {
+  var amount = _ref2.amount,
+    rate = _ref2.rate,
+    years = _ref2.years;
+  var W = 320,
+    H = 155,
+    pl = 46,
+    pr = 16,
+    pt = 14,
+    pb = 28;
+  var IW = W - pl - pr,
+    IH = H - pt - pb;
+  var pts = [];
+  for (var y = 0; y <= years; y++) pts.push({
+    y: y,
+    v: amount / Math.pow(1 + rate / 100, y)
+  });
+  var xS = IW / Math.max(years, 1),
+    yS = IH / amount;
+  var coords = pts.map(function (p) {
+    return [pl + p.y * xS, pt + IH - p.v * yS];
+  });
+  var linePath = coords.map(function (c, i) {
+    return (i === 0 ? 'M' : 'L') + c[0].toFixed(1) + ',' + c[1].toFixed(1);
+  }).join(' ');
+  var areaPath = linePath + ' L' + (pl + years * xS).toFixed(1) + ',' + (pt + IH) + ' L' + pl + ',' + (pt + IH) + ' Z';
+  var milestones = [{
+    p: 0.75,
+    l: '75%'
+  }, {
+    p: 0.5,
+    l: '50%'
+  }, {
+    p: 0.25,
+    l: '25%'
+  }].map(function (m) {
+    return {
+      p: m.p,
+      l: m.l,
+      cy: pt + IH - m.p * amount * yS
+    };
+  }).filter(function (m) {
+    return m.cy > pt && m.cy < pt + IH;
+  });
+  var step = years <= 10 ? 2 : years <= 20 ? 5 : 10;
+  var xLabels = [];
+  for (var i = 0; i <= years; i += step) xLabels.push(i);
+  if (xLabels[xLabels.length - 1] !== years) xLabels.push(years);
+  return /*#__PURE__*/React.createElement("svg", {
+    width: W,
+    height: H,
+    style: {
+      width: '100%',
+      overflow: 'visible'
+    }
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "aG",
+    x1: "0",
+    y1: "0",
+    x2: "0",
+    y2: "1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#4ade80",
+    stopOpacity: "0.28"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#4ade80",
+    stopOpacity: "0.01"
+  }))), milestones.map(function (m) {
+    return /*#__PURE__*/React.createElement("g", {
+      key: m.p
+    }, /*#__PURE__*/React.createElement("line", {
+      x1: pl,
+      y1: m.cy,
+      x2: W - pr,
+      y2: m.cy,
+      stroke: "rgba(26,58,92,0.1)",
+      strokeWidth: "1",
+      strokeDasharray: "4,4"
+    }), /*#__PURE__*/React.createElement("text", {
+      x: pl - 4,
+      y: m.cy + 4,
+      fontSize: "11.5",
+      fill: "#8aacbf",
+      textAnchor: "end",
+      fontFamily: "Nunito,sans-serif",
+      fontWeight: "700"
+    }, m.l));
+  }), /*#__PURE__*/React.createElement("path", {
+    d: areaPath,
+    fill: "url(#aG)"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: linePath,
+    fill: "none",
+    stroke: "#4ade80",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: coords[0][0],
+    cy: coords[0][1],
+    r: "4",
+    fill: "#4ade80"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: coords[coords.length - 1][0],
+    cy: coords[coords.length - 1][1],
+    r: "5",
+    fill: "#bde9e4"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: pl,
+    y1: pt + IH,
+    x2: W - pr,
+    y2: pt + IH,
+    stroke: "rgba(26,58,92,0.12)",
+    strokeWidth: "1"
+  }), xLabels.map(function (yr) {
+    return /*#__PURE__*/React.createElement("text", {
+      key: yr,
+      x: (pl + yr * xS).toFixed(1),
+      y: H - 4,
+      fontSize: "12",
+      fill: "#8aacbf",
+      textAnchor: "middle",
+      fontFamily: "Nunito,sans-serif"
+    }, "Yr ", yr);
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: pl,
+    y1: pt,
+    x2: pl,
+    y2: pt + IH,
+    stroke: "rgba(26,58,92,0.12)",
+    strokeWidth: "1"
+  }));
+}
+function SustainChart(_ref3) {
+  var amount = _ref3.amount,
+    rate = _ref3.rate,
+    years = _ref3.years;
+  var W = 320,
+    H = 155,
+    pl = 56,
+    pr = 16,
+    pt = 14,
+    pb = 28;
+  var IW = W - pl - pr,
+    IH = H - pt - pb;
+  var pts = [];
+  for (var y = 1; y <= years; y++) pts.push({
+    y: y,
+    v: amount * Math.pow(1 + rate / 100, y)
+  });
+  var yMin = amount * 0.95,
+    yMax = pts[pts.length - 1].v * 1.05,
+    yRange = yMax - yMin;
+  var xS = IW / Math.max(years - 1, 1);
+  var coords = pts.map(function (p, i) {
+    return [pl + i * xS, pt + IH - (p.v - yMin) / yRange * IH];
+  });
+  var linePath = coords.map(function (c, i) {
+    return (i === 0 ? 'M' : 'L') + c[0].toFixed(1) + ',' + c[1].toFixed(1);
+  }).join(' ');
+  var areaPath = linePath + ' L' + coords[coords.length - 1][0].toFixed(1) + ',' + (pt + IH) + ' L' + pl + ',' + (pt + IH) + ' Z';
+  var nomY = (pt + IH - (amount - yMin) / yRange * IH).toFixed(1);
+  var step = years <= 10 ? 2 : years <= 20 ? 5 : 10;
+  var xLbls = [];
+  for (var i = 0; i < years; i += step) xLbls.push(i + 1);
+  if (xLbls[xLbls.length - 1] !== years) xLbls.push(years);
+  return /*#__PURE__*/React.createElement("svg", {
+    viewBox: '0 0 ' + W + ' ' + H,
+    style: {
+      width: '100%',
+      display: 'block',
+      overflow: 'visible'
+    }
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "sG",
+    x1: "0",
+    y1: "0",
+    x2: "0",
+    y2: "1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#bde9e4",
+    stopOpacity: "0.35"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#bde9e4",
+    stopOpacity: "0.02"
+  }))), /*#__PURE__*/React.createElement("line", {
+    x1: pl,
+    y1: nomY,
+    x2: W - pr,
+    y2: nomY,
+    stroke: "rgba(26,58,92,0.18)",
+    strokeWidth: "1.5",
+    strokeDasharray: "5,4"
+  }), /*#__PURE__*/React.createElement("text", {
+    x: pl - 4,
+    y: parseFloat(nomY) + 3,
+    fontSize: "11",
+    fill: "rgba(26,58,92,0.4)",
+    textAnchor: "end",
+    fontFamily: "Nunito,sans-serif"
+  }, "today"), /*#__PURE__*/React.createElement("path", {
+    d: areaPath,
+    fill: "url(#sG)"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: linePath,
+    fill: "none",
+    stroke: "#bde9e4",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: coords[0][0],
+    cy: coords[0][1],
+    r: "4",
+    fill: "#1a3a5c"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: coords[coords.length - 1][0],
+    cy: coords[coords.length - 1][1],
+    r: "5",
+    fill: "#bde9e4"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: pl,
+    y1: pt + IH,
+    x2: W - pr,
+    y2: pt + IH,
+    stroke: "rgba(26,58,92,0.12)",
+    strokeWidth: "1"
+  }), xLbls.map(function (yr) {
+    return /*#__PURE__*/React.createElement("text", {
+      key: yr,
+      x: (pl + (yr - 1) * xS).toFixed(1),
+      y: H - 4,
+      fontSize: "12",
+      fill: "#8aacbf",
+      textAnchor: "middle",
+      fontFamily: "Nunito,sans-serif"
+    }, "Yr ", yr);
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: pl,
+    y1: pt,
+    x2: pl,
+    y2: pt + IH,
+    stroke: "rgba(26,58,92,0.12)",
+    strokeWidth: "1"
+  }));
+}
+function CorpusChart(_ref4) {
+  var startExp = _ref4.startExp,
+    rate = _ref4.rate,
+    corpusYears = _ref4.corpusYears;
+  var W = 320,
+    H = 160,
+    pl = 58,
+    pr = 16,
+    pt = 14,
+    pb = 28;
+  var IW = W - pl - pr,
+    IH = H - pt - pb;
+  var pts = [];
+  for (var y = 1; y <= corpusYears; y++) pts.push(startExp * Math.pow(1 + rate / 100, y - 1));
+  var yMin = pts[0] * 0.95,
+    yMax = pts[pts.length - 1] * 1.05,
+    yRange = Math.max(yMax - yMin, 1);
+  var xS = IW / Math.max(corpusYears - 1, 1);
+  var coords = pts.map(function (v, i) {
+    return [pl + i * xS, pt + IH - (v - yMin) / yRange * IH];
+  });
+  var linePath = coords.map(function (c, i) {
+    return (i === 0 ? 'M' : 'L') + c[0].toFixed(1) + ',' + c[1].toFixed(1);
+  }).join(' ');
+  var areaPath = linePath + ' L' + coords[coords.length - 1][0].toFixed(1) + ',' + (pt + IH) + ' L' + pl + ',' + (pt + IH) + ' Z';
+  var step = corpusYears <= 10 ? 2 : corpusYears <= 20 ? 5 : 10;
+  var xLbls = [];
+  for (var i = 0; i < corpusYears; i += step) xLbls.push(i + 1);
+  if (xLbls[xLbls.length - 1] !== corpusYears) xLbls.push(corpusYears);
+  var yLbls = [yMin, yMin + yRange * 0.5, yMax];
+  function fmtY(v) {
+    if (v >= 10000000) return (v / 10000000).toFixed(1) + 'Cr';
+    if (v >= 100000) return (v / 100000).toFixed(1) + 'L';
+    return (v / 1000).toFixed(0) + 'K';
+  }
+  return /*#__PURE__*/React.createElement("svg", {
+    viewBox: '0 0 ' + W + ' ' + H,
+    style: {
+      width: '100%',
+      display: 'block',
+      overflow: 'visible'
+    }
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "cG",
+    x1: "0",
+    y1: "0",
+    x2: "0",
+    y2: "1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#bde9e4",
+    stopOpacity: "0.4"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#bde9e4",
+    stopOpacity: "0.02"
+  }))), yLbls.map(function (v, i) {
+    var y = (pt + IH - (v - yMin) / yRange * IH).toFixed(1);
+    return /*#__PURE__*/React.createElement("g", {
+      key: i
+    }, /*#__PURE__*/React.createElement("line", {
+      x1: pl,
+      y1: y,
+      x2: W - pr,
+      y2: y,
+      stroke: "rgba(26,58,92,0.08)",
+      strokeWidth: "1",
+      strokeDasharray: "4,4"
+    }), /*#__PURE__*/React.createElement("text", {
+      x: pl - 4,
+      y: parseFloat(y) + 3,
+      fontSize: "11",
+      fill: "rgba(26,58,92,0.45)",
+      textAnchor: "end",
+      fontFamily: "Nunito,sans-serif"
+    }, fmtY(v)));
+  }), /*#__PURE__*/React.createElement("path", {
+    d: areaPath,
+    fill: "url(#cG)"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: linePath,
+    fill: "none",
+    stroke: "#1a3a5c",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: coords[0][0],
+    cy: coords[0][1],
+    r: "4",
+    fill: "#bde9e4",
+    stroke: "#1a3a5c",
+    strokeWidth: "1.5"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: coords[coords.length - 1][0],
+    cy: coords[coords.length - 1][1],
+    r: "5",
+    fill: "#1a3a5c"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: pl,
+    y1: pt + IH,
+    x2: W - pr,
+    y2: pt + IH,
+    stroke: "rgba(26,58,92,0.15)",
+    strokeWidth: "1"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: pl,
+    y1: pt,
+    x2: pl,
+    y2: pt + IH,
+    stroke: "rgba(26,58,92,0.15)",
+    strokeWidth: "1"
+  }), xLbls.map(function (yr) {
+    return /*#__PURE__*/React.createElement("text", {
+      key: yr,
+      x: (pl + (yr - 1) * xS).toFixed(1),
+      y: H - 4,
+      fontSize: "12",
+      fill: "#8aacbf",
+      textAnchor: "middle",
+      fontFamily: "Nunito,sans-serif"
+    }, "Yr ", yr);
+  }));
+}
+function App() {
+  var _useState = useState(10000),
+    _useState2 = _slicedToArray(_useState, 2),
+    amount = _useState2[0],
+    setAmount = _useState2[1];
+  var _useState3 = useState(6),
+    _useState4 = _slicedToArray(_useState3, 2),
+    rate = _useState4[0],
+    setRate = _useState4[1];
+  var _useState5 = useState('6'),
+    _useState6 = _slicedToArray(_useState5, 2),
+    rateInput = _useState6[0],
+    setRateInput = _useState6[1];
+  var _useState7 = useState(10),
+    _useState8 = _slicedToArray(_useState7, 2),
+    years = _useState8[0],
+    setYears = _useState8[1];
+  var _useState9 = useState('10'),
+    _useState10 = _slicedToArray(_useState9, 2),
+    yearsInput = _useState10[0],
+    setYearsInput = _useState10[1];
+  var _useState11 = useState('10,000'),
+    _useState12 = _slicedToArray(_useState11, 2),
+    inputVal = _useState12[0],
+    setInputVal = _useState12[1];
+  var _useState13 = useState('sustain'),
+    _useState14 = _slicedToArray(_useState13, 2),
+    mode = _useState14[0],
+    setMode = _useState14[1];
+  var _useState15 = useState('monthly'),
+    _useState16 = _slicedToArray(_useState15, 2),
+    period = _useState16[0],
+    setPeriod = _useState16[1];
+  var _useState17 = useState(20),
+    _useState18 = _slicedToArray(_useState17, 2),
+    corpusYears = _useState18[0],
+    setCorpusYears = _useState18[1];
+  var _useState19 = useState('20'),
+    _useState20 = _slicedToArray(_useState19, 2),
+    corpusYearsInput = _useState20[0],
+    setCorpusYearsInput = _useState20[1];
+  var futureVal = amount / Math.pow(1 + rate / 100, years);
+  var pctLeft = futureVal / amount * 100;
+  var halvingYrs = (Math.log(2) / Math.log(1 + rate / 100)).toFixed(1);
+  var targetYear = new Date().getFullYear() + years;
+  var RATES = [4, 6, 8, 10];
+
+  // Sustain mode calculations — annualAmount converts monthly input to yearly
+  var annualAmount = period === 'monthly' ? amount * 12 : amount;
+  var periodLabel = period === 'monthly' ? '/month' : '/year';
+  var nominalTotal = annualAmount * years;
+  // Year 1 cost = annualAmount*(1+r)^1, Year N = annualAmount*(1+r)^N → sum = annualAmount*(1+r)*[(1+r)^N-1]/r
+  var inflAdjTotal = rate > 0 ? annualAmount * (1 + rate / 100) * (Math.pow(1 + rate / 100, years) - 1) / (rate / 100) : annualAmount * years;
+  var extraNeeded = inflAdjTotal - nominalTotal;
+  var extraPct = nominalTotal > 0 ? (extraNeeded / nominalTotal * 100).toFixed(0) : 0;
+  var lastYearCost = annualAmount * Math.pow(1 + rate / 100, years);
+
+  // Section 3: Corpus Calculator — starting from inflation-adjusted expense from Section 1
+  var corpusStartExp = annualAmount; // Section 2: today's amount in annual terms
+  var corpusTotal = rate > 0 ? corpusStartExp * (Math.pow(1 + rate / 100, corpusYears) - 1) / (rate / 100) : corpusStartExp * corpusYears;
+  var corpusLastExp = corpusStartExp * Math.pow(1 + rate / 100, corpusYears - 1);
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#f0f4f8',
+      minHeight: '100vh',
+      fontFamily: 'Nunito,sans-serif',
+      color: '#1a3a5c',
+      paddingBottom: 36
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1600,
+      margin: '0 auto',
+      padding: '0 28px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 4,
+      marginTop: 16,
+      marginBottom: 12,
+      background: '#fff',
+      borderRadius: 14,
+      padding: 4,
+      border: '1px solid rgba(26,58,92,0.1)',
+      boxShadow: '0 2px 10px rgba(26,58,92,0.07)'
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      setMode('sustain');
+    },
+    style: {
+      flex: 1,
+      padding: '11px 8px',
+      borderRadius: 10,
+      border: 'none',
+      fontWeight: 800,
+      fontSize: '1.1rem',
+      cursor: 'pointer',
+      lineHeight: 1.35,
+      transition: 'all 0.2s',
+      background: mode === 'sustain' ? 'linear-gradient(135deg,#1a3a5c,#254d78)' : 'transparent',
+      color: mode === 'sustain' ? '#fff' : '#5a7d9a'
+    }
+  }, "\uD83D\uDCC8 Sustain My Lifestyle", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '0.98rem',
+      fontWeight: 600,
+      opacity: 0.8
+    }
+  }, "How much will I need?")), /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      setMode('erodes');
+    },
+    style: {
+      flex: 1,
+      padding: '11px 8px',
+      borderRadius: 10,
+      border: 'none',
+      fontWeight: 800,
+      fontSize: '1.1rem',
+      cursor: 'pointer',
+      lineHeight: 1.35,
+      transition: 'all 0.2s',
+      background: mode === 'erodes' ? 'linear-gradient(135deg,#1a3a5c,#2e6b8a)' : 'transparent',
+      color: mode === 'erodes' ? '#fff' : '#5a7d9a'
+    }
+  }, "\uD83D\uDCB8 Purchasing Power", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '0.98rem',
+      fontWeight: 600,
+      opacity: 0.8
+    }
+  }, "What will my money buy later?")), /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      setMode('corpus');
+    },
+    style: {
+      flex: 1,
+      padding: '11px 8px',
+      borderRadius: 10,
+      border: 'none',
+      fontWeight: 800,
+      fontSize: '1.1rem',
+      cursor: 'pointer',
+      lineHeight: 1.35,
+      transition: 'all 0.2s',
+      background: mode === 'corpus' ? 'linear-gradient(135deg,#1a3a5c,#254d78)' : 'transparent',
+      color: mode === 'corpus' ? '#fff' : '#5a7d9a'
+    }
+  }, "\uD83C\uDFE6 Corpus Calculator", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '0.98rem',
+      fontWeight: 600,
+      opacity: 0.8
+    }
+  }, "How much lump sum do I need?"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#fff',
+      borderRadius: 18,
+      padding: '14px 16px',
+      marginBottom: 16,
+      border: '1px solid rgba(26,58,92,0.1)',
+      boxShadow: '0 4px 20px rgba(26,58,92,0.08)',
+      borderTop: '3px solid ' + (mode === 'corpus' ? '#1a3a5c' : mode === 'erodes' ? '#2e6b8a' : '#bde9e4')
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8,
+      marginBottom: 10
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '1.44rem',
+      fontWeight: '900',
+      color: '#1a3a5c',
+      flexShrink: 0
+    }
+  }, "\u20B9"), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    inputMode: "numeric",
+    value: inputVal,
+    placeholder: "10,000",
+    onChange: function onChange(e) {
+      var raw = e.target.value.replace(/,/g, '');
+      if (raw === '' || raw === '0') {
+        setInputVal(raw);
+        return;
+      }
+      var v = parseInt(raw);
+      if (!isNaN(v) && v > 0) {
+        setAmount(v);
+        setInputVal(v.toLocaleString('en-IN'));
+      } else {
+        setInputVal(e.target.value.replace(/[^0-9,]/g, ''));
+      }
+    },
+    onBlur: function onBlur() {
+      var raw = inputVal.replace(/,/g, '');
+      var v = parseInt(raw);
+      if (!isNaN(v) && v > 0) {
+        setInputVal(v.toLocaleString('en-IN'));
+      }
+    },
+    style: {
+      flex: 1,
+      padding: '9px 12px',
+      background: '#f8fafc',
+      color: '#1a3a5c',
+      border: '2px solid #c5d5e0',
+      borderRadius: 10,
+      fontSize: '1.44rem',
+      outline: 'none',
+      fontFamily: 'Nunito,sans-serif',
+      fontWeight: 800,
+      minWidth: 0
+    }
+  }), function () {
+    var raw = inputVal.replace(/,/g, '');
+    var v = parseInt(raw);
+    if (isNaN(v) || v <= 0) return null;
+    var label = '';
+    if (v >= 10000000) label = parseFloat((v / 10000000).toFixed(2)).toString() + 'Cr';else if (v >= 100000) label = parseFloat((v / 100000).toFixed(2)).toString() + 'L';else if (v >= 1000) label = parseFloat((v / 1000).toFixed(2)).toString() + 'K';
+    if (!label) return null;
+    return /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: '1.06rem',
+        fontWeight: '900',
+        color: '#5a7d9a',
+        whiteSpace: 'nowrap',
+        flexShrink: 0
+      }
+    }, label);
+  }(), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 2,
+      background: '#f0f4f8',
+      borderRadius: 8,
+      padding: 2,
+      border: '1px solid #c5d5e0',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      setPeriod('monthly');
+    },
+    style: {
+      padding: '4px 9px',
+      borderRadius: 6,
+      border: 'none',
+      fontSize: '0.94rem',
+      fontWeight: 800,
+      cursor: 'pointer',
+      background: period === 'monthly' ? '#1a3a5c' : 'transparent',
+      color: period === 'monthly' ? '#fff' : '#5a7d9a',
+      transition: 'all 0.15s'
+    }
+  }, "Monthly"), /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      setPeriod('yearly');
+    },
+    style: {
+      padding: '4px 9px',
+      borderRadius: 6,
+      border: 'none',
+      fontSize: '0.94rem',
+      fontWeight: 800,
+      cursor: 'pointer',
+      background: period === 'yearly' ? '#1a3a5c' : 'transparent',
+      color: period === 'yearly' ? '#fff' : '#5a7d9a',
+      transition: 'all 0.15s'
+    }
+  }, "Yearly"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    inputMode: "decimal",
+    value: rateInput,
+    placeholder: "6",
+    onChange: function onChange(e) {
+      var v = e.target.value.replace(/[^0-9.]/g, '');
+      var parts = v.split('.');
+      if (parts.length > 2) v = parts[0] + '.' + parts.slice(1).join('');
+      setRateInput(v);
+      var n = parseFloat(v);
+      if (!isNaN(n) && n >= 0 && n <= 30) setRate(n);
+    },
+    onBlur: function onBlur() {
+      var n = parseFloat(rateInput);
+      if (isNaN(n) || n < 0) {
+        setRateInput('6');
+        setRate(6);
+      } else if (n > 30) {
+        setRateInput('30');
+        setRate(30);
+      } else setRateInput(String(n));
+    },
+    style: {
+      width: 52,
+      padding: '7px 10px',
+      background: '#f8fafc',
+      color: '#1a3a5c',
+      border: '2px solid #fbd4b4',
+      borderRadius: 10,
+      fontSize: '1.44rem',
+      outline: 'none',
+      fontFamily: 'Nunito,sans-serif',
+      fontWeight: 800,
+      textAlign: 'center'
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '1.08rem',
+      fontWeight: '800',
+      color: '#1a3a5c',
+      whiteSpace: 'nowrap'
+    }
+  }, "% inflation"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1
+    }
+  }), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    inputMode: "numeric",
+    value: yearsInput,
+    placeholder: "10",
+    onChange: function onChange(e) {
+      var v = e.target.value.replace(/[^0-9]/g, '');
+      setYearsInput(v);
+      var n = parseInt(v);
+      if (!isNaN(n) && n >= 1 && n <= 50) setYears(n);
+    },
+    onBlur: function onBlur() {
+      var n = parseInt(yearsInput);
+      if (isNaN(n) || n < 1) {
+        setYearsInput('1');
+        setYears(1);
+      } else if (n > 50) {
+        setYearsInput('50');
+        setYears(50);
+      } else setYearsInput(String(n));
+    },
+    style: {
+      width: 48,
+      padding: '7px 10px',
+      background: '#f8fafc',
+      color: '#1a3a5c',
+      border: '2px solid #b3e0d8',
+      borderRadius: 10,
+      fontSize: '1.44rem',
+      outline: 'none',
+      fontFamily: 'Nunito,sans-serif',
+      fontWeight: 800,
+      textAlign: 'center'
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '1.08rem',
+      fontWeight: '800',
+      color: '#1a3a5c',
+      whiteSpace: 'nowrap'
+    }
+  }, "yrs \u2192 ", targetYear))), mode === 'erodes' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: 12,
+      marginBottom: 16,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement(MoneyCard, {
+    amount: fmtRs(amount),
+    label: "purchasing power",
+    year: 'Today · ' + new Date().getFullYear(),
+    pctLeft: 100,
+    faded: false
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 4
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '2.4rem',
+      opacity: 0.18
+    }
+  }, "\u2192"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.8rem',
+      color: '#8aacbf',
+      fontWeight: '700'
+    }
+  }, years, " yrs")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement(MoneyCard, {
+    amount: fmtRs(Math.round(futureVal)),
+    label: "equivalent value",
+    year: targetYear + ' equivalent',
+    pctLeft: pctLeft,
+    faded: true
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: 'center',
+      background: 'linear-gradient(135deg,#1a3a5c 0%,#1b5e7a 50%,#2a9d8f 100%)',
+      borderRadius: 18,
+      padding: '22px 20px',
+      marginBottom: 14,
+      boxShadow: '0 8px 32px rgba(26,58,92,0.22)',
+      position: 'relative',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      opacity: 0.05,
+      backgroundImage: 'radial-gradient(circle,#fff 1px,transparent 1px)',
+      backgroundSize: '24px 24px',
+      pointerEvents: 'none'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.86rem',
+      color: 'rgba(255,255,255,0.55)',
+      fontWeight: '700',
+      letterSpacing: '1.5px',
+      marginBottom: 6,
+      textTransform: 'uppercase'
+    }
+  }, "In ", years, " years at ", rate, "% inflation"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '4.1rem',
+      fontWeight: '900',
+      color: '#fff',
+      lineHeight: 1,
+      marginBottom: 4,
+      letterSpacing: '-1px'
+    }
+  }, fmtRs(Math.round(futureVal))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '1.18rem',
+      color: 'rgba(255,255,255,0.65)',
+      marginBottom: 16
+    }
+  }, "is the real buying power of ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#fff'
+    }
+  }, fmtRs(amount)), " by ", targetYear), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 10,
+      borderRadius: 5,
+      background: 'rgba(255,255,255,0.12)',
+      overflow: 'hidden',
+      position: 'relative'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      bottom: 0,
+      width: pctLeft + '%',
+      background: 'linear-gradient(90deg,#4ade80,#86efac)',
+      borderRadius: 5,
+      transition: 'width 0.4s ease'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      right: 0,
+      top: 0,
+      bottom: 0,
+      width: 100 - pctLeft + '%',
+      background: 'rgba(189,233,228,0.45)',
+      borderRadius: 5
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      marginTop: 8
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '0.96rem',
+      color: '#4ade80',
+      fontWeight: '800'
+    }
+  }, pctLeft.toFixed(1), "% remaining"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '0.96rem',
+      color: '#bde9e4',
+      fontWeight: '800'
+    }
+  }, (100 - pctLeft).toFixed(1), "% lost to inflation"))), function () {
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: '#fff',
+        borderRadius: 16,
+        padding: '16px',
+        marginBottom: 14,
+        border: '1px solid rgba(26,58,92,0.12)',
+        boxShadow: '0 4px 20px rgba(26,58,92,0.07)',
+        borderTop: '3px solid #bde9e4'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.9rem',
+        fontWeight: '800',
+        color: '#1a3a5c',
+        letterSpacing: '1.2px',
+        marginBottom: 4
+      }
+    }, "\uD83D\uDCC9 YEAR-BY-YEAR PURCHASING POWER \u2014 ", fmtRs(amount), " today"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.86rem',
+        color: '#8aacbf',
+        marginBottom: 12
+      }
+    }, "How much ", fmtRs(amount), " is really worth, in today's money, as years pass"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'grid',
+        gridTemplateColumns: '54px 1fr 96px 76px',
+        gap: 8,
+        padding: '4px 6px',
+        marginBottom: 4
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.75rem',
+        color: '#8aacbf',
+        fontWeight: '800',
+        textTransform: 'uppercase'
+      }
+    }, "YEAR"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.75rem',
+        color: '#8aacbf',
+        fontWeight: '800',
+        textTransform: 'uppercase'
+      }
+    }, "REAL VALUE"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.75rem',
+        color: '#8aacbf',
+        fontWeight: '800',
+        textTransform: 'uppercase',
+        textAlign: 'right'
+      }
+    }, "LOST"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.75rem',
+        color: '#8aacbf',
+        fontWeight: '800',
+        textTransform: 'uppercase',
+        textAlign: 'right'
+      }
+    }, "REMAINING")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        maxHeight: 340,
+        overflowY: 'auto',
+        paddingRight: 2
+      }
+    }, Array.from({
+      length: years
+    }, function (_, i) {
+      return i + 1;
+    }).map(function (y) {
+      var realVal = amount / Math.pow(1 + rate / 100, y);
+      var pctRemaining = realVal / amount * 100;
+      var pctLost = (100 - pctRemaining).toFixed(0);
+      var barW = pctRemaining.toFixed(1);
+      var heat = y / years;
+      var barColor = heat > 0.7 ? '#1a3a5c' : heat > 0.4 ? '#2e6b8a' : '#bde9e4';
+      var isLast = y === years;
+      return /*#__PURE__*/React.createElement("div", {
+        key: y,
+        style: {
+          display: 'grid',
+          gridTemplateColumns: '54px 1fr 96px 76px',
+          gap: 8,
+          padding: '5px 6px',
+          borderRadius: 7,
+          background: isLast ? 'rgba(239,68,68,0.05)' : 'transparent',
+          borderBottom: '1px solid rgba(26,58,92,0.05)',
+          alignItems: 'center'
+        }
+      }, /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontSize: '0.86rem',
+          fontWeight: '800',
+          color: isLast ? '#ef4444' : '#8aacbf'
+        }
+      }, "Yr ", y), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontSize: '1.08rem',
+          fontWeight: '900',
+          color: isLast ? '#1a3a5c' : heat > 0.5 ? '#2e6b8a' : '#1a3a5c',
+          marginBottom: 3
+        }
+      }, fmtRs(Math.round(realVal))), /*#__PURE__*/React.createElement("div", {
+        style: {
+          height: 5,
+          borderRadius: 3,
+          background: '#f0f4f8',
+          overflow: 'hidden'
+        }
+      }, /*#__PURE__*/React.createElement("div", {
+        style: {
+          height: '100%',
+          width: barW + '%',
+          background: 'linear-gradient(90deg,#22c55e,' + barColor + ')',
+          borderRadius: 3,
+          transition: 'width 0.3s'
+        }
+      }))), /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontSize: '0.98rem',
+          fontWeight: '900',
+          color: heat > 0.5 ? '#1a3a5c' : '#2e6b8a',
+          textAlign: 'right'
+        }
+      }, "-", pctLost, "%"), /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontSize: '0.98rem',
+          fontWeight: '900',
+          color: heat > 0.5 ? '#1a3a5c' : heat > 0.3 ? '#2e6b8a' : '#bde9e4',
+          textAlign: 'right'
+        }
+      }, pctRemaining.toFixed(0), "%"));
+    })));
+  }(), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'linear-gradient(135deg,#fffbf0 0%,#fff 60%)',
+      borderRadius: 16,
+      padding: '16px',
+      marginBottom: 14,
+      border: '1px solid rgba(26,58,92,0.1)',
+      boxShadow: '0 4px 20px rgba(26,58,92,0.07)',
+      borderTop: '3px solid #bde9e4'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.9rem',
+      fontWeight: '800',
+      color: '#1a3a5c',
+      letterSpacing: '1.2px',
+      marginBottom: 12
+    }
+  }, "\uD83D\uDED2 BASKET OF GOODS \u2014 TODAY vs ", targetYear), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 9
+    }
+  }, BASKET.map(function (item) {
+    var future = item.price * Math.pow(1 + rate / 100, years);
+    var incPct = ((future - item.price) / item.price * 100).toFixed(0);
+    return /*#__PURE__*/React.createElement("div", {
+      key: item.name,
+      style: {
+        background: '#fff',
+        borderRadius: 12,
+        padding: '14px 14px 12px',
+        border: '1px solid rgba(26,58,92,0.1)',
+        borderLeft: '3px solid #bde9e4',
+        boxShadow: '0 2px 8px rgba(26,58,92,0.05)'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        marginBottom: 10
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: '2.76rem',
+        lineHeight: 1
+      }
+    }, item.emoji), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: '1.2rem',
+        fontWeight: '800',
+        color: '#1a3a5c'
+      }
+    }, item.name)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-end',
+        marginBottom: 6
+      }
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.8rem',
+        color: '#8aacbf',
+        fontWeight: '700',
+        marginBottom: 2
+      }
+    }, "TODAY"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '1.68rem',
+        fontWeight: '900',
+        color: '#1a3a5c',
+        lineHeight: 1
+      }
+    }, fmtRs(item.price))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        color: '#c5d5e0',
+        fontSize: '1.44rem',
+        paddingBottom: 2
+      }
+    }, "\u2192"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        textAlign: 'right'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.8rem',
+        color: '#8aacbf',
+        fontWeight: '700',
+        marginBottom: 2
+      }
+    }, targetYear), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '1.68rem',
+        fontWeight: '900',
+        color: '#1a3a5c',
+        lineHeight: 1
+      }
+    }, fmtRs(Math.round(future))))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.94rem',
+        color: '#1a3a5c',
+        fontWeight: '700',
+        textAlign: 'right'
+      }
+    }, "+", incPct, "% more expensive"));
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 10,
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'rgba(189,233,228,0.18)',
+      borderRadius: 14,
+      padding: '15px 13px',
+      border: '1px solid rgba(26,58,92,0.12)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.84rem',
+      color: '#1a3a5c',
+      fontWeight: '800',
+      letterSpacing: '0.5px',
+      marginBottom: 5
+    }
+  }, "\u23F1 BUYING POWER HALVES IN"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '2.22rem',
+      fontWeight: '900',
+      color: '#1a3a5c',
+      lineHeight: 1,
+      marginBottom: 6
+    }
+  }, halvingYrs, " yrs"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.98rem',
+      color: '#5a7d9a',
+      lineHeight: 1.6
+    }
+  }, "At ", rate, "% inflation, buying power ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#1a3a5c'
+    }
+  }, "halves"), " every ", halvingYrs, " years")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'rgba(22,163,74,0.07)',
+      borderRadius: 14,
+      padding: '15px 13px',
+      border: '1px solid rgba(22,163,74,0.18)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.84rem',
+      color: '#16a34a',
+      fontWeight: '800',
+      letterSpacing: '0.5px',
+      marginBottom: 5
+    }
+  }, "\uD83C\uDFAF TO BEAT INFLATION"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '2.22rem',
+      fontWeight: '900',
+      color: '#1a3a5c',
+      lineHeight: 1,
+      marginBottom: 6
+    }
+  }, rate + 3, "%+ p.a."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.98rem',
+      color: '#5a7d9a',
+      lineHeight: 1.6
+    }
+  }, "Earn at least ", rate + 3, "% to ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#1a3a5c'
+    }
+  }, "genuinely grow"), " wealth in real terms"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'linear-gradient(135deg,#f0f4f8,#fff)',
+      borderRadius: 14,
+      padding: '14px 16px 14px 20px',
+      border: '1px solid rgba(26,58,92,0.1)',
+      borderLeft: '4px solid #1a3a5c',
+      boxShadow: '0 2px 14px rgba(26,58,92,0.06)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '1.06rem',
+      color: '#5a7d9a',
+      lineHeight: 1.75,
+      marginBottom: 5
+    }
+  }, "\uD83D\uDCA1 A Bank FD at ~7% barely beats ", rate, "% inflation after tax. Equity mutual funds averaging ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#1a3a5c'
+    }
+  }, "12\u201314% p.a."), " are one of India's most powerful long-term inflation hedges."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.94rem',
+      color: '#8aacbf',
+      fontStyle: 'italic'
+    }
+  }, "Idle cash loses value silently. Invested money fights back."))), mode === 'sustain' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'linear-gradient(135deg,#1a3a5c,#1e4570)',
+      borderRadius: 18,
+      padding: '22px 20px',
+      marginBottom: 14,
+      boxShadow: '0 8px 32px rgba(26,58,92,0.28)',
+      position: 'relative',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      opacity: 0.05,
+      backgroundImage: 'radial-gradient(circle,#fff 1px,transparent 1px)',
+      backgroundSize: '24px 24px',
+      pointerEvents: 'none'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.86rem',
+      color: 'rgba(255,255,255,0.55)',
+      fontWeight: '700',
+      letterSpacing: '1.5px',
+      marginBottom: 6,
+      textTransform: 'uppercase'
+    }
+  }, "\uD83D\uDCC6 In year ", years, " (", targetYear, "), your ", period, " expense will be"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '4.1rem',
+      fontWeight: '900',
+      color: '#bde9e4',
+      lineHeight: 1,
+      marginBottom: 4,
+      letterSpacing: '-1px'
+    }
+  }, fmtRs(Math.round(period === 'monthly' ? lastYearCost / 12 : lastYearCost))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '1.18rem',
+      color: 'rgba(255,255,255,0.65)'
+    }
+  }, "vs ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: 'rgba(255,255,255,0.85)'
+    }
+  }, fmtRs(amount), periodLabel), " today")), function () {
+    var maxCost = annualAmount * Math.pow(1 + rate / 100, years);
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: '#fff',
+        borderRadius: 16,
+        padding: '16px',
+        marginBottom: 14,
+        border: '1px solid rgba(26,58,92,0.1)',
+        boxShadow: '0 4px 20px rgba(26,58,92,0.07)',
+        borderTop: '3px solid #bde9e4'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.9rem',
+        fontWeight: '800',
+        color: '#1a3a5c',
+        letterSpacing: '1.2px',
+        marginBottom: 4
+      }
+    }, "\uD83D\uDCC5 YEAR-BY-YEAR EXPENSE \u2014 ", fmtRs(amount), periodLabel, " in today's money"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.86rem',
+        color: '#8aacbf',
+        marginBottom: 12
+      }
+    }, "Each year your same lifestyle costs MORE due to inflation"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'grid',
+        gridTemplateColumns: '54px 1fr 112px 76px',
+        gap: 8,
+        padding: '4px 6px',
+        marginBottom: 4
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.75rem',
+        color: '#8aacbf',
+        fontWeight: '800',
+        textTransform: 'uppercase'
+      }
+    }, "YEAR"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.75rem',
+        color: '#8aacbf',
+        fontWeight: '800',
+        textTransform: 'uppercase'
+      }
+    }, "ANNUAL EXPENSE"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.75rem',
+        color: '#8aacbf',
+        fontWeight: '800',
+        textTransform: 'uppercase',
+        textAlign: 'right'
+      }
+    }, "CUMULATIVE"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: '0.75rem',
+        color: '#8aacbf',
+        fontWeight: '800',
+        textTransform: 'uppercase',
+        textAlign: 'right'
+      }
+    }, "vs TODAY")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        maxHeight: 340,
+        overflowY: 'auto',
+        paddingRight: 2
+      }
+    }, Array.from({
+      length: years
+    }, function (_, i) {
+      return i + 1;
+    }).map(function (y) {
+      var cost = annualAmount * Math.pow(1 + rate / 100, y);
+      var cumul = rate > 0 ? annualAmount * (1 + rate / 100) * (Math.pow(1 + rate / 100, y) - 1) / (rate / 100) : annualAmount * y;
+      var pctMore = ((Math.pow(1 + rate / 100, y) - 1) * 100).toFixed(0);
+      var barW = (cost / maxCost * 100).toFixed(1);
+      var heat = y / years;
+      var rowColor = heat > 0.7 ? '#1a3a5c' : heat > 0.4 ? '#2e6b8a' : '#bde9e4';
+      var isLast = y === years;
+      return /*#__PURE__*/React.createElement("div", {
+        key: y,
+        style: {
+          display: 'grid',
+          gridTemplateColumns: '54px 1fr 112px 76px',
+          gap: 8,
+          padding: '5px 6px',
+          borderRadius: 7,
+          background: isLast ? 'rgba(189,233,228,0.12)' : 'transparent',
+          borderBottom: '1px solid rgba(26,58,92,0.05)',
+          alignItems: 'center'
+        }
+      }, /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontSize: '0.86rem',
+          fontWeight: '800',
+          color: isLast ? '#1a3a5c' : '#8aacbf'
+        }
+      }, "Yr ", y), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontSize: '1.08rem',
+          fontWeight: '900',
+          color: '#1a3a5c',
+          marginBottom: 3
+        }
+      }, fmtRs(Math.round(cost))), /*#__PURE__*/React.createElement("div", {
+        style: {
+          height: 5,
+          borderRadius: 3,
+          background: '#f0f4f8',
+          overflow: 'hidden'
+        }
+      }, /*#__PURE__*/React.createElement("div", {
+        style: {
+          height: '100%',
+          width: barW + '%',
+          background: 'linear-gradient(90deg,#bde9e4,' + rowColor + ')',
+          borderRadius: 3,
+          transition: 'width 0.3s'
+        }
+      }))), /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontSize: '0.94rem',
+          fontWeight: '700',
+          color: '#5a7d9a',
+          textAlign: 'right'
+        }
+      }, fmtRs(Math.round(cumul))), /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontSize: '0.98rem',
+          fontWeight: '900',
+          color: rowColor,
+          textAlign: 'right'
+        }
+      }, "+", pctMore, "%"));
+    })));
+  }(), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 10,
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'rgba(189,233,228,0.18)',
+      borderRadius: 14,
+      padding: '15px 13px',
+      border: '1px solid rgba(26,58,92,0.12)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.84rem',
+      color: '#1a3a5c',
+      fontWeight: '800',
+      letterSpacing: '0.5px',
+      marginBottom: 5
+    }
+  }, "\u23F1 EXPENSE DOUBLES IN"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '2.22rem',
+      fontWeight: '900',
+      color: '#1a3a5c',
+      lineHeight: 1,
+      marginBottom: 6
+    }
+  }, halvingYrs, " yrs"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.98rem',
+      color: '#5a7d9a',
+      lineHeight: 1.6
+    }
+  }, "Your ", fmtRs(amount), periodLabel, " spend will ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#1a3a5c'
+    }
+  }, "cost twice as much"), " in ", halvingYrs, " years")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'rgba(26,58,92,0.05)',
+      borderRadius: 14,
+      padding: '15px 13px',
+      border: '1px solid rgba(26,58,92,0.12)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.84rem',
+      color: '#1a3a5c',
+      fontWeight: '800',
+      letterSpacing: '0.5px',
+      marginBottom: 5
+    }
+  }, "\uD83D\uDCB8 EXTRA COST DUE TO INFLATION"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '2.22rem',
+      fontWeight: '900',
+      color: '#1a3a5c',
+      lineHeight: 1,
+      marginBottom: 4
+    }
+  }, fmtRs(Math.round(extraNeeded))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.86rem',
+      color: '#8aacbf',
+      marginBottom: 5
+    }
+  }, "on top of the ", fmtRs(Math.round(nominalTotal)), " you'd need with zero inflation"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.98rem',
+      color: '#5a7d9a',
+      lineHeight: 1.4
+    }
+  }, /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#1a3a5c'
+    }
+  }, "Total needed: ", fmtRs(Math.round(inflAdjTotal)))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'linear-gradient(135deg,#f0f7f6,#fff)',
+      borderRadius: 14,
+      padding: '14px 16px 14px 20px',
+      border: '1px solid rgba(26,58,92,0.1)',
+      borderLeft: '4px solid #bde9e4',
+      boxShadow: '0 2px 14px rgba(26,58,92,0.06)',
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '1.06rem',
+      color: '#5a7d9a',
+      lineHeight: 1.75,
+      marginBottom: 5
+    }
+  }, "\uD83D\uDCA1 This is why retirement planning needs an ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#1a3a5c'
+    }
+  }, "inflation buffer"), ". If you plan to spend ", fmtRs(amount), periodLabel, ", you won't need ", fmtRs(Math.round(nominalTotal)), " \u2014 you'll need ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#1a3a5c'
+    }
+  }, fmtRs(Math.round(inflAdjTotal))), " to maintain the same lifestyle over ", years, " years."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.94rem',
+      color: '#8aacbf',
+      fontStyle: 'italic'
+    }
+  }, "Plan for more. Inflation is silent but relentless."))), mode === 'corpus' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'rgba(189,233,228,0.18)',
+      borderRadius: 12,
+      padding: '12px 16px',
+      marginBottom: 14,
+      border: '1px solid rgba(26,58,92,0.12)',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '1.56rem'
+    }
+  }, "\uD83D\uDD17"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '1.02rem',
+      color: '#5a7d9a',
+      lineHeight: 1.6
+    }
+  }, "Using your Section 2 settings \u2014 current ", period, " expense: ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#1a3a5c'
+    }
+  }, fmtRs(amount), periodLabel), " \xA0\xB7\xA0 Inflation rate: ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#1a3a5c'
+    }
+  }, rate, "%"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#fff',
+      borderRadius: 18,
+      padding: '18px',
+      marginBottom: 16,
+      border: '1px solid rgba(26,58,92,0.1)',
+      boxShadow: '0 4px 20px rgba(26,58,92,0.08)',
+      borderTop: '3px solid #1a3a5c'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.94rem',
+      fontWeight: '800',
+      color: '#1a3a5c',
+      marginBottom: 10,
+      letterSpacing: '1px',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 6
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-block',
+      width: 10,
+      height: 10,
+      borderRadius: 3,
+      background: 'linear-gradient(135deg,#1a3a5c,#254d78)'
+    }
+  }), "CORPUS DURATION"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    inputMode: "numeric",
+    value: corpusYearsInput,
+    placeholder: "e.g. 20",
+    onChange: function onChange(e) {
+      var v = e.target.value.replace(/[^0-9]/g, '');
+      setCorpusYearsInput(v);
+      var n = parseInt(v);
+      if (!isNaN(n) && n > 0 && n <= 100) setCorpusYears(n);
+    },
+    onBlur: function onBlur() {
+      var n = parseInt(corpusYearsInput);
+      if (isNaN(n) || n <= 0) {
+        setCorpusYearsInput('20');
+        setCorpusYears(20);
+      } else if (n > 100) {
+        setCorpusYearsInput('100');
+        setCorpusYears(100);
+      } else setCorpusYearsInput(String(n));
+    },
+    style: {
+      flex: 1,
+      padding: '10px 14px',
+      background: '#f8fafc',
+      color: '#1a3a5c',
+      border: '2px solid #c5d5e0',
+      borderRadius: 12,
+      fontSize: '1.44rem',
+      outline: 'none',
+      fontFamily: 'Nunito,sans-serif',
+      fontWeight: 800
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '1.26rem',
+      fontWeight: '800',
+      color: '#1a3a5c',
+      whiteSpace: 'nowrap'
+    }
+  }, "years")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.9rem',
+      color: '#8aacbf',
+      marginTop: 6
+    }
+  }, "How many years do you need this corpus to last? (e.g. years in retirement)")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'linear-gradient(135deg,#1a3a5c,#1e4570)',
+      borderRadius: 18,
+      padding: '22px 20px',
+      marginBottom: 14,
+      boxShadow: '0 8px 32px rgba(26,58,92,0.28)',
+      position: 'relative',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      opacity: 0.05,
+      backgroundImage: 'radial-gradient(circle,#fff 1px,transparent 1px)',
+      backgroundSize: '24px 24px',
+      pointerEvents: 'none'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.86rem',
+      color: 'rgba(255,255,255,0.55)',
+      fontWeight: '700',
+      letterSpacing: '1.5px',
+      marginBottom: 6,
+      textTransform: 'uppercase'
+    }
+  }, "\uD83C\uDFE6 TOTAL CORPUS REQUIRED"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '4.1rem',
+      fontWeight: '900',
+      color: '#bde9e4',
+      lineHeight: 1,
+      marginBottom: 4,
+      letterSpacing: '-1px'
+    }
+  }, fmtRs(Math.round(corpusTotal))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '1.18rem',
+      color: 'rgba(255,255,255,0.65)',
+      marginBottom: 14
+    }
+  }, "to sustain ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: 'rgba(255,255,255,0.85)'
+    }
+  }, fmtRs(amount), periodLabel), " (today's money), growing at ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#bde9e4'
+    }
+  }, rate, "% p.a."), " for ", corpusYears, " years"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'rgba(255,255,255,0.08)',
+      borderRadius: 10,
+      padding: '10px 12px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.8rem',
+      color: 'rgba(255,255,255,0.55)',
+      fontWeight: '800',
+      marginBottom: 3
+    }
+  }, "YEAR 1 EXPENSE"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '1.56rem',
+      fontWeight: '900',
+      color: '#fff'
+    }
+  }, fmtRs(Math.round(corpusStartExp)), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '0.9rem',
+      opacity: 0.7
+    }
+  }, "/yr"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'rgba(255,255,255,0.08)',
+      borderRadius: 10,
+      padding: '10px 12px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.8rem',
+      color: 'rgba(255,255,255,0.55)',
+      fontWeight: '800',
+      marginBottom: 3
+    }
+  }, "YEAR ", corpusYears, " EXPENSE"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '1.56rem',
+      fontWeight: '900',
+      color: '#bde9e4'
+    }
+  }, fmtRs(Math.round(corpusLastExp)), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '0.9rem',
+      opacity: 0.7
+    }
+  }, "/yr"))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#fff',
+      borderRadius: 16,
+      padding: '16px',
+      marginBottom: 14,
+      border: '1px solid rgba(26,58,92,0.1)',
+      boxShadow: '0 4px 20px rgba(26,58,92,0.07)',
+      borderTop: '3px solid #bde9e4'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.9rem',
+      fontWeight: '800',
+      color: '#1a3a5c',
+      letterSpacing: '1.2px',
+      marginBottom: 4
+    }
+  }, "\uD83D\uDCC5 YEAR-BY-YEAR BREAKDOWN"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.86rem',
+      color: '#8aacbf',
+      marginBottom: 12
+    }
+  }, "Annual expense grows each year with inflation"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '54px 1fr 112px',
+      gap: 8,
+      padding: '4px 6px',
+      marginBottom: 4
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.75rem',
+      color: '#8aacbf',
+      fontWeight: '800',
+      textTransform: 'uppercase'
+    }
+  }, "YEAR"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.75rem',
+      color: '#8aacbf',
+      fontWeight: '800',
+      textTransform: 'uppercase'
+    }
+  }, "ANNUAL EXPENSE"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.75rem',
+      color: '#8aacbf',
+      fontWeight: '800',
+      textTransform: 'uppercase',
+      textAlign: 'right'
+    }
+  }, "CUMULATIVE")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxHeight: 340,
+      overflowY: 'auto',
+      paddingRight: 2
+    }
+  }, function () {
+    var rows = [];
+    var cumul = 0;
+    var maxExp = corpusStartExp * Math.pow(1 + rate / 100, Math.max(corpusYears - 1, 0));
+    for (var y = 1; y <= corpusYears; y++) {
+      var exp = corpusStartExp * Math.pow(1 + rate / 100, y - 1);
+      cumul += exp;
+      var isLast = y === corpusYears;
+      var barW = (exp / Math.max(maxExp, 1) * 100).toFixed(1);
+      var heat = (y - 1) / Math.max(corpusYears - 1, 1);
+      var barCol = heat > 0.6 ? '#1a3a5c' : heat > 0.3 ? '#2e6b8a' : '#bde9e4';
+      rows.push(React.createElement('div', {
+        key: y,
+        style: {
+          display: 'grid',
+          gridTemplateColumns: '54px 1fr 112px',
+          gap: 8,
+          padding: '5px 6px',
+          borderRadius: 7,
+          background: isLast ? 'rgba(189,233,228,0.12)' : 'transparent',
+          borderBottom: '1px solid rgba(26,58,92,0.05)',
+          alignItems: 'center'
+        }
+      }, React.createElement('div', {
+        style: {
+          fontSize: '0.86rem',
+          fontWeight: '800',
+          color: isLast ? '#1a3a5c' : '#8aacbf'
+        }
+      }, 'Yr ' + y), React.createElement('div', null, React.createElement('div', {
+        style: {
+          fontSize: '1.08rem',
+          fontWeight: '900',
+          color: '#1a3a5c',
+          marginBottom: 3
+        }
+      }, fmtRs(Math.round(exp))), React.createElement('div', {
+        style: {
+          height: 5,
+          borderRadius: 3,
+          background: '#f0f4f8',
+          overflow: 'hidden'
+        }
+      }, React.createElement('div', {
+        style: {
+          height: '100%',
+          width: barW + '%',
+          background: 'linear-gradient(90deg,#bde9e4,' + barCol + ')',
+          borderRadius: 3,
+          transition: 'width 0.3s'
+        }
+      }))), React.createElement('div', {
+        style: {
+          fontSize: '0.94rem',
+          fontWeight: '700',
+          color: '#5a7d9a',
+          textAlign: 'right'
+        }
+      }, fmtRs(Math.round(cumul)))));
+    }
+    return rows;
+  }())), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#fff',
+      borderRadius: 16,
+      padding: '16px',
+      marginBottom: 14,
+      border: '1px solid rgba(26,58,92,0.1)',
+      boxShadow: '0 4px 20px rgba(26,58,92,0.07)',
+      borderTop: '3px solid #1a3a5c'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.9rem',
+      fontWeight: '800',
+      color: '#1a3a5c',
+      letterSpacing: '1.2px',
+      marginBottom: 4
+    }
+  }, "\uD83D\uDCC8 EXPENSE GROWTH OVER ", corpusYears, " YEARS"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.86rem',
+      color: '#8aacbf',
+      marginBottom: 10
+    }
+  }, "Annual expense rising with ", rate, "% inflation"), /*#__PURE__*/React.createElement(CorpusChart, {
+    startExp: corpusStartExp,
+    rate: rate,
+    corpusYears: corpusYears
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      marginTop: 8
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '0.9rem',
+      color: '#8aacbf',
+      fontWeight: '700'
+    }
+  }, "Yr 1: ", fmtRs(Math.round(corpusStartExp))), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: '0.9rem',
+      color: '#1a3a5c',
+      fontWeight: '800'
+    }
+  }, "Yr ", corpusYears, ": ", fmtRs(Math.round(corpusLastExp))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'linear-gradient(135deg,#f0f7f6,#fff)',
+      borderRadius: 14,
+      padding: '14px 16px 14px 20px',
+      border: '1px solid rgba(26,58,92,0.1)',
+      borderLeft: '4px solid #bde9e4',
+      boxShadow: '0 2px 14px rgba(26,58,92,0.06)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '1.06rem',
+      color: '#5a7d9a',
+      lineHeight: 1.75,
+      marginBottom: 5
+    }
+  }, "\uD83D\uDCA1 This shows how your expenses grow over time due to inflation, and the total amount you would need to fund this goal. The total corpus of ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: '#1a3a5c'
+    }
+  }, fmtRs(Math.round(corpusTotal))), " is the lump sum required today to cover all ", corpusYears, " years of inflation-adjusted expenses, starting from your current ", fmtRs(amount), periodLabel, "."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: '0.94rem',
+      color: '#8aacbf',
+      fontStyle: 'italic'
+    }
+  }, "Start early \u2014 the earlier you build this corpus, the less you need to save each month.")))));
+}
+ReactDOM.createRoot(document.getElementById('infl-root')).render(React.createElement(App));
+})();
+</script>
+</body>
+</html>

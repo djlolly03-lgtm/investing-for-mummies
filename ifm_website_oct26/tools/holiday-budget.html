@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Holiday Budget Planner — Investing for Mummies</title>
+<link rel="canonical" href="https://www.investingformummies.com/tools/holiday-budget"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Investing for Mummies"/>
+<meta property="og:url" content="https://www.investingformummies.com/tools/holiday-budget"/>
+<meta property="og:title" content="Holiday Budget Planner — plan the family trip"/>
+<meta property="og:description" content="Free planner: set a holiday budget, break it down by category and night, and see how much to save each month before you travel."/>
+<meta property="og:image" content="https://www.investingformummies.com/og-home-v2.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<meta name="theme-color" content="#1a3a5c"/>
+<meta name="description" content="Free family holiday budget planner: set a trip budget, split it into flights, stay, food and more, see a day-by-day budget and a monthly savings plan."/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet"/>
+<script src="/assets/vendor/react-18.2.0.min.js"></script>
+<script src="/assets/vendor/react-dom-18.2.0.min.js"></script>
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only',capture_pageview:true,capture_pageleave:true,autocapture:false,cross_subdomain_cookie:true});
+</script>
+<style>
+  /* www page chrome only: the planner itself is styled inline, as in the original */
+  body{background:#f7faf9;}
+  .tool-foot{text-align:center;padding:24px;font-size:0.75rem;color:#5a7d8a;font-family:'Nunito',sans-serif;}
+  .tool-foot span{color:#2a9d8f;}
+</style>
+<link rel="stylesheet" href="/tools/tools.css"/>
+</head>
+<body style="margin:0;padding:0;">
+<nav class="site-bar" aria-label="Site"><div class="site-bar-in"><a class="sb-brand" href="/"><img src="/assets/logo-round-clear.png" alt="" width="32" height="35"/><b>Investing for Mummies</b></a><a class="sb-link" href="/tools">← All free tools</a><a class="sb-cta" href="https://register.investingformummies.com">Find your batch →</a></div></nav>
+
+<div id="root"></div>
+<script>
+/* Compiled once from the original JSX (Babel 7.23.9, presets react+env — the same options the in-browser Babel used). Maths unchanged. */
+"use strict";
+
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var _React = React,
+  useState = _React.useState;
+var CATS = [{
+  id: "flights",
+  label: "Flights",
+  icon: "✈️",
+  tip: "Book 3–4 months early for best family fares",
+  oneTime: true
+}, {
+  id: "accommodation",
+  label: "Accommodation",
+  icon: "🏨",
+  tip: "Apartments with kitchens save 30–40% on food",
+  daily: true
+}, {
+  id: "transport",
+  label: "Local Transport",
+  icon: "🚕",
+  tip: "Look for family travel passes at your destination",
+  daily: true
+}, {
+  id: "food",
+  label: "Food & Dining",
+  icon: "🍽️",
+  tip: "Budget ₹3,000–5,000/day for a family of 4 abroad",
+  daily: true
+}, {
+  id: "activities",
+  label: "Activities & Tickets",
+  icon: "🎡",
+  tip: "Many museums are free for kids under 6",
+  daily: true
+}, {
+  id: "shopping",
+  label: "Shopping & Souvenirs",
+  icon: "🛍️",
+  tip: "Set a per-person souvenir budget to avoid overspending",
+  oneTime: true
+}, {
+  id: "insurance",
+  label: "Travel Insurance",
+  icon: "🛡️",
+  tip: "Always get family cover — medical bills abroad add up fast",
+  oneTime: true
+}, {
+  id: "visa",
+  label: "Visa & Documents",
+  icon: "📄",
+  tip: "Apply early — passport renewals take 4–6 weeks",
+  oneTime: true
+}, {
+  id: "misc",
+  label: "Miscellaneous",
+  icon: "📦",
+  tip: "SIM cards, luggage, tips, laundry, etc.",
+  oneTime: true
+}];
+var fmt = function fmt(n) {
+  var num = Math.round(Math.abs(n || 0));
+  var s = num.toString();
+  var f;
+  if (s.length <= 3) f = s;else {
+    var l = s.slice(-3),
+      r = s.slice(0, -3);
+    f = r.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + l;
+  }
+  return (n < 0 ? "-" : "") + "₹" + f;
+};
+var sh = function sh(n) {
+  if (!n) return "";
+  if (n >= 10000000) return (n / 10000000).toFixed(n % 10000000 === 0 ? 0 : 1) + " Cr";
+  if (n >= 100000) return (n / 100000).toFixed(n % 100000 === 0 ? 0 : 1) + " L";
+  if (n >= 1000) return (n / 1000).toFixed(n % 1000 === 0 ? 0 : 1) + " K";
+  return "";
+};
+var fmtCommas = function fmtCommas(v) {
+  var d = v.replace(/[^0-9]/g, "");
+  if (!d) return "";
+  var n = parseInt(d, 10).toString();
+  if (n.length <= 3) return n;
+  return n.slice(0, -3).replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + n.slice(-3);
+};
+function MoneyInput(_ref) {
+  var value = _ref.value,
+    _onChange = _ref.onChange,
+    placeholder = _ref.placeholder,
+    small = _ref.small;
+  var display = value ? fmtCommas(value.toString()) : "";
+  var num = parseFloat((value || "").toString().replace(/[^0-9]/g, "")) || 0;
+  var tag = sh(num);
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: "absolute",
+      left: 12,
+      top: "50%",
+      transform: "translateY(-50%)",
+      fontSize: small ? 14 : 15,
+      color: "#1a3a5c",
+      fontWeight: 700,
+      pointerEvents: "none"
+    }
+  }, "\u20B9"), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    inputMode: "numeric",
+    placeholder: placeholder || "0",
+    value: display,
+    onChange: function onChange(e) {
+      return _onChange(e.target.value.replace(/[^0-9]/g, ""));
+    },
+    style: {
+      width: "100%",
+      padding: small ? "10px 12px 10px 26px" : "12px 14px 12px 28px",
+      border: "2px solid #cce0dc",
+      borderRadius: 12,
+      fontSize: small ? 14 : 15,
+      fontFamily: "'Nunito',sans-serif",
+      fontWeight: 700,
+      color: "#1a3a5c",
+      outline: "none",
+      background: "#f5faf8",
+      boxSizing: "border-box"
+    }
+  }), tag && /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: "absolute",
+      right: 12,
+      top: "50%",
+      transform: "translateY(-50%)",
+      fontSize: 11,
+      fontWeight: 800,
+      color: "#5a7d8a",
+      pointerEvents: "none",
+      background: "#e0f3f0",
+      borderRadius: 6,
+      padding: "2px 8px"
+    }
+  }, tag));
+}
+function Ring(_ref2) {
+  var pct = _ref2.pct;
+  var size = 100,
+    r = 40,
+    circ = 2 * Math.PI * r;
+  var off = circ - Math.min(pct, 100) / 100 * circ;
+  var col = pct > 100 ? "#c0392b" : pct > 80 ? "#c9a84c" : "#1a3a5c";
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      width: size,
+      height: size
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: size,
+    height: size,
+    style: {
+      transform: "rotate(-90deg)"
+    }
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: size / 2,
+    cy: size / 2,
+    r: r,
+    fill: "none",
+    stroke: "#e0f3f0",
+    strokeWidth: "8"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: size / 2,
+    cy: size / 2,
+    r: r,
+    fill: "none",
+    stroke: col,
+    strokeWidth: "8",
+    strokeDasharray: circ,
+    strokeDashoffset: off,
+    strokeLinecap: "round",
+    style: {
+      transition: "stroke-dashoffset 0.5s ease"
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      inset: 0,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "'Lora',serif",
+      fontSize: 20,
+      fontWeight: 700,
+      color: col
+    }
+  }, Math.round(pct), "%"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 9,
+      fontWeight: 700,
+      color: "#5a7d8a",
+      textTransform: "uppercase",
+      letterSpacing: 0.5
+    }
+  }, "allocated")));
+}
+var init = function init() {
+  return CATS.reduce(function (a, c) {
+    return _objectSpread(_objectSpread({}, a), {}, _defineProperty({}, c.id, ""));
+  }, {});
+};
+function App() {
+  var _useState = useState(0),
+    _useState2 = _slicedToArray(_useState, 2),
+    step = _useState2[0],
+    setStep = _useState2[1];
+  var _useState3 = useState(""),
+    _useState4 = _slicedToArray(_useState3, 2),
+    name = _useState4[0],
+    setName = _useState4[1];
+  var _useState5 = useState(2),
+    _useState6 = _slicedToArray(_useState5, 2),
+    adults = _useState6[0],
+    setAdults = _useState6[1];
+  var _useState7 = useState(2),
+    _useState8 = _slicedToArray(_useState7, 2),
+    kids = _useState8[0],
+    setKids = _useState8[1];
+  var _useState9 = useState(7),
+    _useState10 = _slicedToArray(_useState9, 2),
+    nights = _useState10[0],
+    setNights = _useState10[1];
+  var _useState11 = useState(""),
+    _useState12 = _slicedToArray(_useState11, 2),
+    budget = _useState12[0],
+    setBudget = _useState12[1];
+  var _useState13 = useState(0),
+    _useState14 = _slicedToArray(_useState13, 2),
+    tripMonth = _useState14[0],
+    setTripMonth = _useState14[1];
+  var _useState15 = useState(new Date().getFullYear()),
+    _useState16 = _slicedToArray(_useState15, 2),
+    tripYear = _useState16[0],
+    setTripYear = _useState16[1];
+  var travelDate = tripMonth > 0 ? tripYear + "-" + String(tripMonth).padStart(2, "0") : "";
+  var _useState17 = useState(init),
+    _useState18 = _slicedToArray(_useState17, 2),
+    exp = _useState18[0],
+    setExp = _useState18[1];
+  var _useState19 = useState(CATS.reduce(function (a, c) {
+      return _objectSpread(_objectSpread({}, a), {}, _defineProperty({}, c.id, "total"));
+    }, {})),
+    _useState20 = _slicedToArray(_useState19, 2),
+    mode = _useState20[0],
+    setMode = _useState20[1];
+  var _useState21 = useState(null),
+    _useState22 = _slicedToArray(_useState21, 2),
+    open = _useState22[0],
+    setOpen = _useState22[1];
+  var _useState23 = useState([]),
+    _useState24 = _slicedToArray(_useState23, 2),
+    customCats = _useState24[0],
+    setCustomCats = _useState24[1];
+  var _useState25 = useState({}),
+    _useState26 = _slicedToArray(_useState25, 2),
+    customExp = _useState26[0],
+    setCustomExp = _useState26[1];
+  var _useState27 = useState({}),
+    _useState28 = _slicedToArray(_useState27, 2),
+    customMode = _useState28[0],
+    setCustomMode = _useState28[1];
+  var eff = function eff(id) {
+    var _CATS$find;
+    var raw = parseFloat(exp[id]) || 0;
+    return mode[id] === "daily" && (_CATS$find = CATS.find(function (c) {
+      return c.id === id;
+    })) !== null && _CATS$find !== void 0 && _CATS$find.daily ? raw * (nights || 1) : raw;
+  };
+  var daily = function daily(id) {
+    var raw = parseFloat(exp[id]) || 0;
+    return mode[id] === "daily" ? raw : nights > 0 ? eff(id) / nights : 0;
+  };
+  var effCustom = function effCustom(id) {
+    var raw = parseFloat(customExp[id]) || 0;
+    return customMode[id] === "daily" ? raw * (nights || 1) : raw;
+  };
+  var B = parseFloat(budget) || 0;
+  var totEst = CATS.reduce(function (s, c) {
+    return s + eff(c.id);
+  }, 0) + customCats.reduce(function (s, c) {
+    return s + effCustom(c.id);
+  }, 0);
+  var rem = B - totEst;
+  var pct = B > 0 ? totEst / B * 100 : 0;
+  var reset = function reset() {
+    setStep(0);
+    setName("");
+    setAdults(2);
+    setKids(2);
+    setNights(7);
+    setBudget("");
+    setTripMonth(0);
+    setTripYear(new Date().getFullYear());
+    setExp(init());
+    setMode(CATS.reduce(function (a, c) {
+      return _objectSpread(_objectSpread({}, a), {}, _defineProperty({}, c.id, "total"));
+    }, {}));
+    setOpen(null);
+  };
+  var ok = name && budget;
+
+  // months until trip
+  var monthsAway = function () {
+    if (!travelDate) return 0;
+    var now = new Date();
+    var trip = new Date(travelDate + "-01");
+    return Math.max(0, Math.ceil((trip - now) / (1000 * 60 * 60 * 24 * 30.44)));
+  }();
+  var tripLabel = travelDate ? new Date(travelDate + "-01").toLocaleDateString("en-IN", {
+    month: "long",
+    year: "numeric"
+  }) : "";
+
+  // shared styles
+  var card = {
+    background: "#fff",
+    borderRadius: 14,
+    padding: "16px 16px",
+    boxShadow: "0 2px 12px rgba(26,58,92,0.06)",
+    marginBottom: 12
+  };
+  var cardTitle = {
+    fontFamily: "'Lora',serif",
+    fontSize: "0.92rem",
+    color: "#1a3a5c",
+    marginBottom: 10,
+    display: "flex",
+    alignItems: "center",
+    gap: 8
+  };
+  var inp = {
+    width: "100%",
+    padding: "12px 14px",
+    border: "2px solid #cce0dc",
+    borderRadius: 12,
+    fontSize: 15,
+    fontFamily: "'Nunito',sans-serif",
+    fontWeight: 700,
+    color: "#1a3a5c",
+    outline: "none",
+    background: "#f5faf8",
+    boxSizing: "border-box"
+  };
+  var lbl = {
+    display: "block",
+    fontSize: 11,
+    fontWeight: 800,
+    color: "#5a7d8a",
+    textTransform: "uppercase",
+    letterSpacing: "0.5px",
+    marginBottom: 4,
+    marginTop: 14
+  };
+  var chip = function chip(bg, col) {
+    return {
+      background: bg,
+      borderRadius: 10,
+      padding: "10px 16px",
+      textAlign: "center",
+      flex: 1,
+      minWidth: 80
+    };
+  };
+  var chVal = function chVal(col) {
+    return {
+      fontFamily: "'Lora',serif",
+      fontSize: "1.2rem",
+      color: col,
+      lineHeight: 1
+    };
+  };
+  var chLbl = {
+    fontSize: "0.68rem",
+    fontWeight: 700,
+    color: "#5a7d8a",
+    textTransform: "uppercase",
+    letterSpacing: "0.5px",
+    marginTop: 2
+  };
+  var btn = {
+    display: "inline-block",
+    padding: "12px 28px",
+    border: "none",
+    borderRadius: 12,
+    fontFamily: "'Nunito',sans-serif",
+    fontSize: "0.92rem",
+    fontWeight: 800,
+    cursor: "pointer",
+    transition: "all .2s"
+  };
+  var btnPrimary = _objectSpread(_objectSpread({}, btn), {}, {
+    background: "linear-gradient(135deg,#1a3a5c,#264d78)",
+    color: "#fff",
+    boxShadow: "0 4px 16px rgba(26,58,92,0.2)"
+  });
+  var btnOutline = _objectSpread(_objectSpread({}, btn), {}, {
+    background: "transparent",
+    border: "2px solid #1a3a5c",
+    color: "#1a3a5c"
+  });
+  var stepBtn = {
+    width: 38,
+    height: 40,
+    border: "none",
+    background: "none",
+    fontSize: 18,
+    fontWeight: 800,
+    color: "#1a3a5c",
+    cursor: "pointer",
+    fontFamily: "'Nunito',sans-serif"
+  };
+  var Header = function Header() {
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: "linear-gradient(135deg,#1a3a5c 0%,#264d78 60%,#1a3a5c 100%)",
+        padding: "18px 20px 18px 75px",
+        textAlign: "center",
+        borderRadius: "0 0 0 0",
+        marginBottom: 0,
+        position: "relative"
+      }
+    }, /*#__PURE__*/React.createElement("img", {
+      src: "/assets/logo-round-clear.png",
+      style: "position:absolute;top:50%;left:8px;transform:translateY(-50%);height:calc(100% - 10px);width:auto;object-fit:contain;border-radius:10px;z-index:2;",
+      alt: "Logo"
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        maxWidth: 600,
+        margin: "0 auto"
+      }
+    }, /*#__PURE__*/React.createElement("h1", {
+      style: {
+        fontFamily: "'Lora',serif",
+        fontSize: "clamp(1.1rem,2.5vw,1.4rem)",
+        color: "#daf4f1",
+        fontStyle: "italic",
+        lineHeight: 1.3,
+        marginBottom: 4
+      }
+    }, /*#__PURE__*/React.createElement("strong", {
+      style: {
+        fontStyle: "normal",
+        color: "#fff",
+        fontWeight: 800
+      }
+    }, "HOLIDAY BUDGET PLANNER"), " \u2014 plan your dream trip"), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "rgba(255,255,255,0.65)",
+        fontSize: "0.85rem"
+      }
+    }, "Set a budget, break it down by category, and see how much to save each month \u2708\uFE0F")));
+  };
+  var Hero = function Hero(_ref3) {
+    var tag = _ref3.tag,
+      title = _ref3.title,
+      desc = _ref3.desc;
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        borderRadius: 16,
+        padding: "18px 20px",
+        color: "#fff",
+        textAlign: "center",
+        marginBottom: 14,
+        position: "relative",
+        overflow: "hidden",
+        background: "linear-gradient(135deg,#1a3a5c 0%,#264d78 60%,#1a3a5c 100%)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        inset: 0,
+        opacity: 0.07,
+        backgroundImage: "radial-gradient(circle,#fff 1px,transparent 1px)",
+        backgroundSize: "28px 28px",
+        pointerEvents: "none"
+      }
+    }), /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "inline-block",
+        background: "rgba(255,255,255,0.2)",
+        border: "1px solid rgba(255,255,255,0.3)",
+        fontSize: "0.6rem",
+        fontWeight: 900,
+        letterSpacing: 1.5,
+        padding: "3px 12px",
+        borderRadius: 20,
+        textTransform: "uppercase",
+        marginBottom: 4
+      }
+    }, tag), /*#__PURE__*/React.createElement("h2", {
+      style: {
+        fontFamily: "'Lora',serif",
+        fontSize: "clamp(1.2rem,2.5vw,1.6rem)",
+        marginBottom: 4,
+        lineHeight: 1.2
+      }
+    }, title), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "rgba(255,255,255,0.78)",
+        fontSize: "0.8rem",
+        maxWidth: 520,
+        margin: "0 auto"
+      }
+    }, desc));
+  };
+
+  // ─── STEP 0: SETUP ───
+  if (step === 0) {
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'Nunito',sans-serif",
+        color: "#1a3a5c",
+        background: "#f7faf9",
+        minHeight: "100vh"
+      }
+    }, /*#__PURE__*/React.createElement("link", {
+      href: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;0,700;1,600&display=swap",
+      rel: "stylesheet"
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        maxWidth: 540,
+        margin: "0 auto",
+        padding: "12px 14px 40px"
+      }
+    }, /*#__PURE__*/React.createElement(Hero, {
+      tag: "\u2708\uFE0F Budget Planner",
+      title: "Family Travel Budget Planner",
+      desc: "Plan your dream family holiday \u2014 set a budget, break it down by category, and see exactly how much to save each month."
+    }), /*#__PURE__*/React.createElement("div", {
+      style: card
+    }, /*#__PURE__*/React.createElement("div", {
+      style: cardTitle
+    }, "\uD83D\uDCDD Trip Details"), /*#__PURE__*/React.createElement("span", {
+      style: lbl
+    }, "Trip Name"), /*#__PURE__*/React.createElement("input", {
+      style: inp,
+      placeholder: "e.g. Summer in Italy 2026",
+      value: name,
+      onChange: function onChange(e) {
+        return setName(e.target.value);
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 12,
+        marginTop: 2
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: lbl
+    }, "Adults"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        border: "2px solid #cce0dc",
+        borderRadius: 12,
+        overflow: "hidden",
+        background: "#f5faf8"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return setAdults(Math.max(1, adults - 1));
+      },
+      style: stepBtn
+    }, "\u2212"), /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        textAlign: "center",
+        fontSize: 16,
+        fontWeight: 800
+      }
+    }, adults), /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return setAdults(adults + 1);
+      },
+      style: stepBtn
+    }, "+"))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: lbl
+    }, "Children"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        border: "2px solid #cce0dc",
+        borderRadius: 12,
+        overflow: "hidden",
+        background: "#f5faf8"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return setKids(Math.max(0, kids - 1));
+      },
+      style: stepBtn
+    }, "\u2212"), /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        textAlign: "center",
+        fontSize: 16,
+        fontWeight: 800
+      }
+    }, kids), /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return setKids(kids + 1);
+      },
+      style: stepBtn
+    }, "+")))), /*#__PURE__*/React.createElement("span", {
+      style: lbl
+    }, "Number of Nights"), /*#__PURE__*/React.createElement("input", {
+      style: inp,
+      type: "number",
+      min: "1",
+      placeholder: "7",
+      value: nights,
+      onChange: function onChange(e) {
+        return setNights(parseInt(e.target.value) || 0);
+      }
+    }), /*#__PURE__*/React.createElement("span", {
+      style: lbl
+    }, "Total Trip Budget"), /*#__PURE__*/React.createElement(MoneyInput, {
+      value: budget,
+      onChange: setBudget,
+      placeholder: "e.g. 5,00,000"
+    }), /*#__PURE__*/React.createElement("span", {
+      style: lbl
+    }, "When is the trip?"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        border: "2px solid #cce0dc",
+        borderRadius: 12,
+        background: "#f5faf8",
+        padding: "12px 14px"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        marginBottom: 10
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return setTripYear(function (y) {
+          return y - 1;
+        });
+      },
+      style: stepBtn
+    }, "\u2212"), /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        textAlign: "center",
+        fontWeight: 800,
+        fontSize: 16,
+        color: "#1a3a5c",
+        fontFamily: "'Lora',serif"
+      }
+    }, tripYear), /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return setTripYear(function (y) {
+          return y + 1;
+        });
+      },
+      style: stepBtn
+    }, "+")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "repeat(4,1fr)",
+        gap: 6
+      }
+    }, ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map(function (m, i) {
+      return /*#__PURE__*/React.createElement("button", {
+        key: m,
+        onClick: function onClick() {
+          return setTripMonth(tripMonth === i + 1 ? 0 : i + 1);
+        },
+        style: {
+          padding: "9px 4px",
+          borderRadius: 10,
+          border: "2px solid",
+          borderColor: tripMonth === i + 1 ? "#1a3a5c" : "#cce0dc",
+          background: tripMonth === i + 1 ? "#1a3a5c" : "transparent",
+          color: tripMonth === i + 1 ? "#fff" : "#5a7d8a",
+          fontWeight: 800,
+          fontSize: 12,
+          cursor: "pointer",
+          fontFamily: "'Nunito',sans-serif",
+          transition: "all .15s"
+        }
+      }, m);
+    }))), /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return ok && setStep(1);
+      },
+      disabled: !ok,
+      style: _objectSpread(_objectSpread({}, btnPrimary), {}, {
+        width: "100%",
+        marginTop: 22,
+        opacity: ok ? 1 : 0.4,
+        padding: "14px 28px",
+        fontSize: "0.95rem"
+      })
+    }, "Start Planning \u2192")), /*#__PURE__*/React.createElement("p", {
+      style: {
+        textAlign: "center",
+        fontSize: "0.78rem",
+        color: "#5a7d8a"
+      }
+    }, "A free tool from ", /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: "#1a3a5c",
+        fontWeight: 700
+      }
+    }, "investingformummies.com"))));
+  }
+
+  // ─── STEP 2: SUMMARY ───
+  if (step === 2) {
+    var oneTime = CATS.filter(function (c) {
+      return c.oneTime;
+    });
+    var dailyCats = CATS.filter(function (c) {
+      return c.daily;
+    });
+    var otTotal = oneTime.reduce(function (s, c) {
+      return s + eff(c.id);
+    }, 0);
+    var dTotal = dailyCats.reduce(function (s, c) {
+      return s + eff(c.id);
+    }, 0);
+    var dPerDay = dailyCats.reduce(function (s, c) {
+      return s + daily(c.id);
+    }, 0);
+    var days = Array.from({
+      length: nights
+    }, function (_, i) {
+      return i + 1;
+    });
+    var target = totEst > 0 ? totEst : B;
+    var monthly = monthsAway > 0 ? target / monthsAway : 0;
+    var weekly = monthsAway > 0 ? target / (monthsAway * 4.33) : 0;
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'Nunito',sans-serif",
+        color: "#1a3a5c",
+        background: "#f7faf9",
+        minHeight: "100vh"
+      }
+    }, /*#__PURE__*/React.createElement("link", {
+      href: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;0,700;1,600&display=swap",
+      rel: "stylesheet"
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        maxWidth: 540,
+        margin: "0 auto",
+        padding: "12px 14px 40px"
+      }
+    }, /*#__PURE__*/React.createElement(Hero, {
+      tag: "\uD83D\uDCCB Budget Summary",
+      title: name,
+      desc: "".concat(adults, " adults, ").concat(kids, " kids \xB7 ").concat(nights, " nights").concat(tripLabel ? " · " + tripLabel : "")
+    }), /*#__PURE__*/React.createElement("div", {
+      style: _objectSpread(_objectSpread({}, card), {}, {
+        padding: 0,
+        overflow: "hidden"
+      })
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: "10px 16px",
+        background: "#1a3a5c",
+        color: "#fff",
+        fontSize: "0.7rem",
+        fontWeight: 800,
+        textTransform: "uppercase",
+        letterSpacing: "0.5px"
+      }
+    }, "One-Time Costs"), oneTime.map(function (c, i) {
+      var v = eff(c.id);
+      return /*#__PURE__*/React.createElement("div", {
+        key: c.id,
+        style: {
+          display: "flex",
+          alignItems: "center",
+          padding: "10px 16px",
+          borderBottom: i < oneTime.length - 1 ? "1px solid #eaf2ef" : "none",
+          opacity: v > 0 ? 1 : 0.35
+        }
+      }, /*#__PURE__*/React.createElement("span", {
+        style: {
+          flex: 1,
+          fontSize: 13,
+          fontWeight: 700
+        }
+      }, c.icon, " ", c.label), /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontFamily: "'Lora',serif",
+          fontSize: 14,
+          fontWeight: 700
+        }
+      }, v > 0 ? fmt(v) : "—"));
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        padding: "11px 16px",
+        background: "#e0f3f0",
+        borderTop: "2px solid #bde9e4"
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        fontSize: 13,
+        fontWeight: 900
+      }
+    }, "One-Time Total"), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "'Lora',serif",
+        fontSize: 15,
+        fontWeight: 700
+      }
+    }, fmt(otTotal)))), /*#__PURE__*/React.createElement("div", {
+      style: _objectSpread(_objectSpread({}, card), {}, {
+        padding: 0,
+        overflow: "hidden"
+      })
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: "10px 16px",
+        background: "#1a3a5c",
+        color: "#fff",
+        fontSize: "0.7rem",
+        fontWeight: 800,
+        textTransform: "uppercase",
+        letterSpacing: "0.5px"
+      }
+    }, "Daily Budget \xB7 ", nights, " Nights"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        overflowX: "auto",
+        WebkitOverflowScrolling: "touch"
+      }
+    }, /*#__PURE__*/React.createElement("table", {
+      style: {
+        width: "100%",
+        minWidth: Math.max(420, nights * 68 + 150),
+        borderCollapse: "collapse"
+      }
+    }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", {
+      style: {
+        background: "#e0f3f0"
+      }
+    }, /*#__PURE__*/React.createElement("th", {
+      style: {
+        padding: "9px 12px",
+        textAlign: "left",
+        fontSize: "0.7rem",
+        fontWeight: 800,
+        color: "#1a3a5c",
+        textTransform: "uppercase",
+        letterSpacing: "0.5px",
+        position: "sticky",
+        left: 0,
+        background: "#e0f3f0",
+        zIndex: 2,
+        minWidth: 120
+      }
+    }, "Category"), days.map(function (d) {
+      return /*#__PURE__*/React.createElement("th", {
+        key: d,
+        style: {
+          padding: "9px 8px",
+          textAlign: "right",
+          fontSize: "0.7rem",
+          fontWeight: 800,
+          color: "#1a3a5c",
+          textTransform: "uppercase",
+          minWidth: 52
+        }
+      }, "Day ", d);
+    }), /*#__PURE__*/React.createElement("th", {
+      style: {
+        padding: "9px 12px",
+        textAlign: "right",
+        fontSize: "0.7rem",
+        fontWeight: 800,
+        color: "#1a3a5c",
+        textTransform: "uppercase",
+        borderLeft: "2px solid #bde9e4",
+        minWidth: 72
+      }
+    }, "Total"))), /*#__PURE__*/React.createElement("tbody", null, dailyCats.map(function (c) {
+      var d = daily(c.id),
+        e = eff(c.id),
+        has = e > 0;
+      return /*#__PURE__*/React.createElement("tr", {
+        key: c.id,
+        style: {
+          opacity: has ? 1 : 0.35
+        }
+      }, /*#__PURE__*/React.createElement("td", {
+        style: {
+          padding: "9px 12px",
+          fontSize: 13,
+          fontWeight: 700,
+          borderBottom: "1px solid #eaf2ef",
+          whiteSpace: "nowrap",
+          position: "sticky",
+          left: 0,
+          background: "#fff",
+          zIndex: 1
+        }
+      }, c.icon, " ", c.label), days.map(function (i) {
+        return /*#__PURE__*/React.createElement("td", {
+          key: i,
+          style: {
+            padding: "9px 8px",
+            textAlign: "right",
+            fontSize: 12,
+            fontWeight: 600,
+            borderBottom: "1px solid #eaf2ef",
+            color: has ? "#1a3a5c" : "#b0c4cc"
+          }
+        }, has ? fmt(Math.round(d)) : "—");
+      }), /*#__PURE__*/React.createElement("td", {
+        style: {
+          padding: "9px 12px",
+          textAlign: "right",
+          fontFamily: "'Lora',serif",
+          fontSize: 13,
+          fontWeight: 700,
+          borderBottom: "1px solid #eaf2ef",
+          borderLeft: "2px solid #bde9e4"
+        }
+      }, has ? fmt(e) : "—"));
+    })), /*#__PURE__*/React.createElement("tfoot", null, /*#__PURE__*/React.createElement("tr", {
+      style: {
+        background: "#bde9e4"
+      }
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "11px 12px",
+        fontWeight: 900,
+        fontSize: 13,
+        position: "sticky",
+        left: 0,
+        background: "#bde9e4",
+        zIndex: 1
+      }
+    }, "Daily Total"), days.map(function (d) {
+      return /*#__PURE__*/React.createElement("td", {
+        key: d,
+        style: {
+          padding: "11px 8px",
+          textAlign: "right",
+          fontWeight: 800,
+          fontSize: 12
+        }
+      }, fmt(Math.round(dPerDay)));
+    }), /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "11px 12px",
+        textAlign: "right",
+        fontFamily: "'Lora',serif",
+        fontWeight: 800,
+        fontSize: 14,
+        borderLeft: "2px solid #1a3a5c"
+      }
+    }, fmt(dTotal))))))), /*#__PURE__*/React.createElement("div", {
+      style: _objectSpread(_objectSpread({}, card), {}, {
+        padding: 0,
+        overflow: "hidden"
+      })
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        padding: "11px 16px",
+        borderBottom: "1px solid #eaf2ef"
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        fontSize: 13,
+        fontWeight: 700,
+        color: "#5a7d8a"
+      }
+    }, "One-Time Costs"), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "'Lora',serif",
+        fontWeight: 700,
+        fontSize: 14
+      }
+    }, fmt(otTotal))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        padding: "11px 16px",
+        borderBottom: "1px solid #eaf2ef"
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        fontSize: 13,
+        fontWeight: 700,
+        color: "#5a7d8a"
+      }
+    }, "Daily Costs (", nights, " nights)"), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "'Lora',serif",
+        fontWeight: 700,
+        fontSize: 14
+      }
+    }, fmt(dTotal))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        padding: "13px 16px",
+        background: "linear-gradient(135deg,#1a3a5c,#264d78)"
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        fontSize: 14,
+        fontWeight: 900,
+        color: "#fff"
+      }
+    }, "Total Estimated"), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "'Lora',serif",
+        fontSize: 17,
+        fontWeight: 700,
+        color: "#fff"
+      }
+    }, fmt(totEst)))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 8,
+        flexWrap: "wrap",
+        marginBottom: 12
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chip("#e0f3f0")
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chVal("#1a3a5c")
+    }, fmt(B)), /*#__PURE__*/React.createElement("div", {
+      style: chLbl
+    }, "Budget")), /*#__PURE__*/React.createElement("div", {
+      style: chip(totEst > B ? "#fce8e8" : "#e0f3f0")
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chVal(totEst > B ? "#c0392b" : "#1a3a5c")
+    }, fmt(totEst)), /*#__PURE__*/React.createElement("div", {
+      style: chLbl
+    }, "Estimated")), /*#__PURE__*/React.createElement("div", {
+      style: chip(rem >= 0 ? "#e8f5f2" : "#fce8e8")
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chVal(rem >= 0 ? "#27AE60" : "#c0392b")
+    }, fmt(Math.abs(rem))), /*#__PURE__*/React.createElement("div", {
+      style: chLbl
+    }, rem >= 0 ? "Remaining" : "Over Budget"))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 8,
+        flexWrap: "wrap",
+        marginBottom: 12
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chip("#f5f0e0")
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chVal("#c9a84c")
+    }, fmt(B > 0 ? B / (adults + kids) : 0)), /*#__PURE__*/React.createElement("div", {
+      style: chLbl
+    }, "Per Person")), /*#__PURE__*/React.createElement("div", {
+      style: chip("#f5f0e0")
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chVal("#c9a84c")
+    }, fmt(B > 0 && nights > 0 ? B / nights : 0)), /*#__PURE__*/React.createElement("div", {
+      style: chLbl
+    }, "Per Night")), /*#__PURE__*/React.createElement("div", {
+      style: chip("#f5f0e0")
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chVal("#c9a84c")
+    }, fmt(B > 0 && nights > 0 ? B / (adults + kids) / nights : 0)), /*#__PURE__*/React.createElement("div", {
+      style: chLbl
+    }, "Per Person/Night"))), monthsAway > 0 && /*#__PURE__*/React.createElement("div", {
+      style: _objectSpread(_objectSpread({}, card), {}, {
+        padding: 0,
+        overflow: "hidden"
+      })
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: "10px 16px",
+        background: "linear-gradient(135deg,#c9a84c,#d4b560)",
+        color: "#fff",
+        fontSize: "0.7rem",
+        fontWeight: 800,
+        textTransform: "uppercase",
+        letterSpacing: "0.5px"
+      }
+    }, "\uD83D\uDCB0 Savings Plan to ", tripLabel), /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: 16
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 8,
+        flexWrap: "wrap",
+        marginBottom: 16
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chip("#e0f3f0")
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chVal("#1a3a5c")
+    }, monthsAway), /*#__PURE__*/React.createElement("div", {
+      style: chLbl
+    }, "Months To Go")), /*#__PURE__*/React.createElement("div", {
+      style: chip("#f5f0e0")
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chVal("#c9a84c")
+    }, fmt(monthly)), /*#__PURE__*/React.createElement("div", {
+      style: chLbl
+    }, "Save / Month")), /*#__PURE__*/React.createElement("div", {
+      style: chip("#f5f0e0")
+    }, /*#__PURE__*/React.createElement("div", {
+      style: chVal("#c9a84c")
+    }, fmt(weekly)), /*#__PURE__*/React.createElement("div", {
+      style: chLbl
+    }, "Save / Week"))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: "0.68rem",
+        fontWeight: 800,
+        color: "#5a7d8a",
+        textTransform: "uppercase",
+        letterSpacing: "0.5px",
+        marginBottom: 8
+      }
+    }, "Month-by-month savings target"), Array.from({
+      length: monthsAway
+    }, function (_, i) {
+      var m = new Date(new Date().getFullYear(), new Date().getMonth() + i + 1, 1);
+      var saved = Math.round(monthly * (i + 1));
+      var p = Math.round(saved / target * 100);
+      return /*#__PURE__*/React.createElement("div", {
+        key: i,
+        style: {
+          display: "flex",
+          alignItems: "center",
+          gap: 8,
+          padding: "5px 0"
+        }
+      }, /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontSize: 12,
+          fontWeight: 800,
+          width: 56,
+          color: "#1a3a5c"
+        }
+      }, m.toLocaleDateString("en-IN", {
+        month: "short",
+        year: "2-digit"
+      })), /*#__PURE__*/React.createElement("div", {
+        style: {
+          flex: 1,
+          height: 8,
+          background: "#e0f3f0",
+          borderRadius: 99,
+          overflow: "hidden"
+        }
+      }, /*#__PURE__*/React.createElement("div", {
+        style: {
+          height: "100%",
+          borderRadius: 99,
+          width: "".concat(Math.min(p, 100), "%"),
+          background: p >= 100 ? "#27AE60" : "linear-gradient(90deg,#bde9e4,#1a3a5c)",
+          transition: "width 0.4s"
+        }
+      })), /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontSize: 11,
+          fontWeight: 800,
+          width: 72,
+          textAlign: "right"
+        }
+      }, fmt(saved)), /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontSize: 10,
+          fontWeight: 800,
+          width: 32,
+          textAlign: "right",
+          color: p >= 100 ? "#27AE60" : "#5a7d8a"
+        }
+      }, p, "%"));
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: "linear-gradient(135deg,#1a3a5c,#264d78)",
+        borderRadius: 16,
+        padding: "16px 18px",
+        textAlign: "center",
+        marginTop: 16
+      }
+    }, /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontFamily: "'Lora',serif",
+        fontSize: "0.95rem",
+        color: "#fff",
+        fontStyle: "italic",
+        lineHeight: 1.6
+      }
+    }, "Set up a recurring transfer of ", /*#__PURE__*/React.createElement("strong", {
+      style: {
+        color: "#c9a84c"
+      }
+    }, fmt(monthly)), " on salary day. By ", tripLabel, ", your full trip fund will be ready."), /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "block",
+        marginTop: 6,
+        fontSize: "0.72rem",
+        fontWeight: 700,
+        color: "#c9a84c",
+        textTransform: "uppercase",
+        letterSpacing: 1.5
+      }
+    }, "No last-minute stress")))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 10,
+        marginTop: 8
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return setStep(1);
+      },
+      style: _objectSpread(_objectSpread({}, btnOutline), {}, {
+        flex: 1,
+        fontSize: "0.85rem",
+        padding: "11px 16px"
+      })
+    }, "\u2190 Edit Budget"), /*#__PURE__*/React.createElement("button", {
+      onClick: reset,
+      style: _objectSpread(_objectSpread({}, btnOutline), {}, {
+        flex: 1,
+        fontSize: "0.85rem",
+        padding: "11px 16px"
+      })
+    }, "Start Over")), /*#__PURE__*/React.createElement("p", {
+      style: {
+        textAlign: "center",
+        fontSize: "0.78rem",
+        color: "#5a7d8a",
+        marginTop: 16
+      }
+    }, "A free tool from ", /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: "#1a3a5c",
+        fontWeight: 700
+      }
+    }, "investingformummies.com"))));
+  }
+
+  // ─── STEP 1: BUDGET CATEGORIES ───
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "'Nunito',sans-serif",
+      color: "#1a3a5c",
+      background: "#f7faf9",
+      minHeight: "100vh"
+    }
+  }, /*#__PURE__*/React.createElement("link", {
+    href: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;0,700;1,600&display=swap",
+    rel: "stylesheet"
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 540,
+      margin: "0 auto",
+      padding: "12px 14px 40px"
+    }
+  }, /*#__PURE__*/React.createElement(Hero, {
+    tag: "\u2708\uFE0F Budget Planner",
+    title: name,
+    desc: "".concat(adults, " adults, ").concat(kids, " kids \xB7 ").concat(nights, " nights").concat(tripLabel ? " · " + tripLabel : "")
+  }), /*#__PURE__*/React.createElement("div", {
+    style: _objectSpread(_objectSpread({}, card), {}, {
+      display: "flex",
+      gap: 16,
+      alignItems: "center",
+      flexWrap: "wrap"
+    })
+  }, /*#__PURE__*/React.createElement(Ring, {
+    pct: pct
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      display: "flex",
+      gap: 8,
+      flexWrap: "wrap",
+      minWidth: 180
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: chip("#e0f3f0")
+  }, /*#__PURE__*/React.createElement("div", {
+    style: chVal("#1a3a5c")
+  }, fmt(B)), /*#__PURE__*/React.createElement("div", {
+    style: chLbl
+  }, "Budget")), /*#__PURE__*/React.createElement("div", {
+    style: chip(totEst > B ? "#fce8e8" : "#e0f3f0")
+  }, /*#__PURE__*/React.createElement("div", {
+    style: chVal(totEst > B ? "#c0392b" : "#1a3a5c")
+  }, fmt(totEst)), /*#__PURE__*/React.createElement("div", {
+    style: chLbl
+  }, "Estimated")), /*#__PURE__*/React.createElement("div", {
+    style: chip(rem >= 0 ? "#e8f5f2" : "#fce8e8")
+  }, /*#__PURE__*/React.createElement("div", {
+    style: chVal(rem >= 0 ? "#27AE60" : "#c0392b")
+  }, fmt(Math.abs(rem))), /*#__PURE__*/React.createElement("div", {
+    style: chLbl
+  }, rem >= 0 ? "Remaining" : "Over")))), CATS.map(function (cat) {
+    var e = eff(cat.id);
+    var p = B > 0 ? e / B * 100 : 0;
+    var isOpen = open === cat.id;
+    var isDaily = mode[cat.id] === "daily";
+    var raw = parseFloat(exp[cat.id]) || 0;
+    return /*#__PURE__*/React.createElement("div", {
+      key: cat.id,
+      style: _objectSpread(_objectSpread({}, card), {}, {
+        padding: 0,
+        overflow: "hidden",
+        borderLeft: e > 0 ? "4px solid #1a3a5c" : "4px solid #bde9e4",
+        marginBottom: 8
+      })
+    }, /*#__PURE__*/React.createElement("div", {
+      onClick: function onClick() {
+        return setOpen(isOpen ? null : cat.id);
+      },
+      style: {
+        display: "flex",
+        alignItems: "center",
+        padding: "12px 14px",
+        cursor: "pointer",
+        gap: 10
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 20,
+        width: 28,
+        textAlign: "center"
+      }
+    }, cat.icon), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 14,
+        fontWeight: 700
+      }
+    }, cat.label), e > 0 && /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: 3,
+        background: "#e0f3f0",
+        borderRadius: 2,
+        marginTop: 4,
+        width: 100
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: "100%",
+        background: "#1a3a5c",
+        borderRadius: 2,
+        width: "".concat(Math.min(p * 3, 100), "%"),
+        transition: "width 0.4s"
+      }
+    }))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        textAlign: "right",
+        minWidth: 70
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "'Lora',serif",
+        fontSize: 14,
+        fontWeight: 700
+      }
+    }, e > 0 ? fmt(e) : "—"), e > 0 && /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 11,
+        color: "#5a7d8a",
+        fontWeight: 700
+      }
+    }, p.toFixed(1), "%")), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 14,
+        color: "#5a7d8a",
+        transition: "transform 0.2s",
+        transform: isOpen ? "rotate(180deg)" : "rotate(0)"
+      }
+    }, "\u25BE")), isOpen && /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: "0 14px 14px",
+        borderTop: "1px solid #eaf2ef"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: "#e0f3f0",
+        borderLeft: "3px solid #1a3a5c",
+        borderRadius: "0 8px 8px 0",
+        padding: "7px 12px",
+        fontSize: 12,
+        color: "#1a3a5c",
+        margin: "10px 0",
+        lineHeight: 1.55
+      }
+    }, "\uD83D\uDCA1 ", cat.tip), cat.daily && /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 0,
+        marginBottom: 10,
+        borderRadius: 10,
+        overflow: "hidden",
+        border: "2px solid #cce0dc"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return setMode(function (p) {
+          return _objectSpread(_objectSpread({}, p), {}, _defineProperty({}, cat.id, "total"));
+        });
+      },
+      style: {
+        flex: 1,
+        padding: "8px 0",
+        border: "none",
+        fontSize: 12,
+        fontWeight: 800,
+        cursor: "pointer",
+        fontFamily: "'Nunito',sans-serif",
+        background: !isDaily ? "#1a3a5c" : "#f5faf8",
+        color: !isDaily ? "#fff" : "#5a7d8a",
+        transition: "all 0.2s"
+      }
+    }, "Full Trip"), /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return setMode(function (p) {
+          return _objectSpread(_objectSpread({}, p), {}, _defineProperty({}, cat.id, "daily"));
+        });
+      },
+      style: {
+        flex: 1,
+        padding: "8px 0",
+        border: "none",
+        fontSize: 12,
+        fontWeight: 800,
+        cursor: "pointer",
+        fontFamily: "'Nunito',sans-serif",
+        borderLeft: "1px solid #cce0dc",
+        background: isDaily ? "#1a3a5c" : "#f5faf8",
+        color: isDaily ? "#fff" : "#5a7d8a",
+        transition: "all 0.2s"
+      }
+    }, "Per Day")), /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "block",
+        fontSize: 10,
+        fontWeight: 800,
+        color: "#5a7d8a",
+        textTransform: "uppercase",
+        letterSpacing: "0.5px",
+        marginBottom: 4
+      }
+    }, cat.daily && isDaily ? "Budget / Day" : "Budget"), /*#__PURE__*/React.createElement(MoneyInput, {
+      value: exp[cat.id],
+      onChange: function onChange(v) {
+        return setExp(function (p) {
+          return _objectSpread(_objectSpread({}, p), {}, _defineProperty({}, cat.id, v));
+        });
+      },
+      placeholder: "0",
+      small: true
+    }), cat.daily && isDaily && raw > 0 && /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 8,
+        padding: "7px 12px",
+        borderRadius: 8,
+        fontSize: 12,
+        fontWeight: 700,
+        color: "#1a3a5c",
+        background: "#e0f3f0"
+      }
+    }, fmt(raw), "/day \xD7 ", nights, " nights = ", /*#__PURE__*/React.createElement("strong", null, fmt(e)), " total")));
+  }), customCats.map(function (cat) {
+    return /*#__PURE__*/React.createElement("div", {
+      key: cat.id,
+      style: {
+        background: "#fff",
+        borderRadius: 14,
+        padding: "12px 14px",
+        boxShadow: "0 2px 12px rgba(26,58,92,0.06)",
+        marginBottom: 8,
+        borderLeft: "4px dashed #0e8a7a"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 8,
+        flexWrap: "wrap"
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 18
+      }
+    }, "\uD83D\uDCCC"), /*#__PURE__*/React.createElement("input", {
+      value: cat.label,
+      onChange: function onChange(e) {
+        var v = e.target.value;
+        setCustomCats(function (prev) {
+          return prev.map(function (c) {
+            return c.id === cat.id ? _objectSpread(_objectSpread({}, c), {}, {
+              label: v
+            }) : c;
+          });
+        });
+      },
+      placeholder: "Expense name",
+      style: {
+        flex: 2,
+        minWidth: 90,
+        padding: "8px 10px",
+        border: "2px solid #cce0dc",
+        borderRadius: 10,
+        fontFamily: "'Nunito',sans-serif",
+        fontSize: "0.85rem",
+        fontWeight: 600,
+        color: "#1a3a5c",
+        background: "#f5faf8"
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        border: "2px solid #cce0dc",
+        borderRadius: 10,
+        background: "#f5faf8",
+        overflow: "hidden",
+        flex: 1,
+        minWidth: 90
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        padding: "0 6px",
+        color: "#5a7d8a",
+        fontSize: "0.85rem"
+      }
+    }, "\u20B9"), /*#__PURE__*/React.createElement("input", {
+      type: "text",
+      inputMode: "numeric",
+      value: customExp[cat.id] ? fmtCommas(customExp[cat.id].toString()) : "",
+      onChange: function onChange(e) {
+        var d = e.target.value.replace(/[^0-9]/g, "");
+        setCustomExp(function (prev) {
+          return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, cat.id, d));
+        });
+      },
+      placeholder: "0",
+      style: {
+        border: "none",
+        background: "transparent",
+        padding: "8px 6px 8px 0",
+        fontFamily: "'Nunito',sans-serif",
+        fontSize: "0.85rem",
+        fontWeight: 700,
+        color: "#1a3a5c",
+        width: 80,
+        outline: "none"
+      }
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 0,
+        borderRadius: 9,
+        overflow: "hidden",
+        border: "2px solid #cce0dc"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return setCustomMode(function (prev) {
+          return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, cat.id, "total"));
+        });
+      },
+      style: {
+        padding: "6px 10px",
+        border: "none",
+        fontSize: 11,
+        fontWeight: 800,
+        cursor: "pointer",
+        fontFamily: "'Nunito',sans-serif",
+        background: customMode[cat.id] !== "daily" ? "#1a3a5c" : "#f5faf8",
+        color: customMode[cat.id] !== "daily" ? "#fff" : "#5a7d8a"
+      }
+    }, "One-time"), /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        return setCustomMode(function (prev) {
+          return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, cat.id, "daily"));
+        });
+      },
+      style: {
+        padding: "6px 10px",
+        border: "none",
+        fontSize: 11,
+        fontWeight: 800,
+        cursor: "pointer",
+        fontFamily: "'Nunito',sans-serif",
+        borderLeft: "1px solid #cce0dc",
+        background: customMode[cat.id] === "daily" ? "#1a3a5c" : "#f5faf8",
+        color: customMode[cat.id] === "daily" ? "#fff" : "#5a7d8a"
+      }
+    }, "/Day")), /*#__PURE__*/React.createElement("button", {
+      onClick: function onClick() {
+        setCustomCats(function (prev) {
+          return prev.filter(function (c) {
+            return c.id !== cat.id;
+          });
+        });
+        setCustomExp(function (prev) {
+          var n = _objectSpread({}, prev);
+          delete n[cat.id];
+          return n;
+        });
+        setCustomMode(function (prev) {
+          var n = _objectSpread({}, prev);
+          delete n[cat.id];
+          return n;
+        });
+      },
+      style: {
+        border: "none",
+        background: "none",
+        color: "#c0392b",
+        cursor: "pointer",
+        fontSize: "1rem",
+        fontWeight: 700,
+        padding: "0 4px"
+      }
+    }, "\u2715")));
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      var newId = "custom_" + Date.now();
+      setCustomCats(function (prev) {
+        return [].concat(_toConsumableArray(prev), [{
+          id: newId,
+          label: ""
+        }]);
+      });
+      setCustomMode(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, newId, "total"));
+      });
+    },
+    style: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 6,
+      width: "100%",
+      padding: "9px 18px",
+      background: "#e8f5f2",
+      color: "#0e8a7a",
+      fontFamily: "'Nunito',sans-serif",
+      fontSize: "0.82rem",
+      fontWeight: 700,
+      border: "1.5px dashed #0e8a7a",
+      borderRadius: 11,
+      cursor: "pointer",
+      marginBottom: 12
+    }
+  }, "+ Add Expense Item"), totEst > 0 && /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      return setStep(2);
+    },
+    style: _objectSpread(_objectSpread({}, btnPrimary), {}, {
+      width: "100%",
+      marginTop: 4,
+      marginBottom: 12,
+      padding: "14px 28px",
+      fontSize: "0.95rem"
+    })
+  }, "View Budget Summary \u2192"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: "linear-gradient(135deg,#1a3a5c,#264d78)",
+      borderRadius: 16,
+      padding: "18px 22px",
+      textAlign: "center",
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "'Lora',serif",
+      fontSize: "1rem",
+      color: "#fff",
+      fontStyle: "italic",
+      lineHeight: 1.6,
+      marginBottom: 8
+    }
+  }, "\uD83D\uDCA1 Smart saving tips for families"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: "rgba(255,255,255,0.78)",
+      lineHeight: 1.7,
+      textAlign: "left"
+    }
+  }, /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: "4px 0"
+    }
+  }, "\u2022 Book flights on Tue/Wed \u2014 10\u201315% cheaper for families."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: "4px 0"
+    }
+  }, "\u2022 Apartments with kitchens cut food costs by 30\u201340%."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: "4px 0"
+    }
+  }, "\u2022 Keep \u20B920K\u201330K emergency buffer outside your budget."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: "4px 0"
+    }
+  }, "\u2022 Pay big-ticket items with a rewards card."))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      return setStep(0);
+    },
+    style: _objectSpread(_objectSpread({}, btnOutline), {}, {
+      flex: 1,
+      fontSize: "0.85rem",
+      padding: "11px 16px"
+    })
+  }, "\u2190 Edit Trip"), /*#__PURE__*/React.createElement("button", {
+    onClick: reset,
+    style: _objectSpread(_objectSpread({}, btnOutline), {}, {
+      flex: 1,
+      fontSize: "0.85rem",
+      padding: "11px 16px"
+    })
+  }, "Reset All")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      textAlign: "center",
+      fontSize: "0.78rem",
+      color: "#5a7d8a",
+      marginTop: 16
+    }
+  }, "A free tool from ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "#1a3a5c",
+      fontWeight: 700
+    }
+  }, "investingformummies.com"))));
+}
+ReactDOM.createRoot(document.getElementById("root")).render( /*#__PURE__*/React.createElement(App, null));
+</script>
+
+<div style="display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;margin:8px 16px 4px;"><button class="btn-dl-plan" onclick="generateReport('/assets/logo-round-clear.png')">📄 Download my plan (PDF)</button><button onclick="ifmShare('I just planned my family holiday budget with the free Holiday Planner on Investing for Mummies ✈️')" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#25D366;color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:900;font-size:0.92rem;cursor:pointer;box-shadow:0 4px 18px rgba(37,211,102,0.35);letter-spacing:0.3px;">💬 Share via WhatsApp</button></div>
+<script>
+function ifmShare(msg) {
+  window.open('https://wa.me/?text=' + encodeURIComponent(msg + '\n\n👉 https://www.investingformummies.com/tools/holiday-budget'), '_blank');
+}
+</script>
+<p class="tool-class">Want to know where to keep the trip fund while it grows? That’s what we cover in class. <a href="https://register.investingformummies.com">Find your batch →</a></p>
+<footer class="tool-foot">Made with 💚 by <span>Investing for Mummies</span> — Nurturing Financially Confident Women · <a href="/tools" style="color:inherit">More free tools</a> · <a href="/" style="color:inherit">investingformummies.com</a><br>Educational only. Illustrative returns, not guaranteed. Not investment advice.</footer>
+
+<script>
+
+window.generateReport = function(logoSrc) {
+  var rootEl = document.getElementById('root');
+  var rootText = rootEl ? (rootEl.innerText || '') : '';
+  /* Only allow download when user is on the Budget Summary step */
+  if (!rootText.toLowerCase().includes('budget summary') || rootText.trim().length < 50) {
+    alert('Please complete your Holiday Budget first \u2014 click \u201CView Budget Summary \u2192\u201D before downloading!');
+    return;
+  }
+  /* No canvases in holiday planner */
+  var canvasData = {};
+  /* Grab the rendered React HTML (only current step is in DOM) */
+  var bodyHtml = rootEl ? rootEl.innerHTML : document.body.innerHTML;
+  var tmp = document.createElement('div');
+  tmp.innerHTML = bodyHtml;
+  /* Strip buttons and interactive elements */
+  tmp.querySelectorAll('button,.no-print,input,select,textarea').forEach(function(el){ el.remove(); });
+  /* Remove the "A free tool from..." footer text */
+  tmp.querySelectorAll('p').forEach(function(el){
+    if(el.textContent.includes('A free tool from') || el.textContent.includes('investingformummies.com')) { el.remove(); }
+  });
+  /* Pull planner CSS */
+  var css = '';
+  Array.from(document.styleSheets).forEach(function(sheet) {
+    try { css += Array.from(sheet.cssRules).map(function(r){ return r.cssText; }).join(' '); } catch(e) {}
+  });
+  var today = new Date().toLocaleDateString('en-IN', {day:'numeric', month:'long', year:'numeric'});
+  var logoTag = logoSrc ? '<img src="' + logoSrc + '" class="rpt-logo">' : '';
+  var h = '<!DOCTYPE html><html><head><meta charset="UTF-8">';
+  h += '<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet">';
+  h += '<style>';
+  h += '* { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; box-sizing: border-box; }';
+  h += 'body { margin:0; padding:0; background:#f7faf9; font-family: Nunito, sans-serif; }';
+  h += css;
+  h += '.rpt-hdr { background:linear-gradient(135deg,#1a3a5c 0%,#0e4d7a 50%,#e6b84c 100%); padding:18px 20px 18px 175px; color:#fff; position:relative; overflow:hidden; border-radius:14px; margin-bottom:14px; page-break-inside:avoid; break-inside:avoid; }';
+  h += '.rpt-hdr::before { content:""; position:absolute; inset:0; opacity:0.07; background-image:radial-gradient(circle,#fff 1px,transparent 1px); background-size:28px 28px; pointer-events:none; }';
+  h += '.rpt-logo { position:absolute; left:12px; top:50%; transform:translateY(-50%); height:auto; width:auto; max-width:155px; max-height:68px; object-fit:contain; border-radius:8px; -webkit-print-color-adjust:exact; print-color-adjust:exact; z-index:2; }';
+  h += '.rpt-title { position:relative; z-index:1; text-align:center; }';
+  h += '.gh-tag { display:inline-block; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.3); font-size:0.6rem; font-weight:900; letter-spacing:1.5px; padding:3px 12px; border-radius:20px; text-transform:uppercase; margin-bottom:6px; color:#fff; }';
+  h += '.rpt-title h2 { font-family: Lora, serif; font-size:clamp(1.2rem,2.5vw,1.6rem); font-weight:700; color:#fff; margin:0 0 4px; line-height:1.2; }';
+  h += '.rpt-title p { color:rgba(255,255,255,0.78); font-size:0.8rem; margin:0 auto 4px; }';
+  h += '.rpt-date { color:#c9a84c; font-size:0.72rem; font-weight:800; margin-top:4px; }';
+  h += '.rpt-body { padding:24px 32px; }';
+  h += '.rpt-ftr { background:linear-gradient(135deg,#0f2740,#1a3a5c); color:rgba(255,255,255,0.65); text-align:center; padding:18px 32px; font-size:0.75rem; margin-top:24px; }';
+  h += '.rpt-ftr strong { color:#fff; } .rpt-site { color:#c9a84c; font-weight:800; }';
+  h += '.rpt-disc { color:rgba(255,255,255,0.3); font-size:0.65rem; margin-top:6px; }';
+  h += 'table { page-break-inside:avoid; width:100%; border-collapse:collapse; } ';
+  h += 'div { max-width:100%; }';
+  h += '@page { margin:0.5cm; size:A4; } @media print { html,body { width:210mm; } }';
+  h += '</style></head><body>';
+  h += '<div class="rpt-hdr">' + logoTag + '<div class="rpt-title">';
+  h += '<div class="gh-tag">✈ Resource &middot; Travel Planning</div>';
+  h += '<h2>Holiday Budget Planner</h2>';
+  h += '<p>Dream trip, real budget. Plan your holiday without the financial hangover.</p>';
+  h += '<div class="rpt-date">📅 ' + today + '</div>';
+  h += '</div></div>';
+  h += '<div class="rpt-body">' + tmp.innerHTML + '</div>';
+  h += '<div class="rpt-ftr">';
+  h += '<strong>Investing for Mummies</strong> · <span class="rpt-site">investingformummies.com</span><br>';
+  h += '<em style="color:rgba(255,255,255,0.4);font-size:0.7rem;">Nurturing Financially Confident Women \uD83D\uDC9A</em>';
+  h += '<div class="rpt-disc">This report is for educational purposes only and does not constitute financial advice.</div>';
+  h += '</div></body></html>';
+  var w = window.open('', '_blank', 'width=900,height=800');
+  if (!w) { alert('Please allow popups for this site to download your report.'); return; }
+  w.document.write(h);
+  w.document.close();
+  var _holTrip=(function(){var inp=document.querySelector('input[placeholder*="Italy"]');return inp&&inp.value.trim()?inp.value.trim().replace(/[^a-zA-Z0-9\s]/g,'').replace(/\s+/g,''):'';})();
+  w.document.title='investingformummies.HolidayPlanner'+((_holTrip)?'.'+_holTrip:'');
+  setTimeout(function() { w.print(); }, 1400);
+};
+
+</script>
+</body>
+</html>

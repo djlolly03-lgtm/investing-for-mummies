@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dividend Income Planner — Investing for Mummies</title>
+<link rel="canonical" href="https://www.investingformummies.com/tools/dividend-income-planner"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Investing for Mummies"/>
+<meta property="og:url" content="https://www.investingformummies.com/tools/dividend-income-planner"/>
+<meta property="og:title" content="Dividend Income Planner — DRIP vs taking cash"/>
+<meta property="og:description" content="See your monthly dividend income and how reinvesting dividends (DRIP) compares with taking them as cash over the years."/>
+<meta property="og:image" content="https://www.investingformummies.com/og-home-v2.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<meta name="theme-color" content="#1a3a5c"/>
+<meta name="description" content="See your monthly dividend income and how reinvesting dividends (DRIP) compares with taking them as cash over the years."/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet"/>
+<script src="/assets/vendor/chart-4.4.1.umd.min.js"></script>
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only',capture_pageview:true,capture_pageleave:true,autocapture:false,cross_subdomain_cookie:true});
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{font-family:'Nunito',sans-serif;background:#f7f9fc;color:#1a3a5c;}
+.hero{background:linear-gradient(135deg,#e65100 0%,#f57c00 50%,#ffa726 100%);padding:18px 20px 14px 100px;color:#fff;position:relative;min-height:80px;display:flex;flex-direction:column;justify-content:center;}
+.hero h2{font-size:1.25rem;font-weight:900;margin-bottom:4px;}
+.hero p{font-size:0.76rem;opacity:0.88;line-height:1.5;}
+.section{padding:14px 16px 4px;}
+.label{font-size:0.7rem;font-weight:800;color:#e65100;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;}
+.inp-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+.inp-wrap{display:flex;flex-direction:column;gap:4px;}
+.inp-wrap input{padding:9px 12px;border:2px solid #ffe0b2;border-radius:10px;font-family:'Nunito',sans-serif;font-size:0.9rem;font-weight:700;color:#1a3a5c;outline:none;transition:border-color .2s;}
+.inp-wrap input:focus{border-color:#e65100;}
+.toggle-row{display:flex;gap:0;margin-bottom:14px;border:2px solid #ffe0b2;border-radius:10px;overflow:hidden;}
+.tog-btn{flex:1;padding:10px;border:none;font-family:'Nunito',sans-serif;font-size:0.8rem;font-weight:800;cursor:pointer;background:#fff;color:#5a7d8a;transition:all .2s;}
+.tog-btn.active{background:linear-gradient(135deg,#e65100,#f57c00);color:#fff;}
+.calc-btn{width:100%;padding:13px;background:linear-gradient(135deg,#e65100,#f57c00);color:#fff;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.95rem;font-weight:900;cursor:pointer;margin-top:4px;}
+.results{display:none;padding:0 16px 16px;}
+.monthly-callout{background:linear-gradient(135deg,#e65100,#f57c00);border-radius:14px;padding:16px;margin-bottom:12px;color:#fff;text-align:center;}
+.callout-label{font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;opacity:0.85;margin-bottom:4px;}
+.callout-amount{font-size:2.4rem;font-weight:900;line-height:1;}
+.callout-sub{font-size:0.72rem;opacity:0.88;margin-top:4px;}
+.chart-wrap{background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(26,58,92,0.06);margin-bottom:12px;}
+.chart-title{font-size:0.72rem;font-weight:900;color:#1a3a5c;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:10px;}
+.scenario-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
+.scen-card{background:#fff;border-radius:12px;padding:12px;box-shadow:0 2px 8px rgba(26,58,92,0.06);text-align:center;}
+.scen-title{font-size:0.65rem;font-weight:900;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;}
+.scen-amount{font-size:1.3rem;font-weight:900;margin-bottom:2px;}
+.scen-label{font-size:0.62rem;color:#5a7d8a;}
+.insight{padding:10px 12px;border-radius:10px;font-size:0.74rem;line-height:1.55;color:#4a2d7a;background:linear-gradient(135deg,#f3effd,#ede6fb);border-left:4px solid #7c3aed;margin-bottom:8px;}
+.disclaimer{padding:10px 14px;border-radius:10px;background:#fff8e1;border-left:4px solid #f9a825;font-size:0.68rem;color:#7a6000;line-height:1.6;margin-bottom:12px;}
+.dl-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px;background:linear-gradient(135deg,#c9a84c,#e6c86a);color:#1a3a5c;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:900;cursor:pointer;box-shadow:0 4px 18px rgba(201,168,76,0.3);margin-bottom:14px;}
+</style>
+<style>
+/* www page frame: the hub showed this tool in a 14px-rounded card; keep that, centred */
+.dp-wrap{max-width:760px;margin:18px auto 0;border-radius:14px;overflow:hidden;background:#f7f9fc;box-shadow:0 2px 12px rgba(26,58,92,0.06);}
+@media (max-width:600px){.dp-wrap{margin:0;border-radius:0;box-shadow:none;}}
+.dp-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 16px 4px;}
+.dp-act{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:none;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:900;font-size:0.92rem;cursor:pointer;letter-spacing:0.3px;}
+.dp-dl{background:linear-gradient(135deg,#c9a84c,#e6c86a);color:#1a3a5c;box-shadow:0 4px 18px rgba(201,168,76,0.35);}
+.dp-wa{background:#25D366;color:#fff;box-shadow:0 4px 18px rgba(37,211,102,0.35);}
+/* inputs had no width, so on phones the 2-column grid could not shrink below the inputs' default size and they ran off the card */
+.dp-wrap .inp-wrap{min-width:0;}
+.dp-wrap .inp-wrap input{width:100%;min-width:0;}
+</style>
+<style>footer{text-align:center;padding:24px;font-size:0.75rem;color:#5a7d8a;}footer span{color:#2a9d8f;}</style>
+<link rel="stylesheet" href="/tools/tools.css"/>
+</head>
+<body>
+<nav class="site-bar" aria-label="Site"><div class="site-bar-in"><a class="sb-brand" href="/"><img src="/assets/logo-round-clear.png" alt="" width="32" height="35"/><b>Investing for Mummies</b></a><a class="sb-link" href="/tools">← All free tools</a><a class="sb-cta" href="https://register.investingformummies.com">Find your batch →</a></div></nav>
+<script>window.PRINT_LOGO_SRC = '/assets/logo-round-clear.png';</script>
+<main class="dp-wrap">
+<div class="hero">
+  <div style="font-size:0.65rem;font-weight:800;opacity:0.8;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;">💸 Resource · Dividend Investing</div>
+  <h2>Dividend Income Planner</h2>
+  <p>See how your investment pays you back — compare DRIP vs cash payout over time.</p>
+</div>
+
+<div class="section">
+  <div class="label">Your Investment</div>
+  <div class="inp-row">
+    <div class="inp-wrap" style="grid-column:1/-1;">
+      <div class="label">Investment Amount (₹)</div>
+      <input type="number" id="inp_amt" placeholder="e.g. 500000" min="0"/>
+    </div>
+    <div class="inp-wrap">
+      <div class="label">Dividend Yield %</div>
+      <input type="number" id="inp_yield" placeholder="e.g. 3.5" min="0" step="0.1"/>
+    </div>
+    <div class="inp-wrap">
+      <div class="label">Price Growth % p.a. <span style="font-weight:500;font-size:0.8em;color:#888;">(capital appreciation only, ex-dividend)</span></div>
+      <input type="number" id="inp_growth" placeholder="e.g. 8" min="0" step="0.5"/>
+    </div>
+    <div class="inp-wrap" style="grid-column:1/-1;">
+      <div class="label">Years to project</div>
+      <input type="number" id="inp_yrs" placeholder="e.g. 20" min="1" max="40"/>
+    </div>
+  </div>
+  <div class="label">Dividend Strategy</div>
+  <div class="toggle-row">
+    <button class="tog-btn active" id="tog_drip" onclick="setTog('drip')">🔄 DRIP (Reinvest)</button>
+    <button class="tog-btn" id="tog_cash" onclick="setTog('cash')">💵 Take as Cash</button>
+  </div>
+  <button class="calc-btn" onclick="calcDiv()">📈 Project My Dividends</button>
+</div>
+
+<div class="results" id="results">
+  <div class="monthly-callout">
+    <div class="callout-label" id="r_callout_label">Monthly Dividend Income (Year 1)</div>
+    <div class="callout-amount" id="r_monthly"></div>
+    <div class="callout-sub" id="r_callout_sub"></div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">📊 Wealth Growth — DRIP vs Cash</div>
+    <canvas id="divChart" style="max-height:220px;"></canvas>
+  </div>
+
+  <div class="scenario-row" id="r_scenarios"></div>
+
+  <div class="insight" id="r_insight"></div>
+
+  <div class="disclaimer">⚠️ <strong>Disclaimer:</strong> All projections are theoretical estimates for educational purposes only. Dividend yields and stock prices fluctuate. Past performance does not guarantee future returns. This is not financial advice. Please consult a SEBI-registered financial advisor.</div>
+
+  <button class="dl-btn" onclick="generateReport(window.parent.PRINT_LOGO_SRC||window.parent.LOGO_SRC||'')">📄 Download My Plan</button>
+</div>
+
+<script>
+var togMode='drip';
+var chartInst=null;
+function tryLogo(){
+  var s=window.parent&&(window.parent.PRINT_LOGO_SRC||window.parent.LOGO_SRC)?window.parent.PRINT_LOGO_SRC||window.parent.LOGO_SRC:'';
+  if(!s)return;
+  var hero=document.querySelector('.hero');
+  if(!hero||hero.querySelector('img[data-ifm]'))return;
+  var img=document.createElement('img');
+  img.src=s;img.setAttribute('data-ifm','1');
+  img.style.cssText='position:absolute;top:50%;left:10px;transform:translateY(-50%);height:72px;width:72px;object-fit:contain;border-radius:10px;z-index:2;';
+  hero.style.position='relative';
+  hero.insertBefore(img,hero.firstChild);
+}
+tryLogo();setTimeout(tryLogo,800);
+
+function setTog(m){
+  togMode=m;
+  document.getElementById('tog_drip').classList.toggle('active',m==='drip');
+  document.getElementById('tog_cash').classList.toggle('active',m==='cash');
+}
+
+function fmt(v){
+  v=Math.round(v);
+  if(v>=10000000)return'₹'+(v/10000000).toFixed(2)+' Cr';
+  if(v>=100000)return'₹'+(v/100000).toFixed(2)+' L';
+  return'₹'+v.toLocaleString('en-IN');
+}
+
+function calcDiv(){
+  var amt=parseFloat(document.getElementById('inp_amt').value);
+  var yld=parseFloat(document.getElementById('inp_yield').value)/100;
+  var gr=parseFloat(document.getElementById('inp_growth').value)/100;
+  var yrs=parseInt(document.getElementById('inp_yrs').value);
+  if(!amt||!yld||isNaN(gr)||!yrs){alert('Please fill all fields.');return;}
+
+  var labels=[],dripVals=[],cashVals=[],cashDivAccum=[];
+  var dripPort=amt,cashPort=amt,cashAccum=0;
+  for(var y=1;y<=yrs;y++){
+    // DRIP: dividends reinvested, port grows by div + growth
+    var dripDiv=dripPort*yld;
+    dripPort=dripPort*(1+gr)+dripDiv;
+    // Cash: port grows by growth only, cash accumulates
+    var cashDiv=cashPort*yld;
+    cashPort=cashPort*(1+gr);
+    cashAccum+=cashDiv;
+    labels.push('Yr '+y);
+    dripVals.push(Math.round(dripPort));
+    cashVals.push(Math.round(cashPort+cashAccum));
+    cashDivAccum.push(Math.round(cashAccum));
+  }
+
+  var yr1Div=amt*yld;
+  var monthly=yr1Div/12;
+  document.getElementById('r_monthly').textContent=fmt(monthly);
+  document.getElementById('r_callout_sub').textContent='From '+fmt(amt)+' at '+(yld*100).toFixed(1)+'% yield';
+
+  // Chart
+  if(chartInst)chartInst.destroy();
+  var ctx=document.getElementById('divChart').getContext('2d');
+  chartInst=new Chart(ctx,{
+    type:'bar',
+    data:{labels:labels,datasets:[
+      {label:'DRIP (Reinvested)',data:dripVals,backgroundColor:'rgba(230,81,0,0.75)',borderRadius:4},
+      {label:'Cash Payout (Portfolio+Cash)',data:cashVals,backgroundColor:'rgba(201,168,76,0.7)',borderRadius:4}
+    ]},
+    options:{responsive:true,plugins:{legend:{labels:{font:{family:'Nunito',size:10},boxWidth:12}}},scales:{x:{ticks:{font:{size:9},maxRotation:45}},y:{ticks:{callback:function(v){if(v>=10000000)return(v/10000000).toFixed(1)+'Cr';if(v>=100000)return(v/100000).toFixed(1)+'L';return v;},font:{size:9}},suggestedMin:0}}}
+  });
+
+  // Scenarios
+  var checkpoints=[1,5,10,yrs];
+  var scHtml='';
+  var keyPts=[];
+  checkpoints.forEach(function(yr){
+    if(yr<=yrs){
+      var idx=yr-1;
+      keyPts.push({yr:yr,drip:dripVals[idx],cash:cashVals[idx],cashOnly:cashDivAccum[idx]});
+    }
+  });
+  // show 4 cards max
+  keyPts.slice(0,4).forEach(function(p){
+    scHtml+='<div class="scen-card">'
+      +'<div class="scen-title" style="color:#e65100;">Year '+p.yr+'</div>'
+      +'<div style="margin-bottom:6px;"><div class="scen-amount" style="color:#e65100;">'+fmt(p.drip)+'</div><div class="scen-label">DRIP Portfolio</div></div>'
+      +'<div><div class="scen-amount" style="color:#c9a84c;">'+fmt(p.cashOnly)+'</div><div class="scen-label">Total Cash Dividends Paid</div></div>'
+      +'</div>';
+  });
+  document.getElementById('r_scenarios').innerHTML=scHtml;
+
+  // Insight
+  var finalDrip=dripVals[yrs-1],finalCash=cashVals[yrs-1];
+  var diff=finalDrip-finalCash;
+  var insightTxt=diff>0
+    ?'<b>DRIP wins by '+fmt(Math.abs(diff))+' over '+yrs+' years.</b> Reinvesting dividends compounds your wealth faster — every dividend buys more shares that earn more dividends. But if you <em>need</em> income now (e.g. in retirement), taking cash makes total sense.'
+    :'<b>Cash strategy keeps pace here.</b> The cumulative cash dividend gives you real liquidity while your portfolio still grows. This suits investors who need regular income — retirees, or those with near-term goals.';
+  document.getElementById('r_insight').innerHTML='💡 '+insightTxt;
+  document.getElementById('results').style.display='block';
+
+  window._divData={amt:amt,yld:yld,gr:gr,yrs:yrs,labels:labels,dripVals:dripVals,cashVals:cashVals,cashDivAccum:cashDivAccum,monthly:monthly};
+}
+
+window.generateReport=function(logoSrc){
+  var d=window._divData;
+  if(!d){alert('Run the planner first!');return;}
+  var w=window.open('','_blank','width=900,height=800');
+  if(!w){alert('Please allow popups.');return;}
+  var rows='';
+  [1,2,3,5,10,d.yrs].forEach(function(yr){
+    if(yr<=d.yrs){
+      var i=yr-1;
+      rows+='<tr><td>Year '+yr+'</td><td>₹'+d.dripVals[i].toLocaleString('en-IN')+'</td><td>₹'+(d.cashVals[i]-d.cashDivAccum[i]).toLocaleString('en-IN')+'</td><td>₹'+d.cashDivAccum[i].toLocaleString('en-IN')+'</td></tr>';
+    }
+  });
+  var logoHtml=logoSrc?'<img src="'+logoSrc+'" style="height:48px;margin-right:12px;border-radius:8px;"/>':'';
+  var h='<!DOCTYPE html><html><head><meta charset="UTF-8"/><style>body{font-family:sans-serif;padding:24px;color:#1a3a5c;max-width:800px;margin:0 auto;}table{width:100%;border-collapse:collapse;margin:16px 0;}th{background:linear-gradient(135deg,#e65100,#f57c00);color:#fff;padding:8px 12px;text-align:left;font-size:0.8rem;}td{padding:8px 12px;border-bottom:1px solid #ffe0b2;font-size:0.85rem;}.pill{display:inline-block;padding:3px 10px;border-radius:12px;background:#fff3e0;color:#e65100;font-weight:800;font-size:0.75rem;margin:2px;}.disc{background:#fff8e1;border-left:4px solid #f9a825;padding:10px;font-size:0.7rem;color:#7a6000;margin-top:16px;}.no-print{display:flex;justify-content:center;margin:16px 0;}@media print{.no-print{display:none;}}</style></head><body>';
+  h+='<div style="display:flex;align-items:center;margin-bottom:16px;">'+logoHtml+'<div><h1 style="margin:0;font-size:1.3rem;">💸 Dividend Income Plan</h1><div style="font-size:0.75rem;color:#5a7d8a;">Powered by Investing for Mummies</div></div></div>';
+  h+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;"><div class="pill">Investment: ₹'+d.amt.toLocaleString('en-IN')+'</div><div class="pill">Yield: '+(d.yld*100).toFixed(1)+'%</div><div class="pill">Growth: '+(d.gr*100).toFixed(1)+'% p.a.</div><div class="pill">Period: '+d.yrs+' years</div><div class="pill">Monthly (Yr1): ₹'+Math.round(d.monthly).toLocaleString('en-IN')+'</div></div>';
+  h+='<table><thead><tr><th>Year</th><th>DRIP Portfolio</th><th>Cash Portfolio</th><th>Cumul. Cash Divs</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  h+='<div class="disc">⚠️ Disclaimer: Projections are for educational purposes only. Not financial advice. Consult a SEBI-registered advisor.</div>';
+  h+='<div class="no-print"><button onclick="window.print()" style="padding:10px 28px;background:linear-gradient(135deg,#c9a84c,#e6c86a);color:#1a3a5c;border:none;border-radius:10px;font-weight:900;cursor:pointer;">🖨️ Print</button></div>';
+  h+='<div style="text-align:center;font-size:0.7rem;color:#8a9fb0;margin-top:24px;">Made with &hearts; by <strong>Investing for Mummies</strong></div></body></html>';
+  w.document.write(h);w.document.close();
+  setTimeout(function(){w.print();},1400);
+};
+</script>
+</main>
+<div class="dp-actions">
+  <button class="dp-act dp-dl" onclick="generateReport(window.PRINT_LOGO_SRC||'')">📄 Download My Plan</button>
+  <button class="dp-act dp-wa" onclick="ifmShare('I just built a dividend income plan with the free Dividend Planner on Investing for Mummies 💸')">💬 Share via WhatsApp</button>
+</div>
+<script>
+function ifmShare(msg) {
+  window.open('https://wa.me/?text=' + encodeURIComponent(msg + '\n\n👉 https://www.investingformummies.com/tools/dividend-income-planner'), '_blank');
+}
+</script>
+<p class="tool-class">Want to know when dividend income makes sense for you, and how to pick funds for it? That’s what we cover in class. <a href="https://register.investingformummies.com">Find your batch →</a></p>
+<footer>Made with 💚 by <span>Investing for Mummies</span> — Nurturing Financially Confident Women · <a href="/tools" style="color:inherit">More free tools</a> · <a href="/" style="color:inherit">investingformummies.com</a><br>Educational only. Illustrative returns, not guaranteed. Not investment advice.</footer>
+</body>
+</html>
