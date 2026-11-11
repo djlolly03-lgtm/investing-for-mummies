@@ -1,0 +1,51 @@
+<!doctype html>
+<!-- Warm light leak for a section cut (registry organic-light-leak-overlay, 9:16, 2.2s). Rendered on BLACK, then
+     screen-blended over the cut by assemble.py: screen with black is a no-op, so only the glow lands on the footage. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+      #ground { position: absolute; inset: 0; background: #000; }
+      #hf-light-leak { position: absolute; inset: -16%; opacity: 0; overflow: hidden; pointer-events: none; mix-blend-mode: screen; }
+      #hf-light-leak .hf-leak-layer { position: absolute; inset: -20%; }
+      #hf-light-leak .hf-leak-amber {
+        background: radial-gradient(ellipse 52% 110% at 10% 58%, rgb(255 241 197 / 92%), transparent 45%),
+                    radial-gradient(ellipse 72% 120% at 24% 54%, rgb(255 126 57 / 78%), transparent 66%);
+        filter: blur(2.8vmin);
+      }
+      #hf-light-leak .hf-leak-red { background: radial-gradient(ellipse 58% 105% at 78% 34%, rgb(255 79 61 / 72%), rgb(255 44 92 / 28%) 48%, transparent 76%); filter: blur(4vmin); }
+      #hf-light-leak .hf-leak-gold {
+        background: linear-gradient(104deg, transparent 24%, rgb(255 144 62 / 30%) 40%, rgb(255 247 205 / 72%) 51%, rgb(255 124 48 / 22%) 62%, transparent 78%);
+        filter: blur(2vmin);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="leak" data-start="0" data-duration="2.2" data-width="1080" data-height="1920">
+      <div id="ground"></div>
+      <div id="leak-clip" class="clip" data-start="0" data-duration="2.2" data-track-index="0">
+        <div id="hf-light-leak" aria-hidden="true">
+          <div class="hf-leak-layer hf-leak-amber"></div>
+          <div class="hf-leak-layer hf-leak-red"></div>
+          <div class="hf-leak-layer hf-leak-gold"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const d = 2.2, tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: d, ease: "none" }, 0);
+      tl.fromTo("#hf-light-leak", { opacity: 0 }, { opacity: 0.9, duration: d * 0.24, ease: "sine.out" }, d * 0.08);
+      tl.to("#hf-light-leak", { opacity: 0.46, duration: d * 0.2, ease: "sine.inOut" }, d * 0.42);
+      tl.to("#hf-light-leak", { opacity: 0, duration: d * 0.26, ease: "sine.in" }, d * 0.68);
+      tl.fromTo(".hf-leak-amber", { xPercent: -20, scale: 0.92, rotation: -4 }, { xPercent: 18, scale: 1.1, rotation: 2, duration: d, ease: "sine.inOut" }, 0);
+      tl.fromTo(".hf-leak-red", { xPercent: 20, yPercent: -8, scale: 1.08 }, { xPercent: -16, yPercent: 8, scale: 0.94, duration: d, ease: "sine.inOut" }, 0);
+      tl.fromTo(".hf-leak-gold", { xPercent: -28, rotation: -6 }, { xPercent: 24, rotation: 4, duration: d, ease: "sine.inOut" }, 0);
+      window.__timelines["leak"] = tl;
+    </script>
+  </body>
+</html>

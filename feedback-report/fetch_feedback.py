@@ -11,7 +11,8 @@ import csv, io, json, re, sys, urllib.request, collections, datetime, os
 
 SHEET = '1cKjzjbmPfFJq3wjTJnGTKW4rUJNIHpZltfL1jKau9Uk'
 GIDS = {'feedback':332313533,'iya':1183926362,'ift':1184692538,
-        'ifmreg':855165962,'iyareg':1497102767,'iftreg':1875230536}
+        'ifmreg':855165962,'iyareg':1497102767,'iftreg':1875230536,
+        'ws_survey':78402021,'ws_feedback':2106649851}   # workshop tabs, added 11 Nov 2026
 RECS = ['Highly recommend!','Likely','Maybe','Not likely']
 TEST_EMAILS = {'test@example.com','asba@moogaworld.com'}
 TEST_NAMES = {'asba aga','test audit user'}   # staff test submissions that arrive with other emails (found 6 Nov 2026)
@@ -43,6 +44,39 @@ def short_batch(b):
     return b.split(' · ')[0] if b else '—'
 
 def clean_text(s): return re.sub(r'\s*\r?\n\s*',' / ',(s or '').strip())
+
+ATTEND={'yes','no','maybe','definitely yes','probably yes','probably not','definitely not'}
+def blankish(s): return '' if (s or '').strip().lower() in ('','.','-','no','none','nope','n/a','na') else clean_text(s)
+
+def workshops():
+    """Workshop feedback (one-off sessions, not courses). Two tabs, two form versions.
+    The Worli rows in 'Workshop Feedback' are shifted one column left from 'Attend More' onward."""
+    out=[]
+    for r in fetch('ws_survey'):
+        name=col(r,'Name')
+        if not name: continue
+        d=col(r,'Workshop Date') or col(r,'Timestamp')[:10]
+        out.append({'workshop':col(r,'Workshop Host')+' (corporate)','date':d,'name':name,
+            'rating':col(r,'Rating'),'engagement':col(r,'Engagement'),'understanding':col(r,'Understanding'),
+            'useful':col(r,'Topics Found Useful'),'improve':blankish(col(r,'Improvement Ideas')+' '+col(r,'Improvement Suggestions')),
+            'attend':col(r,'Attend More'),'future':col(r,'Future Topics'),'consent':col(r,'Marketing Consent'),
+            'games':' — favourite: '.join(x for x in (col(r,'Game Enjoyment'),col(r,'Favorite Game')) if x),'shifted':''})
+    for r in fetch('ws_feedback'):
+        name=col(r,'Name')
+        if not name: continue
+        loc=col(r,'Location') or col(r,'Workshop'); ts=col(r,'Timestamp')[:10]
+        o={'workshop':loc,'date':ts,'name':name,'rating':col(r,'Overall Rating'),'engagement':col(r,'Engagement'),
+           'understanding':col(r,'Understanding'),'useful':col(r,'Topics Found Useful'),'consent':col(r,'Marketing Consent')}
+        am,ft=col(r,'Attend More'),col(r,'Future Topics')
+        if am.lower() not in ATTEND and ft.lower() in ATTEND:   # shifted row
+            o.update(improve=blankish(am),attend=ft,future=col(r,'Preferred Time'),games=col(r,'Favorite Game'),shifted='yes')
+        else:
+            sug=' / '.join(x for x in (blankish(col(r,'Improvement Ideas')),blankish(col(r,'Suggestions'))) if x)
+            o.update(improve=sug,attend=am,future=ft,games=' — favourite: '.join(x for x in (col(r,'Game Enjoyment'),col(r,'Favorite Game')) if x),shifted='')
+        out.append(o)
+    out=[o for o in out if o['name'].strip().lower() not in TEST_NAMES and not o['name'].lower().startswith('test')]
+    for o in out: o['useful']=clean_text(o['useful'])
+    return out
 
 def main():
     os.makedirs(DATA,exist_ok=True)
@@ -135,6 +169,17 @@ def main():
       'coverage':cov,'shifted_rows':sum(1 for o in ifm if o['shifted']),
       'new_since_last_run':[{'name':o['name'],'programme':o['programme'],'batch':o['batch']} for o in new],
     }
+    ws=workshops()
+    wsp=os.path.join(DATA,'workshops.json')
+    prev_ws={(x['workshop'],x['name']) for x in json.load(open(wsp))} if os.path.exists(wsp) else set()
+    new_ws=[o for o in ws if (o['workshop'],o['name']) not in prev_ws]
+    wr=[int(o['rating']) for o in ws if o['rating'].isdigit()]
+    stats['workshops']={'n':len(ws),'avg':round(sum(wr)/len(wr),1) if wr else None,'ratings':collections.Counter(wr),
+        'by_workshop':collections.Counter(o['workshop'] for o in ws),'consent_yes':sum(1 for o in ws if o['consent'].lower()=='yes'),
+        'understood_significantly':sum(1 for o in ws if 'significantly' in o['understanding'].lower()),
+        'extremely_engaging':sum(1 for o in ws if o['engagement'].lower()=='extremely engaging'),
+        'shifted':sum(1 for o in ws if o['shifted']),'new_since_last_run':[o['name'] for o in new_ws]}
+    json.dump(ws,open(wsp,'w'),indent=1,ensure_ascii=False)
     json.dump(rows,open(pp,'w'),indent=1,ensure_ascii=False)
     json.dump(stats,open(os.path.join(DATA,'stats.json'),'w'),indent=1,ensure_ascii=False)
     cols=['programme','batch','name','email','submitted','q1_learning','q2_recommend','q3_enjoyed','q4_improve','future','wa','testimonial','shifted']
@@ -142,5 +187,6 @@ def main():
         w=csv.writer(f); w.writerow(cols); [w.writerow([o[c] for c in cols]) for o in rows]
     print(json.dumps({k:stats[k] for k in ('generated','n_real','n_ifm','n_teen','n_tests','rate_pct','pending','rec','teen_avg','shifted_rows')},ensure_ascii=False))
     print('new since last run:',len(new),[x['name'] for x in new])
+    print('workshops:',json.dumps(stats['workshops'],ensure_ascii=False))
     print('coverage:',[(c['label'],c['n'],c['e']) for c in cov])
 main()

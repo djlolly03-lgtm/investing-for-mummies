@@ -2,7 +2,7 @@
 """Fill template.html with data/clean.json, data/stats.json and themes.json → out/feedback-insights.html."""
 import json, os, re
 HERE=os.path.dirname(os.path.abspath(__file__))
-rows=json.load(open(f'{HERE}/data/clean.json')); st=json.load(open(f'{HERE}/data/stats.json')); T=json.load(open(f'{HERE}/themes.json'))
+rows=json.load(open(f'{HERE}/data/clean.json')); WS=json.load(open(f'{HERE}/data/workshops.json')); st=json.load(open(f'{HERE}/data/stats.json')); T=json.load(open(f'{HERE}/themes.json'))
 for r in rows: r.pop('email',None); r.pop('submitted',None)   # never publish emails
 h=open(f'{HERE}/template.html').read()
 rec=st['rec']; hr=rec.get('Highly recommend!',0)
@@ -14,10 +14,11 @@ V={'GENERATED':st['generated'],'N_REAL':st['n_real'],'N_IFM':st['n_ifm'],'N_TEEN
    'DASH_TOTAL':st['dashboard_literal']['total'],'DASH_HR':st['dashboard_literal']['highly'],'DASH_MAYBE':st['dashboard_literal']['maybe'],
    'HR':hr,'MAYBE':rec.get('Maybe',0),'REC_OTHERS':(', '.join(others)+'.' if others else 'Everyone.')+(' Nobody said maybe or no.' if not rec.get('Maybe') and not rec.get('Not likely') else ''),
    'TEEN_AVG':st['teen_avg'],'TEEN_SPLIT':', '.join(f'{v} gave {k}' for k,v in sorted(tr.items(),key=lambda x:-int(x[0])))+'.','TEEN_AGAIN':again,
-   'RATE':st['rate_pct'],'RATE_CLASS':'bad' if st['rate_pct']<40 else 'warn' if st['rate_pct']<60 else 'good','ENROLLED':st['enrolled'],'PENDING':st['pending'],'WA':wa_txt}
+   'RATE':st['rate_pct'],'RATE_CLASS':'bad' if st['rate_pct']<40 else 'warn' if st['rate_pct']<60 else 'good','ENROLLED':st['enrolled'],'PENDING':st['pending'],'WA':wa_txt,
+   'WS_N':st['workshops']['n'],'WS_AVG':st['workshops']['avg'],'WS_CONSENT':st['workshops']['consent_yes'],'WS_SIG':st['workshops']['understood_significantly'],'WS_EXT':st['workshops']['extremely_engaging']}
 for k,v in V.items(): h=h.replace('{{'+k+'}}',str(v))
 left=re.findall(r'\{\{[A-Z_]+\}\}',h); assert not left, left
-h=h.replace('__DATA__',json.dumps(rows,ensure_ascii=False)).replace('__THEMES__',json.dumps(T,ensure_ascii=False)).replace('__COVERAGE__',json.dumps(st['coverage'],ensure_ascii=False))
+h=h.replace('__DATA__',json.dumps(rows,ensure_ascii=False)).replace('__THEMES__',json.dumps(T,ensure_ascii=False)).replace('__WORKSHOPS__',json.dumps([{k:v for k,v in w.items()} for w in WS],ensure_ascii=False)).replace('__COVERAGE__',json.dumps(st['coverage'],ensure_ascii=False))
 os.makedirs(f'{HERE}/out',exist_ok=True); open(f'{HERE}/out/feedback-insights.html','w').write(h)
 # names referenced in themes.json but missing from the data → the tags need updating
 names={r['name'] for r in rows}; missing=sorted({n for k in T for it in T[k] if isinstance(it[2],list) for n in it[2] if n not in names})

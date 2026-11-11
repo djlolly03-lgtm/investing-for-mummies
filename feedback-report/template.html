@@ -178,6 +178,75 @@ footer{margin-top:48px;color:var(--muted);font-size:.82rem;max-width:72ch}
 .agenda b{font-weight:800}
 .ask{background:var(--amber-bg);border:1px solid var(--amber-line,var(--amber-dim));border-radius:12px;padding:14px 18px;margin-top:20px;color:var(--amber)}
 .ask ul{margin:6px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:.93rem;color:var(--fg)}
+
+/* ===== Visual layer (11 Nov 2026): rings, dot grids, quote cards. Builds on the tokens above. ===== */
+.hero{display:grid;gap:10px;padding-block:8px 4px}
+.hero h1{font-size:clamp(1.8rem,4.6vw,2.8rem);max-width:22ch}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.rings{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:24px}
+.ringcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;min-width:0}
+.ringcard .ring{width:96px;height:96px}
+.ringcard .l{font-weight:800;font-size:.95rem;line-height:1.25}
+.ringcard .d{font-size:.8rem;color:var(--muted);margin-top:4px}
+.ringcard .d b{color:var(--fg)}
+.ring text{font-family:var(--display);font-weight:600;fill:var(--fg)}
+.ring .sub{font-family:var(--body);font-weight:700;fill:var(--muted)}
+.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:20px}
+.mini .ringcard{grid-template-columns:72px 1fr;padding:14px;border-radius:14px}
+.mini .ring{width:72px;height:72px}
+.stars{color:var(--amber);letter-spacing:2px;font-size:1rem}
+
+/* question blocks become cards with a big numeral */
+.qhead{border-top:0;padding-top:0;margin-top:40px;align-items:center}
+.qhead .num{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--teal);color:var(--surface);font-style:normal;font-size:1.15rem;flex:none}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:14px}
+
+/* fatter, rounder bars */
+.bar{grid-template-columns:minmax(0,200px) 1fr 40px}
+.bar .track{height:20px;border-radius:999px;background:var(--teal-soft)}
+.bar .fill{border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--bar))}
+.bar .val{font-family:var(--display);font-size:1.05rem;color:var(--fg)}
+@media (max-width:520px){.bar{grid-template-columns:minmax(0,1fr) 34px}.bar .track{grid-column:1/-1;grid-row:2}}
+
+/* quotes as cards with an initial */
+.quotes{display:grid;gap:12px}
+blockquote{position:relative;background:var(--quote);border:0;border-radius:16px;padding:18px 18px 14px 18px;font-family:var(--display);font-size:1.05rem;line-height:1.45}
+blockquote::before{content:"\201C";position:absolute;top:-6px;right:14px;font-size:4rem;line-height:1;color:var(--mint);font-family:var(--display)}
+blockquote cite{display:flex;align-items:center;gap:8px;font-family:var(--body);margin-top:10px}
+.avatar{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--teal);color:var(--surface);font-weight:800;font-size:.75rem;flex:none}
+
+/* dot grids: one dot = one person */
+.dots{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+.dot{width:16px;height:16px;border-radius:50%;background:var(--teal)}
+.dot.off{background:transparent;box-shadow:inset 0 0 0 2px var(--line)}
+.dot.amber{background:var(--amber)} .dot.bad{background:var(--bad)}
+.dotkey{display:flex;flex-wrap:wrap;gap:14px;font-size:.8rem;color:var(--muted);margin-top:8px}
+.dotkey span{display:inline-flex;align-items:center;gap:6px}
+.dotkey .dot{width:12px;height:12px}
+.cov{display:grid;gap:12px;margin-top:16px}
+.covrow{display:grid;grid-template-columns:minmax(0,130px) 1fr 82px;gap:12px;align-items:center}
+.covrow .dots{margin:0;gap:4px}
+.covrow .dot{width:13px;height:13px}
+.covrow .lab{font-weight:700;font-size:.9rem}
+.covrow .val{font-variant-numeric:tabular-nums;font-size:.85rem;color:var(--muted);text-align:right;white-space:nowrap}
+.covrow.bad .dot:not(.off){background:var(--bad)} .covrow.warn .dot:not(.off){background:var(--amber)}
+@media (max-width:520px){.covrow{grid-template-columns:1fr auto}.covrow .dots{grid-column:1/-1;grid-row:2}}
+
+/* workshop cards */
+.wsgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px}
+.wscard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.wscard .where{font-family:var(--display);font-size:1.2rem;font-weight:600}
+.wscard .when{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:800}
+.wscard .score{display:flex;align-items:baseline;gap:8px}
+.wscard .score b{font-family:var(--display);font-size:2.4rem;line-height:1}
+.wscard .dots .dot{width:20px;height:20px}
+.wscard .note{font-size:.8rem;color:var(--muted)}
+
+.rec{border-radius:18px}
+.rec.lead{border-width:2px}
+.alert,.callout{border-radius:18px}
+details.all summary{cursor:pointer;font-weight:800;color:var(--teal);margin-top:14px}
+details.all summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 </style>
 
 <div class="wrap">
@@ -186,17 +255,17 @@ footer{margin-top:48px;color:var(--muted);font-size:.82rem;max-width:72ch}
   <button type="button" role="tab" id="tabbtn-wendy" aria-selected="false" aria-controls="view-wendy" data-tab="wendy">Wendy · onboarding</button>
 </div>
 <div id="view-feedback" role="tabpanel">
-<header>
-  <span class="eyebrow">Investing for Mummies · course feedback</span>
-  <h1>What {{N_REAL}} students told us, and what to do about it</h1>
-  <p class="meta">Source: the Feedback tab of the admin dashboard, pulled {{GENERATED}}. Four test entries removed, 27 column-shifted rows corrected. Every response is in the table at the bottom.</p>
+<header class="hero">
+  <span class="eyebrow">Investing for Mummies · what students say</span>
+  <h1>{{HR}} of {{N_IFM}} mummies would <em>highly recommend</em> the course</h1>
+  <p class="meta">{{N_REAL}} course responses ({{N_IFM}} mummies, {{N_TEEN}} teens) and {{WS_N}} from workshops, pulled from the admin sheet on {{GENERATED}}. Test entries removed and column-shifted rows corrected. Every answer is at the bottom of the page.</p>
 </header>
 
-<div class="tiles">
-  <div class="tile warn"><div class="n">{{N_REAL}}</div><div class="l">Real responses</div><div class="d">{{N_IFM}} mummies · {{N_TEEN}} teens. The dashboard says {{DASH_TOTAL}}; <b>{{N_TESTS}} are test entries</b>.</div></div>
-  <div class="tile good"><div class="n">{{HR}}<span style="font-size:1.1rem;color:var(--muted)"> / {{N_IFM}}</span></div><div class="l">Mummies who would "highly recommend"</div><div class="d">{{REC_OTHERS}}</div></div>
-  <div class="tile good"><div class="n">{{TEEN_AVG}}<span style="font-size:1.1rem;color:var(--muted)"> / 5</span></div><div class="l">Teen rating (IYA + IFT)</div><div class="d">{{TEEN_SPLIT}} <b>{{TEEN_AGAIN}} of {{N_TEEN}}</b> would come back.</div></div>
-  <div class="tile {{RATE_CLASS}}"><div class="n">{{RATE}}%</div><div class="l">Response rate</div><div class="d">{{N_REAL}} of {{ENROLLED}} enrolled. <b>{{PENDING}} pending</b>, mostly mummies from April to September.</div></div>
+<div class="rings">
+  <div class="ringcard"><svg class="ring" data-v="{{HR}}" data-max="{{N_IFM}}" data-label="{{HR}}" data-sub="of {{N_IFM}}" role="img" aria-label="{{HR}} of {{N_IFM}} highly recommend"></svg><div><div class="l">Mummies who would highly recommend</div><div class="d">{{REC_OTHERS}}</div></div></div>
+  <div class="ringcard"><svg class="ring" data-v="{{TEEN_AVG}}" data-max="5" data-label="{{TEEN_AVG}}" data-sub="out of 5" role="img" aria-label="Teen rating {{TEEN_AVG}} out of 5"></svg><div><div class="l">Teen rating, IYA + IFT</div><div class="d">{{TEEN_SPLIT}} <b>{{TEEN_AGAIN}} of {{N_TEEN}}</b> would come back.</div></div></div>
+  <div class="ringcard"><svg class="ring" data-v="{{WS_AVG}}" data-max="5" data-label="{{WS_AVG}}" data-sub="out of 5" role="img" aria-label="Workshop rating {{WS_AVG}} out of 5"></svg><div><div class="l">Workshop rating</div><div class="d"><b>{{WS_N}} attendees</b> across K Patel, Goa and Worli. All would come back.</div></div></div>
+  <div class="ringcard"><svg class="ring" data-v="{{RATE}}" data-max="100" data-label="{{RATE}}%" data-sub="answered" data-tone="{{RATE_CLASS}}" role="img" aria-label="Response rate {{RATE}} percent"></svg><div><div class="l">Response rate</div><div class="d">{{N_REAL}} of {{ENROLLED}} enrolled. <b>{{PENDING}} have not answered yet.</b></div></div></div>
 </div>
 
 <div class="alert">
@@ -206,6 +275,7 @@ footer{margin-top:48px;color:var(--muted);font-size:.82rem;max-width:72ch}
     <li><b>March and June: nobody (14 students). April: 4 of 15. September: 7 of 15.</b> October has 9 of 15 already while both batches are still running. November and December have 4 enrolled each and no classes yet.</li>
     <li><b>The dashboard's Feedback numbers are wrong</b> (see below). Anyone reading it today sees {{DASH_HR}} "highly recommend" and 0 WhatsApp sign-ups. In reality it is {{HR}} and {{WA}}.</li>
     <li><b>Pace friction is now a pattern, mostly in October B1.</b> Asheeta wanted two months instead of one and Ashita found it overwhelming. Earlier: vidya and Priya Khatau (pace too fast), Ashima (mutual funds too deep). Five of 43 in all, so keep watching it.</li>
+    <li><b>{{WS_N}} workshop responses were never in this report until 11 November.</b> They sit in two other tabs of the sheet (Workshop Surveys, Workshop Feedback). The Worli rows have the same one-column shift as the course form. See the Workshops section.</li>
     <li><b>One "Likely" instead of "Highly recommend"</b>: Deepika Agarwal, August B1. Worth a call to ask why.</li>
   </ul>
 </div>
@@ -243,7 +313,8 @@ footer{margin-top:48px;color:var(--muted);font-size:.82rem;max-width:72ch}
   <div class="qhead"><span class="num">Q2</span><h3>Would you recommend the course?</h3></div>
   <div class="q">
     <div>
-      <div class="chart-title">Answers · people</div><div class="bars" id="c-q2"></div><p class="hint">Click a bar to read every comment behind it.</p>
+      <div class="chart-title">Every mummy, one dot</div><div class="dots" id="w-q2" role="img" aria-label="One dot per mummy, coloured by answer"></div><div class="dotkey"><span><i class="dot"></i>Highly recommend</span><span><i class="dot amber"></i>Likely</span><span><i class="dot bad"></i>Maybe or not likely</span></div>
+      <div class="chart-title" style="margin-top:22px">Answers · people</div><div class="bars" id="c-q2"></div><p class="hint">Click a bar to read every comment behind it.</p>
       <p class="insight">97% at the top box is a great number to quote and a useless one to learn from. Everyone who fills in a form after a course they liked ticks the top option. <b>Switch to a 0 to 10 scale</b> (NPS) and the spread between a 7 and a 10 starts telling you which batch or which session is slipping.</p>
     </div>
     <div class="quotes">
@@ -289,8 +360,8 @@ footer{margin-top:48px;color:var(--muted);font-size:.82rem;max-width:72ch}
   <span class="eyebrow">Coverage</span>
   <h2>Who has answered, by batch</h2>
   <p class="lede">Responses against students enrolled, by cohort month. March and June never received the form. April is nearly silent because it went out after the batches ended. Both October batches are still running.</p>
-  <div class="legend"><span class="lb">Under 25% answered</span><span class="lw">25 to 50%</span><span class="lg">Over 50%</span></div>
-  <div class="batches" id="batches"></div>
+  <div class="dotkey"><span><i class="dot"></i>Answered, cohort over 50%</span><span><i class="dot amber"></i>Answered, 25 to 50%</span><span><i class="dot bad"></i>Answered, under 25%</span><span><i class="dot off"></i>Not answered yet</span></div>
+  <div class="cov" id="batches"></div>
   <p class="chart-note">13 teen responses arrived in one two-minute window on 30 July, and 6 more from IYA B4 in 35 seconds on 1 November: the form was filled in the room, on phones, before anyone left. That is why the teen rate is the best of the lot.</p>
 </section>
 
@@ -300,7 +371,8 @@ footer{margin-top:48px;color:var(--muted);font-size:.82rem;max-width:72ch}
   <p class="lede">A different form: a rating out of 5 and a games question instead of "would you recommend".</p>
   <div class="q">
     <div>
-      <div class="chart-title">Favourite game · mentions</div><div class="bars" id="c-tg"></div><p class="hint">Click a bar to read every comment behind it.</p>
+      <div class="chart-title">Ratings · one row per star score</div><div class="bars" id="teen-stars"></div>
+      <div class="chart-title" style="margin-top:22px">Favourite game · mentions</div><div class="bars" id="c-tg"></div><p class="hint">Click a bar to read every comment behind it.</p>
       <div class="chart-title" style="margin-top:22px">Would you attend again · people</div><div class="bars" id="c-ta"></div><p class="hint">Click a bar to read every comment behind it.</p>
       <p class="insight">Ask a teenager what interested them most and <b>12 of 19 say stocks</b>. Not SIPs, not budgeting. The stock game is the favourite game of 9, Broke by Friday of 5. Sell the teen courses on the stock game and Broke by Friday, because that is what they tell their friends about.</p>
     </div>
@@ -313,6 +385,48 @@ footer{margin-top:48px;color:var(--muted);font-size:.82rem;max-width:72ch}
   </div>
 </section>
 
+
+<section>
+  <span class="eyebrow">Workshops</span>
+  <h2>Three one-off workshops, {{WS_N}} attendees, July</h2>
+  <p class="lede">K Patel Phyto Extractions (corporate, 3 July, 9 answers), Goa (18 July, 4) and Four Seasons, Worli (31 July, 3). A different, shorter form: a rating out of 5, engagement, understanding, topics ticked. Not counted in the course numbers or response rate above.</p>
+  <div class="wsgrid" id="wscards"></div>
+  <div class="mini">
+    <div class="ringcard"><svg class="ring" data-v="{{WS_EXT}}" data-max="{{WS_N}}" data-label="{{WS_EXT}}" data-sub="of {{WS_N}}"></svg><div><div class="l">"Extremely engaging"</div><div class="d">The other 2 said "very".</div></div></div>
+    <div class="ringcard"><svg class="ring" data-v="{{WS_SIG}}" data-max="{{WS_N}}" data-label="{{WS_SIG}}" data-sub="of {{WS_N}}"></svg><div><div class="l">Understand money "significantly" better</div><div class="d">3 said "somewhat".</div></div></div>
+    <div class="ringcard"><svg class="ring" data-v="{{WS_CONSENT}}" data-max="{{WS_N}}" data-label="{{WS_CONSENT}}" data-sub="of {{WS_N}}" data-tone="warn"></svg><div><div class="l">OK to use in marketing</div><div class="d">Quote these by name.</div></div></div>
+  </div>
+  <div class="q">
+    <div>
+      <div class="chart-title">Topics they found useful · ticks</div><div class="bars" id="c-wsu"></div>
+      <div class="chart-title" style="margin-top:22px">What they want next · ticks</div><div class="bars" id="c-wsf"></div>
+      <div class="chart-title" style="margin-top:22px">Would attend more · people</div><div class="bars" id="c-wsa"></div>
+      <p class="insight"><b>The workshop is selling the course, and nobody is following up.</b> Every one of the {{WS_N}} would come back (10 definitely, 6 probably), and "Introduction to the Stock Market", "Advanced Mutual Funds", "Financial Goal Planning" and "Personal Finance for Women" lead the next-topic ticks. That is the flagship syllabus. The three people who asked for anything asked for <b>more depth</b>: two hours on the buckets, instruments in detail, more on each topic.</p>
+      <p class="insight"><b>The corporate form wasted its free text.</b> All 9 K Patel answers left improvement blank or wrote "No", and that form has no games question, so the room's favourite game is unknown. In Goa, where the games were asked about, 3 of 4 named the bucket game.</p>
+    </div>
+    <div class="quotes">
+      <blockquote>"It was amazing and I learnt a lot.. going to start investing tomorrow!!!!"<cite>Natasha Duggal, Goa, 18 July · OK to quote</cite></blockquote>
+      <blockquote>"I have a much clearer understanding of things without getting overwhelmed with info."<cite>Rhea Dubey, Goa, 18 July · OK to quote</cite></blockquote>
+      <blockquote>"3 bucket. It really allowed for practical understanding."<cite>Rhea Dubey, on her favourite game</cite></blockquote>
+      <blockquote>"I'd like a whole 2 hours on what all goes into each bucket and how to get them."<cite>Rhea Dubey, Goa</cite></blockquote>
+      <blockquote>"Investment instruments in detail."<cite>Archana Miglani, Four Seasons Worli, 31 July · OK to quote</cite></blockquote>
+    </div>
+  </div>
+  <div class="alert" style="margin-top:22px">
+    <h3>Do with this</h3>
+    <ul>
+      <li><b>Offer the flagship to all {{WS_N}} by name.</b> They said they would come back; nobody has asked them. Start with the 11 who gave marketing consent. A Wendy lane task.</li>
+      <li><b>Put Natasha's and Rhea's lines on the corporate proposal.</b> Workshop quotes sell workshops better than course quotes do.</li>
+      <li><b>Fix the workshop form:</b> add the games question to the corporate version, make "what would you add" required, and repair the Worli column shift in the sheet.</li>
+    </ul>
+  </div>
+  <div class="tablewrap" style="margin-top:22px">
+    <table class="resp">
+      <thead><tr><th>Who</th><th>Rating</th><th>Found useful</th><th>Add or improve</th><th>Games</th><th>Next</th></tr></thead>
+      <tbody id="wsrows"></tbody>
+    </table>
+  </div>
+</section>
 <section>
   <span class="eyebrow">What to do with this</span>
   <h2>Nine moves the data supports</h2>
@@ -480,12 +594,28 @@ footer{margin-top:48px;color:var(--muted);font-size:.82rem;max-width:72ch}
 <script>
 const DATA = __DATA__;
 const COVERAGE = __COVERAGE__;
+const WORKSHOPS = __WORKSHOPS__;
+(function(){
+  function e(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+  function bars(id,counts,top){
+    const host=document.getElementById(id); if(!host) return;
+    const items=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,top||8), max=Math.max(1,...items.map(i=>i[1]));
+    items.forEach(([k,n])=>{const d=document.createElement('div'); d.className='bar'; d.innerHTML='<span class="lab">'+e(k)+'</span><div class="track"><div class="fill" style="width:'+Math.round(n/max*100)+'%"></div></div><span class="val">'+n+'</span>'; host.appendChild(d);});
+  }
+  const tick=f=>{const c={}; WORKSHOPS.forEach(w=>(w[f]||'').split(/,(?![^(]*\))/).map(x=>x.replace(/\s*\(1-day\)/,'').trim()).filter(Boolean).forEach(x=>c[x]=(c[x]||0)+1)); return c;};
+  bars('c-wsu',tick('useful'),8); bars('c-wsf',tick('future'),8);
+  const a={}; WORKSHOPS.forEach(w=>{const k=/^yes$/i.test(w.attend)?'Yes':w.attend; a[k]=(a[k]||0)+1}); bars('c-wsa',a,5);
+  const short=d=>{const m=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];const p=(d||'').split('-');return p.length===3?(+p[2])+' '+m[+p[1]-1]:d};
+  document.getElementById('wsrows').innerHTML=WORKSHOPS.map(w=>'<tr'+(w.shifted?' class="shift"':'')+'><td class="who"><span class="pill">WS</span> '+e(w.name)+'<small>'+e(w.workshop.replace(' (corporate)',''))+' · '+e(short(w.date))+(w.consent.toLowerCase()==='yes'?' · OK to quote':'')+'</small></td><td class="rec">'+e(w.rating)+'/5<br><small>'+e(w.engagement)+'</small></td><td>'+e(w.useful)+'</td><td>'+e(w.improve)+'</td><td>'+e(w.games)+'</td><td>'+e(w.attend)+(w.future?'<br><small>'+e(w.future)+'</small>':'')+'</td></tr>').join('');
+})();
+
 (function(){
   const host=document.getElementById('batches');
   COVERAGE.forEach(c=>{
     const pct=c.e?Math.round(c.n/c.e*100):0, st=pct<25?'bad':pct<50?'warn':'';
-    const row=document.createElement('div'); row.className='bar'+(st?' '+st:'');
-    row.innerHTML='<span class="lab">'+c.label+'</span><div class="track"><div class="fill" style="width:'+pct+'%"></div></div><span class="val">'+c.n+' / '+c.e+' &middot; '+pct+'%'+(st==='bad'?'<span class="chip bad">low</span>':'')+'</span>';
+    const row=document.createElement('div'); row.className='covrow'+(st?' '+st:'');
+    let dots=''; for(let i=0;i<c.e;i++) dots+='<i class="dot'+(i<c.n?'':' off')+'"></i>';
+    row.innerHTML='<span class="lab">'+c.label.replace(' 2026','')+'</span><div class="dots" role="img" aria-label="'+c.n+' of '+c.e+' answered">'+dots+'</div><span class="val">'+c.n+' / '+c.e+' · '+pct+'%</span>';
     host.appendChild(row);
   });
 })();
@@ -528,6 +658,52 @@ Object.keys(THEMES).forEach(key=>{
   btns.forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.f;btns.forEach(x=>x.setAttribute('aria-pressed',x===b));render();}));
   search.addEventListener('input',render);
   render();
+})();
+
+/* ===== Visual layer ===== */
+(function(){
+  const NS='http://www.w3.org/2000/svg';
+  function tone(t){return t==='bad'?'var(--bad)':t==='warn'?'var(--amber)':'var(--teal)'}
+  document.querySelectorAll('svg.ring').forEach(svg=>{
+    const v=parseFloat(svg.dataset.v)||0, max=parseFloat(svg.dataset.max)||1, r=50, c=2*Math.PI*r, f=Math.max(0,Math.min(1,v/max));
+    svg.setAttribute('viewBox','0 0 120 120');
+    svg.innerHTML='<circle cx="60" cy="60" r="'+r+'" fill="none" stroke="var(--teal-soft)" stroke-width="12"/>'+
+      '<circle cx="60" cy="60" r="'+r+'" fill="none" stroke="'+tone(svg.dataset.tone)+'" stroke-width="12" stroke-linecap="round" stroke-dasharray="'+(c*f).toFixed(1)+' '+c.toFixed(1)+'" transform="rotate(-90 60 60)"/>'+
+      '<text x="60" y="62" text-anchor="middle" font-size="'+(svg.dataset.label.length>3?26:30)+'">'+svg.dataset.label+'</text>'+
+      '<text class="sub" x="60" y="82" text-anchor="middle" font-size="12">'+(svg.dataset.sub||'')+'</text>';
+  });
+  // initials on quote cards
+  document.querySelectorAll('blockquote cite').forEach(ci=>{
+    const who=ci.textContent.split(',')[0].trim(); const ini=/student/i.test(who)?'?':who.split(/\s+/).map(w=>w[0]).join('').slice(0,2).toUpperCase();
+    const a=document.createElement('span'); a.className='avatar'; a.textContent=ini; a.setAttribute('aria-hidden','true'); ci.prepend(a);
+  });
+  // Q2 waffle
+  const w=document.getElementById('w-q2');
+  if(w) DATA.filter(r=>r.programme==='IFM').sort((a,b)=>(a.q2_recommend==='Highly recommend!'?0:1)-(b.q2_recommend==='Highly recommend!'?0:1)).forEach(r=>{
+    const d=document.createElement('i'); const k=r.q2_recommend; d.className='dot'+(k==='Likely'?' amber':(k==='Highly recommend!'?'':' bad')); d.title=r.name+' · '+r.batch+' · '+k; w.appendChild(d);
+  });
+  // teen stars
+  const ts=document.getElementById('teen-stars');
+  if(ts){const teens=DATA.filter(r=>r.programme!=='IFM'); const max=Math.max(1,teens.length);
+    [5,4,3,2,1].forEach(n=>{const k=teens.filter(r=>r.q2_recommend===n+'/5').length; if(!k&&n<3) return;
+      const d=document.createElement('div'); d.className='bar'; d.innerHTML='<span class="lab stars" aria-label="'+n+' stars">'+'★'.repeat(n)+'<span style="color:var(--line)">'+'★'.repeat(5-n)+'</span></span><div class="track"><div class="fill" style="width:'+Math.round(k/max*100)+'%"></div></div><span class="val">'+k+'</span>'; ts.appendChild(d);});}
+  // workshop cards
+  const wc=document.getElementById('wscards');
+  if(wc&&typeof WORKSHOPS!=='undefined'){
+    const g={}; WORKSHOPS.forEach(x=>{(g[x.workshop]=g[x.workshop]||[]).push(x)});
+    const m=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    Object.entries(g).forEach(([name,rows])=>{
+      const rs=rows.map(r=>+r.rating).filter(Boolean), avg=(rs.reduce((a,b)=>a+b,0)/rs.length).toFixed(1);
+      const p=(rows[0].date||'').split('-'), when=p.length===3?(+p[2])+' '+m[+p[1]-1]+' '+p[0]:'';
+      const corp=/corporate/.test(name), yes=rows.filter(r=>r.consent.toLowerCase()==='yes').length;
+      const c=document.createElement('div'); c.className='wscard';
+      c.innerHTML='<span class="when">'+when+(corp?' · corporate':'')+'</span><span class="where">'+name.replace(' (corporate)','')+'</span>'+
+        '<div class="score"><b>'+avg+'</b><span class="stars" aria-label="'+avg+' out of 5">'+'★'.repeat(Math.round(avg))+'</span></div>'+
+        '<div class="dots" role="img" aria-label="'+rows.length+' responses, '+yes+' OK to quote">'+rows.map(r=>'<i class="dot'+(r.consent.toLowerCase()==='yes'?'':' off')+'" title="'+r.name.replace(/"/g,'')+' · '+r.rating+'/5'+(r.consent.toLowerCase()==='yes'?' · OK to quote':'')+'"></i>').join('')+'</div>'+
+        '<span class="note">'+rows.length+' responses · filled dot = OK to quote ('+yes+')</span>';
+      wc.appendChild(c);
+    });
+  }
 })();
 
 (function(){

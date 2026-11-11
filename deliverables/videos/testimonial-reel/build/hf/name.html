@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Hiral's name, stacked bars (registry lt-stack-bars, re-skinned to IFM slate/gold, placed for 9:16). Transparent:
+     rendered as ProRes 4444 and laid over the hook shot (H1, 182 frames) by hf_overlays.py. Out before REALLY? (3.65s). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Lora"; src: url("assets/fonts/Lora.ttf"); font-weight: 400 700; }
+      @font-face { font-family: "IFM Nunito"; src: url("assets/fonts/fixed-Nunito-Bold.ttf"); font-weight: 700; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+      #lt { position: absolute; left: 56px; top: 1450px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+      #lt-namebar { background: #294354; padding: 18px 34px 16px; }
+      #lt-name { font-family: "Lora"; font-weight: 700; font-size: 74px; color: #fff; line-height: 1; letter-spacing: 0.01em; white-space: nowrap; }
+      #lt-rolebar { background: #fcc536; padding: 11px 24px; margin-left: 18px; }
+      #lt-role { font-family: "IFM Nunito"; font-weight: 700; font-size: 32px; color: #294354; line-height: 1; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="name" data-start="0" data-duration="6.067" data-width="1080" data-height="1920">
+      <div id="lt-clip" class="clip" data-start="0" data-duration="6.067" data-track-index="0">
+        <div id="lt">
+          <div id="lt-namebar"><div id="lt-name">Hiral Goel</div></div>
+          <div id="lt-rolebar"><div id="lt-role">Founder · Investing for Mummies</div></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      gsap.set("#lt-namebar", { clipPath: "inset(0 100% 0 0)" });
+      gsap.set("#lt-rolebar", { clipPath: "inset(0 0 0 100%)" });
+      tl.to("#lt-namebar", { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power4.out" }, 0.35);
+      tl.to("#lt-rolebar", { clipPath: "inset(0 0% 0 0%)", duration: 0.5, ease: "power4.out" }, 0.6);
+      tl.to("#lt-rolebar", { clipPath: "inset(0 0 0 100%)", duration: 0.3, ease: "power3.in" }, 3.25);
+      tl.to("#lt-namebar", { clipPath: "inset(0 100% 0 0)", duration: 0.34, ease: "power3.in" }, 3.32);
+      tl.to({}, { duration: 0.01 }, 6.05);
+      window.__timelines["name"] = tl;
+    </script>
+  </body>
+</html>
