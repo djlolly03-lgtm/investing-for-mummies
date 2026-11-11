@@ -1492,5 +1492,25 @@
   "kit": "portrait",
   "kit_rank": 3,
   "_kit_why": "daily-content-processor 10 Nov 2026: Hiral is the subject, face clear, to camera. Raw-take video frame, not a designed cover. Rank 3 (not shown by default) because identity was judged by eye from one frame, not checked against a known portrait."
+ },
+ "IFM-1178": {
+  "library": false,
+  "_why": "IMG_8725.MOV, 4s of handheld class footage with no usable spoken line — nothing a search could usefully return. Row kept so the file stays reachable from the hub; hidden from the Library because a result nobody can use is the thing the visibility rule exists to prevent. Same treatment as the September fragments."
+ },
+ "IFM-1179": {
+  "library": false,
+  "_why": "IMG_8726.MOV, 9s of handheld class footage with no usable spoken line — nothing a search could usefully return. Row kept so the file stays reachable from the hub; hidden from the Library because a result nobody can use is the thing the visibility rule exists to prevent. Same treatment as the September fragments."
+ },
+ "IFM-1180": {
+  "library": false,
+  "_why": "IMG_8727.MOV, 6s of handheld class footage with no usable spoken line — nothing a search could usefully return. Row kept so the file stays reachable from the hub; hidden from the Library because a result nobody can use is the thing the visibility rule exists to prevent. Same treatment as the September fragments."
+ },
+ "IFM-1181": {
+  "library": false,
+  "_why": "IMG_8728.MOV, 8s of handheld class footage with no usable spoken line — nothing a search could usefully return. Row kept so the file stays reachable from the hub; hidden from the Library because a result nobody can use is the thing the visibility rule exists to prevent. Same treatment as the September fragments."
+ },
+ "IFM-1182": {
+  "library": false,
+  "_why": "IMG_8729.MOV, 6s of handheld class footage with no usable spoken line — nothing a search could usefully return. Row kept so the file stays reachable from the hub; hidden from the Library because a result nobody can use is the thing the visibility rule exists to prevent. Same treatment as the September fragments."
  }
 }

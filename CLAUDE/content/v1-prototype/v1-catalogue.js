@@ -44964,13 +44964,13 @@ window.IFM_V1 =
 },
 {
 "id": "IFM-1172",
-"title": "Participant feedback clips",
+"title": "\"IFM feedback videos\" — the Drive folder (17 files, Jun to Oct 2026)",
 "date": "2026-11-03",
 "thumb": "../thumbs/IFM-1172.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1172.mp4",
 "drive": "https://drive.google.com/drive/folders/1NNiiIQYum3Ko_1LmkRVC29WBExQ64Iuz",
-"description": "Clips kept as participant feedback. The representative frame is a woman in a bright pink shirt standing at a flipchart in the training room, back half to camera, reading from a sheet of paper. Faces are not all to camera across the set; treat these as session footage rather than clean testimonial takes until each is watched.",
-"session": "",
+"description": "The Drive folder the team drops feedback recordings into. It is NOT all feedback: the June, July and September files are pieces to camera, while the October uploads are handheld class footage with incidental audio. Every file in it now has its own row — the October ones are IFM-1177 to IFM-1184, of which IFM-1183 is the full 12-minute end-of-course feedback round. This row exists to open the folder, not as a result in its own right.",
+"session": "Folder entry point",
 "audience": "Mummies",
 "batch": "",
 "captured_at": "",
@@ -44985,7 +44985,7 @@ window.IFM_V1 =
 "Student"
 ],
 "source": "Unknown",
-"search_terms": "testimonial review feedback social proof word of mouth participant feedback clips kept representative frame woman bright pink shirt standing flipchart training room back half camera reading from sheet paper faces not all across set treat these session footage rather than clean testimonial takes until each watched workshop shoot",
+"search_terms": "testimonial review feedback social proof word of mouth ifm feedback videos drive folder files jun oct 2026 team drops recordings into not all june july september pieces camera while october uploads handheld class footage incidental audio every file now has own row ones 1177 1184 which 1183 full",
 "phash": "196160d1dba134e0"
 },
 {
@@ -45099,5 +45099,1350 @@ window.IFM_V1 =
 "source": "Unknown",
 "search_terms": "sip systematic investment plan monthly investing join investing mummies now animated card short teal ifm wordmark top right then sip mutual funds tags popping over line have financial confidence you always wanted social sting not footage call action shoot folder",
 "phash": "f6948e84e0808080"
+},
+{
+"id": "IFM-1177",
+"title": "\"Why would you even want to put that in there?\" — a participant on her financial planner dismissing TWR (12s)",
+"date": "2026-10-29",
+"thumb": "../thumbs/IFM-1177.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1177.mp4",
+"drive": "https://drive.google.com/file/d/13KbMxwukBW4NhEuwxxSAEMa0CnOszJDu/view",
+"description": "Handheld across the boardroom table during a live class: participants seated behind open laptops and printed workbooks, water glasses and bottles down the middle, the presenter in a bright pink kurta standing at the far end. A participant is heard describing taking time-weighted return to her own financial planner and being brushed off: \"when I went to my financial planner and I was talking about TWR, he was just like, why would you even want to put that in there?\" Her face is not to camera — this is the room, with her voice over it.",
+"session": "October batch — feedback round, 29 Oct 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "when I went to my financial planner and I was talking about TWR, he was just like, why would you even want to put that in there?",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Financial Planning",
+"Risk & Returns"
+],
+"person": [
+"Student"
+],
+"source": "Unknown",
+"search_terms": "why would you even want put there participant her financial planner dismissing twr 12s handheld across boardroom table during live class participants seated behind open laptops printed workbooks water glasses bottles down middle presenter bright pink kurta standing far end",
+"speech": "But, you know, when I went to my financial planner and I was talking about TWR, he was just like, why would you even want to put that in there? Right? Like, they were like, this is just...",
+"speech_dur": 11.5,
+"speech_at": [
+[
+0.0,
+"But, you know, when I went to my financial planner and I was talking about TWR, he was"
+],
+[
+7.0,
+"just like, why would you even want to put that in there?"
+],
+[
+10.0,
+"Right?"
+],
+[
+11.0,
+"Like, they were like, this is just..."
+]
+],
+"phash": "2d391f160a3cda1f"
+},
+{
+"id": "IFM-1178",
+"title": "Class fragment — 4 seconds, speech cut off mid-sentence",
+"date": "2026-10-29",
+"thumb": "../thumbs/IFM-1178.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1178.mp4",
+"drive": "https://drive.google.com/file/d/117t7-xVC9-ErCDHWnrKiDIlF9aJ0uVzT/view",
+"description": "Handheld across the boardroom table during a live class: participants seated behind open laptops and printed workbooks, water glasses and bottles down the middle, the presenter in a bright pink kurta standing at the far end. Four seconds. The only audio is Hiral starting a sentence she does not finish: \"I said when I am teaching I am teaching so that…\". Nothing usable on its own.",
+"session": "October batch — feedback round, 29 Oct 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "I said when I am teaching I am teaching so that…",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "Hiral Speaking",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Unknown",
+"search_terms": "class fragment seconds speech cut off mid sentence handheld across boardroom table during live participants seated behind open laptops printed workbooks water glasses bottles down middle presenter bright pink kurta standing far end four only audio hiral starting she does",
+"speech": "Yeah, I said when I am teaching I am teaching so that",
+"speech_dur": 3.8,
+"speech_at": [
+[
+0.0,
+"Yeah, I said when I am teaching I am teaching so that"
+]
+],
+"phash": "a07bde95b239ae7a",
+"library": false
+},
+{
+"id": "IFM-1179",
+"title": "Class fragment — the presenter reading from a sheet, 9 seconds",
+"date": "2026-10-29",
+"thumb": "../thumbs/IFM-1179.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1179.mp4",
+"drive": "https://drive.google.com/file/d/1Dfi06rpq4o5ZF8Zkkkc-5zFLx4dq2PuE/view",
+"description": "The presenter in a bright pink kurta seen from behind, reading from a printed sheet beside the whiteboard. Audio is one clipped line — \"I mean the point of this workshop is to\" — and stops there.",
+"session": "October batch — feedback round, 29 Oct 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "I mean the point of this workshop is to",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "Unknown",
+"search_terms": "class fragment presenter reading from sheet seconds bright pink kurta seen behind printed beside whiteboard audio one clipped line mean point workshop stops there october 2026 classroom usable speech",
+"speech": "I mean the point of this workshop is to",
+"speech_dur": 8.6,
+"speech_at": [
+[
+0.0,
+"I mean the point of this workshop is to"
+]
+],
+"phash": "60e0c19c84a0e060",
+"library": false
+},
+{
+"id": "IFM-1180",
+"title": "Class fragment — 6 seconds of cross-table talk",
+"date": "2026-10-29",
+"thumb": "../thumbs/IFM-1180.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1180.mp4",
+"drive": "https://drive.google.com/file/d/1iI3FYKmDm9pKIBLzZXoDilkW6Svz9Do7/view",
+"description": "Handheld across the boardroom table during a live class: participants seated behind open laptops and printed workbooks, water glasses and bottles down the middle, the presenter in a bright pink kurta standing at the far end. Six seconds of conversation with no beginning or end: \"because it’s just their own doing, right? …they missed out, so they’re trying to camouflage.\"",
+"session": "October batch — feedback round, 29 Oct 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Money Conversations"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "Unknown",
+"search_terms": "class fragment seconds cross table talk handheld across boardroom during live participants seated behind open laptops printed workbooks water glasses bottles down middle presenter bright pink kurta standing far end six conversation beginning because just their own doing right they",
+"speech": "Because it's just their own doing, right? No, and they missed out, so they're trying to camouflage.",
+"speech_dur": 6.5,
+"speech_at": [
+[
+0.0,
+"Because it's just their own doing, right?"
+],
+[
+2.0,
+"No, and they missed out, so they're trying to camouflage."
+]
+],
+"phash": "646cccdb9494c77e",
+"library": false
+},
+{
+"id": "IFM-1181",
+"title": "Class fragment — \"the test is coming after, I have a really fun game\" (8s)",
+"date": "2026-10-29",
+"thumb": "../thumbs/IFM-1181.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1181.mp4",
+"drive": "https://drive.google.com/file/d/1I3oxL97aspo4itowlFL6EFqYyiQYvYBd/view",
+"description": "The presenter in the pink kurta from behind, holding a printed sheet. She is heading off the room’s worry about a test: \"no no no, the test is coming after — I have a really fun game, not a test but it’s a fun game.\" Running commentary, not feedback.",
+"session": "October batch — feedback round, 29 Oct 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "Unknown",
+"search_terms": "class fragment test coming after have really fun game presenter pink kurta from behind holding printed sheet she heading off room worry about not but running commentary feedback october 2026 classroom games",
+"speech": "and we're going to test more like no no no the test is coming after i have a really fun game not a test but it's a fun game",
+"speech_dur": 8.2,
+"speech_at": [
+[
+0.0,
+"and we're going to test more like no no no the test is coming after i have a really fun game"
+],
+[
+6.0,
+"not a test but it's a fun game"
+]
+],
+"phash": "196160d1dba134e0",
+"library": false
+},
+{
+"id": "IFM-1182",
+"title": "Class fragment — 6 seconds, audio indistinct",
+"date": "2026-10-29",
+"thumb": "../thumbs/IFM-1182.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1182.mp4",
+"drive": "https://drive.google.com/file/d/1Vep2DUg4B238S3Z3DCDqOIfDj2RoE8qP/view",
+"description": "Handheld across the boardroom table during a live class: participants seated behind open laptops and printed workbooks, water glasses and bottles down the middle, the presenter in a bright pink kurta standing at the far end. Six seconds. One line comes through and it is garbled enough not to be worth quoting. Kept for the room, not for what is said.",
+"session": "October batch — feedback round, 29 Oct 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": false,
+"source": "Unknown",
+"search_terms": "class fragment seconds audio indistinct handheld across boardroom table during live participants seated behind open laptops printed workbooks water glasses bottles down middle presenter bright pink kurta standing far end six one line comes through garbled enough not worth quoting",
+"speech": "I don't think there are any questions about your experience so this is not talk.",
+"speech_dur": 6.1,
+"speech_at": [
+[
+0.0,
+"I don't think there are any questions about your experience so this is not talk."
+]
+],
+"phash": "9b69d3f7ce31c5cf",
+"library": false
+},
+{
+"id": "IFM-1183",
+"title": "October batch — the full end-of-course feedback round (12 min, 8+ participants)",
+"date": "2026-10-29",
+"thumb": "../thumbs/IFM-1183.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1183.mp4",
+"drive": "https://drive.google.com/file/d/1GRZirUeWbfRYvfntwR8Rsrbh-GfGQEET/view",
+"description": "The October cohort’s feedback round, recorded in full. Hiral opens with \"how confident do you feel about starting your investing journey after this workshop, and what was a big surprise or an aha moment\", and goes round the table. Insurance and the super top-up come up first, then SWP, then \"I know terms that I just pretended to understand earlier\". One participant describes fourteen years of her husband offering to invest for her, and then buying into the Jio IPO herself this month and hedging it — selling half before listing and half after. Another has started reading market cap in the paper and understanding it. Hiral closes on how to question an adviser (\"why this fund and not a large cap — what is your thought process?\") and on why women are harder on themselves than the men in their families who also made mistakes. Ends with a mother and her twenty-year-old son planning to invest together on Sunday, his birthday money alongside hers. This is the October testimonial material.",
+"session": "October batch — feedback round, 29 Oct 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "Testimonial",
+"topic": [
+"Financial Planning",
+"Money Conversations",
+"Women & Money",
+"Family & Money",
+"Insurance"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Unknown",
+"search_terms": "sip systematic investment plan monthly investing testimonial review feedback social proof word of mouth october batch full end course feedback round min participants cohort recorded hiral opens how confident you feel about starting your investing journey after workshop what was big surprise aha moment goes table insurance super top come first then swp know",
+"speech": "is and everybody was talking if you can like raise your hand or whatever right how confident do you feel about starting your investing journey after this workshop what do you think was a big surprise or an aha moment for you in the course of the workshop and we can have lots of people in what sense for me it was insurance like you know just thinking like oh my god like insurance is so archaic we don't need it and you know when you said that in this day and age that you always think of like every advice insurance and you showed that how insurance against any other investing didn't stand in at least for this these like our kind of people like it's different so that for me was like oh I always thought like I did use that yes so basically like term insurance was it so that concept was much more clearer and just fact that you compared it to the other investments and which insurance like you live for things like that so I could read into that much more you know what was that yeah I think for me was like three things I really stood out one was insurance in the sense I didn't know about the super top up and since I'm dealing with what yeah the last two years I was like great to know because I really didn't know any of some insurance agents and the second was the SWP which I thought was phenomenal and the third was it was just generally overall the kind of like you know you have information and sometimes you have half information and it's all not clear but you put it so well that the base and the concepts are so much clearer than now I am a little more confident at least about having a conversation about my own portfolio investments whether it's with family or it's with a fund manager he said get what they're saying and what I'm trying to put it so that was like you know so for me this you know even IPO and all I think like everyone talks about this and I'm just always nodding along you know like just in the background like mm-hmm and no clear what it meant and like now I feel like I know terms that I just pretended to understand earlier anyway yeah Ashita same there's so many things that I'm it's the first time so they were I didn't know any terms at all so even to know what it is like she said what an IPO stands for why what goes public and why doesn't go public I have just heard all the IPOs gone public what did it mean I had no clue up until now just learning the terms is only so overwhelming any question or statement or discussion you have had with your family your husband's your financial planners which have which as a result of this workshop yeah me this is the conversation starter for everything now I mean to like my wealth my like even in a socializer I have to come and you know hang out and like ask you this and say yeah sure come and to understand everything then I was having conversation with a very close friend who's very big in the finance world and that's what she was telling me what the geo IPO was and how they have paid the salaries earlier to get it and how the mutual funds will now in the big guys will in fact so these kind of things I would have never gone before right in do so it was like a it's also a lot of like coming from you but also like the curiosity now tell me more so which I didn't have before so if opening the papers and seeing the market cap of you know today in the times they put the market the market cap of geo and against the market cap of reliance and they are one and two so that all just means so much sense that market cap is not the value of the value of the shares in the market so that's a big thing yeah I think my husband is the happiest person out of this class because I don't come from a convention family my mother is a businesswoman so my husband and we are into investing very heavily and my background my parents we are cash heavy and we understand this entire language of investing for 14 years he kept telling me and he would push me okay let give me your phone let me just do this for you and I don't know what to answer money and everything I would not even bother to take this for you it's an amazing husband yeah and after 14 years on marriage this I mean in the last one month like we were in Thailand I missed the last 15 days and I don't know now I mean just sitting let's start investing a little bit and then I invested in this geo idea myself I did an emerald in myself and he was just looking at me like this is sitting and he's like she is like she is like she is like and you said you were selling yeah I did you said that you saw I said that you saw it I said that you saw it I said that you saw it you saw it you saw it 4 to 10 I would sell it afterwards so I sold half before and half wow she hedged my husband thinks you should do a weekly class and now a weekly refresher and tell us now what to do what to do next can she get on a call with y'all and tell y'all now okay today I'm doing this yeah that would be another plan but I'm definitely doing a more advanced one of those I know that we did the up capture down capture what all those mean fees breaking down fees right going a little deeper but I feel like once you guys have this base and take some time to start investing yourself or do some sort of yeah investing on your own whether it's in stocks mutual funds whatever it is right take some money and just play around with it you will start understanding so much more the thing is the learning everything we've learned so far starts getting reinforced because then you're actually going to be able to see it in action right Bhavna anything you would like to add I know you felt very overwhelmed I had a question in fact when you just said you should start with some money and start a portfolio on your own managing something what would your advice to start mutual funds it's the safest it is the safest just go start with whatever little bit you want start an SIP start understanding first come up with a goal decide that okay I want to say I want to keep keep it in an SIP for like about ten years period of time right and then pick and choose if you are starting with say 5000 bucks split it into three buckets right you can do small cap, mid cap large cap or you can do a flexi cap split it right see how each one is doing do it for a period of you know five years ten years or just a small amount that's not going to hurt you right but or do it for your kids right where that's a much longer time horizon right and yeah I think that and then sit with the person if somebody is advising you on it sit with that person and ask questions right why are you choosing this particular fund what have you considered are you recommending me this particular one and it's important for me to study that even if you don't study it and he is doing it for you you ask the questions to understand what is his thought process behind why he is recommending it for you why this particular one like if he say for example recommends you small cap right say why not a large cap why are you saying this if he recommends you a flexi cap why are you recommending me flexi cap a large cap, small cap, mid cap what is your thought process behind it and once he gives it to you it needs to resonate with you now you understand what each thing is so now when he gives you the explanation for it if it makes sense to you then yes go ahead and do it the point is what has happened so far is they tell you stuff and we say okay we don't know they probably have some thought behind it but we don't even know what that is we don't even know if that works for us because you are honestly the best person to judge what is best for you they may have a thought process of why they believe this is best for you that may not be your choice so it's very important to understand why are they recommending this for you and when they give you the explanation if you don't understand ask but more often there are now that you have this base you will see that it will start making sense their strategy there whether they are talking about it from a risk point of view whether from a return point of view if they are talking about it from a return point of view then say but what about the risk what is the risk in it have you considered risk do you think that this is okay risk for me to take for the period of time so those sort of things you start questioning and asking and if they don't have good enough answers for you that tells you something since I missed the last class after this whole workshop I was going to go into office and start but now that I missed a big chunk of the mutual funds am I still equate or should I reenact you should reenact enough of a base to start you can always come in and do it it will help you understand further but you I think that all of you guys understand I don't know why and today I have done that post about this I don't know why as women we are so hard on ourselves and all our husbands have invested and I am sure made major mistakes all the men in our family that's the only way to learn unfortunately so you will make mistakes and it's okay to make mistakes so if you start with a small sum of money that's not going to hurt you I think just the starting is the biggest obstacle I think standing in our way and we feel like we are just so much more fearful of losing money than men are I don't know why they will not think but we are like it's a big deal for us women don't date the season so actually I am finishing a class this weekend so on Sunday we have decided we are both going to sit he will invest his birthday money and I will invest several months so we will discuss what he will invest and what I will invest so it was quite interesting how old is he? he is 20",
+"speech_dur": 726.8,
+"speech_at": [
+[
+0.0,
+"is and everybody was talking if you can like raise your hand or whatever right"
+],
+[
+4.2,
+"how confident do you feel about starting your investing journey after this"
+],
+[
+9.2,
+"workshop what do you think was a big surprise or an aha moment for you in"
+],
+[
+28.1,
+"the course of the workshop and we can have lots of people in what sense"
+],
+[
+43.0,
+"for me it was insurance like you know just thinking like oh my god like"
+],
+[
+47.6,
+"insurance is so archaic we don't need it and you know when you said that in this"
+],
+[
+53.4,
+"day and age that you always think of like every advice insurance and you showed"
+],
+[
+59.7,
+"that how insurance against any other investing didn't stand in at least for"
+],
+[
+65.5,
+"this these like our kind of people like it's different so that for me was like oh I"
+],
+[
+72.6,
+"always thought like I did use that yes so basically like term insurance was it"
+],
+[
+86.2,
+"so that concept was much more clearer and just fact that you compared it to the"
+],
+[
+91.9,
+"other investments and which insurance like you live for things like that so I"
+],
+[
+96.4,
+"could read into that much more you know what was that yeah I think for me was"
+],
+[
+111.6,
+"like three things I really stood out one was insurance in the sense I didn't know"
+],
+[
+115.4,
+"about the super top up and since I'm dealing with what yeah the last two"
+],
+[
+118.3,
+"years I was like great to know because I really didn't know any of some"
+],
+[
+122.5,
+"insurance agents and the second was the SWP which I thought was phenomenal and the"
+],
+[
+133.0,
+"third was it was just generally overall the kind of like you know you have"
+],
+[
+137.3,
+"information and sometimes you have half information and it's all not clear but"
+],
+[
+141.5,
+"you put it so well that the base and the concepts are so much clearer than now"
+],
+[
+146.2,
+"I am a little more confident at least about having a conversation about my own"
+],
+[
+151.5,
+"portfolio investments whether it's with family or it's with a fund manager he said"
+],
+[
+155.5,
+"get what they're saying and what I'm trying to put it so that was like you know"
+],
+[
+162.1,
+"so for me this you know even IPO and all I think like everyone talks about this"
+],
+[
+168.1,
+"and I'm just always nodding along you know like just in the background like"
+],
+[
+171.8,
+"mm-hmm and no clear what it meant and like now I feel like I know terms that"
+],
+[
+177.8,
+"I just pretended to understand earlier"
+],
+[
+181.2,
+"anyway yeah Ashita same there's so many things that I'm it's the first time so"
+],
+[
+188.1,
+"they were I didn't know any terms at all so even to know what it is like she said"
+],
+[
+193.5,
+"what an IPO stands for why what goes public and why doesn't go public I have"
+],
+[
+199.2,
+"just heard all the IPOs gone public what did it mean I had no clue up until"
+],
+[
+203.6,
+"now just learning the terms is only so overwhelming"
+],
+[
+208.7,
+"any question or statement or discussion you have had with your family your"
+],
+[
+217.6,
+"husband's your financial planners which have which as a result of this workshop"
+],
+[
+223.5,
+"yeah me this is the conversation starter for everything now I mean to like my"
+],
+[
+228.5,
+"wealth my like even in a socializer I have to come and you know hang out and"
+],
+[
+232.7,
+"like ask you this and say yeah sure come and to understand everything then I was"
+],
+[
+237.2,
+"having conversation with a very close friend who's very big in the finance world"
+],
+[
+241.6,
+"and that's what she was telling me what the geo IPO was and how they have paid"
+],
+[
+245.6,
+"the salaries earlier to get it and how the mutual funds will now in the big"
+],
+[
+251.7,
+"guys will in fact so these kind of things I would have never gone before"
+],
+[
+255.9,
+"right in do so it was like a it's also a lot of like coming from you"
+],
+[
+262.3,
+"but also like the curiosity now tell me more so which I didn't have before so if"
+],
+[
+268.4,
+"opening the papers and seeing the market cap of you know today in the times they"
+],
+[
+272.6,
+"put the market the market cap of geo and against the market cap of reliance and"
+],
+[
+277.6,
+"they are one and two so that all just means so much sense that market cap is"
+],
+[
+281.6,
+"not the value of the value of the shares in the market so that's a big thing"
+],
+[
+287.5,
+"yeah"
+],
+[
+288.5,
+"I think my husband is the happiest person out of this class because I don't come from a convention family"
+],
+[
+295.0,
+"my mother is a businesswoman so my husband and we are into investing very heavily"
+],
+[
+300.3,
+"and my background my parents we are cash heavy and we understand this entire language of investing"
+],
+[
+310.2,
+"for 14 years he kept telling me and he would push me okay let give me your phone"
+],
+[
+317.4,
+"let me just do this for you and I don't know what to answer money and everything I would not even bother to take this"
+],
+[
+322.6,
+"for you"
+],
+[
+323.6,
+"it's an amazing husband"
+],
+[
+327.6,
+"yeah"
+],
+[
+328.6,
+"and after 14 years on marriage this I mean in the last one month like we were in Thailand I missed the last 15 days"
+],
+[
+336.6,
+"and I don't know now I mean just sitting let's start investing a little bit and then I invested in this geo idea myself"
+],
+[
+343.6,
+"I did an emerald in myself and he was just looking at me like this is sitting and he's like she is like"
+],
+[
+350.6,
+"she is like"
+],
+[
+352.6,
+"she is like"
+],
+[
+353.6,
+"and you said you were selling"
+],
+[
+355.6,
+"yeah I did you said that"
+],
+[
+356.6,
+"you saw"
+],
+[
+357.6,
+"I said that"
+],
+[
+358.6,
+"you saw it"
+],
+[
+359.6,
+"I said that"
+],
+[
+360.6,
+"you saw it"
+],
+[
+361.6,
+"I said that"
+],
+[
+362.6,
+"you saw it"
+],
+[
+363.6,
+"you saw it"
+],
+[
+364.6,
+"you saw it"
+],
+[
+365.6,
+"4 to 10"
+],
+[
+367.6,
+"I would sell it afterwards"
+],
+[
+369.6,
+"so I sold half before and half"
+],
+[
+371.6,
+"wow"
+],
+[
+373.6,
+"she hedged"
+],
+[
+375.6,
+"my husband thinks you should do a weekly class"
+],
+[
+378.6,
+"and now a weekly refresher and tell us now what to do"
+],
+[
+382.6,
+"what to do next can she get on a call with y'all and tell y'all now"
+],
+[
+386.6,
+"okay today I'm doing this"
+],
+[
+388.6,
+"yeah that would be another plan"
+],
+[
+390.6,
+"but I'm definitely doing a more advanced one of those"
+],
+[
+393.7,
+"I know that we did the up capture down capture"
+],
+[
+396.7,
+"what all those mean"
+],
+[
+398.7,
+"fees breaking down fees"
+],
+[
+400.7,
+"right going a little deeper"
+],
+[
+401.7,
+"but I feel like once you guys have this base"
+],
+[
+404.7,
+"and take some time to start investing yourself"
+],
+[
+407.7,
+"or do some sort of"
+],
+[
+409.7,
+"yeah investing on your own"
+],
+[
+412.7,
+"whether it's in stocks mutual funds whatever it is right"
+],
+[
+415.7,
+"take some money and just play around with it"
+],
+[
+418.7,
+"you will start understanding so much more"
+],
+[
+421.7,
+"the thing is the learning everything we've learned so far"
+],
+[
+424.7,
+"starts getting reinforced"
+],
+[
+426.7,
+"because then you're actually going to"
+],
+[
+428.7,
+"be able to see it in action"
+],
+[
+430.7,
+"right"
+],
+[
+432.7,
+"Bhavna anything you would like to add"
+],
+[
+434.7,
+"I know you felt very overwhelmed"
+],
+[
+436.7,
+"I had a question in fact when you just said"
+],
+[
+438.7,
+"you should start with some money and start a portfolio"
+],
+[
+441.7,
+"on your own managing something"
+],
+[
+443.7,
+"what would your advice to start"
+],
+[
+445.7,
+"mutual funds it's the safest"
+],
+[
+447.7,
+"it is the safest"
+],
+[
+449.8,
+"just go"
+],
+[
+451.8,
+"start with whatever little bit you want"
+],
+[
+453.8,
+"start an SIP"
+],
+[
+455.8,
+"start understanding first come up with a goal"
+],
+[
+457.8,
+"decide that okay I want to say"
+],
+[
+459.8,
+"I want to keep"
+],
+[
+461.8,
+"keep it in an SIP"
+],
+[
+463.8,
+"for like about ten years period of time"
+],
+[
+465.8,
+"right and then pick and choose"
+],
+[
+467.8,
+"if you are starting with say 5000 bucks"
+],
+[
+469.8,
+"split it into three buckets"
+],
+[
+471.8,
+"right you can do small cap, mid cap"
+],
+[
+473.8,
+"large cap or you can do a flexi cap"
+],
+[
+475.8,
+"split it"
+],
+[
+477.8,
+"right see how each one is doing"
+],
+[
+479.8,
+"do it for a period of"
+],
+[
+481.8,
+"you know five years ten years or just a small"
+],
+[
+483.8,
+"amount that's not going to hurt you"
+],
+[
+485.8,
+"right but or do it for your kids"
+],
+[
+487.8,
+"right where that's a much longer time"
+],
+[
+489.8,
+"horizon right and"
+],
+[
+491.8,
+"yeah I think that and then"
+],
+[
+493.8,
+"sit with the person"
+],
+[
+495.8,
+"if somebody is advising"
+],
+[
+497.8,
+"you on it sit with that person"
+],
+[
+499.8,
+"and ask questions"
+],
+[
+501.8,
+"right why are you choosing this particular fund"
+],
+[
+503.8,
+"what have you considered"
+],
+[
+505.8,
+"are you recommending me this particular one"
+],
+[
+507.8,
+"and it's important for me to study that"
+],
+[
+509.8,
+"even if you don't study it"
+],
+[
+511.8,
+"and he is doing it for you"
+],
+[
+513.8,
+"you ask the questions to understand"
+],
+[
+515.8,
+"what is his thought process"
+],
+[
+517.8,
+"behind why he is recommending it for you"
+],
+[
+519.8,
+"why this particular one"
+],
+[
+521.8,
+"like if he say for example"
+],
+[
+523.8,
+"recommends you small cap"
+],
+[
+525.8,
+"right say why not a large cap"
+],
+[
+527.8,
+"why are you saying this"
+],
+[
+529.8,
+"if he recommends you a flexi cap"
+],
+[
+531.8,
+"why are you recommending me flexi cap"
+],
+[
+533.9,
+"a large cap, small cap, mid cap"
+],
+[
+535.9,
+"what is your thought process"
+],
+[
+537.9,
+"behind it and once"
+],
+[
+539.9,
+"he gives it to you it needs to resonate"
+],
+[
+541.9,
+"with you"
+],
+[
+543.9,
+"now you understand what each thing is"
+],
+[
+545.9,
+"so now when"
+],
+[
+547.9,
+"he gives you the explanation for it"
+],
+[
+549.9,
+"if it makes sense to you"
+],
+[
+551.9,
+"then yes go ahead and do it"
+],
+[
+553.9,
+"the point is what has happened"
+],
+[
+555.9,
+"so far is they tell you"
+],
+[
+557.9,
+"stuff and we say okay"
+],
+[
+559.9,
+"we don't know they probably"
+],
+[
+561.9,
+"have some thought behind it"
+],
+[
+563.9,
+"but we don't even know what that is"
+],
+[
+565.9,
+"we don't even know if that works for us"
+],
+[
+567.9,
+"because you are honestly"
+],
+[
+569.9,
+"the best person to judge what is"
+],
+[
+571.9,
+"best for you"
+],
+[
+573.9,
+"they may have a thought process"
+],
+[
+575.9,
+"of why they believe this is best for you"
+],
+[
+577.9,
+"that may not be"
+],
+[
+579.9,
+"your choice"
+],
+[
+581.9,
+"so it's very important to understand"
+],
+[
+583.9,
+"why are they recommending this"
+],
+[
+585.9,
+"for you"
+],
+[
+587.9,
+"and when they give you the explanation"
+],
+[
+590.0,
+"if you don't understand ask"
+],
+[
+592.0,
+"but more often there are now"
+],
+[
+594.0,
+"that you have this base"
+],
+[
+596.0,
+"you will see that it will start making sense"
+],
+[
+598.0,
+"their strategy there"
+],
+[
+600.0,
+"whether they are talking about it from a risk"
+],
+[
+602.0,
+"point of view"
+],
+[
+604.0,
+"whether from a return point of view"
+],
+[
+606.0,
+"if they are talking about it from a return point of view"
+],
+[
+608.0,
+"then say but what about the risk"
+],
+[
+610.0,
+"what is the risk in it"
+],
+[
+612.0,
+"have you considered risk"
+],
+[
+614.0,
+"do you think that this is okay risk"
+],
+[
+616.0,
+"for me to take for the period of time"
+],
+[
+618.0,
+"so those sort of things"
+],
+[
+620.0,
+"you start questioning and asking"
+],
+[
+622.0,
+"and if they don't have good enough answers"
+],
+[
+624.0,
+"for you"
+],
+[
+626.0,
+"that tells you something"
+],
+[
+628.0,
+"since I missed the last class"
+],
+[
+630.0,
+"after this whole"
+],
+[
+632.0,
+"workshop"
+],
+[
+634.0,
+"I was going to go into"
+],
+[
+636.0,
+"office and start"
+],
+[
+638.0,
+"but now that I missed a big chunk of the mutual funds"
+],
+[
+640.0,
+"am I still equate"
+],
+[
+642.0,
+"or should I reenact"
+],
+[
+644.0,
+"you should reenact"
+],
+[
+646.0,
+"enough of a base to start"
+],
+[
+648.0,
+"you can always come in and do it"
+],
+[
+650.0,
+"it will help you understand"
+],
+[
+652.0,
+"further but you"
+],
+[
+654.0,
+"I think that all of you guys"
+],
+[
+656.0,
+"understand I don't know why"
+],
+[
+658.0,
+"and today I have done that post"
+],
+[
+660.0,
+"about this I don't know why"
+],
+[
+662.0,
+"as women we are so hard on ourselves"
+],
+[
+664.0,
+"and"
+],
+[
+666.0,
+"all our husbands have invested"
+],
+[
+668.0,
+"and I am sure made major mistakes"
+],
+[
+670.0,
+"all the men in our family"
+],
+[
+672.0,
+"that's the only way to learn"
+],
+[
+674.0,
+"unfortunately"
+],
+[
+676.0,
+"so you will make mistakes"
+],
+[
+678.0,
+"and it's okay to make mistakes"
+],
+[
+680.0,
+"so if you start with a small sum of money"
+],
+[
+682.0,
+"that's not going to hurt you"
+],
+[
+684.0,
+"I think just the starting"
+],
+[
+686.0,
+"is the biggest"
+],
+[
+688.0,
+"obstacle"
+],
+[
+690.0,
+"I think standing in our way"
+],
+[
+692.0,
+"and we feel like we are just so much more fearful"
+],
+[
+694.0,
+"of losing money"
+],
+[
+696.0,
+"than men are"
+],
+[
+698.0,
+"I don't know why"
+],
+[
+700.0,
+"they will not think"
+],
+[
+702.0,
+"but we are like"
+],
+[
+704.0,
+"it's a big deal for us"
+],
+[
+706.0,
+"women don't date the season"
+],
+[
+708.0,
+"so actually"
+],
+[
+710.0,
+"I am finishing a class this weekend"
+],
+[
+712.0,
+"so on Sunday we have decided"
+],
+[
+714.0,
+"we are both going to sit"
+],
+[
+716.0,
+"he will invest his birthday money"
+],
+[
+718.0,
+"and I will invest several months"
+],
+[
+720.0,
+"so we will discuss what he will invest"
+],
+[
+722.0,
+"and what I will invest"
+],
+[
+724.0,
+"so it was quite interesting"
+],
+[
+726.0,
+"how old is he?"
+],
+[
+728.0,
+"he is 20"
+]
+],
+"phash": "1870e1c1c19938f8"
+},
+{
+"id": "IFM-1184",
+"title": "\"The stock rush\" — a participant names the trading game as the best part of the workshop (31s)",
+"date": "2026-10-29",
+"thumb": "../thumbs/IFM-1184.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1184.mp4",
+"drive": "https://drive.google.com/file/d/1WdzFEkv8jxRo6eGYpz-239ylZJO36xQJ/view",
+"description": "Handheld across the boardroom table during a live class: participants seated behind open laptops and printed workbooks, water glasses and bottles down the middle, the presenter in a bright pink kurta standing at the far end. Hiral asks the room for \"the best part or best session of the workshop… any part that stood out\", and a participant answers: \"I love that when we were doing that whole the shares… you know when you gave us two lakhs… the stock rush… where you could trade in stocks.\" Hiral closes with \"so I have another fun game which is coming right up\". The clearest piece of October feedback in this folder.",
+"session": "October batch — feedback round, 29 Oct 2026",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "the best part or best session of the workshop… any part that stood out I love that when we were doing that whole the shares… you know when you gave us two lakhs… the stock rush… where you could trade in stocks. so I have another fun game which is coming right up",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Raw",
+"format": "Classroom Moment",
+"topic": [
+"Stocks / Equity",
+"Stock Market"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "Unknown",
+"search_terms": "stock rush participant names trading game best part workshop 31s handheld across boardroom table during live class participants seated behind open laptops printed workbooks water glasses bottles down middle presenter bright pink kurta standing far end hiral asks room session",
+"speech": "the best part or best session or best part of the workshop. I think they are so interesting. Any part that stood out. I love that when we were doing that whole the shares. The game or one where all the fuss were looking. You know when you gave us two lakhs. The stock rush. Yeah the stock where you could trade in stocks. So I have another fun game which is coming right up. So we will start.",
+"speech_dur": 31.2,
+"speech_at": [
+[
+0.0,
+"the best part or best session or best part of the workshop."
+],
+[
+6.5,
+"I think they are so interesting."
+],
+[
+8.5,
+"Any part that stood out."
+],
+[
+11.5,
+"I love that when we were doing that whole the shares."
+],
+[
+15.5,
+"The game or one where all the fuss were looking."
+],
+[
+19.5,
+"You know when you gave us two lakhs."
+],
+[
+21.5,
+"The stock rush."
+],
+[
+24.5,
+"Yeah the stock where you could trade in stocks."
+],
+[
+27.5,
+"So I have another fun game which is coming right up."
+],
+[
+30.5,
+"So we will start."
+]
+],
+"phash": "e4c4842c3ea8c9e4"
 }
 ];
