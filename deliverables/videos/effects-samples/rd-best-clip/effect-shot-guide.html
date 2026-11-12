@@ -1594,12 +1594,13 @@ a.chip{text-decoration:none;font-variant-numeric:tabular-nums}
   &quot;score&quot;: 9.0
 }</pre></details></div></article></div></section>
 </div>
-<dialog id="pv"><div class="box"><div class="bar"><span id="pvt"></span><button type="button" class="x" id="pvx">Close</button></div><video id="pvv" controls playsinline loop muted></video></div></dialog>
+<dialog id="pv"><div class="box"><div class="bar"><span id="pvt"></span><button type="button" class="x" id="pvx">Close</button></div><video id="pvv" controls playsinline></video></div></dialog>
 <script>
 const pv=document.getElementById('pv'),pvv=document.getElementById('pvv');
 document.querySelectorAll('.play').forEach(b=>b.addEventListener('click',()=>{pvv.src=b.dataset.v;document.getElementById('pvt').textContent=b.dataset.t;pv.showModal();pvv.play().catch(()=>{})}));
 document.getElementById('pvx').addEventListener('click',()=>pv.close());
 pv.addEventListener('click',ev=>{if(ev.target===pv)pv.close()});
+pvv.addEventListener('ended',()=>pv.close());
 pv.addEventListener('close',()=>{pvv.pause();pvv.removeAttribute('src');pvv.load()});
 document.querySelectorAll('.f').forEach(b=>b.addEventListener('click',()=>{const f=b.dataset.f;
 document.querySelectorAll('.f').forEach(x=>x.classList.toggle('on',x===b));

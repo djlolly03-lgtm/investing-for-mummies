@@ -1,0 +1,89 @@
+{
+ "duration": 12.5,
+ "fps": 30,
+ "n_birds": 380,
+ "seed": 11,
+ "camera": {
+  "vfov_deg": 62,
+  "subject_depth": 1.7,
+  "subject_u": 0.49
+ },
+ "hands": {
+  "mode": "repel",
+  "radius": 0.4,
+  "strength": 9,
+  "wake": 2.4,
+  "depth_offset": 0.35
+ },
+ "face_avoid": {
+  "enabled": true,
+  "pad": 2.6,
+  "strength": 34
+ },
+ "cues": [
+  {
+   "t": 0.0,
+   "type": "hidden"
+  },
+  {
+   "t": 1.0,
+   "type": "burst",
+   "from": "hand",
+   "count": 380,
+   "speed": 4.2,
+   "up_bias": 0.8,
+   "note": "palms open"
+  },
+  {
+   "t": 1.1,
+   "type": "roam",
+   "region": [
+    0.05,
+    0.06,
+    0.95,
+    0.36
+   ],
+   "depth": [
+    1.25,
+    2.3
+   ]
+  },
+  {
+   "t": 4.85,
+   "type": "orbit",
+   "center": "subject",
+   "radius": 0.7,
+   "height": 0.42,
+   "dir": 1,
+   "note": "ask the right questions - ring round her waist"
+  },
+  {
+   "t": 6.4,
+   "type": "roam",
+   "region": [
+    0.05,
+    0.55,
+    0.95,
+    0.8
+   ],
+   "hands_gain": 2.6,
+   "hands_mode": "swirl",
+   "note": "make your voice heard"
+  },
+  {
+   "t": 8.3,
+   "type": "gather",
+   "at": "hand",
+   "radius": 0.18,
+   "gain": 1.6,
+   "hands_gain": 0.8,
+   "note": "active role in shaping"
+  },
+  {
+   "t": 10.4,
+   "type": "exit",
+   "dir": "right",
+   "note": "financial future"
+  }
+ ]
+}
