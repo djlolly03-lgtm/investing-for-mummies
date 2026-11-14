@@ -8,7 +8,7 @@
   "footer_size": 44, "footer_from_bottom": 500,
   "tracking": -2, "line_gap": 32,
   "audio": "none",
-  "notes": "IFM flagship course, batch starting week of 16 Nov 2026. Format after the two-tone flash-type pack; IFM mint + navy.",
+  "notes": "IFM flagship course, batch starting 17 Nov 2026. Format after the two-tone flash-type pack; IFM mint + navy.",
   "cards": [
     {"text": "ARE", "duration_frames": 12, "emphasis": true},
     {"text": "YOU", "duration_frames": 13},
@@ -20,8 +20,8 @@
     {"text": "MONEY?", "duration_frames": 16},
     {"lines": ["NEW", "BATCH"], "duration_frames": 18},
     {"text": "STARTS", "duration_frames": 17},
-    {"text": "NEXT WEEK", "duration_frames": 11},
-    {"text": "NEXT WEEK!!", "duration_frames": 14},
+    {"text": "17 NOV", "duration_frames": 11},
+    {"text": "17 NOV!!", "duration_frames": 14},
     {"text": "REGISTER NOW!!", "duration_frames": 15, "keep_colors": true},
     {"lines": [""], "image": "logo.png", "image_width": 700, "image_y_shift": -60, "duration_frames": 49, "lockup": true, "footer": "INVESTINGFORMUMMIES.COM/REGISTERNOW"}
   ]

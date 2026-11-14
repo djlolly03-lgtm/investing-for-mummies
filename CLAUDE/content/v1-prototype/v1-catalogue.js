@@ -46590,12 +46590,12 @@ window.IFM_V1 =
 },
 {
 "id": "IFM-1190",
-"title": "New batch teaser — two-colour flash-type reel (8s, silent)",
+"title": "New batch teaser — two-colour flash-type reel (8s, silent, dated 17 Nov 2026)",
 "date": "2026-11-14",
 "thumb": "../thumbs/IFM-1190.jpg",
 "video": "https://ifm-deploy.vercel.app/content/clips/IFM-1190.mp4",
 "drive": "https://drive.google.com/file/d/1VSwdc3Uc-VGxYri-zxt_aHAL_ERzm0k0/view",
-"description": "An 8-second vertical type-only teaser: 14 hard-cut cards alternating IFM navy and mint, one or two words each in condensed capitals — 'ARE / YOU / READY / TO / FINALLY / UNDERSTAND / YOUR / MONEY?', then 'NEW BATCH / STARTS / NEXT WEEK', 'NEXT WEEK!!', 'REGISTER NOW!!' — ending on the round IFM logo with investingformummies.com/registernow. No people, no footage. This is the silent master: add the music inside Instagram.",
+"description": "An 8-second vertical type-only teaser: 14 hard-cut cards alternating IFM navy and mint, one or two words each in condensed capitals — 'ARE / YOU / READY / TO / FINALLY / UNDERSTAND / YOUR / MONEY?', then 'NEW BATCH / STARTS / 17 NOV', '17 NOV!!', 'REGISTER NOW!!' — ending on the round IFM logo with investingformummies.com/registernow. No people, no footage. This is the silent master: add the music inside Instagram.",
 "session": "",
 "audience": "Mummies",
 "batch": "",
@@ -46611,7 +46611,7 @@ window.IFM_V1 =
 "No Person"
 ],
 "source": "IFM / In-house",
-"search_terms": "new batch teaser two colour flash type reel silent second vertical only hard cut cards alternating ifm navy mint one words each condensed capitals you ready finally understand your money then starts next week register now ending round logo investingformummies",
+"search_terms": "new batch teaser two colour flash type reel silent dated nov 2026 second vertical only hard cut cards alternating ifm navy mint one words each condensed capitals you ready finally understand your money then starts register now ending round logo",
 "phash": "00100c32b20c1000"
 },
 {
