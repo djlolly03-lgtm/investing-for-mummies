@@ -1042,10 +1042,10 @@ window.IFM_MEDIA =
 },
 "IFM-186": {
 "kind": "video",
-"playable": false,
-"url": null,
-"dur": null,
-"silent": false
+"playable": true,
+"url": "https://ifm-deploy.vercel.app/content/clips/IFM-186.mp4",
+"dur": "0:03",
+"silent": true
 },
 "IFM-187": {
 "kind": "image",
@@ -2942,9 +2942,9 @@ window.IFM_MEDIA =
 },
 "IFM-496": {
 "kind": "video",
-"playable": true,
-"url": "https://ifm-deploy.vercel.app/content/clips/IFM-496.mp4",
-"dur": "0:08",
+"playable": false,
+"url": null,
+"dur": null,
 "silent": false
 },
 "IFM-497": {
@@ -6885,5 +6885,47 @@ window.IFM_MEDIA =
 "url": "https://ifm-deploy.vercel.app/content/clips/IFM-1184.mp4",
 "dur": "0:12",
 "silent": false
+},
+"IFM-1185": {
+"kind": "video",
+"playable": true,
+"url": "https://ifm-deploy.vercel.app/content/clips/IFM-1185.mp4",
+"dur": "0:12",
+"silent": false
+},
+"IFM-1186": {
+"kind": "video",
+"playable": true,
+"url": "https://ifm-deploy.vercel.app/content/clips/IFM-1186.mp4",
+"dur": "0:12",
+"silent": false
+},
+"IFM-1187": {
+"kind": "video",
+"playable": true,
+"url": "https://ifm-deploy.vercel.app/content/clips/IFM-1187.mp4",
+"dur": "0:12",
+"silent": false
+},
+"IFM-1188": {
+"kind": "video",
+"playable": true,
+"url": "https://ifm-deploy.vercel.app/content/clips/IFM-1188.mp4",
+"dur": "0:12",
+"silent": false
+},
+"IFM-1189": {
+"kind": "video",
+"playable": true,
+"url": "https://ifm-deploy.vercel.app/content/clips/IFM-1189.mp4",
+"dur": "0:12",
+"silent": false
+},
+"IFM-1190": {
+"kind": "video",
+"playable": true,
+"url": "https://ifm-deploy.vercel.app/content/clips/IFM-1190.mp4",
+"dur": "0:07",
+"silent": true
 }
 };

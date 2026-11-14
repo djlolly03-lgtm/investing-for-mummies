@@ -27,7 +27,7 @@
 "https://ifm-deploy.vercel.app/content/clips/IFM-172.mp4": 200,
 "https://ifm-deploy.vercel.app/content/clips/IFM-180.mp4": 200,
 "https://ifm-deploy.vercel.app/content/clips/IFM-181.mp4": 200,
-"https://ifm-deploy.vercel.app/content/clips/IFM-186.mp4": 0,
+"https://ifm-deploy.vercel.app/content/clips/IFM-186.mp4": 200,
 "https://ifm-deploy.vercel.app/content/game-assets/ifm-hero-logo.mp4": 200,
 "https://ifm-deploy.vercel.app/content/reels/bbf-15s.mp4": 404,
 "https://ifm-deploy.vercel.app/content/reels/buckets-15s.mp4": 404,
@@ -258,7 +258,7 @@
 "https://ifm-deploy.vercel.app/content/clips/IFM-491.mp4": 200,
 "https://ifm-deploy.vercel.app/content/clips/IFM-492.mp4": 200,
 "https://ifm-deploy.vercel.app/content/clips/IFM-495.mp4": 200,
-"https://ifm-deploy.vercel.app/content/clips/IFM-496.mp4": 200,
+"https://ifm-deploy.vercel.app/content/clips/IFM-496.mp4": 0,
 "https://ifm-deploy.vercel.app/content/clips/IFM-497.mp4": 200,
 "https://ifm-deploy.vercel.app/content/clips/IFM-528.mp4": 200,
 "https://ifm-deploy.vercel.app/content/clips/IFM-533.mp4": 200,
@@ -546,5 +546,11 @@
 "https://ifm-deploy.vercel.app/content/clips/IFM-1182.mp4": 200,
 "https://ifm-deploy.vercel.app/content/clips/IFM-1183.mp4": 200,
 "https://ifm-deploy.vercel.app/content/clips/IFM-1184.mp4": 200,
-"https://ifm-deploy.vercel.app/content/clips/IFM-351.mp4": 200
+"https://ifm-deploy.vercel.app/content/clips/IFM-351.mp4": 200,
+"https://ifm-deploy.vercel.app/content/clips/IFM-1185.mp4": 200,
+"https://ifm-deploy.vercel.app/content/clips/IFM-1186.mp4": 200,
+"https://ifm-deploy.vercel.app/content/clips/IFM-1187.mp4": 200,
+"https://ifm-deploy.vercel.app/content/clips/IFM-1188.mp4": 200,
+"https://ifm-deploy.vercel.app/content/clips/IFM-1189.mp4": 200,
+"https://ifm-deploy.vercel.app/content/clips/IFM-1190.mp4": 200
 }

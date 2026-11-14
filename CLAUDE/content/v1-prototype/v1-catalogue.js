@@ -46444,5 +46444,174 @@ window.IFM_V1 =
 ]
 ],
 "phash": "e4c4842c3ea8c9e4"
+},
+{
+"id": "IFM-1185",
+"title": "The Wealth Conversation — corporate promo, EO New Mumbai version (66s, final)",
+"date": "2026-10-31",
+"thumb": "../thumbs/IFM-1185.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1185.mp4",
+"drive": "https://drive.google.com/file/d/10-HF3mzBkfYoSca7fG3TRNhQzxtf8h14/view",
+"description": "The finished corporate promo for The Wealth Conversation, vertical 1080×1920, 66 seconds. Hiral speaks to camera in a black top in front of the grey jungle mural. It opens on an app-style 'uninstall' card for the fear of investing, then a large serif 'REALLY?' behind her, falling finance jargon with a 'NOT A LECTURE' stamp, game screens orbiting her, a 'CHALLENGE' title, and a 'Walk away with a framework' section with outcome stickers. This cut carries the EO New Mumbai credit.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "card for the fear of investing, then a large serif behind her, falling finance jargon with a stamp, game screens orbiting her, a title, and a",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Portrait",
+"topic": [
+"Investing"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "wealth conversation corporate promo new mumbai version 66s final finished vertical 1080 1920 seconds hiral speaks camera black top front grey jungle mural opens app style uninstall card fear investing then large serif really behind her falling finance jargon not",
+"phash": "99da72686ccc7571"
+},
+{
+"id": "IFM-1186",
+"title": "The Wealth Conversation — corporate promo, general version (63s, no EO credit)",
+"date": "2026-10-31",
+"thumb": "../thumbs/IFM-1186.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1186.mp4",
+"drive": "https://drive.google.com/file/d/19Jf4T1CNEaREF-8CD4a75iegDumpyzzX/view",
+"description": "The same corporate Wealth Conversation promo without the EO New Mumbai credit, vertical 1080×1920, 63 seconds. Hiral to camera in front of the grey jungle mural, with a 'Hiral Goel — Founder · Investing for Mummies' name bar, yellow and white caption stickers ('Meaningful goals.', 'You earn it.'), the 'REALLY?' title, jargon rain and 'NOT A LECTURE' stamp, and game screens orbiting her. Use this one for any company that is not EO.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "Hiral Goel — Founder · Investing for Mummies Meaningful goals. You earn it. title, jargon rain and",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Portrait",
+"topic": [
+"Investing"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "wealth conversation corporate promo general version 63s credit same without new mumbai vertical 1080 1920 seconds hiral camera front grey jungle mural goel founder investing mummies name bar yellow white caption stickers meaningful goals you earn really title jargon rain",
+"phash": "3f4bb268eccc55f1"
+},
+{
+"id": "IFM-1187",
+"title": "Flagship Course promo — Nariman Point (86s, opens on the IFM logo)",
+"date": "2026-11-12",
+"thumb": "../thumbs/IFM-1187.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1187.mp4",
+"drive": "https://drive.google.com/file/d/1g2qCV3he8PFRFsO6HxUgoXKYt7yygeG_/view",
+"description": "The main Flagship Course promo, vertical 1080×1920, 86 seconds. Opens on a full-width IFM logo card and a fast flash of class moments, then Hiral to camera in front of the grey mural with a 'REALLY?' sign, the course facts as a checklist (8 sessions, 16 hours, in person, Nariman Point), three students speaking with word-by-word captions, Hiral's 'Ask the question… ask again' line, real class shots with ticked outcome stickers, a grid of Hiral with past groups, a stats card (200+ women taught, 400+ hours, 40+ games) and the logo end card. No batch date and no price on screen, so it does not go out of date.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "sign, the course facts as a checklist (8 sessions, 16 hours, in person, Nariman Point), three students speaking with word-by-word captions, Hiral Ask the question… ask again",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Hiral Speaking",
+"topic": [
+"Money Conversations",
+"Family & Money"
+],
+"person": [
+"Hiral",
+"Student"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof testimonial review feedback social proof word of mouth flagship course promo nariman point 86s opens ifm logo main vertical 1080 1920 seconds full width card fast flash class moments then hiral camera front grey mural really sign facts checklist sessions hours person three students speaking word captions ask",
+"phash": "195a3268eddc71e1"
+},
+{
+"id": "IFM-1188",
+"title": "Student testimonials — October batch reel (93s)",
+"date": "2026-11-11",
+"thumb": "../thumbs/IFM-1188.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1188.mp4",
+"drive": "https://drive.google.com/file/d/1r5Ph6Of-Bnn7B1w5R9nq505TOAYDlfmY/view",
+"description": "A 93-second vertical reel of October-batch students talking about the course in their own words, filmed at the classroom table with the whiteboard behind them. Each speaker gets a small yellow 'October batch' tag, a short white label such as 'Scared of money', and word-by-word captions at the bottom; there are no effects over the women while they talk. It runs from first-class fears to what changed by the last class, and ends on proof (200+ women taught) and a call to join the new batches.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "October batch Scared of money",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Testimonial",
+"topic": [],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "testimonial review feedback social proof word of mouth student testimonials october batch reel 93s second vertical students talking about course their own words filmed classroom table whiteboard behind them each speaker gets small yellow tag short white label such scared money word captions bottom there effects over women",
+"phash": "8c92b968ceda221a"
+},
+{
+"id": "IFM-1189",
+"title": "Workshop promo for WhatsApp — 'New to investing? Start here.' (59s, Aug 2026)",
+"date": "2026-09-16",
+"thumb": "../thumbs/IFM-1189.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1189.mp4",
+"drive": "https://drive.google.com/file/d/1ZJ1bRo2tXD46eTmIvimujpetaAJ-ozzt/view",
+"description": "A 59-second vertical promo made to forward on WhatsApp. Opens on a blue card reading 'New to investing? Start here. Here's a peek into our workshops', then a montage of workshop photos and clips of the women in class, the games on screen and certificates, with music ducked under the voices, and ends on the course flyer.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "New to investing? Start here. Here",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Certificate",
+"topic": [
+"Investing"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "certificate completion graduation proud achievement social proof workshop promo whatsapp new investing start here 59s aug 2026 second vertical made forward opens blue card reading peek into our workshops then montage photos clips women class games screen certificates music ducked under voices ends course flyer highlights august",
+"phash": "07070f0f170b0f00"
+},
+{
+"id": "IFM-1190",
+"title": "New batch teaser — two-colour flash-type reel (8s, silent)",
+"date": "2026-11-14",
+"thumb": "../thumbs/IFM-1190.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1190.mp4",
+"drive": "https://drive.google.com/file/d/1VSwdc3Uc-VGxYri-zxt_aHAL_ERzm0k0/view",
+"description": "An 8-second vertical type-only teaser: 14 hard-cut cards alternating IFM navy and mint, one or two words each in condensed capitals — 'ARE / YOU / READY / TO / FINALLY / UNDERSTAND / YOUR / MONEY?', then 'NEW BATCH / STARTS / NEXT WEEK', 'NEXT WEEK!!', 'REGISTER NOW!!' — ending on the round IFM logo with investingformummies.com/registernow. No people, no footage. This is the silent master: add the music inside Instagram.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": true,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Social / Promotional",
+"topic": [],
+"person": [
+"No Person"
+],
+"source": "IFM / In-house",
+"search_terms": "new batch teaser two colour flash type reel silent second vertical only hard cut cards alternating ifm navy mint one words each condensed capitals you ready finally understand your money then starts next week register now ending round logo investingformummies",
+"phash": "00100c32b20c1000"
 }
 ];
