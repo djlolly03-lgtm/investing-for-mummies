@@ -46613,5 +46613,63 @@ window.IFM_V1 =
 "source": "IFM / In-house",
 "search_terms": "new batch teaser two colour flash type reel silent second vertical only hard cut cards alternating ifm navy mint one words each condensed capitals you ready finally understand your money then starts next week register now ending round logo investingformummies",
 "phash": "00100c32b20c1000"
+},
+{
+"id": "IFM-1191",
+"title": "Nasdaq news reel — Hiral explains why the Nasdaq is falling (82s)",
+"date": "2026-11-06",
+"thumb": "../thumbs/IFM-1191.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1191.mp4",
+"drive": "https://drive.google.com/file/d/1lV-QBeXv2K2RnZkew7RGMTOTO6eNJvSw/view",
+"description": "An 82-second vertical news explainer. Hiral sits at her desk in a black top and red skirt and talks to camera about the Nasdaq, with navy-pill captions and gold key words throughout. Between her shots are navy data cards — an illustrative market snapshot (18,540), '3,000+ stocks tracked', '65% technology' — and three numbered reasons: '1. The AI spending frenzy' over a chip graphic, new rules and regulation shown as paper tags around her, and '3. Expensive stocks' with an illustrative AI-rally chart. Large gold words ('BAROMETER', 'WALL STREET') sit above her head. Ends on the round IFM logo with 'Follow for simple money breakdowns'. Illustrative figures are labelled as illustrative on screen.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "3,000+ stocks tracked 65% technology 1. The AI spending frenzy 3. Expensive stocks ) sit above her head. Ends on the round IFM logo with",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "Portrait",
+"topic": [
+"Managing Money",
+"Stocks / Equity"
+],
+"person": [
+"Hiral"
+],
+"hiral_named": true,
+"source": "IFM / In-house",
+"search_terms": "nasdaq news reel hiral explains why falling 82s second vertical explainer sits her desk black top red skirt talks camera about navy pill captions gold key words throughout between shots data cards illustrative market snapshot 540 000 stocks tracked technology",
+"phash": "75a96952d6bc2730"
+},
+{
+"id": "IFM-1192",
+"title": "November batch banner — unfurl animation (10s, dated 17–27 Nov 2026)",
+"date": "2026-11-05",
+"thumb": "../thumbs/IFM-1192.jpg",
+"video": "https://ifm-deploy.vercel.app/content/clips/IFM-1192.mp4",
+"drive": "https://drive.google.com/file/d/1RtnL9VITC6UZpC4Cs_xiwn0jMaJk5voB/view",
+"description": "A 10-second AI-generated aerial shot of a paved Mumbai pavement at golden hour, black-and-yellow taxis along the top. Eight women in white and teal walk up to a rolled navy cloth and unroll it into a giant banner on the ground: 'NOVEMBER — BATCHES NOW OPEN', the round IFM logo, the dates 17 · 18 · 19 · 20 and 23 · 25 · 26 · 27 NOV, 'Mon–Fri · 11:30 AM – 1:30 PM · Nariman Point' and investingformummies.com. The women are generated, not real students.",
+"session": "",
+"audience": "Mummies",
+"batch": "",
+"captured_at": "",
+"slide_text": "",
+"silent": false,
+"sensitive": [],
+"type": "Video",
+"status": "Ready",
+"format": "B-roll",
+"topic": [
+"Women & Money"
+],
+"person": [
+"Student"
+],
+"source": "IFM / In-house",
+"search_terms": "november batch banner unfurl animation 10s dated nov 2026 second generated aerial shot paved mumbai pavement golden hour black yellow taxis along top eight women white teal walk rolled navy cloth unroll into giant ground batches now open round ifm",
+"phash": "0d6dce32168ec270"
 }
 ];
