@@ -171,8 +171,12 @@ strobe_n = nframes(cursor, cursor + 4); bases = [blurfit(nxt()) for _ in range(s
 emit(4, lambda k, n: flash(zoom(bases[k // 3], 1 + 0.5 * (k / n) ** 2), (k / n) ** 3))
 
 # 5b — the drop (8 beats): hardest cuts of the film, faces and groups, big punch on every half beat
-for q in range(16):
-    base = blurfit(hero() if q % 4 == 0 else nxt()); emit(.5, lambda k, n, b=base: punch(b, k, 0.22, 0.55))
+# SHORT=1 (the ~33s cut, 16 Nov 2026): skip this; the end card lands ON the drop instead and the film stops there.
+SHORT = os.environ.get("SHORT") == "1"
+STEP = 0.5 if SHORT else 1.0                              # beats between end-card reveals
+if not SHORT:
+    for q in range(16):
+        base = blurfit(hero() if q % 4 == 0 else nxt()); emit(.5, lambda k, n, b=base: punch(b, k, 0.22, 0.55))
 
 # 6 — end card (8 beats): logo, date, call to action land on consecutive beats
 logo = Image.open(LOGO).convert("RGBA"); logo = logo.resize((640, round(logo.height * 640 / logo.width)), Image.LANCZOS)
@@ -181,14 +185,14 @@ def end(k, n):
     b = k / (BEAT * FPS)                                  # beats since the card began
     s = 1 + 0.25 * (1 - ease(k / 6)); lg = logo.resize((int(640 * s), int(logo.height * s)), Image.BILINEAR)
     f.paste(lg, (W // 2 - lg.width // 2, 640 - lg.height // 2), lg)
-    if b >= 1: d.text((W // 2, 1085), "NEW BATCH STARTS", font=font(104), fill=NAVY, anchor="mm")
-    if b >= 2: d.text((W // 2, 1235), "17 NOV", font=font(170), fill=NAVY, anchor="mm")
-    if b >= 3:
+    if b >= STEP: d.text((W // 2, 1085), "NEW BATCH STARTS", font=font(104), fill=NAVY, anchor="mm")
+    if b >= 2 * STEP: d.text((W // 2, 1235), "17 NOV", font=font(170), fill=NAVY, anchor="mm")
+    if b >= 3 * STEP:
         d.rounded_rectangle((210, 1360, 870, 1490), 22, fill=NAVY)
         d.text((W // 2, 1422), "REGISTER NOW", font=font(84), fill=MINT, anchor="mm")
-    if b >= 4: d.text((W // 2, 1560), "INVESTINGFORMUMMIES.COM/REGISTERNOW", font=font(40), fill=NAVY, anchor="mm")
+    if b >= 4 * STEP: d.text((W // 2, 1560), "INVESTINGFORMUMMIES.COM/REGISTERNOW", font=font(40), fill=NAVY, anchor="mm")
     return flash(f, max(0, 1 - k / 6))
-emit(8, end)
+emit(3.5 if SHORT else 8, end)
 
 # ---------------------------------------------------------------- encode
 p = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
