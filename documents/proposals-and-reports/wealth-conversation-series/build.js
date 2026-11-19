@@ -16,8 +16,11 @@ const { applyTheme } = require('./apply_theme.js');
 const COPY = require('./content.js');
 
 const HERE = __dirname;
+// WC_CLIENT=<name> builds a client edition: clients/<name>.js adds a cover line, an intro slide,
+// and plan + fee slides after the modules. The generic deck is unchanged without it.
+const CLIENT = process.env.WC_CLIENT ? require(`./clients/${process.env.WC_CLIENT}.js`) : null;
 // WC_OUT renders a preview somewhere else, so a draft slide never touches the real deck.
-const OUT = process.env.WC_OUT || path.join(HERE, '..', 'IFM Wealth Conversation Series — Proposal.pptx');
+const OUT = process.env.WC_OUT || path.join(HERE, '..', CLIENT ? CLIENT.out : 'IFM Wealth Conversation Series — Proposal.pptx');
 const A = f => path.join(HERE, 'assets', f);
 const ICON = (id, v = 'light') => path.join(HERE, 'icons', 'png', `${id}-${v}.png`);
 
@@ -139,6 +142,15 @@ s.addText([
   { text: 'Conversation', options: { italic: true, color: C.mintTxt } },
 ], { placeholder: 'title' });
 T(s, COPY.cover.tagline, { x: M + 0.02, y: 4.32, w: 5.4, h: 0.85, fontSize: 19, color: C.ice, lineSpacingMultiple: 1.1 });
+if (CLIENT) {
+  // white card: client logo + "Prepared for …"
+  const cx = M + 0.02, cy = 5.2, cw = 5.2, ch = 0.82;
+  s.addShape(SH.ROUNDED_RECTANGLE, { x: cx, y: cy, w: cw, h: ch, rectRadius: 0.14, fill: { color: C.white }, line: { type: 'none' } });
+  if (CLIENT.logo) s.addImage({ path: A(CLIENT.logo), x: cx + 0.14, y: cy + 0.08, w: (ch - 0.16) * CLIENT.logoAspect, h: ch - 0.16, altText: `${CLIENT.name} logo` });
+  T(s, [{ text: 'PREPARED FOR', options: { fontSize: 9, bold: true, charSpacing: 2.5, color: C.teal, breakLine: true } },
+        { text: CLIENT.coverLine, options: { fontFace: HEAD, fontSize: 15, bold: true, color: C.navy } }],
+    { x: cx + 0.95, y: cy, w: cw - 1.05, h: ch, valign: 'middle' });
+}
 s.addImage({ path: A('cover-main.png'), x: W - M - 5.9, y: 0.75, w: 5.9, h: 4.05, altText: 'Hiral Goel teaching a full corporate workshop room' });
 s.addImage({ path: A('cover-inset.png'), x: 6.25, y: 3.3, w: 2.05, h: 2.6, altText: 'Hiral explaining market orders and limit orders at a corporate workshop' });
 COPY.modules.forEach((m, i) => {
@@ -148,6 +160,30 @@ COPY.modules.forEach((m, i) => {
   T(s, m.num, { x: x + 0.14, y, w: 0.46, h, fontFace: HEAD, fontSize: 16, bold: true, color: C.gold, valign: 'middle' });
   T(s, m.title, { x: x + 0.6, y, w: w - 0.7, h, fontSize: 10.5, bold: true, color: C.white, valign: 'middle', lineSpacingMultiple: 0.95 });
 });
+
+// =====================================================================
+// 1b. CLIENT INTRO — client editions only
+// =====================================================================
+if (CLIENT) {
+  const ci = CLIENT.intro;
+  s = pres.addSlide({ masterName: 'IFM Light', sectionTitle: 'Introduction' });
+  label(s, ci.eyebrow, M, 0.42, 7, C.teal);
+  s.addText(ci.title, { placeholder: 'title' });
+  T(s, keep(ci.lead), { x: M, y: 1.72, w: 10.6, h: 1.25, fontFace: HEAD, fontSize: 20, lineSpacingMultiple: 1.12 });
+  const n = ci.cards.length, g = 0.3, cw = (W - 2 * M - g * (n - 1)) / n, y = 3.2, h = 2.45;
+  ci.cards.forEach((c, i) => {
+    const x = M + i * (cw + g);
+    card(s, x, y, cw, h, { shadow: shadow(), fill: { color: i === 1 ? C.mintLt : C.white } });
+    bubble(s, c.icon, 'teal', x + 0.3, y + 0.3, 0.8, C.teal);
+    T(s, c.title, { x: x + 1.3, y: y + 0.3, w: cw - 1.45, h: 0.8, fontFace: HEAD, fontSize: 17, bold: true, valign: 'middle' });
+    T(s, keep(c.text), { x: x + 0.3, y: y + 1.28, w: cw - 0.55, h: h - 1.4, fontSize: 13.5, lineSpacingMultiple: 1.1 });
+  });
+  const by = 5.95, bh = 0.8;
+  s.addShape(SH.ROUNDED_RECTANGLE, { x: M, y: by, w: W - 2 * M, h: bh, rectRadius: 0.14, fill: { color: C.navy }, line: { type: 'none' } });
+  bubble(s, 'ui-calendar', 'teal', M + 0.2, by + (bh - 0.52) / 2, 0.52, C.teal);
+  T(s, ci.band.map(([t, hl]) => ({ text: t, options: hl ? { color: C.gold, bold: true } : {} })),
+    { x: M + 0.95, y: by + 0.04, w: W - 2 * M - 1.15, h: bh - 0.08, fontSize: 15, color: C.white, valign: 'middle' });
+}
 
 // =====================================================================
 // 2. WHY THE WEALTH CONVERSATION?
@@ -451,6 +487,74 @@ COPY.modules.forEach((m, mi) => {
     T(s, keepShort(t), { x: CX + 0.54, y: y + 0.02, w: CW - 0.72, h: tp - 0.08, fontSize: 10, bold: true, lineSpacingMultiple: 1.05 });
   });
 });
+
+// =====================================================================
+// 12b. CLIENT PLAN + FEES — client editions only
+// =====================================================================
+if (CLIENT) {
+  pres.addSection({ title: `For ${CLIENT.name}` });
+  // the plan: three phases left to right, joined by arrows
+  const pl = CLIENT.plan;
+  s = pres.addSlide({ masterName: 'IFM Cream', sectionTitle: `For ${CLIENT.name}` });
+  label(s, pl.eyebrow, M, 0.42, 7, C.teal);
+  s.addText(pl.title, { placeholder: 'title' });
+  {
+    const n = pl.phases.length, g = 0.5, cw = (W - 2 * M - g * (n - 1)) / n, y = 1.75, h = 5.0;
+    pl.phases.forEach((p, i) => {
+      const x = M + i * (cw + g), last = i === n - 1;
+      card(s, x, y, cw, h, { shadow: shadow(), fill: { color: last ? C.white : (i ? C.white : C.mintLt) },
+        line: last ? { color: C.teal, width: 1, dashType: 'dash' } : { type: 'none' } });
+      pill(s, p.tag, x + 0.3, y + 0.3, 2.15, 0.38, i === 0 ? C.gold : (last ? C.mintLt : C.teal), i === 0 ? C.navy : (last ? C.navy : C.white), { text: { fontSize: 10, charSpacing: 1.5 } });
+      bubble(s, p.icon, 'teal', x + cw - 1.1, y + 0.22, 0.8, C.teal);
+      T(s, p.title, { x: x + 0.3, y: y + 1.15, w: cw - 0.55, h: 0.9, fontFace: HEAD, fontSize: 19, bold: true, valign: 'top', lineSpacingMultiple: 1.0 });
+      p.facts.forEach((f, k) => {
+        const fy = y + 2.1 + k * 0.42;
+        icon(s, 'ui-check', 'light', x + 0.3, fy + 0.04, 0.28);
+        T(s, f, { x: x + 0.7, y: fy, w: cw - 0.95, h: 0.36, fontSize: 13, bold: true, valign: 'middle' });
+      });
+      T(s, keep(p.text), { x: x + 0.3, y: y + 3.45, w: cw - 0.55, h: h - 3.6, fontSize: 12, color: C.muted, lineSpacingMultiple: 1.12 });
+      if (!last) s.addShape(SH.LINE, { x: x + cw + 0.08, y: y + h / 2, w: g - 0.16, h: 0,
+        line: { color: C.teal, width: 2.25, endArrowType: 'triangle' } });
+    });
+  }
+
+  // fees: a price table on the left, terms on the right, next step along the foot
+  const iv = CLIENT.investment;
+  s = pres.addSlide({ masterName: 'IFM Light', sectionTitle: `For ${CLIENT.name}` });
+  label(s, iv.eyebrow, M, 0.42, 7, C.teal);
+  s.addText(iv.title, { placeholder: 'title' });
+  const TW = 7.3;
+  {
+    const rh = 0.86;
+    let y = 1.72;
+    iv.rows.forEach(([a, b, fee, kind]) => {
+      const total = kind === 'total';
+      card(s, M, y, TW, rh - 0.12, { fill: { color: total ? C.gold : C.mintLt } });
+      T(s, a, { x: M + 0.28, y, w: 2.3, h: rh - 0.12, fontSize: 12, bold: true, color: total ? C.navy : C.teal, valign: 'middle' });
+      T(s, b, { x: M + 2.6, y, w: 2.95, h: rh - 0.12, fontSize: 13, valign: 'middle', bold: total });
+      T(s, fee, { x: M + TW - 1.9, y, w: 1.65, h: rh - 0.12, fontFace: HEAD, fontSize: 21, bold: true, align: 'right', valign: 'middle' });
+      y += rh;
+    });
+    T(s, iv.note, { x: M, y: y + 0.02, w: TW, h: 0.4, fontSize: 11.5, color: C.muted, italic: true });
+  }
+  {
+    const KX = M + TW + 0.35, KW = W - M - KX, ky = 1.72, kh = 3.82;
+    card(s, KX, ky, KW, kh, { shadow: shadow() });
+    T(s, iv.knowTitle, { x: KX + 0.28, y: ky + 0.2, w: KW - 0.5, h: 0.45, fontFace: HEAD, fontSize: 17, bold: true });
+    const ty = ky + 0.78, tp = (kh - 0.95) / iv.know.length;
+    iv.know.forEach((t, k) => {
+      icon(s, 'ui-check', 'light', KX + 0.28, ty + k * tp + 0.02, 0.26);
+      T(s, keepShort(t), { x: KX + 0.66, y: ty + k * tp - 0.02, w: KW - 0.9, h: tp - 0.04, fontSize: 12.5, lineSpacingMultiple: 1.05 });
+    });
+  }
+  {
+    const by = 5.95, bh = 0.8;
+    s.addShape(SH.ROUNDED_RECTANGLE, { x: M, y: by, w: W - 2 * M, h: bh, rectRadius: 0.14, fill: { color: C.navy }, line: { type: 'none' } });
+    bubble(s, 'ui-calendar', 'teal', M + 0.2, by + (bh - 0.52) / 2, 0.52, C.teal);
+    T(s, iv.next.map(([t, hl]) => ({ text: t, options: hl ? { color: C.gold, bold: true } : {} })),
+      { x: M + 0.95, y: by + 0.04, w: W - 2 * M - 1.15, h: bh - 0.08, fontSize: 15, color: C.white, valign: 'middle' });
+  }
+}
 
 // =====================================================================
 // 13. OUR MISSION
