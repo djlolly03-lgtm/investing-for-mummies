@@ -1512,5 +1512,30 @@
  "IFM-1182": {
   "library": false,
   "_why": "IMG_8729.MOV, 6s of handheld class footage with no usable spoken line — nothing a search could usefully return. Row kept so the file stays reachable from the hub; hidden from the Library because a result nobody can use is the thing the visibility rule exists to prevent. Same treatment as the September fragments."
+ },
+ "IFM-1194": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Hiral is the subject: waist-up, to camera, face clear, no copy baked in. Video frame from a raw talking-head shoot, not a still, so rank 3 (not shown by default). Identity confirmed by the finished reel IFM-1193 end card naming Hiral Goel, same day and outfit. Added by daily-content-processor 20 Nov 2026."
+ },
+ "IFM-1195": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Hiral is the subject: waist-up, to camera, face clear, no copy baked in. Video frame from a raw talking-head shoot, not a still, so rank 3 (not shown by default). Identity confirmed by the finished reel IFM-1193 end card naming Hiral Goel, same day and outfit. Added by daily-content-processor 20 Nov 2026."
+ },
+ "IFM-1201": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Hiral is the subject: to camera, face clear, no copy baked in. Video frame from a raw talking-head shoot, not a still, so rank 3 (not shown by default); identity judged by eye against the same-week finished reels that name her (IFM-1193, IFM-1200). Added by daily-content-processor 20 Nov 2026."
+ },
+ "IFM-1202": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Hiral is the subject: to camera, face clear, no copy baked in. Video frame from a raw talking-head shoot, not a still, so rank 3 (not shown by default); identity judged by eye against the same-week finished reels that name her (IFM-1193, IFM-1200). Added by daily-content-processor 20 Nov 2026."
+ },
+ "IFM-1203": {
+  "kit": "portrait",
+  "kit_rank": 3,
+  "_kit_why": "Hiral is the subject: to camera, face clear, no copy baked in. Video frame from a raw talking-head shoot, not a still, so rank 3 (not shown by default); identity judged by eye against the same-week finished reels that name her (IFM-1193, IFM-1200). Added by daily-content-processor 20 Nov 2026."
  }
 }

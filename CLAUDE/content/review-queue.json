@@ -1,11 +1,35 @@
 {
- "generated_by": "daily-content-processor 2026-11-10",
- "note": "10 Nov scan: 2,729 media files, 0 listing errors, 74 new since 5 Nov. 9 rows staged, 2 planned rows relinked. Earlier items below unchanged.",
- "count": 29,
+ "generated_by": "daily-content-processor 2026-11-20",
+ "note": "20 Nov scan: 2,782 media files, 0 listing errors, 23 new since 17 Nov plus 26 files the 17 Nov run left uncatalogued. 14 rows staged (IFM-1193..1206). Earlier items below unchanged.",
+ "count": 33,
  "items": [
   {
-   "source": "217 media files still have no row of their own or a folder row covering them",
-   "title": "Found 10 Nov scan (2,729 files, 0 listing errors). Today's catalogue passes plus this run staged everything that arrived since 5 Nov. What is left: Aakara October/Reels 28 · Pictures 22 · Certificates 21 (minors/consent guard applies) · Jio ipo reel (raw) 18 · Content Library/Aakara — June 2026 subfolders ~77 (most are copies of Aakara's own tree, which today's 16:38 commit catalogued once, so check before adding rows) · Clear tax report 10 · IFM feedback videos 8 (testimonials, one row per file) · Sakshi uploads 7 · Nirmala Sitharaman (raw) 5 · Hiral Goel 1. Skip on purpose: AI Videos — Jun 2026 (10) and Goa REELS (Claude) (10). ACTION: catalogue the 8 testimonials first, then Clear tax report and Jio ipo reel (raw).",
+   "source": "73 media files still have no row of their own or a folder row covering them (20 Nov scan)",
+   "title": "20 Nov scan: 2,782 media files, 0 listing errors. 48 files were uncatalogued in Content Library (a 49th, IMG_3704 in IFM Oct 2026, is under that folder's existing row) and today's run staged all 48 as 14 rows (IFM-1193..1206): the baby-demat and Nvidia reels with their raw takes, batch-promo takes and four session-promo variants, Children's Day and Foreign inflows takes, and three 17 Nov class recordings. The 17 Nov run had staged nothing, so Nvidia, Children's day, Foreign inflows and the class shoot sat invisible for 3–8 days. What is left: Content Library/Aakara — June 2026 subfolders 73 (copies of Aakara's own June tree, already catalogued once from there — see the 'June mirror' item; not real gaps). The 10 Nov leftovers (Aakara October/Reels, Pictures, Certificates, Jio raw, Clear tax, IFM feedback videos, Sakshi uploads, Nirmala, Hiral Goel) are now covered by rows or folder rows.",
+   "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
+   "status": "needs_review"
+  },
+  {
+   "source": "Preview clips owed — 14 more Video rows from 20 Nov (IFM-1193..1206) are invisible in the Library",
+   "title": "All 14 rows staged on 20 Nov are typed Video, so the Library hides them until each has a preview clip that media-map.js says plays. They DO show in the hub (/content/). Do first, the two finished reels — small masters: IFM-1193 baby-demat reel (45 MB) and IFM-1200 Nvidia reel (31 MB); then the four ~168 MB session promos IFM-1196..1199. IFM-1206 is a 9.9 GB class recording — cut its clip from the first minutes only. Route: scripts/ifm-make-previews.sh, deploy, media-audit.py, deploy again.",
+   "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
+   "status": "needs_review"
+  },
+  {
+   "source": "Four session-promo variants look identical — what does each one say? (IFM-1196..1199)",
+   "title": "'Two hours session' and 'Two & half hrs session', each in a (Women) and a (People) folder. All four are ~49 s, uncaptioned, Hiral by the sketched mural, and frame-for-frame the same to the eye. The folder name is the only label; nothing was transcribed (no local speech model). Listen once and correct titles/descriptions in enrichment.json, or say which one is the live ad.",
+   "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
+   "status": "needs_review"
+  },
+  {
+   "source": "Hiral Media Kit — five new rank-3 entries to glance at (20 Nov)",
+   "title": "IFM-1194 (baby-demat takes, seated), IFM-1195 (batch-promo takes, standing by the mural), IFM-1201 (Nvidia takes, red floral top at desk), IFM-1202 (Children's Day takes), IFM-1203 (Foreign inflows takes). All kit=portrait, rank 3 (hidden by default) — raw video frames, face clear, no copy. Finished reels with captions and the wide class recordings were left out of the kit on purpose.",
+   "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
+   "status": "needs_review"
+  },
+  {
+   "source": "Takes untranscribed — five more folders from 20 Nov",
+   "title": "IFM-1194 baby demat (6), IFM-1195 batch promo (10), IFM-1201 Nvidia (10), IFM-1202 Children's Day (5), IFM-1203 Foreign inflows (6). The Children's Day and Foreign inflows topics come from the folder name only — no finished reel exists yet. transcribe-videos.py does this end to end.",
    "folder_url": "https://drive.google.com/drive/folders/1gUtxbd4kLKWDAnkhGbijhsl_31fiOMrY",
    "status": "needs_review"
   },
