@@ -8,6 +8,7 @@ Built entirely from the raw shoot and our own assets — nothing from the agency
 |---|---|
 | `TWC Money Blueprint - Corporate EO New Mumbai.mp4` | EO New Mumbai (credits EO, ends on the BEOND animation) — built by `assemble6B.py` |
 | `TWC Money Blueprint.mp4` | everyone else — no EO, ends on the IFM emblem animation — built by `assemble6Bn.py` |
+| `TWC Money Blueprint - EO Nagpur.mp4` | EO Nagpur (23 Nov 2026, 72.7s) — the generic cut to 56.067s, then the EO Nagpur → wordmark morph, then the generic ending — built by `eo_nagpur.py` from the finished generic file (same recipe as the Mascot edition) |
 TWC = The Wealth Conversation. Renamed 31 Oct 2026 from FINAL_v6B_64s / FINAL_v6B_noEO. Older history below.
 
 **`WealthConversation_corp_FINAL_v6B_64s.mp4`** = v6B (B + effects, all revisions), signed off by the user on 31 Oct 2026.

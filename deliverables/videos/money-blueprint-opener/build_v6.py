@@ -198,8 +198,8 @@ if __name__ == '__main__':
     for i in range(round(TOTAL * FPS)):
         t = i / FPS; frame = compose(t)
         # (v8: the 'Module 1' script is gone — the title block now sits at the top from the first moment on the mat)
-        z = 1 + 0.20 * (1 - ease(t / 2.2))                                                                # the camera pulls back onto the mat as the white flash clears
-        frame = cv2.warpAffine(frame, cv2.getRotationMatrix2D((W / 2, H * 0.55), 0, z), (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+        z = 1 + 0.10 * (1 - ease(t / 2.2))                                                                # the camera pulls back onto the mat as the white flash clears
+        frame = cv2.warpAffine(frame, cv2.getRotationMatrix2D((W / 2, 0), 0, z), (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)   # anchored at the top edge, so the title is never cropped
         proc.stdin.write(np.clip(frame, 0, 255).astype(np.uint8).tobytes())
     proc.stdin.close(); proc.wait()
     subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-y', '-t', '3.4', '-i', BRAND, '-i', TMP, '-filter_complex',
