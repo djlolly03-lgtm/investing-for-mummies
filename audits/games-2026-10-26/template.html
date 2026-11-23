@@ -81,6 +81,29 @@ input[type=search]{flex:1 1 180px;min-width:0;border:1px solid var(--line);backg
 .item.is-done .p{opacity:.55}
 .rec{margin:0 18px 12px;font-size:13.5px;font-weight:700;color:var(--gold)}
 .empty{color:var(--muted);text-align:center;padding:40px 0}
+/* Start here: one builder's ordered list. Read-only: shows live done state, no tick boxes. */
+.start{margin-top:22px;background:var(--surface);border:2px solid var(--teal);border-radius:16px;overflow:hidden}
+.start-h{padding:18px 18px 6px}
+.start-h h2{font-size:24px}
+.start-h p{margin:6px 0 0;color:var(--muted);max-width:72ch}
+.start-n{display:inline-block;font:800 12.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.howto,.excl{margin:12px 18px;border-radius:12px;padding:12px 16px}
+.howto{background:var(--teal-soft)}
+.excl{background:var(--gold-soft)}
+.howto b,.excl b{display:block;font-family:var(--serif);font-size:16px;margin-bottom:4px}
+.howto ol,.excl ul{margin:0;padding-left:20px;display:grid;gap:4px;font-size:14px}
+.sg{border-top:1px solid var(--line);padding:12px 18px}
+.sg-h{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.sg-h a{margin-left:auto}
+.sg-h h3{margin:0;font:700 17px var(--serif)}
+.sg-h span{font-size:12.5px;font-weight:800;color:var(--muted)}
+.sg-h a{color:var(--teal);font-weight:800;font-size:13px;text-decoration:none}
+.sg ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}
+.sg li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+.sid{font:800 12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--lo-soft);color:var(--ink);border-radius:6px;padding:2px 7px;white-space:nowrap;user-select:all}
+.sg li.is-done .it-text{text-decoration:line-through;color:var(--done)}
+.sdone{color:var(--teal);font-weight:800}
+@media (max-width:560px){.sg li{grid-template-columns:1fr;gap:4px}.howto,.excl{margin-left:14px;margin-right:14px}.sg,.start-h{padding-left:14px;padding-right:14px}}
 @media (max-width:560px){.game-h,.meta,.item{padding-left:14px;padding-right:14px}.item{gap:10px}.sep{display:none}}
 @media (prefers-reduced-motion:reduce){.prog-fill{transition:none}}
 </style>
@@ -106,6 +129,7 @@ input[type=search]{flex:1 1 180px;min-width:0;border:1px solid var(--line);backg
     </div>
   </div>
 
+  <section class="start" id="start" hidden></section>
   <div class="summary" id="summary"></div>
   <div id="list"></div>
 </div>
@@ -133,7 +157,48 @@ input[type=search]{flex:1 1 180px;min-width:0;border:1px solid var(--line);backg
     return true;
   }
 
+  // "Start here: Narendra" (23 Nov 2026): his ordered items, ids to quote in pull requests.
+  function renderStart(){
+    const el = document.getElementById('start');
+    const S = DATA.start;
+    if (!S || !S.games || !S.games.length){ el.hidden = true; return; }
+    const items = S.games.flatMap(g => g.items);
+    const left = items.filter(i => !done.has(i.id)).length;
+    el.hidden = false;
+    el.innerHTML =
+      '<div class="start-h"><span class="start-n">'+items.length+' items · '+S.games.length+' games · '+left+' left</span>'+
+        '<h2>Start here: Narendra</h2>'+
+        '<p>Small copy and look fixes in the solo games, one game at a time, smallest game first. The first 53 safe fixes were finished on 10 Nov; these are the next ones. Some change a little markup (for example turning tap-only boxes into real buttons), so play each game through after your change.</p></div>'+
+      '<div class="howto"><b>How to work</b><ol>'+
+        '<li>Work in the private repo <b style="display:inline;font:inherit;font-weight:800">djlolly03-lgtm/ifm-games-work</b>. One branch per batch of 5 to 10 items, in the order below.</li>'+
+        '<li>One pull request per batch. Put the item ids in the description, e.g. <span class="sid">3-buckets--11</span>.</li>'+
+        '<li>Same maths: never change numbers, scoring or game logic unless the item says so.</li>'+
+        '<li>Test on a real phone (and a laptop) before you open the pull request.</li>'+
+        '<li>Don’t tick items on this page and don’t deploy. Aditya ticks an item once the fix is live.</li>'+
+      '</ol></div>'+
+      '<div class="excl"><b>Not on your list, and why</b><ul>'+
+        '<li><b style="display:inline;font:inherit;font-weight:800">Classroom games Hiral runs live</b> (quiz, Swayamvar, Stock Rush PRO, Fund Manager, The Wealth Hack, Broke by Friday, Jio IPO live): a slip there breaks a live class.</li>'+
+        '<li><b style="display:inline;font:inherit;font-weight:800">29 compliance-wording items</b>: they change what we teach, so they wait for Hiral’s OK.</li>'+
+        '<li><b style="display:inline;font:inherit;font-weight:800">The 14 build-order steps</b>: site structure and deploys, led by Aditya.</li>'+
+        '<li><b style="display:inline;font:inherit;font-weight:800">Market Pulse red strobe</b>: urgent safety fix, Aditya handles it.</li>'+
+        '<li><b style="display:inline;font:inherit;font-weight:800">Anything already ticked</b>: already done.</li>'+
+        '<li><b style="display:inline;font:inherit;font-weight:800">28 “Find your batch” links</b>: they arrive with the shared end card (build-order Step 4).</li>'+
+        '<li><b style="display:inline;font:inherit;font-weight:800">3 IPO Bonanza items</b>: it now opens into a live class game and was reworked on 8 Nov.</li>'+
+        '<li><b style="display:inline;font:inherit;font-weight:800">5 items on Fund YOUR Goal, Goal Tracker and Inflation Calculator</b>: these tools are moving to the main website, so fixing the games-site copies would go to waste.</li>'+
+      '</ul></div>'+
+      S.games.map(g => {
+        const gl = g.items.filter(i => !done.has(i.id)).length;
+        return '<div class="sg"><div class="sg-h"><h3>'+esc(g.title)+'</h3><span>'+(gl? gl+' of '+g.items.length+' left' : 'all done')+'</span>'+
+          (g.url?'<a href="'+esc(g.url)+'" target="_blank" rel="noopener">Open game ↗</a>':'')+'</div><ul>'+
+          g.items.map(it => { const d = done.get(it.id);
+            return '<li class="'+(d?'is-done':'')+'"><span class="sid">'+esc(it.id)+'</span><div><p class="it-text">'+esc(it.text)+'</p>'+
+              '<div class="it-tags"><span class="p p-'+esc(it.priority)+'">'+esc(it.priority)+'</span><span class="area">'+esc(it.area)+'</span><span class="eff">· effort '+esc(it.effort)+'</span>'+(d?'<span class="sdone">· done'+(d.at?' '+esc(fmtDate(d.at)):'')+'</span>':'')+'</div></div></li>';
+          }).join('')+'</ul></div>';
+      }).join('');
+  }
+
   function render(){
+    renderStart();
     const all = DATA.groups.flatMap(gr => gr.games.flatMap(g => g.items));
     const nDone = all.filter(i => done.has(i.id)).length;
     document.getElementById('pnum').textContent = nDone + ' / ' + all.length + ' done';
