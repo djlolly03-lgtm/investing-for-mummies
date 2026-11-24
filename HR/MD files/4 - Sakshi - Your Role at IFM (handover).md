@@ -1,12 +1,14 @@
 # Your Role at IFM
 
-**Sakshi — this is your role, written down properly at last.**
+**Updated 24 November 2026, after our conversation.**
 
-You've been doing this since July, and a lot of it is already working — the Stories especially. What's been missing isn't effort, it's definition: what's yours, what isn't, and which numbers actually matter. This document fixes that.
+Two things changed in that conversation, and this document now reflects both.
 
-Some of it will be familiar. The genuinely new part is **outbound engagement** — see Block 1, and start there.
+**One — you're staying on content, because you've earned it.** When you started at the end of July, IFM had 319 Instagram followers. Today it has 654. That is more than double, and it happened while you were also learning the job. The Stories, the certificate posts, the tagging — those worked.
 
-Read it once properly. After that it's a reference — the **DO / DON'T** lists are the parts worth coming back to.
+**Two — you're taking on EA work for Hiral alongside it.** That's genuinely useful to us, and it's what you said you enjoy. But adding it is the single biggest risk to everything else in this document, so the split is written down below rather than left to work itself out.
+
+Read the new parts — **Your two halves** and **The cap** — properly. The rest is a reference you already know; the **DO / DON'T** lists are the bits worth coming back to.
 
 ---
 
@@ -16,7 +18,13 @@ IFM teaches money to women who were never taught it. We're good at the teaching 
 
 **The problem is that not enough people find us.**
 
-Right now IFM has 356 Instagram followers, growing by about one and a half a day. **The target is 1% a day** — about three and a half today, but the number climbs as the base does. Held for a year, 1% a day takes us past 10,000. Here's the interesting part: **the people who do see our content engage with it more than most of our competitors' audiences engage with theirs.** The content isn't the problem. There just aren't enough people seeing it.
+IFM now has **654 Instagram followers**, up from 319 when you started at the end of July. Posts have gone from 37 to 103. That's real, and it's yours.
+
+**The honest bit:** growth is slowing. Over the last month we added 1.7 followers a day — **0.29% a day against a 1% target.** Over the two months before that it was 0.40%. The absolute number is holding roughly steady while the base grows, which means the percentage falls. To keep 1% at 654 followers we'd need about 6.5 a day, and it rises from there.
+
+That isn't a telling-off. It's the reason the split below matters: **the half of your job that brings new people in is the half that goes quiet first when something else gets busy.**
+
+The people who do see our content engage with it more than most of our competitors' audiences engage with theirs. The content isn't the problem. There still aren't enough people seeing it.
 
 **Your job is to change that number.** Everything below serves one goal:
 
@@ -38,6 +46,7 @@ Knowing the boundary protects you. If something isn't on the left, it isn't your
 | **Filming every class** and getting the footage into the content hub | Course pricing, dates and positioning |
 | **Creative production** — flyers, certificates, post creatives | Anything after someone has paid — that's Asba's |
 | **LinkedIn** — scheduling, formatting and comment replies, with Ketaki helping | Writing LinkedIn posts — those stay in Hiral's voice, from her profile |
+| **EA support for Hiral** — diary, travel, follow-ups, two days a week | Asba's EA work for Aditya, and travel for the other companies |
 
 If the feed has a quiet week, that isn't your result. If outbound stalls, that is.
 
@@ -55,18 +64,16 @@ Everything starts here. Bookmark it on your phone and your laptop:
 
 ### 🔗 `ifm-deploy.vercel.app/content/?who=sakshi`
 
-> **Related, and worth knowing:** IFM's Instagram bio has no link in it — the 👇 on the last line points at nothing, while `investingformummies.com/ifm` sits live with seat counts and a Pay button. Hiral is fixing it. Once it's there, *"link in bio"* becomes a real ask you can use in Stories.
+> **Check this still points at the batches page.** `investingformummies.com/ifm` has live seat counts and a Pay button, and every *"link in bio"* ask you make in Stories is dead if the bio doesn't point there. Worth re-checking whenever the site changes.
 
 **Don't drop the `?who=sakshi` bit** — that's what opens it on *your* view, with your day's work on the front page.
-
-![The Today tab — your home screen](images/hub-today-tab.png)
 
 ## Reading this screen
 
 | What you're looking at | What it means |
 |---|---|
 | **Today tab** *(open by default)* | Your home screen. You should be on this one nearly all the time. |
-| **OUTBOUND — the progress bar** | Today's count against your daily target. **This is the number that matters most.** *(The screenshot shows 25 — the target is being reset to 15.)* |
+| **OUTBOUND — the progress bar** | Today's count against your daily target. **This is the number that matters most.** |
 | **STORIES / ENQUIRIES rows** | These say "arrives in Phase 2/4" — the hub is still being built. Until then, log those in the sheet. |
 | **Today's outbound queue** | Your work list. Posts to go and comment on, pulled in automatically. |
 | **53 fresh targets** | How many are left that you haven't already commented on. |
@@ -80,7 +87,36 @@ You never type into a spreadsheet for outbound. One tap is the whole log.
 
 ---
 
-# Your day — about 3 hours
+# Your two halves
+
+From now you have two jobs, not one. They are not equal, and they are not interchangeable.
+
+| | | |
+|---|---|---|
+| **Content** | **3 days a week** — Mon, Wed, Fri | Everything in this document. Outbound, Stories, replies, filming, logging. |
+| **EA — Hiral** | **2 days a week** — Tue, Thu | Diary, travel, follow-ups, whatever she needs that day. |
+
+Class days override the split: **if there's a class, you film it**, whichever day it falls on.
+
+## The cap — read this twice
+
+EA work is urgent. Content work is important. **Urgent always wins unless you stop it**, and that is not a flaw in you — it's true of everybody who has ever held both.
+
+Here is what that looks like in practice if we don't guard it. A diary clash has a person waiting on the other end of it. Fifteen comments on strangers' posts has nobody waiting. So on a busy Monday the comments go, and nothing happens. Nobody notices that day. Nobody notices that week. Four months later the follower graph is flat and the conclusion people reach is *"content didn't work"* — when what actually happened is that the content half kept getting quietly borrowed from.
+
+So:
+
+> **Two days is the ceiling for EA work, not the starting point.**
+>
+> If Hiral's needs grow past two days a week, that is a conversation with Aditya — not something you absorb by working later or by dropping outbound.
+
+**If a day is going badly and something has to give, drop Stories or logging. Never outbound.** It's the only block that brings new people in, and it's the only one nobody notices you've skipped.
+
+**Say so early.** If you've had three weeks where EA work ate into Mondays, that's information we need, not a failure to hide. Tell Aditya. Nobody will be annoyed — we'd far rather resize the role than discover in March that the growth number went sideways.
+
+---
+
+# Your content day — about 3 hours
 
 | When | Block | Time | What it is |
 |---|---|---|---|
@@ -497,39 +533,39 @@ Right now almost all our class footage stops at Stories, which means our best pr
 
 ---
 
-# Easing into the new routine
+# What we're measuring from here
 
-Outbound is the new habit here, so don't try to hit full numbers straight away. The two weeks below run from now, not from when you joined.
+These are the numbers, and you can see all of them on the hub any time. The November column is real, pulled from the follower log on 23 November.
 
-| | Weeks 1–2 *(from now)* | Weeks 3–4 | Weeks 5–8 |
+| | Aug baseline | **Now (23 Nov)** | Target |
 |---|---|---|---|
-| Outbound | 8/day | 12/day | 15/day |
-| Stories | 3/day | 3–5/day | 3–5/day |
-| Replies | everything, checked with Hiral first | everything, on your own | everything |
-| Filming | every class | every class | every class |
+| **Followers** | 342 | **654** | — |
+| **Growth rate** | 0.43%/day | **0.29%/day** | **1%/day** |
+| Posts live | 46 | **103** | — |
+| Outbound comments a day | ~0 | *not logged consistently* | **15, sustained** |
+| Classes filmed | occasionally | most | **every single one** |
+| Stories a day | not tracked | — | **3–5** |
+| **Past students tagged each week** | 0 | — | **8–10 different people** |
+| Comments per post | 1.4 | — | **3+** |
+| Enquiries logged each month | not tracked | — | **tracked, and rising** |
 
-**For the first two weeks of outbound, run your comments past Hiral before they go out.** That isn't about trust — commenting as IFM on other people's posts is new, and it's the fastest way to get the voice right. After a fortnight you won't need it.
+**Read the growth rate honestly.** The follower count more than doubled, which is the headline and it's a good one. But the rate is falling, because holding 1% gets harder as the base grows — at 654 followers that's about 6.5 a day, and at 1,000 it's ten. Outbound is the lever that moves it. Nothing else in this document does.
 
-**One thing to do this week if you haven't already: play all eleven IFM games.** Every one. You can't talk about them convincingly, or make a good story about them, if you haven't played them yourself.
+**The gaps in that middle column are the real problem to fix first.** Four of those rows say "not tracked", which means neither of us can tell whether they're going well. In December, get outbound comments, Stories and tagging into a daily log — even a scrappy one. A number you can see is worth more than a number you're estimating.
+
+**One thing deliberately not on this list: likes.** Our like-to-follower rate is already better than most competitors'. It isn't what's holding us back, so please don't optimise for it or report it.
 
 ---
 
-# What we'll look at together on 19 October
+# Review — end of February
 
-No surprises — these are the numbers, and you can see them any time. The 'where we are now' column is the August baseline, measured before outbound started.
+Four months from now, same horizon as everyone else. We'll look at:
 
-| | Where we are now | Where we're aiming |
-|---|---|---|
-| Outbound comments a day | ~0 | **15, sustained** |
-| Classes filmed | occasionally | **every single one** |
-| **Follower growth** | 1.47/day *(0.43%)* | **+1% per day** *(~3.5/day today, and it rises as we grow)* |
-| Stories a day | not tracked | **3–5** |
-| **Past students tagged each week** | **0** | **8–10 different people** |
-| **Students who re-shared** | not tracked | **tracked from week 1** |
-| Comments per post | 1.4 | **3+** |
-| Enquiries logged each month | not tracked | **tracked, and rising** |
+1. **The growth rate** — is it moving back toward 1%, and did outbound run on the days it was supposed to?
+2. **The split** — did the two days hold, or did EA work grow? Either answer is fine; hiding it isn't.
+3. **Pay and title** — this is a bigger role than the one you started in July, and that gets reflected. You don't need to raise it; we will.
 
-**One thing that is deliberately not on this list: likes.** Our like-to-follower rate is already better than most of our competitors'. It isn't what's holding us back, so please don't optimise for it or report it.
+Nothing in that review will be a surprise. Every number is on the hub and you can check it any day.
 
 ---
 
@@ -543,4 +579,4 @@ No surprises — these are the numbers, and you can see them any time. The 'wher
 
 ---
 
-Anything unclear, ask early rather than guessing. Nobody expects outbound to feel natural immediately — the first two weeks are built for learning, and the numbers above are for October, not next Friday.
+Anything unclear, ask early rather than guessing — and that goes double for the split. If the two halves stop fitting into the week, say so while it's still three weeks of pressure rather than three months of quiet slippage. We can change the shape of the job; we can't fix what we don't hear about.
