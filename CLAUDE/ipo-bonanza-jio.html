@@ -560,9 +560,18 @@ input[type=range].lotslider::-moz-range-thumb{width:30px;height:30px;border-radi
 .flag-back{padding:7px 14px;font-size:11.5px}
 .flag-ov{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
 @media(max-width:860px){.flag-ov{grid-template-columns:1fr}}
-.ov-card{text-align:left;cursor:pointer;padding:18px 20px;border-radius:10px;background:linear-gradient(180deg,var(--panel-2),var(--panel));
+.ov-card{text-align:left;padding:18px 20px;border-radius:10px;background:linear-gradient(180deg,var(--panel-2),var(--panel));
   border:1px solid var(--line-2);color:var(--ink);font:inherit;display:flex;flex-direction:column;align-items:flex-start;gap:8px;transition:border-color .15s}
-.ov-card:hover{border-color:var(--amber)}
+.ov-card.open{animation:flagPop .45s cubic-bezier(.2,.9,.3,1.15)}
+.ov-top{display:flex;align-items:center;gap:12px;width:100%}
+.ov-icon{font-size:30px;line-height:1;flex:0 0 auto}
+.ov-btns{display:flex;gap:10px;margin-top:4px}
+.ov-btns .vote-btn{padding:10px 18px;font-size:14px}
+.ov-key{font-size:clamp(15px,1.45vw,18px);font-weight:800;line-height:1.4;color:var(--ink);padding:9px 12px;border-radius:8px;width:100%}
+.ov-key.bad{background:rgba(255,51,102,0.12);border-left:4px solid var(--dn)}
+.ov-key.good{background:rgba(0,255,149,0.08);border-left:4px solid var(--up)}
+.ov-legal{font-size:11.5px;line-height:1.45;color:var(--ink-3);font-style:italic;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ov-legal span{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:1.2px;margin-right:6px}
 .ov-card.bad{border-color:rgba(255,51,102,0.6)} .ov-card.good{border-color:rgba(0,255,149,0.5)}
 .ov-n{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--ink-3)}
 .ov-t{font-size:15px;font-weight:900;letter-spacing:1.2px;color:var(--amber)}
@@ -1683,33 +1692,29 @@ function openQRFull(){
 
 /* S2 content: 4 DRHP excerpts, discussion format (no devices) */
 const FLAGS=[
-  /* `simple` is what the room reads — plain English for first-time investors.
-     `legal` is verbatim from the SEBI abridged prospectus (Jio RHP, 14 Oct 2026) and is shown
-     small underneath as proof. Never paraphrase inside `legal`. */
-  { title:'THE GOVERNMENT LICENCE',
-    simple:'Jio needs a government licence and airwaves (spectrum) to run its network. If it can’t renew them, the business is in trouble.',
-    legal:'“RJIL holds telecommunication licence and spectrum which are critical for operations; inability to maintain or renew such licence or successfully bid for spectrum could materially and adversely impact our business.”',
-    cls:'good', verdict:'✅ FINE — EVERY PHONE COMPANY HAS THIS',
-    key:'A normal rule of the phone business. Airtel and Vi live with it too — not a reason to run away.',
-    teach:'Like a shop that needs a licence to stay open. The government holds the key for every phone company in India — just know it’s there.'},
-  { title:'ONE SELLER FOR MOST OF THE MONEY',
-    simple:'Nearly 8 out of every 10 rupees Jio earns comes through ONE seller — Reliance Retail, its own sister company.',
+  /* Re-picked 24 Nov 2026 so none is debatable: two clear reds, two clear greens.
+     Every line is from the SEBI abridged prospectus (Jio RHP, 14 Oct 2026):
+     §8 top risk factors, §11 auditor qualifications, §12 outstanding-litigation table, issue details. */
+  { icon:'🏪', title:'ONE SELLER FOR MOST OF THE MONEY',
+    simple:'Nearly 8 of every 10 rupees Jio earns comes through ONE seller — Reliance Retail, its own sister company.',
     legal:'“Disruption in our arrangement with RRL, the sole distributor of our pre-paid connectivity services, (which constituted 76.37%, 77.88%, 77.08%, 78.57% and 79.35% of our consolidated Revenue from Operations…)”',
     cls:'bad', verdict:'🚩 RED FLAG — TOO MUCH DEPENDS ON ONE SELLER',
-    key:'If anything goes wrong with that one seller, most of Jio’s income is at risk.',
-    teach:'Reliance Retail is the only distributor of Jio’s prepaid plans — whichever shop sells you a Jio recharge, it comes through Reliance Retail. Prepaid is about 8 of every 10 rupees Jio earns. And that seller belongs to the same family.'},
-  { title:'DEALS INSIDE THE FAMILY',
-    simple:'Jio has many business deals with its own parent group, Reliance. If those deals are disrupted, Jio’s business could suffer.',
-    legal:'“We have various agreements with the Promoter, Reliance Retail Limited and other Reliance Group entities pertaining to our business; disruption in services under these agreements could adversely impact our business.”',
-    cls:'bad', verdict:'🚩 RED FLAG — THE FAMILY SETS THE TERMS',
-    key:'You’re a new shareholder, not family — and the family decides the prices of these deals.',
-    teach:'When a company does lots of business with its own family companies, the family decides what Jio pays and earns. Always look for this line in a prospectus.'},
-  { title:'WHERE YOUR MONEY GOES',
-    simple:'Most of the money raised will pay off Jio’s old loans. A small part is for general company needs. No existing owner is selling shares.',
-    legal:'“(i) Prepayment, in full or in part, of certain outstanding borrowings availed by the Material Subsidiary, namely, RJIL; and (ii) General corporate purposes.”',
-    cls:'good', verdict:'✅ GOOD SIGN — NOBODY IS CASHING OUT',
-    key:'Your money pays off old loans, not new towers — but no existing owner is selling. That’s a good sign.',
-    teach:'₹91 of every ₹100 clears old loans. Less loan means less interest and more profit. Watch out when owners sell their own shares in an IPO — here, nobody is.'},
+    key:'Whichever shop sells you a Jio recharge, it comes through Reliance Retail. If that one seller stumbles, 8 of every ₹10 is at risk.'},
+  { icon:'🧾', title:'WHAT THE AUDITORS SAID',
+    simple:'Two outside auditors, including Deloitte, checked Jio’s accounts. They have no objections left.',
+    legal:'“There are no qualifications of the Joint Statutory Auditors in their audit reports on our audited consolidated financial statements which have not been given effect to in the Restated Consolidated Financial Information.”',
+    cls:'good', verdict:'✅ GREEN FLAG — CLEAN ACCOUNTS',
+    key:'Outside checkers found nothing wrong with the books. You want to see this line in every prospectus.'},
+  { icon:'⚖️', title:'COURT CASES',
+    simple:'The companies Jio owns face 18 criminal cases, 208 tax cases and 26 cases from regulators — about ₹10,836 Cr at stake.',
+    legal:'Litigation table, “Against the Subsidiaries”: criminal proceedings 18 · tax proceedings 208 · statutory or regulatory actions 26 · aggregate amount involved ₹108,363 million.',
+    cls:'bad', verdict:'🚩 RED FLAG — LOTS OF COURT CASES',
+    key:'Court cases can cost a company money and years. Always open the litigation table before you apply.'},
+  { icon:'🙅', title:'IS ANYONE CASHING OUT?',
+    simple:'This IPO is 100% new shares. No existing owner — not Reliance, not Google — is selling even one share.',
+    legal:'Issue details: Fresh Issue “up to 270,000,000 Equity Shares” · Offer for Sale “Not applicable”.',
+    cls:'good', verdict:'✅ GREEN FLAG — NOBODY IS CASHING OUT',
+    key:'Every rupee you pay goes into Jio itself. When owners sell their own shares in an IPO, ask why — here, nobody is.'},
 ];
 
 function playerCount(){ return Object.keys(state.players||{}).length; }
@@ -1751,9 +1756,7 @@ function nextLabel(){
     if(st.slide===1) return 'THE RED-FLAG HUNT  →';
     if(st.slide===2){
       const rev=st.flagRevealed||[], left=FLAGS.findIndex((f,k)=>!rev[k]);
-      if(!(st.flagIdx>=0)) return left<0?'THE TERMS  →':'OPEN FLAG '+(left+1)+'  →';
-      if(!st.flagOpen) return 'REVEAL THE VERDICT  →';
-      return left<0?'SEE ALL 4  →':'NEXT FLAG  →';
+      return left<0?'THE TERMS  →':'REVEAL FLAG '+(left+1)+'  →';
     }
     return 'OPEN THE ROOM  →';
   }
@@ -1829,92 +1832,32 @@ function hostS1(){
 }
 
 /* ── S2: DRHP red flag hunt (teacher-revealed, no devices) ── */
-/* One simple picture per warning — plain HTML/CSS so it scales with the projector fit. */
-function flagVisual(i){
-  if(i===0){
-    return '<div class="fv fv-licence">'+
-      '<div class="fv-tower">📡</div>'+
-      '<div class="fv-gate"><div class="fv-gate-l">GOVERNMENT LICENCE</div><div class="fv-gate-s">+ airwaves (spectrum)</div></div>'+
-      '<div class="fv-cap">No licence → no network → no business</div>'+
-    '</div>';
-  }
-  if(i===1){
-    let coins='';
-    for(let k=0;k<10;k++) coins+='<span class="fv-coin'+(k<8?' hot':'')+'">₹</span>';
-    return '<div class="fv fv-coins">'+
-      '<div class="fv-cap-top">EVERY ₹10 JIO EARNS</div>'+
-      '<div class="fv-coinrow">'+coins+'</div>'+
-      '<div class="fv-split"><div class="fv-split-a"><b>~₹8</b> through ONE seller<br><span>Reliance Retail · sister company</span></div>'+
-      '<div class="fv-split-b"><b>~₹2</b> everything else</div></div>'+
-    '</div>';
-  }
-  if(i===2){
-    return '<div class="fv fv-family">'+
-      '<div class="fv-circle"><div class="fv-circle-l">THE RELIANCE FAMILY</div>'+
-        '<div class="fv-nodes"><span class="fv-node">Reliance Industries<small>the parent</small></span>'+
-        '<span class="fv-node jio">Jio</span><span class="fv-node">Reliance Retail<small>sister company</small></span></div>'+
-        '<div class="fv-deals">⇄ deals agreed inside the family ⇄</div>'+
-      '</div>'+
-      '<div class="fv-you">🙋‍♀️ YOU<small>new shareholder · outside the circle</small></div>'+
-    '</div>';
-  }
-  return '<div class="fv fv-money">'+
-    '<div class="fv-cap-top">OUT OF EVERY ₹100 RAISED</div>'+
-    '<div class="fv-bar"><span class="a" style="flex:91">₹91</span><span class="b" style="flex:7">₹7</span><span class="c" style="flex:2"></span></div>'+
-    '<div class="fv-legend">'+
-      '<div><i class="a"></i><b>₹91</b> pays off Jio’s old loans</div>'+
-      '<div><i class="b"></i><b>₹7</b> general company needs</div>'+
-      '<div><i class="c"></i><b>₹2</b> cost of running the IPO</div>'+
-    '</div>'+
-    '<div class="fv-total">Total raised: about ₹30,000 Cr</div>'+
-    '<div class="fv-cap">Nobody is selling their own shares</div>'+
-  '</div>';
-}
+let _flagJustOpened=-1;   // only the card just revealed plays the flip
 function hostS2(){
-  const st=state, rev=st.flagRevealed||[], votes=st.flagVotes||{};
-  const said=v=>v==='red'?'🚩 RED FLAG':'✅ FINE';
-  const head='THE PROSPECTUS · RED-FLAG HUNT';
-  if(!(st.flagIdx>=0)){
-    const done=FLAGS.every((f,k)=>rev[k]);
-    const cards=FLAGS.map((f,k)=>'<button class="ov-card '+(rev[k]?f.cls:'')+'" data-flag="'+k+'">'+
-      '<div class="ov-n">WARNING '+(k+1)+' OF '+FLAGS.length+(votes[k]?' · ROOM SAID '+said(votes[k]):'')+'</div>'+
-      '<div class="ov-t">'+f.title+'</div><div class="ov-s">'+f.simple+'</div>'+
-      (rev[k]?'<span class="drhp-verdict '+f.cls+'">'+f.verdict+'</span>':'<span class="ov-q">RED FLAG — OR FINE? CLICK TO OPEN</span>')+
-    '</button>').join('');
-    return '<div class="stage flagstage">'+
-      '<div class="stage-head"><span class="stage-num">'+head+'</span></div>'+
-      '<div class="stage-title">'+(done?'All four, side by side.':'Four warnings from Jio’s own prospectus.')+'</div>'+
-      '<p class="stage-sub">'+(done?'Two red flags, two fine. A red flag doesn’t mean “don’t buy” — it means “know this before you buy”.'
-        :'Before an IPO, every company must list its risks in a document called the prospectus (RHP). Here are four from Jio’s. Open each one — red flag, or fine?')+'</p>'+
-      '<div class="flag-ov">'+cards+'</div>'+
+  const rev=state.flagRevealed||[], votes=state.flagVotes||{};
+  const said=v=>v==='red'?'🚩 RED':'✅ GREEN';
+  const done=FLAGS.every((f,k)=>rev[k]);
+  const cards=FLAGS.map((f,k)=>{
+    const v=votes[k], right=v?((v==='red')===(f.cls==='bad')):null;
+    return '<div class="ov-card'+(rev[k]?' '+f.cls+(k===_flagJustOpened?' open':''):'')+'">'+
+      '<div class="ov-top"><span class="ov-icon">'+f.icon+'</span><div>'+
+        '<div class="ov-n">WARNING '+(k+1)+' OF '+FLAGS.length+'</div><div class="ov-t">'+f.title+'</div></div></div>'+
+      '<div class="ov-s">'+f.simple+'</div>'+
+      (rev[k]
+        ?'<div><span class="drhp-verdict '+f.cls+'">'+f.verdict+'</span>'+
+           (v?'<span class="room-said '+(right?'up':'dn')+'">ROOM SAID '+said(v)+(right?' · ✓':' · ✗')+'</span>':'')+'</div>'+
+         '<div class="ov-key '+f.cls+'">'+f.key+'</div>'+
+         '<div class="ov-legal"><span>THE PROSPECTUS</span>'+f.legal+'</div>'
+        :'<div class="ov-btns"><button class="vote-btn red" data-vote="red" data-k="'+k+'">🚩 RED</button>'+
+           '<button class="vote-btn green" data-vote="green" data-k="'+k+'">✅ GREEN</button></div>')+
     '</div>';
-  }
-  const i=st.flagIdx, open=!!st.flagOpen, f=FLAGS[i], v=votes[i];
-  const dots=FLAGS.map((g,k)=>'<span class="fdot'+(rev[k]?' '+g.cls:'')+(k===i?' cur':'')+'"></span>').join('');
-  const right=v?((v==='red')===(f.cls==='bad')):null;
+  }).join('');
   return '<div class="stage flagstage">'+
-    '<div class="stage-head"><span class="stage-num">'+head+'</span><span style="display:flex;align-items:center;gap:14px"><span class="fdots">'+dots+'</span>'+
-      '<button class="btn ghost flag-back" id="btnAllFlags">ALL 4 FLAGS</button></span></div>'+
-    '<div class="flagcard'+(open?'':' flag-pop')+'">'+
-      '<div class="flagcard-grid">'+
-        '<div>'+
-          '<div class="drhp-section">WARNING '+(i+1)+' OF '+FLAGS.length+'</div>'+
-          '<div class="flag-title">'+f.title+'</div>'+
-          '<div class="flag-simple">'+f.simple+'</div>'+
-          '<div class="drhp-legal"><span>WHAT THE PROSPECTUS ACTUALLY SAYS</span>'+f.legal+'</div>'+
-        '</div>'+
-        '<div>'+flagVisual(i)+'</div>'+
-      '</div>'+
-      (open
-        ?'<div class="flag-verdict"><span class="drhp-verdict '+f.cls+'">'+f.verdict+'</span>'+
-            (v?'<span class="room-said '+(right?'up':'dn')+'">ROOM SAID '+said(v)+(right?' · ✓ RIGHT':' · ✗ NOT QUITE')+'</span>':'')+
-            '<div class="flag-key '+f.cls+'">'+f.key+'</div>'+
-            '<div class="drhp-teach">'+f.teach+'</div></div>'
-        :'<div class="flag-votes"><span class="vote-l">THE ROOM SAYS:</span>'+
-            '<button class="vote-btn red'+(v==='red'?' on':'')+'" data-vote="red">🚩 RED FLAG</button>'+
-            '<button class="vote-btn green'+(v==='green'?' on':'')+'" data-vote="green">✅ FINE</button></div>'+
-          '<div class="drhp-ask">ASK THE ROOM, TAP THEIR ANSWER — THEN REVEAL</div>')+
-    '</div>'+
+    '<div class="stage-head"><span class="stage-num">THE PROSPECTUS · RED-FLAG HUNT</span></div>'+
+    '<div class="stage-title">'+(done?'Two red, two green.':'Four lines from Jio’s own prospectus.')+'</div>'+
+    '<p class="stage-sub">'+(done?'A red flag doesn’t mean “don’t buy” — it means “know this before you buy”.'
+      :'Before an IPO, every company must publish a prospectus. Read each line to the room — red flag or green flag? Tap their answer.')+'</p>'+
+    '<div class="flag-ov">'+cards+'</div>'+
   '</div>';
 }
 
@@ -2367,15 +2310,11 @@ function hostS11(){
 
 /* red-flag hunt: open a card, record the room's vote, back to the overview */
 function wireFlags(m){
-  m.querySelectorAll('[data-flag]').forEach(b=>b.onclick=()=>{
-    pushHistory(); const k=+b.dataset.flag;
-    state.flagIdx=k; state.flagOpen=!!(state.flagRevealed||[])[k];
-    saveNow(); renderHost(); });
   m.querySelectorAll('[data-vote]').forEach(b=>b.onclick=()=>{
-    state.flagVotes=state.flagVotes||{}; state.flagVotes[state.flagIdx]=b.dataset.vote;
-    save(); renderHost(); });
-  const all=document.getElementById('btnAllFlags');
-  if(all) all.onclick=()=>{ pushHistory(); state.flagIdx=-1; state.flagOpen=false; saveNow(); renderHost(); };
+    const k=+b.dataset.k; pushHistory();
+    state.flagVotes=state.flagVotes||{}; state.flagRevealed=state.flagRevealed||[];
+    state.flagVotes[k]=b.dataset.vote; state.flagRevealed[k]=true; _flagJustOpened=k;
+    saveNow(); renderHost(); _flagJustOpened=-1; });
 }
 
 /* ── host render dispatch ── */
@@ -2462,9 +2401,7 @@ function hostAdvance(confirmed){
     else if(st.slide===2){
       st.flagRevealed=st.flagRevealed||[];
       const left=()=>FLAGS.findIndex((f,k)=>!st.flagRevealed[k]);
-      if(!(st.flagIdx>=0)){ const n=left(); if(n<0) st.slide=3; else { st.flagIdx=n; st.flagOpen=false; } }
-      else if(!st.flagOpen){ st.flagOpen=true; st.flagRevealed[st.flagIdx]=true; }
-      else { const n=left(); if(n<0){ st.flagIdx=-1; st.flagOpen=false; } else { st.flagIdx=n; st.flagOpen=false; } }
+      const n=left(); if(n<0) st.slide=3; else { st.flagRevealed[n]=true; _flagJustOpened=n; }
     }
     else { st.phase='lobby'; }
   }
@@ -2479,7 +2416,7 @@ function hostAdvance(confirmed){
     else st.phase='kamath';
   }
   else if(st.phase==='kamath'){ st.phase='lesson'; }
-  saveNow(); renderHost();
+  saveNow(); renderHost(); _flagJustOpened=-1;
 }
 /* BACK moves the SCREEN only. Who joined, every bid and the lottery result are
    live data, not screen position, so they are carried forward from the current
