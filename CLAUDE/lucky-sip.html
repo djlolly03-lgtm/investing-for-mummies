@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Lucky SIP — Investing for Mummies</title>
+<!-- ifm-seo -->
+<meta name="description" content="Guess the monthly amount for ₹1 crore. The closest one wins. A live classroom game played on phones."/>
+<link rel="canonical" href="https://games.investingformummies.com/lucky-sip"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Investing for Mummies"/>
+<meta property="og:title" content="Lucky SIP — a free money game"/>
+<meta property="og:description" content="Guess the monthly amount for ₹1 crore. The closest one wins. A live classroom game played on phones."/>
+<meta property="og:url" content="https://games.investingformummies.com/lucky-sip"/>
+<meta property="og:image" content="https://games.investingformummies.com/assets/og-games.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+/* ── IFM palette (Brand Guidelines §3) ─────────────────────────── */
+:root{
+  --navy:#1a3a5c;--ink:#1a3a5c;--navy-lt:#264d78;--teal:#2a9d8f;--teal-d:#1f7d72;--muted:#5a7d8a;
+  --cream:#f7faf9;--white:#fff;--mint:#bde9e4;--mint-lt:#e0f3f0;--gold:#c9a84c;--gold-lt:#f5f0e0;
+  --success:#27AE60;--danger:#c0392b;--wa:#25D366;
+  --ink-night:#050c15;--gold-hi:#f7dea0;--ivory:#f6f1e7;--mist:#9bb0ae;
+  /* projector-only tones: the studio is dark, so text and accents lift to these */
+  --stage-ink:#eaf6f3;--stage-sub:#9fc2bb;--teal-bright:#2dd4bf;--gold-bright:#f5c451;--coral:#ff8a76;
+  --glass:rgba(10,26,34,.72);--glass-edge:rgba(255,255,255,.12);
+  --shadow:0 2px 12px rgba(26,58,92,.06);--shadow-lg:0 16px 48px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;min-height:100%}
+body{font-family:'Manrope',sans-serif;color:var(--navy);background:var(--cream)}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;margin:0}
+button,input{font-family:'Manrope',sans-serif}
+button{cursor:pointer}
+.hide{display:none!important}
+
+/* ════════ HOST · projector ════════ */
+body.host-bg{background:linear-gradient(180deg,rgba(6,16,28,.30) 0%,rgba(6,16,28,.55) 55%,rgba(6,16,28,.82) 100%),url('wealth-hack-stage.jpg') center/cover fixed no-repeat;color:var(--stage-ink);min-height:100vh}
+#host{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:14px 32px 110px}
+.stage{width:100%;max-width:1240px;display:flex;flex-direction:column;align-items:center;gap:14px;margin:auto}
+.presents{font-size:.72rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--stage-ink);text-align:center;text-shadow:0 1px 12px rgba(0,0,0,.7)}
+.title{font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.1;text-align:center;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.45)}
+.title em{font-style:italic;color:var(--gold-bright)}
+.tag{font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:700;color:var(--stage-ink);text-align:center;margin:0;max-width:820px;line-height:1.45;text-shadow:0 1px 14px rgba(0,0,0,.75)}
+.glass{background:var(--glass);border:1px solid var(--glass-edge);border-radius:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:var(--shadow-lg)}
+.panel{background:#fff;color:var(--navy);border-radius:16px;box-shadow:var(--shadow-lg)}
+.kicker{font-size:.66rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.glass .kicker{color:var(--stage-sub)}
+.btn{font:800 .95rem 'Manrope',sans-serif;color:#1a1203;border:0;border-radius:14px;padding:14px 28px;background:linear-gradient(135deg,var(--gold-hi),#d79f34);box-shadow:0 12px 32px rgba(233,191,98,.3),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(233,191,98,.42),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn:disabled{background:rgba(255,255,255,.07);color:rgba(246,241,231,.42);box-shadow:none;border:1px solid rgba(255,255,255,.14);cursor:not-allowed;transform:none}
+.btn.big{font-size:1.1rem;padding:17px 34px}
+.btn.gold{background:linear-gradient(135deg,var(--gold-hi),#d79f34)}
+
+body.host-bg.end-bg{background:linear-gradient(180deg,rgba(6,16,28,.15) 0%,rgba(6,16,28,.35) 100%),url('wealth-hack-hero.jpg') center/cover fixed no-repeat}
+/* live backdrop: the looping rooftop video sits behind everything on the projector; the closing screen swaps to the still jars */
+.bgv,.bgshade{display:none;position:fixed;inset:0;width:100%;height:100%}
+.bgv{object-fit:cover;z-index:-2}
+.bgshade{z-index:-1;background:linear-gradient(180deg,rgba(6,16,28,.30) 0%,rgba(6,16,28,.55) 55%,rgba(6,16,28,.82) 100%)}
+body.host-bg .bgv,body.host-bg .bgshade{display:block}
+body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
+/* closing screen: content lives in the dark gap between the two jars */
+.end-stage{max-width:520px;gap:12px}
+.end-stage .title{font-size:clamp(1.7rem,2.9vw,2.4rem)}
+.end-stage .end-grid{grid-template-columns:1fr;gap:10px;max-width:none}
+.end-stage .end-grid .stat{padding:12px 16px}
+.end-stage .tag{font-size:.95rem}
+/* lobby */
+.lobby-stage{gap:16px}
+.hero-mark{display:block;width:64px;height:64px;border-radius:50%;background:#fff;padding:5px;box-shadow:0 0 0 1px rgba(233,191,98,.5),0 0 56px rgba(233,191,98,.4),0 18px 44px rgba(0,0,0,.5)}
+.hero-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(3rem,6.2vw,5.2rem);line-height:1;letter-spacing:-.02em;color:#fff;text-align:center;font-variation-settings:'opsz' 144;text-shadow:0 6px 44px rgba(0,0,0,.6)}
+.hero-title .the{display:block;font-style:italic;font-weight:500;font-size:.36em;color:var(--gold-hi);letter-spacing:.01em;margin-bottom:-.12em}
+.hero-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(1.05rem,1.7vw,1.4rem);color:#d6e2df;text-align:center;margin:0;text-shadow:0 2px 20px rgba(0,0,0,.85)}
+.hero-tag b{font-weight:600;color:var(--gold-hi)}
+.lobby-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:20px;width:100%;max-width:1040px;align-items:stretch}
+.lcard{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:26px 26px 24px;border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03)),rgba(6,14,22,.58);border:1px solid rgba(255,255,255,.11);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1)}
+.lcard::before{content:"";position:absolute;left:36px;right:36px;top:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.9}
+.lk{display:flex;align-items:center;gap:10px;font-size:.68rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--stage-sub)}
+.lk i{display:block;width:22px;height:1px;background:var(--gold)}
+.qr-tile{margin:18px 0 12px;padding:14px;border-radius:22px;background:#fff;line-height:0;cursor:zoom-in;box-shadow:0 0 0 1px rgba(233,191,98,.6),0 0 74px rgba(233,191,98,.3),0 26px 60px rgba(0,0,0,.55)}
+.scan-how{font-size:.86rem;font-weight:600;color:var(--stage-sub);margin:6px 0 0;max-width:290px;line-height:1.45}
+.pin-row{margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.pin-label{font-size:.62rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--stage-sub)}
+.pin{font-family:'Fraunces',serif;font-weight:600;font-size:3.1rem;letter-spacing:.2em;padding-left:.2em;line-height:1;color:var(--gold-hi);text-shadow:0 0 40px rgba(233,191,98,.35)}
+.joinurl{font-size:.7rem;word-break:break-all;font-weight:600;margin-top:10px;color:var(--stage-sub);opacity:.75}
+.room-head{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px}
+.room-head h2{font-family:'Fraunces',serif;font-size:1.55rem;font-weight:600;color:var(--ivory)}
+.count{display:inline-grid;place-items:center;min-width:32px;height:32px;padding:0 10px;border-radius:999px;background:rgba(233,191,98,.14);border:1px solid rgba(233,191,98,.4);color:var(--gold-hi);font:800 .95rem 'Manrope',sans-serif}
+.players{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:flex-start;align-content:flex-start;width:100%;min-height:92px;max-height:30vh;overflow:auto;padding:2px}
+.pl{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:5px 14px 5px 5px;font-weight:700;font-size:.92rem;color:var(--ivory);animation:pop .3s ease-out}
+.pl .av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.95rem;color:#fff;flex:none}
+.pl .age{color:var(--gold-hi);font-size:.8rem;font-weight:800}
+.slots{display:flex;gap:10px;justify-content:center;margin:6px 0 8px}
+.slots span{width:34px;height:34px;border-radius:50%;border:1px dashed rgba(255,255,255,.28)}
+.waiting{color:var(--stage-sub);font-family:'Fraunces',serif;font-style:italic;font-size:1rem;margin:0}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.plan{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 16px;text-align:left}
+.plan>div{position:relative;padding:12px 14px 12px 14px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;gap:3px}
+.plan i{position:absolute;top:10px;right:13px;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.5rem;line-height:1;color:rgba(233,191,98,.55)}
+.plan b{font-family:'Fraunces',serif;font-weight:600;font-size:1.08rem;color:var(--ivory);padding-right:26px;line-height:1.2}
+.plan span{font-size:.78rem;font-weight:500;color:var(--stage-sub);line-height:1.4}
+/* names are the hero of the room: big in small rooms, smaller as it fills */
+.sz-xl .pl,.sz-lg .pl{font-weight:700}
+.sz-xl .pl{gap:12px;padding:7px 22px 7px 7px;font-size:1.4rem}
+.sz-xl .pl .av{width:48px;height:48px;font-size:1.5rem}
+.sz-xl .pl .age{font-size:1.05rem}
+.sz-lg .pl{gap:10px;padding:6px 18px 6px 6px;font-size:1.12rem}
+.sz-lg .pl .av{width:38px;height:38px;font-size:1.2rem}
+.sz-lg .pl .age{font-size:.9rem}
+.players.sz-xl,.players.sz-lg{gap:10px}
+.slots span{width:48px;height:48px}
+.lcard .btn{width:100%;margin-top:auto}
+.whatif{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;align-items:center;padding:9px 18px;border-radius:999px}
+.whatif .wk{font-family:'Fraunces',serif;font-style:italic;font-weight:600;color:var(--gold-bright);font-size:1rem}
+.whatif .wl{font-size:.62rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--stage-sub);margin-right:3px}
+.whatif .grp{display:flex;align-items:center;gap:5px}
+.whatif .chip{background:rgba(255,255,255,.08);border:1px solid var(--glass-edge);color:var(--stage-ink);border-radius:10px;padding:4px 10px;font:800 .76rem 'Manrope',sans-serif;transition:background .2s}
+.whatif .chip:hover{background:rgba(255,255,255,.16)}
+.whatif .chip.on{background:linear-gradient(135deg,var(--gold-hi),#d79f34);border-color:transparent;color:#1a1203}
+.whatif .rate{-webkit-appearance:none;appearance:none;width:150px;height:4px;border-radius:2px;background:rgba(255,255,255,.22);outline:none;margin:0 6px;cursor:pointer}
+.whatif .rate::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--gold-hi);border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4);cursor:grab}
+.whatif .rate::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--gold-hi);border:2px solid #fff;cursor:grab}
+.whatif .rate-v{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--gold-bright);min-width:44px;display:inline-block}
+
+/* ask */
+.q-panel{width:100%;max-width:1000px;padding:28px 36px;text-align:center;border-color:rgba(233,191,98,.5);animation:qpulse 2.6s ease-in-out infinite}
+@keyframes qpulse{0%,100%{box-shadow:0 0 0 1px rgba(233,191,98,.22),0 0 40px rgba(233,191,98,.12),var(--shadow-lg)}50%{box-shadow:0 0 0 1px rgba(233,191,98,.45),0 0 70px rgba(233,191,98,.26),var(--shadow-lg)}}
+.q-panel .q{font-family:'Fraunces',serif;font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.22;font-weight:700;color:#fff;margin:0}
+.q-panel .q em{font-style:italic;color:var(--gold-bright)}
+.q-panel .why{margin:12px auto 0;font-size:1rem;color:var(--stage-sub);font-weight:700;max-width:820px;line-height:1.45}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-bright)}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--teal-bright);animation:blink 1.1s infinite}
+@keyframes blink{50%{opacity:.25}}
+.prog{font-size:1.25rem;font-weight:800;color:var(--stage-ink)}
+.prog b{color:var(--gold-bright);font-size:1.7rem;font-family:'Fraunces',serif}
+.pl-wall{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:1100px}
+.pl-wall .pl{background:rgba(255,255,255,.08);border:1px solid var(--glass-edge);color:var(--stage-ink);transition:opacity .3s}
+.pl-wall .pl .age{color:var(--stage-sub)}
+.pl-wall .pl.dim{opacity:.38}
+.pl-wall .pl.lit{opacity:1;border-color:rgba(233,191,98,.7)}
+
+/* reveal */
+.rv{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:16px;width:100%;align-items:start}
+.rv-table{padding:8px 16px 6px}
+.rv-head,.rv-row{display:grid;grid-template-columns:1.35fr 2.2fr .95fr 1.2fr 1.05fr;align-items:center;gap:12px;padding:8px 6px}
+.rv-head{font-size:.62rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--stage-sub);border-bottom:1px solid var(--glass-edge)}
+.rv-row{border-bottom:1px solid rgba(255,255,255,.07);font-weight:700;color:var(--stage-ink);opacity:0;animation:rise .4s ease-out forwards}
+.rv-row:last-child{border-bottom:0}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rv-row .nm{display:flex;align-items:center;gap:9px;font-weight:800}
+.rv-row .av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.9rem;color:#fff;flex:none}
+.rv-row small{color:var(--stage-sub);font-weight:800}
+.rv-row .guess{color:var(--stage-sub)}
+.rv-row .real{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:700;color:var(--teal-bright)}
+.rv-row .real.hot{color:var(--gold-bright)}
+.rv-row .off{font-size:.78rem;font-weight:800;text-transform:none;letter-spacing:.02em;border-radius:10px;padding:4px 9px;margin-top:0;text-align:center;background:rgba(45,212,191,.15);color:var(--teal-bright);white-space:nowrap}
+.rv-row .off.low{background:rgba(255,138,118,.16);color:var(--coral)}
+.rv-row .off.high{background:rgba(245,196,81,.16);color:var(--gold-bright)}
+.rv-row .off.up{background:rgba(45,212,191,.18);color:var(--teal-bright)}
+.rv-row .extra{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;color:var(--coral)}
+.side{display:flex;flex-direction:column;gap:12px}
+.stat{padding:12px 16px}
+.stat .big{font-family:'Fraunces',serif;font-size:1.9rem;font-weight:700;color:#fff;line-height:1.1;margin-top:4px}
+.stat .big.gold{color:var(--gold-bright)}
+.stat .big.coral{color:var(--coral)}
+.stat .big.teal{color:var(--teal-bright)}
+.stat .sm{color:var(--stage-sub);font-weight:700;margin-top:4px;font-size:.88rem;line-height:1.45}
+.stat .sm b{color:var(--stage-ink)}
+.chart{width:100%;height:auto;display:block}
+.past-note{margin:-6px 0 2px;font-family:'Fraunces',serif;font-style:italic;font-size:1rem;color:var(--stage-sub);text-align:center}
+.punch{margin-bottom:10px;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:clamp(1.15rem,2vw,1.6rem);color:var(--gold-bright);text-align:center;max-width:1000px;line-height:1.35;opacity:0;animation:rise .6s ease-out forwards}
+
+/* life bar — today → (wait) → finish line */
+.lb{position:relative;height:58px;min-width:180px}
+.lb-c{position:absolute;left:0;right:0;top:0;text-align:center;font:700 .74rem 'Manrope',sans-serif;color:var(--stage-sub);white-space:nowrap}
+.lb-c .lost{color:#ff8a76;font-weight:800}.lb-c .grow{color:var(--gold-hi);font-weight:700}
+.lb-track{position:absolute;left:0;right:0;top:24px;height:9px;border-radius:99px;background:rgba(255,255,255,.1)}
+.lb-seg{position:absolute;top:0;height:100%;border-radius:99px;transition:left .5s ease,width .5s ease}
+.lb-inv{background:linear-gradient(90deg,#d79f34,#f7dea0);box-shadow:0 0 14px rgba(233,191,98,.35)}
+.lb-wait{background:repeating-linear-gradient(135deg,rgba(255,138,118,.95) 0 5px,rgba(255,138,118,.35) 5px 10px)}
+.lb-dot{position:absolute;top:-4px;width:17px;height:17px;border-radius:50%;transform:translateX(-50%);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.5);transition:left .5s ease}
+.lb-dot.s{background:#ff8a76}
+.lb-flag{position:absolute;top:-3px;width:15px;height:15px;transform:translateX(-50%) rotate(45deg);background:var(--gold-hi);border:2px solid #1a1203;border-radius:3px;transition:left .5s ease}
+.lb-t{position:absolute;top:38px;font:800 .82rem 'Manrope',sans-serif;color:var(--stage-ink);white-space:nowrap;transition:left .5s ease}
+.lb-t.n{transform:translateX(-85%)}
+.lb-t.s{transform:translateX(-10%);color:#ff8a76}
+.lb-t.f{transform:translateX(-50%);color:var(--gold-hi)}
+.lb-t.l{transform:translateX(-50%);color:var(--stage-sub);font-weight:700;opacity:.75}
+.lb-line{position:absolute;top:-9px;bottom:-9px;width:0;border-left:2px dashed rgba(255,255,255,.45);transform:translateX(-1px)}
+.lb-c .past{color:var(--stage-sub);font-weight:700}
+/* what-if control room */
+.wi-stage{gap:12px}
+.wi-grid{display:grid;grid-template-columns:400px minmax(0,1fr);gap:16px;width:100%;align-items:start}
+.wi-left{display:flex;flex-direction:column;gap:14px}
+.wi-score{padding:18px 20px;text-align:center}
+.wi-score.on{border-color:rgba(233,191,98,.55);box-shadow:0 0 0 1px rgba(233,191,98,.25),0 0 60px rgba(233,191,98,.18),var(--shadow-lg)}
+.wi-sc{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+.wi-n{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:2.7rem;line-height:1.05;color:var(--gold-hi);margin:6px 0 2px;text-shadow:0 0 36px rgba(233,191,98,.3)}
+.wi-n.dim{color:var(--stage-sub);font-size:1.9rem;text-shadow:none}
+.wi-n.good{color:#6fe3d0}.wi-n.bad{color:#ff8a76}
+.wi-arrow{font-family:'Fraunces',serif;font-size:2rem;color:var(--gold)}
+.wi-s{font-size:.72rem;font-weight:600;color:var(--stage-sub);line-height:1.3}
+.wi-delta{margin-top:12px;padding:9px 12px;border-radius:12px;font-weight:800;font-size:1rem}
+.wi-delta.good{background:rgba(111,227,208,.14);color:#6fe3d0}.wi-delta.bad{background:rgba(255,138,118,.14);color:#ff8a76}
+.wi-delta.idle{background:rgba(255,255,255,.06);color:var(--stage-sub);font-weight:600;font-size:.9rem}
+.wi-ctl{padding:18px 20px 20px}
+.wi-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.wi-h span{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.6rem;color:var(--gold-hi)}
+.wi-g{margin-bottom:16px}
+.wi-g:last-child{margin-bottom:0}
+.wi-l{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--stage-sub);margin-bottom:9px;display:flex;justify-content:space-between;align-items:baseline}
+.wi-v{font-family:'Fraunces',serif;font-size:1.6rem;letter-spacing:0;text-transform:none;color:var(--gold-hi)}
+.wi-chips{display:flex;flex-wrap:wrap;gap:8px}
+.wi-ctl .chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:var(--stage-ink);border-radius:14px;padding:11px 20px;font:700 1.08rem 'Manrope',sans-serif;transition:background .2s,transform .15s}
+.wi-ctl .chip:hover{background:rgba(255,255,255,.14);transform:translateY(-1px)}
+.wi-ctl .chip.on{background:linear-gradient(135deg,var(--gold-hi),#d79f34);border-color:transparent;color:#1a1203;box-shadow:0 8px 22px rgba(233,191,98,.3)}
+.wi-h .chip{padding:7px 14px;font-size:.85rem;border-radius:999px}
+.wi-ctl .rate{width:100%;height:7px;margin:6px 0 2px;-webkit-appearance:none;appearance:none;border-radius:4px;background:rgba(255,255,255,.2);outline:none;cursor:pointer}
+.wi-ctl .rate::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:var(--gold-hi);border:3px solid #fff;box-shadow:0 3px 12px rgba(0,0,0,.5);cursor:grab}
+.wi-ctl .rate::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--gold-hi);border:3px solid #fff;cursor:grab}
+.wi-table{padding:10px 18px 8px}
+.wi-table .rv-head{font-size:.7rem;padding-bottom:10px}
+.wi-row{padding:12px 6px;min-height:68px}
+.wi-row .nm{font-size:1.3rem;font-weight:700}
+.wi-row .nm .av{width:36px;height:36px;font-size:1.1rem}
+.wi-row .guess{font-size:1.2rem;color:var(--stage-sub);font-weight:600}
+.wi-real{font-family:'Fraunces',serif;font-size:2.05rem;font-weight:600;color:var(--gold-hi);line-height:1;white-space:nowrap}
+.wi-real.good{color:#6fe3d0}.wi-real.bad{color:#ff8a76}
+.wi-chg{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 12px;border-radius:12px;font-weight:800;font-size:1.02rem;white-space:nowrap}
+.wi-chg small{font-size:.62rem;font-weight:600;opacity:.8}
+.wi-chg.good{background:rgba(111,227,208,.15);color:#6fe3d0}.wi-chg.bad{background:rgba(255,138,118,.15);color:#ff8a76}.wi-chg.same{background:rgba(255,255,255,.07);color:var(--stage-sub);font-weight:600;font-size:.9rem}
+.wi-table.dense .wi-row{padding:7px 6px;min-height:52px}.wi-table.dense .wi-real{font-size:1.6rem}.wi-table.dense .wi-row .nm{font-size:1.05rem}
+.wi-table .rv-head,.wi-table .rv-row{grid-template-columns:1.15fr 1.95fr .9fr 1.4fr 1.15fr}
+
+/* ════════ HOST type scale (20 Oct 2026) ════════
+   The projector is read from the back of a room and the old type was tuned for a laptop. fitHost() sets the root
+   font size from the screen — 16px on a 1440-wide laptop, ~21px on a 1080p projector — so every rem below scales with the room.
+   Everything is scoped to body.host-bg so the phone, which shares some class names, is untouched. */
+body.host-bg .stage{max-width:84rem}
+body.host-bg .end-stage{max-width:31rem}
+body.host-bg .presents{font-size:1.05rem;letter-spacing:.2em}
+body.host-bg .kicker{font-size:.9rem;letter-spacing:.16em}
+body.host-bg .tag{font-size:clamp(1.1rem,1.7vw,1.5rem)}
+body.host-bg .live{font-size:1rem}
+body.host-bg .prog{font-size:1.5rem}
+body.host-bg .prog b{font-size:2.4rem}
+body.host-bg .q-panel{max-width:64rem}
+body.host-bg .q-panel .q{font-size:clamp(1.8rem,3.2vw,3rem)}
+body.host-bg .q-panel .why{font-size:1.25rem;max-width:52rem}
+body.host-bg .pl-wall{max-width:70rem}
+body.host-bg .pl{font-size:1.12rem}
+body.host-bg .pl .age{font-size:.95rem}
+body.host-bg .lk{font-size:.92rem}
+body.host-bg .scan-how{font-size:1.05rem;max-width:21rem}
+body.host-bg .pin-label{font-size:.88rem}
+body.host-bg .joinurl{font-size:.92rem}
+body.host-bg .lobby-grid{max-width:68rem}
+body.host-bg .plan b{font-size:1.3rem}
+body.host-bg .plan span{font-size:1rem}
+body.host-bg .waiting{font-size:1.25rem}
+body.host-bg .rv{grid-template-columns:minmax(0,1fr) 28rem}
+body.host-bg .wi-grid{grid-template-columns:28rem minmax(0,1fr)}
+body.host-bg .rv-head{font-size:.9rem}
+body.host-bg .rv-row{font-size:1.15rem}
+body.host-bg .rv-row .nm{font-size:1.3rem}
+body.host-bg .rv-row .guess{font-size:1.3rem}
+body.host-bg .rv-row .real{font-size:2.1rem}
+body.host-bg .rv-row .extra{font-size:1.8rem}
+body.host-bg .rv-row .off{font-size:1.05rem}
+body.host-bg .stat .big{font-size:2.6rem}
+body.host-bg .stat .sm{font-size:1.15rem}
+body.host-bg .punch{font-size:clamp(1.3rem,2.2vw,1.9rem);max-width:64rem}
+body.host-bg .past-note{font-size:1.2rem}
+body.host-bg .lb{height:4.5rem;min-width:12rem}
+body.host-bg .lb-c{font-size:1.02rem}
+body.host-bg .lb-track{top:1.9rem;height:.75rem}
+body.host-bg .lb-dot{top:-.35rem;width:1.35rem;height:1.35rem}
+body.host-bg .lb-flag{top:-.25rem;width:1.15rem;height:1.15rem}
+body.host-bg .lb-t{top:2.9rem;font-size:1.08rem}
+body.host-bg .wi-s{font-size:1rem}
+body.host-bg .wi-l{font-size:.95rem}
+body.host-bg .wi-n{font-size:3.2rem}
+body.host-bg .wi-n.dim{font-size:2.3rem}
+body.host-bg .wi-delta{font-size:1.25rem}
+body.host-bg .wi-delta.idle{font-size:1.08rem}
+body.host-bg .wi-h span{font-size:1.9rem}
+body.host-bg .wi-ctl .chip{font-size:1.2rem}
+body.host-bg .wi-h .chip{font-size:1rem}
+body.host-bg .wi-row .nm{font-size:1.5rem}
+body.host-bg .wi-row .guess{font-size:1.35rem}
+body.host-bg .wi-real{font-size:2.4rem}
+body.host-bg .wi-chg{font-size:1.2rem}
+body.host-bg .wi-chg small{font-size:.8rem}
+body.host-bg .wi-table .rv-head{font-size:.92rem}
+body.host-bg .bars{max-width:52rem}
+body.host-bg .bar{font-size:1.4rem}
+body.host-bg .bar .bn{font-size:1.7rem}
+body.host-bg .end-grid{max-width:64rem}
+body.host-bg .host-reset,body.host-bg .host-back{font-size:.98rem}
+body.host-bg .key-hint{font-size:.92rem}
+body.host-bg .join-corner .jc-lbl{font-size:.8rem}
+body.host-bg .join-corner .jc-pin{font-size:1.4rem}
+body.host-bg .join-corner .jc-tap{font-size:.8rem}
+body.host-bg .net{font-size:1.1rem}
+
+/* age rows — the projector shows groups, never people */
+body.host-bg .agecell{display:flex;flex-direction:column;line-height:1.1}
+body.host-bg .agecell b{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:600;color:#fff}
+body.host-bg .agecell small{font-size:.95rem;font-weight:700;color:var(--stage-sub);margin-top:.2rem}
+body.host-bg .rv-agg3 .rv-head,body.host-bg .rv-agg3 .rv-row{grid-template-columns:.9fr 3fr 1.5fr}
+body.host-bg .rv-agg5 .rv-head,body.host-bg .rv-agg5 .rv-row{grid-template-columns:.9fr 2.3fr 1fr 1.3fr 1.35fr}
+body.host-bg .rv-agg5 .rv-head{font-size:.8rem;letter-spacing:.09em}
+body.host-bg .gsplit{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.8rem}
+body.host-bg .gs{padding:.55rem .3rem;border-radius:12px;text-align:center;font-size:.95rem;font-weight:800;line-height:1.25}
+body.host-bg .gs b{display:block;font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;line-height:1.1}
+body.host-bg .gs.low{background:rgba(255,138,118,.14);color:var(--coral)}
+body.host-bg .gs.ok{background:rgba(45,212,191,.14);color:var(--teal-bright)}
+body.host-bg .gs.high{background:rgba(245,196,81,.14);color:var(--gold-bright)}
+
+/* play screen: the clock, then the discussion prompt */
+body.host-bg .ask-stage{gap:1rem}
+body.host-bg .askbar{display:flex;align-items:stretch;justify-content:center;gap:1.2rem;width:100%;max-width:58rem}
+body.host-bg .clockbox{flex:1.25;display:flex;align-items:center;gap:1.4rem;padding:.9rem 1.5rem;border-radius:18px}
+body.host-bg .clock{font-family:'Fraunces',serif;font-weight:600;font-size:4.6rem;line-height:1;color:var(--gold-hi);font-variant-numeric:tabular-nums;text-shadow:0 0 44px rgba(233,191,98,.3)}
+body.host-bg .clock.low,body.host-bg .clock.done{color:var(--coral);text-shadow:0 0 44px rgba(255,138,118,.3)}
+body.host-bg .clock.done{animation:blink 1.2s infinite}
+body.host-bg .clockbox .kicker{margin-top:.35rem}
+body.host-bg .clock-btns{display:flex;flex-direction:column;gap:.45rem;margin-left:auto}
+body.host-bg .cbtn{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:var(--stage-ink);border-radius:12px;padding:.5rem 1rem;font:800 1.05rem 'Manrope',sans-serif}
+body.host-bg .cbtn:hover{background:rgba(255,255,255,.18)}
+body.host-bg .progbox{flex:1;display:flex;flex-direction:column;justify-content:center;gap:.45rem;padding:.9rem 1.5rem;border-radius:18px}
+body.host-bg .discuss{display:none;margin:0;padding:.9rem 1.8rem;border-radius:16px;background:rgba(10,26,34,.78);border:1px solid rgba(233,191,98,.45);font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.55rem;line-height:1.35;color:var(--gold-hi);text-align:center;max-width:60rem}
+body.host-bg .discuss.show{display:block;animation:rise .5s ease-out both}
+body.host-bg .host-next.pulse{animation:nextpulse 1.4s ease-in-out infinite}
+@keyframes nextpulse{0%,100%{box-shadow:0 16px 44px rgba(233,191,98,.38),0 6px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.55)}50%{box-shadow:0 16px 64px rgba(233,191,98,.85),0 6px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.55)}}
+
+/* demo: the teacher plays one guess on the big screen, exactly as it looks on a phone */
+body.host-bg .demo-stage{gap:1rem}
+body.host-bg .demo-grid{display:grid;grid-template-columns:minmax(0,1fr) 25rem;gap:2rem;width:100%;max-width:64rem;align-items:center}
+body.host-bg .demo-steps{display:grid;gap:.85rem}
+body.host-bg .demo-steps>div{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.3rem;border-radius:16px;background:rgba(10,26,34,.74);border:1px solid var(--glass-edge);backdrop-filter:blur(8px)}
+body.host-bg .demo-steps i{flex:none;display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;background:linear-gradient(135deg,var(--gold-hi),#d79f34);color:#1a1203;font:800 1.2rem 'Manrope',sans-serif;font-style:normal}
+body.host-bg .demo-steps p{margin:0}
+body.host-bg .demo-steps b{display:block;font-family:'Fraunces',serif;font-size:1.5rem;color:#fff;font-weight:600;line-height:1.2}
+body.host-bg .demo-steps span{display:block;margin-top:.25rem;font-size:1.1rem;font-weight:600;color:var(--stage-sub);line-height:1.4}
+body.host-bg .demo-phone{border-radius:2.2rem;border:2px solid rgba(255,255,255,.22);background:#050c15;padding:1.2rem 1.2rem 1.4rem;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 6px rgba(255,255,255,.04),0 0 70px rgba(233,191,98,.16)}
+body.host-bg .dp-tag{text-align:center;font-size:.82rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-hi);margin-bottom:.7rem}
+body.host-bg .dp-note{margin:.2rem 0 .6rem;text-align:center;font-weight:700;font-size:1.1rem;color:var(--gold-hi)}
+body.host-bg .demo-phone .amt{margin:0 0 .7rem}
+body.host-bg .demo-phone .amt-in{font-size:2.3rem;padding:.7rem 1rem .7rem 2.6rem}
+body.host-bg .demo-phone .amt-box .rs{font-size:1.8rem}
+body.host-bg .demo-phone .amt-sh{font-size:1rem}
+body.host-bg .demo-phone .chips.big{margin:0 0 .8rem}
+body.host-bg .demo-phone .chips.big .chip{padding:.7rem .2rem;font-size:1rem}
+body.host-bg .demo-phone .p-btn.big{position:static;height:3.4rem;font-size:1.15rem;box-shadow:0 12px 30px rgba(233,191,98,.35)}
+body.host-bg .demo-phone .p-btn.big:disabled{box-shadow:none}
+body.host-bg .demo-phone .p-btn.outline{height:3rem;font-size:1rem}
+body.host-bg .demo-phone .locked{text-align:center;padding:1.1rem 1rem;margin-bottom:.6rem}
+body.host-bg .demo-phone .locked .v{font-size:2.4rem}
+body.host-bg .demo-phone .locked .lbl{font-size:.85rem}
+body.host-bg .demo-phone .locked .u{font-size:1rem}
+
+/* short screens (effective height under ~57rem) */
+body.hc.host-bg .rv-row{padding:.15rem .4rem}
+body.hc.host-bg .lb{height:3.45rem}
+body.hc.host-bg .lb-c{font-size:.95rem}
+body.hc.host-bg .lb-track{top:1.5rem}
+body.hc.host-bg .lb-t{top:2.3rem;font-size:1rem}
+body.hc.host-bg .agecell b{font-size:1.8rem}
+body.hc.host-bg .agecell small{font-size:.82rem;margin-top:.05rem}
+body.hc.host-bg .rv-table{padding:.3rem 1rem .2rem}
+body.hc.host-bg .punch{font-size:1.2rem;margin-bottom:.3rem}
+body.hc.host-bg .wi-chart{display:none}
+body.hc.host-bg .rv .chart{max-height:12.5rem}
+body.hc.host-bg .wide-only{display:none}
+body.hc.host-bg .stage{gap:.7rem}
+body.hc.host-bg .q-panel{padding:1rem 1.6rem}
+body.hc.host-bg .q-panel .why{font-size:1.05rem;margin-top:.5rem}
+body.hc.host-bg .q-panel .q{font-size:clamp(1.6rem,2.8vw,2.5rem)}
+body.hc.host-bg .clock{font-size:3.6rem}
+body.hc.host-bg .demo-steps>div{padding:.7rem 1.1rem}
+body.hc.host-bg .demo-steps span{font-size:1rem}
+body.hc.host-bg .demo-phone{padding:.9rem 1rem 1.1rem}
+body.hc.host-bg .stat .big{font-size:2.2rem}
+body.hc.host-bg .wi-n{font-size:2.5rem}
+body.hc.host-bg .wi-ctl{padding:.9rem 1.1rem 1rem}
+body.hc.host-bg .wi-g{margin-bottom:.7rem}
+body.hc.host-bg .wi-ctl .chip{padding:.5rem 1rem;font-size:1.05rem}
+body.hc.host-bg .wi-score{padding:.8rem 1.1rem}
+body.hc.host-bg .wi-row{padding:.4rem .4rem;min-height:3.6rem}
+body.hc.host-bg .wi-real{font-size:1.9rem}
+
+/* poll / end */
+.bars{width:100%;max-width:760px;display:grid;gap:10px}
+.bar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 20px;border-radius:14px;background:rgba(10,26,34,.72);border:1px solid var(--glass-edge);overflow:hidden;font-weight:700;font-size:1.05rem;color:var(--stage-ink)}
+.bar-fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,rgba(42,157,143,.5),rgba(45,212,191,.25));transition:width .5s ease}
+.bar.lead .bar-fill{background:linear-gradient(90deg,rgba(201,168,76,.65),rgba(245,196,81,.3))}
+.bar.lead{border-color:rgba(245,196,81,.5)}
+.bar .bt,.bar .bn{position:relative;z-index:1}
+.bar .bn{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--gold-bright);min-width:24px;text-align:right}
+.opts{display:grid;gap:8px}
+.optb{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:2px solid var(--mint);background:#fff;border-radius:12px;padding:13px 14px;font:700 .92rem 'Manrope',sans-serif;color:var(--navy);transition:border-color .2s,background .2s}
+.optb .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--mint);flex:none;transition:.2s}
+.optb.on{border-color:var(--teal);background:var(--mint-lt)}
+.optb.on .dot{border-color:var(--teal);background:radial-gradient(circle,var(--teal) 45%,transparent 50%)}
+.wall{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:1100px}
+.end-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%;max-width:1000px}
+.end-grid .stat{text-align:center;padding:20px}
+
+/* chrome — same placement as the KBC quiz so the room sees one family of games */
+.host-reset{position:fixed;top:6px;left:10px;z-index:95;color:var(--stage-ink);font:800 .76rem 'Manrope',sans-serif;background:rgba(10,26,34,.74);border:1px solid rgba(255,255,255,.15);padding:6px 14px;border-radius:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.host-reset:hover{background:rgba(10,26,34,.95)}
+.join-corner{position:fixed;top:6px;right:10px;z-index:95;display:flex;align-items:center;gap:9px;padding:3px 12px 3px 6px;border-radius:14px;cursor:zoom-in;background:linear-gradient(165deg,rgba(26,56,70,.9),rgba(10,26,34,.94));border:1px solid rgba(255,255,255,.15);box-shadow:0 10px 26px rgba(0,0,0,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .2s}
+.join-corner:hover{transform:scale(1.04)}
+.join-corner .jc-qr{width:48px;height:48px;background:#fff;border-radius:7px;padding:2px;display:grid;place-items:center;flex:0 0 auto}
+.join-corner .jc-txt{text-align:left;line-height:1.2}
+.join-corner .jc-lbl{color:var(--stage-sub);font-size:.6rem;font-weight:900;text-transform:uppercase;letter-spacing:.6px}
+.join-corner .jc-pin{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;letter-spacing:.16rem;color:var(--gold-hi)}
+.join-corner .jc-tap{color:var(--gold);font-size:.62rem;font-weight:800}
+.key-hint{position:fixed;bottom:14px;right:16px;z-index:95;color:var(--stage-sub);font-size:.72rem;font-weight:800;background:rgba(10,26,34,.72);border:1px solid var(--glass-edge);padding:5px 14px;border-radius:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap}
+.key-hint b{color:var(--stage-ink)}
+.host-back{position:fixed;bottom:22px;left:16px;z-index:95;color:var(--stage-ink);font:800 .76rem 'Manrope',sans-serif;background:rgba(10,26,34,.74);border:1px solid rgba(255,255,255,.15);padding:6px 15px;border-radius:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.host-next{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:95;min-width:340px;font:800 1.2rem 'Manrope',sans-serif;color:#1a1203;background:linear-gradient(135deg,var(--gold-hi),#d79f34);border:0;padding:17px 44px;border-radius:18px;box-shadow:0 16px 44px rgba(233,191,98,.38),0 6px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.55);transition:box-shadow .2s,transform .2s}
+.host-next:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 20px 54px rgba(233,191,98,.5),0 6px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.55)}
+/* the fixed corner pills reserve their own band — nothing centred ever runs underneath them */
+#host.has-corner{padding-top:62px}
+#qrFull{position:fixed;inset:0;z-index:100;background:rgba(5,15,20,.92);display:grid;place-items:center;cursor:pointer}
+#qrFull .lcard{padding:30px 34px}
+#qrFull .pin{font-size:3.6rem}
+.net{position:fixed;left:50%;bottom:44px;transform:translateX(-50%);z-index:96;background:#f5f0e0;color:#6b4e00;border:2px solid var(--gold);border-radius:12px;padding:9px 16px;font-weight:800;font-size:.9rem}
+/* when embedded in the games portal, its own floating Menu / Suggest buttons sit bottom-left and bottom-right — lift ours clear of them */
+body.framed .host-back,body.framed .host-next,body.framed .key-hint{bottom:70px}
+body.framed .host-next{bottom:76px}
+body.framed .net{bottom:112px}
+body.framed #host{padding-bottom:170px}
+/* short screens (effective height under ~57rem): tighten the lobby */
+body.hc .lobby-stage{gap:9px}
+body.hc .hero-mark{width:44px;height:44px}
+body.hc .hero-title{font-size:clamp(2.6rem,5vw,3.9rem)}
+body.hc .sz-xl .pl{padding:5px 20px 5px 5px}
+body.hc .players.sz-xl{gap:8px}
+body.hc .lcard .room-head{margin-bottom:10px}
+body.hc .lcard{padding:20px 24px 18px}
+body.hc .qr-tile{margin:14px 0 10px;padding:12px}
+body.hc .plan{margin:12px 0 12px;gap:8px}
+body.hc .plan>div{padding:10px 12px}
+body.hc .plan span{font-size:.74rem}
+body.hc .pin{font-size:2.6rem}
+body.hc .joinurl{margin-top:6px}
+body.hc .players{min-height:80px}
+body.hc .scan-how{font-size:.8rem}
+@media(max-width:1000px){.join-corner,.key-hint{display:none!important}.lobby-grid,.rv{grid-template-columns:1fr}.end-grid{grid-template-columns:1fr}#host.has-corner{padding-top:14px}}
+
+/* ════════ PLAYER · phone — midnight & gold ════════ */
+body.player-bg{--navy:#f6f1e7;--ink:#f6f1e7;--muted:#9bb0ae;--mint:rgba(255,255,255,.14);--mint-lt:rgba(255,255,255,.06);--teal:#e9bf62;--teal-d:#f7dea0;--danger:#ff8a76;--cream:#050c15;background:#050c15;color:#f6f1e7;font-family:'Manrope',sans-serif}
+body.player-bg::after{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
+.wrap{position:relative;max-width:480px;margin:0 auto;padding:22px 16px 28px;min-height:100vh;display:flex;flex-direction:column;gap:14px;overflow-x:clip}
+.wrap>*:not(.p-hero){position:relative;z-index:1}
+.p-hero{position:absolute;left:0;right:0;top:0;height:310px;background:url('wealth-hack-banner.jpg') calc(100% + 44px) 0/auto 300px no-repeat;z-index:0}
+.p-hero.full{height:440px;background-size:auto 330px;background-position:calc(100% + 50px) 0}
+.p-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,12,21,.65) 0%,rgba(5,12,21,0) 26%,rgba(5,12,21,.6) 78%,#050c15 100%),linear-gradient(90deg,rgba(5,12,21,.95) 0%,rgba(5,12,21,.7) 48%,rgba(5,12,21,0) 88%)}
+.p-bar{display:flex;align-items:center;gap:11px}
+.mark{flex:none;width:38px;height:38px;border-radius:50%;background:#fff;padding:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.3),0 0 24px rgba(233,191,98,.3)}
+.mark img{width:100%;height:100%;object-fit:contain;display:block;border-radius:50%}
+.brand{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#f6f1e7;opacity:.85;line-height:1.4}
+.room{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:10.5px;font-weight:800;letter-spacing:.16em;color:#e9bf62;padding:7px 12px;border-radius:999px;background:rgba(5,12,21,.55);backdrop-filter:blur(8px);border:1px solid rgba(233,191,98,.4)}
+.room i{width:6px;height:6px;border-radius:50%;background:#3ee0a0;box-shadow:0 0 8px #3ee0a0;display:block}
+.p-title{margin-top:22px}
+.p-title .the{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:24px;color:#f7dea0;margin-bottom:-4px}
+.p-title h1{font-family:'Fraunces',serif;font-weight:600;font-size:54px;line-height:1;letter-spacing:-.02em;color:#fff;font-variation-settings:'opsz' 144;text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.p-title .tag{margin:16px 0 0;text-align:left;text-shadow:none;font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:17px;line-height:1.45;color:#9bb0ae;max-width:250px}
+.p-title .tag b{font-weight:600;color:#f7dea0}
+.p-title.compact{margin-top:6px;margin-bottom:6px}
+.p-title.compact h1{font-size:30px}
+.card{padding:22px 20px 20px;border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 24px 70px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1);position:relative}
+.card::before{content:"";position:absolute;left:24px;right:24px;top:-1px;height:1px;background:linear-gradient(90deg,transparent,#e9bf62,transparent);opacity:.8}
+.card h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;line-height:1.18;color:#f6f1e7;margin-bottom:6px}
+.card h2 em{font-style:italic;color:#f7dea0}
+.card p{margin:0 0 14px;color:#9bb0ae;font-weight:500;font-size:13.5px;line-height:1.5}
+.lbl{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#9bb0ae;margin-bottom:8px}
+.field{margin-bottom:14px}
+.inp{width:100%;height:52px;padding:0 16px;border-radius:15px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.13);color:#f6f1e7;font:600 17px 'Manrope',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s,background .2s}
+.inp::placeholder{color:rgba(155,176,174,.55)}
+.inp:focus{border-color:#e9bf62;box-shadow:0 0 0 4px rgba(233,191,98,.14);background:rgba(233,191,98,.05)}
+.inp-wrap{position:relative}
+.inp-wrap .rs{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-weight:700;font-size:17px;color:#9bb0ae}
+.inp-wrap .inp.money{padding-left:34px}
+.inp-wrap .suf{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9bb0ae;pointer-events:none}
+.sh-badge{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:#f7dea0;background:rgba(233,191,98,.12);border:1px solid rgba(233,191,98,.3);padding:2px 9px;border-radius:999px}
+.sh-badge:empty{display:none}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:4px 0 14px}
+.chip{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:#f6f1e7;border-radius:999px;padding:8px 13px;font:700 .82rem 'Manrope',sans-serif;transition:border-color .2s,background .2s}
+.chip:hover,.chip.on{border-color:#e9bf62;background:rgba(233,191,98,.14);color:#f7dea0}
+.p-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:56px;color:#1a1203;border:0;border-radius:15px;font:800 16px 'Manrope',sans-serif;letter-spacing:.02em;background:linear-gradient(135deg,#f7dea0,#d79f34);box-shadow:0 12px 32px rgba(233,191,98,.32),inset 0 1px 0 rgba(255,255,255,.55);transition:transform .2s,opacity .2s}
+.p-btn:hover{transform:translateY(-1px)}
+.p-btn:disabled{background:rgba(255,255,255,.07);color:rgba(246,241,231,.4);box-shadow:none;border:1px solid rgba(255,255,255,.13);cursor:not-allowed;transform:none}
+.p-btn.gold{background:linear-gradient(135deg,#f7dea0,#d79f34)}
+.p-btn.outline{height:48px;background:transparent;color:#9bb0ae;border:1px solid rgba(255,255,255,.16);box-shadow:none;margin-top:10px;font-size:14px}
+.p-btn.wa{background:#25D366;color:#04210f;margin-top:10px;box-shadow:0 10px 26px rgba(37,211,102,.28),inset 0 1px 0 rgba(255,255,255,.35)}
+.p-btn.wa svg{width:20px;height:20px;flex:none}
+.center{text-align:center;padding:10px 0}
+.center .av{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;font-size:2.2rem;color:#fff;margin:0 auto 12px;box-shadow:0 0 0 3px rgba(233,191,98,.5),0 0 40px rgba(233,191,98,.25)}
+.locked{background:rgba(233,191,98,.08);border:1px solid rgba(233,191,98,.3);border-radius:16px;padding:14px 16px;margin-bottom:10px}
+.locked .lbl{color:#f7dea0;margin-bottom:2px}
+.locked .v{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:600;color:#f6f1e7}
+.locked .u{font-size:.78rem;color:#9bb0ae;font-weight:600}
+.real{text-align:center;padding:6px 0 8px}
+.real .v{font-family:'Fraunces',serif;font-size:2.8rem;font-weight:600;color:#f7dea0;line-height:1.1;margin:6px 0;text-shadow:0 0 40px rgba(233,191,98,.3)}
+.real .v.red{color:#ff8a76;text-shadow:none}
+.real .g{color:#9bb0ae;font-weight:600;font-size:.9rem}
+.off{display:inline-block;margin-top:10px;border-radius:999px;padding:5px 12px;font-size:.78rem;font-weight:800;text-transform:none;letter-spacing:.02em;background:rgba(45,212,191,.14);color:#6fe3d0}
+.off.low{background:rgba(255,138,118,.14);color:#ff8a76}
+.off.high{background:rgba(233,191,98,.14);color:#f7dea0}
+.fb{margin-top:14px;background:rgba(255,255,255,.05);border-left:3px solid #e9bf62;border-radius:0 14px 14px 0;padding:13px 15px;font-weight:600;line-height:1.55;font-size:.9rem;color:#e7e2d6}
+.fb b{color:#ff8a76}
+.fb.good b{color:#f7dea0}
+.opts{display:grid;gap:9px}
+.optb{display:flex;align-items:center;gap:13px;width:100%;text-align:left;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.05);border-radius:15px;padding:15px 15px;font:600 .95rem 'Manrope',sans-serif;color:#f6f1e7;transition:border-color .2s,background .2s}
+.optb .dot{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.3);flex:none;transition:.2s}
+.optb.on{border-color:#e9bf62;background:rgba(233,191,98,.1)}
+.optb.on .dot{border-color:#e9bf62;background:radial-gradient(circle,#e9bf62 45%,transparent 50%)}
+.sum{display:grid;gap:9px}
+.sum .row{display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:11px 14px;font-weight:600;font-size:.86rem;color:#d6e2df}
+.sum .row b{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;color:#f7dea0;white-space:nowrap}
+.sum .row b.red{color:#ff8a76}
+.crowd{display:flex;align-items:center;gap:12px;margin-top:2px}
+.stack{display:flex}
+.stack span{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;border:2px solid #050c15;margin-left:-9px;color:#fff;font-weight:800}
+.stack span:first-child{margin-left:0}
+.crowd p{margin:0;font-size:12.5px;font-weight:600;color:#9bb0ae;line-height:1.4}
+.crowd p b{color:#f6f1e7;font-weight:700}
+.foot{margin-top:auto;text-align:center;font-size:11px;color:#9bb0ae;font-weight:600;opacity:.7;padding-top:8px}
+.card.ask{flex:1;display:flex;flex-direction:column}
+.ask-note{margin:0 0 6px!important}
+.amt{margin:4px 0 14px}
+.amt-l{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#9bb0ae;margin-bottom:10px;text-align:center}
+.amt-box{position:relative;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);transition:border-color .2s,box-shadow .2s}
+.amt-box:focus-within{border-color:#e9bf62;box-shadow:0 0 0 4px rgba(233,191,98,.14)}
+.amt-box .rs{position:absolute;left:20px;top:50%;transform:translateY(-50%);font:600 2.2rem 'Fraunces',serif;color:#9bb0ae}
+.amt-in{width:100%;background:transparent;border:0;outline:0;color:#f6f1e7;font:600 2.9rem 'Fraunces',serif;text-align:center;padding:14px 18px 14px 48px;letter-spacing:.01em}
+.amt-in::placeholder{color:rgba(155,176,174,.35)}
+.amt-sh{margin:10px auto 0;width:fit-content;font:700 1.15rem 'Manrope',sans-serif;color:#f7dea0;background:rgba(233,191,98,.12);border:1px solid rgba(233,191,98,.32);padding:4px 16px;border-radius:999px;min-height:1.9rem}
+.amt-sh:empty{visibility:hidden}
+.chips.big{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:auto 0 14px}
+.chips.big .chip{padding:15px 4px;font-size:1.06rem;border-radius:15px;text-align:center;font-weight:700;letter-spacing:-.01em}
+.p-btn.big{height:64px;font-size:1.2rem;border-radius:18px;position:sticky;bottom:14px;z-index:6;box-shadow:0 14px 36px rgba(233,191,98,.4),0 0 0 6px rgba(5,12,21,.85)}
+.p-btn.big:disabled{box-shadow:0 0 0 6px rgba(5,12,21,.85)}
+.ctx{margin:2px 0 12px;padding:12px 14px 10px;border-radius:18px;background:rgba(233,191,98,.07);border:1px solid rgba(233,191,98,.25)}
+.ctx-h{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#f7dea0;margin-bottom:10px}
+.ctx-row{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:start}
+.ctx-n{font:600 1.7rem 'Fraunces',serif;color:#f7dea0;line-height:1.1}
+.ctx-n.q{color:#9bb0ae}
+.ctx-s{font-size:.78rem;font-weight:600;color:#9bb0ae;line-height:1.4;margin-top:4px}
+.ctx-s b{color:#f6f1e7;font-weight:800}.ctx-s b.red{color:#ff8a76}
+.ctx-arrow{font:600 1.6rem 'Fraunces',serif;color:#e9bf62;padding-top:6px}
+.ctx-t{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1);font-size:.84rem;font-weight:600;color:#e7e2d6;line-height:1.4}
+.ctx-t b{color:#ff8a76}
+.proj{margin-top:14px;padding:14px 15px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.proj.over{border-color:rgba(111,227,208,.4);background:rgba(111,227,208,.07)}
+.proj.under{border-color:rgba(255,138,118,.35);background:rgba(255,138,118,.06)}
+.proj.close{border-color:rgba(233,191,98,.5);background:rgba(233,191,98,.08)}
+.proj-h{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#9bb0ae;margin-bottom:8px}
+.proj-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.proj-row span{font-size:.86rem;font-weight:600;color:#d6e2df;line-height:1.35}
+.proj-row b{font:600 1.9rem 'Fraunces',serif;color:#f7dea0;white-space:nowrap}
+.proj.over .proj-row b{color:#6fe3d0}.proj.under .proj-row b{color:#ff8a76}
+.proj-t{margin-top:8px;font-size:.86rem;font-weight:600;color:#e7e2d6;line-height:1.45}
+.proj-t b{color:#fff}
+.real.big .v{font-size:3.6rem}
+.real .v.good{color:#6fe3d0;text-shadow:none}.real .v.bad{color:#ff8a76;text-shadow:none}
+.phone-lb{margin-top:14px;padding:12px 8px 0}
+.solo-note{margin-top:14px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.05);font-size:.82rem;font-weight:600;color:#9bb0ae;line-height:1.5;text-align:center}
+.rejoin{position:fixed;inset:0;z-index:200;background:rgba(5,12,21,.94);display:grid;place-items:center;color:#f6f1e7;text-align:center;padding:30px;cursor:pointer}
+.rejoin h2{color:#f7dea0;font-size:1.6rem;margin-bottom:8px}
+
+/* ════════ LUCKY SIP (25 Nov 2026) — reveal, podium, ladder, scoreboard. Everything else is The Wealth Hack's shell. ════════ */
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:150}
+body.host-bg .progbox.solo{flex:none;align-items:center;text-align:center;padding:.9rem 2.4rem}
+body.host-bg .reveal-stage{gap:.7rem}
+body.host-bg .real-label{font-size:1.5rem;font-weight:700;color:var(--stage-ink);text-align:center;text-shadow:0 2px 16px rgba(0,0,0,.7)}
+body.host-bg .big-real{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(3.6rem,8.5vw,7rem);line-height:1.05;color:var(--gold-hi);text-shadow:0 0 70px rgba(233,191,98,.45),0 6px 30px rgba(0,0,0,.6);font-variant-numeric:tabular-nums;white-space:nowrap}
+body.host-bg .big-real.rolling{color:#fff}
+body.host-bg .big-real.landed{animation:landed .7s ease-out}
+@keyframes landed{0%{transform:scale(1.16);filter:brightness(1.8)}100%{transform:none;filter:none}}
+body.host-bg .real-sub{font-size:1.2rem;font-weight:700;color:var(--stage-sub);margin-top:-.3rem}
+body.host-bg .xtra{opacity:0;transform:translateY(12px);transition:opacity .6s,transform .6s}
+body.host-bg .xtra.show{opacity:1;transform:none}
+body.host-bg .podium{display:flex;justify-content:center;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+body.host-bg .pcard{opacity:0;transform:translateY(20px) scale(.94);transition:opacity .5s,transform .5s;min-width:13rem;padding:.9rem 1.4rem;text-align:center;border-radius:18px}
+body.host-bg .pcard.show{opacity:1;transform:none}
+body.host-bg .pcard.win{min-width:16rem;padding:1.2rem 1.8rem;border-color:rgba(245,196,81,.8);background:linear-gradient(180deg,rgba(245,196,81,.2),rgba(10,26,34,.78));box-shadow:0 0 0 1px rgba(245,196,81,.4),0 0 70px rgba(245,196,81,.32),var(--shadow-lg)}
+body.host-bg .pcard.win.show{transform:scale(1.06)}
+body.host-bg .pcard .medal{font-size:2.4rem;line-height:1}
+body.host-bg .pcard.win .medal{font-size:3.2rem}
+body.host-bg .pcard .pn{font-family:'Fraunces',serif;font-weight:700;font-size:1.9rem;color:#fff;line-height:1.15;margin-top:.2rem}
+body.host-bg .pcard.win .pn{font-size:2.5rem;color:var(--gold-hi)}
+body.host-bg .pcard .pg{font-size:1.1rem;font-weight:700;color:var(--stage-sub)}
+body.host-bg .pcard .pgap{font-size:1.15rem;font-weight:800;color:var(--teal-bright);margin-top:.15rem}
+body.host-bg .nobody{font-family:'Fraunces',serif;font-style:italic;font-size:1.6rem;color:var(--stage-sub);margin:0}
+body.host-bg .cmp{padding:.9rem 1.4rem;width:100%;max-width:44rem}
+body.host-bg .cmp-row{display:grid;grid-template-columns:6.5rem 1fr 8.5rem;align-items:center;gap:.9rem;padding:.25rem 0;font-weight:700}
+body.host-bg .cmp-row .cy{color:var(--stage-sub);font-size:1.1rem}
+body.host-bg .cmp-row .cbar{height:.9rem;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;display:block}
+body.host-bg .cmp-row .cbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#d79f34,#f7dea0)}
+body.host-bg .cmp-row b{font-family:'Fraunces',serif;font-size:1.5rem;text-align:right;font-variant-numeric:tabular-nums;color:var(--stage-ink)}
+body.host-bg .cmp-row.cur .cy,body.host-bg .cmp-row.cur b{color:var(--gold-hi)}
+body.host-bg .cmp.delay{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.3rem 1.2rem;text-align:center;max-width:48rem}
+body.host-bg .dn{font-family:'Fraunces',serif;font-size:2.8rem;font-weight:600;color:#fff;font-variant-numeric:tabular-nums;line-height:1.1}
+body.host-bg .dn.gold{color:var(--gold-hi)}
+body.host-bg .dl-arrow{font-size:2.2rem;color:var(--gold)}
+body.host-bg .dl-extra{grid-column:1/-1;border-top:1px solid var(--glass-edge);padding-top:.6rem;font-size:1.6rem;font-weight:800;color:var(--coral)}
+body.host-bg .dl-extra span{display:block;font-size:1.05rem;font-weight:700;color:var(--stage-sub)}
+body.host-bg .ladder{width:100%;max-width:60rem;padding:.8rem 1.4rem}
+body.host-bg .lrow{display:grid;grid-template-columns:6.5rem 1fr 9.5rem 14rem;align-items:center;gap:1rem;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.07);opacity:0;animation:rise .6s ease-out forwards}
+body.host-bg .lrow:last-child{border-bottom:0}
+body.host-bg .ly{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;color:#fff;line-height:1.1}
+body.host-bg .ly small{display:block;font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:700;color:var(--stage-sub)}
+body.host-bg .lbar{height:1.1rem;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;display:block}
+body.host-bg .lbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#d79f34,#f7dea0)}
+body.host-bg .lrow:not(:first-child) .lbar i{background:linear-gradient(90deg,#e8776a,#ffb3a6)}
+body.host-bg .la{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;text-align:right;color:var(--stage-ink);font-variant-numeric:tabular-nums}
+body.host-bg .lx em{font-style:normal;font-weight:800;font-size:1.25rem;color:var(--coral)}
+body.host-bg .lx small{display:block;font-size:.9rem;font-weight:700;color:var(--stage-sub)}
+body.host-bg .score{width:100%;padding:.5rem 1rem}
+body.host-bg .srow{display:grid;grid-template-columns:2rem 1fr auto auto;align-items:center;gap:.7rem;padding:.5rem .3rem;border-bottom:1px solid rgba(255,255,255,.08);font-weight:700;font-size:1.15rem;color:var(--stage-ink)}
+body.host-bg .srow:last-child{border-bottom:0}
+body.host-bg .srow.first{font-size:1.4rem;color:var(--gold-hi)}
+body.host-bg .srow .sn{display:flex;align-items:center;gap:.6rem}
+body.host-bg .srow .av{width:1.9rem;height:1.9rem;border-radius:50%;display:grid;place-items:center;font-size:1rem;color:#fff}
+body.host-bg .srow .sw{font-size:.9rem;color:var(--stage-sub)}
+body.host-bg .srow b{font-family:'Fraunces',serif;font-size:1.35rem}
+body.host-bg .end-stage{max-width:32rem}
+body.hc.host-bg .big-real{font-size:clamp(3.2rem,7.5vw,5.6rem)}
+body.hc.host-bg .real-label{font-size:1.3rem}
+body.hc.host-bg .pcard{padding:.6rem 1.2rem}
+body.hc.host-bg .pcard.win{padding:.9rem 1.6rem}
+body.hc.host-bg .pcard .medal{font-size:1.9rem}
+body.hc.host-bg .pcard.win .medal{font-size:2.5rem}
+body.hc.host-bg .pcard .pn{font-size:1.55rem}
+body.hc.host-bg .pcard.win .pn{font-size:2rem}
+body.hc.host-bg .dn{font-size:2.3rem}
+body.hc.host-bg .cmp{padding:.6rem 1.2rem}
+body.hc.host-bg .lrow{padding:.35rem 0}
+body.hc.host-bg .ly{font-size:1.5rem}
+</style>
+<!-- PostHog (games site, same project as www) -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https://us.i.posthog.com',person_profiles:'identified_only',capture_pageview:true,capture_pageleave:true,autocapture:false,cross_subdomain_cookie:true});
+</script>
+</head>
+<body>
+<video id="bgv" class="bgv" src="wealth-hack-loop.mp4" poster="wealth-hack-stage.jpg" autoplay muted loop playsinline></video>
+<div id="bgShade" class="bgshade"></div>
+<div id="host" class="hide"></div>
+<div id="player" class="hide"></div>
+<div id="qrFull" class="hide" onclick="closeQRFull()"></div>
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   LUCKY SIP — guess the monthly amount, the closest one wins.
+   Same question for everyone: how much a month to reach ₹1 Cr?
+   Round 1: 10 years · Round 2: 20 years · Round 3: the cost of delay (start 2 years late).
+   Reuses the Stock Rush / KBC / Wealth Hack Supabase project (games table) — no setup. Room codes are L####.
+   Host = projector (?role=host, default). Players = phones (?role=player&room=PIN).
+   ═══════════════════════════════════════════════════════════════ */
+const GAME_NAME='Lucky SIP';
+const TAGLINE='Guess the monthly amount. The closest one wins.';
+const SHARE_URL='https://games.investingformummies.com/lucky-sip';
+const SUPABASE_URL='https://gkfldkytzfngwnkrwrga.supabase.co';
+const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrZmxka3l0emZuZ3dua3J3cmdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5MzI4NDksImV4cCI6MjA5NDUwODg0OX0.wwyFY0bhbGhCKCpAjgZ0oCS8gda21FHcvDdvlg9xCmU';
+const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+const LOGO='IFM round logo for watermark.png';
+const AV_EMOJI=['🦊','🐯','🦄','🐼','🦁','🐨','🐸','🦋','🐝','🦉','🐙','🦖','🌸','🍀','⭐','🚀','💎','🎯','🍰','🦚'];
+const AV_COLOR=['#d6452e','#2f66bd','#157f78','#a87a10','#7d3a9c','#c2487f','#16806c','#c7692a','#4f6f7c','#5b4fd0'];
+const REVEAL_DELAY=5200;            // phones wait this long after a reveal starts, so the projector's drum roll is not spoiled
+const REDUCED=(()=>{ try{ return matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){ return false; } })();
+
+/* ── money (§9) ───────────────────────────────────────────────── */
+function fmtMoney(n){ n=Math.round(n);
+  if(n>=10000000){const v=n/10000000;return '₹'+(v>=100?Math.round(v):v%1?v.toFixed(v<10?2:1):v)+' Cr';}
+  if(n>=100000){const v=n/100000;return '₹'+(v>=100?Math.round(v):v%1?v.toFixed(v<10?2:1):v)+' L';}
+  if(n>=1000){const v=n/1000;return '₹'+(v%1?v.toFixed(1):v)+'k';}
+  return '₹'+n;
+}
+function indianFormat(digits){ digits=String(digits).replace(/\D/g,''); if(!digits) return '';
+  const last3=digits.slice(-3), rest=digits.slice(0,-3);
+  return (rest?rest.replace(/\B(?=(\d{2})+(?!\d))/g,',')+',':'')+last3; }
+const rupees=n=>'₹'+indianFormat(Math.round(n));          // the exact figure: ₹43,471
+const parseNum=v=>parseInt(String(v).replace(/\D/g,''),10)||0;
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* ── the maths: end-of-month SIP, monthly compounding (same as The Wealth Hack) ── */
+function sipFor(fv,years,ratePct){ const r=ratePct/1200, n=Math.round(years*12); if(n<=0) return fv; return fv*r/(Math.pow(1+r,n)-1); }
+
+/* ── rounds ───────────────────────────────────────────────────── */
+const PHASES=['lobby','r1_ask','r1_reveal','r2_ask','r2_reveal','r3_ask','r3_reveal','r3_ladder','end'];
+const ROUND_KEYS=['r1','r2','r3'];
+const tgt=S=>fmtMoney(S.target);
+function realOf(rk,s){ s=s||state.settings;
+  if(rk==='r1') return sipFor(s.target,s.years1,s.rate);
+  if(rk==='r2') return sipFor(s.target,s.years2,s.rate);
+  return sipFor(s.target,s.years1-s.delay,s.rate);
+}
+const ROUNDS={
+  r1:{n:1,title:'Ten years',
+      hostQ:S=>`How much would you need to put away <em>every month</em> to have <em>${tgt(S)}</em> in <em>${S.years1} years</em>?`,
+      why:S=>`Assume ${S.rate}% a year. Type the monthly amount you think it takes.`,
+      phoneQ:S=>`How much would you need to put away every month to have <em>${tgt(S)}</em> in <em>${S.years1} years</em>?`,
+      label:S=>`To have ${tgt(S)} in ${S.years1} years, put away`},
+  r2:{n:2,title:'Twenty years',
+      hostQ:S=>`Same ${tgt(S)}. Now you have <em>${S.years2} years</em>. How much a month?`,
+      why:S=>`Same ${S.rate}% a year. More time to grow.`,
+      phoneQ:S=>`Same ${tgt(S)}. Now you have <em>${S.years2} years</em>. How much a month?`,
+      label:S=>`To have ${tgt(S)} in ${S.years2} years, put away`},
+  r3:{n:3,title:'The cost of delay',
+      hostQ:S=>`Same ${tgt(S)}, same finish line in <em>${S.startYear+S.years1}</em>. Starting in ${S.startYear} took <em>${rupees(realOf('r1',S))}</em> a month. What if you start in <em>${S.startYear+S.delay}</em>?`,
+      why:S=>`Only ${S.years1-S.delay} years left to build it. How much a month now?`,
+      phoneQ:S=>`Same ${tgt(S)}, same finish line in <em>${S.startYear+S.years1}</em>. Starting in ${S.startYear} took ${rupees(realOf('r1',S))} a month. What if you start in <em>${S.startYear+S.delay}</em>?`,
+      label:S=>`Starting in ${S.startYear+S.delay}, you put away`},
+};
+function roundOf(phase){ const m=/^(r\d)_/.exec(phase||''); return m&&ROUNDS[m[1]]?m[1]:null; }
+
+/* ── role / room ──────────────────────────────────────────────── */
+const params=new URLSearchParams(location.search);
+const _soloDetect=()=>{ try{ return matchMedia('(pointer:coarse)').matches&&innerWidth<700; }catch(e){ return false; } };
+let ROLE=params.get('role')||(_soloDetect()?'player':'host');
+let ROOM=params.get('room')||null;
+const MY_ID=(function(){let id=localStorage.getItem('ls_pid');if(!id){id=(crypto.randomUUID?crypto.randomUUID():'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,10));localStorage.setItem('ls_pid',id);}return id;})();
+let isHost=(ROLE==='host');
+let state=null;
+function freshState(){
+  return {phase:'lobby',nonce:0,
+    settings:{target:10000000,rate:12,years1:10,years2:20,delay:2,startYear:new Date().getFullYear()},
+    players:{},results:{},hostId:MY_ID,updatedAt:Date.now()};
+}
+const S=()=>state.settings;
+const playersList=()=>Object.values(state.players).sort((a,b)=>a.name.localeCompare(b.name));
+const av=p=>`<span class="av" style="background:${p.color}">${p.av}</span>`;
+const hasGuess=(p,rk)=>p.guess&&p.guess[rk]>0;
+
+/* ── scoring: the smallest rupee gap wins; ties share the rank; 3 / 2 / 1 points for the top three ── */
+function closeRound(rk){
+  const real=Math.round(realOf(rk));
+  const rows=Object.values(state.players).filter(p=>hasGuess(p,rk)).map(p=>({id:p.id,guess:p.guess[rk],gap:Math.abs(p.guess[rk]-real)}))
+    .sort((a,b)=>a.gap-b.gap||a.guess-b.guess);
+  let rank=0,last=null; rows.forEach(r=>{ if(r.gap!==last){ rank++; last=r.gap; } r.rank=rank; r.pts=rank<=3?4-rank:0; });
+  state.results[rk]={real,rows};
+}
+function scoreboard(){
+  const tot={}; Object.keys(state.players).forEach(id=>tot[id]={id,pts:0,wins:0});
+  ROUND_KEYS.forEach(rk=>{ const r=state.results[rk]; if(!r) return; r.rows.forEach(x=>{ if(!tot[x.id]) return; tot[x.id].pts+=x.pts; if(x.rank===1) tot[x.id].wins++; }); });
+  return Object.values(tot).map(t=>Object.assign(t,{p:state.players[t.id]})).filter(t=>t.p).sort((a,b)=>b.pts-a.pts||b.wins-a.wins||a.p.name.localeCompare(b.p.name));
+}
+// equal points and wins share a place, so a tie never hands one player the medal
+function ranked(){ const sc=scoreboard(); let pos=0,last=null; sc.forEach(t=>{ const k=t.pts+':'+t.wins; if(k!==last){ pos++; last=k; } t.pos=pos; }); return sc; }
+const gapText=(gap,real)=>gap<=Math.max(25,real*0.002)?'almost exact':fmtMoney(gap)+' away';
+
+/* ── DB: ordered, retried saves ───────────────────────────────── */
+let _saveTimer=null,_saveDirty=false,_saveBusy=false,_saveFails=0;
+function save(){ state.updatedAt=Date.now(); clearTimeout(_saveTimer); _saveTimer=setTimeout(flushSave,60); }
+function saveNow(){ state.updatedAt=Date.now(); return flushSave(); }
+async function flushSave(){
+  _saveDirty=true; if(_saveBusy) return; _saveBusy=true;
+  try{
+    while(_saveDirty){ _saveDirty=false; let ok=false;
+      try{ const {error}=await db.from('games').upsert({room_code:ROOM,state,host_id:MY_ID,updated_at:new Date().toISOString()});
+           ok=!error; if(error) console.warn('save failed — retrying',error.message||error); }
+      catch(e){ console.warn('save failed — retrying',e); }
+      if(ok){ _saveFails=0; } else { _saveFails++; _saveDirty=true; await new Promise(r=>setTimeout(r,Math.min(4000,400*2**Math.min(_saveFails-1,4)))); }
+      netBanner();
+    }
+  } finally { _saveBusy=false; }
+}
+function netBanner(){
+  if(!isHost) return;
+  let b=document.getElementById('netBanner');
+  const bad=_saveFails>=2||navigator.onLine===false;
+  if(!bad){ if(b) b.remove(); return; }
+  if(!b){ b=document.createElement('div'); b.id='netBanner'; b.className='net'; document.body.appendChild(b); }
+  b.innerHTML='⚠️ The phones can’t get this screen right now — retrying… <b>Don’t move on yet.</b>';
+}
+addEventListener('online',()=>{ if(isHost){ netBanner(); saveNow(); } }); addEventListener('offline',()=>netBanner());
+
+/* ── realtime ─────────────────────────────────────────────────── */
+let channel=null, _lastStateAt=Date.now();
+function joinChannel(){
+  channel=db.channel('room:'+ROOM);
+  channel.on('postgres_changes',{event:'*',schema:'public',table:'games',filter:'room_code=eq.'+ROOM},
+    (p)=>{const s=p.new&&p.new.state; if(s&&!isHost){state=s; _lastStateAt=Date.now(); renderPlayer();}})
+    .on('broadcast',{event:'action'},({payload})=>{ if(isHost) hostHandleAction(payload); })
+    .subscribe();
+}
+function sendAction(payload){ channel.send({type:'broadcast',event:'action',payload}); }
+
+/* ── confetti (plain canvas, no library) ──────────────────────── */
+function confetti(ms,count){
+  if(REDUCED) return;
+  let cv=document.getElementById('confetti'); if(!cv){ cv=document.createElement('canvas'); cv.id='confetti'; document.body.appendChild(cv); }
+  const w=cv.width=innerWidth, h=cv.height=innerHeight, ctx=cv.getContext('2d');
+  const cols=['#f7dea0','#e9bf62','#2dd4bf','#ff8a76','#ffffff','#a78bfa'];
+  const ps=Array.from({length:count||160},()=>({x:Math.random()*w,y:-20-Math.random()*h*0.5,vx:(Math.random()-.5)*4,vy:2+Math.random()*5,s:6+Math.random()*8,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:cols[Math.floor(Math.random()*cols.length)]}));
+  const t0=performance.now();
+  (function frame(t){ const k=t-t0; ctx.clearRect(0,0,w,h);
+    ps.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; p.vy+=.06; p.r+=p.vr; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.fillStyle=p.c; ctx.globalAlpha=Math.max(0,1-Math.max(0,k-ms*.7)/(ms*.3)); ctx.fillRect(-p.s/2,-p.s/3,p.s,p.s*.6); ctx.restore(); });
+    if(k<ms) requestAnimationFrame(frame); else ctx.clearRect(0,0,w,h); })(t0);
+}
+
+/* ═══════════════════ HOST ═══════════════════ */
+let _timers=[], _iv=null;
+function clearTimers(){ _timers.forEach(clearTimeout); _timers=[]; clearInterval(_iv); }
+function later(fn,ms){ _timers.push(setTimeout(fn,ms)); }
+const IDLE_MS=120*60*1000; let _lastActivity=Date.now();
+function bump(){ _lastActivity=Date.now(); }
+function postLive(){ try{ const live=state.phase!=='lobby'&&state.phase!=='end'; window.parent.postMessage({type:live?'stock-rush-live':'stock-rush-idle'},'*'); }catch(e){} }
+// The projector UI scales with the screen: 16px root on a laptop, ~21px on a 1080p projector. `hc` marks a short screen.
+function fitHost(){
+  const px=Math.max(16,Math.min(22,innerWidth/90,innerHeight/50.6));
+  document.documentElement.style.fontSize=px+'px';
+  document.body.classList.toggle('hc',innerHeight/px<57);
+  return px;
+}
+
+async function initHost(){
+  try{ if(window.self!==window.top) document.body.classList.add('framed'); }catch(e){ document.body.classList.add('framed'); }
+  document.getElementById('host').classList.remove('hide');
+  document.body.classList.add('host-bg');
+  fitHost(); let _rz=null; addEventListener('resize',()=>{ clearTimeout(_rz); _rz=setTimeout(()=>{ fitHost(); if(state) renderHost(); },150); });
+  if(!ROOM){ ROOM='L'+(1000+Math.floor(Math.random()*9000));   // L-prefix: never collides with E#### (Wealth Hack), MF####, SG#### or KBC's numeric PINs
+    const p=new URLSearchParams(location.search);p.set('role','host');p.set('room',ROOM);history.replaceState(null,'','?'+p.toString()); }
+  joinChannel();
+  let resumed=false;
+  try{
+    const {data}=await db.from('games').select('state,updated_at').eq('room_code',ROOM).maybeSingle();
+    const s=data&&data.state;
+    const recent=data&&data.updated_at&&(Date.now()-new Date(data.updated_at).getTime()<45*60*1000);
+    if(s&&recent&&s.settings&&s.phase!=='lobby'&&s.phase!=='end'&&Object.keys(s.players||{}).length>0){ state=s; state.hostId=MY_ID; state.results=state.results||{}; resumed=true; }
+  }catch(e){}
+  if(!resumed){ state=freshState(); await saveNow(); }
+  // Local design QA only: ?demo=1&phase=r1_reveal seeds a room so every screen can be screenshotted.
+  if(params.get('demo')&&/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){
+    const real={r1:realOf('r1'),r2:realOf('r2'),r3:realOf('r3')};
+    const names=['Meera','Rohan','Aanya','Kabir','Zoya','Dev','Tara','Imran'], f=[1.02,0.8,1.35,0.55,0.97,1.12,0.7,1.6];
+    names.forEach((n,i)=>{ state.players['d'+i]={id:'d'+i,name:n,av:AV_EMOJI[i],color:AV_COLOR[i],guess:{r1:Math.round(real.r1*f[i]),r2:Math.round(real.r2*f[(i+3)%8]),r3:Math.round(real.r3*f[(i+5)%8])}}; });
+    state.phase=params.get('phase')||'lobby';
+    const idx=PHASES.indexOf(state.phase);
+    ROUND_KEYS.forEach((rk,i)=>{ if(idx>PHASES.indexOf(rk+'_ask')) closeRound(rk); });
+  }
+  const rb=document.createElement('button'); rb.className='host-reset'; rb.textContent='↺ New game'; rb.onclick=hostReset; document.body.appendChild(rb);
+  const jw=document.createElement('div'); jw.className='join-corner'; jw.id='joinCorner'; jw.title='Scan to join or rejoin';
+  jw.innerHTML='<div class="jc-qr" id="jcQr"></div><div class="jc-txt"><div class="jc-lbl">Scan to (re)join</div><div class="jc-pin">'+ROOM+'</div><div class="jc-tap">tap to enlarge ⛶</div></div>';
+  jw.onclick=openQRFull; document.body.appendChild(jw); makeQR(document.getElementById('jcQr'),56);
+  const kh=document.createElement('div'); kh.className='key-hint'; kh.id='keyHint'; document.body.appendChild(kh);
+  const bk=document.createElement('button'); bk.className='host-back'; bk.id='hostBack'; bk.textContent='← Back'; bk.onclick=hostBack; document.body.appendChild(bk);
+  const nx=document.createElement('button'); nx.className='host-next'; nx.id='hostNext'; nx.onclick=hostAdvance; document.body.appendChild(nx);
+  document.addEventListener('keydown',e=>{
+    if(e.target&&/INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if(!document.getElementById('qrFull').classList.contains('hide')){ closeQRFull(); return; }
+    if(e.code==='Space'||e.key==='ArrowRight'||e.key==='Enter'){ e.preventDefault(); hostAdvance(); }
+    else if(e.key==='ArrowLeft'||e.key==='Backspace'){ e.preventDefault(); hostBack(); }
+  });
+  setInterval(()=>{ if(state&&state.phase!=='lobby'&&Date.now()-_lastActivity>IDLE_MS){ bump(); state=freshState(); saveNow(); renderHost(); } },30000);
+  renderHost();
+}
+function playerUrl(){return location.origin+location.pathname+'?role=player&room='+ROOM;}
+function makeQR(el,size){
+  el.innerHTML=''; el.style.position='relative'; el.style.width=size+'px'; el.style.height=size+'px';
+  try{
+    new QRCode(el,{text:playerUrl(),width:size,height:size,colorDark:'#1a3a5c',colorLight:'#ffffff',correctLevel:(window.QRCode&&QRCode.CorrectLevel?QRCode.CorrectLevel.H:2)});
+    const s=Math.round(size*0.22), pad=Math.max(3,Math.round(size*0.014));
+    const logo=document.createElement('img'); logo.src=LOGO;
+    logo.style.cssText=`position:absolute;left:50%;top:50%;width:${s}px;height:${s}px;transform:translate(-50%,-50%);border-radius:50%;background:#fff;padding:${pad}px;box-sizing:content-box`;
+    el.appendChild(logo);
+  }catch(e){ el.textContent=playerUrl(); }
+}
+function openQRFull(){ const q=document.getElementById('qrFull'); q.classList.remove('hide');
+  q.innerHTML=`<div class="lcard"><div class="lk"><i></i>Scan to join</div><div class="qr-tile" style="cursor:pointer"><div id="qrBig"></div></div><div class="pin-row"><span class="pin-label">game pin</span><span class="pin">${ROOM}</span></div><div class="joinurl">${playerUrl()}</div><div class="pin-label" style="margin-top:14px;opacity:.7">tap anywhere to close</div></div>`;
+  makeQR(document.getElementById('qrBig'),Math.min(500,Math.round(innerHeight*0.56))); }
+function closeQRFull(){ document.getElementById('qrFull').classList.add('hide'); }
+function hostReset(){ if(!confirm('Start a fresh game in this room? Everyone will need to rejoin.')) return; bump(); clearTimers(); _played=null; state=freshState(); saveNow(); renderHost(); }
+
+// Advancing out of an "ask" phase closes the answers: the result is stored right then, so a late tap can never change it.
+function enterPhase(ph){ state.phase=ph; state.nonce++; }
+function hostAdvance(){
+  const i=PHASES.indexOf(state.phase); if(i<0||i>=PHASES.length-1) return;
+  if(state.phase==='lobby'&&!Object.keys(state.players).length) return;
+  bump(); const rk=roundOf(state.phase); if(rk&&/_ask$/.test(state.phase)) closeRound(rk);
+  enterPhase(PHASES[i+1]); save(); renderHost();
+}
+function hostBack(){
+  const i=PHASES.indexOf(state.phase); if(i<=0) return; bump();
+  const rk=roundOf(state.phase); if(rk&&/_reveal$/.test(state.phase)) delete state.results[rk];   // answers re-open, and are scored again on the next close
+  enterPhase(PHASES[i-1]); save(); renderHost();
+}
+function hostHandleAction(a){
+  if(!a||!a.type||!state) return; bump();
+  if(a.type==='join'){
+    let name=String(a.name||'').slice(0,16).trim(); if(!name) return;
+    if(!state.players[a.id]){
+      const taken=Object.values(state.players).map(p=>p.name.toLowerCase()); let nm=name, k=2; while(taken.includes(nm.toLowerCase())) nm=name.slice(0,13)+' '+(k++); name=nm;
+      const n=Object.keys(state.players).length;
+      state.players[a.id]={id:a.id,name,av:AV_EMOJI[n%AV_EMOJI.length],color:AV_COLOR[n%AV_COLOR.length],guess:{}};
+    }
+    save(); if(state.phase==='lobby'||/_ask$/.test(state.phase)) renderHost();
+  }
+  else if(a.type==='guess'){
+    const p=state.players[a.id]; const rk=roundOf(state.phase);
+    if(!p||!rk||state.phase!==rk+'_ask'||a.round!==rk) return;
+    const v=Math.min(100000000,Math.max(0,Math.round(+a.value||0))); if(!(v>0)) return;
+    p.guess=p.guess||{}; p.guess[rk]=v; save(); renderHost();
+  }
+}
+
+/* ── host render ──────────────────────────────────────────────── */
+const NEXT_LABEL={lobby:'Start · Round 1 →',r1_ask:'Close answers & reveal →',r1_reveal:'Next: twenty years →',r2_ask:'Close answers & reveal →',r2_reveal:'Next: the cost of delay →',r3_ask:'Close answers & reveal →',r3_reveal:'Show the ladder →',r3_ladder:'Final scores →',end:''};
+let _played=null;
+function renderHost(){
+  clearTimers(); postLive(); const rootPx=fitHost();
+  const h=document.getElementById('host'); const ph=state.phase, rk=roundOf(ph);
+  const lobby=ph==='lobby';
+  document.getElementById('joinCorner').style.display=lobby?'none':'flex';
+  h.classList.toggle('has-corner',!lobby);
+  document.body.classList.toggle('end-bg',ph==='end');
+  const kh=document.getElementById('keyHint'); kh.innerHTML='<b>Space</b> / <b>→</b> next · <b>←</b> back'; kh.style.display=lobby?'none':'block';
+  document.getElementById('hostBack').style.display=lobby?'none':'block';
+  const nx=document.getElementById('hostNext'); nx.textContent=NEXT_LABEL[ph]||''; nx.style.display=(lobby||!NEXT_LABEL[ph])?'none':'block'; nx.classList.remove('pulse');
+  if(lobby) h.innerHTML=tplLobby();
+  else if(/_ask$/.test(ph)){ h.innerHTML=tplAsk(rk); const ps=playersList(); if(ps.length&&ps.every(p=>hasGuess(p,rk))) nx.classList.add('pulse'); }
+  else if(/_reveal$/.test(ph)){ h.innerHTML=tplReveal(rk); playReveal(rk); }
+  else if(ph==='r3_ladder') h.innerHTML=tplLadder();
+  else if(ph==='end'){ h.innerHTML=tplEnd(); if(_played!=='end:'+state.nonce){ _played='end:'+state.nonce; later(()=>confetti(3500,200),400); } }
+  if(lobby) makeQR(document.getElementById('lobbyQr'),Math.round(rootPx*(document.body.classList.contains('hc')?12.25:14)));
+}
+function tplLobby(){
+  const ps=playersList(), n=ps.length;
+  const chips=n?ps.map(p=>`<span class="pl">${av(p)}${esc(p.name)}</span>`).join(''):`<div style="width:100%;text-align:center"><div class="slots"><span></span><span></span><span></span><span></span></div><p class="waiting">Waiting for the first scan…</p></div>`;
+  const s=S();
+  return `<div class="stage lobby-stage">
+    <img class="hero-mark" src="${LOGO}" alt="">
+    <div class="presents">Investing for Mummies presents</div>
+    <h1 class="hero-title">${GAME_NAME}</h1>
+    <p class="hero-tag">${TAGLINE.replace('The closest one wins.','<b>The closest one wins.</b>')}</p>
+    <div class="lobby-grid">
+      <section class="lcard">
+        <div class="lk"><i></i>Scan to join</div>
+        <div class="qr-tile" onclick="openQRFull()" title="Tap to enlarge"><div id="lobbyQr"></div></div>
+        <p class="scan-how">Point your phone camera at the code, then type your name.</p>
+        <div class="pin-row"><span class="pin-label">or enter game pin</span><span class="pin">${ROOM}</span></div>
+        <div class="joinurl">${playerUrl().replace(/^https?:\/\//,'')}</div>
+      </section>
+      <section class="lcard">
+        <div class="room-head"><h2>In the room</h2><span class="count">${n}</span></div>
+        <div class="players ${sizeClass(n)}">${chips}</div>
+        <div class="plan">
+          <div><i>1</i><b>Guess the number</b><span>${tgt(s)} in ${s.years1} years. How much a month?</span></div>
+          <div><i>2</i><b>Closest wins</b><span>Top three on the podium. Confetti for the winner.</span></div>
+          <div><i>3</i><b>More time</b><span>Now you have ${s.years2} years. Watch the number shrink.</span></div>
+          <div><i>4</i><b>Cost of delay</b><span>Start ${s.delay} years late. Guess what it costs.</span></div>
+        </div>
+        <button class="btn big" onclick="hostAdvance()" ${n?'':'disabled'}>${n?'Start · Round 1 →':'Waiting for the first scan'}</button>
+      </section>
+    </div>
+  </div>`;
+}
+const sizeClass=n=>n<=8?'sz-xl':n<=16?'sz-lg':'';
+function tplAsk(rk){
+  const R=ROUNDS[rk], ps=playersList(), s=S(), done=ps.filter(p=>hasGuess(p,rk)).length;
+  return `<div class="stage ask-stage">
+    <div class="presents">Round ${R.n} of 3 · ${R.title}</div>
+    <div class="glass q-panel"><p class="q">${R.hostQ(s)}</p><p class="why">${R.why(s)}</p></div>
+    <div class="glass progbox solo"><div class="live"><i></i> Live · type your guess on your phone</div><div class="prog"><b>${done}</b> / ${ps.length} locked in</div></div>
+    <div class="pl-wall ${sizeClass(ps.length)}">${ps.map(p=>`<span class="pl ${hasGuess(p,rk)?'lit':'dim'}">${av(p)}${esc(p.name)}</span>`).join('')}</div>
+  </div>`;
+}
+// Reveal: a drum roll, the real number lands, then the podium fills from third place up to the winner.
+function tplReveal(rk){
+  const R=ROUNDS[rk], s=S(), res=state.results[rk]||{real:Math.round(realOf(rk)),rows:[]}, real=res.real;
+  const top=res.rows.filter(r=>r.pts>0).slice(0,6);
+  const order=r=>r.rank===1?1:r.rank===2?0:2;         // podium: 2nd left, 1st middle, 3rd right
+  const medal=['','🥇','🥈','🥉'];
+  const cards=top.slice().sort((a,b)=>order(a)-order(b)||a.gap-b.gap).map(r=>{ const p=state.players[r.id]; if(!p) return '';
+    return `<div class="glass pcard ${r.rank===1?'win':''}" data-rank="${r.rank}"><div class="medal">${medal[r.rank]}</div><div class="pn">${esc(p.name)}</div><div class="pg">guessed ${rupees(r.guess)}</div><div class="pgap">${gapText(r.gap,real)}</div></div>`; }).join('');
+  let extra='';
+  if(rk==='r2'){
+    const yrs=[...new Set([s.years1,s.years2,25])].sort((a,b)=>a-b), amts=yrs.map(y=>sipFor(s.target,y,s.rate)), mx=Math.max(...amts);
+    extra=`<div class="glass cmp xtra"><div class="kicker">Same ${tgt(s)}, more time</div>${yrs.map((y,i)=>`<div class="cmp-row ${y===s.years2?'cur':''}"><span class="cy">${y} years</span><span class="cbar"><i style="width:${Math.max(4,amts[i]/mx*100)}%"></i></span><b>${rupees(amts[i])}</b></div>`).join('')}</div>`;
+  }
+  if(rk==='r3'){
+    const a=realOf('r1'), b=realOf('r3'), d=b-a;
+    extra=`<div class="glass cmp xtra delay"><div class="dl"><div class="kicker">Start in ${s.startYear}</div><div class="dn">${rupees(a)}</div></div><div class="dl-arrow">→</div><div class="dl"><div class="kicker">Start in ${s.startYear+s.delay}</div><div class="dn gold">${rupees(b)}</div></div>
+      <div class="dl-extra"><b>${rupees(d)} more</b> every month<span>${Math.round(d/a*100)}% higher for waiting ${s.delay} years</span></div></div>`;
+  }
+  return `<div class="stage reveal-stage">
+    <div class="presents">Round ${R.n} · the real number</div>
+    <div class="real-label">${R.label(s)}</div>
+    <div class="big-real rolling" id="bigReal">${'₹ '+'• '.repeat(String(Math.round(real)).length)}</div>
+    <div class="real-sub">every month · ${s.rate}% a year</div>
+    ${extra}
+    ${top.length?`<div class="podium">${cards}</div>`:`<p class="nobody xtra">Nobody locked in this round.</p>`}
+  </div>`;
+}
+function playReveal(rk){
+  const key=state.phase+':'+state.nonce, instant=_played===key||REDUCED; _played=key;
+  const big=document.getElementById('bigReal'); if(!big) return;
+  const real=String(Math.round(state.results[rk]?state.results[rk].real:realOf(rk)));
+  const final=rupees(real), cards=[...document.querySelectorAll('.pcard')], extras=[...document.querySelectorAll('.xtra')];
+  const land=()=>{ clearInterval(_iv); big.textContent=final; big.classList.remove('rolling'); big.classList.add('landed'); };
+  if(instant){ land(); big.classList.remove('landed'); cards.concat(extras).forEach(c=>c.classList.add('show')); return; }
+  const t0=performance.now(), n=real.length, DUR=1900;
+  _iv=setInterval(()=>{
+    const k=(performance.now()-t0)/DUR; if(k>=1){ land(); return; }
+    const digs=real.split('').map((d,i)=>k>(i+1)/(n+1)?d:String(Math.floor(Math.random()*10))).join('');
+    big.textContent='₹'+indianFormat(digs);
+  },55);
+  later(()=>extras.forEach(c=>c.classList.add('show')),DUR+300);
+  const seq=cards.slice().sort((a,b)=>(+b.dataset.rank)-(+a.dataset.rank));   // third place first, the winner last
+  seq.forEach((c,i)=>later(()=>c.classList.add('show'),DUR+900+i*750));
+  const winAt=DUR+900+Math.max(0,seq.length-1)*750;
+  if(cards.length) later(()=>confetti(3200,170),winAt+200);
+}
+// The ladder: each extra year of waiting, one bar at a time. No guessing.
+function tplLadder(){
+  const s=S(), base=realOf('r1'), rows=[0,1,2,3,4].map(d=>({d,y:s.startYear+d,a:sipFor(s.target,s.years1-d,s.rate)}));
+  const mx=rows[rows.length-1].a;
+  const body=rows.map((r,i)=>{ const prev=i?rows[i-1].a:null;
+    return `<div class="lrow" style="animation-delay:${i*900}ms"><span class="ly">${r.y}${i===0?'<small>on time</small>':''}</span><span class="lbar"><i style="width:${Math.max(5,r.a/mx*100)}%"></i></span><b class="la">${rupees(r.a)}</b>
+      <span class="lx">${i===0?'':`<em>+${rupees(r.a-base)}</em><small>${prev?`this year alone: +${rupees(r.a-prev)}`:''}</small>`}</span></div>`; }).join('');
+  return `<div class="stage ladder-stage">
+    <div class="presents">The cost of delay</div>
+    <h2 class="title" style="font-size:clamp(1.5rem,2.8vw,2.4rem)">Same ${tgt(s)}, same finish line in ${s.startYear+s.years1}. <em>Every year you wait costs more than the last.</em></h2>
+    <div class="glass ladder">${body}</div>
+    <p class="punch" style="animation-delay:${5*900}ms">Two years late is ${rupees(realOf('r3')-base)} more, every single month.</p>
+  </div>`;
+}
+function tplEnd(){
+  const sc=ranked().filter(t=>t.pts>0), s=S();
+  const top=sc.slice(0,5), champs=sc.filter(t=>t.pos===1), nm=champs.map(t=>esc(t.p.name));
+  const champNames=nm.length>2?nm.slice(0,-1).join(', ')+' and '+nm[nm.length-1]:nm.join(' and ');
+  const extra=realOf('r3')-realOf('r1');
+  const medal=i=>['🥇','🥈','🥉'][i]||'';
+  return `<div class="stage end-stage">
+    <div class="presents">${GAME_NAME} · final scores</div>
+    ${champs.length?`<h1 class="title"><em>${champNames}</em> ${champs.length>1?'are':'is'} the closest.</h1>`:`<h1 class="title">The best month to start is <em>this one.</em></h1>`}
+    <div class="glass score">${top.length?top.map((t,i)=>`<div class="srow ${t.pos===1?'first':''}"><span class="sp">${medal(t.pos-1)||t.pos}</span><span class="sn">${av(t.p)}${esc(t.p.name)}</span><span class="sw">${t.wins?t.wins+(t.wins>1?' wins':' win'):''}</span><b>${t.pts} pts</b></div>`).join(''):`<p class="waiting" style="padding:1rem">No scores this time.</p>`}</div>
+    <div class="glass stat"><div class="kicker">What waiting ${s.delay} years costs</div><div class="big coral">${rupees(extra)}</div><div class="sm">more, every month, for the same ${tgt(s)}</div></div>
+    <p class="tag">The best month to start is this one. Your numbers are on your phone.</p>
+  </div>`;
+}
+
+/* ═══════════════════ PLAYER ═══════════════════ */
+let myName=localStorage.getItem('ls_name')||'';
+let joinSent=false, myLocal={}, myLockedNonce={}, _pendingVal=0, _lastPhase=null, _seen={}, _celebrated={};
+async function initPlayer(){
+  document.getElementById('player').classList.remove('hide');
+  document.body.classList.add('player-bg');
+  if(!ROOM){ document.getElementById('player').innerHTML=shell('<div class="card center"><h2>Scan the QR on the screen</h2><p>or open the link with the game PIN.</p></div>'); return; }
+  joinChannel();
+  try{ const {data}=await db.from('games').select('state').eq('room_code',ROOM).maybeSingle(); if(data&&data.state)state=data.state; }catch(e){}
+  renderPlayer();
+  setInterval(async()=>{ // safety net for dropped realtime events
+    if(!me())return;
+    try{ const {data}=await db.from('games').select('state').eq('room_code',ROOM).maybeSingle();
+      if(data&&data.state&&data.state.updatedAt!==(state&&state.updatedAt)){ state=data.state; _lastStateAt=Date.now(); renderPlayer(); }
+    }catch(e){}
+  },2500);
+  let hiddenAt=0;
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden){ hiddenAt=Date.now(); return; }
+    if(!hiddenAt||Date.now()-hiddenAt<8000) return;
+    const seen=_lastStateAt;
+    setTimeout(()=>{ if(_lastStateAt===seen&&me()){ const o=document.createElement('div'); o.className='rejoin'; o.innerHTML='<div><h2>Tap to rejoin</h2><p>Your phone lost the game for a moment.</p></div>'; o.onclick=()=>location.reload(); document.body.appendChild(o); } },4000);
+  });
+}
+function me(){return state&&state.players?state.players[MY_ID]:null;}
+function joinCheck(){ const n=(document.getElementById('nameInput')||{}).value||''; const b=document.getElementById('joinBtn'); if(b) b.disabled=!n.trim(); }
+function doJoin(){
+  const n=(document.getElementById('nameInput').value||'').trim(); if(!n){ document.getElementById('nameInput').focus(); return; }
+  myName=n; localStorage.setItem('ls_name',n); joinSent=true; sendAction({type:'join',id:MY_ID,name:n}); renderPlayer();
+}
+function onMoney(inp){
+  const d=inp.value.replace(/\D/g,'').slice(0,9);
+  inp.value=indianFormat(d); _pendingVal=parseNum(inp.value);
+  const b=document.getElementById('shBadge'); if(b) b.textContent=_pendingVal>0?fmtMoney(_pendingVal):'';
+  const btn=document.getElementById('lockBtn'); if(btn) btn.disabled=!(_pendingVal>0);
+}
+function pLock(rk){ if(!(_pendingVal>0)) return; myLocal[rk]=_pendingVal; myLockedNonce[rk]=state.nonce; sendAction({type:'guess',id:MY_ID,round:rk,value:_pendingVal}); renderPlayer(); }
+function pChange(rk){ myLockedNonce[rk]=-1; renderPlayer(); }
+function ifmShare(msg){ window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank'); }
+const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>';
+let _shareMsg='';
+function waBtn(msg,label){ _shareMsg=msg; return `<button class="p-btn wa" onclick="ifmShare(_shareMsg)">${WA_ICON}<span>${label}</span></button>`; }
+function shareText(p,pts){
+  const s=S(), a=realOf('r1'), b=realOf('r3');
+  return ['🎲 *'+GAME_NAME+'*','_closest to the number wins_','',
+    `${tgt(s)} in ${s.years1} years: *${rupees(a)} a month*`,
+    `${tgt(s)} in ${s.years2} years: *${rupees(realOf('r2'))} a month*`,
+    `Start ${s.delay} years late (${s.startYear+s.delay}): *${rupees(b)} a month*`,
+    `   _that's ${rupees(b-a)} more, every single month_`,'',
+    `I scored *${pts} point${pts===1?'':'s'}*.`,'',`_(assumes ${s.rate}% a year, not a promise)_`,'','Play it 👇',SHARE_URL].join('\n');
+}
+function myRow(rk){ const r=state.results&&state.results[rk]; return r?r.rows.find(x=>x.id===MY_ID)||null:null; }
+
+function renderPlayer(){
+  const el=document.getElementById('player'); if(!state){ el.innerHTML=shell('<div class="card center"><h2>Finding the game…</h2><p>Room '+esc(ROOM)+'</p></div>'); return; }
+  const p=me(); const ph=state.phase, rk=roundOf(ph), s=state.settings;
+  if(ph!==_lastPhase){ _pendingVal=0; _lastPhase=ph; }
+  if(!p){
+    if(joinSent&&ph==='lobby') return el.innerHTML=shell(`<div class="card center"><h2>Joining…</h2><p>${esc(myName)}</p></div>`,true);
+    joinSent=false;
+    el.innerHTML=shell(`<div class="card"><h2>What should we <em>call you?</em></h2><p>Just your first name. Everyone gets the same question.</p>
+      <div class="field"><div class="lbl">Name</div><input id="nameInput" class="inp" maxlength="16" placeholder="First name" value="${esc(myName)}" autocomplete="off" oninput="joinCheck()" onkeydown="if(event.key==='Enter')doJoin()"></div>
+      <button class="p-btn" id="joinBtn" onclick="doJoin()" disabled>Join the game →</button></div>`,true);
+    joinCheck(); return;
+  }
+  if(ph==='lobby') return el.innerHTML=shell(`<div class="card center"><div class="av" style="background:${p.color}">${p.av}</div><h2>You're in, ${esc(p.name)}.</h2><p>Eyes on the screen. The teacher starts the game.</p></div>`,true);
+  if(rk&&/_ask$/.test(ph)){
+    const R=ROUNDS[rk]; const locked=myLockedNonce[rk]===state.nonce||(hasGuess(p,rk)&&myLockedNonce[rk]!==-1);
+    const val=myLocal[rk]||(p.guess&&p.guess[rk])||0;
+    if(locked) return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(s)}</h2>
+      <div class="locked"><div class="lbl">Locked in ✓</div><div class="v">${rupees(val)}</div><div class="u">a month</div></div>
+      <p style="margin:0 0 4px">Watch the screen. The teacher closes the round when everyone is in.</p><button class="p-btn outline" onclick="pChange('${rk}')">Change my guess</button></div>`);
+    return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(s)}</h2><p class="ask-note">${R.why(s)}</p>
+      <div class="amt"><div class="amt-l">Your guess · a month</div>
+        <div class="amt-box"><span class="rs">₹</span><input id="moneyInput" class="amt-in" inputmode="numeric" placeholder="0" oninput="onMoney(this)" value="${val?indianFormat(val):''}"></div>
+        <div class="amt-sh" id="shBadge">${val?fmtMoney(val):''}</div></div>
+      <button class="p-btn big" id="lockBtn" onclick="pLock('${rk}')" ${val?'':'disabled'} style="margin-top:auto">Lock it in →</button></div>`);
+  }
+  if(rk&&/_reveal$/.test(ph)){
+    // hold the result back while the projector's drum roll plays
+    const key=state.nonce; if(!_seen[key]) _seen[key]=Date.now();
+    const wait=REVEAL_DELAY-(Date.now()-_seen[key]);
+    if(wait>0){ setTimeout(renderPlayer,wait+60); return el.innerHTML=shell(`<div class="card center"><h2>Drum roll…</h2><p>Eyes on the screen.</p></div>`); }
+    const R=ROUNDS[rk], row=myRow(rk), real=state.results[rk]?state.results[rk].real:Math.round(realOf(rk));
+    let body='';
+    if(!row) body=`<div class="real"><div class="lbl">The real number</div><div class="v">${rupees(real)}</div><div class="g">a month</div></div><div class="fb">You didn't lock in this round. Next one, type your guess before the teacher closes.</div>`;
+    else{
+      const msg=row.rank===1?'You were closest! 🏆':row.rank<=3?'You made the top three! 🎉':'Closer next time.';
+      body=`<div class="real"><div class="lbl">The real number</div><div class="v">${rupees(real)}</div><div class="g">you guessed ${rupees(row.guess)}</div><span class="off ${row.rank===1?'':'high'}">${gapText(row.gap,real)}</span></div>
+        <div class="fb ${row.rank<=3?'good':''}"><b>${msg}</b> ${row.pts?`+${row.pts} point${row.pts>1?'s':''}.`:''}</div>`;
+      if(row.rank===1&&!_celebrated[key]){ _celebrated[key]=1; setTimeout(()=>confetti(3000,140),200); }
+    }
+    if(rk==='r3'){ const d=realOf('r3')-realOf('r1'); body+=`<div class="fb">Starting ${s.delay} years late costs <b>${rupees(d)} more</b> every month.</div>`; }
+    return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n} · ${R.title}</div>${body}</div>`);
+  }
+  if(ph==='r3_ladder') return el.innerHTML=shell(`<div class="card center"><h2>The cost of delay</h2><p>Eyes on the screen. Each year you wait costs more than the last.</p></div>`);
+  if(ph==='end'){
+    const sc=ranked(), mine=sc.find(t=>t.id===MY_ID)||{pts:0,wins:0}, pos=mine.pos||0;
+    const rows=ROUND_KEYS.map(k=>{ const r=myRow(k); return `<div class="row"><span>${ROUNDS[k].title}</span><b>${r?gapText(r.gap,state.results[k].real):'no guess'}</b></div>`; }).join('');
+    return el.innerHTML=shell(`<div class="card"><div class="lbl">Final scores</div><h2>${esc(p.name)}: ${mine.pts} point${mine.pts===1?'':'s'}</h2>
+      <p>${pos&&mine.pts?`You finished number ${pos} of ${sc.length}.`:'Thanks for playing.'}</p><div class="sum">${rows}</div>
+      ${waBtn(shareText(p,mine.pts),'Share on WhatsApp')}<p style="margin:12px 0 0;text-align:center">The best month to start is this one.</p></div>`);
+  }
+  el.innerHTML=shell('<div class="card center"><h2>Eyes on the screen</h2></div>');
+}
+function shell(inner,full){ const rate=state&&state.settings?state.settings.rate:12;
+  return `<div class="wrap">
+    <div class="p-hero ${full?'full':''}"></div>
+    <div class="p-bar"><div class="mark"><img src="${LOGO}" alt=""></div><div class="brand">Investing<br>for Mummies</div><div class="room"><i></i>ROOM ${esc(ROOM||'')}</div></div>
+    ${full?`<div class="p-title"><h1 style="font-size:46px">${GAME_NAME}</h1><p class="tag">${TAGLINE.replace('The closest one wins.','<b>The closest one wins.</b>')}</p></div>`:`<div class="p-title compact"><h1>${GAME_NAME}</h1></div>`}
+    ${inner}
+    <div class="foot">Investing for Mummies · assumes ${rate}% a year, not a promise</div></div>`; }
+if(isHost) initHost(); else initPlayer();
+</script>
+<!-- ifm-disclaimer --><p style="margin:0;padding:14px 16px 18px;text-align:center;font:500 12px/1.5 Nunito,system-ui,sans-serif;color:#5a7d8a;background:transparent;clear:both">Educational only. Illustrative returns, not guaranteed. Not investment advice.</p>
+</body>
+</html>
