@@ -45,24 +45,6 @@
         "cd '/Users/lollyg/Documents/investing for Mummies/ifm_website_oct26' && npx --yes serve -l 8760 --no-clipboard ."
       ],
       "port": 8760
-    },
-    {
-      "name": "narendra-new",
-      "runtimeExecutable": "bash",
-      "runtimeArgs": [
-        "-c",
-        "cd /tmp && npx --yes serve -l 8801 --no-clipboard /tmp/nb"
-      ],
-      "port": 8801
-    },
-    {
-      "name": "narendra-old",
-      "runtimeExecutable": "bash",
-      "runtimeArgs": [
-        "-c",
-        "cd /tmp && npx --yes serve -l 8802 --no-clipboard /tmp/nm"
-      ],
-      "port": 8802
     }
   ]
 }

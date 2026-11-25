@@ -1,0 +1,13 @@
+SETTLE-IN SCREEN — how to use (30–40 people arriving)
+
+1. Double-click index.html (opens in Chrome). Keep every file in this folder together.
+2. Type today's start time, press START SCREEN. It goes full screen.
+3. It plays the 26-second build once, rests on the finished blueprint for 6 seconds,
+   then cycles seven conversation prompts (one per item), with a live countdown at the top.
+   About every 12 minutes it replays the full build for late arrivals.
+4. At the start time the countdown vanishes and "Welcome. Let's begin!" appears on the finished blueprint.
+
+Keys: F full screen · S change start time · R replay the build · Space pause
+
+Edit the prompts: spotlight_all.py in ../flow-build (SPOTS list), then re-render that item.
+No sound. Nothing is uploaded or deployed; it runs from this folder.

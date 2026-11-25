@@ -1,0 +1,196 @@
+<title>Edit Recipe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a studio work-order — brief on the left, the reel's beat strip on the right; stacks on phones */
+:root{
+  --bg:#F3F4F7; --panel:#FFFFFF; --ink:#141B2E; --mute:#5D6478; --line:#DCDFE7;
+  --navy:#1B2A4A; --gold:#C8962F; --gold-soft:#F4E7C8;
+  --ok:#1F7A4D; --ok-soft:#DDF1E6; --warn:#A8620B; --warn-soft:#FBEBD3; --bad:#B4322A; --bad-soft:#F8DEDB;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1320; --panel:#171D2D; --ink:#E8EBF3; --mute:#9AA2B8; --line:#2A3247;
+  --navy:#8FA8D8; --gold:#E0B456; --gold-soft:#3A3120;
+  --ok:#5CC48F; --ok-soft:#183427; --warn:#E5A04A; --warn-soft:#3A2A14; --bad:#EE7D74; --bad-soft:#3B1D1B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1320; --panel:#171D2D; --ink:#E8EBF3; --mute:#9AA2B8; --line:#2A3247;
+  --navy:#8FA8D8; --gold:#E0B456; --gold-soft:#3A3120;
+  --ok:#5CC48F; --ok-soft:#183427; --warn:#E5A04A; --warn-soft:#3A2A14; --bad:#EE7D74; --bad-soft:#3B1D1B; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:grid;gap:6px;margin-bottom:22px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+h1{font:800 clamp(30px,4.4vw,46px)/1.04 var(--display);margin:0;text-wrap:balance;color:var(--ink)}
+.lede{color:var(--mute);max-width:62ch;margin:0}
+.grid{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}}
+.brief{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:18px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px)}
+@media (max-width:860px){.brief{position:static}}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:8px;min-width:0}
+legend{font:600 13px/1.2 var(--body);margin-bottom:6px;padding:0}
+legend span{font:500 11px var(--mono);color:var(--mute);margin-right:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:6px 11px;border:1px solid var(--line);border-radius:999px;font-size:13px;background:var(--bg);color:var(--ink);transition:background .15s,border-color .15s}
+.chips input:checked+span{background:var(--navy);border-color:var(--navy);color:var(--panel)}
+.chips input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.slider{display:grid;gap:6px}
+.slider input{width:100%;accent-color:var(--gold)}
+.slider .ends{display:flex;justify-content:space-between;font-size:12px;color:var(--mute)}
+.slider output{font:500 12px var(--mono);color:var(--gold)}
+.note{font-size:12px;color:var(--mute);margin:0}
+.out{display:grid;gap:18px;min-width:0}
+.sum{background:var(--navy);color:var(--panel);border-radius:14px;padding:18px 20px;display:grid;gap:10px}
+:root[data-theme="dark"] .sum{color:var(--bg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sum{color:var(--bg)}}
+.sum h2{font:800 22px/1.15 var(--display);margin:0;text-wrap:balance}
+.sum p{margin:0;opacity:.88;max-width:70ch}
+.meter{display:flex;gap:4px;align-items:center;font:500 12px var(--mono)}
+.meter i{width:22px;height:6px;border-radius:3px;background:currentColor;opacity:.25}
+.meter i.on{opacity:1}
+.beats{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.beat{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:grid;grid-template-rows:auto auto 1fr;min-width:0}
+.beat .lab{display:flex;justify-content:space-between;align-items:baseline;padding:10px 12px 6px;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.beat .lab b{color:var(--gold);font-weight:500}
+.thumb{aspect-ratio:9/16;max-width:100%;background:var(--bg);display:grid;place-items:center;border-block:1px solid var(--line)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb em{font:500 11px var(--mono);color:var(--mute);font-style:normal;padding:8px;text-align:center}
+.beat .body{padding:10px 12px 12px;display:grid;gap:6px;align-content:start}
+.beat h3{font:600 15px/1.2 var(--display);margin:0;overflow-wrap:anywhere}
+.beat p{margin:0;font-size:12.5px;color:var(--mute)}
+.pills{display:flex;flex-wrap:wrap;gap:4px}
+.pill{font:500 10.5px/1 var(--mono);padding:4px 6px;border-radius:5px;letter-spacing:.02em}
+.p-ok{background:var(--ok-soft);color:var(--ok)}.p-warn{background:var(--warn-soft);color:var(--warn)}.p-bad{background:var(--bad-soft);color:var(--bad)}.p-mute{background:var(--bg);color:var(--mute);border:1px solid var(--line)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+@media (max-width:640px){.cols{grid-template-columns:minmax(0,1fr)}}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px;min-width:0}
+.box h4{font:600 14px var(--display);margin:0}
+.box ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:13.5px}
+.box li b{font-weight:600}
+.avoid li{color:var(--mute)}
+.price{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:640px){.price{grid-template-columns:minmax(0,1fr)}}
+.tier{border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:4px}
+.tier.rec{border-color:var(--gold);background:var(--gold-soft)}
+.tier b{font:800 20px var(--display);font-variant-numeric:tabular-nums}
+.tier span{font-size:12px;color:var(--mute)}
+.tier small{font:500 10.5px var(--mono);color:var(--gold);text-transform:uppercase;letter-spacing:.06em}
+.copy{justify-self:start;font:600 13px var(--body);background:var(--navy);color:var(--panel);border:0;border-radius:8px;padding:9px 14px;cursor:pointer}
+:root[data-theme="dark"] .copy{color:var(--bg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .copy{color:var(--bg)}}
+.copy:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+textarea.brieftxt{width:100%;min-height:150px;font:12.5px/1.5 var(--mono);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px;resize:vertical}
+.ex{font:500 11px var(--mono);color:var(--mute)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">IFM Studio · prototype</div>
+    <h1>The right edit for the right audience</h1>
+    <p class="lede">Answer five questions about the client. The recipe picks 4–6 effects from our library for each beat of the reel, leaves out the ones that would cost trust, and writes the shoot brief.</p>
+  </header>
+
+  <div class="grid">
+    <form class="brief" id="brief" autocomplete="off">
+      <fieldset><legend><span>1</span>Industry</legend><div class="chips" id="q-ind"></div></fieldset>
+      <fieldset><legend><span>2</span>What the video must do</legend><div class="chips" id="q-goal"></div></fieldset>
+      <fieldset><legend><span>3</span>Who is watching</legend><div class="chips" id="q-aud"></div></fieldset>
+      <fieldset class="slider"><legend><span>4</span>Brand feel <output id="feelOut" for="feel"></output></legend>
+        <input type="range" id="feel" min="1" max="5" step="1" value="2">
+        <div class="ends"><span>Calm, premium</span><span>Loud, playful</span></div>
+        <p class="note" id="feelNote"></p>
+      </fieldset>
+      <fieldset><legend><span>5</span>Footage</legend><div class="chips" id="q-foot"></div></fieldset>
+    </form>
+
+    <section class="out" aria-live="polite">
+      <div class="sum" id="sum"></div>
+      <div class="beats" id="beats"></div>
+      <div class="cols">
+        <div class="box"><h4>Left out for this client</h4><ul class="avoid" id="avoid"></ul></div>
+        <div class="box"><h4>Shoot brief</h4><ul id="shoot"></ul></div>
+      </div>
+      <div class="box"><h4>Price by reel length</h4><div class="price" id="price"></div></div>
+      <div class="box"><h4>Brief to send the editor</h4><textarea class="brieftxt" id="txt" readonly aria-label="Brief text"></textarea><button type="button" class="copy" id="copy">Copy brief</button></div>
+    </section>
+  </div>
+</div>
+
+<script>
+const IND={finance:{label:"Finance",energy:2,trust:true},realestate:{label:"Real estate",energy:4,trust:false},coaching:{label:"Coaching",energy:3,trust:false},health:{label:"Health & wellness",energy:2,trust:true},beauty:{label:"Beauty & fashion",energy:4,trust:false},tech:{label:"Tech / SaaS",energy:3,trust:false},food:{label:"Food & cafés",energy:4,trust:false}};
+const GOAL={trust:"Build trust",explain:"Explain something",sell:"Sell / get leads",announce:"Announce / launch"};
+const AUD={first:"First-timers",pro:"Professionals",hni:"HNI / premium",genz:"Gen Z"};
+const FOOT={have:"Client has a talking-head take",shoot:"We shoot it for them"};
+const BEATS=[["hook","Hook","0–2 s"],["explain","Explain","2–15 s"],["proof","Credibility","15–22 s"],["transition","Transition","between beats"],["cta","Call to action","last 3 s"],["grade","Grade","whole reel"]];
+const SHOT={"Seated at a desk":"Seated at a desk, plain light wall behind, headroom above the head.","Wide with headroom":"Standing or seated, framed knees-up, a third of the frame empty above the head, plain warm wall.","Plain wall, standing":"Standing mid-shot against a plain light wall, still head, hand-span of headroom.","Seated off-centre, deep room":"Seated a third in from one side, a bright room with depth behind, locked tripod.","Close-up":"Head and shoulders, softer background, plus a 3 s still headshot at the end.","Walk toward camera":"A 3–4 s walk from the back of a deep bright room up to a mid-shot, talking.","Sofa at home":"Seated on a sofa, warm room, a few takes to cut between."};
+const st={ind:"finance",goal:"trust",aud:"first",foot:"shoot",feel:2};
+let FX=[];
+
+function chips(id,map,key){
+  const el=document.getElementById(id);
+  el.innerHTML=Object.entries(map).map(([k,v])=>`<label><input type="radio" name="${key}" id="${key}-${k}" value="${k}" ${st[key]===k?"checked":""}><span>${typeof v==="string"?v:v.label}</span></label>`).join("");
+  el.addEventListener("change",e=>{st[key]=e.target.value;if(key==="ind"){st.feel=IND[st.ind].energy;document.getElementById("feel").value=st.feel}render()});
+}
+function target(){let t=st.feel;if(st.goal==="trust")t-=.5;if(st.goal==="announce"||st.goal==="sell")t+=.5;if(st.aud==="genz")t+=.7;if(st.aud==="hni"||st.aud==="pro")t-=.6;return Math.max(1,Math.min(5,t))}
+function strict(){return IND[st.ind].trust||st.goal==="trust"||st.aud==="hni"}
+function allowed(f){
+  if(strict()&&f.risk==="high")return[false,`${IND[st.ind].trust?IND[st.ind].label:"A trust-first brief"} reads it as gimmicky`];
+  if(strict()&&f.risk==="med"&&f.energy>=4)return[false,"Too loud for a trust-first brief"];
+  if(st.feel<=2&&f.energy>=5)return[false,"Too loud for the calm brand feel you picked"];
+  if(st.feel>=4&&f.energy<=1&&f.jobs.includes("hook"))return[false,"Too quiet to stop the scroll"];
+  return[true,""];
+}
+function score(f,job){const t=target();let s=10-Math.abs(f.energy-t)*2.2;if(f.risk==="low")s+=strict()?2:0.5;if(f.risk==="high")s-=strict()?9:0;if(f.built)s+=0.6;if(job==="explain"&&st.goal==="explain")s+=1;if(job==="proof"&&st.goal==="trust")s+=1;if(job==="hook"&&(st.goal==="sell"||st.goal==="announce"))s+=0.8;return s}
+function why(f,job){
+  const bits=[];const t=target();
+  bits.push(Math.abs(f.energy-t)<1?"energy matches the brand":f.energy<t?"calmer than the brief, keeps it credible":"a step louder, to hold attention");
+  if(f.risk==="low")bits.push("low trust risk");
+  if(job==="proof")bits.push("shows proof without hype");
+  return bits.join(" · ");
+}
+function pick(){
+  const used=new Set(),rec=[],left=[];
+  FX.forEach(f=>{const[a,r]=allowed(f);if(!a)left.push([f,r])});
+  for(const[job]of BEATS){
+    const c=FX.filter(f=>f.jobs.includes(job)&&allowed(f)[0]&&!used.has(f.id)).sort((a,b)=>score(b,job)-score(a,job));
+    if(c[0]){used.add(c[0].id);rec.push([job,c[0]])}else rec.push([job,null]);
+  }
+  return[rec,left];
+}
+function render(){
+  document.getElementById("feelOut").textContent=`${st.feel} / 5`;
+  document.getElementById("feelNote").textContent=`Default for ${IND[st.ind].label.toLowerCase()} is ${IND[st.ind].energy}. Move it if this brand breaks the mould.`;
+  if(!FX.length)return;
+  const[rec,left]=pick();const t=target();
+  const meter=[1,2,3,4,5].map(i=>`<i class="${i<=Math.round(t)?"on":""}"></i>`).join("");
+  document.getElementById("sum").innerHTML=`<h2>${IND[st.ind].label} · ${GOAL[st.goal].toLowerCase()} · for ${AUD[st.aud].toLowerCase()}</h2><p>${strict()?"Trust comes first: clean type, real numbers, no gimmicks. Every effect here makes the speaker look credible before it makes her look clever.":"Energy comes first: a hard hook, fast beats and a loud CTA, while staying readable."}</p><div class="meter">Energy ${meter}</div>`;
+  const B=Object.fromEntries(BEATS.map(b=>[b[0],b]));
+  document.getElementById("beats").innerHTML=rec.map(([job,f])=>{
+    const[,name,when]=B[job];
+    if(!f)return`<article class="beat"><div class="lab">${name}<b>${when}</b></div><div class="thumb"><em>Nothing in the library fits this brief yet</em></div><div class="body"><p>Leave this beat plain.</p></div></article>`;
+    const risk=f.risk==="low"?'<span class="pill p-ok">trust-safe</span>':f.risk==="med"?'<span class="pill p-warn">use once</span>':'<span class="pill p-bad">loud</span>';
+    const built=f.built?'<span class="pill p-mute">sample ready</span>':'<span class="pill p-mute">needs shoot</span>';
+    return`<article class="beat"><div class="lab">${name}<b>${when}</b></div><div class="thumb">${f.thumb?`<img src="${f.thumb}" alt="${f.name} example frame" loading="lazy">`:`<em>${f.name}</em>`}</div><div class="body"><h3>${f.id} · ${f.name}</h3><div class="pills">${risk}${built}</div><p>${why(f,job)}</p></div></article>`;
+  }).join("");
+  document.getElementById("avoid").innerHTML=left.length?left.slice(0,7).map(([f,r])=>`<li><b>${f.name}</b>: ${r}</li>`).join("")+(left.length>7?`<li>and ${left.length-7} more</li>`:""):"<li>Nothing excluded: the full library fits this brief.</li>";
+  const shots=[...new Set(rec.filter(r=>r[1]).map(r=>r[1].shot))];
+  document.getElementById("shoot").innerHTML=(st.foot==="have"?`<li><b>Check their take against this:</b> if it doesn't match, the effects won't either.</li>`:"")+shots.map(s=>`<li><b>${s}.</b> ${SHOT[s]||""}</li>`).join("")+`<li><b>Always:</b> tripod locked, 2 s still at the start and end, plain top, no busy pattern behind.</li>`;
+  const rc=-1;
+  const tiers=[["30-second reel","₹2,000","every effect in this recipe"],["45-second reel","₹3,000","every effect in this recipe"],["60-second reel","₹4,000","every effect in this recipe"]];
+  document.getElementById("price").innerHTML=tiers.map((x,i)=>`<div class="tier ${i===rc?"rec":""}">${i===rc?"<small>suggested</small>":""}<span>${x[0]}</span><b>${x[1]}</b><span>${x[2]}</span></div>`).join("");
+  const lines=[`CLIENT: ${IND[st.ind].label} · ${GOAL[st.goal]} · ${AUD[st.aud]} · feel ${st.feel}/5`,`TONE: ${strict()?"trust-first, clean, credible":"energetic, hooky, loud CTA"}`,"",...rec.filter(r=>r[1]).map(([j,f])=>`${B[j][1].toUpperCase()} (${B[j][2]}): #${f.id} ${f.name}`),"","AVOID: "+(left.map(l=>l[0].name).slice(0,10).join(", ")||"none"),"","SHOOT: "+shots.join(" + ")];
+  document.getElementById("txt").value=lines.join("\n");
+}
+document.getElementById("copy").addEventListener("click",async e=>{const b=e.currentTarget,ta=document.getElementById("txt");try{await navigator.clipboard.writeText(ta.value);b.textContent="Copied"}catch(_){ta.focus();ta.select();b.textContent="Selected, press Copy"}setTimeout(()=>b.textContent="Copy brief",1600)});
+document.getElementById("feel").addEventListener("input",e=>{st.feel=+e.target.value;render()});
+document.getElementById("brief").addEventListener("submit",e=>e.preventDefault());
+chips("q-ind",IND,"ind");chips("q-goal",GOAL,"goal");chips("q-aud",AUD,"aud");chips("q-foot",FOOT,"foot");
+render();
+fetch("effects.json").then(r=>r.json()).then(d=>{FX=d;render()}).catch(()=>{document.getElementById("beats").innerHTML='<p class="note">Could not load the effects library. Reload the page.</p>'});
+</script>

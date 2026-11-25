@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Money Blueprint — Settle-in Screen</title>
+<style>
+  :root { --navy:#0a2468; --gold:#f4c85c; --ink:#fff; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:#000; overflow:hidden; font-family:"Nunito","Avenir Next","Segoe UI",system-ui,sans-serif; }
+  body.idle { cursor:none; }
+  #stage { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:#000; }
+  #frame { position:relative; aspect-ratio:16/9; width:min(100vw, calc(100vh*16/9)); }
+  video, #holdimg { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#000; }
+  #holdimg { display:none; }
+  /* countdown pill: sits in the top strip above the title, never on the artwork */
+  #count { position:absolute; left:50%; top:.8%; transform:translateX(-50%); display:none; align-items:center; gap:.8em;
+    padding:.28em 1em; border-radius:999px; background:linear-gradient(180deg,rgba(30,84,178,.94),rgba(10,36,104,.94));
+    border:2px solid var(--gold); box-shadow:0 .4em 1.2em rgba(0,0,0,.35); color:var(--ink); font-weight:800; letter-spacing:.06em;
+    font-size:calc(min(100vw, 100vh*16/9) * .0165); white-space:nowrap; }
+  #count small { color:var(--gold); letter-spacing:.22em; font-weight:800; font-size:.62em; }
+  #count b { font-variant-numeric:tabular-nums; font-size:1.25em; }
+  /* setup card */
+  #setup { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(2,8,30,.82); z-index:10; }
+  #setup .card { width:min(92vw,520px); padding:28px 28px 24px; border-radius:26px; color:#fff; text-align:center;
+    background:linear-gradient(180deg,#1e54b2,#0a2468); border:3px solid var(--gold); box-shadow:0 20px 60px rgba(0,0,0,.5); }
+  #setup h1 { margin:0 0 6px; font-size:22px; letter-spacing:.14em; color:var(--gold); }
+  #setup p { margin:6px 0 16px; font-size:15px; opacity:.9; line-height:1.45; }
+  #setup input { font:inherit; font-size:34px; font-weight:800; width:9em; text-align:center; padding:8px 10px; border-radius:14px; border:2px solid #8cc0ff; background:#06174d; color:#fff; }
+  #setup button { margin-top:18px; font:inherit; font-size:18px; font-weight:800; letter-spacing:.08em; padding:12px 30px; border-radius:999px; border:0; background:var(--gold); color:#0a2468; cursor:pointer; }
+  #setup .row2 { margin-top:12px; font-size:13px; opacity:.75; }
+  #toast { position:fixed; left:50%; bottom:18px; transform:translateX(-50%); padding:8px 16px; border-radius:999px; background:rgba(10,36,104,.92); color:#fff; border:1px solid var(--gold);
+    font-size:14px; opacity:0; transition:opacity .3s; pointer-events:none; z-index:5; }
+  #welcome { position:absolute; left:0; right:0; bottom:9%; text-align:center; display:none; color:#fff; font-weight:800; letter-spacing:.08em; font-size:calc(min(100vw, 100vh*16/9) * .03);
+    text-shadow:0 .1em .4em rgba(0,0,0,.6); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="frame">
+    <video id="v" muted playsinline preload="auto"></video>
+    <img id="holdimg" alt="">
+    <div id="count"><small>STARTING IN</small><b id="clock">--:--</b></div>
+    <div id="welcome">Welcome. Let's begin!</div>
+  </div>
+</div>
+
+<div id="setup">
+  <div class="card">
+    <h1>SETTLE-IN SCREEN</h1>
+    <p>What time does the workshop start today?<br>The screen plays the build once, then cycles seven conversation prompts with a live countdown.</p>
+    <input id="t" type="time" value="">
+    <div><button id="go">START SCREEN</button></div>
+    <div class="row2">Keys: <b>F</b> full screen · <b>S</b> change start time · <b>R</b> replay the build · <b>Space</b> pause</div>
+  </div>
+</div>
+<div id="toast"></div>
+
+<script>
+(function(){
+  var BUILD = 'build.mp4';
+  var SPOTS = ['spot-1-saving.mp4','spot-2-buckets.mp4','spot-3-risk.mp4','spot-4-goals.mp4','spot-5-time.mp4','spot-6-action.mp4','spot-7-checklist.mp4'];
+  var HOLD_IMG = 'final-frame.png', HOLD_SEC = 6;      // rest on the finished blueprint between rounds
+  var REBUILD_EVERY_MS = 12*60*1000;                   // replay the full build roughly every 12 minutes (late arrivals)
+  var v = document.getElementById('v'), img = document.getElementById('holdimg'), count = document.getElementById('count'),
+      clock = document.getElementById('clock'), setup = document.getElementById('setup'), tIn = document.getElementById('t'),
+      toast = document.getElementById('toast'), welcome = document.getElementById('welcome');
+  var startAt = null, step = -1, playing = false, paused = false, lastBuild = 0, holdTimer = null, ended = false;
+
+  function say(m){ toast.textContent = m; toast.style.opacity = 1; clearTimeout(say._t); say._t = setTimeout(function(){ toast.style.opacity = 0; }, 2200); }
+  function parseStart(hhmm){ var p = hhmm.split(':'), d = new Date(); d.setHours(+p[0], +p[1], 0, 0); if (d.getTime() < Date.now() - 60*1000) d.setDate(d.getDate()+1); return d.getTime(); }
+  function pad(n){ return (n<10?'0':'')+n; }
+
+  // ---------- countdown ----------
+  function tick(){
+    if (!startAt) return;
+    var ms = startAt - Date.now(), s = Math.max(0, Math.round(ms/1000));
+    if (ms <= 0){ if (!ended) finish(); return; }
+    var h = Math.floor(s/3600), m = Math.floor((s%3600)/60), ss = s%60;
+    clock.textContent = (h>0 ? h+':'+pad(m) : pad(m)) + ':' + pad(ss);
+    count.style.display = 'flex';
+  }
+  setInterval(tick, 500);
+  function finish(){
+    ended = true; clearTimeout(holdTimer); v.pause(); v.style.display = 'none'; img.src = HOLD_IMG; img.style.display = 'block';
+    count.style.display = 'none'; welcome.style.display = 'block';
+  }
+
+  // ---------- playlist ----------
+  function showHold(sec, next){
+    v.style.display = 'none'; img.src = HOLD_IMG; img.style.display = 'block';
+    holdTimer = setTimeout(function(){ if (!paused && !ended) next(); }, sec*1000);
+  }
+  function playClip(src, onend){
+    clearTimeout(holdTimer); img.style.display = 'none'; v.style.display = 'block'; v.src = src; v.load();
+    v.onended = function(){ if (!paused && !ended) onend(); };
+    var p = v.play(); if (p && p.catch) p.catch(function(){ say('Click once on the screen to start playback'); });
+  }
+  function nextStep(){
+    if (ended) return;
+    step++;
+    if (step === 0){ lastBuild = Date.now(); return playClip(BUILD, nextStep); }
+    if (step === 1) return showHold(HOLD_SEC, nextStep);
+    var i = step - 2;
+    if (i < SPOTS.length) return playClip(SPOTS[i], nextStep);
+    if (i === SPOTS.length) return showHold(HOLD_SEC + 4, nextStep);
+    // round finished: loop the prompts; replay the whole build now and then
+    if (Date.now() - lastBuild > REBUILD_EVERY_MS){ step = -1; return nextStep(); }
+    step = 1; return nextStep();
+  }
+  function begin(){ ended = false; welcome.style.display = 'none'; step = -1; paused = false; nextStep(); }
+
+  // ---------- setup + controls ----------
+  var saved = null; try { saved = localStorage.getItem('mb-start'); } catch(e){}
+  if (saved) tIn.value = saved; else { var d = new Date(Date.now()+15*60000); tIn.value = pad(d.getHours())+':'+pad(d.getMinutes()); }
+  document.getElementById('go').onclick = function(){
+    if (!tIn.value) { say('Please choose a start time'); return; }
+    try { localStorage.setItem('mb-start', tIn.value); } catch(e){}
+    startAt = parseStart(tIn.value); setup.style.display = 'none'; tick();
+    if (document.documentElement.requestFullscreen && !document.fullscreenElement) document.documentElement.requestFullscreen().catch(function(){});
+    if (!playing){ playing = true; begin(); } else { ended = false; welcome.style.display = 'none'; if (step < 0) begin(); else { v.style.display = 'block'; nextStep(); } }
+  };
+  document.addEventListener('keydown', function(e){
+    var k = e.key.toLowerCase();
+    if (k === 'f'){ if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); }
+    else if (k === 's'){ setup.style.display = 'flex'; }
+    else if (k === 'r' && startAt){ clearTimeout(holdTimer); ended = false; welcome.style.display = 'none'; begin(); say('Replaying the build'); }
+    else if (k === ' '){ e.preventDefault(); paused = !paused; if (paused){ v.pause(); clearTimeout(holdTimer); say('Paused'); } else { if (v.style.display !== 'none') v.play(); else nextStep(); say('Playing'); } }
+  });
+  document.addEventListener('click', function(){ if (playing && v.paused && !paused && v.style.display !== 'none') v.play(); });
+  var idleT; function wake(){ document.body.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(function(){ document.body.classList.add('idle'); }, 2000); }
+  document.addEventListener('mousemove', wake); wake();
+})();
+</script>
+</body>
+</html>
