@@ -745,8 +745,8 @@ body.hc.host-bg .la{font-size:1.6rem}
 /* the finale: the coins keep falling on the left, the countdown sits on the right */
 body.host-bg.end-live .bgv,body.host-bg.end-live .bgshade{display:block}
 body.host-bg.end-live .bgshade{background:linear-gradient(90deg,rgba(6,16,28,.05) 0%,rgba(6,16,28,.15) 40%,rgba(6,16,28,.7) 70%,rgba(6,16,28,.8) 100%)}
-body.host-bg .end-stage{max-width:none;width:100%;align-items:flex-end;padding-right:2vw}
-body.host-bg .final-col{width:min(40rem,50vw);display:flex;flex-direction:column;align-items:center;gap:.8rem}
+body.host-bg .end-stage{max-width:none;width:100%;align-items:center;justify-content:center;padding:0 2vw}
+body.host-bg .final-col{width:min(46rem,70vw);display:flex;flex-direction:column;align-items:center;gap:.8rem}
 body.host-bg .final-col.wide{width:min(46rem,54vw)}
 body.host-bg .final-col .title{text-align:center}
 body.host-bg .final-col .title.drum{animation:pctpulse 1s ease-in-out infinite}
@@ -933,6 +933,9 @@ body.host-bg .lhead,body.host-bg .lrow{grid-template-columns:8rem 1fr 8.5rem 9re
 
 .gp-poster.m0{--c1:#e9fbf6;--c2:#7fd9c8;--c3:#2a8f80;--rim:#5fd0bd;border-color:#5fd0bd;box-shadow:0 0 0 4px rgba(95,208,189,.14),0 0 60px rgba(95,208,189,.25),0 24px 60px rgba(0,0,0,.6)}
 .gp-poster.m0 .gp-ribbon span{letter-spacing:.24em}
+
+.wp-name.multi{font-size:clamp(3rem,8vw,6.5rem)}
+.wp-name small{font:800 .38em 'Manrope',sans-serif;letter-spacing:.06em;color:var(--gold-hi);vertical-align:middle}
 </style>
 <!-- PostHog (games site, same project as www) -->
 <script>
@@ -1123,7 +1126,9 @@ const sfx={
 function toggleMute(){ MUTED=!MUTED; try{ localStorage.setItem('ls_muted',MUTED?'1':'0'); }catch(e){} const b=document.getElementById('muteBtn'); if(b) b.textContent=MUTED?'🔇 Sound off · M':'🔊 Sound on · M'; if(!MUTED) sfx.ding(); }
 function countUp(el,to,ms){ const t0=performance.now(); (function f(t){ const k=Math.min(1,(t-t0)/ms), e=1-Math.pow(1-k,3); el.textContent=Math.round(to*e); if(k<1) requestAnimationFrame(f); else sfx.ding(); })(t0); }
 // the person, not just the number: their name takes over the screen for a moment, then goes back in
-function winPop(name,label,medal){ const d=document.createElement('div'); d.className='winpop'; d.innerHTML=`<div class="wp-in"><div class="wp-medal">${medal||'🏆'}</div><div class="wp-lbl">${esc(label)}</div><div class="wp-name">${esc(name)}</div></div>`; document.body.appendChild(d); setTimeout(()=>d.classList.add('out'),2500); setTimeout(()=>d.remove(),3200); }
+function winPop(names,label,medal){ const arr=(Array.isArray(names)?names:[names]).filter(Boolean), shown=arr.slice(0,2), more=arr.length-shown.length;
+  const txt=shown.map(esc).join(' &amp; ')+(more>0?` <small>+${more} more</small>`:''), sz=arr.length>1?' multi':'';
+  const d=document.createElement('div'); d.className='winpop'; d.innerHTML=`<div class="wp-in"><div class="wp-medal">${medal||'🏆'}</div><div class="wp-lbl">${esc(label)}${arr.length>1?' · TIED':''}</div><div class="wp-name${sz}">${txt}</div></div>`; document.body.appendChild(d); setTimeout(()=>d.classList.add('out'),2500); setTimeout(()=>d.remove(),3200); }
 function flash(){ let f=document.getElementById('flashFx'); if(!f){ f=document.createElement('div'); f.id='flashFx'; f.className='flashfx'; document.body.appendChild(f); } f.classList.remove('go'); void f.offsetWidth; f.classList.add('go'); }
 function shake(){ const h=document.getElementById('host'); if(!h) return; h.classList.remove('shake'); void h.offsetWidth; h.classList.add('shake'); }
 
@@ -1295,7 +1300,7 @@ function renderHost(){
 function playEnd(){
   const g=endGroups(), n=g.length, st=state.endStep||0, key='end:'+state.nonce+':'+st; if(_played===key) return; _played=key;
   if(st===0&&n) sfx.drum();
-  else if(st>=1&&st<=n){ if(st===n){ sfx.win(); later(()=>confetti(4500,260,true),250); flash(); shake(); const w=endGroups()[0]; if(w) winPop(w.rows.map(t=>t.p.name).join(' & '),'WEALTH HACK CHAMPION'); } else { sfx.reveal(); } }
+  else if(st>=1&&st<=n){ if(st===n){ sfx.win(); later(()=>confetti(4500,260,true),250); flash(); shake(); const w=endGroups()[0]; if(w) winPop(w.rows.map(t=>t.p.name),'WEALTH HACK CHAMPION'); } else { sfx.reveal(); } }
   else if(st>n) sfx.ding();
 }
 function tplLobby(){
@@ -1415,7 +1420,7 @@ function playReveal(rk){
   const podAt=landAt+(pct?2300:1600);
   cards.forEach((c,i)=>later(()=>{ c.classList.add('show'); i===cards.length-1?sfx.win():sfx.reveal(); },podAt+i*950));
   if(cards.length){ const wAt=podAt+(cards.length-1)*950; later(()=>confetti(4200,240,true),wAt+150);
-    later(()=>{ const nm=[...document.querySelectorAll('.prow.win .pn2 b')].map(b=>b.textContent).join(' & '); if(nm) winPop(nm,'CLOSEST THIS ROUND'); },wAt+250); }
+    later(()=>{ const w1=(groupsOf(state.results[rk]||{rows:[]})[0]||{rows:[]}).rows.map(r=>state.players[r.id]&&state.players[r.id].name).filter(Boolean); if(w1.length) winPop(w1,'CLOSEST THIS ROUND'); },wAt+250); }
 }
 // The ladder: each extra year of waiting arrives one at a time, growing, with its multiplier.
 function tplLadder(){
