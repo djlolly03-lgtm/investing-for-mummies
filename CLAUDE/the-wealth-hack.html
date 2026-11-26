@@ -936,6 +936,91 @@ body.host-bg .lhead,body.host-bg .lrow{grid-template-columns:8rem 1fr 8.5rem 9re
 
 .wp-name.multi{font-size:clamp(3rem,8vw,6.5rem)}
 .wp-name small{font:800 .38em 'Manrope',sans-serif;letter-spacing:.06em;color:var(--gold-hi);vertical-align:middle}
+
+/* ── solo game: full-bleed brand look ── */
+body.gs{background:#050c15}
+.sl-wrap{position:relative;overflow:hidden;min-height:var(--vvh,100dvh);max-width:480px;margin:0 auto;padding:14px 16px 14px;display:flex;flex-direction:column;gap:12px;color:#f6f1e7;isolation:isolate}
+.sl-bg{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(5,12,21,.55) 0%,rgba(5,12,21,.78) 40%,#050c15 92%),url('/assets/wealth-hack-tree.webp') 50% 0/cover no-repeat;animation:slbg 26s ease-in-out infinite alternate}
+.sl-wrap.intro .sl-bg{background:linear-gradient(180deg,rgba(5,12,21,.15) 0%,rgba(5,12,21,.55) 45%,rgba(5,12,21,.94) 78%),url('/assets/wealth-hack-tree.webp') 50% 0/cover no-repeat}
+@keyframes slbg{from{transform:scale(1)}to{transform:scale(1.08)}}
+.sl-coins{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.sl-coins .coin{position:absolute;top:-30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff6c4,#f5c451 55%,#b8860b);box-shadow:0 0 8px rgba(245,196,81,.7),inset 0 0 0 2px rgba(120,80,0,.35);animation:coinfall 5s linear infinite;opacity:0}
+.sl-body{display:flex;flex-direction:column;gap:12px;flex:1}
+.sl-top{display:flex;align-items:center;gap:10px}
+.sl-logo{width:38px;height:38px;border-radius:50%;background:#fff;padding:2px;flex:none;box-shadow:0 0 22px rgba(233,191,98,.45)}
+.sl-logo img,.sl-biglogo img{width:100%;height:100%;object-fit:contain;border-radius:50%;display:block}
+.sl-brand{display:flex;flex-direction:column;line-height:1.1}
+.sl-brand b{font:700 18px 'Fraunces',serif;color:#f7dea0}
+.sl-brand small{font:800 9px 'Manrope',sans-serif;letter-spacing:.22em;color:#9fc2bb;margin-top:2px}
+.sl-foot{text-align:center;font:600 11px 'Manrope',sans-serif;color:rgba(190,205,203,.75);padding-top:2px}
+/* intro */
+.sl-hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding-top:6vh}
+.sl-biglogo{width:104px;height:104px;border-radius:50%;background:#fff;padding:5px;box-shadow:0 0 0 4px rgba(245,196,81,.35),0 0 60px rgba(245,196,81,.55),0 14px 40px rgba(0,0,0,.5);animation:slfloat 4s ease-in-out infinite}
+@keyframes slfloat{50%{transform:translateY(-6px)}}
+.sl-eyebrow{font:800 11px 'Manrope',sans-serif;letter-spacing:.26em;color:#f0d28a;margin-top:6px}
+.sl-title{margin:0;white-space:nowrap;font:700 clamp(32px,10vw,50px)/1 'Fraunces',serif;color:#fff;text-shadow:0 0 50px rgba(245,196,81,.55),0 4px 20px rgba(0,0,0,.6)}
+.sl-hook{margin:2px 0 6px;font:600 19px/1.35 'Fraunces',serif;color:#e9f0ee;max-width:20em}
+.sl-hook b{color:#f7dea0}
+.sl-rounds{display:grid;gap:8px;width:100%;margin:6px 0 4px}
+.sl-round{display:flex;align-items:center;gap:12px;text-align:left;background:rgba(5,12,21,.62);border:1px solid rgba(245,196,81,.28);border-radius:16px;padding:10px 14px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.sl-round>b{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#f7dea0,#d79f34);color:#2a1a00;font:700 18px 'Fraunces',serif}
+.sl-round strong{display:block;font:800 14px 'Manrope',sans-serif;color:#f7dea0;letter-spacing:.02em}
+.sl-round span{display:block;font:600 13px/1.3 'Manrope',sans-serif;color:#c9d8d5}
+.sl-go{width:100%;border:0;border-radius:20px;padding:14px 10px 12px;margin-top:6px;background:linear-gradient(135deg,#fbe6ac,#d79f34);color:#1a1203;font:800 24px 'Manrope',sans-serif;letter-spacing:.08em;box-shadow:0 7px 0 #8a6a1a,0 0 40px rgba(245,196,81,.45);animation:slpulse 1.8s ease-in-out infinite}
+.sl-go small{display:block;font:700 12px 'Manrope',sans-serif;letter-spacing:.04em;margin-top:2px;color:#4a3606}
+.sl-go:active{transform:translateY(5px);box-shadow:0 2px 0 #8a6a1a}
+@keyframes slpulse{50%{box-shadow:0 7px 0 #8a6a1a,0 0 64px rgba(245,196,81,.75)}}
+.sl-note{margin:2px 0 0;font:600 13px/1.4 'Manrope',sans-serif;color:#aebfbc}
+.sl-link{font:800 14px 'Manrope',sans-serif;color:#f7dea0;text-decoration:none;text-align:center;padding:6px}
+/* progress steps */
+.sl-steps{display:flex;align-items:flex-start;justify-content:space-between;gap:4px;position:relative;padding:2px 6px}
+.sl-steps::before{content:'';position:absolute;left:12%;right:12%;top:17px;height:3px;border-radius:3px;background:rgba(255,255,255,.14)}
+.sl-step{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center}
+.sl-step b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#0c1a28;border:2px solid rgba(255,255,255,.2);color:#8aa09d;font:800 15px 'Manrope',sans-serif}
+.sl-step span{font:800 10px 'Manrope',sans-serif;letter-spacing:.1em;color:#7f9794}
+.sl-step.now b{background:linear-gradient(135deg,#f7dea0,#d79f34);border-color:#f7dea0;color:#2a1a00;box-shadow:0 0 24px rgba(245,196,81,.6)}
+.sl-step.now span{color:#f7dea0}
+.sl-step.done b{background:#2dd4bf;border-color:#2dd4bf;color:#052a2a}
+.sl-step.done span{color:#6fe3d0}
+.sl-wrap .gs-q{background:rgba(5,12,21,.74);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.sl-wrap .gs-lock{margin-top:auto}
+/* the roll */
+.sl-rollcard{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;margin-top:6vh;background:rgba(5,12,21,.7);border:1.5px solid rgba(245,196,81,.5);border-radius:24px;padding:22px 12px 20px;box-shadow:0 0 60px rgba(245,196,81,.18)}
+.sl-kick{font:800 11px 'Manrope',sans-serif;letter-spacing:.24em;color:#9fc2bb}
+.sl-reels{display:flex;align-items:center;justify-content:center;gap:5px}
+.sl-rs{font:700 38px 'Oswald',sans-serif;color:#f7dea0;margin-right:2px}
+.sl-d{width:38px;height:62px;border-radius:10px;background:#050c15;color:#f7dea0;font:700 42px/62px 'Oswald',sans-serif;text-align:center;box-shadow:inset 0 0 0 2px rgba(245,196,81,.7);filter:blur(.6px)}
+.sl-d.stopped{filter:none;color:#fff;box-shadow:inset 0 0 0 2px #f5c451,0 0 18px rgba(245,196,81,.7);animation:slpop .35s ease-out}
+@keyframes slpop{0%{transform:scale(1.25)}100%{transform:scale(1)}}
+.sl-reels em{font:700 38px 'Oswald',sans-serif;color:#f7dea0;font-style:normal}
+.sl-sub{font:700 14px/1.35 'Manrope',sans-serif;color:#b9c9c6;max-width:22em}
+/* result */
+.sl-result{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;background:rgba(5,12,21,.74);border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:16px 14px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.sl-verdict{font:800 13px 'Manrope',sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:6px 16px;border-radius:99px;background:rgba(255,255,255,.08);color:#dbe7e4}
+.sl-verdict.good{background:linear-gradient(135deg,#f7dea0,#d79f34);color:#2a1a00;box-shadow:0 0 30px rgba(245,196,81,.5)}
+.sl-real{font:700 54px/1.05 'Fraunces',serif;color:#f7dea0;text-shadow:0 0 36px rgba(245,196,81,.4)}
+.sl-bars{display:grid;gap:7px;width:100%;margin:6px 0 2px}
+.sl-bar{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:8px;font:800 12px 'Manrope',sans-serif;color:#b9c9c6;text-align:left}
+.sl-bar>div{height:14px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.sl-bar i{display:block;height:100%;width:var(--w);border-radius:99px;transform-origin:left;animation:slgrow .9s cubic-bezier(.2,.8,.2,1) both}
+.sl-bar.you i{background:linear-gradient(90deg,#1f9a8c,#6fe3d0)}
+.sl-bar.real i{background:linear-gradient(90deg,#d79f34,#f7dea0);animation-delay:.2s}
+.sl-bar b{font-variant-numeric:tabular-nums;color:#eef4f2;font-size:13px;min-width:64px;text-align:right}
+@keyframes slgrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.sl-lesson{font:600 15px/1.45 'Manrope',sans-serif;color:#d6e2df;background:rgba(255,255,255,.06);border-radius:14px;padding:10px 12px;width:100%}
+.sl-lesson b{color:#f7dea0}
+.sl-lesson.hurt{background:rgba(255,143,63,.14);border:1px solid rgba(255,143,63,.4);color:#ffd7b3}
+.sl-lesson.hurt b{color:#ff9a55}
+/* final */
+.sl-cta{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;background:rgba(5,12,21,.74);border:1px solid rgba(245,196,81,.4);border-radius:18px;padding:14px}
+.sl-cta b{font:700 17px 'Fraunces',serif;color:#f7dea0}
+.sl-cta span{font:600 13px 'Manrope',sans-serif;color:#b9c9c6}
+.sl-cta a{margin-top:6px;display:inline-block;padding:10px 22px;border-radius:99px;background:linear-gradient(135deg,#f7dea0,#d79f34);color:#1a1203;font:800 14px 'Manrope',sans-serif;text-decoration:none}
+.sl-wrap.end .gp-poster{margin-top:0}
+@media (prefers-reduced-motion:reduce){.sl-bg,.sl-biglogo,.sl-go,.sl-coins .coin{animation:none}}
+body.typing .sl-steps,body.typing .sl-foot{display:none}
+body.typing .sl-wrap{gap:8px;padding-top:8px}
+body.typing .sl-body{gap:8px}
 </style>
 <!-- PostHog (games site, same project as www) -->
 <script>
@@ -1663,15 +1748,33 @@ function soloShareText(){
   L.push('',`⏳ Waiting ${s.delay} years costs *${rupees(d)} more every month*. That is *+${Math.round(d/a*100)}%*.`,'',`_(assumes ${s.rate}% a year, not a promise)_`,'','Can you get closer? 👇',SHARE_URL);
   return L.join('\n');
 }
-function renderSolo(){
-  const s=state.settings, i=SOLO.i;
-  if(i<0) return paint('solo:intro',shell(`<div class="gs-card center"><div class="gs-bounce">🎯</div><h2>Guess the number</h2><p>Three questions about ${tgt(s)}. Type your guess and see how close you get.</p><button class="gs-lock" style="margin-top:14px;width:100%" onclick="soloGo()">START</button><p style="margin-top:10px;font-size:13px">Playing in a class? Scan the QR on your teacher’s screen instead.</p><a class="gs-link" href="https://games.investingformummies.com">More money games →</a></div>`));
-  if(i>=3){
-    const a=realOf('r1',s), d=realOf('r3',s)-a, short={r1:s.years1+' YEARS',r2:s.years2+' YEARS',r3:s.delay+' YEARS LATE'};
-    const rowsOf=ROUND_KEYS.map(k=>({k,r:soloRow(k)})), played=rowsOf.filter(x=>x.r).sort((x,y)=>x.r.gap-y.r.gap), best=played[0];
-    const coins=Array.from({length:12},(_,k)=>`<i class="coin" style="left:${(k*83)%100}%;animation-delay:${(k*0.45).toFixed(2)}s;animation-duration:${(3.8+(k%5)*.5).toFixed(1)}s;width:${12+(k%4)*4}px;height:${12+(k%4)*4}px"></i>`).join('');
-    const chips=rowsOf.map(({k,r})=>`<div class="gp-chip"><i>${short[k]}</i><b>${r?(r.gap===0?'EXACT!':rupees(r.gap)):'-'}</b><small>${r?(r.gap===0?'to the rupee':'away'):'no guess'}</small></div>`).join('');
-    return paint('solo:end',shell(`<div class="gp-poster m1"><div class="gp-bg"></div><div class="gp-rays"></div><div class="gp-coins">${coins}</div>
+/* The solo game is the first thing many people see of IFM outside a class, so it has its own full-bleed look. */
+const IFM_SITE='https://www.investingformummies.com';
+function soloShell(inner,kind){ const rate=state&&state.settings?state.settings.rate:12;
+  const coins=Array.from({length:14},(_,k)=>`<i class="coin" style="left:${(k*71)%100}%;animation-delay:${(k*0.41).toFixed(2)}s;animation-duration:${(4+(k%5)*.6).toFixed(1)}s;width:${10+(k%4)*4}px;height:${10+(k%4)*4}px"></i>`).join('');
+  return `<div class="sl-wrap ${kind||''}"><div class="sl-bg"></div><div class="sl-coins">${coins}</div>
+    ${kind==='intro'?'':`<div class="sl-top"><span class="sl-logo"><img src="${LOGO}" alt=""></span><span class="sl-brand"><b>The Wealth Hack</b><small>INVESTING FOR MUMMIES</small></span></div>`}
+    <div class="sl-body">${inner}</div><div class="sl-foot">The Wealth Hack assumes ${rate}% a year, not a promise</div></div>`; }
+function soloSteps(i,doneNow){ const s=state.settings, lab=[s.years1+' YEARS',s.years2+' YEARS',s.delay+' YEARS LATE'];
+  return `<div class="sl-steps">${lab.map((l,n)=>{ const done=n<i||(n===i&&doneNow); return `<div class="sl-step ${done?'done':n===i?'now':''}"><b>${done?'✓':n+1}</b><span>${l}</span></div>`; }).join('')}</div>`; }
+function soloIntro(s){
+  const lab=[[s.years1+' years','Start today. What does ₹1 Cr cost you a month?'],[s.years2+' years','Give it more time. How much does it fall?'],['Start '+s.delay+' years late','What does waiting really cost?']];
+  return soloShell(`<div class="sl-hero"><span class="sl-biglogo"><img src="${LOGO}" alt="Investing for Mummies"></span>
+    <div class="sl-eyebrow">INVESTING FOR MUMMIES PRESENTS</div>
+    <h1 class="sl-title">The Wealth Hack</h1>
+    <p class="sl-hook">What does <b>${tgt(s)}</b> really cost you every month?</p>
+    <div class="sl-rounds">${lab.map((l,n)=>`<div class="sl-round"><b>${n+1}</b><div><strong>${l[0]}</strong><span>${l[1]}</span></div></div>`).join('')}</div>
+    <button class="sl-go" onclick="soloGo()">PLAY NOW<small>3 guesses · about a minute</small></button>
+    <p class="sl-note">Playing in a class? Scan the QR on your teacher’s screen instead.</p>
+    <a class="sl-link" href="https://games.investingformummies.com">More money games →</a></div>`,'intro');
+}
+function soloEnd(s){
+  const a=realOf('r1',s), d=realOf('r3',s)-a, short={r1:s.years1+' YEARS',r2:s.years2+' YEARS',r3:s.delay+' YEARS LATE'};
+  const rowsOf=ROUND_KEYS.map(k=>({k,r:soloRow(k)})), played=rowsOf.filter(x=>x.r).sort((x,y)=>x.r.gap-y.r.gap), best=played[0];
+  const coins=Array.from({length:12},(_,k)=>`<i class="coin" style="left:${(k*83)%100}%;animation-delay:${(k*0.45).toFixed(2)}s;animation-duration:${(3.8+(k%5)*.5).toFixed(1)}s;width:${12+(k%4)*4}px;height:${12+(k%4)*4}px"></i>`).join('');
+  const chips=rowsOf.map(({k,r})=>`<div class="gp-chip"><i>${short[k]}</i><b>${r?(r.gap===0?'EXACT!':rupees(r.gap)):'-'}</b><small>${r?(r.gap===0?'to the rupee':'away'):'no guess'}</small></div>`).join('');
+  if(!_celebrated.soloEnd){ _celebrated.soloEnd=1; setTimeout(()=>confetti(3200,160,true),500); }
+  return soloShell(`<div class="gp-poster m1"><div class="gp-bg"></div><div class="gp-rays"></div><div class="gp-coins">${coins}</div>
       <div class="gp-top"><img src="${LOGO}" alt=""><span>THE WEALTH HACK</span></div>
       <div class="gp-medal"><div class="gp-disc"><b style="font-size:42px">+${Math.round(d/a*100)}%</b></div></div>
       <div class="gp-ribbon"><span>WAIT ${s.delay} YEARS</span></div>
@@ -1680,22 +1783,42 @@ function renderSolo(){
       ${best?`<div class="gp-pts" style="white-space:nowrap">Closest guess: <b style="font-size:18px">${short[best.k].toLowerCase()}</b></div>`:''}
       <div class="gp-chips">${chips}</div>
       <div class="gp-tag">The best month to start is this one.</div></div>
-      ${waBtn(soloShareText(),'Share my results')}<button class="gs-ghost" onclick="soloAgain()" style="margin-top:6px">Play again</button>
-      <p class="gs-end" style="margin:6px 0 0">Screenshot your card and show it off.</p><a class="gs-link" href="https://games.investingformummies.com">More money games →</a>`));
-  }
+      ${waBtn(soloShareText(),'Share my results')}
+      <div class="sl-cta"><b>Want to do this with real money?</b><span>Learn to invest the Investing for Mummies way.</span><a href="${IFM_SITE}" target="_blank" rel="noopener">Join a class →</a></div>
+      <button class="gs-ghost" onclick="soloAgain()" style="margin-top:0">Play again</button>
+      <a class="sl-link" href="https://games.investingformummies.com">More money games →</a>`,'end');
+}
+function renderSolo(){
+  const s=state.settings, i=SOLO.i;
+  if(i<0){ document.body.classList.add('solo-intro'); return paint('solo:intro',soloIntro(s)); }
+  document.body.classList.remove('solo-intro');
+  if(i>=3) return paint('solo:end',soloEnd(s));
   const rk=ROUND_KEYS[i], R=ROUNDS[rk], q=R.pq(s), r=soloRow(rk);
-  const qBlock=`<div class="gs-round">QUESTION ${R.n} OF 3</div><div class="gs-q"><div class="gs-q1">${q.q1}</div><div class="gs-years"><span>${q.y}</span> YEARS</div><div class="gs-q2">${q.q2}</div></div>`;
-  if(!r) return paint(`solo:${rk}:ask`,shell(`${qBlock}
+  const qBlock=`${soloSteps(i,!!r)}<div class="gs-q"><div class="gs-q1">${q.q1}</div><div class="gs-years"><span>${q.y}</span> YEARS</div><div class="gs-q2">${q.q2}</div></div>`;
+  if(!r) return paint(`solo:${rk}:ask`,soloShell(`${qBlock}
     <div class="gs-amt"><span class="rs">₹</span><input id="moneyInput" inputmode="numeric" placeholder="0" oninput="onMoney(this)" onfocus="document.body.classList.add('typing')" onblur="document.body.classList.remove('typing')"></div>
-    <div class="gs-badge" id="shBadge"></div>
+    <div class="gs-badge" id="shBadge">&nbsp;</div>
     <button class="gs-lock" id="lockBtn" onpointerdown="tapOnce(event,()=>soloLock('${rk}'))" onclick="tapOnce(null,()=>soloLock('${rk}'))" disabled>LOCK IT IN</button>`),()=>{ _pendingVal=0; });
-  if(SOLO.roll===rk){ setTimeout(()=>{ if(SOLO.roll===rk){ SOLO.roll=null; renderSolo(); } },1700);
-    return paint(`solo:${rk}:roll`,shell(`<div class="gs-card center"><div class="gs-round">QUESTION ${R.n} OF 3</div><h2>Drum roll…</h2><div class="gs-reels">${'<b>0</b>'.repeat(5)}</div></div>`),()=>{ const bs=[...document.querySelectorAll('.gs-reels b')]; _vt.push(setInterval(()=>bs.forEach(b=>b.textContent=Math.floor(Math.random()*10)),80)); }); }
-  const close=r.gap/r.real<0.05, msg=r.gap===0?'🏆 EXACT! To the rupee.':close?'🎯 So close!':'Closer next time.';
-  let body=`<div class="gs-lbl">THE REAL NUMBER</div><div class="gs-real">${rupees(r.real)}</div><div class="gs-sub">you guessed ${rupees(r.guess)}</div><div class="gs-gap">${gapText(r.gap,r.real)}</div><div class="gs-msg ${close?'good':''}"><b>${msg}</b></div>`;
-  if(rk==='r3'){ const a=realOf('r1',s), d=realOf('r3',s)-a; body+=`<div class="gs-punch">Waiting ${s.delay} years costs <b>${rupees(d)} more</b> every month. That's <b>+${Math.round(d/a*100)}%</b>.</div>`; }
-  if(close&&!_celebrated['solo'+rk]){ _celebrated['solo'+rk]=1; setTimeout(()=>confetti(2600,120,true),250); }
-  return paint(`solo:${rk}:res`,shell(`<div class="gs-card"><div class="gs-round">QUESTION ${R.n} OF 3</div>${body}<button class="gs-lock" style="margin-top:10px;width:100%" onclick="soloNext()">${i<2?'NEXT QUESTION':'SEE MY RESULTS'}</button></div>`));
+  const real=r.real, digits=indianFormat(String(real)).split('');
+  if(SOLO.roll===rk){ const nd=digits.filter(c=>/\d/.test(c)).length, total=800+nd*330+700; setTimeout(()=>{ if(SOLO.roll===rk){ SOLO.roll=null; renderSolo(); } },total);
+    return paint(`solo:${rk}:roll`,soloShell(`${soloSteps(i,false)}<div class="sl-rollcard"><div class="sl-kick">THE REAL NUMBER</div><div class="sl-reels"><span class="sl-rs">₹</span>${digits.map(c=>/\d/.test(c)?`<b class="sl-d" data-d="${c}">0</b>`:`<em>${c}</em>`).join('')}</div><div class="sl-sub">${R.label(s)}</div></div>`),()=>{
+        const bs=[...document.querySelectorAll('.sl-d')], t0=Date.now(); let k=0;
+        _vt.push(setInterval(()=>{ const el=Date.now()-t0; bs.forEach((b,n)=>{ if(b.classList.contains('stopped')) return; if(el>=800+n*330){ b.textContent=b.dataset.d; b.classList.add('stopped'); } else b.textContent=Math.floor(Math.random()*10); }); },60)); }); }
+  const pct=r.gap/r.real, exact=r.gap===0, close=pct<0.05, ok=pct<0.25;
+  const verdict=exact?'EXACT! To the rupee.':close?'So close!':ok?'Good instinct.':'That is the surprise.';
+  const mx=Math.max(r.guess,r.real);
+  let lesson;
+  if(rk==='r1') lesson=`Start today and <b>${rupees(real)}</b> a month builds ${tgt(s).replace(' ','\u00a0')} in ${s.years1} years.`;
+  else if(rk==='r2'){ const a=realOf('r1',s), fall=Math.round((1-real/a)*100); lesson=`Give it ${s.years2} years and the monthly amount falls to <b>${rupees(real)}</b>, <b>${fall}% less</b>. Time does the heavy lifting.`; }
+  else { const a=realOf('r1',s), d=real-a, extra=putIn(real,s.years1-s.delay)-putIn(a,s.years1); lesson=`Waiting ${s.delay} years costs about <b>${roughDiff(d)} more</b> every month (<b>+${Math.round(d/a*100)}%</b>) and about <b>${lakhs(extra)} more</b> out of your own pocket.`; }
+  if(close&&!_celebrated['solo'+rk]){ _celebrated['solo'+rk]=1; setTimeout(()=>confetti(2600,120,true),350); }
+  return paint(`solo:${rk}:res`,soloShell(`${soloSteps(i,true)}<div class="sl-result"><div class="sl-verdict ${close?'good':''}">${verdict}</div>
+      <div class="sl-kick">THE REAL NUMBER</div><div class="sl-real">${rupees(real)}</div><div class="sl-sub">${R.label(s)}</div>
+      <div class="sl-bars"><div class="sl-bar you"><span>You</span><div><i style="--w:${(r.guess/mx*100).toFixed(1)}%"></i></div><b>${rupees(r.guess)}</b></div>
+      <div class="sl-bar real"><span>Real</span><div><i style="--w:${(real/mx*100).toFixed(1)}%"></i></div><b>${rupees(real)}</b></div></div>
+      <div class="gs-gap">${gapText(r.gap,r.real)}</div>
+      <div class="sl-lesson ${rk==='r3'?'hurt':''}">${lesson}</div></div>
+    <button class="gs-lock" style="margin-top:6px;width:100%" onclick="soloNext()">${i<2?'NEXT QUESTION':'SEE MY CARD'}</button>`));
 }
 
 if(isHost) initHost(); else initPlayer();
