@@ -1405,14 +1405,16 @@ function ifmShare(msg){ window.open('https://wa.me/?text='+encodeURIComponent(ms
 const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>';
 let _shareMsg='';
 function waBtn(msg,label){ _shareMsg=msg; return `<button class="gs-wa" onclick="ifmShare(_shareMsg)">${WA_ICON}<span>${label}</span></button>`; }
-function shareText(p,pts){
-  const s=S(), a=realOf('r1'), b=realOf('r3');
-  return ['🎲 *'+GAME_NAME+'*','_guess the number, closest wins_','',
-    `${tgt(s)} in ${s.years1} years: *${rupees(a)} a month*`,
-    `${tgt(s)} in ${s.years2} years: *${rupees(realOf('r2'))} a month*`,
-    `Start ${s.delay} years late (${s.startYear+s.delay}): *${rupees(b)} a month*`,
-    `   _that's ${rupees(b-a)} more, every single month_`,'',
-    `I scored *${pts} point${pts===1?'':'s'}*.`,'',`_(assumes ${s.rate}% a year, not a promise)_`,'','Play it 👇',SHARE_URL].join('\n');
+// The message people forward is THEIR game: what they guessed, how far off, where they finished, then the one big lesson.
+function shareText(p,mine,total){
+  const s=S(), a=realOf('r1'), b=realOf('r3'), d=b-a, L=[];
+  L.push('🎲 *'+GAME_NAME+'*','_guess the number, closest wins_','');
+  const line=(rk,what)=>{ const r=myRow(rk), real=state.results[rk]?state.results[rk].real:Math.round(realOf(rk));
+    L.push(r?`▸ ${what}: I guessed *${rupees(r.guess)}*, the real number is *${rupees(real)}* (${gapText(r.gap,real).replace('EXACT! to the rupee','exact!')})${r.rank===1?' 🏆':''}`:`▸ ${what}: real number *${rupees(real)}*`); };
+  line('r1',`${tgt(s)} in ${s.years1} years`); line('r2',`${tgt(s)} in ${s.years2} years`); line('r3',`Start ${s.delay} years late`);
+  L.push('',mine.pts&&mine.pos?`🏅 I finished *number ${mine.pos} of ${total}* with *${mine.pts} point${mine.pts===1?'':'s'}*.`:`I played along with ${total} people.`,'',
+    `⏳ Waiting ${s.delay} years costs *${rupees(d)} more every month*. That is *+${Math.round(d/a*100)}%*.`,'',`_(assumes ${s.rate}% a year, not a promise)_`,'','Play it 👇',SHARE_URL);
+  return L.join('\n');
 }
 function myRow(rk){ const r=state.results&&state.results[rk]; return r?r.rows.find(x=>x.id===MY_ID)||null:null; }
 function stats(rk){ const ps=Object.values(state.players), done=ps.filter(p=>hasGuess(p,rk)).length; return {done,total:ps.length,pct:ps.length?Math.round(done/ps.length*100):0,left:ps.length-done}; }
@@ -1486,7 +1488,7 @@ function renderPlayer(){
     const rows=ROUND_KEYS.map(k=>{ const r=myRow(k); return `<div class="gs-line"><span>${ROUNDS[k].title}</span><b>${r?gapText(r.gap,state.results[k].real):'no guess'}</b></div>`; }).join('');
     return paint('end:final',shell(`<div class="gs-card"><div class="gs-lbl">FINAL SCORE</div><div class="gs-real">${mine.pts} pt${mine.pts===1?'':'s'}</div>
       <div class="gs-sub">${mine.pts&&mine.pos?`You finished number ${mine.pos} of ${sc.length}`:'Thanks for playing'}</div><div class="gs-lines">${rows}</div>
-      ${waBtn(shareText(p,mine.pts),'Share on WhatsApp')}<p class="gs-end">The best month to start is this one.</p></div>`));
+      ${waBtn(shareText(p,mine,sc.length),'Share on WhatsApp')}<p class="gs-end">The best month to start is this one.</p></div>`));
   }
   paint('wait',shell(waitCard('👀','Eyes on the screen','')));
 }
