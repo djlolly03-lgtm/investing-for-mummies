@@ -28,7 +28,7 @@
   --success:#27AE60;--danger:#c0392b;--wa:#25D366;
   --ink-night:#050c15;--gold-hi:#f7dea0;--ivory:#f6f1e7;--mist:#9bb0ae;
   /* projector-only tones: the studio is dark, so text and accents lift to these */
-  --stage-ink:#eaf6f3;--stage-sub:#9fc2bb;--teal-bright:#2dd4bf;--gold-bright:#f5c451;--coral:#ff8a76;
+  --stage-ink:#eaf6f3;--stage-sub:#9fc2bb;--teal-bright:#2dd4bf;--gold-bright:#f5c451;--coral:#ff8f3f;
   --glass:rgba(10,26,34,.72);--glass-edge:rgba(255,255,255,.12);
   --shadow:0 2px 12px rgba(26,58,92,.06);--shadow-lg:0 16px 48px rgba(0,0,0,.45);
 }
@@ -160,7 +160,7 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 .rv-row .real{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:700;color:var(--teal-bright)}
 .rv-row .real.hot{color:var(--gold-bright)}
 .rv-row .off{font-size:.78rem;font-weight:800;text-transform:none;letter-spacing:.02em;border-radius:10px;padding:4px 9px;margin-top:0;text-align:center;background:rgba(45,212,191,.15);color:var(--teal-bright);white-space:nowrap}
-.rv-row .off.low{background:rgba(255,138,118,.16);color:var(--coral)}
+.rv-row .off.low{background:rgba(255,143,63,.16);color:var(--coral)}
 .rv-row .off.high{background:rgba(245,196,81,.16);color:var(--gold-bright)}
 .rv-row .off.up{background:rgba(45,212,191,.18);color:var(--teal-bright)}
 .rv-row .extra{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;color:var(--coral)}
@@ -179,17 +179,17 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 /* life bar — today → (wait) → finish line */
 .lb{position:relative;height:58px;min-width:180px}
 .lb-c{position:absolute;left:0;right:0;top:0;text-align:center;font:700 .74rem 'Manrope',sans-serif;color:var(--stage-sub);white-space:nowrap}
-.lb-c .lost{color:#ff8a76;font-weight:800}.lb-c .grow{color:var(--gold-hi);font-weight:700}
+.lb-c .lost{color:#ff8f3f;font-weight:800}.lb-c .grow{color:var(--gold-hi);font-weight:700}
 .lb-track{position:absolute;left:0;right:0;top:24px;height:9px;border-radius:99px;background:rgba(255,255,255,.1)}
 .lb-seg{position:absolute;top:0;height:100%;border-radius:99px;transition:left .5s ease,width .5s ease}
 .lb-inv{background:linear-gradient(90deg,#d79f34,#f7dea0);box-shadow:0 0 14px rgba(233,191,98,.35)}
-.lb-wait{background:repeating-linear-gradient(135deg,rgba(255,138,118,.95) 0 5px,rgba(255,138,118,.35) 5px 10px)}
+.lb-wait{background:repeating-linear-gradient(135deg,rgba(255,143,63,.95) 0 5px,rgba(255,143,63,.35) 5px 10px)}
 .lb-dot{position:absolute;top:-4px;width:17px;height:17px;border-radius:50%;transform:translateX(-50%);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.5);transition:left .5s ease}
-.lb-dot.s{background:#ff8a76}
+.lb-dot.s{background:#ff8f3f}
 .lb-flag{position:absolute;top:-3px;width:15px;height:15px;transform:translateX(-50%) rotate(45deg);background:var(--gold-hi);border:2px solid #1a1203;border-radius:3px;transition:left .5s ease}
 .lb-t{position:absolute;top:38px;font:800 .82rem 'Manrope',sans-serif;color:var(--stage-ink);white-space:nowrap;transition:left .5s ease}
 .lb-t.n{transform:translateX(-85%)}
-.lb-t.s{transform:translateX(-10%);color:#ff8a76}
+.lb-t.s{transform:translateX(-10%);color:#ff8f3f}
 .lb-t.f{transform:translateX(-50%);color:var(--gold-hi)}
 .lb-t.l{transform:translateX(-50%);color:var(--stage-sub);font-weight:700;opacity:.75}
 .lb-line{position:absolute;top:-9px;bottom:-9px;width:0;border-left:2px dashed rgba(255,255,255,.45);transform:translateX(-1px)}
@@ -203,11 +203,11 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 .wi-sc{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
 .wi-n{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:2.7rem;line-height:1.05;color:var(--gold-hi);margin:6px 0 2px;text-shadow:0 0 36px rgba(233,191,98,.3)}
 .wi-n.dim{color:var(--stage-sub);font-size:1.9rem;text-shadow:none}
-.wi-n.good{color:#6fe3d0}.wi-n.bad{color:#ff8a76}
+.wi-n.good{color:#6fe3d0}.wi-n.bad{color:#ff8f3f}
 .wi-arrow{font-family:'Fraunces',serif;font-size:2rem;color:var(--gold)}
 .wi-s{font-size:.72rem;font-weight:600;color:var(--stage-sub);line-height:1.3}
 .wi-delta{margin-top:12px;padding:9px 12px;border-radius:12px;font-weight:800;font-size:1rem}
-.wi-delta.good{background:rgba(111,227,208,.14);color:#6fe3d0}.wi-delta.bad{background:rgba(255,138,118,.14);color:#ff8a76}
+.wi-delta.good{background:rgba(111,227,208,.14);color:#6fe3d0}.wi-delta.bad{background:rgba(255,143,63,.14);color:#ff8f3f}
 .wi-delta.idle{background:rgba(255,255,255,.06);color:var(--stage-sub);font-weight:600;font-size:.9rem}
 .wi-ctl{padding:18px 20px 20px}
 .wi-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
@@ -231,10 +231,10 @@ body.host-bg.end-bg .bgv,body.host-bg.end-bg .bgshade{display:none}
 .wi-row .nm .av{width:36px;height:36px;font-size:1.1rem}
 .wi-row .guess{font-size:1.2rem;color:var(--stage-sub);font-weight:600}
 .wi-real{font-family:'Fraunces',serif;font-size:2.05rem;font-weight:600;color:var(--gold-hi);line-height:1;white-space:nowrap}
-.wi-real.good{color:#6fe3d0}.wi-real.bad{color:#ff8a76}
+.wi-real.good{color:#6fe3d0}.wi-real.bad{color:#ff8f3f}
 .wi-chg{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 12px;border-radius:12px;font-weight:800;font-size:1.02rem;white-space:nowrap}
 .wi-chg small{font-size:.62rem;font-weight:600;opacity:.8}
-.wi-chg.good{background:rgba(111,227,208,.15);color:#6fe3d0}.wi-chg.bad{background:rgba(255,138,118,.15);color:#ff8a76}.wi-chg.same{background:rgba(255,255,255,.07);color:var(--stage-sub);font-weight:600;font-size:.9rem}
+.wi-chg.good{background:rgba(111,227,208,.15);color:#6fe3d0}.wi-chg.bad{background:rgba(255,143,63,.15);color:#ff8f3f}.wi-chg.same{background:rgba(255,255,255,.07);color:var(--stage-sub);font-weight:600;font-size:.9rem}
 .wi-table.dense .wi-row{padding:7px 6px;min-height:52px}.wi-table.dense .wi-real{font-size:1.6rem}.wi-table.dense .wi-row .nm{font-size:1.05rem}
 .wi-table .rv-head,.wi-table .rv-row{grid-template-columns:1.15fr 1.95fr .9fr 1.4fr 1.15fr}
 
@@ -319,7 +319,7 @@ body.host-bg .rv-agg5 .rv-head{font-size:.8rem;letter-spacing:.09em}
 body.host-bg .gsplit{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.8rem}
 body.host-bg .gs{padding:.55rem .3rem;border-radius:12px;text-align:center;font-size:.95rem;font-weight:800;line-height:1.25}
 body.host-bg .gs b{display:block;font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;line-height:1.1}
-body.host-bg .gs.low{background:rgba(255,138,118,.14);color:var(--coral)}
+body.host-bg .gs.low{background:rgba(255,143,63,.14);color:var(--coral)}
 body.host-bg .gs.ok{background:rgba(45,212,191,.14);color:var(--teal-bright)}
 body.host-bg .gs.high{background:rgba(245,196,81,.14);color:var(--gold-bright)}
 
@@ -328,7 +328,7 @@ body.host-bg .ask-stage{gap:1rem}
 body.host-bg .askbar{display:flex;align-items:stretch;justify-content:center;gap:1.2rem;width:100%;max-width:58rem}
 body.host-bg .clockbox{flex:1.25;display:flex;align-items:center;gap:1.4rem;padding:.9rem 1.5rem;border-radius:18px}
 body.host-bg .clock{font-family:'Fraunces',serif;font-weight:600;font-size:4.6rem;line-height:1;color:var(--gold-hi);font-variant-numeric:tabular-nums;text-shadow:0 0 44px rgba(233,191,98,.3)}
-body.host-bg .clock.low,body.host-bg .clock.done{color:var(--coral);text-shadow:0 0 44px rgba(255,138,118,.3)}
+body.host-bg .clock.low,body.host-bg .clock.done{color:var(--coral);text-shadow:0 0 44px rgba(255,143,63,.3)}
 body.host-bg .clock.done{animation:blink 1.2s infinite}
 body.host-bg .clockbox .kicker{margin-top:.35rem}
 body.host-bg .clock-btns{display:flex;flex-direction:column;gap:.45rem;margin-left:auto}
@@ -458,7 +458,7 @@ body.hc .scan-how{font-size:.8rem}
 @media(max-width:1000px){.join-corner,.key-hint{display:none!important}.lobby-grid,.rv{grid-template-columns:1fr}.end-grid{grid-template-columns:1fr}#host.has-corner{padding-top:14px}}
 
 /* ════════ PLAYER · phone — midnight & gold ════════ */
-body.player-bg{--navy:#f6f1e7;--ink:#f6f1e7;--muted:#9bb0ae;--mint:rgba(255,255,255,.14);--mint-lt:rgba(255,255,255,.06);--teal:#e9bf62;--teal-d:#f7dea0;--danger:#ff8a76;--cream:#050c15;background:#050c15;color:#f6f1e7;font-family:'Manrope',sans-serif}
+body.player-bg{--navy:#f6f1e7;--ink:#f6f1e7;--muted:#9bb0ae;--mint:rgba(255,255,255,.14);--mint-lt:rgba(255,255,255,.06);--teal:#e9bf62;--teal-d:#f7dea0;--danger:#ff8f3f;--cream:#050c15;background:#050c15;color:#f6f1e7;font-family:'Manrope',sans-serif}
 body.player-bg::after{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
 .wrap{position:relative;max-width:480px;margin:0 auto;padding:22px 16px 28px;min-height:100vh;display:flex;flex-direction:column;gap:14px;overflow-x:clip}
 .wrap>*:not(.p-hero){position:relative;z-index:1}
@@ -512,13 +512,13 @@ body.player-bg::after{content:"";position:fixed;inset:0;z-index:5;pointer-events
 .locked .u{font-size:.78rem;color:#9bb0ae;font-weight:600}
 .real{text-align:center;padding:6px 0 8px}
 .real .v{font-family:'Fraunces',serif;font-size:2.8rem;font-weight:600;color:#f7dea0;line-height:1.1;margin:6px 0;text-shadow:0 0 40px rgba(233,191,98,.3)}
-.real .v.red{color:#ff8a76;text-shadow:none}
+.real .v.red{color:#ff8f3f;text-shadow:none}
 .real .g{color:#9bb0ae;font-weight:600;font-size:.9rem}
 .off{display:inline-block;margin-top:10px;border-radius:999px;padding:5px 12px;font-size:.78rem;font-weight:800;text-transform:none;letter-spacing:.02em;background:rgba(45,212,191,.14);color:#6fe3d0}
-.off.low{background:rgba(255,138,118,.14);color:#ff8a76}
+.off.low{background:rgba(255,143,63,.14);color:#ff8f3f}
 .off.high{background:rgba(233,191,98,.14);color:#f7dea0}
 .fb{margin-top:14px;background:rgba(255,255,255,.05);border-left:3px solid #e9bf62;border-radius:0 14px 14px 0;padding:13px 15px;font-weight:600;line-height:1.55;font-size:.9rem;color:#e7e2d6}
-.fb b{color:#ff8a76}
+.fb b{color:#ff8f3f}
 .fb.good b{color:#f7dea0}
 .opts{display:grid;gap:9px}
 .optb{display:flex;align-items:center;gap:13px;width:100%;text-align:left;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.05);border-radius:15px;padding:15px 15px;font:600 .95rem 'Manrope',sans-serif;color:#f6f1e7;transition:border-color .2s,background .2s}
@@ -528,7 +528,7 @@ body.player-bg::after{content:"";position:fixed;inset:0;z-index:5;pointer-events
 .sum{display:grid;gap:9px}
 .sum .row{display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:11px 14px;font-weight:600;font-size:.86rem;color:#d6e2df}
 .sum .row b{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;color:#f7dea0;white-space:nowrap}
-.sum .row b.red{color:#ff8a76}
+.sum .row b.red{color:#ff8f3f}
 .crowd{display:flex;align-items:center;gap:12px;margin-top:2px}
 .stack{display:flex}
 .stack span{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;border:2px solid #050c15;margin-left:-9px;color:#fff;font-weight:800}
@@ -557,23 +557,23 @@ body.player-bg::after{content:"";position:fixed;inset:0;z-index:5;pointer-events
 .ctx-n{font:600 1.7rem 'Fraunces',serif;color:#f7dea0;line-height:1.1}
 .ctx-n.q{color:#9bb0ae}
 .ctx-s{font-size:.78rem;font-weight:600;color:#9bb0ae;line-height:1.4;margin-top:4px}
-.ctx-s b{color:#f6f1e7;font-weight:800}.ctx-s b.red{color:#ff8a76}
+.ctx-s b{color:#f6f1e7;font-weight:800}.ctx-s b.red{color:#ff8f3f}
 .ctx-arrow{font:600 1.6rem 'Fraunces',serif;color:#e9bf62;padding-top:6px}
 .ctx-t{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1);font-size:.84rem;font-weight:600;color:#e7e2d6;line-height:1.4}
-.ctx-t b{color:#ff8a76}
+.ctx-t b{color:#ff8f3f}
 .proj{margin-top:14px;padding:14px 15px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
 .proj.over{border-color:rgba(111,227,208,.4);background:rgba(111,227,208,.07)}
-.proj.under{border-color:rgba(255,138,118,.35);background:rgba(255,138,118,.06)}
+.proj.under{border-color:rgba(255,143,63,.35);background:rgba(255,143,63,.06)}
 .proj.close{border-color:rgba(233,191,98,.5);background:rgba(233,191,98,.08)}
 .proj-h{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#9bb0ae;margin-bottom:8px}
 .proj-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .proj-row span{font-size:.86rem;font-weight:600;color:#d6e2df;line-height:1.35}
 .proj-row b{font:600 1.9rem 'Fraunces',serif;color:#f7dea0;white-space:nowrap}
-.proj.over .proj-row b{color:#6fe3d0}.proj.under .proj-row b{color:#ff8a76}
+.proj.over .proj-row b{color:#6fe3d0}.proj.under .proj-row b{color:#ff8f3f}
 .proj-t{margin-top:8px;font-size:.86rem;font-weight:600;color:#e7e2d6;line-height:1.45}
 .proj-t b{color:#fff}
 .real.big .v{font-size:3.6rem}
-.real .v.good{color:#6fe3d0;text-shadow:none}.real .v.bad{color:#ff8a76;text-shadow:none}
+.real .v.good{color:#6fe3d0;text-shadow:none}.real .v.bad{color:#ff8f3f;text-shadow:none}
 .phone-lb{margin-top:14px;padding:12px 8px 0}
 .solo-note{margin-top:14px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.05);font-size:.82rem;font-weight:600;color:#9bb0ae;line-height:1.5;text-align:center}
 .rejoin{position:fixed;inset:0;z-index:200;background:rgba(5,12,21,.94);display:grid;place-items:center;color:#f6f1e7;text-align:center;padding:30px;cursor:pointer}
@@ -623,7 +623,7 @@ body.host-bg .ly{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;c
 body.host-bg .ly small{display:block;font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:700;color:var(--stage-sub)}
 body.host-bg .lbar{height:1.1rem;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;display:block}
 body.host-bg .lbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#d79f34,#f7dea0)}
-body.host-bg .lbar i{background:linear-gradient(90deg,#e8776a,#ffb3a6)}
+body.host-bg .lbar i{background:linear-gradient(90deg,#e8601c,#ffc48f)}
 body.host-bg .lhead+.lrow .lbar i{background:linear-gradient(90deg,#d79f34,#f7dea0)}
 body.host-bg .la{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;text-align:right;color:var(--stage-ink);font-variant-numeric:tabular-nums}
 body.host-bg .lx em{font-style:normal;font-weight:800;font-size:1.25rem;color:var(--coral)}
@@ -718,9 +718,9 @@ body.host-bg .note25{margin:0;opacity:0;font-size:1.25rem;font-weight:700;color:
 body.host-bg .note25.show{opacity:1;height:auto}
 body.host-bg .note25 b{color:var(--teal-bright)}
 /* round 3: the punchline */
-body.host-bg .punchline{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.2rem 1.4rem;text-align:center;width:100%;max-width:56rem;padding:.9rem 1.6rem;border-color:rgba(255,138,118,.55);box-shadow:0 0 80px rgba(255,138,118,.22),var(--shadow-lg)}
+body.host-bg .punchline{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.2rem 1.4rem;text-align:center;width:100%;max-width:56rem;padding:.9rem 1.6rem;border-color:rgba(255,143,63,.55);box-shadow:0 0 80px rgba(255,143,63,.22),var(--shadow-lg)}
 body.host-bg .punchline .dn{font-size:2.5rem}
-body.host-bg .pct{font-family:'Fraunces',serif;font-weight:700;font-size:6.4rem;line-height:.95;color:var(--coral);text-shadow:0 0 60px rgba(255,138,118,.5);animation:pctpulse 1.2s ease-in-out infinite}
+body.host-bg .pct{font-family:'Fraunces',serif;font-weight:700;font-size:6.4rem;line-height:.95;color:var(--coral);text-shadow:0 0 60px rgba(255,143,63,.5);animation:pctpulse 1.2s ease-in-out infinite}
 @keyframes pctpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 body.host-bg .pl-cap{font-size:1.15rem;font-weight:800;color:var(--stage-ink)}
 body.host-bg .pl-foot{grid-column:1/-1;border-top:1px solid var(--glass-edge);padding-top:.5rem;font-size:1.5rem;font-weight:700;color:var(--stage-ink)}
@@ -802,7 +802,7 @@ body.player-bg.gs::after{display:none}
 .gs-prog-t{font:800 13px 'Manrope',sans-serif;margin-bottom:6px;color:#eaf6f3}
 .gs-bar{height:12px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
 .gs-bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#2dd4bf,#f7dea0);transition:width .6s}
-.gs-nudge{background:#ff8a76;color:#2a0d08;border-radius:14px;padding:8px 12px;font:800 14px 'Manrope',sans-serif;text-align:center;animation:gsnudge 1s ease-in-out infinite}
+.gs-nudge{background:#ff8f3f;color:#2a1204;border-radius:14px;padding:8px 12px;font:800 14px 'Manrope',sans-serif;text-align:center;animation:gsnudge 1s ease-in-out infinite}
 .gs-nudge[hidden]{display:none}
 @keyframes gsnudge{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
 .gs-lock{margin-top:auto;height:60px;border:0;border-radius:18px;background:linear-gradient(135deg,#f7dea0,#d79f34);color:#1a1203;font:800 20px 'Manrope',sans-serif;letter-spacing:.05em;box-shadow:0 6px 0 #8a6a1a,0 12px 30px rgba(233,191,98,.3)}
@@ -827,7 +827,7 @@ body.player-bg.gs::after{display:none}
 .gs-reels{display:flex;gap:6px;justify-content:center;margin:6px 0}
 .gs-reels b{width:40px;height:56px;border-radius:10px;background:#050c15;color:#f7dea0;font:700 38px/56px 'Oswald',sans-serif;text-align:center;box-shadow:inset 0 0 0 2px rgba(233,191,98,.7)}
 .gs-stairs{display:flex;align-items:flex-end;gap:6px;height:70px;margin-top:6px}
-.gs-stairs i{display:block;width:30px;border-radius:6px 6px 0 0;background:linear-gradient(#ff8a76,#d79f34);animation:gsstair 1.6s ease-in-out infinite}
+.gs-stairs i{display:block;width:30px;border-radius:6px 6px 0 0;background:linear-gradient(#ff8f3f,#d79f34);animation:gsstair 1.6s ease-in-out infinite}
 .gs-stairs i:nth-child(1){height:14px}.gs-stairs i:nth-child(2){height:24px;animation-delay:.15s}.gs-stairs i:nth-child(3){height:38px;animation-delay:.3s}.gs-stairs i:nth-child(4){height:52px;animation-delay:.45s}.gs-stairs i:nth-child(5){height:68px;animation-delay:.6s}
 @keyframes gsstair{0%,100%{opacity:.55}50%{opacity:1}}
 .gs-lbl{font:800 12px 'Manrope',sans-serif;letter-spacing:.18em;color:#9bb0ae;text-align:center}
@@ -836,8 +836,8 @@ body.player-bg.gs::after{display:none}
 .gs-gap{align-self:center;background:rgba(45,212,191,.14);color:#6fe3d0;font:800 18px 'Manrope',sans-serif;padding:6px 18px;border-radius:99px}
 .gs-msg{background:rgba(255,255,255,.06);border-radius:14px;padding:10px 12px;font:600 15px/1.4 'Manrope',sans-serif;text-align:center;color:#eaf6f3}
 .gs-msg.good{background:rgba(233,191,98,.14);color:#f7dea0}
-.gs-punch{background:rgba(255,138,118,.14);border:1px solid rgba(255,138,118,.35);border-radius:14px;padding:10px 12px;font:700 15px/1.4 'Manrope',sans-serif;text-align:center;color:#ffb3a6}
-.gs-punch b{color:#ff8a76}
+.gs-punch{background:rgba(255,143,63,.14);border:1px solid rgba(255,143,63,.35);border-radius:14px;padding:10px 12px;font:700 15px/1.4 'Manrope',sans-serif;text-align:center;color:#ffc48f}
+.gs-punch b{color:#ff8f3f}
 .gs-lines{display:grid;gap:6px;margin:4px 0}
 .gs-line{display:flex;justify-content:space-between;gap:10px;background:rgba(255,255,255,.06);border-radius:12px;padding:9px 12px;font:700 14px 'Manrope',sans-serif;color:#d6e2df}
 .gs-line b{color:#f7dea0}
@@ -892,12 +892,12 @@ body.hc.host-bg .lp b{font-size:1.3rem}
 /* the money the delay costs: the hurt number */
 body.host-bg .hurt-row{display:flex;justify-content:center;align-items:flex-end;gap:2.4rem;flex-wrap:wrap}
 body.host-bg .hr-a b{display:block;font-family:'Fraunces',serif;font-size:2rem;color:var(--coral);line-height:1.05}
-body.host-bg .hr-b strong{display:block;font-family:'Fraunces',serif;font-weight:700;font-size:3.6rem;line-height:1;color:var(--coral);text-shadow:0 0 50px rgba(255,138,118,.5);animation:pctpulse 1.3s ease-in-out infinite}
+body.host-bg .hr-b strong{display:block;font-family:'Fraunces',serif;font-weight:700;font-size:3.6rem;line-height:1;color:var(--coral);text-shadow:0 0 50px rgba(255,143,63,.5);animation:pctpulse 1.3s ease-in-out infinite}
 body.host-bg .hurt-row span{display:block;font-size:1.05rem;font-weight:800;color:var(--stage-ink)}
 body.hc.host-bg .hr-b strong{font-size:2.7rem}
 body.hc.host-bg .hr-a b{font-size:1.6rem}
 body.host-bg .pl-foot{font-weight:400}
-body.host-bg .lp.hot b{display:block;font-family:'Fraunces',serif;font-weight:700;color:var(--coral);line-height:1.02;text-shadow:0 0 24px rgba(255,138,118,.35)}
+body.host-bg .lp.hot b{display:block;font-family:'Fraunces',serif;font-weight:700;color:var(--coral);line-height:1.02;text-shadow:0 0 24px rgba(255,143,63,.35)}
 body.host-bg .lp b.base{color:var(--stage-sub);font-size:1.3rem}
 body.host-bg .lhead,body.host-bg .lrow{grid-template-columns:8rem 1fr 8.5rem 9rem 14rem}
 /* the finisher's poster: a card made to be screenshotted */
@@ -930,6 +930,9 @@ body.host-bg .lhead,body.host-bg .lrow{grid-template-columns:8rem 1fr 8.5rem 9re
 .gp-chip b{display:block;font:700 16px 'Fraunces',serif;color:var(--c1);margin-top:2px;word-break:break-word}
 .gp-chip small{font:700 11px 'Manrope',sans-serif;color:#9bb0ae}
 .gp-tag{margin-top:auto;padding-top:12px;font:italic 600 15px 'Fraunces',serif;color:#f7dea0}
+
+.gp-poster.m0{--c1:#e9fbf6;--c2:#7fd9c8;--c3:#2a8f80;--rim:#5fd0bd;border-color:#5fd0bd;box-shadow:0 0 0 4px rgba(95,208,189,.14),0 0 60px rgba(95,208,189,.25),0 24px 60px rgba(0,0,0,.6)}
+.gp-poster.m0 .gp-ribbon span{letter-spacing:.24em}
 </style>
 <!-- PostHog (games site, same project as www) -->
 <script>
@@ -1346,6 +1349,9 @@ function tplAsk(rk){
 // People tie on round numbers all the time, so the podium shows PLACES, each holding everyone who shares it.
 // what the person actually pays in over the years, against what growth adds
 const putIn=(monthly,years)=>monthly*12*years;
+// The cost-of-delay screens are about the message, not the paise: round to numbers a room can read at a glance.
+const near=(n,u)=>Math.round(n/u)*u;
+const roughMonthly=n=>rupees(near(n,500)), roughDiff=n=>rupees(near(n,1000)), lakhs=n=>'₹'+Math.max(1,Math.round(n/100000))+' L';
 function groupsOf(res){ const m=new Map(); res.rows.filter(r=>r.rank<=3).forEach(r=>{ if(!m.has(r.rank)) m.set(r.rank,[]); m.get(r.rank).push(r); });
   return [...m.entries()].sort((a,b)=>a[0]-b[0]).map(([rank,rows])=>({rank,rows,gap:rows[0].gap})); }
 function reelHtml(real){
@@ -1373,8 +1379,8 @@ function tplReveal(rk){
     extra=`<div class="glass punchline xtra"><div class="pl-l"><div class="kicker">Start today</div><div class="dn">${rupees(a)}</div></div>
       <div class="pl-m"><div class="pct">+<span id="pctNum" data-to="${pct}">${pct}</span>%</div><div class="pl-cap">just for waiting ${s.delay} years</div></div>
       <div class="pl-r"><div class="kicker">Start ${s.delay} years late</div><div class="dn gold">${rupees(b)}</div></div>
-      <div class="pl-foot"><div class="hurt-row"><div class="hr-a"><b>${rupees(d)}</b><span>more every single month</span></div><div class="hr-b"><strong>${fmtMoney(pLate-pOn)}</strong><span>extra from your own pocket</span></div></div>
-      <span class="pl-put">You put in ${fmtMoney(pOn)} starting today, ${fmtMoney(pLate)} starting ${s.delay} years late.</span></div></div>`;
+      <div class="pl-foot"><div class="hurt-row"><div class="hr-a"><b>about ${roughDiff(d)}</b><span>more every single month</span></div><div class="hr-b"><strong>about ${lakhs(pLate-pOn)}</strong><span>extra from your own pocket</span></div></div>
+      <span class="pl-put">You put in ${lakhs(pOn)} starting today, ${lakhs(pLate)} starting ${s.delay} years late.</span></div></div>`;
   }
   return `<div class="stage reveal-stage rv-${rk}">
     <div class="presents">Round ${R.n} · the real number</div>
@@ -1416,15 +1422,15 @@ function tplLadder(){
   const s=S(), base=realOf('r1'), rows=[0,1,2,3,4].map(d=>({d,a:sipFor(s.target,s.years1-d,s.rate),put:putIn(sipFor(s.target,s.years1-d,s.rate),s.years1-d)})), mx=rows[4].a, put0=rows[0].put;
   const body=rows.map((r,i)=>{ const mult=r.a/base, D=i*1100;
     return `<div class="lrow" style="animation-delay:${D}ms"><span class="ly">${i===0?'On time':i+' year'+(i>1?'s':'')+' late'}</span>
-      <span class="lbar"><i style="animation-delay:${D+150}ms;width:${Math.max(6,r.a/mx*100)}%"></i></span><b class="la">${rupees(r.a)}</b>
-      <span class="lx">${i?`<em style="font-size:${1.2+i*.28}rem">×${mult.toFixed(2)}</em><small>+${rupees(r.a-base)} a month</small>`:'<small>a month, the baseline</small>'}</span>
-      <span class="lp ${i?'hot':''}">${i?`<b style="font-size:${1.5+i*.42}rem">+${fmtMoney(r.put-put0)}</b><small>extra from your own pocket</small>`:`<b class="base">${fmtMoney(r.put)}</b><small>your own money in total</small>`}</span></div>`; }).join('');
+      <span class="lbar"><i style="animation-delay:${D+150}ms;width:${Math.max(6,r.a/mx*100)}%"></i></span><b class="la">${roughMonthly(r.a)}</b>
+      <span class="lx">${i?`<em style="font-size:${1.2+i*.28}rem">×${mult.toFixed(1)}</em><small>+${roughDiff(r.a-base)} a month</small>`:'<small>a month, the baseline</small>'}</span>
+      <span class="lp ${i?'hot':''}">${i?`<b style="font-size:${1.5+i*.42}rem">+${lakhs(r.put-put0)}</b><small>extra from your own pocket</small>`:`<b class="base">${lakhs(r.put)}</b><small>your own money in total</small>`}</span></div>`; }).join('');
   const last=rows[4], fin=last.a/base>=2?'more than <em>double</em>':`<em>${Math.round((last.a/base-1)*100)}%</em> more`;
   return `<div class="stage ladder-stage">
     <div class="presents">The cost of delay</div>
     <h2 class="title" style="font-size:clamp(1.5rem,2.8vw,2.4rem)">Same ${tgt(s)}, same finish line. <em>Every year you wait costs more than the last.</em></h2>
     <div class="glass ladder"><div class="lhead"><span></span><span></span><span>A month</span><span>Compared with on time</span><span>What the delay costs you in total</span></div>${body}</div>
-    <p class="punch ladder-punch" style="animation-delay:${5*1100+400}ms">Start 4 years late and you pay ${fin} every single month, and <em>${fmtMoney(last.put-put0)}</em> extra out of your own pocket.</p>
+    <p class="punch ladder-punch" style="animation-delay:${5*1100+400}ms">Start 4 years late and you pay ${fin} every single month, and about <em>${lakhs(last.put-put0)}</em> extra out of your own pocket.</p>
   </div>`;
 }
 const fnames=rows=>{ const sh=rows.slice(0,6).map(t=>`<span class="fn">${av(t.p)}${esc(t.p.name)}</span>`).join(''); return sh+(rows.length>6?`<span class="fn more">+${rows.length-6} more</span>`:''); };
@@ -1620,9 +1626,19 @@ function renderPlayer(){
         <div class="gp-tag">The best month to start is this one.</div></div>
         ${waBtn(shareText(p,mine,sc.length),'Share on WhatsApp')}<p class="gs-end" style="margin:0">Screenshot your card and show it off.</p>`));
     }
-    return paint('end:final',shell(`<div class="gs-card"><div class="gs-lbl">FINAL SCORE</div><div class="gs-real">${mine.pts} pt${mine.pts===1?'':'s'}</div>
-      <div class="gs-sub">${mine.pts&&mine.pos?`You finished number ${mine.pos} of ${sc.length}`:'Thanks for playing'}</div><div class="gs-lines">${rows}</div>
-      ${waBtn(shareText(p,mine,sc.length),'Share on WhatsApp')}<p class="gs-end">The best month to start is this one.</p></div>`));
+    { const short={r1:'10 YEARS',r2:'20 YEARS',r3:s.delay+' YEARS LATE'}, n=sc.length;
+      const coins=Array.from({length:12},(_,k)=>`<i class="coin" style="left:${(k*83)%100}%;animation-delay:${(k*0.45).toFixed(2)}s;animation-duration:${(3.8+(k%5)*.5).toFixed(1)}s;width:${12+(k%4)*4}px;height:${12+(k%4)*4}px"></i>`).join('');
+      const chips=ROUND_KEYS.map(k=>{ const r=myRow(k); return `<div class="gp-chip"><i>${short[k]}</i><b>${r?(r.gap===0?'EXACT!':rupees(r.gap)):'-'}</b><small>${r?(r.gap===0?'to the rupee':'away'):'no guess'}</small></div>`; }).join('');
+      const place=mine.pos?`<div class="gp-medal"><div class="gp-disc"><b>${mine.pos}</b></div></div><div class="gp-ribbon"><span>OUT OF ${n}</span></div>`:`<div class="gp-medal"><div class="gp-disc"><b style="font-size:54px">${mine.pts}</b></div></div><div class="gp-ribbon"><span>POINTS</span></div>`;
+      return paint('end:final',shell(`<div class="gp-poster m0"><div class="gp-bg"></div><div class="gp-rays"></div><div class="gp-coins">${coins}</div>
+        <div class="gp-top"><img src="${LOGO}" alt=""><span>THE WEALTH HACK</span></div>
+        ${place}
+        <div class="gp-name">${esc(p.name)}</div>
+        <div class="gp-sub">${mine.pts&&mine.pos?`finished number ${mine.pos} of ${n}`:'thanks for playing'}</div>
+        <div class="gp-pts"><b>${mine.pts}</b> point${mine.pts===1?'':'s'}</div>
+        <div class="gp-chips">${chips}</div>
+        <div class="gp-tag">The best month to start is this one.</div></div>
+        ${waBtn(shareText(p,mine,n),'Share on WhatsApp')}<p class="gs-end" style="margin:0">Screenshot your card and show it off.</p>`)); }
   }
   paint('wait',shell(waitCard('👀','Eyes on the screen','')));
 }
