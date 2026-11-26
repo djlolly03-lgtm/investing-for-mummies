@@ -623,7 +623,8 @@ body.host-bg .ly{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;c
 body.host-bg .ly small{display:block;font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:700;color:var(--stage-sub)}
 body.host-bg .lbar{height:1.1rem;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;display:block}
 body.host-bg .lbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#d79f34,#f7dea0)}
-body.host-bg .lrow:not(:first-child) .lbar i{background:linear-gradient(90deg,#e8776a,#ffb3a6)}
+body.host-bg .lbar i{background:linear-gradient(90deg,#e8776a,#ffb3a6)}
+body.host-bg .lhead+.lrow .lbar i{background:linear-gradient(90deg,#d79f34,#f7dea0)}
 body.host-bg .la{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;text-align:right;color:var(--stage-ink);font-variant-numeric:tabular-nums}
 body.host-bg .lx em{font-style:normal;font-weight:800;font-size:1.25rem;color:var(--coral)}
 body.host-bg .lx small{display:block;font-size:.9rem;font-weight:700;color:var(--stage-sub)}
@@ -849,6 +850,86 @@ body.typing .gs-round,body.typing .gs-nudge,body.typing .ifm-disc{display:none}
 body.typing .gs-years span{font-size:40px}
 body.typing .gs-q{padding:8px 12px 10px}
 body.typing .gs-wrap{gap:8px;padding-top:8px}
+
+.gs-sync{font:800 12px 'Manrope',sans-serif;color:#ffb866;margin-top:4px}
+.gs-sync.ok{color:#2dd4bf}
+
+/* meeting round: winner pop-up, put-in line, ladder with totals, podium finisher card */
+.winpop{position:fixed;inset:0;z-index:145;display:grid;place-items:center;background:radial-gradient(circle,rgba(5,12,21,.82),rgba(5,12,21,.45) 72%);animation:wpfade .35s ease-out;transition:opacity .6s;pointer-events:none}
+.winpop.out{opacity:0}
+@keyframes wpfade{from{opacity:0}to{opacity:1}}
+.wp-in{text-align:center;animation:wppop .7s cubic-bezier(.2,1.5,.3,1)}
+@keyframes wppop{0%{transform:scale(.4)}100%{transform:scale(1)}}
+.wp-medal{font-size:7rem;line-height:1}
+.wp-lbl{font:800 1.5rem 'Manrope',sans-serif;letter-spacing:.26em;color:var(--gold-hi);margin:.3rem 0 .4rem}
+.wp-name{font:700 clamp(4rem,11vw,9rem)/1.05 'Fraunces',serif;color:#fff;text-shadow:0 0 70px rgba(245,196,81,.8),0 6px 30px rgba(0,0,0,.6);padding:0 3vw}
+body.host-bg .invest{font-size:1.25rem;font-weight:700;color:var(--stage-ink);text-align:center;margin-top:-.2rem}
+body.host-bg .invest b{color:var(--gold-hi)}
+body.hc.host-bg .invest{font-size:1.1rem}
+body.host-bg .pl-put{display:block;font-size:1.1rem;font-weight:700;color:var(--stage-sub);margin-top:.25rem}
+body.host-bg .pl-put b{color:var(--coral)}
+body.hc.host-bg .pl-put{font-size:.98rem}
+body.host-bg .ladder{max-width:74rem}
+body.host-bg .lhead,body.host-bg .lrow{grid-template-columns:8rem 1fr 9rem 11rem 11rem}
+body.host-bg .lhead{display:grid;gap:1rem;padding:0 0 .4rem;font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--stage-sub);border-bottom:1px solid rgba(255,255,255,.1)}
+body.host-bg .lhead span:nth-child(3){text-align:right}
+body.host-bg .lp b{display:block;font-family:'Fraunces',serif;font-size:1.5rem;color:var(--stage-ink);line-height:1.05}
+body.host-bg .lp small{display:block;font-size:.85rem;font-weight:700;color:var(--coral)}
+body.host-bg .ly{font-size:1.5rem}
+body.hc.host-bg .lp b{font-size:1.3rem}
+.gs-winner{text-align:center;align-items:center;gap:6px;background:linear-gradient(180deg,rgba(245,196,81,.2),rgba(10,26,34,.9) 60%)!important;border:1.5px solid rgba(245,196,81,.8)!important;box-shadow:0 0 60px rgba(245,196,81,.25),0 20px 50px rgba(0,0,0,.45)!important}
+.gs-winner.m2{background:linear-gradient(180deg,rgba(207,214,220,.18),rgba(10,26,34,.9) 60%)!important;border-color:rgba(207,214,220,.7)!important;box-shadow:0 0 50px rgba(207,214,220,.18),0 20px 50px rgba(0,0,0,.45)!important}
+.gs-winner.m3{background:linear-gradient(180deg,rgba(208,138,78,.2),rgba(10,26,34,.9) 60%)!important;border-color:rgba(208,138,78,.7)!important;box-shadow:0 0 50px rgba(208,138,78,.2),0 20px 50px rgba(0,0,0,.45)!important}
+.gs-wdisc{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;font:700 46px 'Fraunces',serif;color:#2a1a00;background:radial-gradient(circle at 35% 28%,#fff6c4,#f5c451 55%,#c98f12);box-shadow:inset 0 -6px 10px rgba(0,0,0,.25),0 8px 24px rgba(0,0,0,.5)}
+.m2 .gs-wdisc{background:radial-gradient(circle at 35% 28%,#fff,#d3dae0 55%,#8f9aa5)}
+.m3 .gs-wdisc{background:radial-gradient(circle at 35% 28%,#ffdfc0,#d48f52 55%,#8f5424)}
+.gs-wtitle{font:800 14px 'Manrope',sans-serif;letter-spacing:.26em;color:#f7dea0}
+.gs-wname{font:700 44px/1.05 'Fraunces',serif;color:#fff;word-break:break-word}
+.gs-wpts{font:700 15px 'Manrope',sans-serif;color:#9bb0ae;margin-bottom:6px}
+.gs-winner .gs-lines{width:100%}
+.gs-link{display:block;text-align:center;margin-top:8px;font:800 14px 'Manrope',sans-serif;color:#f7dea0;text-decoration:none}
+
+/* the money the delay costs: the hurt number */
+body.host-bg .hurt-row{display:flex;justify-content:center;align-items:flex-end;gap:2.4rem;flex-wrap:wrap}
+body.host-bg .hr-a b{display:block;font-family:'Fraunces',serif;font-size:2rem;color:var(--coral);line-height:1.05}
+body.host-bg .hr-b strong{display:block;font-family:'Fraunces',serif;font-weight:700;font-size:3.6rem;line-height:1;color:var(--coral);text-shadow:0 0 50px rgba(255,138,118,.5);animation:pctpulse 1.3s ease-in-out infinite}
+body.host-bg .hurt-row span{display:block;font-size:1.05rem;font-weight:800;color:var(--stage-ink)}
+body.hc.host-bg .hr-b strong{font-size:2.7rem}
+body.hc.host-bg .hr-a b{font-size:1.6rem}
+body.host-bg .pl-foot{font-weight:400}
+body.host-bg .lp.hot b{display:block;font-family:'Fraunces',serif;font-weight:700;color:var(--coral);line-height:1.02;text-shadow:0 0 24px rgba(255,138,118,.35)}
+body.host-bg .lp b.base{color:var(--stage-sub);font-size:1.3rem}
+body.host-bg .lhead,body.host-bg .lrow{grid-template-columns:8rem 1fr 8.5rem 9rem 14rem}
+/* the finisher's poster: a card made to be screenshotted */
+.gp-poster{position:relative;overflow:hidden;border-radius:26px;min-height:520px;padding:18px 16px 22px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;border:2px solid #f5c451;box-shadow:0 0 0 4px rgba(245,196,81,.15),0 0 70px rgba(245,196,81,.35),0 24px 60px rgba(0,0,0,.6);color:#fff;--c1:#fff6c4;--c2:#f5c451;--c3:#c98f12;--rim:#f5c451}
+.gp-poster.m2{--c1:#ffffff;--c2:#d3dae0;--c3:#8f9aa5;--rim:#d3dae0;border-color:#d3dae0;box-shadow:0 0 0 4px rgba(211,218,224,.14),0 0 60px rgba(211,218,224,.28),0 24px 60px rgba(0,0,0,.6)}
+.gp-poster.m3{--c1:#ffdfc0;--c2:#d48f52;--c3:#8f5424;--rim:#d48f52;border-color:#d48f52;box-shadow:0 0 0 4px rgba(212,143,82,.14),0 0 60px rgba(212,143,82,.28),0 24px 60px rgba(0,0,0,.6)}
+.gp-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,12,21,.35) 0%,rgba(5,12,21,.55) 45%,rgba(5,12,21,.92) 100%),url('assets/wealth-hack-tree.webp') 50% 0/cover no-repeat;z-index:0}
+.gp-rays{position:absolute;left:50%;top:92px;width:520px;height:520px;margin-left:-260px;background:repeating-conic-gradient(from 0deg,rgba(255,236,160,.28) 0 7deg,transparent 7deg 18deg);-webkit-mask:radial-gradient(circle,#000 8%,transparent 66%);mask:radial-gradient(circle,#000 8%,transparent 66%);animation:gprays 26s linear infinite;z-index:0}
+@keyframes gprays{to{transform:rotate(360deg)}}
+.gp-coins{position:absolute;inset:0;pointer-events:none;z-index:1}
+.gp-coins .coin{position:absolute;top:-30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff6c4,#f5c451 55%,#b8860b);box-shadow:0 0 8px rgba(245,196,81,.7),inset 0 0 0 2px rgba(120,80,0,.35);animation:coinfall 4s linear infinite}
+@keyframes coinfall{0%{transform:translateY(0) rotateY(0);opacity:0}8%{opacity:1}100%{transform:translateY(560px) rotateY(900deg);opacity:.9}}
+.gp-poster>*:not(.gp-bg):not(.gp-rays):not(.gp-coins){position:relative;z-index:2}
+.gp-top{display:flex;align-items:center;gap:8px;font:800 13px 'Manrope',sans-serif;letter-spacing:.24em;color:#f7dea0}
+.gp-top img{width:30px;height:30px;border-radius:50%;background:#fff;padding:2px}
+.gp-medal{margin-top:8px}
+.gp-disc{position:relative;overflow:hidden;display:grid;place-items:center;width:132px;height:132px;border-radius:50%;background:radial-gradient(circle at 35% 28%,var(--c1),var(--c2) 55%,var(--c3));box-shadow:inset 0 -10px 18px rgba(0,0,0,.28),inset 0 6px 10px rgba(255,255,255,.55),0 0 0 6px rgba(255,255,255,.12),0 0 60px var(--rim),0 14px 34px rgba(0,0,0,.6)}
+.gp-disc b{font:700 78px/1 'Fraunces',serif;color:#2a1a00;text-shadow:0 2px 0 rgba(255,255,255,.35)}
+.gp-disc::after{content:'';position:absolute;top:0;bottom:0;width:46%;background:linear-gradient(115deg,transparent,rgba(255,255,255,.85),transparent);transform:translateX(-160%) skewX(-12deg);animation:gpshine 2.6s ease-in-out infinite}
+@keyframes gpshine{0%,55%{transform:translateX(-160%) skewX(-12deg)}100%{transform:translateX(330%) skewX(-12deg)}}
+.gp-ribbon{margin-top:-14px;position:relative}
+.gp-ribbon span{display:inline-block;padding:7px 30px;background:linear-gradient(180deg,var(--c1),var(--c2) 45%,var(--c3));color:#2a1a00;font:800 15px 'Manrope',sans-serif;letter-spacing:.3em;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.55)}
+.gp-name{font:700 54px/1.02 'Fraunces',serif;color:#fff;text-shadow:0 0 40px var(--rim),0 4px 18px rgba(0,0,0,.7);margin-top:6px;word-break:break-word;padding:0 6px}
+.gp-sub{font:700 15px 'Manrope',sans-serif;color:#d6e2df}
+.gp-pts{margin-top:4px;padding:6px 22px;border-radius:99px;background:rgba(0,0,0,.45);border:1px solid var(--rim);font:800 15px 'Manrope',sans-serif;letter-spacing:.1em;color:var(--c1)}
+.gp-pts b{font:700 28px 'Fraunces',serif;color:#fff;margin-right:4px}
+.gp-chips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;margin-top:8px}
+.gp-chip{background:rgba(5,12,21,.62);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:8px 4px}
+.gp-chip i{display:block;font:800 10px 'Manrope',sans-serif;letter-spacing:.12em;color:#9fc2bb;font-style:normal}
+.gp-chip b{display:block;font:700 16px 'Fraunces',serif;color:var(--c1);margin-top:2px;word-break:break-word}
+.gp-chip small{font:700 11px 'Manrope',sans-serif;color:#9bb0ae}
+.gp-tag{margin-top:auto;padding-top:12px;font:italic 600 15px 'Fraunces',serif;color:#f7dea0}
 </style>
 <!-- PostHog (games site, same project as www) -->
 <script>
@@ -913,20 +994,20 @@ const ORD=['1st','2nd','3rd','4th','5th'];
 const yrs=t=>`<span class="yrs">${t}</span>`;     // the years are the thing people must not miss
 const ROUNDS={
   r1:{n:1,title:'Ten years',
-      hostQ:S=>`How much would you need to put away <em>every month</em> to have <em>${tgt(S)}</em> in ${yrs(S.years1+' years')}?`,
+      hostQ:S=>`How much would you need to put away <em>every month</em> to get to <em>${tgt(S)}</em> in ${yrs(S.years1+' years')}?`,
       why:S=>`Assume ${S.rate}% a year. Type the monthly amount you think it takes.`,
-      pq:S=>({q1:`To have <b>${tgt(S)}</b> in`,y:S.years1,q2:'How much a month?'}),
-      label:S=>`To have ${tgt(S)} in ${S.years1} years, put away`},
+      pq:S=>({q1:`To get to <b>${tgt(S)}</b> in`,y:S.years1,q2:'How much a month?'}),
+      label:S=>`To get to ${tgt(S)} in ${S.years1} years, put away`},
   r2:{n:2,title:'Twenty years',
       hostQ:S=>`Same ${tgt(S)}. Now you have ${yrs(S.years2+' years')}. How much a month?`,
       why:S=>`Same ${S.rate}% a year. More time to grow.`,
       pq:S=>({q1:`Same <b>${tgt(S)}</b>. Now you have`,y:S.years2,q2:'How much a month?'}),
-      label:S=>`To have ${tgt(S)} in ${S.years2} years, put away`},
+      label:S=>`To get to ${tgt(S)} in ${S.years2} years, put away`},
   r3:{n:3,title:'The cost of delay',
-      hostQ:S=>`Start today and it's <em>${rupees(realOf('r1',S))}</em> a month. But you wait ${yrs(S.delay+' years')}. Same ${tgt(S)}, same finish line. How much a month now?`,
-      why:S=>`Only ${S.years1-S.delay} years left to build it.`,
-      pq:S=>({q1:`Start today and it's <b>${rupees(realOf('r1',S))}</b> a month. But you wait`,y:S.delay,q2:`Same ${tgt(S)}, same finish line. How much a month now?`}),
-      label:S=>`Starting in ${S.startYear+S.delay}, you put away`},
+      hostQ:S=>`Start today and it's <em>${rupees(realOf('r1',S))}</em> a month. Now you start ${yrs(S.delay+' years')} late, with ${S.years1-S.delay} years left. How much a month to still get to ${tgt(S)}?`,
+      why:S=>`Same ${S.rate}% a year, same ${tgt(S)}. Less time.`,
+      pq:S=>({q1:`Start today: <b>${rupees(realOf('r1',S))}</b> a month. But you start`,y:S.delay,q2:`late, with ${S.years1-S.delay} years left. How much a month to still get to ${tgt(S)}?`}),
+      label:S=>`Starting ${S.delay} years late, you put away`},
 };
 function roundOf(phase){ const m=/^(r\d)_/.exec(phase||''); return m&&ROUNDS[m[1]]?m[1]:null; }
 
@@ -935,13 +1016,13 @@ const params=new URLSearchParams(location.search);
 const _soloDetect=()=>{ try{ return matchMedia('(pointer:coarse)').matches&&innerWidth<700; }catch(e){ return false; } };
 let ROLE=params.get('role')||(_soloDetect()?'player':'host');
 let ROOM=params.get('room')||null;
-const MY_ID=(function(){let id=localStorage.getItem('ls_pid');if(!id){id=(crypto.randomUUID?crypto.randomUUID():'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,10));localStorage.setItem('ls_pid',id);}return id;})();
+let MY_ID=(function(){ let id=null; try{ const m=/[#&]p=([A-Za-z0-9_-]+)/.exec(location.hash); if(m) id=m[1]; }catch(e){} if(!id){ try{ id=localStorage.getItem('ls_pid'); }catch(e){} } if(!id) id=(crypto.randomUUID?crypto.randomUUID():'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,10)); try{ localStorage.setItem('ls_pid',id); }catch(e){} return id; })();
 let isHost=(ROLE==='host');
 let state=null;
 function freshState(){
   return {phase:'lobby',nonce:0,
     settings:{target:10000000,rate:12,years1:10,years2:20,delay:2,startYear:new Date().getFullYear()},
-    players:{},results:{},hostId:MY_ID,updatedAt:Date.now()};
+    players:{},aliases:{},results:{},gid:Math.random().toString(36).slice(2,8),hostId:MY_ID,updatedAt:Date.now()};
 }
 const S=()=>state.settings;
 const playersList=()=>Object.values(state.players).sort((a,b)=>a.name.localeCompare(b.name));
@@ -963,7 +1044,7 @@ function scoreboard(){
 }
 // equal points and wins share a place, so a tie never hands one player the medal
 function ranked(){ const sc=scoreboard(); let pos=0,last=null; sc.forEach(t=>{ const k=t.pts+':'+t.wins; if(k!==last){ pos++; last=k; } t.pos=pos; }); return sc; }
-const gapText=(gap,real)=>gap===0?'EXACT! to the rupee':gap<1000?rupees(gap)+' away':fmtMoney(gap)+' away';
+const gapText=(gap,real)=>gap===0?'EXACT! to the rupee':rupees(gap)+' away';
 
 /* ── DB: ordered, retried saves ───────────────────────────────── */
 let _saveTimer=null,_saveDirty=false,_saveBusy=false,_saveFails=0;
@@ -998,9 +1079,11 @@ function joinChannel(){
   channel.on('postgres_changes',{event:'*',schema:'public',table:'games',filter:'room_code=eq.'+ROOM},
     (p)=>{const s=p.new&&p.new.state; if(s&&!isHost){state=s; _lastStateAt=Date.now(); renderPlayer();}})
     .on('broadcast',{event:'action'},({payload})=>{ if(isHost) hostHandleAction(payload); })
-    .subscribe();
+    .subscribe(st=>{ if(st==='SUBSCRIBED'){ _subscribed=true; _outq.splice(0).forEach(m=>channel.send({type:'broadcast',event:'action',payload:m})); } });
 }
-function sendAction(payload){ channel.send({type:'broadcast',event:'action',payload}); }
+let _subscribed=false, _outq=[];
+// a tap that happens before the connection is up is queued, not lost
+function sendAction(payload){ if(!_subscribed){ _outq.push(payload); return; } channel.send({type:'broadcast',event:'action',payload}); }
 
 /* ── confetti (plain canvas, no library) ──────────────────────── */
 function confetti(ms,count){
@@ -1036,6 +1119,8 @@ const sfx={
 };
 function toggleMute(){ MUTED=!MUTED; try{ localStorage.setItem('ls_muted',MUTED?'1':'0'); }catch(e){} const b=document.getElementById('muteBtn'); if(b) b.textContent=MUTED?'🔇 Sound off · M':'🔊 Sound on · M'; if(!MUTED) sfx.ding(); }
 function countUp(el,to,ms){ const t0=performance.now(); (function f(t){ const k=Math.min(1,(t-t0)/ms), e=1-Math.pow(1-k,3); el.textContent=Math.round(to*e); if(k<1) requestAnimationFrame(f); else sfx.ding(); })(t0); }
+// the person, not just the number: their name takes over the screen for a moment, then goes back in
+function winPop(name,label,medal){ const d=document.createElement('div'); d.className='winpop'; d.innerHTML=`<div class="wp-in"><div class="wp-medal">${medal||'🏆'}</div><div class="wp-lbl">${esc(label)}</div><div class="wp-name">${esc(name)}</div></div>`; document.body.appendChild(d); setTimeout(()=>d.classList.add('out'),2500); setTimeout(()=>d.remove(),3200); }
 function flash(){ let f=document.getElementById('flashFx'); if(!f){ f=document.createElement('div'); f.id='flashFx'; f.className='flashfx'; document.body.appendChild(f); } f.classList.remove('go'); void f.offsetWidth; f.classList.add('go'); }
 function shake(){ const h=document.getElementById('host'); if(!h) return; h.classList.remove('shake'); void h.offsetWidth; h.classList.add('shake'); }
 
@@ -1051,7 +1136,7 @@ function seedDemo(meId){
   state.phase=params.get('phase')||'lobby'; state.endStep=+params.get('step')||0; state.show25=!!params.get('show25');
   const idx=PHASES.indexOf(state.phase);
   if(/_ask$/.test(state.phase)&&params.get('done')){ const rk0=roundOf(state.phase); Object.values(state.players).forEach((p,i)=>{ if(i>=+params.get('done')) delete p.guess[rk0]; }); }
-  if(meId){ const p=state.players.d0; delete state.players.d0; p.id=meId; state.players[meId]=p; if(params.get('fresh')){ const rk0=roundOf(state.phase); if(rk0&&p.guess) delete p.guess[rk0]; } }
+  if(meId){ const k0='d'+(+params.get('me')||0); const p=state.players[k0]; delete state.players[k0]; p.id=meId; state.players[meId]=p; if(params.get('fresh')){ const rk0=roundOf(state.phase); if(rk0&&p.guess) delete p.guess[rk0]; } }
   ROUND_KEYS.forEach((rk,i)=>{ if(idx>PHASES.indexOf(rk+'_ask')) closeRound(rk); });
 }
 
@@ -1133,9 +1218,9 @@ function enterPhase(ph){
   if(ph==='end') state.endStep=0;            // the final scores are revealed one place at a time
   if(ph==='r2_ask') state.show25=false;
 }
-function endGroups(){ const m=new Map(); ranked().filter(t=>t.pts>0&&t.pos<=5).forEach(t=>{ if(!m.has(t.pos)) m.set(t.pos,[]); m.get(t.pos).push(t); }); return [...m.entries()].sort((a,b)=>a[0]-b[0]).map(([pos,rows])=>({pos,rows})); }
+function endGroups(){ const m=new Map(); ranked().filter(t=>t.pts>0&&t.pos<=3).forEach(t=>{ if(!m.has(t.pos)) m.set(t.pos,[]); m.get(t.pos).push(t); }); return [...m.entries()].sort((a,b)=>a[0]-b[0]).map(([pos,rows])=>({pos,rows})); }
 function hostAdvance(){
-  if(state.phase==='end'){ const n=endGroups().length, st=state.endStep||0; if(n&&st<n+1){ bump(); state.endStep=st+1; save(); renderHost(); } return; }
+  if(state.phase==='end'){ const n=endGroups().length, st=state.endStep||0; if(n&&st<n){ bump(); state.endStep=st+1; save(); renderHost(); } return; }
   const i=PHASES.indexOf(state.phase); if(i<0||i>=PHASES.length-1) return;
   if(state.phase==='lobby'&&!Object.keys(state.players).length) return;
   bump(); const rk=roundOf(state.phase); if(rk&&/_ask$/.test(state.phase)) closeRound(rk);
@@ -1156,6 +1241,8 @@ function hostHandleAction(a){
   if(!a||!a.type||!state) return; bump();
   if(a.type==='join'){
     let name=String(a.name||'').slice(0,16).trim(); if(!name) return;
+    if(a.claim&&state.players[a.claim]&&a.id!==a.claim){ state.aliases=state.aliases||{}; state.aliases[a.id]=a.claim; save(); return; }   // "yes, that's me": this phone IS that player
+    if(state.aliases&&state.aliases[a.id]){ save(); return; }
     if(!state.players[a.id]){
       const taken=Object.values(state.players).map(p=>p.name.toLowerCase()); let nm=name, k=2; while(taken.includes(nm.toLowerCase())) nm=name.slice(0,13)+' '+(k++); name=nm;
       const n=Object.keys(state.players).length;
@@ -1163,8 +1250,12 @@ function hostHandleAction(a){
     }
     save(); if(state.phase==='lobby'||/_ask$/.test(state.phase)) renderHost();
   }
+  else if(a.type==='unlock'){
+    const p=state.players[(state.aliases&&state.aliases[a.id])||a.id], rk=roundOf(state.phase);
+    if(p&&rk&&state.phase===rk+'_ask'&&a.round===rk&&p.guess&&p.guess[rk]){ delete p.guess[rk]; save(); renderHost(); }
+  }
   else if(a.type==='guess'){
-    const p=state.players[a.id]; const rk=roundOf(state.phase);
+    const p=state.players[(state.aliases&&state.aliases[a.id])||a.id]; const rk=roundOf(state.phase);
     if(!p||!rk||state.phase!==rk+'_ask'||a.round!==rk) return;
     const v=Math.min(100000000,Math.max(0,Math.round(+a.value||0))); if(!(v>0)) return;
     p.guess=p.guess||{}; p.guess[rk]=v; save(); renderHost();
@@ -1177,7 +1268,6 @@ function nextLabel(ph){
   if(ph!=='end') return NEXT_LABEL[ph]||'';
   const g=endGroups(), n=g.length, st=state.endStep||0; if(!n) return '';
   if(st<n) return 'Reveal '+ORD[g[n-1-st].pos-1]+' place →';
-  if(st===n) return 'Show everyone →';
   return '';
 }
 let _played=null;
@@ -1202,7 +1292,7 @@ function renderHost(){
 function playEnd(){
   const g=endGroups(), n=g.length, st=state.endStep||0, key='end:'+state.nonce+':'+st; if(_played===key) return; _played=key;
   if(st===0&&n) sfx.drum();
-  else if(st>=1&&st<=n){ if(st===n){ sfx.win(); later(()=>confetti(4500,260,true),250); flash(); shake(); } else { sfx.reveal(); } }
+  else if(st>=1&&st<=n){ if(st===n){ sfx.win(); later(()=>confetti(4500,260,true),250); flash(); shake(); const w=endGroups()[0]; if(w) winPop(w.rows.map(t=>t.p.name).join(' & '),'WEALTH HACK CHAMPION'); } else { sfx.reveal(); } }
   else if(st>n) sfx.ding();
 }
 function tplLobby(){
@@ -1254,6 +1344,8 @@ function tplAsk(rk){
   </div>`;
 }
 // People tie on round numbers all the time, so the podium shows PLACES, each holding everyone who shares it.
+// what the person actually pays in over the years, against what growth adds
+const putIn=(monthly,years)=>monthly*12*years;
 function groupsOf(res){ const m=new Map(); res.rows.filter(r=>r.rank<=3).forEach(r=>{ if(!m.has(r.rank)) m.set(r.rank,[]); m.get(r.rank).push(r); });
   return [...m.entries()].sort((a,b)=>a[0]-b[0]).map(([rank,rows])=>({rank,rows,gap:rows[0].gap})); }
 function reelHtml(real){
@@ -1277,16 +1369,19 @@ function tplReveal(rk){
   }
   if(rk==='r3'){
     const a=realOf('r1'), b=realOf('r3'), d=b-a, pct=Math.round(d/a*100);
-    extra=`<div class="glass punchline xtra"><div class="pl-l"><div class="kicker">Start in ${s.startYear}</div><div class="dn">${rupees(a)}</div></div>
+    const pOn=putIn(a,s.years1), pLate=putIn(b,s.years1-s.delay);
+    extra=`<div class="glass punchline xtra"><div class="pl-l"><div class="kicker">Start today</div><div class="dn">${rupees(a)}</div></div>
       <div class="pl-m"><div class="pct">+<span id="pctNum" data-to="${pct}">${pct}</span>%</div><div class="pl-cap">just for waiting ${s.delay} years</div></div>
-      <div class="pl-r"><div class="kicker">Start in ${s.startYear+s.delay}</div><div class="dn gold">${rupees(b)}</div></div>
-      <div class="pl-foot"><b>${rupees(d)} more</b>, every single month.</div></div>`;
+      <div class="pl-r"><div class="kicker">Start ${s.delay} years late</div><div class="dn gold">${rupees(b)}</div></div>
+      <div class="pl-foot"><div class="hurt-row"><div class="hr-a"><b>${rupees(d)}</b><span>more every single month</span></div><div class="hr-b"><strong>${fmtMoney(pLate-pOn)}</strong><span>extra from your own pocket</span></div></div>
+      <span class="pl-put">You put in ${fmtMoney(pOn)} starting today, ${fmtMoney(pLate)} starting ${s.delay} years late.</span></div></div>`;
   }
   return `<div class="stage reveal-stage rv-${rk}">
     <div class="presents">Round ${R.n} · the real number</div>
     <div class="real-label">${R.label(s)}</div>
     ${reelHtml(real)}
     <div class="real-sub">every month · ${s.rate}% a year</div>
+    ${rk==='r3'?'':`<div class="invest">You put in <b>${fmtMoney(putIn(real,rk==='r1'?s.years1:s.years2))}</b> of your own money. Growth adds the other <b>${fmtMoney(s.target-putIn(real,rk==='r1'?s.years1:s.years2))}</b>.</div>`}
     ${extra}
     ${groups.length?`<div class="podium">${cards}</div>`:`<p class="nobody xtra">Nobody locked in this round.</p>`}
   </div>`;
@@ -1313,21 +1408,23 @@ function playReveal(rk){
   later(()=>{ extras.forEach(c=>c.classList.add('show')); if(pct) countUp(pct,+pct.dataset.to,1100); },landAt+800);
   const podAt=landAt+(pct?2300:1600);
   cards.forEach((c,i)=>later(()=>{ c.classList.add('show'); i===cards.length-1?sfx.win():sfx.reveal(); },podAt+i*950));
-  if(cards.length) later(()=>confetti(4200,240,true),podAt+(cards.length-1)*950+150);
+  if(cards.length){ const wAt=podAt+(cards.length-1)*950; later(()=>confetti(4200,240,true),wAt+150);
+    later(()=>{ const nm=[...document.querySelectorAll('.prow.win .pn2 b')].map(b=>b.textContent).join(' & '); if(nm) winPop(nm,'CLOSEST THIS ROUND'); },wAt+250); }
 }
 // The ladder: each extra year of waiting arrives one at a time, growing, with its multiplier.
 function tplLadder(){
-  const s=S(), base=realOf('r1'), rows=[0,1,2,3,4].map(d=>({d,y:s.startYear+d,a:sipFor(s.target,s.years1-d,s.rate)})), mx=rows[4].a;
+  const s=S(), base=realOf('r1'), rows=[0,1,2,3,4].map(d=>({d,a:sipFor(s.target,s.years1-d,s.rate),put:putIn(sipFor(s.target,s.years1-d,s.rate),s.years1-d)})), mx=rows[4].a, put0=rows[0].put;
   const body=rows.map((r,i)=>{ const mult=r.a/base, D=i*1100;
-    return `<div class="lrow" style="animation-delay:${D}ms"><span class="ly">${r.y}<small>${i===0?'start on time':'start '+i+' year'+(i>1?'s':'')+' late'}</small></span>
+    return `<div class="lrow" style="animation-delay:${D}ms"><span class="ly">${i===0?'On time':i+' year'+(i>1?'s':'')+' late'}</span>
       <span class="lbar"><i style="animation-delay:${D+150}ms;width:${Math.max(6,r.a/mx*100)}%"></i></span><b class="la">${rupees(r.a)}</b>
-      <span class="lx">${i?`<em style="font-size:${1.3+i*.3}rem">×${mult.toFixed(2)}</em><small>+${rupees(r.a-base)} a month</small>`:'<small>the baseline</small>'}</span></div>`; }).join('');
-  const last=rows[4].a/base, fin=last>=2?'more than <em>double</em>':`<em>${Math.round((last-1)*100)}%</em> more`;
+      <span class="lx">${i?`<em style="font-size:${1.2+i*.28}rem">×${mult.toFixed(2)}</em><small>+${rupees(r.a-base)} a month</small>`:'<small>a month, the baseline</small>'}</span>
+      <span class="lp ${i?'hot':''}">${i?`<b style="font-size:${1.5+i*.42}rem">+${fmtMoney(r.put-put0)}</b><small>extra from your own pocket</small>`:`<b class="base">${fmtMoney(r.put)}</b><small>your own money in total</small>`}</span></div>`; }).join('');
+  const last=rows[4], fin=last.a/base>=2?'more than <em>double</em>':`<em>${Math.round((last.a/base-1)*100)}%</em> more`;
   return `<div class="stage ladder-stage">
     <div class="presents">The cost of delay</div>
-    <h2 class="title" style="font-size:clamp(1.5rem,2.8vw,2.4rem)">Same ${tgt(s)}, same finish line in ${s.startYear+s.years1}. <em>Every year you wait costs more than the last.</em></h2>
-    <div class="glass ladder">${body}</div>
-    <p class="punch ladder-punch" style="animation-delay:${5*1100+400}ms">Start 4 years late and you pay ${fin} every single month.</p>
+    <h2 class="title" style="font-size:clamp(1.5rem,2.8vw,2.4rem)">Same ${tgt(s)}, same finish line. <em>Every year you wait costs more than the last.</em></h2>
+    <div class="glass ladder"><div class="lhead"><span></span><span></span><span>A month</span><span>Compared with on time</span><span>What the delay costs you in total</span></div>${body}</div>
+    <p class="punch ladder-punch" style="animation-delay:${5*1100+400}ms">Start 4 years late and you pay ${fin} every single month, and <em>${fmtMoney(last.put-put0)}</em> extra out of your own pocket.</p>
   </div>`;
 }
 const fnames=rows=>{ const sh=rows.slice(0,6).map(t=>`<span class="fn">${av(t.p)}${esc(t.p.name)}</span>`).join(''); return sh+(rows.length>6?`<span class="fn more">+${rows.length-6} more</span>`:''); };
@@ -1335,7 +1432,6 @@ const fnames=rows=>{ const sh=rows.slice(0,6).map(t=>`<span class="fn">${av(t.p)
 function tplEnd(){
   const st=state.endStep||0, g=endGroups(), n=g.length, s=S();
   if(!n) return `<div class="stage end-stage"><div class="final-col"><div class="presents">${GAME_NAME}</div><h1 class="title">The best month to start is <em>this one.</em></h1></div></div>`;
-  if(st>n) return tplEndFull();
   const rows=g.map((grp,i)=>{ const at=n-i, on=st>=at, fresh=st===at;
     return `<div class="frow ${i===0?'win':''} ${on?'on':''} ${fresh?'fresh':''}"><span class="fp">${ORD[grp.pos-1]}${grp.rows.length>1&&on?'<small>tied</small>':''}</span>
       <div class="fnames">${on?fnames(grp.rows):'<span class="fq">? ? ?</span>'}</div><b class="fpts">${on?grp.rows[0].pts+(grp.rows[0].pts===1?' pt':' pts'):''}</b></div>`; }).join('');
@@ -1347,60 +1443,78 @@ function tplEnd(){
     ${st===n?`<p class="tag fin-tag">The best month to start is this one.</p>`:''}
   </div></div>`;
 }
-function tplEndFull(){
-  const sc=ranked(), s=S(), extra=realOf('r3')-realOf('r1');
-  const list=sc.map(t=>`<div class="arow"><span class="ap">${t.pos}</span><span class="an">${av(t.p)}${esc(t.p.name)}</span><b>${t.pts}</b></div>`).join('');
-  return `<div class="stage end-stage"><div class="final-col wide">
-    <div class="presents">${GAME_NAME} · everyone</div>
-    <h1 class="title">Thank you for playing</h1>
-    <div class="glass allboard"><div class="agrid">${list}</div></div>
-    <div class="glass stat"><div class="kicker">What waiting ${s.delay} years costs</div><div class="big coral">${rupees(extra)}</div><div class="sm">more, every month, for the same ${tgt(s)}</div></div>
-    <p class="tag fin-tag">The best month to start is this one. Your numbers are on your phone.</p>
-  </div></div>`;
-}
-
 /* ═══════════════════ PLAYER ═══════════════════
    Game-show look. One rule for the screen: it only repaints when the VIEW changes (paint key), never on every
    state update, so a phone that is mid-typing keeps its keypad and its text while 50 other phones lock in. */
 let myName=localStorage.getItem('ls_name')||'';
+let _peek=false;
 let joinSent=false, myLocal={}, myLockedNonce={}, _pendingVal=0, _lastPhase=null, _seen={}, _celebrated={}, _viewKey=null, _vt=[];
 async function initPlayer(){
   document.getElementById('player').classList.remove('hide');
   document.body.classList.add('player-bg','gs');
   try{ if(window.visualViewport){ const set=()=>document.documentElement.style.setProperty('--vvh',visualViewport.height+'px'); set(); visualViewport.addEventListener('resize',set); } }catch(e){}
   if(DEMO){ state=freshState(); seedDemo(MY_ID); renderPlayer(); return; }
-  if(!ROOM){ paint('noroom',shell('<div class="gs-card center"><h2>Playing in a class?</h2><p>Scan the QR code on your teacher’s screen to join. This is a live game, so it needs the room.</p></div>')); return; }
+  if(!ROOM){ initSolo(); return; }       // the shared link on its own: a one-person game
   joinChannel();
   try{ const {data}=await db.from('games').select('state').eq('room_code',ROOM).maybeSingle(); if(data&&data.state)state=data.state; }catch(e){}
-  renderPlayer();
-  setInterval(async()=>{ // safety net for dropped realtime events
-    if(!me())return;
-    try{ const {data}=await db.from('games').select('state').eq('room_code',ROOM).maybeSingle();
+  loadG(); renderPlayer();
+  // safety net for dropped realtime events: runs for EVERYONE, joined or not, so a phone stuck on "Joining…" still finds the room
+  const poll=async()=>{ try{ const {data}=await db.from('games').select('state').eq('room_code',ROOM).maybeSingle();
       if(data&&data.state&&data.state.updatedAt!==(state&&state.updatedAt)){ state=data.state; _lastStateAt=Date.now(); renderPlayer(); }
-    }catch(e){}
-  },2500);
+    }catch(e){} };
+  setInterval(poll,2500);
   let hiddenAt=0;
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden){ hiddenAt=Date.now(); return; }
+    poll();
     if(!hiddenAt||Date.now()-hiddenAt<8000) return;
     const seen=_lastStateAt;
     setTimeout(()=>{ if(_lastStateAt===seen&&me()){ const o=document.createElement('div'); o.className='rejoin'; o.innerHTML='<div><h2>Tap to rejoin</h2><p>Your phone lost the game for a moment.</p></div>'; o.onclick=()=>location.reload(); document.body.appendChild(o); } },4000);
   });
 }
-function me(){return state&&state.players?state.players[MY_ID]:null;}
+const myId=()=>{ const al=state&&state.aliases; return (state&&state.players&&state.players[MY_ID])?MY_ID:((al&&al[MY_ID])||MY_ID); };
+function me(){ return state&&state.players?state.players[myId()]:null; }
 function joinCheck(){ const n=(document.getElementById('nameInput')||{}).value||''; const b=document.getElementById('joinBtn'); if(b) b.disabled=!n.trim(); }
+let _claim=null, _joinT=null;
+// Join keeps knocking until the host's state shows this phone, so one dropped message never means "refresh and try again".
+function sendJoin(extra){
+  joinSent=true; const msg=Object.assign({type:'join',id:MY_ID,name:myName},extra||{}); sendAction(msg);
+  clearInterval(_joinT); let n=0;
+  _joinT=setInterval(()=>{ if(me()){ clearInterval(_joinT); return; } if(++n>16){ clearInterval(_joinT); joinSent=false; _joinFail=true; renderPlayer(); return; } sendAction(msg); },2500);
+  renderPlayer();
+}
+let _joinFail=false;
 function doJoin(){
   const n=(document.getElementById('nameInput').value||'').trim(); if(!n){ document.getElementById('nameInput').focus(); return; }
-  myName=n; localStorage.setItem('ls_name',n); joinSent=true; sendAction({type:'join',id:MY_ID,name:n}); renderPlayer();
+  myName=n; try{ localStorage.setItem('ls_name',n); }catch(e){} _joinFail=false;
+  const dup=Object.values((state&&state.players)||{}).find(q=>q.name.toLowerCase()===n.toLowerCase());
+  if(dup&&!(state.players&&state.players[MY_ID])){ _claim={id:dup.id,name:dup.name}; renderPlayer(); return; }   // same name already in: is that you coming back?
+  sendJoin();
 }
+function doClaim(yes){ const c=_claim; _claim=null; sendJoin(yes?{claim:c.id}:{}); }
 function onMoney(inp){
   const d=inp.value.replace(/\D/g,'').slice(0,9);
   inp.value=indianFormat(d); _pendingVal=parseNum(inp.value);
   const b=document.getElementById('shBadge'); if(b) b.textContent=_pendingVal>0?fmtMoney(_pendingVal):'';
   const btn=document.getElementById('lockBtn'); if(btn) btn.disabled=!(_pendingVal>0);
 }
-function pLock(rk){ if(!(_pendingVal>0)) return; myLocal[rk]=_pendingVal; myLockedNonce[rk]=state.nonce; sendAction({type:'guess',id:MY_ID,round:rk,value:_pendingVal}); document.body.classList.remove('typing'); renderPlayer(); }
-function pChange(rk){ myLockedNonce[rk]=-1; renderPlayer(); }
+// A locked answer is remembered on the phone (survives a refresh) and re-sent until the host's state shows it.
+function persistG(){ try{ localStorage.setItem('ls_g_'+ROOM+'_'+(state&&state.gid||''),JSON.stringify({l:myLocal,n:myLockedNonce})); }catch(e){} }
+function loadG(){ try{ const o=JSON.parse(localStorage.getItem('ls_g_'+ROOM+'_'+(state&&state.gid||''))||'null'); if(o){ myLocal=o.l||{}; myLockedNonce=o.n||{}; } }catch(e){} }
+let _syncT=null;
+function syncGuess(rk){
+  clearInterval(_syncT); let n=0;
+  _syncT=setInterval(()=>{ const m=me(), v=myLocal[rk]; if(!v||!state||state.phase!==rk+'_ask'||(m&&m.guess&&m.guess[rk]===v)||++n>24){ clearInterval(_syncT); return; } sendAction({type:'guess',id:MY_ID,round:rk,value:v}); },1800);
+}
+function pLock(rk){ if(!(_pendingVal>0)) return; myLocal[rk]=_pendingVal; myLockedNonce[rk]=state.nonce; persistG(); sendAction({type:'guess',id:MY_ID,round:rk,value:_pendingVal}); syncGuess(rk); document.body.classList.remove('typing'); renderPlayer(); }
+function pChange(rk){
+  myLockedNonce[rk]=-1; persistG(); clearInterval(_syncT); sendAction({type:'unlock',id:MY_ID,round:rk});
+  let n=0; const u=setInterval(()=>{ const m=me(); if(!m||!m.guess||!m.guess[rk]||++n>6||myLockedNonce[rk]!==-1||state.phase!==rk+'_ask'){ clearInterval(u); return; } sendAction({type:'unlock',id:MY_ID,round:rk}); },1500);
+  renderPlayer();
+}
+// one tap is enough: act on touch-down (a tap that first closes the keypad used to move the button and miss), and ignore the click that follows
+let _lastTap=0;
+function tapOnce(e,fn){ if(e&&e.preventDefault) e.preventDefault(); const n=Date.now(); if(n-_lastTap<600) return; _lastTap=n; fn(); }
 function ifmShare(msg){ window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank'); }
 const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>';
 let _shareMsg='';
@@ -1416,7 +1530,7 @@ function shareText(p,mine,total){
     `⏳ Waiting ${s.delay} years costs *${rupees(d)} more every month*. That is *+${Math.round(d/a*100)}%*.`,'',`_(assumes ${s.rate}% a year, not a promise)_`,'','Play it 👇',SHARE_URL);
   return L.join('\n');
 }
-function myRow(rk){ const r=state.results&&state.results[rk]; return r?r.rows.find(x=>x.id===MY_ID)||null:null; }
+function myRow(rk){ const r=state.results&&state.results[rk]; return r?r.rows.find(x=>x.id===myId())||null:null; }
 function stats(rk){ const ps=Object.values(state.players), done=ps.filter(p=>hasGuess(p,rk)).length; return {done,total:ps.length,pct:ps.length?Math.round(done/ps.length*100):0,left:ps.length-done}; }
 
 // Repaint only when the view (key) changes. Same key: just refresh the live bits (progress bar, counts, nudge).
@@ -1430,11 +1544,12 @@ function liveUpdate(){
   document.querySelectorAll('[data-live="prog"]').forEach(e=>{ e.textContent=st?`${st.pct}% of the room has locked in`:''; });
   document.querySelectorAll('[data-live="bar"]').forEach(e=>{ e.style.width=(st?st.pct:0)+'%'; });
   document.querySelectorAll('[data-live="count"]').forEach(e=>{ e.textContent=Object.keys(state.players).length; });
+  document.querySelectorAll('[data-live="sync"]').forEach(e=>{ const m=me(), ok=rk&&m&&m.guess&&m.guess[rk]&&m.guess[rk]===myLocal[rk]; e.textContent=ok?'Received ✓':(state.phase===rk+'_ask'?'Sending…':'The round had already closed'); e.className='gs-sync'+(ok?' ok':''); });
   const nd=document.querySelector('[data-live="nudge"]');
   if(nd&&st){ const m=me(), mine=m&&(hasGuess(m,rk)||(myLocal[rk]&&myLockedNonce[rk]===state.nonce)); nd.hidden=!(m&&!mine&&st.left<=10&&st.done>=st.total/2); }
 }
 function shell(inner){ const rate=state&&state.settings?state.settings.rate:12;
-  return `<div class="gs-wrap"><div class="gs-top"><span class="gs-logo"><img src="${LOGO}" alt=""></span><span class="gs-name">The Wealth Hack</span><span class="gs-room">${esc(ROOM||'')}</span></div>
+  return `<div class="gs-wrap"><div class="gs-top"><span class="gs-logo"><img src="${LOGO}" alt=""></span><span class="gs-name">The Wealth Hack</span>${ROOM?`<span class="gs-room">${esc(ROOM)}</span>`:''}</div>
     ${inner}<div class="gs-foot">The Wealth Hack assumes ${rate}% a year, not a promise</div></div>`; }
 const progBlock=()=>`<div class="gs-prog"><div class="gs-prog-t" data-live="prog"></div><div class="gs-bar"><i data-live="bar"></i></div></div>`;
 const waitCard=(emoji,h,p,extra)=>`<div class="gs-card center"><div class="gs-bounce">${emoji}</div><h2>${h}</h2><p>${p}</p>${extra||''}</div>`;
@@ -1443,10 +1558,13 @@ function renderPlayer(){
   if(!state) return paint('finding',shell('<div class="gs-card center"><h2>Finding the game…</h2><p>Room '+esc(ROOM)+'</p></div>'));
   const p=me(), ph=state.phase, rk=roundOf(ph), s=state.settings;
   if(ph!==_lastPhase){ _pendingVal=0; _lastPhase=ph; }
+  if(p&&!/[#&]p=/.test(location.hash)){ try{ history.replaceState(null,'',location.pathname+location.search+'#p='+MY_ID); }catch(e){} }   // the id rides in the link, so a reload or a rescan on this phone is still the same player
   if(!p){
-    if(joinSent&&ph==='lobby') return paint('joining',shell(`<div class="gs-card center"><h2>Joining…</h2><p>${esc(myName)}</p></div>`));
+    if(_claim) return paint('claim',shell(`<div class="gs-card center"><div class="gs-hello">🤔</div><h2>Is that you, ${esc(_claim.name)}?</h2><p>Someone called ${esc(_claim.name)} is already in the game. If you were logged out, tap yes and you carry on with your points.</p>
+      <button class="gs-lock" style="margin-top:10px" onclick="doClaim(true)">YES, THAT'S ME</button><button class="gs-ghost" style="margin-top:8px" onclick="doClaim(false)">No, I'm a different ${esc(_claim.name)}</button></div>`));
+    if(joinSent) return paint('joining',shell(`<div class="gs-card center"><div class="gs-bounce">🚪</div><h2>Joining…</h2><p>${esc(myName)}. Hang on, no need to refresh.</p></div>`));
     joinSent=false;
-    return paint('join',shell(`<div class="gs-card"><div class="gs-hello">👋</div><h2>What should we call you?</h2><p>Just your first name. Everyone gets the same question.</p>
+    return paint('join'+(_joinFail?'f':''),shell(`<div class="gs-card"><div class="gs-hello">👋</div><h2>What should we call you?</h2><p>${_joinFail?'We could not reach the room. Check your signal and tap join again.':'Just your first name. Everyone gets the same question.'}</p>
       <input id="nameInput" class="gs-name-in" maxlength="16" placeholder="First name" value="${esc(myName)}" autocomplete="off" oninput="joinCheck()" onkeydown="if(event.key==='Enter')doJoin()">
       <button class="gs-lock" id="joinBtn" onclick="doJoin()" disabled>JOIN THE GAME</button></div>`),()=>joinCheck());
   }
@@ -1455,13 +1573,13 @@ function renderPlayer(){
     const R=ROUNDS[rk], q=R.pq(s), locked=myLockedNonce[rk]===state.nonce||(hasGuess(p,rk)&&myLockedNonce[rk]!==-1);
     const val=myLocal[rk]||(p.guess&&p.guess[rk])||0;
     const qBlock=`<div class="gs-round">ROUND ${R.n} OF 3</div><div class="gs-q"><div class="gs-q1">${q.q1}</div><div class="gs-years"><span>${q.y}</span> YEARS</div><div class="gs-q2">${q.q2}</div></div>`;
-    if(locked) return paint(`ask:${rk}:${state.nonce}:locked`,shell(`${qBlock}<div class="gs-locked"><div class="gs-lk">LOCKED IN ✓</div><div class="gs-lv">${rupees(val)}</div><div class="gs-lu">a month</div></div>${progBlock()}<button class="gs-ghost" onclick="pChange('${rk}')">Change my guess</button>`));
+    if(locked) return paint(`ask:${rk}:${state.nonce}:locked`,shell(`${qBlock}<div class="gs-locked"><div class="gs-lk">LOCKED IN ✓</div><div class="gs-lv">${rupees(val)}</div><div class="gs-lu">a month</div><div class="gs-sync" data-live="sync"></div></div>${progBlock()}<button class="gs-ghost" onclick="pChange('${rk}')">Change my guess</button>`),()=>{ if(myLocal[rk]) syncGuess(rk); });
     return paint(`ask:${rk}:${state.nonce}:open`,shell(`${qBlock}
       <div class="gs-amt"><span class="rs">₹</span><input id="moneyInput" inputmode="numeric" placeholder="0" oninput="onMoney(this)" onfocus="document.body.classList.add('typing')" onblur="document.body.classList.remove('typing')" value="${val?indianFormat(val):''}"></div>
       <div class="gs-badge" id="shBadge">${val?fmtMoney(val):''}</div>
       ${progBlock()}
       <div class="gs-nudge" data-live="nudge" hidden>⏳ The room is waiting for you!</div>
-      <button class="gs-lock" id="lockBtn" onclick="pLock('${rk}')" ${val?'':'disabled'}>LOCK IT IN</button>`),()=>{ if(val) _pendingVal=val; });
+      <button class="gs-lock" id="lockBtn" onpointerdown="tapOnce(event,()=>pLock('${rk}'))" onclick="tapOnce(null,()=>pLock('${rk}'))" ${val?'':'disabled'}>LOCK IT IN</button>`),()=>{ if(val) _pendingVal=val; });
   }
   if(rk&&/_reveal$/.test(ph)){
     // hold the result back while the projector's drum roll plays
@@ -1483,15 +1601,73 @@ function renderPlayer(){
   if(ph==='r3_ladder') return paint('ladder',shell(waitCard('📈','Every year costs more','Watch the big screen. Each year of waiting adds more than the one before.','<div class="gs-stairs"><i></i><i></i><i></i><i></i><i></i></div>')));
   if(ph==='end'){
     const g=endGroups(), n=g.length, st=state.endStep||0;
-    if(st<=n&&n) return paint('end:wait',shell(waitCard('🥁','The final scores…','Eyes on the big screen. Who is the closest of them all?')));
-    const sc=ranked(), mine=sc.find(t=>t.id===MY_ID)||{pts:0,wins:0,pos:0};
+    if(st<n&&!_peek) return paint('end:wait',shell(waitCard('🥁','The final scores…','Eyes on the big screen. Who is the closest of them all?','<button class="gs-ghost" style="margin-top:14px;width:100%" onclick="_peek=true;renderPlayer()">Show my score now</button>')));
+    const sc=ranked(), mine=sc.find(t=>t.id===myId())||{pts:0,wins:0,pos:0};
     const rows=ROUND_KEYS.map(k=>{ const r=myRow(k); return `<div class="gs-line"><span>${ROUNDS[k].title}</span><b>${r?gapText(r.gap,state.results[k].real):'no guess'}</b></div>`; }).join('');
+    if(mine.pos&&mine.pos<=3&&mine.pts>0){
+      const T=['','CHAMPION','SECOND PLACE','THIRD PLACE'][mine.pos], short={r1:'10 YEARS',r2:'20 YEARS',r3:s.delay+' YEARS LATE'};
+      if(mine.pos===1&&!_celebrated.final){ _celebrated.final=1; setTimeout(()=>confetti(4600,220,true),400); }
+      const coins=Array.from({length:16},(_,k)=>`<i class="coin" style="left:${(k*61)%100}%;animation-delay:${(k*0.37).toFixed(2)}s;animation-duration:${(3.4+(k%5)*.5).toFixed(1)}s;width:${12+(k%4)*4}px;height:${12+(k%4)*4}px"></i>`).join('');
+      const chips=ROUND_KEYS.map(k=>{ const r=myRow(k); return `<div class="gp-chip"><i>${short[k]}</i><b>${r?(r.gap===0?'EXACT!':rupees(r.gap)):'-'}</b><small>${r?(r.gap===0?'to the rupee':'away'):'no guess'}</small></div>`; }).join('');
+      return paint('end:podium'+mine.pos,shell(`<div class="gp-poster m${mine.pos}"><div class="gp-bg"></div><div class="gp-rays"></div><div class="gp-coins">${coins}</div>
+        <div class="gp-top"><img src="${LOGO}" alt=""><span>THE WEALTH HACK</span></div>
+        <div class="gp-medal"><div class="gp-disc"><b>${mine.pos}</b></div></div>
+        <div class="gp-ribbon"><span>${T}</span></div>
+        <div class="gp-name">${esc(p.name)}</div>
+        <div class="gp-sub">closest to the real numbers</div>
+        <div class="gp-pts"><b>${mine.pts}</b> point${mine.pts===1?'':'s'}</div>
+        <div class="gp-chips">${chips}</div>
+        <div class="gp-tag">The best month to start is this one.</div></div>
+        ${waBtn(shareText(p,mine,sc.length),'Share on WhatsApp')}<p class="gs-end" style="margin:0">Screenshot your card and show it off.</p>`));
+    }
     return paint('end:final',shell(`<div class="gs-card"><div class="gs-lbl">FINAL SCORE</div><div class="gs-real">${mine.pts} pt${mine.pts===1?'':'s'}</div>
       <div class="gs-sub">${mine.pts&&mine.pos?`You finished number ${mine.pos} of ${sc.length}`:'Thanks for playing'}</div><div class="gs-lines">${rows}</div>
       ${waBtn(shareText(p,mine,sc.length),'Share on WhatsApp')}<p class="gs-end">The best month to start is this one.</p></div>`));
   }
   paint('wait',shell(waitCard('👀','Eyes on the screen','')));
 }
+
+/* ── solo: the shared link on its own (no room code) is a one-person game: same three questions, no room, no scores ── */
+let SOLO={i:-1,g:{},roll:null};
+function initSolo(){ document.getElementById('player').classList.remove('hide'); document.body.classList.add('player-bg','gs'); state=freshState(); SOLO={i:-1,g:{},roll:null}; renderSolo(); }
+function soloGo(){ SOLO.i=0; renderSolo(); }
+function soloAgain(){ SOLO={i:0,g:{},roll:null}; renderSolo(); }
+function soloNext(){ SOLO.i++; renderSolo(); }
+function soloLock(rk){ if(!(_pendingVal>0)) return; SOLO.g[rk]=_pendingVal; SOLO.roll=rk; _pendingVal=0; document.body.classList.remove('typing'); renderSolo(); }
+function soloRow(rk){ const g=SOLO.g[rk]; if(!g) return null; const real=Math.round(realOf(rk,state.settings)); return {guess:g,real,gap:Math.abs(g-real)}; }
+function soloShareText(){
+  const s=state.settings, a=realOf('r1',s), b=realOf('r3',s), d=b-a, L=['🎲 *'+GAME_NAME+'*','_guess the number_',''];
+  ROUND_KEYS.forEach((rk,i)=>{ const r=soloRow(rk), what=i===0?`${tgt(s)} in ${s.years1} years`:i===1?`${tgt(s)} in ${s.years2} years`:`Start ${s.delay} years late`;
+    L.push(r?`▸ ${what}: I guessed *${rupees(r.guess)}*, the real number is *${rupees(r.real)}* (${gapText(r.gap,r.real).replace('EXACT! to the rupee','exact!')})`:`▸ ${what}: real number *${rupees(Math.round(realOf(rk,s)))}*`); });
+  L.push('',`⏳ Waiting ${s.delay} years costs *${rupees(d)} more every month*. That is *+${Math.round(d/a*100)}%*.`,'',`_(assumes ${s.rate}% a year, not a promise)_`,'','Can you get closer? 👇',SHARE_URL);
+  return L.join('\n');
+}
+function renderSolo(){
+  const s=state.settings, i=SOLO.i;
+  if(i<0) return paint('solo:intro',shell(`<div class="gs-card center"><div class="gs-bounce">🎯</div><h2>Guess the number</h2><p>Three questions about ${tgt(s)}. Type your guess and see how close you get.</p><button class="gs-lock" style="margin-top:14px;width:100%" onclick="soloGo()">START</button><p style="margin-top:10px;font-size:13px">Playing in a class? Scan the QR on your teacher’s screen instead.</p><a class="gs-link" href="https://games.investingformummies.com">More money games →</a></div>`));
+  if(i>=3){
+    const rows=ROUND_KEYS.map(k=>{ const r=soloRow(k); return `<div class="gs-line"><span>${ROUNDS[k].title}</span><b>${r?gapText(r.gap,r.real):'no guess'}</b></div>`; }).join('');
+    const a=realOf('r1',s), d=realOf('r3',s)-a;
+    return paint('solo:end',shell(`<div class="gs-card"><div class="gs-lbl">YOUR RESULTS</div><div class="gs-lines">${rows}</div>
+      <div class="gs-punch">Waiting ${s.delay} years costs <b>${rupees(d)} more</b> every month. That's <b>+${Math.round(d/a*100)}%</b>.</div>
+      ${waBtn(soloShareText(),'Share my results')}<button class="gs-ghost" onclick="soloAgain()" style="margin-top:6px">Play again</button>
+      <p class="gs-end">The best month to start is this one.</p><p style="text-align:center;font-size:13px">Want to play this with a room? Ask for a Wealth Hack class.</p><a class="gs-link" href="https://games.investingformummies.com">More money games →</a></div>`));
+  }
+  const rk=ROUND_KEYS[i], R=ROUNDS[rk], q=R.pq(s), r=soloRow(rk);
+  const qBlock=`<div class="gs-round">QUESTION ${R.n} OF 3</div><div class="gs-q"><div class="gs-q1">${q.q1}</div><div class="gs-years"><span>${q.y}</span> YEARS</div><div class="gs-q2">${q.q2}</div></div>`;
+  if(!r) return paint(`solo:${rk}:ask`,shell(`${qBlock}
+    <div class="gs-amt"><span class="rs">₹</span><input id="moneyInput" inputmode="numeric" placeholder="0" oninput="onMoney(this)" onfocus="document.body.classList.add('typing')" onblur="document.body.classList.remove('typing')"></div>
+    <div class="gs-badge" id="shBadge"></div>
+    <button class="gs-lock" id="lockBtn" onpointerdown="tapOnce(event,()=>soloLock('${rk}'))" onclick="tapOnce(null,()=>soloLock('${rk}'))" disabled>LOCK IT IN</button>`),()=>{ _pendingVal=0; });
+  if(SOLO.roll===rk){ setTimeout(()=>{ if(SOLO.roll===rk){ SOLO.roll=null; renderSolo(); } },1700);
+    return paint(`solo:${rk}:roll`,shell(`<div class="gs-card center"><div class="gs-round">QUESTION ${R.n} OF 3</div><h2>Drum roll…</h2><div class="gs-reels">${'<b>0</b>'.repeat(5)}</div></div>`),()=>{ const bs=[...document.querySelectorAll('.gs-reels b')]; _vt.push(setInterval(()=>bs.forEach(b=>b.textContent=Math.floor(Math.random()*10)),80)); }); }
+  const close=r.gap/r.real<0.05, msg=r.gap===0?'🏆 EXACT! To the rupee.':close?'🎯 So close!':'Closer next time.';
+  let body=`<div class="gs-lbl">THE REAL NUMBER</div><div class="gs-real">${rupees(r.real)}</div><div class="gs-sub">you guessed ${rupees(r.guess)}</div><div class="gs-gap">${gapText(r.gap,r.real)}</div><div class="gs-msg ${close?'good':''}"><b>${msg}</b></div>`;
+  if(rk==='r3'){ const a=realOf('r1',s), d=realOf('r3',s)-a; body+=`<div class="gs-punch">Waiting ${s.delay} years costs <b>${rupees(d)} more</b> every month. That's <b>+${Math.round(d/a*100)}%</b>.</div>`; }
+  if(close&&!_celebrated['solo'+rk]){ _celebrated['solo'+rk]=1; setTimeout(()=>confetti(2600,120,true),250); }
+  return paint(`solo:${rk}:res`,shell(`<div class="gs-card"><div class="gs-round">QUESTION ${R.n} OF 3</div>${body}<button class="gs-lock" style="margin-top:10px;width:100%" onclick="soloNext()">${i<2?'NEXT QUESTION':'SEE MY RESULTS'}</button></div>`));
+}
+
 if(isHost) initHost(); else initPlayer();
 </script>
 <!-- ifm-disclaimer --><p class="ifm-disc" style="margin:0;padding:14px 16px 18px;text-align:center;font:500 12px/1.5 Nunito,system-ui,sans-serif;color:#5a7d8a;background:transparent;clear:both">Educational only. Illustrative returns, not guaranteed. Not investment advice.</p>
