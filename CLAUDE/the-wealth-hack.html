@@ -657,6 +657,184 @@ body.host-bg .nudge .pl{animation:none}
 body.host-bg .nudge .pl-wall.popin .pl{opacity:0;animation:popn .45s ease-out forwards}
 @keyframes popn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
 body.host-bg .allin{margin:0;font-family:'Fraunces',serif;font-style:italic;font-size:1.5rem;color:var(--gold-hi);text-align:center}
+
+/* ════════ Round 2 of the build (26 Nov): jackpot reels, tie-proof podium, punchline, ladder, finale, game-show phone ════════ */
+body.host-bg .yrs{display:inline-block;background:#2dd4bf;color:#052a2a;padding:0 .3em;border-radius:.25em;font-style:normal;box-shadow:0 .08em 0 #178a7c;transform:rotate(-1.2deg)}
+body.host-bg .host-mute{position:fixed;top:44px;left:10px;z-index:95;color:var(--stage-sub);font:800 .85rem 'Manrope',sans-serif;background:rgba(10,26,34,.74);border:1px solid rgba(255,255,255,.15);padding:5px 12px;border-radius:20px;display:none}
+.flashfx{position:fixed;inset:0;pointer-events:none;z-index:140;opacity:0;background:radial-gradient(circle at 50% 42%,rgba(255,246,196,.95),rgba(255,230,140,.4) 38%,rgba(255,230,140,0) 68%)}
+.flashfx.go{animation:flashgo .8s ease-out}
+@keyframes flashgo{0%{opacity:.95}100%{opacity:0}}
+#host.shake{animation:shakeit .55s}
+@keyframes shakeit{0%,100%{transform:none}15%{transform:translate(-9px,5px)}30%{transform:translate(8px,-6px)}45%{transform:translate(-6px,-4px)}60%{transform:translate(5px,6px)}80%{transform:translate(-2px,2px)}}
+/* reels */
+body.host-bg .reels-wrap{padding:.06em .3em;border-radius:.16em;background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(40,26,0,.45));border:3px solid rgba(245,196,81,.7);box-shadow:inset 0 0 50px rgba(0,0,0,.7),0 0 70px rgba(245,196,81,.3),0 0 0 6px rgba(245,196,81,.12)}
+body.host-bg .reels{display:flex;justify-content:center;align-items:center;font-family:'Fraunces',serif;font-weight:700;font-size:clamp(4rem,8.6vw,7.2rem);line-height:1;color:var(--gold-hi);text-shadow:0 0 40px rgba(233,191,98,.55);font-variant-numeric:tabular-nums}
+body.host-bg .reel{display:inline-block;position:relative;height:1em;overflow:hidden;width:.6em;text-align:center}
+body.host-bg .reel .strip{display:block;will-change:transform}
+body.host-bg .reel .strip i{display:block;height:1em;line-height:1em;font-style:normal}
+body.host-bg .reel.spin .strip{filter:blur(2.5px)}
+body.host-bg .reel.stopped{animation:reelstop .35s ease-out}
+@keyframes reelstop{0%{transform:translateY(.06em)}60%{transform:translateY(-.03em)}100%{transform:none}}
+body.host-bg .rch{display:inline-block;height:1em;line-height:1em}
+body.host-bg .reels.landed{animation:reelsland .9s ease-out}
+@keyframes reelsland{0%{transform:scale(1.14);filter:brightness(1.9)}100%{transform:none;filter:none}}
+body.host-bg .big-real{display:none}
+body.host-bg .rv-r3 .reels{font-size:clamp(3.4rem,6.8vw,5.6rem)}
+body.hc.host-bg .reels{font-size:clamp(3.4rem,7.4vw,5.8rem)}
+body.hc.host-bg .rv-r3 .reels{font-size:clamp(3rem,6vw,4.6rem)}
+/* podium of places */
+body.host-bg .podium{max-width:80rem}
+body.host-bg .pcard{min-width:15rem;max-width:26rem;flex:0 1 auto}
+body.host-bg .pcard.win{min-width:18rem;max-width:30rem}
+body.host-bg .plabel{font-weight:800;letter-spacing:.2em;font-size:.95rem;color:var(--stage-sub);margin-top:.2rem}
+body.host-bg .pcard.win .plabel{color:var(--gold-hi)}
+body.host-bg .pnames{display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem 1.1rem;margin-top:.3rem}
+body.host-bg .pn2 b{display:block;font-family:'Fraunces',serif;font-size:1.55rem;color:#fff;line-height:1.15}
+body.host-bg .pcard.win .pn2 b{font-size:2.3rem;color:var(--gold-hi)}
+body.host-bg .pn2 small{display:block;font-size:.95rem;font-weight:700;color:var(--stage-sub)}
+body.hc.host-bg .pn2 b{font-size:1.3rem}
+body.hc.host-bg .pcard.win .pn2 b{font-size:1.8rem}
+/* round 2: the 25-year reveal */
+body.host-bg .cmp-row.hid25{opacity:0;max-height:0;padding:0;overflow:hidden;transition:opacity .6s,max-height .6s}
+body.host-bg .cmp-row.hid25.show{opacity:1;max-height:3rem;padding:.25rem 0}
+body.host-bg .reveal25{align-self:center;border:2px solid var(--gold-hi);background:rgba(245,196,81,.14);color:var(--gold-hi);font:800 1.2rem 'Manrope',sans-serif;padding:.65rem 1.6rem;border-radius:999px;animation:throb 1.3s ease-in-out infinite}
+@keyframes throb{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(245,196,81,.5)}50%{transform:scale(1.07);box-shadow:0 0 0 .9rem rgba(245,196,81,0)}}
+body.host-bg .note25{margin:0;opacity:0;font-size:1.25rem;font-weight:700;color:var(--stage-ink);text-align:center;transition:opacity .6s;height:0;overflow:hidden}
+body.host-bg .note25.show{opacity:1;height:auto}
+body.host-bg .note25 b{color:var(--teal-bright)}
+/* round 3: the punchline */
+body.host-bg .punchline{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.2rem 1.4rem;text-align:center;width:100%;max-width:56rem;padding:.9rem 1.6rem;border-color:rgba(255,138,118,.55);box-shadow:0 0 80px rgba(255,138,118,.22),var(--shadow-lg)}
+body.host-bg .punchline .dn{font-size:2.5rem}
+body.host-bg .pct{font-family:'Fraunces',serif;font-weight:700;font-size:6.4rem;line-height:.95;color:var(--coral);text-shadow:0 0 60px rgba(255,138,118,.5);animation:pctpulse 1.2s ease-in-out infinite}
+@keyframes pctpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+body.host-bg .pl-cap{font-size:1.15rem;font-weight:800;color:var(--stage-ink)}
+body.host-bg .pl-foot{grid-column:1/-1;border-top:1px solid var(--glass-edge);padding-top:.5rem;font-size:1.5rem;font-weight:700;color:var(--stage-ink)}
+body.host-bg .pl-foot b{color:var(--coral);font-size:1.75rem}
+body.hc.host-bg .pct{font-size:4.8rem}
+body.hc.host-bg .punchline{padding:.5rem 1.4rem}
+body.hc.host-bg .punchline .dn{font-size:2rem}
+body.hc.host-bg .rv-r3 .real-sub{display:none}
+body.hc.host-bg .rv-r3 .pcard{padding:.4rem 1rem}
+body.hc.host-bg .rv-r3 .pcard .medal{font-size:1.5rem}
+/* the ladder */
+body.host-bg .ladder{max-width:64rem}
+body.host-bg .lrow{grid-template-columns:9.5rem 1fr 10rem 15rem;padding:.65rem 0}
+body.host-bg .ly small{font-size:.9rem}
+body.host-bg .lbar{height:1.5rem}
+body.host-bg .lbar i{transform-origin:left;transform:scaleX(0);animation:growbar .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes growbar{to{transform:scaleX(1)}}
+body.host-bg .la{font-size:1.9rem}
+body.host-bg .lx em{display:block;line-height:1.05;color:var(--coral)}
+body.host-bg .ladder-punch{font-size:clamp(1.5rem,2.6vw,2.2rem)}
+body.host-bg .ladder-punch em{color:var(--coral);font-style:italic}
+body.hc.host-bg .lrow{padding:.4rem 0}
+body.hc.host-bg .la{font-size:1.6rem}
+/* the finale: the coins keep falling on the left, the countdown sits on the right */
+body.host-bg.end-live .bgv,body.host-bg.end-live .bgshade{display:block}
+body.host-bg.end-live .bgshade{background:linear-gradient(90deg,rgba(6,16,28,.05) 0%,rgba(6,16,28,.15) 40%,rgba(6,16,28,.7) 70%,rgba(6,16,28,.8) 100%)}
+body.host-bg .end-stage{max-width:none;width:100%;align-items:flex-end;padding-right:2vw}
+body.host-bg .final-col{width:min(40rem,50vw);display:flex;flex-direction:column;align-items:center;gap:.8rem}
+body.host-bg .final-col.wide{width:min(46rem,54vw)}
+body.host-bg .final-col .title{text-align:center}
+body.host-bg .final-col .title.drum{animation:pctpulse 1s ease-in-out infinite}
+body.host-bg .fboard{width:100%;padding:.5rem .9rem}
+body.host-bg .frow{display:grid;grid-template-columns:4.6rem 1fr auto;align-items:center;gap:.8rem;padding:.7rem .4rem;border-bottom:1px solid rgba(255,255,255,.08);color:var(--stage-sub);font-weight:700}
+body.host-bg .frow:last-child{border-bottom:0}
+body.host-bg .frow.win{padding:1rem .4rem}
+body.host-bg .fp{font-family:'Fraunces',serif;font-size:1.9rem;font-weight:700;color:var(--stage-sub);line-height:1}
+body.host-bg .fp small{display:block;font:800 .75rem 'Manrope',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--coral)}
+body.host-bg .fnames{display:flex;flex-wrap:wrap;gap:.35rem .9rem;font-size:1.35rem}
+body.host-bg .fn{display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-weight:800}
+body.host-bg .fn .av{width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;font-size:1.05rem;color:#fff}
+body.host-bg .fq{font-family:'Fraunces',serif;font-size:1.6rem;letter-spacing:.3em;color:rgba(255,255,255,.3)}
+body.host-bg .fpts{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--gold-hi)}
+body.host-bg .frow.win .fp{font-size:2.6rem;color:var(--gold-hi)}
+body.host-bg .frow.win.on .fnames{font-size:2.1rem}
+body.host-bg .frow.win .fn .av{width:2.8rem;height:2.8rem;font-size:1.5rem}
+body.host-bg .frow.win.on{background:linear-gradient(90deg,rgba(245,196,81,.22),rgba(245,196,81,.03));border-radius:14px;box-shadow:0 0 50px rgba(245,196,81,.3)}
+body.host-bg .frow.fresh{animation:rowpop .7s cubic-bezier(.2,1.4,.3,1)}
+@keyframes rowpop{0%{opacity:0;transform:translateX(3rem) scale(.9)}100%{opacity:1;transform:none}}
+body.host-bg .fin-tag{margin:0;text-align:center}
+body.host-bg .allboard{width:100%;max-height:50vh;overflow:auto;padding:.5rem .9rem}
+body.host-bg .agrid{display:grid;grid-template-columns:1fr 1fr;gap:0 1.4rem}
+body.host-bg .arow{display:grid;grid-template-columns:2rem 1fr auto;align-items:center;gap:.6rem;padding:.35rem 0;border-bottom:1px solid rgba(255,255,255,.07);font-weight:700;color:var(--stage-ink);font-size:1.05rem}
+body.host-bg .arow .ap{color:var(--stage-sub)}
+body.host-bg .arow .an{display:flex;align-items:center;gap:.5rem}
+body.host-bg .arow .av{width:1.6rem;height:1.6rem;border-radius:50%;display:grid;place-items:center;font-size:.9rem;color:#fff}
+body.host-bg .arow b{font-family:'Fraunces',serif;color:var(--gold-hi)}
+
+/* ════════ PHONE: game-show look ════════ */
+body.player-bg.gs{background:#0b1744;color:#fff;font-family:'Manrope',sans-serif;--navy:#0b1744}
+body.player-bg.gs::after{display:none}
+.gs-wrap{min-height:var(--vvh,100dvh);max-width:480px;margin:0 auto;padding:12px 14px 12px;display:flex;flex-direction:column;gap:10px;background:radial-gradient(120% 55% at 50% 0%,#5a35d0 0%,#2a2f9a 42%,#0b1744 100%)}
+.gs-top{display:flex;align-items:center;gap:8px}
+.gs-logo{width:30px;height:30px;border-radius:50%;background:#fff;padding:2px;display:grid;place-items:center;flex:none}
+.gs-logo img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+.gs-name{font:800 17px 'Fraunces',serif;color:#ffd23f}
+.gs-room{margin-left:auto;font:800 12px 'Manrope',sans-serif;letter-spacing:.14em;background:rgba(255,255,255,.14);padding:4px 10px;border-radius:99px}
+.gs-round{align-self:center;background:#ff3d8b;color:#fff;font:800 12px 'Manrope',sans-serif;letter-spacing:.14em;padding:5px 13px;border-radius:99px;box-shadow:0 3px 0 #b01a5c}
+.gs-q{background:#fff;color:#0b1744;border-radius:22px;padding:12px 14px 14px;text-align:center;box-shadow:0 7px 0 rgba(0,0,0,.28)}
+.gs-q1{font:700 16px/1.3 'Manrope',sans-serif}
+.gs-q1 b{color:#d6246f}
+.gs-years{display:inline-flex;align-items:baseline;gap:7px;margin:6px 0 4px;background:#ffd23f;color:#0b1744;padding:2px 18px 4px;border-radius:16px;box-shadow:0 4px 0 #c99a00;font:800 17px 'Manrope',sans-serif;letter-spacing:.06em;transform:rotate(-2deg)}
+.gs-years span{font:800 56px/1 'Fraunces',serif;letter-spacing:0}
+.gs-q2{font:800 17px/1.25 'Manrope',sans-serif}
+.gs-amt{position:relative;background:#fff;border-radius:20px;border:4px solid #ffd23f;box-shadow:0 6px 0 #c99a00}
+.gs-amt .rs{position:absolute;left:16px;top:50%;transform:translateY(-50%);font:700 32px 'Fraunces',serif;color:#8a93b8}
+.gs-amt input{width:100%;border:0;outline:0;background:transparent;color:#0b1744;font:800 40px 'Fraunces',serif;text-align:center;padding:9px 12px 9px 44px}
+.gs-amt:focus-within{box-shadow:0 6px 0 #c99a00,0 0 0 5px rgba(255,210,63,.35)}
+.gs-badge{align-self:center;min-height:22px;font:800 16px 'Manrope',sans-serif;color:#ffd23f}
+.gs-prog{background:rgba(255,255,255,.12);border-radius:16px;padding:9px 12px}
+.gs-prog-t{font:800 13px 'Manrope',sans-serif;margin-bottom:6px;color:#fff}
+.gs-bar{height:12px;border-radius:99px;background:rgba(0,0,0,.35);overflow:hidden}
+.gs-bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#2dd4bf,#ffd23f);transition:width .6s}
+.gs-nudge{background:#ff3d8b;border-radius:14px;padding:8px 12px;font:800 14px 'Manrope',sans-serif;text-align:center;animation:gsnudge 1s ease-in-out infinite;box-shadow:0 3px 0 #b01a5c}
+.gs-nudge[hidden]{display:none}
+@keyframes gsnudge{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+.gs-lock{margin-top:auto;height:60px;border:0;border-radius:18px;background:linear-gradient(#ffd23f,#ff9f1c);color:#3a2300;font:800 20px 'Manrope',sans-serif;letter-spacing:.05em;box-shadow:0 6px 0 #b86e00,0 12px 26px rgba(0,0,0,.35)}
+.gs-lock:active{transform:translateY(4px);box-shadow:0 2px 0 #b86e00}
+.gs-lock:disabled{opacity:.45;box-shadow:0 4px 0 #555;background:linear-gradient(#cfcfcf,#9a9a9a)}
+.gs-ghost{margin-top:auto;height:48px;border-radius:14px;border:2px solid rgba(255,255,255,.35);background:transparent;color:#fff;font:800 15px 'Manrope',sans-serif}
+.gs-locked{background:rgba(45,212,191,.16);border:2px solid #2dd4bf;border-radius:20px;padding:12px;text-align:center}
+.gs-lk{font:800 13px 'Manrope',sans-serif;letter-spacing:.16em;color:#2dd4bf}
+.gs-lv{font:800 42px 'Fraunces',serif;line-height:1.1}
+.gs-lu{font:700 14px 'Manrope',sans-serif;color:#cdd6ff}
+.gs-card{background:#fff;color:#0b1744;border-radius:24px;padding:18px 16px;box-shadow:0 7px 0 rgba(0,0,0,.28);display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.gs-card.center{text-align:center;align-items:center}
+.gs-card h2{margin:0;font:800 24px/1.15 'Fraunces',serif}
+.gs-card p{margin:0;font:600 15px/1.45 'Manrope',sans-serif;color:#3b4a80}
+.gs-hello{font-size:44px;text-align:center}
+.gs-name-in{border:3px solid #ffd23f;border-radius:16px;font:800 24px 'Fraunces',serif;padding:12px 14px;color:#0b1744;outline:0;width:100%;margin:6px 0}
+.gs-bounce{font-size:76px;line-height:1;animation:gsbounce 1.1s ease-in-out infinite}
+@keyframes gsbounce{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(4deg)}}
+.gs-pill{background:#0b1744;color:#ffd23f;font:800 14px 'Manrope',sans-serif;padding:7px 16px;border-radius:99px}
+.gs-pill b{color:#fff;font-size:18px}
+.gs-reels{display:flex;gap:6px;justify-content:center;margin:6px 0}
+.gs-reels b{width:40px;height:56px;border-radius:10px;background:#0b1744;color:#ffd23f;font:800 36px/56px 'Fraunces',serif;text-align:center;box-shadow:inset 0 0 0 2px #ffd23f}
+.gs-stairs{display:flex;align-items:flex-end;gap:6px;height:70px;margin-top:6px}
+.gs-stairs i{display:block;width:30px;border-radius:6px 6px 0 0;background:linear-gradient(#ff8a76,#d6246f);animation:gsstair 1.6s ease-in-out infinite}
+.gs-stairs i:nth-child(1){height:14px}.gs-stairs i:nth-child(2){height:24px;animation-delay:.15s}.gs-stairs i:nth-child(3){height:38px;animation-delay:.3s}.gs-stairs i:nth-child(4){height:52px;animation-delay:.45s}.gs-stairs i:nth-child(5){height:68px;animation-delay:.6s}
+@keyframes gsstair{0%,100%{opacity:.55}50%{opacity:1}}
+.gs-lbl{font:800 12px 'Manrope',sans-serif;letter-spacing:.16em;color:#6a74a8;text-align:center}
+.gs-real{font:800 52px/1.05 'Fraunces',serif;text-align:center;color:#0b1744}
+.gs-sub{font:700 15px 'Manrope',sans-serif;color:#3b4a80;text-align:center}
+.gs-gap{align-self:center;background:#0b1744;color:#2dd4bf;font:800 18px 'Manrope',sans-serif;padding:6px 18px;border-radius:99px}
+.gs-msg{background:#eef1ff;border-radius:14px;padding:10px 12px;font:600 15px/1.4 'Manrope',sans-serif;text-align:center;color:#0b1744}
+.gs-msg.good{background:#fff4c9}
+.gs-punch{background:#ffe3ea;border-radius:14px;padding:10px 12px;font:700 15px/1.4 'Manrope',sans-serif;text-align:center;color:#7a0f3a}
+.gs-lines{display:grid;gap:6px;margin:4px 0}
+.gs-line{display:flex;justify-content:space-between;gap:10px;background:#eef1ff;border-radius:12px;padding:9px 12px;font:700 14px 'Manrope',sans-serif}
+.gs-line b{color:#d6246f}
+.gs-wa{display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border:0;border-radius:16px;background:#25d366;color:#04210f;font:800 16px 'Manrope',sans-serif;box-shadow:0 5px 0 #168a43}
+.gs-wa svg{width:22px;height:22px}
+.gs-end{text-align:center!important;font-weight:800!important;color:#0b1744!important}
+.gs-foot{text-align:center;font:600 11px 'Manrope',sans-serif;color:rgba(255,255,255,.6);padding-top:4px}
+body.typing .gs-top,body.typing .gs-foot{display:none}
+/* keypad open: drop the extras so the question, the amount and LOCK IT IN all fit above the keyboard */
+body.typing .gs-round,body.typing .gs-nudge,body.typing .ifm-disc{display:none}
+body.typing .gs-years span{font-size:40px}
+body.typing .gs-q{padding:8px 12px 10px}
+body.typing .gs-wrap{gap:8px;padding-top:8px}
 </style>
 <!-- PostHog (games site, same project as www) -->
 <script>
@@ -689,7 +867,7 @@ const LOGO='IFM round logo for watermark.png';
 const AV_EMOJI=['🦊','🐯','🦄','🐼','🦁','🐨','🐸','🦋','🐝','🦉','🐙','🦖','🌸','🍀','⭐','🚀','💎','🎯','🍰','🦚'];
 const AV_COLOR=['#d6452e','#2f66bd','#157f78','#a87a10','#7d3a9c','#c2487f','#16806c','#c7692a','#4f6f7c','#5b4fd0'];
 const REVEAL_DELAY=5200;            // phones wait this long after a reveal starts, so the projector's drum roll is not spoiled
-const REDUCED=(()=>{ try{ return matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){ return false; } })();
+let REDUCED=(()=>{ try{ return matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){ return false; } })();
 
 /* ── money (§9) ───────────────────────────────────────────────── */
 function fmtMoney(n){ n=Math.round(n);
@@ -717,21 +895,23 @@ function realOf(rk,s){ s=s||state.settings;
   if(rk==='r2') return sipFor(s.target,s.years2,s.rate);
   return sipFor(s.target,s.years1-s.delay,s.rate);
 }
+const ORD=['1st','2nd','3rd','4th','5th'];
+const yrs=t=>`<span class="yrs">${t}</span>`;     // the years are the thing people must not miss
 const ROUNDS={
   r1:{n:1,title:'Ten years',
-      hostQ:S=>`How much would you need to put away <em>every month</em> to have <em>${tgt(S)}</em> in <em>${S.years1} years</em>?`,
+      hostQ:S=>`How much would you need to put away <em>every month</em> to have <em>${tgt(S)}</em> in ${yrs(S.years1+' years')}?`,
       why:S=>`Assume ${S.rate}% a year. Type the monthly amount you think it takes.`,
-      phoneQ:S=>`How much would you need to put away every month to have <em>${tgt(S)}</em> in <em>${S.years1} years</em>?`,
+      pq:S=>({q1:`To have <b>${tgt(S)}</b> in`,y:S.years1,q2:'How much a month?'}),
       label:S=>`To have ${tgt(S)} in ${S.years1} years, put away`},
   r2:{n:2,title:'Twenty years',
-      hostQ:S=>`Same ${tgt(S)}. Now you have <em>${S.years2} years</em>. How much a month?`,
+      hostQ:S=>`Same ${tgt(S)}. Now you have ${yrs(S.years2+' years')}. How much a month?`,
       why:S=>`Same ${S.rate}% a year. More time to grow.`,
-      phoneQ:S=>`Same ${tgt(S)}. Now you have <em>${S.years2} years</em>. How much a month?`,
+      pq:S=>({q1:`Same <b>${tgt(S)}</b>. Now you have`,y:S.years2,q2:'How much a month?'}),
       label:S=>`To have ${tgt(S)} in ${S.years2} years, put away`},
   r3:{n:3,title:'The cost of delay',
-      hostQ:S=>`Same ${tgt(S)}, same finish line in <em>${S.startYear+S.years1}</em>. Starting in ${S.startYear} took <em>${rupees(realOf('r1',S))}</em> a month. What if you start in <em>${S.startYear+S.delay}</em>?`,
-      why:S=>`Only ${S.years1-S.delay} years left to build it. How much a month now?`,
-      phoneQ:S=>`Same ${tgt(S)}, same finish line in <em>${S.startYear+S.years1}</em>. Starting in ${S.startYear} took ${rupees(realOf('r1',S))} a month. What if you start in <em>${S.startYear+S.delay}</em>?`,
+      hostQ:S=>`Start today and it's <em>${rupees(realOf('r1',S))}</em> a month. But you wait ${yrs(S.delay+' years')}. Same ${tgt(S)}, same finish line. How much a month now?`,
+      why:S=>`Only ${S.years1-S.delay} years left to build it.`,
+      pq:S=>({q1:`Start today and it's <b>${rupees(realOf('r1',S))}</b> a month. But you wait`,y:S.delay,q2:`Same ${tgt(S)}, same finish line. How much a month now?`}),
       label:S=>`Starting in ${S.startYear+S.delay}, you put away`},
 };
 function roundOf(phase){ const m=/^(r\d)_/.exec(phase||''); return m&&ROUNDS[m[1]]?m[1]:null; }
@@ -769,7 +949,7 @@ function scoreboard(){
 }
 // equal points and wins share a place, so a tie never hands one player the medal
 function ranked(){ const sc=scoreboard(); let pos=0,last=null; sc.forEach(t=>{ const k=t.pts+':'+t.wins; if(k!==last){ pos++; last=k; } t.pos=pos; }); return sc; }
-const gapText=(gap,real)=>gap<=Math.max(25,real*0.002)?'almost exact':fmtMoney(gap)+' away';
+const gapText=(gap,real)=>gap===0?'EXACT! to the rupee':gap<1000?rupees(gap)+' away':fmtMoney(gap)+' away';
 
 /* ── DB: ordered, retried saves ───────────────────────────────── */
 let _saveTimer=null,_saveDirty=false,_saveBusy=false,_saveFails=0;
@@ -821,6 +1001,46 @@ function confetti(ms,count){
     if(k<ms) requestAnimationFrame(frame); else ctx.clearRect(0,0,w,h); })(t0);
 }
 
+/* ── sound: synthesised with WebAudio, no files. M mutes. Starts on the host's first key press or click. ── */
+let _ac=null, MUTED=false; try{ MUTED=localStorage.getItem('ls_muted')==='1'; }catch(e){}
+function ac(){ if(MUTED) return null; try{ if(!_ac) _ac=new (window.AudioContext||window.webkitAudioContext)(); if(_ac.state==='suspended') _ac.resume(); return _ac; }catch(e){ return null; } }
+function tone(f,t0,d,type,vol,slideTo){
+  const a=ac(); if(!a) return; const o=a.createOscillator(), g=a.createGain(), t=a.currentTime+t0;
+  o.type=type||'sine'; o.frequency.setValueAtTime(f,t); if(slideTo) o.frequency.exponentialRampToValueAtTime(slideTo,t+d);
+  g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(vol||.2,t+.012); g.gain.exponentialRampToValueAtTime(0.0001,t+d);
+  o.connect(g); g.connect(a.destination); o.start(t); o.stop(t+d+.03);
+}
+const sfx={
+  tick(i){ tone(820+((i||0)%7)*55,0,.05,'square',.11); },
+  stop(i){ tone(400+(i||0)*80,0,.2,'triangle',.3); tone(800+(i||0)*160,0,.12,'square',.14); },
+  land(){ [523,659,784,1047].forEach((f,i)=>tone(f,i*.07,.55,'square',.2)); tone(140,0,.7,'sawtooth',.32,55); },
+  win(){ [523,659,784,1047,1319].forEach((f,i)=>tone(f,i*.09,.75,'triangle',.3)); [392,523,659,784].forEach((f,i)=>tone(f,.5+i*.05,1.1,'square',.12)); },
+  reveal(){ tone(300,0,.25,'sawtooth',.18,720); tone(700,.2,.35,'triangle',.25); },
+  drum(){ for(let i=0;i<14;i++) tone(105,i*.095,.09,'triangle',.22+i*.012); },
+  ding(){ tone(1568,0,.6,'sine',.26); tone(2093,.05,.5,'sine',.15); },
+  rise(i){ tone(300+i*110,0,.32,'sawtooth',.16,620+i*230); tone(600+i*170,.16,.38,'triangle',.24); }
+};
+function toggleMute(){ MUTED=!MUTED; try{ localStorage.setItem('ls_muted',MUTED?'1':'0'); }catch(e){} const b=document.getElementById('muteBtn'); if(b) b.textContent=MUTED?'🔇 Sound off · M':'🔊 Sound on · M'; if(!MUTED) sfx.ding(); }
+function countUp(el,to,ms){ const t0=performance.now(); (function f(t){ const k=Math.min(1,(t-t0)/ms), e=1-Math.pow(1-k,3); el.textContent=Math.round(to*e); if(k<1) requestAnimationFrame(f); else sfx.ding(); })(t0); }
+function flash(){ let f=document.getElementById('flashFx'); if(!f){ f=document.createElement('div'); f.id='flashFx'; f.className='flashfx'; document.body.appendChild(f); } f.classList.remove('go'); void f.offsetWidth; f.classList.add('go'); }
+function shake(){ const h=document.getElementById('host'); if(!h) return; h.classList.remove('shake'); void h.offsetWidth; h.classList.add('shake'); }
+
+/* Local design QA only: ?demo=1&phase=r1_reveal seeds a room (host) or a player (role=player) so every screen can be screenshotted. */
+const DEMO=!!(params.get('demo')&&/^(localhost|127\.0\.0\.1)$/.test(location.hostname));
+if(DEMO&&params.get('static')) REDUCED=true;
+function seedDemo(meId){
+  const real={r1:realOf('r1'),r2:realOf('r2'),r3:realOf('r3')};
+  const base=['Meera','Rohan','Aanya','Kabir','Zoya','Dev','Tara','Imran','Nisha','Arjun','Priya','Kavya','Rahul','Sneha','Vikram','Anika','Ishaan','Diya','Karan','Mira'], f=[1.02,0.8,1.35,0.55,0.97,1.12,0.7,1.6];
+  const N=+params.get('n')||8, names=Array.from({length:N},(_,i)=>i<base.length?base[i]:base[i%base.length]+' '+(Math.floor(i/base.length)+1));
+  names.forEach((n,i)=>{ state.players['d'+i]={id:'d'+i,name:n,av:AV_EMOJI[i%AV_EMOJI.length],color:AV_COLOR[i%AV_COLOR.length],guess:{r1:Math.round(real.r1*f[i%8]),r2:Math.round(real.r2*f[(i+3)%8]),r3:Math.round(real.r3*f[(i+5)%8])}}; });
+  if(params.get('ties')) ROUND_KEYS.forEach(rk=>{ [1,2,3].forEach(i=>state.players['d'+i].guess[rk]=Math.round(real[rk])+29); state.players.d4.guess[rk]=Math.round(real[rk]); });
+  state.phase=params.get('phase')||'lobby'; state.endStep=+params.get('step')||0; state.show25=!!params.get('show25');
+  const idx=PHASES.indexOf(state.phase);
+  if(/_ask$/.test(state.phase)&&params.get('done')){ const rk0=roundOf(state.phase); Object.values(state.players).forEach((p,i)=>{ if(i>=+params.get('done')) delete p.guess[rk0]; }); }
+  ROUND_KEYS.forEach((rk,i)=>{ if(idx>PHASES.indexOf(rk+'_ask')) closeRound(rk); });
+  if(meId){ const p=state.players.d0; delete state.players.d0; p.id=meId; state.players[meId]=p; if(params.get('fresh')){ const rk0=roundOf(state.phase); if(rk0&&p.guess) delete p.guess[rk0]; } }
+}
+
 /* ═══════════════════ HOST ═══════════════════ */
 let _timers=[], _iv=null;
 function clearTimers(){ _timers.forEach(clearTimeout); _timers=[]; clearInterval(_iv); }
@@ -852,30 +1072,27 @@ async function initHost(){
     if(s&&recent&&s.settings&&s.phase!=='lobby'&&s.phase!=='end'&&Object.keys(s.players||{}).length>0){ state=s; state.hostId=MY_ID; state.results=state.results||{}; resumed=true; }
   }catch(e){}
   if(!resumed){ state=freshState(); await saveNow(); }
-  // Local design QA only: ?demo=1&phase=r1_reveal seeds a room so every screen can be screenshotted.
-  if(params.get('demo')&&/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){
-    const real={r1:realOf('r1'),r2:realOf('r2'),r3:realOf('r3')};
-    const base=['Meera','Rohan','Aanya','Kabir','Zoya','Dev','Tara','Imran','Nisha','Arjun','Priya','Kavya','Rahul','Sneha','Vikram','Anika','Ishaan','Diya','Karan','Mira'], f=[1.02,0.8,1.35,0.55,0.97,1.12,0.7,1.6];
-    const N=+params.get('n')||8, names=Array.from({length:N},(_,i)=>i<base.length?base[i]:base[i%base.length]+' '+(Math.floor(i/base.length)+1));
-    names.forEach((n,i)=>{ state.players['d'+i]={id:'d'+i,name:n,av:AV_EMOJI[i%AV_EMOJI.length],color:AV_COLOR[i%AV_COLOR.length],guess:{r1:Math.round(real.r1*f[i%8]),r2:Math.round(real.r2*f[(i+3)%8]),r3:Math.round(real.r3*f[(i+5)%8])}}; });
-    state.phase=params.get('phase')||'lobby';
-    const idx=PHASES.indexOf(state.phase);
-    if(/_ask$/.test(state.phase)&&params.get('done')){ const rk0=roundOf(state.phase); Object.values(state.players).forEach((p,i)=>{ if(i>=+params.get('done')) delete p.guess[rk0]; }); }
-    ROUND_KEYS.forEach((rk,i)=>{ if(idx>PHASES.indexOf(rk+'_ask')) closeRound(rk); });
-  }
+  if(DEMO) seedDemo();
   const rb=document.createElement('button'); rb.className='host-reset'; rb.textContent='↺ New game'; rb.onclick=hostReset; document.body.appendChild(rb);
+  const mb=document.createElement('button'); mb.className='host-mute'; mb.id='muteBtn'; mb.textContent=MUTED?'🔇 Sound off · M':'🔊 Sound on · M'; mb.onclick=toggleMute; document.body.appendChild(mb);
   const jw=document.createElement('div'); jw.className='join-corner'; jw.id='joinCorner'; jw.title='Scan to join or rejoin';
   jw.innerHTML='<div class="jc-qr" id="jcQr"></div><div class="jc-txt"><div class="jc-lbl">Scan to (re)join</div><div class="jc-pin">'+ROOM+'</div><div class="jc-tap">tap to enlarge ⛶</div></div>';
   jw.onclick=openQRFull; document.body.appendChild(jw); makeQR(document.getElementById('jcQr'),56);
   const kh=document.createElement('div'); kh.className='key-hint'; kh.id='keyHint'; document.body.appendChild(kh);
   const bk=document.createElement('button'); bk.className='host-back'; bk.id='hostBack'; bk.textContent='← Back'; bk.onclick=hostBack; document.body.appendChild(bk);
   const nx=document.createElement('button'); nx.className='host-next'; nx.id='hostNext'; nx.onclick=hostAdvance; document.body.appendChild(nx);
-  document.addEventListener('keydown',e=>{
+  // capture phase on window, so the keys work wherever focus is inside the page; buttons are blurred after a click so Space never re-presses one
+  window.addEventListener('keydown',e=>{
+    if(e.metaKey||e.ctrlKey||e.altKey) return;
     if(e.target&&/INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    ac();
     if(!document.getElementById('qrFull').classList.contains('hide')){ closeQRFull(); return; }
+    if(e.code==='KeyM'){ toggleMute(); return; }
+    if(e.code==='KeyR'){ reveal25(); return; }
     if(e.code==='Space'||e.key==='ArrowRight'||e.key==='Enter'){ e.preventDefault(); hostAdvance(); }
     else if(e.key==='ArrowLeft'||e.key==='Backspace'){ e.preventDefault(); hostBack(); }
-  });
+  },true);
+  document.addEventListener('click',e=>{ ac(); const b=e.target.closest&&e.target.closest('button'); if(b) setTimeout(()=>b.blur(),0); },true);
   setInterval(()=>{ if(state&&state.phase!=='lobby'&&Date.now()-_lastActivity>IDLE_MS){ bump(); state=freshState(); saveNow(); renderHost(); } },30000);
   renderHost();
 }
@@ -897,17 +1114,29 @@ function closeQRFull(){ document.getElementById('qrFull').classList.add('hide');
 function hostReset(){ if(!confirm('Start a fresh game in this room? Everyone will need to rejoin.')) return; bump(); clearTimers(); _played=null; state=freshState(); saveNow(); renderHost(); }
 
 // Advancing out of an "ask" phase closes the answers: the result is stored right then, so a late tap can never change it.
-function enterPhase(ph){ state.phase=ph; state.nonce++; }
+function enterPhase(ph){
+  state.phase=ph; state.nonce++;
+  if(ph==='end') state.endStep=0;            // the final scores are revealed one place at a time
+  if(ph==='r2_ask') state.show25=false;
+}
+function endGroups(){ const m=new Map(); ranked().filter(t=>t.pts>0&&t.pos<=5).forEach(t=>{ if(!m.has(t.pos)) m.set(t.pos,[]); m.get(t.pos).push(t); }); return [...m.entries()].sort((a,b)=>a[0]-b[0]).map(([pos,rows])=>({pos,rows})); }
 function hostAdvance(){
+  if(state.phase==='end'){ const n=endGroups().length, st=state.endStep||0; if(n&&st<n+1){ bump(); state.endStep=st+1; save(); renderHost(); } return; }
   const i=PHASES.indexOf(state.phase); if(i<0||i>=PHASES.length-1) return;
   if(state.phase==='lobby'&&!Object.keys(state.players).length) return;
   bump(); const rk=roundOf(state.phase); if(rk&&/_ask$/.test(state.phase)) closeRound(rk);
   enterPhase(PHASES[i+1]); save(); renderHost();
 }
 function hostBack(){
+  if(state.phase==='end'&&(state.endStep||0)>0){ bump(); state.endStep--; save(); renderHost(); return; }
   const i=PHASES.indexOf(state.phase); if(i<=0) return; bump();
   const rk=roundOf(state.phase); if(rk&&/_reveal$/.test(state.phase)) delete state.results[rk];   // answers re-open, and are scored again on the next close
   enterPhase(PHASES[i-1]); save(); renderHost();
+}
+function reveal25(){
+  if(state.phase!=='r2_reveal'||state.show25) return; bump(); state.show25=true; save();
+  const row=document.getElementById('row25'), b=document.getElementById('btn25'), n=document.getElementById('note25');
+  if(row) row.classList.add('show'); if(n) n.classList.add('show'); if(b) b.remove(); sfx.reveal(); setTimeout(()=>sfx.ding(),350);
 }
 function hostHandleAction(a){
   if(!a||!a.type||!state) return; bump();
@@ -930,23 +1159,37 @@ function hostHandleAction(a){
 
 /* ── host render ──────────────────────────────────────────────── */
 const NEXT_LABEL={lobby:'Start · Round 1 →',r1_ask:'Close answers & reveal →',r1_reveal:'Next: twenty years →',r2_ask:'Close answers & reveal →',r2_reveal:'Next: the cost of delay →',r3_ask:'Close answers & reveal →',r3_reveal:'Show the ladder →',r3_ladder:'Final scores →',end:''};
+function nextLabel(ph){
+  if(ph!=='end') return NEXT_LABEL[ph]||'';
+  const g=endGroups(), n=g.length, st=state.endStep||0; if(!n) return '';
+  if(st<n) return 'Reveal '+ORD[g[n-1-st].pos-1]+' place →';
+  if(st===n) return 'Show everyone →';
+  return '';
+}
 let _played=null;
 function renderHost(){
   clearTimers(); postLive(); const rootPx=fitHost();
   const h=document.getElementById('host'); const ph=state.phase, rk=roundOf(ph);
   const lobby=ph==='lobby';
   document.getElementById('joinCorner').style.display=lobby?'none':'flex';
+  document.getElementById('muteBtn').style.display=lobby?'none':'block';
   h.classList.toggle('has-corner',!lobby);
-  document.body.classList.toggle('end-bg',ph==='end');
-  const kh=document.getElementById('keyHint'); kh.innerHTML='<b>Space</b> / <b>→</b> next · <b>←</b> back'; kh.style.display=lobby?'none':'block';
+  document.body.classList.toggle('end-live',ph==='end');    // the finale keeps the live backdrop: coins falling off the tree
+  const kh=document.getElementById('keyHint'); kh.innerHTML='<b>Space</b> / <b>→</b> next · <b>←</b> back'+(ph==='r2_reveal'?' · <b>R</b> reveal':'')+' · <b>M</b> sound'; kh.style.display=lobby?'none':'block';
   document.getElementById('hostBack').style.display=lobby?'none':'block';
-  const nx=document.getElementById('hostNext'); nx.textContent=NEXT_LABEL[ph]||''; nx.style.display=(lobby||!NEXT_LABEL[ph])?'none':'block'; nx.classList.remove('pulse');
+  const lbl=nextLabel(ph), nx=document.getElementById('hostNext'); nx.textContent=lbl; nx.style.display=(lobby||!lbl)?'none':'block'; nx.classList.remove('pulse');
   if(lobby) h.innerHTML=tplLobby();
   else if(/_ask$/.test(ph)){ h.innerHTML=tplAsk(rk); const ps=playersList(); if(ps.length&&ps.every(p=>hasGuess(p,rk))) nx.classList.add('pulse'); }
   else if(/_reveal$/.test(ph)){ h.innerHTML=tplReveal(rk); playReveal(rk); }
-  else if(ph==='r3_ladder') h.innerHTML=tplLadder();
-  else if(ph==='end'){ h.innerHTML=tplEnd(); if(_played!=='end:'+state.nonce){ _played='end:'+state.nonce; later(()=>confetti(3500,200),400); } }
+  else if(ph==='r3_ladder'){ h.innerHTML=tplLadder(); if(_played!==ph+':'+state.nonce){ _played=ph+':'+state.nonce; [0,1,2,3,4].forEach(i=>later(()=>i?sfx.rise(i):sfx.reveal(),i*1100+350)); later(()=>sfx.win(),5*1100+500); } }
+  else if(ph==='end'){ h.innerHTML=tplEnd(); playEnd(); }
   if(lobby) makeQR(document.getElementById('lobbyQr'),Math.round(rootPx*(document.body.classList.contains('hc')?12.25:14)));
+}
+function playEnd(){
+  const g=endGroups(), n=g.length, st=state.endStep||0, key='end:'+state.nonce+':'+st; if(_played===key) return; _played=key;
+  if(st===0&&n) sfx.drum();
+  else if(st>=1&&st<=n){ if(st===n){ sfx.win(); later(()=>confetti(4500,260,true),250); flash(); shake(); } else { sfx.reveal(); } }
+  else if(st>n) sfx.ding();
 }
 function tplLobby(){
   const ps=playersList(), n=ps.length;
@@ -996,88 +1239,124 @@ function tplAsk(rk){
     ${nudge}
   </div>`;
 }
-// Reveal: a drum roll, the real number lands, then the podium fills from third place up to the winner.
+// People tie on round numbers all the time, so the podium shows PLACES, each holding everyone who shares it.
+function groupsOf(res){ const m=new Map(); res.rows.filter(r=>r.rank<=3).forEach(r=>{ if(!m.has(r.rank)) m.set(r.rank,[]); m.get(r.rank).push(r); });
+  return [...m.entries()].sort((a,b)=>a[0]-b[0]).map(([rank,rows])=>({rank,rows,gap:rows[0].gap})); }
+function reelHtml(real){
+  const strip=Array.from({length:60},(_,i)=>`<i>${i%10}</i>`).join('');
+  const f=indianFormat(String(real));
+  return `<div class="reels-wrap"><div class="reels" id="reels" aria-label="${rupees(real)}"><span class="rch">₹</span>${f.split('').map(ch=>/\d/.test(ch)?`<span class="reel" aria-hidden="true" data-d="${ch}"><span class="strip">${strip}</span></span>`:`<span class="rch">${ch}</span>`).join('')}</div></div>`;
+}
 function tplReveal(rk){
   const R=ROUNDS[rk], s=S(), res=state.results[rk]||{real:Math.round(realOf(rk)),rows:[]}, real=res.real;
-  const top=res.rows.filter(r=>r.pts>0).slice(0,6);
-  const order=r=>r.rank===1?1:r.rank===2?0:2;         // podium: 2nd left, 1st middle, 3rd right
-  const medal=['','🥇','🥈','🥉'];
-  const cards=top.slice().sort((a,b)=>order(a)-order(b)||a.gap-b.gap).map(r=>{ const p=state.players[r.id]; if(!p) return '';
-    return `<div class="glass pcard ${r.rank===1?'win':''}" data-rank="${r.rank}"><div class="medal">${medal[r.rank]}</div><div class="pn">${esc(p.name)}</div><div class="pg">guessed ${rupees(r.guess)}</div><div class="pgap">${gapText(r.gap,real)}</div></div>`; }).join('');
+  const medal=['','🥇','🥈','🥉'], groups=groupsOf(res);
+  const order=g=>g.rank===1?1:g.rank===2?0:2;      // podium: 2nd left, 1st middle, 3rd right
+  const cards=groups.slice().sort((a,b)=>order(a)-order(b)).map(g=>{
+    const names=g.rows.slice(0,6).map(r=>{ const p=state.players[r.id]; return p?`<span class="pn2"><b>${esc(p.name)}</b><small>${rupees(r.guess)}</small></span>`:''; }).join('')+(g.rows.length>6?`<span class="pn2 more"><b>+${g.rows.length-6} more</b></span>`:'');
+    return `<div class="glass pcard ${g.rank===1?'win':''}" data-rank="${g.rank}"><div class="medal">${medal[g.rank]}</div><div class="plabel">${g.rows.length>1?'TIED ':''}${ORD[g.rank-1]}</div><div class="pnames">${names}</div><div class="pgap">${gapText(g.gap,real)}</div></div>`; }).join('');
   let extra='';
   if(rk==='r2'){
-    const yrs=[...new Set([s.years1,s.years2,25])].sort((a,b)=>a-b), amts=yrs.map(y=>sipFor(s.target,y,s.rate)), mx=Math.max(...amts);
-    extra=`<div class="glass cmp xtra"><div class="kicker">Same ${tgt(s)}, more time</div>${yrs.map((y,i)=>`<div class="cmp-row ${y===s.years2?'cur':''}"><span class="cy">${y} years</span><span class="cbar"><i style="width:${Math.max(4,amts[i]/mx*100)}%"></i></span><b>${rupees(amts[i])}</b></div>`).join('')}</div>`;
+    const y25=s.years2+5, a25=sipFor(s.target,y25,s.rate), fall=Math.round((1-a25/real)*100), yrsList=[s.years1,s.years2], amts=yrsList.map(y=>sipFor(s.target,y,s.rate)), mx=Math.max(...amts);
+    const row=(y,a,cls,id)=>`<div class="cmp-row ${cls||''}" ${id?`id="${id}"`:''}><span class="cy">${y} years</span><span class="cbar"><i style="width:${Math.max(4,a/mx*100)}%"></i></span><b>${rupees(a)}</b></div>`;
+    extra=`<div class="glass cmp xtra"><div class="kicker">Same ${tgt(s)}, more time</div>${row(yrsList[0],amts[0])}${row(yrsList[1],amts[1],'cur')}${row(y25,a25,'hid25 '+(s.show25||state.show25?'show':''),'row25')}</div>
+      ${state.show25?'':`<button class="reveal25 xtra" id="btn25" onclick="reveal25()">▶ Reveal for ${y25} years</button>`}
+      <p class="note25 ${state.show25?'show':''}" id="note25">Started 5 years earlier? The amount falls to <b>${rupees(a25)}</b> a month, <b>${fall}% less</b>.</p>`;
   }
   if(rk==='r3'){
-    const a=realOf('r1'), b=realOf('r3'), d=b-a;
-    extra=`<div class="glass cmp xtra delay"><div class="dl"><div class="kicker">Start in ${s.startYear}</div><div class="dn">${rupees(a)}</div></div><div class="dl-arrow">→</div><div class="dl"><div class="kicker">Start in ${s.startYear+s.delay}</div><div class="dn gold">${rupees(b)}</div></div>
-      <div class="dl-extra"><b>${rupees(d)} more</b> every month<span>${Math.round(d/a*100)}% higher for waiting ${s.delay} years</span></div></div>`;
+    const a=realOf('r1'), b=realOf('r3'), d=b-a, pct=Math.round(d/a*100);
+    extra=`<div class="glass punchline xtra"><div class="pl-l"><div class="kicker">Start in ${s.startYear}</div><div class="dn">${rupees(a)}</div></div>
+      <div class="pl-m"><div class="pct">+<span id="pctNum" data-to="${pct}">${pct}</span>%</div><div class="pl-cap">just for waiting ${s.delay} years</div></div>
+      <div class="pl-r"><div class="kicker">Start in ${s.startYear+s.delay}</div><div class="dn gold">${rupees(b)}</div></div>
+      <div class="pl-foot"><b>${rupees(d)} more</b>, every single month.</div></div>`;
   }
-  return `<div class="stage reveal-stage">
+  return `<div class="stage reveal-stage rv-${rk}">
     <div class="presents">Round ${R.n} · the real number</div>
     <div class="real-label">${R.label(s)}</div>
-    <div class="big-real rolling" id="bigReal">${'₹ '+'• '.repeat(String(Math.round(real)).length)}</div>
+    ${reelHtml(real)}
     <div class="real-sub">every month · ${s.rate}% a year</div>
     ${extra}
-    ${top.length?`<div class="podium">${cards}</div>`:`<p class="nobody xtra">Nobody locked in this round.</p>`}
+    ${groups.length?`<div class="podium">${cards}</div>`:`<p class="nobody xtra">Nobody locked in this round.</p>`}
   </div>`;
 }
+// A jackpot: a drum roll, then five reels that spin fast and lock left to right, then the flash, the shake and the podium.
 function playReveal(rk){
   const key=state.phase+':'+state.nonce, instant=_played===key||REDUCED; _played=key;
-  const big=document.getElementById('bigReal'); if(!big) return;
-  const real=String(Math.round(state.results[rk]?state.results[rk].real:realOf(rk)));
-  const final=rupees(real), cards=[...document.querySelectorAll('.pcard')], extras=[...document.querySelectorAll('.xtra')];
-  const land=()=>{ clearInterval(_iv); big.textContent=final; big.classList.remove('rolling'); big.classList.add('landed'); };
-  if(instant){ land(); big.classList.remove('landed'); cards.concat(extras).forEach(c=>c.classList.add('show')); return; }
-  const t0=performance.now(), n=real.length, DUR=1900;
-  _iv=setInterval(()=>{
-    const k=(performance.now()-t0)/DUR; if(k>=1){ land(); return; }
-    const digs=real.split('').map((d,i)=>k>(i+1)/(n+1)?d:String(Math.floor(Math.random()*10))).join('');
-    big.textContent='₹'+indianFormat(digs);
-  },55);
-  later(()=>extras.forEach(c=>c.classList.add('show')),DUR+300);
-  const seq=cards.slice().sort((a,b)=>(+b.dataset.rank)-(+a.dataset.rank));   // third place first, the winner last
-  seq.forEach((c,i)=>later(()=>c.classList.add('show'),DUR+900+i*750));
-  const winAt=DUR+900+Math.max(0,seq.length-1)*750;
-  if(cards.length) later(()=>confetti(3200,170),winAt+200);
+  const box=document.getElementById('reels'); if(!box) return;
+  const reels=[...box.querySelectorAll('.reel')];
+  const cards=[...document.querySelectorAll('.pcard')].sort((a,b)=>(+b.dataset.rank)-(+a.dataset.rank));
+  const extras=[...document.querySelectorAll('.xtra')], pct=document.getElementById('pctNum');
+  const place=(el,d,anim,ms)=>{ const st=el.firstElementChild, loops=3+Math.floor(Math.random()*2);
+    st.style.transition=anim?`transform ${ms}ms cubic-bezier(.1,.75,.12,1)`:'none'; st.style.transform=`translateY(-${(anim?loops*10:0)+(+d)}em)`; };
+  if(instant){ reels.forEach(r=>place(r,r.dataset.d,false)); cards.concat(extras).forEach(c=>c.classList.add('show')); return; }
+  reels.forEach(r=>{ r.firstElementChild.style.transform='translateY(0)'; r.classList.add('spin'); });
+  if(pct) pct.textContent='0';
+  sfx.drum();
+  const T0=1800, GAP=560;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>reels.forEach((r,i)=>place(r,r.dataset.d,true,T0+i*GAP))));
+  reels.forEach((r,i)=>{ const at=T0+i*GAP; later(()=>r.classList.remove('spin'),at-500); later(()=>{ sfx.stop(i); r.classList.add('stopped'); },at); });
+  let tk=0; _iv=setInterval(()=>sfx.tick(tk++),80); later(()=>clearInterval(_iv),T0+(reels.length-1)*GAP);
+  const landAt=T0+(reels.length-1)*GAP+300;
+  later(()=>{ box.classList.add('landed'); flash(); shake(); sfx.land(); confetti(1800,90,true); },landAt);
+  later(()=>{ extras.forEach(c=>c.classList.add('show')); if(pct) countUp(pct,+pct.dataset.to,1100); },landAt+800);
+  const podAt=landAt+(pct?2300:1600);
+  cards.forEach((c,i)=>later(()=>{ c.classList.add('show'); i===cards.length-1?sfx.win():sfx.reveal(); },podAt+i*950));
+  if(cards.length) later(()=>confetti(4200,240,true),podAt+(cards.length-1)*950+150);
 }
-// The ladder: each extra year of waiting, one bar at a time. No guessing.
+// The ladder: each extra year of waiting arrives one at a time, growing, with its multiplier.
 function tplLadder(){
-  const s=S(), base=realOf('r1'), rows=[0,1,2,3,4].map(d=>({d,y:s.startYear+d,a:sipFor(s.target,s.years1-d,s.rate)}));
-  const mx=rows[rows.length-1].a;
-  const body=rows.map((r,i)=>{ const prev=i?rows[i-1].a:null;
-    return `<div class="lrow" style="animation-delay:${i*900}ms"><span class="ly">${r.y}${i===0?'<small>on time</small>':''}</span><span class="lbar"><i style="width:${Math.max(5,r.a/mx*100)}%"></i></span><b class="la">${rupees(r.a)}</b>
-      <span class="lx">${i===0?'':`<em>+${rupees(r.a-base)}</em><small>${prev?`this year alone: +${rupees(r.a-prev)}`:''}</small>`}</span></div>`; }).join('');
+  const s=S(), base=realOf('r1'), rows=[0,1,2,3,4].map(d=>({d,y:s.startYear+d,a:sipFor(s.target,s.years1-d,s.rate)})), mx=rows[4].a;
+  const body=rows.map((r,i)=>{ const mult=r.a/base, D=i*1100;
+    return `<div class="lrow" style="animation-delay:${D}ms"><span class="ly">${r.y}<small>${i===0?'start on time':'start '+i+' year'+(i>1?'s':'')+' late'}</small></span>
+      <span class="lbar"><i style="animation-delay:${D+150}ms;width:${Math.max(6,r.a/mx*100)}%"></i></span><b class="la">${rupees(r.a)}</b>
+      <span class="lx">${i?`<em style="font-size:${1.3+i*.3}rem">×${mult.toFixed(2)}</em><small>+${rupees(r.a-base)} a month</small>`:'<small>the baseline</small>'}</span></div>`; }).join('');
+  const last=rows[4].a/base, fin=last>=2?'more than <em>double</em>':`<em>${Math.round((last-1)*100)}%</em> more`;
   return `<div class="stage ladder-stage">
     <div class="presents">The cost of delay</div>
     <h2 class="title" style="font-size:clamp(1.5rem,2.8vw,2.4rem)">Same ${tgt(s)}, same finish line in ${s.startYear+s.years1}. <em>Every year you wait costs more than the last.</em></h2>
     <div class="glass ladder">${body}</div>
-    <p class="punch" style="animation-delay:${5*900}ms">Two years late is ${rupees(realOf('r3')-base)} more, every single month.</p>
+    <p class="punch ladder-punch" style="animation-delay:${5*1100+400}ms">Start 4 years late and you pay ${fin} every single month.</p>
   </div>`;
 }
+const fnames=rows=>{ const sh=rows.slice(0,6).map(t=>`<span class="fn">${av(t.p)}${esc(t.p.name)}</span>`).join(''); return sh+(rows.length>6?`<span class="fn more">+${rows.length-6} more</span>`:''); };
+// The finale: a countdown. Each press of Space reveals the next place, from 5th up to the winner; then everyone.
 function tplEnd(){
-  const sc=ranked().filter(t=>t.pts>0), s=S();
-  const top=sc.slice(0,5), champs=sc.filter(t=>t.pos===1), nm=champs.map(t=>esc(t.p.name));
-  const champNames=nm.length>2?nm.slice(0,-1).join(', ')+' and '+nm[nm.length-1]:nm.join(' and ');
-  const extra=realOf('r3')-realOf('r1');
-  const medal=i=>['🥇','🥈','🥉'][i]||'';
-  return `<div class="stage end-stage">
+  const st=state.endStep||0, g=endGroups(), n=g.length, s=S();
+  if(!n) return `<div class="stage end-stage"><div class="final-col"><div class="presents">${GAME_NAME}</div><h1 class="title">The best month to start is <em>this one.</em></h1></div></div>`;
+  if(st>n) return tplEndFull();
+  const rows=g.map((grp,i)=>{ const at=n-i, on=st>=at, fresh=st===at;
+    return `<div class="frow ${i===0?'win':''} ${on?'on':''} ${fresh?'fresh':''}"><span class="fp">${ORD[grp.pos-1]}${grp.rows.length>1&&on?'<small>tied</small>':''}</span>
+      <div class="fnames">${on?fnames(grp.rows):'<span class="fq">? ? ?</span>'}</div><b class="fpts">${on?grp.rows[0].pts+(grp.rows[0].pts===1?' pt':' pts'):''}</b></div>`; }).join('');
+  const title=st===0?'And now… the final scores':st<n?'Counting down…':'Your Wealth Hack champion';
+  return `<div class="stage end-stage"><div class="final-col">
     <div class="presents">${GAME_NAME} · final scores</div>
-    ${champs.length?`<h1 class="title"><em>${champNames}</em> ${champs.length>1?'are':'is'} the closest.</h1>`:`<h1 class="title">The best month to start is <em>this one.</em></h1>`}
-    <div class="glass score">${top.length?top.map((t,i)=>`<div class="srow ${t.pos===1?'first':''}"><span class="sp">${medal(t.pos-1)||t.pos}</span><span class="sn">${av(t.p)}${esc(t.p.name)}</span><span class="sw">${t.wins?t.wins+(t.wins>1?' wins':' win'):''}</span><b>${t.pts} pts</b></div>`).join(''):`<p class="waiting" style="padding:1rem">No scores this time.</p>`}</div>
+    <h1 class="title ${st===0?'drum':''}">${title}</h1>
+    <div class="glass fboard">${rows}</div>
+    ${st===n?`<p class="tag fin-tag">The best month to start is this one.</p>`:''}
+  </div></div>`;
+}
+function tplEndFull(){
+  const sc=ranked(), s=S(), extra=realOf('r3')-realOf('r1');
+  const list=sc.map(t=>`<div class="arow"><span class="ap">${t.pos}</span><span class="an">${av(t.p)}${esc(t.p.name)}</span><b>${t.pts}</b></div>`).join('');
+  return `<div class="stage end-stage"><div class="final-col wide">
+    <div class="presents">${GAME_NAME} · everyone</div>
+    <h1 class="title">Thank you for playing</h1>
+    <div class="glass allboard"><div class="agrid">${list}</div></div>
     <div class="glass stat"><div class="kicker">What waiting ${s.delay} years costs</div><div class="big coral">${rupees(extra)}</div><div class="sm">more, every month, for the same ${tgt(s)}</div></div>
-    <p class="tag">The best month to start is this one. Your numbers are on your phone.</p>
-  </div>`;
+    <p class="tag fin-tag">The best month to start is this one. Your numbers are on your phone.</p>
+  </div></div>`;
 }
 
-/* ═══════════════════ PLAYER ═══════════════════ */
+/* ═══════════════════ PLAYER ═══════════════════
+   Game-show look. One rule for the screen: it only repaints when the VIEW changes (paint key), never on every
+   state update, so a phone that is mid-typing keeps its keypad and its text while 50 other phones lock in. */
 let myName=localStorage.getItem('ls_name')||'';
-let joinSent=false, myLocal={}, myLockedNonce={}, _pendingVal=0, _lastPhase=null, _seen={}, _celebrated={};
+let joinSent=false, myLocal={}, myLockedNonce={}, _pendingVal=0, _lastPhase=null, _seen={}, _celebrated={}, _viewKey=null, _vt=[];
 async function initPlayer(){
   document.getElementById('player').classList.remove('hide');
-  document.body.classList.add('player-bg');
-  if(!ROOM){ document.getElementById('player').innerHTML=shell('<div class="card center"><h2>Playing in a class?</h2><p>Scan the QR code on your teacher’s screen to join. This is a live game, so it needs the room.</p></div>'); return; }
+  document.body.classList.add('player-bg','gs');
+  try{ if(window.visualViewport){ const set=()=>document.documentElement.style.setProperty('--vvh',visualViewport.height+'px'); set(); visualViewport.addEventListener('resize',set); } }catch(e){}
+  if(DEMO){ state=freshState(); seedDemo(MY_ID); renderPlayer(); return; }
+  if(!ROOM){ paint('noroom',shell('<div class="gs-card center"><h2>Playing in a class?</h2><p>Scan the QR code on your teacher’s screen to join. This is a live game, so it needs the room.</p></div>')); return; }
   joinChannel();
   try{ const {data}=await db.from('games').select('state').eq('room_code',ROOM).maybeSingle(); if(data&&data.state)state=data.state; }catch(e){}
   renderPlayer();
@@ -1107,12 +1386,12 @@ function onMoney(inp){
   const b=document.getElementById('shBadge'); if(b) b.textContent=_pendingVal>0?fmtMoney(_pendingVal):'';
   const btn=document.getElementById('lockBtn'); if(btn) btn.disabled=!(_pendingVal>0);
 }
-function pLock(rk){ if(!(_pendingVal>0)) return; myLocal[rk]=_pendingVal; myLockedNonce[rk]=state.nonce; sendAction({type:'guess',id:MY_ID,round:rk,value:_pendingVal}); renderPlayer(); }
+function pLock(rk){ if(!(_pendingVal>0)) return; myLocal[rk]=_pendingVal; myLockedNonce[rk]=state.nonce; sendAction({type:'guess',id:MY_ID,round:rk,value:_pendingVal}); document.body.classList.remove('typing'); renderPlayer(); }
 function pChange(rk){ myLockedNonce[rk]=-1; renderPlayer(); }
 function ifmShare(msg){ window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank'); }
 const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>';
 let _shareMsg='';
-function waBtn(msg,label){ _shareMsg=msg; return `<button class="p-btn wa" onclick="ifmShare(_shareMsg)">${WA_ICON}<span>${label}</span></button>`; }
+function waBtn(msg,label){ _shareMsg=msg; return `<button class="gs-wa" onclick="ifmShare(_shareMsg)">${WA_ICON}<span>${label}</span></button>`; }
 function shareText(p,pts){
   const s=S(), a=realOf('r1'), b=realOf('r3');
   return ['🎲 *'+GAME_NAME+'*','_guess the number, closest wins_','',
@@ -1123,68 +1402,83 @@ function shareText(p,pts){
     `I scored *${pts} point${pts===1?'':'s'}*.`,'',`_(assumes ${s.rate}% a year, not a promise)_`,'','Play it 👇',SHARE_URL].join('\n');
 }
 function myRow(rk){ const r=state.results&&state.results[rk]; return r?r.rows.find(x=>x.id===MY_ID)||null:null; }
+function stats(rk){ const ps=Object.values(state.players), done=ps.filter(p=>hasGuess(p,rk)).length; return {done,total:ps.length,pct:ps.length?Math.round(done/ps.length*100):0,left:ps.length-done}; }
+
+// Repaint only when the view (key) changes. Same key: just refresh the live bits (progress bar, counts, nudge).
+function paint(key,html,mount){
+  const el=document.getElementById('player');
+  if(_viewKey===key){ liveUpdate(); return; }
+  _viewKey=key; _vt.forEach(clearInterval); _vt=[]; el.innerHTML=html; window.scrollTo(0,0); if(mount) mount(); liveUpdate();
+}
+function liveUpdate(){
+  if(!state||!state.players) return; const rk=roundOf(state.phase), st=rk?stats(rk):null;
+  document.querySelectorAll('[data-live="prog"]').forEach(e=>{ e.textContent=st?`${st.pct}% of the room has locked in`:''; });
+  document.querySelectorAll('[data-live="bar"]').forEach(e=>{ e.style.width=(st?st.pct:0)+'%'; });
+  document.querySelectorAll('[data-live="count"]').forEach(e=>{ e.textContent=Object.keys(state.players).length; });
+  const nd=document.querySelector('[data-live="nudge"]');
+  if(nd&&st){ const m=me(), mine=m&&(hasGuess(m,rk)||(myLocal[rk]&&myLockedNonce[rk]===state.nonce)); nd.hidden=!(m&&!mine&&st.left<=10&&st.done>=st.total/2); }
+}
+function shell(inner){ const rate=state&&state.settings?state.settings.rate:12;
+  return `<div class="gs-wrap"><div class="gs-top"><span class="gs-logo"><img src="${LOGO}" alt=""></span><span class="gs-name">The Wealth Hack</span><span class="gs-room">${esc(ROOM||'')}</span></div>
+    ${inner}<div class="gs-foot">Investing for Mummies · assumes ${rate}% a year, not a promise</div></div>`; }
+const progBlock=()=>`<div class="gs-prog"><div class="gs-prog-t" data-live="prog"></div><div class="gs-bar"><i data-live="bar"></i></div></div>`;
+const waitCard=(emoji,h,p,extra)=>`<div class="gs-card center"><div class="gs-bounce">${emoji}</div><h2>${h}</h2><p>${p}</p>${extra||''}</div>`;
 
 function renderPlayer(){
-  const el=document.getElementById('player'); if(!state){ el.innerHTML=shell('<div class="card center"><h2>Finding the game…</h2><p>Room '+esc(ROOM)+'</p></div>'); return; }
-  const p=me(); const ph=state.phase, rk=roundOf(ph), s=state.settings;
+  if(!state) return paint('finding',shell('<div class="gs-card center"><h2>Finding the game…</h2><p>Room '+esc(ROOM)+'</p></div>'));
+  const p=me(), ph=state.phase, rk=roundOf(ph), s=state.settings;
   if(ph!==_lastPhase){ _pendingVal=0; _lastPhase=ph; }
   if(!p){
-    if(joinSent&&ph==='lobby') return el.innerHTML=shell(`<div class="card center"><h2>Joining…</h2><p>${esc(myName)}</p></div>`,true);
+    if(joinSent&&ph==='lobby') return paint('joining',shell(`<div class="gs-card center"><h2>Joining…</h2><p>${esc(myName)}</p></div>`));
     joinSent=false;
-    el.innerHTML=shell(`<div class="card"><h2>What should we <em>call you?</em></h2><p>Just your first name. Everyone gets the same question.</p>
-      <div class="field"><div class="lbl">Name</div><input id="nameInput" class="inp" maxlength="16" placeholder="First name" value="${esc(myName)}" autocomplete="off" oninput="joinCheck()" onkeydown="if(event.key==='Enter')doJoin()"></div>
-      <button class="p-btn" id="joinBtn" onclick="doJoin()" disabled>Join the game →</button></div>`,true);
-    joinCheck(); return;
+    return paint('join',shell(`<div class="gs-card"><div class="gs-hello">👋</div><h2>What should we call you?</h2><p>Just your first name. Everyone gets the same question.</p>
+      <input id="nameInput" class="gs-name-in" maxlength="16" placeholder="First name" value="${esc(myName)}" autocomplete="off" oninput="joinCheck()" onkeydown="if(event.key==='Enter')doJoin()">
+      <button class="gs-lock" id="joinBtn" onclick="doJoin()" disabled>JOIN THE GAME</button></div>`),()=>joinCheck());
   }
-  if(ph==='lobby') return el.innerHTML=shell(`<div class="card center"><div class="av" style="background:${p.color}">${p.av}</div><h2>You're in, ${esc(p.name)}.</h2><p>Eyes on the screen. The teacher starts the game.</p></div>`,true);
+  if(ph==='lobby') return paint('lobby',shell(waitCard(p.av,`You're in, ${esc(p.name)}!`,'Eyes on the big screen. The game starts soon.',`<div class="gs-pill"><b data-live="count">${Object.keys(state.players).length}</b> players in the room</div>`)));
   if(rk&&/_ask$/.test(ph)){
-    const R=ROUNDS[rk]; const locked=myLockedNonce[rk]===state.nonce||(hasGuess(p,rk)&&myLockedNonce[rk]!==-1);
+    const R=ROUNDS[rk], q=R.pq(s), locked=myLockedNonce[rk]===state.nonce||(hasGuess(p,rk)&&myLockedNonce[rk]!==-1);
     const val=myLocal[rk]||(p.guess&&p.guess[rk])||0;
-    if(locked) return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(s)}</h2>
-      <div class="locked"><div class="lbl">Locked in ✓</div><div class="v">${rupees(val)}</div><div class="u">a month</div></div>
-      <p style="margin:0 0 4px">Watch the screen. The teacher closes the round when everyone is in.</p><button class="p-btn outline" onclick="pChange('${rk}')">Change my guess</button></div>`);
-    return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(s)}</h2><p class="ask-note">${R.why(s)}</p>
-      <div class="amt"><div class="amt-l">Your guess · a month</div>
-        <div class="amt-box"><span class="rs">₹</span><input id="moneyInput" class="amt-in" inputmode="numeric" placeholder="0" oninput="onMoney(this)" value="${val?indianFormat(val):''}"></div>
-        <div class="amt-sh" id="shBadge">${val?fmtMoney(val):''}</div></div>
-      <button class="p-btn big" id="lockBtn" onclick="pLock('${rk}')" ${val?'':'disabled'} style="margin-top:auto">Lock it in →</button></div>`);
+    const qBlock=`<div class="gs-round">ROUND ${R.n} OF 3</div><div class="gs-q"><div class="gs-q1">${q.q1}</div><div class="gs-years"><span>${q.y}</span> YEARS</div><div class="gs-q2">${q.q2}</div></div>`;
+    if(locked) return paint(`ask:${rk}:${state.nonce}:locked`,shell(`${qBlock}<div class="gs-locked"><div class="gs-lk">LOCKED IN ✓</div><div class="gs-lv">${rupees(val)}</div><div class="gs-lu">a month</div></div>${progBlock()}<button class="gs-ghost" onclick="pChange('${rk}')">Change my guess</button>`));
+    return paint(`ask:${rk}:${state.nonce}:open`,shell(`${qBlock}
+      <div class="gs-amt"><span class="rs">₹</span><input id="moneyInput" inputmode="numeric" placeholder="0" oninput="onMoney(this)" onfocus="document.body.classList.add('typing')" onblur="document.body.classList.remove('typing')" value="${val?indianFormat(val):''}"></div>
+      <div class="gs-badge" id="shBadge">${val?fmtMoney(val):''}</div>
+      ${progBlock()}
+      <div class="gs-nudge" data-live="nudge" hidden>⏳ The room is waiting for you!</div>
+      <button class="gs-lock" id="lockBtn" onclick="pLock('${rk}')" ${val?'':'disabled'}>LOCK IT IN</button>`),()=>{ if(val) _pendingVal=val; });
   }
   if(rk&&/_reveal$/.test(ph)){
     // hold the result back while the projector's drum roll plays
     const key=state.nonce; if(!_seen[key]) _seen[key]=Date.now();
     const wait=REVEAL_DELAY-(Date.now()-_seen[key]);
-    if(wait>0){ setTimeout(renderPlayer,wait+60); return el.innerHTML=shell(`<div class="card center"><h2>Drum roll…</h2><p>Eyes on the screen.</p></div>`); }
+    if(wait>0){ setTimeout(renderPlayer,wait+80); return paint(`rev:${key}:wait`,shell(`<div class="gs-card center"><div class="gs-round">ROUND ${ROUNDS[rk].n} OF 3</div><h2>Drum roll…</h2><div class="gs-reels">${'<b>0</b>'.repeat(5)}</div><p>Eyes on the big screen!</p></div>`),()=>{ const bs=[...document.querySelectorAll('.gs-reels b')]; _vt.push(setInterval(()=>bs.forEach(b=>b.textContent=Math.floor(Math.random()*10)),80)); }); }
     const R=ROUNDS[rk], row=myRow(rk), real=state.results[rk]?state.results[rk].real:Math.round(realOf(rk));
     let body='';
-    if(!row) body=`<div class="real"><div class="lbl">The real number</div><div class="v">${rupees(real)}</div><div class="g">a month</div></div><div class="fb">You didn't lock in this round. Next one, type your guess before the teacher closes.</div>`;
+    if(!row) body=`<div class="gs-lbl">THE REAL NUMBER</div><div class="gs-real">${rupees(real)}</div><div class="gs-sub">a month</div><div class="gs-msg">You didn't lock in this round. Type your guess before the teacher closes the next one.</div>`;
     else{
-      const msg=row.rank===1?'You were closest! 🏆':row.rank<=3?'You made the top three! 🎉':'Closer next time.';
-      body=`<div class="real"><div class="lbl">The real number</div><div class="v">${rupees(real)}</div><div class="g">you guessed ${rupees(row.guess)}</div><span class="off ${row.rank===1?'':'high'}">${gapText(row.gap,real)}</span></div>
-        <div class="fb ${row.rank<=3?'good':''}"><b>${msg}</b> ${row.pts?`+${row.pts} point${row.pts>1?'s':''}.`:''}</div>`;
-      if(row.rank===1&&!_celebrated[key]){ _celebrated[key]=1; setTimeout(()=>confetti(3000,140),200); }
+      const msg=row.rank===1?'🏆 YOU WERE CLOSEST!':row.rank<=3?'🎉 You made the top three!':'So close. Closer next time.';
+      body=`<div class="gs-lbl">THE REAL NUMBER</div><div class="gs-real">${rupees(real)}</div><div class="gs-sub">you guessed ${rupees(row.guess)}</div><div class="gs-gap">${gapText(row.gap,real)}</div>
+        <div class="gs-msg ${row.rank<=3?'good':''}"><b>${msg}</b>${row.pts?` +${row.pts} point${row.pts>1?'s':''}`:''}</div>`;
+      if(row.rank===1&&!_celebrated[key]){ _celebrated[key]=1; setTimeout(()=>confetti(3200,160,true),250); }
     }
-    if(rk==='r3'){ const d=realOf('r3')-realOf('r1'); body+=`<div class="fb">Starting ${s.delay} years late costs <b>${rupees(d)} more</b> every month.</div>`; }
-    return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n} · ${R.title}</div>${body}</div>`);
+    if(rk==='r3'){ const a=realOf('r1'), d=realOf('r3')-a; body+=`<div class="gs-punch">Waiting ${s.delay} years costs <b>${rupees(d)} more</b> every month. That's <b>+${Math.round(d/a*100)}%</b>.</div>`; }
+    return paint(`rev:${key}:res`,shell(`<div class="gs-card"><div class="gs-round">ROUND ${R.n} OF 3</div>${body}</div>`));
   }
-  if(ph==='r3_ladder') return el.innerHTML=shell(`<div class="card center"><h2>The cost of delay</h2><p>Eyes on the screen. Each year you wait costs more than the last.</p></div>`);
+  if(ph==='r3_ladder') return paint('ladder',shell(waitCard('📈','Every year costs more','Watch the big screen. Each year of waiting adds more than the one before.','<div class="gs-stairs"><i></i><i></i><i></i><i></i><i></i></div>')));
   if(ph==='end'){
-    const sc=ranked(), mine=sc.find(t=>t.id===MY_ID)||{pts:0,wins:0}, pos=mine.pos||0;
-    const rows=ROUND_KEYS.map(k=>{ const r=myRow(k); return `<div class="row"><span>${ROUNDS[k].title}</span><b>${r?gapText(r.gap,state.results[k].real):'no guess'}</b></div>`; }).join('');
-    return el.innerHTML=shell(`<div class="card"><div class="lbl">Final scores</div><h2>${esc(p.name)}: ${mine.pts} point${mine.pts===1?'':'s'}</h2>
-      <p>${pos&&mine.pts?`You finished number ${pos} of ${sc.length}.`:'Thanks for playing.'}</p><div class="sum">${rows}</div>
-      ${waBtn(shareText(p,mine.pts),'Share on WhatsApp')}<p style="margin:12px 0 0;text-align:center">The best month to start is this one.</p></div>`);
+    const g=endGroups(), n=g.length, st=state.endStep||0;
+    if(st<=n&&n) return paint('end:wait',shell(waitCard('🥁','The final scores…','Eyes on the big screen. Who is the closest of them all?')));
+    const sc=ranked(), mine=sc.find(t=>t.id===MY_ID)||{pts:0,wins:0,pos:0};
+    const rows=ROUND_KEYS.map(k=>{ const r=myRow(k); return `<div class="gs-line"><span>${ROUNDS[k].title}</span><b>${r?gapText(r.gap,state.results[k].real):'no guess'}</b></div>`; }).join('');
+    return paint('end:final',shell(`<div class="gs-card"><div class="gs-lbl">FINAL SCORE</div><div class="gs-real">${mine.pts} pt${mine.pts===1?'':'s'}</div>
+      <div class="gs-sub">${mine.pts&&mine.pos?`You finished number ${mine.pos} of ${sc.length}`:'Thanks for playing'}</div><div class="gs-lines">${rows}</div>
+      ${waBtn(shareText(p,mine.pts),'Share on WhatsApp')}<p class="gs-end">The best month to start is this one.</p></div>`));
   }
-  el.innerHTML=shell('<div class="card center"><h2>Eyes on the screen</h2></div>');
+  paint('wait',shell(waitCard('👀','Eyes on the screen','')));
 }
-function shell(inner,full){ const rate=state&&state.settings?state.settings.rate:12;
-  return `<div class="wrap">
-    <div class="p-hero ${full?'full':''}"></div>
-    <div class="p-bar"><div class="mark"><img src="${LOGO}" alt=""></div><div class="brand">Investing<br>for Mummies</div><div class="room"><i></i>ROOM ${esc(ROOM||'')}</div></div>
-    ${full?`<div class="p-title"><div class="the">The</div><h1>Wealth Hack</h1><p class="tag">One started early. One started “soon”. <b>Only one of them is rich.</b></p></div>`:`<div class="p-title compact"><h1>${GAME_NAME}</h1></div>`}
-    ${inner}
-    <div class="foot">Investing for Mummies · assumes ${rate}% a year, not a promise</div></div>`; }
 if(isHost) initHost(); else initPlayer();
 </script>
-<!-- ifm-disclaimer --><p style="margin:0;padding:14px 16px 18px;text-align:center;font:500 12px/1.5 Nunito,system-ui,sans-serif;color:#5a7d8a;background:transparent;clear:both">Educational only. Illustrative returns, not guaranteed. Not investment advice.</p>
+<!-- ifm-disclaimer --><p class="ifm-disc" style="margin:0;padding:14px 16px 18px;text-align:center;font:500 12px/1.5 Nunito,system-ui,sans-serif;color:#5a7d8a;background:transparent;clear:both">Educational only. Illustrative returns, not guaranteed. Not investment advice.</p>
 </body>
 </html>
