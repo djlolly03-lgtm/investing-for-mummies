@@ -1,161 +1,239 @@
 # IFM — Role Architecture
 
-**Established:** 17 August 2026, role review with Asba
+**Established:** 17 August 2026 · **Rewritten:** 26 November 2026 after the R&R reset of 25 November
 **Status:** the operating model. Individual role documents sit underneath this and must not contradict it.
+**Superseded version:** `1a - IFM Role Architecture (Aug 2026, superseded).md` — kept as a record.
+
+> **What changed since August.** The model was three lanes with Sales vacant. It is now **four lanes,
+> all filled.** Narendra joined and built a lane that did not exist. Rakshita's content production came
+> in-house. Sakshi took on EA work for Hiral. Wendy took sole ownership of the CRM. Read §8 — the
+> unowned work — before assuming this model is complete. It isn't.
 
 ---
 
-## The model in one line
+## 1. The model in one line
 
-> **Broadcast gets them looking. Sales gets them paying. Retention keeps them — and makes them tell others.**
+> **Broadcast gets them looking. Sales gets them paying. Retention keeps them — and makes them tell
+> others. Build makes the thing they're looking at.**
 
-Three lanes, hard boundaries, one owner each. The boundary is **the payment**.
-
----
-
-## The growth sequence this model serves
-
-> **Hire sales while the room is rebuilt → fill both batches to 36–40 mothers a month → then hire a co-teacher.**
-
-The first two moves run in parallel. The room is being rebuilt now for **18–20 students**, taking a full cycle across both batches to **36–40** — roughly **₹6.8L–₹7.6L a month** at current pricing.
-
-**The co-teacher is triggered by full batches, not by a date.** Until then, teaching capacity is whatever Hiral alone can deliver, and that — not sales — is the ceiling.
+Four lanes, one owner each. **The boundary between Sales and Retention is the payment.**
 
 ---
 
-## The three lanes
+## 2. The four lanes
 
-### 🔊 BROADCAST — Sakshi *(in post since 1 July 2026; role clarified 18 August)*
-**Boundary:** everything before someone raises their hand.
+| Lane | Owner | Owns | Boundary |
+|---|---|---|---|
+| 🔊 **Broadcast** | **Sakshi** | Everything before someone raises their hand | Stops the moment someone enquires |
+| 💰 **Sales** | **Wendy** | Interest → payment, individual and corporate | Stops the moment payment clears |
+| 🤝 **Retention & Ops** | **Asba** | Payment → completion → feedback → testimonial | Starts at payment |
+| 🛠 **Build & Systems** | **Narendra** | The games, the sites, the plumbing underneath all three | Serves all lanes, owns none of their outcomes |
+
+---
+
+### 🔊 BROADCAST — Sakshi
+*In post since 1 July 2026 · role clarified 18 Aug · split with EA work 24 Nov · content production added 25 Nov*
 
 | Owns | |
 |---|---|
-| Instagram Stories | Fully hers, no approval |
-| Outbound engagement | 8–15 comments/day on other accounts and mum groups |
-| Filming every class | Then into the content hub |
-| Creative production | Flyers, certificates, post creatives |
-| LinkedIn | With Ketaki assisting — *see the open question below* |
-| Comments & DMs | Answered and logged; enquiries handed onward |
+| **Instagram Stories** | Completely. No approval needed. |
+| **Instagram posting** | **All of it, ~12 a month** — taken in-house from Rakshita, 25 Nov |
+| **Outbound engagement** | 15 genuine comments a day on other accounts and in mum groups |
+| **Filming every class** | And getting the footage into the content hub |
+| **Creative production** | Flyers, certificates, post creatives |
+| **LinkedIn mechanics** | Scheduling, formatting, comment replies, with Ketaki. **Max one post a day.** |
+| **Programme support** | Class videos, game testing, certificates, book printing, materials |
+| **EA — Hiral** | **Two days a week, Tue/Thu.** Diary, travel, follow-ups |
 
-**Success measure:** **+1% followers per day**, compounding. Not seats.
+**Does not own:** the feed's creative direction *(agency)*, chasing or closing *(Wendy)*, anything after
+payment *(Asba)*, LinkedIn authorship *(Hiral's voice, her profile)*.
 
-**The eventual goal:** *if the room holds 12, produce 24 wanting in.* Not by pitching personally — by growing the audience until it happens on its own.
+**The split is capped at two days.** If Hiral's needs grow past that, it is a conversation with Aditya,
+not something absorbed. See `4 - Sakshi - Your Role at IFM`.
 
-**Does NOT own:** the main feed (agency) · pricing or dates · chasing prospects · anything after payment.
+**Standing requirement, added 25 Nov:** one Instagram class a month. Hooks, insights, what performs.
 
 ---
 
-### 💰 SALES — VACANT, to hire
-**Boundary:** from interest to payment.
+### 💰 SALES — Wendy
+*Joined 15 October 2026 · scope settled 25 November*
 
 | Owns | |
 |---|---|
-| Prospect follow-ups | Including the 27 currently unworked |
-| The open-ended list | Everyone who asked and didn't buy |
-| Zoho Bigin | Lead management is a sales tool |
-| Closing | Batch pitching, objections, conversion |
-| Discount-code attribution | Which source produced which seat |
+| **Every lead, from every source** | Instagram DMs, WhatsApp, website, referrals — **including Hiral's personal references.** One route in. |
+| **The CRM** | **Sole owner.** Nobody else enters or edits. Data quality is hers. |
+| **The pipeline** | First contact through to payment |
+| **Lead intelligence** | Why people say no — see below. **This is the part nobody else can do.** |
+| **Prospecting** | Finding rooms we aren't in yet |
+| **Corporate, front end** | From the *next* enquiry — she fronts it, hands to Asba on payment |
+| **Discounts** | 10% for one referral, up to 15% for two. Anything else needs Hiral. |
 
-**Interim:** Sakshi doubles up. Explicitly a stopgap — she is soft-spoken and not a natural closer. **This is a real hiring need, not a nice-to-have.**
+**Does not own:** batch planning, dates or location decisions *(Asba and Hiral — she can propose)*,
+anything after payment, pricing.
 
-> **Why this lane exists:** it was previously smeared across Asba and Hiral, neither of whom wants it or takes upside from it. *"Anybody who isn't a client and needs following up is still a sale."*
+**Daily discipline, non-negotiable:** log every dial and every conversation. Multi-tag every lead —
+location, reason for no, format preference, timing preference. Check Instagram several times a day
+**including late evening**, because that is when enquiries land.
+
+> **The intelligence job.** Sakshi has Instagram's data on who's looking. Asba has everyone who paid.
+> Hiral talks to the ones in the room. **Wendy is the only person in the business who speaks to people
+> who do not enter the class.** That middle layer is the only place we can learn whether the obstacle
+> is the price, the location, the time of day, or the format — and Hiral cannot schedule the working-women
+> batch she wants until someone collects it.
+
+**Her job is to open the door, not always to close it.** For corporate and high-value, get the person
+into a ten-minute conversation with Hiral. Hiral makes that sale.
 
 ---
 
 ### 🤝 RETENTION & OPERATIONS — Asba
-**Boundary:** from the moment they pay, until they finish — and beyond.
 
 | Owns | |
 |---|---|
-| Batch launch & calendar | Dates with Hiral, onto the website, batch goes live. **Includes the first-Friday publish** — the rolling two-month window refreshed every month without fail. |
-| Workshop operations | All coordination, flyers out, group messages |
-| Invoicing & payments | |
-| Feedback management | Both layers — see below |
-| WhatsApp & communication | Moving to shared with Sakshi later |
-| **The SOP** | Every interaction from payment to completion |
-| Certificates & post-programme | Issued, and onto the content hub |
+| **Everything after payment** | Onboarding, group, reminders, the whole lifecycle |
+| **The SOP** | Payment → completion, with a named doer and date on every step |
+| **Batch planning** | Dates, capacity, going live, the registration page |
+| **Attendance** | Sakshi records it in the room; **ownership and the dashboard are Asba's** |
+| **Makeup sessions** | Individual messages off attendance data, not group broadcasts |
+| **Feedback and testimonials** | Collection, chasing, recording |
+| **Venue** | Sourcing and booking once headcount justifies it |
+| **Corporate delivery** | Everything after the invoice is paid |
 
-**Success measure:** completion, satisfaction, testimonials, repeat and referral.
+**Does not own:** finding or converting leads, the CRM, content.
 
-**Does NOT own:** lead generation · prospect follow-up · a leads target. **The "2 leads per month" target is withdrawn.**
-
-> **Why Asba:** demonstrated strength is *"once the guest has arrived, what happens next"* — the wedding-host instinct. That is retention, and it is a discipline in its own right.
+> ⚠️ **Asba is not full-time on IFM**, and the model has never said so. She is also Aditya's EA, runs
+> travel for other companies and for family, and handles credit-card management. **IFM ops is a share
+> of her week that has never been agreed.** This is the single biggest unresolved structural issue in
+> this document — see §8.
 
 ---
 
-## Around the three lanes
+### 🛠 BUILD & SYSTEMS — Narendra
+*Joined November 2026 · lane created by this rewrite*
+
+| Owns | |
+|---|---|
+| **The games** | Build, fixes, load testing before live sessions |
+| **The sites** | www and the games portal |
+| **The plumbing** | Lead data flowing from website and Instagram into one place |
+| **Class recordings** | Capture, compression, storage — currently failing |
+| **Automations** | N8N, with Varun |
+
+**Does not own** any lane's outcome. He makes the tools; Broadcast, Sales and Retention use them.
+
+**Standing rule:** load-test any game before a live room, and the host must always be able to force a
+round forward or cancel it. A 40-person room cannot be held hostage by one phone.
+
+---
+
+## 3. Around the lanes
 
 | Who | Role |
 |---|---|
-| **Hiral** | Teaching, curriculum, founder brand — **including her own story as a recurring content pillar** (losing her father, the years of depending on someone else, finding her own footing). Nobody else can tell it, and the account's top posts say it works. **Plus the alumni relationship** — the 116 past students came through her personally or via her network, and re-engagement, referrals and testimonials stay with her. |
-| **Content agency** | Main Instagram feed against their own calendar |
-| **Ketaki** — Head of HR | LinkedIn support to Sakshi; sourcing the book-launch consultant |
-| **Suraj / Aniket** | N8N — the automation layer the SOP feeds into |
-| **Book consultant** | To hire, project-scoped |
+| **Hiral** | Teaching, curriculum, founder brand and her own story as a content pillar. **The closer** on corporate and high-value. LinkedIn author. Alumni relationships. |
+| **Aditya** | Strategy, final call on structure, pricing and spend |
+| **Ketaki** — Head of HR | Reviews, check-ins, LinkedIn support, sourcing |
+| **Content agency** | Main feed creative against their own calendar |
+| **Varun** | N8N invoice and confirmation workflow |
+| **Aniket** | Proposed infrastructure retainer — **not engaged yet** |
+| **Rakshita** | **Ended 25 Nov 2026.** Door left open for a future brand build. |
 
 ---
 
-## Where the handoffs happen
+## 4. Where the handoffs happen
 
-**Broadcast → Sales.** Someone comments, DMs or fills a form. Sakshi logs the enquiry and **hands it over the same day.** She does not chase it, and she does not close it.
+**Broadcast → Sales.** Someone comments, DMs or fills a form. **Wendy takes it directly from the
+platform** — the screenshot-to-the-group step is gone. If you open a DM that isn't yours to action,
+**mark it unread** so Wendy still sees it.
 
-**Sales → Retention.** Payment clears. **This is the hardest boundary in the business.** Everything before is sales; everything after is Asba. The auto-email at payment is the literal handoff, and it is step one of the SOP.
+**Sales → Retention.** Payment clears. The hardest boundary in the business. Asba messages the client
+explicitly — *"I'll be taking this over from Wendy"* — and Wendy stays visible in the group. **Two
+phone numbers, not three.**
 
-**Retention → Broadcast.** The loop closes here, and it is the most-missed one. Completed students produce **testimonials, session footage, tagging permission and referrals** — all of which are broadcast fuel. *99 of 116 students have never been asked for feedback.*
+**Retention → Broadcast.** The most-missed loop. Completed students produce testimonials, footage,
+tagging permission and referrals. **Only ~40 reviews exist against 120–130 students.**
 
----
-
-## The two things that make this work
-
-**1. The SOP.** Retention without a written process is just Asba remembering things. Payment → auto-email → every interaction → completion → certificate → feedback → testimonial. Including the awkward variables: late joiners, one-session-online, batch swaps.
-
-Built by iteration — list 1, sleep on it, list 2, list 3, to list 4 or 5 covering ~99.9% of what has ever happened with any student. Then handed to Claude, and automated through N8N.
-
-**Franchise logic:** a hero number 2 in Guwahati needs this daily. That is the real test of whether the SOP is finished.
-
-**2. Attribution.** Without codes, no lane can prove what it produced. Personal codes (`ASBA001`), an Instagram-follow code, source tagging on every enquiry. *"Even if six people came from it, you'd never get credit."*
+**Build → everyone.** Narendra serves all three and is nobody's bottleneck by design.
 
 ---
 
-## Feedback belongs to retention, in two layers
+## 5. The things that make this work
 
-| | When | Produces |
-|---|---|---|
-| **Session feedback** | End of every session | Per-topic signal — *"gold worked, insurance didn't"* → curriculum fixes |
-| **Programme feedback** | End of the programme | Overall experience + **written testimonials** |
+**1. The SOP** — with a named doer and a date on every step, and a single file holding the actual text
+of every client communication. Without the second, we cannot improve copy we cannot see.
 
-The current single long form yields neither. It is option-based, so it produces no quotable testimonial, and it isn't asked per session, so it cannot tell Hiral which module is underperforming.
+**2. Attribution** — coupon codes and source tagging. The registration page already has the field.
+**The codes still do not exist.** Until they do, no lane can prove what it produced.
 
-**Live proof it matters:** two batches reported the insurance topic as dry. That surfaced anecdotally. It should have surfaced from the data.
+**3. Enablement** — the FAQ, the objection handling, what the 5-day includes versus the 8-session.
+**None of it is written down.** See §8.
 
----
-
-## Open questions this model has not yet settled
-
-1. **LinkedIn.** Assigned to Sakshi with Ketaki; the existing role document says it stays with Hiral because founder profiles outperform company pages. **Suggested resolution:** Hiral remains author and face; Sakshi and Ketaki handle scheduling, formatting and comment replies.
-
-2. **Sakshi's load.** Flyers, certificates, creatives and LinkedIn now sit on top of ~3 hrs/day of social. **Is this still a 3-hour role?** If not, outbound is what will silently slip — and it is the only thing that grows the account.
-
-3. **Sales hire timing.** Every week the lane stays vacant, the pipeline ages. Sakshi doubling up is a stopgap with a short shelf life.
-
-4. **Zoho ownership** in the interim.
+**4. One master lead list** — website, Instagram and offline all feeding one place. Not a new sheet
+per new person.
 
 ---
 
-## Recorded exception — institutional selling *(18 Aug 2026)*
+## 6. Decisions recorded, so the model doesn't quietly erode
 
-Schools, colleges and corporates are **sales work, but they sit with Hiral and Asba** rather than in the Sales lane. This is a deliberate trade, not a gap in the model:
+| Decision | Date |
+|---|---|
+| Referral discount: 10% for one, up to 15% for two | 25 Nov |
+| Every batch published with a minimum-numbers clause and full refund | 25 Nov |
+| Batch planning stays with Asba, not Sales | 25 Nov |
+| CRM sole ownership to Wendy | 25 Nov |
+| No third phone number | 25 Nov |
+| Headcount first, venue second | 25 Nov |
+| Sakshi's EA work capped at two days a week | 24 Nov |
+| One LinkedIn post a day maximum | 23 Oct |
+| Certificate eligibility: ~6 of 8 sessions **and** a completed feedback form | 23 Oct |
 
-- Institutional selling is long-cycle and relationship-led; the Sales lane is built for short-cycle warm conversion. Different skill, different incentive design.
-- Asba has already built the pitch deck and is the natural interim owner.
-- It carries **no target** and is worked opportunistically.
+**Superseded:** the 18 Aug exception putting institutional selling with Hiral and Asba. From the next
+corporate enquiry **Wendy fronts it**; Asba takes over at payment. Asba stops taking new corporate
+clients from ~1 January.
 
-**Named here so the model doesn't quietly erode.** Revisit once B2C runs predictably.
+**On the record as a disagreement:** Hiral runs one batch for three months and decides Mon/Wed vs
+Tue/Thu from what people say. Aditya's position is a published three-month calendar with payment up
+front. **Revisit February 2027.**
 
 ---
 
-## The rule that keeps this clean
+## 7. The rule that keeps this clean
 
-> **If a task can't be placed in one of the three lanes, it doesn't belong to any of them — it belongs to Hiral, or it belongs to somebody not yet hired.**
+> **If a task can't be placed in one of the four lanes, it doesn't belong to any of them — it belongs
+> to Hiral, or it belongs to somebody not yet hired.**
 
-The failure mode this model exists to prevent is the one that just happened: **an unowned responsibility quietly drifting to whoever is most conscientious**, until they are carrying a target that was never theirs and cannot be held to it fairly.
+The failure this model exists to prevent: **an unowned responsibility quietly drifting to whoever is
+most conscientious**, until they carry a target that was never theirs and cannot be held to it fairly.
+
+---
+
+## 8. ⚠️ What is still unowned — read this part
+
+Eleven things. Each one is currently either shared between two people, which means nobody, or sitting
+with whoever notices it first.
+
+| # | What | Status | Suggested owner |
+|---|---|---|---|
+| 1 | **Asba's IFM share of the week** | She serves IFM, Aditya, travel for other companies and family. Never agreed. IFM slips because IFM has nobody shouting. | **Aditya** — decide the split, or move work off her |
+| 2 | **Sales enablement** — FAQ, objection handling, what each format includes | Does not exist. Wendy was five weeks in and expected to invent it. Our call centres run 14-day training; IFM has run none. | **Hiral + Wendy**, written together |
+| 3 | **Attribution codes** | Open since 15 Oct. The registration field exists; the codes don't. | **Wendy** |
+| 4 | **The master lead list** | Split between Asba and Narendra, so nobody. Website leads still aren't in Zoho. | **Name one of them** |
+| 5 | **Filming — bus factor of one** | Only Sakshi can shoot. When she travels with Hiral, nothing is captured. | **Asba** shadows and shoots the next class |
+| 6 | **Weekend sessions** | Who attends, who records. Raised 25 Nov, undecided. | **Asba** |
+| 7 | **Expansion — Bandra, Juhu** | Wendy finds demand, Asba books, Hiral decides. Three people, no owner. | **Asba**, triggered by Wendy's headcount |
+| 8 | **DPDP consent for corporate groups** | Flagged 23 Oct. One manager cannot consent for forty employees. Unowned since. | **Aditya** — find a consultant |
+| 9 | **Wendy's KRA and review** | Was due 1 Dec. Still unwritten, as are her terms. | **Ketaki + Aditya** |
+| 10 | **Narendra's scope and review date** | New lane, nothing written. Also unresolved: whether infrastructure maintenance is his or Aniket's. | **Aditya** |
+| 11 | **Teaching capacity** | Hiral is the only teacher **and** the only closer on corporate. The co-teacher is triggered by full batches, which aren't happening. The ceiling is her, not sales. | **Hiral + Aditya** |
+
+---
+
+## 9. What the model still cannot answer
+
+**Who grows the business when everyone is busy running it?** Four lanes, all filled, all at capacity.
+Sakshi is on two jobs. Asba is on three. Wendy is learning. Narendra is building. **Every genuinely new
+thing — a new city, a new format, the book, the working-women batch — currently has to come from Hiral
+or Aditya**, and both are fully committed elsewhere.
+
+That is not a gap to fill with a hire today. It is the thing to watch for in February, when the
+four-month reviews land together.

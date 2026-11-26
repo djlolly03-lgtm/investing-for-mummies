@@ -1,41 +1,32 @@
-# Job Description — Enrolment & Growth Executive
+# Enrolment & Growth Executive
 
-**Prepared:** 18 August 2026 · **Lane:** SALES *(see `1 - IFM Role Architecture`)*
-**Reports to:** Hiral · **Type:** full-time · **Location:** Mumbai / hybrid
+**Rebuilt 26 November 2026**, after five weeks of someone actually doing the job.
+*Post it on job boards as "Sales / Business Development Executive — Education" so it gets found.*
+**Superseded version:** `5a - Sales Role JD (Aug 2026, superseded).md`
 
----
-
-## Before writing the ad — one recommendation on the title
-
-The 17 August review called this a **"Sales Head."** I'd argue against that title, for two reasons.
-
-**1. There is no team to head.** A "Head" implies people to manage. This is one person doing the calling themselves. Candidates who want a Head title are usually looking to manage rather than dial — and this role is dialling.
-
-**2. IFM cannot yet fund a Head's salary.** Total revenue to date is ₹15.65L across 116 students. A genuine sales head in Mumbai commands ₹10–15 LPA — most of a year's revenue.
-
-**What the work actually is:** warm-lead conversion by phone and WhatsApp for an education product. In the Indian market that role is an **Admissions Counsellor / Enrolment Executive**, hires at ₹25–40k/month plus incentive, and has a deep candidate pool with directly relevant experience.
-
-> **Recommendation: hire an Enrolment & Growth Executive now.** Promote to Sales Head when there are two or more people to lead. Everything below is scoped to that.
+| | |
+|---|---|
+| **Company** | Investing for Mummies |
+| **Location** | Nariman Point, Mumbai — in office |
+| **Reports to** | Aditya |
+| **Compensation** | ₹25,000 – ₹40,000 a month, by experience |
 
 ---
 
-## Why this role exists
+## Read this first — what this job actually is
 
-IFM has three lanes. Two are staffed:
+We teach women money, in a room, in person. A course is **₹19,000–21,000** and runs eight sessions
+across a month, or five condensed days. Our students are upper-middle-class Mumbai women, mostly in
+their thirties and forties, most of whom have never invested and are slightly embarrassed about it.
 
-| Lane | Owner | Boundary |
-|---|---|---|
-| **Broadcast** | Sakshi | Gets people looking |
-| **SALES** | **← this role. Currently vacant.** | Interest → payment |
-| **Retention & Operations** | Asba | Payment → completion |
+**You are the only person in the business who talks to the people who don't come.**
 
-Until now sales has been smeared across people who neither wanted it nor took upside from it. The consequences are visible and measurable:
+Instagram tells us who's looking. Our operations lead knows everyone who paid. Our founder knows
+everyone in the room. **Nobody knows why the other ninety said no** — and until someone does, we're
+guessing about price, location, timing and format.
 
-- **27 prospects sit in the pipeline, unworked.** Every one raised their hand and nobody followed up.
-- **99 of 116 past students have never been asked for feedback** — so there are almost no testimonials. *(That gap is Hiral's and Asba's to close, not this role's — see below.)*
-- **There is no attribution.** Flyers were handed out in person and nobody can say whether a single seat came from it.
-
-**This role exists to close that gap. It is the only role at IFM whose output is measured in rupees.**
+That is the job. Yes, you fill seats. But the reason this role matters more than a normal sales job
+is that **every conversation you have is the only market research this business gets.**
 
 ---
 
@@ -43,188 +34,172 @@ Until now sales has been smeared across people who neither wanted it nor took up
 
 | | |
 |---|---|
-| **The pipeline** | Every prospect from first interest to payment. Nobody else touches it. |
-| **The 27 open prospects** | Your first task. Warm, and ageing. |
-| **All fresh leads** | Everything Sakshi generates — comments, DMs, enquiries — **plus the registration-page waitlist** *(people who wanted in but couldn't make the dates)*. **This is the core of the role.** |
-| **Zoho Bigin** | The CRM. You own the data quality; if it's wrong, that's on you. |
-| **Closing** | Calls, WhatsApp, objections, follow-through to payment. |
-| **Attribution** | Discount codes and source tagging. **The coupon field is already built into the registration page** — codes just need creating and issuing. |
-| **The number** | Seats filled per cohort. |
+| **Every lead, from every source** | Instagram DMs, WhatsApp, the website, referrals — including the founder's personal contacts. One route in, and it's you. |
+| **The CRM** | Sole owner. Nobody else enters or edits. If the data is wrong, that's yours. |
+| **The pipeline** | First contact to payment |
+| **The intelligence** | Why people say no, written down and tagged |
+| **Prospecting** | Finding rooms we aren't in yet |
+| **Corporate, front end** | You open it; operations takes over once the invoice is paid |
 
-## What you don't own
+### What you don't own
 
-- **Past students and Hiral's network.** The 116 alumni came through Hiral personally or through her contacts. **They will not respond well to a call from someone they don't know**, and the relationship is worth more than any single seat. Referrals, testimonials and re-engagement with that group **stay with Hiral**. If you spot an opportunity there, you tell her — you don't call.
-- **Content, Stories, Instagram, LinkedIn** — Sakshi's. She brings people to the door; you convert them.
-- **Anything after payment** — Asba's. Batch logistics, scheduling, invoicing, feedback.
-- **Curriculum, pricing, teaching** — Hiral's.
+Batch dates, capacity or location *(you propose, operations and the founder decide)* · pricing ·
+anything after payment · content and social.
 
-> **The two handoffs define the job.** An enquiry arrives from Sakshi the same day it's made. A paid student passes to Asba the moment payment clears. **You live entirely in between.**
+**This matters.** Sales roles rot when they quietly absorb operations. If it happens after payment,
+it isn't yours, and nobody will thank you for taking it on.
 
 ---
 
-## Paid support from September
+## What a good week looks like
 
+**Log every call.** Fifteen to twenty dials, three or four real conversations. Write down which.
+Not a system — a few lines a day. Without it, if the sales don't come we can't tell whether the
+approach is wrong or the effort isn't there, and that ambiguity protects nobody.
 
-**This role is the reason the spend is worth making.** Ads produce near-misses — people who click, start the form, or land on the waitlist and don't finish. Those are yours to work, and a paid lead nobody follows up is money burnt twice.
+**Tag every lead properly.** Not by name. By **location**, by **what they'd prefer** — five condensed
+days or eight sessions across a month, mornings or evenings, Mon/Wed or Tue/Thu — and by **why they
+said no**. A drop-down and a remarks box.
+
+> The test: *"We're running a batch in Juhu next month. Which twenty people do you call?"*
+> You should be able to answer that in thirty seconds.
+
+**Check Instagram several times a day, including late evening.** Enquiries land at night, because
+that's when people scroll. A reply at 11pm beats a reply at 10am.
+
+**Ask the next question.** When someone says no, that's the start of the conversation, not the end.
+Is it the location? The time of day? The commitment? Would a weekend work? Our founder has been wanting
+to run a batch for working women for months and can't, because nobody has collected the answer.
+
+And ask it warmly. *"We've been really wanting to run one for working women"* opens people up.
+An interrogation doesn't. **This is a friendly conversation, not a pitch.**
+
+---
+
+## Finding people — beyond the inbox
+
+Inbound alone will not fill these batches. Some of where we think the rooms are:
+
+- **Clubs and associations** — CCI, Bombay Gymkhana, Rotary, FLO, the IMC Ladies' Wing, kitty and mahjong circles. Daytime availability is the common thread.
+- **Doctors and gynaecologists** — women expecting their first or second child are thinking further ahead about money than at almost any other point.
+- **Salons** — someone spending ₹2,000 on a blow-dry can spend ₹21,000 on sixteen hours.
+- **Coworking spaces** — a free two-hour session as lead generation.
+- **Seminars and conferences.**
+
+**You don't always have to close.** For corporate and high-value, your job is to get that person into
+a ten-minute conversation with our founder. She makes that sale. **You open the door.**
+
+**Sell the value, not the hours.** Never "this is what it costs per hour." What they stop losing on
+their own money, several times over.
+
+---
+
+## What you can decide on your own
+
+**Referral discounts: 10% for one referral, up to 15% for two.** Yours to offer, no approval needed.
+
+Anything beyond that — a different price, a different format, a promise about a location — comes back
+to the founder first.
+
+---
+
+## What we will give you — and we mean it this time
+
+We hired into this role once before and set the person up badly. We're saying so here because you
+should hold us to the other side of it.
+
+| | |
+|---|---|
+| **A written FAQ and objection guide** | What IFM is, what each format includes, what to say to the eight questions everyone asks. You should not have to invent this. |
+| **A CRM, working, on day one** | Not "being set up" |
+| **Two days inside a real call centre** | We run them. You'll see how leads get dispositioned, logged and reported, and sit next to people making sales calls all day. Nothing teaches rebuttals faster. |
+| **Attribution codes** | So your work is visible and provable |
+| **A named manager and a written target** | From week one |
+
+**If any of that is missing in your first fortnight, say so loudly.** A sales person without a CRM and
+a script isn't underperforming; they're unequipped.
 
 ---
 
 ## The first 90 days
 
-**Days 1–14 — work the backlog.** Call all 27 open prospects. Not email — call. Find out why each didn't convert. That exercise alone will teach you more about IFM's objections than any briefing, and it should produce the first seats.
-
-**Days 15–45 — build the fresh-lead motion.** Every enquiry Sakshi generates arrives with you the same day. Establish the response-time standard, the follow-up cadence, and the objection handling. **Speed is the whole advantage here** — a lead answered within the hour converts at a different rate to one answered next week.
-
-**Days 46–90 — build the repeatable motion.** Zoho clean and current. A written follow-up cadence. Attribution codes live. Inbound from Sakshi converting at a rate we can measure.
+| | |
+|---|---|
+| **Weeks 1–2** | Sit in a class. Play every IFM game. Two days at the call centre. Build the FAQ with the founder. Take over the CRM. |
+| **Weeks 3–6** | Every lead logged and multi-tagged. Daily call log running. Work the existing list properly. First prospecting conversations outside the inbox. |
+| **Weeks 7–12** | A pipeline with structure to it. You can answer the Juhu question. First read on why people say no, in writing. Seats filled. |
 
 ---
 
-## Targets
+## How we'll measure it
 
-**The economics, so the numbers make sense:**
-
-| Programme | Enrolled to date | Average seat value |
-|---|---|---|
-| **IFM** — mums | 72 | **₹14,754** |
-| **IYA** — young adults 18–24 | 17 | ₹9,500 |
-| **IFT** — teens 14–17 | 27 | ₹7,407 |
-| **All three** | **116** | ₹13,495 |
+**Activity first, outcomes second** — in that order, and deliberately.
 
 | | |
 |---|---|
-| **Current list price** *(mums)* | **₹19,000 early bird · ₹21,000 standard**, incl. GST |
-| Historical realised average | ₹14,754 — earlier cohorts were cheaper, so **current economics are better than the history suggests** |
-| Batch structure *(mums)* | Two parallel batches — Mon/Wed and Tue/Thu, 8 sessions × 2 hrs, **18–20 seats each** once the new room is ready |
-| Revenue per full cycle | **₹6.8L–₹7.6L** at current pricing |
+| **Conversations a day** | Logged, not estimated |
+| **Leads tagged properly** | Every one, no blanks |
+| **Seats filled** | Per batch, against capacity |
+| **Reasons for no** | Captured and summarised monthly |
+| **New channels opened** | Clubs, referrers, partners — rooms we weren't in before |
 
-**The registration page is already live** at `investingformummies.com/ifm` — with live seat counts, a working payment flow, a coupon-code field for attribution, and a waitlist capture for people whose dates don't work. **The waitlist is a lead source this role owns.**
+Outcomes take a quarter to read honestly in a business this size. **Activity is visible from week one**,
+and it's the fair thing to hold someone to while they're learning.
 
-**Note the spread.** A mums' seat is worth roughly twice a teen's. When targets are set they should be measured in **revenue as well as seat count**, or the role will drift toward whichever is easiest to sell rather than whichever is worth most.
-
-**Break-even:** at ₹25–40k/month fixed and no incentive yet, this role pays for itself at **roughly two seats a month.** Everything beyond that is contribution.
-
-| Period | Seats/month | Notes |
-|---|---|---|
-| Month 1 | 3–5 | From the 27 open prospects and the waitlist |
-| Months 2–3 | 8–12 | Fresh-lead motion established |
-| Months 4–6 | **30–40** | Both batches full — which is the trigger for adding a co-teacher |
-
-**The goal is explicit: both batches full — roughly 36–40 mothers a month.** That number is the trigger for hiring a co-teacher to add teaching capacity. Until then the ceiling is whatever Hiral alone can deliver.
+**Incentive scheme:** not yet. One gets designed once 20 enrolments have landed on the main course.
+**Review at three months**, against the measures above.
 
 ---
 
 ## Who we're looking for
 
-**Must have:**
-- **1–3 years converting warm leads by phone** — education, edtech, insurance, real estate, wellness. The product matters less than the motion.
-- **Comfortable calling.** Most of this job is phone and WhatsApp. Someone who prefers email will not succeed.
-- **Fluent English and Hindi.** The conversation moves between both.
-- **Able to switch register across three very different buyers** — a mum in her forties buying for herself, a parent buying for their teenager, and an 18–24 year old buying for themselves. These are three different conversations and the same script will not work for all of them.
-- **Genuinely warm.** These are women who often feel embarrassed about not understanding money. A hard closer will do real damage to the brand.
-- **Comfortable with a CRM**, and with keeping it honest.
-
-**Nice to have:**
-- Education or edtech admissions background — the closest analogue
-- Has sold to women, or to parents
-- Has worked somewhere small enough that they built the process rather than inherited it
-
-**Explicitly not required:**
-- A finance background. Hiral teaches; you enrol.
-- A degree in anything particular.
-- "High-ticket closing" experience — at ₹15k this isn't that market, and people from it bring the wrong tone.
-
-**The disqualifier:** anyone whose instinct is pressure. IFM's audience is nervous about money. Push them and they don't just decline — they tell other mums.
-
----
-
-## Compensation
-
-**Fixed salary only to begin with. No incentive scheme until 20 students have enrolled on the main course.**
-
 | | |
 |---|---|
-| **Fixed** | ₹25,000 – ₹40,000/month, by experience |
-| **Incentive** | **Not yet.** A scheme will be designed once 20 enrolments have landed on the main course |
-| **Review** | 3 months against the seat targets |
+| **Can hold a warm conversation with a 40-year-old woman about money** | Without being salesy, and without being patronising. The single most important thing. |
+| **Curious about the "no"** | Treats a rejection as information rather than an ending |
+| **Disciplined about writing things down** | A CRM is only worth what goes into it |
+| **Comfortable walking into a room cold** | A club, a coworking space, a clinic |
+| **Resilient** | Most of this is follow-up nobody answers |
 
-### Why we're doing it this way — and how to say it to candidates
+**Helpful but not required:** experience selling education, wellness, fitness or anything else bought
+by individuals rather than companies. Experience selling to women. Fluent Hindi and English.
 
-**We don't yet know our conversion rate.** Any incentive we set today would be a guess: guess too low and it doesn't motivate, guess too high and it's unaffordable. **After 20 enrolments we'll know what a seat actually costs to win**, and we can design something real from data instead of hope.
+**Not required:** a finance background. We teach the finance.
 
-Say exactly that in interview. It is honest, it is a good reason, and candidates worth hiring will respect it:
-
-> *"There's no variable component right now, and I'll be straight about why — we don't have enough data to set one fairly. Once we've enrolled 20 students on the main course, we'll design a scheme from real numbers. That's a commitment, not a maybe."*
-
-### ⚠️ Be aware of the trade-off
-
-**Strong salespeople usually expect variable pay**, and some good candidates will pass on a fixed-only role. Two things reduce that:
-
-- **Pitch the fixed at the upper end** (₹35–40k) rather than the middle, since it's the whole package for now
-- **Give the 20-enrolment trigger a rough timeline** in interview, so it reads as "a few months" rather than "someday"
-
-**When the scheme does land**, the design decisions already discussed still hold: pay on cleared payment rather than a verbal yes, and leave it uncapped. **It applies to fresh leads only** — anything arriving through Hiral's own network is hers, not commissionable.
+**Be wary of:** someone whose last role was pure inbound order-taking · anyone who describes selling
+as "convincing" · someone who can't name a deal they lost and say why.
 
 ---
 
-## How to assess — do a live mock call
+## How to assess — a live mock call
 
-**Skip the interview-first approach. This job is a phone call, so test a phone call.**
+Don't take the CV's word for it. **Run a mock call in the interview**, ten minutes, you play the prospect.
 
-Give the candidate 20 minutes of prep and this brief:
+Brief: *"I'm 38, two kids, my husband handles the investments, I saw your Instagram. It looks good but
+₹21,000 is a lot and Nariman Point is far."*
 
-> *"You're calling Priya. Six weeks ago she DM'd asking about our beginners' course for mums, we sent the details, and she went quiet. She has two kids, works part-time, and told us she's 'not good with numbers.' The next batch starts in three weeks. It costs ₹15,000. Call her."*
+**What you're watching for:**
 
-Have someone play Priya — polite, interested, full of soft objections: *too expensive, no time, need to ask my husband, maybe next batch.*
+| Good | Bad |
+|---|---|
+| Asks what she'd actually want before answering | Starts pitching the course |
+| Finds out whether the real obstacle is money or distance | Takes the first objection at face value |
+| Talks about value, not hours or syllabus | Defends the price |
+| Ends with a next step | Ends with "let me know" |
+| Asks *you* questions | Only answers |
 
-**What you're grading:**
-- Do they ask questions, or pitch at her?
-- Do they hear *"I'm not good with numbers"* as the fear it is, and respond to **that**?
-- Do they handle *"I'll ask my husband"* without dismissing it or collapsing?
-- **Do they actually ask for the sale?** Astonishing numbers of candidates never do.
-- **Would you want your own mother to receive this call?**
-
-That last question is the real test. Everything else is technique.
-
----
-
-## Settled 18 August — this role sells individual seats, across all three programmes
-
-**The line is drawn by the buyer, not the product.**
-
-| | In scope | Out of scope |
-|---|---|---|
-| **Who pays** | **An individual** — a mum for herself, a parent for their teen, a young adult for themselves | **An institution** — a school, college or company booking in bulk |
-| **Programmes** | **All three** — IFM (mums), IFT (teens 14–17), IYA (young adults 18–24) | The same programmes, when sold as an institutional booking |
-
-**The same course can be either.** A parent enrolling one teen in IFT is this role's sale. A school buying IFT for thirty students is not. **Buyer, not product.**
-
-**Institutional stays with Hiral and Asba**, opportunistically and without a target.
-
-IFM has an institutional motion — a schools and colleges pitch deck, and corporate proposals like ONGC. It's real revenue and worth pursuing. But:
-
-- **It's a different sale.** Institutional selling is long-cycle, multi-stakeholder and relationship-led. Converting a warm mum on the phone is short-cycle and emotional. **People excellent at one are frequently poor at the other.**
-- **It needs a different incentive design** — per-seat commission doesn't work for a six-month institutional deal.
-- **The B2C pipeline alone justifies the hire**, and can be measured within 90 days.
-
-**Recorded as a deliberate exception:** institutional selling sitting with Asba is *sales work inside the retention lane*. It is a conscious trade, not an oversight — she built the pitch deck and is the natural interim owner. Revisit once B2C runs predictably.
-
----
-
-## Where to find them
-
-- **Edtech and education companies in Mumbai** — admissions and counselling teams are the closest match, and turnover is high enough that people are looking
-- **Referrals from IFM's own network** — several of the 116 alumni will know someone in sales. **Ask via Hiral**, not directly.
-- LinkedIn, posted from Hiral's personal profile
-- Apna and Naukri for this salary band — deep pools of counselling and telecalling candidates
-- **Avoid:** agency recruiters at this level, and anyone marketing themselves as a "closer"
+**Then ask one more thing:** *"What would you want to know about our last fifty enquiries before you
+started?"* A good answer here tells you they think in pipelines, not in phone calls.
 
 ---
 
 ## Before this hire can succeed
 
-Three things must exist, or a good hire will fail through no fault of their own:
+Three things must be true on their first day, and only one of them currently is.
 
-1. **A course page with a real price and a real date.** There is currently nowhere to send an interested person.
-2. **Zoho Bigin onboarded** (~₹900/user/month) — the onboarding call is still outstanding.
-3. **A bio link on the Instagram profile.** Currently there isn't one — the profile's own 👇 points at nothing. Being fixed, but worth knowing that a chunk of organic traffic has had nowhere to go.
-4. **The cohort calendar, reliably two months ahead.** Batches run Mon/Wed and Tue/Thu — **36–40 seats a cycle** across the two once the new room is ready — and dates are published on a rolling window on the first Friday of each month. **You will always have the next two months to sell against**, which is what this audience buys on; mums don't commit three months out. What the hire needs is that the ritual never slips.
+1. **The FAQ and format guide exists in writing.** ☐ Not yet.
+2. **The CRM is working, with every lead source feeding it.** ☐ Website leads still aren't in it.
+3. **Attribution codes exist.** ☐ Open since October.
+
+**If we hire into the same vacuum, we'll get the same result and draw the same wrong conclusion.**
+The first hire into this role wasn't given any of the three. That is worth fixing before, not after.
