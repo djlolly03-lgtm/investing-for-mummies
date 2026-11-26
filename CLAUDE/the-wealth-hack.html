@@ -1667,12 +1667,21 @@ function renderSolo(){
   const s=state.settings, i=SOLO.i;
   if(i<0) return paint('solo:intro',shell(`<div class="gs-card center"><div class="gs-bounce">🎯</div><h2>Guess the number</h2><p>Three questions about ${tgt(s)}. Type your guess and see how close you get.</p><button class="gs-lock" style="margin-top:14px;width:100%" onclick="soloGo()">START</button><p style="margin-top:10px;font-size:13px">Playing in a class? Scan the QR on your teacher’s screen instead.</p><a class="gs-link" href="https://games.investingformummies.com">More money games →</a></div>`));
   if(i>=3){
-    const rows=ROUND_KEYS.map(k=>{ const r=soloRow(k); return `<div class="gs-line"><span>${ROUNDS[k].title}</span><b>${r?gapText(r.gap,r.real):'no guess'}</b></div>`; }).join('');
-    const a=realOf('r1',s), d=realOf('r3',s)-a;
-    return paint('solo:end',shell(`<div class="gs-card"><div class="gs-lbl">YOUR RESULTS</div><div class="gs-lines">${rows}</div>
-      <div class="gs-punch">Waiting ${s.delay} years costs <b>${rupees(d)} more</b> every month. That's <b>+${Math.round(d/a*100)}%</b>.</div>
+    const a=realOf('r1',s), d=realOf('r3',s)-a, short={r1:s.years1+' YEARS',r2:s.years2+' YEARS',r3:s.delay+' YEARS LATE'};
+    const rowsOf=ROUND_KEYS.map(k=>({k,r:soloRow(k)})), played=rowsOf.filter(x=>x.r).sort((x,y)=>x.r.gap-y.r.gap), best=played[0];
+    const coins=Array.from({length:12},(_,k)=>`<i class="coin" style="left:${(k*83)%100}%;animation-delay:${(k*0.45).toFixed(2)}s;animation-duration:${(3.8+(k%5)*.5).toFixed(1)}s;width:${12+(k%4)*4}px;height:${12+(k%4)*4}px"></i>`).join('');
+    const chips=rowsOf.map(({k,r})=>`<div class="gp-chip"><i>${short[k]}</i><b>${r?(r.gap===0?'EXACT!':rupees(r.gap)):'-'}</b><small>${r?(r.gap===0?'to the rupee':'away'):'no guess'}</small></div>`).join('');
+    return paint('solo:end',shell(`<div class="gp-poster m1"><div class="gp-bg"></div><div class="gp-rays"></div><div class="gp-coins">${coins}</div>
+      <div class="gp-top"><img src="${LOGO}" alt=""><span>THE WEALTH HACK</span></div>
+      <div class="gp-medal"><div class="gp-disc"><b style="font-size:42px">+${Math.round(d/a*100)}%</b></div></div>
+      <div class="gp-ribbon"><span>WAIT ${s.delay} YEARS</span></div>
+      <div class="gp-name" style="font-size:40px">${roughDiff(d)} more</div>
+      <div class="gp-sub">every month, to still reach ${tgt(s)}</div>
+      ${best?`<div class="gp-pts" style="white-space:nowrap">Closest guess: <b style="font-size:18px">${short[best.k].toLowerCase()}</b></div>`:''}
+      <div class="gp-chips">${chips}</div>
+      <div class="gp-tag">The best month to start is this one.</div></div>
       ${waBtn(soloShareText(),'Share my results')}<button class="gs-ghost" onclick="soloAgain()" style="margin-top:6px">Play again</button>
-      <p class="gs-end">The best month to start is this one.</p><p style="text-align:center;font-size:13px">Want to play this with a room? Ask for a Wealth Hack class.</p><a class="gs-link" href="https://games.investingformummies.com">More money games →</a></div>`));
+      <p class="gs-end" style="margin:6px 0 0">Screenshot your card and show it off.</p><a class="gs-link" href="https://games.investingformummies.com">More money games →</a>`));
   }
   const rk=ROUND_KEYS[i], R=ROUNDS[rk], q=R.pq(s), r=soloRow(rk);
   const qBlock=`<div class="gs-round">QUESTION ${R.n} OF 3</div><div class="gs-q"><div class="gs-q1">${q.q1}</div><div class="gs-years"><span>${q.y}</span> YEARS</div><div class="gs-q2">${q.q2}</div></div>`;
