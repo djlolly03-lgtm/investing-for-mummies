@@ -1753,7 +1753,7 @@ const IFM_SITE='https://www.investingformummies.com';
 function soloShell(inner,kind){ const rate=state&&state.settings?state.settings.rate:12;
   const coins=Array.from({length:14},(_,k)=>`<i class="coin" style="left:${(k*71)%100}%;animation-delay:${(k*0.41).toFixed(2)}s;animation-duration:${(4+(k%5)*.6).toFixed(1)}s;width:${10+(k%4)*4}px;height:${10+(k%4)*4}px"></i>`).join('');
   return `<div class="sl-wrap ${kind||''}"><div class="sl-bg"></div><div class="sl-coins">${coins}</div>
-    ${kind==='intro'?'':`<div class="sl-top"><span class="sl-logo"><img src="${LOGO}" alt=""></span><span class="sl-brand"><b>The Wealth Hack</b><small>INVESTING FOR MUMMIES</small></span></div>`}
+    ${(kind==='intro'||kind==='end')?'':`<div class="sl-top"><span class="sl-logo"><img src="${LOGO}" alt=""></span><span class="sl-brand"><b>The Wealth Hack</b><small>INVESTING FOR MUMMIES</small></span></div>`}
     <div class="sl-body">${inner}</div><div class="sl-foot">The Wealth Hack assumes ${rate}% a year, not a promise</div></div>`; }
 function soloSteps(i,doneNow){ const s=state.settings, lab=[s.years1+' YEARS',s.years2+' YEARS',s.delay+' YEARS LATE'];
   return `<div class="sl-steps">${lab.map((l,n)=>{ const done=n<i||(n===i&&doneNow); return `<div class="sl-step ${done?'done':n===i?'now':''}"><b>${done?'✓':n+1}</b><span>${l}</span></div>`; }).join('')}</div>`; }
