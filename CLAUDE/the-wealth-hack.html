@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>The Wealth Hack — Investing for Mummies</title>
 <!-- ifm-seo -->
-<meta name="description" content="What does ₹10 crore really cost you every month? A live classroom game played on phones."/>
+<meta name="description" content="What does ₹1 crore really cost you every month? Guess on your phone. The closest guess wins. A live classroom game."/>
 <link rel="canonical" href="https://games.investingformummies.com/the-wealth-hack"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Investing for Mummies"/>
 <meta property="og:title" content="The Wealth Hack — a free money game"/>
-<meta property="og:description" content="What does ₹10 crore really cost you every month? A live classroom game played on phones."/>
+<meta property="og:description" content="What does ₹1 crore really cost you every month? Guess on your phone. The closest guess wins. A live classroom game."/>
 <meta property="og:url" content="https://games.investingformummies.com/the-wealth-hack"/>
 <meta property="og:image" content="https://games.investingformummies.com/assets/og-games.jpg"/>
 <meta property="og:image:width" content="1200"/>
@@ -578,6 +578,85 @@ body.player-bg::after{content:"";position:fixed;inset:0;z-index:5;pointer-events
 .solo-note{margin-top:14px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.05);font-size:.82rem;font-weight:600;color:#9bb0ae;line-height:1.5;text-align:center}
 .rejoin{position:fixed;inset:0;z-index:200;background:rgba(5,12,21,.94);display:grid;place-items:center;color:#f6f1e7;text-align:center;padding:30px;cursor:pointer}
 .rejoin h2{color:#f7dea0;font-size:1.6rem;margin-bottom:8px}
+
+/* ════════ LUCKY SIP (25 Nov 2026) — reveal, podium, ladder, scoreboard. Everything else is The Wealth Hack's shell. ════════ */
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:150}
+body.host-bg .progbox.solo{flex:none;align-items:center;text-align:center;padding:.9rem 2.4rem}
+body.host-bg .reveal-stage{gap:.7rem}
+body.host-bg .real-label{font-size:1.5rem;font-weight:700;color:var(--stage-ink);text-align:center;text-shadow:0 2px 16px rgba(0,0,0,.7)}
+body.host-bg .big-real{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(3.6rem,8.5vw,7rem);line-height:1.05;color:var(--gold-hi);text-shadow:0 0 70px rgba(233,191,98,.45),0 6px 30px rgba(0,0,0,.6);font-variant-numeric:tabular-nums;white-space:nowrap}
+body.host-bg .big-real.rolling{color:#fff}
+body.host-bg .big-real.landed{animation:landed .7s ease-out}
+@keyframes landed{0%{transform:scale(1.16);filter:brightness(1.8)}100%{transform:none;filter:none}}
+body.host-bg .real-sub{font-size:1.2rem;font-weight:700;color:var(--stage-sub);margin-top:-.3rem}
+body.host-bg .xtra{opacity:0;transform:translateY(12px);transition:opacity .6s,transform .6s}
+body.host-bg .xtra.show{opacity:1;transform:none}
+body.host-bg .podium{display:flex;justify-content:center;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+body.host-bg .pcard{opacity:0;transform:translateY(20px) scale(.94);transition:opacity .5s,transform .5s;min-width:13rem;padding:.9rem 1.4rem;text-align:center;border-radius:18px}
+body.host-bg .pcard.show{opacity:1;transform:none}
+body.host-bg .pcard.win{min-width:16rem;padding:1.2rem 1.8rem;border-color:rgba(245,196,81,.8);background:linear-gradient(180deg,rgba(245,196,81,.2),rgba(10,26,34,.78));box-shadow:0 0 0 1px rgba(245,196,81,.4),0 0 70px rgba(245,196,81,.32),var(--shadow-lg)}
+body.host-bg .pcard.win.show{transform:scale(1.06)}
+body.host-bg .pcard .medal{font-size:2.4rem;line-height:1}
+body.host-bg .pcard.win .medal{font-size:3.2rem}
+body.host-bg .pcard .pn{font-family:'Fraunces',serif;font-weight:700;font-size:1.9rem;color:#fff;line-height:1.15;margin-top:.2rem}
+body.host-bg .pcard.win .pn{font-size:2.5rem;color:var(--gold-hi)}
+body.host-bg .pcard .pg{font-size:1.1rem;font-weight:700;color:var(--stage-sub)}
+body.host-bg .pcard .pgap{font-size:1.15rem;font-weight:800;color:var(--teal-bright);margin-top:.15rem}
+body.host-bg .nobody{font-family:'Fraunces',serif;font-style:italic;font-size:1.6rem;color:var(--stage-sub);margin:0}
+body.host-bg .cmp{padding:.9rem 1.4rem;width:100%;max-width:44rem}
+body.host-bg .cmp-row{display:grid;grid-template-columns:6.5rem 1fr 8.5rem;align-items:center;gap:.9rem;padding:.25rem 0;font-weight:700}
+body.host-bg .cmp-row .cy{color:var(--stage-sub);font-size:1.1rem}
+body.host-bg .cmp-row .cbar{height:.9rem;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;display:block}
+body.host-bg .cmp-row .cbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#d79f34,#f7dea0)}
+body.host-bg .cmp-row b{font-family:'Fraunces',serif;font-size:1.5rem;text-align:right;font-variant-numeric:tabular-nums;color:var(--stage-ink)}
+body.host-bg .cmp-row.cur .cy,body.host-bg .cmp-row.cur b{color:var(--gold-hi)}
+body.host-bg .cmp.delay{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.3rem 1.2rem;text-align:center;max-width:48rem}
+body.host-bg .dn{font-family:'Fraunces',serif;font-size:2.8rem;font-weight:600;color:#fff;font-variant-numeric:tabular-nums;line-height:1.1}
+body.host-bg .dn.gold{color:var(--gold-hi)}
+body.host-bg .dl-arrow{font-size:2.2rem;color:var(--gold)}
+body.host-bg .dl-extra{grid-column:1/-1;border-top:1px solid var(--glass-edge);padding-top:.6rem;font-size:1.6rem;font-weight:800;color:var(--coral)}
+body.host-bg .dl-extra span{display:block;font-size:1.05rem;font-weight:700;color:var(--stage-sub)}
+body.host-bg .ladder{width:100%;max-width:60rem;padding:.8rem 1.4rem}
+body.host-bg .lrow{display:grid;grid-template-columns:6.5rem 1fr 9.5rem 14rem;align-items:center;gap:1rem;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.07);opacity:0;animation:rise .6s ease-out forwards}
+body.host-bg .lrow:last-child{border-bottom:0}
+body.host-bg .ly{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;color:#fff;line-height:1.1}
+body.host-bg .ly small{display:block;font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:700;color:var(--stage-sub)}
+body.host-bg .lbar{height:1.1rem;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;display:block}
+body.host-bg .lbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#d79f34,#f7dea0)}
+body.host-bg .lrow:not(:first-child) .lbar i{background:linear-gradient(90deg,#e8776a,#ffb3a6)}
+body.host-bg .la{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;text-align:right;color:var(--stage-ink);font-variant-numeric:tabular-nums}
+body.host-bg .lx em{font-style:normal;font-weight:800;font-size:1.25rem;color:var(--coral)}
+body.host-bg .lx small{display:block;font-size:.9rem;font-weight:700;color:var(--stage-sub)}
+body.host-bg .score{width:100%;padding:.5rem 1rem}
+body.host-bg .srow{display:grid;grid-template-columns:2rem 1fr auto auto;align-items:center;gap:.7rem;padding:.5rem .3rem;border-bottom:1px solid rgba(255,255,255,.08);font-weight:700;font-size:1.15rem;color:var(--stage-ink)}
+body.host-bg .srow:last-child{border-bottom:0}
+body.host-bg .srow.first{font-size:1.4rem;color:var(--gold-hi)}
+body.host-bg .srow .sn{display:flex;align-items:center;gap:.6rem}
+body.host-bg .srow .av{width:1.9rem;height:1.9rem;border-radius:50%;display:grid;place-items:center;font-size:1rem;color:#fff}
+body.host-bg .srow .sw{font-size:.9rem;color:var(--stage-sub)}
+body.host-bg .srow b{font-family:'Fraunces',serif;font-size:1.35rem}
+body.host-bg .end-stage{max-width:32rem}
+body.hc.host-bg .big-real{font-size:clamp(3.2rem,7.5vw,5.6rem)}
+body.hc.host-bg .real-label{font-size:1.3rem}
+body.hc.host-bg .pcard{padding:.6rem 1.2rem}
+body.hc.host-bg .pcard.win{padding:.9rem 1.6rem}
+body.hc.host-bg .pcard .medal{font-size:1.9rem}
+body.hc.host-bg .pcard.win .medal{font-size:2.5rem}
+body.hc.host-bg .pcard .pn{font-size:1.55rem}
+body.hc.host-bg .pcard.win .pn{font-size:2rem}
+body.hc.host-bg .dn{font-size:2.3rem}
+body.hc.host-bg .cmp{padding:.6rem 1.2rem}
+body.hc.host-bg .lrow{padding:.35rem 0}
+body.hc.host-bg .ly{font-size:1.5rem}
+
+body.host-bg .pbar{width:100%;min-width:22rem;height:.9rem;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;margin-top:.3rem}
+body.host-bg .pbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#2dd4bf,#f7dea0);transition:width .5s}
+body.host-bg .nudge{display:flex;flex-direction:column;align-items:center;gap:.5rem;max-width:62rem}
+body.host-bg .nudge .kicker{color:var(--coral);font-size:1rem}
+body.host-bg .nudge .pl{animation:none}
+body.host-bg .nudge .pl-wall.popin .pl{opacity:0;animation:popn .45s ease-out forwards}
+@keyframes popn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+body.host-bg .allin{margin:0;font-family:'Fraunces',serif;font-style:italic;font-size:1.5rem;color:var(--gold-hi);text-align:center}
 </style>
 <!-- PostHog (games site, same project as www) -->
 <script>
@@ -593,23 +672,26 @@ posthog.init('phc_mDvDhsmf3Dh7utFvHUtEPhZX3J5anRGCME3FWuxCAVnk',{api_host:'https
 <div id="qrFull" class="hide" onclick="closeQRFull()"></div>
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   THE WEALTH HACK — IFM young-adults opener
-   "By 40, ₹10 Cr. How much a month?" Everyone in the room is a different age,
-   so everyone has a different number. Guess → reveal → shock → what's stopped you.
-   Reuses the Stock Rush / KBC Supabase project (games table) — no setup.
+   THE WEALTH HACK — guess the monthly amount, the closest one wins.
+   Same question for everyone: how much a month to reach ₹1 Cr?
+   Round 1: 10 years · Round 2: 20 years · Round 3: the cost of delay (start 2 years late).
+   Reuses the Stock Rush / KBC / Wealth Hack Supabase project (games table) — no setup. Room codes are L####.
    Host = projector (?role=host, default). Players = phones (?role=player&room=PIN).
    ═══════════════════════════════════════════════════════════════ */
 const GAME_NAME='The Wealth Hack';
 const TAGLINE='One started early. One started “soon”. Only one of them is rich.';
+const HOWTO='Guess the monthly amount. The closest one wins.';
+const SHARE_URL='https://games.investingformummies.com/the-wealth-hack';
 const SUPABASE_URL='https://gkfldkytzfngwnkrwrga.supabase.co';
 const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdrZmxka3l0emZuZ3dua3J3cmdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5MzI4NDksImV4cCI6MjA5NDUwODg0OX0.wwyFY0bhbGhCKCpAjgZ0oCS8gda21FHcvDdvlg9xCmU';
 const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
-const LOGO='IFM round logo for watermark.png';            // QR centre + round slots (§18)
-const PRINT_LOGO_SRC='IFM logo white background.png';     // hero banners via .hero-logo-wide (§8, §18)
+const LOGO='IFM round logo for watermark.png';
 const AV_EMOJI=['🦊','🐯','🦄','🐼','🦁','🐨','🐸','🦋','🐝','🦉','🐙','🦖','🌸','🍀','⭐','🚀','💎','🎯','🍰','🦚'];
-const AV_COLOR=['#e05a47','#3a78c9','#2a9d8f','#c8900a','#8e44ad','#e0699a','#16a085','#d97a34','#5a7d8a','#6c5ce7'];
+const AV_COLOR=['#d6452e','#2f66bd','#157f78','#a87a10','#7d3a9c','#c2487f','#16806c','#c7692a','#4f6f7c','#5b4fd0'];
+const REVEAL_DELAY=5200;            // phones wait this long after a reveal starts, so the projector's drum roll is not spoiled
+const REDUCED=(()=>{ try{ return matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){ return false; } })();
 
-/* ── money formatting (§9) ────────────────────────────────────── */
+/* ── money (§9) ───────────────────────────────────────────────── */
 function fmtMoney(n){ n=Math.round(n);
   if(n>=10000000){const v=n/10000000;return '₹'+(v>=100?Math.round(v):v%1?v.toFixed(v<10?2:1):v)+' Cr';}
   if(n>=100000){const v=n/100000;return '₹'+(v>=100?Math.round(v):v%1?v.toFixed(v<10?2:1):v)+' L';}
@@ -619,100 +701,75 @@ function fmtMoney(n){ n=Math.round(n);
 function indianFormat(digits){ digits=String(digits).replace(/\D/g,''); if(!digits) return '';
   const last3=digits.slice(-3), rest=digits.slice(0,-3);
   return (rest?rest.replace(/\B(?=(\d{2})+(?!\d))/g,',')+',':'')+last3; }
+const rupees=n=>'₹'+indianFormat(Math.round(n));          // the exact figure: ₹43,471
 const parseNum=v=>parseInt(String(v).replace(/\D/g,''),10)||0;
 function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
-/* ── the maths ────────────────────────────────────────────────── */
+/* ── the maths: end-of-month SIP, monthly compounding (same as The Wealth Hack) ── */
 function sipFor(fv,years,ratePct){ const r=ratePct/1200, n=Math.round(years*12); if(n<=0) return fv; return fv*r/(Math.pow(1+r,n)-1); }
-function fvOf(p,years,ratePct){ const r=ratePct/1200, n=Math.round(years*12); if(n<=0) return 0; return p*(Math.pow(1+r,n)-1)/r; }
-// Everyone gets at least MIN_YEARS to invest. Someone already past (or near) the finish line — a parent in the
-// room, the teacher at 46 — is not asked about "₹10 Cr by 40"; their finish line is simply age + 10 until the
-// lever moves beyond that. Every screen reads horizons from here, never from S.targetAge directly.
-const MIN_YEARS=10;
-function horizonFor(p,S){ return Math.max(S.targetAge,p.age+MIN_YEARS); }
-function flipHorizonFor(p,S){ return Math.max(S.flipAge,p.age+MIN_YEARS); }
-function calc(p,S){
-  const horizon=horizonFor(p,S); const yrs=Math.max(1,horizon-p.age);
-  const now=sipFor(S.target,yrs,S.rate);
-  const plus1=sipFor(S.target,Math.max(1,yrs-1),S.rate);
-  const delay=Math.min(S.delayYears,Math.max(0,yrs-1));
-  const yrsLate=Math.max(1,yrs-delay);
-  const late=sipFor(S.target,yrsLate,S.rate);
-  const flipHorizon=flipHorizonFor(p,S); const flipYrs=Math.max(1,flipHorizon-p.age);
-  const flip=fvOf(S.flipSip,flipYrs,S.rate);
-  const flipEarly=fvOf(S.flipSip,flipYrs+5,S.rate);
-  return {horizon,yrs,now,plus1,delay,yrsLate,lateStart:p.age+delay,late,flipHorizon,flipYrs,flip,flipEarly};
-}
-// What a guessed monthly SIP would actually have grown to over the years this round gives you.
-function guessBecomes(p,rk,S,g){ const k=calc(p,S); if(rk==='r1') return fvOf(g,k.yrs,S.rate); if(rk==='r2') return fvOf(g,k.yrsLate,S.rate); return null; }
-function realFor(p,rk,S){ const c=calc(p,S); return rk==='r1'?c.now:rk==='r2'?c.late:c.flip; }
-function offBy(guess,real){
-  if(!guess||guess<=0) return {cls:'',txt:'no guess',err:99};
-  const k=guess/real, err=Math.abs(Math.log(k)), d=Math.abs(real-guess);
-  if(k>=0.95&&k<=1.05) return {cls:'',txt:'spot on',err};
-  if(k<1) return {cls:'low',txt:fmtMoney(d)+' too low',err};
-  return {cls:'high',txt:fmtMoney(d)+' too high',err};
-}
 
 /* ── rounds ───────────────────────────────────────────────────── */
-const PHASES=['lobby','r1_demo','r1_ask','r1_reveal','r1_whatif','r2_demo','r2_ask','r2_reveal','r2_whatif','r3_demo','r3_ask','r3_reveal','r3_whatif','poll','end'];
-// Minutes the room gets on their phones before the reveal (the teacher can add or take a minute on the clock).
-const ASK_MINS={r1:5,r2:3,r3:3};
-// A prompt for the teacher to put to the room once the clock runs out, before the numbers go up.
-const DISCUSS={
-  r1:S=>`Before we reveal: how did you land on your number? Gut feel, or maths?`,
-  r2:S=>`Before we reveal: will waiting ${S.delayYears} years cost you a little, or a lot? Why?`,
-  r3:S=>`Before we reveal: is ${fmtMoney(S.flipSip)} a month a lot, or a little, for you right now?`
-};
-const SIP_CHIPS=[2000,5000,10000,25000,50000,100000,200000,500000];
-const FV_CHIPS=[1000000,2500000,5000000,10000000,20000000,50000000,100000000];
-const FLIP_CHIPS=[25000,50000,100000,150000,250000];   // the round-3 what-if: only the monthly amount moves
-const SHARE_URL='https://games.investingformummies.com/the-wealth-hack';
-const BLOCKERS=[
-  {k:'how',  txt:'I didn’t know how to start',     short:'Not knowing how',   fix:'That is exactly what the next few days are for.'},
-  {k:'money',txt:'I don’t have spare money yet',   short:'No spare money yet',fix:'₹500 a month is a real start. You have just seen the maths.'},
-  {k:'risk', txt:'It feels risky',                  short:'It felt risky',     fix:'Doing nothing is the riskier choice. We will show you why.'},
-  {k:'young',txt:'I thought I was too young to bother',short:'Felt too young', fix:'You have just seen it. Young is the unfair advantage.'},
-  {k:'later',txt:'I kept telling myself “later”',   short:'Saying “later”',    fix:'You have just seen exactly what “later” costs.'},
-];
+const PHASES=['lobby','r1_ask','r1_reveal','r2_ask','r2_reveal','r3_ask','r3_reveal','r3_ladder','end'];
+const ROUND_KEYS=['r1','r2','r3'];
+const tgt=S=>fmtMoney(S.target);
+function realOf(rk,s){ s=s||state.settings;
+  if(rk==='r1') return sipFor(s.target,s.years1,s.rate);
+  if(rk==='r2') return sipFor(s.target,s.years2,s.rate);
+  return sipFor(s.target,s.years1-s.delay,s.rate);
+}
 const ROUNDS={
-  r1:{n:1,title:'The big number',
-      hostQ:S=>`To have <em>${fmtMoney(S.target)}</em> by the time you turn <em>${S.targetAge}</em>, how much would you need to invest <em>every month</em>?`,
-      hostWhy:S=>`Assume ${S.rate}% a year — what a plain equity mutual fund has done over long stretches. Your age decides your number. Every phone in this room has a different answer.`,
-      phoneQ:(p,S)=>{const h=horizonFor(p,S);return `You're ${p.age}. To have <em>${fmtMoney(S.target)}</em> by ${h}, how much would you need to invest every month?`;},
-      phoneNote:(p,S)=>{const h=horizonFor(p,S);return h!==S.targetAge?`The room is playing to ${S.targetAge}. At ${p.age} you get ${MIN_YEARS} years, so your finish line is ${h}.`:`That's ${h-p.age} years to build it.`;},
-      chips:SIP_CHIPS, unit:'per month'},
-  r2:{n:2,title:'The cost of waiting',
-      hostQ:S=>`Same target. But you do nothing for <em>${S.delayYears} years</em> and start then. How much a month <em>now</em>?`,
-      hostWhy:S=>`Same ${fmtMoney(S.target)}, same ${S.rate}%, same finish line. You just start later.`,
-      phoneQ:(p,S)=>{const c=calc(p,S);return `Same ${fmtMoney(S.target)} by ${c.horizon}. But you wait <em>${c.delay} years</em> and start at ${c.lateStart}. How much a month now?`;},
-      phoneNote:()=>'', chips:SIP_CHIPS, unit:'per month'},
-  r3:{n:3,title:'The flip',
-      hostQ:S=>`Forget ${fmtMoney(S.target)}. You invest just <em>${fmtMoney(S.flipSip)} a month</em> from today until you're <em>${S.flipAge}</em>. What does it become?`,
-      hostWhy:S=>`Same ${S.rate}% a year. No increases, no top-ups. Just ${fmtMoney(S.flipSip)} every month, left to grow.`,
-      phoneQ:(p,S)=>`You're ${p.age}. You invest <em>${fmtMoney(S.flipSip)} a month</em> from today until you're ${flipHorizonFor(p,S)}. What does it grow to?`,
-      phoneNote:()=>'', chips:FV_CHIPS, unit:'in total'},
+  r1:{n:1,title:'Ten years',
+      hostQ:S=>`How much would you need to put away <em>every month</em> to have <em>${tgt(S)}</em> in <em>${S.years1} years</em>?`,
+      why:S=>`Assume ${S.rate}% a year. Type the monthly amount you think it takes.`,
+      phoneQ:S=>`How much would you need to put away every month to have <em>${tgt(S)}</em> in <em>${S.years1} years</em>?`,
+      label:S=>`To have ${tgt(S)} in ${S.years1} years, put away`},
+  r2:{n:2,title:'Twenty years',
+      hostQ:S=>`Same ${tgt(S)}. Now you have <em>${S.years2} years</em>. How much a month?`,
+      why:S=>`Same ${S.rate}% a year. More time to grow.`,
+      phoneQ:S=>`Same ${tgt(S)}. Now you have <em>${S.years2} years</em>. How much a month?`,
+      label:S=>`To have ${tgt(S)} in ${S.years2} years, put away`},
+  r3:{n:3,title:'The cost of delay',
+      hostQ:S=>`Same ${tgt(S)}, same finish line in <em>${S.startYear+S.years1}</em>. Starting in ${S.startYear} took <em>${rupees(realOf('r1',S))}</em> a month. What if you start in <em>${S.startYear+S.delay}</em>?`,
+      why:S=>`Only ${S.years1-S.delay} years left to build it. How much a month now?`,
+      phoneQ:S=>`Same ${tgt(S)}, same finish line in <em>${S.startYear+S.years1}</em>. Starting in ${S.startYear} took ${rupees(realOf('r1',S))} a month. What if you start in <em>${S.startYear+S.delay}</em>?`,
+      label:S=>`Starting in ${S.startYear+S.delay}, you put away`},
 };
-function roundOf(phase){ const m=/^(r\d)_/.exec(phase||''); return m?m[1]:null; }
+function roundOf(phase){ const m=/^(r\d)_/.exec(phase||''); return m&&ROUNDS[m[1]]?m[1]:null; }
 
 /* ── role / room ──────────────────────────────────────────────── */
 const params=new URLSearchParams(location.search);
-// A link shared on WhatsApp has no ?role. On a phone that should be a friendly "find your number" page, not the teacher screen.
 const _soloDetect=()=>{ try{ return matchMedia('(pointer:coarse)').matches&&innerWidth<700; }catch(e){ return false; } };
-let ROLE=params.get('role')||(_soloDetect()?'solo':'host');
+let ROLE=params.get('role')||(_soloDetect()?'player':'host');
 let ROOM=params.get('room')||null;
-const MY_ID=(function(){let id=localStorage.getItem('wh_pid');if(!id){id=(crypto.randomUUID?crypto.randomUUID():'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,10));localStorage.setItem('wh_pid',id);}return id;})();
+const MY_ID=(function(){let id=localStorage.getItem('ls_pid');if(!id){id=(crypto.randomUUID?crypto.randomUUID():'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,10));localStorage.setItem('ls_pid',id);}return id;})();
 let isHost=(ROLE==='host');
 let state=null;
 function freshState(){
   return {phase:'lobby',nonce:0,
-    settings:{target:100000000,targetAge:40,rate:12,delayYears:5,flipSip:5000,flipAge:60},
-    players:{},askEnds:{},hostId:MY_ID,updatedAt:Date.now()};
+    settings:{target:10000000,rate:12,years1:10,years2:20,delay:2,startYear:new Date().getFullYear()},
+    players:{},results:{},hostId:MY_ID,updatedAt:Date.now()};
 }
 const S=()=>state.settings;
-const W=()=>Object.assign({},state.settings,state.whatif||{});   // the sandbox rules shown on a what-if screen
-const playersSorted=()=>Object.values(state.players).sort((a,b)=>a.age-b.age||a.name.localeCompare(b.name));
+const playersList=()=>Object.values(state.players).sort((a,b)=>a.name.localeCompare(b.name));
 const av=p=>`<span class="av" style="background:${p.color}">${p.av}</span>`;
+const hasGuess=(p,rk)=>p.guess&&p.guess[rk]>0;
+
+/* ── scoring: the smallest rupee gap wins; ties share the rank; 3 / 2 / 1 points for the top three ── */
+function closeRound(rk){
+  const real=Math.round(realOf(rk));
+  const rows=Object.values(state.players).filter(p=>hasGuess(p,rk)).map(p=>({id:p.id,guess:p.guess[rk],gap:Math.abs(p.guess[rk]-real)}))
+    .sort((a,b)=>a.gap-b.gap||a.guess-b.guess);
+  let rank=0,last=null; rows.forEach(r=>{ if(r.gap!==last){ rank++; last=r.gap; } r.rank=rank; r.pts=rank<=3?4-rank:0; });
+  state.results[rk]={real,rows};
+}
+function scoreboard(){
+  const tot={}; Object.keys(state.players).forEach(id=>tot[id]={id,pts:0,wins:0});
+  ROUND_KEYS.forEach(rk=>{ const r=state.results[rk]; if(!r) return; r.rows.forEach(x=>{ if(!tot[x.id]) return; tot[x.id].pts+=x.pts; if(x.rank===1) tot[x.id].wins++; }); });
+  return Object.values(tot).map(t=>Object.assign(t,{p:state.players[t.id]})).filter(t=>t.p).sort((a,b)=>b.pts-a.pts||b.wins-a.wins||a.p.name.localeCompare(b.p.name));
+}
+// equal points and wins share a place, so a tie never hands one player the medal
+function ranked(){ const sc=scoreboard(); let pos=0,last=null; sc.forEach(t=>{ const k=t.pts+':'+t.wins; if(k!==last){ pos++; last=k; } t.pos=pos; }); return sc; }
+const gapText=(gap,real)=>gap<=Math.max(25,real*0.002)?'almost exact':fmtMoney(gap)+' away';
 
 /* ── DB: ordered, retried saves ───────────────────────────────── */
 let _saveTimer=null,_saveDirty=false,_saveBusy=false,_saveFails=0;
@@ -751,22 +808,40 @@ function joinChannel(){
 }
 function sendAction(payload){ channel.send({type:'broadcast',event:'action',payload}); }
 
+/* ── confetti (plain canvas, no library) ──────────────────────── */
+function confetti(ms,count){
+  if(REDUCED) return;
+  let cv=document.getElementById('confetti'); if(!cv){ cv=document.createElement('canvas'); cv.id='confetti'; document.body.appendChild(cv); }
+  const w=cv.width=innerWidth, h=cv.height=innerHeight, ctx=cv.getContext('2d');
+  const cols=['#f7dea0','#e9bf62','#2dd4bf','#ff8a76','#ffffff','#a78bfa'];
+  const ps=Array.from({length:count||160},()=>({x:Math.random()*w,y:-20-Math.random()*h*0.5,vx:(Math.random()-.5)*4,vy:2+Math.random()*5,s:6+Math.random()*8,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:cols[Math.floor(Math.random()*cols.length)]}));
+  const t0=performance.now();
+  (function frame(t){ const k=t-t0; ctx.clearRect(0,0,w,h);
+    ps.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; p.vy+=.06; p.r+=p.vr; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.fillStyle=p.c; ctx.globalAlpha=Math.max(0,1-Math.max(0,k-ms*.7)/(ms*.3)); ctx.fillRect(-p.s/2,-p.s/3,p.s,p.s*.6); ctx.restore(); });
+    if(k<ms) requestAnimationFrame(frame); else ctx.clearRect(0,0,w,h); })(t0);
+}
+
 /* ═══════════════════ HOST ═══════════════════ */
-let _timers=[];
-function clearTimers(){ _timers.forEach(clearTimeout); _timers=[]; }
+let _timers=[], _iv=null;
+function clearTimers(){ _timers.forEach(clearTimeout); _timers=[]; clearInterval(_iv); }
 function later(fn,ms){ _timers.push(setTimeout(fn,ms)); }
-// Multiplayer rule B (§23): wipe to a fresh lobby after 120 min with no host or student action.
 const IDLE_MS=120*60*1000; let _lastActivity=Date.now();
 function bump(){ _lastActivity=Date.now(); }
-// Multiplayer rule A (§23): tell the parent page when the room is live so it can hide the chat widget.
 function postLive(){ try{ const live=state.phase!=='lobby'&&state.phase!=='end'; window.parent.postMessage({type:live?'stock-rush-live':'stock-rush-idle'},'*'); }catch(e){} }
+// The projector UI scales with the screen: 16px root on a laptop, ~21px on a 1080p projector. `hc` marks a short screen.
+function fitHost(){
+  const px=Math.max(16,Math.min(22,innerWidth/90,innerHeight/50.6));
+  document.documentElement.style.fontSize=px+'px';
+  document.body.classList.toggle('hc',innerHeight/px<57);
+  return px;
+}
 
 async function initHost(){
   try{ if(window.self!==window.top) document.body.classList.add('framed'); }catch(e){ document.body.classList.add('framed'); }
   document.getElementById('host').classList.remove('hide');
   document.body.classList.add('host-bg');
   fitHost(); let _rz=null; addEventListener('resize',()=>{ clearTimeout(_rz); _rz=setTimeout(()=>{ fitHost(); if(state) renderHost(); },150); });
-  if(!ROOM){ ROOM='E'+(1000+Math.floor(Math.random()*9000));   // E-prefix: never collides with KBC's 4-digit PINs in the shared table
+  if(!ROOM){ ROOM='L'+(1000+Math.floor(Math.random()*9000));   // L-prefix: never collides with E#### (Wealth Hack), MF####, SG#### or KBC's numeric PINs
     const p=new URLSearchParams(location.search);p.set('role','host');p.set('room',ROOM);history.replaceState(null,'','?'+p.toString()); }
   joinChannel();
   let resumed=false;
@@ -774,15 +849,19 @@ async function initHost(){
     const {data}=await db.from('games').select('state,updated_at').eq('room_code',ROOM).maybeSingle();
     const s=data&&data.state;
     const recent=data&&data.updated_at&&(Date.now()-new Date(data.updated_at).getTime()<45*60*1000);
-    if(s&&recent&&s.settings&&s.phase!=='lobby'&&s.phase!=='end'&&Object.keys(s.players||{}).length>0){ state=s; state.hostId=MY_ID; resumed=true; }
+    if(s&&recent&&s.settings&&s.phase!=='lobby'&&s.phase!=='end'&&Object.keys(s.players||{}).length>0){ state=s; state.hostId=MY_ID; state.results=state.results||{}; resumed=true; }
   }catch(e){}
   if(!resumed){ state=freshState(); await saveNow(); }
   // Local design QA only: ?demo=1&phase=r1_reveal seeds a room so every screen can be screenshotted.
   if(params.get('demo')&&/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){
-    const D=[['Aanya',21,25000,100000,5000000,0],['Rohan',24,50000,200000,2500000,1],['Meera',27,150000,500000,10000000,0],['Kabir',29,100000,300000,20000000,3],['Zoya',22,10000,50000,1000000,4],['Dev',31,200000,600000,50000000,0]];
-    D.forEach((d,i)=>{ state.players['d'+i]={id:'d'+i,name:d[0],age:d[1],av:AV_EMOJI[i],color:AV_COLOR[i],guess:{r1:d[2],r2:d[3],r3:d[4]},vote:d[5]}; });
-    state.phase=params.get('phase')||'lobby'; if(params.get('timesup')) state.askEnds={r1:Date.now()-1000,r2:Date.now()-1000,r3:Date.now()-1000}; if(/_whatif$/.test(state.phase)){ const rk=state.phase.slice(0,2); state.whatif=rk==='r1'?{targetAge:60}:rk==='r2'?{delayYears:10}:{flipSip:100000}; }
-    if(params.get('old')){ state.players.d6={id:'d6',name:'Aditya',age:46,av:'🦊',color:'#e05a47',guess:{r1:50000,r2:200000,r3:5000000},vote:0}; }
+    const real={r1:realOf('r1'),r2:realOf('r2'),r3:realOf('r3')};
+    const base=['Meera','Rohan','Aanya','Kabir','Zoya','Dev','Tara','Imran','Nisha','Arjun','Priya','Kavya','Rahul','Sneha','Vikram','Anika','Ishaan','Diya','Karan','Mira'], f=[1.02,0.8,1.35,0.55,0.97,1.12,0.7,1.6];
+    const N=+params.get('n')||8, names=Array.from({length:N},(_,i)=>i<base.length?base[i]:base[i%base.length]+' '+(Math.floor(i/base.length)+1));
+    names.forEach((n,i)=>{ state.players['d'+i]={id:'d'+i,name:n,av:AV_EMOJI[i%AV_EMOJI.length],color:AV_COLOR[i%AV_COLOR.length],guess:{r1:Math.round(real.r1*f[i%8]),r2:Math.round(real.r2*f[(i+3)%8]),r3:Math.round(real.r3*f[(i+5)%8])}}; });
+    state.phase=params.get('phase')||'lobby';
+    const idx=PHASES.indexOf(state.phase);
+    if(/_ask$/.test(state.phase)&&params.get('done')){ const rk0=roundOf(state.phase); Object.values(state.players).forEach((p,i)=>{ if(i>=+params.get('done')) delete p.guess[rk0]; }); }
+    ROUND_KEYS.forEach((rk,i)=>{ if(idx>PHASES.indexOf(rk+'_ask')) closeRound(rk); });
   }
   const rb=document.createElement('button'); rb.className='host-reset'; rb.textContent='↺ New game'; rb.onclick=hostReset; document.body.appendChild(rb);
   const jw=document.createElement('div'); jw.className='join-corner'; jw.id='joinCorner'; jw.title='Scan to join or rejoin';
@@ -815,109 +894,74 @@ function openQRFull(){ const q=document.getElementById('qrFull'); q.classList.re
   q.innerHTML=`<div class="lcard"><div class="lk"><i></i>Scan to join</div><div class="qr-tile" style="cursor:pointer"><div id="qrBig"></div></div><div class="pin-row"><span class="pin-label">game pin</span><span class="pin">${ROOM}</span></div><div class="joinurl">${playerUrl()}</div><div class="pin-label" style="margin-top:14px;opacity:.7">tap anywhere to close</div></div>`;
   makeQR(document.getElementById('qrBig'),Math.min(500,Math.round(innerHeight*0.56))); }
 function closeQRFull(){ document.getElementById('qrFull').classList.add('hide'); }
-function hostReset(){ if(!confirm('Start a fresh game in this room? Everyone will need to rejoin.')) return; bump(); clearTimers(); _demo={rk:null,v:0,locked:false}; state=freshState(); saveNow(); renderHost(); }
+function hostReset(){ if(!confirm('Start a fresh game in this room? Everyone will need to rejoin.')) return; bump(); clearTimers(); _played=null; state=freshState(); saveNow(); renderHost(); }
 
-function setSetting(k,v){ if(!/_whatif$/.test(state.phase)) return; bump(); state.whatif=state.whatif||{}; state.whatif[k]=v; save(); renderHost(); }
-function resetWhatIf(){ bump(); state.whatif={}; save(); renderHost(); }
-function enterPhase(ph){
-  state.phase=ph; state.nonce++;
-  if(/_whatif$/.test(ph)) state.whatif={};
-  if(/_demo$/.test(ph)){ state.askEnds=state.askEnds||{}; delete state.askEnds[roundOf(ph)]; }   // the clock starts when the phones open, not before
-}
+// Advancing out of an "ask" phase closes the answers: the result is stored right then, so a late tap can never change it.
+function enterPhase(ph){ state.phase=ph; state.nonce++; }
 function hostAdvance(){
   const i=PHASES.indexOf(state.phase); if(i<0||i>=PHASES.length-1) return;
   if(state.phase==='lobby'&&!Object.keys(state.players).length) return;
-  bump(); enterPhase(PHASES[i+1]); save(); renderHost();
+  bump(); const rk=roundOf(state.phase); if(rk&&/_ask$/.test(state.phase)) closeRound(rk);
+  enterPhase(PHASES[i+1]); save(); renderHost();
 }
-function hostBack(){ const i=PHASES.indexOf(state.phase); if(i<=0) return; bump(); enterPhase(PHASES[i-1]); save(); renderHost(); }
-// The room is read from the back, so the whole host UI scales with the screen: 16px root on a laptop, ~21px on a 1080p projector.
-// `hc` marks a short screen (under ~57rem of height) so the tighter layouts kick in at the same point on every size.
-function fitHost(){
-  const px=Math.max(16,Math.min(22,innerWidth/90,innerHeight/50.6));
-  document.documentElement.style.fontSize=px+'px';
-  document.body.classList.toggle('hc',innerHeight/px<57);
-  return px;
+function hostBack(){
+  const i=PHASES.indexOf(state.phase); if(i<=0) return; bump();
+  const rk=roundOf(state.phase); if(rk&&/_reveal$/.test(state.phase)) delete state.results[rk];   // answers re-open, and are scored again on the next close
+  enterPhase(PHASES[i-1]); save(); renderHost();
 }
-
 function hostHandleAction(a){
   if(!a||!a.type||!state) return; bump();
   if(a.type==='join'){
-    const name=String(a.name||'').slice(0,16).trim(); const age=Math.min(70,Math.max(10,parseInt(a.age,10)||0));
-    if(!name||!age) return;
-    if(!state.players[a.id]){ const n=Object.keys(state.players).length;
-      state.players[a.id]={id:a.id,name,age,av:AV_EMOJI[n%AV_EMOJI.length],color:AV_COLOR[n%AV_COLOR.length],guess:{},vote:null}; }
-    else { state.players[a.id].name=name; state.players[a.id].age=age; }
+    let name=String(a.name||'').slice(0,16).trim(); if(!name) return;
+    if(!state.players[a.id]){
+      const taken=Object.values(state.players).map(p=>p.name.toLowerCase()); let nm=name, k=2; while(taken.includes(nm.toLowerCase())) nm=name.slice(0,13)+' '+(k++); name=nm;
+      const n=Object.keys(state.players).length;
+      state.players[a.id]={id:a.id,name,av:AV_EMOJI[n%AV_EMOJI.length],color:AV_COLOR[n%AV_COLOR.length],guess:{}};
+    }
     save(); if(state.phase==='lobby'||/_ask$/.test(state.phase)) renderHost();
   }
   else if(a.type==='guess'){
     const p=state.players[a.id]; const rk=roundOf(state.phase);
     if(!p||!rk||state.phase!==rk+'_ask'||a.round!==rk) return;
-    p.guess[rk]=Math.max(0,Math.round(+a.value||0)); save(); renderHost();
-  }
-  else if(a.type==='vote'){
-    const p=state.players[a.id]; if(!p||state.phase!=='poll') return;
-    const v=Math.round(+a.value); if(!(v>=0&&v<BLOCKERS.length)) return;
-    p.vote=v; save(); renderHost();
+    const v=Math.min(100000000,Math.max(0,Math.round(+a.value||0))); if(!(v>0)) return;
+    p.guess=p.guess||{}; p.guess[rk]=v; save(); renderHost();
   }
 }
 
 /* ── host render ──────────────────────────────────────────────── */
-const NEXT_LABEL={lobby:'Start · Round 1 →',r1_demo:'Your turn: open it on phones →',r1_ask:'Reveal the room’s numbers →',r1_reveal:'Now… what if? →',r1_whatif:'Next: the cost of delay →',r2_demo:'Your turn: open it on phones →',r2_ask:'Reveal the room’s numbers →',r2_reveal:'Now… what if? →',r2_whatif:'Next: the flip →',r3_demo:'Your turn: open it on phones →',r3_ask:'Reveal the room’s numbers →',r3_reveal:'Now… what if? →',r3_whatif:'One last question →',poll:'Wrap up →',end:''};
+const NEXT_LABEL={lobby:'Start · Round 1 →',r1_ask:'Close answers & reveal →',r1_reveal:'Next: twenty years →',r2_ask:'Close answers & reveal →',r2_reveal:'Next: the cost of delay →',r3_ask:'Close answers & reveal →',r3_reveal:'Show the ladder →',r3_ladder:'Final scores →',end:''};
+let _played=null;
 function renderHost(){
   clearTimers(); postLive(); const rootPx=fitHost();
-  const h=document.getElementById('host'); const ph=state.phase;
+  const h=document.getElementById('host'); const ph=state.phase, rk=roundOf(ph);
   const lobby=ph==='lobby';
   document.getElementById('joinCorner').style.display=lobby?'none':'flex';
   h.classList.toggle('has-corner',!lobby);
   document.body.classList.toggle('end-bg',ph==='end');
   const kh=document.getElementById('keyHint'); kh.innerHTML='<b>Space</b> / <b>→</b> next · <b>←</b> back'; kh.style.display=lobby?'none':'block';
   document.getElementById('hostBack').style.display=lobby?'none':'block';
-  const nx=document.getElementById('hostNext'); nx.textContent=NEXT_LABEL[ph]||''; nx.style.display=(lobby||!NEXT_LABEL[ph])?'none':'block';
+  const nx=document.getElementById('hostNext'); nx.textContent=NEXT_LABEL[ph]||''; nx.style.display=(lobby||!NEXT_LABEL[ph])?'none':'block'; nx.classList.remove('pulse');
   if(lobby) h.innerHTML=tplLobby();
-  else if(/_demo$/.test(ph)) h.innerHTML=tplDemo(roundOf(ph));
-  else if(/_ask$/.test(ph)){ askEnd(roundOf(ph)); h.innerHTML=tplAsk(roundOf(ph)); }
-  else if(ph==='r1_reveal') h.innerHTML=tplReveal1();
-  else if(ph==='r2_reveal') h.innerHTML=tplReveal2();
-  else if(ph==='r3_reveal') h.innerHTML=tplReveal3();
-  else if(/_whatif$/.test(ph)) h.innerHTML=tplWhatIf(roundOf(ph));
-  else if(ph==='poll') h.innerHTML=tplPoll();
-  else if(ph==='end') h.innerHTML=tplEnd();
-  nx.classList.remove('pulse');
+  else if(/_ask$/.test(ph)){ h.innerHTML=tplAsk(rk); const ps=playersList(); if(ps.length&&ps.every(p=>hasGuess(p,rk))) nx.classList.add('pulse'); }
+  else if(/_reveal$/.test(ph)){ h.innerHTML=tplReveal(rk); playReveal(rk); }
+  else if(ph==='r3_ladder') h.innerHTML=tplLadder();
+  else if(ph==='end'){ h.innerHTML=tplEnd(); if(_played!=='end:'+state.nonce){ _played='end:'+state.nonce; later(()=>confetti(3500,200),400); } }
   if(lobby) makeQR(document.getElementById('lobbyQr'),Math.round(rootPx*(document.body.classList.contains('hc')?12.25:14)));
-  if(/_ask$/.test(ph)) tickClock();
-  if(/_demo$/.test(ph)&&!_demo.locked) later(()=>{ const i=document.getElementById('dmInput'); if(i) i.focus(); },60);
-  runCountUps();
 }
-// The "what if" control panel (1B / 2B / 3B). Big controls on the left of the screen, big results on the right.
-// Flipping a control re-runs every number on the projector AND on every phone. Nothing here touches the real game.
-function whatIf(rk){
-  const grp=(label,html)=>`<div class="wi-g"><div class="wi-l">${label}</div>${html}</div>`;
-  const g=[];
-  if(rk==='r3'){
-    g.push(grp('Monthly amount',`<div class="wi-chips">${chipRow('flipSip',FLIP_CHIPS,fmtMoney)}</div>`));
-  }else{
-    g.push(grp('Finish line',`<div class="wi-chips">${chipRow('targetAge',[40,50,60],v=>'by '+v)}</div>`));
-    if(rk==='r2') g.push(grp('Years you wait',`<div class="wi-chips">${chipRow('delayYears',[3,5,10],v=>v+' yrs')}</div>`));
-    g.push(grp('Target',`<div class="wi-chips">${chipRow('target',[10000000,50000000,100000000],fmtMoney)}</div>`));
-  }
-  g.push(grp(`Return <b class="wi-v" id="rateV">${W().rate}%</b>`,`<input type="range" class="rate" min="6" max="18" step="0.5" value="${W().rate}" oninput="document.getElementById('rateV').textContent=(+this.value)+'%'" onchange="setSetting('rate',+this.value)">`));
-  return `<div class="glass wi-ctl"><div class="wi-h"><span>What if…</span><button class="chip" onclick="resetWhatIf()" title="Back to the rules the room played">↺ as played</button></div>${g.join('')}</div>`;
-}
-function chipRow(k,opts,fmtf){ return opts.map(v=>`<button class="chip ${W()[k]===v?'on':''}" onclick="setSetting('${k}',${v})">${fmtf(v)}</button>`).join(''); }
-const sizeClass=n=>n<=8?'sz-xl':n<=16?'sz-lg':'';   // names stay big in small rooms, shrink gracefully in big ones
 function tplLobby(){
-  const ps=playersSorted(), s=S(), n=ps.length;
+  const ps=playersList(), n=ps.length;
   const chips=n?ps.map(p=>`<span class="pl">${av(p)}${esc(p.name)}</span>`).join(''):`<div style="width:100%;text-align:center"><div class="slots"><span></span><span></span><span></span><span></span></div><p class="waiting">Waiting for the first scan…</p></div>`;
+  const s=S();
   return `<div class="stage lobby-stage">
     <img class="hero-mark" src="${LOGO}" alt="">
     <div class="presents">Investing for Mummies presents</div>
-    <h1 class="hero-title"><span class="the">The</span>${GAME_NAME.replace(/^The /,'')}</h1>
+    <h1 class="hero-title"><span class="the">The</span>Wealth Hack</h1>
     <p class="hero-tag">One started early. One started “soon”. <b>Only one of them is rich.</b></p>
     <div class="lobby-grid">
       <section class="lcard">
         <div class="lk"><i></i>Scan to join</div>
         <div class="qr-tile" onclick="openQRFull()" title="Tap to enlarge"><div id="lobbyQr"></div></div>
-        <p class="scan-how">Point your phone camera at the code, then type your name and age.</p>
+        <p class="scan-how">Point your phone camera at the code, then type your name. ${HOWTO}</p>
         <div class="pin-row"><span class="pin-label">or enter game pin</span><span class="pin">${ROOM}</span></div>
         <div class="joinurl">${playerUrl().replace(/^https?:\/\//,'')}</div>
       </section>
@@ -925,293 +969,115 @@ function tplLobby(){
         <div class="room-head"><h2>In the room</h2><span class="count">${n}</span></div>
         <div class="players ${sizeClass(n)}">${chips}</div>
         <div class="plan">
-          <div><i>1</i><b>Name your number</b><span>${fmtMoney(s.target)} by ${s.targetAge}. What would it cost you a month? Everyone lowballs it.</span></div>
-          <div><i>2</i><b>Watch the clock bite</b><span>Same target, but you start ${s.delayYears} years late. Brace yourself.</span></div>
-          <div><i>3</i><b>Flip the script</b><span>${fmtMoney(s.flipSip)} a month until ${s.flipAge}. Guess where it lands.</span></div>
-          <div><i>4</i><b>Own your excuse</b><span>What has actually kept you from starting?</span></div>
+          <div><i>1</i><b>Guess the number</b><span>${tgt(s)} in ${s.years1} years. How much a month?</span></div>
+          <div><i>2</i><b>Closest wins</b><span>Top three on the podium. Confetti for the winner.</span></div>
+          <div><i>3</i><b>More time</b><span>Now you have ${s.years2} years. Watch the number shrink.</span></div>
+          <div><i>4</i><b>Cost of delay</b><span>Start ${s.delay} years late. Guess what it costs.</span></div>
         </div>
         <button class="btn big" onclick="hostAdvance()" ${n?'':'disabled'}>${n?'Start · Round 1 →':'Waiting for the first scan'}</button>
       </section>
     </div>
   </div>`;
 }
-// The teacher plays one guess on the big screen, exactly as it looks on a phone, so nobody has to be told how it works.
-// Phones show "eyes on the screen" for this phase. The demo guess is never stored and never counted.
-let _demo={rk:null,v:0,locked:false};
-function tplDemo(rk){
-  const R=ROUNDS[rk], s=S(); if(_demo.rk!==rk) _demo={rk,v:0,locked:false};
-  const d=_demo, mins=ASK_MINS[rk];
-  const phone=d.locked
-    ?`<div class="locked"><div class="lbl">Locked in ✓</div><div class="v">${fmtMoney(d.v)}</div><div class="u">${R.unit}</div></div>
-      <p class="dp-note">That is all it takes. Now you, on your phone.</p><button class="p-btn outline" onclick="demoChange()">Change my guess</button>`
-    :`<div class="amt"><div class="amt-l">Your guess · ${R.unit}</div>
-        <div class="amt-box"><span class="rs">₹</span><input id="dmInput" class="amt-in" inputmode="numeric" placeholder="0" oninput="demoMoney(this)" onkeydown="if(event.key==='Enter')demoLock()" value="${d.v?indianFormat(d.v):''}"></div>
-        <div class="amt-sh" id="dmBadge">${d.v?fmtMoney(d.v):''}</div></div>
-      <div class="chips big">${R.chips.slice(0,8).map(v=>`<button class="chip ${v===d.v?'on':''}" data-v="${v}" onclick="demoChip(${v})">${fmtMoney(v)}</button>`).join('')}</div>
-      <button class="p-btn big" id="dmLock" onclick="demoLock()" ${d.v?'':'disabled'}>Lock it in →</button>`;
-  return `<div class="stage demo-stage">
-    <div class="presents">Round ${R.n} of 3 · ${R.title}</div>
-    <div class="glass q-panel"><p class="q">${R.hostQ(s)}</p><p class="why">${R.hostWhy(s)}</p></div>
-    <div class="demo-grid">
-      <div class="demo-steps">
-        <div><i>1</i><p><b>Type a guess</b><span>Use the keyboard or tap a quick amount. No wrong answers yet.</span></p></div>
-        <div><i>2</i><p><b>Tap “Lock it in”</b><span>That is all there is to it. You can change it until the reveal.</span></p></div>
-        <div><i>3</i><p><b>Then we look at the room</b><span>${mins} minutes on your phones, then group numbers only. Nobody’s guess goes on the screen.</span></p></div>
-      </div>
-      <div class="demo-phone"><div class="dp-tag">This is your phone</div>${phone}</div>
-    </div>
-  </div>`;
-}
-function demoMoney(inp){
-  const dg=inp.value.replace(/\D/g,'').slice(0,11); inp.value=indianFormat(dg); _demo.v=parseNum(inp.value);
-  const b=document.getElementById('dmBadge'); if(b) b.textContent=_demo.v>0?fmtMoney(_demo.v):'';
-  const btn=document.getElementById('dmLock'); if(btn) btn.disabled=!(_demo.v>0);
-  document.querySelectorAll('.demo-phone .chip').forEach(c=>c.classList.toggle('on',+c.dataset.v===_demo.v));
-}
-function demoChip(v){ const i=document.getElementById('dmInput'); i.value=indianFormat(v); demoMoney(i); i.focus(); }
-function demoLock(){ if(!(_demo.v>0)) return; _demo.locked=true; renderHost(); }
-function demoChange(){ _demo.locked=false; renderHost(); }
-
-// The play phase: phones are open, the clock runs. The room sees who has locked in (names only) and how many, never what they typed.
-function askEnd(rk){ state.askEnds=state.askEnds||{}; if(!state.askEnds[rk]){ state.askEnds[rk]=Date.now()+ASK_MINS[rk]*60000; save(); } return state.askEnds[rk]; }
-function adjustClock(mins){
-  const rk=roundOf(state.phase); if(!rk||!/_ask$/.test(state.phase)) return; bump();
-  const now=Date.now(), cur=askEnd(rk);
-  state.askEnds[rk]=mins>0?Math.max(cur,now)+mins*60000:Math.max(now,cur+mins*60000);
-  save(); renderHost();
-}
-const fmtClock=ms=>{ const s=Math.ceil(ms/1000); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); };
-function tickClock(){
-  const el=document.getElementById('clock'); if(!el||!state) return;
-  const rk=roundOf(state.phase), left=Math.max(0,askEnd(rk)-Date.now());
-  el.textContent=fmtClock(left); el.classList.toggle('done',left===0); el.classList.toggle('low',left>0&&left<=30000);
-  const lb=document.getElementById('clockLbl'); if(lb) lb.textContent=left===0?'Time’s up':'left on the clock';
-  const ps=playersSorted(), all=ps.length>0&&ps.every(p=>p.guess[rk]>0);
-  const dq=document.getElementById('discuss'); if(dq) dq.classList.toggle('show',left===0||all);
-  document.getElementById('hostNext').classList.toggle('pulse',left===0||all);
-  later(tickClock,250);
-}
+const sizeClass=n=>n<=8?'sz-xl':n<=16?'sz-lg':'';
+// With 40-50 players a wall of names is noise. The room sees a count and a bar; once 10 or fewer are left, their names pop up as a nudge.
+let _nudgeKey=null;
 function tplAsk(rk){
-  const R=ROUNDS[rk], ps=playersSorted(), s=S(), done=ps.filter(p=>p.guess[rk]>0).length;
+  const R=ROUNDS[rk], ps=playersList(), s=S(), done=ps.filter(p=>hasGuess(p,rk)).length, left=ps.filter(p=>!hasGuess(p,rk));
+  const pct=ps.length?Math.round(done/ps.length*100):0, key=rk+':'+state.nonce, fresh=_nudgeKey!==key&&left.length>0&&left.length<=10&&ps.length>10;
+  if(left.length>0&&left.length<=10) _nudgeKey=key; else if(left.length>10) _nudgeKey=null;
+  const nudge=left.length===0&&ps.length?`<p class="allin">Everyone is in. Close the round when you're ready.</p>`
+    :left.length>0&&left.length<=10?`<div class="nudge"><div class="kicker">Still waiting on ${left.length}</div><div class="pl-wall ${fresh?'popin':''}">${left.map((p,i)=>`<span class="pl" style="animation-delay:${fresh?i*120:0}ms">${av(p)}${esc(p.name)}</span>`).join('')}</div></div>`
+    :`<p class="allin">${left.length} still to go</p>`;
   return `<div class="stage ask-stage">
     <div class="presents">Round ${R.n} of 3 · ${R.title}</div>
-    <div class="glass q-panel"><p class="q">${R.hostQ(s)}</p><p class="why">${R.hostWhy(s)}</p></div>
-    <div class="askbar">
-      <div class="glass clockbox"><div><div class="clock" id="clock">0:00</div><div class="kicker" id="clockLbl">left on the clock</div></div>
-        <div class="clock-btns"><button class="cbtn" onclick="adjustClock(1)">+1 min</button><button class="cbtn" onclick="adjustClock(-1)">−1 min</button></div></div>
-      <div class="glass progbox"><div class="live"><i></i> Live · guess on your phone</div><div class="prog"><b>${done}</b> / ${ps.length} locked in</div></div>
-    </div>
-    <div class="pl-wall ${sizeClass(ps.length)}">${ps.map(p=>`<span class="pl ${p.guess[rk]>0?'lit':'dim'}">${av(p)}${esc(p.name)}</span>`).join('')}</div>
-    <p class="discuss" id="discuss">${DISCUSS[rk](s)}</p>
+    <div class="glass q-panel"><p class="q">${R.hostQ(s)}</p><p class="why">${R.why(s)}</p></div>
+    <div class="glass progbox solo"><div class="live"><i></i> Live · type your guess on your phone</div><div class="prog"><b>${done}</b> / ${ps.length} locked in</div><div class="pbar"><i style="width:${pct}%"></i></div></div>
+    ${nudge}
   </div>`;
 }
-function cu(val,cls,delay){ return `<span class="${cls||''}" data-cu="${Math.round(val)}" data-delay="${delay||0}">₹0</span>`; }
-function runCountUps(){
-  document.querySelectorAll('[data-cu]').forEach(el=>{
-    const to=+el.dataset.cu, d=+el.dataset.delay;
-    later(()=>{ const t0=performance.now(); const step=t=>{const k=Math.min(1,(t-t0)/900); const e=1-Math.pow(1-k,3); el.textContent=fmtMoney(to*e); if(k<1) requestAnimationFrame(step);}; requestAnimationFrame(step); },d);
-  });
-}
-const STEP=380; // ms between rows on a reveal — youngest first, so the number visibly climbs
-// One timeline per person: today → (wait) → start → finish line. The coral hatched stretch is the years lost to waiting;
-// the gold stretch is the years the money gets to grow. It is rebuilt from calc() on every render, so every lever on
-// a what-if screen visibly stretches or shrinks it. Fixed 16–66 scale so rows stay comparable.
-const LB0=16, LB1=66;
-function lifeBar(p,k,rk,line){
-  const pos=a=>Math.max(0,Math.min(100,(a-LB0)/(LB1-LB0)*100));
-  const now=p.age, fin=rk==='r3'?k.flipHorizon:k.horizon, wait=rk==='r2'?k.delay:0, start=now+wait;
-  const xn=pos(now), xs=pos(start), xf=pos(fin), grow=fin-start;
-  const past=line!=null&&fin>line;           // this person is already past the room's line, so they were given their own
-  const xl=pos(line||0);
-  const showStart=wait&&(xf-xs)>=13&&(xs-xn)>=6;   // labels only when they have room; the caption always says it in words
-  const cap=(past?`<span class="past">${now>=line?'past '+line:MIN_YEARS+'-yr minimum'}</span> · `:'')+(wait?`<span class="lost">${wait} yrs lost</span> · <span class="grow">${grow} yr${grow===1?'':'s'} to grow</span>`:`<span class="grow">${grow} yrs to grow</span>`);
-  return `<div class="lb"><div class="lb-c">${cap}</div><div class="lb-track">
-    ${past?`<i class="lb-line" style="left:${xl}%"></i>`:''}
-    ${wait?`<i class="lb-seg lb-wait" style="left:${xn}%;width:${Math.max(0,xs-xn)}%"></i>`:''}
-    <i class="lb-seg lb-inv" style="left:${xs}%;width:${Math.max(1.5,xf-xs)}%"></i>
-    <b class="lb-dot" style="left:${xn}%;background:${p.color}"></b>
-    ${wait?`<b class="lb-dot s" style="left:${xs}%"></b>`:''}
-    <b class="lb-flag" style="left:${xf}%"></b></div>
-    <span class="lb-t n" style="left:${xn}%">${now}</span>
-    ${showStart?`<span class="lb-t s" style="left:${xs}%">${start}</span>`:''}
-    ${past&&Math.abs(fin-line)>=4?`<span class="lb-t l" style="left:${xl}%">${line}</span>`:''}
-    <span class="lb-t f" style="left:${xf}%">${fin}</span></div>`;
-}
-// If anyone in the room is already past the room's line, say so in plain words so their bar is never a mystery.
-function pastNote(ps,line){ const n=ps.filter(p=>p.age+MIN_YEARS>line).length; return n?`<p class="past-note">Anyone past ${line}, or within ${MIN_YEARS} years of it, gets ${MIN_YEARS} years from today instead.</p>`:''; }
-// The projector shows the ROOM, never a person: one row per age (a few people can share one), no names, no guesses, no "off by".
-// Each phone still shows its owner how close they were — privately.
-function ageGroups(ps,max){
-  max=max||6; const m=new Map(); ps.forEach(p=>m.set(p.age,(m.get(p.age)||0)+1));
-  let ages=[...m.keys()].sort((a,b)=>a-b);
-  if(ages.length>max){ const pick=[]; for(let i=0;i<max;i++) pick.push(ages[Math.round(i*(ages.length-1)/(max-1))]); ages=[...new Set(pick)]; }   // youngest, oldest and an even spread between
-  return ages.map(a=>({age:a,n:m.get(a),p:{age:a,color:'#f5c451'}}));
-}
-const agecell=g=>`<span class="agecell"><b>${g.age}</b><small>${g.n===1?'1 person':g.n+' people'}</small></span>`;
-function guessStats(rk){
-  const s=S(), ps=playersSorted().filter(p=>p.guess[rk]>0); let low=0,ok=0,high=0,sg=0,sr=0;
-  ps.forEach(p=>{ const r=realFor(p,rk,s), k=p.guess[rk]/r; if(k<0.95) low++; else if(k>1.05) high++; else ok++; sg+=p.guess[rk]; sr+=r; });
-  const n=ps.length; return {n,low,ok,high,avgGuess:n?sg/n:0,avgReal:n?sr/n:0};
-}
-function guessCard(rk,unit){
-  const g=guessStats(rk); if(!g.n) return '';
-  const ratio=g.avgReal/g.avgGuess;
-  const verdict=ratio>=1.05?`<b style="color:var(--coral)">${ratio.toFixed(1)}× too low</b>`:ratio<=0.95?`<b style="color:var(--gold-bright)">${(1/ratio).toFixed(1)}× too high</b>`:`<b style="color:var(--teal-bright)">about right</b>`;
-  return `<div class="glass stat"><div class="kicker">The room guessed, on average</div><div class="big">${fmtMoney(g.avgGuess)}</div><div class="sm">Real average <b>${fmtMoney(g.avgReal)}</b>${unit} · ${verdict}</div>
-    <div class="gsplit"><span class="gs low"><b>${g.low}</b>too low</span><span class="gs ok"><b>${g.ok}</b>about right</span><span class="gs high"><b>${g.high}</b>too high</span></div></div>`;
-}
-function tplReveal1(){
-  const ps=playersSorted(), s=S(), gr=ageGroups(ps);
-  const rows=gr.map((g,i)=>{ const k=calc(g.p,s);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms">${agecell(g)}${lifeBar(g.p,k,'r1',s.targetAge)}${cu(k.now,'real'+(k.now>=200000?' hot':''),i*STEP+150)}</div>`; }).join('');
-  return `<div class="stage">
-    <div class="presents">Round 1 · the real numbers</div>
-    <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">${fmtMoney(s.target)} by ${s.targetAge} · what a person of each age needs <em>every month</em></h2>${pastNote(ps,s.targetAge)}
-    <div class="rv">
-      <div class="glass rv-table rv-agg3"><div class="rv-head"><span>Age</span><span>Today → finish line</span><span>Real · per month</span></div>${rows}</div>
-      <div class="side">
-        <div class="glass stat">${chart1(ps,s)}</div>
-        ${guessCard('r1',' a month')}
-      </div>
-    </div>
-    <p class="punch" style="animation-delay:${gr.length*STEP+500}ms">Nobody in this room is too young to start. Everyone is getting too old to wait.</p>
+// Reveal: a drum roll, the real number lands, then the podium fills from third place up to the winner.
+function tplReveal(rk){
+  const R=ROUNDS[rk], s=S(), res=state.results[rk]||{real:Math.round(realOf(rk)),rows:[]}, real=res.real;
+  const top=res.rows.filter(r=>r.pts>0).slice(0,6);
+  const order=r=>r.rank===1?1:r.rank===2?0:2;         // podium: 2nd left, 1st middle, 3rd right
+  const medal=['','🥇','🥈','🥉'];
+  const cards=top.slice().sort((a,b)=>order(a)-order(b)||a.gap-b.gap).map(r=>{ const p=state.players[r.id]; if(!p) return '';
+    return `<div class="glass pcard ${r.rank===1?'win':''}" data-rank="${r.rank}"><div class="medal">${medal[r.rank]}</div><div class="pn">${esc(p.name)}</div><div class="pg">guessed ${rupees(r.guess)}</div><div class="pgap">${gapText(r.gap,real)}</div></div>`; }).join('');
+  let extra='';
+  if(rk==='r2'){
+    const yrs=[...new Set([s.years1,s.years2,25])].sort((a,b)=>a-b), amts=yrs.map(y=>sipFor(s.target,y,s.rate)), mx=Math.max(...amts);
+    extra=`<div class="glass cmp xtra"><div class="kicker">Same ${tgt(s)}, more time</div>${yrs.map((y,i)=>`<div class="cmp-row ${y===s.years2?'cur':''}"><span class="cy">${y} years</span><span class="cbar"><i style="width:${Math.max(4,amts[i]/mx*100)}%"></i></span><b>${rupees(amts[i])}</b></div>`).join('')}</div>`;
+  }
+  if(rk==='r3'){
+    const a=realOf('r1'), b=realOf('r3'), d=b-a;
+    extra=`<div class="glass cmp xtra delay"><div class="dl"><div class="kicker">Start in ${s.startYear}</div><div class="dn">${rupees(a)}</div></div><div class="dl-arrow">→</div><div class="dl"><div class="kicker">Start in ${s.startYear+s.delay}</div><div class="dn gold">${rupees(b)}</div></div>
+      <div class="dl-extra"><b>${rupees(d)} more</b> every month<span>${Math.round(d/a*100)}% higher for waiting ${s.delay} years</span></div></div>`;
+  }
+  return `<div class="stage reveal-stage">
+    <div class="presents">Round ${R.n} · the real number</div>
+    <div class="real-label">${R.label(s)}</div>
+    <div class="big-real rolling" id="bigReal">${'₹ '+'• '.repeat(String(Math.round(real)).length)}</div>
+    <div class="real-sub">every month · ${s.rate}% a year</div>
+    ${extra}
+    ${top.length?`<div class="podium">${cards}</div>`:`<p class="nobody xtra">Nobody locked in this round.</p>`}
   </div>`;
 }
-function chart1(ps,s,label){
-  const onCurve=ps.filter(p=>horizonFor(p,s)===s.targetAge); const ages=(onCurve.length?onCurve:ps).map(p=>p.age);
-  const a0=Math.max(15,Math.min(...ages)-2), a1=Math.min(s.targetAge-4,Math.max(...ages)+8);
-  const W=440,H=260,L=92,R=14,T=16,B=42; const pts=[]; for(let a=a0;a<=a1;a+=0.5) pts.push([a,sipFor(s.target,s.targetAge-a,s.rate)]);
-  const ymax=Math.max(...pts.map(q=>q[1]))*1.05;
-  const X=a=>L+(a-a0)/(a1-a0)*(W-L-R), Y=v=>T+(1-v/ymax)*(H-T-B);
-  const path=pts.map((q,i)=>(i?'L':'M')+X(q[0]).toFixed(1)+' '+Y(q[1]).toFixed(1)).join(' ');
-  const ticks=[0.25,0.5,0.75,1].map(f=>`<text x="${L-8}" y="${Y(ymax*f/1.05)+5}" text-anchor="end" font-size="18" font-weight="800" fill="#9fc2bb">${fmtMoney(ymax*f/1.05)}</text><line x1="${L}" x2="${W-R}" y1="${Y(ymax*f/1.05)}" y2="${Y(ymax*f/1.05)}" stroke="rgba(255,255,255,.08)"/>`).join('');
-  const xs=[]; for(let a=Math.ceil(a0/2)*2;a<=a1;a+=2) xs.push(`<text x="${X(a)}" y="${H-B+20}" text-anchor="middle" font-size="18" font-weight="800" fill="#9fc2bb">${a}</text>`);
-  const dotAges=[...new Set(onCurve.map(p=>p.age))];
-  const dots=dotAges.map((a,i)=>`<circle cx="${X(a)}" cy="${Y(sipFor(s.target,s.targetAge-a,s.rate))}" r="8" fill="#f5c451" stroke="#fff" stroke-width="2.5" style="opacity:0;animation:rise .4s ease-out ${i*STEP+200}ms forwards"/>`).join('');
-  return `<div class="kicker">${label||'Monthly SIP needed, by the age you start'}</div>
-  <svg class="chart" viewBox="0 0 ${W} ${H}">${ticks}${xs.join('')}<path d="${path}" fill="none" stroke="#2dd4bf" stroke-width="3.5" stroke-linecap="round"/>${dots}<text x="${W-R}" y="${H-4}" text-anchor="end" font-size="16" font-weight="800" fill="#9fc2bb">age you start →</text></svg>`;
+function playReveal(rk){
+  const key=state.phase+':'+state.nonce, instant=_played===key||REDUCED; _played=key;
+  const big=document.getElementById('bigReal'); if(!big) return;
+  const real=String(Math.round(state.results[rk]?state.results[rk].real:realOf(rk)));
+  const final=rupees(real), cards=[...document.querySelectorAll('.pcard')], extras=[...document.querySelectorAll('.xtra')];
+  const land=()=>{ clearInterval(_iv); big.textContent=final; big.classList.remove('rolling'); big.classList.add('landed'); };
+  if(instant){ land(); big.classList.remove('landed'); cards.concat(extras).forEach(c=>c.classList.add('show')); return; }
+  const t0=performance.now(), n=real.length, DUR=1900;
+  _iv=setInterval(()=>{
+    const k=(performance.now()-t0)/DUR; if(k>=1){ land(); return; }
+    const digs=real.split('').map((d,i)=>k>(i+1)/(n+1)?d:String(Math.floor(Math.random()*10))).join('');
+    big.textContent='₹'+indianFormat(digs);
+  },55);
+  later(()=>extras.forEach(c=>c.classList.add('show')),DUR+300);
+  const seq=cards.slice().sort((a,b)=>(+b.dataset.rank)-(+a.dataset.rank));   // third place first, the winner last
+  seq.forEach((c,i)=>later(()=>c.classList.add('show'),DUR+900+i*750));
+  const winAt=DUR+900+Math.max(0,seq.length-1)*750;
+  if(cards.length) later(()=>confetti(3200,170),winAt+200);
 }
-function tplReveal2(){
-  const ps=playersSorted(), s=S(), gr=ageGroups(ps);
-  const avgExtra=ps.length?ps.reduce((a,p)=>{const k=calc(p,s);return a+(k.late-k.now);},0)/ps.length:0;
-  const rows=gr.map((g,i)=>{ const k=calc(g.p,s);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms">${agecell(g)}${lifeBar(g.p,k,'r2',s.targetAge)}<span class="guess"><b style="color:var(--stage-ink)">${fmtMoney(k.now)}</b></span>${cu(k.late,'real hot',i*STEP+150)}<span class="extra" data-cu="${Math.round(k.late-k.now)}" data-delay="${i*STEP+150}">₹0</span></div>`; }).join('');
-  return `<div class="stage">
-    <div class="presents">Round 2 · the cost of waiting</div>
-    <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">Start <em>${s.delayYears} years later</em> and the monthly number becomes…</h2>${pastNote(ps,s.targetAge)}
-    <div class="rv">
-      <div class="glass rv-table rv-agg5"><div class="rv-head"><span>Age</span><span>Today → wait → finish line</span><span>Start now</span><span>Start ${s.delayYears} yrs late</span><span>Extra · every month</span></div>${rows}</div>
-      <div class="side">
-        <div class="glass stat"><div class="kicker">Waiting ${s.delayYears} years costs the average person here</div><div class="big coral">${fmtMoney(avgExtra)}</div><div class="sm">more, every single month, for the same ${fmtMoney(s.target)}</div></div>
-        <div class="glass stat wide-only"><div class="kicker">Why it hurts so much</div><div class="sm" style="color:var(--stage-ink)">The first years are the cheapest ones you will ever get. Money invested at ${Math.min(...ps.map(p=>p.age))} has the longest run to grow. Skip those years and you replace them with your own cash later.</div></div>
-        ${guessCard('r2',' a month')}
-      </div>
-    </div>
-    <p class="punch" style="animation-delay:${gr.length*STEP+500}ms">Every year you wait, the number goes up. It never comes back down.</p>
-  </div>`;
-}
-function tplReveal3(){
-  const ps=playersSorted(), s=S(), gr=ageGroups(ps);
-  const young=ps[0], old=ps[ps.length-1];
-  const rows=gr.map((g,i)=>{ const k=calc(g.p,s);
-    return `<div class="rv-row" style="animation-delay:${i*STEP}ms">${agecell(g)}${lifeBar(g.p,k,'r3',s.flipAge)}${cu(k.flip,'real',i*STEP+150)}</div>`; }).join('');
-  const totalIn=p=>s.flipSip*12*calc(p,s).flipYrs;
-  return `<div class="stage">
-    <div class="presents">Round 3 · the flip</div>
-    <h2 class="title" style="font-size:clamp(1.4rem,2.6vw,2.1rem)">${fmtMoney(s.flipSip)} a month until ${s.flipAge} becomes…</h2>
-    <div class="rv">
-      <div class="glass rv-table rv-agg3"><div class="rv-head"><span>Age</span><span>Today → age ${s.flipAge}</span><span>It becomes</span></div>${rows}</div>
-      <div class="side">
-        ${young?`<div class="glass stat"><div class="kicker">Age ${young.age} · puts in ${fmtMoney(totalIn(young))} in total</div><div class="big teal">${fmtMoney(calc(young,s).flip)}</div><div class="sm">${(calc(young,s).flip/totalIn(young)).toFixed(0)}× what went in. The rest is growth.</div></div>`:''}
-        ${old&&old.age!==young.age?`<div class="glass stat"><div class="kicker">Age ${old.age} · puts in ${fmtMoney(totalIn(old))} in total</div><div class="big">${fmtMoney(calc(old,s).flip)}</div><div class="sm">Same ${fmtMoney(s.flipSip)}. ${old.age-young.age} years less time. ${(calc(young,s).flip/calc(old,s).flip).toFixed(1)}× less money.</div></div>`:''}
-        ${guessCard('r3','')}
-      </div>
-    </div>
-    <p class="punch" style="animation-delay:${gr.length*STEP+500}ms">Time does most of the work. You only have to start.</p>
-  </div>`;
-}
-// 1B / 2B / 3B — Hiral's sandbox, and the main learning tool of the game. Left: the room average as played next to
-// the room average under the controls, then the controls themselves. Right: every person, with their timeline.
-// The guesses are not shown here (the rules moved, so "off by" would mean nothing).
-function whatIfRow(g,rk,s,w,i){
-  const p=g.p, a=realFor(p,rk,s), b=realFor(p,rk,w), d=b-a, k=calc(p,w);
-  const good=rk==='r3'?d>0:d<0;   // a smaller monthly number is good news; a bigger final amount is good news
-  const pastLine=rk!=='r3'&&p.age+MIN_YEARS>w.targetAge&&Math.abs(d)<1;
-  const chg=Math.abs(d)<1?`<span class="wi-chg same">no change${pastLine?'<small>past this line</small>':''}</span>`
-    :`<span class="wi-chg ${good?'good':'bad'}">${d>0?'▲ +':'▼ −'}${fmtMoney(Math.abs(d))}</span>`;
-  return `<div class="rv-row wi-row" style="animation-delay:${i*90}ms">${agecell(g)}${lifeBar(p,k,rk,rk==='r3'?w.flipAge:w.targetAge)}<span class="guess">${fmtMoney(a)}</span>${cu(b,'wi-real'+(good?' good':Math.abs(d)<1?'':' bad'),i*90+100)}${chg}</div>`;
-}
-function tplWhatIf(rk){
-  const ps=playersSorted(), s=S(), w=W(), R=ROUNDS[rk], n=ps.length;
-  const changed=JSON.stringify(state.whatif||{})!=='{}';
-  const played=rk==='r3'?`${fmtMoney(s.flipSip)} a month to ${s.flipAge} · ${s.rate}%`:rk==='r2'?`${fmtMoney(s.target)} by ${s.targetAge} · ${s.delayYears} yrs late · ${s.rate}%`:`${fmtMoney(s.target)} by ${s.targetAge} · ${s.rate}%`;
-  const now=rk==='r3'?`${fmtMoney(w.flipSip)} a month to ${w.flipAge} · ${w.rate}%`:rk==='r2'?`${fmtMoney(w.target)} by ${w.targetAge} · ${w.delayYears} yrs late · ${w.rate}%`:`${fmtMoney(w.target)} by ${w.targetAge} · ${w.rate}%`;
-  const gr=ageGroups(ps); const rows=gr.map((g,i)=>whatIfRow(g,rk,s,w,i)).join('');
-  const avgA=ps.reduce((a,p)=>a+realFor(p,rk,s),0)/n, avgB=ps.reduce((a,p)=>a+realFor(p,rk,w),0)/n;
-  const unit=rk==='r3'?'it becomes':'a month';
-  const good=rk==='r3'?avgB>avgA:avgB<avgA;
-  const hdrTl=rk==='r2'?'Today → wait → finish line':rk==='r3'?`Today → age ${w.flipAge}`:'Today → finish line';
-  return `<div class="stage wi-stage">
-    <div class="presents">Round ${R.n}B · what if…?</div>
-    <div class="wi-grid">
-      <div class="wi-left">
-        <div class="glass wi-score ${changed?'on':''}">
-          <div class="wi-sc"><div><div class="kicker">As played · room average</div><div class="wi-n dim">${fmtMoney(avgA)}</div><div class="wi-s">${played}</div></div>
-          <div class="wi-arrow">→</div>
-          <div><div class="kicker">What if</div>${cu(avgB,'wi-n '+(changed?(good?'good':'bad'):''),0)}<div class="wi-s">${now}</div></div></div>
-          ${changed&&Math.abs(avgB-avgA)>=1?`<div class="wi-delta ${good?'good':'bad'}">${avgB<avgA?'▼':'▲'} ${fmtMoney(Math.abs(avgB-avgA))} ${avgB<avgA?'less':'more'} ${unit==='a month'?'every month':'in the end'}</div>`:`<div class="wi-delta idle">Tap a control below. Every number moves.</div>`}
-        </div>
-        ${whatIf(rk)}
-        ${rk==='r1'?`<div class="glass stat wi-chart">${chart1(ps,w,'The curve · what-if rules')}</div>`:''}
-      </div>
-      <div class="glass rv-table wi-table ${gr.length>5?'dense':''}">
-        <div class="rv-head"><span>Age</span><span>${hdrTl}</span><span>As played</span><span>What if</span><span>Change</span></div>${rows}
-      </div>
-    </div>
-  </div>`;
-}
-function tally(){
-  const ps=playersSorted(); const c=BLOCKERS.map(()=>0);
-  ps.forEach(p=>{ if(p.vote!=null&&p.vote>=0&&p.vote<c.length) c[p.vote]++; });
-  const max=Math.max(1,...c); const voted=c.reduce((a,b)=>a+b,0);
-  let lead=-1; if(voted){ lead=c.indexOf(Math.max(...c)); }
-  return {c,max,voted,total:ps.length,lead};
-}
-function tplPoll(){
-  const t=tally();
-  const bars=BLOCKERS.map((b,i)=>`<div class="bar ${i===t.lead?'lead':''}"><div class="bar-fill" style="width:${t.c[i]?Math.max(6,Math.round(t.c[i]/t.max*100)):0}%"></div><span class="bt">${b.txt}</span><span class="bn">${t.c[i]||''}</span></div>`).join('');
-  return `<div class="stage">
-    <div class="presents">One last question</div>
-    <h1 class="title">What has actually stopped you from <em>starting?</em></h1>
-    <p class="tag">Tap one on your phone. Be honest. Everyone in this room has used one of these.</p>
-    <div class="prog"><b>${t.voted}</b> / ${t.total} answered</div>
-    <div class="bars">${bars}</div>
-    ${t.lead>=0?`<p class="punch" style="animation-delay:0ms;opacity:1;animation:none">${BLOCKERS[t.lead].fix}</p>`:''}
+// The ladder: each extra year of waiting, one bar at a time. No guessing.
+function tplLadder(){
+  const s=S(), base=realOf('r1'), rows=[0,1,2,3,4].map(d=>({d,y:s.startYear+d,a:sipFor(s.target,s.years1-d,s.rate)}));
+  const mx=rows[rows.length-1].a;
+  const body=rows.map((r,i)=>{ const prev=i?rows[i-1].a:null;
+    return `<div class="lrow" style="animation-delay:${i*900}ms"><span class="ly">${r.y}${i===0?'<small>on time</small>':''}</span><span class="lbar"><i style="width:${Math.max(5,r.a/mx*100)}%"></i></span><b class="la">${rupees(r.a)}</b>
+      <span class="lx">${i===0?'':`<em>+${rupees(r.a-base)}</em><small>${prev?`this year alone: +${rupees(r.a-prev)}`:''}</small>`}</span></div>`; }).join('');
+  return `<div class="stage ladder-stage">
+    <div class="presents">The cost of delay</div>
+    <h2 class="title" style="font-size:clamp(1.5rem,2.8vw,2.4rem)">Same ${tgt(s)}, same finish line in ${s.startYear+s.years1}. <em>Every year you wait costs more than the last.</em></h2>
+    <div class="glass ladder">${body}</div>
+    <p class="punch" style="animation-delay:${5*900}ms">Two years late is ${rupees(realOf('r3')-base)} more, every single month.</p>
   </div>`;
 }
 function tplEnd(){
-  const ps=playersSorted(), s=S(); const t=tally(); const avgX=ps.length?ps.reduce((a,p)=>{const k=calc(p,s);return a+(k.late-k.now);},0)/ps.length:0;
-  const g=ps.filter(p=>p.guess.r1>0); const avgG=g.length?g.reduce((a,p)=>a+p.guess.r1,0)/g.length:0;
-  const avgR=ps.length?ps.reduce((a,p)=>a+calc(p,s).now,0)/ps.length:0; const gap=avgG&&avgR>avgG?(avgR/avgG).toFixed(1):null;
+  const sc=ranked().filter(t=>t.pts>0), s=S();
+  const top=sc.slice(0,5), champs=sc.filter(t=>t.pos===1), nm=champs.map(t=>esc(t.p.name));
+  const champNames=nm.length>2?nm.slice(0,-1).join(', ')+' and '+nm[nm.length-1]:nm.join(' and ');
+  const extra=realOf('r3')-realOf('r1');
+  const medal=i=>['🥇','🥈','🥉'][i]||'';
   return `<div class="stage end-stage">
-    <div class="presents">${GAME_NAME} · that's the whole lesson</div>
-    <h1 class="title">The best month to start is <em>this one.</em></h1>
-    <div class="end-grid">
-      <div class="glass stat"><div class="kicker">Biggest thing in the way</div><div class="big teal" style="font-size:1.5rem">${t.lead>=0?BLOCKERS[t.lead].short:'—'}</div><div class="sm">${t.lead>=0?`${t.c[t.lead]} of ${t.total} in the room`:'nobody answered'}</div></div>
-      <div class="glass stat"><div class="kicker">How far off the room guessed</div><div class="big gold">${gap?gap+'× too low':'—'}</div><div class="sm">on what ${fmtMoney(s.target)} by ${s.targetAge} really takes</div></div>
-      <div class="glass stat"><div class="kicker">What waiting ${s.delayYears} years costs</div><div class="big coral">${fmtMoney(avgX)}</div><div class="sm">more, every month, for the average person here</div></div>
-    </div>
-    <p class="tag">Your numbers are on your phone. Send them to yourself on WhatsApp before you leave.</p>
+    <div class="presents">${GAME_NAME} · final scores</div>
+    ${champs.length?`<h1 class="title"><em>${champNames}</em> ${champs.length>1?'are':'is'} the closest.</h1>`:`<h1 class="title">The best month to start is <em>this one.</em></h1>`}
+    <div class="glass score">${top.length?top.map((t,i)=>`<div class="srow ${t.pos===1?'first':''}"><span class="sp">${medal(t.pos-1)||t.pos}</span><span class="sn">${av(t.p)}${esc(t.p.name)}</span><span class="sw">${t.wins?t.wins+(t.wins>1?' wins':' win'):''}</span><b>${t.pts} pts</b></div>`).join(''):`<p class="waiting" style="padding:1rem">No scores this time.</p>`}</div>
+    <div class="glass stat"><div class="kicker">What waiting ${s.delay} years costs</div><div class="big coral">${rupees(extra)}</div><div class="sm">more, every month, for the same ${tgt(s)}</div></div>
+    <p class="tag">The best month to start is this one. Your numbers are on your phone.</p>
   </div>`;
 }
 
 /* ═══════════════════ PLAYER ═══════════════════ */
-let myName=localStorage.getItem('wh_name')||'', myAge=localStorage.getItem('wh_age')||'';
-let joinSent=false, myLocal={}, myLockedNonce={}, _pendingVal=0, _lastPhase=null;
+let myName=localStorage.getItem('ls_name')||'';
+let joinSent=false, myLocal={}, myLockedNonce={}, _pendingVal=0, _lastPhase=null, _seen={}, _celebrated={};
 async function initPlayer(){
   document.getElementById('player').classList.remove('hide');
   document.body.classList.add('player-bg');
-  if(!ROOM){ document.getElementById('player').innerHTML=shell('<div class="card center"><h2>Scan the QR on the screen</h2><p>or open the link with the game PIN.</p></div>'); return; }
+  if(!ROOM){ document.getElementById('player').innerHTML=shell('<div class="card center"><h2>Playing in a class?</h2><p>Scan the QR code on your teacher’s screen to join. This is a live game, so it needs the room.</p></div>'); return; }
   joinChannel();
   try{ const {data}=await db.from('games').select('state').eq('room_code',ROOM).maybeSingle(); if(data&&data.state)state=data.state; }catch(e){}
   renderPlayer();
@@ -1221,8 +1087,6 @@ async function initPlayer(){
       if(data&&data.state&&data.state.updatedAt!==(state&&state.updatedAt)){ state=data.state; _lastStateAt=Date.now(); renderPlayer(); }
     }catch(e){}
   },2500);
-  // Tap-to-rejoin (build-guide): iOS kills the socket during a phone call; if the tab comes back
-  // and nothing arrives for a few seconds, offer a reload. Identity is in localStorage so it's safe.
   let hiddenAt=0;
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden){ hiddenAt=Date.now(); return; }
@@ -1232,175 +1096,95 @@ async function initPlayer(){
   });
 }
 function me(){return state&&state.players?state.players[MY_ID]:null;}
-function joinCheck(){ const n=(document.getElementById('nameInput')||{}).value||'', a=parseInt((document.getElementById('ageInput')||{}).value,10)||0; const b=document.getElementById('joinBtn'); if(b) b.disabled=!(n.trim()&&a>=10&&a<=70); }
+function joinCheck(){ const n=(document.getElementById('nameInput')||{}).value||''; const b=document.getElementById('joinBtn'); if(b) b.disabled=!n.trim(); }
 function doJoin(){
-  const n=(document.getElementById('nameInput').value||'').trim(); const a=parseInt(document.getElementById('ageInput').value,10)||0;
-  if(!n){document.getElementById('nameInput').focus();return;}
-  if(a<10||a>70){document.getElementById('ageInput').focus();return;}
-  myName=n; myAge=a; localStorage.setItem('wh_name',n); localStorage.setItem('wh_age',a);
-  joinSent=true; sendAction({type:'join',id:MY_ID,name:n,age:a}); renderPlayer();
+  const n=(document.getElementById('nameInput').value||'').trim(); if(!n){ document.getElementById('nameInput').focus(); return; }
+  myName=n; localStorage.setItem('ls_name',n); joinSent=true; sendAction({type:'join',id:MY_ID,name:n}); renderPlayer();
 }
-function onMoney(inp){ // Indian grouping on every keystroke; shorthand badge is a separate element (§9)
-  const d=inp.value.replace(/\D/g,'').slice(0,11);
+function onMoney(inp){
+  const d=inp.value.replace(/\D/g,'').slice(0,9);
   inp.value=indianFormat(d); _pendingVal=parseNum(inp.value);
   const b=document.getElementById('shBadge'); if(b) b.textContent=_pendingVal>0?fmtMoney(_pendingVal):'';
   const btn=document.getElementById('lockBtn'); if(btn) btn.disabled=!(_pendingVal>0);
-  document.querySelectorAll('.chips .chip').forEach(c=>c.classList.toggle('on',+c.dataset.v===_pendingVal));
 }
-function pickChip(v){ const inp=document.getElementById('moneyInput'); inp.value=indianFormat(v); onMoney(inp); }
 function pLock(rk){ if(!(_pendingVal>0)) return; myLocal[rk]=_pendingVal; myLockedNonce[rk]=state.nonce; sendAction({type:'guess',id:MY_ID,round:rk,value:_pendingVal}); renderPlayer(); }
 function pChange(rk){ myLockedNonce[rk]=-1; renderPlayer(); }
-function pVote(i){ myLocal.vote=i; sendAction({type:'vote',id:MY_ID,value:i}); renderPlayer(); }
-// WhatsApp share (§20): one function, message encoded at runtime, app URL appended — never a bare wa.me href.
-function ifmShare(msg){ window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank'); }   // the message already ends on SHARE_URL (games.investingformummies.com) — nothing else is appended
-const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>';
+function ifmShare(msg){ window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank'); }
+const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>';
 let _shareMsg='';
 function waBtn(msg,label){ _shareMsg=msg; return `<button class="p-btn wa" onclick="ifmShare(_shareMsg)">${WA_ICON}<span>${label}</span></button>`; }
-// The WhatsApp message people forward to friends. WhatsApp renders *bold* and _italic_. It ends on the games link only.
-function numbersText(p,s,blocker){
-  const k=calc(p,s); const L=[];
-  L.push('💰 *The Wealth Hack*','_my numbers, straight from class_','');
-  L.push(`🙋 *${p.name}${p.age?', '+p.age:''}*`,'');
-  L.push(`🎯 *${fmtMoney(s.target)} by ${k.horizon}*`);
-  L.push(`▸ Start today: *${fmtMoney(k.now)} a month*`);
-  L.push(`▸ Start ${k.delay} years late: *${fmtMoney(k.late)} a month*`);
-  L.push(`   _that's ${fmtMoney(k.late-k.now)} more, every single month_`,'');
-  L.push(`🔁 *${fmtMoney(s.flipSip)} a month until ${k.flipHorizon}*`);
-  L.push(`▸ Becomes *${fmtMoney(k.flip)}*`);
-  L.push(`   _${fmtMoney(s.flipSip*12*k.flipYrs)} put in. The rest is growth._`);
-  if(blocker) L.push('',`🧠 What held me back: _${blocker}_`);
-  L.push('','_One started early. One started "soon". Only one of them is rich._',`_(assumes ${s.rate}% a year, not a promise)_`,'','Find your number 👇',SHARE_URL);
-  return L.join('\n');
+function shareText(p,pts){
+  const s=S(), a=realOf('r1'), b=realOf('r3');
+  return ['🎲 *'+GAME_NAME+'*','_guess the number, closest wins_','',
+    `${tgt(s)} in ${s.years1} years: *${rupees(a)} a month*`,
+    `${tgt(s)} in ${s.years2} years: *${rupees(realOf('r2'))} a month*`,
+    `Start ${s.delay} years late (${s.startYear+s.delay}): *${rupees(b)} a month*`,
+    `   _that's ${rupees(b-a)} more, every single month_`,'',
+    `I scored *${pts} point${pts===1?'':'s'}*.`,'',`_(assumes ${s.rate}% a year, not a promise)_`,'','Play it 👇',SHARE_URL].join('\n');
 }
-// What the player's own guess would actually have become, for the reveal screen.
-function projHtml(p,rk,s,g){
-  if(!g||rk==='r3') return '';
-  const k=calc(p,s), yrs=rk==='r1'?k.yrs:k.yrsLate, big=guessBecomes(p,rk,s,g), gap=big-s.target;
-  const close=Math.abs(gap)/s.target<0.05, over=gap>0;
-  return `<div class="proj ${close?'close':over?'over':'under'}"><div class="proj-h">Your guess, put to work</div>
-    <div class="proj-row"><span>${fmtMoney(g)} a month<br>for ${yrs} years</span><b>→ ${fmtMoney(big)}</b></div>
-    <div class="proj-t">${close?`Right on the money. That is almost exactly your ${fmtMoney(s.target)} goal.`:over?`That is <b>${fmtMoney(gap)} past</b> your ${fmtMoney(s.target)} goal. You would have got there early.`:`That is <b>${fmtMoney(-gap)} short</b> of your ${fmtMoney(s.target)} goal.`}</div></div>`;
-}
+function myRow(rk){ const r=state.results&&state.results[rk]; return r?r.rows.find(x=>x.id===MY_ID)||null:null; }
 
 function renderPlayer(){
   const el=document.getElementById('player'); if(!state){ el.innerHTML=shell('<div class="card center"><h2>Finding the game…</h2><p>Room '+esc(ROOM)+'</p></div>'); return; }
   const p=me(); const ph=state.phase, rk=roundOf(ph), s=state.settings;
   if(ph!==_lastPhase){ _pendingVal=0; _lastPhase=ph; }
-  if(!state.whatif) state.whatif={};
   if(!p){
-    if(joinSent&&ph==='lobby') return el.innerHTML=shell(`<div class="card center"><h2>Joining…</h2><p>${esc(myName)}, ${esc(myAge)}</p></div>`,true);
+    if(joinSent&&ph==='lobby') return el.innerHTML=shell(`<div class="card center"><h2>Joining…</h2><p>${esc(myName)}</p></div>`,true);
     joinSent=false;
-    el.innerHTML=shell(`<div class="card"><h2>Your name and <em>your age</em></h2><p>Your age decides your number, so be honest.</p>
-      <div class="field"><div class="lbl">Name</div><input id="nameInput" class="inp" maxlength="16" placeholder="First name" value="${esc(myName)}" autocomplete="off" oninput="joinCheck()"></div>
-      <div class="field"><div class="lbl">Age</div><div class="inp-wrap"><input id="ageInput" class="inp" type="number" inputmode="numeric" min="10" max="70" placeholder="e.g. 22" value="${esc(myAge)}" oninput="joinCheck()"><span class="suf">years</span></div></div>
+    el.innerHTML=shell(`<div class="card"><h2>What should we <em>call you?</em></h2><p>Just your first name. Everyone gets the same question.</p>
+      <div class="field"><div class="lbl">Name</div><input id="nameInput" class="inp" maxlength="16" placeholder="First name" value="${esc(myName)}" autocomplete="off" oninput="joinCheck()" onkeydown="if(event.key==='Enter')doJoin()"></div>
       <button class="p-btn" id="joinBtn" onclick="doJoin()" disabled>Join the game →</button></div>`,true);
     joinCheck(); return;
   }
-  if(ph==='lobby') return el.innerHTML=shell(`<div class="card center"><div class="av" style="background:${p.color}">${p.av}</div><h2>You're in, ${esc(p.name)}.</h2><p>Age ${p.age}. Eyes on the screen. The teacher starts the game.</p></div>`,true);
-  if(rk&&/_demo$/.test(ph)){ const R=ROUNDS[rk];
-    return el.innerHTML=shell(`<div class="card center"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>Eyes on the <em>screen</em></h2><p>Your teacher is showing how it works. Your turn is next, and this phone opens in a moment.</p></div>`); }
+  if(ph==='lobby') return el.innerHTML=shell(`<div class="card center"><div class="av" style="background:${p.color}">${p.av}</div><h2>You're in, ${esc(p.name)}.</h2><p>Eyes on the screen. The teacher starts the game.</p></div>`,true);
   if(rk&&/_ask$/.test(ph)){
-    const R=ROUNDS[rk]; const locked=myLockedNonce[rk]===state.nonce||(p.guess[rk]>0&&myLockedNonce[rk]!==-1);
-    const val=myLocal[rk]||p.guess[rk]||0; const note=R.phoneNote(p,s); const k=calc(p,s);
-    // Round 2 gives the Round 1 answer as context, and does the years maths for them.
-    const ctx=rk!=='r2'?'':`<div class="ctx"><div class="ctx-h">For reference · Round 1</div>
-      <div class="ctx-row"><div><div class="ctx-n">${fmtMoney(k.now)}</div><div class="ctx-s">a month, starting at ${p.age}<br><b>${k.yrs} years</b> to build</div></div>
-      <div class="ctx-arrow">→</div>
-      <div><div class="ctx-n q">₹ ?</div><div class="ctx-s">a month, starting at ${k.lateStart}<br><b class="red">${k.yrsLate} years</b> to build</div></div></div>
-      <div class="ctx-t"><b>${k.delay} fewer years</b>, same goal. Each month has to work harder.</div></div>`;
-    if(locked) return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(p,s)}</h2>${ctx}
-      <div class="locked"><div class="lbl">Locked in ✓</div><div class="v">${fmtMoney(val)}</div><div class="u">${R.unit}</div></div>
-      <p style="margin:0 0 4px">Watch the screen. The room only sees group numbers, never yours.</p><button class="p-btn outline" onclick="pChange('${rk}')">Change my guess</button></div>`);
-    return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(p,s)}</h2>${ctx}<p class="ask-note">${note?note+' ':''}Guess. Nobody gets it right first time. The clock is on the big screen.</p>
-      <div class="amt"><div class="amt-l">Your guess · ${R.unit}</div>
+    const R=ROUNDS[rk]; const locked=myLockedNonce[rk]===state.nonce||(hasGuess(p,rk)&&myLockedNonce[rk]!==-1);
+    const val=myLocal[rk]||(p.guess&&p.guess[rk])||0;
+    if(locked) return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(s)}</h2>
+      <div class="locked"><div class="lbl">Locked in ✓</div><div class="v">${rupees(val)}</div><div class="u">a month</div></div>
+      <p style="margin:0 0 4px">Watch the screen. The teacher closes the round when everyone is in.</p><button class="p-btn outline" onclick="pChange('${rk}')">Change my guess</button></div>`);
+    return el.innerHTML=shell(`<div class="card ask"><div class="lbl">Round ${R.n} · ${R.title}</div><h2>${R.phoneQ(s)}</h2><p class="ask-note">${R.why(s)}</p>
+      <div class="amt"><div class="amt-l">Your guess · a month</div>
         <div class="amt-box"><span class="rs">₹</span><input id="moneyInput" class="amt-in" inputmode="numeric" placeholder="0" oninput="onMoney(this)" value="${val?indianFormat(val):''}"></div>
         <div class="amt-sh" id="shBadge">${val?fmtMoney(val):''}</div></div>
-      <div class="chips big">${R.chips.map(v=>`<button class="chip ${v===val?'on':''}" data-v="${v}" onclick="pickChip(${v})">${fmtMoney(v)}</button>`).join('')}</div>
-      <button class="p-btn big" id="lockBtn" onclick="pLock('${rk}')" ${val?'':'disabled'}>Lock it in →</button></div>`);
+      <button class="p-btn big" id="lockBtn" onclick="pLock('${rk}')" ${val?'':'disabled'} style="margin-top:auto">Lock it in →</button></div>`);
   }
   if(rk&&/_reveal$/.test(ph)){
-    const k=calc(p,s); const real=realFor(p,rk,s); const g=p.guess[rk]||0; const o=offBy(g,real); const R=ROUNDS[rk];
-    let line='';
-    if(rk==='r1') line=`<div class="fb">Wait just <b>one year</b> and your number becomes <b>${fmtMoney(k.plus1)}</b> a month — <b>${fmtMoney(k.plus1-k.now)}</b> more, every month, for the rest of the way.</div>`;
-    if(rk==='r2') line=`<div class="fb">Starting at ${p.age}: <b style="color:var(--teal-d)">${fmtMoney(k.now)}</b>. Starting at ${k.lateStart}: <b>${fmtMoney(k.late)}</b>. Those ${k.delay} years cost you <b>${fmtMoney(k.late-k.now)}</b> every month.</div>`;
-    if(rk==='r3') line=`<div class="fb good">You put in ${fmtMoney(s.flipSip*12*k.flipYrs)} in total. Growth does the rest. Had you started 5 years earlier: <b>${fmtMoney(k.flipEarly)}</b>.</div>`;
-    return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n} · the real number</div>
-      <div class="real"><div class="lbl">${rk==='r3'?`${fmtMoney(s.flipSip)} a month until ${k.flipHorizon} becomes`:`You need, every month`}</div><div class="v ${rk==='r2'?'red':''}">${fmtMoney(real)}</div><div class="g">you guessed ${g?fmtMoney(g):'—'}</div><span class="off ${o.cls}">${o.txt}</span></div>${projHtml(p,rk,s,g)}${line}<div class="solo-note">Only you can see how close you were. The room sees group numbers.</div></div>`);
+    // hold the result back while the projector's drum roll plays
+    const key=state.nonce; if(!_seen[key]) _seen[key]=Date.now();
+    const wait=REVEAL_DELAY-(Date.now()-_seen[key]);
+    if(wait>0){ setTimeout(renderPlayer,wait+60); return el.innerHTML=shell(`<div class="card center"><h2>Drum roll…</h2><p>Eyes on the screen.</p></div>`); }
+    const R=ROUNDS[rk], row=myRow(rk), real=state.results[rk]?state.results[rk].real:Math.round(realOf(rk));
+    let body='';
+    if(!row) body=`<div class="real"><div class="lbl">The real number</div><div class="v">${rupees(real)}</div><div class="g">a month</div></div><div class="fb">You didn't lock in this round. Next one, type your guess before the teacher closes.</div>`;
+    else{
+      const msg=row.rank===1?'You were closest! 🏆':row.rank<=3?'You made the top three! 🎉':'Closer next time.';
+      body=`<div class="real"><div class="lbl">The real number</div><div class="v">${rupees(real)}</div><div class="g">you guessed ${rupees(row.guess)}</div><span class="off ${row.rank===1?'':'high'}">${gapText(row.gap,real)}</span></div>
+        <div class="fb ${row.rank<=3?'good':''}"><b>${msg}</b> ${row.pts?`+${row.pts} point${row.pts>1?'s':''}.`:''}</div>`;
+      if(row.rank===1&&!_celebrated[key]){ _celebrated[key]=1; setTimeout(()=>confetti(3000,140),200); }
+    }
+    if(rk==='r3'){ const d=realOf('r3')-realOf('r1'); body+=`<div class="fb">Starting ${s.delay} years late costs <b>${rupees(d)} more</b> every month.</div>`; }
+    return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n} · ${R.title}</div>${body}</div>`);
   }
-  if(rk&&/_whatif$/.test(ph)){
-    const w=Object.assign({},s,state.whatif||{}); const a=realFor(p,rk,s), b=realFor(p,rk,w), kw=calc(p,w); const R=ROUNDS[rk];
-    const good=rk==='r3'?b>a:b<a;
-    const rule=rk==='r3'?`${fmtMoney(w.flipSip)} a month until ${kw.flipHorizon}, at ${w.rate}%`:rk==='r2'?`${fmtMoney(w.target)} by ${kw.horizon}, starting ${kw.delay} years late, at ${w.rate}%`:`${fmtMoney(w.target)} by ${kw.horizon}, at ${w.rate}%`;
-    return el.innerHTML=shell(`<div class="card"><div class="lbl">Round ${R.n}B · what if…?</div><h2>The rules on screen are changing. <em>So is your number.</em></h2><p>${rule}</p>
-      <div class="real big"><div class="lbl">${rk==='r3'?'it becomes':'you need, every month'}</div><div class="v ${Math.abs(b-a)<1?'':good?'good':'bad'}">${fmtMoney(b)}</div><div class="g">as played: ${fmtMoney(a)}</div>${Math.abs(b-a)>=1?`<span class="off ${good?'':'low'}">${b>a?'▲ +':'▼ −'}${fmtMoney(Math.abs(b-a))}</span>`:'<span class="off high">no change</span>'}</div>
-      <div class="phone-lb">${lifeBar(p,kw,rk,rk==='r3'?w.flipAge:w.targetAge)}</div></div>`);
-  }
-  if(ph==='poll'){
-    const mine=(p.vote!=null)?p.vote:(myLocal.vote!=null?myLocal.vote:null);
-    return el.innerHTML=shell(`<div class="card"><div class="lbl">One last question</div><h2>What has actually stopped you from <em>starting?</em></h2><p>Tap one. Be honest. Everyone has used one of these.</p>
-      <div class="opts">${BLOCKERS.map((b,i)=>`<button class="optb ${mine===i?'on':''}" onclick="pVote(${i})"><span class="dot"></span><span>${b.txt}</span></button>`).join('')}</div>
-      ${mine!=null?`<div class="fb good" style="margin-top:12px"><b>Locked in.</b> ${BLOCKERS[mine].fix} Tap another to change it.</div>`:''}</div>`);
-  }
+  if(ph==='r3_ladder') return el.innerHTML=shell(`<div class="card center"><h2>The cost of delay</h2><p>Eyes on the screen. Each year you wait costs more than the last.</p></div>`);
   if(ph==='end'){
-    const k=calc(p,s); const bl=(p.vote!=null&&BLOCKERS[p.vote])?BLOCKERS[p.vote].short:'';
-    return el.innerHTML=shell(`<div class="card"><div class="lbl">Your numbers · keep these</div><h2>${esc(p.name)}, ${p.age}</h2>
-      <div class="sum">
-        <div class="row"><span>${fmtMoney(s.target)} by ${k.horizon}, start now</span><b>${fmtMoney(k.now)}/mo</b></div>
-        <div class="row"><span>…start ${k.delay} years late</span><b class="red">${fmtMoney(k.late)}/mo</b></div>
-        <div class="row"><span>${fmtMoney(s.flipSip)}/mo until ${k.flipHorizon}</span><b>${fmtMoney(k.flip)}</b></div>
-        ${bl?`<div class="row"><span>What held you back</span><b style="font-size:.85rem">${bl}</b></div>`:''}
-      </div>${waBtn(numbersText(p,s,bl),'Share on WhatsApp')}<p style="margin:12px 0 0;text-align:center">The best month to start is this one.</p></div>`);
+    const sc=ranked(), mine=sc.find(t=>t.id===MY_ID)||{pts:0,wins:0}, pos=mine.pos||0;
+    const rows=ROUND_KEYS.map(k=>{ const r=myRow(k); return `<div class="row"><span>${ROUNDS[k].title}</span><b>${r?gapText(r.gap,state.results[k].real):'no guess'}</b></div>`; }).join('');
+    return el.innerHTML=shell(`<div class="card"><div class="lbl">Final scores</div><h2>${esc(p.name)}: ${mine.pts} point${mine.pts===1?'':'s'}</h2>
+      <p>${pos&&mine.pts?`You finished number ${pos} of ${sc.length}.`:'Thanks for playing.'}</p><div class="sum">${rows}</div>
+      ${waBtn(shareText(p,mine.pts),'Share on WhatsApp')}<p style="margin:12px 0 0;text-align:center">The best month to start is this one.</p></div>`);
   }
   el.innerHTML=shell('<div class="card center"><h2>Eyes on the screen</h2></div>');
 }
-function crowdRow(){
-  if(!state||!state.players) return '';
-  const others=Object.values(state.players).filter(p=>p.id!==MY_ID); if(!others.length) return '';
-  const show=others.slice(0,3), rest=others.length-show.length;
-  const names=others.slice(0,2).map(p=>esc(p.name)); const more=others.length-names.length;
-  const text=more>0?`<b>${names.join(', ')}</b> and ${more} other${more>1?'s':''}`:`<b>${names.join(' and ')}</b>`;
-  return `<div class="crowd"><div class="stack">${show.map(p=>`<span style="background:${p.color}">${p.av}</span>`).join('')}${rest>0?`<span style="background:#3b4650;font-size:11px">+${rest}</span>`:''}</div><p>${text}<br>${others.length>1?'are':'is'} already in.</p></div>`;
-}
-function shell(inner,full,solo){ const rate=state&&state.settings?state.settings.rate:12;
+function shell(inner,full){ const rate=state&&state.settings?state.settings.rate:12;
   return `<div class="wrap">
     <div class="p-hero ${full?'full':''}"></div>
-    <div class="p-bar"><div class="mark"><img src="${LOGO}" alt=""></div><div class="brand">Investing<br>for Mummies</div><div class="room"><i></i>${solo?'FIND YOUR NUMBER':'ROOM '+esc(ROOM||'')}</div></div>
-    ${full?`<div class="p-title"><div class="the">The</div><h1>Wealth Hack</h1><p class="tag">One started early. One started “soon”. <b>Only one of them is rich.</b></p></div>`:`<div class="p-title compact"><h1>The Wealth Hack</h1></div>`}
+    <div class="p-bar"><div class="mark"><img src="${LOGO}" alt=""></div><div class="brand">Investing<br>for Mummies</div><div class="room"><i></i>ROOM ${esc(ROOM||'')}</div></div>
+    ${full?`<div class="p-title"><div class="the">The</div><h1>Wealth Hack</h1><p class="tag">One started early. One started “soon”. <b>Only one of them is rich.</b></p></div>`:`<div class="p-title compact"><h1>${GAME_NAME}</h1></div>`}
     ${inner}
-    ${full?crowdRow():''}
     <div class="foot">Investing for Mummies · assumes ${rate}% a year, not a promise</div></div>`; }
-
-let soloName='', soloAge=0, soloGo=false;
-function initSolo(){
-  document.getElementById('player').classList.remove('hide'); document.body.classList.add('player-bg');
-  state={phase:'solo',settings:freshState().settings,players:{},whatif:{}}; renderSolo();
-}
-function soloCheck(){ const a=parseInt((document.getElementById('soloAge')||{}).value,10)||0; const b=document.getElementById('soloBtn'); if(b) b.disabled=!(a>=10&&a<=70); }
-function soloShow(){ soloAge=parseInt(document.getElementById('soloAge').value,10)||0; soloName=(document.getElementById('soloName').value||'').trim().slice(0,16); if(soloAge<10||soloAge>70) return; soloGo=true; renderSolo(); }
-function soloReset(){ soloGo=false; renderSolo(); }
-function renderSolo(){
-  const el=document.getElementById('player'); const s=state.settings;
-  if(!soloGo){
-    el.innerHTML=shell(`<div class="card"><h2>Find your <em>number</em></h2><p>Tell us your age. We will show you what ${fmtMoney(s.target)} really costs a month, and what waiting does to it.</p>
-      <div class="field"><div class="lbl">Name · optional</div><input id="soloName" class="inp" maxlength="16" placeholder="First name" autocomplete="off"></div>
-      <div class="field"><div class="lbl">Age</div><div class="inp-wrap"><input id="soloAge" class="inp" type="number" inputmode="numeric" min="10" max="70" placeholder="e.g. 24" oninput="soloCheck()"><span class="suf">years</span></div></div>
-      <button class="p-btn" id="soloBtn" onclick="soloShow()" disabled>Show me my number →</button></div>
-      <div class="solo-note">Playing in a class? Ask your teacher for the game code and scan their QR.</div>`,true,true);
-    soloCheck(); return;
-  }
-  const p={name:soloName||'Me',age:soloAge}, k=calc(p,s);
-  el.innerHTML=shell(`<div class="card"><div class="lbl">Your numbers</div><h2>${esc(soloName||'You')}, ${soloAge}</h2>
-    <div class="sum">
-      <div class="row"><span>${fmtMoney(s.target)} by ${k.horizon}, start now</span><b>${fmtMoney(k.now)}/mo</b></div>
-      <div class="row"><span>…start ${k.delay} years late</span><b class="red">${fmtMoney(k.late)}/mo</b></div>
-      <div class="row"><span>${fmtMoney(s.flipSip)}/mo until ${k.flipHorizon}</span><b>${fmtMoney(k.flip)}</b></div>
-    </div>
-    <div class="fb">Wait one year and your number becomes <b>${fmtMoney(k.plus1)}</b> a month. The best month to start is this one.</div>
-    ${waBtn(numbersText(p,s,''),'Share on WhatsApp')}<button class="p-btn outline" onclick="soloReset()">Try a different age</button></div>`,true,true);
-}
-if(isHost) initHost(); else if(ROLE==='solo') initSolo(); else initPlayer();
+if(isHost) initHost(); else initPlayer();
 </script>
-<!-- ifm-back --><p style="margin:0;padding:18px 16px 2px;text-align:center;clear:both"><a href="/" target="_top" style="display:inline-block;font:800 14px/1.4 Nunito,system-ui,sans-serif;color:#1a3a5c;text-decoration:none;background:#fff;border:2px solid #bde9e4;border-radius:12px;padding:9px 18px">🏠 Back to Main Menu</a></p>
 <!-- ifm-disclaimer --><p style="margin:0;padding:14px 16px 18px;text-align:center;font:500 12px/1.5 Nunito,system-ui,sans-serif;color:#5a7d8a;background:transparent;clear:both">Educational only. Illustrative returns, not guaranteed. Not investment advice.</p>
 </body>
 </html>
