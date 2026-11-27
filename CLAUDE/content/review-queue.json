@@ -1,6 +1,6 @@
 {
- "generated_by": "daily-content-processor 2026-11-20",
- "note": "20 Nov scan: 2,782 media files, 0 listing errors, 23 new since 17 Nov plus 26 files the 17 Nov run left uncatalogued. 14 rows staged (IFM-1193..1206). Earlier items below unchanged.",
+ "generated_by": "daily-content-processor 2026-11-27",
+ "note": "27 Nov run: 15 roots, 232 folders, 2,793 media files, 0 listing errors — identical file set to the 24 Nov scan (0 new, 0 gone). Nothing staged, no deploy. Archive mirror of all 7 third-party trees re-run: 0 files needed copying. Items below are carried from 20 Nov, unchanged.",
  "count": 33,
  "items": [
   {
